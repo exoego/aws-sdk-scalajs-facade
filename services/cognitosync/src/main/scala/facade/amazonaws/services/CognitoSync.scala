@@ -80,16 +80,14 @@ package cognitosync {
     def updateRecords(params: UpdateRecordsRequest): Request[UpdateRecordsResponse] = js.native
   }
 
-  /**
-    * An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.
+  /** An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.
     */
   @js.native
   trait AlreadyStreamedExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * The input for the BulkPublish operation.
+  /** The input for the BulkPublish operation.
     */
   @js.native
   trait BulkPublishRequest extends js.Object {
@@ -104,13 +102,11 @@ package cognitosync {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BulkPublishRequest]
     }
   }
 
-  /**
-    * The output for the BulkPublish operation.
+  /** The output for the BulkPublish operation.
     */
   @js.native
   trait BulkPublishResponse extends js.Object {
@@ -139,8 +135,7 @@ package cognitosync {
     @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
   }
 
-  /**
-    * Configuration options for configure Cognito streams.
+  /** Configuration options for configure Cognito streams.
     */
   @js.native
   trait CognitoStreams extends js.Object {
@@ -164,16 +159,14 @@ package cognitosync {
     }
   }
 
-  /**
-    * Thrown if there are parallel requests to modify a resource.
+  /** Thrown if there are parallel requests to modify a resource.
     */
   @js.native
   trait ConcurrentModificationExceptionException extends js.Object {
     val message: String
   }
 
-  /**
-    * A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
+  /** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     */
   @js.native
   trait Dataset extends js.Object {
@@ -209,8 +202,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request to delete the specific dataset.
+  /** A request to delete the specific dataset.
     */
   @js.native
   trait DeleteDatasetRequest extends js.Object {
@@ -231,13 +223,11 @@ package cognitosync {
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetRequest]
     }
   }
 
-  /**
-    * Response to a successful DeleteDataset request.
+  /** Response to a successful DeleteDataset request.
     */
   @js.native
   trait DeleteDatasetResponse extends js.Object {
@@ -255,8 +245,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
+  /** A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name.
     */
   @js.native
   trait DescribeDatasetRequest extends js.Object {
@@ -277,13 +266,11 @@ package cognitosync {
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetRequest]
     }
   }
 
-  /**
-    * Response to a successful DescribeDataset request.
+  /** Response to a successful DescribeDataset request.
     */
   @js.native
   trait DescribeDatasetResponse extends js.Object {
@@ -301,8 +288,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request for usage information about the identity pool.
+  /** A request for usage information about the identity pool.
     */
   @js.native
   trait DescribeIdentityPoolUsageRequest extends js.Object {
@@ -317,13 +303,11 @@ package cognitosync {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityPoolUsageRequest]
     }
   }
 
-  /**
-    * Response to a successful DescribeIdentityPoolUsage request.
+  /** Response to a successful DescribeIdentityPoolUsage request.
     */
   @js.native
   trait DescribeIdentityPoolUsageResponse extends js.Object {
@@ -341,8 +325,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request for information about the usage of an identity pool.
+  /** A request for information about the usage of an identity pool.
     */
   @js.native
   trait DescribeIdentityUsageRequest extends js.Object {
@@ -360,13 +343,11 @@ package cognitosync {
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityUsageRequest]
     }
   }
 
-  /**
-    * The response to a successful DescribeIdentityUsage request.
+  /** The response to a successful DescribeIdentityUsage request.
     */
   @js.native
   trait DescribeIdentityUsageResponse extends js.Object {
@@ -384,16 +365,14 @@ package cognitosync {
     }
   }
 
-  /**
-    * An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
+  /** An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
     */
   @js.native
   trait DuplicateRequestExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * The input for the GetBulkPublishDetails operation.
+  /** The input for the GetBulkPublishDetails operation.
     */
   @js.native
   trait GetBulkPublishDetailsRequest extends js.Object {
@@ -408,13 +387,11 @@ package cognitosync {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBulkPublishDetailsRequest]
     }
   }
 
-  /**
-    * The output for the GetBulkPublishDetails operation.
+  /** The output for the GetBulkPublishDetails operation.
     */
   @js.native
   trait GetBulkPublishDetailsResponse extends js.Object {
@@ -444,8 +421,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request for a list of the configured Cognito Events
+  /** A request for a list of the configured Cognito Events
     */
   @js.native
   trait GetCognitoEventsRequest extends js.Object {
@@ -460,13 +436,11 @@ package cognitosync {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCognitoEventsRequest]
     }
   }
 
-  /**
-    * The response from the GetCognitoEvents request
+  /** The response from the GetCognitoEvents request
     */
   @js.native
   trait GetCognitoEventsResponse extends js.Object {
@@ -484,8 +458,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * The input for the GetIdentityPoolConfiguration operation.
+  /** The input for the GetIdentityPoolConfiguration operation.
     */
   @js.native
   trait GetIdentityPoolConfigurationRequest extends js.Object {
@@ -500,13 +473,11 @@ package cognitosync {
       val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIdentityPoolConfigurationRequest]
     }
   }
 
-  /**
-    * The output for the GetIdentityPoolConfiguration operation.
+  /** The output for the GetIdentityPoolConfiguration operation.
     */
   @js.native
   trait GetIdentityPoolConfigurationResponse extends js.Object {
@@ -530,8 +501,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Usage information for the identity pool.
+  /** Usage information for the identity pool.
     */
   @js.native
   trait IdentityPoolUsage extends js.Object {
@@ -558,8 +528,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Usage information for the identity.
+  /** Usage information for the identity.
     */
   @js.native
   trait IdentityUsage extends js.Object {
@@ -589,8 +558,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Indicates an internal service error.
+  /** Indicates an internal service error.
     */
   @js.native
   trait InternalErrorExceptionException extends js.Object {
@@ -602,40 +570,35 @@ package cognitosync {
     val message: ExceptionMessage
   }
 
-  /**
-    * The AWS Lambda function returned invalid output or an exception.
+  /** The AWS Lambda function returned invalid output or an exception.
     */
   @js.native
   trait InvalidLambdaFunctionOutputExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * Thrown when a request parameter does not comply with the associated constraints.
+  /** Thrown when a request parameter does not comply with the associated constraints.
     */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * AWS Lambda throttled your account, please contact AWS Support
+  /** AWS Lambda throttled your account, please contact AWS Support
     */
   @js.native
   trait LambdaThrottledExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * Thrown when the limit on the number of objects or operations has been exceeded.
+  /** Thrown when the limit on the number of objects or operations has been exceeded.
     */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * Request for a list of datasets for an identity.
+  /** Request for a list of datasets for an identity.
     */
   @js.native
   trait ListDatasetsRequest extends js.Object {
@@ -664,8 +627,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Returned for a successful ListDatasets request.
+  /** Returned for a successful ListDatasets request.
     */
   @js.native
   trait ListDatasetsResponse extends js.Object {
@@ -689,8 +651,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request for usage information on an identity pool.
+  /** A request for usage information on an identity pool.
     */
   @js.native
   trait ListIdentityPoolUsageRequest extends js.Object {
@@ -711,8 +672,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Returned for a successful ListIdentityPoolUsage request.
+  /** Returned for a successful ListIdentityPoolUsage request.
     */
   @js.native
   trait ListIdentityPoolUsageResponse extends js.Object {
@@ -739,8 +699,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request for a list of records.
+  /** A request for a list of records.
     */
   @js.native
   trait ListRecordsRequest extends js.Object {
@@ -778,8 +737,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Returned for a successful ListRecordsRequest.
+  /** Returned for a successful ListRecordsRequest.
     */
   @js.native
   trait ListRecordsResponse extends js.Object {
@@ -821,8 +779,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Thrown when a user is not authorized to access the requested resource.
+  /** Thrown when a user is not authorized to access the requested resource.
     */
   @js.native
   trait NotAuthorizedExceptionException extends js.Object {
@@ -849,8 +806,7 @@ package cognitosync {
     @inline def values = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
   }
 
-  /**
-    * Configuration options to be applied to the identity pool.
+  /** Configuration options to be applied to the identity pool.
     */
   @js.native
   trait PushSync extends js.Object {
@@ -871,8 +827,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * The basic data structure of a dataset.
+  /** The basic data structure of a dataset.
     */
   @js.native
   trait Record extends js.Object {
@@ -905,8 +860,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * An update operation for a record.
+  /** An update operation for a record.
     */
   @js.native
   trait RecordPatch extends js.Object {
@@ -938,8 +892,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * A request to RegisterDevice.
+  /** A request to RegisterDevice.
     */
   @js.native
   trait RegisterDeviceRequest extends js.Object {
@@ -963,13 +916,11 @@ package cognitosync {
         "Platform" -> Platform.asInstanceOf[js.Any],
         "Token" -> Token.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterDeviceRequest]
     }
   }
 
-  /**
-    * Response to a RegisterDevice request.
+  /** Response to a RegisterDevice request.
     */
   @js.native
   trait RegisterDeviceResponse extends js.Object {
@@ -987,24 +938,21 @@ package cognitosync {
     }
   }
 
-  /**
-    * Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
+  /** Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
     */
   @js.native
   trait ResourceConflictExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * Thrown if the resource doesn't exist.
+  /** Thrown if the resource doesn't exist.
     */
   @js.native
   trait ResourceNotFoundExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * A request to configure Cognito Events"
+  /** A request to configure Cognito Events"
     * "
     */
   @js.native
@@ -1023,13 +971,11 @@ package cognitosync {
         "Events" -> Events.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetCognitoEventsRequest]
     }
   }
 
-  /**
-    * The input for the SetIdentityPoolConfiguration operation.
+  /** The input for the SetIdentityPoolConfiguration operation.
     */
   @js.native
   trait SetIdentityPoolConfigurationRequest extends js.Object {
@@ -1055,8 +1001,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * The output for the SetIdentityPoolConfiguration operation
+  /** The output for the SetIdentityPoolConfiguration operation
     */
   @js.native
   trait SetIdentityPoolConfigurationResponse extends js.Object {
@@ -1089,8 +1034,7 @@ package cognitosync {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * A request to SubscribeToDatasetRequest.
+  /** A request to SubscribeToDatasetRequest.
     */
   @js.native
   trait SubscribeToDatasetRequest extends js.Object {
@@ -1114,37 +1058,31 @@ package cognitosync {
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SubscribeToDatasetRequest]
     }
   }
 
-  /**
-    * Response to a SubscribeToDataset request.
+  /** Response to a SubscribeToDataset request.
     */
   @js.native
-  trait SubscribeToDatasetResponse extends js.Object {}
+  trait SubscribeToDatasetResponse extends js.Object
 
   object SubscribeToDatasetResponse {
     @inline
-    def apply(
-    ): SubscribeToDatasetResponse = {
+    def apply(): SubscribeToDatasetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SubscribeToDatasetResponse]
     }
   }
 
-  /**
-    * Thrown if the request is throttled.
+  /** Thrown if the request is throttled.
     */
   @js.native
   trait TooManyRequestsExceptionException extends js.Object {
     val message: ExceptionMessage
   }
 
-  /**
-    * A request to UnsubscribeFromDataset.
+  /** A request to UnsubscribeFromDataset.
     */
   @js.native
   trait UnsubscribeFromDatasetRequest extends js.Object {
@@ -1168,29 +1106,24 @@ package cognitosync {
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnsubscribeFromDatasetRequest]
     }
   }
 
-  /**
-    * Response to an UnsubscribeFromDataset request.
+  /** Response to an UnsubscribeFromDataset request.
     */
   @js.native
-  trait UnsubscribeFromDatasetResponse extends js.Object {}
+  trait UnsubscribeFromDatasetResponse extends js.Object
 
   object UnsubscribeFromDatasetResponse {
     @inline
-    def apply(
-    ): UnsubscribeFromDatasetResponse = {
+    def apply(): UnsubscribeFromDatasetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UnsubscribeFromDatasetResponse]
     }
   }
 
-  /**
-    * A request to post updates to records or add and delete records for a dataset and user.
+  /** A request to post updates to records or add and delete records for a dataset and user.
     */
   @js.native
   trait UpdateRecordsRequest extends js.Object {
@@ -1228,8 +1161,7 @@ package cognitosync {
     }
   }
 
-  /**
-    * Returned for a successful UpdateRecordsRequest.
+  /** Returned for a successful UpdateRecordsRequest.
     */
   @js.native
   trait UpdateRecordsResponse extends js.Object {

@@ -77,8 +77,7 @@ package cloudtrail {
     def updateTrail(params: UpdateTrailRequest): Request[UpdateTrailResponse] = js.native
   }
 
-  /**
-    * Specifies the tags to add to a trail.
+  /** Specifies the tags to add to a trail.
     */
   @js.native
   trait AddTagsRequest extends js.Object {
@@ -101,24 +100,20 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait AddTagsResponse extends js.Object {}
+  trait AddTagsResponse extends js.Object
 
   object AddTagsResponse {
     @inline
-    def apply(
-    ): AddTagsResponse = {
+    def apply(): AddTagsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsResponse]
     }
   }
 
-  /**
-    * Specifies the settings for each trail.
+  /** Specifies the settings for each trail.
     */
   @js.native
   trait CreateTrailRequest extends js.Object {
@@ -171,8 +166,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
   trait CreateTrailResponse extends js.Object {
@@ -226,20 +220,19 @@ package cloudtrail {
     }
   }
 
-  /**
-    * The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
+  /** The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
     *
     * '''Note:'''The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
     * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.
-    *  <ol> * A user uploads an image file to <code>bucket-1</code>.
-    *  * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
-    *  * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
-    *  * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.
-    *  </ol> The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.
-    *  <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.
-    *  * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.
-    *  * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event.
-    *  </ol>
+    * <ol> * A user uploads an image file to <code>bucket-1</code>.
+    * * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
+    * * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
+    * * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.
+    * </ol> The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.
+    * <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.
+    * * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.
+    * * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event.
+    * </ol>
     */
   @js.native
   trait DataResource extends js.Object {
@@ -260,8 +253,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * The request that specifies the name of a trail to delete.
+  /** The request that specifies the name of a trail to delete.
     */
   @js.native
   trait DeleteTrailRequest extends js.Object {
@@ -276,29 +268,24 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTrailRequest]
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait DeleteTrailResponse extends js.Object {}
+  trait DeleteTrailResponse extends js.Object
 
   object DeleteTrailResponse {
     @inline
-    def apply(
-    ): DeleteTrailResponse = {
+    def apply(): DeleteTrailResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTrailResponse]
     }
   }
 
-  /**
-    * Returns information about the trail.
+  /** Returns information about the trail.
     */
   @js.native
   trait DescribeTrailsRequest extends js.Object {
@@ -319,8 +306,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
   trait DescribeTrailsResponse extends js.Object {
@@ -338,8 +324,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.
+  /** Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event.
     */
   @js.native
   trait Event extends js.Object {
@@ -389,9 +374,8 @@ package cloudtrail {
     @inline def values = js.Array(insight)
   }
 
-  /**
-    * Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.
-    *  You can configure up to five event selectors for a trail.
+  /** Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.
+    * You can configure up to five event selectors for a trail.
     */
   @js.native
   trait EventSelector extends js.Object {
@@ -431,7 +415,6 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEventSelectorsRequest]
     }
   }
@@ -468,7 +451,6 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInsightSelectorsRequest]
     }
   }
@@ -505,7 +487,6 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrailRequest]
     }
   }
@@ -526,8 +507,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * The name of a trail about which you want the current status.
+  /** The name of a trail about which you want the current status.
     */
   @js.native
   trait GetTrailStatusRequest extends js.Object {
@@ -542,13 +522,11 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrailStatusRequest]
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
   trait GetTrailStatusResponse extends js.Object {
@@ -614,8 +592,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * A JSON string that contains a list of insight types that are logged on a trail.
+  /** A JSON string that contains a list of insight types that are logged on a trail.
     */
   @js.native
   trait InsightSelector extends js.Object {
@@ -641,8 +618,7 @@ package cloudtrail {
     @inline def values = js.Array(ApiCallRateInsight)
   }
 
-  /**
-    * Requests the public keys for a specified time range.
+  /** Requests the public keys for a specified time range.
     */
   @js.native
   trait ListPublicKeysRequest extends js.Object {
@@ -666,8 +642,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
   trait ListPublicKeysResponse extends js.Object {
@@ -688,8 +663,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Specifies a list of trail tags to return.
+  /** Specifies a list of trail tags to return.
     */
   @js.native
   trait ListTagsRequest extends js.Object {
@@ -712,8 +686,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
   trait ListTagsResponse extends js.Object {
@@ -769,8 +742,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Specifies an attribute and value that filter the events returned.
+  /** Specifies an attribute and value that filter the events returned.
     */
   @js.native
   trait LookupAttribute extends js.Object {
@@ -788,7 +760,6 @@ package cloudtrail {
         "AttributeKey" -> AttributeKey.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LookupAttribute]
     }
   }
@@ -808,8 +779,7 @@ package cloudtrail {
     @inline def values = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
   }
 
-  /**
-    * Contains a request for LookupEvents.
+  /** Contains a request for LookupEvents.
     */
   @js.native
   trait LookupEventsRequest extends js.Object {
@@ -842,8 +812,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Contains a response to a LookupEvents action.
+  /** Contains a response to a LookupEvents action.
     */
   @js.native
   trait LookupEventsResponse extends js.Object {
@@ -864,8 +833,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Contains information about a returned public key.
+  /** Contains information about a returned public key.
     */
   @js.native
   trait PublicKey extends js.Object {
@@ -908,7 +876,6 @@ package cloudtrail {
         "EventSelectors" -> EventSelectors.asInstanceOf[js.Any],
         "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutEventSelectorsRequest]
     }
   }
@@ -948,7 +915,6 @@ package cloudtrail {
         "InsightSelectors" -> InsightSelectors.asInstanceOf[js.Any],
         "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutInsightSelectorsRequest]
     }
   }
@@ -982,8 +948,7 @@ package cloudtrail {
     @inline def values = js.Array(ReadOnly, WriteOnly, All)
   }
 
-  /**
-    * Specifies the tags to remove from a trail.
+  /** Specifies the tags to remove from a trail.
     */
   @js.native
   trait RemoveTagsRequest extends js.Object {
@@ -1006,24 +971,20 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait RemoveTagsResponse extends js.Object {}
+  trait RemoveTagsResponse extends js.Object
 
   object RemoveTagsResponse {
     @inline
-    def apply(
-    ): RemoveTagsResponse = {
+    def apply(): RemoveTagsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsResponse]
     }
   }
 
-  /**
-    * Specifies the type and name of a resource referenced by an event.
+  /** Specifies the type and name of a resource referenced by an event.
     */
   @js.native
   trait Resource extends js.Object {
@@ -1044,8 +1005,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * A resource tag.
+  /** A resource tag.
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -1066,8 +1026,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * The request to CloudTrail to start logging AWS API calls for an account.
+  /** The request to CloudTrail to start logging AWS API calls for an account.
     */
   @js.native
   trait StartLoggingRequest extends js.Object {
@@ -1082,29 +1041,24 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartLoggingRequest]
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait StartLoggingResponse extends js.Object {}
+  trait StartLoggingResponse extends js.Object
 
   object StartLoggingResponse {
     @inline
-    def apply(
-    ): StartLoggingResponse = {
+    def apply(): StartLoggingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartLoggingResponse]
     }
   }
 
-  /**
-    * Passes the request to CloudTrail to stop logging AWS API calls for the specified account.
+  /** Passes the request to CloudTrail to stop logging AWS API calls for the specified account.
     */
   @js.native
   trait StopLoggingRequest extends js.Object {
@@ -1119,29 +1073,24 @@ package cloudtrail {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopLoggingRequest]
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
-  trait StopLoggingResponse extends js.Object {}
+  trait StopLoggingResponse extends js.Object
 
   object StopLoggingResponse {
     @inline
-    def apply(
-    ): StopLoggingResponse = {
+    def apply(): StopLoggingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopLoggingResponse]
     }
   }
 
-  /**
-    * A custom key-value pair associated with a resource such as a CloudTrail trail.
+  /** A custom key-value pair associated with a resource such as a CloudTrail trail.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1164,8 +1113,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * The settings for a trail.
+  /** The settings for a trail.
     */
   @js.native
   trait Trail extends js.Object {
@@ -1228,8 +1176,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN).
+  /** Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN).
     */
   @js.native
   trait TrailInfo extends js.Object {
@@ -1253,8 +1200,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Specifies settings to update for the trail.
+  /** Specifies settings to update for the trail.
     */
   @js.native
   trait UpdateTrailRequest extends js.Object {
@@ -1304,8 +1250,7 @@ package cloudtrail {
     }
   }
 
-  /**
-    * Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
     */
   @js.native
   trait UpdateTrailResponse extends js.Object {

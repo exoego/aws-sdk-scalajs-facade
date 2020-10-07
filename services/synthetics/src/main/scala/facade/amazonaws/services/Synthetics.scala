@@ -73,8 +73,7 @@ package synthetics {
     def updateCanary(params: UpdateCanaryRequest): Request[UpdateCanaryResponse] = js.native
   }
 
-  /**
-    * This structure contains all information about one canary in your account.
+  /** This structure contains all information about one canary in your account.
     */
   @js.native
   trait Canary extends js.Object {
@@ -134,8 +133,7 @@ package synthetics {
     }
   }
 
-  /**
-    * Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.
+  /** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>.
     */
   @js.native
   trait CanaryCodeInput extends js.Object {
@@ -167,8 +165,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.
+  /** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.
     */
   @js.native
   trait CanaryCodeOutput extends js.Object {
@@ -189,8 +186,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure contains information about the most recent run of a single canary.
+  /** This structure contains information about the most recent run of a single canary.
     */
   @js.native
   trait CanaryLastRun extends js.Object {
@@ -211,8 +207,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure contains the details about one run of one canary.
+  /** This structure contains the details about one run of one canary.
     */
   @js.native
   trait CanaryRun extends js.Object {
@@ -239,8 +234,7 @@ package synthetics {
     }
   }
 
-  /**
-    * A structure that contains input information for a canary run.
+  /** A structure that contains input information for a canary run.
     */
   @js.native
   trait CanaryRunConfigInput extends js.Object {
@@ -263,8 +257,7 @@ package synthetics {
     }
   }
 
-  /**
-    * A structure that contains information for a canary run.
+  /** A structure that contains information for a canary run.
     */
   @js.native
   trait CanaryRunConfigOutput extends js.Object {
@@ -304,8 +297,7 @@ package synthetics {
     @inline def values = js.Array(CANARY_FAILURE, EXECUTION_FAILURE)
   }
 
-  /**
-    * This structure contains the status information about a canary run.
+  /** This structure contains the status information about a canary run.
     */
   @js.native
   trait CanaryRunStatus extends js.Object {
@@ -329,8 +321,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure contains the start and end times of a single canary run.
+  /** This structure contains the start and end times of a single canary run.
     */
   @js.native
   trait CanaryRunTimeline extends js.Object {
@@ -351,8 +342,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.
+  /** This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.
     */
   @js.native
   trait CanaryScheduleInput extends js.Object {
@@ -375,8 +365,7 @@ package synthetics {
     }
   }
 
-  /**
-    * How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value.
+  /** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value.
     */
   @js.native
   trait CanaryScheduleOutput extends js.Object {
@@ -421,8 +410,7 @@ package synthetics {
     @inline def values = js.Array(INVALID_PERMISSIONS)
   }
 
-  /**
-    * A structure that contains the current state of the canary.
+  /** A structure that contains the current state of the canary.
     */
   @js.native
   trait CanaryStatus extends js.Object {
@@ -446,8 +434,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure contains information about when the canary was created and modified.
+  /** This structure contains information about when the canary was created and modified.
     */
   @js.native
   trait CanaryTimeline extends js.Object {
@@ -551,20 +538,17 @@ package synthetics {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCanaryRequest]
     }
   }
 
   @js.native
-  trait DeleteCanaryResponse extends js.Object {}
+  trait DeleteCanaryResponse extends js.Object
 
   object DeleteCanaryResponse {
     @inline
-    def apply(
-    ): DeleteCanaryResponse = {
+    def apply(): DeleteCanaryResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCanaryResponse]
     }
   }
@@ -696,7 +680,6 @@ package synthetics {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCanaryRequest]
     }
   }
@@ -773,7 +756,6 @@ package synthetics {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -794,8 +776,7 @@ package synthetics {
     }
   }
 
-  /**
-    * This structure contains information about one canary runtime version. For more information about runtime versions, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html| Canary Runtime Versions]].
+  /** This structure contains information about one canary runtime version. For more information about runtime versions, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html| Canary Runtime Versions]].
     */
   @js.native
   trait RuntimeVersion extends js.Object {
@@ -835,20 +816,17 @@ package synthetics {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartCanaryRequest]
     }
   }
 
   @js.native
-  trait StartCanaryResponse extends js.Object {}
+  trait StartCanaryResponse extends js.Object
 
   object StartCanaryResponse {
     @inline
-    def apply(
-    ): StartCanaryResponse = {
+    def apply(): StartCanaryResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartCanaryResponse]
     }
   }
@@ -866,20 +844,17 @@ package synthetics {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopCanaryRequest]
     }
   }
 
   @js.native
-  trait StopCanaryResponse extends js.Object {}
+  trait StopCanaryResponse extends js.Object
 
   object StopCanaryResponse {
     @inline
-    def apply(
-    ): StopCanaryResponse = {
+    def apply(): StopCanaryResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopCanaryResponse]
     }
   }
@@ -900,20 +875,17 @@ package synthetics {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -934,20 +906,17 @@ package synthetics {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -995,20 +964,17 @@ package synthetics {
   }
 
   @js.native
-  trait UpdateCanaryResponse extends js.Object {}
+  trait UpdateCanaryResponse extends js.Object
 
   object UpdateCanaryResponse {
     @inline
-    def apply(
-    ): UpdateCanaryResponse = {
+    def apply(): UpdateCanaryResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCanaryResponse]
     }
   }
 
-  /**
-    * If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html| Running a Canary in a VPC]].
+  /** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html| Running a Canary in a VPC]].
     */
   @js.native
   trait VpcConfigInput extends js.Object {
@@ -1029,8 +995,7 @@ package synthetics {
     }
   }
 
-  /**
-    * If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html| Running a Canary in a VPC]].
+  /** If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html| Running a Canary in a VPC]].
     */
   @js.native
   trait VpcConfigOutput extends js.Object {

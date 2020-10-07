@@ -164,7 +164,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ActivateEventSourceRequest]
     }
   }
@@ -178,8 +177,7 @@ package eventbridge {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
+  /** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
     */
   @js.native
   trait AwsVpcConfiguration extends js.Object {
@@ -205,8 +203,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
+  /** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
     */
   @js.native
   trait BatchArrayProperties extends js.Object {
@@ -224,8 +221,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * The custom parameters to be used when the target is an AWS Batch job.
+  /** The custom parameters to be used when the target is an AWS Batch job.
     */
   @js.native
   trait BatchParameters extends js.Object {
@@ -254,8 +250,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
+  /** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
     */
   @js.native
   trait BatchRetryStrategy extends js.Object {
@@ -273,9 +268,8 @@ package eventbridge {
     }
   }
 
-  /**
-    * A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:
-    *  <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
+  /** A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:
+    * <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
     */
   @js.native
   trait Condition extends js.Object {
@@ -296,7 +290,6 @@ package eventbridge {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Condition]
     }
   }
@@ -357,7 +350,6 @@ package eventbridge {
         "Account" -> Account.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePartnerEventSourceRequest]
     }
   }
@@ -391,7 +383,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeactivateEventSourceRequest]
     }
   }
@@ -409,7 +400,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventBusRequest]
     }
   }
@@ -430,7 +420,6 @@ package eventbridge {
         "Account" -> Account.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePartnerEventSourceRequest]
     }
   }
@@ -510,7 +499,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEventSourceRequest]
     }
   }
@@ -559,7 +547,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePartnerEventSourceRequest]
     }
   }
@@ -665,8 +652,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * The custom parameters to be used when the target is an Amazon ECS task.
+  /** The custom parameters to be used when the target is an Amazon ECS task.
     */
   @js.native
   trait EcsParameters extends js.Object {
@@ -722,8 +708,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.
+  /** An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.
     */
   @js.native
   trait EventBus extends js.Object {
@@ -747,8 +732,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
+  /** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
     */
   @js.native
   trait EventSource extends js.Object {
@@ -791,8 +775,7 @@ package eventbridge {
     @inline def values = js.Array(PENDING, ACTIVE, DELETED)
   }
 
-  /**
-    * These are custom parameter to be used when the target is an API Gateway REST APIs.
+  /** These are custom parameter to be used when the target is an API Gateway REST APIs.
     */
   @js.native
   trait HttpParameters extends js.Object {
@@ -816,8 +799,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.
+  /** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.
     */
   @js.native
   trait InputTransformer extends js.Object {
@@ -840,8 +822,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+  /** This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
     */
   @js.native
   trait KinesisParameters extends js.Object {
@@ -856,7 +837,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "PartitionKeyPath" -> PartitionKeyPath.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[KinesisParameters]
     }
   }
@@ -1141,7 +1121,6 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1208,8 +1187,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * This structure specifies the network configuration for an ECS task.
+  /** This structure specifies the network configuration for an ECS task.
     */
   @js.native
   trait NetworkConfiguration extends js.Object {
@@ -1227,8 +1205,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
+  /** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
     */
   @js.native
   trait PartnerEventSource extends js.Object {
@@ -1249,8 +1226,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * The AWS account that a partner event source has been offered to.
+  /** The AWS account that a partner event source has been offered to.
     */
   @js.native
   trait PartnerEventSourceAccount extends js.Object {
@@ -1290,13 +1266,11 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutEventsRequest]
     }
   }
 
-  /**
-    * Represents an event to be submitted.
+  /** Represents an event to be submitted.
     */
   @js.native
   trait PutEventsRequestEntry extends js.Object {
@@ -1348,8 +1322,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * Represents an event that failed to be submitted.
+  /** Represents an event that failed to be submitted.
     */
   @js.native
   trait PutEventsResultEntry extends js.Object {
@@ -1386,13 +1359,11 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutPartnerEventsRequest]
     }
   }
 
-  /**
-    * The details about an event generated by an SaaS partner.
+  /** The details about an event generated by an SaaS partner.
     */
   @js.native
   trait PutPartnerEventsRequestEntry extends js.Object {
@@ -1441,8 +1412,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * Represents an event that a partner tried to generate, but failed.
+  /** Represents an event that a partner tried to generate, but failed.
     */
   @js.native
   trait PutPartnerEventsResultEntry extends js.Object {
@@ -1594,8 +1564,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * Represents a target that failed to be added to a rule.
+  /** Represents a target that failed to be added to a rule.
     */
   @js.native
   trait PutTargetsResultEntry extends js.Object {
@@ -1686,8 +1655,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * Represents a target that failed to be removed from a rule.
+  /** Represents a target that failed to be removed from a rule.
     */
   @js.native
   trait RemoveTargetsResultEntry extends js.Object {
@@ -1711,8 +1679,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * Contains information about a rule in Amazon EventBridge.
+  /** Contains information about a rule in Amazon EventBridge.
     */
   @js.native
   trait Rule extends js.Object {
@@ -1763,8 +1730,7 @@ package eventbridge {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.
+  /** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.
     */
   @js.native
   trait RunCommandParameters extends js.Object {
@@ -1779,13 +1745,11 @@ package eventbridge {
       val __obj = js.Dynamic.literal(
         "RunCommandTargets" -> RunCommandTargets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RunCommandParameters]
     }
   }
 
-  /**
-    * Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.
+  /** Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.
     */
   @js.native
   trait RunCommandTarget extends js.Object {
@@ -1803,13 +1767,11 @@ package eventbridge {
         "Key" -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RunCommandTarget]
     }
   }
 
-  /**
-    * This structure includes the custom parameter to be used when the target is an SQS FIFO queue.
+  /** This structure includes the custom parameter to be used when the target is an SQS FIFO queue.
     */
   @js.native
   trait SqsParameters extends js.Object {
@@ -1827,8 +1789,7 @@ package eventbridge {
     }
   }
 
-  /**
-    * A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging.
+  /** A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1846,7 +1807,6 @@ package eventbridge {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1867,27 +1827,23 @@ package eventbridge {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.
-    *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon EventBridge User Guide</i>.
+  /** Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.
+    * If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon EventBridge User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {
@@ -1956,7 +1912,6 @@ package eventbridge {
         "Event" -> Event.asInstanceOf[js.Any],
         "EventPattern" -> EventPattern.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestEventPatternRequest]
     }
   }
@@ -1993,20 +1948,17 @@ package eventbridge {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

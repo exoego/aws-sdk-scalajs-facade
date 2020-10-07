@@ -169,8 +169,7 @@ package iotanalytics {
     def updatePipeline(params: UpdatePipelineRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * An activity that adds other attributes based on existing attributes in the message.
+  /** An activity that adds other attributes based on existing attributes in the message.
     */
   @js.native
   trait AddAttributesActivity extends js.Object {
@@ -196,8 +195,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Contains informations about errors.
+  /** Contains informations about errors.
     */
   @js.native
   trait BatchPutMessageErrorEntry extends js.Object {
@@ -237,7 +235,6 @@ package iotanalytics {
         "channelName" -> channelName.asInstanceOf[js.Any],
         "messages" -> messages.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutMessageRequest]
     }
   }
@@ -274,26 +271,22 @@ package iotanalytics {
         "pipelineName" -> pipelineName.asInstanceOf[js.Any],
         "reprocessingId" -> reprocessingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelPipelineReprocessingRequest]
     }
   }
 
   @js.native
-  trait CancelPipelineReprocessingResponse extends js.Object {}
+  trait CancelPipelineReprocessingResponse extends js.Object
 
   object CancelPipelineReprocessingResponse {
     @inline
-    def apply(
-    ): CancelPipelineReprocessingResponse = {
+    def apply(): CancelPipelineReprocessingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelPipelineReprocessingResponse]
     }
   }
 
-  /**
-    * A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.
+  /** A collection of data from an MQTT topic. Channels archive the raw, unprocessed messages before publishing the data to a pipeline.
     */
   @js.native
   trait Channel extends js.Object {
@@ -329,8 +322,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The activity that determines the source of the messages to be processed.
+  /** The activity that determines the source of the messages to be processed.
     */
   @js.native
   trait ChannelActivity extends js.Object {
@@ -356,8 +348,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Statistics information about the channel.
+  /** Statistics information about the channel.
     */
   @js.native
   trait ChannelStatistics extends js.Object {
@@ -385,8 +376,7 @@ package iotanalytics {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
-  /**
-    * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+  /** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
     */
   @js.native
   trait ChannelStorage extends js.Object {
@@ -407,8 +397,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Where channel data is stored.
+  /** Where channel data is stored.
     */
   @js.native
   trait ChannelStorageSummary extends js.Object {
@@ -429,8 +418,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * A summary of information about a channel.
+  /** A summary of information about a channel.
     */
   @js.native
   trait ChannelSummary extends js.Object {
@@ -469,8 +457,7 @@ package iotanalytics {
     @inline def values = js.Array(ACU_1, ACU_2)
   }
 
-  /**
-    * Information needed to run the "containerAction" to produce data set contents.
+  /** Information needed to run the "containerAction" to produce data set contents.
     */
   @js.native
   trait ContainerDatasetAction extends js.Object {
@@ -561,7 +548,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDatasetContentRequest]
     }
   }
@@ -732,8 +718,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+  /** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
     */
   @js.native
   trait CustomerManagedChannelS3Storage extends js.Object {
@@ -759,8 +744,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Used to store channel data in an S3 bucket that you manage.
+  /** Used to store channel data in an S3 bucket that you manage.
     */
   @js.native
   trait CustomerManagedChannelS3StorageSummary extends js.Object {
@@ -784,8 +768,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+  /** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
     */
   @js.native
   trait CustomerManagedDatastoreS3Storage extends js.Object {
@@ -811,8 +794,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Used to store data store data in an S3 bucket that you manage.
+  /** Used to store data store data in an S3 bucket that you manage.
     */
   @js.native
   trait CustomerManagedDatastoreS3StorageSummary extends js.Object {
@@ -836,8 +818,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Information about a data set.
+  /** Information about a data set.
     */
   @js.native
   trait Dataset extends js.Object {
@@ -882,8 +863,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * A "DatasetAction" object that specifies how data set contents are automatically created.
+  /** A "DatasetAction" object that specifies how data set contents are automatically created.
     */
   @js.native
   trait DatasetAction extends js.Object {
@@ -907,8 +887,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Information about the action which automatically creates the data set's contents.
+  /** Information about the action which automatically creates the data set's contents.
     */
   @js.native
   trait DatasetActionSummary extends js.Object {
@@ -938,8 +917,7 @@ package iotanalytics {
     @inline def values = js.Array(QUERY, CONTAINER)
   }
 
-  /**
-    * The destination to which data set contents are delivered.
+  /** The destination to which data set contents are delivered.
     */
   @js.native
   trait DatasetContentDeliveryDestination extends js.Object {
@@ -960,8 +938,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * When data set contents are created they are delivered to destination specified here.
+  /** When data set contents are created they are delivered to destination specified here.
     */
   @js.native
   trait DatasetContentDeliveryRule extends js.Object {
@@ -994,8 +971,7 @@ package iotanalytics {
     @inline def values = js.Array(CREATING, SUCCEEDED, FAILED)
   }
 
-  /**
-    * The state of the data set contents and the reason they are in this state.
+  /** The state of the data set contents and the reason they are in this state.
     */
   @js.native
   trait DatasetContentStatus extends js.Object {
@@ -1016,8 +992,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Summary information about data set contents.
+  /** Summary information about data set contents.
     */
   @js.native
   trait DatasetContentSummary extends js.Object {
@@ -1047,8 +1022,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The data set whose latest contents are used as input to the notebook or application.
+  /** The data set whose latest contents are used as input to the notebook or application.
     */
   @js.native
   trait DatasetContentVersionValue extends js.Object {
@@ -1063,13 +1037,11 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DatasetContentVersionValue]
     }
   }
 
-  /**
-    * The reference to a data set entry.
+  /** The reference to a data set entry.
     */
   @js.native
   trait DatasetEntry extends js.Object {
@@ -1100,8 +1072,7 @@ package iotanalytics {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
-  /**
-    * A summary of information about a data set.
+  /** A summary of information about a data set.
     */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -1134,8 +1105,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The "DatasetTrigger" that specifies when the data set is automatically updated.
+  /** The "DatasetTrigger" that specifies when the data set is automatically updated.
     */
   @js.native
   trait DatasetTrigger extends js.Object {
@@ -1156,8 +1126,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Information about a data store.
+  /** Information about a data store.
     */
   @js.native
   trait Datastore extends js.Object {
@@ -1193,8 +1162,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The 'datastore' activity that specifies where to store the processed data.
+  /** The 'datastore' activity that specifies where to store the processed data.
     */
   @js.native
   trait DatastoreActivity extends js.Object {
@@ -1212,13 +1180,11 @@ package iotanalytics {
         "datastoreName" -> datastoreName.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DatastoreActivity]
     }
   }
 
-  /**
-    * Statistical information about the data store.
+  /** Statistical information about the data store.
     */
   @js.native
   trait DatastoreStatistics extends js.Object {
@@ -1246,8 +1212,7 @@ package iotanalytics {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
-  /**
-    * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+  /** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
     */
   @js.native
   trait DatastoreStorage extends js.Object {
@@ -1268,8 +1233,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Where data store data is stored.
+  /** Where data store data is stored.
     */
   @js.native
   trait DatastoreStorageSummary extends js.Object {
@@ -1290,8 +1254,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * A summary of information about a data store.
+  /** A summary of information about a data store.
     */
   @js.native
   trait DatastoreSummary extends js.Object {
@@ -1334,7 +1297,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
@@ -1373,7 +1335,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetRequest]
     }
   }
@@ -1391,7 +1352,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatastoreRequest]
     }
   }
@@ -1409,13 +1369,11 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePipelineRequest]
     }
   }
 
-  /**
-    * Used to limit data to that which has arrived since the last execution of the action.
+  /** Used to limit data to that which has arrived since the last execution of the action.
     */
   @js.native
   trait DeltaTime extends js.Object {
@@ -1433,7 +1391,6 @@ package iotanalytics {
         "offsetSeconds" -> offsetSeconds.asInstanceOf[js.Any],
         "timeExpression" -> timeExpression.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeltaTime]
     }
   }
@@ -1491,7 +1448,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetRequest]
     }
   }
@@ -1553,14 +1509,12 @@ package iotanalytics {
   }
 
   @js.native
-  trait DescribeLoggingOptionsRequest extends js.Object {}
+  trait DescribeLoggingOptionsRequest extends js.Object
 
   object DescribeLoggingOptionsRequest {
     @inline
-    def apply(
-    ): DescribeLoggingOptionsRequest = {
+    def apply(): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
   }
@@ -1594,7 +1548,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePipelineRequest]
     }
   }
@@ -1615,8 +1568,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * An activity that adds data from the AWS IoT device registry to your message.
+  /** An activity that adds data from the AWS IoT device registry to your message.
     */
   @js.native
   trait DeviceRegistryEnrichActivity extends js.Object {
@@ -1648,8 +1600,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * An activity that adds information from the AWS IoT Device Shadows service to a message.
+  /** An activity that adds information from the AWS IoT Device Shadows service to a message.
     */
   @js.native
   trait DeviceShadowEnrichActivity extends js.Object {
@@ -1681,8 +1632,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The estimated size of the resource.
+  /** The estimated size of the resource.
     */
   @js.native
   trait EstimatedResourceSize extends js.Object {
@@ -1703,8 +1653,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * An activity that filters a message based on its attributes.
+  /** An activity that filters a message based on its attributes.
     */
   @js.native
   trait FilterActivity extends js.Object {
@@ -1773,8 +1722,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+  /** Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
     */
   @js.native
   trait GlueConfiguration extends js.Object {
@@ -1792,13 +1740,11 @@ package iotanalytics {
         "databaseName" -> databaseName.asInstanceOf[js.Any],
         "tableName" -> tableName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GlueConfiguration]
     }
   }
 
-  /**
-    * Configuration information for delivery of data set contents to AWS IoT Events.
+  /** Configuration information for delivery of data set contents to AWS IoT Events.
     */
   @js.native
   trait IotEventsDestinationConfiguration extends js.Object {
@@ -1816,13 +1762,11 @@ package iotanalytics {
         "inputName" -> inputName.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[IotEventsDestinationConfiguration]
     }
   }
 
-  /**
-    * An activity that runs a Lambda function to modify the message.
+  /** An activity that runs a Lambda function to modify the message.
     */
   @js.native
   trait LambdaActivity extends js.Object {
@@ -2065,7 +2009,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2094,8 +2037,7 @@ package iotanalytics {
     @inline def values = js.Array(ERROR)
   }
 
-  /**
-    * Information about logging options.
+  /** Information about logging options.
     */
   @js.native
   trait LoggingOptions extends js.Object {
@@ -2116,13 +2058,11 @@ package iotanalytics {
         "level" -> level.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LoggingOptions]
     }
   }
 
-  /**
-    * An activity that computes an arithmetic expression using the message's attributes.
+  /** An activity that computes an arithmetic expression using the message's attributes.
     */
   @js.native
   trait MathActivity extends js.Object {
@@ -2151,8 +2091,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Information about a message.
+  /** Information about a message.
     */
   @js.native
   trait Message extends js.Object {
@@ -2170,13 +2109,11 @@ package iotanalytics {
         "messageId" -> messageId.asInstanceOf[js.Any],
         "payload" -> payload.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Message]
     }
   }
 
-  /**
-    * The value of the variable as a structure that specifies an output file URI.
+  /** The value of the variable as a structure that specifies an output file URI.
     */
   @js.native
   trait OutputFileUriValue extends js.Object {
@@ -2191,13 +2128,11 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "fileName" -> fileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OutputFileUriValue]
     }
   }
 
-  /**
-    * Contains information about a pipeline.
+  /** Contains information about a pipeline.
     */
   @js.native
   trait Pipeline extends js.Object {
@@ -2230,8 +2165,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * An activity that performs a transformation on a message.
+  /** An activity that performs a transformation on a message.
     */
   @js.native
   trait PipelineActivity extends js.Object {
@@ -2276,8 +2210,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * A summary of information about a pipeline.
+  /** A summary of information about a pipeline.
     */
   @js.native
   trait PipelineSummary extends js.Object {
@@ -2317,13 +2250,11 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "loggingOptions" -> loggingOptions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutLoggingOptionsRequest]
     }
   }
 
-  /**
-    * Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
+  /** Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
     */
   @js.native
   trait QueryFilter extends js.Object {
@@ -2341,8 +2272,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * An activity that removes attributes from a message.
+  /** An activity that removes attributes from a message.
     */
   @js.native
   trait RemoveAttributesActivity extends js.Object {
@@ -2379,8 +2309,7 @@ package iotanalytics {
     @inline def values = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
   }
 
-  /**
-    * Information about pipeline reprocessing.
+  /** Information about pipeline reprocessing.
     */
   @js.native
   trait ReprocessingSummary extends js.Object {
@@ -2404,8 +2333,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The configuration of the resource used to execute the "containerAction".
+  /** The configuration of the resource used to execute the "containerAction".
     */
   @js.native
   trait ResourceConfiguration extends js.Object {
@@ -2423,13 +2351,11 @@ package iotanalytics {
         "computeType" -> computeType.asInstanceOf[js.Any],
         "volumeSizeInGB" -> volumeSizeInGB.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceConfiguration]
     }
   }
 
-  /**
-    * How long, in days, message data is kept.
+  /** How long, in days, message data is kept.
     */
   @js.native
   trait RetentionPeriod extends js.Object {
@@ -2466,7 +2392,6 @@ package iotanalytics {
         "payloads" -> payloads.asInstanceOf[js.Any],
         "pipelineActivity" -> pipelineActivity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RunPipelineActivityRequest]
     }
   }
@@ -2490,8 +2415,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Configuration information for delivery of data set contents to Amazon S3.
+  /** Configuration information for delivery of data set contents to Amazon S3.
     */
   @js.native
   trait S3DestinationConfiguration extends js.Object {
@@ -2563,8 +2487,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * The schedule for when to trigger an update.
+  /** The schedule for when to trigger an update.
     */
   @js.native
   trait Schedule extends js.Object {
@@ -2582,8 +2505,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Creates a new message using only the specified attributes from the original message.
+  /** Creates a new message using only the specified attributes from the original message.
     */
   @js.native
   trait SelectAttributesActivity extends js.Object {
@@ -2609,72 +2531,59 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+  /** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
     */
   @js.native
-  trait ServiceManagedChannelS3Storage extends js.Object {}
+  trait ServiceManagedChannelS3Storage extends js.Object
 
   object ServiceManagedChannelS3Storage {
     @inline
-    def apply(
-    ): ServiceManagedChannelS3Storage = {
+    def apply(): ServiceManagedChannelS3Storage = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ServiceManagedChannelS3Storage]
     }
   }
 
-  /**
-    * Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+  /** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
     */
   @js.native
-  trait ServiceManagedChannelS3StorageSummary extends js.Object {}
+  trait ServiceManagedChannelS3StorageSummary extends js.Object
 
   object ServiceManagedChannelS3StorageSummary {
     @inline
-    def apply(
-    ): ServiceManagedChannelS3StorageSummary = {
+    def apply(): ServiceManagedChannelS3StorageSummary = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ServiceManagedChannelS3StorageSummary]
     }
   }
 
-  /**
-    * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+  /** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
     */
   @js.native
-  trait ServiceManagedDatastoreS3Storage extends js.Object {}
+  trait ServiceManagedDatastoreS3Storage extends js.Object
 
   object ServiceManagedDatastoreS3Storage {
     @inline
-    def apply(
-    ): ServiceManagedDatastoreS3Storage = {
+    def apply(): ServiceManagedDatastoreS3Storage = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ServiceManagedDatastoreS3Storage]
     }
   }
 
-  /**
-    * Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+  /** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
     */
   @js.native
-  trait ServiceManagedDatastoreS3StorageSummary extends js.Object {}
+  trait ServiceManagedDatastoreS3StorageSummary extends js.Object
 
   object ServiceManagedDatastoreS3StorageSummary {
     @inline
-    def apply(
-    ): ServiceManagedDatastoreS3StorageSummary = {
+    def apply(): ServiceManagedDatastoreS3StorageSummary = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ServiceManagedDatastoreS3StorageSummary]
     }
   }
 
-  /**
-    * The SQL query to modify the message.
+  /** The SQL query to modify the message.
     */
   @js.native
   trait SqlQueryDatasetAction extends js.Object {
@@ -2737,8 +2646,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * A set of key/value pairs which are used to manage the resource.
+  /** A set of key/value pairs which are used to manage the resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2756,7 +2664,6 @@ package iotanalytics {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2777,26 +2684,22 @@ package iotanalytics {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Information about the data set whose content generation triggers the new data set content generation.
+  /** Information about the data set whose content generation triggers the new data set content generation.
     */
   @js.native
   trait TriggeringDataset extends js.Object {
@@ -2811,7 +2714,6 @@ package iotanalytics {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TriggeringDataset]
     }
   }
@@ -2832,20 +2734,17 @@ package iotanalytics {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -2947,13 +2846,11 @@ package iotanalytics {
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePipelineRequest]
     }
   }
 
-  /**
-    * An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+  /** An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
     */
   @js.native
   trait Variable extends js.Object {
@@ -2985,8 +2882,7 @@ package iotanalytics {
     }
   }
 
-  /**
-    * Information about the versioning of data set contents.
+  /** Information about the versioning of data set contents.
     */
   @js.native
   trait VersioningConfiguration extends js.Object {

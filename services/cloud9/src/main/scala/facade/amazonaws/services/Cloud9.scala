@@ -154,7 +154,6 @@ package cloud9 {
         "permissions" -> permissions.asInstanceOf[js.Any],
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEnvironmentMembershipRequest]
     }
   }
@@ -191,20 +190,17 @@ package cloud9 {
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEnvironmentMembershipRequest]
     }
   }
 
   @js.native
-  trait DeleteEnvironmentMembershipResult extends js.Object {}
+  trait DeleteEnvironmentMembershipResult extends js.Object
 
   object DeleteEnvironmentMembershipResult {
     @inline
-    def apply(
-    ): DeleteEnvironmentMembershipResult = {
+    def apply(): DeleteEnvironmentMembershipResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEnvironmentMembershipResult]
     }
   }
@@ -222,20 +218,17 @@ package cloud9 {
       val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEnvironmentRequest]
     }
   }
 
   @js.native
-  trait DeleteEnvironmentResult extends js.Object {}
+  trait DeleteEnvironmentResult extends js.Object
 
   object DeleteEnvironmentResult {
     @inline
-    def apply(
-    ): DeleteEnvironmentResult = {
+    def apply(): DeleteEnvironmentResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEnvironmentResult]
     }
   }
@@ -300,7 +293,6 @@ package cloud9 {
       val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEnvironmentStatusRequest]
     }
   }
@@ -337,7 +329,6 @@ package cloud9 {
       val __obj = js.Dynamic.literal(
         "environmentIds" -> environmentIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEnvironmentsRequest]
     }
   }
@@ -358,8 +349,7 @@ package cloud9 {
     }
   }
 
-  /**
-    * Information about an AWS Cloud9 development environment.
+  /** Information about an AWS Cloud9 development environment.
     */
   @js.native
   trait Environment extends js.Object {
@@ -398,8 +388,7 @@ package cloud9 {
     }
   }
 
-  /**
-    * Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment.
+  /** Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment.
     */
   @js.native
   trait EnvironmentLifecycle extends js.Object {
@@ -435,8 +424,7 @@ package cloud9 {
     @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
   }
 
-  /**
-    * Information about an environment member for an AWS Cloud9 development environment.
+  /** Information about an environment member for an AWS Cloud9 development environment.
     */
   @js.native
   trait EnvironmentMember extends js.Object {
@@ -540,7 +528,6 @@ package cloud9 {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -580,8 +567,7 @@ package cloud9 {
     @inline def values = js.Array(owner, `read-write`, `read-only`)
   }
 
-  /**
-    * Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user.
+  /** Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user.
     */
   @js.native
   trait Tag extends js.Object {
@@ -599,7 +585,6 @@ package cloud9 {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -620,20 +605,17 @@ package cloud9 {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -654,20 +636,17 @@ package cloud9 {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -691,7 +670,6 @@ package cloud9 {
         "permissions" -> permissions.asInstanceOf[js.Any],
         "userArn" -> userArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEnvironmentMembershipRequest]
     }
   }
@@ -737,14 +715,12 @@ package cloud9 {
   }
 
   @js.native
-  trait UpdateEnvironmentResult extends js.Object {}
+  trait UpdateEnvironmentResult extends js.Object
 
   object UpdateEnvironmentResult {
     @inline
-    def apply(
-    ): UpdateEnvironmentResult = {
+    def apply(): UpdateEnvironmentResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEnvironmentResult]
     }
   }

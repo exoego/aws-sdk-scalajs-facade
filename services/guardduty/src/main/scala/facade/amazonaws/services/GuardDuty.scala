@@ -212,26 +212,22 @@ package guardduty {
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
         "MasterId" -> MasterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcceptInvitationRequest]
     }
   }
 
   @js.native
-  trait AcceptInvitationResponse extends js.Object {}
+  trait AcceptInvitationResponse extends js.Object
 
   object AcceptInvitationResponse {
     @inline
-    def apply(
-    ): AcceptInvitationResponse = {
+    def apply(): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
   }
 
-  /**
-    * Contains information on the current access control policies for the bucket.
+  /** Contains information on the current access control policies for the bucket.
     */
   @js.native
   trait AccessControlList extends js.Object {
@@ -252,8 +248,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the access keys.
+  /** Contains information about the access keys.
     */
   @js.native
   trait AccessKeyDetails extends js.Object {
@@ -280,8 +275,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the account.
+  /** Contains information about the account.
     */
   @js.native
   trait AccountDetail extends js.Object {
@@ -299,13 +293,11 @@ package guardduty {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Email" -> Email.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AccountDetail]
     }
   }
 
-  /**
-    * Contains information about the account level permissions on the S3 bucket.
+  /** Contains information about the account level permissions on the S3 bucket.
     */
   @js.native
   trait AccountLevelPermissions extends js.Object {
@@ -323,8 +315,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about actions.
+  /** Contains information about actions.
     */
   @js.native
   trait Action extends js.Object {
@@ -354,8 +345,7 @@ package guardduty {
     }
   }
 
-  /**
-    * The account within the organization specified as the GuardDuty delegated administrator.
+  /** The account within the organization specified as the GuardDuty delegated administrator.
     */
   @js.native
   trait AdminAccount extends js.Object {
@@ -401,26 +391,22 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ArchiveFindingsRequest]
     }
   }
 
   @js.native
-  trait ArchiveFindingsResponse extends js.Object {}
+  trait ArchiveFindingsResponse extends js.Object
 
   object ArchiveFindingsResponse {
     @inline
-    def apply(
-    ): ArchiveFindingsResponse = {
+    def apply(): ArchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ArchiveFindingsResponse]
     }
   }
 
-  /**
-    * Contains information about the API operation.
+  /** Contains information about the API operation.
     */
   @js.native
   trait AwsApiCallAction extends js.Object {
@@ -450,8 +436,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html|S3 Block Public Access]] for more information.
+  /** Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html|S3 Block Public Access]] for more information.
     */
   @js.native
   trait BlockPublicAccess extends js.Object {
@@ -478,8 +463,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the bucket level permissions for the S3 bucket.
+  /** Contains information about the bucket level permissions for the S3 bucket.
     */
   @js.native
   trait BucketLevelPermissions extends js.Object {
@@ -503,8 +487,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the current bucket policies for the S3 bucket.
+  /** Contains information on the current bucket policies for the S3 bucket.
     */
   @js.native
   trait BucketPolicy extends js.Object {
@@ -525,8 +508,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the city associated with the IP address.
+  /** Contains information about the city associated with the IP address.
     */
   @js.native
   trait City extends js.Object {
@@ -544,8 +526,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the status of CloudTrail as a data source for the detector.
+  /** Contains information on the status of CloudTrail as a data source for the detector.
     */
   @js.native
   trait CloudTrailConfigurationResult extends js.Object {
@@ -560,13 +541,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloudTrailConfigurationResult]
     }
   }
 
-  /**
-    * Contains information about the condition.
+  /** Contains information about the condition.
     */
   @js.native
   trait Condition extends js.Object {
@@ -617,8 +596,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the country where the remote IP address is located.
+  /** Contains information about the country where the remote IP address is located.
     */
   @js.native
   trait Country extends js.Object {
@@ -737,7 +715,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateFilterResponse]
     }
   }
@@ -791,7 +768,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateIPSetResponse]
     }
   }
@@ -812,7 +788,6 @@ package guardduty {
         "AccountDetails" -> AccountDetails.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMembersRequest]
     }
   }
@@ -830,7 +805,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMembersResponse]
     }
   }
@@ -875,7 +849,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "DestinationId" -> DestinationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePublishingDestinationResponse]
     }
   }
@@ -902,14 +875,12 @@ package guardduty {
   }
 
   @js.native
-  trait CreateSampleFindingsResponse extends js.Object {}
+  trait CreateSampleFindingsResponse extends js.Object
 
   object CreateSampleFindingsResponse {
     @inline
-    def apply(
-    ): CreateSampleFindingsResponse = {
+    def apply(): CreateSampleFindingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateSampleFindingsResponse]
     }
   }
@@ -963,13 +934,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateThreatIntelSetResponse]
     }
   }
 
-  /**
-    * Contains information on the status of DNS logs as a data source.
+  /** Contains information on the status of DNS logs as a data source.
     */
   @js.native
   trait DNSLogsConfigurationResult extends js.Object {
@@ -984,7 +953,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DNSLogsConfigurationResult]
     }
   }
@@ -1000,8 +968,7 @@ package guardduty {
     @inline def values = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS)
   }
 
-  /**
-    * Contains information about which data sources are enabled.
+  /** Contains information about which data sources are enabled.
     */
   @js.native
   trait DataSourceConfigurations extends js.Object {
@@ -1019,8 +986,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the status of data sources for the detector.
+  /** Contains information on the status of data sources for the detector.
     */
   @js.native
   trait DataSourceConfigurationsResult extends js.Object {
@@ -1044,7 +1010,6 @@ package guardduty {
         "FlowLogs" -> FlowLogs.asInstanceOf[js.Any],
         "S3Logs" -> S3Logs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataSourceConfigurationsResult]
     }
   }
@@ -1071,7 +1036,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeclineInvitationsRequest]
     }
   }
@@ -1089,13 +1053,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeclineInvitationsResponse]
     }
   }
 
-  /**
-    * Contains information on the server side encryption method used in the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html|S3 Server-Side Encryption]] for more information.
+  /** Contains information on the server side encryption method used in the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html|S3 Server-Side Encryption]] for more information.
     */
   @js.native
   trait DefaultServerSideEncryption extends js.Object {
@@ -1129,20 +1091,17 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDetectorRequest]
     }
   }
 
   @js.native
-  trait DeleteDetectorResponse extends js.Object {}
+  trait DeleteDetectorResponse extends js.Object
 
   object DeleteDetectorResponse {
     @inline
-    def apply(
-    ): DeleteDetectorResponse = {
+    def apply(): DeleteDetectorResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDetectorResponse]
     }
   }
@@ -1163,20 +1122,17 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFilterRequest]
     }
   }
 
   @js.native
-  trait DeleteFilterResponse extends js.Object {}
+  trait DeleteFilterResponse extends js.Object
 
   object DeleteFilterResponse {
     @inline
-    def apply(
-    ): DeleteFilterResponse = {
+    def apply(): DeleteFilterResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFilterResponse]
     }
   }
@@ -1197,20 +1153,17 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIPSetRequest]
     }
   }
 
   @js.native
-  trait DeleteIPSetResponse extends js.Object {}
+  trait DeleteIPSetResponse extends js.Object
 
   object DeleteIPSetResponse {
     @inline
-    def apply(
-    ): DeleteIPSetResponse = {
+    def apply(): DeleteIPSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteIPSetResponse]
     }
   }
@@ -1228,7 +1181,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInvitationsRequest]
     }
   }
@@ -1246,7 +1198,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInvitationsResponse]
     }
   }
@@ -1267,7 +1218,6 @@ package guardduty {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMembersRequest]
     }
   }
@@ -1285,7 +1235,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMembersResponse]
     }
   }
@@ -1306,20 +1255,17 @@ package guardduty {
         "DestinationId" -> DestinationId.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePublishingDestinationRequest]
     }
   }
 
   @js.native
-  trait DeletePublishingDestinationResponse extends js.Object {}
+  trait DeletePublishingDestinationResponse extends js.Object
 
   object DeletePublishingDestinationResponse {
     @inline
-    def apply(
-    ): DeletePublishingDestinationResponse = {
+    def apply(): DeletePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePublishingDestinationResponse]
     }
   }
@@ -1340,20 +1286,17 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteThreatIntelSetRequest]
     }
   }
 
   @js.native
-  trait DeleteThreatIntelSetResponse extends js.Object {}
+  trait DeleteThreatIntelSetResponse extends js.Object
 
   object DeleteThreatIntelSetResponse {
     @inline
-    def apply(
-    ): DeleteThreatIntelSetResponse = {
+    def apply(): DeleteThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteThreatIntelSetResponse]
     }
   }
@@ -1371,7 +1314,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeOrganizationConfigurationRequest]
     }
   }
@@ -1416,7 +1358,6 @@ package guardduty {
         "DestinationId" -> DestinationId.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePublishingDestinationRequest]
     }
   }
@@ -1446,13 +1387,11 @@ package guardduty {
         "PublishingFailureStartTimestamp" -> PublishingFailureStartTimestamp.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePublishingDestinationResponse]
     }
   }
 
-  /**
-    * Contains information about the publishing destination, including the ID, type, and status.
+  /** Contains information about the publishing destination, including the ID, type, and status.
     */
   @js.native
   trait Destination extends js.Object {
@@ -1473,13 +1412,11 @@ package guardduty {
         "DestinationType" -> DestinationType.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Destination]
     }
   }
 
-  /**
-    * Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
+  /** Contains the Amazon Resource Name (ARN) of the resource to publish to, such as an S3 bucket, and the ARN of the KMS key to use to encrypt published findings.
     */
   @js.native
   trait DestinationProperties extends js.Object {
@@ -1530,20 +1467,17 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "AdminAccountId" -> AdminAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableOrganizationAdminAccountRequest]
     }
   }
 
   @js.native
-  trait DisableOrganizationAdminAccountResponse extends js.Object {}
+  trait DisableOrganizationAdminAccountResponse extends js.Object
 
   object DisableOrganizationAdminAccountResponse {
     @inline
-    def apply(
-    ): DisableOrganizationAdminAccountResponse = {
+    def apply(): DisableOrganizationAdminAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableOrganizationAdminAccountResponse]
     }
   }
@@ -1561,20 +1495,17 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
     }
   }
 
   @js.native
-  trait DisassociateFromMasterAccountResponse extends js.Object {}
+  trait DisassociateFromMasterAccountResponse extends js.Object
 
   object DisassociateFromMasterAccountResponse {
     @inline
-    def apply(
-    ): DisassociateFromMasterAccountResponse = {
+    def apply(): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
   }
@@ -1595,7 +1526,6 @@ package guardduty {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateMembersRequest]
     }
   }
@@ -1613,13 +1543,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateMembersResponse]
     }
   }
 
-  /**
-    * Contains information about the DNS_REQUEST action described in this finding.
+  /** Contains information about the DNS_REQUEST action described in this finding.
     */
   @js.native
   trait DnsRequestAction extends js.Object {
@@ -1637,8 +1565,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the domain.
+  /** Contains information about the domain.
     */
   @js.native
   trait DomainDetails extends js.Object {
@@ -1669,26 +1596,22 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "AdminAccountId" -> AdminAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableOrganizationAdminAccountRequest]
     }
   }
 
   @js.native
-  trait EnableOrganizationAdminAccountResponse extends js.Object {}
+  trait EnableOrganizationAdminAccountResponse extends js.Object
 
   object EnableOrganizationAdminAccountResponse {
     @inline
-    def apply(
-    ): EnableOrganizationAdminAccountResponse = {
+    def apply(): EnableOrganizationAdminAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableOrganizationAdminAccountResponse]
     }
   }
 
-  /**
-    * Contains information about the reason that the finding was generated.
+  /** Contains information about the reason that the finding was generated.
     */
   @js.native
   trait Evidence extends js.Object {
@@ -1724,8 +1647,7 @@ package guardduty {
     @inline def values = js.Array(NOOP, ARCHIVE)
   }
 
-  /**
-    * Contains information about the finding, which is generated when abnormal or suspicious activity is detected.
+  /** Contains information about the finding, which is generated when abnormal or suspicious activity is detected.
     */
   @js.native
   trait Finding extends js.Object {
@@ -1787,8 +1709,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the criteria used for querying findings.
+  /** Contains information about the criteria used for querying findings.
     */
   @js.native
   trait FindingCriteria extends js.Object {
@@ -1824,8 +1745,7 @@ package guardduty {
     @inline def values = js.Array(COUNT_BY_SEVERITY)
   }
 
-  /**
-    * Contains information about finding statistics.
+  /** Contains information about finding statistics.
     */
   @js.native
   trait FindingStatistics extends js.Object {
@@ -1843,8 +1763,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the status of VPC flow logs as a data source.
+  /** Contains information on the status of VPC flow logs as a data source.
     */
   @js.native
   trait FlowLogsConfigurationResult extends js.Object {
@@ -1859,13 +1778,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FlowLogsConfigurationResult]
     }
   }
 
-  /**
-    * Contains information about the location of the remote IP address.
+  /** Contains information about the location of the remote IP address.
     */
   @js.native
   trait GeoLocation extends js.Object {
@@ -1899,7 +1816,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDetectorRequest]
     }
   }
@@ -1956,7 +1872,6 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFilterRequest]
     }
   }
@@ -2031,7 +1946,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Findings" -> Findings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFindingsResponse]
     }
   }
@@ -2073,7 +1987,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "FindingStatistics" -> FindingStatistics.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFindingsStatisticsResponse]
     }
   }
@@ -2094,7 +2007,6 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIPSetRequest]
     }
   }
@@ -2130,14 +2042,12 @@ package guardduty {
   }
 
   @js.native
-  trait GetInvitationsCountRequest extends js.Object {}
+  trait GetInvitationsCountRequest extends js.Object
 
   object GetInvitationsCountRequest {
     @inline
-    def apply(
-    ): GetInvitationsCountRequest = {
+    def apply(): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
   }
@@ -2171,7 +2081,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMasterAccountRequest]
     }
   }
@@ -2189,7 +2098,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Master" -> Master.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMasterAccountResponse]
     }
   }
@@ -2210,7 +2118,6 @@ package guardduty {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMemberDetectorsRequest]
     }
   }
@@ -2231,7 +2138,6 @@ package guardduty {
         "MemberDataSourceConfigurations" -> MemberDataSourceConfigurations.asInstanceOf[js.Any],
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMemberDetectorsResponse]
     }
   }
@@ -2252,7 +2158,6 @@ package guardduty {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMembersRequest]
     }
   }
@@ -2273,7 +2178,6 @@ package guardduty {
         "Members" -> Members.asInstanceOf[js.Any],
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMembersResponse]
     }
   }
@@ -2294,7 +2198,6 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetThreatIntelSetRequest]
     }
   }
@@ -2381,8 +2284,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the EC2 instance profile.
+  /** Contains information about the EC2 instance profile.
     */
   @js.native
   trait IamInstanceProfile extends js.Object {
@@ -2403,8 +2305,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the details of an instance.
+  /** Contains information about the details of an instance.
     */
   @js.native
   trait InstanceDetails extends js.Object {
@@ -2458,8 +2359,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the invitation to become a member account.
+  /** Contains information about the invitation to become a member account.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -2526,7 +2426,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InviteMembersResponse]
     }
   }
@@ -2919,7 +2818,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -2985,8 +2883,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the local IP address of the connection.
+  /** Contains information about the local IP address of the connection.
     */
   @js.native
   trait LocalIpDetails extends js.Object {
@@ -3004,8 +2901,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the port for the local connection.
+  /** Contains information about the port for the local connection.
     */
   @js.native
   trait LocalPortDetails extends js.Object {
@@ -3026,8 +2922,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the master account and invitation.
+  /** Contains information about the master account and invitation.
     */
   @js.native
   trait Master extends js.Object {
@@ -3054,8 +2949,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the member account.
+  /** Contains information about the member account.
     */
   @js.native
   trait Member extends js.Object {
@@ -3093,8 +2987,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on which data sources are enabled for a member account.
+  /** Contains information on which data sources are enabled for a member account.
     */
   @js.native
   trait MemberDataSourceConfiguration extends js.Object {
@@ -3112,13 +3005,11 @@ package guardduty {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "DataSources" -> DataSources.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MemberDataSourceConfiguration]
     }
   }
 
-  /**
-    * Contains information about the NETWORK_CONNECTION action described in the finding.
+  /** Contains information about the NETWORK_CONNECTION action described in the finding.
     */
   @js.native
   trait NetworkConnectionAction extends js.Object {
@@ -3154,8 +3045,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the elastic network interface of the EC2 instance.
+  /** Contains information about the elastic network interface of the EC2 instance.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -3209,8 +3099,7 @@ package guardduty {
     @inline def values = js.Array(ASC, DESC)
   }
 
-  /**
-    * Contains information about the ISP organization of the remote IP address.
+  /** Contains information about the ISP organization of the remote IP address.
     */
   @js.native
   trait Organization extends js.Object {
@@ -3237,8 +3126,7 @@ package guardduty {
     }
   }
 
-  /**
-    * An object that contains information on which data sources will be configured to be automatically enabled for new members within the organization.
+  /** An object that contains information on which data sources will be configured to be automatically enabled for new members within the organization.
     */
   @js.native
   trait OrganizationDataSourceConfigurations extends js.Object {
@@ -3256,8 +3144,7 @@ package guardduty {
     }
   }
 
-  /**
-    * An object that contains information on which data sources are automatically enabled for new members within the organization.
+  /** An object that contains information on which data sources are automatically enabled for new members within the organization.
     */
   @js.native
   trait OrganizationDataSourceConfigurationsResult extends js.Object {
@@ -3272,13 +3159,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "S3Logs" -> S3Logs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OrganizationDataSourceConfigurationsResult]
     }
   }
 
-  /**
-    * Describes whether S3 data event logs will be automatically enabled for new members of the organization.
+  /** Describes whether S3 data event logs will be automatically enabled for new members of the organization.
     */
   @js.native
   trait OrganizationS3LogsConfiguration extends js.Object {
@@ -3293,13 +3178,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OrganizationS3LogsConfiguration]
     }
   }
 
-  /**
-    * The current configuration of S3 data event logs as a data source for the organization.
+  /** The current configuration of S3 data event logs as a data source for the organization.
     */
   @js.native
   trait OrganizationS3LogsConfigurationResult extends js.Object {
@@ -3314,13 +3197,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OrganizationS3LogsConfigurationResult]
     }
   }
 
-  /**
-    * Contains information on the owner of the bucket.
+  /** Contains information on the owner of the bucket.
     */
   @js.native
   trait Owner extends js.Object {
@@ -3338,8 +3219,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about how permissions are configured for the S3 bucket.
+  /** Contains information about how permissions are configured for the S3 bucket.
     */
   @js.native
   trait PermissionConfiguration extends js.Object {
@@ -3360,8 +3240,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the PORT_PROBE action described in the finding.
+  /** Contains information about the PORT_PROBE action described in the finding.
     */
   @js.native
   trait PortProbeAction extends js.Object {
@@ -3382,8 +3261,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the port probe details.
+  /** Contains information about the port probe details.
     */
   @js.native
   trait PortProbeDetail extends js.Object {
@@ -3407,8 +3285,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains other private IP address information of the EC2 instance.
+  /** Contains other private IP address information of the EC2 instance.
     */
   @js.native
   trait PrivateIpAddressDetails extends js.Object {
@@ -3429,8 +3306,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the product code for the EC2 instance.
+  /** Contains information about the product code for the EC2 instance.
     */
   @js.native
   trait ProductCode extends js.Object {
@@ -3451,8 +3327,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Describes the public access policies that apply to the S3 bucket.
+  /** Describes the public access policies that apply to the S3 bucket.
     */
   @js.native
   trait PublicAccess extends js.Object {
@@ -3484,8 +3359,7 @@ package guardduty {
     @inline def values = js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED)
   }
 
-  /**
-    * Contains information about the remote IP address of the connection.
+  /** Contains information about the remote IP address of the connection.
     */
   @js.native
   trait RemoteIpDetails extends js.Object {
@@ -3515,8 +3389,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the remote port.
+  /** Contains information about the remote port.
     */
   @js.native
   trait RemotePortDetails extends js.Object {
@@ -3537,8 +3410,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+  /** Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding.
     */
   @js.native
   trait Resource extends js.Object {
@@ -3565,8 +3437,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the S3 bucket.
+  /** Contains information on the S3 bucket.
     */
   @js.native
   trait S3BucketDetail extends js.Object {
@@ -3605,8 +3476,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Describes whether S3 data event logs will be enabled as a data source.
+  /** Describes whether S3 data event logs will be enabled as a data source.
     */
   @js.native
   trait S3LogsConfiguration extends js.Object {
@@ -3621,13 +3491,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Enable" -> Enable.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3LogsConfiguration]
     }
   }
 
-  /**
-    * Describes whether S3 data event logs will be enabled as a data source.
+  /** Describes whether S3 data event logs will be enabled as a data source.
     */
   @js.native
   trait S3LogsConfigurationResult extends js.Object {
@@ -3642,13 +3510,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3LogsConfigurationResult]
     }
   }
 
-  /**
-    * Contains information about the security groups associated with the EC2 instance.
+  /** Contains information about the security groups associated with the EC2 instance.
     */
   @js.native
   trait SecurityGroup extends js.Object {
@@ -3669,8 +3535,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains additional information about the generated finding.
+  /** Contains additional information about the generated finding.
     */
   @js.native
   trait Service extends js.Object {
@@ -3715,8 +3580,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the criteria used for sorting findings.
+  /** Contains information about the criteria used for sorting findings.
     */
   @js.native
   trait SortCriteria extends js.Object {
@@ -3753,7 +3617,6 @@ package guardduty {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMonitoringMembersRequest]
     }
   }
@@ -3771,7 +3634,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMonitoringMembersResponse]
     }
   }
@@ -3792,7 +3654,6 @@ package guardduty {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopMonitoringMembersRequest]
     }
   }
@@ -3810,13 +3671,11 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopMonitoringMembersResponse]
     }
   }
 
-  /**
-    * Contains information about a tag associated with the EC2 instance.
+  /** Contains information about a tag associated with the EC2 instance.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3853,20 +3712,17 @@ package guardduty {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -3898,8 +3754,7 @@ package guardduty {
     @inline def values = js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
   }
 
-  /**
-    * An instance of a threat intelligence detail that constitutes evidence for the finding.
+  /** An instance of a threat intelligence detail that constitutes evidence for the finding.
     */
   @js.native
   trait ThreatIntelligenceDetail extends js.Object {
@@ -3920,8 +3775,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains the total usage with the corresponding currency unit for that value.
+  /** Contains the total usage with the corresponding currency unit for that value.
     */
   @js.native
   trait Total extends js.Object {
@@ -3958,26 +3812,22 @@ package guardduty {
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnarchiveFindingsRequest]
     }
   }
 
   @js.native
-  trait UnarchiveFindingsResponse extends js.Object {}
+  trait UnarchiveFindingsResponse extends js.Object
 
   object UnarchiveFindingsResponse {
     @inline
-    def apply(
-    ): UnarchiveFindingsResponse = {
+    def apply(): UnarchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UnarchiveFindingsResponse]
     }
   }
 
-  /**
-    * Contains information about the accounts that weren't processed.
+  /** Contains information about the accounts that weren't processed.
     */
   @js.native
   trait UnprocessedAccount extends js.Object {
@@ -3995,7 +3845,6 @@ package guardduty {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Result" -> Result.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnprocessedAccount]
     }
   }
@@ -4016,20 +3865,17 @@ package guardduty {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -4062,14 +3908,12 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateDetectorResponse extends js.Object {}
+  trait UpdateDetectorResponse extends js.Object
 
   object UpdateDetectorResponse {
     @inline
-    def apply(
-    ): UpdateDetectorResponse = {
+    def apply(): UpdateDetectorResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDetectorResponse]
     }
   }
@@ -4120,7 +3964,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateFilterResponse]
     }
   }
@@ -4153,14 +3996,12 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateFindingsFeedbackResponse extends js.Object {}
+  trait UpdateFindingsFeedbackResponse extends js.Object
 
   object UpdateFindingsFeedbackResponse {
     @inline
-    def apply(
-    ): UpdateFindingsFeedbackResponse = {
+    def apply(): UpdateFindingsFeedbackResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateFindingsFeedbackResponse]
     }
   }
@@ -4196,14 +4037,12 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateIPSetResponse extends js.Object {}
+  trait UpdateIPSetResponse extends js.Object
 
   object UpdateIPSetResponse {
     @inline
-    def apply(
-    ): UpdateIPSetResponse = {
+    def apply(): UpdateIPSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateIPSetResponse]
     }
   }
@@ -4245,7 +4084,6 @@ package guardduty {
       val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateMemberDetectorsResponse]
     }
   }
@@ -4275,14 +4113,12 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateOrganizationConfigurationResponse extends js.Object {}
+  trait UpdateOrganizationConfigurationResponse extends js.Object
 
   object UpdateOrganizationConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateOrganizationConfigurationResponse = {
+    def apply(): UpdateOrganizationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateOrganizationConfigurationResponse]
     }
   }
@@ -4312,14 +4148,12 @@ package guardduty {
   }
 
   @js.native
-  trait UpdatePublishingDestinationResponse extends js.Object {}
+  trait UpdatePublishingDestinationResponse extends js.Object
 
   object UpdatePublishingDestinationResponse {
     @inline
-    def apply(
-    ): UpdatePublishingDestinationResponse = {
+    def apply(): UpdatePublishingDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdatePublishingDestinationResponse]
     }
   }
@@ -4355,20 +4189,17 @@ package guardduty {
   }
 
   @js.native
-  trait UpdateThreatIntelSetResponse extends js.Object {}
+  trait UpdateThreatIntelSetResponse extends js.Object
 
   object UpdateThreatIntelSetResponse {
     @inline
-    def apply(
-    ): UpdateThreatIntelSetResponse = {
+    def apply(): UpdateThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateThreatIntelSetResponse]
     }
   }
 
-  /**
-    * Contains information on the total of usage based on account IDs.
+  /** Contains information on the total of usage based on account IDs.
     */
   @js.native
   trait UsageAccountResult extends js.Object {
@@ -4389,8 +4220,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information about the criteria used to query usage statistics.
+  /** Contains information about the criteria used to query usage statistics.
     */
   @js.native
   trait UsageCriteria extends js.Object {
@@ -4416,8 +4246,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the result of usage based on data source type.
+  /** Contains information on the result of usage based on data source type.
     */
   @js.native
   trait UsageDataSourceResult extends js.Object {
@@ -4438,8 +4267,7 @@ package guardduty {
     }
   }
 
-  /**
-    * Contains information on the sum of usage based on an AWS resource.
+  /** Contains information on the sum of usage based on an AWS resource.
     */
   @js.native
   trait UsageResourceResult extends js.Object {
@@ -4471,8 +4299,7 @@ package guardduty {
     @inline def values = js.Array(SUM_BY_ACCOUNT, SUM_BY_DATA_SOURCE, SUM_BY_RESOURCE, TOP_RESOURCES)
   }
 
-  /**
-    * Contains the result of GuardDuty usage. If a UsageStatisticType is provided the result for other types will be null.
+  /** Contains the result of GuardDuty usage. If a UsageStatisticType is provided the result for other types will be null.
     */
   @js.native
   trait UsageStatistics extends js.Object {

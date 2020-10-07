@@ -171,8 +171,7 @@ package personalize {
     def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
   }
 
-  /**
-    * Describes a custom algorithm.
+  /** Describes a custom algorithm.
     */
   @js.native
   trait Algorithm extends js.Object {
@@ -217,8 +216,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes an algorithm image.
+  /** Describes an algorithm image.
     */
   @js.native
   trait AlgorithmImage extends js.Object {
@@ -241,8 +239,7 @@ package personalize {
     }
   }
 
-  /**
-    * When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.
+  /** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.
     */
   @js.native
   trait AutoMLConfig extends js.Object {
@@ -263,8 +260,7 @@ package personalize {
     }
   }
 
-  /**
-    * When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric.
+  /** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric.
     */
   @js.native
   trait AutoMLResult extends js.Object {
@@ -282,8 +278,7 @@ package personalize {
     }
   }
 
-  /**
-    * Contains information on a batch inference job.
+  /** Contains information on a batch inference job.
     */
   @js.native
   trait BatchInferenceJob extends js.Object {
@@ -337,8 +332,7 @@ package personalize {
     }
   }
 
-  /**
-    * The configuration details of a batch inference job.
+  /** The configuration details of a batch inference job.
     */
   @js.native
   trait BatchInferenceJobConfig extends js.Object {
@@ -356,8 +350,7 @@ package personalize {
     }
   }
 
-  /**
-    * The input configuration of a batch inference job.
+  /** The input configuration of a batch inference job.
     */
   @js.native
   trait BatchInferenceJobInput extends js.Object {
@@ -372,13 +365,11 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "s3DataSource" -> s3DataSource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchInferenceJobInput]
     }
   }
 
-  /**
-    * The output configuration parameters of a batch inference job.
+  /** The output configuration parameters of a batch inference job.
     */
   @js.native
   trait BatchInferenceJobOutput extends js.Object {
@@ -393,13 +384,11 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "s3DataDestination" -> s3DataDestination.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchInferenceJobOutput]
     }
   }
 
-  /**
-    * A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.
+  /** A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.
     */
   @js.native
   trait BatchInferenceJobSummary extends js.Object {
@@ -435,8 +424,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>.
+  /** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>.
     */
   @js.native
   trait Campaign extends js.Object {
@@ -481,8 +469,7 @@ package personalize {
     }
   }
 
-  /**
-    * The configuration details of a campaign.
+  /** The configuration details of a campaign.
     */
   @js.native
   trait CampaignConfig extends js.Object {
@@ -500,8 +487,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API.
+  /** Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API.
     */
   @js.native
   trait CampaignSummary extends js.Object {
@@ -534,8 +520,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API.
+  /** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API.
     */
   @js.native
   trait CampaignUpdateSummary extends js.Object {
@@ -571,8 +556,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides the name and range of a categorical hyperparameter.
+  /** Provides the name and range of a categorical hyperparameter.
     */
   @js.native
   trait CategoricalHyperParameterRange extends js.Object {
@@ -593,8 +577,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides the name and range of a continuous hyperparameter.
+  /** Provides the name and range of a continuous hyperparameter.
     */
   @js.native
   trait ContinuousHyperParameterRange extends js.Object {
@@ -778,7 +761,6 @@ package personalize {
         "jobName" -> jobName.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDatasetImportJobRequest]
     }
   }
@@ -821,7 +803,6 @@ package personalize {
         "name" -> name.asInstanceOf[js.Any],
         "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDatasetRequest]
     }
   }
@@ -858,7 +839,6 @@ package personalize {
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEventTrackerRequest]
     }
   }
@@ -901,7 +881,6 @@ package personalize {
         "filterExpression" -> filterExpression.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateFilterRequest]
     }
   }
@@ -938,7 +917,6 @@ package personalize {
         "name" -> name.asInstanceOf[js.Any],
         "schema" -> schema.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSchemaRequest]
     }
   }
@@ -1048,8 +1026,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes the data source that contains the data to upload to a dataset.
+  /** Describes the data source that contains the data to upload to a dataset.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -1067,8 +1044,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides metadata for a dataset.
+  /** Provides metadata for a dataset.
     */
   @js.native
   trait Dataset extends js.Object {
@@ -1107,9 +1083,8 @@ package personalize {
     }
   }
 
-  /**
-    * A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.
-    *  You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.
+  /** A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.
+    * You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.
     */
   @js.native
   trait DatasetGroup extends js.Object {
@@ -1148,8 +1123,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API.
+  /** Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API.
     */
   @js.native
   trait DatasetGroupSummary extends js.Object {
@@ -1182,9 +1156,8 @@ package personalize {
     }
   }
 
-  /**
-    * Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.
-    *  A dataset import job can be in one of the following states:
+  /** Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.
+    * A dataset import job can be in one of the following states:
     * * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
     */
   @js.native
@@ -1227,8 +1200,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API.
+  /** Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API.
     */
   @js.native
   trait DatasetImportJobSummary extends js.Object {
@@ -1261,8 +1233,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>.
+  /** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>.
     */
   @js.native
   trait DatasetSchema extends js.Object {
@@ -1292,8 +1263,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API.
+  /** Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API.
     */
   @js.native
   trait DatasetSchemaSummary extends js.Object {
@@ -1320,8 +1290,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API.
+  /** Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API.
     */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -1354,8 +1323,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).
+  /** Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).
     */
   @js.native
   trait DefaultCategoricalHyperParameterRange extends js.Object {
@@ -1379,8 +1347,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).
+  /** Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).
     */
   @js.native
   trait DefaultContinuousHyperParameterRange extends js.Object {
@@ -1407,8 +1374,7 @@ package personalize {
     }
   }
 
-  /**
-    * Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.
+  /** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.
     */
   @js.native
   trait DefaultHyperParameterRanges extends js.Object {
@@ -1432,8 +1398,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).
+  /** Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).
     */
   @js.native
   trait DefaultIntegerHyperParameterRange extends js.Object {
@@ -1473,7 +1438,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCampaignRequest]
     }
   }
@@ -1491,7 +1455,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetGroupRequest]
     }
   }
@@ -1509,7 +1472,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "datasetArn" -> datasetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDatasetRequest]
     }
   }
@@ -1527,7 +1489,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "eventTrackerArn" -> eventTrackerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventTrackerRequest]
     }
   }
@@ -1545,7 +1506,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "filterArn" -> filterArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFilterRequest]
     }
   }
@@ -1563,7 +1523,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSchemaRequest]
     }
   }
@@ -1581,7 +1540,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSolutionRequest]
     }
   }
@@ -1599,7 +1557,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "algorithmArn" -> algorithmArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAlgorithmRequest]
     }
   }
@@ -1633,7 +1590,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "batchInferenceJobArn" -> batchInferenceJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBatchInferenceJobRequest]
     }
   }
@@ -1667,7 +1623,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCampaignRequest]
     }
   }
@@ -1701,7 +1656,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetGroupRequest]
     }
   }
@@ -1735,7 +1689,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "datasetImportJobArn" -> datasetImportJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetImportJobRequest]
     }
   }
@@ -1769,7 +1722,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "datasetArn" -> datasetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDatasetRequest]
     }
   }
@@ -1803,7 +1755,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "eventTrackerArn" -> eventTrackerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEventTrackerRequest]
     }
   }
@@ -1837,7 +1788,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "featureTransformationArn" -> featureTransformationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFeatureTransformationRequest]
     }
   }
@@ -1871,7 +1821,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "filterArn" -> filterArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFilterRequest]
     }
   }
@@ -1905,7 +1854,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "recipeArn" -> recipeArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRecipeRequest]
     }
   }
@@ -1939,7 +1887,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSchemaRequest]
     }
   }
@@ -1973,7 +1920,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSolutionRequest]
     }
   }
@@ -2007,7 +1953,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSolutionVersionRequest]
     }
   }
@@ -2028,8 +1973,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides information about an event tracker.
+  /** Provides information about an event tracker.
     */
   @js.native
   trait EventTracker extends js.Object {
@@ -2068,8 +2012,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API.
+  /** Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API.
     */
   @js.native
   trait EventTrackerSummary extends js.Object {
@@ -2099,8 +2042,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.
+  /** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.
     */
   @js.native
   trait FeatureTransformation extends js.Object {
@@ -2133,8 +2075,7 @@ package personalize {
     }
   }
 
-  /**
-    * Contains information on a recommendation filter, including its ARN, status, and filter expression.
+  /** Contains information on a recommendation filter, including its ARN, status, and filter expression.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2173,8 +2114,7 @@ package personalize {
     }
   }
 
-  /**
-    * A short summary of a filter's attributes.
+  /** A short summary of a filter's attributes.
     */
   @js.native
   trait FilterSummary extends js.Object {
@@ -2223,7 +2163,6 @@ package personalize {
       val __obj = js.Dynamic.literal(
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSolutionMetricsRequest]
     }
   }
@@ -2247,8 +2186,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes.
+  /** Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes.
     */
   @js.native
   trait HPOConfig extends js.Object {
@@ -2272,8 +2210,7 @@ package personalize {
     }
   }
 
-  /**
-    * The metric to optimize during hyperparameter optimization (HPO).
+  /** The metric to optimize during hyperparameter optimization (HPO).
     */
   @js.native
   trait HPOObjective extends js.Object {
@@ -2297,8 +2234,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes the resource configuration for hyperparameter optimization (HPO).
+  /** Describes the resource configuration for hyperparameter optimization (HPO).
     */
   @js.native
   trait HPOResourceConfig extends js.Object {
@@ -2319,8 +2255,7 @@ package personalize {
     }
   }
 
-  /**
-    * Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued.
+  /** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued.
     */
   @js.native
   trait HyperParameterRanges extends js.Object {
@@ -2344,8 +2279,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides the name and range of an integer-valued hyperparameter.
+  /** Provides the name and range of an integer-valued hyperparameter.
     */
   @js.native
   trait IntegerHyperParameterRange extends js.Object {
@@ -2814,8 +2748,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.
+  /** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.
     */
   @js.native
   trait Recipe extends js.Object {
@@ -2865,8 +2798,7 @@ package personalize {
     @inline def values = js.Array(SERVICE)
   }
 
-  /**
-    * Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API.
+  /** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API.
     */
   @js.native
   trait RecipeSummary extends js.Object {
@@ -2896,8 +2828,7 @@ package personalize {
     }
   }
 
-  /**
-    * The configuration details of an Amazon S3 input or output bucket.
+  /** The configuration details of an Amazon S3 input or output bucket.
     */
   @js.native
   trait S3DataConfig extends js.Object {
@@ -2920,8 +2851,7 @@ package personalize {
     }
   }
 
-  /**
-    * An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign.
+  /** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign.
     */
   @js.native
   trait Solution extends js.Object {
@@ -2975,8 +2905,7 @@ package personalize {
     }
   }
 
-  /**
-    * Describes the configuration properties for the solution.
+  /** Describes the configuration properties for the solution.
     */
   @js.native
   trait SolutionConfig extends js.Object {
@@ -3006,8 +2935,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API.
+  /** Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API.
     */
   @js.native
   trait SolutionSummary extends js.Object {
@@ -3037,8 +2965,7 @@ package personalize {
     }
   }
 
-  /**
-    * An object that provides information about a specific version of a <a>Solution</a>.
+  /** An object that provides information about a specific version of a <a>Solution</a>.
     */
   @js.native
   trait SolutionVersion extends js.Object {
@@ -3098,8 +3025,7 @@ package personalize {
     }
   }
 
-  /**
-    * Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API.
+  /** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API.
     */
   @js.native
   trait SolutionVersionSummary extends js.Object {
@@ -3138,8 +3064,7 @@ package personalize {
     @inline def values = js.Array(FULL, UPDATE)
   }
 
-  /**
-    * If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.
+  /** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.
     */
   @js.native
   trait TunedHPOParams extends js.Object {

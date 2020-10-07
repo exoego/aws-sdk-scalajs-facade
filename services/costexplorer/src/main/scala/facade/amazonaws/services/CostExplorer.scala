@@ -158,8 +158,7 @@ package costexplorer {
     @inline def values = js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS)
   }
 
-  /**
-    * The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
+  /** The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
     */
   @js.native
   trait CostCategory extends js.Object {
@@ -194,9 +193,8 @@ package costexplorer {
     }
   }
 
-  /**
-    * A reference to a Cost Category containing only enough information to identify the Cost Category.
-    *  You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.
+  /** A reference to a Cost Category containing only enough information to identify the Cost Category.
+    * You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.
     */
   @js.native
   trait CostCategoryReference extends js.Object {
@@ -226,8 +224,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
+  /** Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
     */
   @js.native
   trait CostCategoryRule extends js.Object {
@@ -245,13 +242,11 @@ package costexplorer {
         "Rule" -> Rule.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CostCategoryRule]
     }
   }
 
-  /**
-    * The rule schema version in this particular Cost Category.
+  /** The rule schema version in this particular Cost Category.
     */
   @js.native
   sealed trait CostCategoryRuleVersion extends js.Any
@@ -261,8 +256,7 @@ package costexplorer {
     @inline def values = js.Array(`CostCategoryExpression.v1`)
   }
 
-  /**
-    * The Cost Categories values used for filtering the costs.
+  /** The Cost Categories values used for filtering the costs.
     */
   @js.native
   trait CostCategoryValues extends js.Object {
@@ -283,8 +277,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The amount of instance usage that a reservation covered.
+  /** The amount of instance usage that a reservation covered.
     */
   @js.native
   trait Coverage extends js.Object {
@@ -308,8 +301,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Reservation coverage for a specified period, in hours.
+  /** Reservation coverage for a specified period, in hours.
     */
   @js.native
   trait CoverageByTime extends js.Object {
@@ -333,8 +325,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * How much it costs to run an instance.
+  /** How much it costs to run an instance.
     */
   @js.native
   trait CoverageCost extends js.Object {
@@ -352,8 +343,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * How long a running instance either used a reservation or was On-Demand.
+  /** How long a running instance either used a reservation or was On-Demand.
     */
   @js.native
   trait CoverageHours extends js.Object {
@@ -380,9 +370,8 @@ package costexplorer {
     }
   }
 
-  /**
-    * The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.
-    *  For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html|Modifying Reserved Instances]] in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+  /** The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.
+    * For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html|Modifying Reserved Instances]] in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
     */
   @js.native
   trait CoverageNormalizedUnits extends js.Object {
@@ -428,7 +417,6 @@ package costexplorer {
         "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCostCategoryDefinitionRequest]
     }
   }
@@ -452,8 +440,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Context about the current instance.
+  /** Context about the current instance.
     */
   @js.native
   trait CurrentInstance extends js.Object {
@@ -501,8 +488,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The time period that you want the usage and costs for.
+  /** The time period that you want the usage and costs for.
     */
   @js.native
   trait DateInterval extends js.Object {
@@ -520,7 +506,6 @@ package costexplorer {
         "End" -> End.asInstanceOf[js.Any],
         "Start" -> Start.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DateInterval]
     }
   }
@@ -538,7 +523,6 @@ package costexplorer {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCostCategoryDefinitionRequest]
     }
   }
@@ -632,42 +616,40 @@ package costexplorer {
     val SAVINGS_PLAN_ARN = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
     val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
 
-    @inline def values =
-      js.Array(
-        AZ,
-        INSTANCE_TYPE,
-        LINKED_ACCOUNT,
-        LINKED_ACCOUNT_NAME,
-        OPERATION,
-        PURCHASE_TYPE,
-        REGION,
-        SERVICE,
-        SERVICE_CODE,
-        USAGE_TYPE,
-        USAGE_TYPE_GROUP,
-        RECORD_TYPE,
-        OPERATING_SYSTEM,
-        TENANCY,
-        SCOPE,
-        PLATFORM,
-        SUBSCRIPTION_ID,
-        LEGAL_ENTITY_NAME,
-        DEPLOYMENT_OPTION,
-        DATABASE_ENGINE,
-        CACHE_ENGINE,
-        INSTANCE_TYPE_FAMILY,
-        BILLING_ENTITY,
-        RESERVATION_ID,
-        RESOURCE_ID,
-        RIGHTSIZING_TYPE,
-        SAVINGS_PLANS_TYPE,
-        SAVINGS_PLAN_ARN,
-        PAYMENT_OPTION
-      )
+    @inline def values = js.Array(
+      AZ,
+      INSTANCE_TYPE,
+      LINKED_ACCOUNT,
+      LINKED_ACCOUNT_NAME,
+      OPERATION,
+      PURCHASE_TYPE,
+      REGION,
+      SERVICE,
+      SERVICE_CODE,
+      USAGE_TYPE,
+      USAGE_TYPE_GROUP,
+      RECORD_TYPE,
+      OPERATING_SYSTEM,
+      TENANCY,
+      SCOPE,
+      PLATFORM,
+      SUBSCRIPTION_ID,
+      LEGAL_ENTITY_NAME,
+      DEPLOYMENT_OPTION,
+      DATABASE_ENGINE,
+      CACHE_ENGINE,
+      INSTANCE_TYPE_FAMILY,
+      BILLING_ENTITY,
+      RESERVATION_ID,
+      RESOURCE_ID,
+      RIGHTSIZING_TYPE,
+      SAVINGS_PLANS_TYPE,
+      SAVINGS_PLAN_ARN,
+      PAYMENT_OPTION
+    )
   }
 
-  /**
-    * The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.
+  /** The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.
     */
   @js.native
   trait DimensionValues extends js.Object {
@@ -691,8 +673,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.
+  /** The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.
     */
   @js.native
   trait DimensionValuesWithAttributes extends js.Object {
@@ -713,8 +694,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details about the Amazon EC2 instances that AWS recommends that you purchase.
+  /** Details about the Amazon EC2 instances that AWS recommends that you purchase.
     */
   @js.native
   trait EC2InstanceDetails extends js.Object {
@@ -753,8 +733,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details on the Amazon EC2 Resource.
+  /** Details on the Amazon EC2 Resource.
     */
   @js.native
   trait EC2ResourceDetails extends js.Object {
@@ -796,8 +775,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Utilization metrics of the instance.
+  /** Utilization metrics of the instance.
     */
   @js.native
   trait EC2ResourceUtilization extends js.Object {
@@ -821,8 +799,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+  /** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
     */
   @js.native
   trait EC2Specification extends js.Object {
@@ -840,8 +817,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details about the Amazon ES instances that AWS recommends that you purchase.
+  /** Details about the Amazon ES instances that AWS recommends that you purchase.
     */
   @js.native
   trait ESInstanceDetails extends js.Object {
@@ -871,8 +847,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details about the Amazon ElastiCache instances that AWS recommends that you purchase.
+  /** Details about the Amazon ElastiCache instances that AWS recommends that you purchase.
     */
   @js.native
   trait ElastiCacheInstanceDetails extends js.Object {
@@ -905,17 +880,16 @@ package costexplorer {
     }
   }
 
-  /**
-    * Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
+  /** Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
     * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:
-    *  <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
-    *  The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
-    *  <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
-    *  <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
+    * <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
+    * The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
+    * <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
+    * <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
     *
     * '''Note:'''Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.
     * <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code>
-    *  </li>'''Note:'''For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
+    * </li>'''Note:'''For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
     */
   @js.native
   trait Expression extends js.Object {
@@ -948,8 +922,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The forecast created for your query.
+  /** The forecast created for your query.
     */
   @js.native
   trait ForecastResult extends js.Object {
@@ -1192,8 +1165,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * You can use the following request parameters to query for how much of your instance usage a reservation covered.
+  /** You can use the following request parameters to query for how much of your instance usage a reservation covered.
     */
   @js.native
   trait GetReservationCoverageRequest extends js.Object {
@@ -1758,8 +1730,7 @@ package costexplorer {
     @inline def values = js.Array(DAILY, MONTHLY, HOURLY)
   }
 
-  /**
-    * One level of grouped data in the results.
+  /** One level of grouped data in the results.
     */
   @js.native
   trait Group extends js.Object {
@@ -1780,8 +1751,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.
+  /** Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.
     */
   @js.native
   trait GroupDefinition extends js.Object {
@@ -1812,8 +1782,7 @@ package costexplorer {
     @inline def values = js.Array(DIMENSION, TAG, COST_CATEGORY)
   }
 
-  /**
-    * Details about the instances that AWS recommends that you purchase.
+  /** Details about the instances that AWS recommends that you purchase.
     */
   @js.native
   trait InstanceDetails extends js.Object {
@@ -1921,8 +1890,7 @@ package costexplorer {
     @inline def values = js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT)
   }
 
-  /**
-    * The aggregated value for a metric.
+  /** The aggregated value for a metric.
     */
   @js.native
   trait MetricValue extends js.Object {
@@ -1943,8 +1911,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details on the modification recommendation.
+  /** Details on the modification recommendation.
     */
   @js.native
   trait ModifyRecommendationDetail extends js.Object {
@@ -1984,8 +1951,7 @@ package costexplorer {
     @inline def values = js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
   }
 
-  /**
-    * Details about the Amazon RDS instances that AWS recommends that you purchase.
+  /** Details about the Amazon RDS instances that AWS recommends that you purchase.
     */
   @js.native
   trait RDSInstanceDetails extends js.Object {
@@ -2036,8 +2002,7 @@ package costexplorer {
     @inline def values = js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY)
   }
 
-  /**
-    * Details about the Amazon Redshift instances that AWS recommends that you purchase.
+  /** Details about the Amazon Redshift instances that AWS recommends that you purchase.
     */
   @js.native
   trait RedshiftInstanceDetails extends js.Object {
@@ -2067,8 +2032,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The aggregated numbers for your reservation usage.
+  /** The aggregated numbers for your reservation usage.
     */
   @js.native
   trait ReservationAggregates extends js.Object {
@@ -2125,8 +2089,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * A group of reservations that share a set of attributes.
+  /** A group of reservations that share a set of attributes.
     */
   @js.native
   trait ReservationCoverageGroup extends js.Object {
@@ -2147,8 +2110,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * A specific reservation that AWS recommends for purchase.
+  /** A specific reservation that AWS recommends for purchase.
     */
   @js.native
   trait ReservationPurchaseRecommendation extends js.Object {
@@ -2184,8 +2146,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details about your recommended reservation purchase.
+  /** Details about your recommended reservation purchase.
     */
   @js.native
   trait ReservationPurchaseRecommendationDetail extends js.Object {
@@ -2257,8 +2218,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation.
+  /** Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation.
     */
   @js.native
   trait ReservationPurchaseRecommendationMetadata extends js.Object {
@@ -2279,8 +2239,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase.
+  /** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase.
     */
   @js.native
   trait ReservationPurchaseRecommendationSummary extends js.Object {
@@ -2304,8 +2263,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * A group of reservations that share a set of attributes.
+  /** A group of reservations that share a set of attributes.
     */
   @js.native
   trait ReservationUtilizationGroup extends js.Object {
@@ -2332,8 +2290,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details on the resource.
+  /** Details on the resource.
     */
   @js.native
   trait ResourceDetails extends js.Object {
@@ -2351,8 +2308,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Resource utilization of current resource.
+  /** Resource utilization of current resource.
     */
   @js.native
   trait ResourceUtilization extends js.Object {
@@ -2370,8 +2326,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The result that is associated with a time period.
+  /** The result that is associated with a time period.
     */
   @js.native
   trait ResultByTime extends js.Object {
@@ -2398,8 +2353,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Recommendations to rightsize resources.
+  /** Recommendations to rightsize resources.
     */
   @js.native
   trait RightsizingRecommendation extends js.Object {
@@ -2429,8 +2383,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
+  /** Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
     */
   @js.native
   trait RightsizingRecommendationConfiguration extends js.Object {
@@ -2448,13 +2401,11 @@ package costexplorer {
         "BenefitsConsidered" -> BenefitsConsidered.asInstanceOf[js.Any],
         "RecommendationTarget" -> RecommendationTarget.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RightsizingRecommendationConfiguration]
     }
   }
 
-  /**
-    * Metadata for this recommendation set.
+  /** Metadata for this recommendation set.
     */
   @js.native
   trait RightsizingRecommendationMetadata extends js.Object {
@@ -2478,8 +2429,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Summary of rightsizing recommendations
+  /** Summary of rightsizing recommendations
     */
   @js.native
   trait RightsizingRecommendationSummary extends js.Object {
@@ -2515,8 +2465,7 @@ package costexplorer {
     @inline def values = js.Array(TERMINATE, MODIFY)
   }
 
-  /**
-    * The amortized amount of Savings Plans purchased in a specific account during a specific time interval.
+  /** The amortized amount of Savings Plans purchased in a specific account during a specific time interval.
     */
   @js.native
   trait SavingsPlansAmortizedCommitment extends js.Object {
@@ -2540,8 +2489,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.
+  /** The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.
     */
   @js.native
   trait SavingsPlansCoverage extends js.Object {
@@ -2565,8 +2513,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account.
+  /** Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account.
     */
   @js.native
   trait SavingsPlansCoverageData extends js.Object {
@@ -2593,8 +2540,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Attribute details on a specific Savings Plan.
+  /** Attribute details on a specific Savings Plan.
     */
   @js.native
   trait SavingsPlansDetails extends js.Object {
@@ -2618,8 +2564,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Contains your request parameters, Savings Plan Recommendations Summary, and Details.
+  /** Contains your request parameters, Savings Plan Recommendations Summary, and Details.
     */
   @js.native
   trait SavingsPlansPurchaseRecommendation extends js.Object {
@@ -2655,8 +2600,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details for your recommended Savings Plans.
+  /** Details for your recommended Savings Plans.
     */
   @js.native
   trait SavingsPlansPurchaseRecommendationDetail extends js.Object {
@@ -2719,8 +2663,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Metadata about your Savings Plans Purchase Recommendations.
+  /** Metadata about your Savings Plans Purchase Recommendations.
     */
   @js.native
   trait SavingsPlansPurchaseRecommendationMetadata extends js.Object {
@@ -2741,8 +2684,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Summary metrics for your Savings Plans Purchase Recommendations.
+  /** Summary metrics for your Savings Plans Purchase Recommendations.
     */
   @js.native
   trait SavingsPlansPurchaseRecommendationSummary extends js.Object {
@@ -2790,8 +2732,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account.
+  /** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account.
     */
   @js.native
   trait SavingsPlansSavings extends js.Object {
@@ -2812,8 +2753,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The measurement of how well you are using your existing Savings Plans.
+  /** The measurement of how well you are using your existing Savings Plans.
     */
   @js.native
   trait SavingsPlansUtilization extends js.Object {
@@ -2840,8 +2780,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The aggregated utilization metrics for your Savings Plans usage.
+  /** The aggregated utilization metrics for your Savings Plans usage.
     */
   @js.native
   trait SavingsPlansUtilizationAggregates extends js.Object {
@@ -2867,8 +2806,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The amount of Savings Plans utilization, in hours.
+  /** The amount of Savings Plans utilization, in hours.
     */
   @js.native
   trait SavingsPlansUtilizationByTime extends js.Object {
@@ -2897,8 +2835,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+  /** A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
     */
   @js.native
   trait SavingsPlansUtilizationDetail extends js.Object {
@@ -2928,8 +2865,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Hardware specifications for the service that you want recommendations for.
+  /** Hardware specifications for the service that you want recommendations for.
     */
   @js.native
   trait ServiceSpecification extends js.Object {
@@ -2956,8 +2892,7 @@ package costexplorer {
     @inline def values = js.Array(COMPUTE_SP, EC2_INSTANCE_SP)
   }
 
-  /**
-    * The values that are available for a tag.
+  /** The values that are available for a tag.
     */
   @js.native
   trait TagValues extends js.Object {
@@ -2981,8 +2916,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * Details on recommended instance.
+  /** Details on recommended instance.
     */
   @js.native
   trait TargetInstance extends js.Object {
@@ -3024,8 +2958,7 @@ package costexplorer {
     @inline def values = js.Array(ONE_YEAR, THREE_YEARS)
   }
 
-  /**
-    * Details on termination recommendation.
+  /** Details on termination recommendation.
     */
   @js.native
   trait TerminateRecommendationDetail extends js.Object {
@@ -3065,7 +2998,6 @@ package costexplorer {
         "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCostCategoryDefinitionRequest]
     }
   }
@@ -3089,8 +3021,7 @@ package costexplorer {
     }
   }
 
-  /**
-    * The amount of utilization, in hours.
+  /** The amount of utilization, in hours.
     */
   @js.native
   trait UtilizationByTime extends js.Object {

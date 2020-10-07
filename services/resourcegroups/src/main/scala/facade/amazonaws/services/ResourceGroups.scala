@@ -177,8 +177,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * A resource that failed to be added to or removed from a group.
+  /** A resource that failed to be added to or removed from a group.
     */
   @js.native
   trait FailedResource extends js.Object {
@@ -317,7 +316,6 @@ package resourcegroups {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTagsInput]
     }
   }
@@ -341,10 +339,9 @@ package resourcegroups {
     }
   }
 
-  /**
-    * A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:
+  /** A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:
     * * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group.
-    *  * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
+    * * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
     */
   @js.native
   trait Group extends js.Object {
@@ -370,8 +367,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group.
+  /** A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group.
     */
   @js.native
   trait GroupConfiguration extends js.Object {
@@ -398,8 +394,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * An item in a group configuration. A group configuration can have one or more items.
+  /** An item in a group configuration. A group configuration can have one or more items.
     */
   @js.native
   trait GroupConfigurationItem extends js.Object {
@@ -422,8 +417,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * A parameter for a group configuration item.
+  /** A parameter for a group configuration item.
     */
   @js.native
   trait GroupConfigurationParameter extends js.Object {
@@ -456,8 +450,7 @@ package resourcegroups {
     @inline def values = js.Array(UPDATING, UPDATE_COMPLETE, UPDATE_FAILED)
   }
 
-  /**
-    * A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.
+  /** A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.
     */
   @js.native
   trait GroupFilter extends js.Object {
@@ -475,7 +468,6 @@ package resourcegroups {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GroupFilter]
     }
   }
@@ -489,8 +481,7 @@ package resourcegroups {
     @inline def values = js.Array(`resource-type`, `configuration-type`)
   }
 
-  /**
-    * The unique identifiers for a resource group.
+  /** The unique identifiers for a resource group.
     */
   @js.native
   trait GroupIdentifier extends js.Object {
@@ -511,8 +502,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * A mapping of a query attached to a resource group that determines the AWS resources that are members of the group.
+  /** A mapping of a query attached to a resource group that determines the AWS resources that are members of the group.
     */
   @js.native
   trait GroupQuery extends js.Object {
@@ -530,7 +520,6 @@ package resourcegroups {
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GroupQuery]
     }
   }
@@ -551,7 +540,6 @@ package resourcegroups {
         "Group" -> Group.asInstanceOf[js.Any],
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GroupResourcesInput]
     }
   }
@@ -669,8 +657,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources.
+  /** A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources.
     */
   @js.native
   trait QueryError extends js.Object {
@@ -709,8 +696,7 @@ package resourcegroups {
     @inline def values = js.Array(TAG_FILTERS_1_0, CLOUDFORMATION_STACK_1_0)
   }
 
-  /**
-    * A filter name and value pair that is used to obtain more specific results from a list of resources.
+  /** A filter name and value pair that is used to obtain more specific results from a list of resources.
     */
   @js.native
   trait ResourceFilter extends js.Object {
@@ -728,7 +714,6 @@ package resourcegroups {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceFilter]
     }
   }
@@ -741,8 +726,7 @@ package resourcegroups {
     @inline def values = js.Array(`resource-type`)
   }
 
-  /**
-    * The ARN of a resource, and its resource type.
+  /** The ARN of a resource, and its resource type.
     */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -763,8 +747,7 @@ package resourcegroups {
     }
   }
 
-  /**
-    * The query that is used to define a resource group or a search for resources.
+  /** The query that is used to define a resource group or a search for resources.
     */
   @js.native
   trait ResourceQuery extends js.Object {
@@ -782,7 +765,6 @@ package resourcegroups {
         "Query" -> Query.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceQuery]
     }
   }
@@ -849,7 +831,6 @@ package resourcegroups {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagInput]
     }
   }
@@ -889,7 +870,6 @@ package resourcegroups {
         "Group" -> Group.asInstanceOf[js.Any],
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UngroupResourcesInput]
     }
   }
@@ -929,7 +909,6 @@ package resourcegroups {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Keys" -> Keys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagInput]
     }
   }

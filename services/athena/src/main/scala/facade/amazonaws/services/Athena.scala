@@ -143,7 +143,6 @@ package athena {
       val __obj = js.Dynamic.literal(
         "NamedQueryIds" -> NamedQueryIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetNamedQueryInput]
     }
   }
@@ -180,7 +179,6 @@ package athena {
       val __obj = js.Dynamic.literal(
         "QueryExecutionIds" -> QueryExecutionIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetQueryExecutionInput]
     }
   }
@@ -204,8 +202,7 @@ package athena {
     }
   }
 
-  /**
-    * Contains metadata for a column in a table.
+  /** Contains metadata for a column in a table.
     */
   @js.native
   trait Column extends js.Object {
@@ -231,8 +228,7 @@ package athena {
     }
   }
 
-  /**
-    * Information about the columns in a query execution result.
+  /** Information about the columns in a query execution result.
     */
   @js.native
   trait ColumnInfo extends js.Object {
@@ -320,14 +316,12 @@ package athena {
   }
 
   @js.native
-  trait CreateDataCatalogOutput extends js.Object {}
+  trait CreateDataCatalogOutput extends js.Object
 
   object CreateDataCatalogOutput {
     @inline
-    def apply(
-    ): CreateDataCatalogOutput = {
+    def apply(): CreateDataCatalogOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateDataCatalogOutput]
     }
   }
@@ -409,20 +403,17 @@ package athena {
   }
 
   @js.native
-  trait CreateWorkGroupOutput extends js.Object {}
+  trait CreateWorkGroupOutput extends js.Object
 
   object CreateWorkGroupOutput {
     @inline
-    def apply(
-    ): CreateWorkGroupOutput = {
+    def apply(): CreateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateWorkGroupOutput]
     }
   }
 
-  /**
-    * Contains information about a data catalog in an AWS account.
+  /** Contains information about a data catalog in an AWS account.
     */
   @js.native
   trait DataCatalog extends js.Object {
@@ -451,8 +442,7 @@ package athena {
     }
   }
 
-  /**
-    * The summary information for the data catalog, which includes its name and type.
+  /** The summary information for the data catalog, which includes its name and type.
     */
   @js.native
   trait DataCatalogSummary extends js.Object {
@@ -483,8 +473,7 @@ package athena {
     @inline def values = js.Array(LAMBDA, GLUE, HIVE)
   }
 
-  /**
-    * Contains metadata information for a database in a data catalog.
+  /** Contains metadata information for a database in a data catalog.
     */
   @js.native
   trait Database extends js.Object {
@@ -510,8 +499,7 @@ package athena {
     }
   }
 
-  /**
-    * A piece of data (a field in the table).
+  /** A piece of data (a field in the table).
     */
   @js.native
   trait Datum extends js.Object {
@@ -542,20 +530,17 @@ package athena {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataCatalogInput]
     }
   }
 
   @js.native
-  trait DeleteDataCatalogOutput extends js.Object {}
+  trait DeleteDataCatalogOutput extends js.Object
 
   object DeleteDataCatalogOutput {
     @inline
-    def apply(
-    ): DeleteDataCatalogOutput = {
+    def apply(): DeleteDataCatalogOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDataCatalogOutput]
     }
   }
@@ -573,20 +558,17 @@ package athena {
       val __obj = js.Dynamic.literal(
         "NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNamedQueryInput]
     }
   }
 
   @js.native
-  trait DeleteNamedQueryOutput extends js.Object {}
+  trait DeleteNamedQueryOutput extends js.Object
 
   object DeleteNamedQueryOutput {
     @inline
-    def apply(
-    ): DeleteNamedQueryOutput = {
+    def apply(): DeleteNamedQueryOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteNamedQueryOutput]
     }
   }
@@ -613,20 +595,17 @@ package athena {
   }
 
   @js.native
-  trait DeleteWorkGroupOutput extends js.Object {}
+  trait DeleteWorkGroupOutput extends js.Object
 
   object DeleteWorkGroupOutput {
     @inline
-    def apply(
-    ): DeleteWorkGroupOutput = {
+    def apply(): DeleteWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWorkGroupOutput]
     }
   }
 
-  /**
-    * If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
+  /** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
     */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -672,7 +651,6 @@ package athena {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDataCatalogInput]
     }
   }
@@ -709,7 +687,6 @@ package athena {
         "CatalogName" -> CatalogName.asInstanceOf[js.Any],
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDatabaseInput]
     }
   }
@@ -743,7 +720,6 @@ package athena {
       val __obj = js.Dynamic.literal(
         "NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNamedQueryInput]
     }
   }
@@ -777,7 +753,6 @@ package athena {
       val __obj = js.Dynamic.literal(
         "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQueryExecutionInput]
     }
   }
@@ -863,7 +838,6 @@ package athena {
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTableMetadataInput]
     }
   }
@@ -897,7 +871,6 @@ package athena {
       val __obj = js.Dynamic.literal(
         "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetWorkGroupInput]
     }
   }
@@ -1211,8 +1184,7 @@ package athena {
     }
   }
 
-  /**
-    * A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query.
+  /** A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query.
     */
   @js.native
   trait NamedQuery extends js.Object {
@@ -1247,8 +1219,7 @@ package athena {
     }
   }
 
-  /**
-    * Information about a single instance of a query execution.
+  /** Information about a single instance of a query execution.
     */
   @js.native
   trait QueryExecution extends js.Object {
@@ -1287,8 +1258,7 @@ package athena {
     }
   }
 
-  /**
-    * The database and data catalog context in which the query execution occurs.
+  /** The database and data catalog context in which the query execution occurs.
     */
   @js.native
   trait QueryExecutionContext extends js.Object {
@@ -1321,8 +1291,7 @@ package athena {
     @inline def values = js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
   }
 
-  /**
-    * The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.
+  /** The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.
     */
   @js.native
   trait QueryExecutionStatistics extends js.Object {
@@ -1358,8 +1327,7 @@ package athena {
     }
   }
 
-  /**
-    * The completion date, current state, submission time, and state change reason (if applicable) for the query execution.
+  /** The completion date, current state, submission time, and state change reason (if applicable) for the query execution.
     */
   @js.native
   trait QueryExecutionStatus extends js.Object {
@@ -1386,8 +1354,7 @@ package athena {
     }
   }
 
-  /**
-    * The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings.
+  /** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings.
     */
   @js.native
   trait ResultConfiguration extends js.Object {
@@ -1408,8 +1375,7 @@ package athena {
     }
   }
 
-  /**
-    * The information about the updates in the query results, such as output location and encryption configuration for the query results.
+  /** The information about the updates in the query results, such as output location and encryption configuration for the query results.
     */
   @js.native
   trait ResultConfigurationUpdates extends js.Object {
@@ -1436,8 +1402,7 @@ package athena {
     }
   }
 
-  /**
-    * The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>.
+  /** The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>.
     */
   @js.native
   trait ResultSet extends js.Object {
@@ -1458,8 +1423,7 @@ package athena {
     }
   }
 
-  /**
-    * The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.
+  /** The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.
     */
   @js.native
   trait ResultSetMetadata extends js.Object {
@@ -1477,8 +1441,7 @@ package athena {
     }
   }
 
-  /**
-    * The rows that comprise a query result table.
+  /** The rows that comprise a query result table.
     */
   @js.native
   trait Row extends js.Object {
@@ -1565,26 +1528,22 @@ package athena {
       val __obj = js.Dynamic.literal(
         "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopQueryExecutionInput]
     }
   }
 
   @js.native
-  trait StopQueryExecutionOutput extends js.Object {}
+  trait StopQueryExecutionOutput extends js.Object
 
   object StopQueryExecutionOutput {
     @inline
-    def apply(
-    ): StopQueryExecutionOutput = {
+    def apply(): StopQueryExecutionOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopQueryExecutionOutput]
     }
   }
 
-  /**
-    * Contains metadata for a table.
+  /** Contains metadata for a table.
     */
   @js.native
   trait TableMetadata extends js.Object {
@@ -1622,8 +1581,7 @@ package athena {
     }
   }
 
-  /**
-    * A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see [[https://aws.amazon.com/answers/account-management/aws-tagging-strategies/|Tagging Best Practices]]. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.
+  /** A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see [[https://aws.amazon.com/answers/account-management/aws-tagging-strategies/|Tagging Best Practices]]. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1660,26 +1618,22 @@ package athena {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
 
-  /**
-    * Information about a named query ID that could not be processed.
+  /** Information about a named query ID that could not be processed.
     */
   @js.native
   trait UnprocessedNamedQueryId extends js.Object {
@@ -1703,8 +1657,7 @@ package athena {
     }
   }
 
-  /**
-    * Describes a query execution that failed to process.
+  /** Describes a query execution that failed to process.
     */
   @js.native
   trait UnprocessedQueryExecutionId extends js.Object {
@@ -1744,20 +1697,17 @@ package athena {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
@@ -1790,14 +1740,12 @@ package athena {
   }
 
   @js.native
-  trait UpdateDataCatalogOutput extends js.Object {}
+  trait UpdateDataCatalogOutput extends js.Object
 
   object UpdateDataCatalogOutput {
     @inline
-    def apply(
-    ): UpdateDataCatalogOutput = {
+    def apply(): UpdateDataCatalogOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDataCatalogOutput]
     }
   }
@@ -1830,20 +1778,17 @@ package athena {
   }
 
   @js.native
-  trait UpdateWorkGroupOutput extends js.Object {}
+  trait UpdateWorkGroupOutput extends js.Object
 
   object UpdateWorkGroupOutput {
     @inline
-    def apply(
-    ): UpdateWorkGroupOutput = {
+    def apply(): UpdateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateWorkGroupOutput]
     }
   }
 
-  /**
-    * A workgroup, which contains a name, description, creation time, state, and other configuration, listed under Configuration. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See [[WorkGroupConfiguration.EnforceWorkGroupConfiguration]].
+  /** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under Configuration. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See [[WorkGroupConfiguration.EnforceWorkGroupConfiguration]].
     */
   @js.native
   trait WorkGroup extends js.Object {
@@ -1875,8 +1820,7 @@ package athena {
     }
   }
 
-  /**
-    * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See EnforceWorkGroupConfiguration.
+  /** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See EnforceWorkGroupConfiguration.
     */
   @js.native
   trait WorkGroupConfiguration extends js.Object {
@@ -1906,8 +1850,7 @@ package athena {
     }
   }
 
-  /**
-    * The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
+  /** The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
     */
   @js.native
   trait WorkGroupConfigurationUpdates extends js.Object {
@@ -1949,8 +1892,7 @@ package athena {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.
+  /** The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.
     */
   @js.native
   trait WorkGroupSummary extends js.Object {

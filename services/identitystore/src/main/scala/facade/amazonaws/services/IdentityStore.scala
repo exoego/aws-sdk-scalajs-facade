@@ -57,7 +57,6 @@ package identitystore {
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "IdentityStoreId" -> IdentityStoreId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGroupRequest]
     }
   }
@@ -78,7 +77,6 @@ package identitystore {
         "DisplayName" -> DisplayName.asInstanceOf[js.Any],
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGroupResponse]
     }
   }
@@ -99,7 +97,6 @@ package identitystore {
         "IdentityStoreId" -> IdentityStoreId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserRequest]
     }
   }
@@ -120,13 +117,11 @@ package identitystore {
         "UserId" -> UserId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserResponse]
     }
   }
 
-  /**
-    * A query filter used by <code>ListUsers</code> and <code>ListGroup</code>. This filter object provides the attribute name and attribute value to search users or groups.
+  /** A query filter used by <code>ListUsers</code> and <code>ListGroup</code>. This filter object provides the attribute name and attribute value to search users or groups.
     */
   @js.native
   trait Filter extends js.Object {
@@ -144,13 +139,11 @@ package identitystore {
         "AttributePath" -> AttributePath.asInstanceOf[js.Any],
         "AttributeValue" -> AttributeValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
 
-  /**
-    * A group object, which contains a specified group’s metadata and attributes.
+  /** A group object, which contains a specified group’s metadata and attributes.
     */
   @js.native
   trait Group extends js.Object {
@@ -168,7 +161,6 @@ package identitystore {
         "DisplayName" -> DisplayName.asInstanceOf[js.Any],
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Group]
     }
   }
@@ -269,8 +261,7 @@ package identitystore {
     }
   }
 
-  /**
-    * A user object, which contains a specified user’s metadata and attributes.
+  /** A user object, which contains a specified user’s metadata and attributes.
     */
   @js.native
   trait User extends js.Object {
@@ -288,7 +279,6 @@ package identitystore {
         "UserId" -> UserId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[User]
     }
   }

@@ -148,7 +148,6 @@ package codestarnotifications {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNotificationRuleRequest]
     }
   }
@@ -191,14 +190,12 @@ package codestarnotifications {
   }
 
   @js.native
-  trait DeleteTargetResult extends js.Object {}
+  trait DeleteTargetResult extends js.Object
 
   object DeleteTargetResult {
     @inline
-    def apply(
-    ): DeleteTargetResult = {
+    def apply(): DeleteTargetResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTargetResult]
     }
   }
@@ -216,7 +213,6 @@ package codestarnotifications {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNotificationRuleRequest]
     }
   }
@@ -278,8 +274,7 @@ package codestarnotifications {
     @inline def values = js.Array(BASIC, FULL)
   }
 
-  /**
-    * Returns information about an event that has triggered a notification rule.
+  /** Returns information about an event that has triggered a notification rule.
     */
   @js.native
   trait EventTypeSummary extends js.Object {
@@ -306,8 +301,7 @@ package codestarnotifications {
     }
   }
 
-  /**
-    * Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.
+  /** Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.
     */
   @js.native
   trait ListEventTypesFilter extends js.Object {
@@ -325,7 +319,6 @@ package codestarnotifications {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListEventTypesFilter]
     }
   }
@@ -380,8 +373,7 @@ package codestarnotifications {
     }
   }
 
-  /**
-    * Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.
+  /** Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.
     */
   @js.native
   trait ListNotificationRulesFilter extends js.Object {
@@ -399,7 +391,6 @@ package codestarnotifications {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListNotificationRulesFilter]
     }
   }
@@ -469,7 +460,6 @@ package codestarnotifications {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -490,8 +480,7 @@ package codestarnotifications {
     }
   }
 
-  /**
-    * Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Amazon SNS topics as targets, you could specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of ACTIVE.
+  /** Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Amazon SNS topics as targets, you could specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of ACTIVE.
     */
   @js.native
   trait ListTargetsFilter extends js.Object {
@@ -509,7 +498,6 @@ package codestarnotifications {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTargetsFilter]
     }
   }
@@ -574,8 +562,7 @@ package codestarnotifications {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Information about a specified notification rule.
+  /** Information about a specified notification rule.
     */
   @js.native
   trait NotificationRuleSummary extends js.Object {
@@ -652,7 +639,6 @@ package codestarnotifications {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -673,8 +659,7 @@ package codestarnotifications {
     }
   }
 
-  /**
-    * Information about the SNS topics associated with a notification rule.
+  /** Information about the SNS topics associated with a notification rule.
     */
   @js.native
   trait Target extends js.Object {
@@ -707,8 +692,7 @@ package codestarnotifications {
     @inline def values = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
   }
 
-  /**
-    * Information about the targets specified for a notification rule.
+  /** Information about the targets specified for a notification rule.
     */
   @js.native
   trait TargetSummary extends js.Object {
@@ -748,7 +732,6 @@ package codestarnotifications {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "TargetAddress" -> TargetAddress.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnsubscribeRequest]
     }
   }
@@ -766,7 +749,6 @@ package codestarnotifications {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnsubscribeResult]
     }
   }
@@ -787,20 +769,17 @@ package codestarnotifications {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResult extends js.Object {}
+  trait UntagResourceResult extends js.Object
 
   object UntagResourceResult {
     @inline
-    def apply(
-    ): UntagResourceResult = {
+    def apply(): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResult]
     }
   }
@@ -839,14 +818,12 @@ package codestarnotifications {
   }
 
   @js.native
-  trait UpdateNotificationRuleResult extends js.Object {}
+  trait UpdateNotificationRuleResult extends js.Object
 
   object UpdateNotificationRuleResult {
     @inline
-    def apply(
-    ): UpdateNotificationRuleResult = {
+    def apply(): UpdateNotificationRuleResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNotificationRuleResult]
     }
   }

@@ -210,9 +210,8 @@ package elbv2 {
     def setSubnets(params: SetSubnetsInput): Request[SetSubnetsOutput] = js.native
   }
 
-  /**
-    * Information about an action.
-    *  Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
+  /** Information about an action.
+    * Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
     */
   @js.native
   trait Action extends js.Object {
@@ -281,7 +280,6 @@ package elbv2 {
         "Certificates" -> Certificates.asInstanceOf[js.Any],
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddListenerCertificatesInput]
     }
   }
@@ -318,20 +316,17 @@ package elbv2 {
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsInput]
     }
   }
 
   @js.native
-  trait AddTagsOutput extends js.Object {}
+  trait AddTagsOutput extends js.Object
 
   object AddTagsOutput {
     @inline
-    def apply(
-    ): AddTagsOutput = {
+    def apply(): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
@@ -346,8 +341,7 @@ package elbv2 {
     @inline def values = js.Array(deny, allow, authenticate)
   }
 
-  /**
-    * Request parameters to use when integrating with Amazon Cognito to authenticate users.
+  /** Request parameters to use when integrating with Amazon Cognito to authenticate users.
     */
   @js.native
   trait AuthenticateCognitoActionConfig extends js.Object {
@@ -398,8 +392,7 @@ package elbv2 {
     @inline def values = js.Array(deny, allow, authenticate)
   }
 
-  /**
-    * Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.
+  /** Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.
     */
   @js.native
   trait AuthenticateOidcActionConfig extends js.Object {
@@ -452,8 +445,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about an Availability Zone.
+  /** Information about an Availability Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -477,8 +469,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about an SSL server certificate.
+  /** Information about an SSL server certificate.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -499,8 +490,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a cipher used in a policy.
+  /** Information about a cipher used in a policy.
     */
   @js.native
   trait Cipher extends js.Object {
@@ -650,7 +640,6 @@ package elbv2 {
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateRuleInput]
     }
   }
@@ -757,20 +746,17 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteListenerInput]
     }
   }
 
   @js.native
-  trait DeleteListenerOutput extends js.Object {}
+  trait DeleteListenerOutput extends js.Object
 
   object DeleteListenerOutput {
     @inline
-    def apply(
-    ): DeleteListenerOutput = {
+    def apply(): DeleteListenerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteListenerOutput]
     }
   }
@@ -788,20 +774,17 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLoadBalancerInput]
     }
   }
 
   @js.native
-  trait DeleteLoadBalancerOutput extends js.Object {}
+  trait DeleteLoadBalancerOutput extends js.Object
 
   object DeleteLoadBalancerOutput {
     @inline
-    def apply(
-    ): DeleteLoadBalancerOutput = {
+    def apply(): DeleteLoadBalancerOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLoadBalancerOutput]
     }
   }
@@ -819,20 +802,17 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "RuleArn" -> RuleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRuleInput]
     }
   }
 
   @js.native
-  trait DeleteRuleOutput extends js.Object {}
+  trait DeleteRuleOutput extends js.Object
 
   object DeleteRuleOutput {
     @inline
-    def apply(
-    ): DeleteRuleOutput = {
+    def apply(): DeleteRuleOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRuleOutput]
     }
   }
@@ -850,20 +830,17 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTargetGroupInput]
     }
   }
 
   @js.native
-  trait DeleteTargetGroupOutput extends js.Object {}
+  trait DeleteTargetGroupOutput extends js.Object
 
   object DeleteTargetGroupOutput {
     @inline
-    def apply(
-    ): DeleteTargetGroupOutput = {
+    def apply(): DeleteTargetGroupOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTargetGroupOutput]
     }
   }
@@ -884,20 +861,17 @@ package elbv2 {
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any],
         "Targets" -> Targets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterTargetsInput]
     }
   }
 
   @js.native
-  trait DeregisterTargetsOutput extends js.Object {}
+  trait DeregisterTargetsOutput extends js.Object
 
   object DeregisterTargetsOutput {
     @inline
-    def apply(
-    ): DeregisterTargetsOutput = {
+    def apply(): DeregisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterTargetsOutput]
     }
   }
@@ -1040,7 +1014,6 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLoadBalancerAttributesInput]
     }
   }
@@ -1203,7 +1176,6 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTagsInput]
     }
   }
@@ -1237,7 +1209,6 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTargetGroupAttributesInput]
     }
   }
@@ -1342,8 +1313,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about an action that returns a custom HTTP response.
+  /** Information about an action that returns a custom HTTP response.
     */
   @js.native
   trait FixedResponseActionConfig extends js.Object {
@@ -1369,8 +1339,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a forward action.
+  /** Information about a forward action.
     */
   @js.native
   trait ForwardActionConfig extends js.Object {
@@ -1391,8 +1360,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a host header condition.
+  /** Information about a host header condition.
     */
   @js.native
   trait HostHeaderConditionConfig extends js.Object {
@@ -1410,9 +1378,8 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about an HTTP header condition.
-    *  There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
+  /** Information about an HTTP header condition.
+    * There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
     */
   @js.native
   trait HttpHeaderConditionConfig extends js.Object {
@@ -1433,9 +1400,8 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about an HTTP method condition.
-    *  HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
+  /** Information about an HTTP method condition.
+    * HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
     */
   @js.native
   trait HttpRequestMethodConditionConfig extends js.Object {
@@ -1462,8 +1428,7 @@ package elbv2 {
     @inline def values = js.Array(ipv4, dualstack)
   }
 
-  /**
-    * Information about an Elastic Load Balancing resource limit for your AWS account.
+  /** Information about an Elastic Load Balancing resource limit for your AWS account.
     */
   @js.native
   trait Limit extends js.Object {
@@ -1484,8 +1449,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a listener.
+  /** Information about a listener.
     */
   @js.native
   trait Listener extends js.Object {
@@ -1524,8 +1488,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a load balancer.
+  /** Information about a load balancer.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -1576,8 +1539,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a static IP address for a load balancer.
+  /** Information about a static IP address for a load balancer.
     */
   @js.native
   trait LoadBalancerAddress extends js.Object {
@@ -1601,8 +1563,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a load balancer attribute.
+  /** Information about a load balancer attribute.
     */
   @js.native
   trait LoadBalancerAttribute extends js.Object {
@@ -1632,8 +1593,7 @@ package elbv2 {
     @inline def values = js.Array(`internet-facing`, internal)
   }
 
-  /**
-    * Information about the state of the load balancer.
+  /** Information about the state of the load balancer.
     */
   @js.native
   trait LoadBalancerState extends js.Object {
@@ -1674,8 +1634,7 @@ package elbv2 {
     @inline def values = js.Array(application, network)
   }
 
-  /**
-    * Information to use when checking for a successful response from a target.
+  /** Information to use when checking for a successful response from a target.
     */
   @js.native
   trait Matcher extends js.Object {
@@ -1690,7 +1649,6 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "HttpCode" -> HttpCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Matcher]
     }
   }
@@ -1763,7 +1721,6 @@ package elbv2 {
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyLoadBalancerAttributesInput]
     }
   }
@@ -1840,7 +1797,6 @@ package elbv2 {
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyTargetGroupAttributesInput]
     }
   }
@@ -1922,8 +1878,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a path pattern condition.
+  /** Information about a path pattern condition.
     */
   @js.native
   trait PathPatternConditionConfig extends js.Object {
@@ -1954,9 +1909,8 @@ package elbv2 {
     @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP)
   }
 
-  /**
-    * Information about a query string condition.
-    *  The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
+  /** Information about a query string condition.
+    * The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
     */
   @js.native
   trait QueryStringConditionConfig extends js.Object {
@@ -1974,8 +1928,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a key/value pair.
+  /** Information about a key/value pair.
     */
   @js.native
   trait QueryStringKeyValuePair extends js.Object {
@@ -1996,15 +1949,14 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a redirect action.
-    *  A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
-    *  You can reuse URI components using the following reserved keywords:
+  /** Information about a redirect action.
+    * A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
+    * You can reuse URI components using the following reserved keywords:
     * * #{protocol}
-    *  * #{host}
-    *  * #{port}
-    *  * #{path} (the leading "/" is removed)
-    *  * #{query}
+    * * #{host}
+    * * #{port}
+    * * #{path} (the leading "/" is removed)
+    * * #{query}
     * For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".
     */
   @js.native
@@ -2065,20 +2017,17 @@ package elbv2 {
         "TargetGroupArn" -> TargetGroupArn.asInstanceOf[js.Any],
         "Targets" -> Targets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterTargetsInput]
     }
   }
 
   @js.native
-  trait RegisterTargetsOutput extends js.Object {}
+  trait RegisterTargetsOutput extends js.Object
 
   object RegisterTargetsOutput {
     @inline
-    def apply(
-    ): RegisterTargetsOutput = {
+    def apply(): RegisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RegisterTargetsOutput]
     }
   }
@@ -2099,20 +2048,17 @@ package elbv2 {
         "Certificates" -> Certificates.asInstanceOf[js.Any],
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveListenerCertificatesInput]
     }
   }
 
   @js.native
-  trait RemoveListenerCertificatesOutput extends js.Object {}
+  trait RemoveListenerCertificatesOutput extends js.Object
 
   object RemoveListenerCertificatesOutput {
     @inline
-    def apply(
-    ): RemoveListenerCertificatesOutput = {
+    def apply(): RemoveListenerCertificatesOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveListenerCertificatesOutput]
     }
   }
@@ -2133,26 +2079,22 @@ package elbv2 {
         "ResourceArns" -> ResourceArns.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsInput]
     }
   }
 
   @js.native
-  trait RemoveTagsOutput extends js.Object {}
+  trait RemoveTagsOutput extends js.Object
 
   object RemoveTagsOutput {
     @inline
-    def apply(
-    ): RemoveTagsOutput = {
+    def apply(): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
 
-  /**
-    * Information about a rule.
+  /** Information about a rule.
     */
   @js.native
   trait Rule extends js.Object {
@@ -2182,9 +2124,8 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a condition for a rule.
-    *  Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
+  /** Information about a condition for a rule.
+    * Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
     */
   @js.native
   trait RuleCondition extends js.Object {
@@ -2223,8 +2164,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about the priorities for the rules for a listener.
+  /** Information about the priorities for the rules for a listener.
     */
   @js.native
   trait RulePriorityPair extends js.Object {
@@ -2261,7 +2201,6 @@ package elbv2 {
         "IpAddressType" -> IpAddressType.asInstanceOf[js.Any],
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetIpAddressTypeInput]
     }
   }
@@ -2295,7 +2234,6 @@ package elbv2 {
       val __obj = js.Dynamic.literal(
         "RulePriorities" -> RulePriorities.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetRulePrioritiesInput]
     }
   }
@@ -2332,7 +2270,6 @@ package elbv2 {
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any],
         "SecurityGroups" -> SecurityGroups.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetSecurityGroupsInput]
     }
   }
@@ -2393,9 +2330,8 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a source IP condition.
-    *  You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
+  /** Information about a source IP condition.
+    * You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
     */
   @js.native
   trait SourceIpConditionConfig extends js.Object {
@@ -2413,8 +2349,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a policy used for SSL negotiation.
+  /** Information about a policy used for SSL negotiation.
     */
   @js.native
   trait SslPolicy extends js.Object {
@@ -2438,8 +2373,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a subnet mapping.
+  /** Information about a subnet mapping.
     */
   @js.native
   trait SubnetMapping extends js.Object {
@@ -2463,8 +2397,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a tag.
+  /** Information about a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2487,8 +2420,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * The tags associated with a resource.
+  /** The tags associated with a resource.
     */
   @js.native
   trait TagDescription extends js.Object {
@@ -2509,8 +2441,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a target.
+  /** Information about a target.
     */
   @js.native
   trait TargetDescription extends js.Object {
@@ -2536,8 +2467,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a target group.
+  /** Information about a target group.
     */
   @js.native
   trait TargetGroup extends js.Object {
@@ -2600,8 +2530,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about a target group attribute.
+  /** Information about a target group attribute.
     */
   @js.native
   trait TargetGroupAttribute extends js.Object {
@@ -2622,8 +2551,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about the target group stickiness for a rule.
+  /** Information about the target group stickiness for a rule.
     */
   @js.native
   trait TargetGroupStickinessConfig extends js.Object {
@@ -2644,8 +2572,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about how traffic will be distributed between multiple target groups in a forward rule.
+  /** Information about how traffic will be distributed between multiple target groups in a forward rule.
     */
   @js.native
   trait TargetGroupTuple extends js.Object {
@@ -2666,8 +2593,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about the current health of a target.
+  /** Information about the current health of a target.
     */
   @js.native
   trait TargetHealth extends js.Object {
@@ -2691,8 +2617,7 @@ package elbv2 {
     }
   }
 
-  /**
-    * Information about the health of a target.
+  /** Information about the health of a target.
     */
   @js.native
   trait TargetHealthDescription extends js.Object {
@@ -2732,21 +2657,20 @@ package elbv2 {
     val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
     val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
-    @inline def values =
-      js.Array(
-        `Elb.RegistrationInProgress`,
-        `Elb.InitialHealthChecking`,
-        `Target.ResponseCodeMismatch`,
-        `Target.Timeout`,
-        `Target.FailedHealthChecks`,
-        `Target.NotRegistered`,
-        `Target.NotInUse`,
-        `Target.DeregistrationInProgress`,
-        `Target.InvalidState`,
-        `Target.IpUnusable`,
-        `Target.HealthCheckDisabled`,
-        `Elb.InternalError`
-      )
+    @inline def values = js.Array(
+      `Elb.RegistrationInProgress`,
+      `Elb.InitialHealthChecking`,
+      `Target.ResponseCodeMismatch`,
+      `Target.Timeout`,
+      `Target.FailedHealthChecks`,
+      `Target.NotRegistered`,
+      `Target.NotInUse`,
+      `Target.DeregistrationInProgress`,
+      `Target.InvalidState`,
+      `Target.IpUnusable`,
+      `Target.HealthCheckDisabled`,
+      `Elb.InternalError`
+    )
   }
 
   @js.native

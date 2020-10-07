@@ -167,8 +167,7 @@ package connect {
     @inline def values = js.Array(VOICE, CHAT)
   }
 
-  /**
-    * A chat message.
+  /** A chat message.
     */
   @js.native
   trait ChatMessage extends js.Object {
@@ -186,7 +185,6 @@ package connect {
         "Content" -> Content.asInstanceOf[js.Any],
         "ContentType" -> ContentType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChatMessage]
     }
   }
@@ -199,8 +197,7 @@ package connect {
     @inline def values = js.Array(LT)
   }
 
-  /**
-    * Contains summary information about a contact flow.
+  /** Contains summary information about a contact flow.
     */
   @js.native
   trait ContactFlowSummary extends js.Object {
@@ -307,8 +304,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains credentials to use for federation.
+  /** Contains credentials to use for federation.
     */
   @js.native
   trait Credentials extends js.Object {
@@ -335,8 +331,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about a real-time metric. For a description of each metric, see [[https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html|Real-time Metrics Definitions]] in the <i>Amazon Connect Administrator Guide</i>.
+  /** Contains information about a real-time metric. For a description of each metric, see [[https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html|Real-time Metrics Definitions]] in the <i>Amazon Connect Administrator Guide</i>.
     */
   @js.native
   trait CurrentMetric extends js.Object {
@@ -357,8 +352,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains the data for a real-time metric.
+  /** Contains the data for a real-time metric.
     */
   @js.native
   trait CurrentMetricData extends js.Object {
@@ -379,8 +373,7 @@ package connect {
     }
   }
 
-  /**
-    * The current metric names.
+  /** The current metric names.
     */
   @js.native
   sealed trait CurrentMetricName extends js.Any
@@ -399,26 +392,24 @@ package connect {
     val SLOTS_ACTIVE = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
     val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
-    @inline def values =
-      js.Array(
-        AGENTS_ONLINE,
-        AGENTS_AVAILABLE,
-        AGENTS_ON_CALL,
-        AGENTS_NON_PRODUCTIVE,
-        AGENTS_AFTER_CONTACT_WORK,
-        AGENTS_ERROR,
-        AGENTS_STAFFED,
-        CONTACTS_IN_QUEUE,
-        OLDEST_CONTACT_AGE,
-        CONTACTS_SCHEDULED,
-        AGENTS_ON_CONTACT,
-        SLOTS_ACTIVE,
-        SLOTS_AVAILABLE
-      )
+    @inline def values = js.Array(
+      AGENTS_ONLINE,
+      AGENTS_AVAILABLE,
+      AGENTS_ON_CALL,
+      AGENTS_NON_PRODUCTIVE,
+      AGENTS_AFTER_CONTACT_WORK,
+      AGENTS_ERROR,
+      AGENTS_STAFFED,
+      CONTACTS_IN_QUEUE,
+      OLDEST_CONTACT_AGE,
+      CONTACTS_SCHEDULED,
+      AGENTS_ON_CONTACT,
+      SLOTS_ACTIVE,
+      SLOTS_AVAILABLE
+    )
   }
 
-  /**
-    * Contains information about a set of real-time metrics.
+  /** Contains information about a set of real-time metrics.
     */
   @js.native
   trait CurrentMetricResult extends js.Object {
@@ -455,7 +446,6 @@ package connect {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
@@ -476,7 +466,6 @@ package connect {
         "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserHierarchyGroupRequest]
     }
   }
@@ -510,7 +499,6 @@ package connect {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserHierarchyStructureRequest]
     }
   }
@@ -547,7 +535,6 @@ package connect {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserRequest]
     }
   }
@@ -568,8 +555,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about the dimensions for a set of metrics.
+  /** Contains information about the dimensions for a set of metrics.
     */
   @js.native
   trait Dimensions extends js.Object {
@@ -590,8 +576,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains the filter to apply when retrieving metrics.
+  /** Contains the filter to apply when retrieving metrics.
     */
   @js.native
   trait Filters extends js.Object {
@@ -628,7 +613,6 @@ package connect {
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetContactAttributesRequest]
     }
   }
@@ -717,7 +701,6 @@ package connect {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFederationTokenRequest]
     }
   }
@@ -805,8 +788,7 @@ package connect {
     @inline def values = js.Array(QUEUE, CHANNEL)
   }
 
-  /**
-    * Contains information about a hierarchy group.
+  /** Contains information about a hierarchy group.
     */
   @js.native
   trait HierarchyGroup extends js.Object {
@@ -836,8 +818,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains summary information about a hierarchy group.
+  /** Contains summary information about a hierarchy group.
     */
   @js.native
   trait HierarchyGroupSummary extends js.Object {
@@ -861,8 +842,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about a hierarchy level.
+  /** Contains information about a hierarchy level.
     */
   @js.native
   trait HierarchyLevel extends js.Object {
@@ -886,8 +866,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about the levels of a hierarchy group.
+  /** Contains information about the levels of a hierarchy group.
     */
   @js.native
   trait HierarchyPath extends js.Object {
@@ -917,8 +896,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about a hierarchy structure.
+  /** Contains information about a hierarchy structure.
     */
   @js.native
   trait HierarchyStructure extends js.Object {
@@ -948,8 +926,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about a historical metric. For a description of each metric, see [[https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html|Historical Metrics Definitions]] in the <i>Amazon Connect Administrator Guide</i>.
+  /** Contains information about a historical metric. For a description of each metric, see [[https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html|Historical Metrics Definitions]] in the <i>Amazon Connect Administrator Guide</i>.
     */
   @js.native
   trait HistoricalMetric extends js.Object {
@@ -976,8 +953,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains the data for a historical metric.
+  /** Contains the data for a historical metric.
     */
   @js.native
   trait HistoricalMetricData extends js.Object {
@@ -998,8 +974,7 @@ package connect {
     }
   }
 
-  /**
-    * The historical metric names.
+  /** The historical metric names.
     */
   @js.native
   sealed trait HistoricalMetricName extends js.Any
@@ -1030,38 +1005,36 @@ package connect {
     val INTERACTION_AND_HOLD_TIME = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
     val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
-    @inline def values =
-      js.Array(
-        CONTACTS_QUEUED,
-        CONTACTS_HANDLED,
-        CONTACTS_ABANDONED,
-        CONTACTS_CONSULTED,
-        CONTACTS_AGENT_HUNG_UP_FIRST,
-        CONTACTS_HANDLED_INCOMING,
-        CONTACTS_HANDLED_OUTBOUND,
-        CONTACTS_HOLD_ABANDONS,
-        CONTACTS_TRANSFERRED_IN,
-        CONTACTS_TRANSFERRED_OUT,
-        CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
-        CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
-        CONTACTS_MISSED,
-        CALLBACK_CONTACTS_HANDLED,
-        API_CONTACTS_HANDLED,
-        OCCUPANCY,
-        HANDLE_TIME,
-        AFTER_CONTACT_WORK_TIME,
-        QUEUED_TIME,
-        ABANDON_TIME,
-        QUEUE_ANSWER_TIME,
-        HOLD_TIME,
-        INTERACTION_TIME,
-        INTERACTION_AND_HOLD_TIME,
-        SERVICE_LEVEL
-      )
+    @inline def values = js.Array(
+      CONTACTS_QUEUED,
+      CONTACTS_HANDLED,
+      CONTACTS_ABANDONED,
+      CONTACTS_CONSULTED,
+      CONTACTS_AGENT_HUNG_UP_FIRST,
+      CONTACTS_HANDLED_INCOMING,
+      CONTACTS_HANDLED_OUTBOUND,
+      CONTACTS_HOLD_ABANDONS,
+      CONTACTS_TRANSFERRED_IN,
+      CONTACTS_TRANSFERRED_OUT,
+      CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
+      CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
+      CONTACTS_MISSED,
+      CALLBACK_CONTACTS_HANDLED,
+      API_CONTACTS_HANDLED,
+      OCCUPANCY,
+      HANDLE_TIME,
+      AFTER_CONTACT_WORK_TIME,
+      QUEUED_TIME,
+      ABANDON_TIME,
+      QUEUE_ANSWER_TIME,
+      HOLD_TIME,
+      INTERACTION_TIME,
+      INTERACTION_AND_HOLD_TIME,
+      SERVICE_LEVEL
+    )
   }
 
-  /**
-    * Contains information about the historical metrics retrieved.
+  /** Contains information about the historical metrics retrieved.
     */
   @js.native
   trait HistoricalMetricResult extends js.Object {
@@ -1082,8 +1055,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains summary information about hours of operation for a contact center.
+  /** Contains summary information about hours of operation for a contact center.
     */
   @js.native
   trait HoursOfOperationSummary extends js.Object {
@@ -1390,7 +1362,6 @@ package connect {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1497,8 +1468,7 @@ package connect {
     }
   }
 
-  /**
-    * The customer's details.
+  /** The customer's details.
     */
   @js.native
   trait ParticipantDetails extends js.Object {
@@ -1513,7 +1483,6 @@ package connect {
       val __obj = js.Dynamic.literal(
         "DisplayName" -> DisplayName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ParticipantDetails]
     }
   }
@@ -1759,250 +1728,248 @@ package connect {
     val ZM = "ZM".asInstanceOf[PhoneNumberCountryCode]
     val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
-    @inline def values =
-      js.Array(
-        AF,
-        AL,
-        DZ,
-        AS,
-        AD,
-        AO,
-        AI,
-        AQ,
-        AG,
-        AR,
-        AM,
-        AW,
-        AU,
-        AT,
-        AZ,
-        BS,
-        BH,
-        BD,
-        BB,
-        BY,
-        BE,
-        BZ,
-        BJ,
-        BM,
-        BT,
-        BO,
-        BA,
-        BW,
-        BR,
-        IO,
-        VG,
-        BN,
-        BG,
-        BF,
-        BI,
-        KH,
-        CM,
-        CA,
-        CV,
-        KY,
-        CF,
-        TD,
-        CL,
-        CN,
-        CX,
-        CC,
-        CO,
-        KM,
-        CK,
-        CR,
-        HR,
-        CU,
-        CW,
-        CY,
-        CZ,
-        CD,
-        DK,
-        DJ,
-        DM,
-        DO,
-        TL,
-        EC,
-        EG,
-        SV,
-        GQ,
-        ER,
-        EE,
-        ET,
-        FK,
-        FO,
-        FJ,
-        FI,
-        FR,
-        PF,
-        GA,
-        GM,
-        GE,
-        DE,
-        GH,
-        GI,
-        GR,
-        GL,
-        GD,
-        GU,
-        GT,
-        GG,
-        GN,
-        GW,
-        GY,
-        HT,
-        HN,
-        HK,
-        HU,
-        IS,
-        IN,
-        ID,
-        IR,
-        IQ,
-        IE,
-        IM,
-        IL,
-        IT,
-        CI,
-        JM,
-        JP,
-        JE,
-        JO,
-        KZ,
-        KE,
-        KI,
-        KW,
-        KG,
-        LA,
-        LV,
-        LB,
-        LS,
-        LR,
-        LY,
-        LI,
-        LT,
-        LU,
-        MO,
-        MK,
-        MG,
-        MW,
-        MY,
-        MV,
-        ML,
-        MT,
-        MH,
-        MR,
-        MU,
-        YT,
-        MX,
-        FM,
-        MD,
-        MC,
-        MN,
-        ME,
-        MS,
-        MA,
-        MZ,
-        MM,
-        NA,
-        NR,
-        NP,
-        NL,
-        AN,
-        NC,
-        NZ,
-        NI,
-        NE,
-        NG,
-        NU,
-        KP,
-        MP,
-        NO,
-        OM,
-        PK,
-        PW,
-        PA,
-        PG,
-        PY,
-        PE,
-        PH,
-        PN,
-        PL,
-        PT,
-        PR,
-        QA,
-        CG,
-        RE,
-        RO,
-        RU,
-        RW,
-        BL,
-        SH,
-        KN,
-        LC,
-        MF,
-        PM,
-        VC,
-        WS,
-        SM,
-        ST,
-        SA,
-        SN,
-        RS,
-        SC,
-        SL,
-        SG,
-        SX,
-        SK,
-        SI,
-        SB,
-        SO,
-        ZA,
-        KR,
-        ES,
-        LK,
-        SD,
-        SR,
-        SJ,
-        SZ,
-        SE,
-        CH,
-        SY,
-        TW,
-        TJ,
-        TZ,
-        TH,
-        TG,
-        TK,
-        TO,
-        TT,
-        TN,
-        TR,
-        TM,
-        TC,
-        TV,
-        VI,
-        UG,
-        UA,
-        AE,
-        GB,
-        US,
-        UY,
-        UZ,
-        VU,
-        VA,
-        VE,
-        VN,
-        WF,
-        EH,
-        YE,
-        ZM,
-        ZW
-      )
+    @inline def values = js.Array(
+      AF,
+      AL,
+      DZ,
+      AS,
+      AD,
+      AO,
+      AI,
+      AQ,
+      AG,
+      AR,
+      AM,
+      AW,
+      AU,
+      AT,
+      AZ,
+      BS,
+      BH,
+      BD,
+      BB,
+      BY,
+      BE,
+      BZ,
+      BJ,
+      BM,
+      BT,
+      BO,
+      BA,
+      BW,
+      BR,
+      IO,
+      VG,
+      BN,
+      BG,
+      BF,
+      BI,
+      KH,
+      CM,
+      CA,
+      CV,
+      KY,
+      CF,
+      TD,
+      CL,
+      CN,
+      CX,
+      CC,
+      CO,
+      KM,
+      CK,
+      CR,
+      HR,
+      CU,
+      CW,
+      CY,
+      CZ,
+      CD,
+      DK,
+      DJ,
+      DM,
+      DO,
+      TL,
+      EC,
+      EG,
+      SV,
+      GQ,
+      ER,
+      EE,
+      ET,
+      FK,
+      FO,
+      FJ,
+      FI,
+      FR,
+      PF,
+      GA,
+      GM,
+      GE,
+      DE,
+      GH,
+      GI,
+      GR,
+      GL,
+      GD,
+      GU,
+      GT,
+      GG,
+      GN,
+      GW,
+      GY,
+      HT,
+      HN,
+      HK,
+      HU,
+      IS,
+      IN,
+      ID,
+      IR,
+      IQ,
+      IE,
+      IM,
+      IL,
+      IT,
+      CI,
+      JM,
+      JP,
+      JE,
+      JO,
+      KZ,
+      KE,
+      KI,
+      KW,
+      KG,
+      LA,
+      LV,
+      LB,
+      LS,
+      LR,
+      LY,
+      LI,
+      LT,
+      LU,
+      MO,
+      MK,
+      MG,
+      MW,
+      MY,
+      MV,
+      ML,
+      MT,
+      MH,
+      MR,
+      MU,
+      YT,
+      MX,
+      FM,
+      MD,
+      MC,
+      MN,
+      ME,
+      MS,
+      MA,
+      MZ,
+      MM,
+      NA,
+      NR,
+      NP,
+      NL,
+      AN,
+      NC,
+      NZ,
+      NI,
+      NE,
+      NG,
+      NU,
+      KP,
+      MP,
+      NO,
+      OM,
+      PK,
+      PW,
+      PA,
+      PG,
+      PY,
+      PE,
+      PH,
+      PN,
+      PL,
+      PT,
+      PR,
+      QA,
+      CG,
+      RE,
+      RO,
+      RU,
+      RW,
+      BL,
+      SH,
+      KN,
+      LC,
+      MF,
+      PM,
+      VC,
+      WS,
+      SM,
+      ST,
+      SA,
+      SN,
+      RS,
+      SC,
+      SL,
+      SG,
+      SX,
+      SK,
+      SI,
+      SB,
+      SO,
+      ZA,
+      KR,
+      ES,
+      LK,
+      SD,
+      SR,
+      SJ,
+      SZ,
+      SE,
+      CH,
+      SY,
+      TW,
+      TJ,
+      TZ,
+      TH,
+      TG,
+      TK,
+      TO,
+      TT,
+      TN,
+      TR,
+      TM,
+      TC,
+      TV,
+      VI,
+      UG,
+      UA,
+      AE,
+      GB,
+      US,
+      UY,
+      UZ,
+      VU,
+      VA,
+      VE,
+      VN,
+      WF,
+      EH,
+      YE,
+      ZM,
+      ZW
+    )
   }
 
-  /**
-    * Contains summary information about a phone number for a contact center.
+  /** Contains summary information about a phone number for a contact center.
     */
   @js.native
   trait PhoneNumberSummary extends js.Object {
@@ -2050,8 +2017,7 @@ package connect {
     @inline def values = js.Array(SOFT_PHONE, DESK_PHONE)
   }
 
-  /**
-    * Contains information about a queue resource for which metrics are returned.
+  /** Contains information about a queue resource for which metrics are returned.
     */
   @js.native
   trait QueueReference extends js.Object {
@@ -2072,8 +2038,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains summary information about a queue.
+  /** Contains summary information about a queue.
     */
   @js.native
   trait QueueSummary extends js.Object {
@@ -2128,26 +2093,22 @@ package connect {
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResumeContactRecordingRequest]
     }
   }
 
   @js.native
-  trait ResumeContactRecordingResponse extends js.Object {}
+  trait ResumeContactRecordingResponse extends js.Object
 
   object ResumeContactRecordingResponse {
     @inline
-    def apply(
-    ): ResumeContactRecordingResponse = {
+    def apply(): ResumeContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ResumeContactRecordingResponse]
     }
   }
 
-  /**
-    * Contains summary information about a routing profile.
+  /** Contains summary information about a routing profile.
     */
   @js.native
   trait RoutingProfileSummary extends js.Object {
@@ -2171,8 +2132,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about a security profile.
+  /** Contains information about a security profile.
     */
   @js.native
   trait SecurityProfileSummary extends js.Object {
@@ -2273,20 +2233,17 @@ package connect {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "VoiceRecordingConfiguration" -> VoiceRecordingConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartContactRecordingRequest]
     }
   }
 
   @js.native
-  trait StartContactRecordingResponse extends js.Object {}
+  trait StartContactRecordingResponse extends js.Object
 
   object StartContactRecordingResponse {
     @inline
-    def apply(
-    ): StartContactRecordingResponse = {
+    def apply(): StartContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartContactRecordingResponse]
     }
   }
@@ -2372,20 +2329,17 @@ package connect {
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopContactRecordingRequest]
     }
   }
 
   @js.native
-  trait StopContactRecordingResponse extends js.Object {}
+  trait StopContactRecordingResponse extends js.Object
 
   object StopContactRecordingResponse {
     @inline
-    def apply(
-    ): StopContactRecordingResponse = {
+    def apply(): StopContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopContactRecordingResponse]
     }
   }
@@ -2406,20 +2360,17 @@ package connect {
         "ContactId" -> ContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopContactRequest]
     }
   }
 
   @js.native
-  trait StopContactResponse extends js.Object {}
+  trait StopContactResponse extends js.Object
 
   object StopContactResponse {
     @inline
-    def apply(
-    ): StopContactResponse = {
+    def apply(): StopContactResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopContactResponse]
     }
   }
@@ -2443,20 +2394,17 @@ package connect {
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SuspendContactRecordingRequest]
     }
   }
 
   @js.native
-  trait SuspendContactRecordingResponse extends js.Object {}
+  trait SuspendContactRecordingResponse extends js.Object
 
   object SuspendContactRecordingResponse {
     @inline
-    def apply(
-    ): SuspendContactRecordingResponse = {
+    def apply(): SuspendContactRecordingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SuspendContactRecordingResponse]
     }
   }
@@ -2477,13 +2425,11 @@ package connect {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * Contains information about the threshold for service level metrics.
+  /** Contains information about the threshold for service level metrics.
     */
   @js.native
   trait Threshold extends js.Object {
@@ -2530,7 +2476,6 @@ package connect {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2554,20 +2499,17 @@ package connect {
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateContactAttributesRequest]
     }
   }
 
   @js.native
-  trait UpdateContactAttributesResponse extends js.Object {}
+  trait UpdateContactAttributesResponse extends js.Object
 
   object UpdateContactAttributesResponse {
     @inline
-    def apply(
-    ): UpdateContactAttributesResponse = {
+    def apply(): UpdateContactAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateContactAttributesResponse]
     }
   }
@@ -2615,7 +2557,6 @@ package connect {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserIdentityInfoRequest]
     }
   }
@@ -2639,7 +2580,6 @@ package connect {
         "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserPhoneConfigRequest]
     }
   }
@@ -2663,7 +2603,6 @@ package connect {
         "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserRoutingProfileRequest]
     }
   }
@@ -2687,13 +2626,11 @@ package connect {
         "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserSecurityProfilesRequest]
     }
   }
 
-  /**
-    * Contains information about a user account for a Amazon Connect instance.
+  /** Contains information about a user account for a Amazon Connect instance.
     */
   @js.native
   trait User extends js.Object {
@@ -2738,8 +2675,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about the identity of a user.
+  /** Contains information about the identity of a user.
     */
   @js.native
   trait UserIdentityInfo extends js.Object {
@@ -2763,8 +2699,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about the phone configuration settings for a user.
+  /** Contains information about the phone configuration settings for a user.
     */
   @js.native
   trait UserPhoneConfig extends js.Object {
@@ -2793,8 +2728,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains summary information about a user.
+  /** Contains summary information about a user.
     */
   @js.native
   trait UserSummary extends js.Object {
@@ -2818,8 +2752,7 @@ package connect {
     }
   }
 
-  /**
-    * Contains information about the recording configuration settings.
+  /** Contains information about the recording configuration settings.
     */
   @js.native
   trait VoiceRecordingConfiguration extends js.Object {

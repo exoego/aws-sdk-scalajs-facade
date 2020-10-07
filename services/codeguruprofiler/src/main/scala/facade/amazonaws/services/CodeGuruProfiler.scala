@@ -119,8 +119,7 @@ package codeguruprofiler {
     @inline def values = js.Array(agentPermissions)
   }
 
-  /**
-    * The structure representing the AddNotificationChannelsRequest.
+  /** The structure representing the AddNotificationChannelsRequest.
     */
   @js.native
   trait AddNotificationChannelsRequest extends js.Object {
@@ -138,13 +137,11 @@ package codeguruprofiler {
         "channels" -> channels.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddNotificationChannelsRequest]
     }
   }
 
-  /**
-    * The structure representing the AddNotificationChannelsResponse.
+  /** The structure representing the AddNotificationChannelsResponse.
     */
   @js.native
   trait AddNotificationChannelsResponse extends js.Object {
@@ -162,8 +159,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data.
+  /** The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data.
     */
   @js.native
   trait AgentConfiguration extends js.Object {
@@ -189,8 +185,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group.
+  /** Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group.
     */
   @js.native
   trait AgentOrchestrationConfig extends js.Object {
@@ -205,7 +200,6 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingEnabled" -> profilingEnabled.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AgentOrchestrationConfig]
     }
   }
@@ -222,8 +216,7 @@ package codeguruprofiler {
     @inline def values = js.Array(MaxStackDepth, MemoryUsageLimitPercent, MinimumTimeForReportingInMilliseconds, ReportingIntervalInMilliseconds, SamplingIntervalInMilliseconds)
   }
 
-  /**
-    * Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes).
+  /** Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes).
     */
   @js.native
   trait AggregatedProfileTime extends js.Object {
@@ -254,8 +247,7 @@ package codeguruprofiler {
     @inline def values = js.Array(P1D, PT1H, PT5M)
   }
 
-  /**
-    * Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time.
+  /** Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time.
     */
   @js.native
   trait Anomaly extends js.Object {
@@ -276,13 +268,11 @@ package codeguruprofiler {
         "metric" -> metric.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Anomaly]
     }
   }
 
-  /**
-    * The specific duration in which the metric is flagged as anomalous.
+  /** The specific duration in which the metric is flagged as anomalous.
     */
   @js.native
   trait AnomalyInstance extends js.Object {
@@ -311,8 +301,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the BatchGetFrameMetricDataRequest.
+  /** The structure representing the BatchGetFrameMetricDataRequest.
     */
   @js.native
   trait BatchGetFrameMetricDataRequest extends js.Object {
@@ -347,8 +336,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the BatchGetFrameMetricDataResponse.
+  /** The structure representing the BatchGetFrameMetricDataResponse.
     */
   @js.native
   trait BatchGetFrameMetricDataResponse extends js.Object {
@@ -378,13 +366,11 @@ package codeguruprofiler {
         "startTime" -> startTime.asInstanceOf[js.Any],
         "unprocessedEndTimes" -> unprocessedEndTimes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetFrameMetricDataResponse]
     }
   }
 
-  /**
-    * Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.
+  /** Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.
     */
   @js.native
   trait Channel extends js.Object {
@@ -419,8 +405,7 @@ package codeguruprofiler {
     @inline def values = js.Array(AWSLambda, Default)
   }
 
-  /**
-    * The structure representing the configureAgentRequest.
+  /** The structure representing the configureAgentRequest.
     */
   @js.native
   trait ConfigureAgentRequest extends js.Object {
@@ -446,8 +431,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the configureAgentResponse.
+  /** The structure representing the configureAgentResponse.
     */
   @js.native
   trait ConfigureAgentResponse extends js.Object {
@@ -462,13 +446,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "configuration" -> configuration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfigureAgentResponse]
     }
   }
 
-  /**
-    * The structure representing the createProfiliingGroupRequest.
+  /** The structure representing the createProfiliingGroupRequest.
     */
   @js.native
   trait CreateProfilingGroupRequest extends js.Object {
@@ -500,8 +482,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the createProfilingGroupResponse.
+  /** The structure representing the createProfilingGroupResponse.
     */
   @js.native
   trait CreateProfilingGroupResponse extends js.Object {
@@ -516,13 +497,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroup" -> profilingGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProfilingGroupResponse]
     }
   }
 
-  /**
-    * The structure representing the deleteProfilingGroupRequest.
+  /** The structure representing the deleteProfilingGroupRequest.
     */
   @js.native
   trait DeleteProfilingGroupRequest extends js.Object {
@@ -537,29 +516,24 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProfilingGroupRequest]
     }
   }
 
-  /**
-    * The structure representing the deleteProfilingGroupResponse.
+  /** The structure representing the deleteProfilingGroupResponse.
     */
   @js.native
-  trait DeleteProfilingGroupResponse extends js.Object {}
+  trait DeleteProfilingGroupResponse extends js.Object
 
   object DeleteProfilingGroupResponse {
     @inline
-    def apply(
-    ): DeleteProfilingGroupResponse = {
+    def apply(): DeleteProfilingGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProfilingGroupResponse]
     }
   }
 
-  /**
-    * The structure representing the describeProfilingGroupRequest.
+  /** The structure representing the describeProfilingGroupRequest.
     */
   @js.native
   trait DescribeProfilingGroupRequest extends js.Object {
@@ -574,13 +548,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProfilingGroupRequest]
     }
   }
 
-  /**
-    * The structure representing the describeProfilingGroupResponse.
+  /** The structure representing the describeProfilingGroupResponse.
     */
   @js.native
   trait DescribeProfilingGroupResponse extends js.Object {
@@ -595,7 +567,6 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroup" -> profilingGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProfilingGroupResponse]
     }
   }
@@ -617,8 +588,7 @@ package codeguruprofiler {
     @inline def values = js.Array(Negative, Positive)
   }
 
-  /**
-    * Information about potential recommendations that might be created from the analysis of profiling data.
+  /** Information about potential recommendations that might be created from the analysis of profiling data.
     */
   @js.native
   trait FindingsReportSummary extends js.Object {
@@ -648,8 +618,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.
+  /** The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.
     */
   @js.native
   trait FrameMetric extends js.Object {
@@ -670,13 +639,11 @@ package codeguruprofiler {
         "threadStates" -> threadStates.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FrameMetric]
     }
   }
 
-  /**
-    * Information about a frame metric and its values.
+  /** Information about a frame metric and its values.
     */
   @js.native
   trait FrameMetricDatum extends js.Object {
@@ -694,13 +661,11 @@ package codeguruprofiler {
         "frameMetric" -> frameMetric.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FrameMetricDatum]
     }
   }
 
-  /**
-    * The structure representing the GetFindingsReportAccountSummaryRequest.
+  /** The structure representing the GetFindingsReportAccountSummaryRequest.
     */
   @js.native
   trait GetFindingsReportAccountSummaryRequest extends js.Object {
@@ -724,8 +689,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the GetFindingsReportAccountSummaryResponse.
+  /** The structure representing the GetFindingsReportAccountSummaryResponse.
     */
   @js.native
   trait GetFindingsReportAccountSummaryResponse extends js.Object {
@@ -748,8 +712,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the GetNotificationConfigurationRequest.
+  /** The structure representing the GetNotificationConfigurationRequest.
     */
   @js.native
   trait GetNotificationConfigurationRequest extends js.Object {
@@ -764,13 +727,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNotificationConfigurationRequest]
     }
   }
 
-  /**
-    * The structure representing the GetNotificationConfigurationResponse.
+  /** The structure representing the GetNotificationConfigurationResponse.
     */
   @js.native
   trait GetNotificationConfigurationResponse extends js.Object {
@@ -785,13 +746,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "notificationConfiguration" -> notificationConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNotificationConfigurationResponse]
     }
   }
 
-  /**
-    * The structure representing the <code>getPolicyRequest</code>.
+  /** The structure representing the <code>getPolicyRequest</code>.
     */
   @js.native
   trait GetPolicyRequest extends js.Object {
@@ -806,13 +765,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPolicyRequest]
     }
   }
 
-  /**
-    * The structure representing the <code>getPolicyResponse</code>.
+  /** The structure representing the <code>getPolicyResponse</code>.
     */
   @js.native
   trait GetPolicyResponse extends js.Object {
@@ -830,13 +787,11 @@ package codeguruprofiler {
         "policy" -> policy.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPolicyResponse]
     }
   }
 
-  /**
-    * The structure representing the getProfileRequest.
+  /** The structure representing the getProfileRequest.
     */
   @js.native
   trait GetProfileRequest extends js.Object {
@@ -871,8 +826,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the getProfileResponse.
+  /** The structure representing the getProfileResponse.
     */
   @js.native
   trait GetProfileResponse extends js.Object {
@@ -898,8 +852,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the GetRecommendationsRequest.
+  /** The structure representing the GetRecommendationsRequest.
     */
   @js.native
   trait GetRecommendationsRequest extends js.Object {
@@ -928,8 +881,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the GetRecommendationsResponse.
+  /** The structure representing the GetRecommendationsResponse.
     */
   @js.native
   trait GetRecommendationsResponse extends js.Object {
@@ -956,13 +908,11 @@ package codeguruprofiler {
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
         "recommendations" -> recommendations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRecommendationsResponse]
     }
   }
 
-  /**
-    * The structure representing the ListFindingsReportsRequest.
+  /** The structure representing the ListFindingsReportsRequest.
     */
   @js.native
   trait ListFindingsReportsRequest extends js.Object {
@@ -997,8 +947,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the ListFindingsReportsResponse.
+  /** The structure representing the ListFindingsReportsResponse.
     */
   @js.native
   trait ListFindingsReportsResponse extends js.Object {
@@ -1021,8 +970,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the listProfileTimesRequest.
+  /** The structure representing the listProfileTimesRequest.
     */
   @js.native
   trait ListProfileTimesRequest extends js.Object {
@@ -1060,8 +1008,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the listProfileTimesResponse.
+  /** The structure representing the listProfileTimesResponse.
     */
   @js.native
   trait ListProfileTimesResponse extends js.Object {
@@ -1084,8 +1031,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the listProfilingGroupsRequest.
+  /** The structure representing the listProfilingGroupsRequest.
     */
   @js.native
   trait ListProfilingGroupsRequest extends js.Object {
@@ -1109,8 +1055,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the listProfilingGroupsResponse.
+  /** The structure representing the listProfilingGroupsResponse.
     */
   @js.native
   trait ListProfilingGroupsResponse extends js.Object {
@@ -1149,7 +1094,6 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1170,8 +1114,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The part of a profile that contains a recommendation found during analysis.
+  /** The part of a profile that contains a recommendation found during analysis.
     */
   @js.native
   trait Match extends js.Object {
@@ -1208,22 +1151,20 @@ package codeguruprofiler {
     val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
     val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
 
-    @inline def values =
-      js.Array(
-        AgentId,
-        AwsRequestId,
-        ComputePlatform,
-        ExecutionEnvironment,
-        LambdaFunctionArn,
-        LambdaMemoryLimitInMB,
-        LambdaPreviousExecutionTimeInMilliseconds,
-        LambdaRemainingTimeInMilliseconds,
-        LambdaTimeGapBetweenInvokesInMilliseconds
-      )
+    @inline def values = js.Array(
+      AgentId,
+      AwsRequestId,
+      ComputePlatform,
+      ExecutionEnvironment,
+      LambdaFunctionArn,
+      LambdaMemoryLimitInMB,
+      LambdaPreviousExecutionTimeInMilliseconds,
+      LambdaRemainingTimeInMilliseconds,
+      LambdaTimeGapBetweenInvokesInMilliseconds
+    )
   }
 
-  /**
-    * Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame.
+  /** Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame.
     */
   @js.native
   trait Metric extends js.Object {
@@ -1244,7 +1185,6 @@ package codeguruprofiler {
         "threadStates" -> threadStates.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Metric]
     }
   }
@@ -1257,8 +1197,7 @@ package codeguruprofiler {
     @inline def values = js.Array(AggregatedRelativeTotalTime)
   }
 
-  /**
-    * The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.
+  /** The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -1285,8 +1224,7 @@ package codeguruprofiler {
     @inline def values = js.Array(TimestampAscending, TimestampDescending)
   }
 
-  /**
-    * A set of rules used to make a recommendation during an analysis.
+  /** A set of rules used to make a recommendation during an analysis.
     */
   @js.native
   trait Pattern extends js.Object {
@@ -1322,8 +1260,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the postAgentProfileRequest.
+  /** The structure representing the postAgentProfileRequest.
     */
   @js.native
   trait PostAgentProfileRequest extends js.Object {
@@ -1352,24 +1289,20 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the postAgentProfileResponse.
+  /** The structure representing the postAgentProfileResponse.
     */
   @js.native
-  trait PostAgentProfileResponse extends js.Object {}
+  trait PostAgentProfileResponse extends js.Object
 
   object PostAgentProfileResponse {
     @inline
-    def apply(
-    ): PostAgentProfileResponse = {
+    def apply(): PostAgentProfileResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PostAgentProfileResponse]
     }
   }
 
-  /**
-    * Contains the start time of a profile.
+  /** Contains the start time of a profile.
     */
   @js.native
   trait ProfileTime extends js.Object {
@@ -1387,8 +1320,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * Contains information about a profiling group.
+  /** Contains information about a profiling group.
     */
   @js.native
   trait ProfilingGroupDescription extends js.Object {
@@ -1427,8 +1359,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile.
+  /** Profiling status includes information about the last time a profile agent pinged back, the last time a profile was received, and the aggregation period and start time for the most recent aggregated profile.
     */
   @js.native
   trait ProfilingStatus extends js.Object {
@@ -1452,8 +1383,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the <code>putPermissionRequest</code>.
+  /** The structure representing the <code>putPermissionRequest</code>.
     */
   @js.native
   trait PutPermissionRequest extends js.Object {
@@ -1482,8 +1412,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the <code>putPermissionResponse</code>.
+  /** The structure representing the <code>putPermissionResponse</code>.
     */
   @js.native
   trait PutPermissionResponse extends js.Object {
@@ -1501,13 +1430,11 @@ package codeguruprofiler {
         "policy" -> policy.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutPermissionResponse]
     }
   }
 
-  /**
-    * A potential improvement that was found from analyzing the profiling data.
+  /** A potential improvement that was found from analyzing the profiling data.
     */
   @js.native
   trait Recommendation extends js.Object {
@@ -1537,13 +1464,11 @@ package codeguruprofiler {
         "startTime" -> startTime.asInstanceOf[js.Any],
         "topMatches" -> topMatches.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Recommendation]
     }
   }
 
-  /**
-    * The structure representing the RemoveNotificationChannelRequest.
+  /** The structure representing the RemoveNotificationChannelRequest.
     */
   @js.native
   trait RemoveNotificationChannelRequest extends js.Object {
@@ -1561,13 +1486,11 @@ package codeguruprofiler {
         "channelId" -> channelId.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveNotificationChannelRequest]
     }
   }
 
-  /**
-    * The structure representing the RemoveNotificationChannelResponse.
+  /** The structure representing the RemoveNotificationChannelResponse.
     */
   @js.native
   trait RemoveNotificationChannelResponse extends js.Object {
@@ -1585,8 +1508,7 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * <p> {{{ The structure representing the &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt; }}}
+  /** <p> {{{ The structure representing the &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt; }}}
     */
   @js.native
   trait RemovePermissionRequest extends js.Object {
@@ -1607,13 +1529,11 @@ package codeguruprofiler {
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemovePermissionRequest]
     }
   }
 
-  /**
-    * The structure representing the <code>removePermissionResponse</code>.
+  /** The structure representing the <code>removePermissionResponse</code>.
     */
   @js.native
   trait RemovePermissionResponse extends js.Object {
@@ -1631,13 +1551,11 @@ package codeguruprofiler {
         "policy" -> policy.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemovePermissionResponse]
     }
   }
 
-  /**
-    * The structure representing the SubmitFeedbackRequest.
+  /** The structure representing the SubmitFeedbackRequest.
     */
   @js.native
   trait SubmitFeedbackRequest extends js.Object {
@@ -1666,18 +1584,15 @@ package codeguruprofiler {
     }
   }
 
-  /**
-    * The structure representing the SubmitFeedbackResponse.
+  /** The structure representing the SubmitFeedbackResponse.
     */
   @js.native
-  trait SubmitFeedbackResponse extends js.Object {}
+  trait SubmitFeedbackResponse extends js.Object
 
   object SubmitFeedbackResponse {
     @inline
-    def apply(
-    ): SubmitFeedbackResponse = {
+    def apply(): SubmitFeedbackResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SubmitFeedbackResponse]
     }
   }
@@ -1698,26 +1613,22 @@ package codeguruprofiler {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+  /** A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
     */
   @js.native
   trait TimestampStructure extends js.Object {
@@ -1732,7 +1643,6 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TimestampStructure]
     }
   }
@@ -1753,26 +1663,22 @@ package codeguruprofiler {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * The structure representing the updateProfilingGroupRequest.
+  /** The structure representing the updateProfilingGroupRequest.
     */
   @js.native
   trait UpdateProfilingGroupRequest extends js.Object {
@@ -1790,13 +1696,11 @@ package codeguruprofiler {
         "agentOrchestrationConfig" -> agentOrchestrationConfig.asInstanceOf[js.Any],
         "profilingGroupName" -> profilingGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateProfilingGroupRequest]
     }
   }
 
-  /**
-    * The structure representing the updateProfilingGroupResponse.
+  /** The structure representing the updateProfilingGroupResponse.
     */
   @js.native
   trait UpdateProfilingGroupResponse extends js.Object {
@@ -1811,13 +1715,11 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "profilingGroup" -> profilingGroup.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateProfilingGroupResponse]
     }
   }
 
-  /**
-    * Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.
+  /** Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.
     */
   @js.native
   trait UserFeedback extends js.Object {
@@ -1832,7 +1734,6 @@ package codeguruprofiler {
       val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UserFeedback]
     }
   }

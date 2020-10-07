@@ -38,8 +38,7 @@ package pi {
     def getResourceMetrics(params: GetResourceMetricsRequest): Request[GetResourceMetricsResponse] = js.native
   }
 
-  /**
-    * A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.
+  /** A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.
     */
   @js.native
   trait DataPoint extends js.Object {
@@ -57,7 +56,6 @@ package pi {
         "Timestamp" -> Timestamp.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataPoint]
     }
   }
@@ -138,8 +136,7 @@ package pi {
     }
   }
 
-  /**
-    * A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.
+  /** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.
     */
   @js.native
   trait DimensionGroup extends js.Object {
@@ -165,8 +162,7 @@ package pi {
     }
   }
 
-  /**
-    * An array of descriptions and aggregated values for each dimension within a dimension group.
+  /** An array of descriptions and aggregated values for each dimension within a dimension group.
     */
   @js.native
   trait DimensionKeyDescription extends js.Object {
@@ -257,24 +253,21 @@ package pi {
     }
   }
 
-  /**
-    * The request failed due to an unknown error.
+  /** The request failed due to an unknown error.
     */
   @js.native
   trait InternalServiceErrorException extends js.Object {
     val Message: String
   }
 
-  /**
-    * One of the arguments provided is invalid for this request.
+  /** One of the arguments provided is invalid for this request.
     */
   @js.native
   trait InvalidArgumentExceptionException extends js.Object {
     val Message: String
   }
 
-  /**
-    * A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.
+  /** A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.
     */
   @js.native
   trait MetricKeyDataPoints extends js.Object {
@@ -295,8 +288,7 @@ package pi {
     }
   }
 
-  /**
-    * A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all of the data points for that metric. You can optionally request that the data points be aggregated by dimension group ( <code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).
+  /** A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all of the data points for that metric. You can optionally request that the data points be aggregated by dimension group ( <code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).
     */
   @js.native
   trait MetricQuery extends js.Object {
@@ -322,16 +314,14 @@ package pi {
     }
   }
 
-  /**
-    * The user is not authorized to perform this request.
+  /** The user is not authorized to perform this request.
     */
   @js.native
   trait NotAuthorizedExceptionException extends js.Object {
     val Message: String
   }
 
-  /**
-    * If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension.
+  /** If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension.
     */
   @js.native
   trait ResponsePartitionKey extends js.Object {
@@ -346,13 +336,11 @@ package pi {
       val __obj = js.Dynamic.literal(
         "Dimensions" -> Dimensions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResponsePartitionKey]
     }
   }
 
-  /**
-    * An object describing a Performance Insights metric and one or more dimensions for that metric.
+  /** An object describing a Performance Insights metric and one or more dimensions for that metric.
     */
   @js.native
   trait ResponseResourceMetricKey extends js.Object {

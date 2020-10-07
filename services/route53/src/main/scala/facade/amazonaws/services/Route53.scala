@@ -240,8 +240,7 @@ package route53 {
     def updateTrafficPolicyInstance(params: UpdateTrafficPolicyInstanceRequest): Request[UpdateTrafficPolicyInstanceResponse] = js.native
   }
 
-  /**
-    * A complex type that contains the type of limit that you specified in the request and the current value for that limit.
+  /** A complex type that contains the type of limit that you specified in the request and the current value for that limit.
     */
   @js.native
   trait AccountLimit extends js.Object {
@@ -259,7 +258,6 @@ package route53 {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AccountLimit]
     }
   }
@@ -273,18 +271,16 @@ package route53 {
     val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
     val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
-    @inline def values =
-      js.Array(
-        MAX_HEALTH_CHECKS_BY_OWNER,
-        MAX_HOSTED_ZONES_BY_OWNER,
-        MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
-        MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
-        MAX_TRAFFIC_POLICIES_BY_OWNER
-      )
+    @inline def values = js.Array(
+      MAX_HEALTH_CHECKS_BY_OWNER,
+      MAX_HOSTED_ZONES_BY_OWNER,
+      MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
+      MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
+      MAX_TRAFFIC_POLICIES_BY_OWNER
+    )
   }
 
-  /**
-    * A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
+  /** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
     */
   @js.native
   trait AlarmIdentifier extends js.Object {
@@ -302,16 +298,14 @@ package route53 {
         "Name" -> Name.asInstanceOf[js.Any],
         "Region" -> Region.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AlarmIdentifier]
     }
   }
 
-  /**
-    * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.
-    *  When creating resource record sets for a private hosted zone, note the following:
+  /** <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.
+    * When creating resource record sets for a private hosted zone, note the following:
     * * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
-    *  * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
+    * * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
   trait AliasTarget extends js.Object {
@@ -332,13 +326,11 @@ package route53 {
         "EvaluateTargetHealth" -> EvaluateTargetHealth.asInstanceOf[js.Any],
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AliasTarget]
     }
   }
 
-  /**
-    * A complex type that contains information about the request to associate a VPC with a private hosted zone.
+  /** A complex type that contains information about the request to associate a VPC with a private hosted zone.
     */
   @js.native
   trait AssociateVPCWithHostedZoneRequest extends js.Object {
@@ -364,8 +356,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.
+  /** A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.
     */
   @js.native
   trait AssociateVPCWithHostedZoneResponse extends js.Object {
@@ -380,13 +371,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateVPCWithHostedZoneResponse]
     }
   }
 
-  /**
-    * The information for each resource record set that you want to change.
+  /** The information for each resource record set that you want to change.
     */
   @js.native
   trait Change extends js.Object {
@@ -404,7 +393,6 @@ package route53 {
         "Action" -> Action.asInstanceOf[js.Any],
         "ResourceRecordSet" -> ResourceRecordSet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Change]
     }
   }
@@ -419,8 +407,7 @@ package route53 {
     @inline def values = js.Array(CREATE, DELETE, UPSERT)
   }
 
-  /**
-    * The information for a change request.
+  /** The information for a change request.
     */
   @js.native
   trait ChangeBatch extends js.Object {
@@ -443,8 +430,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that describes change information about changes made to your hosted zone.
+  /** A complex type that describes change information about changes made to your hosted zone.
     */
   @js.native
   trait ChangeInfo extends js.Object {
@@ -473,8 +459,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains change information for the resource record set.
+  /** A complex type that contains change information for the resource record set.
     */
   @js.native
   trait ChangeResourceRecordSetsRequest extends js.Object {
@@ -492,13 +477,11 @@ package route53 {
         "ChangeBatch" -> ChangeBatch.asInstanceOf[js.Any],
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangeResourceRecordSetsRequest]
     }
   }
 
-  /**
-    * A complex type containing the response for the request.
+  /** A complex type containing the response for the request.
     */
   @js.native
   trait ChangeResourceRecordSetsResponse extends js.Object {
@@ -513,7 +496,6 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangeResourceRecordSetsResponse]
     }
   }
@@ -527,8 +509,7 @@ package route53 {
     @inline def values = js.Array(PENDING, INSYNC)
   }
 
-  /**
-    * A complex type that contains information about the tags that you want to add, edit, or delete.
+  /** A complex type that contains information about the tags that you want to add, edit, or delete.
     */
   @js.native
   trait ChangeTagsForResourceRequest extends js.Object {
@@ -557,24 +538,20 @@ package route53 {
     }
   }
 
-  /**
-    * Empty response for the request.
+  /** Empty response for the request.
     */
   @js.native
-  trait ChangeTagsForResourceResponse extends js.Object {}
+  trait ChangeTagsForResourceResponse extends js.Object
 
   object ChangeTagsForResourceResponse {
     @inline
-    def apply(
-    ): ChangeTagsForResourceResponse = {
+    def apply(): ChangeTagsForResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ChangeTagsForResourceResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.
+  /** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.
     */
   @js.native
   trait CloudWatchAlarmConfiguration extends js.Object {
@@ -646,36 +623,35 @@ package route53 {
     val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
     val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
-    @inline def values =
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `ca-central-1`,
-        `eu-central-1`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `ap-east-1`,
-        `me-south-1`,
-        `ap-south-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`,
-        `ap-northeast-3`,
-        `eu-north-1`,
-        `sa-east-1`,
-        `cn-northwest-1`,
-        `cn-north-1`,
-        `af-south-1`,
-        `eu-south-1`,
-        `us-gov-west-1`,
-        `us-gov-east-1`,
-        `us-iso-east-1`,
-        `us-isob-east-1`
-      )
+    @inline def values = js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `ca-central-1`,
+      `eu-central-1`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `ap-east-1`,
+      `me-south-1`,
+      `ap-south-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`,
+      `ap-northeast-3`,
+      `eu-north-1`,
+      `sa-east-1`,
+      `cn-northwest-1`,
+      `cn-north-1`,
+      `af-south-1`,
+      `eu-south-1`,
+      `us-gov-west-1`,
+      `us-gov-east-1`,
+      `us-iso-east-1`,
+      `us-isob-east-1`
+    )
   }
 
   @js.native
@@ -689,8 +665,7 @@ package route53 {
     @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
-  /**
-    * A complex type that contains the health check request information.
+  /** A complex type that contains the health check request information.
     */
   @js.native
   trait CreateHealthCheckRequest extends js.Object {
@@ -708,13 +683,11 @@ package route53 {
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "HealthCheckConfig" -> HealthCheckConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateHealthCheckRequest]
     }
   }
 
-  /**
-    * A complex type containing the response information for the new health check.
+  /** A complex type containing the response information for the new health check.
     */
   @js.native
   trait CreateHealthCheckResponse extends js.Object {
@@ -732,13 +705,11 @@ package route53 {
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any],
         "Location" -> Location.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateHealthCheckResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the request to create a public or private hosted zone.
+  /** A complex type that contains information about the request to create a public or private hosted zone.
     */
   @js.native
   trait CreateHostedZoneRequest extends js.Object {
@@ -770,8 +741,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type containing the response information for the hosted zone.
+  /** A complex type containing the response information for the hosted zone.
     */
   @js.native
   trait CreateHostedZoneResponse extends js.Object {
@@ -819,7 +789,6 @@ package route53 {
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.asInstanceOf[js.Any],
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateQueryLoggingConfigRequest]
     }
   }
@@ -840,7 +809,6 @@ package route53 {
         "Location" -> Location.asInstanceOf[js.Any],
         "QueryLoggingConfig" -> QueryLoggingConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateQueryLoggingConfigResponse]
     }
   }
@@ -882,13 +850,11 @@ package route53 {
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any],
         "Location" -> Location.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateReusableDelegationSetResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy.
+  /** A complex type that contains information about the resource record sets that you want to create based on a specified traffic policy.
     */
   @js.native
   trait CreateTrafficPolicyInstanceRequest extends js.Object {
@@ -915,13 +881,11 @@ package route53 {
         "TrafficPolicyId" -> TrafficPolicyId.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTrafficPolicyInstanceRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request.
+  /** A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request.
     */
   @js.native
   trait CreateTrafficPolicyInstanceResponse extends js.Object {
@@ -939,13 +903,11 @@ package route53 {
         "Location" -> Location.asInstanceOf[js.Any],
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTrafficPolicyInstanceResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the traffic policy that you want to create.
+  /** A complex type that contains information about the traffic policy that you want to create.
     */
   @js.native
   trait CreateTrafficPolicyRequest extends js.Object {
@@ -971,8 +933,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request.
+  /** A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request.
     */
   @js.native
   trait CreateTrafficPolicyResponse extends js.Object {
@@ -990,13 +951,11 @@ package route53 {
         "Location" -> Location.asInstanceOf[js.Any],
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTrafficPolicyResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the traffic policy that you want to create a new version for.
+  /** A complex type that contains information about the traffic policy that you want to create a new version for.
     */
   @js.native
   trait CreateTrafficPolicyVersionRequest extends js.Object {
@@ -1022,8 +981,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.
+  /** A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.
     */
   @js.native
   trait CreateTrafficPolicyVersionResponse extends js.Object {
@@ -1041,13 +999,11 @@ package route53 {
         "Location" -> Location.asInstanceOf[js.Any],
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTrafficPolicyVersionResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts.
+  /** A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts.
     */
   @js.native
   trait CreateVPCAssociationAuthorizationRequest extends js.Object {
@@ -1065,13 +1021,11 @@ package route53 {
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC" -> VPC.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVPCAssociationAuthorizationRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.
+  /** A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.
     */
   @js.native
   trait CreateVPCAssociationAuthorizationResponse extends js.Object {
@@ -1089,13 +1043,11 @@ package route53 {
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC" -> VPC.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVPCAssociationAuthorizationResponse]
     }
   }
 
-  /**
-    * A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
+  /** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
     */
   @js.native
   trait DelegationSet extends js.Object {
@@ -1121,8 +1073,7 @@ package route53 {
     }
   }
 
-  /**
-    * This action deletes a health check.
+  /** This action deletes a health check.
     */
   @js.native
   trait DeleteHealthCheckRequest extends js.Object {
@@ -1137,29 +1088,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHealthCheckRequest]
     }
   }
 
-  /**
-    * An empty element.
+  /** An empty element.
     */
   @js.native
-  trait DeleteHealthCheckResponse extends js.Object {}
+  trait DeleteHealthCheckResponse extends js.Object
 
   object DeleteHealthCheckResponse {
     @inline
-    def apply(
-    ): DeleteHealthCheckResponse = {
+    def apply(): DeleteHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteHealthCheckResponse]
     }
   }
 
-  /**
-    * A request to delete a hosted zone.
+  /** A request to delete a hosted zone.
     */
   @js.native
   trait DeleteHostedZoneRequest extends js.Object {
@@ -1174,13 +1120,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHostedZoneRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>DeleteHostedZone</code> request.
+  /** A complex type that contains the response to a <code>DeleteHostedZone</code> request.
     */
   @js.native
   trait DeleteHostedZoneResponse extends js.Object {
@@ -1195,7 +1139,6 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHostedZoneResponse]
     }
   }
@@ -1213,26 +1156,22 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteQueryLoggingConfigRequest]
     }
   }
 
   @js.native
-  trait DeleteQueryLoggingConfigResponse extends js.Object {}
+  trait DeleteQueryLoggingConfigResponse extends js.Object
 
   object DeleteQueryLoggingConfigResponse {
     @inline
-    def apply(
-    ): DeleteQueryLoggingConfigResponse = {
+    def apply(): DeleteQueryLoggingConfigResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteQueryLoggingConfigResponse]
     }
   }
 
-  /**
-    * A request to delete a reusable delegation set.
+  /** A request to delete a reusable delegation set.
     */
   @js.native
   trait DeleteReusableDelegationSetRequest extends js.Object {
@@ -1247,29 +1186,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReusableDelegationSetRequest]
     }
   }
 
-  /**
-    * An empty element.
+  /** An empty element.
     */
   @js.native
-  trait DeleteReusableDelegationSetResponse extends js.Object {}
+  trait DeleteReusableDelegationSetResponse extends js.Object
 
   object DeleteReusableDelegationSetResponse {
     @inline
-    def apply(
-    ): DeleteReusableDelegationSetResponse = {
+    def apply(): DeleteReusableDelegationSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteReusableDelegationSetResponse]
     }
   }
 
-  /**
-    * A request to delete a specified traffic policy instance.
+  /** A request to delete a specified traffic policy instance.
     */
   @js.native
   trait DeleteTrafficPolicyInstanceRequest extends js.Object {
@@ -1284,29 +1218,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTrafficPolicyInstanceRequest]
     }
   }
 
-  /**
-    * An empty element.
+  /** An empty element.
     */
   @js.native
-  trait DeleteTrafficPolicyInstanceResponse extends js.Object {}
+  trait DeleteTrafficPolicyInstanceResponse extends js.Object
 
   object DeleteTrafficPolicyInstanceResponse {
     @inline
-    def apply(
-    ): DeleteTrafficPolicyInstanceResponse = {
+    def apply(): DeleteTrafficPolicyInstanceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTrafficPolicyInstanceResponse]
     }
   }
 
-  /**
-    * A request to delete a specified traffic policy version.
+  /** A request to delete a specified traffic policy version.
     */
   @js.native
   trait DeleteTrafficPolicyRequest extends js.Object {
@@ -1324,29 +1253,24 @@ package route53 {
         "Id" -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTrafficPolicyRequest]
     }
   }
 
-  /**
-    * An empty element.
+  /** An empty element.
     */
   @js.native
-  trait DeleteTrafficPolicyResponse extends js.Object {}
+  trait DeleteTrafficPolicyResponse extends js.Object
 
   object DeleteTrafficPolicyResponse {
     @inline
-    def apply(
-    ): DeleteTrafficPolicyResponse = {
+    def apply(): DeleteTrafficPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTrafficPolicyResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the request to remove authorization to associate a VPC that was created by one AWS account with a hosted zone that was created with a different AWS account.
+  /** A complex type that contains information about the request to remove authorization to associate a VPC that was created by one AWS account with a hosted zone that was created with a different AWS account.
     */
   @js.native
   trait DeleteVPCAssociationAuthorizationRequest extends js.Object {
@@ -1364,29 +1288,24 @@ package route53 {
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC" -> VPC.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVPCAssociationAuthorizationRequest]
     }
   }
 
-  /**
-    * Empty response for the request.
+  /** Empty response for the request.
     */
   @js.native
-  trait DeleteVPCAssociationAuthorizationResponse extends js.Object {}
+  trait DeleteVPCAssociationAuthorizationResponse extends js.Object
 
   object DeleteVPCAssociationAuthorizationResponse {
     @inline
-    def apply(
-    ): DeleteVPCAssociationAuthorizationResponse = {
+    def apply(): DeleteVPCAssociationAuthorizationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteVPCAssociationAuthorizationResponse]
     }
   }
 
-  /**
-    * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.
+  /** For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.
     */
   @js.native
   trait Dimension extends js.Object {
@@ -1404,13 +1323,11 @@ package route53 {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Dimension]
     }
   }
 
-  /**
-    * A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone.
+  /** A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone.
     */
   @js.native
   trait DisassociateVPCFromHostedZoneRequest extends js.Object {
@@ -1436,8 +1353,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the disassociate request.
+  /** A complex type that contains the response information for the disassociate request.
     */
   @js.native
   trait DisassociateVPCFromHostedZoneResponse extends js.Object {
@@ -1452,13 +1368,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateVPCFromHostedZoneResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about a geographic location.
+  /** A complex type that contains information about a geographic location.
     */
   @js.native
   trait GeoLocation extends js.Object {
@@ -1482,8 +1396,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.
+  /** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.
     */
   @js.native
   trait GeoLocationDetails extends js.Object {
@@ -1516,8 +1429,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains information about the request to create a hosted zone.
+  /** A complex type that contains information about the request to create a hosted zone.
     */
   @js.native
   trait GetAccountLimitRequest extends js.Object {
@@ -1532,13 +1444,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccountLimitRequest]
     }
   }
 
-  /**
-    * A complex type that contains the requested limit.
+  /** A complex type that contains the requested limit.
     */
   @js.native
   trait GetAccountLimitResponse extends js.Object {
@@ -1556,13 +1466,11 @@ package route53 {
         "Count" -> Count.asInstanceOf[js.Any],
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccountLimitResponse]
     }
   }
 
-  /**
-    * The input for a GetChange request.
+  /** The input for a GetChange request.
     */
   @js.native
   trait GetChangeRequest extends js.Object {
@@ -1577,13 +1485,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetChangeRequest]
     }
   }
 
-  /**
-    * A complex type that contains the <code>ChangeInfo</code> element.
+  /** A complex type that contains the <code>ChangeInfo</code> element.
     */
   @js.native
   trait GetChangeResponse extends js.Object {
@@ -1598,29 +1504,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetChangeResponse]
     }
   }
 
-  /**
-    * Empty request.
+  /** Empty request.
     */
   @js.native
-  trait GetCheckerIpRangesRequest extends js.Object {}
+  trait GetCheckerIpRangesRequest extends js.Object
 
   object GetCheckerIpRangesRequest {
     @inline
-    def apply(
-    ): GetCheckerIpRangesRequest = {
+    def apply(): GetCheckerIpRangesRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetCheckerIpRangesRequest]
     }
   }
 
-  /**
-    * A complex type that contains the <code>CheckerIpRanges</code> element.
+  /** A complex type that contains the <code>CheckerIpRanges</code> element.
     */
   @js.native
   trait GetCheckerIpRangesResponse extends js.Object {
@@ -1635,13 +1536,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "CheckerIpRanges" -> CheckerIpRanges.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCheckerIpRangesResponse]
     }
   }
 
-  /**
-    * A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.
+  /** A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.
     */
   @js.native
   trait GetGeoLocationRequest extends js.Object {
@@ -1665,8 +1564,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the specified geolocation code.
+  /** A complex type that contains the response information for the specified geolocation code.
     */
   @js.native
   trait GetGeoLocationResponse extends js.Object {
@@ -1681,29 +1579,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "GeoLocationDetails" -> GeoLocationDetails.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGeoLocationResponse]
     }
   }
 
-  /**
-    * A request for the number of health checks that are associated with the current AWS account.
+  /** A request for the number of health checks that are associated with the current AWS account.
     */
   @js.native
-  trait GetHealthCheckCountRequest extends js.Object {}
+  trait GetHealthCheckCountRequest extends js.Object
 
   object GetHealthCheckCountRequest {
     @inline
-    def apply(
-    ): GetHealthCheckCountRequest = {
+    def apply(): GetHealthCheckCountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetHealthCheckCountRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>GetHealthCheckCount</code> request.
+  /** A complex type that contains the response to a <code>GetHealthCheckCount</code> request.
     */
   @js.native
   trait GetHealthCheckCountResponse extends js.Object {
@@ -1718,13 +1611,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckCount" -> HealthCheckCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckCountResponse]
     }
   }
 
-  /**
-    * A request for the reason that a health check failed most recently.
+  /** A request for the reason that a health check failed most recently.
     */
   @js.native
   trait GetHealthCheckLastFailureReasonRequest extends js.Object {
@@ -1739,13 +1630,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckLastFailureReasonRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.
+  /** A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.
     */
   @js.native
   trait GetHealthCheckLastFailureReasonResponse extends js.Object {
@@ -1760,13 +1649,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckObservations" -> HealthCheckObservations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckLastFailureReasonResponse]
     }
   }
 
-  /**
-    * A request to get information about a specified health check.
+  /** A request to get information about a specified health check.
     */
   @js.native
   trait GetHealthCheckRequest extends js.Object {
@@ -1781,13 +1668,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>GetHealthCheck</code> request.
+  /** A complex type that contains the response to a <code>GetHealthCheck</code> request.
     */
   @js.native
   trait GetHealthCheckResponse extends js.Object {
@@ -1802,13 +1687,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckResponse]
     }
   }
 
-  /**
-    * A request to get the status for a health check.
+  /** A request to get the status for a health check.
     */
   @js.native
   trait GetHealthCheckStatusRequest extends js.Object {
@@ -1823,13 +1706,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckStatusRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>GetHealthCheck</code> request.
+  /** A complex type that contains the response to a <code>GetHealthCheck</code> request.
     */
   @js.native
   trait GetHealthCheckStatusResponse extends js.Object {
@@ -1844,29 +1725,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheckObservations" -> HealthCheckObservations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHealthCheckStatusResponse]
     }
   }
 
-  /**
-    * A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
+  /** A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
     */
   @js.native
-  trait GetHostedZoneCountRequest extends js.Object {}
+  trait GetHostedZoneCountRequest extends js.Object
 
   object GetHostedZoneCountRequest {
     @inline
-    def apply(
-    ): GetHostedZoneCountRequest = {
+    def apply(): GetHostedZoneCountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetHostedZoneCountRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>GetHostedZoneCount</code> request.
+  /** A complex type that contains the response to a <code>GetHostedZoneCount</code> request.
     */
   @js.native
   trait GetHostedZoneCountResponse extends js.Object {
@@ -1881,13 +1757,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HostedZoneCount" -> HostedZoneCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostedZoneCountResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the request to create a hosted zone.
+  /** A complex type that contains information about the request to create a hosted zone.
     */
   @js.native
   trait GetHostedZoneLimitRequest extends js.Object {
@@ -1905,13 +1779,11 @@ package route53 {
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostedZoneLimitRequest]
     }
   }
 
-  /**
-    * A complex type that contains the requested limit.
+  /** A complex type that contains the requested limit.
     */
   @js.native
   trait GetHostedZoneLimitResponse extends js.Object {
@@ -1929,13 +1801,11 @@ package route53 {
         "Count" -> Count.asInstanceOf[js.Any],
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostedZoneLimitResponse]
     }
   }
 
-  /**
-    * A request to get information about a specified hosted zone.
+  /** A request to get information about a specified hosted zone.
     */
   @js.native
   trait GetHostedZoneRequest extends js.Object {
@@ -1950,13 +1820,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostedZoneRequest]
     }
   }
 
-  /**
-    * A complex type that contain the response to a <code>GetHostedZone</code> request.
+  /** A complex type that contain the response to a <code>GetHostedZone</code> request.
     */
   @js.native
   trait GetHostedZoneResponse extends js.Object {
@@ -1995,7 +1863,6 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQueryLoggingConfigRequest]
     }
   }
@@ -2013,13 +1880,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "QueryLoggingConfig" -> QueryLoggingConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQueryLoggingConfigResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the request to create a hosted zone.
+  /** A complex type that contains information about the request to create a hosted zone.
     */
   @js.native
   trait GetReusableDelegationSetLimitRequest extends js.Object {
@@ -2037,13 +1902,11 @@ package route53 {
         "DelegationSetId" -> DelegationSetId.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetReusableDelegationSetLimitRequest]
     }
   }
 
-  /**
-    * A complex type that contains the requested limit.
+  /** A complex type that contains the requested limit.
     */
   @js.native
   trait GetReusableDelegationSetLimitResponse extends js.Object {
@@ -2061,13 +1924,11 @@ package route53 {
         "Count" -> Count.asInstanceOf[js.Any],
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetReusableDelegationSetLimitResponse]
     }
   }
 
-  /**
-    * A request to get information about a specified reusable delegation set.
+  /** A request to get information about a specified reusable delegation set.
     */
   @js.native
   trait GetReusableDelegationSetRequest extends js.Object {
@@ -2082,13 +1943,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetReusableDelegationSetRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.
+  /** A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.
     */
   @js.native
   trait GetReusableDelegationSetResponse extends js.Object {
@@ -2103,29 +1962,24 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetReusableDelegationSetResponse]
     }
   }
 
-  /**
-    * Request to get the number of traffic policy instances that are associated with the current AWS account.
+  /** Request to get the number of traffic policy instances that are associated with the current AWS account.
     */
   @js.native
-  trait GetTrafficPolicyInstanceCountRequest extends js.Object {}
+  trait GetTrafficPolicyInstanceCountRequest extends js.Object
 
   object GetTrafficPolicyInstanceCountRequest {
     @inline
-    def apply(
-    ): GetTrafficPolicyInstanceCountRequest = {
+    def apply(): GetTrafficPolicyInstanceCountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetTrafficPolicyInstanceCountRequest]
     }
   }
 
-  /**
-    * A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
+  /** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
     */
   @js.native
   trait GetTrafficPolicyInstanceCountResponse extends js.Object {
@@ -2140,13 +1994,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "TrafficPolicyInstanceCount" -> TrafficPolicyInstanceCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrafficPolicyInstanceCountResponse]
     }
   }
 
-  /**
-    * Gets information about a specified traffic policy instance.
+  /** Gets information about a specified traffic policy instance.
     */
   @js.native
   trait GetTrafficPolicyInstanceRequest extends js.Object {
@@ -2161,13 +2013,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrafficPolicyInstanceRequest]
     }
   }
 
-  /**
-    * A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
+  /** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
     */
   @js.native
   trait GetTrafficPolicyInstanceResponse extends js.Object {
@@ -2182,13 +2032,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrafficPolicyInstanceResponse]
     }
   }
 
-  /**
-    * Gets information about a specific traffic policy version.
+  /** Gets information about a specific traffic policy version.
     */
   @js.native
   trait GetTrafficPolicyRequest extends js.Object {
@@ -2206,13 +2054,11 @@ package route53 {
         "Id" -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrafficPolicyRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait GetTrafficPolicyResponse extends js.Object {
@@ -2227,13 +2073,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTrafficPolicyResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about one health check that is associated with the current AWS account.
+  /** A complex type that contains information about one health check that is associated with the current AWS account.
     */
   @js.native
   trait HealthCheck extends js.Object {
@@ -2268,8 +2112,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains information about the health check.
+  /** A complex type that contains information about the health check.
     */
   @js.native
   trait HealthCheckConfig extends js.Object {
@@ -2337,8 +2180,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.
+  /** A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.
     */
   @js.native
   trait HealthCheckObservation extends js.Object {
@@ -2391,8 +2233,7 @@ package route53 {
     @inline def values = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
   }
 
-  /**
-    * A complex type that contains general information about the hosted zone.
+  /** A complex type that contains general information about the hosted zone.
     */
   @js.native
   trait HostedZone extends js.Object {
@@ -2427,8 +2268,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+  /** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
     */
   @js.native
   trait HostedZoneConfig extends js.Object {
@@ -2449,8 +2289,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the type of limit that you specified in the request and the current value for that limit.
+  /** A complex type that contains the type of limit that you specified in the request and the current value for that limit.
     */
   @js.native
   trait HostedZoneLimit extends js.Object {
@@ -2468,7 +2307,6 @@ package route53 {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HostedZoneLimit]
     }
   }
@@ -2482,8 +2320,7 @@ package route53 {
     @inline def values = js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
   }
 
-  /**
-    * A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa.
+  /** A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa.
     */
   @js.native
   trait HostedZoneOwner extends js.Object {
@@ -2504,8 +2341,7 @@ package route53 {
     }
   }
 
-  /**
-    * In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.
+  /** In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.
     */
   @js.native
   trait HostedZoneSummary extends js.Object {
@@ -2526,7 +2362,6 @@ package route53 {
         "Name" -> Name.asInstanceOf[js.Any],
         "Owner" -> Owner.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HostedZoneSummary]
     }
   }
@@ -2541,8 +2376,7 @@ package route53 {
     @inline def values = js.Array(Healthy, Unhealthy, LastKnownStatus)
   }
 
-  /**
-    * If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.
+  /** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.
     */
   @js.native
   trait LinkedService extends js.Object {
@@ -2563,8 +2397,7 @@ package route53 {
     }
   }
 
-  /**
-    * A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets.
+  /** A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets.
     */
   @js.native
   trait ListGeoLocationsRequest extends js.Object {
@@ -2591,8 +2424,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type containing the response information for the request.
+  /** A complex type containing the response information for the request.
     */
   @js.native
   trait ListGeoLocationsResponse extends js.Object {
@@ -2627,8 +2459,7 @@ package route53 {
     }
   }
 
-  /**
-    * A request to retrieve a list of the health checks that are associated with the current AWS account.
+  /** A request to retrieve a list of the health checks that are associated with the current AWS account.
     */
   @js.native
   trait ListHealthChecksRequest extends js.Object {
@@ -2649,8 +2480,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>ListHealthChecks</code> request.
+  /** A complex type that contains the response to a <code>ListHealthChecks</code> request.
     */
   @js.native
   trait ListHealthChecksResponse extends js.Object {
@@ -2682,8 +2512,7 @@ package route53 {
     }
   }
 
-  /**
-    * Retrieves a list of the public and private hosted zones that are associated with the current AWS account in ASCII order by domain name.
+  /** Retrieves a list of the public and private hosted zones that are associated with the current AWS account in ASCII order by domain name.
     */
   @js.native
   trait ListHostedZonesByNameRequest extends js.Object {
@@ -2707,8 +2536,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListHostedZonesByNameResponse extends js.Object {
@@ -2746,8 +2574,7 @@ package route53 {
     }
   }
 
-  /**
-    * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account created the hosted zones.
+  /** Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account created the hosted zones.
     */
   @js.native
   trait ListHostedZonesByVPCRequest extends js.Object {
@@ -2800,8 +2627,7 @@ package route53 {
     }
   }
 
-  /**
-    * A request to retrieve a list of the public and private hosted zones that are associated with the current AWS account.
+  /** A request to retrieve a list of the public and private hosted zones that are associated with the current AWS account.
     */
   @js.native
   trait ListHostedZonesRequest extends js.Object {
@@ -2898,8 +2724,7 @@ package route53 {
     }
   }
 
-  /**
-    * A request for the resource record sets that are associated with a specified hosted zone.
+  /** A request for the resource record sets that are associated with a specified hosted zone.
     */
   @js.native
   trait ListResourceRecordSetsRequest extends js.Object {
@@ -2931,8 +2756,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains list information for the resource record set.
+  /** A complex type that contains list information for the resource record set.
     */
   @js.native
   trait ListResourceRecordSetsResponse extends js.Object {
@@ -2967,8 +2791,7 @@ package route53 {
     }
   }
 
-  /**
-    * A request to get a list of the reusable delegation sets that are associated with the current AWS account.
+  /** A request to get a list of the reusable delegation sets that are associated with the current AWS account.
     */
   @js.native
   trait ListReusableDelegationSetsRequest extends js.Object {
@@ -2989,8 +2812,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains information about the reusable delegation sets that are associated with the current AWS account.
+  /** A complex type that contains information about the reusable delegation sets that are associated with the current AWS account.
     */
   @js.native
   trait ListReusableDelegationSetsResponse extends js.Object {
@@ -3022,8 +2844,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type containing information about a request for a list of the tags that are associated with an individual resource.
+  /** A complex type containing information about a request for a list of the tags that are associated with an individual resource.
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -3041,13 +2862,11 @@ package route53 {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * A complex type that contains information about the health checks or hosted zones for which you want to list tags.
+  /** A complex type that contains information about the health checks or hosted zones for which you want to list tags.
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -3062,13 +2881,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ResourceTagSet" -> ResourceTagSet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the health checks or hosted zones for which you want to list tags.
+  /** A complex type that contains information about the health checks or hosted zones for which you want to list tags.
     */
   @js.native
   trait ListTagsForResourcesRequest extends js.Object {
@@ -3086,13 +2903,11 @@ package route53 {
         "ResourceIds" -> ResourceIds.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourcesRequest]
     }
   }
 
-  /**
-    * A complex type containing tags for the specified resources.
+  /** A complex type containing tags for the specified resources.
     */
   @js.native
   trait ListTagsForResourcesResponse extends js.Object {
@@ -3107,13 +2922,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "ResourceTagSets" -> ResourceTagSets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourcesResponse]
     }
   }
 
-  /**
-    * A complex type that contains the information about the request to list the traffic policies that are associated with the current AWS account.
+  /** A complex type that contains the information about the request to list the traffic policies that are associated with the current AWS account.
     */
   @js.native
   trait ListTrafficPoliciesRequest extends js.Object {
@@ -3134,8 +2947,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListTrafficPoliciesResponse extends js.Object {
@@ -3159,13 +2971,11 @@ package route53 {
         "TrafficPolicyIdMarker" -> TrafficPolicyIdMarker.asInstanceOf[js.Any],
         "TrafficPolicySummaries" -> TrafficPolicySummaries.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTrafficPoliciesResponse]
     }
   }
 
-  /**
-    * A request for the traffic policy instances that you created in a specified hosted zone.
+  /** A request for the traffic policy instances that you created in a specified hosted zone.
     */
   @js.native
   trait ListTrafficPolicyInstancesByHostedZoneRequest extends js.Object {
@@ -3194,8 +3004,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListTrafficPolicyInstancesByHostedZoneResponse extends js.Object {
@@ -3227,8 +3036,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the information about the request to list your traffic policy instances.
+  /** A complex type that contains the information about the request to list your traffic policy instances.
     */
   @js.native
   trait ListTrafficPolicyInstancesByPolicyRequest extends js.Object {
@@ -3263,8 +3071,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListTrafficPolicyInstancesByPolicyResponse extends js.Object {
@@ -3299,8 +3106,7 @@ package route53 {
     }
   }
 
-  /**
-    * A request to get information about the traffic policy instances that you created by using the current AWS account.
+  /** A request to get information about the traffic policy instances that you created by using the current AWS account.
     */
   @js.native
   trait ListTrafficPolicyInstancesRequest extends js.Object {
@@ -3327,8 +3133,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListTrafficPolicyInstancesResponse extends js.Object {
@@ -3363,8 +3168,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the information about the request to list your traffic policies.
+  /** A complex type that contains the information about the request to list your traffic policies.
     */
   @js.native
   trait ListTrafficPolicyVersionsRequest extends js.Object {
@@ -3390,8 +3194,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListTrafficPolicyVersionsResponse extends js.Object {
@@ -3415,13 +3218,11 @@ package route53 {
         "TrafficPolicies" -> TrafficPolicies.asInstanceOf[js.Any],
         "TrafficPolicyVersionMarker" -> TrafficPolicyVersionMarker.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTrafficPolicyVersionsResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about that can be associated with your hosted zone.
+  /** A complex type that contains information about that can be associated with your hosted zone.
     */
   @js.native
   trait ListVPCAssociationAuthorizationsRequest extends js.Object {
@@ -3447,8 +3248,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response information for the request.
+  /** A complex type that contains the response information for the request.
     */
   @js.native
   trait ListVPCAssociationAuthorizationsResponse extends js.Object {
@@ -3474,8 +3274,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains information about a configuration for DNS query logging.
+  /** A complex type that contains information about a configuration for DNS query logging.
     */
   @js.native
   trait QueryLoggingConfig extends js.Object {
@@ -3496,7 +3295,6 @@ package route53 {
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[QueryLoggingConfig]
     }
   }
@@ -3531,8 +3329,7 @@ package route53 {
     @inline def values = js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
   }
 
-  /**
-    * Information specific to the resource record.
+  /** Information specific to the resource record.
     *
     * '''Note:'''If you're creating an alias resource record set, omit <code>ResourceRecord</code>.
     */
@@ -3549,13 +3346,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceRecord]
     }
   }
 
-  /**
-    * Information about the resource record set to create or delete.
+  /** Information about the resource record set to create or delete.
     */
   @js.native
   trait ResourceRecordSet extends js.Object {
@@ -3647,36 +3442,34 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
-    @inline def values =
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `ca-central-1`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`,
-        `ap-northeast-3`,
-        `eu-north-1`,
-        `sa-east-1`,
-        `cn-north-1`,
-        `cn-northwest-1`,
-        `ap-east-1`,
-        `me-south-1`,
-        `ap-south-1`,
-        `af-south-1`,
-        `eu-south-1`
-      )
+    @inline def values = js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `ca-central-1`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`,
+      `ap-northeast-3`,
+      `eu-north-1`,
+      `sa-east-1`,
+      `cn-north-1`,
+      `cn-northwest-1`,
+      `ap-east-1`,
+      `me-south-1`,
+      `ap-south-1`,
+      `af-south-1`,
+      `eu-south-1`
+    )
   }
 
-  /**
-    * A complex type containing a resource and its associated tags.
+  /** A complex type containing a resource and its associated tags.
     */
   @js.native
   trait ResourceTagSet extends js.Object {
@@ -3700,8 +3493,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the type of limit that you specified in the request and the current value for that limit.
+  /** A complex type that contains the type of limit that you specified in the request and the current value for that limit.
     */
   @js.native
   trait ReusableDelegationSetLimit extends js.Object {
@@ -3719,7 +3511,6 @@ package route53 {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReusableDelegationSetLimit]
     }
   }
@@ -3744,8 +3535,7 @@ package route53 {
     @inline def values = js.Array(Average, Sum, SampleCount, Maximum, Minimum)
   }
 
-  /**
-    * A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.
+  /** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.
     */
   @js.native
   trait StatusReport extends js.Object {
@@ -3766,8 +3556,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.
+  /** A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3797,8 +3586,7 @@ package route53 {
     @inline def values = js.Array(healthcheck, hostedzone)
   }
 
-  /**
-    * Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.
+  /** Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.
     */
   @js.native
   trait TestDNSAnswerRequest extends js.Object {
@@ -3833,8 +3621,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response to a <code>TestDNSAnswer</code> request.
+  /** A complex type that contains the response to a <code>TestDNSAnswer</code> request.
     */
   @js.native
   trait TestDNSAnswerResponse extends js.Object {
@@ -3864,13 +3651,11 @@ package route53 {
         "RecordType" -> RecordType.asInstanceOf[js.Any],
         "ResponseCode" -> ResponseCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestDNSAnswerResponse]
     }
   }
 
-  /**
-    * A complex type that contains settings for a traffic policy.
+  /** A complex type that contains settings for a traffic policy.
     */
   @js.native
   trait TrafficPolicy extends js.Object {
@@ -3905,8 +3690,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains settings for the new traffic policy instance.
+  /** A complex type that contains settings for the new traffic policy instance.
     */
   @js.native
   trait TrafficPolicyInstance extends js.Object {
@@ -3945,13 +3729,11 @@ package route53 {
         "TrafficPolicyType" -> TrafficPolicyType.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TrafficPolicyInstance]
     }
   }
 
-  /**
-    * A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account.
+  /** A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account.
     */
   @js.native
   trait TrafficPolicySummary extends js.Object {
@@ -3978,13 +3760,11 @@ package route53 {
         "TrafficPolicyCount" -> TrafficPolicyCount.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TrafficPolicySummary]
     }
   }
 
-  /**
-    * A complex type that contains information about a request to update a health check.
+  /** A complex type that contains information about a request to update a health check.
     */
   @js.native
   trait UpdateHealthCheckRequest extends js.Object {
@@ -4052,8 +3832,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response to the <code>UpdateHealthCheck</code> request.
+  /** A complex type that contains the response to the <code>UpdateHealthCheck</code> request.
     */
   @js.native
   trait UpdateHealthCheckResponse extends js.Object {
@@ -4068,13 +3847,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateHealthCheckResponse]
     }
   }
 
-  /**
-    * A request to update the comment for a hosted zone.
+  /** A request to update the comment for a hosted zone.
     */
   @js.native
   trait UpdateHostedZoneCommentRequest extends js.Object {
@@ -4097,8 +3874,7 @@ package route53 {
     }
   }
 
-  /**
-    * A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
+  /** A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
     */
   @js.native
   trait UpdateHostedZoneCommentResponse extends js.Object {
@@ -4113,13 +3889,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "HostedZone" -> HostedZone.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateHostedZoneCommentResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the traffic policy that you want to update the comment for.
+  /** A complex type that contains information about the traffic policy that you want to update the comment for.
     */
   @js.native
   trait UpdateTrafficPolicyCommentRequest extends js.Object {
@@ -4140,13 +3914,11 @@ package route53 {
         "Id" -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTrafficPolicyCommentRequest]
     }
   }
 
-  /**
-    * A complex type that contains the response information for the traffic policy.
+  /** A complex type that contains the response information for the traffic policy.
     */
   @js.native
   trait UpdateTrafficPolicyCommentResponse extends js.Object {
@@ -4161,13 +3933,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTrafficPolicyCommentResponse]
     }
   }
 
-  /**
-    * A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance.
+  /** A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance.
     */
   @js.native
   trait UpdateTrafficPolicyInstanceRequest extends js.Object {
@@ -4191,13 +3961,11 @@ package route53 {
         "TrafficPolicyId" -> TrafficPolicyId.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTrafficPolicyInstanceRequest]
     }
   }
 
-  /**
-    * A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
+  /** A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.
     */
   @js.native
   trait UpdateTrafficPolicyInstanceResponse extends js.Object {
@@ -4212,13 +3980,11 @@ package route53 {
       val __obj = js.Dynamic.literal(
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTrafficPolicyInstanceResponse]
     }
   }
 
-  /**
-    * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+  /** (Private hosted zones only) A complex type that contains information about an Amazon VPC.
     */
   @js.native
   trait VPC extends js.Object {
@@ -4269,34 +4035,33 @@ package route53 {
     val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
     val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
 
-    @inline def values =
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ap-east-1`,
-        `me-south-1`,
-        `us-gov-west-1`,
-        `us-gov-east-1`,
-        `us-iso-east-1`,
-        `us-isob-east-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-south-1`,
-        `ap-northeast-1`,
-        `ap-northeast-2`,
-        `ap-northeast-3`,
-        `eu-north-1`,
-        `sa-east-1`,
-        `ca-central-1`,
-        `cn-north-1`,
-        `af-south-1`,
-        `eu-south-1`
-      )
+    @inline def values = js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ap-east-1`,
+      `me-south-1`,
+      `us-gov-west-1`,
+      `us-gov-east-1`,
+      `us-iso-east-1`,
+      `us-isob-east-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-south-1`,
+      `ap-northeast-1`,
+      `ap-northeast-2`,
+      `ap-northeast-3`,
+      `eu-north-1`,
+      `sa-east-1`,
+      `ca-central-1`,
+      `cn-north-1`,
+      `af-south-1`,
+      `eu-south-1`
+    )
   }
 }

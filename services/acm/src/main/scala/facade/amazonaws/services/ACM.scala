@@ -92,13 +92,11 @@ package acm {
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToCertificateRequest]
     }
   }
 
-  /**
-    * Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request.
+  /** Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request.
     */
   @js.native
   trait CertificateDetail extends js.Object {
@@ -191,8 +189,7 @@ package acm {
     }
   }
 
-  /**
-    * Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see [[https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency|Certificate Transparency Logging]].
+  /** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see [[https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency|Certificate Transparency Logging]].
     */
   @js.native
   trait CertificateOptions extends js.Object {
@@ -224,8 +221,7 @@ package acm {
     @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
   }
 
-  /**
-    * This structure is returned in the response object of <a>ListCertificates</a> action.
+  /** This structure is returned in the response object of <a>ListCertificates</a> action.
     */
   @js.native
   trait CertificateSummary extends js.Object {
@@ -278,7 +274,6 @@ package acm {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCertificateRequest]
     }
   }
@@ -296,7 +291,6 @@ package acm {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCertificateRequest]
     }
   }
@@ -327,8 +321,7 @@ package acm {
     @inline def values = js.Array(PENDING_VALIDATION, SUCCESS, FAILED)
   }
 
-  /**
-    * Contains information about the validation of each domain name in the certificate.
+  /** Contains information about the validation of each domain name in the certificate.
     */
   @js.native
   trait DomainValidation extends js.Object {
@@ -363,8 +356,7 @@ package acm {
     }
   }
 
-  /**
-    * Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.
+  /** Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.
     */
   @js.native
   trait DomainValidationOption extends js.Object {
@@ -382,7 +374,6 @@ package acm {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ValidationDomain" -> ValidationDomain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DomainValidationOption]
     }
   }
@@ -403,7 +394,6 @@ package acm {
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Passphrase" -> Passphrase.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportCertificateRequest]
     }
   }
@@ -430,8 +420,7 @@ package acm {
     }
   }
 
-  /**
-    * The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.
+  /** The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.
     */
   @js.native
   trait ExtendedKeyUsage extends js.Object {
@@ -468,21 +457,20 @@ package acm {
     val NONE = "NONE".asInstanceOf[ExtendedKeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[ExtendedKeyUsageName]
 
-    @inline def values =
-      js.Array(
-        TLS_WEB_SERVER_AUTHENTICATION,
-        TLS_WEB_CLIENT_AUTHENTICATION,
-        CODE_SIGNING,
-        EMAIL_PROTECTION,
-        TIME_STAMPING,
-        OCSP_SIGNING,
-        IPSEC_END_SYSTEM,
-        IPSEC_TUNNEL,
-        IPSEC_USER,
-        ANY,
-        NONE,
-        CUSTOM
-      )
+    @inline def values = js.Array(
+      TLS_WEB_SERVER_AUTHENTICATION,
+      TLS_WEB_CLIENT_AUTHENTICATION,
+      CODE_SIGNING,
+      EMAIL_PROTECTION,
+      TIME_STAMPING,
+      OCSP_SIGNING,
+      IPSEC_END_SYSTEM,
+      IPSEC_TUNNEL,
+      IPSEC_USER,
+      ANY,
+      NONE,
+      CUSTOM
+    )
   }
 
   @js.native
@@ -506,30 +494,28 @@ package acm {
     val SLR_NOT_FOUND = "SLR_NOT_FOUND".asInstanceOf[FailureReason]
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
-    @inline def values =
-      js.Array(
-        NO_AVAILABLE_CONTACTS,
-        ADDITIONAL_VERIFICATION_REQUIRED,
-        DOMAIN_NOT_ALLOWED,
-        INVALID_PUBLIC_DOMAIN,
-        DOMAIN_VALIDATION_DENIED,
-        CAA_ERROR,
-        PCA_LIMIT_EXCEEDED,
-        PCA_INVALID_ARN,
-        PCA_INVALID_STATE,
-        PCA_REQUEST_FAILED,
-        PCA_NAME_CONSTRAINTS_VALIDATION,
-        PCA_RESOURCE_NOT_FOUND,
-        PCA_INVALID_ARGS,
-        PCA_INVALID_DURATION,
-        PCA_ACCESS_DENIED,
-        SLR_NOT_FOUND,
-        OTHER
-      )
+    @inline def values = js.Array(
+      NO_AVAILABLE_CONTACTS,
+      ADDITIONAL_VERIFICATION_REQUIRED,
+      DOMAIN_NOT_ALLOWED,
+      INVALID_PUBLIC_DOMAIN,
+      DOMAIN_VALIDATION_DENIED,
+      CAA_ERROR,
+      PCA_LIMIT_EXCEEDED,
+      PCA_INVALID_ARN,
+      PCA_INVALID_STATE,
+      PCA_REQUEST_FAILED,
+      PCA_NAME_CONSTRAINTS_VALIDATION,
+      PCA_RESOURCE_NOT_FOUND,
+      PCA_INVALID_ARGS,
+      PCA_INVALID_DURATION,
+      PCA_ACCESS_DENIED,
+      SLR_NOT_FOUND,
+      OTHER
+    )
   }
 
-  /**
-    * This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.
+  /** This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.
     */
   @js.native
   trait Filters extends js.Object {
@@ -566,7 +552,6 @@ package acm {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCertificateRequest]
     }
   }
@@ -649,8 +634,7 @@ package acm {
     @inline def values = js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
   }
 
-  /**
-    * The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
+  /** The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.
     */
   @js.native
   trait KeyUsage extends js.Object {
@@ -683,20 +667,19 @@ package acm {
     val ANY = "ANY".asInstanceOf[KeyUsageName]
     val CUSTOM = "CUSTOM".asInstanceOf[KeyUsageName]
 
-    @inline def values =
-      js.Array(
-        DIGITAL_SIGNATURE,
-        NON_REPUDIATION,
-        KEY_ENCIPHERMENT,
-        DATA_ENCIPHERMENT,
-        KEY_AGREEMENT,
-        CERTIFICATE_SIGNING,
-        CRL_SIGNING,
-        ENCIPHER_ONLY,
-        DECIPHER_ONLY,
-        ANY,
-        CUSTOM
-      )
+    @inline def values = js.Array(
+      DIGITAL_SIGNATURE,
+      NON_REPUDIATION,
+      KEY_ENCIPHERMENT,
+      DATA_ENCIPHERMENT,
+      KEY_AGREEMENT,
+      CERTIFICATE_SIGNING,
+      CRL_SIGNING,
+      ENCIPHER_ONLY,
+      DECIPHER_ONLY,
+      ANY,
+      CUSTOM
+    )
   }
 
   @js.native
@@ -756,7 +739,6 @@ package acm {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForCertificateRequest]
     }
   }
@@ -801,7 +783,6 @@ package acm {
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromCertificateRequest]
     }
   }
@@ -819,7 +800,6 @@ package acm {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RenewCertificateRequest]
     }
   }
@@ -844,8 +824,7 @@ package acm {
     @inline def values = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
   }
 
-  /**
-    * Contains information about the status of ACM's [[https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html|managed renewal]] for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+  /** Contains information about the status of ACM's [[https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html|managed renewal]] for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
     */
   @js.native
   trait RenewalSummary extends js.Object {
@@ -948,13 +927,11 @@ package acm {
         "Domain" -> Domain.asInstanceOf[js.Any],
         "ValidationDomain" -> ValidationDomain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResendValidationEmailRequest]
     }
   }
 
-  /**
-    * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.
+  /** Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.
     */
   @js.native
   trait ResourceRecord extends js.Object {
@@ -975,7 +952,6 @@ package acm {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceRecord]
     }
   }
@@ -994,23 +970,21 @@ package acm {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-    @inline def values =
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CA_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERCEDED,
-        CESSATION_OF_OPERATION,
-        CERTIFICATE_HOLD,
-        REMOVE_FROM_CRL,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
+    @inline def values = js.Array(
+      UNSPECIFIED,
+      KEY_COMPROMISE,
+      CA_COMPROMISE,
+      AFFILIATION_CHANGED,
+      SUPERCEDED,
+      CESSATION_OF_OPERATION,
+      CERTIFICATE_HOLD,
+      REMOVE_FROM_CRL,
+      PRIVILEGE_WITHDRAWN,
+      A_A_COMPROMISE
+    )
   }
 
-  /**
-    * A key-value pair that identifies or specifies metadata about an ACM resource.
+  /** A key-value pair that identifies or specifies metadata about an ACM resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1049,7 +1023,6 @@ package acm {
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Options" -> Options.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCertificateOptionsRequest]
     }
   }

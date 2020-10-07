@@ -112,7 +112,6 @@ package route53resolver {
         "IpAddress" -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateResolverEndpointIpAddressRequest]
     }
   }
@@ -287,7 +286,6 @@ package route53resolver {
       val __obj = js.Dynamic.literal(
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResolverEndpointRequest]
     }
   }
@@ -321,7 +319,6 @@ package route53resolver {
       val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResolverRuleRequest]
     }
   }
@@ -358,7 +355,6 @@ package route53resolver {
         "IpAddress" -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateResolverEndpointIpAddressRequest]
     }
   }
@@ -395,7 +391,6 @@ package route53resolver {
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
         "VPCId" -> VPCId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateResolverRuleRequest]
     }
   }
@@ -416,8 +411,7 @@ package route53resolver {
     }
   }
 
-  /**
-    * For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules.
+  /** For <code>List</code> operations, an optional specification to return a subset of objects, such as resolver endpoints or resolver rules.
     */
   @js.native
   trait Filter extends js.Object {
@@ -451,7 +445,6 @@ package route53resolver {
       val __obj = js.Dynamic.literal(
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResolverEndpointRequest]
     }
   }
@@ -485,7 +478,6 @@ package route53resolver {
       val __obj = js.Dynamic.literal(
         "ResolverRuleAssociationId" -> ResolverRuleAssociationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResolverRuleAssociationRequest]
     }
   }
@@ -519,7 +511,6 @@ package route53resolver {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResolverRulePolicyRequest]
     }
   }
@@ -553,7 +544,6 @@ package route53resolver {
       val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResolverRuleRequest]
     }
   }
@@ -574,8 +564,7 @@ package route53resolver {
     }
   }
 
-  /**
-    * In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries.
+  /** In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries.
     */
   @js.native
   trait IpAddressRequest extends js.Object {
@@ -598,8 +587,7 @@ package route53resolver {
     }
   }
 
-  /**
-    * In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries.
+  /** In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries.
     */
   @js.native
   trait IpAddressResponse extends js.Object {
@@ -652,8 +640,7 @@ package route53resolver {
     @inline def values = js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED)
   }
 
-  /**
-    * In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
+  /** In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
     */
   @js.native
   trait IpAddressUpdate extends js.Object {
@@ -914,13 +901,11 @@ package route53resolver {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "ResolverRulePolicy" -> ResolverRulePolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutResolverRulePolicyRequest]
     }
   }
 
-  /**
-    * The response to a <code>PutResolverRulePolicy</code> request.
+  /** The response to a <code>PutResolverRulePolicy</code> request.
     */
   @js.native
   trait PutResolverRulePolicyResponse extends js.Object {
@@ -938,8 +923,7 @@ package route53resolver {
     }
   }
 
-  /**
-    * In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint.
+  /** In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint.
     */
   @js.native
   trait ResolverEndpoint extends js.Object {
@@ -1012,8 +996,7 @@ package route53resolver {
     @inline def values = js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
   }
 
-  /**
-    * For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request.
+  /** For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request.
     */
   @js.native
   trait ResolverRule extends js.Object {
@@ -1064,8 +1047,7 @@ package route53resolver {
     }
   }
 
-  /**
-    * In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC.
+  /** In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC.
     */
   @js.native
   trait ResolverRuleAssociation extends js.Object {
@@ -1110,8 +1092,7 @@ package route53resolver {
     @inline def values = js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
   }
 
-  /**
-    * In an <a>UpdateResolverRule</a> request, information about the changes that you want to make.
+  /** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make.
     */
   @js.native
   trait ResolverRuleConfig extends js.Object {
@@ -1166,8 +1147,7 @@ package route53resolver {
     @inline def values = js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
   }
 
-  /**
-    * One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>.
+  /** One tag that you want to add to the specified resource. A tag consists of a <code>Key</code> (a name for the tag) and a <code>Value</code>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1204,26 +1184,22 @@ package route53resolver {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.
+  /** In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.
     */
   @js.native
   trait TargetAddress extends js.Object {
@@ -1262,20 +1238,17 @@ package route53resolver {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1333,7 +1306,6 @@ package route53resolver {
         "Config" -> Config.asInstanceOf[js.Any],
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateResolverRuleRequest]
     }
   }

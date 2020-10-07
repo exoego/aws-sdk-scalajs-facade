@@ -219,8 +219,7 @@ package codedeploy {
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
   }
 
-  /**
-    * Represents the input of, and adds tags to, an on-premises instance operation.
+  /** Represents the input of, and adds tags to, an on-premises instance operation.
     */
   @js.native
   trait AddTagsToOnPremisesInstancesInput extends js.Object {
@@ -238,13 +237,11 @@ package codedeploy {
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToOnPremisesInstancesInput]
     }
   }
 
-  /**
-    * Information about an alarm.
+  /** Information about an alarm.
     */
   @js.native
   trait Alarm extends js.Object {
@@ -262,8 +259,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about alarms associated with the deployment group.
+  /** Information about alarms associated with the deployment group.
     */
   @js.native
   trait AlarmConfiguration extends js.Object {
@@ -287,8 +283,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.
+  /** A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.
     */
   @js.native
   trait AppSpecContent extends js.Object {
@@ -309,8 +304,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about an application.
+  /** Information about an application.
     */
   @js.native
   trait ApplicationInfo extends js.Object {
@@ -353,8 +347,7 @@ package codedeploy {
     @inline def values = js.Array(registerTime, firstUsedTime, lastUsedTime)
   }
 
-  /**
-    * Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
+  /** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
     */
   @js.native
   trait AutoRollbackConfiguration extends js.Object {
@@ -385,8 +378,7 @@ package codedeploy {
     @inline def values = js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST)
   }
 
-  /**
-    * Information about an Auto Scaling group.
+  /** Information about an Auto Scaling group.
     */
   @js.native
   trait AutoScalingGroup extends js.Object {
@@ -407,8 +399,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>BatchGetApplicationRevisions</code> operation.
+  /** Represents the input of a <code>BatchGetApplicationRevisions</code> operation.
     */
   @js.native
   trait BatchGetApplicationRevisionsInput extends js.Object {
@@ -426,13 +417,11 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revisions" -> revisions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetApplicationRevisionsInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>BatchGetApplicationRevisions</code> operation.
+  /** Represents the output of a <code>BatchGetApplicationRevisions</code> operation.
     */
   @js.native
   trait BatchGetApplicationRevisionsOutput extends js.Object {
@@ -456,8 +445,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>BatchGetApplications</code> operation.
+  /** Represents the input of a <code>BatchGetApplications</code> operation.
     */
   @js.native
   trait BatchGetApplicationsInput extends js.Object {
@@ -472,13 +460,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "applicationNames" -> applicationNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetApplicationsInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>BatchGetApplications</code> operation.
+  /** Represents the output of a <code>BatchGetApplications</code> operation.
     */
   @js.native
   trait BatchGetApplicationsOutput extends js.Object {
@@ -496,8 +482,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>BatchGetDeploymentGroups</code> operation.
+  /** Represents the input of a <code>BatchGetDeploymentGroups</code> operation.
     */
   @js.native
   trait BatchGetDeploymentGroupsInput extends js.Object {
@@ -515,13 +500,11 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupNames" -> deploymentGroupNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetDeploymentGroupsInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>BatchGetDeploymentGroups</code> operation.
+  /** Represents the output of a <code>BatchGetDeploymentGroups</code> operation.
     */
   @js.native
   trait BatchGetDeploymentGroupsOutput extends js.Object {
@@ -542,8 +525,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>BatchGetDeploymentInstances</code> operation.
+  /** Represents the input of a <code>BatchGetDeploymentInstances</code> operation.
     */
   @js.native
   trait BatchGetDeploymentInstancesInput extends js.Object {
@@ -561,13 +543,11 @@ package codedeploy {
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceIds" -> instanceIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetDeploymentInstancesInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>BatchGetDeploymentInstances</code> operation.
+  /** Represents the output of a <code>BatchGetDeploymentInstances</code> operation.
     */
   @js.native
   trait BatchGetDeploymentInstancesOutput extends js.Object {
@@ -623,8 +603,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>BatchGetDeployments</code> operation.
+  /** Represents the input of a <code>BatchGetDeployments</code> operation.
     */
   @js.native
   trait BatchGetDeploymentsInput extends js.Object {
@@ -639,13 +618,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "deploymentIds" -> deploymentIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetDeploymentsInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>BatchGetDeployments</code> operation.
+  /** Represents the output of a <code>BatchGetDeployments</code> operation.
     */
   @js.native
   trait BatchGetDeploymentsOutput extends js.Object {
@@ -663,8 +640,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>BatchGetOnPremisesInstances</code> operation.
+  /** Represents the input of a <code>BatchGetOnPremisesInstances</code> operation.
     */
   @js.native
   trait BatchGetOnPremisesInstancesInput extends js.Object {
@@ -679,13 +655,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "instanceNames" -> instanceNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetOnPremisesInstancesInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>BatchGetOnPremisesInstances</code> operation.
+  /** Represents the output of a <code>BatchGetOnPremisesInstances</code> operation.
     */
   @js.native
   trait BatchGetOnPremisesInstancesOutput extends js.Object {
@@ -703,8 +677,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about blue/green deployment options for a deployment group.
+  /** Information about blue/green deployment options for a deployment group.
     */
   @js.native
   trait BlueGreenDeploymentConfiguration extends js.Object {
@@ -728,8 +701,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.
+  /** Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.
     */
   @js.native
   trait BlueInstanceTerminationOption extends js.Object {
@@ -762,8 +734,7 @@ package codedeploy {
     @inline def values = js.Array(tar, tgz, zip, YAML, JSON)
   }
 
-  /**
-    * Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.
+  /** Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.
     */
   @js.native
   trait CloudFormationTarget extends js.Object {
@@ -828,8 +799,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateApplication</code> operation.
+  /** Represents the input of a <code>CreateApplication</code> operation.
     */
   @js.native
   trait CreateApplicationInput extends js.Object {
@@ -855,8 +825,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateApplication</code> operation.
+  /** Represents the output of a <code>CreateApplication</code> operation.
     */
   @js.native
   trait CreateApplicationOutput extends js.Object {
@@ -874,8 +843,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateDeploymentConfig</code> operation.
+  /** Represents the input of a <code>CreateDeploymentConfig</code> operation.
     */
   @js.native
   trait CreateDeploymentConfigInput extends js.Object {
@@ -904,8 +872,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateDeploymentConfig</code> operation.
+  /** Represents the output of a <code>CreateDeploymentConfig</code> operation.
     */
   @js.native
   trait CreateDeploymentConfigOutput extends js.Object {
@@ -923,8 +890,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateDeploymentGroup</code> operation.
+  /** Represents the input of a <code>CreateDeploymentGroup</code> operation.
     */
   @js.native
   trait CreateDeploymentGroupInput extends js.Object {
@@ -992,8 +958,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateDeploymentGroup</code> operation.
+  /** Represents the output of a <code>CreateDeploymentGroup</code> operation.
     */
   @js.native
   trait CreateDeploymentGroupOutput extends js.Object {
@@ -1011,8 +976,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreateDeployment</code> operation.
+  /** Represents the input of a <code>CreateDeployment</code> operation.
     */
   @js.native
   trait CreateDeploymentInput extends js.Object {
@@ -1059,8 +1023,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateDeployment</code> operation.
+  /** Represents the output of a <code>CreateDeployment</code> operation.
     */
   @js.native
   trait CreateDeploymentOutput extends js.Object {
@@ -1078,8 +1041,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteApplication</code> operation.
+  /** Represents the input of a <code>DeleteApplication</code> operation.
     */
   @js.native
   trait DeleteApplicationInput extends js.Object {
@@ -1094,13 +1056,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApplicationInput]
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteDeploymentConfig</code> operation.
+  /** Represents the input of a <code>DeleteDeploymentConfig</code> operation.
     */
   @js.native
   trait DeleteDeploymentConfigInput extends js.Object {
@@ -1115,13 +1075,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeploymentConfigInput]
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteDeploymentGroup</code> operation.
+  /** Represents the input of a <code>DeleteDeploymentGroup</code> operation.
     */
   @js.native
   trait DeleteDeploymentGroupInput extends js.Object {
@@ -1139,13 +1097,11 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeploymentGroupInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteDeploymentGroup</code> operation.
+  /** Represents the output of a <code>DeleteDeploymentGroup</code> operation.
     */
   @js.native
   trait DeleteDeploymentGroupOutput extends js.Object {
@@ -1163,8 +1119,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteGitHubAccount</code> operation.
+  /** Represents the input of a <code>DeleteGitHubAccount</code> operation.
     */
   @js.native
   trait DeleteGitHubAccountTokenInput extends js.Object {
@@ -1182,8 +1137,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>DeleteGitHubAccountToken</code> operation.
+  /** Represents the output of a <code>DeleteGitHubAccountToken</code> operation.
     */
   @js.native
   trait DeleteGitHubAccountTokenOutput extends js.Object {
@@ -1218,20 +1172,17 @@ package codedeploy {
   }
 
   @js.native
-  trait DeleteResourcesByExternalIdOutput extends js.Object {}
+  trait DeleteResourcesByExternalIdOutput extends js.Object
 
   object DeleteResourcesByExternalIdOutput {
     @inline
-    def apply(
-    ): DeleteResourcesByExternalIdOutput = {
+    def apply(): DeleteResourcesByExternalIdOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteResourcesByExternalIdOutput]
     }
   }
 
-  /**
-    * Information about a deployment configuration.
+  /** Information about a deployment configuration.
     */
   @js.native
   trait DeploymentConfigInfo extends js.Object {
@@ -1277,8 +1228,7 @@ package codedeploy {
     @inline def values = js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback)
   }
 
-  /**
-    * Information about a deployment group.
+  /** Information about a deployment group.
     */
   @js.native
   trait DeploymentGroupInfo extends js.Object {
@@ -1356,8 +1306,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about a deployment.
+  /** Information about a deployment.
     */
   @js.native
   trait DeploymentInfo extends js.Object {
@@ -1465,8 +1414,7 @@ package codedeploy {
     @inline def values = js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL)
   }
 
-  /**
-    * Information about the deployment status of the instances in the deployment.
+  /** Information about the deployment status of the instances in the deployment.
     */
   @js.native
   trait DeploymentOverview extends js.Object {
@@ -1508,8 +1456,7 @@ package codedeploy {
     @inline def values = js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT)
   }
 
-  /**
-    * Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
+  /** Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
     */
   @js.native
   trait DeploymentReadyOption extends js.Object {
@@ -1545,8 +1492,7 @@ package codedeploy {
     @inline def values = js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready)
   }
 
-  /**
-    * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
+  /** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
     */
   @js.native
   trait DeploymentStyle extends js.Object {
@@ -1567,8 +1513,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the deployment target.
+  /** Information about the deployment target.
     */
   @js.native
   trait DeploymentTarget extends js.Object {
@@ -1627,8 +1572,7 @@ package codedeploy {
     @inline def values = js.Array(READY_WAIT, TERMINATION_WAIT)
   }
 
-  /**
-    * Represents the input of a <code>DeregisterOnPremisesInstance</code> operation.
+  /** Represents the input of a <code>DeregisterOnPremisesInstance</code> operation.
     */
   @js.native
   trait DeregisterOnPremisesInstanceInput extends js.Object {
@@ -1643,13 +1587,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterOnPremisesInstanceInput]
     }
   }
 
-  /**
-    * Diagnostic information about executable scripts that are part of a deployment.
+  /** Diagnostic information about executable scripts that are part of a deployment.
     */
   @js.native
   trait Diagnostics extends js.Object {
@@ -1676,8 +1618,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about an EC2 tag filter.
+  /** Information about an EC2 tag filter.
     */
   @js.native
   trait EC2TagFilter extends js.Object {
@@ -1711,8 +1652,7 @@ package codedeploy {
     @inline def values = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
   }
 
-  /**
-    * Information about groups of EC2 instance tags.
+  /** Information about groups of EC2 instance tags.
     */
   @js.native
   trait EC2TagSet extends js.Object {
@@ -1730,8 +1670,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Contains the service and cluster names used to identify an Amazon ECS deployment's target.
+  /** Contains the service and cluster names used to identify an Amazon ECS deployment's target.
     */
   @js.native
   trait ECSService extends js.Object {
@@ -1752,8 +1691,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the target of an Amazon ECS deployment.
+  /** Information about the target of an Amazon ECS deployment.
     */
   @js.native
   trait ECSTarget extends js.Object {
@@ -1789,8 +1727,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.
+  /** Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.
     */
   @js.native
   trait ECSTaskSet extends js.Object {
@@ -1829,8 +1766,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.
+  /** Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.
     */
   @js.native
   trait ELBInfo extends js.Object {
@@ -1886,47 +1822,45 @@ package codedeploy {
     val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
     val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
-    @inline def values =
-      js.Array(
-        AGENT_ISSUE,
-        ALARM_ACTIVE,
-        APPLICATION_MISSING,
-        AUTOSCALING_VALIDATION_ERROR,
-        AUTO_SCALING_CONFIGURATION,
-        AUTO_SCALING_IAM_ROLE_PERMISSIONS,
-        CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
-        CUSTOMER_APPLICATION_UNHEALTHY,
-        DEPLOYMENT_GROUP_MISSING,
-        ECS_UPDATE_ERROR,
-        ELASTIC_LOAD_BALANCING_INVALID,
-        ELB_INVALID_INSTANCE,
-        HEALTH_CONSTRAINTS,
-        HEALTH_CONSTRAINTS_INVALID,
-        HOOK_EXECUTION_FAILURE,
-        IAM_ROLE_MISSING,
-        IAM_ROLE_PERMISSIONS,
-        INTERNAL_ERROR,
-        INVALID_ECS_SERVICE,
-        INVALID_LAMBDA_CONFIGURATION,
-        INVALID_LAMBDA_FUNCTION,
-        INVALID_REVISION,
-        MANUAL_STOP,
-        MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
-        MISSING_ELB_INFORMATION,
-        MISSING_GITHUB_TOKEN,
-        NO_EC2_SUBSCRIPTION,
-        NO_INSTANCES,
-        OVER_MAX_INSTANCES,
-        RESOURCE_LIMIT_EXCEEDED,
-        REVISION_MISSING,
-        THROTTLED,
-        TIMEOUT,
-        CLOUDFORMATION_STACK_FAILURE
-      )
+    @inline def values = js.Array(
+      AGENT_ISSUE,
+      ALARM_ACTIVE,
+      APPLICATION_MISSING,
+      AUTOSCALING_VALIDATION_ERROR,
+      AUTO_SCALING_CONFIGURATION,
+      AUTO_SCALING_IAM_ROLE_PERMISSIONS,
+      CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
+      CUSTOMER_APPLICATION_UNHEALTHY,
+      DEPLOYMENT_GROUP_MISSING,
+      ECS_UPDATE_ERROR,
+      ELASTIC_LOAD_BALANCING_INVALID,
+      ELB_INVALID_INSTANCE,
+      HEALTH_CONSTRAINTS,
+      HEALTH_CONSTRAINTS_INVALID,
+      HOOK_EXECUTION_FAILURE,
+      IAM_ROLE_MISSING,
+      IAM_ROLE_PERMISSIONS,
+      INTERNAL_ERROR,
+      INVALID_ECS_SERVICE,
+      INVALID_LAMBDA_CONFIGURATION,
+      INVALID_LAMBDA_FUNCTION,
+      INVALID_REVISION,
+      MANUAL_STOP,
+      MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
+      MISSING_ELB_INFORMATION,
+      MISSING_GITHUB_TOKEN,
+      NO_EC2_SUBSCRIPTION,
+      NO_INSTANCES,
+      OVER_MAX_INSTANCES,
+      RESOURCE_LIMIT_EXCEEDED,
+      REVISION_MISSING,
+      THROTTLED,
+      TIMEOUT,
+      CLOUDFORMATION_STACK_FAILURE
+    )
   }
 
-  /**
-    * Information about a deployment error.
+  /** Information about a deployment error.
     */
   @js.native
   trait ErrorInformation extends js.Object {
@@ -1957,8 +1891,7 @@ package codedeploy {
     @inline def values = js.Array(DISALLOW, OVERWRITE, RETAIN)
   }
 
-  /**
-    * Information about an application revision.
+  /** Information about an application revision.
     */
   @js.native
   trait GenericRevisionInfo extends js.Object {
@@ -1988,8 +1921,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetApplication</code> operation.
+  /** Represents the input of a <code>GetApplication</code> operation.
     */
   @js.native
   trait GetApplicationInput extends js.Object {
@@ -2004,13 +1936,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetApplication</code> operation.
+  /** Represents the output of a <code>GetApplication</code> operation.
     */
   @js.native
   trait GetApplicationOutput extends js.Object {
@@ -2028,8 +1958,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetApplicationRevision</code> operation.
+  /** Represents the input of a <code>GetApplicationRevision</code> operation.
     */
   @js.native
   trait GetApplicationRevisionInput extends js.Object {
@@ -2047,13 +1976,11 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revision" -> revision.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetApplicationRevisionInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetApplicationRevision</code> operation.
+  /** Represents the output of a <code>GetApplicationRevision</code> operation.
     */
   @js.native
   trait GetApplicationRevisionOutput extends js.Object {
@@ -2077,8 +2004,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetDeploymentConfig</code> operation.
+  /** Represents the input of a <code>GetDeploymentConfig</code> operation.
     */
   @js.native
   trait GetDeploymentConfigInput extends js.Object {
@@ -2093,13 +2019,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentConfigInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetDeploymentConfig</code> operation.
+  /** Represents the output of a <code>GetDeploymentConfig</code> operation.
     */
   @js.native
   trait GetDeploymentConfigOutput extends js.Object {
@@ -2117,8 +2041,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetDeploymentGroup</code> operation.
+  /** Represents the input of a <code>GetDeploymentGroup</code> operation.
     */
   @js.native
   trait GetDeploymentGroupInput extends js.Object {
@@ -2136,13 +2059,11 @@ package codedeploy {
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentGroupInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetDeploymentGroup</code> operation.
+  /** Represents the output of a <code>GetDeploymentGroup</code> operation.
     */
   @js.native
   trait GetDeploymentGroupOutput extends js.Object {
@@ -2160,8 +2081,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetDeployment</code> operation.
+  /** Represents the input of a <code>GetDeployment</code> operation.
     */
   @js.native
   trait GetDeploymentInput extends js.Object {
@@ -2176,13 +2096,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentInput]
     }
   }
 
-  /**
-    * Represents the input of a <code>GetDeploymentInstance</code> operation.
+  /** Represents the input of a <code>GetDeploymentInstance</code> operation.
     */
   @js.native
   trait GetDeploymentInstanceInput extends js.Object {
@@ -2200,13 +2118,11 @@ package codedeploy {
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceId" -> instanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentInstanceInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetDeploymentInstance</code> operation.
+  /** Represents the output of a <code>GetDeploymentInstance</code> operation.
     */
   @js.native
   trait GetDeploymentInstanceOutput extends js.Object {
@@ -2224,8 +2140,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>GetDeployment</code> operation.
+  /** Represents the output of a <code>GetDeployment</code> operation.
     */
   @js.native
   trait GetDeploymentOutput extends js.Object {
@@ -2278,8 +2193,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetOnPremisesInstance</code> operation.
+  /** Represents the input of a <code>GetOnPremisesInstance</code> operation.
     */
   @js.native
   trait GetOnPremisesInstanceInput extends js.Object {
@@ -2294,13 +2208,11 @@ package codedeploy {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOnPremisesInstanceInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetOnPremisesInstance</code> operation.
+  /** Represents the output of a <code>GetOnPremisesInstance</code> operation.
     */
   @js.native
   trait GetOnPremisesInstanceOutput extends js.Object {
@@ -2318,8 +2230,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the location of application artifacts stored in GitHub.
+  /** Information about the location of application artifacts stored in GitHub.
     */
   @js.native
   trait GitHubLocation extends js.Object {
@@ -2349,8 +2260,7 @@ package codedeploy {
     @inline def values = js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP)
   }
 
-  /**
-    * Information about the instances that belong to the replacement environment in a blue/green deployment.
+  /** Information about the instances that belong to the replacement environment in a blue/green deployment.
     */
   @js.native
   trait GreenFleetProvisioningOption extends js.Object {
@@ -2377,8 +2287,7 @@ package codedeploy {
     @inline def values = js.Array(TERMINATE, KEEP_ALIVE)
   }
 
-  /**
-    * Information about an on-premises instance.
+  /** Information about an on-premises instance.
     */
   @js.native
   trait InstanceInfo extends js.Object {
@@ -2429,8 +2338,7 @@ package codedeploy {
     @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
   }
 
-  /**
-    * Information about an instance in a deployment.
+  /** Information about an instance in a deployment.
     */
   @deprecated("InstanceSummary is deprecated, use DeploymentTarget instead.", "forever")
   @js.native
@@ -2464,8 +2372,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.
+  /** A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.
     */
   @js.native
   trait InstanceTarget extends js.Object {
@@ -2510,8 +2417,7 @@ package codedeploy {
     @inline def values = js.Array(Blue, Green)
   }
 
-  /**
-    * Information about a Lambda function specified in a deployment.
+  /** Information about a Lambda function specified in a deployment.
     */
   @js.native
   trait LambdaFunctionInfo extends js.Object {
@@ -2541,8 +2447,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the target AWS Lambda function during an AWS Lambda deployment.
+  /** Information about the target AWS Lambda function during an AWS Lambda deployment.
     */
   @js.native
   trait LambdaTarget extends js.Object {
@@ -2578,8 +2483,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the most recent attempted or successful deployment to a deployment group.
+  /** Information about the most recent attempted or successful deployment to a deployment group.
     */
   @js.native
   trait LastDeploymentInfo extends js.Object {
@@ -2619,8 +2523,7 @@ package codedeploy {
     @inline def values = js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
   }
 
-  /**
-    * Information about a deployment lifecycle event.
+  /** Information about a deployment lifecycle event.
     */
   @js.native
   trait LifecycleEvent extends js.Object {
@@ -2663,8 +2566,7 @@ package codedeploy {
     @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown)
   }
 
-  /**
-    * Represents the input of a <code>ListApplicationRevisions</code> operation.
+  /** Represents the input of a <code>ListApplicationRevisions</code> operation.
     */
   @js.native
   trait ListApplicationRevisionsInput extends js.Object {
@@ -2702,8 +2604,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListApplicationRevisions</code> operation.
+  /** Represents the output of a <code>ListApplicationRevisions</code> operation.
     */
   @js.native
   trait ListApplicationRevisionsOutput extends js.Object {
@@ -2724,8 +2625,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListApplications</code> operation.
+  /** Represents the input of a <code>ListApplications</code> operation.
     */
   @js.native
   trait ListApplicationsInput extends js.Object {
@@ -2743,8 +2643,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a ListApplications operation.
+  /** Represents the output of a ListApplications operation.
     */
   @js.native
   trait ListApplicationsOutput extends js.Object {
@@ -2765,8 +2664,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListDeploymentConfigs</code> operation.
+  /** Represents the input of a <code>ListDeploymentConfigs</code> operation.
     */
   @js.native
   trait ListDeploymentConfigsInput extends js.Object {
@@ -2784,8 +2682,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListDeploymentConfigs</code> operation.
+  /** Represents the output of a <code>ListDeploymentConfigs</code> operation.
     */
   @js.native
   trait ListDeploymentConfigsOutput extends js.Object {
@@ -2806,8 +2703,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListDeploymentGroups</code> operation.
+  /** Represents the input of a <code>ListDeploymentGroups</code> operation.
     */
   @js.native
   trait ListDeploymentGroupsInput extends js.Object {
@@ -2830,8 +2726,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListDeploymentGroups</code> operation.
+  /** Represents the output of a <code>ListDeploymentGroups</code> operation.
     */
   @js.native
   trait ListDeploymentGroupsOutput extends js.Object {
@@ -2855,8 +2750,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListDeploymentInstances</code> operation.
+  /** Represents the input of a <code>ListDeploymentInstances</code> operation.
     */
   @js.native
   trait ListDeploymentInstancesInput extends js.Object {
@@ -2885,8 +2779,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListDeploymentInstances</code> operation.
+  /** Represents the output of a <code>ListDeploymentInstances</code> operation.
     */
   @js.native
   trait ListDeploymentInstancesOutput extends js.Object {
@@ -2948,8 +2841,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListDeployments</code> operation.
+  /** Represents the input of a <code>ListDeployments</code> operation.
     */
   @js.native
   trait ListDeploymentsInput extends js.Object {
@@ -2982,8 +2874,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListDeployments</code> operation.
+  /** Represents the output of a <code>ListDeployments</code> operation.
     */
   @js.native
   trait ListDeploymentsOutput extends js.Object {
@@ -3004,8 +2895,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListGitHubAccountTokenNames</code> operation.
+  /** Represents the input of a <code>ListGitHubAccountTokenNames</code> operation.
     */
   @js.native
   trait ListGitHubAccountTokenNamesInput extends js.Object {
@@ -3023,8 +2913,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListGitHubAccountTokenNames</code> operation.
+  /** Represents the output of a <code>ListGitHubAccountTokenNames</code> operation.
     */
   @js.native
   trait ListGitHubAccountTokenNamesOutput extends js.Object {
@@ -3045,8 +2934,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListOnPremisesInstances</code> operation.
+  /** Represents the input of a <code>ListOnPremisesInstances</code> operation.
     */
   @js.native
   trait ListOnPremisesInstancesInput extends js.Object {
@@ -3070,8 +2958,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of the list on-premises instances operation.
+  /** Represents the output of the list on-premises instances operation.
     */
   @js.native
   trait ListOnPremisesInstancesOutput extends js.Object {
@@ -3142,8 +3029,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the Elastic Load Balancing load balancer or target group used in a deployment.
+  /** Information about the Elastic Load Balancing load balancer or target group used in a deployment.
     */
   @js.native
   trait LoadBalancerInfo extends js.Object {
@@ -3167,8 +3053,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about minimum healthy instance.
+  /** Information about minimum healthy instance.
     */
   @js.native
   trait MinimumHealthyHosts extends js.Object {
@@ -3198,8 +3083,7 @@ package codedeploy {
     @inline def values = js.Array(HOST_COUNT, FLEET_PERCENT)
   }
 
-  /**
-    * Information about groups of on-premises instance tags.
+  /** Information about groups of on-premises instance tags.
     */
   @js.native
   trait OnPremisesTagSet extends js.Object {
@@ -3255,8 +3139,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
+  /** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
     */
   @deprecated("RawString and String revision type are deprecated, use AppSpecContent type instead.", "forever")
   @js.native
@@ -3278,8 +3161,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of a RegisterApplicationRevision operation.
+  /** Represents the input of a RegisterApplicationRevision operation.
     */
   @js.native
   trait RegisterApplicationRevisionInput extends js.Object {
@@ -3305,8 +3187,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of the register on-premises instance operation.
+  /** Represents the input of the register on-premises instance operation.
     */
   @js.native
   trait RegisterOnPremisesInstanceInput extends js.Object {
@@ -3341,8 +3222,7 @@ package codedeploy {
     @inline def values = js.Array(Registered, Deregistered)
   }
 
-  /**
-    * Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.
+  /** Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.
     */
   @js.native
   trait RemoveTagsFromOnPremisesInstancesInput extends js.Object {
@@ -3360,13 +3240,11 @@ package codedeploy {
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromOnPremisesInstancesInput]
     }
   }
 
-  /**
-    * Information about an application revision.
+  /** Information about an application revision.
     */
   @js.native
   trait RevisionInfo extends js.Object {
@@ -3387,8 +3265,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the location of an application revision.
+  /** Information about the location of an application revision.
     */
   @js.native
   trait RevisionLocation extends js.Object {
@@ -3429,8 +3306,7 @@ package codedeploy {
     @inline def values = js.Array(S3, GitHub, String, AppSpecContent)
   }
 
-  /**
-    * Information about a deployment rollback.
+  /** Information about a deployment rollback.
     */
   @js.native
   trait RollbackInfo extends js.Object {
@@ -3454,8 +3330,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the location of application artifacts stored in Amazon S3.
+  /** Information about the location of application artifacts stored in Amazon S3.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -3510,8 +3385,7 @@ package codedeploy {
     @inline def values = js.Array(ascending, descending)
   }
 
-  /**
-    * Represents the input of a <code>StopDeployment</code> operation.
+  /** Represents the input of a <code>StopDeployment</code> operation.
     */
   @js.native
   trait StopDeploymentInput extends js.Object {
@@ -3534,8 +3408,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of a <code>StopDeployment</code> operation.
+  /** Represents the output of a <code>StopDeployment</code> operation.
     */
   @js.native
   trait StopDeploymentOutput extends js.Object {
@@ -3565,8 +3438,7 @@ package codedeploy {
     @inline def values = js.Array(Pending, Succeeded)
   }
 
-  /**
-    * Information about a tag.
+  /** Information about a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3587,8 +3459,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about an on-premises instance tag filter.
+  /** Information about an on-premises instance tag filter.
     */
   @js.native
   trait TagFilter extends js.Object {
@@ -3638,20 +3509,17 @@ package codedeploy {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
@@ -3665,8 +3533,7 @@ package codedeploy {
     @inline def values = js.Array(TargetStatus, ServerInstanceLabel)
   }
 
-  /**
-    * Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
+  /** Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
     */
   @js.native
   trait TargetGroupInfo extends js.Object {
@@ -3684,8 +3551,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.
+  /** Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.
     */
   @js.native
   trait TargetGroupPairInfo extends js.Object {
@@ -3709,8 +3575,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about the instances to be used in the replacement environment in a blue/green deployment.
+  /** Information about the instances to be used in the replacement environment in a blue/green deployment.
     */
   @js.native
   trait TargetInstances extends js.Object {
@@ -3757,8 +3622,7 @@ package codedeploy {
     @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
   }
 
-  /**
-    * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
+  /** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
     */
   @js.native
   trait TimeBasedCanary extends js.Object {
@@ -3779,8 +3643,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
+  /** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
     */
   @js.native
   trait TimeBasedLinear extends js.Object {
@@ -3801,8 +3664,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about a time range.
+  /** Information about a time range.
     */
   @js.native
   trait TimeRange extends js.Object {
@@ -3823,8 +3685,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group.
+  /** Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group.
     */
   @js.native
   trait TrafficRoute extends js.Object {
@@ -3842,8 +3703,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
+  /** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
     */
   @js.native
   trait TrafficRoutingConfig extends js.Object {
@@ -3877,8 +3737,7 @@ package codedeploy {
     @inline def values = js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce)
   }
 
-  /**
-    * Information about notification triggers for the deployment group.
+  /** Information about notification triggers for the deployment group.
     */
   @js.native
   trait TriggerConfig extends js.Object {
@@ -3916,19 +3775,18 @@ package codedeploy {
     val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
     val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
-    @inline def values =
-      js.Array(
-        DeploymentStart,
-        DeploymentSuccess,
-        DeploymentFailure,
-        DeploymentStop,
-        DeploymentRollback,
-        DeploymentReady,
-        InstanceStart,
-        InstanceSuccess,
-        InstanceFailure,
-        InstanceReady
-      )
+    @inline def values = js.Array(
+      DeploymentStart,
+      DeploymentSuccess,
+      DeploymentFailure,
+      DeploymentStop,
+      DeploymentRollback,
+      DeploymentReady,
+      InstanceStart,
+      InstanceSuccess,
+      InstanceFailure,
+      InstanceReady
+    )
   }
 
   @js.native
@@ -3947,26 +3805,22 @@ package codedeploy {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
 
-  /**
-    * Represents the input of an <code>UpdateApplication</code> operation.
+  /** Represents the input of an <code>UpdateApplication</code> operation.
     */
   @js.native
   trait UpdateApplicationInput extends js.Object {
@@ -3987,8 +3841,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the input of an <code>UpdateDeploymentGroup</code> operation.
+  /** Represents the input of an <code>UpdateDeploymentGroup</code> operation.
     */
   @js.native
   trait UpdateDeploymentGroupInput extends js.Object {
@@ -4056,8 +3909,7 @@ package codedeploy {
     }
   }
 
-  /**
-    * Represents the output of an <code>UpdateDeploymentGroup</code> operation.
+  /** Represents the output of an <code>UpdateDeploymentGroup</code> operation.
     */
   @js.native
   trait UpdateDeploymentGroupOutput extends js.Object {

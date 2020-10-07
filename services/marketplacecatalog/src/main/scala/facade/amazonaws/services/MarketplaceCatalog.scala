@@ -73,7 +73,6 @@ package marketplacecatalog {
         "Catalog" -> Catalog.asInstanceOf[js.Any],
         "ChangeSetId" -> ChangeSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelChangeSetRequest]
     }
   }
@@ -97,8 +96,7 @@ package marketplacecatalog {
     }
   }
 
-  /**
-    * An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.
+  /** An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.
     */
   @js.native
   trait Change extends js.Object {
@@ -119,13 +117,11 @@ package marketplacecatalog {
         "Details" -> Details.asInstanceOf[js.Any],
         "Entity" -> Entity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Change]
     }
   }
 
-  /**
-    * A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.
+  /** A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.
     */
   @js.native
   trait ChangeSetSummaryListItem extends js.Object {
@@ -173,8 +169,7 @@ package marketplacecatalog {
     @inline def values = js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED)
   }
 
-  /**
-    * This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.
+  /** This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.
     */
   @js.native
   trait ChangeSummary extends js.Object {
@@ -217,7 +212,6 @@ package marketplacecatalog {
         "Catalog" -> Catalog.asInstanceOf[js.Any],
         "ChangeSetId" -> ChangeSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeChangeSetRequest]
     }
   }
@@ -275,7 +269,6 @@ package marketplacecatalog {
         "Catalog" -> Catalog.asInstanceOf[js.Any],
         "EntityId" -> EntityId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEntityRequest]
     }
   }
@@ -308,8 +301,7 @@ package marketplacecatalog {
     }
   }
 
-  /**
-    * A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer.
+  /** A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer.
     */
   @js.native
   trait Entity extends js.Object {
@@ -332,8 +324,7 @@ package marketplacecatalog {
     }
   }
 
-  /**
-    * This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.
+  /** This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.
     */
   @js.native
   trait EntitySummary extends js.Object {
@@ -366,8 +357,7 @@ package marketplacecatalog {
     }
   }
 
-  /**
-    * Details about the error.
+  /** Details about the error.
     */
   @js.native
   trait ErrorDetail extends js.Object {
@@ -388,8 +378,7 @@ package marketplacecatalog {
     }
   }
 
-  /**
-    * A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.
+  /** A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.
     */
   @js.native
   trait Filter extends js.Object {
@@ -511,8 +500,7 @@ package marketplacecatalog {
     }
   }
 
-  /**
-    * An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
+  /** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
     */
   @js.native
   trait Sort extends js.Object {

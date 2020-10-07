@@ -92,8 +92,7 @@ package managedblockchain {
     def voteOnProposal(params: VoteOnProposalInput): Request[VoteOnProposalOutput] = js.native
   }
 
-  /**
-    * A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.
+  /** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.
     */
   @js.native
   trait ApprovalThresholdPolicy extends js.Object {
@@ -139,7 +138,6 @@ package managedblockchain {
         "MemberConfiguration" -> MemberConfiguration.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMemberInput]
     }
   }
@@ -240,7 +238,6 @@ package managedblockchain {
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeConfiguration" -> NodeConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateNodeInput]
     }
   }
@@ -323,20 +320,17 @@ package managedblockchain {
         "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMemberInput]
     }
   }
 
   @js.native
-  trait DeleteMemberOutput extends js.Object {}
+  trait DeleteMemberOutput extends js.Object
 
   object DeleteMemberOutput {
     @inline
-    def apply(
-    ): DeleteMemberOutput = {
+    def apply(): DeleteMemberOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteMemberOutput]
     }
   }
@@ -360,20 +354,17 @@ package managedblockchain {
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNodeInput]
     }
   }
 
   @js.native
-  trait DeleteNodeOutput extends js.Object {}
+  trait DeleteNodeOutput extends js.Object
 
   object DeleteNodeOutput {
     @inline
-    def apply(
-    ): DeleteNodeOutput = {
+    def apply(): DeleteNodeOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteNodeOutput]
     }
   }
@@ -411,7 +402,6 @@ package managedblockchain {
         "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMemberInput]
     }
   }
@@ -445,7 +435,6 @@ package managedblockchain {
       val __obj = js.Dynamic.literal(
         "NetworkId" -> NetworkId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNetworkInput]
     }
   }
@@ -485,7 +474,6 @@ package managedblockchain {
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNodeInput]
     }
   }
@@ -522,7 +510,6 @@ package managedblockchain {
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "ProposalId" -> ProposalId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetProposalInput]
     }
   }
@@ -543,8 +530,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * An invitation to an AWS account to create a member and join the network.
+  /** An invitation to an AWS account to create a member and join the network.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -586,8 +572,7 @@ package managedblockchain {
     @inline def values = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
   }
 
-  /**
-    * An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+  /** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
     */
   @js.native
   trait InviteAction extends js.Object {
@@ -602,7 +587,6 @@ package managedblockchain {
       val __obj = js.Dynamic.literal(
         "Principal" -> Principal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InviteAction]
     }
   }
@@ -882,8 +866,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * A configuration for logging events.
+  /** A configuration for logging events.
     */
   @js.native
   trait LogConfiguration extends js.Object {
@@ -901,8 +884,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * A collection of log configurations.
+  /** A collection of log configurations.
     */
   @js.native
   trait LogConfigurations extends js.Object {
@@ -920,8 +902,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Member configuration properties.
+  /** Member configuration properties.
     */
   @js.native
   trait Member extends js.Object {
@@ -960,8 +941,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties of the member.
+  /** Configuration properties of the member.
     */
   @js.native
   trait MemberConfiguration extends js.Object {
@@ -990,8 +970,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
+  /** Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
     */
   @js.native
   trait MemberFabricAttributes extends js.Object {
@@ -1012,8 +991,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
+  /** Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
     */
   @js.native
   trait MemberFabricConfiguration extends js.Object {
@@ -1031,13 +1009,11 @@ package managedblockchain {
         "AdminPassword" -> AdminPassword.asInstanceOf[js.Any],
         "AdminUsername" -> AdminUsername.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MemberFabricConfiguration]
     }
   }
 
-  /**
-    * Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.
+  /** Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.
     */
   @js.native
   trait MemberFabricLogPublishingConfiguration extends js.Object {
@@ -1055,8 +1031,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.
+  /** Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.
     */
   @js.native
   trait MemberFrameworkAttributes extends js.Object {
@@ -1074,8 +1049,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.
+  /** Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.
     */
   @js.native
   trait MemberFrameworkConfiguration extends js.Object {
@@ -1093,8 +1067,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties for logging events associated with a member of a Managed Blockchain network.
+  /** Configuration properties for logging events associated with a member of a Managed Blockchain network.
     */
   @js.native
   trait MemberLogPublishingConfiguration extends js.Object {
@@ -1125,8 +1098,7 @@ package managedblockchain {
     @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
   }
 
-  /**
-    * A summary of configuration properties for a member.
+  /** A summary of configuration properties for a member.
     */
   @js.native
   trait MemberSummary extends js.Object {
@@ -1159,8 +1131,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Network configuration properties.
+  /** Network configuration properties.
     */
   @js.native
   trait Network extends js.Object {
@@ -1205,8 +1176,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Attributes of Hyperledger Fabric for a network.
+  /** Attributes of Hyperledger Fabric for a network.
     */
   @js.native
   trait NetworkFabricAttributes extends js.Object {
@@ -1227,8 +1197,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Hyperledger Fabric configuration properties for the network.
+  /** Hyperledger Fabric configuration properties for the network.
     */
   @js.native
   trait NetworkFabricConfiguration extends js.Object {
@@ -1243,13 +1212,11 @@ package managedblockchain {
       val __obj = js.Dynamic.literal(
         "Edition" -> Edition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NetworkFabricConfiguration]
     }
   }
 
-  /**
-    * Attributes relevant to the network for the blockchain framework that the network uses.
+  /** Attributes relevant to the network for the blockchain framework that the network uses.
     */
   @js.native
   trait NetworkFrameworkAttributes extends js.Object {
@@ -1267,8 +1234,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties relevant to the network for the blockchain framework that the network uses.
+  /** Configuration properties relevant to the network for the blockchain framework that the network uses.
     */
   @js.native
   trait NetworkFrameworkConfiguration extends js.Object {
@@ -1298,8 +1264,7 @@ package managedblockchain {
     @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
   }
 
-  /**
-    * A summary of network configuration properties.
+  /** A summary of network configuration properties.
     */
   @js.native
   trait NetworkSummary extends js.Object {
@@ -1335,8 +1300,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties of a peer node.
+  /** Configuration properties of a peer node.
     */
   @js.native
   trait Node extends js.Object {
@@ -1378,8 +1342,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties of a peer node.
+  /** Configuration properties of a peer node.
     */
   @js.native
   trait NodeConfiguration extends js.Object {
@@ -1405,8 +1368,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.
+  /** Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.
     */
   @js.native
   trait NodeFabricAttributes extends js.Object {
@@ -1427,8 +1389,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.
+  /** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.
     */
   @js.native
   trait NodeFabricLogPublishingConfiguration extends js.Object {
@@ -1449,8 +1410,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Attributes relevant to a peer node on a Managed Blockchain network for the blockchain framework that the network uses.
+  /** Attributes relevant to a peer node on a Managed Blockchain network for the blockchain framework that the network uses.
     */
   @js.native
   trait NodeFrameworkAttributes extends js.Object {
@@ -1468,8 +1428,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.
+  /** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.
     */
   @js.native
   trait NodeLogPublishingConfiguration extends js.Object {
@@ -1501,8 +1460,7 @@ package managedblockchain {
     @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
   }
 
-  /**
-    * A summary of configuration properties for a peer node.
+  /** A summary of configuration properties for a peer node.
     */
   @js.native
   trait NodeSummary extends js.Object {
@@ -1532,8 +1490,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * Properties of a proposal on a Managed Blockchain network.
+  /** Properties of a proposal on a Managed Blockchain network.
     */
   @js.native
   trait Proposal extends js.Object {
@@ -1584,8 +1541,7 @@ package managedblockchain {
     }
   }
 
-  /**
-    * The actions to carry out if a proposal is <code>APPROVED</code>.
+  /** The actions to carry out if a proposal is <code>APPROVED</code>.
     */
   @js.native
   trait ProposalActions extends js.Object {
@@ -1618,8 +1574,7 @@ package managedblockchain {
     @inline def values = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
   }
 
-  /**
-    * Properties of a proposal.
+  /** Properties of a proposal.
     */
   @js.native
   trait ProposalSummary extends js.Object {
@@ -1668,26 +1623,22 @@ package managedblockchain {
       val __obj = js.Dynamic.literal(
         "InvitationId" -> InvitationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RejectInvitationInput]
     }
   }
 
   @js.native
-  trait RejectInvitationOutput extends js.Object {}
+  trait RejectInvitationOutput extends js.Object
 
   object RejectInvitationOutput {
     @inline
-    def apply(
-    ): RejectInvitationOutput = {
+    def apply(): RejectInvitationOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RejectInvitationOutput]
     }
   }
 
-  /**
-    * An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.
+  /** An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.
     */
   @js.native
   trait RemoveAction extends js.Object {
@@ -1702,7 +1653,6 @@ package managedblockchain {
       val __obj = js.Dynamic.literal(
         "MemberId" -> MemberId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAction]
     }
   }
@@ -1741,14 +1691,12 @@ package managedblockchain {
   }
 
   @js.native
-  trait UpdateMemberOutput extends js.Object {}
+  trait UpdateMemberOutput extends js.Object
 
   object UpdateMemberOutput {
     @inline
-    def apply(
-    ): UpdateMemberOutput = {
+    def apply(): UpdateMemberOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateMemberOutput]
     }
   }
@@ -1781,14 +1729,12 @@ package managedblockchain {
   }
 
   @js.native
-  trait UpdateNodeOutput extends js.Object {}
+  trait UpdateNodeOutput extends js.Object
 
   object UpdateNodeOutput {
     @inline
-    def apply(
-    ): UpdateNodeOutput = {
+    def apply(): UpdateNodeOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNodeOutput]
     }
   }
@@ -1815,26 +1761,22 @@ package managedblockchain {
         "Vote" -> Vote.asInstanceOf[js.Any],
         "VoterMemberId" -> VoterMemberId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VoteOnProposalInput]
     }
   }
 
   @js.native
-  trait VoteOnProposalOutput extends js.Object {}
+  trait VoteOnProposalOutput extends js.Object
 
   object VoteOnProposalOutput {
     @inline
-    def apply(
-    ): VoteOnProposalOutput = {
+    def apply(): VoteOnProposalOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[VoteOnProposalOutput]
     }
   }
 
-  /**
-    * Properties of an individual vote that a member cast for a proposal.
+  /** Properties of an individual vote that a member cast for a proposal.
     */
   @js.native
   trait VoteSummary extends js.Object {
@@ -1867,8 +1809,7 @@ package managedblockchain {
     @inline def values = js.Array(YES, NO)
   }
 
-  /**
-    * The voting rules for the network to decide if a proposal is accepted
+  /** The voting rules for the network to decide if a proposal is accepted
     */
   @js.native
   trait VotingPolicy extends js.Object {

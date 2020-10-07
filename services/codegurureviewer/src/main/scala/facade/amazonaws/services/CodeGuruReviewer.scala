@@ -112,8 +112,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about an AWS CodeCommit repository. The CodeCommit repository must be in the same AWS Region and AWS account where its CodeGuru Reviewer code reviews are configured.
+  /** Information about an AWS CodeCommit repository. The CodeCommit repository must be in the same AWS Region and AWS account where its CodeGuru Reviewer code reviews are configured.
     */
   @js.native
   trait CodeCommitRepository extends js.Object {
@@ -128,13 +127,11 @@ package codegurureviewer {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CodeCommitRepository]
     }
   }
 
-  /**
-    * Information about a code review.
+  /** Information about a code review.
     */
   @js.native
   trait CodeReview extends js.Object {
@@ -188,8 +185,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about the summary of the code review.
+  /** Information about the summary of the code review.
     */
   @js.native
   trait CodeReviewSummary extends js.Object {
@@ -237,8 +233,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * The commit diff for the pull request.
+  /** The commit diff for the pull request.
     */
   @js.native
   trait CommitDiffSourceCodeType extends js.Object {
@@ -272,7 +267,6 @@ package codegurureviewer {
       val __obj = js.Dynamic.literal(
         "CodeReviewArn" -> CodeReviewArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCodeReviewRequest]
     }
   }
@@ -346,7 +340,6 @@ package codegurureviewer {
       val __obj = js.Dynamic.literal(
         "AssociationArn" -> AssociationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRepositoryAssociationRequest]
     }
   }
@@ -380,7 +373,6 @@ package codegurureviewer {
       val __obj = js.Dynamic.literal(
         "AssociationArn" -> AssociationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateRepositoryRequest]
     }
   }
@@ -606,8 +598,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about the statistics from the code review.
+  /** Information about the statistics from the code review.
     */
   @js.native
   trait Metrics extends js.Object {
@@ -628,8 +619,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about metrics summaries.
+  /** Information about metrics summaries.
     */
   @js.native
   trait MetricsSummary extends js.Object {
@@ -680,20 +670,17 @@ package codegurureviewer {
         "Reactions" -> Reactions.asInstanceOf[js.Any],
         "RecommendationId" -> RecommendationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRecommendationFeedbackRequest]
     }
   }
 
   @js.native
-  trait PutRecommendationFeedbackResponse extends js.Object {}
+  trait PutRecommendationFeedbackResponse extends js.Object
 
   object PutRecommendationFeedbackResponse {
     @inline
-    def apply(
-    ): PutRecommendationFeedbackResponse = {
+    def apply(): PutRecommendationFeedbackResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutRecommendationFeedbackResponse]
     }
   }
@@ -707,8 +694,7 @@ package codegurureviewer {
     @inline def values = js.Array(ThumbsUp, ThumbsDown)
   }
 
-  /**
-    * Information about the recommendation feedback.
+  /** Information about the recommendation feedback.
     */
   @js.native
   trait RecommendationFeedback extends js.Object {
@@ -741,8 +727,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about recommendation feedback summaries.
+  /** Information about recommendation feedback summaries.
     */
   @js.native
   trait RecommendationFeedbackSummary extends js.Object {
@@ -766,8 +751,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about recommendations.
+  /** Information about recommendations.
     */
   @js.native
   trait RecommendationSummary extends js.Object {
@@ -797,8 +781,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about an associated AWS CodeCommit repository or an associated repository that is managed by AWS CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.
+  /** Information about an associated AWS CodeCommit repository or an associated repository that is managed by AWS CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.
     */
   @js.native
   trait Repository extends js.Object {
@@ -822,8 +805,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html"> <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.
+  /** Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html"> <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.
     */
   @js.native
   trait RepositoryAssociation extends js.Object {
@@ -879,8 +861,7 @@ package codegurureviewer {
     @inline def values = js.Array(Associated, Associating, Failed, Disassociating)
   }
 
-  /**
-    * Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
+  /** Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
     */
   @js.native
   trait RepositoryAssociationSummary extends js.Object {
@@ -919,8 +900,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about the source code type.
+  /** Information about the source code type.
     */
   @js.native
   trait SourceCodeType extends js.Object {
@@ -938,8 +918,7 @@ package codegurureviewer {
     }
   }
 
-  /**
-    * Information about a third-party source repository connected to CodeGuru Reviewer.
+  /** Information about a third-party source repository connected to CodeGuru Reviewer.
     */
   @js.native
   trait ThirdPartySourceRepository extends js.Object {
@@ -960,7 +939,6 @@ package codegurureviewer {
         "Name" -> Name.asInstanceOf[js.Any],
         "Owner" -> Owner.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ThirdPartySourceRepository]
     }
   }

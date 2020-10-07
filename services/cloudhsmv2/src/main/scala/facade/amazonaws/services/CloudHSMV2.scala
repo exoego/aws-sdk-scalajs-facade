@@ -78,8 +78,7 @@ package cloudhsmv2 {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
-  /**
-    * Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.
+  /** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.
     */
   @js.native
   trait Backup extends js.Object {
@@ -145,8 +144,7 @@ package cloudhsmv2 {
     @inline def values = js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION)
   }
 
-  /**
-    * Contains one or more certificates or a certificate signing request (CSR).
+  /** Contains one or more certificates or a certificate signing request (CSR).
     */
   @js.native
   trait Certificates extends js.Object {
@@ -176,8 +174,7 @@ package cloudhsmv2 {
     }
   }
 
-  /**
-    * Contains information about an AWS CloudHSM cluster.
+  /** Contains information about an AWS CloudHSM cluster.
     */
   @js.native
   trait Cluster extends js.Object {
@@ -386,7 +383,6 @@ package cloudhsmv2 {
       val __obj = js.Dynamic.literal(
         "BackupId" -> BackupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupRequest]
     }
   }
@@ -420,7 +416,6 @@ package cloudhsmv2 {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
@@ -569,8 +564,7 @@ package cloudhsmv2 {
     }
   }
 
-  /**
-    * Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.
+  /** Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.
     */
   @js.native
   trait DestinationBackup extends js.Object {
@@ -597,8 +591,7 @@ package cloudhsmv2 {
     }
   }
 
-  /**
-    * Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.
+  /** Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.
     */
   @js.native
   trait Hsm extends js.Object {
@@ -670,7 +663,6 @@ package cloudhsmv2 {
         "SignedCert" -> SignedCert.asInstanceOf[js.Any],
         "TrustAnchor" -> TrustAnchor.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InitializeClusterRequest]
     }
   }
@@ -752,7 +744,6 @@ package cloudhsmv2 {
       val __obj = js.Dynamic.literal(
         "BackupId" -> BackupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreBackupRequest]
     }
   }
@@ -773,8 +764,7 @@ package cloudhsmv2 {
     }
   }
 
-  /**
-    * Contains a tag. A tag is a key-value pair.
+  /** Contains a tag. A tag is a key-value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -792,7 +782,6 @@ package cloudhsmv2 {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -813,20 +802,17 @@ package cloudhsmv2 {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagList" -> TagList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -847,20 +833,17 @@ package cloudhsmv2 {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

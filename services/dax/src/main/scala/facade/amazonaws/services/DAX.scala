@@ -95,8 +95,7 @@ package dax {
     @inline def values = js.Array(IMMEDIATE, REQUIRES_REBOOT)
   }
 
-  /**
-    * Contains all of the attributes of a specific DAX cluster.
+  /** Contains all of the attributes of a specific DAX cluster.
     */
   @js.native
   trait Cluster extends js.Object {
@@ -365,7 +364,6 @@ package dax {
       val __obj = js.Dynamic.literal(
         "ClusterName" -> ClusterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
@@ -399,7 +397,6 @@ package dax {
       val __obj = js.Dynamic.literal(
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteParameterGroupRequest]
     }
   }
@@ -433,7 +430,6 @@ package dax {
       val __obj = js.Dynamic.literal(
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSubnetGroupRequest]
     }
   }
@@ -714,8 +710,7 @@ package dax {
     }
   }
 
-  /**
-    * Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.
+  /** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -736,8 +731,7 @@ package dax {
     }
   }
 
-  /**
-    * Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.
+  /** Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.
     */
   @js.native
   trait Event extends js.Object {
@@ -854,8 +848,7 @@ package dax {
     }
   }
 
-  /**
-    * Represents an individual node within a DAX cluster.
+  /** Represents an individual node within a DAX cluster.
     */
   @js.native
   trait Node extends js.Object {
@@ -888,8 +881,7 @@ package dax {
     }
   }
 
-  /**
-    * Represents a parameter value that is applicable to a particular node type.
+  /** Represents a parameter value that is applicable to a particular node type.
     */
   @js.native
   trait NodeTypeSpecificValue extends js.Object {
@@ -910,8 +902,7 @@ package dax {
     }
   }
 
-  /**
-    * Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).
+  /** Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -932,8 +923,7 @@ package dax {
     }
   }
 
-  /**
-    * Describes an individual setting that controls some aspect of DAX behavior.
+  /** Describes an individual setting that controls some aspect of DAX behavior.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -978,8 +968,7 @@ package dax {
     }
   }
 
-  /**
-    * A named set of parameters that are applied to all of the nodes in a DAX cluster.
+  /** A named set of parameters that are applied to all of the nodes in a DAX cluster.
     */
   @js.native
   trait ParameterGroup extends js.Object {
@@ -1000,8 +989,7 @@ package dax {
     }
   }
 
-  /**
-    * The status of a parameter group.
+  /** The status of a parameter group.
     */
   @js.native
   trait ParameterGroupStatus extends js.Object {
@@ -1025,8 +1013,7 @@ package dax {
     }
   }
 
-  /**
-    * An individual DAX parameter.
+  /** An individual DAX parameter.
     */
   @js.native
   trait ParameterNameValue extends js.Object {
@@ -1072,7 +1059,6 @@ package dax {
         "ClusterName" -> ClusterName.asInstanceOf[js.Any],
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootNodeRequest]
     }
   }
@@ -1093,8 +1079,7 @@ package dax {
     }
   }
 
-  /**
-    * The description of the server-side encryption status on the specified DAX cluster.
+  /** The description of the server-side encryption status on the specified DAX cluster.
     */
   @js.native
   trait SSEDescription extends js.Object {
@@ -1112,8 +1097,7 @@ package dax {
     }
   }
 
-  /**
-    * Represents the settings used to enable server-side encryption.
+  /** Represents the settings used to enable server-side encryption.
     */
   @js.native
   trait SSESpecification extends js.Object {
@@ -1128,7 +1112,6 @@ package dax {
       val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SSESpecification]
     }
   }
@@ -1144,8 +1127,7 @@ package dax {
     @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
   }
 
-  /**
-    * An individual VPC security group and its status.
+  /** An individual VPC security group and its status.
     */
   @js.native
   trait SecurityGroupMembership extends js.Object {
@@ -1176,8 +1158,7 @@ package dax {
     @inline def values = js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
   }
 
-  /**
-    * Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.
+  /** Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -1198,10 +1179,9 @@ package dax {
     }
   }
 
-  /**
-    * Represents the output of one of the following actions:
+  /** Represents the output of one of the following actions:
     * * <i>CreateSubnetGroup</i>
-    *  * <i>ModifySubnetGroup</i>
+    * * <i>ModifySubnetGroup</i>
     */
   @js.native
   trait SubnetGroup extends js.Object {
@@ -1228,10 +1208,9 @@ package dax {
     }
   }
 
-  /**
-    * A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.
-    *  AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.
-    *  You cannot backdate the application of a tag.
+  /** A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.
+    * AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.
+    * You cannot backdate the application of a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1268,7 +1247,6 @@ package dax {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1305,7 +1283,6 @@ package dax {
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1394,7 +1371,6 @@ package dax {
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateParameterGroupRequest]
     }
   }

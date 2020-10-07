@@ -113,20 +113,17 @@ package outposts {
       val __obj = js.Dynamic.literal(
         "OutpostId" -> OutpostId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteOutpostInput]
     }
   }
 
   @js.native
-  trait DeleteOutpostOutput extends js.Object {}
+  trait DeleteOutpostOutput extends js.Object
 
   object DeleteOutpostOutput {
     @inline
-    def apply(
-    ): DeleteOutpostOutput = {
+    def apply(): DeleteOutpostOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteOutpostOutput]
     }
   }
@@ -144,20 +141,17 @@ package outposts {
       val __obj = js.Dynamic.literal(
         "SiteId" -> SiteId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSiteInput]
     }
   }
 
   @js.native
-  trait DeleteSiteOutput extends js.Object {}
+  trait DeleteSiteOutput extends js.Object
 
   object DeleteSiteOutput {
     @inline
-    def apply(
-    ): DeleteSiteOutput = {
+    def apply(): DeleteSiteOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSiteOutput]
     }
   }
@@ -175,7 +169,6 @@ package outposts {
       val __obj = js.Dynamic.literal(
         "OutpostId" -> OutpostId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOutpostInput]
     }
   }
@@ -245,8 +238,7 @@ package outposts {
     }
   }
 
-  /**
-    * Information about an instance type.
+  /** Information about an instance type.
     */
   @js.native
   trait InstanceTypeItem extends js.Object {
@@ -340,8 +332,7 @@ package outposts {
     }
   }
 
-  /**
-    * Information about an Outpost.
+  /** Information about an Outpost.
     */
   @js.native
   trait Outpost extends js.Object {
@@ -383,8 +374,7 @@ package outposts {
     }
   }
 
-  /**
-    * Information about a site.
+  /** Information about a site.
     */
   @js.native
   trait Site extends js.Object {

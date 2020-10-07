@@ -44,7 +44,6 @@ package apigatewaymanagementapi {
       val __obj = js.Dynamic.literal(
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConnectionRequest]
     }
   }
@@ -62,7 +61,6 @@ package apigatewaymanagementapi {
       val __obj = js.Dynamic.literal(
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConnectionRequest]
     }
   }
@@ -105,7 +103,6 @@ package apigatewaymanagementapi {
         "SourceIp" -> SourceIp.asInstanceOf[js.Any],
         "UserAgent" -> UserAgent.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Identity]
     }
   }
@@ -126,7 +123,6 @@ package apigatewaymanagementapi {
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
         "Data" -> Data.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PostToConnectionRequest]
     }
   }

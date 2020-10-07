@@ -253,8 +253,7 @@ package devicefarm {
     def updateVPCEConfiguration(params: UpdateVPCEConfigurationRequest): Request[UpdateVPCEConfigurationResult] = js.native
   }
 
-  /**
-    * A container for account-level settings in AWS Device Farm.
+  /** A container for account-level settings in AWS Device Farm.
     */
   @js.native
   trait AccountSettings extends js.Object {
@@ -293,8 +292,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the output of a test. Examples of artifacts include logs and screenshots.
+  /** Represents the output of a test. Examples of artifacts include logs and screenshots.
     */
   @js.native
   trait Artifact extends js.Object {
@@ -366,37 +364,36 @@ package devicefarm {
     val CUSTOMER_ARTIFACT_LOG = "CUSTOMER_ARTIFACT_LOG".asInstanceOf[ArtifactType]
     val TESTSPEC_OUTPUT = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
 
-    @inline def values =
-      js.Array(
-        UNKNOWN,
-        SCREENSHOT,
-        DEVICE_LOG,
-        MESSAGE_LOG,
-        VIDEO_LOG,
-        RESULT_LOG,
-        SERVICE_LOG,
-        WEBKIT_LOG,
-        INSTRUMENTATION_OUTPUT,
-        EXERCISER_MONKEY_OUTPUT,
-        CALABASH_JSON_OUTPUT,
-        CALABASH_PRETTY_OUTPUT,
-        CALABASH_STANDARD_OUTPUT,
-        CALABASH_JAVA_XML_OUTPUT,
-        AUTOMATION_OUTPUT,
-        APPIUM_SERVER_OUTPUT,
-        APPIUM_JAVA_OUTPUT,
-        APPIUM_JAVA_XML_OUTPUT,
-        APPIUM_PYTHON_OUTPUT,
-        APPIUM_PYTHON_XML_OUTPUT,
-        EXPLORER_EVENT_LOG,
-        EXPLORER_SUMMARY_LOG,
-        APPLICATION_CRASH_REPORT,
-        XCTEST_LOG,
-        VIDEO,
-        CUSTOMER_ARTIFACT,
-        CUSTOMER_ARTIFACT_LOG,
-        TESTSPEC_OUTPUT
-      )
+    @inline def values = js.Array(
+      UNKNOWN,
+      SCREENSHOT,
+      DEVICE_LOG,
+      MESSAGE_LOG,
+      VIDEO_LOG,
+      RESULT_LOG,
+      SERVICE_LOG,
+      WEBKIT_LOG,
+      INSTRUMENTATION_OUTPUT,
+      EXERCISER_MONKEY_OUTPUT,
+      CALABASH_JSON_OUTPUT,
+      CALABASH_PRETTY_OUTPUT,
+      CALABASH_STANDARD_OUTPUT,
+      CALABASH_JAVA_XML_OUTPUT,
+      AUTOMATION_OUTPUT,
+      APPIUM_SERVER_OUTPUT,
+      APPIUM_JAVA_OUTPUT,
+      APPIUM_JAVA_XML_OUTPUT,
+      APPIUM_PYTHON_OUTPUT,
+      APPIUM_PYTHON_XML_OUTPUT,
+      EXPLORER_EVENT_LOG,
+      EXPLORER_SUMMARY_LOG,
+      APPLICATION_CRASH_REPORT,
+      XCTEST_LOG,
+      VIDEO,
+      CUSTOMER_ARTIFACT,
+      CUSTOMER_ARTIFACT_LOG,
+      TESTSPEC_OUTPUT
+    )
   }
 
   @js.native
@@ -408,8 +405,7 @@ package devicefarm {
     @inline def values = js.Array(METERED, UNMETERED)
   }
 
-  /**
-    * Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.
+  /** Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.
     */
   @js.native
   trait CPU extends js.Object {
@@ -433,8 +429,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents entity counters.
+  /** Represents entity counters.
     */
   @js.native
   trait Counters extends js.Object {
@@ -470,8 +465,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the create device pool operation.
+  /** Represents a request to the create device pool operation.
     */
   @js.native
   trait CreateDevicePoolRequest extends js.Object {
@@ -503,8 +497,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a create device pool request.
+  /** Represents the result of a create device pool request.
     */
   @js.native
   trait CreateDevicePoolResult extends js.Object {
@@ -635,8 +628,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the create project operation.
+  /** Represents a request to the create project operation.
     */
   @js.native
   trait CreateProjectRequest extends js.Object {
@@ -659,8 +651,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a create project request.
+  /** Represents the result of a create project request.
     */
   @js.native
   trait CreateProjectResult extends js.Object {
@@ -678,8 +669,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Configuration settings for a remote access session, including billing method.
+  /** Configuration settings for a remote access session, including billing method.
     */
   @js.native
   trait CreateRemoteAccessSessionConfiguration extends js.Object {
@@ -700,8 +690,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Creates and submits a request to start a remote access session.
+  /** Creates and submits a request to start a remote access session.
     */
   @js.native
   trait CreateRemoteAccessSessionRequest extends js.Object {
@@ -754,8 +743,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the server response from a request to create a remote access session.
+  /** Represents the server response from a request to create a remote access session.
     */
   @js.native
   trait CreateRemoteAccessSessionResult extends js.Object {
@@ -826,7 +814,6 @@ package devicefarm {
         "expiresInSeconds" -> expiresInSeconds.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTestGridUrlRequest]
     }
   }
@@ -850,8 +837,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the create upload operation.
+  /** Represents a request to the create upload operation.
     */
   @js.native
   trait CreateUploadRequest extends js.Object {
@@ -880,8 +866,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a create upload request.
+  /** Represents the result of a create upload request.
     */
   @js.native
   trait CreateUploadResult extends js.Object {
@@ -950,10 +935,9 @@ package devicefarm {
     @inline def values = js.Array(USD)
   }
 
-  /**
-    * A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.
-    *  Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.
-    *  For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.
+  /** A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.
+    * Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.
+    * For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.
     */
   @js.native
   trait CustomerArtifactPaths extends js.Object {
@@ -977,8 +961,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the delete device pool operation.
+  /** Represents a request to the delete device pool operation.
     */
   @js.native
   trait DeleteDevicePoolRequest extends js.Object {
@@ -993,23 +976,19 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDevicePoolRequest]
     }
   }
 
-  /**
-    * Represents the result of a delete device pool request.
+  /** Represents the result of a delete device pool request.
     */
   @js.native
-  trait DeleteDevicePoolResult extends js.Object {}
+  trait DeleteDevicePoolResult extends js.Object
 
   object DeleteDevicePoolResult {
     @inline
-    def apply(
-    ): DeleteDevicePoolResult = {
+    def apply(): DeleteDevicePoolResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDevicePoolResult]
     }
   }
@@ -1027,20 +1006,17 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInstanceProfileRequest]
     }
   }
 
   @js.native
-  trait DeleteInstanceProfileResult extends js.Object {}
+  trait DeleteInstanceProfileResult extends js.Object
 
   object DeleteInstanceProfileResult {
     @inline
-    def apply(
-    ): DeleteInstanceProfileResult = {
+    def apply(): DeleteInstanceProfileResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteInstanceProfileResult]
     }
   }
@@ -1058,26 +1034,22 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNetworkProfileRequest]
     }
   }
 
   @js.native
-  trait DeleteNetworkProfileResult extends js.Object {}
+  trait DeleteNetworkProfileResult extends js.Object
 
   object DeleteNetworkProfileResult {
     @inline
-    def apply(
-    ): DeleteNetworkProfileResult = {
+    def apply(): DeleteNetworkProfileResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteNetworkProfileResult]
     }
   }
 
-  /**
-    * Represents a request to the delete project operation.
+  /** Represents a request to the delete project operation.
     */
   @js.native
   trait DeleteProjectRequest extends js.Object {
@@ -1092,29 +1064,24 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProjectRequest]
     }
   }
 
-  /**
-    * Represents the result of a delete project request.
+  /** Represents the result of a delete project request.
     */
   @js.native
-  trait DeleteProjectResult extends js.Object {}
+  trait DeleteProjectResult extends js.Object
 
   object DeleteProjectResult {
     @inline
-    def apply(
-    ): DeleteProjectResult = {
+    def apply(): DeleteProjectResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProjectResult]
     }
   }
 
-  /**
-    * Represents the request to delete the specified remote access session.
+  /** Represents the request to delete the specified remote access session.
     */
   @js.native
   trait DeleteRemoteAccessSessionRequest extends js.Object {
@@ -1129,29 +1096,24 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRemoteAccessSessionRequest]
     }
   }
 
-  /**
-    * The response from the server when a request is made to delete the remote access session.
+  /** The response from the server when a request is made to delete the remote access session.
     */
   @js.native
-  trait DeleteRemoteAccessSessionResult extends js.Object {}
+  trait DeleteRemoteAccessSessionResult extends js.Object
 
   object DeleteRemoteAccessSessionResult {
     @inline
-    def apply(
-    ): DeleteRemoteAccessSessionResult = {
+    def apply(): DeleteRemoteAccessSessionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRemoteAccessSessionResult]
     }
   }
 
-  /**
-    * Represents a request to the delete run operation.
+  /** Represents a request to the delete run operation.
     */
   @js.native
   trait DeleteRunRequest extends js.Object {
@@ -1166,23 +1128,19 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRunRequest]
     }
   }
 
-  /**
-    * Represents the result of a delete run request.
+  /** Represents the result of a delete run request.
     */
   @js.native
-  trait DeleteRunResult extends js.Object {}
+  trait DeleteRunResult extends js.Object
 
   object DeleteRunResult {
     @inline
-    def apply(
-    ): DeleteRunResult = {
+    def apply(): DeleteRunResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRunResult]
     }
   }
@@ -1200,26 +1158,22 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "projectArn" -> projectArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTestGridProjectRequest]
     }
   }
 
   @js.native
-  trait DeleteTestGridProjectResult extends js.Object {}
+  trait DeleteTestGridProjectResult extends js.Object
 
   object DeleteTestGridProjectResult {
     @inline
-    def apply(
-    ): DeleteTestGridProjectResult = {
+    def apply(): DeleteTestGridProjectResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTestGridProjectResult]
     }
   }
 
-  /**
-    * Represents a request to the delete upload operation.
+  /** Represents a request to the delete upload operation.
     */
   @js.native
   trait DeleteUploadRequest extends js.Object {
@@ -1234,23 +1188,19 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUploadRequest]
     }
   }
 
-  /**
-    * Represents the result of a delete upload request.
+  /** Represents the result of a delete upload request.
     */
   @js.native
-  trait DeleteUploadResult extends js.Object {}
+  trait DeleteUploadResult extends js.Object
 
   object DeleteUploadResult {
     @inline
-    def apply(
-    ): DeleteUploadResult = {
+    def apply(): DeleteUploadResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUploadResult]
     }
   }
@@ -1268,26 +1218,22 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVPCEConfigurationRequest]
     }
   }
 
   @js.native
-  trait DeleteVPCEConfigurationResult extends js.Object {}
+  trait DeleteVPCEConfigurationResult extends js.Object
 
   object DeleteVPCEConfigurationResult {
     @inline
-    def apply(
-    ): DeleteVPCEConfigurationResult = {
+    def apply(): DeleteVPCEConfigurationResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteVPCEConfigurationResult]
     }
   }
 
-  /**
-    * Represents a device type that an app is tested against.
+  /** Represents a device type that an app is tested against.
     */
   @js.native
   trait Device extends js.Object {
@@ -1382,22 +1328,21 @@ package devicefarm {
     val MODEL = "MODEL".asInstanceOf[DeviceAttribute]
     val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceAttribute]
 
-    @inline def values =
-      js.Array(
-        ARN,
-        PLATFORM,
-        FORM_FACTOR,
-        MANUFACTURER,
-        REMOTE_ACCESS_ENABLED,
-        REMOTE_DEBUG_ENABLED,
-        APPIUM_VERSION,
-        INSTANCE_ARN,
-        INSTANCE_LABELS,
-        FLEET_TYPE,
-        OS_VERSION,
-        MODEL,
-        AVAILABILITY
-      )
+    @inline def values = js.Array(
+      ARN,
+      PLATFORM,
+      FORM_FACTOR,
+      MANUFACTURER,
+      REMOTE_ACCESS_ENABLED,
+      REMOTE_DEBUG_ENABLED,
+      APPIUM_VERSION,
+      INSTANCE_ARN,
+      INSTANCE_LABELS,
+      FLEET_TYPE,
+      OS_VERSION,
+      MODEL,
+      AVAILABILITY
+    )
   }
 
   @js.native
@@ -1411,9 +1356,8 @@ package devicefarm {
     @inline def values = js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE)
   }
 
-  /**
-    * Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
-    *  It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.
+  /** Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    * It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.
     */
   @js.native
   trait DeviceFilter extends js.Object {
@@ -1453,21 +1397,20 @@ package devicefarm {
     val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceFilterAttribute]
     val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
 
-    @inline def values =
-      js.Array(
-        ARN,
-        PLATFORM,
-        OS_VERSION,
-        MODEL,
-        AVAILABILITY,
-        FORM_FACTOR,
-        MANUFACTURER,
-        REMOTE_ACCESS_ENABLED,
-        REMOTE_DEBUG_ENABLED,
-        INSTANCE_ARN,
-        INSTANCE_LABELS,
-        FLEET_TYPE
-      )
+    @inline def values = js.Array(
+      ARN,
+      PLATFORM,
+      OS_VERSION,
+      MODEL,
+      AVAILABILITY,
+      FORM_FACTOR,
+      MANUFACTURER,
+      REMOTE_ACCESS_ENABLED,
+      REMOTE_DEBUG_ENABLED,
+      INSTANCE_ARN,
+      INSTANCE_LABELS,
+      FLEET_TYPE
+    )
   }
 
   @js.native
@@ -1479,8 +1422,7 @@ package devicefarm {
     @inline def values = js.Array(PHONE, TABLET)
   }
 
-  /**
-    * Represents the device instance.
+  /** Represents the device instance.
     */
   @js.native
   trait DeviceInstance extends js.Object {
@@ -1513,8 +1455,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.
+  /** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.
     */
   @js.native
   trait DeviceMinutes extends js.Object {
@@ -1547,8 +1488,7 @@ package devicefarm {
     @inline def values = js.Array(ANDROID, IOS)
   }
 
-  /**
-    * Represents a collection of device types.
+  /** Represents a collection of device types.
     */
   @js.native
   trait DevicePool extends js.Object {
@@ -1581,8 +1521,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a device pool compatibility result.
+  /** Represents a device pool compatibility result.
     */
   @js.native
   trait DevicePoolCompatibilityResult extends js.Object {
@@ -1615,8 +1554,7 @@ package devicefarm {
     @inline def values = js.Array(CURATED, PRIVATE)
   }
 
-  /**
-    * Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
+  /** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
     */
   @js.native
   trait DeviceSelectionConfiguration extends js.Object {
@@ -1634,13 +1572,11 @@ package devicefarm {
         "filters" -> filters.asInstanceOf[js.Any],
         "maxDevices" -> maxDevices.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeviceSelectionConfiguration]
     }
   }
 
-  /**
-    * Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
+  /** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>.
     */
   @js.native
   trait DeviceSelectionResult extends js.Object {
@@ -1664,8 +1600,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents configuration information about a test run, such as the execution timeout (in minutes).
+  /** Represents configuration information about a test run, such as the execution timeout (in minutes).
     */
   @js.native
   trait ExecutionConfiguration extends js.Object {
@@ -1734,24 +1669,20 @@ package devicefarm {
     @inline def values = js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING)
   }
 
-  /**
-    * Represents the request sent to retrieve the account settings.
+  /** Represents the request sent to retrieve the account settings.
     */
   @js.native
-  trait GetAccountSettingsRequest extends js.Object {}
+  trait GetAccountSettingsRequest extends js.Object
 
   object GetAccountSettingsRequest {
     @inline
-    def apply(
-    ): GetAccountSettingsRequest = {
+    def apply(): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAccountSettingsRequest]
     }
   }
 
-  /**
-    * Represents the account settings return values from the <code>GetAccountSettings</code> request.
+  /** Represents the account settings return values from the <code>GetAccountSettings</code> request.
     */
   @js.native
   trait GetAccountSettingsResult extends js.Object {
@@ -1782,7 +1713,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceInstanceRequest]
     }
   }
@@ -1803,8 +1733,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get device pool compatibility operation.
+  /** Represents a request to the get device pool compatibility operation.
     */
   @js.native
   trait GetDevicePoolCompatibilityRequest extends js.Object {
@@ -1836,8 +1765,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of describe device pool compatibility request.
+  /** Represents the result of describe device pool compatibility request.
     */
   @js.native
   trait GetDevicePoolCompatibilityResult extends js.Object {
@@ -1858,8 +1786,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get device pool operation.
+  /** Represents a request to the get device pool operation.
     */
   @js.native
   trait GetDevicePoolRequest extends js.Object {
@@ -1874,13 +1801,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDevicePoolRequest]
     }
   }
 
-  /**
-    * Represents the result of a get device pool request.
+  /** Represents the result of a get device pool request.
     */
   @js.native
   trait GetDevicePoolResult extends js.Object {
@@ -1898,8 +1823,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get device request.
+  /** Represents a request to the get device request.
     */
   @js.native
   trait GetDeviceRequest extends js.Object {
@@ -1914,13 +1838,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceRequest]
     }
   }
 
-  /**
-    * Represents the result of a get device request.
+  /** Represents the result of a get device request.
     */
   @js.native
   trait GetDeviceResult extends js.Object {
@@ -1951,7 +1873,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstanceProfileRequest]
     }
   }
@@ -1972,8 +1893,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get job operation.
+  /** Represents a request to the get job operation.
     */
   @js.native
   trait GetJobRequest extends js.Object {
@@ -1988,13 +1908,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobRequest]
     }
   }
 
-  /**
-    * Represents the result of a get job request.
+  /** Represents the result of a get job request.
     */
   @js.native
   trait GetJobResult extends js.Object {
@@ -2025,7 +1943,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetNetworkProfileRequest]
     }
   }
@@ -2046,8 +1963,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to retrieve the offering status for the specified customer or account.
+  /** Represents the request to retrieve the offering status for the specified customer or account.
     */
   @js.native
   trait GetOfferingStatusRequest extends js.Object {
@@ -2065,8 +1981,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Returns the status result for a device offering.
+  /** Returns the status result for a device offering.
     */
   @js.native
   trait GetOfferingStatusResult extends js.Object {
@@ -2090,8 +2005,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get project operation.
+  /** Represents a request to the get project operation.
     */
   @js.native
   trait GetProjectRequest extends js.Object {
@@ -2106,13 +2020,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetProjectRequest]
     }
   }
 
-  /**
-    * Represents the result of a get project request.
+  /** Represents the result of a get project request.
     */
   @js.native
   trait GetProjectResult extends js.Object {
@@ -2130,8 +2042,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to get information about the specified remote access session.
+  /** Represents the request to get information about the specified remote access session.
     */
   @js.native
   trait GetRemoteAccessSessionRequest extends js.Object {
@@ -2146,13 +2057,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRemoteAccessSessionRequest]
     }
   }
 
-  /**
-    * Represents the response from the server that lists detailed information about the remote access session.
+  /** Represents the response from the server that lists detailed information about the remote access session.
     */
   @js.native
   trait GetRemoteAccessSessionResult extends js.Object {
@@ -2170,8 +2079,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get run operation.
+  /** Represents a request to the get run operation.
     */
   @js.native
   trait GetRunRequest extends js.Object {
@@ -2186,13 +2094,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRunRequest]
     }
   }
 
-  /**
-    * Represents the result of a get run request.
+  /** Represents the result of a get run request.
     */
   @js.native
   trait GetRunResult extends js.Object {
@@ -2210,8 +2116,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get suite operation.
+  /** Represents a request to the get suite operation.
     */
   @js.native
   trait GetSuiteRequest extends js.Object {
@@ -2226,13 +2131,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSuiteRequest]
     }
   }
 
-  /**
-    * Represents the result of a get suite request.
+  /** Represents the result of a get suite request.
     */
   @js.native
   trait GetSuiteResult extends js.Object {
@@ -2263,7 +2166,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "projectArn" -> projectArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTestGridProjectRequest]
     }
   }
@@ -2322,8 +2224,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get test operation.
+  /** Represents a request to the get test operation.
     */
   @js.native
   trait GetTestRequest extends js.Object {
@@ -2338,13 +2239,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTestRequest]
     }
   }
 
-  /**
-    * Represents the result of a get test request.
+  /** Represents the result of a get test request.
     */
   @js.native
   trait GetTestResult extends js.Object {
@@ -2362,8 +2261,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the get upload operation.
+  /** Represents a request to the get upload operation.
     */
   @js.native
   trait GetUploadRequest extends js.Object {
@@ -2378,13 +2276,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUploadRequest]
     }
   }
 
-  /**
-    * Represents the result of a get upload request.
+  /** Represents the result of a get upload request.
     */
   @js.native
   trait GetUploadResult extends js.Object {
@@ -2415,7 +2311,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVPCEConfigurationRequest]
     }
   }
@@ -2436,8 +2331,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents information about incompatibility.
+  /** Represents information about incompatibility.
     */
   @js.native
   trait IncompatibilityMessage extends js.Object {
@@ -2458,8 +2352,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session.
+  /** Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session.
     */
   @js.native
   trait InstallToRemoteAccessSessionRequest extends js.Object {
@@ -2477,13 +2370,11 @@ package devicefarm {
         "appArn" -> appArn.asInstanceOf[js.Any],
         "remoteAccessSessionArn" -> remoteAccessSessionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InstallToRemoteAccessSessionRequest]
     }
   }
 
-  /**
-    * Represents the response from the server after AWS Device Farm makes a request to install to a remote access session.
+  /** Represents the response from the server after AWS Device Farm makes a request to install to a remote access session.
     */
   @js.native
   trait InstallToRemoteAccessSessionResult extends js.Object {
@@ -2501,8 +2392,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the instance profile.
+  /** Represents the instance profile.
     */
   @js.native
   trait InstanceProfile extends js.Object {
@@ -2556,8 +2446,7 @@ package devicefarm {
     @inline def values = js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY)
   }
 
-  /**
-    * Represents a device.
+  /** Represents a device.
     */
   @js.native
   trait Job extends js.Object {
@@ -2617,8 +2506,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list artifacts operation.
+  /** Represents a request to the list artifacts operation.
     */
   @js.native
   trait ListArtifactsRequest extends js.Object {
@@ -2644,8 +2532,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list artifacts operation.
+  /** Represents the result of a list artifacts operation.
     */
   @js.native
   trait ListArtifactsResult extends js.Object {
@@ -2704,8 +2591,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list device pools request.
+  /** Represents the result of a list device pools request.
     */
   @js.native
   trait ListDevicePoolsRequest extends js.Object {
@@ -2731,8 +2617,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list device pools request.
+  /** Represents the result of a list device pools request.
     */
   @js.native
   trait ListDevicePoolsResult extends js.Object {
@@ -2753,8 +2638,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list devices request.
+  /** Represents the result of a list devices request.
     */
   @js.native
   trait ListDevicesRequest extends js.Object {
@@ -2778,8 +2662,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list devices operation.
+  /** Represents the result of a list devices operation.
     */
   @js.native
   trait ListDevicesResult extends js.Object {
@@ -2838,8 +2721,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list jobs operation.
+  /** Represents a request to the list jobs operation.
     */
   @js.native
   trait ListJobsRequest extends js.Object {
@@ -2862,8 +2744,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list jobs request.
+  /** Represents the result of a list jobs request.
     */
   @js.native
   trait ListJobsResult extends js.Object {
@@ -2962,8 +2843,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to list the offering transaction history.
+  /** Represents the request to list the offering transaction history.
     */
   @js.native
   trait ListOfferingTransactionsRequest extends js.Object {
@@ -2981,8 +2861,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Returns the transaction log of the specified offerings.
+  /** Returns the transaction log of the specified offerings.
     */
   @js.native
   trait ListOfferingTransactionsResult extends js.Object {
@@ -3003,8 +2882,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to list all offerings.
+  /** Represents the request to list all offerings.
     */
   @js.native
   trait ListOfferingsRequest extends js.Object {
@@ -3022,8 +2900,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the return values of the list of offerings.
+  /** Represents the return values of the list of offerings.
     */
   @js.native
   trait ListOfferingsResult extends js.Object {
@@ -3044,8 +2921,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list projects operation.
+  /** Represents a request to the list projects operation.
     */
   @js.native
   trait ListProjectsRequest extends js.Object {
@@ -3066,8 +2942,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list projects request.
+  /** Represents the result of a list projects request.
     */
   @js.native
   trait ListProjectsResult extends js.Object {
@@ -3088,8 +2963,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to return information about the remote access session.
+  /** Represents the request to return information about the remote access session.
     */
   @js.native
   trait ListRemoteAccessSessionsRequest extends js.Object {
@@ -3112,8 +2986,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session.
+  /** Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session.
     */
   @js.native
   trait ListRemoteAccessSessionsResult extends js.Object {
@@ -3134,8 +3007,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list runs operation.
+  /** Represents a request to the list runs operation.
     */
   @js.native
   trait ListRunsRequest extends js.Object {
@@ -3158,8 +3030,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list runs request.
+  /** Represents the result of a list runs request.
     */
   @js.native
   trait ListRunsResult extends js.Object {
@@ -3180,8 +3051,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list samples operation.
+  /** Represents a request to the list samples operation.
     */
   @js.native
   trait ListSamplesRequest extends js.Object {
@@ -3204,8 +3074,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list samples request.
+  /** Represents the result of a list samples request.
     */
   @js.native
   trait ListSamplesResult extends js.Object {
@@ -3226,8 +3095,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list suites operation.
+  /** Represents a request to the list suites operation.
     */
   @js.native
   trait ListSuitesRequest extends js.Object {
@@ -3250,8 +3118,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list suites request.
+  /** Represents the result of a list suites request.
     */
   @js.native
   trait ListSuitesResult extends js.Object {
@@ -3285,7 +3152,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -3491,8 +3357,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list tests operation.
+  /** Represents a request to the list tests operation.
     */
   @js.native
   trait ListTestsRequest extends js.Object {
@@ -3515,8 +3380,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list tests request.
+  /** Represents the result of a list tests request.
     */
   @js.native
   trait ListTestsResult extends js.Object {
@@ -3537,8 +3401,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list unique problems operation.
+  /** Represents a request to the list unique problems operation.
     */
   @js.native
   trait ListUniqueProblemsRequest extends js.Object {
@@ -3561,8 +3424,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list unique problems request.
+  /** Represents the result of a list unique problems request.
     */
   @js.native
   trait ListUniqueProblemsResult extends js.Object {
@@ -3583,8 +3445,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the list uploads operation.
+  /** Represents a request to the list uploads operation.
     */
   @js.native
   trait ListUploadsRequest extends js.Object {
@@ -3610,8 +3471,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a list uploads request.
+  /** Represents the result of a list uploads request.
     */
   @js.native
   trait ListUploadsResult extends js.Object {
@@ -3670,9 +3530,8 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).
-    *  Elevation is currently not supported.
+  /** Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).
+    * Elevation is currently not supported.
     */
   @js.native
   trait Location extends js.Object {
@@ -3690,13 +3549,11 @@ package devicefarm {
         "latitude" -> latitude.asInstanceOf[js.Any],
         "longitude" -> longitude.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Location]
     }
   }
 
-  /**
-    * A number that represents the monetary amount for an offering or transaction.
+  /** A number that represents the monetary amount for an offering or transaction.
     */
   @js.native
   trait MonetaryAmount extends js.Object {
@@ -3717,8 +3574,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * An array of settings that describes characteristics of a network profile.
+  /** An array of settings that describes characteristics of a network profile.
     */
   @js.native
   trait NetworkProfile extends js.Object {
@@ -3778,8 +3634,7 @@ package devicefarm {
     @inline def values = js.Array(CURATED, PRIVATE)
   }
 
-  /**
-    * Represents the metadata of a device offering.
+  /** Represents the metadata of a device offering.
     */
   @js.native
   trait Offering extends js.Object {
@@ -3809,8 +3664,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents information about an offering promotion.
+  /** Represents information about an offering promotion.
     */
   @js.native
   trait OfferingPromotion extends js.Object {
@@ -3831,8 +3685,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * The status of the offering.
+  /** The status of the offering.
     */
   @js.native
   trait OfferingStatus extends js.Object {
@@ -3859,8 +3712,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the metadata of an offering transaction.
+  /** Represents the metadata of an offering transaction.
     */
   @js.native
   trait OfferingTransaction extends js.Object {
@@ -3908,8 +3760,7 @@ package devicefarm {
     @inline def values = js.Array(RECURRING)
   }
 
-  /**
-    * Represents a specific warning or failure.
+  /** Represents a specific warning or failure.
     */
   @js.native
   trait Problem extends js.Object {
@@ -3945,8 +3796,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Information about a problem detail.
+  /** Information about a problem detail.
     */
   @js.native
   trait ProblemDetail extends js.Object {
@@ -3967,8 +3817,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents an operating-system neutral workspace for running and managing tests.
+  /** Represents an operating-system neutral workspace for running and managing tests.
     */
   @js.native
   trait Project extends js.Object {
@@ -3995,8 +3844,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request for a purchase offering.
+  /** Represents a request for a purchase offering.
     */
   @js.native
   trait PurchaseOfferingRequest extends js.Object {
@@ -4020,8 +3868,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * The result of the purchase offering (for example, success or failure).
+  /** The result of the purchase offering (for example, success or failure).
     */
   @js.native
   trait PurchaseOfferingResult extends js.Object {
@@ -4039,8 +3886,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.
+  /** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.
     */
   @js.native
   trait Radios extends js.Object {
@@ -4067,8 +3913,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Specifies whether charges for devices are recurring.
+  /** Specifies whether charges for devices are recurring.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -4097,8 +3942,7 @@ package devicefarm {
     @inline def values = js.Array(MONTHLY)
   }
 
-  /**
-    * Represents information about the remote access session.
+  /** Represents information about the remote access session.
     */
   @js.native
   trait RemoteAccessSession extends js.Object {
@@ -4176,8 +4020,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * A request that represents an offering renewal.
+  /** A request that represents an offering renewal.
     */
   @js.native
   trait RenewOfferingRequest extends js.Object {
@@ -4198,8 +4041,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * The result of a renewal offering.
+  /** The result of a renewal offering.
     */
   @js.native
   trait RenewOfferingResult extends js.Object {
@@ -4217,8 +4059,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the screen resolution of a device in height and width, expressed in pixels.
+  /** Represents the screen resolution of a device in height and width, expressed in pixels.
     */
   @js.native
   trait Resolution extends js.Object {
@@ -4239,8 +4080,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a condition for a device pool.
+  /** Represents a condition for a device pool.
     */
   @js.native
   trait Rule extends js.Object {
@@ -4279,8 +4119,7 @@ package devicefarm {
     @inline def values = js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
   }
 
-  /**
-    * Represents a test run on a set of devices with a given app package, test parameters, and so on.
+  /** Represents a test run on a set of devices with a given app package, test parameters, and so on.
     */
   @js.native
   trait Run extends js.Object {
@@ -4388,8 +4227,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a sample of performance data.
+  /** Represents a sample of performance data.
     */
   @js.native
   trait Sample extends js.Object {
@@ -4434,30 +4272,28 @@ package devicefarm {
     val OPENGL_AVG_DRAWTIME = "OPENGL_AVG_DRAWTIME".asInstanceOf[SampleType]
     val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME".asInstanceOf[SampleType]
 
-    @inline def values =
-      js.Array(
-        CPU,
-        MEMORY,
-        THREADS,
-        RX_RATE,
-        TX_RATE,
-        RX,
-        TX,
-        NATIVE_FRAMES,
-        NATIVE_FPS,
-        NATIVE_MIN_DRAWTIME,
-        NATIVE_AVG_DRAWTIME,
-        NATIVE_MAX_DRAWTIME,
-        OPENGL_FRAMES,
-        OPENGL_FPS,
-        OPENGL_MIN_DRAWTIME,
-        OPENGL_AVG_DRAWTIME,
-        OPENGL_MAX_DRAWTIME
-      )
+    @inline def values = js.Array(
+      CPU,
+      MEMORY,
+      THREADS,
+      RX_RATE,
+      TX_RATE,
+      RX,
+      TX,
+      NATIVE_FRAMES,
+      NATIVE_FPS,
+      NATIVE_MIN_DRAWTIME,
+      NATIVE_AVG_DRAWTIME,
+      NATIVE_MAX_DRAWTIME,
+      OPENGL_FRAMES,
+      OPENGL_FPS,
+      OPENGL_MIN_DRAWTIME,
+      OPENGL_AVG_DRAWTIME,
+      OPENGL_MAX_DRAWTIME
+    )
   }
 
-  /**
-    * Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.
+  /** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.
     */
   @js.native
   trait ScheduleRunConfiguration extends js.Object {
@@ -4499,8 +4335,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the schedule run operation.
+  /** Represents a request to the schedule run operation.
     */
   @js.native
   trait ScheduleRunRequest extends js.Object {
@@ -4541,8 +4376,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of a schedule run request.
+  /** Represents the result of a schedule run request.
     */
   @js.native
   trait ScheduleRunResult extends js.Object {
@@ -4560,8 +4394,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+  /** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     */
   @js.native
   trait ScheduleRunTest extends js.Object {
@@ -4606,7 +4439,6 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopJobRequest]
     }
   }
@@ -4627,8 +4459,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to stop the remote access session.
+  /** Represents the request to stop the remote access session.
     */
   @js.native
   trait StopRemoteAccessSessionRequest extends js.Object {
@@ -4643,13 +4474,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopRemoteAccessSessionRequest]
     }
   }
 
-  /**
-    * Represents the response from the server that describes the remote access session when AWS Device Farm stops the session.
+  /** Represents the response from the server that describes the remote access session when AWS Device Farm stops the session.
     */
   @js.native
   trait StopRemoteAccessSessionResult extends js.Object {
@@ -4667,8 +4496,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the request to stop a specific run.
+  /** Represents the request to stop a specific run.
     */
   @js.native
   trait StopRunRequest extends js.Object {
@@ -4683,13 +4511,11 @@ package devicefarm {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopRunRequest]
     }
   }
 
-  /**
-    * Represents the results of your stop run attempt.
+  /** Represents the results of your stop run attempt.
     */
   @js.native
   trait StopRunResult extends js.Object {
@@ -4707,8 +4533,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a collection of one or more tests.
+  /** Represents a collection of one or more tests.
     */
   @js.native
   trait Suite extends js.Object {
@@ -4756,8 +4581,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.
+  /** The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4775,7 +4599,6 @@ package devicefarm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -4796,26 +4619,22 @@ package devicefarm {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Represents a condition that is evaluated.
+  /** Represents a condition that is evaluated.
     */
   @js.native
   trait Test extends js.Object {
@@ -4863,8 +4682,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * A Selenium testing project. Projects are used to collect and collate sessions.
+  /** A Selenium testing project. Projects are used to collect and collate sessions.
     */
   @js.native
   trait TestGridProject extends js.Object {
@@ -4891,8 +4709,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>.
+  /** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>.
     */
   @js.native
   trait TestGridSession extends js.Object {
@@ -4925,8 +4742,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * An action taken by a <a>TestGridSession</a> browser instance.
+  /** An action taken by a <a>TestGridSession</a> browser instance.
     */
   @js.native
   trait TestGridSessionAction extends js.Object {
@@ -4956,8 +4772,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Artifacts are video and other files that are produced in the process of running a browser in an automated context.
+  /** Artifacts are video and other files that are produced in the process of running a browser in an automated context.
     *
     * '''Note:'''Video elements might be broken up into multiple artifacts as they grow in size during creation.
     */
@@ -5037,34 +4852,32 @@ package devicefarm {
     val REMOTE_ACCESS_RECORD = "REMOTE_ACCESS_RECORD".asInstanceOf[TestType]
     val REMOTE_ACCESS_REPLAY = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
 
-    @inline def values =
-      js.Array(
-        BUILTIN_FUZZ,
-        BUILTIN_EXPLORER,
-        WEB_PERFORMANCE_PROFILE,
-        APPIUM_JAVA_JUNIT,
-        APPIUM_JAVA_TESTNG,
-        APPIUM_PYTHON,
-        APPIUM_NODE,
-        APPIUM_RUBY,
-        APPIUM_WEB_JAVA_JUNIT,
-        APPIUM_WEB_JAVA_TESTNG,
-        APPIUM_WEB_PYTHON,
-        APPIUM_WEB_NODE,
-        APPIUM_WEB_RUBY,
-        CALABASH,
-        INSTRUMENTATION,
-        UIAUTOMATION,
-        UIAUTOMATOR,
-        XCTEST,
-        XCTEST_UI,
-        REMOTE_ACCESS_RECORD,
-        REMOTE_ACCESS_REPLAY
-      )
+    @inline def values = js.Array(
+      BUILTIN_FUZZ,
+      BUILTIN_EXPLORER,
+      WEB_PERFORMANCE_PROFILE,
+      APPIUM_JAVA_JUNIT,
+      APPIUM_JAVA_TESTNG,
+      APPIUM_PYTHON,
+      APPIUM_NODE,
+      APPIUM_RUBY,
+      APPIUM_WEB_JAVA_JUNIT,
+      APPIUM_WEB_JAVA_TESTNG,
+      APPIUM_WEB_PYTHON,
+      APPIUM_WEB_NODE,
+      APPIUM_WEB_RUBY,
+      CALABASH,
+      INSTRUMENTATION,
+      UIAUTOMATION,
+      UIAUTOMATOR,
+      XCTEST,
+      XCTEST_UI,
+      REMOTE_ACCESS_RECORD,
+      REMOTE_ACCESS_REPLAY
+    )
   }
 
-  /**
-    * Represents information about free trial device minutes for an AWS account.
+  /** Represents information about free trial device minutes for an AWS account.
     */
   @js.native
   trait TrialMinutes extends js.Object {
@@ -5085,8 +4898,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * A collection of one or more problems, grouped by their result.
+  /** A collection of one or more problems, grouped by their result.
     */
   @js.native
   trait UniqueProblem extends js.Object {
@@ -5123,20 +4935,17 @@ package devicefarm {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -5181,8 +4990,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the update device pool operation.
+  /** Represents a request to the update device pool operation.
     */
   @js.native
   trait UpdateDevicePoolRequest extends js.Object {
@@ -5217,8 +5025,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of an update device pool request.
+  /** Represents the result of an update device pool request.
     */
   @js.native
   trait UpdateDevicePoolResult extends js.Object {
@@ -5352,8 +5159,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents a request to the update project operation.
+  /** Represents a request to the update project operation.
     */
   @js.native
   trait UpdateProjectRequest extends js.Object {
@@ -5379,8 +5185,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * Represents the result of an update project request.
+  /** Represents the result of an update project request.
     */
   @js.native
   trait UpdateProjectResult extends js.Object {
@@ -5527,8 +5332,7 @@ package devicefarm {
     }
   }
 
-  /**
-    * An app or a set of one or more tests to upload or that have been uploaded.
+  /** An app or a set of one or more tests to upload or that have been uploaded.
     */
   @js.native
   trait Upload extends js.Object {
@@ -5629,45 +5433,43 @@ package devicefarm {
     val INSTRUMENTATION_TEST_SPEC = "INSTRUMENTATION_TEST_SPEC".asInstanceOf[UploadType]
     val XCTEST_UI_TEST_SPEC = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
 
-    @inline def values =
-      js.Array(
-        ANDROID_APP,
-        IOS_APP,
-        WEB_APP,
-        EXTERNAL_DATA,
-        APPIUM_JAVA_JUNIT_TEST_PACKAGE,
-        APPIUM_JAVA_TESTNG_TEST_PACKAGE,
-        APPIUM_PYTHON_TEST_PACKAGE,
-        APPIUM_NODE_TEST_PACKAGE,
-        APPIUM_RUBY_TEST_PACKAGE,
-        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
-        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
-        APPIUM_WEB_PYTHON_TEST_PACKAGE,
-        APPIUM_WEB_NODE_TEST_PACKAGE,
-        APPIUM_WEB_RUBY_TEST_PACKAGE,
-        CALABASH_TEST_PACKAGE,
-        INSTRUMENTATION_TEST_PACKAGE,
-        UIAUTOMATION_TEST_PACKAGE,
-        UIAUTOMATOR_TEST_PACKAGE,
-        XCTEST_TEST_PACKAGE,
-        XCTEST_UI_TEST_PACKAGE,
-        APPIUM_JAVA_JUNIT_TEST_SPEC,
-        APPIUM_JAVA_TESTNG_TEST_SPEC,
-        APPIUM_PYTHON_TEST_SPEC,
-        APPIUM_NODE_TEST_SPEC,
-        APPIUM_RUBY_TEST_SPEC,
-        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
-        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
-        APPIUM_WEB_PYTHON_TEST_SPEC,
-        APPIUM_WEB_NODE_TEST_SPEC,
-        APPIUM_WEB_RUBY_TEST_SPEC,
-        INSTRUMENTATION_TEST_SPEC,
-        XCTEST_UI_TEST_SPEC
-      )
+    @inline def values = js.Array(
+      ANDROID_APP,
+      IOS_APP,
+      WEB_APP,
+      EXTERNAL_DATA,
+      APPIUM_JAVA_JUNIT_TEST_PACKAGE,
+      APPIUM_JAVA_TESTNG_TEST_PACKAGE,
+      APPIUM_PYTHON_TEST_PACKAGE,
+      APPIUM_NODE_TEST_PACKAGE,
+      APPIUM_RUBY_TEST_PACKAGE,
+      APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
+      APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
+      APPIUM_WEB_PYTHON_TEST_PACKAGE,
+      APPIUM_WEB_NODE_TEST_PACKAGE,
+      APPIUM_WEB_RUBY_TEST_PACKAGE,
+      CALABASH_TEST_PACKAGE,
+      INSTRUMENTATION_TEST_PACKAGE,
+      UIAUTOMATION_TEST_PACKAGE,
+      UIAUTOMATOR_TEST_PACKAGE,
+      XCTEST_TEST_PACKAGE,
+      XCTEST_UI_TEST_PACKAGE,
+      APPIUM_JAVA_JUNIT_TEST_SPEC,
+      APPIUM_JAVA_TESTNG_TEST_SPEC,
+      APPIUM_PYTHON_TEST_SPEC,
+      APPIUM_NODE_TEST_SPEC,
+      APPIUM_RUBY_TEST_SPEC,
+      APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
+      APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
+      APPIUM_WEB_PYTHON_TEST_SPEC,
+      APPIUM_WEB_NODE_TEST_SPEC,
+      APPIUM_WEB_RUBY_TEST_SPEC,
+      INSTRUMENTATION_TEST_SPEC,
+      XCTEST_UI_TEST_SPEC
+    )
   }
 
-  /**
-    * Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration.
+  /** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration.
     */
   @js.native
   trait VPCEConfiguration extends js.Object {

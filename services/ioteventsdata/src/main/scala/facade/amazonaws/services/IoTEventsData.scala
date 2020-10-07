@@ -54,8 +54,7 @@ package ioteventsdata {
     def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse] = js.native
   }
 
-  /**
-    * Contains information about the errors encountered.
+  /** Contains information about the errors encountered.
     */
   @js.native
   trait BatchPutMessageErrorEntry extends js.Object {
@@ -92,7 +91,6 @@ package ioteventsdata {
       val __obj = js.Dynamic.literal(
         "messages" -> messages.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutMessageRequest]
     }
   }
@@ -113,8 +111,7 @@ package ioteventsdata {
     }
   }
 
-  /**
-    * Information about the error that occured when attempting to update a detector.
+  /** Information about the error that occured when attempting to update a detector.
     */
   @js.native
   trait BatchUpdateDetectorErrorEntry extends js.Object {
@@ -151,7 +148,6 @@ package ioteventsdata {
       val __obj = js.Dynamic.literal(
         "detectors" -> detectors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchUpdateDetectorRequest]
     }
   }
@@ -209,8 +205,7 @@ package ioteventsdata {
     }
   }
 
-  /**
-    * Information about the detector (instance).
+  /** Information about the detector (instance).
     */
   @js.native
   trait Detector extends js.Object {
@@ -243,8 +238,7 @@ package ioteventsdata {
     }
   }
 
-  /**
-    * Information about the current state of the detector instance.
+  /** Information about the current state of the detector instance.
     */
   @js.native
   trait DetectorState extends js.Object {
@@ -265,13 +259,11 @@ package ioteventsdata {
         "timers" -> timers.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectorState]
     }
   }
 
-  /**
-    * The new state, variable values, and timer settings of the detector (instance).
+  /** The new state, variable values, and timer settings of the detector (instance).
     */
   @js.native
   trait DetectorStateDefinition extends js.Object {
@@ -292,13 +284,11 @@ package ioteventsdata {
         "timers" -> timers.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectorStateDefinition]
     }
   }
 
-  /**
-    * Information about the detector state.
+  /** Information about the detector state.
     */
   @js.native
   trait DetectorStateSummary extends js.Object {
@@ -316,8 +306,7 @@ package ioteventsdata {
     }
   }
 
-  /**
-    * Information about the detector (instance).
+  /** Information about the detector (instance).
     */
   @js.native
   trait DetectorSummary extends js.Object {
@@ -408,8 +397,7 @@ package ioteventsdata {
     }
   }
 
-  /**
-    * Information about a message.
+  /** Information about a message.
     */
   @js.native
   trait Message extends js.Object {
@@ -430,13 +418,11 @@ package ioteventsdata {
         "messageId" -> messageId.asInstanceOf[js.Any],
         "payload" -> payload.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Message]
     }
   }
 
-  /**
-    * The current state of a timer.
+  /** The current state of a timer.
     */
   @js.native
   trait Timer extends js.Object {
@@ -454,13 +440,11 @@ package ioteventsdata {
         "name" -> name.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Timer]
     }
   }
 
-  /**
-    * The new setting of a timer.
+  /** The new setting of a timer.
     */
   @js.native
   trait TimerDefinition extends js.Object {
@@ -478,13 +462,11 @@ package ioteventsdata {
         "name" -> name.asInstanceOf[js.Any],
         "seconds" -> seconds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TimerDefinition]
     }
   }
 
-  /**
-    * Information used to update the detector (instance).
+  /** Information used to update the detector (instance).
     */
   @js.native
   trait UpdateDetectorRequest extends js.Object {
@@ -513,8 +495,7 @@ package ioteventsdata {
     }
   }
 
-  /**
-    * The current state of the variable.
+  /** The current state of the variable.
     */
   @js.native
   trait Variable extends js.Object {
@@ -532,13 +513,11 @@ package ioteventsdata {
         "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Variable]
     }
   }
 
-  /**
-    * The new value of the variable.
+  /** The new value of the variable.
     */
   @js.native
   trait VariableDefinition extends js.Object {
@@ -556,7 +535,6 @@ package ioteventsdata {
         "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VariableDefinition]
     }
   }

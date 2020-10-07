@@ -56,8 +56,7 @@ package cloudsearchdomain {
     def uploadDocuments(params: UploadDocumentsRequest): Request[UploadDocumentsResponse] = js.native
   }
 
-  /**
-    * A container for facet information.
+  /** A container for facet information.
     */
   @js.native
   trait Bucket extends js.Object {
@@ -78,8 +77,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * A container for the calculated facet values and counts.
+  /** A container for the calculated facet values and counts.
     */
   @js.native
   trait BucketInfo extends js.Object {
@@ -106,8 +104,7 @@ package cloudsearchdomain {
     @inline def values = js.Array(`application/json`, `application/xml`)
   }
 
-  /**
-    * Information about any problems encountered while processing an upload request.
+  /** Information about any problems encountered while processing an upload request.
     */
   @js.native
   trait DocumentServiceExceptionException extends js.Object {
@@ -115,8 +112,7 @@ package cloudsearchdomain {
     val message: String
   }
 
-  /**
-    * A warning returned by the document service when an issue is discovered while processing an upload request.
+  /** A warning returned by the document service when an issue is discovered while processing an upload request.
     */
   @js.native
   trait DocumentServiceWarning extends js.Object {
@@ -134,8 +130,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * The statistics for a field calculated in the request.
+  /** The statistics for a field calculated in the request.
     */
   @js.native
   trait FieldStats extends js.Object {
@@ -174,8 +169,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Information about a document that matches the search request.
+  /** Information about a document that matches the search request.
     */
   @js.native
   trait Hit extends js.Object {
@@ -202,8 +196,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * The collection of documents that match the search request.
+  /** The collection of documents that match the search request.
     */
   @js.native
   trait Hits extends js.Object {
@@ -241,16 +234,14 @@ package cloudsearchdomain {
     @inline def values = js.Array(simple, structured, lucene, dismax)
   }
 
-  /**
-    * Information about any problems encountered while processing a search request.
+  /** Information about any problems encountered while processing a search request.
     */
   @js.native
   trait SearchExceptionException extends js.Object {
     val message: String
   }
 
-  /**
-    * Container for the parameters to the <code>Search</code> request.
+  /** Container for the parameters to the <code>Search</code> request.
     */
   @js.native
   trait SearchRequest extends js.Object {
@@ -309,8 +300,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.
+  /** The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.
     */
   @js.native
   trait SearchResponse extends js.Object {
@@ -337,8 +327,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
+  /** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
     */
   @js.native
   trait SearchStatus extends js.Object {
@@ -359,8 +348,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Container for the suggestion information returned in a <code>SuggestResponse</code>.
+  /** Container for the suggestion information returned in a <code>SuggestResponse</code>.
     */
   @js.native
   trait SuggestModel extends js.Object {
@@ -384,8 +372,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Container for the parameters to the <code>Suggest</code> request.
+  /** Container for the parameters to the <code>Suggest</code> request.
     */
   @js.native
   trait SuggestRequest extends js.Object {
@@ -411,8 +398,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Contains the response to a <code>Suggest</code> request.
+  /** Contains the response to a <code>Suggest</code> request.
     */
   @js.native
   trait SuggestResponse extends js.Object {
@@ -433,8 +419,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
+  /** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).
     */
   @js.native
   trait SuggestStatus extends js.Object {
@@ -455,8 +440,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.
+  /** An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.
     */
   @js.native
   trait SuggestionMatch extends js.Object {
@@ -480,8 +464,7 @@ package cloudsearchdomain {
     }
   }
 
-  /**
-    * Container for the parameters to the <code>UploadDocuments</code> request.
+  /** Container for the parameters to the <code>UploadDocuments</code> request.
     */
   @js.native
   trait UploadDocumentsRequest extends js.Object {
@@ -499,13 +482,11 @@ package cloudsearchdomain {
         "contentType" -> contentType.asInstanceOf[js.Any],
         "documents" -> documents.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UploadDocumentsRequest]
     }
   }
 
-  /**
-    * Contains the response to an <code>UploadDocuments</code> request.
+  /** Contains the response to an <code>UploadDocuments</code> request.
     */
   @js.native
   trait UploadDocumentsResponse extends js.Object {

@@ -122,7 +122,6 @@ package secretsmanager {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelRotateSecretRequest]
     }
   }
@@ -220,7 +219,6 @@ package secretsmanager {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
@@ -303,7 +301,6 @@ package secretsmanager {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSecretRequest]
     }
   }
@@ -366,8 +363,7 @@ package secretsmanager {
     }
   }
 
-  /**
-    * Allows you to filter your list of secrets.
+  /** Allows you to filter your list of secrets.
     */
   @js.native
   trait Filter extends js.Object {
@@ -466,7 +462,6 @@ package secretsmanager {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResourcePolicyRequest]
     }
   }
@@ -758,7 +753,6 @@ package secretsmanager {
       val __obj = js.Dynamic.literal(
         "SecretId" -> SecretId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreSecretRequest]
     }
   }
@@ -831,8 +825,7 @@ package secretsmanager {
     }
   }
 
-  /**
-    * A structure that defines the rotation configuration for the secret.
+  /** A structure that defines the rotation configuration for the secret.
     */
   @js.native
   trait RotationRulesType extends js.Object {
@@ -850,8 +843,7 @@ package secretsmanager {
     }
   }
 
-  /**
-    * A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation.
+  /** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation.
     */
   @js.native
   trait SecretListEntry extends js.Object {
@@ -911,8 +903,7 @@ package secretsmanager {
     }
   }
 
-  /**
-    * A structure that contains information about one version of a secret.
+  /** A structure that contains information about one version of a secret.
     */
   @js.native
   trait SecretVersionsListEntry extends js.Object {
@@ -948,8 +939,7 @@ package secretsmanager {
     @inline def values = js.Array(asc, desc)
   }
 
-  /**
-    * A structure that contains information about a tag.
+  /** A structure that contains information about a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -986,7 +976,6 @@ package secretsmanager {
         "SecretId" -> SecretId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1007,7 +996,6 @@ package secretsmanager {
         "SecretId" -> SecretId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1153,8 +1141,7 @@ package secretsmanager {
     }
   }
 
-  /**
-    * Displays errors that occurred during validation of the resource policy.
+  /** Displays errors that occurred during validation of the resource policy.
     */
   @js.native
   trait ValidationErrorsEntry extends js.Object {

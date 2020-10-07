@@ -140,8 +140,7 @@ package fms {
     @inline def values = js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED)
   }
 
-  /**
-    * An individual AWS Firewall Manager application.
+  /** An individual AWS Firewall Manager application.
     */
   @js.native
   trait App extends js.Object {
@@ -162,13 +161,11 @@ package fms {
         "Port" -> Port.asInstanceOf[js.Any],
         "Protocol" -> Protocol.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[App]
     }
   }
 
-  /**
-    * An AWS Firewall Manager applications list.
+  /** An AWS Firewall Manager applications list.
     */
   @js.native
   trait AppsListData extends js.Object {
@@ -206,8 +203,7 @@ package fms {
     }
   }
 
-  /**
-    * Details of the AWS Firewall Manager applications list.
+  /** Details of the AWS Firewall Manager applications list.
     */
   @js.native
   trait AppsListDataSummary extends js.Object {
@@ -247,13 +243,11 @@ package fms {
       val __obj = js.Dynamic.literal(
         "AdminAccount" -> AdminAccount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateAdminAccountRequest]
     }
   }
 
-  /**
-    * Violations for an EC2 instance resource.
+  /** Violations for an EC2 instance resource.
     */
   @js.native
   trait AwsEc2InstanceViolation extends js.Object {
@@ -274,8 +268,7 @@ package fms {
     }
   }
 
-  /**
-    * Violations for network interfaces associated with an EC2 instance.
+  /** Violations for network interfaces associated with an EC2 instance.
     */
   @js.native
   trait AwsEc2NetworkInterfaceViolation extends js.Object {
@@ -296,8 +289,7 @@ package fms {
     }
   }
 
-  /**
-    * Details of the rule violation in a security group when compared to the master security group of the AWS Firewall Manager policy.
+  /** Details of the rule violation in a security group when compared to the master security group of the AWS Firewall Manager policy.
     */
   @js.native
   trait AwsVPCSecurityGroupViolation extends js.Object {
@@ -324,8 +316,7 @@ package fms {
     }
   }
 
-  /**
-    * Details of the resource that is not protected by the policy.
+  /** Details of the resource that is not protected by the policy.
     */
   @js.native
   trait ComplianceViolator extends js.Object {
@@ -371,20 +362,17 @@ package fms {
       val __obj = js.Dynamic.literal(
         "ListId" -> ListId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppsListRequest]
     }
   }
 
   @js.native
-  trait DeleteNotificationChannelRequest extends js.Object {}
+  trait DeleteNotificationChannelRequest extends js.Object
 
   object DeleteNotificationChannelRequest {
     @inline
-    def apply(
-    ): DeleteNotificationChannelRequest = {
+    def apply(): DeleteNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteNotificationChannelRequest]
     }
   }
@@ -423,7 +411,6 @@ package fms {
       val __obj = js.Dynamic.literal(
         "ListId" -> ListId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProtocolsListRequest]
     }
   }
@@ -440,20 +427,17 @@ package fms {
   }
 
   @js.native
-  trait DisassociateAdminAccountRequest extends js.Object {}
+  trait DisassociateAdminAccountRequest extends js.Object
 
   object DisassociateAdminAccountRequest {
     @inline
-    def apply(
-    ): DisassociateAdminAccountRequest = {
+    def apply(): DisassociateAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateAdminAccountRequest]
     }
   }
 
-  /**
-    * Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.
+  /** Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -478,14 +462,12 @@ package fms {
   }
 
   @js.native
-  trait GetAdminAccountRequest extends js.Object {}
+  trait GetAdminAccountRequest extends js.Object
 
   object GetAdminAccountRequest {
     @inline
-    def apply(
-    ): GetAdminAccountRequest = {
+    def apply(): GetAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAdminAccountRequest]
     }
   }
@@ -565,7 +547,6 @@ package fms {
         "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetComplianceDetailRequest]
     }
   }
@@ -587,14 +568,12 @@ package fms {
   }
 
   @js.native
-  trait GetNotificationChannelRequest extends js.Object {}
+  trait GetNotificationChannelRequest extends js.Object
 
   object GetNotificationChannelRequest {
     @inline
-    def apply(
-    ): GetNotificationChannelRequest = {
+    def apply(): GetNotificationChannelRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetNotificationChannelRequest]
     }
   }
@@ -631,7 +610,6 @@ package fms {
       val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPolicyRequest]
     }
   }
@@ -775,7 +753,6 @@ package fms {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetViolationDetailsRequest]
     }
   }
@@ -1014,7 +991,6 @@ package fms {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1035,8 +1011,7 @@ package fms {
     }
   }
 
-  /**
-    * The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.
+  /** The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.
     */
   @js.native
   trait PartialMatch extends js.Object {
@@ -1057,8 +1032,7 @@ package fms {
     }
   }
 
-  /**
-    * An AWS Firewall Manager policy.
+  /** An AWS Firewall Manager policy.
     */
   @js.native
   trait Policy extends js.Object {
@@ -1108,8 +1082,7 @@ package fms {
     }
   }
 
-  /**
-    * Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
+  /** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
     */
   @js.native
   trait PolicyComplianceDetail extends js.Object {
@@ -1145,8 +1118,7 @@ package fms {
     }
   }
 
-  /**
-    * Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
+  /** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
     */
   @js.native
   trait PolicyComplianceStatus extends js.Object {
@@ -1191,8 +1163,7 @@ package fms {
     @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
-  /**
-    * Details of the AWS Firewall Manager policy.
+  /** Details of the AWS Firewall Manager policy.
     */
   @js.native
   trait PolicySummary extends js.Object {
@@ -1225,8 +1196,7 @@ package fms {
     }
   }
 
-  /**
-    * An AWS Firewall Manager protocols list.
+  /** An AWS Firewall Manager protocols list.
     */
   @js.native
   trait ProtocolsListData extends js.Object {
@@ -1264,8 +1234,7 @@ package fms {
     }
   }
 
-  /**
-    * Details of the AWS Firewall Manager protocols list.
+  /** Details of the AWS Firewall Manager protocols list.
     */
   @js.native
   trait ProtocolsListDataSummary extends js.Object {
@@ -1348,7 +1317,6 @@ package fms {
         "SnsRoleName" -> SnsRoleName.asInstanceOf[js.Any],
         "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutNotificationChannelRequest]
     }
   }
@@ -1442,8 +1410,7 @@ package fms {
     @inline def values = js.Array(REMOVE, MODIFY)
   }
 
-  /**
-    * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
+  /** The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -1466,8 +1433,7 @@ package fms {
     }
   }
 
-  /**
-    * Violation detail based on resource type.
+  /** Violation detail based on resource type.
     */
   @js.native
   trait ResourceViolation extends js.Object {
@@ -1491,8 +1457,7 @@ package fms {
     }
   }
 
-  /**
-    * Remediation option for the rule specified in the <code>ViolationTarget</code>.
+  /** Remediation option for the rule specified in the <code>ViolationTarget</code>.
     */
   @js.native
   trait SecurityGroupRemediationAction extends js.Object {
@@ -1519,8 +1484,7 @@ package fms {
     }
   }
 
-  /**
-    * Describes a set of permissions for a security group rule.
+  /** Describes a set of permissions for a security group rule.
     */
   @js.native
   trait SecurityGroupRuleDescription extends js.Object {
@@ -1553,8 +1517,7 @@ package fms {
     }
   }
 
-  /**
-    * Details about the security service that is being used to protect the resources.
+  /** Details about the security service that is being used to protect the resources.
     */
   @js.native
   trait SecurityServicePolicyData extends js.Object {
@@ -1590,8 +1553,7 @@ package fms {
     @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
   }
 
-  /**
-    * A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+  /** A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1609,7 +1571,6 @@ package fms {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1630,20 +1591,17 @@ package fms {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagList" -> TagList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1664,26 +1622,22 @@ package fms {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * Violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+  /** Violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
     */
   @js.native
   trait ViolationDetail extends js.Object {
@@ -1734,17 +1688,16 @@ package fms {
     val SECURITY_GROUP_UNUSED = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_REDUNDANT = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
 
-    @inline def values =
-      js.Array(
-        WEB_ACL_MISSING_RULE_GROUP,
-        RESOURCE_MISSING_WEB_ACL,
-        RESOURCE_INCORRECT_WEB_ACL,
-        RESOURCE_MISSING_SHIELD_PROTECTION,
-        RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION,
-        RESOURCE_MISSING_SECURITY_GROUP,
-        RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
-        SECURITY_GROUP_UNUSED,
-        SECURITY_GROUP_REDUNDANT
-      )
+    @inline def values = js.Array(
+      WEB_ACL_MISSING_RULE_GROUP,
+      RESOURCE_MISSING_WEB_ACL,
+      RESOURCE_INCORRECT_WEB_ACL,
+      RESOURCE_MISSING_SHIELD_PROTECTION,
+      RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION,
+      RESOURCE_MISSING_SECURITY_GROUP,
+      RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
+      SECURITY_GROUP_UNUSED,
+      SECURITY_GROUP_REDUNDANT
+    )
   }
 }

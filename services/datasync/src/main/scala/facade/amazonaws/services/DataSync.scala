@@ -141,8 +141,7 @@ package datasync {
     def updateTask(params: UpdateTaskRequest): Request[UpdateTaskResponse] = js.native
   }
 
-  /**
-    * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
+  /** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
     */
   @js.native
   trait AgentListEntry extends js.Object {
@@ -197,20 +196,17 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelTaskExecutionRequest]
     }
   }
 
   @js.native
-  trait CancelTaskExecutionResponse extends js.Object {}
+  trait CancelTaskExecutionResponse extends js.Object
 
   object CancelTaskExecutionResponse {
     @inline
-    def apply(
-    ): CancelTaskExecutionResponse = {
+    def apply(): CancelTaskExecutionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelTaskExecutionResponse]
     }
   }
@@ -291,8 +287,7 @@ package datasync {
     }
   }
 
-  /**
-    * CreateLocationEfs
+  /** CreateLocationEfs
     */
   @js.native
   trait CreateLocationEfsResponse extends js.Object {
@@ -635,26 +630,22 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "AgentArn" -> AgentArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAgentRequest]
     }
   }
 
   @js.native
-  trait DeleteAgentResponse extends js.Object {}
+  trait DeleteAgentResponse extends js.Object
 
   object DeleteAgentResponse {
     @inline
-    def apply(
-    ): DeleteAgentResponse = {
+    def apply(): DeleteAgentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAgentResponse]
     }
   }
 
-  /**
-    * DeleteLocation
+  /** DeleteLocation
     */
   @js.native
   trait DeleteLocationRequest extends js.Object {
@@ -669,26 +660,22 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLocationRequest]
     }
   }
 
   @js.native
-  trait DeleteLocationResponse extends js.Object {}
+  trait DeleteLocationResponse extends js.Object
 
   object DeleteLocationResponse {
     @inline
-    def apply(
-    ): DeleteLocationResponse = {
+    def apply(): DeleteLocationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLocationResponse]
     }
   }
 
-  /**
-    * DeleteTask
+  /** DeleteTask
     */
   @js.native
   trait DeleteTaskRequest extends js.Object {
@@ -703,26 +690,22 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTaskRequest]
     }
   }
 
   @js.native
-  trait DeleteTaskResponse extends js.Object {}
+  trait DeleteTaskResponse extends js.Object
 
   object DeleteTaskResponse {
     @inline
-    def apply(
-    ): DeleteTaskResponse = {
+    def apply(): DeleteTaskResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTaskResponse]
     }
   }
 
-  /**
-    * DescribeAgent
+  /** DescribeAgent
     */
   @js.native
   trait DescribeAgentRequest extends js.Object {
@@ -737,7 +720,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "AgentArn" -> AgentArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAgentRequest]
     }
   }
@@ -789,7 +771,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLocationEfsRequest]
     }
   }
@@ -832,7 +813,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLocationFsxWindowsRequest]
     }
   }
@@ -881,7 +861,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLocationNfsRequest]
     }
   }
@@ -927,7 +906,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLocationObjectStorageRequest]
     }
   }
@@ -979,7 +957,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLocationS3Request]
     }
   }
@@ -1025,7 +1002,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLocationSmbRequest]
     }
   }
@@ -1077,7 +1053,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTaskExecutionRequest]
     }
   }
@@ -1144,7 +1119,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTaskRequest]
     }
   }
@@ -1207,8 +1181,7 @@ package datasync {
     }
   }
 
-  /**
-    * The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
+  /** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
     */
   @js.native
   trait Ec2Config extends js.Object {
@@ -1226,7 +1199,6 @@ package datasync {
         "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
         "SubnetArn" -> SubnetArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Ec2Config]
     }
   }
@@ -1241,8 +1213,7 @@ package datasync {
     @inline def values = js.Array(PUBLIC, PRIVATE_LINK, FIPS)
   }
 
-  /**
-    * Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
+  /** Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
     */
   @js.native
   trait FilterRule extends js.Object {
@@ -1404,8 +1375,7 @@ package datasync {
     }
   }
 
-  /**
-    * ListTaskExecutions
+  /** ListTaskExecutions
     */
   @js.native
   trait ListTaskExecutionsRequest extends js.Object {
@@ -1508,7 +1478,6 @@ package datasync {
         "Operator" -> Operator.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LocationFilter]
     }
   }
@@ -1523,8 +1492,7 @@ package datasync {
     @inline def values = js.Array(LocationUri, LocationType, CreationTime)
   }
 
-  /**
-    * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.
+  /** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.
     */
   @js.native
   trait LocationListEntry extends js.Object {
@@ -1564,8 +1532,7 @@ package datasync {
     @inline def values = js.Array(NONE, PRESERVE)
   }
 
-  /**
-    * Represents the mount options that are available for DataSync to access an NFS location.
+  /** Represents the mount options that are available for DataSync to access an NFS location.
     */
   @js.native
   trait NfsMountOptions extends js.Object {
@@ -1603,8 +1570,7 @@ package datasync {
     @inline def values = js.Array(HTTPS, HTTP)
   }
 
-  /**
-    * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
+  /** A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
     */
   @js.native
   trait OnPremConfig extends js.Object {
@@ -1619,7 +1585,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "AgentArns" -> AgentArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OnPremConfig]
     }
   }
@@ -1641,9 +1606,8 @@ package datasync {
     @inline def values = js.Array(Equals, NotEquals, In, LessThanOrEqual, LessThan, GreaterThanOrEqual, GreaterThan, Contains, NotContains, BeginsWith)
   }
 
-  /**
-    * Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
-    *  A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
+  /** Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
+    * A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
     */
   @js.native
   trait Options extends js.Object {
@@ -1743,8 +1707,7 @@ package datasync {
     @inline def values = js.Array(NONE, PRESERVE)
   }
 
-  /**
-    * The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).
+  /** The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).
     */
   @js.native
   trait PrivateLinkConfig extends js.Object {
@@ -1771,9 +1734,8 @@ package datasync {
     }
   }
 
-  /**
-    * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.
-    *  For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
+  /** The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.
+    * For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -1788,7 +1750,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "BucketAccessRoleArn" -> BucketAccessRoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3Config]
     }
   }
@@ -1806,8 +1767,7 @@ package datasync {
     @inline def values = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
   }
 
-  /**
-    * Represents the mount options that are available for DataSync to access an SMB location.
+  /** Represents the mount options that are available for DataSync to access an SMB location.
     */
   @js.native
   trait SmbMountOptions extends js.Object {
@@ -1875,8 +1835,7 @@ package datasync {
     }
   }
 
-  /**
-    * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.
+  /** Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.
     */
   @js.native
   trait TagListEntry extends js.Object {
@@ -1915,26 +1874,22 @@ package datasync {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.
+  /** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.
     */
   @js.native
   trait TaskExecutionListEntry extends js.Object {
@@ -1955,8 +1910,7 @@ package datasync {
     }
   }
 
-  /**
-    * Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.
+  /** Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered.
     */
   @js.native
   trait TaskExecutionResultDetail extends js.Object {
@@ -2031,7 +1985,6 @@ package datasync {
         "Operator" -> Operator.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TaskFilter]
     }
   }
@@ -2045,8 +1998,7 @@ package datasync {
     @inline def values = js.Array(LocationId, CreationTime)
   }
 
-  /**
-    * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
+  /** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
     */
   @js.native
   trait TaskListEntry extends js.Object {
@@ -2079,8 +2031,7 @@ package datasync {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Specifies the schedule you want your task to use for repeated executions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html|Schedule Expressions for Rules]].
+  /** Specifies the schedule you want your task to use for repeated executions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html|Schedule Expressions for Rules]].
     */
   @js.native
   trait TaskSchedule extends js.Object {
@@ -2095,7 +2046,6 @@ package datasync {
       val __obj = js.Dynamic.literal(
         "ScheduleExpression" -> ScheduleExpression.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TaskSchedule]
     }
   }
@@ -2148,20 +2098,17 @@ package datasync {
         "Keys" -> Keys.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -2188,20 +2135,17 @@ package datasync {
   }
 
   @js.native
-  trait UpdateAgentResponse extends js.Object {}
+  trait UpdateAgentResponse extends js.Object
 
   object UpdateAgentResponse {
     @inline
-    def apply(
-    ): UpdateAgentResponse = {
+    def apply(): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAgentResponse]
     }
   }
 
-  /**
-    * UpdateTaskResponse
+  /** UpdateTaskResponse
     */
   @js.native
   trait UpdateTaskRequest extends js.Object {
@@ -2237,14 +2181,12 @@ package datasync {
   }
 
   @js.native
-  trait UpdateTaskResponse extends js.Object {}
+  trait UpdateTaskResponse extends js.Object
 
   object UpdateTaskResponse {
     @inline
-    def apply(
-    ): UpdateTaskResponse = {
+    def apply(): UpdateTaskResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateTaskResponse]
     }
   }

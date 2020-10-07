@@ -300,7 +300,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "DiscovererId" -> DiscovererId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDiscovererRequest]
     }
   }
@@ -318,7 +317,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "RegistryName" -> RegistryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRegistryRequest]
     }
   }
@@ -355,7 +353,6 @@ package schemas {
         "RegistryName" -> RegistryName.asInstanceOf[js.Any],
         "SchemaName" -> SchemaName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSchemaRequest]
     }
   }
@@ -379,7 +376,6 @@ package schemas {
         "SchemaName" -> SchemaName.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSchemaVersionRequest]
     }
   }
@@ -449,7 +445,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "DiscovererId" -> DiscovererId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDiscovererRequest]
     }
   }
@@ -498,7 +493,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "RegistryName" -> RegistryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRegistryRequest]
     }
   }
@@ -688,7 +682,6 @@ package schemas {
         "Events" -> Events.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDiscoveredSchemaRequest]
     }
   }
@@ -937,7 +930,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1010,8 +1002,7 @@ package schemas {
     }
   }
 
-  /**
-    * The name of the policy.
+  /** The name of the policy.
     */
   @js.native
   trait PutResourcePolicyRequest extends js.Object {
@@ -1078,8 +1069,7 @@ package schemas {
     }
   }
 
-  /**
-    * A summary of schema details.
+  /** A summary of schema details.
     */
   @js.native
   trait SchemaSummary extends js.Object {
@@ -1234,7 +1224,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "DiscovererId" -> DiscovererId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDiscovererRequest]
     }
   }
@@ -1271,7 +1260,6 @@ package schemas {
       val __obj = js.Dynamic.literal(
         "DiscovererId" -> DiscovererId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDiscovererRequest]
     }
   }
@@ -1313,7 +1301,6 @@ package schemas {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1342,7 +1329,6 @@ package schemas {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -1399,8 +1385,7 @@ package schemas {
     }
   }
 
-  /**
-    * Updates the registry.
+  /** Updates the registry.
     */
   @js.native
   trait UpdateRegistryRequest extends js.Object {

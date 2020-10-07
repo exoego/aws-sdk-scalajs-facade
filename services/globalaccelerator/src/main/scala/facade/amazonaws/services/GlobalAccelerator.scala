@@ -99,8 +99,7 @@ package globalaccelerator {
     def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResponse] = js.native
   }
 
-  /**
-    * An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.
+  /** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.
     */
   @js.native
   trait Accelerator extends js.Object {
@@ -142,8 +141,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * Attributes of an accelerator.
+  /** Attributes of an accelerator.
     */
   @js.native
   trait AcceleratorAttributes extends js.Object {
@@ -189,7 +187,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "Cidr" -> Cidr.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdvertiseByoipCidrRequest]
     }
   }
@@ -210,20 +207,19 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).
-    *  The following describes each BYOIP <code>State</code> that your IP address range can be in.
+  /** Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).
+    * The following describes each BYOIP <code>State</code> that your IP address range can be in.
     * * ```PENDING_PROVISIONING``` — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.
-    *  * ```READY``` — The address range is provisioned with AWS Global Accelerator and can be advertised.
-    *  * ```PENDING_ADVERTISING``` — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.
-    *  * ```ADVERTISING``` — The address range is being advertised by AWS Global Accelerator.
-    *  * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.
-    *  * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.
-    *  * ```DEPROVISIONED``` — The address range is deprovisioned from AWS Global Accelerator.
-    *  * ```FAILED_PROVISION ``` — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
-    *  * ```FAILED_ADVERTISING``` — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
-    *  * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
-    *  * ```FAILED_DEPROVISION ``` — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    * * ```READY``` — The address range is provisioned with AWS Global Accelerator and can be advertised.
+    * * ```PENDING_ADVERTISING``` — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.
+    * * ```ADVERTISING``` — The address range is being advertised by AWS Global Accelerator.
+    * * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.
+    * * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.
+    * * ```DEPROVISIONED``` — The address range is deprovisioned from AWS Global Accelerator.
+    * * ```FAILED_PROVISION ``` — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    * * ```FAILED_ADVERTISING``` — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    * * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+    * * ```FAILED_DEPROVISION ``` — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
     */
   @js.native
   trait ByoipCidr extends js.Object {
@@ -247,8 +243,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+  /** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
     */
   @js.native
   trait ByoipCidrEvent extends js.Object {
@@ -284,25 +279,23 @@ package globalaccelerator {
     val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
     val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
-    @inline def values =
-      js.Array(
-        PENDING_PROVISIONING,
-        READY,
-        PENDING_ADVERTISING,
-        ADVERTISING,
-        PENDING_WITHDRAWING,
-        PENDING_DEPROVISIONING,
-        DEPROVISIONED,
-        FAILED_PROVISION,
-        FAILED_ADVERTISING,
-        FAILED_WITHDRAW,
-        FAILED_DEPROVISION
-      )
+    @inline def values = js.Array(
+      PENDING_PROVISIONING,
+      READY,
+      PENDING_ADVERTISING,
+      ADVERTISING,
+      PENDING_WITHDRAWING,
+      PENDING_DEPROVISIONING,
+      DEPROVISIONED,
+      FAILED_PROVISION,
+      FAILED_ADVERTISING,
+      FAILED_WITHDRAW,
+      FAILED_DEPROVISION
+    )
   }
 
-  /**
-    * Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP).
-    *  For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
+  /** Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP).
+    * For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
     */
   @js.native
   trait CidrAuthorizationContext extends js.Object {
@@ -320,7 +313,6 @@ package globalaccelerator {
         "Message" -> Message.asInstanceOf[js.Any],
         "Signature" -> Signature.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CidrAuthorizationContext]
     }
   }
@@ -503,7 +495,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAcceleratorRequest]
     }
   }
@@ -521,7 +512,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointGroupRequest]
     }
   }
@@ -539,7 +529,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteListenerRequest]
     }
   }
@@ -557,7 +546,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "Cidr" -> Cidr.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeprovisionByoipCidrRequest]
     }
   }
@@ -591,7 +579,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAcceleratorAttributesRequest]
     }
   }
@@ -625,7 +612,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAcceleratorRequest]
     }
   }
@@ -659,7 +645,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEndpointGroupRequest]
     }
   }
@@ -693,7 +678,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeListenerRequest]
     }
   }
@@ -714,8 +698,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type for endpoints.
+  /** A complex type for endpoints.
     */
   @js.native
   trait EndpointConfiguration extends js.Object {
@@ -739,8 +722,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.
+  /** A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.
     */
   @js.native
   trait EndpointDescription extends js.Object {
@@ -770,8 +752,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.
+  /** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.
     */
   @js.native
   trait EndpointGroup extends js.Object {
@@ -841,8 +822,7 @@ package globalaccelerator {
     @inline def values = js.Array(IPV4)
   }
 
-  /**
-    * A complex type for the set of IP addresses for an accelerator.
+  /** A complex type for the set of IP addresses for an accelerator.
     */
   @js.native
   trait IpSet extends js.Object {
@@ -1038,7 +1018,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1059,8 +1038,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type for a listener.
+  /** A complex type for a listener.
     */
   @js.native
   trait Listener extends js.Object {
@@ -1087,8 +1065,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type for a range of ports for a listener.
+  /** A complex type for a range of ports for a listener.
     */
   @js.native
   trait PortRange extends js.Object {
@@ -1134,7 +1111,6 @@ package globalaccelerator {
         "Cidr" -> Cidr.asInstanceOf[js.Any],
         "CidrAuthorizationContext" -> CidrAuthorizationContext.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProvisionByoipCidrRequest]
     }
   }
@@ -1155,8 +1131,7 @@ package globalaccelerator {
     }
   }
 
-  /**
-    * A complex type that contains a <code>Tag</code> key and <code>Tag</code> value.
+  /** A complex type that contains a <code>Tag</code> key and <code>Tag</code> value.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1174,7 +1149,6 @@ package globalaccelerator {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1195,20 +1169,17 @@ package globalaccelerator {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1229,20 +1200,17 @@ package globalaccelerator {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1444,7 +1412,6 @@ package globalaccelerator {
       val __obj = js.Dynamic.literal(
         "Cidr" -> Cidr.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[WithdrawByoipCidrRequest]
     }
   }

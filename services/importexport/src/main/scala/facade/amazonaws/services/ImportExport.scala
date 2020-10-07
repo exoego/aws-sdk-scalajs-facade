@@ -75,8 +75,7 @@ package importexport {
     def updateJob(params: UpdateJobInput): Request[UpdateJobOutput] = js.native
   }
 
-  /**
-    * A discrete item that contains the description and URL of an artifact (such as a PDF).
+  /** A discrete item that contains the description and URL of an artifact (such as a PDF).
     */
   @js.native
   trait Artifact extends js.Object {
@@ -97,16 +96,14 @@ package importexport {
     }
   }
 
-  /**
-    * The account specified does not have the appropriate bucket permissions.
+  /** The account specified does not have the appropriate bucket permissions.
     */
   @js.native
   trait BucketPermissionExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Input structure for the CancelJob operation.
+  /** Input structure for the CancelJob operation.
     */
   @js.native
   trait CancelJobInput extends js.Object {
@@ -129,8 +126,7 @@ package importexport {
     }
   }
 
-  /**
-    * Output structure for the CancelJob operation.
+  /** Output structure for the CancelJob operation.
     */
   @js.native
   trait CancelJobOutput extends js.Object {
@@ -148,16 +144,14 @@ package importexport {
     }
   }
 
-  /**
-    * The specified job ID has been canceled and is no longer valid.
+  /** The specified job ID has been canceled and is no longer valid.
     */
   @js.native
   trait CanceledJobIdExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Input structure for the CreateJob operation.
+  /** Input structure for the CreateJob operation.
     */
   @js.native
   trait CreateJobInput extends js.Object {
@@ -189,8 +183,7 @@ package importexport {
     }
   }
 
-  /**
-    * Output structure for the CreateJob operation.
+  /** Output structure for the CreateJob operation.
     */
   @js.native
   trait CreateJobOutput extends js.Object {
@@ -223,16 +216,14 @@ package importexport {
     }
   }
 
-  /**
-    * Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.
+  /** Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.
     */
   @js.native
   trait CreateJobQuotaExceededExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Indicates that the specified job has expired out of the system.
+  /** Indicates that the specified job has expired out of the system.
     */
   @js.native
   trait ExpiredJobIdExceptionException extends js.Object {
@@ -309,8 +300,7 @@ package importexport {
     }
   }
 
-  /**
-    * Input structure for the GetStatus operation.
+  /** Input structure for the GetStatus operation.
     */
   @js.native
   trait GetStatusInput extends js.Object {
@@ -333,8 +323,7 @@ package importexport {
     }
   }
 
-  /**
-    * Output structure for the GetStatus operation.
+  /** Output structure for the GetStatus operation.
     */
   @js.native
   trait GetStatusOutput extends js.Object {
@@ -397,72 +386,63 @@ package importexport {
     }
   }
 
-  /**
-    * The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.
+  /** The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.
     */
   @js.native
   trait InvalidAccessKeyIdExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The address specified in the manifest is invalid.
+  /** The address specified in the manifest is invalid.
     */
   @js.native
   trait InvalidAddressExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * One or more customs parameters was invalid. Please correct and resubmit.
+  /** One or more customs parameters was invalid. Please correct and resubmit.
     */
   @js.native
   trait InvalidCustomsExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * File system specified in export manifest is invalid.
+  /** File system specified in export manifest is invalid.
     */
   @js.native
   trait InvalidFileSystemExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The JOBID was missing, not found, or not associated with the AWS account.
+  /** The JOBID was missing, not found, or not associated with the AWS account.
     */
   @js.native
   trait InvalidJobIdExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * One or more manifest fields was invalid. Please correct and resubmit.
+  /** One or more manifest fields was invalid. Please correct and resubmit.
     */
   @js.native
   trait InvalidManifestFieldExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * One or more parameters had an invalid value.
+  /** One or more parameters had an invalid value.
     */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The client tool version is invalid.
+  /** The client tool version is invalid.
     */
   @js.native
   trait InvalidVersionExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Representation of a job returned by the ListJobs operation.
+  /** Representation of a job returned by the ListJobs operation.
     */
   @js.native
   trait Job extends js.Object {
@@ -489,8 +469,7 @@ package importexport {
     }
   }
 
-  /**
-    * Specifies whether the job to initiate is an import or export job.
+  /** Specifies whether the job to initiate is an import or export job.
     */
   @js.native
   sealed trait JobType extends js.Any
@@ -501,8 +480,7 @@ package importexport {
     @inline def values = js.Array(Import, Export)
   }
 
-  /**
-    * Input structure for the ListJobs operation.
+  /** Input structure for the ListJobs operation.
     */
   @js.native
   trait ListJobsInput extends js.Object {
@@ -526,8 +504,7 @@ package importexport {
     }
   }
 
-  /**
-    * Output structure for the ListJobs operation.
+  /** Output structure for the ListJobs operation.
     */
   @js.native
   trait ListJobsOutput extends js.Object {
@@ -548,72 +525,63 @@ package importexport {
     }
   }
 
-  /**
-    * Your manifest is not well-formed.
+  /** Your manifest is not well-formed.
     */
   @js.native
   trait MalformedManifestExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * One or more required customs parameters was missing from the manifest.
+  /** One or more required customs parameters was missing from the manifest.
     */
   @js.native
   trait MissingCustomsExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * One or more required fields were missing from the manifest file. Please correct and resubmit.
+  /** One or more required fields were missing from the manifest file. Please correct and resubmit.
     */
   @js.native
   trait MissingManifestFieldExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * One or more required parameters was missing from the request.
+  /** One or more required parameters was missing from the request.
     */
   @js.native
   trait MissingParameterExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.
+  /** Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.
     */
   @js.native
   trait MultipleRegionsExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.
+  /** The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.
     */
   @js.native
   trait NoSuchBucketExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * AWS Import/Export cannot cancel the job
+  /** AWS Import/Export cannot cancel the job
     */
   @js.native
   trait UnableToCancelJobIdExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * AWS Import/Export cannot update the job
+  /** AWS Import/Export cannot update the job
     */
   @js.native
   trait UnableToUpdateJobIdExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Input structure for the UpateJob operation.
+  /** Input structure for the UpateJob operation.
     */
   @js.native
   trait UpdateJobInput extends js.Object {
@@ -645,8 +613,7 @@ package importexport {
     }
   }
 
-  /**
-    * Output structure for the UpateJob operation.
+  /** Output structure for the UpateJob operation.
     */
   @js.native
   trait UpdateJobOutput extends js.Object {

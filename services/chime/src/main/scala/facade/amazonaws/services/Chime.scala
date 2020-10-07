@@ -347,8 +347,7 @@ package chime {
     def updateVoiceConnectorGroup(params: UpdateVoiceConnectorGroupRequest): Request[UpdateVoiceConnectorGroupResponse] = js.native
   }
 
-  /**
-    * The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.
+  /** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.
     */
   @js.native
   trait Account extends js.Object {
@@ -389,8 +388,7 @@ package chime {
     }
   }
 
-  /**
-    * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see [[https://docs.aws.amazon.com/chime/latest/ag/policies.html|Use the Policies Page]] in the <i>Amazon Chime Administration Guide</i>.
+  /** Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see [[https://docs.aws.amazon.com/chime/latest/ag/policies.html|Use the Policies Page]] in the <i>Amazon Chime Administration Guide</i>.
     */
   @js.native
   trait AccountSettings extends js.Object {
@@ -422,8 +420,7 @@ package chime {
     @inline def values = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
   }
 
-  /**
-    * The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.
+  /** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.
     */
   @js.native
   trait AlexaForBusinessMetadata extends js.Object {
@@ -463,20 +460,17 @@ package chime {
         "E164PhoneNumber" -> E164PhoneNumber.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociatePhoneNumberWithUserRequest]
     }
   }
 
   @js.native
-  trait AssociatePhoneNumberWithUserResponse extends js.Object {}
+  trait AssociatePhoneNumberWithUserResponse extends js.Object
 
   object AssociatePhoneNumberWithUserResponse {
     @inline
-    def apply(
-    ): AssociatePhoneNumberWithUserResponse = {
+    def apply(): AssociatePhoneNumberWithUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociatePhoneNumberWithUserResponse]
     }
   }
@@ -577,27 +571,23 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "SigninDelegateGroups" -> SigninDelegateGroups.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountRequest]
     }
   }
 
   @js.native
-  trait AssociateSigninDelegateGroupsWithAccountResponse extends js.Object {}
+  trait AssociateSigninDelegateGroupsWithAccountResponse extends js.Object
 
   object AssociateSigninDelegateGroupsWithAccountResponse {
     @inline
-    def apply(
-    ): AssociateSigninDelegateGroupsWithAccountResponse = {
+    def apply(): AssociateSigninDelegateGroupsWithAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateSigninDelegateGroupsWithAccountResponse]
     }
   }
 
-  /**
-    * An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.
-    *  We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.
+  /** An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.
+    * We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.
     */
   @js.native
   trait Attendee extends js.Object {
@@ -637,7 +627,6 @@ package chime {
         "Attendees" -> Attendees.asInstanceOf[js.Any],
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchCreateAttendeeRequest]
     }
   }
@@ -680,7 +669,6 @@ package chime {
         "MembershipItemList" -> MembershipItemList.asInstanceOf[js.Any],
         "RoomId" -> RoomId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchCreateRoomMembershipRequest]
     }
   }
@@ -714,7 +702,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "PhoneNumberIds" -> PhoneNumberIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeletePhoneNumberRequest]
     }
   }
@@ -751,7 +738,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserIdList" -> UserIdList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchSuspendUserRequest]
     }
   }
@@ -788,7 +774,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserIdList" -> UserIdList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchUnsuspendUserRequest]
     }
   }
@@ -822,7 +807,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "UpdatePhoneNumberRequestItems" -> UpdatePhoneNumberRequestItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchUpdatePhoneNumberRequest]
     }
   }
@@ -859,7 +843,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UpdateUserRequestItems" -> UpdateUserRequestItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchUpdateUserRequest]
     }
   }
@@ -880,8 +863,7 @@ package chime {
     }
   }
 
-  /**
-    * A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.
+  /** A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.
     */
   @js.native
   trait Bot extends js.Object {
@@ -931,8 +913,7 @@ package chime {
     @inline def values = js.Array(ChatBot)
   }
 
-  /**
-    * The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
+  /** The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
     */
   @js.native
   trait BusinessCallingSettings extends js.Object {
@@ -970,8 +951,7 @@ package chime {
     @inline def values = js.Array(Voice, SMS)
   }
 
-  /**
-    * The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account.
+  /** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account.
     */
   @js.native
   trait ConversationRetentionSettings extends js.Object {
@@ -1002,7 +982,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAccountRequest]
     }
   }
@@ -1023,8 +1002,7 @@ package chime {
     }
   }
 
-  /**
-    * The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages.
+  /** The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages.
     */
   @js.native
   trait CreateAttendeeError extends js.Object {
@@ -1072,8 +1050,7 @@ package chime {
     }
   }
 
-  /**
-    * The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.
+  /** The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.
     */
   @js.native
   trait CreateAttendeeRequestItem extends js.Object {
@@ -1275,7 +1252,6 @@ package chime {
         "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
         "ProductType" -> ProductType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePhoneNumberOrderRequest]
     }
   }
@@ -1554,8 +1530,7 @@ package chime {
     }
   }
 
-  /**
-    * The SIP credentials used to authenticate requests to your Amazon Chime Voice Connector.
+  /** The SIP credentials used to authenticate requests to your Amazon Chime Voice Connector.
     */
   @js.native
   trait Credential extends js.Object {
@@ -1576,8 +1551,7 @@ package chime {
     }
   }
 
-  /**
-    * The Dialed Number Identification Service (DNIS) emergency calling configuration details associated with an Amazon Chime Voice Connector's emergency calling configuration.
+  /** The Dialed Number Identification Service (DNIS) emergency calling configuration details associated with an Amazon Chime Voice Connector's emergency calling configuration.
     */
   @js.native
   trait DNISEmergencyCallingConfiguration extends js.Object {
@@ -1616,20 +1590,17 @@ package chime {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAccountRequest]
     }
   }
 
   @js.native
-  trait DeleteAccountResponse extends js.Object {}
+  trait DeleteAccountResponse extends js.Object
 
   object DeleteAccountResponse {
     @inline
-    def apply(
-    ): DeleteAccountResponse = {
+    def apply(): DeleteAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAccountResponse]
     }
   }
@@ -1650,7 +1621,6 @@ package chime {
         "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAttendeeRequest]
     }
   }
@@ -1671,7 +1641,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId" -> BotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventsConfigurationRequest]
     }
   }
@@ -1689,7 +1658,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMeetingRequest]
     }
   }
@@ -1707,7 +1675,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePhoneNumberRequest]
     }
   }
@@ -1728,7 +1695,6 @@ package chime {
         "ProxySessionId" -> ProxySessionId.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProxySessionRequest]
     }
   }
@@ -1752,7 +1718,6 @@ package chime {
         "MemberId" -> MemberId.asInstanceOf[js.Any],
         "RoomId" -> RoomId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRoomMembershipRequest]
     }
   }
@@ -1773,7 +1738,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "RoomId" -> RoomId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRoomRequest]
     }
   }
@@ -1791,7 +1755,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorEmergencyCallingConfigurationRequest]
     }
   }
@@ -1809,7 +1772,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorGroupRequest]
     }
   }
@@ -1827,7 +1789,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorOriginationRequest]
     }
   }
@@ -1845,7 +1806,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorProxyRequest]
     }
   }
@@ -1863,7 +1823,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorRequest]
     }
   }
@@ -1881,7 +1840,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorStreamingConfigurationRequest]
     }
   }
@@ -1902,7 +1860,6 @@ package chime {
         "Usernames" -> Usernames.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorTerminationCredentialsRequest]
     }
   }
@@ -1920,7 +1877,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVoiceConnectorTerminationRequest]
     }
   }
@@ -1941,20 +1897,17 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociatePhoneNumberFromUserRequest]
     }
   }
 
   @js.native
-  trait DisassociatePhoneNumberFromUserResponse extends js.Object {}
+  trait DisassociatePhoneNumberFromUserResponse extends js.Object
 
   object DisassociatePhoneNumberFromUserResponse {
     @inline
-    def apply(
-    ): DisassociatePhoneNumberFromUserResponse = {
+    def apply(): DisassociatePhoneNumberFromUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociatePhoneNumberFromUserResponse]
     }
   }
@@ -1975,7 +1928,6 @@ package chime {
         "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
         "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorGroupRequest]
     }
   }
@@ -2012,7 +1964,6 @@ package chime {
         "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorRequest]
     }
   }
@@ -2049,20 +2000,17 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "GroupNames" -> GroupNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountRequest]
     }
   }
 
   @js.native
-  trait DisassociateSigninDelegateGroupsFromAccountResponse extends js.Object {}
+  trait DisassociateSigninDelegateGroupsFromAccountResponse extends js.Object
 
   object DisassociateSigninDelegateGroupsFromAccountResponse {
     @inline
-    def apply(
-    ): DisassociateSigninDelegateGroupsFromAccountResponse = {
+    def apply(): DisassociateSigninDelegateGroupsFromAccountResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateSigninDelegateGroupsFromAccountResponse]
     }
   }
@@ -2077,8 +2025,7 @@ package chime {
     @inline def values = js.Array(NotSent, Sent, Failed)
   }
 
-  /**
-    * The emergency calling configuration details associated with an Amazon Chime Voice Connector.
+  /** The emergency calling configuration details associated with an Amazon Chime Voice Connector.
     */
   @js.native
   trait EmergencyCallingConfiguration extends js.Object {
@@ -2115,28 +2062,26 @@ package chime {
     val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
     val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-    @inline def values =
-      js.Array(
-        BadRequest,
-        Conflict,
-        Forbidden,
-        NotFound,
-        PreconditionFailed,
-        ResourceLimitExceeded,
-        ServiceFailure,
-        AccessDenied,
-        ServiceUnavailable,
-        Throttled,
-        Throttling,
-        Unauthorized,
-        Unprocessable,
-        VoiceConnectorGroupAssociationsExist,
-        PhoneNumberAssociationsExist
-      )
+    @inline def values = js.Array(
+      BadRequest,
+      Conflict,
+      Forbidden,
+      NotFound,
+      PreconditionFailed,
+      ResourceLimitExceeded,
+      ServiceFailure,
+      AccessDenied,
+      ServiceUnavailable,
+      Throttled,
+      Throttling,
+      Unauthorized,
+      Unprocessable,
+      VoiceConnectorGroupAssociationsExist,
+      PhoneNumberAssociationsExist
+    )
   }
 
-  /**
-    * The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.
+  /** The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.
     */
   @js.native
   trait EventsConfiguration extends js.Object {
@@ -2169,8 +2114,7 @@ package chime {
     @inline def values = js.Array(Country, AreaCode)
   }
 
-  /**
-    * The country and area code for a proxy phone number in a proxy phone session.
+  /** The country and area code for a proxy phone number in a proxy phone session.
     */
   @js.native
   trait GeoMatchParams extends js.Object {
@@ -2188,7 +2132,6 @@ package chime {
         "AreaCode" -> AreaCode.asInstanceOf[js.Any],
         "Country" -> Country.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GeoMatchParams]
     }
   }
@@ -2206,7 +2149,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccountRequest]
     }
   }
@@ -2240,7 +2182,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccountSettingsRequest]
     }
   }
@@ -2277,7 +2218,6 @@ package chime {
         "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAttendeeRequest]
     }
   }
@@ -2314,7 +2254,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId" -> BotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBotRequest]
     }
   }
@@ -2351,7 +2290,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId" -> BotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEventsConfigurationRequest]
     }
   }
@@ -2404,7 +2342,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMeetingRequest]
     }
   }
@@ -2438,7 +2375,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "PhoneNumberOrderId" -> PhoneNumberOrderId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPhoneNumberOrderRequest]
     }
   }
@@ -2472,7 +2408,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPhoneNumberRequest]
     }
   }
@@ -2528,7 +2463,6 @@ package chime {
         "ProxySessionId" -> ProxySessionId.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetProxySessionRequest]
     }
   }
@@ -2562,7 +2496,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRetentionSettingsRequest]
     }
   }
@@ -2602,7 +2535,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "RoomId" -> RoomId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRoomRequest]
     }
   }
@@ -2639,7 +2571,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUserRequest]
     }
   }
@@ -2676,7 +2607,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUserSettingsRequest]
     }
   }
@@ -2710,7 +2640,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorEmergencyCallingConfigurationRequest]
     }
   }
@@ -2744,7 +2673,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorGroupRequest]
     }
   }
@@ -2778,7 +2706,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorLoggingConfigurationRequest]
     }
   }
@@ -2812,7 +2739,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorOriginationRequest]
     }
   }
@@ -2846,7 +2772,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorProxyRequest]
     }
   }
@@ -2880,7 +2805,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorRequest]
     }
   }
@@ -2914,7 +2838,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorStreamingConfigurationRequest]
     }
   }
@@ -2948,7 +2871,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorTerminationHealthRequest]
     }
   }
@@ -2982,7 +2904,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetVoiceConnectorTerminationRequest]
     }
   }
@@ -3003,8 +2924,7 @@ package chime {
     }
   }
 
-  /**
-    * Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.
+  /** Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.
     */
   @js.native
   trait Invite extends js.Object {
@@ -3152,7 +3072,6 @@ package chime {
         "AttendeeId" -> AttendeeId.asInstanceOf[js.Any],
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListAttendeeTagsRequest]
     }
   }
@@ -3272,7 +3191,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListMeetingTagsRequest]
     }
   }
@@ -3570,7 +3488,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -3691,7 +3608,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListVoiceConnectorTerminationCredentialsRequest]
     }
   }
@@ -3750,8 +3666,7 @@ package chime {
     }
   }
 
-  /**
-    * The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+  /** The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -3785,26 +3700,22 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LogoutUserRequest]
     }
   }
 
   @js.native
-  trait LogoutUserResponse extends js.Object {}
+  trait LogoutUserResponse extends js.Object
 
   object LogoutUserResponse {
     @inline
-    def apply(
-    ): LogoutUserResponse = {
+    def apply(): LogoutUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[LogoutUserResponse]
     }
   }
 
-  /**
-    * A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting.
+  /** A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting.
     */
   @js.native
   trait MediaPlacement extends js.Object {
@@ -3840,8 +3751,7 @@ package chime {
     }
   }
 
-  /**
-    * A meeting created using the Amazon Chime SDK.
+  /** A meeting created using the Amazon Chime SDK.
     */
   @js.native
   trait Meeting extends js.Object {
@@ -3868,8 +3778,7 @@ package chime {
     }
   }
 
-  /**
-    * The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>).
+  /** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>).
     */
   @js.native
   trait MeetingNotificationConfiguration extends js.Object {
@@ -3890,8 +3799,7 @@ package chime {
     }
   }
 
-  /**
-    * The member details, such as email address, name, member ID, and member type.
+  /** The member details, such as email address, name, member ID, and member type.
     */
   @js.native
   trait Member extends js.Object {
@@ -3921,8 +3829,7 @@ package chime {
     }
   }
 
-  /**
-    * The list of errors returned when a member action results in an error.
+  /** The list of errors returned when a member action results in an error.
     */
   @js.native
   trait MemberError extends js.Object {
@@ -3956,8 +3863,7 @@ package chime {
     @inline def values = js.Array(User, Bot, Webhook)
   }
 
-  /**
-    * Membership details, such as member ID and member role.
+  /** Membership details, such as member ID and member role.
     */
   @js.native
   trait MembershipItem extends js.Object {
@@ -3997,8 +3903,7 @@ package chime {
     @inline def values = js.Array(PreferSticky, AvoidSticky)
   }
 
-  /**
-    * A phone number for which an order has been placed.
+  /** A phone number for which an order has been placed.
     */
   @js.native
   trait OrderedPhoneNumber extends js.Object {
@@ -4029,8 +3934,7 @@ package chime {
     @inline def values = js.Array(Processing, Acquired, Failed)
   }
 
-  /**
-    * Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.
+  /** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.
     */
   @js.native
   trait Origination extends js.Object {
@@ -4051,8 +3955,7 @@ package chime {
     }
   }
 
-  /**
-    * Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector.
+  /** Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector.
     */
   @js.native
   trait OriginationRoute extends js.Object {
@@ -4091,8 +3994,7 @@ package chime {
     @inline def values = js.Array(TCP, UDP)
   }
 
-  /**
-    * The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session.
+  /** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session.
     */
   @js.native
   trait Participant extends js.Object {
@@ -4113,8 +4015,7 @@ package chime {
     }
   }
 
-  /**
-    * A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector.
+  /** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector.
     */
   @js.native
   trait PhoneNumber extends js.Object {
@@ -4165,8 +4066,7 @@ package chime {
     }
   }
 
-  /**
-    * The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.
+  /** The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.
     */
   @js.native
   trait PhoneNumberAssociation extends js.Object {
@@ -4201,8 +4101,7 @@ package chime {
     @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId)
   }
 
-  /**
-    * The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.
+  /** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.
     */
   @js.native
   trait PhoneNumberCapabilities extends js.Object {
@@ -4235,8 +4134,7 @@ package chime {
     }
   }
 
-  /**
-    * If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.
+  /** If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.
     */
   @js.native
   trait PhoneNumberError extends js.Object {
@@ -4260,8 +4158,7 @@ package chime {
     }
   }
 
-  /**
-    * The details of a phone number order created for Amazon Chime.
+  /** The details of a phone number order created for Amazon Chime.
     */
   @js.native
   trait PhoneNumberOrder extends js.Object {
@@ -4338,8 +4235,7 @@ package chime {
     @inline def values = js.Array(Local, TollFree)
   }
 
-  /**
-    * The proxy configuration for an Amazon Chime Voice Connector.
+  /** The proxy configuration for an Amazon Chime Voice Connector.
     */
   @js.native
   trait Proxy extends js.Object {
@@ -4366,8 +4262,7 @@ package chime {
     }
   }
 
-  /**
-    * The proxy session for an Amazon Chime Voice Connector.
+  /** The proxy session for an Amazon Chime Voice Connector.
     */
   @js.native
   trait ProxySession extends js.Object {
@@ -4490,7 +4385,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "RetentionSettings" -> RetentionSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRetentionSettingsRequest]
     }
   }
@@ -4530,7 +4424,6 @@ package chime {
         "EmergencyCallingConfiguration" -> EmergencyCallingConfiguration.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutVoiceConnectorEmergencyCallingConfigurationRequest]
     }
   }
@@ -4567,7 +4460,6 @@ package chime {
         "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutVoiceConnectorLoggingConfigurationRequest]
     }
   }
@@ -4604,7 +4496,6 @@ package chime {
         "Origination" -> Origination.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutVoiceConnectorOriginationRequest]
     }
   }
@@ -4687,7 +4578,6 @@ package chime {
         "StreamingConfiguration" -> StreamingConfiguration.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutVoiceConnectorStreamingConfigurationRequest]
     }
   }
@@ -4745,7 +4635,6 @@ package chime {
         "Termination" -> Termination.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutVoiceConnectorTerminationRequest]
     }
   }
@@ -4785,20 +4674,17 @@ package chime {
         "ConversationId" -> ConversationId.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RedactConversationMessageRequest]
     }
   }
 
   @js.native
-  trait RedactConversationMessageResponse extends js.Object {}
+  trait RedactConversationMessageResponse extends js.Object
 
   object RedactConversationMessageResponse {
     @inline
-    def apply(
-    ): RedactConversationMessageResponse = {
+    def apply(): RedactConversationMessageResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RedactConversationMessageResponse]
     }
   }
@@ -4822,20 +4708,17 @@ package chime {
         "MessageId" -> MessageId.asInstanceOf[js.Any],
         "RoomId" -> RoomId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RedactRoomMessageRequest]
     }
   }
 
   @js.native
-  trait RedactRoomMessageResponse extends js.Object {}
+  trait RedactRoomMessageResponse extends js.Object
 
   object RedactRoomMessageResponse {
     @inline
-    def apply(
-    ): RedactRoomMessageResponse = {
+    def apply(): RedactRoomMessageResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RedactRoomMessageResponse]
     }
   }
@@ -4856,7 +4739,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId" -> BotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegenerateSecurityTokenRequest]
     }
   }
@@ -4903,7 +4785,6 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResetPersonalPINRequest]
     }
   }
@@ -4937,7 +4818,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestorePhoneNumberRequest]
     }
   }
@@ -4958,8 +4838,7 @@ package chime {
     }
   }
 
-  /**
-    * The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.
+  /** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.
     */
   @js.native
   trait RetentionSettings extends js.Object {
@@ -4980,8 +4859,7 @@ package chime {
     }
   }
 
-  /**
-    * The Amazon Chime chat room details.
+  /** The Amazon Chime chat room details.
     */
   @js.native
   trait Room extends js.Object {
@@ -5014,8 +4892,7 @@ package chime {
     }
   }
 
-  /**
-    * The room membership details.
+  /** The room membership details.
     */
   @js.native
   trait RoomMembership extends js.Object {
@@ -5054,8 +4931,7 @@ package chime {
     @inline def values = js.Array(Administrator, Member)
   }
 
-  /**
-    * The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account.
+  /** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account.
     */
   @js.native
   trait RoomRetentionSettings extends js.Object {
@@ -5123,8 +4999,7 @@ package chime {
     }
   }
 
-  /**
-    * An Active Directory (AD) group whose members are granted permission to act as delegates.
+  /** An Active Directory (AD) group whose members are granted permission to act as delegates.
     */
   @js.native
   trait SigninDelegateGroup extends js.Object {
@@ -5142,8 +5017,7 @@ package chime {
     }
   }
 
-  /**
-    * The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
+  /** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
     */
   @js.native
   trait StreamingConfiguration extends js.Object {
@@ -5169,8 +5043,7 @@ package chime {
     }
   }
 
-  /**
-    * The targeted recipient for a streaming configuration notification.
+  /** The targeted recipient for a streaming configuration notification.
     */
   @js.native
   trait StreamingNotificationTarget extends js.Object {
@@ -5185,13 +5058,11 @@ package chime {
       val __obj = js.Dynamic.literal(
         "NotificationTarget" -> NotificationTarget.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StreamingNotificationTarget]
     }
   }
 
-  /**
-    * Describes a tag applied to a resource.
+  /** Describes a tag applied to a resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -5209,7 +5080,6 @@ package chime {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -5233,7 +5103,6 @@ package chime {
         "MeetingId" -> MeetingId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagAttendeeRequest]
     }
   }
@@ -5254,7 +5123,6 @@ package chime {
         "MeetingId" -> MeetingId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagMeetingRequest]
     }
   }
@@ -5275,13 +5143,11 @@ package chime {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.
+  /** Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.
     */
   @js.native
   trait TelephonySettings extends js.Object {
@@ -5302,13 +5168,11 @@ package chime {
         "OutboundCalling" -> OutboundCalling.asInstanceOf[js.Any],
         "SMS" -> SMS.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TelephonySettings]
     }
   }
 
-  /**
-    * Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector.
+  /** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector.
     */
   @js.native
   trait Termination extends js.Object {
@@ -5338,8 +5202,7 @@ package chime {
     }
   }
 
-  /**
-    * The termination health details, including the source IP address and timestamp of the last successful SIP <code>OPTIONS</code> message from your SIP infrastructure.
+  /** The termination health details, including the source IP address and timestamp of the last successful SIP <code>OPTIONS</code> message from your SIP infrastructure.
     */
   @js.native
   trait TerminationHealth extends js.Object {
@@ -5379,7 +5242,6 @@ package chime {
         "MeetingId" -> MeetingId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagAttendeeRequest]
     }
   }
@@ -5400,7 +5262,6 @@ package chime {
         "MeetingId" -> MeetingId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagMeetingRequest]
     }
   }
@@ -5421,7 +5282,6 @@ package chime {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -5479,20 +5339,17 @@ package chime {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "AccountSettings" -> AccountSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAccountSettingsRequest]
     }
   }
 
   @js.native
-  trait UpdateAccountSettingsResponse extends js.Object {}
+  trait UpdateAccountSettingsResponse extends js.Object
 
   object UpdateAccountSettingsResponse {
     @inline
-    def apply(
-    ): UpdateAccountSettingsResponse = {
+    def apply(): UpdateAccountSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAccountSettingsResponse]
     }
   }
@@ -5553,7 +5410,6 @@ package chime {
         "BusinessCalling" -> BusinessCalling.asInstanceOf[js.Any],
         "VoiceConnector" -> VoiceConnector.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGlobalSettingsRequest]
     }
   }
@@ -5582,8 +5438,7 @@ package chime {
     }
   }
 
-  /**
-    * The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.
+  /** The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.
     */
   @js.native
   trait UpdatePhoneNumberRequestItem extends js.Object {
@@ -5638,7 +5493,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "CallingName" -> CallingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePhoneNumberSettingsRequest]
     }
   }
@@ -5799,8 +5653,7 @@ package chime {
     }
   }
 
-  /**
-    * The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action.
+  /** The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action.
     */
   @js.native
   trait UpdateUserRequestItem extends js.Object {
@@ -5864,7 +5717,6 @@ package chime {
         "UserId" -> UserId.asInstanceOf[js.Any],
         "UserSettings" -> UserSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserSettingsRequest]
     }
   }
@@ -5888,7 +5740,6 @@ package chime {
         "VoiceConnectorGroupId" -> VoiceConnectorGroupId.asInstanceOf[js.Any],
         "VoiceConnectorItems" -> VoiceConnectorItems.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVoiceConnectorGroupRequest]
     }
   }
@@ -5928,7 +5779,6 @@ package chime {
         "RequireEncryption" -> RequireEncryption.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVoiceConnectorRequest]
     }
   }
@@ -5949,8 +5799,7 @@ package chime {
     }
   }
 
-  /**
-    * The user on the Amazon Chime account.
+  /** The user on the Amazon Chime account.
     */
   @js.native
   trait User extends js.Object {
@@ -6006,8 +5855,7 @@ package chime {
     }
   }
 
-  /**
-    * The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages.
+  /** The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages.
     */
   @js.native
   trait UserError extends js.Object {
@@ -6031,8 +5879,7 @@ package chime {
     }
   }
 
-  /**
-    * Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.
+  /** Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.
     */
   @js.native
   trait UserSettings extends js.Object {
@@ -6047,7 +5894,6 @@ package chime {
       val __obj = js.Dynamic.literal(
         "Telephony" -> Telephony.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UserSettings]
     }
   }
@@ -6061,8 +5907,7 @@ package chime {
     @inline def values = js.Array(PrivateUser, SharedDevice)
   }
 
-  /**
-    * The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings.
+  /** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings.
     */
   @js.native
   trait VoiceConnector extends js.Object {
@@ -6107,8 +5952,7 @@ package chime {
     @inline def values = js.Array(`us-east-1`, `us-west-2`)
   }
 
-  /**
-    * The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.
+  /** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.
     */
   @js.native
   trait VoiceConnectorGroup extends js.Object {
@@ -6138,8 +5982,7 @@ package chime {
     }
   }
 
-  /**
-    * For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group.
+  /** For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group.
     */
   @js.native
   trait VoiceConnectorItem extends js.Object {
@@ -6157,13 +6000,11 @@ package chime {
         "Priority" -> Priority.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VoiceConnectorItem]
     }
   }
 
-  /**
-    * The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.
+  /** The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.
     */
   @js.native
   trait VoiceConnectorSettings extends js.Object {

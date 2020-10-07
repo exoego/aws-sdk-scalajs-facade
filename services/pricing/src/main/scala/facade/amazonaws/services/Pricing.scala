@@ -36,8 +36,7 @@ package pricing {
     def getProducts(params: GetProductsRequest): Request[GetProductsResponse] = js.native
   }
 
-  /**
-    * The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.
+  /** The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.
     */
   @js.native
   trait AttributeValue extends js.Object {
@@ -102,16 +101,14 @@ package pricing {
     }
   }
 
-  /**
-    * The pagination token expired. Try again without a pagination token.
+  /** The pagination token expired. Try again without a pagination token.
     */
   @js.native
   trait ExpiredNextTokenExceptionException extends js.Object {
     val Message: errorMessage
   }
 
-  /**
-    * The constraints that you want all returned products to match.
+  /** The constraints that you want all returned products to match.
     */
   @js.native
   trait Filter extends js.Object {
@@ -132,7 +129,6 @@ package pricing {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Filter]
     }
   }
@@ -241,40 +237,35 @@ package pricing {
     }
   }
 
-  /**
-    * An error on the server occurred during the processing of your request. Try again later.
+  /** An error on the server occurred during the processing of your request. Try again later.
     */
   @js.native
   trait InternalErrorExceptionException extends js.Object {
     val Message: errorMessage
   }
 
-  /**
-    * The pagination token is invalid. Try again without a pagination token.
+  /** The pagination token is invalid. Try again without a pagination token.
     */
   @js.native
   trait InvalidNextTokenExceptionException extends js.Object {
     val Message: errorMessage
   }
 
-  /**
-    * One or more parameters had an invalid value.
+  /** One or more parameters had an invalid value.
     */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
     val Message: errorMessage
   }
 
-  /**
-    * The requested resource can't be found.
+  /** The requested resource can't be found.
     */
   @js.native
   trait NotFoundExceptionException extends js.Object {
     val Message: errorMessage
   }
 
-  /**
-    * The metadata for a service, such as the service code and available attribute names.
+  /** The metadata for a service, such as the service code and available attribute names.
     */
   @js.native
   trait Service extends js.Object {

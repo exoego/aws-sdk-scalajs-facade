@@ -338,8 +338,7 @@ package configservice {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * A collection of accounts and regions.
+  /** A collection of accounts and regions.
     */
   @js.native
   trait AccountAggregationSource extends js.Object {
@@ -365,9 +364,8 @@ package configservice {
     }
   }
 
-  /**
-    * Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name.
-    *  A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
+  /** Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name.
+    * A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
     */
   @js.native
   trait AggregateComplianceByConfigRule extends js.Object {
@@ -394,8 +392,7 @@ package configservice {
     }
   }
 
-  /**
-    * Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
+  /** Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
     */
   @js.native
   trait AggregateComplianceCount extends js.Object {
@@ -416,8 +413,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details of an AWS Config evaluation for an account ID and region in an aggregator. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
+  /** The details of an AWS Config evaluation for an account ID and region in an aggregator. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
     */
   @js.native
   trait AggregateEvaluationResult extends js.Object {
@@ -453,8 +449,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
+  /** The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
     */
   @js.native
   trait AggregateResourceIdentifier extends js.Object {
@@ -486,8 +481,7 @@ package configservice {
     }
   }
 
-  /**
-    * The current sync status between the source and the aggregator account.
+  /** The current sync status between the source and the aggregator account.
     */
   @js.native
   trait AggregatedSourceStatus extends js.Object {
@@ -542,8 +536,7 @@ package configservice {
     @inline def values = js.Array(ACCOUNT, ORGANIZATION)
   }
 
-  /**
-    * An object that represents the authorizations granted to aggregator accounts and regions.
+  /** An object that represents the authorizations granted to aggregator accounts and regions.
     */
   @js.native
   trait AggregationAuthorization extends js.Object {
@@ -570,8 +563,7 @@ package configservice {
     }
   }
 
-  /**
-    * The detailed configuration of a specified resource.
+  /** The detailed configuration of a specified resource.
     */
   @js.native
   trait BaseConfigurationItem extends js.Object {
@@ -644,7 +636,6 @@ package configservice {
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "ResourceIdentifiers" -> ResourceIdentifiers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetAggregateResourceConfigRequest]
     }
   }
@@ -681,7 +672,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "resourceKeys" -> resourceKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetResourceConfigRequest]
     }
   }
@@ -714,8 +704,7 @@ package configservice {
     @inline def values = js.Array(Reverse, Forward)
   }
 
-  /**
-    * Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance.
+  /** Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance.
     */
   @js.native
   trait Compliance extends js.Object {
@@ -736,8 +725,7 @@ package configservice {
     }
   }
 
-  /**
-    * Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.
+  /** Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.
     */
   @js.native
   trait ComplianceByConfigRule extends js.Object {
@@ -758,8 +746,7 @@ package configservice {
     }
   }
 
-  /**
-    * Indicates whether an AWS resource that is evaluated according to one or more AWS Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.
+  /** Indicates whether an AWS resource that is evaluated according to one or more AWS Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.
     */
   @js.native
   trait ComplianceByResource extends js.Object {
@@ -783,8 +770,7 @@ package configservice {
     }
   }
 
-  /**
-    * The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number.
+  /** The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number.
     */
   @js.native
   trait ComplianceContributorCount extends js.Object {
@@ -805,8 +791,7 @@ package configservice {
     }
   }
 
-  /**
-    * The number of AWS Config rules or AWS resources that are compliant and noncompliant.
+  /** The number of AWS Config rules or AWS resources that are compliant and noncompliant.
     */
   @js.native
   trait ComplianceSummary extends js.Object {
@@ -830,8 +815,7 @@ package configservice {
     }
   }
 
-  /**
-    * The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.
+  /** The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.
     */
   @js.native
   trait ComplianceSummaryByResourceType extends js.Object {
@@ -863,8 +847,7 @@ package configservice {
     @inline def values = js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA)
   }
 
-  /**
-    * Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.
+  /** Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.
     */
   @js.native
   trait ConfigExportDeliveryInfo extends js.Object {
@@ -897,8 +880,7 @@ package configservice {
     }
   }
 
-  /**
-    * An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).
+  /** An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).
     *
     * '''Note:'''You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
     * For more information about developing and using AWS Config rules, see [[https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html|Evaluating AWS Resource Configurations with AWS Config]] in the <i>AWS Config Developer Guide</i>.
@@ -948,8 +930,7 @@ package configservice {
     }
   }
 
-  /**
-    * Filters the compliance results based on account ID, region, compliance type, and rule name.
+  /** Filters the compliance results based on account ID, region, compliance type, and rule name.
     */
   @js.native
   trait ConfigRuleComplianceFilters extends js.Object {
@@ -976,8 +957,7 @@ package configservice {
     }
   }
 
-  /**
-    * Filters the results based on the account IDs and regions.
+  /** Filters the results based on the account IDs and regions.
     */
   @js.native
   trait ConfigRuleComplianceSummaryFilters extends js.Object {
@@ -1007,9 +987,8 @@ package configservice {
     @inline def values = js.Array(ACCOUNT_ID, AWS_REGION)
   }
 
-  /**
-    * Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.
-    *  This action does not return status information about custom AWS Config rules.
+  /** Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure.
+    * This action does not return status information about custom AWS Config rules.
     */
   @js.native
   trait ConfigRuleEvaluationStatus extends js.Object {
@@ -1071,18 +1050,17 @@ package configservice {
     @inline def values = js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING)
   }
 
-  /**
-    * Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.
-    *  The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
+  /** Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.
+    * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:
     * * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules.
-    *  * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.
+    * * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>.
     * If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value.
-    *  <ol> * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.
-    *  * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
-    *  * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
-    *  * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours.
-    *  </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.
-    *  To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
+    * <ol> * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot.
+    * * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
+    * * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
+    * * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours.
+    * </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.
+    * To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
     */
   @js.native
   trait ConfigSnapshotDeliveryProperties extends js.Object {
@@ -1100,8 +1078,7 @@ package configservice {
     }
   }
 
-  /**
-    * A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.
+  /** A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.
     */
   @js.native
   trait ConfigStreamDeliveryInfo extends js.Object {
@@ -1128,8 +1105,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
+  /** The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
     */
   @js.native
   trait ConfigurationAggregator extends js.Object {
@@ -1165,8 +1141,7 @@ package configservice {
     }
   }
 
-  /**
-    * A list that contains detailed configurations of a specified resource.
+  /** A list that contains detailed configurations of a specified resource.
     */
   @js.native
   trait ConfigurationItem extends js.Object {
@@ -1247,8 +1222,7 @@ package configservice {
     @inline def values = js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
   }
 
-  /**
-    * An object that represents the recording of configuration changes of an AWS resource.
+  /** An object that represents the recording of configuration changes of an AWS resource.
     */
   @js.native
   trait ConfigurationRecorder extends js.Object {
@@ -1272,8 +1246,7 @@ package configservice {
     }
   }
 
-  /**
-    * The current status of the configuration recorder.
+  /** The current status of the configuration recorder.
     */
   @js.native
   trait ConfigurationRecorderStatus extends js.Object {
@@ -1312,8 +1285,7 @@ package configservice {
     }
   }
 
-  /**
-    * Filters the conformance pack by compliance types and AWS Config rule names.
+  /** Filters the conformance pack by compliance types and AWS Config rule names.
     */
   @js.native
   trait ConformancePackComplianceFilters extends js.Object {
@@ -1334,8 +1306,7 @@ package configservice {
     }
   }
 
-  /**
-    * Summary includes the name and status of the conformance pack.
+  /** Summary includes the name and status of the conformance pack.
     */
   @js.native
   trait ConformancePackComplianceSummary extends js.Object {
@@ -1353,7 +1324,6 @@ package configservice {
         "ConformancePackComplianceStatus" -> ConformancePackComplianceStatus.asInstanceOf[js.Any],
         "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConformancePackComplianceSummary]
     }
   }
@@ -1367,8 +1337,7 @@ package configservice {
     @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
   }
 
-  /**
-    * Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region.
+  /** Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region.
     */
   @js.native
   trait ConformancePackDetail extends js.Object {
@@ -1409,8 +1378,7 @@ package configservice {
     }
   }
 
-  /**
-    * Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs.
+  /** Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs.
     */
   @js.native
   trait ConformancePackEvaluationFilters extends js.Object {
@@ -1437,8 +1405,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details of a conformance pack evaluation. Provides AWS Config rule and AWS resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information.
+  /** The details of a conformance pack evaluation. Provides AWS Config rule and AWS resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information.
     */
   @js.native
   trait ConformancePackEvaluationResult extends js.Object {
@@ -1470,8 +1437,7 @@ package configservice {
     }
   }
 
-  /**
-    * Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.
+  /** Input parameters in the form of key-value pairs for the conformance pack, both of which you define. Keys can have a maximum character length of 255 characters, and values can have a maximum length of 4096 characters.
     */
   @js.native
   trait ConformancePackInputParameter extends js.Object {
@@ -1489,13 +1455,11 @@ package configservice {
         "ParameterName" -> ParameterName.asInstanceOf[js.Any],
         "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConformancePackInputParameter]
     }
   }
 
-  /**
-    * Compliance information of one or more AWS Config rules within a conformance pack. You can filter using AWS Config rule names and compliance types.
+  /** Compliance information of one or more AWS Config rules within a conformance pack. You can filter using AWS Config rule names and compliance types.
     */
   @js.native
   trait ConformancePackRuleCompliance extends js.Object {
@@ -1528,8 +1492,7 @@ package configservice {
     @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED)
   }
 
-  /**
-    * Status details of a conformance pack.
+  /** Status details of a conformance pack.
     */
   @js.native
   trait ConformancePackStatusDetail extends js.Object {
@@ -1586,13 +1549,11 @@ package configservice {
         "AuthorizedAccountId" -> AuthorizedAccountId.asInstanceOf[js.Any],
         "AuthorizedAwsRegion" -> AuthorizedAwsRegion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAggregationAuthorizationRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteConfigRuleRequest extends js.Object {
@@ -1607,7 +1568,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigRuleRequest]
     }
   }
@@ -1625,13 +1585,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationAggregatorRequest]
     }
   }
 
-  /**
-    * The request object for the <code>DeleteConfigurationRecorder</code> action.
+  /** The request object for the <code>DeleteConfigurationRecorder</code> action.
     */
   @js.native
   trait DeleteConfigurationRecorderRequest extends js.Object {
@@ -1646,7 +1604,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationRecorderRequest]
     }
   }
@@ -1664,13 +1621,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConformancePackRequest]
     }
   }
 
-  /**
-    * The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format.
+  /** The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format.
     */
   @js.native
   trait DeleteDeliveryChannelRequest extends js.Object {
@@ -1685,13 +1640,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "DeliveryChannelName" -> DeliveryChannelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeliveryChannelRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteEvaluationResultsRequest extends js.Object {
@@ -1706,23 +1659,19 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEvaluationResultsRequest]
     }
   }
 
-  /**
-    * The output when you delete the evaluation results for the specified AWS Config rule.
+  /** The output when you delete the evaluation results for the specified AWS Config rule.
     */
   @js.native
-  trait DeleteEvaluationResultsResponse extends js.Object {}
+  trait DeleteEvaluationResultsResponse extends js.Object
 
   object DeleteEvaluationResultsResponse {
     @inline
-    def apply(
-    ): DeleteEvaluationResultsResponse = {
+    def apply(): DeleteEvaluationResultsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteEvaluationResultsResponse]
     }
   }
@@ -1740,7 +1689,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteOrganizationConfigRuleRequest]
     }
   }
@@ -1758,7 +1706,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteOrganizationConformancePackRequest]
     }
   }
@@ -1779,7 +1726,6 @@ package configservice {
         "RequesterAccountId" -> RequesterAccountId.asInstanceOf[js.Any],
         "RequesterAwsRegion" -> RequesterAwsRegion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePendingAggregationRequestRequest]
     }
   }
@@ -1806,14 +1752,12 @@ package configservice {
   }
 
   @js.native
-  trait DeleteRemediationConfigurationResponse extends js.Object {}
+  trait DeleteRemediationConfigurationResponse extends js.Object
 
   object DeleteRemediationConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteRemediationConfigurationResponse = {
+    def apply(): DeleteRemediationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteRemediationConfigurationResponse]
     }
   }
@@ -1834,7 +1778,6 @@ package configservice {
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
         "ResourceKeys" -> ResourceKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRemediationExceptionsRequest]
     }
   }
@@ -1871,7 +1814,6 @@ package configservice {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResourceConfigRequest]
     }
   }
@@ -1889,13 +1831,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "RetentionConfigurationName" -> RetentionConfigurationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRetentionConfigurationRequest]
     }
   }
 
-  /**
-    * The input for the <a>DeliverConfigSnapshot</a> action.
+  /** The input for the <a>DeliverConfigSnapshot</a> action.
     */
   @js.native
   trait DeliverConfigSnapshotRequest extends js.Object {
@@ -1910,13 +1850,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "deliveryChannelName" -> deliveryChannelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeliverConfigSnapshotRequest]
     }
   }
 
-  /**
-    * The output for the <a>DeliverConfigSnapshot</a> action, in JSON format.
+  /** The output for the <a>DeliverConfigSnapshot</a> action, in JSON format.
     */
   @js.native
   trait DeliverConfigSnapshotResponse extends js.Object {
@@ -1934,8 +1872,7 @@ package configservice {
     }
   }
 
-  /**
-    * The channel through which AWS Config delivers notifications and updated configuration states.
+  /** The channel through which AWS Config delivers notifications and updated configuration states.
     */
   @js.native
   trait DeliveryChannel extends js.Object {
@@ -1965,9 +1902,8 @@ package configservice {
     }
   }
 
-  /**
-    * The status of a specified delivery channel.
-    *  Valid values: <code>Success</code> | <code>Failure</code>
+  /** The status of a specified delivery channel.
+    * Valid values: <code>Success</code> | <code>Failure</code>
     */
   @js.native
   trait DeliveryChannelStatus extends js.Object {
@@ -2088,8 +2024,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeComplianceByConfigRuleRequest extends js.Object {
@@ -2113,8 +2048,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeComplianceByConfigRuleResponse extends js.Object {
@@ -2135,8 +2069,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeComplianceByResourceRequest extends js.Object {
@@ -2166,8 +2099,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeComplianceByResourceResponse extends js.Object {
@@ -2188,8 +2120,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeConfigRuleEvaluationStatusRequest extends js.Object {
@@ -2213,8 +2144,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeConfigRuleEvaluationStatusResponse extends js.Object {
@@ -2235,8 +2165,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeConfigRulesRequest extends js.Object {
@@ -2257,8 +2186,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DescribeConfigRulesResponse extends js.Object {
@@ -2366,8 +2294,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>DescribeConfigurationRecorderStatus</a> action.
+  /** The input for the <a>DescribeConfigurationRecorderStatus</a> action.
     */
   @js.native
   trait DescribeConfigurationRecorderStatusRequest extends js.Object {
@@ -2385,8 +2312,7 @@ package configservice {
     }
   }
 
-  /**
-    * The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format.
+  /** The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format.
     */
   @js.native
   trait DescribeConfigurationRecorderStatusResponse extends js.Object {
@@ -2404,8 +2330,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>DescribeConfigurationRecorders</a> action.
+  /** The input for the <a>DescribeConfigurationRecorders</a> action.
     */
   @js.native
   trait DescribeConfigurationRecordersRequest extends js.Object {
@@ -2423,8 +2348,7 @@ package configservice {
     }
   }
 
-  /**
-    * The output for the <a>DescribeConfigurationRecorders</a> action.
+  /** The output for the <a>DescribeConfigurationRecorders</a> action.
     */
   @js.native
   trait DescribeConfigurationRecordersResponse extends js.Object {
@@ -2575,8 +2499,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>DeliveryChannelStatus</a> action.
+  /** The input for the <a>DeliveryChannelStatus</a> action.
     */
   @js.native
   trait DescribeDeliveryChannelStatusRequest extends js.Object {
@@ -2594,8 +2517,7 @@ package configservice {
     }
   }
 
-  /**
-    * The output for the <a>DescribeDeliveryChannelStatus</a> action.
+  /** The output for the <a>DescribeDeliveryChannelStatus</a> action.
     */
   @js.native
   trait DescribeDeliveryChannelStatusResponse extends js.Object {
@@ -2613,8 +2535,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>DescribeDeliveryChannels</a> action.
+  /** The input for the <a>DescribeDeliveryChannels</a> action.
     */
   @js.native
   trait DescribeDeliveryChannelsRequest extends js.Object {
@@ -2632,8 +2553,7 @@ package configservice {
     }
   }
 
-  /**
-    * The output for the <a>DescribeDeliveryChannels</a> action.
+  /** The output for the <a>DescribeDeliveryChannels</a> action.
     */
   @js.native
   trait DescribeDeliveryChannelsResponse extends js.Object {
@@ -2866,7 +2786,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigRuleNames" -> ConfigRuleNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRemediationConfigurationsRequest]
     }
   }
@@ -3017,8 +2936,7 @@ package configservice {
     }
   }
 
-  /**
-    * Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
+  /** Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
     */
   @js.native
   trait Evaluation extends js.Object {
@@ -3050,8 +2968,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details of an AWS Config evaluation. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
+  /** The details of an AWS Config evaluation. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -3084,8 +3001,7 @@ package configservice {
     }
   }
 
-  /**
-    * Uniquely identifies an evaluation result.
+  /** Uniquely identifies an evaluation result.
     */
   @js.native
   trait EvaluationResultIdentifier extends js.Object {
@@ -3106,8 +3022,7 @@ package configservice {
     }
   }
 
-  /**
-    * Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated.
+  /** Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated.
     */
   @js.native
   trait EvaluationResultQualifier extends js.Object {
@@ -3139,8 +3054,7 @@ package configservice {
     @inline def values = js.Array(`aws.config`)
   }
 
-  /**
-    * The controls that AWS Config uses for executing remediations.
+  /** The controls that AWS Config uses for executing remediations.
     */
   @js.native
   trait ExecutionControls extends js.Object {
@@ -3158,8 +3072,7 @@ package configservice {
     }
   }
 
-  /**
-    * List of each of the failed delete remediation exceptions with specific reasons.
+  /** List of each of the failed delete remediation exceptions with specific reasons.
     */
   @js.native
   trait FailedDeleteRemediationExceptionsBatch extends js.Object {
@@ -3180,8 +3093,7 @@ package configservice {
     }
   }
 
-  /**
-    * List of each of the failed remediations with specific reasons.
+  /** List of each of the failed remediations with specific reasons.
     */
   @js.native
   trait FailedRemediationBatch extends js.Object {
@@ -3202,8 +3114,7 @@ package configservice {
     }
   }
 
-  /**
-    * List of each of the failed remediation exceptions with specific reasons.
+  /** List of each of the failed remediation exceptions with specific reasons.
     */
   @js.native
   trait FailedRemediationExceptionBatch extends js.Object {
@@ -3224,8 +3135,7 @@ package configservice {
     }
   }
 
-  /**
-    * Details about the fields such as name of the field.
+  /** Details about the fields such as name of the field.
     */
   @js.native
   trait FieldInfo extends js.Object {
@@ -3423,7 +3333,6 @@ package configservice {
         "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAggregateResourceConfigRequest]
     }
   }
@@ -3444,8 +3353,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceDetailsByConfigRuleRequest extends js.Object {
@@ -3474,8 +3382,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceDetailsByConfigRuleResponse extends js.Object {
@@ -3496,8 +3403,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceDetailsByResourceRequest extends js.Object {
@@ -3526,8 +3432,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceDetailsByResourceResponse extends js.Object {
@@ -3548,8 +3453,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceSummaryByConfigRuleResponse extends js.Object {
@@ -3567,8 +3471,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceSummaryByResourceTypeRequest extends js.Object {
@@ -3586,8 +3489,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetComplianceSummaryByResourceTypeResponse extends js.Object {
@@ -3835,8 +3737,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>GetResourceConfigHistory</a> action.
+  /** The input for the <a>GetResourceConfigHistory</a> action.
     */
   @js.native
   trait GetResourceConfigHistoryRequest extends js.Object {
@@ -3874,8 +3775,7 @@ package configservice {
     }
   }
 
-  /**
-    * The output for the <a>GetResourceConfigHistory</a> action.
+  /** The output for the <a>GetResourceConfigHistory</a> action.
     */
   @js.native
   trait GetResourceConfigHistoryResponse extends js.Object {
@@ -3896,8 +3796,7 @@ package configservice {
     }
   }
 
-  /**
-    * The count of resources that are grouped by the group name.
+  /** The count of resources that are grouped by the group name.
     */
   @js.native
   trait GroupedResourceCount extends js.Object {
@@ -3915,7 +3814,6 @@ package configservice {
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "ResourceCount" -> ResourceCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GroupedResourceCount]
     }
   }
@@ -3969,8 +3867,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListDiscoveredResourcesRequest extends js.Object {
@@ -4005,8 +3902,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListDiscoveredResourcesResponse extends js.Object {
@@ -4095,22 +3991,20 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[MemberAccountRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
 
-    @inline def values =
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
+    @inline def values = js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    )
   }
 
-  /**
-    * Organization config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.
+  /** Organization config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.
     */
   @js.native
   trait MemberAccountStatus extends js.Object {
@@ -4156,8 +4050,7 @@ package configservice {
     @inline def values = js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification)
   }
 
-  /**
-    * This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
+  /** This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
     */
   @js.native
   trait OrganizationAggregationSource extends js.Object {
@@ -4183,8 +4076,7 @@ package configservice {
     }
   }
 
-  /**
-    * An organization config rule that has information about config rules that AWS Config creates in member accounts.
+  /** An organization config rule that has information about config rules that AWS Config creates in member accounts.
     */
   @js.native
   trait OrganizationConfigRule extends js.Object {
@@ -4219,8 +4111,7 @@ package configservice {
     }
   }
 
-  /**
-    * Returns the status for an organization config rule in an organization.
+  /** Returns the status for an organization config rule in an organization.
     */
   @js.native
   trait OrganizationConfigRuleStatus extends js.Object {
@@ -4262,8 +4153,7 @@ package configservice {
     @inline def values = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
   }
 
-  /**
-    * An organization conformance pack that has information about conformance packs that AWS Config creates in member accounts.
+  /** An organization conformance pack that has information about conformance packs that AWS Config creates in member accounts.
     */
   @js.native
   trait OrganizationConformancePack extends js.Object {
@@ -4301,8 +4191,7 @@ package configservice {
     }
   }
 
-  /**
-    * Organization conformance pack creation or deletion status in each member account. This includes the name of the conformance pack, the status, error code and error message when the conformance pack creation or deletion failed.
+  /** Organization conformance pack creation or deletion status in each member account. This includes the name of the conformance pack, the status, error code and error message when the conformance pack creation or deletion failed.
     */
   @js.native
   trait OrganizationConformancePackDetailedStatus extends js.Object {
@@ -4337,8 +4226,7 @@ package configservice {
     }
   }
 
-  /**
-    * Returns the status for an organization conformance pack in an organization.
+  /** Returns the status for an organization conformance pack in an organization.
     */
   @js.native
   trait OrganizationConformancePackStatus extends js.Object {
@@ -4370,8 +4258,7 @@ package configservice {
     }
   }
 
-  /**
-    * An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
+  /** An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
     */
   @js.native
   trait OrganizationCustomRuleMetadata extends js.Object {
@@ -4415,8 +4302,7 @@ package configservice {
     }
   }
 
-  /**
-    * An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
+  /** An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
     */
   @js.native
   trait OrganizationManagedRuleMetadata extends js.Object {
@@ -4470,22 +4356,20 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceDetailedStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
 
-    @inline def values =
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
+    @inline def values = js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    )
   }
 
-  /**
-    * Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.
+  /** Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.
     */
   @js.native
   trait OrganizationResourceDetailedStatusFilters extends js.Object {
@@ -4519,18 +4403,17 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceStatus]
 
-    @inline def values =
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
+    @inline def values = js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    )
   }
 
   @js.native
@@ -4546,18 +4429,17 @@ package configservice {
     val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationRuleStatus]
     val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationRuleStatus]
 
-    @inline def values =
-      js.Array(
-        CREATE_SUCCESSFUL,
-        CREATE_IN_PROGRESS,
-        CREATE_FAILED,
-        DELETE_SUCCESSFUL,
-        DELETE_FAILED,
-        DELETE_IN_PROGRESS,
-        UPDATE_SUCCESSFUL,
-        UPDATE_IN_PROGRESS,
-        UPDATE_FAILED
-      )
+    @inline def values = js.Array(
+      CREATE_SUCCESSFUL,
+      CREATE_IN_PROGRESS,
+      CREATE_FAILED,
+      DELETE_SUCCESSFUL,
+      DELETE_FAILED,
+      DELETE_IN_PROGRESS,
+      UPDATE_SUCCESSFUL,
+      UPDATE_IN_PROGRESS,
+      UPDATE_FAILED
+    )
   }
 
   @js.native
@@ -4569,8 +4451,7 @@ package configservice {
     @inline def values = js.Array(CUSTOM_LAMBDA, AWS)
   }
 
-  /**
-    * An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.
+  /** An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.
     */
   @js.native
   trait PendingAggregationRequest extends js.Object {
@@ -4695,8 +4576,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>PutConfigurationRecorder</a> action.
+  /** The input for the <a>PutConfigurationRecorder</a> action.
     */
   @js.native
   trait PutConfigurationRecorderRequest extends js.Object {
@@ -4711,7 +4591,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigurationRecorder" -> ConfigurationRecorder.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutConfigurationRecorderRequest]
     }
   }
@@ -4765,8 +4644,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>PutDeliveryChannel</a> action.
+  /** The input for the <a>PutDeliveryChannel</a> action.
     */
   @js.native
   trait PutDeliveryChannelRequest extends js.Object {
@@ -4781,13 +4659,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "DeliveryChannel" -> DeliveryChannel.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutDeliveryChannelRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait PutEvaluationsRequest extends js.Object {
@@ -4813,8 +4689,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait PutEvaluationsResponse extends js.Object {
@@ -4940,7 +4815,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "RemediationConfigurations" -> RemediationConfigurations.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRemediationConfigurationsRequest]
     }
   }
@@ -5050,7 +4924,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "RetentionPeriodInDays" -> RetentionPeriodInDays.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutRetentionConfigurationRequest]
     }
   }
@@ -5071,8 +4944,7 @@ package configservice {
     }
   }
 
-  /**
-    * Details about the query.
+  /** Details about the query.
     */
   @js.native
   trait QueryInfo extends js.Object {
@@ -5100,15 +4972,14 @@ package configservice {
     @inline def values = js.Array(Pending, Success, Failure)
   }
 
-  /**
-    * Specifies the types of AWS resource for which AWS Config records configuration changes.
-    *  In the recording group, you specify whether all supported types or specific types of resources are recorded.
-    *  By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.
-    *  You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.
-    *  <important> The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.
-    *  </important> If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.
-    *  For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]].
-    *  For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources AWS Config Records]].
+  /** Specifies the types of AWS resource for which AWS Config records configuration changes.
+    * In the recording group, you specify whether all supported types or specific types of resources are recorded.
+    * By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.
+    * You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.
+    * <important> The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.
+    * </important> If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.
+    * For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]].
+    * For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources AWS Config Records]].
     */
   @js.native
   trait RecordingGroup extends js.Object {
@@ -5132,8 +5003,7 @@ package configservice {
     }
   }
 
-  /**
-    * The relationship of the related resource to the main resource.
+  /** The relationship of the related resource to the main resource.
     */
   @js.native
   trait Relationship extends js.Object {
@@ -5160,8 +5030,7 @@ package configservice {
     }
   }
 
-  /**
-    * An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
+  /** An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.
     */
   @js.native
   trait RemediationConfiguration extends js.Object {
@@ -5214,8 +5083,7 @@ package configservice {
     }
   }
 
-  /**
-    * An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type.
+  /** An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type.
     */
   @js.native
   trait RemediationException extends js.Object {
@@ -5247,8 +5115,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details that identify a resource within AWS Config, including the resource type and resource ID.
+  /** The details that identify a resource within AWS Config, including the resource type and resource ID.
     */
   @js.native
   trait RemediationExceptionResourceKey extends js.Object {
@@ -5280,8 +5147,7 @@ package configservice {
     @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
-  /**
-    * Provides details of the current status of the invoked remediation action for that resource.
+  /** Provides details of the current status of the invoked remediation action for that resource.
     */
   @js.native
   trait RemediationExecutionStatus extends js.Object {
@@ -5311,8 +5177,7 @@ package configservice {
     }
   }
 
-  /**
-    * Name of the step from the SSM document.
+  /** Name of the step from the SSM document.
     */
   @js.native
   trait RemediationExecutionStep extends js.Object {
@@ -5352,8 +5217,7 @@ package configservice {
     @inline def values = js.Array(SUCCEEDED, PENDING, FAILED)
   }
 
-  /**
-    * The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a static value.
+  /** The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a static value.
     */
   @js.native
   trait RemediationParameterValue extends js.Object {
@@ -5382,8 +5246,7 @@ package configservice {
     @inline def values = js.Array(SSM_DOCUMENT)
   }
 
-  /**
-    * An object that contains the resource type and the number of resources.
+  /** An object that contains the resource type and the number of resources.
     */
   @js.native
   trait ResourceCount extends js.Object {
@@ -5404,8 +5267,7 @@ package configservice {
     }
   }
 
-  /**
-    * Filters the resource count based on account ID, region, and resource type.
+  /** Filters the resource count based on account ID, region, and resource type.
     */
   @js.native
   trait ResourceCountFilters extends js.Object {
@@ -5439,8 +5301,7 @@ package configservice {
     @inline def values = js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
   }
 
-  /**
-    * Filters the results by resource account ID, region, resource ID, and resource name.
+  /** Filters the results by resource account ID, region, resource ID, and resource name.
     */
   @js.native
   trait ResourceFilters extends js.Object {
@@ -5467,8 +5328,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name.
+  /** The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name.
     */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -5495,8 +5355,7 @@ package configservice {
     }
   }
 
-  /**
-    * The details that identify a resource within AWS Config, including the resource type and resource ID.
+  /** The details that identify a resource within AWS Config, including the resource type and resource ID.
     */
   @js.native
   trait ResourceKey extends js.Object {
@@ -5514,7 +5373,6 @@ package configservice {
         "resourceId" -> resourceId.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceKey]
     }
   }
@@ -5616,106 +5474,104 @@ package configservice {
     val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
     val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
-    @inline def values =
-      js.Array(
-        `AWS::EC2::CustomerGateway`,
-        `AWS::EC2::EIP`,
-        `AWS::EC2::Host`,
-        `AWS::EC2::Instance`,
-        `AWS::EC2::InternetGateway`,
-        `AWS::EC2::NetworkAcl`,
-        `AWS::EC2::NetworkInterface`,
-        `AWS::EC2::RouteTable`,
-        `AWS::EC2::SecurityGroup`,
-        `AWS::EC2::Subnet`,
-        `AWS::CloudTrail::Trail`,
-        `AWS::EC2::Volume`,
-        `AWS::EC2::VPC`,
-        `AWS::EC2::VPNConnection`,
-        `AWS::EC2::VPNGateway`,
-        `AWS::EC2::RegisteredHAInstance`,
-        `AWS::EC2::NatGateway`,
-        `AWS::EC2::EgressOnlyInternetGateway`,
-        `AWS::EC2::VPCEndpoint`,
-        `AWS::EC2::VPCEndpointService`,
-        `AWS::EC2::FlowLog`,
-        `AWS::EC2::VPCPeeringConnection`,
-        `AWS::Elasticsearch::Domain`,
-        `AWS::IAM::Group`,
-        `AWS::IAM::Policy`,
-        `AWS::IAM::Role`,
-        `AWS::IAM::User`,
-        `AWS::ElasticLoadBalancingV2::LoadBalancer`,
-        `AWS::ACM::Certificate`,
-        `AWS::RDS::DBInstance`,
-        `AWS::RDS::DBSubnetGroup`,
-        `AWS::RDS::DBSecurityGroup`,
-        `AWS::RDS::DBSnapshot`,
-        `AWS::RDS::DBCluster`,
-        `AWS::RDS::DBClusterSnapshot`,
-        `AWS::RDS::EventSubscription`,
-        `AWS::S3::Bucket`,
-        `AWS::S3::AccountPublicAccessBlock`,
-        `AWS::Redshift::Cluster`,
-        `AWS::Redshift::ClusterSnapshot`,
-        `AWS::Redshift::ClusterParameterGroup`,
-        `AWS::Redshift::ClusterSecurityGroup`,
-        `AWS::Redshift::ClusterSubnetGroup`,
-        `AWS::Redshift::EventSubscription`,
-        `AWS::SSM::ManagedInstanceInventory`,
-        `AWS::CloudWatch::Alarm`,
-        `AWS::CloudFormation::Stack`,
-        `AWS::ElasticLoadBalancing::LoadBalancer`,
-        `AWS::AutoScaling::AutoScalingGroup`,
-        `AWS::AutoScaling::LaunchConfiguration`,
-        `AWS::AutoScaling::ScalingPolicy`,
-        `AWS::AutoScaling::ScheduledAction`,
-        `AWS::DynamoDB::Table`,
-        `AWS::CodeBuild::Project`,
-        `AWS::WAF::RateBasedRule`,
-        `AWS::WAF::Rule`,
-        `AWS::WAF::RuleGroup`,
-        `AWS::WAF::WebACL`,
-        `AWS::WAFRegional::RateBasedRule`,
-        `AWS::WAFRegional::Rule`,
-        `AWS::WAFRegional::RuleGroup`,
-        `AWS::WAFRegional::WebACL`,
-        `AWS::CloudFront::Distribution`,
-        `AWS::CloudFront::StreamingDistribution`,
-        `AWS::Lambda::Function`,
-        `AWS::ElasticBeanstalk::Application`,
-        `AWS::ElasticBeanstalk::ApplicationVersion`,
-        `AWS::ElasticBeanstalk::Environment`,
-        `AWS::WAFv2::WebACL`,
-        `AWS::WAFv2::RuleGroup`,
-        `AWS::WAFv2::IPSet`,
-        `AWS::WAFv2::RegexPatternSet`,
-        `AWS::WAFv2::ManagedRuleSet`,
-        `AWS::XRay::EncryptionConfig`,
-        `AWS::SSM::AssociationCompliance`,
-        `AWS::SSM::PatchCompliance`,
-        `AWS::Shield::Protection`,
-        `AWS::ShieldRegional::Protection`,
-        `AWS::Config::ResourceCompliance`,
-        `AWS::ApiGateway::Stage`,
-        `AWS::ApiGateway::RestApi`,
-        `AWS::ApiGatewayV2::Stage`,
-        `AWS::ApiGatewayV2::Api`,
-        `AWS::CodePipeline::Pipeline`,
-        `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
-        `AWS::ServiceCatalog::CloudFormationProduct`,
-        `AWS::ServiceCatalog::Portfolio`,
-        `AWS::SQS::Queue`,
-        `AWS::KMS::Key`,
-        `AWS::QLDB::Ledger`,
-        `AWS::SecretsManager::Secret`,
-        `AWS::SNS::Topic`,
-        `AWS::SSM::FileData`
-      )
+    @inline def values = js.Array(
+      `AWS::EC2::CustomerGateway`,
+      `AWS::EC2::EIP`,
+      `AWS::EC2::Host`,
+      `AWS::EC2::Instance`,
+      `AWS::EC2::InternetGateway`,
+      `AWS::EC2::NetworkAcl`,
+      `AWS::EC2::NetworkInterface`,
+      `AWS::EC2::RouteTable`,
+      `AWS::EC2::SecurityGroup`,
+      `AWS::EC2::Subnet`,
+      `AWS::CloudTrail::Trail`,
+      `AWS::EC2::Volume`,
+      `AWS::EC2::VPC`,
+      `AWS::EC2::VPNConnection`,
+      `AWS::EC2::VPNGateway`,
+      `AWS::EC2::RegisteredHAInstance`,
+      `AWS::EC2::NatGateway`,
+      `AWS::EC2::EgressOnlyInternetGateway`,
+      `AWS::EC2::VPCEndpoint`,
+      `AWS::EC2::VPCEndpointService`,
+      `AWS::EC2::FlowLog`,
+      `AWS::EC2::VPCPeeringConnection`,
+      `AWS::Elasticsearch::Domain`,
+      `AWS::IAM::Group`,
+      `AWS::IAM::Policy`,
+      `AWS::IAM::Role`,
+      `AWS::IAM::User`,
+      `AWS::ElasticLoadBalancingV2::LoadBalancer`,
+      `AWS::ACM::Certificate`,
+      `AWS::RDS::DBInstance`,
+      `AWS::RDS::DBSubnetGroup`,
+      `AWS::RDS::DBSecurityGroup`,
+      `AWS::RDS::DBSnapshot`,
+      `AWS::RDS::DBCluster`,
+      `AWS::RDS::DBClusterSnapshot`,
+      `AWS::RDS::EventSubscription`,
+      `AWS::S3::Bucket`,
+      `AWS::S3::AccountPublicAccessBlock`,
+      `AWS::Redshift::Cluster`,
+      `AWS::Redshift::ClusterSnapshot`,
+      `AWS::Redshift::ClusterParameterGroup`,
+      `AWS::Redshift::ClusterSecurityGroup`,
+      `AWS::Redshift::ClusterSubnetGroup`,
+      `AWS::Redshift::EventSubscription`,
+      `AWS::SSM::ManagedInstanceInventory`,
+      `AWS::CloudWatch::Alarm`,
+      `AWS::CloudFormation::Stack`,
+      `AWS::ElasticLoadBalancing::LoadBalancer`,
+      `AWS::AutoScaling::AutoScalingGroup`,
+      `AWS::AutoScaling::LaunchConfiguration`,
+      `AWS::AutoScaling::ScalingPolicy`,
+      `AWS::AutoScaling::ScheduledAction`,
+      `AWS::DynamoDB::Table`,
+      `AWS::CodeBuild::Project`,
+      `AWS::WAF::RateBasedRule`,
+      `AWS::WAF::Rule`,
+      `AWS::WAF::RuleGroup`,
+      `AWS::WAF::WebACL`,
+      `AWS::WAFRegional::RateBasedRule`,
+      `AWS::WAFRegional::Rule`,
+      `AWS::WAFRegional::RuleGroup`,
+      `AWS::WAFRegional::WebACL`,
+      `AWS::CloudFront::Distribution`,
+      `AWS::CloudFront::StreamingDistribution`,
+      `AWS::Lambda::Function`,
+      `AWS::ElasticBeanstalk::Application`,
+      `AWS::ElasticBeanstalk::ApplicationVersion`,
+      `AWS::ElasticBeanstalk::Environment`,
+      `AWS::WAFv2::WebACL`,
+      `AWS::WAFv2::RuleGroup`,
+      `AWS::WAFv2::IPSet`,
+      `AWS::WAFv2::RegexPatternSet`,
+      `AWS::WAFv2::ManagedRuleSet`,
+      `AWS::XRay::EncryptionConfig`,
+      `AWS::SSM::AssociationCompliance`,
+      `AWS::SSM::PatchCompliance`,
+      `AWS::Shield::Protection`,
+      `AWS::ShieldRegional::Protection`,
+      `AWS::Config::ResourceCompliance`,
+      `AWS::ApiGateway::Stage`,
+      `AWS::ApiGateway::RestApi`,
+      `AWS::ApiGatewayV2::Stage`,
+      `AWS::ApiGatewayV2::Api`,
+      `AWS::CodePipeline::Pipeline`,
+      `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
+      `AWS::ServiceCatalog::CloudFormationProduct`,
+      `AWS::ServiceCatalog::Portfolio`,
+      `AWS::SQS::Queue`,
+      `AWS::KMS::Key`,
+      `AWS::QLDB::Ledger`,
+      `AWS::SecretsManager::Secret`,
+      `AWS::SNS::Topic`,
+      `AWS::SSM::FileData`
+    )
   }
 
-  /**
-    * The dynamic value of the resource.
+  /** The dynamic value of the resource.
     */
   @js.native
   trait ResourceValue extends js.Object {
@@ -5730,7 +5586,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceValue]
     }
   }
@@ -5743,8 +5598,7 @@ package configservice {
     @inline def values = js.Array(RESOURCE_ID)
   }
 
-  /**
-    * An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config.
+  /** An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config.
     */
   @js.native
   trait RetentionConfiguration extends js.Object {
@@ -5762,13 +5616,11 @@ package configservice {
         "Name" -> Name.asInstanceOf[js.Any],
         "RetentionPeriodInDays" -> RetentionPeriodInDays.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RetentionConfiguration]
     }
   }
 
-  /**
-    * Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
+  /** Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
     */
   @js.native
   trait Scope extends js.Object {
@@ -5893,8 +5745,7 @@ package configservice {
     }
   }
 
-  /**
-    * Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.
+  /** Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.
     */
   @js.native
   trait Source extends js.Object {
@@ -5920,8 +5771,7 @@ package configservice {
     }
   }
 
-  /**
-    * Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.
+  /** Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.
     */
   @js.native
   trait SourceDetail extends js.Object {
@@ -5945,8 +5795,7 @@ package configservice {
     }
   }
 
-  /**
-    * AWS Systems Manager (SSM) specific remediation controls.
+  /** AWS Systems Manager (SSM) specific remediation controls.
     */
   @js.native
   trait SsmControls extends js.Object {
@@ -5967,8 +5816,7 @@ package configservice {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait StartConfigRulesEvaluationRequest extends js.Object {
@@ -5986,24 +5834,20 @@ package configservice {
     }
   }
 
-  /**
-    * The output when you start the evaluation for the specified AWS Config rule.
+  /** The output when you start the evaluation for the specified AWS Config rule.
     */
   @js.native
-  trait StartConfigRulesEvaluationResponse extends js.Object {}
+  trait StartConfigRulesEvaluationResponse extends js.Object
 
   object StartConfigRulesEvaluationResponse {
     @inline
-    def apply(
-    ): StartConfigRulesEvaluationResponse = {
+    def apply(): StartConfigRulesEvaluationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartConfigRulesEvaluationResponse]
     }
   }
 
-  /**
-    * The input for the <a>StartConfigurationRecorder</a> action.
+  /** The input for the <a>StartConfigurationRecorder</a> action.
     */
   @js.native
   trait StartConfigurationRecorderRequest extends js.Object {
@@ -6018,7 +5862,6 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartConfigurationRecorderRequest]
     }
   }
@@ -6039,7 +5882,6 @@ package configservice {
         "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
         "ResourceKeys" -> ResourceKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartRemediationExecutionRequest]
     }
   }
@@ -6063,8 +5905,7 @@ package configservice {
     }
   }
 
-  /**
-    * The static value of the resource.
+  /** The static value of the resource.
     */
   @js.native
   trait StaticValue extends js.Object {
@@ -6079,13 +5920,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StaticValue]
     }
   }
 
-  /**
-    * Status filter object to filter results based on specific member account ID or status type for an organization config rule.
+  /** Status filter object to filter results based on specific member account ID or status type for an organization config rule.
     */
   @js.native
   trait StatusDetailFilters extends js.Object {
@@ -6106,8 +5945,7 @@ package configservice {
     }
   }
 
-  /**
-    * The input for the <a>StopConfigurationRecorder</a> action.
+  /** The input for the <a>StopConfigurationRecorder</a> action.
     */
   @js.native
   trait StopConfigurationRecorderRequest extends js.Object {
@@ -6122,13 +5960,11 @@ package configservice {
       val __obj = js.Dynamic.literal(
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopConfigurationRecorderRequest]
     }
   }
 
-  /**
-    * The tags for the resource. The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+  /** The tags for the resource. The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait Tag extends js.Object {
@@ -6165,7 +6001,6 @@ package configservice {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -6186,7 +6021,6 @@ package configservice {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }

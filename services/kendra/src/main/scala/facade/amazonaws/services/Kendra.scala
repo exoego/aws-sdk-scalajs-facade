@@ -167,8 +167,7 @@ package kendra {
     def updateIndex(params: UpdateIndexRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * Access Control List files for the documents in a data source.
+  /** Access Control List files for the documents in a data source.
     */
   @js.native
   trait AccessControlListConfiguration extends js.Object {
@@ -186,8 +185,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides information about the column that should be used for filtering the query response by groups.
+  /** Provides information about the column that should be used for filtering the query response by groups.
     */
   @js.native
   trait AclConfiguration extends js.Object {
@@ -202,13 +200,11 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "AllowedGroupsColumnName" -> AllowedGroupsColumnName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AclConfiguration]
     }
   }
 
-  /**
-    * An attribute returned from an index query.
+  /** An attribute returned from an index query.
     */
   @js.native
   trait AdditionalResultAttribute extends js.Object {
@@ -229,13 +225,11 @@ package kendra {
         "Value" -> Value.asInstanceOf[js.Any],
         "ValueType" -> ValueType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdditionalResultAttribute]
     }
   }
 
-  /**
-    * An attribute returned with a document from a search.
+  /** An attribute returned with a document from a search.
     */
   @js.native
   trait AdditionalResultAttributeValue extends js.Object {
@@ -261,13 +255,12 @@ package kendra {
     @inline def values = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
   }
 
-  /**
-    * Provides filtering the query results based on document attributes.
-    *  When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:
-    *  <code>&lt;AndAllFilters&gt;</code>
-    *  <ol> * <code> &lt;OrAllFilters&gt;</code>
-    *  * <code> &lt;EqualTo&gt;</code>
-    *  </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
+  /** Provides filtering the query results based on document attributes.
+    * When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:
+    * <code>&lt;AndAllFilters&gt;</code>
+    * <ol> * <code> &lt;OrAllFilters&gt;</code>
+    * * <code> &lt;EqualTo&gt;</code>
+    * </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
     */
   @js.native
   trait AttributeFilter extends js.Object {
@@ -352,8 +345,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a> operation.
+  /** Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a> operation.
     */
   @js.native
   trait BatchDeleteDocumentResponseFailedDocument extends js.Object {
@@ -417,8 +409,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides information about a document that could not be indexed.
+  /** Provides information about a document that could not be indexed.
     */
   @js.native
   trait BatchPutDocumentResponseFailedDocument extends js.Object {
@@ -442,8 +433,7 @@ package kendra {
     }
   }
 
-  /**
-    * Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements.
+  /** Specifies capacity units configured for your index. You can add and remove capacity units to tune an index to your requirements.
     */
   @js.native
   trait CapacityUnitsConfiguration extends js.Object {
@@ -461,13 +451,11 @@ package kendra {
         "QueryCapacityUnits" -> QueryCapacityUnits.asInstanceOf[js.Any],
         "StorageCapacityUnits" -> StorageCapacityUnits.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CapacityUnitsConfiguration]
     }
   }
 
-  /**
-    * Gathers information about when a particular result was clicked by a user. Your application uses the <a>SubmitFeedback</a> operation to provide click information.
+  /** Gathers information about when a particular result was clicked by a user. Your application uses the <a>SubmitFeedback</a> operation to provide click information.
     */
   @js.native
   trait ClickFeedback extends js.Object {
@@ -485,13 +473,11 @@ package kendra {
         "ClickTime" -> ClickTime.asInstanceOf[js.Any],
         "ResultId" -> ResultId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ClickFeedback]
     }
   }
 
-  /**
-    * Provides information about how Amazon Kendra should use the columns of a database in an index.
+  /** Provides information about how Amazon Kendra should use the columns of a database in an index.
     */
   @js.native
   trait ColumnConfiguration extends js.Object {
@@ -523,8 +509,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides the information necessary to connect to a database.
+  /** Provides the information necessary to connect to a database.
     */
   @js.native
   trait ConnectionConfiguration extends js.Object {
@@ -551,7 +536,6 @@ package kendra {
         "SecretArn" -> SecretArn.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConnectionConfiguration]
     }
   }
@@ -620,7 +604,6 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDataSourceResponse]
     }
   }
@@ -726,8 +709,7 @@ package kendra {
     }
   }
 
-  /**
-    * Configuration information for a Amazon Kendra data source.
+  /** Configuration information for a Amazon Kendra data source.
     */
   @js.native
   trait DataSourceConfiguration extends js.Object {
@@ -772,8 +754,7 @@ package kendra {
     @inline def values = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
   }
 
-  /**
-    * Summary information for a Amazon Kendra data source. Returned in a call to .
+  /** Summary information for a Amazon Kendra data source. Returned in a call to .
     */
   @js.native
   trait DataSourceSummary extends js.Object {
@@ -806,8 +787,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides information about a synchronization job.
+  /** Provides information about a synchronization job.
     */
   @js.native
   trait DataSourceSyncJob extends js.Object {
@@ -846,8 +826,7 @@ package kendra {
     }
   }
 
-  /**
-    * Maps a particular data source sync job to a particular data source.
+  /** Maps a particular data source sync job to a particular data source.
     */
   @js.native
   trait DataSourceSyncJobMetricTarget extends js.Object {
@@ -865,13 +844,11 @@ package kendra {
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any],
         "DataSourceSyncJobId" -> DataSourceSyncJobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataSourceSyncJobMetricTarget]
     }
   }
 
-  /**
-    * Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector.
+  /** Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a connector.
     */
   @js.native
   trait DataSourceSyncJobMetrics extends js.Object {
@@ -915,8 +892,7 @@ package kendra {
     @inline def values = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
   }
 
-  /**
-    * Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <a>UpdateIndex</a> operation.
+  /** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <a>UpdateIndex</a> operation.
     */
   @js.native
   trait DataSourceToIndexFieldMapping extends js.Object {
@@ -955,8 +931,7 @@ package kendra {
     @inline def values = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW)
   }
 
-  /**
-    * Provides information for connecting to an Amazon VPC.
+  /** Provides information for connecting to an Amazon VPC.
     */
   @js.native
   trait DataSourceVpcConfiguration extends js.Object {
@@ -974,13 +949,11 @@ package kendra {
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataSourceVpcConfiguration]
     }
   }
 
-  /**
-    * Provides the information necessary to connect a database to an index.
+  /** Provides the information necessary to connect a database to an index.
     */
   @js.native
   trait DatabaseConfiguration extends js.Object {
@@ -1042,7 +1015,6 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataSourceRequest]
     }
   }
@@ -1063,7 +1035,6 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFaqRequest]
     }
   }
@@ -1081,7 +1052,6 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIndexRequest]
     }
   }
@@ -1102,7 +1072,6 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDataSourceRequest]
     }
   }
@@ -1172,7 +1141,6 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFaqRequest]
     }
   }
@@ -1233,7 +1201,6 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIndexRequest]
     }
   }
@@ -1290,8 +1257,7 @@ package kendra {
     }
   }
 
-  /**
-    * A document in an index.
+  /** A document in an index.
     */
   @js.native
   trait Document extends js.Object {
@@ -1329,8 +1295,7 @@ package kendra {
     }
   }
 
-  /**
-    * A custom attribute value assigned to a document.
+  /** A custom attribute value assigned to a document.
     */
   @js.native
   trait DocumentAttribute extends js.Object {
@@ -1348,13 +1313,11 @@ package kendra {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DocumentAttribute]
     }
   }
 
-  /**
-    * The value of a custom document attribute. You can only provide one value for a custom attribute.
+  /** The value of a custom document attribute. You can only provide one value for a custom attribute.
     */
   @js.native
   trait DocumentAttributeValue extends js.Object {
@@ -1381,8 +1344,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides the count of documents that match a particular attribute when doing a faceted search.
+  /** Provides the count of documents that match a particular attribute when doing a faceted search.
     */
   @js.native
   trait DocumentAttributeValueCountPair extends js.Object {
@@ -1414,8 +1376,7 @@ package kendra {
     @inline def values = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
   }
 
-  /**
-    * Specifies the properties of a custom index field.
+  /** Specifies the properties of a custom index field.
     */
   @js.native
   trait DocumentMetadataConfiguration extends js.Object {
@@ -1444,8 +1405,7 @@ package kendra {
     }
   }
 
-  /**
-    * Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.
+  /** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.
     */
   @js.native
   trait DocumentsMetadataConfiguration extends js.Object {
@@ -1472,8 +1432,7 @@ package kendra {
     @inline def values = js.Array(InternalError, InvalidRequest)
   }
 
-  /**
-    * Information about a document attribute
+  /** Information about a document attribute
     */
   @js.native
   trait Facet extends js.Object {
@@ -1491,8 +1450,7 @@ package kendra {
     }
   }
 
-  /**
-    * The facet values for the documents in the response.
+  /** The facet values for the documents in the response.
     */
   @js.native
   trait FacetResult extends js.Object {
@@ -1513,8 +1471,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides statistical information about the FAQ questions and answers contained in an index.
+  /** Provides statistical information about the FAQ questions and answers contained in an index.
     */
   @js.native
   trait FaqStatistics extends js.Object {
@@ -1529,7 +1486,6 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "IndexedQuestionAnswersCount" -> IndexedQuestionAnswersCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FaqStatistics]
     }
   }
@@ -1546,8 +1502,7 @@ package kendra {
     @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
   }
 
-  /**
-    * Provides information about a frequently asked questions and answer contained in an index.
+  /** Provides information about a frequently asked questions and answer contained in an index.
     */
   @js.native
   trait FaqSummary extends js.Object {
@@ -1577,8 +1532,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.
+  /** Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.
     */
   @js.native
   trait Highlight extends js.Object {
@@ -1604,8 +1558,7 @@ package kendra {
     }
   }
 
-  /**
-    * A summary of information about an index.
+  /** A summary of information about an index.
     */
   @js.native
   trait IndexConfigurationSummary extends js.Object {
@@ -1649,8 +1602,7 @@ package kendra {
     @inline def values = js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION)
   }
 
-  /**
-    * Provides information about the number of documents and the number of questions and answers in an index.
+  /** Provides information about the number of documents and the number of questions and answers in an index.
     */
   @js.native
   trait IndexStatistics extends js.Object {
@@ -1668,7 +1620,6 @@ package kendra {
         "FaqStatistics" -> FaqStatistics.asInstanceOf[js.Any],
         "TextDocumentStatistics" -> TextDocumentStatistics.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[IndexStatistics]
     }
   }
@@ -1875,7 +1826,6 @@ package kendra {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1896,8 +1846,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides configuration information for data sources that connect to OneDrive.
+  /** Provides configuration information for data sources that connect to OneDrive.
     */
   @js.native
   trait OneDriveConfiguration extends js.Object {
@@ -1932,8 +1881,7 @@ package kendra {
     }
   }
 
-  /**
-    * User accounts whose documents should be indexed.
+  /** User accounts whose documents should be indexed.
     */
   @js.native
   trait OneDriveUsers extends js.Object {
@@ -1963,8 +1911,7 @@ package kendra {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /**
-    * Provides user and group information for document access filtering.
+  /** Provides user and group information for document access filtering.
     */
   @js.native
   trait Principal extends js.Object {
@@ -1985,7 +1932,6 @@ package kendra {
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Principal]
     }
   }
@@ -2075,9 +2021,8 @@ package kendra {
     }
   }
 
-  /**
-    * A single query result.
-    *  A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.
+  /** A single query result.
+    * A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.
     */
   @js.native
   trait QueryResultItem extends js.Object {
@@ -2135,8 +2080,7 @@ package kendra {
     @inline def values = js.Array(ALLOW, DENY)
   }
 
-  /**
-    * Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.
+  /** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.
     */
   @js.native
   trait Relevance extends js.Object {
@@ -2166,8 +2110,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides feedback on how relevant a document is to a search. Your application uses the <a>SubmitFeedback</a> operation to provide relevance information.
+  /** Provides feedback on how relevant a document is to a search. Your application uses the <a>SubmitFeedback</a> operation to provide relevance information.
     */
   @js.native
   trait RelevanceFeedback extends js.Object {
@@ -2185,7 +2128,6 @@ package kendra {
         "RelevanceValue" -> RelevanceValue.asInstanceOf[js.Any],
         "ResultId" -> ResultId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RelevanceFeedback]
     }
   }
@@ -2199,8 +2141,7 @@ package kendra {
     @inline def values = js.Array(RELEVANT, NOT_RELEVANT)
   }
 
-  /**
-    * Provides configuration information for a data source to index documents in an Amazon S3 bucket.
+  /** Provides configuration information for a data source to index documents in an Amazon S3 bucket.
     */
   @js.native
   trait S3DataSourceConfiguration extends js.Object {
@@ -2232,8 +2173,7 @@ package kendra {
     }
   }
 
-  /**
-    * Information required to find a specific file in an Amazon S3 bucket.
+  /** Information required to find a specific file in an Amazon S3 bucket.
     */
   @js.native
   trait S3Path extends js.Object {
@@ -2251,13 +2191,11 @@ package kendra {
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Key" -> Key.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3Path]
     }
   }
 
-  /**
-    * Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.
+  /** Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.
     */
   @js.native
   trait SalesforceChatterFeedConfiguration extends js.Object {
@@ -2295,8 +2233,7 @@ package kendra {
     @inline def values = js.Array(ACTIVE_USER, STANDARD_USER)
   }
 
-  /**
-    * Provides configuration information for connecting to a Salesforce data source.
+  /** Provides configuration information for connecting to a Salesforce data source.
     */
   @js.native
   trait SalesforceConfiguration extends js.Object {
@@ -2340,8 +2277,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides configuration information for indexing Salesforce custom articles.
+  /** Provides configuration information for indexing Salesforce custom articles.
     */
   @js.native
   trait SalesforceCustomKnowledgeArticleTypeConfiguration extends js.Object {
@@ -2370,8 +2306,7 @@ package kendra {
     }
   }
 
-  /**
-    * Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both
+  /** Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both
     */
   @js.native
   trait SalesforceKnowledgeArticleConfiguration extends js.Object {
@@ -2407,8 +2342,7 @@ package kendra {
     @inline def values = js.Array(DRAFT, PUBLISHED, ARCHIVED)
   }
 
-  /**
-    * Provides configuration information for standard Salesforce knowledge articles.
+  /** Provides configuration information for standard Salesforce knowledge articles.
     */
   @js.native
   trait SalesforceStandardKnowledgeArticleTypeConfiguration extends js.Object {
@@ -2434,8 +2368,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides configuration information for processing attachments to Salesforce standard objects.
+  /** Provides configuration information for processing attachments to Salesforce standard objects.
     */
   @js.native
   trait SalesforceStandardObjectAttachmentConfiguration extends js.Object {
@@ -2456,8 +2389,7 @@ package kendra {
     }
   }
 
-  /**
-    * Specifies confguration information for indexing a single standard object.
+  /** Specifies confguration information for indexing a single standard object.
     */
   @js.native
   trait SalesforceStandardObjectConfiguration extends js.Object {
@@ -2510,8 +2442,7 @@ package kendra {
     @inline def values = js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
   }
 
-  /**
-    * Provides information about how a custom index field is used during a search.
+  /** Provides information about how a custom index field is used during a search.
     */
   @js.native
   trait Search extends js.Object {
@@ -2538,8 +2469,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.
+  /** Provides the identifier of the AWS KMS customer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.
     */
   @js.native
   trait ServerSideEncryptionConfiguration extends js.Object {
@@ -2566,8 +2496,7 @@ package kendra {
     @inline def values = js.Array(LONDON, OTHERS)
   }
 
-  /**
-    * Provides configuration information required to connect to a ServiceNow data source.
+  /** Provides configuration information required to connect to a ServiceNow data source.
     */
   @js.native
   trait ServiceNowConfiguration extends js.Object {
@@ -2599,8 +2528,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides configuration information for crawling knowledge articles in the ServiceNow site.
+  /** Provides configuration information for crawling knowledge articles in the ServiceNow site.
     */
   @js.native
   trait ServiceNowKnowledgeArticleConfiguration extends js.Object {
@@ -2635,8 +2563,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides configuration information for crawling service catalog items in the ServiceNow site
+  /** Provides configuration information for crawling service catalog items in the ServiceNow site
     */
   @js.native
   trait ServiceNowServiceCatalogConfiguration extends js.Object {
@@ -2671,8 +2598,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides configuration information for connecting to a Microsoft SharePoint data source.
+  /** Provides configuration information for connecting to a Microsoft SharePoint data source.
     */
   @js.native
   trait SharePointConfiguration extends js.Object {
@@ -2736,8 +2662,7 @@ package kendra {
     @inline def values = js.Array(DESC, ASC)
   }
 
-  /**
-    * Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
+  /** Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
     */
   @js.native
   trait SortingConfiguration extends js.Object {
@@ -2755,13 +2680,11 @@ package kendra {
         "DocumentAttributeKey" -> DocumentAttributeKey.asInstanceOf[js.Any],
         "SortOrder" -> SortOrder.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SortingConfiguration]
     }
   }
 
-  /**
-    * Provides information that configures Amazon Kendra to use a SQL database.
+  /** Provides information that configures Amazon Kendra to use a SQL database.
     */
   @js.native
   trait SqlConfiguration extends js.Object {
@@ -2795,7 +2718,6 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDataSourceSyncJobRequest]
     }
   }
@@ -2832,7 +2754,6 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any],
         "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopDataSourceSyncJobRequest]
     }
   }
@@ -2864,8 +2785,7 @@ package kendra {
     }
   }
 
-  /**
-    * A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
+  /** A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2883,7 +2803,6 @@ package kendra {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2904,26 +2823,22 @@ package kendra {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * Provides information about text documents indexed in an index.
+  /** Provides information about text documents indexed in an index.
     */
   @js.native
   trait TextDocumentStatistics extends js.Object {
@@ -2941,13 +2856,11 @@ package kendra {
         "IndexedTextBytes" -> IndexedTextBytes.asInstanceOf[js.Any],
         "IndexedTextDocumentsCount" -> IndexedTextDocumentsCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TextDocumentStatistics]
     }
   }
 
-  /**
-    * Provides text and information about where to highlight the text.
+  /** Provides text and information about where to highlight the text.
     */
   @js.native
   trait TextWithHighlights extends js.Object {
@@ -2968,8 +2881,7 @@ package kendra {
     }
   }
 
-  /**
-    * Provides a range of time.
+  /** Provides a range of time.
     */
   @js.native
   trait TimeRange extends js.Object {
@@ -3006,20 +2918,17 @@ package kendra {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

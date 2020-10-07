@@ -257,7 +257,6 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "SharedDirectoryId" -> SharedDirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcceptSharedDirectoryRequest]
     }
   }
@@ -303,14 +302,12 @@ package directoryservice {
   }
 
   @js.native
-  trait AddIpRoutesResult extends js.Object {}
+  trait AddIpRoutesResult extends js.Object
 
   object AddIpRoutesResult {
     @inline
-    def apply(
-    ): AddIpRoutesResult = {
+    def apply(): AddIpRoutesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddIpRoutesResult]
     }
   }
@@ -331,26 +328,22 @@ package directoryservice {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceRequest]
     }
   }
 
   @js.native
-  trait AddTagsToResourceResult extends js.Object {}
+  trait AddTagsToResourceResult extends js.Object
 
   object AddTagsToResourceResult {
     @inline
-    def apply(
-    ): AddTagsToResourceResult = {
+    def apply(): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsToResourceResult]
     }
   }
 
-  /**
-    * Represents a named directory attribute.
+  /** Represents a named directory attribute.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -387,26 +380,22 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "SchemaExtensionId" -> SchemaExtensionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelSchemaExtensionRequest]
     }
   }
 
   @js.native
-  trait CancelSchemaExtensionResult extends js.Object {}
+  trait CancelSchemaExtensionResult extends js.Object
 
   object CancelSchemaExtensionResult {
     @inline
-    def apply(
-    ): CancelSchemaExtensionResult = {
+    def apply(): CancelSchemaExtensionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelSchemaExtensionResult]
     }
   }
 
-  /**
-    * Information about the certificate.
+  /** Information about the certificate.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -439,8 +428,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains general information about a certificate.
+  /** Contains general information about a certificate.
     */
   @js.native
   trait CertificateInfo extends js.Object {
@@ -480,8 +468,7 @@ package directoryservice {
     @inline def values = js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
   }
 
-  /**
-    * Contains information about a computer account in a directory.
+  /** Contains information about a computer account in a directory.
     */
   @js.native
   trait Computer extends js.Object {
@@ -505,8 +492,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.
+  /** Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.
     */
   @js.native
   trait ConditionalForwarder extends js.Object {
@@ -530,8 +516,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>ConnectDirectory</a> operation.
+  /** Contains the inputs for the <a>ConnectDirectory</a> operation.
     */
   @js.native
   trait ConnectDirectoryRequest extends js.Object {
@@ -569,8 +554,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>ConnectDirectory</a> operation.
+  /** Contains the results of the <a>ConnectDirectory</a> operation.
     */
   @js.native
   trait ConnectDirectoryResult extends js.Object {
@@ -588,8 +572,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>CreateAlias</a> operation.
+  /** Contains the inputs for the <a>CreateAlias</a> operation.
     */
   @js.native
   trait CreateAliasRequest extends js.Object {
@@ -607,13 +590,11 @@ package directoryservice {
         "Alias" -> Alias.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAliasRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>CreateAlias</a> operation.
+  /** Contains the results of the <a>CreateAlias</a> operation.
     */
   @js.native
   trait CreateAliasResult extends js.Object {
@@ -634,8 +615,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>CreateComputer</a> operation.
+  /** Contains the inputs for the <a>CreateComputer</a> operation.
     */
   @js.native
   trait CreateComputerRequest extends js.Object {
@@ -667,8 +647,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results for the <a>CreateComputer</a> operation.
+  /** Contains the results for the <a>CreateComputer</a> operation.
     */
   @js.native
   trait CreateComputerResult extends js.Object {
@@ -686,8 +665,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.
+  /** Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.
     */
   @js.native
   trait CreateConditionalForwarderRequest extends js.Object {
@@ -708,29 +686,24 @@ package directoryservice {
         "DnsIpAddrs" -> DnsIpAddrs.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateConditionalForwarderRequest]
     }
   }
 
-  /**
-    * The result of a CreateConditinalForwarder request.
+  /** The result of a CreateConditinalForwarder request.
     */
   @js.native
-  trait CreateConditionalForwarderResult extends js.Object {}
+  trait CreateConditionalForwarderResult extends js.Object
 
   object CreateConditionalForwarderResult {
     @inline
-    def apply(
-    ): CreateConditionalForwarderResult = {
+    def apply(): CreateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateConditionalForwarderResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>CreateDirectory</a> operation.
+  /** Contains the inputs for the <a>CreateDirectory</a> operation.
     */
   @js.native
   trait CreateDirectoryRequest extends js.Object {
@@ -768,8 +741,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>CreateDirectory</a> operation.
+  /** Contains the results of the <a>CreateDirectory</a> operation.
     */
   @js.native
   trait CreateDirectoryResult extends js.Object {
@@ -803,26 +775,22 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "LogGroupName" -> LogGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateLogSubscriptionRequest]
     }
   }
 
   @js.native
-  trait CreateLogSubscriptionResult extends js.Object {}
+  trait CreateLogSubscriptionResult extends js.Object
 
   object CreateLogSubscriptionResult {
     @inline
-    def apply(
-    ): CreateLogSubscriptionResult = {
+    def apply(): CreateLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateLogSubscriptionResult]
     }
   }
 
-  /**
-    * Creates an AWS Managed Microsoft AD directory.
+  /** Creates an AWS Managed Microsoft AD directory.
     */
   @js.native
   trait CreateMicrosoftADRequest extends js.Object {
@@ -860,8 +828,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Result of a CreateMicrosoftAD request.
+  /** Result of a CreateMicrosoftAD request.
     */
   @js.native
   trait CreateMicrosoftADResult extends js.Object {
@@ -879,8 +846,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>CreateSnapshot</a> operation.
+  /** Contains the inputs for the <a>CreateSnapshot</a> operation.
     */
   @js.native
   trait CreateSnapshotRequest extends js.Object {
@@ -903,8 +869,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>CreateSnapshot</a> operation.
+  /** Contains the results of the <a>CreateSnapshot</a> operation.
     */
   @js.native
   trait CreateSnapshotResult extends js.Object {
@@ -922,9 +887,8 @@ package directoryservice {
     }
   }
 
-  /**
-    * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.
-    *  This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+  /** AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.
+    * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait CreateTrustRequest extends js.Object {
@@ -962,8 +926,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * The result of a CreateTrust request.
+  /** The result of a CreateTrust request.
     */
   @js.native
   trait CreateTrustResult extends js.Object {
@@ -981,8 +944,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Deletes a conditional forwarder.
+  /** Deletes a conditional forwarder.
     */
   @js.native
   trait DeleteConditionalForwarderRequest extends js.Object {
@@ -1000,29 +962,24 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConditionalForwarderRequest]
     }
   }
 
-  /**
-    * The result of a DeleteConditionalForwarder request.
+  /** The result of a DeleteConditionalForwarder request.
     */
   @js.native
-  trait DeleteConditionalForwarderResult extends js.Object {}
+  trait DeleteConditionalForwarderResult extends js.Object
 
   object DeleteConditionalForwarderResult {
     @inline
-    def apply(
-    ): DeleteConditionalForwarderResult = {
+    def apply(): DeleteConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConditionalForwarderResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DeleteDirectory</a> operation.
+  /** Contains the inputs for the <a>DeleteDirectory</a> operation.
     */
   @js.native
   trait DeleteDirectoryRequest extends js.Object {
@@ -1037,13 +994,11 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDirectoryRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>DeleteDirectory</a> operation.
+  /** Contains the results of the <a>DeleteDirectory</a> operation.
     */
   @js.native
   trait DeleteDirectoryResult extends js.Object {
@@ -1074,26 +1029,22 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLogSubscriptionRequest]
     }
   }
 
   @js.native
-  trait DeleteLogSubscriptionResult extends js.Object {}
+  trait DeleteLogSubscriptionResult extends js.Object
 
   object DeleteLogSubscriptionResult {
     @inline
-    def apply(
-    ): DeleteLogSubscriptionResult = {
+    def apply(): DeleteLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLogSubscriptionResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DeleteSnapshot</a> operation.
+  /** Contains the inputs for the <a>DeleteSnapshot</a> operation.
     */
   @js.native
   trait DeleteSnapshotRequest extends js.Object {
@@ -1108,13 +1059,11 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSnapshotRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>DeleteSnapshot</a> operation.
+  /** Contains the results of the <a>DeleteSnapshot</a> operation.
     */
   @js.native
   trait DeleteSnapshotResult extends js.Object {
@@ -1132,8 +1081,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.
+  /** Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.
     */
   @js.native
   trait DeleteTrustRequest extends js.Object {
@@ -1156,8 +1104,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * The result of a DeleteTrust request.
+  /** The result of a DeleteTrust request.
     */
   @js.native
   trait DeleteTrustResult extends js.Object {
@@ -1191,26 +1138,22 @@ package directoryservice {
         "CertificateId" -> CertificateId.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterCertificateRequest]
     }
   }
 
   @js.native
-  trait DeregisterCertificateResult extends js.Object {}
+  trait DeregisterCertificateResult extends js.Object
 
   object DeregisterCertificateResult {
     @inline
-    def apply(
-    ): DeregisterCertificateResult = {
+    def apply(): DeregisterCertificateResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterCertificateResult]
     }
   }
 
-  /**
-    * Removes the specified directory as a publisher to the specified SNS topic.
+  /** Removes the specified directory as a publisher to the specified SNS topic.
     */
   @js.native
   trait DeregisterEventTopicRequest extends js.Object {
@@ -1228,23 +1171,19 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "TopicName" -> TopicName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterEventTopicRequest]
     }
   }
 
-  /**
-    * The result of a DeregisterEventTopic request.
+  /** The result of a DeregisterEventTopic request.
     */
   @js.native
-  trait DeregisterEventTopicResult extends js.Object {}
+  trait DeregisterEventTopicResult extends js.Object
 
   object DeregisterEventTopicResult {
     @inline
-    def apply(
-    ): DeregisterEventTopicResult = {
+    def apply(): DeregisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterEventTopicResult]
     }
   }
@@ -1265,7 +1204,6 @@ package directoryservice {
         "CertificateId" -> CertificateId.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCertificateRequest]
     }
   }
@@ -1286,8 +1224,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Describes a conditional forwarder.
+  /** Describes a conditional forwarder.
     */
   @js.native
   trait DescribeConditionalForwardersRequest extends js.Object {
@@ -1310,8 +1247,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * The result of a DescribeConditionalForwarder request.
+  /** The result of a DescribeConditionalForwarder request.
     */
   @js.native
   trait DescribeConditionalForwardersResult extends js.Object {
@@ -1329,8 +1265,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DescribeDirectories</a> operation.
+  /** Contains the inputs for the <a>DescribeDirectories</a> operation.
     */
   @js.native
   trait DescribeDirectoriesRequest extends js.Object {
@@ -1354,8 +1289,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>DescribeDirectories</a> operation.
+  /** Contains the results of the <a>DescribeDirectories</a> operation.
     */
   @js.native
   trait DescribeDirectoriesResult extends js.Object {
@@ -1422,8 +1356,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Describes event topics.
+  /** Describes event topics.
     */
   @js.native
   trait DescribeEventTopicsRequest extends js.Object {
@@ -1444,8 +1377,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * The result of a DescribeEventTopic request.
+  /** The result of a DescribeEventTopic request.
     */
   @js.native
   trait DescribeEventTopicsResult extends js.Object {
@@ -1555,8 +1487,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DescribeSnapshots</a> operation.
+  /** Contains the inputs for the <a>DescribeSnapshots</a> operation.
     */
   @js.native
   trait DescribeSnapshotsRequest extends js.Object {
@@ -1583,8 +1514,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>DescribeSnapshots</a> operation.
+  /** Contains the results of the <a>DescribeSnapshots</a> operation.
     */
   @js.native
   trait DescribeSnapshotsResult extends js.Object {
@@ -1605,8 +1535,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+  /** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
     */
   @js.native
   trait DescribeTrustsRequest extends js.Object {
@@ -1633,8 +1562,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * The result of a DescribeTrust request.
+  /** The result of a DescribeTrust request.
     */
   @js.native
   trait DescribeTrustsResult extends js.Object {
@@ -1655,8 +1583,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
+  /** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
     */
   @js.native
   trait DirectoryConnectSettings extends js.Object {
@@ -1680,13 +1607,11 @@ package directoryservice {
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DirectoryConnectSettings]
     }
   }
 
-  /**
-    * Contains information about an AD Connector directory.
+  /** Contains information about an AD Connector directory.
     */
   @js.native
   trait DirectoryConnectSettingsDescription extends js.Object {
@@ -1719,8 +1644,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains information about an AWS Directory Service directory.
+  /** Contains information about an AWS Directory Service directory.
     */
   @js.native
   trait DirectoryDescription extends js.Object {
@@ -1816,8 +1740,7 @@ package directoryservice {
     @inline def values = js.Array(Enterprise, Standard)
   }
 
-  /**
-    * Contains directory limit information for a Region.
+  /** Contains directory limit information for a Region.
     */
   @js.native
   trait DirectoryLimits extends js.Object {
@@ -1897,8 +1820,7 @@ package directoryservice {
     @inline def values = js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
   }
 
-  /**
-    * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
+  /** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
     */
   @js.native
   trait DirectoryVpcSettings extends js.Object {
@@ -1916,13 +1838,11 @@ package directoryservice {
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DirectoryVpcSettings]
     }
   }
 
-  /**
-    * Contains information about the directory.
+  /** Contains information about the directory.
     */
   @js.native
   trait DirectoryVpcSettingsDescription extends js.Object {
@@ -1965,26 +1885,22 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableLDAPSRequest]
     }
   }
 
   @js.native
-  trait DisableLDAPSResult extends js.Object {}
+  trait DisableLDAPSResult extends js.Object
 
   object DisableLDAPSResult {
     @inline
-    def apply(
-    ): DisableLDAPSResult = {
+    def apply(): DisableLDAPSResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableLDAPSResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DisableRadius</a> operation.
+  /** Contains the inputs for the <a>DisableRadius</a> operation.
     */
   @js.native
   trait DisableRadiusRequest extends js.Object {
@@ -1999,29 +1915,24 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableRadiusRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>DisableRadius</a> operation.
+  /** Contains the results of the <a>DisableRadius</a> operation.
     */
   @js.native
-  trait DisableRadiusResult extends js.Object {}
+  trait DisableRadiusResult extends js.Object
 
   object DisableRadiusResult {
     @inline
-    def apply(
-    ): DisableRadiusResult = {
+    def apply(): DisableRadiusResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableRadiusResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DisableSso</a> operation.
+  /** Contains the inputs for the <a>DisableSso</a> operation.
     */
   @js.native
   trait DisableSsoRequest extends js.Object {
@@ -2047,24 +1958,20 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>DisableSso</a> operation.
+  /** Contains the results of the <a>DisableSso</a> operation.
     */
   @js.native
-  trait DisableSsoResult extends js.Object {}
+  trait DisableSsoResult extends js.Object
 
   object DisableSsoResult {
     @inline
-    def apply(
-    ): DisableSsoResult = {
+    def apply(): DisableSsoResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableSsoResult]
     }
   }
 
-  /**
-    * Contains information about the domain controllers for a specified directory.
+  /** Contains information about the domain controllers for a specified directory.
     */
   @js.native
   trait DomainController extends js.Object {
@@ -2139,26 +2046,22 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableLDAPSRequest]
     }
   }
 
   @js.native
-  trait EnableLDAPSResult extends js.Object {}
+  trait EnableLDAPSResult extends js.Object
 
   object EnableLDAPSResult {
     @inline
-    def apply(
-    ): EnableLDAPSResult = {
+    def apply(): EnableLDAPSResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableLDAPSResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>EnableRadius</a> operation.
+  /** Contains the inputs for the <a>EnableRadius</a> operation.
     */
   @js.native
   trait EnableRadiusRequest extends js.Object {
@@ -2176,29 +2079,24 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RadiusSettings" -> RadiusSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableRadiusRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>EnableRadius</a> operation.
+  /** Contains the results of the <a>EnableRadius</a> operation.
     */
   @js.native
-  trait EnableRadiusResult extends js.Object {}
+  trait EnableRadiusResult extends js.Object
 
   object EnableRadiusResult {
     @inline
-    def apply(
-    ): EnableRadiusResult = {
+    def apply(): EnableRadiusResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableRadiusResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>EnableSso</a> operation.
+  /** Contains the inputs for the <a>EnableSso</a> operation.
     */
   @js.native
   trait EnableSsoRequest extends js.Object {
@@ -2224,24 +2122,20 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the results of the <a>EnableSso</a> operation.
+  /** Contains the results of the <a>EnableSso</a> operation.
     */
   @js.native
-  trait EnableSsoResult extends js.Object {}
+  trait EnableSsoResult extends js.Object
 
   object EnableSsoResult {
     @inline
-    def apply(
-    ): EnableSsoResult = {
+    def apply(): EnableSsoResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableSsoResult]
     }
   }
 
-  /**
-    * Information about SNS topic and AWS Directory Service directory associations.
+  /** Information about SNS topic and AWS Directory Service directory associations.
     */
   @js.native
   trait EventTopic extends js.Object {
@@ -2271,24 +2165,20 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>GetDirectoryLimits</a> operation.
+  /** Contains the inputs for the <a>GetDirectoryLimits</a> operation.
     */
   @js.native
-  trait GetDirectoryLimitsRequest extends js.Object {}
+  trait GetDirectoryLimitsRequest extends js.Object
 
   object GetDirectoryLimitsRequest {
     @inline
-    def apply(
-    ): GetDirectoryLimitsRequest = {
+    def apply(): GetDirectoryLimitsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetDirectoryLimitsRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>GetDirectoryLimits</a> operation.
+  /** Contains the results of the <a>GetDirectoryLimits</a> operation.
     */
   @js.native
   trait GetDirectoryLimitsResult extends js.Object {
@@ -2306,8 +2196,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>GetSnapshotLimits</a> operation.
+  /** Contains the inputs for the <a>GetSnapshotLimits</a> operation.
     */
   @js.native
   trait GetSnapshotLimitsRequest extends js.Object {
@@ -2322,13 +2211,11 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSnapshotLimitsRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>GetSnapshotLimits</a> operation.
+  /** Contains the results of the <a>GetSnapshotLimits</a> operation.
     */
   @js.native
   trait GetSnapshotLimitsResult extends js.Object {
@@ -2346,8 +2233,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * IP address block. This is often the address block of the DNS server used for your on-premises domain.
+  /** IP address block. This is often the address block of the DNS server used for your on-premises domain.
     */
   @js.native
   trait IpRoute extends js.Object {
@@ -2368,8 +2254,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Information about one or more IP address blocks.
+  /** Information about one or more IP address blocks.
     */
   @js.native
   trait IpRouteInfo extends js.Object {
@@ -2415,8 +2300,7 @@ package directoryservice {
     @inline def values = js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
   }
 
-  /**
-    * Contains general information about the LDAPS settings.
+  /** Contains general information about the LDAPS settings.
     */
   @js.native
   trait LDAPSSettingInfo extends js.Object {
@@ -2672,8 +2556,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.
+  /** Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.
     */
   @js.native
   trait LogSubscription extends js.Object {
@@ -2697,8 +2580,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Describes the directory owner account details that have been shared to the directory consumer account.
+  /** Describes the directory owner account details that have been shared to the directory consumer account.
     */
   @js.native
   trait OwnerDirectoryDescription extends js.Object {
@@ -2742,8 +2624,7 @@ package directoryservice {
     @inline def values = js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
   }
 
-  /**
-    * Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
+  /** Contains information about a Remote Authentication Dial In User Service (RADIUS) server.
     */
   @js.native
   trait RadiusSettings extends js.Object {
@@ -2808,7 +2689,6 @@ package directoryservice {
         "CertificateData" -> CertificateData.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterCertificateRequest]
     }
   }
@@ -2829,8 +2709,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Registers a new event topic.
+  /** Registers a new event topic.
     */
   @js.native
   trait RegisterEventTopicRequest extends js.Object {
@@ -2848,23 +2727,19 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "TopicName" -> TopicName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterEventTopicRequest]
     }
   }
 
-  /**
-    * The result of a RegisterEventTopic request.
+  /** The result of a RegisterEventTopic request.
     */
   @js.native
-  trait RegisterEventTopicResult extends js.Object {}
+  trait RegisterEventTopicResult extends js.Object
 
   object RegisterEventTopicResult {
     @inline
-    def apply(
-    ): RegisterEventTopicResult = {
+    def apply(): RegisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RegisterEventTopicResult]
     }
   }
@@ -2882,7 +2757,6 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "SharedDirectoryId" -> SharedDirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RejectSharedDirectoryRequest]
     }
   }
@@ -2919,20 +2793,17 @@ package directoryservice {
         "CidrIps" -> CidrIps.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveIpRoutesRequest]
     }
   }
 
   @js.native
-  trait RemoveIpRoutesResult extends js.Object {}
+  trait RemoveIpRoutesResult extends js.Object
 
   object RemoveIpRoutesResult {
     @inline
-    def apply(
-    ): RemoveIpRoutesResult = {
+    def apply(): RemoveIpRoutesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveIpRoutesResult]
     }
   }
@@ -2953,20 +2824,17 @@ package directoryservice {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceRequest]
     }
   }
 
   @js.native
-  trait RemoveTagsFromResourceResult extends js.Object {}
+  trait RemoveTagsFromResourceResult extends js.Object
 
   object RemoveTagsFromResourceResult {
     @inline
-    def apply(
-    ): RemoveTagsFromResourceResult = {
+    def apply(): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
   }
@@ -2998,26 +2866,22 @@ package directoryservice {
         "NewPassword" -> NewPassword.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResetUserPasswordRequest]
     }
   }
 
   @js.native
-  trait ResetUserPasswordResult extends js.Object {}
+  trait ResetUserPasswordResult extends js.Object
 
   object ResetUserPasswordResult {
     @inline
-    def apply(
-    ): ResetUserPasswordResult = {
+    def apply(): ResetUserPasswordResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ResetUserPasswordResult]
     }
   }
 
-  /**
-    * An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.
+  /** An object representing the inputs for the <a>RestoreFromSnapshot</a> operation.
     */
   @js.native
   trait RestoreFromSnapshotRequest extends js.Object {
@@ -3032,29 +2896,24 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreFromSnapshotRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>RestoreFromSnapshot</a> operation.
+  /** Contains the results of the <a>RestoreFromSnapshot</a> operation.
     */
   @js.native
-  trait RestoreFromSnapshotResult extends js.Object {}
+  trait RestoreFromSnapshotResult extends js.Object
 
   object RestoreFromSnapshotResult {
     @inline
-    def apply(
-    ): RestoreFromSnapshotResult = {
+    def apply(): RestoreFromSnapshotResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RestoreFromSnapshotResult]
     }
   }
 
-  /**
-    * Information about a schema extension.
+  /** Information about a schema extension.
     */
   @js.native
   trait SchemaExtensionInfo extends js.Object {
@@ -3183,8 +3042,7 @@ package directoryservice {
     @inline def values = js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
   }
 
-  /**
-    * Identifier that contains details about the directory consumer account.
+  /** Identifier that contains details about the directory consumer account.
     */
   @js.native
   trait ShareTarget extends js.Object {
@@ -3202,13 +3060,11 @@ package directoryservice {
         "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ShareTarget]
     }
   }
 
-  /**
-    * Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.
+  /** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.
     */
   @js.native
   trait SharedDirectory extends js.Object {
@@ -3250,8 +3106,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Describes a directory snapshot.
+  /** Describes a directory snapshot.
     */
   @js.native
   trait Snapshot extends js.Object {
@@ -3284,8 +3139,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Contains manual snapshot limit information for a directory.
+  /** Contains manual snapshot limit information for a directory.
     */
   @js.native
   trait SnapshotLimits extends js.Object {
@@ -3350,7 +3204,6 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "LdifContent" -> LdifContent.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartSchemaExtensionRequest]
     }
   }
@@ -3371,8 +3224,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Metadata assigned to a directory consisting of a key-value pair.
+  /** Metadata assigned to a directory consisting of a key-value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3390,7 +3242,6 @@ package directoryservice {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3414,8 +3265,7 @@ package directoryservice {
     @inline def values = js.Array(Registered, `Topic not found`, Failed, Deleted)
   }
 
-  /**
-    * Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+  /** Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait Trust extends js.Object {
@@ -3516,7 +3366,6 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "UnshareTarget" -> UnshareTarget.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnshareDirectoryRequest]
     }
   }
@@ -3537,8 +3386,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Identifier that contains details about the directory consumer account with whom the directory is being unshared.
+  /** Identifier that contains details about the directory consumer account with whom the directory is being unshared.
     */
   @js.native
   trait UnshareTarget extends js.Object {
@@ -3556,13 +3404,11 @@ package directoryservice {
         "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnshareTarget]
     }
   }
 
-  /**
-    * Updates a conditional forwarder.
+  /** Updates a conditional forwarder.
     */
   @js.native
   trait UpdateConditionalForwarderRequest extends js.Object {
@@ -3583,23 +3429,19 @@ package directoryservice {
         "DnsIpAddrs" -> DnsIpAddrs.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateConditionalForwarderRequest]
     }
   }
 
-  /**
-    * The result of an UpdateConditionalForwarder request.
+  /** The result of an UpdateConditionalForwarder request.
     */
   @js.native
-  trait UpdateConditionalForwarderResult extends js.Object {}
+  trait UpdateConditionalForwarderResult extends js.Object
 
   object UpdateConditionalForwarderResult {
     @inline
-    def apply(
-    ): UpdateConditionalForwarderResult = {
+    def apply(): UpdateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateConditionalForwarderResult]
     }
   }
@@ -3620,26 +3462,22 @@ package directoryservice {
         "DesiredNumber" -> DesiredNumber.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateNumberOfDomainControllersRequest]
     }
   }
 
   @js.native
-  trait UpdateNumberOfDomainControllersResult extends js.Object {}
+  trait UpdateNumberOfDomainControllersResult extends js.Object
 
   object UpdateNumberOfDomainControllersResult {
     @inline
-    def apply(
-    ): UpdateNumberOfDomainControllersResult = {
+    def apply(): UpdateNumberOfDomainControllersResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNumberOfDomainControllersResult]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>UpdateRadius</a> operation.
+  /** Contains the inputs for the <a>UpdateRadius</a> operation.
     */
   @js.native
   trait UpdateRadiusRequest extends js.Object {
@@ -3657,23 +3495,19 @@ package directoryservice {
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RadiusSettings" -> RadiusSettings.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRadiusRequest]
     }
   }
 
-  /**
-    * Contains the results of the <a>UpdateRadius</a> operation.
+  /** Contains the results of the <a>UpdateRadius</a> operation.
     */
   @js.native
-  trait UpdateRadiusResult extends js.Object {}
+  trait UpdateRadiusResult extends js.Object
 
   object UpdateRadiusResult {
     @inline
-    def apply(
-    ): UpdateRadiusResult = {
+    def apply(): UpdateRadiusResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateRadiusResult]
     }
   }
@@ -3718,8 +3552,7 @@ package directoryservice {
     }
   }
 
-  /**
-    * Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+  /** Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait VerifyTrustRequest extends js.Object {
@@ -3734,13 +3567,11 @@ package directoryservice {
       val __obj = js.Dynamic.literal(
         "TrustId" -> TrustId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VerifyTrustRequest]
     }
   }
 
-  /**
-    * Result of a VerifyTrust request.
+  /** Result of a VerifyTrust request.
     */
   @js.native
   trait VerifyTrustResult extends js.Object {

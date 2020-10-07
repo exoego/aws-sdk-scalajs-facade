@@ -40,8 +40,7 @@ package cur {
     def putReportDefinition(params: PutReportDefinitionRequest): Request[PutReportDefinitionResponse] = js.native
   }
 
-  /**
-    * The region of the S3 bucket that AWS delivers the report into.
+  /** The region of the S3 bucket that AWS delivers the report into.
     */
   @js.native
   sealed trait AWSRegion extends js.Any
@@ -58,24 +57,22 @@ package cur {
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
     val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
 
-    @inline def values =
-      js.Array(
-        `us-east-1`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-central-1`,
-        `eu-west-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `eu-north-1`,
-        `ap-northeast-3`,
-        `ap-east-1`
-      )
+    @inline def values = js.Array(
+      `us-east-1`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-central-1`,
+      `eu-west-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `eu-north-1`,
+      `ap-northeast-3`,
+      `ap-east-1`
+    )
   }
 
-  /**
-    * The types of manifest that you want AWS to create for this report.
+  /** The types of manifest that you want AWS to create for this report.
     */
   @js.native
   sealed trait AdditionalArtifact extends js.Any
@@ -87,8 +84,7 @@ package cur {
     @inline def values = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
   }
 
-  /**
-    * The compression format that AWS uses for the report.
+  /** The compression format that AWS uses for the report.
     */
   @js.native
   sealed trait CompressionFormat extends js.Any
@@ -100,8 +96,7 @@ package cur {
     @inline def values = js.Array(ZIP, GZIP, Parquet)
   }
 
-  /**
-    * Deletes the specified report.
+  /** Deletes the specified report.
     */
   @js.native
   trait DeleteReportDefinitionRequest extends js.Object {
@@ -119,8 +114,7 @@ package cur {
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response.
+  /** If the action is successful, the service sends back an HTTP 200 response.
     */
   @js.native
   trait DeleteReportDefinitionResponse extends js.Object {
@@ -138,8 +132,7 @@ package cur {
     }
   }
 
-  /**
-    * Requests a list of AWS Cost and Usage reports owned by the account.
+  /** Requests a list of AWS Cost and Usage reports owned by the account.
     */
   @js.native
   trait DescribeReportDefinitionsRequest extends js.Object {
@@ -160,8 +153,7 @@ package cur {
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response.
+  /** If the action is successful, the service sends back an HTTP 200 response.
     */
   @js.native
   trait DescribeReportDefinitionsResponse extends js.Object {
@@ -198,26 +190,22 @@ package cur {
         "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any],
         "ReportName" -> ReportName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyReportDefinitionRequest]
     }
   }
 
   @js.native
-  trait ModifyReportDefinitionResponse extends js.Object {}
+  trait ModifyReportDefinitionResponse extends js.Object
 
   object ModifyReportDefinitionResponse {
     @inline
-    def apply(
-    ): ModifyReportDefinitionResponse = {
+    def apply(): ModifyReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ModifyReportDefinitionResponse]
     }
   }
 
-  /**
-    * Creates a Cost and Usage Report.
+  /** Creates a Cost and Usage Report.
     */
   @js.native
   trait PutReportDefinitionRequest extends js.Object {
@@ -232,29 +220,24 @@ package cur {
       val __obj = js.Dynamic.literal(
         "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutReportDefinitionRequest]
     }
   }
 
-  /**
-    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
-  trait PutReportDefinitionResponse extends js.Object {}
+  trait PutReportDefinitionResponse extends js.Object
 
   object PutReportDefinitionResponse {
     @inline
-    def apply(
-    ): PutReportDefinitionResponse = {
+    def apply(): PutReportDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutReportDefinitionResponse]
     }
   }
 
-  /**
-    * The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
+  /** The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
     */
   @js.native
   trait ReportDefinition extends js.Object {
@@ -304,8 +287,7 @@ package cur {
     }
   }
 
-  /**
-    * The format that AWS saves the report in.
+  /** The format that AWS saves the report in.
     */
   @js.native
   sealed trait ReportFormat extends js.Any
@@ -325,8 +307,7 @@ package cur {
     @inline def values = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
   }
 
-  /**
-    * Whether or not AWS includes resource IDs in the report.
+  /** Whether or not AWS includes resource IDs in the report.
     */
   @js.native
   sealed trait SchemaElement extends js.Any
@@ -336,8 +317,7 @@ package cur {
     @inline def values = js.Array(RESOURCES)
   }
 
-  /**
-    * The length of time covered by the report.
+  /** The length of time covered by the report.
     */
   @js.native
   sealed trait TimeUnit extends js.Any

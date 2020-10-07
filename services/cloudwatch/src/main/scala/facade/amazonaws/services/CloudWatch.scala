@@ -189,8 +189,7 @@ package cloudwatch {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
 
-  /**
-    * Represents the history of a specific alarm.
+  /** Represents the history of a specific alarm.
     */
   @js.native
   trait AlarmHistoryItem extends js.Object {
@@ -232,8 +231,7 @@ package cloudwatch {
     @inline def values = js.Array(CompositeAlarm, MetricAlarm)
   }
 
-  /**
-    * An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed.
+  /** An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed.
     */
   @js.native
   trait AnomalyDetector extends js.Object {
@@ -266,8 +264,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.
+  /** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.
     */
   @js.native
   trait AnomalyDetectorConfiguration extends js.Object {
@@ -309,20 +306,18 @@ package cloudwatch {
     val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
     val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
-    @inline def values =
-      js.Array(
-        GreaterThanOrEqualToThreshold,
-        GreaterThanThreshold,
-        LessThanThreshold,
-        LessThanOrEqualToThreshold,
-        LessThanLowerOrGreaterThanUpperThreshold,
-        LessThanLowerThreshold,
-        GreaterThanUpperThreshold
-      )
+    @inline def values = js.Array(
+      GreaterThanOrEqualToThreshold,
+      GreaterThanThreshold,
+      LessThanThreshold,
+      LessThanOrEqualToThreshold,
+      LessThanLowerOrGreaterThanUpperThreshold,
+      LessThanLowerThreshold,
+      GreaterThanUpperThreshold
+    )
   }
 
-  /**
-    * The details about a composite alarm.
+  /** The details about a composite alarm.
     */
   @js.native
   trait CompositeAlarm extends js.Object {
@@ -376,8 +371,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * Represents a specific dashboard.
+  /** Represents a specific dashboard.
     */
   @js.native
   trait DashboardEntry extends js.Object {
@@ -404,8 +398,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * An error or warning for the operation.
+  /** An error or warning for the operation.
     */
   @js.native
   trait DashboardValidationMessage extends js.Object {
@@ -426,8 +419,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * Encapsulates the statistical data that CloudWatch computes from metric data.
+  /** Encapsulates the statistical data that CloudWatch computes from metric data.
     */
   @js.native
   trait Datapoint extends js.Object {
@@ -479,7 +471,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAlarmsInput]
     }
   }
@@ -512,14 +503,12 @@ package cloudwatch {
   }
 
   @js.native
-  trait DeleteAnomalyDetectorOutput extends js.Object {}
+  trait DeleteAnomalyDetectorOutput extends js.Object
 
   object DeleteAnomalyDetectorOutput {
     @inline
-    def apply(
-    ): DeleteAnomalyDetectorOutput = {
+    def apply(): DeleteAnomalyDetectorOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteAnomalyDetectorOutput]
     }
   }
@@ -537,20 +526,17 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "DashboardNames" -> DashboardNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDashboardsInput]
     }
   }
 
   @js.native
-  trait DeleteDashboardsOutput extends js.Object {}
+  trait DeleteDashboardsOutput extends js.Object
 
   object DeleteDashboardsOutput {
     @inline
-    def apply(
-    ): DeleteDashboardsOutput = {
+    def apply(): DeleteDashboardsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDashboardsOutput]
     }
   }
@@ -568,7 +554,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "RuleNames" -> RuleNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInsightRulesInput]
     }
   }
@@ -844,8 +829,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric.
+  /** A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric.
     */
   @js.native
   trait Dimension extends js.Object {
@@ -863,13 +847,11 @@ package cloudwatch {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Dimension]
     }
   }
 
-  /**
-    * Represents filters for a dimension.
+  /** Represents filters for a dimension.
     */
   @js.native
   trait DimensionFilter extends js.Object {
@@ -905,7 +887,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableAlarmActionsInput]
     }
   }
@@ -923,7 +904,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "RuleNames" -> RuleNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableInsightRulesInput]
     }
   }
@@ -957,7 +937,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableAlarmActionsInput]
     }
   }
@@ -975,7 +954,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "RuleNames" -> RuleNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableInsightRulesInput]
     }
   }
@@ -1009,7 +987,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "DashboardName" -> DashboardName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDashboardInput]
     }
   }
@@ -1266,8 +1243,7 @@ package cloudwatch {
     @inline def values = js.Array(ConfigurationUpdate, StateUpdate, Action)
   }
 
-  /**
-    * This structure contains the definition for a Contributor Insights rule.
+  /** This structure contains the definition for a Contributor Insights rule.
     */
   @js.native
   trait InsightRule extends js.Object {
@@ -1291,15 +1267,13 @@ package cloudwatch {
         "Schema" -> Schema.asInstanceOf[js.Any],
         "State" -> State.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InsightRule]
     }
   }
 
-  /**
-    * One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.
-    *  If the rule contains a single key, then each unique contributor is each unique value for this key.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]].
+  /** One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.
+    * If the rule contains a single key, then each unique contributor is each unique value for this key.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]].
     */
   @js.native
   trait InsightRuleContributor extends js.Object {
@@ -1320,14 +1294,12 @@ package cloudwatch {
         "Datapoints" -> Datapoints.asInstanceOf[js.Any],
         "Keys" -> Keys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InsightRuleContributor]
     }
   }
 
-  /**
-    * One data point related to one contributor.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]] and [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html|InsightRuleContributor]].
+  /** One data point related to one contributor.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]] and [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html|InsightRuleContributor]].
     */
   @js.native
   trait InsightRuleContributorDatapoint extends js.Object {
@@ -1345,14 +1317,12 @@ package cloudwatch {
         "ApproximateValue" -> ApproximateValue.asInstanceOf[js.Any],
         "Timestamp" -> Timestamp.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InsightRuleContributorDatapoint]
     }
   }
 
-  /**
-    * One data point from the metric time series returned in a Contributor Insights rule report.
-    *  For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]].
+  /** One data point from the metric time series returned in a Contributor Insights rule report.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html|GetInsightRuleReport]].
     */
   @js.native
   trait InsightRuleMetricDatapoint extends js.Object {
@@ -1491,7 +1461,6 @@ package cloudwatch {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -1512,8 +1481,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * A message returned by the <code>GetMetricData</code>API, including a code and a description.
+  /** A message returned by the <code>GetMetricData</code>API, including a code and a description.
     */
   @js.native
   trait MessageData extends js.Object {
@@ -1534,8 +1502,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * Represents a specific metric.
+  /** Represents a specific metric.
     */
   @js.native
   trait Metric extends js.Object {
@@ -1559,8 +1526,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * The details about a metric alarm.
+  /** The details about a metric alarm.
     */
   @js.native
   trait MetricAlarm extends js.Object {
@@ -1656,12 +1622,11 @@ package cloudwatch {
     }
   }
 
-  /**
-    * This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.
-    *  When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.
-    *  When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.
-    *  Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>.
-    *  Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
+  /** This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.
+    * When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.
+    * When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.
+    * Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>.
+    * Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
     */
   @js.native
   trait MetricDataQuery extends js.Object {
@@ -1696,8 +1661,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.
+  /** A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.
     */
   @js.native
   trait MetricDataResult extends js.Object {
@@ -1730,8 +1694,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.
+  /** Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.
     */
   @js.native
   trait MetricDatum extends js.Object {
@@ -1775,8 +1738,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * This structure defines the metric to be returned, along with the statistics, period, and units.
+  /** This structure defines the metric to be returned, along with the statistics, period, and units.
     */
   @js.native
   trait MetricStat extends js.Object {
@@ -1805,8 +1767,7 @@ package cloudwatch {
     }
   }
 
-  /**
-    * This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
+  /** This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
     */
   @js.native
   trait PartialFailure extends js.Object {
@@ -1864,14 +1825,12 @@ package cloudwatch {
   }
 
   @js.native
-  trait PutAnomalyDetectorOutput extends js.Object {}
+  trait PutAnomalyDetectorOutput extends js.Object
 
   object PutAnomalyDetectorOutput {
     @inline
-    def apply(
-    ): PutAnomalyDetectorOutput = {
+    def apply(): PutAnomalyDetectorOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutAnomalyDetectorOutput]
     }
   }
@@ -1931,7 +1890,6 @@ package cloudwatch {
         "DashboardBody" -> DashboardBody.asInstanceOf[js.Any],
         "DashboardName" -> DashboardName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutDashboardInput]
     }
   }
@@ -1980,14 +1938,12 @@ package cloudwatch {
   }
 
   @js.native
-  trait PutInsightRuleOutput extends js.Object {}
+  trait PutInsightRuleOutput extends js.Object
 
   object PutInsightRuleOutput {
     @inline
-    def apply(
-    ): PutInsightRuleOutput = {
+    def apply(): PutInsightRuleOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutInsightRuleOutput]
     }
   }
@@ -2089,13 +2045,11 @@ package cloudwatch {
         "MetricData" -> MetricData.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutMetricDataInput]
     }
   }
 
-  /**
-    * Specifies one range of days or times to exclude from use for training an anomaly detection model.
+  /** Specifies one range of days or times to exclude from use for training an anomaly detection model.
     */
   @js.native
   trait Range extends js.Object {
@@ -2113,7 +2067,6 @@ package cloudwatch {
         "EndTime" -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Range]
     }
   }
@@ -2193,36 +2146,35 @@ package cloudwatch {
     val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
     val None = "None".asInstanceOf[StandardUnit]
 
-    @inline def values =
-      js.Array(
-        Seconds,
-        Microseconds,
-        Milliseconds,
-        Bytes,
-        Kilobytes,
-        Megabytes,
-        Gigabytes,
-        Terabytes,
-        Bits,
-        Kilobits,
-        Megabits,
-        Gigabits,
-        Terabits,
-        Percent,
-        Count,
-        `Bytes/Second`,
-        `Kilobytes/Second`,
-        `Megabytes/Second`,
-        `Gigabytes/Second`,
-        `Terabytes/Second`,
-        `Bits/Second`,
-        `Kilobits/Second`,
-        `Megabits/Second`,
-        `Gigabits/Second`,
-        `Terabits/Second`,
-        `Count/Second`,
-        None
-      )
+    @inline def values = js.Array(
+      Seconds,
+      Microseconds,
+      Milliseconds,
+      Bytes,
+      Kilobytes,
+      Megabytes,
+      Gigabytes,
+      Terabytes,
+      Bits,
+      Kilobits,
+      Megabits,
+      Gigabits,
+      Terabits,
+      Percent,
+      Count,
+      `Bytes/Second`,
+      `Kilobytes/Second`,
+      `Megabytes/Second`,
+      `Gigabytes/Second`,
+      `Terabytes/Second`,
+      `Bits/Second`,
+      `Kilobits/Second`,
+      `Megabits/Second`,
+      `Gigabits/Second`,
+      `Terabits/Second`,
+      `Count/Second`,
+      None
+    )
   }
 
   @js.native
@@ -2247,8 +2199,7 @@ package cloudwatch {
     @inline def values = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
   }
 
-  /**
-    * Represents a set of statistics that describes a specific metric.
+  /** Represents a set of statistics that describes a specific metric.
     */
   @js.native
   trait StatisticSet extends js.Object {
@@ -2272,7 +2223,6 @@ package cloudwatch {
         "SampleCount" -> SampleCount.asInstanceOf[js.Any],
         "Sum" -> Sum.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StatisticSet]
     }
   }
@@ -2287,8 +2237,7 @@ package cloudwatch {
     @inline def values = js.Array(Complete, InternalError, PartialData)
   }
 
-  /**
-    * A key-value pair associated with a CloudWatch resource.
+  /** A key-value pair associated with a CloudWatch resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2306,7 +2255,6 @@ package cloudwatch {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2327,20 +2275,17 @@ package cloudwatch {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
@@ -2361,20 +2306,17 @@ package cloudwatch {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }

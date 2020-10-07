@@ -265,8 +265,7 @@ package elasticbeanstalk {
     def validateConfigurationSettings(params: ValidateConfigurationSettingsMessage): Request[ConfigurationSettingsValidationMessages] = js.native
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AbortEnvironmentUpdateMessage extends js.Object {
@@ -318,8 +317,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(InstanceRefresh, PlatformUpdate, Unknown)
   }
 
-  /**
-    * Describes the properties of an application.
+  /** Describes the properties of an application.
     */
   @js.native
   trait ApplicationDescription extends js.Object {
@@ -358,8 +356,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing a single description of an application.
+  /** Result message containing a single description of an application.
     */
   @js.native
   trait ApplicationDescriptionMessage extends js.Object {
@@ -377,8 +374,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing a list of application descriptions.
+  /** Result message containing a list of application descriptions.
     */
   @js.native
   trait ApplicationDescriptionsMessage extends js.Object {
@@ -396,8 +392,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Application request metrics for an AWS Elastic Beanstalk environment.
+  /** Application request metrics for an AWS Elastic Beanstalk environment.
     */
   @js.native
   trait ApplicationMetrics extends js.Object {
@@ -424,8 +419,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.
+  /** The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.
     */
   @js.native
   trait ApplicationResourceLifecycleConfig extends js.Object {
@@ -465,8 +459,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes the properties of an application version.
+  /** Describes the properties of an application version.
     */
   @js.native
   trait ApplicationVersionDescription extends js.Object {
@@ -511,8 +504,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message wrapping a single description of an application version.
+  /** Result message wrapping a single description of an application version.
     */
   @js.native
   trait ApplicationVersionDescriptionMessage extends js.Object {
@@ -530,8 +522,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message wrapping a list of application version descriptions.
+  /** Result message wrapping a list of application version descriptions.
     */
   @js.native
   trait ApplicationVersionDescriptionsMessage extends js.Object {
@@ -552,9 +543,8 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.
-    *  When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.
+  /** The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.
+    * When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.
     */
   @js.native
   trait ApplicationVersionLifecycleConfig extends js.Object {
@@ -587,8 +577,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(Processed, Unprocessed, Failed, Processing, Building)
   }
 
-  /**
-    * Request to execute a scheduled managed action immediately.
+  /** Request to execute a scheduled managed action immediately.
     */
   @js.native
   trait ApplyEnvironmentManagedActionRequest extends js.Object {
@@ -614,8 +603,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The result message containing information about the managed action.
+  /** The result message containing information about the managed action.
     */
   @js.native
   trait ApplyEnvironmentManagedActionResult extends js.Object {
@@ -642,8 +630,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to add or change the operations role used by an environment.
+  /** Request to add or change the operations role used by an environment.
     */
   @js.native
   trait AssociateEnvironmentOperationsRoleMessage extends js.Object {
@@ -661,13 +648,11 @@ package elasticbeanstalk {
         "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any],
         "OperationsRole" -> OperationsRole.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateEnvironmentOperationsRoleMessage]
     }
   }
 
-  /**
-    * Describes an Auto Scaling launch configuration.
+  /** Describes an Auto Scaling launch configuration.
     */
   @js.native
   trait AutoScalingGroup extends js.Object {
@@ -685,8 +670,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Settings for an AWS CodeBuild build.
+  /** Settings for an AWS CodeBuild build.
     */
   @js.native
   trait BuildConfiguration extends js.Object {
@@ -718,8 +702,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The builder used to build the custom platform.
+  /** The builder used to build the custom platform.
     */
   @js.native
   trait Builder extends js.Object {
@@ -737,8 +720,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * CPU utilization metrics for an instance.
+  /** CPU utilization metrics for an instance.
     */
   @js.native
   trait CPUUtilization extends js.Object {
@@ -777,8 +759,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Results message indicating whether a CNAME is available.
+  /** Results message indicating whether a CNAME is available.
     */
   @js.native
   trait CheckDNSAvailabilityMessage extends js.Object {
@@ -793,13 +774,11 @@ package elasticbeanstalk {
       val __obj = js.Dynamic.literal(
         "CNAMEPrefix" -> CNAMEPrefix.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CheckDNSAvailabilityMessage]
     }
   }
 
-  /**
-    * Indicates if the specified CNAME is available.
+  /** Indicates if the specified CNAME is available.
     */
   @js.native
   trait CheckDNSAvailabilityResultMessage extends js.Object {
@@ -820,8 +799,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to create or update a group of environments.
+  /** Request to create or update a group of environments.
     */
   @js.native
   trait ComposeEnvironmentsMessage extends js.Object {
@@ -865,8 +843,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(deployed, pending, failed)
   }
 
-  /**
-    * Describes the possible values for a configuration option.
+  /** Describes the possible values for a configuration option.
     */
   @js.native
   trait ConfigurationOptionDescription extends js.Object {
@@ -914,8 +891,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+  /** A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
     */
   @js.native
   trait ConfigurationOptionSetting extends js.Object {
@@ -951,8 +927,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(Scalar, List)
   }
 
-  /**
-    * Describes the settings for a specified configuration set.
+  /** Describes the settings for a specified configuration set.
     */
   @js.native
   trait ConfigurationOptionsDescription extends js.Object {
@@ -976,8 +951,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes the settings for a configuration set.
+  /** Describes the settings for a configuration set.
     */
   @js.native
   trait ConfigurationSettingsDescription extends js.Object {
@@ -1022,8 +996,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The results from a request to change the configuration settings of an environment.
+  /** The results from a request to change the configuration settings of an environment.
     */
   @js.native
   trait ConfigurationSettingsDescriptions extends js.Object {
@@ -1041,8 +1014,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Provides a list of validation messages.
+  /** Provides a list of validation messages.
     */
   @js.native
   trait ConfigurationSettingsValidationMessages extends js.Object {
@@ -1060,8 +1032,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to create an application.
+  /** Request to create an application.
     */
   @js.native
   trait CreateApplicationMessage extends js.Object {
@@ -1090,8 +1061,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateApplicationVersionMessage extends js.Object {
@@ -1135,8 +1105,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to create a configuration template.
+  /** Request to create a configuration template.
     */
   @js.native
   trait CreateConfigurationTemplateMessage extends js.Object {
@@ -1180,8 +1149,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateEnvironmentMessage extends js.Object {
@@ -1240,8 +1208,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to create a new platform version.
+  /** Request to create a new platform version.
     */
   @js.native
   trait CreatePlatformVersionRequest extends js.Object {
@@ -1295,8 +1262,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Results of a <a>CreateStorageLocationResult</a> call.
+  /** Results of a <a>CreateStorageLocationResult</a> call.
     */
   @js.native
   trait CreateStorageLocationResultMessage extends js.Object {
@@ -1314,8 +1280,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A custom AMI available to platforms.
+  /** A custom AMI available to platforms.
     */
   @js.native
   trait CustomAmi extends js.Object {
@@ -1336,8 +1301,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to delete an application.
+  /** Request to delete an application.
     */
   @js.native
   trait DeleteApplicationMessage extends js.Object {
@@ -1360,8 +1324,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to delete an application version.
+  /** Request to delete an application version.
     */
   @js.native
   trait DeleteApplicationVersionMessage extends js.Object {
@@ -1387,8 +1350,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to delete a configuration template.
+  /** Request to delete a configuration template.
     */
   @js.native
   trait DeleteConfigurationTemplateMessage extends js.Object {
@@ -1406,13 +1368,11 @@ package elasticbeanstalk {
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationTemplateMessage]
     }
   }
 
-  /**
-    * Request to delete a draft environment configuration.
+  /** Request to delete a draft environment configuration.
     */
   @js.native
   trait DeleteEnvironmentConfigurationMessage extends js.Object {
@@ -1430,7 +1390,6 @@ package elasticbeanstalk {
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEnvironmentConfigurationMessage]
     }
   }
@@ -1467,8 +1426,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Information about an application version deployment.
+  /** Information about an application version deployment.
     */
   @js.native
   trait Deployment extends js.Object {
@@ -1511,8 +1469,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to describe application versions.
+  /** Request to describe application versions.
     */
   @js.native
   trait DescribeApplicationVersionsMessage extends js.Object {
@@ -1539,8 +1496,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to describe one or more applications.
+  /** Request to describe one or more applications.
     */
   @js.native
   trait DescribeApplicationsMessage extends js.Object {
@@ -1558,8 +1514,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing a list of application version descriptions.
+  /** Result message containing a list of application version descriptions.
     */
   @js.native
   trait DescribeConfigurationOptionsMessage extends js.Object {
@@ -1592,8 +1547,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing all of the configuration settings for a specified solution stack or configuration template.
+  /** Result message containing all of the configuration settings for a specified solution stack or configuration template.
     */
   @js.native
   trait DescribeConfigurationSettingsMessage extends js.Object {
@@ -1619,8 +1573,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * See the example below to learn how to create a request body.
+  /** See the example below to learn how to create a request body.
     */
   @js.native
   trait DescribeEnvironmentHealthRequest extends js.Object {
@@ -1644,8 +1597,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Health details for an AWS Elastic Beanstalk environment.
+  /** Health details for an AWS Elastic Beanstalk environment.
     */
   @js.native
   trait DescribeEnvironmentHealthResult extends js.Object {
@@ -1684,8 +1636,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to list completed and failed managed actions.
+  /** Request to list completed and failed managed actions.
     */
   @js.native
   trait DescribeEnvironmentManagedActionHistoryRequest extends js.Object {
@@ -1712,8 +1663,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A result message containing a list of completed and failed managed actions.
+  /** A result message containing a list of completed and failed managed actions.
     */
   @js.native
   trait DescribeEnvironmentManagedActionHistoryResult extends js.Object {
@@ -1734,8 +1684,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to list an environment's upcoming and in-progress managed actions.
+  /** Request to list an environment's upcoming and in-progress managed actions.
     */
   @js.native
   trait DescribeEnvironmentManagedActionsRequest extends js.Object {
@@ -1759,8 +1708,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The result message containing a list of managed actions.
+  /** The result message containing a list of managed actions.
     */
   @js.native
   trait DescribeEnvironmentManagedActionsResult extends js.Object {
@@ -1778,8 +1726,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to describe the resources in an environment.
+  /** Request to describe the resources in an environment.
     */
   @js.native
   trait DescribeEnvironmentResourcesMessage extends js.Object {
@@ -1800,8 +1747,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to describe one or more environments.
+  /** Request to describe one or more environments.
     */
   @js.native
   trait DescribeEnvironmentsMessage extends js.Object {
@@ -1840,8 +1786,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to retrieve a list of events for an environment.
+  /** Request to retrieve a list of events for an environment.
     */
   @js.native
   trait DescribeEventsMessage extends js.Object {
@@ -1892,8 +1837,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Parameters for a call to <code>DescribeInstancesHealth</code>.
+  /** Parameters for a call to <code>DescribeInstancesHealth</code>.
     */
   @js.native
   trait DescribeInstancesHealthRequest extends js.Object {
@@ -1920,8 +1864,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.
+  /** Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.
     */
   @js.native
   trait DescribeInstancesHealthResult extends js.Object {
@@ -1977,8 +1920,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to disassociate the operations role from an environment.
+  /** Request to disassociate the operations role from an environment.
     */
   @js.native
   trait DisassociateEnvironmentOperationsRoleMessage extends js.Object {
@@ -1993,13 +1935,11 @@ package elasticbeanstalk {
       val __obj = js.Dynamic.literal(
         "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateEnvironmentOperationsRoleMessage]
     }
   }
 
-  /**
-    * Describes the properties of an environment.
+  /** Describes the properties of an environment.
     */
   @js.native
   trait EnvironmentDescription extends js.Object {
@@ -2077,8 +2017,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing a list of environment descriptions.
+  /** Result message containing a list of environment descriptions.
     */
   @js.native
   trait EnvironmentDescriptionsMessage extends js.Object {
@@ -2141,8 +2080,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
   }
 
-  /**
-    * The information retrieved from the Amazon EC2 instances.
+  /** The information retrieved from the Amazon EC2 instances.
     */
   @js.native
   trait EnvironmentInfoDescription extends js.Object {
@@ -2178,8 +2116,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(tail, bundle)
   }
 
-  /**
-    * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html|Environment Manifest (env.yaml)]] for details.
+  /** A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html|Environment Manifest (env.yaml)]] for details.
     */
   @js.native
   trait EnvironmentLink extends js.Object {
@@ -2200,8 +2137,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes the AWS resources in use by this environment. This data is live.
+  /** Describes the AWS resources in use by this environment. This data is live.
     */
   @js.native
   trait EnvironmentResourceDescription extends js.Object {
@@ -2240,8 +2176,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing a list of environment resource descriptions.
+  /** Result message containing a list of environment resource descriptions.
     */
   @js.native
   trait EnvironmentResourceDescriptionsMessage extends js.Object {
@@ -2259,8 +2194,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes the AWS resources in use by this environment. This data is not live data.
+  /** Describes the AWS resources in use by this environment. This data is not live data.
     */
   @js.native
   trait EnvironmentResourcesDescription extends js.Object {
@@ -2290,8 +2224,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(Launching, Updating, Ready, Terminating, Terminated)
   }
 
-  /**
-    * Describes the properties of an environment tier
+  /** Describes the properties of an environment tier
     */
   @js.native
   trait EnvironmentTier extends js.Object {
@@ -2315,8 +2248,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes an event.
+  /** Describes an event.
     */
   @js.native
   trait EventDescription extends js.Object {
@@ -2358,8 +2290,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message wrapping a list of event descriptions.
+  /** Result message wrapping a list of event descriptions.
     */
   @js.native
   trait EventDescriptionsMessage extends js.Object {
@@ -2407,8 +2338,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError)
   }
 
-  /**
-    * The description of an Amazon EC2 instance.
+  /** The description of an Amazon EC2 instance.
     */
   @js.native
   trait Instance extends js.Object {
@@ -2426,8 +2356,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Represents summary information about the health of an instance. For more information, see [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html|Health Colors and Statuses]].
+  /** Represents summary information about the health of an instance. For more information, see [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html|Health Colors and Statuses]].
     */
   @js.native
   trait InstanceHealthSummary extends js.Object {
@@ -2484,8 +2413,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All)
   }
 
-  /**
-    * Represents the average latency for the slowest X percent of requests over the last 10 seconds.
+  /** Represents the average latency for the slowest X percent of requests over the last 10 seconds.
     */
   @js.native
   trait Latency extends js.Object {
@@ -2524,8 +2452,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes an Auto Scaling launch configuration.
+  /** Describes an Auto Scaling launch configuration.
     */
   @js.native
   trait LaunchConfiguration extends js.Object {
@@ -2543,8 +2470,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes an Amazon EC2 launch template.
+  /** Describes an Amazon EC2 launch template.
     */
   @js.native
   trait LaunchTemplate extends js.Object {
@@ -2562,8 +2488,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A list of available AWS Elastic Beanstalk solution stacks.
+  /** A list of available AWS Elastic Beanstalk solution stacks.
     */
   @js.native
   trait ListAvailableSolutionStacksResultMessage extends js.Object {
@@ -2679,13 +2604,11 @@ package elasticbeanstalk {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
 
-  /**
-    * Describes the properties of a Listener for the LoadBalancer.
+  /** Describes the properties of a Listener for the LoadBalancer.
     */
   @js.native
   trait Listener extends js.Object {
@@ -2706,8 +2629,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes a LoadBalancer.
+  /** Describes a LoadBalancer.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -2725,8 +2647,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes the details of a LoadBalancer.
+  /** Describes the details of a LoadBalancer.
     */
   @js.native
   trait LoadBalancerDescription extends js.Object {
@@ -2750,8 +2671,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The record of an upcoming or in-progress managed action.
+  /** The record of an upcoming or in-progress managed action.
     */
   @js.native
   trait ManagedAction extends js.Object {
@@ -2781,8 +2701,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The record of a completed or failed managed action.
+  /** The record of a completed or failed managed action.
     */
   @js.native
   trait ManagedActionHistoryItem extends js.Object {
@@ -2821,8 +2740,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A lifecycle rule that deletes application versions after the specified number of days.
+  /** A lifecycle rule that deletes application versions after the specified number of days.
     */
   @js.native
   trait MaxAgeRule extends js.Object {
@@ -2848,8 +2766,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
+  /** A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
     */
   @js.native
   trait MaxCountRule extends js.Object {
@@ -2875,8 +2792,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A regular expression representing a restriction on a string configuration option value.
+  /** A regular expression representing a restriction on a string configuration option value.
     */
   @js.native
   trait OptionRestrictionRegex extends js.Object {
@@ -2897,8 +2813,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A specification identifying an individual configuration option.
+  /** A specification identifying an individual configuration option.
     */
   @js.native
   trait OptionSpecification extends js.Object {
@@ -2922,8 +2837,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Summary information about a platform branch.
+  /** Summary information about a platform branch.
     */
   @js.native
   trait PlatformBranchSummary extends js.Object {
@@ -2953,8 +2867,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Detailed information about a platform version.
+  /** Detailed information about a platform version.
     */
   @js.native
   trait PlatformDescription extends js.Object {
@@ -3032,9 +2945,8 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes criteria to restrict the results when listing platform versions.
-    *  The filter is evaluated as follows: <code>Type Operator Values[1]</code>
+  /** Describes criteria to restrict the results when listing platform versions.
+    * The filter is evaluated as follows: <code>Type Operator Values[1]</code>
     */
   @js.native
   trait PlatformFilter extends js.Object {
@@ -3058,8 +2970,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A framework supported by the platform.
+  /** A framework supported by the platform.
     */
   @js.native
   trait PlatformFramework extends js.Object {
@@ -3080,8 +2991,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A programming language supported by the platform.
+  /** A programming language supported by the platform.
     */
   @js.native
   trait PlatformProgrammingLanguage extends js.Object {
@@ -3114,8 +3024,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(Creating, Failed, Ready, Deleting, Deleted)
   }
 
-  /**
-    * Summary information about a platform version.
+  /** Summary information about a platform version.
     */
   @js.native
   trait PlatformSummary extends js.Object {
@@ -3166,8 +3075,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes a queue.
+  /** Describes a queue.
     */
   @js.native
   trait Queue extends js.Object {
@@ -3188,8 +3096,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RebuildEnvironmentMessage extends js.Object {
@@ -3210,8 +3117,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
+  /** Request to retrieve logs from an environment and store them in your Elastic Beanstalk storage bucket.
     */
   @js.native
   trait RequestEnvironmentInfoMessage extends js.Object {
@@ -3237,8 +3143,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.
+  /** The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.
     */
   @js.native
   trait ResourceQuota extends js.Object {
@@ -3256,8 +3161,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.
+  /** A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.
     */
   @js.native
   trait ResourceQuotas extends js.Object {
@@ -3306,8 +3210,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RestartAppServerMessage extends js.Object {
@@ -3328,8 +3231,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
+  /** Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
     */
   @js.native
   trait RetrieveEnvironmentInfoMessage extends js.Object {
@@ -3355,8 +3257,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Result message containing a description of the requested environment info.
+  /** Result message containing a description of the requested environment info.
     */
   @js.native
   trait RetrieveEnvironmentInfoResultMessage extends js.Object {
@@ -3374,8 +3275,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The bucket and key of an item stored in Amazon S3.
+  /** The bucket and key of an item stored in Amazon S3.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -3396,11 +3296,10 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes criteria to restrict a list of results.
-    *  For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code>
-    *  Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code>
-    *  The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.
+  /** Describes criteria to restrict a list of results.
+    * For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code>
+    * Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code>
+    * The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.
     */
   @js.native
   trait SearchFilter extends js.Object {
@@ -3424,8 +3323,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.
+  /** Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.
     */
   @js.native
   trait SingleInstanceHealth extends js.Object {
@@ -3470,8 +3368,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes the solution stack.
+  /** Describes the solution stack.
     */
   @js.native
   trait SolutionStackDescription extends js.Object {
@@ -3492,8 +3389,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Location of the source code for an application version.
+  /** Location of the source code for an application version.
     */
   @js.native
   trait SourceBuildInformation extends js.Object {
@@ -3514,13 +3410,11 @@ package elasticbeanstalk {
         "SourceRepository" -> SourceRepository.asInstanceOf[js.Any],
         "SourceType" -> SourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SourceBuildInformation]
     }
   }
 
-  /**
-    * A specification for an environment configuration.
+  /** A specification for an environment configuration.
     */
   @js.native
   trait SourceConfiguration extends js.Object {
@@ -3559,8 +3453,7 @@ package elasticbeanstalk {
     @inline def values = js.Array(Git, Zip)
   }
 
-  /**
-    * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see [[http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html|Status Code Definitions]].
+  /** Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see [[http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html|Status Code Definitions]].
     */
   @js.native
   trait StatusCodes extends js.Object {
@@ -3587,8 +3480,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Swaps the CNAMEs of two environments.
+  /** Swaps the CNAMEs of two environments.
     */
   @js.native
   trait SwapEnvironmentCNAMEsMessage extends js.Object {
@@ -3615,8 +3507,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * CPU utilization and load average metrics for an Amazon EC2 instance.
+  /** CPU utilization and load average metrics for an Amazon EC2 instance.
     */
   @js.native
   trait SystemStatus extends js.Object {
@@ -3637,8 +3528,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes a tag applied to a resource in an environment.
+  /** Describes a tag applied to a resource in an environment.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3659,8 +3549,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to terminate an environment.
+  /** Request to terminate an environment.
     */
   @js.native
   trait TerminateEnvironmentMessage extends js.Object {
@@ -3687,8 +3576,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Describes a trigger.
+  /** Describes a trigger.
     */
   @js.native
   trait Trigger extends js.Object {
@@ -3706,8 +3594,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to update an application.
+  /** Request to update an application.
     */
   @js.native
   trait UpdateApplicationMessage extends js.Object {
@@ -3746,13 +3633,11 @@ package elasticbeanstalk {
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "ResourceLifecycleConfig" -> ResourceLifecycleConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateApplicationResourceLifecycleMessage]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait UpdateApplicationVersionMessage extends js.Object {
@@ -3778,8 +3663,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * The result message containing the options for the specified solution stack.
+  /** The result message containing the options for the specified solution stack.
     */
   @js.native
   trait UpdateConfigurationTemplateMessage extends js.Object {
@@ -3811,8 +3695,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * Request to update an environment.
+  /** Request to update an environment.
     */
   @js.native
   trait UpdateEnvironmentMessage extends js.Object {
@@ -3887,8 +3770,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * A list of validation messages for a specified configuration template.
+  /** A list of validation messages for a specified configuration template.
     */
   @js.native
   trait ValidateConfigurationSettingsMessage extends js.Object {
@@ -3917,8 +3799,7 @@ package elasticbeanstalk {
     }
   }
 
-  /**
-    * An error or warning for a desired configuration option value.
+  /** An error or warning for a desired configuration option value.
     */
   @js.native
   trait ValidationMessage extends js.Object {

@@ -108,8 +108,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * A list of failures when performing a batch grant or batch revoke operation.
+  /** A list of failures when performing a batch grant or batch revoke operation.
     */
   @js.native
   trait BatchPermissionsFailureEntry extends js.Object {
@@ -130,8 +129,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * A permission to a resource granted by batch operation to the principal.
+  /** A permission to a resource granted by batch operation to the principal.
     */
   @js.native
   trait BatchPermissionsRequestEntry extends js.Object {
@@ -200,24 +198,20 @@ package lakeformation {
     }
   }
 
-  /**
-    * A structure for the catalog object.
+  /** A structure for the catalog object.
     */
   @js.native
-  trait CatalogResource extends js.Object {}
+  trait CatalogResource extends js.Object
 
   object CatalogResource {
     @inline
-    def apply(
-    ): CatalogResource = {
+    def apply(): CatalogResource = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CatalogResource]
     }
   }
 
-  /**
-    * A wildcard object, consisting of an optional list of excluded column names or indexes.
+  /** A wildcard object, consisting of an optional list of excluded column names or indexes.
     */
   @js.native
   trait ColumnWildcard extends js.Object {
@@ -253,8 +247,7 @@ package lakeformation {
     @inline def values = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
   }
 
-  /**
-    * The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.
+  /** The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.
     */
   @js.native
   trait DataLakePrincipal extends js.Object {
@@ -283,8 +276,7 @@ package lakeformation {
     @inline def values = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
   }
 
-  /**
-    * A structure representing a list of AWS Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
+  /** A structure representing a list of AWS Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
     */
   @js.native
   trait DataLakeSettings extends js.Object {
@@ -311,8 +303,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * A structure for a data location object where permissions are granted or revoked.
+  /** A structure for a data location object where permissions are granted or revoked.
     */
   @js.native
   trait DataLocationResource extends js.Object {
@@ -335,8 +326,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * A structure for the database object.
+  /** A structure for the database object.
     */
   @js.native
   trait DatabaseResource extends js.Object {
@@ -372,20 +362,17 @@ package lakeformation {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterResourceRequest]
     }
   }
 
   @js.native
-  trait DeregisterResourceResponse extends js.Object {}
+  trait DeregisterResourceResponse extends js.Object
 
   object DeregisterResourceResponse {
     @inline
-    def apply(
-    ): DeregisterResourceResponse = {
+    def apply(): DeregisterResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterResourceResponse]
     }
   }
@@ -403,7 +390,6 @@ package lakeformation {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeResourceRequest]
     }
   }
@@ -424,8 +410,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * Contains details about an error.
+  /** Contains details about an error.
     */
   @js.native
   trait ErrorDetail extends js.Object {
@@ -456,8 +441,7 @@ package lakeformation {
     @inline def values = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
   }
 
-  /**
-    * This structure describes the filtering of columns in a table based on a filter condition.
+  /** This structure describes the filtering of columns in a table based on a filter condition.
     */
   @js.native
   trait FilterCondition extends js.Object {
@@ -590,14 +574,12 @@ package lakeformation {
   }
 
   @js.native
-  trait GrantPermissionsResponse extends js.Object {}
+  trait GrantPermissionsResponse extends js.Object
 
   object GrantPermissionsResponse {
     @inline
-    def apply(
-    ): GrantPermissionsResponse = {
+    def apply(): GrantPermissionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GrantPermissionsResponse]
     }
   }
@@ -710,8 +692,7 @@ package lakeformation {
     @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
   }
 
-  /**
-    * Permissions granted to a principal.
+  /** Permissions granted to a principal.
     */
   @js.native
   trait PrincipalPermissions extends js.Object {
@@ -732,8 +713,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * The permissions granted or revoked on a resource.
+  /** The permissions granted or revoked on a resource.
     */
   @js.native
   trait PrincipalResourcePermissions extends js.Object {
@@ -782,14 +762,12 @@ package lakeformation {
   }
 
   @js.native
-  trait PutDataLakeSettingsResponse extends js.Object {}
+  trait PutDataLakeSettingsResponse extends js.Object
 
   object PutDataLakeSettingsResponse {
     @inline
-    def apply(
-    ): PutDataLakeSettingsResponse = {
+    def apply(): PutDataLakeSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutDataLakeSettingsResponse]
     }
   }
@@ -819,20 +797,17 @@ package lakeformation {
   }
 
   @js.native
-  trait RegisterResourceResponse extends js.Object {}
+  trait RegisterResourceResponse extends js.Object
 
   object RegisterResourceResponse {
     @inline
-    def apply(
-    ): RegisterResourceResponse = {
+    def apply(): RegisterResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RegisterResourceResponse]
     }
   }
 
-  /**
-    * A structure for the resource.
+  /** A structure for the resource.
     */
   @js.native
   trait Resource extends js.Object {
@@ -862,8 +837,7 @@ package lakeformation {
     }
   }
 
-  /**
-    * A structure containing information about an AWS Lake Formation resource.
+  /** A structure containing information about an AWS Lake Formation resource.
     */
   @js.native
   trait ResourceInfo extends js.Object {
@@ -918,20 +892,17 @@ package lakeformation {
   }
 
   @js.native
-  trait RevokePermissionsResponse extends js.Object {}
+  trait RevokePermissionsResponse extends js.Object
 
   object RevokePermissionsResponse {
     @inline
-    def apply(
-    ): RevokePermissionsResponse = {
+    def apply(): RevokePermissionsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RevokePermissionsResponse]
     }
   }
 
-  /**
-    * A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.
+  /** A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.
     */
   @js.native
   trait TableResource extends js.Object {
@@ -960,25 +931,21 @@ package lakeformation {
     }
   }
 
-  /**
-    * A wildcard object representing every table under a database.
+  /** A wildcard object representing every table under a database.
     */
   @js.native
-  trait TableWildcard extends js.Object {}
+  trait TableWildcard extends js.Object
 
   object TableWildcard {
     @inline
-    def apply(
-    ): TableWildcard = {
+    def apply(): TableWildcard = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TableWildcard]
     }
   }
 
-  /**
-    * A structure for a table with columns object. This object is only used when granting a SELECT permission.
-    *  This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.
+  /** A structure for a table with columns object. This object is only used when granting a SELECT permission.
+    * This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.
     */
   @js.native
   trait TableWithColumnsResource extends js.Object {
@@ -1026,20 +993,17 @@ package lakeformation {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateResourceRequest]
     }
   }
 
   @js.native
-  trait UpdateResourceResponse extends js.Object {}
+  trait UpdateResourceResponse extends js.Object
 
   object UpdateResourceResponse {
     @inline
-    def apply(
-    ): UpdateResourceResponse = {
+    def apply(): UpdateResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateResourceResponse]
     }
   }

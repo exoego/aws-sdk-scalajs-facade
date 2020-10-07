@@ -31,16 +31,14 @@ package mobileanalytics {
     def putEvents(params: PutEventsInput): Request[js.Object] = js.native
   }
 
-  /**
-    * An exception object returned when a request fails.
+  /** An exception object returned when a request fails.
     */
   @js.native
   trait BadRequestExceptionException extends js.Object {
     val message: String
   }
 
-  /**
-    * A JSON object representing a batch of unique event occurrences in your app.
+  /** A JSON object representing a batch of unique event occurrences in your app.
     */
   @js.native
   trait Event extends js.Object {
@@ -75,8 +73,7 @@ package mobileanalytics {
     }
   }
 
-  /**
-    * A container for the data needed for a PutEvent operation
+  /** A container for the data needed for a PutEvent operation
     */
   @js.native
   trait PutEventsInput extends js.Object {
@@ -102,8 +99,7 @@ package mobileanalytics {
     }
   }
 
-  /**
-    * Describes the session. Session information is required on ALL events.
+  /** Describes the session. Session information is required on ALL events.
     */
   @js.native
   trait Session extends js.Object {

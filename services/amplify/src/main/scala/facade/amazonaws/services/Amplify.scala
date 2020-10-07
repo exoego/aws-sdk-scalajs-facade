@@ -200,8 +200,7 @@ package amplify {
     def updateWebhook(params: UpdateWebhookRequest): Request[UpdateWebhookResult] = js.native
   }
 
-  /**
-    * Represents the different branches of a repository for building, deploying, and hosting an Amplify app.
+  /** Represents the different branches of a repository for building, deploying, and hosting an Amplify app.
     */
   @js.native
   trait App extends js.Object {
@@ -284,8 +283,7 @@ package amplify {
     }
   }
 
-  /**
-    * Describes an artifact.
+  /** Describes an artifact.
     */
   @js.native
   trait Artifact extends js.Object {
@@ -303,13 +301,11 @@ package amplify {
         "artifactFileName" -> artifactFileName.asInstanceOf[js.Any],
         "artifactId" -> artifactId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Artifact]
     }
   }
 
-  /**
-    * Describes the automated branch creation configuration.
+  /** Describes the automated branch creation configuration.
     */
   @js.native
   trait AutoBranchCreationConfig extends js.Object {
@@ -351,8 +347,7 @@ package amplify {
     }
   }
 
-  /**
-    * Describes the backend environment for an Amplify app.
+  /** Describes the backend environment for an Amplify app.
     */
   @js.native
   trait BackendEnvironment extends js.Object {
@@ -387,8 +382,7 @@ package amplify {
     }
   }
 
-  /**
-    * The branch for an Amplify app, which maps to a third-party repository branch.
+  /** The branch for an Amplify app, which maps to a third-party repository branch.
     */
   @js.native
   trait Branch extends js.Object {
@@ -483,8 +477,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure used to create apps in Amplify.
+  /** The request structure used to create apps in Amplify.
     */
   @js.native
   trait CreateAppRequest extends js.Object {
@@ -568,13 +561,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAppResult]
     }
   }
 
-  /**
-    * The request structure for the backend environment create request.
+  /** The request structure for the backend environment create request.
     */
   @js.native
   trait CreateBackendEnvironmentRequest extends js.Object {
@@ -603,8 +594,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the create backend environment request.
+  /** The result structure for the create backend environment request.
     */
   @js.native
   trait CreateBackendEnvironmentResult extends js.Object {
@@ -619,13 +609,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "backendEnvironment" -> backendEnvironment.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateBackendEnvironmentResult]
     }
   }
 
-  /**
-    * The request structure for the create branch request.
+  /** The request structure for the create branch request.
     */
   @js.native
   trait CreateBranchRequest extends js.Object {
@@ -693,8 +681,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for create branch request.
+  /** The result structure for create branch request.
     */
   @js.native
   trait CreateBranchResult extends js.Object {
@@ -709,13 +696,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateBranchResult]
     }
   }
 
-  /**
-    * The request structure for the create a new deployment request.
+  /** The request structure for the create a new deployment request.
     */
   @js.native
   trait CreateDeploymentRequest extends js.Object {
@@ -741,8 +726,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the create a new deployment request.
+  /** The result structure for the create a new deployment request.
     */
   @js.native
   trait CreateDeploymentResult extends js.Object {
@@ -768,8 +752,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the create domain association request.
+  /** The request structure for the create domain association request.
     */
   @js.native
   trait CreateDomainAssociationRequest extends js.Object {
@@ -804,8 +787,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the create domain association request.
+  /** The result structure for the create domain association request.
     */
   @js.native
   trait CreateDomainAssociationResult extends js.Object {
@@ -820,13 +802,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDomainAssociationResult]
     }
   }
 
-  /**
-    * The request structure for the create webhook request.
+  /** The request structure for the create webhook request.
     */
   @js.native
   trait CreateWebhookRequest extends js.Object {
@@ -852,8 +832,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the create webhook request.
+  /** The result structure for the create webhook request.
     */
   @js.native
   trait CreateWebhookResult extends js.Object {
@@ -868,13 +847,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateWebhookResult]
     }
   }
 
-  /**
-    * Describes a custom rewrite or redirect rule.
+  /** Describes a custom rewrite or redirect rule.
     */
   @js.native
   trait CustomRule extends js.Object {
@@ -903,8 +880,7 @@ package amplify {
     }
   }
 
-  /**
-    * Describes the request structure for the delete app request.
+  /** Describes the request structure for the delete app request.
     */
   @js.native
   trait DeleteAppRequest extends js.Object {
@@ -919,13 +895,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppRequest]
     }
   }
 
-  /**
-    * The result structure for the delete app request.
+  /** The result structure for the delete app request.
     */
   @js.native
   trait DeleteAppResult extends js.Object {
@@ -940,13 +914,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppResult]
     }
   }
 
-  /**
-    * The request structure for the delete backend environment request.
+  /** The request structure for the delete backend environment request.
     */
   @js.native
   trait DeleteBackendEnvironmentRequest extends js.Object {
@@ -964,13 +936,11 @@ package amplify {
         "appId" -> appId.asInstanceOf[js.Any],
         "environmentName" -> environmentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackendEnvironmentRequest]
     }
   }
 
-  /**
-    * The result structure of the delete backend environment result.
+  /** The result structure of the delete backend environment result.
     */
   @js.native
   trait DeleteBackendEnvironmentResult extends js.Object {
@@ -985,13 +955,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "backendEnvironment" -> backendEnvironment.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackendEnvironmentResult]
     }
   }
 
-  /**
-    * The request structure for the delete branch request.
+  /** The request structure for the delete branch request.
     */
   @js.native
   trait DeleteBranchRequest extends js.Object {
@@ -1009,13 +977,11 @@ package amplify {
         "appId" -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBranchRequest]
     }
   }
 
-  /**
-    * The result structure for the delete branch request.
+  /** The result structure for the delete branch request.
     */
   @js.native
   trait DeleteBranchResult extends js.Object {
@@ -1030,13 +996,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBranchResult]
     }
   }
 
-  /**
-    * The request structure for the delete domain association request.
+  /** The request structure for the delete domain association request.
     */
   @js.native
   trait DeleteDomainAssociationRequest extends js.Object {
@@ -1054,7 +1018,6 @@ package amplify {
         "appId" -> appId.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainAssociationRequest]
     }
   }
@@ -1072,13 +1035,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainAssociationResult]
     }
   }
 
-  /**
-    * The request structure for the delete job request.
+  /** The request structure for the delete job request.
     */
   @js.native
   trait DeleteJobRequest extends js.Object {
@@ -1099,13 +1060,11 @@ package amplify {
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJobRequest]
     }
   }
 
-  /**
-    * The result structure for the delete job request.
+  /** The result structure for the delete job request.
     */
   @js.native
   trait DeleteJobResult extends js.Object {
@@ -1120,13 +1079,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJobResult]
     }
   }
 
-  /**
-    * The request structure for the delete webhook request.
+  /** The request structure for the delete webhook request.
     */
   @js.native
   trait DeleteWebhookRequest extends js.Object {
@@ -1141,13 +1098,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "webhookId" -> webhookId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWebhookRequest]
     }
   }
 
-  /**
-    * The result structure for the delete webhook request.
+  /** The result structure for the delete webhook request.
     */
   @js.native
   trait DeleteWebhookResult extends js.Object {
@@ -1162,13 +1117,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWebhookResult]
     }
   }
 
-  /**
-    * Describes a domain association that associates a custom domain with an Amplify app.
+  /** Describes a domain association that associates a custom domain with an Amplify app.
     */
   @js.native
   trait DomainAssociation extends js.Object {
@@ -1227,8 +1180,7 @@ package amplify {
     @inline def values = js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
   }
 
-  /**
-    * The request structure for the generate access logs request.
+  /** The request structure for the generate access logs request.
     */
   @js.native
   trait GenerateAccessLogsRequest extends js.Object {
@@ -1257,8 +1209,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the generate access logs request.
+  /** The result structure for the generate access logs request.
     */
   @js.native
   trait GenerateAccessLogsResult extends js.Object {
@@ -1276,8 +1227,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the get app request.
+  /** The request structure for the get app request.
     */
   @js.native
   trait GetAppRequest extends js.Object {
@@ -1292,7 +1242,6 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppRequest]
     }
   }
@@ -1310,13 +1259,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAppResult]
     }
   }
 
-  /**
-    * Returns the request structure for the get artifact request.
+  /** Returns the request structure for the get artifact request.
     */
   @js.native
   trait GetArtifactUrlRequest extends js.Object {
@@ -1331,13 +1278,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "artifactId" -> artifactId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetArtifactUrlRequest]
     }
   }
 
-  /**
-    * Returns the result structure for the get artifact request.
+  /** Returns the result structure for the get artifact request.
     */
   @js.native
   trait GetArtifactUrlResult extends js.Object {
@@ -1355,13 +1300,11 @@ package amplify {
         "artifactId" -> artifactId.asInstanceOf[js.Any],
         "artifactUrl" -> artifactUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetArtifactUrlResult]
     }
   }
 
-  /**
-    * The request structure for the get backend environment request.
+  /** The request structure for the get backend environment request.
     */
   @js.native
   trait GetBackendEnvironmentRequest extends js.Object {
@@ -1379,13 +1322,11 @@ package amplify {
         "appId" -> appId.asInstanceOf[js.Any],
         "environmentName" -> environmentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackendEnvironmentRequest]
     }
   }
 
-  /**
-    * The result structure for the get backend environment result.
+  /** The result structure for the get backend environment result.
     */
   @js.native
   trait GetBackendEnvironmentResult extends js.Object {
@@ -1400,13 +1341,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "backendEnvironment" -> backendEnvironment.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackendEnvironmentResult]
     }
   }
 
-  /**
-    * The request structure for the get branch request.
+  /** The request structure for the get branch request.
     */
   @js.native
   trait GetBranchRequest extends js.Object {
@@ -1424,7 +1363,6 @@ package amplify {
         "appId" -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBranchRequest]
     }
   }
@@ -1442,13 +1380,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBranchResult]
     }
   }
 
-  /**
-    * The request structure for the get domain association request.
+  /** The request structure for the get domain association request.
     */
   @js.native
   trait GetDomainAssociationRequest extends js.Object {
@@ -1466,13 +1402,11 @@ package amplify {
         "appId" -> appId.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainAssociationRequest]
     }
   }
 
-  /**
-    * The result structure for the get domain association request.
+  /** The result structure for the get domain association request.
     */
   @js.native
   trait GetDomainAssociationResult extends js.Object {
@@ -1487,13 +1421,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainAssociationResult]
     }
   }
 
-  /**
-    * The request structure for the get job request.
+  /** The request structure for the get job request.
     */
   @js.native
   trait GetJobRequest extends js.Object {
@@ -1514,7 +1446,6 @@ package amplify {
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobRequest]
     }
   }
@@ -1532,13 +1463,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobResult]
     }
   }
 
-  /**
-    * The request structure for the get webhook request.
+  /** The request structure for the get webhook request.
     */
   @js.native
   trait GetWebhookRequest extends js.Object {
@@ -1553,13 +1482,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "webhookId" -> webhookId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetWebhookRequest]
     }
   }
 
-  /**
-    * The result structure for the get webhook request.
+  /** The result structure for the get webhook request.
     */
   @js.native
   trait GetWebhookResult extends js.Object {
@@ -1574,13 +1501,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetWebhookResult]
     }
   }
 
-  /**
-    * Describes an execution job for an Amplify app.
+  /** Describes an execution job for an Amplify app.
     */
   @js.native
   trait Job extends js.Object {
@@ -1598,7 +1523,6 @@ package amplify {
         "steps" -> steps.asInstanceOf[js.Any],
         "summary" -> summary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Job]
     }
   }
@@ -1617,8 +1541,7 @@ package amplify {
     @inline def values = js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
   }
 
-  /**
-    * Describes the summary for an execution job for an Amplify app.
+  /** Describes the summary for an execution job for an Amplify app.
     */
   @js.native
   trait JobSummary extends js.Object {
@@ -1673,8 +1596,7 @@ package amplify {
     @inline def values = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
   }
 
-  /**
-    * The request structure for the list apps request.
+  /** The request structure for the list apps request.
     */
   @js.native
   trait ListAppsRequest extends js.Object {
@@ -1695,8 +1617,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for an Amplify app list request.
+  /** The result structure for an Amplify app list request.
     */
   @js.native
   trait ListAppsResult extends js.Object {
@@ -1719,8 +1640,7 @@ package amplify {
     }
   }
 
-  /**
-    * Describes the request structure for the list artifacts request.
+  /** Describes the request structure for the list artifacts request.
     */
   @js.native
   trait ListArtifactsRequest extends js.Object {
@@ -1752,8 +1672,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the list artifacts request.
+  /** The result structure for the list artifacts request.
     */
   @js.native
   trait ListArtifactsResult extends js.Object {
@@ -1776,8 +1695,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the list backend environments request.
+  /** The request structure for the list backend environments request.
     */
   @js.native
   trait ListBackendEnvironmentsRequest extends js.Object {
@@ -1806,8 +1724,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the list backend environments result.
+  /** The result structure for the list backend environments result.
     */
   @js.native
   trait ListBackendEnvironmentsResult extends js.Object {
@@ -1830,8 +1747,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the list branches request.
+  /** The request structure for the list branches request.
     */
   @js.native
   trait ListBranchesRequest extends js.Object {
@@ -1857,8 +1773,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the list branches request.
+  /** The result structure for the list branches request.
     */
   @js.native
   trait ListBranchesResult extends js.Object {
@@ -1881,8 +1796,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the list domain associations request.
+  /** The request structure for the list domain associations request.
     */
   @js.native
   trait ListDomainAssociationsRequest extends js.Object {
@@ -1908,8 +1822,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the list domain association request.
+  /** The result structure for the list domain association request.
     */
   @js.native
   trait ListDomainAssociationsResult extends js.Object {
@@ -1932,8 +1845,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the list jobs request.
+  /** The request structure for the list jobs request.
     */
   @js.native
   trait ListJobsRequest extends js.Object {
@@ -1962,8 +1874,7 @@ package amplify {
     }
   }
 
-  /**
-    * The maximum number of records to list in a single response.
+  /** The maximum number of records to list in a single response.
     */
   @js.native
   trait ListJobsResult extends js.Object {
@@ -1986,8 +1897,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure to use to list tags for a resource.
+  /** The request structure to use to list tags for a resource.
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
@@ -2002,13 +1912,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
 
-  /**
-    * The response for the list tags for resource request.
+  /** The response for the list tags for resource request.
     */
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
@@ -2026,8 +1934,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the list webhooks request.
+  /** The request structure for the list webhooks request.
     */
   @js.native
   trait ListWebhooksRequest extends js.Object {
@@ -2053,8 +1960,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the list webhooks request.
+  /** The result structure for the list webhooks request.
     */
   @js.native
   trait ListWebhooksResult extends js.Object {
@@ -2085,8 +1991,7 @@ package amplify {
     @inline def values = js.Array(WEB)
   }
 
-  /**
-    * Describes the information about a production branch for an Amplify app.
+  /** Describes the information about a production branch for an Amplify app.
     */
   @js.native
   trait ProductionBranch extends js.Object {
@@ -2125,8 +2030,7 @@ package amplify {
     @inline def values = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
   }
 
-  /**
-    * The request structure for the start a deployment request.
+  /** The request structure for the start a deployment request.
     */
   @js.native
   trait StartDeploymentRequest extends js.Object {
@@ -2155,8 +2059,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the start a deployment request.
+  /** The result structure for the start a deployment request.
     */
   @js.native
   trait StartDeploymentResult extends js.Object {
@@ -2171,13 +2074,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartDeploymentResult]
     }
   }
 
-  /**
-    * The request structure for the start job request.
+  /** The request structure for the start job request.
     */
   @js.native
   trait StartJobRequest extends js.Object {
@@ -2218,8 +2119,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the run job request.
+  /** The result structure for the run job request.
     */
   @js.native
   trait StartJobResult extends js.Object {
@@ -2234,13 +2134,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartJobResult]
     }
   }
 
-  /**
-    * Describes an execution step, for an execution job, for an Amplify app.
+  /** Describes an execution step, for an execution job, for an Amplify app.
     */
   @js.native
   trait Step extends js.Object {
@@ -2290,8 +2188,7 @@ package amplify {
     }
   }
 
-  /**
-    * The request structure for the stop job request.
+  /** The request structure for the stop job request.
     */
   @js.native
   trait StopJobRequest extends js.Object {
@@ -2312,13 +2209,11 @@ package amplify {
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopJobRequest]
     }
   }
 
-  /**
-    * The result structure for the stop job request.
+  /** The result structure for the stop job request.
     */
   @js.native
   trait StopJobResult extends js.Object {
@@ -2333,13 +2228,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopJobResult]
     }
   }
 
-  /**
-    * The subdomain for the domain association.
+  /** The subdomain for the domain association.
     */
   @js.native
   trait SubDomain extends js.Object {
@@ -2360,13 +2253,11 @@ package amplify {
         "subDomainSetting" -> subDomainSetting.asInstanceOf[js.Any],
         "verified" -> verified.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SubDomain]
     }
   }
 
-  /**
-    * Describes the settings for the subdomain.
+  /** Describes the settings for the subdomain.
     */
   @js.native
   trait SubDomainSetting extends js.Object {
@@ -2384,13 +2275,11 @@ package amplify {
         "branchName" -> branchName.asInstanceOf[js.Any],
         "prefix" -> prefix.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SubDomainSetting]
     }
   }
 
-  /**
-    * The request structure to tag a resource with a tag key and value.
+  /** The request structure to tag a resource with a tag key and value.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -2408,29 +2297,24 @@ package amplify {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * The response for the tag resource request.
+  /** The response for the tag resource request.
     */
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * The request structure for the untag resource request.
+  /** The request structure for the untag resource request.
     */
   @js.native
   trait UntagResourceRequest extends js.Object {
@@ -2448,29 +2332,24 @@ package amplify {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * The response for the untag resource request.
+  /** The response for the untag resource request.
     */
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * The request structure for the update app request.
+  /** The request structure for the update app request.
     */
   @js.native
   trait UpdateAppRequest extends js.Object {
@@ -2541,8 +2420,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for an Amplify app update request.
+  /** The result structure for an Amplify app update request.
     */
   @js.native
   trait UpdateAppResult extends js.Object {
@@ -2557,13 +2435,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAppResult]
     }
   }
 
-  /**
-    * The request structure for the update branch request.
+  /** The request structure for the update branch request.
     */
   @js.native
   trait UpdateBranchRequest extends js.Object {
@@ -2628,8 +2504,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the update branch request.
+  /** The result structure for the update branch request.
     */
   @js.native
   trait UpdateBranchResult extends js.Object {
@@ -2644,13 +2519,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBranchResult]
     }
   }
 
-  /**
-    * The request structure for the update domain association request.
+  /** The request structure for the update domain association request.
     */
   @js.native
   trait UpdateDomainAssociationRequest extends js.Object {
@@ -2685,8 +2558,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the update domain association request.
+  /** The result structure for the update domain association request.
     */
   @js.native
   trait UpdateDomainAssociationResult extends js.Object {
@@ -2701,13 +2573,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDomainAssociationResult]
     }
   }
 
-  /**
-    * The request structure for the update webhook request.
+  /** The request structure for the update webhook request.
     */
   @js.native
   trait UpdateWebhookRequest extends js.Object {
@@ -2733,8 +2603,7 @@ package amplify {
     }
   }
 
-  /**
-    * The result structure for the update webhook request.
+  /** The result structure for the update webhook request.
     */
   @js.native
   trait UpdateWebhookResult extends js.Object {
@@ -2749,13 +2618,11 @@ package amplify {
       val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateWebhookResult]
     }
   }
 
-  /**
-    * Describes a webhook that connects repository events to an Amplify app.
+  /** Describes a webhook that connects repository events to an Amplify app.
     */
   @js.native
   trait Webhook extends js.Object {
@@ -2788,7 +2655,6 @@ package amplify {
         "webhookId" -> webhookId.asInstanceOf[js.Any],
         "webhookUrl" -> webhookUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Webhook]
     }
   }

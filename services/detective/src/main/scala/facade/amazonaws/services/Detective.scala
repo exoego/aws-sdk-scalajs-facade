@@ -73,13 +73,11 @@ package detective {
       val __obj = js.Dynamic.literal(
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcceptInvitationRequest]
     }
   }
 
-  /**
-    * An AWS account that is the master of or a member of a behavior graph.
+  /** An AWS account that is the master of or a member of a behavior graph.
     */
   @js.native
   trait Account extends js.Object {
@@ -97,7 +95,6 @@ package detective {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Account]
     }
   }
@@ -174,7 +171,6 @@ package detective {
       val __obj = js.Dynamic.literal(
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGraphRequest]
     }
   }
@@ -195,7 +191,6 @@ package detective {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMembersRequest]
     }
   }
@@ -232,7 +227,6 @@ package detective {
       val __obj = js.Dynamic.literal(
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateMembershipRequest]
     }
   }
@@ -253,7 +247,6 @@ package detective {
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMembersRequest]
     }
   }
@@ -277,8 +270,7 @@ package detective {
     }
   }
 
-  /**
-    * A behavior graph in Detective.
+  /** A behavior graph in Detective.
     */
   @js.native
   trait Graph extends js.Object {
@@ -418,8 +410,7 @@ package detective {
     }
   }
 
-  /**
-    * Details about a member account that was invited to contribute to a behavior graph.
+  /** Details about a member account that was invited to contribute to a behavior graph.
     */
   @js.native
   trait MemberDetail extends js.Object {
@@ -498,7 +489,6 @@ package detective {
       val __obj = js.Dynamic.literal(
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RejectInvitationRequest]
     }
   }
@@ -519,13 +509,11 @@ package detective {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMonitoringMemberRequest]
     }
   }
 
-  /**
-    * A member account that was included in a request but for which the request could not be processed.
+  /** A member account that was included in a request but for which the request could not be processed.
     */
   @js.native
   trait UnprocessedAccount extends js.Object {

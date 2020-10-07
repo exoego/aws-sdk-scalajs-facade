@@ -42,8 +42,7 @@ package iotdata {
     def updateThingShadow(params: UpdateThingShadowRequest): Request[UpdateThingShadowResponse] = js.native
   }
 
-  /**
-    * The input for the DeleteThingShadow operation.
+  /** The input for the DeleteThingShadow operation.
     */
   @js.native
   trait DeleteThingShadowRequest extends js.Object {
@@ -66,8 +65,7 @@ package iotdata {
     }
   }
 
-  /**
-    * The output from the DeleteThingShadow operation.
+  /** The output from the DeleteThingShadow operation.
     */
   @js.native
   trait DeleteThingShadowResponse extends js.Object {
@@ -82,13 +80,11 @@ package iotdata {
       val __obj = js.Dynamic.literal(
         "payload" -> payload.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteThingShadowResponse]
     }
   }
 
-  /**
-    * The input for the GetThingShadow operation.
+  /** The input for the GetThingShadow operation.
     */
   @js.native
   trait GetThingShadowRequest extends js.Object {
@@ -111,8 +107,7 @@ package iotdata {
     }
   }
 
-  /**
-    * The output from the GetThingShadow operation.
+  /** The output from the GetThingShadow operation.
     */
   @js.native
   trait GetThingShadowResponse extends js.Object {
@@ -176,8 +171,7 @@ package iotdata {
     }
   }
 
-  /**
-    * The input for the Publish operation.
+  /** The input for the Publish operation.
     */
   @js.native
   trait PublishRequest extends js.Object {
@@ -203,8 +197,7 @@ package iotdata {
     }
   }
 
-  /**
-    * The input for the UpdateThingShadow operation.
+  /** The input for the UpdateThingShadow operation.
     */
   @js.native
   trait UpdateThingShadowRequest extends js.Object {
@@ -230,8 +223,7 @@ package iotdata {
     }
   }
 
-  /**
-    * The output from the UpdateThingShadow operation.
+  /** The output from the UpdateThingShadow operation.
     */
   @js.native
   trait UpdateThingShadowResponse extends js.Object {

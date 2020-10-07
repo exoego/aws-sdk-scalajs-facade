@@ -1460,8 +1460,7 @@ package ec2 {
     def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResult] = js.native
   }
 
-  /**
-    * Contains the parameters for accepting the quote.
+  /** Contains the parameters for accepting the quote.
     */
   @js.native
   trait AcceptReservedInstancesExchangeQuoteRequest extends js.Object {
@@ -1487,8 +1486,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The result of the exchange and whether it was <code>successful</code>.
+  /** The result of the exchange and whether it was <code>successful</code>.
     */
   @js.native
   trait AcceptReservedInstancesExchangeQuoteResult extends js.Object {
@@ -1655,8 +1653,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an account attribute.
+  /** Describes an account attribute.
     */
   @js.native
   trait AccountAttribute extends js.Object {
@@ -1686,8 +1683,7 @@ package ec2 {
     @inline def values = js.Array(`supported-platforms`, `default-vpc`)
   }
 
-  /**
-    * Describes a value of an account attribute.
+  /** Describes a value of an account attribute.
     */
   @js.native
   trait AccountAttributeValue extends js.Object {
@@ -1705,8 +1701,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a running instance in a Spot Fleet.
+  /** Describes a running instance in a Spot Fleet.
     */
   @js.native
   trait ActiveInstance extends js.Object {
@@ -1744,8 +1739,7 @@ package ec2 {
     @inline def values = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
   }
 
-  /**
-    * An entry for a prefix list.
+  /** An entry for a prefix list.
     */
   @js.native
   trait AddPrefixListEntry extends js.Object {
@@ -1768,8 +1762,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an Elastic IP address, or a carrier IP address.
+  /** Describes an Elastic IP address, or a carrier IP address.
     */
   @js.native
   trait Address extends js.Object {
@@ -1979,8 +1972,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of AllocateHosts.
+  /** Contains the output of AllocateHosts.
     */
   @js.native
   trait AllocateHostsResult extends js.Object {
@@ -2021,8 +2013,7 @@ package ec2 {
     @inline def values = js.Array(lowestPrice, diversified, capacityOptimized)
   }
 
-  /**
-    * Describes a principal.
+  /** Describes a principal.
     */
   @js.native
   trait AllowedPrincipal extends js.Object {
@@ -2158,8 +2149,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for AssignPrivateIpAddresses.
+  /** Contains the parameters for AssignPrivateIpAddresses.
     */
   @js.native
   trait AssignPrivateIpAddressesRequest extends js.Object {
@@ -2207,8 +2197,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the private IP addresses assigned to a network interface.
+  /** Describes the private IP addresses assigned to a network interface.
     */
   @js.native
   trait AssignedPrivateIpAddress extends js.Object {
@@ -2362,7 +2351,6 @@ package ec2 {
         "IamInstanceProfile" -> IamInstanceProfile.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateIamInstanceProfileRequest]
     }
   }
@@ -2445,7 +2433,6 @@ package ec2 {
         "Ipv6CidrBlock" -> Ipv6CidrBlock.asInstanceOf[js.Any],
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateSubnetCidrBlockRequest]
     }
   }
@@ -2613,8 +2600,7 @@ package ec2 {
     @inline def values = js.Array(vpc)
   }
 
-  /**
-    * Describes a target network that is associated with a Client VPN endpoint. A target network is a subnet in a VPC.
+  /** Describes a target network that is associated with a Client VPN endpoint. A target network is a subnet in a VPC.
     */
   @js.native
   trait AssociatedTargetNetwork extends js.Object {
@@ -2635,8 +2621,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a target network association.
+  /** Describes the state of a target network association.
     */
   @js.native
   trait AssociationStatus extends js.Object {
@@ -2736,8 +2721,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for AttachNetworkInterface.
+  /** Contains the parameters for AttachNetworkInterface.
     */
   @js.native
   trait AttachNetworkInterfaceRequest extends js.Object {
@@ -2766,8 +2750,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of AttachNetworkInterface.
+  /** Contains the output of AttachNetworkInterface.
     */
   @js.native
   trait AttachNetworkInterfaceResult extends js.Object {
@@ -2812,8 +2795,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for AttachVpnGateway.
+  /** Contains the parameters for AttachVpnGateway.
     */
   @js.native
   trait AttachVpnGatewayRequest extends js.Object {
@@ -2839,8 +2821,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of AttachVpnGateway.
+  /** Contains the output of AttachVpnGateway.
     */
   @js.native
   trait AttachVpnGatewayResult extends js.Object {
@@ -2869,8 +2850,7 @@ package ec2 {
     @inline def values = js.Array(attaching, attached, detaching, detached)
   }
 
-  /**
-    * Describes a value for a resource attribute that is a Boolean value.
+  /** Describes a value for a resource attribute that is a Boolean value.
     */
   @js.native
   trait AttributeBooleanValue extends js.Object {
@@ -2888,8 +2868,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a value for a resource attribute that is a String.
+  /** Describes a value for a resource attribute that is a String.
     */
   @js.native
   trait AttributeValue extends js.Object {
@@ -2907,8 +2886,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about an authorization rule.
+  /** Information about an authorization rule.
     */
   @js.native
   trait AuthorizationRule extends js.Object {
@@ -3096,8 +3074,7 @@ package ec2 {
     @inline def values = js.Array(on, off)
   }
 
-  /**
-    * Describes Availability Zones, Local Zones, and Wavelength Zones.
+  /** Describes Availability Zones, Local Zones, and Wavelength Zones.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -3145,8 +3122,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a message about an Availability Zone, Local Zone, or Wavelength Zone.
+  /** Describes a message about an Availability Zone, Local Zone, or Wavelength Zone.
     */
   @js.native
   trait AvailabilityZoneMessage extends js.Object {
@@ -3185,8 +3161,7 @@ package ec2 {
     @inline def values = js.Array(available, information, impaired, unavailable)
   }
 
-  /**
-    * The capacity information for instances that can be launched onto the Dedicated Host.
+  /** The capacity information for instances that can be launched onto the Dedicated Host.
     */
   @js.native
   trait AvailableCapacity extends js.Object {
@@ -3237,8 +3212,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a block device mapping.
+  /** Describes a block device mapping.
     */
   @js.native
   trait BlockDeviceMapping extends js.Object {
@@ -3265,8 +3239,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for BundleInstance.
+  /** Contains the parameters for BundleInstance.
     */
   @js.native
   trait BundleInstanceRequest extends js.Object {
@@ -3292,8 +3265,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of BundleInstance.
+  /** Contains the output of BundleInstance.
     */
   @js.native
   trait BundleInstanceResult extends js.Object {
@@ -3311,8 +3283,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a bundle task.
+  /** Describes a bundle task.
     */
   @js.native
   trait BundleTask extends js.Object {
@@ -3351,8 +3322,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an error for <a>BundleInstance</a>.
+  /** Describes an error for <a>BundleInstance</a>.
     */
   @js.native
   trait BundleTaskError extends js.Object {
@@ -3387,8 +3357,7 @@ package ec2 {
     @inline def values = js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
   }
 
-  /**
-    * Information about an address range that is provisioned for use with your AWS resources through bring your own IP addresses (BYOIP).
+  /** Information about an address range that is provisioned for use with your AWS resources through bring your own IP addresses (BYOIP).
     */
   @js.native
   trait ByoipCidr extends js.Object {
@@ -3427,17 +3396,16 @@ package ec2 {
     val provisioned = "provisioned".asInstanceOf[ByoipCidrState]
     val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
 
-    @inline def values =
-      js.Array(
-        advertised,
-        deprovisioned,
-        `failed-deprovision`,
-        `failed-provision`,
-        `pending-deprovision`,
-        `pending-provision`,
-        provisioned,
-        `provisioned-not-publicly-advertisable`
-      )
+    @inline def values = js.Array(
+      advertised,
+      deprovisioned,
+      `failed-deprovision`,
+      `failed-provision`,
+      `pending-deprovision`,
+      `pending-provision`,
+      provisioned,
+      `provisioned-not-publicly-advertisable`
+    )
   }
 
   @js.native
@@ -3451,8 +3419,7 @@ package ec2 {
     @inline def values = js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
   }
 
-  /**
-    * Contains the parameters for CancelBundleTask.
+  /** Contains the parameters for CancelBundleTask.
     */
   @js.native
   trait CancelBundleTaskRequest extends js.Object {
@@ -3475,8 +3442,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CancelBundleTask.
+  /** Contains the output of CancelBundleTask.
     */
   @js.native
   trait CancelBundleTaskResult extends js.Object {
@@ -3568,7 +3534,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "ExportTaskId" -> ExportTaskId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelExportTaskRequest]
     }
   }
@@ -3617,8 +3582,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CancelReservedInstancesListing.
+  /** Contains the parameters for CancelReservedInstancesListing.
     */
   @js.native
   trait CancelReservedInstancesListingRequest extends js.Object {
@@ -3633,13 +3597,11 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "ReservedInstancesListingId" -> ReservedInstancesListingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelReservedInstancesListingRequest]
     }
   }
 
-  /**
-    * Contains the output of CancelReservedInstancesListing.
+  /** Contains the output of CancelReservedInstancesListing.
     */
   @js.native
   trait CancelReservedInstancesListingResult extends js.Object {
@@ -3657,8 +3619,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Spot Fleet error.
+  /** Describes a Spot Fleet error.
     */
   @js.native
   trait CancelSpotFleetRequestsError extends js.Object {
@@ -3679,8 +3640,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Spot Fleet request that was not successfully canceled.
+  /** Describes a Spot Fleet request that was not successfully canceled.
     */
   @js.native
   trait CancelSpotFleetRequestsErrorItem extends js.Object {
@@ -3701,8 +3661,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CancelSpotFleetRequests.
+  /** Contains the parameters for CancelSpotFleetRequests.
     */
   @js.native
   trait CancelSpotFleetRequestsRequest extends js.Object {
@@ -3728,8 +3687,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CancelSpotFleetRequests.
+  /** Contains the output of CancelSpotFleetRequests.
     */
   @js.native
   trait CancelSpotFleetRequestsResponse extends js.Object {
@@ -3750,8 +3708,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Spot Fleet request that was successfully canceled.
+  /** Describes a Spot Fleet request that was successfully canceled.
     */
   @js.native
   trait CancelSpotFleetRequestsSuccessItem extends js.Object {
@@ -3787,8 +3744,7 @@ package ec2 {
     @inline def values = js.Array(active, open, closed, cancelled, completed)
   }
 
-  /**
-    * Contains the parameters for CancelSpotInstanceRequests.
+  /** Contains the parameters for CancelSpotInstanceRequests.
     */
   @js.native
   trait CancelSpotInstanceRequestsRequest extends js.Object {
@@ -3811,8 +3767,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CancelSpotInstanceRequests.
+  /** Contains the output of CancelSpotInstanceRequests.
     */
   @js.native
   trait CancelSpotInstanceRequestsResult extends js.Object {
@@ -3830,8 +3785,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a request to cancel a Spot Instance.
+  /** Describes a request to cancel a Spot Instance.
     */
   @js.native
   trait CancelledSpotInstanceRequest extends js.Object {
@@ -3852,8 +3806,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Capacity Reservation.
+  /** Describes a Capacity Reservation.
     */
   @js.native
   trait CapacityReservation extends js.Object {
@@ -3922,8 +3875,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a resource group to which a Capacity Reservation has been added.
+  /** Describes a resource group to which a Capacity Reservation has been added.
     */
   @js.native
   trait CapacityReservationGroup extends js.Object {
@@ -3959,24 +3911,22 @@ package ec2 {
     val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
     val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
 
-    @inline def values =
-      js.Array(
-        `Linux/UNIX`,
-        `Red Hat Enterprise Linux`,
-        `SUSE Linux`,
-        Windows,
-        `Windows with SQL Server`,
-        `Windows with SQL Server Enterprise`,
-        `Windows with SQL Server Standard`,
-        `Windows with SQL Server Web`,
-        `Linux with SQL Server Standard`,
-        `Linux with SQL Server Web`,
-        `Linux with SQL Server Enterprise`
-      )
+    @inline def values = js.Array(
+      `Linux/UNIX`,
+      `Red Hat Enterprise Linux`,
+      `SUSE Linux`,
+      Windows,
+      `Windows with SQL Server`,
+      `Windows with SQL Server Enterprise`,
+      `Windows with SQL Server Standard`,
+      `Windows with SQL Server Web`,
+      `Linux with SQL Server Standard`,
+      `Linux with SQL Server Web`,
+      `Linux with SQL Server Enterprise`
+    )
   }
 
-  /**
-    * Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+  /** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
     *
     * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
     * For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet Example Configurations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3997,8 +3947,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+  /** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
     *
     * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
     * For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet Example Configurations]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -4028,9 +3977,8 @@ package ec2 {
     @inline def values = js.Array(open, none)
   }
 
-  /**
-    * Describes an instance's Capacity Reservation targeting option. You can specify only one parameter at a time. If you specify <code>CapacityReservationPreference</code> and <code>CapacityReservationTarget</code>, the request fails.
-    *  Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
+  /** Describes an instance's Capacity Reservation targeting option. You can specify only one parameter at a time. If you specify <code>CapacityReservationPreference</code> and <code>CapacityReservationTarget</code>, the request fails.
+    * Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationSpecification extends js.Object {
@@ -4051,8 +3999,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the instance's Capacity Reservation targeting preferences. The action returns the <code>capacityReservationPreference</code> response element if the instance is configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). The action returns the <code>capacityReservationTarget</code> response element if the instance explicily targets a specific Capacity Reservation or Capacity Reservation group.
+  /** Describes the instance's Capacity Reservation targeting preferences. The action returns the <code>capacityReservationPreference</code> response element if the instance is configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). The action returns the <code>capacityReservationTarget</code> response element if the instance explicily targets a specific Capacity Reservation or Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationSpecificationResponse extends js.Object {
@@ -4085,8 +4032,7 @@ package ec2 {
     @inline def values = js.Array(active, expired, cancelled, pending, failed)
   }
 
-  /**
-    * Describes a target Capacity Reservation or Capacity Reservation group.
+  /** Describes a target Capacity Reservation or Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationTarget extends js.Object {
@@ -4107,8 +4053,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a target Capacity Reservation or Capacity Reservation group.
+  /** Describes a target Capacity Reservation or Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationTargetResponse extends js.Object {
@@ -4138,8 +4083,7 @@ package ec2 {
     @inline def values = js.Array(default, dedicated)
   }
 
-  /**
-    * Describes a carrier gateway.
+  /** Describes a carrier gateway.
     */
   @js.native
   trait CarrierGateway extends js.Object {
@@ -4180,8 +4124,7 @@ package ec2 {
     @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
-  /**
-    * Information about the client certificate used for authentication.
+  /** Information about the client certificate used for authentication.
     */
   @js.native
   trait CertificateAuthentication extends js.Object {
@@ -4199,8 +4142,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the client certificate to be used for authentication.
+  /** Information about the client certificate to be used for authentication.
     */
   @js.native
   trait CertificateAuthenticationRequest extends js.Object {
@@ -4218,8 +4160,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip|Prepare to Bring Your Address Range to Your AWS Account]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+  /** Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip|Prepare to Bring Your Address Range to Your AWS Account]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     */
   @js.native
   trait CidrAuthorizationContext extends js.Object {
@@ -4237,13 +4178,11 @@ package ec2 {
         "Message" -> Message.asInstanceOf[js.Any],
         "Signature" -> Signature.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CidrAuthorizationContext]
     }
   }
 
-  /**
-    * Describes an IPv4 CIDR block.
+  /** Describes an IPv4 CIDR block.
     */
   @js.native
   trait CidrBlock extends js.Object {
@@ -4261,8 +4200,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the ClassicLink DNS support status of a VPC.
+  /** Describes the ClassicLink DNS support status of a VPC.
     */
   @js.native
   trait ClassicLinkDnsSupport extends js.Object {
@@ -4283,8 +4221,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a linked EC2-Classic instance.
+  /** Describes a linked EC2-Classic instance.
     */
   @js.native
   trait ClassicLinkInstance extends js.Object {
@@ -4311,8 +4248,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Classic Load Balancer.
+  /** Describes a Classic Load Balancer.
     */
   @js.native
   trait ClassicLoadBalancer extends js.Object {
@@ -4330,8 +4266,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these Classic Load Balancers.
+  /** Describes the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these Classic Load Balancers.
     */
   @js.native
   trait ClassicLoadBalancersConfig extends js.Object {
@@ -4349,8 +4284,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a client certificate revocation list.
+  /** Describes the state of a client certificate revocation list.
     */
   @js.native
   trait ClientCertificateRevocationListStatus extends js.Object {
@@ -4380,8 +4314,7 @@ package ec2 {
     @inline def values = js.Array(pending, active)
   }
 
-  /**
-    * Describes the client-specific data.
+  /** Describes the client-specific data.
     */
   @js.native
   trait ClientData extends js.Object {
@@ -4408,8 +4341,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the authentication methods used by a Client VPN endpoint. For more information, see [[https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication|Authentication]] in the <i>AWS Client VPN Administrator Guide</i>.
+  /** Describes the authentication methods used by a Client VPN endpoint. For more information, see [[https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication|Authentication]] in the <i>AWS Client VPN Administrator Guide</i>.
     */
   @js.native
   trait ClientVpnAuthentication extends js.Object {
@@ -4436,8 +4368,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the authentication method to be used by a Client VPN endpoint. For more information, see [[https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication|Authentication]] in the <i>AWS Client VPN Administrator Guide</i>.
+  /** Describes the authentication method to be used by a Client VPN endpoint. For more information, see [[https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication|Authentication]] in the <i>AWS Client VPN Administrator Guide</i>.
     */
   @js.native
   trait ClientVpnAuthenticationRequest extends js.Object {
@@ -4474,8 +4405,7 @@ package ec2 {
     @inline def values = js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`)
   }
 
-  /**
-    * Describes the state of an authorization rule.
+  /** Describes the state of an authorization rule.
     */
   @js.native
   trait ClientVpnAuthorizationRuleStatus extends js.Object {
@@ -4507,8 +4437,7 @@ package ec2 {
     @inline def values = js.Array(authorizing, active, failed, revoking)
   }
 
-  /**
-    * Describes a client connection.
+  /** Describes a client connection.
     */
   @js.native
   trait ClientVpnConnection extends js.Object {
@@ -4562,8 +4491,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the status of a client connection.
+  /** Describes the status of a client connection.
     */
   @js.native
   trait ClientVpnConnectionStatus extends js.Object {
@@ -4595,8 +4523,7 @@ package ec2 {
     @inline def values = js.Array(active, `failed-to-terminate`, terminating, terminated)
   }
 
-  /**
-    * Describes a Client VPN endpoint.
+  /** Describes a Client VPN endpoint.
     */
   @js.native
   trait ClientVpnEndpoint extends js.Object {
@@ -4668,8 +4595,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a Client VPN endpoint.
+  /** Describes the state of a Client VPN endpoint.
     */
   @js.native
   trait ClientVpnEndpointStatus extends js.Object {
@@ -4701,8 +4627,7 @@ package ec2 {
     @inline def values = js.Array(`pending-associate`, available, deleting, deleted)
   }
 
-  /**
-    * Information about a Client VPN endpoint route.
+  /** Information about a Client VPN endpoint route.
     */
   @js.native
   trait ClientVpnRoute extends js.Object {
@@ -4738,8 +4663,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a Client VPN endpoint route.
+  /** Describes the state of a Client VPN endpoint route.
     */
   @js.native
   trait ClientVpnRouteStatus extends js.Object {
@@ -4771,8 +4695,7 @@ package ec2 {
     @inline def values = js.Array(creating, active, failed, deleting)
   }
 
-  /**
-    * Describes address usage for a customer-owned address pool.
+  /** Describes address usage for a customer-owned address pool.
     */
   @js.native
   trait CoipAddressUsage extends js.Object {
@@ -4799,8 +4722,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a customer-owned address pool.
+  /** Describes a customer-owned address pool.
     */
   @js.native
   trait CoipPool extends js.Object {
@@ -4873,8 +4795,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the client connection logging options for the Client VPN endpoint.
+  /** Describes the client connection logging options for the Client VPN endpoint.
     */
   @js.native
   trait ConnectionLogOptions extends js.Object {
@@ -4898,8 +4819,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the client connection logging options for a Client VPN endpoint.
+  /** Information about the client connection logging options for a Client VPN endpoint.
     */
   @js.native
   trait ConnectionLogResponseOptions extends js.Object {
@@ -4923,8 +4843,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a connection notification for a VPC endpoint or VPC endpoint service.
+  /** Describes a connection notification for a VPC endpoint or VPC endpoint service.
     */
   @js.native
   trait ConnectionNotification extends js.Object {
@@ -4985,8 +4904,7 @@ package ec2 {
     @inline def values = js.Array(ova)
   }
 
-  /**
-    * Describes a conversion task.
+  /** Describes a conversion task.
     */
   @js.native
   trait ConversionTask extends js.Object {
@@ -5082,8 +5000,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CopyImage.
+  /** Contains the parameters for CopyImage.
     */
   @js.native
   trait CopyImageRequest extends js.Object {
@@ -5124,8 +5041,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CopyImage.
+  /** Contains the output of CopyImage.
     */
   @js.native
   trait CopyImageResult extends js.Object {
@@ -5212,8 +5128,7 @@ package ec2 {
     @inline def values = js.Array(volume)
   }
 
-  /**
-    * The CPU options for the instance.
+  /** The CPU options for the instance.
     */
   @js.native
   trait CpuOptions extends js.Object {
@@ -5234,8 +5149,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The CPU options for the instance. Both the core count and threads per core must be specified in the request.
+  /** The CPU options for the instance. Both the core count and threads per core must be specified in the request.
     */
   @js.native
   trait CpuOptionsRequest extends js.Object {
@@ -5500,8 +5414,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateCustomerGateway.
+  /** Contains the parameters for CreateCustomerGateway.
     */
   @js.native
   trait CreateCustomerGatewayRequest extends js.Object {
@@ -5539,8 +5452,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateCustomerGateway.
+  /** Contains the output of CreateCustomerGateway.
     */
   @js.native
   trait CreateCustomerGatewayResult extends js.Object {
@@ -5713,8 +5625,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the instances that could not be launched by the fleet.
+  /** Describes the instances that could not be launched by the fleet.
     */
   @js.native
   trait CreateFleetError extends js.Object {
@@ -5741,8 +5652,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the instances that were launched by the fleet.
+  /** Describes the instances that were launched by the fleet.
     */
   @js.native
   trait CreateFleetInstance extends js.Object {
@@ -6509,8 +6419,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateNetworkInterfacePermission.
+  /** Contains the parameters for CreateNetworkInterfacePermission.
     */
   @js.native
   trait CreateNetworkInterfacePermissionRequest extends js.Object {
@@ -6542,8 +6451,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateNetworkInterfacePermission.
+  /** Contains the output of CreateNetworkInterfacePermission.
     */
   @js.native
   trait CreateNetworkInterfacePermissionResult extends js.Object {
@@ -6561,8 +6469,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateNetworkInterface.
+  /** Contains the parameters for CreateNetworkInterface.
     */
   @js.native
   trait CreateNetworkInterfaceRequest extends js.Object {
@@ -6612,8 +6519,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateNetworkInterface.
+  /** Contains the output of CreateNetworkInterface.
     */
   @js.native
   trait CreateNetworkInterfaceResult extends js.Object {
@@ -6675,8 +6581,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateReservedInstancesListing.
+  /** Contains the parameters for CreateReservedInstancesListing.
     */
   @js.native
   trait CreateReservedInstancesListingRequest extends js.Object {
@@ -6700,13 +6605,11 @@ package ec2 {
         "PriceSchedules" -> PriceSchedules.asInstanceOf[js.Any],
         "ReservedInstancesId" -> ReservedInstancesId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateReservedInstancesListingRequest]
     }
   }
 
-  /**
-    * Contains the output of CreateReservedInstancesListing.
+  /** Contains the output of CreateReservedInstancesListing.
     */
   @js.native
   trait CreateReservedInstancesListingResult extends js.Object {
@@ -6959,8 +6862,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateSpotDatafeedSubscription.
+  /** Contains the parameters for CreateSpotDatafeedSubscription.
     */
   @js.native
   trait CreateSpotDatafeedSubscriptionRequest extends js.Object {
@@ -6986,8 +6888,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateSpotDatafeedSubscription.
+  /** Contains the output of CreateSpotDatafeedSubscription.
     */
   @js.native
   trait CreateSpotDatafeedSubscriptionResult extends js.Object {
@@ -7561,8 +7462,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the options for a VPC attachment.
+  /** Describes the options for a VPC attachment.
     */
   @js.native
   trait CreateTransitGatewayVpcAttachmentRequestOptions extends js.Object {
@@ -7599,8 +7499,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the user or group to be added or removed from the list of create volume permissions for a volume.
+  /** Describes the user or group to be added or removed from the list of create volume permissions for a volume.
     */
   @js.native
   trait CreateVolumePermission extends js.Object {
@@ -7621,8 +7520,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes modifications to the list of create volume permissions for a volume.
+  /** Describes modifications to the list of create volume permissions for a volume.
     */
   @js.native
   trait CreateVolumePermissionModifications extends js.Object {
@@ -7743,8 +7641,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateVpcEndpoint.
+  /** Contains the parameters for CreateVpcEndpoint.
     */
   @js.native
   trait CreateVpcEndpointRequest extends js.Object {
@@ -7794,8 +7691,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateVpcEndpoint.
+  /** Contains the output of CreateVpcEndpoint.
     */
   @js.native
   trait CreateVpcEndpointResult extends js.Object {
@@ -7970,8 +7866,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateVpnConnection.
+  /** Contains the parameters for CreateVpnConnection.
     */
   @js.native
   trait CreateVpnConnectionRequest extends js.Object {
@@ -8009,8 +7904,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateVpnConnection.
+  /** Contains the output of CreateVpnConnection.
     */
   @js.native
   trait CreateVpnConnectionResult extends js.Object {
@@ -8028,8 +7922,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for CreateVpnConnectionRoute.
+  /** Contains the parameters for CreateVpnConnectionRoute.
     */
   @js.native
   trait CreateVpnConnectionRouteRequest extends js.Object {
@@ -8047,13 +7940,11 @@ package ec2 {
         "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
         "VpnConnectionId" -> VpnConnectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVpnConnectionRouteRequest]
     }
   }
 
-  /**
-    * Contains the parameters for CreateVpnGateway.
+  /** Contains the parameters for CreateVpnGateway.
     */
   @js.native
   trait CreateVpnGatewayRequest extends js.Object {
@@ -8085,8 +7976,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of CreateVpnGateway.
+  /** Contains the output of CreateVpnGateway.
     */
   @js.native
   trait CreateVpnGatewayResult extends js.Object {
@@ -8104,8 +7994,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the credit option for CPU usage of a T2, T3, or T3a instance.
+  /** Describes the credit option for CPU usage of a T2, T3, or T3a instance.
     */
   @js.native
   trait CreditSpecification extends js.Object {
@@ -8123,8 +8012,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The credit option for CPU usage of a T2, T3, or T3a instance.
+  /** The credit option for CPU usage of a T2, T3, or T3a instance.
     */
   @js.native
   trait CreditSpecificationRequest extends js.Object {
@@ -8139,7 +8027,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "CpuCredits" -> CpuCredits.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreditSpecificationRequest]
     }
   }
@@ -8152,8 +8039,7 @@ package ec2 {
     @inline def values = js.Array(USD)
   }
 
-  /**
-    * Describes a customer gateway.
+  /** Describes a customer gateway.
     */
   @js.native
   trait CustomerGateway extends js.Object {
@@ -8345,8 +8231,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteCustomerGateway.
+  /** Contains the parameters for DeleteCustomerGateway.
     */
   @js.native
   trait DeleteCustomerGatewayRequest extends js.Object {
@@ -8427,8 +8312,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an EC2 Fleet error.
+  /** Describes an EC2 Fleet error.
     */
   @js.native
   trait DeleteFleetError extends js.Object {
@@ -8460,8 +8344,7 @@ package ec2 {
     @inline def values = js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError)
   }
 
-  /**
-    * Describes an EC2 Fleet that was not successfully deleted.
+  /** Describes an EC2 Fleet that was not successfully deleted.
     */
   @js.native
   trait DeleteFleetErrorItem extends js.Object {
@@ -8482,8 +8365,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an EC2 Fleet that was successfully deleted.
+  /** Describes an EC2 Fleet that was successfully deleted.
     */
   @js.native
   trait DeleteFleetSuccessItem extends js.Object {
@@ -8732,8 +8614,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template version that could not be deleted.
+  /** Describes a launch template version that could not be deleted.
     */
   @js.native
   trait DeleteLaunchTemplateVersionsResponseErrorItem extends js.Object {
@@ -8760,8 +8641,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template version that was successfully deleted.
+  /** Describes a launch template version that was successfully deleted.
     */
   @js.native
   trait DeleteLaunchTemplateVersionsResponseSuccessItem extends js.Object {
@@ -9003,8 +8883,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteNetworkInterfacePermission.
+  /** Contains the parameters for DeleteNetworkInterfacePermission.
     */
   @js.native
   trait DeleteNetworkInterfacePermissionRequest extends js.Object {
@@ -9030,8 +8909,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output for DeleteNetworkInterfacePermission.
+  /** Contains the output for DeleteNetworkInterfacePermission.
     */
   @js.native
   trait DeleteNetworkInterfacePermissionResult extends js.Object {
@@ -9049,8 +8927,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteNetworkInterface.
+  /** Contains the parameters for DeleteNetworkInterface.
     */
   @js.native
   trait DeleteNetworkInterfaceRequest extends js.Object {
@@ -9094,8 +8971,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the error for a Reserved Instance whose queued purchase could not be deleted.
+  /** Describes the error for a Reserved Instance whose queued purchase could not be deleted.
     */
   @js.native
   trait DeleteQueuedReservedInstancesError extends js.Object {
@@ -9260,8 +9136,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteSpotDatafeedSubscription.
+  /** Contains the parameters for DeleteSpotDatafeedSubscription.
     */
   @js.native
   trait DeleteSpotDatafeedSubscriptionRequest extends js.Object {
@@ -9792,8 +9667,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteVpcEndpoints.
+  /** Contains the parameters for DeleteVpcEndpoints.
     */
   @js.native
   trait DeleteVpcEndpointsRequest extends js.Object {
@@ -9816,8 +9690,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DeleteVpcEndpoints.
+  /** Contains the output of DeleteVpcEndpoints.
     */
   @js.native
   trait DeleteVpcEndpointsResult extends js.Object {
@@ -9893,8 +9766,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteVpnConnection.
+  /** Contains the parameters for DeleteVpnConnection.
     */
   @js.native
   trait DeleteVpnConnectionRequest extends js.Object {
@@ -9917,8 +9789,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeleteVpnConnectionRoute.
+  /** Contains the parameters for DeleteVpnConnectionRoute.
     */
   @js.native
   trait DeleteVpnConnectionRouteRequest extends js.Object {
@@ -9936,13 +9807,11 @@ package ec2 {
         "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
         "VpnConnectionId" -> VpnConnectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVpnConnectionRouteRequest]
     }
   }
 
-  /**
-    * Contains the parameters for DeleteVpnGateway.
+  /** Contains the parameters for DeleteVpnGateway.
     */
   @js.native
   trait DeleteVpnGatewayRequest extends js.Object {
@@ -10002,8 +9871,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DeregisterImage.
+  /** Contains the parameters for DeregisterImage.
     */
   @js.native
   trait DeregisterImageRequest extends js.Object {
@@ -10061,8 +9929,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the tag keys to deregister for the current Region. You can either specify individual tag keys or deregister all tag keys in the current Region. You must specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code> in the request
+  /** Information about the tag keys to deregister for the current Region. You can either specify individual tag keys or deregister all tag keys in the current Region. You must specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code> in the request
     */
   @js.native
   trait DeregisterInstanceTagAttributeRequest extends js.Object {
@@ -10870,8 +10737,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeCustomerGateways.
+  /** Contains the parameters for DescribeCustomerGateways.
     */
   @js.native
   trait DescribeCustomerGatewaysRequest extends js.Object {
@@ -10895,8 +10761,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeCustomerGateways.
+  /** Contains the output of DescribeCustomerGateways.
     */
   @js.native
   trait DescribeCustomerGatewaysResult extends js.Object {
@@ -11140,8 +11005,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes fast snapshot restores for a snapshot.
+  /** Describes fast snapshot restores for a snapshot.
     */
   @js.native
   trait DescribeFastSnapshotRestoreSuccessItem extends js.Object {
@@ -11233,8 +11097,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the instances that could not be launched by the fleet.
+  /** Describes the instances that could not be launched by the fleet.
     */
   @js.native
   trait DescribeFleetError extends js.Object {
@@ -11374,8 +11237,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the instances that were launched by the fleet.
+  /** Describes the instances that were launched by the fleet.
     */
   @js.native
   trait DescribeFleetsInstances extends js.Object {
@@ -11840,8 +11702,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeImageAttribute.
+  /** Contains the parameters for DescribeImageAttribute.
     */
   @js.native
   trait DescribeImageAttributeRequest extends js.Object {
@@ -13013,8 +12874,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeNetworkInterfaceAttribute.
+  /** Contains the parameters for DescribeNetworkInterfaceAttribute.
     */
   @js.native
   trait DescribeNetworkInterfaceAttributeRequest extends js.Object {
@@ -13040,8 +12900,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeNetworkInterfaceAttribute.
+  /** Contains the output of DescribeNetworkInterfaceAttribute.
     */
   @js.native
   trait DescribeNetworkInterfaceAttributeResult extends js.Object {
@@ -13071,8 +12930,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeNetworkInterfacePermissions.
+  /** Contains the parameters for DescribeNetworkInterfacePermissions.
     */
   @js.native
   trait DescribeNetworkInterfacePermissionsRequest extends js.Object {
@@ -13099,8 +12957,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output for DescribeNetworkInterfacePermissions.
+  /** Contains the output for DescribeNetworkInterfacePermissions.
     */
   @js.native
   trait DescribeNetworkInterfacePermissionsResult extends js.Object {
@@ -13121,8 +12978,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeNetworkInterfaces.
+  /** Contains the parameters for DescribeNetworkInterfaces.
     */
   @js.native
   trait DescribeNetworkInterfacesRequest extends js.Object {
@@ -13152,8 +13008,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeNetworkInterfaces.
+  /** Contains the output of DescribeNetworkInterfaces.
     */
   @js.native
   trait DescribeNetworkInterfacesResult extends js.Object {
@@ -13391,8 +13246,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeReservedInstancesListings.
+  /** Contains the parameters for DescribeReservedInstancesListings.
     */
   @js.native
   trait DescribeReservedInstancesListingsRequest extends js.Object {
@@ -13416,8 +13270,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeReservedInstancesListings.
+  /** Contains the output of DescribeReservedInstancesListings.
     */
   @js.native
   trait DescribeReservedInstancesListingsResult extends js.Object {
@@ -13435,8 +13288,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeReservedInstancesModifications.
+  /** Contains the parameters for DescribeReservedInstancesModifications.
     */
   @js.native
   trait DescribeReservedInstancesModificationsRequest extends js.Object {
@@ -13460,8 +13312,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeReservedInstancesModifications.
+  /** Contains the output of DescribeReservedInstancesModifications.
     */
   @js.native
   trait DescribeReservedInstancesModificationsResult extends js.Object {
@@ -13482,8 +13333,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeReservedInstancesOfferings.
+  /** Contains the parameters for DescribeReservedInstancesOfferings.
     */
   @js.native
   trait DescribeReservedInstancesOfferingsRequest extends js.Object {
@@ -13543,8 +13393,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeReservedInstancesOfferings.
+  /** Contains the output of DescribeReservedInstancesOfferings.
     */
   @js.native
   trait DescribeReservedInstancesOfferingsResult extends js.Object {
@@ -13565,8 +13414,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeReservedInstances.
+  /** Contains the parameters for DescribeReservedInstances.
     */
   @js.native
   trait DescribeReservedInstancesRequest extends js.Object {
@@ -13596,8 +13444,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output for DescribeReservedInstances.
+  /** Contains the output for DescribeReservedInstances.
     */
   @js.native
   trait DescribeReservedInstancesResult extends js.Object {
@@ -13643,8 +13490,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeRouteTables.
+  /** Contains the output of DescribeRouteTables.
     */
   @js.native
   trait DescribeRouteTablesResult extends js.Object {
@@ -13665,8 +13511,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeScheduledInstanceAvailability.
+  /** Contains the parameters for DescribeScheduledInstanceAvailability.
     */
   @js.native
   trait DescribeScheduledInstanceAvailabilityRequest extends js.Object {
@@ -13707,8 +13552,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeScheduledInstanceAvailability.
+  /** Contains the output of DescribeScheduledInstanceAvailability.
     */
   @js.native
   trait DescribeScheduledInstanceAvailabilityResult extends js.Object {
@@ -13729,8 +13573,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeScheduledInstances.
+  /** Contains the parameters for DescribeScheduledInstances.
     */
   @js.native
   trait DescribeScheduledInstancesRequest extends js.Object {
@@ -13763,8 +13606,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeScheduledInstances.
+  /** Contains the output of DescribeScheduledInstances.
     */
   @js.native
   trait DescribeScheduledInstancesResult extends js.Object {
@@ -13971,8 +13813,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSpotDatafeedSubscription.
+  /** Contains the parameters for DescribeSpotDatafeedSubscription.
     */
   @js.native
   trait DescribeSpotDatafeedSubscriptionRequest extends js.Object {
@@ -13990,8 +13831,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSpotDatafeedSubscription.
+  /** Contains the output of DescribeSpotDatafeedSubscription.
     */
   @js.native
   trait DescribeSpotDatafeedSubscriptionResult extends js.Object {
@@ -14009,8 +13849,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSpotFleetInstances.
+  /** Contains the parameters for DescribeSpotFleetInstances.
     */
   @js.native
   trait DescribeSpotFleetInstancesRequest extends js.Object {
@@ -14039,8 +13878,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSpotFleetInstances.
+  /** Contains the output of DescribeSpotFleetInstances.
     */
   @js.native
   trait DescribeSpotFleetInstancesResponse extends js.Object {
@@ -14064,8 +13902,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSpotFleetRequestHistory.
+  /** Contains the parameters for DescribeSpotFleetRequestHistory.
     */
   @js.native
   trait DescribeSpotFleetRequestHistoryRequest extends js.Object {
@@ -14100,8 +13937,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSpotFleetRequestHistory.
+  /** Contains the output of DescribeSpotFleetRequestHistory.
     */
   @js.native
   trait DescribeSpotFleetRequestHistoryResponse extends js.Object {
@@ -14131,8 +13967,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSpotFleetRequests.
+  /** Contains the parameters for DescribeSpotFleetRequests.
     */
   @js.native
   trait DescribeSpotFleetRequestsRequest extends js.Object {
@@ -14159,8 +13994,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSpotFleetRequests.
+  /** Contains the output of DescribeSpotFleetRequests.
     */
   @js.native
   trait DescribeSpotFleetRequestsResponse extends js.Object {
@@ -14181,8 +14015,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSpotInstanceRequests.
+  /** Contains the parameters for DescribeSpotInstanceRequests.
     */
   @js.native
   trait DescribeSpotInstanceRequestsRequest extends js.Object {
@@ -14212,8 +14045,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSpotInstanceRequests.
+  /** Contains the output of DescribeSpotInstanceRequests.
     */
   @js.native
   trait DescribeSpotInstanceRequestsResult extends js.Object {
@@ -14234,8 +14066,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeSpotPriceHistory.
+  /** Contains the parameters for DescribeSpotPriceHistory.
     */
   @js.native
   trait DescribeSpotPriceHistoryRequest extends js.Object {
@@ -14277,8 +14108,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeSpotPriceHistory.
+  /** Contains the output of DescribeSpotPriceHistory.
     */
   @js.native
   trait DescribeSpotPriceHistoryResult extends js.Object {
@@ -15358,8 +15188,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeVpcEndpointServices.
+  /** Contains the parameters for DescribeVpcEndpointServices.
     */
   @js.native
   trait DescribeVpcEndpointServicesRequest extends js.Object {
@@ -15389,8 +15218,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeVpcEndpointServices.
+  /** Contains the output of DescribeVpcEndpointServices.
     */
   @js.native
   trait DescribeVpcEndpointServicesResult extends js.Object {
@@ -15414,8 +15242,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeVpcEndpoints.
+  /** Contains the parameters for DescribeVpcEndpoints.
     */
   @js.native
   trait DescribeVpcEndpointsRequest extends js.Object {
@@ -15445,8 +15272,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeVpcEndpoints.
+  /** Contains the output of DescribeVpcEndpoints.
     */
   @js.native
   trait DescribeVpcEndpointsResult extends js.Object {
@@ -15561,8 +15387,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeVpnConnections.
+  /** Contains the parameters for DescribeVpnConnections.
     */
   @js.native
   trait DescribeVpnConnectionsRequest extends js.Object {
@@ -15586,8 +15411,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeVpnConnections.
+  /** Contains the output of DescribeVpnConnections.
     */
   @js.native
   trait DescribeVpnConnectionsResult extends js.Object {
@@ -15605,8 +15429,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DescribeVpnGateways.
+  /** Contains the parameters for DescribeVpnGateways.
     */
   @js.native
   trait DescribeVpnGatewaysRequest extends js.Object {
@@ -15630,8 +15453,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of DescribeVpnGateways.
+  /** Contains the output of DescribeVpnGateways.
     */
   @js.native
   trait DescribeVpnGatewaysResult extends js.Object {
@@ -15713,8 +15535,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DetachNetworkInterface.
+  /** Contains the parameters for DetachNetworkInterface.
     */
   @js.native
   trait DetachNetworkInterfaceRequest extends js.Object {
@@ -15770,8 +15591,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DetachVpnGateway.
+  /** Contains the parameters for DetachVpnGateway.
     */
   @js.native
   trait DetachVpnGatewayRequest extends js.Object {
@@ -15806,8 +15626,7 @@ package ec2 {
     @inline def values = js.Array(ebs, `instance-store`)
   }
 
-  /**
-    * Describes a DHCP configuration option.
+  /** Describes a DHCP configuration option.
     */
   @js.native
   trait DhcpConfiguration extends js.Object {
@@ -15828,8 +15647,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a set of DHCP options.
+  /** Describes a set of DHCP options.
     */
   @js.native
   trait DhcpOptions extends js.Object {
@@ -15856,8 +15674,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an Active Directory.
+  /** Describes an Active Directory.
     */
   @js.native
   trait DirectoryServiceAuthentication extends js.Object {
@@ -15875,8 +15692,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Active Directory to be used for client authentication.
+  /** Describes the Active Directory to be used for client authentication.
     */
   @js.native
   trait DirectoryServiceAuthenticationRequest extends js.Object {
@@ -15926,8 +15742,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains information about the errors that occurred when disabling fast snapshot restores.
+  /** Contains information about the errors that occurred when disabling fast snapshot restores.
     */
   @js.native
   trait DisableFastSnapshotRestoreErrorItem extends js.Object {
@@ -15948,8 +15763,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an error that occurred when disabling fast snapshot restores.
+  /** Describes an error that occurred when disabling fast snapshot restores.
     */
   @js.native
   trait DisableFastSnapshotRestoreStateError extends js.Object {
@@ -15970,8 +15784,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains information about an error that occurred when disabling fast snapshot restores.
+  /** Contains information about an error that occurred when disabling fast snapshot restores.
     */
   @js.native
   trait DisableFastSnapshotRestoreStateErrorItem extends js.Object {
@@ -15992,8 +15805,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes fast snapshot restores that were successfully disabled.
+  /** Describes fast snapshot restores that were successfully disabled.
     */
   @js.native
   trait DisableFastSnapshotRestoreSuccessItem extends js.Object {
@@ -16124,8 +15936,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for DisableVgwRoutePropagation.
+  /** Contains the parameters for DisableVgwRoutePropagation.
     */
   @js.native
   trait DisableVgwRoutePropagationRequest extends js.Object {
@@ -16298,7 +16109,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateIamInstanceProfileRequest]
     }
   }
@@ -16353,7 +16163,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateSubnetCidrBlockRequest]
     }
   }
@@ -16471,7 +16280,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateVpcCidrBlockRequest]
     }
   }
@@ -16498,8 +16306,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a disk image.
+  /** Describes a disk image.
     */
   @js.native
   trait DiskImage extends js.Object {
@@ -16523,8 +16330,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a disk image.
+  /** Describes a disk image.
     */
   @js.native
   trait DiskImageDescription extends js.Object {
@@ -16551,8 +16357,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a disk image.
+  /** Describes a disk image.
     */
   @js.native
   trait DiskImageDetail extends js.Object {
@@ -16573,7 +16378,6 @@ package ec2 {
         "Format" -> Format.asInstanceOf[js.Any],
         "ImportManifestUrl" -> ImportManifestUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DiskImageDetail]
     }
   }
@@ -16588,8 +16392,7 @@ package ec2 {
     @inline def values = js.Array(VMDK, RAW, VHD)
   }
 
-  /**
-    * Describes a disk image volume.
+  /** Describes a disk image volume.
     */
   @js.native
   trait DiskImageVolumeDescription extends js.Object {
@@ -16610,8 +16413,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the disk.
+  /** Describes the disk.
     */
   @js.native
   trait DiskInfo extends js.Object {
@@ -16644,8 +16446,7 @@ package ec2 {
     @inline def values = js.Array(hdd, ssd)
   }
 
-  /**
-    * Describes a DNS entry.
+  /** Describes a DNS entry.
     */
   @js.native
   trait DnsEntry extends js.Object {
@@ -16676,8 +16477,7 @@ package ec2 {
     @inline def values = js.Array(pendingVerification, verified, failed)
   }
 
-  /**
-    * Information about the DNS server to be used.
+  /** Information about the DNS server to be used.
     */
   @js.native
   trait DnsServersOptionsModifyStructure extends js.Object {
@@ -16716,8 +16516,7 @@ package ec2 {
     @inline def values = js.Array(vpc, standard)
   }
 
-  /**
-    * Describes a block device for an EBS volume.
+  /** Describes a block device for an EBS volume.
     */
   @js.native
   trait EbsBlockDevice extends js.Object {
@@ -16762,8 +16561,7 @@ package ec2 {
     @inline def values = js.Array(unsupported, supported)
   }
 
-  /**
-    * Describes the Amazon EBS features supported by the instance type.
+  /** Describes the Amazon EBS features supported by the instance type.
     */
   @js.native
   trait EbsInfo extends js.Object {
@@ -16790,8 +16588,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a parameter used to set up an EBS volume in a block device mapping.
+  /** Describes a parameter used to set up an EBS volume in a block device mapping.
     */
   @js.native
   trait EbsInstanceBlockDevice extends js.Object {
@@ -16818,8 +16615,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes information used to set up an EBS volume specified in a block device mapping.
+  /** Describes information used to set up an EBS volume specified in a block device mapping.
     */
   @js.native
   trait EbsInstanceBlockDeviceSpecification extends js.Object {
@@ -16850,8 +16646,7 @@ package ec2 {
     @inline def values = js.Array(unsupported, supported, required)
   }
 
-  /**
-    * Describes the optimized EBS performance for supported instance types.
+  /** Describes the optimized EBS performance for supported instance types.
     */
   @js.native
   trait EbsOptimizedInfo extends js.Object {
@@ -16894,8 +16689,7 @@ package ec2 {
     @inline def values = js.Array(unsupported, supported, default)
   }
 
-  /**
-    * Describes an egress-only internet gateway.
+  /** Describes an egress-only internet gateway.
     */
   @js.native
   trait EgressOnlyInternetGateway extends js.Object {
@@ -16919,8 +16713,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the association between an instance and an Elastic Graphics accelerator.
+  /** Describes the association between an instance and an Elastic Graphics accelerator.
     */
   @js.native
   trait ElasticGpuAssociation extends js.Object {
@@ -16947,8 +16740,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the status of an Elastic Graphics accelerator.
+  /** Describes the status of an Elastic Graphics accelerator.
     */
   @js.native
   trait ElasticGpuHealth extends js.Object {
@@ -16966,8 +16758,7 @@ package ec2 {
     }
   }
 
-  /**
-    * A specification for an Elastic Graphics accelerator.
+  /** A specification for an Elastic Graphics accelerator.
     */
   @js.native
   trait ElasticGpuSpecification extends js.Object {
@@ -16982,13 +16773,11 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ElasticGpuSpecification]
     }
   }
 
-  /**
-    * Describes an elastic GPU.
+  /** Describes an elastic GPU.
     */
   @js.native
   trait ElasticGpuSpecificationResponse extends js.Object {
@@ -17023,8 +16812,7 @@ package ec2 {
     @inline def values = js.Array(OK, IMPAIRED)
   }
 
-  /**
-    * Describes an Elastic Graphics accelerator.
+  /** Describes an Elastic Graphics accelerator.
     */
   @js.native
   trait ElasticGpus extends js.Object {
@@ -17060,8 +16848,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an elastic inference accelerator.
+  /** Describes an elastic inference accelerator.
     */
   @js.native
   trait ElasticInferenceAccelerator extends js.Object {
@@ -17084,8 +16871,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the association between an instance and an elastic inference accelerator.
+  /** Describes the association between an instance and an elastic inference accelerator.
     */
   @js.native
   trait ElasticInferenceAcceleratorAssociation extends js.Object {
@@ -17154,8 +16940,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains information about the errors that occurred when enabling fast snapshot restores.
+  /** Contains information about the errors that occurred when enabling fast snapshot restores.
     */
   @js.native
   trait EnableFastSnapshotRestoreErrorItem extends js.Object {
@@ -17176,8 +16961,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an error that occurred when enabling fast snapshot restores.
+  /** Describes an error that occurred when enabling fast snapshot restores.
     */
   @js.native
   trait EnableFastSnapshotRestoreStateError extends js.Object {
@@ -17198,8 +16982,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains information about an error that occurred when enabling fast snapshot restores.
+  /** Contains information about an error that occurred when enabling fast snapshot restores.
     */
   @js.native
   trait EnableFastSnapshotRestoreStateErrorItem extends js.Object {
@@ -17220,8 +17003,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes fast snapshot restores that were successfully enabled.
+  /** Describes fast snapshot restores that were successfully enabled.
     */
   @js.native
   trait EnableFastSnapshotRestoreSuccessItem extends js.Object {
@@ -17352,8 +17134,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for EnableVgwRoutePropagation.
+  /** Contains the parameters for EnableVgwRoutePropagation.
     */
   @js.native
   trait EnableVgwRoutePropagationRequest extends js.Object {
@@ -17490,8 +17271,7 @@ package ec2 {
     @inline def values = js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
   }
 
-  /**
-    * Describes an EC2 Fleet or Spot Fleet event.
+  /** Describes an EC2 Fleet or Spot Fleet event.
     */
   @js.native
   trait EventInformation extends js.Object {
@@ -17704,8 +17484,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an export image task.
+  /** Describes an export image task.
     */
   @js.native
   trait ExportImageTask extends js.Object {
@@ -17744,8 +17523,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance export task.
+  /** Describes an instance export task.
     */
   @js.native
   trait ExportTask extends js.Object {
@@ -17781,8 +17559,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the destination for an export image task.
+  /** Describes the destination for an export image task.
     */
   @js.native
   trait ExportTaskS3Location extends js.Object {
@@ -17803,8 +17580,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the destination for an export image task.
+  /** Describes the destination for an export image task.
     */
   @js.native
   trait ExportTaskS3LocationRequest extends js.Object {
@@ -17838,8 +17614,7 @@ package ec2 {
     @inline def values = js.Array(active, cancelling, cancelled, completed)
   }
 
-  /**
-    * Describes the format and location for an instance export task.
+  /** Describes the format and location for an instance export task.
     */
   @js.native
   trait ExportToS3Task extends js.Object {
@@ -17866,8 +17641,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance export task.
+  /** Describes an instance export task.
     */
   @js.native
   trait ExportToS3TaskSpecification extends js.Object {
@@ -17937,8 +17711,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance whose queued purchase was not deleted.
+  /** Describes a Reserved Instance whose queued purchase was not deleted.
     */
   @js.native
   trait FailedQueuedPurchaseDeletion extends js.Object {
@@ -17971,8 +17744,7 @@ package ec2 {
     @inline def values = js.Array(enabling, optimizing, enabled, disabling, disabled)
   }
 
-  /**
-    * Describes the IAM SAML identity provider used for federated authentication.
+  /** Describes the IAM SAML identity provider used for federated authentication.
     */
   @js.native
   trait FederatedAuthentication extends js.Object {
@@ -17990,8 +17762,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The IAM SAML identity provider used for federated authentication.
+  /** The IAM SAML identity provider used for federated authentication.
     */
   @js.native
   trait FederatedAuthenticationRequest extends js.Object {
@@ -18009,18 +17780,17 @@ package ec2 {
     }
   }
 
-  /**
-    * A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a describe operation are documented with the describe operation. For example:
+  /** A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a describe operation are documented with the describe operation. For example:
     * * <a>DescribeAvailabilityZones</a>
-    *  * <a>DescribeImages</a>
-    *  * <a>DescribeInstances</a>
-    *  * <a>DescribeKeyPairs</a>
-    *  * <a>DescribeSecurityGroups</a>
-    *  * <a>DescribeSnapshots</a>
-    *  * <a>DescribeSubnets</a>
-    *  * <a>DescribeTags</a>
-    *  * <a>DescribeVolumes</a>
-    *  * <a>DescribeVpcs</a>
+    * * <a>DescribeImages</a>
+    * * <a>DescribeInstances</a>
+    * * <a>DescribeKeyPairs</a>
+    * * <a>DescribeSecurityGroups</a>
+    * * <a>DescribeSnapshots</a>
+    * * <a>DescribeSubnets</a>
+    * * <a>DescribeTags</a>
+    * * <a>DescribeVolumes</a>
+    * * <a>DescribeVpcs</a>
     */
   @js.native
   trait Filter extends js.Object {
@@ -18060,8 +17830,7 @@ package ec2 {
     @inline def values = js.Array(`use-capacity-reservations-first`)
   }
 
-  /**
-    * Describes an EC2 Fleet.
+  /** Describes an EC2 Fleet.
     */
   @js.native
   trait FleetData extends js.Object {
@@ -18155,8 +17924,7 @@ package ec2 {
     @inline def values = js.Array(`no-termination`, termination)
   }
 
-  /**
-    * Describes a launch template and overrides.
+  /** Describes a launch template and overrides.
     */
   @js.native
   trait FleetLaunchTemplateConfig extends js.Object {
@@ -18177,8 +17945,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template and overrides.
+  /** Describes a launch template and overrides.
     */
   @js.native
   trait FleetLaunchTemplateConfigRequest extends js.Object {
@@ -18199,8 +17966,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes overrides for a launch template.
+  /** Describes overrides for a launch template.
     */
   @js.native
   trait FleetLaunchTemplateOverrides extends js.Object {
@@ -18236,8 +18002,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes overrides for a launch template.
+  /** Describes overrides for a launch template.
     */
   @js.native
   trait FleetLaunchTemplateOverridesRequest extends js.Object {
@@ -18273,8 +18038,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Amazon EC2 launch template and the launch template version that can be used by a Spot Fleet request to configure Amazon EC2 instances. For information about launch templates, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html|Launching an instance from a launch template]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+  /** Describes the Amazon EC2 launch template and the launch template version that can be used by a Spot Fleet request to configure Amazon EC2 instances. For information about launch templates, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html|Launching an instance from a launch template]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     */
   @js.native
   trait FleetLaunchTemplateSpecification extends js.Object {
@@ -18298,8 +18062,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Amazon EC2 launch template and the launch template version that can be used by an EC2 Fleet to configure Amazon EC2 instances. For information about launch templates, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html|Launching an instance from a launch template]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+  /** Describes the Amazon EC2 launch template and the launch template version that can be used by an EC2 Fleet to configure Amazon EC2 instances. For information about launch templates, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html|Launching an instance from a launch template]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     */
   @js.native
   trait FleetLaunchTemplateSpecificationRequest extends js.Object {
@@ -18356,8 +18119,7 @@ package ec2 {
     @inline def values = js.Array(request, maintain, instant)
   }
 
-  /**
-    * Describes a flow log.
+  /** Describes a flow log.
     */
   @js.native
   trait FlowLog extends js.Object {
@@ -18424,8 +18186,7 @@ package ec2 {
     @inline def values = js.Array(VPC, Subnet, NetworkInterface)
   }
 
-  /**
-    * Describes the FPGA accelerator for the instance type.
+  /** Describes the FPGA accelerator for the instance type.
     */
   @js.native
   trait FpgaDeviceInfo extends js.Object {
@@ -18452,8 +18213,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the memory for the FPGA accelerator for the instance type.
+  /** Describes the memory for the FPGA accelerator for the instance type.
     */
   @js.native
   trait FpgaDeviceMemoryInfo extends js.Object {
@@ -18471,8 +18231,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an Amazon FPGA image (AFI).
+  /** Describes an Amazon FPGA image (AFI).
     */
   @js.native
   trait FpgaImage extends js.Object {
@@ -18532,8 +18291,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an Amazon FPGA image (AFI) attribute.
+  /** Describes an Amazon FPGA image (AFI) attribute.
     */
   @js.native
   trait FpgaImageAttribute extends js.Object {
@@ -18574,8 +18332,7 @@ package ec2 {
     @inline def values = js.Array(description, name, loadPermission, productCodes)
   }
 
-  /**
-    * Describes the state of the bitstream generation process for an Amazon FPGA image (AFI).
+  /** Describes the state of the bitstream generation process for an Amazon FPGA image (AFI).
     */
   @js.native
   trait FpgaImageState extends js.Object {
@@ -18607,8 +18364,7 @@ package ec2 {
     @inline def values = js.Array(pending, failed, available, unavailable)
   }
 
-  /**
-    * Describes the FPGAs for the instance type.
+  /** Describes the FPGAs for the instance type.
     */
   @js.native
   trait FpgaInfo extends js.Object {
@@ -19048,7 +18804,6 @@ package ec2 {
         "HostIdSet" -> HostIdSet.asInstanceOf[js.Any],
         "OfferingId" -> OfferingId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostReservationPurchasePreviewRequest]
     }
   }
@@ -19253,8 +19008,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for GetReservedInstanceExchangeQuote.
+  /** Contains the parameters for GetReservedInstanceExchangeQuote.
     */
   @js.native
   trait GetReservedInstancesExchangeQuoteRequest extends js.Object {
@@ -19280,8 +19034,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of GetReservedInstancesExchangeQuote.
+  /** Contains the output of GetReservedInstancesExchangeQuote.
     */
   @js.native
   trait GetReservedInstancesExchangeQuoteResult extends js.Object {
@@ -19517,8 +19270,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the GPU accelerators for the instance type.
+  /** Describes the GPU accelerators for the instance type.
     */
   @js.native
   trait GpuDeviceInfo extends js.Object {
@@ -19545,8 +19297,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the memory available to the GPU accelerator.
+  /** Describes the memory available to the GPU accelerator.
     */
   @js.native
   trait GpuDeviceMemoryInfo extends js.Object {
@@ -19564,8 +19315,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the GPU accelerators for the instance type.
+  /** Describes the GPU accelerators for the instance type.
     */
   @js.native
   trait GpuInfo extends js.Object {
@@ -19586,8 +19336,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a security group.
+  /** Describes a security group.
     */
   @js.native
   trait GroupIdentifier extends js.Object {
@@ -19608,8 +19357,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate your instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+  /** Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate your instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     */
   @js.native
   trait HibernationOptions extends js.Object {
@@ -19627,8 +19375,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate your instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+  /** Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate your instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     */
   @js.native
   trait HibernationOptionsRequest extends js.Object {
@@ -19646,8 +19393,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an event in the history of the Spot Fleet request.
+  /** Describes an event in the history of the Spot Fleet request.
     */
   @js.native
   trait HistoryRecord extends js.Object {
@@ -19671,8 +19417,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an event in the history of an EC2 Fleet.
+  /** Describes an event in the history of an EC2 Fleet.
     */
   @js.native
   trait HistoryRecordEntry extends js.Object {
@@ -19696,8 +19441,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the properties of the Dedicated Host.
+  /** Describes the properties of the Dedicated Host.
     */
   @js.native
   trait Host extends js.Object {
@@ -19763,8 +19507,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance running on a Dedicated Host.
+  /** Describes an instance running on a Dedicated Host.
     */
   @js.native
   trait HostInstance extends js.Object {
@@ -19788,8 +19531,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Details about the Dedicated Host Reservation offering.
+  /** Details about the Dedicated Host Reservation offering.
     */
   @js.native
   trait HostOffering extends js.Object {
@@ -19825,8 +19567,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the properties of a Dedicated Host.
+  /** Describes the properties of a Dedicated Host.
     */
   @js.native
   trait HostProperties extends js.Object {
@@ -19865,8 +19606,7 @@ package ec2 {
     @inline def values = js.Array(on, off)
   }
 
-  /**
-    * Details about the Dedicated Host Reservation and associated Dedicated Hosts.
+  /** Details about the Dedicated Host Reservation and associated Dedicated Hosts.
     */
   @js.native
   trait HostReservation extends js.Object {
@@ -19950,8 +19690,7 @@ package ec2 {
     @inline def values = js.Array(ovm, xen)
   }
 
-  /**
-    * The internet key exchange (IKE) version permitted for the VPN tunnel.
+  /** The internet key exchange (IKE) version permitted for the VPN tunnel.
     */
   @js.native
   trait IKEVersionsListValue extends js.Object {
@@ -19969,8 +19708,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The IKE version that is permitted for the VPN tunnel.
+  /** The IKE version that is permitted for the VPN tunnel.
     */
   @js.native
   trait IKEVersionsRequestListValue extends js.Object {
@@ -19988,8 +19726,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IAM instance profile.
+  /** Describes an IAM instance profile.
     */
   @js.native
   trait IamInstanceProfile extends js.Object {
@@ -20010,8 +19747,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between an IAM instance profile and an instance.
+  /** Describes an association between an IAM instance profile and an instance.
     */
   @js.native
   trait IamInstanceProfileAssociation extends js.Object {
@@ -20052,8 +19788,7 @@ package ec2 {
     @inline def values = js.Array(associating, associated, disassociating, disassociated)
   }
 
-  /**
-    * Describes an IAM instance profile.
+  /** Describes an IAM instance profile.
     */
   @js.native
   trait IamInstanceProfileSpecification extends js.Object {
@@ -20074,8 +19809,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the ICMP type and code.
+  /** Describes the ICMP type and code.
     */
   @js.native
   trait IcmpTypeCode extends js.Object {
@@ -20096,8 +19830,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the ID format for a resource.
+  /** Describes the ID format for a resource.
     */
   @js.native
   trait IdFormat extends js.Object {
@@ -20121,8 +19854,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an image.
+  /** Describes an image.
     */
   @js.native
   trait Image extends js.Object {
@@ -20215,8 +19947,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an image attribute.
+  /** Describes an image attribute.
     */
   @js.native
   trait ImageAttribute extends js.Object {
@@ -20269,8 +20000,7 @@ package ec2 {
     @inline def values = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport)
   }
 
-  /**
-    * Describes the disk container object for an import image task.
+  /** Describes the disk container object for an import image task.
     */
   @js.native
   trait ImageDiskContainer extends js.Object {
@@ -20367,8 +20097,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The request information of license configurations.
+  /** The request information of license configurations.
     */
   @js.native
   trait ImportImageLicenseConfigurationRequest extends js.Object {
@@ -20386,8 +20115,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The response information for license configurations.
+  /** The response information for license configurations.
     */
   @js.native
   trait ImportImageLicenseConfigurationResponse extends js.Object {
@@ -20518,8 +20246,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an import image task.
+  /** Describes an import image task.
     */
   @js.native
   trait ImportImageTask extends js.Object {
@@ -20579,8 +20306,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the launch specification for VM import.
+  /** Describes the launch specification for VM import.
     */
   @js.native
   trait ImportInstanceLaunchSpecification extends js.Object {
@@ -20674,8 +20400,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an import instance task.
+  /** Describes an import instance task.
     */
   @js.native
   trait ImportInstanceTaskDetails extends js.Object {
@@ -20702,8 +20427,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an import volume task.
+  /** Describes an import volume task.
     */
   @js.native
   trait ImportInstanceVolumeDetailItem extends js.Object {
@@ -20856,8 +20580,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an import snapshot task.
+  /** Describes an import snapshot task.
     */
   @js.native
   trait ImportSnapshotTask extends js.Object {
@@ -20930,8 +20653,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an import volume task.
+  /** Describes an import volume task.
     */
   @js.native
   trait ImportVolumeTaskDetails extends js.Object {
@@ -20961,8 +20683,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Inference accelerators for the instance type.
+  /** Describes the Inference accelerators for the instance type.
     */
   @js.native
   trait InferenceAcceleratorInfo extends js.Object {
@@ -20980,8 +20701,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Inference accelerators for the instance type.
+  /** Describes the Inference accelerators for the instance type.
     */
   @js.native
   trait InferenceDeviceInfo extends js.Object {
@@ -21005,8 +20725,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance.
+  /** Describes an instance.
     */
   @js.native
   trait Instance extends js.Object {
@@ -21162,8 +20881,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance attribute.
+  /** Describes an instance attribute.
     */
   @js.native
   trait InstanceAttribute extends js.Object {
@@ -21241,27 +20959,25 @@ package ec2 {
     val sriovNetSupport = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
     val enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
 
-    @inline def values =
-      js.Array(
-        instanceType,
-        kernel,
-        ramdisk,
-        userData,
-        disableApiTermination,
-        instanceInitiatedShutdownBehavior,
-        rootDeviceName,
-        blockDeviceMapping,
-        productCodes,
-        sourceDestCheck,
-        groupSet,
-        ebsOptimized,
-        sriovNetSupport,
-        enaSupport
-      )
+    @inline def values = js.Array(
+      instanceType,
+      kernel,
+      ramdisk,
+      userData,
+      disableApiTermination,
+      instanceInitiatedShutdownBehavior,
+      rootDeviceName,
+      blockDeviceMapping,
+      productCodes,
+      sourceDestCheck,
+      groupSet,
+      ebsOptimized,
+      sriovNetSupport,
+      enaSupport
+    )
   }
 
-  /**
-    * Describes a block device mapping.
+  /** Describes a block device mapping.
     */
   @js.native
   trait InstanceBlockDeviceMapping extends js.Object {
@@ -21282,8 +20998,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a block device mapping entry.
+  /** Describes a block device mapping entry.
     */
   @js.native
   trait InstanceBlockDeviceMappingSpecification extends js.Object {
@@ -21310,8 +21025,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the number of instances that can be launched onto the Dedicated Host.
+  /** Information about the number of instances that can be launched onto the Dedicated Host.
     */
   @js.native
   trait InstanceCapacity extends js.Object {
@@ -21335,8 +21049,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance listing state.
+  /** Describes a Reserved Instance listing state.
     */
   @js.native
   trait InstanceCount extends js.Object {
@@ -21357,8 +21070,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the credit option for CPU usage of a burstable performance instance.
+  /** Describes the credit option for CPU usage of a burstable performance instance.
     */
   @js.native
   trait InstanceCreditSpecification extends js.Object {
@@ -21379,8 +21091,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the credit option for CPU usage of a burstable performance instance.
+  /** Describes the credit option for CPU usage of a burstable performance instance.
     */
   @js.native
   trait InstanceCreditSpecificationRequest extends js.Object {
@@ -21401,8 +21112,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance to export.
+  /** Describes an instance to export.
     */
   @js.native
   trait InstanceExportDetails extends js.Object {
@@ -21423,8 +21133,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the default credit option for CPU usage of a burstable performance instance family.
+  /** Describes the default credit option for CPU usage of a burstable performance instance family.
     */
   @js.native
   trait InstanceFamilyCreditSpecification extends js.Object {
@@ -21464,8 +21173,7 @@ package ec2 {
     @inline def values = js.Array(hibernate, stop, terminate)
   }
 
-  /**
-    * Describes an IPv6 address.
+  /** Describes an IPv6 address.
     */
   @js.native
   trait InstanceIpv6Address extends js.Object {
@@ -21483,8 +21191,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv6 address.
+  /** Describes an IPv6 address.
     */
   @js.native
   trait InstanceIpv6AddressRequest extends js.Object {
@@ -21520,8 +21227,7 @@ package ec2 {
     @inline def values = js.Array(spot, scheduled)
   }
 
-  /**
-    * Describes the market (purchasing) option for the instances.
+  /** Describes the market (purchasing) option for the instances.
     */
   @js.native
   trait InstanceMarketOptionsRequest extends js.Object {
@@ -21560,8 +21266,7 @@ package ec2 {
     @inline def values = js.Array(disabled, enabled)
   }
 
-  /**
-    * The metadata options for the instance.
+  /** The metadata options for the instance.
     */
   @js.native
   trait InstanceMetadataOptionsRequest extends js.Object {
@@ -21585,8 +21290,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The metadata options for the instance.
+  /** The metadata options for the instance.
     */
   @js.native
   trait InstanceMetadataOptionsResponse extends js.Object {
@@ -21622,8 +21326,7 @@ package ec2 {
     @inline def values = js.Array(pending, applied)
   }
 
-  /**
-    * Describes the monitoring of an instance.
+  /** Describes the monitoring of an instance.
     */
   @js.native
   trait InstanceMonitoring extends js.Object {
@@ -21644,8 +21347,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a network interface.
+  /** Describes a network interface.
     */
   @js.native
   trait InstanceNetworkInterface extends js.Object {
@@ -21708,8 +21410,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes association information for an Elastic IP address (IPv4).
+  /** Describes association information for an Elastic IP address (IPv4).
     */
   @js.native
   trait InstanceNetworkInterfaceAssociation extends js.Object {
@@ -21736,8 +21437,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a network interface attachment.
+  /** Describes a network interface attachment.
     */
   @js.native
   trait InstanceNetworkInterfaceAttachment extends js.Object {
@@ -21767,8 +21467,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a network interface.
+  /** Describes a network interface.
     */
   @js.native
   trait InstanceNetworkInterfaceSpecification extends js.Object {
@@ -21825,8 +21524,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a private IPv4 address.
+  /** Describes a private IPv4 address.
     */
   @js.native
   trait InstancePrivateIpAddress extends js.Object {
@@ -21853,8 +21551,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The instance details to specify which volumes should be snapshotted.
+  /** The instance details to specify which volumes should be snapshotted.
     */
   @js.native
   trait InstanceSpecification extends js.Object {
@@ -21875,8 +21572,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the current state of an instance.
+  /** Describes the current state of an instance.
     */
   @js.native
   trait InstanceState extends js.Object {
@@ -21897,8 +21593,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance state change.
+  /** Describes an instance state change.
     */
   @js.native
   trait InstanceStateChange extends js.Object {
@@ -21935,8 +21630,7 @@ package ec2 {
     @inline def values = js.Array(pending, running, `shutting-down`, terminated, stopping, stopped)
   }
 
-  /**
-    * Describes the status of an instance.
+  /** Describes the status of an instance.
     */
   @js.native
   trait InstanceStatus extends js.Object {
@@ -21972,8 +21666,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the instance status.
+  /** Describes the instance status.
     */
   @js.native
   trait InstanceStatusDetails extends js.Object {
@@ -21997,8 +21690,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a scheduled event for an instance.
+  /** Describes a scheduled event for an instance.
     */
   @js.native
   trait InstanceStatusEvent extends js.Object {
@@ -22031,8 +21723,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the status of an instance.
+  /** Describes the status of an instance.
     */
   @js.native
   trait InstanceStatusSummary extends js.Object {
@@ -22053,8 +21744,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the disks that are available for the instance type.
+  /** Describes the disks that are available for the instance type.
     */
   @js.native
   trait InstanceStorageInfo extends js.Object {
@@ -22075,8 +21765,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the registered tag keys for the current Region.
+  /** Describes the registered tag keys for the current Region.
     */
   @js.native
   trait InstanceTagNotificationAttribute extends js.Object {
@@ -22443,351 +22132,350 @@ package ec2 {
     val `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
     val `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
 
-    @inline def values =
-      js.Array(
-        `t1.micro`,
-        `t2.nano`,
-        `t2.micro`,
-        `t2.small`,
-        `t2.medium`,
-        `t2.large`,
-        `t2.xlarge`,
-        `t2.2xlarge`,
-        `t3.nano`,
-        `t3.micro`,
-        `t3.small`,
-        `t3.medium`,
-        `t3.large`,
-        `t3.xlarge`,
-        `t3.2xlarge`,
-        `t3a.nano`,
-        `t3a.micro`,
-        `t3a.small`,
-        `t3a.medium`,
-        `t3a.large`,
-        `t3a.xlarge`,
-        `t3a.2xlarge`,
-        `m1.small`,
-        `m1.medium`,
-        `m1.large`,
-        `m1.xlarge`,
-        `m3.medium`,
-        `m3.large`,
-        `m3.xlarge`,
-        `m3.2xlarge`,
-        `m4.large`,
-        `m4.xlarge`,
-        `m4.2xlarge`,
-        `m4.4xlarge`,
-        `m4.10xlarge`,
-        `m4.16xlarge`,
-        `m2.xlarge`,
-        `m2.2xlarge`,
-        `m2.4xlarge`,
-        `cr1.8xlarge`,
-        `r3.large`,
-        `r3.xlarge`,
-        `r3.2xlarge`,
-        `r3.4xlarge`,
-        `r3.8xlarge`,
-        `r4.large`,
-        `r4.xlarge`,
-        `r4.2xlarge`,
-        `r4.4xlarge`,
-        `r4.8xlarge`,
-        `r4.16xlarge`,
-        `r5.large`,
-        `r5.xlarge`,
-        `r5.2xlarge`,
-        `r5.4xlarge`,
-        `r5.8xlarge`,
-        `r5.12xlarge`,
-        `r5.16xlarge`,
-        `r5.24xlarge`,
-        `r5.metal`,
-        `r5a.large`,
-        `r5a.xlarge`,
-        `r5a.2xlarge`,
-        `r5a.4xlarge`,
-        `r5a.8xlarge`,
-        `r5a.12xlarge`,
-        `r5a.16xlarge`,
-        `r5a.24xlarge`,
-        `r5d.large`,
-        `r5d.xlarge`,
-        `r5d.2xlarge`,
-        `r5d.4xlarge`,
-        `r5d.8xlarge`,
-        `r5d.12xlarge`,
-        `r5d.16xlarge`,
-        `r5d.24xlarge`,
-        `r5d.metal`,
-        `r5ad.large`,
-        `r5ad.xlarge`,
-        `r5ad.2xlarge`,
-        `r5ad.4xlarge`,
-        `r5ad.8xlarge`,
-        `r5ad.12xlarge`,
-        `r5ad.16xlarge`,
-        `r5ad.24xlarge`,
-        `r6g.metal`,
-        `r6g.medium`,
-        `r6g.large`,
-        `r6g.xlarge`,
-        `r6g.2xlarge`,
-        `r6g.4xlarge`,
-        `r6g.8xlarge`,
-        `r6g.12xlarge`,
-        `r6g.16xlarge`,
-        `r6gd.metal`,
-        `r6gd.medium`,
-        `r6gd.large`,
-        `r6gd.xlarge`,
-        `r6gd.2xlarge`,
-        `r6gd.4xlarge`,
-        `r6gd.8xlarge`,
-        `r6gd.12xlarge`,
-        `r6gd.16xlarge`,
-        `x1.16xlarge`,
-        `x1.32xlarge`,
-        `x1e.xlarge`,
-        `x1e.2xlarge`,
-        `x1e.4xlarge`,
-        `x1e.8xlarge`,
-        `x1e.16xlarge`,
-        `x1e.32xlarge`,
-        `i2.xlarge`,
-        `i2.2xlarge`,
-        `i2.4xlarge`,
-        `i2.8xlarge`,
-        `i3.large`,
-        `i3.xlarge`,
-        `i3.2xlarge`,
-        `i3.4xlarge`,
-        `i3.8xlarge`,
-        `i3.16xlarge`,
-        `i3.metal`,
-        `i3en.large`,
-        `i3en.xlarge`,
-        `i3en.2xlarge`,
-        `i3en.3xlarge`,
-        `i3en.6xlarge`,
-        `i3en.12xlarge`,
-        `i3en.24xlarge`,
-        `i3en.metal`,
-        `hi1.4xlarge`,
-        `hs1.8xlarge`,
-        `c1.medium`,
-        `c1.xlarge`,
-        `c3.large`,
-        `c3.xlarge`,
-        `c3.2xlarge`,
-        `c3.4xlarge`,
-        `c3.8xlarge`,
-        `c4.large`,
-        `c4.xlarge`,
-        `c4.2xlarge`,
-        `c4.4xlarge`,
-        `c4.8xlarge`,
-        `c5.large`,
-        `c5.xlarge`,
-        `c5.2xlarge`,
-        `c5.4xlarge`,
-        `c5.9xlarge`,
-        `c5.12xlarge`,
-        `c5.18xlarge`,
-        `c5.24xlarge`,
-        `c5.metal`,
-        `c5a.large`,
-        `c5a.xlarge`,
-        `c5a.2xlarge`,
-        `c5a.4xlarge`,
-        `c5a.8xlarge`,
-        `c5a.12xlarge`,
-        `c5a.16xlarge`,
-        `c5a.24xlarge`,
-        `c5ad.large`,
-        `c5ad.xlarge`,
-        `c5ad.2xlarge`,
-        `c5ad.4xlarge`,
-        `c5ad.8xlarge`,
-        `c5ad.12xlarge`,
-        `c5ad.16xlarge`,
-        `c5ad.24xlarge`,
-        `c5d.large`,
-        `c5d.xlarge`,
-        `c5d.2xlarge`,
-        `c5d.4xlarge`,
-        `c5d.9xlarge`,
-        `c5d.12xlarge`,
-        `c5d.18xlarge`,
-        `c5d.24xlarge`,
-        `c5d.metal`,
-        `c5n.large`,
-        `c5n.xlarge`,
-        `c5n.2xlarge`,
-        `c5n.4xlarge`,
-        `c5n.9xlarge`,
-        `c5n.18xlarge`,
-        `c6g.metal`,
-        `c6g.medium`,
-        `c6g.large`,
-        `c6g.xlarge`,
-        `c6g.2xlarge`,
-        `c6g.4xlarge`,
-        `c6g.8xlarge`,
-        `c6g.12xlarge`,
-        `c6g.16xlarge`,
-        `c6gd.metal`,
-        `c6gd.medium`,
-        `c6gd.large`,
-        `c6gd.xlarge`,
-        `c6gd.2xlarge`,
-        `c6gd.4xlarge`,
-        `c6gd.8xlarge`,
-        `c6gd.12xlarge`,
-        `c6gd.16xlarge`,
-        `cc1.4xlarge`,
-        `cc2.8xlarge`,
-        `g2.2xlarge`,
-        `g2.8xlarge`,
-        `g3.4xlarge`,
-        `g3.8xlarge`,
-        `g3.16xlarge`,
-        `g3s.xlarge`,
-        `g4dn.xlarge`,
-        `g4dn.2xlarge`,
-        `g4dn.4xlarge`,
-        `g4dn.8xlarge`,
-        `g4dn.12xlarge`,
-        `g4dn.16xlarge`,
-        `g4dn.metal`,
-        `cg1.4xlarge`,
-        `p2.xlarge`,
-        `p2.8xlarge`,
-        `p2.16xlarge`,
-        `p3.2xlarge`,
-        `p3.8xlarge`,
-        `p3.16xlarge`,
-        `p3dn.24xlarge`,
-        `d2.xlarge`,
-        `d2.2xlarge`,
-        `d2.4xlarge`,
-        `d2.8xlarge`,
-        `f1.2xlarge`,
-        `f1.4xlarge`,
-        `f1.16xlarge`,
-        `m5.large`,
-        `m5.xlarge`,
-        `m5.2xlarge`,
-        `m5.4xlarge`,
-        `m5.8xlarge`,
-        `m5.12xlarge`,
-        `m5.16xlarge`,
-        `m5.24xlarge`,
-        `m5.metal`,
-        `m5a.large`,
-        `m5a.xlarge`,
-        `m5a.2xlarge`,
-        `m5a.4xlarge`,
-        `m5a.8xlarge`,
-        `m5a.12xlarge`,
-        `m5a.16xlarge`,
-        `m5a.24xlarge`,
-        `m5d.large`,
-        `m5d.xlarge`,
-        `m5d.2xlarge`,
-        `m5d.4xlarge`,
-        `m5d.8xlarge`,
-        `m5d.12xlarge`,
-        `m5d.16xlarge`,
-        `m5d.24xlarge`,
-        `m5d.metal`,
-        `m5ad.large`,
-        `m5ad.xlarge`,
-        `m5ad.2xlarge`,
-        `m5ad.4xlarge`,
-        `m5ad.8xlarge`,
-        `m5ad.12xlarge`,
-        `m5ad.16xlarge`,
-        `m5ad.24xlarge`,
-        `h1.2xlarge`,
-        `h1.4xlarge`,
-        `h1.8xlarge`,
-        `h1.16xlarge`,
-        `z1d.large`,
-        `z1d.xlarge`,
-        `z1d.2xlarge`,
-        `z1d.3xlarge`,
-        `z1d.6xlarge`,
-        `z1d.12xlarge`,
-        `z1d.metal`,
-        `u-6tb1.metal`,
-        `u-9tb1.metal`,
-        `u-12tb1.metal`,
-        `u-18tb1.metal`,
-        `u-24tb1.metal`,
-        `a1.medium`,
-        `a1.large`,
-        `a1.xlarge`,
-        `a1.2xlarge`,
-        `a1.4xlarge`,
-        `a1.metal`,
-        `m5dn.large`,
-        `m5dn.xlarge`,
-        `m5dn.2xlarge`,
-        `m5dn.4xlarge`,
-        `m5dn.8xlarge`,
-        `m5dn.12xlarge`,
-        `m5dn.16xlarge`,
-        `m5dn.24xlarge`,
-        `m5n.large`,
-        `m5n.xlarge`,
-        `m5n.2xlarge`,
-        `m5n.4xlarge`,
-        `m5n.8xlarge`,
-        `m5n.12xlarge`,
-        `m5n.16xlarge`,
-        `m5n.24xlarge`,
-        `r5dn.large`,
-        `r5dn.xlarge`,
-        `r5dn.2xlarge`,
-        `r5dn.4xlarge`,
-        `r5dn.8xlarge`,
-        `r5dn.12xlarge`,
-        `r5dn.16xlarge`,
-        `r5dn.24xlarge`,
-        `r5n.large`,
-        `r5n.xlarge`,
-        `r5n.2xlarge`,
-        `r5n.4xlarge`,
-        `r5n.8xlarge`,
-        `r5n.12xlarge`,
-        `r5n.16xlarge`,
-        `r5n.24xlarge`,
-        `inf1.xlarge`,
-        `inf1.2xlarge`,
-        `inf1.6xlarge`,
-        `inf1.24xlarge`,
-        `m6g.metal`,
-        `m6g.medium`,
-        `m6g.large`,
-        `m6g.xlarge`,
-        `m6g.2xlarge`,
-        `m6g.4xlarge`,
-        `m6g.8xlarge`,
-        `m6g.12xlarge`,
-        `m6g.16xlarge`,
-        `m6gd.metal`,
-        `m6gd.medium`,
-        `m6gd.large`,
-        `m6gd.xlarge`,
-        `m6gd.2xlarge`,
-        `m6gd.4xlarge`,
-        `m6gd.8xlarge`,
-        `m6gd.12xlarge`,
-        `m6gd.16xlarge`
-      )
+    @inline def values = js.Array(
+      `t1.micro`,
+      `t2.nano`,
+      `t2.micro`,
+      `t2.small`,
+      `t2.medium`,
+      `t2.large`,
+      `t2.xlarge`,
+      `t2.2xlarge`,
+      `t3.nano`,
+      `t3.micro`,
+      `t3.small`,
+      `t3.medium`,
+      `t3.large`,
+      `t3.xlarge`,
+      `t3.2xlarge`,
+      `t3a.nano`,
+      `t3a.micro`,
+      `t3a.small`,
+      `t3a.medium`,
+      `t3a.large`,
+      `t3a.xlarge`,
+      `t3a.2xlarge`,
+      `m1.small`,
+      `m1.medium`,
+      `m1.large`,
+      `m1.xlarge`,
+      `m3.medium`,
+      `m3.large`,
+      `m3.xlarge`,
+      `m3.2xlarge`,
+      `m4.large`,
+      `m4.xlarge`,
+      `m4.2xlarge`,
+      `m4.4xlarge`,
+      `m4.10xlarge`,
+      `m4.16xlarge`,
+      `m2.xlarge`,
+      `m2.2xlarge`,
+      `m2.4xlarge`,
+      `cr1.8xlarge`,
+      `r3.large`,
+      `r3.xlarge`,
+      `r3.2xlarge`,
+      `r3.4xlarge`,
+      `r3.8xlarge`,
+      `r4.large`,
+      `r4.xlarge`,
+      `r4.2xlarge`,
+      `r4.4xlarge`,
+      `r4.8xlarge`,
+      `r4.16xlarge`,
+      `r5.large`,
+      `r5.xlarge`,
+      `r5.2xlarge`,
+      `r5.4xlarge`,
+      `r5.8xlarge`,
+      `r5.12xlarge`,
+      `r5.16xlarge`,
+      `r5.24xlarge`,
+      `r5.metal`,
+      `r5a.large`,
+      `r5a.xlarge`,
+      `r5a.2xlarge`,
+      `r5a.4xlarge`,
+      `r5a.8xlarge`,
+      `r5a.12xlarge`,
+      `r5a.16xlarge`,
+      `r5a.24xlarge`,
+      `r5d.large`,
+      `r5d.xlarge`,
+      `r5d.2xlarge`,
+      `r5d.4xlarge`,
+      `r5d.8xlarge`,
+      `r5d.12xlarge`,
+      `r5d.16xlarge`,
+      `r5d.24xlarge`,
+      `r5d.metal`,
+      `r5ad.large`,
+      `r5ad.xlarge`,
+      `r5ad.2xlarge`,
+      `r5ad.4xlarge`,
+      `r5ad.8xlarge`,
+      `r5ad.12xlarge`,
+      `r5ad.16xlarge`,
+      `r5ad.24xlarge`,
+      `r6g.metal`,
+      `r6g.medium`,
+      `r6g.large`,
+      `r6g.xlarge`,
+      `r6g.2xlarge`,
+      `r6g.4xlarge`,
+      `r6g.8xlarge`,
+      `r6g.12xlarge`,
+      `r6g.16xlarge`,
+      `r6gd.metal`,
+      `r6gd.medium`,
+      `r6gd.large`,
+      `r6gd.xlarge`,
+      `r6gd.2xlarge`,
+      `r6gd.4xlarge`,
+      `r6gd.8xlarge`,
+      `r6gd.12xlarge`,
+      `r6gd.16xlarge`,
+      `x1.16xlarge`,
+      `x1.32xlarge`,
+      `x1e.xlarge`,
+      `x1e.2xlarge`,
+      `x1e.4xlarge`,
+      `x1e.8xlarge`,
+      `x1e.16xlarge`,
+      `x1e.32xlarge`,
+      `i2.xlarge`,
+      `i2.2xlarge`,
+      `i2.4xlarge`,
+      `i2.8xlarge`,
+      `i3.large`,
+      `i3.xlarge`,
+      `i3.2xlarge`,
+      `i3.4xlarge`,
+      `i3.8xlarge`,
+      `i3.16xlarge`,
+      `i3.metal`,
+      `i3en.large`,
+      `i3en.xlarge`,
+      `i3en.2xlarge`,
+      `i3en.3xlarge`,
+      `i3en.6xlarge`,
+      `i3en.12xlarge`,
+      `i3en.24xlarge`,
+      `i3en.metal`,
+      `hi1.4xlarge`,
+      `hs1.8xlarge`,
+      `c1.medium`,
+      `c1.xlarge`,
+      `c3.large`,
+      `c3.xlarge`,
+      `c3.2xlarge`,
+      `c3.4xlarge`,
+      `c3.8xlarge`,
+      `c4.large`,
+      `c4.xlarge`,
+      `c4.2xlarge`,
+      `c4.4xlarge`,
+      `c4.8xlarge`,
+      `c5.large`,
+      `c5.xlarge`,
+      `c5.2xlarge`,
+      `c5.4xlarge`,
+      `c5.9xlarge`,
+      `c5.12xlarge`,
+      `c5.18xlarge`,
+      `c5.24xlarge`,
+      `c5.metal`,
+      `c5a.large`,
+      `c5a.xlarge`,
+      `c5a.2xlarge`,
+      `c5a.4xlarge`,
+      `c5a.8xlarge`,
+      `c5a.12xlarge`,
+      `c5a.16xlarge`,
+      `c5a.24xlarge`,
+      `c5ad.large`,
+      `c5ad.xlarge`,
+      `c5ad.2xlarge`,
+      `c5ad.4xlarge`,
+      `c5ad.8xlarge`,
+      `c5ad.12xlarge`,
+      `c5ad.16xlarge`,
+      `c5ad.24xlarge`,
+      `c5d.large`,
+      `c5d.xlarge`,
+      `c5d.2xlarge`,
+      `c5d.4xlarge`,
+      `c5d.9xlarge`,
+      `c5d.12xlarge`,
+      `c5d.18xlarge`,
+      `c5d.24xlarge`,
+      `c5d.metal`,
+      `c5n.large`,
+      `c5n.xlarge`,
+      `c5n.2xlarge`,
+      `c5n.4xlarge`,
+      `c5n.9xlarge`,
+      `c5n.18xlarge`,
+      `c6g.metal`,
+      `c6g.medium`,
+      `c6g.large`,
+      `c6g.xlarge`,
+      `c6g.2xlarge`,
+      `c6g.4xlarge`,
+      `c6g.8xlarge`,
+      `c6g.12xlarge`,
+      `c6g.16xlarge`,
+      `c6gd.metal`,
+      `c6gd.medium`,
+      `c6gd.large`,
+      `c6gd.xlarge`,
+      `c6gd.2xlarge`,
+      `c6gd.4xlarge`,
+      `c6gd.8xlarge`,
+      `c6gd.12xlarge`,
+      `c6gd.16xlarge`,
+      `cc1.4xlarge`,
+      `cc2.8xlarge`,
+      `g2.2xlarge`,
+      `g2.8xlarge`,
+      `g3.4xlarge`,
+      `g3.8xlarge`,
+      `g3.16xlarge`,
+      `g3s.xlarge`,
+      `g4dn.xlarge`,
+      `g4dn.2xlarge`,
+      `g4dn.4xlarge`,
+      `g4dn.8xlarge`,
+      `g4dn.12xlarge`,
+      `g4dn.16xlarge`,
+      `g4dn.metal`,
+      `cg1.4xlarge`,
+      `p2.xlarge`,
+      `p2.8xlarge`,
+      `p2.16xlarge`,
+      `p3.2xlarge`,
+      `p3.8xlarge`,
+      `p3.16xlarge`,
+      `p3dn.24xlarge`,
+      `d2.xlarge`,
+      `d2.2xlarge`,
+      `d2.4xlarge`,
+      `d2.8xlarge`,
+      `f1.2xlarge`,
+      `f1.4xlarge`,
+      `f1.16xlarge`,
+      `m5.large`,
+      `m5.xlarge`,
+      `m5.2xlarge`,
+      `m5.4xlarge`,
+      `m5.8xlarge`,
+      `m5.12xlarge`,
+      `m5.16xlarge`,
+      `m5.24xlarge`,
+      `m5.metal`,
+      `m5a.large`,
+      `m5a.xlarge`,
+      `m5a.2xlarge`,
+      `m5a.4xlarge`,
+      `m5a.8xlarge`,
+      `m5a.12xlarge`,
+      `m5a.16xlarge`,
+      `m5a.24xlarge`,
+      `m5d.large`,
+      `m5d.xlarge`,
+      `m5d.2xlarge`,
+      `m5d.4xlarge`,
+      `m5d.8xlarge`,
+      `m5d.12xlarge`,
+      `m5d.16xlarge`,
+      `m5d.24xlarge`,
+      `m5d.metal`,
+      `m5ad.large`,
+      `m5ad.xlarge`,
+      `m5ad.2xlarge`,
+      `m5ad.4xlarge`,
+      `m5ad.8xlarge`,
+      `m5ad.12xlarge`,
+      `m5ad.16xlarge`,
+      `m5ad.24xlarge`,
+      `h1.2xlarge`,
+      `h1.4xlarge`,
+      `h1.8xlarge`,
+      `h1.16xlarge`,
+      `z1d.large`,
+      `z1d.xlarge`,
+      `z1d.2xlarge`,
+      `z1d.3xlarge`,
+      `z1d.6xlarge`,
+      `z1d.12xlarge`,
+      `z1d.metal`,
+      `u-6tb1.metal`,
+      `u-9tb1.metal`,
+      `u-12tb1.metal`,
+      `u-18tb1.metal`,
+      `u-24tb1.metal`,
+      `a1.medium`,
+      `a1.large`,
+      `a1.xlarge`,
+      `a1.2xlarge`,
+      `a1.4xlarge`,
+      `a1.metal`,
+      `m5dn.large`,
+      `m5dn.xlarge`,
+      `m5dn.2xlarge`,
+      `m5dn.4xlarge`,
+      `m5dn.8xlarge`,
+      `m5dn.12xlarge`,
+      `m5dn.16xlarge`,
+      `m5dn.24xlarge`,
+      `m5n.large`,
+      `m5n.xlarge`,
+      `m5n.2xlarge`,
+      `m5n.4xlarge`,
+      `m5n.8xlarge`,
+      `m5n.12xlarge`,
+      `m5n.16xlarge`,
+      `m5n.24xlarge`,
+      `r5dn.large`,
+      `r5dn.xlarge`,
+      `r5dn.2xlarge`,
+      `r5dn.4xlarge`,
+      `r5dn.8xlarge`,
+      `r5dn.12xlarge`,
+      `r5dn.16xlarge`,
+      `r5dn.24xlarge`,
+      `r5n.large`,
+      `r5n.xlarge`,
+      `r5n.2xlarge`,
+      `r5n.4xlarge`,
+      `r5n.8xlarge`,
+      `r5n.12xlarge`,
+      `r5n.16xlarge`,
+      `r5n.24xlarge`,
+      `inf1.xlarge`,
+      `inf1.2xlarge`,
+      `inf1.6xlarge`,
+      `inf1.24xlarge`,
+      `m6g.metal`,
+      `m6g.medium`,
+      `m6g.large`,
+      `m6g.xlarge`,
+      `m6g.2xlarge`,
+      `m6g.4xlarge`,
+      `m6g.8xlarge`,
+      `m6g.12xlarge`,
+      `m6g.16xlarge`,
+      `m6gd.metal`,
+      `m6gd.medium`,
+      `m6gd.large`,
+      `m6gd.xlarge`,
+      `m6gd.2xlarge`,
+      `m6gd.4xlarge`,
+      `m6gd.8xlarge`,
+      `m6gd.12xlarge`,
+      `m6gd.16xlarge`
+    )
   }
 
   @js.native
@@ -22799,8 +22487,7 @@ package ec2 {
     @inline def values = js.Array(nitro, xen)
   }
 
-  /**
-    * Describes the instance type.
+  /** Describes the instance type.
     */
   @js.native
   trait InstanceTypeInfo extends js.Object {
@@ -22884,8 +22571,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The instance types offered.
+  /** The instance types offered.
     */
   @js.native
   trait InstanceTypeOffering extends js.Object {
@@ -22909,8 +22595,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the Capacity Reservation usage.
+  /** Information about the Capacity Reservation usage.
     */
   @js.native
   trait InstanceUsage extends js.Object {
@@ -22940,8 +22625,7 @@ package ec2 {
     @inline def values = js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`)
   }
 
-  /**
-    * Describes an internet gateway.
+  /** Describes an internet gateway.
     */
   @js.native
   trait InternetGateway extends js.Object {
@@ -22968,8 +22652,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the attachment of a VPC to an internet gateway or an egress-only internet gateway.
+  /** Describes the attachment of a VPC to an internet gateway or an egress-only internet gateway.
     */
   @js.native
   trait InternetGatewayAttachment extends js.Object {
@@ -22990,8 +22673,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a set of permissions for a security group rule.
+  /** Describes a set of permissions for a security group rule.
     */
   @js.native
   trait IpPermission extends js.Object {
@@ -23027,8 +22709,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv4 range.
+  /** Describes an IPv4 range.
     */
   @js.native
   trait IpRange extends js.Object {
@@ -23049,8 +22730,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv6 CIDR block association.
+  /** Describes an IPv6 CIDR block association.
     */
   @js.native
   trait Ipv6CidrAssociation extends js.Object {
@@ -23071,8 +22751,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv6 CIDR block.
+  /** Describes an IPv6 CIDR block.
     */
   @js.native
   trait Ipv6CidrBlock extends js.Object {
@@ -23090,8 +22769,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv6 address pool.
+  /** Describes an IPv6 address pool.
     */
   @js.native
   trait Ipv6Pool extends js.Object {
@@ -23118,8 +22796,7 @@ package ec2 {
     }
   }
 
-  /**
-    * [EC2-VPC only] Describes an IPv6 range.
+  /** [EC2-VPC only] Describes an IPv6 range.
     */
   @js.native
   trait Ipv6Range extends js.Object {
@@ -23149,8 +22826,7 @@ package ec2 {
     @inline def values = js.Array(enable, disable)
   }
 
-  /**
-    * Describes a key pair.
+  /** Describes a key pair.
     */
   @js.native
   trait KeyPair extends js.Object {
@@ -23180,8 +22856,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a key pair.
+  /** Describes a key pair.
     */
   @js.native
   trait KeyPairInfo extends js.Object {
@@ -23208,8 +22883,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The last error that occurred for a VPC endpoint.
+  /** The last error that occurred for a VPC endpoint.
     */
   @js.native
   trait LastError extends js.Object {
@@ -23230,8 +22904,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch permission.
+  /** Describes a launch permission.
     */
   @js.native
   trait LaunchPermission extends js.Object {
@@ -23252,8 +22925,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch permission modification.
+  /** Describes a launch permission modification.
     */
   @js.native
   trait LaunchPermissionModifications extends js.Object {
@@ -23274,8 +22946,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the launch specification for an instance.
+  /** Describes the launch specification for an instance.
     */
   @js.native
   trait LaunchSpecification extends js.Object {
@@ -23335,8 +23006,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template.
+  /** Describes a launch template.
     */
   @js.native
   trait LaunchTemplate extends js.Object {
@@ -23372,8 +23042,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template and overrides.
+  /** Describes a launch template and overrides.
     */
   @js.native
   trait LaunchTemplateAndOverridesResponse extends js.Object {
@@ -23394,8 +23063,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a block device mapping.
+  /** Describes a block device mapping.
     */
   @js.native
   trait LaunchTemplateBlockDeviceMapping extends js.Object {
@@ -23422,8 +23090,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a block device mapping.
+  /** Describes a block device mapping.
     */
   @js.native
   trait LaunchTemplateBlockDeviceMappingRequest extends js.Object {
@@ -23450,8 +23117,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run in On-Demand capacity or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
+  /** Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run in On-Demand capacity or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
     */
   @js.native
   trait LaunchTemplateCapacityReservationSpecificationRequest extends js.Object {
@@ -23472,8 +23138,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the Capacity Reservation targeting option.
+  /** Information about the Capacity Reservation targeting option.
     */
   @js.native
   trait LaunchTemplateCapacityReservationSpecificationResponse extends js.Object {
@@ -23494,8 +23159,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template and overrides.
+  /** Describes a launch template and overrides.
     */
   @js.native
   trait LaunchTemplateConfig extends js.Object {
@@ -23516,8 +23180,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The CPU options for the instance.
+  /** The CPU options for the instance.
     */
   @js.native
   trait LaunchTemplateCpuOptions extends js.Object {
@@ -23538,8 +23201,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The CPU options for the instance. Both the core count and threads per core must be specified in the request.
+  /** The CPU options for the instance. Both the core count and threads per core must be specified in the request.
     */
   @js.native
   trait LaunchTemplateCpuOptionsRequest extends js.Object {
@@ -23560,8 +23222,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a block device for an EBS volume.
+  /** Describes a block device for an EBS volume.
     */
   @js.native
   trait LaunchTemplateEbsBlockDevice extends js.Object {
@@ -23597,8 +23258,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The parameters for a block device for an EBS volume.
+  /** The parameters for a block device for an EBS volume.
     */
   @js.native
   trait LaunchTemplateEbsBlockDeviceRequest extends js.Object {
@@ -23634,8 +23294,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an elastic inference accelerator.
+  /** Describes an elastic inference accelerator.
     */
   @js.native
   trait LaunchTemplateElasticInferenceAccelerator extends js.Object {
@@ -23658,8 +23317,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an elastic inference accelerator.
+  /** Describes an elastic inference accelerator.
     */
   @js.native
   trait LaunchTemplateElasticInferenceAcceleratorResponse extends js.Object {
@@ -23690,19 +23348,17 @@ package ec2 {
     val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
     val unexpectedError = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
 
-    @inline def values =
-      js.Array(
-        launchTemplateIdDoesNotExist,
-        launchTemplateIdMalformed,
-        launchTemplateNameDoesNotExist,
-        launchTemplateNameMalformed,
-        launchTemplateVersionDoesNotExist,
-        unexpectedError
-      )
+    @inline def values = js.Array(
+      launchTemplateIdDoesNotExist,
+      launchTemplateIdMalformed,
+      launchTemplateNameDoesNotExist,
+      launchTemplateNameMalformed,
+      launchTemplateVersionDoesNotExist,
+      unexpectedError
+    )
   }
 
-  /**
-    * Indicates whether an instance is configured for hibernation.
+  /** Indicates whether an instance is configured for hibernation.
     */
   @js.native
   trait LaunchTemplateHibernationOptions extends js.Object {
@@ -23720,8 +23376,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]].
+  /** Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]].
     */
   @js.native
   trait LaunchTemplateHibernationOptionsRequest extends js.Object {
@@ -23748,8 +23403,7 @@ package ec2 {
     @inline def values = js.Array(optional, required)
   }
 
-  /**
-    * Describes an IAM instance profile.
+  /** Describes an IAM instance profile.
     */
   @js.native
   trait LaunchTemplateIamInstanceProfileSpecification extends js.Object {
@@ -23770,8 +23424,7 @@ package ec2 {
     }
   }
 
-  /**
-    * An IAM instance profile.
+  /** An IAM instance profile.
     */
   @js.native
   trait LaunchTemplateIamInstanceProfileSpecificationRequest extends js.Object {
@@ -23792,8 +23445,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The market (purchasing) option for the instances.
+  /** The market (purchasing) option for the instances.
     */
   @js.native
   trait LaunchTemplateInstanceMarketOptions extends js.Object {
@@ -23814,8 +23466,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The market (purchasing) option for the instances.
+  /** The market (purchasing) option for the instances.
     */
   @js.native
   trait LaunchTemplateInstanceMarketOptionsRequest extends js.Object {
@@ -23845,8 +23496,7 @@ package ec2 {
     @inline def values = js.Array(disabled, enabled)
   }
 
-  /**
-    * The metadata options for the instance. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+  /** The metadata options for the instance. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     */
   @js.native
   trait LaunchTemplateInstanceMetadataOptions extends js.Object {
@@ -23873,8 +23523,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The metadata options for the instance. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+  /** The metadata options for the instance. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     */
   @js.native
   trait LaunchTemplateInstanceMetadataOptionsRequest extends js.Object {
@@ -23907,8 +23556,7 @@ package ec2 {
     @inline def values = js.Array(pending, applied)
   }
 
-  /**
-    * Describes a network interface.
+  /** Describes a network interface.
     */
   @js.native
   trait LaunchTemplateInstanceNetworkInterfaceSpecification extends js.Object {
@@ -23965,8 +23613,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The parameters for a network interface.
+  /** The parameters for a network interface.
     */
   @js.native
   trait LaunchTemplateInstanceNetworkInterfaceSpecificationRequest extends js.Object {
@@ -24023,8 +23670,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a license configuration.
+  /** Describes a license configuration.
     */
   @js.native
   trait LaunchTemplateLicenseConfiguration extends js.Object {
@@ -24042,8 +23688,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a license configuration.
+  /** Describes a license configuration.
     */
   @js.native
   trait LaunchTemplateLicenseConfigurationRequest extends js.Object {
@@ -24061,8 +23706,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes overrides for a launch template.
+  /** Describes overrides for a launch template.
     */
   @js.native
   trait LaunchTemplateOverrides extends js.Object {
@@ -24095,8 +23739,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the placement of an instance.
+  /** Describes the placement of an instance.
     */
   @js.native
   trait LaunchTemplatePlacement extends js.Object {
@@ -24135,8 +23778,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the placement of an instance.
+  /** Describes the placement of an instance.
     */
   @js.native
   trait LaunchTemplatePlacementRequest extends js.Object {
@@ -24175,8 +23817,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The launch template to use. You must specify either the launch template ID or launch template name in the request, but not both.
+  /** The launch template to use. You must specify either the launch template ID or launch template name in the request, but not both.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -24200,8 +23841,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The options for Spot Instances.
+  /** The options for Spot Instances.
     */
   @js.native
   trait LaunchTemplateSpotMarketOptions extends js.Object {
@@ -24231,8 +23871,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The options for Spot Instances.
+  /** The options for Spot Instances.
     */
   @js.native
   trait LaunchTemplateSpotMarketOptionsRequest extends js.Object {
@@ -24262,8 +23901,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The tag specification for the launch template.
+  /** The tag specification for the launch template.
     */
   @js.native
   trait LaunchTemplateTagSpecification extends js.Object {
@@ -24284,8 +23922,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The tags specification for the launch template.
+  /** The tags specification for the launch template.
     */
   @js.native
   trait LaunchTemplateTagSpecificationRequest extends js.Object {
@@ -24306,8 +23943,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a launch template version.
+  /** Describes a launch template version.
     */
   @js.native
   trait LaunchTemplateVersion extends js.Object {
@@ -24346,8 +23982,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the monitoring for the instance.
+  /** Describes the monitoring for the instance.
     */
   @js.native
   trait LaunchTemplatesMonitoring extends js.Object {
@@ -24365,8 +24000,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the monitoring for the instance.
+  /** Describes the monitoring for the instance.
     */
   @js.native
   trait LaunchTemplatesMonitoringRequest extends js.Object {
@@ -24384,8 +24018,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a license configuration.
+  /** Describes a license configuration.
     */
   @js.native
   trait LicenseConfiguration extends js.Object {
@@ -24403,8 +24036,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a license configuration.
+  /** Describes a license configuration.
     */
   @js.native
   trait LicenseConfigurationRequest extends js.Object {
@@ -24444,8 +24076,7 @@ package ec2 {
     @inline def values = js.Array(active, pending, cancelled, closed)
   }
 
-  /**
-    * Describes the Classic Load Balancers and target groups to attach to a Spot Fleet request.
+  /** Describes the Classic Load Balancers and target groups to attach to a Spot Fleet request.
     */
   @js.native
   trait LoadBalancersConfig extends js.Object {
@@ -24466,8 +24097,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a load permission.
+  /** Describes a load permission.
     */
   @js.native
   trait LoadPermission extends js.Object {
@@ -24488,8 +24118,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes modifications to the load permissions of an Amazon FPGA image (AFI).
+  /** Describes modifications to the load permissions of an Amazon FPGA image (AFI).
     */
   @js.native
   trait LoadPermissionModifications extends js.Object {
@@ -24510,8 +24139,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a load permission.
+  /** Describes a load permission.
     */
   @js.native
   trait LoadPermissionRequest extends js.Object {
@@ -24532,8 +24160,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a local gateway.
+  /** Describes a local gateway.
     */
   @js.native
   trait LocalGateway extends js.Object {
@@ -24563,8 +24190,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a route for a local gateway route table.
+  /** Describes a route for a local gateway route table.
     */
   @js.native
   trait LocalGatewayRoute extends js.Object {
@@ -24606,8 +24232,7 @@ package ec2 {
     @inline def values = js.Array(pending, active, blackhole, deleting, deleted)
   }
 
-  /**
-    * Describes a local gateway route table.
+  /** Describes a local gateway route table.
     */
   @js.native
   trait LocalGatewayRouteTable extends js.Object {
@@ -24637,8 +24262,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between a local gateway route table and a virtual interface group.
+  /** Describes an association between a local gateway route table and a virtual interface group.
     */
   @js.native
   trait LocalGatewayRouteTableVirtualInterfaceGroupAssociation extends js.Object {
@@ -24671,8 +24295,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between a local gateway route table and a VPC.
+  /** Describes an association between a local gateway route table and a VPC.
     */
   @js.native
   trait LocalGatewayRouteTableVpcAssociation extends js.Object {
@@ -24714,8 +24337,7 @@ package ec2 {
     @inline def values = js.Array(static, propagated)
   }
 
-  /**
-    * Describes a local gateway virtual interface.
+  /** Describes a local gateway virtual interface.
     */
   @js.native
   trait LocalGatewayVirtualInterface extends js.Object {
@@ -24754,8 +24376,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a local gateway virtual interface group.
+  /** Describes a local gateway virtual interface group.
     */
   @js.native
   trait LocalGatewayVirtualInterfaceGroup extends js.Object {
@@ -24801,8 +24422,7 @@ package ec2 {
     @inline def values = js.Array(`cloud-watch-logs`, s3)
   }
 
-  /**
-    * Describes a managed prefix list.
+  /** Describes a managed prefix list.
     */
   @js.native
   trait ManagedPrefixList extends js.Object {
@@ -24864,8 +24484,7 @@ package ec2 {
     @inline def values = js.Array(static, igmp)
   }
 
-  /**
-    * Describes the memory for the instance type.
+  /** Describes the memory for the instance type.
     */
   @js.native
   trait MemoryInfo extends js.Object {
@@ -25285,7 +24904,6 @@ package ec2 {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "UseLongIds" -> UseLongIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyIdFormatRequest]
     }
   }
@@ -25309,13 +24927,11 @@ package ec2 {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "UseLongIds" -> UseLongIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyIdentityIdFormatRequest]
     }
   }
 
-  /**
-    * Contains the parameters for ModifyImageAttribute.
+  /** Contains the parameters for ModifyImageAttribute.
     */
   @js.native
   trait ModifyImageAttributeRequest extends js.Object {
@@ -25745,8 +25361,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ModifyNetworkInterfaceAttribute.
+  /** Contains the parameters for ModifyNetworkInterfaceAttribute.
     */
   @js.native
   trait ModifyNetworkInterfaceAttributeRequest extends js.Object {
@@ -25781,8 +25396,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ModifyReservedInstances.
+  /** Contains the parameters for ModifyReservedInstances.
     */
   @js.native
   trait ModifyReservedInstancesRequest extends js.Object {
@@ -25808,8 +25422,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of ModifyReservedInstances.
+  /** Contains the output of ModifyReservedInstances.
     */
   @js.native
   trait ModifyReservedInstancesResult extends js.Object {
@@ -25863,8 +25476,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ModifySpotFleetRequest.
+  /** Contains the parameters for ModifySpotFleetRequest.
     */
   @js.native
   trait ModifySpotFleetRequestRequest extends js.Object {
@@ -25893,8 +25505,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of ModifySpotFleetRequest.
+  /** Contains the output of ModifySpotFleetRequest.
     */
   @js.native
   trait ModifySpotFleetRequestResponse extends js.Object {
@@ -26140,8 +25751,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the options for a VPC attachment.
+  /** Describes the options for a VPC attachment.
     */
   @js.native
   trait ModifyTransitGatewayVpcAttachmentRequestOptions extends js.Object {
@@ -26315,8 +25925,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ModifyVpcEndpoint.
+  /** Contains the parameters for ModifyVpcEndpoint.
     */
   @js.native
   trait ModifyVpcEndpointRequest extends js.Object {
@@ -26692,8 +26301,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The AWS Site-to-Site VPN tunnel options to modify.
+  /** The AWS Site-to-Site VPN tunnel options to modify.
     */
   @js.native
   trait ModifyVpnTunnelOptionsSpecification extends js.Object {
@@ -26793,8 +26401,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the monitoring of an instance.
+  /** Describes the monitoring of an instance.
     */
   @js.native
   trait Monitoring extends js.Object {
@@ -26872,8 +26479,7 @@ package ec2 {
     @inline def values = js.Array(movingToVpc, restoringToClassic)
   }
 
-  /**
-    * Describes the status of a moving Elastic IP address.
+  /** Describes the status of a moving Elastic IP address.
     */
   @js.native
   trait MovingAddressStatus extends js.Object {
@@ -26903,8 +26509,7 @@ package ec2 {
     @inline def values = js.Array(enable, disable)
   }
 
-  /**
-    * Describes a NAT gateway.
+  /** Describes a NAT gateway.
     */
   @js.native
   trait NatGateway extends js.Object {
@@ -26952,8 +26557,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the IP addresses and network interface associated with a NAT gateway.
+  /** Describes the IP addresses and network interface associated with a NAT gateway.
     */
   @js.native
   trait NatGatewayAddress extends js.Object {
@@ -26992,8 +26596,7 @@ package ec2 {
     @inline def values = js.Array(pending, failed, available, deleting, deleted)
   }
 
-  /**
-    * Describes a network ACL.
+  /** Describes a network ACL.
     */
   @js.native
   trait NetworkAcl extends js.Object {
@@ -27029,8 +26632,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between a network ACL and a subnet.
+  /** Describes an association between a network ACL and a subnet.
     */
   @js.native
   trait NetworkAclAssociation extends js.Object {
@@ -27054,8 +26656,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an entry in a network ACL.
+  /** Describes an entry in a network ACL.
     */
   @js.native
   trait NetworkAclEntry extends js.Object {
@@ -27094,8 +26695,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the networking features of the instance type.
+  /** Describes the networking features of the instance type.
     */
   @js.native
   trait NetworkInfo extends js.Object {
@@ -27131,8 +26731,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a network interface.
+  /** Describes a network interface.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -27210,8 +26809,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes association information for an Elastic IP address (IPv4 only), or a Carrier IP address (for a network interface which resides in a subnet in a Wavelength Zone).
+  /** Describes association information for an Elastic IP address (IPv4 only), or a Carrier IP address (for a network interface which resides in a subnet in a Wavelength Zone).
     */
   @js.native
   trait NetworkInterfaceAssociation extends js.Object {
@@ -27247,8 +26845,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a network interface attachment.
+  /** Describes a network interface attachment.
     */
   @js.native
   trait NetworkInterfaceAttachment extends js.Object {
@@ -27284,8 +26881,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an attachment change.
+  /** Describes an attachment change.
     */
   @js.native
   trait NetworkInterfaceAttachmentChanges extends js.Object {
@@ -27325,8 +26921,7 @@ package ec2 {
     @inline def values = js.Array(efa)
   }
 
-  /**
-    * Describes an IPv6 address associated with a network interface.
+  /** Describes an IPv6 address associated with a network interface.
     */
   @js.native
   trait NetworkInterfaceIpv6Address extends js.Object {
@@ -27344,8 +26939,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a permission for a network interface.
+  /** Describes a permission for a network interface.
     */
   @js.native
   trait NetworkInterfacePermission extends js.Object {
@@ -27378,8 +26972,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a network interface permission.
+  /** Describes the state of a network interface permission.
     */
   @js.native
   trait NetworkInterfacePermissionState extends js.Object {
@@ -27411,8 +27004,7 @@ package ec2 {
     @inline def values = js.Array(pending, granted, revoking, revoked)
   }
 
-  /**
-    * Describes the private IPv4 address of a network interface.
+  /** Describes the private IPv4 address of a network interface.
     */
   @js.native
   trait NetworkInterfacePrivateIpAddress extends js.Object {
@@ -27511,8 +27103,7 @@ package ec2 {
     @inline def values = js.Array(lowestPrice, prioritized)
   }
 
-  /**
-    * Describes the configuration of On-Demand Instances in an EC2 Fleet.
+  /** Describes the configuration of On-Demand Instances in an EC2 Fleet.
     */
   @js.native
   trait OnDemandOptions extends js.Object {
@@ -27545,8 +27136,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the configuration of On-Demand Instances in an EC2 Fleet.
+  /** Describes the configuration of On-Demand Instances in an EC2 Fleet.
     */
   @js.native
   trait OnDemandOptionsRequest extends js.Object {
@@ -27598,8 +27188,7 @@ package ec2 {
     @inline def values = js.Array(AllUpfront, PartialUpfront, NoUpfront)
   }
 
-  /**
-    * Describes the data that identifies an Amazon FPGA image (AFI) on the PCI bus.
+  /** Describes the data that identifies an Amazon FPGA image (AFI) on the PCI bus.
     */
   @js.native
   trait PciId extends js.Object {
@@ -27626,8 +27215,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The status of the transit gateway peering attachment.
+  /** The status of the transit gateway peering attachment.
     */
   @js.native
   trait PeeringAttachmentStatus extends js.Object {
@@ -27648,8 +27236,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the VPC peering connection options.
+  /** Describes the VPC peering connection options.
     */
   @js.native
   trait PeeringConnectionOptions extends js.Object {
@@ -27673,8 +27260,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The VPC peering connection options.
+  /** The VPC peering connection options.
     */
   @js.native
   trait PeeringConnectionOptionsRequest extends js.Object {
@@ -27698,8 +27284,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the transit gateway in the peering attachment.
+  /** Information about the transit gateway in the peering attachment.
     */
   @js.native
   trait PeeringTgwInfo extends js.Object {
@@ -27731,8 +27316,7 @@ package ec2 {
     @inline def values = js.Array(all)
   }
 
-  /**
-    * The Diffie-Hellmann group number for phase 1 IKE negotiations.
+  /** The Diffie-Hellmann group number for phase 1 IKE negotiations.
     */
   @js.native
   trait Phase1DHGroupNumbersListValue extends js.Object {
@@ -27750,8 +27334,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Specifies a Diffie-Hellman group number for the VPN tunnel for phase 1 IKE negotiations.
+  /** Specifies a Diffie-Hellman group number for the VPN tunnel for phase 1 IKE negotiations.
     */
   @js.native
   trait Phase1DHGroupNumbersRequestListValue extends js.Object {
@@ -27769,8 +27352,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The encryption algorithm for phase 1 IKE negotiations.
+  /** The encryption algorithm for phase 1 IKE negotiations.
     */
   @js.native
   trait Phase1EncryptionAlgorithmsListValue extends js.Object {
@@ -27788,8 +27370,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Specifies the encryption algorithm for the VPN tunnel for phase 1 IKE negotiations.
+  /** Specifies the encryption algorithm for the VPN tunnel for phase 1 IKE negotiations.
     */
   @js.native
   trait Phase1EncryptionAlgorithmsRequestListValue extends js.Object {
@@ -27807,8 +27388,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The integrity algorithm for phase 1 IKE negotiations.
+  /** The integrity algorithm for phase 1 IKE negotiations.
     */
   @js.native
   trait Phase1IntegrityAlgorithmsListValue extends js.Object {
@@ -27826,8 +27406,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Specifies the integrity algorithm for the VPN tunnel for phase 1 IKE negotiations.
+  /** Specifies the integrity algorithm for the VPN tunnel for phase 1 IKE negotiations.
     */
   @js.native
   trait Phase1IntegrityAlgorithmsRequestListValue extends js.Object {
@@ -27845,8 +27424,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The Diffie-Hellmann group number for phase 2 IKE negotiations.
+  /** The Diffie-Hellmann group number for phase 2 IKE negotiations.
     */
   @js.native
   trait Phase2DHGroupNumbersListValue extends js.Object {
@@ -27864,8 +27442,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Specifies a Diffie-Hellman group number for the VPN tunnel for phase 2 IKE negotiations.
+  /** Specifies a Diffie-Hellman group number for the VPN tunnel for phase 2 IKE negotiations.
     */
   @js.native
   trait Phase2DHGroupNumbersRequestListValue extends js.Object {
@@ -27883,8 +27460,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The encryption algorithm for phase 2 IKE negotiations.
+  /** The encryption algorithm for phase 2 IKE negotiations.
     */
   @js.native
   trait Phase2EncryptionAlgorithmsListValue extends js.Object {
@@ -27902,8 +27478,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Specifies the encryption algorithm for the VPN tunnel for phase 2 IKE negotiations.
+  /** Specifies the encryption algorithm for the VPN tunnel for phase 2 IKE negotiations.
     */
   @js.native
   trait Phase2EncryptionAlgorithmsRequestListValue extends js.Object {
@@ -27921,8 +27496,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The integrity algorithm for phase 2 IKE negotiations.
+  /** The integrity algorithm for phase 2 IKE negotiations.
     */
   @js.native
   trait Phase2IntegrityAlgorithmsListValue extends js.Object {
@@ -27940,8 +27514,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Specifies the integrity algorithm for the VPN tunnel for phase 2 IKE negotiations.
+  /** Specifies the integrity algorithm for the VPN tunnel for phase 2 IKE negotiations.
     */
   @js.native
   trait Phase2IntegrityAlgorithmsRequestListValue extends js.Object {
@@ -27959,8 +27532,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the placement of an instance.
+  /** Describes the placement of an instance.
     */
   @js.native
   trait Placement extends js.Object {
@@ -27999,8 +27571,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a placement group.
+  /** Describes a placement group.
     */
   @js.native
   trait PlacementGroup extends js.Object {
@@ -28033,8 +27604,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the placement group support of the instance type.
+  /** Describes the placement group support of the instance type.
     */
   @js.native
   trait PlacementGroupInfo extends js.Object {
@@ -28073,8 +27643,7 @@ package ec2 {
     @inline def values = js.Array(cluster, partition, spread)
   }
 
-  /**
-    * Describes the placement of an instance.
+  /** Describes the placement of an instance.
     */
   @js.native
   trait PlacementResponse extends js.Object {
@@ -28110,8 +27679,7 @@ package ec2 {
     @inline def values = js.Array(Windows)
   }
 
-  /**
-    * Describes a CIDR block for an address pool.
+  /** Describes a CIDR block for an address pool.
     */
   @js.native
   trait PoolCidrBlock extends js.Object {
@@ -28129,8 +27697,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a range of ports.
+  /** Describes a range of ports.
     */
   @js.native
   trait PortRange extends js.Object {
@@ -28151,8 +27718,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes prefixes for AWS services.
+  /** Describes prefixes for AWS services.
     */
   @js.native
   trait PrefixList extends js.Object {
@@ -28176,8 +27742,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the resource with which a prefix list is associated.
+  /** Describes the resource with which a prefix list is associated.
     */
   @js.native
   trait PrefixListAssociation extends js.Object {
@@ -28198,8 +27763,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a prefix list entry.
+  /** Describes a prefix list entry.
     */
   @js.native
   trait PrefixListEntry extends js.Object {
@@ -28220,8 +27784,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a prefix list ID.
+  /** Describes a prefix list ID.
     */
   @js.native
   trait PrefixListId extends js.Object {
@@ -28258,25 +27821,23 @@ package ec2 {
     val `delete-complete` = "delete-complete".asInstanceOf[PrefixListState]
     val `delete-failed` = "delete-failed".asInstanceOf[PrefixListState]
 
-    @inline def values =
-      js.Array(
-        `create-in-progress`,
-        `create-complete`,
-        `create-failed`,
-        `modify-in-progress`,
-        `modify-complete`,
-        `modify-failed`,
-        `restore-in-progress`,
-        `restore-complete`,
-        `restore-failed`,
-        `delete-in-progress`,
-        `delete-complete`,
-        `delete-failed`
-      )
+    @inline def values = js.Array(
+      `create-in-progress`,
+      `create-complete`,
+      `create-failed`,
+      `modify-in-progress`,
+      `modify-complete`,
+      `modify-failed`,
+      `restore-in-progress`,
+      `restore-complete`,
+      `restore-failed`,
+      `delete-in-progress`,
+      `delete-complete`,
+      `delete-failed`
+    )
   }
 
-  /**
-    * Describes the price for a Reserved Instance.
+  /** Describes the price for a Reserved Instance.
     */
   @js.native
   trait PriceSchedule extends js.Object {
@@ -28303,8 +27864,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the price for a Reserved Instance.
+  /** Describes the price for a Reserved Instance.
     */
   @js.native
   trait PriceScheduleSpecification extends js.Object {
@@ -28328,8 +27888,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance offering.
+  /** Describes a Reserved Instance offering.
     */
   @js.native
   trait PricingDetail extends js.Object {
@@ -28350,8 +27909,7 @@ package ec2 {
     }
   }
 
-  /**
-    * PrincipalIdFormat description
+  /** PrincipalIdFormat description
     */
   @js.native
   trait PrincipalIdFormat extends js.Object {
@@ -28385,8 +27943,7 @@ package ec2 {
     @inline def values = js.Array(All, Service, OrganizationUnit, Account, User, Role)
   }
 
-  /**
-    * Information about the private DNS name for the service endpoint. For more information about these parameters, see [[https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html|VPC Endpoint Service Private DNS Name Verification]] in the <i>Amazon Virtual Private Cloud User Guide</i>.
+  /** Information about the private DNS name for the service endpoint. For more information about these parameters, see [[https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html|VPC Endpoint Service Private DNS Name Verification]] in the <i>Amazon Virtual Private Cloud User Guide</i>.
     */
   @js.native
   trait PrivateDnsNameConfiguration extends js.Object {
@@ -28413,8 +27970,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a secondary private IPv4 address for a network interface.
+  /** Describes a secondary private IPv4 address for a network interface.
     */
   @js.native
   trait PrivateIpAddressSpecification extends js.Object {
@@ -28435,8 +27991,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the processor used by the instance type.
+  /** Describes the processor used by the instance type.
     */
   @js.native
   trait ProcessorInfo extends js.Object {
@@ -28457,8 +28012,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a product code.
+  /** Describes a product code.
     */
   @js.native
   trait ProductCode extends js.Object {
@@ -28488,8 +28042,7 @@ package ec2 {
     @inline def values = js.Array(devpay, marketplace)
   }
 
-  /**
-    * Describes a virtual private gateway propagating route.
+  /** Describes a virtual private gateway propagating route.
     */
   @js.native
   trait PropagatingVgw extends js.Object {
@@ -28556,8 +28109,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Reserved. If you need to sustain traffic greater than the [[https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html|documented limits]], contact us through the [[https://console.aws.amazon.com/support/home?|Support Center]].
+  /** Reserved. If you need to sustain traffic greater than the [[https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html|documented limits]], contact us through the [[https://console.aws.amazon.com/support/home?|Support Center]].
     */
   @js.native
   trait ProvisionedBandwidth extends js.Object {
@@ -28587,8 +28139,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv4 address pool.
+  /** Describes an IPv4 address pool.
     */
   @js.native
   trait PublicIpv4Pool extends js.Object {
@@ -28624,8 +28175,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an address range of an IPv4 address pool.
+  /** Describes an address range of an IPv4 address pool.
     */
   @js.native
   trait PublicIpv4PoolRange extends js.Object {
@@ -28652,8 +28202,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the result of the purchase.
+  /** Describes the result of the purchase.
     */
   @js.native
   trait Purchase extends js.Object {
@@ -28753,8 +28302,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a request to purchase Scheduled Instances.
+  /** Describes a request to purchase Scheduled Instances.
     */
   @js.native
   trait PurchaseRequest extends js.Object {
@@ -28772,13 +28320,11 @@ package ec2 {
         "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
         "PurchaseToken" -> PurchaseToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PurchaseRequest]
     }
   }
 
-  /**
-    * Contains the parameters for PurchaseReservedInstancesOffering.
+  /** Contains the parameters for PurchaseReservedInstancesOffering.
     */
   @js.native
   trait PurchaseReservedInstancesOfferingRequest extends js.Object {
@@ -28810,8 +28356,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of PurchaseReservedInstancesOffering.
+  /** Contains the output of PurchaseReservedInstancesOffering.
     */
   @js.native
   trait PurchaseReservedInstancesOfferingResult extends js.Object {
@@ -28829,8 +28374,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for PurchaseScheduledInstances.
+  /** Contains the parameters for PurchaseScheduledInstances.
     */
   @js.native
   trait PurchaseScheduledInstancesRequest extends js.Object {
@@ -28856,8 +28400,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of PurchaseScheduledInstances.
+  /** Contains the output of PurchaseScheduledInstances.
     */
   @js.native
   trait PurchaseScheduledInstancesResult extends js.Object {
@@ -28907,8 +28450,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a recurring charge.
+  /** Describes a recurring charge.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -28937,8 +28479,7 @@ package ec2 {
     @inline def values = js.Array(Hourly)
   }
 
-  /**
-    * Describes a Region.
+  /** Describes a Region.
     */
   @js.native
   trait Region extends js.Object {
@@ -28962,8 +28503,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for RegisterImage.
+  /** Contains the parameters for RegisterImage.
     */
   @js.native
   trait RegisterImageRequest extends js.Object {
@@ -29019,8 +28559,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of RegisterImage.
+  /** Contains the output of RegisterImage.
     */
   @js.native
   trait RegisterImageResult extends js.Object {
@@ -29073,8 +28612,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the tag keys to register for the current Region. You can either specify individual tag keys or register all tag keys in the current Region. You must specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code> in the request
+  /** Information about the tag keys to register for the current Region. You can either specify individual tag keys or register all tag keys in the current Region. You must specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code> in the request
     */
   @js.native
   trait RegisterInstanceTagAttributeRequest extends js.Object {
@@ -29366,7 +28904,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "HostIds" -> HostIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReleaseHostsRequest]
     }
   }
@@ -29390,8 +28927,7 @@ package ec2 {
     }
   }
 
-  /**
-    * An entry for a prefix list.
+  /** An entry for a prefix list.
     */
   @js.native
   trait RemovePrefixListEntry extends js.Object {
@@ -29406,7 +28942,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "Cidr" -> Cidr.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemovePrefixListEntry]
     }
   }
@@ -29427,7 +28962,6 @@ package ec2 {
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "IamInstanceProfile" -> IamInstanceProfile.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReplaceIamInstanceProfileAssociationRequest]
     }
   }
@@ -29695,18 +29229,17 @@ package ec2 {
     val `performance-other` = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
     val other = "other".asInstanceOf[ReportInstanceReasonCodes]
 
-    @inline def values =
-      js.Array(
-        `instance-stuck-in-state`,
-        unresponsive,
-        `not-accepting-credentials`,
-        `password-not-available`,
-        `performance-network`,
-        `performance-instance-store`,
-        `performance-ebs-volume`,
-        `performance-other`,
-        other
-      )
+    @inline def values = js.Array(
+      `instance-stuck-in-state`,
+      unresponsive,
+      `not-accepting-credentials`,
+      `password-not-available`,
+      `performance-network`,
+      `performance-instance-store`,
+      `performance-ebs-volume`,
+      `performance-other`,
+      other
+    )
   }
 
   @js.native
@@ -29754,8 +29287,7 @@ package ec2 {
     @inline def values = js.Array(ok, impaired)
   }
 
-  /**
-    * The information to include in the launch template.
+  /** The information to include in the launch template.
     */
   @js.native
   trait RequestLaunchTemplateData extends js.Object {
@@ -29848,8 +29380,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for RequestSpotFleet.
+  /** Contains the parameters for RequestSpotFleet.
     */
   @js.native
   trait RequestSpotFleetRequest extends js.Object {
@@ -29872,8 +29403,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of RequestSpotFleet.
+  /** Contains the output of RequestSpotFleet.
     */
   @js.native
   trait RequestSpotFleetResponse extends js.Object {
@@ -29891,8 +29421,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for RequestSpotInstances.
+  /** Contains the parameters for RequestSpotInstances.
     */
   @js.native
   trait RequestSpotInstancesRequest extends js.Object {
@@ -29946,8 +29475,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of RequestSpotInstances.
+  /** Contains the output of RequestSpotInstances.
     */
   @js.native
   trait RequestSpotInstancesResult extends js.Object {
@@ -29965,8 +29493,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the launch specification for an instance.
+  /** Describes the launch specification for an instance.
     */
   @js.native
   trait RequestSpotLaunchSpecification extends js.Object {
@@ -30029,8 +29556,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a reservation.
+  /** Describes a reservation.
     */
   @js.native
   trait Reservation extends js.Object {
@@ -30071,8 +29597,7 @@ package ec2 {
     @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired)
   }
 
-  /**
-    * The cost associated with the Reserved Instance.
+  /** The cost associated with the Reserved Instance.
     */
   @js.native
   trait ReservationValue extends js.Object {
@@ -30096,8 +29621,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the limit price of a Reserved Instance offering.
+  /** Describes the limit price of a Reserved Instance offering.
     */
   @js.native
   trait ReservedInstanceLimitPrice extends js.Object {
@@ -30118,8 +29642,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The total value of the Convertible Reserved Instance.
+  /** The total value of the Convertible Reserved Instance.
     */
   @js.native
   trait ReservedInstanceReservationValue extends js.Object {
@@ -30153,8 +29676,7 @@ package ec2 {
     @inline def values = js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`)
   }
 
-  /**
-    * Describes a Reserved Instance.
+  /** Describes a Reserved Instance.
     */
   @js.native
   trait ReservedInstances extends js.Object {
@@ -30223,8 +29745,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the configuration settings for the modified Reserved Instances.
+  /** Describes the configuration settings for the modified Reserved Instances.
     */
   @js.native
   trait ReservedInstancesConfiguration extends js.Object {
@@ -30254,8 +29775,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the ID of a Reserved Instance.
+  /** Describes the ID of a Reserved Instance.
     */
   @js.native
   trait ReservedInstancesId extends js.Object {
@@ -30273,8 +29793,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance listing.
+  /** Describes a Reserved Instance listing.
     */
   @js.native
   trait ReservedInstancesListing extends js.Object {
@@ -30319,8 +29838,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance modification.
+  /** Describes a Reserved Instance modification.
     */
   @js.native
   trait ReservedInstancesModification extends js.Object {
@@ -30362,8 +29880,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the modification request/s.
+  /** Describes the modification request/s.
     */
   @js.native
   trait ReservedInstancesModificationResult extends js.Object {
@@ -30384,8 +29901,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance offering.
+  /** Describes a Reserved Instance offering.
     */
   @js.native
   trait ReservedInstancesOffering extends js.Object {
@@ -30533,8 +30049,7 @@ package ec2 {
     @inline def values = js.Array(launchPermission)
   }
 
-  /**
-    * Contains the parameters for ResetImageAttribute.
+  /** Contains the parameters for ResetImageAttribute.
     */
   @js.native
   trait ResetImageAttributeRequest extends js.Object {
@@ -30584,8 +30099,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for ResetNetworkInterfaceAttribute.
+  /** Contains the parameters for ResetNetworkInterfaceAttribute.
     */
   @js.native
   trait ResetNetworkInterfaceAttributeRequest extends js.Object {
@@ -30682,56 +30196,54 @@ package ec2 {
     val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
     val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
 
-    @inline def values =
-      js.Array(
-        `client-vpn-endpoint`,
-        `customer-gateway`,
-        `dedicated-host`,
-        `dhcp-options`,
-        `elastic-ip`,
-        `elastic-gpu`,
-        `export-image-task`,
-        `export-instance-task`,
-        fleet,
-        `fpga-image`,
-        `host-reservation`,
-        image,
-        `import-image-task`,
-        `import-snapshot-task`,
-        instance,
-        `internet-gateway`,
-        `key-pair`,
-        `launch-template`,
-        `local-gateway-route-table-vpc-association`,
-        natgateway,
-        `network-acl`,
-        `network-interface`,
-        `placement-group`,
-        `reserved-instances`,
-        `route-table`,
-        `security-group`,
-        snapshot,
-        `spot-fleet-request`,
-        `spot-instances-request`,
-        subnet,
-        `traffic-mirror-filter`,
-        `traffic-mirror-session`,
-        `traffic-mirror-target`,
-        `transit-gateway`,
-        `transit-gateway-attachment`,
-        `transit-gateway-multicast-domain`,
-        `transit-gateway-route-table`,
-        volume,
-        vpc,
-        `vpc-peering-connection`,
-        `vpn-connection`,
-        `vpn-gateway`,
-        `vpc-flow-log`
-      )
+    @inline def values = js.Array(
+      `client-vpn-endpoint`,
+      `customer-gateway`,
+      `dedicated-host`,
+      `dhcp-options`,
+      `elastic-ip`,
+      `elastic-gpu`,
+      `export-image-task`,
+      `export-instance-task`,
+      fleet,
+      `fpga-image`,
+      `host-reservation`,
+      image,
+      `import-image-task`,
+      `import-snapshot-task`,
+      instance,
+      `internet-gateway`,
+      `key-pair`,
+      `launch-template`,
+      `local-gateway-route-table-vpc-association`,
+      natgateway,
+      `network-acl`,
+      `network-interface`,
+      `placement-group`,
+      `reserved-instances`,
+      `route-table`,
+      `security-group`,
+      snapshot,
+      `spot-fleet-request`,
+      `spot-instances-request`,
+      subnet,
+      `traffic-mirror-filter`,
+      `traffic-mirror-session`,
+      `traffic-mirror-target`,
+      `transit-gateway`,
+      `transit-gateway-attachment`,
+      `transit-gateway-multicast-domain`,
+      `transit-gateway-route-table`,
+      volume,
+      vpc,
+      `vpc-peering-connection`,
+      `vpn-connection`,
+      `vpn-gateway`,
+      `vpc-flow-log`
+    )
   }
 
-  /**
-    * Describes the error that's returned when you cannot delete a launch template version.
+  /** Describes the error that's returned when you cannot delete a launch template version.
     */
   @js.native
   trait ResponseError extends js.Object {
@@ -30752,8 +30264,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The information for a launch template.
+  /** The information for a launch template.
     */
   @js.native
   trait ResponseLaunchTemplateData extends js.Object {
@@ -31069,8 +30580,7 @@ package ec2 {
     @inline def values = js.Array(ebs, `instance-store`)
   }
 
-  /**
-    * Describes a route in a route table.
+  /** Describes a route in a route table.
     */
   @js.native
   trait Route extends js.Object {
@@ -31149,8 +30659,7 @@ package ec2 {
     @inline def values = js.Array(active, blackhole)
   }
 
-  /**
-    * Describes a route table.
+  /** Describes a route table.
     */
   @js.native
   trait RouteTable extends js.Object {
@@ -31186,8 +30695,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between a route table and a subnet or gateway.
+  /** Describes an association between a route table and a subnet or gateway.
     */
   @js.native
   trait RouteTableAssociation extends js.Object {
@@ -31220,8 +30728,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of an association between a route table and a subnet or gateway.
+  /** Describes the state of an association between a route table and a subnet or gateway.
     */
   @js.native
   trait RouteTableAssociationState extends js.Object {
@@ -31263,8 +30770,7 @@ package ec2 {
     @inline def values = js.Array(allow, deny)
   }
 
-  /**
-    * Describes the monitoring of an instance.
+  /** Describes the monitoring of an instance.
     */
   @js.native
   trait RunInstancesMonitoringEnabled extends js.Object {
@@ -31279,7 +30785,6 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RunInstancesMonitoringEnabled]
     }
   }
@@ -31407,8 +30912,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for RunScheduledInstances.
+  /** Contains the parameters for RunScheduledInstances.
     */
   @js.native
   trait RunScheduledInstancesRequest extends js.Object {
@@ -31440,8 +30944,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the output of RunScheduledInstances.
+  /** Contains the output of RunScheduledInstances.
     */
   @js.native
   trait RunScheduledInstancesResult extends js.Object {
@@ -31459,8 +30962,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the storage parameters for S3 and S3 buckets for an instance store-backed AMI.
+  /** Describes the storage parameters for S3 and S3 buckets for an instance store-backed AMI.
     */
   @js.native
   trait S3Storage extends js.Object {
@@ -31490,8 +30992,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Scheduled Instance.
+  /** Describes a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstance extends js.Object {
@@ -31551,8 +31052,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a schedule that is available for your Scheduled Instances.
+  /** Describes a schedule that is available for your Scheduled Instances.
     */
   @js.native
   trait ScheduledInstanceAvailability extends js.Object {
@@ -31606,8 +31106,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the recurring schedule for a Scheduled Instance.
+  /** Describes the recurring schedule for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstanceRecurrence extends js.Object {
@@ -31637,8 +31136,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the recurring schedule for a Scheduled Instance.
+  /** Describes the recurring schedule for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstanceRecurrenceRequest extends js.Object {
@@ -31668,8 +31166,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a block device mapping for a Scheduled Instance.
+  /** Describes a block device mapping for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesBlockDeviceMapping extends js.Object {
@@ -31696,8 +31193,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an EBS volume for a Scheduled Instance.
+  /** Describes an EBS volume for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesEbs extends js.Object {
@@ -31730,8 +31226,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IAM instance profile for a Scheduled Instance.
+  /** Describes an IAM instance profile for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesIamInstanceProfile extends js.Object {
@@ -31752,8 +31247,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an IPv6 address.
+  /** Describes an IPv6 address.
     */
   @js.native
   trait ScheduledInstancesIpv6Address extends js.Object {
@@ -31771,9 +31265,8 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the launch specification for a Scheduled Instance.
-    *  If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
+  /** Describes the launch specification for a Scheduled Instance.
+    * If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
     */
   @js.native
   trait ScheduledInstancesLaunchSpecification extends js.Object {
@@ -31832,8 +31325,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes whether monitoring is enabled for a Scheduled Instance.
+  /** Describes whether monitoring is enabled for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesMonitoring extends js.Object {
@@ -31851,8 +31343,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a network interface for a Scheduled Instance.
+  /** Describes a network interface for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesNetworkInterface extends js.Object {
@@ -31903,8 +31394,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the placement for a Scheduled Instance.
+  /** Describes the placement for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesPlacement extends js.Object {
@@ -31925,8 +31415,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a private IPv4 address for a Scheduled Instance.
+  /** Describes a private IPv4 address for a Scheduled Instance.
     */
   @js.native
   trait ScheduledInstancesPrivateIpAddressConfig extends js.Object {
@@ -32089,8 +31578,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a security group
+  /** Describes a security group
     */
   @js.native
   trait SecurityGroup extends js.Object {
@@ -32129,8 +31617,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a security group.
+  /** Describes a security group.
     */
   @js.native
   trait SecurityGroupIdentifier extends js.Object {
@@ -32151,8 +31638,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a VPC with a security group that references your security group.
+  /** Describes a VPC with a security group that references your security group.
     */
   @js.native
   trait SecurityGroupReference extends js.Object {
@@ -32197,8 +31683,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a service configuration for a VPC endpoint service.
+  /** Describes a service configuration for a VPC endpoint service.
     */
   @js.native
   trait ServiceConfiguration extends js.Object {
@@ -32249,8 +31734,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a VPC endpoint service.
+  /** Describes a VPC endpoint service.
     */
   @js.native
   trait ServiceDetail extends js.Object {
@@ -32322,8 +31806,7 @@ package ec2 {
     @inline def values = js.Array(Interface, Gateway)
   }
 
-  /**
-    * Describes the type of service for a VPC endpoint.
+  /** Describes the type of service for a VPC endpoint.
     */
   @js.native
   trait ServiceTypeDetail extends js.Object {
@@ -32350,8 +31833,7 @@ package ec2 {
     @inline def values = js.Array(stop, terminate)
   }
 
-  /**
-    * Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than one day.
+  /** Describes the time period for a Scheduled Instance to start its first schedule. The time period must span less than one day.
     */
   @js.native
   trait SlotDateTimeRangeRequest extends js.Object {
@@ -32369,13 +31851,11 @@ package ec2 {
         "EarliestTime" -> EarliestTime.asInstanceOf[js.Any],
         "LatestTime" -> LatestTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SlotDateTimeRangeRequest]
     }
   }
 
-  /**
-    * Describes the time period for a Scheduled Instance to start its first schedule.
+  /** Describes the time period for a Scheduled Instance to start its first schedule.
     */
   @js.native
   trait SlotStartTimeRangeRequest extends js.Object {
@@ -32396,8 +31876,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a snapshot.
+  /** Describes a snapshot.
     */
   @js.native
   trait Snapshot extends js.Object {
@@ -32463,8 +31942,7 @@ package ec2 {
     @inline def values = js.Array(productCodes, createVolumePermission)
   }
 
-  /**
-    * Describes the snapshot created from the imported disk.
+  /** Describes the snapshot created from the imported disk.
     */
   @js.native
   trait SnapshotDetail extends js.Object {
@@ -32509,8 +31987,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The disk container object for the import snapshot request.
+  /** The disk container object for the import snapshot request.
     */
   @js.native
   trait SnapshotDiskContainer extends js.Object {
@@ -32537,8 +32014,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about a snapshot.
+  /** Information about a snapshot.
     */
   @js.native
   trait SnapshotInfo extends js.Object {
@@ -32593,8 +32069,7 @@ package ec2 {
     @inline def values = js.Array(pending, completed, error)
   }
 
-  /**
-    * Details about the import snapshot task.
+  /** Details about the import snapshot task.
     */
   @js.native
   trait SnapshotTaskDetail extends js.Object {
@@ -32652,8 +32127,7 @@ package ec2 {
     @inline def values = js.Array(`lowest-price`, diversified, `capacity-optimized`)
   }
 
-  /**
-    * Describes the data feed for a Spot Instance.
+  /** Describes the data feed for a Spot Instance.
     */
   @js.native
   trait SpotDatafeedSubscription extends js.Object {
@@ -32683,8 +32157,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet request, you can't use <code>SpotFleetLaunchSpecification</code>; you must use [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html|LaunchTemplateConfig]].
+  /** Describes the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet request, you can't use <code>SpotFleetLaunchSpecification</code>; you must use [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html|LaunchTemplateConfig]].
     */
   @js.native
   trait SpotFleetLaunchSpecification extends js.Object {
@@ -32753,8 +32226,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes whether monitoring is enabled.
+  /** Describes whether monitoring is enabled.
     */
   @js.native
   trait SpotFleetMonitoring extends js.Object {
@@ -32772,8 +32244,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Spot Fleet request.
+  /** Describes a Spot Fleet request.
     */
   @js.native
   trait SpotFleetRequestConfig extends js.Object {
@@ -32806,8 +32277,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the configuration of a Spot Fleet request.
+  /** Describes the configuration of a Spot Fleet request.
     */
   @js.native
   trait SpotFleetRequestConfigData extends js.Object {
@@ -32893,8 +32363,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The tags for a Spot Fleet resource.
+  /** The tags for a Spot Fleet resource.
     */
   @js.native
   trait SpotFleetTagSpecification extends js.Object {
@@ -32925,8 +32394,7 @@ package ec2 {
     @inline def values = js.Array(hibernate, stop, terminate)
   }
 
-  /**
-    * Describes a Spot Instance request.
+  /** Describes a Spot Instance request.
     */
   @js.native
   trait SpotInstanceRequest extends js.Object {
@@ -33010,8 +32478,7 @@ package ec2 {
     @inline def values = js.Array(open, active, closed, cancelled, failed)
   }
 
-  /**
-    * Describes a Spot Instance state change.
+  /** Describes a Spot Instance state change.
     */
   @js.native
   trait SpotInstanceStateFault extends js.Object {
@@ -33032,8 +32499,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the status of a Spot Instance request.
+  /** Describes the status of a Spot Instance request.
     */
   @js.native
   trait SpotInstanceStatus extends js.Object {
@@ -33066,8 +32532,7 @@ package ec2 {
     @inline def values = js.Array(`one-time`, persistent)
   }
 
-  /**
-    * The options for Spot Instances.
+  /** The options for Spot Instances.
     */
   @js.native
   trait SpotMarketOptions extends js.Object {
@@ -33097,8 +32562,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the configuration of Spot Instances in an EC2 Fleet.
+  /** Describes the configuration of Spot Instances in an EC2 Fleet.
     */
   @js.native
   trait SpotOptions extends js.Object {
@@ -33134,8 +32598,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the configuration of Spot Instances in an EC2 Fleet request.
+  /** Describes the configuration of Spot Instances in an EC2 Fleet request.
     */
   @js.native
   trait SpotOptionsRequest extends js.Object {
@@ -33171,8 +32634,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes Spot Instance placement.
+  /** Describes Spot Instance placement.
     */
   @js.native
   trait SpotPlacement extends js.Object {
@@ -33196,8 +32658,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the maximum price per hour that you are willing to pay for a Spot Instance.
+  /** Describes the maximum price per hour that you are willing to pay for a Spot Instance.
     */
   @js.native
   trait SpotPrice extends js.Object {
@@ -33227,8 +32688,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a stale rule in a security group.
+  /** Describes a stale rule in a security group.
     */
   @js.native
   trait StaleIpPermission extends js.Object {
@@ -33261,8 +32721,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a stale security group (a security group that contains stale rules).
+  /** Describes a stale security group (a security group that contains stale rules).
     */
   @js.native
   trait StaleSecurityGroup extends js.Object {
@@ -33387,8 +32846,7 @@ package ec2 {
     @inline def values = js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired)
   }
 
-  /**
-    * Describes a state change.
+  /** Describes a state change.
     */
   @js.native
   trait StateReason extends js.Object {
@@ -33481,8 +32939,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the storage location for an instance store-backed AMI.
+  /** Describes the storage location for an instance store-backed AMI.
     */
   @js.native
   trait Storage extends js.Object {
@@ -33500,8 +32957,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a storage location in Amazon S3.
+  /** Describes a storage location in Amazon S3.
     */
   @js.native
   trait StorageLocation extends js.Object {
@@ -33522,8 +32978,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a subnet.
+  /** Describes a subnet.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -33589,8 +33044,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the subnet association with the transit gateway multicast domain.
+  /** Describes the subnet association with the transit gateway multicast domain.
     */
   @js.native
   trait SubnetAssociation extends js.Object {
@@ -33611,8 +33065,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a CIDR block.
+  /** Describes the state of a CIDR block.
     */
   @js.native
   trait SubnetCidrBlockState extends js.Object {
@@ -33646,8 +33099,7 @@ package ec2 {
     @inline def values = js.Array(associating, associated, disassociating, disassociated, failing, failed)
   }
 
-  /**
-    * Describes an IPv6 CIDR block associated with a subnet.
+  /** Describes an IPv6 CIDR block associated with a subnet.
     */
   @js.native
   trait SubnetIpv6CidrBlockAssociation extends js.Object {
@@ -33680,8 +33132,7 @@ package ec2 {
     @inline def values = js.Array(pending, available)
   }
 
-  /**
-    * Describes the burstable performance instance whose credit option for CPU usage was successfully modified.
+  /** Describes the burstable performance instance whose credit option for CPU usage was successfully modified.
     */
   @js.native
   trait SuccessfulInstanceCreditSpecificationItem extends js.Object {
@@ -33699,8 +33150,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a Reserved Instance whose queued purchase was successfully deleted.
+  /** Describes a Reserved Instance whose queued purchase was successfully deleted.
     */
   @js.native
   trait SuccessfulQueuedPurchaseDeletion extends js.Object {
@@ -33730,8 +33180,7 @@ package ec2 {
     @inline def values = js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
   }
 
-  /**
-    * Describes a tag.
+  /** Describes a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -33752,8 +33201,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a tag.
+  /** Describes a tag.
     */
   @js.native
   trait TagDescription extends js.Object {
@@ -33780,8 +33228,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The tags to apply to a resource when the resource is being created.
+  /** The tags to apply to a resource when the resource is being created.
     */
   @js.native
   trait TagSpecification extends js.Object {
@@ -33802,9 +33249,8 @@ package ec2 {
     }
   }
 
-  /**
-    * The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
-    *  You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html|OnDemandOptions]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions|SpotOptions]]
+  /** The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+    * You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html|OnDemandOptions]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions|SpotOptions]]
     */
   @js.native
   trait TargetCapacitySpecification extends js.Object {
@@ -33831,9 +33277,8 @@ package ec2 {
     }
   }
 
-  /**
-    * The number of units to request. You can choose to set the target capacity as the number of instances. Or you can set the target capacity to a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
-    *  You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest|OnDemandOptionsRequest]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest|SpotOptionsRequest]].
+  /** The number of units to request. You can choose to set the target capacity as the number of instances. Or you can set the target capacity to a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+    * You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest|OnDemandOptionsRequest]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest|SpotOptionsRequest]].
     */
   @js.native
   trait TargetCapacitySpecificationRequest extends js.Object {
@@ -33862,8 +33307,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the Convertible Reserved Instance offering.
+  /** Information about the Convertible Reserved Instance offering.
     */
   @js.native
   trait TargetConfiguration extends js.Object {
@@ -33884,8 +33328,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Details about the target configuration.
+  /** Details about the target configuration.
     */
   @js.native
   trait TargetConfigurationRequest extends js.Object {
@@ -33908,8 +33351,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a load balancer target group.
+  /** Describes a load balancer target group.
     */
   @js.native
   trait TargetGroup extends js.Object {
@@ -33927,8 +33369,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these target groups.
+  /** Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these target groups.
     */
   @js.native
   trait TargetGroupsConfig extends js.Object {
@@ -33946,8 +33387,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a target network associated with a Client VPN endpoint.
+  /** Describes a target network associated with a Client VPN endpoint.
     */
   @js.native
   trait TargetNetwork extends js.Object {
@@ -33980,8 +33420,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The total value of the new Convertible Reserved Instances.
+  /** The total value of the new Convertible Reserved Instances.
     */
   @js.native
   trait TargetReservationValue extends js.Object {
@@ -34070,8 +33509,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about a terminated Client VPN endpoint client connection.
+  /** Information about a terminated Client VPN endpoint client connection.
     */
   @js.native
   trait TerminateConnectionStatus extends js.Object {
@@ -34141,8 +33579,7 @@ package ec2 {
     @inline def values = js.Array(ingress, egress)
   }
 
-  /**
-    * Describes the Traffic Mirror filter.
+  /** Describes the Traffic Mirror filter.
     */
   @js.native
   trait TrafficMirrorFilter extends js.Object {
@@ -34175,8 +33612,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Traffic Mirror rule.
+  /** Describes the Traffic Mirror rule.
     */
   @js.native
   trait TrafficMirrorFilterRule extends js.Object {
@@ -34243,8 +33679,7 @@ package ec2 {
     @inline def values = js.Array(`amazon-dns`)
   }
 
-  /**
-    * Describes the Traffic Mirror port range.
+  /** Describes the Traffic Mirror port range.
     */
   @js.native
   trait TrafficMirrorPortRange extends js.Object {
@@ -34265,8 +33700,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the Traffic Mirror filter rule port range.
+  /** Information about the Traffic Mirror filter rule port range.
     */
   @js.native
   trait TrafficMirrorPortRangeRequest extends js.Object {
@@ -34296,8 +33730,7 @@ package ec2 {
     @inline def values = js.Array(accept, reject)
   }
 
-  /**
-    * Describes a Traffic Mirror session.
+  /** Describes a Traffic Mirror session.
     */
   @js.native
   trait TrafficMirrorSession extends js.Object {
@@ -34352,8 +33785,7 @@ package ec2 {
     @inline def values = js.Array(`packet-length`, description, `virtual-network-id`)
   }
 
-  /**
-    * Describes a Traffic Mirror target.
+  /** Describes a Traffic Mirror target.
     */
   @js.native
   trait TrafficMirrorTarget extends js.Object {
@@ -34408,8 +33840,7 @@ package ec2 {
     @inline def values = js.Array(ACCEPT, REJECT, ALL)
   }
 
-  /**
-    * Describes a transit gateway.
+  /** Describes a transit gateway.
     */
   @js.native
   trait TransitGateway extends js.Object {
@@ -34448,8 +33879,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between a resource attachment and a transit gateway route table.
+  /** Describes an association between a resource attachment and a transit gateway route table.
     */
   @js.native
   trait TransitGatewayAssociation extends js.Object {
@@ -34490,8 +33920,7 @@ package ec2 {
     @inline def values = js.Array(associating, associated, disassociating, disassociated)
   }
 
-  /**
-    * Describes an attachment between a resource and a transit gateway.
+  /** Describes an attachment between a resource and a transit gateway.
     */
   @js.native
   trait TransitGatewayAttachment extends js.Object {
@@ -34536,8 +33965,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association.
+  /** Describes an association.
     */
   @js.native
   trait TransitGatewayAttachmentAssociation extends js.Object {
@@ -34558,8 +33986,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a propagation route table.
+  /** Describes a propagation route table.
     */
   @js.native
   trait TransitGatewayAttachmentPropagation extends js.Object {
@@ -34621,8 +34048,7 @@ package ec2 {
     @inline def values = js.Array(associating, associated, disassociating, disassociated)
   }
 
-  /**
-    * Describes the deregistered transit gateway multicast group members.
+  /** Describes the deregistered transit gateway multicast group members.
     */
   @js.native
   trait TransitGatewayMulticastDeregisteredGroupMembers extends js.Object {
@@ -34646,8 +34072,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the deregistered transit gateway multicast group sources.
+  /** Describes the deregistered transit gateway multicast group sources.
     */
   @js.native
   trait TransitGatewayMulticastDeregisteredGroupSources extends js.Object {
@@ -34671,8 +34096,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the transit gateway multicast domain.
+  /** Describes the transit gateway multicast domain.
     */
   @js.native
   trait TransitGatewayMulticastDomain extends js.Object {
@@ -34702,8 +34126,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the resources associated with the transit gateway multicast domain.
+  /** Describes the resources associated with the transit gateway multicast domain.
     */
   @js.native
   trait TransitGatewayMulticastDomainAssociation extends js.Object {
@@ -34730,8 +34153,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the multicast domain associations.
+  /** Describes the multicast domain associations.
     */
   @js.native
   trait TransitGatewayMulticastDomainAssociations extends js.Object {
@@ -34772,8 +34194,7 @@ package ec2 {
     @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
-  /**
-    * Describes the transit gateway multicast group resources.
+  /** Describes the transit gateway multicast group resources.
     */
   @js.native
   trait TransitGatewayMulticastGroup extends js.Object {
@@ -34818,8 +34239,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the registered transit gateway multicast group members.
+  /** Describes the registered transit gateway multicast group members.
     */
   @js.native
   trait TransitGatewayMulticastRegisteredGroupMembers extends js.Object {
@@ -34843,8 +34263,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the members registered with the transit gateway multicast group.
+  /** Describes the members registered with the transit gateway multicast group.
     */
   @js.native
   trait TransitGatewayMulticastRegisteredGroupSources extends js.Object {
@@ -34868,8 +34287,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the options for a transit gateway.
+  /** Describes the options for a transit gateway.
     */
   @js.native
   trait TransitGatewayOptions extends js.Object {
@@ -34911,8 +34329,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the transit gateway peering attachment.
+  /** Describes the transit gateway peering attachment.
     */
   @js.native
   trait TransitGatewayPeeringAttachment extends js.Object {
@@ -34948,8 +34365,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes route propagation.
+  /** Describes route propagation.
     */
   @js.native
   trait TransitGatewayPropagation extends js.Object {
@@ -34990,8 +34406,7 @@ package ec2 {
     @inline def values = js.Array(enabling, enabled, disabling, disabled)
   }
 
-  /**
-    * Describes the options for a transit gateway.
+  /** Describes the options for a transit gateway.
     */
   @js.native
   trait TransitGatewayRequestOptions extends js.Object {
@@ -35027,8 +34442,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a route for a transit gateway route table.
+  /** Describes a route for a transit gateway route table.
     */
   @js.native
   trait TransitGatewayRoute extends js.Object {
@@ -35055,8 +34469,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a route attachment.
+  /** Describes a route attachment.
     */
   @js.native
   trait TransitGatewayRouteAttachment extends js.Object {
@@ -35092,8 +34505,7 @@ package ec2 {
     @inline def values = js.Array(pending, active, blackhole, deleting, deleted)
   }
 
-  /**
-    * Describes a transit gateway route table.
+  /** Describes a transit gateway route table.
     */
   @js.native
   trait TransitGatewayRouteTable extends js.Object {
@@ -35129,8 +34541,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an association between a route table and a resource attachment.
+  /** Describes an association between a route table and a resource attachment.
     */
   @js.native
   trait TransitGatewayRouteTableAssociation extends js.Object {
@@ -35157,8 +34568,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a route table propagation.
+  /** Describes a route table propagation.
     */
   @js.native
   trait TransitGatewayRouteTablePropagation extends js.Object {
@@ -35217,8 +34627,7 @@ package ec2 {
     @inline def values = js.Array(pending, available, modifying, deleting, deleted)
   }
 
-  /**
-    * Describes a VPC attachment.
+  /** Describes a VPC attachment.
     */
   @js.native
   trait TransitGatewayVpcAttachment extends js.Object {
@@ -35260,8 +34669,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the VPC attachment options.
+  /** Describes the VPC attachment options.
     */
   @js.native
   trait TransitGatewayVpcAttachmentOptions extends js.Object {
@@ -35300,8 +34708,7 @@ package ec2 {
     @inline def values = js.Array(ipv4, ipv6)
   }
 
-  /**
-    * The VPN tunnel options.
+  /** The VPN tunnel options.
     */
   @js.native
   trait TunnelOption extends js.Object {
@@ -35383,7 +34790,6 @@ package ec2 {
         "Ipv6Addresses" -> Ipv6Addresses.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnassignIpv6AddressesRequest]
     }
   }
@@ -35407,8 +34813,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Contains the parameters for UnassignPrivateIpAddresses.
+  /** Contains the parameters for UnassignPrivateIpAddresses.
     */
   @js.native
   trait UnassignPrivateIpAddressesRequest extends js.Object {
@@ -35426,7 +34831,6 @@ package ec2 {
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
         "PrivateIpAddresses" -> PrivateIpAddresses.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnassignPrivateIpAddressesRequest]
     }
   }
@@ -35489,8 +34893,7 @@ package ec2 {
     @inline def values = js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`)
   }
 
-  /**
-    * Describes the burstable performance instance whose credit option for CPU usage was not modified.
+  /** Describes the burstable performance instance whose credit option for CPU usage was not modified.
     */
   @js.native
   trait UnsuccessfulInstanceCreditSpecificationItem extends js.Object {
@@ -35511,8 +34914,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the error for the burstable performance instance whose credit option for CPU usage was not modified.
+  /** Information about the error for the burstable performance instance whose credit option for CPU usage was not modified.
     */
   @js.native
   trait UnsuccessfulInstanceCreditSpecificationItemError extends js.Object {
@@ -35533,8 +34935,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about items that were not successfully processed in a batch call.
+  /** Information about items that were not successfully processed in a batch call.
     */
   @js.native
   trait UnsuccessfulItem extends js.Object {
@@ -35555,8 +34956,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the error that occurred. For more information about errors, see [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html|Error Codes]].
+  /** Information about the error that occurred. For more information about errors, see [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html|Error Codes]].
     */
   @js.native
   trait UnsuccessfulItemError extends js.Object {
@@ -35672,8 +35072,7 @@ package ec2 {
     @inline def values = js.Array(spot, `on-demand`)
   }
 
-  /**
-    * Describes the Amazon S3 bucket for the disk image.
+  /** Describes the Amazon S3 bucket for the disk image.
     */
   @js.native
   trait UserBucket extends js.Object {
@@ -35694,8 +35093,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the Amazon S3 bucket for the disk image.
+  /** Describes the Amazon S3 bucket for the disk image.
     */
   @js.native
   trait UserBucketDetails extends js.Object {
@@ -35716,8 +35114,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the user data for an instance.
+  /** Describes the user data for an instance.
     */
   @js.native
   trait UserData extends js.Object {
@@ -35735,8 +35132,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a security group and AWS account ID pair.
+  /** Describes a security group and AWS account ID pair.
     */
   @js.native
   trait UserIdGroupPair extends js.Object {
@@ -35772,8 +35168,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the vCPU configurations for the instance type.
+  /** Describes the vCPU configurations for the instance type.
     */
   @js.native
   trait VCpuInfo extends js.Object {
@@ -35803,8 +35198,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The error code and error message that is returned for a parameter or parameter combination that is not valid when a new launch template or new version of a launch template is created.
+  /** The error code and error message that is returned for a parameter or parameter combination that is not valid when a new launch template or new version of a launch template is created.
     */
   @js.native
   trait ValidationError extends js.Object {
@@ -35825,8 +35219,7 @@ package ec2 {
     }
   }
 
-  /**
-    * The error codes and error messages that are returned for the parameters or parameter combinations that are not valid when a new launch template or new version of a launch template is created.
+  /** The error codes and error messages that are returned for the parameters or parameter combinations that are not valid when a new launch template or new version of a launch template is created.
     */
   @js.native
   trait ValidationWarning extends js.Object {
@@ -35844,8 +35237,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes telemetry for a VPN tunnel.
+  /** Describes telemetry for a VPN tunnel.
     */
   @js.native
   trait VgwTelemetry extends js.Object {
@@ -35887,8 +35279,7 @@ package ec2 {
     @inline def values = js.Array(hvm, paravirtual)
   }
 
-  /**
-    * Describes a volume.
+  /** Describes a volume.
     */
   @js.native
   trait Volume extends js.Object {
@@ -35948,8 +35339,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes volume attachment details.
+  /** Describes volume attachment details.
     */
   @js.native
   trait VolumeAttachment extends js.Object {
@@ -36003,8 +35393,7 @@ package ec2 {
     @inline def values = js.Array(autoEnableIO, productCodes)
   }
 
-  /**
-    * Describes an EBS volume.
+  /** Describes an EBS volume.
     */
   @js.native
   trait VolumeDetail extends js.Object {
@@ -36019,14 +35408,12 @@ package ec2 {
       val __obj = js.Dynamic.literal(
         "Size" -> Size.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VolumeDetail]
     }
   }
 
-  /**
-    * Describes the modification status of an EBS volume.
-    *  If the volume has never been modified, some element values will be null.
+  /** Describes the modification status of an EBS volume.
+    * If the volume has never been modified, some element values will be null.
     */
   @js.native
   trait VolumeModification extends js.Object {
@@ -36101,8 +35488,7 @@ package ec2 {
     @inline def values = js.Array(creating, available, `in-use`, deleting, deleted, error)
   }
 
-  /**
-    * Describes a volume status operation code.
+  /** Describes a volume status operation code.
     */
   @js.native
   trait VolumeStatusAction extends js.Object {
@@ -36129,8 +35515,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Information about the instances to which the volume is attached.
+  /** Information about the instances to which the volume is attached.
     */
   @js.native
   trait VolumeStatusAttachmentStatus extends js.Object {
@@ -36151,8 +35536,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a volume status.
+  /** Describes a volume status.
     */
   @js.native
   trait VolumeStatusDetails extends js.Object {
@@ -36173,8 +35557,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a volume status event.
+  /** Describes a volume status event.
     */
   @js.native
   trait VolumeStatusEvent extends js.Object {
@@ -36207,8 +35590,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the status of a volume.
+  /** Describes the status of a volume.
     */
   @js.native
   trait VolumeStatusInfo extends js.Object {
@@ -36239,8 +35621,7 @@ package ec2 {
     @inline def values = js.Array(ok, impaired, `insufficient-data`)
   }
 
-  /**
-    * Describes the volume status.
+  /** Describes the volume status.
     */
   @js.native
   trait VolumeStatusItem extends js.Object {
@@ -36297,8 +35678,7 @@ package ec2 {
     @inline def values = js.Array(standard, io1, gp2, sc1, st1)
   }
 
-  /**
-    * Describes a VPC.
+  /** Describes a VPC.
     */
   @js.native
   trait Vpc extends js.Object {
@@ -36343,8 +35723,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes an attachment between a virtual private gateway and a VPC.
+  /** Describes an attachment between a virtual private gateway and a VPC.
     */
   @js.native
   trait VpcAttachment extends js.Object {
@@ -36374,8 +35753,7 @@ package ec2 {
     @inline def values = js.Array(enableDnsSupport, enableDnsHostnames)
   }
 
-  /**
-    * Describes an IPv4 CIDR block associated with a VPC.
+  /** Describes an IPv4 CIDR block associated with a VPC.
     */
   @js.native
   trait VpcCidrBlockAssociation extends js.Object {
@@ -36399,8 +35777,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the state of a CIDR block.
+  /** Describes the state of a CIDR block.
     */
   @js.native
   trait VpcCidrBlockState extends js.Object {
@@ -36434,8 +35811,7 @@ package ec2 {
     @inline def values = js.Array(associating, associated, disassociating, disassociated, failing, failed)
   }
 
-  /**
-    * Describes whether a VPC is enabled for ClassicLink.
+  /** Describes whether a VPC is enabled for ClassicLink.
     */
   @js.native
   trait VpcClassicLink extends js.Object {
@@ -36459,8 +35835,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a VPC endpoint.
+  /** Describes a VPC endpoint.
     */
   @js.native
   trait VpcEndpoint extends js.Object {
@@ -36526,8 +35901,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a VPC endpoint connection to a service.
+  /** Describes a VPC endpoint connection to a service.
     */
   @js.native
   trait VpcEndpointConnection extends js.Object {
@@ -36572,8 +35946,7 @@ package ec2 {
     @inline def values = js.Array(Interface, Gateway)
   }
 
-  /**
-    * Describes an IPv6 CIDR block associated with a VPC.
+  /** Describes an IPv6 CIDR block associated with a VPC.
     */
   @js.native
   trait VpcIpv6CidrBlockAssociation extends js.Object {
@@ -36603,8 +35976,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes a VPC peering connection.
+  /** Describes a VPC peering connection.
     */
   @js.native
   trait VpcPeeringConnection extends js.Object {
@@ -36637,8 +36009,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the VPC peering connection options.
+  /** Describes the VPC peering connection options.
     */
   @js.native
   trait VpcPeeringConnectionOptionsDescription extends js.Object {
@@ -36662,8 +36033,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes the status of a VPC peering connection.
+  /** Describes the status of a VPC peering connection.
     */
   @js.native
   trait VpcPeeringConnectionStateReason extends js.Object {
@@ -36700,8 +36070,7 @@ package ec2 {
     @inline def values = js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting)
   }
 
-  /**
-    * Describes a VPC in a VPC peering connection.
+  /** Describes a VPC in a VPC peering connection.
     */
   @js.native
   trait VpcPeeringConnectionVpcInfo extends js.Object {
@@ -36754,8 +36123,7 @@ package ec2 {
     @inline def values = js.Array(default)
   }
 
-  /**
-    * Describes a VPN connection.
+  /** Describes a VPN connection.
     */
   @js.native
   trait VpnConnection extends js.Object {
@@ -36806,8 +36174,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes VPN connection options.
+  /** Describes VPN connection options.
     */
   @js.native
   trait VpnConnectionOptions extends js.Object {
@@ -36834,8 +36201,7 @@ package ec2 {
     }
   }
 
-  /**
-    * Describes VPN connection options.
+  /** Describes VPN connection options.
     */
   @js.native
   trait VpnConnectionOptionsSpecification extends js.Object {
@@ -36871,8 +36237,7 @@ package ec2 {
     @inline def values = js.Array(enable, disable)
   }
 
-  /**
-    * Describes a virtual private gateway.
+  /** Describes a virtual private gateway.
     */
   @js.native
   trait VpnGateway extends js.Object {
@@ -36927,8 +36292,7 @@ package ec2 {
     @inline def values = js.Array(pending, available, deleting, deleted)
   }
 
-  /**
-    * Describes a static route for a VPN connection.
+  /** Describes a static route for a VPN connection.
     */
   @js.native
   trait VpnStaticRoute extends js.Object {
@@ -36960,8 +36324,7 @@ package ec2 {
     @inline def values = js.Array(Static)
   }
 
-  /**
-    * The tunnel options for a single VPN tunnel.
+  /** The tunnel options for a single VPN tunnel.
     */
   @js.native
   trait VpnTunnelOptionsSpecification extends js.Object {

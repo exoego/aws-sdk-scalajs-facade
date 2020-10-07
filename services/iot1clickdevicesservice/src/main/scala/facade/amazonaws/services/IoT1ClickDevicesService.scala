@@ -62,14 +62,12 @@ package iot1clickdevicesservice {
   }
 
   @js.native
-  trait Attributes extends js.Object {}
+  trait Attributes extends js.Object
 
   object Attributes {
     @inline
-    def apply(
-    ): Attributes = {
+    def apply(): Attributes = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[Attributes]
     }
   }
@@ -87,7 +85,6 @@ package iot1clickdevicesservice {
       val __obj = js.Dynamic.literal(
         "ClaimCode" -> ClaimCode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ClaimDevicesByClaimCodeRequest]
     }
   }
@@ -124,7 +121,6 @@ package iot1clickdevicesservice {
       val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDeviceRequest]
     }
   }
@@ -289,7 +285,6 @@ package iot1clickdevicesservice {
       val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceMethodsRequest]
     }
   }
@@ -323,7 +318,6 @@ package iot1clickdevicesservice {
       val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InitiateDeviceClaimRequest]
     }
   }
@@ -487,7 +481,6 @@ package iot1clickdevicesservice {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -524,7 +517,6 @@ package iot1clickdevicesservice {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -542,7 +534,6 @@ package iot1clickdevicesservice {
       val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UnclaimDeviceRequest]
     }
   }
@@ -579,7 +570,6 @@ package iot1clickdevicesservice {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -606,14 +596,12 @@ package iot1clickdevicesservice {
   }
 
   @js.native
-  trait UpdateDeviceStateResponse extends js.Object {}
+  trait UpdateDeviceStateResponse extends js.Object
 
   object UpdateDeviceStateResponse {
     @inline
-    def apply(
-    ): UpdateDeviceStateResponse = {
+    def apply(): UpdateDeviceStateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDeviceStateResponse]
     }
   }

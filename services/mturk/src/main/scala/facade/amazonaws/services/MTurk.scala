@@ -153,14 +153,12 @@ package mturk {
   }
 
   @js.native
-  trait AcceptQualificationRequestResponse extends js.Object {}
+  trait AcceptQualificationRequestResponse extends js.Object
 
   object AcceptQualificationRequestResponse {
     @inline
-    def apply(
-    ): AcceptQualificationRequestResponse = {
+    def apply(): AcceptQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AcceptQualificationRequestResponse]
     }
   }
@@ -190,20 +188,17 @@ package mturk {
   }
 
   @js.native
-  trait ApproveAssignmentResponse extends js.Object {}
+  trait ApproveAssignmentResponse extends js.Object
 
   object ApproveAssignmentResponse {
     @inline
-    def apply(
-    ): ApproveAssignmentResponse = {
+    def apply(): ApproveAssignmentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ApproveAssignmentResponse]
     }
   }
 
-  /**
-    * The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.
+  /** The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.
     */
   @js.native
   trait Assignment extends js.Object {
@@ -292,20 +287,17 @@ package mturk {
   }
 
   @js.native
-  trait AssociateQualificationWithWorkerResponse extends js.Object {}
+  trait AssociateQualificationWithWorkerResponse extends js.Object
 
   object AssociateQualificationWithWorkerResponse {
     @inline
-    def apply(
-    ): AssociateQualificationWithWorkerResponse = {
+    def apply(): AssociateQualificationWithWorkerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateQualificationWithWorkerResponse]
     }
   }
 
-  /**
-    * An object representing a Bonus payment paid to a Worker.
+  /** An object representing a Bonus payment paid to a Worker.
     */
   @js.native
   trait BonusPayment extends js.Object {
@@ -377,14 +369,12 @@ package mturk {
   }
 
   @js.native
-  trait CreateAdditionalAssignmentsForHITResponse extends js.Object {}
+  trait CreateAdditionalAssignmentsForHITResponse extends js.Object
 
   object CreateAdditionalAssignmentsForHITResponse {
     @inline
-    def apply(
-    ): CreateAdditionalAssignmentsForHITResponse = {
+    def apply(): CreateAdditionalAssignmentsForHITResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateAdditionalAssignmentsForHITResponse]
     }
   }
@@ -658,20 +648,17 @@ package mturk {
         "Reason" -> Reason.asInstanceOf[js.Any],
         "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateWorkerBlockRequest]
     }
   }
 
   @js.native
-  trait CreateWorkerBlockResponse extends js.Object {}
+  trait CreateWorkerBlockResponse extends js.Object
 
   object CreateWorkerBlockResponse {
     @inline
-    def apply(
-    ): CreateWorkerBlockResponse = {
+    def apply(): CreateWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateWorkerBlockResponse]
     }
   }
@@ -689,20 +676,17 @@ package mturk {
       val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHITRequest]
     }
   }
 
   @js.native
-  trait DeleteHITResponse extends js.Object {}
+  trait DeleteHITResponse extends js.Object
 
   object DeleteHITResponse {
     @inline
-    def apply(
-    ): DeleteHITResponse = {
+    def apply(): DeleteHITResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteHITResponse]
     }
   }
@@ -720,20 +704,17 @@ package mturk {
       val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteQualificationTypeRequest]
     }
   }
 
   @js.native
-  trait DeleteQualificationTypeResponse extends js.Object {}
+  trait DeleteQualificationTypeResponse extends js.Object
 
   object DeleteQualificationTypeResponse {
     @inline
-    def apply(
-    ): DeleteQualificationTypeResponse = {
+    def apply(): DeleteQualificationTypeResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteQualificationTypeResponse]
     }
   }
@@ -760,14 +741,12 @@ package mturk {
   }
 
   @js.native
-  trait DeleteWorkerBlockResponse extends js.Object {}
+  trait DeleteWorkerBlockResponse extends js.Object
 
   object DeleteWorkerBlockResponse {
     @inline
-    def apply(
-    ): DeleteWorkerBlockResponse = {
+    def apply(): DeleteWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWorkerBlockResponse]
     }
   }
@@ -797,14 +776,12 @@ package mturk {
   }
 
   @js.native
-  trait DisassociateQualificationFromWorkerResponse extends js.Object {}
+  trait DisassociateQualificationFromWorkerResponse extends js.Object
 
   object DisassociateQualificationFromWorkerResponse {
     @inline
-    def apply(
-    ): DisassociateQualificationFromWorkerResponse = {
+    def apply(): DisassociateQualificationFromWorkerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
   }
@@ -825,32 +802,29 @@ package mturk {
     val HITDisposed = "HITDisposed".asInstanceOf[EventType]
     val Ping = "Ping".asInstanceOf[EventType]
 
-    @inline def values =
-      js.Array(
-        AssignmentAccepted,
-        AssignmentAbandoned,
-        AssignmentReturned,
-        AssignmentSubmitted,
-        AssignmentRejected,
-        AssignmentApproved,
-        HITCreated,
-        HITExpired,
-        HITReviewable,
-        HITExtended,
-        HITDisposed,
-        Ping
-      )
+    @inline def values = js.Array(
+      AssignmentAccepted,
+      AssignmentAbandoned,
+      AssignmentReturned,
+      AssignmentSubmitted,
+      AssignmentRejected,
+      AssignmentApproved,
+      HITCreated,
+      HITExpired,
+      HITReviewable,
+      HITExtended,
+      HITDisposed,
+      Ping
+    )
   }
 
   @js.native
-  trait GetAccountBalanceRequest extends js.Object {}
+  trait GetAccountBalanceRequest extends js.Object
 
   object GetAccountBalanceRequest {
     @inline
-    def apply(
-    ): GetAccountBalanceRequest = {
+    def apply(): GetAccountBalanceRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAccountBalanceRequest]
     }
   }
@@ -887,7 +861,6 @@ package mturk {
       val __obj = js.Dynamic.literal(
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAssignmentRequest]
     }
   }
@@ -927,7 +900,6 @@ package mturk {
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
         "QuestionIdentifier" -> QuestionIdentifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFileUploadURLRequest]
     }
   }
@@ -961,7 +933,6 @@ package mturk {
       val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHITRequest]
     }
   }
@@ -998,7 +969,6 @@ package mturk {
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
         "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQualificationScoreRequest]
     }
   }
@@ -1032,7 +1002,6 @@ package mturk {
       val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQualificationTypeRequest]
     }
   }
@@ -1053,8 +1022,7 @@ package mturk {
     }
   }
 
-  /**
-    * The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.
+  /** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.
     */
   @js.native
   trait HIT extends js.Object {
@@ -1142,8 +1110,7 @@ package mturk {
     @inline def values = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
   }
 
-  /**
-    * The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT.
+  /** The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT.
     */
   @js.native
   trait HITLayoutParameter extends js.Object {
@@ -1161,7 +1128,6 @@ package mturk {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HITLayoutParameter]
     }
   }
@@ -1669,8 +1635,7 @@ package mturk {
     }
   }
 
-  /**
-    * The Locale data structure represents a geographical region or location.
+  /** The Locale data structure represents a geographical region or location.
     */
   @js.native
   trait Locale extends js.Object {
@@ -1693,8 +1658,7 @@ package mturk {
     }
   }
 
-  /**
-    * The NotificationSpecification data structure describes a HIT event notification for a HIT type.
+  /** The NotificationSpecification data structure describes a HIT event notification for a HIT type.
     */
   @js.native
   trait NotificationSpecification extends js.Object {
@@ -1718,7 +1682,6 @@ package mturk {
         "Transport" -> Transport.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NotificationSpecification]
     }
   }
@@ -1742,8 +1705,7 @@ package mturk {
     @inline def values = js.Array(SoftFailure, HardFailure)
   }
 
-  /**
-    * When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.
+  /** When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.
     */
   @js.native
   trait NotifyWorkersFailureStatus extends js.Object {
@@ -1786,7 +1748,6 @@ package mturk {
         "Subject" -> Subject.asInstanceOf[js.Any],
         "WorkerIds" -> WorkerIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NotifyWorkersRequest]
     }
   }
@@ -1807,8 +1768,7 @@ package mturk {
     }
   }
 
-  /**
-    * This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.
+  /** This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.
     */
   @js.native
   trait ParameterMapEntry extends js.Object {
@@ -1829,8 +1789,7 @@ package mturk {
     }
   }
 
-  /**
-    * Name of the parameter from the Review policy.
+  /** Name of the parameter from the Review policy.
     */
   @js.native
   trait PolicyParameter extends js.Object {
@@ -1854,8 +1813,7 @@ package mturk {
     }
   }
 
-  /**
-    * The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).
+  /** The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).
     */
   @js.native
   trait Qualification extends js.Object {
@@ -1888,8 +1846,7 @@ package mturk {
     }
   }
 
-  /**
-    * The QualificationRequest data structure represents a request a Worker has made for a Qualification.
+  /** The QualificationRequest data structure represents a request a Worker has made for a Qualification.
     */
   @js.native
   trait QualificationRequest extends js.Object {
@@ -1922,8 +1879,7 @@ package mturk {
     }
   }
 
-  /**
-    * The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.
+  /** The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.
     */
   @js.native
   trait QualificationRequirement extends js.Object {
@@ -1967,8 +1923,7 @@ package mturk {
     @inline def values = js.Array(Granted, Revoked)
   }
 
-  /**
-    * The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.
+  /** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.
     */
   @js.native
   trait QualificationType extends js.Object {
@@ -2047,20 +2002,17 @@ package mturk {
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
         "RequesterFeedback" -> RequesterFeedback.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RejectAssignmentRequest]
     }
   }
 
   @js.native
-  trait RejectAssignmentResponse extends js.Object {}
+  trait RejectAssignmentResponse extends js.Object
 
   object RejectAssignmentResponse {
     @inline
-    def apply(
-    ): RejectAssignmentResponse = {
+    def apply(): RejectAssignmentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RejectAssignmentResponse]
     }
   }
@@ -2087,20 +2039,17 @@ package mturk {
   }
 
   @js.native
-  trait RejectQualificationRequestResponse extends js.Object {}
+  trait RejectQualificationRequestResponse extends js.Object
 
   object RejectQualificationRequestResponse {
     @inline
-    def apply(
-    ): RejectQualificationRequestResponse = {
+    def apply(): RejectQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RejectQualificationRequestResponse]
     }
   }
 
-  /**
-    * Your request is invalid.
+  /** Your request is invalid.
     */
   @js.native
   trait RequestErrorException extends js.Object {
@@ -2108,8 +2057,7 @@ package mturk {
     val TurkErrorCode: TurkErrorCode
   }
 
-  /**
-    * Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.
+  /** Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.
     */
   @js.native
   trait ReviewActionDetail extends js.Object {
@@ -2159,8 +2107,7 @@ package mturk {
     @inline def values = js.Array(Intended, Succeeded, Failed, Cancelled)
   }
 
-  /**
-    * HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.
+  /** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.
     */
   @js.native
   trait ReviewPolicy extends js.Object {
@@ -2192,8 +2139,7 @@ package mturk {
     @inline def values = js.Array(Assignment, HIT)
   }
 
-  /**
-    * Contains both ReviewResult and ReviewAction elements for a particular HIT.
+  /** Contains both ReviewResult and ReviewAction elements for a particular HIT.
     */
   @js.native
   trait ReviewReport extends js.Object {
@@ -2214,8 +2160,7 @@ package mturk {
     }
   }
 
-  /**
-    * This data structure is returned multiple times for each result specified in the Review Policy.
+  /** This data structure is returned multiple times for each result specified in the Review Policy.
     */
   @js.native
   trait ReviewResultDetail extends js.Object {
@@ -2288,14 +2233,12 @@ package mturk {
   }
 
   @js.native
-  trait SendBonusResponse extends js.Object {}
+  trait SendBonusResponse extends js.Object
 
   object SendBonusResponse {
     @inline
-    def apply(
-    ): SendBonusResponse = {
+    def apply(): SendBonusResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SendBonusResponse]
     }
   }
@@ -2316,26 +2259,22 @@ package mturk {
         "Notification" -> Notification.asInstanceOf[js.Any],
         "TestEventType" -> TestEventType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendTestEventNotificationRequest]
     }
   }
 
   @js.native
-  trait SendTestEventNotificationResponse extends js.Object {}
+  trait SendTestEventNotificationResponse extends js.Object
 
   object SendTestEventNotificationResponse {
     @inline
-    def apply(
-    ): SendTestEventNotificationResponse = {
+    def apply(): SendTestEventNotificationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SendTestEventNotificationResponse]
     }
   }
 
-  /**
-    * Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.
+  /** Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.
     */
   @js.native
   trait ServiceFaultException extends js.Object {
@@ -2359,20 +2298,17 @@ package mturk {
         "ExpireAt" -> ExpireAt.asInstanceOf[js.Any],
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateExpirationForHITRequest]
     }
   }
 
   @js.native
-  trait UpdateExpirationForHITResponse extends js.Object {}
+  trait UpdateExpirationForHITResponse extends js.Object
 
   object UpdateExpirationForHITResponse {
     @inline
-    def apply(
-    ): UpdateExpirationForHITResponse = {
+    def apply(): UpdateExpirationForHITResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateExpirationForHITResponse]
     }
   }
@@ -2399,14 +2335,12 @@ package mturk {
   }
 
   @js.native
-  trait UpdateHITReviewStatusResponse extends js.Object {}
+  trait UpdateHITReviewStatusResponse extends js.Object
 
   object UpdateHITReviewStatusResponse {
     @inline
-    def apply(
-    ): UpdateHITReviewStatusResponse = {
+    def apply(): UpdateHITReviewStatusResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateHITReviewStatusResponse]
     }
   }
@@ -2427,20 +2361,17 @@ package mturk {
         "HITId" -> HITId.asInstanceOf[js.Any],
         "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateHITTypeOfHITRequest]
     }
   }
 
   @js.native
-  trait UpdateHITTypeOfHITResponse extends js.Object {}
+  trait UpdateHITTypeOfHITResponse extends js.Object
 
   object UpdateHITTypeOfHITResponse {
     @inline
-    def apply(
-    ): UpdateHITTypeOfHITResponse = {
+    def apply(): UpdateHITTypeOfHITResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateHITTypeOfHITResponse]
     }
   }
@@ -2470,14 +2401,12 @@ package mturk {
   }
 
   @js.native
-  trait UpdateNotificationSettingsResponse extends js.Object {}
+  trait UpdateNotificationSettingsResponse extends js.Object
 
   object UpdateNotificationSettingsResponse {
     @inline
-    def apply(
-    ): UpdateNotificationSettingsResponse = {
+    def apply(): UpdateNotificationSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNotificationSettingsResponse]
     }
   }
@@ -2540,8 +2469,7 @@ package mturk {
     }
   }
 
-  /**
-    * The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.
+  /** The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.
     */
   @js.native
   trait WorkerBlock extends js.Object {

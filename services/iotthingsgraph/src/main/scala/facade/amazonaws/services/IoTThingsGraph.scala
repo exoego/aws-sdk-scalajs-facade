@@ -168,14 +168,12 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait AssociateEntityToThingResponse extends js.Object {}
+  trait AssociateEntityToThingResponse extends js.Object
 
   object AssociateEntityToThingResponse {
     @inline
-    def apply(
-    ): AssociateEntityToThingResponse = {
+    def apply(): AssociateEntityToThingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateEntityToThingResponse]
     }
   }
@@ -306,8 +304,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * A document that defines an entity.
+  /** A document that defines an entity.
     */
   @js.native
   trait DefinitionDocument extends js.Object {
@@ -325,7 +322,6 @@ package iotthingsgraph {
         "language" -> language.asInstanceOf[js.Any],
         "text" -> text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DefinitionDocument]
     }
   }
@@ -351,33 +347,28 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFlowTemplateRequest]
     }
   }
 
   @js.native
-  trait DeleteFlowTemplateResponse extends js.Object {}
+  trait DeleteFlowTemplateResponse extends js.Object
 
   object DeleteFlowTemplateResponse {
     @inline
-    def apply(
-    ): DeleteFlowTemplateResponse = {
+    def apply(): DeleteFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFlowTemplateResponse]
     }
   }
 
   @js.native
-  trait DeleteNamespaceRequest extends js.Object {}
+  trait DeleteNamespaceRequest extends js.Object
 
   object DeleteNamespaceRequest {
     @inline
-    def apply(
-    ): DeleteNamespaceRequest = {
+    def apply(): DeleteNamespaceRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteNamespaceRequest]
     }
   }
@@ -418,14 +409,12 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait DeleteSystemInstanceResponse extends js.Object {}
+  trait DeleteSystemInstanceResponse extends js.Object
 
   object DeleteSystemInstanceResponse {
     @inline
-    def apply(
-    ): DeleteSystemInstanceResponse = {
+    def apply(): DeleteSystemInstanceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSystemInstanceResponse]
     }
   }
@@ -443,26 +432,22 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSystemTemplateRequest]
     }
   }
 
   @js.native
-  trait DeleteSystemTemplateResponse extends js.Object {}
+  trait DeleteSystemTemplateResponse extends js.Object
 
   object DeleteSystemTemplateResponse {
     @inline
-    def apply(
-    ): DeleteSystemTemplateResponse = {
+    def apply(): DeleteSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSystemTemplateResponse]
     }
   }
 
-  /**
-    * An object that contains the ID and revision number of a workflow or system that is part of a deployment.
+  /** An object that contains the ID and revision number of a workflow or system that is part of a deployment.
     */
   @js.native
   trait DependencyRevision extends js.Object {
@@ -542,20 +527,17 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeprecateFlowTemplateRequest]
     }
   }
 
   @js.native
-  trait DeprecateFlowTemplateResponse extends js.Object {}
+  trait DeprecateFlowTemplateResponse extends js.Object
 
   object DeprecateFlowTemplateResponse {
     @inline
-    def apply(
-    ): DeprecateFlowTemplateResponse = {
+    def apply(): DeprecateFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeprecateFlowTemplateResponse]
     }
   }
@@ -573,20 +555,17 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeprecateSystemTemplateRequest]
     }
   }
 
   @js.native
-  trait DeprecateSystemTemplateResponse extends js.Object {}
+  trait DeprecateSystemTemplateResponse extends js.Object
 
   object DeprecateSystemTemplateResponse {
     @inline
-    def apply(
-    ): DeprecateSystemTemplateResponse = {
+    def apply(): DeprecateSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeprecateSystemTemplateResponse]
     }
   }
@@ -651,26 +630,22 @@ package iotthingsgraph {
         "entityType" -> entityType.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DissociateEntityFromThingRequest]
     }
   }
 
   @js.native
-  trait DissociateEntityFromThingResponse extends js.Object {}
+  trait DissociateEntityFromThingResponse extends js.Object
 
   object DissociateEntityFromThingResponse {
     @inline
-    def apply(
-    ): DissociateEntityFromThingResponse = {
+    def apply(): DissociateEntityFromThingResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DissociateEntityFromThingResponse]
     }
   }
 
-  /**
-    * Describes the properties of an entity.
+  /** Describes the properties of an entity.
     */
   @js.native
   trait EntityDescription extends js.Object {
@@ -700,8 +675,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>.
+  /** An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>.
     */
   @js.native
   trait EntityFilter extends js.Object {
@@ -771,30 +745,28 @@ package iotthingsgraph {
     val THING_ACTION_TASK_SUCCEEDED = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
     val ACKNOWLEDGE_TASK_MESSAGE = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
 
-    @inline def values =
-      js.Array(
-        EXECUTION_STARTED,
-        EXECUTION_FAILED,
-        EXECUTION_ABORTED,
-        EXECUTION_SUCCEEDED,
-        STEP_STARTED,
-        STEP_FAILED,
-        STEP_SUCCEEDED,
-        ACTIVITY_SCHEDULED,
-        ACTIVITY_STARTED,
-        ACTIVITY_FAILED,
-        ACTIVITY_SUCCEEDED,
-        START_FLOW_EXECUTION_TASK,
-        SCHEDULE_NEXT_READY_STEPS_TASK,
-        THING_ACTION_TASK,
-        THING_ACTION_TASK_FAILED,
-        THING_ACTION_TASK_SUCCEEDED,
-        ACKNOWLEDGE_TASK_MESSAGE
-      )
+    @inline def values = js.Array(
+      EXECUTION_STARTED,
+      EXECUTION_FAILED,
+      EXECUTION_ABORTED,
+      EXECUTION_SUCCEEDED,
+      STEP_STARTED,
+      STEP_FAILED,
+      STEP_SUCCEEDED,
+      ACTIVITY_SCHEDULED,
+      ACTIVITY_STARTED,
+      ACTIVITY_FAILED,
+      ACTIVITY_SUCCEEDED,
+      START_FLOW_EXECUTION_TASK,
+      SCHEDULE_NEXT_READY_STEPS_TASK,
+      THING_ACTION_TASK,
+      THING_ACTION_TASK_FAILED,
+      THING_ACTION_TASK_SUCCEEDED,
+      ACKNOWLEDGE_TASK_MESSAGE
+    )
   }
 
-  /**
-    * An object that contains information about a flow event.
+  /** An object that contains information about a flow event.
     */
   @js.native
   trait FlowExecutionMessage extends js.Object {
@@ -832,8 +804,7 @@ package iotthingsgraph {
     @inline def values = js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED)
   }
 
-  /**
-    * An object that contains summary information about a flow execution.
+  /** An object that contains summary information about a flow execution.
     */
   @js.native
   trait FlowExecutionSummary extends js.Object {
@@ -866,8 +837,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that contains a workflow's definition and summary information.
+  /** An object that contains a workflow's definition and summary information.
     */
   @js.native
   trait FlowTemplateDescription extends js.Object {
@@ -891,8 +861,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that filters a workflow search.
+  /** An object that filters a workflow search.
     */
   @js.native
   trait FlowTemplateFilter extends js.Object {
@@ -910,7 +879,6 @@ package iotthingsgraph {
         "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FlowTemplateFilter]
     }
   }
@@ -923,8 +891,7 @@ package iotthingsgraph {
     @inline def values = js.Array(DEVICE_MODEL_ID)
   }
 
-  /**
-    * An object that contains summary information about a workflow.
+  /** An object that contains summary information about a workflow.
     */
   @js.native
   trait FlowTemplateSummary extends js.Object {
@@ -1069,14 +1036,12 @@ package iotthingsgraph {
   }
 
   @js.native
-  trait GetNamespaceDeletionStatusRequest extends js.Object {}
+  trait GetNamespaceDeletionStatusRequest extends js.Object
 
   object GetNamespaceDeletionStatusRequest {
     @inline
-    def apply(
-    ): GetNamespaceDeletionStatusRequest = {
+    def apply(): GetNamespaceDeletionStatusRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetNamespaceDeletionStatusRequest]
     }
   }
@@ -1122,7 +1087,6 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSystemInstanceRequest]
     }
   }
@@ -1236,7 +1200,6 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "uploadId" -> uploadId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUploadStatusRequest]
     }
   }
@@ -1363,8 +1326,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.
+  /** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.
     */
   @js.native
   trait MetricsConfiguration extends js.Object {
@@ -1688,8 +1650,7 @@ package iotthingsgraph {
     @inline def values = js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET)
   }
 
-  /**
-    * An object that contains a system instance definition and summary information.
+  /** An object that contains a system instance definition and summary information.
     */
   @js.native
   trait SystemInstanceDescription extends js.Object {
@@ -1725,8 +1686,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status.
+  /** An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status.
     */
   @js.native
   trait SystemInstanceFilter extends js.Object {
@@ -1757,8 +1717,7 @@ package iotthingsgraph {
     @inline def values = js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
   }
 
-  /**
-    * An object that contains summary information about a system instance.
+  /** An object that contains summary information about a system instance.
     */
   @js.native
   trait SystemInstanceSummary extends js.Object {
@@ -1800,8 +1759,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that contains a system's definition document and summary information.
+  /** An object that contains a system's definition document and summary information.
     */
   @js.native
   trait SystemTemplateDescription extends js.Object {
@@ -1825,8 +1783,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * An object that filters a system search.
+  /** An object that filters a system search.
     */
   @js.native
   trait SystemTemplateFilter extends js.Object {
@@ -1844,7 +1801,6 @@ package iotthingsgraph {
         "name" -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SystemTemplateFilter]
     }
   }
@@ -1857,8 +1813,7 @@ package iotthingsgraph {
     @inline def values = js.Array(FLOW_TEMPLATE_ID)
   }
 
-  /**
-    * An object that contains information about a system.
+  /** An object that contains information about a system.
     */
   @js.native
   trait SystemTemplateSummary extends js.Object {
@@ -1885,8 +1840,7 @@ package iotthingsgraph {
     }
   }
 
-  /**
-    * Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair.
+  /** Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1904,7 +1858,6 @@ package iotthingsgraph {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1925,26 +1878,22 @@ package iotthingsgraph {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * An AWS IoT thing.
+  /** An AWS IoT thing.
     */
   @js.native
   trait Thing extends js.Object {
@@ -2013,20 +1962,17 @@ package iotthingsgraph {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -2146,7 +2092,6 @@ package iotthingsgraph {
       val __obj = js.Dynamic.literal(
         "uploadId" -> uploadId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UploadEntityDefinitionsResponse]
     }
   }

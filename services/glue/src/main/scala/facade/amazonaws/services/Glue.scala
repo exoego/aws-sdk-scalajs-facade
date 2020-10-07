@@ -474,8 +474,7 @@ package glue {
     def updateWorkflow(params: UpdateWorkflowRequest): Request[UpdateWorkflowResponse] = js.native
   }
 
-  /**
-    * Defines an action to be initiated by a trigger.
+  /** Defines an action to be initiated by a trigger.
     */
   @js.native
   trait Action extends js.Object {
@@ -730,7 +729,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "CrawlerNames" -> CrawlerNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetCrawlersRequest]
     }
   }
@@ -767,7 +765,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "DevEndpointNames" -> DevEndpointNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetDevEndpointsRequest]
     }
   }
@@ -804,7 +801,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "JobNames" -> JobNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetJobsRequest]
     }
   }
@@ -887,7 +883,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "TriggerNames" -> TriggerNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetTriggersRequest]
     }
   }
@@ -951,8 +946,7 @@ package glue {
     }
   }
 
-  /**
-    * Records an error that occurred when attempting to stop a specified job run.
+  /** Records an error that occurred when attempting to stop a specified job run.
     */
   @js.native
   trait BatchStopJobRunError extends js.Object {
@@ -992,7 +986,6 @@ package glue {
         "JobName" -> JobName.asInstanceOf[js.Any],
         "JobRunIds" -> JobRunIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchStopJobRunRequest]
     }
   }
@@ -1016,8 +1009,7 @@ package glue {
     }
   }
 
-  /**
-    * Records a successful request to stop a specified <code>JobRun</code>.
+  /** Records a successful request to stop a specified <code>JobRun</code>.
     */
   @js.native
   trait BatchStopJobRunSuccessfulSubmission extends js.Object {
@@ -1038,8 +1030,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a binary column statistics data.
+  /** Defines a binary column statistics data.
     */
   @js.native
   trait BinaryColumnStatisticsData extends js.Object {
@@ -1060,13 +1051,11 @@ package glue {
         "MaximumLength" -> MaximumLength.asInstanceOf[js.Any],
         "NumberOfNulls" -> NumberOfNulls.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BinaryColumnStatisticsData]
     }
   }
 
-  /**
-    * Defines a boolean column statistics.
+  /** Defines a boolean column statistics.
     */
   @js.native
   trait BooleanColumnStatisticsData extends js.Object {
@@ -1087,7 +1076,6 @@ package glue {
         "NumberOfNulls" -> NumberOfNulls.asInstanceOf[js.Any],
         "NumberOfTrues" -> NumberOfTrues.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BooleanColumnStatisticsData]
     }
   }
@@ -1108,7 +1096,6 @@ package glue {
         "TaskRunId" -> TaskRunId.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelMLTaskRunRequest]
     }
   }
@@ -1144,8 +1131,7 @@ package glue {
     @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
-  /**
-    * Specifies a table definition in the AWS Glue Data Catalog.
+  /** Specifies a table definition in the AWS Glue Data Catalog.
     */
   @js.native
   trait CatalogEntry extends js.Object {
@@ -1163,13 +1149,11 @@ package glue {
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CatalogEntry]
     }
   }
 
-  /**
-    * A structure containing migration status information.
+  /** A structure containing migration status information.
     */
   @js.native
   trait CatalogImportStatus extends js.Object {
@@ -1193,8 +1177,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies an AWS Glue Data Catalog target.
+  /** Specifies an AWS Glue Data Catalog target.
     */
   @js.native
   trait CatalogTarget extends js.Object {
@@ -1212,14 +1195,12 @@ package glue {
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Tables" -> Tables.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CatalogTarget]
     }
   }
 
-  /**
-    * Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.
-    *  You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
+  /** Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.
+    * You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
     */
   @js.native
   trait Classifier extends js.Object {
@@ -1246,8 +1227,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies how Amazon CloudWatch data should be encrypted.
+  /** Specifies how Amazon CloudWatch data should be encrypted.
     */
   @js.native
   trait CloudWatchEncryption extends js.Object {
@@ -1277,8 +1257,7 @@ package glue {
     @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
-  /**
-    * Represents a directional edge in a directed acyclic graph (DAG).
+  /** Represents a directional edge in a directed acyclic graph (DAG).
     */
   @js.native
   trait CodeGenEdge extends js.Object {
@@ -1304,8 +1283,7 @@ package glue {
     }
   }
 
-  /**
-    * Represents a node in a directed acyclic graph (DAG)
+  /** Represents a node in a directed acyclic graph (DAG)
     */
   @js.native
   trait CodeGenNode extends js.Object {
@@ -1334,8 +1312,7 @@ package glue {
     }
   }
 
-  /**
-    * An argument or property of a node.
+  /** An argument or property of a node.
     */
   @js.native
   trait CodeGenNodeArg extends js.Object {
@@ -1361,8 +1338,7 @@ package glue {
     }
   }
 
-  /**
-    * A column in a <code>Table</code>.
+  /** A column in a <code>Table</code>.
     */
   @js.native
   trait Column extends js.Object {
@@ -1391,8 +1367,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a column containing error.
+  /** Defines a column containing error.
     */
   @js.native
   trait ColumnError extends js.Object {
@@ -1413,8 +1388,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a column statistics.
+  /** Defines a column statistics.
     */
   @js.native
   trait ColumnStatistics extends js.Object {
@@ -1438,13 +1412,11 @@ package glue {
         "ColumnType" -> ColumnType.asInstanceOf[js.Any],
         "StatisticsData" -> StatisticsData.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ColumnStatistics]
     }
   }
 
-  /**
-    * Defines a column statistics data.
+  /** Defines a column statistics data.
     */
   @js.native
   trait ColumnStatisticsData extends js.Object {
@@ -1485,8 +1457,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a column containing error.
+  /** Defines a column containing error.
     */
   @js.native
   trait ColumnStatisticsError extends js.Object {
@@ -1533,8 +1504,7 @@ package glue {
     @inline def values = js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
   }
 
-  /**
-    * Defines a condition under which a trigger fires.
+  /** Defines a condition under which a trigger fires.
     */
   @js.native
   trait Condition extends js.Object {
@@ -1564,9 +1534,8 @@ package glue {
     }
   }
 
-  /**
-    * The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.
-    *  For more information, see [[https://en.wikipedia.org/wiki/Confusion_matrix|Confusion matrix]] in Wikipedia.
+  /** The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.
+    * For more information, see [[https://en.wikipedia.org/wiki/Confusion_matrix|Confusion matrix]] in Wikipedia.
     */
   @js.native
   trait ConfusionMatrix extends js.Object {
@@ -1593,8 +1562,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a connection to a data source.
+  /** Defines a connection to a data source.
     */
   @js.native
   trait Connection extends js.Object {
@@ -1636,8 +1604,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure that is used to specify a connection to create or update.
+  /** A structure that is used to specify a connection to create or update.
     */
   @js.native
   trait ConnectionInput extends js.Object {
@@ -1672,10 +1639,9 @@ package glue {
     }
   }
 
-  /**
-    * The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.
-    *  When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.
-    *  This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
+  /** The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.
+    * When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.
+    * This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
     */
   @js.native
   trait ConnectionPasswordEncryption extends js.Object {
@@ -1723,30 +1689,29 @@ package glue {
     val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
     val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
 
-    @inline def values =
-      js.Array(
-        HOST,
-        PORT,
-        USERNAME,
-        PASSWORD,
-        ENCRYPTED_PASSWORD,
-        JDBC_DRIVER_JAR_URI,
-        JDBC_DRIVER_CLASS_NAME,
-        JDBC_ENGINE,
-        JDBC_ENGINE_VERSION,
-        CONFIG_FILES,
-        INSTANCE_ID,
-        JDBC_CONNECTION_URL,
-        JDBC_ENFORCE_SSL,
-        CUSTOM_JDBC_CERT,
-        SKIP_CUSTOM_JDBC_CERT_VALIDATION,
-        CUSTOM_JDBC_CERT_STRING,
-        CONNECTION_URL,
-        KAFKA_BOOTSTRAP_SERVERS,
-        KAFKA_SSL_ENABLED,
-        KAFKA_CUSTOM_CERT,
-        KAFKA_SKIP_CUSTOM_CERT_VALIDATION
-      )
+    @inline def values = js.Array(
+      HOST,
+      PORT,
+      USERNAME,
+      PASSWORD,
+      ENCRYPTED_PASSWORD,
+      JDBC_DRIVER_JAR_URI,
+      JDBC_DRIVER_CLASS_NAME,
+      JDBC_ENGINE,
+      JDBC_ENGINE_VERSION,
+      CONFIG_FILES,
+      INSTANCE_ID,
+      JDBC_CONNECTION_URL,
+      JDBC_ENFORCE_SSL,
+      CUSTOM_JDBC_CERT,
+      SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+      CUSTOM_JDBC_CERT_STRING,
+      CONNECTION_URL,
+      KAFKA_BOOTSTRAP_SERVERS,
+      KAFKA_SSL_ENABLED,
+      KAFKA_CUSTOM_CERT,
+      KAFKA_SKIP_CUSTOM_CERT_VALIDATION
+    )
   }
 
   @js.native
@@ -1761,8 +1726,7 @@ package glue {
     @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK)
   }
 
-  /**
-    * Specifies the connections used by a job.
+  /** Specifies the connections used by a job.
     */
   @js.native
   trait ConnectionsList extends js.Object {
@@ -1780,8 +1744,7 @@ package glue {
     }
   }
 
-  /**
-    * The details of a crawl in the workflow.
+  /** The details of a crawl in the workflow.
     */
   @js.native
   trait Crawl extends js.Object {
@@ -1826,8 +1789,7 @@ package glue {
     @inline def values = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
   }
 
-  /**
-    * Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.
+  /** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.
     */
   @js.native
   trait Crawler extends js.Object {
@@ -1893,8 +1855,7 @@ package glue {
     }
   }
 
-  /**
-    * Metrics for a specified crawler.
+  /** Metrics for a specified crawler.
     */
   @js.native
   trait CrawlerMetrics extends js.Object {
@@ -1933,8 +1894,7 @@ package glue {
     }
   }
 
-  /**
-    * The details of a Crawler node present in the workflow.
+  /** The details of a Crawler node present in the workflow.
     */
   @js.native
   trait CrawlerNodeDetails extends js.Object {
@@ -1962,8 +1922,7 @@ package glue {
     @inline def values = js.Array(READY, RUNNING, STOPPING)
   }
 
-  /**
-    * Specifies data stores to crawl.
+  /** Specifies data stores to crawl.
     */
   @js.native
   trait CrawlerTargets extends js.Object {
@@ -2016,14 +1975,12 @@ package glue {
   }
 
   @js.native
-  trait CreateClassifierResponse extends js.Object {}
+  trait CreateClassifierResponse extends js.Object
 
   object CreateClassifierResponse {
     @inline
-    def apply(
-    ): CreateClassifierResponse = {
+    def apply(): CreateClassifierResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateClassifierResponse]
     }
   }
@@ -2050,14 +2007,12 @@ package glue {
   }
 
   @js.native
-  trait CreateConnectionResponse extends js.Object {}
+  trait CreateConnectionResponse extends js.Object
 
   object CreateConnectionResponse {
     @inline
-    def apply(
-    ): CreateConnectionResponse = {
+    def apply(): CreateConnectionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateConnectionResponse]
     }
   }
@@ -2114,20 +2069,17 @@ package glue {
   }
 
   @js.native
-  trait CreateCrawlerResponse extends js.Object {}
+  trait CreateCrawlerResponse extends js.Object
 
   object CreateCrawlerResponse {
     @inline
-    def apply(
-    ): CreateCrawlerResponse = {
+    def apply(): CreateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateCrawlerResponse]
     }
   }
 
-  /**
-    * Specifies a custom CSV classifier for <code>CreateClassifier</code> to create.
+  /** Specifies a custom CSV classifier for <code>CreateClassifier</code> to create.
     */
   @js.native
   trait CreateCsvClassifierRequest extends js.Object {
@@ -2187,14 +2139,12 @@ package glue {
   }
 
   @js.native
-  trait CreateDatabaseResponse extends js.Object {}
+  trait CreateDatabaseResponse extends js.Object
 
   object CreateDatabaseResponse {
     @inline
-    def apply(
-    ): CreateDatabaseResponse = {
+    def apply(): CreateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateDatabaseResponse]
     }
   }
@@ -2329,8 +2279,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.
+  /** Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.
     */
   @js.native
   trait CreateGrokClassifierRequest extends js.Object {
@@ -2447,8 +2396,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a JSON classifier for <code>CreateClassifier</code> to create.
+  /** Specifies a JSON classifier for <code>CreateClassifier</code> to create.
     */
   @js.native
   trait CreateJsonClassifierRequest extends js.Object {
@@ -2466,7 +2414,6 @@ package glue {
         "JsonPath" -> JsonPath.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateJsonClassifierRequest]
     }
   }
@@ -2566,14 +2513,12 @@ package glue {
   }
 
   @js.native
-  trait CreatePartitionResponse extends js.Object {}
+  trait CreatePartitionResponse extends js.Object
 
   object CreatePartitionResponse {
     @inline
-    def apply(
-    ): CreatePartitionResponse = {
+    def apply(): CreatePartitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreatePartitionResponse]
     }
   }
@@ -2635,7 +2580,6 @@ package glue {
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSecurityConfigurationRequest]
     }
   }
@@ -2684,14 +2628,12 @@ package glue {
   }
 
   @js.native
-  trait CreateTableResponse extends js.Object {}
+  trait CreateTableResponse extends js.Object
 
   object CreateTableResponse {
     @inline
-    def apply(
-    ): CreateTableResponse = {
+    def apply(): CreateTableResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateTableResponse]
     }
   }
@@ -2779,14 +2721,12 @@ package glue {
   }
 
   @js.native
-  trait CreateUserDefinedFunctionResponse extends js.Object {}
+  trait CreateUserDefinedFunctionResponse extends js.Object
 
   object CreateUserDefinedFunctionResponse {
     @inline
-    def apply(
-    ): CreateUserDefinedFunctionResponse = {
+    def apply(): CreateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateUserDefinedFunctionResponse]
     }
   }
@@ -2837,8 +2777,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies an XML classifier for <code>CreateClassifier</code> to create.
+  /** Specifies an XML classifier for <code>CreateClassifier</code> to create.
     */
   @js.native
   trait CreateXMLClassifierRequest extends js.Object {
@@ -2864,8 +2803,7 @@ package glue {
     }
   }
 
-  /**
-    * A classifier for custom <code>CSV</code> content.
+  /** A classifier for custom <code>CSV</code> content.
     */
   @js.native
   trait CsvClassifier extends js.Object {
@@ -2922,8 +2860,7 @@ package glue {
     @inline def values = js.Array(UNKNOWN, PRESENT, ABSENT)
   }
 
-  /**
-    * Contains configuration information for maintaining Data Catalog security.
+  /** Contains configuration information for maintaining Data Catalog security.
     */
   @js.native
   trait DataCatalogEncryptionSettings extends js.Object {
@@ -2944,8 +2881,7 @@ package glue {
     }
   }
 
-  /**
-    * The AWS Lake Formation principal.
+  /** The AWS Lake Formation principal.
     */
   @js.native
   trait DataLakePrincipal extends js.Object {
@@ -2963,8 +2899,7 @@ package glue {
     }
   }
 
-  /**
-    * The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.
+  /** The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.
     */
   @js.native
   trait Database extends js.Object {
@@ -3005,8 +2940,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure that describes a target database for resource linking.
+  /** A structure that describes a target database for resource linking.
     */
   @js.native
   trait DatabaseIdentifier extends js.Object {
@@ -3027,8 +2961,7 @@ package glue {
     }
   }
 
-  /**
-    * The structure used to create or update a database.
+  /** The structure used to create or update a database.
     */
   @js.native
   trait DatabaseInput extends js.Object {
@@ -3063,8 +2996,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a date column statistics data.
+  /** Defines a date column statistics data.
     */
   @js.native
   trait DateColumnStatisticsData extends js.Object {
@@ -3093,8 +3025,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a decimal column statistics data.
+  /** Defines a decimal column statistics data.
     */
   @js.native
   trait DecimalColumnStatisticsData extends js.Object {
@@ -3123,8 +3054,7 @@ package glue {
     }
   }
 
-  /**
-    * Contains a numeric value in decimal format.
+  /** Contains a numeric value in decimal format.
     */
   @js.native
   trait DecimalNumber extends js.Object {
@@ -3142,7 +3072,6 @@ package glue {
         "Scale" -> Scale.asInstanceOf[js.Any],
         "UnscaledValue" -> UnscaledValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DecimalNumber]
     }
   }
@@ -3170,20 +3099,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClassifierRequest]
     }
   }
 
   @js.native
-  trait DeleteClassifierResponse extends js.Object {}
+  trait DeleteClassifierResponse extends js.Object
 
   object DeleteClassifierResponse {
     @inline
-    def apply(
-    ): DeleteClassifierResponse = {
+    def apply(): DeleteClassifierResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteClassifierResponse]
     }
   }
@@ -3219,14 +3145,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteColumnStatisticsForPartitionResponse extends js.Object {}
+  trait DeleteColumnStatisticsForPartitionResponse extends js.Object
 
   object DeleteColumnStatisticsForPartitionResponse {
     @inline
-    def apply(
-    ): DeleteColumnStatisticsForPartitionResponse = {
+    def apply(): DeleteColumnStatisticsForPartitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteColumnStatisticsForPartitionResponse]
     }
   }
@@ -3259,14 +3183,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteColumnStatisticsForTableResponse extends js.Object {}
+  trait DeleteColumnStatisticsForTableResponse extends js.Object
 
   object DeleteColumnStatisticsForTableResponse {
     @inline
-    def apply(
-    ): DeleteColumnStatisticsForTableResponse = {
+    def apply(): DeleteColumnStatisticsForTableResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteColumnStatisticsForTableResponse]
     }
   }
@@ -3293,14 +3215,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteConnectionResponse extends js.Object {}
+  trait DeleteConnectionResponse extends js.Object
 
   object DeleteConnectionResponse {
     @inline
-    def apply(
-    ): DeleteConnectionResponse = {
+    def apply(): DeleteConnectionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConnectionResponse]
     }
   }
@@ -3318,20 +3238,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCrawlerRequest]
     }
   }
 
   @js.native
-  trait DeleteCrawlerResponse extends js.Object {}
+  trait DeleteCrawlerResponse extends js.Object
 
   object DeleteCrawlerResponse {
     @inline
-    def apply(
-    ): DeleteCrawlerResponse = {
+    def apply(): DeleteCrawlerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCrawlerResponse]
     }
   }
@@ -3358,14 +3275,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteDatabaseResponse extends js.Object {}
+  trait DeleteDatabaseResponse extends js.Object
 
   object DeleteDatabaseResponse {
     @inline
-    def apply(
-    ): DeleteDatabaseResponse = {
+    def apply(): DeleteDatabaseResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDatabaseResponse]
     }
   }
@@ -3383,20 +3298,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDevEndpointRequest]
     }
   }
 
   @js.native
-  trait DeleteDevEndpointResponse extends js.Object {}
+  trait DeleteDevEndpointResponse extends js.Object
 
   object DeleteDevEndpointResponse {
     @inline
-    def apply(
-    ): DeleteDevEndpointResponse = {
+    def apply(): DeleteDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDevEndpointResponse]
     }
   }
@@ -3414,7 +3326,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJobRequest]
     }
   }
@@ -3448,7 +3359,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMLTransformRequest]
     }
   }
@@ -3497,14 +3407,12 @@ package glue {
   }
 
   @js.native
-  trait DeletePartitionResponse extends js.Object {}
+  trait DeletePartitionResponse extends js.Object
 
   object DeletePartitionResponse {
     @inline
-    def apply(
-    ): DeletePartitionResponse = {
+    def apply(): DeletePartitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeletePartitionResponse]
     }
   }
@@ -3529,14 +3437,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteResourcePolicyResponse extends js.Object {}
+  trait DeleteResourcePolicyResponse extends js.Object
 
   object DeleteResourcePolicyResponse {
     @inline
-    def apply(
-    ): DeleteResourcePolicyResponse = {
+    def apply(): DeleteResourcePolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
   }
@@ -3554,20 +3460,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSecurityConfigurationRequest]
     }
   }
 
   @js.native
-  trait DeleteSecurityConfigurationResponse extends js.Object {}
+  trait DeleteSecurityConfigurationResponse extends js.Object
 
   object DeleteSecurityConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteSecurityConfigurationResponse = {
+    def apply(): DeleteSecurityConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSecurityConfigurationResponse]
     }
   }
@@ -3597,14 +3500,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteTableResponse extends js.Object {}
+  trait DeleteTableResponse extends js.Object
 
   object DeleteTableResponse {
     @inline
-    def apply(
-    ): DeleteTableResponse = {
+    def apply(): DeleteTableResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTableResponse]
     }
   }
@@ -3637,14 +3538,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteTableVersionResponse extends js.Object {}
+  trait DeleteTableVersionResponse extends js.Object
 
   object DeleteTableVersionResponse {
     @inline
-    def apply(
-    ): DeleteTableVersionResponse = {
+    def apply(): DeleteTableVersionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTableVersionResponse]
     }
   }
@@ -3662,7 +3561,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTriggerRequest]
     }
   }
@@ -3708,14 +3606,12 @@ package glue {
   }
 
   @js.native
-  trait DeleteUserDefinedFunctionResponse extends js.Object {}
+  trait DeleteUserDefinedFunctionResponse extends js.Object
 
   object DeleteUserDefinedFunctionResponse {
     @inline
-    def apply(
-    ): DeleteUserDefinedFunctionResponse = {
+    def apply(): DeleteUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUserDefinedFunctionResponse]
     }
   }
@@ -3733,7 +3629,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWorkflowRequest]
     }
   }
@@ -3754,8 +3649,7 @@ package glue {
     }
   }
 
-  /**
-    * A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts.
+  /** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts.
     */
   @js.native
   trait DevEndpoint extends js.Object {
@@ -3845,8 +3739,7 @@ package glue {
     }
   }
 
-  /**
-    * Custom libraries to be loaded into a development endpoint.
+  /** Custom libraries to be loaded into a development endpoint.
     */
   @js.native
   trait DevEndpointCustomLibraries extends js.Object {
@@ -3867,8 +3760,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a double column statistics data.
+  /** Defines a double column statistics data.
     */
   @js.native
   trait DoubleColumnStatisticsData extends js.Object {
@@ -3897,8 +3789,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies an Amazon DynamoDB table to crawl.
+  /** Specifies an Amazon DynamoDB table to crawl.
     */
   @js.native
   trait DynamoDBTarget extends js.Object {
@@ -3922,8 +3813,7 @@ package glue {
     }
   }
 
-  /**
-    * An edge represents a directed connection between two AWS Glue components that are part of the workflow the edge belongs to.
+  /** An edge represents a directed connection between two AWS Glue components that are part of the workflow the edge belongs to.
     */
   @js.native
   trait Edge extends js.Object {
@@ -3953,8 +3843,7 @@ package glue {
     @inline def values = js.Array(TRUE, FALSE)
   }
 
-  /**
-    * Specifies the encryption-at-rest configuration for the Data Catalog.
+  /** Specifies the encryption-at-rest configuration for the Data Catalog.
     */
   @js.native
   trait EncryptionAtRest extends js.Object {
@@ -3977,8 +3866,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies an encryption configuration.
+  /** Specifies an encryption configuration.
     */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -4002,8 +3890,7 @@ package glue {
     }
   }
 
-  /**
-    * Contains details about an error.
+  /** Contains details about an error.
     */
   @js.native
   trait ErrorDetail extends js.Object {
@@ -4024,8 +3911,7 @@ package glue {
     }
   }
 
-  /**
-    * Evaluation metrics provide an estimate of the quality of your machine learning transform.
+  /** Evaluation metrics provide an estimate of the quality of your machine learning transform.
     */
   @js.native
   trait EvaluationMetrics extends js.Object {
@@ -4048,8 +3934,7 @@ package glue {
     }
   }
 
-  /**
-    * An execution property of a job.
+  /** An execution property of a job.
     */
   @js.native
   trait ExecutionProperty extends js.Object {
@@ -4077,8 +3962,7 @@ package glue {
     @inline def values = js.Array(MUST_EXIST, NOT_EXIST, NONE)
   }
 
-  /**
-    * Specifies configuration properties for an exporting labels task run.
+  /** Specifies configuration properties for an exporting labels task run.
     */
   @js.native
   trait ExportLabelsTaskRunProperties extends js.Object {
@@ -4096,8 +3980,7 @@ package glue {
     }
   }
 
-  /**
-    * The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.
+  /** The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.
     */
   @js.native
   trait FindMatchesMetrics extends js.Object {
@@ -4127,8 +4010,7 @@ package glue {
     }
   }
 
-  /**
-    * The parameters to configure the find matches transform.
+  /** The parameters to configure the find matches transform.
     */
   @js.native
   trait FindMatchesParameters extends js.Object {
@@ -4155,8 +4037,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies configuration properties for a Find Matches task run.
+  /** Specifies configuration properties for a Find Matches task run.
     */
   @js.native
   trait FindMatchesTaskRunProperties extends js.Object {
@@ -4225,7 +4106,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetClassifierRequest]
     }
   }
@@ -4419,8 +4299,7 @@ package glue {
     }
   }
 
-  /**
-    * Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.
+  /** Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.
     */
   @js.native
   trait GetConnectionsFilter extends js.Object {
@@ -4542,7 +4421,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCrawlerRequest]
     }
   }
@@ -4764,7 +4642,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDevEndpointRequest]
     }
   }
@@ -4873,7 +4750,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobRequest]
     }
   }
@@ -5031,7 +4907,6 @@ package glue {
         "TaskRunId" -> TaskRunId.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMLTaskRunRequest]
     }
   }
@@ -5141,7 +5016,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMLTransformRequest]
     }
   }
@@ -5296,7 +5170,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Mapping" -> Mapping.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetMappingResponse]
     }
   }
@@ -5540,7 +5413,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSecurityConfigurationRequest]
     }
   }
@@ -5793,7 +5665,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTagsRequest]
     }
   }
@@ -5827,7 +5698,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTriggerRequest]
     }
   }
@@ -6031,7 +5901,6 @@ package glue {
         "Name" -> Name.asInstanceOf[js.Any],
         "RunId" -> RunId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetWorkflowRunPropertiesRequest]
     }
   }
@@ -6138,8 +6007,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure for returning a resource policy.
+  /** A structure for returning a resource policy.
     */
   @js.native
   trait GluePolicy extends js.Object {
@@ -6166,8 +6034,7 @@ package glue {
     }
   }
 
-  /**
-    * The database and table in the AWS Glue Data Catalog that is used for input or output data.
+  /** The database and table in the AWS Glue Data Catalog that is used for input or output data.
     */
   @js.native
   trait GlueTable extends js.Object {
@@ -6196,8 +6063,7 @@ package glue {
     }
   }
 
-  /**
-    * A classifier that uses <code>grok</code> patterns.
+  /** A classifier that uses <code>grok</code> patterns.
     */
   @js.native
   trait GrokClassifier extends js.Object {
@@ -6252,20 +6118,17 @@ package glue {
   }
 
   @js.native
-  trait ImportCatalogToGlueResponse extends js.Object {}
+  trait ImportCatalogToGlueResponse extends js.Object
 
   object ImportCatalogToGlueResponse {
     @inline
-    def apply(
-    ): ImportCatalogToGlueResponse = {
+    def apply(): ImportCatalogToGlueResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImportCatalogToGlueResponse]
     }
   }
 
-  /**
-    * Specifies configuration properties for an importing labels task run.
+  /** Specifies configuration properties for an importing labels task run.
     */
   @js.native
   trait ImportLabelsTaskRunProperties extends js.Object {
@@ -6286,8 +6149,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a JDBC data store to crawl.
+  /** Specifies a JDBC data store to crawl.
     */
   @js.native
   trait JdbcTarget extends js.Object {
@@ -6311,8 +6173,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a job definition.
+  /** Specifies a job definition.
     */
   @js.native
   trait Job extends js.Object {
@@ -6387,8 +6248,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a point that a job can resume processing.
+  /** Defines a point that a job can resume processing.
     */
   @js.native
   trait JobBookmarkEntry extends js.Object {
@@ -6424,8 +6284,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies how job bookmark data should be encrypted.
+  /** Specifies how job bookmark data should be encrypted.
     */
   @js.native
   trait JobBookmarksEncryption extends js.Object {
@@ -6455,8 +6314,7 @@ package glue {
     @inline def values = js.Array(DISABLED, `CSE-KMS`)
   }
 
-  /**
-    * Specifies code executed when a job is run.
+  /** Specifies code executed when a job is run.
     */
   @js.native
   trait JobCommand extends js.Object {
@@ -6480,8 +6338,7 @@ package glue {
     }
   }
 
-  /**
-    * The details of a Job node present in the workflow.
+  /** The details of a Job node present in the workflow.
     */
   @js.native
   trait JobNodeDetails extends js.Object {
@@ -6499,8 +6356,7 @@ package glue {
     }
   }
 
-  /**
-    * Contains information about a job run.
+  /** Contains information about a job run.
     */
   @js.native
   trait JobRun extends js.Object {
@@ -6595,8 +6451,7 @@ package glue {
     @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
   }
 
-  /**
-    * Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information.
+  /** Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information.
     */
   @js.native
   trait JobUpdate extends js.Object {
@@ -6662,8 +6517,7 @@ package glue {
     }
   }
 
-  /**
-    * A classifier for <code>JSON</code> content.
+  /** A classifier for <code>JSON</code> content.
     */
   @js.native
   trait JsonClassifier extends js.Object {
@@ -6695,8 +6549,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies configuration properties for a labeling set generation task run.
+  /** Specifies configuration properties for a labeling set generation task run.
     */
   @js.native
   trait LabelingSetGenerationTaskRunProperties extends js.Object {
@@ -6723,8 +6576,7 @@ package glue {
     @inline def values = js.Array(PYTHON, SCALA)
   }
 
-  /**
-    * Status and error information about the most recent crawl.
+  /** Status and error information about the most recent crawl.
     */
   @js.native
   trait LastCrawlInfo extends js.Object {
@@ -7021,8 +6873,7 @@ package glue {
     }
   }
 
-  /**
-    * The location of resources.
+  /** The location of resources.
     */
   @js.native
   trait Location extends js.Object {
@@ -7063,8 +6914,7 @@ package glue {
     @inline def values = js.Array(EQUALS)
   }
 
-  /**
-    * Defines a long column statistics data.
+  /** Defines a long column statistics data.
     */
   @js.native
   trait LongColumnStatisticsData extends js.Object {
@@ -7093,8 +6943,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure for a machine learning transform.
+  /** A structure for a machine learning transform.
     */
   @js.native
   trait MLTransform extends js.Object {
@@ -7163,8 +7012,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a mapping.
+  /** Defines a mapping.
     */
   @js.native
   trait MappingEntry extends js.Object {
@@ -7197,8 +7045,7 @@ package glue {
     }
   }
 
-  /**
-    * A node represents an AWS Glue component such as a trigger, or job, etc., that is part of a workflow.
+  /** A node represents an AWS Glue component such as a trigger, or job, etc., that is part of a workflow.
     */
   @js.native
   trait Node extends js.Object {
@@ -7241,8 +7088,7 @@ package glue {
     @inline def values = js.Array(CRAWLER, JOB, TRIGGER)
   }
 
-  /**
-    * Specifies configuration properties of a notification.
+  /** Specifies configuration properties of a notification.
     */
   @js.native
   trait NotificationProperty extends js.Object {
@@ -7260,8 +7106,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies the sort order of a sorted column.
+  /** Specifies the sort order of a sorted column.
     */
   @js.native
   trait Order extends js.Object {
@@ -7279,13 +7124,11 @@ package glue {
         "Column" -> Column.asInstanceOf[js.Any],
         "SortOrder" -> SortOrder.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Order]
     }
   }
 
-  /**
-    * Represents a slice of table data.
+  /** Represents a slice of table data.
     */
   @js.native
   trait Partition extends js.Object {
@@ -7327,8 +7170,7 @@ package glue {
     }
   }
 
-  /**
-    * Contains information about a partition error.
+  /** Contains information about a partition error.
     */
   @js.native
   trait PartitionError extends js.Object {
@@ -7349,8 +7191,7 @@ package glue {
     }
   }
 
-  /**
-    * The structure used to create and update a partition.
+  /** The structure used to create and update a partition.
     */
   @js.native
   trait PartitionInput extends js.Object {
@@ -7380,8 +7221,7 @@ package glue {
     }
   }
 
-  /**
-    * Contains a list of values defining partitions.
+  /** Contains a list of values defining partitions.
     */
   @js.native
   trait PartitionValueList extends js.Object {
@@ -7396,7 +7236,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PartitionValueList]
     }
   }
@@ -7417,8 +7256,7 @@ package glue {
     @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
   }
 
-  /**
-    * Specifies the physical requirements for a connection.
+  /** Specifies the physical requirements for a connection.
     */
   @js.native
   trait PhysicalConnectionRequirements extends js.Object {
@@ -7442,8 +7280,7 @@ package glue {
     }
   }
 
-  /**
-    * A job run that was used in the predicate of a conditional trigger that triggered this job run.
+  /** A job run that was used in the predicate of a conditional trigger that triggered this job run.
     */
   @js.native
   trait Predecessor extends js.Object {
@@ -7464,8 +7301,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines the predicate of the trigger, which determines when it fires.
+  /** Defines the predicate of the trigger, which determines when it fires.
     */
   @js.native
   trait Predicate extends js.Object {
@@ -7486,8 +7322,7 @@ package glue {
     }
   }
 
-  /**
-    * Permissions granted to a principal.
+  /** Permissions granted to a principal.
     */
   @js.native
   trait PrincipalPermissions extends js.Object {
@@ -7518,8 +7353,7 @@ package glue {
     @inline def values = js.Array(USER, ROLE, GROUP)
   }
 
-  /**
-    * Defines a property predicate.
+  /** Defines a property predicate.
     */
   @js.native
   trait PropertyPredicate extends js.Object {
@@ -7565,14 +7399,12 @@ package glue {
   }
 
   @js.native
-  trait PutDataCatalogEncryptionSettingsResponse extends js.Object {}
+  trait PutDataCatalogEncryptionSettingsResponse extends js.Object
 
   object PutDataCatalogEncryptionSettingsResponse {
     @inline
-    def apply(
-    ): PutDataCatalogEncryptionSettingsResponse = {
+    def apply(): PutDataCatalogEncryptionSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutDataCatalogEncryptionSettingsResponse]
     }
   }
@@ -7642,20 +7474,17 @@ package glue {
         "RunId" -> RunId.asInstanceOf[js.Any],
         "RunProperties" -> RunProperties.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutWorkflowRunPropertiesRequest]
     }
   }
 
   @js.native
-  trait PutWorkflowRunPropertiesResponse extends js.Object {}
+  trait PutWorkflowRunPropertiesResponse extends js.Object
 
   object PutWorkflowRunPropertiesResponse {
     @inline
-    def apply(
-    ): PutWorkflowRunPropertiesResponse = {
+    def apply(): PutWorkflowRunPropertiesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutWorkflowRunPropertiesResponse]
     }
   }
@@ -7716,8 +7545,7 @@ package glue {
     @inline def values = js.Array(JAR, FILE, ARCHIVE)
   }
 
-  /**
-    * The URIs for function resources.
+  /** The URIs for function resources.
     */
   @js.native
   trait ResourceUri extends js.Object {
@@ -7757,7 +7585,6 @@ package glue {
         "NodeIds" -> NodeIds.asInstanceOf[js.Any],
         "RunId" -> RunId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResumeWorkflowRunRequest]
     }
   }
@@ -7781,8 +7608,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
+  /** Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
     */
   @js.native
   trait S3Encryption extends js.Object {
@@ -7813,8 +7639,7 @@ package glue {
     @inline def values = js.Array(DISABLED, `SSE-KMS`, `SSE-S3`)
   }
 
-  /**
-    * Specifies a data store in Amazon Simple Storage Service (Amazon S3).
+  /** Specifies a data store in Amazon Simple Storage Service (Amazon S3).
     */
   @js.native
   trait S3Target extends js.Object {
@@ -7838,8 +7663,7 @@ package glue {
     }
   }
 
-  /**
-    * A scheduling object using a <code>cron</code> statement to schedule an event.
+  /** A scheduling object using a <code>cron</code> statement to schedule an event.
     */
   @js.native
   trait Schedule extends js.Object {
@@ -7870,8 +7694,7 @@ package glue {
     @inline def values = js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING)
   }
 
-  /**
-    * A policy that specifies update and deletion behaviors for the crawler.
+  /** A policy that specifies update and deletion behaviors for the crawler.
     */
   @js.native
   trait SchemaChangePolicy extends js.Object {
@@ -7892,8 +7715,7 @@ package glue {
     }
   }
 
-  /**
-    * A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.
+  /** A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.
     */
   @js.native
   trait SchemaColumn extends js.Object {
@@ -7967,8 +7789,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a security configuration.
+  /** Specifies a security configuration.
     */
   @js.native
   trait SecurityConfiguration extends js.Object {
@@ -7992,8 +7813,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel.
+  /** Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel.
     */
   @js.native
   trait Segment extends js.Object {
@@ -8011,13 +7831,11 @@ package glue {
         "SegmentNumber" -> SegmentNumber.asInstanceOf[js.Any],
         "TotalSegments" -> TotalSegments.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Segment]
     }
   }
 
-  /**
-    * Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
+  /** Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
     */
   @js.native
   trait SerDeInfo extends js.Object {
@@ -8041,8 +7859,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
+  /** Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
     */
   @js.native
   trait SkewedInfo extends js.Object {
@@ -8075,8 +7892,7 @@ package glue {
     @inline def values = js.Array(ASC, DESC)
   }
 
-  /**
-    * Specifies a field to sort by and a sort order.
+  /** Specifies a field to sort by and a sort order.
     */
   @js.native
   trait SortCriterion extends js.Object {
@@ -8119,20 +7935,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartCrawlerRequest]
     }
   }
 
   @js.native
-  trait StartCrawlerResponse extends js.Object {}
+  trait StartCrawlerResponse extends js.Object
 
   object StartCrawlerResponse {
     @inline
-    def apply(
-    ): StartCrawlerResponse = {
+    def apply(): StartCrawlerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartCrawlerResponse]
     }
   }
@@ -8150,20 +7963,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartCrawlerScheduleRequest]
     }
   }
 
   @js.native
-  trait StartCrawlerScheduleResponse extends js.Object {}
+  trait StartCrawlerScheduleResponse extends js.Object
 
   object StartCrawlerScheduleResponse {
     @inline
-    def apply(
-    ): StartCrawlerScheduleResponse = {
+    def apply(): StartCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StartCrawlerScheduleResponse]
     }
   }
@@ -8184,7 +7994,6 @@ package glue {
         "OutputS3Path" -> OutputS3Path.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartExportLabelsTaskRunRequest]
     }
   }
@@ -8319,7 +8128,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMLEvaluationTaskRunRequest]
     }
   }
@@ -8356,7 +8164,6 @@ package glue {
         "OutputS3Path" -> OutputS3Path.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMLLabelingSetGenerationTaskRunRequest]
     }
   }
@@ -8390,7 +8197,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartTriggerRequest]
     }
   }
@@ -8424,7 +8230,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartWorkflowRunRequest]
     }
   }
@@ -8458,20 +8263,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopCrawlerRequest]
     }
   }
 
   @js.native
-  trait StopCrawlerResponse extends js.Object {}
+  trait StopCrawlerResponse extends js.Object
 
   object StopCrawlerResponse {
     @inline
-    def apply(
-    ): StopCrawlerResponse = {
+    def apply(): StopCrawlerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopCrawlerResponse]
     }
   }
@@ -8489,20 +8291,17 @@ package glue {
       val __obj = js.Dynamic.literal(
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopCrawlerScheduleRequest]
     }
   }
 
   @js.native
-  trait StopCrawlerScheduleResponse extends js.Object {}
+  trait StopCrawlerScheduleResponse extends js.Object
 
   object StopCrawlerScheduleResponse {
     @inline
-    def apply(
-    ): StopCrawlerScheduleResponse = {
+    def apply(): StopCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopCrawlerScheduleResponse]
     }
   }
@@ -8520,7 +8319,6 @@ package glue {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopTriggerRequest]
     }
   }
@@ -8557,26 +8355,22 @@ package glue {
         "Name" -> Name.asInstanceOf[js.Any],
         "RunId" -> RunId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopWorkflowRunRequest]
     }
   }
 
   @js.native
-  trait StopWorkflowRunResponse extends js.Object {}
+  trait StopWorkflowRunResponse extends js.Object
 
   object StopWorkflowRunResponse {
     @inline
-    def apply(
-    ): StopWorkflowRunResponse = {
+    def apply(): StopWorkflowRunResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopWorkflowRunResponse]
     }
   }
 
-  /**
-    * Describes the physical storage of table data.
+  /** Describes the physical storage of table data.
     */
   @js.native
   trait StorageDescriptor extends js.Object {
@@ -8627,8 +8421,7 @@ package glue {
     }
   }
 
-  /**
-    * Defines a string column statistics data.
+  /** Defines a string column statistics data.
     */
   @js.native
   trait StringColumnStatisticsData extends js.Object {
@@ -8652,13 +8445,11 @@ package glue {
         "NumberOfDistinctValues" -> NumberOfDistinctValues.asInstanceOf[js.Any],
         "NumberOfNulls" -> NumberOfNulls.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StringColumnStatisticsData]
     }
   }
 
-  /**
-    * Represents a collection of related data organized in columns and rows.
+  /** Represents a collection of related data organized in columns and rows.
     */
   @js.native
   trait Table extends js.Object {
@@ -8732,8 +8523,7 @@ package glue {
     }
   }
 
-  /**
-    * An error record for table operations.
+  /** An error record for table operations.
     */
   @js.native
   trait TableError extends js.Object {
@@ -8754,8 +8544,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure that describes a target table for resource linking.
+  /** A structure that describes a target table for resource linking.
     */
   @js.native
   trait TableIdentifier extends js.Object {
@@ -8779,8 +8568,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure used to define a table.
+  /** A structure used to define a table.
     */
   @js.native
   trait TableInput extends js.Object {
@@ -8836,8 +8624,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a version of a table.
+  /** Specifies a version of a table.
     */
   @js.native
   trait TableVersion extends js.Object {
@@ -8858,8 +8645,7 @@ package glue {
     }
   }
 
-  /**
-    * An error record for table-version operations.
+  /** An error record for table-version operations.
     */
   @js.native
   trait TableVersionError extends js.Object {
@@ -8899,26 +8685,22 @@ package glue {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsToAdd" -> TagsToAdd.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
-  /**
-    * The sampling parameters that are associated with the machine learning transform.
+  /** The sampling parameters that are associated with the machine learning transform.
     */
   @js.native
   trait TaskRun extends js.Object {
@@ -8963,8 +8745,7 @@ package glue {
     }
   }
 
-  /**
-    * The criteria that are used to filter the task runs for the machine learning transform.
+  /** The criteria that are used to filter the task runs for the machine learning transform.
     */
   @js.native
   trait TaskRunFilterCriteria extends js.Object {
@@ -8991,8 +8772,7 @@ package glue {
     }
   }
 
-  /**
-    * The configuration properties for the task run.
+  /** The configuration properties for the task run.
     */
   @js.native
   trait TaskRunProperties extends js.Object {
@@ -9032,8 +8812,7 @@ package glue {
     @inline def values = js.Array(TASK_RUN_TYPE, STATUS, STARTED)
   }
 
-  /**
-    * The sorting criteria that are used to sort the list of task runs for the machine learning transform.
+  /** The sorting criteria that are used to sort the list of task runs for the machine learning transform.
     */
   @js.native
   trait TaskRunSortCriteria extends js.Object {
@@ -9051,7 +8830,6 @@ package glue {
         "Column" -> Column.asInstanceOf[js.Any],
         "SortDirection" -> SortDirection.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TaskRunSortCriteria]
     }
   }
@@ -9082,8 +8860,7 @@ package glue {
     @inline def values = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
   }
 
-  /**
-    * The criteria used to filter the machine learning transforms.
+  /** The criteria used to filter the machine learning transforms.
     */
   @js.native
   trait TransformFilterCriteria extends js.Object {
@@ -9125,8 +8902,7 @@ package glue {
     }
   }
 
-  /**
-    * The algorithm-specific parameters that are associated with the machine learning transform.
+  /** The algorithm-specific parameters that are associated with the machine learning transform.
     */
   @js.native
   trait TransformParameters extends js.Object {
@@ -9161,8 +8937,7 @@ package glue {
     @inline def values = js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED)
   }
 
-  /**
-    * The sorting criteria that are associated with the machine learning transform.
+  /** The sorting criteria that are associated with the machine learning transform.
     */
   @js.native
   trait TransformSortCriteria extends js.Object {
@@ -9180,7 +8955,6 @@ package glue {
         "Column" -> Column.asInstanceOf[js.Any],
         "SortDirection" -> SortDirection.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TransformSortCriteria]
     }
   }
@@ -9203,8 +8977,7 @@ package glue {
     @inline def values = js.Array(FIND_MATCHES)
   }
 
-  /**
-    * Information about a specific trigger.
+  /** Information about a specific trigger.
     */
   @js.native
   trait Trigger extends js.Object {
@@ -9246,8 +9019,7 @@ package glue {
     }
   }
 
-  /**
-    * The details of a Trigger node present in the workflow.
+  /** The details of a Trigger node present in the workflow.
     */
   @js.native
   trait TriggerNodeDetails extends js.Object {
@@ -9290,8 +9062,7 @@ package glue {
     @inline def values = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND)
   }
 
-  /**
-    * A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.
+  /** A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.
     */
   @js.native
   trait TriggerUpdate extends js.Object {
@@ -9337,20 +9108,17 @@ package glue {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsToRemove" -> TagsToRemove.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -9390,14 +9158,12 @@ package glue {
   }
 
   @js.native
-  trait UpdateClassifierResponse extends js.Object {}
+  trait UpdateClassifierResponse extends js.Object
 
   object UpdateClassifierResponse {
     @inline
-    def apply(
-    ): UpdateClassifierResponse = {
+    def apply(): UpdateClassifierResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateClassifierResponse]
     }
   }
@@ -9516,14 +9282,12 @@ package glue {
   }
 
   @js.native
-  trait UpdateConnectionResponse extends js.Object {}
+  trait UpdateConnectionResponse extends js.Object
 
   object UpdateConnectionResponse {
     @inline
-    def apply(
-    ): UpdateConnectionResponse = {
+    def apply(): UpdateConnectionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateConnectionResponse]
     }
   }
@@ -9577,14 +9341,12 @@ package glue {
   }
 
   @js.native
-  trait UpdateCrawlerResponse extends js.Object {}
+  trait UpdateCrawlerResponse extends js.Object
 
   object UpdateCrawlerResponse {
     @inline
-    def apply(
-    ): UpdateCrawlerResponse = {
+    def apply(): UpdateCrawlerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCrawlerResponse]
     }
   }
@@ -9611,20 +9373,17 @@ package glue {
   }
 
   @js.native
-  trait UpdateCrawlerScheduleResponse extends js.Object {}
+  trait UpdateCrawlerScheduleResponse extends js.Object
 
   object UpdateCrawlerScheduleResponse {
     @inline
-    def apply(
-    ): UpdateCrawlerScheduleResponse = {
+    def apply(): UpdateCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCrawlerScheduleResponse]
     }
   }
 
-  /**
-    * Specifies a custom CSV classifier to be updated.
+  /** Specifies a custom CSV classifier to be updated.
     */
   @js.native
   trait UpdateCsvClassifierRequest extends js.Object {
@@ -9687,14 +9446,12 @@ package glue {
   }
 
   @js.native
-  trait UpdateDatabaseResponse extends js.Object {}
+  trait UpdateDatabaseResponse extends js.Object
 
   object UpdateDatabaseResponse {
     @inline
-    def apply(
-    ): UpdateDatabaseResponse = {
+    def apply(): UpdateDatabaseResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDatabaseResponse]
     }
   }
@@ -9739,20 +9496,17 @@ package glue {
   }
 
   @js.native
-  trait UpdateDevEndpointResponse extends js.Object {}
+  trait UpdateDevEndpointResponse extends js.Object
 
   object UpdateDevEndpointResponse {
     @inline
-    def apply(
-    ): UpdateDevEndpointResponse = {
+    def apply(): UpdateDevEndpointResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDevEndpointResponse]
     }
   }
 
-  /**
-    * Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.
+  /** Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.
     */
   @js.native
   trait UpdateGrokClassifierRequest extends js.Object {
@@ -9797,7 +9551,6 @@ package glue {
         "JobName" -> JobName.asInstanceOf[js.Any],
         "JobUpdate" -> JobUpdate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJobRequest]
     }
   }
@@ -9818,8 +9571,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies a JSON classifier to be updated.
+  /** Specifies a JSON classifier to be updated.
     */
   @js.native
   trait UpdateJsonClassifierRequest extends js.Object {
@@ -9937,14 +9689,12 @@ package glue {
   }
 
   @js.native
-  trait UpdatePartitionResponse extends js.Object {}
+  trait UpdatePartitionResponse extends js.Object
 
   object UpdatePartitionResponse {
     @inline
-    def apply(
-    ): UpdatePartitionResponse = {
+    def apply(): UpdatePartitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdatePartitionResponse]
     }
   }
@@ -9977,14 +9727,12 @@ package glue {
   }
 
   @js.native
-  trait UpdateTableResponse extends js.Object {}
+  trait UpdateTableResponse extends js.Object
 
   object UpdateTableResponse {
     @inline
-    def apply(
-    ): UpdateTableResponse = {
+    def apply(): UpdateTableResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateTableResponse]
     }
   }
@@ -10005,7 +9753,6 @@ package glue {
         "Name" -> Name.asInstanceOf[js.Any],
         "TriggerUpdate" -> TriggerUpdate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTriggerRequest]
     }
   }
@@ -10054,14 +9801,12 @@ package glue {
   }
 
   @js.native
-  trait UpdateUserDefinedFunctionResponse extends js.Object {}
+  trait UpdateUserDefinedFunctionResponse extends js.Object
 
   object UpdateUserDefinedFunctionResponse {
     @inline
-    def apply(
-    ): UpdateUserDefinedFunctionResponse = {
+    def apply(): UpdateUserDefinedFunctionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateUserDefinedFunctionResponse]
     }
   }
@@ -10109,8 +9854,7 @@ package glue {
     }
   }
 
-  /**
-    * Specifies an XML classifier to be updated.
+  /** Specifies an XML classifier to be updated.
     */
   @js.native
   trait UpdateXMLClassifierRequest extends js.Object {
@@ -10136,8 +9880,7 @@ package glue {
     }
   }
 
-  /**
-    * Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.
+  /** Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.
     */
   @js.native
   trait UserDefinedFunction extends js.Object {
@@ -10176,8 +9919,7 @@ package glue {
     }
   }
 
-  /**
-    * A structure used to create or update a user-defined function.
+  /** A structure used to create or update a user-defined function.
     */
   @js.native
   trait UserDefinedFunctionInput extends js.Object {
@@ -10217,8 +9959,7 @@ package glue {
     @inline def values = js.Array(Standard, `G.1X`, `G.2X`)
   }
 
-  /**
-    * A workflow represents a flow in which AWS Glue components should be executed to complete a logical task.
+  /** A workflow represents a flow in which AWS Glue components should be executed to complete a logical task.
     */
   @js.native
   trait Workflow extends js.Object {
@@ -10257,8 +9998,7 @@ package glue {
     }
   }
 
-  /**
-    * A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them.
+  /** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them.
     */
   @js.native
   trait WorkflowGraph extends js.Object {
@@ -10279,8 +10019,7 @@ package glue {
     }
   }
 
-  /**
-    * A workflow run is an execution of a workflow providing all the runtime information.
+  /** A workflow run is an execution of a workflow providing all the runtime information.
     */
   @js.native
   trait WorkflowRun extends js.Object {
@@ -10325,8 +10064,7 @@ package glue {
     }
   }
 
-  /**
-    * Workflow run statistics provides statistics about the workflow run.
+  /** Workflow run statistics provides statistics about the workflow run.
     */
   @js.native
   trait WorkflowRunStatistics extends js.Object {
@@ -10371,8 +10109,7 @@ package glue {
     @inline def values = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED, ERROR)
   }
 
-  /**
-    * A classifier for <code>XML</code> content.
+  /** A classifier for <code>XML</code> content.
     */
   @js.native
   trait XMLClassifier extends js.Object {

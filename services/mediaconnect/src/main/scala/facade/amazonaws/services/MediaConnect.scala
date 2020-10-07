@@ -81,8 +81,7 @@ package mediaconnect {
     def updateFlowSource(params: UpdateFlowSourceRequest): Request[UpdateFlowSourceResponse] = js.native
   }
 
-  /**
-    * A request to add outputs to the specified flow.
+  /** A request to add outputs to the specified flow.
     */
   @js.native
   trait AddFlowOutputsRequest extends js.Object {
@@ -100,7 +99,6 @@ package mediaconnect {
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "Outputs" -> Outputs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddFlowOutputsRequest]
     }
   }
@@ -124,8 +122,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * A request to add sources to the flow.
+  /** A request to add sources to the flow.
     */
   @js.native
   trait AddFlowSourcesRequest extends js.Object {
@@ -143,7 +140,6 @@ package mediaconnect {
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "Sources" -> Sources.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddFlowSourcesRequest]
     }
   }
@@ -167,8 +163,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * A request to add VPC interfaces to the flow.
+  /** A request to add VPC interfaces to the flow.
     */
   @js.native
   trait AddFlowVpcInterfacesRequest extends js.Object {
@@ -186,7 +181,6 @@ package mediaconnect {
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "VpcInterfaces" -> VpcInterfaces.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddFlowVpcInterfacesRequest]
     }
   }
@@ -210,8 +204,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The output that you want to add to this flow.
+  /** The output that you want to add to this flow.
     */
   @js.native
   trait AddOutputRequest extends js.Object {
@@ -274,8 +267,7 @@ package mediaconnect {
     @inline def values = js.Array(aes128, aes192, aes256)
   }
 
-  /**
-    * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
+  /** Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
     */
   @js.native
   trait CreateFlowRequest extends js.Object {
@@ -345,7 +337,6 @@ package mediaconnect {
       val __obj = js.Dynamic.literal(
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFlowRequest]
     }
   }
@@ -382,7 +373,6 @@ package mediaconnect {
       val __obj = js.Dynamic.literal(
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFlowRequest]
     }
   }
@@ -406,8 +396,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * Information about the encryption of the flow.
+  /** Information about the encryption of the flow.
     */
   @js.native
   trait Encryption extends js.Object {
@@ -451,8 +440,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The settings for a flow entitlement.
+  /** The settings for a flow entitlement.
     */
   @js.native
   trait Entitlement extends js.Object {
@@ -499,8 +487,7 @@ package mediaconnect {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * The settings for source failover
+  /** The settings for source failover
     */
   @js.native
   trait FailoverConfig extends js.Object {
@@ -521,8 +508,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The settings for a flow, including its source, outputs, and entitlements.
+  /** The settings for a flow, including its source, outputs, and entitlements.
     */
   @js.native
   trait Flow extends js.Object {
@@ -575,8 +561,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The entitlements that you want to grant on a flow.
+  /** The entitlements that you want to grant on a flow.
     */
   @js.native
   trait GrantEntitlementRequest extends js.Object {
@@ -611,8 +596,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * A request to grant entitlements on a flow.
+  /** A request to grant entitlements on a flow.
     */
   @js.native
   trait GrantFlowEntitlementsRequest extends js.Object {
@@ -630,7 +614,6 @@ package mediaconnect {
         "Entitlements" -> Entitlements.asInstanceOf[js.Any],
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GrantFlowEntitlementsRequest]
     }
   }
@@ -752,7 +735,6 @@ package mediaconnect {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -773,8 +755,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * An entitlement that has been granted to you from other AWS accounts.
+  /** An entitlement that has been granted to you from other AWS accounts.
     */
   @js.native
   trait ListedEntitlement extends js.Object {
@@ -800,8 +781,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * Provides a summary of a flow, including its ARN, Availability Zone, and source type.
+  /** Provides a summary of a flow, including its ARN, Availability Zone, and source type.
     */
   @js.native
   trait ListedFlow extends js.Object {
@@ -831,13 +811,11 @@ package mediaconnect {
         "SourceType" -> SourceType.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListedFlow]
     }
   }
 
-  /**
-    * Messages that provide the state of the flow.
+  /** Messages that provide the state of the flow.
     */
   @js.native
   trait Messages extends js.Object {
@@ -852,13 +830,11 @@ package mediaconnect {
       val __obj = js.Dynamic.literal(
         "Errors" -> Errors.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Messages]
     }
   }
 
-  /**
-    * The settings for an output.
+  /** The settings for an output.
     */
   @js.native
   trait Output extends js.Object {
@@ -936,7 +912,6 @@ package mediaconnect {
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveFlowOutputRequest]
     }
   }
@@ -976,7 +951,6 @@ package mediaconnect {
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveFlowSourceRequest]
     }
   }
@@ -1016,7 +990,6 @@ package mediaconnect {
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "VpcInterfaceName" -> VpcInterfaceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveFlowVpcInterfaceRequest]
     }
   }
@@ -1059,7 +1032,6 @@ package mediaconnect {
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RevokeFlowEntitlementRequest]
     }
   }
@@ -1083,8 +1055,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The settings for the source of the flow.
+  /** The settings for the source of the flow.
     */
   @js.native
   trait SetSourceRequest extends js.Object {
@@ -1132,8 +1103,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The settings for the source of the flow.
+  /** The settings for the source of the flow.
     */
   @js.native
   trait Source extends js.Object {
@@ -1205,7 +1175,6 @@ package mediaconnect {
       val __obj = js.Dynamic.literal(
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartFlowRequest]
     }
   }
@@ -1265,7 +1234,6 @@ package mediaconnect {
       val __obj = js.Dynamic.literal(
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopFlowRequest]
     }
   }
@@ -1289,8 +1257,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+  /** The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -1308,13 +1275,11 @@ package mediaconnect {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * Attributes related to the transport stream that are used in a source or output.
+  /** Attributes related to the transport stream that are used in a source or output.
     */
   @js.native
   trait Transport extends js.Object {
@@ -1368,13 +1333,11 @@ package mediaconnect {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * Information about the encryption of the flow.
+  /** Information about the encryption of the flow.
     */
   @js.native
   trait UpdateEncryption extends js.Object {
@@ -1416,8 +1379,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The settings for source failover
+  /** The settings for source failover
     */
   @js.native
   trait UpdateFailoverConfig extends js.Object {
@@ -1438,8 +1400,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The entitlement fields that you want to update.
+  /** The entitlement fields that you want to update.
     */
   @js.native
   trait UpdateFlowEntitlementRequest extends js.Object {
@@ -1493,8 +1454,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The fields that you want to update in the output.
+  /** The fields that you want to update in the output.
     */
   @js.native
   trait UpdateFlowOutputRequest extends js.Object {
@@ -1569,8 +1529,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * A request to update flow.
+  /** A request to update flow.
     */
   @js.native
   trait UpdateFlowRequest extends js.Object {
@@ -1609,8 +1568,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * A request to update the source of a flow.
+  /** A request to update the source of a flow.
     */
   @js.native
   trait UpdateFlowSourceRequest extends js.Object {
@@ -1682,8 +1640,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * The settings for a VPC Source.
+  /** The settings for a VPC Source.
     */
   @js.native
   trait VpcInterface extends js.Object {
@@ -1710,13 +1667,11 @@ package mediaconnect {
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VpcInterface]
     }
   }
 
-  /**
-    * The settings for attaching a VPC interface to an output.
+  /** The settings for attaching a VPC interface to an output.
     */
   @js.native
   trait VpcInterfaceAttachment extends js.Object {
@@ -1734,8 +1689,7 @@ package mediaconnect {
     }
   }
 
-  /**
-    * Desired VPC Interface for a Flow
+  /** Desired VPC Interface for a Flow
     */
   @js.native
   trait VpcInterfaceRequest extends js.Object {
@@ -1759,7 +1713,6 @@ package mediaconnect {
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VpcInterfaceRequest]
     }
   }

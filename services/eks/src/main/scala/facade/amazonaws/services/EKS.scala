@@ -101,8 +101,7 @@ package eks {
     @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
   }
 
-  /**
-    * An Auto Scaling group that is associated with an Amazon EKS managed node group.
+  /** An Auto Scaling group that is associated with an Amazon EKS managed node group.
     */
   @js.native
   trait AutoScalingGroup extends js.Object {
@@ -120,8 +119,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing the <code>certificate-authority-data</code> for your cluster.
+  /** An object representing the <code>certificate-authority-data</code> for your cluster.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -139,8 +137,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing an Amazon EKS cluster.
+  /** An object representing an Amazon EKS cluster.
     */
   @js.native
   trait Cluster extends js.Object {
@@ -408,7 +405,6 @@ package eks {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
@@ -445,7 +441,6 @@ package eks {
         "clusterName" -> clusterName.asInstanceOf[js.Any],
         "fargateProfileName" -> fargateProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFargateProfileRequest]
     }
   }
@@ -482,7 +477,6 @@ package eks {
         "clusterName" -> clusterName.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNodegroupRequest]
     }
   }
@@ -516,7 +510,6 @@ package eks {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeClusterRequest]
     }
   }
@@ -553,7 +546,6 @@ package eks {
         "clusterName" -> clusterName.asInstanceOf[js.Any],
         "fargateProfileName" -> fargateProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFargateProfileRequest]
     }
   }
@@ -590,7 +582,6 @@ package eks {
         "clusterName" -> clusterName.asInstanceOf[js.Any],
         "nodegroupName" -> nodegroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNodegroupRequest]
     }
   }
@@ -651,8 +642,7 @@ package eks {
     }
   }
 
-  /**
-    * The encryption configuration for the cluster.
+  /** The encryption configuration for the cluster.
     */
   @js.native
   trait EncryptionConfig extends js.Object {
@@ -688,24 +678,22 @@ package eks {
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
 
-    @inline def values =
-      js.Array(
-        SubnetNotFound,
-        SecurityGroupNotFound,
-        EniLimitReached,
-        IpNotAvailable,
-        AccessDenied,
-        OperationNotPermitted,
-        VpcIdNotFound,
-        Unknown,
-        NodeCreationFailure,
-        PodEvictionFailure,
-        InsufficientFreeAddresses
-      )
+    @inline def values = js.Array(
+      SubnetNotFound,
+      SecurityGroupNotFound,
+      EniLimitReached,
+      IpNotAvailable,
+      AccessDenied,
+      OperationNotPermitted,
+      VpcIdNotFound,
+      Unknown,
+      NodeCreationFailure,
+      PodEvictionFailure,
+      InsufficientFreeAddresses
+    )
   }
 
-  /**
-    * An object representing an error when an asynchronous operation fails.
+  /** An object representing an error when an asynchronous operation fails.
     */
   @js.native
   trait ErrorDetail extends js.Object {
@@ -729,8 +717,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing an AWS Fargate profile.
+  /** An object representing an AWS Fargate profile.
     */
   @js.native
   trait FargateProfile extends js.Object {
@@ -772,8 +759,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing an AWS Fargate profile selector.
+  /** An object representing an AWS Fargate profile selector.
     */
   @js.native
   trait FargateProfileSelector extends js.Object {
@@ -806,8 +792,7 @@ package eks {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
   }
 
-  /**
-    * An object representing an identity provider for authentication credentials.
+  /** An object representing an identity provider for authentication credentials.
     */
   @js.native
   trait Identity extends js.Object {
@@ -825,8 +810,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing an issue with an Amazon EKS resource.
+  /** An object representing an issue with an Amazon EKS resource.
     */
   @js.native
   trait Issue extends js.Object {
@@ -850,9 +834,8 @@ package eks {
     }
   }
 
-  /**
-    * An object representing a node group launch template specification. The launch template cannot include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see [[https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html|Launch template support]] in the Amazon EKS User Guide.
-    *  Specify either <code>name</code> or <code>id</code>, but not both.
+  /** An object representing a node group launch template specification. The launch template cannot include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see [[https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html|Launch template support]] in the Amazon EKS User Guide.
+    * Specify either <code>name</code> or <code>id</code>, but not both.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1013,7 +996,6 @@ package eks {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1080,8 +1062,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing the enabled or disabled Kubernetes control plane logs for your cluster.
+  /** An object representing the enabled or disabled Kubernetes control plane logs for your cluster.
     */
   @js.native
   trait LogSetup extends js.Object {
@@ -1114,8 +1095,7 @@ package eks {
     @inline def values = js.Array(api, audit, authenticator, controllerManager, scheduler)
   }
 
-  /**
-    * An object representing the logging configuration for resources in your cluster.
+  /** An object representing the logging configuration for resources in your cluster.
     */
   @js.native
   trait Logging extends js.Object {
@@ -1133,8 +1113,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing an Amazon EKS managed node group.
+  /** An object representing an Amazon EKS managed node group.
     */
   @js.native
   trait Nodegroup extends js.Object {
@@ -1209,8 +1188,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing the health status of the node group.
+  /** An object representing the health status of the node group.
     */
   @js.native
   trait NodegroupHealth extends js.Object {
@@ -1249,30 +1227,28 @@ package eks {
     val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
 
-    @inline def values =
-      js.Array(
-        AutoScalingGroupNotFound,
-        AutoScalingGroupInvalidConfiguration,
-        Ec2SecurityGroupNotFound,
-        Ec2SecurityGroupDeletionFailure,
-        Ec2LaunchTemplateNotFound,
-        Ec2LaunchTemplateVersionMismatch,
-        Ec2SubnetNotFound,
-        Ec2SubnetInvalidConfiguration,
-        IamInstanceProfileNotFound,
-        IamLimitExceeded,
-        IamNodeRoleNotFound,
-        NodeCreationFailure,
-        AsgInstanceLaunchFailures,
-        InstanceLimitExceeded,
-        InsufficientFreeAddresses,
-        AccessDenied,
-        InternalFailure
-      )
+    @inline def values = js.Array(
+      AutoScalingGroupNotFound,
+      AutoScalingGroupInvalidConfiguration,
+      Ec2SecurityGroupNotFound,
+      Ec2SecurityGroupDeletionFailure,
+      Ec2LaunchTemplateNotFound,
+      Ec2LaunchTemplateVersionMismatch,
+      Ec2SubnetNotFound,
+      Ec2SubnetInvalidConfiguration,
+      IamInstanceProfileNotFound,
+      IamLimitExceeded,
+      IamNodeRoleNotFound,
+      NodeCreationFailure,
+      AsgInstanceLaunchFailures,
+      InstanceLimitExceeded,
+      InsufficientFreeAddresses,
+      AccessDenied,
+      InternalFailure
+    )
   }
 
-  /**
-    * An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
+  /** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
     */
   @js.native
   trait NodegroupResources extends js.Object {
@@ -1293,8 +1269,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. If you specify a value for any property, then you must specify values for all of the properties.
+  /** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. If you specify a value for any property, then you must specify values for all of the properties.
     */
   @js.native
   trait NodegroupScalingConfig extends js.Object {
@@ -1332,8 +1307,7 @@ package eks {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
   }
 
-  /**
-    * An object representing the [[https://openid.net/connect/|OpenID Connect]] identity provider information for the cluster.
+  /** An object representing the [[https://openid.net/connect/|OpenID Connect]] identity provider information for the cluster.
     */
   @js.native
   trait OIDC extends js.Object {
@@ -1351,8 +1325,7 @@ package eks {
     }
   }
 
-  /**
-    * Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets.
+  /** Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets.
     */
   @js.native
   trait Provider extends js.Object {
@@ -1370,8 +1343,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing the remote access configuration for the managed node group.
+  /** An object representing the remote access configuration for the managed node group.
     */
   @js.native
   trait RemoteAccessConfig extends js.Object {
@@ -1408,20 +1380,17 @@ package eks {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1442,26 +1411,22 @@ package eks {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
-  /**
-    * An object representing an asynchronous update.
+  /** An object representing an asynchronous update.
     */
   @js.native
   trait Update extends js.Object {
@@ -1577,8 +1542,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing a Kubernetes label change for a managed node group.
+  /** An object representing a Kubernetes label change for a managed node group.
     */
   @js.native
   trait UpdateLabelsPayload extends js.Object {
@@ -1697,8 +1661,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing the details of an update request.
+  /** An object representing the details of an update request.
     */
   @js.native
   trait UpdateParam extends js.Object {
@@ -1735,21 +1698,20 @@ package eks {
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
 
-    @inline def values =
-      js.Array(
-        Version,
-        PlatformVersion,
-        EndpointPrivateAccess,
-        EndpointPublicAccess,
-        ClusterLogging,
-        DesiredSize,
-        LabelsToAdd,
-        LabelsToRemove,
-        MaxSize,
-        MinSize,
-        ReleaseVersion,
-        PublicAccessCidrs
-      )
+    @inline def values = js.Array(
+      Version,
+      PlatformVersion,
+      EndpointPrivateAccess,
+      EndpointPublicAccess,
+      ClusterLogging,
+      DesiredSize,
+      LabelsToAdd,
+      LabelsToRemove,
+      MaxSize,
+      MinSize,
+      ReleaseVersion,
+      PublicAccessCidrs
+    )
   }
 
   @js.native
@@ -1774,8 +1736,7 @@ package eks {
     @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate)
   }
 
-  /**
-    * An object representing the VPC configuration to use for an Amazon EKS cluster.
+  /** An object representing the VPC configuration to use for an Amazon EKS cluster.
     */
   @js.native
   trait VpcConfigRequest extends js.Object {
@@ -1805,8 +1766,7 @@ package eks {
     }
   }
 
-  /**
-    * An object representing an Amazon EKS cluster VPC configuration response.
+  /** An object representing an Amazon EKS cluster VPC configuration response.
     */
   @js.native
   trait VpcConfigResponse extends js.Object {

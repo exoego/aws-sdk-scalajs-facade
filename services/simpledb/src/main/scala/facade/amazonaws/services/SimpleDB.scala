@@ -79,8 +79,7 @@ package simpledb {
     }
   }
 
-  /**
-    * The specified attribute does not exist.
+  /** The specified attribute does not exist.
     */
   @js.native
   trait AttributeDoesNotExistException extends js.Object {
@@ -103,7 +102,6 @@ package simpledb {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Items" -> Items.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeleteAttributesRequest]
     }
   }
@@ -124,7 +122,6 @@ package simpledb {
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Items" -> Items.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchPutAttributesRequest]
     }
   }
@@ -142,7 +139,6 @@ package simpledb {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDomainRequest]
     }
   }
@@ -231,7 +227,6 @@ package simpledb {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainRequest]
     }
   }
@@ -249,7 +244,6 @@ package simpledb {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DomainMetadataRequest]
     }
   }
@@ -288,8 +282,7 @@ package simpledb {
     }
   }
 
-  /**
-    * The item name was specified more than once.
+  /** The item name was specified more than once.
     */
   @js.native
   trait DuplicateItemNameException extends js.Object {
@@ -339,40 +332,35 @@ package simpledb {
     }
   }
 
-  /**
-    * The specified NextToken is not valid.
+  /** The specified NextToken is not valid.
     */
   @js.native
   trait InvalidNextTokenException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many predicates exist in the query expression.
+  /** Too many predicates exist in the query expression.
     */
   @js.native
   trait InvalidNumberPredicatesException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many predicates exist in the query expression.
+  /** Too many predicates exist in the query expression.
     */
   @js.native
   trait InvalidNumberValueTestsException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * The value for a parameter is invalid.
+  /** The value for a parameter is invalid.
     */
   @js.native
   trait InvalidParameterValueException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * The specified query expression syntax is not valid.
+  /** The specified query expression syntax is not valid.
     */
   @js.native
   trait InvalidQueryExpressionException extends js.Object {
@@ -443,64 +431,56 @@ package simpledb {
     }
   }
 
-  /**
-    * The request must contain the specified missing parameter.
+  /** The request must contain the specified missing parameter.
     */
   @js.native
   trait MissingParameterException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * The specified domain does not exist.
+  /** The specified domain does not exist.
     */
   @js.native
   trait NoSuchDomainException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many attributes in this domain.
+  /** Too many attributes in this domain.
     */
   @js.native
   trait NumberDomainAttributesExceededException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many bytes in this domain.
+  /** Too many bytes in this domain.
     */
   @js.native
   trait NumberDomainBytesExceededException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many domains exist per this account.
+  /** Too many domains exist per this account.
     */
   @js.native
   trait NumberDomainsExceededException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many attributes in this item.
+  /** Too many attributes in this item.
     */
   @js.native
   trait NumberItemAttributesExceededException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many attributes exist in a single call.
+  /** Too many attributes exist in a single call.
     */
   @js.native
   trait NumberSubmittedAttributesExceededException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Too many items exist in a single call.
+  /** Too many items exist in a single call.
     */
   @js.native
   trait NumberSubmittedItemsExceededException extends js.Object {
@@ -578,13 +558,11 @@ package simpledb {
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReplaceableItem]
     }
   }
 
-  /**
-    * A timeout occurred when attempting to query the specified domain with specified query expression.
+  /** A timeout occurred when attempting to query the specified domain with specified query expression.
     */
   @js.native
   trait RequestTimeoutException extends js.Object {
@@ -634,16 +612,14 @@ package simpledb {
     }
   }
 
-  /**
-    * Too many attributes requested.
+  /** Too many attributes requested.
     */
   @js.native
   trait TooManyRequestedAttributesException extends js.Object {
     val BoxUsage: Float
   }
 
-  /**
-    * Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist.
+  /** Specifies the conditions under which data should be updated. If an update condition is specified for a request, the data will only be updated if the condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist.
     */
   @js.native
   trait UpdateCondition extends js.Object {

@@ -156,8 +156,7 @@ package appmesh {
     def updateVirtualService(params: UpdateVirtualServiceInput): Request[UpdateVirtualServiceOutput] = js.native
   }
 
-  /**
-    * An object that represents the access logging information for a virtual node.
+  /** An object that represents the access logging information for a virtual node.
     */
   @js.native
   trait AccessLog extends js.Object {
@@ -175,9 +174,8 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>An object that represents the AWS Cloud Map attribute information for your virtual
-    *          node.</p>
+  /** <p>An object that represents the AWS Cloud Map attribute information for your virtual
+    * node.</p>
     */
   @js.native
   trait AwsCloudMapInstanceAttribute extends js.Object {
@@ -195,14 +193,12 @@ package appmesh {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AwsCloudMapInstanceAttribute]
     }
   }
 
-  /**
-    * <p>An object that represents the AWS Cloud Map service discovery information for your virtual
-    *          node.</p>
+  /** <p>An object that represents the AWS Cloud Map service discovery information for your virtual
+    * node.</p>
     */
   @js.native
   trait AwsCloudMapServiceDiscovery extends js.Object {
@@ -228,9 +224,8 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>An object that represents the backends that a virtual node is expected to send outbound
-    *          traffic to. </p>
+  /** <p>An object that represents the backends that a virtual node is expected to send outbound
+    * traffic to. </p>
     */
   @js.native
   trait Backend extends js.Object {
@@ -248,8 +243,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the default properties for a backend.
+  /** An object that represents the default properties for a backend.
     */
   @js.native
   trait BackendDefaults extends js.Object {
@@ -267,8 +261,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a client policy.
+  /** An object that represents a client policy.
     */
   @js.native
   trait ClientPolicy extends js.Object {
@@ -286,8 +279,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) client policy.
+  /** An object that represents a Transport Layer Security (TLS) client policy.
     */
   @js.native
   trait ClientPolicyTls extends js.Object {
@@ -362,7 +354,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateGatewayRouteOutput]
     }
   }
@@ -411,7 +402,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "mesh" -> mesh.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMeshOutput]
     }
   }
@@ -469,7 +459,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "route" -> route.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateRouteOutput]
     }
   }
@@ -520,7 +509,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVirtualGatewayOutput]
     }
   }
@@ -575,7 +563,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualNode" -> virtualNode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVirtualNodeOutput]
     }
   }
@@ -630,7 +617,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVirtualRouterOutput]
     }
   }
@@ -685,7 +671,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualService" -> virtualService.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateVirtualServiceOutput]
     }
   }
@@ -730,7 +715,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGatewayRouteOutput]
     }
   }
@@ -750,7 +734,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "meshName" -> meshName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMeshInput]
     }
   }
@@ -770,7 +753,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "mesh" -> mesh.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMeshOutput]
     }
   }
@@ -819,7 +801,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "route" -> route.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRouteOutput]
     }
   }
@@ -861,7 +842,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVirtualGatewayOutput]
     }
   }
@@ -907,7 +887,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualNode" -> virtualNode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVirtualNodeOutput]
     }
   }
@@ -953,7 +932,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVirtualRouterOutput]
     }
   }
@@ -999,7 +977,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualService" -> virtualService.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVirtualServiceOutput]
     }
   }
@@ -1044,7 +1021,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGatewayRouteOutput]
     }
   }
@@ -1087,7 +1063,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "mesh" -> mesh.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMeshOutput]
     }
   }
@@ -1136,7 +1111,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "route" -> route.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRouteOutput]
     }
   }
@@ -1178,7 +1152,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeVirtualGatewayOutput]
     }
   }
@@ -1224,7 +1197,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualNode" -> virtualNode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeVirtualNodeOutput]
     }
   }
@@ -1270,7 +1242,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeVirtualRouterOutput]
     }
   }
@@ -1316,14 +1287,12 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualService" -> virtualService.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeVirtualServiceOutput]
     }
   }
 
-  /**
-    * <p>An object that represents the DNS service discovery information for your virtual
-    *          node.</p>
+  /** <p>An object that represents the DNS service discovery information for your virtual
+    * node.</p>
     */
   @js.native
   trait DnsServiceDiscovery extends js.Object {
@@ -1338,13 +1307,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "hostname" -> hostname.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DnsServiceDiscovery]
     }
   }
 
-  /**
-    * An object that represents a duration of time.
+  /** An object that represents a duration of time.
     */
   @js.native
   trait Duration extends js.Object {
@@ -1374,8 +1341,7 @@ package appmesh {
     @inline def values = js.Array(ms, s)
   }
 
-  /**
-    * An object that represents the egress filter rules for a service mesh.
+  /** An object that represents the egress filter rules for a service mesh.
     */
   @js.native
   trait EgressFilter extends js.Object {
@@ -1390,7 +1356,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EgressFilter]
     }
   }
@@ -1404,8 +1369,7 @@ package appmesh {
     @inline def values = js.Array(ALLOW_ALL, DROP_ALL)
   }
 
-  /**
-    * An object that represents an access log file.
+  /** An object that represents an access log file.
     */
   @js.native
   trait FileAccessLog extends js.Object {
@@ -1420,13 +1384,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "path" -> path.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FileAccessLog]
     }
   }
 
-  /**
-    * An object that represents a gateway route returned by a describe operation.
+  /** An object that represents a gateway route returned by a describe operation.
     */
   @js.native
   trait GatewayRouteData extends js.Object {
@@ -1456,13 +1418,11 @@ package appmesh {
         "status" -> status.asInstanceOf[js.Any],
         "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayRouteData]
     }
   }
 
-  /**
-    * An object that represents a gateway route returned by a list operation.
+  /** An object that represents a gateway route returned by a list operation.
     */
   @js.native
   trait GatewayRouteRef extends js.Object {
@@ -1501,14 +1461,12 @@ package appmesh {
         "version" -> version.asInstanceOf[js.Any],
         "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayRouteRef]
     }
   }
 
-  /**
-    * <p>An object that represents a gateway route specification. Specify one gateway route
-    *          type.</p>
+  /** <p>An object that represents a gateway route specification. Specify one gateway route
+    * type.</p>
     */
   @js.native
   trait GatewayRouteSpec extends js.Object {
@@ -1532,8 +1490,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the current status of a gateway route.
+  /** An object that represents the current status of a gateway route.
     */
   @js.native
   trait GatewayRouteStatus extends js.Object {
@@ -1548,7 +1505,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayRouteStatus]
     }
   }
@@ -1563,8 +1519,7 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * An object that represents a gateway route target.
+  /** An object that represents a gateway route target.
     */
   @js.native
   trait GatewayRouteTarget extends js.Object {
@@ -1579,13 +1534,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualService" -> virtualService.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayRouteTarget]
     }
   }
 
-  /**
-    * An object that represents the virtual service that traffic is routed to.
+  /** An object that represents the virtual service that traffic is routed to.
     */
   @js.native
   trait GatewayRouteVirtualService extends js.Object {
@@ -1600,13 +1553,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GatewayRouteVirtualService]
     }
   }
 
-  /**
-    * An object that represents a gRPC gateway route.
+  /** An object that represents a gRPC gateway route.
     */
   @js.native
   trait GrpcGatewayRoute extends js.Object {
@@ -1624,13 +1575,11 @@ package appmesh {
         "action" -> action.asInstanceOf[js.Any],
         "match" -> `match`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GrpcGatewayRoute]
     }
   }
 
-  /**
-    * An object that represents the action to take if a match is determined.
+  /** An object that represents the action to take if a match is determined.
     */
   @js.native
   trait GrpcGatewayRouteAction extends js.Object {
@@ -1645,13 +1594,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "target" -> target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GrpcGatewayRouteAction]
     }
   }
 
-  /**
-    * An object that represents the criteria for determining a request match.
+  /** An object that represents the criteria for determining a request match.
     */
   @js.native
   trait GrpcGatewayRouteMatch extends js.Object {
@@ -1669,8 +1616,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
+  /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
     */
   @js.native
   trait GrpcRetryPolicy extends js.Object {
@@ -1714,8 +1660,7 @@ package appmesh {
     @inline def values = js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable)
   }
 
-  /**
-    * An object that represents a gRPC route type.
+  /** An object that represents a gRPC route type.
     */
   @js.native
   trait GrpcRoute extends js.Object {
@@ -1744,8 +1689,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the action to take if a match is determined.
+  /** An object that represents the action to take if a match is determined.
     */
   @js.native
   trait GrpcRouteAction extends js.Object {
@@ -1760,13 +1704,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GrpcRouteAction]
     }
   }
 
-  /**
-    * An object that represents the criteria for determining a request match.
+  /** An object that represents the criteria for determining a request match.
     */
   @js.native
   trait GrpcRouteMatch extends js.Object {
@@ -1790,8 +1732,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the match metadata for the route.
+  /** An object that represents the match metadata for the route.
     */
   @js.native
   trait GrpcRouteMetadata extends js.Object {
@@ -1817,8 +1758,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the match method. Specify one of the match values.
+  /** An object that represents the match method. Specify one of the match values.
     */
   @js.native
   trait GrpcRouteMetadataMatchMethod extends js.Object {
@@ -1848,8 +1788,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents types of timeouts.
+  /** An object that represents types of timeouts.
     */
   @js.native
   trait GrpcTimeout extends js.Object {
@@ -1870,9 +1809,8 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>An object that represents the method and value to match with the header value sent in a
-    *          request. Specify one match method.</p>
+  /** <p>An object that represents the method and value to match with the header value sent in a
+    * request. Specify one match method.</p>
     */
   @js.native
   trait HeaderMatchMethod extends js.Object {
@@ -1902,8 +1840,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the health check policy for a virtual node's listener.
+  /** An object that represents the health check policy for a virtual node's listener.
     */
   @js.native
   trait HealthCheckPolicy extends js.Object {
@@ -1941,8 +1878,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents an HTTP gateway route.
+  /** An object that represents an HTTP gateway route.
     */
   @js.native
   trait HttpGatewayRoute extends js.Object {
@@ -1960,13 +1896,11 @@ package appmesh {
         "action" -> action.asInstanceOf[js.Any],
         "match" -> `match`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HttpGatewayRoute]
     }
   }
 
-  /**
-    * An object that represents the action to take if a match is determined.
+  /** An object that represents the action to take if a match is determined.
     */
   @js.native
   trait HttpGatewayRouteAction extends js.Object {
@@ -1981,13 +1915,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "target" -> target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HttpGatewayRouteAction]
     }
   }
 
-  /**
-    * An object that represents the criteria for determining a request match.
+  /** An object that represents the criteria for determining a request match.
     */
   @js.native
   trait HttpGatewayRouteMatch extends js.Object {
@@ -2002,7 +1934,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "prefix" -> prefix.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HttpGatewayRouteMatch]
     }
   }
@@ -2023,8 +1954,7 @@ package appmesh {
     @inline def values = js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE)
   }
 
-  /**
-    * An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
+  /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
     */
   @js.native
   trait HttpRetryPolicy extends js.Object {
@@ -2053,8 +1983,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents an HTTP or HTTP/2 route type.
+  /** An object that represents an HTTP or HTTP/2 route type.
     */
   @js.native
   trait HttpRoute extends js.Object {
@@ -2083,8 +2012,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the action to take if a match is determined.
+  /** An object that represents the action to take if a match is determined.
     */
   @js.native
   trait HttpRouteAction extends js.Object {
@@ -2099,13 +2027,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HttpRouteAction]
     }
   }
 
-  /**
-    * An object that represents the HTTP header in the request.
+  /** An object that represents the HTTP header in the request.
     */
   @js.native
   trait HttpRouteHeader extends js.Object {
@@ -2131,9 +2057,8 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>An object that represents the requirements for a route to match HTTP requests for a
-    *          virtual router.</p>
+  /** <p>An object that represents the requirements for a route to match HTTP requests for a
+    * virtual router.</p>
     */
   @js.native
   trait HttpRouteMatch extends js.Object {
@@ -2171,8 +2096,7 @@ package appmesh {
     @inline def values = js.Array(http, https)
   }
 
-  /**
-    * An object that represents types of timeouts.
+  /** An object that represents types of timeouts.
     */
   @js.native
   trait HttpTimeout extends js.Object {
@@ -2596,8 +2520,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a listener for a virtual node.
+  /** An object that represents a listener for a virtual node.
     */
   @js.native
   trait Listener extends js.Object {
@@ -2626,8 +2549,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents timeouts for different protocols.
+  /** An object that represents timeouts for different protocols.
     */
   @js.native
   trait ListenerTimeout extends js.Object {
@@ -2654,8 +2576,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the Transport Layer Security (TLS) properties for a listener.
+  /** An object that represents the Transport Layer Security (TLS) properties for a listener.
     */
   @js.native
   trait ListenerTls extends js.Object {
@@ -2673,13 +2594,11 @@ package appmesh {
         "certificate" -> certificate.asInstanceOf[js.Any],
         "mode" -> mode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListenerTls]
     }
   }
 
-  /**
-    * An object that represents an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents an AWS Certicate Manager (ACM) certificate.
     */
   @js.native
   trait ListenerTlsAcmCertificate extends js.Object {
@@ -2694,13 +2613,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "certificateArn" -> certificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListenerTlsAcmCertificate]
     }
   }
 
-  /**
-    * An object that represents a listener's Transport Layer Security (TLS) certificate.
+  /** An object that represents a listener's Transport Layer Security (TLS) certificate.
     */
   @js.native
   trait ListenerTlsCertificate extends js.Object {
@@ -2721,9 +2638,8 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>An object that represents a local file certificate.
-    *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+  /** <p>An object that represents a local file certificate.
+    * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
     */
   @js.native
   trait ListenerTlsFileCertificate extends js.Object {
@@ -2741,7 +2657,6 @@ package appmesh {
         "certificateChain" -> certificateChain.asInstanceOf[js.Any],
         "privateKey" -> privateKey.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListenerTlsFileCertificate]
     }
   }
@@ -2756,8 +2671,7 @@ package appmesh {
     @inline def values = js.Array(DISABLED, PERMISSIVE, STRICT)
   }
 
-  /**
-    * An object that represents the logging information for a virtual node.
+  /** An object that represents the logging information for a virtual node.
     */
   @js.native
   trait Logging extends js.Object {
@@ -2775,8 +2689,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.
+  /** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.
     */
   @js.native
   trait MatchRange extends js.Object {
@@ -2794,13 +2707,11 @@ package appmesh {
         "end" -> end.asInstanceOf[js.Any],
         "start" -> start.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MatchRange]
     }
   }
 
-  /**
-    * An object that represents a service mesh returned by a describe operation.
+  /** An object that represents a service mesh returned by a describe operation.
     */
   @js.native
   trait MeshData extends js.Object {
@@ -2824,13 +2735,11 @@ package appmesh {
         "spec" -> spec.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MeshData]
     }
   }
 
-  /**
-    * An object that represents a service mesh returned by a list operation.
+  /** An object that represents a service mesh returned by a list operation.
     */
   @js.native
   trait MeshRef extends js.Object {
@@ -2863,13 +2772,11 @@ package appmesh {
         "resourceOwner" -> resourceOwner.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MeshRef]
     }
   }
 
-  /**
-    * An object that represents the specification of a service mesh.
+  /** An object that represents the specification of a service mesh.
     */
   @js.native
   trait MeshSpec extends js.Object {
@@ -2887,8 +2794,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the status of a service mesh.
+  /** An object that represents the status of a service mesh.
     */
   @js.native
   trait MeshStatus extends js.Object {
@@ -2916,8 +2822,7 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * An object that represents a port mapping.
+  /** An object that represents a port mapping.
     */
   @js.native
   trait PortMapping extends js.Object {
@@ -2935,7 +2840,6 @@ package appmesh {
         "port" -> port.asInstanceOf[js.Any],
         "protocol" -> protocol.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PortMapping]
     }
   }
@@ -2951,8 +2855,7 @@ package appmesh {
     @inline def values = js.Array(grpc, http, http2, tcp)
   }
 
-  /**
-    * An object that represents metadata for a resource.
+  /** An object that represents metadata for a resource.
     */
   @js.native
   trait ResourceMetadata extends js.Object {
@@ -2985,13 +2888,11 @@ package appmesh {
         "uid" -> uid.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceMetadata]
     }
   }
 
-  /**
-    * An object that represents a route returned by a describe operation.
+  /** An object that represents a route returned by a describe operation.
     */
   @js.native
   trait RouteData extends js.Object {
@@ -3021,13 +2922,11 @@ package appmesh {
         "status" -> status.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RouteData]
     }
   }
 
-  /**
-    * An object that represents a route returned by a list operation.
+  /** An object that represents a route returned by a list operation.
     */
   @js.native
   trait RouteRef extends js.Object {
@@ -3066,13 +2965,11 @@ package appmesh {
         "version" -> version.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RouteRef]
     }
   }
 
-  /**
-    * An object that represents a route specification. Specify one route type.
+  /** An object that represents a route specification. Specify one route type.
     */
   @js.native
   trait RouteSpec extends js.Object {
@@ -3102,8 +2999,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the current status of a route.
+  /** An object that represents the current status of a route.
     */
   @js.native
   trait RouteStatus extends js.Object {
@@ -3118,7 +3014,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RouteStatus]
     }
   }
@@ -3133,8 +3028,7 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * An object that represents the service discovery information for a virtual node.
+  /** An object that represents the service discovery information for a virtual node.
     */
   @js.native
   trait ServiceDiscovery extends js.Object {
@@ -3155,11 +3049,10 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>Optional metadata that you apply to a resource to assist with categorization and
-    *          organization. Each tag consists of a key and an optional value, both of which you define.
-    *          Tag keys can have a maximum character length of 128 characters, and tag values can have
-    *             a maximum length of 256 characters.</p>
+  /** <p>Optional metadata that you apply to a resource to assist with categorization and
+    * organization. Each tag consists of a key and an optional value, both of which you define.
+    * Tag keys can have a maximum character length of 128 characters, and tag values can have
+    * a maximum length of 256 characters.</p>
     */
   @js.native
   trait TagRef extends js.Object {
@@ -3200,7 +3093,6 @@ package appmesh {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -3208,14 +3100,12 @@ package appmesh {
   /**
     */
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
@@ -3228,8 +3118,7 @@ package appmesh {
     @inline def values = js.Array(`connection-error`)
   }
 
-  /**
-    * An object that represents a TCP route type.
+  /** An object that represents a TCP route type.
     */
   @js.native
   trait TcpRoute extends js.Object {
@@ -3252,8 +3141,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the action to take if a match is determined.
+  /** An object that represents the action to take if a match is determined.
     */
   @js.native
   trait TcpRouteAction extends js.Object {
@@ -3268,13 +3156,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TcpRouteAction]
     }
   }
 
-  /**
-    * An object that represents types of timeouts.
+  /** An object that represents types of timeouts.
     */
   @js.native
   trait TcpTimeout extends js.Object {
@@ -3292,8 +3178,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) validation context.
+  /** An object that represents a Transport Layer Security (TLS) validation context.
     */
   @js.native
   trait TlsValidationContext extends js.Object {
@@ -3308,14 +3193,12 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "trust" -> trust.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TlsValidationContext]
     }
   }
 
-  /**
-    * <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-    *          certificate.</p>
+  /** <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
+    * certificate.</p>
     */
   @js.native
   trait TlsValidationContextAcmTrust extends js.Object {
@@ -3330,13 +3213,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "certificateAuthorityArns" -> certificateAuthorityArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TlsValidationContextAcmTrust]
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
     */
   @js.native
   trait TlsValidationContextFileTrust extends js.Object {
@@ -3351,13 +3232,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "certificateChain" -> certificateChain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TlsValidationContextFileTrust]
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) validation context trust.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust.
     */
   @js.native
   trait TlsValidationContextTrust extends js.Object {
@@ -3396,7 +3275,6 @@ package appmesh {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -3404,14 +3282,12 @@ package appmesh {
   /**
     */
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
@@ -3462,7 +3338,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "gatewayRoute" -> gatewayRoute.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGatewayRouteOutput]
     }
   }
@@ -3508,7 +3383,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "mesh" -> mesh.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateMeshOutput]
     }
   }
@@ -3563,7 +3437,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "route" -> route.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRouteOutput]
     }
   }
@@ -3611,7 +3484,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualGateway" -> virtualGateway.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVirtualGatewayOutput]
     }
   }
@@ -3663,7 +3535,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualNode" -> virtualNode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVirtualNodeOutput]
     }
   }
@@ -3715,7 +3586,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualRouter" -> virtualRouter.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVirtualRouterOutput]
     }
   }
@@ -3767,13 +3637,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualService" -> virtualService.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVirtualServiceOutput]
     }
   }
 
-  /**
-    * The access log configuration for a virtual gateway.
+  /** The access log configuration for a virtual gateway.
     */
   @js.native
   trait VirtualGatewayAccessLog extends js.Object {
@@ -3791,8 +3659,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the default properties for a backend.
+  /** An object that represents the default properties for a backend.
     */
   @js.native
   trait VirtualGatewayBackendDefaults extends js.Object {
@@ -3810,8 +3677,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a client policy.
+  /** An object that represents a client policy.
     */
   @js.native
   trait VirtualGatewayClientPolicy extends js.Object {
@@ -3829,8 +3695,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) client policy.
+  /** An object that represents a Transport Layer Security (TLS) client policy.
     */
   @js.native
   trait VirtualGatewayClientPolicyTls extends js.Object {
@@ -3856,8 +3721,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a virtual gateway returned by a describe operation.
+  /** An object that represents a virtual gateway returned by a describe operation.
     */
   @js.native
   trait VirtualGatewayData extends js.Object {
@@ -3884,13 +3748,11 @@ package appmesh {
         "status" -> status.asInstanceOf[js.Any],
         "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayData]
     }
   }
 
-  /**
-    * An object that represents an access log file.
+  /** An object that represents an access log file.
     */
   @js.native
   trait VirtualGatewayFileAccessLog extends js.Object {
@@ -3905,14 +3767,12 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "path" -> path.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayFileAccessLog]
     }
   }
 
-  /**
-    * <p>An object that represents the health check policy for a virtual gateway's
-    *          listener.</p>
+  /** <p>An object that represents the health check policy for a virtual gateway's
+    * listener.</p>
     */
   @js.native
   trait VirtualGatewayHealthCheckPolicy extends js.Object {
@@ -3950,8 +3810,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a listener for a virtual gateway.
+  /** An object that represents a listener for a virtual gateway.
     */
   @js.native
   trait VirtualGatewayListener extends js.Object {
@@ -3977,8 +3836,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the Transport Layer Security (TLS) properties for a listener.
+  /** An object that represents the Transport Layer Security (TLS) properties for a listener.
     */
   @js.native
   trait VirtualGatewayListenerTls extends js.Object {
@@ -3996,13 +3854,11 @@ package appmesh {
         "certificate" -> certificate.asInstanceOf[js.Any],
         "mode" -> mode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayListenerTls]
     }
   }
 
-  /**
-    * An object that represents an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents an AWS Certicate Manager (ACM) certificate.
     */
   @js.native
   trait VirtualGatewayListenerTlsAcmCertificate extends js.Object {
@@ -4017,13 +3873,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "certificateArn" -> certificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayListenerTlsAcmCertificate]
     }
   }
 
-  /**
-    * An object that represents a listener's Transport Layer Security (TLS) certificate.
+  /** An object that represents a listener's Transport Layer Security (TLS) certificate.
     */
   @js.native
   trait VirtualGatewayListenerTlsCertificate extends js.Object {
@@ -4044,9 +3898,8 @@ package appmesh {
     }
   }
 
-  /**
-    * <p>An object that represents a local file certificate.
-    *          The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+  /** <p>An object that represents a local file certificate.
+    * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
     */
   @js.native
   trait VirtualGatewayListenerTlsFileCertificate extends js.Object {
@@ -4064,7 +3917,6 @@ package appmesh {
         "certificateChain" -> certificateChain.asInstanceOf[js.Any],
         "privateKey" -> privateKey.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayListenerTlsFileCertificate]
     }
   }
@@ -4079,8 +3931,7 @@ package appmesh {
     @inline def values = js.Array(DISABLED, PERMISSIVE, STRICT)
   }
 
-  /**
-    * An object that represents logging information.
+  /** An object that represents logging information.
     */
   @js.native
   trait VirtualGatewayLogging extends js.Object {
@@ -4098,8 +3949,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a port mapping.
+  /** An object that represents a port mapping.
     */
   @js.native
   trait VirtualGatewayPortMapping extends js.Object {
@@ -4117,7 +3967,6 @@ package appmesh {
         "port" -> port.asInstanceOf[js.Any],
         "protocol" -> protocol.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayPortMapping]
     }
   }
@@ -4132,8 +3981,7 @@ package appmesh {
     @inline def values = js.Array(grpc, http, http2)
   }
 
-  /**
-    * An object that represents a virtual gateway returned by a list operation.
+  /** An object that represents a virtual gateway returned by a list operation.
     */
   @js.native
   trait VirtualGatewayRef extends js.Object {
@@ -4169,13 +4017,11 @@ package appmesh {
         "version" -> version.asInstanceOf[js.Any],
         "virtualGatewayName" -> virtualGatewayName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayRef]
     }
   }
 
-  /**
-    * An object that represents the specification of a service mesh resource.
+  /** An object that represents the specification of a service mesh resource.
     */
   @js.native
   trait VirtualGatewaySpec extends js.Object {
@@ -4201,8 +4047,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the status of the mesh resource.
+  /** An object that represents the status of the mesh resource.
     */
   @js.native
   trait VirtualGatewayStatus extends js.Object {
@@ -4217,7 +4062,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayStatus]
     }
   }
@@ -4232,8 +4076,7 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) validation context.
+  /** An object that represents a Transport Layer Security (TLS) validation context.
     */
   @js.native
   trait VirtualGatewayTlsValidationContext extends js.Object {
@@ -4248,14 +4091,12 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "trust" -> trust.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayTlsValidationContext]
     }
   }
 
-  /**
-    * <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-    *          certificate.</p>
+  /** <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
+    * certificate.</p>
     */
   @js.native
   trait VirtualGatewayTlsValidationContextAcmTrust extends js.Object {
@@ -4270,13 +4111,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "certificateAuthorityArns" -> certificateAuthorityArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayTlsValidationContextAcmTrust]
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
     */
   @js.native
   trait VirtualGatewayTlsValidationContextFileTrust extends js.Object {
@@ -4291,13 +4130,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "certificateChain" -> certificateChain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualGatewayTlsValidationContextFileTrust]
     }
   }
 
-  /**
-    * An object that represents a Transport Layer Security (TLS) validation context trust.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust.
     */
   @js.native
   trait VirtualGatewayTlsValidationContextTrust extends js.Object {
@@ -4318,8 +4155,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a virtual node returned by a describe operation.
+  /** An object that represents a virtual node returned by a describe operation.
     */
   @js.native
   trait VirtualNodeData extends js.Object {
@@ -4346,13 +4182,11 @@ package appmesh {
         "status" -> status.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualNodeData]
     }
   }
 
-  /**
-    * An object that represents a virtual node returned by a list operation.
+  /** An object that represents a virtual node returned by a list operation.
     */
   @js.native
   trait VirtualNodeRef extends js.Object {
@@ -4388,13 +4222,11 @@ package appmesh {
         "version" -> version.asInstanceOf[js.Any],
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualNodeRef]
     }
   }
 
-  /**
-    * An object that represents a virtual node service provider.
+  /** An object that represents a virtual node service provider.
     */
   @js.native
   trait VirtualNodeServiceProvider extends js.Object {
@@ -4409,13 +4241,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualNodeServiceProvider]
     }
   }
 
-  /**
-    * An object that represents the specification of a virtual node.
+  /** An object that represents the specification of a virtual node.
     */
   @js.native
   trait VirtualNodeSpec extends js.Object {
@@ -4445,8 +4275,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the current status of the virtual node.
+  /** An object that represents the current status of the virtual node.
     */
   @js.native
   trait VirtualNodeStatus extends js.Object {
@@ -4461,7 +4290,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualNodeStatus]
     }
   }
@@ -4476,8 +4304,7 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * An object that represents a virtual router returned by a describe operation.
+  /** An object that represents a virtual router returned by a describe operation.
     */
   @js.native
   trait VirtualRouterData extends js.Object {
@@ -4504,13 +4331,11 @@ package appmesh {
         "status" -> status.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualRouterData]
     }
   }
 
-  /**
-    * An object that represents a virtual router listener.
+  /** An object that represents a virtual router listener.
     */
   @js.native
   trait VirtualRouterListener extends js.Object {
@@ -4525,13 +4350,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "portMapping" -> portMapping.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualRouterListener]
     }
   }
 
-  /**
-    * An object that represents a virtual router returned by a list operation.
+  /** An object that represents a virtual router returned by a list operation.
     */
   @js.native
   trait VirtualRouterRef extends js.Object {
@@ -4567,13 +4390,11 @@ package appmesh {
         "version" -> version.asInstanceOf[js.Any],
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualRouterRef]
     }
   }
 
-  /**
-    * An object that represents a virtual node service provider.
+  /** An object that represents a virtual node service provider.
     */
   @js.native
   trait VirtualRouterServiceProvider extends js.Object {
@@ -4588,13 +4409,11 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "virtualRouterName" -> virtualRouterName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualRouterServiceProvider]
     }
   }
 
-  /**
-    * An object that represents the specification of a virtual router.
+  /** An object that represents the specification of a virtual router.
     */
   @js.native
   trait VirtualRouterSpec extends js.Object {
@@ -4612,8 +4431,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the status of a virtual router.
+  /** An object that represents the status of a virtual router.
     */
   @js.native
   trait VirtualRouterStatus extends js.Object {
@@ -4628,7 +4446,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualRouterStatus]
     }
   }
@@ -4643,8 +4460,7 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * An object that represents a virtual service backend for a virtual node.
+  /** An object that represents a virtual service backend for a virtual node.
     */
   @js.native
   trait VirtualServiceBackend extends js.Object {
@@ -4667,8 +4483,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a virtual service returned by a describe operation.
+  /** An object that represents a virtual service returned by a describe operation.
     */
   @js.native
   trait VirtualServiceData extends js.Object {
@@ -4695,13 +4510,11 @@ package appmesh {
         "status" -> status.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualServiceData]
     }
   }
 
-  /**
-    * An object that represents the provider for a virtual service.
+  /** An object that represents the provider for a virtual service.
     */
   @js.native
   trait VirtualServiceProvider extends js.Object {
@@ -4722,8 +4535,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents a virtual service returned by a list operation.
+  /** An object that represents a virtual service returned by a list operation.
     */
   @js.native
   trait VirtualServiceRef extends js.Object {
@@ -4759,13 +4571,11 @@ package appmesh {
         "version" -> version.asInstanceOf[js.Any],
         "virtualServiceName" -> virtualServiceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualServiceRef]
     }
   }
 
-  /**
-    * An object that represents the specification of a virtual service.
+  /** An object that represents the specification of a virtual service.
     */
   @js.native
   trait VirtualServiceSpec extends js.Object {
@@ -4783,8 +4593,7 @@ package appmesh {
     }
   }
 
-  /**
-    * An object that represents the status of a virtual service.
+  /** An object that represents the status of a virtual service.
     */
   @js.native
   trait VirtualServiceStatus extends js.Object {
@@ -4799,7 +4608,6 @@ package appmesh {
       val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VirtualServiceStatus]
     }
   }
@@ -4814,11 +4622,10 @@ package appmesh {
     @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
   }
 
-  /**
-    * <p>An object that represents a target and its relative weight. Traffic is distributed
-    *          across targets according to their relative weight. For example, a weighted target with a
-    *          relative weight of 50 receives five times as much traffic as one with a relative weight of
-    *          10. The total weight for all targets combined must be less than or equal to 100.</p>
+  /** <p>An object that represents a target and its relative weight. Traffic is distributed
+    * across targets according to their relative weight. For example, a weighted target with a
+    * relative weight of 50 receives five times as much traffic as one with a relative weight of
+    * 10. The total weight for all targets combined must be less than or equal to 100.</p>
     */
   @js.native
   trait WeightedTarget extends js.Object {
@@ -4836,7 +4643,6 @@ package appmesh {
         "virtualNode" -> virtualNode.asInstanceOf[js.Any],
         "weight" -> weight.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[WeightedTarget]
     }
   }

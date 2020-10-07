@@ -665,7 +665,6 @@ package sagemaker {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsInput]
     }
   }
@@ -695,9 +694,8 @@ package sagemaker {
     @inline def values = js.Array(Name, CreationTime)
   }
 
-  /**
-    * Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
-    *  For more information about algorithms provided by Amazon SageMaker, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
+  /** Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
+    * For more information about algorithms provided by Amazon SageMaker, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
     */
   @js.native
   trait AlgorithmSpecification extends js.Object {
@@ -741,8 +739,7 @@ package sagemaker {
     @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting)
   }
 
-  /**
-    * Specifies the validation and image scan statuses of the algorithm.
+  /** Specifies the validation and image scan statuses of the algorithm.
     */
   @js.native
   trait AlgorithmStatusDetails extends js.Object {
@@ -763,8 +760,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Represents the overall status of an algorithm.
+  /** Represents the overall status of an algorithm.
     */
   @js.native
   trait AlgorithmStatusItem extends js.Object {
@@ -790,8 +786,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides summary information about an algorithm.
+  /** Provides summary information about an algorithm.
     */
   @js.native
   trait AlgorithmSummary extends js.Object {
@@ -823,9 +818,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
-    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+  /** Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
+    * The data provided in the validation profile is made available to your buyers on AWS Marketplace.
     */
   @js.native
   trait AlgorithmValidationProfile extends js.Object {
@@ -851,8 +845,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
+  /** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
     */
   @js.native
   trait AlgorithmValidationSpecification extends js.Object {
@@ -870,13 +863,11 @@ package sagemaker {
         "ValidationProfiles" -> ValidationProfiles.asInstanceOf[js.Any],
         "ValidationRole" -> ValidationRole.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AlgorithmValidationSpecification]
     }
   }
 
-  /**
-    * Configures how labels are consolidated across human workers and processes output data.
+  /** Configures how labels are consolidated across human workers and processes output data.
     */
   @js.native
   trait AnnotationConsolidationConfig extends js.Object {
@@ -891,13 +882,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AnnotationConsolidationLambdaArn" -> AnnotationConsolidationLambdaArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AnnotationConsolidationConfig]
     }
   }
 
-  /**
-    * The app's details.
+  /** The app's details.
     */
   @js.native
   trait AppDetails extends js.Object {
@@ -966,41 +955,40 @@ package sagemaker {
     val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
     val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
-    @inline def values =
-      js.Array(
-        system,
-        `ml.t3.micro`,
-        `ml.t3.small`,
-        `ml.t3.medium`,
-        `ml.t3.large`,
-        `ml.t3.xlarge`,
-        `ml.t3.2xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.8xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.16xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.c5.large`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.12xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5.24xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.g4dn.xlarge`,
-        `ml.g4dn.2xlarge`,
-        `ml.g4dn.4xlarge`,
-        `ml.g4dn.8xlarge`,
-        `ml.g4dn.12xlarge`,
-        `ml.g4dn.16xlarge`
-      )
+    @inline def values = js.Array(
+      system,
+      `ml.t3.micro`,
+      `ml.t3.small`,
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.8xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.16xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c5.large`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.12xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5.24xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.g4dn.xlarge`,
+      `ml.g4dn.2xlarge`,
+      `ml.g4dn.4xlarge`,
+      `ml.g4dn.8xlarge`,
+      `ml.g4dn.12xlarge`,
+      `ml.g4dn.16xlarge`
+    )
   }
 
   @js.native
@@ -1011,8 +999,7 @@ package sagemaker {
     @inline def values = js.Array(CreationTime)
   }
 
-  /**
-    * Configuration to run a processing job in a specified container image.
+  /** Configuration to run a processing job in a specified container image.
     */
   @js.native
   trait AppSpecification extends js.Object {
@@ -1085,7 +1072,6 @@ package sagemaker {
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any],
         "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateTrialComponentRequest]
     }
   }
@@ -1118,8 +1104,7 @@ package sagemaker {
     @inline def values = js.Array(SSO, IAM)
   }
 
-  /**
-    * An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involed, and the status.
+  /** An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involed, and the status.
     */
   @js.native
   trait AutoMLCandidate extends js.Object {
@@ -1166,8 +1151,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Information about the steps for a Candidate, and what step it is working on.
+  /** Information about the steps for a Candidate, and what step it is working on.
     */
   @js.native
   trait AutoMLCandidateStep extends js.Object {
@@ -1188,13 +1172,11 @@ package sagemaker {
         "CandidateStepName" -> CandidateStepName.asInstanceOf[js.Any],
         "CandidateStepType" -> CandidateStepType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutoMLCandidateStep]
     }
   }
 
-  /**
-    * Similar to Channel. A channel is a named input source that training algorithms can consume. Refer to Channel for detailed descriptions.
+  /** Similar to Channel. A channel is a named input source that training algorithms can consume. Refer to Channel for detailed descriptions.
     */
   @js.native
   trait AutoMLChannel extends js.Object {
@@ -1220,8 +1202,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A list of container definitions that describe the different containers that make up one AutoML candidate. Refer to ContainerDefinition for more details.
+  /** A list of container definitions that describe the different containers that make up one AutoML candidate. Refer to ContainerDefinition for more details.
     */
   @js.native
   trait AutoMLContainerDefinition extends js.Object {
@@ -1247,8 +1228,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The data source for the Autopilot job.
+  /** The data source for the Autopilot job.
     */
   @js.native
   trait AutoMLDataSource extends js.Object {
@@ -1263,13 +1243,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutoMLDataSource]
     }
   }
 
-  /**
-    * Artifacts that are generation during a job.
+  /** Artifacts that are generation during a job.
     */
   @js.native
   trait AutoMLJobArtifacts extends js.Object {
@@ -1290,8 +1268,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+  /** How long a job is allowed to run, or how many candidates a job is allowed to generate.
     */
   @js.native
   trait AutoMLJobCompletionCriteria extends js.Object {
@@ -1315,8 +1292,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A collection of settings used for a job.
+  /** A collection of settings used for a job.
     */
   @js.native
   trait AutoMLJobConfig extends js.Object {
@@ -1337,8 +1313,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies a metric to minimize or maximize as the objective of a job.
+  /** Specifies a metric to minimize or maximize as the objective of a job.
     */
   @js.native
   trait AutoMLJobObjective extends js.Object {
@@ -1353,7 +1328,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutoMLJobObjective]
     }
   }
@@ -1381,19 +1355,18 @@ package sagemaker {
     val Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
     val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
 
-    @inline def values =
-      js.Array(
-        Starting,
-        AnalyzingData,
-        FeatureEngineering,
-        ModelTuning,
-        MaxCandidatesReached,
-        Failed,
-        Stopped,
-        MaxAutoMLJobRuntimeReached,
-        Stopping,
-        CandidateDefinitionsGenerated
-      )
+    @inline def values = js.Array(
+      Starting,
+      AnalyzingData,
+      FeatureEngineering,
+      ModelTuning,
+      MaxCandidatesReached,
+      Failed,
+      Stopped,
+      MaxAutoMLJobRuntimeReached,
+      Stopping,
+      CandidateDefinitionsGenerated
+    )
   }
 
   @js.native
@@ -1408,8 +1381,7 @@ package sagemaker {
     @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
-  /**
-    * Provides a summary about a job.
+  /** Provides a summary about a job.
     */
   @js.native
   trait AutoMLJobSummary extends js.Object {
@@ -1462,8 +1434,7 @@ package sagemaker {
     @inline def values = js.Array(Accuracy, MSE, F1, F1macro, AUC)
   }
 
-  /**
-    * The output data configuration.
+  /** The output data configuration.
     */
   @js.native
   trait AutoMLOutputDataConfig extends js.Object {
@@ -1486,8 +1457,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The Amazon S3 data source.
+  /** The Amazon S3 data source.
     */
   @js.native
   trait AutoMLS3DataSource extends js.Object {
@@ -1505,7 +1475,6 @@ package sagemaker {
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutoMLS3DataSource]
     }
   }
@@ -1519,8 +1488,7 @@ package sagemaker {
     @inline def values = js.Array(ManifestFile, S3Prefix)
   }
 
-  /**
-    * Security options.
+  /** Security options.
     */
   @js.native
   trait AutoMLSecurityConfig extends js.Object {
@@ -1622,8 +1590,7 @@ package sagemaker {
     @inline def values = js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CaptureContentTypeHeader extends js.Object {
@@ -1653,8 +1620,7 @@ package sagemaker {
     @inline def values = js.Array(Input, Output)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CaptureOption extends js.Object {
@@ -1669,7 +1635,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CaptureMode" -> CaptureMode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CaptureOption]
     }
   }
@@ -1683,8 +1648,7 @@ package sagemaker {
     @inline def values = js.Array(Started, Stopped)
   }
 
-  /**
-    * A list of categorical hyperparameters to tune.
+  /** A list of categorical hyperparameters to tune.
     */
   @js.native
   trait CategoricalParameterRange extends js.Object {
@@ -1702,13 +1666,11 @@ package sagemaker {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CategoricalParameterRange]
     }
   }
 
-  /**
-    * Defines the possible values for a categorical hyperparameter.
+  /** Defines the possible values for a categorical hyperparameter.
     */
   @js.native
   trait CategoricalParameterRangeSpecification extends js.Object {
@@ -1723,13 +1685,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CategoricalParameterRangeSpecification]
     }
   }
 
-  /**
-    * A channel is a named input source that training algorithms can consume.
+  /** A channel is a named input source that training algorithms can consume.
     */
   @js.native
   trait Channel extends js.Object {
@@ -1767,8 +1727,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines a named input source, called a channel, to be used by an algorithm.
+  /** Defines a named input source, called a channel, to be used by an algorithm.
     */
   @js.native
   trait ChannelSpecification extends js.Object {
@@ -1803,8 +1762,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Contains information about the output location for managed spot training checkpoint data.
+  /** Contains information about the output location for managed spot training checkpoint data.
     */
   @js.native
   trait CheckpointConfig extends js.Object {
@@ -1846,8 +1804,7 @@ package sagemaker {
     @inline def values = js.Array(Ascending, Descending)
   }
 
-  /**
-    * Specifies summary information about a Git repository.
+  /** Specifies summary information about a Git repository.
     */
   @js.native
   trait CodeRepositorySummary extends js.Object {
@@ -1879,8 +1836,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Use this parameter to configure your Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single [[https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html| Amazon Cognito user pool]].
+  /** Use this parameter to configure your Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single [[https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html| Amazon Cognito user pool]].
     */
   @js.native
   trait CognitoConfig extends js.Object {
@@ -1898,13 +1854,11 @@ package sagemaker {
         "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPool" -> UserPool.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CognitoConfig]
     }
   }
 
-  /**
-    * Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
+  /** Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
     */
   @js.native
   trait CognitoMemberDefinition extends js.Object {
@@ -1925,13 +1879,11 @@ package sagemaker {
         "UserGroup" -> UserGroup.asInstanceOf[js.Any],
         "UserPool" -> UserPool.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CognitoMemberDefinition]
     }
   }
 
-  /**
-    * Configuration information for tensor collections.
+  /** Configuration information for tensor collections.
     */
   @js.native
   trait CollectionConfiguration extends js.Object {
@@ -1965,8 +1917,7 @@ package sagemaker {
     @inline def values = js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED)
   }
 
-  /**
-    * A summary of a model compilation job.
+  /** A summary of a model compilation job.
     */
   @js.native
   trait CompilationJobSummary extends js.Object {
@@ -2025,8 +1976,7 @@ package sagemaker {
     @inline def values = js.Array(None, Gzip)
   }
 
-  /**
-    * Describes the container, as part of model definition.
+  /** Describes the container, as part of model definition.
     */
   @js.native
   trait ContainerDefinition extends js.Object {
@@ -2080,8 +2030,7 @@ package sagemaker {
     @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
-  /**
-    * A list of continuous hyperparameters to tune.
+  /** A list of continuous hyperparameters to tune.
     */
   @js.native
   trait ContinuousParameterRange extends js.Object {
@@ -2110,8 +2059,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the possible values for a continuous hyperparameter.
+  /** Defines the possible values for a continuous hyperparameter.
     */
   @js.native
   trait ContinuousParameterRangeSpecification extends js.Object {
@@ -2129,7 +2077,6 @@ package sagemaker {
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ContinuousParameterRangeSpecification]
     }
   }
@@ -2180,7 +2127,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAlgorithmOutput]
     }
   }
@@ -2289,7 +2235,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AutoMLJobArn" -> AutoMLJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAutoMLJobResponse]
     }
   }
@@ -2310,7 +2255,6 @@ package sagemaker {
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
         "GitConfig" -> GitConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCodeRepositoryInput]
     }
   }
@@ -2328,7 +2272,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCodeRepositoryOutput]
     }
   }
@@ -2358,7 +2301,6 @@ package sagemaker {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCompilationJobRequest]
     }
   }
@@ -2376,7 +2318,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCompilationJobResponse]
     }
   }
@@ -2479,7 +2420,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEndpointConfigOutput]
     }
   }
@@ -2521,7 +2461,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateEndpointOutput]
     }
   }
@@ -2618,7 +2557,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionArn" -> FlowDefinitionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateFlowDefinitionResponse]
     }
   }
@@ -2660,7 +2598,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HumanTaskUiArn" -> HumanTaskUiArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateHumanTaskUiResponse]
     }
   }
@@ -2711,7 +2648,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateHyperParameterTuningJobResponse]
     }
   }
@@ -2774,7 +2710,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateLabelingJobResponse]
     }
   }
@@ -2828,7 +2763,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ModelArn" -> ModelArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateModelOutput]
     }
   }
@@ -2879,7 +2813,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateModelPackageOutput]
     }
   }
@@ -2921,7 +2854,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleArn" -> MonitoringScheduleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateMonitoringScheduleResponse]
     }
   }
@@ -3177,7 +3109,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ProcessingJobArn" -> ProcessingJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProcessingJobResponse]
     }
   }
@@ -3264,7 +3195,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTrainingJobResponse]
     }
   }
@@ -3336,7 +3266,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTransformJobResponse]
     }
   }
@@ -3534,7 +3463,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "WorkforceArn" -> WorkforceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateWorkforceResponse]
     }
   }
@@ -3588,8 +3516,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DataCaptureConfig extends js.Object {
@@ -3624,8 +3551,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DataCaptureConfigSummary extends js.Object {
@@ -3652,13 +3578,11 @@ package sagemaker {
         "EnableCapture" -> EnableCapture.asInstanceOf[js.Any],
         "KmsKeyId" -> KmsKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataCaptureConfigSummary]
     }
   }
 
-  /**
-    * The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html|Associate Prediction Results with their Corresponding Input Records]].
+  /** The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html|Associate Prediction Results with their Corresponding Input Records]].
     */
   @js.native
   trait DataProcessing extends js.Object {
@@ -3682,8 +3606,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the location of the channel data.
+  /** Describes the location of the channel data.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -3704,8 +3627,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configuration information for the debug hook parameters, collection configuration, and storage paths.
+  /** Configuration information for the debug hook parameters, collection configuration, and storage paths.
     */
   @js.native
   trait DebugHookConfig extends js.Object {
@@ -3734,8 +3656,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configuration information for debugging rules.
+  /** Configuration information for debugging rules.
     */
   @js.native
   trait DebugRuleConfiguration extends js.Object {
@@ -3773,8 +3694,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Information about the status of the rule evaluation.
+  /** Information about the status of the rule evaluation.
     */
   @js.native
   trait DebugRuleEvaluationStatus extends js.Object {
@@ -3817,7 +3737,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAlgorithmInput]
     }
   }
@@ -3844,7 +3763,6 @@ package sagemaker {
         "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAppRequest]
     }
   }
@@ -3862,7 +3780,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCodeRepositoryInput]
     }
   }
@@ -3901,7 +3818,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointConfigInput]
     }
   }
@@ -3919,7 +3835,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEndpointInput]
     }
   }
@@ -3937,7 +3852,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ExperimentName" -> ExperimentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteExperimentRequest]
     }
   }
@@ -3971,20 +3885,17 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionName" -> FlowDefinitionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFlowDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteFlowDefinitionResponse extends js.Object {}
+  trait DeleteFlowDefinitionResponse extends js.Object
 
   object DeleteFlowDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteFlowDefinitionResponse = {
+    def apply(): DeleteFlowDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFlowDefinitionResponse]
     }
   }
@@ -4002,20 +3913,17 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHumanTaskUiRequest]
     }
   }
 
   @js.native
-  trait DeleteHumanTaskUiResponse extends js.Object {}
+  trait DeleteHumanTaskUiResponse extends js.Object
 
   object DeleteHumanTaskUiResponse {
     @inline
-    def apply(
-    ): DeleteHumanTaskUiResponse = {
+    def apply(): DeleteHumanTaskUiResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteHumanTaskUiResponse]
     }
   }
@@ -4033,7 +3941,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteModelInput]
     }
   }
@@ -4051,7 +3958,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteModelPackageInput]
     }
   }
@@ -4069,7 +3975,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMonitoringScheduleRequest]
     }
   }
@@ -4087,7 +3992,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNotebookInstanceInput]
     }
   }
@@ -4105,7 +4009,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNotebookInstanceLifecycleConfigInput]
     }
   }
@@ -4126,20 +4029,17 @@ package sagemaker {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsInput]
     }
   }
 
   @js.native
-  trait DeleteTagsOutput extends js.Object {}
+  trait DeleteTagsOutput extends js.Object
 
   object DeleteTagsOutput {
     @inline
-    def apply(
-    ): DeleteTagsOutput = {
+    def apply(): DeleteTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteTagsOutput]
     }
   }
@@ -4157,7 +4057,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTrialComponentRequest]
     }
   }
@@ -4191,7 +4090,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTrialRequest]
     }
   }
@@ -4228,7 +4126,6 @@ package sagemaker {
         "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserProfileRequest]
     }
   }
@@ -4246,20 +4143,17 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWorkforceRequest]
     }
   }
 
   @js.native
-  trait DeleteWorkforceResponse extends js.Object {}
+  trait DeleteWorkforceResponse extends js.Object
 
   object DeleteWorkforceResponse {
     @inline
-    def apply(
-    ): DeleteWorkforceResponse = {
+    def apply(): DeleteWorkforceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWorkforceResponse]
     }
   }
@@ -4277,7 +4171,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWorkteamRequest]
     }
   }
@@ -4295,14 +4188,12 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Success" -> Success.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWorkteamResponse]
     }
   }
 
-  /**
-    * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
-    *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
+  /** Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
+    * If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
     */
   @js.native
   trait DeployedImage extends js.Object {
@@ -4339,7 +4230,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAlgorithmInput]
     }
   }
@@ -4414,7 +4304,6 @@ package sagemaker {
         "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAppRequest]
     }
   }
@@ -4478,7 +4367,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AutoMLJobName" -> AutoMLJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAutoMLJobRequest]
     }
   }
@@ -4565,7 +4453,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCodeRepositoryInput]
     }
   }
@@ -4613,7 +4500,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCompilationJobRequest]
     }
   }
@@ -4685,7 +4571,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "DomainId" -> DomainId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDomainRequest]
     }
   }
@@ -4761,7 +4646,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEndpointConfigInput]
     }
   }
@@ -4812,7 +4696,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEndpointInput]
     }
   }
@@ -4872,7 +4755,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ExperimentName" -> ExperimentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeExperimentRequest]
     }
   }
@@ -4930,7 +4812,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "FlowDefinitionName" -> FlowDefinitionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeFlowDefinitionRequest]
     }
   }
@@ -4993,7 +4874,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeHumanTaskUiRequest]
     }
   }
@@ -5041,7 +4921,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeHyperParameterTuningJobRequest]
     }
   }
@@ -5119,7 +4998,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLabelingJobRequest]
     }
   }
@@ -5206,7 +5084,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeModelInput]
     }
   }
@@ -5263,7 +5140,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeModelPackageInput]
     }
   }
@@ -5326,7 +5202,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMonitoringScheduleRequest]
     }
   }
@@ -5386,7 +5261,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNotebookInstanceInput]
     }
   }
@@ -5404,7 +5278,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNotebookInstanceLifecycleConfigInput]
     }
   }
@@ -5526,7 +5399,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ProcessingJobName" -> ProcessingJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProcessingJobRequest]
     }
   }
@@ -5622,7 +5494,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSubscribedWorkteamRequest]
     }
   }
@@ -5640,7 +5511,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "SubscribedWorkteam" -> SubscribedWorkteam.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSubscribedWorkteamResponse]
     }
   }
@@ -5658,7 +5528,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTrainingJobRequest]
     }
   }
@@ -5793,7 +5662,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TransformJobName" -> TransformJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTransformJobRequest]
     }
   }
@@ -5886,7 +5754,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTrialComponentRequest]
     }
   }
@@ -5962,7 +5829,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTrialRequest]
     }
   }
@@ -6023,7 +5889,6 @@ package sagemaker {
         "DomainId" -> DomainId.asInstanceOf[js.Any],
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserProfileRequest]
     }
   }
@@ -6087,7 +5952,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "WorkforceName" -> WorkforceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorkforceRequest]
     }
   }
@@ -6105,7 +5969,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Workforce" -> Workforce.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorkforceResponse]
     }
   }
@@ -6123,7 +5986,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorkteamRequest]
     }
   }
@@ -6141,13 +6003,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Workteam" -> Workteam.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorkteamResponse]
     }
   }
 
-  /**
-    * Specifies weight and capacity values for a production variant.
+  /** Specifies weight and capacity values for a production variant.
     */
   @js.native
   trait DesiredWeightAndCapacity extends js.Object {
@@ -6220,7 +6080,6 @@ package sagemaker {
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any],
         "TrialName" -> TrialName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateTrialComponentRequest]
     }
   }
@@ -6244,8 +6103,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The domain's details.
+  /** The domain's details.
     */
   @js.native
   trait DomainDetails extends js.Object {
@@ -6301,8 +6159,7 @@ package sagemaker {
     @inline def values = js.Array(Name, CreationTime)
   }
 
-  /**
-    * Provides summary information for an endpoint configuration.
+  /** Provides summary information for an endpoint configuration.
     */
   @js.native
   trait EndpointConfigSummary extends js.Object {
@@ -6323,13 +6180,11 @@ package sagemaker {
         "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any],
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EndpointConfigSummary]
     }
   }
 
-  /**
-    * Input object for the endpoint
+  /** Input object for the endpoint
     */
   @js.native
   trait EndpointInput extends js.Object {
@@ -6383,8 +6238,7 @@ package sagemaker {
     @inline def values = js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
   }
 
-  /**
-    * Provides summary information for an endpoint.
+  /** Provides summary information for an endpoint.
     */
   @js.native
   trait EndpointSummary extends js.Object {
@@ -6411,7 +6265,6 @@ package sagemaker {
         "EndpointStatus" -> EndpointStatus.asInstanceOf[js.Any],
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EndpointSummary]
     }
   }
@@ -6430,8 +6283,7 @@ package sagemaker {
     @inline def values = js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped)
   }
 
-  /**
-    * The properties of an experiment as returned by the <a>Search</a> API.
+  /** The properties of an experiment as returned by the <a>Search</a> API.
     */
   @js.native
   trait Experiment extends js.Object {
@@ -6476,11 +6328,10 @@ package sagemaker {
     }
   }
 
-  /**
-    * Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:
+  /** Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:
     * * <a>CreateProcessingJob</a>
-    *  * <a>CreateTrainingJob</a>
-    *  * <a>CreateTransformJob</a>
+    * * <a>CreateTrainingJob</a>
+    * * <a>CreateTransformJob</a>
     */
   @js.native
   trait ExperimentConfig extends js.Object {
@@ -6504,8 +6355,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The source of the experiment.
+  /** The source of the experiment.
     */
   @js.native
   trait ExperimentSource extends js.Object {
@@ -6528,8 +6378,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A summary of the properties of an experiment. To get the complete set of properties, call the <a>DescribeExperiment</a> API and provide the <code>ExperimentName</code>.
+  /** A summary of the properties of an experiment. To get the complete set of properties, call the <a>DescribeExperiment</a> API and provide the <code>ExperimentName</code>.
     */
   @js.native
   trait ExperimentSummary extends js.Object {
@@ -6571,8 +6420,7 @@ package sagemaker {
     @inline def values = js.Array(rw, ro)
   }
 
-  /**
-    * Specifies a file system data source for a channel.
+  /** Specifies a file system data source for a channel.
     */
   @js.native
   trait FileSystemDataSource extends js.Object {
@@ -6596,7 +6444,6 @@ package sagemaker {
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "FileSystemType" -> FileSystemType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FileSystemDataSource]
     }
   }
@@ -6610,24 +6457,23 @@ package sagemaker {
     @inline def values = js.Array(EFS, FSxLustre)
   }
 
-  /**
-    * A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value. Resources that match the statement are returned in the results from the <a>Search</a> API.
-    *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.
-    *  In search, there are several property types:
-    *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
-    *  <code>{</code>
-    *  <code>"Name": "Metrics.accuracy",</code>
-    *  <code>"Operator": "GreaterThan",</code>
-    *  <code>"Value": "0.9"</code>
-    *  <code>}</code>
-    *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
-    *  <code> {</code>
-    *  <code> "Name": "HyperParameters.learning_rate",</code>
-    *  <code> "Operator": "LessThan",</code>
-    *  <code> "Value": "0.5"</code>
-    *  <code> }</code>
-    *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
-    *  </dd> </dl>
+  /** A conditional statement for a search expression that includes a resource property, a Boolean operator, and a value. Resources that match the statement are returned in the results from the <a>Search</a> API.
+    * If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator.
+    * In search, there are several property types:
+    * <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
+    * <code>{</code>
+    * <code>"Name": "Metrics.accuracy",</code>
+    * <code>"Operator": "GreaterThan",</code>
+    * <code>"Value": "0.9"</code>
+    * <code>}</code>
+    * </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
+    * <code> {</code>
+    * <code> "Name": "HyperParameters.learning_rate",</code>
+    * <code> "Operator": "LessThan",</code>
+    * <code> "Value": "0.5"</code>
+    * <code> }</code>
+    * </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
+    * </dd> </dl>
     */
   @js.native
   trait Filter extends js.Object {
@@ -6653,8 +6499,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The best candidate result from an AutoML training job.
+  /** The best candidate result from an AutoML training job.
     */
   @js.native
   trait FinalAutoMLJobObjectiveMetric extends js.Object {
@@ -6680,8 +6525,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>.
+  /** Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>.
     */
   @js.native
   trait FinalHyperParameterTuningJobObjectiveMetric extends js.Object {
@@ -6707,8 +6551,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Contains information about where human output will be stored.
+  /** Contains information about where human output will be stored.
     */
   @js.native
   trait FlowDefinitionOutputConfig extends js.Object {
@@ -6742,8 +6585,7 @@ package sagemaker {
     @inline def values = js.Array(Initializing, Active, Failed, Deleting)
   }
 
-  /**
-    * Contains summary information about the flow definition.
+  /** Contains summary information about the flow definition.
     */
   @js.native
   trait FlowDefinitionSummary extends js.Object {
@@ -6826,8 +6668,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies configuration details for a Git repository in your AWS account.
+  /** Specifies configuration details for a Git repository in your AWS account.
     */
   @js.native
   trait GitConfig extends js.Object {
@@ -6853,8 +6694,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies configuration details for a Git repository when the repository is updated.
+  /** Specifies configuration details for a Git repository when the repository is updated.
     */
   @js.native
   trait GitConfigForUpdate extends js.Object {
@@ -6872,8 +6712,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions.
+  /** Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation conditions.
     */
   @js.native
   trait HumanLoopActivationConditionsConfig extends js.Object {
@@ -6888,13 +6727,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HumanLoopActivationConditions" -> HumanLoopActivationConditions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanLoopActivationConditionsConfig]
     }
   }
 
-  /**
-    * Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans.
+  /** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans.
     */
   @js.native
   trait HumanLoopActivationConfig extends js.Object {
@@ -6909,13 +6746,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HumanLoopActivationConditionsConfig" -> HumanLoopActivationConditionsConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanLoopActivationConfig]
     }
   }
 
-  /**
-    * Describes the work to be performed by human workers.
+  /** Describes the work to be performed by human workers.
     */
   @js.native
   trait HumanLoopConfig extends js.Object {
@@ -6959,8 +6794,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Container for configuring the source of human task requests.
+  /** Container for configuring the source of human task requests.
     */
   @js.native
   trait HumanLoopRequestSource extends js.Object {
@@ -6975,13 +6809,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AwsManagedHumanLoopRequestSource" -> AwsManagedHumanLoopRequestSource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanLoopRequestSource]
     }
   }
 
-  /**
-    * Information required for human workers to complete a labeling task.
+  /** Information required for human workers to complete a labeling task.
     */
   @js.native
   trait HumanTaskConfig extends js.Object {
@@ -7043,8 +6875,7 @@ package sagemaker {
     @inline def values = js.Array(Active, Deleting)
   }
 
-  /**
-    * Container for human task user interface information.
+  /** Container for human task user interface information.
     */
   @js.native
   trait HumanTaskUiSummary extends js.Object {
@@ -7065,13 +6896,11 @@ package sagemaker {
         "HumanTaskUiArn" -> HumanTaskUiArn.asInstanceOf[js.Any],
         "HumanTaskUiName" -> HumanTaskUiName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HumanTaskUiSummary]
     }
   }
 
-  /**
-    * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
+  /** Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
     */
   @js.native
   trait HyperParameterAlgorithmSpecification extends js.Object {
@@ -7111,8 +6940,7 @@ package sagemaker {
     @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
   }
 
-  /**
-    * Defines a hyperparameter to be used by an algorithm.
+  /** Defines a hyperparameter to be used by an algorithm.
     */
   @js.native
   trait HyperParameterSpecification extends js.Object {
@@ -7150,8 +6978,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the training jobs launched by a hyperparameter tuning job.
+  /** Defines the training jobs launched by a hyperparameter tuning job.
     */
   @js.native
   trait HyperParameterTrainingJobDefinition extends js.Object {
@@ -7213,8 +7040,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies summary information about a training job.
+  /** Specifies summary information about a training job.
     */
   @js.native
   trait HyperParameterTrainingJobSummary extends js.Object {
@@ -7267,8 +7093,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configures a hyperparameter tuning job.
+  /** Configures a hyperparameter tuning job.
     */
   @js.native
   trait HyperParameterTuningJobConfig extends js.Object {
@@ -7303,8 +7128,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.
+  /** Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.
     */
   @js.native
   trait HyperParameterTuningJobObjective extends js.Object {
@@ -7322,7 +7146,6 @@ package sagemaker {
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HyperParameterTuningJobObjective]
     }
   }
@@ -7358,8 +7181,7 @@ package sagemaker {
     @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
-  /**
-    * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
+  /** The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
     */
   @js.native
   sealed trait HyperParameterTuningJobStrategyType extends js.Any
@@ -7370,8 +7192,7 @@ package sagemaker {
     @inline def values = js.Array(Bayesian, Random)
   }
 
-  /**
-    * Provides summary information about a hyperparameter tuning job.
+  /** Provides summary information about a hyperparameter tuning job.
     */
   @js.native
   trait HyperParameterTuningJobSummary extends js.Object {
@@ -7418,9 +7239,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
-    *  All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
+  /** Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
+    * All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
     *
     * '''Note:'''All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.
     */
@@ -7440,7 +7260,6 @@ package sagemaker {
         "ParentHyperParameterTuningJobs" -> ParentHyperParameterTuningJobs.asInstanceOf[js.Any],
         "WarmStartType" -> WarmStartType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[HyperParameterTuningJobWarmStartConfig]
     }
   }
@@ -7454,8 +7273,7 @@ package sagemaker {
     @inline def values = js.Array(IdenticalDataAndAlgorithm, TransferLearning)
   }
 
-  /**
-    * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual Private Cloud (VPC).
+  /** Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual Private Cloud (VPC).
     */
   @js.native
   trait ImageConfig extends js.Object {
@@ -7470,13 +7288,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "RepositoryAccessMode" -> RepositoryAccessMode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImageConfig]
     }
   }
 
-  /**
-    * Defines how to perform inference generation after a training job is run.
+  /** Defines how to perform inference generation after a training job is run.
     */
   @js.native
   trait InferenceSpecification extends js.Object {
@@ -7503,13 +7319,11 @@ package sagemaker {
         "SupportedResponseMIMETypes" -> SupportedResponseMIMETypes.asInstanceOf[js.Any],
         "SupportedTransformInstanceTypes" -> SupportedTransformInstanceTypes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InferenceSpecification]
     }
   }
 
-  /**
-    * Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
+  /** Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
     */
   @js.native
   trait InputConfig extends js.Object {
@@ -7530,7 +7344,6 @@ package sagemaker {
         "Framework" -> Framework.asInstanceOf[js.Any],
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InputConfig]
     }
   }
@@ -7577,51 +7390,49 @@ package sagemaker {
     val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
-    @inline def values =
-      js.Array(
-        `ml.t2.medium`,
-        `ml.t2.large`,
-        `ml.t2.xlarge`,
-        `ml.t2.2xlarge`,
-        `ml.t3.medium`,
-        `ml.t3.large`,
-        `ml.t3.xlarge`,
-        `ml.t3.2xlarge`,
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5d.xlarge`,
-        `ml.c5d.2xlarge`,
-        `ml.c5d.4xlarge`,
-        `ml.c5d.9xlarge`,
-        `ml.c5d.18xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`
-      )
+    @inline def values = js.Array(
+      `ml.t2.medium`,
+      `ml.t2.large`,
+      `ml.t2.xlarge`,
+      `ml.t2.2xlarge`,
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5d.xlarge`,
+      `ml.c5d.2xlarge`,
+      `ml.c5d.4xlarge`,
+      `ml.c5d.9xlarge`,
+      `ml.c5d.18xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`
+    )
   }
 
-  /**
-    * For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.
+  /** For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.
     */
   @js.native
   trait IntegerParameterRange extends js.Object {
@@ -7650,8 +7461,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the possible values for an integer hyperparameter.
+  /** Defines the possible values for an integer hyperparameter.
     */
   @js.native
   trait IntegerParameterRangeSpecification extends js.Object {
@@ -7669,7 +7479,6 @@ package sagemaker {
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[IntegerParameterRangeSpecification]
     }
   }
@@ -7683,8 +7492,7 @@ package sagemaker {
     @inline def values = js.Array(Input, None)
   }
 
-  /**
-    * Jupyter server's app settings.
+  /** Jupyter server's app settings.
     */
   @js.native
   trait JupyterServerAppSettings extends js.Object {
@@ -7702,8 +7510,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The kernel gateway app settings.
+  /** The kernel gateway app settings.
     */
   @js.native
   trait KernelGatewayAppSettings extends js.Object {
@@ -7721,8 +7528,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides a breakdown of the number of objects labeled.
+  /** Provides a breakdown of the number of objects labeled.
     */
   @js.native
   trait LabelCounters extends js.Object {
@@ -7752,8 +7558,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides counts for human-labeled tasks in the labeling job.
+  /** Provides counts for human-labeled tasks in the labeling job.
     */
   @js.native
   trait LabelCountersForWorkteam extends js.Object {
@@ -7777,8 +7582,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.
+  /** Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.
     */
   @js.native
   trait LabelingJobAlgorithmsConfig extends js.Object {
@@ -7804,8 +7608,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
+  /** Attributes of the data specified by the customer. Use these to describe the data to be labeled.
     */
   @js.native
   trait LabelingJobDataAttributes extends js.Object {
@@ -7823,8 +7626,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides information about the location of input data.
+  /** Provides information about the location of input data.
     */
   @js.native
   trait LabelingJobDataSource extends js.Object {
@@ -7842,8 +7644,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides summary information for a work team.
+  /** Provides summary information for a work team.
     */
   @js.native
   trait LabelingJobForWorkteamSummary extends js.Object {
@@ -7878,8 +7679,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Input configuration information for a labeling job.
+  /** Input configuration information for a labeling job.
     */
   @js.native
   trait LabelingJobInputConfig extends js.Object {
@@ -7902,8 +7702,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies the location of the output produced by the labeling job.
+  /** Specifies the location of the output produced by the labeling job.
     */
   @js.native
   trait LabelingJobOutput extends js.Object {
@@ -7926,8 +7725,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Output configuration information for a labeling job.
+  /** Output configuration information for a labeling job.
     */
   @js.native
   trait LabelingJobOutputConfig extends js.Object {
@@ -7950,8 +7748,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides configuration information for labeling jobs.
+  /** Provides configuration information for labeling jobs.
     */
   @js.native
   trait LabelingJobResourceConfig extends js.Object {
@@ -7969,8 +7766,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The Amazon S3 location of the input data objects.
+  /** The Amazon S3 location of the input data objects.
     */
   @js.native
   trait LabelingJobS3DataSource extends js.Object {
@@ -7985,7 +7781,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ManifestS3Uri" -> ManifestS3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LabelingJobS3DataSource]
     }
   }
@@ -8003,8 +7798,7 @@ package sagemaker {
     @inline def values = js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped)
   }
 
-  /**
-    * A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.
+  /** A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.
     *
     * '''Note:'''Labeling jobs fail after 30 days with an appropriate client error message.
     */
@@ -8027,8 +7821,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides summary information about a labeling job.
+  /** Provides summary information about a labeling job.
     */
   @js.native
   trait LabelingJobSummary extends js.Object {
@@ -9934,8 +9727,7 @@ package sagemaker {
     @inline def values = js.Array(Name, CreateDate)
   }
 
-  /**
-    * Defines an Amazon Cognito or your own OIDC IdP user group that is part of a work team.
+  /** Defines an Amazon Cognito or your own OIDC IdP user group that is part of a work team.
     */
   @js.native
   trait MemberDefinition extends js.Object {
@@ -9956,8 +9748,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.
+  /** The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.
     */
   @js.native
   trait MetricData extends js.Object {
@@ -9981,8 +9772,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code> . Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
+  /** Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code> . Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
     */
   @js.native
   trait MetricDefinition extends js.Object {
@@ -10000,14 +9790,12 @@ package sagemaker {
         "Name" -> Name.asInstanceOf[js.Any],
         "Regex" -> Regex.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MetricDefinition]
     }
   }
 
-  /**
-    * Provides information about the location that is configured for storing model artifacts.
-    *  Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.
+  /** Provides information about the location that is configured for storing model artifacts.
+    * Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.
     */
   @js.native
   trait ModelArtifacts extends js.Object {
@@ -10022,13 +9810,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "S3ModelArtifacts" -> S3ModelArtifacts.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModelArtifacts]
     }
   }
 
-  /**
-    * Configures the timeout and maximum number of retries for processing a transform job invocation.
+  /** Configures the timeout and maximum number of retries for processing a transform job invocation.
     */
   @js.native
   trait ModelClientConfig extends js.Object {
@@ -10049,8 +9835,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the Docker container for the model package.
+  /** Describes the Docker container for the model package.
     */
   @js.native
   trait ModelPackageContainerDefinition extends js.Object {
@@ -10103,8 +9888,7 @@ package sagemaker {
     @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting)
   }
 
-  /**
-    * Specifies the validation and image scan statuses of the model package.
+  /** Specifies the validation and image scan statuses of the model package.
     */
   @js.native
   trait ModelPackageStatusDetails extends js.Object {
@@ -10127,8 +9911,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Represents the overall status of a model package.
+  /** Represents the overall status of a model package.
     */
   @js.native
   trait ModelPackageStatusItem extends js.Object {
@@ -10154,8 +9937,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides summary information about a model package.
+  /** Provides summary information about a model package.
     */
   @js.native
   trait ModelPackageSummary extends js.Object {
@@ -10187,9 +9969,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.
-    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+  /** Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.
+    * The data provided in the validation profile is made available to your buyers on AWS Marketplace.
     */
   @js.native
   trait ModelPackageValidationProfile extends js.Object {
@@ -10207,13 +9988,11 @@ package sagemaker {
         "ProfileName" -> ProfileName.asInstanceOf[js.Any],
         "TransformJobDefinition" -> TransformJobDefinition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModelPackageValidationProfile]
     }
   }
 
-  /**
-    * Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.
+  /** Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.
     */
   @js.native
   trait ModelPackageValidationSpecification extends js.Object {
@@ -10231,7 +10010,6 @@ package sagemaker {
         "ValidationProfiles" -> ValidationProfiles.asInstanceOf[js.Any],
         "ValidationRole" -> ValidationRole.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModelPackageValidationSpecification]
     }
   }
@@ -10245,8 +10023,7 @@ package sagemaker {
     @inline def values = js.Array(Name, CreationTime)
   }
 
-  /**
-    * Provides summary information about a model.
+  /** Provides summary information about a model.
     */
   @js.native
   trait ModelSummary extends js.Object {
@@ -10267,13 +10044,11 @@ package sagemaker {
         "ModelArn" -> ModelArn.asInstanceOf[js.Any],
         "ModelName" -> ModelName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModelSummary]
     }
   }
 
-  /**
-    * Container image configuration object for the monitoring job.
+  /** Container image configuration object for the monitoring job.
     */
   @js.native
   trait MonitoringAppSpecification extends js.Object {
@@ -10305,8 +10080,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically.
+  /** Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically.
     */
   @js.native
   trait MonitoringBaselineConfig extends js.Object {
@@ -10327,8 +10101,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configuration for the cluster used to run model monitoring jobs.
+  /** Configuration for the cluster used to run model monitoring jobs.
     */
   @js.native
   trait MonitoringClusterConfig extends js.Object {
@@ -10357,8 +10130,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The constraints resource for a monitoring job.
+  /** The constraints resource for a monitoring job.
     */
   @js.native
   trait MonitoringConstraintsResource extends js.Object {
@@ -10386,8 +10158,7 @@ package sagemaker {
     @inline def values = js.Array(CreationTime, ScheduledTime, Status)
   }
 
-  /**
-    * Summary of information about the last monitoring job to run.
+  /** Summary of information about the last monitoring job to run.
     */
   @js.native
   trait MonitoringExecutionSummary extends js.Object {
@@ -10428,8 +10199,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The inputs for a monitoring job.
+  /** The inputs for a monitoring job.
     */
   @js.native
   trait MonitoringInput extends js.Object {
@@ -10444,13 +10214,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointInput" -> EndpointInput.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MonitoringInput]
     }
   }
 
-  /**
-    * Defines the monitoring job.
+  /** Defines the monitoring job.
     */
   @js.native
   trait MonitoringJobDefinition extends js.Object {
@@ -10494,8 +10262,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The output object for a monitoring job.
+  /** The output object for a monitoring job.
     */
   @js.native
   trait MonitoringOutput extends js.Object {
@@ -10510,13 +10277,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "S3Output" -> S3Output.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MonitoringOutput]
     }
   }
 
-  /**
-    * The output configuration for monitoring jobs.
+  /** The output configuration for monitoring jobs.
     */
   @js.native
   trait MonitoringOutputConfig extends js.Object {
@@ -10539,8 +10304,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Identifies the resources to deploy for a monitoring job.
+  /** Identifies the resources to deploy for a monitoring job.
     */
   @js.native
   trait MonitoringResources extends js.Object {
@@ -10555,13 +10319,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ClusterConfig" -> ClusterConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MonitoringResources]
     }
   }
 
-  /**
-    * Information about where and how you want to store the results of a monitoring job.
+  /** Information about where and how you want to store the results of a monitoring job.
     */
   @js.native
   trait MonitoringS3Output extends js.Object {
@@ -10587,8 +10349,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configures the monitoring schedule and defines the monitoring job.
+  /** Configures the monitoring schedule and defines the monitoring job.
     */
   @js.native
   trait MonitoringScheduleConfig extends js.Object {
@@ -10621,8 +10382,7 @@ package sagemaker {
     @inline def values = js.Array(Name, CreationTime, Status)
   }
 
-  /**
-    * Summarizes the monitoring schedule.
+  /** Summarizes the monitoring schedule.
     */
   @js.native
   trait MonitoringScheduleSummary extends js.Object {
@@ -10657,8 +10417,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The statistics resource for a monitoring job.
+  /** The statistics resource for a monitoring job.
     */
   @js.native
   trait MonitoringStatisticsResource extends js.Object {
@@ -10676,8 +10435,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A time limit for how long the monitoring job is allowed to run before stopping.
+  /** A time limit for how long the monitoring job is allowed to run before stopping.
     */
   @js.native
   trait MonitoringStoppingCondition extends js.Object {
@@ -10692,16 +10450,14 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MaxRuntimeInSeconds" -> MaxRuntimeInSeconds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MonitoringStoppingCondition]
     }
   }
 
-  /**
-    * A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API.
-    *  For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:
+  /** A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API.
+    * For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters:
     * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code>
-    *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code>
+    * * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code>
     */
   @js.native
   trait NestedFilters extends js.Object {
@@ -10719,13 +10475,11 @@ package sagemaker {
         "Filters" -> Filters.asInstanceOf[js.Any],
         "NestedPropertyName" -> NestedPropertyName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NestedFilters]
     }
   }
 
-  /**
-    * Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.
+  /** Networking options for a job, such as network traffic encryption between containers, whether to allow inbound and outbound network calls to and from containers, and the VPC subnets and security groups to use for VPC-enabled jobs.
     */
   @js.native
   trait NetworkConfig extends js.Object {
@@ -10781,8 +10535,7 @@ package sagemaker {
     @inline def values = js.Array(Ascending, Descending)
   }
 
-  /**
-    * Provides a summary of a notebook instance lifecycle configuration.
+  /** Provides a summary of a notebook instance lifecycle configuration.
     */
   @js.native
   trait NotebookInstanceLifecycleConfigSummary extends js.Object {
@@ -10811,13 +10564,12 @@ package sagemaker {
     }
   }
 
-  /**
-    * Contains the notebook instance lifecycle configuration script.
-    *  Each lifecycle configuration script has a limit of 16384 characters.
-    *  The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
-    *  View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
-    *  Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
-    *  For information about notebook instance lifestyle configurations, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html|Step 2.1: (Optional) Customize a Notebook Instance]].
+  /** Contains the notebook instance lifecycle configuration script.
+    * Each lifecycle configuration script has a limit of 16384 characters.
+    * The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
+    * View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
+    * Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
+    * For information about notebook instance lifestyle configurations, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html|Step 2.1: (Optional) Customize a Notebook Instance]].
     */
   @js.native
   trait NotebookInstanceLifecycleHook extends js.Object {
@@ -10868,8 +10620,7 @@ package sagemaker {
     @inline def values = js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating)
   }
 
-  /**
-    * Provides summary information for an Amazon SageMaker notebook instance.
+  /** Provides summary information for an Amazon SageMaker notebook instance.
     */
   @js.native
   trait NotebookInstanceSummary extends js.Object {
@@ -10925,8 +10676,7 @@ package sagemaker {
     @inline def values = js.Array(Allowed, Disabled)
   }
 
-  /**
-    * Configures SNS notifications of available or expiring work items for work teams.
+  /** Configures SNS notifications of available or expiring work items for work teams.
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -10954,8 +10704,7 @@ package sagemaker {
     @inline def values = js.Array(Succeeded, Pending, Failed)
   }
 
-  /**
-    * Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
+  /** Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
     */
   @js.native
   trait ObjectiveStatusCounters extends js.Object {
@@ -10979,8 +10728,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Use this parameter to configure your OIDC Identity Provider (IdP).
+  /** Use this parameter to configure your OIDC Identity Provider (IdP).
     */
   @js.native
   trait OidcConfig extends js.Object {
@@ -11016,13 +10764,11 @@ package sagemaker {
         "TokenEndpoint" -> TokenEndpoint.asInstanceOf[js.Any],
         "UserInfoEndpoint" -> UserInfoEndpoint.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OidcConfig]
     }
   }
 
-  /**
-    * Your OIDC IdP workforce configuration.
+  /** Your OIDC IdP workforce configuration.
     */
   @js.native
   trait OidcConfigForResponse extends js.Object {
@@ -11058,8 +10804,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A list of user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.
+  /** A list of user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.
     */
   @js.native
   trait OidcMemberDefinition extends js.Object {
@@ -11074,7 +10819,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Groups" -> Groups.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OidcMemberDefinition]
     }
   }
@@ -11105,8 +10849,7 @@ package sagemaker {
     @inline def values = js.Array(Ascending, Descending)
   }
 
-  /**
-    * Contains information about the output location for the compiled model and the target device that the model runs on. <code>TargetDevice</code> and <code>TargetPlatform</code> are mutually exclusive, so you need to choose one between the two to specify your target device or platform. If you cannot find your device you want to use from the <code>TargetDevice</code> list, use <code>TargetPlatform</code> to describe the platform of your edge device and <code>CompilerOptions</code> if there are specific settings that are required or recommended to use for particular TargetPlatform.
+  /** Contains information about the output location for the compiled model and the target device that the model runs on. <code>TargetDevice</code> and <code>TargetPlatform</code> are mutually exclusive, so you need to choose one between the two to specify your target device or platform. If you cannot find your device you want to use from the <code>TargetDevice</code> list, use <code>TargetPlatform</code> to describe the platform of your edge device and <code>CompilerOptions</code> if there are specific settings that are required or recommended to use for particular TargetPlatform.
     */
   @js.native
   trait OutputConfig extends js.Object {
@@ -11135,8 +10878,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides information about how to store model training results (model artifacts).
+  /** Provides information about how to store model training results (model artifacts).
     */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -11159,8 +10901,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm.
+  /** Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm.
     */
   @js.native
   trait ParameterRange extends js.Object {
@@ -11184,8 +10925,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.
+  /** Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.
     *
     * '''Note:'''You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.
     */
@@ -11222,8 +10962,7 @@ package sagemaker {
     @inline def values = js.Array(Integer, Continuous, Categorical, FreeText)
   }
 
-  /**
-    * The trial that a trial component is associated with and the experiment the trial is part of. A component might not be associated with a trial. A component can be associated with multiple trials.
+  /** The trial that a trial component is associated with and the experiment the trial is part of. A component might not be associated with a trial. A component can be associated with multiple trials.
     */
   @js.native
   trait Parent extends js.Object {
@@ -11244,8 +10983,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.
+  /** A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.
     */
   @js.native
   trait ParentHyperParameterTuningJob extends js.Object {
@@ -11273,8 +11011,7 @@ package sagemaker {
     @inline def values = js.Array(BinaryClassification, MulticlassClassification, Regression)
   }
 
-  /**
-    * Configuration for the cluster used to run a processing job.
+  /** Configuration for the cluster used to run a processing job.
     */
   @js.native
   trait ProcessingClusterConfig extends js.Object {
@@ -11303,8 +11040,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The inputs for a processing job.
+  /** The inputs for a processing job.
     */
   @js.native
   trait ProcessingInput extends js.Object {
@@ -11322,7 +11058,6 @@ package sagemaker {
         "InputName" -> InputName.asInstanceOf[js.Any],
         "S3Input" -> S3Input.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProcessingInput]
     }
   }
@@ -11369,51 +11104,49 @@ package sagemaker {
     val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
     val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
-    @inline def values =
-      js.Array(
-        `ml.t3.medium`,
-        `ml.t3.large`,
-        `ml.t3.xlarge`,
-        `ml.t3.2xlarge`,
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.r5.large`,
-        `ml.r5.xlarge`,
-        `ml.r5.2xlarge`,
-        `ml.r5.4xlarge`,
-        `ml.r5.8xlarge`,
-        `ml.r5.12xlarge`,
-        `ml.r5.16xlarge`,
-        `ml.r5.24xlarge`
-      )
+    @inline def values = js.Array(
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.r5.large`,
+      `ml.r5.xlarge`,
+      `ml.r5.2xlarge`,
+      `ml.r5.4xlarge`,
+      `ml.r5.8xlarge`,
+      `ml.r5.12xlarge`,
+      `ml.r5.16xlarge`,
+      `ml.r5.24xlarge`
+    )
   }
 
-  /**
-    * An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html|Process Data and Evaluate Models]].
+  /** An Amazon SageMaker processing job that is used to analyze data and evaluate models. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html|Process Data and Evaluate Models]].
     */
   @js.native
   trait ProcessingJob extends js.Object {
@@ -11506,8 +11239,7 @@ package sagemaker {
     @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
-  /**
-    * Summary of information about a processing job.
+  /** Summary of information about a processing job.
     */
   @js.native
   trait ProcessingJobSummary extends js.Object {
@@ -11548,8 +11280,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the results of a processing job.
+  /** Describes the results of a processing job.
     */
   @js.native
   trait ProcessingOutput extends js.Object {
@@ -11567,13 +11298,11 @@ package sagemaker {
         "OutputName" -> OutputName.asInstanceOf[js.Any],
         "S3Output" -> S3Output.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProcessingOutput]
     }
   }
 
-  /**
-    * The output configuration for the processing job.
+  /** The output configuration for the processing job.
     */
   @js.native
   trait ProcessingOutputConfig extends js.Object {
@@ -11596,8 +11325,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.
+  /** Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.
     */
   @js.native
   trait ProcessingResources extends js.Object {
@@ -11612,7 +11340,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ClusterConfig" -> ClusterConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProcessingResources]
     }
   }
@@ -11644,8 +11371,7 @@ package sagemaker {
     @inline def values = js.Array(ManifestFile, S3Prefix)
   }
 
-  /**
-    * Information about where and how you want to obtain the inputs for an processing job.
+  /** Information about where and how you want to obtain the inputs for an processing job.
     */
   @js.native
   trait ProcessingS3Input extends js.Object {
@@ -11689,8 +11415,7 @@ package sagemaker {
     @inline def values = js.Array(Pipe, File)
   }
 
-  /**
-    * Information about where and how you want to store the results of an processing job.
+  /** Information about where and how you want to store the results of an processing job.
     */
   @js.native
   trait ProcessingS3Output extends js.Object {
@@ -11711,7 +11436,6 @@ package sagemaker {
         "S3UploadMode" -> S3UploadMode.asInstanceOf[js.Any],
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProcessingS3Output]
     }
   }
@@ -11725,8 +11449,7 @@ package sagemaker {
     @inline def values = js.Array(Continuous, EndOfJob)
   }
 
-  /**
-    * Specifies a time limit for how long the processing job is allowed to run.
+  /** Specifies a time limit for how long the processing job is allowed to run.
     */
   @js.native
   trait ProcessingStoppingCondition extends js.Object {
@@ -11741,13 +11464,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MaxRuntimeInSeconds" -> MaxRuntimeInSeconds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProcessingStoppingCondition]
     }
   }
 
-  /**
-    * Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
+  /** Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
     */
   @js.native
   trait ProductionVariant extends js.Object {
@@ -11865,79 +11586,77 @@ package sagemaker {
     val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
     val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
-    @inline def values =
-      js.Array(
-        `ml.t2.medium`,
-        `ml.t2.large`,
-        `ml.t2.xlarge`,
-        `ml.t2.2xlarge`,
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.m5d.large`,
-        `ml.m5d.xlarge`,
-        `ml.m5d.2xlarge`,
-        `ml.m5d.4xlarge`,
-        `ml.m5d.12xlarge`,
-        `ml.m5d.24xlarge`,
-        `ml.c4.large`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.c5.large`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5d.large`,
-        `ml.c5d.xlarge`,
-        `ml.c5d.2xlarge`,
-        `ml.c5d.4xlarge`,
-        `ml.c5d.9xlarge`,
-        `ml.c5d.18xlarge`,
-        `ml.g4dn.xlarge`,
-        `ml.g4dn.2xlarge`,
-        `ml.g4dn.4xlarge`,
-        `ml.g4dn.8xlarge`,
-        `ml.g4dn.12xlarge`,
-        `ml.g4dn.16xlarge`,
-        `ml.r5.large`,
-        `ml.r5.xlarge`,
-        `ml.r5.2xlarge`,
-        `ml.r5.4xlarge`,
-        `ml.r5.12xlarge`,
-        `ml.r5.24xlarge`,
-        `ml.r5d.large`,
-        `ml.r5d.xlarge`,
-        `ml.r5d.2xlarge`,
-        `ml.r5d.4xlarge`,
-        `ml.r5d.12xlarge`,
-        `ml.r5d.24xlarge`,
-        `ml.inf1.xlarge`,
-        `ml.inf1.2xlarge`,
-        `ml.inf1.6xlarge`,
-        `ml.inf1.24xlarge`
-      )
+    @inline def values = js.Array(
+      `ml.t2.medium`,
+      `ml.t2.large`,
+      `ml.t2.xlarge`,
+      `ml.t2.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.m5d.large`,
+      `ml.m5d.xlarge`,
+      `ml.m5d.2xlarge`,
+      `ml.m5d.4xlarge`,
+      `ml.m5d.12xlarge`,
+      `ml.m5d.24xlarge`,
+      `ml.c4.large`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.large`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5d.large`,
+      `ml.c5d.xlarge`,
+      `ml.c5d.2xlarge`,
+      `ml.c5d.4xlarge`,
+      `ml.c5d.9xlarge`,
+      `ml.c5d.18xlarge`,
+      `ml.g4dn.xlarge`,
+      `ml.g4dn.2xlarge`,
+      `ml.g4dn.4xlarge`,
+      `ml.g4dn.8xlarge`,
+      `ml.g4dn.12xlarge`,
+      `ml.g4dn.16xlarge`,
+      `ml.r5.large`,
+      `ml.r5.xlarge`,
+      `ml.r5.2xlarge`,
+      `ml.r5.4xlarge`,
+      `ml.r5.12xlarge`,
+      `ml.r5.24xlarge`,
+      `ml.r5d.large`,
+      `ml.r5d.xlarge`,
+      `ml.r5d.2xlarge`,
+      `ml.r5d.4xlarge`,
+      `ml.r5d.12xlarge`,
+      `ml.r5d.24xlarge`,
+      `ml.inf1.xlarge`,
+      `ml.inf1.2xlarge`,
+      `ml.inf1.6xlarge`,
+      `ml.inf1.24xlarge`
+    )
   }
 
-  /**
-    * Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.
+  /** Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.
     */
   @js.native
   trait ProductionVariantSummary extends js.Object {
@@ -11972,8 +11691,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text.
+  /** Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text.
     */
   @js.native
   trait PropertyNameQuery extends js.Object {
@@ -11988,13 +11706,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "PropertyNameHint" -> PropertyNameHint.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PropertyNameQuery]
     }
   }
 
-  /**
-    * A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.
+  /** A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.
     */
   @js.native
   trait PropertyNameSuggestion extends js.Object {
@@ -12012,106 +11728,105 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
-    *  Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.
+  /** Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
+    * Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.
     * * 0.036
-    *  * 0.048
-    *  * 0.060
-    *  * 0.072
-    *  * 0.120
-    *  * 0.240
-    *  * 0.360
-    *  * 0.480
-    *  * 0.600
-    *  * 0.720
-    *  * 0.840
-    *  * 0.960
-    *  * 1.080
-    *  * 1.200
+    * * 0.048
+    * * 0.060
+    * * 0.072
+    * * 0.120
+    * * 0.240
+    * * 0.360
+    * * 0.480
+    * * 0.600
+    * * 0.720
+    * * 0.840
+    * * 0.960
+    * * 1.080
+    * * 1.200
     * Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.
     * * 0.012
-    *  * 0.024
-    *  * 0.036
-    *  * 0.048
-    *  * 0.060
-    *  * 0.072
-    *  * 0.120
-    *  * 0.240
-    *  * 0.360
-    *  * 0.480
-    *  * 0.600
-    *  * 0.720
-    *  * 0.840
-    *  * 0.960
-    *  * 1.080
-    *  * 1.200
+    * * 0.024
+    * * 0.036
+    * * 0.048
+    * * 0.060
+    * * 0.072
+    * * 0.120
+    * * 0.240
+    * * 0.360
+    * * 0.480
+    * * 0.600
+    * * 0.720
+    * * 0.840
+    * * 0.960
+    * * 1.080
+    * * 1.200
     * Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.
     * * 0.840
-    *  * 0.960
-    *  * 1.080
-    *  * 1.200
+    * * 0.960
+    * * 1.080
+    * * 1.200
     * Use one of the following prices for Textract AnalyzeDocument Important Form Key Amazon Augmented AI review tasks. Prices are in US dollars.
     * * 2.400
-    *  * 2.280
-    *  * 2.160
-    *  * 2.040
-    *  * 1.920
-    *  * 1.800
-    *  * 1.680
-    *  * 1.560
-    *  * 1.440
-    *  * 1.320
-    *  * 1.200
-    *  * 1.080
-    *  * 0.960
-    *  * 0.840
-    *  * 0.720
-    *  * 0.600
-    *  * 0.480
-    *  * 0.360
-    *  * 0.240
-    *  * 0.120
-    *  * 0.072
-    *  * 0.060
-    *  * 0.048
-    *  * 0.036
-    *  * 0.024
-    *  * 0.012
+    * * 2.280
+    * * 2.160
+    * * 2.040
+    * * 1.920
+    * * 1.800
+    * * 1.680
+    * * 1.560
+    * * 1.440
+    * * 1.320
+    * * 1.200
+    * * 1.080
+    * * 0.960
+    * * 0.840
+    * * 0.720
+    * * 0.600
+    * * 0.480
+    * * 0.360
+    * * 0.240
+    * * 0.120
+    * * 0.072
+    * * 0.060
+    * * 0.048
+    * * 0.036
+    * * 0.024
+    * * 0.012
     * Use one of the following prices for Rekognition DetectModerationLabels Amazon Augmented AI review tasks. Prices are in US dollars.
     * * 1.200
-    *  * 1.080
-    *  * 0.960
-    *  * 0.840
-    *  * 0.720
-    *  * 0.600
-    *  * 0.480
-    *  * 0.360
-    *  * 0.240
-    *  * 0.120
-    *  * 0.072
-    *  * 0.060
-    *  * 0.048
-    *  * 0.036
-    *  * 0.024
-    *  * 0.012
+    * * 1.080
+    * * 0.960
+    * * 0.840
+    * * 0.720
+    * * 0.600
+    * * 0.480
+    * * 0.360
+    * * 0.240
+    * * 0.120
+    * * 0.072
+    * * 0.060
+    * * 0.048
+    * * 0.036
+    * * 0.024
+    * * 0.012
     * Use one of the following prices for Amazon Augmented AI custom human review tasks. Prices are in US dollars.
     * * 1.200
-    *  * 1.080
-    *  * 0.960
-    *  * 0.840
-    *  * 0.720
-    *  * 0.600
-    *  * 0.480
-    *  * 0.360
-    *  * 0.240
-    *  * 0.120
-    *  * 0.072
-    *  * 0.060
-    *  * 0.048
-    *  * 0.036
-    *  * 0.024
-    *  * 0.012
+    * * 1.080
+    * * 0.960
+    * * 0.840
+    * * 0.720
+    * * 0.600
+    * * 0.480
+    * * 0.360
+    * * 0.240
+    * * 0.120
+    * * 0.072
+    * * 0.060
+    * * 0.048
+    * * 0.036
+    * * 0.024
+    * * 0.012
     */
   @js.native
   trait PublicWorkforceTaskPrice extends js.Object {
@@ -12181,13 +11896,11 @@ package sagemaker {
         "Errors" -> Errors.asInstanceOf[js.Any],
         "RenderedContent" -> RenderedContent.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RenderUiTemplateResponse]
     }
   }
 
-  /**
-    * Contains input values for a task.
+  /** Contains input values for a task.
     */
   @js.native
   trait RenderableTask extends js.Object {
@@ -12202,13 +11915,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Input" -> Input.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RenderableTask]
     }
   }
 
-  /**
-    * A description of an error that occurred while rendering the template.
+  /** A description of an error that occurred while rendering the template.
     */
   @js.native
   trait RenderingError extends js.Object {
@@ -12226,7 +11937,6 @@ package sagemaker {
         "Code" -> Code.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RenderingError]
     }
   }
@@ -12240,8 +11950,7 @@ package sagemaker {
     @inline def values = js.Array(Platform, Vpc)
   }
 
-  /**
-    * The resolved attributes.
+  /** The resolved attributes.
     */
   @js.native
   trait ResolvedAttributes extends js.Object {
@@ -12265,8 +11974,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+  /** Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
     */
   @js.native
   trait ResourceConfig extends js.Object {
@@ -12295,8 +12003,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
+  /** Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
     */
   @js.native
   trait ResourceLimits extends js.Object {
@@ -12314,13 +12021,11 @@ package sagemaker {
         "MaxNumberOfTrainingJobs" -> MaxNumberOfTrainingJobs.asInstanceOf[js.Any],
         "MaxParallelTrainingJobs" -> MaxParallelTrainingJobs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceLimits]
     }
   }
 
-  /**
-    * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks.
+  /** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks.
     */
   @js.native
   trait ResourceSpec extends js.Object {
@@ -12352,8 +12057,7 @@ package sagemaker {
     @inline def values = js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent)
   }
 
-  /**
-    * The retention policy for data stored on an Amazon Elastic File System (EFS) volume.
+  /** The retention policy for data stored on an Amazon Elastic File System (EFS) volume.
     */
   @js.native
   trait RetentionPolicy extends js.Object {
@@ -12411,8 +12115,7 @@ package sagemaker {
     @inline def values = js.Array(FullyReplicated, ShardedByS3Key)
   }
 
-  /**
-    * Describes the S3 data source.
+  /** Describes the S3 data source.
     */
   @js.native
   trait S3DataSource extends js.Object {
@@ -12451,8 +12154,7 @@ package sagemaker {
     @inline def values = js.Array(ManifestFile, S3Prefix, AugmentedManifestFile)
   }
 
-  /**
-    * Configuration details about the monitoring schedule.
+  /** Configuration details about the monitoring schedule.
     */
   @js.native
   trait ScheduleConfig extends js.Object {
@@ -12467,7 +12169,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ScheduleExpression" -> ScheduleExpression.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ScheduleConfig]
     }
   }
@@ -12483,13 +12184,12 @@ package sagemaker {
     @inline def values = js.Array(Pending, Failed, Scheduled, Stopped)
   }
 
-  /**
-    * A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
-    *  A <code>SearchExpression</code> contains the following components:
+  /** A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
+    * A <code>SearchExpression</code> contains the following components:
     * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
-    *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
-    *  * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
-    *  * A Boolean operator: <code>And</code> or <code>Or</code>.
+    * * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
+    * * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
+    * * A Boolean operator: <code>And</code> or <code>Or</code>.
     */
   @js.native
   trait SearchExpression extends js.Object {
@@ -12516,8 +12216,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A single resource returned as part of the <a>Search</a> API response.
+  /** A single resource returned as part of the <a>Search</a> API response.
     */
   @js.native
   trait SearchRecord extends js.Object {
@@ -12623,28 +12322,26 @@ package sagemaker {
     val Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
     val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
 
-    @inline def values =
-      js.Array(
-        Starting,
-        LaunchingMLInstances,
-        PreparingTrainingStack,
-        Downloading,
-        DownloadingTrainingImage,
-        Training,
-        Uploading,
-        Stopping,
-        Stopped,
-        MaxRuntimeExceeded,
-        Completed,
-        Failed,
-        Interrupted,
-        MaxWaitTimeExceeded
-      )
+    @inline def values = js.Array(
+      Starting,
+      LaunchingMLInstances,
+      PreparingTrainingStack,
+      Downloading,
+      DownloadingTrainingImage,
+      Training,
+      Uploading,
+      Stopping,
+      Stopped,
+      MaxRuntimeExceeded,
+      Completed,
+      Failed,
+      Interrupted,
+      MaxWaitTimeExceeded
+    )
   }
 
-  /**
-    * An array element of [[DescribeTrainingJobResponse.SecondaryStatusTransitions]]. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status.
-    *  <p/>
+  /** An array element of [[DescribeTrainingJobResponse.SecondaryStatusTransitions]]. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status.
+    * <p/>
     */
   @js.native
   trait SecondaryStatusTransition extends js.Object {
@@ -12673,8 +12370,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called.
+  /** Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called.
     */
   @js.native
   trait SharingSettings extends js.Object {
@@ -12698,9 +12394,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
-    *  For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
+  /** A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+    * For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
     */
   @js.native
   trait ShuffleConfig extends js.Object {
@@ -12715,7 +12410,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Seed" -> Seed.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ShuffleConfig]
     }
   }
@@ -12766,8 +12460,7 @@ package sagemaker {
     @inline def values = js.Array(Name, CreationTime)
   }
 
-  /**
-    * Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+  /** Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
     */
   @js.native
   trait SourceAlgorithm extends js.Object {
@@ -12790,8 +12483,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A list of algorithms that were used to create a model package.
+  /** A list of algorithms that were used to create a model package.
     */
   @js.native
   trait SourceAlgorithmSpecification extends js.Object {
@@ -12806,13 +12498,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "SourceAlgorithms" -> SourceAlgorithms.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SourceAlgorithmSpecification]
     }
   }
 
-  /**
-    * A list of IP address ranges ([[https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html|CIDRs]]). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.
+  /** A list of IP address ranges ([[https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html|CIDRs]]). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.
     */
   @js.native
   trait SourceIpConfig extends js.Object {
@@ -12827,7 +12517,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Cidrs" -> Cidrs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SourceIpConfig]
     }
   }
@@ -12856,7 +12545,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartMonitoringScheduleRequest]
     }
   }
@@ -12874,7 +12562,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartNotebookInstanceInput]
     }
   }
@@ -12892,7 +12579,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "AutoMLJobName" -> AutoMLJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopAutoMLJobRequest]
     }
   }
@@ -12910,7 +12596,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopCompilationJobRequest]
     }
   }
@@ -12928,7 +12613,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopHyperParameterTuningJobRequest]
     }
   }
@@ -12946,7 +12630,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopLabelingJobRequest]
     }
   }
@@ -12964,7 +12647,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopMonitoringScheduleRequest]
     }
   }
@@ -12982,7 +12664,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopNotebookInstanceInput]
     }
   }
@@ -13000,7 +12681,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "ProcessingJobName" -> ProcessingJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopProcessingJobRequest]
     }
   }
@@ -13018,7 +12698,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopTrainingJobRequest]
     }
   }
@@ -13036,15 +12715,13 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TransformJobName" -> TransformJobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopTransformJobRequest]
     }
   }
 
-  /**
-    * Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.
-    *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
-    *  The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.
+  /** Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.
+    * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
+    * The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.
     *
     * '''Note:'''The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.
     */
@@ -13067,8 +12744,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes a work team of a vendor that does the a labelling job.
+  /** Describes a work team of a vendor that does the a labelling job.
     */
   @js.native
   trait SubscribedWorkteam extends js.Object {
@@ -13100,8 +12776,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that are included in the response.
+  /** Specified in the <a>GetSearchSuggestions</a> request. Limits the property names that are included in the response.
     */
   @js.native
   trait SuggestionQuery extends js.Object {
@@ -13119,8 +12794,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes a tag.
+  /** Describes a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -13138,7 +12812,6 @@ package sagemaker {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -13173,39 +12846,37 @@ package sagemaker {
     val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
     val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
 
-    @inline def values =
-      js.Array(
-        lambda,
-        ml_m4,
-        ml_m5,
-        ml_c4,
-        ml_c5,
-        ml_p2,
-        ml_p3,
-        ml_g4dn,
-        ml_inf1,
-        jetson_tx1,
-        jetson_tx2,
-        jetson_nano,
-        jetson_xavier,
-        rasp3b,
-        imx8qm,
-        deeplens,
-        rk3399,
-        rk3288,
-        aisage,
-        sbe_c,
-        qcs605,
-        qcs603,
-        sitara_am57x,
-        amba_cv22,
-        x86_win32,
-        x86_win64
-      )
+    @inline def values = js.Array(
+      lambda,
+      ml_m4,
+      ml_m5,
+      ml_c4,
+      ml_c5,
+      ml_p2,
+      ml_p3,
+      ml_g4dn,
+      ml_inf1,
+      jetson_tx1,
+      jetson_tx2,
+      jetson_nano,
+      jetson_xavier,
+      rasp3b,
+      imx8qm,
+      deeplens,
+      rk3399,
+      rk3288,
+      aisage,
+      sbe_c,
+      qcs605,
+      qcs603,
+      sitara_am57x,
+      amba_cv22,
+      x86_win32,
+      x86_win64
+    )
   }
 
-  /**
-    * Contains information about a target platform that you want your model to run on, such as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.
+  /** Contains information about a target platform that you want your model to run on, such as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.
     */
   @js.native
   trait TargetPlatform extends js.Object {
@@ -13262,8 +12933,7 @@ package sagemaker {
     @inline def values = js.Array(ANDROID, LINUX)
   }
 
-  /**
-    * The TensorBoard app settings.
+  /** The TensorBoard app settings.
     */
   @js.native
   trait TensorBoardAppSettings extends js.Object {
@@ -13281,8 +12951,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Configuration of storage locations for TensorBoard output.
+  /** Configuration of storage locations for TensorBoard output.
     */
   @js.native
   trait TensorBoardOutputConfig extends js.Object {
@@ -13356,51 +13025,49 @@ package sagemaker {
     val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
-    @inline def values =
-      js.Array(
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.g4dn.xlarge`,
-        `ml.g4dn.2xlarge`,
-        `ml.g4dn.4xlarge`,
-        `ml.g4dn.8xlarge`,
-        `ml.g4dn.12xlarge`,
-        `ml.g4dn.16xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.p3dn.24xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.c5n.xlarge`,
-        `ml.c5n.2xlarge`,
-        `ml.c5n.4xlarge`,
-        `ml.c5n.9xlarge`,
-        `ml.c5n.18xlarge`
-      )
+    @inline def values = js.Array(
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.g4dn.xlarge`,
+      `ml.g4dn.2xlarge`,
+      `ml.g4dn.4xlarge`,
+      `ml.g4dn.8xlarge`,
+      `ml.g4dn.12xlarge`,
+      `ml.g4dn.16xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.p3dn.24xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5n.xlarge`,
+      `ml.c5n.2xlarge`,
+      `ml.c5n.4xlarge`,
+      `ml.c5n.9xlarge`,
+      `ml.c5n.18xlarge`
+    )
   }
 
-  /**
-    * Contains information about a training job.
+  /** Contains information about a training job.
     */
   @js.native
   trait TrainingJob extends js.Object {
@@ -13520,8 +13187,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the input needed to run a training job using the algorithm.
+  /** Defines the input needed to run a training job using the algorithm.
     */
   @js.native
   trait TrainingJobDefinition extends js.Object {
@@ -13588,8 +13254,7 @@ package sagemaker {
     @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
-  /**
-    * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
+  /** The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
     */
   @js.native
   trait TrainingJobStatusCounters extends js.Object {
@@ -13619,8 +13284,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides summary information about a training job.
+  /** Provides summary information about a training job.
     */
   @js.native
   trait TrainingJobSummary extends js.Object {
@@ -13655,8 +13319,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines how the algorithm is used for a training job.
+  /** Defines how the algorithm is used for a training job.
     */
   @js.native
   trait TrainingSpecification extends js.Object {
@@ -13697,8 +13360,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the location of the channel data.
+  /** Describes the location of the channel data.
     */
   @js.native
   trait TransformDataSource extends js.Object {
@@ -13713,13 +13375,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TransformDataSource]
     }
   }
 
-  /**
-    * Describes the input source of a transform job and the way the transform job consumes it.
+  /** Describes the input source of a transform job and the way the transform job consumes it.
     */
   @js.native
   trait TransformInput extends js.Object {
@@ -13778,39 +13438,37 @@ package sagemaker {
     val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
     val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
-    @inline def values =
-      js.Array(
-        `ml.m4.xlarge`,
-        `ml.m4.2xlarge`,
-        `ml.m4.4xlarge`,
-        `ml.m4.10xlarge`,
-        `ml.m4.16xlarge`,
-        `ml.c4.xlarge`,
-        `ml.c4.2xlarge`,
-        `ml.c4.4xlarge`,
-        `ml.c4.8xlarge`,
-        `ml.p2.xlarge`,
-        `ml.p2.8xlarge`,
-        `ml.p2.16xlarge`,
-        `ml.p3.2xlarge`,
-        `ml.p3.8xlarge`,
-        `ml.p3.16xlarge`,
-        `ml.c5.xlarge`,
-        `ml.c5.2xlarge`,
-        `ml.c5.4xlarge`,
-        `ml.c5.9xlarge`,
-        `ml.c5.18xlarge`,
-        `ml.m5.large`,
-        `ml.m5.xlarge`,
-        `ml.m5.2xlarge`,
-        `ml.m5.4xlarge`,
-        `ml.m5.12xlarge`,
-        `ml.m5.24xlarge`
-      )
+    @inline def values = js.Array(
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`
+    )
   }
 
-  /**
-    * A batch transform job. For information about SageMaker batch transform, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html|Use Batch Transform]].
+  /** A batch transform job. For information about SageMaker batch transform, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html|Use Batch Transform]].
     */
   @js.native
   trait TransformJob extends js.Object {
@@ -13888,8 +13546,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Defines the input needed to run a transform job using the inference specification specified in the algorithm.
+  /** Defines the input needed to run a transform job using the inference specification specified in the algorithm.
     */
   @js.native
   trait TransformJobDefinition extends js.Object {
@@ -13939,8 +13596,7 @@ package sagemaker {
     @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
-  /**
-    * Provides a summary of a transform job. Multiple <code>TransformJobSummary</code> objects are returned as a list after in response to a <a>ListTransformJobs</a> call.
+  /** Provides a summary of a transform job. Multiple <code>TransformJobSummary</code> objects are returned as a list after in response to a <a>ListTransformJobs</a> call.
     */
   @js.native
   trait TransformJobSummary extends js.Object {
@@ -13978,8 +13634,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the results of a transform job.
+  /** Describes the results of a transform job.
     */
   @js.native
   trait TransformOutput extends js.Object {
@@ -14008,8 +13663,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the resources, including ML instance types and ML instance count, to use for transform job.
+  /** Describes the resources, including ML instance types and ML instance count, to use for transform job.
     */
   @js.native
   trait TransformResources extends js.Object {
@@ -14035,8 +13689,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Describes the S3 data source.
+  /** Describes the S3 data source.
     */
   @js.native
   trait TransformS3DataSource extends js.Object {
@@ -14054,13 +13707,11 @@ package sagemaker {
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TransformS3DataSource]
     }
   }
 
-  /**
-    * The properties of a trial as returned by the <a>Search</a> API.
+  /** The properties of a trial as returned by the <a>Search</a> API.
     */
   @js.native
   trait Trial extends js.Object {
@@ -14108,8 +13759,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The properties of a trial component as returned by the <a>Search</a> API.
+  /** The properties of a trial component as returned by the <a>Search</a> API.
     */
   @js.native
   trait TrialComponent extends js.Object {
@@ -14178,9 +13828,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code> as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters in the <a>CreateTrialComponent</a> request.
-    *  Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.
+  /** Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code> as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters in the <a>CreateTrialComponent</a> request.
+    * Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types. Examples of output artifacts are metrics, snapshots, logs, and images.
     */
   @js.native
   trait TrialComponentArtifact extends js.Object {
@@ -14203,8 +13852,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A summary of the metrics of a trial component.
+  /** A summary of the metrics of a trial component.
     */
   @js.native
   trait TrialComponentMetricSummary extends js.Object {
@@ -14246,9 +13894,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.
-    *  This object is specified in the <a>CreateTrialComponent</a> request.
+  /** The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.
+    * This object is specified in the <a>CreateTrialComponent</a> request.
     */
   @js.native
   trait TrialComponentParameterValue extends js.Object {
@@ -14281,8 +13928,7 @@ package sagemaker {
     @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
-  /**
-    * A short summary of a trial component.
+  /** A short summary of a trial component.
     */
   @js.native
   trait TrialComponentSimpleSummary extends js.Object {
@@ -14312,8 +13958,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The Amazon Resource Name (ARN) and job type of the source of a trial component.
+  /** The Amazon Resource Name (ARN) and job type of the source of a trial component.
     */
   @js.native
   trait TrialComponentSource extends js.Object {
@@ -14336,8 +13981,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned.
+  /** Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned.
     */
   @js.native
   trait TrialComponentSourceDetail extends js.Object {
@@ -14364,8 +14008,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The status of the trial component.
+  /** The status of the trial component.
     */
   @js.native
   trait TrialComponentStatus extends js.Object {
@@ -14386,8 +14029,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A summary of the properties of a trial component. To get all the properties, call the <a>DescribeTrialComponent</a> API and provide the <code>TrialComponentName</code>.
+  /** A summary of the properties of a trial component. To get all the properties, call the <a>DescribeTrialComponent</a> API and provide the <code>TrialComponentName</code>.
     */
   @js.native
   trait TrialComponentSummary extends js.Object {
@@ -14435,8 +14077,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The source of the trial.
+  /** The source of the trial.
     */
   @js.native
   trait TrialSource extends js.Object {
@@ -14459,8 +14100,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * A summary of the properties of a trial. To get the complete set of properties, call the <a>DescribeTrial</a> API and provide the <code>TrialName</code>.
+  /** A summary of the properties of a trial. To get the complete set of properties, call the <a>DescribeTrial</a> API and provide the <code>TrialName</code>.
     */
   @js.native
   trait TrialSummary extends js.Object {
@@ -14493,8 +14133,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The job completion criteria.
+  /** The job completion criteria.
     */
   @js.native
   trait TuningJobCompletionCriteria extends js.Object {
@@ -14509,13 +14148,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "TargetObjectiveMetricValue" -> TargetObjectiveMetricValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TuningJobCompletionCriteria]
     }
   }
 
-  /**
-    * Represents an amount of money in United States dollars/
+  /** Represents an amount of money in United States dollars/
     */
   @js.native
   trait USD extends js.Object {
@@ -14539,8 +14176,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provided configuration information for the worker UI for a labeling job.
+  /** Provided configuration information for the worker UI for a labeling job.
     */
   @js.native
   trait UiConfig extends js.Object {
@@ -14561,8 +14197,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The Liquid template for the worker user interface.
+  /** The Liquid template for the worker user interface.
     */
   @js.native
   trait UiTemplate extends js.Object {
@@ -14577,13 +14212,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UiTemplate]
     }
   }
 
-  /**
-    * Container for user interface template information.
+  /** Container for user interface template information.
     */
   @js.native
   trait UiTemplateInfo extends js.Object {
@@ -14638,7 +14271,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateCodeRepositoryOutput]
     }
   }
@@ -14720,7 +14352,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointOutput]
     }
   }
@@ -14741,7 +14372,6 @@ package sagemaker {
         "DesiredWeightsAndCapacities" -> DesiredWeightsAndCapacities.asInstanceOf[js.Any],
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointWeightsAndCapacitiesInput]
     }
   }
@@ -14759,7 +14389,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateEndpointWeightsAndCapacitiesOutput]
     }
   }
@@ -14820,7 +14449,6 @@ package sagemaker {
         "MonitoringScheduleConfig" -> MonitoringScheduleConfig.asInstanceOf[js.Any],
         "MonitoringScheduleName" -> MonitoringScheduleName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateMonitoringScheduleRequest]
     }
   }
@@ -14838,7 +14466,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "MonitoringScheduleArn" -> MonitoringScheduleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateMonitoringScheduleResponse]
     }
   }
@@ -14922,27 +14549,23 @@ package sagemaker {
   }
 
   @js.native
-  trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object {}
+  trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object
 
   object UpdateNotebookInstanceLifecycleConfigOutput {
     @inline
-    def apply(
-    ): UpdateNotebookInstanceLifecycleConfigOutput = {
+    def apply(): UpdateNotebookInstanceLifecycleConfigOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNotebookInstanceLifecycleConfigOutput]
     }
   }
 
   @js.native
-  trait UpdateNotebookInstanceOutput extends js.Object {}
+  trait UpdateNotebookInstanceOutput extends js.Object
 
   object UpdateNotebookInstanceOutput {
     @inline
-    def apply(
-    ): UpdateNotebookInstanceOutput = {
+    def apply(): UpdateNotebookInstanceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateNotebookInstanceOutput]
     }
   }
@@ -15125,7 +14748,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Workforce" -> Workforce.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateWorkforceResponse]
     }
   }
@@ -15170,13 +14792,11 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "Workteam" -> Workteam.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateWorkteamResponse]
     }
   }
 
-  /**
-    * Information about the user who created or modified an experiment, trial, or trial component.
+  /** Information about the user who created or modified an experiment, trial, or trial component.
     */
   @js.native
   trait UserContext extends js.Object {
@@ -15200,8 +14820,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * The user profile details.
+  /** The user profile details.
     */
   @js.native
   trait UserProfileDetails extends js.Object {
@@ -15251,8 +14870,7 @@ package sagemaker {
     @inline def values = js.Array(Deleting, Failed, InService, Pending)
   }
 
-  /**
-    * A collection of settings.
+  /** A collection of settings.
     */
   @js.native
   trait UserSettings extends js.Object {
@@ -15285,9 +14903,8 @@ package sagemaker {
     }
   }
 
-  /**
-    * Specifies a production variant property type for an Endpoint.
-    *  If you are updating an endpoint with the [[UpdateEndpointInput.RetainAllVariantProperties]] option set to <code>true</code>, the <code>VariantProperty</code> objects listed in [[UpdateEndpointInput.ExcludeRetainedVariantProperties]] override the existing variant properties of the endpoint.
+  /** Specifies a production variant property type for an Endpoint.
+    * If you are updating an endpoint with the [[UpdateEndpointInput.RetainAllVariantProperties]] option set to <code>true</code>, the <code>VariantProperty</code> objects listed in [[UpdateEndpointInput.ExcludeRetainedVariantProperties]] override the existing variant properties of the endpoint.
     */
   @js.native
   trait VariantProperty extends js.Object {
@@ -15302,7 +14919,6 @@ package sagemaker {
       val __obj = js.Dynamic.literal(
         "VariantPropertyType" -> VariantPropertyType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VariantProperty]
     }
   }
@@ -15317,8 +14933,7 @@ package sagemaker {
     @inline def values = js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig)
   }
 
-  /**
-    * Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html|Protect Endpoints by Using an Amazon Virtual Private Cloud]] and [[https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html|Protect Training Jobs by Using an Amazon Virtual Private Cloud]].
+  /** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html|Protect Endpoints by Using an Amazon Virtual Private Cloud]] and [[https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html|Protect Training Jobs by Using an Amazon Virtual Private Cloud]].
     */
   @js.native
   trait VpcConfig extends js.Object {
@@ -15336,13 +14951,11 @@ package sagemaker {
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VpcConfig]
     }
   }
 
-  /**
-    * A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
+  /** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
     */
   @js.native
   trait Workforce extends js.Object {
@@ -15383,8 +14996,7 @@ package sagemaker {
     }
   }
 
-  /**
-    * Provides details about a labeling work team.
+  /** Provides details about a labeling work team.
     */
   @js.native
   trait Workteam extends js.Object {

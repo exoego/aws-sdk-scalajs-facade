@@ -109,7 +109,6 @@ package cloudhsm {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagList" -> TagList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceRequest]
     }
   }
@@ -127,7 +126,6 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceResponse]
     }
   }
@@ -141,8 +139,7 @@ package cloudhsm {
     @inline def values = js.Array(`5.1`, `5.3`)
   }
 
-  /**
-    * Indicates that an internal error occurred.
+  /** Indicates that an internal error occurred.
     */
   @js.native
   trait CloudHsmInternalExceptionException extends js.Object {}
@@ -157,8 +154,7 @@ package cloudhsm {
     @inline def values = js.Array(READY, UPDATING, DEGRADED)
   }
 
-  /**
-    * Indicates that an exception occurred in the AWS CloudHSM service.
+  /** Indicates that an exception occurred in the AWS CloudHSM service.
     */
   @js.native
   trait CloudHsmServiceExceptionException extends js.Object {
@@ -166,8 +162,7 @@ package cloudhsm {
     val retryable: Boolean
   }
 
-  /**
-    * Contains the inputs for the <a>CreateHapgRequest</a> action.
+  /** Contains the inputs for the <a>CreateHapgRequest</a> action.
     */
   @js.native
   trait CreateHapgRequest extends js.Object {
@@ -182,13 +177,11 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "Label" -> Label.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateHapgRequest]
     }
   }
 
-  /**
-    * Contains the output of the <a>CreateHAPartitionGroup</a> action.
+  /** Contains the output of the <a>CreateHAPartitionGroup</a> action.
     */
   @js.native
   trait CreateHapgResponse extends js.Object {
@@ -206,8 +199,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the inputs for the <code>CreateHsm</code> operation.
+  /** Contains the inputs for the <code>CreateHsm</code> operation.
     */
   @js.native
   trait CreateHsmRequest extends js.Object {
@@ -248,8 +240,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the output of the <code>CreateHsm</code> operation.
+  /** Contains the output of the <code>CreateHsm</code> operation.
     */
   @js.native
   trait CreateHsmResponse extends js.Object {
@@ -267,8 +258,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>CreateLunaClient</a> action.
+  /** Contains the inputs for the <a>CreateLunaClient</a> action.
     */
   @js.native
   trait CreateLunaClientRequest extends js.Object {
@@ -291,8 +281,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the output of the <a>CreateLunaClient</a> action.
+  /** Contains the output of the <a>CreateLunaClient</a> action.
     */
   @js.native
   trait CreateLunaClientResponse extends js.Object {
@@ -310,8 +299,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DeleteHapg</a> action.
+  /** Contains the inputs for the <a>DeleteHapg</a> action.
     */
   @js.native
   trait DeleteHapgRequest extends js.Object {
@@ -326,13 +314,11 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "HapgArn" -> HapgArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHapgRequest]
     }
   }
 
-  /**
-    * Contains the output of the <a>DeleteHapg</a> action.
+  /** Contains the output of the <a>DeleteHapg</a> action.
     */
   @js.native
   trait DeleteHapgResponse extends js.Object {
@@ -347,13 +333,11 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHapgResponse]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DeleteHsm</a> operation.
+  /** Contains the inputs for the <a>DeleteHsm</a> operation.
     */
   @js.native
   trait DeleteHsmRequest extends js.Object {
@@ -368,13 +352,11 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "HsmArn" -> HsmArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHsmRequest]
     }
   }
 
-  /**
-    * Contains the output of the <a>DeleteHsm</a> operation.
+  /** Contains the output of the <a>DeleteHsm</a> operation.
     */
   @js.native
   trait DeleteHsmResponse extends js.Object {
@@ -389,7 +371,6 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHsmResponse]
     }
   }
@@ -407,7 +388,6 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "ClientArn" -> ClientArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLunaClientRequest]
     }
   }
@@ -425,13 +405,11 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLunaClientResponse]
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DescribeHapg</a> action.
+  /** Contains the inputs for the <a>DescribeHapg</a> action.
     */
   @js.native
   trait DescribeHapgRequest extends js.Object {
@@ -446,13 +424,11 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "HapgArn" -> HapgArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeHapgRequest]
     }
   }
 
-  /**
-    * Contains the output of the <a>DescribeHapg</a> action.
+  /** Contains the output of the <a>DescribeHapg</a> action.
     */
   @js.native
   trait DescribeHapgResponse extends js.Object {
@@ -494,8 +470,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>DescribeHsm</a> operation.
+  /** Contains the inputs for the <a>DescribeHsm</a> operation.
     */
   @js.native
   trait DescribeHsmRequest extends js.Object {
@@ -516,8 +491,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the output of the <a>DescribeHsm</a> operation.
+  /** Contains the output of the <a>DescribeHsm</a> operation.
     */
   @js.native
   trait DescribeHsmResponse extends js.Object {
@@ -661,7 +635,6 @@ package cloudhsm {
         "ClientVersion" -> ClientVersion.asInstanceOf[js.Any],
         "HapgList" -> HapgList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConfigRequest]
     }
   }
@@ -702,24 +675,20 @@ package cloudhsm {
     @inline def values = js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
   }
 
-  /**
-    * Indicates that one or more of the request parameters are not valid.
+  /** Indicates that one or more of the request parameters are not valid.
     */
   @js.native
   trait InvalidRequestExceptionException extends js.Object {}
 
-  /**
-    * Contains the inputs for the <a>ListAvailableZones</a> action.
+  /** Contains the inputs for the <a>ListAvailableZones</a> action.
     */
   @js.native
-  trait ListAvailableZonesRequest extends js.Object {}
+  trait ListAvailableZonesRequest extends js.Object
 
   object ListAvailableZonesRequest {
     @inline
-    def apply(
-    ): ListAvailableZonesRequest = {
+    def apply(): ListAvailableZonesRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ListAvailableZonesRequest]
     }
   }
@@ -793,8 +762,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the output of the <code>ListHsms</code> operation.
+  /** Contains the output of the <code>ListHsms</code> operation.
     */
   @js.native
   trait ListHsmsResponse extends js.Object {
@@ -865,7 +833,6 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -883,7 +850,6 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "TagList" -> TagList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -928,8 +894,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the inputs for the <a>ModifyHsm</a> operation.
+  /** Contains the inputs for the <a>ModifyHsm</a> operation.
     */
   @js.native
   trait ModifyHsmRequest extends js.Object {
@@ -964,8 +929,7 @@ package cloudhsm {
     }
   }
 
-  /**
-    * Contains the output of the <a>ModifyHsm</a> operation.
+  /** Contains the output of the <a>ModifyHsm</a> operation.
     */
   @js.native
   trait ModifyHsmResponse extends js.Object {
@@ -999,7 +963,6 @@ package cloudhsm {
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "ClientArn" -> ClientArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyLunaClientRequest]
     }
   }
@@ -1036,7 +999,6 @@ package cloudhsm {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceRequest]
     }
   }
@@ -1054,15 +1016,13 @@ package cloudhsm {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]
     }
   }
 
-  /**
-    * Specifies the type of subscription for the HSM.
+  /** Specifies the type of subscription for the HSM.
     * * ```PRODUCTION``` - The HSM is being used in a production environment.
-    *  * ```TRIAL``` - The HSM is being used in a product trial.
+    * * ```TRIAL``` - The HSM is being used in a product trial.
     */
   @js.native
   sealed trait SubscriptionType extends js.Any
@@ -1072,8 +1032,7 @@ package cloudhsm {
     @inline def values = js.Array(PRODUCTION)
   }
 
-  /**
-    * A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.
+  /** A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1091,7 +1050,6 @@ package cloudhsm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }

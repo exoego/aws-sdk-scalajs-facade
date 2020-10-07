@@ -80,8 +80,7 @@ package applicationautoscaling {
     @inline def values = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
   }
 
-  /**
-    * Represents a CloudWatch alarm associated with a scaling policy.
+  /** Represents a CloudWatch alarm associated with a scaling policy.
     */
   @js.native
   trait Alarm extends js.Object {
@@ -99,17 +98,15 @@ package applicationautoscaling {
         "AlarmARN" -> AlarmARN.asInstanceOf[js.Any],
         "AlarmName" -> AlarmName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Alarm]
     }
   }
 
-  /**
-    * Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.
-    *  For information about the available metrics for a service, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html|AWS Services That Publish CloudWatch Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
-    *  To create your customized metric specification:
+  /** Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.
+    * For information about the available metrics for a service, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html|AWS Services That Publish CloudWatch Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
+    * To create your customized metric specification:
     * * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
-    *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases.
+    * * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases.
     * For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
     */
   @js.native
@@ -164,20 +161,17 @@ package applicationautoscaling {
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScalingPolicyRequest]
     }
   }
 
   @js.native
-  trait DeleteScalingPolicyResponse extends js.Object {}
+  trait DeleteScalingPolicyResponse extends js.Object
 
   object DeleteScalingPolicyResponse {
     @inline
-    def apply(
-    ): DeleteScalingPolicyResponse = {
+    def apply(): DeleteScalingPolicyResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteScalingPolicyResponse]
     }
   }
@@ -204,20 +198,17 @@ package applicationautoscaling {
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScheduledActionRequest]
     }
   }
 
   @js.native
-  trait DeleteScheduledActionResponse extends js.Object {}
+  trait DeleteScheduledActionResponse extends js.Object
 
   object DeleteScheduledActionResponse {
     @inline
-    def apply(
-    ): DeleteScheduledActionResponse = {
+    def apply(): DeleteScheduledActionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteScheduledActionResponse]
     }
   }
@@ -241,20 +232,17 @@ package applicationautoscaling {
         "ScalableDimension" -> ScalableDimension.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterScalableTargetRequest]
     }
   }
 
   @js.native
-  trait DeregisterScalableTargetResponse extends js.Object {}
+  trait DeregisterScalableTargetResponse extends js.Object
 
   object DeregisterScalableTargetResponse {
     @inline
-    def apply(
-    ): DeregisterScalableTargetResponse = {
+    def apply(): DeregisterScalableTargetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterScalableTargetResponse]
     }
   }
@@ -471,8 +459,7 @@ package applicationautoscaling {
     @inline def values = js.Array(Average, Minimum, Maximum)
   }
 
-  /**
-    * Describes the dimension names and values associated with a metric.
+  /** Describes the dimension names and values associated with a metric.
     */
   @js.native
   trait MetricDimension extends js.Object {
@@ -490,7 +477,6 @@ package applicationautoscaling {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MetricDimension]
     }
   }
@@ -527,25 +513,24 @@ package applicationautoscaling {
     val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
     val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
 
-    @inline def values =
-      js.Array(
-        DynamoDBReadCapacityUtilization,
-        DynamoDBWriteCapacityUtilization,
-        ALBRequestCountPerTarget,
-        RDSReaderAverageCPUUtilization,
-        RDSReaderAverageDatabaseConnections,
-        EC2SpotFleetRequestAverageCPUUtilization,
-        EC2SpotFleetRequestAverageNetworkIn,
-        EC2SpotFleetRequestAverageNetworkOut,
-        SageMakerVariantInvocationsPerInstance,
-        ECSServiceAverageCPUUtilization,
-        ECSServiceAverageMemoryUtilization,
-        AppStreamAverageCapacityUtilization,
-        ComprehendInferenceUtilization,
-        LambdaProvisionedConcurrencyUtilization,
-        CassandraReadCapacityUtilization,
-        CassandraWriteCapacityUtilization
-      )
+    @inline def values = js.Array(
+      DynamoDBReadCapacityUtilization,
+      DynamoDBWriteCapacityUtilization,
+      ALBRequestCountPerTarget,
+      RDSReaderAverageCPUUtilization,
+      RDSReaderAverageDatabaseConnections,
+      EC2SpotFleetRequestAverageCPUUtilization,
+      EC2SpotFleetRequestAverageNetworkIn,
+      EC2SpotFleetRequestAverageNetworkOut,
+      SageMakerVariantInvocationsPerInstance,
+      ECSServiceAverageCPUUtilization,
+      ECSServiceAverageMemoryUtilization,
+      AppStreamAverageCapacityUtilization,
+      ComprehendInferenceUtilization,
+      LambdaProvisionedConcurrencyUtilization,
+      CassandraReadCapacityUtilization,
+      CassandraWriteCapacityUtilization
+    )
   }
 
   @js.native
@@ -557,9 +542,8 @@ package applicationautoscaling {
     @inline def values = js.Array(StepScaling, TargetTrackingScaling)
   }
 
-  /**
-    * Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
-    *  Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building Dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
+  /** Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
+    * Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building Dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
     */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -679,14 +663,12 @@ package applicationautoscaling {
   }
 
   @js.native
-  trait PutScheduledActionResponse extends js.Object {}
+  trait PutScheduledActionResponse extends js.Object
 
   object PutScheduledActionResponse {
     @inline
-    def apply(
-    ): PutScheduledActionResponse = {
+    def apply(): PutScheduledActionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutScheduledActionResponse]
     }
   }
@@ -728,14 +710,12 @@ package applicationautoscaling {
   }
 
   @js.native
-  trait RegisterScalableTargetResponse extends js.Object {}
+  trait RegisterScalableTargetResponse extends js.Object
 
   object RegisterScalableTargetResponse {
     @inline
-    def apply(
-    ): RegisterScalableTargetResponse = {
+    def apply(): RegisterScalableTargetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RegisterScalableTargetResponse]
     }
   }
@@ -759,28 +739,26 @@ package applicationautoscaling {
     val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-    @inline def values =
-      js.Array(
-        `ecs:service:DesiredCount`,
-        `ec2:spot-fleet-request:TargetCapacity`,
-        `elasticmapreduce:instancegroup:InstanceCount`,
-        `appstream:fleet:DesiredCapacity`,
-        `dynamodb:table:ReadCapacityUnits`,
-        `dynamodb:table:WriteCapacityUnits`,
-        `dynamodb:index:ReadCapacityUnits`,
-        `dynamodb:index:WriteCapacityUnits`,
-        `rds:cluster:ReadReplicaCount`,
-        `sagemaker:variant:DesiredInstanceCount`,
-        `custom-resource:ResourceType:Property`,
-        `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-        `lambda:function:ProvisionedConcurrency`,
-        `cassandra:table:ReadCapacityUnits`,
-        `cassandra:table:WriteCapacityUnits`
-      )
+    @inline def values = js.Array(
+      `ecs:service:DesiredCount`,
+      `ec2:spot-fleet-request:TargetCapacity`,
+      `elasticmapreduce:instancegroup:InstanceCount`,
+      `appstream:fleet:DesiredCapacity`,
+      `dynamodb:table:ReadCapacityUnits`,
+      `dynamodb:table:WriteCapacityUnits`,
+      `dynamodb:index:ReadCapacityUnits`,
+      `dynamodb:index:WriteCapacityUnits`,
+      `rds:cluster:ReadReplicaCount`,
+      `sagemaker:variant:DesiredInstanceCount`,
+      `custom-resource:ResourceType:Property`,
+      `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
+      `lambda:function:ProvisionedConcurrency`,
+      `cassandra:table:ReadCapacityUnits`,
+      `cassandra:table:WriteCapacityUnits`
+    )
   }
 
-  /**
-    * Represents a scalable target.
+  /** Represents a scalable target.
     */
   @js.native
   trait ScalableTarget extends js.Object {
@@ -821,8 +799,7 @@ package applicationautoscaling {
     }
   }
 
-  /**
-    * Represents the minimum and maximum capacity for a scheduled action.
+  /** Represents the minimum and maximum capacity for a scheduled action.
     */
   @js.native
   trait ScalableTargetAction extends js.Object {
@@ -843,8 +820,7 @@ package applicationautoscaling {
     }
   }
 
-  /**
-    * Represents a scaling activity.
+  /** Represents a scaling activity.
     */
   @js.native
   trait ScalingActivity extends js.Object {
@@ -907,8 +883,7 @@ package applicationautoscaling {
     @inline def values = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
   }
 
-  /**
-    * Represents a scaling policy to use with Application Auto Scaling.
+  /** Represents a scaling policy to use with Application Auto Scaling.
     */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -955,8 +930,7 @@ package applicationautoscaling {
     }
   }
 
-  /**
-    * Represents a scheduled action.
+  /** Represents a scheduled action.
     */
   @js.native
   trait ScheduledAction extends js.Object {
@@ -1021,16 +995,15 @@ package applicationautoscaling {
     @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra)
   }
 
-  /**
-    * Represents a step adjustment for a [[https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html|StepScalingPolicyConfiguration]]. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
-    *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
+  /** Represents a step adjustment for a [[https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html|StepScalingPolicyConfiguration]]. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
+    * For the following examples, suppose that you have an alarm with a breach threshold of 50:
     * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
-    *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
+    * * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.
     * There are a few rules for the step adjustments for your step policy:
     * * The ranges of your step adjustments can't overlap or have a gap.
-    *  * At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.
-    *  * At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.
-    *  * The upper and lower bound can't be null in the same step adjustment.
+    * * At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.
+    * * At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.
+    * * The upper and lower bound can't be null in the same step adjustment.
     */
   @js.native
   trait StepAdjustment extends js.Object {
@@ -1056,8 +1029,7 @@ package applicationautoscaling {
     }
   }
 
-  /**
-    * Represents a step scaling policy configuration to use with Application Auto Scaling.
+  /** Represents a step scaling policy configuration to use with Application Auto Scaling.
     */
   @js.native
   trait StepScalingPolicyConfiguration extends js.Object {
@@ -1087,8 +1059,7 @@ package applicationautoscaling {
     }
   }
 
-  /**
-    * Specifies whether the scaling activities for a scalable target are in a suspended state.
+  /** Specifies whether the scaling activities for a scalable target are in a suspended state.
     */
   @js.native
   trait SuspendedState extends js.Object {
@@ -1112,8 +1083,7 @@ package applicationautoscaling {
     }
   }
 
-  /**
-    * Represents a target tracking scaling policy configuration to use with Application Auto Scaling.
+  /** Represents a target tracking scaling policy configuration to use with Application Auto Scaling.
     */
   @js.native
   trait TargetTrackingScalingPolicyConfiguration extends js.Object {

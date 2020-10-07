@@ -64,8 +64,7 @@ package translate {
     def translateText(params: TranslateTextRequest): Request[TranslateTextResponse] = js.native
   }
 
-  /**
-    * The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.
+  /** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.
     */
   @js.native
   trait AppliedTerminology extends js.Object {
@@ -99,7 +98,6 @@ package translate {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTerminologyRequest]
     }
   }
@@ -117,7 +115,6 @@ package translate {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTextTranslationJobRequest]
     }
   }
@@ -138,8 +135,7 @@ package translate {
     }
   }
 
-  /**
-    * The encryption key used to encrypt the custom terminologies used by Amazon Translate.
+  /** The encryption key used to encrypt the custom terminologies used by Amazon Translate.
     */
   @js.native
   trait EncryptionKey extends js.Object {
@@ -157,7 +153,6 @@ package translate {
         "Id" -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EncryptionKey]
     }
   }
@@ -186,7 +181,6 @@ package translate {
         "Name" -> Name.asInstanceOf[js.Any],
         "TerminologyDataFormat" -> TerminologyDataFormat.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetTerminologyRequest]
     }
   }
@@ -256,8 +250,7 @@ package translate {
     }
   }
 
-  /**
-    * The input configuration properties for requesting a batch translation job.
+  /** The input configuration properties for requesting a batch translation job.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -275,13 +268,11 @@ package translate {
         "ContentType" -> ContentType.asInstanceOf[js.Any],
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InputDataConfig]
     }
   }
 
-  /**
-    * The number of documents successfully and unsuccessfully processed during a translation job.
+  /** The number of documents successfully and unsuccessfully processed during a translation job.
     */
   @js.native
   trait JobDetails extends js.Object {
@@ -406,8 +397,7 @@ package translate {
     @inline def values = js.Array(OVERWRITE)
   }
 
-  /**
-    * The output configuration properties for a batch translation job.
+  /** The output configuration properties for a batch translation job.
     */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -422,7 +412,6 @@ package translate {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OutputDataConfig]
     }
   }
@@ -498,7 +487,6 @@ package translate {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopTextTranslationJobRequest]
     }
   }
@@ -522,8 +510,7 @@ package translate {
     }
   }
 
-  /**
-    * The term being translated by the custom terminology.
+  /** The term being translated by the custom terminology.
     */
   @js.native
   trait Term extends js.Object {
@@ -544,8 +531,7 @@ package translate {
     }
   }
 
-  /**
-    * The data associated with the custom terminology.
+  /** The data associated with the custom terminology.
     */
   @js.native
   trait TerminologyData extends js.Object {
@@ -563,7 +549,6 @@ package translate {
         "File" -> File.asInstanceOf[js.Any],
         "Format" -> Format.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminologyData]
     }
   }
@@ -577,8 +562,7 @@ package translate {
     @inline def values = js.Array(CSV, TMX)
   }
 
-  /**
-    * The location of the custom terminology data.
+  /** The location of the custom terminology data.
     */
   @js.native
   trait TerminologyDataLocation extends js.Object {
@@ -596,13 +580,11 @@ package translate {
         "Location" -> Location.asInstanceOf[js.Any],
         "RepositoryType" -> RepositoryType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminologyDataLocation]
     }
   }
 
-  /**
-    * The properties of the custom terminology.
+  /** The properties of the custom terminology.
     */
   @js.native
   trait TerminologyProperties extends js.Object {
@@ -647,8 +629,7 @@ package translate {
     }
   }
 
-  /**
-    * Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>.
+  /** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>.
     */
   @js.native
   trait TextTranslationJobFilter extends js.Object {
@@ -675,8 +656,7 @@ package translate {
     }
   }
 
-  /**
-    * Provides information about a translation job.
+  /** Provides information about a translation job.
     */
   @js.native
   trait TextTranslationJobProperties extends js.Object {

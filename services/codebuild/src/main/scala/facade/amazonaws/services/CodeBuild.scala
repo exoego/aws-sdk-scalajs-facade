@@ -217,7 +217,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "ids" -> ids.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchDeleteBuildsInput]
     }
   }
@@ -254,7 +253,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "ids" -> ids.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetBuildBatchesInput]
     }
   }
@@ -291,7 +289,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "ids" -> ids.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetBuildsInput]
     }
   }
@@ -328,7 +325,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "names" -> names.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetProjectsInput]
     }
   }
@@ -365,7 +361,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "reportGroupArns" -> reportGroupArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetReportGroupsInput]
     }
   }
@@ -402,7 +397,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "reportArns" -> reportArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BatchGetReportsInput]
     }
   }
@@ -426,8 +420,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Specifies restrictions for the batch build.
+  /** Specifies restrictions for the batch build.
     */
   @js.native
   trait BatchRestrictions extends js.Object {
@@ -448,8 +441,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a build.
+  /** Information about a build.
     */
   @js.native
   trait Build extends js.Object {
@@ -560,8 +552,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about build output artifacts.
+  /** Information about build output artifacts.
     */
   @js.native
   trait BuildArtifacts extends js.Object {
@@ -594,8 +585,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Contains information about a batch build.
+  /** Contains information about a batch build.
     */
   @js.native
   trait BuildBatch extends js.Object {
@@ -697,8 +687,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Specifies filters when retrieving batch builds.
+  /** Specifies filters when retrieving batch builds.
     */
   @js.native
   trait BuildBatchFilter extends js.Object {
@@ -716,8 +705,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Contains information about a stage for a batch build.
+  /** Contains information about a stage for a batch build.
     */
   @js.native
   trait BuildBatchPhase extends js.Object {
@@ -764,8 +752,7 @@ package codebuild {
     @inline def values = js.Array(SUBMITTED, DOWNLOAD_BATCHSPEC, IN_PROGRESS, COMBINE_ARTIFACTS, SUCCEEDED, FAILED, STOPPED)
   }
 
-  /**
-    * Contains information about a batch build build group. Build groups are used to combine builds that can run in parallel, while still being able to set dependencies on other build groups.
+  /** Contains information about a batch build build group. Build groups are used to combine builds that can run in parallel, while still being able to set dependencies on other build groups.
     */
   @js.native
   trait BuildGroup extends js.Object {
@@ -795,8 +782,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a build that could not be successfully deleted.
+  /** Information about a build that could not be successfully deleted.
     */
   @js.native
   trait BuildNotDeleted extends js.Object {
@@ -817,8 +803,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a stage for a build.
+  /** Information about a stage for a build.
     */
   @js.native
   trait BuildPhase extends js.Object {
@@ -869,8 +854,7 @@ package codebuild {
     @inline def values = js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED)
   }
 
-  /**
-    * Contains information that defines how the AWS CodeBuild build project reports the build status to the source provider.
+  /** Contains information that defines how the AWS CodeBuild build project reports the build status to the source provider.
     */
   @js.native
   trait BuildStatusConfig extends js.Object {
@@ -891,8 +875,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Contains summary information about a batch build group.
+  /** Contains summary information about a batch build group.
     */
   @js.native
   trait BuildSummary extends js.Object {
@@ -942,8 +925,7 @@ package codebuild {
     @inline def values = js.Array(NO_CACHE, S3, LOCAL)
   }
 
-  /**
-    * Information about Amazon CloudWatch Logs for a build project.
+  /** Information about Amazon CloudWatch Logs for a build project.
     */
   @js.native
   trait CloudWatchLogsConfig extends js.Object {
@@ -969,10 +951,9 @@ package codebuild {
     }
   }
 
-  /**
-    * Contains code coverage report information.
-    *  Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
-    *  Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+  /** Contains code coverage report information.
+    * Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
+    * Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
     */
   @js.native
   trait CodeCoverage extends js.Object {
@@ -1017,10 +998,9 @@ package codebuild {
     }
   }
 
-  /**
-    * Contains a summary of a code coverage report.
-    *  Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
-    *  Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+  /** Contains a summary of a code coverage report.
+    * Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
+    * Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
     */
   @js.native
   trait CodeCoverageReportSummary extends js.Object {
@@ -1249,8 +1229,7 @@ package codebuild {
     @inline def values = js.Array(SECRETS_MANAGER)
   }
 
-  /**
-    * Contains information about the debug session for a build. For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html|Viewing a running build in Session Manager]].
+  /** Contains information about the debug session for a build. For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html|Viewing a running build in Session Manager]].
     */
   @js.native
   trait DebugSession extends js.Object {
@@ -1284,7 +1263,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBuildBatchInput]
     }
   }
@@ -1324,20 +1302,17 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProjectInput]
     }
   }
 
   @js.native
-  trait DeleteProjectOutput extends js.Object {}
+  trait DeleteProjectOutput extends js.Object
 
   object DeleteProjectOutput {
     @inline
-    def apply(
-    ): DeleteProjectOutput = {
+    def apply(): DeleteProjectOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProjectOutput]
     }
   }
@@ -1355,20 +1330,17 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReportGroupInput]
     }
   }
 
   @js.native
-  trait DeleteReportGroupOutput extends js.Object {}
+  trait DeleteReportGroupOutput extends js.Object
 
   object DeleteReportGroupOutput {
     @inline
-    def apply(
-    ): DeleteReportGroupOutput = {
+    def apply(): DeleteReportGroupOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteReportGroupOutput]
     }
   }
@@ -1386,20 +1358,17 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteReportInput]
     }
   }
 
   @js.native
-  trait DeleteReportOutput extends js.Object {}
+  trait DeleteReportOutput extends js.Object
 
   object DeleteReportOutput {
     @inline
-    def apply(
-    ): DeleteReportOutput = {
+    def apply(): DeleteReportOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteReportOutput]
     }
   }
@@ -1417,20 +1386,17 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResourcePolicyInput]
     }
   }
 
   @js.native
-  trait DeleteResourcePolicyOutput extends js.Object {}
+  trait DeleteResourcePolicyOutput extends js.Object
 
   object DeleteResourcePolicyOutput {
     @inline
-    def apply(
-    ): DeleteResourcePolicyOutput = {
+    def apply(): DeleteResourcePolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteResourcePolicyOutput]
     }
   }
@@ -1448,7 +1414,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSourceCredentialsInput]
     }
   }
@@ -1482,20 +1447,17 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWebhookInput]
     }
   }
 
   @js.native
-  trait DeleteWebhookOutput extends js.Object {}
+  trait DeleteWebhookOutput extends js.Object
 
   object DeleteWebhookOutput {
     @inline
-    def apply(
-    ): DeleteWebhookOutput = {
+    def apply(): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWebhookOutput]
     }
   }
@@ -1601,8 +1563,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a Docker image that is managed by AWS CodeBuild.
+  /** Information about a Docker image that is managed by AWS CodeBuild.
     */
   @js.native
   trait EnvironmentImage extends js.Object {
@@ -1626,8 +1587,7 @@ package codebuild {
     }
   }
 
-  /**
-    * A set of Docker images that are related by programming language and are managed by AWS CodeBuild.
+  /** A set of Docker images that are related by programming language and are managed by AWS CodeBuild.
     */
   @js.native
   trait EnvironmentLanguage extends js.Object {
@@ -1648,8 +1608,7 @@ package codebuild {
     }
   }
 
-  /**
-    * A set of Docker images that are related by platform and are managed by AWS CodeBuild.
+  /** A set of Docker images that are related by platform and are managed by AWS CodeBuild.
     */
   @js.native
   trait EnvironmentPlatform extends js.Object {
@@ -1682,8 +1641,7 @@ package codebuild {
     @inline def values = js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
   }
 
-  /**
-    * Information about an environment variable for a build project or a build.
+  /** Information about an environment variable for a build project or a build.
     */
   @js.native
   trait EnvironmentVariable extends js.Object {
@@ -1719,8 +1677,7 @@ package codebuild {
     @inline def values = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
   }
 
-  /**
-    * Information about an exported environment variable.
+  /** Information about an exported environment variable.
     */
   @js.native
   trait ExportedEnvironmentVariable extends js.Object {
@@ -1762,7 +1719,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResourcePolicyInput]
     }
   }
@@ -1783,8 +1739,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the Git submodules configuration for an AWS CodeBuild build project.
+  /** Information about the Git submodules configuration for an AWS CodeBuild build project.
     */
   @js.native
   trait GitSubmodulesConfig extends js.Object {
@@ -1799,7 +1754,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "fetchSubmodules" -> fetchSubmodules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GitSubmodulesConfig]
     }
   }
@@ -1872,20 +1826,17 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InvalidateProjectCacheInput]
     }
   }
 
   @js.native
-  trait InvalidateProjectCacheOutput extends js.Object {}
+  trait InvalidateProjectCacheOutput extends js.Object
 
   object InvalidateProjectCacheOutput {
     @inline
-    def apply(
-    ): InvalidateProjectCacheOutput = {
+    def apply(): InvalidateProjectCacheOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[InvalidateProjectCacheOutput]
     }
   }
@@ -2080,14 +2031,12 @@ package codebuild {
   }
 
   @js.native
-  trait ListCuratedEnvironmentImagesInput extends js.Object {}
+  trait ListCuratedEnvironmentImagesInput extends js.Object
 
   object ListCuratedEnvironmentImagesInput {
     @inline
-    def apply(
-    ): ListCuratedEnvironmentImagesInput = {
+    def apply(): ListCuratedEnvironmentImagesInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ListCuratedEnvironmentImagesInput]
     }
   }
@@ -2375,14 +2324,12 @@ package codebuild {
   }
 
   @js.native
-  trait ListSourceCredentialsInput extends js.Object {}
+  trait ListSourceCredentialsInput extends js.Object
 
   object ListSourceCredentialsInput {
     @inline
-    def apply(
-    ): ListSourceCredentialsInput = {
+    def apply(): ListSourceCredentialsInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ListSourceCredentialsInput]
     }
   }
@@ -2403,8 +2350,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
+  /** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
     */
   @js.native
   trait LogsConfig extends js.Object {
@@ -2434,8 +2380,7 @@ package codebuild {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Information about build logs in Amazon CloudWatch Logs.
+  /** Information about build logs in Amazon CloudWatch Logs.
     */
   @js.native
   trait LogsLocation extends js.Object {
@@ -2474,8 +2419,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Describes a network interface.
+  /** Describes a network interface.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -2496,8 +2440,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Additional information about a build phase that has an error. You can use this information for troubleshooting.
+  /** Additional information about a build phase that has an error. You can use this information for troubleshooting.
     */
   @js.native
   trait PhaseContext extends js.Object {
@@ -2529,8 +2472,7 @@ package codebuild {
     @inline def values = js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER)
   }
 
-  /**
-    * Information about a build project.
+  /** Information about a build project.
     */
   @js.native
   trait Project extends js.Object {
@@ -2617,8 +2559,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the build output artifacts for the build project.
+  /** Information about the build output artifacts for the build project.
     */
   @js.native
   trait ProjectArtifacts extends js.Object {
@@ -2662,8 +2603,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the build badge for the build project.
+  /** Information about the build badge for the build project.
     */
   @js.native
   trait ProjectBadge extends js.Object {
@@ -2684,8 +2624,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Contains configuration information about a batch build project.
+  /** Contains configuration information about a batch build project.
     */
   @js.native
   trait ProjectBuildBatchConfig extends js.Object {
@@ -2712,8 +2651,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the cache for the build project.
+  /** Information about the cache for the build project.
     */
   @js.native
   trait ProjectCache extends js.Object {
@@ -2739,8 +2677,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the build environment of the build project.
+  /** Information about the build environment of the build project.
     */
   @js.native
   trait ProjectEnvironment extends js.Object {
@@ -2781,8 +2718,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a file system created by Amazon Elastic File System (EFS). For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html|What Is Amazon Elastic File System?]]
+  /** Information about a file system created by Amazon Elastic File System (EFS). For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html|What Is Amazon Elastic File System?]]
     */
   @js.native
   trait ProjectFileSystemLocation extends js.Object {
@@ -2822,8 +2758,7 @@ package codebuild {
     @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
   }
 
-  /**
-    * Information about the build input source code for the build project.
+  /** Information about the build input source code for the build project.
     */
   @js.native
   trait ProjectSource extends js.Object {
@@ -2870,8 +2805,7 @@ package codebuild {
     }
   }
 
-  /**
-    * A source identifier and its corresponding version.
+  /** A source identifier and its corresponding version.
     */
   @js.native
   trait ProjectSourceVersion extends js.Object {
@@ -2889,7 +2823,6 @@ package codebuild {
         "sourceIdentifier" -> sourceIdentifier.asInstanceOf[js.Any],
         "sourceVersion" -> sourceVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProjectSourceVersion]
     }
   }
@@ -2910,7 +2843,6 @@ package codebuild {
         "policy" -> policy.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutResourcePolicyInput]
     }
   }
@@ -2931,10 +2863,9 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about credentials that provide access to a private Docker registry. When this is set:
+  /** Information about credentials that provide access to a private Docker registry. When this is set:
     * * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.
-    *  * images cannot be curated or an Amazon ECR image.
+    * * images cannot be curated or an Amazon ECR image.
     * For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html|Private Registry with AWS Secrets Manager Sample for AWS CodeBuild]].
     */
   @js.native
@@ -2953,13 +2884,11 @@ package codebuild {
         "credential" -> credential.asInstanceOf[js.Any],
         "credentialProvider" -> credentialProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegistryCredential]
     }
   }
 
-  /**
-    * Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.
+  /** Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.
     */
   @js.native
   trait Report extends js.Object {
@@ -3019,8 +2948,7 @@ package codebuild {
     @inline def values = js.Array(LINE_COVERAGE_PERCENTAGE, FILE_PATH)
   }
 
-  /**
-    * Information about the location where the run of a report is exported.
+  /** Information about the location where the run of a report is exported.
     */
   @js.native
   trait ReportExportConfig extends js.Object {
@@ -3050,8 +2978,7 @@ package codebuild {
     @inline def values = js.Array(S3, NO_EXPORT)
   }
 
-  /**
-    * A filter used to return reports with the status specified by the input <code>status</code> parameter.
+  /** A filter used to return reports with the status specified by the input <code>status</code> parameter.
     */
   @js.native
   trait ReportFilter extends js.Object {
@@ -3069,8 +2996,7 @@ package codebuild {
     }
   }
 
-  /**
-    * A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.
+  /** A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.
     */
   @js.native
   trait ReportGroup extends js.Object {
@@ -3146,8 +3072,7 @@ package codebuild {
     @inline def values = js.Array(TEST, CODE_COVERAGE)
   }
 
-  /**
-    * Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon Simple Storage Service (Amazon S3).
+  /** Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon Simple Storage Service (Amazon S3).
     */
   @js.native
   trait ResolvedArtifact extends js.Object {
@@ -3253,8 +3178,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about S3 logs for a build project.
+  /** Information about S3 logs for a build project.
     */
   @js.native
   trait S3LogsConfig extends js.Object {
@@ -3280,8 +3204,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the S3 bucket where the raw data of a report are exported.
+  /** Information about the S3 bucket where the raw data of a report are exported.
     */
   @js.native
   trait S3ReportExportConfig extends js.Object {
@@ -3339,9 +3262,8 @@ package codebuild {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /**
-    * Information about the authorization settings for AWS CodeBuild to access the source code to be built.
-    *  This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
+  /** Information about the authorization settings for AWS CodeBuild to access the source code to be built.
+    * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
     */
   @js.native
   trait SourceAuth extends js.Object {
@@ -3372,8 +3294,7 @@ package codebuild {
     @inline def values = js.Array(OAUTH)
   }
 
-  /**
-    * Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.
+  /** Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.
     */
   @js.native
   trait SourceCredentialsInfo extends js.Object {
@@ -3682,7 +3603,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopBuildBatchInput]
     }
   }
@@ -3716,7 +3636,6 @@ package codebuild {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopBuildInput]
     }
   }
@@ -3737,9 +3656,8 @@ package codebuild {
     }
   }
 
-  /**
-    * A tag, consisting of a key and a value.
-    *  This tag is available for use by AWS services that support tags in AWS CodeBuild.
+  /** A tag, consisting of a key and a value.
+    * This tag is available for use by AWS services that support tags in AWS CodeBuild.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3760,8 +3678,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.
+  /** Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.
     */
   @js.native
   trait TestCase extends js.Object {
@@ -3800,8 +3717,7 @@ package codebuild {
     }
   }
 
-  /**
-    * A filter used to return specific types of test cases.
+  /** A filter used to return specific types of test cases.
     */
   @js.native
   trait TestCaseFilter extends js.Object {
@@ -3819,8 +3735,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a test report.
+  /** Information about a test report.
     */
   @js.native
   trait TestReportSummary extends js.Object {
@@ -3841,7 +3756,6 @@ package codebuild {
         "statusCounts" -> statusCounts.asInstanceOf[js.Any],
         "total" -> total.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestReportSummary]
     }
   }
@@ -4023,8 +3937,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about the VPC configuration that AWS CodeBuild accesses.
+  /** Information about the VPC configuration that AWS CodeBuild accesses.
     */
   @js.native
   trait VpcConfig extends js.Object {
@@ -4048,8 +3961,7 @@ package codebuild {
     }
   }
 
-  /**
-    * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
+  /** Information about a webhook that connects repository events to a build project in AWS CodeBuild.
     */
   @js.native
   trait Webhook extends js.Object {
@@ -4094,8 +4006,7 @@ package codebuild {
     @inline def values = js.Array(BUILD, BUILD_BATCH)
   }
 
-  /**
-    * A filter used to determine which webhooks trigger a build.
+  /** A filter used to determine which webhooks trigger a build.
     */
   @js.native
   trait WebhookFilter extends js.Object {

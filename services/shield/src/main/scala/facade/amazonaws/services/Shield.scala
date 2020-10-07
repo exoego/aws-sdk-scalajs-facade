@@ -110,20 +110,17 @@ package shield {
       val __obj = js.Dynamic.literal(
         "LogBucket" -> LogBucket.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateDRTLogBucketRequest]
     }
   }
 
   @js.native
-  trait AssociateDRTLogBucketResponse extends js.Object {}
+  trait AssociateDRTLogBucketResponse extends js.Object
 
   object AssociateDRTLogBucketResponse {
     @inline
-    def apply(
-    ): AssociateDRTLogBucketResponse = {
+    def apply(): AssociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDRTLogBucketResponse]
     }
   }
@@ -141,20 +138,17 @@ package shield {
       val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateDRTRoleRequest]
     }
   }
 
   @js.native
-  trait AssociateDRTRoleResponse extends js.Object {}
+  trait AssociateDRTRoleResponse extends js.Object
 
   object AssociateDRTRoleResponse {
     @inline
-    def apply(
-    ): AssociateDRTRoleResponse = {
+    def apply(): AssociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDRTRoleResponse]
     }
   }
@@ -175,20 +169,17 @@ package shield {
         "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateHealthCheckRequest]
     }
   }
 
   @js.native
-  trait AssociateHealthCheckResponse extends js.Object {}
+  trait AssociateHealthCheckResponse extends js.Object
 
   object AssociateHealthCheckResponse {
     @inline
-    def apply(
-    ): AssociateHealthCheckResponse = {
+    def apply(): AssociateHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateHealthCheckResponse]
     }
   }
@@ -206,26 +197,22 @@ package shield {
       val __obj = js.Dynamic.literal(
         "EmergencyContactList" -> EmergencyContactList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateProactiveEngagementDetailsRequest]
     }
   }
 
   @js.native
-  trait AssociateProactiveEngagementDetailsResponse extends js.Object {}
+  trait AssociateProactiveEngagementDetailsResponse extends js.Object
 
   object AssociateProactiveEngagementDetailsResponse {
     @inline
-    def apply(
-    ): AssociateProactiveEngagementDetailsResponse = {
+    def apply(): AssociateProactiveEngagementDetailsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateProactiveEngagementDetailsResponse]
     }
   }
 
-  /**
-    * The details of a DDoS attack.
+  /** The details of a DDoS attack.
     */
   @js.native
   trait AttackDetail extends js.Object {
@@ -273,8 +260,7 @@ package shield {
     @inline def values = js.Array(NETWORK, APPLICATION)
   }
 
-  /**
-    * Details of the described attack.
+  /** Details of the described attack.
     */
   @js.native
   trait AttackProperty extends js.Object {
@@ -319,8 +305,7 @@ package shield {
     @inline def values = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
   }
 
-  /**
-    * Summarizes all DDoS attacks for a specified time period.
+  /** Summarizes all DDoS attacks for a specified time period.
     */
   @js.native
   trait AttackSummary extends js.Object {
@@ -350,8 +335,7 @@ package shield {
     }
   }
 
-  /**
-    * Describes the attack.
+  /** Describes the attack.
     */
   @js.native
   trait AttackVectorDescription extends js.Object {
@@ -366,7 +350,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "VectorType" -> VectorType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttackVectorDescription]
     }
   }
@@ -380,8 +363,7 @@ package shield {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * A contributor to the attack and their contribution.
+  /** A contributor to the attack and their contribution.
     */
   @js.native
   trait Contributor extends js.Object {
@@ -418,7 +400,6 @@ package shield {
         "Name" -> Name.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateProtectionRequest]
     }
   }
@@ -440,27 +421,23 @@ package shield {
   }
 
   @js.native
-  trait CreateSubscriptionRequest extends js.Object {}
+  trait CreateSubscriptionRequest extends js.Object
 
   object CreateSubscriptionRequest {
     @inline
-    def apply(
-    ): CreateSubscriptionRequest = {
+    def apply(): CreateSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateSubscriptionRequest]
     }
   }
 
   @js.native
-  trait CreateSubscriptionResponse extends js.Object {}
+  trait CreateSubscriptionResponse extends js.Object
 
   object CreateSubscriptionResponse {
     @inline
-    def apply(
-    ): CreateSubscriptionResponse = {
+    def apply(): CreateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateSubscriptionResponse]
     }
   }
@@ -478,48 +455,41 @@ package shield {
       val __obj = js.Dynamic.literal(
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProtectionRequest]
     }
   }
 
   @js.native
-  trait DeleteProtectionResponse extends js.Object {}
+  trait DeleteProtectionResponse extends js.Object
 
   object DeleteProtectionResponse {
     @inline
-    def apply(
-    ): DeleteProtectionResponse = {
+    def apply(): DeleteProtectionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProtectionResponse]
     }
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
-  trait DeleteSubscriptionRequest extends js.Object {}
+  trait DeleteSubscriptionRequest extends js.Object
 
   object DeleteSubscriptionRequest {
     @inline
-    def apply(
-    ): DeleteSubscriptionRequest = {
+    def apply(): DeleteSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSubscriptionRequest]
     }
   }
 
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
-  trait DeleteSubscriptionResponse extends js.Object {}
+  trait DeleteSubscriptionResponse extends js.Object
 
   object DeleteSubscriptionResponse {
     @inline
-    def apply(
-    ): DeleteSubscriptionResponse = {
+    def apply(): DeleteSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSubscriptionResponse]
     }
   }
@@ -537,7 +507,6 @@ package shield {
       val __obj = js.Dynamic.literal(
         "AttackId" -> AttackId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAttackRequest]
     }
   }
@@ -559,14 +528,12 @@ package shield {
   }
 
   @js.native
-  trait DescribeDRTAccessRequest extends js.Object {}
+  trait DescribeDRTAccessRequest extends js.Object
 
   object DescribeDRTAccessRequest {
     @inline
-    def apply(
-    ): DescribeDRTAccessRequest = {
+    def apply(): DescribeDRTAccessRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeDRTAccessRequest]
     }
   }
@@ -591,14 +558,12 @@ package shield {
   }
 
   @js.native
-  trait DescribeEmergencyContactSettingsRequest extends js.Object {}
+  trait DescribeEmergencyContactSettingsRequest extends js.Object
 
   object DescribeEmergencyContactSettingsRequest {
     @inline
-    def apply(
-    ): DescribeEmergencyContactSettingsRequest = {
+    def apply(): DescribeEmergencyContactSettingsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeEmergencyContactSettingsRequest]
     }
   }
@@ -655,14 +620,12 @@ package shield {
   }
 
   @js.native
-  trait DescribeSubscriptionRequest extends js.Object {}
+  trait DescribeSubscriptionRequest extends js.Object
 
   object DescribeSubscriptionRequest {
     @inline
-    def apply(
-    ): DescribeSubscriptionRequest = {
+    def apply(): DescribeSubscriptionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeSubscriptionRequest]
     }
   }
@@ -684,27 +647,23 @@ package shield {
   }
 
   @js.native
-  trait DisableProactiveEngagementRequest extends js.Object {}
+  trait DisableProactiveEngagementRequest extends js.Object
 
   object DisableProactiveEngagementRequest {
     @inline
-    def apply(
-    ): DisableProactiveEngagementRequest = {
+    def apply(): DisableProactiveEngagementRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableProactiveEngagementRequest]
     }
   }
 
   @js.native
-  trait DisableProactiveEngagementResponse extends js.Object {}
+  trait DisableProactiveEngagementResponse extends js.Object
 
   object DisableProactiveEngagementResponse {
     @inline
-    def apply(
-    ): DisableProactiveEngagementResponse = {
+    def apply(): DisableProactiveEngagementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisableProactiveEngagementResponse]
     }
   }
@@ -722,46 +681,39 @@ package shield {
       val __obj = js.Dynamic.literal(
         "LogBucket" -> LogBucket.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateDRTLogBucketRequest]
     }
   }
 
   @js.native
-  trait DisassociateDRTLogBucketResponse extends js.Object {}
+  trait DisassociateDRTLogBucketResponse extends js.Object
 
   object DisassociateDRTLogBucketResponse {
     @inline
-    def apply(
-    ): DisassociateDRTLogBucketResponse = {
+    def apply(): DisassociateDRTLogBucketResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDRTLogBucketResponse]
     }
   }
 
   @js.native
-  trait DisassociateDRTRoleRequest extends js.Object {}
+  trait DisassociateDRTRoleRequest extends js.Object
 
   object DisassociateDRTRoleRequest {
     @inline
-    def apply(
-    ): DisassociateDRTRoleRequest = {
+    def apply(): DisassociateDRTRoleRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDRTRoleRequest]
     }
   }
 
   @js.native
-  trait DisassociateDRTRoleResponse extends js.Object {}
+  trait DisassociateDRTRoleResponse extends js.Object
 
   object DisassociateDRTRoleResponse {
     @inline
-    def apply(
-    ): DisassociateDRTRoleResponse = {
+    def apply(): DisassociateDRTRoleResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDRTRoleResponse]
     }
   }
@@ -782,26 +734,22 @@ package shield {
         "HealthCheckArn" -> HealthCheckArn.asInstanceOf[js.Any],
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateHealthCheckRequest]
     }
   }
 
   @js.native
-  trait DisassociateHealthCheckResponse extends js.Object {}
+  trait DisassociateHealthCheckResponse extends js.Object
 
   object DisassociateHealthCheckResponse {
     @inline
-    def apply(
-    ): DisassociateHealthCheckResponse = {
+    def apply(): DisassociateHealthCheckResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateHealthCheckResponse]
     }
   }
 
-  /**
-    * Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+  /** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
     */
   @js.native
   trait EmergencyContact extends js.Object {
@@ -828,40 +776,34 @@ package shield {
   }
 
   @js.native
-  trait EnableProactiveEngagementRequest extends js.Object {}
+  trait EnableProactiveEngagementRequest extends js.Object
 
   object EnableProactiveEngagementRequest {
     @inline
-    def apply(
-    ): EnableProactiveEngagementRequest = {
+    def apply(): EnableProactiveEngagementRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableProactiveEngagementRequest]
     }
   }
 
   @js.native
-  trait EnableProactiveEngagementResponse extends js.Object {}
+  trait EnableProactiveEngagementResponse extends js.Object
 
   object EnableProactiveEngagementResponse {
     @inline
-    def apply(
-    ): EnableProactiveEngagementResponse = {
+    def apply(): EnableProactiveEngagementResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableProactiveEngagementResponse]
     }
   }
 
   @js.native
-  trait GetSubscriptionStateRequest extends js.Object {}
+  trait GetSubscriptionStateRequest extends js.Object
 
   object GetSubscriptionStateRequest {
     @inline
-    def apply(
-    ): GetSubscriptionStateRequest = {
+    def apply(): GetSubscriptionStateRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetSubscriptionStateRequest]
     }
   }
@@ -879,13 +821,11 @@ package shield {
       val __obj = js.Dynamic.literal(
         "SubscriptionState" -> SubscriptionState.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSubscriptionStateResponse]
     }
   }
 
-  /**
-    * Specifies how many protections of a given type you can create.
+  /** Specifies how many protections of a given type you can create.
     */
   @js.native
   trait Limit extends js.Object {
@@ -991,8 +931,7 @@ package shield {
     }
   }
 
-  /**
-    * The mitigation applied to a DDoS attack.
+  /** The mitigation applied to a DDoS attack.
     */
   @js.native
   trait Mitigation extends js.Object {
@@ -1020,8 +959,7 @@ package shield {
     @inline def values = js.Array(ENABLED, DISABLED, PENDING)
   }
 
-  /**
-    * An object that represents a resource that is under DDoS protection.
+  /** An object that represents a resource that is under DDoS protection.
     */
   @js.native
   trait Protection extends js.Object {
@@ -1048,8 +986,7 @@ package shield {
     }
   }
 
-  /**
-    * The attack information for the specified SubResource.
+  /** The attack information for the specified SubResource.
     */
   @js.native
   trait SubResourceSummary extends js.Object {
@@ -1085,8 +1022,7 @@ package shield {
     @inline def values = js.Array(IP, URL)
   }
 
-  /**
-    * Information about the AWS Shield Advanced subscription for an account.
+  /** Information about the AWS Shield Advanced subscription for an account.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -1128,8 +1064,7 @@ package shield {
     @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
-  /**
-    * A summary of information about the attack.
+  /** A summary of information about the attack.
     */
   @js.native
   trait SummarizedAttackVector extends js.Object {
@@ -1152,8 +1087,7 @@ package shield {
     }
   }
 
-  /**
-    * The counter that describes a DDoS attack.
+  /** The counter that describes a DDoS attack.
     */
   @js.native
   trait SummarizedCounter extends js.Object {
@@ -1186,8 +1120,7 @@ package shield {
     }
   }
 
-  /**
-    * The time range.
+  /** The time range.
     */
   @js.native
   trait TimeRange extends js.Object {
@@ -1236,14 +1169,12 @@ package shield {
   }
 
   @js.native
-  trait UpdateEmergencyContactSettingsResponse extends js.Object {}
+  trait UpdateEmergencyContactSettingsResponse extends js.Object
 
   object UpdateEmergencyContactSettingsResponse {
     @inline
-    def apply(
-    ): UpdateEmergencyContactSettingsResponse = {
+    def apply(): UpdateEmergencyContactSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateEmergencyContactSettingsResponse]
     }
   }
@@ -1265,14 +1196,12 @@ package shield {
   }
 
   @js.native
-  trait UpdateSubscriptionResponse extends js.Object {}
+  trait UpdateSubscriptionResponse extends js.Object
 
   object UpdateSubscriptionResponse {
     @inline
-    def apply(
-    ): UpdateSubscriptionResponse = {
+    def apply(): UpdateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateSubscriptionResponse]
     }
   }

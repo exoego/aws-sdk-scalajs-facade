@@ -89,8 +89,7 @@ package sqs {
     def untagQueue(params: UntagQueueRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait AddPermissionRequest extends js.Object {
@@ -114,13 +113,11 @@ package sqs {
         "Label" -> Label.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddPermissionRequest]
     }
   }
 
-  /**
-    * Gives a detailed description of the result of an action on each entry in the request.
+  /** Gives a detailed description of the result of an action on each entry in the request.
     */
   @js.native
   trait BatchResultErrorEntry extends js.Object {
@@ -149,8 +146,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ChangeMessageVisibilityBatchRequest extends js.Object {
@@ -168,17 +164,15 @@ package sqs {
         "Entries" -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangeMessageVisibilityBatchRequest]
     }
   }
 
-  /**
-    * Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
-    *  <important> All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:
-    *  </important> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
-    *  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
-    *  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
+  /** Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
+    * <important> All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:
+    * </important> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+    * <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
+    * <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
     */
   @js.native
   trait ChangeMessageVisibilityBatchRequestEntry extends js.Object {
@@ -204,8 +198,7 @@ package sqs {
     }
   }
 
-  /**
-    * For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
+  /** For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
     */
   @js.native
   trait ChangeMessageVisibilityBatchResult extends js.Object {
@@ -223,13 +216,11 @@ package sqs {
         "Failed" -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangeMessageVisibilityBatchResult]
     }
   }
 
-  /**
-    * Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
+  /** Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
     */
   @js.native
   trait ChangeMessageVisibilityBatchResultEntry extends js.Object {
@@ -244,7 +235,6 @@ package sqs {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangeMessageVisibilityBatchResultEntry]
     }
   }
@@ -268,13 +258,11 @@ package sqs {
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any],
         "VisibilityTimeout" -> VisibilityTimeout.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangeMessageVisibilityRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait CreateQueueRequest extends js.Object {
@@ -300,8 +288,7 @@ package sqs {
     }
   }
 
-  /**
-    * Returns the <code>QueueUrl</code> attribute of the created queue.
+  /** Returns the <code>QueueUrl</code> attribute of the created queue.
     */
   @js.native
   trait CreateQueueResult extends js.Object {
@@ -319,8 +306,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteMessageBatchRequest extends js.Object {
@@ -338,13 +324,11 @@ package sqs {
         "Entries" -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMessageBatchRequest]
     }
   }
 
-  /**
-    * Encloses a receipt handle and an identifier for it.
+  /** Encloses a receipt handle and an identifier for it.
     */
   @js.native
   trait DeleteMessageBatchRequestEntry extends js.Object {
@@ -362,13 +346,11 @@ package sqs {
         "Id" -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMessageBatchRequestEntry]
     }
   }
 
-  /**
-    * For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.
+  /** For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.
     */
   @js.native
   trait DeleteMessageBatchResult extends js.Object {
@@ -386,13 +368,11 @@ package sqs {
         "Failed" -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMessageBatchResult]
     }
   }
 
-  /**
-    * Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code>
+  /** Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code>
     */
   @js.native
   trait DeleteMessageBatchResultEntry extends js.Object {
@@ -407,13 +387,11 @@ package sqs {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMessageBatchResultEntry]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteMessageRequest extends js.Object {
@@ -431,13 +409,11 @@ package sqs {
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteMessageRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteQueueRequest extends js.Object {
@@ -452,13 +428,11 @@ package sqs {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteQueueRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetQueueAttributesRequest extends js.Object {
@@ -481,8 +455,7 @@ package sqs {
     }
   }
 
-  /**
-    * A list of returned queue attributes.
+  /** A list of returned queue attributes.
     */
   @js.native
   trait GetQueueAttributesResult extends js.Object {
@@ -500,8 +473,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait GetQueueUrlRequest extends js.Object {
@@ -524,8 +496,7 @@ package sqs {
     }
   }
 
-  /**
-    * For more information, see [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html|Interpreting Responses]] in the <i>Amazon Simple Queue Service Developer Guide</i>.
+  /** For more information, see [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html|Interpreting Responses]] in the <i>Amazon Simple Queue Service Developer Guide</i>.
     */
   @js.native
   trait GetQueueUrlResult extends js.Object {
@@ -543,8 +514,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListDeadLetterSourceQueuesRequest extends js.Object {
@@ -570,8 +540,7 @@ package sqs {
     }
   }
 
-  /**
-    * A list of your dead letter source queues.
+  /** A list of your dead letter source queues.
     */
   @js.native
   trait ListDeadLetterSourceQueuesResult extends js.Object {
@@ -607,7 +576,6 @@ package sqs {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListQueueTagsRequest]
     }
   }
@@ -628,8 +596,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ListQueuesRequest extends js.Object {
@@ -653,8 +620,7 @@ package sqs {
     }
   }
 
-  /**
-    * A list of your queues.
+  /** A list of your queues.
     */
   @js.native
   trait ListQueuesResult extends js.Object {
@@ -675,8 +641,7 @@ package sqs {
     }
   }
 
-  /**
-    * An Amazon SQS message.
+  /** An Amazon SQS message.
     */
   @js.native
   trait Message extends js.Object {
@@ -712,9 +677,8 @@ package sqs {
     }
   }
 
-  /**
-    * The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code>
-    *  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).
+  /** The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code>
+    * <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).
     */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -769,9 +733,8 @@ package sqs {
     @inline def values = js.Array(AWSTraceHeader)
   }
 
-  /**
-    * The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code>
-    *  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.
+  /** The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code>
+    * <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.
     */
   @js.native
   trait MessageSystemAttributeValue extends js.Object {
@@ -803,8 +766,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait PurgeQueueRequest extends js.Object {
@@ -819,7 +781,6 @@ package sqs {
       val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PurgeQueueRequest]
     }
   }
@@ -846,31 +807,29 @@ package sqs {
     val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
 
-    @inline def values =
-      js.Array(
-        All,
-        Policy,
-        VisibilityTimeout,
-        MaximumMessageSize,
-        MessageRetentionPeriod,
-        ApproximateNumberOfMessages,
-        ApproximateNumberOfMessagesNotVisible,
-        CreatedTimestamp,
-        LastModifiedTimestamp,
-        QueueArn,
-        ApproximateNumberOfMessagesDelayed,
-        DelaySeconds,
-        ReceiveMessageWaitTimeSeconds,
-        RedrivePolicy,
-        FifoQueue,
-        ContentBasedDeduplication,
-        KmsMasterKeyId,
-        KmsDataKeyReusePeriodSeconds
-      )
+    @inline def values = js.Array(
+      All,
+      Policy,
+      VisibilityTimeout,
+      MaximumMessageSize,
+      MessageRetentionPeriod,
+      ApproximateNumberOfMessages,
+      ApproximateNumberOfMessagesNotVisible,
+      CreatedTimestamp,
+      LastModifiedTimestamp,
+      QueueArn,
+      ApproximateNumberOfMessagesDelayed,
+      DelaySeconds,
+      ReceiveMessageWaitTimeSeconds,
+      RedrivePolicy,
+      FifoQueue,
+      ContentBasedDeduplication,
+      KmsMasterKeyId,
+      KmsDataKeyReusePeriodSeconds
+    )
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ReceiveMessageRequest extends js.Object {
@@ -908,8 +867,7 @@ package sqs {
     }
   }
 
-  /**
-    * A list of received messages.
+  /** A list of received messages.
     */
   @js.native
   trait ReceiveMessageResult extends js.Object {
@@ -927,8 +885,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait RemovePermissionRequest extends js.Object {
@@ -946,13 +903,11 @@ package sqs {
         "Label" -> Label.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemovePermissionRequest]
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait SendMessageBatchRequest extends js.Object {
@@ -970,13 +925,11 @@ package sqs {
         "Entries" -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendMessageBatchRequest]
     }
   }
 
-  /**
-    * Contains the details of a single Amazon SQS message along with an <code>Id</code>.
+  /** Contains the details of a single Amazon SQS message along with an <code>Id</code>.
     */
   @js.native
   trait SendMessageBatchRequestEntry extends js.Object {
@@ -1014,8 +967,7 @@ package sqs {
     }
   }
 
-  /**
-    * For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
+  /** For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
     */
   @js.native
   trait SendMessageBatchResult extends js.Object {
@@ -1033,13 +985,11 @@ package sqs {
         "Failed" -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendMessageBatchResult]
     }
   }
 
-  /**
-    * Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code>
+  /** Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code>
     */
   @js.native
   trait SendMessageBatchResultEntry extends js.Object {
@@ -1074,8 +1024,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait SendMessageRequest extends js.Object {
@@ -1113,8 +1062,7 @@ package sqs {
     }
   }
 
-  /**
-    * The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
+  /** The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
     */
   @js.native
   trait SendMessageResult extends js.Object {
@@ -1144,8 +1092,7 @@ package sqs {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait SetQueueAttributesRequest extends js.Object {
@@ -1163,7 +1110,6 @@ package sqs {
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetQueueAttributesRequest]
     }
   }
@@ -1184,7 +1130,6 @@ package sqs {
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagQueueRequest]
     }
   }
@@ -1205,7 +1150,6 @@ package sqs {
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagQueueRequest]
     }
   }

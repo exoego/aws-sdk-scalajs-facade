@@ -61,8 +61,7 @@ package rdsdataservice {
     def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse] = js.native
   }
 
-  /**
-    * Contains an array.
+  /** Contains an array.
     */
   @js.native
   trait ArrayValue extends js.Object {
@@ -92,8 +91,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The request parameters represent the input of a SQL statement over an array of data.
+  /** The request parameters represent the input of a SQL statement over an array of data.
     */
   @js.native
   trait BatchExecuteStatementRequest extends js.Object {
@@ -131,8 +129,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The response elements represent the output of a SQL statement over an array of data.
+  /** The response elements represent the output of a SQL statement over an array of data.
     */
   @js.native
   trait BatchExecuteStatementResponse extends js.Object {
@@ -150,8 +147,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The request parameters represent the input of a request to start a SQL transaction.
+  /** The request parameters represent the input of a request to start a SQL transaction.
     */
   @js.native
   trait BeginTransactionRequest extends js.Object {
@@ -180,8 +176,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The response elements represent the output of a request to start a SQL transaction.
+  /** The response elements represent the output of a request to start a SQL transaction.
     */
   @js.native
   trait BeginTransactionResponse extends js.Object {
@@ -199,8 +194,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * Contains the metadata for a column.
+  /** Contains the metadata for a column.
     */
   @js.native
   trait ColumnMetadata extends js.Object {
@@ -257,8 +251,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The request parameters represent the input of a commit transaction request.
+  /** The request parameters represent the input of a commit transaction request.
     */
   @js.native
   trait CommitTransactionRequest extends js.Object {
@@ -279,13 +272,11 @@ package rdsdataservice {
         "secretArn" -> secretArn.asInstanceOf[js.Any],
         "transactionId" -> transactionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CommitTransactionRequest]
     }
   }
 
-  /**
-    * The response elements represent the output of a commit transaction request.
+  /** The response elements represent the output of a commit transaction request.
     */
   @js.native
   trait CommitTransactionResponse extends js.Object {
@@ -312,8 +303,7 @@ package rdsdataservice {
     @inline def values = js.Array(DOUBLE_OR_LONG, STRING)
   }
 
-  /**
-    * The request parameters represent the input of a request to run one or more SQL statements.
+  /** The request parameters represent the input of a request to run one or more SQL statements.
     */
   @js.native
   trait ExecuteSqlRequest extends js.Object {
@@ -345,8 +335,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The response elements represent the output of a request to run one or more SQL statements.
+  /** The response elements represent the output of a request to run one or more SQL statements.
     */
   @js.native
   trait ExecuteSqlResponse extends js.Object {
@@ -364,8 +353,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The request parameters represent the input of a request to run a SQL statement against a database.
+  /** The request parameters represent the input of a request to run a SQL statement against a database.
     */
   @js.native
   trait ExecuteStatementRequest extends js.Object {
@@ -412,8 +400,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The response elements represent the output of a request to run a SQL statement against a database.
+  /** The response elements represent the output of a request to run a SQL statement against a database.
     */
   @js.native
   trait ExecuteStatementResponse extends js.Object {
@@ -440,8 +427,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * Contains a value.
+  /** Contains a value.
     */
   @js.native
   trait Field extends js.Object {
@@ -477,8 +463,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * A record returned by a call.
+  /** A record returned by a call.
     */
   @js.native
   trait Record extends js.Object {
@@ -496,8 +481,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The result set returned by a SQL statement.
+  /** The result set returned by a SQL statement.
     */
   @js.native
   trait ResultFrame extends js.Object {
@@ -518,8 +502,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The metadata of the result set returned by a SQL statement.
+  /** The metadata of the result set returned by a SQL statement.
     */
   @js.native
   trait ResultSetMetadata extends js.Object {
@@ -540,8 +523,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * Options that control how the result set is returned.
+  /** Options that control how the result set is returned.
     */
   @js.native
   trait ResultSetOptions extends js.Object {
@@ -559,8 +541,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The request parameters represent the input of a request to perform a rollback of a transaction.
+  /** The request parameters represent the input of a request to perform a rollback of a transaction.
     */
   @js.native
   trait RollbackTransactionRequest extends js.Object {
@@ -581,13 +562,11 @@ package rdsdataservice {
         "secretArn" -> secretArn.asInstanceOf[js.Any],
         "transactionId" -> transactionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RollbackTransactionRequest]
     }
   }
 
-  /**
-    * The response elements represent the output of a request to perform a rollback of a transaction.
+  /** The response elements represent the output of a request to perform a rollback of a transaction.
     */
   @js.native
   trait RollbackTransactionResponse extends js.Object {
@@ -605,8 +584,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * A parameter used in a SQL statement.
+  /** A parameter used in a SQL statement.
     */
   @js.native
   trait SqlParameter extends js.Object {
@@ -630,9 +608,8 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * The result of a SQL statement.
-    *  {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
+  /** The result of a SQL statement.
+    * {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
     */
   @js.native
   trait SqlStatementResult extends js.Object {
@@ -653,8 +630,7 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * A structure value returned by a call.
+  /** A structure value returned by a call.
     */
   @js.native
   trait StructValue extends js.Object {
@@ -683,8 +659,7 @@ package rdsdataservice {
     @inline def values = js.Array(DATE, DECIMAL, TIME, TIMESTAMP)
   }
 
-  /**
-    * The response elements represent the results of an update.
+  /** The response elements represent the results of an update.
     */
   @js.native
   trait UpdateResult extends js.Object {
@@ -702,9 +677,8 @@ package rdsdataservice {
     }
   }
 
-  /**
-    * Contains the value of a column.
-    *  {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
+  /** Contains the value of a column.
+    * {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
     */
   @js.native
   trait Value extends js.Object {

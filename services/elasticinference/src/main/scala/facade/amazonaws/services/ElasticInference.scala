@@ -58,8 +58,7 @@ package elasticinference {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
   }
 
-  /**
-    * The details of an Elastic Inference Accelerator type.
+  /** The details of an Elastic Inference Accelerator type.
     */
   @js.native
   trait AcceleratorType extends js.Object {
@@ -83,8 +82,7 @@ package elasticinference {
     }
   }
 
-  /**
-    * The offering for an Elastic Inference Accelerator type.
+  /** The offering for an Elastic Inference Accelerator type.
     */
   @js.native
   trait AcceleratorTypeOffering extends js.Object {
@@ -146,14 +144,12 @@ package elasticinference {
   }
 
   @js.native
-  trait DescribeAcceleratorTypesRequest extends js.Object {}
+  trait DescribeAcceleratorTypesRequest extends js.Object
 
   object DescribeAcceleratorTypesRequest {
     @inline
-    def apply(
-    ): DescribeAcceleratorTypesRequest = {
+    def apply(): DescribeAcceleratorTypesRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeAcceleratorTypesRequest]
     }
   }
@@ -218,8 +214,7 @@ package elasticinference {
     }
   }
 
-  /**
-    * The details of an Elastic Inference Accelerator.
+  /** The details of an Elastic Inference Accelerator.
     */
   @js.native
   trait ElasticInferenceAccelerator extends js.Object {
@@ -249,8 +244,7 @@ package elasticinference {
     }
   }
 
-  /**
-    * The health details of an Elastic Inference Accelerator.
+  /** The health details of an Elastic Inference Accelerator.
     */
   @js.native
   trait ElasticInferenceAcceleratorHealth extends js.Object {
@@ -268,8 +262,7 @@ package elasticinference {
     }
   }
 
-  /**
-    * A filter expression for the Elastic Inference Accelerator list.
+  /** A filter expression for the Elastic Inference Accelerator list.
     */
   @js.native
   trait Filter extends js.Object {
@@ -290,8 +283,7 @@ package elasticinference {
     }
   }
 
-  /**
-    * A throughput entry for an Elastic Inference Accelerator type.
+  /** A throughput entry for an Elastic Inference Accelerator type.
     */
   @js.native
   trait KeyValuePair extends js.Object {
@@ -325,7 +317,6 @@ package elasticinference {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -356,8 +347,7 @@ package elasticinference {
     @inline def values = js.Array(region, `availability-zone`, `availability-zone-id`)
   }
 
-  /**
-    * The memory information of an Elastic Inference Accelerator type.
+  /** The memory information of an Elastic Inference Accelerator type.
     */
   @js.native
   trait MemoryInfo extends js.Object {
@@ -391,20 +381,17 @@ package elasticinference {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResult extends js.Object {}
+  trait TagResourceResult extends js.Object
 
   object TagResourceResult {
     @inline
-    def apply(
-    ): TagResourceResult = {
+    def apply(): TagResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResult]
     }
   }
@@ -425,20 +412,17 @@ package elasticinference {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResult extends js.Object {}
+  trait UntagResourceResult extends js.Object
 
   object UntagResourceResult {
     @inline
-    def apply(
-    ): UntagResourceResult = {
+    def apply(): UntagResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResult]
     }
   }

@@ -203,8 +203,7 @@ package codepipeline {
     def updatePipeline(params: UpdatePipelineInput): Request[UpdatePipelineOutput] = js.native
   }
 
-  /**
-    * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.
+  /** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.
     */
   @js.native
   trait AWSSessionCredentials extends js.Object {
@@ -225,13 +224,11 @@ package codepipeline {
         "secretAccessKey" -> secretAccessKey.asInstanceOf[js.Any],
         "sessionToken" -> sessionToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AWSSessionCredentials]
     }
   }
 
-  /**
-    * Represents the input of an AcknowledgeJob action.
+  /** Represents the input of an AcknowledgeJob action.
     */
   @js.native
   trait AcknowledgeJobInput extends js.Object {
@@ -249,13 +246,11 @@ package codepipeline {
         "jobId" -> jobId.asInstanceOf[js.Any],
         "nonce" -> nonce.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcknowledgeJobInput]
     }
   }
 
-  /**
-    * Represents the output of an AcknowledgeJob action.
+  /** Represents the output of an AcknowledgeJob action.
     */
   @js.native
   trait AcknowledgeJobOutput extends js.Object {
@@ -273,8 +268,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of an AcknowledgeThirdPartyJob action.
+  /** Represents the input of an AcknowledgeThirdPartyJob action.
     */
   @js.native
   trait AcknowledgeThirdPartyJobInput extends js.Object {
@@ -295,13 +289,11 @@ package codepipeline {
         "jobId" -> jobId.asInstanceOf[js.Any],
         "nonce" -> nonce.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AcknowledgeThirdPartyJobInput]
     }
   }
 
-  /**
-    * Represents the output of an AcknowledgeThirdPartyJob action.
+  /** Represents the output of an AcknowledgeThirdPartyJob action.
     */
   @js.native
   trait AcknowledgeThirdPartyJobOutput extends js.Object {
@@ -332,8 +324,7 @@ package codepipeline {
     @inline def values = js.Array(Source, Build, Deploy, Test, Invoke, Approval)
   }
 
-  /**
-    * Represents information about an action configuration.
+  /** Represents information about an action configuration.
     */
   @js.native
   trait ActionConfiguration extends js.Object {
@@ -351,8 +342,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about an action configuration property.
+  /** Represents information about an action configuration property.
     */
   @js.native
   trait ActionConfigurationProperty extends js.Object {
@@ -400,8 +390,7 @@ package codepipeline {
     @inline def values = js.Array(String, Number, Boolean)
   }
 
-  /**
-    * Represents the context of an action in the stage of a pipeline to a job worker.
+  /** Represents the context of an action in the stage of a pipeline to a job worker.
     */
   @js.native
   trait ActionContext extends js.Object {
@@ -422,8 +411,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about an action declaration.
+  /** Represents information about an action declaration.
     */
   @js.native
   trait ActionDeclaration extends js.Object {
@@ -467,8 +455,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the run of an action.
+  /** Represents information about the run of an action.
     */
   @js.native
   trait ActionExecution extends js.Object {
@@ -510,8 +497,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action.
+  /** Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action.
     */
   @js.native
   trait ActionExecutionDetail extends js.Object {
@@ -556,8 +542,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Filter values for the action execution.
+  /** Filter values for the action execution.
     */
   @js.native
   trait ActionExecutionFilter extends js.Object {
@@ -575,8 +560,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Input information used for an action execution.
+  /** Input information used for an action execution.
     */
   @js.native
   trait ActionExecutionInput extends js.Object {
@@ -612,8 +596,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Output details listed for an action execution, such as the action execution result.
+  /** Output details listed for an action execution, such as the action execution result.
     */
   @js.native
   trait ActionExecutionOutput extends js.Object {
@@ -637,8 +620,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Execution result information, such as the external execution ID.
+  /** Execution result information, such as the external execution ID.
     */
   @js.native
   trait ActionExecutionResult extends js.Object {
@@ -683,8 +665,7 @@ package codepipeline {
     @inline def values = js.Array(AWS, ThirdParty, Custom)
   }
 
-  /**
-    * Represents information about the version (or revision) of an action.
+  /** Represents information about the version (or revision) of an action.
     */
   @js.native
   trait ActionRevision extends js.Object {
@@ -705,13 +686,11 @@ package codepipeline {
         "revisionChangeId" -> revisionChangeId.asInstanceOf[js.Any],
         "revisionId" -> revisionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ActionRevision]
     }
   }
 
-  /**
-    * Represents information about the state of an action.
+  /** Represents information about the state of an action.
     */
   @js.native
   trait ActionState extends js.Object {
@@ -741,8 +720,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Returns information about the details of an action type.
+  /** Returns information about the details of an action type.
     */
   @js.native
   trait ActionType extends js.Object {
@@ -774,8 +752,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about an action type.
+  /** Represents information about an action type.
     */
   @js.native
   trait ActionTypeId extends js.Object {
@@ -799,13 +776,11 @@ package codepipeline {
         "provider" -> provider.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ActionTypeId]
     }
   }
 
-  /**
-    * Returns information about the settings for an action type.
+  /** Returns information about the settings for an action type.
     */
   @js.native
   trait ActionTypeSettings extends js.Object {
@@ -832,8 +807,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the result of an approval request.
+  /** Represents information about the result of an approval request.
     */
   @js.native
   trait ApprovalResult extends js.Object {
@@ -851,7 +825,6 @@ package codepipeline {
         "status" -> status.asInstanceOf[js.Any],
         "summary" -> summary.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ApprovalResult]
     }
   }
@@ -865,8 +838,7 @@ package codepipeline {
     @inline def values = js.Array(Approved, Rejected)
   }
 
-  /**
-    * Represents information about an artifact that is worked on by actions in the pipeline.
+  /** Represents information about an artifact that is worked on by actions in the pipeline.
     */
   @js.native
   trait Artifact extends js.Object {
@@ -890,8 +862,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Artifact details for the action execution, such as the artifact location.
+  /** Artifact details for the action execution, such as the artifact location.
     */
   @js.native
   trait ArtifactDetail extends js.Object {
@@ -912,8 +883,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Returns information about the details of an artifact.
+  /** Returns information about the details of an artifact.
     */
   @js.native
   trait ArtifactDetails extends js.Object {
@@ -931,13 +901,11 @@ package codepipeline {
         "maximumCount" -> maximumCount.asInstanceOf[js.Any],
         "minimumCount" -> minimumCount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ArtifactDetails]
     }
   }
 
-  /**
-    * Represents information about the location of an artifact.
+  /** Represents information about the location of an artifact.
     */
   @js.native
   trait ArtifactLocation extends js.Object {
@@ -966,8 +934,7 @@ package codepipeline {
     @inline def values = js.Array(S3)
   }
 
-  /**
-    * Represents revision details of an artifact.
+  /** Represents revision details of an artifact.
     */
   @js.native
   trait ArtifactRevision extends js.Object {
@@ -1000,8 +967,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The S3 bucket where artifacts for the pipeline are stored.
+  /** The S3 bucket where artifacts for the pipeline are stored.
     *
     * '''Note:'''You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
     */
@@ -1037,8 +1003,7 @@ package codepipeline {
     @inline def values = js.Array(S3)
   }
 
-  /**
-    * Reserved for future use.
+  /** Reserved for future use.
     */
   @js.native
   trait BlockerDeclaration extends js.Object {
@@ -1056,7 +1021,6 @@ package codepipeline {
         "name" -> name.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BlockerDeclaration]
     }
   }
@@ -1069,8 +1033,7 @@ package codepipeline {
     @inline def values = js.Array(Schedule)
   }
 
-  /**
-    * Represents the input of a CreateCustomActionType operation.
+  /** Represents the input of a CreateCustomActionType operation.
     */
   @js.native
   trait CreateCustomActionTypeInput extends js.Object {
@@ -1111,8 +1074,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreateCustomActionType</code> operation.
+  /** Represents the output of a <code>CreateCustomActionType</code> operation.
     */
   @js.native
   trait CreateCustomActionTypeOutput extends js.Object {
@@ -1135,8 +1097,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>CreatePipeline</code> action.
+  /** Represents the input of a <code>CreatePipeline</code> action.
     */
   @js.native
   trait CreatePipelineInput extends js.Object {
@@ -1159,8 +1120,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>CreatePipeline</code> action.
+  /** Represents the output of a <code>CreatePipeline</code> action.
     */
   @js.native
   trait CreatePipelineOutput extends js.Object {
@@ -1181,8 +1141,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about a current revision.
+  /** Represents information about a current revision.
     */
   @js.native
   trait CurrentRevision extends js.Object {
@@ -1211,8 +1170,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.
+  /** Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.
     */
   @js.native
   trait DeleteCustomActionTypeInput extends js.Object {
@@ -1233,13 +1191,11 @@ package codepipeline {
         "provider" -> provider.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCustomActionTypeInput]
     }
   }
 
-  /**
-    * Represents the input of a <code>DeletePipeline</code> action.
+  /** Represents the input of a <code>DeletePipeline</code> action.
     */
   @js.native
   trait DeletePipelineInput extends js.Object {
@@ -1254,7 +1210,6 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePipelineInput]
     }
   }
@@ -1272,20 +1227,17 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteWebhookInput]
     }
   }
 
   @js.native
-  trait DeleteWebhookOutput extends js.Object {}
+  trait DeleteWebhookOutput extends js.Object
 
   object DeleteWebhookOutput {
     @inline
-    def apply(
-    ): DeleteWebhookOutput = {
+    def apply(): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteWebhookOutput]
     }
   }
@@ -1307,20 +1259,17 @@ package codepipeline {
   }
 
   @js.native
-  trait DeregisterWebhookWithThirdPartyOutput extends js.Object {}
+  trait DeregisterWebhookWithThirdPartyOutput extends js.Object
 
   object DeregisterWebhookWithThirdPartyOutput {
     @inline
-    def apply(
-    ): DeregisterWebhookWithThirdPartyOutput = {
+    def apply(): DeregisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterWebhookWithThirdPartyOutput]
     }
   }
 
-  /**
-    * Represents the input of a <code>DisableStageTransition</code> action.
+  /** Represents the input of a <code>DisableStageTransition</code> action.
     */
   @js.native
   trait DisableStageTransitionInput extends js.Object {
@@ -1344,13 +1293,11 @@ package codepipeline {
         "stageName" -> stageName.asInstanceOf[js.Any],
         "transitionType" -> transitionType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableStageTransitionInput]
     }
   }
 
-  /**
-    * Represents the input of an <code>EnableStageTransition</code> action.
+  /** Represents the input of an <code>EnableStageTransition</code> action.
     */
   @js.native
   trait EnableStageTransitionInput extends js.Object {
@@ -1371,13 +1318,11 @@ package codepipeline {
         "stageName" -> stageName.asInstanceOf[js.Any],
         "transitionType" -> transitionType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableStageTransitionInput]
     }
   }
 
-  /**
-    * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key.
+  /** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key.
     */
   @js.native
   trait EncryptionKey extends js.Object {
@@ -1395,7 +1340,6 @@ package codepipeline {
         "id" -> id.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EncryptionKey]
     }
   }
@@ -1408,8 +1352,7 @@ package codepipeline {
     @inline def values = js.Array(KMS)
   }
 
-  /**
-    * Represents information about an error in AWS CodePipeline.
+  /** Represents information about an error in AWS CodePipeline.
     */
   @js.native
   trait ErrorDetails extends js.Object {
@@ -1430,8 +1373,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
+  /** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
     */
   @js.native
   trait ExecutionDetails extends js.Object {
@@ -1455,8 +1397,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The interaction or event that started a pipeline execution.
+  /** The interaction or event that started a pipeline execution.
     */
   @js.native
   trait ExecutionTrigger extends js.Object {
@@ -1477,8 +1418,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about failure details.
+  /** Represents information about failure details.
     */
   @js.native
   trait FailureDetails extends js.Object {
@@ -1517,8 +1457,7 @@ package codepipeline {
     @inline def values = js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable)
   }
 
-  /**
-    * Represents the input of a <code>GetJobDetails</code> action.
+  /** Represents the input of a <code>GetJobDetails</code> action.
     */
   @js.native
   trait GetJobDetailsInput extends js.Object {
@@ -1533,13 +1472,11 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobDetailsInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetJobDetails</code> action.
+  /** Represents the output of a <code>GetJobDetails</code> action.
     */
   @js.native
   trait GetJobDetailsOutput extends js.Object {
@@ -1557,8 +1494,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetPipelineExecution</code> action.
+  /** Represents the input of a <code>GetPipelineExecution</code> action.
     */
   @js.native
   trait GetPipelineExecutionInput extends js.Object {
@@ -1576,13 +1512,11 @@ package codepipeline {
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPipelineExecutionInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetPipelineExecution</code> action.
+  /** Represents the output of a <code>GetPipelineExecution</code> action.
     */
   @js.native
   trait GetPipelineExecutionOutput extends js.Object {
@@ -1600,8 +1534,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetPipeline</code> action.
+  /** Represents the input of a <code>GetPipeline</code> action.
     */
   @js.native
   trait GetPipelineInput extends js.Object {
@@ -1624,8 +1557,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>GetPipeline</code> action.
+  /** Represents the output of a <code>GetPipeline</code> action.
     */
   @js.native
   trait GetPipelineOutput extends js.Object {
@@ -1646,8 +1578,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetPipelineState</code> action.
+  /** Represents the input of a <code>GetPipelineState</code> action.
     */
   @js.native
   trait GetPipelineStateInput extends js.Object {
@@ -1662,13 +1593,11 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPipelineStateInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetPipelineState</code> action.
+  /** Represents the output of a <code>GetPipelineState</code> action.
     */
   @js.native
   trait GetPipelineStateOutput extends js.Object {
@@ -1698,8 +1627,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>GetThirdPartyJobDetails</code> action.
+  /** Represents the input of a <code>GetThirdPartyJobDetails</code> action.
     */
   @js.native
   trait GetThirdPartyJobDetailsInput extends js.Object {
@@ -1717,13 +1645,11 @@ package codepipeline {
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetThirdPartyJobDetailsInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>GetThirdPartyJobDetails</code> action.
+  /** Represents the output of a <code>GetThirdPartyJobDetails</code> action.
     */
   @js.native
   trait GetThirdPartyJobDetailsOutput extends js.Object {
@@ -1741,8 +1667,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about an artifact to be worked on, such as a test or build artifact.
+  /** Represents information about an artifact to be worked on, such as a test or build artifact.
     */
   @js.native
   trait InputArtifact extends js.Object {
@@ -1757,13 +1682,11 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InputArtifact]
     }
   }
 
-  /**
-    * Represents information about a job.
+  /** Represents information about a job.
     */
   @js.native
   trait Job extends js.Object {
@@ -1790,8 +1713,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents other information about a job required for a job worker to complete the job.
+  /** Represents other information about a job required for a job worker to complete the job.
     */
   @js.native
   trait JobData extends js.Object {
@@ -1830,8 +1752,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the details of a job.
+  /** Represents information about the details of a job.
     */
   @js.native
   trait JobDetails extends js.Object {
@@ -1915,8 +1836,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListActionTypes</code> action.
+  /** Represents the input of a <code>ListActionTypes</code> action.
     */
   @js.native
   trait ListActionTypesInput extends js.Object {
@@ -1937,8 +1857,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListActionTypes</code> action.
+  /** Represents the output of a <code>ListActionTypes</code> action.
     */
   @js.native
   trait ListActionTypesOutput extends js.Object {
@@ -1961,8 +1880,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListPipelineExecutions</code> action.
+  /** Represents the input of a <code>ListPipelineExecutions</code> action.
     */
   @js.native
   trait ListPipelineExecutionsInput extends js.Object {
@@ -1988,8 +1906,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListPipelineExecutions</code> action.
+  /** Represents the output of a <code>ListPipelineExecutions</code> action.
     */
   @js.native
   trait ListPipelineExecutionsOutput extends js.Object {
@@ -2010,8 +1927,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>ListPipelines</code> action.
+  /** Represents the input of a <code>ListPipelines</code> action.
     */
   @js.native
   trait ListPipelinesInput extends js.Object {
@@ -2029,8 +1945,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>ListPipelines</code> action.
+  /** Represents the output of a <code>ListPipelines</code> action.
     */
   @js.native
   trait ListPipelinesOutput extends js.Object {
@@ -2094,8 +2009,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN.
+  /** The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN.
     */
   @js.native
   trait ListWebhookItem extends js.Object {
@@ -2171,8 +2085,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the output of an action.
+  /** Represents information about the output of an action.
     */
   @js.native
   trait OutputArtifact extends js.Object {
@@ -2187,13 +2100,11 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OutputArtifact]
     }
   }
 
-  /**
-    * Represents information about a pipeline to a job worker.
+  /** Represents information about a pipeline to a job worker.
     *
     * '''Note:'''PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.
     */
@@ -2225,8 +2136,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the structure of actions and stages to be performed in the pipeline.
+  /** Represents the structure of actions and stages to be performed in the pipeline.
     */
   @js.native
   trait PipelineDeclaration extends js.Object {
@@ -2261,8 +2171,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about an execution of a pipeline.
+  /** Represents information about an execution of a pipeline.
     */
   @js.native
   trait PipelineExecution extends js.Object {
@@ -2305,8 +2214,7 @@ package codepipeline {
     @inline def values = js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed)
   }
 
-  /**
-    * Summary information about a pipeline execution.
+  /** Summary information about a pipeline execution.
     */
   @js.native
   trait PipelineExecutionSummary extends js.Object {
@@ -2342,8 +2250,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Information about a pipeline.
+  /** Information about a pipeline.
     */
   @js.native
   trait PipelineMetadata extends js.Object {
@@ -2367,8 +2274,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Returns a summary of a pipeline.
+  /** Returns a summary of a pipeline.
     */
   @js.native
   trait PipelineSummary extends js.Object {
@@ -2395,8 +2301,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>PollForJobs</code> action.
+  /** Represents the input of a <code>PollForJobs</code> action.
     */
   @js.native
   trait PollForJobsInput extends js.Object {
@@ -2422,8 +2327,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>PollForJobs</code> action.
+  /** Represents the output of a <code>PollForJobs</code> action.
     */
   @js.native
   trait PollForJobsOutput extends js.Object {
@@ -2441,8 +2345,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>PollForThirdPartyJobs</code> action.
+  /** Represents the input of a <code>PollForThirdPartyJobs</code> action.
     */
   @js.native
   trait PollForThirdPartyJobsInput extends js.Object {
@@ -2465,8 +2368,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>PollForThirdPartyJobs</code> action.
+  /** Represents the output of a <code>PollForThirdPartyJobs</code> action.
     */
   @js.native
   trait PollForThirdPartyJobsOutput extends js.Object {
@@ -2484,8 +2386,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>PutActionRevision</code> action.
+  /** Represents the input of a <code>PutActionRevision</code> action.
     */
   @js.native
   trait PutActionRevisionInput extends js.Object {
@@ -2509,13 +2410,11 @@ package codepipeline {
         "pipelineName" -> pipelineName.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutActionRevisionInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>PutActionRevision</code> action.
+  /** Represents the output of a <code>PutActionRevision</code> action.
     */
   @js.native
   trait PutActionRevisionOutput extends js.Object {
@@ -2536,8 +2435,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>PutApprovalResult</code> action.
+  /** Represents the input of a <code>PutApprovalResult</code> action.
     */
   @js.native
   trait PutApprovalResultInput extends js.Object {
@@ -2564,13 +2462,11 @@ package codepipeline {
         "stageName" -> stageName.asInstanceOf[js.Any],
         "token" -> token.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutApprovalResultInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>PutApprovalResult</code> action.
+  /** Represents the output of a <code>PutApprovalResult</code> action.
     */
   @js.native
   trait PutApprovalResultOutput extends js.Object {
@@ -2588,8 +2484,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>PutJobFailureResult</code> action.
+  /** Represents the input of a <code>PutJobFailureResult</code> action.
     */
   @js.native
   trait PutJobFailureResultInput extends js.Object {
@@ -2607,13 +2502,11 @@ package codepipeline {
         "failureDetails" -> failureDetails.asInstanceOf[js.Any],
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutJobFailureResultInput]
     }
   }
 
-  /**
-    * Represents the input of a <code>PutJobSuccessResult</code> action.
+  /** Represents the input of a <code>PutJobSuccessResult</code> action.
     */
   @js.native
   trait PutJobSuccessResultInput extends js.Object {
@@ -2645,8 +2538,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
+  /** Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
     */
   @js.native
   trait PutThirdPartyJobFailureResultInput extends js.Object {
@@ -2667,13 +2559,11 @@ package codepipeline {
         "failureDetails" -> failureDetails.asInstanceOf[js.Any],
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutThirdPartyJobFailureResultInput]
     }
   }
 
-  /**
-    * Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.
+  /** Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.
     */
   @js.native
   trait PutThirdPartyJobSuccessResultInput extends js.Object {
@@ -2759,20 +2649,17 @@ package codepipeline {
   }
 
   @js.native
-  trait RegisterWebhookWithThirdPartyOutput extends js.Object {}
+  trait RegisterWebhookWithThirdPartyOutput extends js.Object
 
   object RegisterWebhookWithThirdPartyOutput {
     @inline
-    def apply(
-    ): RegisterWebhookWithThirdPartyOutput = {
+    def apply(): RegisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RegisterWebhookWithThirdPartyOutput]
     }
   }
 
-  /**
-    * Represents the input of a <code>RetryStageExecution</code> action.
+  /** Represents the input of a <code>RetryStageExecution</code> action.
     */
   @js.native
   trait RetryStageExecutionInput extends js.Object {
@@ -2796,13 +2683,11 @@ package codepipeline {
         "retryMode" -> retryMode.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RetryStageExecutionInput]
     }
   }
 
-  /**
-    * Represents the output of a <code>RetryStageExecution</code> action.
+  /** Represents the output of a <code>RetryStageExecution</code> action.
     */
   @js.native
   trait RetryStageExecutionOutput extends js.Object {
@@ -2820,8 +2705,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The location of the S3 bucket that contains a revision.
+  /** The location of the S3 bucket that contains a revision.
     */
   @js.native
   trait S3ArtifactLocation extends js.Object {
@@ -2839,13 +2723,11 @@ package codepipeline {
         "bucketName" -> bucketName.asInstanceOf[js.Any],
         "objectKey" -> objectKey.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3ArtifactLocation]
     }
   }
 
-  /**
-    * The Amazon S3 artifact location for an action's artifacts.
+  /** The Amazon S3 artifact location for an action's artifacts.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -2866,8 +2748,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Information about the version (or revision) of a source artifact that initiated a pipeline execution.
+  /** Information about the version (or revision) of a source artifact that initiated a pipeline execution.
     */
   @js.native
   trait SourceRevision extends js.Object {
@@ -2896,8 +2777,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about a stage to a job worker.
+  /** Represents information about a stage to a job worker.
     */
   @js.native
   trait StageContext extends js.Object {
@@ -2915,8 +2795,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about a stage and its definition.
+  /** Represents information about a stage and its definition.
     */
   @js.native
   trait StageDeclaration extends js.Object {
@@ -2942,8 +2821,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the run of a stage.
+  /** Represents information about the run of a stage.
     */
   @js.native
   trait StageExecution extends js.Object {
@@ -2961,7 +2839,6 @@ package codepipeline {
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StageExecution]
     }
   }
@@ -2986,8 +2863,7 @@ package codepipeline {
     @inline def values = js.Array(FAILED_ACTIONS)
   }
 
-  /**
-    * Represents information about the state of the stage.
+  /** Represents information about the state of the stage.
     */
   @js.native
   trait StageState extends js.Object {
@@ -3023,8 +2899,7 @@ package codepipeline {
     @inline def values = js.Array(Inbound, Outbound)
   }
 
-  /**
-    * Represents the input of a <code>StartPipelineExecution</code> action.
+  /** Represents the input of a <code>StartPipelineExecution</code> action.
     */
   @js.native
   trait StartPipelineExecutionInput extends js.Object {
@@ -3047,8 +2922,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents the output of a <code>StartPipelineExecution</code> action.
+  /** Represents the output of a <code>StartPipelineExecution</code> action.
     */
   @js.native
   trait StartPipelineExecutionOutput extends js.Object {
@@ -3066,8 +2940,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The interaction that stopped a pipeline execution.
+  /** The interaction that stopped a pipeline execution.
     */
   @js.native
   trait StopExecutionTrigger extends js.Object {
@@ -3128,8 +3001,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * A tag is a key-value pair that is used to manage the resource.
+  /** A tag is a key-value pair that is used to manage the resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3147,7 +3019,6 @@ package codepipeline {
         "key" -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3168,26 +3039,22 @@ package codepipeline {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
 
-  /**
-    * A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action.
+  /** A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action.
     */
   @js.native
   trait ThirdPartyJob extends js.Object {
@@ -3208,8 +3075,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the job data for a partner action.
+  /** Represents information about the job data for a partner action.
     */
   @js.native
   trait ThirdPartyJobData extends js.Object {
@@ -3248,8 +3114,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.
+  /** The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.
     */
   @js.native
   trait ThirdPartyJobDetails extends js.Object {
@@ -3273,8 +3138,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * Represents information about the state of transitions between one stage and another stage.
+  /** Represents information about the state of transitions between one stage and another stage.
     */
   @js.native
   trait TransitionState extends js.Object {
@@ -3330,26 +3194,22 @@ package codepipeline {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
 
-  /**
-    * Represents the input of an <code>UpdatePipeline</code> action.
+  /** Represents the input of an <code>UpdatePipeline</code> action.
     */
   @js.native
   trait UpdatePipelineInput extends js.Object {
@@ -3364,13 +3224,11 @@ package codepipeline {
       val __obj = js.Dynamic.literal(
         "pipeline" -> pipeline.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdatePipelineInput]
     }
   }
 
-  /**
-    * Represents the output of an <code>UpdatePipeline</code> action.
+  /** Represents the output of an <code>UpdatePipeline</code> action.
     */
   @js.native
   trait UpdatePipelineOutput extends js.Object {
@@ -3388,8 +3246,7 @@ package codepipeline {
     }
   }
 
-  /**
-    * The authentication applied to incoming webhook trigger requests.
+  /** The authentication applied to incoming webhook trigger requests.
     */
   @js.native
   trait WebhookAuthConfiguration extends js.Object {
@@ -3420,8 +3277,7 @@ package codepipeline {
     @inline def values = js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED)
   }
 
-  /**
-    * Represents information about a webhook and its definition.
+  /** Represents information about a webhook and its definition.
     */
   @js.native
   trait WebhookDefinition extends js.Object {
@@ -3451,13 +3307,11 @@ package codepipeline {
         "targetAction" -> targetAction.asInstanceOf[js.Any],
         "targetPipeline" -> targetPipeline.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[WebhookDefinition]
     }
   }
 
-  /**
-    * The event criteria that specify when a webhook notification is sent to your URL.
+  /** The event criteria that specify when a webhook notification is sent to your URL.
     */
   @js.native
   trait WebhookFilterRule extends js.Object {

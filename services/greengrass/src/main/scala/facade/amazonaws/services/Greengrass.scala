@@ -243,7 +243,6 @@ package greengrass {
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateRoleToGroupRequest]
     }
   }
@@ -277,7 +276,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateServiceRoleToAccountRequest]
     }
   }
@@ -298,8 +296,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
+  /** Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
     */
   @js.native
   trait BulkDeployment extends js.Object {
@@ -323,8 +320,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Relevant metrics on input records processed during bulk deployment.
+  /** Relevant metrics on input records processed during bulk deployment.
     */
   @js.native
   trait BulkDeploymentMetrics extends js.Object {
@@ -348,8 +344,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about an individual group deployment in a bulk deployment operation.
+  /** Information about an individual group deployment in a bulk deployment operation.
     */
   @js.native
   trait BulkDeploymentResult extends js.Object {
@@ -388,8 +383,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The current status of the bulk deployment.
+  /** The current status of the bulk deployment.
     */
   @js.native
   sealed trait BulkDeploymentStatus extends js.Any
@@ -404,8 +398,7 @@ package greengrass {
     @inline def values = js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed)
   }
 
-  /**
-    * Information about a Greengrass core's connectivity.
+  /** Information about a Greengrass core's connectivity.
     */
   @js.native
   trait ConnectivityInfo extends js.Object {
@@ -432,8 +425,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
+  /** Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
     */
   @js.native
   trait Connector extends js.Object {
@@ -459,8 +451,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about the connector definition version, which is a container for connectors.
+  /** Information about the connector definition version, which is a container for connectors.
     */
   @js.native
   trait ConnectorDefinitionVersion extends js.Object {
@@ -478,8 +469,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a core.
+  /** Information about a core.
     */
   @js.native
   trait Core extends js.Object {
@@ -508,8 +498,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a core definition version.
+  /** Information about a core definition version.
     */
   @js.native
   trait CoreDefinitionVersion extends js.Object {
@@ -635,8 +624,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information needed to create a core definition.
+  /** Information needed to create a core definition.
     */
   @js.native
   trait CreateCoreDefinitionRequest extends js.Object {
@@ -962,8 +950,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information needed to create a function definition version.
+  /** Information needed to create a function definition version.
     */
   @js.native
   trait CreateFunctionDefinitionVersionRequest extends js.Object {
@@ -1562,8 +1549,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a definition.
+  /** Information about a definition.
     */
   @js.native
   trait DefinitionInformation extends js.Object {
@@ -1615,20 +1601,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConnectorDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteConnectorDefinitionResponse extends js.Object {}
+  trait DeleteConnectorDefinitionResponse extends js.Object
 
   object DeleteConnectorDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteConnectorDefinitionResponse = {
+    def apply(): DeleteConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConnectorDefinitionResponse]
     }
   }
@@ -1646,20 +1629,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCoreDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteCoreDefinitionResponse extends js.Object {}
+  trait DeleteCoreDefinitionResponse extends js.Object
 
   object DeleteCoreDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteCoreDefinitionResponse = {
+    def apply(): DeleteCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteCoreDefinitionResponse]
     }
   }
@@ -1677,20 +1657,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDeviceDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteDeviceDefinitionResponse extends js.Object {}
+  trait DeleteDeviceDefinitionResponse extends js.Object
 
   object DeleteDeviceDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteDeviceDefinitionResponse = {
+    def apply(): DeleteDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteDeviceDefinitionResponse]
     }
   }
@@ -1708,20 +1685,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFunctionDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteFunctionDefinitionResponse extends js.Object {}
+  trait DeleteFunctionDefinitionResponse extends js.Object
 
   object DeleteFunctionDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteFunctionDefinitionResponse = {
+    def apply(): DeleteFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteFunctionDefinitionResponse]
     }
   }
@@ -1739,20 +1713,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGroupRequest]
     }
   }
 
   @js.native
-  trait DeleteGroupResponse extends js.Object {}
+  trait DeleteGroupResponse extends js.Object
 
   object DeleteGroupResponse {
     @inline
-    def apply(
-    ): DeleteGroupResponse = {
+    def apply(): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteGroupResponse]
     }
   }
@@ -1770,20 +1741,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLoggerDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteLoggerDefinitionResponse extends js.Object {}
+  trait DeleteLoggerDefinitionResponse extends js.Object
 
   object DeleteLoggerDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteLoggerDefinitionResponse = {
+    def apply(): DeleteLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLoggerDefinitionResponse]
     }
   }
@@ -1801,20 +1769,17 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResourceDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteResourceDefinitionResponse extends js.Object {}
+  trait DeleteResourceDefinitionResponse extends js.Object
 
   object DeleteResourceDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteResourceDefinitionResponse = {
+    def apply(): DeleteResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteResourceDefinitionResponse]
     }
   }
@@ -1832,26 +1797,22 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSubscriptionDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeleteSubscriptionDefinitionResponse extends js.Object {}
+  trait DeleteSubscriptionDefinitionResponse extends js.Object
 
   object DeleteSubscriptionDefinitionResponse {
     @inline
-    def apply(
-    ): DeleteSubscriptionDefinitionResponse = {
+    def apply(): DeleteSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSubscriptionDefinitionResponse]
     }
   }
 
-  /**
-    * Information about a deployment.
+  /** Information about a deployment.
     */
   @js.native
   trait Deployment extends js.Object {
@@ -1881,8 +1842,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+  /** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
     */
   @js.native
   sealed trait DeploymentType extends js.Any
@@ -1895,8 +1855,7 @@ package greengrass {
     @inline def values = js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment)
   }
 
-  /**
-    * Information about a device.
+  /** Information about a device.
     */
   @js.native
   trait Device extends js.Object {
@@ -1925,8 +1884,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a device definition version.
+  /** Information about a device definition version.
     */
   @js.native
   trait DeviceDefinitionVersion extends js.Object {
@@ -1957,7 +1915,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateRoleFromGroupRequest]
     }
   }
@@ -1979,14 +1936,12 @@ package greengrass {
   }
 
   @js.native
-  trait DisassociateServiceRoleFromAccountRequest extends js.Object {}
+  trait DisassociateServiceRoleFromAccountRequest extends js.Object
 
   object DisassociateServiceRoleFromAccountRequest {
     @inline
-    def apply(
-    ): DisassociateServiceRoleFromAccountRequest = {
+    def apply(): DisassociateServiceRoleFromAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountRequest]
     }
   }
@@ -2016,8 +1971,7 @@ package greengrass {
     @inline def values = js.Array(binary, json)
   }
 
-  /**
-    * Details about the error.
+  /** Details about the error.
     */
   @js.native
   trait ErrorDetail extends js.Object {
@@ -2038,8 +1992,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a Lambda function.
+  /** Information about a Lambda function.
     */
   @js.native
   trait Function extends js.Object {
@@ -2065,8 +2018,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The configuration of the Lambda function.
+  /** The configuration of the Lambda function.
     */
   @js.native
   trait FunctionConfiguration extends js.Object {
@@ -2102,8 +2054,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The environment configuration of the function.
+  /** The environment configuration of the function.
     */
   @js.native
   trait FunctionConfigurationEnvironment extends js.Object {
@@ -2130,8 +2081,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
+  /** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
     */
   @js.native
   trait FunctionDefaultConfig extends js.Object {
@@ -2149,8 +2099,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Configuration information that specifies how a Lambda function runs.
+  /** Configuration information that specifies how a Lambda function runs.
     */
   @js.native
   trait FunctionDefaultExecutionConfig extends js.Object {
@@ -2171,8 +2120,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a function definition version.
+  /** Information about a function definition version.
     */
   @js.native
   trait FunctionDefinitionVersion extends js.Object {
@@ -2193,8 +2141,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Configuration information that specifies how a Lambda function runs.
+  /** Configuration information that specifies how a Lambda function runs.
     */
   @js.native
   trait FunctionExecutionConfig extends js.Object {
@@ -2215,8 +2162,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
+  /** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
     */
   @js.native
   sealed trait FunctionIsolationMode extends js.Any
@@ -2227,8 +2173,7 @@ package greengrass {
     @inline def values = js.Array(GreengrassContainer, NoContainer)
   }
 
-  /**
-    * Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
+  /** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
     */
   @js.native
   trait FunctionRunAsConfig extends js.Object {
@@ -2262,7 +2207,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAssociatedRoleRequest]
     }
   }
@@ -2299,7 +2243,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBulkDeploymentStatusRequest]
     }
   }
@@ -2348,7 +2291,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "ThingName" -> ThingName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConnectivityInfoRequest]
     }
   }
@@ -2385,7 +2327,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConnectorDefinitionRequest]
     }
   }
@@ -2495,7 +2436,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCoreDefinitionRequest]
     }
   }
@@ -2553,7 +2493,6 @@ package greengrass {
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any],
         "CoreDefinitionVersionId" -> CoreDefinitionVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCoreDefinitionVersionRequest]
     }
   }
@@ -2605,7 +2544,6 @@ package greengrass {
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any],
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeploymentStatusRequest]
     }
   }
@@ -2651,7 +2589,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceDefinitionRequest]
     }
   }
@@ -2761,7 +2698,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFunctionDefinitionRequest]
     }
   }
@@ -2874,7 +2810,6 @@ package greengrass {
         "CertificateAuthorityId" -> CertificateAuthorityId.asInstanceOf[js.Any],
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGroupCertificateAuthorityRequest]
     }
   }
@@ -2914,7 +2849,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGroupCertificateConfigurationRequest]
     }
   }
@@ -2954,7 +2888,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGroupRequest]
     }
   }
@@ -3012,7 +2945,6 @@ package greengrass {
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "GroupVersionId" -> GroupVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGroupVersionRequest]
     }
   }
@@ -3058,7 +2990,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLoggerDefinitionRequest]
     }
   }
@@ -3165,7 +3096,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResourceDefinitionRequest]
     }
   }
@@ -3223,7 +3153,6 @@ package greengrass {
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any],
         "ResourceDefinitionVersionId" -> ResourceDefinitionVersionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetResourceDefinitionVersionRequest]
     }
   }
@@ -3257,14 +3186,12 @@ package greengrass {
   }
 
   @js.native
-  trait GetServiceRoleForAccountRequest extends js.Object {}
+  trait GetServiceRoleForAccountRequest extends js.Object
 
   object GetServiceRoleForAccountRequest {
     @inline
-    def apply(
-    ): GetServiceRoleForAccountRequest = {
+    def apply(): GetServiceRoleForAccountRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetServiceRoleForAccountRequest]
     }
   }
@@ -3301,7 +3228,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSubscriptionDefinitionRequest]
     }
   }
@@ -3398,8 +3324,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a certificate authority for a group.
+  /** Information about a certificate authority for a group.
     */
   @js.native
   trait GroupCertificateAuthorityProperties extends js.Object {
@@ -3420,8 +3345,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a group.
+  /** Information about a group.
     */
   @js.native
   trait GroupInformation extends js.Object {
@@ -3457,8 +3381,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Group owner related settings for local resources.
+  /** Group owner related settings for local resources.
     */
   @js.native
   trait GroupOwnerSetting extends js.Object {
@@ -3479,8 +3402,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a group version.
+  /** Information about a group version.
     */
   @js.native
   trait GroupVersion extends js.Object {
@@ -3977,7 +3899,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListGroupCertificateAuthoritiesRequest]
     }
   }
@@ -4335,7 +4256,6 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -4356,8 +4276,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Attributes that define a local device resource.
+  /** Attributes that define a local device resource.
     */
   @js.native
   trait LocalDeviceResourceData extends js.Object {
@@ -4378,8 +4297,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Attributes that define a local volume resource.
+  /** Attributes that define a local volume resource.
     */
   @js.native
   trait LocalVolumeResourceData extends js.Object {
@@ -4403,8 +4321,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a logger
+  /** Information about a logger
     */
   @js.native
   trait Logger extends js.Object {
@@ -4445,8 +4362,7 @@ package greengrass {
     @inline def values = js.Array(GreengrassSystem, Lambda)
   }
 
-  /**
-    * Information about a logger definition version.
+  /** Information about a logger definition version.
     */
   @js.native
   trait LoggerDefinitionVersion extends js.Object {
@@ -4485,8 +4401,7 @@ package greengrass {
     @inline def values = js.Array(FileSystem, AWSCloudWatch)
   }
 
-  /**
-    * The type of permission a function has to access a resource.
+  /** The type of permission a function has to access a resource.
     */
   @js.native
   sealed trait Permission extends js.Any
@@ -4497,8 +4412,7 @@ package greengrass {
     @inline def values = js.Array(ro, rw)
   }
 
-  /**
-    * Information needed to reset deployments.
+  /** Information needed to reset deployments.
     */
   @js.native
   trait ResetDeploymentsRequest extends js.Object {
@@ -4543,8 +4457,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a resource.
+  /** Information about a resource.
     */
   @js.native
   trait Resource extends js.Object {
@@ -4565,13 +4478,11 @@ package greengrass {
         "Name" -> Name.asInstanceOf[js.Any],
         "ResourceDataContainer" -> ResourceDataContainer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Resource]
     }
   }
 
-  /**
-    * A policy used by the function to access a resource.
+  /** A policy used by the function to access a resource.
     */
   @js.native
   trait ResourceAccessPolicy extends js.Object {
@@ -4594,8 +4505,7 @@ package greengrass {
     }
   }
 
-  /**
-    * A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
+  /** A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
     */
   @js.native
   trait ResourceDataContainer extends js.Object {
@@ -4625,8 +4535,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Information about a resource definition version.
+  /** Information about a resource definition version.
     */
   @js.native
   trait ResourceDefinitionVersion extends js.Object {
@@ -4644,8 +4553,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The owner setting for downloaded machine learning resources.
+  /** The owner setting for downloaded machine learning resources.
     */
   @js.native
   trait ResourceDownloadOwnerSetting extends js.Object {
@@ -4663,13 +4571,11 @@ package greengrass {
         "GroupOwner" -> GroupOwner.asInstanceOf[js.Any],
         "GroupPermission" -> GroupPermission.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceDownloadOwnerSetting]
     }
   }
 
-  /**
-    * Attributes that define an Amazon S3 machine learning resource.
+  /** Attributes that define an Amazon S3 machine learning resource.
     */
   @js.native
   trait S3MachineLearningModelResourceData extends js.Object {
@@ -4693,8 +4599,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Attributes that define an Amazon SageMaker machine learning resource.
+  /** Attributes that define an Amazon SageMaker machine learning resource.
     */
   @js.native
   trait SageMakerMachineLearningModelResourceData extends js.Object {
@@ -4718,8 +4623,7 @@ package greengrass {
     }
   }
 
-  /**
-    * Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
+  /** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
     */
   @js.native
   trait SecretsManagerSecretResourceData extends js.Object {
@@ -4740,8 +4644,7 @@ package greengrass {
     }
   }
 
-  /**
-    * The piece of software on the Greengrass core that will be updated.
+  /** The piece of software on the Greengrass core that will be updated.
     */
   @js.native
   sealed trait SoftwareToUpdate extends js.Any
@@ -4811,26 +4714,22 @@ package greengrass {
       val __obj = js.Dynamic.literal(
         "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopBulkDeploymentRequest]
     }
   }
 
   @js.native
-  trait StopBulkDeploymentResponse extends js.Object {}
+  trait StopBulkDeploymentResponse extends js.Object
 
   object StopBulkDeploymentResponse {
     @inline
-    def apply(
-    ): StopBulkDeploymentResponse = {
+    def apply(): StopBulkDeploymentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[StopBulkDeploymentResponse]
     }
   }
 
-  /**
-    * Information about a subscription.
+  /** Information about a subscription.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -4854,13 +4753,11 @@ package greengrass {
         "Subject" -> Subject.asInstanceOf[js.Any],
         "Target" -> Target.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Subscription]
     }
   }
 
-  /**
-    * Information about a subscription definition version.
+  /** Information about a subscription definition version.
     */
   @js.native
   trait SubscriptionDefinitionVersion extends js.Object {
@@ -4878,8 +4775,7 @@ package greengrass {
     }
   }
 
-  /**
-    * A map of the key-value pairs for the resource tag.
+  /** A map of the key-value pairs for the resource tag.
     */
   @js.native
   trait TagResourceRequest extends js.Object {
@@ -4918,13 +4814,11 @@ package greengrass {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
-  /**
-    * The minimum level of log statements that should be logged by the OTA Agent during an update.
+  /** The minimum level of log statements that should be logged by the OTA Agent during an update.
     */
   @js.native
   sealed trait UpdateAgentLogLevel extends js.Any
@@ -4941,8 +4835,7 @@ package greengrass {
     @inline def values = js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL)
   }
 
-  /**
-    * Connectivity information.
+  /** Connectivity information.
     */
   @js.native
   trait UpdateConnectivityInfoRequest extends js.Object {
@@ -5006,14 +4899,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateConnectorDefinitionResponse extends js.Object {}
+  trait UpdateConnectorDefinitionResponse extends js.Object
 
   object UpdateConnectorDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateConnectorDefinitionResponse = {
+    def apply(): UpdateConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateConnectorDefinitionResponse]
     }
   }
@@ -5040,14 +4931,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateCoreDefinitionResponse extends js.Object {}
+  trait UpdateCoreDefinitionResponse extends js.Object
 
   object UpdateCoreDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateCoreDefinitionResponse = {
+    def apply(): UpdateCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateCoreDefinitionResponse]
     }
   }
@@ -5074,14 +4963,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateDeviceDefinitionResponse extends js.Object {}
+  trait UpdateDeviceDefinitionResponse extends js.Object
 
   object UpdateDeviceDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateDeviceDefinitionResponse = {
+    def apply(): UpdateDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDeviceDefinitionResponse]
     }
   }
@@ -5108,14 +4995,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateFunctionDefinitionResponse extends js.Object {}
+  trait UpdateFunctionDefinitionResponse extends js.Object
 
   object UpdateFunctionDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateFunctionDefinitionResponse = {
+    def apply(): UpdateFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateFunctionDefinitionResponse]
     }
   }
@@ -5185,14 +5070,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateGroupResponse extends js.Object {}
+  trait UpdateGroupResponse extends js.Object
 
   object UpdateGroupResponse {
     @inline
-    def apply(
-    ): UpdateGroupResponse = {
+    def apply(): UpdateGroupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateGroupResponse]
     }
   }
@@ -5219,14 +5102,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateLoggerDefinitionResponse extends js.Object {}
+  trait UpdateLoggerDefinitionResponse extends js.Object
 
   object UpdateLoggerDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateLoggerDefinitionResponse = {
+    def apply(): UpdateLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateLoggerDefinitionResponse]
     }
   }
@@ -5253,14 +5134,12 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateResourceDefinitionResponse extends js.Object {}
+  trait UpdateResourceDefinitionResponse extends js.Object
 
   object UpdateResourceDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateResourceDefinitionResponse = {
+    def apply(): UpdateResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateResourceDefinitionResponse]
     }
   }
@@ -5287,20 +5166,17 @@ package greengrass {
   }
 
   @js.native
-  trait UpdateSubscriptionDefinitionResponse extends js.Object {}
+  trait UpdateSubscriptionDefinitionResponse extends js.Object
 
   object UpdateSubscriptionDefinitionResponse {
     @inline
-    def apply(
-    ): UpdateSubscriptionDefinitionResponse = {
+    def apply(): UpdateSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateSubscriptionDefinitionResponse]
     }
   }
 
-  /**
-    * The architecture of the cores which are the targets of an update.
+  /** The architecture of the cores which are the targets of an update.
     */
   @js.native
   sealed trait UpdateTargetsArchitecture extends js.Any
@@ -5313,8 +5189,7 @@ package greengrass {
     @inline def values = js.Array(armv6l, armv7l, x86_64, aarch64)
   }
 
-  /**
-    * The operating system of the cores which are the targets of an update.
+  /** The operating system of the cores which are the targets of an update.
     */
   @js.native
   sealed trait UpdateTargetsOperatingSystem extends js.Any
@@ -5327,8 +5202,7 @@ package greengrass {
     @inline def values = js.Array(ubuntu, raspbian, amazon_linux, openwrt)
   }
 
-  /**
-    * Information about a version.
+  /** Information about a version.
     */
   @js.native
   trait VersionInformation extends js.Object {

@@ -285,7 +285,6 @@ package directconnect {
         "ownerAccount" -> ownerAccount.asInstanceOf[js.Any],
         "vlan" -> vlan.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AllocateConnectionOnInterconnectRequest]
     }
   }
@@ -342,7 +341,6 @@ package directconnect {
         "newPrivateVirtualInterfaceAllocation" -> newPrivateVirtualInterfaceAllocation.asInstanceOf[js.Any],
         "ownerAccount" -> ownerAccount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AllocatePrivateVirtualInterfaceRequest]
     }
   }
@@ -366,7 +364,6 @@ package directconnect {
         "newPublicVirtualInterfaceAllocation" -> newPublicVirtualInterfaceAllocation.asInstanceOf[js.Any],
         "ownerAccount" -> ownerAccount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AllocatePublicVirtualInterfaceRequest]
     }
   }
@@ -390,7 +387,6 @@ package directconnect {
         "newTransitVirtualInterfaceAllocation" -> newTransitVirtualInterfaceAllocation.asInstanceOf[js.Any],
         "ownerAccount" -> ownerAccount.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AllocateTransitVirtualInterfaceRequest]
     }
   }
@@ -427,7 +423,6 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "lagId" -> lagId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateConnectionWithLagRequest]
     }
   }
@@ -448,7 +443,6 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "parentConnectionId" -> parentConnectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateHostedConnectionRequest]
     }
   }
@@ -469,13 +463,11 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateVirtualInterfaceRequest]
     }
   }
 
-  /**
-    * Information about the associated gateway.
+  /** Information about the associated gateway.
     */
   @js.native
   trait AssociatedGateway extends js.Object {
@@ -502,8 +494,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a BGP peer.
+  /** Information about a BGP peer.
     */
   @js.native
   trait BGPPeer extends js.Object {
@@ -580,7 +571,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "connectionId" -> connectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfirmConnectionRequest]
     }
   }
@@ -654,7 +644,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfirmPublicVirtualInterfaceRequest]
     }
   }
@@ -691,7 +680,6 @@ package directconnect {
         "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any],
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ConfirmTransitVirtualInterfaceRequest]
     }
   }
@@ -712,8 +700,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about an AWS Direct Connect connection.
+  /** Information about an AWS Direct Connect connection.
     */
   @js.native
   trait Connection extends js.Object {
@@ -1093,7 +1080,6 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "newPrivateVirtualInterface" -> newPrivateVirtualInterface.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePrivateVirtualInterfaceRequest]
     }
   }
@@ -1114,7 +1100,6 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "newPublicVirtualInterface" -> newPublicVirtualInterface.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreatePublicVirtualInterfaceRequest]
     }
   }
@@ -1135,7 +1120,6 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "newTransitVirtualInterface" -> newTransitVirtualInterface.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTransitVirtualInterfaceRequest]
     }
   }
@@ -1210,7 +1194,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "connectionId" -> connectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConnectionRequest]
     }
   }
@@ -1228,7 +1211,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "proposalId" -> proposalId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDirectConnectGatewayAssociationProposalRequest]
     }
   }
@@ -1300,7 +1282,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDirectConnectGatewayRequest]
     }
   }
@@ -1334,7 +1315,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "interconnectId" -> interconnectId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInterconnectRequest]
     }
   }
@@ -1368,7 +1348,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "lagId" -> lagId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLagRequest]
     }
   }
@@ -1386,7 +1365,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVirtualInterfaceRequest]
     }
   }
@@ -1460,7 +1438,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "interconnectId" -> interconnectId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeConnectionsOnInterconnectRequest]
     }
   }
@@ -1676,7 +1653,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "connectionId" -> connectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeHostedConnectionsRequest]
     }
   }
@@ -1790,7 +1766,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "resourceArns" -> resourceArns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTagsRequest]
     }
   }
@@ -1830,8 +1805,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.
+  /** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.
     */
   @js.native
   trait DirectConnectGateway extends js.Object {
@@ -1864,8 +1838,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.
+  /** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.
     */
   @js.native
   trait DirectConnectGatewayAssociation extends js.Object {
@@ -1910,8 +1883,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway.
+  /** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway.
     */
   @js.native
   trait DirectConnectGatewayAssociationProposal extends js.Object {
@@ -1969,8 +1941,7 @@ package directconnect {
     @inline def values = js.Array(associating, associated, disassociating, disassociated, updating)
   }
 
-  /**
-    * Information about an attachment between a Direct Connect gateway and a virtual interface.
+  /** Information about an attachment between a Direct Connect gateway and a virtual interface.
     */
   @js.native
   trait DirectConnectGatewayAttachment extends js.Object {
@@ -2053,7 +2024,6 @@ package directconnect {
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "lagId" -> lagId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisassociateConnectionFromLagRequest]
     }
   }
@@ -2077,8 +2047,7 @@ package directconnect {
     @inline def values = js.Array(unknown, yes, no)
   }
 
-  /**
-    * Information about an interconnect.
+  /** Information about an interconnect.
     */
   @js.native
   trait Interconnect extends js.Object {
@@ -2165,8 +2134,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a link aggregation group (LAG).
+  /** Information about a link aggregation group (LAG).
     */
   @js.native
   trait Lag extends js.Object {
@@ -2312,8 +2280,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
+  /** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
     */
   @js.native
   trait Loa extends js.Object {
@@ -2342,8 +2309,7 @@ package directconnect {
     @inline def values = js.Array(`application/pdf`)
   }
 
-  /**
-    * Information about an AWS Direct Connect location.
+  /** Information about an AWS Direct Connect location.
     */
   @js.native
   trait Location extends js.Object {
@@ -2389,8 +2355,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a new BGP peer.
+  /** Information about a new BGP peer.
     */
   @js.native
   trait NewBGPPeer extends js.Object {
@@ -2420,8 +2385,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a private virtual interface.
+  /** Information about a private virtual interface.
     */
   @js.native
   trait NewPrivateVirtualInterface extends js.Object {
@@ -2471,8 +2435,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a private virtual interface to be provisioned on a connection.
+  /** Information about a private virtual interface to be provisioned on a connection.
     */
   @js.native
   trait NewPrivateVirtualInterfaceAllocation extends js.Object {
@@ -2516,8 +2479,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a public virtual interface.
+  /** Information about a public virtual interface.
     */
   @js.native
   trait NewPublicVirtualInterface extends js.Object {
@@ -2561,8 +2523,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a public virtual interface to be provisioned on a connection.
+  /** Information about a public virtual interface to be provisioned on a connection.
     */
   @js.native
   trait NewPublicVirtualInterfaceAllocation extends js.Object {
@@ -2606,8 +2567,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a transit virtual interface.
+  /** Information about a transit virtual interface.
     */
   @js.native
   trait NewTransitVirtualInterface extends js.Object {
@@ -2652,8 +2612,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a transit virtual interface to be provisioned on a connection.
+  /** Information about a transit virtual interface to be provisioned on a connection.
     */
   @js.native
   trait NewTransitVirtualInterfaceAllocation extends js.Object {
@@ -2695,8 +2654,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a tag associated with an AWS Direct Connect resource.
+  /** Information about a tag associated with an AWS Direct Connect resource.
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -2717,8 +2675,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
+  /** Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
     */
   @js.native
   trait RouteFilterPrefix extends js.Object {
@@ -2789,7 +2746,6 @@ package directconnect {
       val __obj = js.Dynamic.literal(
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopBgpFailoverTestRequest]
     }
   }
@@ -2810,8 +2766,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a tag.
+  /** Information about a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2850,20 +2805,17 @@ package directconnect {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -2884,20 +2836,17 @@ package directconnect {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -2985,8 +2934,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a virtual private gateway for a private virtual interface.
+  /** Information about a virtual private gateway for a private virtual interface.
     */
   @js.native
   trait VirtualGateway extends js.Object {
@@ -3023,8 +2971,7 @@ package directconnect {
     }
   }
 
-  /**
-    * Information about a virtual interface.
+  /** Information about a virtual interface.
     */
   @js.native
   trait VirtualInterface extends js.Object {
@@ -3127,8 +3074,7 @@ package directconnect {
     @inline def values = js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
   }
 
-  /**
-    * Information about the virtual interface failover test.
+  /** Information about the virtual interface failover test.
     */
   @js.native
   trait VirtualInterfaceTestHistory extends js.Object {

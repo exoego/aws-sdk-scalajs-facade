@@ -143,8 +143,7 @@ package ecr {
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
   }
 
-  /**
-    * This data type is used in the <a>ImageScanFinding</a> data type.
+  /** This data type is used in the <a>ImageScanFinding</a> data type.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -167,8 +166,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing authorization data for an Amazon ECR registry.
+  /** An object representing authorization data for an Amazon ECR registry.
     */
   @js.native
   trait AuthorizationData extends js.Object {
@@ -235,8 +233,7 @@ package ecr {
     }
   }
 
-  /**
-    * Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>.
+  /** Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>.
     */
   @js.native
   trait BatchDeleteImageRequest extends js.Object {
@@ -615,8 +612,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing a filter on a <a>DescribeImages</a> operation.
+  /** An object representing a filter on a <a>DescribeImages</a> operation.
     */
   @js.native
   trait DescribeImagesFilter extends js.Object {
@@ -730,10 +726,9 @@ package ecr {
     }
   }
 
-  /**
-    * The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.
-    *  By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.
-    *  For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html|Amazon ECR encryption at rest]] in the <i>Amazon Elastic Container Registry User Guide</i>.
+  /** The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.
+    * By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.
+    * For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html|Amazon ECR encryption at rest]] in the <i>Amazon Elastic Container Registry User Guide</i>.
     */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -1009,8 +1004,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing an Amazon ECR image.
+  /** An object representing an Amazon ECR image.
     */
   @js.native
   trait Image extends js.Object {
@@ -1048,8 +1042,7 @@ package ecr {
     @inline def values = js.Array(EXPIRE)
   }
 
-  /**
-    * An object that describes an image returned by a <a>DescribeImages</a> operation.
+  /** An object that describes an image returned by a <a>DescribeImages</a> operation.
     */
   @js.native
   trait ImageDetail extends js.Object {
@@ -1094,8 +1087,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing an Amazon ECR image failure.
+  /** An object representing an Amazon ECR image failure.
     */
   @js.native
   trait ImageFailure extends js.Object {
@@ -1133,8 +1125,7 @@ package ecr {
     @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
   }
 
-  /**
-    * An object with identifying information for an Amazon ECR image.
+  /** An object with identifying information for an Amazon ECR image.
     */
   @js.native
   trait ImageIdentifier extends js.Object {
@@ -1155,8 +1146,7 @@ package ecr {
     }
   }
 
-  /**
-    * Contains information about an image scan finding.
+  /** Contains information about an image scan finding.
     */
   @js.native
   trait ImageScanFinding extends js.Object {
@@ -1186,8 +1176,7 @@ package ecr {
     }
   }
 
-  /**
-    * The details of an image scan.
+  /** The details of an image scan.
     */
   @js.native
   trait ImageScanFindings extends js.Object {
@@ -1214,8 +1203,7 @@ package ecr {
     }
   }
 
-  /**
-    * A summary of the last completed image scan.
+  /** A summary of the last completed image scan.
     */
   @js.native
   trait ImageScanFindingsSummary extends js.Object {
@@ -1239,8 +1227,7 @@ package ecr {
     }
   }
 
-  /**
-    * The current status of an image scan.
+  /** The current status of an image scan.
     */
   @js.native
   trait ImageScanStatus extends js.Object {
@@ -1261,8 +1248,7 @@ package ecr {
     }
   }
 
-  /**
-    * The image scanning configuration for a repository.
+  /** The image scanning configuration for a repository.
     */
   @js.native
   trait ImageScanningConfiguration extends js.Object {
@@ -1329,8 +1315,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing an Amazon ECR image layer.
+  /** An object representing an Amazon ECR image layer.
     */
   @js.native
   trait Layer extends js.Object {
@@ -1366,8 +1351,7 @@ package ecr {
     @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
   }
 
-  /**
-    * An object representing an Amazon ECR image layer failure.
+  /** An object representing an Amazon ECR image layer failure.
     */
   @js.native
   trait LayerFailure extends js.Object {
@@ -1400,8 +1384,7 @@ package ecr {
     @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
   }
 
-  /**
-    * The filter for the lifecycle policy preview.
+  /** The filter for the lifecycle policy preview.
     */
   @js.native
   trait LifecyclePolicyPreviewFilter extends js.Object {
@@ -1419,8 +1402,7 @@ package ecr {
     }
   }
 
-  /**
-    * The result of the lifecycle policy preview.
+  /** The result of the lifecycle policy preview.
     */
   @js.native
   trait LifecyclePolicyPreviewResult extends js.Object {
@@ -1461,8 +1443,7 @@ package ecr {
     @inline def values = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
   }
 
-  /**
-    * The summary of the lifecycle policy preview request.
+  /** The summary of the lifecycle policy preview request.
     */
   @js.native
   trait LifecyclePolicyPreviewSummary extends js.Object {
@@ -1480,8 +1461,7 @@ package ecr {
     }
   }
 
-  /**
-    * The type of action to be taken.
+  /** The type of action to be taken.
     */
   @js.native
   trait LifecyclePolicyRuleAction extends js.Object {
@@ -1499,8 +1479,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing a filter on a <a>ListImages</a> operation.
+  /** An object representing a filter on a <a>ListImages</a> operation.
     */
   @js.native
   trait ListImagesFilter extends js.Object {
@@ -1580,7 +1559,6 @@ package ecr {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1788,8 +1766,7 @@ package ecr {
     }
   }
 
-  /**
-    * An object representing a repository.
+  /** An object representing a repository.
     */
   @js.native
   trait Repository extends js.Object {
@@ -1985,8 +1962,7 @@ package ecr {
     }
   }
 
-  /**
-    * The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+  /** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2023,20 +1999,17 @@ package ecr {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -2067,20 +2040,17 @@ package ecr {
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

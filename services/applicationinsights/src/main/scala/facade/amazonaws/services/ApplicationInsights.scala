@@ -149,8 +149,7 @@ package applicationinsights {
     def updateLogPattern(params: UpdateLogPatternRequest): Request[UpdateLogPatternResponse] = js.native
   }
 
-  /**
-    * Describes a standalone resource or similarly grouped resources that the application is made up of.
+  /** Describes a standalone resource or similarly grouped resources that the application is made up of.
     */
   @js.native
   trait ApplicationComponent extends js.Object {
@@ -177,8 +176,7 @@ package applicationinsights {
     }
   }
 
-  /**
-    * Describes the status of the application.
+  /** Describes the status of the application.
     */
   @js.native
   trait ApplicationInfo extends js.Object {
@@ -221,8 +219,7 @@ package applicationinsights {
     @inline def values = js.Array(EC2, CODE_DEPLOY, HEALTH)
   }
 
-  /**
-    * The event information.
+  /** The event information.
     */
   @js.native
   trait ConfigurationEvent extends js.Object {
@@ -340,20 +337,17 @@ package applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
         "ResourceList" -> ResourceList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateComponentRequest]
     }
   }
 
   @js.native
-  trait CreateComponentResponse extends js.Object {}
+  trait CreateComponentResponse extends js.Object
 
   object CreateComponentResponse {
     @inline
-    def apply(
-    ): CreateComponentResponse = {
+    def apply(): CreateComponentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateComponentResponse]
     }
   }
@@ -383,7 +377,6 @@ package applicationinsights {
         "Rank" -> Rank.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateLogPatternRequest]
     }
   }
@@ -420,20 +413,17 @@ package applicationinsights {
       val __obj = js.Dynamic.literal(
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteApplicationRequest]
     }
   }
 
   @js.native
-  trait DeleteApplicationResponse extends js.Object {}
+  trait DeleteApplicationResponse extends js.Object
 
   object DeleteApplicationResponse {
     @inline
-    def apply(
-    ): DeleteApplicationResponse = {
+    def apply(): DeleteApplicationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteApplicationResponse]
     }
   }
@@ -454,20 +444,17 @@ package applicationinsights {
         "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteComponentRequest]
     }
   }
 
   @js.native
-  trait DeleteComponentResponse extends js.Object {}
+  trait DeleteComponentResponse extends js.Object
 
   object DeleteComponentResponse {
     @inline
-    def apply(
-    ): DeleteComponentResponse = {
+    def apply(): DeleteComponentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteComponentResponse]
     }
   }
@@ -491,20 +478,17 @@ package applicationinsights {
         "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLogPatternRequest]
     }
   }
 
   @js.native
-  trait DeleteLogPatternResponse extends js.Object {}
+  trait DeleteLogPatternResponse extends js.Object
 
   object DeleteLogPatternResponse {
     @inline
-    def apply(
-    ): DeleteLogPatternResponse = {
+    def apply(): DeleteLogPatternResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLogPatternResponse]
     }
   }
@@ -522,7 +506,6 @@ package applicationinsights {
       val __obj = js.Dynamic.literal(
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeApplicationRequest]
     }
   }
@@ -562,7 +545,6 @@ package applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any],
         "Tier" -> Tier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeComponentConfigurationRecommendationRequest]
     }
   }
@@ -599,7 +581,6 @@ package applicationinsights {
         "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeComponentConfigurationRequest]
     }
   }
@@ -642,7 +623,6 @@ package applicationinsights {
         "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeComponentRequest]
     }
   }
@@ -685,7 +665,6 @@ package applicationinsights {
         "PatternSetName" -> PatternSetName.asInstanceOf[js.Any],
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeLogPatternRequest]
     }
   }
@@ -722,7 +701,6 @@ package applicationinsights {
       val __obj = js.Dynamic.literal(
         "ObservationId" -> ObservationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeObservationRequest]
     }
   }
@@ -756,7 +734,6 @@ package applicationinsights {
       val __obj = js.Dynamic.literal(
         "ProblemId" -> ProblemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProblemObservationsRequest]
     }
   }
@@ -790,7 +767,6 @@ package applicationinsights {
       val __obj = js.Dynamic.literal(
         "ProblemId" -> ProblemId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProblemRequest]
     }
   }
@@ -1115,7 +1091,6 @@ package applicationinsights {
       val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1146,8 +1121,7 @@ package applicationinsights {
     @inline def values = js.Array(ERROR, WARN, INFO)
   }
 
-  /**
-    * An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.
+  /** An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.
     */
   @js.native
   trait LogPattern extends js.Object {
@@ -1174,8 +1148,7 @@ package applicationinsights {
     }
   }
 
-  /**
-    * Describes an anomaly or error with the application.
+  /** Describes an anomaly or error with the application.
     */
   @js.native
   trait Observation extends js.Object {
@@ -1292,8 +1265,7 @@ package applicationinsights {
     }
   }
 
-  /**
-    * Describes a problem that is detected by correlating observations.
+  /** Describes a problem that is detected by correlating observations.
     */
   @js.native
   trait Problem extends js.Object {
@@ -1338,8 +1310,7 @@ package applicationinsights {
     }
   }
 
-  /**
-    * Describes observations related to the problem.
+  /** Describes observations related to the problem.
     */
   @js.native
   trait RelatedObservations extends js.Object {
@@ -1377,12 +1348,11 @@ package applicationinsights {
     @inline def values = js.Array(IGNORE, RESOLVED, PENDING)
   }
 
-  /**
-    * An object that defines the tags associated with an application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria.
-    *  Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
+  /** An object that defines the tags associated with an application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria.
+    * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
     * * Tag keys and values are case sensitive.
-    *  * For each associated resource, each tag key must be unique and it can have only one value.
-    *  * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix.
+    * * For each associated resource, each tag key must be unique and it can have only one value.
+    * * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1400,7 +1370,6 @@ package applicationinsights {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1421,20 +1390,17 @@ package applicationinsights {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1467,20 +1433,17 @@ package applicationinsights {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1562,14 +1525,12 @@ package applicationinsights {
   }
 
   @js.native
-  trait UpdateComponentConfigurationResponse extends js.Object {}
+  trait UpdateComponentConfigurationResponse extends js.Object
 
   object UpdateComponentConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateComponentConfigurationResponse = {
+    def apply(): UpdateComponentConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateComponentConfigurationResponse]
     }
   }
@@ -1602,14 +1563,12 @@ package applicationinsights {
   }
 
   @js.native
-  trait UpdateComponentResponse extends js.Object {}
+  trait UpdateComponentResponse extends js.Object
 
   object UpdateComponentResponse {
     @inline
-    def apply(
-    ): UpdateComponentResponse = {
+    def apply(): UpdateComponentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateComponentResponse]
     }
   }

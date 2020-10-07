@@ -347,8 +347,7 @@ package quicksight {
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
-  /**
-    * The Amazon QuickSight customizations associated with your AWS account or a QuickSight namespace in a specific AWS Region.
+  /** The Amazon QuickSight customizations associated with your AWS account or a QuickSight namespace in a specific AWS Region.
     */
   @js.native
   trait AccountCustomization extends js.Object {
@@ -366,8 +365,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The QuickSight settings associated with your AWS account.
+  /** The QuickSight settings associated with your AWS account.
     */
   @js.native
   trait AccountSettings extends js.Object {
@@ -394,8 +392,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The active AWS Identity and Access Management (IAM) policy assignment.
+  /** The active AWS Identity and Access Management (IAM) policy assignment.
     */
   @js.native
   trait ActiveIAMPolicyAssignment extends js.Object {
@@ -416,8 +413,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Ad hoc (one-time) filtering option.
+  /** Ad hoc (one-time) filtering option.
     */
   @js.native
   trait AdHocFilteringOption extends js.Object {
@@ -435,8 +431,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Amazon Elasticsearch Service parameters.
+  /** Amazon Elasticsearch Service parameters.
     */
   @js.native
   trait AmazonElasticsearchParameters extends js.Object {
@@ -451,13 +446,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "Domain" -> Domain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AmazonElasticsearchParameters]
     }
   }
 
-  /**
-    * Metadata structure for an analysis in Amazon QuickSight
+  /** Metadata structure for an analysis in Amazon QuickSight
     */
   @js.native
   trait Analysis extends js.Object {
@@ -499,8 +492,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A metadata error structure for an analysis.
+  /** A metadata error structure for an analysis.
     */
   @js.native
   trait AnalysisError extends js.Object {
@@ -535,19 +527,18 @@ package quicksight {
     val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[AnalysisErrorType]
     val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[AnalysisErrorType]
 
-    @inline def values =
-      js.Array(
-        ACCESS_DENIED,
-        SOURCE_NOT_FOUND,
-        DATA_SET_NOT_FOUND,
-        INTERNAL_FAILURE,
-        PARAMETER_VALUE_INCOMPATIBLE,
-        PARAMETER_TYPE_INVALID,
-        PARAMETER_NOT_FOUND,
-        COLUMN_TYPE_MISMATCH,
-        COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
-        COLUMN_REPLACEMENT_MISSING
-      )
+    @inline def values = js.Array(
+      ACCESS_DENIED,
+      SOURCE_NOT_FOUND,
+      DATA_SET_NOT_FOUND,
+      INTERNAL_FAILURE,
+      PARAMETER_VALUE_INCOMPATIBLE,
+      PARAMETER_TYPE_INVALID,
+      PARAMETER_NOT_FOUND,
+      COLUMN_TYPE_MISMATCH,
+      COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
+      COLUMN_REPLACEMENT_MISSING
+    )
   }
 
   @js.native
@@ -558,8 +549,7 @@ package quicksight {
     @inline def values = js.Array(QUICKSIGHT_USER)
   }
 
-  /**
-    * A filter that you apply when searching for one or more analyses.
+  /** A filter that you apply when searching for one or more analyses.
     */
   @js.native
   trait AnalysisSearchFilter extends js.Object {
@@ -583,8 +573,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The source entity of an analysis.
+  /** The source entity of an analysis.
     */
   @js.native
   trait AnalysisSourceEntity extends js.Object {
@@ -602,8 +591,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The source template of an analysis.
+  /** The source template of an analysis.
     */
   @js.native
   trait AnalysisSourceTemplate extends js.Object {
@@ -621,13 +609,11 @@ package quicksight {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "DataSetReferences" -> DataSetReferences.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AnalysisSourceTemplate]
     }
   }
 
-  /**
-    * The summary metadata that describes an analysis.
+  /** The summary metadata that describes an analysis.
     */
   @js.native
   trait AnalysisSummary extends js.Object {
@@ -670,8 +656,7 @@ package quicksight {
     @inline def values = js.Array(ENABLED, DRAFT, DISABLED)
   }
 
-  /**
-    * Amazon Athena parameters.
+  /** Amazon Athena parameters.
     */
   @js.native
   trait AthenaParameters extends js.Object {
@@ -689,8 +674,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Amazon Aurora parameters.
+  /** Amazon Aurora parameters.
     */
   @js.native
   trait AuroraParameters extends js.Object {
@@ -711,13 +695,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AuroraParameters]
     }
   }
 
-  /**
-    * Amazon Aurora with PostgreSQL compatibility parameters.
+  /** Amazon Aurora with PostgreSQL compatibility parameters.
     */
   @js.native
   trait AuroraPostgreSqlParameters extends js.Object {
@@ -738,13 +720,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AuroraPostgreSqlParameters]
     }
   }
 
-  /**
-    * AWS IoT Analytics parameters.
+  /** AWS IoT Analytics parameters.
     */
   @js.native
   trait AwsIotAnalyticsParameters extends js.Object {
@@ -759,13 +739,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "DataSetName" -> DataSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AwsIotAnalyticsParameters]
     }
   }
 
-  /**
-    * The display options for tile borders for visuals.
+  /** The display options for tile borders for visuals.
     */
   @js.native
   trait BorderStyle extends js.Object {
@@ -783,8 +761,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A calculated column for a dataset.
+  /** A calculated column for a dataset.
     */
   @js.native
   trait CalculatedColumn extends js.Object {
@@ -805,7 +782,6 @@ package quicksight {
         "ColumnName" -> ColumnName.asInstanceOf[js.Any],
         "Expression" -> Expression.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CalculatedColumn]
     }
   }
@@ -829,7 +805,6 @@ package quicksight {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelIngestionRequest]
     }
   }
@@ -859,8 +834,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A transform operation that casts a column to a different type.
+  /** A transform operation that casts a column to a different type.
     */
   @js.native
   trait CastColumnTypeOperation extends js.Object {
@@ -897,8 +871,7 @@ package quicksight {
     @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
   }
 
-  /**
-    * Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait ColumnGroup extends js.Object {
@@ -916,8 +889,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A structure describing the name, data type, and geographic role of the columns.
+  /** A structure describing the name, data type, and geographic role of the columns.
     */
   @js.native
   trait ColumnGroupColumnSchema extends js.Object {
@@ -935,8 +907,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The column group schema.
+  /** The column group schema.
     */
   @js.native
   trait ColumnGroupSchema extends js.Object {
@@ -957,8 +928,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The column schema.
+  /** The column schema.
     */
   @js.native
   trait ColumnSchema extends js.Object {
@@ -982,8 +952,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait ColumnTag extends js.Object {
@@ -1120,8 +1089,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure.
+  /** A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure.
     */
   @js.native
   trait CreateColumnsOperation extends js.Object {
@@ -1136,7 +1104,6 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "Columns" -> Columns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateColumnsOperation]
     }
   }
@@ -1388,7 +1355,6 @@ package quicksight {
         "MemberName" -> MemberName.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateGroupMembershipRequest]
     }
   }
@@ -1415,8 +1381,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The request object for this operation.
+  /** The request object for this operation.
     */
   @js.native
   trait CreateGroupRequest extends js.Object {
@@ -1445,8 +1410,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The response object for this operation.
+  /** The response object for this operation.
     */
   @js.native
   trait CreateGroupResponse extends js.Object {
@@ -1556,7 +1520,6 @@ package quicksight {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateIngestionRequest]
     }
   }
@@ -1672,7 +1635,6 @@ package quicksight {
         "TemplateId" -> TemplateId.asInstanceOf[js.Any],
         "TemplateVersionNumber" -> TemplateVersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateTemplateAliasRequest]
     }
   }
@@ -1788,7 +1750,6 @@ package quicksight {
         "ThemeId" -> ThemeId.asInstanceOf[js.Any],
         "ThemeVersionNumber" -> ThemeVersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateThemeAliasRequest]
     }
   }
@@ -1885,8 +1846,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The combination of user name and password that are used as credentials.
+  /** The combination of user name and password that are used as credentials.
     */
   @js.native
   trait CredentialPair extends js.Object {
@@ -1912,8 +1872,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A physical table type built from the results of the custom SQL query.
+  /** A physical table type built from the results of the custom SQL query.
     */
   @js.native
   trait CustomSql extends js.Object {
@@ -1942,8 +1901,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dashboard.
+  /** Dashboard.
     */
   @js.native
   trait Dashboard extends js.Object {
@@ -1988,8 +1946,7 @@ package quicksight {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /**
-    * Dashboard error.
+  /** Dashboard error.
     */
   @js.native
   trait DashboardError extends js.Object {
@@ -2024,19 +1981,18 @@ package quicksight {
     val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
     val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
-    @inline def values =
-      js.Array(
-        ACCESS_DENIED,
-        SOURCE_NOT_FOUND,
-        DATA_SET_NOT_FOUND,
-        INTERNAL_FAILURE,
-        PARAMETER_VALUE_INCOMPATIBLE,
-        PARAMETER_TYPE_INVALID,
-        PARAMETER_NOT_FOUND,
-        COLUMN_TYPE_MISMATCH,
-        COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
-        COLUMN_REPLACEMENT_MISSING
-      )
+    @inline def values = js.Array(
+      ACCESS_DENIED,
+      SOURCE_NOT_FOUND,
+      DATA_SET_NOT_FOUND,
+      INTERNAL_FAILURE,
+      PARAMETER_VALUE_INCOMPATIBLE,
+      PARAMETER_TYPE_INVALID,
+      PARAMETER_NOT_FOUND,
+      COLUMN_TYPE_MISMATCH,
+      COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
+      COLUMN_REPLACEMENT_MISSING
+    )
   }
 
   @js.native
@@ -2047,8 +2003,7 @@ package quicksight {
     @inline def values = js.Array(QUICKSIGHT_USER)
   }
 
-  /**
-    * Dashboard publish options.
+  /** Dashboard publish options.
     */
   @js.native
   trait DashboardPublishOptions extends js.Object {
@@ -2072,8 +2027,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A filter that you apply when searching for dashboards.
+  /** A filter that you apply when searching for dashboards.
     */
   @js.native
   trait DashboardSearchFilter extends js.Object {
@@ -2099,8 +2053,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dashboard source entity.
+  /** Dashboard source entity.
     */
   @js.native
   trait DashboardSourceEntity extends js.Object {
@@ -2118,8 +2071,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dashboard source template.
+  /** Dashboard source template.
     */
   @js.native
   trait DashboardSourceTemplate extends js.Object {
@@ -2137,13 +2089,11 @@ package quicksight {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "DataSetReferences" -> DataSetReferences.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DashboardSourceTemplate]
     }
   }
 
-  /**
-    * Dashboard summary.
+  /** Dashboard summary.
     */
   @js.native
   trait DashboardSummary extends js.Object {
@@ -2188,8 +2138,7 @@ package quicksight {
     @inline def values = js.Array(EXPANDED, COLLAPSED)
   }
 
-  /**
-    * Dashboard version.
+  /** Dashboard version.
     */
   @js.native
   trait DashboardVersion extends js.Object {
@@ -2231,8 +2180,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dashboard version summary.
+  /** Dashboard version summary.
     */
   @js.native
   trait DashboardVersionSummary extends js.Object {
@@ -2265,8 +2213,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The theme colors that are used for data colors in charts. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
+  /** The theme colors that are used for data colors in charts. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
     */
   @js.native
   trait DataColorPalette extends js.Object {
@@ -2290,8 +2237,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dataset.
+  /** Dataset.
     */
   @js.native
   trait DataSet extends js.Object {
@@ -2342,8 +2288,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dataset configuration.
+  /** Dataset configuration.
     */
   @js.native
   trait DataSetConfiguration extends js.Object {
@@ -2376,8 +2321,7 @@ package quicksight {
     @inline def values = js.Array(SPICE, DIRECT_QUERY)
   }
 
-  /**
-    * Dataset reference.
+  /** Dataset reference.
     */
   @js.native
   trait DataSetReference extends js.Object {
@@ -2395,13 +2339,11 @@ package quicksight {
         "DataSetArn" -> DataSetArn.asInstanceOf[js.Any],
         "DataSetPlaceholder" -> DataSetPlaceholder.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DataSetReference]
     }
   }
 
-  /**
-    * Dataset schema.
+  /** Dataset schema.
     */
   @js.native
   trait DataSetSchema extends js.Object {
@@ -2419,8 +2361,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Dataset summary.
+  /** Dataset summary.
     */
   @js.native
   trait DataSetSummary extends js.Object {
@@ -2456,8 +2397,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The structure of a data source.
+  /** The structure of a data source.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -2508,8 +2448,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait DataSourceCredentials extends js.Object {
@@ -2530,8 +2469,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Error information for the data source creation or update.
+  /** Error information for the data source creation or update.
     */
   @js.native
   trait DataSourceErrorInfo extends js.Object {
@@ -2567,8 +2505,7 @@ package quicksight {
     @inline def values = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
   }
 
-  /**
-    * The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait DataSourceParameters extends js.Object {
@@ -2665,34 +2602,32 @@ package quicksight {
     val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
     val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
 
-    @inline def values =
-      js.Array(
-        ADOBE_ANALYTICS,
-        AMAZON_ELASTICSEARCH,
-        ATHENA,
-        AURORA,
-        AURORA_POSTGRESQL,
-        AWS_IOT_ANALYTICS,
-        GITHUB,
-        JIRA,
-        MARIADB,
-        MYSQL,
-        POSTGRESQL,
-        PRESTO,
-        REDSHIFT,
-        S3,
-        SALESFORCE,
-        SERVICENOW,
-        SNOWFLAKE,
-        SPARK,
-        SQLSERVER,
-        TERADATA,
-        TWITTER
-      )
+    @inline def values = js.Array(
+      ADOBE_ANALYTICS,
+      AMAZON_ELASTICSEARCH,
+      ATHENA,
+      AURORA,
+      AURORA_POSTGRESQL,
+      AWS_IOT_ANALYTICS,
+      GITHUB,
+      JIRA,
+      MARIADB,
+      MYSQL,
+      POSTGRESQL,
+      PRESTO,
+      REDSHIFT,
+      S3,
+      SALESFORCE,
+      SERVICENOW,
+      SNOWFLAKE,
+      SPARK,
+      SQLSERVER,
+      TERADATA,
+      TWITTER
+    )
   }
 
-  /**
-    * A date-time parameter.
+  /** A date-time parameter.
     */
   @js.native
   trait DateTimeParameter extends js.Object {
@@ -2710,13 +2645,11 @@ package quicksight {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DateTimeParameter]
     }
   }
 
-  /**
-    * A decimal parameter.
+  /** A decimal parameter.
     */
   @js.native
   trait DecimalParameter extends js.Object {
@@ -2734,7 +2667,6 @@ package quicksight {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DecimalParameter]
     }
   }
@@ -2899,7 +2831,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataSetRequest]
     }
   }
@@ -2945,7 +2876,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDataSourceRequest]
     }
   }
@@ -2997,7 +2927,6 @@ package quicksight {
         "MemberName" -> MemberName.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGroupMembershipRequest]
     }
   }
@@ -3040,7 +2969,6 @@ package quicksight {
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGroupRequest]
     }
   }
@@ -3083,7 +3011,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIAMPolicyAssignmentRequest]
     }
   }
@@ -3126,7 +3053,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteNamespaceRequest]
     }
   }
@@ -3169,7 +3095,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTemplateAliasRequest]
     }
   }
@@ -3270,7 +3195,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteThemeAliasRequest]
     }
   }
@@ -3352,8 +3276,7 @@ package quicksight {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait DeleteUserByPrincipalIdRequest extends js.Object {
@@ -3374,7 +3297,6 @@ package quicksight {
         "Namespace" -> Namespace.asInstanceOf[js.Any],
         "PrincipalId" -> PrincipalId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserByPrincipalIdRequest]
     }
   }
@@ -3417,7 +3339,6 @@ package quicksight {
         "Namespace" -> Namespace.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
@@ -3506,7 +3427,6 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAccountSettingsRequest]
     }
   }
@@ -3549,7 +3469,6 @@ package quicksight {
         "AnalysisId" -> AnalysisId.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAnalysisPermissionsRequest]
     }
   }
@@ -3598,7 +3517,6 @@ package quicksight {
         "AnalysisId" -> AnalysisId.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAnalysisRequest]
     }
   }
@@ -3641,7 +3559,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDashboardPermissionsRequest]
     }
   }
@@ -3739,7 +3656,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDataSetPermissionsRequest]
     }
   }
@@ -3788,7 +3704,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSetId" -> DataSetId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDataSetRequest]
     }
   }
@@ -3831,7 +3746,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDataSourcePermissionsRequest]
     }
   }
@@ -3880,7 +3794,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSourceId" -> DataSourceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeDataSourceRequest]
     }
   }
@@ -3926,7 +3839,6 @@ package quicksight {
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGroupRequest]
     }
   }
@@ -3972,7 +3884,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIAMPolicyAssignmentRequest]
     }
   }
@@ -4018,7 +3929,6 @@ package quicksight {
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIngestionRequest]
     }
   }
@@ -4061,7 +3971,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNamespaceRequest]
     }
   }
@@ -4107,7 +4016,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTemplateAliasRequest]
     }
   }
@@ -4150,7 +4058,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeTemplatePermissionsRequest]
     }
   }
@@ -4251,7 +4158,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeThemeAliasRequest]
     }
   }
@@ -4294,7 +4200,6 @@ package quicksight {
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "ThemeId" -> ThemeId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeThemePermissionsRequest]
     }
   }
@@ -4395,7 +4300,6 @@ package quicksight {
         "Namespace" -> Namespace.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserRequest]
     }
   }
@@ -4431,8 +4335,7 @@ package quicksight {
     @inline def values = js.Array(STANDARD, ENTERPRISE)
   }
 
-  /**
-    * Error information for the SPICE ingestion of a dataset.
+  /** Error information for the SPICE ingestion of a dataset.
     */
   @js.native
   trait ErrorInfo extends js.Object {
@@ -4453,8 +4356,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Export to .csv option.
+  /** Export to .csv option.
     */
   @js.native
   trait ExportToCSVOption extends js.Object {
@@ -4485,8 +4387,7 @@ package quicksight {
     @inline def values = js.Array(CSV, TSV, CLF, ELF, XLSX, JSON)
   }
 
-  /**
-    * A transform operation that filters rows based on a condition.
+  /** A transform operation that filters rows based on a condition.
     */
   @js.native
   trait FilterOperation extends js.Object {
@@ -4501,7 +4402,6 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "ConditionExpression" -> ConditionExpression.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FilterOperation]
     }
   }
@@ -4514,8 +4414,7 @@ package quicksight {
     @inline def values = js.Array(StringEquals)
   }
 
-  /**
-    * Geospatial column group that denotes a hierarchy.
+  /** Geospatial column group that denotes a hierarchy.
     */
   @js.native
   trait GeoSpatialColumnGroup extends js.Object {
@@ -4536,7 +4435,6 @@ package quicksight {
         "CountryCode" -> CountryCode.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GeoSpatialColumnGroup]
     }
   }
@@ -4670,8 +4568,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security.
+  /** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security.
     */
   @js.native
   trait Group extends js.Object {
@@ -4698,8 +4595,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .
+  /** A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .
     */
   @js.native
   trait GroupMember extends js.Object {
@@ -4720,8 +4616,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The display options for gutter spacing between tiles on a sheet.
+  /** The display options for gutter spacing between tiles on a sheet.
     */
   @js.native
   trait GutterStyle extends js.Object {
@@ -4739,8 +4634,7 @@ package quicksight {
     }
   }
 
-  /**
-    * An AWS Identity and Access Management (IAM) policy assignment.
+  /** An AWS Identity and Access Management (IAM) policy assignment.
     */
   @js.native
   trait IAMPolicyAssignment extends js.Object {
@@ -4773,8 +4667,7 @@ package quicksight {
     }
   }
 
-  /**
-    * IAM policy assignment summary.
+  /** IAM policy assignment summary.
     */
   @js.native
   trait IAMPolicyAssignmentSummary extends js.Object {
@@ -4812,8 +4705,7 @@ package quicksight {
     @inline def values = js.Array(IAM, QUICKSIGHT)
   }
 
-  /**
-    * Information about the SPICE ingestion for a dataset.
+  /** Information about the SPICE ingestion for a dataset.
     */
   @js.native
   trait Ingestion extends js.Object {
@@ -4907,49 +4799,48 @@ package quicksight {
     val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
     val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
-    @inline def values =
-      js.Array(
-        FAILURE_TO_ASSUME_ROLE,
-        INGESTION_SUPERSEDED,
-        INGESTION_CANCELED,
-        DATA_SET_DELETED,
-        DATA_SET_NOT_SPICE,
-        S3_UPLOADED_FILE_DELETED,
-        S3_MANIFEST_ERROR,
-        DATA_TOLERANCE_EXCEPTION,
-        SPICE_TABLE_NOT_FOUND,
-        DATA_SET_SIZE_LIMIT_EXCEEDED,
-        ROW_SIZE_LIMIT_EXCEEDED,
-        ACCOUNT_CAPACITY_LIMIT_EXCEEDED,
-        CUSTOMER_ERROR,
-        DATA_SOURCE_NOT_FOUND,
-        IAM_ROLE_NOT_AVAILABLE,
-        CONNECTION_FAILURE,
-        SQL_TABLE_NOT_FOUND,
-        PERMISSION_DENIED,
-        SSL_CERTIFICATE_VALIDATION_FAILURE,
-        OAUTH_TOKEN_FAILURE,
-        SOURCE_API_LIMIT_EXCEEDED_FAILURE,
-        PASSWORD_AUTHENTICATION_FAILURE,
-        SQL_SCHEMA_MISMATCH_ERROR,
-        INVALID_DATE_FORMAT,
-        INVALID_DATAPREP_SYNTAX,
-        SOURCE_RESOURCE_LIMIT_EXCEEDED,
-        SQL_INVALID_PARAMETER_VALUE,
-        QUERY_TIMEOUT,
-        SQL_NUMERIC_OVERFLOW,
-        UNRESOLVABLE_HOST,
-        UNROUTABLE_HOST,
-        SQL_EXCEPTION,
-        S3_FILE_INACCESSIBLE,
-        IOT_FILE_NOT_FOUND,
-        IOT_DATA_SET_FILE_EMPTY,
-        INVALID_DATA_SOURCE_CONFIG,
-        DATA_SOURCE_AUTH_FAILED,
-        DATA_SOURCE_CONNECTION_FAILED,
-        FAILURE_TO_PROCESS_JSON_FILE,
-        INTERNAL_SERVICE_ERROR
-      )
+    @inline def values = js.Array(
+      FAILURE_TO_ASSUME_ROLE,
+      INGESTION_SUPERSEDED,
+      INGESTION_CANCELED,
+      DATA_SET_DELETED,
+      DATA_SET_NOT_SPICE,
+      S3_UPLOADED_FILE_DELETED,
+      S3_MANIFEST_ERROR,
+      DATA_TOLERANCE_EXCEPTION,
+      SPICE_TABLE_NOT_FOUND,
+      DATA_SET_SIZE_LIMIT_EXCEEDED,
+      ROW_SIZE_LIMIT_EXCEEDED,
+      ACCOUNT_CAPACITY_LIMIT_EXCEEDED,
+      CUSTOMER_ERROR,
+      DATA_SOURCE_NOT_FOUND,
+      IAM_ROLE_NOT_AVAILABLE,
+      CONNECTION_FAILURE,
+      SQL_TABLE_NOT_FOUND,
+      PERMISSION_DENIED,
+      SSL_CERTIFICATE_VALIDATION_FAILURE,
+      OAUTH_TOKEN_FAILURE,
+      SOURCE_API_LIMIT_EXCEEDED_FAILURE,
+      PASSWORD_AUTHENTICATION_FAILURE,
+      SQL_SCHEMA_MISMATCH_ERROR,
+      INVALID_DATE_FORMAT,
+      INVALID_DATAPREP_SYNTAX,
+      SOURCE_RESOURCE_LIMIT_EXCEEDED,
+      SQL_INVALID_PARAMETER_VALUE,
+      QUERY_TIMEOUT,
+      SQL_NUMERIC_OVERFLOW,
+      UNRESOLVABLE_HOST,
+      UNROUTABLE_HOST,
+      SQL_EXCEPTION,
+      S3_FILE_INACCESSIBLE,
+      IOT_FILE_NOT_FOUND,
+      IOT_DATA_SET_FILE_EMPTY,
+      INVALID_DATA_SOURCE_CONFIG,
+      DATA_SOURCE_AUTH_FAILED,
+      DATA_SOURCE_CONNECTION_FAILED,
+      FAILURE_TO_PROCESS_JSON_FILE,
+      INTERNAL_SERVICE_ERROR
+    )
   }
 
   @js.native
@@ -4985,8 +4876,7 @@ package quicksight {
     @inline def values = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
   }
 
-  /**
-    * Metadata for a column that is used as the input of a transform operation.
+  /** Metadata for a column that is used as the input of a transform operation.
     */
   @js.native
   trait InputColumn extends js.Object {
@@ -5004,7 +4894,6 @@ package quicksight {
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InputColumn]
     }
   }
@@ -5023,8 +4912,7 @@ package quicksight {
     @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON)
   }
 
-  /**
-    * An integer parameter.
+  /** An integer parameter.
     */
   @js.native
   trait IntegerParameter extends js.Object {
@@ -5042,13 +4930,11 @@ package quicksight {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[IntegerParameter]
     }
   }
 
-  /**
-    * Jira parameters.
+  /** Jira parameters.
     */
   @js.native
   trait JiraParameters extends js.Object {
@@ -5063,13 +4949,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "SiteBaseUrl" -> SiteBaseUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JiraParameters]
     }
   }
 
-  /**
-    * Join instruction.
+  /** Join instruction.
     */
   @js.native
   trait JoinInstruction extends js.Object {
@@ -5093,7 +4977,6 @@ package quicksight {
         "RightOperand" -> RightOperand.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JoinInstruction]
     }
   }
@@ -5688,7 +5571,6 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -6131,8 +6013,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.
+  /** A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.
     */
   @js.native
   trait LogicalTable extends js.Object {
@@ -6158,8 +6039,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait LogicalTableSource extends js.Object {
@@ -6180,8 +6060,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Amazon S3 manifest file location.
+  /** Amazon S3 manifest file location.
     */
   @js.native
   trait ManifestFileLocation extends js.Object {
@@ -6199,13 +6078,11 @@ package quicksight {
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Key" -> Key.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ManifestFileLocation]
     }
   }
 
-  /**
-    * The display options for margins around the outside edge of sheets.
+  /** The display options for margins around the outside edge of sheets.
     */
   @js.native
   trait MarginStyle extends js.Object {
@@ -6223,8 +6100,7 @@ package quicksight {
     }
   }
 
-  /**
-    * MariaDB parameters.
+  /** MariaDB parameters.
     */
   @js.native
   trait MariaDbParameters extends js.Object {
@@ -6245,13 +6121,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MariaDbParameters]
     }
   }
 
-  /**
-    * MySQL parameters.
+  /** MySQL parameters.
     */
   @js.native
   trait MySqlParameters extends js.Object {
@@ -6272,13 +6146,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MySqlParameters]
     }
   }
 
-  /**
-    * Errors that occur during namespace creation.
+  /** Errors that occur during namespace creation.
     */
   @js.native
   trait NamespaceError extends js.Object {
@@ -6308,8 +6180,7 @@ package quicksight {
     @inline def values = js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR)
   }
 
-  /**
-    * The error type.
+  /** The error type.
     */
   @js.native
   trait NamespaceInfoV2 extends js.Object {
@@ -6354,8 +6225,7 @@ package quicksight {
     @inline def values = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
   }
 
-  /**
-    * Output column.
+  /** Output column.
     */
   @js.native
   trait OutputColumn extends js.Object {
@@ -6376,8 +6246,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A list of QuickSight parameters and the list's override values.
+  /** A list of QuickSight parameters and the list's override values.
     */
   @js.native
   trait Parameters extends js.Object {
@@ -6404,8 +6273,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait PhysicalTable extends js.Object {
@@ -6429,8 +6297,7 @@ package quicksight {
     }
   }
 
-  /**
-    * PostgreSQL parameters.
+  /** PostgreSQL parameters.
     */
   @js.native
   trait PostgreSqlParameters extends js.Object {
@@ -6451,13 +6318,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PostgreSqlParameters]
     }
   }
 
-  /**
-    * Presto parameters.
+  /** Presto parameters.
     */
   @js.native
   trait PrestoParameters extends js.Object {
@@ -6478,13 +6343,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PrestoParameters]
     }
   }
 
-  /**
-    * A transform operation that projects columns. Operations that come after a projection can only refer to projected columns.
+  /** A transform operation that projects columns. Operations that come after a projection can only refer to projected columns.
     */
   @js.native
   trait ProjectOperation extends js.Object {
@@ -6499,13 +6362,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "ProjectedColumns" -> ProjectedColumns.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProjectOperation]
     }
   }
 
-  /**
-    * Information about a queued dataset SPICE ingestion.
+  /** Information about a queued dataset SPICE ingestion.
     */
   @js.native
   trait QueueInfo extends js.Object {
@@ -6523,13 +6384,11 @@ package quicksight {
         "QueuedIngestion" -> QueuedIngestion.asInstanceOf[js.Any],
         "WaitingOnIngestion" -> WaitingOnIngestion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[QueueInfo]
     }
   }
 
-  /**
-    * Amazon RDS parameters.
+  /** Amazon RDS parameters.
     */
   @js.native
   trait RdsParameters extends js.Object {
@@ -6547,13 +6406,11 @@ package quicksight {
         "Database" -> Database.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RdsParameters]
     }
   }
 
-  /**
-    * Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.
+  /** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.
     */
   @js.native
   trait RedshiftParameters extends js.Object {
@@ -6649,8 +6506,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A physical table type for relational data sources.
+  /** A physical table type for relational data sources.
     */
   @js.native
   trait RelationalTable extends js.Object {
@@ -6679,8 +6535,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A transform operation that renames a column.
+  /** A transform operation that renames a column.
     */
   @js.native
   trait RenameColumnOperation extends js.Object {
@@ -6698,13 +6553,11 @@ package quicksight {
         "ColumnName" -> ColumnName.asInstanceOf[js.Any],
         "NewColumnName" -> NewColumnName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RenameColumnOperation]
     }
   }
 
-  /**
-    * Permission for the resource.
+  /** Permission for the resource.
     */
   @js.native
   trait ResourcePermission extends js.Object {
@@ -6722,7 +6575,6 @@ package quicksight {
         "Actions" -> Actions.asInstanceOf[js.Any],
         "Principal" -> Principal.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourcePermission]
     }
   }
@@ -6757,7 +6609,6 @@ package quicksight {
         "AnalysisId" -> AnalysisId.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreAnalysisRequest]
     }
   }
@@ -6787,8 +6638,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Information about rows for a data set SPICE ingestion.
+  /** Information about rows for a data set SPICE ingestion.
     */
   @js.native
   trait RowInfo extends js.Object {
@@ -6809,8 +6659,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The row-level security configuration for the dataset.
+  /** The row-level security configuration for the dataset.
     */
   @js.native
   trait RowLevelPermissionDataSet extends js.Object {
@@ -6845,8 +6694,7 @@ package quicksight {
     @inline def values = js.Array(GRANT_ACCESS, DENY_ACCESS)
   }
 
-  /**
-    * S3 parameters.
+  /** S3 parameters.
     */
   @js.native
   trait S3Parameters extends js.Object {
@@ -6861,13 +6709,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "ManifestFileLocation" -> ManifestFileLocation.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3Parameters]
     }
   }
 
-  /**
-    * A physical table type for as S3 data source.
+  /** A physical table type for as S3 data source.
     */
   @js.native
   trait S3Source extends js.Object {
@@ -6997,8 +6843,7 @@ package quicksight {
     }
   }
 
-  /**
-    * ServiceNow parameters.
+  /** ServiceNow parameters.
     */
   @js.native
   trait ServiceNowParameters extends js.Object {
@@ -7013,13 +6858,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "SiteBaseUrl" -> SiteBaseUrl.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ServiceNowParameters]
     }
   }
 
-  /**
-    * Sheet controls option.
+  /** Sheet controls option.
     */
   @js.native
   trait SheetControlsOption extends js.Object {
@@ -7037,8 +6880,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The theme display options for sheets.
+  /** The theme display options for sheets.
     */
   @js.native
   trait SheetStyle extends js.Object {
@@ -7059,8 +6901,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Snowflake parameters.
+  /** Snowflake parameters.
     */
   @js.native
   trait SnowflakeParameters extends js.Object {
@@ -7081,13 +6922,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Warehouse" -> Warehouse.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SnowflakeParameters]
     }
   }
 
-  /**
-    * Spark parameters.
+  /** Spark parameters.
     */
   @js.native
   trait SparkParameters extends js.Object {
@@ -7105,13 +6944,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SparkParameters]
     }
   }
 
-  /**
-    * SQL Server parameters.
+  /** SQL Server parameters.
     */
   @js.native
   trait SqlServerParameters extends js.Object {
@@ -7132,13 +6969,11 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SqlServerParameters]
     }
   }
 
-  /**
-    * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.
+  /** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.
     */
   @js.native
   trait SslProperties extends js.Object {
@@ -7156,8 +6991,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A string parameter.
+  /** A string parameter.
     */
   @js.native
   trait StringParameter extends js.Object {
@@ -7175,13 +7009,11 @@ package quicksight {
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StringParameter]
     }
   }
 
-  /**
-    * The key or keys of the key-value pairs for the resource tag or tags assigned to the resource.
+  /** The key or keys of the key-value pairs for the resource tag or tags assigned to the resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -7199,13 +7031,11 @@ package quicksight {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * A transform operation that tags a column with additional information.
+  /** A transform operation that tags a column with additional information.
     */
   @js.native
   trait TagColumnOperation extends js.Object {
@@ -7223,7 +7053,6 @@ package quicksight {
         "ColumnName" -> ColumnName.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagColumnOperation]
     }
   }
@@ -7244,7 +7073,6 @@ package quicksight {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -7268,9 +7096,8 @@ package quicksight {
     }
   }
 
-  /**
-    * A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.
-    *  You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.
+  /** A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.
+    * You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.
     */
   @js.native
   trait Template extends js.Object {
@@ -7303,8 +7130,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The template alias.
+  /** The template alias.
     */
   @js.native
   trait TemplateAlias extends js.Object {
@@ -7328,8 +7154,7 @@ package quicksight {
     }
   }
 
-  /**
-    * List of errors that occurred when the template version creation failed.
+  /** List of errors that occurred when the template version creation failed.
     */
   @js.native
   trait TemplateError extends js.Object {
@@ -7361,8 +7186,7 @@ package quicksight {
     @inline def values = js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, ACCESS_DENIED)
   }
 
-  /**
-    * The source analysis of the template.
+  /** The source analysis of the template.
     */
   @js.native
   trait TemplateSourceAnalysis extends js.Object {
@@ -7380,13 +7204,11 @@ package quicksight {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "DataSetReferences" -> DataSetReferences.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TemplateSourceAnalysis]
     }
   }
 
-  /**
-    * The source entity of the template.
+  /** The source entity of the template.
     */
   @js.native
   trait TemplateSourceEntity extends js.Object {
@@ -7407,8 +7229,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The source template of the template.
+  /** The source template of the template.
     */
   @js.native
   trait TemplateSourceTemplate extends js.Object {
@@ -7423,13 +7244,11 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TemplateSourceTemplate]
     }
   }
 
-  /**
-    * The template summary.
+  /** The template summary.
     */
   @js.native
   trait TemplateSummary extends js.Object {
@@ -7462,8 +7281,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A version of a template.
+  /** A version of a template.
     */
   @js.native
   trait TemplateVersion extends js.Object {
@@ -7502,8 +7320,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The template version.
+  /** The template version.
     */
   @js.native
   trait TemplateVersionSummary extends js.Object {
@@ -7533,8 +7350,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Teradata parameters.
+  /** Teradata parameters.
     */
   @js.native
   trait TeradataParameters extends js.Object {
@@ -7555,7 +7371,6 @@ package quicksight {
         "Host" -> Host.asInstanceOf[js.Any],
         "Port" -> Port.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TeradataParameters]
     }
   }
@@ -7569,8 +7384,7 @@ package quicksight {
     @inline def values = js.Array(DOUBLE_QUOTE, SINGLE_QUOTE)
   }
 
-  /**
-    * Summary information about a theme.
+  /** Summary information about a theme.
     */
   @js.native
   trait Theme extends js.Object {
@@ -7606,8 +7420,7 @@ package quicksight {
     }
   }
 
-  /**
-    * An alias for a theme.
+  /** An alias for a theme.
     */
   @js.native
   trait ThemeAlias extends js.Object {
@@ -7631,8 +7444,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The theme configuration. This configuration contains all of the display properties for a theme.
+  /** The theme configuration. This configuration contains all of the display properties for a theme.
     */
   @js.native
   trait ThemeConfiguration extends js.Object {
@@ -7656,8 +7468,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Theme error.
+  /** Theme error.
     */
   @js.native
   trait ThemeError extends js.Object {
@@ -7686,8 +7497,7 @@ package quicksight {
     @inline def values = js.Array(INTERNAL_FAILURE)
   }
 
-  /**
-    * The theme summary.
+  /** The theme summary.
     */
   @js.native
   trait ThemeSummary extends js.Object {
@@ -7730,8 +7540,7 @@ package quicksight {
     @inline def values = js.Array(QUICKSIGHT, CUSTOM, ALL)
   }
 
-  /**
-    * A version of a theme.
+  /** A version of a theme.
     */
   @js.native
   trait ThemeVersion extends js.Object {
@@ -7770,8 +7579,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The theme version.
+  /** The theme version.
     */
   @js.native
   trait ThemeVersionSummary extends js.Object {
@@ -7801,8 +7609,7 @@ package quicksight {
     }
   }
 
-  /**
-    * The display options for the layout of tiles on a sheet.
+  /** The display options for the layout of tiles on a sheet.
     */
   @js.native
   trait TileLayoutStyle extends js.Object {
@@ -7823,8 +7630,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Display options related to tiles on a sheet.
+  /** Display options related to tiles on a sheet.
     */
   @js.native
   trait TileStyle extends js.Object {
@@ -7842,8 +7648,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait TransformOperation extends js.Object {
@@ -7876,8 +7681,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Twitter parameters.
+  /** Twitter parameters.
     */
   @js.native
   trait TwitterParameters extends js.Object {
@@ -7895,13 +7699,11 @@ package quicksight {
         "MaxRows" -> MaxRows.asInstanceOf[js.Any],
         "Query" -> Query.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TwitterParameters]
     }
   }
 
-  /**
-    * The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html|Using Themes in Amazon QuickSight]] in the <i>Amazon QuickSight User Guide.</i>
+  /** The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html|Using Themes in Amazon QuickSight]] in the <i>Amazon QuickSight User Guide.</i>
     */
   @js.native
   trait UIColorPalette extends js.Object {
@@ -7980,7 +7782,6 @@ package quicksight {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -8289,7 +8090,6 @@ package quicksight {
         "DashboardId" -> DashboardId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDashboardPublishedVersionRequest]
     }
   }
@@ -8765,7 +8565,6 @@ package quicksight {
         "TemplateId" -> TemplateId.asInstanceOf[js.Any],
         "TemplateVersionNumber" -> TemplateVersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateTemplateAliasRequest]
     }
   }
@@ -8930,7 +8729,6 @@ package quicksight {
         "ThemeId" -> ThemeId.asInstanceOf[js.Any],
         "ThemeVersionNumber" -> ThemeVersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateThemeAliasRequest]
     }
   }
@@ -9134,8 +8932,7 @@ package quicksight {
     }
   }
 
-  /**
-    * Information about the format for a source file or files.
+  /** Information about the format for a source file or files.
     */
   @js.native
   trait UploadSettings extends js.Object {
@@ -9165,8 +8962,7 @@ package quicksight {
     }
   }
 
-  /**
-    * A registered user of Amazon QuickSight.
+  /** A registered user of Amazon QuickSight.
     */
   @js.native
   trait User extends js.Object {
@@ -9217,8 +9013,7 @@ package quicksight {
     @inline def values = js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
   }
 
-  /**
-    * VPC connection properties.
+  /** VPC connection properties.
     */
   @js.native
   trait VpcConnectionProperties extends js.Object {
@@ -9233,7 +9028,6 @@ package quicksight {
       val __obj = js.Dynamic.literal(
         "VpcConnectionArn" -> VpcConnectionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VpcConnectionProperties]
     }
   }

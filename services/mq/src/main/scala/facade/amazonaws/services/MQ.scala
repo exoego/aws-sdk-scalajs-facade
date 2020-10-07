@@ -87,8 +87,7 @@ package mq {
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
 
-  /**
-    * The authentication strategy used to secure the broker.
+  /** The authentication strategy used to secure the broker.
     */
   @js.native
   sealed trait AuthenticationStrategy extends js.Any
@@ -99,8 +98,7 @@ package mq {
     @inline def values = js.Array(SIMPLE, LDAP)
   }
 
-  /**
-    * Name of the availability zone.
+  /** Name of the availability zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -118,8 +116,7 @@ package mq {
     }
   }
 
-  /**
-    * Types of broker engines.
+  /** Types of broker engines.
     */
   @js.native
   trait BrokerEngineType extends js.Object {
@@ -140,8 +137,7 @@ package mq {
     }
   }
 
-  /**
-    * Returns information about all brokers.
+  /** Returns information about all brokers.
     */
   @js.native
   trait BrokerInstance extends js.Object {
@@ -165,8 +161,7 @@ package mq {
     }
   }
 
-  /**
-    * Option for host instance type.
+  /** Option for host instance type.
     */
   @js.native
   trait BrokerInstanceOption extends js.Object {
@@ -199,8 +194,7 @@ package mq {
     }
   }
 
-  /**
-    * The status of the broker.
+  /** The status of the broker.
     */
   @js.native
   sealed trait BrokerState extends js.Any
@@ -214,8 +208,7 @@ package mq {
     @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
   }
 
-  /**
-    * The storage type of the broker.
+  /** The storage type of the broker.
     */
   @js.native
   sealed trait BrokerStorageType extends js.Any
@@ -226,8 +219,7 @@ package mq {
     @inline def values = js.Array(EBS, EFS)
   }
 
-  /**
-    * The Amazon Resource Name (ARN) of the broker.
+  /** The Amazon Resource Name (ARN) of the broker.
     */
   @js.native
   trait BrokerSummary extends js.Object {
@@ -263,8 +255,7 @@ package mq {
     }
   }
 
-  /**
-    * The type of change pending for the ActiveMQ user.
+  /** The type of change pending for the ActiveMQ user.
     */
   @js.native
   sealed trait ChangeType extends js.Any
@@ -276,8 +267,7 @@ package mq {
     @inline def values = js.Array(CREATE, UPDATE, DELETE)
   }
 
-  /**
-    * Returns information about all configurations.
+  /** Returns information about all configurations.
     */
   @js.native
   trait Configuration extends js.Object {
@@ -322,8 +312,7 @@ package mq {
     }
   }
 
-  /**
-    * A list of information about the configuration.
+  /** A list of information about the configuration.
     */
   @js.native
   trait ConfigurationId extends js.Object {
@@ -344,8 +333,7 @@ package mq {
     }
   }
 
-  /**
-    * Returns information about the specified configuration revision.
+  /** Returns information about the specified configuration revision.
     */
   @js.native
   trait ConfigurationRevision extends js.Object {
@@ -369,8 +357,7 @@ package mq {
     }
   }
 
-  /**
-    * Broker configuration information
+  /** Broker configuration information
     */
   @js.native
   trait Configurations extends js.Object {
@@ -394,8 +381,7 @@ package mq {
     }
   }
 
-  /**
-    * Creates a broker using the specified properties.
+  /** Creates a broker using the specified properties.
     */
   @js.native
   trait CreateBrokerRequest extends js.Object {
@@ -486,8 +472,7 @@ package mq {
     }
   }
 
-  /**
-    * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).
+  /** Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).
     */
   @js.native
   trait CreateConfigurationRequest extends js.Object {
@@ -548,8 +533,7 @@ package mq {
     }
   }
 
-  /**
-    * A map of the key-value pairs for the resource tag.
+  /** A map of the key-value pairs for the resource tag.
     */
   @js.native
   trait CreateTagsRequest extends js.Object {
@@ -572,8 +556,7 @@ package mq {
     }
   }
 
-  /**
-    * Creates a new ActiveMQ user.
+  /** Creates a new ActiveMQ user.
     */
   @js.native
   trait CreateUserRequest extends js.Object {
@@ -606,14 +589,12 @@ package mq {
   }
 
   @js.native
-  trait CreateUserResponse extends js.Object {}
+  trait CreateUserResponse extends js.Object
 
   object CreateUserResponse {
     @inline
-    def apply(
-    ): CreateUserResponse = {
+    def apply(): CreateUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
@@ -645,7 +626,6 @@ package mq {
       val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBrokerRequest]
     }
   }
@@ -682,7 +662,6 @@ package mq {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
@@ -703,26 +682,22 @@ package mq {
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
 
   @js.native
-  trait DeleteUserResponse extends js.Object {}
+  trait DeleteUserResponse extends js.Object
 
   object DeleteUserResponse {
     @inline
-    def apply(
-    ): DeleteUserResponse = {
+    def apply(): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUserResponse]
     }
   }
 
-  /**
-    * The deployment mode of the broker.
+  /** The deployment mode of the broker.
     */
   @js.native
   sealed trait DeploymentMode extends js.Any
@@ -840,7 +815,6 @@ package mq {
       val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBrokerRequest]
     }
   }
@@ -955,7 +929,6 @@ package mq {
       val __obj = js.Dynamic.literal(
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeConfigurationRequest]
     }
   }
@@ -1019,7 +992,6 @@ package mq {
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any],
         "ConfigurationRevision" -> ConfigurationRevision.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeConfigurationRevisionRequest]
     }
   }
@@ -1065,7 +1037,6 @@ package mq {
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserRequest]
     }
   }
@@ -1098,8 +1069,7 @@ package mq {
     }
   }
 
-  /**
-    * Encryption options for the broker.
+  /** Encryption options for the broker.
     */
   @js.native
   trait EncryptionOptions extends js.Object {
@@ -1122,8 +1092,7 @@ package mq {
     }
   }
 
-  /**
-    * The type of broker engine. Note: Currently, Amazon MQ supports only ActiveMQ.
+  /** The type of broker engine. Note: Currently, Amazon MQ supports only ActiveMQ.
     */
   @js.native
   sealed trait EngineType extends js.Any
@@ -1133,8 +1102,7 @@ package mq {
     @inline def values = js.Array(ACTIVEMQ)
   }
 
-  /**
-    * Id of the engine version.
+  /** Id of the engine version.
     */
   @js.native
   trait EngineVersion extends js.Object {
@@ -1152,8 +1120,7 @@ package mq {
     }
   }
 
-  /**
-    * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+  /** The metadata of the LDAP server used to authenticate and authorize connections to the broker.
     */
   @js.native
   trait LdapServerMetadataInput extends js.Object {
@@ -1201,8 +1168,7 @@ package mq {
     }
   }
 
-  /**
-    * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+  /** The metadata of the LDAP server used to authenticate and authorize connections to the broker.
     */
   @js.native
   trait LdapServerMetadataOutput extends js.Object {
@@ -1388,7 +1354,6 @@ package mq {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsRequest]
     }
   }
@@ -1458,8 +1423,7 @@ package mq {
     }
   }
 
-  /**
-    * The list of information about logs to be enabled for the specified broker.
+  /** The list of information about logs to be enabled for the specified broker.
     */
   @js.native
   trait Logs extends js.Object {
@@ -1480,8 +1444,7 @@ package mq {
     }
   }
 
-  /**
-    * The list of information about logs currently enabled and pending to be deployed for the specified broker.
+  /** The list of information about logs currently enabled and pending to be deployed for the specified broker.
     */
   @js.native
   trait LogsSummary extends js.Object {
@@ -1511,8 +1474,7 @@ package mq {
     }
   }
 
-  /**
-    * The list of information about logs to be enabled for the specified broker.
+  /** The list of information about logs to be enabled for the specified broker.
     */
   @js.native
   trait PendingLogs extends js.Object {
@@ -1546,26 +1508,22 @@ package mq {
       val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootBrokerRequest]
     }
   }
 
   @js.native
-  trait RebootBrokerResponse extends js.Object {}
+  trait RebootBrokerResponse extends js.Object
 
   object RebootBrokerResponse {
     @inline
-    def apply(
-    ): RebootBrokerResponse = {
+    def apply(): RebootBrokerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RebootBrokerResponse]
     }
   }
 
-  /**
-    * Returns information about the XML element or attribute that was sanitized in the configuration.
+  /** Returns information about the XML element or attribute that was sanitized in the configuration.
     */
   @js.native
   trait SanitizationWarning extends js.Object {
@@ -1589,8 +1547,7 @@ package mq {
     }
   }
 
-  /**
-    * The reason for which the XML elements or attributes were sanitized.
+  /** The reason for which the XML elements or attributes were sanitized.
     */
   @js.native
   sealed trait SanitizationWarningReason extends js.Any
@@ -1602,8 +1559,7 @@ package mq {
     @inline def values = js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
   }
 
-  /**
-    * Updates the broker using the specified properties.
+  /** Updates the broker using the specified properties.
     */
   @js.native
   trait UpdateBrokerRequest extends js.Object {
@@ -1687,8 +1643,7 @@ package mq {
     }
   }
 
-  /**
-    * Updates the specified configuration.
+  /** Updates the specified configuration.
     */
   @js.native
   trait UpdateConfigurationRequest extends js.Object {
@@ -1745,8 +1700,7 @@ package mq {
     }
   }
 
-  /**
-    * Updates the information for an ActiveMQ user.
+  /** Updates the information for an ActiveMQ user.
     */
   @js.native
   trait UpdateUserRequest extends js.Object {
@@ -1779,20 +1733,17 @@ package mq {
   }
 
   @js.native
-  trait UpdateUserResponse extends js.Object {}
+  trait UpdateUserResponse extends js.Object
 
   object UpdateUserResponse {
     @inline
-    def apply(
-    ): UpdateUserResponse = {
+    def apply(): UpdateUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateUserResponse]
     }
   }
 
-  /**
-    * An ActiveMQ user associated with the broker.
+  /** An ActiveMQ user associated with the broker.
     */
   @js.native
   trait User extends js.Object {
@@ -1819,8 +1770,7 @@ package mq {
     }
   }
 
-  /**
-    * Returns information about the status of the changes pending for the ActiveMQ user.
+  /** Returns information about the status of the changes pending for the ActiveMQ user.
     */
   @js.native
   trait UserPendingChanges extends js.Object {
@@ -1844,8 +1794,7 @@ package mq {
     }
   }
 
-  /**
-    * Returns a list of all ActiveMQ users.
+  /** Returns a list of all ActiveMQ users.
     */
   @js.native
   trait UserSummary extends js.Object {
@@ -1866,8 +1815,7 @@ package mq {
     }
   }
 
-  /**
-    * The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.
+  /** The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.
     */
   @js.native
   trait WeeklyStartTime extends js.Object {

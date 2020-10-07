@@ -161,8 +161,7 @@ package backup {
     def updateRegionSettings(params: UpdateRegionSettingsInput): Request[js.Object] = js.native
   }
 
-  /**
-    * Contains detailed information about a backup job.
+  /** Contains detailed information about a backup job.
     */
   @js.native
   trait BackupJob extends js.Object {
@@ -246,8 +245,7 @@ package backup {
     @inline def values = js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
   }
 
-  /**
-    * Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+  /** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
     */
   @js.native
   trait BackupPlan extends js.Object {
@@ -265,13 +263,11 @@ package backup {
         "BackupPlanName" -> BackupPlanName.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BackupPlan]
     }
   }
 
-  /**
-    * Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+  /** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
     */
   @js.native
   trait BackupPlanInput extends js.Object {
@@ -289,13 +285,11 @@ package backup {
         "BackupPlanName" -> BackupPlanName.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BackupPlanInput]
     }
   }
 
-  /**
-    * An object specifying metadata associated with a backup plan template.
+  /** An object specifying metadata associated with a backup plan template.
     */
   @js.native
   trait BackupPlanTemplatesListMember extends js.Object {
@@ -316,8 +310,7 @@ package backup {
     }
   }
 
-  /**
-    * Contains metadata about a backup plan.
+  /** Contains metadata about a backup plan.
     */
   @js.native
   trait BackupPlansListMember extends js.Object {
@@ -356,8 +349,7 @@ package backup {
     }
   }
 
-  /**
-    * Specifies a scheduled task used to back up a selection of resources.
+  /** Specifies a scheduled task used to back up a selection of resources.
     */
   @js.native
   trait BackupRule extends js.Object {
@@ -401,8 +393,7 @@ package backup {
     }
   }
 
-  /**
-    * Specifies a scheduled task used to back up a selection of resources.
+  /** Specifies a scheduled task used to back up a selection of resources.
     */
   @js.native
   trait BackupRuleInput extends js.Object {
@@ -443,8 +434,7 @@ package backup {
     }
   }
 
-  /**
-    * Used to specify a set of resources to a backup plan.
+  /** Used to specify a set of resources to a backup plan.
     */
   @js.native
   trait BackupSelection extends js.Object {
@@ -473,8 +463,7 @@ package backup {
     }
   }
 
-  /**
-    * Contains metadata about a <code>BackupSelection</code> object.
+  /** Contains metadata about a <code>BackupSelection</code> object.
     */
   @js.native
   trait BackupSelectionsListMember extends js.Object {
@@ -526,28 +515,26 @@ package backup {
     val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
     val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
 
-    @inline def values =
-      js.Array(
-        BACKUP_JOB_STARTED,
-        BACKUP_JOB_COMPLETED,
-        BACKUP_JOB_SUCCESSFUL,
-        BACKUP_JOB_FAILED,
-        BACKUP_JOB_EXPIRED,
-        RESTORE_JOB_STARTED,
-        RESTORE_JOB_COMPLETED,
-        RESTORE_JOB_SUCCESSFUL,
-        RESTORE_JOB_FAILED,
-        COPY_JOB_STARTED,
-        COPY_JOB_SUCCESSFUL,
-        COPY_JOB_FAILED,
-        RECOVERY_POINT_MODIFIED,
-        BACKUP_PLAN_CREATED,
-        BACKUP_PLAN_MODIFIED
-      )
+    @inline def values = js.Array(
+      BACKUP_JOB_STARTED,
+      BACKUP_JOB_COMPLETED,
+      BACKUP_JOB_SUCCESSFUL,
+      BACKUP_JOB_FAILED,
+      BACKUP_JOB_EXPIRED,
+      RESTORE_JOB_STARTED,
+      RESTORE_JOB_COMPLETED,
+      RESTORE_JOB_SUCCESSFUL,
+      RESTORE_JOB_FAILED,
+      COPY_JOB_STARTED,
+      COPY_JOB_SUCCESSFUL,
+      COPY_JOB_FAILED,
+      RECOVERY_POINT_MODIFIED,
+      BACKUP_PLAN_CREATED,
+      BACKUP_PLAN_MODIFIED
+    )
   }
 
-  /**
-    * Contains metadata about a backup vault.
+  /** Contains metadata about a backup vault.
     */
   @js.native
   trait BackupVaultListMember extends js.Object {
@@ -580,10 +567,9 @@ package backup {
     }
   }
 
-  /**
-    * Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.
-    *  The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.
-    *  Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+  /** Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.
+    * The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.
+    * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
     */
   @js.native
   trait CalculatedLifecycle extends js.Object {
@@ -604,8 +590,7 @@ package backup {
     }
   }
 
-  /**
-    * Contains an array of triplets made up of a condition type (such as <code>STRINGEQUALS</code>), a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
+  /** Contains an array of triplets made up of a condition type (such as <code>STRINGEQUALS</code>), a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
     */
   @js.native
   trait Condition extends js.Object {
@@ -626,7 +611,6 @@ package backup {
         "ConditionType" -> ConditionType.asInstanceOf[js.Any],
         "ConditionValue" -> ConditionValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Condition]
     }
   }
@@ -639,8 +623,7 @@ package backup {
     @inline def values = js.Array(STRINGEQUALS)
   }
 
-  /**
-    * The details of the copy operation.
+  /** The details of the copy operation.
     */
   @js.native
   trait CopyAction extends js.Object {
@@ -663,8 +646,7 @@ package backup {
     }
   }
 
-  /**
-    * Contains detailed information about a copy job.
+  /** Contains detailed information about a copy job.
     */
   @js.native
   trait CopyJob extends js.Object {
@@ -892,7 +874,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupPlanInput]
     }
   }
@@ -938,7 +919,6 @@ package backup {
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any],
         "SelectionId" -> SelectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupSelectionInput]
     }
   }
@@ -956,7 +936,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupVaultAccessPolicyInput]
     }
   }
@@ -974,7 +953,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupVaultInput]
     }
   }
@@ -992,7 +970,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupVaultNotificationsInput]
     }
   }
@@ -1013,7 +990,6 @@ package backup {
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRecoveryPointInput]
     }
   }
@@ -1031,7 +1007,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupJobId" -> BackupJobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBackupJobInput]
     }
   }
@@ -1116,7 +1091,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBackupVaultInput]
     }
   }
@@ -1165,7 +1139,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "CopyJobId" -> CopyJobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCopyJobInput]
     }
   }
@@ -1199,7 +1172,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeProtectedResourceInput]
     }
   }
@@ -1242,7 +1214,6 @@ package backup {
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRecoveryPointInput]
     }
   }
@@ -1312,14 +1283,12 @@ package backup {
   }
 
   @js.native
-  trait DescribeRegionSettingsInput extends js.Object {}
+  trait DescribeRegionSettingsInput extends js.Object
 
   object DescribeRegionSettingsInput {
     @inline
-    def apply(
-    ): DescribeRegionSettingsInput = {
+    def apply(): DescribeRegionSettingsInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeRegionSettingsInput]
     }
   }
@@ -1353,7 +1322,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "RestoreJobId" -> RestoreJobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRestoreJobInput]
     }
   }
@@ -1423,7 +1391,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportBackupPlanTemplateInput]
     }
   }
@@ -1457,7 +1424,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupPlanTemplateJson" -> BackupPlanTemplateJson.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackupPlanFromJSONInput]
     }
   }
@@ -1491,7 +1457,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupPlanTemplateId" -> BackupPlanTemplateId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackupPlanFromTemplateInput]
     }
   }
@@ -1586,7 +1551,6 @@ package backup {
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any],
         "SelectionId" -> SelectionId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackupSelectionInput]
     }
   }
@@ -1632,7 +1596,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackupVaultAccessPolicyInput]
     }
   }
@@ -1672,7 +1635,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBackupVaultNotificationsInput]
     }
   }
@@ -1718,7 +1680,6 @@ package backup {
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRecoveryPointRestoreMetadataInput]
     }
   }
@@ -1761,9 +1722,8 @@ package backup {
     }
   }
 
-  /**
-    * Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.
-    *  Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+  /** Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.
+    * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
     */
   @js.native
   trait Lifecycle extends js.Object {
@@ -2337,8 +2297,7 @@ package backup {
     }
   }
 
-  /**
-    * A structure that contains information about a backed-up resource.
+  /** A structure that contains information about a backed-up resource.
     */
   @js.native
   trait ProtectedResource extends js.Object {
@@ -2402,13 +2361,11 @@ package backup {
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any],
         "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutBackupVaultNotificationsInput]
     }
   }
 
-  /**
-    * Contains detailed information about the recovery points stored in a backup vault.
+  /** Contains detailed information about the recovery points stored in a backup vault.
     */
   @js.native
   trait RecoveryPointByBackupVault extends js.Object {
@@ -2471,8 +2428,7 @@ package backup {
     }
   }
 
-  /**
-    * Contains detailed information about a saved recovery point.
+  /** Contains detailed information about a saved recovery point.
     */
   @js.native
   trait RecoveryPointByResource extends js.Object {
@@ -2505,8 +2461,7 @@ package backup {
     }
   }
 
-  /**
-    * Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup.
+  /** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup.
     */
   @js.native
   trait RecoveryPointCreator extends js.Object {
@@ -2556,8 +2511,7 @@ package backup {
     @inline def values = js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED)
   }
 
-  /**
-    * Contains metadata about a restore job.
+  /** Contains metadata about a restore job.
     */
   @js.native
   trait RestoreJobsListMember extends js.Object {
@@ -2783,7 +2737,6 @@ package backup {
       val __obj = js.Dynamic.literal(
         "BackupJobId" -> BackupJobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopBackupJobInput]
     }
   }
@@ -2814,7 +2767,6 @@ package backup {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -2835,7 +2787,6 @@ package backup {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -2856,7 +2807,6 @@ package backup {
         "BackupPlan" -> BackupPlan.asInstanceOf[js.Any],
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateBackupPlanInput]
     }
   }

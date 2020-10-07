@@ -45,8 +45,7 @@ package pinpointsmsvoice {
     def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
   }
 
-  /**
-    * An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
+  /** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     */
   @js.native
   trait CallInstructionsMessageType extends js.Object {
@@ -64,8 +63,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
+  /** An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     */
   @js.native
   trait CloudWatchLogsDestination extends js.Object {
@@ -86,8 +84,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * Create a new event destination in a configuration set.
+  /** Create a new event destination in a configuration set.
     */
   @js.native
   trait CreateConfigurationSetEventDestinationRequest extends js.Object {
@@ -113,24 +110,20 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An empty object that indicates that the event destination was created successfully.
+  /** An empty object that indicates that the event destination was created successfully.
     */
   @js.native
-  trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait CreateConfigurationSetEventDestinationResponse extends js.Object
 
   object CreateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetEventDestinationResponse = {
+    def apply(): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
   }
 
-  /**
-    * A request to create a new configuration set.
+  /** A request to create a new configuration set.
     */
   @js.native
   trait CreateConfigurationSetRequest extends js.Object {
@@ -148,18 +141,15 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An empty object that indicates that the configuration set was successfully created.
+  /** An empty object that indicates that the configuration set was successfully created.
     */
   @js.native
-  trait CreateConfigurationSetResponse extends js.Object {}
+  trait CreateConfigurationSetResponse extends js.Object
 
   object CreateConfigurationSetResponse {
     @inline
-    def apply(
-    ): CreateConfigurationSetResponse = {
+    def apply(): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
   }
@@ -180,23 +170,19 @@ package pinpointsmsvoice {
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationRequest]
     }
   }
 
-  /**
-    * An empty object that indicates that the event destination was deleted successfully.
+  /** An empty object that indicates that the event destination was deleted successfully.
     */
   @js.native
-  trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
+  trait DeleteConfigurationSetEventDestinationResponse extends js.Object
 
   object DeleteConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetEventDestinationResponse = {
+    def apply(): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
   }
@@ -214,29 +200,24 @@ package pinpointsmsvoice {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConfigurationSetRequest]
     }
   }
 
-  /**
-    * An empty object that indicates that the configuration set was deleted successfully.
+  /** An empty object that indicates that the configuration set was deleted successfully.
     */
   @js.native
-  trait DeleteConfigurationSetResponse extends js.Object {}
+  trait DeleteConfigurationSetResponse extends js.Object
 
   object DeleteConfigurationSetResponse {
     @inline
-    def apply(
-    ): DeleteConfigurationSetResponse = {
+    def apply(): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
   }
 
-  /**
-    * An object that defines an event destination.
+  /** An object that defines an event destination.
     */
   @js.native
   trait EventDestination extends js.Object {
@@ -269,8 +250,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that defines a single event destination.
+  /** An object that defines a single event destination.
     */
   @js.native
   trait EventDestinationDefinition extends js.Object {
@@ -300,8 +280,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * The types of events that are sent to the event destination.
+  /** The types of events that are sent to the event destination.
     */
   @js.native
   sealed trait EventType extends js.Any
@@ -330,13 +309,11 @@ package pinpointsmsvoice {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConfigurationSetEventDestinationsRequest]
     }
   }
 
-  /**
-    * An object that contains information about an event destination.
+  /** An object that contains information about an event destination.
     */
   @js.native
   trait GetConfigurationSetEventDestinationsResponse extends js.Object {
@@ -354,8 +331,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
+  /** An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
     */
   @js.native
   trait KinesisFirehoseDestination extends js.Object {
@@ -395,8 +371,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that contains information about the configuration sets for your account in the current region.
+  /** An object that contains information about the configuration sets for your account in the current region.
     */
   @js.native
   trait ListConfigurationSetsResponse extends js.Object {
@@ -417,8 +392,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that defines a message that contains unformatted text.
+  /** An object that defines a message that contains unformatted text.
     */
   @js.native
   trait PlainTextMessageType extends js.Object {
@@ -442,8 +416,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that defines a message that contains SSML-formatted text.
+  /** An object that defines a message that contains SSML-formatted text.
     */
   @js.native
   trait SSMLMessageType extends js.Object {
@@ -467,8 +440,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * SendVoiceMessageRequest
+  /** SendVoiceMessageRequest
     */
   @js.native
   trait SendVoiceMessageRequest extends js.Object {
@@ -498,8 +470,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that that contains the Message ID of a Voice message that was sent successfully.
+  /** An object that that contains the Message ID of a Voice message that was sent successfully.
     */
   @js.native
   trait SendVoiceMessageResponse extends js.Object {
@@ -517,8 +488,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An object that contains information about an event destination that sends data to Amazon SNS.
+  /** An object that contains information about an event destination that sends data to Amazon SNS.
     */
   @js.native
   trait SnsDestination extends js.Object {
@@ -536,8 +506,7 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * UpdateConfigurationSetEventDestinationRequest
+  /** UpdateConfigurationSetEventDestinationRequest
     */
   @js.native
   trait UpdateConfigurationSetEventDestinationRequest extends js.Object {
@@ -563,24 +532,20 @@ package pinpointsmsvoice {
     }
   }
 
-  /**
-    * An empty object that indicates that the event destination was updated successfully.
+  /** An empty object that indicates that the event destination was updated successfully.
     */
   @js.native
-  trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
+  trait UpdateConfigurationSetEventDestinationResponse extends js.Object
 
   object UpdateConfigurationSetEventDestinationResponse {
     @inline
-    def apply(
-    ): UpdateConfigurationSetEventDestinationResponse = {
+    def apply(): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
   }
 
-  /**
-    * An object that contains a voice message and information about the recipient that you want to send it to.
+  /** An object that contains a voice message and information about the recipient that you want to send it to.
     */
   @js.native
   trait VoiceMessageContent extends js.Object {

@@ -68,24 +68,21 @@ package mobile {
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
   }
 
-  /**
-    * Account Action is required in order to continue the request.
+  /** Account Action is required in order to continue the request.
     */
   @js.native
   trait AccountActionRequiredExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed.
+  /** The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed.
     */
   @js.native
   trait BadRequestExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * The details of the bundle.
+  /** The details of the bundle.
     */
   @js.native
   trait BundleDetails extends js.Object {
@@ -118,8 +115,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure used to request a project be created.
+  /** Request structure used to request a project be created.
     */
   @js.native
   trait CreateProjectRequest extends js.Object {
@@ -146,8 +142,7 @@ package mobile {
     }
   }
 
-  /**
-    * Result structure used in response to a request to create a project.
+  /** Result structure used in response to a request to create a project.
     */
   @js.native
   trait CreateProjectResult extends js.Object {
@@ -165,8 +160,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure used to request a project be deleted.
+  /** Request structure used to request a project be deleted.
     */
   @js.native
   trait DeleteProjectRequest extends js.Object {
@@ -181,13 +175,11 @@ package mobile {
       val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProjectRequest]
     }
   }
 
-  /**
-    * Result structure used in response to request to delete a project.
+  /** Result structure used in response to request to delete a project.
     */
   @js.native
   trait DeleteProjectResult extends js.Object {
@@ -208,8 +200,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure to request the details of a specific bundle.
+  /** Request structure to request the details of a specific bundle.
     */
   @js.native
   trait DescribeBundleRequest extends js.Object {
@@ -224,13 +215,11 @@ package mobile {
       val __obj = js.Dynamic.literal(
         "bundleId" -> bundleId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBundleRequest]
     }
   }
 
-  /**
-    * Result structure contains the details of the bundle.
+  /** Result structure contains the details of the bundle.
     */
   @js.native
   trait DescribeBundleResult extends js.Object {
@@ -248,8 +237,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure used to request details about a project.
+  /** Request structure used to request details about a project.
     */
   @js.native
   trait DescribeProjectRequest extends js.Object {
@@ -272,8 +260,7 @@ package mobile {
     }
   }
 
-  /**
-    * Result structure used for requests of project details.
+  /** Result structure used for requests of project details.
     */
   @js.native
   trait DescribeProjectResult extends js.Object {
@@ -291,8 +278,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources.
+  /** Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources.
     */
   @js.native
   trait ExportBundleRequest extends js.Object {
@@ -318,8 +304,7 @@ package mobile {
     }
   }
 
-  /**
-    * Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources.
+  /** Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources.
     */
   @js.native
   trait ExportBundleResult extends js.Object {
@@ -337,8 +322,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure used in requests to export project configuration details.
+  /** Request structure used in requests to export project configuration details.
     */
   @js.native
   trait ExportProjectRequest extends js.Object {
@@ -353,13 +337,11 @@ package mobile {
       val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportProjectRequest]
     }
   }
 
-  /**
-    * Result structure used for requests to export project configuration details.
+  /** Result structure used for requests to export project configuration details.
     */
   @js.native
   trait ExportProjectResult extends js.Object {
@@ -383,16 +365,14 @@ package mobile {
     }
   }
 
-  /**
-    * The service has encountered an unexpected error condition which prevents it from servicing the request.
+  /** The service has encountered an unexpected error condition which prevents it from servicing the request.
     */
   @js.native
   trait InternalFailureExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request.
+  /** There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request.
     */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -400,8 +380,7 @@ package mobile {
     val message: ErrorMessage
   }
 
-  /**
-    * Request structure to request all available bundles.
+  /** Request structure to request all available bundles.
     */
   @js.native
   trait ListBundlesRequest extends js.Object {
@@ -422,8 +401,7 @@ package mobile {
     }
   }
 
-  /**
-    * Result structure contains a list of all available bundles with details.
+  /** Result structure contains a list of all available bundles with details.
     */
   @js.native
   trait ListBundlesResult extends js.Object {
@@ -444,8 +422,7 @@ package mobile {
     }
   }
 
-  /**
-    * Request structure used to request projects list in AWS Mobile Hub.
+  /** Request structure used to request projects list in AWS Mobile Hub.
     */
   @js.native
   trait ListProjectsRequest extends js.Object {
@@ -466,8 +443,7 @@ package mobile {
     }
   }
 
-  /**
-    * Result structure used for requests to list projects in AWS Mobile Hub.
+  /** Result structure used for requests to list projects in AWS Mobile Hub.
     */
   @js.native
   trait ListProjectsResult extends js.Object {
@@ -488,16 +464,14 @@ package mobile {
     }
   }
 
-  /**
-    * No entity can be found with the specified identifier.
+  /** No entity can be found with the specified identifier.
     */
   @js.native
   trait NotFoundExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Developer desktop or target mobile app or website platform.
+  /** Developer desktop or target mobile app or website platform.
     */
   @js.native
   sealed trait Platform extends js.Any
@@ -513,8 +487,7 @@ package mobile {
     @inline def values = js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT)
   }
 
-  /**
-    * Detailed information about an AWS Mobile Hub project.
+  /** Detailed information about an AWS Mobile Hub project.
     */
   @js.native
   trait ProjectDetails extends js.Object {
@@ -553,8 +526,7 @@ package mobile {
     }
   }
 
-  /**
-    * Synchronization state for a project.
+  /** Synchronization state for a project.
     */
   @js.native
   sealed trait ProjectState extends js.Any
@@ -566,8 +538,7 @@ package mobile {
     @inline def values = js.Array(NORMAL, SYNCING, IMPORTING)
   }
 
-  /**
-    * Summary information about an AWS Mobile Hub project.
+  /** Summary information about an AWS Mobile Hub project.
     */
   @js.native
   trait ProjectSummary extends js.Object {
@@ -588,8 +559,7 @@ package mobile {
     }
   }
 
-  /**
-    * Information about an instance of an AWS resource associated with a project.
+  /** Information about an instance of an AWS resource associated with a project.
     */
   @js.native
   trait Resource extends js.Object {
@@ -619,8 +589,7 @@ package mobile {
     }
   }
 
-  /**
-    * The service is temporarily unavailable. The request should be retried after some time delay.
+  /** The service is temporarily unavailable. The request should be retried after some time delay.
     */
   @js.native
   trait ServiceUnavailableExceptionException extends js.Object {
@@ -628,8 +597,7 @@ package mobile {
     val message: ErrorMessage
   }
 
-  /**
-    * Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay.
+  /** Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay.
     */
   @js.native
   trait TooManyRequestsExceptionException extends js.Object {
@@ -637,16 +605,14 @@ package mobile {
     val message: ErrorMessage
   }
 
-  /**
-    * Credentials of the caller are insufficient to authorize the request.
+  /** Credentials of the caller are insufficient to authorize the request.
     */
   @js.native
   trait UnauthorizedExceptionException extends js.Object {
     val message: ErrorMessage
   }
 
-  /**
-    * Request structure used for requests to update project configuration.
+  /** Request structure used for requests to update project configuration.
     */
   @js.native
   trait UpdateProjectRequest extends js.Object {
@@ -669,8 +635,7 @@ package mobile {
     }
   }
 
-  /**
-    * Result structure used for requests to updated project configuration.
+  /** Result structure used for requests to updated project configuration.
     */
   @js.native
   trait UpdateProjectResult extends js.Object {

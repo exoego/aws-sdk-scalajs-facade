@@ -117,8 +117,7 @@ package sts {
     }
   }
 
-  /**
-    * Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.
     */
   @js.native
   trait AssumeRoleResponse extends js.Object {
@@ -175,8 +174,7 @@ package sts {
     }
   }
 
-  /**
-    * Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests.
     */
   @js.native
   trait AssumeRoleWithSAMLResponse extends js.Object {
@@ -251,8 +249,7 @@ package sts {
     }
   }
 
-  /**
-    * Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests.
     */
   @js.native
   trait AssumeRoleWithWebIdentityResponse extends js.Object {
@@ -285,8 +282,7 @@ package sts {
     }
   }
 
-  /**
-    * The identifiers for the temporary security credentials that the operation returns.
+  /** The identifiers for the temporary security credentials that the operation returns.
     */
   @js.native
   trait AssumedRoleUser extends js.Object {
@@ -304,13 +300,11 @@ package sts {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "AssumedRoleId" -> AssumedRoleId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssumedRoleUser]
     }
   }
 
-  /**
-    * AWS credentials for API authentication.
+  /** AWS credentials for API authentication.
     */
   @js.native
   trait Credentials extends js.Object {
@@ -334,7 +328,6 @@ package sts {
         "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
         "SessionToken" -> SessionToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Credentials]
     }
   }
@@ -352,13 +345,11 @@ package sts {
       val __obj = js.Dynamic.literal(
         "EncodedMessage" -> EncodedMessage.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DecodeAuthorizationMessageRequest]
     }
   }
 
-  /**
-    * A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request.
+  /** A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request.
     */
   @js.native
   trait DecodeAuthorizationMessageResponse extends js.Object {
@@ -376,8 +367,7 @@ package sts {
     }
   }
 
-  /**
-    * Identifiers for the federated user that is associated with the credentials.
+  /** Identifiers for the federated user that is associated with the credentials.
     */
   @js.native
   trait FederatedUser extends js.Object {
@@ -395,7 +385,6 @@ package sts {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "FederatedUserId" -> FederatedUserId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FederatedUser]
     }
   }
@@ -413,7 +402,6 @@ package sts {
       val __obj = js.Dynamic.literal(
         "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccessKeyInfoRequest]
     }
   }
@@ -435,20 +423,17 @@ package sts {
   }
 
   @js.native
-  trait GetCallerIdentityRequest extends js.Object {}
+  trait GetCallerIdentityRequest extends js.Object
 
   object GetCallerIdentityRequest {
     @inline
-    def apply(
-    ): GetCallerIdentityRequest = {
+    def apply(): GetCallerIdentityRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetCallerIdentityRequest]
     }
   }
 
-  /**
-    * Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request.
+  /** Contains the response to a successful <a>GetCallerIdentity</a> request, including information about the entity making the request.
     */
   @js.native
   trait GetCallerIdentityResponse extends js.Object {
@@ -502,8 +487,7 @@ package sts {
     }
   }
 
-  /**
-    * Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
     */
   @js.native
   trait GetFederationTokenResponse extends js.Object {
@@ -549,8 +533,7 @@ package sts {
     }
   }
 
-  /**
-    * Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
     */
   @js.native
   trait GetSessionTokenResponse extends js.Object {
@@ -568,8 +551,7 @@ package sts {
     }
   }
 
-  /**
-    * A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.
+  /** A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.
     */
   @js.native
   trait PolicyDescriptorType extends js.Object {
@@ -587,8 +569,7 @@ package sts {
     }
   }
 
-  /**
-    * You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html|Tagging AWS STS Sessions]] in the <i>IAM User Guide</i>.
+  /** You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html|Tagging AWS STS Sessions]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -606,7 +587,6 @@ package sts {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }

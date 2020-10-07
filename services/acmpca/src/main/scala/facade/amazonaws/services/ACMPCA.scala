@@ -104,8 +104,7 @@ package acmpca {
     def updateCertificateAuthority(params: UpdateCertificateAuthorityRequest): Request[js.Object] = js.native
   }
 
-  /**
-    * Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The ```Subject``` field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The ```Subject``` must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
+  /** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The ```Subject``` field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The ```Subject``` must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
     */
   @js.native
   trait ASN1Subject extends js.Object {
@@ -191,8 +190,7 @@ package acmpca {
     @inline def values = js.Array(CREATING, SUCCESS, FAILED)
   }
 
-  /**
-    * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action to create your private CA. You must then call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html|GetCertificateAuthorityCertificate]] action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html|ImportCertificateAuthorityCertificate]] action to import the signed certificate into AWS Certificate Manager (ACM).
+  /** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action to create your private CA. You must then call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html|GetCertificateAuthorityCertificate]] action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html|ImportCertificateAuthorityCertificate]] action to import the signed certificate into AWS Certificate Manager (ACM).
     */
   @js.native
   trait CertificateAuthority extends js.Object {
@@ -246,8 +244,7 @@ package acmpca {
     }
   }
 
-  /**
-    * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action.
+  /** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action.
     */
   @js.native
   trait CertificateAuthorityConfiguration extends js.Object {
@@ -268,7 +265,6 @@ package acmpca {
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CertificateAuthorityConfiguration]
     }
   }
@@ -315,7 +311,6 @@ package acmpca {
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCertificateAuthorityAuditReportRequest]
     }
   }
@@ -412,28 +407,27 @@ package acmpca {
     }
   }
 
-  /**
-    * Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA.
-    *  ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]].
-    *  Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
-    *  CRLs contain the following fields:
+  /** Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA.
+    * ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]].
+    * Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
+    * CRLs contain the following fields:
     * * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1.
-    *  * ```Signature Algorithm```: The name of the algorithm used to sign the CRL.
-    *  * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL.
-    *  * ```Last Update```: The issue date and time of this CRL.
-    *  * ```Next Update```: The day and time by which the next CRL will be issued.
-    *  * ```Revoked Certificates```: List of revoked certificates. Each list item contains the following information.
+    * * ```Signature Algorithm```: The name of the algorithm used to sign the CRL.
+    * * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL.
+    * * ```Last Update```: The issue date and time of this CRL.
+    * * ```Next Update```: The day and time by which the next CRL will be issued.
+    * * ```Revoked Certificates```: List of revoked certificates. Each list item contains the following information.
     * <li> ```Serial Number```: The serial number, in hexadecimal format, of the revoked certificate.
-    *  * ```Revocation Date```: Date and time the certificate was revoked.
-    *  * ```CRL Entry Extensions```: Optional extensions for the CRL entry.
+    * * ```Revocation Date```: Date and time the certificate was revoked.
+    * * ```CRL Entry Extensions```: Optional extensions for the CRL entry.
     * <li> ```X509v3 CRL Reason Code```: Reason the certificate was revoked.
     * </li></li> * ```CRL Extensions```: Optional extensions for the CRL.
     * <li> ```X509v3 Authority Key Identifier```: Identifies the public key associated with the private key used to sign the certificate.
-    *  * ```X509v3 CRL Number:```: Decimal sequence number for the CRL.
+    * * ```X509v3 CRL Number:```: Decimal sequence number for the CRL.
     * </li> * ```Signature Algorithm```: Algorithm used by your private CA to sign the CRL.
-    *  * ```Signature Value```: Signature computed over the CRL.
+    * * ```Signature Value```: Signature computed over the CRL.
     * Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.
-    *  <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
+    * <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
     */
   @js.native
   trait CrlConfiguration extends js.Object {
@@ -520,7 +514,6 @@ package acmpca {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
@@ -541,7 +534,6 @@ package acmpca {
         "AuditReportId" -> AuditReportId.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCertificateAuthorityAuditReportRequest]
     }
   }
@@ -584,7 +576,6 @@ package acmpca {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCertificateAuthorityRequest]
     }
   }
@@ -628,7 +619,6 @@ package acmpca {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCertificateAuthorityCertificateRequest]
     }
   }
@@ -665,7 +655,6 @@ package acmpca {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCertificateAuthorityCsrRequest]
     }
   }
@@ -702,7 +691,6 @@ package acmpca {
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCertificateRequest]
     }
   }
@@ -739,7 +727,6 @@ package acmpca {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPolicyRequest]
     }
   }
@@ -971,8 +958,7 @@ package acmpca {
     }
   }
 
-  /**
-    * Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html|CreatePermission]] action, removed with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html|DeletePermission]] action, and listed with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html|ListPermissions]] action.
+  /** Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html|CreatePermission]] action, removed with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html|DeletePermission]] action, and listed with the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html|ListPermissions]] action.
     */
   @js.native
   trait Permission extends js.Object {
@@ -1021,7 +1007,6 @@ package acmpca {
         "Policy" -> Policy.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutPolicyRequest]
     }
   }
@@ -1048,13 +1033,11 @@ package acmpca {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RestoreCertificateAuthorityRequest]
     }
   }
 
-  /**
-    * Certificate revocation information used by the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] and [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html|UpdateCertificateAuthority]] actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html|RevokeCertificate]].
+  /** Certificate revocation information used by the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] and [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html|UpdateCertificateAuthority]] actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html|RevokeCertificate]].
     */
   @js.native
   trait RevocationConfiguration extends js.Object {
@@ -1106,7 +1089,6 @@ package acmpca {
         "CertificateSerial" -> CertificateSerial.asInstanceOf[js.Any],
         "RevocationReason" -> RevocationReason.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RevokeCertificateRequest]
     }
   }
@@ -1124,8 +1106,7 @@ package acmpca {
     @inline def values = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
   }
 
-  /**
-    * Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html|TagCertificateAuthority]] action. To remove a tag, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html|UntagCertificateAuthority]] action.
+  /** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html|TagCertificateAuthority]] action. To remove a tag, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html|UntagCertificateAuthority]] action.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1164,7 +1145,6 @@ package acmpca {
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagCertificateAuthorityRequest]
     }
   }
@@ -1185,7 +1165,6 @@ package acmpca {
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagCertificateAuthorityRequest]
     }
   }
@@ -1214,9 +1193,8 @@ package acmpca {
     }
   }
 
-  /**
-    * Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280.
-    *  You can issue a certificate by calling the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html|IssueCertificate]] action.
+  /** Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280.
+    * You can issue a certificate by calling the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html|IssueCertificate]] action.
     */
   @js.native
   trait Validity extends js.Object {
@@ -1234,7 +1212,6 @@ package acmpca {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Validity]
     }
   }

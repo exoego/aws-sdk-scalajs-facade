@@ -52,7 +52,6 @@ package ec2instanceconnect {
         "InstanceOSUser" -> InstanceOSUser.asInstanceOf[js.Any],
         "SSHPublicKey" -> SSHPublicKey.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendSSHPublicKeyRequest]
     }
   }

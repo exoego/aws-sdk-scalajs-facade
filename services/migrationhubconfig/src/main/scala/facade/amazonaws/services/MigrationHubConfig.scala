@@ -124,14 +124,12 @@ package migrationhubconfig {
   }
 
   @js.native
-  trait GetHomeRegionRequest extends js.Object {}
+  trait GetHomeRegionRequest extends js.Object
 
   object GetHomeRegionRequest {
     @inline
-    def apply(
-    ): GetHomeRegionRequest = {
+    def apply(): GetHomeRegionRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetHomeRegionRequest]
     }
   }
@@ -152,8 +150,7 @@ package migrationhubconfig {
     }
   }
 
-  /**
-    * A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set.
+  /** A home region control is an object that specifies the home region for an account, with some additional information. It contains a target (always of type <code>ACCOUNT</code>), an ID, and a time at which the home region was set.
     */
   @js.native
   trait HomeRegionControl extends js.Object {
@@ -180,8 +177,7 @@ package migrationhubconfig {
     }
   }
 
-  /**
-    * The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.
+  /** The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.
     */
   @js.native
   trait Target extends js.Object {

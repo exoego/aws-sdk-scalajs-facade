@@ -350,8 +350,7 @@ package cognitoidentityprovider {
     def verifyUserAttribute(params: VerifyUserAttributeRequest): Request[VerifyUserAttributeResponse] = js.native
   }
 
-  /**
-    * The data type for <code>AccountRecoverySetting</code>.
+  /** The data type for <code>AccountRecoverySetting</code>.
     */
   @js.native
   trait AccountRecoverySettingType extends js.Object {
@@ -369,8 +368,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Account takeover action type.
+  /** Account takeover action type.
     */
   @js.native
   trait AccountTakeoverActionType extends js.Object {
@@ -388,13 +386,11 @@ package cognitoidentityprovider {
         "EventAction" -> EventAction.asInstanceOf[js.Any],
         "Notify" -> Notify.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AccountTakeoverActionType]
     }
   }
 
-  /**
-    * Account takeover actions type.
+  /** Account takeover actions type.
     */
   @js.native
   trait AccountTakeoverActionsType extends js.Object {
@@ -429,8 +425,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION)
   }
 
-  /**
-    * Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.
+  /** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.
     */
   @js.native
   trait AccountTakeoverRiskConfigurationType extends js.Object {
@@ -453,8 +448,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to add custom attributes.
+  /** Represents the request to add custom attributes.
     */
   @js.native
   trait AddCustomAttributesRequest extends js.Object {
@@ -472,23 +466,19 @@ package cognitoidentityprovider {
         "CustomAttributes" -> CustomAttributes.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddCustomAttributesRequest]
     }
   }
 
-  /**
-    * Represents the response from the server for the request to add custom attributes.
+  /** Represents the response from the server for the request to add custom attributes.
     */
   @js.native
-  trait AddCustomAttributesResponse extends js.Object {}
+  trait AddCustomAttributesResponse extends js.Object
 
   object AddCustomAttributesResponse {
     @inline
-    def apply(
-    ): AddCustomAttributesResponse = {
+    def apply(): AddCustomAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddCustomAttributesResponse]
     }
   }
@@ -512,13 +502,11 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminAddUserToGroupRequest]
     }
   }
 
-  /**
-    * Represents the request to confirm user registration.
+  /** Represents the request to confirm user registration.
     */
   @js.native
   trait AdminConfirmSignUpRequest extends js.Object {
@@ -544,24 +532,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server for the request to confirm registration.
+  /** Represents the response from the server for the request to confirm registration.
     */
   @js.native
-  trait AdminConfirmSignUpResponse extends js.Object {}
+  trait AdminConfirmSignUpResponse extends js.Object
 
   object AdminConfirmSignUpResponse {
     @inline
-    def apply(
-    ): AdminConfirmSignUpResponse = {
+    def apply(): AdminConfirmSignUpResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminConfirmSignUpResponse]
     }
   }
 
-  /**
-    * The configuration for creating a new user profile.
+  /** The configuration for creating a new user profile.
     */
   @js.native
   trait AdminCreateUserConfigType extends js.Object {
@@ -585,8 +569,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to create a user in the specified user pool.
+  /** Represents the request to create a user in the specified user pool.
     */
   @js.native
   trait AdminCreateUserRequest extends js.Object {
@@ -630,8 +613,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server to the request to create the user.
+  /** Represents the response from the server to the request to create the user.
     */
   @js.native
   trait AdminCreateUserResponse extends js.Object {
@@ -649,8 +631,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to delete user attributes as an administrator.
+  /** Represents the request to delete user attributes as an administrator.
     */
   @js.native
   trait AdminDeleteUserAttributesRequest extends js.Object {
@@ -671,29 +652,24 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminDeleteUserAttributesRequest]
     }
   }
 
-  /**
-    * Represents the response received from the server for a request to delete user attributes.
+  /** Represents the response received from the server for a request to delete user attributes.
     */
   @js.native
-  trait AdminDeleteUserAttributesResponse extends js.Object {}
+  trait AdminDeleteUserAttributesResponse extends js.Object
 
   object AdminDeleteUserAttributesResponse {
     @inline
-    def apply(
-    ): AdminDeleteUserAttributesResponse = {
+    def apply(): AdminDeleteUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminDeleteUserAttributesResponse]
     }
   }
 
-  /**
-    * Represents the request to delete a user as an administrator.
+  /** Represents the request to delete a user as an administrator.
     */
   @js.native
   trait AdminDeleteUserRequest extends js.Object {
@@ -711,7 +687,6 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminDeleteUserRequest]
     }
   }
@@ -732,26 +707,22 @@ package cognitoidentityprovider {
         "User" -> User.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminDisableProviderForUserRequest]
     }
   }
 
   @js.native
-  trait AdminDisableProviderForUserResponse extends js.Object {}
+  trait AdminDisableProviderForUserResponse extends js.Object
 
   object AdminDisableProviderForUserResponse {
     @inline
-    def apply(
-    ): AdminDisableProviderForUserResponse = {
+    def apply(): AdminDisableProviderForUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminDisableProviderForUserResponse]
     }
   }
 
-  /**
-    * Represents the request to disable any user as an administrator.
+  /** Represents the request to disable any user as an administrator.
     */
   @js.native
   trait AdminDisableUserRequest extends js.Object {
@@ -769,29 +740,24 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminDisableUserRequest]
     }
   }
 
-  /**
-    * Represents the response received from the server to disable the user as an administrator.
+  /** Represents the response received from the server to disable the user as an administrator.
     */
   @js.native
-  trait AdminDisableUserResponse extends js.Object {}
+  trait AdminDisableUserResponse extends js.Object
 
   object AdminDisableUserResponse {
     @inline
-    def apply(
-    ): AdminDisableUserResponse = {
+    def apply(): AdminDisableUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminDisableUserResponse]
     }
   }
 
-  /**
-    * Represents the request that enables the user as an administrator.
+  /** Represents the request that enables the user as an administrator.
     */
   @js.native
   trait AdminEnableUserRequest extends js.Object {
@@ -809,29 +775,24 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminEnableUserRequest]
     }
   }
 
-  /**
-    * Represents the response from the server for the request to enable a user as an administrator.
+  /** Represents the response from the server for the request to enable a user as an administrator.
     */
   @js.native
-  trait AdminEnableUserResponse extends js.Object {}
+  trait AdminEnableUserResponse extends js.Object
 
   object AdminEnableUserResponse {
     @inline
-    def apply(
-    ): AdminEnableUserResponse = {
+    def apply(): AdminEnableUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminEnableUserResponse]
     }
   }
 
-  /**
-    * Sends the forgot device request, as an administrator.
+  /** Sends the forgot device request, as an administrator.
     */
   @js.native
   trait AdminForgetDeviceRequest extends js.Object {
@@ -852,13 +813,11 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminForgetDeviceRequest]
     }
   }
 
-  /**
-    * Represents the request to get the device, as an administrator.
+  /** Represents the request to get the device, as an administrator.
     */
   @js.native
   trait AdminGetDeviceRequest extends js.Object {
@@ -879,13 +838,11 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminGetDeviceRequest]
     }
   }
 
-  /**
-    * Gets the device response, as an administrator.
+  /** Gets the device response, as an administrator.
     */
   @js.native
   trait AdminGetDeviceResponse extends js.Object {
@@ -900,13 +857,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "Device" -> Device.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminGetDeviceResponse]
     }
   }
 
-  /**
-    * Represents the request to get the specified user as an administrator.
+  /** Represents the request to get the specified user as an administrator.
     */
   @js.native
   trait AdminGetUserRequest extends js.Object {
@@ -924,13 +879,11 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminGetUserRequest]
     }
   }
 
-  /**
-    * Represents the response from the server from the request to get the specified user as an administrator.
+  /** Represents the response from the server from the request to get the specified user as an administrator.
     */
   @js.native
   trait AdminGetUserResponse extends js.Object {
@@ -974,8 +927,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Initiates the authorization request, as an administrator.
+  /** Initiates the authorization request, as an administrator.
     */
   @js.native
   trait AdminInitiateAuthRequest extends js.Object {
@@ -1013,8 +965,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Initiates the authentication response, as an administrator.
+  /** Initiates the authentication response, as an administrator.
     */
   @js.native
   trait AdminInitiateAuthResponse extends js.Object {
@@ -1060,26 +1011,22 @@ package cognitoidentityprovider {
         "SourceUser" -> SourceUser.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminLinkProviderForUserRequest]
     }
   }
 
   @js.native
-  trait AdminLinkProviderForUserResponse extends js.Object {}
+  trait AdminLinkProviderForUserResponse extends js.Object
 
   object AdminLinkProviderForUserResponse {
     @inline
-    def apply(
-    ): AdminLinkProviderForUserResponse = {
+    def apply(): AdminLinkProviderForUserResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminLinkProviderForUserResponse]
     }
   }
 
-  /**
-    * Represents the request to list devices, as an administrator.
+  /** Represents the request to list devices, as an administrator.
     */
   @js.native
   trait AdminListDevicesRequest extends js.Object {
@@ -1108,8 +1055,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Lists the device's response, as an administrator.
+  /** Lists the device's response, as an administrator.
     */
   @js.native
   trait AdminListDevicesResponse extends js.Object {
@@ -1241,13 +1187,11 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminRemoveUserFromGroupRequest]
     }
   }
 
-  /**
-    * Represents the request to reset a user's password as an administrator.
+  /** Represents the request to reset a user's password as an administrator.
     */
   @js.native
   trait AdminResetUserPasswordRequest extends js.Object {
@@ -1273,24 +1217,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server to reset a user password as an administrator.
+  /** Represents the response from the server to reset a user password as an administrator.
     */
   @js.native
-  trait AdminResetUserPasswordResponse extends js.Object {}
+  trait AdminResetUserPasswordResponse extends js.Object
 
   object AdminResetUserPasswordResponse {
     @inline
-    def apply(
-    ): AdminResetUserPasswordResponse = {
+    def apply(): AdminResetUserPasswordResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminResetUserPasswordResponse]
     }
   }
 
-  /**
-    * The request to respond to the authentication challenge, as an administrator.
+  /** The request to respond to the authentication challenge, as an administrator.
     */
   @js.native
   trait AdminRespondToAuthChallengeRequest extends js.Object {
@@ -1331,8 +1271,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Responds to the authentication challenge, as an administrator.
+  /** Responds to the authentication challenge, as an administrator.
     */
   @js.native
   trait AdminRespondToAuthChallengeResponse extends js.Object {
@@ -1387,14 +1326,12 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminSetUserMFAPreferenceResponse extends js.Object {}
+  trait AdminSetUserMFAPreferenceResponse extends js.Object
 
   object AdminSetUserMFAPreferenceResponse {
     @inline
-    def apply(
-    ): AdminSetUserMFAPreferenceResponse = {
+    def apply(): AdminSetUserMFAPreferenceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminSetUserMFAPreferenceResponse]
     }
   }
@@ -1427,20 +1364,17 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait AdminSetUserPasswordResponse extends js.Object {}
+  trait AdminSetUserPasswordResponse extends js.Object
 
   object AdminSetUserPasswordResponse {
     @inline
-    def apply(
-    ): AdminSetUserPasswordResponse = {
+    def apply(): AdminSetUserPasswordResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminSetUserPasswordResponse]
     }
   }
 
-  /**
-    * You can use this parameter to set an MFA configuration that uses the SMS delivery medium.
+  /** You can use this parameter to set an MFA configuration that uses the SMS delivery medium.
     */
   @js.native
   trait AdminSetUserSettingsRequest extends js.Object {
@@ -1461,23 +1395,19 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminSetUserSettingsRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to set user settings as an administrator.
+  /** Represents the response from the server to set user settings as an administrator.
     */
   @js.native
-  trait AdminSetUserSettingsResponse extends js.Object {}
+  trait AdminSetUserSettingsResponse extends js.Object
 
   object AdminSetUserSettingsResponse {
     @inline
-    def apply(
-    ): AdminSetUserSettingsResponse = {
+    def apply(): AdminSetUserSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminSetUserSettingsResponse]
     }
   }
@@ -1504,26 +1434,22 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminUpdateAuthEventFeedbackRequest]
     }
   }
 
   @js.native
-  trait AdminUpdateAuthEventFeedbackResponse extends js.Object {}
+  trait AdminUpdateAuthEventFeedbackResponse extends js.Object
 
   object AdminUpdateAuthEventFeedbackResponse {
     @inline
-    def apply(
-    ): AdminUpdateAuthEventFeedbackResponse = {
+    def apply(): AdminUpdateAuthEventFeedbackResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminUpdateAuthEventFeedbackResponse]
     }
   }
 
-  /**
-    * The request to update the device status, as an administrator.
+  /** The request to update the device status, as an administrator.
     */
   @js.native
   trait AdminUpdateDeviceStatusRequest extends js.Object {
@@ -1552,24 +1478,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The status response from the request to update the device, as an administrator.
+  /** The status response from the request to update the device, as an administrator.
     */
   @js.native
-  trait AdminUpdateDeviceStatusResponse extends js.Object {}
+  trait AdminUpdateDeviceStatusResponse extends js.Object
 
   object AdminUpdateDeviceStatusResponse {
     @inline
-    def apply(
-    ): AdminUpdateDeviceStatusResponse = {
+    def apply(): AdminUpdateDeviceStatusResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminUpdateDeviceStatusResponse]
     }
   }
 
-  /**
-    * Represents the request to update the user's attributes as an administrator.
+  /** Represents the request to update the user's attributes as an administrator.
     */
   @js.native
   trait AdminUpdateUserAttributesRequest extends js.Object {
@@ -1598,24 +1520,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server for the request to update user attributes as an administrator.
+  /** Represents the response from the server for the request to update user attributes as an administrator.
     */
   @js.native
-  trait AdminUpdateUserAttributesResponse extends js.Object {}
+  trait AdminUpdateUserAttributesResponse extends js.Object
 
   object AdminUpdateUserAttributesResponse {
     @inline
-    def apply(
-    ): AdminUpdateUserAttributesResponse = {
+    def apply(): AdminUpdateUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminUpdateUserAttributesResponse]
     }
   }
 
-  /**
-    * The request to sign out of all devices, as an administrator.
+  /** The request to sign out of all devices, as an administrator.
     */
   @js.native
   trait AdminUserGlobalSignOutRequest extends js.Object {
@@ -1633,23 +1551,19 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AdminUserGlobalSignOutRequest]
     }
   }
 
-  /**
-    * The global sign-out response, as an administrator.
+  /** The global sign-out response, as an administrator.
     */
   @js.native
-  trait AdminUserGlobalSignOutResponse extends js.Object {}
+  trait AdminUserGlobalSignOutResponse extends js.Object
 
   object AdminUserGlobalSignOutResponse {
     @inline
-    def apply(
-    ): AdminUserGlobalSignOutResponse = {
+    def apply(): AdminUserGlobalSignOutResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AdminUserGlobalSignOutResponse]
     }
   }
@@ -1674,8 +1588,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(phone_number, email, preferred_username)
   }
 
-  /**
-    * The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
+  /** The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
     *
     * '''Note:'''In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region.
     */
@@ -1707,9 +1620,8 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * An Amazon Pinpoint analytics endpoint.
-    *  An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
+  /** An Amazon Pinpoint analytics endpoint.
+    * An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
     *
     * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
     */
@@ -1778,8 +1690,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(String, Number, DateTime, Boolean)
   }
 
-  /**
-    * Specifies whether the attribute is standard or custom.
+  /** Specifies whether the attribute is standard or custom.
     */
   @js.native
   trait AttributeType extends js.Object {
@@ -1802,8 +1713,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The authentication event type.
+  /** The authentication event type.
     */
   @js.native
   trait AuthEventType extends js.Object {
@@ -1856,8 +1766,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH)
   }
 
-  /**
-    * The authentication result.
+  /** The authentication result.
     */
   @js.native
   trait AuthenticationResultType extends js.Object {
@@ -1913,19 +1822,18 @@ package cognitoidentityprovider {
     val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
     val NEW_PASSWORD_REQUIRED = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
 
-    @inline def values =
-      js.Array(
-        SMS_MFA,
-        SOFTWARE_TOKEN_MFA,
-        SELECT_MFA_TYPE,
-        MFA_SETUP,
-        PASSWORD_VERIFIER,
-        CUSTOM_CHALLENGE,
-        DEVICE_SRP_AUTH,
-        DEVICE_PASSWORD_VERIFIER,
-        ADMIN_NO_SRP_AUTH,
-        NEW_PASSWORD_REQUIRED
-      )
+    @inline def values = js.Array(
+      SMS_MFA,
+      SOFTWARE_TOKEN_MFA,
+      SELECT_MFA_TYPE,
+      MFA_SETUP,
+      PASSWORD_VERIFIER,
+      CUSTOM_CHALLENGE,
+      DEVICE_SRP_AUTH,
+      DEVICE_PASSWORD_VERIFIER,
+      ADMIN_NO_SRP_AUTH,
+      NEW_PASSWORD_REQUIRED
+    )
   }
 
   @js.native
@@ -1937,8 +1845,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Success, Failure)
   }
 
-  /**
-    * The challenge response type.
+  /** The challenge response type.
     */
   @js.native
   trait ChallengeResponseType extends js.Object {
@@ -1959,8 +1866,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to change a user password.
+  /** Represents the request to change a user password.
     */
   @js.native
   trait ChangePasswordRequest extends js.Object {
@@ -1981,29 +1887,24 @@ package cognitoidentityprovider {
         "PreviousPassword" -> PreviousPassword.asInstanceOf[js.Any],
         "ProposedPassword" -> ProposedPassword.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ChangePasswordRequest]
     }
   }
 
-  /**
-    * The response from the server to the change password request.
+  /** The response from the server to the change password request.
     */
   @js.native
-  trait ChangePasswordResponse extends js.Object {}
+  trait ChangePasswordResponse extends js.Object
 
   object ChangePasswordResponse {
     @inline
-    def apply(
-    ): ChangePasswordResponse = {
+    def apply(): ChangePasswordResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ChangePasswordResponse]
     }
   }
 
-  /**
-    * The code delivery details being returned from the server.
+  /** The code delivery details being returned from the server.
     */
   @js.native
   trait CodeDeliveryDetailsType extends js.Object {
@@ -2027,8 +1928,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The compromised credentials actions type
+  /** The compromised credentials actions type
     */
   @js.native
   trait CompromisedCredentialsActionsType extends js.Object {
@@ -2043,7 +1943,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "EventAction" -> EventAction.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CompromisedCredentialsActionsType]
     }
   }
@@ -2057,8 +1956,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(BLOCK, NO_ACTION)
   }
 
-  /**
-    * The compromised credentials risk configuration type.
+  /** The compromised credentials risk configuration type.
     */
   @js.native
   trait CompromisedCredentialsRiskConfigurationType extends js.Object {
@@ -2081,8 +1979,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Confirms the device request.
+  /** Confirms the device request.
     */
   @js.native
   trait ConfirmDeviceRequest extends js.Object {
@@ -2111,8 +2008,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Confirms the device response.
+  /** Confirms the device response.
     */
   @js.native
   trait ConfirmDeviceResponse extends js.Object {
@@ -2130,8 +2026,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The request representing the confirmation for a password reset.
+  /** The request representing the confirmation for a password reset.
     */
   @js.native
   trait ConfirmForgotPasswordRequest extends js.Object {
@@ -2172,24 +2067,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The response from the server that results from a user's request to retrieve a forgotten password.
+  /** The response from the server that results from a user's request to retrieve a forgotten password.
     */
   @js.native
-  trait ConfirmForgotPasswordResponse extends js.Object {}
+  trait ConfirmForgotPasswordResponse extends js.Object
 
   object ConfirmForgotPasswordResponse {
     @inline
-    def apply(
-    ): ConfirmForgotPasswordResponse = {
+    def apply(): ConfirmForgotPasswordResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ConfirmForgotPasswordResponse]
     }
   }
 
-  /**
-    * Represents the request to confirm registration of a user.
+  /** Represents the request to confirm registration of a user.
     */
   @js.native
   trait ConfirmSignUpRequest extends js.Object {
@@ -2230,24 +2121,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server for the registration confirmation.
+  /** Represents the response from the server for the registration confirmation.
     */
   @js.native
-  trait ConfirmSignUpResponse extends js.Object {}
+  trait ConfirmSignUpResponse extends js.Object
 
   object ConfirmSignUpResponse {
     @inline
-    def apply(
-    ): ConfirmSignUpResponse = {
+    def apply(): ConfirmSignUpResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ConfirmSignUpResponse]
     }
   }
 
-  /**
-    * Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+  /** Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
     */
   @js.native
   trait ContextDataType extends js.Object {
@@ -2371,7 +2258,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateIdentityProviderResponse]
     }
   }
@@ -2416,13 +2302,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "ResourceServer" -> ResourceServer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateResourceServerResponse]
     }
   }
 
-  /**
-    * Represents the request to create the user import job.
+  /** Represents the request to create the user import job.
     */
   @js.native
   trait CreateUserImportJobRequest extends js.Object {
@@ -2443,13 +2327,11 @@ package cognitoidentityprovider {
         "JobName" -> JobName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateUserImportJobRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to the request to create the user import job.
+  /** Represents the response from the server to the request to create the user import job.
     */
   @js.native
   trait CreateUserImportJobResponse extends js.Object {
@@ -2467,8 +2349,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to create a user pool client.
+  /** Represents the request to create a user pool client.
     */
   @js.native
   trait CreateUserPoolClientRequest extends js.Object {
@@ -2542,8 +2423,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server to create a user pool client.
+  /** Represents the response from the server to create a user pool client.
     */
   @js.native
   trait CreateUserPoolClientResponse extends js.Object {
@@ -2601,8 +2481,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to create a user pool.
+  /** Represents the request to create a user pool.
     */
   @js.native
   trait CreateUserPoolRequest extends js.Object {
@@ -2682,8 +2561,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server for the request to create a user pool.
+  /** Represents the response from the server for the request to create a user pool.
     */
   @js.native
   trait CreateUserPoolResponse extends js.Object {
@@ -2701,8 +2579,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+  /** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
     */
   @js.native
   trait CustomDomainConfigType extends js.Object {
@@ -2717,7 +2594,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CustomDomainConfigType]
     }
   }
@@ -2747,7 +2623,6 @@ package cognitoidentityprovider {
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGroupRequest]
     }
   }
@@ -2768,7 +2643,6 @@ package cognitoidentityprovider {
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteIdentityProviderRequest]
     }
   }
@@ -2789,13 +2663,11 @@ package cognitoidentityprovider {
         "Identifier" -> Identifier.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteResourceServerRequest]
     }
   }
 
-  /**
-    * Represents the request to delete user attributes.
+  /** Represents the request to delete user attributes.
     */
   @js.native
   trait DeleteUserAttributesRequest extends js.Object {
@@ -2813,29 +2685,24 @@ package cognitoidentityprovider {
         "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "UserAttributeNames" -> UserAttributeNames.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserAttributesRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to delete user attributes.
+  /** Represents the response from the server to delete user attributes.
     */
   @js.native
-  trait DeleteUserAttributesResponse extends js.Object {}
+  trait DeleteUserAttributesResponse extends js.Object
 
   object DeleteUserAttributesResponse {
     @inline
-    def apply(
-    ): DeleteUserAttributesResponse = {
+    def apply(): DeleteUserAttributesResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUserAttributesResponse]
     }
   }
 
-  /**
-    * Represents the request to delete a user pool client.
+  /** Represents the request to delete a user pool client.
     */
   @js.native
   trait DeleteUserPoolClientRequest extends js.Object {
@@ -2853,7 +2720,6 @@ package cognitoidentityprovider {
         "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserPoolClientRequest]
     }
   }
@@ -2874,26 +2740,22 @@ package cognitoidentityprovider {
         "Domain" -> Domain.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserPoolDomainRequest]
     }
   }
 
   @js.native
-  trait DeleteUserPoolDomainResponse extends js.Object {}
+  trait DeleteUserPoolDomainResponse extends js.Object
 
   object DeleteUserPoolDomainResponse {
     @inline
-    def apply(
-    ): DeleteUserPoolDomainResponse = {
+    def apply(): DeleteUserPoolDomainResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteUserPoolDomainResponse]
     }
   }
 
-  /**
-    * Represents the request to delete a user pool.
+  /** Represents the request to delete a user pool.
     */
   @js.native
   trait DeleteUserPoolRequest extends js.Object {
@@ -2908,13 +2770,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserPoolRequest]
     }
   }
 
-  /**
-    * Represents the request to delete a user.
+  /** Represents the request to delete a user.
     */
   @js.native
   trait DeleteUserRequest extends js.Object {
@@ -2929,7 +2789,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "AccessToken" -> AccessToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
@@ -2959,7 +2818,6 @@ package cognitoidentityprovider {
         "ProviderName" -> ProviderName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityProviderRequest]
     }
   }
@@ -2977,7 +2835,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeIdentityProviderResponse]
     }
   }
@@ -2998,7 +2855,6 @@ package cognitoidentityprovider {
         "Identifier" -> Identifier.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeResourceServerRequest]
     }
   }
@@ -3016,7 +2872,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "ResourceServer" -> ResourceServer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeResourceServerResponse]
     }
   }
@@ -3055,13 +2910,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "RiskConfiguration" -> RiskConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRiskConfigurationResponse]
     }
   }
 
-  /**
-    * Represents the request to describe the user import job.
+  /** Represents the request to describe the user import job.
     */
   @js.native
   trait DescribeUserImportJobRequest extends js.Object {
@@ -3079,13 +2932,11 @@ package cognitoidentityprovider {
         "JobId" -> JobId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserImportJobRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to the request to describe the user import job.
+  /** Represents the response from the server to the request to describe the user import job.
     */
   @js.native
   trait DescribeUserImportJobResponse extends js.Object {
@@ -3103,8 +2954,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to describe a user pool client.
+  /** Represents the request to describe a user pool client.
     */
   @js.native
   trait DescribeUserPoolClientRequest extends js.Object {
@@ -3122,13 +2972,11 @@ package cognitoidentityprovider {
         "ClientId" -> ClientId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserPoolClientRequest]
     }
   }
 
-  /**
-    * Represents the response from the server from a request to describe the user pool client.
+  /** Represents the response from the server from a request to describe the user pool client.
     */
   @js.native
   trait DescribeUserPoolClientResponse extends js.Object {
@@ -3159,7 +3007,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "Domain" -> Domain.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserPoolDomainRequest]
     }
   }
@@ -3180,8 +3027,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to describe the user pool.
+  /** Represents the request to describe the user pool.
     */
   @js.native
   trait DescribeUserPoolRequest extends js.Object {
@@ -3196,13 +3042,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUserPoolRequest]
     }
   }
 
-  /**
-    * Represents the response to describe the user pool.
+  /** Represents the response to describe the user pool.
     */
   @js.native
   trait DescribeUserPoolResponse extends js.Object {
@@ -3220,8 +3064,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The configuration for the user pool's device tracking.
+  /** The configuration for the user pool's device tracking.
     */
   @js.native
   trait DeviceConfigurationType extends js.Object {
@@ -3251,8 +3094,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(remembered, not_remembered)
   }
 
-  /**
-    * The device verifier against which it will be authenticated.
+  /** The device verifier against which it will be authenticated.
     */
   @js.native
   trait DeviceSecretVerifierConfigType extends js.Object {
@@ -3273,8 +3115,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The device type.
+  /** The device type.
     */
   @js.native
   trait DeviceType extends js.Object {
@@ -3304,8 +3145,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A container for information about a domain.
+  /** A container for information about a domain.
     */
   @js.native
   trait DomainDescriptionType extends js.Object {
@@ -3356,8 +3196,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED)
   }
 
-  /**
-    * The email configuration type.
+  /** The email configuration type.
     */
   @js.native
   trait EmailConfigurationType extends js.Object {
@@ -3396,8 +3235,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(COGNITO_DEFAULT, DEVELOPER)
   }
 
-  /**
-    * Specifies the user context data captured at the time of an event request.
+  /** Specifies the user context data captured at the time of an event request.
     */
   @js.native
   trait EventContextDataType extends js.Object {
@@ -3427,8 +3265,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Specifies the event feedback type.
+  /** Specifies the event feedback type.
     */
   @js.native
   trait EventFeedbackType extends js.Object {
@@ -3473,8 +3310,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Success, Failure)
   }
 
-  /**
-    * The event risk type.
+  /** The event risk type.
     */
   @js.native
   trait EventRiskType extends js.Object {
@@ -3520,17 +3356,16 @@ package cognitoidentityprovider {
     val ALLOW_USER_SRP_AUTH = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
     val ALLOW_REFRESH_TOKEN_AUTH = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
 
-    @inline def values =
-      js.Array(
-        ADMIN_NO_SRP_AUTH,
-        CUSTOM_AUTH_FLOW_ONLY,
-        USER_PASSWORD_AUTH,
-        ALLOW_ADMIN_USER_PASSWORD_AUTH,
-        ALLOW_CUSTOM_AUTH,
-        ALLOW_USER_PASSWORD_AUTH,
-        ALLOW_USER_SRP_AUTH,
-        ALLOW_REFRESH_TOKEN_AUTH
-      )
+    @inline def values = js.Array(
+      ADMIN_NO_SRP_AUTH,
+      CUSTOM_AUTH_FLOW_ONLY,
+      USER_PASSWORD_AUTH,
+      ALLOW_ADMIN_USER_PASSWORD_AUTH,
+      ALLOW_CUSTOM_AUTH,
+      ALLOW_USER_PASSWORD_AUTH,
+      ALLOW_USER_SRP_AUTH,
+      ALLOW_REFRESH_TOKEN_AUTH
+    )
   }
 
   @js.native
@@ -3542,8 +3377,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Valid, Invalid)
   }
 
-  /**
-    * Represents the request to forget the device.
+  /** Represents the request to forget the device.
     */
   @js.native
   trait ForgetDeviceRequest extends js.Object {
@@ -3566,8 +3400,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to reset a user's password.
+  /** Represents the request to reset a user's password.
     */
   @js.native
   trait ForgotPasswordRequest extends js.Object {
@@ -3602,8 +3435,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Respresents the response from the server regarding the request to reset a password.
+  /** Respresents the response from the server regarding the request to reset a password.
     */
   @js.native
   trait ForgotPasswordResponse extends js.Object {
@@ -3621,8 +3453,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to get the header information for the .csv file for the user import job.
+  /** Represents the request to get the header information for the .csv file for the user import job.
     */
   @js.native
   trait GetCSVHeaderRequest extends js.Object {
@@ -3637,13 +3468,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetCSVHeaderRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to the request to get the header information for the .csv file for the user import job.
+  /** Represents the response from the server to the request to get the header information for the .csv file for the user import job.
     */
   @js.native
   trait GetCSVHeaderResponse extends js.Object {
@@ -3664,8 +3493,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to get the device.
+  /** Represents the request to get the device.
     */
   @js.native
   trait GetDeviceRequest extends js.Object {
@@ -3688,8 +3516,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Gets the device response.
+  /** Gets the device response.
     */
   @js.native
   trait GetDeviceResponse extends js.Object {
@@ -3704,7 +3531,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "Device" -> Device.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceResponse]
     }
   }
@@ -3725,7 +3551,6 @@ package cognitoidentityprovider {
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetGroupRequest]
     }
   }
@@ -3762,7 +3587,6 @@ package cognitoidentityprovider {
         "IdpIdentifier" -> IdpIdentifier.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIdentityProviderByIdentifierRequest]
     }
   }
@@ -3780,13 +3604,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetIdentityProviderByIdentifierResponse]
     }
   }
 
-  /**
-    * Request to get a signing certificate from Cognito.
+  /** Request to get a signing certificate from Cognito.
     */
   @js.native
   trait GetSigningCertificateRequest extends js.Object {
@@ -3801,13 +3623,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSigningCertificateRequest]
     }
   }
 
-  /**
-    * Response from Cognito for a signing certificate request.
+  /** Response from Cognito for a signing certificate request.
     */
   @js.native
   trait GetSigningCertificateResponse extends js.Object {
@@ -3859,13 +3679,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UICustomization" -> UICustomization.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUICustomizationResponse]
     }
   }
 
-  /**
-    * Represents the request to get user attribute verification.
+  /** Represents the request to get user attribute verification.
     */
   @js.native
   trait GetUserAttributeVerificationCodeRequest extends js.Object {
@@ -3891,8 +3709,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The verification code response returned by the server response to get the user attribute verification code.
+  /** The verification code response returned by the server response to get the user attribute verification code.
     */
   @js.native
   trait GetUserAttributeVerificationCodeResponse extends js.Object {
@@ -3923,7 +3740,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUserPoolMfaConfigRequest]
     }
   }
@@ -3950,8 +3766,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to get information about the user.
+  /** Represents the request to get information about the user.
     */
   @js.native
   trait GetUserRequest extends js.Object {
@@ -3966,13 +3781,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "AccessToken" -> AccessToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetUserRequest]
     }
   }
 
-  /**
-    * Represents the response from the server from the request to get information about the user.
+  /** Represents the response from the server from the request to get information about the user.
     */
   @js.native
   trait GetUserResponse extends js.Object {
@@ -4004,8 +3817,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to sign out all devices.
+  /** Represents the request to sign out all devices.
     */
   @js.native
   trait GlobalSignOutRequest extends js.Object {
@@ -4020,29 +3832,24 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "AccessToken" -> AccessToken.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GlobalSignOutRequest]
     }
   }
 
-  /**
-    * The response to the request to sign out all devices.
+  /** The response to the request to sign out all devices.
     */
   @js.native
-  trait GlobalSignOutResponse extends js.Object {}
+  trait GlobalSignOutResponse extends js.Object
 
   object GlobalSignOutResponse {
     @inline
-    def apply(
-    ): GlobalSignOutResponse = {
+    def apply(): GlobalSignOutResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GlobalSignOutResponse]
     }
   }
 
-  /**
-    * The group type.
+  /** The group type.
     */
   @js.native
   trait GroupType extends js.Object {
@@ -4078,8 +3885,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The HTTP header.
+  /** The HTTP header.
     */
   @js.native
   trait HttpHeader extends js.Object {
@@ -4100,8 +3906,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A container for information about an identity provider.
+  /** A container for information about an identity provider.
     */
   @js.native
   trait IdentityProviderType extends js.Object {
@@ -4153,8 +3958,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC)
   }
 
-  /**
-    * Initiates the authentication request.
+  /** Initiates the authentication request.
     */
   @js.native
   trait InitiateAuthRequest extends js.Object {
@@ -4189,8 +3993,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Initiates the authentication response.
+  /** Initiates the authentication response.
     */
   @js.native
   trait InitiateAuthResponse extends js.Object {
@@ -4217,8 +4020,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Specifies the configuration for AWS Lambda triggers.
+  /** Specifies the configuration for AWS Lambda triggers.
     */
   @js.native
   trait LambdaConfigType extends js.Object {
@@ -4263,8 +4065,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to list the devices.
+  /** Represents the request to list the devices.
     */
   @js.native
   trait ListDevicesRequest extends js.Object {
@@ -4290,8 +4091,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response to list devices.
+  /** Represents the response to list devices.
     */
   @js.native
   trait ListDevicesResponse extends js.Object {
@@ -4458,7 +4258,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -4479,8 +4278,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to list the user import jobs.
+  /** Represents the request to list the user import jobs.
     */
   @js.native
   trait ListUserImportJobsRequest extends js.Object {
@@ -4506,8 +4304,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server to the request to list the user import jobs.
+  /** Represents the response from the server to the request to list the user import jobs.
     */
   @js.native
   trait ListUserImportJobsResponse extends js.Object {
@@ -4528,8 +4325,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to list the user pool clients.
+  /** Represents the request to list the user pool clients.
     */
   @js.native
   trait ListUserPoolClientsRequest extends js.Object {
@@ -4555,8 +4351,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server that lists user pool clients.
+  /** Represents the response from the server that lists user pool clients.
     */
   @js.native
   trait ListUserPoolClientsResponse extends js.Object {
@@ -4577,8 +4372,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to list user pools.
+  /** Represents the request to list user pools.
     */
   @js.native
   trait ListUserPoolsRequest extends js.Object {
@@ -4601,8 +4395,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response to list user pools.
+  /** Represents the response to list user pools.
     */
   @js.native
   trait ListUserPoolsResponse extends js.Object {
@@ -4669,8 +4462,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to list users.
+  /** Represents the request to list users.
     */
   @js.native
   trait ListUsersRequest extends js.Object {
@@ -4702,8 +4494,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The response from the request to list users.
+  /** The response from the request to list users.
     */
   @js.native
   trait ListUsersResponse extends js.Object {
@@ -4724,8 +4515,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.
+  /** <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.
     */
   @js.native
   trait MFAOptionType extends js.Object {
@@ -4755,8 +4545,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(RESEND, SUPPRESS)
   }
 
-  /**
-    * The message template structure.
+  /** The message template structure.
     */
   @js.native
   trait MessageTemplateType extends js.Object {
@@ -4780,8 +4569,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The new device metadata type.
+  /** The new device metadata type.
     */
   @js.native
   trait NewDeviceMetadataType extends js.Object {
@@ -4802,8 +4590,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The notify configuration type.
+  /** The notify configuration type.
     */
   @js.native
   trait NotifyConfigurationType extends js.Object {
@@ -4838,8 +4625,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The notify email type.
+  /** The notify email type.
     */
   @js.native
   trait NotifyEmailType extends js.Object {
@@ -4865,8 +4651,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The minimum and maximum value of an attribute that is of the number data type.
+  /** The minimum and maximum value of an attribute that is of the number data type.
     */
   @js.native
   trait NumberAttributeConstraintsType extends js.Object {
@@ -4897,8 +4682,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(code, `implicit`, client_credentials)
   }
 
-  /**
-    * The password policy type.
+  /** The password policy type.
     */
   @js.native
   trait PasswordPolicyType extends js.Object {
@@ -4940,8 +4724,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(LEGACY, ENABLED)
   }
 
-  /**
-    * A container for identity provider details.
+  /** A container for identity provider details.
     */
   @js.native
   trait ProviderDescription extends js.Object {
@@ -4968,8 +4751,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A container for information about an identity provider for a user pool.
+  /** A container for information about an identity provider for a user pool.
     */
   @js.native
   trait ProviderUserIdentifierType extends js.Object {
@@ -5003,8 +4785,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(verified_email, verified_phone_number, admin_only)
   }
 
-  /**
-    * A map containing a priority as a key, and recovery method name as a value.
+  /** A map containing a priority as a key, and recovery method name as a value.
     */
   @js.native
   trait RecoveryOptionType extends js.Object {
@@ -5022,13 +4803,11 @@ package cognitoidentityprovider {
         "Name" -> Name.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RecoveryOptionType]
     }
   }
 
-  /**
-    * Represents the request to resend the confirmation code.
+  /** Represents the request to resend the confirmation code.
     */
   @js.native
   trait ResendConfirmationCodeRequest extends js.Object {
@@ -5063,8 +4842,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.
+  /** The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.
     */
   @js.native
   trait ResendConfirmationCodeResponse extends js.Object {
@@ -5082,8 +4860,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A resource server scope.
+  /** A resource server scope.
     */
   @js.native
   trait ResourceServerScopeType extends js.Object {
@@ -5101,13 +4878,11 @@ package cognitoidentityprovider {
         "ScopeDescription" -> ScopeDescription.asInstanceOf[js.Any],
         "ScopeName" -> ScopeName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceServerScopeType]
     }
   }
 
-  /**
-    * A container for information about a resource server for a user pool.
+  /** A container for information about a resource server for a user pool.
     */
   @js.native
   trait ResourceServerType extends js.Object {
@@ -5134,8 +4909,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The request to respond to an authentication challenge.
+  /** The request to respond to an authentication challenge.
     */
   @js.native
   trait RespondToAuthChallengeRequest extends js.Object {
@@ -5173,8 +4947,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The response to respond to the authentication challenge.
+  /** The response to respond to the authentication challenge.
     */
   @js.native
   trait RespondToAuthChallengeResponse extends js.Object {
@@ -5201,8 +4974,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The risk configuration type.
+  /** The risk configuration type.
     */
   @js.native
   trait RiskConfigurationType extends js.Object {
@@ -5245,8 +5017,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(NoRisk, AccountTakeover, Block)
   }
 
-  /**
-    * The type of the configuration to override the risk decision.
+  /** The type of the configuration to override the risk decision.
     */
   @js.native
   trait RiskExceptionConfigurationType extends js.Object {
@@ -5277,8 +5048,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Low, Medium, High)
   }
 
-  /**
-    * The type used for enabling SMS MFA at the user level.
+  /** The type used for enabling SMS MFA at the user level.
     */
   @js.native
   trait SMSMfaSettingsType extends js.Object {
@@ -5299,8 +5069,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Contains information about the schema attribute.
+  /** Contains information about the schema attribute.
     */
   @js.native
   trait SchemaAttributeType extends js.Object {
@@ -5379,7 +5148,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "RiskConfiguration" -> RiskConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetRiskConfigurationResponse]
     }
   }
@@ -5424,7 +5192,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "UICustomization" -> UICustomization.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetUICustomizationResponse]
     }
   }
@@ -5454,14 +5221,12 @@ package cognitoidentityprovider {
   }
 
   @js.native
-  trait SetUserMFAPreferenceResponse extends js.Object {}
+  trait SetUserMFAPreferenceResponse extends js.Object
 
   object SetUserMFAPreferenceResponse {
     @inline
-    def apply(
-    ): SetUserMFAPreferenceResponse = {
+    def apply(): SetUserMFAPreferenceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetUserMFAPreferenceResponse]
     }
   }
@@ -5515,8 +5280,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to set user settings.
+  /** Represents the request to set user settings.
     */
   @js.native
   trait SetUserSettingsRequest extends js.Object {
@@ -5534,29 +5298,24 @@ package cognitoidentityprovider {
         "AccessToken" -> AccessToken.asInstanceOf[js.Any],
         "MFAOptions" -> MFAOptions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetUserSettingsRequest]
     }
   }
 
-  /**
-    * The response from the server for a set user settings request.
+  /** The response from the server for a set user settings request.
     */
   @js.native
-  trait SetUserSettingsResponse extends js.Object {}
+  trait SetUserSettingsResponse extends js.Object
 
   object SetUserSettingsResponse {
     @inline
-    def apply(
-    ): SetUserSettingsResponse = {
+    def apply(): SetUserSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[SetUserSettingsResponse]
     }
   }
 
-  /**
-    * Represents the request to register a user.
+  /** Represents the request to register a user.
     */
   @js.native
   trait SignUpRequest extends js.Object {
@@ -5600,8 +5359,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The response from the server for a registration request.
+  /** The response from the server for a registration request.
     */
   @js.native
   trait SignUpResponse extends js.Object {
@@ -5627,8 +5385,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account.
+  /** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account.
     */
   @js.native
   trait SmsConfigurationType extends js.Object {
@@ -5651,8 +5408,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The SMS text message multi-factor authentication (MFA) configuration type.
+  /** The SMS text message multi-factor authentication (MFA) configuration type.
     */
   @js.native
   trait SmsMfaConfigType extends js.Object {
@@ -5673,8 +5429,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The type used for enabling software token MFA at the user pool level.
+  /** The type used for enabling software token MFA at the user pool level.
     */
   @js.native
   trait SoftwareTokenMfaConfigType extends js.Object {
@@ -5692,8 +5447,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The type used for enabling software token MFA at the user level.
+  /** The type used for enabling software token MFA at the user level.
     */
   @js.native
   trait SoftwareTokenMfaSettingsType extends js.Object {
@@ -5714,8 +5468,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to start the user import job.
+  /** Represents the request to start the user import job.
     */
   @js.native
   trait StartUserImportJobRequest extends js.Object {
@@ -5733,13 +5486,11 @@ package cognitoidentityprovider {
         "JobId" -> JobId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartUserImportJobRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to the request to start the user import job.
+  /** Represents the response from the server to the request to start the user import job.
     */
   @js.native
   trait StartUserImportJobResponse extends js.Object {
@@ -5766,8 +5517,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Enabled, Disabled)
   }
 
-  /**
-    * Represents the request to stop the user import job.
+  /** Represents the request to stop the user import job.
     */
   @js.native
   trait StopUserImportJobRequest extends js.Object {
@@ -5785,13 +5535,11 @@ package cognitoidentityprovider {
         "JobId" -> JobId.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopUserImportJobRequest]
     }
   }
 
-  /**
-    * Represents the response from the server to the request to stop the user import job.
+  /** Represents the response from the server to the request to stop the user import job.
     */
   @js.native
   trait StopUserImportJobResponse extends js.Object {
@@ -5809,8 +5557,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The constraints associated with a string attribute.
+  /** The constraints associated with a string attribute.
     */
   @js.native
   trait StringAttributeConstraintsType extends js.Object {
@@ -5847,20 +5594,17 @@ package cognitoidentityprovider {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -5876,8 +5620,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(seconds, minutes, hours, days)
   }
 
-  /**
-    * The data type for TokenValidityUnits that specifics the time measurements for token validity.
+  /** The data type for TokenValidityUnits that specifics the time measurements for token validity.
     */
   @js.native
   trait TokenValidityUnitsType extends js.Object {
@@ -5901,8 +5644,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A container for the UI customization information for a user pool's built-in app UI.
+  /** A container for the UI customization information for a user pool's built-in app UI.
     */
   @js.native
   trait UICustomizationType extends js.Object {
@@ -5954,20 +5696,17 @@ package cognitoidentityprovider {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -5997,26 +5736,22 @@ package cognitoidentityprovider {
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAuthEventFeedbackRequest]
     }
   }
 
   @js.native
-  trait UpdateAuthEventFeedbackResponse extends js.Object {}
+  trait UpdateAuthEventFeedbackResponse extends js.Object
 
   object UpdateAuthEventFeedbackResponse {
     @inline
-    def apply(
-    ): UpdateAuthEventFeedbackResponse = {
+    def apply(): UpdateAuthEventFeedbackResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateAuthEventFeedbackResponse]
     }
   }
 
-  /**
-    * Represents the request to update the device status.
+  /** Represents the request to update the device status.
     */
   @js.native
   trait UpdateDeviceStatusRequest extends js.Object {
@@ -6042,18 +5777,15 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The response to the request to update the device status.
+  /** The response to the request to update the device status.
     */
   @js.native
-  trait UpdateDeviceStatusResponse extends js.Object {}
+  trait UpdateDeviceStatusResponse extends js.Object
 
   object UpdateDeviceStatusResponse {
     @inline
-    def apply(
-    ): UpdateDeviceStatusResponse = {
+    def apply(): UpdateDeviceStatusResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateDeviceStatusResponse]
     }
   }
@@ -6147,7 +5879,6 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "IdentityProvider" -> IdentityProvider.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateIdentityProviderResponse]
     }
   }
@@ -6192,13 +5923,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "ResourceServer" -> ResourceServer.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateResourceServerResponse]
     }
   }
 
-  /**
-    * Represents the request to update user attributes.
+  /** Represents the request to update user attributes.
     */
   @js.native
   trait UpdateUserAttributesRequest extends js.Object {
@@ -6224,8 +5953,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server for the request to update user attributes.
+  /** Represents the response from the server for the request to update user attributes.
     */
   @js.native
   trait UpdateUserAttributesResponse extends js.Object {
@@ -6243,8 +5971,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to update the user pool client.
+  /** Represents the request to update the user pool client.
     */
   @js.native
   trait UpdateUserPoolClientRequest extends js.Object {
@@ -6318,8 +6045,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server to the request to update the user pool client.
+  /** Represents the response from the server to the request to update the user pool client.
     */
   @js.native
   trait UpdateUserPoolClientResponse extends js.Object {
@@ -6337,8 +6063,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The UpdateUserPoolDomain request input.
+  /** The UpdateUserPoolDomain request input.
     */
   @js.native
   trait UpdateUserPoolDomainRequest extends js.Object {
@@ -6359,13 +6084,11 @@ package cognitoidentityprovider {
         "Domain" -> Domain.asInstanceOf[js.Any],
         "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateUserPoolDomainRequest]
     }
   }
 
-  /**
-    * The UpdateUserPoolDomain response output.
+  /** The UpdateUserPoolDomain response output.
     */
   @js.native
   trait UpdateUserPoolDomainResponse extends js.Object {
@@ -6383,8 +6106,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the request to update the user pool.
+  /** Represents the request to update the user pool.
     */
   @js.native
   trait UpdateUserPoolRequest extends js.Object {
@@ -6452,24 +6174,20 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Represents the response from the server when you make a request to update the user pool.
+  /** Represents the response from the server when you make a request to update the user pool.
     */
   @js.native
-  trait UpdateUserPoolResponse extends js.Object {}
+  trait UpdateUserPoolResponse extends js.Object
 
   object UpdateUserPoolResponse {
     @inline
-    def apply(
-    ): UpdateUserPoolResponse = {
+    def apply(): UpdateUserPoolResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateUserPoolResponse]
     }
   }
 
-  /**
-    * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+  /** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
     */
   @js.native
   trait UserContextDataType extends js.Object {
@@ -6502,8 +6220,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded)
   }
 
-  /**
-    * The user import job type.
+  /** The user import job type.
     */
   @js.native
   trait UserImportJobType extends js.Object {
@@ -6557,8 +6274,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * The user pool add-ons type.
+  /** The user pool add-ons type.
     */
   @js.native
   trait UserPoolAddOnsType extends js.Object {
@@ -6573,13 +6289,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "AdvancedSecurityMode" -> AdvancedSecurityMode.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UserPoolAddOnsType]
     }
   }
 
-  /**
-    * The description of the user pool client.
+  /** The description of the user pool client.
     */
   @js.native
   trait UserPoolClientDescription extends js.Object {
@@ -6603,8 +6317,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * Contains information about a user pool client.
+  /** Contains information about a user pool client.
     */
   @js.native
   trait UserPoolClientType extends js.Object {
@@ -6685,8 +6398,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A user pool description.
+  /** A user pool description.
     */
   @js.native
   trait UserPoolDescriptionType extends js.Object {
@@ -6729,8 +6441,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(OFF, ON, OPTIONAL)
   }
 
-  /**
-    * The policy associated with a user pool.
+  /** The policy associated with a user pool.
     */
   @js.native
   trait UserPoolPolicyType extends js.Object {
@@ -6748,8 +6459,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /**
-    * A container for information about the user pool.
+  /** A container for information about the user pool.
     */
   @js.native
   trait UserPoolType extends js.Object {
@@ -6871,8 +6581,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
   }
 
-  /**
-    * The user type.
+  /** The user type.
     */
   @js.native
   trait UserType extends js.Object {
@@ -6917,8 +6626,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(phone_number, email)
   }
 
-  /**
-    * The username configuration type.
+  /** The username configuration type.
     */
   @js.native
   trait UsernameConfigurationType extends js.Object {
@@ -6933,13 +6641,11 @@ package cognitoidentityprovider {
       val __obj = js.Dynamic.literal(
         "CaseSensitive" -> CaseSensitive.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UsernameConfigurationType]
     }
   }
 
-  /**
-    * The template for verification messages.
+  /** The template for verification messages.
     */
   @js.native
   trait VerificationMessageTemplateType extends js.Object {
@@ -7036,8 +6742,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(SUCCESS, ERROR)
   }
 
-  /**
-    * Represents the request to verify user attributes.
+  /** Represents the request to verify user attributes.
     */
   @js.native
   trait VerifyUserAttributeRequest extends js.Object {
@@ -7058,23 +6763,19 @@ package cognitoidentityprovider {
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "Code" -> Code.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VerifyUserAttributeRequest]
     }
   }
 
-  /**
-    * A container representing the response from the server from the request to verify user attributes.
+  /** A container representing the response from the server from the request to verify user attributes.
     */
   @js.native
-  trait VerifyUserAttributeResponse extends js.Object {}
+  trait VerifyUserAttributeResponse extends js.Object
 
   object VerifyUserAttributeResponse {
     @inline
-    def apply(
-    ): VerifyUserAttributeResponse = {
+    def apply(): VerifyUserAttributeResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[VerifyUserAttributeResponse]
     }
   }

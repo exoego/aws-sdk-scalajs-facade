@@ -380,8 +380,7 @@ package lightsail {
     @inline def values = js.Array(inbound, outbound)
   }
 
-  /**
-    * Describes an add-on that is enabled for an Amazon Lightsail resource.
+  /** Describes an add-on that is enabled for an Amazon Lightsail resource.
     */
   @js.native
   trait AddOn extends js.Object {
@@ -408,8 +407,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a request to enable, modify, or disable an add-on for an Amazon Lightsail resource.
+  /** Describes a request to enable, modify, or disable an add-on for an Amazon Lightsail resource.
     *
     * '''Note:'''An additional cost may be associated with enabling add-ons. For more information, see the [[https://aws.amazon.com/lightsail/pricing/|Lightsail pricing page]].
     */
@@ -442,9 +440,8 @@ package lightsail {
     @inline def values = js.Array(AutoSnapshot)
   }
 
-  /**
-    * Describes an alarm.
-    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+  /** Describes an alarm.
+    * An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
     */
   @js.native
   trait Alarm extends js.Object {
@@ -542,7 +539,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AllocateStaticIpRequest]
     }
   }
@@ -579,7 +575,6 @@ package lightsail {
         "certificateName" -> certificateName.asInstanceOf[js.Any],
         "distributionName" -> distributionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachCertificateToDistributionRequest]
     }
   }
@@ -619,7 +614,6 @@ package lightsail {
         "diskPath" -> diskPath.asInstanceOf[js.Any],
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachDiskRequest]
     }
   }
@@ -656,7 +650,6 @@ package lightsail {
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachInstancesToLoadBalancerRequest]
     }
   }
@@ -693,7 +686,6 @@ package lightsail {
         "certificateName" -> certificateName.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachLoadBalancerTlsCertificateRequest]
     }
   }
@@ -730,7 +722,6 @@ package lightsail {
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AttachStaticIpRequest]
     }
   }
@@ -751,8 +742,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.
+  /** Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.
     */
   @js.native
   trait AttachedDisk extends js.Object {
@@ -773,13 +763,12 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.
-    *  When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:
+  /** Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.
+    * When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:
     * * If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.
-    *  * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.
-    *  * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
-    *  * If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
+    * * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.
+    * * If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
+    * * If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.
     */
   @js.native
   trait AutoSnapshotAddOnRequest extends js.Object {
@@ -797,8 +786,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an automatic snapshot.
+  /** Describes an automatic snapshot.
     */
   @js.native
   trait AutoSnapshotDetails extends js.Object {
@@ -836,8 +824,7 @@ package lightsail {
     @inline def values = js.Array(Success, Failed, InProgress, NotFound)
   }
 
-  /**
-    * Describes an Availability Zone.
+  /** Describes an Availability Zone.
     */
   @js.native
   trait AvailabilityZone extends js.Object {
@@ -867,8 +854,7 @@ package lightsail {
     @inline def values = js.Array(`dont-cache`, cache)
   }
 
-  /**
-    * Describes a blueprint (a virtual private server image).
+  /** Describes a blueprint (a virtual private server image).
     */
   @js.native
   trait Blueprint extends js.Object {
@@ -928,8 +914,7 @@ package lightsail {
     @inline def values = js.Array(os, app)
   }
 
-  /**
-    * Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).
+  /** Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).
     */
   @js.native
   trait Bundle extends js.Object {
@@ -977,8 +962,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
+  /** Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
     */
   @js.native
   trait CacheBehavior extends js.Object {
@@ -996,10 +980,9 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.
-    *  if the cacheBehavior's behavior is set to 'cache', then
+  /** Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
+    * A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.
+    * if the cacheBehavior's behavior is set to 'cache', then
     */
   @js.native
   trait CacheBehaviorPerPath extends js.Object {
@@ -1020,9 +1003,8 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.
+  /** Describes the cache settings of an Amazon Lightsail content delivery network (CDN) distribution.
+    * These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.
     */
   @js.native
   trait CacheSettings extends js.Object {
@@ -1061,8 +1043,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the full details of an Amazon Lightsail SSL/TLS certificate.
+  /** Describes the full details of an Amazon Lightsail SSL/TLS certificate.
     *
     * '''Note:'''To get a summary of a certificate, use the <code>GetCertificates</code> action and ommit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
     */
@@ -1156,8 +1137,7 @@ package lightsail {
     @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
   }
 
-  /**
-    * Describes an Amazon Lightsail SSL/TLS certificate.
+  /** Describes an Amazon Lightsail SSL/TLS certificate.
     */
   @js.native
   trait CertificateSummary extends js.Object {
@@ -1203,7 +1183,6 @@ package lightsail {
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "portInfo" -> portInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CloseInstancePublicPortsRequest]
     }
   }
@@ -1224,9 +1203,8 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.
-    *  A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
+  /** Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.
+    * A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
     */
   @js.native
   trait CloudFormationStackRecord extends js.Object {
@@ -1265,8 +1243,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the source of a CloudFormation stack record (i.e., the export snapshot record).
+  /** Describes the source of a CloudFormation stack record (i.e., the export snapshot record).
     */
   @js.native
   trait CloudFormationStackRecordSourceInfo extends js.Object {
@@ -1309,9 +1286,8 @@ package lightsail {
     @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
-  /**
-    * Describes a contact method.
-    *  A contact method is a way to send you notifications. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications|Notifications in Amazon Lightsail]].
+  /** Describes a contact method.
+    * A contact method is a way to send you notifications. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications|Notifications in Amazon Lightsail]].
     */
   @js.native
   trait ContactMethod extends js.Object {
@@ -1380,9 +1356,8 @@ package lightsail {
     @inline def values = js.Array(Email, SMS)
   }
 
-  /**
-    * Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.
-    *  For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.
+  /** Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.
+    * For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.
     */
   @js.native
   trait CookieObject extends js.Object {
@@ -1511,7 +1486,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instances" -> instances.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateCloudFormationStackRequest]
     }
   }
@@ -1548,7 +1522,6 @@ package lightsail {
         "contactEndpoint" -> contactEndpoint.asInstanceOf[js.Any],
         "protocol" -> protocol.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateContactMethodRequest]
     }
   }
@@ -1787,7 +1760,6 @@ package lightsail {
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateDomainEntryRequest]
     }
   }
@@ -2329,7 +2301,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "alarmName" -> alarmName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAlarmRequest]
     }
   }
@@ -2366,7 +2337,6 @@ package lightsail {
         "date" -> date.asInstanceOf[js.Any],
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAutoSnapshotRequest]
     }
   }
@@ -2400,7 +2370,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "certificateName" -> certificateName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteCertificateRequest]
     }
   }
@@ -2434,7 +2403,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "protocol" -> protocol.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteContactMethodRequest]
     }
   }
@@ -2505,7 +2473,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDiskSnapshotRequest]
     }
   }
@@ -2574,7 +2541,6 @@ package lightsail {
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainEntryRequest]
     }
   }
@@ -2608,7 +2574,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteDomainRequest]
     }
   }
@@ -2679,7 +2644,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteInstanceSnapshotRequest]
     }
   }
@@ -2713,7 +2677,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "keyPairName" -> keyPairName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteKeyPairRequest]
     }
   }
@@ -2747,7 +2710,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteKnownHostKeysRequest]
     }
   }
@@ -2781,7 +2743,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLoadBalancerRequest]
     }
   }
@@ -2895,7 +2856,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteRelationalDatabaseSnapshotRequest]
     }
   }
@@ -2916,8 +2876,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the destination of a record.
+  /** Describes the destination of a record.
     */
   @js.native
   trait DestinationInfo extends js.Object {
@@ -2951,7 +2910,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "distributionName" -> distributionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachCertificateFromDistributionRequest]
     }
   }
@@ -2985,7 +2943,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "diskName" -> diskName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachDiskRequest]
     }
   }
@@ -3022,7 +2979,6 @@ package lightsail {
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachInstancesFromLoadBalancerRequest]
     }
   }
@@ -3056,7 +3012,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetachStaticIpRequest]
     }
   }
@@ -3093,7 +3048,6 @@ package lightsail {
         "addOnType" -> addOnType.asInstanceOf[js.Any],
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableAddOnRequest]
     }
   }
@@ -3114,8 +3068,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a system disk or a block storage disk.
+  /** Describes a system disk or a block storage disk.
     */
   @js.native
   trait Disk extends js.Object {
@@ -3181,8 +3134,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a disk.
+  /** Describes a disk.
     */
   @js.native
   trait DiskInfo extends js.Object {
@@ -3209,8 +3161,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a block storage disk mapping.
+  /** Describes a block storage disk mapping.
     */
   @js.native
   trait DiskMap extends js.Object {
@@ -3231,8 +3182,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a block storage disk snapshot.
+  /** Describes a block storage disk snapshot.
     */
   @js.native
   trait DiskSnapshot extends js.Object {
@@ -3292,8 +3242,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a disk snapshot.
+  /** Describes a disk snapshot.
     */
   @js.native
   trait DiskSnapshotInfo extends js.Object {
@@ -3334,8 +3283,7 @@ package lightsail {
     @inline def values = js.Array(pending, error, available, `in-use`, unknown)
   }
 
-  /**
-    * Describes the specifications of a distribution bundle.
+  /** Describes the specifications of a distribution bundle.
     */
   @js.native
   trait DistributionBundle extends js.Object {
@@ -3378,8 +3326,7 @@ package lightsail {
     @inline def values = js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
   }
 
-  /**
-    * Describes a domain where you are storing recordsets in Lightsail.
+  /** Describes a domain where you are storing recordsets in Lightsail.
     */
   @js.native
   trait Domain extends js.Object {
@@ -3418,8 +3365,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a domain recordset entry.
+  /** Describes a domain recordset entry.
     */
   @js.native
   trait DomainEntry extends js.Object {
@@ -3452,8 +3398,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.
+  /** Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.
     */
   @js.native
   trait DomainValidationRecord extends js.Object {
@@ -3475,14 +3420,12 @@ package lightsail {
   }
 
   @js.native
-  trait DownloadDefaultKeyPairRequest extends js.Object {}
+  trait DownloadDefaultKeyPairRequest extends js.Object
 
   object DownloadDefaultKeyPairRequest {
     @inline
-    def apply(
-    ): DownloadDefaultKeyPairRequest = {
+    def apply(): DownloadDefaultKeyPairRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DownloadDefaultKeyPairRequest]
     }
   }
@@ -3522,7 +3465,6 @@ package lightsail {
         "addOnRequest" -> addOnRequest.asInstanceOf[js.Any],
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[EnableAddOnRequest]
     }
   }
@@ -3543,8 +3485,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an export snapshot record.
+  /** Describes an export snapshot record.
     */
   @js.native
   trait ExportSnapshotRecord extends js.Object {
@@ -3583,8 +3524,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the source of an export snapshot record.
+  /** Describes the source of an export snapshot record.
     */
   @js.native
   trait ExportSnapshotRecordSourceInfo extends js.Object {
@@ -3645,7 +3585,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "sourceSnapshotName" -> sourceSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ExportSnapshotRequest]
     }
   }
@@ -3765,7 +3704,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAutoSnapshotsRequest]
     }
   }
@@ -3986,7 +3924,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "diskName" -> diskName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDiskRequest]
     }
   }
@@ -4020,7 +3957,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDiskSnapshotRequest]
     }
   }
@@ -4112,14 +4048,12 @@ package lightsail {
   }
 
   @js.native
-  trait GetDistributionBundlesRequest extends js.Object {}
+  trait GetDistributionBundlesRequest extends js.Object
 
   object GetDistributionBundlesRequest {
     @inline
-    def apply(
-    ): GetDistributionBundlesRequest = {
+    def apply(): GetDistributionBundlesRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetDistributionBundlesRequest]
     }
   }
@@ -4206,7 +4140,6 @@ package lightsail {
         "statistics" -> statistics.asInstanceOf[js.Any],
         "unit" -> unit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDistributionMetricDataRequest]
     }
   }
@@ -4281,7 +4214,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDomainRequest]
     }
   }
@@ -4440,7 +4372,6 @@ package lightsail {
         "statistics" -> statistics.asInstanceOf[js.Any],
         "unit" -> unit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstanceMetricDataRequest]
     }
   }
@@ -4477,7 +4408,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstancePortStatesRequest]
     }
   }
@@ -4511,7 +4441,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstanceRequest]
     }
   }
@@ -4545,7 +4474,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstanceSnapshotRequest]
     }
   }
@@ -4614,7 +4542,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetInstanceStateRequest]
     }
   }
@@ -4683,7 +4610,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "keyPairName" -> keyPairName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetKeyPairRequest]
     }
   }
@@ -4770,7 +4696,6 @@ package lightsail {
         "statistics" -> statistics.asInstanceOf[js.Any],
         "unit" -> unit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLoadBalancerMetricDataRequest]
     }
   }
@@ -4807,7 +4732,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLoadBalancerRequest]
     }
   }
@@ -4841,7 +4765,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLoadBalancerTlsCertificatesRequest]
     }
   }
@@ -4910,7 +4833,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "operationId" -> operationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetOperationRequest]
     }
   }
@@ -5225,7 +5147,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRelationalDatabaseLogStreamsRequest]
     }
   }
@@ -5317,7 +5238,6 @@ package lightsail {
         "statistics" -> statistics.asInstanceOf[js.Any],
         "unit" -> unit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRelationalDatabaseMetricDataRequest]
     }
   }
@@ -5394,7 +5314,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRelationalDatabaseRequest]
     }
   }
@@ -5428,7 +5347,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotRequest]
     }
   }
@@ -5532,7 +5450,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetStaticIpRequest]
     }
   }
@@ -5607,29 +5524,27 @@ package lightsail {
     val Origin = "Origin".asInstanceOf[HeaderEnum]
     val Referer = "Referer".asInstanceOf[HeaderEnum]
 
-    @inline def values =
-      js.Array(
-        Accept,
-        `Accept-Charset`,
-        `Accept-Datetime`,
-        `Accept-Encoding`,
-        `Accept-Language`,
-        Authorization,
-        `CloudFront-Forwarded-Proto`,
-        `CloudFront-Is-Desktop-Viewer`,
-        `CloudFront-Is-Mobile-Viewer`,
-        `CloudFront-Is-SmartTV-Viewer`,
-        `CloudFront-Is-Tablet-Viewer`,
-        `CloudFront-Viewer-Country`,
-        Host,
-        Origin,
-        Referer
-      )
+    @inline def values = js.Array(
+      Accept,
+      `Accept-Charset`,
+      `Accept-Datetime`,
+      `Accept-Encoding`,
+      `Accept-Language`,
+      Authorization,
+      `CloudFront-Forwarded-Proto`,
+      `CloudFront-Is-Desktop-Viewer`,
+      `CloudFront-Is-Mobile-Viewer`,
+      `CloudFront-Is-SmartTV-Viewer`,
+      `CloudFront-Is-Tablet-Viewer`,
+      `CloudFront-Viewer-Country`,
+      Host,
+      Origin,
+      Referer
+    )
   }
 
-  /**
-    * Describes the request headers that a Lightsail distribution bases caching on.
-    *  For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value.
+  /** Describes the request headers that a Lightsail distribution bases caching on.
+    * For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value.
     */
   @js.native
   trait HeaderObject extends js.Object {
@@ -5650,8 +5565,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the public SSH host keys or the RDP certificate.
+  /** Describes the public SSH host keys or the RDP certificate.
     */
   @js.native
   trait HostKeyAttributes extends js.Object {
@@ -5703,7 +5617,6 @@ package lightsail {
         "keyPairName" -> keyPairName.asInstanceOf[js.Any],
         "publicKeyBase64" -> publicKeyBase64.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ImportKeyPairRequest]
     }
   }
@@ -5724,9 +5637,8 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+  /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
+    * An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
     */
   @js.native
   trait InputOrigin extends js.Object {
@@ -5750,8 +5662,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an instance (a virtual private server).
+  /** Describes an instance (a virtual private server).
     */
   @js.native
   trait Instance extends js.Object {
@@ -5826,8 +5737,7 @@ package lightsail {
     }
   }
 
-  /**
-    * The parameters for gaining temporary access to one of your Amazon Lightsail instances.
+  /** The parameters for gaining temporary access to one of your Amazon Lightsail instances.
     */
   @js.native
   trait InstanceAccessDetails extends js.Object {
@@ -5881,8 +5791,7 @@ package lightsail {
     @inline def values = js.Array(ssh, rdp)
   }
 
-  /**
-    * Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.
+  /** Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.
     */
   @js.native
   trait InstanceEntry extends js.Object {
@@ -5914,8 +5823,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the hardware for the instance.
+  /** Describes the hardware for the instance.
     */
   @js.native
   trait InstanceHardware extends js.Object {
@@ -5954,20 +5862,19 @@ package lightsail {
     val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
     val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
-    @inline def values =
-      js.Array(
-        `Lb.RegistrationInProgress`,
-        `Lb.InitialHealthChecking`,
-        `Lb.InternalError`,
-        `Instance.ResponseCodeMismatch`,
-        `Instance.Timeout`,
-        `Instance.FailedHealthChecks`,
-        `Instance.NotRegistered`,
-        `Instance.NotInUse`,
-        `Instance.DeregistrationInProgress`,
-        `Instance.InvalidState`,
-        `Instance.IpUnusable`
-      )
+    @inline def values = js.Array(
+      `Lb.RegistrationInProgress`,
+      `Lb.InitialHealthChecking`,
+      `Lb.InternalError`,
+      `Instance.ResponseCodeMismatch`,
+      `Instance.Timeout`,
+      `Instance.FailedHealthChecks`,
+      `Instance.NotRegistered`,
+      `Instance.NotInUse`,
+      `Instance.DeregistrationInProgress`,
+      `Instance.InvalidState`,
+      `Instance.IpUnusable`
+    )
   }
 
   @js.native
@@ -5983,8 +5890,7 @@ package lightsail {
     @inline def values = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
   }
 
-  /**
-    * Describes information about the health of the instance.
+  /** Describes information about the health of the instance.
     */
   @js.native
   trait InstanceHealthSummary extends js.Object {
@@ -6023,8 +5929,7 @@ package lightsail {
     @inline def values = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
   }
 
-  /**
-    * Describes monthly data transfer rates and port information for an instance.
+  /** Describes monthly data transfer rates and port information for an instance.
     */
   @js.native
   trait InstanceNetworking extends js.Object {
@@ -6054,8 +5959,7 @@ package lightsail {
     @inline def values = js.Array(LINUX_UNIX, WINDOWS)
   }
 
-  /**
-    * Describes information about ports for an Amazon Lightsail instance.
+  /** Describes information about ports for an Amazon Lightsail instance.
     */
   @js.native
   trait InstancePortInfo extends js.Object {
@@ -6097,8 +6001,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
+  /** Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
     */
   @js.native
   trait InstancePortState extends js.Object {
@@ -6131,8 +6034,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an instance snapshot.
+  /** Describes an instance snapshot.
     */
   @js.native
   trait InstanceSnapshot extends js.Object {
@@ -6195,8 +6097,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an instance snapshot.
+  /** Describes an instance snapshot.
     */
   @js.native
   trait InstanceSnapshotInfo extends js.Object {
@@ -6230,8 +6131,7 @@ package lightsail {
     @inline def values = js.Array(pending, error, available)
   }
 
-  /**
-    * Describes the virtual private server (or <i>instance</i>) status.
+  /** Describes the virtual private server (or <i>instance</i>) status.
     */
   @js.native
   trait InstanceState extends js.Object {
@@ -6253,14 +6153,12 @@ package lightsail {
   }
 
   @js.native
-  trait IsVpcPeeredRequest extends js.Object {}
+  trait IsVpcPeeredRequest extends js.Object
 
   object IsVpcPeeredRequest {
     @inline
-    def apply(
-    ): IsVpcPeeredRequest = {
+    def apply(): IsVpcPeeredRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[IsVpcPeeredRequest]
     }
   }
@@ -6281,8 +6179,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the SSH key pair.
+  /** Describes the SSH key pair.
     */
   @js.native
   trait KeyPair extends js.Object {
@@ -6321,8 +6218,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an Amazon Lightsail content delivery network (CDN) distribution.
+  /** Describes an Amazon Lightsail content delivery network (CDN) distribution.
     */
   @js.native
   trait LightsailDistribution extends js.Object {
@@ -6394,8 +6290,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the Lightsail load balancer.
+  /** Describes the Lightsail load balancer.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -6484,21 +6379,20 @@ package lightsail {
     val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
     val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
-    @inline def values =
-      js.Array(
-        ClientTLSNegotiationErrorCount,
-        HealthyHostCount,
-        UnhealthyHostCount,
-        HTTPCode_LB_4XX_Count,
-        HTTPCode_LB_5XX_Count,
-        HTTPCode_Instance_2XX_Count,
-        HTTPCode_Instance_3XX_Count,
-        HTTPCode_Instance_4XX_Count,
-        HTTPCode_Instance_5XX_Count,
-        InstanceResponseTime,
-        RejectedConnectionCount,
-        RequestCount
-      )
+    @inline def values = js.Array(
+      ClientTLSNegotiationErrorCount,
+      HealthyHostCount,
+      UnhealthyHostCount,
+      HTTPCode_LB_4XX_Count,
+      HTTPCode_LB_5XX_Count,
+      HTTPCode_Instance_2XX_Count,
+      HTTPCode_Instance_3XX_Count,
+      HTTPCode_Instance_4XX_Count,
+      HTTPCode_Instance_5XX_Count,
+      InstanceResponseTime,
+      RejectedConnectionCount,
+      RequestCount
+    )
   }
 
   @js.native
@@ -6522,9 +6416,8 @@ package lightsail {
     @inline def values = js.Array(active, provisioning, active_impaired, failed, unknown)
   }
 
-  /**
-    * Describes a load balancer SSL/TLS certificate.
-    *  TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+  /** Describes a load balancer SSL/TLS certificate.
+    * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
     */
   @js.native
   trait LoadBalancerTlsCertificate extends js.Object {
@@ -6624,8 +6517,7 @@ package lightsail {
     @inline def values = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
   }
 
-  /**
-    * Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.
+  /** Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.
     */
   @js.native
   trait LoadBalancerTlsCertificateDomainValidationOption extends js.Object {
@@ -6646,8 +6538,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the validation record of each domain name in the SSL/TLS certificate.
+  /** Describes the validation record of each domain name in the SSL/TLS certificate.
     */
   @js.native
   trait LoadBalancerTlsCertificateDomainValidationRecord extends js.Object {
@@ -6700,14 +6591,13 @@ package lightsail {
     @inline def values = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
   }
 
-  /**
-    * Contains information about the status of Lightsail's managed renewal for the certificate.
-    *  The renewal status of the certificate.
-    *  The following renewal status are possible:
+  /** Contains information about the status of Lightsail's managed renewal for the certificate.
+    * The renewal status of the certificate.
+    * The following renewal status are possible:
     * * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names in the certificate. No further action is required.
-    *  * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.
-    *  * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required.
-    *  * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.
+    * * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.
+    * * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required.
+    * * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.
     */
   @js.native
   trait LoadBalancerTlsCertificateRenewalSummary extends js.Object {
@@ -6742,19 +6632,18 @@ package lightsail {
     val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
     val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
-    @inline def values =
-      js.Array(
-        UNSPECIFIED,
-        KEY_COMPROMISE,
-        CA_COMPROMISE,
-        AFFILIATION_CHANGED,
-        SUPERCEDED,
-        CESSATION_OF_OPERATION,
-        CERTIFICATE_HOLD,
-        REMOVE_FROM_CRL,
-        PRIVILEGE_WITHDRAWN,
-        A_A_COMPROMISE
-      )
+    @inline def values = js.Array(
+      UNSPECIFIED,
+      KEY_COMPROMISE,
+      CA_COMPROMISE,
+      AFFILIATION_CHANGED,
+      SUPERCEDED,
+      CESSATION_OF_OPERATION,
+      CERTIFICATE_HOLD,
+      REMOVE_FROM_CRL,
+      PRIVILEGE_WITHDRAWN,
+      A_A_COMPROMISE
+    )
   }
 
   @js.native
@@ -6772,8 +6661,7 @@ package lightsail {
     @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
   }
 
-  /**
-    * Provides a summary of SSL/TLS certificate metadata.
+  /** Provides a summary of SSL/TLS certificate metadata.
     */
   @js.native
   trait LoadBalancerTlsCertificateSummary extends js.Object {
@@ -6794,8 +6682,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a database log event.
+  /** Describes a database log event.
     */
   @js.native
   trait LogEvent extends js.Object {
@@ -6816,8 +6703,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the metric data point.
+  /** Describes the metric data point.
     */
   @js.native
   trait MetricDatapoint extends js.Object {
@@ -6882,34 +6768,33 @@ package lightsail {
     val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
     val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
-    @inline def values =
-      js.Array(
-        CPUUtilization,
-        NetworkIn,
-        NetworkOut,
-        StatusCheckFailed,
-        StatusCheckFailed_Instance,
-        StatusCheckFailed_System,
-        ClientTLSNegotiationErrorCount,
-        HealthyHostCount,
-        UnhealthyHostCount,
-        HTTPCode_LB_4XX_Count,
-        HTTPCode_LB_5XX_Count,
-        HTTPCode_Instance_2XX_Count,
-        HTTPCode_Instance_3XX_Count,
-        HTTPCode_Instance_4XX_Count,
-        HTTPCode_Instance_5XX_Count,
-        InstanceResponseTime,
-        RejectedConnectionCount,
-        RequestCount,
-        DatabaseConnections,
-        DiskQueueDepth,
-        FreeStorageSpace,
-        NetworkReceiveThroughput,
-        NetworkTransmitThroughput,
-        BurstCapacityTime,
-        BurstCapacityPercentage
-      )
+    @inline def values = js.Array(
+      CPUUtilization,
+      NetworkIn,
+      NetworkOut,
+      StatusCheckFailed,
+      StatusCheckFailed_Instance,
+      StatusCheckFailed_System,
+      ClientTLSNegotiationErrorCount,
+      HealthyHostCount,
+      UnhealthyHostCount,
+      HTTPCode_LB_4XX_Count,
+      HTTPCode_LB_5XX_Count,
+      HTTPCode_Instance_2XX_Count,
+      HTTPCode_Instance_3XX_Count,
+      HTTPCode_Instance_4XX_Count,
+      HTTPCode_Instance_5XX_Count,
+      InstanceResponseTime,
+      RejectedConnectionCount,
+      RequestCount,
+      DatabaseConnections,
+      DiskQueueDepth,
+      FreeStorageSpace,
+      NetworkReceiveThroughput,
+      NetworkTransmitThroughput,
+      BurstCapacityTime,
+      BurstCapacityPercentage
+    )
   }
 
   @js.native
@@ -6955,41 +6840,39 @@ package lightsail {
     val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
     val None = "None".asInstanceOf[MetricUnit]
 
-    @inline def values =
-      js.Array(
-        Seconds,
-        Microseconds,
-        Milliseconds,
-        Bytes,
-        Kilobytes,
-        Megabytes,
-        Gigabytes,
-        Terabytes,
-        Bits,
-        Kilobits,
-        Megabits,
-        Gigabits,
-        Terabits,
-        Percent,
-        Count,
-        `Bytes/Second`,
-        `Kilobytes/Second`,
-        `Megabytes/Second`,
-        `Gigabytes/Second`,
-        `Terabytes/Second`,
-        `Bits/Second`,
-        `Kilobits/Second`,
-        `Megabits/Second`,
-        `Gigabits/Second`,
-        `Terabits/Second`,
-        `Count/Second`,
-        None
-      )
+    @inline def values = js.Array(
+      Seconds,
+      Microseconds,
+      Milliseconds,
+      Bytes,
+      Kilobytes,
+      Megabytes,
+      Gigabytes,
+      Terabytes,
+      Bits,
+      Kilobits,
+      Megabits,
+      Gigabits,
+      Terabits,
+      Percent,
+      Count,
+      `Bytes/Second`,
+      `Kilobytes/Second`,
+      `Megabytes/Second`,
+      `Gigabytes/Second`,
+      `Terabytes/Second`,
+      `Bits/Second`,
+      `Kilobits/Second`,
+      `Megabits/Second`,
+      `Gigabits/Second`,
+      `Terabits/Second`,
+      `Count/Second`,
+      None
+    )
   }
 
-  /**
-    * Describes resource being monitored by an alarm.
-    *  An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+  /** Describes resource being monitored by an alarm.
+    * An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
     */
   @js.native
   trait MonitoredResourceInfo extends js.Object {
@@ -7013,8 +6896,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
+  /** Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).
     */
   @js.native
   trait MonthlyTransfer extends js.Object {
@@ -7059,7 +6941,6 @@ package lightsail {
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "portInfo" -> portInfo.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OpenInstancePublicPortsRequest]
     }
   }
@@ -7080,8 +6961,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the API operation.
+  /** Describes the API operation.
     */
   @js.native
   trait Operation extends js.Object {
@@ -7212,78 +7092,76 @@ package lightsail {
     val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
     val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
 
-    @inline def values =
-      js.Array(
-        DeleteKnownHostKeys,
-        DeleteInstance,
-        CreateInstance,
-        StopInstance,
-        StartInstance,
-        RebootInstance,
-        OpenInstancePublicPorts,
-        PutInstancePublicPorts,
-        CloseInstancePublicPorts,
-        AllocateStaticIp,
-        ReleaseStaticIp,
-        AttachStaticIp,
-        DetachStaticIp,
-        UpdateDomainEntry,
-        DeleteDomainEntry,
-        CreateDomain,
-        DeleteDomain,
-        CreateInstanceSnapshot,
-        DeleteInstanceSnapshot,
-        CreateInstancesFromSnapshot,
-        CreateLoadBalancer,
-        DeleteLoadBalancer,
-        AttachInstancesToLoadBalancer,
-        DetachInstancesFromLoadBalancer,
-        UpdateLoadBalancerAttribute,
-        CreateLoadBalancerTlsCertificate,
-        DeleteLoadBalancerTlsCertificate,
-        AttachLoadBalancerTlsCertificate,
-        CreateDisk,
-        DeleteDisk,
-        AttachDisk,
-        DetachDisk,
-        CreateDiskSnapshot,
-        DeleteDiskSnapshot,
-        CreateDiskFromSnapshot,
-        CreateRelationalDatabase,
-        UpdateRelationalDatabase,
-        DeleteRelationalDatabase,
-        CreateRelationalDatabaseFromSnapshot,
-        CreateRelationalDatabaseSnapshot,
-        DeleteRelationalDatabaseSnapshot,
-        UpdateRelationalDatabaseParameters,
-        StartRelationalDatabase,
-        RebootRelationalDatabase,
-        StopRelationalDatabase,
-        EnableAddOn,
-        DisableAddOn,
-        PutAlarm,
-        GetAlarms,
-        DeleteAlarm,
-        TestAlarm,
-        CreateContactMethod,
-        GetContactMethods,
-        SendContactMethodVerification,
-        DeleteContactMethod,
-        CreateDistribution,
-        UpdateDistribution,
-        DeleteDistribution,
-        ResetDistributionCache,
-        AttachCertificateToDistribution,
-        DetachCertificateFromDistribution,
-        UpdateDistributionBundle,
-        CreateCertificate,
-        DeleteCertificate
-      )
+    @inline def values = js.Array(
+      DeleteKnownHostKeys,
+      DeleteInstance,
+      CreateInstance,
+      StopInstance,
+      StartInstance,
+      RebootInstance,
+      OpenInstancePublicPorts,
+      PutInstancePublicPorts,
+      CloseInstancePublicPorts,
+      AllocateStaticIp,
+      ReleaseStaticIp,
+      AttachStaticIp,
+      DetachStaticIp,
+      UpdateDomainEntry,
+      DeleteDomainEntry,
+      CreateDomain,
+      DeleteDomain,
+      CreateInstanceSnapshot,
+      DeleteInstanceSnapshot,
+      CreateInstancesFromSnapshot,
+      CreateLoadBalancer,
+      DeleteLoadBalancer,
+      AttachInstancesToLoadBalancer,
+      DetachInstancesFromLoadBalancer,
+      UpdateLoadBalancerAttribute,
+      CreateLoadBalancerTlsCertificate,
+      DeleteLoadBalancerTlsCertificate,
+      AttachLoadBalancerTlsCertificate,
+      CreateDisk,
+      DeleteDisk,
+      AttachDisk,
+      DetachDisk,
+      CreateDiskSnapshot,
+      DeleteDiskSnapshot,
+      CreateDiskFromSnapshot,
+      CreateRelationalDatabase,
+      UpdateRelationalDatabase,
+      DeleteRelationalDatabase,
+      CreateRelationalDatabaseFromSnapshot,
+      CreateRelationalDatabaseSnapshot,
+      DeleteRelationalDatabaseSnapshot,
+      UpdateRelationalDatabaseParameters,
+      StartRelationalDatabase,
+      RebootRelationalDatabase,
+      StopRelationalDatabase,
+      EnableAddOn,
+      DisableAddOn,
+      PutAlarm,
+      GetAlarms,
+      DeleteAlarm,
+      TestAlarm,
+      CreateContactMethod,
+      GetContactMethods,
+      SendContactMethodVerification,
+      DeleteContactMethod,
+      CreateDistribution,
+      UpdateDistribution,
+      DeleteDistribution,
+      ResetDistributionCache,
+      AttachCertificateToDistribution,
+      DetachCertificateFromDistribution,
+      UpdateDistributionBundle,
+      CreateCertificate,
+      DeleteCertificate
+    )
   }
 
-  /**
-    * Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
-    *  An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+  /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
+    * An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
     */
   @js.native
   trait Origin extends js.Object {
@@ -7319,8 +7197,7 @@ package lightsail {
     @inline def values = js.Array(`http-only`, `https-only`)
   }
 
-  /**
-    * The password data for the Windows Server-based instance, including the ciphertext and the key pair name.
+  /** The password data for the Windows Server-based instance, including the ciphertext and the key pair name.
     */
   @js.native
   trait PasswordData extends js.Object {
@@ -7342,14 +7219,12 @@ package lightsail {
   }
 
   @js.native
-  trait PeerVpcRequest extends js.Object {}
+  trait PeerVpcRequest extends js.Object
 
   object PeerVpcRequest {
     @inline
-    def apply(
-    ): PeerVpcRequest = {
+    def apply(): PeerVpcRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PeerVpcRequest]
     }
   }
@@ -7370,8 +7245,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a pending database maintenance action.
+  /** Describes a pending database maintenance action.
     */
   @js.native
   trait PendingMaintenanceAction extends js.Object {
@@ -7395,8 +7269,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a pending database value modification.
+  /** Describes a pending database value modification.
     */
   @js.native
   trait PendingModifiedRelationalDatabaseValues extends js.Object {
@@ -7429,8 +7302,7 @@ package lightsail {
     @inline def values = js.Array(Public, Private)
   }
 
-  /**
-    * Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
+  /** Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.
     */
   @js.native
   trait PortInfo extends js.Object {
@@ -7560,7 +7432,6 @@ package lightsail {
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "portInfos" -> portInfos.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutInstancePublicPortsRequest]
     }
   }
@@ -7581,9 +7452,8 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.
-    *  For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.
+  /** Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.
+    * For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.
     */
   @js.native
   trait QueryStringObject extends js.Object {
@@ -7617,7 +7487,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootInstanceRequest]
     }
   }
@@ -7651,7 +7520,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RebootRelationalDatabaseRequest]
     }
   }
@@ -7682,8 +7550,7 @@ package lightsail {
     @inline def values = js.Array(Started, Succeeded, Failed)
   }
 
-  /**
-    * Describes the AWS Region.
+  /** Describes the AWS Region.
     */
   @js.native
   trait Region extends js.Object {
@@ -7734,27 +7601,25 @@ package lightsail {
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
     val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
-    @inline def values =
-      js.Array(
-        `us-east-1`,
-        `us-east-2`,
-        `us-west-1`,
-        `us-west-2`,
-        `eu-west-1`,
-        `eu-west-2`,
-        `eu-west-3`,
-        `eu-central-1`,
-        `ca-central-1`,
-        `ap-south-1`,
-        `ap-southeast-1`,
-        `ap-southeast-2`,
-        `ap-northeast-1`,
-        `ap-northeast-2`
-      )
+    @inline def values = js.Array(
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-central-1`,
+      `ca-central-1`,
+      `ap-south-1`,
+      `ap-southeast-1`,
+      `ap-southeast-2`,
+      `ap-northeast-1`,
+      `ap-northeast-2`
+    )
   }
 
-  /**
-    * Describes a database.
+  /** Describes a database.
     */
   @js.native
   trait RelationalDatabase extends js.Object {
@@ -7847,8 +7712,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a database image, or blueprint. A blueprint describes the major engine version of a database.
+  /** Describes a database image, or blueprint. A blueprint describes the major engine version of a database.
     */
   @js.native
   trait RelationalDatabaseBlueprint extends js.Object {
@@ -7881,8 +7745,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a database bundle. A bundle describes the performance specifications of the database.
+  /** Describes a database bundle. A bundle describes the performance specifications of the database.
     */
   @js.native
   trait RelationalDatabaseBundle extends js.Object {
@@ -7924,8 +7787,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes an endpoint for a database.
+  /** Describes an endpoint for a database.
     */
   @js.native
   trait RelationalDatabaseEndpoint extends js.Object {
@@ -7954,8 +7816,7 @@ package lightsail {
     @inline def values = js.Array(mysql)
   }
 
-  /**
-    * Describes an event for a database.
+  /** Describes an event for a database.
     */
   @js.native
   trait RelationalDatabaseEvent extends js.Object {
@@ -7982,8 +7843,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the hardware of a database.
+  /** Describes the hardware of a database.
     */
   @js.native
   trait RelationalDatabaseHardware extends js.Object {
@@ -8020,8 +7880,7 @@ package lightsail {
     @inline def values = js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput)
   }
 
-  /**
-    * Describes the parameters of a database.
+  /** Describes the parameters of a database.
     */
   @js.native
   trait RelationalDatabaseParameter extends js.Object {
@@ -8070,8 +7929,7 @@ package lightsail {
     @inline def values = js.Array(CURRENT, PREVIOUS, PENDING)
   }
 
-  /**
-    * Describes a database snapshot.
+  /** Describes a database snapshot.
     */
   @js.native
   trait RelationalDatabaseSnapshot extends js.Object {
@@ -8144,7 +8002,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ReleaseStaticIpRequest]
     }
   }
@@ -8176,8 +8033,7 @@ package lightsail {
     @inline def values = js.Array(PendingAutoRenewal, PendingValidation, Success, Failed)
   }
 
-  /**
-    * Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.
+  /** Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.
     */
   @js.native
   trait RenewalSummary extends js.Object {
@@ -8242,8 +8098,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the resource location.
+  /** Describes the resource location.
     */
   @js.native
   trait ResourceLocation extends js.Object {
@@ -8264,8 +8119,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the domain name system (DNS) records to add to your domain's DNS to validate it for an Amazon Lightsail certificate.
+  /** Describes the domain name system (DNS) records to add to your domain's DNS to validate it for an Amazon Lightsail certificate.
     */
   @js.native
   trait ResourceRecord extends js.Object {
@@ -8311,27 +8165,26 @@ package lightsail {
     val Distribution = "Distribution".asInstanceOf[ResourceType]
     val Certificate = "Certificate".asInstanceOf[ResourceType]
 
-    @inline def values =
-      js.Array(
-        Instance,
-        StaticIp,
-        KeyPair,
-        InstanceSnapshot,
-        Domain,
-        PeeredVpc,
-        LoadBalancer,
-        LoadBalancerTlsCertificate,
-        Disk,
-        DiskSnapshot,
-        RelationalDatabase,
-        RelationalDatabaseSnapshot,
-        ExportSnapshotRecord,
-        CloudFormationStackRecord,
-        Alarm,
-        ContactMethod,
-        Distribution,
-        Certificate
-      )
+    @inline def values = js.Array(
+      Instance,
+      StaticIp,
+      KeyPair,
+      InstanceSnapshot,
+      Domain,
+      PeeredVpc,
+      LoadBalancer,
+      LoadBalancerTlsCertificate,
+      Disk,
+      DiskSnapshot,
+      RelationalDatabase,
+      RelationalDatabaseSnapshot,
+      ExportSnapshotRecord,
+      CloudFormationStackRecord,
+      Alarm,
+      ContactMethod,
+      Distribution,
+      Certificate
+    )
   }
 
   @js.native
@@ -8347,7 +8200,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "protocol" -> protocol.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SendContactMethodVerificationRequest]
     }
   }
@@ -8381,7 +8233,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartInstanceRequest]
     }
   }
@@ -8415,7 +8266,6 @@ package lightsail {
       val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartRelationalDatabaseRequest]
     }
   }
@@ -8436,8 +8286,7 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes the static IP.
+  /** Describes the static IP.
     */
   @js.native
   trait StaticIp extends js.Object {
@@ -8553,9 +8402,8 @@ package lightsail {
     }
   }
 
-  /**
-    * Describes a tag key and optional value assigned to an Amazon Lightsail resource.
-    *  For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
+  /** Describes a tag key and optional value assigned to an Amazon Lightsail resource.
+    * For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -8632,7 +8480,6 @@ package lightsail {
         "alarmName" -> alarmName.asInstanceOf[js.Any],
         "state" -> state.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TestAlarmRequest]
     }
   }
@@ -8665,14 +8512,12 @@ package lightsail {
   }
 
   @js.native
-  trait UnpeerVpcRequest extends js.Object {}
+  trait UnpeerVpcRequest extends js.Object
 
   object UnpeerVpcRequest {
     @inline
-    def apply(
-    ): UnpeerVpcRequest = {
+    def apply(): UnpeerVpcRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UnpeerVpcRequest]
     }
   }
@@ -8833,7 +8678,6 @@ package lightsail {
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateDomainEntryRequest]
     }
   }
@@ -8873,7 +8717,6 @@ package lightsail {
         "attributeValue" -> attributeValue.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateLoadBalancerAttributeRequest]
     }
   }
@@ -8910,7 +8753,6 @@ package lightsail {
         "parameters" -> parameters.asInstanceOf[js.Any],
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateRelationalDatabaseParametersRequest]
     }
   }

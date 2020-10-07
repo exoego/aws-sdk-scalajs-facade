@@ -109,8 +109,7 @@ package s3control {
     def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult] = js.native
   }
 
-  /**
-    * An access point used to access a bucket.
+  /** An access point used to access a bucket.
     */
   @js.native
   trait AccessPoint extends js.Object {
@@ -246,7 +245,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAccessPointPolicyRequest]
     }
   }
@@ -267,7 +265,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAccessPointRequest]
     }
   }
@@ -288,20 +285,17 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJobTaggingRequest]
     }
   }
 
   @js.native
-  trait DeleteJobTaggingResult extends js.Object {}
+  trait DeleteJobTaggingResult extends js.Object
 
   object DeleteJobTaggingResult {
     @inline
-    def apply(
-    ): DeleteJobTaggingResult = {
+    def apply(): DeleteJobTaggingResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteJobTaggingResult]
     }
   }
@@ -319,7 +313,6 @@ package s3control {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeletePublicAccessBlockRequest]
     }
   }
@@ -340,7 +333,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJobRequest]
     }
   }
@@ -377,7 +369,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccessPointPolicyRequest]
     }
   }
@@ -414,7 +405,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccessPointPolicyStatusRequest]
     }
   }
@@ -451,7 +441,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAccessPointRequest]
     }
   }
@@ -503,7 +492,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobTaggingRequest]
     }
   }
@@ -553,13 +541,11 @@ package s3control {
       val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetPublicAccessBlockRequest]
     }
   }
 
-  /**
-    * A container element for the job configuration and status information returned by a <code>Describe Job</code> request.
+  /** A container element for the job configuration and status information returned by a <code>Describe Job</code> request.
     */
   @js.native
   trait JobDescriptor extends js.Object {
@@ -625,8 +611,7 @@ package s3control {
     }
   }
 
-  /**
-    * If this job failed, this element indicates why the job failed.
+  /** If this job failed, this element indicates why the job failed.
     */
   @js.native
   trait JobFailure extends js.Object {
@@ -647,8 +632,7 @@ package s3control {
     }
   }
 
-  /**
-    * Contains the configuration and status information for a single job retrieved as part of a job list.
+  /** Contains the configuration and status information for a single job retrieved as part of a job list.
     */
   @js.native
   trait JobListDescriptor extends js.Object {
@@ -687,8 +671,7 @@ package s3control {
     }
   }
 
-  /**
-    * Contains the configuration information for a job's manifest.
+  /** Contains the configuration information for a job's manifest.
     */
   @js.native
   trait JobManifest extends js.Object {
@@ -706,7 +689,6 @@ package s3control {
         "Location" -> Location.asInstanceOf[js.Any],
         "Spec" -> Spec.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[JobManifest]
     }
   }
@@ -731,8 +713,7 @@ package s3control {
     @inline def values = js.Array(S3BatchOperations_CSV_20180820, S3InventoryReport_CSV_20161130)
   }
 
-  /**
-    * Contains the information required to locate a manifest object.
+  /** Contains the information required to locate a manifest object.
     */
   @js.native
   trait JobManifestLocation extends js.Object {
@@ -758,8 +739,7 @@ package s3control {
     }
   }
 
-  /**
-    * Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.
+  /** Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.
     */
   @js.native
   trait JobManifestSpec extends js.Object {
@@ -782,8 +762,7 @@ package s3control {
     }
   }
 
-  /**
-    * The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Available Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Available Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait JobOperation extends js.Object {
@@ -819,8 +798,7 @@ package s3control {
     }
   }
 
-  /**
-    * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed.
+  /** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed.
     */
   @js.native
   trait JobProgressSummary extends js.Object {
@@ -844,8 +822,7 @@ package s3control {
     }
   }
 
-  /**
-    * Contains the configuration parameters for a job-completion report.
+  /** Contains the configuration parameters for a job-completion report.
     */
   @js.native
   trait JobReport extends js.Object {
@@ -914,8 +891,7 @@ package s3control {
     @inline def values = js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended)
   }
 
-  /**
-    * Contains the configuration parameters for a <code>Lambda Invoke</code> operation.
+  /** Contains the configuration parameters for a <code>Lambda Invoke</code> operation.
     */
   @js.native
   trait LambdaInvokeOperation extends js.Object {
@@ -1048,8 +1024,7 @@ package s3control {
     @inline def values = js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention)
   }
 
-  /**
-    * Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait PolicyStatus extends js.Object {
@@ -1067,8 +1042,7 @@ package s3control {
     }
   }
 
-  /**
-    * The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the Amazon Simple Storage Service Developer Guide.
+  /** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the Amazon Simple Storage Service Developer Guide.
     */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
@@ -1114,7 +1088,6 @@ package s3control {
         "Name" -> Name.asInstanceOf[js.Any],
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutAccessPointPolicyRequest]
     }
   }
@@ -1138,20 +1111,17 @@ package s3control {
         "JobId" -> JobId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutJobTaggingRequest]
     }
   }
 
   @js.native
-  trait PutJobTaggingResult extends js.Object {}
+  trait PutJobTaggingResult extends js.Object
 
   object PutJobTaggingResult {
     @inline
-    def apply(
-    ): PutJobTaggingResult = {
+    def apply(): PutJobTaggingResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutJobTaggingResult]
     }
   }
@@ -1172,7 +1142,6 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutPublicAccessBlockRequest]
     }
   }
@@ -1186,8 +1155,7 @@ package s3control {
     @inline def values = js.Array(Cancelled, Ready)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3AccessControlList extends js.Object {
@@ -1210,8 +1178,7 @@ package s3control {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3AccessControlPolicy extends js.Object {
@@ -1246,8 +1213,7 @@ package s3control {
     @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
   }
 
-  /**
-    * Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
+  /** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
     */
   @js.native
   trait S3CopyObjectOperation extends js.Object {
@@ -1319,8 +1285,7 @@ package s3control {
     @inline def values = js.Array(BULK, STANDARD)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3Grant extends js.Object {
@@ -1341,8 +1306,7 @@ package s3control {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3Grantee extends js.Object {
@@ -1376,8 +1340,7 @@ package s3control {
     @inline def values = js.Array(id, emailAddress, uri)
   }
 
-  /**
-    * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|Restoring Archives]].
+  /** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|Restoring Archives]].
     */
   @js.native
   trait S3InitiateRestoreObjectOperation extends js.Object {
@@ -1407,8 +1370,7 @@ package s3control {
     @inline def values = js.Array(COPY, REPLACE)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3ObjectLockLegalHold extends js.Object {
@@ -1423,7 +1385,6 @@ package s3control {
       val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3ObjectLockLegalHold]
     }
   }
@@ -1455,8 +1416,7 @@ package s3control {
     @inline def values = js.Array(COMPLIANCE, GOVERNANCE)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3ObjectMetadata extends js.Object {
@@ -1504,8 +1464,7 @@ package s3control {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3ObjectOwner extends js.Object {
@@ -1538,8 +1497,7 @@ package s3control {
     @inline def values = js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3Retention extends js.Object {
@@ -1569,8 +1527,7 @@ package s3control {
     @inline def values = js.Array(AES256, KMS)
   }
 
-  /**
-    * Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
+  /** Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
     */
   @js.native
   trait S3SetObjectAclOperation extends js.Object {
@@ -1588,8 +1545,7 @@ package s3control {
     }
   }
 
-  /**
-    * Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds|PUT Object Legal Hold]].
+  /** Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds|PUT Object Legal Hold]].
     */
   @js.native
   trait S3SetObjectLegalHoldOperation extends js.Object {
@@ -1604,13 +1560,11 @@ package s3control {
       val __obj = js.Dynamic.literal(
         "LegalHold" -> LegalHold.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3SetObjectLegalHoldOperation]
     }
   }
 
-  /**
-    * Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes|PUT Object Retention]].
+  /** Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes|PUT Object Retention]].
     */
   @js.native
   trait S3SetObjectRetentionOperation extends js.Object {
@@ -1633,8 +1587,7 @@ package s3control {
     }
   }
 
-  /**
-    * Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
+  /** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
     */
   @js.native
   trait S3SetObjectTaggingOperation extends js.Object {
@@ -1665,8 +1618,7 @@ package s3control {
     @inline def values = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE)
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait S3Tag extends js.Object {
@@ -1684,7 +1636,6 @@ package s3control {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[S3Tag]
     }
   }
@@ -1708,7 +1659,6 @@ package s3control {
         "JobId" -> JobId.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJobPriorityRequest]
     }
   }
@@ -1729,7 +1679,6 @@ package s3control {
         "JobId" -> JobId.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateJobPriorityResult]
     }
   }
@@ -1783,8 +1732,7 @@ package s3control {
     }
   }
 
-  /**
-    * The virtual private cloud (VPC) configuration for an access point.
+  /** The virtual private cloud (VPC) configuration for an access point.
     */
   @js.native
   trait VpcConfiguration extends js.Object {
@@ -1799,7 +1747,6 @@ package s3control {
       val __obj = js.Dynamic.literal(
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[VpcConfiguration]
     }
   }

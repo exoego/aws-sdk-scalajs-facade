@@ -67,8 +67,7 @@ package autoscalingplans {
     def updateScalingPlan(params: UpdateScalingPlanRequest): Request[UpdateScalingPlanResponse] = js.native
   }
 
-  /**
-    * Represents an application source.
+  /** Represents an application source.
     */
   @js.native
   trait ApplicationSource extends js.Object {
@@ -108,7 +107,6 @@ package autoscalingplans {
         "ScalingInstructions" -> ScalingInstructions.asInstanceOf[js.Any],
         "ScalingPlanName" -> ScalingPlanName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateScalingPlanRequest]
     }
   }
@@ -126,16 +124,14 @@ package autoscalingplans {
       val __obj = js.Dynamic.literal(
         "ScalingPlanVersion" -> ScalingPlanVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateScalingPlanResponse]
     }
   }
 
-  /**
-    * Represents a CloudWatch metric of your choosing that can be used for predictive scaling.
-    *  For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.
-    *  When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.
-    *  For information about terminology, available metrics, or how to publish new metrics, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]] in the <i>Amazon CloudWatch User Guide</i>.
+  /** Represents a CloudWatch metric of your choosing that can be used for predictive scaling.
+    * For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.
+    * When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.
+    * For information about terminology, available metrics, or how to publish new metrics, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]] in the <i>Amazon CloudWatch User Guide</i>.
     */
   @js.native
   trait CustomizedLoadMetricSpecification extends js.Object {
@@ -167,11 +163,10 @@ package autoscalingplans {
     }
   }
 
-  /**
-    * Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy.
-    *  To create your customized scaling metric specification:
+  /** Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy.
+    * To create your customized scaling metric specification:
     * * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
-    *  * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.
+    * * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.
     * For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
     */
   @js.native
@@ -204,8 +199,7 @@ package autoscalingplans {
     }
   }
 
-  /**
-    * Represents a single value in the forecast data used for predictive scaling.
+  /** Represents a single value in the forecast data used for predictive scaling.
     */
   @js.native
   trait Datapoint extends js.Object {
@@ -242,20 +236,17 @@ package autoscalingplans {
         "ScalingPlanName" -> ScalingPlanName.asInstanceOf[js.Any],
         "ScalingPlanVersion" -> ScalingPlanVersion.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteScalingPlanRequest]
     }
   }
 
   @js.native
-  trait DeleteScalingPlanResponse extends js.Object {}
+  trait DeleteScalingPlanResponse extends js.Object
 
   object DeleteScalingPlanResponse {
     @inline
-    def apply(
-    ): DeleteScalingPlanResponse = {
+    def apply(): DeleteScalingPlanResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteScalingPlanResponse]
     }
   }
@@ -398,7 +389,6 @@ package autoscalingplans {
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetScalingPlanResourceForecastDataRequest]
     }
   }
@@ -416,7 +406,6 @@ package autoscalingplans {
       val __obj = js.Dynamic.literal(
         "Datapoints" -> Datapoints.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetScalingPlanResourceForecastDataResponse]
     }
   }
@@ -432,8 +421,7 @@ package autoscalingplans {
     @inline def values = js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
   }
 
-  /**
-    * Represents a dimension for a customized metric.
+  /** Represents a dimension for a customized metric.
     */
   @js.native
   trait MetricDimension extends js.Object {
@@ -451,7 +439,6 @@ package autoscalingplans {
         "Name" -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[MetricDimension]
     }
   }
@@ -476,8 +463,7 @@ package autoscalingplans {
     @inline def values = js.Array(TargetTrackingScaling)
   }
 
-  /**
-    * Represents a predefined metric that can be used for predictive scaling.
+  /** Represents a predefined metric that can be used for predictive scaling.
     */
   @js.native
   trait PredefinedLoadMetricSpecification extends js.Object {
@@ -500,8 +486,7 @@ package autoscalingplans {
     }
   }
 
-  /**
-    * Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy.
+  /** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy.
     */
   @js.native
   trait PredefinedScalingMetricSpecification extends js.Object {
@@ -555,26 +540,24 @@ package autoscalingplans {
     val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-    @inline def values =
-      js.Array(
-        `autoscaling:autoScalingGroup:DesiredCapacity`,
-        `ecs:service:DesiredCount`,
-        `ec2:spot-fleet-request:TargetCapacity`,
-        `rds:cluster:ReadReplicaCount`,
-        `dynamodb:table:ReadCapacityUnits`,
-        `dynamodb:table:WriteCapacityUnits`,
-        `dynamodb:index:ReadCapacityUnits`,
-        `dynamodb:index:WriteCapacityUnits`
-      )
+    @inline def values = js.Array(
+      `autoscaling:autoScalingGroup:DesiredCapacity`,
+      `ecs:service:DesiredCount`,
+      `ec2:spot-fleet-request:TargetCapacity`,
+      `rds:cluster:ReadReplicaCount`,
+      `dynamodb:table:ReadCapacityUnits`,
+      `dynamodb:table:WriteCapacityUnits`,
+      `dynamodb:index:ReadCapacityUnits`,
+      `dynamodb:index:WriteCapacityUnits`
+    )
   }
 
-  /**
-    * Describes a scaling instruction for a scalable resource.
-    *  The scaling instruction is used in combination with a scaling plan, which is a set of instructions for configuring dynamic scaling and predictive scaling for the scalable resources in your application. Each scaling instruction applies to one resource.
-    *  AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified.
-    *  AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast.
-    *  We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast.
-    *  For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html|Getting Started with AWS Auto Scaling]].
+  /** Describes a scaling instruction for a scalable resource.
+    * The scaling instruction is used in combination with a scaling plan, which is a set of instructions for configuring dynamic scaling and predictive scaling for the scalable resources in your application. Each scaling instruction applies to one resource.
+    * AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified.
+    * AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast.
+    * We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast.
+    * For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html|Getting Started with AWS Auto Scaling]].
     */
   @js.native
   trait ScalingInstruction extends js.Object {
@@ -650,26 +633,24 @@ package autoscalingplans {
     val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
     val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
 
-    @inline def values =
-      js.Array(
-        ASGAverageCPUUtilization,
-        ASGAverageNetworkIn,
-        ASGAverageNetworkOut,
-        DynamoDBReadCapacityUtilization,
-        DynamoDBWriteCapacityUtilization,
-        ECSServiceAverageCPUUtilization,
-        ECSServiceAverageMemoryUtilization,
-        ALBRequestCountPerTarget,
-        RDSReaderAverageCPUUtilization,
-        RDSReaderAverageDatabaseConnections,
-        EC2SpotFleetRequestAverageCPUUtilization,
-        EC2SpotFleetRequestAverageNetworkIn,
-        EC2SpotFleetRequestAverageNetworkOut
-      )
+    @inline def values = js.Array(
+      ASGAverageCPUUtilization,
+      ASGAverageNetworkIn,
+      ASGAverageNetworkOut,
+      DynamoDBReadCapacityUtilization,
+      DynamoDBWriteCapacityUtilization,
+      ECSServiceAverageCPUUtilization,
+      ECSServiceAverageMemoryUtilization,
+      ALBRequestCountPerTarget,
+      RDSReaderAverageCPUUtilization,
+      RDSReaderAverageDatabaseConnections,
+      EC2SpotFleetRequestAverageCPUUtilization,
+      EC2SpotFleetRequestAverageNetworkIn,
+      EC2SpotFleetRequestAverageNetworkOut
+    )
   }
 
-  /**
-    * Represents a scaling plan.
+  /** Represents a scaling plan.
     */
   @js.native
   trait ScalingPlan extends js.Object {
@@ -710,8 +691,7 @@ package autoscalingplans {
     }
   }
 
-  /**
-    * Represents a scalable resource.
+  /** Represents a scalable resource.
     */
   @js.native
   trait ScalingPlanResource extends js.Object {
@@ -767,8 +747,7 @@ package autoscalingplans {
     @inline def values = js.Array(Active, ActiveWithProblems, CreationInProgress, CreationFailed, DeletionInProgress, DeletionFailed, UpdateInProgress, UpdateFailed)
   }
 
-  /**
-    * Represents a scaling policy.
+  /** Represents a scaling policy.
     */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -825,8 +804,7 @@ package autoscalingplans {
     @inline def values = js.Array(autoscaling, ecs, ec2, rds, dynamodb)
   }
 
-  /**
-    * Represents a tag.
+  /** Represents a tag.
     */
   @js.native
   trait TagFilter extends js.Object {
@@ -847,8 +825,7 @@ package autoscalingplans {
     }
   }
 
-  /**
-    * Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.
+  /** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.
     */
   @js.native
   trait TargetTrackingConfiguration extends js.Object {
@@ -914,14 +891,12 @@ package autoscalingplans {
   }
 
   @js.native
-  trait UpdateScalingPlanResponse extends js.Object {}
+  trait UpdateScalingPlanResponse extends js.Object
 
   object UpdateScalingPlanResponse {
     @inline
-    def apply(
-    ): UpdateScalingPlanResponse = {
+    def apply(): UpdateScalingPlanResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateScalingPlanResponse]
     }
   }

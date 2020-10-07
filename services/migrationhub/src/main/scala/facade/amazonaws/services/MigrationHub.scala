@@ -82,8 +82,7 @@ package migrationhub {
     def putResourceAttributes(params: PutResourceAttributesRequest): Request[PutResourceAttributesResult] = js.native
   }
 
-  /**
-    * The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.
+  /** The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.
     */
   @js.native
   trait ApplicationState extends js.Object {
@@ -145,14 +144,12 @@ package migrationhub {
   }
 
   @js.native
-  trait AssociateCreatedArtifactResult extends js.Object {}
+  trait AssociateCreatedArtifactResult extends js.Object
 
   object AssociateCreatedArtifactResult {
     @inline
-    def apply(
-    ): AssociateCreatedArtifactResult = {
+    def apply(): AssociateCreatedArtifactResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateCreatedArtifactResult]
     }
   }
@@ -185,14 +182,12 @@ package migrationhub {
   }
 
   @js.native
-  trait AssociateDiscoveredResourceResult extends js.Object {}
+  trait AssociateDiscoveredResourceResult extends js.Object
 
   object AssociateDiscoveredResourceResult {
     @inline
-    def apply(
-    ): AssociateDiscoveredResourceResult = {
+    def apply(): AssociateDiscoveredResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AssociateDiscoveredResourceResult]
     }
   }
@@ -219,20 +214,17 @@ package migrationhub {
   }
 
   @js.native
-  trait CreateProgressUpdateStreamResult extends js.Object {}
+  trait CreateProgressUpdateStreamResult extends js.Object
 
   object CreateProgressUpdateStreamResult {
     @inline
-    def apply(
-    ): CreateProgressUpdateStreamResult = {
+    def apply(): CreateProgressUpdateStreamResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CreateProgressUpdateStreamResult]
     }
   }
 
-  /**
-    * An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
+  /** An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).
     */
   @js.native
   trait CreatedArtifact extends js.Object {
@@ -277,14 +269,12 @@ package migrationhub {
   }
 
   @js.native
-  trait DeleteProgressUpdateStreamResult extends js.Object {}
+  trait DeleteProgressUpdateStreamResult extends js.Object
 
   object DeleteProgressUpdateStreamResult {
     @inline
-    def apply(
-    ): DeleteProgressUpdateStreamResult = {
+    def apply(): DeleteProgressUpdateStreamResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteProgressUpdateStreamResult]
     }
   }
@@ -302,7 +292,6 @@ package migrationhub {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeApplicationStateRequest]
     }
   }
@@ -342,7 +331,6 @@ package migrationhub {
         "MigrationTaskName" -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMigrationTaskRequest]
     }
   }
@@ -391,14 +379,12 @@ package migrationhub {
   }
 
   @js.native
-  trait DisassociateCreatedArtifactResult extends js.Object {}
+  trait DisassociateCreatedArtifactResult extends js.Object
 
   object DisassociateCreatedArtifactResult {
     @inline
-    def apply(
-    ): DisassociateCreatedArtifactResult = {
+    def apply(): DisassociateCreatedArtifactResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateCreatedArtifactResult]
     }
   }
@@ -431,20 +417,17 @@ package migrationhub {
   }
 
   @js.native
-  trait DisassociateDiscoveredResourceResult extends js.Object {}
+  trait DisassociateDiscoveredResourceResult extends js.Object
 
   object DisassociateDiscoveredResourceResult {
     @inline
-    def apply(
-    ): DisassociateDiscoveredResourceResult = {
+    def apply(): DisassociateDiscoveredResourceResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DisassociateDiscoveredResourceResult]
     }
   }
 
-  /**
-    * Object representing the on-premises resource being migrated.
+  /** Object representing the on-premises resource being migrated.
     */
   @js.native
   trait DiscoveredResource extends js.Object {
@@ -492,14 +475,12 @@ package migrationhub {
   }
 
   @js.native
-  trait ImportMigrationTaskResult extends js.Object {}
+  trait ImportMigrationTaskResult extends js.Object
 
   object ImportMigrationTaskResult {
     @inline
-    def apply(
-    ): ImportMigrationTaskResult = {
+    def apply(): ImportMigrationTaskResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[ImportMigrationTaskResult]
     }
   }
@@ -716,8 +697,7 @@ package migrationhub {
     }
   }
 
-  /**
-    * Represents a migration task in a migration tool.
+  /** Represents a migration task in a migration tool.
     */
   @js.native
   trait MigrationTask extends js.Object {
@@ -747,8 +727,7 @@ package migrationhub {
     }
   }
 
-  /**
-    * MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
+  /** MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.
     */
   @js.native
   trait MigrationTaskSummary extends js.Object {
@@ -809,14 +788,12 @@ package migrationhub {
   }
 
   @js.native
-  trait NotifyApplicationStateResult extends js.Object {}
+  trait NotifyApplicationStateResult extends js.Object
 
   object NotifyApplicationStateResult {
     @inline
-    def apply(
-    ): NotifyApplicationStateResult = {
+    def apply(): NotifyApplicationStateResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[NotifyApplicationStateResult]
     }
   }
@@ -855,20 +832,17 @@ package migrationhub {
   }
 
   @js.native
-  trait NotifyMigrationTaskStateResult extends js.Object {}
+  trait NotifyMigrationTaskStateResult extends js.Object
 
   object NotifyMigrationTaskStateResult {
     @inline
-    def apply(
-    ): NotifyMigrationTaskStateResult = {
+    def apply(): NotifyMigrationTaskStateResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[NotifyMigrationTaskStateResult]
     }
   }
 
-  /**
-    * Summary of the AWS resource used for access control that is implicitly linked to your AWS account.
+  /** Summary of the AWS resource used for access control that is implicitly linked to your AWS account.
     */
   @js.native
   trait ProgressUpdateStreamSummary extends js.Object {
@@ -914,28 +888,25 @@ package migrationhub {
   }
 
   @js.native
-  trait PutResourceAttributesResult extends js.Object {}
+  trait PutResourceAttributesResult extends js.Object
 
   object PutResourceAttributesResult {
     @inline
-    def apply(
-    ): PutResourceAttributesResult = {
+    def apply(): PutResourceAttributesResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutResourceAttributesResult]
     }
   }
 
-  /**
-    * Attribute associated with a resource.
-    *  Note the corresponding format required per type listed below:
-    *  <dl> <dt>IPV4</dt> <dd> <code>x.x.x.x</code>
-    *  <i>where x is an integer in the range [0,255]</i>
-    *  </dd> <dt>IPV6</dt> <dd> <code>y : y : y : y : y : y : y : y</code>
-    *  <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i>
-    *  </dd> <dt>MAC_ADDRESS</dt> <dd> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})</code>
-    *  </dd> <dt>FQDN</dt> <dd> <code>^[^&lt;&gt;{}\\/?,=\p{Cntrl}]{1,256}</code>
-    *  </dd> </dl>
+  /** Attribute associated with a resource.
+    * Note the corresponding format required per type listed below:
+    * <dl> <dt>IPV4</dt> <dd> <code>x.x.x.x</code>
+    * <i>where x is an integer in the range [0,255]</i>
+    * </dd> <dt>IPV6</dt> <dd> <code>y : y : y : y : y : y : y : y</code>
+    * <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i>
+    * </dd> <dt>MAC_ADDRESS</dt> <dd> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})</code>
+    * </dd> <dt>FQDN</dt> <dd> <code>^[^&lt;&gt;{}\\/?,=\p{Cntrl}]{1,256}</code>
+    * </dd> </dl>
     */
   @js.native
   trait ResourceAttribute extends js.Object {
@@ -953,7 +924,6 @@ package migrationhub {
         "Type" -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceAttribute]
     }
   }
@@ -986,8 +956,7 @@ package migrationhub {
     @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED)
   }
 
-  /**
-    * Task object encapsulating task information.
+  /** Task object encapsulating task information.
     */
   @js.native
   trait Task extends js.Object {

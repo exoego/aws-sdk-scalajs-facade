@@ -81,8 +81,7 @@ package snowball {
     def updateJob(params: UpdateJobRequest): Request[UpdateJobResult] = js.native
   }
 
-  /**
-    * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
+  /** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
     */
   @js.native
   trait Address extends js.Object {
@@ -152,20 +151,17 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelClusterRequest]
     }
   }
 
   @js.native
-  trait CancelClusterResult extends js.Object {}
+  trait CancelClusterResult extends js.Object
 
   object CancelClusterResult {
     @inline
-    def apply(
-    ): CancelClusterResult = {
+    def apply(): CancelClusterResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelClusterResult]
     }
   }
@@ -183,26 +179,22 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
 
   @js.native
-  trait CancelJobResult extends js.Object {}
+  trait CancelJobResult extends js.Object
 
   object CancelJobResult {
     @inline
-    def apply(
-    ): CancelJobResult = {
+    def apply(): CancelJobResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelJobResult]
     }
   }
 
-  /**
-    * Contains a cluster's state, a cluster's ID, and other important information.
+  /** Contains a cluster's state, a cluster's ID, and other important information.
     */
   @js.native
   trait ClusterListEntry extends js.Object {
@@ -229,8 +221,7 @@ package snowball {
     }
   }
 
-  /**
-    * Contains metadata about a specific cluster.
+  /** Contains metadata about a specific cluster.
     */
   @js.native
   trait ClusterMetadata extends js.Object {
@@ -299,8 +290,7 @@ package snowball {
     @inline def values = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
   }
 
-  /**
-    * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
+  /** A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
     */
   @js.native
   trait CompatibleImage extends js.Object {
@@ -334,7 +324,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "Address" -> Address.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateAddressRequest]
     }
   }
@@ -490,8 +479,7 @@ package snowball {
     }
   }
 
-  /**
-    * Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
+  /** Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
     */
   @js.native
   trait DataTransfer extends js.Object {
@@ -531,7 +519,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "AddressId" -> AddressId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAddressRequest]
     }
   }
@@ -603,7 +590,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeClusterRequest]
     }
   }
@@ -637,7 +623,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJobRequest]
     }
   }
@@ -661,8 +646,7 @@ package snowball {
     }
   }
 
-  /**
-    * The container for <code>SnowconeDeviceConfiguration</code>.
+  /** The container for <code>SnowconeDeviceConfiguration</code>.
     */
   @js.native
   trait DeviceConfiguration extends js.Object {
@@ -680,8 +664,7 @@ package snowball {
     }
   }
 
-  /**
-    * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
+  /** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
     */
   @js.native
   trait Ec2AmiResource extends js.Object {
@@ -704,8 +687,7 @@ package snowball {
     }
   }
 
-  /**
-    * The container for the EventResourceARN.
+  /** The container for the EventResourceARN.
     */
   @js.native
   trait EventTriggerDefinition extends js.Object {
@@ -736,7 +718,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobManifestRequest]
     }
   }
@@ -770,7 +751,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetJobUnlockCodeRequest]
     }
   }
@@ -792,14 +772,12 @@ package snowball {
   }
 
   @js.native
-  trait GetSnowballUsageRequest extends js.Object {}
+  trait GetSnowballUsageRequest extends js.Object
 
   object GetSnowballUsageRequest {
     @inline
-    def apply(
-    ): GetSnowballUsageRequest = {
+    def apply(): GetSnowballUsageRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetSnowballUsageRequest]
     }
   }
@@ -836,7 +814,6 @@ package snowball {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSoftwareUpdatesRequest]
     }
   }
@@ -857,8 +834,7 @@ package snowball {
     }
   }
 
-  /**
-    * The tax documents required in AWS Regions in India.
+  /** The tax documents required in AWS Regions in India.
     */
   @js.native
   trait INDTaxDocuments extends js.Object {
@@ -876,8 +852,7 @@ package snowball {
     }
   }
 
-  /**
-    * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
+  /** Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.
     */
   @js.native
   trait JobListEntry extends js.Object {
@@ -913,11 +888,10 @@ package snowball {
     }
   }
 
-  /**
-    * Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.
-    *  For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.
-    *  The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.
-    *  For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.
+  /** Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.
+    * For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.
+    * The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.
+    * For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.
     */
   @js.native
   trait JobLogs extends js.Object {
@@ -941,8 +915,7 @@ package snowball {
     }
   }
 
-  /**
-    * Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
+  /** Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.
     */
   @js.native
   trait JobMetadata extends js.Object {
@@ -1014,8 +987,7 @@ package snowball {
     }
   }
 
-  /**
-    * Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
+  /** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
     */
   @js.native
   trait JobResource extends js.Object {
@@ -1056,22 +1028,21 @@ package snowball {
     val Listing = "Listing".asInstanceOf[JobState]
     val Pending = "Pending".asInstanceOf[JobState]
 
-    @inline def values =
-      js.Array(
-        New,
-        PreparingAppliance,
-        PreparingShipment,
-        InTransitToCustomer,
-        WithCustomer,
-        InTransitToAWS,
-        WithAWSSortingFacility,
-        WithAWS,
-        InProgress,
-        Complete,
-        Cancelled,
-        Listing,
-        Pending
-      )
+    @inline def values = js.Array(
+      New,
+      PreparingAppliance,
+      PreparingShipment,
+      InTransitToCustomer,
+      WithCustomer,
+      InTransitToAWS,
+      WithAWSSortingFacility,
+      WithAWS,
+      InProgress,
+      Complete,
+      Cancelled,
+      Listing,
+      Pending
+    )
   }
 
   @js.native
@@ -1084,8 +1055,7 @@ package snowball {
     @inline def values = js.Array(IMPORT, EXPORT, LOCAL_USE)
   }
 
-  /**
-    * Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+  /** Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
     */
   @js.native
   trait KeyRange extends js.Object {
@@ -1106,8 +1076,7 @@ package snowball {
     }
   }
 
-  /**
-    * Identifies
+  /** Identifies
     */
   @js.native
   trait LambdaResource extends js.Object {
@@ -1285,9 +1254,8 @@ package snowball {
     }
   }
 
-  /**
-    * The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.
-    *  When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.
+  /** The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.
+    * When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.
     */
   @js.native
   trait Notification extends js.Object {
@@ -1311,8 +1279,7 @@ package snowball {
     }
   }
 
-  /**
-    * Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
+  /** Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
     */
   @js.native
   trait S3Resource extends js.Object {
@@ -1333,8 +1300,7 @@ package snowball {
     }
   }
 
-  /**
-    * The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
+  /** The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.
     */
   @js.native
   trait Shipment extends js.Object {
@@ -1355,8 +1321,7 @@ package snowball {
     }
   }
 
-  /**
-    * A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
+  /** A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
     */
   @js.native
   trait ShippingDetails extends js.Object {
@@ -1418,8 +1383,7 @@ package snowball {
     @inline def values = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
   }
 
-  /**
-    * Specifies the device configuration for an AWS Snowcone job.
+  /** Specifies the device configuration for an AWS Snowcone job.
     */
   @js.native
   trait SnowconeDeviceConfiguration extends js.Object {
@@ -1437,8 +1401,7 @@ package snowball {
     }
   }
 
-  /**
-    * The tax documents required in your AWS Region.
+  /** The tax documents required in your AWS Region.
     */
   @js.native
   trait TaxDocuments extends js.Object {
@@ -1496,14 +1459,12 @@ package snowball {
   }
 
   @js.native
-  trait UpdateClusterResult extends js.Object {}
+  trait UpdateClusterResult extends js.Object
 
   object UpdateClusterResult {
     @inline
-    def apply(
-    ): UpdateClusterResult = {
+    def apply(): UpdateClusterResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateClusterResult]
     }
   }
@@ -1551,20 +1512,17 @@ package snowball {
   }
 
   @js.native
-  trait UpdateJobResult extends js.Object {}
+  trait UpdateJobResult extends js.Object
 
   object UpdateJobResult {
     @inline
-    def apply(
-    ): UpdateJobResult = {
+    def apply(): UpdateJobResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateJobResult]
     }
   }
 
-  /**
-    * Configures the wireless connection on an AWS Snowcone device.
+  /** Configures the wireless connection on an AWS Snowcone device.
     */
   @js.native
   trait WirelessConnection extends js.Object {

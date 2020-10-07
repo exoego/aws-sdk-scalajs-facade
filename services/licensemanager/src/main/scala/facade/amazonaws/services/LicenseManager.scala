@@ -77,8 +77,7 @@ package licensemanager {
     def updateServiceSettings(params: UpdateServiceSettingsRequest): Request[UpdateServiceSettingsResponse] = js.native
   }
 
-  /**
-    * Describes automated discovery.
+  /** Describes automated discovery.
     */
   @js.native
   trait AutomatedDiscoveryInformation extends js.Object {
@@ -96,8 +95,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * Details about license consumption.
+  /** Details about license consumption.
     */
   @js.native
   trait ConsumedLicenseSummary extends js.Object {
@@ -186,26 +184,22 @@ package licensemanager {
       val __obj = js.Dynamic.literal(
         "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLicenseConfigurationRequest]
     }
   }
 
   @js.native
-  trait DeleteLicenseConfigurationResponse extends js.Object {}
+  trait DeleteLicenseConfigurationResponse extends js.Object
 
   object DeleteLicenseConfigurationResponse {
     @inline
-    def apply(
-    ): DeleteLicenseConfigurationResponse = {
+    def apply(): DeleteLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteLicenseConfigurationResponse]
     }
   }
 
-  /**
-    * A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
+  /** A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
     */
   @js.native
   trait Filter extends js.Object {
@@ -239,7 +233,6 @@ package licensemanager {
       val __obj = js.Dynamic.literal(
         "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLicenseConfigurationRequest]
     }
   }
@@ -306,14 +299,12 @@ package licensemanager {
   }
 
   @js.native
-  trait GetServiceSettingsRequest extends js.Object {}
+  trait GetServiceSettingsRequest extends js.Object
 
   object GetServiceSettingsRequest {
     @inline
-    def apply(
-    ): GetServiceSettingsRequest = {
+    def apply(): GetServiceSettingsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetServiceSettingsRequest]
     }
   }
@@ -346,8 +337,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * An inventory filter.
+  /** An inventory filter.
     */
   @js.native
   trait InventoryFilter extends js.Object {
@@ -384,8 +374,7 @@ package licensemanager {
     @inline def values = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
   }
 
-  /**
-    * A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.
+  /** A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.
     */
   @js.native
   trait LicenseConfiguration extends js.Object {
@@ -445,8 +434,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * Describes an association with a license configuration.
+  /** Describes an association with a license configuration.
     */
   @js.native
   trait LicenseConfigurationAssociation extends js.Object {
@@ -482,8 +470,7 @@ package licensemanager {
     @inline def values = js.Array(AVAILABLE, DISABLED)
   }
 
-  /**
-    * Details about the usage of a resource associated with a license configuration.
+  /** Details about the usage of a resource associated with a license configuration.
     */
   @js.native
   trait LicenseConfigurationUsage extends js.Object {
@@ -527,8 +514,7 @@ package licensemanager {
     @inline def values = js.Array(vCPU, Instance, Core, Socket)
   }
 
-  /**
-    * Describes the failure of a license operation.
+  /** Describes the failure of a license operation.
     */
   @js.native
   trait LicenseOperationFailure extends js.Object {
@@ -567,8 +553,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * Details for associating a license configuration with a resource.
+  /** Details for associating a license configuration with a resource.
     */
   @js.native
   trait LicenseSpecification extends js.Object {
@@ -583,7 +568,6 @@ package licensemanager {
       val __obj = js.Dynamic.literal(
         "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[LicenseSpecification]
     }
   }
@@ -815,7 +799,6 @@ package licensemanager {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -882,8 +865,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * Summary information about a managed resource.
+  /** Summary information about a managed resource.
     */
   @js.native
   trait ManagedResourceSummary extends js.Object {
@@ -904,8 +886,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * Reserved.
+  /** Reserved.
     */
   @js.native
   trait Metadata extends js.Object {
@@ -926,8 +907,7 @@ package licensemanager {
     }
   }
 
-  /**
-    * Configuration information for AWS Organizations.
+  /** Configuration information for AWS Organizations.
     */
   @js.native
   trait OrganizationConfiguration extends js.Object {
@@ -942,13 +922,11 @@ package licensemanager {
       val __obj = js.Dynamic.literal(
         "EnableIntegration" -> EnableIntegration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OrganizationConfiguration]
     }
   }
 
-  /**
-    * Describes product information for a license configuration.
+  /** Describes product information for a license configuration.
     */
   @js.native
   trait ProductInformation extends js.Object {
@@ -966,13 +944,11 @@ package licensemanager {
         "ProductInformationFilterList" -> ProductInformationFilterList.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProductInformation]
     }
   }
 
-  /**
-    * Describes product information filters.
+  /** Describes product information filters.
     */
   @js.native
   trait ProductInformationFilter extends js.Object {
@@ -993,13 +969,11 @@ package licensemanager {
         "ProductInformationFilterName" -> ProductInformationFilterName.asInstanceOf[js.Any],
         "ProductInformationFilterValue" -> ProductInformationFilterValue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ProductInformationFilter]
     }
   }
 
-  /**
-    * Details about a resource.
+  /** Details about a resource.
     */
   @js.native
   trait ResourceInventory extends js.Object {
@@ -1044,8 +1018,7 @@ package licensemanager {
     @inline def values = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
   }
 
-  /**
-    * Details about a tag for a license configuration.
+  /** Details about a tag for a license configuration.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1082,20 +1055,17 @@ package licensemanager {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1116,20 +1086,17 @@ package licensemanager {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1174,14 +1141,12 @@ package licensemanager {
   }
 
   @js.native
-  trait UpdateLicenseConfigurationResponse extends js.Object {}
+  trait UpdateLicenseConfigurationResponse extends js.Object
 
   object UpdateLicenseConfigurationResponse {
     @inline
-    def apply(
-    ): UpdateLicenseConfigurationResponse = {
+    def apply(): UpdateLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateLicenseConfigurationResponse]
     }
   }
@@ -1211,14 +1176,12 @@ package licensemanager {
   }
 
   @js.native
-  trait UpdateLicenseSpecificationsForResourceResponse extends js.Object {}
+  trait UpdateLicenseSpecificationsForResourceResponse extends js.Object
 
   object UpdateLicenseSpecificationsForResourceResponse {
     @inline
-    def apply(
-    ): UpdateLicenseSpecificationsForResourceResponse = {
+    def apply(): UpdateLicenseSpecificationsForResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateLicenseSpecificationsForResourceResponse]
     }
   }
@@ -1249,14 +1212,12 @@ package licensemanager {
   }
 
   @js.native
-  trait UpdateServiceSettingsResponse extends js.Object {}
+  trait UpdateServiceSettingsResponse extends js.Object
 
   object UpdateServiceSettingsResponse {
     @inline
-    def apply(
-    ): UpdateServiceSettingsResponse = {
+    def apply(): UpdateServiceSettingsResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UpdateServiceSettingsResponse]
     }
   }

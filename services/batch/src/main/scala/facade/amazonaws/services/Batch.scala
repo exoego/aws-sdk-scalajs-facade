@@ -85,8 +85,7 @@ package batch {
     @inline def values = js.Array(N_TO_N, SEQUENTIAL)
   }
 
-  /**
-    * An object representing an AWS Batch array job.
+  /** An object representing an AWS Batch array job.
     */
   @js.native
   trait ArrayProperties extends js.Object {
@@ -104,8 +103,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the array properties of a job.
+  /** An object representing the array properties of a job.
     */
   @js.native
   trait ArrayPropertiesDetail extends js.Object {
@@ -129,8 +127,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the array properties of a job.
+  /** An object representing the array properties of a job.
     */
   @js.native
   trait ArrayPropertiesSummary extends js.Object {
@@ -151,8 +148,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the details of a container that is part of a job attempt.
+  /** An object representing the details of a container that is part of a job attempt.
     */
   @js.native
   trait AttemptContainerDetail extends js.Object {
@@ -185,8 +181,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing a job attempt.
+  /** An object representing a job attempt.
     */
   @js.native
   trait AttemptDetail extends js.Object {
@@ -279,26 +274,22 @@ package batch {
         "jobId" -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
 
   @js.native
-  trait CancelJobResponse extends js.Object {}
+  trait CancelJobResponse extends js.Object
 
   object CancelJobResponse {
     @inline
-    def apply(
-    ): CancelJobResponse = {
+    def apply(): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[CancelJobResponse]
     }
   }
 
-  /**
-    * An object representing an AWS Batch compute environment.
+  /** An object representing an AWS Batch compute environment.
     */
   @js.native
   trait ComputeEnvironmentDetail extends js.Object {
@@ -342,8 +333,7 @@ package batch {
     }
   }
 
-  /**
-    * The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
+  /** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
     */
   @js.native
   trait ComputeEnvironmentOrder extends js.Object {
@@ -361,13 +351,11 @@ package batch {
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
         "order" -> order.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ComputeEnvironmentOrder]
     }
   }
 
-  /**
-    * An object representing an AWS Batch compute resource.
+  /** An object representing an AWS Batch compute resource.
     */
   @js.native
   trait ComputeResource extends js.Object {
@@ -432,8 +420,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the attributes of a compute environment that can be updated.
+  /** An object representing the attributes of a compute environment that can be updated.
     */
   @js.native
   trait ComputeResourceUpdate extends js.Object {
@@ -457,8 +444,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the details of a container that is part of a job.
+  /** An object representing the details of a container that is part of a job.
     */
   @js.native
   trait ContainerDetail extends js.Object {
@@ -536,8 +522,7 @@ package batch {
     }
   }
 
-  /**
-    * The overrides that should be sent to a container.
+  /** The overrides that should be sent to a container.
     */
   @js.native
   trait ContainerOverrides extends js.Object {
@@ -570,8 +555,7 @@ package batch {
     }
   }
 
-  /**
-    * Container properties are used in job definitions to describe the container that is launched as part of a job.
+  /** Container properties are used in job definitions to describe the container that is launched as part of a job.
     */
   @js.native
   trait ContainerProperties extends js.Object {
@@ -631,8 +615,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing summary details of a container within a job.
+  /** An object representing summary details of a container within a job.
     */
   @js.native
   trait ContainerSummary extends js.Object {
@@ -745,7 +728,6 @@ package batch {
         "jobQueueArn" -> jobQueueArn.asInstanceOf[js.Any],
         "jobQueueName" -> jobQueueName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateJobQueueResponse]
     }
   }
@@ -763,20 +745,17 @@ package batch {
       val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteComputeEnvironmentRequest]
     }
   }
 
   @js.native
-  trait DeleteComputeEnvironmentResponse extends js.Object {}
+  trait DeleteComputeEnvironmentResponse extends js.Object
 
   object DeleteComputeEnvironmentResponse {
     @inline
-    def apply(
-    ): DeleteComputeEnvironmentResponse = {
+    def apply(): DeleteComputeEnvironmentResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteComputeEnvironmentResponse]
     }
   }
@@ -794,20 +773,17 @@ package batch {
       val __obj = js.Dynamic.literal(
         "jobQueue" -> jobQueue.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteJobQueueRequest]
     }
   }
 
   @js.native
-  trait DeleteJobQueueResponse extends js.Object {}
+  trait DeleteJobQueueResponse extends js.Object
 
   object DeleteJobQueueResponse {
     @inline
-    def apply(
-    ): DeleteJobQueueResponse = {
+    def apply(): DeleteJobQueueResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteJobQueueResponse]
     }
   }
@@ -825,20 +801,17 @@ package batch {
       val __obj = js.Dynamic.literal(
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeregisterJobDefinitionRequest]
     }
   }
 
   @js.native
-  trait DeregisterJobDefinitionResponse extends js.Object {}
+  trait DeregisterJobDefinitionResponse extends js.Object
 
   object DeregisterJobDefinitionResponse {
     @inline
-    def apply(
-    ): DeregisterJobDefinitionResponse = {
+    def apply(): DeregisterJobDefinitionResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeregisterJobDefinitionResponse]
     }
   }
@@ -985,7 +958,6 @@ package batch {
       val __obj = js.Dynamic.literal(
         "jobs" -> jobs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeJobsRequest]
     }
   }
@@ -1006,8 +978,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing a container instance host device.
+  /** An object representing a container instance host device.
     */
   @js.native
   trait Device extends js.Object {
@@ -1043,8 +1014,7 @@ package batch {
     @inline def values = js.Array(READ, WRITE, MKNOD)
   }
 
-  /**
-    * Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+  /** Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
     */
   @js.native
   trait Host extends js.Object {
@@ -1084,8 +1054,7 @@ package batch {
     @inline def values = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
   }
 
-  /**
-    * An object representing an AWS Batch job definition.
+  /** An object representing an AWS Batch job definition.
     */
   @js.native
   trait JobDefinition extends js.Object {
@@ -1141,8 +1110,7 @@ package batch {
     @inline def values = js.Array(container, multinode)
   }
 
-  /**
-    * An object representing an AWS Batch job dependency.
+  /** An object representing an AWS Batch job dependency.
     */
   @js.native
   trait JobDependency extends js.Object {
@@ -1163,8 +1131,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing an AWS Batch job.
+  /** An object representing an AWS Batch job.
     */
   @js.native
   trait JobDetail extends js.Object {
@@ -1235,8 +1202,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the details of an AWS Batch job queue.
+  /** An object representing the details of an AWS Batch job queue.
     */
   @js.native
   trait JobQueueDetail extends js.Object {
@@ -1288,8 +1254,7 @@ package batch {
     @inline def values = js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED)
   }
 
-  /**
-    * An object representing summary details of a job.
+  /** An object representing summary details of a job.
     */
   @js.native
   trait JobSummary extends js.Object {
@@ -1336,8 +1301,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing a job timeout configuration.
+  /** An object representing a job timeout configuration.
     */
   @js.native
   trait JobTimeout extends js.Object {
@@ -1355,8 +1319,7 @@ package batch {
     }
   }
 
-  /**
-    * A key-value pair object.
+  /** A key-value pair object.
     */
   @js.native
   trait KeyValuePair extends js.Object {
@@ -1377,8 +1340,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
+  /** An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1402,8 +1364,7 @@ package batch {
     }
   }
 
-  /**
-    * Linux-specific modifications that are applied to the container, such as details for device mappings.
+  /** Linux-specific modifications that are applied to the container, such as details for device mappings.
     */
   @js.native
   trait LinuxParameters extends js.Object {
@@ -1473,8 +1434,7 @@ package batch {
     }
   }
 
-  /**
-    * Details on a Docker volume mount point that is used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
+  /** Details on a Docker volume mount point that is used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
     */
   @js.native
   trait MountPoint extends js.Object {
@@ -1498,8 +1458,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the elastic network interface for a multi-node parallel job node.
+  /** An object representing the elastic network interface for a multi-node parallel job node.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -1523,8 +1482,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the details of a multi-node parallel job node.
+  /** An object representing the details of a multi-node parallel job node.
     */
   @js.native
   trait NodeDetails extends js.Object {
@@ -1545,8 +1503,7 @@ package batch {
     }
   }
 
-  /**
-    * Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
+  /** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
     */
   @js.native
   trait NodeOverrides extends js.Object {
@@ -1567,8 +1524,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the node properties of a multi-node parallel job.
+  /** An object representing the node properties of a multi-node parallel job.
     */
   @js.native
   trait NodeProperties extends js.Object {
@@ -1589,13 +1545,11 @@ package batch {
         "nodeRangeProperties" -> nodeRangeProperties.asInstanceOf[js.Any],
         "numNodes" -> numNodes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NodeProperties]
     }
   }
 
-  /**
-    * An object representing the properties of a node that is associated with a multi-node parallel job.
+  /** An object representing the properties of a node that is associated with a multi-node parallel job.
     */
   @js.native
   trait NodePropertiesSummary extends js.Object {
@@ -1619,8 +1573,7 @@ package batch {
     }
   }
 
-  /**
-    * Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
+  /** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
     */
   @js.native
   trait NodePropertyOverride extends js.Object {
@@ -1643,8 +1596,7 @@ package batch {
     }
   }
 
-  /**
-    * An object representing the properties of the node range for a multi-node parallel job.
+  /** An object representing the properties of the node range for a multi-node parallel job.
     */
   @js.native
   trait NodeRangeProperty extends js.Object {
@@ -1722,13 +1674,11 @@ package batch {
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
         "revision" -> revision.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RegisterJobDefinitionResponse]
     }
   }
 
-  /**
-    * The type and amount of a resource to assign to a container. Currently, the only supported resource type is <code>GPU</code>.
+  /** The type and amount of a resource to assign to a container. Currently, the only supported resource type is <code>GPU</code>.
     */
   @js.native
   trait ResourceRequirement extends js.Object {
@@ -1746,7 +1696,6 @@ package batch {
         "type" -> `type`.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResourceRequirement]
     }
   }
@@ -1759,8 +1708,7 @@ package batch {
     @inline def values = js.Array(GPU)
   }
 
-  /**
-    * The retry strategy associated with a job.
+  /** The retry strategy associated with a job.
     */
   @js.native
   trait RetryStrategy extends js.Object {
@@ -1839,7 +1787,6 @@ package batch {
         "jobId" -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SubmitJobResponse]
     }
   }
@@ -1860,26 +1807,22 @@ package batch {
         "jobId" -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminateJobRequest]
     }
   }
 
   @js.native
-  trait TerminateJobResponse extends js.Object {}
+  trait TerminateJobResponse extends js.Object
 
   object TerminateJobResponse {
     @inline
-    def apply(
-    ): TerminateJobResponse = {
+    def apply(): TerminateJobResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TerminateJobResponse]
     }
   }
 
-  /**
-    * The <code>ulimit</code> settings to pass to the container.
+  /** The <code>ulimit</code> settings to pass to the container.
     */
   @js.native
   trait Ulimit extends js.Object {
@@ -1900,7 +1843,6 @@ package batch {
         "name" -> name.asInstanceOf[js.Any],
         "softLimit" -> softLimit.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Ulimit]
     }
   }
@@ -1997,8 +1939,7 @@ package batch {
     }
   }
 
-  /**
-    * A data volume used in a job's container properties.
+  /** A data volume used in a job's container properties.
     */
   @js.native
   trait Volume extends js.Object {

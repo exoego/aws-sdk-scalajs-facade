@@ -90,8 +90,7 @@ package opsworkscm {
     def updateServerEngineAttributes(params: UpdateServerEngineAttributesRequest): Request[UpdateServerEngineAttributesResponse] = js.native
   }
 
-  /**
-    * Stores account attributes.
+  /** Stores account attributes.
     */
   @js.native
   trait AccountAttribute extends js.Object {
@@ -134,7 +133,6 @@ package opsworkscm {
         "NodeName" -> NodeName.asInstanceOf[js.Any],
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssociateNodeRequest]
     }
   }
@@ -155,8 +153,7 @@ package opsworkscm {
     }
   }
 
-  /**
-    * Describes a single backup.
+  /** Describes a single backup.
     */
   @js.native
   trait Backup extends js.Object {
@@ -410,20 +407,17 @@ package opsworkscm {
       val __obj = js.Dynamic.literal(
         "BackupId" -> BackupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBackupRequest]
     }
   }
 
   @js.native
-  trait DeleteBackupResponse extends js.Object {}
+  trait DeleteBackupResponse extends js.Object
 
   object DeleteBackupResponse {
     @inline
-    def apply(
-    ): DeleteBackupResponse = {
+    def apply(): DeleteBackupResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteBackupResponse]
     }
   }
@@ -441,33 +435,28 @@ package opsworkscm {
       val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteServerRequest]
     }
   }
 
   @js.native
-  trait DeleteServerResponse extends js.Object {}
+  trait DeleteServerResponse extends js.Object
 
   object DeleteServerResponse {
     @inline
-    def apply(
-    ): DeleteServerResponse = {
+    def apply(): DeleteServerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteServerResponse]
     }
   }
 
   @js.native
-  trait DescribeAccountAttributesRequest extends js.Object {}
+  trait DescribeAccountAttributesRequest extends js.Object
 
   object DescribeAccountAttributesRequest {
     @inline
-    def apply(
-    ): DescribeAccountAttributesRequest = {
+    def apply(): DescribeAccountAttributesRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DescribeAccountAttributesRequest]
     }
   }
@@ -591,7 +580,6 @@ package opsworkscm {
         "NodeAssociationStatusToken" -> NodeAssociationStatusToken.asInstanceOf[js.Any],
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNodeAssociationStatusRequest]
     }
   }
@@ -696,8 +684,7 @@ package opsworkscm {
     }
   }
 
-  /**
-    * A name and value pair that is specific to the engine of the server.
+  /** A name and value pair that is specific to the engine of the server.
     */
   @js.native
   trait EngineAttribute extends js.Object {
@@ -813,11 +800,10 @@ package opsworkscm {
     @inline def values = js.Array(SUCCESS, FAILED)
   }
 
-  /**
-    * The status of the association or disassociation request.
-    *  <p class="title"> ```Possible values:``` </p>* <code>SUCCESS</code>: The association or disassociation succeeded.
-    *  * <code>FAILED</code>: The association or disassociation failed.
-    *  * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
+  /** The status of the association or disassociation request.
+    * <p class="title"> ```Possible values:``` </p>* <code>SUCCESS</code>: The association or disassociation succeeded.
+    * * <code>FAILED</code>: The association or disassociation failed.
+    * * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
     */
   @js.native
   sealed trait NodeAssociationStatus extends js.Any
@@ -857,20 +843,17 @@ package opsworkscm {
   }
 
   @js.native
-  trait RestoreServerResponse extends js.Object {}
+  trait RestoreServerResponse extends js.Object
 
   object RestoreServerResponse {
     @inline
-    def apply(
-    ): RestoreServerResponse = {
+    def apply(): RestoreServerResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RestoreServerResponse]
     }
   }
 
-  /**
-    * Describes a configuration management server.
+  /** Describes a configuration management server.
     */
   @js.native
   trait Server extends js.Object {
@@ -957,8 +940,7 @@ package opsworkscm {
     }
   }
 
-  /**
-    * An event that is related to the server, such as the start of maintenance or backup.
+  /** An event that is related to the server, such as the start of maintenance or backup.
     */
   @js.native
   trait ServerEvent extends js.Object {
@@ -1042,8 +1024,7 @@ package opsworkscm {
     }
   }
 
-  /**
-    * A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+  /** A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1061,7 +1042,6 @@ package opsworkscm {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1082,20 +1062,17 @@ package opsworkscm {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1116,20 +1093,17 @@ package opsworkscm {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

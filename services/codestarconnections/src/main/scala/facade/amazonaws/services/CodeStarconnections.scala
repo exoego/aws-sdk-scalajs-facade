@@ -67,9 +67,8 @@ package codestarconnections {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
 
-  /**
-    * A resource that is used to connect third-party source providers with services like AWS CodePipeline.
-    *  Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.
+  /** A resource that is used to connect third-party source providers with services like AWS CodePipeline.
+    * Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.
     */
   @js.native
   trait Connection extends js.Object {
@@ -216,20 +215,17 @@ package codestarconnections {
       val __obj = js.Dynamic.literal(
         "ConnectionArn" -> ConnectionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteConnectionInput]
     }
   }
 
   @js.native
-  trait DeleteConnectionOutput extends js.Object {}
+  trait DeleteConnectionOutput extends js.Object
 
   object DeleteConnectionOutput {
     @inline
-    def apply(
-    ): DeleteConnectionOutput = {
+    def apply(): DeleteConnectionOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteConnectionOutput]
     }
   }
@@ -247,20 +243,17 @@ package codestarconnections {
       val __obj = js.Dynamic.literal(
         "HostArn" -> HostArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteHostInput]
     }
   }
 
   @js.native
-  trait DeleteHostOutput extends js.Object {}
+  trait DeleteHostOutput extends js.Object
 
   object DeleteHostOutput {
     @inline
-    def apply(
-    ): DeleteHostOutput = {
+    def apply(): DeleteHostOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteHostOutput]
     }
   }
@@ -278,7 +271,6 @@ package codestarconnections {
       val __obj = js.Dynamic.literal(
         "ConnectionArn" -> ConnectionArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetConnectionInput]
     }
   }
@@ -312,7 +304,6 @@ package codestarconnections {
       val __obj = js.Dynamic.literal(
         "HostArn" -> HostArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetHostInput]
     }
   }
@@ -345,8 +336,7 @@ package codestarconnections {
     }
   }
 
-  /**
-    * A resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.
+  /** A resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.
     *
     * '''Note:'''A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.
     */
@@ -479,7 +469,6 @@ package codestarconnections {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -509,9 +498,8 @@ package codestarconnections {
     @inline def values = js.Array(Bitbucket, GitHubEnterpriseServer)
   }
 
-  /**
-    * A tag is a key-value pair that is used to manage the resource.
-    *  This tag is available for use by AWS services that support tags.
+  /** A tag is a key-value pair that is used to manage the resource.
+    * This tag is available for use by AWS services that support tags.
     */
   @js.native
   trait Tag extends js.Object {
@@ -529,7 +517,6 @@ package codestarconnections {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
@@ -550,20 +537,17 @@ package codestarconnections {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceInput]
     }
   }
 
   @js.native
-  trait TagResourceOutput extends js.Object {}
+  trait TagResourceOutput extends js.Object
 
   object TagResourceOutput {
     @inline
-    def apply(
-    ): TagResourceOutput = {
+    def apply(): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceOutput]
     }
   }
@@ -584,26 +568,22 @@ package codestarconnections {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
 
   @js.native
-  trait UntagResourceOutput extends js.Object {}
+  trait UntagResourceOutput extends js.Object
 
   object UntagResourceOutput {
     @inline
-    def apply(
-    ): UntagResourceOutput = {
+    def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceOutput]
     }
   }
 
-  /**
-    * The VPC configuration provisioned for the host.
+  /** The VPC configuration provisioned for the host.
     */
   @js.native
   trait VpcConfiguration extends js.Object {

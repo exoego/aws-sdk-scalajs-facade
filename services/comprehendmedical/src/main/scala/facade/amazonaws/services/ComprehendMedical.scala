@@ -90,8 +90,7 @@ package comprehendmedical {
     def stopRxNormInferenceJob(params: StopRxNormInferenceJobRequest): Request[StopRxNormInferenceJobResponse] = js.native
   }
 
-  /**
-    * An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.
+  /** An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -147,8 +146,7 @@ package comprehendmedical {
     @inline def values = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
   }
 
-  /**
-    * Provides information for filtering a list of detection jobs.
+  /** Provides information for filtering a list of detection jobs.
     */
   @js.native
   trait ComprehendMedicalAsyncJobFilter extends js.Object {
@@ -175,8 +173,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * Provides information about a detection job.
+  /** Provides information about a detection job.
     */
   @js.native
   trait ComprehendMedicalAsyncJobProperties extends js.Object {
@@ -246,7 +243,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeEntitiesDetectionV2JobRequest]
     }
   }
@@ -280,7 +276,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeICD10CMInferenceJobRequest]
     }
   }
@@ -314,7 +309,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribePHIDetectionJobRequest]
     }
   }
@@ -348,7 +342,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeRxNormInferenceJobRequest]
     }
   }
@@ -382,7 +375,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectEntitiesRequest]
     }
   }
@@ -427,7 +419,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectEntitiesV2Request]
     }
   }
@@ -472,7 +463,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DetectPHIRequest]
     }
   }
@@ -501,8 +491,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * Provides information about an extracted medical entity.
+  /** Provides information about an extracted medical entity.
     */
   @js.native
   trait Entity extends js.Object {
@@ -582,43 +571,42 @@ package comprehendmedical {
     val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
     val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
-    @inline def values =
-      js.Array(
-        NAME,
-        DOSAGE,
-        ROUTE_OR_MODE,
-        FORM,
-        FREQUENCY,
-        DURATION,
-        GENERIC_NAME,
-        BRAND_NAME,
-        STRENGTH,
-        RATE,
-        ACUITY,
-        TEST_NAME,
-        TEST_VALUE,
-        TEST_UNITS,
-        PROCEDURE_NAME,
-        TREATMENT_NAME,
-        DATE,
-        AGE,
-        CONTACT_POINT,
-        EMAIL,
-        IDENTIFIER,
-        URL,
-        ADDRESS,
-        PROFESSION,
-        SYSTEM_ORGAN_SITE,
-        DIRECTION,
-        QUALITY,
-        QUANTITY,
-        TIME_EXPRESSION,
-        TIME_TO_MEDICATION_NAME,
-        TIME_TO_DX_NAME,
-        TIME_TO_TEST_NAME,
-        TIME_TO_PROCEDURE_NAME,
-        TIME_TO_TREATMENT_NAME
-      )
+    @inline def values = js.Array(
+      NAME,
+      DOSAGE,
+      ROUTE_OR_MODE,
+      FORM,
+      FREQUENCY,
+      DURATION,
+      GENERIC_NAME,
+      BRAND_NAME,
+      STRENGTH,
+      RATE,
+      ACUITY,
+      TEST_NAME,
+      TEST_VALUE,
+      TEST_UNITS,
+      PROCEDURE_NAME,
+      TREATMENT_NAME,
+      DATE,
+      AGE,
+      CONTACT_POINT,
+      EMAIL,
+      IDENTIFIER,
+      URL,
+      ADDRESS,
+      PROFESSION,
+      SYSTEM_ORGAN_SITE,
+      DIRECTION,
+      QUALITY,
+      QUANTITY,
+      TIME_EXPRESSION,
+      TIME_TO_MEDICATION_NAME,
+      TIME_TO_DX_NAME,
+      TIME_TO_TEST_NAME,
+      TIME_TO_PROCEDURE_NAME,
+      TIME_TO_TREATMENT_NAME
+    )
   }
 
   @js.native
@@ -634,8 +622,7 @@ package comprehendmedical {
     @inline def values = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
   }
 
-  /**
-    * The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.
+  /** The detected attributes that relate to an entity. This includes an extracted segment of the text that is an attribute of an entity, or otherwise related to an entity. InferICD10CM detects the following attributes: <code>Direction</code>, <code>System, Organ or Site</code>, and <code>Acuity</code>.
     */
   @js.native
   trait ICD10CMAttribute extends js.Object {
@@ -686,8 +673,7 @@ package comprehendmedical {
     @inline def values = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY)
   }
 
-  /**
-    * The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.
+  /** The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.
     */
   @js.native
   trait ICD10CMConcept extends js.Object {
@@ -711,8 +697,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.
+  /** The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.
     */
   @js.native
   trait ICD10CMEntity extends js.Object {
@@ -773,8 +758,7 @@ package comprehendmedical {
     @inline def values = js.Array(DX_NAME)
   }
 
-  /**
-    * Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
+  /** Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
     */
   @js.native
   trait ICD10CMTrait extends js.Object {
@@ -819,7 +803,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InferICD10CMRequest]
     }
   }
@@ -861,7 +844,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InferRxNormRequest]
     }
   }
@@ -890,8 +872,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
+  /** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -1100,8 +1081,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * The output properties for a detection job.
+  /** The output properties for a detection job.
     */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -1146,31 +1126,29 @@ package comprehendmedical {
     val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
     val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
-    @inline def values =
-      js.Array(
-        EVERY,
-        WITH_DOSAGE,
-        ADMINISTERED_VIA,
-        FOR,
-        NEGATIVE,
-        OVERLAP,
-        DOSAGE,
-        ROUTE_OR_MODE,
-        FORM,
-        FREQUENCY,
-        DURATION,
-        STRENGTH,
-        RATE,
-        ACUITY,
-        TEST_VALUE,
-        TEST_UNITS,
-        DIRECTION,
-        SYSTEM_ORGAN_SITE
-      )
+    @inline def values = js.Array(
+      EVERY,
+      WITH_DOSAGE,
+      ADMINISTERED_VIA,
+      FOR,
+      NEGATIVE,
+      OVERLAP,
+      DOSAGE,
+      ROUTE_OR_MODE,
+      FORM,
+      FREQUENCY,
+      DURATION,
+      STRENGTH,
+      RATE,
+      ACUITY,
+      TEST_VALUE,
+      TEST_UNITS,
+      DIRECTION,
+      SYSTEM_ORGAN_SITE
+    )
   }
 
-  /**
-    * The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.
+  /** The extracted attributes that relate to this entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>.
     */
   @js.native
   trait RxNormAttribute extends js.Object {
@@ -1223,8 +1201,7 @@ package comprehendmedical {
     @inline def values = js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH)
   }
 
-  /**
-    * The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match.
+  /** The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match.
     */
   @js.native
   trait RxNormConcept extends js.Object {
@@ -1248,8 +1225,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.
+  /** The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned.
     */
   @js.native
   trait RxNormEntity extends js.Object {
@@ -1311,8 +1287,7 @@ package comprehendmedical {
     @inline def values = js.Array(BRAND_NAME, GENERIC_NAME)
   }
 
-  /**
-    * The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication.
+  /** The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication.
     */
   @js.native
   trait RxNormTrait extends js.Object {
@@ -1562,7 +1537,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopEntitiesDetectionV2JobRequest]
     }
   }
@@ -1596,7 +1570,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopICD10CMInferenceJobRequest]
     }
   }
@@ -1630,7 +1603,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopPHIDetectionJobRequest]
     }
   }
@@ -1664,7 +1636,6 @@ package comprehendmedical {
       val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StopRxNormInferenceJobRequest]
     }
   }
@@ -1685,8 +1656,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * Provides contextual information about the extracted entity.
+  /** Provides contextual information about the extracted entity.
     */
   @js.native
   trait Trait extends js.Object {
@@ -1707,8 +1677,7 @@ package comprehendmedical {
     }
   }
 
-  /**
-    * An attribute that we extracted, but were unable to relate to an entity.
+  /** An attribute that we extracted, but were unable to relate to an entity.
     */
   @js.native
   trait UnmappedAttribute extends js.Object {

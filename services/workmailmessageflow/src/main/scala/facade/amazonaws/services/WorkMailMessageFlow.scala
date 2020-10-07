@@ -39,7 +39,6 @@ package workmailmessageflow {
       val __obj = js.Dynamic.literal(
         "messageId" -> messageId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRawMessageContentRequest]
     }
   }
@@ -57,7 +56,6 @@ package workmailmessageflow {
       val __obj = js.Dynamic.literal(
         "messageContent" -> messageContent.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetRawMessageContentResponse]
     }
   }

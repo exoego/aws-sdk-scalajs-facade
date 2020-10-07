@@ -136,8 +136,7 @@ package xray {
     def updateSamplingRule(params: UpdateSamplingRuleRequest): Request[UpdateSamplingRuleResult] = js.native
   }
 
-  /**
-    * An alias for an edge.
+  /** An alias for an edge.
     */
   @js.native
   trait Alias extends js.Object {
@@ -161,8 +160,7 @@ package xray {
     }
   }
 
-  /**
-    * Value of a segment annotation. Has one of three value types: Number, Boolean or String.
+  /** Value of a segment annotation. Has one of three value types: Number, Boolean or String.
     */
   @js.native
   trait AnnotationValue extends js.Object {
@@ -186,8 +184,7 @@ package xray {
     }
   }
 
-  /**
-    * A list of availability zones corresponding to the segments in a trace.
+  /** A list of availability zones corresponding to the segments in a trace.
     */
   @js.native
   trait AvailabilityZoneDetail extends js.Object {
@@ -205,8 +202,7 @@ package xray {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait BackendConnectionErrors extends js.Object {
@@ -332,7 +328,6 @@ package xray {
       val __obj = js.Dynamic.literal(
         "SamplingRule" -> SamplingRule.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSamplingRuleRequest]
     }
   }
@@ -373,14 +368,12 @@ package xray {
   }
 
   @js.native
-  trait DeleteGroupResult extends js.Object {}
+  trait DeleteGroupResult extends js.Object
 
   object DeleteGroupResult {
     @inline
-    def apply(
-    ): DeleteGroupResult = {
+    def apply(): DeleteGroupResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteGroupResult]
     }
   }
@@ -420,8 +413,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about a connection between two services.
+  /** Information about a connection between two services.
     */
   @js.native
   trait Edge extends js.Object {
@@ -454,8 +446,7 @@ package xray {
     }
   }
 
-  /**
-    * Response statistics for an edge.
+  /** Response statistics for an edge.
     */
   @js.native
   trait EdgeStatistics extends js.Object {
@@ -485,8 +476,7 @@ package xray {
     }
   }
 
-  /**
-    * A configuration document that specifies encryption configuration settings.
+  /** A configuration document that specifies encryption configuration settings.
     */
   @js.native
   trait EncryptionConfig extends js.Object {
@@ -528,8 +518,7 @@ package xray {
     @inline def values = js.Array(NONE, KMS)
   }
 
-  /**
-    * The root cause of a trace summary error.
+  /** The root cause of a trace summary error.
     */
   @js.native
   trait ErrorRootCause extends js.Object {
@@ -550,8 +539,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of segments and corresponding subsegments associated to a trace summary error.
+  /** A collection of segments and corresponding subsegments associated to a trace summary error.
     */
   @js.native
   trait ErrorRootCauseEntity extends js.Object {
@@ -575,8 +563,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of fields identifying the services in a trace summary error.
+  /** A collection of fields identifying the services in a trace summary error.
     */
   @js.native
   trait ErrorRootCauseService extends js.Object {
@@ -609,8 +596,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about requests that failed with a 4xx Client Error status code.
+  /** Information about requests that failed with a 4xx Client Error status code.
     */
   @js.native
   trait ErrorStatistics extends js.Object {
@@ -634,8 +620,7 @@ package xray {
     }
   }
 
-  /**
-    * The root cause information for a trace summary fault.
+  /** The root cause information for a trace summary fault.
     */
   @js.native
   trait FaultRootCause extends js.Object {
@@ -656,8 +641,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of segments and corresponding subsegments associated to a trace summary fault error.
+  /** A collection of segments and corresponding subsegments associated to a trace summary fault error.
     */
   @js.native
   trait FaultRootCauseEntity extends js.Object {
@@ -681,8 +665,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of fields identifying the services in a trace summary fault.
+  /** A collection of fields identifying the services in a trace summary fault.
     */
   @js.native
   trait FaultRootCauseService extends js.Object {
@@ -715,8 +698,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about requests that failed with a 5xx Server Error status code.
+  /** Information about requests that failed with a 5xx Server Error status code.
     */
   @js.native
   trait FaultStatistics extends js.Object {
@@ -738,14 +720,12 @@ package xray {
   }
 
   @js.native
-  trait GetEncryptionConfigRequest extends js.Object {}
+  trait GetEncryptionConfigRequest extends js.Object
 
   object GetEncryptionConfigRequest {
     @inline
-    def apply(
-    ): GetEncryptionConfigRequest = {
+    def apply(): GetEncryptionConfigRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetEncryptionConfigRequest]
     }
   }
@@ -919,7 +899,6 @@ package xray {
       val __obj = js.Dynamic.literal(
         "SamplingStatisticsDocuments" -> SamplingStatisticsDocuments.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSamplingTargetsRequest]
     }
   }
@@ -1163,8 +1142,7 @@ package xray {
     }
   }
 
-  /**
-    * Details and metadata for a group.
+  /** Details and metadata for a group.
     */
   @js.native
   trait Group extends js.Object {
@@ -1188,8 +1166,7 @@ package xray {
     }
   }
 
-  /**
-    * Details for a group without metadata.
+  /** Details for a group without metadata.
     */
   @js.native
   trait GroupSummary extends js.Object {
@@ -1213,8 +1190,7 @@ package xray {
     }
   }
 
-  /**
-    * An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.
+  /** An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.
     */
   @js.native
   trait HistogramEntry extends js.Object {
@@ -1235,8 +1211,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about an HTTP request.
+  /** Information about an HTTP request.
     */
   @js.native
   trait Http extends js.Object {
@@ -1266,8 +1241,7 @@ package xray {
     }
   }
 
-  /**
-    * A list of EC2 instance IDs corresponding to the segments in a trace.
+  /** A list of EC2 instance IDs corresponding to the segments in a trace.
     */
   @js.native
   trait InstanceIdDetail extends js.Object {
@@ -1350,14 +1324,12 @@ package xray {
   }
 
   @js.native
-  trait PutTelemetryRecordsResult extends js.Object {}
+  trait PutTelemetryRecordsResult extends js.Object
 
   object PutTelemetryRecordsResult {
     @inline
-    def apply(
-    ): PutTelemetryRecordsResult = {
+    def apply(): PutTelemetryRecordsResult = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutTelemetryRecordsResult]
     }
   }
@@ -1375,7 +1347,6 @@ package xray {
       val __obj = js.Dynamic.literal(
         "TraceSegmentDocuments" -> TraceSegmentDocuments.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutTraceSegmentsRequest]
     }
   }
@@ -1396,8 +1367,7 @@ package xray {
     }
   }
 
-  /**
-    * A list of resources ARNs corresponding to the segments in a trace.
+  /** A list of resources ARNs corresponding to the segments in a trace.
     */
   @js.native
   trait ResourceARNDetail extends js.Object {
@@ -1415,8 +1385,7 @@ package xray {
     }
   }
 
-  /**
-    * The root cause information for a response time warning.
+  /** The root cause information for a response time warning.
     */
   @js.native
   trait ResponseTimeRootCause extends js.Object {
@@ -1437,8 +1406,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of segments and corresponding subsegments associated to a response time warning.
+  /** A collection of segments and corresponding subsegments associated to a response time warning.
     */
   @js.native
   trait ResponseTimeRootCauseEntity extends js.Object {
@@ -1462,8 +1430,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of fields identifying the service in a response time warning.
+  /** A collection of fields identifying the service in a response time warning.
     */
   @js.native
   trait ResponseTimeRootCauseService extends js.Object {
@@ -1496,8 +1463,7 @@ package xray {
     }
   }
 
-  /**
-    * The exception associated with a root cause.
+  /** The exception associated with a root cause.
     */
   @js.native
   trait RootCauseException extends js.Object {
@@ -1518,8 +1484,7 @@ package xray {
     }
   }
 
-  /**
-    * A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.
+  /** A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.
     */
   @js.native
   trait SamplingRule extends js.Object {
@@ -1575,8 +1540,7 @@ package xray {
     }
   }
 
-  /**
-    * A <a>SamplingRule</a> and its metadata.
+  /** A <a>SamplingRule</a> and its metadata.
     */
   @js.native
   trait SamplingRuleRecord extends js.Object {
@@ -1600,8 +1564,7 @@ package xray {
     }
   }
 
-  /**
-    * A document specifying changes to a sampling rule's configuration.
+  /** A document specifying changes to a sampling rule's configuration.
     */
   @js.native
   trait SamplingRuleUpdate extends js.Object {
@@ -1652,8 +1615,7 @@ package xray {
     }
   }
 
-  /**
-    * Aggregated request sampling data for a sampling rule across all services for a 10 second window.
+  /** Aggregated request sampling data for a sampling rule across all services for a 10 second window.
     */
   @js.native
   trait SamplingStatisticSummary extends js.Object {
@@ -1683,8 +1645,7 @@ package xray {
     }
   }
 
-  /**
-    * Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a>GetSamplingTargets</a>.
+  /** Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a>GetSamplingTargets</a>.
     */
   @js.native
   trait SamplingStatisticsDocument extends js.Object {
@@ -1719,8 +1680,7 @@ package xray {
     }
   }
 
-  /**
-    * The name and value of a sampling rule to apply to a trace summary.
+  /** The name and value of a sampling rule to apply to a trace summary.
     */
   @js.native
   trait SamplingStrategy extends js.Object {
@@ -1750,8 +1710,7 @@ package xray {
     @inline def values = js.Array(PartialScan, FixedRate)
   }
 
-  /**
-    * Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>.
+  /** Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>.
     */
   @js.native
   trait SamplingTargetDocument extends js.Object {
@@ -1781,9 +1740,8 @@ package xray {
     }
   }
 
-  /**
-    * A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.
-    *  For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
+  /** A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.
+    * For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
     */
   @js.native
   trait Segment extends js.Object {
@@ -1804,8 +1762,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about an application that processed requests, users that made requests, or downstream services, resources and applications that an application used.
+  /** Information about an application that processed requests, users that made requests, or downstream services, resources and applications that an application used.
     */
   @js.native
   trait Service extends js.Object {
@@ -1859,8 +1816,7 @@ package xray {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait ServiceId extends js.Object {
@@ -1887,8 +1843,7 @@ package xray {
     }
   }
 
-  /**
-    * Response statistics for a service.
+  /** Response statistics for a service.
     */
   @js.native
   trait ServiceStatistics extends js.Object {
@@ -1918,8 +1873,7 @@ package xray {
     }
   }
 
-  /**
-    * <p/>
+  /** <p/>
     */
   @js.native
   trait TelemetryRecord extends js.Object {
@@ -1963,8 +1917,7 @@ package xray {
     @inline def values = js.Array(TraceId, Event)
   }
 
-  /**
-    * A list of TimeSeriesStatistic structures.
+  /** A list of TimeSeriesStatistic structures.
     */
   @js.native
   trait TimeSeriesServiceStatistics extends js.Object {
@@ -1991,8 +1944,7 @@ package xray {
     }
   }
 
-  /**
-    * A collection of segment documents with matching trace IDs.
+  /** A collection of segment documents with matching trace IDs.
     */
   @js.native
   trait Trace extends js.Object {
@@ -2016,8 +1968,7 @@ package xray {
     }
   }
 
-  /**
-    * Metadata generated from the segment documents in a trace.
+  /** Metadata generated from the segment documents in a trace.
     */
   @js.native
   trait TraceSummary extends js.Object {
@@ -2092,8 +2043,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about a user recorded in segment documents.
+  /** Information about a user recorded in segment documents.
     */
   @js.native
   trait TraceUser extends js.Object {
@@ -2114,8 +2064,7 @@ package xray {
     }
   }
 
-  /**
-    * Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could not process.
+  /** Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could not process.
     */
   @js.native
   trait UnprocessedStatistics extends js.Object {
@@ -2139,8 +2088,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about a segment that failed processing.
+  /** Information about a segment that failed processing.
     */
   @js.native
   trait UnprocessedTraceSegment extends js.Object {
@@ -2215,7 +2163,6 @@ package xray {
       val __obj = js.Dynamic.literal(
         "SamplingRuleUpdate" -> SamplingRuleUpdate.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSamplingRuleRequest]
     }
   }
@@ -2236,8 +2183,7 @@ package xray {
     }
   }
 
-  /**
-    * Information about a segment annotation.
+  /** Information about a segment annotation.
     */
   @js.native
   trait ValueWithServiceIds extends js.Object {

@@ -409,14 +409,12 @@ package ram {
   }
 
   @js.native
-  trait EnableSharingWithAwsOrganizationRequest extends js.Object {}
+  trait EnableSharingWithAwsOrganizationRequest extends js.Object
 
   object EnableSharingWithAwsOrganizationRequest {
     @inline
-    def apply(
-    ): EnableSharingWithAwsOrganizationRequest = {
+    def apply(): EnableSharingWithAwsOrganizationRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[EnableSharingWithAwsOrganizationRequest]
     }
   }
@@ -949,8 +947,7 @@ package ram {
     }
   }
 
-  /**
-    * Describes a principal for use with AWS Resource Access Manager.
+  /** Describes a principal for use with AWS Resource Access Manager.
     */
   @js.native
   trait Principal extends js.Object {
@@ -993,7 +990,6 @@ package ram {
       val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PromoteResourceShareCreatedFromPolicyRequest]
     }
   }
@@ -1054,8 +1050,7 @@ package ram {
     }
   }
 
-  /**
-    * Describes a resource associated with a resource share.
+  /** Describes a resource associated with a resource share.
     */
   @js.native
   trait Resource extends js.Object {
@@ -1103,8 +1098,7 @@ package ram {
     @inline def values = js.Array(SELF, `OTHER-ACCOUNTS`)
   }
 
-  /**
-    * Describes a resource share.
+  /** Describes a resource share.
     */
   @js.native
   trait ResourceShare extends js.Object {
@@ -1149,8 +1143,7 @@ package ram {
     }
   }
 
-  /**
-    * Describes an association with a resource share.
+  /** Describes an association with a resource share.
     */
   @js.native
   trait ResourceShareAssociation extends js.Object {
@@ -1223,8 +1216,7 @@ package ram {
     @inline def values = js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD)
   }
 
-  /**
-    * Describes an invitation to join a resource share.
+  /** Describes an invitation to join a resource share.
     */
   @js.native
   trait ResourceShareInvitation extends js.Object {
@@ -1274,8 +1266,7 @@ package ram {
     @inline def values = js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED)
   }
 
-  /**
-    * Information about an AWS RAM permission.
+  /** Information about an AWS RAM permission.
     */
   @js.native
   trait ResourceSharePermissionDetail extends js.Object {
@@ -1314,8 +1305,7 @@ package ram {
     }
   }
 
-  /**
-    * Information about a permission that is associated with a resource share.
+  /** Information about a permission that is associated with a resource share.
     */
   @js.native
   trait ResourceSharePermissionSummary extends js.Object {
@@ -1378,8 +1368,7 @@ package ram {
     @inline def values = js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING)
   }
 
-  /**
-    * Information about the shareable resource types and the AWS services to which they belong.
+  /** Information about the shareable resource types and the AWS services to which they belong.
     */
   @js.native
   trait ServiceNameAndResourceType extends js.Object {
@@ -1400,8 +1389,7 @@ package ram {
     }
   }
 
-  /**
-    * Information about a tag.
+  /** Information about a tag.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1422,8 +1410,7 @@ package ram {
     }
   }
 
-  /**
-    * Used to filter information based on tags.
+  /** Used to filter information based on tags.
     */
   @js.native
   trait TagFilter extends js.Object {
@@ -1460,20 +1447,17 @@ package ram {
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {}
+  trait TagResourceResponse extends js.Object
 
   object TagResourceResponse {
     @inline
-    def apply(
-    ): TagResourceResponse = {
+    def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1494,20 +1478,17 @@ package ram {
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
         "tagKeys" -> tagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {}
+  trait UntagResourceResponse extends js.Object
 
   object UntagResourceResponse {
     @inline
-    def apply(
-    ): UntagResourceResponse = {
+    def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }

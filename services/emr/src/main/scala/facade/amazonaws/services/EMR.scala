@@ -176,7 +176,6 @@ package emr {
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddInstanceFleetInput]
     }
   }
@@ -203,8 +202,7 @@ package emr {
     }
   }
 
-  /**
-    * Input to an AddInstanceGroups call.
+  /** Input to an AddInstanceGroups call.
     */
   @js.native
   trait AddInstanceGroupsInput extends js.Object {
@@ -222,13 +220,11 @@ package emr {
         "InstanceGroups" -> InstanceGroups.asInstanceOf[js.Any],
         "JobFlowId" -> JobFlowId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddInstanceGroupsInput]
     }
   }
 
-  /**
-    * Output from an AddInstanceGroups call.
+  /** Output from an AddInstanceGroups call.
     */
   @js.native
   trait AddInstanceGroupsOutput extends js.Object {
@@ -252,8 +248,7 @@ package emr {
     }
   }
 
-  /**
-    * The input argument to the <a>AddJobFlowSteps</a> operation.
+  /** The input argument to the <a>AddJobFlowSteps</a> operation.
     */
   @js.native
   trait AddJobFlowStepsInput extends js.Object {
@@ -271,13 +266,11 @@ package emr {
         "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
         "Steps" -> Steps.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddJobFlowStepsInput]
     }
   }
 
-  /**
-    * The output for the <a>AddJobFlowSteps</a> operation.
+  /** The output for the <a>AddJobFlowSteps</a> operation.
     */
   @js.native
   trait AddJobFlowStepsOutput extends js.Object {
@@ -295,8 +288,7 @@ package emr {
     }
   }
 
-  /**
-    * This input identifies a cluster and a list of tags to attach.
+  /** This input identifies a cluster and a list of tags to attach.
     */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -314,23 +306,19 @@ package emr {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsInput]
     }
   }
 
-  /**
-    * This output indicates the result of adding tags to a resource.
+  /** This output indicates the result of adding tags to a resource.
     */
   @js.native
-  trait AddTagsOutput extends js.Object {}
+  trait AddTagsOutput extends js.Object
 
   object AddTagsOutput {
     @inline
-    def apply(
-    ): AddTagsOutput = {
+    def apply(): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[AddTagsOutput]
     }
   }
@@ -345,9 +333,8 @@ package emr {
     @inline def values = js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY)
   }
 
-  /**
-    * With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
-    *  With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.
+  /** With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
+    * With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.
     */
   @js.native
   trait Application extends js.Object {
@@ -374,8 +361,7 @@ package emr {
     }
   }
 
-  /**
-    * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+  /** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
     */
   @js.native
   trait AutoScalingPolicy extends js.Object {
@@ -393,13 +379,11 @@ package emr {
         "Constraints" -> Constraints.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutoScalingPolicy]
     }
   }
 
-  /**
-    * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+  /** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
     */
   @js.native
   trait AutoScalingPolicyDescription extends js.Object {
@@ -436,8 +420,7 @@ package emr {
     @inline def values = js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED)
   }
 
-  /**
-    * The reason for an <a>AutoScalingPolicyStatus</a> change.
+  /** The reason for an <a>AutoScalingPolicyStatus</a> change.
     */
   @js.native
   trait AutoScalingPolicyStateChangeReason extends js.Object {
@@ -468,8 +451,7 @@ package emr {
     @inline def values = js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE)
   }
 
-  /**
-    * The status of an automatic scaling policy.
+  /** The status of an automatic scaling policy.
     */
   @js.native
   trait AutoScalingPolicyStatus extends js.Object {
@@ -490,8 +472,7 @@ package emr {
     }
   }
 
-  /**
-    * A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
+  /** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
     */
   @js.native
   trait BlockPublicAccessConfiguration extends js.Object {
@@ -514,8 +495,7 @@ package emr {
     }
   }
 
-  /**
-    * Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
+  /** Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
     */
   @js.native
   trait BlockPublicAccessConfigurationMetadata extends js.Object {
@@ -533,13 +513,11 @@ package emr {
         "CreatedByArn" -> CreatedByArn.asInstanceOf[js.Any],
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BlockPublicAccessConfigurationMetadata]
     }
   }
 
-  /**
-    * Configuration of a bootstrap action.
+  /** Configuration of a bootstrap action.
     */
   @js.native
   trait BootstrapActionConfig extends js.Object {
@@ -557,13 +535,11 @@ package emr {
         "Name" -> Name.asInstanceOf[js.Any],
         "ScriptBootstrapAction" -> ScriptBootstrapAction.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[BootstrapActionConfig]
     }
   }
 
-  /**
-    * Reports the configuration of a bootstrap action in a cluster (job flow).
+  /** Reports the configuration of a bootstrap action in a cluster (job flow).
     */
   @js.native
   trait BootstrapActionDetail extends js.Object {
@@ -581,8 +557,7 @@ package emr {
     }
   }
 
-  /**
-    * Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.
+  /** Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0.
     */
   @js.native
   trait CancelStepsInfo extends js.Object {
@@ -606,8 +581,7 @@ package emr {
     }
   }
 
-  /**
-    * The input argument to the <a>CancelSteps</a> operation.
+  /** The input argument to the <a>CancelSteps</a> operation.
     */
   @js.native
   trait CancelStepsInput extends js.Object {
@@ -633,8 +607,7 @@ package emr {
     }
   }
 
-  /**
-    * The output for the <a>CancelSteps</a> operation.
+  /** The output for the <a>CancelSteps</a> operation.
     */
   @js.native
   trait CancelStepsOutput extends js.Object {
@@ -661,8 +634,7 @@ package emr {
     @inline def values = js.Array(SUBMITTED, FAILED)
   }
 
-  /**
-    * The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.
+  /** The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins.
     */
   @js.native
   trait CloudWatchAlarmDefinition extends js.Object {
@@ -706,8 +678,7 @@ package emr {
     }
   }
 
-  /**
-    * The detailed description of the cluster.
+  /** The detailed description of the cluster.
     */
   @js.native
   trait Cluster extends js.Object {
@@ -823,8 +794,7 @@ package emr {
     @inline def values = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
   }
 
-  /**
-    * The reason that the cluster changed to its current state.
+  /** The reason that the cluster changed to its current state.
     */
   @js.native
   trait ClusterStateChangeReason extends js.Object {
@@ -860,8 +830,7 @@ package emr {
     @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED)
   }
 
-  /**
-    * The detailed status of the cluster.
+  /** The detailed status of the cluster.
     */
   @js.native
   trait ClusterStatus extends js.Object {
@@ -885,8 +854,7 @@ package emr {
     }
   }
 
-  /**
-    * The summary description of the cluster.
+  /** The summary description of the cluster.
     */
   @js.native
   trait ClusterSummary extends js.Object {
@@ -919,8 +887,7 @@ package emr {
     }
   }
 
-  /**
-    * Represents the timeline of the cluster's lifecycle.
+  /** Represents the timeline of the cluster's lifecycle.
     */
   @js.native
   trait ClusterTimeline extends js.Object {
@@ -944,8 +911,7 @@ package emr {
     }
   }
 
-  /**
-    * An entity describing an executable that runs on a cluster.
+  /** An entity describing an executable that runs on a cluster.
     */
   @js.native
   trait Command extends js.Object {
@@ -980,8 +946,7 @@ package emr {
     @inline def values = js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL)
   }
 
-  /**
-    * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+  /** The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
     */
   @js.native
   trait ComputeLimits extends js.Object {
@@ -1023,8 +988,7 @@ package emr {
     @inline def values = js.Array(InstanceFleetUnits, Instances, VCPU)
   }
 
-  /**
-    * '''Note:'''Amazon EMR releases 4.x or later.
+  /** '''Note:'''Amazon EMR releases 4.x or later.
     * An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
     */
   @js.native
@@ -1065,7 +1029,6 @@ package emr {
         "Name" -> Name.asInstanceOf[js.Any],
         "SecurityConfiguration" -> SecurityConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSecurityConfigurationInput]
     }
   }
@@ -1086,7 +1049,6 @@ package emr {
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateSecurityConfigurationOutput]
     }
   }
@@ -1104,26 +1066,22 @@ package emr {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSecurityConfigurationInput]
     }
   }
 
   @js.native
-  trait DeleteSecurityConfigurationOutput extends js.Object {}
+  trait DeleteSecurityConfigurationOutput extends js.Object
 
   object DeleteSecurityConfigurationOutput {
     @inline
-    def apply(
-    ): DeleteSecurityConfigurationOutput = {
+    def apply(): DeleteSecurityConfigurationOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[DeleteSecurityConfigurationOutput]
     }
   }
 
-  /**
-    * This input determines which cluster to describe.
+  /** This input determines which cluster to describe.
     */
   @js.native
   trait DescribeClusterInput extends js.Object {
@@ -1138,13 +1096,11 @@ package emr {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeClusterInput]
     }
   }
 
-  /**
-    * This output contains the description of the cluster.
+  /** This output contains the description of the cluster.
     */
   @js.native
   trait DescribeClusterOutput extends js.Object {
@@ -1162,8 +1118,7 @@ package emr {
     }
   }
 
-  /**
-    * The input for the <a>DescribeJobFlows</a> operation.
+  /** The input for the <a>DescribeJobFlows</a> operation.
     */
   @js.native
   trait DescribeJobFlowsInput extends js.Object {
@@ -1190,8 +1145,7 @@ package emr {
     }
   }
 
-  /**
-    * The output for the <a>DescribeJobFlows</a> operation.
+  /** The output for the <a>DescribeJobFlows</a> operation.
     */
   @js.native
   trait DescribeJobFlowsOutput extends js.Object {
@@ -1222,7 +1176,6 @@ package emr {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSecurityConfigurationInput]
     }
   }
@@ -1249,8 +1202,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines which step to describe.
+  /** This input determines which step to describe.
     */
   @js.native
   trait DescribeStepInput extends js.Object {
@@ -1268,13 +1220,11 @@ package emr {
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "StepId" -> StepId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStepInput]
     }
   }
 
-  /**
-    * This output contains the description of the cluster step.
+  /** This output contains the description of the cluster step.
     */
   @js.native
   trait DescribeStepOutput extends js.Object {
@@ -1292,8 +1242,7 @@ package emr {
     }
   }
 
-  /**
-    * Configuration of requested EBS block device associated with the instance group.
+  /** Configuration of requested EBS block device associated with the instance group.
     */
   @js.native
   trait EbsBlockDevice extends js.Object {
@@ -1314,8 +1263,7 @@ package emr {
     }
   }
 
-  /**
-    * Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.
+  /** Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.
     */
   @js.native
   trait EbsBlockDeviceConfig extends js.Object {
@@ -1338,8 +1286,7 @@ package emr {
     }
   }
 
-  /**
-    * The Amazon EBS configuration of a cluster instance.
+  /** The Amazon EBS configuration of a cluster instance.
     */
   @js.native
   trait EbsConfiguration extends js.Object {
@@ -1360,8 +1307,7 @@ package emr {
     }
   }
 
-  /**
-    * EBS block device that's attached to an EC2 instance.
+  /** EBS block device that's attached to an EC2 instance.
     */
   @js.native
   trait EbsVolume extends js.Object {
@@ -1382,8 +1328,7 @@ package emr {
     }
   }
 
-  /**
-    * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.
+  /** Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.
     */
   @js.native
   trait Ec2InstanceAttributes extends js.Object {
@@ -1431,8 +1376,7 @@ package emr {
     }
   }
 
-  /**
-    * The details of the step failure. The service attempts to detect the root cause for many common failures.
+  /** The details of the step failure. The service attempts to detect the root cause for many common failures.
     */
   @js.native
   trait FailureDetails extends js.Object {
@@ -1457,14 +1401,12 @@ package emr {
   }
 
   @js.native
-  trait GetBlockPublicAccessConfigurationInput extends js.Object {}
+  trait GetBlockPublicAccessConfigurationInput extends js.Object
 
   object GetBlockPublicAccessConfigurationInput {
     @inline
-    def apply(
-    ): GetBlockPublicAccessConfigurationInput = {
+    def apply(): GetBlockPublicAccessConfigurationInput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetBlockPublicAccessConfigurationInput]
     }
   }
@@ -1485,7 +1427,6 @@ package emr {
         "BlockPublicAccessConfiguration" -> BlockPublicAccessConfiguration.asInstanceOf[js.Any],
         "BlockPublicAccessConfigurationMetadata" -> BlockPublicAccessConfigurationMetadata.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetBlockPublicAccessConfigurationOutput]
     }
   }
@@ -1503,7 +1444,6 @@ package emr {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetManagedScalingPolicyInput]
     }
   }
@@ -1524,8 +1464,7 @@ package emr {
     }
   }
 
-  /**
-    * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
+  /** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
     */
   @js.native
   trait HadoopJarStepConfig extends js.Object {
@@ -1554,8 +1493,7 @@ package emr {
     }
   }
 
-  /**
-    * A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
+  /** A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
     */
   @js.native
   trait HadoopStepConfig extends js.Object {
@@ -1582,8 +1520,7 @@ package emr {
     }
   }
 
-  /**
-    * Represents an EC2 instance provisioned as part of cluster.
+  /** Represents an EC2 instance provisioned as part of cluster.
     */
   @js.native
   trait Instance extends js.Object {
@@ -1643,8 +1580,7 @@ package emr {
     @inline def values = js.Array(INSTANCE_FLEET, INSTANCE_GROUP)
   }
 
-  /**
-    * Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity.
+  /** Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1691,8 +1627,7 @@ package emr {
     }
   }
 
-  /**
-    * The configuration that defines an instance fleet.
+  /** The configuration that defines an instance fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1729,8 +1664,7 @@ package emr {
     }
   }
 
-  /**
-    * Configuration parameters for an instance fleet modification request.
+  /** Configuration parameters for an instance fleet modification request.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1758,8 +1692,7 @@ package emr {
     }
   }
 
-  /**
-    * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
+  /** The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
     */
@@ -1796,8 +1729,7 @@ package emr {
     @inline def values = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED)
   }
 
-  /**
-    * Provides status change reason details for the instance fleet.
+  /** Provides status change reason details for the instance fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1831,8 +1763,7 @@ package emr {
     @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
   }
 
-  /**
-    * The status of the instance fleet.
+  /** The status of the instance fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1858,8 +1789,7 @@ package emr {
     }
   }
 
-  /**
-    * Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.
+  /** Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1895,8 +1825,7 @@ package emr {
     @inline def values = js.Array(MASTER, CORE, TASK)
   }
 
-  /**
-    * This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.
+  /** This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS.
     */
   @js.native
   trait InstanceGroup extends js.Object {
@@ -1962,8 +1891,7 @@ package emr {
     }
   }
 
-  /**
-    * Configuration defining a new instance group.
+  /** Configuration defining a new instance group.
     */
   @js.native
   trait InstanceGroupConfig extends js.Object {
@@ -2007,8 +1935,7 @@ package emr {
     }
   }
 
-  /**
-    * Detailed information about an instance group.
+  /** Detailed information about an instance group.
     */
   @js.native
   trait InstanceGroupDetail extends js.Object {
@@ -2067,8 +1994,7 @@ package emr {
     }
   }
 
-  /**
-    * Modify the size or configurations of an instance group.
+  /** Modify the size or configurations of an instance group.
     */
   @js.native
   trait InstanceGroupModifyConfig extends js.Object {
@@ -2118,8 +2044,7 @@ package emr {
     @inline def values = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED)
   }
 
-  /**
-    * The status change reason details for the instance group.
+  /** The status change reason details for the instance group.
     */
   @js.native
   trait InstanceGroupStateChangeReason extends js.Object {
@@ -2151,8 +2076,7 @@ package emr {
     @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
   }
 
-  /**
-    * The details of the instance group status.
+  /** The details of the instance group status.
     */
   @js.native
   trait InstanceGroupStatus extends js.Object {
@@ -2176,8 +2100,7 @@ package emr {
     }
   }
 
-  /**
-    * The timeline of the instance group lifecycle.
+  /** The timeline of the instance group lifecycle.
     */
   @js.native
   trait InstanceGroupTimeline extends js.Object {
@@ -2211,8 +2134,7 @@ package emr {
     @inline def values = js.Array(MASTER, CORE, TASK)
   }
 
-  /**
-    * Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.
+  /** Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.
     */
   @js.native
   trait InstanceResizePolicy extends js.Object {
@@ -2258,8 +2180,7 @@ package emr {
     @inline def values = js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED)
   }
 
-  /**
-    * The details of the status change reason for the instance.
+  /** The details of the status change reason for the instance.
     */
   @js.native
   trait InstanceStateChangeReason extends js.Object {
@@ -2292,8 +2213,7 @@ package emr {
     @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
   }
 
-  /**
-    * The instance status details.
+  /** The instance status details.
     */
   @js.native
   trait InstanceStatus extends js.Object {
@@ -2317,8 +2237,7 @@ package emr {
     }
   }
 
-  /**
-    * The timeline of the instance lifecycle.
+  /** The timeline of the instance lifecycle.
     */
   @js.native
   trait InstanceTimeline extends js.Object {
@@ -2342,8 +2261,7 @@ package emr {
     }
   }
 
-  /**
-    * An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.
+  /** An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -2380,8 +2298,7 @@ package emr {
     }
   }
 
-  /**
-    * The configuration specification for each instance type in an instance fleet.
+  /** The configuration specification for each instance type in an instance fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -2419,8 +2336,7 @@ package emr {
     }
   }
 
-  /**
-    * A description of a cluster (job flow).
+  /** A description of a cluster (job flow).
     */
   @js.native
   trait JobFlowDetail extends js.Object {
@@ -2482,8 +2398,7 @@ package emr {
     }
   }
 
-  /**
-    * The type of instance.
+  /** The type of instance.
     */
   @js.native
   sealed trait JobFlowExecutionState extends js.Any
@@ -2500,8 +2415,7 @@ package emr {
     @inline def values = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
   }
 
-  /**
-    * Describes the status of the cluster (job flow).
+  /** Describes the status of the cluster (job flow).
     */
   @js.native
   trait JobFlowExecutionStatusDetail extends js.Object {
@@ -2536,8 +2450,7 @@ package emr {
     }
   }
 
-  /**
-    * A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
+  /** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
     */
   @js.native
   trait JobFlowInstancesConfig extends js.Object {
@@ -2603,8 +2516,7 @@ package emr {
     }
   }
 
-  /**
-    * Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
+  /** Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
     */
   @js.native
   trait JobFlowInstancesDetail extends js.Object {
@@ -2660,8 +2572,7 @@ package emr {
     }
   }
 
-  /**
-    * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
+  /** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
     */
   @js.native
   trait KerberosAttributes extends js.Object {
@@ -2693,8 +2604,7 @@ package emr {
     }
   }
 
-  /**
-    * A key value pair.
+  /** A key value pair.
     */
   @js.native
   trait KeyValue extends js.Object {
@@ -2715,8 +2625,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines which bootstrap actions to retrieve.
+  /** This input determines which bootstrap actions to retrieve.
     */
   @js.native
   trait ListBootstrapActionsInput extends js.Object {
@@ -2739,8 +2648,7 @@ package emr {
     }
   }
 
-  /**
-    * This output contains the bootstrap actions detail.
+  /** This output contains the bootstrap actions detail.
     */
   @js.native
   trait ListBootstrapActionsOutput extends js.Object {
@@ -2761,8 +2669,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines how the ListClusters action filters the list of clusters that it returns.
+  /** This input determines how the ListClusters action filters the list of clusters that it returns.
     */
   @js.native
   trait ListClustersInput extends js.Object {
@@ -2789,8 +2696,7 @@ package emr {
     }
   }
 
-  /**
-    * This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.
+  /** This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.
     */
   @js.native
   trait ListClustersOutput extends js.Object {
@@ -2851,8 +2757,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines which instance groups to retrieve.
+  /** This input determines which instance groups to retrieve.
     */
   @js.native
   trait ListInstanceGroupsInput extends js.Object {
@@ -2875,8 +2780,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines which instance groups to retrieve.
+  /** This input determines which instance groups to retrieve.
     */
   @js.native
   trait ListInstanceGroupsOutput extends js.Object {
@@ -2897,8 +2801,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines which instances to list.
+  /** This input determines which instances to list.
     */
   @js.native
   trait ListInstancesInput extends js.Object {
@@ -2936,8 +2839,7 @@ package emr {
     }
   }
 
-  /**
-    * This output contains the list of instances.
+  /** This output contains the list of instances.
     */
   @js.native
   trait ListInstancesOutput extends js.Object {
@@ -2993,8 +2895,7 @@ package emr {
     }
   }
 
-  /**
-    * This input determines which steps to list.
+  /** This input determines which steps to list.
     */
   @js.native
   trait ListStepsInput extends js.Object {
@@ -3023,8 +2924,7 @@ package emr {
     }
   }
 
-  /**
-    * This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.
+  /** This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list.
     */
   @js.native
   trait ListStepsOutput extends js.Object {
@@ -3045,8 +2945,7 @@ package emr {
     }
   }
 
-  /**
-    * Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+  /** Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
     */
   @js.native
   trait ManagedScalingPolicy extends js.Object {
@@ -3073,8 +2972,7 @@ package emr {
     @inline def values = js.Array(ON_DEMAND, SPOT)
   }
 
-  /**
-    * A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>{emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.
+  /** A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>{emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available.
     */
   @js.native
   trait MetricDimension extends js.Object {
@@ -3148,13 +3046,11 @@ package emr {
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ModifyInstanceFleetInput]
     }
   }
 
-  /**
-    * Change the size of some instance groups.
+  /** Change the size of some instance groups.
     */
   @js.native
   trait ModifyInstanceGroupsInput extends js.Object {
@@ -3183,8 +3079,7 @@ package emr {
     @inline def values = js.Array(`lowest-price`)
   }
 
-  /**
-    * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+  /** The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
     */
@@ -3201,13 +3096,11 @@ package emr {
       val __obj = js.Dynamic.literal(
         "AllocationStrategy" -> AllocationStrategy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[OnDemandProvisioningSpecification]
     }
   }
 
-  /**
-    * The Amazon EC2 Availability Zone configuration of the cluster (job flow).
+  /** The Amazon EC2 Availability Zone configuration of the cluster (job flow).
     */
   @js.native
   trait PlacementType extends js.Object {
@@ -3228,8 +3121,7 @@ package emr {
     }
   }
 
-  /**
-    * A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.
+  /** A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.
     */
   @js.native
   trait PortRange extends js.Object {
@@ -3271,7 +3163,6 @@ package emr {
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutAutoScalingPolicyInput]
     }
   }
@@ -3314,20 +3205,17 @@ package emr {
       val __obj = js.Dynamic.literal(
         "BlockPublicAccessConfiguration" -> BlockPublicAccessConfiguration.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutBlockPublicAccessConfigurationInput]
     }
   }
 
   @js.native
-  trait PutBlockPublicAccessConfigurationOutput extends js.Object {}
+  trait PutBlockPublicAccessConfigurationOutput extends js.Object
 
   object PutBlockPublicAccessConfigurationOutput {
     @inline
-    def apply(
-    ): PutBlockPublicAccessConfigurationOutput = {
+    def apply(): PutBlockPublicAccessConfigurationOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutBlockPublicAccessConfigurationOutput]
     }
   }
@@ -3348,20 +3236,17 @@ package emr {
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "ManagedScalingPolicy" -> ManagedScalingPolicy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutManagedScalingPolicyInput]
     }
   }
 
   @js.native
-  trait PutManagedScalingPolicyOutput extends js.Object {}
+  trait PutManagedScalingPolicyOutput extends js.Object
 
   object PutManagedScalingPolicyOutput {
     @inline
-    def apply(
-    ): PutManagedScalingPolicyOutput = {
+    def apply(): PutManagedScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[PutManagedScalingPolicyOutput]
     }
   }
@@ -3382,20 +3267,17 @@ package emr {
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveAutoScalingPolicyInput]
     }
   }
 
   @js.native
-  trait RemoveAutoScalingPolicyOutput extends js.Object {}
+  trait RemoveAutoScalingPolicyOutput extends js.Object
 
   object RemoveAutoScalingPolicyOutput {
     @inline
-    def apply(
-    ): RemoveAutoScalingPolicyOutput = {
+    def apply(): RemoveAutoScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveAutoScalingPolicyOutput]
     }
   }
@@ -3413,26 +3295,22 @@ package emr {
       val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveManagedScalingPolicyInput]
     }
   }
 
   @js.native
-  trait RemoveManagedScalingPolicyOutput extends js.Object {}
+  trait RemoveManagedScalingPolicyOutput extends js.Object
 
   object RemoveManagedScalingPolicyOutput {
     @inline
-    def apply(
-    ): RemoveManagedScalingPolicyOutput = {
+    def apply(): RemoveManagedScalingPolicyOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveManagedScalingPolicyOutput]
     }
   }
 
-  /**
-    * This input identifies a cluster and a list of tags to remove.
+  /** This input identifies a cluster and a list of tags to remove.
     */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -3450,23 +3328,19 @@ package emr {
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsInput]
     }
   }
 
-  /**
-    * This output indicates the result of removing tags from a resource.
+  /** This output indicates the result of removing tags from a resource.
     */
   @js.native
-  trait RemoveTagsOutput extends js.Object {}
+  trait RemoveTagsOutput extends js.Object
 
   object RemoveTagsOutput {
     @inline
-    def apply(
-    ): RemoveTagsOutput = {
+    def apply(): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[RemoveTagsOutput]
     }
   }
@@ -3480,8 +3354,7 @@ package emr {
     @inline def values = js.Array(SECURITY, NONE)
   }
 
-  /**
-    * Input to the <a>RunJobFlow</a> operation.
+  /** Input to the <a>RunJobFlow</a> operation.
     */
   @js.native
   trait RunJobFlowInput extends js.Object {
@@ -3576,8 +3449,7 @@ package emr {
     }
   }
 
-  /**
-    * The result of the <a>RunJobFlow</a> operation.
+  /** The result of the <a>RunJobFlow</a> operation.
     */
   @js.native
   trait RunJobFlowOutput extends js.Object {
@@ -3607,8 +3479,7 @@ package emr {
     @inline def values = js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION)
   }
 
-  /**
-    * The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
+  /** The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
     */
   @js.native
   trait ScalingAction extends js.Object {
@@ -3631,8 +3502,7 @@ package emr {
     }
   }
 
-  /**
-    * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.
+  /** The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.
     */
   @js.native
   trait ScalingConstraints extends js.Object {
@@ -3650,13 +3520,11 @@ package emr {
         "MaxCapacity" -> MaxCapacity.asInstanceOf[js.Any],
         "MinCapacity" -> MinCapacity.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ScalingConstraints]
     }
   }
 
-  /**
-    * A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
+  /** A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
     */
   @js.native
   trait ScalingRule extends js.Object {
@@ -3685,8 +3553,7 @@ package emr {
     }
   }
 
-  /**
-    * The conditions that trigger an automatic scaling activity.
+  /** The conditions that trigger an automatic scaling activity.
     */
   @js.native
   trait ScalingTrigger extends js.Object {
@@ -3701,13 +3568,11 @@ package emr {
       val __obj = js.Dynamic.literal(
         "CloudWatchAlarmDefinition" -> CloudWatchAlarmDefinition.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ScalingTrigger]
     }
   }
 
-  /**
-    * Configuration of the script to run during a bootstrap action.
+  /** Configuration of the script to run during a bootstrap action.
     */
   @js.native
   trait ScriptBootstrapActionConfig extends js.Object {
@@ -3730,8 +3595,7 @@ package emr {
     }
   }
 
-  /**
-    * The creation date and time, and name, of a security configuration.
+  /** The creation date and time, and name, of a security configuration.
     */
   @js.native
   trait SecurityConfigurationSummary extends js.Object {
@@ -3752,8 +3616,7 @@ package emr {
     }
   }
 
-  /**
-    * The input argument to the <a>TerminationProtection</a> operation.
+  /** The input argument to the <a>TerminationProtection</a> operation.
     */
   @js.native
   trait SetTerminationProtectionInput extends js.Object {
@@ -3771,13 +3634,11 @@ package emr {
         "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any],
         "TerminationProtected" -> TerminationProtected.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetTerminationProtectionInput]
     }
   }
 
-  /**
-    * The input to the SetVisibleToAllUsers action.
+  /** The input to the SetVisibleToAllUsers action.
     */
   @js.native
   trait SetVisibleToAllUsersInput extends js.Object {
@@ -3795,13 +3656,11 @@ package emr {
         "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any],
         "VisibleToAllUsers" -> VisibleToAllUsers.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetVisibleToAllUsersInput]
     }
   }
 
-  /**
-    * Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.
+  /** Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.
     */
   @js.native
   trait ShrinkPolicy extends js.Object {
@@ -3822,8 +3681,7 @@ package emr {
     }
   }
 
-  /**
-    * An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.
+  /** An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.
     */
   @js.native
   trait SimpleScalingPolicyConfiguration extends js.Object {
@@ -3857,8 +3715,7 @@ package emr {
     @inline def values = js.Array(`capacity-optimized`)
   }
 
-  /**
-    * The launch specification for Spot instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
+  /** The launch specification for Spot instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
     */
@@ -3910,8 +3767,7 @@ package emr {
     @inline def values = js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM)
   }
 
-  /**
-    * This represents a step in a cluster.
+  /** This represents a step in a cluster.
     */
   @js.native
   trait Step extends js.Object {
@@ -3950,8 +3806,7 @@ package emr {
     @inline def values = js.Array(SEND_INTERRUPT, TERMINATE_PROCESS)
   }
 
-  /**
-    * Specification of a cluster (job flow) step.
+  /** Specification of a cluster (job flow) step.
     */
   @js.native
   trait StepConfig extends js.Object {
@@ -3977,8 +3832,7 @@ package emr {
     }
   }
 
-  /**
-    * Combines the execution state and configuration of a step.
+  /** Combines the execution state and configuration of a step.
     */
   @js.native
   trait StepDetail extends js.Object {
@@ -3996,7 +3850,6 @@ package emr {
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
         "StepConfig" -> StepConfig.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StepDetail]
     }
   }
@@ -4015,8 +3868,7 @@ package emr {
     @inline def values = js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
   }
 
-  /**
-    * The execution state of a step.
+  /** The execution state of a step.
     */
   @js.native
   trait StepExecutionStatusDetail extends js.Object {
@@ -4062,8 +3914,7 @@ package emr {
     @inline def values = js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
   }
 
-  /**
-    * The details of the step state change reason.
+  /** The details of the step state change reason.
     */
   @js.native
   trait StepStateChangeReason extends js.Object {
@@ -4092,8 +3943,7 @@ package emr {
     @inline def values = js.Array(NONE)
   }
 
-  /**
-    * The execution status details of the cluster step.
+  /** The execution status details of the cluster step.
     */
   @js.native
   trait StepStatus extends js.Object {
@@ -4120,8 +3970,7 @@ package emr {
     }
   }
 
-  /**
-    * The summary of the cluster step.
+  /** The summary of the cluster step.
     */
   @js.native
   trait StepSummary extends js.Object {
@@ -4151,8 +4000,7 @@ package emr {
     }
   }
 
-  /**
-    * The timeline of the cluster step lifecycle.
+  /** The timeline of the cluster step lifecycle.
     */
   @js.native
   trait StepTimeline extends js.Object {
@@ -4176,8 +4024,7 @@ package emr {
     }
   }
 
-  /**
-    * The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
+  /** The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
     */
   @js.native
   trait SupportedProductConfig extends js.Object {
@@ -4198,8 +4045,7 @@ package emr {
     }
   }
 
-  /**
-    * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
+  /** A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -4220,8 +4066,7 @@ package emr {
     }
   }
 
-  /**
-    * Input to the <a>TerminateJobFlows</a> operation.
+  /** Input to the <a>TerminateJobFlows</a> operation.
     */
   @js.native
   trait TerminateJobFlowsInput extends js.Object {
@@ -4236,7 +4081,6 @@ package emr {
       val __obj = js.Dynamic.literal(
         "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TerminateJobFlowsInput]
     }
   }
@@ -4272,40 +4116,38 @@ package emr {
     val TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
     val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
 
-    @inline def values =
-      js.Array(
-        NONE,
-        SECONDS,
-        MICRO_SECONDS,
-        MILLI_SECONDS,
-        BYTES,
-        KILO_BYTES,
-        MEGA_BYTES,
-        GIGA_BYTES,
-        TERA_BYTES,
-        BITS,
-        KILO_BITS,
-        MEGA_BITS,
-        GIGA_BITS,
-        TERA_BITS,
-        PERCENT,
-        COUNT,
-        BYTES_PER_SECOND,
-        KILO_BYTES_PER_SECOND,
-        MEGA_BYTES_PER_SECOND,
-        GIGA_BYTES_PER_SECOND,
-        TERA_BYTES_PER_SECOND,
-        BITS_PER_SECOND,
-        KILO_BITS_PER_SECOND,
-        MEGA_BITS_PER_SECOND,
-        GIGA_BITS_PER_SECOND,
-        TERA_BITS_PER_SECOND,
-        COUNT_PER_SECOND
-      )
+    @inline def values = js.Array(
+      NONE,
+      SECONDS,
+      MICRO_SECONDS,
+      MILLI_SECONDS,
+      BYTES,
+      KILO_BYTES,
+      MEGA_BYTES,
+      GIGA_BYTES,
+      TERA_BYTES,
+      BITS,
+      KILO_BITS,
+      MEGA_BITS,
+      GIGA_BITS,
+      TERA_BITS,
+      PERCENT,
+      COUNT,
+      BYTES_PER_SECOND,
+      KILO_BYTES_PER_SECOND,
+      MEGA_BYTES_PER_SECOND,
+      GIGA_BYTES_PER_SECOND,
+      TERA_BYTES_PER_SECOND,
+      BITS_PER_SECOND,
+      KILO_BITS_PER_SECOND,
+      MEGA_BITS_PER_SECOND,
+      GIGA_BITS_PER_SECOND,
+      TERA_BITS_PER_SECOND,
+      COUNT_PER_SECOND
+    )
   }
 
-  /**
-    * EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.
+  /** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.
     */
   @js.native
   trait VolumeSpecification extends js.Object {

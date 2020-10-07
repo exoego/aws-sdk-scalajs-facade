@@ -307,15 +307,14 @@ package storagegateway {
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * ActivationKey
-    *  * GatewayName
-    *  * GatewayRegion
-    *  * GatewayTimezone
-    *  * GatewayType
-    *  * MediumChangerType
-    *  * TapeDriveType
+    * * GatewayName
+    * * GatewayRegion
+    * * GatewayTimezone
+    * * GatewayType
+    * * MediumChangerType
+    * * TapeDriveType
     */
   @js.native
   trait ActivateGatewayInput extends js.Object {
@@ -356,8 +355,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and AWS Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
+  /** AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and AWS Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
     *
     * '''Note:'''For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.
     */
@@ -407,7 +405,6 @@ package storagegateway {
         "DiskIds" -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddCacheInput]
     }
   }
@@ -444,7 +441,6 @@ package storagegateway {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddTagsToResourceInput]
     }
   }
@@ -481,7 +477,6 @@ package storagegateway {
         "DiskIds" -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddUploadBufferInput]
     }
   }
@@ -502,8 +497,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * DiskIds
     */
   @js.native
@@ -522,13 +516,11 @@ package storagegateway {
         "DiskIds" -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AddWorkingStorageInput]
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.
     */
   @js.native
   trait AddWorkingStorageOutput extends js.Object {
@@ -562,7 +554,6 @@ package storagegateway {
         "PoolId" -> PoolId.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AssignTapePoolInput]
     }
   }
@@ -632,8 +623,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.
+  /** Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.
     */
   @js.native
   trait AutomaticTapeCreationPolicyInfo extends js.Object {
@@ -654,8 +644,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes.
+  /** An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes.
     */
   @js.native
   trait AutomaticTapeCreationRule extends js.Object {
@@ -679,7 +668,6 @@ package storagegateway {
         "TapeBarcodePrefix" -> TapeBarcodePrefix.asInstanceOf[js.Any],
         "TapeSizeInBytes" -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[AutomaticTapeCreationRule]
     }
   }
@@ -694,8 +682,7 @@ package storagegateway {
     @inline def values = js.Array(COMPLETE, FAILED, PENDING)
   }
 
-  /**
-    * Lists refresh cache information.
+  /** Lists refresh cache information.
     */
   @js.native
   trait CacheAttributes extends js.Object {
@@ -713,8 +700,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes an iSCSI cached volume.
+  /** Describes an iSCSI cached volume.
     */
   @js.native
   trait CachediSCSIVolume extends js.Object {
@@ -784,7 +770,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelArchivalInput]
     }
   }
@@ -821,7 +806,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelRetrievalInput]
     }
   }
@@ -851,8 +835,7 @@ package storagegateway {
     @inline def values = js.Array(ClientSpecified, CaseSensitive)
   }
 
-  /**
-    * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
+  /** Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
     */
   @js.native
   trait ChapInfo extends js.Object {
@@ -1165,10 +1148,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * SnapshotDescription
-    *  * VolumeARN
+    * * VolumeARN
     */
   @js.native
   trait CreateSnapshotInput extends js.Object {
@@ -1194,8 +1176,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait CreateSnapshotOutput extends js.Object {
@@ -1216,13 +1197,12 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * DiskId
-    *  * NetworkInterfaceId
-    *  * PreserveExistingData
-    *  * SnapshotId
-    *  * TargetName
+    * * NetworkInterfaceId
+    * * PreserveExistingData
+    * * SnapshotId
+    * * TargetName
     */
   @js.native
   trait CreateStorediSCSIVolumeInput extends js.Object {
@@ -1266,8 +1246,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait CreateStorediSCSIVolumeOutput extends js.Object {
@@ -1327,8 +1306,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * CreateTapeOutput
+  /** CreateTapeOutput
     */
   @js.native
   trait CreateTapeWithBarcodeOutput extends js.Object {
@@ -1388,8 +1366,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * CreateTapeOutput
+  /** CreateTapeOutput
     */
   @js.native
   trait CreateTapesOutput extends js.Object {
@@ -1420,7 +1397,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAutomaticTapeCreationPolicyInput]
     }
   }
@@ -1441,8 +1417,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     * * BandwidthType
     */
   @js.native
@@ -1461,13 +1436,11 @@ package storagegateway {
         "BandwidthType" -> BandwidthType.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteBandwidthRateLimitInput]
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted.
     */
   @js.native
   trait DeleteBandwidthRateLimitOutput extends js.Object {
@@ -1485,10 +1458,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * InitiatorName
-    *  * TargetARN
+    * * TargetARN
     */
   @js.native
   trait DeleteChapCredentialsInput extends js.Object {
@@ -1506,13 +1478,11 @@ package storagegateway {
         "InitiatorName" -> InitiatorName.asInstanceOf[js.Any],
         "TargetARN" -> TargetARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteChapCredentialsInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait DeleteChapCredentialsOutput extends js.Object {
@@ -1570,8 +1540,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the ID of the gateway to delete.
+  /** A JSON object containing the ID of the gateway to delete.
     */
   @js.native
   trait DeleteGatewayInput extends js.Object {
@@ -1586,13 +1555,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteGatewayInput]
     }
   }
 
-  /**
-    * A JSON object containing the ID of the deleted gateway.
+  /** A JSON object containing the ID of the deleted gateway.
     */
   @js.native
   trait DeleteGatewayOutput extends js.Object {
@@ -1623,7 +1590,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteSnapshotScheduleInput]
     }
   }
@@ -1657,7 +1623,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTapeArchiveInput]
     }
   }
@@ -1694,7 +1659,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteTapeInput]
     }
   }
@@ -1715,8 +1679,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the VolumeARN to delete.
+  /** A JSON object containing the VolumeARN to delete.
     */
   @js.native
   trait DeleteVolumeInput extends js.Object {
@@ -1731,13 +1694,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteVolumeInput]
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.
     */
   @js.native
   trait DeleteVolumeOutput extends js.Object {
@@ -1768,7 +1729,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeAvailabilityMonitorTestInput]
     }
   }
@@ -1795,8 +1755,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait DescribeBandwidthRateLimitInput extends js.Object {
@@ -1811,13 +1770,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeBandwidthRateLimitInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait DescribeBandwidthRateLimitOutput extends js.Object {
@@ -1854,7 +1811,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCacheInput]
     }
   }
@@ -1906,13 +1862,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeCachediSCSIVolumesInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait DescribeCachediSCSIVolumesOutput extends js.Object {
@@ -1930,8 +1884,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.
     */
   @js.native
   trait DescribeChapCredentialsInput extends js.Object {
@@ -1946,13 +1899,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "TargetARN" -> TargetARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeChapCredentialsInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait DescribeChapCredentialsOutput extends js.Object {
@@ -1970,8 +1921,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the ID of the gateway.
+  /** A JSON object containing the ID of the gateway.
     */
   @js.native
   trait DescribeGatewayInformationInput extends js.Object {
@@ -1986,13 +1936,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeGatewayInformationInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait DescribeGatewayInformationOutput extends js.Object {
@@ -2061,8 +2009,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait DescribeMaintenanceStartTimeInput extends js.Object {
@@ -2077,18 +2024,16 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeMaintenanceStartTimeInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     * * DayOfMonth
-    *  * DayOfWeek
-    *  * HourOfDay
-    *  * MinuteOfHour
-    *  * Timezone
+    * * DayOfWeek
+    * * HourOfDay
+    * * MinuteOfHour
+    * * Timezone
     */
   @js.native
   trait DescribeMaintenanceStartTimeOutput extends js.Object {
@@ -2134,7 +2079,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeNFSFileSharesInput]
     }
   }
@@ -2168,7 +2112,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSMBFileSharesInput]
     }
   }
@@ -2202,7 +2145,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSMBSettingsInput]
     }
   }
@@ -2235,8 +2177,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the VolumeARN of the volume.
+  /** A JSON object containing the VolumeARN of the volume.
     */
   @js.native
   trait DescribeSnapshotScheduleInput extends js.Object {
@@ -2251,7 +2192,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeSnapshotScheduleInput]
     }
   }
@@ -2287,8 +2227,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing a list of VolumeARNs.
+  /** A JSON object containing a list of VolumeARNs.
     */
   @js.native
   trait DescribeStorediSCSIVolumesInput extends js.Object {
@@ -2303,7 +2242,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeStorediSCSIVolumesInput]
     }
   }
@@ -2470,7 +2408,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeUploadBufferInput]
     }
   }
@@ -2549,8 +2486,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait DescribeWorkingStorageInput extends js.Object {
@@ -2565,13 +2501,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DescribeWorkingStorageInput]
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait DescribeWorkingStorageOutput extends js.Object {
@@ -2598,8 +2532,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * AttachVolumeInput
+  /** AttachVolumeInput
     */
   @js.native
   trait DetachVolumeInput extends js.Object {
@@ -2622,8 +2555,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * AttachVolumeOutput
+  /** AttachVolumeOutput
     */
   @js.native
   trait DetachVolumeOutput extends js.Object {
@@ -2641,8 +2573,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Lists iSCSI information about a VTL device.
+  /** Lists iSCSI information about a VTL device.
     */
   @js.native
   trait DeviceiSCSIAttributes extends js.Object {
@@ -2682,7 +2613,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DisableGatewayInput]
     }
   }
@@ -2703,8 +2633,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Represents a gateway's local disk.
+  /** Represents a gateway's local disk.
     */
   @js.native
   trait Disk extends js.Object {
@@ -2743,8 +2672,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes a file share.
+  /** Describes a file share.
     */
   @js.native
   trait FileShareInfo extends js.Object {
@@ -2774,8 +2702,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * The type of the file share.
+  /** The type of the file share.
     */
   @js.native
   sealed trait FileShareType extends js.Any
@@ -2786,8 +2713,7 @@ package storagegateway {
     @inline def values = js.Array(NFS, SMB)
   }
 
-  /**
-    * Describes a gateway object.
+  /** Describes a gateway object.
     */
   @js.native
   trait GatewayInfo extends js.Object {
@@ -2922,8 +2848,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * ListFileShareInput
+  /** ListFileShareInput
     */
   @js.native
   trait ListFileSharesInput extends js.Object {
@@ -2947,8 +2872,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * ListFileShareOutput
+  /** ListFileShareOutput
     */
   @js.native
   trait ListFileSharesOutput extends js.Object {
@@ -2972,10 +2896,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing zero or more of the following fields:
+  /** A JSON object containing zero or more of the following fields:
     * * Limit
-    *  * Marker
+    * * Marker
     */
   @js.native
   trait ListGatewaysInput extends js.Object {
@@ -3015,8 +2938,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway.
     */
   @js.native
   trait ListLocalDisksInput extends js.Object {
@@ -3031,7 +2953,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListLocalDisksInput]
     }
   }
@@ -3101,11 +3022,10 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object that contains one or more of the following fields:
+  /** A JSON object that contains one or more of the following fields:
     * * Limit
-    *  * Marker
-    *  * TapeARNs
+    * * Marker
+    * * TapeARNs
     */
   @js.native
   trait ListTapesInput extends js.Object {
@@ -3129,10 +3049,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     * * Marker
-    *  * VolumeInfos
+    * * VolumeInfos
     */
   @js.native
   trait ListTapesOutput extends js.Object {
@@ -3166,7 +3085,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListVolumeInitiatorsInput]
     }
   }
@@ -3200,7 +3118,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListVolumeRecoveryPointsInput]
     }
   }
@@ -3224,10 +3141,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object that contains one or more of the following fields:
+  /** A JSON object that contains one or more of the following fields:
     * * Limit
-    *  * Marker
+    * * Marker
     */
   @js.native
   trait ListVolumesInput extends js.Object {
@@ -3251,10 +3167,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     * * Marker
-    *  * VolumeInfos
+    * * VolumeInfos
     */
   @js.native
   trait ListVolumesOutput extends js.Object {
@@ -3278,8 +3193,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways.
+  /** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways.
     */
   @js.native
   trait NFSFileShareDefaults extends js.Object {
@@ -3306,8 +3220,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported in file gateways.
+  /** The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported in file gateways.
     */
   @js.native
   trait NFSFileShareInfo extends js.Object {
@@ -3382,8 +3295,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes a gateway's network interface.
+  /** Describes a gateway's network interface.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -3420,7 +3332,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[NotifyWhenUploadedInput]
     }
   }
@@ -3444,8 +3355,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts objects into. The default value is <code>private</code>.
+  /** A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts objects into. The default value is <code>private</code>.
     */
   @js.native
   sealed trait ObjectACL extends js.Any
@@ -3520,7 +3430,6 @@ package storagegateway {
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RemoveTagsFromResourceInput]
     }
   }
@@ -3554,7 +3463,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ResetCacheInput]
     }
   }
@@ -3591,7 +3499,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RetrieveTapeArchiveInput]
     }
   }
@@ -3628,7 +3535,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[RetrieveTapeRecoveryPointInput]
     }
   }
@@ -3649,8 +3555,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported for file gateways.
+  /** The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported for file gateways.
     */
   @js.native
   trait SMBFileShareInfo extends js.Object {
@@ -3763,7 +3668,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "LocalConsolePassword" -> LocalConsolePassword.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetLocalConsolePasswordInput]
     }
   }
@@ -3800,7 +3704,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Password" -> Password.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SetSMBGuestPasswordInput]
     }
   }
@@ -3821,8 +3724,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down.
     */
   @js.native
   trait ShutdownGatewayInput extends js.Object {
@@ -3837,13 +3739,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ShutdownGatewayInput]
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.
     */
   @js.native
   trait ShutdownGatewayOutput extends js.Object {
@@ -3874,7 +3774,6 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartAvailabilityMonitorTestInput]
     }
   }
@@ -3895,8 +3794,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway to start.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway to start.
     */
   @js.native
   trait StartGatewayInput extends js.Object {
@@ -3911,13 +3809,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[StartGatewayInput]
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.
     */
   @js.native
   trait StartGatewayOutput extends js.Object {
@@ -3935,8 +3831,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes an iSCSI stored volume.
+  /** Describes an iSCSI stored volume.
     */
   @js.native
   trait StorediSCSIVolume extends js.Object {
@@ -3996,8 +3891,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.
+  /** A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4015,13 +3909,11 @@ package storagegateway {
         "Key" -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[Tag]
     }
   }
 
-  /**
-    * Describes a virtual tape object.
+  /** Describes a virtual tape object.
     */
   @js.native
   trait Tape extends js.Object {
@@ -4066,8 +3958,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Represents a virtual tape that is archived in the virtual tape shelf (VTS).
+  /** Represents a virtual tape that is archived in the virtual tape shelf (VTS).
     */
   @js.native
   trait TapeArchive extends js.Object {
@@ -4112,8 +4003,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes a virtual tape.
+  /** Describes a virtual tape.
     */
   @js.native
   trait TapeInfo extends js.Object {
@@ -4146,8 +4036,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes a recovery point.
+  /** Describes a recovery point.
     */
   @js.native
   trait TapeRecoveryPointInfo extends js.Object {
@@ -4190,7 +4079,6 @@ package storagegateway {
         "AutomaticTapeCreationRules" -> AutomaticTapeCreationRules.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateAutomaticTapeCreationPolicyInput]
     }
   }
@@ -4211,10 +4099,9 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * AverageDownloadRateLimitInBitsPerSec
-    *  * AverageUploadRateLimitInBitsPerSec
+    * * AverageUploadRateLimitInBitsPerSec
     */
   @js.native
   trait UpdateBandwidthRateLimitInput extends js.Object {
@@ -4240,8 +4127,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated.
     */
   @js.native
   trait UpdateBandwidthRateLimitOutput extends js.Object {
@@ -4259,12 +4145,11 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * InitiatorName
-    *  * SecretToAuthenticateInitiator
-    *  * SecretToAuthenticateTarget
-    *  * TargetARN
+    * * SecretToAuthenticateInitiator
+    * * SecretToAuthenticateTarget
+    * * TargetARN
     */
   @js.native
   trait UpdateChapCredentialsInput extends js.Object {
@@ -4293,8 +4178,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     */
   @js.native
   trait UpdateChapCredentialsOutput extends js.Object {
@@ -4342,8 +4226,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
     */
   @js.native
   trait UpdateGatewayInformationOutput extends js.Object {
@@ -4364,8 +4247,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway to update.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway to update.
     */
   @js.native
   trait UpdateGatewaySoftwareNowInput extends js.Object {
@@ -4380,13 +4262,11 @@ package storagegateway {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateGatewaySoftwareNowInput]
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.
     */
   @js.native
   trait UpdateGatewaySoftwareNowOutput extends js.Object {
@@ -4404,12 +4284,11 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the following fields:
+  /** A JSON object containing the following fields:
     * * DayOfMonth
-    *  * DayOfWeek
-    *  * HourOfDay
-    *  * MinuteOfHour
+    * * DayOfWeek
+    * * HourOfDay
+    * * MinuteOfHour
     */
   @js.native
   trait UpdateMaintenanceStartTimeInput extends js.Object {
@@ -4441,8 +4320,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated.
     */
   @js.native
   trait UpdateMaintenanceStartTimeOutput extends js.Object {
@@ -4625,7 +4503,6 @@ package storagegateway {
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "SMBSecurityStrategy" -> SMBSecurityStrategy.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateSMBSecurityStrategyInput]
     }
   }
@@ -4646,12 +4523,11 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing one or more of the following fields:
+  /** A JSON object containing one or more of the following fields:
     * * Description
-    *  * RecurrenceInHours
-    *  * StartAt
-    *  * VolumeARN
+    * * RecurrenceInHours
+    * * StartAt
+    * * VolumeARN
     */
   @js.native
   trait UpdateSnapshotScheduleInput extends js.Object {
@@ -4683,8 +4559,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.
+  /** A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.
     */
   @js.native
   trait UpdateSnapshotScheduleOutput extends js.Object {
@@ -4718,7 +4593,6 @@ package storagegateway {
         "DeviceType" -> DeviceType.asInstanceOf[js.Any],
         "VTLDeviceARN" -> VTLDeviceARN.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UpdateVTLDeviceTypeInput]
     }
   }
@@ -4739,8 +4613,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Represents a device object associated with a tape gateway.
+  /** Represents a device object associated with a tape gateway.
     */
   @js.native
   trait VTLDevice extends js.Object {
@@ -4770,8 +4643,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes a storage volume object.
+  /** Describes a storage volume object.
     */
   @js.native
   trait VolumeInfo extends js.Object {
@@ -4807,8 +4679,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Describes a storage volume recovery point object.
+  /** Describes a storage volume recovery point object.
     */
   @js.native
   trait VolumeRecoveryPointInfo extends js.Object {
@@ -4835,8 +4706,7 @@ package storagegateway {
     }
   }
 
-  /**
-    * Lists iSCSI information about a volume.
+  /** Lists iSCSI information about a volume.
     */
   @js.native
   trait VolumeiSCSIAttributes extends js.Object {

@@ -69,7 +69,6 @@ package braket {
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "quantumTaskArn" -> quantumTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelQuantumTaskRequest]
     }
   }
@@ -90,7 +89,6 @@ package braket {
         "cancellationStatus" -> cancellationStatus.asInstanceOf[js.Any],
         "quantumTaskArn" -> quantumTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CancelQuantumTaskResponse]
     }
   }
@@ -153,7 +151,6 @@ package braket {
       val __obj = js.Dynamic.literal(
         "quantumTaskArn" -> quantumTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[CreateQuantumTaskResponse]
     }
   }
@@ -167,8 +164,7 @@ package braket {
     @inline def values = js.Array(OFFLINE, ONLINE)
   }
 
-  /**
-    * Includes information about the device.
+  /** Includes information about the device.
     */
   @js.native
   trait DeviceSummary extends js.Object {
@@ -195,7 +191,6 @@ package braket {
         "deviceType" -> deviceType.asInstanceOf[js.Any],
         "providerName" -> providerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeviceSummary]
     }
   }
@@ -222,7 +217,6 @@ package braket {
       val __obj = js.Dynamic.literal(
         "deviceArn" -> deviceArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceRequest]
     }
   }
@@ -255,7 +249,6 @@ package braket {
         "deviceType" -> deviceType.asInstanceOf[js.Any],
         "providerName" -> providerName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetDeviceResponse]
     }
   }
@@ -273,7 +266,6 @@ package braket {
       val __obj = js.Dynamic.literal(
         "quantumTaskArn" -> quantumTaskArn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetQuantumTaskRequest]
     }
   }
@@ -337,8 +329,7 @@ package braket {
     @inline def values = js.Array(CANCELLED, CANCELLING, COMPLETED, CREATED, FAILED, QUEUED, RUNNING)
   }
 
-  /**
-    * Includes information about a quantum task.
+  /** Includes information about a quantum task.
     */
   @js.native
   trait QuantumTaskSummary extends js.Object {
@@ -379,8 +370,7 @@ package braket {
     }
   }
 
-  /**
-    * The filter to use for searching devices.
+  /** The filter to use for searching devices.
     */
   @js.native
   trait SearchDevicesFilter extends js.Object {
@@ -398,7 +388,6 @@ package braket {
         "name" -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SearchDevicesFilter]
     }
   }
@@ -448,8 +437,7 @@ package braket {
     }
   }
 
-  /**
-    * A filter to use to search for tasks.
+  /** A filter to use to search for tasks.
     */
   @js.native
   trait SearchQuantumTasksFilter extends js.Object {
@@ -470,7 +458,6 @@ package braket {
         "operator" -> operator.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[SearchQuantumTasksFilter]
     }
   }

@@ -208,8 +208,7 @@ package lambda {
     def updateFunctionEventInvokeConfig(params: UpdateFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
   }
 
-  /**
-    * Limits that are related to concurrency and storage. All file and storage sizes are in bytes.
+  /** Limits that are related to concurrency and storage. All file and storage sizes are in bytes.
     */
   @js.native
   trait AccountLimit extends js.Object {
@@ -239,8 +238,7 @@ package lambda {
     }
   }
 
-  /**
-    * The number of functions and amount of storage in use.
+  /** The number of functions and amount of storage in use.
     */
   @js.native
   trait AccountUsage extends js.Object {
@@ -374,8 +372,7 @@ package lambda {
     }
   }
 
-  /**
-    * Provides configuration information about a Lambda function [[https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html|alias]].
+  /** Provides configuration information about a Lambda function [[https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html|alias]].
     */
   @js.native
   trait AliasConfiguration extends js.Object {
@@ -408,8 +405,7 @@ package lambda {
     }
   }
 
-  /**
-    * The [[https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html|traffic-shifting]] configuration of a Lambda function alias.
+  /** The [[https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html|traffic-shifting]] configuration of a Lambda function alias.
     */
   @js.native
   trait AliasRoutingConfiguration extends js.Object {
@@ -593,8 +589,7 @@ package lambda {
     }
   }
 
-  /**
-    * The [[https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq|dead-letter queue]] for failed asynchronous invocations.
+  /** The [[https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq|dead-letter queue]] for failed asynchronous invocations.
     */
   @js.native
   trait DeadLetterConfig extends js.Object {
@@ -628,7 +623,6 @@ package lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteAliasRequest]
     }
   }
@@ -646,7 +640,6 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteEventSourceMappingRequest]
     }
   }
@@ -664,7 +657,6 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteFunctionConcurrencyRequest]
     }
   }
@@ -727,7 +719,6 @@ package lambda {
         "LayerName" -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteLayerVersionRequest]
     }
   }
@@ -748,13 +739,11 @@ package lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[DeleteProvisionedConcurrencyConfigRequest]
     }
   }
 
-  /**
-    * A configuration object that specifies the destination of an event after Lambda processes it.
+  /** A configuration object that specifies the destination of an event after Lambda processes it.
     */
   @js.native
   trait DestinationConfig extends js.Object {
@@ -775,8 +764,7 @@ package lambda {
     }
   }
 
-  /**
-    * A function's environment variable settings.
+  /** A function's environment variable settings.
     */
   @js.native
   trait Environment extends js.Object {
@@ -794,8 +782,7 @@ package lambda {
     }
   }
 
-  /**
-    * Error messages for environment variables that couldn't be applied.
+  /** Error messages for environment variables that couldn't be applied.
     */
   @js.native
   trait EnvironmentError extends js.Object {
@@ -816,8 +803,7 @@ package lambda {
     }
   }
 
-  /**
-    * The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.
+  /** The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.
     */
   @js.native
   trait EnvironmentResponse extends js.Object {
@@ -838,8 +824,7 @@ package lambda {
     }
   }
 
-  /**
-    * A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
+  /** A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
     */
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
@@ -909,8 +894,7 @@ package lambda {
     @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
   }
 
-  /**
-    * Details about the connection between a Lambda function and an Amazon EFS file system.
+  /** Details about the connection between a Lambda function and an Amazon EFS file system.
     */
   @js.native
   trait FileSystemConfig extends js.Object {
@@ -928,13 +912,11 @@ package lambda {
         "Arn" -> Arn.asInstanceOf[js.Any],
         "LocalMountPath" -> LocalMountPath.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[FileSystemConfig]
     }
   }
 
-  /**
-    * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
+  /** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
     */
   @js.native
   trait FunctionCode extends js.Object {
@@ -961,8 +943,7 @@ package lambda {
     }
   }
 
-  /**
-    * Details about a function's deployment package.
+  /** Details about a function's deployment package.
     */
   @js.native
   trait FunctionCodeLocation extends js.Object {
@@ -983,8 +964,7 @@ package lambda {
     }
   }
 
-  /**
-    * Details about a function's configuration.
+  /** Details about a function's configuration.
     */
   @js.native
   trait FunctionConfiguration extends js.Object {
@@ -1117,14 +1097,12 @@ package lambda {
   }
 
   @js.native
-  trait GetAccountSettingsRequest extends js.Object {}
+  trait GetAccountSettingsRequest extends js.Object
 
   object GetAccountSettingsRequest {
     @inline
-    def apply(
-    ): GetAccountSettingsRequest = {
+    def apply(): GetAccountSettingsRequest = {
       val __obj = js.Dynamic.literal()
-
       __obj.asInstanceOf[GetAccountSettingsRequest]
     }
   }
@@ -1164,7 +1142,6 @@ package lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetAliasRequest]
     }
   }
@@ -1182,7 +1159,6 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetEventSourceMappingRequest]
     }
   }
@@ -1200,7 +1176,6 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetFunctionConcurrencyRequest]
     }
   }
@@ -1322,7 +1297,6 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLayerVersionByArnRequest]
     }
   }
@@ -1343,7 +1317,6 @@ package lambda {
         "LayerName" -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLayerVersionPolicyRequest]
     }
   }
@@ -1383,7 +1356,6 @@ package lambda {
         "LayerName" -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetLayerVersionRequest]
     }
   }
@@ -1481,7 +1453,6 @@ package lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetProvisionedConcurrencyConfigRequest]
     }
   }
@@ -1605,13 +1576,11 @@ package lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "InvokeArgs" -> InvokeArgs.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[InvokeAsyncRequest]
     }
   }
 
-  /**
-    * A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation.
+  /** A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation.
     */
   @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
@@ -1654,8 +1623,7 @@ package lambda {
     @inline def values = js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup)
   }
 
-  /**
-    * An [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** An [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
   trait Layer extends js.Object {
@@ -1676,8 +1644,7 @@ package lambda {
     }
   }
 
-  /**
-    * A ZIP archive that contains the contents of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]]. You can specify either an Amazon S3 location, or upload a layer archive directly.
+  /** A ZIP archive that contains the contents of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]]. You can specify either an Amazon S3 location, or upload a layer archive directly.
     */
   @js.native
   trait LayerVersionContentInput extends js.Object {
@@ -1704,8 +1671,7 @@ package lambda {
     }
   }
 
-  /**
-    * Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
   trait LayerVersionContentOutput extends js.Object {
@@ -1729,8 +1695,7 @@ package lambda {
     }
   }
 
-  /**
-    * Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
   trait LayerVersionsListItem extends js.Object {
@@ -1763,8 +1728,7 @@ package lambda {
     }
   }
 
-  /**
-    * Details about an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** Details about an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
     */
   @js.native
   trait LayersListItem extends js.Object {
@@ -1946,8 +1910,7 @@ package lambda {
     }
   }
 
-  /**
-    * A list of Lambda functions.
+  /** A list of Lambda functions.
     */
   @js.native
   trait ListFunctionsResponse extends js.Object {
@@ -2111,7 +2074,6 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[ListTagsRequest]
     }
   }
@@ -2184,8 +2146,7 @@ package lambda {
     @inline def values = js.Array(None, Tail)
   }
 
-  /**
-    * A destination for events that failed processing.
+  /** A destination for events that failed processing.
     */
   @js.native
   trait OnFailure extends js.Object {
@@ -2203,8 +2164,7 @@ package lambda {
     }
   }
 
-  /**
-    * A destination for events that were processed successfully.
+  /** A destination for events that were processed successfully.
     */
   @js.native
   trait OnSuccess extends js.Object {
@@ -2222,8 +2182,7 @@ package lambda {
     }
   }
 
-  /**
-    * Details about the provisioned concurrency configuration for a function alias or version.
+  /** Details about the provisioned concurrency configuration for a function alias or version.
     */
   @js.native
   trait ProvisionedConcurrencyConfigListItem extends js.Object {
@@ -2379,7 +2338,6 @@ package lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "ReservedConcurrentExecutions" -> ReservedConcurrentExecutions.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutFunctionConcurrencyRequest]
     }
   }
@@ -2433,7 +2391,6 @@ package lambda {
         "ProvisionedConcurrentExecutions" -> ProvisionedConcurrentExecutions.asInstanceOf[js.Any],
         "Qualifier" -> Qualifier.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[PutProvisionedConcurrencyConfigRequest]
     }
   }
@@ -2550,32 +2507,31 @@ package lambda {
     val provided = "provided".asInstanceOf[Runtime]
     val `provided.al2` = "provided.al2".asInstanceOf[Runtime]
 
-    @inline def values =
-      js.Array(
-        nodejs,
-        `nodejs4.3`,
-        `nodejs6.10`,
-        `nodejs8.10`,
-        `nodejs10.x`,
-        `nodejs12.x`,
-        java8,
-        `java8.al2`,
-        java11,
-        `python2.7`,
-        `python3.6`,
-        `python3.7`,
-        `python3.8`,
-        `dotnetcore1.0`,
-        `dotnetcore2.0`,
-        `dotnetcore2.1`,
-        `dotnetcore3.1`,
-        `nodejs4.3-edge`,
-        `go1.x`,
-        `ruby2.5`,
-        `ruby2.7`,
-        provided,
-        `provided.al2`
-      )
+    @inline def values = js.Array(
+      nodejs,
+      `nodejs4.3`,
+      `nodejs6.10`,
+      `nodejs8.10`,
+      `nodejs10.x`,
+      `nodejs12.x`,
+      java8,
+      `java8.al2`,
+      java11,
+      `python2.7`,
+      `python3.6`,
+      `python3.7`,
+      `python3.8`,
+      `dotnetcore1.0`,
+      `dotnetcore2.0`,
+      `dotnetcore2.1`,
+      `dotnetcore3.1`,
+      `nodejs4.3-edge`,
+      `go1.x`,
+      `ruby2.5`,
+      `ruby2.7`,
+      provided,
+      `provided.al2`
+    )
   }
 
   @js.native
@@ -2603,19 +2559,18 @@ package lambda {
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
 
-    @inline def values =
-      js.Array(
-        Idle,
-        Creating,
-        Restoring,
-        EniLimitExceeded,
-        InsufficientRolePermissions,
-        InvalidConfiguration,
-        InternalError,
-        SubnetOutOfIPAddresses,
-        InvalidSubnet,
-        InvalidSecurityGroup
-      )
+    @inline def values = js.Array(
+      Idle,
+      Creating,
+      Restoring,
+      EniLimitExceeded,
+      InsufficientRolePermissions,
+      InvalidConfiguration,
+      InternalError,
+      SubnetOutOfIPAddresses,
+      InvalidSubnet,
+      InvalidSecurityGroup
+    )
   }
 
   @js.native
@@ -2634,13 +2589,11 @@ package lambda {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
-  /**
-    * The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.
+  /** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.
     */
   @js.native
   trait TracingConfig extends js.Object {
@@ -2658,8 +2611,7 @@ package lambda {
     }
   }
 
-  /**
-    * The function's AWS X-Ray tracing configuration.
+  /** The function's AWS X-Ray tracing configuration.
     */
   @js.native
   trait TracingConfigResponse extends js.Object {
@@ -2702,7 +2654,6 @@ package lambda {
         "Resource" -> Resource.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -2914,8 +2865,7 @@ package lambda {
     }
   }
 
-  /**
-    * The VPC security groups and subnets that are attached to a Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|VPC Settings]].
+  /** The VPC security groups and subnets that are attached to a Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|VPC Settings]].
     */
   @js.native
   trait VpcConfig extends js.Object {
@@ -2936,8 +2886,7 @@ package lambda {
     }
   }
 
-  /**
-    * The VPC security groups and subnets that are attached to a Lambda function.
+  /** The VPC security groups and subnets that are attached to a Lambda function.
     */
   @js.native
   trait VpcConfigResponse extends js.Object {

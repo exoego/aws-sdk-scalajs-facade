@@ -57,8 +57,7 @@ package ebs {
     def startSnapshot(params: StartSnapshotRequest): Request[StartSnapshotResponse] = js.native
   }
 
-  /**
-    * A block of data in an Amazon Elastic Block Store snapshot.
+  /** A block of data in an Amazon Elastic Block Store snapshot.
     */
   @js.native
   trait Block extends js.Object {
@@ -79,8 +78,7 @@ package ebs {
     }
   }
 
-  /**
-    * A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage.
+  /** A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage.
     */
   @js.native
   trait ChangedBlock extends js.Object {
@@ -185,7 +183,6 @@ package ebs {
         "BlockToken" -> BlockToken.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
-
       __obj.asInstanceOf[GetSnapshotBlockRequest]
     }
   }
@@ -475,8 +472,7 @@ package ebs {
     @inline def values = js.Array(completed, pending, error)
   }
 
-  /**
-    * Describes a tag.
+  /** Describes a tag.
     */
   @js.native
   trait Tag extends js.Object {
