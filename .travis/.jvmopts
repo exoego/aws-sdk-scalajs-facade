@@ -3,3 +3,4 @@
 -Xmx3G
 -XX:MaxMetaspaceSize=3G
 -XX:+CMSClassUnloadingEnabled
+-XX:+UseG1GC
