@@ -1,7 +1,7 @@
 -Xss4M
 -Xms2G
--Xmx8G
+-Xmx6G
 -XX:ReservedCodeCacheSize=512M
--XX:MaxMetaspaceSize=8G
+-XX:MaxMetaspaceSize=4G
 -XX:+CMSClassUnloadingEnabled
 -XX:+UseG1GC
