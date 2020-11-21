@@ -10,7 +10,7 @@ object Dependencies {
   object shared {
     val scalatest = Def.setting("org.scalatest" %%% "scalatest" % "3.2.3" % Test)
     val scalatestHelper = Def.setting("net.exoego" %%% "scalajs-test-helper-scalatest" % "0.2.0" % Test)
-    val compat = Def.setting("org.scala-lang.modules" %%% "scala-collection-compat" % "2.2.0")
+    val compat = Def.setting("org.scala-lang.modules" %%% "scala-collection-compat" % "2.3.0")
   }
   object scalajs {}
 }
