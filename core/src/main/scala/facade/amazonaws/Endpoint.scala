@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 @js.native
-@JSImport("aws-sdk", "Endpoint")
+@JSImport("aws-sdk/lib/core", "Endpoint", "AWS.Endpoint")
 class Endpoint(url: String) extends js.Object {
 
   /** The host portion of the endpoint including the port, e.g., example.com:80.
