@@ -1,11 +1,10 @@
 package facade.amazonaws
 
-import facade.amazonaws._
 import org.scalatest.funsuite.AnyFunSuite
 
 import scala.scalajs.js
 
-class CoreTest extends AnyFunSuite {
+class ExtensionTest extends AnyFunSuite {
   test("AWS object") {
     assert((AWS.config !== null) && (AWS.config !== js.undefined))
     assert(AWS.config.s3.isEmpty)
