@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 @js.native
-@JSImport("aws-sdk/lib/core", "Credentials")
+@JSImport("aws-sdk/lib/core", "Credentials", "AWS.Credentials")
 class AWSCredentials extends js.Object {
   def this(accessKeyId: String, secretAccessKey: String, sessionToken: js.UndefOr[String] = js.undefined) = this()
 
