@@ -5,6 +5,7 @@ import scala.scalajs.js.annotation.JSImport
 
 @js.native
 @JSImport("aws-sdk", "HttpRequest")
+// TODO: @JSImport("aws-sdk/lib/core", "HttpRequest", "AWS.HttpRequest")
 class HttpRequest(
     val endpoint: Endpoint,
     region: String

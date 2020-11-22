@@ -16,4 +16,10 @@ class CoreTest extends AnyFunSuite {
     val endpoint = new Endpoint("http://localhost")
     assert(endpoint.hostname === "localhost")
   }
+
+  test("AWS.HttpRequest is constructor") {
+    val http = new HttpRequest(new Endpoint("http://localhost"), "ap-northeast-1")
+    assert(http.endpoint.hostname === "localhost")
+    assert(http.method === "POST")
+  }
 }
