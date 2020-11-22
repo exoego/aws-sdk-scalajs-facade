@@ -11,4 +11,9 @@ class CoreTest extends AnyFunSuite {
     val cred = new AWSCredentials()
     assert(cred.expiryWindow === 15)
   }
+
+  test("AWS.Endpoint is constructor") {
+    val endpoint = new Endpoint("http://localhost")
+    assert(endpoint.hostname === "localhost")
+  }
 }
