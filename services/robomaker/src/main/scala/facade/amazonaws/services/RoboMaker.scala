@@ -1115,6 +1115,7 @@ package robomaker {
     var worldCount: WorldCount
     var clientRequestToken: js.UndefOr[ClientRequestToken]
     var tags: js.UndefOr[TagMap]
+    var worldTags: js.UndefOr[TagMap]
   }
 
   object CreateWorldGenerationJobRequest {
@@ -1123,7 +1124,8 @@ package robomaker {
         template: Arn,
         worldCount: WorldCount,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
+        tags: js.UndefOr[TagMap] = js.undefined,
+        worldTags: js.UndefOr[TagMap] = js.undefined
     ): CreateWorldGenerationJobRequest = {
       val __obj = js.Dynamic.literal(
         "template" -> template.asInstanceOf[js.Any],
@@ -1132,6 +1134,7 @@ package robomaker {
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      worldTags.foreach(__v => __obj.updateDynamic("worldTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorldGenerationJobRequest]
     }
   }
@@ -1146,6 +1149,7 @@ package robomaker {
     var tags: js.UndefOr[TagMap]
     var template: js.UndefOr[Arn]
     var worldCount: js.UndefOr[WorldCount]
+    var worldTags: js.UndefOr[TagMap]
   }
 
   object CreateWorldGenerationJobResponse {
@@ -1158,7 +1162,8 @@ package robomaker {
         status: js.UndefOr[WorldGenerationJobStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         template: js.UndefOr[Arn] = js.undefined,
-        worldCount: js.UndefOr[WorldCount] = js.undefined
+        worldCount: js.UndefOr[WorldCount] = js.undefined,
+        worldTags: js.UndefOr[TagMap] = js.undefined
     ): CreateWorldGenerationJobResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -1169,6 +1174,7 @@ package robomaker {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
       worldCount.foreach(__v => __obj.updateDynamic("worldCount")(__v.asInstanceOf[js.Any]))
+      worldTags.foreach(__v => __obj.updateDynamic("worldTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorldGenerationJobResponse]
     }
   }
@@ -2193,6 +2199,7 @@ package robomaker {
     var tags: js.UndefOr[TagMap]
     var template: js.UndefOr[Arn]
     var worldCount: js.UndefOr[WorldCount]
+    var worldTags: js.UndefOr[TagMap]
   }
 
   object DescribeWorldGenerationJobResponse {
@@ -2207,7 +2214,8 @@ package robomaker {
         status: js.UndefOr[WorldGenerationJobStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         template: js.UndefOr[Arn] = js.undefined,
-        worldCount: js.UndefOr[WorldCount] = js.undefined
+        worldCount: js.UndefOr[WorldCount] = js.undefined,
+        worldTags: js.UndefOr[TagMap] = js.undefined
     ): DescribeWorldGenerationJobResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -2220,6 +2228,7 @@ package robomaker {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
       worldCount.foreach(__v => __obj.updateDynamic("worldCount")(__v.asInstanceOf[js.Any]))
+      worldTags.foreach(__v => __obj.updateDynamic("worldTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorldGenerationJobResponse]
     }
   }

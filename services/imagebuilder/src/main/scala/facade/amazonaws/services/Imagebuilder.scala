@@ -7,11 +7,11 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object imagebuilder {
-  type AccountList = js.Array[NonEmptyString]
+  type AccountId = String
+  type AccountList = js.Array[AccountId]
   type AmiList = js.Array[Ami]
   type AmiNameString = String
   type Arn = String
-  type ArnList = js.Array[Arn]
   type ClientToken = String
   type ComponentBuildVersionArn = String
   type ComponentConfigurationList = js.Array[ComponentConfiguration]
@@ -49,10 +49,13 @@ package object imagebuilder {
   type InstanceBlockDeviceMappings = js.Array[InstanceBlockDeviceMapping]
   type InstanceType = String
   type InstanceTypeList = js.Array[InstanceType]
+  type LicenseConfigurationArn = String
+  type LicenseConfigurationArnList = js.Array[LicenseConfigurationArn]
   type NonEmptyString = String
   type NullableBoolean = Boolean
   type OsVersion = String
   type OsVersionList = js.Array[OsVersion]
+  type PaginationToken = String
   type ResourceName = String
   type ResourcePolicyDocument = String
   type ResourceTagMap = js.Dictionary[TagValue]
@@ -169,6 +172,7 @@ package imagebuilder {
     */
   @js.native
   trait Ami extends js.Object {
+    var accountId: js.UndefOr[NonEmptyString]
     var description: js.UndefOr[NonEmptyString]
     var image: js.UndefOr[NonEmptyString]
     var name: js.UndefOr[NonEmptyString]
@@ -179,6 +183,7 @@ package imagebuilder {
   object Ami {
     @inline
     def apply(
+        accountId: js.UndefOr[NonEmptyString] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         image: js.UndefOr[NonEmptyString] = js.undefined,
         name: js.UndefOr[NonEmptyString] = js.undefined,
@@ -186,6 +191,7 @@ package imagebuilder {
         state: js.UndefOr[ImageState] = js.undefined
     ): Ami = {
       val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -204,6 +210,7 @@ package imagebuilder {
     var kmsKeyId: js.UndefOr[NonEmptyString]
     var launchPermission: js.UndefOr[LaunchPermissionConfiguration]
     var name: js.UndefOr[AmiNameString]
+    var targetAccountIds: js.UndefOr[AccountList]
   }
 
   object AmiDistributionConfiguration {
@@ -213,7 +220,8 @@ package imagebuilder {
         description: js.UndefOr[NonEmptyString] = js.undefined,
         kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
         launchPermission: js.UndefOr[LaunchPermissionConfiguration] = js.undefined,
-        name: js.UndefOr[AmiNameString] = js.undefined
+        name: js.UndefOr[AmiNameString] = js.undefined,
+        targetAccountIds: js.UndefOr[AccountList] = js.undefined
     ): AmiDistributionConfiguration = {
       val __obj = js.Dynamic.literal()
       amiTags.foreach(__v => __obj.updateDynamic("amiTags")(__v.asInstanceOf[js.Any]))
@@ -221,6 +229,7 @@ package imagebuilder {
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       launchPermission.foreach(__v => __obj.updateDynamic("launchPermission")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      targetAccountIds.foreach(__v => __obj.updateDynamic("targetAccountIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AmiDistributionConfiguration]
     }
   }
@@ -1062,7 +1071,7 @@ package imagebuilder {
   trait Distribution extends js.Object {
     var region: NonEmptyString
     var amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration]
-    var licenseConfigurationArns: js.UndefOr[ArnList]
+    var licenseConfigurationArns: js.UndefOr[LicenseConfigurationArnList]
   }
 
   object Distribution {
@@ -1070,7 +1079,7 @@ package imagebuilder {
     def apply(
         region: NonEmptyString,
         amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration] = js.undefined,
-        licenseConfigurationArns: js.UndefOr[ArnList] = js.undefined
+        licenseConfigurationArns: js.UndefOr[LicenseConfigurationArnList] = js.undefined
     ): Distribution = {
       val __obj = js.Dynamic.literal(
         "region" -> region.asInstanceOf[js.Any]
@@ -1197,11 +1206,12 @@ package imagebuilder {
   object EbsVolumeType {
     val standard = "standard".asInstanceOf[EbsVolumeType]
     val io1 = "io1".asInstanceOf[EbsVolumeType]
+    val io2 = "io2".asInstanceOf[EbsVolumeType]
     val gp2 = "gp2".asInstanceOf[EbsVolumeType]
     val sc1 = "sc1".asInstanceOf[EbsVolumeType]
     val st1 = "st1".asInstanceOf[EbsVolumeType]
 
-    @inline def values = js.Array(standard, io1, gp2, sc1, st1)
+    @inline def values = js.Array(standard, io1, io2, gp2, sc1, st1)
   }
 
   /** A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
@@ -2128,7 +2138,7 @@ package imagebuilder {
   trait ListComponentBuildVersionsRequest extends js.Object {
     var componentVersionArn: ComponentVersionArn
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListComponentBuildVersionsRequest {
@@ -2136,7 +2146,7 @@ package imagebuilder {
     def apply(
         componentVersionArn: ComponentVersionArn,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListComponentBuildVersionsRequest = {
       val __obj = js.Dynamic.literal(
         "componentVersionArn" -> componentVersionArn.asInstanceOf[js.Any]
@@ -2151,7 +2161,7 @@ package imagebuilder {
   @js.native
   trait ListComponentBuildVersionsResponse extends js.Object {
     var componentSummaryList: js.UndefOr[ComponentSummaryList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2159,7 +2169,7 @@ package imagebuilder {
     @inline
     def apply(
         componentSummaryList: js.UndefOr[ComponentSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListComponentBuildVersionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2174,7 +2184,7 @@ package imagebuilder {
   trait ListComponentsRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var owner: js.UndefOr[Ownership]
   }
 
@@ -2183,7 +2193,7 @@ package imagebuilder {
     def apply(
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         owner: js.UndefOr[Ownership] = js.undefined
     ): ListComponentsRequest = {
       val __obj = js.Dynamic.literal()
@@ -2198,7 +2208,7 @@ package imagebuilder {
   @js.native
   trait ListComponentsResponse extends js.Object {
     var componentVersionList: js.UndefOr[ComponentVersionList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2206,7 +2216,7 @@ package imagebuilder {
     @inline
     def apply(
         componentVersionList: js.UndefOr[ComponentVersionList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListComponentsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2221,7 +2231,7 @@ package imagebuilder {
   trait ListDistributionConfigurationsRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListDistributionConfigurationsRequest {
@@ -2229,7 +2239,7 @@ package imagebuilder {
     def apply(
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDistributionConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
@@ -2242,7 +2252,7 @@ package imagebuilder {
   @js.native
   trait ListDistributionConfigurationsResponse extends js.Object {
     var distributionConfigurationSummaryList: js.UndefOr[DistributionConfigurationSummaryList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2250,7 +2260,7 @@ package imagebuilder {
     @inline
     def apply(
         distributionConfigurationSummaryList: js.UndefOr[DistributionConfigurationSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListDistributionConfigurationsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2266,7 +2276,7 @@ package imagebuilder {
     var imageVersionArn: ImageVersionArn
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListImageBuildVersionsRequest {
@@ -2275,7 +2285,7 @@ package imagebuilder {
         imageVersionArn: ImageVersionArn,
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListImageBuildVersionsRequest = {
       val __obj = js.Dynamic.literal(
         "imageVersionArn" -> imageVersionArn.asInstanceOf[js.Any]
@@ -2291,7 +2301,7 @@ package imagebuilder {
   @js.native
   trait ListImageBuildVersionsResponse extends js.Object {
     var imageSummaryList: js.UndefOr[ImageSummaryList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2299,7 +2309,7 @@ package imagebuilder {
     @inline
     def apply(
         imageSummaryList: js.UndefOr[ImageSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListImageBuildVersionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2315,7 +2325,7 @@ package imagebuilder {
     var imagePipelineArn: ImagePipelineArn
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListImagePipelineImagesRequest {
@@ -2324,7 +2334,7 @@ package imagebuilder {
         imagePipelineArn: ImagePipelineArn,
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListImagePipelineImagesRequest = {
       val __obj = js.Dynamic.literal(
         "imagePipelineArn" -> imagePipelineArn.asInstanceOf[js.Any]
@@ -2340,7 +2350,7 @@ package imagebuilder {
   @js.native
   trait ListImagePipelineImagesResponse extends js.Object {
     var imageSummaryList: js.UndefOr[ImageSummaryList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2348,7 +2358,7 @@ package imagebuilder {
     @inline
     def apply(
         imageSummaryList: js.UndefOr[ImageSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListImagePipelineImagesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2363,7 +2373,7 @@ package imagebuilder {
   trait ListImagePipelinesRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListImagePipelinesRequest {
@@ -2371,7 +2381,7 @@ package imagebuilder {
     def apply(
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListImagePipelinesRequest = {
       val __obj = js.Dynamic.literal()
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
@@ -2384,7 +2394,7 @@ package imagebuilder {
   @js.native
   trait ListImagePipelinesResponse extends js.Object {
     var imagePipelineList: js.UndefOr[ImagePipelineList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2392,7 +2402,7 @@ package imagebuilder {
     @inline
     def apply(
         imagePipelineList: js.UndefOr[ImagePipelineList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListImagePipelinesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2407,7 +2417,7 @@ package imagebuilder {
   trait ListImageRecipesRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var owner: js.UndefOr[Ownership]
   }
 
@@ -2416,7 +2426,7 @@ package imagebuilder {
     def apply(
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         owner: js.UndefOr[Ownership] = js.undefined
     ): ListImageRecipesRequest = {
       val __obj = js.Dynamic.literal()
@@ -2431,7 +2441,7 @@ package imagebuilder {
   @js.native
   trait ListImageRecipesResponse extends js.Object {
     var imageRecipeSummaryList: js.UndefOr[ImageRecipeSummaryList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2439,7 +2449,7 @@ package imagebuilder {
     @inline
     def apply(
         imageRecipeSummaryList: js.UndefOr[ImageRecipeSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListImageRecipesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2454,7 +2464,7 @@ package imagebuilder {
   trait ListImagesRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var owner: js.UndefOr[Ownership]
   }
 
@@ -2463,7 +2473,7 @@ package imagebuilder {
     def apply(
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         owner: js.UndefOr[Ownership] = js.undefined
     ): ListImagesRequest = {
       val __obj = js.Dynamic.literal()
@@ -2478,7 +2488,7 @@ package imagebuilder {
   @js.native
   trait ListImagesResponse extends js.Object {
     var imageVersionList: js.UndefOr[ImageVersionList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2486,7 +2496,7 @@ package imagebuilder {
     @inline
     def apply(
         imageVersionList: js.UndefOr[ImageVersionList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListImagesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2501,7 +2511,7 @@ package imagebuilder {
   trait ListInfrastructureConfigurationsRequest extends js.Object {
     var filters: js.UndefOr[FilterList]
     var maxResults: js.UndefOr[RestrictedInteger]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListInfrastructureConfigurationsRequest {
@@ -2509,7 +2519,7 @@ package imagebuilder {
     def apply(
         filters: js.UndefOr[FilterList] = js.undefined,
         maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListInfrastructureConfigurationsRequest = {
       val __obj = js.Dynamic.literal()
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
@@ -2522,7 +2532,7 @@ package imagebuilder {
   @js.native
   trait ListInfrastructureConfigurationsResponse extends js.Object {
     var infrastructureConfigurationSummaryList: js.UndefOr[InfrastructureConfigurationSummaryList]
-    var nextToken: js.UndefOr[NonEmptyString]
+    var nextToken: js.UndefOr[PaginationToken]
     var requestId: js.UndefOr[NonEmptyString]
   }
 
@@ -2530,7 +2540,7 @@ package imagebuilder {
     @inline
     def apply(
         infrastructureConfigurationSummaryList: js.UndefOr[InfrastructureConfigurationSummaryList] = js.undefined,
-        nextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         requestId: js.UndefOr[NonEmptyString] = js.undefined
     ): ListInfrastructureConfigurationsResponse = {
       val __obj = js.Dynamic.literal()

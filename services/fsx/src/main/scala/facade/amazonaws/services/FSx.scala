@@ -10,6 +10,9 @@ package object fsx {
   type AWSAccountId = String
   type ActiveDirectoryFullyQualifiedName = String
   type AdministrativeActions = js.Array[AdministrativeAction]
+  type Aliases = js.Array[Alias]
+  type AlternateDNSName = String
+  type AlternateDNSNames = js.Array[AlternateDNSName]
   type ArchivePath = String
   type AutomaticBackupRetentionDays = Int
   type BackupId = String
@@ -75,6 +78,7 @@ package object fsx {
 
   implicit final class FSxOps(private val service: FSx) extends AnyVal {
 
+    @inline def associateFileSystemAliasesFuture(params: AssociateFileSystemAliasesRequest): Future[AssociateFileSystemAliasesResponse] = service.associateFileSystemAliases(params).promise().toFuture
     @inline def cancelDataRepositoryTaskFuture(params: CancelDataRepositoryTaskRequest): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] = service.createBackup(params).promise().toFuture
     @inline def createDataRepositoryTaskFuture(params: CreateDataRepositoryTaskRequest): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise().toFuture
@@ -84,7 +88,9 @@ package object fsx {
     @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] = service.deleteFileSystem(params).promise().toFuture
     @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] = service.describeBackups(params).promise().toFuture
     @inline def describeDataRepositoryTasksFuture(params: DescribeDataRepositoryTasksRequest): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise().toFuture
+    @inline def describeFileSystemAliasesFuture(params: DescribeFileSystemAliasesRequest): Future[DescribeFileSystemAliasesResponse] = service.describeFileSystemAliases(params).promise().toFuture
     @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] = service.describeFileSystems(params).promise().toFuture
+    @inline def disassociateFileSystemAliasesFuture(params: DisassociateFileSystemAliasesRequest): Future[DisassociateFileSystemAliasesResponse] = service.disassociateFileSystemAliases(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -99,6 +105,7 @@ package fsx {
   class FSx() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateFileSystemAliases(params: AssociateFileSystemAliasesRequest): Request[AssociateFileSystemAliasesResponse] = js.native
     def cancelDataRepositoryTask(params: CancelDataRepositoryTaskRequest): Request[CancelDataRepositoryTaskResponse] = js.native
     def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
     def createDataRepositoryTask(params: CreateDataRepositoryTaskRequest): Request[CreateDataRepositoryTaskResponse] = js.native
@@ -108,7 +115,9 @@ package fsx {
     def deleteFileSystem(params: DeleteFileSystemRequest): Request[DeleteFileSystemResponse] = js.native
     def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
     def describeDataRepositoryTasks(params: DescribeDataRepositoryTasksRequest): Request[DescribeDataRepositoryTasksResponse] = js.native
+    def describeFileSystemAliases(params: DescribeFileSystemAliasesRequest): Request[DescribeFileSystemAliasesResponse] = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
+    def disassociateFileSystemAliases(params: DisassociateFileSystemAliasesRequest): Request[DisassociateFileSystemAliasesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -188,16 +197,97 @@ package fsx {
   }
 
   /** Describes the type of administrative action, as follows:
-    * * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system). A
+    * * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system).
     * * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process of migrating the file system data to the new, larger disks. You can track the storage migration progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing Storage Capacity]].
+    * * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system. For more information, see .
+    * * <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see .
     */
   @js.native
   sealed trait AdministrativeActionType extends js.Any
   object AdministrativeActionType {
     val FILE_SYSTEM_UPDATE = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
     val STORAGE_OPTIMIZATION = "STORAGE_OPTIMIZATION".asInstanceOf[AdministrativeActionType]
+    val FILE_SYSTEM_ALIAS_ASSOCIATION = "FILE_SYSTEM_ALIAS_ASSOCIATION".asInstanceOf[AdministrativeActionType]
+    val FILE_SYSTEM_ALIAS_DISASSOCIATION = "FILE_SYSTEM_ALIAS_DISASSOCIATION".asInstanceOf[AdministrativeActionType]
 
-    @inline def values = js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION)
+    @inline def values = js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION, FILE_SYSTEM_ALIAS_ASSOCIATION, FILE_SYSTEM_ALIAS_DISASSOCIATION)
+  }
+
+  /** A DNS alias that is associated with the file system. You can use a DNS alias to access a file system using user-defined DNS names, in addition to the default DNS name that Amazon FSx assigns to the file system. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html|DNS aliases]] in the <i>FSx for Windows File Server User Guide</i>.
+    */
+  @js.native
+  trait Alias extends js.Object {
+    var Lifecycle: js.UndefOr[AliasLifecycle]
+    var Name: js.UndefOr[AlternateDNSName]
+  }
+
+  object Alias {
+    @inline
+    def apply(
+        Lifecycle: js.UndefOr[AliasLifecycle] = js.undefined,
+        Name: js.UndefOr[AlternateDNSName] = js.undefined
+    ): Alias = {
+      val __obj = js.Dynamic.literal()
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Alias]
+    }
+  }
+
+  @js.native
+  sealed trait AliasLifecycle extends js.Any
+  object AliasLifecycle {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[AliasLifecycle]
+    val CREATING = "CREATING".asInstanceOf[AliasLifecycle]
+    val DELETING = "DELETING".asInstanceOf[AliasLifecycle]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[AliasLifecycle]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AliasLifecycle]
+
+    @inline def values = js.Array(AVAILABLE, CREATING, DELETING, CREATE_FAILED, DELETE_FAILED)
+  }
+
+  /** The request object specifying one or more DNS alias names to associate with an Amazon FSx for Windows File Server file system.
+    */
+  @js.native
+  trait AssociateFileSystemAliasesRequest extends js.Object {
+    var Aliases: AlternateDNSNames
+    var FileSystemId: FileSystemId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+  }
+
+  object AssociateFileSystemAliasesRequest {
+    @inline
+    def apply(
+        Aliases: AlternateDNSNames,
+        FileSystemId: FileSystemId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): AssociateFileSystemAliasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Aliases" -> Aliases.asInstanceOf[js.Any],
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateFileSystemAliasesRequest]
+    }
+  }
+
+  /** The system generated response showing the DNS aliases that Amazon FSx is attempting to associate with the file system. Use the API operation to monitor the status of the aliases Amazon FSx is associating with the file system. It can take up to 2.5 minutes for the alias status to change from <code>CREATING</code> to <code>AVAILABLE</code>.
+    */
+  @js.native
+  trait AssociateFileSystemAliasesResponse extends js.Object {
+    var Aliases: js.UndefOr[Aliases]
+  }
+
+  object AssociateFileSystemAliasesResponse {
+    @inline
+    def apply(
+        Aliases: js.UndefOr[Aliases] = js.undefined
+    ): AssociateFileSystemAliasesResponse = {
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateFileSystemAliasesResponse]
+    }
   }
 
   @js.native
@@ -279,6 +369,11 @@ package fsx {
   }
 
   /** The lifecycle status of the backup.
+    * * <code>AVAILABLE</code> - The backup is fully available.
+    * * <code>CREATING</code> - FSx is creating the new user-intiated backup
+    * * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; FSx is backing up the file system.
+    * * <code>DELETED</code> - The backup was deleted is no longer available.
+    * * <code>FAILED</code> - Amazon FSx could not complete the backup.
     */
   @js.native
   sealed trait BackupLifecycle extends js.Any
@@ -299,8 +394,9 @@ package fsx {
   object BackupType {
     val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackupType]
     val USER_INITIATED = "USER_INITIATED".asInstanceOf[BackupType]
+    val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
 
-    @inline def values = js.Array(AUTOMATIC, USER_INITIATED)
+    @inline def values = js.Array(AUTOMATIC, USER_INITIATED, AWS_BACKUP)
   }
 
   /** Cancels a data repository task.
@@ -641,6 +737,7 @@ package fsx {
   trait CreateFileSystemWindowsConfiguration extends js.Object {
     var ThroughputCapacity: MegabytesPerSecond
     var ActiveDirectoryId: js.UndefOr[DirectoryId]
+    var Aliases: js.UndefOr[AlternateDNSNames]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
@@ -655,6 +752,7 @@ package fsx {
     def apply(
         ThroughputCapacity: MegabytesPerSecond,
         ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Aliases: js.UndefOr[AlternateDNSNames] = js.undefined,
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
@@ -668,6 +766,7 @@ package fsx {
       )
 
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
       AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
       DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
@@ -1170,6 +1269,56 @@ package fsx {
     }
   }
 
+  /** The request object for <code>DescribeFileSystemAliases</code> operation.
+    */
+  @js.native
+  trait DescribeFileSystemAliasesRequest extends js.Object {
+    var FileSystemId: FileSystemId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeFileSystemAliasesRequest {
+    @inline
+    def apply(
+        FileSystemId: FileSystemId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFileSystemAliasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileSystemAliasesRequest]
+    }
+  }
+
+  /** The response object for <code>DescribeFileSystemAliases</code> operation.
+    */
+  @js.native
+  trait DescribeFileSystemAliasesResponse extends js.Object {
+    var Aliases: js.UndefOr[Aliases]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeFileSystemAliasesResponse {
+    @inline
+    def apply(
+        Aliases: js.UndefOr[Aliases] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFileSystemAliasesResponse = {
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileSystemAliasesResponse]
+    }
+  }
+
   /** The request object for <code>DescribeFileSystems</code> operation.
     */
   @js.native
@@ -1212,6 +1361,50 @@ package fsx {
       FileSystems.foreach(__v => __obj.updateDynamic("FileSystems")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFileSystemsResponse]
+    }
+  }
+
+  /** The request object of DNS aliases to disassociate from an Amazon FSx for Windows File Server file system.
+    */
+  @js.native
+  trait DisassociateFileSystemAliasesRequest extends js.Object {
+    var Aliases: AlternateDNSNames
+    var FileSystemId: FileSystemId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+  }
+
+  object DisassociateFileSystemAliasesRequest {
+    @inline
+    def apply(
+        Aliases: AlternateDNSNames,
+        FileSystemId: FileSystemId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): DisassociateFileSystemAliasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Aliases" -> Aliases.asInstanceOf[js.Any],
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateFileSystemAliasesRequest]
+    }
+  }
+
+  /** The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is removing from the file system.
+    */
+  @js.native
+  trait DisassociateFileSystemAliasesResponse extends js.Object {
+    var Aliases: js.UndefOr[Aliases]
+  }
+
+  object DisassociateFileSystemAliasesResponse {
+    @inline
+    def apply(
+        Aliases: js.UndefOr[Aliases] = js.undefined
+    ): DisassociateFileSystemAliasesResponse = {
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateFileSystemAliasesResponse]
     }
   }
 
@@ -1822,6 +2015,7 @@ package fsx {
   @js.native
   trait WindowsFileSystemConfiguration extends js.Object {
     var ActiveDirectoryId: js.UndefOr[DirectoryId]
+    var Aliases: js.UndefOr[Aliases]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var CopyTagsToBackups: js.UndefOr[Flag]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
@@ -1839,6 +2033,7 @@ package fsx {
     @inline
     def apply(
         ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Aliases: js.UndefOr[Aliases] = js.undefined,
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
@@ -1853,6 +2048,7 @@ package fsx {
     ): WindowsFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
       AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
       DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))

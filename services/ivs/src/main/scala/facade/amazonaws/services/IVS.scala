@@ -14,11 +14,18 @@ package object ivs {
   type ChannelName = String
   type Channels = js.Array[Channel]
   type IngestEndpoint = String
+  type IsAuthorized = Boolean
   type MaxChannelResults = Int
+  type MaxPlaybackKeyPairResults = Int
   type MaxStreamKeyResults = Int
   type MaxStreamResults = Int
   type MaxTagResults = Int
   type PaginationToken = String
+  type PlaybackKeyPairArn = String
+  type PlaybackKeyPairFingerprint = String
+  type PlaybackKeyPairList = js.Array[PlaybackKeyPairSummary]
+  type PlaybackKeyPairName = String
+  type PlaybackPublicKeyMaterial = String
   type PlaybackURL = String
   type ResourceArn = String
   type StreamKeyArn = String
@@ -44,11 +51,15 @@ package object ivs {
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
     @inline def createStreamKeyFuture(params: CreateStreamKeyRequest): Future[CreateStreamKeyResponse] = service.createStreamKey(params).promise().toFuture
     @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] = service.deleteChannel(params).promise().toFuture
+    @inline def deletePlaybackKeyPairFuture(params: DeletePlaybackKeyPairRequest): Future[DeletePlaybackKeyPairResponse] = service.deletePlaybackKeyPair(params).promise().toFuture
     @inline def deleteStreamKeyFuture(params: DeleteStreamKeyRequest): Future[js.Object] = service.deleteStreamKey(params).promise().toFuture
     @inline def getChannelFuture(params: GetChannelRequest): Future[GetChannelResponse] = service.getChannel(params).promise().toFuture
+    @inline def getPlaybackKeyPairFuture(params: GetPlaybackKeyPairRequest): Future[GetPlaybackKeyPairResponse] = service.getPlaybackKeyPair(params).promise().toFuture
     @inline def getStreamFuture(params: GetStreamRequest): Future[GetStreamResponse] = service.getStream(params).promise().toFuture
     @inline def getStreamKeyFuture(params: GetStreamKeyRequest): Future[GetStreamKeyResponse] = service.getStreamKey(params).promise().toFuture
+    @inline def importPlaybackKeyPairFuture(params: ImportPlaybackKeyPairRequest): Future[ImportPlaybackKeyPairResponse] = service.importPlaybackKeyPair(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
+    @inline def listPlaybackKeyPairsFuture(params: ListPlaybackKeyPairsRequest): Future[ListPlaybackKeyPairsResponse] = service.listPlaybackKeyPairs(params).promise().toFuture
     @inline def listStreamKeysFuture(params: ListStreamKeysRequest): Future[ListStreamKeysResponse] = service.listStreamKeys(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] = service.listStreams(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
@@ -72,11 +83,15 @@ package ivs {
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createStreamKey(params: CreateStreamKeyRequest): Request[CreateStreamKeyResponse] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[js.Object] = js.native
+    def deletePlaybackKeyPair(params: DeletePlaybackKeyPairRequest): Request[DeletePlaybackKeyPairResponse] = js.native
     def deleteStreamKey(params: DeleteStreamKeyRequest): Request[js.Object] = js.native
     def getChannel(params: GetChannelRequest): Request[GetChannelResponse] = js.native
+    def getPlaybackKeyPair(params: GetPlaybackKeyPairRequest): Request[GetPlaybackKeyPairResponse] = js.native
     def getStream(params: GetStreamRequest): Request[GetStreamResponse] = js.native
     def getStreamKey(params: GetStreamKeyRequest): Request[GetStreamKeyResponse] = js.native
+    def importPlaybackKeyPair(params: ImportPlaybackKeyPairRequest): Request[ImportPlaybackKeyPairResponse] = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
+    def listPlaybackKeyPairs(params: ListPlaybackKeyPairsRequest): Request[ListPlaybackKeyPairsResponse] = js.native
     def listStreamKeys(params: ListStreamKeysRequest): Request[ListStreamKeysResponse] = js.native
     def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -188,6 +203,7 @@ package ivs {
   @js.native
   trait Channel extends js.Object {
     var arn: js.UndefOr[ChannelArn]
+    var authorized: js.UndefOr[IsAuthorized]
     var ingestEndpoint: js.UndefOr[IngestEndpoint]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
@@ -200,6 +216,7 @@ package ivs {
     @inline
     def apply(
         arn: js.UndefOr[ChannelArn] = js.undefined,
+        authorized: js.UndefOr[IsAuthorized] = js.undefined,
         ingestEndpoint: js.UndefOr[IngestEndpoint] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
@@ -209,6 +226,7 @@ package ivs {
     ): Channel = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       ingestEndpoint.foreach(__v => __obj.updateDynamic("ingestEndpoint")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -233,6 +251,7 @@ package ivs {
   @js.native
   trait ChannelSummary extends js.Object {
     var arn: js.UndefOr[ChannelArn]
+    var authorized: js.UndefOr[IsAuthorized]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
     var tags: js.UndefOr[Tags]
@@ -242,12 +261,14 @@ package ivs {
     @inline
     def apply(
         arn: js.UndefOr[ChannelArn] = js.undefined,
+        authorized: js.UndefOr[IsAuthorized] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): ChannelSummary = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -266,6 +287,7 @@ package ivs {
 
   @js.native
   trait CreateChannelRequest extends js.Object {
+    var authorized: js.UndefOr[Boolean]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
     var tags: js.UndefOr[Tags]
@@ -275,12 +297,14 @@ package ivs {
   object CreateChannelRequest {
     @inline
     def apply(
+        authorized: js.UndefOr[Boolean] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
     ): CreateChannelRequest = {
       val __obj = js.Dynamic.literal()
+      authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -363,6 +387,34 @@ package ivs {
   }
 
   @js.native
+  trait DeletePlaybackKeyPairRequest extends js.Object {
+    var arn: PlaybackKeyPairArn
+  }
+
+  object DeletePlaybackKeyPairRequest {
+    @inline
+    def apply(
+        arn: PlaybackKeyPairArn
+    ): DeletePlaybackKeyPairRequest = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeletePlaybackKeyPairRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePlaybackKeyPairResponse extends js.Object
+
+  object DeletePlaybackKeyPairResponse {
+    @inline
+    def apply(): DeletePlaybackKeyPairResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeletePlaybackKeyPairResponse]
+    }
+  }
+
+  @js.native
   trait DeleteStreamKeyRequest extends js.Object {
     var arn: StreamKeyArn
   }
@@ -409,6 +461,39 @@ package ivs {
       val __obj = js.Dynamic.literal()
       channel.foreach(__v => __obj.updateDynamic("channel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetChannelResponse]
+    }
+  }
+
+  @js.native
+  trait GetPlaybackKeyPairRequest extends js.Object {
+    var arn: PlaybackKeyPairArn
+  }
+
+  object GetPlaybackKeyPairRequest {
+    @inline
+    def apply(
+        arn: PlaybackKeyPairArn
+    ): GetPlaybackKeyPairRequest = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPlaybackKeyPairRequest]
+    }
+  }
+
+  @js.native
+  trait GetPlaybackKeyPairResponse extends js.Object {
+    var keyPair: js.UndefOr[PlaybackKeyPair]
+  }
+
+  object GetPlaybackKeyPairResponse {
+    @inline
+    def apply(
+        keyPair: js.UndefOr[PlaybackKeyPair] = js.undefined
+    ): GetPlaybackKeyPairResponse = {
+      val __obj = js.Dynamic.literal()
+      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPlaybackKeyPairResponse]
     }
   }
 
@@ -479,6 +564,46 @@ package ivs {
   }
 
   @js.native
+  trait ImportPlaybackKeyPairRequest extends js.Object {
+    var publicKeyMaterial: PlaybackPublicKeyMaterial
+    var name: js.UndefOr[PlaybackKeyPairName]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object ImportPlaybackKeyPairRequest {
+    @inline
+    def apply(
+        publicKeyMaterial: PlaybackPublicKeyMaterial,
+        name: js.UndefOr[PlaybackKeyPairName] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): ImportPlaybackKeyPairRequest = {
+      val __obj = js.Dynamic.literal(
+        "publicKeyMaterial" -> publicKeyMaterial.asInstanceOf[js.Any]
+      )
+
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportPlaybackKeyPairRequest]
+    }
+  }
+
+  @js.native
+  trait ImportPlaybackKeyPairResponse extends js.Object {
+    var keyPair: js.UndefOr[PlaybackKeyPair]
+  }
+
+  object ImportPlaybackKeyPairResponse {
+    @inline
+    def apply(
+        keyPair: js.UndefOr[PlaybackKeyPair] = js.undefined
+    ): ImportPlaybackKeyPairResponse = {
+      val __obj = js.Dynamic.literal()
+      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportPlaybackKeyPairResponse]
+    }
+  }
+
+  @js.native
   trait ListChannelsRequest extends js.Object {
     var filterByName: js.UndefOr[ChannelName]
     var maxResults: js.UndefOr[MaxChannelResults]
@@ -518,6 +643,46 @@ package ivs {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsResponse]
+    }
+  }
+
+  @js.native
+  trait ListPlaybackKeyPairsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxPlaybackKeyPairResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListPlaybackKeyPairsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxPlaybackKeyPairResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListPlaybackKeyPairsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlaybackKeyPairsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPlaybackKeyPairsResponse extends js.Object {
+    var keyPairs: PlaybackKeyPairList
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListPlaybackKeyPairsResponse {
+    @inline
+    def apply(
+        keyPairs: PlaybackKeyPairList,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListPlaybackKeyPairsResponse = {
+      val __obj = js.Dynamic.literal(
+        "keyPairs" -> keyPairs.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPlaybackKeyPairsResponse]
     }
   }
 
@@ -648,6 +813,57 @@ package ivs {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /** A key pair used to sign and validate a playback authorization token.
+    */
+  @js.native
+  trait PlaybackKeyPair extends js.Object {
+    var arn: js.UndefOr[PlaybackKeyPairArn]
+    var fingerprint: js.UndefOr[PlaybackKeyPairFingerprint]
+    var name: js.UndefOr[PlaybackKeyPairName]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object PlaybackKeyPair {
+    @inline
+    def apply(
+        arn: js.UndefOr[PlaybackKeyPairArn] = js.undefined,
+        fingerprint: js.UndefOr[PlaybackKeyPairFingerprint] = js.undefined,
+        name: js.UndefOr[PlaybackKeyPairName] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): PlaybackKeyPair = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      fingerprint.foreach(__v => __obj.updateDynamic("fingerprint")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlaybackKeyPair]
+    }
+  }
+
+  /** Summary information about a playback key pair.
+    */
+  @js.native
+  trait PlaybackKeyPairSummary extends js.Object {
+    var arn: js.UndefOr[PlaybackKeyPairArn]
+    var name: js.UndefOr[PlaybackKeyPairName]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object PlaybackKeyPairSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[PlaybackKeyPairArn] = js.undefined,
+        name: js.UndefOr[PlaybackKeyPairName] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): PlaybackKeyPairSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlaybackKeyPairSummary]
     }
   }
 
@@ -897,6 +1113,7 @@ package ivs {
   @js.native
   trait UpdateChannelRequest extends js.Object {
     var arn: ChannelArn
+    var authorized: js.UndefOr[Boolean]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
     var `type`: js.UndefOr[ChannelType]
@@ -906,6 +1123,7 @@ package ivs {
     @inline
     def apply(
         arn: ChannelArn,
+        authorized: js.UndefOr[Boolean] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
@@ -914,6 +1132,7 @@ package ivs {
         "arn" -> arn.asInstanceOf[js.Any]
       )
 
+      authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))

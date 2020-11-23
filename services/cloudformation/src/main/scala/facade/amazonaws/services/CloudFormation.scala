@@ -45,6 +45,7 @@ package object cloudformation {
   type Imports = js.Array[StackName]
   type InProgressStackInstancesCount = Int
   type InSyncStackInstancesCount = Int
+  type IncludeNestedStacks = Boolean
   type IsDefaultVersion = Boolean
   type Key = String
   type LastUpdatedTime = js.Date
@@ -431,8 +432,9 @@ package cloudformation {
     val Modify = "Modify".asInstanceOf[ChangeAction]
     val Remove = "Remove".asInstanceOf[ChangeAction]
     val Import = "Import".asInstanceOf[ChangeAction]
+    val Dynamic = "Dynamic".asInstanceOf[ChangeAction]
 
-    @inline def values = js.Array(Add, Modify, Remove, Import)
+    @inline def values = js.Array(Add, Modify, Remove, Import, Dynamic)
   }
 
   @js.native
@@ -441,10 +443,13 @@ package cloudformation {
     val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
     val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
     val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
+    val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ChangeSetStatus]
+    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ChangeSetStatus]
     val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
 
-    @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_COMPLETE, FAILED)
+    @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_PENDING, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, FAILED)
   }
 
   /** The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.
@@ -456,6 +461,9 @@ package cloudformation {
     var CreationTime: js.UndefOr[CreationTime]
     var Description: js.UndefOr[Description]
     var ExecutionStatus: js.UndefOr[ExecutionStatus]
+    var IncludeNestedStacks: js.UndefOr[IncludeNestedStacks]
+    var ParentChangeSetId: js.UndefOr[ChangeSetId]
+    var RootChangeSetId: js.UndefOr[ChangeSetId]
     var StackId: js.UndefOr[StackId]
     var StackName: js.UndefOr[StackName]
     var Status: js.UndefOr[ChangeSetStatus]
@@ -470,6 +478,9 @@ package cloudformation {
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
+        IncludeNestedStacks: js.UndefOr[IncludeNestedStacks] = js.undefined,
+        ParentChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
+        RootChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
         StackName: js.UndefOr[StackName] = js.undefined,
         Status: js.UndefOr[ChangeSetStatus] = js.undefined,
@@ -481,6 +492,9 @@ package cloudformation {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionStatus.foreach(__v => __obj.updateDynamic("ExecutionStatus")(__v.asInstanceOf[js.Any]))
+      IncludeNestedStacks.foreach(__v => __obj.updateDynamic("IncludeNestedStacks")(__v.asInstanceOf[js.Any]))
+      ParentChangeSetId.foreach(__v => __obj.updateDynamic("ParentChangeSetId")(__v.asInstanceOf[js.Any]))
+      RootChangeSetId.foreach(__v => __obj.updateDynamic("RootChangeSetId")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       StackName.foreach(__v => __obj.updateDynamic("StackName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -571,6 +585,7 @@ package cloudformation {
     var ChangeSetType: js.UndefOr[ChangeSetType]
     var ClientToken: js.UndefOr[ClientToken]
     var Description: js.UndefOr[Description]
+    var IncludeNestedStacks: js.UndefOr[IncludeNestedStacks]
     var NotificationARNs: js.UndefOr[NotificationARNs]
     var Parameters: js.UndefOr[Parameters]
     var ResourceTypes: js.UndefOr[ResourceTypes]
@@ -592,6 +607,7 @@ package cloudformation {
         ChangeSetType: js.UndefOr[ChangeSetType] = js.undefined,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        IncludeNestedStacks: js.UndefOr[IncludeNestedStacks] = js.undefined,
         NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
@@ -612,6 +628,7 @@ package cloudformation {
       ChangeSetType.foreach(__v => __obj.updateDynamic("ChangeSetType")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IncludeNestedStacks.foreach(__v => __obj.updateDynamic("IncludeNestedStacks")(__v.asInstanceOf[js.Any]))
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
@@ -1140,10 +1157,13 @@ package cloudformation {
     var CreationTime: js.UndefOr[CreationTime]
     var Description: js.UndefOr[Description]
     var ExecutionStatus: js.UndefOr[ExecutionStatus]
+    var IncludeNestedStacks: js.UndefOr[IncludeNestedStacks]
     var NextToken: js.UndefOr[NextToken]
     var NotificationARNs: js.UndefOr[NotificationARNs]
     var Parameters: js.UndefOr[Parameters]
+    var ParentChangeSetId: js.UndefOr[ChangeSetId]
     var RollbackConfiguration: js.UndefOr[RollbackConfiguration]
+    var RootChangeSetId: js.UndefOr[ChangeSetId]
     var StackId: js.UndefOr[StackId]
     var StackName: js.UndefOr[StackName]
     var Status: js.UndefOr[ChangeSetStatus]
@@ -1161,10 +1181,13 @@ package cloudformation {
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
+        IncludeNestedStacks: js.UndefOr[IncludeNestedStacks] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        ParentChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
         RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+        RootChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
         StackName: js.UndefOr[StackName] = js.undefined,
         Status: js.UndefOr[ChangeSetStatus] = js.undefined,
@@ -1179,10 +1202,13 @@ package cloudformation {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionStatus.foreach(__v => __obj.updateDynamic("ExecutionStatus")(__v.asInstanceOf[js.Any]))
+      IncludeNestedStacks.foreach(__v => __obj.updateDynamic("IncludeNestedStacks")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ParentChangeSetId.foreach(__v => __obj.updateDynamic("ParentChangeSetId")(__v.asInstanceOf[js.Any]))
       RollbackConfiguration.foreach(__v => __obj.updateDynamic("RollbackConfiguration")(__v.asInstanceOf[js.Any]))
+      RootChangeSetId.foreach(__v => __obj.updateDynamic("RootChangeSetId")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       StackName.foreach(__v => __obj.updateDynamic("StackName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -3037,6 +3063,7 @@ package cloudformation {
   @js.native
   trait ResourceChange extends js.Object {
     var Action: js.UndefOr[ChangeAction]
+    var ChangeSetId: js.UndefOr[ChangeSetId]
     var Details: js.UndefOr[ResourceChangeDetails]
     var LogicalResourceId: js.UndefOr[LogicalResourceId]
     var PhysicalResourceId: js.UndefOr[PhysicalResourceId]
@@ -3049,6 +3076,7 @@ package cloudformation {
     @inline
     def apply(
         Action: js.UndefOr[ChangeAction] = js.undefined,
+        ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
         Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
         LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
@@ -3058,6 +3086,7 @@ package cloudformation {
     ): ResourceChange = {
       val __obj = js.Dynamic.literal()
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ChangeSetId.foreach(__v => __obj.updateDynamic("ChangeSetId")(__v.asInstanceOf[js.Any]))
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       LogicalResourceId.foreach(__v => __obj.updateDynamic("LogicalResourceId")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))

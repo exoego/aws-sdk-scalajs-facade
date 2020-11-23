@@ -234,14 +234,16 @@ package appsync {
     * * <code>DeleteApiKey</code> deletes the item from the table.
     * * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
     * ```da2```: This version was introduced in February 2018 when AppSync added support to extend key expiration.
-    * * <code>ListApiKeys</code> returns the expiration time in seconds.
-    * * <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.
-    * * <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.
+    * * <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.
+    * * <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds.
+    * * <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. Key expiration time can be updated while the key is not deleted.
     * * <code>DeleteApiKey</code> deletes the item from the table.
-    * * Expiration is stored in Amazon DynamoDB as seconds.
+    * * Expiration is stored in Amazon DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. But the key can be reinstated before deletion.
+    * * Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted after deletion time.
     */
   @js.native
   trait ApiKey extends js.Object {
+    var deletes: js.UndefOr[Double]
     var description: js.UndefOr[String]
     var expires: js.UndefOr[Double]
     var id: js.UndefOr[String]
@@ -250,11 +252,13 @@ package appsync {
   object ApiKey {
     @inline
     def apply(
+        deletes: js.UndefOr[Double] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
         expires: js.UndefOr[Double] = js.undefined,
         id: js.UndefOr[String] = js.undefined
     ): ApiKey = {
       val __obj = js.Dynamic.literal()
+      deletes.foreach(__v => __obj.updateDynamic("deletes")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       expires.foreach(__v => __obj.updateDynamic("expires")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
@@ -1507,6 +1511,7 @@ package appsync {
     var tags: js.UndefOr[TagMap]
     var uris: js.UndefOr[MapOfStringToString]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
+    var wafWebAclArn: js.UndefOr[String]
     var xrayEnabled: js.UndefOr[Boolean]
   }
 
@@ -1523,6 +1528,7 @@ package appsync {
         tags: js.UndefOr[TagMap] = js.undefined,
         uris: js.UndefOr[MapOfStringToString] = js.undefined,
         userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined,
+        wafWebAclArn: js.UndefOr[String] = js.undefined,
         xrayEnabled: js.UndefOr[Boolean] = js.undefined
     ): GraphqlApi = {
       val __obj = js.Dynamic.literal()
@@ -1536,6 +1542,7 @@ package appsync {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       uris.foreach(__v => __obj.updateDynamic("uris")(__v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))
+      wafWebAclArn.foreach(__v => __obj.updateDynamic("wafWebAclArn")(__v.asInstanceOf[js.Any]))
       xrayEnabled.foreach(__v => __obj.updateDynamic("xrayEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GraphqlApi]
     }

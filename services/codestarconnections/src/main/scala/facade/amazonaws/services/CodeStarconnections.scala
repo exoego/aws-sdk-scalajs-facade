@@ -493,9 +493,10 @@ package codestarconnections {
   sealed trait ProviderType extends js.Any
   object ProviderType {
     val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
+    val GitHub = "GitHub".asInstanceOf[ProviderType]
     val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-    @inline def values = js.Array(Bitbucket, GitHubEnterpriseServer)
+    @inline def values = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
   }
 
   /** A tag is a key-value pair that is used to manage the resource.

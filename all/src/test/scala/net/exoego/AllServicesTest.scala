@@ -56,6 +56,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.appsync.AppSync(config)
   }
 
+  test("Appflow") {
+    val instance = new services.appflow.Appflow(config)
+  }
+
   test("ApplicationAutoScaling") {
     val instance = new services.applicationautoscaling.ApplicationAutoScaling(config)
   }
@@ -246,6 +250,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("DMS") {
     val instance = new services.dms.DMS(config)
+  }
+
+  test("DataBrew") {
+    val instance = new services.databrew.DataBrew(config)
   }
 
   test("DataExchange") {
@@ -636,6 +644,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.neptune.Neptune(config)
   }
 
+  test("NetworkFirewall") {
+    val instance = new services.networkfirewall.NetworkFirewall(config)
+  }
+
   test("NetworkManager") {
     val instance = new services.networkmanager.NetworkManager(config)
   }
@@ -720,6 +732,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.redshift.Redshift(config)
   }
 
+  test("RedshiftData") {
+    val instance = new services.redshiftdata.RedshiftData(config)
+  }
+
   test("Rekognition") {
     val instance = new services.rekognition.Rekognition(config)
   }
@@ -756,6 +772,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.s3control.S3Control(config)
   }
 
+  test("S3Outposts") {
+    val instance = new services.s3outposts.S3Outposts(config)
+  }
+
   test("SES") {
     val instance = new services.ses.SES(config)
   }
@@ -782,6 +802,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("SSO") {
     val instance = new services.sso.SSO(config)
+  }
+
+  test("SSOAdmin") {
+    val instance = new services.ssoadmin.SSOAdmin(config)
   }
 
   test("SSOOIDC") {
@@ -828,6 +852,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.servicecatalog.ServiceCatalog(config)
   }
 
+  test("ServiceCatalogAppRegistry") {
+    val instance = new services.servicecatalogappregistry.ServiceCatalogAppRegistry(config)
+  }
+
   test("ServiceDiscovery") {
     val instance = new services.servicediscovery.ServiceDiscovery(config)
   }
@@ -870,6 +898,14 @@ class AllServicesTest extends AnyFunSuite {
 
   test("Textract") {
     val instance = new services.textract.Textract(config)
+  }
+
+  test("TimestreamQuery") {
+    val instance = new services.timestreamquery.TimestreamQuery(config)
+  }
+
+  test("TimestreamWrite") {
+    val instance = new services.timestreamwrite.TimestreamWrite(config)
   }
 
   test("TranscribeService") {

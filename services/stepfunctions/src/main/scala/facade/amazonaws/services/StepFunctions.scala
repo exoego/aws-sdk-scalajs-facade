@@ -11,11 +11,13 @@ package object stepfunctions {
   type Arn = String
   type ConnectorParameters = String
   type Definition = String
+  type Enabled = Boolean
   type EventId = Double
   type ExecutionList = js.Array[ExecutionListItem]
   type HistoryEventList = js.Array[HistoryEvent]
   type Identity = String
   type IncludeExecutionData = Boolean
+  type IncludeExecutionDataGetExecutionHistory = Boolean
   type ListExecutionsPageToken = String
   type LogDestinationList = js.Array[LogDestination]
   type Name = String
@@ -34,7 +36,10 @@ package object stepfunctions {
   type TaskToken = String
   type TimeoutInSeconds = Double
   type Timestamp = js.Date
+  type TraceHeader = String
   type UnsignedInteger = Int
+  type included = Boolean
+  type truncated = Boolean
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
@@ -168,6 +173,7 @@ package stepfunctions {
     var resource: Arn
     var heartbeatInSeconds: js.UndefOr[TimeoutInSeconds]
     var input: js.UndefOr[SensitiveData]
+    var inputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
@@ -177,6 +183,7 @@ package stepfunctions {
         resource: Arn,
         heartbeatInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
         input: js.UndefOr[SensitiveData] = js.undefined,
+        inputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined,
         timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): ActivityScheduledEventDetails = {
       val __obj = js.Dynamic.literal(
@@ -185,6 +192,7 @@ package stepfunctions {
 
       heartbeatInSeconds.foreach(__v => __obj.updateDynamic("heartbeatInSeconds")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
       timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityScheduledEventDetails]
     }
@@ -213,15 +221,18 @@ package stepfunctions {
   @js.native
   trait ActivitySucceededEventDetails extends js.Object {
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object ActivitySucceededEventDetails {
     @inline
     def apply(
-        output: js.UndefOr[SensitiveData] = js.undefined
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): ActivitySucceededEventDetails = {
       val __obj = js.Dynamic.literal()
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivitySucceededEventDetails]
     }
   }
@@ -244,6 +255,24 @@ package stepfunctions {
       cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
       error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTimedOutEventDetails]
+    }
+  }
+
+  /** Provides details about execution input or output.
+    */
+  @js.native
+  trait CloudWatchEventsExecutionDataDetails extends js.Object {
+    var included: js.UndefOr[included]
+  }
+
+  object CloudWatchEventsExecutionDataDetails {
+    @inline
+    def apply(
+        included: js.UndefOr[included] = js.undefined
+    ): CloudWatchEventsExecutionDataDetails = {
+      val __obj = js.Dynamic.literal()
+      included.foreach(__v => __obj.updateDynamic("included")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudWatchEventsExecutionDataDetails]
     }
   }
 
@@ -313,6 +342,7 @@ package stepfunctions {
     var roleArn: Arn
     var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var tags: js.UndefOr[TagList]
+    var tracingConfiguration: js.UndefOr[TracingConfiguration]
     var `type`: js.UndefOr[StateMachineType]
   }
 
@@ -324,6 +354,7 @@ package stepfunctions {
         roleArn: Arn,
         loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
+        tracingConfiguration: js.UndefOr[TracingConfiguration] = js.undefined,
         `type`: js.UndefOr[StateMachineType] = js.undefined
     ): CreateStateMachineInput = {
       val __obj = js.Dynamic.literal(
@@ -334,6 +365,7 @@ package stepfunctions {
 
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      tracingConfiguration.foreach(__v => __obj.updateDynamic("tracingConfiguration")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStateMachineInput]
     }
@@ -475,38 +507,47 @@ package stepfunctions {
   @js.native
   trait DescribeExecutionOutput extends js.Object {
     var executionArn: Arn
-    var input: SensitiveData
     var startDate: Timestamp
     var stateMachineArn: Arn
     var status: ExecutionStatus
+    var input: js.UndefOr[SensitiveData]
+    var inputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails]
     var name: js.UndefOr[Name]
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails]
     var stopDate: js.UndefOr[Timestamp]
+    var traceHeader: js.UndefOr[TraceHeader]
   }
 
   object DescribeExecutionOutput {
     @inline
     def apply(
         executionArn: Arn,
-        input: SensitiveData,
         startDate: Timestamp,
         stateMachineArn: Arn,
         status: ExecutionStatus,
+        input: js.UndefOr[SensitiveData] = js.undefined,
+        inputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         output: js.UndefOr[SensitiveData] = js.undefined,
-        stopDate: js.UndefOr[Timestamp] = js.undefined
+        outputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails] = js.undefined,
+        stopDate: js.UndefOr[Timestamp] = js.undefined,
+        traceHeader: js.UndefOr[TraceHeader] = js.undefined
     ): DescribeExecutionOutput = {
       val __obj = js.Dynamic.literal(
         "executionArn" -> executionArn.asInstanceOf[js.Any],
-        "input" -> input.asInstanceOf[js.Any],
         "startDate" -> startDate.asInstanceOf[js.Any],
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
 
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
+      traceHeader.foreach(__v => __obj.updateDynamic("traceHeader")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExecutionOutput]
     }
   }
@@ -536,6 +577,7 @@ package stepfunctions {
     var stateMachineArn: Arn
     var updateDate: Timestamp
     var loggingConfiguration: js.UndefOr[LoggingConfiguration]
+    var tracingConfiguration: js.UndefOr[TracingConfiguration]
   }
 
   object DescribeStateMachineForExecutionOutput {
@@ -546,7 +588,8 @@ package stepfunctions {
         roleArn: Arn,
         stateMachineArn: Arn,
         updateDate: Timestamp,
-        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
+        loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
+        tracingConfiguration: js.UndefOr[TracingConfiguration] = js.undefined
     ): DescribeStateMachineForExecutionOutput = {
       val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
@@ -557,6 +600,7 @@ package stepfunctions {
       )
 
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
+      tracingConfiguration.foreach(__v => __obj.updateDynamic("tracingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStateMachineForExecutionOutput]
     }
   }
@@ -588,6 +632,7 @@ package stepfunctions {
     var `type`: StateMachineType
     var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var status: js.UndefOr[StateMachineStatus]
+    var tracingConfiguration: js.UndefOr[TracingConfiguration]
   }
 
   object DescribeStateMachineOutput {
@@ -600,7 +645,8 @@ package stepfunctions {
         stateMachineArn: Arn,
         `type`: StateMachineType,
         loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
-        status: js.UndefOr[StateMachineStatus] = js.undefined
+        status: js.UndefOr[StateMachineStatus] = js.undefined,
+        tracingConfiguration: js.UndefOr[TracingConfiguration] = js.undefined
     ): DescribeStateMachineOutput = {
       val __obj = js.Dynamic.literal(
         "creationDate" -> creationDate.asInstanceOf[js.Any],
@@ -613,6 +659,7 @@ package stepfunctions {
 
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tracingConfiguration.foreach(__v => __obj.updateDynamic("tracingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStateMachineOutput]
     }
   }
@@ -699,6 +746,7 @@ package stepfunctions {
   @js.native
   trait ExecutionStartedEventDetails extends js.Object {
     var input: js.UndefOr[SensitiveData]
+    var inputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
     var roleArn: js.UndefOr[Arn]
   }
 
@@ -706,10 +754,12 @@ package stepfunctions {
     @inline
     def apply(
         input: js.UndefOr[SensitiveData] = js.undefined,
+        inputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined,
         roleArn: js.UndefOr[Arn] = js.undefined
     ): ExecutionStartedEventDetails = {
       val __obj = js.Dynamic.literal()
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionStartedEventDetails]
     }
@@ -732,15 +782,18 @@ package stepfunctions {
   @js.native
   trait ExecutionSucceededEventDetails extends js.Object {
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object ExecutionSucceededEventDetails {
     @inline
     def apply(
-        output: js.UndefOr[SensitiveData] = js.undefined
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): ExecutionSucceededEventDetails = {
       val __obj = js.Dynamic.literal()
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionSucceededEventDetails]
     }
   }
@@ -809,6 +862,7 @@ package stepfunctions {
   @js.native
   trait GetExecutionHistoryInput extends js.Object {
     var executionArn: Arn
+    var includeExecutionData: js.UndefOr[IncludeExecutionDataGetExecutionHistory]
     var maxResults: js.UndefOr[PageSize]
     var nextToken: js.UndefOr[PageToken]
     var reverseOrder: js.UndefOr[ReverseOrder]
@@ -818,6 +872,7 @@ package stepfunctions {
     @inline
     def apply(
         executionArn: Arn,
+        includeExecutionData: js.UndefOr[IncludeExecutionDataGetExecutionHistory] = js.undefined,
         maxResults: js.UndefOr[PageSize] = js.undefined,
         nextToken: js.UndefOr[PageToken] = js.undefined,
         reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
@@ -826,6 +881,7 @@ package stepfunctions {
         "executionArn" -> executionArn.asInstanceOf[js.Any]
       )
 
+      includeExecutionData.foreach(__v => __obj.updateDynamic("includeExecutionData")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
@@ -976,6 +1032,24 @@ package stepfunctions {
       taskSucceededEventDetails.foreach(__v => __obj.updateDynamic("taskSucceededEventDetails")(__v.asInstanceOf[js.Any]))
       taskTimedOutEventDetails.foreach(__v => __obj.updateDynamic("taskTimedOutEventDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoryEvent]
+    }
+  }
+
+  /** Provides details about input or output in an execution history event.
+    */
+  @js.native
+  trait HistoryEventExecutionDataDetails extends js.Object {
+    var truncated: js.UndefOr[truncated]
+  }
+
+  object HistoryEventExecutionDataDetails {
+    @inline
+    def apply(
+        truncated: js.UndefOr[truncated] = js.undefined
+    ): HistoryEventExecutionDataDetails = {
+      val __obj = js.Dynamic.literal()
+      truncated.foreach(__v => __obj.updateDynamic("truncated")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistoryEventExecutionDataDetails]
     }
   }
 
@@ -1145,6 +1219,7 @@ package stepfunctions {
   trait LambdaFunctionScheduledEventDetails extends js.Object {
     var resource: Arn
     var input: js.UndefOr[SensitiveData]
+    var inputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
@@ -1153,6 +1228,7 @@ package stepfunctions {
     def apply(
         resource: Arn,
         input: js.UndefOr[SensitiveData] = js.undefined,
+        inputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined,
         timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): LambdaFunctionScheduledEventDetails = {
       val __obj = js.Dynamic.literal(
@@ -1160,6 +1236,7 @@ package stepfunctions {
       )
 
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
       timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionScheduledEventDetails]
     }
@@ -1191,15 +1268,18 @@ package stepfunctions {
   @js.native
   trait LambdaFunctionSucceededEventDetails extends js.Object {
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object LambdaFunctionSucceededEventDetails {
     @inline
     def apply(
-        output: js.UndefOr[SensitiveData] = js.undefined
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): LambdaFunctionSucceededEventDetails = {
       val __obj = js.Dynamic.literal()
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionSucceededEventDetails]
     }
   }
@@ -1577,6 +1657,7 @@ package stepfunctions {
     var stateMachineArn: Arn
     var input: js.UndefOr[SensitiveData]
     var name: js.UndefOr[Name]
+    var traceHeader: js.UndefOr[TraceHeader]
   }
 
   object StartExecutionInput {
@@ -1584,7 +1665,8 @@ package stepfunctions {
     def apply(
         stateMachineArn: Arn,
         input: js.UndefOr[SensitiveData] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
+        name: js.UndefOr[Name] = js.undefined,
+        traceHeader: js.UndefOr[TraceHeader] = js.undefined
     ): StartExecutionInput = {
       val __obj = js.Dynamic.literal(
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
@@ -1592,6 +1674,7 @@ package stepfunctions {
 
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      traceHeader.foreach(__v => __obj.updateDynamic("traceHeader")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartExecutionInput]
     }
   }
@@ -1622,19 +1705,22 @@ package stepfunctions {
   trait StateEnteredEventDetails extends js.Object {
     var name: Name
     var input: js.UndefOr[SensitiveData]
+    var inputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object StateEnteredEventDetails {
     @inline
     def apply(
         name: Name,
-        input: js.UndefOr[SensitiveData] = js.undefined
+        input: js.UndefOr[SensitiveData] = js.undefined,
+        inputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): StateEnteredEventDetails = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StateEnteredEventDetails]
     }
   }
@@ -1645,19 +1731,22 @@ package stepfunctions {
   trait StateExitedEventDetails extends js.Object {
     var name: Name
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object StateExitedEventDetails {
     @inline
     def apply(
         name: Name,
-        output: js.UndefOr[SensitiveData] = js.undefined
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): StateExitedEventDetails = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StateExitedEventDetails]
     }
   }
@@ -1840,6 +1929,7 @@ package stepfunctions {
     var region: Name
     var resource: Name
     var resourceType: Name
+    var heartbeatInSeconds: js.UndefOr[TimeoutInSeconds]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
@@ -1850,6 +1940,7 @@ package stepfunctions {
         region: Name,
         resource: Name,
         resourceType: Name,
+        heartbeatInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
         timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): TaskScheduledEventDetails = {
       val __obj = js.Dynamic.literal(
@@ -1859,6 +1950,7 @@ package stepfunctions {
         "resourceType" -> resourceType.asInstanceOf[js.Any]
       )
 
+      heartbeatInSeconds.foreach(__v => __obj.updateDynamic("heartbeatInSeconds")(__v.asInstanceOf[js.Any]))
       timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskScheduledEventDetails]
     }
@@ -1951,6 +2043,7 @@ package stepfunctions {
     var resource: Name
     var resourceType: Name
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object TaskSubmittedEventDetails {
@@ -1958,7 +2051,8 @@ package stepfunctions {
     def apply(
         resource: Name,
         resourceType: Name,
-        output: js.UndefOr[SensitiveData] = js.undefined
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): TaskSubmittedEventDetails = {
       val __obj = js.Dynamic.literal(
         "resource" -> resource.asInstanceOf[js.Any],
@@ -1966,6 +2060,7 @@ package stepfunctions {
       )
 
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskSubmittedEventDetails]
     }
   }
@@ -1977,6 +2072,7 @@ package stepfunctions {
     var resource: Name
     var resourceType: Name
     var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
   }
 
   object TaskSucceededEventDetails {
@@ -1984,7 +2080,8 @@ package stepfunctions {
     def apply(
         resource: Name,
         resourceType: Name,
-        output: js.UndefOr[SensitiveData] = js.undefined
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined
     ): TaskSucceededEventDetails = {
       val __obj = js.Dynamic.literal(
         "resource" -> resource.asInstanceOf[js.Any],
@@ -1992,6 +2089,7 @@ package stepfunctions {
       )
 
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskSucceededEventDetails]
     }
   }
@@ -2022,6 +2120,24 @@ package stepfunctions {
       cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
       error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskTimedOutEventDetails]
+    }
+  }
+
+  /** Selects whether or not the state machine's AWS X-Ray tracing is enabled. Default is <code>false</code>
+    */
+  @js.native
+  trait TracingConfiguration extends js.Object {
+    var enabled: js.UndefOr[Enabled]
+  }
+
+  object TracingConfiguration {
+    @inline
+    def apply(
+        enabled: js.UndefOr[Enabled] = js.undefined
+    ): TracingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TracingConfiguration]
     }
   }
 
@@ -2062,6 +2178,7 @@ package stepfunctions {
     var definition: js.UndefOr[Definition]
     var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var roleArn: js.UndefOr[Arn]
+    var tracingConfiguration: js.UndefOr[TracingConfiguration]
   }
 
   object UpdateStateMachineInput {
@@ -2070,7 +2187,8 @@ package stepfunctions {
         stateMachineArn: Arn,
         definition: js.UndefOr[Definition] = js.undefined,
         loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
-        roleArn: js.UndefOr[Arn] = js.undefined
+        roleArn: js.UndefOr[Arn] = js.undefined,
+        tracingConfiguration: js.UndefOr[TracingConfiguration] = js.undefined
     ): UpdateStateMachineInput = {
       val __obj = js.Dynamic.literal(
         "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
@@ -2079,6 +2197,7 @@ package stepfunctions {
       definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      tracingConfiguration.foreach(__v => __obj.updateDynamic("tracingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStateMachineInput]
     }
   }

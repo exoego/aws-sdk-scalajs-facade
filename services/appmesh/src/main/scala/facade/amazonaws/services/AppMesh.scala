@@ -37,9 +37,14 @@ package object appmesh {
   type ListVirtualRoutersLimit = Int
   type ListVirtualServicesLimit = Int
   type Listeners = js.Array[Listener]
+  type MaxConnections = Int
+  type MaxPendingRequests = Int
+  type MaxRequests = Int
   type MaxRetries = Double
   type MeshList = js.Array[MeshRef]
   type MethodName = String
+  type OutlierDetectionMaxEjectionPercent = Int
+  type OutlierDetectionMaxServerErrors = Double
   type PercentInt = Int
   type PortNumber = Int
   type PortSet = js.Array[PortNumber]
@@ -174,8 +179,9 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the AWS Cloud Map attribute information for your virtual
-    * node.</p>
+  /** An object that represents the AWS Cloud Map attribute information for your virtual node.
+    *
+    * '''Note:'''AWS Cloud Map is not available in the eu-south-1 Region.
     */
   @js.native
   trait AwsCloudMapInstanceAttribute extends js.Object {
@@ -197,8 +203,9 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the AWS Cloud Map service discovery information for your virtual
-    * node.</p>
+  /** An object that represents the AWS Cloud Map service discovery information for your virtual node.
+    *
+    * '''Note:'''AWS Cloud Map is not available in the eu-south-1 Region.
     */
   @js.native
   trait AwsCloudMapServiceDiscovery extends js.Object {
@@ -224,8 +231,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the backends that a virtual node is expected to send outbound
-    * traffic to. </p>
+  /** An object that represents the backends that a virtual node is expected to send outbound traffic to.
     */
   @js.native
   trait Backend extends js.Object {
@@ -279,7 +285,7 @@ package appmesh {
     }
   }
 
-  /** An object that represents a Transport Layer Security (TLS) client policy.
+  /** A reference to an object that represents a Transport Layer Security (TLS) client policy.
     */
   @js.native
   trait ClientPolicyTls extends js.Object {
@@ -358,7 +364,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateMeshInput extends js.Object {
@@ -387,7 +393,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateMeshOutput extends js.Object {
@@ -406,7 +412,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateRouteInput extends js.Object {
@@ -444,7 +450,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateRouteOutput extends js.Object {
@@ -513,7 +519,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateVirtualNodeInput extends js.Object {
@@ -548,7 +554,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateVirtualNodeOutput extends js.Object {
@@ -567,7 +573,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateVirtualRouterInput extends js.Object {
@@ -602,7 +608,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateVirtualRouterOutput extends js.Object {
@@ -621,7 +627,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateVirtualServiceInput extends js.Object {
@@ -656,7 +662,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait CreateVirtualServiceOutput extends js.Object {
@@ -719,7 +725,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteMeshInput extends js.Object {
@@ -738,7 +744,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteMeshOutput extends js.Object {
@@ -757,7 +763,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteRouteInput extends js.Object {
@@ -786,7 +792,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteRouteOutput extends js.Object {
@@ -846,7 +852,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteVirtualNodeInput extends js.Object {
@@ -872,7 +878,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteVirtualNodeOutput extends js.Object {
@@ -891,7 +897,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteVirtualRouterInput extends js.Object {
@@ -917,7 +923,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteVirtualRouterOutput extends js.Object {
@@ -936,7 +942,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteVirtualServiceInput extends js.Object {
@@ -962,7 +968,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DeleteVirtualServiceOutput extends js.Object {
@@ -1025,7 +1031,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeMeshInput extends js.Object {
@@ -1048,7 +1054,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeMeshOutput extends js.Object {
@@ -1067,7 +1073,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeRouteInput extends js.Object {
@@ -1096,7 +1102,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeRouteOutput extends js.Object {
@@ -1156,7 +1162,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeVirtualNodeInput extends js.Object {
@@ -1182,7 +1188,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeVirtualNodeOutput extends js.Object {
@@ -1201,7 +1207,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeVirtualRouterInput extends js.Object {
@@ -1227,7 +1233,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeVirtualRouterOutput extends js.Object {
@@ -1246,7 +1252,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeVirtualServiceInput extends js.Object {
@@ -1272,7 +1278,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait DescribeVirtualServiceOutput extends js.Object {
@@ -1291,8 +1297,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the DNS service discovery information for your virtual
-    * node.</p>
+  /** An object that represents the DNS service discovery information for your virtual node.
     */
   @js.native
   trait DnsServiceDiscovery extends js.Object {
@@ -1335,10 +1340,10 @@ package appmesh {
   @js.native
   sealed trait DurationUnit extends js.Any
   object DurationUnit {
-    val ms = "ms".asInstanceOf[DurationUnit]
     val s = "s".asInstanceOf[DurationUnit]
+    val ms = "ms".asInstanceOf[DurationUnit]
 
-    @inline def values = js.Array(ms, s)
+    @inline def values = js.Array(s, ms)
   }
 
   /** An object that represents the egress filter rules for a service mesh.
@@ -1465,8 +1470,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents a gateway route specification. Specify one gateway route
-    * type.</p>
+  /** An object that represents a gateway route specification. Specify one gateway route type.
     */
   @js.native
   trait GatewayRouteSpec extends js.Object {
@@ -1513,10 +1517,10 @@ package appmesh {
   sealed trait GatewayRouteStatusCode extends js.Any
   object GatewayRouteStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
-    val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
+    val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
   /** An object that represents a gateway route target.
@@ -1809,8 +1813,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the method and value to match with the header value sent in a
-    * request. Specify one match method.</p>
+  /** An object that represents the method and value to match with the header value sent in a request. Specify one match method.
     */
   @js.native
   trait HeaderMatchMethod extends js.Object {
@@ -1941,17 +1944,17 @@ package appmesh {
   @js.native
   sealed trait HttpMethod extends js.Any
   object HttpMethod {
-    val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
-    val DELETE = "DELETE".asInstanceOf[HttpMethod]
     val GET = "GET".asInstanceOf[HttpMethod]
     val HEAD = "HEAD".asInstanceOf[HttpMethod]
-    val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-    val PATCH = "PATCH".asInstanceOf[HttpMethod]
     val POST = "POST".asInstanceOf[HttpMethod]
     val PUT = "PUT".asInstanceOf[HttpMethod]
+    val DELETE = "DELETE".asInstanceOf[HttpMethod]
+    val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
+    val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
     val TRACE = "TRACE".asInstanceOf[HttpMethod]
+    val PATCH = "PATCH".asInstanceOf[HttpMethod]
 
-    @inline def values = js.Array(CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE)
+    @inline def values = js.Array(GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH)
   }
 
   /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
@@ -2057,8 +2060,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the requirements for a route to match HTTP requests for a
-    * virtual router.</p>
+  /** An object that represents the requirements for a route to match HTTP requests for a virtual router.
     */
   @js.native
   trait HttpRouteMatch extends js.Object {
@@ -2168,7 +2170,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListMeshesInput extends js.Object {
@@ -2189,7 +2191,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListMeshesOutput extends js.Object {
@@ -2212,7 +2214,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListRoutesInput extends js.Object {
@@ -2244,7 +2246,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListRoutesOutput extends js.Object {
@@ -2267,7 +2269,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListTagsForResourceInput extends js.Object {
@@ -2293,7 +2295,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListTagsForResourceOutput extends js.Object {
@@ -2364,7 +2366,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListVirtualNodesInput extends js.Object {
@@ -2393,7 +2395,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListVirtualNodesOutput extends js.Object {
@@ -2416,7 +2418,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListVirtualRoutersInput extends js.Object {
@@ -2445,7 +2447,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListVirtualRoutersOutput extends js.Object {
@@ -2468,7 +2470,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListVirtualServicesInput extends js.Object {
@@ -2497,7 +2499,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait ListVirtualServicesOutput extends js.Object {
@@ -2525,7 +2527,9 @@ package appmesh {
   @js.native
   trait Listener extends js.Object {
     var portMapping: PortMapping
+    var connectionPool: js.UndefOr[VirtualNodeConnectionPool]
     var healthCheck: js.UndefOr[HealthCheckPolicy]
+    var outlierDetection: js.UndefOr[OutlierDetection]
     var timeout: js.UndefOr[ListenerTimeout]
     var tls: js.UndefOr[ListenerTls]
   }
@@ -2534,7 +2538,9 @@ package appmesh {
     @inline
     def apply(
         portMapping: PortMapping,
+        connectionPool: js.UndefOr[VirtualNodeConnectionPool] = js.undefined,
         healthCheck: js.UndefOr[HealthCheckPolicy] = js.undefined,
+        outlierDetection: js.UndefOr[OutlierDetection] = js.undefined,
         timeout: js.UndefOr[ListenerTimeout] = js.undefined,
         tls: js.UndefOr[ListenerTls] = js.undefined
     ): Listener = {
@@ -2542,7 +2548,9 @@ package appmesh {
         "portMapping" -> portMapping.asInstanceOf[js.Any]
       )
 
+      connectionPool.foreach(__v => __obj.updateDynamic("connectionPool")(__v.asInstanceOf[js.Any]))
       healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
+      outlierDetection.foreach(__v => __obj.updateDynamic("outlierDetection")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       tls.foreach(__v => __obj.updateDynamic("tls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Listener]
@@ -2638,8 +2646,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents a local file certificate.
-    * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+  /** An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].
     */
   @js.native
   trait ListenerTlsFileCertificate extends js.Object {
@@ -2664,11 +2671,11 @@ package appmesh {
   @js.native
   sealed trait ListenerTlsMode extends js.Any
   object ListenerTlsMode {
-    val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
-    val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
     val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
+    val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
+    val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
 
-    @inline def values = js.Array(DISABLED, PERMISSIVE, STRICT)
+    @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
   }
 
   /** An object that represents the logging information for a virtual node.
@@ -2816,10 +2823,38 @@ package appmesh {
   sealed trait MeshStatusCode extends js.Any
   object MeshStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
-    val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
+    val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  }
+
+  /** An object that represents the outlier detection for a virtual node's listener.
+    */
+  @js.native
+  trait OutlierDetection extends js.Object {
+    var baseEjectionDuration: Duration
+    var interval: Duration
+    var maxEjectionPercent: OutlierDetectionMaxEjectionPercent
+    var maxServerErrors: OutlierDetectionMaxServerErrors
+  }
+
+  object OutlierDetection {
+    @inline
+    def apply(
+        baseEjectionDuration: Duration,
+        interval: Duration,
+        maxEjectionPercent: OutlierDetectionMaxEjectionPercent,
+        maxServerErrors: OutlierDetectionMaxServerErrors
+    ): OutlierDetection = {
+      val __obj = js.Dynamic.literal(
+        "baseEjectionDuration" -> baseEjectionDuration.asInstanceOf[js.Any],
+        "interval" -> interval.asInstanceOf[js.Any],
+        "maxEjectionPercent" -> maxEjectionPercent.asInstanceOf[js.Any],
+        "maxServerErrors" -> maxServerErrors.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OutlierDetection]
+    }
   }
 
   /** An object that represents a port mapping.
@@ -2847,12 +2882,12 @@ package appmesh {
   @js.native
   sealed trait PortProtocol extends js.Any
   object PortProtocol {
-    val grpc = "grpc".asInstanceOf[PortProtocol]
     val http = "http".asInstanceOf[PortProtocol]
-    val http2 = "http2".asInstanceOf[PortProtocol]
     val tcp = "tcp".asInstanceOf[PortProtocol]
+    val http2 = "http2".asInstanceOf[PortProtocol]
+    val grpc = "grpc".asInstanceOf[PortProtocol]
 
-    @inline def values = js.Array(grpc, http, http2, tcp)
+    @inline def values = js.Array(http, tcp, http2, grpc)
   }
 
   /** An object that represents metadata for a resource.
@@ -3022,10 +3057,10 @@ package appmesh {
   sealed trait RouteStatusCode extends js.Any
   object RouteStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
-    val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
+    val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
   /** An object that represents the service discovery information for a virtual node.
@@ -3049,33 +3084,29 @@ package appmesh {
     }
   }
 
-  /** <p>Optional metadata that you apply to a resource to assist with categorization and
-    * organization. Each tag consists of a key and an optional value, both of which you define.
-    * Tag keys can have a maximum character length of 128 characters, and tag values can have
-    * a maximum length of 256 characters.</p>
+  /** Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait TagRef extends js.Object {
     var key: TagKey
-    var value: js.UndefOr[TagValue]
+    var value: TagValue
   }
 
   object TagRef {
     @inline
     def apply(
         key: TagKey,
-        value: js.UndefOr[TagValue] = js.undefined
+        value: TagValue
     ): TagRef = {
       val __obj = js.Dynamic.literal(
-        "key" -> key.asInstanceOf[js.Any]
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
       )
-
-      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagRef]
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait TagResourceInput extends js.Object {
@@ -3097,7 +3128,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait TagResourceOutput extends js.Object
@@ -3197,8 +3228,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-    * certificate.</p>
+  /** An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM) certificate.
     */
   @js.native
   trait TlsValidationContextAcmTrust extends js.Object {
@@ -3257,7 +3287,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UntagResourceInput extends js.Object {
@@ -3279,7 +3309,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UntagResourceOutput extends js.Object
@@ -3342,7 +3372,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateMeshInput extends js.Object {
@@ -3368,7 +3398,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateMeshOutput extends js.Object {
@@ -3387,7 +3417,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateRouteInput extends js.Object {
@@ -3422,7 +3452,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateRouteOutput extends js.Object {
@@ -3488,7 +3518,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateVirtualNodeInput extends js.Object {
@@ -3520,7 +3550,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateVirtualNodeOutput extends js.Object {
@@ -3539,7 +3569,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateVirtualRouterInput extends js.Object {
@@ -3571,7 +3601,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateVirtualRouterOutput extends js.Object {
@@ -3590,7 +3620,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateVirtualServiceInput extends js.Object {
@@ -3622,7 +3652,7 @@ package appmesh {
     }
   }
 
-  /**
+  /** <zonbook></zonbook><xhtml></xhtml>
     */
   @js.native
   trait UpdateVirtualServiceOutput extends js.Object {
@@ -3721,6 +3751,32 @@ package appmesh {
     }
   }
 
+  /** An object that represents the type of virtual gateway connection pool.
+    * Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.
+    * If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.
+    */
+  @js.native
+  trait VirtualGatewayConnectionPool extends js.Object {
+    var grpc: js.UndefOr[VirtualGatewayGrpcConnectionPool]
+    var http: js.UndefOr[VirtualGatewayHttpConnectionPool]
+    var http2: js.UndefOr[VirtualGatewayHttp2ConnectionPool]
+  }
+
+  object VirtualGatewayConnectionPool {
+    @inline
+    def apply(
+        grpc: js.UndefOr[VirtualGatewayGrpcConnectionPool] = js.undefined,
+        http: js.UndefOr[VirtualGatewayHttpConnectionPool] = js.undefined,
+        http2: js.UndefOr[VirtualGatewayHttp2ConnectionPool] = js.undefined
+    ): VirtualGatewayConnectionPool = {
+      val __obj = js.Dynamic.literal()
+      grpc.foreach(__v => __obj.updateDynamic("grpc")(__v.asInstanceOf[js.Any]))
+      http.foreach(__v => __obj.updateDynamic("http")(__v.asInstanceOf[js.Any]))
+      http2.foreach(__v => __obj.updateDynamic("http2")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayConnectionPool]
+    }
+  }
+
   /** An object that represents a virtual gateway returned by a describe operation.
     */
   @js.native
@@ -3771,8 +3827,26 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents the health check policy for a virtual gateway's
-    * listener.</p>
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualGatewayGrpcConnectionPool extends js.Object {
+    var maxRequests: MaxRequests
+  }
+
+  object VirtualGatewayGrpcConnectionPool {
+    @inline
+    def apply(
+        maxRequests: MaxRequests
+    ): VirtualGatewayGrpcConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxRequests" -> maxRequests.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualGatewayGrpcConnectionPool]
+    }
+  }
+
+  /** An object that represents the health check policy for a virtual gateway's listener.
     */
   @js.native
   trait VirtualGatewayHealthCheckPolicy extends js.Object {
@@ -3810,11 +3884,54 @@ package appmesh {
     }
   }
 
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualGatewayHttp2ConnectionPool extends js.Object {
+    var maxRequests: MaxRequests
+  }
+
+  object VirtualGatewayHttp2ConnectionPool {
+    @inline
+    def apply(
+        maxRequests: MaxRequests
+    ): VirtualGatewayHttp2ConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxRequests" -> maxRequests.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualGatewayHttp2ConnectionPool]
+    }
+  }
+
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualGatewayHttpConnectionPool extends js.Object {
+    var maxConnections: MaxConnections
+    var maxPendingRequests: js.UndefOr[MaxPendingRequests]
+  }
+
+  object VirtualGatewayHttpConnectionPool {
+    @inline
+    def apply(
+        maxConnections: MaxConnections,
+        maxPendingRequests: js.UndefOr[MaxPendingRequests] = js.undefined
+    ): VirtualGatewayHttpConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxConnections" -> maxConnections.asInstanceOf[js.Any]
+      )
+
+      maxPendingRequests.foreach(__v => __obj.updateDynamic("maxPendingRequests")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayHttpConnectionPool]
+    }
+  }
+
   /** An object that represents a listener for a virtual gateway.
     */
   @js.native
   trait VirtualGatewayListener extends js.Object {
     var portMapping: VirtualGatewayPortMapping
+    var connectionPool: js.UndefOr[VirtualGatewayConnectionPool]
     var healthCheck: js.UndefOr[VirtualGatewayHealthCheckPolicy]
     var tls: js.UndefOr[VirtualGatewayListenerTls]
   }
@@ -3823,6 +3940,7 @@ package appmesh {
     @inline
     def apply(
         portMapping: VirtualGatewayPortMapping,
+        connectionPool: js.UndefOr[VirtualGatewayConnectionPool] = js.undefined,
         healthCheck: js.UndefOr[VirtualGatewayHealthCheckPolicy] = js.undefined,
         tls: js.UndefOr[VirtualGatewayListenerTls] = js.undefined
     ): VirtualGatewayListener = {
@@ -3830,6 +3948,7 @@ package appmesh {
         "portMapping" -> portMapping.asInstanceOf[js.Any]
       )
 
+      connectionPool.foreach(__v => __obj.updateDynamic("connectionPool")(__v.asInstanceOf[js.Any]))
       healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
       tls.foreach(__v => __obj.updateDynamic("tls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayListener]
@@ -3898,8 +4017,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents a local file certificate.
-    * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].</p>
+  /** An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites|Transport Layer Security (TLS)]].
     */
   @js.native
   trait VirtualGatewayListenerTlsFileCertificate extends js.Object {
@@ -3924,11 +4042,11 @@ package appmesh {
   @js.native
   sealed trait VirtualGatewayListenerTlsMode extends js.Any
   object VirtualGatewayListenerTlsMode {
-    val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
-    val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
     val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
+    val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
 
-    @inline def values = js.Array(DISABLED, PERMISSIVE, STRICT)
+    @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
   }
 
   /** An object that represents logging information.
@@ -3974,11 +4092,11 @@ package appmesh {
   @js.native
   sealed trait VirtualGatewayPortProtocol extends js.Any
   object VirtualGatewayPortProtocol {
-    val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
     val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
     val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
+    val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
 
-    @inline def values = js.Array(grpc, http, http2)
+    @inline def values = js.Array(http, http2, grpc)
   }
 
   /** An object that represents a virtual gateway returned by a list operation.
@@ -4070,10 +4188,10 @@ package appmesh {
   sealed trait VirtualGatewayStatusCode extends js.Any
   object VirtualGatewayStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
   /** An object that represents a Transport Layer Security (TLS) validation context.
@@ -4095,8 +4213,7 @@ package appmesh {
     }
   }
 
-  /** <p>An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-    * certificate.</p>
+  /** An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM) certificate.
     */
   @js.native
   trait VirtualGatewayTlsValidationContextAcmTrust extends js.Object {
@@ -4155,6 +4272,36 @@ package appmesh {
     }
   }
 
+  /** An object that represents the type of virtual node connection pool.
+    * Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.
+    * If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.
+    * <p/>
+    */
+  @js.native
+  trait VirtualNodeConnectionPool extends js.Object {
+    var grpc: js.UndefOr[VirtualNodeGrpcConnectionPool]
+    var http: js.UndefOr[VirtualNodeHttpConnectionPool]
+    var http2: js.UndefOr[VirtualNodeHttp2ConnectionPool]
+    var tcp: js.UndefOr[VirtualNodeTcpConnectionPool]
+  }
+
+  object VirtualNodeConnectionPool {
+    @inline
+    def apply(
+        grpc: js.UndefOr[VirtualNodeGrpcConnectionPool] = js.undefined,
+        http: js.UndefOr[VirtualNodeHttpConnectionPool] = js.undefined,
+        http2: js.UndefOr[VirtualNodeHttp2ConnectionPool] = js.undefined,
+        tcp: js.UndefOr[VirtualNodeTcpConnectionPool] = js.undefined
+    ): VirtualNodeConnectionPool = {
+      val __obj = js.Dynamic.literal()
+      grpc.foreach(__v => __obj.updateDynamic("grpc")(__v.asInstanceOf[js.Any]))
+      http.foreach(__v => __obj.updateDynamic("http")(__v.asInstanceOf[js.Any]))
+      http2.foreach(__v => __obj.updateDynamic("http2")(__v.asInstanceOf[js.Any]))
+      tcp.foreach(__v => __obj.updateDynamic("tcp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualNodeConnectionPool]
+    }
+  }
+
   /** An object that represents a virtual node returned by a describe operation.
     */
   @js.native
@@ -4183,6 +4330,67 @@ package appmesh {
         "virtualNodeName" -> virtualNodeName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[VirtualNodeData]
+    }
+  }
+
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualNodeGrpcConnectionPool extends js.Object {
+    var maxRequests: MaxRequests
+  }
+
+  object VirtualNodeGrpcConnectionPool {
+    @inline
+    def apply(
+        maxRequests: MaxRequests
+    ): VirtualNodeGrpcConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxRequests" -> maxRequests.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualNodeGrpcConnectionPool]
+    }
+  }
+
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualNodeHttp2ConnectionPool extends js.Object {
+    var maxRequests: MaxRequests
+  }
+
+  object VirtualNodeHttp2ConnectionPool {
+    @inline
+    def apply(
+        maxRequests: MaxRequests
+    ): VirtualNodeHttp2ConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxRequests" -> maxRequests.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualNodeHttp2ConnectionPool]
+    }
+  }
+
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualNodeHttpConnectionPool extends js.Object {
+    var maxConnections: MaxConnections
+    var maxPendingRequests: js.UndefOr[MaxPendingRequests]
+  }
+
+  object VirtualNodeHttpConnectionPool {
+    @inline
+    def apply(
+        maxConnections: MaxConnections,
+        maxPendingRequests: js.UndefOr[MaxPendingRequests] = js.undefined
+    ): VirtualNodeHttpConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxConnections" -> maxConnections.asInstanceOf[js.Any]
+      )
+
+      maxPendingRequests.foreach(__v => __obj.updateDynamic("maxPendingRequests")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualNodeHttpConnectionPool]
     }
   }
 
@@ -4298,10 +4506,29 @@ package appmesh {
   sealed trait VirtualNodeStatusCode extends js.Any
   object VirtualNodeStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  }
+
+  /** An object that represents a type of connection pool.
+    */
+  @js.native
+  trait VirtualNodeTcpConnectionPool extends js.Object {
+    var maxConnections: MaxConnections
+  }
+
+  object VirtualNodeTcpConnectionPool {
+    @inline
+    def apply(
+        maxConnections: MaxConnections
+    ): VirtualNodeTcpConnectionPool = {
+      val __obj = js.Dynamic.literal(
+        "maxConnections" -> maxConnections.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualNodeTcpConnectionPool]
+    }
   }
 
   /** An object that represents a virtual router returned by a describe operation.
@@ -4454,10 +4681,10 @@ package appmesh {
   sealed trait VirtualRouterStatusCode extends js.Any
   object VirtualRouterStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
   /** An object that represents a virtual service backend for a virtual node.
@@ -4616,16 +4843,13 @@ package appmesh {
   sealed trait VirtualServiceStatusCode extends js.Any
   object VirtualServiceStatusCode {
     val ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
     val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
+    val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
 
-    @inline def values = js.Array(ACTIVE, DELETED, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
-  /** <p>An object that represents a target and its relative weight. Traffic is distributed
-    * across targets according to their relative weight. For example, a weighted target with a
-    * relative weight of 50 receives five times as much traffic as one with a relative weight of
-    * 10. The total weight for all targets combined must be less than or equal to 100.</p>
+  /** An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.
     */
   @js.native
   trait WeightedTarget extends js.Object {

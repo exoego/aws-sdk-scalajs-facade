@@ -29,6 +29,8 @@ package object transfer {
   type Protocols = js.Array[Protocol]
   type Response = String
   type Role = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
   type SecurityPolicyName = String
   type SecurityPolicyNames = js.Array[SecurityPolicyName]
   type SecurityPolicyOption = String
@@ -540,6 +542,7 @@ package transfer {
   @js.native
   trait EndpointDetails extends js.Object {
     var AddressAllocationIds: js.UndefOr[AddressAllocationIds]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var SubnetIds: js.UndefOr[SubnetIds]
     var VpcEndpointId: js.UndefOr[VpcEndpointId]
     var VpcId: js.UndefOr[VpcId]
@@ -549,12 +552,14 @@ package transfer {
     @inline
     def apply(
         AddressAllocationIds: js.UndefOr[AddressAllocationIds] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): EndpointDetails = {
       val __obj = js.Dynamic.literal()
       AddressAllocationIds.foreach(__v => __obj.updateDynamic("AddressAllocationIds")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -658,7 +663,7 @@ package transfer {
     }
   }
 
-  /** Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
+  /** Identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.
     */
   @js.native
   trait ImportSshPublicKeyResponse extends js.Object {
@@ -1229,7 +1234,7 @@ package transfer {
     }
   }
 
-  /** <code>UpdateUserResponse</code> returns the user name and file transfer protocol-enabled server identifier for the request to update a user's properties.
+  /** <code>UpdateUserResponse</code> returns the user name and identifier for the request to update a user's properties.
     */
   @js.native
   trait UpdateUserResponse extends js.Object {

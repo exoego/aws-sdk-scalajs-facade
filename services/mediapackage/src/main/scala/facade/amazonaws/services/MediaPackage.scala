@@ -25,6 +25,7 @@ package object mediapackage {
 
   implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
+    @inline def configureLogsFuture(params: ConfigureLogsRequest): Future[ConfigureLogsResponse] = service.configureLogs(params).promise().toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
     @inline def createHarvestJobFuture(params: CreateHarvestJobRequest): Future[CreateHarvestJobResponse] = service.createHarvestJob(params).promise().toFuture
     @inline def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] = service.createOriginEndpoint(params).promise().toFuture
@@ -53,6 +54,7 @@ package mediapackage {
     def this(config: AWSConfig) = this()
 
     @deprecated("This API is deprecated. Please use RotateIngestEndpointCredentials instead", "forever") def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] = js.native
+    def configureLogs(params: ConfigureLogsRequest): Request[ConfigureLogsResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createHarvestJob(params: CreateHarvestJobRequest): Request[CreateHarvestJobResponse] = js.native
     def createOriginEndpoint(params: CreateOriginEndpointRequest): Request[CreateOriginEndpointResponse] = js.native
@@ -131,8 +133,10 @@ package mediapackage {
   trait Channel extends js.Object {
     var Arn: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var HlsIngest: js.UndefOr[HlsIngest]
     var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -141,15 +145,19 @@ package mediapackage {
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): Channel = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Channel]
     }
@@ -238,6 +246,66 @@ package mediapackage {
     }
   }
 
+  /** the option to configure log subscription.
+    */
+  @js.native
+  trait ConfigureLogsRequest extends js.Object {
+    var Id: __string
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
+  }
+
+  object ConfigureLogsRequest {
+    @inline
+    def apply(
+        Id: __string,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined
+    ): ConfigureLogsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureLogsRequest]
+    }
+  }
+
+  @js.native
+  trait ConfigureLogsResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
+    var HlsIngest: js.UndefOr[HlsIngest]
+    var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ConfigureLogsResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
+        HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ConfigureLogsResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
+      HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureLogsResponse]
+    }
+  }
+
   /** A new Channel configuration.
     */
   @js.native
@@ -268,8 +336,10 @@ package mediapackage {
   trait CreateChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var HlsIngest: js.UndefOr[HlsIngest]
     var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -278,15 +348,19 @@ package mediapackage {
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelResponse]
     }
@@ -523,6 +597,8 @@ package mediapackage {
     var SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat]
     var StreamSelection: js.UndefOr[StreamSelection]
     var SuggestedPresentationDelaySeconds: js.UndefOr[__integer]
+    var UtcTiming: js.UndefOr[UtcTiming]
+    var UtcTimingUri: js.UndefOr[__string]
   }
 
   object DashPackage {
@@ -540,7 +616,9 @@ package mediapackage {
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
         SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined,
-        SuggestedPresentationDelaySeconds: js.UndefOr[__integer] = js.undefined
+        SuggestedPresentationDelaySeconds: js.UndefOr[__integer] = js.undefined,
+        UtcTiming: js.UndefOr[UtcTiming] = js.undefined,
+        UtcTimingUri: js.UndefOr[__string] = js.undefined
     ): DashPackage = {
       val __obj = js.Dynamic.literal()
       AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
@@ -556,6 +634,8 @@ package mediapackage {
       SegmentTemplateFormat.foreach(__v => __obj.updateDynamic("SegmentTemplateFormat")(__v.asInstanceOf[js.Any]))
       StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       SuggestedPresentationDelaySeconds.foreach(__v => __obj.updateDynamic("SuggestedPresentationDelaySeconds")(__v.asInstanceOf[js.Any]))
+      UtcTiming.foreach(__v => __obj.updateDynamic("UtcTiming")(__v.asInstanceOf[js.Any]))
+      UtcTimingUri.foreach(__v => __obj.updateDynamic("UtcTimingUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashPackage]
     }
   }
@@ -637,8 +717,10 @@ package mediapackage {
   trait DescribeChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var HlsIngest: js.UndefOr[HlsIngest]
     var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -647,15 +729,19 @@ package mediapackage {
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribeChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelResponse]
     }
@@ -793,6 +879,24 @@ package mediapackage {
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       Whitelist.foreach(__v => __obj.updateDynamic("Whitelist")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOriginEndpointResponse]
+    }
+  }
+
+  /** Configure egress access logging.
+    */
+  @js.native
+  trait EgressAccessLogs extends js.Object {
+    var LogGroupName: js.UndefOr[__string]
+  }
+
+  object EgressAccessLogs {
+    @inline
+    def apply(
+        LogGroupName: js.UndefOr[__string] = js.undefined
+    ): EgressAccessLogs = {
+      val __obj = js.Dynamic.literal()
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EgressAccessLogs]
     }
   }
 
@@ -1054,6 +1158,24 @@ package mediapackage {
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IngestEndpoint]
+    }
+  }
+
+  /** Configure ingress access logging.
+    */
+  @js.native
+  trait IngressAccessLogs extends js.Object {
+    var LogGroupName: js.UndefOr[__string]
+  }
+
+  object IngressAccessLogs {
+    @inline
+    def apply(
+        LogGroupName: js.UndefOr[__string] = js.undefined
+    ): IngressAccessLogs = {
+      val __obj = js.Dynamic.literal()
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IngressAccessLogs]
     }
   }
 
@@ -1382,8 +1504,10 @@ package mediapackage {
   trait RotateChannelCredentialsResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var HlsIngest: js.UndefOr[HlsIngest]
     var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -1392,15 +1516,19 @@ package mediapackage {
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): RotateChannelCredentialsResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RotateChannelCredentialsResponse]
     }
@@ -1430,8 +1558,10 @@ package mediapackage {
   trait RotateIngestEndpointCredentialsResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var HlsIngest: js.UndefOr[HlsIngest]
     var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -1440,15 +1570,19 @@ package mediapackage {
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): RotateIngestEndpointCredentialsResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RotateIngestEndpointCredentialsResponse]
     }
@@ -1632,8 +1766,10 @@ package mediapackage {
   trait UpdateChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var HlsIngest: js.UndefOr[HlsIngest]
     var Id: js.UndefOr[__string]
+    var IngressAccessLogs: js.UndefOr[IngressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -1642,15 +1778,19 @@ package mediapackage {
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         HlsIngest: js.UndefOr[HlsIngest] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
+        IngressAccessLogs: js.UndefOr[IngressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       HlsIngest.foreach(__v => __obj.updateDynamic("HlsIngest")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IngressAccessLogs.foreach(__v => __obj.updateDynamic("IngressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelResponse]
     }
@@ -1768,6 +1908,16 @@ package mediapackage {
       Whitelist.foreach(__v => __obj.updateDynamic("Whitelist")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateOriginEndpointResponse]
     }
+  }
+
+  @js.native
+  sealed trait UtcTiming extends js.Any
+  object UtcTiming {
+    val NONE = "NONE".asInstanceOf[UtcTiming]
+    val `HTTP-HEAD` = "HTTP-HEAD".asInstanceOf[UtcTiming]
+    val `HTTP-ISO` = "HTTP-ISO".asInstanceOf[UtcTiming]
+
+    @inline def values = js.Array(NONE, `HTTP-HEAD`, `HTTP-ISO`)
   }
 
   @js.native

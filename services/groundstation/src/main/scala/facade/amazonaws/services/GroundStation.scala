@@ -422,6 +422,7 @@ package groundstation {
   object ContactStatus {
     val AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
     val AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
+    val AWS_FAILED = "AWS_FAILED".asInstanceOf[ContactStatus]
     val CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
     val CANCELLING = "CANCELLING".asInstanceOf[ContactStatus]
     val COMPLETED = "COMPLETED".asInstanceOf[ContactStatus]
@@ -433,7 +434,7 @@ package groundstation {
     val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
     val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
-    @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
+    @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, AWS_FAILED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
   }
 
   /** <p/>
@@ -538,6 +539,7 @@ package groundstation {
   @js.native
   trait DataflowDetail extends js.Object {
     var destination: js.UndefOr[Destination]
+    var errorMessage: js.UndefOr[String]
     var source: js.UndefOr[Source]
   }
 
@@ -545,10 +547,12 @@ package groundstation {
     @inline
     def apply(
         destination: js.UndefOr[Destination] = js.undefined,
+        errorMessage: js.UndefOr[String] = js.undefined,
         source: js.UndefOr[Source] = js.undefined
     ): DataflowDetail = {
       val __obj = js.Dynamic.literal()
       destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataflowDetail]
     }

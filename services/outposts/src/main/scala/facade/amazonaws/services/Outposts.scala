@@ -56,30 +56,30 @@ package outposts {
 
   @js.native
   trait CreateOutpostInput extends js.Object {
+    var Name: OutpostName
     var SiteId: SiteId
     var AvailabilityZone: js.UndefOr[AvailabilityZone]
     var AvailabilityZoneId: js.UndefOr[AvailabilityZoneId]
     var Description: js.UndefOr[OutpostDescription]
-    var Name: js.UndefOr[OutpostName]
   }
 
   object CreateOutpostInput {
     @inline
     def apply(
+        Name: OutpostName,
         SiteId: SiteId,
         AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         AvailabilityZoneId: js.UndefOr[AvailabilityZoneId] = js.undefined,
-        Description: js.UndefOr[OutpostDescription] = js.undefined,
-        Name: js.UndefOr[OutpostName] = js.undefined
+        Description: js.UndefOr[OutpostDescription] = js.undefined
     ): CreateOutpostInput = {
       val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
         "SiteId" -> SiteId.asInstanceOf[js.Any]
       )
 
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOutpostInput]
     }
   }

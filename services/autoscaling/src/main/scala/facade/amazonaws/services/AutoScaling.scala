@@ -27,6 +27,7 @@ package object autoscaling {
   type BlockDeviceEbsVolumeSize = Int
   type BlockDeviceEbsVolumeType = String
   type BlockDeviceMappings = js.Array[BlockDeviceMapping]
+  type CapacityRebalanceEnabled = Boolean
   type ClassicLinkVPCSecurityGroups = js.Array[XmlStringMaxLen255]
   type Cooldown = Int
   type DisableScaleIn = Boolean
@@ -475,6 +476,7 @@ package autoscaling {
     var MaxSize: AutoScalingGroupMaxSize
     var MinSize: AutoScalingGroupMinSize
     var AutoScalingGroupARN: js.UndefOr[ResourceName]
+    var CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled]
     var EnabledMetrics: js.UndefOr[EnabledMetrics]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
     var Instances: js.UndefOr[Instances]
@@ -506,6 +508,7 @@ package autoscaling {
         MaxSize: AutoScalingGroupMaxSize,
         MinSize: AutoScalingGroupMinSize,
         AutoScalingGroupARN: js.UndefOr[ResourceName] = js.undefined,
+        CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled] = js.undefined,
         EnabledMetrics: js.UndefOr[EnabledMetrics] = js.undefined,
         HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
         Instances: js.UndefOr[Instances] = js.undefined,
@@ -536,6 +539,7 @@ package autoscaling {
       )
 
       AutoScalingGroupARN.foreach(__v => __obj.updateDynamic("AutoScalingGroupARN")(__v.asInstanceOf[js.Any]))
+      CapacityRebalance.foreach(__v => __obj.updateDynamic("CapacityRebalance")(__v.asInstanceOf[js.Any]))
       EnabledMetrics.foreach(__v => __obj.updateDynamic("EnabledMetrics")(__v.asInstanceOf[js.Any]))
       HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
@@ -847,6 +851,7 @@ package autoscaling {
     var MaxSize: AutoScalingGroupMaxSize
     var MinSize: AutoScalingGroupMinSize
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled]
     var DefaultCooldown: js.UndefOr[Cooldown]
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
@@ -874,6 +879,7 @@ package autoscaling {
         MaxSize: AutoScalingGroupMaxSize,
         MinSize: AutoScalingGroupMinSize,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled] = js.undefined,
         DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
         HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
@@ -900,6 +906,7 @@ package autoscaling {
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      CapacityRebalance.foreach(__v => __obj.updateDynamic("CapacityRebalance")(__v.asInstanceOf[js.Any]))
       DefaultCooldown.foreach(__v => __obj.updateDynamic("DefaultCooldown")(__v.asInstanceOf[js.Any]))
       DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
       HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
@@ -1960,7 +1967,7 @@ package autoscaling {
   }
 
   /** Describes a filter that is used to return a more specific list of results when describing tags.
-    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html|Tagging Auto Scaling Groups and Instances]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html|Tagging Auto Scaling groups and instances]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2043,7 +2050,7 @@ package autoscaling {
     @inline def values = js.Array(optional, required)
   }
 
-  /** The metadata options for the instances. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html|Instance Metadata and User Data]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+  /** The metadata options for the instances. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds|Configuring the Instance Metadata Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait InstanceMetadataOptions extends js.Object {
@@ -2138,7 +2145,7 @@ package autoscaling {
   }
 
   /** Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>.
-    * The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.
+    * The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacities.
     * When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
@@ -2310,7 +2317,7 @@ package autoscaling {
   }
 
   /** Describes a launch template and overrides.
-    * The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.
+    * You specify these parameters as part of a mixed instances policy.
     * When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
@@ -2332,12 +2339,12 @@ package autoscaling {
     }
   }
 
-  /** Describes an override for a launch template. Currently, the only supported override is instance type.
-    * The maximum number of instance type overrides that can be associated with an Auto Scaling group is 20.
+  /** Describes an override for a launch template. The maximum number of instance types that can be associated with an Auto Scaling group is 20. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html|Configuring overrides]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait LaunchTemplateOverrides extends js.Object {
     var InstanceType: js.UndefOr[XmlStringMaxLen255]
+    var LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification]
     var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
   }
 
@@ -2345,17 +2352,19 @@ package autoscaling {
     @inline
     def apply(
         InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
     ): LaunchTemplateOverrides = {
       val __obj = js.Dynamic.literal()
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LaunchTemplateSpecification.foreach(__v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any]))
       WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateOverrides]
     }
   }
 
   /** Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.
-    * The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a Launch Template for an Auto Scaling Group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    * The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a launch template for an Auto Scaling group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -2429,7 +2438,7 @@ package autoscaling {
     * * ```Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.```
     * * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.
     * * If you finish before the timeout period ends, complete the lifecycle action.
-    * </ol> For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Amazon EC2 Auto Scaling Lifecycle Hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    * </ol> For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Amazon EC2 Auto Scaling lifecycle hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait LifecycleHookSpecification extends js.Object {
@@ -2627,8 +2636,8 @@ package autoscaling {
     @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
   }
 
-  /** Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling Groups with Multiple Instance Types and Purchase Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or launch template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
+  /** Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling groups with multiple instance types and purchase options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or launch template.
     */
   @js.native
   trait MixedInstancesPolicy extends js.Object {
@@ -2737,7 +2746,7 @@ package autoscaling {
   }
 
   /** Describes a process type.
-    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait ProcessType extends js.Object {
@@ -3355,7 +3364,7 @@ package autoscaling {
     * * At most, one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.
     * * At most, one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.
     * * The upper and lower bound can't be null in the same step adjustment.
-    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps|Step Adjustments]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps|Step adjustments]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait StepAdjustment extends js.Object {
@@ -3381,8 +3390,8 @@ package autoscaling {
     }
   }
 
-  /** Describes an automatic scaling process that has been suspended.
-    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+  /** Describes an auto scaling process that has been suspended.
+    * For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait SuspendedProcess extends js.Object {
@@ -3537,6 +3546,7 @@ package autoscaling {
   trait UpdateAutoScalingGroupType extends js.Object {
     var AutoScalingGroupName: ResourceName
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled]
     var DefaultCooldown: js.UndefOr[Cooldown]
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
@@ -3559,6 +3569,7 @@ package autoscaling {
     def apply(
         AutoScalingGroupName: ResourceName,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled] = js.undefined,
         DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
         HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
@@ -3580,6 +3591,7 @@ package autoscaling {
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      CapacityRebalance.foreach(__v => __obj.updateDynamic("CapacityRebalance")(__v.asInstanceOf[js.Any]))
       DefaultCooldown.foreach(__v => __obj.updateDynamic("DefaultCooldown")(__v.asInstanceOf[js.Any]))
       DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
       HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))

@@ -43,12 +43,14 @@ package object elbv2 {
   type Ciphers = js.Array[Cipher]
   type ConditionFieldName = String
   type CreatedTime = js.Date
+  type CustomerOwnedIpv4Pool = String
   type DNSName = String
   type Default = Boolean
   type Description = String
   type FixedResponseActionContentType = String
   type FixedResponseActionMessage = String
   type FixedResponseActionStatusCode = String
+  type GrpcCode = String
   type HealthCheckEnabled = Boolean
   type HealthCheckIntervalSeconds = Int
   type HealthCheckPort = String
@@ -56,6 +58,7 @@ package object elbv2 {
   type HealthCheckTimeoutSeconds = Int
   type HttpCode = String
   type HttpHeaderConditionName = String
+  type IPv6Address = String
   type IpAddress = String
   type IsDefault = Boolean
   type Limits = js.Array[Limit]
@@ -75,10 +78,12 @@ package object elbv2 {
   type Marker = String
   type Max = String
   type Name = String
+  type OutpostId = String
   type PageSize = Int
   type Path = String
   type Port = Int
   type PrivateIPv4Address = String
+  type ProtocolVersion = String
   type QueryStringKeyValuePairList = js.Array[QueryStringKeyValuePair]
   type RedirectActionHost = String
   type RedirectActionPath = String
@@ -450,6 +455,7 @@ package elbv2 {
   @js.native
   trait AvailabilityZone extends js.Object {
     var LoadBalancerAddresses: js.UndefOr[LoadBalancerAddresses]
+    var OutpostId: js.UndefOr[OutpostId]
     var SubnetId: js.UndefOr[SubnetId]
     var ZoneName: js.UndefOr[ZoneName]
   }
@@ -458,11 +464,13 @@ package elbv2 {
     @inline
     def apply(
         LoadBalancerAddresses: js.UndefOr[LoadBalancerAddresses] = js.undefined,
+        OutpostId: js.UndefOr[OutpostId] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined,
         ZoneName: js.UndefOr[ZoneName] = js.undefined
     ): AvailabilityZone = {
       val __obj = js.Dynamic.literal()
       LoadBalancerAddresses.foreach(__v => __obj.updateDynamic("LoadBalancerAddresses")(__v.asInstanceOf[js.Any]))
+      OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       ZoneName.foreach(__v => __obj.updateDynamic("ZoneName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
@@ -515,11 +523,12 @@ package elbv2 {
   trait CreateListenerInput extends js.Object {
     var DefaultActions: Actions
     var LoadBalancerArn: LoadBalancerArn
-    var Port: Port
-    var Protocol: ProtocolEnum
     var AlpnPolicy: js.UndefOr[AlpnPolicyName]
     var Certificates: js.UndefOr[CertificateList]
+    var Port: js.UndefOr[Port]
+    var Protocol: js.UndefOr[ProtocolEnum]
     var SslPolicy: js.UndefOr[SslPolicyName]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateListenerInput {
@@ -527,22 +536,24 @@ package elbv2 {
     def apply(
         DefaultActions: Actions,
         LoadBalancerArn: LoadBalancerArn,
-        Port: Port,
-        Protocol: ProtocolEnum,
         AlpnPolicy: js.UndefOr[AlpnPolicyName] = js.undefined,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
-        SslPolicy: js.UndefOr[SslPolicyName] = js.undefined
+        Port: js.UndefOr[Port] = js.undefined,
+        Protocol: js.UndefOr[ProtocolEnum] = js.undefined,
+        SslPolicy: js.UndefOr[SslPolicyName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateListenerInput = {
       val __obj = js.Dynamic.literal(
         "DefaultActions" -> DefaultActions.asInstanceOf[js.Any],
-        "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any],
-        "Port" -> Port.asInstanceOf[js.Any],
-        "Protocol" -> Protocol.asInstanceOf[js.Any]
+        "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
 
       AlpnPolicy.foreach(__v => __obj.updateDynamic("AlpnPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       SslPolicy.foreach(__v => __obj.updateDynamic("SslPolicy")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateListenerInput]
     }
   }
@@ -566,6 +577,7 @@ package elbv2 {
   @js.native
   trait CreateLoadBalancerInput extends js.Object {
     var Name: LoadBalancerName
+    var CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool]
     var IpAddressType: js.UndefOr[IpAddressType]
     var Scheme: js.UndefOr[LoadBalancerSchemeEnum]
     var SecurityGroups: js.UndefOr[SecurityGroups]
@@ -579,6 +591,7 @@ package elbv2 {
     @inline
     def apply(
         Name: LoadBalancerName,
+        CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         Scheme: js.UndefOr[LoadBalancerSchemeEnum] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
@@ -591,6 +604,7 @@ package elbv2 {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       Scheme.foreach(__v => __obj.updateDynamic("Scheme")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -624,6 +638,7 @@ package elbv2 {
     var Conditions: RuleConditionList
     var ListenerArn: ListenerArn
     var Priority: RulePriority
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateRuleInput {
@@ -632,7 +647,8 @@ package elbv2 {
         Actions: Actions,
         Conditions: RuleConditionList,
         ListenerArn: ListenerArn,
-        Priority: RulePriority
+        Priority: RulePriority,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleInput = {
       val __obj = js.Dynamic.literal(
         "Actions" -> Actions.asInstanceOf[js.Any],
@@ -640,6 +656,8 @@ package elbv2 {
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleInput]
     }
   }
@@ -673,6 +691,8 @@ package elbv2 {
     var Matcher: js.UndefOr[Matcher]
     var Port: js.UndefOr[Port]
     var Protocol: js.UndefOr[ProtocolEnum]
+    var ProtocolVersion: js.UndefOr[ProtocolVersion]
+    var Tags: js.UndefOr[TagList]
     var TargetType: js.UndefOr[TargetTypeEnum]
     var UnhealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount]
     var VpcId: js.UndefOr[VpcId]
@@ -692,6 +712,8 @@ package elbv2 {
         Matcher: js.UndefOr[Matcher] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
         Protocol: js.UndefOr[ProtocolEnum] = js.undefined,
+        ProtocolVersion: js.UndefOr[ProtocolVersion] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TargetType: js.UndefOr[TargetTypeEnum] = js.undefined,
         UnhealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
@@ -710,6 +732,8 @@ package elbv2 {
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      ProtocolVersion.foreach(__v => __obj.updateDynamic("ProtocolVersion")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       UnhealthyThresholdCount.foreach(__v => __obj.updateDynamic("UnhealthyThresholdCount")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -1495,6 +1519,7 @@ package elbv2 {
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var CanonicalHostedZoneId: js.UndefOr[CanonicalHostedZoneId]
     var CreatedTime: js.UndefOr[CreatedTime]
+    var CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool]
     var DNSName: js.UndefOr[DNSName]
     var IpAddressType: js.UndefOr[IpAddressType]
     var LoadBalancerArn: js.UndefOr[LoadBalancerArn]
@@ -1512,6 +1537,7 @@ package elbv2 {
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         CanonicalHostedZoneId: js.UndefOr[CanonicalHostedZoneId] = js.undefined,
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool] = js.undefined,
         DNSName: js.UndefOr[DNSName] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         LoadBalancerArn: js.UndefOr[LoadBalancerArn] = js.undefined,
@@ -1526,6 +1552,7 @@ package elbv2 {
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       CanonicalHostedZoneId.foreach(__v => __obj.updateDynamic("CanonicalHostedZoneId")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
       IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       LoadBalancerArn.foreach(__v => __obj.updateDynamic("LoadBalancerArn")(__v.asInstanceOf[js.Any]))
@@ -1544,6 +1571,7 @@ package elbv2 {
   @js.native
   trait LoadBalancerAddress extends js.Object {
     var AllocationId: js.UndefOr[AllocationId]
+    var IPv6Address: js.UndefOr[IPv6Address]
     var IpAddress: js.UndefOr[IpAddress]
     var PrivateIPv4Address: js.UndefOr[PrivateIPv4Address]
   }
@@ -1552,11 +1580,13 @@ package elbv2 {
     @inline
     def apply(
         AllocationId: js.UndefOr[AllocationId] = js.undefined,
+        IPv6Address: js.UndefOr[IPv6Address] = js.undefined,
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
         PrivateIPv4Address: js.UndefOr[PrivateIPv4Address] = js.undefined
     ): LoadBalancerAddress = {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
+      IPv6Address.foreach(__v => __obj.updateDynamic("IPv6Address")(__v.asInstanceOf[js.Any]))
       IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       PrivateIPv4Address.foreach(__v => __obj.updateDynamic("PrivateIPv4Address")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerAddress]
@@ -1630,25 +1660,28 @@ package elbv2 {
   object LoadBalancerTypeEnum {
     val application = "application".asInstanceOf[LoadBalancerTypeEnum]
     val network = "network".asInstanceOf[LoadBalancerTypeEnum]
+    val gateway = "gateway".asInstanceOf[LoadBalancerTypeEnum]
 
-    @inline def values = js.Array(application, network)
+    @inline def values = js.Array(application, network, gateway)
   }
 
-  /** Information to use when checking for a successful response from a target.
+  /** The codes to use when checking for a successful response from a target. If the protocol version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes.
     */
   @js.native
   trait Matcher extends js.Object {
-    var HttpCode: HttpCode
+    var GrpcCode: js.UndefOr[GrpcCode]
+    var HttpCode: js.UndefOr[HttpCode]
   }
 
   object Matcher {
     @inline
     def apply(
-        HttpCode: HttpCode
+        GrpcCode: js.UndefOr[GrpcCode] = js.undefined,
+        HttpCode: js.UndefOr[HttpCode] = js.undefined
     ): Matcher = {
-      val __obj = js.Dynamic.literal(
-        "HttpCode" -> HttpCode.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      GrpcCode.foreach(__v => __obj.updateDynamic("GrpcCode")(__v.asInstanceOf[js.Any]))
+      HttpCode.foreach(__v => __obj.updateDynamic("HttpCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Matcher]
     }
   }
@@ -1905,8 +1938,9 @@ package elbv2 {
     val TLS = "TLS".asInstanceOf[ProtocolEnum]
     val UDP = "UDP".asInstanceOf[ProtocolEnum]
     val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
+    val GENEVE = "GENEVE".asInstanceOf[ProtocolEnum]
 
-    @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP)
+    @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE)
   }
 
   /** Information about a query string condition.
@@ -2293,6 +2327,7 @@ package elbv2 {
   @js.native
   trait SetSubnetsInput extends js.Object {
     var LoadBalancerArn: LoadBalancerArn
+    var IpAddressType: js.UndefOr[IpAddressType]
     var SubnetMappings: js.UndefOr[SubnetMappings]
     var Subnets: js.UndefOr[Subnets]
   }
@@ -2301,6 +2336,7 @@ package elbv2 {
     @inline
     def apply(
         LoadBalancerArn: LoadBalancerArn,
+        IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         SubnetMappings: js.UndefOr[SubnetMappings] = js.undefined,
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): SetSubnetsInput = {
@@ -2308,6 +2344,7 @@ package elbv2 {
         "LoadBalancerArn" -> LoadBalancerArn.asInstanceOf[js.Any]
       )
 
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       SubnetMappings.foreach(__v => __obj.updateDynamic("SubnetMappings")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetSubnetsInput]
@@ -2317,15 +2354,18 @@ package elbv2 {
   @js.native
   trait SetSubnetsOutput extends js.Object {
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var IpAddressType: js.UndefOr[IpAddressType]
   }
 
   object SetSubnetsOutput {
     @inline
     def apply(
-        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        IpAddressType: js.UndefOr[IpAddressType] = js.undefined
     ): SetSubnetsOutput = {
       val __obj = js.Dynamic.literal()
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetSubnetsOutput]
     }
   }
@@ -2378,6 +2418,7 @@ package elbv2 {
   @js.native
   trait SubnetMapping extends js.Object {
     var AllocationId: js.UndefOr[AllocationId]
+    var IPv6Address: js.UndefOr[IPv6Address]
     var PrivateIPv4Address: js.UndefOr[PrivateIPv4Address]
     var SubnetId: js.UndefOr[SubnetId]
   }
@@ -2386,11 +2427,13 @@ package elbv2 {
     @inline
     def apply(
         AllocationId: js.UndefOr[AllocationId] = js.undefined,
+        IPv6Address: js.UndefOr[IPv6Address] = js.undefined,
         PrivateIPv4Address: js.UndefOr[PrivateIPv4Address] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined
     ): SubnetMapping = {
       val __obj = js.Dynamic.literal()
       AllocationId.foreach(__v => __obj.updateDynamic("AllocationId")(__v.asInstanceOf[js.Any]))
+      IPv6Address.foreach(__v => __obj.updateDynamic("IPv6Address")(__v.asInstanceOf[js.Any]))
       PrivateIPv4Address.foreach(__v => __obj.updateDynamic("PrivateIPv4Address")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubnetMapping]
@@ -2482,6 +2525,7 @@ package elbv2 {
     var Matcher: js.UndefOr[Matcher]
     var Port: js.UndefOr[Port]
     var Protocol: js.UndefOr[ProtocolEnum]
+    var ProtocolVersion: js.UndefOr[ProtocolVersion]
     var TargetGroupArn: js.UndefOr[TargetGroupArn]
     var TargetGroupName: js.UndefOr[TargetGroupName]
     var TargetType: js.UndefOr[TargetTypeEnum]
@@ -2503,6 +2547,7 @@ package elbv2 {
         Matcher: js.UndefOr[Matcher] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
         Protocol: js.UndefOr[ProtocolEnum] = js.undefined,
+        ProtocolVersion: js.UndefOr[ProtocolVersion] = js.undefined,
         TargetGroupArn: js.UndefOr[TargetGroupArn] = js.undefined,
         TargetGroupName: js.UndefOr[TargetGroupName] = js.undefined,
         TargetType: js.UndefOr[TargetTypeEnum] = js.undefined,
@@ -2521,6 +2566,7 @@ package elbv2 {
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      ProtocolVersion.foreach(__v => __obj.updateDynamic("ProtocolVersion")(__v.asInstanceOf[js.Any]))
       TargetGroupArn.foreach(__v => __obj.updateDynamic("TargetGroupArn")(__v.asInstanceOf[js.Any]))
       TargetGroupName.foreach(__v => __obj.updateDynamic("TargetGroupName")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))

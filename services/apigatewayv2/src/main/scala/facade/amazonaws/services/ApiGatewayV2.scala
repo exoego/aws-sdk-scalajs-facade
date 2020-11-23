@@ -119,6 +119,7 @@ package object apigatewayv2 {
     @inline def getVpcLinksFuture(params: GetVpcLinksRequest): Future[GetVpcLinksResponse] = service.getVpcLinks(params).promise().toFuture
     @inline def importApiFuture(params: ImportApiRequest): Future[ImportApiResponse] = service.importApi(params).promise().toFuture
     @inline def reimportApiFuture(params: ReimportApiRequest): Future[ReimportApiResponse] = service.reimportApi(params).promise().toFuture
+    @inline def resetAuthorizersCacheFuture(params: ResetAuthorizersCacheRequest): Future[js.Object] = service.resetAuthorizersCache(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateApiFuture(params: UpdateApiRequest): Future[UpdateApiResponse] = service.updateApi(params).promise().toFuture
@@ -200,6 +201,7 @@ package apigatewayv2 {
     def getVpcLinks(params: GetVpcLinksRequest): Request[GetVpcLinksResponse] = js.native
     def importApi(params: ImportApiRequest): Request[ImportApiResponse] = js.native
     def reimportApi(params: ReimportApiRequest): Request[ReimportApiResponse] = js.native
+    def resetAuthorizersCache(params: ResetAuthorizersCacheRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateApi(params: UpdateApiRequest): Request[UpdateApiResponse] = js.native
@@ -245,11 +247,13 @@ package apigatewayv2 {
     var ProtocolType: ProtocolType
     var RouteSelectionExpression: SelectionExpression
     var ApiEndpoint: js.UndefOr[__string]
+    var ApiGatewayManaged: js.UndefOr[__boolean]
     var ApiId: js.UndefOr[Id]
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var CorsConfiguration: js.UndefOr[Cors]
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var ImportInfo: js.UndefOr[__listOf__string]
     var Tags: js.UndefOr[Tags]
@@ -264,11 +268,13 @@ package apigatewayv2 {
         ProtocolType: ProtocolType,
         RouteSelectionExpression: SelectionExpression,
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiGatewayManaged: js.UndefOr[__boolean] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         ImportInfo: js.UndefOr[__listOf__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -282,11 +288,13 @@ package apigatewayv2 {
       )
 
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
       ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       ImportInfo.foreach(__v => __obj.updateDynamic("ImportInfo")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -325,7 +333,7 @@ package apigatewayv2 {
     }
   }
 
-  /** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT for using JSON Web Tokens.
+  /** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
     */
   @js.native
   sealed trait AuthorizationType extends js.Any
@@ -345,9 +353,11 @@ package apigatewayv2 {
     var Name: StringWithLengthBetween1And128
     var AuthorizerCredentialsArn: js.UndefOr[Arn]
     var AuthorizerId: js.UndefOr[Id]
+    var AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
     var AuthorizerType: js.UndefOr[AuthorizerType]
     var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var EnableSimpleResponses: js.UndefOr[__boolean]
     var IdentitySource: js.UndefOr[IdentitySourceList]
     var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
     var JwtConfiguration: js.UndefOr[JWTConfiguration]
@@ -359,9 +369,11 @@ package apigatewayv2 {
         Name: StringWithLengthBetween1And128,
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
         AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
         AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        EnableSimpleResponses: js.UndefOr[__boolean] = js.undefined,
         IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined
@@ -372,9 +384,11 @@ package apigatewayv2 {
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      AuthorizerPayloadFormatVersion.foreach(__v => __obj.updateDynamic("AuthorizerPayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      EnableSimpleResponses.foreach(__v => __obj.updateDynamic("EnableSimpleResponses")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
@@ -382,7 +396,7 @@ package apigatewayv2 {
     }
   }
 
-  /** The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
+  /** The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).
     */
   @js.native
   sealed trait AuthorizerType extends js.Any
@@ -512,6 +526,7 @@ package apigatewayv2 {
     var CorsConfiguration: js.UndefOr[Cors]
     var CredentialsArn: js.UndefOr[Arn]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var RouteKey: js.UndefOr[SelectionKey]
     var RouteSelectionExpression: js.UndefOr[SelectionExpression]
@@ -529,6 +544,7 @@ package apigatewayv2 {
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CredentialsArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         RouteKey: js.UndefOr[SelectionKey] = js.undefined,
         RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
@@ -545,6 +561,7 @@ package apigatewayv2 {
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
       RouteSelectionExpression.foreach(__v => __obj.updateDynamic("RouteSelectionExpression")(__v.asInstanceOf[js.Any]))
@@ -558,11 +575,13 @@ package apigatewayv2 {
   @js.native
   trait CreateApiResponse extends js.Object {
     var ApiEndpoint: js.UndefOr[__string]
+    var ApiGatewayManaged: js.UndefOr[__boolean]
     var ApiId: js.UndefOr[Id]
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var CorsConfiguration: js.UndefOr[Cors]
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var ImportInfo: js.UndefOr[__listOf__string]
     var Name: js.UndefOr[StringWithLengthBetween1And128]
@@ -577,11 +596,13 @@ package apigatewayv2 {
     @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiGatewayManaged: js.UndefOr[__boolean] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         ImportInfo: js.UndefOr[__listOf__string] = js.undefined,
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
@@ -593,11 +614,13 @@ package apigatewayv2 {
     ): CreateApiResponse = {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
       ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       ImportInfo.foreach(__v => __obj.updateDynamic("ImportInfo")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -619,8 +642,10 @@ package apigatewayv2 {
     var IdentitySource: IdentitySourceList
     var Name: StringWithLengthBetween1And128
     var AuthorizerCredentialsArn: js.UndefOr[Arn]
+    var AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
     var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var EnableSimpleResponses: js.UndefOr[__boolean]
     var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
     var JwtConfiguration: js.UndefOr[JWTConfiguration]
   }
@@ -633,8 +658,10 @@ package apigatewayv2 {
         IdentitySource: IdentitySourceList,
         Name: StringWithLengthBetween1And128,
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
         AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        EnableSimpleResponses: js.UndefOr[__boolean] = js.undefined,
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined
     ): CreateAuthorizerRequest = {
@@ -646,8 +673,10 @@ package apigatewayv2 {
       )
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
+      AuthorizerPayloadFormatVersion.foreach(__v => __obj.updateDynamic("AuthorizerPayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      EnableSimpleResponses.foreach(__v => __obj.updateDynamic("EnableSimpleResponses")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerRequest]
@@ -658,9 +687,11 @@ package apigatewayv2 {
   trait CreateAuthorizerResponse extends js.Object {
     var AuthorizerCredentialsArn: js.UndefOr[Arn]
     var AuthorizerId: js.UndefOr[Id]
+    var AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
     var AuthorizerType: js.UndefOr[AuthorizerType]
     var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var EnableSimpleResponses: js.UndefOr[__boolean]
     var IdentitySource: js.UndefOr[IdentitySourceList]
     var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
     var JwtConfiguration: js.UndefOr[JWTConfiguration]
@@ -672,9 +703,11 @@ package apigatewayv2 {
     def apply(
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
         AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
         AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        EnableSimpleResponses: js.UndefOr[__boolean] = js.undefined,
         IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined,
@@ -683,9 +716,11 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      AuthorizerPayloadFormatVersion.foreach(__v => __obj.updateDynamic("AuthorizerPayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      EnableSimpleResponses.foreach(__v => __obj.updateDynamic("EnableSimpleResponses")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
@@ -757,6 +792,7 @@ package apigatewayv2 {
   trait CreateDomainNameRequest extends js.Object {
     var DomainName: StringWithLengthBetween1And512
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var MutualTlsAuthentication: js.UndefOr[MutualTlsAuthenticationInput]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -765,6 +801,7 @@ package apigatewayv2 {
     def apply(
         DomainName: StringWithLengthBetween1And512,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        MutualTlsAuthentication: js.UndefOr[MutualTlsAuthenticationInput] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameRequest = {
       val __obj = js.Dynamic.literal(
@@ -772,6 +809,7 @@ package apigatewayv2 {
       )
 
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      MutualTlsAuthentication.foreach(__v => __obj.updateDynamic("MutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameRequest]
     }
@@ -782,6 +820,7 @@ package apigatewayv2 {
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainName: js.UndefOr[StringWithLengthBetween1And512]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -791,12 +830,14 @@ package apigatewayv2 {
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameResponse = {
       val __obj = js.Dynamic.literal()
       ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      MutualTlsAuthentication.foreach(__v => __obj.updateDynamic("MutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameResponse]
     }
@@ -814,6 +855,7 @@ package apigatewayv2 {
     var CredentialsArn: js.UndefOr[Arn]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
+    var IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
@@ -835,6 +877,7 @@ package apigatewayv2 {
         CredentialsArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
@@ -855,6 +898,7 @@ package apigatewayv2 {
       CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
+      IntegrationSubtype.foreach(__v => __obj.updateDynamic("IntegrationSubtype")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
@@ -947,6 +991,7 @@ package apigatewayv2 {
     var IntegrationId: js.UndefOr[Id]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
     var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128]
     var IntegrationType: js.UndefOr[IntegrationType]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
@@ -970,6 +1015,7 @@ package apigatewayv2 {
         IntegrationId: js.UndefOr[Id] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
@@ -990,6 +1036,7 @@ package apigatewayv2 {
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
+      IntegrationSubtype.foreach(__v => __obj.updateDynamic("IntegrationSubtype")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
@@ -1788,6 +1835,7 @@ package apigatewayv2 {
     var DomainName: StringWithLengthBetween1And512
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -1797,6 +1845,7 @@ package apigatewayv2 {
         DomainName: StringWithLengthBetween1And512,
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DomainName = {
       val __obj = js.Dynamic.literal(
@@ -1805,6 +1854,7 @@ package apigatewayv2 {
 
       ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      MutualTlsAuthentication.foreach(__v => __obj.updateDynamic("MutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainName]
     }
@@ -2031,11 +2081,13 @@ package apigatewayv2 {
   @js.native
   trait GetApiResponse extends js.Object {
     var ApiEndpoint: js.UndefOr[__string]
+    var ApiGatewayManaged: js.UndefOr[__boolean]
     var ApiId: js.UndefOr[Id]
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var CorsConfiguration: js.UndefOr[Cors]
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var ImportInfo: js.UndefOr[__listOf__string]
     var Name: js.UndefOr[StringWithLengthBetween1And128]
@@ -2050,11 +2102,13 @@ package apigatewayv2 {
     @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiGatewayManaged: js.UndefOr[__boolean] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         ImportInfo: js.UndefOr[__listOf__string] = js.undefined,
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
@@ -2066,11 +2120,13 @@ package apigatewayv2 {
     ): GetApiResponse = {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
       ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       ImportInfo.foreach(__v => __obj.updateDynamic("ImportInfo")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2145,9 +2201,11 @@ package apigatewayv2 {
   trait GetAuthorizerResponse extends js.Object {
     var AuthorizerCredentialsArn: js.UndefOr[Arn]
     var AuthorizerId: js.UndefOr[Id]
+    var AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
     var AuthorizerType: js.UndefOr[AuthorizerType]
     var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var EnableSimpleResponses: js.UndefOr[__boolean]
     var IdentitySource: js.UndefOr[IdentitySourceList]
     var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
     var JwtConfiguration: js.UndefOr[JWTConfiguration]
@@ -2159,9 +2217,11 @@ package apigatewayv2 {
     def apply(
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
         AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
         AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        EnableSimpleResponses: js.UndefOr[__boolean] = js.undefined,
         IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined,
@@ -2170,9 +2230,11 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      AuthorizerPayloadFormatVersion.foreach(__v => __obj.updateDynamic("AuthorizerPayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      EnableSimpleResponses.foreach(__v => __obj.updateDynamic("EnableSimpleResponses")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
@@ -2340,6 +2402,7 @@ package apigatewayv2 {
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainName: js.UndefOr[StringWithLengthBetween1And512]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -2349,12 +2412,14 @@ package apigatewayv2 {
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetDomainNameResponse = {
       val __obj = js.Dynamic.literal()
       ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      MutualTlsAuthentication.foreach(__v => __obj.updateDynamic("MutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainNameResponse]
     }
@@ -2529,6 +2594,7 @@ package apigatewayv2 {
     var IntegrationId: js.UndefOr[Id]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
     var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128]
     var IntegrationType: js.UndefOr[IntegrationType]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
@@ -2552,6 +2618,7 @@ package apigatewayv2 {
         IntegrationId: js.UndefOr[Id] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
@@ -2572,6 +2639,7 @@ package apigatewayv2 {
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
+      IntegrationSubtype.foreach(__v => __obj.updateDynamic("IntegrationSubtype")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
@@ -3242,11 +3310,13 @@ package apigatewayv2 {
   @js.native
   trait ImportApiResponse extends js.Object {
     var ApiEndpoint: js.UndefOr[__string]
+    var ApiGatewayManaged: js.UndefOr[__boolean]
     var ApiId: js.UndefOr[Id]
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var CorsConfiguration: js.UndefOr[Cors]
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var ImportInfo: js.UndefOr[__listOf__string]
     var Name: js.UndefOr[StringWithLengthBetween1And128]
@@ -3261,11 +3331,13 @@ package apigatewayv2 {
     @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiGatewayManaged: js.UndefOr[__boolean] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         ImportInfo: js.UndefOr[__listOf__string] = js.undefined,
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
@@ -3277,11 +3349,13 @@ package apigatewayv2 {
     ): ImportApiResponse = {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
       ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       ImportInfo.foreach(__v => __obj.updateDynamic("ImportInfo")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -3307,6 +3381,7 @@ package apigatewayv2 {
     var IntegrationId: js.UndefOr[Id]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
     var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128]
     var IntegrationType: js.UndefOr[IntegrationType]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
@@ -3330,6 +3405,7 @@ package apigatewayv2 {
         IntegrationId: js.UndefOr[Id] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
@@ -3350,6 +3426,7 @@ package apigatewayv2 {
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
+      IntegrationSubtype.foreach(__v => __obj.updateDynamic("IntegrationSubtype")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
@@ -3477,6 +3554,47 @@ package apigatewayv2 {
     }
   }
 
+  @js.native
+  trait MutualTlsAuthentication extends js.Object {
+    var TruststoreUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var TruststoreVersion: js.UndefOr[StringWithLengthBetween1And64]
+    var TruststoreWarnings: js.UndefOr[__listOf__string]
+  }
+
+  object MutualTlsAuthentication {
+    @inline
+    def apply(
+        TruststoreUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        TruststoreVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        TruststoreWarnings: js.UndefOr[__listOf__string] = js.undefined
+    ): MutualTlsAuthentication = {
+      val __obj = js.Dynamic.literal()
+      TruststoreUri.foreach(__v => __obj.updateDynamic("TruststoreUri")(__v.asInstanceOf[js.Any]))
+      TruststoreVersion.foreach(__v => __obj.updateDynamic("TruststoreVersion")(__v.asInstanceOf[js.Any]))
+      TruststoreWarnings.foreach(__v => __obj.updateDynamic("TruststoreWarnings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MutualTlsAuthentication]
+    }
+  }
+
+  @js.native
+  trait MutualTlsAuthenticationInput extends js.Object {
+    var TruststoreUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var TruststoreVersion: js.UndefOr[StringWithLengthBetween1And64]
+  }
+
+  object MutualTlsAuthenticationInput {
+    @inline
+    def apply(
+        TruststoreUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        TruststoreVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
+    ): MutualTlsAuthenticationInput = {
+      val __obj = js.Dynamic.literal()
+      TruststoreUri.foreach(__v => __obj.updateDynamic("TruststoreUri")(__v.asInstanceOf[js.Any]))
+      TruststoreVersion.foreach(__v => __obj.updateDynamic("TruststoreVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MutualTlsAuthenticationInput]
+    }
+  }
+
   /** Validation constraints imposed on parameters of a request (path, query string, headers).
     */
   @js.native
@@ -3550,11 +3668,13 @@ package apigatewayv2 {
   @js.native
   trait ReimportApiResponse extends js.Object {
     var ApiEndpoint: js.UndefOr[__string]
+    var ApiGatewayManaged: js.UndefOr[__boolean]
     var ApiId: js.UndefOr[Id]
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var CorsConfiguration: js.UndefOr[Cors]
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var ImportInfo: js.UndefOr[__listOf__string]
     var Name: js.UndefOr[StringWithLengthBetween1And128]
@@ -3569,11 +3689,13 @@ package apigatewayv2 {
     @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiGatewayManaged: js.UndefOr[__boolean] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         ImportInfo: js.UndefOr[__listOf__string] = js.undefined,
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
@@ -3585,11 +3707,13 @@ package apigatewayv2 {
     ): ReimportApiResponse = {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
       ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       ImportInfo.foreach(__v => __obj.updateDynamic("ImportInfo")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -3599,6 +3723,26 @@ package apigatewayv2 {
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReimportApiResponse]
+    }
+  }
+
+  @js.native
+  trait ResetAuthorizersCacheRequest extends js.Object {
+    var ApiId: __string
+    var StageName: __string
+  }
+
+  object ResetAuthorizersCacheRequest {
+    @inline
+    def apply(
+        ApiId: __string,
+        StageName: __string
+    ): ResetAuthorizersCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "StageName" -> StageName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResetAuthorizersCacheRequest]
     }
   }
 
@@ -3946,6 +4090,7 @@ package apigatewayv2 {
     var CorsConfiguration: js.UndefOr[Cors]
     var CredentialsArn: js.UndefOr[Arn]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var Name: js.UndefOr[StringWithLengthBetween1And128]
     var RouteKey: js.UndefOr[SelectionKey]
@@ -3962,6 +4107,7 @@ package apigatewayv2 {
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CredentialsArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         RouteKey: js.UndefOr[SelectionKey] = js.undefined,
@@ -3977,6 +4123,7 @@ package apigatewayv2 {
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
@@ -3990,11 +4137,13 @@ package apigatewayv2 {
   @js.native
   trait UpdateApiResponse extends js.Object {
     var ApiEndpoint: js.UndefOr[__string]
+    var ApiGatewayManaged: js.UndefOr[__boolean]
     var ApiId: js.UndefOr[Id]
     var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
     var CorsConfiguration: js.UndefOr[Cors]
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableExecuteApiEndpoint: js.UndefOr[__boolean]
     var DisableSchemaValidation: js.UndefOr[__boolean]
     var ImportInfo: js.UndefOr[__listOf__string]
     var Name: js.UndefOr[StringWithLengthBetween1And128]
@@ -4009,11 +4158,13 @@ package apigatewayv2 {
     @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiGatewayManaged: js.UndefOr[__boolean] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         CorsConfiguration: js.UndefOr[Cors] = js.undefined,
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableExecuteApiEndpoint: js.UndefOr[__boolean] = js.undefined,
         DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
         ImportInfo: js.UndefOr[__listOf__string] = js.undefined,
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
@@ -4025,11 +4176,13 @@ package apigatewayv2 {
     ): UpdateApiResponse = {
       val __obj = js.Dynamic.literal()
       ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiGatewayManaged.foreach(__v => __obj.updateDynamic("ApiGatewayManaged")(__v.asInstanceOf[js.Any]))
       ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
       ApiKeySelectionExpression.foreach(__v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any]))
       CorsConfiguration.foreach(__v => __obj.updateDynamic("CorsConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableExecuteApiEndpoint.foreach(__v => __obj.updateDynamic("DisableExecuteApiEndpoint")(__v.asInstanceOf[js.Any]))
       DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
       ImportInfo.foreach(__v => __obj.updateDynamic("ImportInfo")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -4049,9 +4202,11 @@ package apigatewayv2 {
     var ApiId: __string
     var AuthorizerId: __string
     var AuthorizerCredentialsArn: js.UndefOr[Arn]
+    var AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
     var AuthorizerType: js.UndefOr[AuthorizerType]
     var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var EnableSimpleResponses: js.UndefOr[__boolean]
     var IdentitySource: js.UndefOr[IdentitySourceList]
     var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
     var JwtConfiguration: js.UndefOr[JWTConfiguration]
@@ -4064,9 +4219,11 @@ package apigatewayv2 {
         ApiId: __string,
         AuthorizerId: __string,
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
         AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
         AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        EnableSimpleResponses: js.UndefOr[__boolean] = js.undefined,
         IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined,
@@ -4078,9 +4235,11 @@ package apigatewayv2 {
       )
 
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
+      AuthorizerPayloadFormatVersion.foreach(__v => __obj.updateDynamic("AuthorizerPayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      EnableSimpleResponses.foreach(__v => __obj.updateDynamic("EnableSimpleResponses")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
@@ -4093,9 +4252,11 @@ package apigatewayv2 {
   trait UpdateAuthorizerResponse extends js.Object {
     var AuthorizerCredentialsArn: js.UndefOr[Arn]
     var AuthorizerId: js.UndefOr[Id]
+    var AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
     var AuthorizerType: js.UndefOr[AuthorizerType]
     var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var EnableSimpleResponses: js.UndefOr[__boolean]
     var IdentitySource: js.UndefOr[IdentitySourceList]
     var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
     var JwtConfiguration: js.UndefOr[JWTConfiguration]
@@ -4107,9 +4268,11 @@ package apigatewayv2 {
     def apply(
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerPayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
         AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
         AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        EnableSimpleResponses: js.UndefOr[__boolean] = js.undefined,
         IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         JwtConfiguration: js.UndefOr[JWTConfiguration] = js.undefined,
@@ -4118,9 +4281,11 @@ package apigatewayv2 {
       val __obj = js.Dynamic.literal()
       AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      AuthorizerPayloadFormatVersion.foreach(__v => __obj.updateDynamic("AuthorizerPayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
       AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
       AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      EnableSimpleResponses.foreach(__v => __obj.updateDynamic("EnableSimpleResponses")(__v.asInstanceOf[js.Any]))
       IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(__v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any]))
       JwtConfiguration.foreach(__v => __obj.updateDynamic("JwtConfiguration")(__v.asInstanceOf[js.Any]))
@@ -4192,19 +4357,22 @@ package apigatewayv2 {
   trait UpdateDomainNameRequest extends js.Object {
     var DomainName: __string
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var MutualTlsAuthentication: js.UndefOr[MutualTlsAuthenticationInput]
   }
 
   object UpdateDomainNameRequest {
     @inline
     def apply(
         DomainName: __string,
-        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        MutualTlsAuthentication: js.UndefOr[MutualTlsAuthenticationInput] = js.undefined
     ): UpdateDomainNameRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      MutualTlsAuthentication.foreach(__v => __obj.updateDynamic("MutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainNameRequest]
     }
   }
@@ -4214,6 +4382,7 @@ package apigatewayv2 {
     var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
     var DomainName: js.UndefOr[StringWithLengthBetween1And512]
     var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+    var MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -4223,12 +4392,14 @@ package apigatewayv2 {
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
+        MutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateDomainNameResponse = {
       val __obj = js.Dynamic.literal()
       ApiMappingSelectionExpression.foreach(__v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      MutualTlsAuthentication.foreach(__v => __obj.updateDynamic("MutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainNameResponse]
     }
@@ -4246,6 +4417,7 @@ package apigatewayv2 {
     var CredentialsArn: js.UndefOr[Arn]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
+    var IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128]
     var IntegrationType: js.UndefOr[IntegrationType]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
@@ -4268,6 +4440,7 @@ package apigatewayv2 {
         CredentialsArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
@@ -4289,6 +4462,7 @@ package apigatewayv2 {
       CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
+      IntegrationSubtype.foreach(__v => __obj.updateDynamic("IntegrationSubtype")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
@@ -4385,6 +4559,7 @@ package apigatewayv2 {
     var IntegrationId: js.UndefOr[Id]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
     var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128]
     var IntegrationType: js.UndefOr[IntegrationType]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
@@ -4408,6 +4583,7 @@ package apigatewayv2 {
         IntegrationId: js.UndefOr[Id] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationSubtype: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
@@ -4428,6 +4604,7 @@ package apigatewayv2 {
       IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
       IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(__v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any]))
+      IntegrationSubtype.foreach(__v => __obj.updateDynamic("IntegrationSubtype")(__v.asInstanceOf[js.Any]))
       IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
       IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
       PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))

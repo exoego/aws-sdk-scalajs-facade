@@ -10,7 +10,9 @@ package object es {
   type ARN = String
   type AdditionalLimitList = js.Array[AdditionalLimit]
   type AdvancedOptions = js.Dictionary[String]
+  type BackendRole = String
   type CloudWatchLogsLogGroupArn = String
+  type CommitMessage = String
   type CompatibleElasticsearchVersionsList = js.Array[CompatibleVersionsMap]
   type ConnectionAlias = String
   type CreatedAt = js.Date
@@ -23,6 +25,7 @@ package object es {
   type DomainId = String
   type DomainInfoList = js.Array[DomainInfo]
   type DomainName = String
+  type DomainNameFqdn = String
   type DomainNameList = js.Array[DomainName]
   type DomainPackageDetailsList = js.Array[DomainPackageDetails]
   type ElasticsearchDomainStatusList = js.Array[ElasticsearchDomainStatus]
@@ -59,6 +62,8 @@ package object es {
   type PackageDetailsList = js.Array[PackageDetails]
   type PackageID = String
   type PackageName = String
+  type PackageVersion = String
+  type PackageVersionHistoryList = js.Array[PackageVersionHistory]
   type Password = String
   type PolicyDocument = String
   type RecurringChargeList = js.Array[RecurringCharge]
@@ -70,6 +75,8 @@ package object es {
   type RoleArn = String
   type S3BucketName = String
   type S3Key = String
+  type SAMLEntityId = String
+  type SAMLMetadata = String
   type ServiceUrl = String
   type StartTimestamp = js.Date
   type StorageSubTypeName = String
@@ -114,6 +121,7 @@ package object es {
     @inline def describeReservedElasticsearchInstancesFuture(params: DescribeReservedElasticsearchInstancesRequest): Future[DescribeReservedElasticsearchInstancesResponse] = service.describeReservedElasticsearchInstances(params).promise().toFuture
     @inline def dissociatePackageFuture(params: DissociatePackageRequest): Future[DissociatePackageResponse] = service.dissociatePackage(params).promise().toFuture
     @inline def getCompatibleElasticsearchVersionsFuture(params: GetCompatibleElasticsearchVersionsRequest): Future[GetCompatibleElasticsearchVersionsResponse] = service.getCompatibleElasticsearchVersions(params).promise().toFuture
+    @inline def getPackageVersionHistoryFuture(params: GetPackageVersionHistoryRequest): Future[GetPackageVersionHistoryResponse] = service.getPackageVersionHistory(params).promise().toFuture
     @inline def getUpgradeHistoryFuture(params: GetUpgradeHistoryRequest): Future[GetUpgradeHistoryResponse] = service.getUpgradeHistory(params).promise().toFuture
     @inline def getUpgradeStatusFuture(params: GetUpgradeStatusRequest): Future[GetUpgradeStatusResponse] = service.getUpgradeStatus(params).promise().toFuture
     @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
@@ -127,6 +135,7 @@ package object es {
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] = service.removeTags(params).promise().toFuture
     @inline def startElasticsearchServiceSoftwareUpdateFuture(params: StartElasticsearchServiceSoftwareUpdateRequest): Future[StartElasticsearchServiceSoftwareUpdateResponse] = service.startElasticsearchServiceSoftwareUpdate(params).promise().toFuture
     @inline def updateElasticsearchDomainConfigFuture(params: UpdateElasticsearchDomainConfigRequest): Future[UpdateElasticsearchDomainConfigResponse] = service.updateElasticsearchDomainConfig(params).promise().toFuture
+    @inline def updatePackageFuture(params: UpdatePackageRequest): Future[UpdatePackageResponse] = service.updatePackage(params).promise().toFuture
     @inline def upgradeElasticsearchDomainFuture(params: UpgradeElasticsearchDomainRequest): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
 
   }
@@ -161,6 +170,7 @@ package es {
     def describeReservedElasticsearchInstances(params: DescribeReservedElasticsearchInstancesRequest): Request[DescribeReservedElasticsearchInstancesResponse] = js.native
     def dissociatePackage(params: DissociatePackageRequest): Request[DissociatePackageResponse] = js.native
     def getCompatibleElasticsearchVersions(params: GetCompatibleElasticsearchVersionsRequest): Request[GetCompatibleElasticsearchVersionsResponse] = js.native
+    def getPackageVersionHistory(params: GetPackageVersionHistoryRequest): Request[GetPackageVersionHistoryResponse] = js.native
     def getUpgradeHistory(params: GetUpgradeHistoryRequest): Request[GetUpgradeHistoryResponse] = js.native
     def getUpgradeStatus(params: GetUpgradeStatusRequest): Request[GetUpgradeStatusResponse] = js.native
     def listDomainNames(): Request[ListDomainNamesResponse] = js.native
@@ -174,6 +184,7 @@ package es {
     def removeTags(params: RemoveTagsRequest): Request[js.Object] = js.native
     def startElasticsearchServiceSoftwareUpdate(params: StartElasticsearchServiceSoftwareUpdateRequest): Request[StartElasticsearchServiceSoftwareUpdateResponse] = js.native
     def updateElasticsearchDomainConfig(params: UpdateElasticsearchDomainConfigRequest): Request[UpdateElasticsearchDomainConfigResponse] = js.native
+    def updatePackage(params: UpdatePackageRequest): Request[UpdatePackageResponse] = js.native
     def upgradeElasticsearchDomain(params: UpgradeElasticsearchDomainRequest): Request[UpgradeElasticsearchDomainResponse] = js.native
   }
 
@@ -310,17 +321,20 @@ package es {
   trait AdvancedSecurityOptions extends js.Object {
     var Enabled: js.UndefOr[Boolean]
     var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
+    var SAMLOptions: js.UndefOr[SAMLOptionsOutput]
   }
 
   object AdvancedSecurityOptions {
     @inline
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined,
-        InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined
+        InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
+        SAMLOptions: js.UndefOr[SAMLOptionsOutput] = js.undefined
     ): AdvancedSecurityOptions = {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
+      SAMLOptions.foreach(__v => __obj.updateDynamic("SAMLOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdvancedSecurityOptions]
     }
   }
@@ -332,6 +346,7 @@ package es {
     var Enabled: js.UndefOr[Boolean]
     var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
     var MasterUserOptions: js.UndefOr[MasterUserOptions]
+    var SAMLOptions: js.UndefOr[SAMLOptionsInput]
   }
 
   object AdvancedSecurityOptionsInput {
@@ -339,12 +354,14 @@ package es {
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined,
         InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
-        MasterUserOptions: js.UndefOr[MasterUserOptions] = js.undefined
+        MasterUserOptions: js.UndefOr[MasterUserOptions] = js.undefined,
+        SAMLOptions: js.UndefOr[SAMLOptionsInput] = js.undefined
     ): AdvancedSecurityOptionsInput = {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       MasterUserOptions.foreach(__v => __obj.updateDynamic("MasterUserOptions")(__v.asInstanceOf[js.Any]))
+      SAMLOptions.foreach(__v => __obj.updateDynamic("SAMLOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdvancedSecurityOptionsInput]
     }
   }
@@ -1313,6 +1330,9 @@ package es {
     */
   @js.native
   trait DomainEndpointOptions extends js.Object {
+    var CustomEndpoint: js.UndefOr[DomainNameFqdn]
+    var CustomEndpointCertificateArn: js.UndefOr[ARN]
+    var CustomEndpointEnabled: js.UndefOr[Boolean]
     var EnforceHTTPS: js.UndefOr[Boolean]
     var TLSSecurityPolicy: js.UndefOr[TLSSecurityPolicy]
   }
@@ -1320,10 +1340,16 @@ package es {
   object DomainEndpointOptions {
     @inline
     def apply(
+        CustomEndpoint: js.UndefOr[DomainNameFqdn] = js.undefined,
+        CustomEndpointCertificateArn: js.UndefOr[ARN] = js.undefined,
+        CustomEndpointEnabled: js.UndefOr[Boolean] = js.undefined,
         EnforceHTTPS: js.UndefOr[Boolean] = js.undefined,
         TLSSecurityPolicy: js.UndefOr[TLSSecurityPolicy] = js.undefined
     ): DomainEndpointOptions = {
       val __obj = js.Dynamic.literal()
+      CustomEndpoint.foreach(__v => __obj.updateDynamic("CustomEndpoint")(__v.asInstanceOf[js.Any]))
+      CustomEndpointCertificateArn.foreach(__v => __obj.updateDynamic("CustomEndpointCertificateArn")(__v.asInstanceOf[js.Any]))
+      CustomEndpointEnabled.foreach(__v => __obj.updateDynamic("CustomEndpointEnabled")(__v.asInstanceOf[js.Any]))
       EnforceHTTPS.foreach(__v => __obj.updateDynamic("EnforceHTTPS")(__v.asInstanceOf[js.Any]))
       TLSSecurityPolicy.foreach(__v => __obj.updateDynamic("TLSSecurityPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainEndpointOptions]
@@ -1403,6 +1429,7 @@ package es {
     var PackageID: js.UndefOr[PackageID]
     var PackageName: js.UndefOr[PackageName]
     var PackageType: js.UndefOr[PackageType]
+    var PackageVersion: js.UndefOr[PackageVersion]
     var ReferencePath: js.UndefOr[ReferencePath]
   }
 
@@ -1416,6 +1443,7 @@ package es {
         PackageID: js.UndefOr[PackageID] = js.undefined,
         PackageName: js.UndefOr[PackageName] = js.undefined,
         PackageType: js.UndefOr[PackageType] = js.undefined,
+        PackageVersion: js.UndefOr[PackageVersion] = js.undefined,
         ReferencePath: js.UndefOr[ReferencePath] = js.undefined
     ): DomainPackageDetails = {
       val __obj = js.Dynamic.literal()
@@ -1426,6 +1454,7 @@ package es {
       PackageID.foreach(__v => __obj.updateDynamic("PackageID")(__v.asInstanceOf[js.Any]))
       PackageName.foreach(__v => __obj.updateDynamic("PackageName")(__v.asInstanceOf[js.Any]))
       PackageType.foreach(__v => __obj.updateDynamic("PackageType")(__v.asInstanceOf[js.Any]))
+      PackageVersion.foreach(__v => __obj.updateDynamic("PackageVersion")(__v.asInstanceOf[js.Any]))
       ReferencePath.foreach(__v => __obj.updateDynamic("ReferencePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainPackageDetails]
     }
@@ -1973,6 +2002,56 @@ package es {
     }
   }
 
+  /** Container for request parameters to <code> <a>GetPackageVersionHistory</a> </code> operation.
+    */
+  @js.native
+  trait GetPackageVersionHistoryRequest extends js.Object {
+    var PackageID: PackageID
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetPackageVersionHistoryRequest {
+    @inline
+    def apply(
+        PackageID: PackageID,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetPackageVersionHistoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "PackageID" -> PackageID.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPackageVersionHistoryRequest]
+    }
+  }
+
+  /** Container for response returned by <code> <a>GetPackageVersionHistory</a> </code> operation.
+    */
+  @js.native
+  trait GetPackageVersionHistoryResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var PackageID: js.UndefOr[PackageID]
+    var PackageVersionHistoryList: js.UndefOr[PackageVersionHistoryList]
+  }
+
+  object GetPackageVersionHistoryResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        PackageID: js.UndefOr[PackageID] = js.undefined,
+        PackageVersionHistoryList: js.UndefOr[PackageVersionHistoryList] = js.undefined
+    ): GetPackageVersionHistoryResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PackageID.foreach(__v => __obj.updateDynamic("PackageID")(__v.asInstanceOf[js.Any]))
+      PackageVersionHistoryList.foreach(__v => __obj.updateDynamic("PackageVersionHistoryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPackageVersionHistoryResponse]
+    }
+  }
+
   /** Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.
     */
   @js.native
@@ -2477,6 +2556,7 @@ package es {
   /** <p>Type of Log File, it can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.
     * * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.
     * * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.
+    * * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.
     * </p>
     */
   @js.native
@@ -2485,8 +2565,9 @@ package es {
     val INDEX_SLOW_LOGS = "INDEX_SLOW_LOGS".asInstanceOf[LogType]
     val SEARCH_SLOW_LOGS = "SEARCH_SLOW_LOGS".asInstanceOf[LogType]
     val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
+    val AUDIT_LOGS = "AUDIT_LOGS".asInstanceOf[LogType]
 
-    @inline def values = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS)
+    @inline def values = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS)
   }
 
   /** Credentials for the master user: username and password, ARN, or both.
@@ -2669,8 +2750,10 @@ package es {
     */
   @js.native
   trait PackageDetails extends js.Object {
+    var AvailablePackageVersion: js.UndefOr[PackageVersion]
     var CreatedAt: js.UndefOr[CreatedAt]
     var ErrorDetails: js.UndefOr[ErrorDetails]
+    var LastUpdatedAt: js.UndefOr[LastUpdated]
     var PackageDescription: js.UndefOr[PackageDescription]
     var PackageID: js.UndefOr[PackageID]
     var PackageName: js.UndefOr[PackageName]
@@ -2681,8 +2764,10 @@ package es {
   object PackageDetails {
     @inline
     def apply(
+        AvailablePackageVersion: js.UndefOr[PackageVersion] = js.undefined,
         CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
         ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+        LastUpdatedAt: js.UndefOr[LastUpdated] = js.undefined,
         PackageDescription: js.UndefOr[PackageDescription] = js.undefined,
         PackageID: js.UndefOr[PackageID] = js.undefined,
         PackageName: js.UndefOr[PackageName] = js.undefined,
@@ -2690,8 +2775,10 @@ package es {
         PackageType: js.UndefOr[PackageType] = js.undefined
     ): PackageDetails = {
       val __obj = js.Dynamic.literal()
+      AvailablePackageVersion.foreach(__v => __obj.updateDynamic("AvailablePackageVersion")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
       PackageDescription.foreach(__v => __obj.updateDynamic("PackageDescription")(__v.asInstanceOf[js.Any]))
       PackageID.foreach(__v => __obj.updateDynamic("PackageID")(__v.asInstanceOf[js.Any]))
       PackageName.foreach(__v => __obj.updateDynamic("PackageName")(__v.asInstanceOf[js.Any]))
@@ -2743,6 +2830,30 @@ package es {
     val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
     @inline def values = js.Array(`TXT-DICTIONARY`)
+  }
+
+  /** Details of a package version.
+    */
+  @js.native
+  trait PackageVersionHistory extends js.Object {
+    var CommitMessage: js.UndefOr[CommitMessage]
+    var CreatedAt: js.UndefOr[CreatedAt]
+    var PackageVersion: js.UndefOr[PackageVersion]
+  }
+
+  object PackageVersionHistory {
+    @inline
+    def apply(
+        CommitMessage: js.UndefOr[CommitMessage] = js.undefined,
+        CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
+        PackageVersion: js.UndefOr[PackageVersion] = js.undefined
+    ): PackageVersionHistory = {
+      val __obj = js.Dynamic.literal()
+      CommitMessage.foreach(__v => __obj.updateDynamic("CommitMessage")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      PackageVersion.foreach(__v => __obj.updateDynamic("PackageVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PackageVersionHistory]
+    }
   }
 
   /** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
@@ -2973,6 +3084,94 @@ package es {
     val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
     @inline def values = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
+  }
+
+  /** Specifies the SAML Identity Provider's information.
+    */
+  @js.native
+  trait SAMLIdp extends js.Object {
+    var EntityId: SAMLEntityId
+    var MetadataContent: SAMLMetadata
+  }
+
+  object SAMLIdp {
+    @inline
+    def apply(
+        EntityId: SAMLEntityId,
+        MetadataContent: SAMLMetadata
+    ): SAMLIdp = {
+      val __obj = js.Dynamic.literal(
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "MetadataContent" -> MetadataContent.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SAMLIdp]
+    }
+  }
+
+  /** Specifies the SAML application configuration for the domain.
+    */
+  @js.native
+  trait SAMLOptionsInput extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var Idp: js.UndefOr[SAMLIdp]
+    var MasterBackendRole: js.UndefOr[BackendRole]
+    var MasterUserName: js.UndefOr[Username]
+    var RolesKey: js.UndefOr[String]
+    var SessionTimeoutMinutes: js.UndefOr[IntegerClass]
+    var SubjectKey: js.UndefOr[String]
+  }
+
+  object SAMLOptionsInput {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        Idp: js.UndefOr[SAMLIdp] = js.undefined,
+        MasterBackendRole: js.UndefOr[BackendRole] = js.undefined,
+        MasterUserName: js.UndefOr[Username] = js.undefined,
+        RolesKey: js.UndefOr[String] = js.undefined,
+        SessionTimeoutMinutes: js.UndefOr[IntegerClass] = js.undefined,
+        SubjectKey: js.UndefOr[String] = js.undefined
+    ): SAMLOptionsInput = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      Idp.foreach(__v => __obj.updateDynamic("Idp")(__v.asInstanceOf[js.Any]))
+      MasterBackendRole.foreach(__v => __obj.updateDynamic("MasterBackendRole")(__v.asInstanceOf[js.Any]))
+      MasterUserName.foreach(__v => __obj.updateDynamic("MasterUserName")(__v.asInstanceOf[js.Any]))
+      RolesKey.foreach(__v => __obj.updateDynamic("RolesKey")(__v.asInstanceOf[js.Any]))
+      SessionTimeoutMinutes.foreach(__v => __obj.updateDynamic("SessionTimeoutMinutes")(__v.asInstanceOf[js.Any]))
+      SubjectKey.foreach(__v => __obj.updateDynamic("SubjectKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SAMLOptionsInput]
+    }
+  }
+
+  /** Describes the SAML application configured for the domain.
+    */
+  @js.native
+  trait SAMLOptionsOutput extends js.Object {
+    var Enabled: js.UndefOr[Boolean]
+    var Idp: js.UndefOr[SAMLIdp]
+    var RolesKey: js.UndefOr[String]
+    var SessionTimeoutMinutes: js.UndefOr[IntegerClass]
+    var SubjectKey: js.UndefOr[String]
+  }
+
+  object SAMLOptionsOutput {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        Idp: js.UndefOr[SAMLIdp] = js.undefined,
+        RolesKey: js.UndefOr[String] = js.undefined,
+        SessionTimeoutMinutes: js.UndefOr[IntegerClass] = js.undefined,
+        SubjectKey: js.UndefOr[String] = js.undefined
+    ): SAMLOptionsOutput = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      Idp.foreach(__v => __obj.updateDynamic("Idp")(__v.asInstanceOf[js.Any]))
+      RolesKey.foreach(__v => __obj.updateDynamic("RolesKey")(__v.asInstanceOf[js.Any]))
+      SessionTimeoutMinutes.foreach(__v => __obj.updateDynamic("SessionTimeoutMinutes")(__v.asInstanceOf[js.Any]))
+      SubjectKey.foreach(__v => __obj.updateDynamic("SubjectKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SAMLOptionsOutput]
+    }
   }
 
   /** The current options of an Elasticsearch domain service software options.
@@ -3233,6 +3432,53 @@ package es {
         "DomainConfig" -> DomainConfig.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateElasticsearchDomainConfigResponse]
+    }
+  }
+
+  /** Container for request parameters to <code> <a>UpdatePackage</a> </code> operation.
+    */
+  @js.native
+  trait UpdatePackageRequest extends js.Object {
+    var PackageID: PackageID
+    var PackageSource: PackageSource
+    var CommitMessage: js.UndefOr[CommitMessage]
+    var PackageDescription: js.UndefOr[PackageDescription]
+  }
+
+  object UpdatePackageRequest {
+    @inline
+    def apply(
+        PackageID: PackageID,
+        PackageSource: PackageSource,
+        CommitMessage: js.UndefOr[CommitMessage] = js.undefined,
+        PackageDescription: js.UndefOr[PackageDescription] = js.undefined
+    ): UpdatePackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "PackageID" -> PackageID.asInstanceOf[js.Any],
+        "PackageSource" -> PackageSource.asInstanceOf[js.Any]
+      )
+
+      CommitMessage.foreach(__v => __obj.updateDynamic("CommitMessage")(__v.asInstanceOf[js.Any]))
+      PackageDescription.foreach(__v => __obj.updateDynamic("PackageDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePackageRequest]
+    }
+  }
+
+  /** Container for response returned by <code> <a>UpdatePackage</a> </code> operation.
+    */
+  @js.native
+  trait UpdatePackageResponse extends js.Object {
+    var PackageDetails: js.UndefOr[PackageDetails]
+  }
+
+  object UpdatePackageResponse {
+    @inline
+    def apply(
+        PackageDetails: js.UndefOr[PackageDetails] = js.undefined
+    ): UpdatePackageResponse = {
+      val __obj = js.Dynamic.literal()
+      PackageDetails.foreach(__v => __obj.updateDynamic("PackageDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePackageResponse]
     }
   }
 

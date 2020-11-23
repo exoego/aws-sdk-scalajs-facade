@@ -8,8 +8,11 @@ import facade.amazonaws._
 
 package object codegurureviewer {
   type Arn = String
+  type AssociationArn = String
   type AssociationId = String
+  type BranchName = String
   type ClientRequestToken = String
+  type CodeReviewName = String
   type CodeReviewSummaries = js.Array[CodeReviewSummary]
   type CommitId = String
   type ConnectionArn = String
@@ -36,6 +39,10 @@ package object codegurureviewer {
   type RepositoryAssociationSummaries = js.Array[RepositoryAssociationSummary]
   type RepositoryNames = js.Array[Name]
   type StateReason = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type Text = String
   type TimeStamp = js.Date
   type UserId = String
@@ -44,6 +51,7 @@ package object codegurureviewer {
   implicit final class CodeGuruReviewerOps(private val service: CodeGuruReviewer) extends AnyVal {
 
     @inline def associateRepositoryFuture(params: AssociateRepositoryRequest): Future[AssociateRepositoryResponse] = service.associateRepository(params).promise().toFuture
+    @inline def createCodeReviewFuture(params: CreateCodeReviewRequest): Future[CreateCodeReviewResponse] = service.createCodeReview(params).promise().toFuture
     @inline def describeCodeReviewFuture(params: DescribeCodeReviewRequest): Future[DescribeCodeReviewResponse] = service.describeCodeReview(params).promise().toFuture
     @inline def describeRecommendationFeedbackFuture(params: DescribeRecommendationFeedbackRequest): Future[DescribeRecommendationFeedbackResponse] = service.describeRecommendationFeedback(params).promise().toFuture
     @inline def describeRepositoryAssociationFuture(params: DescribeRepositoryAssociationRequest): Future[DescribeRepositoryAssociationResponse] = service.describeRepositoryAssociation(params).promise().toFuture
@@ -52,7 +60,10 @@ package object codegurureviewer {
     @inline def listRecommendationFeedbackFuture(params: ListRecommendationFeedbackRequest): Future[ListRecommendationFeedbackResponse] = service.listRecommendationFeedback(params).promise().toFuture
     @inline def listRecommendationsFuture(params: ListRecommendationsRequest): Future[ListRecommendationsResponse] = service.listRecommendations(params).promise().toFuture
     @inline def listRepositoryAssociationsFuture(params: ListRepositoryAssociationsRequest): Future[ListRepositoryAssociationsResponse] = service.listRepositoryAssociations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putRecommendationFeedbackFuture(params: PutRecommendationFeedbackRequest): Future[PutRecommendationFeedbackResponse] = service.putRecommendationFeedback(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 }
@@ -64,6 +75,7 @@ package codegurureviewer {
     def this(config: AWSConfig) = this()
 
     def associateRepository(params: AssociateRepositoryRequest): Request[AssociateRepositoryResponse] = js.native
+    def createCodeReview(params: CreateCodeReviewRequest): Request[CreateCodeReviewResponse] = js.native
     def describeCodeReview(params: DescribeCodeReviewRequest): Request[DescribeCodeReviewResponse] = js.native
     def describeRecommendationFeedback(params: DescribeRecommendationFeedbackRequest): Request[DescribeRecommendationFeedbackResponse] = js.native
     def describeRepositoryAssociation(params: DescribeRepositoryAssociationRequest): Request[DescribeRepositoryAssociationResponse] = js.native
@@ -72,26 +84,32 @@ package codegurureviewer {
     def listRecommendationFeedback(params: ListRecommendationFeedbackRequest): Request[ListRecommendationFeedbackResponse] = js.native
     def listRecommendations(params: ListRecommendationsRequest): Request[ListRecommendationsResponse] = js.native
     def listRepositoryAssociations(params: ListRepositoryAssociationsRequest): Request[ListRepositoryAssociationsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putRecommendationFeedback(params: PutRecommendationFeedbackRequest): Request[PutRecommendationFeedbackResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
   trait AssociateRepositoryRequest extends js.Object {
     var Repository: Repository
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object AssociateRepositoryRequest {
     @inline
     def apply(
         Repository: Repository,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): AssociateRepositoryRequest = {
       val __obj = js.Dynamic.literal(
         "Repository" -> Repository.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRepositoryRequest]
     }
   }
@@ -99,15 +117,18 @@ package codegurureviewer {
   @js.native
   trait AssociateRepositoryResponse extends js.Object {
     var RepositoryAssociation: js.UndefOr[RepositoryAssociation]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object AssociateRepositoryResponse {
     @inline
     def apply(
-        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined
+        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): AssociateRepositoryResponse = {
       val __obj = js.Dynamic.literal()
       RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRepositoryResponse]
     }
   }
@@ -131,10 +152,11 @@ package codegurureviewer {
     }
   }
 
-  /** Information about a code review.
+  /** Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
     */
   @js.native
   trait CodeReview extends js.Object {
+    var AssociationArn: js.UndefOr[AssociationArn]
     var CodeReviewArn: js.UndefOr[Arn]
     var CreatedTimeStamp: js.UndefOr[TimeStamp]
     var LastUpdatedTimeStamp: js.UndefOr[TimeStamp]
@@ -153,6 +175,7 @@ package codegurureviewer {
   object CodeReview {
     @inline
     def apply(
+        AssociationArn: js.UndefOr[AssociationArn] = js.undefined,
         CodeReviewArn: js.UndefOr[Arn] = js.undefined,
         CreatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
         LastUpdatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
@@ -168,6 +191,7 @@ package codegurureviewer {
         Type: js.UndefOr[Type] = js.undefined
     ): CodeReview = {
       val __obj = js.Dynamic.literal()
+      AssociationArn.foreach(__v => __obj.updateDynamic("AssociationArn")(__v.asInstanceOf[js.Any]))
       CodeReviewArn.foreach(__v => __obj.updateDynamic("CodeReviewArn")(__v.asInstanceOf[js.Any]))
       CreatedTimeStamp.foreach(__v => __obj.updateDynamic("CreatedTimeStamp")(__v.asInstanceOf[js.Any]))
       LastUpdatedTimeStamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimeStamp")(__v.asInstanceOf[js.Any]))
@@ -233,7 +257,28 @@ package codegurureviewer {
     }
   }
 
-  /** The commit diff for the pull request.
+  /** The type of a code review. There are two code review types:
+    * * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an assocaited repository. Because this type of code review is automatically generated, you cannot specify this code review type using <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+    * * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated respository. The assocated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+    */
+  @js.native
+  trait CodeReviewType extends js.Object {
+    var RepositoryAnalysis: RepositoryAnalysis
+  }
+
+  object CodeReviewType {
+    @inline
+    def apply(
+        RepositoryAnalysis: RepositoryAnalysis
+    ): CodeReviewType = {
+      val __obj = js.Dynamic.literal(
+        "RepositoryAnalysis" -> RepositoryAnalysis.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CodeReviewType]
+    }
+  }
+
+  /** A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository.
     */
   @js.native
   trait CommitDiffSourceCodeType extends js.Object {
@@ -251,6 +296,49 @@ package codegurureviewer {
       DestinationCommit.foreach(__v => __obj.updateDynamic("DestinationCommit")(__v.asInstanceOf[js.Any]))
       SourceCommit.foreach(__v => __obj.updateDynamic("SourceCommit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommitDiffSourceCodeType]
+    }
+  }
+
+  @js.native
+  trait CreateCodeReviewRequest extends js.Object {
+    var Name: CodeReviewName
+    var RepositoryAssociationArn: AssociationArn
+    var Type: CodeReviewType
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+  }
+
+  object CreateCodeReviewRequest {
+    @inline
+    def apply(
+        Name: CodeReviewName,
+        RepositoryAssociationArn: AssociationArn,
+        Type: CodeReviewType,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): CreateCodeReviewRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RepositoryAssociationArn" -> RepositoryAssociationArn.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCodeReviewRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCodeReviewResponse extends js.Object {
+    var CodeReview: js.UndefOr[CodeReview]
+  }
+
+  object CreateCodeReviewResponse {
+    @inline
+    def apply(
+        CodeReview: js.UndefOr[CodeReview] = js.undefined
+    ): CreateCodeReviewResponse = {
+      val __obj = js.Dynamic.literal()
+      CodeReview.foreach(__v => __obj.updateDynamic("CodeReview")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCodeReviewResponse]
     }
   }
 
@@ -329,13 +417,13 @@ package codegurureviewer {
 
   @js.native
   trait DescribeRepositoryAssociationRequest extends js.Object {
-    var AssociationArn: Arn
+    var AssociationArn: AssociationArn
   }
 
   object DescribeRepositoryAssociationRequest {
     @inline
     def apply(
-        AssociationArn: Arn
+        AssociationArn: AssociationArn
     ): DescribeRepositoryAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationArn" -> AssociationArn.asInstanceOf[js.Any]
@@ -347,28 +435,31 @@ package codegurureviewer {
   @js.native
   trait DescribeRepositoryAssociationResponse extends js.Object {
     var RepositoryAssociation: js.UndefOr[RepositoryAssociation]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DescribeRepositoryAssociationResponse {
     @inline
     def apply(
-        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined
+        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeRepositoryAssociationResponse = {
       val __obj = js.Dynamic.literal()
       RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRepositoryAssociationResponse]
     }
   }
 
   @js.native
   trait DisassociateRepositoryRequest extends js.Object {
-    var AssociationArn: Arn
+    var AssociationArn: AssociationArn
   }
 
   object DisassociateRepositoryRequest {
     @inline
     def apply(
-        AssociationArn: Arn
+        AssociationArn: AssociationArn
     ): DisassociateRepositoryRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationArn" -> AssociationArn.asInstanceOf[js.Any]
@@ -380,15 +471,18 @@ package codegurureviewer {
   @js.native
   trait DisassociateRepositoryResponse extends js.Object {
     var RepositoryAssociation: js.UndefOr[RepositoryAssociation]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DisassociateRepositoryResponse {
     @inline
     def apply(
-        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined
+        RepositoryAssociation: js.UndefOr[RepositoryAssociation] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DisassociateRepositoryResponse = {
       val __obj = js.Dynamic.literal()
       RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateRepositoryResponse]
     }
   }
@@ -595,6 +689,39 @@ package codegurureviewer {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       RepositoryAssociationSummaries.foreach(__v => __obj.updateDynamic("RepositoryAssociationSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRepositoryAssociationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: AssociationArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AssociationArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -805,6 +932,25 @@ package codegurureviewer {
     }
   }
 
+  /** A code review type that analyzes all code under a specified branch in an associated respository. The assocated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+    */
+  @js.native
+  trait RepositoryAnalysis extends js.Object {
+    var RepositoryHead: RepositoryHeadSourceCodeType
+  }
+
+  object RepositoryAnalysis {
+    @inline
+    def apply(
+        RepositoryHead: RepositoryHeadSourceCodeType
+    ): RepositoryAnalysis = {
+      val __obj = js.Dynamic.literal(
+        "RepositoryHead" -> RepositoryHead.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RepositoryAnalysis]
+    }
+  }
+
   /** Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html"> <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.
     */
   @js.native
@@ -857,8 +1003,9 @@ package codegurureviewer {
     val Associating = "Associating".asInstanceOf[RepositoryAssociationState]
     val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
     val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
+    val Disassociated = "Disassociated".asInstanceOf[RepositoryAssociationState]
 
-    @inline def values = js.Array(Associated, Associating, Failed, Disassociating)
+    @inline def values = js.Array(Associated, Associating, Failed, Disassociating, Disassociated)
   }
 
   /** Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
@@ -900,21 +1047,74 @@ package codegurureviewer {
     }
   }
 
-  /** Information about the source code type.
+  /** A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+    */
+  @js.native
+  trait RepositoryHeadSourceCodeType extends js.Object {
+    var BranchName: BranchName
+  }
+
+  object RepositoryHeadSourceCodeType {
+    @inline
+    def apply(
+        BranchName: BranchName
+    ): RepositoryHeadSourceCodeType = {
+      val __obj = js.Dynamic.literal(
+        "BranchName" -> BranchName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RepositoryHeadSourceCodeType]
+    }
+  }
+
+  /** Specifies the source code that is analyzed in a code review. A code review can analyze the source code that is specified using a pull request diff or a branch in an associated repository.
     */
   @js.native
   trait SourceCodeType extends js.Object {
     var CommitDiff: js.UndefOr[CommitDiffSourceCodeType]
+    var RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType]
   }
 
   object SourceCodeType {
     @inline
     def apply(
-        CommitDiff: js.UndefOr[CommitDiffSourceCodeType] = js.undefined
+        CommitDiff: js.UndefOr[CommitDiffSourceCodeType] = js.undefined,
+        RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType] = js.undefined
     ): SourceCodeType = {
       val __obj = js.Dynamic.literal()
       CommitDiff.foreach(__v => __obj.updateDynamic("CommitDiff")(__v.asInstanceOf[js.Any]))
+      RepositoryHead.foreach(__v => __obj.updateDynamic("RepositoryHead")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceCodeType]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var Tags: TagMap
+    var resourceArn: AssociationArn
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        Tags: TagMap,
+        resourceArn: AssociationArn
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -947,7 +1147,39 @@ package codegurureviewer {
   sealed trait Type extends js.Any
   object Type {
     val PullRequest = "PullRequest".asInstanceOf[Type]
+    val RepositoryAnalysis = "RepositoryAnalysis".asInstanceOf[Type]
 
-    @inline def values = js.Array(PullRequest)
+    @inline def values = js.Array(PullRequest, RepositoryAnalysis)
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var TagKeys: TagKeyList
+    var resourceArn: AssociationArn
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        TagKeys: TagKeyList,
+        resourceArn: AssociationArn
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any],
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 }

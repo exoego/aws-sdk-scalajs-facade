@@ -154,19 +154,20 @@ package iotsecuretunneling {
   @js.native
   trait DestinationConfig extends js.Object {
     var services: ServiceList
-    var thingName: ThingName
+    var thingName: js.UndefOr[ThingName]
   }
 
   object DestinationConfig {
     @inline
     def apply(
         services: ServiceList,
-        thingName: ThingName
+        thingName: js.UndefOr[ThingName] = js.undefined
     ): DestinationConfig = {
       val __obj = js.Dynamic.literal(
-        "services" -> services.asInstanceOf[js.Any],
-        "thingName" -> thingName.asInstanceOf[js.Any]
+        "services" -> services.asInstanceOf[js.Any]
       )
+
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationConfig]
     }
   }

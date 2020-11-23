@@ -31,6 +31,7 @@ package object accessanalyzer {
 
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
+    @inline def applyArchiveRuleFuture(params: ApplyArchiveRuleRequest): Future[js.Object] = service.applyArchiveRule(params).promise().toFuture
     @inline def createAnalyzerFuture(params: CreateAnalyzerRequest): Future[CreateAnalyzerResponse] = service.createAnalyzer(params).promise().toFuture
     @inline def createArchiveRuleFuture(params: CreateArchiveRuleRequest): Future[js.Object] = service.createArchiveRule(params).promise().toFuture
     @inline def deleteAnalyzerFuture(params: DeleteAnalyzerRequest): Future[js.Object] = service.deleteAnalyzer(params).promise().toFuture
@@ -59,6 +60,7 @@ package accessanalyzer {
   class AccessAnalyzer() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def applyArchiveRule(params: ApplyArchiveRuleRequest): Request[js.Object] = js.native
     def createAnalyzer(params: CreateAnalyzerRequest): Request[CreateAnalyzerResponse] = js.native
     def createArchiveRule(params: CreateArchiveRuleRequest): Request[js.Object] = js.native
     def deleteAnalyzer(params: DeleteAnalyzerRequest): Request[js.Object] = js.native
@@ -206,6 +208,32 @@ package accessanalyzer {
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyzerSummary]
+    }
+  }
+
+  /** Retroactively applies an archive rule.
+    */
+  @js.native
+  trait ApplyArchiveRuleRequest extends js.Object {
+    var analyzerArn: AnalyzerArn
+    var ruleName: Name
+    var clientToken: js.UndefOr[String]
+  }
+
+  object ApplyArchiveRuleRequest {
+    @inline
+    def apply(
+        analyzerArn: AnalyzerArn,
+        ruleName: Name,
+        clientToken: js.UndefOr[String] = js.undefined
+    ): ApplyArchiveRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplyArchiveRuleRequest]
     }
   }
 
@@ -495,11 +523,11 @@ package accessanalyzer {
   @js.native
   sealed trait FindingSourceType extends js.Any
   object FindingSourceType {
-    val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
     val POLICY = "POLICY".asInstanceOf[FindingSourceType]
+    val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
     val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
 
-    @inline def values = js.Array(BUCKET_ACL, POLICY, S3_ACCESS_POINT)
+    @inline def values = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT)
   }
 
   @js.native
@@ -1024,14 +1052,14 @@ package accessanalyzer {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
+    val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
     val `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
-    val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
+    val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
     val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
     val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
-    val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
-    val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
+    val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
 
-    @inline def values = js.Array(`AWS::IAM::Role`, `AWS::KMS::Key`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::S3::Bucket`, `AWS::SQS::Queue`)
+    @inline def values = js.Array(`AWS::S3::Bucket`, `AWS::IAM::Role`, `AWS::SQS::Queue`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::KMS::Key`)
   }
 
   /** The criteria used to sort.

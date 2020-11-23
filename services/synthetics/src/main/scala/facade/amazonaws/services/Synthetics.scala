@@ -7,18 +7,24 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object synthetics {
-  type Arn = String
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Canaries = js.Array[Canary]
   type CanariesLastRun = js.Array[CanaryLastRun]
+  type CanaryArn = String
   type CanaryName = String
   type CanaryRuns = js.Array[CanaryRun]
+  type EnvironmentVariableName = String
+  type EnvironmentVariableValue = String
+  type EnvironmentVariablesMap = js.Dictionary[EnvironmentVariableValue]
+  type FunctionArn = String
   type MaxCanaryResults = Int
   type MaxFifteenMinutesInSeconds = Int
   type MaxOneYearInSeconds = Double
   type MaxSize100 = Int
   type MaxSize1024 = Int
   type MaxSize3008 = Int
+  type NullableBoolean = Boolean
+  type RoleArn = String
   type RuntimeVersionList = js.Array[RuntimeVersion]
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
@@ -79,8 +85,8 @@ package synthetics {
   trait Canary extends js.Object {
     var ArtifactS3Location: js.UndefOr[String]
     var Code: js.UndefOr[CanaryCodeOutput]
-    var EngineArn: js.UndefOr[Arn]
-    var ExecutionRoleArn: js.UndefOr[Arn]
+    var EngineArn: js.UndefOr[FunctionArn]
+    var ExecutionRoleArn: js.UndefOr[RoleArn]
     var FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024]
     var Id: js.UndefOr[UUID]
     var Name: js.UndefOr[CanaryName]
@@ -99,8 +105,8 @@ package synthetics {
     def apply(
         ArtifactS3Location: js.UndefOr[String] = js.undefined,
         Code: js.UndefOr[CanaryCodeOutput] = js.undefined,
-        EngineArn: js.UndefOr[Arn] = js.undefined,
-        ExecutionRoleArn: js.UndefOr[Arn] = js.undefined,
+        EngineArn: js.UndefOr[FunctionArn] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
         FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
         Id: js.UndefOr[UUID] = js.undefined,
         Name: js.UndefOr[CanaryName] = js.undefined,
@@ -212,6 +218,7 @@ package synthetics {
   @js.native
   trait CanaryRun extends js.Object {
     var ArtifactS3Location: js.UndefOr[String]
+    var Id: js.UndefOr[UUID]
     var Name: js.UndefOr[CanaryName]
     var Status: js.UndefOr[CanaryRunStatus]
     var Timeline: js.UndefOr[CanaryRunTimeline]
@@ -221,12 +228,14 @@ package synthetics {
     @inline
     def apply(
         ArtifactS3Location: js.UndefOr[String] = js.undefined,
+        Id: js.UndefOr[UUID] = js.undefined,
         Name: js.UndefOr[CanaryName] = js.undefined,
         Status: js.UndefOr[CanaryRunStatus] = js.undefined,
         Timeline: js.UndefOr[CanaryRunTimeline] = js.undefined
     ): CanaryRun = {
       val __obj = js.Dynamic.literal()
       ArtifactS3Location.foreach(__v => __obj.updateDynamic("ArtifactS3Location")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
@@ -238,29 +247,34 @@ package synthetics {
     */
   @js.native
   trait CanaryRunConfigInput extends js.Object {
-    var TimeoutInSeconds: MaxFifteenMinutesInSeconds
+    var ActiveTracing: js.UndefOr[NullableBoolean]
+    var EnvironmentVariables: js.UndefOr[EnvironmentVariablesMap]
     var MemoryInMB: js.UndefOr[MaxSize3008]
+    var TimeoutInSeconds: js.UndefOr[MaxFifteenMinutesInSeconds]
   }
 
   object CanaryRunConfigInput {
     @inline
     def apply(
-        TimeoutInSeconds: MaxFifteenMinutesInSeconds,
-        MemoryInMB: js.UndefOr[MaxSize3008] = js.undefined
+        ActiveTracing: js.UndefOr[NullableBoolean] = js.undefined,
+        EnvironmentVariables: js.UndefOr[EnvironmentVariablesMap] = js.undefined,
+        MemoryInMB: js.UndefOr[MaxSize3008] = js.undefined,
+        TimeoutInSeconds: js.UndefOr[MaxFifteenMinutesInSeconds] = js.undefined
     ): CanaryRunConfigInput = {
-      val __obj = js.Dynamic.literal(
-        "TimeoutInSeconds" -> TimeoutInSeconds.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      ActiveTracing.foreach(__v => __obj.updateDynamic("ActiveTracing")(__v.asInstanceOf[js.Any]))
+      EnvironmentVariables.foreach(__v => __obj.updateDynamic("EnvironmentVariables")(__v.asInstanceOf[js.Any]))
       MemoryInMB.foreach(__v => __obj.updateDynamic("MemoryInMB")(__v.asInstanceOf[js.Any]))
+      TimeoutInSeconds.foreach(__v => __obj.updateDynamic("TimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CanaryRunConfigInput]
     }
   }
 
-  /** A structure that contains information for a canary run.
+  /** A structure that contains information about a canary run.
     */
   @js.native
   trait CanaryRunConfigOutput extends js.Object {
+    var ActiveTracing: js.UndefOr[NullableBoolean]
     var MemoryInMB: js.UndefOr[MaxSize3008]
     var TimeoutInSeconds: js.UndefOr[MaxFifteenMinutesInSeconds]
   }
@@ -268,10 +282,12 @@ package synthetics {
   object CanaryRunConfigOutput {
     @inline
     def apply(
+        ActiveTracing: js.UndefOr[NullableBoolean] = js.undefined,
         MemoryInMB: js.UndefOr[MaxSize3008] = js.undefined,
         TimeoutInSeconds: js.UndefOr[MaxFifteenMinutesInSeconds] = js.undefined
     ): CanaryRunConfigOutput = {
       val __obj = js.Dynamic.literal()
+      ActiveTracing.foreach(__v => __obj.updateDynamic("ActiveTracing")(__v.asInstanceOf[js.Any]))
       MemoryInMB.foreach(__v => __obj.updateDynamic("MemoryInMB")(__v.asInstanceOf[js.Any]))
       TimeoutInSeconds.foreach(__v => __obj.updateDynamic("TimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CanaryRunConfigOutput]
@@ -465,7 +481,7 @@ package synthetics {
   trait CreateCanaryRequest extends js.Object {
     var ArtifactS3Location: String
     var Code: CanaryCodeInput
-    var ExecutionRoleArn: Arn
+    var ExecutionRoleArn: RoleArn
     var Name: CanaryName
     var RuntimeVersion: String
     var Schedule: CanaryScheduleInput
@@ -481,7 +497,7 @@ package synthetics {
     def apply(
         ArtifactS3Location: String,
         Code: CanaryCodeInput,
-        ExecutionRoleArn: Arn,
+        ExecutionRoleArn: RoleArn,
         Name: CanaryName,
         RuntimeVersion: String,
         Schedule: CanaryScheduleInput,
@@ -745,13 +761,13 @@ package synthetics {
 
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var ResourceArn: Arn
+    var ResourceArn: CanaryArn
   }
 
   object ListTagsForResourceRequest {
     @inline
     def apply(
-        ResourceArn: Arn
+        ResourceArn: CanaryArn
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
@@ -861,14 +877,14 @@ package synthetics {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceArn: Arn
+    var ResourceArn: CanaryArn
     var Tags: TagMap
   }
 
   object TagResourceRequest {
     @inline
     def apply(
-        ResourceArn: Arn,
+        ResourceArn: CanaryArn,
         Tags: TagMap
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -892,14 +908,14 @@ package synthetics {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceArn: Arn
+    var ResourceArn: CanaryArn
     var TagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
-        ResourceArn: Arn,
+        ResourceArn: CanaryArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -925,7 +941,7 @@ package synthetics {
   trait UpdateCanaryRequest extends js.Object {
     var Name: CanaryName
     var Code: js.UndefOr[CanaryCodeInput]
-    var ExecutionRoleArn: js.UndefOr[Arn]
+    var ExecutionRoleArn: js.UndefOr[RoleArn]
     var FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024]
     var RunConfig: js.UndefOr[CanaryRunConfigInput]
     var RuntimeVersion: js.UndefOr[String]
@@ -939,7 +955,7 @@ package synthetics {
     def apply(
         Name: CanaryName,
         Code: js.UndefOr[CanaryCodeInput] = js.undefined,
-        ExecutionRoleArn: js.UndefOr[Arn] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
         FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
         RunConfig: js.UndefOr[CanaryRunConfigInput] = js.undefined,
         RuntimeVersion: js.UndefOr[String] = js.undefined,

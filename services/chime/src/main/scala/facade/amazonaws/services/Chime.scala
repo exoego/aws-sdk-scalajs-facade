@@ -10,6 +10,10 @@ package object chime {
   type AccountList = js.Array[Account]
   type AccountName = String
   type Alpha2CountryCode = String
+  type AppInstanceAdminList = js.Array[AppInstanceAdminSummary]
+  type AppInstanceList = js.Array[AppInstanceSummary]
+  type AppInstanceStreamingConfigurationList = js.Array[AppInstanceStreamingConfiguration]
+  type AppInstanceUserList = js.Array[AppInstanceUserSummary]
   type AreaCode = String
   type Arn = String
   type AttendeeList = js.Array[Attendee]
@@ -21,7 +25,16 @@ package object chime {
   type CallingRegion = String
   type CallingRegionList = js.Array[CallingRegion]
   type CapabilityList = js.Array[Capability]
+  type ChannelBanSummaryList = js.Array[ChannelBanSummary]
+  type ChannelMembershipForAppInstanceUserSummaryList = js.Array[ChannelMembershipForAppInstanceUserSummary]
+  type ChannelMembershipSummaryList = js.Array[ChannelMembershipSummary]
+  type ChannelMessageSummaryList = js.Array[ChannelMessageSummary]
+  type ChannelModeratedByAppInstanceUserSummaryList = js.Array[ChannelModeratedByAppInstanceUserSummary]
+  type ChannelModeratorSummaryList = js.Array[ChannelModeratorSummary]
+  type ChannelSummaryList = js.Array[ChannelSummary]
+  type ChimeArn = String
   type ClientRequestToken = String
+  type Content = String
   type Country = String
   type CountryList = js.Array[Country]
   type CpsLimit = Int
@@ -35,20 +48,28 @@ package object chime {
   type EmailAddress = String
   type ExternalMeetingIdType = String
   type ExternalUserIdType = String
+  type FunctionArn = String
   type GuidString = String
   type InviteList = js.Array[Invite]
   type Iso8601Timestamp = js.Date
   type JoinTokenString = String
   type LicenseList = js.Array[License]
+  type MaxResults = Int
   type MeetingList = js.Array[Meeting]
   type MeetingTagKeyList = js.Array[TagKey]
   type MeetingTagList = js.Array[Tag]
   type MemberErrorList = js.Array[MemberError]
   type MembershipItemList = js.Array[MembershipItem]
+  type MessageId = String
+  type Metadata = String
+  type NextToken = String
   type NextTokenString = String
+  type NonEmptyContent = String
+  type NonEmptyResourceName = String
   type NonEmptyString = String
   type NonEmptyString128 = String
   type NonEmptyStringList = js.Array[String]
+  type NonNullableBoolean = Boolean
   type NullableBoolean = Boolean
   type OrderedPhoneNumberList = js.Array[OrderedPhoneNumber]
   type OriginationRouteList = js.Array[OriginationRoute]
@@ -66,6 +87,7 @@ package object chime {
   type ProfileServiceMaxResults = Int
   type ProxySessionNameString = String
   type ProxySessions = js.Array[ProxySession]
+  type ResourceName = String
   type ResultMax = Int
   type RetentionDays = Int
   type RoomList = js.Array[Room]
@@ -73,6 +95,13 @@ package object chime {
   type SensitiveString = String
   type SensitiveStringList = js.Array[SensitiveString]
   type SigninDelegateGroupList = js.Array[SigninDelegateGroup]
+  type SipApplicationPriority = Int
+  type SipMediaApplicationEndpointList = js.Array[SipMediaApplicationEndpoint]
+  type SipMediaApplicationList = js.Array[SipMediaApplication]
+  type SipMediaApplicationName = String
+  type SipRuleList = js.Array[SipRule]
+  type SipRuleName = String
+  type SipRuleTargetApplicationList = js.Array[SipRuleTargetApplication]
   type StreamingNotificationTargetList = js.Array[StreamingNotificationTarget]
   type String128 = String
   type StringList = js.Array[String]
@@ -80,14 +109,18 @@ package object chime {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type Timestamp = js.Date
   type TollFreePrefix = String
   type UpdatePhoneNumberRequestItemList = js.Array[UpdatePhoneNumberRequestItem]
   type UpdateUserRequestItemList = js.Array[UpdateUserRequestItem]
   type UriType = String
+  type UrlType = String
   type UserEmailList = js.Array[EmailAddress]
   type UserErrorList = js.Array[UserError]
+  type UserId = String
   type UserIdList = js.Array[NonEmptyString]
   type UserList = js.Array[User]
+  type UserName = String
   type VoiceConnectorGroupList = js.Array[VoiceConnectorGroup]
   type VoiceConnectorGroupName = String
   type VoiceConnectorItemList = js.Array[VoiceConnectorItem]
@@ -109,25 +142,47 @@ package object chime {
     @inline def batchUpdatePhoneNumberFuture(params: BatchUpdatePhoneNumberRequest): Future[BatchUpdatePhoneNumberResponse] = service.batchUpdatePhoneNumber(params).promise().toFuture
     @inline def batchUpdateUserFuture(params: BatchUpdateUserRequest): Future[BatchUpdateUserResponse] = service.batchUpdateUser(params).promise().toFuture
     @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] = service.createAccount(params).promise().toFuture
+    @inline def createAppInstanceAdminFuture(params: CreateAppInstanceAdminRequest): Future[CreateAppInstanceAdminResponse] = service.createAppInstanceAdmin(params).promise().toFuture
+    @inline def createAppInstanceFuture(params: CreateAppInstanceRequest): Future[CreateAppInstanceResponse] = service.createAppInstance(params).promise().toFuture
+    @inline def createAppInstanceUserFuture(params: CreateAppInstanceUserRequest): Future[CreateAppInstanceUserResponse] = service.createAppInstanceUser(params).promise().toFuture
     @inline def createAttendeeFuture(params: CreateAttendeeRequest): Future[CreateAttendeeResponse] = service.createAttendee(params).promise().toFuture
     @inline def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] = service.createBot(params).promise().toFuture
+    @inline def createChannelBanFuture(params: CreateChannelBanRequest): Future[CreateChannelBanResponse] = service.createChannelBan(params).promise().toFuture
+    @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
+    @inline def createChannelMembershipFuture(params: CreateChannelMembershipRequest): Future[CreateChannelMembershipResponse] = service.createChannelMembership(params).promise().toFuture
+    @inline def createChannelModeratorFuture(params: CreateChannelModeratorRequest): Future[CreateChannelModeratorResponse] = service.createChannelModerator(params).promise().toFuture
+    @inline def createMeetingDialOutFuture(params: CreateMeetingDialOutRequest): Future[CreateMeetingDialOutResponse] = service.createMeetingDialOut(params).promise().toFuture
     @inline def createMeetingFuture(params: CreateMeetingRequest): Future[CreateMeetingResponse] = service.createMeeting(params).promise().toFuture
     @inline def createMeetingWithAttendeesFuture(params: CreateMeetingWithAttendeesRequest): Future[CreateMeetingWithAttendeesResponse] = service.createMeetingWithAttendees(params).promise().toFuture
     @inline def createPhoneNumberOrderFuture(params: CreatePhoneNumberOrderRequest): Future[CreatePhoneNumberOrderResponse] = service.createPhoneNumberOrder(params).promise().toFuture
     @inline def createProxySessionFuture(params: CreateProxySessionRequest): Future[CreateProxySessionResponse] = service.createProxySession(params).promise().toFuture
     @inline def createRoomFuture(params: CreateRoomRequest): Future[CreateRoomResponse] = service.createRoom(params).promise().toFuture
     @inline def createRoomMembershipFuture(params: CreateRoomMembershipRequest): Future[CreateRoomMembershipResponse] = service.createRoomMembership(params).promise().toFuture
+    @inline def createSipMediaApplicationCallFuture(params: CreateSipMediaApplicationCallRequest): Future[CreateSipMediaApplicationCallResponse] = service.createSipMediaApplicationCall(params).promise().toFuture
+    @inline def createSipMediaApplicationFuture(params: CreateSipMediaApplicationRequest): Future[CreateSipMediaApplicationResponse] = service.createSipMediaApplication(params).promise().toFuture
+    @inline def createSipRuleFuture(params: CreateSipRuleRequest): Future[CreateSipRuleResponse] = service.createSipRule(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] = service.createVoiceConnector(params).promise().toFuture
     @inline def createVoiceConnectorGroupFuture(params: CreateVoiceConnectorGroupRequest): Future[CreateVoiceConnectorGroupResponse] = service.createVoiceConnectorGroup(params).promise().toFuture
     @inline def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] = service.deleteAccount(params).promise().toFuture
+    @inline def deleteAppInstanceAdminFuture(params: DeleteAppInstanceAdminRequest): Future[js.Object] = service.deleteAppInstanceAdmin(params).promise().toFuture
+    @inline def deleteAppInstanceFuture(params: DeleteAppInstanceRequest): Future[js.Object] = service.deleteAppInstance(params).promise().toFuture
+    @inline def deleteAppInstanceStreamingConfigurationsFuture(params: DeleteAppInstanceStreamingConfigurationsRequest): Future[js.Object] = service.deleteAppInstanceStreamingConfigurations(params).promise().toFuture
+    @inline def deleteAppInstanceUserFuture(params: DeleteAppInstanceUserRequest): Future[js.Object] = service.deleteAppInstanceUser(params).promise().toFuture
     @inline def deleteAttendeeFuture(params: DeleteAttendeeRequest): Future[js.Object] = service.deleteAttendee(params).promise().toFuture
+    @inline def deleteChannelBanFuture(params: DeleteChannelBanRequest): Future[js.Object] = service.deleteChannelBan(params).promise().toFuture
+    @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] = service.deleteChannel(params).promise().toFuture
+    @inline def deleteChannelMembershipFuture(params: DeleteChannelMembershipRequest): Future[js.Object] = service.deleteChannelMembership(params).promise().toFuture
+    @inline def deleteChannelMessageFuture(params: DeleteChannelMessageRequest): Future[js.Object] = service.deleteChannelMessage(params).promise().toFuture
+    @inline def deleteChannelModeratorFuture(params: DeleteChannelModeratorRequest): Future[js.Object] = service.deleteChannelModerator(params).promise().toFuture
     @inline def deleteEventsConfigurationFuture(params: DeleteEventsConfigurationRequest): Future[js.Object] = service.deleteEventsConfiguration(params).promise().toFuture
     @inline def deleteMeetingFuture(params: DeleteMeetingRequest): Future[js.Object] = service.deleteMeeting(params).promise().toFuture
     @inline def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] = service.deletePhoneNumber(params).promise().toFuture
     @inline def deleteProxySessionFuture(params: DeleteProxySessionRequest): Future[js.Object] = service.deleteProxySession(params).promise().toFuture
     @inline def deleteRoomFuture(params: DeleteRoomRequest): Future[js.Object] = service.deleteRoom(params).promise().toFuture
     @inline def deleteRoomMembershipFuture(params: DeleteRoomMembershipRequest): Future[js.Object] = service.deleteRoomMembership(params).promise().toFuture
+    @inline def deleteSipMediaApplicationFuture(params: DeleteSipMediaApplicationRequest): Future[js.Object] = service.deleteSipMediaApplication(params).promise().toFuture
+    @inline def deleteSipRuleFuture(params: DeleteSipRuleRequest): Future[js.Object] = service.deleteSipRule(params).promise().toFuture
     @inline def deleteVoiceConnectorEmergencyCallingConfigurationFuture(params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest): Future[js.Object] = service.deleteVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
     @inline def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] = service.deleteVoiceConnector(params).promise().toFuture
     @inline def deleteVoiceConnectorGroupFuture(params: DeleteVoiceConnectorGroupRequest): Future[js.Object] = service.deleteVoiceConnectorGroup(params).promise().toFuture
@@ -136,23 +191,39 @@ package object chime {
     @inline def deleteVoiceConnectorStreamingConfigurationFuture(params: DeleteVoiceConnectorStreamingConfigurationRequest): Future[js.Object] = service.deleteVoiceConnectorStreamingConfiguration(params).promise().toFuture
     @inline def deleteVoiceConnectorTerminationCredentialsFuture(params: DeleteVoiceConnectorTerminationCredentialsRequest): Future[js.Object] = service.deleteVoiceConnectorTerminationCredentials(params).promise().toFuture
     @inline def deleteVoiceConnectorTerminationFuture(params: DeleteVoiceConnectorTerminationRequest): Future[js.Object] = service.deleteVoiceConnectorTermination(params).promise().toFuture
+    @inline def describeAppInstanceAdminFuture(params: DescribeAppInstanceAdminRequest): Future[DescribeAppInstanceAdminResponse] = service.describeAppInstanceAdmin(params).promise().toFuture
+    @inline def describeAppInstanceFuture(params: DescribeAppInstanceRequest): Future[DescribeAppInstanceResponse] = service.describeAppInstance(params).promise().toFuture
+    @inline def describeAppInstanceUserFuture(params: DescribeAppInstanceUserRequest): Future[DescribeAppInstanceUserResponse] = service.describeAppInstanceUser(params).promise().toFuture
+    @inline def describeChannelBanFuture(params: DescribeChannelBanRequest): Future[DescribeChannelBanResponse] = service.describeChannelBan(params).promise().toFuture
+    @inline def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] = service.describeChannel(params).promise().toFuture
+    @inline def describeChannelMembershipForAppInstanceUserFuture(params: DescribeChannelMembershipForAppInstanceUserRequest): Future[DescribeChannelMembershipForAppInstanceUserResponse] = service.describeChannelMembershipForAppInstanceUser(params).promise().toFuture
+    @inline def describeChannelMembershipFuture(params: DescribeChannelMembershipRequest): Future[DescribeChannelMembershipResponse] = service.describeChannelMembership(params).promise().toFuture
+    @inline def describeChannelModeratedByAppInstanceUserFuture(params: DescribeChannelModeratedByAppInstanceUserRequest): Future[DescribeChannelModeratedByAppInstanceUserResponse] = service.describeChannelModeratedByAppInstanceUser(params).promise().toFuture
+    @inline def describeChannelModeratorFuture(params: DescribeChannelModeratorRequest): Future[DescribeChannelModeratorResponse] = service.describeChannelModerator(params).promise().toFuture
     @inline def disassociatePhoneNumberFromUserFuture(params: DisassociatePhoneNumberFromUserRequest): Future[DisassociatePhoneNumberFromUserResponse] = service.disassociatePhoneNumberFromUser(params).promise().toFuture
     @inline def disassociatePhoneNumbersFromVoiceConnectorFuture(params: DisassociatePhoneNumbersFromVoiceConnectorRequest): Future[DisassociatePhoneNumbersFromVoiceConnectorResponse] = service.disassociatePhoneNumbersFromVoiceConnector(params).promise().toFuture
     @inline def disassociatePhoneNumbersFromVoiceConnectorGroupFuture(params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest): Future[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] = service.disassociatePhoneNumbersFromVoiceConnectorGroup(params).promise().toFuture
     @inline def disassociateSigninDelegateGroupsFromAccountFuture(params: DisassociateSigninDelegateGroupsFromAccountRequest): Future[DisassociateSigninDelegateGroupsFromAccountResponse] = service.disassociateSigninDelegateGroupsFromAccount(params).promise().toFuture
     @inline def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] = service.getAccount(params).promise().toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] = service.getAccountSettings(params).promise().toFuture
+    @inline def getAppInstanceRetentionSettingsFuture(params: GetAppInstanceRetentionSettingsRequest): Future[GetAppInstanceRetentionSettingsResponse] = service.getAppInstanceRetentionSettings(params).promise().toFuture
+    @inline def getAppInstanceStreamingConfigurationsFuture(params: GetAppInstanceStreamingConfigurationsRequest): Future[GetAppInstanceStreamingConfigurationsResponse] = service.getAppInstanceStreamingConfigurations(params).promise().toFuture
     @inline def getAttendeeFuture(params: GetAttendeeRequest): Future[GetAttendeeResponse] = service.getAttendee(params).promise().toFuture
     @inline def getBotFuture(params: GetBotRequest): Future[GetBotResponse] = service.getBot(params).promise().toFuture
+    @inline def getChannelMessageFuture(params: GetChannelMessageRequest): Future[GetChannelMessageResponse] = service.getChannelMessage(params).promise().toFuture
     @inline def getEventsConfigurationFuture(params: GetEventsConfigurationRequest): Future[GetEventsConfigurationResponse] = service.getEventsConfiguration(params).promise().toFuture
     @inline def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] = service.getGlobalSettings().promise().toFuture
     @inline def getMeetingFuture(params: GetMeetingRequest): Future[GetMeetingResponse] = service.getMeeting(params).promise().toFuture
+    @inline def getMessagingSessionEndpointFuture(params: GetMessagingSessionEndpointRequest): Future[GetMessagingSessionEndpointResponse] = service.getMessagingSessionEndpoint(params).promise().toFuture
     @inline def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] = service.getPhoneNumber(params).promise().toFuture
     @inline def getPhoneNumberOrderFuture(params: GetPhoneNumberOrderRequest): Future[GetPhoneNumberOrderResponse] = service.getPhoneNumberOrder(params).promise().toFuture
     @inline def getPhoneNumberSettingsFuture(): Future[GetPhoneNumberSettingsResponse] = service.getPhoneNumberSettings().promise().toFuture
     @inline def getProxySessionFuture(params: GetProxySessionRequest): Future[GetProxySessionResponse] = service.getProxySession(params).promise().toFuture
     @inline def getRetentionSettingsFuture(params: GetRetentionSettingsRequest): Future[GetRetentionSettingsResponse] = service.getRetentionSettings(params).promise().toFuture
     @inline def getRoomFuture(params: GetRoomRequest): Future[GetRoomResponse] = service.getRoom(params).promise().toFuture
+    @inline def getSipMediaApplicationFuture(params: GetSipMediaApplicationRequest): Future[GetSipMediaApplicationResponse] = service.getSipMediaApplication(params).promise().toFuture
+    @inline def getSipMediaApplicationLoggingConfigurationFuture(params: GetSipMediaApplicationLoggingConfigurationRequest): Future[GetSipMediaApplicationLoggingConfigurationResponse] = service.getSipMediaApplicationLoggingConfiguration(params).promise().toFuture
+    @inline def getSipRuleFuture(params: GetSipRuleRequest): Future[GetSipRuleResponse] = service.getSipRule(params).promise().toFuture
     @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise().toFuture
     @inline def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] = service.getUserSettings(params).promise().toFuture
     @inline def getVoiceConnectorEmergencyCallingConfigurationFuture(params: GetVoiceConnectorEmergencyCallingConfigurationRequest): Future[GetVoiceConnectorEmergencyCallingConfigurationResponse] = service.getVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
@@ -166,9 +237,19 @@ package object chime {
     @inline def getVoiceConnectorTerminationHealthFuture(params: GetVoiceConnectorTerminationHealthRequest): Future[GetVoiceConnectorTerminationHealthResponse] = service.getVoiceConnectorTerminationHealth(params).promise().toFuture
     @inline def inviteUsersFuture(params: InviteUsersRequest): Future[InviteUsersResponse] = service.inviteUsers(params).promise().toFuture
     @inline def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] = service.listAccounts(params).promise().toFuture
+    @inline def listAppInstanceAdminsFuture(params: ListAppInstanceAdminsRequest): Future[ListAppInstanceAdminsResponse] = service.listAppInstanceAdmins(params).promise().toFuture
+    @inline def listAppInstanceUsersFuture(params: ListAppInstanceUsersRequest): Future[ListAppInstanceUsersResponse] = service.listAppInstanceUsers(params).promise().toFuture
+    @inline def listAppInstancesFuture(params: ListAppInstancesRequest): Future[ListAppInstancesResponse] = service.listAppInstances(params).promise().toFuture
     @inline def listAttendeeTagsFuture(params: ListAttendeeTagsRequest): Future[ListAttendeeTagsResponse] = service.listAttendeeTags(params).promise().toFuture
     @inline def listAttendeesFuture(params: ListAttendeesRequest): Future[ListAttendeesResponse] = service.listAttendees(params).promise().toFuture
     @inline def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] = service.listBots(params).promise().toFuture
+    @inline def listChannelBansFuture(params: ListChannelBansRequest): Future[ListChannelBansResponse] = service.listChannelBans(params).promise().toFuture
+    @inline def listChannelMembershipsForAppInstanceUserFuture(params: ListChannelMembershipsForAppInstanceUserRequest): Future[ListChannelMembershipsForAppInstanceUserResponse] = service.listChannelMembershipsForAppInstanceUser(params).promise().toFuture
+    @inline def listChannelMembershipsFuture(params: ListChannelMembershipsRequest): Future[ListChannelMembershipsResponse] = service.listChannelMemberships(params).promise().toFuture
+    @inline def listChannelMessagesFuture(params: ListChannelMessagesRequest): Future[ListChannelMessagesResponse] = service.listChannelMessages(params).promise().toFuture
+    @inline def listChannelModeratorsFuture(params: ListChannelModeratorsRequest): Future[ListChannelModeratorsResponse] = service.listChannelModerators(params).promise().toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
+    @inline def listChannelsModeratedByAppInstanceUserFuture(params: ListChannelsModeratedByAppInstanceUserRequest): Future[ListChannelsModeratedByAppInstanceUserResponse] = service.listChannelsModeratedByAppInstanceUser(params).promise().toFuture
     @inline def listMeetingTagsFuture(params: ListMeetingTagsRequest): Future[ListMeetingTagsResponse] = service.listMeetingTags(params).promise().toFuture
     @inline def listMeetingsFuture(params: ListMeetingsRequest): Future[ListMeetingsResponse] = service.listMeetings(params).promise().toFuture
     @inline def listPhoneNumberOrdersFuture(params: ListPhoneNumberOrdersRequest): Future[ListPhoneNumberOrdersResponse] = service.listPhoneNumberOrders(params).promise().toFuture
@@ -176,14 +257,19 @@ package object chime {
     @inline def listProxySessionsFuture(params: ListProxySessionsRequest): Future[ListProxySessionsResponse] = service.listProxySessions(params).promise().toFuture
     @inline def listRoomMembershipsFuture(params: ListRoomMembershipsRequest): Future[ListRoomMembershipsResponse] = service.listRoomMemberships(params).promise().toFuture
     @inline def listRoomsFuture(params: ListRoomsRequest): Future[ListRoomsResponse] = service.listRooms(params).promise().toFuture
+    @inline def listSipMediaApplicationsFuture(params: ListSipMediaApplicationsRequest): Future[ListSipMediaApplicationsResponse] = service.listSipMediaApplications(params).promise().toFuture
+    @inline def listSipRulesFuture(params: ListSipRulesRequest): Future[ListSipRulesResponse] = service.listSipRules(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
     @inline def listVoiceConnectorGroupsFuture(params: ListVoiceConnectorGroupsRequest): Future[ListVoiceConnectorGroupsResponse] = service.listVoiceConnectorGroups(params).promise().toFuture
     @inline def listVoiceConnectorTerminationCredentialsFuture(params: ListVoiceConnectorTerminationCredentialsRequest): Future[ListVoiceConnectorTerminationCredentialsResponse] = service.listVoiceConnectorTerminationCredentials(params).promise().toFuture
     @inline def listVoiceConnectorsFuture(params: ListVoiceConnectorsRequest): Future[ListVoiceConnectorsResponse] = service.listVoiceConnectors(params).promise().toFuture
     @inline def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] = service.logoutUser(params).promise().toFuture
+    @inline def putAppInstanceRetentionSettingsFuture(params: PutAppInstanceRetentionSettingsRequest): Future[PutAppInstanceRetentionSettingsResponse] = service.putAppInstanceRetentionSettings(params).promise().toFuture
+    @inline def putAppInstanceStreamingConfigurationsFuture(params: PutAppInstanceStreamingConfigurationsRequest): Future[PutAppInstanceStreamingConfigurationsResponse] = service.putAppInstanceStreamingConfigurations(params).promise().toFuture
     @inline def putEventsConfigurationFuture(params: PutEventsConfigurationRequest): Future[PutEventsConfigurationResponse] = service.putEventsConfiguration(params).promise().toFuture
     @inline def putRetentionSettingsFuture(params: PutRetentionSettingsRequest): Future[PutRetentionSettingsResponse] = service.putRetentionSettings(params).promise().toFuture
+    @inline def putSipMediaApplicationLoggingConfigurationFuture(params: PutSipMediaApplicationLoggingConfigurationRequest): Future[PutSipMediaApplicationLoggingConfigurationResponse] = service.putSipMediaApplicationLoggingConfiguration(params).promise().toFuture
     @inline def putVoiceConnectorEmergencyCallingConfigurationFuture(params: PutVoiceConnectorEmergencyCallingConfigurationRequest): Future[PutVoiceConnectorEmergencyCallingConfigurationResponse] = service.putVoiceConnectorEmergencyCallingConfiguration(params).promise().toFuture
     @inline def putVoiceConnectorLoggingConfigurationFuture(params: PutVoiceConnectorLoggingConfigurationRequest): Future[PutVoiceConnectorLoggingConfigurationResponse] = service.putVoiceConnectorLoggingConfiguration(params).promise().toFuture
     @inline def putVoiceConnectorOriginationFuture(params: PutVoiceConnectorOriginationRequest): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise().toFuture
@@ -191,12 +277,14 @@ package object chime {
     @inline def putVoiceConnectorStreamingConfigurationFuture(params: PutVoiceConnectorStreamingConfigurationRequest): Future[PutVoiceConnectorStreamingConfigurationResponse] = service.putVoiceConnectorStreamingConfiguration(params).promise().toFuture
     @inline def putVoiceConnectorTerminationCredentialsFuture(params: PutVoiceConnectorTerminationCredentialsRequest): Future[js.Object] = service.putVoiceConnectorTerminationCredentials(params).promise().toFuture
     @inline def putVoiceConnectorTerminationFuture(params: PutVoiceConnectorTerminationRequest): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise().toFuture
+    @inline def redactChannelMessageFuture(params: RedactChannelMessageRequest): Future[RedactChannelMessageResponse] = service.redactChannelMessage(params).promise().toFuture
     @inline def redactConversationMessageFuture(params: RedactConversationMessageRequest): Future[RedactConversationMessageResponse] = service.redactConversationMessage(params).promise().toFuture
     @inline def redactRoomMessageFuture(params: RedactRoomMessageRequest): Future[RedactRoomMessageResponse] = service.redactRoomMessage(params).promise().toFuture
     @inline def regenerateSecurityTokenFuture(params: RegenerateSecurityTokenRequest): Future[RegenerateSecurityTokenResponse] = service.regenerateSecurityToken(params).promise().toFuture
     @inline def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] = service.resetPersonalPIN(params).promise().toFuture
     @inline def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] = service.restorePhoneNumber(params).promise().toFuture
     @inline def searchAvailablePhoneNumbersFuture(params: SearchAvailablePhoneNumbersRequest): Future[SearchAvailablePhoneNumbersResponse] = service.searchAvailablePhoneNumbers(params).promise().toFuture
+    @inline def sendChannelMessageFuture(params: SendChannelMessageRequest): Future[SendChannelMessageResponse] = service.sendChannelMessage(params).promise().toFuture
     @inline def tagAttendeeFuture(params: TagAttendeeRequest): Future[js.Object] = service.tagAttendee(params).promise().toFuture
     @inline def tagMeetingFuture(params: TagMeetingRequest): Future[js.Object] = service.tagMeeting(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
@@ -205,13 +293,20 @@ package object chime {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] = service.updateAccount(params).promise().toFuture
     @inline def updateAccountSettingsFuture(params: UpdateAccountSettingsRequest): Future[UpdateAccountSettingsResponse] = service.updateAccountSettings(params).promise().toFuture
+    @inline def updateAppInstanceFuture(params: UpdateAppInstanceRequest): Future[UpdateAppInstanceResponse] = service.updateAppInstance(params).promise().toFuture
+    @inline def updateAppInstanceUserFuture(params: UpdateAppInstanceUserRequest): Future[UpdateAppInstanceUserResponse] = service.updateAppInstanceUser(params).promise().toFuture
     @inline def updateBotFuture(params: UpdateBotRequest): Future[UpdateBotResponse] = service.updateBot(params).promise().toFuture
+    @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] = service.updateChannel(params).promise().toFuture
+    @inline def updateChannelMessageFuture(params: UpdateChannelMessageRequest): Future[UpdateChannelMessageResponse] = service.updateChannelMessage(params).promise().toFuture
+    @inline def updateChannelReadMarkerFuture(params: UpdateChannelReadMarkerRequest): Future[UpdateChannelReadMarkerResponse] = service.updateChannelReadMarker(params).promise().toFuture
     @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] = service.updateGlobalSettings(params).promise().toFuture
     @inline def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] = service.updatePhoneNumber(params).promise().toFuture
     @inline def updatePhoneNumberSettingsFuture(params: UpdatePhoneNumberSettingsRequest): Future[js.Object] = service.updatePhoneNumberSettings(params).promise().toFuture
     @inline def updateProxySessionFuture(params: UpdateProxySessionRequest): Future[UpdateProxySessionResponse] = service.updateProxySession(params).promise().toFuture
     @inline def updateRoomFuture(params: UpdateRoomRequest): Future[UpdateRoomResponse] = service.updateRoom(params).promise().toFuture
     @inline def updateRoomMembershipFuture(params: UpdateRoomMembershipRequest): Future[UpdateRoomMembershipResponse] = service.updateRoomMembership(params).promise().toFuture
+    @inline def updateSipMediaApplicationFuture(params: UpdateSipMediaApplicationRequest): Future[UpdateSipMediaApplicationResponse] = service.updateSipMediaApplication(params).promise().toFuture
+    @inline def updateSipRuleFuture(params: UpdateSipRuleRequest): Future[UpdateSipRuleResponse] = service.updateSipRule(params).promise().toFuture
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
     @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] = service.updateUserSettings(params).promise().toFuture
     @inline def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] = service.updateVoiceConnector(params).promise().toFuture
@@ -238,25 +333,47 @@ package chime {
     def batchUpdatePhoneNumber(params: BatchUpdatePhoneNumberRequest): Request[BatchUpdatePhoneNumberResponse] = js.native
     def batchUpdateUser(params: BatchUpdateUserRequest): Request[BatchUpdateUserResponse] = js.native
     def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse] = js.native
+    def createAppInstance(params: CreateAppInstanceRequest): Request[CreateAppInstanceResponse] = js.native
+    def createAppInstanceAdmin(params: CreateAppInstanceAdminRequest): Request[CreateAppInstanceAdminResponse] = js.native
+    def createAppInstanceUser(params: CreateAppInstanceUserRequest): Request[CreateAppInstanceUserResponse] = js.native
     def createAttendee(params: CreateAttendeeRequest): Request[CreateAttendeeResponse] = js.native
     def createBot(params: CreateBotRequest): Request[CreateBotResponse] = js.native
+    def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
+    def createChannelBan(params: CreateChannelBanRequest): Request[CreateChannelBanResponse] = js.native
+    def createChannelMembership(params: CreateChannelMembershipRequest): Request[CreateChannelMembershipResponse] = js.native
+    def createChannelModerator(params: CreateChannelModeratorRequest): Request[CreateChannelModeratorResponse] = js.native
     def createMeeting(params: CreateMeetingRequest): Request[CreateMeetingResponse] = js.native
+    def createMeetingDialOut(params: CreateMeetingDialOutRequest): Request[CreateMeetingDialOutResponse] = js.native
     def createMeetingWithAttendees(params: CreateMeetingWithAttendeesRequest): Request[CreateMeetingWithAttendeesResponse] = js.native
     def createPhoneNumberOrder(params: CreatePhoneNumberOrderRequest): Request[CreatePhoneNumberOrderResponse] = js.native
     def createProxySession(params: CreateProxySessionRequest): Request[CreateProxySessionResponse] = js.native
     def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse] = js.native
     def createRoomMembership(params: CreateRoomMembershipRequest): Request[CreateRoomMembershipResponse] = js.native
+    def createSipMediaApplication(params: CreateSipMediaApplicationRequest): Request[CreateSipMediaApplicationResponse] = js.native
+    def createSipMediaApplicationCall(params: CreateSipMediaApplicationCallRequest): Request[CreateSipMediaApplicationCallResponse] = js.native
+    def createSipRule(params: CreateSipRuleRequest): Request[CreateSipRuleResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def createVoiceConnector(params: CreateVoiceConnectorRequest): Request[CreateVoiceConnectorResponse] = js.native
     def createVoiceConnectorGroup(params: CreateVoiceConnectorGroupRequest): Request[CreateVoiceConnectorGroupResponse] = js.native
     def deleteAccount(params: DeleteAccountRequest): Request[DeleteAccountResponse] = js.native
+    def deleteAppInstance(params: DeleteAppInstanceRequest): Request[js.Object] = js.native
+    def deleteAppInstanceAdmin(params: DeleteAppInstanceAdminRequest): Request[js.Object] = js.native
+    def deleteAppInstanceStreamingConfigurations(params: DeleteAppInstanceStreamingConfigurationsRequest): Request[js.Object] = js.native
+    def deleteAppInstanceUser(params: DeleteAppInstanceUserRequest): Request[js.Object] = js.native
     def deleteAttendee(params: DeleteAttendeeRequest): Request[js.Object] = js.native
+    def deleteChannel(params: DeleteChannelRequest): Request[js.Object] = js.native
+    def deleteChannelBan(params: DeleteChannelBanRequest): Request[js.Object] = js.native
+    def deleteChannelMembership(params: DeleteChannelMembershipRequest): Request[js.Object] = js.native
+    def deleteChannelMessage(params: DeleteChannelMessageRequest): Request[js.Object] = js.native
+    def deleteChannelModerator(params: DeleteChannelModeratorRequest): Request[js.Object] = js.native
     def deleteEventsConfiguration(params: DeleteEventsConfigurationRequest): Request[js.Object] = js.native
     def deleteMeeting(params: DeleteMeetingRequest): Request[js.Object] = js.native
     def deletePhoneNumber(params: DeletePhoneNumberRequest): Request[js.Object] = js.native
     def deleteProxySession(params: DeleteProxySessionRequest): Request[js.Object] = js.native
     def deleteRoom(params: DeleteRoomRequest): Request[js.Object] = js.native
     def deleteRoomMembership(params: DeleteRoomMembershipRequest): Request[js.Object] = js.native
+    def deleteSipMediaApplication(params: DeleteSipMediaApplicationRequest): Request[js.Object] = js.native
+    def deleteSipRule(params: DeleteSipRuleRequest): Request[js.Object] = js.native
     def deleteVoiceConnector(params: DeleteVoiceConnectorRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorEmergencyCallingConfiguration(params: DeleteVoiceConnectorEmergencyCallingConfigurationRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorGroup(params: DeleteVoiceConnectorGroupRequest): Request[js.Object] = js.native
@@ -265,23 +382,39 @@ package chime {
     def deleteVoiceConnectorStreamingConfiguration(params: DeleteVoiceConnectorStreamingConfigurationRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorTermination(params: DeleteVoiceConnectorTerminationRequest): Request[js.Object] = js.native
     def deleteVoiceConnectorTerminationCredentials(params: DeleteVoiceConnectorTerminationCredentialsRequest): Request[js.Object] = js.native
+    def describeAppInstance(params: DescribeAppInstanceRequest): Request[DescribeAppInstanceResponse] = js.native
+    def describeAppInstanceAdmin(params: DescribeAppInstanceAdminRequest): Request[DescribeAppInstanceAdminResponse] = js.native
+    def describeAppInstanceUser(params: DescribeAppInstanceUserRequest): Request[DescribeAppInstanceUserResponse] = js.native
+    def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse] = js.native
+    def describeChannelBan(params: DescribeChannelBanRequest): Request[DescribeChannelBanResponse] = js.native
+    def describeChannelMembership(params: DescribeChannelMembershipRequest): Request[DescribeChannelMembershipResponse] = js.native
+    def describeChannelMembershipForAppInstanceUser(params: DescribeChannelMembershipForAppInstanceUserRequest): Request[DescribeChannelMembershipForAppInstanceUserResponse] = js.native
+    def describeChannelModeratedByAppInstanceUser(params: DescribeChannelModeratedByAppInstanceUserRequest): Request[DescribeChannelModeratedByAppInstanceUserResponse] = js.native
+    def describeChannelModerator(params: DescribeChannelModeratorRequest): Request[DescribeChannelModeratorResponse] = js.native
     def disassociatePhoneNumberFromUser(params: DisassociatePhoneNumberFromUserRequest): Request[DisassociatePhoneNumberFromUserResponse] = js.native
     def disassociatePhoneNumbersFromVoiceConnector(params: DisassociatePhoneNumbersFromVoiceConnectorRequest): Request[DisassociatePhoneNumbersFromVoiceConnectorResponse] = js.native
     def disassociatePhoneNumbersFromVoiceConnectorGroup(params: DisassociatePhoneNumbersFromVoiceConnectorGroupRequest): Request[DisassociatePhoneNumbersFromVoiceConnectorGroupResponse] = js.native
     def disassociateSigninDelegateGroupsFromAccount(params: DisassociateSigninDelegateGroupsFromAccountRequest): Request[DisassociateSigninDelegateGroupsFromAccountResponse] = js.native
     def getAccount(params: GetAccountRequest): Request[GetAccountResponse] = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
+    def getAppInstanceRetentionSettings(params: GetAppInstanceRetentionSettingsRequest): Request[GetAppInstanceRetentionSettingsResponse] = js.native
+    def getAppInstanceStreamingConfigurations(params: GetAppInstanceStreamingConfigurationsRequest): Request[GetAppInstanceStreamingConfigurationsResponse] = js.native
     def getAttendee(params: GetAttendeeRequest): Request[GetAttendeeResponse] = js.native
     def getBot(params: GetBotRequest): Request[GetBotResponse] = js.native
+    def getChannelMessage(params: GetChannelMessageRequest): Request[GetChannelMessageResponse] = js.native
     def getEventsConfiguration(params: GetEventsConfigurationRequest): Request[GetEventsConfigurationResponse] = js.native
     def getGlobalSettings(): Request[GetGlobalSettingsResponse] = js.native
     def getMeeting(params: GetMeetingRequest): Request[GetMeetingResponse] = js.native
+    def getMessagingSessionEndpoint(params: GetMessagingSessionEndpointRequest): Request[GetMessagingSessionEndpointResponse] = js.native
     def getPhoneNumber(params: GetPhoneNumberRequest): Request[GetPhoneNumberResponse] = js.native
     def getPhoneNumberOrder(params: GetPhoneNumberOrderRequest): Request[GetPhoneNumberOrderResponse] = js.native
     def getPhoneNumberSettings(): Request[GetPhoneNumberSettingsResponse] = js.native
     def getProxySession(params: GetProxySessionRequest): Request[GetProxySessionResponse] = js.native
     def getRetentionSettings(params: GetRetentionSettingsRequest): Request[GetRetentionSettingsResponse] = js.native
     def getRoom(params: GetRoomRequest): Request[GetRoomResponse] = js.native
+    def getSipMediaApplication(params: GetSipMediaApplicationRequest): Request[GetSipMediaApplicationResponse] = js.native
+    def getSipMediaApplicationLoggingConfiguration(params: GetSipMediaApplicationLoggingConfigurationRequest): Request[GetSipMediaApplicationLoggingConfigurationResponse] = js.native
+    def getSipRule(params: GetSipRuleRequest): Request[GetSipRuleResponse] = js.native
     def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
     def getUserSettings(params: GetUserSettingsRequest): Request[GetUserSettingsResponse] = js.native
     def getVoiceConnector(params: GetVoiceConnectorRequest): Request[GetVoiceConnectorResponse] = js.native
@@ -295,9 +428,19 @@ package chime {
     def getVoiceConnectorTerminationHealth(params: GetVoiceConnectorTerminationHealthRequest): Request[GetVoiceConnectorTerminationHealthResponse] = js.native
     def inviteUsers(params: InviteUsersRequest): Request[InviteUsersResponse] = js.native
     def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse] = js.native
+    def listAppInstanceAdmins(params: ListAppInstanceAdminsRequest): Request[ListAppInstanceAdminsResponse] = js.native
+    def listAppInstanceUsers(params: ListAppInstanceUsersRequest): Request[ListAppInstanceUsersResponse] = js.native
+    def listAppInstances(params: ListAppInstancesRequest): Request[ListAppInstancesResponse] = js.native
     def listAttendeeTags(params: ListAttendeeTagsRequest): Request[ListAttendeeTagsResponse] = js.native
     def listAttendees(params: ListAttendeesRequest): Request[ListAttendeesResponse] = js.native
     def listBots(params: ListBotsRequest): Request[ListBotsResponse] = js.native
+    def listChannelBans(params: ListChannelBansRequest): Request[ListChannelBansResponse] = js.native
+    def listChannelMemberships(params: ListChannelMembershipsRequest): Request[ListChannelMembershipsResponse] = js.native
+    def listChannelMembershipsForAppInstanceUser(params: ListChannelMembershipsForAppInstanceUserRequest): Request[ListChannelMembershipsForAppInstanceUserResponse] = js.native
+    def listChannelMessages(params: ListChannelMessagesRequest): Request[ListChannelMessagesResponse] = js.native
+    def listChannelModerators(params: ListChannelModeratorsRequest): Request[ListChannelModeratorsResponse] = js.native
+    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
+    def listChannelsModeratedByAppInstanceUser(params: ListChannelsModeratedByAppInstanceUserRequest): Request[ListChannelsModeratedByAppInstanceUserResponse] = js.native
     def listMeetingTags(params: ListMeetingTagsRequest): Request[ListMeetingTagsResponse] = js.native
     def listMeetings(params: ListMeetingsRequest): Request[ListMeetingsResponse] = js.native
     def listPhoneNumberOrders(params: ListPhoneNumberOrdersRequest): Request[ListPhoneNumberOrdersResponse] = js.native
@@ -305,14 +448,19 @@ package chime {
     def listProxySessions(params: ListProxySessionsRequest): Request[ListProxySessionsResponse] = js.native
     def listRoomMemberships(params: ListRoomMembershipsRequest): Request[ListRoomMembershipsResponse] = js.native
     def listRooms(params: ListRoomsRequest): Request[ListRoomsResponse] = js.native
+    def listSipMediaApplications(params: ListSipMediaApplicationsRequest): Request[ListSipMediaApplicationsResponse] = js.native
+    def listSipRules(params: ListSipRulesRequest): Request[ListSipRulesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
     def listVoiceConnectorGroups(params: ListVoiceConnectorGroupsRequest): Request[ListVoiceConnectorGroupsResponse] = js.native
     def listVoiceConnectorTerminationCredentials(params: ListVoiceConnectorTerminationCredentialsRequest): Request[ListVoiceConnectorTerminationCredentialsResponse] = js.native
     def listVoiceConnectors(params: ListVoiceConnectorsRequest): Request[ListVoiceConnectorsResponse] = js.native
     def logoutUser(params: LogoutUserRequest): Request[LogoutUserResponse] = js.native
+    def putAppInstanceRetentionSettings(params: PutAppInstanceRetentionSettingsRequest): Request[PutAppInstanceRetentionSettingsResponse] = js.native
+    def putAppInstanceStreamingConfigurations(params: PutAppInstanceStreamingConfigurationsRequest): Request[PutAppInstanceStreamingConfigurationsResponse] = js.native
     def putEventsConfiguration(params: PutEventsConfigurationRequest): Request[PutEventsConfigurationResponse] = js.native
     def putRetentionSettings(params: PutRetentionSettingsRequest): Request[PutRetentionSettingsResponse] = js.native
+    def putSipMediaApplicationLoggingConfiguration(params: PutSipMediaApplicationLoggingConfigurationRequest): Request[PutSipMediaApplicationLoggingConfigurationResponse] = js.native
     def putVoiceConnectorEmergencyCallingConfiguration(params: PutVoiceConnectorEmergencyCallingConfigurationRequest): Request[PutVoiceConnectorEmergencyCallingConfigurationResponse] = js.native
     def putVoiceConnectorLoggingConfiguration(params: PutVoiceConnectorLoggingConfigurationRequest): Request[PutVoiceConnectorLoggingConfigurationResponse] = js.native
     def putVoiceConnectorOrigination(params: PutVoiceConnectorOriginationRequest): Request[PutVoiceConnectorOriginationResponse] = js.native
@@ -320,12 +468,14 @@ package chime {
     def putVoiceConnectorStreamingConfiguration(params: PutVoiceConnectorStreamingConfigurationRequest): Request[PutVoiceConnectorStreamingConfigurationResponse] = js.native
     def putVoiceConnectorTermination(params: PutVoiceConnectorTerminationRequest): Request[PutVoiceConnectorTerminationResponse] = js.native
     def putVoiceConnectorTerminationCredentials(params: PutVoiceConnectorTerminationCredentialsRequest): Request[js.Object] = js.native
+    def redactChannelMessage(params: RedactChannelMessageRequest): Request[RedactChannelMessageResponse] = js.native
     def redactConversationMessage(params: RedactConversationMessageRequest): Request[RedactConversationMessageResponse] = js.native
     def redactRoomMessage(params: RedactRoomMessageRequest): Request[RedactRoomMessageResponse] = js.native
     def regenerateSecurityToken(params: RegenerateSecurityTokenRequest): Request[RegenerateSecurityTokenResponse] = js.native
     def resetPersonalPIN(params: ResetPersonalPINRequest): Request[ResetPersonalPINResponse] = js.native
     def restorePhoneNumber(params: RestorePhoneNumberRequest): Request[RestorePhoneNumberResponse] = js.native
     def searchAvailablePhoneNumbers(params: SearchAvailablePhoneNumbersRequest): Request[SearchAvailablePhoneNumbersResponse] = js.native
+    def sendChannelMessage(params: SendChannelMessageRequest): Request[SendChannelMessageResponse] = js.native
     def tagAttendee(params: TagAttendeeRequest): Request[js.Object] = js.native
     def tagMeeting(params: TagMeetingRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
@@ -334,13 +484,20 @@ package chime {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateAccount(params: UpdateAccountRequest): Request[UpdateAccountResponse] = js.native
     def updateAccountSettings(params: UpdateAccountSettingsRequest): Request[UpdateAccountSettingsResponse] = js.native
+    def updateAppInstance(params: UpdateAppInstanceRequest): Request[UpdateAppInstanceResponse] = js.native
+    def updateAppInstanceUser(params: UpdateAppInstanceUserRequest): Request[UpdateAppInstanceUserResponse] = js.native
     def updateBot(params: UpdateBotRequest): Request[UpdateBotResponse] = js.native
+    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
+    def updateChannelMessage(params: UpdateChannelMessageRequest): Request[UpdateChannelMessageResponse] = js.native
+    def updateChannelReadMarker(params: UpdateChannelReadMarkerRequest): Request[UpdateChannelReadMarkerResponse] = js.native
     def updateGlobalSettings(params: UpdateGlobalSettingsRequest): Request[js.Object] = js.native
     def updatePhoneNumber(params: UpdatePhoneNumberRequest): Request[UpdatePhoneNumberResponse] = js.native
     def updatePhoneNumberSettings(params: UpdatePhoneNumberSettingsRequest): Request[js.Object] = js.native
     def updateProxySession(params: UpdateProxySessionRequest): Request[UpdateProxySessionResponse] = js.native
     def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse] = js.native
     def updateRoomMembership(params: UpdateRoomMembershipRequest): Request[UpdateRoomMembershipResponse] = js.native
+    def updateSipMediaApplication(params: UpdateSipMediaApplicationRequest): Request[UpdateSipMediaApplicationResponse] = js.native
+    def updateSipRule(params: UpdateSipRuleRequest): Request[UpdateSipRuleResponse] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
     def updateUserSettings(params: UpdateUserSettingsRequest): Request[js.Object] = js.native
     def updateVoiceConnector(params: UpdateVoiceConnectorRequest): Request[UpdateVoiceConnectorResponse] = js.native
@@ -438,6 +595,226 @@ package chime {
       AlexaForBusinessRoomArn.foreach(__v => __obj.updateDynamic("AlexaForBusinessRoomArn")(__v.asInstanceOf[js.Any]))
       IsAlexaForBusinessEnabled.foreach(__v => __obj.updateDynamic("IsAlexaForBusinessEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlexaForBusinessMetadata]
+    }
+  }
+
+  /** An instance of a Chime messaging application.
+    */
+  @js.native
+  trait AppInstance extends js.Object {
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var Metadata: js.UndefOr[Metadata]
+    var Name: js.UndefOr[NonEmptyResourceName]
+  }
+
+  object AppInstance {
+    @inline
+    def apply(
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Name: js.UndefOr[NonEmptyResourceName] = js.undefined
+    ): AppInstance = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstance]
+    }
+  }
+
+  /** Promotes a user to the administrator role for the duration of an app instance.
+    */
+  @js.native
+  trait AppInstanceAdmin extends js.Object {
+    var Admin: js.UndefOr[Identity]
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object AppInstanceAdmin {
+    @inline
+    def apply(
+        Admin: js.UndefOr[Identity] = js.undefined,
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): AppInstanceAdmin = {
+      val __obj = js.Dynamic.literal()
+      Admin.foreach(__v => __obj.updateDynamic("Admin")(__v.asInstanceOf[js.Any]))
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceAdmin]
+    }
+  }
+
+  /** The identity and metadata of an administrator.
+    */
+  @js.native
+  trait AppInstanceAdminSummary extends js.Object {
+    var Admin: js.UndefOr[Identity]
+  }
+
+  object AppInstanceAdminSummary {
+    @inline
+    def apply(
+        Admin: js.UndefOr[Identity] = js.undefined
+    ): AppInstanceAdminSummary = {
+      val __obj = js.Dynamic.literal()
+      Admin.foreach(__v => __obj.updateDynamic("Admin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceAdminSummary]
+    }
+  }
+
+  @js.native
+  sealed trait AppInstanceDataType extends js.Any
+  object AppInstanceDataType {
+    val Channel = "Channel".asInstanceOf[AppInstanceDataType]
+    val ChannelMessage = "ChannelMessage".asInstanceOf[AppInstanceDataType]
+
+    @inline def values = js.Array(Channel, ChannelMessage)
+  }
+
+  /** The length of time in days to retain messages.
+    */
+  @js.native
+  trait AppInstanceRetentionSettings extends js.Object {
+    var ChannelRetentionSettings: js.UndefOr[ChannelRetentionSettings]
+  }
+
+  object AppInstanceRetentionSettings {
+    @inline
+    def apply(
+        ChannelRetentionSettings: js.UndefOr[ChannelRetentionSettings] = js.undefined
+    ): AppInstanceRetentionSettings = {
+      val __obj = js.Dynamic.literal()
+      ChannelRetentionSettings.foreach(__v => __obj.updateDynamic("ChannelRetentionSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceRetentionSettings]
+    }
+  }
+
+  /** The streaming configuration of an app instance.
+    */
+  @js.native
+  trait AppInstanceStreamingConfiguration extends js.Object {
+    var AppInstanceDataType: AppInstanceDataType
+    var ResourceArn: Arn
+  }
+
+  object AppInstanceStreamingConfiguration {
+    @inline
+    def apply(
+        AppInstanceDataType: AppInstanceDataType,
+        ResourceArn: Arn
+    ): AppInstanceStreamingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceDataType" -> AppInstanceDataType.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AppInstanceStreamingConfiguration]
+    }
+  }
+
+  /** The summary data for an app instance.
+    */
+  @js.native
+  trait AppInstanceSummary extends js.Object {
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+    var Metadata: js.UndefOr[Metadata]
+    var Name: js.UndefOr[NonEmptyResourceName]
+  }
+
+  object AppInstanceSummary {
+    @inline
+    def apply(
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Name: js.UndefOr[NonEmptyResourceName] = js.undefined
+    ): AppInstanceSummary = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceSummary]
+    }
+  }
+
+  /** The app instance user.
+    */
+  @js.native
+  trait AppInstanceUser extends js.Object {
+    var AppInstanceUserArn: js.UndefOr[ChimeArn]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var Metadata: js.UndefOr[Metadata]
+    var Name: js.UndefOr[UserName]
+  }
+
+  object AppInstanceUser {
+    @inline
+    def apply(
+        AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Name: js.UndefOr[UserName] = js.undefined
+    ): AppInstanceUser = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceUser]
+    }
+  }
+
+  /** Lists the channels to which app instance users belong.
+    */
+  @js.native
+  trait AppInstanceUserMembershipSummary extends js.Object {
+    var ReadMarkerTimestamp: js.UndefOr[Timestamp]
+    var Type: js.UndefOr[ChannelMembershipType]
+  }
+
+  object AppInstanceUserMembershipSummary {
+    @inline
+    def apply(
+        ReadMarkerTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Type: js.UndefOr[ChannelMembershipType] = js.undefined
+    ): AppInstanceUserMembershipSummary = {
+      val __obj = js.Dynamic.literal()
+      ReadMarkerTimestamp.foreach(__v => __obj.updateDynamic("ReadMarkerTimestamp")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceUserMembershipSummary]
+    }
+  }
+
+  /** The app instance user summary data .
+    */
+  @js.native
+  trait AppInstanceUserSummary extends js.Object {
+    var AppInstanceUserArn: js.UndefOr[ChimeArn]
+    var Metadata: js.UndefOr[Metadata]
+    var Name: js.UndefOr[UserName]
+  }
+
+  object AppInstanceUserSummary {
+    @inline
+    def apply(
+        AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Name: js.UndefOr[UserName] = js.undefined
+    ): AppInstanceUserSummary = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppInstanceUserSummary]
     }
   }
 
@@ -951,6 +1328,414 @@ package chime {
     @inline def values = js.Array(Voice, SMS)
   }
 
+  /** Creates a channel.
+    */
+  @js.native
+  trait Channel extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var CreatedBy: js.UndefOr[Identity]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var LastMessageTimestamp: js.UndefOr[Timestamp]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var Metadata: js.UndefOr[Metadata]
+    var Mode: js.UndefOr[ChannelMode]
+    var Name: js.UndefOr[NonEmptyResourceName]
+    var Privacy: js.UndefOr[ChannelPrivacy]
+  }
+
+  object Channel {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedBy: js.UndefOr[Identity] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastMessageTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Mode: js.UndefOr[ChannelMode] = js.undefined,
+        Name: js.UndefOr[NonEmptyResourceName] = js.undefined,
+        Privacy: js.UndefOr[ChannelPrivacy] = js.undefined
+    ): Channel = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastMessageTimestamp.foreach(__v => __obj.updateDynamic("LastMessageTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Channel]
+    }
+  }
+
+  /** Bans a user from a channel.
+    */
+  @js.native
+  trait ChannelBan extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var CreatedBy: js.UndefOr[Identity]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var Member: js.UndefOr[Identity]
+  }
+
+  object ChannelBan {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedBy: js.UndefOr[Identity] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Member: js.UndefOr[Identity] = js.undefined
+    ): ChannelBan = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelBan]
+    }
+  }
+
+  /** The summary data for the channel ban.
+    */
+  @js.native
+  trait ChannelBanSummary extends js.Object {
+    var Member: js.UndefOr[Identity]
+  }
+
+  object ChannelBanSummary {
+    @inline
+    def apply(
+        Member: js.UndefOr[Identity] = js.undefined
+    ): ChannelBanSummary = {
+      val __obj = js.Dynamic.literal()
+      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelBanSummary]
+    }
+  }
+
+  /** Creates a channel member.
+    */
+  @js.native
+  trait ChannelMembership extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var InvitedBy: js.UndefOr[Identity]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var Member: js.UndefOr[Identity]
+    var Type: js.UndefOr[ChannelMembershipType]
+  }
+
+  object ChannelMembership {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        InvitedBy: js.UndefOr[Identity] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Member: js.UndefOr[Identity] = js.undefined,
+        Type: js.UndefOr[ChannelMembershipType] = js.undefined
+    ): ChannelMembership = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      InvitedBy.foreach(__v => __obj.updateDynamic("InvitedBy")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelMembership]
+    }
+  }
+
+  /** Returns the channel membership summary data for an app instance.
+    */
+  @js.native
+  trait ChannelMembershipForAppInstanceUserSummary extends js.Object {
+    var AppInstanceUserMembershipSummary: js.UndefOr[AppInstanceUserMembershipSummary]
+    var ChannelSummary: js.UndefOr[ChannelSummary]
+  }
+
+  object ChannelMembershipForAppInstanceUserSummary {
+    @inline
+    def apply(
+        AppInstanceUserMembershipSummary: js.UndefOr[AppInstanceUserMembershipSummary] = js.undefined,
+        ChannelSummary: js.UndefOr[ChannelSummary] = js.undefined
+    ): ChannelMembershipForAppInstanceUserSummary = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserMembershipSummary.foreach(__v => __obj.updateDynamic("AppInstanceUserMembershipSummary")(__v.asInstanceOf[js.Any]))
+      ChannelSummary.foreach(__v => __obj.updateDynamic("ChannelSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelMembershipForAppInstanceUserSummary]
+    }
+  }
+
+  /** The summary data of a channel membership.
+    */
+  @js.native
+  trait ChannelMembershipSummary extends js.Object {
+    var Member: js.UndefOr[Identity]
+  }
+
+  object ChannelMembershipSummary {
+    @inline
+    def apply(
+        Member: js.UndefOr[Identity] = js.undefined
+    ): ChannelMembershipSummary = {
+      val __obj = js.Dynamic.literal()
+      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelMembershipSummary]
+    }
+  }
+
+  @js.native
+  sealed trait ChannelMembershipType extends js.Any
+  object ChannelMembershipType {
+    val DEFAULT = "DEFAULT".asInstanceOf[ChannelMembershipType]
+    val HIDDEN = "HIDDEN".asInstanceOf[ChannelMembershipType]
+
+    @inline def values = js.Array(DEFAULT, HIDDEN)
+  }
+
+  /** Creates a message in a channel.
+    */
+  @js.native
+  trait ChannelMessage extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var Content: js.UndefOr[Content]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var LastEditedTimestamp: js.UndefOr[Timestamp]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var MessageId: js.UndefOr[MessageId]
+    var Metadata: js.UndefOr[Metadata]
+    var Persistence: js.UndefOr[ChannelMessagePersistenceType]
+    var Redacted: js.UndefOr[NonNullableBoolean]
+    var Sender: js.UndefOr[Identity]
+    var Type: js.UndefOr[ChannelMessageType]
+  }
+
+  object ChannelMessage {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        Content: js.UndefOr[Content] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastEditedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        MessageId: js.UndefOr[MessageId] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Persistence: js.UndefOr[ChannelMessagePersistenceType] = js.undefined,
+        Redacted: js.UndefOr[NonNullableBoolean] = js.undefined,
+        Sender: js.UndefOr[Identity] = js.undefined,
+        Type: js.UndefOr[ChannelMessageType] = js.undefined
+    ): ChannelMessage = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastEditedTimestamp.foreach(__v => __obj.updateDynamic("LastEditedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Persistence.foreach(__v => __obj.updateDynamic("Persistence")(__v.asInstanceOf[js.Any]))
+      Redacted.foreach(__v => __obj.updateDynamic("Redacted")(__v.asInstanceOf[js.Any]))
+      Sender.foreach(__v => __obj.updateDynamic("Sender")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelMessage]
+    }
+  }
+
+  @js.native
+  sealed trait ChannelMessagePersistenceType extends js.Any
+  object ChannelMessagePersistenceType {
+    val PERSISTENT = "PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
+    val NON_PERSISTENT = "NON_PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
+
+    @inline def values = js.Array(PERSISTENT, NON_PERSISTENT)
+  }
+
+  /** A summary of the messages in a channel.
+    */
+  @js.native
+  trait ChannelMessageSummary extends js.Object {
+    var Content: js.UndefOr[Content]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var LastEditedTimestamp: js.UndefOr[Timestamp]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var MessageId: js.UndefOr[MessageId]
+    var Metadata: js.UndefOr[Metadata]
+    var Redacted: js.UndefOr[NonNullableBoolean]
+    var Sender: js.UndefOr[Identity]
+    var Type: js.UndefOr[ChannelMessageType]
+  }
+
+  object ChannelMessageSummary {
+    @inline
+    def apply(
+        Content: js.UndefOr[Content] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastEditedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        MessageId: js.UndefOr[MessageId] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Redacted: js.UndefOr[NonNullableBoolean] = js.undefined,
+        Sender: js.UndefOr[Identity] = js.undefined,
+        Type: js.UndefOr[ChannelMessageType] = js.undefined
+    ): ChannelMessageSummary = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastEditedTimestamp.foreach(__v => __obj.updateDynamic("LastEditedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Redacted.foreach(__v => __obj.updateDynamic("Redacted")(__v.asInstanceOf[js.Any]))
+      Sender.foreach(__v => __obj.updateDynamic("Sender")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelMessageSummary]
+    }
+  }
+
+  @js.native
+  sealed trait ChannelMessageType extends js.Any
+  object ChannelMessageType {
+    val STANDARD = "STANDARD".asInstanceOf[ChannelMessageType]
+    val CONTROL = "CONTROL".asInstanceOf[ChannelMessageType]
+
+    @inline def values = js.Array(STANDARD, CONTROL)
+  }
+
+  @js.native
+  sealed trait ChannelMode extends js.Any
+  object ChannelMode {
+    val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[ChannelMode]
+    val RESTRICTED = "RESTRICTED".asInstanceOf[ChannelMode]
+
+    @inline def values = js.Array(UNRESTRICTED, RESTRICTED)
+  }
+
+  /** Returns the summary data for a moderated channel.
+    */
+  @js.native
+  trait ChannelModeratedByAppInstanceUserSummary extends js.Object {
+    var ChannelSummary: js.UndefOr[ChannelSummary]
+  }
+
+  object ChannelModeratedByAppInstanceUserSummary {
+    @inline
+    def apply(
+        ChannelSummary: js.UndefOr[ChannelSummary] = js.undefined
+    ): ChannelModeratedByAppInstanceUserSummary = {
+      val __obj = js.Dynamic.literal()
+      ChannelSummary.foreach(__v => __obj.updateDynamic("ChannelSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelModeratedByAppInstanceUserSummary]
+    }
+  }
+
+  /** Creates a moderator on a channel.
+    */
+  @js.native
+  trait ChannelModerator extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var CreatedBy: js.UndefOr[Identity]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var Moderator: js.UndefOr[Identity]
+  }
+
+  object ChannelModerator {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        CreatedBy: js.UndefOr[Identity] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Moderator: js.UndefOr[Identity] = js.undefined
+    ): ChannelModerator = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Moderator.foreach(__v => __obj.updateDynamic("Moderator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelModerator]
+    }
+  }
+
+  /** Summary data of the moderators in a channel.
+    */
+  @js.native
+  trait ChannelModeratorSummary extends js.Object {
+    var Moderator: js.UndefOr[Identity]
+  }
+
+  object ChannelModeratorSummary {
+    @inline
+    def apply(
+        Moderator: js.UndefOr[Identity] = js.undefined
+    ): ChannelModeratorSummary = {
+      val __obj = js.Dynamic.literal()
+      Moderator.foreach(__v => __obj.updateDynamic("Moderator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelModeratorSummary]
+    }
+  }
+
+  @js.native
+  sealed trait ChannelPrivacy extends js.Any
+  object ChannelPrivacy {
+    val PUBLIC = "PUBLIC".asInstanceOf[ChannelPrivacy]
+    val PRIVATE = "PRIVATE".asInstanceOf[ChannelPrivacy]
+
+    @inline def values = js.Array(PUBLIC, PRIVATE)
+  }
+
+  /** The retention settings for a channel.
+    */
+  @js.native
+  trait ChannelRetentionSettings extends js.Object {
+    var RetentionDays: js.UndefOr[RetentionDays]
+  }
+
+  object ChannelRetentionSettings {
+    @inline
+    def apply(
+        RetentionDays: js.UndefOr[RetentionDays] = js.undefined
+    ): ChannelRetentionSettings = {
+      val __obj = js.Dynamic.literal()
+      RetentionDays.foreach(__v => __obj.updateDynamic("RetentionDays")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelRetentionSettings]
+    }
+  }
+
+  /** The summary data for a channel.
+    */
+  @js.native
+  trait ChannelSummary extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var LastMessageTimestamp: js.UndefOr[Timestamp]
+    var Metadata: js.UndefOr[Metadata]
+    var Mode: js.UndefOr[ChannelMode]
+    var Name: js.UndefOr[NonEmptyResourceName]
+    var Privacy: js.UndefOr[ChannelPrivacy]
+  }
+
+  object ChannelSummary {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        LastMessageTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Mode: js.UndefOr[ChannelMode] = js.undefined,
+        Name: js.UndefOr[NonEmptyResourceName] = js.undefined,
+        Privacy: js.UndefOr[ChannelPrivacy] = js.undefined
+    ): ChannelSummary = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      LastMessageTimestamp.foreach(__v => __obj.updateDynamic("LastMessageTimestamp")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelSummary]
+    }
+  }
+
   /** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account.
     */
   @js.native
@@ -999,6 +1784,131 @@ package chime {
       val __obj = js.Dynamic.literal()
       Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccountResponse]
+    }
+  }
+
+  @js.native
+  trait CreateAppInstanceAdminRequest extends js.Object {
+    var AppInstanceAdminArn: ChimeArn
+    var AppInstanceArn: ChimeArn
+  }
+
+  object CreateAppInstanceAdminRequest {
+    @inline
+    def apply(
+        AppInstanceAdminArn: ChimeArn,
+        AppInstanceArn: ChimeArn
+    ): CreateAppInstanceAdminRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceAdminArn" -> AppInstanceAdminArn.asInstanceOf[js.Any],
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAppInstanceAdminRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAppInstanceAdminResponse extends js.Object {
+    var AppInstanceAdmin: js.UndefOr[Identity]
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+  }
+
+  object CreateAppInstanceAdminResponse {
+    @inline
+    def apply(
+        AppInstanceAdmin: js.UndefOr[Identity] = js.undefined,
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined
+    ): CreateAppInstanceAdminResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceAdmin.foreach(__v => __obj.updateDynamic("AppInstanceAdmin")(__v.asInstanceOf[js.Any]))
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppInstanceAdminResponse]
+    }
+  }
+
+  @js.native
+  trait CreateAppInstanceRequest extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var Name: NonEmptyResourceName
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object CreateAppInstanceRequest {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        Name: NonEmptyResourceName,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): CreateAppInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAppInstanceResponse extends js.Object {
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+  }
+
+  object CreateAppInstanceResponse {
+    @inline
+    def apply(
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined
+    ): CreateAppInstanceResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppInstanceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateAppInstanceUserRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var AppInstanceUserId: UserId
+    var ClientRequestToken: ClientRequestToken
+    var Name: UserName
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object CreateAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        AppInstanceUserId: UserId,
+        ClientRequestToken: ClientRequestToken,
+        Name: UserName,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): CreateAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any],
+        "AppInstanceUserId" -> AppInstanceUserId.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAppInstanceUserResponse extends js.Object {
+    var AppInstanceUserArn: js.UndefOr[ChimeArn]
+  }
+
+  object CreateAppInstanceUserResponse {
+    @inline
+    def apply(
+        AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined
+    ): CreateAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppInstanceUserResponse]
     }
   }
 
@@ -1126,6 +2036,220 @@ package chime {
       val __obj = js.Dynamic.literal()
       Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBotResponse]
+    }
+  }
+
+  @js.native
+  trait CreateChannelBanRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MemberArn: ChimeArn
+  }
+
+  object CreateChannelBanRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MemberArn: ChimeArn
+    ): CreateChannelBanRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MemberArn" -> MemberArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateChannelBanRequest]
+    }
+  }
+
+  @js.native
+  trait CreateChannelBanResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var Member: js.UndefOr[Identity]
+  }
+
+  object CreateChannelBanResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        Member: js.UndefOr[Identity] = js.undefined
+    ): CreateChannelBanResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelBanResponse]
+    }
+  }
+
+  @js.native
+  trait CreateChannelMembershipRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MemberArn: ChimeArn
+    var Type: ChannelMembershipType
+  }
+
+  object CreateChannelMembershipRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MemberArn: ChimeArn,
+        Type: ChannelMembershipType
+    ): CreateChannelMembershipRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MemberArn" -> MemberArn.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateChannelMembershipRequest]
+    }
+  }
+
+  @js.native
+  trait CreateChannelMembershipResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var Member: js.UndefOr[Identity]
+  }
+
+  object CreateChannelMembershipResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        Member: js.UndefOr[Identity] = js.undefined
+    ): CreateChannelMembershipResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelMembershipResponse]
+    }
+  }
+
+  @js.native
+  trait CreateChannelModeratorRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var ChannelModeratorArn: ChimeArn
+  }
+
+  object CreateChannelModeratorRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        ChannelModeratorArn: ChimeArn
+    ): CreateChannelModeratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "ChannelModeratorArn" -> ChannelModeratorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateChannelModeratorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateChannelModeratorResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var ChannelModerator: js.UndefOr[Identity]
+  }
+
+  object CreateChannelModeratorResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChannelModerator: js.UndefOr[Identity] = js.undefined
+    ): CreateChannelModeratorResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      ChannelModerator.foreach(__v => __obj.updateDynamic("ChannelModerator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelModeratorResponse]
+    }
+  }
+
+  @js.native
+  trait CreateChannelRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var ClientRequestToken: ClientRequestToken
+    var Name: NonEmptyResourceName
+    var Metadata: js.UndefOr[Metadata]
+    var Mode: js.UndefOr[ChannelMode]
+    var Privacy: js.UndefOr[ChannelPrivacy]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateChannelRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        ClientRequestToken: ClientRequestToken,
+        Name: NonEmptyResourceName,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Mode: js.UndefOr[ChannelMode] = js.undefined,
+        Privacy: js.UndefOr[ChannelPrivacy] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateChannelRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelRequest]
+    }
+  }
+
+  @js.native
+  trait CreateChannelResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+  }
+
+  object CreateChannelResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined
+    ): CreateChannelResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateChannelResponse]
+    }
+  }
+
+  @js.native
+  trait CreateMeetingDialOutRequest extends js.Object {
+    var FromPhoneNumber: E164PhoneNumber
+    var JoinToken: JoinTokenString
+    var MeetingId: GuidString
+    var ToPhoneNumber: E164PhoneNumber
+  }
+
+  object CreateMeetingDialOutRequest {
+    @inline
+    def apply(
+        FromPhoneNumber: E164PhoneNumber,
+        JoinToken: JoinTokenString,
+        MeetingId: GuidString,
+        ToPhoneNumber: E164PhoneNumber
+    ): CreateMeetingDialOutRequest = {
+      val __obj = js.Dynamic.literal(
+        "FromPhoneNumber" -> FromPhoneNumber.asInstanceOf[js.Any],
+        "JoinToken" -> JoinToken.asInstanceOf[js.Any],
+        "MeetingId" -> MeetingId.asInstanceOf[js.Any],
+        "ToPhoneNumber" -> ToPhoneNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateMeetingDialOutRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMeetingDialOutResponse extends js.Object {
+    var TransactionId: js.UndefOr[GuidString]
+  }
+
+  object CreateMeetingDialOutResponse {
+    @inline
+    def apply(
+        TransactionId: js.UndefOr[GuidString] = js.undefined
+    ): CreateMeetingDialOutResponse = {
+      val __obj = js.Dynamic.literal()
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMeetingDialOutResponse]
     }
   }
 
@@ -1411,6 +2535,132 @@ package chime {
   }
 
   @js.native
+  trait CreateSipMediaApplicationCallRequest extends js.Object {
+    var SipMediaApplicationId: NonEmptyString
+    var FromPhoneNumber: js.UndefOr[E164PhoneNumber]
+    var ToPhoneNumber: js.UndefOr[E164PhoneNumber]
+  }
+
+  object CreateSipMediaApplicationCallRequest {
+    @inline
+    def apply(
+        SipMediaApplicationId: NonEmptyString,
+        FromPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
+        ToPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+    ): CreateSipMediaApplicationCallRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+      )
+
+      FromPhoneNumber.foreach(__v => __obj.updateDynamic("FromPhoneNumber")(__v.asInstanceOf[js.Any]))
+      ToPhoneNumber.foreach(__v => __obj.updateDynamic("ToPhoneNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSipMediaApplicationCallRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSipMediaApplicationCallResponse extends js.Object {
+    var SipMediaApplicationCall: js.UndefOr[SipMediaApplicationCall]
+  }
+
+  object CreateSipMediaApplicationCallResponse {
+    @inline
+    def apply(
+        SipMediaApplicationCall: js.UndefOr[SipMediaApplicationCall] = js.undefined
+    ): CreateSipMediaApplicationCallResponse = {
+      val __obj = js.Dynamic.literal()
+      SipMediaApplicationCall.foreach(__v => __obj.updateDynamic("SipMediaApplicationCall")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSipMediaApplicationCallResponse]
+    }
+  }
+
+  @js.native
+  trait CreateSipMediaApplicationRequest extends js.Object {
+    var AwsRegion: String
+    var Endpoints: SipMediaApplicationEndpointList
+    var Name: js.UndefOr[SipMediaApplicationName]
+  }
+
+  object CreateSipMediaApplicationRequest {
+    @inline
+    def apply(
+        AwsRegion: String,
+        Endpoints: SipMediaApplicationEndpointList,
+        Name: js.UndefOr[SipMediaApplicationName] = js.undefined
+    ): CreateSipMediaApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsRegion" -> AwsRegion.asInstanceOf[js.Any],
+        "Endpoints" -> Endpoints.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSipMediaApplicationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSipMediaApplicationResponse extends js.Object {
+    var SipMediaApplication: js.UndefOr[SipMediaApplication]
+  }
+
+  object CreateSipMediaApplicationResponse {
+    @inline
+    def apply(
+        SipMediaApplication: js.UndefOr[SipMediaApplication] = js.undefined
+    ): CreateSipMediaApplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      SipMediaApplication.foreach(__v => __obj.updateDynamic("SipMediaApplication")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSipMediaApplicationResponse]
+    }
+  }
+
+  @js.native
+  trait CreateSipRuleRequest extends js.Object {
+    var Name: SipRuleName
+    var TargetApplications: SipRuleTargetApplicationList
+    var TriggerType: SipRuleTriggerType
+    var TriggerValue: NonEmptyString
+    var Disabled: js.UndefOr[NullableBoolean]
+  }
+
+  object CreateSipRuleRequest {
+    @inline
+    def apply(
+        Name: SipRuleName,
+        TargetApplications: SipRuleTargetApplicationList,
+        TriggerType: SipRuleTriggerType,
+        TriggerValue: NonEmptyString,
+        Disabled: js.UndefOr[NullableBoolean] = js.undefined
+    ): CreateSipRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "TargetApplications" -> TargetApplications.asInstanceOf[js.Any],
+        "TriggerType" -> TriggerType.asInstanceOf[js.Any],
+        "TriggerValue" -> TriggerValue.asInstanceOf[js.Any]
+      )
+
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSipRuleRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSipRuleResponse extends js.Object {
+    var SipRule: js.UndefOr[SipRule]
+  }
+
+  object CreateSipRuleResponse {
+    @inline
+    def apply(
+        SipRule: js.UndefOr[SipRule] = js.undefined
+    ): CreateSipRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      SipRule.foreach(__v => __obj.updateDynamic("SipRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSipRuleResponse]
+    }
+  }
+
+  @js.native
   trait CreateUserRequest extends js.Object {
     var AccountId: NonEmptyString
     var Email: js.UndefOr[EmailAddress]
@@ -1606,6 +2856,77 @@ package chime {
   }
 
   @js.native
+  trait DeleteAppInstanceAdminRequest extends js.Object {
+    var AppInstanceAdminArn: ChimeArn
+    var AppInstanceArn: ChimeArn
+  }
+
+  object DeleteAppInstanceAdminRequest {
+    @inline
+    def apply(
+        AppInstanceAdminArn: ChimeArn,
+        AppInstanceArn: ChimeArn
+    ): DeleteAppInstanceAdminRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceAdminArn" -> AppInstanceAdminArn.asInstanceOf[js.Any],
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAppInstanceAdminRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAppInstanceRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+  }
+
+  object DeleteAppInstanceRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn
+    ): DeleteAppInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAppInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAppInstanceStreamingConfigurationsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+  }
+
+  object DeleteAppInstanceStreamingConfigurationsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn
+    ): DeleteAppInstanceStreamingConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAppInstanceStreamingConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: ChimeArn
+  }
+
+  object DeleteAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: ChimeArn
+    ): DeleteAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
   trait DeleteAttendeeRequest extends js.Object {
     var AttendeeId: GuidString
     var MeetingId: GuidString
@@ -1622,6 +2943,103 @@ package chime {
         "MeetingId" -> MeetingId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteAttendeeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteChannelBanRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MemberArn: ChimeArn
+  }
+
+  object DeleteChannelBanRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MemberArn: ChimeArn
+    ): DeleteChannelBanRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MemberArn" -> MemberArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteChannelBanRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteChannelMembershipRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MemberArn: ChimeArn
+  }
+
+  object DeleteChannelMembershipRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MemberArn: ChimeArn
+    ): DeleteChannelMembershipRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MemberArn" -> MemberArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteChannelMembershipRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteChannelMessageRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MessageId: MessageId
+  }
+
+  object DeleteChannelMessageRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MessageId: MessageId
+    ): DeleteChannelMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MessageId" -> MessageId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteChannelMessageRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteChannelModeratorRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var ChannelModeratorArn: ChimeArn
+  }
+
+  object DeleteChannelModeratorRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        ChannelModeratorArn: ChimeArn
+    ): DeleteChannelModeratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "ChannelModeratorArn" -> ChannelModeratorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteChannelModeratorRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteChannelRequest extends js.Object {
+    var ChannelArn: ChimeArn
+  }
+
+  object DeleteChannelRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn
+    ): DeleteChannelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
 
@@ -1739,6 +3157,40 @@ package chime {
         "RoomId" -> RoomId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteRoomRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSipMediaApplicationRequest extends js.Object {
+    var SipMediaApplicationId: NonEmptyString
+  }
+
+  object DeleteSipMediaApplicationRequest {
+    @inline
+    def apply(
+        SipMediaApplicationId: NonEmptyString
+    ): DeleteSipMediaApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSipMediaApplicationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSipRuleRequest extends js.Object {
+    var SipRuleId: NonEmptyString
+  }
+
+  object DeleteSipRuleRequest {
+    @inline
+    def apply(
+        SipRuleId: NonEmptyString
+    ): DeleteSipRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipRuleId" -> SipRuleId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSipRuleRequest]
     }
   }
 
@@ -1878,6 +3330,321 @@ package chime {
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteVoiceConnectorTerminationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAppInstanceAdminRequest extends js.Object {
+    var AppInstanceAdminArn: ChimeArn
+    var AppInstanceArn: ChimeArn
+  }
+
+  object DescribeAppInstanceAdminRequest {
+    @inline
+    def apply(
+        AppInstanceAdminArn: ChimeArn,
+        AppInstanceArn: ChimeArn
+    ): DescribeAppInstanceAdminRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceAdminArn" -> AppInstanceAdminArn.asInstanceOf[js.Any],
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAppInstanceAdminRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAppInstanceAdminResponse extends js.Object {
+    var AppInstanceAdmin: js.UndefOr[AppInstanceAdmin]
+  }
+
+  object DescribeAppInstanceAdminResponse {
+    @inline
+    def apply(
+        AppInstanceAdmin: js.UndefOr[AppInstanceAdmin] = js.undefined
+    ): DescribeAppInstanceAdminResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceAdmin.foreach(__v => __obj.updateDynamic("AppInstanceAdmin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAppInstanceAdminResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAppInstanceRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+  }
+
+  object DescribeAppInstanceRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn
+    ): DescribeAppInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAppInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAppInstanceResponse extends js.Object {
+    var AppInstance: js.UndefOr[AppInstance]
+  }
+
+  object DescribeAppInstanceResponse {
+    @inline
+    def apply(
+        AppInstance: js.UndefOr[AppInstance] = js.undefined
+    ): DescribeAppInstanceResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstance.foreach(__v => __obj.updateDynamic("AppInstance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAppInstanceResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: ChimeArn
+  }
+
+  object DescribeAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: ChimeArn
+    ): DescribeAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAppInstanceUserResponse extends js.Object {
+    var AppInstanceUser: js.UndefOr[AppInstanceUser]
+  }
+
+  object DescribeAppInstanceUserResponse {
+    @inline
+    def apply(
+        AppInstanceUser: js.UndefOr[AppInstanceUser] = js.undefined
+    ): DescribeAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUser.foreach(__v => __obj.updateDynamic("AppInstanceUser")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAppInstanceUserResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelBanRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MemberArn: ChimeArn
+  }
+
+  object DescribeChannelBanRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MemberArn: ChimeArn
+    ): DescribeChannelBanRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MemberArn" -> MemberArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeChannelBanRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelBanResponse extends js.Object {
+    var ChannelBan: js.UndefOr[ChannelBan]
+  }
+
+  object DescribeChannelBanResponse {
+    @inline
+    def apply(
+        ChannelBan: js.UndefOr[ChannelBan] = js.undefined
+    ): DescribeChannelBanResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelBan.foreach(__v => __obj.updateDynamic("ChannelBan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelBanResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelMembershipForAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: ChimeArn
+    var ChannelArn: ChimeArn
+  }
+
+  object DescribeChannelMembershipForAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: ChimeArn,
+        ChannelArn: ChimeArn
+    ): DescribeChannelMembershipForAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any],
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeChannelMembershipForAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelMembershipForAppInstanceUserResponse extends js.Object {
+    var ChannelMembership: js.UndefOr[ChannelMembershipForAppInstanceUserSummary]
+  }
+
+  object DescribeChannelMembershipForAppInstanceUserResponse {
+    @inline
+    def apply(
+        ChannelMembership: js.UndefOr[ChannelMembershipForAppInstanceUserSummary] = js.undefined
+    ): DescribeChannelMembershipForAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelMembership.foreach(__v => __obj.updateDynamic("ChannelMembership")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelMembershipForAppInstanceUserResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelMembershipRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MemberArn: ChimeArn
+  }
+
+  object DescribeChannelMembershipRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MemberArn: ChimeArn
+    ): DescribeChannelMembershipRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MemberArn" -> MemberArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeChannelMembershipRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelMembershipResponse extends js.Object {
+    var ChannelMembership: js.UndefOr[ChannelMembership]
+  }
+
+  object DescribeChannelMembershipResponse {
+    @inline
+    def apply(
+        ChannelMembership: js.UndefOr[ChannelMembership] = js.undefined
+    ): DescribeChannelMembershipResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelMembership.foreach(__v => __obj.updateDynamic("ChannelMembership")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelMembershipResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelModeratedByAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: ChimeArn
+    var ChannelArn: ChimeArn
+  }
+
+  object DescribeChannelModeratedByAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: ChimeArn,
+        ChannelArn: ChimeArn
+    ): DescribeChannelModeratedByAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any],
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeChannelModeratedByAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelModeratedByAppInstanceUserResponse extends js.Object {
+    var Channel: js.UndefOr[ChannelModeratedByAppInstanceUserSummary]
+  }
+
+  object DescribeChannelModeratedByAppInstanceUserResponse {
+    @inline
+    def apply(
+        Channel: js.UndefOr[ChannelModeratedByAppInstanceUserSummary] = js.undefined
+    ): DescribeChannelModeratedByAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      Channel.foreach(__v => __obj.updateDynamic("Channel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelModeratedByAppInstanceUserResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelModeratorRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var ChannelModeratorArn: ChimeArn
+  }
+
+  object DescribeChannelModeratorRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        ChannelModeratorArn: ChimeArn
+    ): DescribeChannelModeratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "ChannelModeratorArn" -> ChannelModeratorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeChannelModeratorRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelModeratorResponse extends js.Object {
+    var ChannelModerator: js.UndefOr[ChannelModerator]
+  }
+
+  object DescribeChannelModeratorResponse {
+    @inline
+    def apply(
+        ChannelModerator: js.UndefOr[ChannelModerator] = js.undefined
+    ): DescribeChannelModeratorResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelModerator.foreach(__v => __obj.updateDynamic("ChannelModerator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelModeratorResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelRequest extends js.Object {
+    var ChannelArn: ChimeArn
+  }
+
+  object DescribeChannelRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn
+    ): DescribeChannelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeChannelRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeChannelResponse extends js.Object {
+    var Channel: js.UndefOr[Channel]
+  }
+
+  object DescribeChannelResponse {
+    @inline
+    def apply(
+        Channel: js.UndefOr[Channel] = js.undefined
+    ): DescribeChannelResponse = {
+      val __obj = js.Dynamic.literal()
+      Channel.foreach(__v => __obj.updateDynamic("Channel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeChannelResponse]
     }
   }
 
@@ -2203,6 +3970,75 @@ package chime {
   }
 
   @js.native
+  trait GetAppInstanceRetentionSettingsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+  }
+
+  object GetAppInstanceRetentionSettingsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn
+    ): GetAppInstanceRetentionSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAppInstanceRetentionSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAppInstanceRetentionSettingsResponse extends js.Object {
+    var AppInstanceRetentionSettings: js.UndefOr[AppInstanceRetentionSettings]
+    var InitiateDeletionTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object GetAppInstanceRetentionSettingsResponse {
+    @inline
+    def apply(
+        AppInstanceRetentionSettings: js.UndefOr[AppInstanceRetentionSettings] = js.undefined,
+        InitiateDeletionTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): GetAppInstanceRetentionSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceRetentionSettings.foreach(__v => __obj.updateDynamic("AppInstanceRetentionSettings")(__v.asInstanceOf[js.Any]))
+      InitiateDeletionTimestamp.foreach(__v => __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppInstanceRetentionSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait GetAppInstanceStreamingConfigurationsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+  }
+
+  object GetAppInstanceStreamingConfigurationsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn
+    ): GetAppInstanceStreamingConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAppInstanceStreamingConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAppInstanceStreamingConfigurationsResponse extends js.Object {
+    var AppInstanceStreamingConfigurations: js.UndefOr[AppInstanceStreamingConfigurationList]
+  }
+
+  object GetAppInstanceStreamingConfigurationsResponse {
+    @inline
+    def apply(
+        AppInstanceStreamingConfigurations: js.UndefOr[AppInstanceStreamingConfigurationList] = js.undefined
+    ): GetAppInstanceStreamingConfigurationsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceStreamingConfigurations.foreach(__v => __obj.updateDynamic("AppInstanceStreamingConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAppInstanceStreamingConfigurationsResponse]
+    }
+  }
+
+  @js.native
   trait GetAttendeeRequest extends js.Object {
     var AttendeeId: GuidString
     var MeetingId: GuidString
@@ -2271,6 +4107,42 @@ package chime {
       val __obj = js.Dynamic.literal()
       Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBotResponse]
+    }
+  }
+
+  @js.native
+  trait GetChannelMessageRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MessageId: MessageId
+  }
+
+  object GetChannelMessageRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MessageId: MessageId
+    ): GetChannelMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MessageId" -> MessageId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetChannelMessageRequest]
+    }
+  }
+
+  @js.native
+  trait GetChannelMessageResponse extends js.Object {
+    var ChannelMessage: js.UndefOr[ChannelMessage]
+  }
+
+  object GetChannelMessageResponse {
+    @inline
+    def apply(
+        ChannelMessage: js.UndefOr[ChannelMessage] = js.undefined
+    ): GetChannelMessageResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelMessage.foreach(__v => __obj.updateDynamic("ChannelMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetChannelMessageResponse]
     }
   }
 
@@ -2359,6 +4231,33 @@ package chime {
       val __obj = js.Dynamic.literal()
       Meeting.foreach(__v => __obj.updateDynamic("Meeting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMeetingResponse]
+    }
+  }
+
+  @js.native
+  trait GetMessagingSessionEndpointRequest extends js.Object
+
+  object GetMessagingSessionEndpointRequest {
+    @inline
+    def apply(): GetMessagingSessionEndpointRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetMessagingSessionEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait GetMessagingSessionEndpointResponse extends js.Object {
+    var Endpoint: js.UndefOr[MessagingSessionEndpoint]
+  }
+
+  object GetMessagingSessionEndpointResponse {
+    @inline
+    def apply(
+        Endpoint: js.UndefOr[MessagingSessionEndpoint] = js.undefined
+    ): GetMessagingSessionEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMessagingSessionEndpointResponse]
     }
   }
 
@@ -2552,6 +4451,105 @@ package chime {
       val __obj = js.Dynamic.literal()
       Room.foreach(__v => __obj.updateDynamic("Room")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRoomResponse]
+    }
+  }
+
+  @js.native
+  trait GetSipMediaApplicationLoggingConfigurationRequest extends js.Object {
+    var SipMediaApplicationId: NonEmptyString
+  }
+
+  object GetSipMediaApplicationLoggingConfigurationRequest {
+    @inline
+    def apply(
+        SipMediaApplicationId: NonEmptyString
+    ): GetSipMediaApplicationLoggingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSipMediaApplicationLoggingConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetSipMediaApplicationLoggingConfigurationResponse extends js.Object {
+    var SipMediaApplicationLoggingConfiguration: js.UndefOr[SipMediaApplicationLoggingConfiguration]
+  }
+
+  object GetSipMediaApplicationLoggingConfigurationResponse {
+    @inline
+    def apply(
+        SipMediaApplicationLoggingConfiguration: js.UndefOr[SipMediaApplicationLoggingConfiguration] = js.undefined
+    ): GetSipMediaApplicationLoggingConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      SipMediaApplicationLoggingConfiguration.foreach(__v => __obj.updateDynamic("SipMediaApplicationLoggingConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSipMediaApplicationLoggingConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetSipMediaApplicationRequest extends js.Object {
+    var SipMediaApplicationId: NonEmptyString
+  }
+
+  object GetSipMediaApplicationRequest {
+    @inline
+    def apply(
+        SipMediaApplicationId: NonEmptyString
+    ): GetSipMediaApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSipMediaApplicationRequest]
+    }
+  }
+
+  @js.native
+  trait GetSipMediaApplicationResponse extends js.Object {
+    var SipMediaApplication: js.UndefOr[SipMediaApplication]
+  }
+
+  object GetSipMediaApplicationResponse {
+    @inline
+    def apply(
+        SipMediaApplication: js.UndefOr[SipMediaApplication] = js.undefined
+    ): GetSipMediaApplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      SipMediaApplication.foreach(__v => __obj.updateDynamic("SipMediaApplication")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSipMediaApplicationResponse]
+    }
+  }
+
+  @js.native
+  trait GetSipRuleRequest extends js.Object {
+    var SipRuleId: NonEmptyString
+  }
+
+  object GetSipRuleRequest {
+    @inline
+    def apply(
+        SipRuleId: NonEmptyString
+    ): GetSipRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipRuleId" -> SipRuleId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSipRuleRequest]
+    }
+  }
+
+  @js.native
+  trait GetSipRuleResponse extends js.Object {
+    var SipRule: js.UndefOr[SipRule]
+  }
+
+  object GetSipRuleResponse {
+    @inline
+    def apply(
+        SipRule: js.UndefOr[SipRule] = js.undefined
+    ): GetSipRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      SipRule.foreach(__v => __obj.updateDynamic("SipRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSipRuleResponse]
     }
   }
 
@@ -2924,6 +4922,27 @@ package chime {
     }
   }
 
+  /** The ARN and name of a user.
+    */
+  @js.native
+  trait Identity extends js.Object {
+    var Arn: js.UndefOr[ChimeArn]
+    var Name: js.UndefOr[ResourceName]
+  }
+
+  object Identity {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ChimeArn] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): Identity = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Identity]
+    }
+  }
+
   /** Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account.
     */
   @js.native
@@ -3057,6 +5076,136 @@ package chime {
   }
 
   @js.native
+  trait ListAppInstanceAdminsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppInstanceAdminsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppInstanceAdminsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppInstanceAdminsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAppInstanceAdminsResponse extends js.Object {
+    var AppInstanceAdmins: js.UndefOr[AppInstanceAdminList]
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppInstanceAdminsResponse {
+    @inline
+    def apply(
+        AppInstanceAdmins: js.UndefOr[AppInstanceAdminList] = js.undefined,
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppInstanceAdminsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceAdmins.foreach(__v => __obj.updateDynamic("AppInstanceAdmins")(__v.asInstanceOf[js.Any]))
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppInstanceAdminsResponse]
+    }
+  }
+
+  @js.native
+  trait ListAppInstanceUsersRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppInstanceUsersRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppInstanceUsersRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppInstanceUsersRequest]
+    }
+  }
+
+  @js.native
+  trait ListAppInstanceUsersResponse extends js.Object {
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+    var AppInstanceUsers: js.UndefOr[AppInstanceUserList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppInstanceUsersResponse {
+    @inline
+    def apply(
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined,
+        AppInstanceUsers: js.UndefOr[AppInstanceUserList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppInstanceUsersResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      AppInstanceUsers.foreach(__v => __obj.updateDynamic("AppInstanceUsers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppInstanceUsersResponse]
+    }
+  }
+
+  @js.native
+  trait ListAppInstancesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppInstancesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppInstancesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppInstancesRequest]
+    }
+  }
+
+  @js.native
+  trait ListAppInstancesResponse extends js.Object {
+    var AppInstances: js.UndefOr[AppInstanceList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppInstancesResponse {
+    @inline
+    def apply(
+        AppInstances: js.UndefOr[AppInstanceList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppInstancesResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstances.foreach(__v => __obj.updateDynamic("AppInstances")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppInstancesResponse]
+    }
+  }
+
+  @js.native
   trait ListAttendeeTagsRequest extends js.Object {
     var AttendeeId: GuidString
     var MeetingId: GuidString
@@ -3175,6 +5324,330 @@ package chime {
       Bots.foreach(__v => __obj.updateDynamic("Bots")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBotsResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelBansRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelBansRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelBansRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelBansRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelBansResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var ChannelBans: js.UndefOr[ChannelBanSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelBansResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChannelBans: js.UndefOr[ChannelBanSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelBansResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      ChannelBans.foreach(__v => __obj.updateDynamic("ChannelBans")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelBansResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelMembershipsForAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: js.UndefOr[ChimeArn]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelMembershipsForAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelMembershipsForAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelMembershipsForAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelMembershipsForAppInstanceUserResponse extends js.Object {
+    var ChannelMemberships: js.UndefOr[ChannelMembershipForAppInstanceUserSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelMembershipsForAppInstanceUserResponse {
+    @inline
+    def apply(
+        ChannelMemberships: js.UndefOr[ChannelMembershipForAppInstanceUserSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelMembershipsForAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelMemberships.foreach(__v => __obj.updateDynamic("ChannelMemberships")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelMembershipsForAppInstanceUserResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelMembershipsRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var Type: js.UndefOr[ChannelMembershipType]
+  }
+
+  object ListChannelMembershipsRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Type: js.UndefOr[ChannelMembershipType] = js.undefined
+    ): ListChannelMembershipsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelMembershipsRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelMembershipsResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var ChannelMemberships: js.UndefOr[ChannelMembershipSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelMembershipsResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChannelMemberships: js.UndefOr[ChannelMembershipSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelMembershipsResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      ChannelMemberships.foreach(__v => __obj.updateDynamic("ChannelMemberships")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelMembershipsResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelMessagesRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var NotAfter: js.UndefOr[Timestamp]
+    var NotBefore: js.UndefOr[Timestamp]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListChannelMessagesRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        NotAfter: js.UndefOr[Timestamp] = js.undefined,
+        NotBefore: js.UndefOr[Timestamp] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListChannelMessagesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
+      NotBefore.foreach(__v => __obj.updateDynamic("NotBefore")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelMessagesRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelMessagesResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var ChannelMessages: js.UndefOr[ChannelMessageSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelMessagesResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChannelMessages: js.UndefOr[ChannelMessageSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelMessagesResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      ChannelMessages.foreach(__v => __obj.updateDynamic("ChannelMessages")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelMessagesResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelModeratorsRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelModeratorsRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelModeratorsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelModeratorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelModeratorsResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var ChannelModerators: js.UndefOr[ChannelModeratorSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelModeratorsResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChannelModerators: js.UndefOr[ChannelModeratorSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelModeratorsResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      ChannelModerators.foreach(__v => __obj.updateDynamic("ChannelModerators")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelModeratorsResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelsModeratedByAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: js.UndefOr[ChimeArn]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelsModeratedByAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelsModeratedByAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsModeratedByAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelsModeratedByAppInstanceUserResponse extends js.Object {
+    var Channels: js.UndefOr[ChannelModeratedByAppInstanceUserSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelsModeratedByAppInstanceUserResponse {
+    @inline
+    def apply(
+        Channels: js.UndefOr[ChannelModeratedByAppInstanceUserSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelsModeratedByAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsModeratedByAppInstanceUserResponse]
+    }
+  }
+
+  @js.native
+  trait ListChannelsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var Privacy: js.UndefOr[ChannelPrivacy]
+  }
+
+  object ListChannelsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Privacy: js.UndefOr[ChannelPrivacy] = js.undefined
+    ): ListChannelsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelsResponse extends js.Object {
+    var Channels: js.UndefOr[ChannelSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListChannelsResponse {
+    @inline
+    def apply(
+        Channels: js.UndefOr[ChannelSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChannelsResponse = {
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsResponse]
     }
   }
 
@@ -3472,6 +5945,85 @@ package chime {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Rooms.foreach(__v => __obj.updateDynamic("Rooms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoomsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSipMediaApplicationsRequest extends js.Object {
+    var MaxResults: js.UndefOr[ResultMax]
+    var NextToken: js.UndefOr[NextTokenString]
+  }
+
+  object ListSipMediaApplicationsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ResultMax] = js.undefined,
+        NextToken: js.UndefOr[NextTokenString] = js.undefined
+    ): ListSipMediaApplicationsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSipMediaApplicationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSipMediaApplicationsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextTokenString]
+    var SipMediaApplications: js.UndefOr[SipMediaApplicationList]
+  }
+
+  object ListSipMediaApplicationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        SipMediaApplications: js.UndefOr[SipMediaApplicationList] = js.undefined
+    ): ListSipMediaApplicationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SipMediaApplications.foreach(__v => __obj.updateDynamic("SipMediaApplications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSipMediaApplicationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSipRulesRequest extends js.Object {
+    var MaxResults: js.UndefOr[ResultMax]
+    var NextToken: js.UndefOr[NextTokenString]
+    var SipMediaApplicationId: js.UndefOr[NonEmptyString]
+  }
+
+  object ListSipRulesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ResultMax] = js.undefined,
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        SipMediaApplicationId: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListSipRulesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SipMediaApplicationId.foreach(__v => __obj.updateDynamic("SipMediaApplicationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSipRulesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSipRulesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextTokenString]
+    var SipRules: js.UndefOr[SipRuleList]
+  }
+
+  object ListSipRulesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        SipRules: js.UndefOr[SipRuleList] = js.undefined
+    ): ListSipRulesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SipRules.foreach(__v => __obj.updateDynamic("SipRules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSipRulesResponse]
     }
   }
 
@@ -3884,6 +6436,24 @@ package chime {
     }
   }
 
+  /** The endpoint of a meeting session.
+    */
+  @js.native
+  trait MessagingSessionEndpoint extends js.Object {
+    var Url: js.UndefOr[UrlType]
+  }
+
+  object MessagingSessionEndpoint {
+    @inline
+    def apply(
+        Url: js.UndefOr[UrlType] = js.undefined
+    ): MessagingSessionEndpoint = {
+      val __obj = js.Dynamic.literal()
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MessagingSessionEndpoint]
+    }
+  }
+
   @js.native
   sealed trait NotificationTarget extends js.Any
   object NotificationTarget {
@@ -4097,8 +6667,9 @@ package chime {
     val UserId = "UserId".asInstanceOf[PhoneNumberAssociationName]
     val VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
     val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
+    val SipRuleId = "SipRuleId".asInstanceOf[PhoneNumberAssociationName]
 
-    @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId)
+    @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId, SipRuleId)
   }
 
   /** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.
@@ -4327,6 +6898,81 @@ package chime {
   }
 
   @js.native
+  trait PutAppInstanceRetentionSettingsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var AppInstanceRetentionSettings: AppInstanceRetentionSettings
+  }
+
+  object PutAppInstanceRetentionSettingsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        AppInstanceRetentionSettings: AppInstanceRetentionSettings
+    ): PutAppInstanceRetentionSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any],
+        "AppInstanceRetentionSettings" -> AppInstanceRetentionSettings.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutAppInstanceRetentionSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait PutAppInstanceRetentionSettingsResponse extends js.Object {
+    var AppInstanceRetentionSettings: js.UndefOr[AppInstanceRetentionSettings]
+    var InitiateDeletionTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object PutAppInstanceRetentionSettingsResponse {
+    @inline
+    def apply(
+        AppInstanceRetentionSettings: js.UndefOr[AppInstanceRetentionSettings] = js.undefined,
+        InitiateDeletionTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): PutAppInstanceRetentionSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceRetentionSettings.foreach(__v => __obj.updateDynamic("AppInstanceRetentionSettings")(__v.asInstanceOf[js.Any]))
+      InitiateDeletionTimestamp.foreach(__v => __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAppInstanceRetentionSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait PutAppInstanceStreamingConfigurationsRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var AppInstanceStreamingConfigurations: AppInstanceStreamingConfigurationList
+  }
+
+  object PutAppInstanceStreamingConfigurationsRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        AppInstanceStreamingConfigurations: AppInstanceStreamingConfigurationList
+    ): PutAppInstanceStreamingConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any],
+        "AppInstanceStreamingConfigurations" -> AppInstanceStreamingConfigurations.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutAppInstanceStreamingConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait PutAppInstanceStreamingConfigurationsResponse extends js.Object {
+    var AppInstanceStreamingConfigurations: js.UndefOr[AppInstanceStreamingConfigurationList]
+  }
+
+  object PutAppInstanceStreamingConfigurationsResponse {
+    @inline
+    def apply(
+        AppInstanceStreamingConfigurations: js.UndefOr[AppInstanceStreamingConfigurationList] = js.undefined
+    ): PutAppInstanceStreamingConfigurationsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceStreamingConfigurations.foreach(__v => __obj.updateDynamic("AppInstanceStreamingConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAppInstanceStreamingConfigurationsResponse]
+    }
+  }
+
+  @js.native
   trait PutEventsConfigurationRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
@@ -4405,6 +7051,43 @@ package chime {
       InitiateDeletionTimestamp.foreach(__v => __obj.updateDynamic("InitiateDeletionTimestamp")(__v.asInstanceOf[js.Any]))
       RetentionSettings.foreach(__v => __obj.updateDynamic("RetentionSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRetentionSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait PutSipMediaApplicationLoggingConfigurationRequest extends js.Object {
+    var SipMediaApplicationId: NonEmptyString
+    var SipMediaApplicationLoggingConfiguration: js.UndefOr[SipMediaApplicationLoggingConfiguration]
+  }
+
+  object PutSipMediaApplicationLoggingConfigurationRequest {
+    @inline
+    def apply(
+        SipMediaApplicationId: NonEmptyString,
+        SipMediaApplicationLoggingConfiguration: js.UndefOr[SipMediaApplicationLoggingConfiguration] = js.undefined
+    ): PutSipMediaApplicationLoggingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+      )
+
+      SipMediaApplicationLoggingConfiguration.foreach(__v => __obj.updateDynamic("SipMediaApplicationLoggingConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSipMediaApplicationLoggingConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutSipMediaApplicationLoggingConfigurationResponse extends js.Object {
+    var SipMediaApplicationLoggingConfiguration: js.UndefOr[SipMediaApplicationLoggingConfiguration]
+  }
+
+  object PutSipMediaApplicationLoggingConfigurationResponse {
+    @inline
+    def apply(
+        SipMediaApplicationLoggingConfiguration: js.UndefOr[SipMediaApplicationLoggingConfiguration] = js.undefined
+    ): PutSipMediaApplicationLoggingConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      SipMediaApplicationLoggingConfiguration.foreach(__v => __obj.updateDynamic("SipMediaApplicationLoggingConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSipMediaApplicationLoggingConfigurationResponse]
     }
   }
 
@@ -4652,6 +7335,45 @@ package chime {
       val __obj = js.Dynamic.literal()
       Termination.foreach(__v => __obj.updateDynamic("Termination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorTerminationResponse]
+    }
+  }
+
+  @js.native
+  trait RedactChannelMessageRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MessageId: MessageId
+  }
+
+  object RedactChannelMessageRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MessageId: MessageId
+    ): RedactChannelMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MessageId" -> MessageId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RedactChannelMessageRequest]
+    }
+  }
+
+  @js.native
+  trait RedactChannelMessageResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var MessageId: js.UndefOr[MessageId]
+  }
+
+  object RedactChannelMessageResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        MessageId: js.UndefOr[MessageId] = js.undefined
+    ): RedactChannelMessageResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedactChannelMessageResponse]
     }
   }
 
@@ -4999,6 +7721,58 @@ package chime {
     }
   }
 
+  @js.native
+  trait SendChannelMessageRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var ClientRequestToken: ClientRequestToken
+    var Content: NonEmptyContent
+    var Persistence: ChannelMessagePersistenceType
+    var Type: ChannelMessageType
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object SendChannelMessageRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        ClientRequestToken: ClientRequestToken,
+        Content: NonEmptyContent,
+        Persistence: ChannelMessagePersistenceType,
+        Type: ChannelMessageType,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): SendChannelMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
+        "Persistence" -> Persistence.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendChannelMessageRequest]
+    }
+  }
+
+  @js.native
+  trait SendChannelMessageResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var MessageId: js.UndefOr[MessageId]
+  }
+
+  object SendChannelMessageResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        MessageId: js.UndefOr[MessageId] = js.undefined
+    ): SendChannelMessageResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendChannelMessageResponse]
+    }
+  }
+
   /** An Active Directory (AD) group whose members are granted permission to act as delegates.
     */
   @js.native
@@ -5015,6 +7789,174 @@ package chime {
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigninDelegateGroup]
     }
+  }
+
+  /** The SIP media application details, including name and endpoints. An AWS account can have multiple SIP media applications.
+    */
+  @js.native
+  trait SipMediaApplication extends js.Object {
+    var AwsRegion: js.UndefOr[String]
+    var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var Endpoints: js.UndefOr[SipMediaApplicationEndpointList]
+    var Name: js.UndefOr[SipMediaApplicationName]
+    var SipMediaApplicationId: js.UndefOr[NonEmptyString]
+    var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
+  }
+
+  object SipMediaApplication {
+    @inline
+    def apply(
+        AwsRegion: js.UndefOr[String] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        Endpoints: js.UndefOr[SipMediaApplicationEndpointList] = js.undefined,
+        Name: js.UndefOr[SipMediaApplicationName] = js.undefined,
+        SipMediaApplicationId: js.UndefOr[NonEmptyString] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
+    ): SipMediaApplication = {
+      val __obj = js.Dynamic.literal()
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SipMediaApplicationId.foreach(__v => __obj.updateDynamic("SipMediaApplicationId")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SipMediaApplication]
+    }
+  }
+
+  /** A <code>Call</code> instance for a SIP media application.
+    */
+  @js.native
+  trait SipMediaApplicationCall extends js.Object {
+    var TransactionId: js.UndefOr[GuidString]
+  }
+
+  object SipMediaApplicationCall {
+    @inline
+    def apply(
+        TransactionId: js.UndefOr[GuidString] = js.undefined
+    ): SipMediaApplicationCall = {
+      val __obj = js.Dynamic.literal()
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SipMediaApplicationCall]
+    }
+  }
+
+  /** Endpoints to specify as part of a SIP media application.
+    */
+  @js.native
+  trait SipMediaApplicationEndpoint extends js.Object {
+    var LambdaArn: js.UndefOr[FunctionArn]
+  }
+
+  object SipMediaApplicationEndpoint {
+    @inline
+    def apply(
+        LambdaArn: js.UndefOr[FunctionArn] = js.undefined
+    ): SipMediaApplicationEndpoint = {
+      val __obj = js.Dynamic.literal()
+      LambdaArn.foreach(__v => __obj.updateDynamic("LambdaArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SipMediaApplicationEndpoint]
+    }
+  }
+
+  /** Logging configuration of the SIP media application.
+    */
+  @js.native
+  trait SipMediaApplicationLoggingConfiguration extends js.Object {
+    var EnableSipMediaApplicationMessageLogs: js.UndefOr[Boolean]
+  }
+
+  object SipMediaApplicationLoggingConfiguration {
+    @inline
+    def apply(
+        EnableSipMediaApplicationMessageLogs: js.UndefOr[Boolean] = js.undefined
+    ): SipMediaApplicationLoggingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EnableSipMediaApplicationMessageLogs.foreach(__v => __obj.updateDynamic("EnableSipMediaApplicationMessageLogs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SipMediaApplicationLoggingConfiguration]
+    }
+  }
+
+  /** The SIP rule details, including name, triggers, and target applications. An AWS account can have multiple SIP rules.
+    */
+  @js.native
+  trait SipRule extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Iso8601Timestamp]
+    var Disabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[SipRuleName]
+    var SipRuleId: js.UndefOr[NonEmptyString]
+    var TargetApplications: js.UndefOr[SipRuleTargetApplicationList]
+    var TriggerType: js.UndefOr[SipRuleTriggerType]
+    var TriggerValue: js.UndefOr[NonEmptyString]
+    var UpdatedTimestamp: js.UndefOr[Iso8601Timestamp]
+  }
+
+  object SipRule {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
+        Disabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[SipRuleName] = js.undefined,
+        SipRuleId: js.UndefOr[NonEmptyString] = js.undefined,
+        TargetApplications: js.UndefOr[SipRuleTargetApplicationList] = js.undefined,
+        TriggerType: js.UndefOr[SipRuleTriggerType] = js.undefined,
+        TriggerValue: js.UndefOr[NonEmptyString] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
+    ): SipRule = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SipRuleId.foreach(__v => __obj.updateDynamic("SipRuleId")(__v.asInstanceOf[js.Any]))
+      TargetApplications.foreach(__v => __obj.updateDynamic("TargetApplications")(__v.asInstanceOf[js.Any]))
+      TriggerType.foreach(__v => __obj.updateDynamic("TriggerType")(__v.asInstanceOf[js.Any]))
+      TriggerValue.foreach(__v => __obj.updateDynamic("TriggerValue")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SipRule]
+    }
+  }
+
+  /** Target SIP media application along with other details like priority and AWS Region to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
+    */
+  @js.native
+  trait SipRuleTargetApplication extends js.Object {
+    var AwsRegion: js.UndefOr[String]
+    var Priority: js.UndefOr[SipApplicationPriority]
+    var SipMediaApplicationId: js.UndefOr[NonEmptyString]
+  }
+
+  object SipRuleTargetApplication {
+    @inline
+    def apply(
+        AwsRegion: js.UndefOr[String] = js.undefined,
+        Priority: js.UndefOr[SipApplicationPriority] = js.undefined,
+        SipMediaApplicationId: js.UndefOr[NonEmptyString] = js.undefined
+    ): SipRuleTargetApplication = {
+      val __obj = js.Dynamic.literal()
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      SipMediaApplicationId.foreach(__v => __obj.updateDynamic("SipMediaApplicationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SipRuleTargetApplication]
+    }
+  }
+
+  @js.native
+  sealed trait SipRuleTriggerType extends js.Any
+  object SipRuleTriggerType {
+    val ToPhoneNumber = "ToPhoneNumber".asInstanceOf[SipRuleTriggerType]
+    val RequestUriHostname = "RequestUriHostname".asInstanceOf[SipRuleTriggerType]
+
+    @inline def values = js.Array(ToPhoneNumber, RequestUriHostname)
+  }
+
+  @js.native
+  sealed trait SortOrder extends js.Any
+  object SortOrder {
+    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
@@ -5355,6 +8297,86 @@ package chime {
   }
 
   @js.native
+  trait UpdateAppInstanceRequest extends js.Object {
+    var AppInstanceArn: ChimeArn
+    var Name: NonEmptyResourceName
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object UpdateAppInstanceRequest {
+    @inline
+    def apply(
+        AppInstanceArn: ChimeArn,
+        Name: NonEmptyResourceName,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): UpdateAppInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAppInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAppInstanceResponse extends js.Object {
+    var AppInstanceArn: js.UndefOr[ChimeArn]
+  }
+
+  object UpdateAppInstanceResponse {
+    @inline
+    def apply(
+        AppInstanceArn: js.UndefOr[ChimeArn] = js.undefined
+    ): UpdateAppInstanceResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceArn.foreach(__v => __obj.updateDynamic("AppInstanceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAppInstanceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateAppInstanceUserRequest extends js.Object {
+    var AppInstanceUserArn: ChimeArn
+    var Name: UserName
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object UpdateAppInstanceUserRequest {
+    @inline
+    def apply(
+        AppInstanceUserArn: ChimeArn,
+        Name: UserName,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): UpdateAppInstanceUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAppInstanceUserRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAppInstanceUserResponse extends js.Object {
+    var AppInstanceUserArn: js.UndefOr[ChimeArn]
+  }
+
+  object UpdateAppInstanceUserResponse {
+    @inline
+    def apply(
+        AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined
+    ): UpdateAppInstanceUserResponse = {
+      val __obj = js.Dynamic.literal()
+      AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAppInstanceUserResponse]
+    }
+  }
+
+  @js.native
   trait UpdateBotRequest extends js.Object {
     var AccountId: NonEmptyString
     var BotId: NonEmptyString
@@ -5391,6 +8413,128 @@ package chime {
       val __obj = js.Dynamic.literal()
       Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBotResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateChannelMessageRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var MessageId: MessageId
+    var Content: js.UndefOr[Content]
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object UpdateChannelMessageRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        MessageId: MessageId,
+        Content: js.UndefOr[Content] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): UpdateChannelMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "MessageId" -> MessageId.asInstanceOf[js.Any]
+      )
+
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelMessageRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateChannelMessageResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var MessageId: js.UndefOr[MessageId]
+  }
+
+  object UpdateChannelMessageResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        MessageId: js.UndefOr[MessageId] = js.undefined
+    ): UpdateChannelMessageResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelMessageResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateChannelReadMarkerRequest extends js.Object {
+    var ChannelArn: ChimeArn
+  }
+
+  object UpdateChannelReadMarkerRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn
+    ): UpdateChannelReadMarkerRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateChannelReadMarkerRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateChannelReadMarkerResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+  }
+
+  object UpdateChannelReadMarkerResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined
+    ): UpdateChannelReadMarkerResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelReadMarkerResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateChannelRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var Mode: ChannelMode
+    var Name: NonEmptyResourceName
+    var Metadata: js.UndefOr[Metadata]
+  }
+
+  object UpdateChannelRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        Mode: ChannelMode,
+        Name: NonEmptyResourceName,
+        Metadata: js.UndefOr[Metadata] = js.undefined
+    ): UpdateChannelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "Mode" -> Mode.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateChannelResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+  }
+
+  object UpdateChannelResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined
+    ): UpdateChannelResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateChannelResponse]
     }
   }
 
@@ -5620,6 +8764,89 @@ package chime {
       val __obj = js.Dynamic.literal()
       Room.foreach(__v => __obj.updateDynamic("Room")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRoomResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateSipMediaApplicationRequest extends js.Object {
+    var SipMediaApplicationId: NonEmptyString
+    var Endpoints: js.UndefOr[SipMediaApplicationEndpointList]
+    var Name: js.UndefOr[SipMediaApplicationName]
+  }
+
+  object UpdateSipMediaApplicationRequest {
+    @inline
+    def apply(
+        SipMediaApplicationId: NonEmptyString,
+        Endpoints: js.UndefOr[SipMediaApplicationEndpointList] = js.undefined,
+        Name: js.UndefOr[SipMediaApplicationName] = js.undefined
+    ): UpdateSipMediaApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+      )
+
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSipMediaApplicationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSipMediaApplicationResponse extends js.Object {
+    var SipMediaApplication: js.UndefOr[SipMediaApplication]
+  }
+
+  object UpdateSipMediaApplicationResponse {
+    @inline
+    def apply(
+        SipMediaApplication: js.UndefOr[SipMediaApplication] = js.undefined
+    ): UpdateSipMediaApplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      SipMediaApplication.foreach(__v => __obj.updateDynamic("SipMediaApplication")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSipMediaApplicationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateSipRuleRequest extends js.Object {
+    var Name: SipRuleName
+    var SipRuleId: NonEmptyString
+    var Disabled: js.UndefOr[NullableBoolean]
+    var TargetApplications: js.UndefOr[SipRuleTargetApplicationList]
+  }
+
+  object UpdateSipRuleRequest {
+    @inline
+    def apply(
+        Name: SipRuleName,
+        SipRuleId: NonEmptyString,
+        Disabled: js.UndefOr[NullableBoolean] = js.undefined,
+        TargetApplications: js.UndefOr[SipRuleTargetApplicationList] = js.undefined
+    ): UpdateSipRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SipRuleId" -> SipRuleId.asInstanceOf[js.Any]
+      )
+
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      TargetApplications.foreach(__v => __obj.updateDynamic("TargetApplications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSipRuleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSipRuleResponse extends js.Object {
+    var SipRule: js.UndefOr[SipRule]
+  }
+
+  object UpdateSipRuleResponse {
+    @inline
+    def apply(
+        SipRule: js.UndefOr[SipRule] = js.undefined
+    ): UpdateSipRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      SipRule.foreach(__v => __obj.updateDynamic("SipRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSipRuleResponse]
     }
   }
 

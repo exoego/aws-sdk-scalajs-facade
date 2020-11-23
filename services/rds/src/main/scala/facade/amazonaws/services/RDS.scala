@@ -848,7 +848,9 @@ package rds {
   }
 
   /** The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
-    * The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
+    * The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used.
+    * For more information about exporting CloudWatch Logs for Amazon RDS DB instances, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
+    * For more information about exporting CloudWatch Logs for Amazon Aurora DB clusters, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -1083,6 +1085,7 @@ package rds {
     var PreSignedUrl: js.UndefOr[String]
     var SourceRegion: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
+    var TargetCustomAvailabilityZone: js.UndefOr[String]
   }
 
   object CopyDBSnapshotMessage {
@@ -1095,7 +1098,8 @@ package rds {
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PreSignedUrl: js.UndefOr[String] = js.undefined,
         SourceRegion: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetCustomAvailabilityZone: js.UndefOr[String] = js.undefined
     ): CopyDBSnapshotMessage = {
       val __obj = js.Dynamic.literal(
         "SourceDBSnapshotIdentifier" -> SourceDBSnapshotIdentifier.asInstanceOf[js.Any],
@@ -1108,6 +1112,7 @@ package rds {
       PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetCustomAvailabilityZone.foreach(__v => __obj.updateDynamic("TargetCustomAvailabilityZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyDBSnapshotMessage]
     }
   }
@@ -1507,6 +1512,7 @@ package rds {
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NcharCharacterSetName: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional]
@@ -1558,6 +1564,7 @@ package rds {
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NcharCharacterSetName: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1608,6 +1615,7 @@ package rds {
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NcharCharacterSetName.foreach(__v => __obj.updateDynamic("NcharCharacterSetName")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -1646,6 +1654,7 @@ package rds {
     var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
     var Iops: js.UndefOr[IntegerOptional]
     var KmsKeyId: js.UndefOr[String]
+    var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
@@ -1683,6 +1692,7 @@ package rds {
         EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1719,6 +1729,7 @@ package rds {
       EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.updateDynamic("MaxAllocatedStorage")(__v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
@@ -2263,6 +2274,7 @@ package rds {
     var ScalingConfigurationInfo: js.UndefOr[ScalingConfigurationInfo]
     var Status: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[Boolean]
+    var TagList: js.UndefOr[TagList]
     var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
   }
 
@@ -2322,6 +2334,7 @@ package rds {
         ScalingConfigurationInfo: js.UndefOr[ScalingConfigurationInfo] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBCluster = {
       val __obj = js.Dynamic.literal()
@@ -2378,6 +2391,7 @@ package rds {
       ScalingConfigurationInfo.foreach(__v => __obj.updateDynamic("ScalingConfigurationInfo")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBCluster]
     }
@@ -2739,6 +2753,7 @@ package rds {
     var SourceDBClusterSnapshotArn: js.UndefOr[String]
     var Status: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[Boolean]
+    var TagList: js.UndefOr[TagList]
     var VpcId: js.UndefOr[String]
   }
 
@@ -2764,6 +2779,7 @@ package rds {
         SourceDBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshot = {
       val __obj = js.Dynamic.literal()
@@ -2786,6 +2802,7 @@ package rds {
       SourceDBClusterSnapshotArn.foreach(__v => __obj.updateDynamic("SourceDBClusterSnapshotArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterSnapshot]
     }
@@ -2871,6 +2888,7 @@ package rds {
     var SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
     var SupportedFeatureNames: js.UndefOr[FeatureNameList]
+    var SupportedNcharCharacterSets: js.UndefOr[SupportedCharacterSetsList]
     var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
     var SupportsGlobalDatabases: js.UndefOr[Boolean]
     var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
@@ -2893,6 +2911,7 @@ package rds {
         SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
         SupportedFeatureNames: js.UndefOr[FeatureNameList] = js.undefined,
+        SupportedNcharCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
         SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
         SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
         SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
@@ -2912,6 +2931,7 @@ package rds {
       SupportedCharacterSets.foreach(__v => __obj.updateDynamic("SupportedCharacterSets")(__v.asInstanceOf[js.Any]))
       SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
       SupportedFeatureNames.foreach(__v => __obj.updateDynamic("SupportedFeatureNames")(__v.asInstanceOf[js.Any]))
+      SupportedNcharCharacterSets.foreach(__v => __obj.updateDynamic("SupportedNcharCharacterSets")(__v.asInstanceOf[js.Any]))
       SupportedTimezones.foreach(__v => __obj.updateDynamic("SupportedTimezones")(__v.asInstanceOf[js.Any]))
       SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsLogExportsToCloudwatchLogs.foreach(__v => __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any]))
@@ -2986,6 +3006,7 @@ package rds {
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[Boolean]
+    var NcharCharacterSetName: js.UndefOr[String]
     var OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList]
     var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
     var PerformanceInsightsEnabled: js.UndefOr[BooleanOptional]
@@ -3004,6 +3025,7 @@ package rds {
     var StatusInfos: js.UndefOr[DBInstanceStatusInfoList]
     var StorageEncrypted: js.UndefOr[Boolean]
     var StorageType: js.UndefOr[String]
+    var TagList: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
     var Timezone: js.UndefOr[String]
     var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
@@ -3050,6 +3072,7 @@ package rds {
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        NcharCharacterSetName: js.UndefOr[String] = js.undefined,
         OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList] = js.undefined,
         PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
         PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3068,6 +3091,7 @@ package rds {
         StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
         Timezone: js.UndefOr[String] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
@@ -3111,6 +3135,7 @@ package rds {
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NcharCharacterSetName.foreach(__v => __obj.updateDynamic("NcharCharacterSetName")(__v.asInstanceOf[js.Any]))
       OptionGroupMemberships.foreach(__v => __obj.updateDynamic("OptionGroupMemberships")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsEnabled.foreach(__v => __obj.updateDynamic("PerformanceInsightsEnabled")(__v.asInstanceOf[js.Any]))
@@ -3129,6 +3154,7 @@ package rds {
       StatusInfos.foreach(__v => __obj.updateDynamic("StatusInfos")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -3693,6 +3719,7 @@ package rds {
     var SourceRegion: js.UndefOr[String]
     var Status: js.UndefOr[String]
     var StorageType: js.UndefOr[String]
+    var TagList: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
     var Timezone: js.UndefOr[String]
     var VpcId: js.UndefOr[String]
@@ -3726,6 +3753,7 @@ package rds {
         SourceRegion: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
         Timezone: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
@@ -3756,6 +3784,7 @@ package rds {
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
@@ -7972,6 +8001,10 @@ package rds {
     * * <code>DescribeDBInstances</code>
     * * <code>DescribeDBSnapshots</code>
     * * <code>DescribeValidDBInstanceModifications</code>
+    * If you call <code>DescribeDBInstances</code>, <code>ProcessorFeature</code> returns non-null values only if the following conditions are met:
+    * * You are accessing an Oracle DB instance.
+    * * Your Oracle DB instance class supports configuring the number of CPU cores and threads per core.
+    * * The current number CPU cores and threads is set to a non-default value.
     * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
     */
   @js.native
@@ -9074,6 +9107,7 @@ package rds {
     var LicenseModel: js.UndefOr[String]
     var MasterUserPassword: js.UndefOr[String]
     var MasterUsername: js.UndefOr[String]
+    var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
@@ -9122,6 +9156,7 @@ package rds {
         LicenseModel: js.UndefOr[String] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
@@ -9169,6 +9204,7 @@ package rds {
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.updateDynamic("MaxAllocatedStorage")(__v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
@@ -9226,6 +9262,7 @@ package rds {
     var Engine: js.UndefOr[String]
     var Iops: js.UndefOr[IntegerOptional]
     var LicenseModel: js.UndefOr[String]
+    var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MultiAZ: js.UndefOr[BooleanOptional]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
@@ -9262,6 +9299,7 @@ package rds {
         Engine: js.UndefOr[String] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         LicenseModel: js.UndefOr[String] = js.undefined,
+        MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
@@ -9297,6 +9335,7 @@ package rds {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      MaxAllocatedStorage.foreach(__v => __obj.updateDynamic("MaxAllocatedStorage")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))

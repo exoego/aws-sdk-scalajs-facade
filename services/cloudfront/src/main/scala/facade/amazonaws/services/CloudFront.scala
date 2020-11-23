@@ -20,11 +20,15 @@ package object cloudfront {
   type DistributionIdListSummary = js.Array[String]
   type DistributionSummaryList = js.Array[DistributionSummary]
   type EncryptionEntityList = js.Array[EncryptionEntity]
+  type EndPointList = js.Array[EndPoint]
   type FieldLevelEncryptionProfileSummaryList = js.Array[FieldLevelEncryptionProfileSummary]
   type FieldLevelEncryptionSummaryList = js.Array[FieldLevelEncryptionSummary]
+  type FieldList = js.Array[String]
   type FieldPatternList = js.Array[String]
   type HeaderList = js.Array[String]
   type InvalidationSummaryList = js.Array[InvalidationSummary]
+  type KGKeyPairIdsList = js.Array[KGKeyPairIds]
+  type KeyGroupSummaryList = js.Array[KeyGroupSummary]
   type KeyPairIdList = js.Array[String]
   type LambdaFunctionARN = String
   type LambdaFunctionAssociationList = js.Array[LambdaFunctionAssociation]
@@ -35,11 +39,14 @@ package object cloudfront {
   type OriginGroupMemberList = js.Array[OriginGroupMember]
   type OriginList = js.Array[Origin]
   type OriginRequestPolicySummaryList = js.Array[OriginRequestPolicySummary]
+  type OriginShieldRegion = String
   type PathList = js.Array[String]
+  type PublicKeyIdList = js.Array[String]
   type PublicKeySummaryList = js.Array[PublicKeySummary]
   type QueryArgProfileList = js.Array[QueryArgProfile]
   type QueryStringCacheKeysList = js.Array[String]
   type QueryStringNamesList = js.Array[String]
+  type RealtimeLogConfigList = js.Array[RealtimeLogConfig]
   type ResourceARN = String
   type SignerList = js.Array[Signer]
   type SslProtocolsList = js.Array[SslProtocol]
@@ -49,6 +56,7 @@ package object cloudfront {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TrustedKeyGroupIdList = js.Array[String]
   type timestamp = js.Date
 
   implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
@@ -60,8 +68,11 @@ package object cloudfront {
     @inline def createFieldLevelEncryptionConfigFuture(params: CreateFieldLevelEncryptionConfigRequest): Future[CreateFieldLevelEncryptionConfigResult] = service.createFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def createFieldLevelEncryptionProfileFuture(params: CreateFieldLevelEncryptionProfileRequest): Future[CreateFieldLevelEncryptionProfileResult] = service.createFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def createInvalidationFuture(params: CreateInvalidationRequest): Future[CreateInvalidationResult] = service.createInvalidation(params).promise().toFuture
+    @inline def createKeyGroupFuture(params: CreateKeyGroupRequest): Future[CreateKeyGroupResult] = service.createKeyGroup(params).promise().toFuture
+    @inline def createMonitoringSubscriptionFuture(params: CreateMonitoringSubscriptionRequest): Future[CreateMonitoringSubscriptionResult] = service.createMonitoringSubscription(params).promise().toFuture
     @inline def createOriginRequestPolicyFuture(params: CreateOriginRequestPolicyRequest): Future[CreateOriginRequestPolicyResult] = service.createOriginRequestPolicy(params).promise().toFuture
     @inline def createPublicKeyFuture(params: CreatePublicKeyRequest): Future[CreatePublicKeyResult] = service.createPublicKey(params).promise().toFuture
+    @inline def createRealtimeLogConfigFuture(params: CreateRealtimeLogConfigRequest): Future[CreateRealtimeLogConfigResult] = service.createRealtimeLogConfig(params).promise().toFuture
     @inline def createStreamingDistributionFuture(params: CreateStreamingDistributionRequest): Future[CreateStreamingDistributionResult] = service.createStreamingDistribution(params).promise().toFuture
     @inline def createStreamingDistributionWithTagsFuture(params: CreateStreamingDistributionWithTagsRequest): Future[CreateStreamingDistributionWithTagsResult] = service.createStreamingDistributionWithTags(params).promise().toFuture
     @inline def deleteCachePolicyFuture(params: DeleteCachePolicyRequest): Future[js.Object] = service.deleteCachePolicy(params).promise().toFuture
@@ -69,8 +80,11 @@ package object cloudfront {
     @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[js.Object] = service.deleteDistribution(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionConfigFuture(params: DeleteFieldLevelEncryptionConfigRequest): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionProfileFuture(params: DeleteFieldLevelEncryptionProfileRequest): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def deleteKeyGroupFuture(params: DeleteKeyGroupRequest): Future[js.Object] = service.deleteKeyGroup(params).promise().toFuture
+    @inline def deleteMonitoringSubscriptionFuture(params: DeleteMonitoringSubscriptionRequest): Future[DeleteMonitoringSubscriptionResult] = service.deleteMonitoringSubscription(params).promise().toFuture
     @inline def deleteOriginRequestPolicyFuture(params: DeleteOriginRequestPolicyRequest): Future[js.Object] = service.deleteOriginRequestPolicy(params).promise().toFuture
     @inline def deletePublicKeyFuture(params: DeletePublicKeyRequest): Future[js.Object] = service.deletePublicKey(params).promise().toFuture
+    @inline def deleteRealtimeLogConfigFuture(params: DeleteRealtimeLogConfigRequest): Future[js.Object] = service.deleteRealtimeLogConfig(params).promise().toFuture
     @inline def deleteStreamingDistributionFuture(params: DeleteStreamingDistributionRequest): Future[js.Object] = service.deleteStreamingDistribution(params).promise().toFuture
     @inline def getCachePolicyConfigFuture(params: GetCachePolicyConfigRequest): Future[GetCachePolicyConfigResult] = service.getCachePolicyConfig(params).promise().toFuture
     @inline def getCachePolicyFuture(params: GetCachePolicyRequest): Future[GetCachePolicyResult] = service.getCachePolicy(params).promise().toFuture
@@ -83,23 +97,31 @@ package object cloudfront {
     @inline def getFieldLevelEncryptionProfileConfigFuture(params: GetFieldLevelEncryptionProfileConfigRequest): Future[GetFieldLevelEncryptionProfileConfigResult] = service.getFieldLevelEncryptionProfileConfig(params).promise().toFuture
     @inline def getFieldLevelEncryptionProfileFuture(params: GetFieldLevelEncryptionProfileRequest): Future[GetFieldLevelEncryptionProfileResult] = service.getFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def getInvalidationFuture(params: GetInvalidationRequest): Future[GetInvalidationResult] = service.getInvalidation(params).promise().toFuture
+    @inline def getKeyGroupConfigFuture(params: GetKeyGroupConfigRequest): Future[GetKeyGroupConfigResult] = service.getKeyGroupConfig(params).promise().toFuture
+    @inline def getKeyGroupFuture(params: GetKeyGroupRequest): Future[GetKeyGroupResult] = service.getKeyGroup(params).promise().toFuture
+    @inline def getMonitoringSubscriptionFuture(params: GetMonitoringSubscriptionRequest): Future[GetMonitoringSubscriptionResult] = service.getMonitoringSubscription(params).promise().toFuture
     @inline def getOriginRequestPolicyConfigFuture(params: GetOriginRequestPolicyConfigRequest): Future[GetOriginRequestPolicyConfigResult] = service.getOriginRequestPolicyConfig(params).promise().toFuture
     @inline def getOriginRequestPolicyFuture(params: GetOriginRequestPolicyRequest): Future[GetOriginRequestPolicyResult] = service.getOriginRequestPolicy(params).promise().toFuture
     @inline def getPublicKeyConfigFuture(params: GetPublicKeyConfigRequest): Future[GetPublicKeyConfigResult] = service.getPublicKeyConfig(params).promise().toFuture
     @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResult] = service.getPublicKey(params).promise().toFuture
+    @inline def getRealtimeLogConfigFuture(params: GetRealtimeLogConfigRequest): Future[GetRealtimeLogConfigResult] = service.getRealtimeLogConfig(params).promise().toFuture
     @inline def getStreamingDistributionConfigFuture(params: GetStreamingDistributionConfigRequest): Future[GetStreamingDistributionConfigResult] = service.getStreamingDistributionConfig(params).promise().toFuture
     @inline def getStreamingDistributionFuture(params: GetStreamingDistributionRequest): Future[GetStreamingDistributionResult] = service.getStreamingDistribution(params).promise().toFuture
     @inline def listCachePoliciesFuture(params: ListCachePoliciesRequest): Future[ListCachePoliciesResult] = service.listCachePolicies(params).promise().toFuture
     @inline def listCloudFrontOriginAccessIdentitiesFuture(params: ListCloudFrontOriginAccessIdentitiesRequest): Future[ListCloudFrontOriginAccessIdentitiesResult] = service.listCloudFrontOriginAccessIdentities(params).promise().toFuture
     @inline def listDistributionsByCachePolicyIdFuture(params: ListDistributionsByCachePolicyIdRequest): Future[ListDistributionsByCachePolicyIdResult] = service.listDistributionsByCachePolicyId(params).promise().toFuture
+    @inline def listDistributionsByKeyGroupFuture(params: ListDistributionsByKeyGroupRequest): Future[ListDistributionsByKeyGroupResult] = service.listDistributionsByKeyGroup(params).promise().toFuture
     @inline def listDistributionsByOriginRequestPolicyIdFuture(params: ListDistributionsByOriginRequestPolicyIdRequest): Future[ListDistributionsByOriginRequestPolicyIdResult] = service.listDistributionsByOriginRequestPolicyId(params).promise().toFuture
+    @inline def listDistributionsByRealtimeLogConfigFuture(params: ListDistributionsByRealtimeLogConfigRequest): Future[ListDistributionsByRealtimeLogConfigResult] = service.listDistributionsByRealtimeLogConfig(params).promise().toFuture
     @inline def listDistributionsByWebACLIdFuture(params: ListDistributionsByWebACLIdRequest): Future[ListDistributionsByWebACLIdResult] = service.listDistributionsByWebACLId(params).promise().toFuture
     @inline def listDistributionsFuture(params: ListDistributionsRequest): Future[ListDistributionsResult] = service.listDistributions(params).promise().toFuture
     @inline def listFieldLevelEncryptionConfigsFuture(params: ListFieldLevelEncryptionConfigsRequest): Future[ListFieldLevelEncryptionConfigsResult] = service.listFieldLevelEncryptionConfigs(params).promise().toFuture
     @inline def listFieldLevelEncryptionProfilesFuture(params: ListFieldLevelEncryptionProfilesRequest): Future[ListFieldLevelEncryptionProfilesResult] = service.listFieldLevelEncryptionProfiles(params).promise().toFuture
     @inline def listInvalidationsFuture(params: ListInvalidationsRequest): Future[ListInvalidationsResult] = service.listInvalidations(params).promise().toFuture
+    @inline def listKeyGroupsFuture(params: ListKeyGroupsRequest): Future[ListKeyGroupsResult] = service.listKeyGroups(params).promise().toFuture
     @inline def listOriginRequestPoliciesFuture(params: ListOriginRequestPoliciesRequest): Future[ListOriginRequestPoliciesResult] = service.listOriginRequestPolicies(params).promise().toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResult] = service.listPublicKeys(params).promise().toFuture
+    @inline def listRealtimeLogConfigsFuture(params: ListRealtimeLogConfigsRequest): Future[ListRealtimeLogConfigsResult] = service.listRealtimeLogConfigs(params).promise().toFuture
     @inline def listStreamingDistributionsFuture(params: ListStreamingDistributionsRequest): Future[ListStreamingDistributionsResult] = service.listStreamingDistributions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
@@ -109,8 +131,10 @@ package object cloudfront {
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
     @inline def updateFieldLevelEncryptionConfigFuture(params: UpdateFieldLevelEncryptionConfigRequest): Future[UpdateFieldLevelEncryptionConfigResult] = service.updateFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def updateFieldLevelEncryptionProfileFuture(params: UpdateFieldLevelEncryptionProfileRequest): Future[UpdateFieldLevelEncryptionProfileResult] = service.updateFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def updateKeyGroupFuture(params: UpdateKeyGroupRequest): Future[UpdateKeyGroupResult] = service.updateKeyGroup(params).promise().toFuture
     @inline def updateOriginRequestPolicyFuture(params: UpdateOriginRequestPolicyRequest): Future[UpdateOriginRequestPolicyResult] = service.updateOriginRequestPolicy(params).promise().toFuture
     @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] = service.updatePublicKey(params).promise().toFuture
+    @inline def updateRealtimeLogConfigFuture(params: UpdateRealtimeLogConfigRequest): Future[UpdateRealtimeLogConfigResult] = service.updateRealtimeLogConfig(params).promise().toFuture
     @inline def updateStreamingDistributionFuture(params: UpdateStreamingDistributionRequest): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
 
   }
@@ -129,8 +153,11 @@ package cloudfront {
     def createFieldLevelEncryptionConfig(params: CreateFieldLevelEncryptionConfigRequest): Request[CreateFieldLevelEncryptionConfigResult] = js.native
     def createFieldLevelEncryptionProfile(params: CreateFieldLevelEncryptionProfileRequest): Request[CreateFieldLevelEncryptionProfileResult] = js.native
     def createInvalidation(params: CreateInvalidationRequest): Request[CreateInvalidationResult] = js.native
+    def createKeyGroup(params: CreateKeyGroupRequest): Request[CreateKeyGroupResult] = js.native
+    def createMonitoringSubscription(params: CreateMonitoringSubscriptionRequest): Request[CreateMonitoringSubscriptionResult] = js.native
     def createOriginRequestPolicy(params: CreateOriginRequestPolicyRequest): Request[CreateOriginRequestPolicyResult] = js.native
     def createPublicKey(params: CreatePublicKeyRequest): Request[CreatePublicKeyResult] = js.native
+    def createRealtimeLogConfig(params: CreateRealtimeLogConfigRequest): Request[CreateRealtimeLogConfigResult] = js.native
     def createStreamingDistribution(params: CreateStreamingDistributionRequest): Request[CreateStreamingDistributionResult] = js.native
     def createStreamingDistributionWithTags(params: CreateStreamingDistributionWithTagsRequest): Request[CreateStreamingDistributionWithTagsResult] = js.native
     def deleteCachePolicy(params: DeleteCachePolicyRequest): Request[js.Object] = js.native
@@ -138,8 +165,11 @@ package cloudfront {
     def deleteDistribution(params: DeleteDistributionRequest): Request[js.Object] = js.native
     def deleteFieldLevelEncryptionConfig(params: DeleteFieldLevelEncryptionConfigRequest): Request[js.Object] = js.native
     def deleteFieldLevelEncryptionProfile(params: DeleteFieldLevelEncryptionProfileRequest): Request[js.Object] = js.native
+    def deleteKeyGroup(params: DeleteKeyGroupRequest): Request[js.Object] = js.native
+    def deleteMonitoringSubscription(params: DeleteMonitoringSubscriptionRequest): Request[DeleteMonitoringSubscriptionResult] = js.native
     def deleteOriginRequestPolicy(params: DeleteOriginRequestPolicyRequest): Request[js.Object] = js.native
     def deletePublicKey(params: DeletePublicKeyRequest): Request[js.Object] = js.native
+    def deleteRealtimeLogConfig(params: DeleteRealtimeLogConfigRequest): Request[js.Object] = js.native
     def deleteStreamingDistribution(params: DeleteStreamingDistributionRequest): Request[js.Object] = js.native
     def getCachePolicy(params: GetCachePolicyRequest): Request[GetCachePolicyResult] = js.native
     def getCachePolicyConfig(params: GetCachePolicyConfigRequest): Request[GetCachePolicyConfigResult] = js.native
@@ -152,23 +182,31 @@ package cloudfront {
     def getFieldLevelEncryptionProfile(params: GetFieldLevelEncryptionProfileRequest): Request[GetFieldLevelEncryptionProfileResult] = js.native
     def getFieldLevelEncryptionProfileConfig(params: GetFieldLevelEncryptionProfileConfigRequest): Request[GetFieldLevelEncryptionProfileConfigResult] = js.native
     def getInvalidation(params: GetInvalidationRequest): Request[GetInvalidationResult] = js.native
+    def getKeyGroup(params: GetKeyGroupRequest): Request[GetKeyGroupResult] = js.native
+    def getKeyGroupConfig(params: GetKeyGroupConfigRequest): Request[GetKeyGroupConfigResult] = js.native
+    def getMonitoringSubscription(params: GetMonitoringSubscriptionRequest): Request[GetMonitoringSubscriptionResult] = js.native
     def getOriginRequestPolicy(params: GetOriginRequestPolicyRequest): Request[GetOriginRequestPolicyResult] = js.native
     def getOriginRequestPolicyConfig(params: GetOriginRequestPolicyConfigRequest): Request[GetOriginRequestPolicyConfigResult] = js.native
     def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResult] = js.native
     def getPublicKeyConfig(params: GetPublicKeyConfigRequest): Request[GetPublicKeyConfigResult] = js.native
+    def getRealtimeLogConfig(params: GetRealtimeLogConfigRequest): Request[GetRealtimeLogConfigResult] = js.native
     def getStreamingDistribution(params: GetStreamingDistributionRequest): Request[GetStreamingDistributionResult] = js.native
     def getStreamingDistributionConfig(params: GetStreamingDistributionConfigRequest): Request[GetStreamingDistributionConfigResult] = js.native
     def listCachePolicies(params: ListCachePoliciesRequest): Request[ListCachePoliciesResult] = js.native
     def listCloudFrontOriginAccessIdentities(params: ListCloudFrontOriginAccessIdentitiesRequest): Request[ListCloudFrontOriginAccessIdentitiesResult] = js.native
     def listDistributions(params: ListDistributionsRequest): Request[ListDistributionsResult] = js.native
     def listDistributionsByCachePolicyId(params: ListDistributionsByCachePolicyIdRequest): Request[ListDistributionsByCachePolicyIdResult] = js.native
+    def listDistributionsByKeyGroup(params: ListDistributionsByKeyGroupRequest): Request[ListDistributionsByKeyGroupResult] = js.native
     def listDistributionsByOriginRequestPolicyId(params: ListDistributionsByOriginRequestPolicyIdRequest): Request[ListDistributionsByOriginRequestPolicyIdResult] = js.native
+    def listDistributionsByRealtimeLogConfig(params: ListDistributionsByRealtimeLogConfigRequest): Request[ListDistributionsByRealtimeLogConfigResult] = js.native
     def listDistributionsByWebACLId(params: ListDistributionsByWebACLIdRequest): Request[ListDistributionsByWebACLIdResult] = js.native
     def listFieldLevelEncryptionConfigs(params: ListFieldLevelEncryptionConfigsRequest): Request[ListFieldLevelEncryptionConfigsResult] = js.native
     def listFieldLevelEncryptionProfiles(params: ListFieldLevelEncryptionProfilesRequest): Request[ListFieldLevelEncryptionProfilesResult] = js.native
     def listInvalidations(params: ListInvalidationsRequest): Request[ListInvalidationsResult] = js.native
+    def listKeyGroups(params: ListKeyGroupsRequest): Request[ListKeyGroupsResult] = js.native
     def listOriginRequestPolicies(params: ListOriginRequestPoliciesRequest): Request[ListOriginRequestPoliciesResult] = js.native
     def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResult] = js.native
+    def listRealtimeLogConfigs(params: ListRealtimeLogConfigsRequest): Request[ListRealtimeLogConfigsResult] = js.native
     def listStreamingDistributions(params: ListStreamingDistributionsRequest): Request[ListStreamingDistributionsResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
@@ -178,14 +216,40 @@ package cloudfront {
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
     def updateFieldLevelEncryptionConfig(params: UpdateFieldLevelEncryptionConfigRequest): Request[UpdateFieldLevelEncryptionConfigResult] = js.native
     def updateFieldLevelEncryptionProfile(params: UpdateFieldLevelEncryptionProfileRequest): Request[UpdateFieldLevelEncryptionProfileResult] = js.native
+    def updateKeyGroup(params: UpdateKeyGroupRequest): Request[UpdateKeyGroupResult] = js.native
     def updateOriginRequestPolicy(params: UpdateOriginRequestPolicyRequest): Request[UpdateOriginRequestPolicyResult] = js.native
     def updatePublicKey(params: UpdatePublicKeyRequest): Request[UpdatePublicKeyResult] = js.native
+    def updateRealtimeLogConfig(params: UpdateRealtimeLogConfigRequest): Request[UpdateRealtimeLogConfigResult] = js.native
     def updateStreamingDistribution(params: UpdateStreamingDistributionRequest): Request[UpdateStreamingDistributionResult] = js.native
   }
 
-  /** A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code> complex type for this distribution. These are the accounts that you want to allow to create signed URLs for private content.
-    * The <code>Signer</code> complex type lists the AWS account number of the trusted signer or <code>self</code> if the signer is the AWS account that created the distribution. The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create signed URLs.
-    * For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i>Amazon CloudFront Developer Guide</i>.
+  /** A list of key groups, and the public keys in each key group, that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+    */
+  @js.native
+  trait ActiveTrustedKeyGroups extends js.Object {
+    var Enabled: Boolean
+    var Quantity: Int
+    var Items: js.UndefOr[KGKeyPairIdsList]
+  }
+
+  object ActiveTrustedKeyGroups {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        Quantity: Int,
+        Items: js.UndefOr[KGKeyPairIdsList] = js.undefined
+    ): ActiveTrustedKeyGroups = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActiveTrustedKeyGroups]
+    }
+  }
+
+  /** A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
   trait ActiveTrustedSigners extends js.Object {
@@ -298,7 +362,6 @@ package cloudfront {
   trait CacheBehavior extends js.Object {
     var PathPattern: String
     var TargetOriginId: String
-    var TrustedSigners: TrustedSigners
     var ViewerProtocolPolicy: ViewerProtocolPolicy
     var AllowedMethods: js.UndefOr[AllowedMethods]
     var CachePolicyId: js.UndefOr[String]
@@ -310,7 +373,10 @@ package cloudfront {
     var MaxTTL: js.UndefOr[Double]
     var MinTTL: js.UndefOr[Double]
     var OriginRequestPolicyId: js.UndefOr[String]
+    var RealtimeLogConfigArn: js.UndefOr[String]
     var SmoothStreaming: js.UndefOr[Boolean]
+    var TrustedKeyGroups: js.UndefOr[TrustedKeyGroups]
+    var TrustedSigners: js.UndefOr[TrustedSigners]
   }
 
   object CacheBehavior {
@@ -318,7 +384,6 @@ package cloudfront {
     def apply(
         PathPattern: String,
         TargetOriginId: String,
-        TrustedSigners: TrustedSigners,
         ViewerProtocolPolicy: ViewerProtocolPolicy,
         AllowedMethods: js.UndefOr[AllowedMethods] = js.undefined,
         CachePolicyId: js.UndefOr[String] = js.undefined,
@@ -330,12 +395,14 @@ package cloudfront {
         MaxTTL: js.UndefOr[Double] = js.undefined,
         MinTTL: js.UndefOr[Double] = js.undefined,
         OriginRequestPolicyId: js.UndefOr[String] = js.undefined,
-        SmoothStreaming: js.UndefOr[Boolean] = js.undefined
+        RealtimeLogConfigArn: js.UndefOr[String] = js.undefined,
+        SmoothStreaming: js.UndefOr[Boolean] = js.undefined,
+        TrustedKeyGroups: js.UndefOr[TrustedKeyGroups] = js.undefined,
+        TrustedSigners: js.UndefOr[TrustedSigners] = js.undefined
     ): CacheBehavior = {
       val __obj = js.Dynamic.literal(
         "PathPattern" -> PathPattern.asInstanceOf[js.Any],
         "TargetOriginId" -> TargetOriginId.asInstanceOf[js.Any],
-        "TrustedSigners" -> TrustedSigners.asInstanceOf[js.Any],
         "ViewerProtocolPolicy" -> ViewerProtocolPolicy.asInstanceOf[js.Any]
       )
 
@@ -349,7 +416,10 @@ package cloudfront {
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       MinTTL.foreach(__v => __obj.updateDynamic("MinTTL")(__v.asInstanceOf[js.Any]))
       OriginRequestPolicyId.foreach(__v => __obj.updateDynamic("OriginRequestPolicyId")(__v.asInstanceOf[js.Any]))
+      RealtimeLogConfigArn.foreach(__v => __obj.updateDynamic("RealtimeLogConfigArn")(__v.asInstanceOf[js.Any]))
       SmoothStreaming.foreach(__v => __obj.updateDynamic("SmoothStreaming")(__v.asInstanceOf[js.Any]))
+      TrustedKeyGroups.foreach(__v => __obj.updateDynamic("TrustedKeyGroups")(__v.asInstanceOf[js.Any]))
+      TrustedSigners.foreach(__v => __obj.updateDynamic("TrustedSigners")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheBehavior]
     }
   }
@@ -844,8 +914,8 @@ package cloudfront {
   }
 
   /** This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
-    * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See <code>CreateCachePolicy</code>.
-    * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+    * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See <code>CachePolicy</code>.
+    * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.
     * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html|Caching Content Based on Cookies]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
@@ -1159,6 +1229,81 @@ package cloudfront {
   }
 
   @js.native
+  trait CreateKeyGroupRequest extends js.Object {
+    var KeyGroupConfig: KeyGroupConfig
+  }
+
+  object CreateKeyGroupRequest {
+    @inline
+    def apply(
+        KeyGroupConfig: KeyGroupConfig
+    ): CreateKeyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyGroupConfig" -> KeyGroupConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateKeyGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateKeyGroupResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var KeyGroup: js.UndefOr[KeyGroup]
+    var Location: js.UndefOr[String]
+  }
+
+  object CreateKeyGroupResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        KeyGroup: js.UndefOr[KeyGroup] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
+    ): CreateKeyGroupResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      KeyGroup.foreach(__v => __obj.updateDynamic("KeyGroup")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateKeyGroupResult]
+    }
+  }
+
+  @js.native
+  trait CreateMonitoringSubscriptionRequest extends js.Object {
+    var DistributionId: String
+    var MonitoringSubscription: MonitoringSubscription
+  }
+
+  object CreateMonitoringSubscriptionRequest {
+    @inline
+    def apply(
+        DistributionId: String,
+        MonitoringSubscription: MonitoringSubscription
+    ): CreateMonitoringSubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DistributionId" -> DistributionId.asInstanceOf[js.Any],
+        "MonitoringSubscription" -> MonitoringSubscription.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateMonitoringSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMonitoringSubscriptionResult extends js.Object {
+    var MonitoringSubscription: js.UndefOr[MonitoringSubscription]
+  }
+
+  object CreateMonitoringSubscriptionResult {
+    @inline
+    def apply(
+        MonitoringSubscription: js.UndefOr[MonitoringSubscription] = js.undefined
+    ): CreateMonitoringSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      MonitoringSubscription.foreach(__v => __obj.updateDynamic("MonitoringSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMonitoringSubscriptionResult]
+    }
+  }
+
+  @js.native
   trait CreateOriginRequestPolicyRequest extends js.Object {
     var OriginRequestPolicyConfig: OriginRequestPolicyConfig
   }
@@ -1233,6 +1378,48 @@ package cloudfront {
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePublicKeyResult]
+    }
+  }
+
+  @js.native
+  trait CreateRealtimeLogConfigRequest extends js.Object {
+    var EndPoints: EndPointList
+    var Fields: FieldList
+    var Name: String
+    var SamplingRate: Double
+  }
+
+  object CreateRealtimeLogConfigRequest {
+    @inline
+    def apply(
+        EndPoints: EndPointList,
+        Fields: FieldList,
+        Name: String,
+        SamplingRate: Double
+    ): CreateRealtimeLogConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndPoints" -> EndPoints.asInstanceOf[js.Any],
+        "Fields" -> Fields.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SamplingRate" -> SamplingRate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateRealtimeLogConfigRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRealtimeLogConfigResult extends js.Object {
+    var RealtimeLogConfig: js.UndefOr[RealtimeLogConfig]
+  }
+
+  object CreateRealtimeLogConfigResult {
+    @inline
+    def apply(
+        RealtimeLogConfig: js.UndefOr[RealtimeLogConfig] = js.undefined
+    ): CreateRealtimeLogConfigResult = {
+      val __obj = js.Dynamic.literal()
+      RealtimeLogConfig.foreach(__v => __obj.updateDynamic("RealtimeLogConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRealtimeLogConfigResult]
     }
   }
 
@@ -1443,7 +1630,6 @@ package cloudfront {
   @js.native
   trait DefaultCacheBehavior extends js.Object {
     var TargetOriginId: String
-    var TrustedSigners: TrustedSigners
     var ViewerProtocolPolicy: ViewerProtocolPolicy
     var AllowedMethods: js.UndefOr[AllowedMethods]
     var CachePolicyId: js.UndefOr[String]
@@ -1455,14 +1641,16 @@ package cloudfront {
     var MaxTTL: js.UndefOr[Double]
     var MinTTL: js.UndefOr[Double]
     var OriginRequestPolicyId: js.UndefOr[String]
+    var RealtimeLogConfigArn: js.UndefOr[String]
     var SmoothStreaming: js.UndefOr[Boolean]
+    var TrustedKeyGroups: js.UndefOr[TrustedKeyGroups]
+    var TrustedSigners: js.UndefOr[TrustedSigners]
   }
 
   object DefaultCacheBehavior {
     @inline
     def apply(
         TargetOriginId: String,
-        TrustedSigners: TrustedSigners,
         ViewerProtocolPolicy: ViewerProtocolPolicy,
         AllowedMethods: js.UndefOr[AllowedMethods] = js.undefined,
         CachePolicyId: js.UndefOr[String] = js.undefined,
@@ -1474,11 +1662,13 @@ package cloudfront {
         MaxTTL: js.UndefOr[Double] = js.undefined,
         MinTTL: js.UndefOr[Double] = js.undefined,
         OriginRequestPolicyId: js.UndefOr[String] = js.undefined,
-        SmoothStreaming: js.UndefOr[Boolean] = js.undefined
+        RealtimeLogConfigArn: js.UndefOr[String] = js.undefined,
+        SmoothStreaming: js.UndefOr[Boolean] = js.undefined,
+        TrustedKeyGroups: js.UndefOr[TrustedKeyGroups] = js.undefined,
+        TrustedSigners: js.UndefOr[TrustedSigners] = js.undefined
     ): DefaultCacheBehavior = {
       val __obj = js.Dynamic.literal(
         "TargetOriginId" -> TargetOriginId.asInstanceOf[js.Any],
-        "TrustedSigners" -> TrustedSigners.asInstanceOf[js.Any],
         "ViewerProtocolPolicy" -> ViewerProtocolPolicy.asInstanceOf[js.Any]
       )
 
@@ -1492,7 +1682,10 @@ package cloudfront {
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       MinTTL.foreach(__v => __obj.updateDynamic("MinTTL")(__v.asInstanceOf[js.Any]))
       OriginRequestPolicyId.foreach(__v => __obj.updateDynamic("OriginRequestPolicyId")(__v.asInstanceOf[js.Any]))
+      RealtimeLogConfigArn.foreach(__v => __obj.updateDynamic("RealtimeLogConfigArn")(__v.asInstanceOf[js.Any]))
       SmoothStreaming.foreach(__v => __obj.updateDynamic("SmoothStreaming")(__v.asInstanceOf[js.Any]))
+      TrustedKeyGroups.foreach(__v => __obj.updateDynamic("TrustedKeyGroups")(__v.asInstanceOf[js.Any]))
+      TrustedSigners.foreach(__v => __obj.updateDynamic("TrustedSigners")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultCacheBehavior]
     }
   }
@@ -1617,6 +1810,55 @@ package cloudfront {
   }
 
   @js.native
+  trait DeleteKeyGroupRequest extends js.Object {
+    var Id: String
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object DeleteKeyGroupRequest {
+    @inline
+    def apply(
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): DeleteKeyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteKeyGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMonitoringSubscriptionRequest extends js.Object {
+    var DistributionId: String
+  }
+
+  object DeleteMonitoringSubscriptionRequest {
+    @inline
+    def apply(
+        DistributionId: String
+    ): DeleteMonitoringSubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DistributionId" -> DistributionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMonitoringSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMonitoringSubscriptionResult extends js.Object
+
+  object DeleteMonitoringSubscriptionResult {
+    @inline
+    def apply(): DeleteMonitoringSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteMonitoringSubscriptionResult]
+    }
+  }
+
+  @js.native
   trait DeleteOriginRequestPolicyRequest extends js.Object {
     var Id: String
     var IfMatch: js.UndefOr[String]
@@ -1658,6 +1900,25 @@ package cloudfront {
     }
   }
 
+  @js.native
+  trait DeleteRealtimeLogConfigRequest extends js.Object {
+    var ARN: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+  }
+
+  object DeleteRealtimeLogConfigRequest {
+    @inline
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): DeleteRealtimeLogConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRealtimeLogConfigRequest]
+    }
+  }
+
   /** The request to delete a streaming distribution.
     */
   @js.native
@@ -1686,13 +1947,14 @@ package cloudfront {
   @js.native
   trait Distribution extends js.Object {
     var ARN: String
-    var ActiveTrustedSigners: ActiveTrustedSigners
     var DistributionConfig: DistributionConfig
     var DomainName: String
     var Id: String
     var InProgressInvalidationBatches: Int
     var LastModifiedTime: timestamp
     var Status: String
+    var ActiveTrustedKeyGroups: js.UndefOr[ActiveTrustedKeyGroups]
+    var ActiveTrustedSigners: js.UndefOr[ActiveTrustedSigners]
     var AliasICPRecordals: js.UndefOr[AliasICPRecordals]
   }
 
@@ -1700,18 +1962,18 @@ package cloudfront {
     @inline
     def apply(
         ARN: String,
-        ActiveTrustedSigners: ActiveTrustedSigners,
         DistributionConfig: DistributionConfig,
         DomainName: String,
         Id: String,
         InProgressInvalidationBatches: Int,
         LastModifiedTime: timestamp,
         Status: String,
+        ActiveTrustedKeyGroups: js.UndefOr[ActiveTrustedKeyGroups] = js.undefined,
+        ActiveTrustedSigners: js.UndefOr[ActiveTrustedSigners] = js.undefined,
         AliasICPRecordals: js.UndefOr[AliasICPRecordals] = js.undefined
     ): Distribution = {
       val __obj = js.Dynamic.literal(
         "ARN" -> ARN.asInstanceOf[js.Any],
-        "ActiveTrustedSigners" -> ActiveTrustedSigners.asInstanceOf[js.Any],
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1720,6 +1982,8 @@ package cloudfront {
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
+      ActiveTrustedKeyGroups.foreach(__v => __obj.updateDynamic("ActiveTrustedKeyGroups")(__v.asInstanceOf[js.Any]))
+      ActiveTrustedSigners.foreach(__v => __obj.updateDynamic("ActiveTrustedSigners")(__v.asInstanceOf[js.Any]))
       AliasICPRecordals.foreach(__v => __obj.updateDynamic("AliasICPRecordals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Distribution]
     }
@@ -2007,6 +2271,29 @@ package cloudfront {
         "PublicKeyId" -> PublicKeyId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[EncryptionEntity]
+    }
+  }
+
+  /** Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.
+    */
+  @js.native
+  trait EndPoint extends js.Object {
+    var StreamType: String
+    var KinesisStreamConfig: js.UndefOr[KinesisStreamConfig]
+  }
+
+  object EndPoint {
+    @inline
+    def apply(
+        StreamType: String,
+        KinesisStreamConfig: js.UndefOr[KinesisStreamConfig] = js.undefined
+    ): EndPoint = {
+      val __obj = js.Dynamic.literal(
+        "StreamType" -> StreamType.asInstanceOf[js.Any]
+      )
+
+      KinesisStreamConfig.foreach(__v => __obj.updateDynamic("KinesisStreamConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndPoint]
     }
   }
 
@@ -2767,6 +3054,111 @@ package cloudfront {
   }
 
   @js.native
+  trait GetKeyGroupConfigRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetKeyGroupConfigRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetKeyGroupConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetKeyGroupConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetKeyGroupConfigResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var KeyGroupConfig: js.UndefOr[KeyGroupConfig]
+  }
+
+  object GetKeyGroupConfigResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        KeyGroupConfig: js.UndefOr[KeyGroupConfig] = js.undefined
+    ): GetKeyGroupConfigResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      KeyGroupConfig.foreach(__v => __obj.updateDynamic("KeyGroupConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetKeyGroupConfigResult]
+    }
+  }
+
+  @js.native
+  trait GetKeyGroupRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetKeyGroupRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetKeyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetKeyGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetKeyGroupResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var KeyGroup: js.UndefOr[KeyGroup]
+  }
+
+  object GetKeyGroupResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        KeyGroup: js.UndefOr[KeyGroup] = js.undefined
+    ): GetKeyGroupResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      KeyGroup.foreach(__v => __obj.updateDynamic("KeyGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetKeyGroupResult]
+    }
+  }
+
+  @js.native
+  trait GetMonitoringSubscriptionRequest extends js.Object {
+    var DistributionId: String
+  }
+
+  object GetMonitoringSubscriptionRequest {
+    @inline
+    def apply(
+        DistributionId: String
+    ): GetMonitoringSubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DistributionId" -> DistributionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMonitoringSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait GetMonitoringSubscriptionResult extends js.Object {
+    var MonitoringSubscription: js.UndefOr[MonitoringSubscription]
+  }
+
+  object GetMonitoringSubscriptionResult {
+    @inline
+    def apply(
+        MonitoringSubscription: js.UndefOr[MonitoringSubscription] = js.undefined
+    ): GetMonitoringSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      MonitoringSubscription.foreach(__v => __obj.updateDynamic("MonitoringSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMonitoringSubscriptionResult]
+    }
+  }
+
+  @js.native
   trait GetOriginRequestPolicyConfigRequest extends js.Object {
     var Id: String
   }
@@ -2907,6 +3299,41 @@ package cloudfront {
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPublicKeyResult]
+    }
+  }
+
+  @js.native
+  trait GetRealtimeLogConfigRequest extends js.Object {
+    var ARN: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+  }
+
+  object GetRealtimeLogConfigRequest {
+    @inline
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): GetRealtimeLogConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRealtimeLogConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetRealtimeLogConfigResult extends js.Object {
+    var RealtimeLogConfig: js.UndefOr[RealtimeLogConfig]
+  }
+
+  object GetRealtimeLogConfigResult {
+    @inline
+    def apply(
+        RealtimeLogConfig: js.UndefOr[RealtimeLogConfig] = js.undefined
+    ): GetRealtimeLogConfigResult = {
+      val __obj = js.Dynamic.literal()
+      RealtimeLogConfig.foreach(__v => __obj.updateDynamic("RealtimeLogConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRealtimeLogConfigResult]
     }
   }
 
@@ -3152,8 +3579,129 @@ package cloudfront {
     @inline def values = js.Array(none, whitelist, all)
   }
 
-  /** A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>.
-    * For more information, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html|ActiveTrustedSigners]].
+  /** A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+    */
+  @js.native
+  trait KGKeyPairIds extends js.Object {
+    var KeyGroupId: js.UndefOr[String]
+    var KeyPairIds: js.UndefOr[KeyPairIds]
+  }
+
+  object KGKeyPairIds {
+    @inline
+    def apply(
+        KeyGroupId: js.UndefOr[String] = js.undefined,
+        KeyPairIds: js.UndefOr[KeyPairIds] = js.undefined
+    ): KGKeyPairIds = {
+      val __obj = js.Dynamic.literal()
+      KeyGroupId.foreach(__v => __obj.updateDynamic("KeyGroupId")(__v.asInstanceOf[js.Any]))
+      KeyPairIds.foreach(__v => __obj.updateDynamic("KeyPairIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KGKeyPairIds]
+    }
+  }
+
+  /** A key group.
+    * A key group contains a list of public keys that you can use with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|CloudFront signed URLs and signed cookies]].
+    */
+  @js.native
+  trait KeyGroup extends js.Object {
+    var Id: String
+    var KeyGroupConfig: KeyGroupConfig
+    var LastModifiedTime: timestamp
+  }
+
+  object KeyGroup {
+    @inline
+    def apply(
+        Id: String,
+        KeyGroupConfig: KeyGroupConfig,
+        LastModifiedTime: timestamp
+    ): KeyGroup = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "KeyGroupConfig" -> KeyGroupConfig.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KeyGroup]
+    }
+  }
+
+  /** A key group configuration.
+    * A key group contains a list of public keys that you can use with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|CloudFront signed URLs and signed cookies]].
+    */
+  @js.native
+  trait KeyGroupConfig extends js.Object {
+    var Items: PublicKeyIdList
+    var Name: String
+    var Comment: js.UndefOr[String]
+  }
+
+  object KeyGroupConfig {
+    @inline
+    def apply(
+        Items: PublicKeyIdList,
+        Name: String,
+        Comment: js.UndefOr[String] = js.undefined
+    ): KeyGroupConfig = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyGroupConfig]
+    }
+  }
+
+  /** A list of key groups.
+    */
+  @js.native
+  trait KeyGroupList extends js.Object {
+    var MaxItems: Int
+    var Quantity: Int
+    var Items: js.UndefOr[KeyGroupSummaryList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object KeyGroupList {
+    @inline
+    def apply(
+        MaxItems: Int,
+        Quantity: Int,
+        Items: js.UndefOr[KeyGroupSummaryList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): KeyGroupList = {
+      val __obj = js.Dynamic.literal(
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyGroupList]
+    }
+  }
+
+  /** Contains information about a key group.
+    */
+  @js.native
+  trait KeyGroupSummary extends js.Object {
+    var KeyGroup: KeyGroup
+  }
+
+  object KeyGroupSummary {
+    @inline
+    def apply(
+        KeyGroup: KeyGroup
+    ): KeyGroupSummary = {
+      val __obj = js.Dynamic.literal(
+        "KeyGroup" -> KeyGroup.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KeyGroupSummary]
+    }
+  }
+
+  /** A list of CloudFront key pair identifiers.
     */
   @js.native
   trait KeyPairIds extends js.Object {
@@ -3173,6 +3721,28 @@ package cloudfront {
 
       Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyPairIds]
+    }
+  }
+
+  /** Contains information about the Amazon Kinesis data stream where you are sending real-time log data.
+    */
+  @js.native
+  trait KinesisStreamConfig extends js.Object {
+    var RoleARN: String
+    var StreamARN: String
+  }
+
+  object KinesisStreamConfig {
+    @inline
+    def apply(
+        RoleARN: String,
+        StreamARN: String
+    ): KinesisStreamConfig = {
+      val __obj = js.Dynamic.literal(
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KinesisStreamConfig]
     }
   }
 
@@ -3345,6 +3915,46 @@ package cloudfront {
   }
 
   @js.native
+  trait ListDistributionsByKeyGroupRequest extends js.Object {
+    var KeyGroupId: String
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+  }
+
+  object ListDistributionsByKeyGroupRequest {
+    @inline
+    def apply(
+        KeyGroupId: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
+    ): ListDistributionsByKeyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyGroupId" -> KeyGroupId.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByKeyGroupRequest]
+    }
+  }
+
+  @js.native
+  trait ListDistributionsByKeyGroupResult extends js.Object {
+    var DistributionIdList: js.UndefOr[DistributionIdList]
+  }
+
+  object ListDistributionsByKeyGroupResult {
+    @inline
+    def apply(
+        DistributionIdList: js.UndefOr[DistributionIdList] = js.undefined
+    ): ListDistributionsByKeyGroupResult = {
+      val __obj = js.Dynamic.literal()
+      DistributionIdList.foreach(__v => __obj.updateDynamic("DistributionIdList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByKeyGroupResult]
+    }
+  }
+
+  @js.native
   trait ListDistributionsByOriginRequestPolicyIdRequest extends js.Object {
     var OriginRequestPolicyId: String
     var Marker: js.UndefOr[String]
@@ -3381,6 +3991,47 @@ package cloudfront {
       val __obj = js.Dynamic.literal()
       DistributionIdList.foreach(__v => __obj.updateDynamic("DistributionIdList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDistributionsByOriginRequestPolicyIdResult]
+    }
+  }
+
+  @js.native
+  trait ListDistributionsByRealtimeLogConfigRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+    var RealtimeLogConfigArn: js.UndefOr[String]
+    var RealtimeLogConfigName: js.UndefOr[String]
+  }
+
+  object ListDistributionsByRealtimeLogConfigRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined,
+        RealtimeLogConfigArn: js.UndefOr[String] = js.undefined,
+        RealtimeLogConfigName: js.UndefOr[String] = js.undefined
+    ): ListDistributionsByRealtimeLogConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      RealtimeLogConfigArn.foreach(__v => __obj.updateDynamic("RealtimeLogConfigArn")(__v.asInstanceOf[js.Any]))
+      RealtimeLogConfigName.foreach(__v => __obj.updateDynamic("RealtimeLogConfigName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByRealtimeLogConfigRequest]
+    }
+  }
+
+  @js.native
+  trait ListDistributionsByRealtimeLogConfigResult extends js.Object {
+    var DistributionList: js.UndefOr[DistributionList]
+  }
+
+  object ListDistributionsByRealtimeLogConfigResult {
+    @inline
+    def apply(
+        DistributionList: js.UndefOr[DistributionList] = js.undefined
+    ): ListDistributionsByRealtimeLogConfigResult = {
+      val __obj = js.Dynamic.literal()
+      DistributionList.foreach(__v => __obj.updateDynamic("DistributionList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByRealtimeLogConfigResult]
     }
   }
 
@@ -3582,6 +4233,41 @@ package cloudfront {
   }
 
   @js.native
+  trait ListKeyGroupsRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+  }
+
+  object ListKeyGroupsRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
+    ): ListKeyGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKeyGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListKeyGroupsResult extends js.Object {
+    var KeyGroupList: js.UndefOr[KeyGroupList]
+  }
+
+  object ListKeyGroupsResult {
+    @inline
+    def apply(
+        KeyGroupList: js.UndefOr[KeyGroupList] = js.undefined
+    ): ListKeyGroupsResult = {
+      val __obj = js.Dynamic.literal()
+      KeyGroupList.foreach(__v => __obj.updateDynamic("KeyGroupList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListKeyGroupsResult]
+    }
+  }
+
+  @js.native
   trait ListOriginRequestPoliciesRequest extends js.Object {
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[String]
@@ -3651,6 +4337,41 @@ package cloudfront {
       val __obj = js.Dynamic.literal()
       PublicKeyList.foreach(__v => __obj.updateDynamic("PublicKeyList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPublicKeysResult]
+    }
+  }
+
+  @js.native
+  trait ListRealtimeLogConfigsRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+  }
+
+  object ListRealtimeLogConfigsRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
+    ): ListRealtimeLogConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRealtimeLogConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListRealtimeLogConfigsResult extends js.Object {
+    var RealtimeLogConfigs: js.UndefOr[RealtimeLogConfigs]
+  }
+
+  object ListRealtimeLogConfigsResult {
+    @inline
+    def apply(
+        RealtimeLogConfigs: js.UndefOr[RealtimeLogConfigs] = js.undefined
+    ): ListRealtimeLogConfigsResult = {
+      val __obj = js.Dynamic.literal()
+      RealtimeLogConfigs.foreach(__v => __obj.updateDynamic("RealtimeLogConfigs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRealtimeLogConfigsResult]
     }
   }
 
@@ -3786,13 +4507,31 @@ package cloudfront {
     @inline def values = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
   }
 
+  /** A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.
+    */
+  @js.native
+  trait MonitoringSubscription extends js.Object {
+    var RealtimeMetricsSubscriptionConfig: js.UndefOr[RealtimeMetricsSubscriptionConfig]
+  }
+
+  object MonitoringSubscription {
+    @inline
+    def apply(
+        RealtimeMetricsSubscriptionConfig: js.UndefOr[RealtimeMetricsSubscriptionConfig] = js.undefined
+    ): MonitoringSubscription = {
+      val __obj = js.Dynamic.literal()
+      RealtimeMetricsSubscriptionConfig.foreach(__v => __obj.updateDynamic("RealtimeMetricsSubscriptionConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitoringSubscription]
+    }
+  }
+
   /** An origin.
     * An origin is the location where content is stored, and from which CloudFront gets content to serve to viewers. To specify an origin:
-    * * Use the <code>S3OriginConfig</code> type to specify an Amazon S3 bucket that is <i> ```not``` </i> configured with static website hosting.
-    * * Use the <code>CustomOriginConfig</code> type to specify various other kinds of content containers or HTTP servers, including:
+    * * Use <code>S3OriginConfig</code> to specify an Amazon S3 bucket that is not configured with static website hosting.
+    * * Use <code>CustomOriginConfig</code> to specify all other kinds of origins, including:
     * <li> An Amazon S3 bucket that is configured with static website hosting
     * * An Elastic Load Balancing load balancer
-    * * An AWS Elemental MediaPackage origin
+    * * An AWS Elemental MediaPackage endpoint
     * * An AWS Elemental MediaStore container
     * * Any other HTTP server, running on an Amazon EC2 instance or any other kind of host
     * </li>For the current maximum number of origins that you can specify per distribution, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions|General Quotas on Web Distributions]] in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).
@@ -3806,6 +4545,7 @@ package cloudfront {
     var CustomHeaders: js.UndefOr[CustomHeaders]
     var CustomOriginConfig: js.UndefOr[CustomOriginConfig]
     var OriginPath: js.UndefOr[String]
+    var OriginShield: js.UndefOr[OriginShield]
     var S3OriginConfig: js.UndefOr[S3OriginConfig]
   }
 
@@ -3819,6 +4559,7 @@ package cloudfront {
         CustomHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         CustomOriginConfig: js.UndefOr[CustomOriginConfig] = js.undefined,
         OriginPath: js.UndefOr[String] = js.undefined,
+        OriginShield: js.UndefOr[OriginShield] = js.undefined,
         S3OriginConfig: js.UndefOr[S3OriginConfig] = js.undefined
     ): Origin = {
       val __obj = js.Dynamic.literal(
@@ -3831,6 +4572,7 @@ package cloudfront {
       CustomHeaders.foreach(__v => __obj.updateDynamic("CustomHeaders")(__v.asInstanceOf[js.Any]))
       CustomOriginConfig.foreach(__v => __obj.updateDynamic("CustomOriginConfig")(__v.asInstanceOf[js.Any]))
       OriginPath.foreach(__v => __obj.updateDynamic("OriginPath")(__v.asInstanceOf[js.Any]))
+      OriginShield.foreach(__v => __obj.updateDynamic("OriginShield")(__v.asInstanceOf[js.Any]))
       S3OriginConfig.foreach(__v => __obj.updateDynamic("S3OriginConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Origin]
     }
@@ -3981,7 +4723,7 @@ package cloudfront {
     * * The request body and the URL path (without the domain name) from the viewer request.
     * * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
     * * All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.
-    * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+    * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
     */
   @js.native
   trait OriginRequestPolicy extends js.Object {
@@ -4011,7 +4753,7 @@ package cloudfront {
     * * The request body and the URL path (without the domain name) from the viewer request.
     * * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
     * * All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.
-    * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+    * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
     */
   @js.native
   trait OriginRequestPolicyConfig extends js.Object {
@@ -4203,6 +4945,30 @@ package cloudfront {
     @inline def values = js.Array(managed, custom)
   }
 
+  /** CloudFront Origin Shield.
+    * Using Origin Shield can help reduce the load on your origin. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html|Using Origin Shield]] in the <i>Amazon CloudFront Developer Guide</i>.
+    */
+  @js.native
+  trait OriginShield extends js.Object {
+    var Enabled: Boolean
+    var OriginShieldRegion: js.UndefOr[OriginShieldRegion]
+  }
+
+  object OriginShield {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        OriginShieldRegion: js.UndefOr[OriginShieldRegion] = js.undefined
+    ): OriginShield = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+
+      OriginShieldRegion.foreach(__v => __obj.updateDynamic("OriginShieldRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OriginShield]
+    }
+  }
+
   /** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.
     */
   @js.native
@@ -4225,7 +4991,7 @@ package cloudfront {
     }
   }
 
-  /** A complex type that contains information about origins and origin groups for this distribution.
+  /** Contains information about the origins for this distribution.
     */
   @js.native
   trait Origins extends js.Object {
@@ -4248,7 +5014,7 @@ package cloudfront {
   }
 
   /** This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
-    * The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>CreateOriginRequestPolicy</code>.
+    * The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.
     */
   @js.native
   trait ParametersInCacheKeyAndForwardedToOrigin extends js.Object {
@@ -4256,6 +5022,7 @@ package cloudfront {
     var EnableAcceptEncodingGzip: Boolean
     var HeadersConfig: CachePolicyHeadersConfig
     var QueryStringsConfig: CachePolicyQueryStringsConfig
+    var EnableAcceptEncodingBrotli: js.UndefOr[Boolean]
   }
 
   object ParametersInCacheKeyAndForwardedToOrigin {
@@ -4264,7 +5031,8 @@ package cloudfront {
         CookiesConfig: CachePolicyCookiesConfig,
         EnableAcceptEncodingGzip: Boolean,
         HeadersConfig: CachePolicyHeadersConfig,
-        QueryStringsConfig: CachePolicyQueryStringsConfig
+        QueryStringsConfig: CachePolicyQueryStringsConfig,
+        EnableAcceptEncodingBrotli: js.UndefOr[Boolean] = js.undefined
     ): ParametersInCacheKeyAndForwardedToOrigin = {
       val __obj = js.Dynamic.literal(
         "CookiesConfig" -> CookiesConfig.asInstanceOf[js.Any],
@@ -4272,6 +5040,8 @@ package cloudfront {
         "HeadersConfig" -> HeadersConfig.asInstanceOf[js.Any],
         "QueryStringsConfig" -> QueryStringsConfig.asInstanceOf[js.Any]
       )
+
+      EnableAcceptEncodingBrotli.foreach(__v => __obj.updateDynamic("EnableAcceptEncodingBrotli")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParametersInCacheKeyAndForwardedToOrigin]
     }
   }
@@ -4309,7 +5079,7 @@ package cloudfront {
     @inline def values = js.Array(PriceClass_100, PriceClass_200, PriceClass_All)
   }
 
-  /** A complex data type of public keys you add to CloudFront to use with features like field-level encryption.
+  /** A public key that you can use with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|signed URLs and signed cookies]], or with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html|field-level encryption]].
     */
   @js.native
   trait PublicKey extends js.Object {
@@ -4334,7 +5104,7 @@ package cloudfront {
     }
   }
 
-  /** Information about a public key you add to CloudFront to use with features like field-level encryption.
+  /** Configuration information about a public key that you can use with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|signed URLs and signed cookies]], or with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html|field-level encryption]].
     */
   @js.native
   trait PublicKeyConfig extends js.Object {
@@ -4363,7 +5133,7 @@ package cloudfront {
     }
   }
 
-  /** A list of public keys you've added to CloudFront to use with features like field-level encryption.
+  /** A list of public keys that you can use with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|signed URLs and signed cookies]], or with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html|field-level encryption]].
     */
   @js.native
   trait PublicKeyList extends js.Object {
@@ -4392,7 +5162,7 @@ package cloudfront {
     }
   }
 
-  /** A complex data type for public key information.
+  /** Contains information about a public key.
     */
   @js.native
   trait PublicKeySummary extends js.Object {
@@ -4493,8 +5263,8 @@ package cloudfront {
   }
 
   /** This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
-    * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See <code>CreateCachePolicy</code>.
-    * If you want to send query strings to the origin but not include them in the cache key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+    * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See <code>CachePolicy</code>.
+    * If you want to send query strings to the origin but not include them in the cache key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.
     * A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.
     */
   @js.native
@@ -4539,6 +5309,97 @@ package cloudfront {
       Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryStringNames]
     }
+  }
+
+  /** A real-time log configuration.
+    */
+  @js.native
+  trait RealtimeLogConfig extends js.Object {
+    var ARN: String
+    var EndPoints: EndPointList
+    var Fields: FieldList
+    var Name: String
+    var SamplingRate: Double
+  }
+
+  object RealtimeLogConfig {
+    @inline
+    def apply(
+        ARN: String,
+        EndPoints: EndPointList,
+        Fields: FieldList,
+        Name: String,
+        SamplingRate: Double
+    ): RealtimeLogConfig = {
+      val __obj = js.Dynamic.literal(
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "EndPoints" -> EndPoints.asInstanceOf[js.Any],
+        "Fields" -> Fields.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SamplingRate" -> SamplingRate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RealtimeLogConfig]
+    }
+  }
+
+  /** A list of real-time log configurations.
+    */
+  @js.native
+  trait RealtimeLogConfigs extends js.Object {
+    var IsTruncated: Boolean
+    var Marker: String
+    var MaxItems: Int
+    var Items: js.UndefOr[RealtimeLogConfigList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object RealtimeLogConfigs {
+    @inline
+    def apply(
+        IsTruncated: Boolean,
+        Marker: String,
+        MaxItems: Int,
+        Items: js.UndefOr[RealtimeLogConfigList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): RealtimeLogConfigs = {
+      val __obj = js.Dynamic.literal(
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "Marker" -> Marker.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RealtimeLogConfigs]
+    }
+  }
+
+  /** A subscription configuration for additional CloudWatch metrics.
+    */
+  @js.native
+  trait RealtimeMetricsSubscriptionConfig extends js.Object {
+    var RealtimeMetricsSubscriptionStatus: RealtimeMetricsSubscriptionStatus
+  }
+
+  object RealtimeMetricsSubscriptionConfig {
+    @inline
+    def apply(
+        RealtimeMetricsSubscriptionStatus: RealtimeMetricsSubscriptionStatus
+    ): RealtimeMetricsSubscriptionConfig = {
+      val __obj = js.Dynamic.literal(
+        "RealtimeMetricsSubscriptionStatus" -> RealtimeMetricsSubscriptionStatus.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RealtimeMetricsSubscriptionConfig]
+    }
+  }
+
+  @js.native
+  sealed trait RealtimeMetricsSubscriptionStatus extends js.Any
+  object RealtimeMetricsSubscriptionStatus {
+    val Enabled = "Enabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
+    val Disabled = "Disabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
+
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   /** A complex type that identifies ways in which you want to restrict distribution of your content.
@@ -4606,11 +5467,12 @@ package cloudfront {
   object SSLSupportMethod {
     val `sni-only` = "sni-only".asInstanceOf[SSLSupportMethod]
     val vip = "vip".asInstanceOf[SSLSupportMethod]
+    val `static-ip` = "static-ip".asInstanceOf[SSLSupportMethod]
 
-    @inline def values = js.Array(`sni-only`, vip)
+    @inline def values = js.Array(`sni-only`, vip, `static-ip`)
   }
 
-  /** A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as well as their active CloudFront key pair IDs, if any.
+  /** A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
   trait Signer extends js.Object {
@@ -4955,11 +5817,33 @@ package cloudfront {
     }
   }
 
-  /** A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
-    * If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|Serving Private Content through CloudFront]] in the <i> Amazon CloudFront Developer Guide</i>.
-    * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
-    * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
-    * For more information about updating the distribution configuration, see [[https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html|DistributionConfig]] in the <i>Amazon CloudFront API Reference</i>.
+  /** A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
+    */
+  @js.native
+  trait TrustedKeyGroups extends js.Object {
+    var Enabled: Boolean
+    var Quantity: Int
+    var Items: js.UndefOr[TrustedKeyGroupIdList]
+  }
+
+  object TrustedKeyGroups {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        Quantity: Int,
+        Items: js.UndefOr[TrustedKeyGroupIdList] = js.undefined
+    ): TrustedKeyGroups = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrustedKeyGroups]
+    }
+  }
+
+  /** A list of AWS accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
   trait TrustedSigners extends js.Object {
@@ -5231,6 +6115,49 @@ package cloudfront {
   }
 
   @js.native
+  trait UpdateKeyGroupRequest extends js.Object {
+    var Id: String
+    var KeyGroupConfig: KeyGroupConfig
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object UpdateKeyGroupRequest {
+    @inline
+    def apply(
+        Id: String,
+        KeyGroupConfig: KeyGroupConfig,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): UpdateKeyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "KeyGroupConfig" -> KeyGroupConfig.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateKeyGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateKeyGroupResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var KeyGroup: js.UndefOr[KeyGroup]
+  }
+
+  object UpdateKeyGroupResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        KeyGroup: js.UndefOr[KeyGroup] = js.undefined
+    ): UpdateKeyGroupResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      KeyGroup.foreach(__v => __obj.updateDynamic("KeyGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateKeyGroupResult]
+    }
+  }
+
+  @js.native
   trait UpdateOriginRequestPolicyRequest extends js.Object {
     var Id: String
     var OriginRequestPolicyConfig: OriginRequestPolicyConfig
@@ -5313,6 +6240,50 @@ package cloudfront {
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePublicKeyResult]
+    }
+  }
+
+  @js.native
+  trait UpdateRealtimeLogConfigRequest extends js.Object {
+    var ARN: js.UndefOr[String]
+    var EndPoints: js.UndefOr[EndPointList]
+    var Fields: js.UndefOr[FieldList]
+    var Name: js.UndefOr[String]
+    var SamplingRate: js.UndefOr[Double]
+  }
+
+  object UpdateRealtimeLogConfigRequest {
+    @inline
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        EndPoints: js.UndefOr[EndPointList] = js.undefined,
+        Fields: js.UndefOr[FieldList] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        SamplingRate: js.UndefOr[Double] = js.undefined
+    ): UpdateRealtimeLogConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      EndPoints.foreach(__v => __obj.updateDynamic("EndPoints")(__v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SamplingRate.foreach(__v => __obj.updateDynamic("SamplingRate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRealtimeLogConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRealtimeLogConfigResult extends js.Object {
+    var RealtimeLogConfig: js.UndefOr[RealtimeLogConfig]
+  }
+
+  object UpdateRealtimeLogConfigResult {
+    @inline
+    def apply(
+        RealtimeLogConfig: js.UndefOr[RealtimeLogConfig] = js.undefined
+    ): UpdateRealtimeLogConfigResult = {
+      val __obj = js.Dynamic.literal()
+      RealtimeLogConfig.foreach(__v => __obj.updateDynamic("RealtimeLogConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRealtimeLogConfigResult]
     }
   }
 

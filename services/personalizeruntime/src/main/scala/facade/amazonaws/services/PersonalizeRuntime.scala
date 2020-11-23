@@ -11,6 +11,9 @@ package object personalizeruntime {
   type AttributeName = String
   type AttributeValue = String
   type Context = js.Dictionary[AttributeValue]
+  type FilterAttributeName = String
+  type FilterAttributeValue = String
+  type FilterValues = js.Dictionary[FilterAttributeValue]
   type InputList = js.Array[ItemID]
   type ItemID = String
   type ItemList = js.Array[PredictedItem]
@@ -44,6 +47,7 @@ package personalizeruntime {
     var userId: UserID
     var context: js.UndefOr[Context]
     var filterArn: js.UndefOr[Arn]
+    var filterValues: js.UndefOr[FilterValues]
   }
 
   object GetPersonalizedRankingRequest {
@@ -53,7 +57,8 @@ package personalizeruntime {
         inputList: InputList,
         userId: UserID,
         context: js.UndefOr[Context] = js.undefined,
-        filterArn: js.UndefOr[Arn] = js.undefined
+        filterArn: js.UndefOr[Arn] = js.undefined,
+        filterValues: js.UndefOr[FilterValues] = js.undefined
     ): GetPersonalizedRankingRequest = {
       val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any],
@@ -63,6 +68,7 @@ package personalizeruntime {
 
       context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
+      filterValues.foreach(__v => __obj.updateDynamic("filterValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonalizedRankingRequest]
     }
   }
@@ -91,6 +97,7 @@ package personalizeruntime {
     var campaignArn: Arn
     var context: js.UndefOr[Context]
     var filterArn: js.UndefOr[Arn]
+    var filterValues: js.UndefOr[FilterValues]
     var itemId: js.UndefOr[ItemID]
     var numResults: js.UndefOr[NumResults]
     var userId: js.UndefOr[UserID]
@@ -102,6 +109,7 @@ package personalizeruntime {
         campaignArn: Arn,
         context: js.UndefOr[Context] = js.undefined,
         filterArn: js.UndefOr[Arn] = js.undefined,
+        filterValues: js.UndefOr[FilterValues] = js.undefined,
         itemId: js.UndefOr[ItemID] = js.undefined,
         numResults: js.UndefOr[NumResults] = js.undefined,
         userId: js.UndefOr[UserID] = js.undefined
@@ -112,6 +120,7 @@ package personalizeruntime {
 
       context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
+      filterValues.foreach(__v => __obj.updateDynamic("filterValues")(__v.asInstanceOf[js.Any]))
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
       userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))

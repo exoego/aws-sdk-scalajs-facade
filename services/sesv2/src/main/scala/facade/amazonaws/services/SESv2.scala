@@ -10,6 +10,7 @@ package object sesv2 {
   type AdditionalContactEmailAddress = String
   type AdditionalContactEmailAddresses = js.Array[AdditionalContactEmailAddress]
   type AmazonResourceName = String
+  type AttributesData = String
   type BlacklistEntries = js.Array[BlacklistEntry]
   type BlacklistItemName = String
   type BlacklistItemNames = js.Array[BlacklistItemName]
@@ -23,6 +24,7 @@ package object sesv2 {
   type CloudWatchDimensionConfigurations = js.Array[CloudWatchDimensionConfiguration]
   type ConfigurationSetName = String
   type ConfigurationSetNameList = js.Array[ConfigurationSetName]
+  type ContactListName = String
   type CustomRedirectDomain = String
   type CustomVerificationEmailTemplatesList = js.Array[CustomVerificationEmailTemplateMetadata]
   type DailyVolumes = js.Array[DailyVolume]
@@ -30,7 +32,9 @@ package object sesv2 {
   type DefaultDimensionValue = String
   type DeliverabilityTestReports = js.Array[DeliverabilityTestReport]
   type DeliverabilityTestSubject = String
+  type Description = String
   type DimensionName = String
+  type DisplayName = String
   type DnsToken = String
   type DnsTokenList = js.Array[DnsToken]
   type Domain = String
@@ -69,6 +73,8 @@ package object sesv2 {
   type IspPlacements = js.Array[IspPlacement]
   type JobId = String
   type LastFreshStart = js.Date
+  type ListOfContactLists = js.Array[ContactList]
+  type ListOfContacts = js.Array[Contact]
   type ListOfDedicatedIpPools = js.Array[PoolName]
   type MailFromDomainName = String
   type Max24HourSend = Double
@@ -108,7 +114,12 @@ package object sesv2 {
   type TagValue = String
   type TemplateContent = String
   type Timestamp = js.Date
+  type TopicName = String
+  type TopicPreferenceList = js.Array[TopicPreference]
+  type Topics = js.Array[Topic]
+  type UnsubscribeAll = Boolean
   type UseCaseDescription = String
+  type UseDefaultIfPreferenceUnavailable = Boolean
   type Volume = Double
   type WebsiteURL = String
 
@@ -116,6 +127,8 @@ package object sesv2 {
 
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
+    @inline def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] = service.createContact(params).promise().toFuture
+    @inline def createContactListFuture(params: CreateContactListRequest): Future[CreateContactListResponse] = service.createContactList(params).promise().toFuture
     @inline def createCustomVerificationEmailTemplateFuture(params: CreateCustomVerificationEmailTemplateRequest): Future[CreateCustomVerificationEmailTemplateResponse] = service.createCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def createDedicatedIpPoolFuture(params: CreateDedicatedIpPoolRequest): Future[CreateDedicatedIpPoolResponse] = service.createDedicatedIpPool(params).promise().toFuture
     @inline def createDeliverabilityTestReportFuture(params: CreateDeliverabilityTestReportRequest): Future[CreateDeliverabilityTestReportResponse] = service.createDeliverabilityTestReport(params).promise().toFuture
@@ -125,6 +138,8 @@ package object sesv2 {
     @inline def createImportJobFuture(params: CreateImportJobRequest): Future[CreateImportJobResponse] = service.createImportJob(params).promise().toFuture
     @inline def deleteConfigurationSetEventDestinationFuture(params: DeleteConfigurationSetEventDestinationRequest): Future[DeleteConfigurationSetEventDestinationResponse] = service.deleteConfigurationSetEventDestination(params).promise().toFuture
     @inline def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] = service.deleteConfigurationSet(params).promise().toFuture
+    @inline def deleteContactFuture(params: DeleteContactRequest): Future[DeleteContactResponse] = service.deleteContact(params).promise().toFuture
+    @inline def deleteContactListFuture(params: DeleteContactListRequest): Future[DeleteContactListResponse] = service.deleteContactList(params).promise().toFuture
     @inline def deleteCustomVerificationEmailTemplateFuture(params: DeleteCustomVerificationEmailTemplateRequest): Future[DeleteCustomVerificationEmailTemplateResponse] = service.deleteCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def deleteDedicatedIpPoolFuture(params: DeleteDedicatedIpPoolRequest): Future[DeleteDedicatedIpPoolResponse] = service.deleteDedicatedIpPool(params).promise().toFuture
     @inline def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] = service.deleteEmailIdentity(params).promise().toFuture
@@ -135,6 +150,8 @@ package object sesv2 {
     @inline def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] = service.getBlacklistReports(params).promise().toFuture
     @inline def getConfigurationSetEventDestinationsFuture(params: GetConfigurationSetEventDestinationsRequest): Future[GetConfigurationSetEventDestinationsResponse] = service.getConfigurationSetEventDestinations(params).promise().toFuture
     @inline def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] = service.getConfigurationSet(params).promise().toFuture
+    @inline def getContactFuture(params: GetContactRequest): Future[GetContactResponse] = service.getContact(params).promise().toFuture
+    @inline def getContactListFuture(params: GetContactListRequest): Future[GetContactListResponse] = service.getContactList(params).promise().toFuture
     @inline def getCustomVerificationEmailTemplateFuture(params: GetCustomVerificationEmailTemplateRequest): Future[GetCustomVerificationEmailTemplateResponse] = service.getCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] = service.getDedicatedIp(params).promise().toFuture
     @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] = service.getDedicatedIps(params).promise().toFuture
@@ -148,6 +165,8 @@ package object sesv2 {
     @inline def getImportJobFuture(params: GetImportJobRequest): Future[GetImportJobResponse] = service.getImportJob(params).promise().toFuture
     @inline def getSuppressedDestinationFuture(params: GetSuppressedDestinationRequest): Future[GetSuppressedDestinationResponse] = service.getSuppressedDestination(params).promise().toFuture
     @inline def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] = service.listConfigurationSets(params).promise().toFuture
+    @inline def listContactListsFuture(params: ListContactListsRequest): Future[ListContactListsResponse] = service.listContactLists(params).promise().toFuture
+    @inline def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] = service.listContacts(params).promise().toFuture
     @inline def listCustomVerificationEmailTemplatesFuture(params: ListCustomVerificationEmailTemplatesRequest): Future[ListCustomVerificationEmailTemplatesResponse] = service.listCustomVerificationEmailTemplates(params).promise().toFuture
     @inline def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] = service.listDedicatedIpPools(params).promise().toFuture
     @inline def listDeliverabilityTestReportsFuture(params: ListDeliverabilityTestReportsRequest): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise().toFuture
@@ -181,6 +200,8 @@ package object sesv2 {
     @inline def testRenderEmailTemplateFuture(params: TestRenderEmailTemplateRequest): Future[TestRenderEmailTemplateResponse] = service.testRenderEmailTemplate(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
+    @inline def updateContactFuture(params: UpdateContactRequest): Future[UpdateContactResponse] = service.updateContact(params).promise().toFuture
+    @inline def updateContactListFuture(params: UpdateContactListRequest): Future[UpdateContactListResponse] = service.updateContactList(params).promise().toFuture
     @inline def updateCustomVerificationEmailTemplateFuture(params: UpdateCustomVerificationEmailTemplateRequest): Future[UpdateCustomVerificationEmailTemplateResponse] = service.updateCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def updateEmailIdentityPolicyFuture(params: UpdateEmailIdentityPolicyRequest): Future[UpdateEmailIdentityPolicyResponse] = service.updateEmailIdentityPolicy(params).promise().toFuture
     @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] = service.updateEmailTemplate(params).promise().toFuture
@@ -196,6 +217,8 @@ package sesv2 {
 
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
+    def createContact(params: CreateContactRequest): Request[CreateContactResponse] = js.native
+    def createContactList(params: CreateContactListRequest): Request[CreateContactListResponse] = js.native
     def createCustomVerificationEmailTemplate(params: CreateCustomVerificationEmailTemplateRequest): Request[CreateCustomVerificationEmailTemplateResponse] = js.native
     def createDedicatedIpPool(params: CreateDedicatedIpPoolRequest): Request[CreateDedicatedIpPoolResponse] = js.native
     def createDeliverabilityTestReport(params: CreateDeliverabilityTestReportRequest): Request[CreateDeliverabilityTestReportResponse] = js.native
@@ -205,6 +228,8 @@ package sesv2 {
     def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse] = js.native
     def deleteConfigurationSet(params: DeleteConfigurationSetRequest): Request[DeleteConfigurationSetResponse] = js.native
     def deleteConfigurationSetEventDestination(params: DeleteConfigurationSetEventDestinationRequest): Request[DeleteConfigurationSetEventDestinationResponse] = js.native
+    def deleteContact(params: DeleteContactRequest): Request[DeleteContactResponse] = js.native
+    def deleteContactList(params: DeleteContactListRequest): Request[DeleteContactListResponse] = js.native
     def deleteCustomVerificationEmailTemplate(params: DeleteCustomVerificationEmailTemplateRequest): Request[DeleteCustomVerificationEmailTemplateResponse] = js.native
     def deleteDedicatedIpPool(params: DeleteDedicatedIpPoolRequest): Request[DeleteDedicatedIpPoolResponse] = js.native
     def deleteEmailIdentity(params: DeleteEmailIdentityRequest): Request[DeleteEmailIdentityResponse] = js.native
@@ -215,6 +240,8 @@ package sesv2 {
     def getBlacklistReports(params: GetBlacklistReportsRequest): Request[GetBlacklistReportsResponse] = js.native
     def getConfigurationSet(params: GetConfigurationSetRequest): Request[GetConfigurationSetResponse] = js.native
     def getConfigurationSetEventDestinations(params: GetConfigurationSetEventDestinationsRequest): Request[GetConfigurationSetEventDestinationsResponse] = js.native
+    def getContact(params: GetContactRequest): Request[GetContactResponse] = js.native
+    def getContactList(params: GetContactListRequest): Request[GetContactListResponse] = js.native
     def getCustomVerificationEmailTemplate(params: GetCustomVerificationEmailTemplateRequest): Request[GetCustomVerificationEmailTemplateResponse] = js.native
     def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse] = js.native
     def getDedicatedIps(params: GetDedicatedIpsRequest): Request[GetDedicatedIpsResponse] = js.native
@@ -228,6 +255,8 @@ package sesv2 {
     def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse] = js.native
     def getSuppressedDestination(params: GetSuppressedDestinationRequest): Request[GetSuppressedDestinationResponse] = js.native
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
+    def listContactLists(params: ListContactListsRequest): Request[ListContactListsResponse] = js.native
+    def listContacts(params: ListContactsRequest): Request[ListContactsResponse] = js.native
     def listCustomVerificationEmailTemplates(params: ListCustomVerificationEmailTemplatesRequest): Request[ListCustomVerificationEmailTemplatesResponse] = js.native
     def listDedicatedIpPools(params: ListDedicatedIpPoolsRequest): Request[ListDedicatedIpPoolsResponse] = js.native
     def listDeliverabilityTestReports(params: ListDeliverabilityTestReportsRequest): Request[ListDeliverabilityTestReportsResponse] = js.native
@@ -261,6 +290,8 @@ package sesv2 {
     def testRenderEmailTemplate(params: TestRenderEmailTemplateRequest): Request[TestRenderEmailTemplateResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
+    def updateContact(params: UpdateContactRequest): Request[UpdateContactResponse] = js.native
+    def updateContactList(params: UpdateContactListRequest): Request[UpdateContactListResponse] = js.native
     def updateCustomVerificationEmailTemplate(params: UpdateCustomVerificationEmailTemplateRequest): Request[UpdateCustomVerificationEmailTemplateResponse] = js.native
     def updateEmailIdentityPolicy(params: UpdateEmailIdentityPolicyRequest): Request[UpdateEmailIdentityPolicyResponse] = js.native
     def updateEmailTemplate(params: UpdateEmailTemplateRequest): Request[UpdateEmailTemplateResponse] = js.native
@@ -502,6 +533,36 @@ package sesv2 {
     }
   }
 
+  /** A contact is the end-user who is receiving the email.
+    */
+  @js.native
+  trait Contact extends js.Object {
+    var EmailAddress: js.UndefOr[EmailAddress]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var TopicDefaultPreferences: js.UndefOr[TopicPreferenceList]
+    var TopicPreferences: js.UndefOr[TopicPreferenceList]
+    var UnsubscribeAll: js.UndefOr[UnsubscribeAll]
+  }
+
+  object Contact {
+    @inline
+    def apply(
+        EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        TopicDefaultPreferences: js.UndefOr[TopicPreferenceList] = js.undefined,
+        TopicPreferences: js.UndefOr[TopicPreferenceList] = js.undefined,
+        UnsubscribeAll: js.UndefOr[UnsubscribeAll] = js.undefined
+    ): Contact = {
+      val __obj = js.Dynamic.literal()
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      TopicDefaultPreferences.foreach(__v => __obj.updateDynamic("TopicDefaultPreferences")(__v.asInstanceOf[js.Any]))
+      TopicPreferences.foreach(__v => __obj.updateDynamic("TopicPreferences")(__v.asInstanceOf[js.Any]))
+      UnsubscribeAll.foreach(__v => __obj.updateDynamic("UnsubscribeAll")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Contact]
+    }
+  }
+
   @js.native
   sealed trait ContactLanguage extends js.Any
   object ContactLanguage {
@@ -509,6 +570,58 @@ package sesv2 {
     val JA = "JA".asInstanceOf[ContactLanguage]
 
     @inline def values = js.Array(EN, JA)
+  }
+
+  /** A list that contains contacts that have subscribed to a particular topic or topics.
+    */
+  @js.native
+  trait ContactList extends js.Object {
+    var ContactListName: js.UndefOr[ContactListName]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object ContactList {
+    @inline
+    def apply(
+        ContactListName: js.UndefOr[ContactListName] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): ContactList = {
+      val __obj = js.Dynamic.literal()
+      ContactListName.foreach(__v => __obj.updateDynamic("ContactListName")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContactList]
+    }
+  }
+
+  /** An object that contains details about the action of a contact list.
+    */
+  @js.native
+  trait ContactListDestination extends js.Object {
+    var ContactListImportAction: ContactListImportAction
+    var ContactListName: ContactListName
+  }
+
+  object ContactListDestination {
+    @inline
+    def apply(
+        ContactListImportAction: ContactListImportAction,
+        ContactListName: ContactListName
+    ): ContactListDestination = {
+      val __obj = js.Dynamic.literal(
+        "ContactListImportAction" -> ContactListImportAction.asInstanceOf[js.Any],
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ContactListDestination]
+    }
+  }
+
+  @js.native
+  sealed trait ContactListImportAction extends js.Any
+  object ContactListImportAction {
+    val DELETE = "DELETE".asInstanceOf[ContactListImportAction]
+    val PUT = "PUT".asInstanceOf[ContactListImportAction]
+
+    @inline def values = js.Array(DELETE, PUT)
   }
 
   /** An object that represents the content of the email, and optionally a character set specification.
@@ -620,6 +733,85 @@ package sesv2 {
     def apply(): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateConfigurationSetResponse]
+    }
+  }
+
+  @js.native
+  trait CreateContactListRequest extends js.Object {
+    var ContactListName: ContactListName
+    var Description: js.UndefOr[Description]
+    var Tags: js.UndefOr[TagList]
+    var Topics: js.UndefOr[Topics]
+  }
+
+  object CreateContactListRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        Description: js.UndefOr[Description] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        Topics: js.UndefOr[Topics] = js.undefined
+    ): CreateContactListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContactListRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContactListResponse extends js.Object
+
+  object CreateContactListResponse {
+    @inline
+    def apply(): CreateContactListResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateContactListResponse]
+    }
+  }
+
+  @js.native
+  trait CreateContactRequest extends js.Object {
+    var ContactListName: ContactListName
+    var EmailAddress: EmailAddress
+    var AttributesData: js.UndefOr[AttributesData]
+    var TopicPreferences: js.UndefOr[TopicPreferenceList]
+    var UnsubscribeAll: js.UndefOr[UnsubscribeAll]
+  }
+
+  object CreateContactRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        EmailAddress: EmailAddress,
+        AttributesData: js.UndefOr[AttributesData] = js.undefined,
+        TopicPreferences: js.UndefOr[TopicPreferenceList] = js.undefined,
+        UnsubscribeAll: js.UndefOr[UnsubscribeAll] = js.undefined
+    ): CreateContactRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any],
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
+      )
+
+      AttributesData.foreach(__v => __obj.updateDynamic("AttributesData")(__v.asInstanceOf[js.Any]))
+      TopicPreferences.foreach(__v => __obj.updateDynamic("TopicPreferences")(__v.asInstanceOf[js.Any]))
+      UnsubscribeAll.foreach(__v => __obj.updateDynamic("UnsubscribeAll")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContactRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContactResponse extends js.Object
+
+  object CreateContactResponse {
+    @inline
+    def apply(): CreateContactResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateContactResponse]
     }
   }
 
@@ -1080,6 +1272,65 @@ package sesv2 {
     def apply(): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteContactListRequest extends js.Object {
+    var ContactListName: ContactListName
+  }
+
+  object DeleteContactListRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName
+    ): DeleteContactListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteContactListRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteContactListResponse extends js.Object
+
+  object DeleteContactListResponse {
+    @inline
+    def apply(): DeleteContactListResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteContactListResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteContactRequest extends js.Object {
+    var ContactListName: ContactListName
+    var EmailAddress: EmailAddress
+  }
+
+  object DeleteContactRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        EmailAddress: EmailAddress
+    ): DeleteContactRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any],
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteContactRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteContactResponse extends js.Object
+
+  object DeleteContactResponse {
+    @inline
+    def apply(): DeleteContactResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteContactResponse]
     }
   }
 
@@ -1734,8 +1985,9 @@ package sesv2 {
     val CLICK = "CLICK".asInstanceOf[EventType]
     val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
     val DELIVERY_DELAY = "DELIVERY_DELAY".asInstanceOf[EventType]
+    val SUBSCRIPTION = "SUBSCRIPTION".asInstanceOf[EventType]
 
-    @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY)
+    @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY, SUBSCRIPTION)
   }
 
   /** An object that contains the failure details about an import job.
@@ -1935,6 +2187,111 @@ package sesv2 {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationSetResponse]
+    }
+  }
+
+  @js.native
+  trait GetContactListRequest extends js.Object {
+    var ContactListName: ContactListName
+  }
+
+  object GetContactListRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName
+    ): GetContactListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContactListRequest]
+    }
+  }
+
+  @js.native
+  trait GetContactListResponse extends js.Object {
+    var ContactListName: js.UndefOr[ContactListName]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[Description]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var Tags: js.UndefOr[TagList]
+    var Topics: js.UndefOr[Topics]
+  }
+
+  object GetContactListResponse {
+    @inline
+    def apply(
+        ContactListName: js.UndefOr[ContactListName] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        Topics: js.UndefOr[Topics] = js.undefined
+    ): GetContactListResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactListName.foreach(__v => __obj.updateDynamic("ContactListName")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContactListResponse]
+    }
+  }
+
+  @js.native
+  trait GetContactRequest extends js.Object {
+    var ContactListName: ContactListName
+    var EmailAddress: EmailAddress
+  }
+
+  object GetContactRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        EmailAddress: EmailAddress
+    ): GetContactRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any],
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContactRequest]
+    }
+  }
+
+  @js.native
+  trait GetContactResponse extends js.Object {
+    var AttributesData: js.UndefOr[AttributesData]
+    var ContactListName: js.UndefOr[ContactListName]
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var EmailAddress: js.UndefOr[EmailAddress]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var TopicDefaultPreferences: js.UndefOr[TopicPreferenceList]
+    var TopicPreferences: js.UndefOr[TopicPreferenceList]
+    var UnsubscribeAll: js.UndefOr[UnsubscribeAll]
+  }
+
+  object GetContactResponse {
+    @inline
+    def apply(
+        AttributesData: js.UndefOr[AttributesData] = js.undefined,
+        ContactListName: js.UndefOr[ContactListName] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        TopicDefaultPreferences: js.UndefOr[TopicPreferenceList] = js.undefined,
+        TopicPreferences: js.UndefOr[TopicPreferenceList] = js.undefined,
+        UnsubscribeAll: js.UndefOr[UnsubscribeAll] = js.undefined
+    ): GetContactResponse = {
+      val __obj = js.Dynamic.literal()
+      AttributesData.foreach(__v => __obj.updateDynamic("AttributesData")(__v.asInstanceOf[js.Any]))
+      ContactListName.foreach(__v => __obj.updateDynamic("ContactListName")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      TopicDefaultPreferences.foreach(__v => __obj.updateDynamic("TopicDefaultPreferences")(__v.asInstanceOf[js.Any]))
+      TopicPreferences.foreach(__v => __obj.updateDynamic("TopicPreferences")(__v.asInstanceOf[js.Any]))
+      UnsubscribeAll.foreach(__v => __obj.updateDynamic("UnsubscribeAll")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContactResponse]
     }
   }
 
@@ -2550,17 +2907,19 @@ package sesv2 {
     */
   @js.native
   trait ImportDestination extends js.Object {
-    var SuppressionListDestination: SuppressionListDestination
+    var ContactListDestination: js.UndefOr[ContactListDestination]
+    var SuppressionListDestination: js.UndefOr[SuppressionListDestination]
   }
 
   object ImportDestination {
     @inline
     def apply(
-        SuppressionListDestination: SuppressionListDestination
+        ContactListDestination: js.UndefOr[ContactListDestination] = js.undefined,
+        SuppressionListDestination: js.UndefOr[SuppressionListDestination] = js.undefined
     ): ImportDestination = {
-      val __obj = js.Dynamic.literal(
-        "SuppressionListDestination" -> SuppressionListDestination.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      ContactListDestination.foreach(__v => __obj.updateDynamic("ContactListDestination")(__v.asInstanceOf[js.Any]))
+      SuppressionListDestination.foreach(__v => __obj.updateDynamic("SuppressionListDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportDestination]
     }
   }
@@ -2571,8 +2930,9 @@ package sesv2 {
   sealed trait ImportDestinationType extends js.Any
   object ImportDestinationType {
     val SUPPRESSION_LIST = "SUPPRESSION_LIST".asInstanceOf[ImportDestinationType]
+    val CONTACT_LIST = "CONTACT_LIST".asInstanceOf[ImportDestinationType]
 
-    @inline def values = js.Array(SUPPRESSION_LIST)
+    @inline def values = js.Array(SUPPRESSION_LIST, CONTACT_LIST)
   }
 
   /** A summary of the import job.
@@ -2718,6 +3078,111 @@ package sesv2 {
       ConfigurationSets.foreach(__v => __obj.updateDynamic("ConfigurationSets")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationSetsResponse]
+    }
+  }
+
+  @js.native
+  trait ListContactListsRequest extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListContactListsRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListContactListsRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactListsRequest]
+    }
+  }
+
+  @js.native
+  trait ListContactListsResponse extends js.Object {
+    var ContactLists: js.UndefOr[ListOfContactLists]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListContactListsResponse {
+    @inline
+    def apply(
+        ContactLists: js.UndefOr[ListOfContactLists] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListContactListsResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactLists.foreach(__v => __obj.updateDynamic("ContactLists")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactListsResponse]
+    }
+  }
+
+  /** A filter that can be applied to a list of contacts.
+    */
+  @js.native
+  trait ListContactsFilter extends js.Object {
+    var FilteredStatus: js.UndefOr[SubscriptionStatus]
+    var TopicFilter: js.UndefOr[TopicFilter]
+  }
+
+  object ListContactsFilter {
+    @inline
+    def apply(
+        FilteredStatus: js.UndefOr[SubscriptionStatus] = js.undefined,
+        TopicFilter: js.UndefOr[TopicFilter] = js.undefined
+    ): ListContactsFilter = {
+      val __obj = js.Dynamic.literal()
+      FilteredStatus.foreach(__v => __obj.updateDynamic("FilteredStatus")(__v.asInstanceOf[js.Any]))
+      TopicFilter.foreach(__v => __obj.updateDynamic("TopicFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactsFilter]
+    }
+  }
+
+  @js.native
+  trait ListContactsRequest extends js.Object {
+    var ContactListName: ContactListName
+    var Filter: js.UndefOr[ListContactsFilter]
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListContactsRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        Filter: js.UndefOr[ListContactsFilter] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListContactsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactsRequest]
+    }
+  }
+
+  @js.native
+  trait ListContactsResponse extends js.Object {
+    var Contacts: js.UndefOr[ListOfContacts]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListContactsResponse {
+    @inline
+    def apply(
+        Contacts: js.UndefOr[ListOfContacts] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListContactsResponse = {
+      val __obj = js.Dynamic.literal()
+      Contacts.foreach(__v => __obj.updateDynamic("Contacts")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContactsResponse]
     }
   }
 
@@ -3030,6 +3495,29 @@ package sesv2 {
       ImportJobs.foreach(__v => __obj.updateDynamic("ImportJobs")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImportJobsResponse]
+    }
+  }
+
+  /** An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.
+    */
+  @js.native
+  trait ListManagementOptions extends js.Object {
+    var ContactListName: ContactListName
+    var TopicName: js.UndefOr[TopicName]
+  }
+
+  object ListManagementOptions {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        TopicName: js.UndefOr[TopicName] = js.undefined
+    ): ListManagementOptions = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+
+      TopicName.foreach(__v => __obj.updateDynamic("TopicName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListManagementOptions]
     }
   }
 
@@ -4137,6 +4625,7 @@ package sesv2 {
     var FeedbackForwardingEmailAddressIdentityArn: js.UndefOr[AmazonResourceName]
     var FromEmailAddress: js.UndefOr[EmailAddress]
     var FromEmailAddressIdentityArn: js.UndefOr[AmazonResourceName]
+    var ListManagementOptions: js.UndefOr[ListManagementOptions]
     var ReplyToAddresses: js.UndefOr[EmailAddressList]
   }
 
@@ -4151,6 +4640,7 @@ package sesv2 {
         FeedbackForwardingEmailAddressIdentityArn: js.UndefOr[AmazonResourceName] = js.undefined,
         FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
         FromEmailAddressIdentityArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        ListManagementOptions: js.UndefOr[ListManagementOptions] = js.undefined,
         ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): SendEmailRequest = {
       val __obj = js.Dynamic.literal(
@@ -4164,6 +4654,7 @@ package sesv2 {
       FeedbackForwardingEmailAddressIdentityArn.foreach(__v => __obj.updateDynamic("FeedbackForwardingEmailAddressIdentityArn")(__v.asInstanceOf[js.Any]))
       FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
       FromEmailAddressIdentityArn.foreach(__v => __obj.updateDynamic("FromEmailAddressIdentityArn")(__v.asInstanceOf[js.Any]))
+      ListManagementOptions.foreach(__v => __obj.updateDynamic("ListManagementOptions")(__v.asInstanceOf[js.Any]))
       ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendEmailRequest]
     }
@@ -4246,6 +4737,15 @@ package sesv2 {
       )
       __obj.asInstanceOf[SnsDestination]
     }
+  }
+
+  @js.native
+  sealed trait SubscriptionStatus extends js.Any
+  object SubscriptionStatus {
+    val OPT_IN = "OPT_IN".asInstanceOf[SubscriptionStatus]
+    val OPT_OUT = "OPT_OUT".asInstanceOf[SubscriptionStatus]
+
+    @inline def values = js.Array(OPT_IN, OPT_OUT)
   }
 
   /** An object that contains information about an email address that is on the suppression list for your account.
@@ -4538,6 +5038,78 @@ package sesv2 {
     @inline def values = js.Array(REQUIRE, OPTIONAL)
   }
 
+  /** An interest group, theme, or label within a list. Lists can have multiple topics.
+    */
+  @js.native
+  trait Topic extends js.Object {
+    var DefaultSubscriptionStatus: SubscriptionStatus
+    var DisplayName: DisplayName
+    var TopicName: TopicName
+    var Description: js.UndefOr[Description]
+  }
+
+  object Topic {
+    @inline
+    def apply(
+        DefaultSubscriptionStatus: SubscriptionStatus,
+        DisplayName: DisplayName,
+        TopicName: TopicName,
+        Description: js.UndefOr[Description] = js.undefined
+    ): Topic = {
+      val __obj = js.Dynamic.literal(
+        "DefaultSubscriptionStatus" -> DefaultSubscriptionStatus.asInstanceOf[js.Any],
+        "DisplayName" -> DisplayName.asInstanceOf[js.Any],
+        "TopicName" -> TopicName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Topic]
+    }
+  }
+
+  /** Used for filtering by a specific topic preference.
+    */
+  @js.native
+  trait TopicFilter extends js.Object {
+    var TopicName: js.UndefOr[TopicName]
+    var UseDefaultIfPreferenceUnavailable: js.UndefOr[UseDefaultIfPreferenceUnavailable]
+  }
+
+  object TopicFilter {
+    @inline
+    def apply(
+        TopicName: js.UndefOr[TopicName] = js.undefined,
+        UseDefaultIfPreferenceUnavailable: js.UndefOr[UseDefaultIfPreferenceUnavailable] = js.undefined
+    ): TopicFilter = {
+      val __obj = js.Dynamic.literal()
+      TopicName.foreach(__v => __obj.updateDynamic("TopicName")(__v.asInstanceOf[js.Any]))
+      UseDefaultIfPreferenceUnavailable.foreach(__v => __obj.updateDynamic("UseDefaultIfPreferenceUnavailable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TopicFilter]
+    }
+  }
+
+  /** The contact's preference for being opted-in to or opted-out of a topic.
+    */
+  @js.native
+  trait TopicPreference extends js.Object {
+    var SubscriptionStatus: SubscriptionStatus
+    var TopicName: TopicName
+  }
+
+  object TopicPreference {
+    @inline
+    def apply(
+        SubscriptionStatus: SubscriptionStatus,
+        TopicName: TopicName
+    ): TopicPreference = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionStatus" -> SubscriptionStatus.asInstanceOf[js.Any],
+        "TopicName" -> TopicName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TopicPreference]
+    }
+  }
+
   /** An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
     * These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
     */
@@ -4624,6 +5196,82 @@ package sesv2 {
     def apply(): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateContactListRequest extends js.Object {
+    var ContactListName: ContactListName
+    var Description: js.UndefOr[Description]
+    var Topics: js.UndefOr[Topics]
+  }
+
+  object UpdateContactListRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        Description: js.UndefOr[Description] = js.undefined,
+        Topics: js.UndefOr[Topics] = js.undefined
+    ): UpdateContactListRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContactListRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateContactListResponse extends js.Object
+
+  object UpdateContactListResponse {
+    @inline
+    def apply(): UpdateContactListResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateContactListResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateContactRequest extends js.Object {
+    var ContactListName: ContactListName
+    var EmailAddress: EmailAddress
+    var AttributesData: js.UndefOr[AttributesData]
+    var TopicPreferences: js.UndefOr[TopicPreferenceList]
+    var UnsubscribeAll: js.UndefOr[UnsubscribeAll]
+  }
+
+  object UpdateContactRequest {
+    @inline
+    def apply(
+        ContactListName: ContactListName,
+        EmailAddress: EmailAddress,
+        AttributesData: js.UndefOr[AttributesData] = js.undefined,
+        TopicPreferences: js.UndefOr[TopicPreferenceList] = js.undefined,
+        UnsubscribeAll: js.UndefOr[UnsubscribeAll] = js.undefined
+    ): UpdateContactRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactListName" -> ContactListName.asInstanceOf[js.Any],
+        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
+      )
+
+      AttributesData.foreach(__v => __obj.updateDynamic("AttributesData")(__v.asInstanceOf[js.Any]))
+      TopicPreferences.foreach(__v => __obj.updateDynamic("TopicPreferences")(__v.asInstanceOf[js.Any]))
+      UnsubscribeAll.foreach(__v => __obj.updateDynamic("UnsubscribeAll")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContactRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateContactResponse extends js.Object
+
+  object UpdateContactResponse {
+    @inline
+    def apply(): UpdateContactResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateContactResponse]
     }
   }
 

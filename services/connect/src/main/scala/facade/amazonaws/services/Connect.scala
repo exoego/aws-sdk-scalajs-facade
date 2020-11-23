@@ -12,14 +12,21 @@ package object connect {
   type AgentFirstName = String
   type AgentLastName = String
   type AgentUsername = String
+  type AssociationId = String
   type AttributeName = String
   type AttributeValue = String
   type Attributes = js.Dictionary[AttributeValue]
+  type AttributesList = js.Array[Attribute]
   type AutoAccept = Boolean
+  type BotName = String
+  type BucketName = String
   type Channels = js.Array[Channel]
   type ChatContent = String
   type ChatContentType = String
   type ClientToken = String
+  type Concurrency = Int
+  type ContactFlowContent = String
+  type ContactFlowDescription = String
   type ContactFlowId = String
   type ContactFlowName = String
   type ContactFlowSummaryList = js.Array[ContactFlowSummary]
@@ -28,9 +35,14 @@ package object connect {
   type CurrentMetricDataCollections = js.Array[CurrentMetricData]
   type CurrentMetricResults = js.Array[CurrentMetricResult]
   type CurrentMetrics = js.Array[CurrentMetric]
+  type Delay = Int
+  type DirectoryAlias = String
+  type DirectoryId = String
   type DirectoryUserId = String
   type DisplayName = String
   type Email = String
+  type FunctionArn = String
+  type FunctionArnsList = js.Array[FunctionArn]
   type Groupings = js.Array[Grouping]
   type HierarchyGroupId = String
   type HierarchyGroupName = String
@@ -40,13 +52,30 @@ package object connect {
   type HistoricalMetricDataCollections = js.Array[HistoricalMetricData]
   type HistoricalMetricResults = js.Array[HistoricalMetricResult]
   type HistoricalMetrics = js.Array[HistoricalMetric]
+  type Hours = Int
   type HoursOfOperationId = String
   type HoursOfOperationName = String
   type HoursOfOperationSummaryList = js.Array[HoursOfOperationSummary]
+  type InboundCallsEnabled = Boolean
+  type InstanceAttributeValue = String
   type InstanceId = String
+  type InstanceStorageConfigs = js.Array[InstanceStorageConfig]
+  type InstanceSummaryList = js.Array[InstanceSummary]
+  type KeyId = String
+  type LexBotsList = js.Array[LexBot]
+  type LexRegion = String
+  type MaxResult10 = Int
   type MaxResult100 = Int
   type MaxResult1000 = Int
+  type MaxResult2 = Int
+  type MaxResult25 = Int
+  type MaxResult7 = Int
+  type MediaConcurrencies = js.Array[MediaConcurrency]
   type NextToken = String
+  type Origin = String
+  type OriginsList = js.Array[Origin]
+  type OutboundCallsEnabled = Boolean
+  type PEM = String
   type ParticipantId = String
   type ParticipantToken = String
   type Password = String
@@ -55,14 +84,24 @@ package object connect {
   type PhoneNumberId = String
   type PhoneNumberSummaryList = js.Array[PhoneNumberSummary]
   type PhoneNumberTypes = js.Array[PhoneNumberType]
+  type Prefix = String
+  type Priority = Int
+  type PromptId = String
+  type PromptName = String
+  type PromptSummaryList = js.Array[PromptSummary]
   type QueueId = String
   type QueueName = String
   type QueueSummaryList = js.Array[QueueSummary]
   type QueueTypes = js.Array[QueueType]
   type Queues = js.Array[QueueId]
+  type RoutingProfileDescription = String
   type RoutingProfileId = String
   type RoutingProfileName = String
+  type RoutingProfileQueueConfigList = js.Array[RoutingProfileQueueConfig]
+  type RoutingProfileQueueConfigSummaryList = js.Array[RoutingProfileQueueConfigSummary]
+  type RoutingProfileQueueReferenceList = js.Array[RoutingProfileQueueReference]
   type RoutingProfileSummaryList = js.Array[RoutingProfileSummary]
+  type SecurityKeysList = js.Array[SecurityKey]
   type SecurityProfileId = String
   type SecurityProfileIds = js.Array[SecurityProfileId]
   type SecurityProfileName = String
@@ -73,6 +112,7 @@ package object connect {
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type ThresholdValue = Double
+  type Timestamp = js.Date
   type UserId = String
   type UserSummaryList = js.Array[UserSummary]
   type Value = Double
@@ -80,20 +120,52 @@ package object connect {
 
   implicit final class ConnectOps(private val service: Connect) extends AnyVal {
 
+    @inline def associateApprovedOriginFuture(params: AssociateApprovedOriginRequest): Future[js.Object] = service.associateApprovedOrigin(params).promise().toFuture
+    @inline def associateInstanceStorageConfigFuture(params: AssociateInstanceStorageConfigRequest): Future[AssociateInstanceStorageConfigResponse] = service.associateInstanceStorageConfig(params).promise().toFuture
+    @inline def associateLambdaFunctionFuture(params: AssociateLambdaFunctionRequest): Future[js.Object] = service.associateLambdaFunction(params).promise().toFuture
+    @inline def associateLexBotFuture(params: AssociateLexBotRequest): Future[js.Object] = service.associateLexBot(params).promise().toFuture
+    @inline def associateRoutingProfileQueuesFuture(params: AssociateRoutingProfileQueuesRequest): Future[js.Object] = service.associateRoutingProfileQueues(params).promise().toFuture
+    @inline def associateSecurityKeyFuture(params: AssociateSecurityKeyRequest): Future[AssociateSecurityKeyResponse] = service.associateSecurityKey(params).promise().toFuture
+    @inline def createContactFlowFuture(params: CreateContactFlowRequest): Future[CreateContactFlowResponse] = service.createContactFlow(params).promise().toFuture
+    @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResponse] = service.createInstance(params).promise().toFuture
+    @inline def createRoutingProfileFuture(params: CreateRoutingProfileRequest): Future[CreateRoutingProfileResponse] = service.createRoutingProfile(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
+    @inline def createUserHierarchyGroupFuture(params: CreateUserHierarchyGroupRequest): Future[CreateUserHierarchyGroupResponse] = service.createUserHierarchyGroup(params).promise().toFuture
+    @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] = service.deleteInstance(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
+    @inline def deleteUserHierarchyGroupFuture(params: DeleteUserHierarchyGroupRequest): Future[js.Object] = service.deleteUserHierarchyGroup(params).promise().toFuture
+    @inline def describeContactFlowFuture(params: DescribeContactFlowRequest): Future[DescribeContactFlowResponse] = service.describeContactFlow(params).promise().toFuture
+    @inline def describeInstanceAttributeFuture(params: DescribeInstanceAttributeRequest): Future[DescribeInstanceAttributeResponse] = service.describeInstanceAttribute(params).promise().toFuture
+    @inline def describeInstanceFuture(params: DescribeInstanceRequest): Future[DescribeInstanceResponse] = service.describeInstance(params).promise().toFuture
+    @inline def describeInstanceStorageConfigFuture(params: DescribeInstanceStorageConfigRequest): Future[DescribeInstanceStorageConfigResponse] = service.describeInstanceStorageConfig(params).promise().toFuture
+    @inline def describeRoutingProfileFuture(params: DescribeRoutingProfileRequest): Future[DescribeRoutingProfileResponse] = service.describeRoutingProfile(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
     @inline def describeUserHierarchyGroupFuture(params: DescribeUserHierarchyGroupRequest): Future[DescribeUserHierarchyGroupResponse] = service.describeUserHierarchyGroup(params).promise().toFuture
     @inline def describeUserHierarchyStructureFuture(params: DescribeUserHierarchyStructureRequest): Future[DescribeUserHierarchyStructureResponse] = service.describeUserHierarchyStructure(params).promise().toFuture
+    @inline def disassociateApprovedOriginFuture(params: DisassociateApprovedOriginRequest): Future[js.Object] = service.disassociateApprovedOrigin(params).promise().toFuture
+    @inline def disassociateInstanceStorageConfigFuture(params: DisassociateInstanceStorageConfigRequest): Future[js.Object] = service.disassociateInstanceStorageConfig(params).promise().toFuture
+    @inline def disassociateLambdaFunctionFuture(params: DisassociateLambdaFunctionRequest): Future[js.Object] = service.disassociateLambdaFunction(params).promise().toFuture
+    @inline def disassociateLexBotFuture(params: DisassociateLexBotRequest): Future[js.Object] = service.disassociateLexBot(params).promise().toFuture
+    @inline def disassociateRoutingProfileQueuesFuture(params: DisassociateRoutingProfileQueuesRequest): Future[js.Object] = service.disassociateRoutingProfileQueues(params).promise().toFuture
+    @inline def disassociateSecurityKeyFuture(params: DisassociateSecurityKeyRequest): Future[js.Object] = service.disassociateSecurityKey(params).promise().toFuture
     @inline def getContactAttributesFuture(params: GetContactAttributesRequest): Future[GetContactAttributesResponse] = service.getContactAttributes(params).promise().toFuture
     @inline def getCurrentMetricDataFuture(params: GetCurrentMetricDataRequest): Future[GetCurrentMetricDataResponse] = service.getCurrentMetricData(params).promise().toFuture
     @inline def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] = service.getFederationToken(params).promise().toFuture
     @inline def getMetricDataFuture(params: GetMetricDataRequest): Future[GetMetricDataResponse] = service.getMetricData(params).promise().toFuture
+    @inline def listApprovedOriginsFuture(params: ListApprovedOriginsRequest): Future[ListApprovedOriginsResponse] = service.listApprovedOrigins(params).promise().toFuture
     @inline def listContactFlowsFuture(params: ListContactFlowsRequest): Future[ListContactFlowsResponse] = service.listContactFlows(params).promise().toFuture
     @inline def listHoursOfOperationsFuture(params: ListHoursOfOperationsRequest): Future[ListHoursOfOperationsResponse] = service.listHoursOfOperations(params).promise().toFuture
+    @inline def listInstanceAttributesFuture(params: ListInstanceAttributesRequest): Future[ListInstanceAttributesResponse] = service.listInstanceAttributes(params).promise().toFuture
+    @inline def listInstanceStorageConfigsFuture(params: ListInstanceStorageConfigsRequest): Future[ListInstanceStorageConfigsResponse] = service.listInstanceStorageConfigs(params).promise().toFuture
+    @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] = service.listInstances(params).promise().toFuture
+    @inline def listLambdaFunctionsFuture(params: ListLambdaFunctionsRequest): Future[ListLambdaFunctionsResponse] = service.listLambdaFunctions(params).promise().toFuture
+    @inline def listLexBotsFuture(params: ListLexBotsRequest): Future[ListLexBotsResponse] = service.listLexBots(params).promise().toFuture
     @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] = service.listPhoneNumbers(params).promise().toFuture
+    @inline def listPromptsFuture(params: ListPromptsRequest): Future[ListPromptsResponse] = service.listPrompts(params).promise().toFuture
     @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] = service.listQueues(params).promise().toFuture
+    @inline def listRoutingProfileQueuesFuture(params: ListRoutingProfileQueuesRequest): Future[ListRoutingProfileQueuesResponse] = service.listRoutingProfileQueues(params).promise().toFuture
     @inline def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] = service.listRoutingProfiles(params).promise().toFuture
+    @inline def listSecurityKeysFuture(params: ListSecurityKeysRequest): Future[ListSecurityKeysResponse] = service.listSecurityKeys(params).promise().toFuture
     @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] = service.listSecurityProfiles(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listUserHierarchyGroupsFuture(params: ListUserHierarchyGroupsRequest): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise().toFuture
@@ -108,7 +180,17 @@ package object connect {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateContactAttributesFuture(params: UpdateContactAttributesRequest): Future[UpdateContactAttributesResponse] = service.updateContactAttributes(params).promise().toFuture
+    @inline def updateContactFlowContentFuture(params: UpdateContactFlowContentRequest): Future[js.Object] = service.updateContactFlowContent(params).promise().toFuture
+    @inline def updateContactFlowNameFuture(params: UpdateContactFlowNameRequest): Future[js.Object] = service.updateContactFlowName(params).promise().toFuture
+    @inline def updateInstanceAttributeFuture(params: UpdateInstanceAttributeRequest): Future[js.Object] = service.updateInstanceAttribute(params).promise().toFuture
+    @inline def updateInstanceStorageConfigFuture(params: UpdateInstanceStorageConfigRequest): Future[js.Object] = service.updateInstanceStorageConfig(params).promise().toFuture
+    @inline def updateRoutingProfileConcurrencyFuture(params: UpdateRoutingProfileConcurrencyRequest): Future[js.Object] = service.updateRoutingProfileConcurrency(params).promise().toFuture
+    @inline def updateRoutingProfileDefaultOutboundQueueFuture(params: UpdateRoutingProfileDefaultOutboundQueueRequest): Future[js.Object] = service.updateRoutingProfileDefaultOutboundQueue(params).promise().toFuture
+    @inline def updateRoutingProfileNameFuture(params: UpdateRoutingProfileNameRequest): Future[js.Object] = service.updateRoutingProfileName(params).promise().toFuture
+    @inline def updateRoutingProfileQueuesFuture(params: UpdateRoutingProfileQueuesRequest): Future[js.Object] = service.updateRoutingProfileQueues(params).promise().toFuture
     @inline def updateUserHierarchyFuture(params: UpdateUserHierarchyRequest): Future[js.Object] = service.updateUserHierarchy(params).promise().toFuture
+    @inline def updateUserHierarchyGroupNameFuture(params: UpdateUserHierarchyGroupNameRequest): Future[js.Object] = service.updateUserHierarchyGroupName(params).promise().toFuture
+    @inline def updateUserHierarchyStructureFuture(params: UpdateUserHierarchyStructureRequest): Future[js.Object] = service.updateUserHierarchyStructure(params).promise().toFuture
     @inline def updateUserIdentityInfoFuture(params: UpdateUserIdentityInfoRequest): Future[js.Object] = service.updateUserIdentityInfo(params).promise().toFuture
     @inline def updateUserPhoneConfigFuture(params: UpdateUserPhoneConfigRequest): Future[js.Object] = service.updateUserPhoneConfig(params).promise().toFuture
     @inline def updateUserRoutingProfileFuture(params: UpdateUserRoutingProfileRequest): Future[js.Object] = service.updateUserRoutingProfile(params).promise().toFuture
@@ -123,20 +205,52 @@ package connect {
   class Connect() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateApprovedOrigin(params: AssociateApprovedOriginRequest): Request[js.Object] = js.native
+    def associateInstanceStorageConfig(params: AssociateInstanceStorageConfigRequest): Request[AssociateInstanceStorageConfigResponse] = js.native
+    def associateLambdaFunction(params: AssociateLambdaFunctionRequest): Request[js.Object] = js.native
+    def associateLexBot(params: AssociateLexBotRequest): Request[js.Object] = js.native
+    def associateRoutingProfileQueues(params: AssociateRoutingProfileQueuesRequest): Request[js.Object] = js.native
+    def associateSecurityKey(params: AssociateSecurityKeyRequest): Request[AssociateSecurityKeyResponse] = js.native
+    def createContactFlow(params: CreateContactFlowRequest): Request[CreateContactFlowResponse] = js.native
+    def createInstance(params: CreateInstanceRequest): Request[CreateInstanceResponse] = js.native
+    def createRoutingProfile(params: CreateRoutingProfileRequest): Request[CreateRoutingProfileResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
+    def createUserHierarchyGroup(params: CreateUserHierarchyGroupRequest): Request[CreateUserHierarchyGroupResponse] = js.native
+    def deleteInstance(params: DeleteInstanceRequest): Request[js.Object] = js.native
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
+    def deleteUserHierarchyGroup(params: DeleteUserHierarchyGroupRequest): Request[js.Object] = js.native
+    def describeContactFlow(params: DescribeContactFlowRequest): Request[DescribeContactFlowResponse] = js.native
+    def describeInstance(params: DescribeInstanceRequest): Request[DescribeInstanceResponse] = js.native
+    def describeInstanceAttribute(params: DescribeInstanceAttributeRequest): Request[DescribeInstanceAttributeResponse] = js.native
+    def describeInstanceStorageConfig(params: DescribeInstanceStorageConfigRequest): Request[DescribeInstanceStorageConfigResponse] = js.native
+    def describeRoutingProfile(params: DescribeRoutingProfileRequest): Request[DescribeRoutingProfileResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def describeUserHierarchyGroup(params: DescribeUserHierarchyGroupRequest): Request[DescribeUserHierarchyGroupResponse] = js.native
     def describeUserHierarchyStructure(params: DescribeUserHierarchyStructureRequest): Request[DescribeUserHierarchyStructureResponse] = js.native
+    def disassociateApprovedOrigin(params: DisassociateApprovedOriginRequest): Request[js.Object] = js.native
+    def disassociateInstanceStorageConfig(params: DisassociateInstanceStorageConfigRequest): Request[js.Object] = js.native
+    def disassociateLambdaFunction(params: DisassociateLambdaFunctionRequest): Request[js.Object] = js.native
+    def disassociateLexBot(params: DisassociateLexBotRequest): Request[js.Object] = js.native
+    def disassociateRoutingProfileQueues(params: DisassociateRoutingProfileQueuesRequest): Request[js.Object] = js.native
+    def disassociateSecurityKey(params: DisassociateSecurityKeyRequest): Request[js.Object] = js.native
     def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse] = js.native
     def getCurrentMetricData(params: GetCurrentMetricDataRequest): Request[GetCurrentMetricDataResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
     def getMetricData(params: GetMetricDataRequest): Request[GetMetricDataResponse] = js.native
+    def listApprovedOrigins(params: ListApprovedOriginsRequest): Request[ListApprovedOriginsResponse] = js.native
     def listContactFlows(params: ListContactFlowsRequest): Request[ListContactFlowsResponse] = js.native
     def listHoursOfOperations(params: ListHoursOfOperationsRequest): Request[ListHoursOfOperationsResponse] = js.native
+    def listInstanceAttributes(params: ListInstanceAttributesRequest): Request[ListInstanceAttributesResponse] = js.native
+    def listInstanceStorageConfigs(params: ListInstanceStorageConfigsRequest): Request[ListInstanceStorageConfigsResponse] = js.native
+    def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse] = js.native
+    def listLambdaFunctions(params: ListLambdaFunctionsRequest): Request[ListLambdaFunctionsResponse] = js.native
+    def listLexBots(params: ListLexBotsRequest): Request[ListLexBotsResponse] = js.native
     def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse] = js.native
+    def listPrompts(params: ListPromptsRequest): Request[ListPromptsResponse] = js.native
     def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse] = js.native
+    def listRoutingProfileQueues(params: ListRoutingProfileQueuesRequest): Request[ListRoutingProfileQueuesResponse] = js.native
     def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse] = js.native
+    def listSecurityKeys(params: ListSecurityKeysRequest): Request[ListSecurityKeysResponse] = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] = js.native
@@ -151,11 +265,200 @@ package connect {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateContactAttributes(params: UpdateContactAttributesRequest): Request[UpdateContactAttributesResponse] = js.native
+    def updateContactFlowContent(params: UpdateContactFlowContentRequest): Request[js.Object] = js.native
+    def updateContactFlowName(params: UpdateContactFlowNameRequest): Request[js.Object] = js.native
+    def updateInstanceAttribute(params: UpdateInstanceAttributeRequest): Request[js.Object] = js.native
+    def updateInstanceStorageConfig(params: UpdateInstanceStorageConfigRequest): Request[js.Object] = js.native
+    def updateRoutingProfileConcurrency(params: UpdateRoutingProfileConcurrencyRequest): Request[js.Object] = js.native
+    def updateRoutingProfileDefaultOutboundQueue(params: UpdateRoutingProfileDefaultOutboundQueueRequest): Request[js.Object] = js.native
+    def updateRoutingProfileName(params: UpdateRoutingProfileNameRequest): Request[js.Object] = js.native
+    def updateRoutingProfileQueues(params: UpdateRoutingProfileQueuesRequest): Request[js.Object] = js.native
     def updateUserHierarchy(params: UpdateUserHierarchyRequest): Request[js.Object] = js.native
+    def updateUserHierarchyGroupName(params: UpdateUserHierarchyGroupNameRequest): Request[js.Object] = js.native
+    def updateUserHierarchyStructure(params: UpdateUserHierarchyStructureRequest): Request[js.Object] = js.native
     def updateUserIdentityInfo(params: UpdateUserIdentityInfoRequest): Request[js.Object] = js.native
     def updateUserPhoneConfig(params: UpdateUserPhoneConfigRequest): Request[js.Object] = js.native
     def updateUserRoutingProfile(params: UpdateUserRoutingProfileRequest): Request[js.Object] = js.native
     def updateUserSecurityProfiles(params: UpdateUserSecurityProfilesRequest): Request[js.Object] = js.native
+  }
+
+  @js.native
+  trait AssociateApprovedOriginRequest extends js.Object {
+    var InstanceId: InstanceId
+    var Origin: Origin
+  }
+
+  object AssociateApprovedOriginRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        Origin: Origin
+    ): AssociateApprovedOriginRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Origin" -> Origin.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateApprovedOriginRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateInstanceStorageConfigRequest extends js.Object {
+    var InstanceId: InstanceId
+    var ResourceType: InstanceStorageResourceType
+    var StorageConfig: InstanceStorageConfig
+  }
+
+  object AssociateInstanceStorageConfigRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        ResourceType: InstanceStorageResourceType,
+        StorageConfig: InstanceStorageConfig
+    ): AssociateInstanceStorageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "StorageConfig" -> StorageConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateInstanceStorageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateInstanceStorageConfigResponse extends js.Object {
+    var AssociationId: js.UndefOr[AssociationId]
+  }
+
+  object AssociateInstanceStorageConfigResponse {
+    @inline
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined
+    ): AssociateInstanceStorageConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateInstanceStorageConfigResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateLambdaFunctionRequest extends js.Object {
+    var FunctionArn: FunctionArn
+    var InstanceId: InstanceId
+  }
+
+  object AssociateLambdaFunctionRequest {
+    @inline
+    def apply(
+        FunctionArn: FunctionArn,
+        InstanceId: InstanceId
+    ): AssociateLambdaFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateLambdaFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateLexBotRequest extends js.Object {
+    var InstanceId: InstanceId
+    var LexBot: LexBot
+  }
+
+  object AssociateLexBotRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        LexBot: LexBot
+    ): AssociateLexBotRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "LexBot" -> LexBot.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateLexBotRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateRoutingProfileQueuesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueConfigs: RoutingProfileQueueConfigList
+    var RoutingProfileId: RoutingProfileId
+  }
+
+  object AssociateRoutingProfileQueuesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueConfigs: RoutingProfileQueueConfigList,
+        RoutingProfileId: RoutingProfileId
+    ): AssociateRoutingProfileQueuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueConfigs" -> QueueConfigs.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateRoutingProfileQueuesRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateSecurityKeyRequest extends js.Object {
+    var InstanceId: InstanceId
+    var Key: PEM
+  }
+
+  object AssociateSecurityKeyRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        Key: PEM
+    ): AssociateSecurityKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateSecurityKeyRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateSecurityKeyResponse extends js.Object {
+    var AssociationId: js.UndefOr[AssociationId]
+  }
+
+  object AssociateSecurityKeyResponse {
+    @inline
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined
+    ): AssociateSecurityKeyResponse = {
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateSecurityKeyResponse]
+    }
+  }
+
+  /** A toggle for an individual feature at the instance level.
+    */
+  @js.native
+  trait Attribute extends js.Object {
+    var AttributeType: js.UndefOr[InstanceAttributeType]
+    var Value: js.UndefOr[InstanceAttributeValue]
+  }
+
+  object Attribute {
+    @inline
+    def apply(
+        AttributeType: js.UndefOr[InstanceAttributeType] = js.undefined,
+        Value: js.UndefOr[InstanceAttributeValue] = js.undefined
+    ): Attribute = {
+      val __obj = js.Dynamic.literal()
+      AttributeType.foreach(__v => __obj.updateDynamic("AttributeType")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Attribute]
+    }
   }
 
   @js.native
@@ -197,7 +500,44 @@ package connect {
     @inline def values = js.Array(LT)
   }
 
+  /** Contains information about a contact flow.
+    */
+  @js.native
+  trait ContactFlow extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Content: js.UndefOr[ContactFlowContent]
+    var Description: js.UndefOr[ContactFlowDescription]
+    var Id: js.UndefOr[ContactFlowId]
+    var Name: js.UndefOr[ContactFlowName]
+    var Tags: js.UndefOr[TagMap]
+    var Type: js.UndefOr[ContactFlowType]
+  }
+
+  object ContactFlow {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Content: js.UndefOr[ContactFlowContent] = js.undefined,
+        Description: js.UndefOr[ContactFlowDescription] = js.undefined,
+        Id: js.UndefOr[ContactFlowId] = js.undefined,
+        Name: js.UndefOr[ContactFlowName] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        Type: js.UndefOr[ContactFlowType] = js.undefined
+    ): ContactFlow = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContactFlow]
+    }
+  }
+
   /** Contains summary information about a contact flow.
+    * You can also create and update contact flows using the [[https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html|Amazon Connect Flow language]].
     */
   @js.native
   trait ContactFlowSummary extends js.Object {
@@ -238,6 +578,208 @@ package connect {
     val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
     @inline def values = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
+  }
+
+  @js.native
+  trait CreateContactFlowRequest extends js.Object {
+    var Content: ContactFlowContent
+    var InstanceId: InstanceId
+    var Name: ContactFlowName
+    var Type: ContactFlowType
+    var Description: js.UndefOr[ContactFlowDescription]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateContactFlowRequest {
+    @inline
+    def apply(
+        Content: ContactFlowContent,
+        InstanceId: InstanceId,
+        Name: ContactFlowName,
+        Type: ContactFlowType,
+        Description: js.UndefOr[ContactFlowDescription] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateContactFlowRequest = {
+      val __obj = js.Dynamic.literal(
+        "Content" -> Content.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContactFlowRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContactFlowResponse extends js.Object {
+    var ContactFlowArn: js.UndefOr[ARN]
+    var ContactFlowId: js.UndefOr[ContactFlowId]
+  }
+
+  object CreateContactFlowResponse {
+    @inline
+    def apply(
+        ContactFlowArn: js.UndefOr[ARN] = js.undefined,
+        ContactFlowId: js.UndefOr[ContactFlowId] = js.undefined
+    ): CreateContactFlowResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactFlowArn.foreach(__v => __obj.updateDynamic("ContactFlowArn")(__v.asInstanceOf[js.Any]))
+      ContactFlowId.foreach(__v => __obj.updateDynamic("ContactFlowId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContactFlowResponse]
+    }
+  }
+
+  @js.native
+  trait CreateInstanceRequest extends js.Object {
+    var IdentityManagementType: DirectoryType
+    var InboundCallsEnabled: InboundCallsEnabled
+    var OutboundCallsEnabled: OutboundCallsEnabled
+    var ClientToken: js.UndefOr[ClientToken]
+    var DirectoryId: js.UndefOr[DirectoryId]
+    var InstanceAlias: js.UndefOr[DirectoryAlias]
+  }
+
+  object CreateInstanceRequest {
+    @inline
+    def apply(
+        IdentityManagementType: DirectoryType,
+        InboundCallsEnabled: InboundCallsEnabled,
+        OutboundCallsEnabled: OutboundCallsEnabled,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        InstanceAlias: js.UndefOr[DirectoryAlias] = js.undefined
+    ): CreateInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "IdentityManagementType" -> IdentityManagementType.asInstanceOf[js.Any],
+        "InboundCallsEnabled" -> InboundCallsEnabled.asInstanceOf[js.Any],
+        "OutboundCallsEnabled" -> OutboundCallsEnabled.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      InstanceAlias.foreach(__v => __obj.updateDynamic("InstanceAlias")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateInstanceResponse extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[InstanceId]
+  }
+
+  object CreateInstanceResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[InstanceId] = js.undefined
+    ): CreateInstanceResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInstanceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateRoutingProfileRequest extends js.Object {
+    var DefaultOutboundQueueId: QueueId
+    var Description: RoutingProfileDescription
+    var InstanceId: InstanceId
+    var MediaConcurrencies: MediaConcurrencies
+    var Name: RoutingProfileName
+    var QueueConfigs: js.UndefOr[RoutingProfileQueueConfigList]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateRoutingProfileRequest {
+    @inline
+    def apply(
+        DefaultOutboundQueueId: QueueId,
+        Description: RoutingProfileDescription,
+        InstanceId: InstanceId,
+        MediaConcurrencies: MediaConcurrencies,
+        Name: RoutingProfileName,
+        QueueConfigs: js.UndefOr[RoutingProfileQueueConfigList] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateRoutingProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "DefaultOutboundQueueId" -> DefaultOutboundQueueId.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MediaConcurrencies" -> MediaConcurrencies.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      QueueConfigs.foreach(__v => __obj.updateDynamic("QueueConfigs")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRoutingProfileRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRoutingProfileResponse extends js.Object {
+    var RoutingProfileArn: js.UndefOr[ARN]
+    var RoutingProfileId: js.UndefOr[RoutingProfileId]
+  }
+
+  object CreateRoutingProfileResponse {
+    @inline
+    def apply(
+        RoutingProfileArn: js.UndefOr[ARN] = js.undefined,
+        RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined
+    ): CreateRoutingProfileResponse = {
+      val __obj = js.Dynamic.literal()
+      RoutingProfileArn.foreach(__v => __obj.updateDynamic("RoutingProfileArn")(__v.asInstanceOf[js.Any]))
+      RoutingProfileId.foreach(__v => __obj.updateDynamic("RoutingProfileId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRoutingProfileResponse]
+    }
+  }
+
+  @js.native
+  trait CreateUserHierarchyGroupRequest extends js.Object {
+    var InstanceId: InstanceId
+    var Name: HierarchyGroupName
+    var ParentGroupId: js.UndefOr[HierarchyGroupId]
+  }
+
+  object CreateUserHierarchyGroupRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        Name: HierarchyGroupName,
+        ParentGroupId: js.UndefOr[HierarchyGroupId] = js.undefined
+    ): CreateUserHierarchyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      ParentGroupId.foreach(__v => __obj.updateDynamic("ParentGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserHierarchyGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUserHierarchyGroupResponse extends js.Object {
+    var HierarchyGroupArn: js.UndefOr[ARN]
+    var HierarchyGroupId: js.UndefOr[HierarchyGroupId]
+  }
+
+  object CreateUserHierarchyGroupResponse {
+    @inline
+    def apply(
+        HierarchyGroupArn: js.UndefOr[ARN] = js.undefined,
+        HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined
+    ): CreateUserHierarchyGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      HierarchyGroupArn.foreach(__v => __obj.updateDynamic("HierarchyGroupArn")(__v.asInstanceOf[js.Any]))
+      HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserHierarchyGroupResponse]
+    }
   }
 
   @js.native
@@ -431,6 +973,43 @@ package connect {
   }
 
   @js.native
+  trait DeleteInstanceRequest extends js.Object {
+    var InstanceId: InstanceId
+  }
+
+  object DeleteInstanceRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId
+    ): DeleteInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteUserHierarchyGroupRequest extends js.Object {
+    var HierarchyGroupId: HierarchyGroupId
+    var InstanceId: InstanceId
+  }
+
+  object DeleteUserHierarchyGroupRequest {
+    @inline
+    def apply(
+        HierarchyGroupId: HierarchyGroupId,
+        InstanceId: InstanceId
+    ): DeleteUserHierarchyGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteUserHierarchyGroupRequest]
+    }
+  }
+
+  @js.native
   trait DeleteUserRequest extends js.Object {
     var InstanceId: InstanceId
     var UserId: UserId
@@ -447,6 +1026,186 @@ package connect {
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteUserRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeContactFlowRequest extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var InstanceId: InstanceId
+  }
+
+  object DescribeContactFlowRequest {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        InstanceId: InstanceId
+    ): DescribeContactFlowRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeContactFlowRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeContactFlowResponse extends js.Object {
+    var ContactFlow: js.UndefOr[ContactFlow]
+  }
+
+  object DescribeContactFlowResponse {
+    @inline
+    def apply(
+        ContactFlow: js.UndefOr[ContactFlow] = js.undefined
+    ): DescribeContactFlowResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactFlow.foreach(__v => __obj.updateDynamic("ContactFlow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeContactFlowResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceAttributeRequest extends js.Object {
+    var AttributeType: InstanceAttributeType
+    var InstanceId: InstanceId
+  }
+
+  object DescribeInstanceAttributeRequest {
+    @inline
+    def apply(
+        AttributeType: InstanceAttributeType,
+        InstanceId: InstanceId
+    ): DescribeInstanceAttributeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttributeType" -> AttributeType.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeInstanceAttributeRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceAttributeResponse extends js.Object {
+    var Attribute: js.UndefOr[Attribute]
+  }
+
+  object DescribeInstanceAttributeResponse {
+    @inline
+    def apply(
+        Attribute: js.UndefOr[Attribute] = js.undefined
+    ): DescribeInstanceAttributeResponse = {
+      val __obj = js.Dynamic.literal()
+      Attribute.foreach(__v => __obj.updateDynamic("Attribute")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceAttributeResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceRequest extends js.Object {
+    var InstanceId: InstanceId
+  }
+
+  object DescribeInstanceRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId
+    ): DescribeInstanceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceResponse extends js.Object {
+    var Instance: js.UndefOr[Instance]
+  }
+
+  object DescribeInstanceResponse {
+    @inline
+    def apply(
+        Instance: js.UndefOr[Instance] = js.undefined
+    ): DescribeInstanceResponse = {
+      val __obj = js.Dynamic.literal()
+      Instance.foreach(__v => __obj.updateDynamic("Instance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceStorageConfigRequest extends js.Object {
+    var AssociationId: AssociationId
+    var InstanceId: InstanceId
+    var ResourceType: InstanceStorageResourceType
+  }
+
+  object DescribeInstanceStorageConfigRequest {
+    @inline
+    def apply(
+        AssociationId: AssociationId,
+        InstanceId: InstanceId,
+        ResourceType: InstanceStorageResourceType
+    ): DescribeInstanceStorageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeInstanceStorageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceStorageConfigResponse extends js.Object {
+    var StorageConfig: js.UndefOr[InstanceStorageConfig]
+  }
+
+  object DescribeInstanceStorageConfigResponse {
+    @inline
+    def apply(
+        StorageConfig: js.UndefOr[InstanceStorageConfig] = js.undefined
+    ): DescribeInstanceStorageConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      StorageConfig.foreach(__v => __obj.updateDynamic("StorageConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceStorageConfigResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeRoutingProfileRequest extends js.Object {
+    var InstanceId: InstanceId
+    var RoutingProfileId: RoutingProfileId
+  }
+
+  object DescribeRoutingProfileRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        RoutingProfileId: RoutingProfileId
+    ): DescribeRoutingProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeRoutingProfileRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRoutingProfileResponse extends js.Object {
+    var RoutingProfile: js.UndefOr[RoutingProfile]
+  }
+
+  object DescribeRoutingProfileResponse {
+    @inline
+    def apply(
+        RoutingProfile: js.UndefOr[RoutingProfile] = js.undefined
+    ): DescribeRoutingProfileResponse = {
+      val __obj = js.Dynamic.literal()
+      RoutingProfile.foreach(__v => __obj.updateDynamic("RoutingProfile")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRoutingProfileResponse]
     }
   }
 
@@ -574,6 +1333,175 @@ package connect {
       Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Dimensions]
     }
+  }
+
+  @js.native
+  sealed trait DirectoryType extends js.Any
+  object DirectoryType {
+    val SAML = "SAML".asInstanceOf[DirectoryType]
+    val CONNECT_MANAGED = "CONNECT_MANAGED".asInstanceOf[DirectoryType]
+    val EXISTING_DIRECTORY = "EXISTING_DIRECTORY".asInstanceOf[DirectoryType]
+
+    @inline def values = js.Array(SAML, CONNECT_MANAGED, EXISTING_DIRECTORY)
+  }
+
+  @js.native
+  trait DisassociateApprovedOriginRequest extends js.Object {
+    var InstanceId: InstanceId
+    var Origin: Origin
+  }
+
+  object DisassociateApprovedOriginRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        Origin: Origin
+    ): DisassociateApprovedOriginRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Origin" -> Origin.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateApprovedOriginRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateInstanceStorageConfigRequest extends js.Object {
+    var AssociationId: AssociationId
+    var InstanceId: InstanceId
+    var ResourceType: InstanceStorageResourceType
+  }
+
+  object DisassociateInstanceStorageConfigRequest {
+    @inline
+    def apply(
+        AssociationId: AssociationId,
+        InstanceId: InstanceId,
+        ResourceType: InstanceStorageResourceType
+    ): DisassociateInstanceStorageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateInstanceStorageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateLambdaFunctionRequest extends js.Object {
+    var FunctionArn: FunctionArn
+    var InstanceId: InstanceId
+  }
+
+  object DisassociateLambdaFunctionRequest {
+    @inline
+    def apply(
+        FunctionArn: FunctionArn,
+        InstanceId: InstanceId
+    ): DisassociateLambdaFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateLambdaFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateLexBotRequest extends js.Object {
+    var BotName: BotName
+    var InstanceId: InstanceId
+    var LexRegion: LexRegion
+  }
+
+  object DisassociateLexBotRequest {
+    @inline
+    def apply(
+        BotName: BotName,
+        InstanceId: InstanceId,
+        LexRegion: LexRegion
+    ): DisassociateLexBotRequest = {
+      val __obj = js.Dynamic.literal(
+        "BotName" -> BotName.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "LexRegion" -> LexRegion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateLexBotRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateRoutingProfileQueuesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueReferences: RoutingProfileQueueReferenceList
+    var RoutingProfileId: RoutingProfileId
+  }
+
+  object DisassociateRoutingProfileQueuesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueReferences: RoutingProfileQueueReferenceList,
+        RoutingProfileId: RoutingProfileId
+    ): DisassociateRoutingProfileQueuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueReferences" -> QueueReferences.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateRoutingProfileQueuesRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateSecurityKeyRequest extends js.Object {
+    var AssociationId: AssociationId
+    var InstanceId: InstanceId
+  }
+
+  object DisassociateSecurityKeyRequest {
+    @inline
+    def apply(
+        AssociationId: AssociationId,
+        InstanceId: InstanceId
+    ): DisassociateSecurityKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateSecurityKeyRequest]
+    }
+  }
+
+  /** The encryption configuration.
+    */
+  @js.native
+  trait EncryptionConfig extends js.Object {
+    var EncryptionType: EncryptionType
+    var KeyId: KeyId
+  }
+
+  object EncryptionConfig {
+    @inline
+    def apply(
+        EncryptionType: EncryptionType,
+        KeyId: KeyId
+    ): EncryptionConfig = {
+      val __obj = js.Dynamic.literal(
+        "EncryptionType" -> EncryptionType.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EncryptionConfig]
+    }
+  }
+
+  @js.native
+  sealed trait EncryptionType extends js.Any
+  object EncryptionType {
+    val KMS = "KMS".asInstanceOf[EncryptionType]
+
+    @inline def values = js.Array(KMS)
   }
 
   /** Contains the filter to apply when retrieving metrics.
@@ -866,6 +1794,25 @@ package connect {
     }
   }
 
+  /** Contains information about the hierarchy level to update.
+    */
+  @js.native
+  trait HierarchyLevelUpdate extends js.Object {
+    var Name: HierarchyLevelName
+  }
+
+  object HierarchyLevelUpdate {
+    @inline
+    def apply(
+        Name: HierarchyLevelName
+    ): HierarchyLevelUpdate = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[HierarchyLevelUpdate]
+    }
+  }
+
   /** Contains information about the levels of a hierarchy group.
     */
   @js.native
@@ -923,6 +1870,36 @@ package connect {
       LevelThree.foreach(__v => __obj.updateDynamic("LevelThree")(__v.asInstanceOf[js.Any]))
       LevelTwo.foreach(__v => __obj.updateDynamic("LevelTwo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HierarchyStructure]
+    }
+  }
+
+  /** Contains information about the level hierarchy to update.
+    */
+  @js.native
+  trait HierarchyStructureUpdate extends js.Object {
+    var LevelFive: js.UndefOr[HierarchyLevelUpdate]
+    var LevelFour: js.UndefOr[HierarchyLevelUpdate]
+    var LevelOne: js.UndefOr[HierarchyLevelUpdate]
+    var LevelThree: js.UndefOr[HierarchyLevelUpdate]
+    var LevelTwo: js.UndefOr[HierarchyLevelUpdate]
+  }
+
+  object HierarchyStructureUpdate {
+    @inline
+    def apply(
+        LevelFive: js.UndefOr[HierarchyLevelUpdate] = js.undefined,
+        LevelFour: js.UndefOr[HierarchyLevelUpdate] = js.undefined,
+        LevelOne: js.UndefOr[HierarchyLevelUpdate] = js.undefined,
+        LevelThree: js.UndefOr[HierarchyLevelUpdate] = js.undefined,
+        LevelTwo: js.UndefOr[HierarchyLevelUpdate] = js.undefined
+    ): HierarchyStructureUpdate = {
+      val __obj = js.Dynamic.literal()
+      LevelFive.foreach(__v => __obj.updateDynamic("LevelFive")(__v.asInstanceOf[js.Any]))
+      LevelFour.foreach(__v => __obj.updateDynamic("LevelFour")(__v.asInstanceOf[js.Any]))
+      LevelOne.foreach(__v => __obj.updateDynamic("LevelOne")(__v.asInstanceOf[js.Any]))
+      LevelThree.foreach(__v => __obj.updateDynamic("LevelThree")(__v.asInstanceOf[js.Any]))
+      LevelTwo.foreach(__v => __obj.updateDynamic("LevelTwo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HierarchyStructureUpdate]
     }
   }
 
@@ -1079,6 +2056,310 @@ package connect {
     }
   }
 
+  /** The Amazon Connect instance.
+    */
+  @js.native
+  trait Instance extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Id: js.UndefOr[InstanceId]
+    var IdentityManagementType: js.UndefOr[DirectoryType]
+    var InboundCallsEnabled: js.UndefOr[InboundCallsEnabled]
+    var InstanceAlias: js.UndefOr[DirectoryAlias]
+    var InstanceStatus: js.UndefOr[InstanceStatus]
+    var OutboundCallsEnabled: js.UndefOr[OutboundCallsEnabled]
+    var ServiceRole: js.UndefOr[ARN]
+    var StatusReason: js.UndefOr[InstanceStatusReason]
+  }
+
+  object Instance {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Id: js.UndefOr[InstanceId] = js.undefined,
+        IdentityManagementType: js.UndefOr[DirectoryType] = js.undefined,
+        InboundCallsEnabled: js.UndefOr[InboundCallsEnabled] = js.undefined,
+        InstanceAlias: js.UndefOr[DirectoryAlias] = js.undefined,
+        InstanceStatus: js.UndefOr[InstanceStatus] = js.undefined,
+        OutboundCallsEnabled: js.UndefOr[OutboundCallsEnabled] = js.undefined,
+        ServiceRole: js.UndefOr[ARN] = js.undefined,
+        StatusReason: js.UndefOr[InstanceStatusReason] = js.undefined
+    ): Instance = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IdentityManagementType.foreach(__v => __obj.updateDynamic("IdentityManagementType")(__v.asInstanceOf[js.Any]))
+      InboundCallsEnabled.foreach(__v => __obj.updateDynamic("InboundCallsEnabled")(__v.asInstanceOf[js.Any]))
+      InstanceAlias.foreach(__v => __obj.updateDynamic("InstanceAlias")(__v.asInstanceOf[js.Any]))
+      InstanceStatus.foreach(__v => __obj.updateDynamic("InstanceStatus")(__v.asInstanceOf[js.Any]))
+      OutboundCallsEnabled.foreach(__v => __obj.updateDynamic("OutboundCallsEnabled")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Instance]
+    }
+  }
+
+  @js.native
+  sealed trait InstanceAttributeType extends js.Any
+  object InstanceAttributeType {
+    val INBOUND_CALLS = "INBOUND_CALLS".asInstanceOf[InstanceAttributeType]
+    val OUTBOUND_CALLS = "OUTBOUND_CALLS".asInstanceOf[InstanceAttributeType]
+    val CONTACTFLOW_LOGS = "CONTACTFLOW_LOGS".asInstanceOf[InstanceAttributeType]
+    val CONTACT_LENS = "CONTACT_LENS".asInstanceOf[InstanceAttributeType]
+    val AUTO_RESOLVE_BEST_VOICES = "AUTO_RESOLVE_BEST_VOICES".asInstanceOf[InstanceAttributeType]
+    val USE_CUSTOM_TTS_VOICES = "USE_CUSTOM_TTS_VOICES".asInstanceOf[InstanceAttributeType]
+    val EARLY_MEDIA = "EARLY_MEDIA".asInstanceOf[InstanceAttributeType]
+
+    @inline def values = js.Array(INBOUND_CALLS, OUTBOUND_CALLS, CONTACTFLOW_LOGS, CONTACT_LENS, AUTO_RESOLVE_BEST_VOICES, USE_CUSTOM_TTS_VOICES, EARLY_MEDIA)
+  }
+
+  @js.native
+  sealed trait InstanceStatus extends js.Any
+  object InstanceStatus {
+    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[InstanceStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
+    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[InstanceStatus]
+
+    @inline def values = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED)
+  }
+
+  /** Relevant details why the instance was not successfully created.
+    */
+  @js.native
+  trait InstanceStatusReason extends js.Object {
+    var Message: js.UndefOr[String]
+  }
+
+  object InstanceStatusReason {
+    @inline
+    def apply(
+        Message: js.UndefOr[String] = js.undefined
+    ): InstanceStatusReason = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceStatusReason]
+    }
+  }
+
+  /** The storage configuration for the instance.
+    */
+  @js.native
+  trait InstanceStorageConfig extends js.Object {
+    var StorageType: StorageType
+    var AssociationId: js.UndefOr[AssociationId]
+    var KinesisFirehoseConfig: js.UndefOr[KinesisFirehoseConfig]
+    var KinesisStreamConfig: js.UndefOr[KinesisStreamConfig]
+    var KinesisVideoStreamConfig: js.UndefOr[KinesisVideoStreamConfig]
+    var S3Config: js.UndefOr[S3Config]
+  }
+
+  object InstanceStorageConfig {
+    @inline
+    def apply(
+        StorageType: StorageType,
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        KinesisFirehoseConfig: js.UndefOr[KinesisFirehoseConfig] = js.undefined,
+        KinesisStreamConfig: js.UndefOr[KinesisStreamConfig] = js.undefined,
+        KinesisVideoStreamConfig: js.UndefOr[KinesisVideoStreamConfig] = js.undefined,
+        S3Config: js.UndefOr[S3Config] = js.undefined
+    ): InstanceStorageConfig = {
+      val __obj = js.Dynamic.literal(
+        "StorageType" -> StorageType.asInstanceOf[js.Any]
+      )
+
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseConfig.foreach(__v => __obj.updateDynamic("KinesisFirehoseConfig")(__v.asInstanceOf[js.Any]))
+      KinesisStreamConfig.foreach(__v => __obj.updateDynamic("KinesisStreamConfig")(__v.asInstanceOf[js.Any]))
+      KinesisVideoStreamConfig.foreach(__v => __obj.updateDynamic("KinesisVideoStreamConfig")(__v.asInstanceOf[js.Any]))
+      S3Config.foreach(__v => __obj.updateDynamic("S3Config")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceStorageConfig]
+    }
+  }
+
+  @js.native
+  sealed trait InstanceStorageResourceType extends js.Any
+  object InstanceStorageResourceType {
+    val CHAT_TRANSCRIPTS = "CHAT_TRANSCRIPTS".asInstanceOf[InstanceStorageResourceType]
+    val CALL_RECORDINGS = "CALL_RECORDINGS".asInstanceOf[InstanceStorageResourceType]
+    val SCHEDULED_REPORTS = "SCHEDULED_REPORTS".asInstanceOf[InstanceStorageResourceType]
+    val MEDIA_STREAMS = "MEDIA_STREAMS".asInstanceOf[InstanceStorageResourceType]
+    val CONTACT_TRACE_RECORDS = "CONTACT_TRACE_RECORDS".asInstanceOf[InstanceStorageResourceType]
+    val AGENT_EVENTS = "AGENT_EVENTS".asInstanceOf[InstanceStorageResourceType]
+
+    @inline def values = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS)
+  }
+
+  /** Information about the instance.
+    */
+  @js.native
+  trait InstanceSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Id: js.UndefOr[InstanceId]
+    var IdentityManagementType: js.UndefOr[DirectoryType]
+    var InboundCallsEnabled: js.UndefOr[InboundCallsEnabled]
+    var InstanceAlias: js.UndefOr[DirectoryAlias]
+    var InstanceStatus: js.UndefOr[InstanceStatus]
+    var OutboundCallsEnabled: js.UndefOr[OutboundCallsEnabled]
+    var ServiceRole: js.UndefOr[ARN]
+  }
+
+  object InstanceSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Id: js.UndefOr[InstanceId] = js.undefined,
+        IdentityManagementType: js.UndefOr[DirectoryType] = js.undefined,
+        InboundCallsEnabled: js.UndefOr[InboundCallsEnabled] = js.undefined,
+        InstanceAlias: js.UndefOr[DirectoryAlias] = js.undefined,
+        InstanceStatus: js.UndefOr[InstanceStatus] = js.undefined,
+        OutboundCallsEnabled: js.UndefOr[OutboundCallsEnabled] = js.undefined,
+        ServiceRole: js.UndefOr[ARN] = js.undefined
+    ): InstanceSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IdentityManagementType.foreach(__v => __obj.updateDynamic("IdentityManagementType")(__v.asInstanceOf[js.Any]))
+      InboundCallsEnabled.foreach(__v => __obj.updateDynamic("InboundCallsEnabled")(__v.asInstanceOf[js.Any]))
+      InstanceAlias.foreach(__v => __obj.updateDynamic("InstanceAlias")(__v.asInstanceOf[js.Any]))
+      InstanceStatus.foreach(__v => __obj.updateDynamic("InstanceStatus")(__v.asInstanceOf[js.Any]))
+      OutboundCallsEnabled.foreach(__v => __obj.updateDynamic("OutboundCallsEnabled")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceSummary]
+    }
+  }
+
+  /** Configuration information of a Kinesis Firehose delivery stream.
+    */
+  @js.native
+  trait KinesisFirehoseConfig extends js.Object {
+    var FirehoseArn: ARN
+  }
+
+  object KinesisFirehoseConfig {
+    @inline
+    def apply(
+        FirehoseArn: ARN
+    ): KinesisFirehoseConfig = {
+      val __obj = js.Dynamic.literal(
+        "FirehoseArn" -> FirehoseArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KinesisFirehoseConfig]
+    }
+  }
+
+  /** Configuration information of a Kinesis data stream.
+    */
+  @js.native
+  trait KinesisStreamConfig extends js.Object {
+    var StreamArn: ARN
+  }
+
+  object KinesisStreamConfig {
+    @inline
+    def apply(
+        StreamArn: ARN
+    ): KinesisStreamConfig = {
+      val __obj = js.Dynamic.literal(
+        "StreamArn" -> StreamArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KinesisStreamConfig]
+    }
+  }
+
+  /** Configuration information of a Kinesis video stream.
+    */
+  @js.native
+  trait KinesisVideoStreamConfig extends js.Object {
+    var EncryptionConfig: EncryptionConfig
+    var Prefix: Prefix
+    var RetentionPeriodHours: Hours
+  }
+
+  object KinesisVideoStreamConfig {
+    @inline
+    def apply(
+        EncryptionConfig: EncryptionConfig,
+        Prefix: Prefix,
+        RetentionPeriodHours: Hours
+    ): KinesisVideoStreamConfig = {
+      val __obj = js.Dynamic.literal(
+        "EncryptionConfig" -> EncryptionConfig.asInstanceOf[js.Any],
+        "Prefix" -> Prefix.asInstanceOf[js.Any],
+        "RetentionPeriodHours" -> RetentionPeriodHours.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KinesisVideoStreamConfig]
+    }
+  }
+
+  /** Configuration information of an Amazon Lex bot.
+    */
+  @js.native
+  trait LexBot extends js.Object {
+    var LexRegion: js.UndefOr[LexRegion]
+    var Name: js.UndefOr[BotName]
+  }
+
+  object LexBot {
+    @inline
+    def apply(
+        LexRegion: js.UndefOr[LexRegion] = js.undefined,
+        Name: js.UndefOr[BotName] = js.undefined
+    ): LexBot = {
+      val __obj = js.Dynamic.literal()
+      LexRegion.foreach(__v => __obj.updateDynamic("LexRegion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LexBot]
+    }
+  }
+
+  @js.native
+  trait ListApprovedOriginsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult25]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApprovedOriginsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult25] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApprovedOriginsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApprovedOriginsRequest]
+    }
+  }
+
+  @js.native
+  trait ListApprovedOriginsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Origins: js.UndefOr[OriginsList]
+  }
+
+  object ListApprovedOriginsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Origins: js.UndefOr[OriginsList] = js.undefined
+    ): ListApprovedOriginsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Origins.foreach(__v => __obj.updateDynamic("Origins")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApprovedOriginsResponse]
+    }
+  }
+
   @js.native
   trait ListContactFlowsRequest extends js.Object {
     var InstanceId: InstanceId
@@ -1169,6 +2450,219 @@ package connect {
   }
 
   @js.native
+  trait ListInstanceAttributesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult7]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListInstanceAttributesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult7] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstanceAttributesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait ListInstanceAttributesResponse extends js.Object {
+    var Attributes: js.UndefOr[AttributesList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListInstanceAttributesResponse {
+    @inline
+    def apply(
+        Attributes: js.UndefOr[AttributesList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstanceAttributesResponse = {
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceAttributesResponse]
+    }
+  }
+
+  @js.native
+  trait ListInstanceStorageConfigsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var ResourceType: InstanceStorageResourceType
+    var MaxResults: js.UndefOr[MaxResult10]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListInstanceStorageConfigsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        ResourceType: InstanceStorageResourceType,
+        MaxResults: js.UndefOr[MaxResult10] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstanceStorageConfigsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceStorageConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListInstanceStorageConfigsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var StorageConfigs: js.UndefOr[InstanceStorageConfigs]
+  }
+
+  object ListInstanceStorageConfigsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StorageConfigs: js.UndefOr[InstanceStorageConfigs] = js.undefined
+    ): ListInstanceStorageConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StorageConfigs.foreach(__v => __obj.updateDynamic("StorageConfigs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceStorageConfigsResponse]
+    }
+  }
+
+  @js.native
+  trait ListInstancesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResult10]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListInstancesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResult10] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstancesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstancesRequest]
+    }
+  }
+
+  @js.native
+  trait ListInstancesResponse extends js.Object {
+    var InstanceSummaryList: js.UndefOr[InstanceSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListInstancesResponse {
+    @inline
+    def apply(
+        InstanceSummaryList: js.UndefOr[InstanceSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstancesResponse = {
+      val __obj = js.Dynamic.literal()
+      InstanceSummaryList.foreach(__v => __obj.updateDynamic("InstanceSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstancesResponse]
+    }
+  }
+
+  @js.native
+  trait ListLambdaFunctionsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult25]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLambdaFunctionsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult25] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLambdaFunctionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLambdaFunctionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListLambdaFunctionsResponse extends js.Object {
+    var LambdaFunctions: js.UndefOr[FunctionArnsList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLambdaFunctionsResponse {
+    @inline
+    def apply(
+        LambdaFunctions: js.UndefOr[FunctionArnsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLambdaFunctionsResponse = {
+      val __obj = js.Dynamic.literal()
+      LambdaFunctions.foreach(__v => __obj.updateDynamic("LambdaFunctions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLambdaFunctionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListLexBotsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult25]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLexBotsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult25] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLexBotsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLexBotsRequest]
+    }
+  }
+
+  @js.native
+  trait ListLexBotsResponse extends js.Object {
+    var LexBots: js.UndefOr[LexBotsList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLexBotsResponse {
+    @inline
+    def apply(
+        LexBots: js.UndefOr[LexBotsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLexBotsResponse = {
+      val __obj = js.Dynamic.literal()
+      LexBots.foreach(__v => __obj.updateDynamic("LexBots")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLexBotsResponse]
+    }
+  }
+
+  @js.native
   trait ListPhoneNumbersRequest extends js.Object {
     var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
@@ -1214,6 +2708,49 @@ package connect {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       PhoneNumberSummaryList.foreach(__v => __obj.updateDynamic("PhoneNumberSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumbersResponse]
+    }
+  }
+
+  @js.native
+  trait ListPromptsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListPromptsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPromptsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPromptsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPromptsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PromptSummaryList: js.UndefOr[PromptSummaryList]
+  }
+
+  object ListPromptsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PromptSummaryList: js.UndefOr[PromptSummaryList] = js.undefined
+    ): ListPromptsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PromptSummaryList.foreach(__v => __obj.updateDynamic("PromptSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPromptsResponse]
     }
   }
 
@@ -1264,6 +2801,52 @@ package connect {
   }
 
   @js.native
+  trait ListRoutingProfileQueuesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var RoutingProfileId: RoutingProfileId
+    var MaxResults: js.UndefOr[MaxResult100]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListRoutingProfileQueuesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        RoutingProfileId: RoutingProfileId,
+        MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRoutingProfileQueuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRoutingProfileQueuesRequest]
+    }
+  }
+
+  @js.native
+  trait ListRoutingProfileQueuesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var RoutingProfileQueueConfigSummaryList: js.UndefOr[RoutingProfileQueueConfigSummaryList]
+  }
+
+  object ListRoutingProfileQueuesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RoutingProfileQueueConfigSummaryList: js.UndefOr[RoutingProfileQueueConfigSummaryList] = js.undefined
+    ): ListRoutingProfileQueuesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RoutingProfileQueueConfigSummaryList.foreach(__v => __obj.updateDynamic("RoutingProfileQueueConfigSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRoutingProfileQueuesResponse]
+    }
+  }
+
+  @js.native
   trait ListRoutingProfilesRequest extends js.Object {
     var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
@@ -1303,6 +2886,49 @@ package connect {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       RoutingProfileSummaryList.foreach(__v => __obj.updateDynamic("RoutingProfileSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoutingProfilesResponse]
+    }
+  }
+
+  @js.native
+  trait ListSecurityKeysRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult2]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSecurityKeysRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult2] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSecurityKeysRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecurityKeysRequest]
+    }
+  }
+
+  @js.native
+  trait ListSecurityKeysResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var SecurityKeys: js.UndefOr[SecurityKeysList]
+  }
+
+  object ListSecurityKeysResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SecurityKeys: js.UndefOr[SecurityKeysList] = js.undefined
+    ): ListSecurityKeysResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SecurityKeys.foreach(__v => __obj.updateDynamic("SecurityKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSecurityKeysResponse]
     }
   }
 
@@ -1465,6 +3091,28 @@ package connect {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       UserSummaryList.foreach(__v => __obj.updateDynamic("UserSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
+    }
+  }
+
+  /** Contains information about which channels are supported, and how many contacts an agent can have on a channel simultaneously.
+    */
+  @js.native
+  trait MediaConcurrency extends js.Object {
+    var Channel: Channel
+    var Concurrency: Concurrency
+  }
+
+  object MediaConcurrency {
+    @inline
+    def apply(
+        Channel: Channel,
+        Concurrency: Concurrency
+    ): MediaConcurrency = {
+      val __obj = js.Dynamic.literal(
+        "Channel" -> Channel.asInstanceOf[js.Any],
+        "Concurrency" -> Concurrency.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MediaConcurrency]
     }
   }
 
@@ -2017,6 +3665,30 @@ package connect {
     @inline def values = js.Array(SOFT_PHONE, DESK_PHONE)
   }
 
+  /** Contains information about the prompt.
+    */
+  @js.native
+  trait PromptSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[PromptId]
+    var Name: js.UndefOr[PromptName]
+  }
+
+  object PromptSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[PromptId] = js.undefined,
+        Name: js.UndefOr[PromptName] = js.undefined
+    ): PromptSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromptSummary]
+    }
+  }
+
   /** Contains information about a queue resource for which metrics are returned.
     */
   @js.native
@@ -2108,6 +3780,126 @@ package connect {
     }
   }
 
+  /** Contains information about a routing profile.
+    */
+  @js.native
+  trait RoutingProfile extends js.Object {
+    var DefaultOutboundQueueId: js.UndefOr[QueueId]
+    var Description: js.UndefOr[RoutingProfileDescription]
+    var InstanceId: js.UndefOr[InstanceId]
+    var MediaConcurrencies: js.UndefOr[MediaConcurrencies]
+    var Name: js.UndefOr[RoutingProfileName]
+    var RoutingProfileArn: js.UndefOr[ARN]
+    var RoutingProfileId: js.UndefOr[RoutingProfileId]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object RoutingProfile {
+    @inline
+    def apply(
+        DefaultOutboundQueueId: js.UndefOr[QueueId] = js.undefined,
+        Description: js.UndefOr[RoutingProfileDescription] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        MediaConcurrencies: js.UndefOr[MediaConcurrencies] = js.undefined,
+        Name: js.UndefOr[RoutingProfileName] = js.undefined,
+        RoutingProfileArn: js.UndefOr[ARN] = js.undefined,
+        RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): RoutingProfile = {
+      val __obj = js.Dynamic.literal()
+      DefaultOutboundQueueId.foreach(__v => __obj.updateDynamic("DefaultOutboundQueueId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      MediaConcurrencies.foreach(__v => __obj.updateDynamic("MediaConcurrencies")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoutingProfileArn.foreach(__v => __obj.updateDynamic("RoutingProfileArn")(__v.asInstanceOf[js.Any]))
+      RoutingProfileId.foreach(__v => __obj.updateDynamic("RoutingProfileId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RoutingProfile]
+    }
+  }
+
+  /** Contains information about the queue and channel for which priority and delay can be set.
+    */
+  @js.native
+  trait RoutingProfileQueueConfig extends js.Object {
+    var Delay: Delay
+    var Priority: Priority
+    var QueueReference: RoutingProfileQueueReference
+  }
+
+  object RoutingProfileQueueConfig {
+    @inline
+    def apply(
+        Delay: Delay,
+        Priority: Priority,
+        QueueReference: RoutingProfileQueueReference
+    ): RoutingProfileQueueConfig = {
+      val __obj = js.Dynamic.literal(
+        "Delay" -> Delay.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
+        "QueueReference" -> QueueReference.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RoutingProfileQueueConfig]
+    }
+  }
+
+  /** Contains summary information about a routing profile queue.
+    */
+  @js.native
+  trait RoutingProfileQueueConfigSummary extends js.Object {
+    var Channel: Channel
+    var Delay: Delay
+    var Priority: Priority
+    var QueueArn: ARN
+    var QueueId: QueueId
+    var QueueName: QueueName
+  }
+
+  object RoutingProfileQueueConfigSummary {
+    @inline
+    def apply(
+        Channel: Channel,
+        Delay: Delay,
+        Priority: Priority,
+        QueueArn: ARN,
+        QueueId: QueueId,
+        QueueName: QueueName
+    ): RoutingProfileQueueConfigSummary = {
+      val __obj = js.Dynamic.literal(
+        "Channel" -> Channel.asInstanceOf[js.Any],
+        "Delay" -> Delay.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
+        "QueueArn" -> QueueArn.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any],
+        "QueueName" -> QueueName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RoutingProfileQueueConfigSummary]
+    }
+  }
+
+  /** Contains the channel and queue identifier for a routing profile.
+    */
+  @js.native
+  trait RoutingProfileQueueReference extends js.Object {
+    var Channel: Channel
+    var QueueId: QueueId
+  }
+
+  object RoutingProfileQueueReference {
+    @inline
+    def apply(
+        Channel: Channel,
+        QueueId: QueueId
+    ): RoutingProfileQueueReference = {
+      val __obj = js.Dynamic.literal(
+        "Channel" -> Channel.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RoutingProfileQueueReference]
+    }
+  }
+
   /** Contains summary information about a routing profile.
     */
   @js.native
@@ -2129,6 +3921,56 @@ package connect {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoutingProfileSummary]
+    }
+  }
+
+  /** Information about the S3 storage type.
+    */
+  @js.native
+  trait S3Config extends js.Object {
+    var BucketName: BucketName
+    var BucketPrefix: Prefix
+    var EncryptionConfig: js.UndefOr[EncryptionConfig]
+  }
+
+  object S3Config {
+    @inline
+    def apply(
+        BucketName: BucketName,
+        BucketPrefix: Prefix,
+        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
+    ): S3Config = {
+      val __obj = js.Dynamic.literal(
+        "BucketName" -> BucketName.asInstanceOf[js.Any],
+        "BucketPrefix" -> BucketPrefix.asInstanceOf[js.Any]
+      )
+
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Config]
+    }
+  }
+
+  /** Configuration information of the security key.
+    */
+  @js.native
+  trait SecurityKey extends js.Object {
+    var AssociationId: js.UndefOr[AssociationId]
+    var CreationTime: js.UndefOr[timestamp]
+    var Key: js.UndefOr[PEM]
+  }
+
+  object SecurityKey {
+    @inline
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        Key: js.UndefOr[PEM] = js.undefined
+    ): SecurityKey = {
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityKey]
     }
   }
 
@@ -2376,6 +4218,17 @@ package connect {
   }
 
   @js.native
+  sealed trait StorageType extends js.Any
+  object StorageType {
+    val S3 = "S3".asInstanceOf[StorageType]
+    val KINESIS_VIDEO_STREAM = "KINESIS_VIDEO_STREAM".asInstanceOf[StorageType]
+    val KINESIS_STREAM = "KINESIS_STREAM".asInstanceOf[StorageType]
+    val KINESIS_FIREHOSE = "KINESIS_FIREHOSE".asInstanceOf[StorageType]
+
+    @inline def values = js.Array(S3, KINESIS_VIDEO_STREAM, KINESIS_STREAM, KINESIS_FIREHOSE)
+  }
+
+  @js.native
   trait SuspendContactRecordingRequest extends js.Object {
     var ContactId: ContactId
     var InitialContactId: ContactId
@@ -2515,6 +4368,224 @@ package connect {
   }
 
   @js.native
+  trait UpdateContactFlowContentRequest extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var Content: ContactFlowContent
+    var InstanceId: InstanceId
+  }
+
+  object UpdateContactFlowContentRequest {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        Content: ContactFlowContent,
+        InstanceId: InstanceId
+    ): UpdateContactFlowContentRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "Content" -> Content.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateContactFlowContentRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateContactFlowNameRequest extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var InstanceId: InstanceId
+    var Description: js.UndefOr[ContactFlowDescription]
+    var Name: js.UndefOr[ContactFlowName]
+  }
+
+  object UpdateContactFlowNameRequest {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        InstanceId: InstanceId,
+        Description: js.UndefOr[ContactFlowDescription] = js.undefined,
+        Name: js.UndefOr[ContactFlowName] = js.undefined
+    ): UpdateContactFlowNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContactFlowNameRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateInstanceAttributeRequest extends js.Object {
+    var AttributeType: InstanceAttributeType
+    var InstanceId: InstanceId
+    var Value: InstanceAttributeValue
+  }
+
+  object UpdateInstanceAttributeRequest {
+    @inline
+    def apply(
+        AttributeType: InstanceAttributeType,
+        InstanceId: InstanceId,
+        Value: InstanceAttributeValue
+    ): UpdateInstanceAttributeRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttributeType" -> AttributeType.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateInstanceAttributeRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateInstanceStorageConfigRequest extends js.Object {
+    var AssociationId: AssociationId
+    var InstanceId: InstanceId
+    var ResourceType: InstanceStorageResourceType
+    var StorageConfig: InstanceStorageConfig
+  }
+
+  object UpdateInstanceStorageConfigRequest {
+    @inline
+    def apply(
+        AssociationId: AssociationId,
+        InstanceId: InstanceId,
+        ResourceType: InstanceStorageResourceType,
+        StorageConfig: InstanceStorageConfig
+    ): UpdateInstanceStorageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "StorageConfig" -> StorageConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateInstanceStorageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRoutingProfileConcurrencyRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MediaConcurrencies: MediaConcurrencies
+    var RoutingProfileId: RoutingProfileId
+  }
+
+  object UpdateRoutingProfileConcurrencyRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MediaConcurrencies: MediaConcurrencies,
+        RoutingProfileId: RoutingProfileId
+    ): UpdateRoutingProfileConcurrencyRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MediaConcurrencies" -> MediaConcurrencies.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRoutingProfileConcurrencyRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRoutingProfileDefaultOutboundQueueRequest extends js.Object {
+    var DefaultOutboundQueueId: QueueId
+    var InstanceId: InstanceId
+    var RoutingProfileId: RoutingProfileId
+  }
+
+  object UpdateRoutingProfileDefaultOutboundQueueRequest {
+    @inline
+    def apply(
+        DefaultOutboundQueueId: QueueId,
+        InstanceId: InstanceId,
+        RoutingProfileId: RoutingProfileId
+    ): UpdateRoutingProfileDefaultOutboundQueueRequest = {
+      val __obj = js.Dynamic.literal(
+        "DefaultOutboundQueueId" -> DefaultOutboundQueueId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRoutingProfileDefaultOutboundQueueRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRoutingProfileNameRequest extends js.Object {
+    var InstanceId: InstanceId
+    var RoutingProfileId: RoutingProfileId
+    var Description: js.UndefOr[RoutingProfileDescription]
+    var Name: js.UndefOr[RoutingProfileName]
+  }
+
+  object UpdateRoutingProfileNameRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        RoutingProfileId: RoutingProfileId,
+        Description: js.UndefOr[RoutingProfileDescription] = js.undefined,
+        Name: js.UndefOr[RoutingProfileName] = js.undefined
+    ): UpdateRoutingProfileNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRoutingProfileNameRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRoutingProfileQueuesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueConfigs: RoutingProfileQueueConfigList
+    var RoutingProfileId: RoutingProfileId
+  }
+
+  object UpdateRoutingProfileQueuesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueConfigs: RoutingProfileQueueConfigList,
+        RoutingProfileId: RoutingProfileId
+    ): UpdateRoutingProfileQueuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueConfigs" -> QueueConfigs.asInstanceOf[js.Any],
+        "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRoutingProfileQueuesRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateUserHierarchyGroupNameRequest extends js.Object {
+    var HierarchyGroupId: HierarchyGroupId
+    var InstanceId: InstanceId
+    var Name: HierarchyGroupName
+  }
+
+  object UpdateUserHierarchyGroupNameRequest {
+    @inline
+    def apply(
+        HierarchyGroupId: HierarchyGroupId,
+        InstanceId: InstanceId,
+        Name: HierarchyGroupName
+    ): UpdateUserHierarchyGroupNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateUserHierarchyGroupNameRequest]
+    }
+  }
+
+  @js.native
   trait UpdateUserHierarchyRequest extends js.Object {
     var InstanceId: InstanceId
     var UserId: UserId
@@ -2535,6 +4606,26 @@ package connect {
 
       HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserHierarchyRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateUserHierarchyStructureRequest extends js.Object {
+    var HierarchyStructure: HierarchyStructureUpdate
+    var InstanceId: InstanceId
+  }
+
+  object UpdateUserHierarchyStructureRequest {
+    @inline
+    def apply(
+        HierarchyStructure: HierarchyStructureUpdate,
+        InstanceId: InstanceId
+    ): UpdateUserHierarchyStructureRequest = {
+      val __obj = js.Dynamic.literal(
+        "HierarchyStructure" -> HierarchyStructure.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateUserHierarchyStructureRequest]
     }
   }
 

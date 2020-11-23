@@ -9,8 +9,10 @@ import facade.amazonaws._
 package object xray {
   type AliasList = js.Array[Alias]
   type AliasNames = js.Array[String]
+  type AmazonResourceName = String
   type AnnotationKey = String
   type Annotations = js.Dictionary[ValuesWithServiceIds]
+  type AnomalousServiceList = js.Array[AnomalousService]
   type AttributeKey = String
   type AttributeMap = js.Dictionary[AttributeValue]
   type AttributeValue = String
@@ -23,12 +25,15 @@ package object xray {
   type ErrorRootCauseEntityPath = js.Array[ErrorRootCauseEntity]
   type ErrorRootCauseServices = js.Array[ErrorRootCauseService]
   type ErrorRootCauses = js.Array[ErrorRootCause]
+  type EventSummaryText = String
   type FaultRootCauseEntityPath = js.Array[FaultRootCauseEntity]
   type FaultRootCauseServices = js.Array[FaultRootCauseService]
   type FaultRootCauses = js.Array[FaultRootCause]
   type FilterExpression = String
   type FixedRate = Double
   type GetGroupsNextToken = String
+  type GetInsightEventsMaxResults = Int
+  type GetInsightSummariesMaxResults = Int
   type GroupARN = String
   type GroupName = String
   type GroupSummaryList = js.Array[GroupSummary]
@@ -36,6 +41,14 @@ package object xray {
   type Histogram = js.Array[HistogramEntry]
   type Host = String
   type Hostname = String
+  type InsightCategoryList = js.Array[InsightCategory]
+  type InsightEventList = js.Array[InsightEvent]
+  type InsightId = String
+  type InsightImpactGraphEdgeList = js.Array[InsightImpactGraphEdge]
+  type InsightImpactGraphServiceList = js.Array[InsightImpactGraphService]
+  type InsightStateList = js.Array[InsightState]
+  type InsightSummaryList = js.Array[InsightSummary]
+  type InsightSummaryText = String
   type NullableBoolean = Boolean
   type NullableDouble = Double
   type NullableInteger = Int
@@ -62,9 +75,14 @@ package object xray {
   type ServiceName = String
   type ServiceNames = js.Array[String]
   type ServiceType = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type TelemetryRecordList = js.Array[TelemetryRecord]
   type TimeSeriesServiceStatisticsList = js.Array[TimeSeriesServiceStatistics]
   type Timestamp = js.Date
+  type Token = String
   type TraceAvailabilityZones = js.Array[AvailabilityZoneDetail]
   type TraceId = String
   type TraceIdList = js.Array[TraceId]
@@ -92,6 +110,10 @@ package object xray {
     @inline def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] = service.getEncryptionConfig(params).promise().toFuture
     @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult] = service.getGroup(params).promise().toFuture
     @inline def getGroupsFuture(params: GetGroupsRequest): Future[GetGroupsResult] = service.getGroups(params).promise().toFuture
+    @inline def getInsightEventsFuture(params: GetInsightEventsRequest): Future[GetInsightEventsResult] = service.getInsightEvents(params).promise().toFuture
+    @inline def getInsightFuture(params: GetInsightRequest): Future[GetInsightResult] = service.getInsight(params).promise().toFuture
+    @inline def getInsightImpactGraphFuture(params: GetInsightImpactGraphRequest): Future[GetInsightImpactGraphResult] = service.getInsightImpactGraph(params).promise().toFuture
+    @inline def getInsightSummariesFuture(params: GetInsightSummariesRequest): Future[GetInsightSummariesResult] = service.getInsightSummaries(params).promise().toFuture
     @inline def getSamplingRulesFuture(params: GetSamplingRulesRequest): Future[GetSamplingRulesResult] = service.getSamplingRules(params).promise().toFuture
     @inline def getSamplingStatisticSummariesFuture(params: GetSamplingStatisticSummariesRequest): Future[GetSamplingStatisticSummariesResult] = service.getSamplingStatisticSummaries(params).promise().toFuture
     @inline def getSamplingTargetsFuture(params: GetSamplingTargetsRequest): Future[GetSamplingTargetsResult] = service.getSamplingTargets(params).promise().toFuture
@@ -99,9 +121,12 @@ package object xray {
     @inline def getTimeSeriesServiceStatisticsFuture(params: GetTimeSeriesServiceStatisticsRequest): Future[GetTimeSeriesServiceStatisticsResult] = service.getTimeSeriesServiceStatistics(params).promise().toFuture
     @inline def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] = service.getTraceGraph(params).promise().toFuture
     @inline def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] = service.getTraceSummaries(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] = service.putEncryptionConfig(params).promise().toFuture
     @inline def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] = service.putTelemetryRecords(params).promise().toFuture
     @inline def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] = service.putTraceSegments(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] = service.updateGroup(params).promise().toFuture
     @inline def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] = service.updateSamplingRule(params).promise().toFuture
 
@@ -122,6 +147,10 @@ package xray {
     def getEncryptionConfig(params: GetEncryptionConfigRequest): Request[GetEncryptionConfigResult] = js.native
     def getGroup(params: GetGroupRequest): Request[GetGroupResult] = js.native
     def getGroups(params: GetGroupsRequest): Request[GetGroupsResult] = js.native
+    def getInsight(params: GetInsightRequest): Request[GetInsightResult] = js.native
+    def getInsightEvents(params: GetInsightEventsRequest): Request[GetInsightEventsResult] = js.native
+    def getInsightImpactGraph(params: GetInsightImpactGraphRequest): Request[GetInsightImpactGraphResult] = js.native
+    def getInsightSummaries(params: GetInsightSummariesRequest): Request[GetInsightSummariesResult] = js.native
     def getSamplingRules(params: GetSamplingRulesRequest): Request[GetSamplingRulesResult] = js.native
     def getSamplingStatisticSummaries(params: GetSamplingStatisticSummariesRequest): Request[GetSamplingStatisticSummariesResult] = js.native
     def getSamplingTargets(params: GetSamplingTargetsRequest): Request[GetSamplingTargetsResult] = js.native
@@ -129,9 +158,12 @@ package xray {
     def getTimeSeriesServiceStatistics(params: GetTimeSeriesServiceStatisticsRequest): Request[GetTimeSeriesServiceStatisticsResult] = js.native
     def getTraceGraph(params: GetTraceGraphRequest): Request[GetTraceGraphResult] = js.native
     def getTraceSummaries(params: GetTraceSummariesRequest): Request[GetTraceSummariesResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putEncryptionConfig(params: PutEncryptionConfigRequest): Request[PutEncryptionConfigResult] = js.native
     def putTelemetryRecords(params: PutTelemetryRecordsRequest): Request[PutTelemetryRecordsResult] = js.native
     def putTraceSegments(params: PutTraceSegmentsRequest): Request[PutTraceSegmentsResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResult] = js.native
     def updateSamplingRule(params: UpdateSamplingRuleRequest): Request[UpdateSamplingRuleResult] = js.native
   }
@@ -160,7 +192,7 @@ package xray {
     }
   }
 
-  /** Value of a segment annotation. Has one of three value types: Number, Boolean or String.
+  /** Value of a segment annotation. Has one of three value types: Number, Boolean, or String.
     */
   @js.native
   trait AnnotationValue extends js.Object {
@@ -184,7 +216,25 @@ package xray {
     }
   }
 
-  /** A list of availability zones corresponding to the segments in a trace.
+  /** The service within the service graph that has anomalously high fault rates.
+    */
+  @js.native
+  trait AnomalousService extends js.Object {
+    var ServiceId: js.UndefOr[ServiceId]
+  }
+
+  object AnomalousService {
+    @inline
+    def apply(
+        ServiceId: js.UndefOr[ServiceId] = js.undefined
+    ): AnomalousService = {
+      val __obj = js.Dynamic.literal()
+      ServiceId.foreach(__v => __obj.updateDynamic("ServiceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalousService]
+    }
+  }
+
+  /** A list of Availability Zones corresponding to the segments in a trace.
     */
   @js.native
   trait AvailabilityZoneDetail extends js.Object {
@@ -282,19 +332,25 @@ package xray {
   trait CreateGroupRequest extends js.Object {
     var GroupName: GroupName
     var FilterExpression: js.UndefOr[FilterExpression]
+    var InsightsConfiguration: js.UndefOr[InsightsConfiguration]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateGroupRequest {
     @inline
     def apply(
         GroupName: GroupName,
-        FilterExpression: js.UndefOr[FilterExpression] = js.undefined
+        FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
+        InsightsConfiguration: js.UndefOr[InsightsConfiguration] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateGroupRequest = {
       val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
       FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      InsightsConfiguration.foreach(__v => __obj.updateDynamic("InsightsConfiguration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupRequest]
     }
   }
@@ -318,16 +374,20 @@ package xray {
   @js.native
   trait CreateSamplingRuleRequest extends js.Object {
     var SamplingRule: SamplingRule
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateSamplingRuleRequest {
     @inline
     def apply(
-        SamplingRule: SamplingRule
+        SamplingRule: SamplingRule,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateSamplingRuleRequest = {
       val __obj = js.Dynamic.literal(
         "SamplingRule" -> SamplingRule.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSamplingRuleRequest]
     }
   }
@@ -719,6 +779,27 @@ package xray {
     }
   }
 
+  /** The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.
+    */
+  @js.native
+  trait ForecastStatistics extends js.Object {
+    var FaultCountHigh: js.UndefOr[NullableLong]
+    var FaultCountLow: js.UndefOr[NullableLong]
+  }
+
+  object ForecastStatistics {
+    @inline
+    def apply(
+        FaultCountHigh: js.UndefOr[NullableLong] = js.undefined,
+        FaultCountLow: js.UndefOr[NullableLong] = js.undefined
+    ): ForecastStatistics = {
+      val __obj = js.Dynamic.literal()
+      FaultCountHigh.foreach(__v => __obj.updateDynamic("FaultCountHigh")(__v.asInstanceOf[js.Any]))
+      FaultCountLow.foreach(__v => __obj.updateDynamic("FaultCountLow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ForecastStatistics]
+    }
+  }
+
   @js.native
   trait GetEncryptionConfigRequest extends js.Object
 
@@ -813,6 +894,198 @@ package xray {
       Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupsResult]
+    }
+  }
+
+  @js.native
+  trait GetInsightEventsRequest extends js.Object {
+    var InsightId: InsightId
+    var MaxResults: js.UndefOr[GetInsightEventsMaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetInsightEventsRequest {
+    @inline
+    def apply(
+        InsightId: InsightId,
+        MaxResults: js.UndefOr[GetInsightEventsMaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetInsightEventsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InsightId" -> InsightId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightEventsRequest]
+    }
+  }
+
+  @js.native
+  trait GetInsightEventsResult extends js.Object {
+    var InsightEvents: js.UndefOr[InsightEventList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetInsightEventsResult {
+    @inline
+    def apply(
+        InsightEvents: js.UndefOr[InsightEventList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetInsightEventsResult = {
+      val __obj = js.Dynamic.literal()
+      InsightEvents.foreach(__v => __obj.updateDynamic("InsightEvents")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightEventsResult]
+    }
+  }
+
+  @js.native
+  trait GetInsightImpactGraphRequest extends js.Object {
+    var EndTime: Timestamp
+    var InsightId: InsightId
+    var StartTime: Timestamp
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetInsightImpactGraphRequest {
+    @inline
+    def apply(
+        EndTime: Timestamp,
+        InsightId: InsightId,
+        StartTime: Timestamp,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetInsightImpactGraphRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "InsightId" -> InsightId.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightImpactGraphRequest]
+    }
+  }
+
+  @js.native
+  trait GetInsightImpactGraphResult extends js.Object {
+    var EndTime: js.UndefOr[Timestamp]
+    var InsightId: js.UndefOr[InsightId]
+    var NextToken: js.UndefOr[Token]
+    var ServiceGraphEndTime: js.UndefOr[Timestamp]
+    var ServiceGraphStartTime: js.UndefOr[Timestamp]
+    var Services: js.UndefOr[InsightImpactGraphServiceList]
+    var StartTime: js.UndefOr[Timestamp]
+  }
+
+  object GetInsightImpactGraphResult {
+    @inline
+    def apply(
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        InsightId: js.UndefOr[InsightId] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        ServiceGraphEndTime: js.UndefOr[Timestamp] = js.undefined,
+        ServiceGraphStartTime: js.UndefOr[Timestamp] = js.undefined,
+        Services: js.UndefOr[InsightImpactGraphServiceList] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined
+    ): GetInsightImpactGraphResult = {
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      InsightId.foreach(__v => __obj.updateDynamic("InsightId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServiceGraphEndTime.foreach(__v => __obj.updateDynamic("ServiceGraphEndTime")(__v.asInstanceOf[js.Any]))
+      ServiceGraphStartTime.foreach(__v => __obj.updateDynamic("ServiceGraphStartTime")(__v.asInstanceOf[js.Any]))
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightImpactGraphResult]
+    }
+  }
+
+  @js.native
+  trait GetInsightRequest extends js.Object {
+    var InsightId: InsightId
+  }
+
+  object GetInsightRequest {
+    @inline
+    def apply(
+        InsightId: InsightId
+    ): GetInsightRequest = {
+      val __obj = js.Dynamic.literal(
+        "InsightId" -> InsightId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetInsightRequest]
+    }
+  }
+
+  @js.native
+  trait GetInsightResult extends js.Object {
+    var Insight: js.UndefOr[Insight]
+  }
+
+  object GetInsightResult {
+    @inline
+    def apply(
+        Insight: js.UndefOr[Insight] = js.undefined
+    ): GetInsightResult = {
+      val __obj = js.Dynamic.literal()
+      Insight.foreach(__v => __obj.updateDynamic("Insight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightResult]
+    }
+  }
+
+  @js.native
+  trait GetInsightSummariesRequest extends js.Object {
+    var EndTime: Timestamp
+    var StartTime: Timestamp
+    var GroupARN: js.UndefOr[GroupARN]
+    var GroupName: js.UndefOr[GroupName]
+    var MaxResults: js.UndefOr[GetInsightSummariesMaxResults]
+    var NextToken: js.UndefOr[Token]
+    var States: js.UndefOr[InsightStateList]
+  }
+
+  object GetInsightSummariesRequest {
+    @inline
+    def apply(
+        EndTime: Timestamp,
+        StartTime: Timestamp,
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        MaxResults: js.UndefOr[GetInsightSummariesMaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        States: js.UndefOr[InsightStateList] = js.undefined
+    ): GetInsightSummariesRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      States.foreach(__v => __obj.updateDynamic("States")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightSummariesRequest]
+    }
+  }
+
+  @js.native
+  trait GetInsightSummariesResult extends js.Object {
+    var InsightSummaries: js.UndefOr[InsightSummaryList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetInsightSummariesResult {
+    @inline
+    def apply(
+        InsightSummaries: js.UndefOr[InsightSummaryList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetInsightSummariesResult = {
+      val __obj = js.Dynamic.literal()
+      InsightSummaries.foreach(__v => __obj.updateDynamic("InsightSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightSummariesResult]
     }
   }
 
@@ -988,6 +1261,7 @@ package xray {
     var EndTime: Timestamp
     var StartTime: Timestamp
     var EntitySelectorExpression: js.UndefOr[EntitySelectorExpression]
+    var ForecastStatistics: js.UndefOr[NullableBoolean]
     var GroupARN: js.UndefOr[GroupARN]
     var GroupName: js.UndefOr[GroupName]
     var NextToken: js.UndefOr[String]
@@ -1000,6 +1274,7 @@ package xray {
         EndTime: Timestamp,
         StartTime: Timestamp,
         EntitySelectorExpression: js.UndefOr[EntitySelectorExpression] = js.undefined,
+        ForecastStatistics: js.UndefOr[NullableBoolean] = js.undefined,
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -1011,6 +1286,7 @@ package xray {
       )
 
       EntitySelectorExpression.foreach(__v => __obj.updateDynamic("EntitySelectorExpression")(__v.asInstanceOf[js.Any]))
+      ForecastStatistics.foreach(__v => __obj.updateDynamic("ForecastStatistics")(__v.asInstanceOf[js.Any]))
       GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -1149,6 +1425,7 @@ package xray {
     var FilterExpression: js.UndefOr[String]
     var GroupARN: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
+    var InsightsConfiguration: js.UndefOr[InsightsConfiguration]
   }
 
   object Group {
@@ -1156,12 +1433,14 @@ package xray {
     def apply(
         FilterExpression: js.UndefOr[String] = js.undefined,
         GroupARN: js.UndefOr[String] = js.undefined,
-        GroupName: js.UndefOr[String] = js.undefined
+        GroupName: js.UndefOr[String] = js.undefined,
+        InsightsConfiguration: js.UndefOr[InsightsConfiguration] = js.undefined
     ): Group = {
       val __obj = js.Dynamic.literal()
       FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
       GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      InsightsConfiguration.foreach(__v => __obj.updateDynamic("InsightsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
     }
   }
@@ -1173,6 +1452,7 @@ package xray {
     var FilterExpression: js.UndefOr[String]
     var GroupARN: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
+    var InsightsConfiguration: js.UndefOr[InsightsConfiguration]
   }
 
   object GroupSummary {
@@ -1180,12 +1460,14 @@ package xray {
     def apply(
         FilterExpression: js.UndefOr[String] = js.undefined,
         GroupARN: js.UndefOr[String] = js.undefined,
-        GroupName: js.UndefOr[String] = js.undefined
+        GroupName: js.UndefOr[String] = js.undefined,
+        InsightsConfiguration: js.UndefOr[InsightsConfiguration] = js.undefined
     ): GroupSummary = {
       val __obj = js.Dynamic.literal()
       FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
       GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      InsightsConfiguration.foreach(__v => __obj.updateDynamic("InsightsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupSummary]
     }
   }
@@ -1241,6 +1523,230 @@ package xray {
     }
   }
 
+  /** When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.
+    */
+  @js.native
+  trait Insight extends js.Object {
+    var Categories: js.UndefOr[InsightCategoryList]
+    var ClientRequestImpactStatistics: js.UndefOr[RequestImpactStatistics]
+    var EndTime: js.UndefOr[Timestamp]
+    var GroupARN: js.UndefOr[GroupARN]
+    var GroupName: js.UndefOr[GroupName]
+    var InsightId: js.UndefOr[InsightId]
+    var RootCauseServiceId: js.UndefOr[ServiceId]
+    var RootCauseServiceRequestImpactStatistics: js.UndefOr[RequestImpactStatistics]
+    var StartTime: js.UndefOr[Timestamp]
+    var State: js.UndefOr[InsightState]
+    var Summary: js.UndefOr[InsightSummaryText]
+    var TopAnomalousServices: js.UndefOr[AnomalousServiceList]
+  }
+
+  object Insight {
+    @inline
+    def apply(
+        Categories: js.UndefOr[InsightCategoryList] = js.undefined,
+        ClientRequestImpactStatistics: js.UndefOr[RequestImpactStatistics] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        InsightId: js.UndefOr[InsightId] = js.undefined,
+        RootCauseServiceId: js.UndefOr[ServiceId] = js.undefined,
+        RootCauseServiceRequestImpactStatistics: js.UndefOr[RequestImpactStatistics] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        State: js.UndefOr[InsightState] = js.undefined,
+        Summary: js.UndefOr[InsightSummaryText] = js.undefined,
+        TopAnomalousServices: js.UndefOr[AnomalousServiceList] = js.undefined
+    ): Insight = {
+      val __obj = js.Dynamic.literal()
+      Categories.foreach(__v => __obj.updateDynamic("Categories")(__v.asInstanceOf[js.Any]))
+      ClientRequestImpactStatistics.foreach(__v => __obj.updateDynamic("ClientRequestImpactStatistics")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      InsightId.foreach(__v => __obj.updateDynamic("InsightId")(__v.asInstanceOf[js.Any]))
+      RootCauseServiceId.foreach(__v => __obj.updateDynamic("RootCauseServiceId")(__v.asInstanceOf[js.Any]))
+      RootCauseServiceRequestImpactStatistics.foreach(__v => __obj.updateDynamic("RootCauseServiceRequestImpactStatistics")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      TopAnomalousServices.foreach(__v => __obj.updateDynamic("TopAnomalousServices")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Insight]
+    }
+  }
+
+  @js.native
+  sealed trait InsightCategory extends js.Any
+  object InsightCategory {
+    val FAULT = "FAULT".asInstanceOf[InsightCategory]
+
+    @inline def values = js.Array(FAULT)
+  }
+
+  /** X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.
+    */
+  @js.native
+  trait InsightEvent extends js.Object {
+    var ClientRequestImpactStatistics: js.UndefOr[RequestImpactStatistics]
+    var EventTime: js.UndefOr[Timestamp]
+    var RootCauseServiceRequestImpactStatistics: js.UndefOr[RequestImpactStatistics]
+    var Summary: js.UndefOr[EventSummaryText]
+    var TopAnomalousServices: js.UndefOr[AnomalousServiceList]
+  }
+
+  object InsightEvent {
+    @inline
+    def apply(
+        ClientRequestImpactStatistics: js.UndefOr[RequestImpactStatistics] = js.undefined,
+        EventTime: js.UndefOr[Timestamp] = js.undefined,
+        RootCauseServiceRequestImpactStatistics: js.UndefOr[RequestImpactStatistics] = js.undefined,
+        Summary: js.UndefOr[EventSummaryText] = js.undefined,
+        TopAnomalousServices: js.UndefOr[AnomalousServiceList] = js.undefined
+    ): InsightEvent = {
+      val __obj = js.Dynamic.literal()
+      ClientRequestImpactStatistics.foreach(__v => __obj.updateDynamic("ClientRequestImpactStatistics")(__v.asInstanceOf[js.Any]))
+      EventTime.foreach(__v => __obj.updateDynamic("EventTime")(__v.asInstanceOf[js.Any]))
+      RootCauseServiceRequestImpactStatistics.foreach(__v => __obj.updateDynamic("RootCauseServiceRequestImpactStatistics")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      TopAnomalousServices.foreach(__v => __obj.updateDynamic("TopAnomalousServices")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightEvent]
+    }
+  }
+
+  /** The connection between two service in an insight impact graph.
+    */
+  @js.native
+  trait InsightImpactGraphEdge extends js.Object {
+    var ReferenceId: js.UndefOr[NullableInteger]
+  }
+
+  object InsightImpactGraphEdge {
+    @inline
+    def apply(
+        ReferenceId: js.UndefOr[NullableInteger] = js.undefined
+    ): InsightImpactGraphEdge = {
+      val __obj = js.Dynamic.literal()
+      ReferenceId.foreach(__v => __obj.updateDynamic("ReferenceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightImpactGraphEdge]
+    }
+  }
+
+  /** Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.
+    */
+  @js.native
+  trait InsightImpactGraphService extends js.Object {
+    var AccountId: js.UndefOr[String]
+    var Edges: js.UndefOr[InsightImpactGraphEdgeList]
+    var Name: js.UndefOr[String]
+    var Names: js.UndefOr[ServiceNames]
+    var ReferenceId: js.UndefOr[NullableInteger]
+    var Type: js.UndefOr[String]
+  }
+
+  object InsightImpactGraphService {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        Edges: js.UndefOr[InsightImpactGraphEdgeList] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[ServiceNames] = js.undefined,
+        ReferenceId: js.UndefOr[NullableInteger] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): InsightImpactGraphService = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Edges.foreach(__v => __obj.updateDynamic("Edges")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      ReferenceId.foreach(__v => __obj.updateDynamic("ReferenceId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightImpactGraphService]
+    }
+  }
+
+  @js.native
+  sealed trait InsightState extends js.Any
+  object InsightState {
+    val ACTIVE = "ACTIVE".asInstanceOf[InsightState]
+    val CLOSED = "CLOSED".asInstanceOf[InsightState]
+
+    @inline def values = js.Array(ACTIVE, CLOSED)
+  }
+
+  /** Information that describes an insight.
+    */
+  @js.native
+  trait InsightSummary extends js.Object {
+    var Categories: js.UndefOr[InsightCategoryList]
+    var ClientRequestImpactStatistics: js.UndefOr[RequestImpactStatistics]
+    var EndTime: js.UndefOr[Timestamp]
+    var GroupARN: js.UndefOr[GroupARN]
+    var GroupName: js.UndefOr[GroupName]
+    var InsightId: js.UndefOr[InsightId]
+    var LastUpdateTime: js.UndefOr[Timestamp]
+    var RootCauseServiceId: js.UndefOr[ServiceId]
+    var RootCauseServiceRequestImpactStatistics: js.UndefOr[RequestImpactStatistics]
+    var StartTime: js.UndefOr[Timestamp]
+    var State: js.UndefOr[InsightState]
+    var Summary: js.UndefOr[InsightSummaryText]
+    var TopAnomalousServices: js.UndefOr[AnomalousServiceList]
+  }
+
+  object InsightSummary {
+    @inline
+    def apply(
+        Categories: js.UndefOr[InsightCategoryList] = js.undefined,
+        ClientRequestImpactStatistics: js.UndefOr[RequestImpactStatistics] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        InsightId: js.UndefOr[InsightId] = js.undefined,
+        LastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
+        RootCauseServiceId: js.UndefOr[ServiceId] = js.undefined,
+        RootCauseServiceRequestImpactStatistics: js.UndefOr[RequestImpactStatistics] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        State: js.UndefOr[InsightState] = js.undefined,
+        Summary: js.UndefOr[InsightSummaryText] = js.undefined,
+        TopAnomalousServices: js.UndefOr[AnomalousServiceList] = js.undefined
+    ): InsightSummary = {
+      val __obj = js.Dynamic.literal()
+      Categories.foreach(__v => __obj.updateDynamic("Categories")(__v.asInstanceOf[js.Any]))
+      ClientRequestImpactStatistics.foreach(__v => __obj.updateDynamic("ClientRequestImpactStatistics")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      InsightId.foreach(__v => __obj.updateDynamic("InsightId")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      RootCauseServiceId.foreach(__v => __obj.updateDynamic("RootCauseServiceId")(__v.asInstanceOf[js.Any]))
+      RootCauseServiceRequestImpactStatistics.foreach(__v => __obj.updateDynamic("RootCauseServiceRequestImpactStatistics")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      TopAnomalousServices.foreach(__v => __obj.updateDynamic("TopAnomalousServices")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightSummary]
+    }
+  }
+
+  /** The structure containing configurations related to insights.
+    */
+  @js.native
+  trait InsightsConfiguration extends js.Object {
+    var InsightsEnabled: js.UndefOr[NullableBoolean]
+    var NotificationsEnabled: js.UndefOr[NullableBoolean]
+  }
+
+  object InsightsConfiguration {
+    @inline
+    def apply(
+        InsightsEnabled: js.UndefOr[NullableBoolean] = js.undefined,
+        NotificationsEnabled: js.UndefOr[NullableBoolean] = js.undefined
+    ): InsightsConfiguration = {
+      val __obj = js.Dynamic.literal()
+      InsightsEnabled.foreach(__v => __obj.updateDynamic("InsightsEnabled")(__v.asInstanceOf[js.Any]))
+      NotificationsEnabled.foreach(__v => __obj.updateDynamic("NotificationsEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightsConfiguration]
+    }
+  }
+
   /** A list of EC2 instance IDs corresponding to the segments in a trace.
     */
   @js.native
@@ -1256,6 +1762,46 @@ package xray {
       val __obj = js.Dynamic.literal()
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceIdDetail]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -1364,6 +1910,30 @@ package xray {
       val __obj = js.Dynamic.literal()
       UnprocessedTraceSegments.foreach(__v => __obj.updateDynamic("UnprocessedTraceSegments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutTraceSegmentsResult]
+    }
+  }
+
+  /** Statistics that describe how the incident has impacted a service.
+    */
+  @js.native
+  trait RequestImpactStatistics extends js.Object {
+    var FaultCount: js.UndefOr[NullableLong]
+    var OkCount: js.UndefOr[NullableLong]
+    var TotalCount: js.UndefOr[NullableLong]
+  }
+
+  object RequestImpactStatistics {
+    @inline
+    def apply(
+        FaultCount: js.UndefOr[NullableLong] = js.undefined,
+        OkCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalCount: js.UndefOr[NullableLong] = js.undefined
+    ): RequestImpactStatistics = {
+      val __obj = js.Dynamic.literal()
+      FaultCount.foreach(__v => __obj.updateDynamic("FaultCount")(__v.asInstanceOf[js.Any]))
+      OkCount.foreach(__v => __obj.updateDynamic("OkCount")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RequestImpactStatistics]
     }
   }
 
@@ -1615,7 +2185,7 @@ package xray {
     }
   }
 
-  /** Aggregated request sampling data for a sampling rule across all services for a 10 second window.
+  /** Aggregated request sampling data for a sampling rule across all services for a 10-second window.
     */
   @js.native
   trait SamplingStatisticSummary extends js.Object {
@@ -1762,7 +2332,7 @@ package xray {
     }
   }
 
-  /** Information about an application that processed requests, users that made requests, or downstream services, resources and applications that an application used.
+  /** Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.
     */
   @js.native
   trait Service extends js.Object {
@@ -1873,6 +2443,63 @@ package xray {
     }
   }
 
+  /** A map that contains tag keys and tag values to attach to an AWS X-Ray group or sampling rule. For more information about ways to use tags, see [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging AWS resources]] in the <i>AWS General Reference</i>.
+    * The following restrictions apply to tags:
+    * * Maximum number of user-applied tags per resource: 50
+    * * Tag keys and values are case sensitive.
+    * * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system tags.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -1923,6 +2550,7 @@ package xray {
   trait TimeSeriesServiceStatistics extends js.Object {
     var EdgeSummaryStatistics: js.UndefOr[EdgeStatistics]
     var ResponseTimeHistogram: js.UndefOr[Histogram]
+    var ServiceForecastStatistics: js.UndefOr[ForecastStatistics]
     var ServiceSummaryStatistics: js.UndefOr[ServiceStatistics]
     var Timestamp: js.UndefOr[Timestamp]
   }
@@ -1932,12 +2560,14 @@ package xray {
     def apply(
         EdgeSummaryStatistics: js.UndefOr[EdgeStatistics] = js.undefined,
         ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
+        ServiceForecastStatistics: js.UndefOr[ForecastStatistics] = js.undefined,
         ServiceSummaryStatistics: js.UndefOr[ServiceStatistics] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): TimeSeriesServiceStatistics = {
       val __obj = js.Dynamic.literal()
       EdgeSummaryStatistics.foreach(__v => __obj.updateDynamic("EdgeSummaryStatistics")(__v.asInstanceOf[js.Any]))
       ResponseTimeHistogram.foreach(__v => __obj.updateDynamic("ResponseTimeHistogram")(__v.asInstanceOf[js.Any]))
+      ServiceForecastStatistics.foreach(__v => __obj.updateDynamic("ServiceForecastStatistics")(__v.asInstanceOf[js.Any]))
       ServiceSummaryStatistics.foreach(__v => __obj.updateDynamic("ServiceSummaryStatistics")(__v.asInstanceOf[js.Any]))
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeSeriesServiceStatistics]
@@ -1950,6 +2580,7 @@ package xray {
   trait Trace extends js.Object {
     var Duration: js.UndefOr[NullableDouble]
     var Id: js.UndefOr[TraceId]
+    var LimitExceeded: js.UndefOr[NullableBoolean]
     var Segments: js.UndefOr[SegmentList]
   }
 
@@ -1958,11 +2589,13 @@ package xray {
     def apply(
         Duration: js.UndefOr[NullableDouble] = js.undefined,
         Id: js.UndefOr[TraceId] = js.undefined,
+        LimitExceeded: js.UndefOr[NullableBoolean] = js.undefined,
         Segments: js.UndefOr[SegmentList] = js.undefined
     ): Trace = {
       val __obj = js.Dynamic.literal()
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LimitExceeded.foreach(__v => __obj.updateDynamic("LimitExceeded")(__v.asInstanceOf[js.Any]))
       Segments.foreach(__v => __obj.updateDynamic("Segments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Trace]
     }
@@ -2113,10 +2746,42 @@ package xray {
   }
 
   @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
   trait UpdateGroupRequest extends js.Object {
     var FilterExpression: js.UndefOr[FilterExpression]
     var GroupARN: js.UndefOr[GroupARN]
     var GroupName: js.UndefOr[GroupName]
+    var InsightsConfiguration: js.UndefOr[InsightsConfiguration]
   }
 
   object UpdateGroupRequest {
@@ -2124,12 +2789,14 @@ package xray {
     def apply(
         FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
-        GroupName: js.UndefOr[GroupName] = js.undefined
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        InsightsConfiguration: js.UndefOr[InsightsConfiguration] = js.undefined
     ): UpdateGroupRequest = {
       val __obj = js.Dynamic.literal()
       FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
       GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      InsightsConfiguration.foreach(__v => __obj.updateDynamic("InsightsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupRequest]
     }
   }

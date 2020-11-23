@@ -83,8 +83,16 @@ package object frauddetector {
     @inline def createVariableFuture(params: CreateVariableRequest): Future[CreateVariableResult] = service.createVariable(params).promise().toFuture
     @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResult] = service.deleteDetector(params).promise().toFuture
     @inline def deleteDetectorVersionFuture(params: DeleteDetectorVersionRequest): Future[DeleteDetectorVersionResult] = service.deleteDetectorVersion(params).promise().toFuture
+    @inline def deleteEntityTypeFuture(params: DeleteEntityTypeRequest): Future[DeleteEntityTypeResult] = service.deleteEntityType(params).promise().toFuture
     @inline def deleteEventFuture(params: DeleteEventRequest): Future[DeleteEventResult] = service.deleteEvent(params).promise().toFuture
+    @inline def deleteEventTypeFuture(params: DeleteEventTypeRequest): Future[DeleteEventTypeResult] = service.deleteEventType(params).promise().toFuture
+    @inline def deleteExternalModelFuture(params: DeleteExternalModelRequest): Future[DeleteExternalModelResult] = service.deleteExternalModel(params).promise().toFuture
+    @inline def deleteLabelFuture(params: DeleteLabelRequest): Future[DeleteLabelResult] = service.deleteLabel(params).promise().toFuture
+    @inline def deleteModelFuture(params: DeleteModelRequest): Future[DeleteModelResult] = service.deleteModel(params).promise().toFuture
+    @inline def deleteModelVersionFuture(params: DeleteModelVersionRequest): Future[DeleteModelVersionResult] = service.deleteModelVersion(params).promise().toFuture
+    @inline def deleteOutcomeFuture(params: DeleteOutcomeRequest): Future[DeleteOutcomeResult] = service.deleteOutcome(params).promise().toFuture
     @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[DeleteRuleResult] = service.deleteRule(params).promise().toFuture
+    @inline def deleteVariableFuture(params: DeleteVariableRequest): Future[DeleteVariableResult] = service.deleteVariable(params).promise().toFuture
     @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResult] = service.describeDetector(params).promise().toFuture
     @inline def describeModelVersionsFuture(params: DescribeModelVersionsRequest): Future[DescribeModelVersionsResult] = service.describeModelVersions(params).promise().toFuture
     @inline def getDetectorVersionFuture(params: GetDetectorVersionRequest): Future[GetDetectorVersionResult] = service.getDetectorVersion(params).promise().toFuture
@@ -138,8 +146,16 @@ package frauddetector {
     def createVariable(params: CreateVariableRequest): Request[CreateVariableResult] = js.native
     def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResult] = js.native
     def deleteDetectorVersion(params: DeleteDetectorVersionRequest): Request[DeleteDetectorVersionResult] = js.native
+    def deleteEntityType(params: DeleteEntityTypeRequest): Request[DeleteEntityTypeResult] = js.native
     def deleteEvent(params: DeleteEventRequest): Request[DeleteEventResult] = js.native
+    def deleteEventType(params: DeleteEventTypeRequest): Request[DeleteEventTypeResult] = js.native
+    def deleteExternalModel(params: DeleteExternalModelRequest): Request[DeleteExternalModelResult] = js.native
+    def deleteLabel(params: DeleteLabelRequest): Request[DeleteLabelResult] = js.native
+    def deleteModel(params: DeleteModelRequest): Request[DeleteModelResult] = js.native
+    def deleteModelVersion(params: DeleteModelVersionRequest): Request[DeleteModelVersionResult] = js.native
+    def deleteOutcome(params: DeleteOutcomeRequest): Request[DeleteOutcomeResult] = js.native
     def deleteRule(params: DeleteRuleRequest): Request[DeleteRuleResult] = js.native
+    def deleteVariable(params: DeleteVariableRequest): Request[DeleteVariableResult] = js.native
     def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResult] = js.native
     def describeModelVersions(params: DescribeModelVersionsRequest): Request[DescribeModelVersionsResult] = js.native
     def getDetectorVersion(params: GetDetectorVersionRequest): Request[GetDetectorVersionResult] = js.native
@@ -655,16 +671,44 @@ package frauddetector {
   }
 
   @js.native
+  trait DeleteEntityTypeRequest extends js.Object {
+    var name: identifier
+  }
+
+  object DeleteEntityTypeRequest {
+    @inline
+    def apply(
+        name: identifier
+    ): DeleteEntityTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEntityTypeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEntityTypeResult extends js.Object
+
+  object DeleteEntityTypeResult {
+    @inline
+    def apply(): DeleteEntityTypeResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteEntityTypeResult]
+    }
+  }
+
+  @js.native
   trait DeleteEventRequest extends js.Object {
-    var eventId: String
-    var eventTypeName: String
+    var eventId: identifier
+    var eventTypeName: identifier
   }
 
   object DeleteEventRequest {
     @inline
     def apply(
-        eventId: String,
-        eventTypeName: String
+        eventId: identifier,
+        eventTypeName: identifier
     ): DeleteEventRequest = {
       val __obj = js.Dynamic.literal(
         "eventId" -> eventId.asInstanceOf[js.Any],
@@ -682,6 +726,183 @@ package frauddetector {
     def apply(): DeleteEventResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEventResult]
+    }
+  }
+
+  @js.native
+  trait DeleteEventTypeRequest extends js.Object {
+    var name: identifier
+  }
+
+  object DeleteEventTypeRequest {
+    @inline
+    def apply(
+        name: identifier
+    ): DeleteEventTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEventTypeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEventTypeResult extends js.Object
+
+  object DeleteEventTypeResult {
+    @inline
+    def apply(): DeleteEventTypeResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteEventTypeResult]
+    }
+  }
+
+  @js.native
+  trait DeleteExternalModelRequest extends js.Object {
+    var modelEndpoint: sageMakerEndpointIdentifier
+  }
+
+  object DeleteExternalModelRequest {
+    @inline
+    def apply(
+        modelEndpoint: sageMakerEndpointIdentifier
+    ): DeleteExternalModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "modelEndpoint" -> modelEndpoint.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteExternalModelRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteExternalModelResult extends js.Object
+
+  object DeleteExternalModelResult {
+    @inline
+    def apply(): DeleteExternalModelResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteExternalModelResult]
+    }
+  }
+
+  @js.native
+  trait DeleteLabelRequest extends js.Object {
+    var name: identifier
+  }
+
+  object DeleteLabelRequest {
+    @inline
+    def apply(
+        name: identifier
+    ): DeleteLabelRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteLabelRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteLabelResult extends js.Object
+
+  object DeleteLabelResult {
+    @inline
+    def apply(): DeleteLabelResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteLabelResult]
+    }
+  }
+
+  @js.native
+  trait DeleteModelRequest extends js.Object {
+    var modelId: modelIdentifier
+    var modelType: ModelTypeEnum
+  }
+
+  object DeleteModelRequest {
+    @inline
+    def apply(
+        modelId: modelIdentifier,
+        modelType: ModelTypeEnum
+    ): DeleteModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteModelRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteModelResult extends js.Object
+
+  object DeleteModelResult {
+    @inline
+    def apply(): DeleteModelResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteModelResult]
+    }
+  }
+
+  @js.native
+  trait DeleteModelVersionRequest extends js.Object {
+    var modelId: modelIdentifier
+    var modelType: ModelTypeEnum
+    var modelVersionNumber: floatVersionString
+  }
+
+  object DeleteModelVersionRequest {
+    @inline
+    def apply(
+        modelId: modelIdentifier,
+        modelType: ModelTypeEnum,
+        modelVersionNumber: floatVersionString
+    ): DeleteModelVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "modelId" -> modelId.asInstanceOf[js.Any],
+        "modelType" -> modelType.asInstanceOf[js.Any],
+        "modelVersionNumber" -> modelVersionNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteModelVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteModelVersionResult extends js.Object
+
+  object DeleteModelVersionResult {
+    @inline
+    def apply(): DeleteModelVersionResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteModelVersionResult]
+    }
+  }
+
+  @js.native
+  trait DeleteOutcomeRequest extends js.Object {
+    var name: identifier
+  }
+
+  object DeleteOutcomeRequest {
+    @inline
+    def apply(
+        name: identifier
+    ): DeleteOutcomeRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteOutcomeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteOutcomeResult extends js.Object
+
+  object DeleteOutcomeResult {
+    @inline
+    def apply(): DeleteOutcomeResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteOutcomeResult]
     }
   }
 
@@ -710,6 +931,34 @@ package frauddetector {
     def apply(): DeleteRuleResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteRuleResult]
+    }
+  }
+
+  @js.native
+  trait DeleteVariableRequest extends js.Object {
+    var name: String
+  }
+
+  object DeleteVariableRequest {
+    @inline
+    def apply(
+        name: String
+    ): DeleteVariableRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVariableRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVariableResult extends js.Object
+
+  object DeleteVariableResult {
+    @inline
+    def apply(): DeleteVariableResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteVariableResult]
     }
   }
 

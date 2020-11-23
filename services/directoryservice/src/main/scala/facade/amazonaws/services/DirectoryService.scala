@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object directoryservice {
   type AccessUrl = String
   type AddedDateTime = js.Date
+  type AdditionalRegions = js.Array[RegionName]
   type AliasName = String
   type AttributeName = String
   type AttributeValue = String
@@ -73,6 +74,8 @@ package object directoryservice {
   type RadiusRetries = Int
   type RadiusSharedSecret = String
   type RadiusTimeout = Int
+  type RegionName = String
+  type RegionsDescription = js.Array[RegionDescription]
   type RemoteDomainName = String
   type RemoteDomainNames = js.Array[RemoteDomainName]
   type RequestId = String
@@ -120,6 +123,7 @@ package object directoryservice {
 
     @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] = service.acceptSharedDirectory(params).promise().toFuture
     @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] = service.addIpRoutes(params).promise().toFuture
+    @inline def addRegionFuture(params: AddRegionRequest): Future[AddRegionResult] = service.addRegion(params).promise().toFuture
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] = service.addTagsToResource(params).promise().toFuture
     @inline def cancelSchemaExtensionFuture(params: CancelSchemaExtensionRequest): Future[CancelSchemaExtensionResult] = service.cancelSchemaExtension(params).promise().toFuture
     @inline def connectDirectoryFuture(params: ConnectDirectoryRequest): Future[ConnectDirectoryResult] = service.connectDirectory(params).promise().toFuture
@@ -144,6 +148,7 @@ package object directoryservice {
     @inline def describeDomainControllersFuture(params: DescribeDomainControllersRequest): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise().toFuture
     @inline def describeEventTopicsFuture(params: DescribeEventTopicsRequest): Future[DescribeEventTopicsResult] = service.describeEventTopics(params).promise().toFuture
     @inline def describeLDAPSSettingsFuture(params: DescribeLDAPSSettingsRequest): Future[DescribeLDAPSSettingsResult] = service.describeLDAPSSettings(params).promise().toFuture
+    @inline def describeRegionsFuture(params: DescribeRegionsRequest): Future[DescribeRegionsResult] = service.describeRegions(params).promise().toFuture
     @inline def describeSharedDirectoriesFuture(params: DescribeSharedDirectoriesRequest): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] = service.describeSnapshots(params).promise().toFuture
     @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] = service.describeTrusts(params).promise().toFuture
@@ -164,6 +169,7 @@ package object directoryservice {
     @inline def registerEventTopicFuture(params: RegisterEventTopicRequest): Future[RegisterEventTopicResult] = service.registerEventTopic(params).promise().toFuture
     @inline def rejectSharedDirectoryFuture(params: RejectSharedDirectoryRequest): Future[RejectSharedDirectoryResult] = service.rejectSharedDirectory(params).promise().toFuture
     @inline def removeIpRoutesFuture(params: RemoveIpRoutesRequest): Future[RemoveIpRoutesResult] = service.removeIpRoutes(params).promise().toFuture
+    @inline def removeRegionFuture(params: RemoveRegionRequest): Future[RemoveRegionResult] = service.removeRegion(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResult] = service.removeTagsFromResource(params).promise().toFuture
     @inline def resetUserPasswordFuture(params: ResetUserPasswordRequest): Future[ResetUserPasswordResult] = service.resetUserPassword(params).promise().toFuture
     @inline def restoreFromSnapshotFuture(params: RestoreFromSnapshotRequest): Future[RestoreFromSnapshotResult] = service.restoreFromSnapshot(params).promise().toFuture
@@ -187,6 +193,7 @@ package directoryservice {
 
     def acceptSharedDirectory(params: AcceptSharedDirectoryRequest): Request[AcceptSharedDirectoryResult] = js.native
     def addIpRoutes(params: AddIpRoutesRequest): Request[AddIpRoutesResult] = js.native
+    def addRegion(params: AddRegionRequest): Request[AddRegionResult] = js.native
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
     def cancelSchemaExtension(params: CancelSchemaExtensionRequest): Request[CancelSchemaExtensionResult] = js.native
     def connectDirectory(params: ConnectDirectoryRequest): Request[ConnectDirectoryResult] = js.native
@@ -211,6 +218,7 @@ package directoryservice {
     def describeDomainControllers(params: DescribeDomainControllersRequest): Request[DescribeDomainControllersResult] = js.native
     def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult] = js.native
     def describeLDAPSSettings(params: DescribeLDAPSSettingsRequest): Request[DescribeLDAPSSettingsResult] = js.native
+    def describeRegions(params: DescribeRegionsRequest): Request[DescribeRegionsResult] = js.native
     def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] = js.native
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult] = js.native
     def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult] = js.native
@@ -231,6 +239,7 @@ package directoryservice {
     def registerEventTopic(params: RegisterEventTopicRequest): Request[RegisterEventTopicResult] = js.native
     def rejectSharedDirectory(params: RejectSharedDirectoryRequest): Request[RejectSharedDirectoryResult] = js.native
     def removeIpRoutes(params: RemoveIpRoutesRequest): Request[RemoveIpRoutesResult] = js.native
+    def removeRegion(params: RemoveRegionRequest): Request[RemoveRegionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResult] = js.native
     def resetUserPassword(params: ResetUserPasswordRequest): Request[ResetUserPasswordResult] = js.native
     def restoreFromSnapshot(params: RestoreFromSnapshotRequest): Request[RestoreFromSnapshotResult] = js.native
@@ -309,6 +318,40 @@ package directoryservice {
     def apply(): AddIpRoutesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddIpRoutesResult]
+    }
+  }
+
+  @js.native
+  trait AddRegionRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var RegionName: RegionName
+    var VPCSettings: DirectoryVpcSettings
+  }
+
+  object AddRegionRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        RegionName: RegionName,
+        VPCSettings: DirectoryVpcSettings
+    ): AddRegionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "RegionName" -> RegionName.asInstanceOf[js.Any],
+        "VPCSettings" -> VPCSettings.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AddRegionRequest]
+    }
+  }
+
+  @js.native
+  trait AddRegionResult extends js.Object
+
+  object AddRegionResult {
+    @inline
+    def apply(): AddRegionResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AddRegionResult]
     }
   }
 
@@ -1442,6 +1485,49 @@ package directoryservice {
   }
 
   @js.native
+  trait DescribeRegionsRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var NextToken: js.UndefOr[NextToken]
+    var RegionName: js.UndefOr[RegionName]
+  }
+
+  object DescribeRegionsRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RegionName: js.UndefOr[RegionName] = js.undefined
+    ): DescribeRegionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRegionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRegionsResult extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var RegionsDescription: js.UndefOr[RegionsDescription]
+  }
+
+  object DescribeRegionsResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RegionsDescription: js.UndefOr[RegionsDescription] = js.undefined
+    ): DescribeRegionsResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegionsDescription.foreach(__v => __obj.updateDynamic("RegionsDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRegionsResult]
+    }
+  }
+
+  @js.native
   trait DescribeSharedDirectoriesRequest extends js.Object {
     var OwnerDirectoryId: DirectoryId
     var Limit: js.UndefOr[Limit]
@@ -1661,6 +1747,7 @@ package directoryservice {
     var OwnerDirectoryDescription: js.UndefOr[OwnerDirectoryDescription]
     var RadiusSettings: js.UndefOr[RadiusSettings]
     var RadiusStatus: js.UndefOr[RadiusStatus]
+    var RegionsInfo: js.UndefOr[RegionsInfo]
     var ShareMethod: js.UndefOr[ShareMethod]
     var ShareNotes: js.UndefOr[Notes]
     var ShareStatus: js.UndefOr[ShareStatus]
@@ -1690,6 +1777,7 @@ package directoryservice {
         OwnerDirectoryDescription: js.UndefOr[OwnerDirectoryDescription] = js.undefined,
         RadiusSettings: js.UndefOr[RadiusSettings] = js.undefined,
         RadiusStatus: js.UndefOr[RadiusStatus] = js.undefined,
+        RegionsInfo: js.UndefOr[RegionsInfo] = js.undefined,
         ShareMethod: js.UndefOr[ShareMethod] = js.undefined,
         ShareNotes: js.UndefOr[Notes] = js.undefined,
         ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
@@ -1716,6 +1804,7 @@ package directoryservice {
       OwnerDirectoryDescription.foreach(__v => __obj.updateDynamic("OwnerDirectoryDescription")(__v.asInstanceOf[js.Any]))
       RadiusSettings.foreach(__v => __obj.updateDynamic("RadiusSettings")(__v.asInstanceOf[js.Any]))
       RadiusStatus.foreach(__v => __obj.updateDynamic("RadiusStatus")(__v.asInstanceOf[js.Any]))
+      RegionsInfo.foreach(__v => __obj.updateDynamic("RegionsInfo")(__v.asInstanceOf[js.Any]))
       ShareMethod.foreach(__v => __obj.updateDynamic("ShareMethod")(__v.asInstanceOf[js.Any]))
       ShareNotes.foreach(__v => __obj.updateDynamic("ShareNotes")(__v.asInstanceOf[js.Any]))
       ShareStatus.foreach(__v => __obj.updateDynamic("ShareStatus")(__v.asInstanceOf[js.Any]))
@@ -2673,6 +2762,78 @@ package directoryservice {
     @inline def values = js.Array(Creating, Completed, Failed)
   }
 
+  /** The replicated regional information for a directory.
+    */
+  @js.native
+  trait RegionDescription extends js.Object {
+    var DesiredNumberOfDomainControllers: js.UndefOr[DesiredNumberOfDomainControllers]
+    var DirectoryId: js.UndefOr[DirectoryId]
+    var LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime]
+    var LaunchTime: js.UndefOr[LaunchTime]
+    var RegionName: js.UndefOr[RegionName]
+    var RegionType: js.UndefOr[RegionType]
+    var Status: js.UndefOr[DirectoryStage]
+    var StatusLastUpdatedDateTime: js.UndefOr[StateLastUpdatedDateTime]
+    var VpcSettings: js.UndefOr[DirectoryVpcSettings]
+  }
+
+  object RegionDescription {
+    @inline
+    def apply(
+        DesiredNumberOfDomainControllers: js.UndefOr[DesiredNumberOfDomainControllers] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        LaunchTime: js.UndefOr[LaunchTime] = js.undefined,
+        RegionName: js.UndefOr[RegionName] = js.undefined,
+        RegionType: js.UndefOr[RegionType] = js.undefined,
+        Status: js.UndefOr[DirectoryStage] = js.undefined,
+        StatusLastUpdatedDateTime: js.UndefOr[StateLastUpdatedDateTime] = js.undefined,
+        VpcSettings: js.UndefOr[DirectoryVpcSettings] = js.undefined
+    ): RegionDescription = {
+      val __obj = js.Dynamic.literal()
+      DesiredNumberOfDomainControllers.foreach(__v => __obj.updateDynamic("DesiredNumberOfDomainControllers")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDateTime.foreach(__v => __obj.updateDynamic("LastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      RegionType.foreach(__v => __obj.updateDynamic("RegionType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusLastUpdatedDateTime.foreach(__v => __obj.updateDynamic("StatusLastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      VpcSettings.foreach(__v => __obj.updateDynamic("VpcSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegionDescription]
+    }
+  }
+
+  @js.native
+  sealed trait RegionType extends js.Any
+  object RegionType {
+    val Primary = "Primary".asInstanceOf[RegionType]
+    val Additional = "Additional".asInstanceOf[RegionType]
+
+    @inline def values = js.Array(Primary, Additional)
+  }
+
+  /** Provides information about the Regions that are configured for multi-Region replication.
+    */
+  @js.native
+  trait RegionsInfo extends js.Object {
+    var AdditionalRegions: js.UndefOr[AdditionalRegions]
+    var PrimaryRegion: js.UndefOr[RegionName]
+  }
+
+  object RegionsInfo {
+    @inline
+    def apply(
+        AdditionalRegions: js.UndefOr[AdditionalRegions] = js.undefined,
+        PrimaryRegion: js.UndefOr[RegionName] = js.undefined
+    ): RegionsInfo = {
+      val __obj = js.Dynamic.literal()
+      AdditionalRegions.foreach(__v => __obj.updateDynamic("AdditionalRegions")(__v.asInstanceOf[js.Any]))
+      PrimaryRegion.foreach(__v => __obj.updateDynamic("PrimaryRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegionsInfo]
+    }
+  }
+
   @js.native
   trait RegisterCertificateRequest extends js.Object {
     var CertificateData: CertificateData
@@ -2805,6 +2966,34 @@ package directoryservice {
     def apply(): RemoveIpRoutesResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveIpRoutesResult]
+    }
+  }
+
+  @js.native
+  trait RemoveRegionRequest extends js.Object {
+    var DirectoryId: DirectoryId
+  }
+
+  object RemoveRegionRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId
+    ): RemoveRegionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveRegionRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveRegionResult extends js.Object
+
+  object RemoveRegionResult {
+    @inline
+    def apply(): RemoveRegionResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RemoveRegionResult]
     }
   }
 

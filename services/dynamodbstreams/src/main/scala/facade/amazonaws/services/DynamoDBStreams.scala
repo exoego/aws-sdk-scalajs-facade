@@ -13,7 +13,6 @@ package object dynamodbstreams {
   type BinarySetAttributeValue = js.Array[BinaryAttributeValue]
   type BooleanAttributeValue = Boolean
   type Date = js.Date
-  type ErrorMessage = String
   type KeySchema = js.Array[KeySchemaElement]
   type KeySchemaAttributeName = String
   type ListAttributeValue = js.Array[AttributeValue]
@@ -56,8 +55,9 @@ package dynamodbstreams {
     def listStreams(params: ListStreamsInput): Request[ListStreamsOutput] = js.native
   }
 
-  /** Represents the data for an attribute. You can set one, and only one, of the elements.
-    * Each attribute in an item is a name-value pair. An attribute can be single-valued or multi-valued set. For example, a book item can have title and authors attributes. Each book has one title but can have many authors. The multi-valued attribute is a set; duplicate values are not allowed.
+  /** Represents the data for an attribute.
+    * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+    * For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait AttributeValue extends js.Object {
@@ -144,13 +144,6 @@ package dynamodbstreams {
       StreamDescription.foreach(__v => __obj.updateDynamic("StreamDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStreamOutput]
     }
-  }
-
-  /** The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.
-    */
-  @js.native
-  trait ExpiredIteratorExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /** Represents the input of a <code>GetRecords</code> operation.
@@ -265,18 +258,9 @@ package dynamodbstreams {
     }
   }
 
-  /** An error occurred on the server side.
-    */
-  @js.native
-  trait InternalServerErrorException extends js.Object {
-    val message: ErrorMessage
-  }
-
   /** Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.
-    * A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key (partition key) would be represented by one <code>KeySchemaElement</code>. A composite primary key (partition key and sort key) would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.
-    *
-    * '''Note:'''The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.
-    * The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.
+    * A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.
+    * A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.
     */
   @js.native
   trait KeySchemaElement extends js.Object {
@@ -305,13 +289,6 @@ package dynamodbstreams {
     val RANGE = "RANGE".asInstanceOf[KeyType]
 
     @inline def values = js.Array(HASH, RANGE)
-  }
-
-  /** Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to [[http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries|Error Retries and Exponential Backoff]] in the <i>Amazon DynamoDB Developer Guide</i>.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /** Represents the input of a <code>ListStreams</code> operation.
@@ -403,13 +380,6 @@ package dynamodbstreams {
       userIdentity.foreach(__v => __obj.updateDynamic("userIdentity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
-  }
-
-  /** The operation tried to access a nonexistent stream.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /** The beginning and ending sequence numbers for the stream records contained within a shard.
@@ -590,15 +560,5 @@ package dynamodbstreams {
     val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
     @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
-  }
-
-  /** The operation attempted to read past the oldest stream record in a shard.
-    * In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:
-    * * You request a shard iterator with a sequence number older than the trim point (24 hours).
-    * * You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.
-    */
-  @js.native
-  trait TrimmedDataAccessExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 }

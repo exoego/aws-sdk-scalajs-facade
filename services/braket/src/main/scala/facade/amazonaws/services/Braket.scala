@@ -7,25 +7,27 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object braket {
-  type CreateQuantumTaskRequestdeviceParametersJsonValue = String
-  type CreateQuantumTaskRequestoutputS3BucketString = String
-  type CreateQuantumTaskRequestoutputS3KeyPrefixString = String
-  type CreateQuantumTaskRequestshotsLong = Double
+  type CreateQuantumTaskRequestDeviceParametersString = String
+  type CreateQuantumTaskRequestOutputS3BucketString = String
+  type CreateQuantumTaskRequestOutputS3KeyPrefixString = String
+  type CreateQuantumTaskRequestShotsLong = Double
   type DeviceArn = String
   type DeviceSummaryList = js.Array[DeviceSummary]
   type JsonValue = String
   type QuantumTaskArn = String
   type QuantumTaskSummaryList = js.Array[QuantumTaskSummary]
-  type SearchDevicesFilternameString = String
-  type SearchDevicesFiltervaluesString256List = js.Array[String256]
-  type SearchDevicesRequestfiltersSearchDevicesFilterList = js.Array[SearchDevicesFilter]
-  type SearchDevicesRequestmaxResultsInteger = Int
-  type SearchQuantumTasksFiltervaluesString256List = js.Array[String256]
-  type SearchQuantumTasksRequestfiltersSearchQuantumTasksFilterList = js.Array[SearchQuantumTasksFilter]
-  type SearchQuantumTasksRequestmaxResultsInteger = Int
+  type SearchDevicesFilterNameString = String
+  type SearchDevicesFilterValuesList = js.Array[String256]
+  type SearchDevicesRequestFiltersList = js.Array[SearchDevicesFilter]
+  type SearchDevicesRequestMaxResultsInteger = Int
+  type SearchQuantumTasksFilterValuesList = js.Array[String256]
+  type SearchQuantumTasksRequestFiltersList = js.Array[SearchQuantumTasksFilter]
+  type SearchQuantumTasksRequestMaxResultsInteger = Int
   type String256 = String
   type String64 = String
   type SyntheticTimestamp_date_time = js.Date
+  type TagKeys = js.Array[String]
+  type TagsMap = js.Dictionary[String]
 
   implicit final class BraketOps(private val service: Braket) extends AnyVal {
 
@@ -33,8 +35,11 @@ package object braket {
     @inline def createQuantumTaskFuture(params: CreateQuantumTaskRequest): Future[CreateQuantumTaskResponse] = service.createQuantumTask(params).promise().toFuture
     @inline def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] = service.getDevice(params).promise().toFuture
     @inline def getQuantumTaskFuture(params: GetQuantumTaskRequest): Future[GetQuantumTaskResponse] = service.getQuantumTask(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def searchDevicesFuture(params: SearchDevicesRequest): Future[SearchDevicesResponse] = service.searchDevices(params).promise().toFuture
     @inline def searchQuantumTasksFuture(params: SearchQuantumTasksRequest): Future[SearchQuantumTasksResponse] = service.searchQuantumTasks(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 }
@@ -49,8 +54,11 @@ package braket {
     def createQuantumTask(params: CreateQuantumTaskRequest): Request[CreateQuantumTaskResponse] = js.native
     def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse] = js.native
     def getQuantumTask(params: GetQuantumTaskRequest): Request[GetQuantumTaskResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def searchDevices(params: SearchDevicesRequest): Request[SearchDevicesResponse] = js.native
     def searchQuantumTasks(params: SearchQuantumTasksRequest): Request[SearchQuantumTasksResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -96,10 +104,10 @@ package braket {
   @js.native
   sealed trait CancellationStatus extends js.Any
   object CancellationStatus {
-    val CANCELLED = "CANCELLED".asInstanceOf[CancellationStatus]
     val CANCELLING = "CANCELLING".asInstanceOf[CancellationStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[CancellationStatus]
 
-    @inline def values = js.Array(CANCELLED, CANCELLING)
+    @inline def values = js.Array(CANCELLING, CANCELLED)
   }
 
   @js.native
@@ -107,10 +115,11 @@ package braket {
     var action: JsonValue
     var clientToken: String64
     var deviceArn: DeviceArn
-    var outputS3Bucket: CreateQuantumTaskRequestoutputS3BucketString
-    var outputS3KeyPrefix: CreateQuantumTaskRequestoutputS3KeyPrefixString
-    var shots: CreateQuantumTaskRequestshotsLong
-    var deviceParameters: js.UndefOr[CreateQuantumTaskRequestdeviceParametersJsonValue]
+    var outputS3Bucket: CreateQuantumTaskRequestOutputS3BucketString
+    var outputS3KeyPrefix: CreateQuantumTaskRequestOutputS3KeyPrefixString
+    var shots: CreateQuantumTaskRequestShotsLong
+    var deviceParameters: js.UndefOr[CreateQuantumTaskRequestDeviceParametersString]
+    var tags: js.UndefOr[TagsMap]
   }
 
   object CreateQuantumTaskRequest {
@@ -119,10 +128,11 @@ package braket {
         action: JsonValue,
         clientToken: String64,
         deviceArn: DeviceArn,
-        outputS3Bucket: CreateQuantumTaskRequestoutputS3BucketString,
-        outputS3KeyPrefix: CreateQuantumTaskRequestoutputS3KeyPrefixString,
-        shots: CreateQuantumTaskRequestshotsLong,
-        deviceParameters: js.UndefOr[CreateQuantumTaskRequestdeviceParametersJsonValue] = js.undefined
+        outputS3Bucket: CreateQuantumTaskRequestOutputS3BucketString,
+        outputS3KeyPrefix: CreateQuantumTaskRequestOutputS3KeyPrefixString,
+        shots: CreateQuantumTaskRequestShotsLong,
+        deviceParameters: js.UndefOr[CreateQuantumTaskRequestDeviceParametersString] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateQuantumTaskRequest = {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any],
@@ -134,6 +144,7 @@ package braket {
       )
 
       deviceParameters.foreach(__v => __obj.updateDynamic("deviceParameters")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQuantumTaskRequest]
     }
   }
@@ -158,10 +169,10 @@ package braket {
   @js.native
   sealed trait DeviceStatus extends js.Any
   object DeviceStatus {
-    val OFFLINE = "OFFLINE".asInstanceOf[DeviceStatus]
     val ONLINE = "ONLINE".asInstanceOf[DeviceStatus]
+    val OFFLINE = "OFFLINE".asInstanceOf[DeviceStatus]
 
-    @inline def values = js.Array(OFFLINE, ONLINE)
+    @inline def values = js.Array(ONLINE, OFFLINE)
   }
 
   /** Includes information about the device.
@@ -282,6 +293,7 @@ package braket {
     var status: QuantumTaskStatus
     var endedAt: js.UndefOr[SyntheticTimestamp_date_time]
     var failureReason: js.UndefOr[String]
+    var tags: js.UndefOr[TagsMap]
   }
 
   object GetQuantumTaskResponse {
@@ -296,7 +308,8 @@ package braket {
         shots: Double,
         status: QuantumTaskStatus,
         endedAt: js.UndefOr[SyntheticTimestamp_date_time] = js.undefined,
-        failureReason: js.UndefOr[String] = js.undefined
+        failureReason: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
     ): GetQuantumTaskResponse = {
       val __obj = js.Dynamic.literal(
         "createdAt" -> createdAt.asInstanceOf[js.Any],
@@ -311,22 +324,56 @@ package braket {
 
       endedAt.foreach(__v => __obj.updateDynamic("endedAt")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQuantumTaskResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: String
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
   @js.native
   sealed trait QuantumTaskStatus extends js.Any
   object QuantumTaskStatus {
-    val CANCELLED = "CANCELLED".asInstanceOf[QuantumTaskStatus]
-    val CANCELLING = "CANCELLING".asInstanceOf[QuantumTaskStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[QuantumTaskStatus]
     val CREATED = "CREATED".asInstanceOf[QuantumTaskStatus]
-    val FAILED = "FAILED".asInstanceOf[QuantumTaskStatus]
     val QUEUED = "QUEUED".asInstanceOf[QuantumTaskStatus]
     val RUNNING = "RUNNING".asInstanceOf[QuantumTaskStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[QuantumTaskStatus]
+    val FAILED = "FAILED".asInstanceOf[QuantumTaskStatus]
+    val CANCELLING = "CANCELLING".asInstanceOf[QuantumTaskStatus]
+    val CANCELLED = "CANCELLED".asInstanceOf[QuantumTaskStatus]
 
-    @inline def values = js.Array(CANCELLED, CANCELLING, COMPLETED, CREATED, FAILED, QUEUED, RUNNING)
+    @inline def values = js.Array(CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
   }
 
   /** Includes information about a quantum task.
@@ -341,6 +388,7 @@ package braket {
     var shots: Double
     var status: QuantumTaskStatus
     var endedAt: js.UndefOr[SyntheticTimestamp_date_time]
+    var tags: js.UndefOr[TagsMap]
   }
 
   object QuantumTaskSummary {
@@ -353,7 +401,8 @@ package braket {
         quantumTaskArn: QuantumTaskArn,
         shots: Double,
         status: QuantumTaskStatus,
-        endedAt: js.UndefOr[SyntheticTimestamp_date_time] = js.undefined
+        endedAt: js.UndefOr[SyntheticTimestamp_date_time] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
     ): QuantumTaskSummary = {
       val __obj = js.Dynamic.literal(
         "createdAt" -> createdAt.asInstanceOf[js.Any],
@@ -366,6 +415,7 @@ package braket {
       )
 
       endedAt.foreach(__v => __obj.updateDynamic("endedAt")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QuantumTaskSummary]
     }
   }
@@ -374,15 +424,15 @@ package braket {
     */
   @js.native
   trait SearchDevicesFilter extends js.Object {
-    var name: SearchDevicesFilternameString
-    var values: SearchDevicesFiltervaluesString256List
+    var name: SearchDevicesFilterNameString
+    var values: SearchDevicesFilterValuesList
   }
 
   object SearchDevicesFilter {
     @inline
     def apply(
-        name: SearchDevicesFilternameString,
-        values: SearchDevicesFiltervaluesString256List
+        name: SearchDevicesFilterNameString,
+        values: SearchDevicesFilterValuesList
     ): SearchDevicesFilter = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
@@ -394,16 +444,16 @@ package braket {
 
   @js.native
   trait SearchDevicesRequest extends js.Object {
-    var filters: SearchDevicesRequestfiltersSearchDevicesFilterList
-    var maxResults: js.UndefOr[SearchDevicesRequestmaxResultsInteger]
+    var filters: SearchDevicesRequestFiltersList
+    var maxResults: js.UndefOr[SearchDevicesRequestMaxResultsInteger]
     var nextToken: js.UndefOr[String]
   }
 
   object SearchDevicesRequest {
     @inline
     def apply(
-        filters: SearchDevicesRequestfiltersSearchDevicesFilterList,
-        maxResults: js.UndefOr[SearchDevicesRequestmaxResultsInteger] = js.undefined,
+        filters: SearchDevicesRequestFiltersList,
+        maxResults: js.UndefOr[SearchDevicesRequestMaxResultsInteger] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): SearchDevicesRequest = {
       val __obj = js.Dynamic.literal(
@@ -443,7 +493,7 @@ package braket {
   trait SearchQuantumTasksFilter extends js.Object {
     var name: String64
     var operator: SearchQuantumTasksFilterOperator
-    var values: SearchQuantumTasksFiltervaluesString256List
+    var values: SearchQuantumTasksFilterValuesList
   }
 
   object SearchQuantumTasksFilter {
@@ -451,7 +501,7 @@ package braket {
     def apply(
         name: String64,
         operator: SearchQuantumTasksFilterOperator,
-        values: SearchQuantumTasksFiltervaluesString256List
+        values: SearchQuantumTasksFilterValuesList
     ): SearchQuantumTasksFilter = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
@@ -465,28 +515,28 @@ package braket {
   @js.native
   sealed trait SearchQuantumTasksFilterOperator extends js.Any
   object SearchQuantumTasksFilterOperator {
-    val BETWEEN = "BETWEEN".asInstanceOf[SearchQuantumTasksFilterOperator]
+    val LT = "LT".asInstanceOf[SearchQuantumTasksFilterOperator]
+    val LTE = "LTE".asInstanceOf[SearchQuantumTasksFilterOperator]
     val EQUAL = "EQUAL".asInstanceOf[SearchQuantumTasksFilterOperator]
     val GT = "GT".asInstanceOf[SearchQuantumTasksFilterOperator]
     val GTE = "GTE".asInstanceOf[SearchQuantumTasksFilterOperator]
-    val LT = "LT".asInstanceOf[SearchQuantumTasksFilterOperator]
-    val LTE = "LTE".asInstanceOf[SearchQuantumTasksFilterOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[SearchQuantumTasksFilterOperator]
 
-    @inline def values = js.Array(BETWEEN, EQUAL, GT, GTE, LT, LTE)
+    @inline def values = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
   }
 
   @js.native
   trait SearchQuantumTasksRequest extends js.Object {
-    var filters: SearchQuantumTasksRequestfiltersSearchQuantumTasksFilterList
-    var maxResults: js.UndefOr[SearchQuantumTasksRequestmaxResultsInteger]
+    var filters: SearchQuantumTasksRequestFiltersList
+    var maxResults: js.UndefOr[SearchQuantumTasksRequestMaxResultsInteger]
     var nextToken: js.UndefOr[String]
   }
 
   object SearchQuantumTasksRequest {
     @inline
     def apply(
-        filters: SearchQuantumTasksRequestfiltersSearchQuantumTasksFilterList,
-        maxResults: js.UndefOr[SearchQuantumTasksRequestmaxResultsInteger] = js.undefined,
+        filters: SearchQuantumTasksRequestFiltersList,
+        maxResults: js.UndefOr[SearchQuantumTasksRequestMaxResultsInteger] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): SearchQuantumTasksRequest = {
       val __obj = js.Dynamic.literal(
@@ -517,6 +567,68 @@ package braket {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchQuantumTasksResponse]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tags: TagsMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tags: TagsMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

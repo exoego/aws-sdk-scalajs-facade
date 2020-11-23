@@ -392,6 +392,7 @@ package organizations {
     var Email: Email
     var IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling]
     var RoleName: js.UndefOr[RoleName]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateAccountRequest {
@@ -400,7 +401,8 @@ package organizations {
         AccountName: AccountName,
         Email: Email,
         IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
-        RoleName: js.UndefOr[RoleName] = js.undefined
+        RoleName: js.UndefOr[RoleName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateAccountRequest = {
       val __obj = js.Dynamic.literal(
         "AccountName" -> AccountName.asInstanceOf[js.Any],
@@ -409,6 +411,7 @@ package organizations {
 
       IamUserAccessToBilling.foreach(__v => __obj.updateDynamic("IamUserAccessToBilling")(__v.asInstanceOf[js.Any]))
       RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccountRequest]
     }
   }
@@ -484,6 +487,7 @@ package organizations {
     var Email: Email
     var IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling]
     var RoleName: js.UndefOr[RoleName]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateGovCloudAccountRequest {
@@ -492,7 +496,8 @@ package organizations {
         AccountName: AccountName,
         Email: Email,
         IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
-        RoleName: js.UndefOr[RoleName] = js.undefined
+        RoleName: js.UndefOr[RoleName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGovCloudAccountRequest = {
       val __obj = js.Dynamic.literal(
         "AccountName" -> AccountName.asInstanceOf[js.Any],
@@ -501,6 +506,7 @@ package organizations {
 
       IamUserAccessToBilling.foreach(__v => __obj.updateDynamic("IamUserAccessToBilling")(__v.asInstanceOf[js.Any]))
       RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGovCloudAccountRequest]
     }
   }
@@ -557,18 +563,22 @@ package organizations {
   trait CreateOrganizationalUnitRequest extends js.Object {
     var Name: OrganizationalUnitName
     var ParentId: ParentId
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateOrganizationalUnitRequest {
     @inline
     def apply(
         Name: OrganizationalUnitName,
-        ParentId: ParentId
+        ParentId: ParentId,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateOrganizationalUnitRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "ParentId" -> ParentId.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOrganizationalUnitRequest]
     }
   }
@@ -595,6 +605,7 @@ package organizations {
     var Description: PolicyDescription
     var Name: PolicyName
     var Type: PolicyType
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreatePolicyRequest {
@@ -603,7 +614,8 @@ package organizations {
         Content: PolicyContent,
         Description: PolicyDescription,
         Name: PolicyName,
-        Type: PolicyType
+        Type: PolicyType,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
@@ -611,6 +623,8 @@ package organizations {
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyRequest]
     }
   }
@@ -1207,7 +1221,7 @@ package organizations {
     }
   }
 
-  /** Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
+  /** Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
     * ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
     */
   @js.native
@@ -1365,19 +1379,22 @@ package organizations {
   trait InviteAccountToOrganizationRequest extends js.Object {
     var Target: HandshakeParty
     var Notes: js.UndefOr[HandshakeNotes]
+    var Tags: js.UndefOr[Tags]
   }
 
   object InviteAccountToOrganizationRequest {
     @inline
     def apply(
         Target: HandshakeParty,
-        Notes: js.UndefOr[HandshakeNotes] = js.undefined
+        Notes: js.UndefOr[HandshakeNotes] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): InviteAccountToOrganizationRequest = {
       val __obj = js.Dynamic.literal(
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
       Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteAccountToOrganizationRequest]
     }
   }
@@ -2348,7 +2365,7 @@ package organizations {
     }
   }
 
-  /** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables the accounts to be organized in a different way and to have different policy types enabled for use in that root.
+  /** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every AWS account in the organization.
     */
   @js.native
   trait Root extends js.Object {
@@ -2375,7 +2392,12 @@ package organizations {
     }
   }
 
-  /** A custom key-value pair associated with a resource such as an account within your organization.
+  /** A custom key-value pair associated with a resource within your organization.
+    * You can attach tags to any of the following organization resources.
+    * * AWS account
+    * * Organizational unit (OU)
+    * * Organization root
+    * * Policy
     */
   @js.native
   trait Tag extends js.Object {

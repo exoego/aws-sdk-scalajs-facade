@@ -406,13 +406,14 @@ package guardduty {
     }
   }
 
-  /** Contains information about the API operation.
+  /** Contains information about the API action.
     */
   @js.native
   trait AwsApiCallAction extends js.Object {
     var Api: js.UndefOr[String]
     var CallerType: js.UndefOr[String]
     var DomainDetails: js.UndefOr[DomainDetails]
+    var ErrorCode: js.UndefOr[String]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
     var ServiceName: js.UndefOr[String]
   }
@@ -423,6 +424,7 @@ package guardduty {
         Api: js.UndefOr[String] = js.undefined,
         CallerType: js.UndefOr[String] = js.undefined,
         DomainDetails: js.UndefOr[DomainDetails] = js.undefined,
+        ErrorCode: js.UndefOr[String] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
         ServiceName: js.UndefOr[String] = js.undefined
     ): AwsApiCallAction = {
@@ -430,6 +432,7 @@ package guardduty {
       Api.foreach(__v => __obj.updateDynamic("Api")(__v.asInstanceOf[js.Any]))
       CallerType.foreach(__v => __obj.updateDynamic("CallerType")(__v.asInstanceOf[js.Any]))
       DomainDetails.foreach(__v => __obj.updateDynamic("DomainDetails")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsApiCallAction]
@@ -1057,7 +1060,7 @@ package guardduty {
     }
   }
 
-  /** Contains information on the server side encryption method used in the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html|S3 Server-Side Encryption]] for more information.
+  /** Contains information on the server side encryption method used in the S3 bucket. See [[https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html|S3 Server-Side Encryption]] for more information.
     */
   @js.native
   trait DefaultServerSideEncryption extends js.Object {

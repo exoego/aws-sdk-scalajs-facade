@@ -25,6 +25,7 @@ package object globalaccelerator {
   type Listeners = js.Array[Listener]
   type MaxResults = Int
   type PortNumber = Int
+  type PortOverrides = js.Array[PortOverride]
   type PortRanges = js.Array[PortRange]
   type ResourceArn = String
   type TagKey = String
@@ -385,6 +386,7 @@ package globalaccelerator {
     var HealthCheckPath: js.UndefOr[GenericString]
     var HealthCheckPort: js.UndefOr[HealthCheckPort]
     var HealthCheckProtocol: js.UndefOr[HealthCheckProtocol]
+    var PortOverrides: js.UndefOr[PortOverrides]
     var ThresholdCount: js.UndefOr[ThresholdCount]
     var TrafficDialPercentage: js.UndefOr[TrafficDialPercentage]
   }
@@ -400,6 +402,7 @@ package globalaccelerator {
         HealthCheckPath: js.UndefOr[GenericString] = js.undefined,
         HealthCheckPort: js.UndefOr[HealthCheckPort] = js.undefined,
         HealthCheckProtocol: js.UndefOr[HealthCheckProtocol] = js.undefined,
+        PortOverrides: js.UndefOr[PortOverrides] = js.undefined,
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): CreateEndpointGroupRequest = {
@@ -414,6 +417,7 @@ package globalaccelerator {
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
+      PortOverrides.foreach(__v => __obj.updateDynamic("PortOverrides")(__v.asInstanceOf[js.Any]))
       ThresholdCount.foreach(__v => __obj.updateDynamic("ThresholdCount")(__v.asInstanceOf[js.Any]))
       TrafficDialPercentage.foreach(__v => __obj.updateDynamic("TrafficDialPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointGroupRequest]
@@ -698,7 +702,7 @@ package globalaccelerator {
     }
   }
 
-  /** A complex type for endpoints.
+  /** A complex type for endpoints. A resource must be valid and active when you add it as an endpoint.
     */
   @js.native
   trait EndpointConfiguration extends js.Object {
@@ -763,6 +767,7 @@ package globalaccelerator {
     var HealthCheckPath: js.UndefOr[GenericString]
     var HealthCheckPort: js.UndefOr[HealthCheckPort]
     var HealthCheckProtocol: js.UndefOr[HealthCheckProtocol]
+    var PortOverrides: js.UndefOr[PortOverrides]
     var ThresholdCount: js.UndefOr[ThresholdCount]
     var TrafficDialPercentage: js.UndefOr[TrafficDialPercentage]
   }
@@ -777,6 +782,7 @@ package globalaccelerator {
         HealthCheckPath: js.UndefOr[GenericString] = js.undefined,
         HealthCheckPort: js.UndefOr[HealthCheckPort] = js.undefined,
         HealthCheckProtocol: js.UndefOr[HealthCheckProtocol] = js.undefined,
+        PortOverrides: js.UndefOr[PortOverrides] = js.undefined,
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): EndpointGroup = {
@@ -788,6 +794,7 @@ package globalaccelerator {
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
+      PortOverrides.foreach(__v => __obj.updateDynamic("PortOverrides")(__v.asInstanceOf[js.Any]))
       ThresholdCount.foreach(__v => __obj.updateDynamic("ThresholdCount")(__v.asInstanceOf[js.Any]))
       TrafficDialPercentage.foreach(__v => __obj.updateDynamic("TrafficDialPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointGroup]
@@ -1065,6 +1072,28 @@ package globalaccelerator {
     }
   }
 
+  /** Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
+    * For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html| Port overrides]] in the <i>AWS Global Accelerator Developer Guide</i>.
+    */
+  @js.native
+  trait PortOverride extends js.Object {
+    var EndpointPort: js.UndefOr[PortNumber]
+    var ListenerPort: js.UndefOr[PortNumber]
+  }
+
+  object PortOverride {
+    @inline
+    def apply(
+        EndpointPort: js.UndefOr[PortNumber] = js.undefined,
+        ListenerPort: js.UndefOr[PortNumber] = js.undefined
+    ): PortOverride = {
+      val __obj = js.Dynamic.literal()
+      EndpointPort.foreach(__v => __obj.updateDynamic("EndpointPort")(__v.asInstanceOf[js.Any]))
+      ListenerPort.foreach(__v => __obj.updateDynamic("ListenerPort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortOverride]
+    }
+  }
+
   /** A complex type for a range of ports for a listener.
     */
   @js.native
@@ -1309,6 +1338,7 @@ package globalaccelerator {
     var HealthCheckPath: js.UndefOr[GenericString]
     var HealthCheckPort: js.UndefOr[HealthCheckPort]
     var HealthCheckProtocol: js.UndefOr[HealthCheckProtocol]
+    var PortOverrides: js.UndefOr[PortOverrides]
     var ThresholdCount: js.UndefOr[ThresholdCount]
     var TrafficDialPercentage: js.UndefOr[TrafficDialPercentage]
   }
@@ -1322,6 +1352,7 @@ package globalaccelerator {
         HealthCheckPath: js.UndefOr[GenericString] = js.undefined,
         HealthCheckPort: js.UndefOr[HealthCheckPort] = js.undefined,
         HealthCheckProtocol: js.UndefOr[HealthCheckProtocol] = js.undefined,
+        PortOverrides: js.UndefOr[PortOverrides] = js.undefined,
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): UpdateEndpointGroupRequest = {
@@ -1334,6 +1365,7 @@ package globalaccelerator {
       HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
       HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
+      PortOverrides.foreach(__v => __obj.updateDynamic("PortOverrides")(__v.asInstanceOf[js.Any]))
       ThresholdCount.foreach(__v => __obj.updateDynamic("ThresholdCount")(__v.asInstanceOf[js.Any]))
       TrafficDialPercentage.foreach(__v => __obj.updateDynamic("TrafficDialPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEndpointGroupRequest]

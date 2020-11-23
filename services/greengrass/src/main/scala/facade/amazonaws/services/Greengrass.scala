@@ -89,6 +89,7 @@ package object greengrass {
     @inline def getServiceRoleForAccountFuture(params: GetServiceRoleForAccountRequest): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise().toFuture
     @inline def getSubscriptionDefinitionFuture(params: GetSubscriptionDefinitionRequest): Future[GetSubscriptionDefinitionResponse] = service.getSubscriptionDefinition(params).promise().toFuture
     @inline def getSubscriptionDefinitionVersionFuture(params: GetSubscriptionDefinitionVersionRequest): Future[GetSubscriptionDefinitionVersionResponse] = service.getSubscriptionDefinitionVersion(params).promise().toFuture
+    @inline def getThingRuntimeConfigurationFuture(params: GetThingRuntimeConfigurationRequest): Future[GetThingRuntimeConfigurationResponse] = service.getThingRuntimeConfiguration(params).promise().toFuture
     @inline def listBulkDeploymentDetailedReportsFuture(params: ListBulkDeploymentDetailedReportsRequest): Future[ListBulkDeploymentDetailedReportsResponse] = service.listBulkDeploymentDetailedReports(params).promise().toFuture
     @inline def listBulkDeploymentsFuture(params: ListBulkDeploymentsRequest): Future[ListBulkDeploymentsResponse] = service.listBulkDeployments(params).promise().toFuture
     @inline def listConnectorDefinitionVersionsFuture(params: ListConnectorDefinitionVersionsRequest): Future[ListConnectorDefinitionVersionsResponse] = service.listConnectorDefinitionVersions(params).promise().toFuture
@@ -125,6 +126,7 @@ package object greengrass {
     @inline def updateLoggerDefinitionFuture(params: UpdateLoggerDefinitionRequest): Future[UpdateLoggerDefinitionResponse] = service.updateLoggerDefinition(params).promise().toFuture
     @inline def updateResourceDefinitionFuture(params: UpdateResourceDefinitionRequest): Future[UpdateResourceDefinitionResponse] = service.updateResourceDefinition(params).promise().toFuture
     @inline def updateSubscriptionDefinitionFuture(params: UpdateSubscriptionDefinitionRequest): Future[UpdateSubscriptionDefinitionResponse] = service.updateSubscriptionDefinition(params).promise().toFuture
+    @inline def updateThingRuntimeConfigurationFuture(params: UpdateThingRuntimeConfigurationRequest): Future[UpdateThingRuntimeConfigurationResponse] = service.updateThingRuntimeConfiguration(params).promise().toFuture
 
   }
 }
@@ -189,6 +191,7 @@ package greengrass {
     def getServiceRoleForAccount(params: GetServiceRoleForAccountRequest): Request[GetServiceRoleForAccountResponse] = js.native
     def getSubscriptionDefinition(params: GetSubscriptionDefinitionRequest): Request[GetSubscriptionDefinitionResponse] = js.native
     def getSubscriptionDefinitionVersion(params: GetSubscriptionDefinitionVersionRequest): Request[GetSubscriptionDefinitionVersionResponse] = js.native
+    def getThingRuntimeConfiguration(params: GetThingRuntimeConfigurationRequest): Request[GetThingRuntimeConfigurationResponse] = js.native
     def listBulkDeploymentDetailedReports(params: ListBulkDeploymentDetailedReportsRequest): Request[ListBulkDeploymentDetailedReportsResponse] = js.native
     def listBulkDeployments(params: ListBulkDeploymentsRequest): Request[ListBulkDeploymentsResponse] = js.native
     def listConnectorDefinitionVersions(params: ListConnectorDefinitionVersionsRequest): Request[ListConnectorDefinitionVersionsResponse] = js.native
@@ -225,6 +228,7 @@ package greengrass {
     def updateLoggerDefinition(params: UpdateLoggerDefinitionRequest): Request[UpdateLoggerDefinitionResponse] = js.native
     def updateResourceDefinition(params: UpdateResourceDefinitionRequest): Request[UpdateResourceDefinitionResponse] = js.native
     def updateSubscriptionDefinition(params: UpdateSubscriptionDefinitionRequest): Request[UpdateSubscriptionDefinitionResponse] = js.native
+    def updateThingRuntimeConfiguration(params: UpdateThingRuntimeConfigurationRequest): Request[UpdateThingRuntimeConfigurationResponse] = js.native
   }
 
   @js.native
@@ -396,6 +400,15 @@ package greengrass {
     val Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
 
     @inline def values = js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed)
+  }
+
+  @js.native
+  sealed trait ConfigurationSyncStatus extends js.Any
+  object ConfigurationSyncStatus {
+    val InSync = "InSync".asInstanceOf[ConfigurationSyncStatus]
+    val OutOfSync = "OutOfSync".asInstanceOf[ConfigurationSyncStatus]
+
+    @inline def values = js.Array(InSync, OutOfSync)
   }
 
   /** Information about a Greengrass core's connectivity.
@@ -3324,6 +3337,39 @@ package greengrass {
     }
   }
 
+  @js.native
+  trait GetThingRuntimeConfigurationRequest extends js.Object {
+    var ThingName: __string
+  }
+
+  object GetThingRuntimeConfigurationRequest {
+    @inline
+    def apply(
+        ThingName: __string
+    ): GetThingRuntimeConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ThingName" -> ThingName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetThingRuntimeConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetThingRuntimeConfigurationResponse extends js.Object {
+    var RuntimeConfiguration: js.UndefOr[RuntimeConfiguration]
+  }
+
+  object GetThingRuntimeConfigurationResponse {
+    @inline
+    def apply(
+        RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
+    ): GetThingRuntimeConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      RuntimeConfiguration.foreach(__v => __obj.updateDynamic("RuntimeConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetThingRuntimeConfigurationResponse]
+    }
+  }
+
   /** Information about a certificate authority for a group.
     */
   @js.native
@@ -4575,6 +4621,24 @@ package greengrass {
     }
   }
 
+  /** Runtime configuration for a thing.
+    */
+  @js.native
+  trait RuntimeConfiguration extends js.Object {
+    var TelemetryConfiguration: js.UndefOr[TelemetryConfiguration]
+  }
+
+  object RuntimeConfiguration {
+    @inline
+    def apply(
+        TelemetryConfiguration: js.UndefOr[TelemetryConfiguration] = js.undefined
+    ): RuntimeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      TelemetryConfiguration.foreach(__v => __obj.updateDynamic("TelemetryConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RuntimeConfiguration]
+    }
+  }
+
   /** Attributes that define an Amazon S3 machine learning resource.
     */
   @js.native
@@ -4795,6 +4859,57 @@ package greengrass {
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  sealed trait Telemetry extends js.Any
+  object Telemetry {
+    val On = "On".asInstanceOf[Telemetry]
+    val Off = "Off".asInstanceOf[Telemetry]
+
+    @inline def values = js.Array(On, Off)
+  }
+
+  /** Configuration settings for running telemetry.
+    */
+  @js.native
+  trait TelemetryConfiguration extends js.Object {
+    var Telemetry: Telemetry
+    var ConfigurationSyncStatus: js.UndefOr[ConfigurationSyncStatus]
+  }
+
+  object TelemetryConfiguration {
+    @inline
+    def apply(
+        Telemetry: Telemetry,
+        ConfigurationSyncStatus: js.UndefOr[ConfigurationSyncStatus] = js.undefined
+    ): TelemetryConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Telemetry" -> Telemetry.asInstanceOf[js.Any]
+      )
+
+      ConfigurationSyncStatus.foreach(__v => __obj.updateDynamic("ConfigurationSyncStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TelemetryConfiguration]
+    }
+  }
+
+  /** Configuration settings for running telemetry.
+    */
+  @js.native
+  trait TelemetryConfigurationUpdate extends js.Object {
+    var Telemetry: Telemetry
+  }
+
+  object TelemetryConfigurationUpdate {
+    @inline
+    def apply(
+        Telemetry: Telemetry
+    ): TelemetryConfigurationUpdate = {
+      val __obj = js.Dynamic.literal(
+        "Telemetry" -> Telemetry.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TelemetryConfigurationUpdate]
     }
   }
 
@@ -5200,6 +5315,38 @@ package greengrass {
     val openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
 
     @inline def values = js.Array(ubuntu, raspbian, amazon_linux, openwrt)
+  }
+
+  @js.native
+  trait UpdateThingRuntimeConfigurationRequest extends js.Object {
+    var ThingName: __string
+    var TelemetryConfiguration: js.UndefOr[TelemetryConfigurationUpdate]
+  }
+
+  object UpdateThingRuntimeConfigurationRequest {
+    @inline
+    def apply(
+        ThingName: __string,
+        TelemetryConfiguration: js.UndefOr[TelemetryConfigurationUpdate] = js.undefined
+    ): UpdateThingRuntimeConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ThingName" -> ThingName.asInstanceOf[js.Any]
+      )
+
+      TelemetryConfiguration.foreach(__v => __obj.updateDynamic("TelemetryConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThingRuntimeConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateThingRuntimeConfigurationResponse extends js.Object
+
+  object UpdateThingRuntimeConfigurationResponse {
+    @inline
+    def apply(): UpdateThingRuntimeConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateThingRuntimeConfigurationResponse]
+    }
   }
 
   /** Information about a version.

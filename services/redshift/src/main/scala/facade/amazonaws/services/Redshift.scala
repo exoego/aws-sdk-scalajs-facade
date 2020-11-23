@@ -620,6 +620,7 @@ package redshift {
     var ClusterAvailabilityStatus: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
     var ClusterIdentifier: js.UndefOr[String]
+    var ClusterNamespaceArn: js.UndefOr[String]
     var ClusterNodes: js.UndefOr[ClusterNodesList]
     var ClusterParameterGroups: js.UndefOr[ClusterParameterGroupStatusList]
     var ClusterPublicKey: js.UndefOr[String]
@@ -671,6 +672,7 @@ package redshift {
         ClusterAvailabilityStatus: js.UndefOr[String] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ClusterNamespaceArn: js.UndefOr[String] = js.undefined,
         ClusterNodes: js.UndefOr[ClusterNodesList] = js.undefined,
         ClusterParameterGroups: js.UndefOr[ClusterParameterGroupStatusList] = js.undefined,
         ClusterPublicKey: js.UndefOr[String] = js.undefined,
@@ -719,6 +721,7 @@ package redshift {
       ClusterAvailabilityStatus.foreach(__v => __obj.updateDynamic("ClusterAvailabilityStatus")(__v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      ClusterNamespaceArn.foreach(__v => __obj.updateDynamic("ClusterNamespaceArn")(__v.asInstanceOf[js.Any]))
       ClusterNodes.foreach(__v => __obj.updateDynamic("ClusterNodes")(__v.asInstanceOf[js.Any]))
       ClusterParameterGroups.foreach(__v => __obj.updateDynamic("ClusterParameterGroups")(__v.asInstanceOf[js.Any]))
       ClusterPublicKey.foreach(__v => __obj.updateDynamic("ClusterPublicKey")(__v.asInstanceOf[js.Any]))
@@ -4033,7 +4036,7 @@ package redshift {
     }
   }
 
-  /** <p/>
+  /** Describes a modify cluster parameter group operation.
     */
   @js.native
   trait ModifyClusterParameterGroupMessage extends js.Object {
@@ -4550,6 +4553,8 @@ package redshift {
     @inline def values = js.Array(static, dynamic)
   }
 
+  /** Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation.
+    */
   @js.native
   trait PauseClusterMessage extends js.Object {
     var ClusterIdentifier: String
@@ -4899,6 +4904,8 @@ package redshift {
     }
   }
 
+  /** Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation.
+    */
   @js.native
   trait ResizeClusterMessage extends js.Object {
     var ClusterIdentifier: String
@@ -5230,6 +5237,8 @@ package redshift {
     }
   }
 
+  /** Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation.
+    */
   @js.native
   trait ResumeClusterMessage extends js.Object {
     var ClusterIdentifier: String

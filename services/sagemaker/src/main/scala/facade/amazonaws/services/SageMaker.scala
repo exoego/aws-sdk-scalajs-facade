@@ -16,6 +16,9 @@ package object sagemaker {
   type AlgorithmSummaryList = js.Array[AlgorithmSummary]
   type AlgorithmValidationProfiles = js.Array[AlgorithmValidationProfile]
   type AppArn = String
+  type AppImageConfigArn = String
+  type AppImageConfigList = js.Array[AppImageConfigDetails]
+  type AppImageConfigName = String
   type AppList = js.Array[AppDetails]
   type AppName = String
   type ArnOrName = String
@@ -47,6 +50,7 @@ package object sagemaker {
   type Cidrs = js.Array[Cidr]
   type ClientId = String
   type ClientSecret = String
+  type ClientToken = String
   type CodeRepositoryArn = String
   type CodeRepositoryContains = String
   type CodeRepositoryNameContains = String
@@ -77,10 +81,13 @@ package object sagemaker {
   type CreationTime = js.Date
   type CsvContentType = String
   type CsvContentTypes = js.Array[CsvContentType]
+  type CustomImages = js.Array[CustomImage]
   type DataExplorationNotebookLocation = String
   type DataInputConfig = String
   type DebugRuleConfigurations = js.Array[DebugRuleConfiguration]
   type DebugRuleEvaluationStatuses = js.Array[DebugRuleEvaluationStatus]
+  type DefaultGid = Int
+  type DefaultUid = Int
   type DeployedImages = js.Array[DeployedImage]
   type DesiredWeightAndCapacityList = js.Array[DesiredWeightAndCapacity]
   type DestinationS3Uri = String
@@ -140,6 +147,7 @@ package object sagemaker {
   type HumanTaskUiArn = String
   type HumanTaskUiName = String
   type HumanTaskUiSummaries = js.Array[HumanTaskUiSummary]
+  type HyperParameterKey = String
   type HyperParameterSpecifications = js.Array[HyperParameterSpecification]
   type HyperParameterTrainingJobDefinitionName = String
   type HyperParameterTrainingJobDefinitions = js.Array[HyperParameterTrainingJobDefinition]
@@ -148,10 +156,23 @@ package object sagemaker {
   type HyperParameterTuningJobName = String
   type HyperParameterTuningJobObjectives = js.Array[HyperParameterTuningJobObjective]
   type HyperParameterTuningJobSummaries = js.Array[HyperParameterTuningJobSummary]
-  type HyperParameters = js.Dictionary[ParameterValue]
+  type HyperParameterValue = String
+  type HyperParameters = js.Dictionary[HyperParameterValue]
   type ImageArn = String
+  type ImageBaseImage = String
+  type ImageContainerImage = String
+  type ImageDeleteProperty = String
+  type ImageDeletePropertyList = js.Array[ImageDeleteProperty]
+  type ImageDescription = String
   type ImageDigest = String
+  type ImageDisplayName = String
+  type ImageName = String
+  type ImageNameContains = String
   type ImageUri = String
+  type ImageVersionArn = String
+  type ImageVersionNumber = Int
+  type ImageVersions = js.Array[ImageVersion]
+  type Images = js.Array[Image]
   type InputDataConfig = js.Array[Channel]
   type InputModes = js.Array[TrainingInputMode]
   type IntegerParameterRanges = js.Array[IntegerParameterRange]
@@ -162,6 +183,9 @@ package object sagemaker {
   type JsonContentType = String
   type JsonContentTypes = js.Array[JsonContentType]
   type JsonPath = String
+  type KernelDisplayName = String
+  type KernelName = String
+  type KernelSpecs = js.Array[KernelSpec]
   type KmsKeyId = String
   type LabelAttributeName = String
   type LabelCounter = Int
@@ -212,6 +236,7 @@ package object sagemaker {
   type MonitoringScheduleArn = String
   type MonitoringScheduleName = String
   type MonitoringScheduleSummaryList = js.Array[MonitoringScheduleSummary]
+  type MountPath = String
   type NameContains = String
   type NestedFiltersList = js.Array[NestedFilters]
   type NetworkInterfaceId = String
@@ -284,6 +309,7 @@ package object sagemaker {
   type Seed = Double
   type SessionExpirationDurationInSeconds = Int
   type SingleSignOnUserIdentifier = String
+  type SnsTopicArn = String
   type SourceAlgorithmList = js.Array[SourceAlgorithm]
   type SourceType = String
   type StatusDetails = String
@@ -351,6 +377,7 @@ package object sagemaker {
   type VariantName = String
   type VariantPropertyList = js.Array[VariantProperty]
   type VariantWeight = Float
+  type VersionedArnOrName = String
   type VolumeSizeInGB = Int
   type VpcId = String
   type VpcSecurityGroupIds = js.Array[SecurityGroupId]
@@ -367,6 +394,7 @@ package object sagemaker {
     @inline def associateTrialComponentFuture(params: AssociateTrialComponentRequest): Future[AssociateTrialComponentResponse] = service.associateTrialComponent(params).promise().toFuture
     @inline def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] = service.createAlgorithm(params).promise().toFuture
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
+    @inline def createAppImageConfigFuture(params: CreateAppImageConfigRequest): Future[CreateAppImageConfigResponse] = service.createAppImageConfig(params).promise().toFuture
     @inline def createAutoMLJobFuture(params: CreateAutoMLJobRequest): Future[CreateAutoMLJobResponse] = service.createAutoMLJob(params).promise().toFuture
     @inline def createCodeRepositoryFuture(params: CreateCodeRepositoryInput): Future[CreateCodeRepositoryOutput] = service.createCodeRepository(params).promise().toFuture
     @inline def createCompilationJobFuture(params: CreateCompilationJobRequest): Future[CreateCompilationJobResponse] = service.createCompilationJob(params).promise().toFuture
@@ -377,6 +405,8 @@ package object sagemaker {
     @inline def createFlowDefinitionFuture(params: CreateFlowDefinitionRequest): Future[CreateFlowDefinitionResponse] = service.createFlowDefinition(params).promise().toFuture
     @inline def createHumanTaskUiFuture(params: CreateHumanTaskUiRequest): Future[CreateHumanTaskUiResponse] = service.createHumanTaskUi(params).promise().toFuture
     @inline def createHyperParameterTuningJobFuture(params: CreateHyperParameterTuningJobRequest): Future[CreateHyperParameterTuningJobResponse] = service.createHyperParameterTuningJob(params).promise().toFuture
+    @inline def createImageFuture(params: CreateImageRequest): Future[CreateImageResponse] = service.createImage(params).promise().toFuture
+    @inline def createImageVersionFuture(params: CreateImageVersionRequest): Future[CreateImageVersionResponse] = service.createImageVersion(params).promise().toFuture
     @inline def createLabelingJobFuture(params: CreateLabelingJobRequest): Future[CreateLabelingJobResponse] = service.createLabelingJob(params).promise().toFuture
     @inline def createModelFuture(params: CreateModelInput): Future[CreateModelOutput] = service.createModel(params).promise().toFuture
     @inline def createModelPackageFuture(params: CreateModelPackageInput): Future[CreateModelPackageOutput] = service.createModelPackage(params).promise().toFuture
@@ -395,6 +425,7 @@ package object sagemaker {
     @inline def createWorkteamFuture(params: CreateWorkteamRequest): Future[CreateWorkteamResponse] = service.createWorkteam(params).promise().toFuture
     @inline def deleteAlgorithmFuture(params: DeleteAlgorithmInput): Future[js.Object] = service.deleteAlgorithm(params).promise().toFuture
     @inline def deleteAppFuture(params: DeleteAppRequest): Future[js.Object] = service.deleteApp(params).promise().toFuture
+    @inline def deleteAppImageConfigFuture(params: DeleteAppImageConfigRequest): Future[js.Object] = service.deleteAppImageConfig(params).promise().toFuture
     @inline def deleteCodeRepositoryFuture(params: DeleteCodeRepositoryInput): Future[js.Object] = service.deleteCodeRepository(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[js.Object] = service.deleteDomain(params).promise().toFuture
     @inline def deleteEndpointConfigFuture(params: DeleteEndpointConfigInput): Future[js.Object] = service.deleteEndpointConfig(params).promise().toFuture
@@ -402,6 +433,8 @@ package object sagemaker {
     @inline def deleteExperimentFuture(params: DeleteExperimentRequest): Future[DeleteExperimentResponse] = service.deleteExperiment(params).promise().toFuture
     @inline def deleteFlowDefinitionFuture(params: DeleteFlowDefinitionRequest): Future[DeleteFlowDefinitionResponse] = service.deleteFlowDefinition(params).promise().toFuture
     @inline def deleteHumanTaskUiFuture(params: DeleteHumanTaskUiRequest): Future[DeleteHumanTaskUiResponse] = service.deleteHumanTaskUi(params).promise().toFuture
+    @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResponse] = service.deleteImage(params).promise().toFuture
+    @inline def deleteImageVersionFuture(params: DeleteImageVersionRequest): Future[DeleteImageVersionResponse] = service.deleteImageVersion(params).promise().toFuture
     @inline def deleteModelFuture(params: DeleteModelInput): Future[js.Object] = service.deleteModel(params).promise().toFuture
     @inline def deleteModelPackageFuture(params: DeleteModelPackageInput): Future[js.Object] = service.deleteModelPackage(params).promise().toFuture
     @inline def deleteMonitoringScheduleFuture(params: DeleteMonitoringScheduleRequest): Future[js.Object] = service.deleteMonitoringSchedule(params).promise().toFuture
@@ -415,6 +448,7 @@ package object sagemaker {
     @inline def deleteWorkteamFuture(params: DeleteWorkteamRequest): Future[DeleteWorkteamResponse] = service.deleteWorkteam(params).promise().toFuture
     @inline def describeAlgorithmFuture(params: DescribeAlgorithmInput): Future[DescribeAlgorithmOutput] = service.describeAlgorithm(params).promise().toFuture
     @inline def describeAppFuture(params: DescribeAppRequest): Future[DescribeAppResponse] = service.describeApp(params).promise().toFuture
+    @inline def describeAppImageConfigFuture(params: DescribeAppImageConfigRequest): Future[DescribeAppImageConfigResponse] = service.describeAppImageConfig(params).promise().toFuture
     @inline def describeAutoMLJobFuture(params: DescribeAutoMLJobRequest): Future[DescribeAutoMLJobResponse] = service.describeAutoMLJob(params).promise().toFuture
     @inline def describeCodeRepositoryFuture(params: DescribeCodeRepositoryInput): Future[DescribeCodeRepositoryOutput] = service.describeCodeRepository(params).promise().toFuture
     @inline def describeCompilationJobFuture(params: DescribeCompilationJobRequest): Future[DescribeCompilationJobResponse] = service.describeCompilationJob(params).promise().toFuture
@@ -425,6 +459,8 @@ package object sagemaker {
     @inline def describeFlowDefinitionFuture(params: DescribeFlowDefinitionRequest): Future[DescribeFlowDefinitionResponse] = service.describeFlowDefinition(params).promise().toFuture
     @inline def describeHumanTaskUiFuture(params: DescribeHumanTaskUiRequest): Future[DescribeHumanTaskUiResponse] = service.describeHumanTaskUi(params).promise().toFuture
     @inline def describeHyperParameterTuningJobFuture(params: DescribeHyperParameterTuningJobRequest): Future[DescribeHyperParameterTuningJobResponse] = service.describeHyperParameterTuningJob(params).promise().toFuture
+    @inline def describeImageFuture(params: DescribeImageRequest): Future[DescribeImageResponse] = service.describeImage(params).promise().toFuture
+    @inline def describeImageVersionFuture(params: DescribeImageVersionRequest): Future[DescribeImageVersionResponse] = service.describeImageVersion(params).promise().toFuture
     @inline def describeLabelingJobFuture(params: DescribeLabelingJobRequest): Future[DescribeLabelingJobResponse] = service.describeLabelingJob(params).promise().toFuture
     @inline def describeModelFuture(params: DescribeModelInput): Future[DescribeModelOutput] = service.describeModel(params).promise().toFuture
     @inline def describeModelPackageFuture(params: DescribeModelPackageInput): Future[DescribeModelPackageOutput] = service.describeModelPackage(params).promise().toFuture
@@ -443,6 +479,7 @@ package object sagemaker {
     @inline def disassociateTrialComponentFuture(params: DisassociateTrialComponentRequest): Future[DisassociateTrialComponentResponse] = service.disassociateTrialComponent(params).promise().toFuture
     @inline def getSearchSuggestionsFuture(params: GetSearchSuggestionsRequest): Future[GetSearchSuggestionsResponse] = service.getSearchSuggestions(params).promise().toFuture
     @inline def listAlgorithmsFuture(params: ListAlgorithmsInput): Future[ListAlgorithmsOutput] = service.listAlgorithms(params).promise().toFuture
+    @inline def listAppImageConfigsFuture(params: ListAppImageConfigsRequest): Future[ListAppImageConfigsResponse] = service.listAppImageConfigs(params).promise().toFuture
     @inline def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] = service.listApps(params).promise().toFuture
     @inline def listAutoMLJobsFuture(params: ListAutoMLJobsRequest): Future[ListAutoMLJobsResponse] = service.listAutoMLJobs(params).promise().toFuture
     @inline def listCandidatesForAutoMLJobFuture(params: ListCandidatesForAutoMLJobRequest): Future[ListCandidatesForAutoMLJobResponse] = service.listCandidatesForAutoMLJob(params).promise().toFuture
@@ -455,6 +492,8 @@ package object sagemaker {
     @inline def listFlowDefinitionsFuture(params: ListFlowDefinitionsRequest): Future[ListFlowDefinitionsResponse] = service.listFlowDefinitions(params).promise().toFuture
     @inline def listHumanTaskUisFuture(params: ListHumanTaskUisRequest): Future[ListHumanTaskUisResponse] = service.listHumanTaskUis(params).promise().toFuture
     @inline def listHyperParameterTuningJobsFuture(params: ListHyperParameterTuningJobsRequest): Future[ListHyperParameterTuningJobsResponse] = service.listHyperParameterTuningJobs(params).promise().toFuture
+    @inline def listImageVersionsFuture(params: ListImageVersionsRequest): Future[ListImageVersionsResponse] = service.listImageVersions(params).promise().toFuture
+    @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] = service.listImages(params).promise().toFuture
     @inline def listLabelingJobsForWorkteamFuture(params: ListLabelingJobsForWorkteamRequest): Future[ListLabelingJobsForWorkteamResponse] = service.listLabelingJobsForWorkteam(params).promise().toFuture
     @inline def listLabelingJobsFuture(params: ListLabelingJobsRequest): Future[ListLabelingJobsResponse] = service.listLabelingJobs(params).promise().toFuture
     @inline def listModelPackagesFuture(params: ListModelPackagesInput): Future[ListModelPackagesOutput] = service.listModelPackages(params).promise().toFuture
@@ -487,11 +526,13 @@ package object sagemaker {
     @inline def stopProcessingJobFuture(params: StopProcessingJobRequest): Future[js.Object] = service.stopProcessingJob(params).promise().toFuture
     @inline def stopTrainingJobFuture(params: StopTrainingJobRequest): Future[js.Object] = service.stopTrainingJob(params).promise().toFuture
     @inline def stopTransformJobFuture(params: StopTransformJobRequest): Future[js.Object] = service.stopTransformJob(params).promise().toFuture
+    @inline def updateAppImageConfigFuture(params: UpdateAppImageConfigRequest): Future[UpdateAppImageConfigResponse] = service.updateAppImageConfig(params).promise().toFuture
     @inline def updateCodeRepositoryFuture(params: UpdateCodeRepositoryInput): Future[UpdateCodeRepositoryOutput] = service.updateCodeRepository(params).promise().toFuture
     @inline def updateDomainFuture(params: UpdateDomainRequest): Future[UpdateDomainResponse] = service.updateDomain(params).promise().toFuture
     @inline def updateEndpointFuture(params: UpdateEndpointInput): Future[UpdateEndpointOutput] = service.updateEndpoint(params).promise().toFuture
     @inline def updateEndpointWeightsAndCapacitiesFuture(params: UpdateEndpointWeightsAndCapacitiesInput): Future[UpdateEndpointWeightsAndCapacitiesOutput] = service.updateEndpointWeightsAndCapacities(params).promise().toFuture
     @inline def updateExperimentFuture(params: UpdateExperimentRequest): Future[UpdateExperimentResponse] = service.updateExperiment(params).promise().toFuture
+    @inline def updateImageFuture(params: UpdateImageRequest): Future[UpdateImageResponse] = service.updateImage(params).promise().toFuture
     @inline def updateMonitoringScheduleFuture(params: UpdateMonitoringScheduleRequest): Future[UpdateMonitoringScheduleResponse] = service.updateMonitoringSchedule(params).promise().toFuture
     @inline def updateNotebookInstanceFuture(params: UpdateNotebookInstanceInput): Future[UpdateNotebookInstanceOutput] = service.updateNotebookInstance(params).promise().toFuture
     @inline def updateNotebookInstanceLifecycleConfigFuture(params: UpdateNotebookInstanceLifecycleConfigInput): Future[UpdateNotebookInstanceLifecycleConfigOutput] = service.updateNotebookInstanceLifecycleConfig(params).promise().toFuture
@@ -514,6 +555,7 @@ package sagemaker {
     def associateTrialComponent(params: AssociateTrialComponentRequest): Request[AssociateTrialComponentResponse] = js.native
     def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput] = js.native
     def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
+    def createAppImageConfig(params: CreateAppImageConfigRequest): Request[CreateAppImageConfigResponse] = js.native
     def createAutoMLJob(params: CreateAutoMLJobRequest): Request[CreateAutoMLJobResponse] = js.native
     def createCodeRepository(params: CreateCodeRepositoryInput): Request[CreateCodeRepositoryOutput] = js.native
     def createCompilationJob(params: CreateCompilationJobRequest): Request[CreateCompilationJobResponse] = js.native
@@ -524,6 +566,8 @@ package sagemaker {
     def createFlowDefinition(params: CreateFlowDefinitionRequest): Request[CreateFlowDefinitionResponse] = js.native
     def createHumanTaskUi(params: CreateHumanTaskUiRequest): Request[CreateHumanTaskUiResponse] = js.native
     def createHyperParameterTuningJob(params: CreateHyperParameterTuningJobRequest): Request[CreateHyperParameterTuningJobResponse] = js.native
+    def createImage(params: CreateImageRequest): Request[CreateImageResponse] = js.native
+    def createImageVersion(params: CreateImageVersionRequest): Request[CreateImageVersionResponse] = js.native
     def createLabelingJob(params: CreateLabelingJobRequest): Request[CreateLabelingJobResponse] = js.native
     def createModel(params: CreateModelInput): Request[CreateModelOutput] = js.native
     def createModelPackage(params: CreateModelPackageInput): Request[CreateModelPackageOutput] = js.native
@@ -542,6 +586,7 @@ package sagemaker {
     def createWorkteam(params: CreateWorkteamRequest): Request[CreateWorkteamResponse] = js.native
     def deleteAlgorithm(params: DeleteAlgorithmInput): Request[js.Object] = js.native
     def deleteApp(params: DeleteAppRequest): Request[js.Object] = js.native
+    def deleteAppImageConfig(params: DeleteAppImageConfigRequest): Request[js.Object] = js.native
     def deleteCodeRepository(params: DeleteCodeRepositoryInput): Request[js.Object] = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[js.Object] = js.native
     def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object] = js.native
@@ -549,6 +594,8 @@ package sagemaker {
     def deleteExperiment(params: DeleteExperimentRequest): Request[DeleteExperimentResponse] = js.native
     def deleteFlowDefinition(params: DeleteFlowDefinitionRequest): Request[DeleteFlowDefinitionResponse] = js.native
     def deleteHumanTaskUi(params: DeleteHumanTaskUiRequest): Request[DeleteHumanTaskUiResponse] = js.native
+    def deleteImage(params: DeleteImageRequest): Request[DeleteImageResponse] = js.native
+    def deleteImageVersion(params: DeleteImageVersionRequest): Request[DeleteImageVersionResponse] = js.native
     def deleteModel(params: DeleteModelInput): Request[js.Object] = js.native
     def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object] = js.native
     def deleteMonitoringSchedule(params: DeleteMonitoringScheduleRequest): Request[js.Object] = js.native
@@ -562,6 +609,7 @@ package sagemaker {
     def deleteWorkteam(params: DeleteWorkteamRequest): Request[DeleteWorkteamResponse] = js.native
     def describeAlgorithm(params: DescribeAlgorithmInput): Request[DescribeAlgorithmOutput] = js.native
     def describeApp(params: DescribeAppRequest): Request[DescribeAppResponse] = js.native
+    def describeAppImageConfig(params: DescribeAppImageConfigRequest): Request[DescribeAppImageConfigResponse] = js.native
     def describeAutoMLJob(params: DescribeAutoMLJobRequest): Request[DescribeAutoMLJobResponse] = js.native
     def describeCodeRepository(params: DescribeCodeRepositoryInput): Request[DescribeCodeRepositoryOutput] = js.native
     def describeCompilationJob(params: DescribeCompilationJobRequest): Request[DescribeCompilationJobResponse] = js.native
@@ -572,6 +620,8 @@ package sagemaker {
     def describeFlowDefinition(params: DescribeFlowDefinitionRequest): Request[DescribeFlowDefinitionResponse] = js.native
     def describeHumanTaskUi(params: DescribeHumanTaskUiRequest): Request[DescribeHumanTaskUiResponse] = js.native
     def describeHyperParameterTuningJob(params: DescribeHyperParameterTuningJobRequest): Request[DescribeHyperParameterTuningJobResponse] = js.native
+    def describeImage(params: DescribeImageRequest): Request[DescribeImageResponse] = js.native
+    def describeImageVersion(params: DescribeImageVersionRequest): Request[DescribeImageVersionResponse] = js.native
     def describeLabelingJob(params: DescribeLabelingJobRequest): Request[DescribeLabelingJobResponse] = js.native
     def describeModel(params: DescribeModelInput): Request[DescribeModelOutput] = js.native
     def describeModelPackage(params: DescribeModelPackageInput): Request[DescribeModelPackageOutput] = js.native
@@ -590,6 +640,7 @@ package sagemaker {
     def disassociateTrialComponent(params: DisassociateTrialComponentRequest): Request[DisassociateTrialComponentResponse] = js.native
     def getSearchSuggestions(params: GetSearchSuggestionsRequest): Request[GetSearchSuggestionsResponse] = js.native
     def listAlgorithms(params: ListAlgorithmsInput): Request[ListAlgorithmsOutput] = js.native
+    def listAppImageConfigs(params: ListAppImageConfigsRequest): Request[ListAppImageConfigsResponse] = js.native
     def listApps(params: ListAppsRequest): Request[ListAppsResponse] = js.native
     def listAutoMLJobs(params: ListAutoMLJobsRequest): Request[ListAutoMLJobsResponse] = js.native
     def listCandidatesForAutoMLJob(params: ListCandidatesForAutoMLJobRequest): Request[ListCandidatesForAutoMLJobResponse] = js.native
@@ -602,6 +653,8 @@ package sagemaker {
     def listFlowDefinitions(params: ListFlowDefinitionsRequest): Request[ListFlowDefinitionsResponse] = js.native
     def listHumanTaskUis(params: ListHumanTaskUisRequest): Request[ListHumanTaskUisResponse] = js.native
     def listHyperParameterTuningJobs(params: ListHyperParameterTuningJobsRequest): Request[ListHyperParameterTuningJobsResponse] = js.native
+    def listImageVersions(params: ListImageVersionsRequest): Request[ListImageVersionsResponse] = js.native
+    def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
     def listLabelingJobs(params: ListLabelingJobsRequest): Request[ListLabelingJobsResponse] = js.native
     def listLabelingJobsForWorkteam(params: ListLabelingJobsForWorkteamRequest): Request[ListLabelingJobsForWorkteamResponse] = js.native
     def listModelPackages(params: ListModelPackagesInput): Request[ListModelPackagesOutput] = js.native
@@ -634,11 +687,13 @@ package sagemaker {
     def stopProcessingJob(params: StopProcessingJobRequest): Request[js.Object] = js.native
     def stopTrainingJob(params: StopTrainingJobRequest): Request[js.Object] = js.native
     def stopTransformJob(params: StopTransformJobRequest): Request[js.Object] = js.native
+    def updateAppImageConfig(params: UpdateAppImageConfigRequest): Request[UpdateAppImageConfigResponse] = js.native
     def updateCodeRepository(params: UpdateCodeRepositoryInput): Request[UpdateCodeRepositoryOutput] = js.native
     def updateDomain(params: UpdateDomainRequest): Request[UpdateDomainResponse] = js.native
     def updateEndpoint(params: UpdateEndpointInput): Request[UpdateEndpointOutput] = js.native
     def updateEndpointWeightsAndCapacities(params: UpdateEndpointWeightsAndCapacitiesInput): Request[UpdateEndpointWeightsAndCapacitiesOutput] = js.native
     def updateExperiment(params: UpdateExperimentRequest): Request[UpdateExperimentResponse] = js.native
+    def updateImage(params: UpdateImageRequest): Request[UpdateImageResponse] = js.native
     def updateMonitoringSchedule(params: UpdateMonitoringScheduleRequest): Request[UpdateMonitoringScheduleResponse] = js.native
     def updateNotebookInstance(params: UpdateNotebookInstanceInput): Request[UpdateNotebookInstanceOutput] = js.native
     def updateNotebookInstanceLifecycleConfig(params: UpdateNotebookInstanceLifecycleConfigInput): Request[UpdateNotebookInstanceLifecycleConfigOutput] = js.native
@@ -886,7 +941,7 @@ package sagemaker {
     }
   }
 
-  /** The app's details.
+  /** Details about an Amazon SageMaker app.
     */
   @js.native
   trait AppDetails extends js.Object {
@@ -917,6 +972,46 @@ package sagemaker {
       UserProfileName.foreach(__v => __obj.updateDynamic("UserProfileName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppDetails]
     }
+  }
+
+  /** The configuration for running a SageMaker image as a KernelGateway app.
+    */
+  @js.native
+  trait AppImageConfigDetails extends js.Object {
+    var AppImageConfigArn: js.UndefOr[AppImageConfigArn]
+    var AppImageConfigName: js.UndefOr[AppImageConfigName]
+    var CreationTime: js.UndefOr[Timestamp]
+    var KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object AppImageConfigDetails {
+    @inline
+    def apply(
+        AppImageConfigArn: js.UndefOr[AppImageConfigArn] = js.undefined,
+        AppImageConfigName: js.UndefOr[AppImageConfigName] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): AppImageConfigDetails = {
+      val __obj = js.Dynamic.literal()
+      AppImageConfigArn.foreach(__v => __obj.updateDynamic("AppImageConfigArn")(__v.asInstanceOf[js.Any]))
+      AppImageConfigName.foreach(__v => __obj.updateDynamic("AppImageConfigName")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      KernelGatewayImageConfig.foreach(__v => __obj.updateDynamic("KernelGatewayImageConfig")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppImageConfigDetails]
+    }
+  }
+
+  @js.native
+  sealed trait AppImageConfigSortKey extends js.Any
+  object AppImageConfigSortKey {
+    val CreationTime = "CreationTime".asInstanceOf[AppImageConfigSortKey]
+    val LastModifiedTime = "LastModifiedTime".asInstanceOf[AppImageConfigSortKey]
+    val Name = "Name".asInstanceOf[AppImageConfigSortKey]
+
+    @inline def values = js.Array(CreationTime, LastModifiedTime, Name)
   }
 
   @js.native
@@ -989,6 +1084,15 @@ package sagemaker {
       `ml.g4dn.12xlarge`,
       `ml.g4dn.16xlarge`
     )
+  }
+
+  @js.native
+  sealed trait AppNetworkAccessType extends js.Any
+  object AppNetworkAccessType {
+    val PublicInternetOnly = "PublicInternetOnly".asInstanceOf[AppNetworkAccessType]
+    val VpcOnly = "VpcOnly".asInstanceOf[AppNetworkAccessType]
+
+    @inline def values = js.Array(PublicInternetOnly, VpcOnly)
   }
 
   @js.native
@@ -1986,7 +2090,7 @@ package sagemaker {
     var ImageConfig: js.UndefOr[ImageConfig]
     var Mode: js.UndefOr[ContainerMode]
     var ModelDataUrl: js.UndefOr[Url]
-    var ModelPackageName: js.UndefOr[ArnOrName]
+    var ModelPackageName: js.UndefOr[VersionedArnOrName]
   }
 
   object ContainerDefinition {
@@ -1998,7 +2102,7 @@ package sagemaker {
         ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
         Mode: js.UndefOr[ContainerMode] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
-        ModelPackageName: js.UndefOr[ArnOrName] = js.undefined
+        ModelPackageName: js.UndefOr[VersionedArnOrName] = js.undefined
     ): ContainerDefinition = {
       val __obj = js.Dynamic.literal()
       ContainerHostname.foreach(__v => __obj.updateDynamic("ContainerHostname")(__v.asInstanceOf[js.Any]))
@@ -2128,6 +2232,46 @@ package sagemaker {
         "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateAlgorithmOutput]
+    }
+  }
+
+  @js.native
+  trait CreateAppImageConfigRequest extends js.Object {
+    var AppImageConfigName: AppImageConfigName
+    var KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateAppImageConfigRequest {
+    @inline
+    def apply(
+        AppImageConfigName: AppImageConfigName,
+        KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateAppImageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppImageConfigName" -> AppImageConfigName.asInstanceOf[js.Any]
+      )
+
+      KernelGatewayImageConfig.foreach(__v => __obj.updateDynamic("KernelGatewayImageConfig")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppImageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAppImageConfigResponse extends js.Object {
+    var AppImageConfigArn: js.UndefOr[AppImageConfigArn]
+  }
+
+  object CreateAppImageConfigResponse {
+    @inline
+    def apply(
+        AppImageConfigArn: js.UndefOr[AppImageConfigArn] = js.undefined
+    ): CreateAppImageConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      AppImageConfigArn.foreach(__v => __obj.updateDynamic("AppImageConfigArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAppImageConfigResponse]
     }
   }
 
@@ -2283,6 +2427,7 @@ package sagemaker {
     var OutputConfig: OutputConfig
     var RoleArn: RoleArn
     var StoppingCondition: StoppingCondition
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateCompilationJobRequest {
@@ -2292,7 +2437,8 @@ package sagemaker {
         InputConfig: InputConfig,
         OutputConfig: OutputConfig,
         RoleArn: RoleArn,
-        StoppingCondition: StoppingCondition
+        StoppingCondition: StoppingCondition,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCompilationJobRequest = {
       val __obj = js.Dynamic.literal(
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
@@ -2301,6 +2447,8 @@ package sagemaker {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCompilationJobRequest]
     }
   }
@@ -2329,7 +2477,9 @@ package sagemaker {
     var DomainName: DomainName
     var SubnetIds: Subnets
     var VpcId: VpcId
+    var AppNetworkAccessType: js.UndefOr[AppNetworkAccessType]
     var HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -2341,7 +2491,9 @@ package sagemaker {
         DomainName: DomainName,
         SubnetIds: Subnets,
         VpcId: VpcId,
+        AppNetworkAccessType: js.UndefOr[AppNetworkAccessType] = js.undefined,
         HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDomainRequest = {
       val __obj = js.Dynamic.literal(
@@ -2352,7 +2504,9 @@ package sagemaker {
         "VpcId" -> VpcId.asInstanceOf[js.Any]
       )
 
+      AppNetworkAccessType.foreach(__v => __obj.updateDynamic("AppNetworkAccessType")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemKmsKeyId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainRequest]
     }
@@ -2653,6 +2807,91 @@ package sagemaker {
   }
 
   @js.native
+  trait CreateImageRequest extends js.Object {
+    var ImageName: ImageName
+    var RoleArn: RoleArn
+    var Description: js.UndefOr[ImageDescription]
+    var DisplayName: js.UndefOr[ImageDisplayName]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateImageRequest {
+    @inline
+    def apply(
+        ImageName: ImageName,
+        RoleArn: RoleArn,
+        Description: js.UndefOr[ImageDescription] = js.undefined,
+        DisplayName: js.UndefOr[ImageDisplayName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageRequest]
+    }
+  }
+
+  @js.native
+  trait CreateImageResponse extends js.Object {
+    var ImageArn: js.UndefOr[ImageArn]
+  }
+
+  object CreateImageResponse {
+    @inline
+    def apply(
+        ImageArn: js.UndefOr[ImageArn] = js.undefined
+    ): CreateImageResponse = {
+      val __obj = js.Dynamic.literal()
+      ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageResponse]
+    }
+  }
+
+  @js.native
+  trait CreateImageVersionRequest extends js.Object {
+    var BaseImage: ImageBaseImage
+    var ClientToken: ClientToken
+    var ImageName: ImageName
+  }
+
+  object CreateImageVersionRequest {
+    @inline
+    def apply(
+        BaseImage: ImageBaseImage,
+        ClientToken: ClientToken,
+        ImageName: ImageName
+    ): CreateImageVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "BaseImage" -> BaseImage.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateImageVersionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateImageVersionResponse extends js.Object {
+    var ImageVersionArn: js.UndefOr[ImageVersionArn]
+  }
+
+  object CreateImageVersionResponse {
+    @inline
+    def apply(
+        ImageVersionArn: js.UndefOr[ImageVersionArn] = js.undefined
+    ): CreateImageVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      ImageVersionArn.foreach(__v => __obj.updateDynamic("ImageVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImageVersionResponse]
+    }
+  }
+
+  @js.native
   trait CreateLabelingJobRequest extends js.Object {
     var HumanTaskConfig: HumanTaskConfig
     var InputConfig: LabelingJobInputConfig
@@ -2769,10 +3008,10 @@ package sagemaker {
 
   @js.native
   trait CreateModelPackageInput extends js.Object {
-    var ModelPackageName: EntityName
     var CertifyForMarketplace: js.UndefOr[CertifyForMarketplace]
     var InferenceSpecification: js.UndefOr[InferenceSpecification]
     var ModelPackageDescription: js.UndefOr[EntityDescription]
+    var ModelPackageName: js.UndefOr[EntityName]
     var SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification]
     var ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification]
   }
@@ -2780,20 +3019,18 @@ package sagemaker {
   object CreateModelPackageInput {
     @inline
     def apply(
-        ModelPackageName: EntityName,
         CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
         InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
         ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
+        ModelPackageName: js.UndefOr[EntityName] = js.undefined,
         SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
         ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
     ): CreateModelPackageInput = {
-      val __obj = js.Dynamic.literal(
-        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
+      ModelPackageName.foreach(__v => __obj.updateDynamic("ModelPackageName")(__v.asInstanceOf[js.Any]))
       SourceAlgorithmSpecification.foreach(__v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any]))
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelPackageInput]
@@ -3516,6 +3753,32 @@ package sagemaker {
     }
   }
 
+  /** A custom SageMaker image. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html|Bring your own SageMaker image]].
+    */
+  @js.native
+  trait CustomImage extends js.Object {
+    var AppImageConfigName: AppImageConfigName
+    var ImageName: ImageName
+    var ImageVersionNumber: js.UndefOr[ImageVersionNumber]
+  }
+
+  object CustomImage {
+    @inline
+    def apply(
+        AppImageConfigName: AppImageConfigName,
+        ImageName: ImageName,
+        ImageVersionNumber: js.UndefOr[ImageVersionNumber] = js.undefined
+    ): CustomImage = {
+      val __obj = js.Dynamic.literal(
+        "AppImageConfigName" -> AppImageConfigName.asInstanceOf[js.Any],
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+
+      ImageVersionNumber.foreach(__v => __obj.updateDynamic("ImageVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomImage]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -3742,6 +4005,23 @@ package sagemaker {
   }
 
   @js.native
+  trait DeleteAppImageConfigRequest extends js.Object {
+    var AppImageConfigName: AppImageConfigName
+  }
+
+  object DeleteAppImageConfigRequest {
+    @inline
+    def apply(
+        AppImageConfigName: AppImageConfigName
+    ): DeleteAppImageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppImageConfigName" -> AppImageConfigName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAppImageConfigRequest]
+    }
+  }
+
+  @js.native
   trait DeleteAppRequest extends js.Object {
     var AppName: AppName
     var AppType: AppType
@@ -3929,6 +4209,65 @@ package sagemaker {
   }
 
   @js.native
+  trait DeleteImageRequest extends js.Object {
+    var ImageName: ImageName
+  }
+
+  object DeleteImageRequest {
+    @inline
+    def apply(
+        ImageName: ImageName
+    ): DeleteImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteImageRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteImageResponse extends js.Object
+
+  object DeleteImageResponse {
+    @inline
+    def apply(): DeleteImageResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteImageResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteImageVersionRequest extends js.Object {
+    var ImageName: ImageName
+    var Version: ImageVersionNumber
+  }
+
+  object DeleteImageVersionRequest {
+    @inline
+    def apply(
+        ImageName: ImageName,
+        Version: ImageVersionNumber
+    ): DeleteImageVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any],
+        "Version" -> Version.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteImageVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteImageVersionResponse extends js.Object
+
+  object DeleteImageVersionResponse {
+    @inline
+    def apply(): DeleteImageVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteImageVersionResponse]
+    }
+  }
+
+  @js.native
   trait DeleteModelInput extends js.Object {
     var ModelName: ModelName
   }
@@ -3947,13 +4286,13 @@ package sagemaker {
 
   @js.native
   trait DeleteModelPackageInput extends js.Object {
-    var ModelPackageName: EntityName
+    var ModelPackageName: VersionedArnOrName
   }
 
   object DeleteModelPackageInput {
     @inline
     def apply(
-        ModelPackageName: EntityName
+        ModelPackageName: VersionedArnOrName
     ): DeleteModelPackageInput = {
       val __obj = js.Dynamic.literal(
         "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]
@@ -4283,6 +4622,51 @@ package sagemaker {
   }
 
   @js.native
+  trait DescribeAppImageConfigRequest extends js.Object {
+    var AppImageConfigName: AppImageConfigName
+  }
+
+  object DescribeAppImageConfigRequest {
+    @inline
+    def apply(
+        AppImageConfigName: AppImageConfigName
+    ): DescribeAppImageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppImageConfigName" -> AppImageConfigName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAppImageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAppImageConfigResponse extends js.Object {
+    var AppImageConfigArn: js.UndefOr[AppImageConfigArn]
+    var AppImageConfigName: js.UndefOr[AppImageConfigName]
+    var CreationTime: js.UndefOr[Timestamp]
+    var KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object DescribeAppImageConfigResponse {
+    @inline
+    def apply(
+        AppImageConfigArn: js.UndefOr[AppImageConfigArn] = js.undefined,
+        AppImageConfigName: js.UndefOr[AppImageConfigName] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): DescribeAppImageConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      AppImageConfigArn.foreach(__v => __obj.updateDynamic("AppImageConfigArn")(__v.asInstanceOf[js.Any]))
+      AppImageConfigName.foreach(__v => __obj.updateDynamic("AppImageConfigName")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      KernelGatewayImageConfig.foreach(__v => __obj.updateDynamic("KernelGatewayImageConfig")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAppImageConfigResponse]
+    }
+  }
+
+  @js.native
   trait DescribeAppRequest extends js.Object {
     var AppName: AppName
     var AppType: AppType
@@ -4577,6 +4961,7 @@ package sagemaker {
 
   @js.native
   trait DescribeDomainResponse extends js.Object {
+    var AppNetworkAccessType: js.UndefOr[AppNetworkAccessType]
     var AuthMode: js.UndefOr[AuthMode]
     var CreationTime: js.UndefOr[CreationTime]
     var DefaultUserSettings: js.UndefOr[UserSettings]
@@ -4586,6 +4971,7 @@ package sagemaker {
     var FailureReason: js.UndefOr[FailureReason]
     var HomeEfsFileSystemId: js.UndefOr[ResourceId]
     var HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var LastModifiedTime: js.UndefOr[LastModifiedTime]
     var SingleSignOnManagedApplicationInstanceId: js.UndefOr[String256]
     var Status: js.UndefOr[DomainStatus]
@@ -4597,6 +4983,7 @@ package sagemaker {
   object DescribeDomainResponse {
     @inline
     def apply(
+        AppNetworkAccessType: js.UndefOr[AppNetworkAccessType] = js.undefined,
         AuthMode: js.UndefOr[AuthMode] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         DefaultUserSettings: js.UndefOr[UserSettings] = js.undefined,
@@ -4606,6 +4993,7 @@ package sagemaker {
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         HomeEfsFileSystemId: js.UndefOr[ResourceId] = js.undefined,
         HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
         SingleSignOnManagedApplicationInstanceId: js.UndefOr[String256] = js.undefined,
         Status: js.UndefOr[DomainStatus] = js.undefined,
@@ -4614,6 +5002,7 @@ package sagemaker {
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): DescribeDomainResponse = {
       val __obj = js.Dynamic.literal()
+      AppNetworkAccessType.foreach(__v => __obj.updateDynamic("AppNetworkAccessType")(__v.asInstanceOf[js.Any]))
       AuthMode.foreach(__v => __obj.updateDynamic("AuthMode")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DefaultUserSettings.foreach(__v => __obj.updateDynamic("DefaultUserSettings")(__v.asInstanceOf[js.Any]))
@@ -4623,6 +5012,7 @@ package sagemaker {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemId")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemKmsKeyId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       SingleSignOnManagedApplicationInstanceId.foreach(__v => __obj.updateDynamic("SingleSignOnManagedApplicationInstanceId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4986,6 +5376,124 @@ package sagemaker {
   }
 
   @js.native
+  trait DescribeImageRequest extends js.Object {
+    var ImageName: ImageName
+  }
+
+  object DescribeImageRequest {
+    @inline
+    def apply(
+        ImageName: ImageName
+    ): DescribeImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeImageRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeImageResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[ImageDescription]
+    var DisplayName: js.UndefOr[ImageDisplayName]
+    var FailureReason: js.UndefOr[FailureReason]
+    var ImageArn: js.UndefOr[ImageArn]
+    var ImageName: js.UndefOr[ImageName]
+    var ImageStatus: js.UndefOr[ImageStatus]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var RoleArn: js.UndefOr[RoleArn]
+  }
+
+  object DescribeImageResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ImageDescription] = js.undefined,
+        DisplayName: js.UndefOr[ImageDisplayName] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        ImageArn: js.UndefOr[ImageArn] = js.undefined,
+        ImageName: js.UndefOr[ImageName] = js.undefined,
+        ImageStatus: js.UndefOr[ImageStatus] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined
+    ): DescribeImageResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
+      ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
+      ImageStatus.foreach(__v => __obj.updateDynamic("ImageStatus")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeImageVersionRequest extends js.Object {
+    var ImageName: ImageName
+    var Version: js.UndefOr[ImageVersionNumber]
+  }
+
+  object DescribeImageVersionRequest {
+    @inline
+    def apply(
+        ImageName: ImageName,
+        Version: js.UndefOr[ImageVersionNumber] = js.undefined
+    ): DescribeImageVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeImageVersionResponse extends js.Object {
+    var BaseImage: js.UndefOr[ImageBaseImage]
+    var ContainerImage: js.UndefOr[ImageContainerImage]
+    var CreationTime: js.UndefOr[Timestamp]
+    var FailureReason: js.UndefOr[FailureReason]
+    var ImageArn: js.UndefOr[ImageArn]
+    var ImageVersionArn: js.UndefOr[ImageVersionArn]
+    var ImageVersionStatus: js.UndefOr[ImageVersionStatus]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Version: js.UndefOr[ImageVersionNumber]
+  }
+
+  object DescribeImageVersionResponse {
+    @inline
+    def apply(
+        BaseImage: js.UndefOr[ImageBaseImage] = js.undefined,
+        ContainerImage: js.UndefOr[ImageContainerImage] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        ImageArn: js.UndefOr[ImageArn] = js.undefined,
+        ImageVersionArn: js.UndefOr[ImageVersionArn] = js.undefined,
+        ImageVersionStatus: js.UndefOr[ImageVersionStatus] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Version: js.UndefOr[ImageVersionNumber] = js.undefined
+    ): DescribeImageVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      BaseImage.foreach(__v => __obj.updateDynamic("BaseImage")(__v.asInstanceOf[js.Any]))
+      ContainerImage.foreach(__v => __obj.updateDynamic("ContainerImage")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
+      ImageVersionArn.foreach(__v => __obj.updateDynamic("ImageVersionArn")(__v.asInstanceOf[js.Any]))
+      ImageVersionStatus.foreach(__v => __obj.updateDynamic("ImageVersionStatus")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageVersionResponse]
+    }
+  }
+
+  @js.native
   trait DescribeLabelingJobRequest extends js.Object {
     var LabelingJobName: LabelingJobName
   }
@@ -5129,13 +5637,13 @@ package sagemaker {
 
   @js.native
   trait DescribeModelPackageInput extends js.Object {
-    var ModelPackageName: ArnOrName
+    var ModelPackageName: VersionedArnOrName
   }
 
   object DescribeModelPackageInput {
     @inline
     def apply(
-        ModelPackageName: ArnOrName
+        ModelPackageName: VersionedArnOrName
     ): DescribeModelPackageInput = {
       val __obj = js.Dynamic.literal(
         "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]
@@ -6146,8 +6654,11 @@ package sagemaker {
     val Failed = "Failed".asInstanceOf[DomainStatus]
     val InService = "InService".asInstanceOf[DomainStatus]
     val Pending = "Pending".asInstanceOf[DomainStatus]
+    val Updating = "Updating".asInstanceOf[DomainStatus]
+    val Update_Failed = "Update_Failed".asInstanceOf[DomainStatus]
+    val Delete_Failed = "Delete_Failed".asInstanceOf[DomainStatus]
 
-    @inline def values = js.Array(Deleting, Failed, InService, Pending)
+    @inline def values = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
   }
 
   @js.native
@@ -6420,6 +6931,30 @@ package sagemaker {
     @inline def values = js.Array(rw, ro)
   }
 
+  /** The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+    */
+  @js.native
+  trait FileSystemConfig extends js.Object {
+    var DefaultGid: js.UndefOr[DefaultGid]
+    var DefaultUid: js.UndefOr[DefaultUid]
+    var MountPath: js.UndefOr[MountPath]
+  }
+
+  object FileSystemConfig {
+    @inline
+    def apply(
+        DefaultGid: js.UndefOr[DefaultGid] = js.undefined,
+        DefaultUid: js.UndefOr[DefaultUid] = js.undefined,
+        MountPath: js.UndefOr[MountPath] = js.undefined
+    ): FileSystemConfig = {
+      val __obj = js.Dynamic.literal()
+      DefaultGid.foreach(__v => __obj.updateDynamic("DefaultGid")(__v.asInstanceOf[js.Any]))
+      DefaultUid.foreach(__v => __obj.updateDynamic("DefaultUid")(__v.asInstanceOf[js.Any]))
+      MountPath.foreach(__v => __obj.updateDynamic("MountPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSystemConfig]
+    }
+  }
+
   /** Specifies a file system data source for a channel.
     */
   @js.native
@@ -6627,8 +7162,9 @@ package sagemaker {
     val PYTORCH = "PYTORCH".asInstanceOf[Framework]
     val XGBOOST = "XGBOOST".asInstanceOf[Framework]
     val TFLITE = "TFLITE".asInstanceOf[Framework]
+    val DARKNET = "DARKNET".asInstanceOf[Framework]
 
-    @inline def values = js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE)
+    @inline def values = js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE, DARKNET)
   }
 
   @js.native
@@ -6946,7 +7482,7 @@ package sagemaker {
   trait HyperParameterSpecification extends js.Object {
     var Name: ParameterName
     var Type: ParameterType
-    var DefaultValue: js.UndefOr[ParameterValue]
+    var DefaultValue: js.UndefOr[HyperParameterValue]
     var Description: js.UndefOr[EntityDescription]
     var IsRequired: js.UndefOr[Boolean]
     var IsTunable: js.UndefOr[Boolean]
@@ -6958,7 +7494,7 @@ package sagemaker {
     def apply(
         Name: ParameterName,
         Type: ParameterType,
-        DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
+        DefaultValue: js.UndefOr[HyperParameterValue] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         IsRequired: js.UndefOr[Boolean] = js.undefined,
         IsTunable: js.UndefOr[Boolean] = js.undefined,
@@ -7273,7 +7809,48 @@ package sagemaker {
     @inline def values = js.Array(IdenticalDataAndAlgorithm, TransferLearning)
   }
 
-  /** Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual Private Cloud (VPC).
+  /** A SageMaker image. A SageMaker image represents a set of container images that are derived from a common base container image. Each of these container images is represented by a SageMaker <code>ImageVersion</code>.
+    */
+  @js.native
+  trait Image extends js.Object {
+    var CreationTime: Timestamp
+    var ImageArn: ImageArn
+    var ImageName: ImageName
+    var ImageStatus: ImageStatus
+    var LastModifiedTime: Timestamp
+    var Description: js.UndefOr[ImageDescription]
+    var DisplayName: js.UndefOr[ImageDisplayName]
+    var FailureReason: js.UndefOr[FailureReason]
+  }
+
+  object Image {
+    @inline
+    def apply(
+        CreationTime: Timestamp,
+        ImageArn: ImageArn,
+        ImageName: ImageName,
+        ImageStatus: ImageStatus,
+        LastModifiedTime: Timestamp,
+        Description: js.UndefOr[ImageDescription] = js.undefined,
+        DisplayName: js.UndefOr[ImageDisplayName] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined
+    ): Image = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ImageArn" -> ImageArn.asInstanceOf[js.Any],
+        "ImageName" -> ImageName.asInstanceOf[js.Any],
+        "ImageStatus" -> ImageStatus.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Image]
+    }
+  }
+
+  /** Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC).
     */
   @js.native
   trait ImageConfig extends js.Object {
@@ -7290,6 +7867,108 @@ package sagemaker {
       )
       __obj.asInstanceOf[ImageConfig]
     }
+  }
+
+  @js.native
+  sealed trait ImageSortBy extends js.Any
+  object ImageSortBy {
+    val CREATION_TIME = "CREATION_TIME".asInstanceOf[ImageSortBy]
+    val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ImageSortBy]
+    val IMAGE_NAME = "IMAGE_NAME".asInstanceOf[ImageSortBy]
+
+    @inline def values = js.Array(CREATION_TIME, LAST_MODIFIED_TIME, IMAGE_NAME)
+  }
+
+  @js.native
+  sealed trait ImageSortOrder extends js.Any
+  object ImageSortOrder {
+    val ASCENDING = "ASCENDING".asInstanceOf[ImageSortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[ImageSortOrder]
+
+    @inline def values = js.Array(ASCENDING, DESCENDING)
+  }
+
+  @js.native
+  sealed trait ImageStatus extends js.Any
+  object ImageStatus {
+    val CREATING = "CREATING".asInstanceOf[ImageStatus]
+    val CREATED = "CREATED".asInstanceOf[ImageStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ImageStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ImageStatus]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ImageStatus]
+    val DELETING = "DELETING".asInstanceOf[ImageStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImageStatus]
+
+    @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
+  }
+
+  /** A version of a SageMaker <code>Image</code>. A version represents an existing container image.
+    */
+  @js.native
+  trait ImageVersion extends js.Object {
+    var CreationTime: Timestamp
+    var ImageArn: ImageArn
+    var ImageVersionArn: ImageVersionArn
+    var ImageVersionStatus: ImageVersionStatus
+    var LastModifiedTime: Timestamp
+    var Version: ImageVersionNumber
+    var FailureReason: js.UndefOr[FailureReason]
+  }
+
+  object ImageVersion {
+    @inline
+    def apply(
+        CreationTime: Timestamp,
+        ImageArn: ImageArn,
+        ImageVersionArn: ImageVersionArn,
+        ImageVersionStatus: ImageVersionStatus,
+        LastModifiedTime: Timestamp,
+        Version: ImageVersionNumber,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined
+    ): ImageVersion = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "ImageArn" -> ImageArn.asInstanceOf[js.Any],
+        "ImageVersionArn" -> ImageVersionArn.asInstanceOf[js.Any],
+        "ImageVersionStatus" -> ImageVersionStatus.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "Version" -> Version.asInstanceOf[js.Any]
+      )
+
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageVersion]
+    }
+  }
+
+  @js.native
+  sealed trait ImageVersionSortBy extends js.Any
+  object ImageVersionSortBy {
+    val CREATION_TIME = "CREATION_TIME".asInstanceOf[ImageVersionSortBy]
+    val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ImageVersionSortBy]
+    val VERSION = "VERSION".asInstanceOf[ImageVersionSortBy]
+
+    @inline def values = js.Array(CREATION_TIME, LAST_MODIFIED_TIME, VERSION)
+  }
+
+  @js.native
+  sealed trait ImageVersionSortOrder extends js.Any
+  object ImageVersionSortOrder {
+    val ASCENDING = "ASCENDING".asInstanceOf[ImageVersionSortOrder]
+    val DESCENDING = "DESCENDING".asInstanceOf[ImageVersionSortOrder]
+
+    @inline def values = js.Array(ASCENDING, DESCENDING)
+  }
+
+  @js.native
+  sealed trait ImageVersionStatus extends js.Any
+  object ImageVersionStatus {
+    val CREATING = "CREATING".asInstanceOf[ImageVersionStatus]
+    val CREATED = "CREATED".asInstanceOf[ImageVersionStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ImageVersionStatus]
+    val DELETING = "DELETING".asInstanceOf[ImageVersionStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImageVersionStatus]
+
+    @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
   }
 
   /** Defines how to perform inference generation after a training job is run.
@@ -7492,7 +8171,7 @@ package sagemaker {
     @inline def values = js.Array(Input, None)
   }
 
-  /** Jupyter server's app settings.
+  /** The JupyterServer app settings.
     */
   @js.native
   trait JupyterServerAppSettings extends js.Object {
@@ -7510,21 +8189,70 @@ package sagemaker {
     }
   }
 
-  /** The kernel gateway app settings.
+  /** The KernelGateway app settings.
     */
   @js.native
   trait KernelGatewayAppSettings extends js.Object {
+    var CustomImages: js.UndefOr[CustomImages]
     var DefaultResourceSpec: js.UndefOr[ResourceSpec]
   }
 
   object KernelGatewayAppSettings {
     @inline
     def apply(
+        CustomImages: js.UndefOr[CustomImages] = js.undefined,
         DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined
     ): KernelGatewayAppSettings = {
       val __obj = js.Dynamic.literal()
+      CustomImages.foreach(__v => __obj.updateDynamic("CustomImages")(__v.asInstanceOf[js.Any]))
       DefaultResourceSpec.foreach(__v => __obj.updateDynamic("DefaultResourceSpec")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KernelGatewayAppSettings]
+    }
+  }
+
+  /** The configuration for the file system and kernels in a SageMaker image running as a KernelGateway app.
+    */
+  @js.native
+  trait KernelGatewayImageConfig extends js.Object {
+    var KernelSpecs: KernelSpecs
+    var FileSystemConfig: js.UndefOr[FileSystemConfig]
+  }
+
+  object KernelGatewayImageConfig {
+    @inline
+    def apply(
+        KernelSpecs: KernelSpecs,
+        FileSystemConfig: js.UndefOr[FileSystemConfig] = js.undefined
+    ): KernelGatewayImageConfig = {
+      val __obj = js.Dynamic.literal(
+        "KernelSpecs" -> KernelSpecs.asInstanceOf[js.Any]
+      )
+
+      FileSystemConfig.foreach(__v => __obj.updateDynamic("FileSystemConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KernelGatewayImageConfig]
+    }
+  }
+
+  /** The specification of a Jupyter kernel.
+    */
+  @js.native
+  trait KernelSpec extends js.Object {
+    var Name: KernelName
+    var DisplayName: js.UndefOr[KernelDisplayName]
+  }
+
+  object KernelSpec {
+    @inline
+    def apply(
+        Name: KernelName,
+        DisplayName: js.UndefOr[KernelDisplayName] = js.undefined
+    ): KernelSpec = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KernelSpec]
     }
   }
 
@@ -7627,19 +8355,25 @@ package sagemaker {
   }
 
   /** Provides information about the location of input data.
+    * You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>.
+    * Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time labeling job.
+    * Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.
     */
   @js.native
   trait LabelingJobDataSource extends js.Object {
     var S3DataSource: js.UndefOr[LabelingJobS3DataSource]
+    var SnsDataSource: js.UndefOr[LabelingJobSnsDataSource]
   }
 
   object LabelingJobDataSource {
     @inline
     def apply(
-        S3DataSource: js.UndefOr[LabelingJobS3DataSource] = js.undefined
+        S3DataSource: js.UndefOr[LabelingJobS3DataSource] = js.undefined,
+        SnsDataSource: js.UndefOr[LabelingJobSnsDataSource] = js.undefined
     ): LabelingJobDataSource = {
       val __obj = js.Dynamic.literal()
       S3DataSource.foreach(__v => __obj.updateDynamic("S3DataSource")(__v.asInstanceOf[js.Any]))
+      SnsDataSource.foreach(__v => __obj.updateDynamic("SnsDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobDataSource]
     }
   }
@@ -7731,19 +8465,22 @@ package sagemaker {
   trait LabelingJobOutputConfig extends js.Object {
     var S3OutputPath: S3Uri
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var SnsTopicArn: js.UndefOr[SnsTopicArn]
   }
 
   object LabelingJobOutputConfig {
     @inline
     def apply(
         S3OutputPath: S3Uri,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        SnsTopicArn: js.UndefOr[SnsTopicArn] = js.undefined
     ): LabelingJobOutputConfig = {
       val __obj = js.Dynamic.literal(
         "S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any]
       )
 
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobOutputConfig]
     }
   }
@@ -7782,6 +8519,25 @@ package sagemaker {
         "ManifestS3Uri" -> ManifestS3Uri.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[LabelingJobS3DataSource]
+    }
+  }
+
+  /** An Amazon SNS data source used for streaming labeling jobs.
+    */
+  @js.native
+  trait LabelingJobSnsDataSource extends js.Object {
+    var SnsTopicArn: SnsTopicArn
+  }
+
+  object LabelingJobSnsDataSource {
+    @inline
+    def apply(
+        SnsTopicArn: SnsTopicArn
+    ): LabelingJobSnsDataSource = {
+      val __obj = js.Dynamic.literal(
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LabelingJobSnsDataSource]
     }
   }
 
@@ -7926,6 +8682,65 @@ package sagemaker {
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAlgorithmsOutput]
+    }
+  }
+
+  @js.native
+  trait ListAppImageConfigsRequest extends js.Object {
+    var CreationTimeAfter: js.UndefOr[Timestamp]
+    var CreationTimeBefore: js.UndefOr[Timestamp]
+    var MaxResults: js.UndefOr[MaxResults]
+    var ModifiedTimeAfter: js.UndefOr[Timestamp]
+    var ModifiedTimeBefore: js.UndefOr[Timestamp]
+    var NameContains: js.UndefOr[AppImageConfigName]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[AppImageConfigSortKey]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListAppImageConfigsRequest {
+    @inline
+    def apply(
+        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        ModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        ModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        NameContains: js.UndefOr[AppImageConfigName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[AppImageConfigSortKey] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListAppImageConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
+      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      ModifiedTimeAfter.foreach(__v => __obj.updateDynamic("ModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
+      ModifiedTimeBefore.foreach(__v => __obj.updateDynamic("ModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppImageConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAppImageConfigsResponse extends js.Object {
+    var AppImageConfigs: js.UndefOr[AppImageConfigList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAppImageConfigsResponse {
+    @inline
+    def apply(
+        AppImageConfigs: js.UndefOr[AppImageConfigList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppImageConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      AppImageConfigs.foreach(__v => __obj.updateDynamic("AppImageConfigs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAppImageConfigsResponse]
     }
   }
 
@@ -8601,6 +9416,126 @@ package sagemaker {
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHyperParameterTuningJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListImageVersionsRequest extends js.Object {
+    var ImageName: ImageName
+    var CreationTimeAfter: js.UndefOr[Timestamp]
+    var CreationTimeBefore: js.UndefOr[Timestamp]
+    var LastModifiedTimeAfter: js.UndefOr[Timestamp]
+    var LastModifiedTimeBefore: js.UndefOr[Timestamp]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[ImageVersionSortBy]
+    var SortOrder: js.UndefOr[ImageVersionSortOrder]
+  }
+
+  object ListImageVersionsRequest {
+    @inline
+    def apply(
+        ImageName: ImageName,
+        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[ImageVersionSortBy] = js.undefined,
+        SortOrder: js.UndefOr[ImageVersionSortOrder] = js.undefined
+    ): ListImageVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+
+      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
+      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimeAfter.foreach(__v => __obj.updateDynamic("LastModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimeBefore.foreach(__v => __obj.updateDynamic("LastModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImageVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListImageVersionsResponse extends js.Object {
+    var ImageVersions: js.UndefOr[ImageVersions]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListImageVersionsResponse {
+    @inline
+    def apply(
+        ImageVersions: js.UndefOr[ImageVersions] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImageVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      ImageVersions.foreach(__v => __obj.updateDynamic("ImageVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImageVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListImagesRequest extends js.Object {
+    var CreationTimeAfter: js.UndefOr[Timestamp]
+    var CreationTimeBefore: js.UndefOr[Timestamp]
+    var LastModifiedTimeAfter: js.UndefOr[Timestamp]
+    var LastModifiedTimeBefore: js.UndefOr[Timestamp]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NameContains: js.UndefOr[ImageNameContains]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[ImageSortBy]
+    var SortOrder: js.UndefOr[ImageSortOrder]
+  }
+
+  object ListImagesRequest {
+    @inline
+    def apply(
+        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[ImageNameContains] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[ImageSortBy] = js.undefined,
+        SortOrder: js.UndefOr[ImageSortOrder] = js.undefined
+    ): ListImagesRequest = {
+      val __obj = js.Dynamic.literal()
+      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
+      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimeAfter.foreach(__v => __obj.updateDynamic("LastModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimeBefore.foreach(__v => __obj.updateDynamic("LastModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImagesRequest]
+    }
+  }
+
+  @js.native
+  trait ListImagesResponse extends js.Object {
+    var Images: js.UndefOr[Images]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListImagesResponse {
+    @inline
+    def apply(
+        Images: js.UndefOr[Images] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImagesResponse = {
+      val __obj = js.Dynamic.literal()
+      Images.foreach(__v => __obj.updateDynamic("Images")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImagesResponse]
     }
   }
 
@@ -12025,23 +12960,26 @@ package sagemaker {
     }
   }
 
-  /** The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is stored as metadata in SageMaker Studio notebooks.
+  /** Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.
     */
   @js.native
   trait ResourceSpec extends js.Object {
     var InstanceType: js.UndefOr[AppInstanceType]
     var SageMakerImageArn: js.UndefOr[ImageArn]
+    var SageMakerImageVersionArn: js.UndefOr[ImageVersionArn]
   }
 
   object ResourceSpec {
     @inline
     def apply(
         InstanceType: js.UndefOr[AppInstanceType] = js.undefined,
-        SageMakerImageArn: js.UndefOr[ImageArn] = js.undefined
+        SageMakerImageArn: js.UndefOr[ImageArn] = js.undefined,
+        SageMakerImageVersionArn: js.UndefOr[ImageVersionArn] = js.undefined
     ): ResourceSpec = {
       val __obj = js.Dynamic.literal()
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       SageMakerImageArn.foreach(__v => __obj.updateDynamic("SageMakerImageArn")(__v.asInstanceOf[js.Any]))
+      SageMakerImageVersionArn.foreach(__v => __obj.updateDynamic("SageMakerImageVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceSpec]
     }
   }
@@ -12845,6 +13783,7 @@ package sagemaker {
     val amba_cv22 = "amba_cv22".asInstanceOf[TargetDevice]
     val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
     val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
+    val coreml = "coreml".asInstanceOf[TargetDevice]
 
     @inline def values = js.Array(
       lambda,
@@ -12872,7 +13811,8 @@ package sagemaker {
       sitara_am57x,
       amba_cv22,
       x86_win32,
-      x86_win64
+      x86_win64,
+      coreml
     )
   }
 
@@ -13014,6 +13954,7 @@ package sagemaker {
     val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge".asInstanceOf[TrainingInstanceType]
+    val `ml.p4d.24xlarge` = "ml.p4d.24xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[TrainingInstanceType]
     val `ml.c5.4xlarge` = "ml.c5.4xlarge".asInstanceOf[TrainingInstanceType]
@@ -13054,6 +13995,7 @@ package sagemaker {
       `ml.p3.8xlarge`,
       `ml.p3.16xlarge`,
       `ml.p3dn.24xlarge`,
+      `ml.p4d.24xlarge`,
       `ml.c5.xlarge`,
       `ml.c5.2xlarge`,
       `ml.c5.4xlarge`,
@@ -14238,6 +15180,43 @@ package sagemaker {
   }
 
   @js.native
+  trait UpdateAppImageConfigRequest extends js.Object {
+    var AppImageConfigName: AppImageConfigName
+    var KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig]
+  }
+
+  object UpdateAppImageConfigRequest {
+    @inline
+    def apply(
+        AppImageConfigName: AppImageConfigName,
+        KernelGatewayImageConfig: js.UndefOr[KernelGatewayImageConfig] = js.undefined
+    ): UpdateAppImageConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppImageConfigName" -> AppImageConfigName.asInstanceOf[js.Any]
+      )
+
+      KernelGatewayImageConfig.foreach(__v => __obj.updateDynamic("KernelGatewayImageConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAppImageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAppImageConfigResponse extends js.Object {
+    var AppImageConfigArn: js.UndefOr[AppImageConfigArn]
+  }
+
+  object UpdateAppImageConfigResponse {
+    @inline
+    def apply(
+        AppImageConfigArn: js.UndefOr[AppImageConfigArn] = js.undefined
+    ): UpdateAppImageConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      AppImageConfigArn.foreach(__v => __obj.updateDynamic("AppImageConfigArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAppImageConfigResponse]
+    }
+  }
+
+  @js.native
   trait UpdateCodeRepositoryInput extends js.Object {
     var CodeRepositoryName: EntityName
     var GitConfig: js.UndefOr[GitConfigForUpdate]
@@ -14430,6 +15409,52 @@ package sagemaker {
       val __obj = js.Dynamic.literal()
       ExperimentArn.foreach(__v => __obj.updateDynamic("ExperimentArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateExperimentResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateImageRequest extends js.Object {
+    var ImageName: ImageName
+    var DeleteProperties: js.UndefOr[ImageDeletePropertyList]
+    var Description: js.UndefOr[ImageDescription]
+    var DisplayName: js.UndefOr[ImageDisplayName]
+    var RoleArn: js.UndefOr[RoleArn]
+  }
+
+  object UpdateImageRequest {
+    @inline
+    def apply(
+        ImageName: ImageName,
+        DeleteProperties: js.UndefOr[ImageDeletePropertyList] = js.undefined,
+        Description: js.UndefOr[ImageDescription] = js.undefined,
+        DisplayName: js.UndefOr[ImageDisplayName] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined
+    ): UpdateImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImageName" -> ImageName.asInstanceOf[js.Any]
+      )
+
+      DeleteProperties.foreach(__v => __obj.updateDynamic("DeleteProperties")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateImageRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateImageResponse extends js.Object {
+    var ImageArn: js.UndefOr[ImageArn]
+  }
+
+  object UpdateImageResponse {
+    @inline
+    def apply(
+        ImageArn: js.UndefOr[ImageArn] = js.undefined
+    ): UpdateImageResponse = {
+      val __obj = js.Dynamic.literal()
+      ImageArn.foreach(__v => __obj.updateDynamic("ImageArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateImageResponse]
     }
   }
 
@@ -14866,8 +15891,11 @@ package sagemaker {
     val Failed = "Failed".asInstanceOf[UserProfileStatus]
     val InService = "InService".asInstanceOf[UserProfileStatus]
     val Pending = "Pending".asInstanceOf[UserProfileStatus]
+    val Updating = "Updating".asInstanceOf[UserProfileStatus]
+    val Update_Failed = "Update_Failed".asInstanceOf[UserProfileStatus]
+    val Delete_Failed = "Delete_Failed".asInstanceOf[UserProfileStatus]
 
-    @inline def values = js.Array(Deleting, Failed, InService, Pending)
+    @inline def values = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
   }
 
   /** A collection of settings.

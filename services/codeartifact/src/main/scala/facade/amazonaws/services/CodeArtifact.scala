@@ -47,6 +47,10 @@ package object codeartifact {
   type RepositorySummaryList = js.Array[RepositorySummary]
   type String255 = String
   type SuccessfulPackageVersionInfoMap = js.Dictionary[SuccessfulPackageVersionInfo]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type Timestamp = js.Date
   type UpstreamRepositoryInfoList = js.Array[UpstreamRepositoryInfo]
   type UpstreamRepositoryList = js.Array[UpstreamRepository]
@@ -80,8 +84,11 @@ package object codeartifact {
     @inline def listPackagesFuture(params: ListPackagesRequest): Future[ListPackagesResult] = service.listPackages(params).promise().toFuture
     @inline def listRepositoriesFuture(params: ListRepositoriesRequest): Future[ListRepositoriesResult] = service.listRepositories(params).promise().toFuture
     @inline def listRepositoriesInDomainFuture(params: ListRepositoriesInDomainRequest): Future[ListRepositoriesInDomainResult] = service.listRepositoriesInDomain(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
     @inline def putDomainPermissionsPolicyFuture(params: PutDomainPermissionsPolicyRequest): Future[PutDomainPermissionsPolicyResult] = service.putDomainPermissionsPolicy(params).promise().toFuture
     @inline def putRepositoryPermissionsPolicyFuture(params: PutRepositoryPermissionsPolicyRequest): Future[PutRepositoryPermissionsPolicyResult] = service.putRepositoryPermissionsPolicy(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
     @inline def updatePackageVersionsStatusFuture(params: UpdatePackageVersionsStatusRequest): Future[UpdatePackageVersionsStatusResult] = service.updatePackageVersionsStatus(params).promise().toFuture
     @inline def updateRepositoryFuture(params: UpdateRepositoryRequest): Future[UpdateRepositoryResult] = service.updateRepository(params).promise().toFuture
 
@@ -121,8 +128,11 @@ package codeartifact {
     def listPackages(params: ListPackagesRequest): Request[ListPackagesResult] = js.native
     def listRepositories(params: ListRepositoriesRequest): Request[ListRepositoriesResult] = js.native
     def listRepositoriesInDomain(params: ListRepositoriesInDomainRequest): Request[ListRepositoriesInDomainResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def putDomainPermissionsPolicy(params: PutDomainPermissionsPolicyRequest): Request[PutDomainPermissionsPolicyResult] = js.native
     def putRepositoryPermissionsPolicy(params: PutRepositoryPermissionsPolicyRequest): Request[PutRepositoryPermissionsPolicyResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updatePackageVersionsStatus(params: UpdatePackageVersionsStatusRequest): Request[UpdatePackageVersionsStatusResult] = js.native
     def updateRepository(params: UpdateRepositoryRequest): Request[UpdateRepositoryResult] = js.native
   }
@@ -267,19 +277,22 @@ package codeartifact {
   trait CreateDomainRequest extends js.Object {
     var domain: DomainName
     var encryptionKey: js.UndefOr[Arn]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateDomainRequest {
     @inline
     def apply(
         domain: DomainName,
-        encryptionKey: js.UndefOr[Arn] = js.undefined
+        encryptionKey: js.UndefOr[Arn] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateDomainRequest = {
       val __obj = js.Dynamic.literal(
         "domain" -> domain.asInstanceOf[js.Any]
       )
 
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainRequest]
     }
   }
@@ -306,6 +319,7 @@ package codeartifact {
     var repository: RepositoryName
     var description: js.UndefOr[Description]
     var domainOwner: js.UndefOr[AccountId]
+    var tags: js.UndefOr[TagList]
     var upstreams: js.UndefOr[UpstreamRepositoryList]
   }
 
@@ -316,6 +330,7 @@ package codeartifact {
         repository: RepositoryName,
         description: js.UndefOr[Description] = js.undefined,
         domainOwner: js.UndefOr[AccountId] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
         upstreams: js.UndefOr[UpstreamRepositoryList] = js.undefined
     ): CreateRepositoryRequest = {
       val __obj = js.Dynamic.literal(
@@ -325,6 +340,7 @@ package codeartifact {
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       domainOwner.foreach(__v => __obj.updateDynamic("domainOwner")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       upstreams.foreach(__v => __obj.updateDynamic("upstreams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryRequest]
     }
@@ -809,6 +825,7 @@ package codeartifact {
     var name: js.UndefOr[DomainName]
     var owner: js.UndefOr[AccountId]
     var repositoryCount: js.UndefOr[Int]
+    var s3BucketArn: js.UndefOr[Arn]
     var status: js.UndefOr[DomainStatus]
   }
 
@@ -822,6 +839,7 @@ package codeartifact {
         name: js.UndefOr[DomainName] = js.undefined,
         owner: js.UndefOr[AccountId] = js.undefined,
         repositoryCount: js.UndefOr[Int] = js.undefined,
+        s3BucketArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[DomainStatus] = js.undefined
     ): DomainDescription = {
       val __obj = js.Dynamic.literal()
@@ -832,6 +850,7 @@ package codeartifact {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
       repositoryCount.foreach(__v => __obj.updateDynamic("repositoryCount")(__v.asInstanceOf[js.Any]))
+      s3BucketArn.foreach(__v => __obj.updateDynamic("s3BucketArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDescription]
     }
@@ -1630,6 +1649,39 @@ package codeartifact {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResult extends js.Object {
+    var tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResult {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResult = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResult]
+    }
+  }
+
   /** Details about a package dependency.
     */
   @js.native
@@ -2050,6 +2102,90 @@ package codeartifact {
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SuccessfulPackageVersionInfo]
+    }
+  }
+
+  /** A tag is a key-value pair that can be used to manage, search for, or filter resources in AWS CodeArtifact.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var key: TagKey
+    var value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        key: TagKey,
+        value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResult extends js.Object
+
+  object TagResourceResult {
+    @inline
+    def apply(): TagResourceResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResult]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResult extends js.Object
+
+  object UntagResourceResult {
+    @inline
+    def apply(): UntagResourceResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResult]
     }
   }
 

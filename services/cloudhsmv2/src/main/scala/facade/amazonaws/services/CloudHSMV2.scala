@@ -8,10 +8,13 @@ import facade.amazonaws._
 
 package object cloudhsmv2 {
   type BackupId = String
+  type BackupRetentionValue = String
   type Backups = js.Array[Backup]
+  type BackupsMaxSize = Int
   type Cert = String
   type ClusterId = String
   type Clusters = js.Array[Cluster]
+  type ClustersMaxSize = Int
   type EniId = String
   type ExternalAz = String
   type ExternalSubnetMapping = js.Dictionary[SubnetId]
@@ -50,6 +53,8 @@ package object cloudhsmv2 {
     @inline def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] = service.describeClusters(params).promise().toFuture
     @inline def initializeClusterFuture(params: InitializeClusterRequest): Future[InitializeClusterResponse] = service.initializeCluster(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def modifyBackupAttributesFuture(params: ModifyBackupAttributesRequest): Future[ModifyBackupAttributesResponse] = service.modifyBackupAttributes(params).promise().toFuture
+    @inline def modifyClusterFuture(params: ModifyClusterRequest): Future[ModifyClusterResponse] = service.modifyCluster(params).promise().toFuture
     @inline def restoreBackupFuture(params: RestoreBackupRequest): Future[RestoreBackupResponse] = service.restoreBackup(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -73,12 +78,14 @@ package cloudhsmv2 {
     def describeClusters(params: DescribeClustersRequest): Request[DescribeClustersResponse] = js.native
     def initializeCluster(params: InitializeClusterRequest): Request[InitializeClusterResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def modifyBackupAttributes(params: ModifyBackupAttributesRequest): Request[ModifyBackupAttributesResponse] = js.native
+    def modifyCluster(params: ModifyClusterRequest): Request[ModifyClusterResponse] = js.native
     def restoreBackup(params: RestoreBackupRequest): Request[RestoreBackupResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
-  /** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.
+  /** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.
     */
   @js.native
   trait Backup extends js.Object {
@@ -88,6 +95,7 @@ package cloudhsmv2 {
     var CopyTimestamp: js.UndefOr[Timestamp]
     var CreateTimestamp: js.UndefOr[Timestamp]
     var DeleteTimestamp: js.UndefOr[Timestamp]
+    var NeverExpires: js.UndefOr[Boolean]
     var SourceBackup: js.UndefOr[BackupId]
     var SourceCluster: js.UndefOr[ClusterId]
     var SourceRegion: js.UndefOr[Region]
@@ -103,6 +111,7 @@ package cloudhsmv2 {
         CopyTimestamp: js.UndefOr[Timestamp] = js.undefined,
         CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         DeleteTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        NeverExpires: js.UndefOr[Boolean] = js.undefined,
         SourceBackup: js.UndefOr[BackupId] = js.undefined,
         SourceCluster: js.UndefOr[ClusterId] = js.undefined,
         SourceRegion: js.UndefOr[Region] = js.undefined,
@@ -117,6 +126,7 @@ package cloudhsmv2 {
       CopyTimestamp.foreach(__v => __obj.updateDynamic("CopyTimestamp")(__v.asInstanceOf[js.Any]))
       CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
       DeleteTimestamp.foreach(__v => __obj.updateDynamic("DeleteTimestamp")(__v.asInstanceOf[js.Any]))
+      NeverExpires.foreach(__v => __obj.updateDynamic("NeverExpires")(__v.asInstanceOf[js.Any]))
       SourceBackup.foreach(__v => __obj.updateDynamic("SourceBackup")(__v.asInstanceOf[js.Any]))
       SourceCluster.foreach(__v => __obj.updateDynamic("SourceCluster")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
@@ -131,6 +141,35 @@ package cloudhsmv2 {
     val DEFAULT = "DEFAULT".asInstanceOf[BackupPolicy]
 
     @inline def values = js.Array(DEFAULT)
+  }
+
+  /** A policy that defines the number of days to retain backups.
+    */
+  @js.native
+  trait BackupRetentionPolicy extends js.Object {
+    var Type: js.UndefOr[BackupRetentionType]
+    var Value: js.UndefOr[BackupRetentionValue]
+  }
+
+  object BackupRetentionPolicy {
+    @inline
+    def apply(
+        Type: js.UndefOr[BackupRetentionType] = js.undefined,
+        Value: js.UndefOr[BackupRetentionValue] = js.undefined
+    ): BackupRetentionPolicy = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackupRetentionPolicy]
+    }
+  }
+
+  @js.native
+  sealed trait BackupRetentionType extends js.Any
+  object BackupRetentionType {
+    val DAYS = "DAYS".asInstanceOf[BackupRetentionType]
+
+    @inline def values = js.Array(DAYS)
   }
 
   @js.native
@@ -179,6 +218,7 @@ package cloudhsmv2 {
   @js.native
   trait Cluster extends js.Object {
     var BackupPolicy: js.UndefOr[BackupPolicy]
+    var BackupRetentionPolicy: js.UndefOr[BackupRetentionPolicy]
     var Certificates: js.UndefOr[Certificates]
     var ClusterId: js.UndefOr[ClusterId]
     var CreateTimestamp: js.UndefOr[Timestamp]
@@ -198,6 +238,7 @@ package cloudhsmv2 {
     @inline
     def apply(
         BackupPolicy: js.UndefOr[BackupPolicy] = js.undefined,
+        BackupRetentionPolicy: js.UndefOr[BackupRetentionPolicy] = js.undefined,
         Certificates: js.UndefOr[Certificates] = js.undefined,
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
         CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
@@ -214,6 +255,7 @@ package cloudhsmv2 {
     ): Cluster = {
       val __obj = js.Dynamic.literal()
       BackupPolicy.foreach(__v => __obj.updateDynamic("BackupPolicy")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPolicy.foreach(__v => __obj.updateDynamic("BackupRetentionPolicy")(__v.asInstanceOf[js.Any]))
       Certificates.foreach(__v => __obj.updateDynamic("Certificates")(__v.asInstanceOf[js.Any]))
       ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
       CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
@@ -291,6 +333,7 @@ package cloudhsmv2 {
   trait CreateClusterRequest extends js.Object {
     var HsmType: HsmType
     var SubnetIds: SubnetIds
+    var BackupRetentionPolicy: js.UndefOr[BackupRetentionPolicy]
     var SourceBackupId: js.UndefOr[BackupId]
     var TagList: js.UndefOr[TagList]
   }
@@ -300,6 +343,7 @@ package cloudhsmv2 {
     def apply(
         HsmType: HsmType,
         SubnetIds: SubnetIds,
+        BackupRetentionPolicy: js.UndefOr[BackupRetentionPolicy] = js.undefined,
         SourceBackupId: js.UndefOr[BackupId] = js.undefined,
         TagList: js.UndefOr[TagList] = js.undefined
     ): CreateClusterRequest = {
@@ -308,6 +352,7 @@ package cloudhsmv2 {
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
 
+      BackupRetentionPolicy.foreach(__v => __obj.updateDynamic("BackupRetentionPolicy")(__v.asInstanceOf[js.Any]))
       SourceBackupId.foreach(__v => __obj.updateDynamic("SourceBackupId")(__v.asInstanceOf[js.Any]))
       TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
@@ -482,7 +527,7 @@ package cloudhsmv2 {
   @js.native
   trait DescribeBackupsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
-    var MaxResults: js.UndefOr[MaxSize]
+    var MaxResults: js.UndefOr[BackupsMaxSize]
     var NextToken: js.UndefOr[NextToken]
     var SortAscending: js.UndefOr[Boolean]
   }
@@ -491,7 +536,7 @@ package cloudhsmv2 {
     @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxSize] = js.undefined,
+        MaxResults: js.UndefOr[BackupsMaxSize] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SortAscending: js.UndefOr[Boolean] = js.undefined
     ): DescribeBackupsRequest = {
@@ -526,7 +571,7 @@ package cloudhsmv2 {
   @js.native
   trait DescribeClustersRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
-    var MaxResults: js.UndefOr[MaxSize]
+    var MaxResults: js.UndefOr[ClustersMaxSize]
     var NextToken: js.UndefOr[NextToken]
   }
 
@@ -534,7 +579,7 @@ package cloudhsmv2 {
     @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
-        MaxResults: js.UndefOr[MaxSize] = js.undefined,
+        MaxResults: js.UndefOr[ClustersMaxSize] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeClustersRequest = {
       val __obj = js.Dynamic.literal()
@@ -728,6 +773,78 @@ package cloudhsmv2 {
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
+    }
+  }
+
+  @js.native
+  trait ModifyBackupAttributesRequest extends js.Object {
+    var BackupId: BackupId
+    var NeverExpires: Boolean
+  }
+
+  object ModifyBackupAttributesRequest {
+    @inline
+    def apply(
+        BackupId: BackupId,
+        NeverExpires: Boolean
+    ): ModifyBackupAttributesRequest = {
+      val __obj = js.Dynamic.literal(
+        "BackupId" -> BackupId.asInstanceOf[js.Any],
+        "NeverExpires" -> NeverExpires.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModifyBackupAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyBackupAttributesResponse extends js.Object {
+    var Backup: js.UndefOr[Backup]
+  }
+
+  object ModifyBackupAttributesResponse {
+    @inline
+    def apply(
+        Backup: js.UndefOr[Backup] = js.undefined
+    ): ModifyBackupAttributesResponse = {
+      val __obj = js.Dynamic.literal()
+      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyBackupAttributesResponse]
+    }
+  }
+
+  @js.native
+  trait ModifyClusterRequest extends js.Object {
+    var BackupRetentionPolicy: BackupRetentionPolicy
+    var ClusterId: ClusterId
+  }
+
+  object ModifyClusterRequest {
+    @inline
+    def apply(
+        BackupRetentionPolicy: BackupRetentionPolicy,
+        ClusterId: ClusterId
+    ): ModifyClusterRequest = {
+      val __obj = js.Dynamic.literal(
+        "BackupRetentionPolicy" -> BackupRetentionPolicy.asInstanceOf[js.Any],
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModifyClusterRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyClusterResponse extends js.Object {
+    var Cluster: js.UndefOr[Cluster]
+  }
+
+  object ModifyClusterResponse {
+    @inline
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifyClusterResponse = {
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyClusterResponse]
     }
   }
 

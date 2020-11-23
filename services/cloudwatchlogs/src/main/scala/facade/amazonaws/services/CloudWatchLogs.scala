@@ -1822,6 +1822,8 @@ package cloudwatchlogs {
     }
   }
 
+  /** This structure contains details about a saved CloudWatch Logs Insights query definition.
+    */
   @js.native
   trait QueryDefinition extends js.Object {
     var lastModified: js.UndefOr[Timestamp]

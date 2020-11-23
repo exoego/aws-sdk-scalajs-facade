@@ -21,13 +21,16 @@ package object quicksight {
   type Catalog = String
   type ClusterId = String
   type ColorList = js.Array[HexColor]
+  type ColumnDescriptiveText = String
   type ColumnGroupColumnSchemaList = js.Array[ColumnGroupColumnSchema]
   type ColumnGroupList = js.Array[ColumnGroup]
   type ColumnGroupName = String
   type ColumnGroupSchemaList = js.Array[ColumnGroupSchema]
   type ColumnId = String
+  type ColumnLevelPermissionRuleList = js.Array[ColumnLevelPermissionRule]
   type ColumnList = js.Array[ColumnName]
   type ColumnName = String
+  type ColumnNameList = js.Array[String]
   type ColumnSchemaList = js.Array[ColumnSchema]
   type ColumnTagList = js.Array[ColumnTag]
   type CopySourceArn = String
@@ -88,6 +91,7 @@ package object quicksight {
   type Port = Int
   type PositiveInteger = Int
   type Principal = String
+  type PrincipalList = js.Array[String]
   type ProjectedColumnList = js.Array[String]
   type Query = String
   type RecoveryWindowInDays = Double
@@ -102,6 +106,7 @@ package object quicksight {
   type S3Bucket = String
   type S3Key = String
   type SessionLifetimeInMinutes = Double
+  type SheetList = js.Array[Sheet]
   type SiteBaseUrl = String
   type SqlQuery = String
   type StatusCode = Int
@@ -461,6 +466,7 @@ package quicksight {
     var Errors: js.UndefOr[AnalysisErrorList]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[AnalysisName]
+    var Sheets: js.UndefOr[SheetList]
     var Status: js.UndefOr[ResourceStatus]
     var ThemeArn: js.UndefOr[Arn]
   }
@@ -475,6 +481,7 @@ package quicksight {
         Errors: js.UndefOr[AnalysisErrorList] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[AnalysisName] = js.undefined,
+        Sheets: js.UndefOr[SheetList] = js.undefined,
         Status: js.UndefOr[ResourceStatus] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined
     ): Analysis = {
@@ -486,6 +493,7 @@ package quicksight {
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Sheets.foreach(__v => __obj.updateDynamic("Sheets")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Analysis]
@@ -871,6 +879,24 @@ package quicksight {
     @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
   }
 
+  /** Metadata that contains a description for a column.
+    */
+  @js.native
+  trait ColumnDescription extends js.Object {
+    var Text: js.UndefOr[ColumnDescriptiveText]
+  }
+
+  object ColumnDescription {
+    @inline
+    def apply(
+        Text: js.UndefOr[ColumnDescriptiveText] = js.undefined
+    ): ColumnDescription = {
+      val __obj = js.Dynamic.literal()
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnDescription]
+    }
+  }
+
   /** Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
@@ -928,6 +954,27 @@ package quicksight {
     }
   }
 
+  /** A rule defined to grant access on one or more restricted columns. Each dataset can have multiple rules. To create a restricted column, you add it to one or more rules. Each rule must contain at least one column and at least one user or group. To be able to see a restricted column, a user or group needs to be added to a rule for that column.
+    */
+  @js.native
+  trait ColumnLevelPermissionRule extends js.Object {
+    var ColumnNames: js.UndefOr[ColumnNameList]
+    var Principals: js.UndefOr[PrincipalList]
+  }
+
+  object ColumnLevelPermissionRule {
+    @inline
+    def apply(
+        ColumnNames: js.UndefOr[ColumnNameList] = js.undefined,
+        Principals: js.UndefOr[PrincipalList] = js.undefined
+    ): ColumnLevelPermissionRule = {
+      val __obj = js.Dynamic.literal()
+      ColumnNames.foreach(__v => __obj.updateDynamic("ColumnNames")(__v.asInstanceOf[js.Any]))
+      Principals.foreach(__v => __obj.updateDynamic("Principals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnLevelPermissionRule]
+    }
+  }
+
   /** The column schema.
     */
   @js.native
@@ -956,15 +1003,18 @@ package quicksight {
     */
   @js.native
   trait ColumnTag extends js.Object {
+    var ColumnDescription: js.UndefOr[ColumnDescription]
     var ColumnGeographicRole: js.UndefOr[GeoSpatialDataRole]
   }
 
   object ColumnTag {
     @inline
     def apply(
+        ColumnDescription: js.UndefOr[ColumnDescription] = js.undefined,
         ColumnGeographicRole: js.UndefOr[GeoSpatialDataRole] = js.undefined
     ): ColumnTag = {
       val __obj = js.Dynamic.literal()
+      ColumnDescription.foreach(__v => __obj.updateDynamic("ColumnDescription")(__v.asInstanceOf[js.Any]))
       ColumnGeographicRole.foreach(__v => __obj.updateDynamic("ColumnGeographicRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnTag]
     }
@@ -975,6 +1025,7 @@ package quicksight {
     var AccountCustomization: AccountCustomization
     var AwsAccountId: AwsAccountId
     var Namespace: js.UndefOr[Namespace]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateAccountCustomizationRequest {
@@ -982,7 +1033,8 @@ package quicksight {
     def apply(
         AccountCustomization: AccountCustomization,
         AwsAccountId: AwsAccountId,
-        Namespace: js.UndefOr[Namespace] = js.undefined
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAccountCustomizationRequest = {
       val __obj = js.Dynamic.literal(
         "AccountCustomization" -> AccountCustomization.asInstanceOf[js.Any],
@@ -990,6 +1042,7 @@ package quicksight {
       )
 
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccountCustomizationRequest]
     }
   }
@@ -997,6 +1050,7 @@ package quicksight {
   @js.native
   trait CreateAccountCustomizationResponse extends js.Object {
     var AccountCustomization: js.UndefOr[AccountCustomization]
+    var Arn: js.UndefOr[Arn]
     var AwsAccountId: js.UndefOr[AwsAccountId]
     var Namespace: js.UndefOr[Namespace]
     var RequestId: js.UndefOr[String]
@@ -1007,6 +1061,7 @@ package quicksight {
     @inline
     def apply(
         AccountCustomization: js.UndefOr[AccountCustomization] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
         AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -1014,6 +1069,7 @@ package quicksight {
     ): CreateAccountCustomizationResponse = {
       val __obj = js.Dynamic.literal()
       AccountCustomization.foreach(__v => __obj.updateDynamic("AccountCustomization")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
@@ -1192,6 +1248,7 @@ package quicksight {
     var Name: ResourceName
     var PhysicalTableMap: PhysicalTableMap
     var ColumnGroups: js.UndefOr[ColumnGroupList]
+    var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
@@ -1207,6 +1264,7 @@ package quicksight {
         Name: ResourceName,
         PhysicalTableMap: PhysicalTableMap,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
+        ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined,
@@ -1221,6 +1279,7 @@ package quicksight {
       )
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
+      ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
@@ -2147,6 +2206,7 @@ package quicksight {
     var DataSetArns: js.UndefOr[DataSetArnsList]
     var Description: js.UndefOr[VersionDescription]
     var Errors: js.UndefOr[DashboardErrorList]
+    var Sheets: js.UndefOr[SheetList]
     var SourceEntityArn: js.UndefOr[Arn]
     var Status: js.UndefOr[ResourceStatus]
     var ThemeArn: js.UndefOr[Arn]
@@ -2161,6 +2221,7 @@ package quicksight {
         DataSetArns: js.UndefOr[DataSetArnsList] = js.undefined,
         Description: js.UndefOr[VersionDescription] = js.undefined,
         Errors: js.UndefOr[DashboardErrorList] = js.undefined,
+        Sheets: js.UndefOr[SheetList] = js.undefined,
         SourceEntityArn: js.UndefOr[Arn] = js.undefined,
         Status: js.UndefOr[ResourceStatus] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined,
@@ -2172,6 +2233,7 @@ package quicksight {
       DataSetArns.foreach(__v => __obj.updateDynamic("DataSetArns")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Sheets.foreach(__v => __obj.updateDynamic("Sheets")(__v.asInstanceOf[js.Any]))
       SourceEntityArn.foreach(__v => __obj.updateDynamic("SourceEntityArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
@@ -2213,7 +2275,7 @@ package quicksight {
     }
   }
 
-  /** The theme colors that are used for data colors in charts. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
+  /** The theme colors that are used for data colors in charts. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
     */
   @js.native
   trait DataColorPalette extends js.Object {
@@ -2243,6 +2305,7 @@ package quicksight {
   trait DataSet extends js.Object {
     var Arn: js.UndefOr[Arn]
     var ColumnGroups: js.UndefOr[ColumnGroupList]
+    var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
     var ConsumedSpiceCapacityInBytes: js.UndefOr[Double]
     var CreatedTime: js.UndefOr[Timestamp]
     var DataSetId: js.UndefOr[ResourceId]
@@ -2260,6 +2323,7 @@ package quicksight {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
+        ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
         ConsumedSpiceCapacityInBytes: js.UndefOr[Double] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DataSetId: js.UndefOr[ResourceId] = js.undefined,
@@ -2274,6 +2338,7 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
+      ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
       ConsumedSpiceCapacityInBytes.foreach(__v => __obj.updateDynamic("ConsumedSpiceCapacityInBytes")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
@@ -2366,6 +2431,7 @@ package quicksight {
   @js.native
   trait DataSetSummary extends js.Object {
     var Arn: js.UndefOr[Arn]
+    var ColumnLevelPermissionRulesApplied: js.UndefOr[Boolean]
     var CreatedTime: js.UndefOr[Timestamp]
     var DataSetId: js.UndefOr[ResourceId]
     var ImportMode: js.UndefOr[DataSetImportMode]
@@ -2378,6 +2444,7 @@ package quicksight {
     @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
+        ColumnLevelPermissionRulesApplied: js.UndefOr[Boolean] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DataSetId: js.UndefOr[ResourceId] = js.undefined,
         ImportMode: js.UndefOr[DataSetImportMode] = js.undefined,
@@ -2387,6 +2454,7 @@ package quicksight {
     ): DataSetSummary = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      ColumnLevelPermissionRulesApplied.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRulesApplied")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
       ImportMode.foreach(__v => __obj.updateDynamic("ImportMode")(__v.asInstanceOf[js.Any]))
@@ -2517,6 +2585,7 @@ package quicksight {
     var JiraParameters: js.UndefOr[JiraParameters]
     var MariaDbParameters: js.UndefOr[MariaDbParameters]
     var MySqlParameters: js.UndefOr[MySqlParameters]
+    var OracleParameters: js.UndefOr[OracleParameters]
     var PostgreSqlParameters: js.UndefOr[PostgreSqlParameters]
     var PrestoParameters: js.UndefOr[PrestoParameters]
     var RdsParameters: js.UndefOr[RdsParameters]
@@ -2541,6 +2610,7 @@ package quicksight {
         JiraParameters: js.UndefOr[JiraParameters] = js.undefined,
         MariaDbParameters: js.UndefOr[MariaDbParameters] = js.undefined,
         MySqlParameters: js.UndefOr[MySqlParameters] = js.undefined,
+        OracleParameters: js.UndefOr[OracleParameters] = js.undefined,
         PostgreSqlParameters: js.UndefOr[PostgreSqlParameters] = js.undefined,
         PrestoParameters: js.UndefOr[PrestoParameters] = js.undefined,
         RdsParameters: js.UndefOr[RdsParameters] = js.undefined,
@@ -2562,6 +2632,7 @@ package quicksight {
       JiraParameters.foreach(__v => __obj.updateDynamic("JiraParameters")(__v.asInstanceOf[js.Any]))
       MariaDbParameters.foreach(__v => __obj.updateDynamic("MariaDbParameters")(__v.asInstanceOf[js.Any]))
       MySqlParameters.foreach(__v => __obj.updateDynamic("MySqlParameters")(__v.asInstanceOf[js.Any]))
+      OracleParameters.foreach(__v => __obj.updateDynamic("OracleParameters")(__v.asInstanceOf[js.Any]))
       PostgreSqlParameters.foreach(__v => __obj.updateDynamic("PostgreSqlParameters")(__v.asInstanceOf[js.Any]))
       PrestoParameters.foreach(__v => __obj.updateDynamic("PrestoParameters")(__v.asInstanceOf[js.Any]))
       RdsParameters.foreach(__v => __obj.updateDynamic("RdsParameters")(__v.asInstanceOf[js.Any]))
@@ -2590,6 +2661,7 @@ package quicksight {
     val JIRA = "JIRA".asInstanceOf[DataSourceType]
     val MARIADB = "MARIADB".asInstanceOf[DataSourceType]
     val MYSQL = "MYSQL".asInstanceOf[DataSourceType]
+    val ORACLE = "ORACLE".asInstanceOf[DataSourceType]
     val POSTGRESQL = "POSTGRESQL".asInstanceOf[DataSourceType]
     val PRESTO = "PRESTO".asInstanceOf[DataSourceType]
     val REDSHIFT = "REDSHIFT".asInstanceOf[DataSourceType]
@@ -2601,6 +2673,7 @@ package quicksight {
     val SQLSERVER = "SQLSERVER".asInstanceOf[DataSourceType]
     val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
     val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
+    val TIMESTREAM = "TIMESTREAM".asInstanceOf[DataSourceType]
 
     @inline def values = js.Array(
       ADOBE_ANALYTICS,
@@ -2613,6 +2686,7 @@ package quicksight {
       JIRA,
       MARIADB,
       MYSQL,
+      ORACLE,
       POSTGRESQL,
       PRESTO,
       REDSHIFT,
@@ -2623,7 +2697,8 @@ package quicksight {
       SPARK,
       SQLSERVER,
       TERADATA,
-      TWITTER
+      TWITTER,
+      TIMESTREAM
     )
   }
 
@@ -3389,6 +3464,7 @@ package quicksight {
   @js.native
   trait DescribeAccountCustomizationResponse extends js.Object {
     var AccountCustomization: js.UndefOr[AccountCustomization]
+    var Arn: js.UndefOr[Arn]
     var AwsAccountId: js.UndefOr[AwsAccountId]
     var Namespace: js.UndefOr[Namespace]
     var RequestId: js.UndefOr[String]
@@ -3399,6 +3475,7 @@ package quicksight {
     @inline
     def apply(
         AccountCustomization: js.UndefOr[AccountCustomization] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
         AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -3406,6 +3483,7 @@ package quicksight {
     ): DescribeAccountCustomizationResponse = {
       val __obj = js.Dynamic.literal()
       AccountCustomization.foreach(__v => __obj.updateDynamic("AccountCustomization")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
@@ -4468,6 +4546,7 @@ package quicksight {
     var IdentityType: IdentityType
     var ResetDisabled: js.UndefOr[Boolean]
     var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
+    var StatePersistenceEnabled: js.UndefOr[Boolean]
     var UndoRedoDisabled: js.UndefOr[Boolean]
     var UserArn: js.UndefOr[Arn]
   }
@@ -4480,6 +4559,7 @@ package quicksight {
         IdentityType: IdentityType,
         ResetDisabled: js.UndefOr[Boolean] = js.undefined,
         SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined,
+        StatePersistenceEnabled: js.UndefOr[Boolean] = js.undefined,
         UndoRedoDisabled: js.UndefOr[Boolean] = js.undefined,
         UserArn: js.UndefOr[Arn] = js.undefined
     ): GetDashboardEmbedUrlRequest = {
@@ -4491,6 +4571,7 @@ package quicksight {
 
       ResetDisabled.foreach(__v => __obj.updateDynamic("ResetDisabled")(__v.asInstanceOf[js.Any]))
       SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
+      StatePersistenceEnabled.foreach(__v => __obj.updateDynamic("StatePersistenceEnabled")(__v.asInstanceOf[js.Any]))
       UndoRedoDisabled.foreach(__v => __obj.updateDynamic("UndoRedoDisabled")(__v.asInstanceOf[js.Any]))
       UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDashboardEmbedUrlRequest]
@@ -6225,10 +6306,36 @@ package quicksight {
     @inline def values = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
   }
 
+  /** Oracle parameters.
+    */
+  @js.native
+  trait OracleParameters extends js.Object {
+    var Database: Database
+    var Host: Host
+    var Port: Port
+  }
+
+  object OracleParameters {
+    @inline
+    def apply(
+        Database: Database,
+        Host: Host,
+        Port: Port
+    ): OracleParameters = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OracleParameters]
+    }
+  }
+
   /** Output column.
     */
   @js.native
   trait OutputColumn extends js.Object {
+    var Description: js.UndefOr[ColumnDescriptiveText]
     var Name: js.UndefOr[ColumnName]
     var Type: js.UndefOr[ColumnDataType]
   }
@@ -6236,10 +6343,12 @@ package quicksight {
   object OutputColumn {
     @inline
     def apply(
+        Description: js.UndefOr[ColumnDescriptiveText] = js.undefined,
         Name: js.UndefOr[ColumnName] = js.undefined,
         Type: js.UndefOr[ColumnDataType] = js.undefined
     ): OutputColumn = {
       val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputColumn]
@@ -6862,6 +6971,27 @@ package quicksight {
     }
   }
 
+  /** A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in the Amazon QuickSight console. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.
+    */
+  @js.native
+  trait Sheet extends js.Object {
+    var Name: js.UndefOr[NonEmptyString]
+    var SheetId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object Sheet {
+    @inline
+    def apply(
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        SheetId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): Sheet = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SheetId.foreach(__v => __obj.updateDynamic("SheetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Sheet]
+    }
+  }
+
   /** Sheet controls option.
     */
   @js.native
@@ -7289,6 +7419,7 @@ package quicksight {
     var DataSetConfigurations: js.UndefOr[DataSetConfigurationList]
     var Description: js.UndefOr[VersionDescription]
     var Errors: js.UndefOr[TemplateErrorList]
+    var Sheets: js.UndefOr[SheetList]
     var SourceEntityArn: js.UndefOr[Arn]
     var Status: js.UndefOr[ResourceStatus]
     var ThemeArn: js.UndefOr[Arn]
@@ -7302,6 +7433,7 @@ package quicksight {
         DataSetConfigurations: js.UndefOr[DataSetConfigurationList] = js.undefined,
         Description: js.UndefOr[VersionDescription] = js.undefined,
         Errors: js.UndefOr[TemplateErrorList] = js.undefined,
+        Sheets: js.UndefOr[SheetList] = js.undefined,
         SourceEntityArn: js.UndefOr[Arn] = js.undefined,
         Status: js.UndefOr[ResourceStatus] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined,
@@ -7312,6 +7444,7 @@ package quicksight {
       DataSetConfigurations.foreach(__v => __obj.updateDynamic("DataSetConfigurations")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Sheets.foreach(__v => __obj.updateDynamic("Sheets")(__v.asInstanceOf[js.Any]))
       SourceEntityArn.foreach(__v => __obj.updateDynamic("SourceEntityArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
@@ -7703,7 +7836,7 @@ package quicksight {
     }
   }
 
-  /** The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexidecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html|Using Themes in Amazon QuickSight]] in the <i>Amazon QuickSight User Guide.</i>
+  /** The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html|Using Themes in Amazon QuickSight]] in the <i>Amazon QuickSight User Guide.</i>
     */
   @js.native
   trait UIColorPalette extends js.Object {
@@ -7832,6 +7965,7 @@ package quicksight {
   @js.native
   trait UpdateAccountCustomizationResponse extends js.Object {
     var AccountCustomization: js.UndefOr[AccountCustomization]
+    var Arn: js.UndefOr[Arn]
     var AwsAccountId: js.UndefOr[AwsAccountId]
     var Namespace: js.UndefOr[Namespace]
     var RequestId: js.UndefOr[String]
@@ -7842,6 +7976,7 @@ package quicksight {
     @inline
     def apply(
         AccountCustomization: js.UndefOr[AccountCustomization] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
         AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -7849,6 +7984,7 @@ package quicksight {
     ): UpdateAccountCustomizationResponse = {
       val __obj = js.Dynamic.literal()
       AccountCustomization.foreach(__v => __obj.updateDynamic("AccountCustomization")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
@@ -8249,6 +8385,7 @@ package quicksight {
     var Name: ResourceName
     var PhysicalTableMap: PhysicalTableMap
     var ColumnGroups: js.UndefOr[ColumnGroupList]
+    var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
   }
@@ -8262,6 +8399,7 @@ package quicksight {
         Name: ResourceName,
         PhysicalTableMap: PhysicalTableMap,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
+        ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
         RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined
     ): UpdateDataSetRequest = {
@@ -8274,6 +8412,7 @@ package quicksight {
       )
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
+      ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSetRequest]

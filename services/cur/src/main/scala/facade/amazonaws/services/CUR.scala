@@ -45,30 +45,54 @@ package cur {
   @js.native
   sealed trait AWSRegion extends js.Any
   object AWSRegion {
-    val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
-    val `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
-    val `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
-    val `eu-central-1` = "eu-central-1".asInstanceOf[AWSRegion]
-    val `eu-west-1` = "eu-west-1".asInstanceOf[AWSRegion]
+    val `af-south-1` = "af-south-1".asInstanceOf[AWSRegion]
+    val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[AWSRegion]
     val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
     val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
     val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
-    val `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
+    val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[AWSRegion]
     val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
-    val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
+    val `ca-central-1` = "ca-central-1".asInstanceOf[AWSRegion]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[AWSRegion]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[AWSRegion]
+    val `eu-west-2` = "eu-west-2".asInstanceOf[AWSRegion]
+    val `eu-west-3` = "eu-west-3".asInstanceOf[AWSRegion]
+    val `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
+    val `eu-south-1` = "eu-south-1".asInstanceOf[AWSRegion]
+    val `me-south-1` = "me-south-1".asInstanceOf[AWSRegion]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[AWSRegion]
+    val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
+    val `us-east-2` = "us-east-2".asInstanceOf[AWSRegion]
+    val `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
+    val `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[AWSRegion]
+    val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[AWSRegion]
 
     @inline def values = js.Array(
-      `us-east-1`,
-      `us-west-1`,
-      `us-west-2`,
-      `eu-central-1`,
-      `eu-west-1`,
+      `af-south-1`,
+      `ap-east-1`,
+      `ap-south-1`,
       `ap-southeast-1`,
       `ap-southeast-2`,
       `ap-northeast-1`,
-      `eu-north-1`,
+      `ap-northeast-2`,
       `ap-northeast-3`,
-      `ap-east-1`
+      `ca-central-1`,
+      `eu-central-1`,
+      `eu-west-1`,
+      `eu-west-2`,
+      `eu-west-3`,
+      `eu-north-1`,
+      `eu-south-1`,
+      `me-south-1`,
+      `sa-east-1`,
+      `us-east-1`,
+      `us-east-2`,
+      `us-west-1`,
+      `us-west-2`,
+      `cn-north-1`,
+      `cn-northwest-1`
     )
   }
 
@@ -324,7 +348,8 @@ package cur {
   object TimeUnit {
     val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
     val DAILY = "DAILY".asInstanceOf[TimeUnit]
+    val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
 
-    @inline def values = js.Array(HOURLY, DAILY)
+    @inline def values = js.Array(HOURLY, DAILY, MONTHLY)
   }
 }

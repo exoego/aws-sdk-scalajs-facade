@@ -25,12 +25,16 @@ package object lexmodelbuildingservice {
   type ChannelConfigurationMap = js.Dictionary[String]
   type ConfidenceThreshold = Double
   type ContentString = String
+  type ContextTimeToLiveInSeconds = Int
+  type ContextTurnsToLive = Int
   type Count = Int
   type CustomOrBuiltinSlotTypeName = String
   type Description = String
   type EnumerationValues = js.Array[EnumerationValue]
   type GroupNumber = Int
   type IamRoleArn = String
+  type InputContextList = js.Array[InputContext]
+  type InputContextName = String
   type IntentList = js.Array[Intent]
   type IntentMetadataList = js.Array[IntentMetadata]
   type IntentName = String
@@ -49,6 +53,8 @@ package object lexmodelbuildingservice {
   type Name = String
   type NextToken = String
   type NumericalVersion = String
+  type OutputContextList = js.Array[OutputContext]
+  type OutputContextName = String
   type Priority = Int
   type PromptMaxAttempts = Int
   type QueryFilterString = String
@@ -57,6 +63,8 @@ package object lexmodelbuildingservice {
   type ResourcePrefix = String
   type ResponseCard = String
   type SessionTTL = Int
+  type SlotDefaultValueList = js.Array[SlotDefaultValue]
+  type SlotDefaultValueString = String
   type SlotList = js.Array[Slot]
   type SlotName = String
   type SlotTypeConfigurations = js.Array[SlotTypeConfiguration]
@@ -555,9 +563,11 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var inputContexts: js.UndefOr[InputContextList]
     var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
+    var outputContexts: js.UndefOr[OutputContextList]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
     var rejectionStatement: js.UndefOr[Statement]
     var sampleUtterances: js.UndefOr[IntentUtteranceList]
@@ -576,9 +586,11 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        inputContexts: js.UndefOr[InputContextList] = js.undefined,
         kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[IntentName] = js.undefined,
+        outputContexts: js.UndefOr[OutputContextList] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         rejectionStatement: js.UndefOr[Statement] = js.undefined,
         sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
@@ -594,9 +606,11 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      outputContexts.foreach(__v => __obj.updateDynamic("outputContexts")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
       rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
@@ -1610,9 +1624,11 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var inputContexts: js.UndefOr[InputContextList]
     var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
+    var outputContexts: js.UndefOr[OutputContextList]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
     var rejectionStatement: js.UndefOr[Statement]
     var sampleUtterances: js.UndefOr[IntentUtteranceList]
@@ -1631,9 +1647,11 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        inputContexts: js.UndefOr[InputContextList] = js.undefined,
         kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[IntentName] = js.undefined,
+        outputContexts: js.UndefOr[OutputContextList] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         rejectionStatement: js.UndefOr[Statement] = js.undefined,
         sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
@@ -1649,9 +1667,11 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      outputContexts.foreach(__v => __obj.updateDynamic("outputContexts")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
       rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
@@ -1944,6 +1964,25 @@ package lexmodelbuildingservice {
     @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
   }
 
+  /** The name of a context that must be active for an intent to be selected by Amazon Lex.
+    */
+  @js.native
+  trait InputContext extends js.Object {
+    var name: InputContextName
+  }
+
+  object InputContext {
+    @inline
+    def apply(
+        name: InputContextName
+    ): InputContext = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InputContext]
+    }
+  }
+
   /** Identifies the specific version of an intent.
     */
   @js.native
@@ -2058,11 +2097,17 @@ package lexmodelbuildingservice {
   @js.native
   sealed trait Locale extends js.Any
   object Locale {
-    val `en-US` = "en-US".asInstanceOf[Locale]
-    val `en-GB` = "en-GB".asInstanceOf[Locale]
     val `de-DE` = "de-DE".asInstanceOf[Locale]
+    val `en-AU` = "en-AU".asInstanceOf[Locale]
+    val `en-GB` = "en-GB".asInstanceOf[Locale]
+    val `en-US` = "en-US".asInstanceOf[Locale]
+    val `es-ES` = "es-ES".asInstanceOf[Locale]
+    val `es-US` = "es-US".asInstanceOf[Locale]
+    val `fr-FR` = "fr-FR".asInstanceOf[Locale]
+    val `fr-CA` = "fr-CA".asInstanceOf[Locale]
+    val `it-IT` = "it-IT".asInstanceOf[Locale]
 
-    @inline def values = js.Array(`en-US`, `en-GB`, `de-DE`)
+    @inline def values = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`)
   }
 
   /** Settings used to configure delivery mode and destination for conversation logs.
@@ -2175,6 +2220,31 @@ package lexmodelbuildingservice {
     val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
 
     @inline def values = js.Array(NONE, DEFAULT_OBFUSCATION)
+  }
+
+  /** The specification of an output context that is set when an intent is fulfilled.
+    */
+  @js.native
+  trait OutputContext extends js.Object {
+    var name: OutputContextName
+    var timeToLiveInSeconds: ContextTimeToLiveInSeconds
+    var turnsToLive: ContextTurnsToLive
+  }
+
+  object OutputContext {
+    @inline
+    def apply(
+        name: OutputContextName,
+        timeToLiveInSeconds: ContextTimeToLiveInSeconds,
+        turnsToLive: ContextTurnsToLive
+    ): OutputContext = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "timeToLiveInSeconds" -> timeToLiveInSeconds.asInstanceOf[js.Any],
+        "turnsToLive" -> turnsToLive.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OutputContext]
+    }
   }
 
   @js.native
@@ -2435,7 +2505,9 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var inputContexts: js.UndefOr[InputContextList]
     var kendraConfiguration: js.UndefOr[KendraConfiguration]
+    var outputContexts: js.UndefOr[OutputContextList]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
     var rejectionStatement: js.UndefOr[Statement]
     var sampleUtterances: js.UndefOr[IntentUtteranceList]
@@ -2454,7 +2526,9 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        inputContexts: js.UndefOr[InputContextList] = js.undefined,
         kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
+        outputContexts: js.UndefOr[OutputContextList] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         rejectionStatement: js.UndefOr[Statement] = js.undefined,
         sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
@@ -2472,7 +2546,9 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
+      outputContexts.foreach(__v => __obj.updateDynamic("outputContexts")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
       rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
@@ -2492,9 +2568,11 @@ package lexmodelbuildingservice {
     var dialogCodeHook: js.UndefOr[CodeHook]
     var followUpPrompt: js.UndefOr[FollowUpPrompt]
     var fulfillmentActivity: js.UndefOr[FulfillmentActivity]
+    var inputContexts: js.UndefOr[InputContextList]
     var kendraConfiguration: js.UndefOr[KendraConfiguration]
     var lastUpdatedDate: js.UndefOr[Timestamp]
     var name: js.UndefOr[IntentName]
+    var outputContexts: js.UndefOr[OutputContextList]
     var parentIntentSignature: js.UndefOr[BuiltinIntentSignature]
     var rejectionStatement: js.UndefOr[Statement]
     var sampleUtterances: js.UndefOr[IntentUtteranceList]
@@ -2514,9 +2592,11 @@ package lexmodelbuildingservice {
         dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
         followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
         fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+        inputContexts: js.UndefOr[InputContextList] = js.undefined,
         kendraConfiguration: js.UndefOr[KendraConfiguration] = js.undefined,
         lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[IntentName] = js.undefined,
+        outputContexts: js.UndefOr[OutputContextList] = js.undefined,
         parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
         rejectionStatement: js.UndefOr[Statement] = js.undefined,
         sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
@@ -2533,9 +2613,11 @@ package lexmodelbuildingservice {
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       followUpPrompt.foreach(__v => __obj.updateDynamic("followUpPrompt")(__v.asInstanceOf[js.Any]))
       fulfillmentActivity.foreach(__v => __obj.updateDynamic("fulfillmentActivity")(__v.asInstanceOf[js.Any]))
+      inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       kendraConfiguration.foreach(__v => __obj.updateDynamic("kendraConfiguration")(__v.asInstanceOf[js.Any]))
       lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      outputContexts.foreach(__v => __obj.updateDynamic("outputContexts")(__v.asInstanceOf[js.Any]))
       parentIntentSignature.foreach(__v => __obj.updateDynamic("parentIntentSignature")(__v.asInstanceOf[js.Any]))
       rejectionStatement.foreach(__v => __obj.updateDynamic("rejectionStatement")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
@@ -2646,6 +2728,7 @@ package lexmodelbuildingservice {
   trait Slot extends js.Object {
     var name: SlotName
     var slotConstraint: SlotConstraint
+    var defaultValueSpec: js.UndefOr[SlotDefaultValueSpec]
     var description: js.UndefOr[Description]
     var obfuscationSetting: js.UndefOr[ObfuscationSetting]
     var priority: js.UndefOr[Priority]
@@ -2661,6 +2744,7 @@ package lexmodelbuildingservice {
     def apply(
         name: SlotName,
         slotConstraint: SlotConstraint,
+        defaultValueSpec: js.UndefOr[SlotDefaultValueSpec] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined,
         priority: js.UndefOr[Priority] = js.undefined,
@@ -2675,6 +2759,7 @@ package lexmodelbuildingservice {
         "slotConstraint" -> slotConstraint.asInstanceOf[js.Any]
       )
 
+      defaultValueSpec.foreach(__v => __obj.updateDynamic("defaultValueSpec")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       obfuscationSetting.foreach(__v => __obj.updateDynamic("obfuscationSetting")(__v.asInstanceOf[js.Any]))
       priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
@@ -2694,6 +2779,44 @@ package lexmodelbuildingservice {
     val Optional = "Optional".asInstanceOf[SlotConstraint]
 
     @inline def values = js.Array(Required, Optional)
+  }
+
+  /** A default value for a slot.
+    */
+  @js.native
+  trait SlotDefaultValue extends js.Object {
+    var defaultValue: SlotDefaultValueString
+  }
+
+  object SlotDefaultValue {
+    @inline
+    def apply(
+        defaultValue: SlotDefaultValueString
+    ): SlotDefaultValue = {
+      val __obj = js.Dynamic.literal(
+        "defaultValue" -> defaultValue.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SlotDefaultValue]
+    }
+  }
+
+  /** Contains the default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot.
+    */
+  @js.native
+  trait SlotDefaultValueSpec extends js.Object {
+    var defaultValueList: SlotDefaultValueList
+  }
+
+  object SlotDefaultValueSpec {
+    @inline
+    def apply(
+        defaultValueList: SlotDefaultValueList
+    ): SlotDefaultValueSpec = {
+      val __obj = js.Dynamic.literal(
+        "defaultValueList" -> defaultValueList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SlotDefaultValueSpec]
+    }
   }
 
   /** Provides configuration information for a slot type.

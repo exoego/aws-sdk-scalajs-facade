@@ -9,7 +9,11 @@ import facade.amazonaws._
 package object backup {
   type ARN = String
   type AccountId = String
+  type AdvancedBackupSettings = js.Array[AdvancedBackupSetting]
   type BackupJobsList = js.Array[BackupJob]
+  type BackupOptionKey = String
+  type BackupOptionValue = String
+  type BackupOptions = js.Dictionary[BackupOptionValue]
   type BackupPlanName = String
   type BackupPlanTemplatesList = js.Array[BackupPlanTemplatesListMember]
   type BackupPlanVersionsList = js.Array[BackupPlansListMember]
@@ -27,6 +31,9 @@ package object backup {
   type CopyActions = js.Array[CopyAction]
   type CopyJobsList = js.Array[CopyJob]
   type CronExpression = String
+  type GlobalSettings = js.Dictionary[GlobalSettingsValue]
+  type GlobalSettingsName = String
+  type GlobalSettingsValue = String
   type IAMPolicy = String
   type IAMRoleArn = String
   type IsEnabled = Boolean
@@ -65,6 +72,7 @@ package object backup {
     @inline def describeBackupJobFuture(params: DescribeBackupJobInput): Future[DescribeBackupJobOutput] = service.describeBackupJob(params).promise().toFuture
     @inline def describeBackupVaultFuture(params: DescribeBackupVaultInput): Future[DescribeBackupVaultOutput] = service.describeBackupVault(params).promise().toFuture
     @inline def describeCopyJobFuture(params: DescribeCopyJobInput): Future[DescribeCopyJobOutput] = service.describeCopyJob(params).promise().toFuture
+    @inline def describeGlobalSettingsFuture(params: DescribeGlobalSettingsInput): Future[DescribeGlobalSettingsOutput] = service.describeGlobalSettings(params).promise().toFuture
     @inline def describeProtectedResourceFuture(params: DescribeProtectedResourceInput): Future[DescribeProtectedResourceOutput] = service.describeProtectedResource(params).promise().toFuture
     @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] = service.describeRecoveryPoint(params).promise().toFuture
     @inline def describeRegionSettingsFuture(params: DescribeRegionSettingsInput): Future[DescribeRegionSettingsOutput] = service.describeRegionSettings(params).promise().toFuture
@@ -99,6 +107,7 @@ package object backup {
     @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] = service.updateBackupPlan(params).promise().toFuture
+    @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsInput): Future[js.Object] = service.updateGlobalSettings(params).promise().toFuture
     @inline def updateRecoveryPointLifecycleFuture(params: UpdateRecoveryPointLifecycleInput): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise().toFuture
     @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] = service.updateRegionSettings(params).promise().toFuture
 
@@ -123,6 +132,7 @@ package backup {
     def describeBackupJob(params: DescribeBackupJobInput): Request[DescribeBackupJobOutput] = js.native
     def describeBackupVault(params: DescribeBackupVaultInput): Request[DescribeBackupVaultOutput] = js.native
     def describeCopyJob(params: DescribeCopyJobInput): Request[DescribeCopyJobOutput] = js.native
+    def describeGlobalSettings(params: DescribeGlobalSettingsInput): Request[DescribeGlobalSettingsOutput] = js.native
     def describeProtectedResource(params: DescribeProtectedResourceInput): Request[DescribeProtectedResourceOutput] = js.native
     def describeRecoveryPoint(params: DescribeRecoveryPointInput): Request[DescribeRecoveryPointOutput] = js.native
     def describeRegionSettings(params: DescribeRegionSettingsInput): Request[DescribeRegionSettingsOutput] = js.native
@@ -157,8 +167,30 @@ package backup {
     def tagResource(params: TagResourceInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
     def updateBackupPlan(params: UpdateBackupPlanInput): Request[UpdateBackupPlanOutput] = js.native
+    def updateGlobalSettings(params: UpdateGlobalSettingsInput): Request[js.Object] = js.native
     def updateRecoveryPointLifecycle(params: UpdateRecoveryPointLifecycleInput): Request[UpdateRecoveryPointLifecycleOutput] = js.native
     def updateRegionSettings(params: UpdateRegionSettingsInput): Request[js.Object] = js.native
+  }
+
+  /** A list of backup options for each resource type.
+    */
+  @js.native
+  trait AdvancedBackupSetting extends js.Object {
+    var BackupOptions: js.UndefOr[BackupOptions]
+    var ResourceType: js.UndefOr[ResourceType]
+  }
+
+  object AdvancedBackupSetting {
+    @inline
+    def apply(
+        BackupOptions: js.UndefOr[BackupOptions] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): AdvancedBackupSetting = {
+      val __obj = js.Dynamic.literal()
+      BackupOptions.foreach(__v => __obj.updateDynamic("BackupOptions")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdvancedBackupSetting]
+    }
   }
 
   /** Contains detailed information about a backup job.
@@ -167,7 +199,9 @@ package backup {
   trait BackupJob extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var BackupJobId: js.UndefOr[String]
+    var BackupOptions: js.UndefOr[BackupOptions]
     var BackupSizeInBytes: js.UndefOr[Double]
+    var BackupType: js.UndefOr[String]
     var BackupVaultArn: js.UndefOr[ARN]
     var BackupVaultName: js.UndefOr[BackupVaultName]
     var BytesTransferred: js.UndefOr[Double]
@@ -190,7 +224,9 @@ package backup {
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupJobId: js.UndefOr[String] = js.undefined,
+        BackupOptions: js.UndefOr[BackupOptions] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
+        BackupType: js.UndefOr[String] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         BytesTransferred: js.UndefOr[Double] = js.undefined,
@@ -210,7 +246,9 @@ package backup {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
+      BackupOptions.foreach(__v => __obj.updateDynamic("BackupOptions")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      BackupType.foreach(__v => __obj.updateDynamic("BackupType")(__v.asInstanceOf[js.Any]))
       BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
       BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
       BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
@@ -251,18 +289,22 @@ package backup {
   trait BackupPlan extends js.Object {
     var BackupPlanName: BackupPlanName
     var Rules: BackupRules
+    var AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings]
   }
 
   object BackupPlan {
     @inline
     def apply(
         BackupPlanName: BackupPlanName,
-        Rules: BackupRules
+        Rules: BackupRules,
+        AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings] = js.undefined
     ): BackupPlan = {
       val __obj = js.Dynamic.literal(
         "BackupPlanName" -> BackupPlanName.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
+
+      AdvancedBackupSettings.foreach(__v => __obj.updateDynamic("AdvancedBackupSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupPlan]
     }
   }
@@ -273,18 +315,22 @@ package backup {
   trait BackupPlanInput extends js.Object {
     var BackupPlanName: BackupPlanName
     var Rules: BackupRulesInput
+    var AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings]
   }
 
   object BackupPlanInput {
     @inline
     def apply(
         BackupPlanName: BackupPlanName,
-        Rules: BackupRulesInput
+        Rules: BackupRulesInput,
+        AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings] = js.undefined
     ): BackupPlanInput = {
       val __obj = js.Dynamic.literal(
         "BackupPlanName" -> BackupPlanName.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
+
+      AdvancedBackupSettings.foreach(__v => __obj.updateDynamic("AdvancedBackupSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupPlanInput]
     }
   }
@@ -314,6 +360,7 @@ package backup {
     */
   @js.native
   trait BackupPlansListMember extends js.Object {
+    var AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings]
     var BackupPlanArn: js.UndefOr[ARN]
     var BackupPlanId: js.UndefOr[String]
     var BackupPlanName: js.UndefOr[BackupPlanName]
@@ -327,6 +374,7 @@ package backup {
   object BackupPlansListMember {
     @inline
     def apply(
+        AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings] = js.undefined,
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
         BackupPlanName: js.UndefOr[BackupPlanName] = js.undefined,
@@ -337,6 +385,7 @@ package backup {
         VersionId: js.UndefOr[String] = js.undefined
     ): BackupPlansListMember = {
       val __obj = js.Dynamic.literal()
+      AdvancedBackupSettings.foreach(__v => __obj.updateDynamic("AdvancedBackupSettings")(__v.asInstanceOf[js.Any]))
       BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
       BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
       BackupPlanName.foreach(__v => __obj.updateDynamic("BackupPlanName")(__v.asInstanceOf[js.Any]))
@@ -590,7 +639,7 @@ package backup {
     }
   }
 
-  /** Contains an array of triplets made up of a condition type (such as <code>STRINGEQUALS</code>), a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
+  /** Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
     */
   @js.native
   trait Condition extends js.Object {
@@ -743,6 +792,7 @@ package backup {
 
   @js.native
   trait CreateBackupPlanOutput extends js.Object {
+    var AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings]
     var BackupPlanArn: js.UndefOr[ARN]
     var BackupPlanId: js.UndefOr[String]
     var CreationDate: js.UndefOr[timestamp]
@@ -752,12 +802,14 @@ package backup {
   object CreateBackupPlanOutput {
     @inline
     def apply(
+        AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings] = js.undefined,
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): CreateBackupPlanOutput = {
       val __obj = js.Dynamic.literal()
+      AdvancedBackupSettings.foreach(__v => __obj.updateDynamic("AdvancedBackupSettings")(__v.asInstanceOf[js.Any]))
       BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
       BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
@@ -1015,7 +1067,9 @@ package backup {
   trait DescribeBackupJobOutput extends js.Object {
     var AccountId: js.UndefOr[AccountId]
     var BackupJobId: js.UndefOr[String]
+    var BackupOptions: js.UndefOr[BackupOptions]
     var BackupSizeInBytes: js.UndefOr[Double]
+    var BackupType: js.UndefOr[String]
     var BackupVaultArn: js.UndefOr[ARN]
     var BackupVaultName: js.UndefOr[BackupVaultName]
     var BytesTransferred: js.UndefOr[Double]
@@ -1038,7 +1092,9 @@ package backup {
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         BackupJobId: js.UndefOr[String] = js.undefined,
+        BackupOptions: js.UndefOr[BackupOptions] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
+        BackupType: js.UndefOr[String] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         BytesTransferred: js.UndefOr[Double] = js.undefined,
@@ -1058,7 +1114,9 @@ package backup {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
+      BackupOptions.foreach(__v => __obj.updateDynamic("BackupOptions")(__v.asInstanceOf[js.Any]))
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      BackupType.foreach(__v => __obj.updateDynamic("BackupType")(__v.asInstanceOf[js.Any]))
       BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
       BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
       BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
@@ -1160,6 +1218,36 @@ package backup {
   }
 
   @js.native
+  trait DescribeGlobalSettingsInput extends js.Object
+
+  object DescribeGlobalSettingsInput {
+    @inline
+    def apply(): DescribeGlobalSettingsInput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DescribeGlobalSettingsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeGlobalSettingsOutput extends js.Object {
+    var GlobalSettings: js.UndefOr[GlobalSettings]
+    var LastUpdateTime: js.UndefOr[timestamp]
+  }
+
+  object DescribeGlobalSettingsOutput {
+    @inline
+    def apply(
+        GlobalSettings: js.UndefOr[GlobalSettings] = js.undefined,
+        LastUpdateTime: js.UndefOr[timestamp] = js.undefined
+    ): DescribeGlobalSettingsOutput = {
+      val __obj = js.Dynamic.literal()
+      GlobalSettings.foreach(__v => __obj.updateDynamic("GlobalSettings")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGlobalSettingsOutput]
+    }
+  }
+
+  @js.native
   trait DescribeProtectedResourceInput extends js.Object {
     var ResourceArn: ARN
   }
@@ -1235,6 +1323,7 @@ package backup {
     var RecoveryPointArn: js.UndefOr[ARN]
     var ResourceArn: js.UndefOr[ARN]
     var ResourceType: js.UndefOr[ResourceType]
+    var SourceBackupVaultArn: js.UndefOr[ARN]
     var Status: js.UndefOr[RecoveryPointStatus]
     var StorageClass: js.UndefOr[StorageClass]
   }
@@ -1257,6 +1346,7 @@ package backup {
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
         ResourceArn: js.UndefOr[ARN] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        SourceBackupVaultArn: js.UndefOr[ARN] = js.undefined,
         Status: js.UndefOr[RecoveryPointStatus] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined
     ): DescribeRecoveryPointOutput = {
@@ -1276,6 +1366,7 @@ package backup {
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      SourceBackupVaultArn.foreach(__v => __obj.updateDynamic("SourceBackupVaultArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecoveryPointOutput]
@@ -1500,6 +1591,7 @@ package backup {
 
   @js.native
   trait GetBackupPlanOutput extends js.Object {
+    var AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings]
     var BackupPlan: js.UndefOr[BackupPlan]
     var BackupPlanArn: js.UndefOr[ARN]
     var BackupPlanId: js.UndefOr[String]
@@ -1513,6 +1605,7 @@ package backup {
   object GetBackupPlanOutput {
     @inline
     def apply(
+        AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings] = js.undefined,
         BackupPlan: js.UndefOr[BackupPlan] = js.undefined,
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -1523,6 +1616,7 @@ package backup {
         VersionId: js.UndefOr[String] = js.undefined
     ): GetBackupPlanOutput = {
       val __obj = js.Dynamic.literal()
+      AdvancedBackupSettings.foreach(__v => __obj.updateDynamic("AdvancedBackupSettings")(__v.asInstanceOf[js.Any]))
       BackupPlan.foreach(__v => __obj.updateDynamic("BackupPlan")(__v.asInstanceOf[js.Any]))
       BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
       BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
@@ -2384,6 +2478,7 @@ package backup {
     var RecoveryPointArn: js.UndefOr[ARN]
     var ResourceArn: js.UndefOr[ARN]
     var ResourceType: js.UndefOr[ResourceType]
+    var SourceBackupVaultArn: js.UndefOr[ARN]
     var Status: js.UndefOr[RecoveryPointStatus]
   }
 
@@ -2405,6 +2500,7 @@ package backup {
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
         ResourceArn: js.UndefOr[ARN] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        SourceBackupVaultArn: js.UndefOr[ARN] = js.undefined,
         Status: js.UndefOr[RecoveryPointStatus] = js.undefined
     ): RecoveryPointByBackupVault = {
       val __obj = js.Dynamic.literal()
@@ -2423,6 +2519,7 @@ package backup {
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      SourceBackupVaultArn.foreach(__v => __obj.updateDynamic("SourceBackupVaultArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointByBackupVault]
     }
@@ -2570,6 +2667,7 @@ package backup {
     var BackupVaultName: BackupVaultName
     var IamRoleArn: IAMRoleArn
     var ResourceArn: ARN
+    var BackupOptions: js.UndefOr[BackupOptions]
     var CompleteWindowMinutes: js.UndefOr[WindowMinutes]
     var IdempotencyToken: js.UndefOr[String]
     var Lifecycle: js.UndefOr[Lifecycle]
@@ -2583,6 +2681,7 @@ package backup {
         BackupVaultName: BackupVaultName,
         IamRoleArn: IAMRoleArn,
         ResourceArn: ARN,
+        BackupOptions: js.UndefOr[BackupOptions] = js.undefined,
         CompleteWindowMinutes: js.UndefOr[WindowMinutes] = js.undefined,
         IdempotencyToken: js.UndefOr[String] = js.undefined,
         Lifecycle: js.UndefOr[Lifecycle] = js.undefined,
@@ -2595,6 +2694,7 @@ package backup {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
+      BackupOptions.foreach(__v => __obj.updateDynamic("BackupOptions")(__v.asInstanceOf[js.Any]))
       CompleteWindowMinutes.foreach(__v => __obj.updateDynamic("CompleteWindowMinutes")(__v.asInstanceOf[js.Any]))
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
@@ -2813,6 +2913,7 @@ package backup {
 
   @js.native
   trait UpdateBackupPlanOutput extends js.Object {
+    var AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings]
     var BackupPlanArn: js.UndefOr[ARN]
     var BackupPlanId: js.UndefOr[String]
     var CreationDate: js.UndefOr[timestamp]
@@ -2822,17 +2923,35 @@ package backup {
   object UpdateBackupPlanOutput {
     @inline
     def apply(
+        AdvancedBackupSettings: js.UndefOr[AdvancedBackupSettings] = js.undefined,
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): UpdateBackupPlanOutput = {
       val __obj = js.Dynamic.literal()
+      AdvancedBackupSettings.foreach(__v => __obj.updateDynamic("AdvancedBackupSettings")(__v.asInstanceOf[js.Any]))
       BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
       BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBackupPlanOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateGlobalSettingsInput extends js.Object {
+    var GlobalSettings: js.UndefOr[GlobalSettings]
+  }
+
+  object UpdateGlobalSettingsInput {
+    @inline
+    def apply(
+        GlobalSettings: js.UndefOr[GlobalSettings] = js.undefined
+    ): UpdateGlobalSettingsInput = {
+      val __obj = js.Dynamic.literal()
+      GlobalSettings.foreach(__v => __obj.updateDynamic("GlobalSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGlobalSettingsInput]
     }
   }
 
