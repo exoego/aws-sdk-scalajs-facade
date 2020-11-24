@@ -13,7 +13,7 @@ You may find the below peer facades useful when developing app with AWS.
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.31.0-v2.731.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.32.0-v2.798.0"
 scalaJSLinkerConfig ~= (_.withModuleKind(ModuleKind.CommonJSModule))
 
 // Below are optional. Required when bundling aws-sdk for testing in sbt or
