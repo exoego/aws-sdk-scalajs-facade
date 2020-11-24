@@ -43,6 +43,7 @@ package object ecs {
   type InferenceAccelerators = js.Array[InferenceAccelerator]
   type LoadBalancers = js.Array[LoadBalancer]
   type LogConfigurationOptionsMap = js.Dictionary[String]
+  type ManagedScalingInstanceWarmupPeriod = Int
   type ManagedScalingStepSize = Int
   type ManagedScalingTargetCapacity = Int
   type MountPointList = js.Array[MountPoint]
@@ -127,6 +128,7 @@ package object ecs {
     @inline def submitTaskStateChangeFuture(params: SubmitTaskStateChangeRequest): Future[SubmitTaskStateChangeResponse] = service.submitTaskStateChange(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateCapacityProviderFuture(params: UpdateCapacityProviderRequest): Future[UpdateCapacityProviderResponse] = service.updateCapacityProvider(params).promise().toFuture
     @inline def updateClusterSettingsFuture(params: UpdateClusterSettingsRequest): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise().toFuture
     @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] = service.updateContainerAgent(params).promise().toFuture
     @inline def updateContainerInstancesStateFuture(params: UpdateContainerInstancesStateRequest): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise().toFuture
@@ -186,6 +188,7 @@ package ecs {
     def submitTaskStateChange(params: SubmitTaskStateChangeRequest): Request[SubmitTaskStateChangeResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateCapacityProvider(params: UpdateCapacityProviderRequest): Request[UpdateCapacityProviderResponse] = js.native
     def updateClusterSettings(params: UpdateClusterSettingsRequest): Request[UpdateClusterSettingsResponse] = js.native
     def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse] = js.native
     def updateContainerInstancesState(params: UpdateContainerInstancesStateRequest): Request[UpdateContainerInstancesStateResponse] = js.native
@@ -320,6 +323,27 @@ package ecs {
     }
   }
 
+  /** The details of the Auto Scaling group capacity provider to update.
+    */
+  @js.native
+  trait AutoScalingGroupProviderUpdate extends js.Object {
+    var managedScaling: js.UndefOr[ManagedScaling]
+    var managedTerminationProtection: js.UndefOr[ManagedTerminationProtection]
+  }
+
+  object AutoScalingGroupProviderUpdate {
+    @inline
+    def apply(
+        managedScaling: js.UndefOr[ManagedScaling] = js.undefined,
+        managedTerminationProtection: js.UndefOr[ManagedTerminationProtection] = js.undefined
+    ): AutoScalingGroupProviderUpdate = {
+      val __obj = js.Dynamic.literal()
+      managedScaling.foreach(__v => __obj.updateDynamic("managedScaling")(__v.asInstanceOf[js.Any]))
+      managedTerminationProtection.foreach(__v => __obj.updateDynamic("managedTerminationProtection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoScalingGroupProviderUpdate]
+    }
+  }
+
   /** An object representing the networking details for a task or service.
     */
   @js.native
@@ -431,8 +455,11 @@ package ecs {
     val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
     val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
     val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
+    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
 
-    @inline def values = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED)
+    @inline def values = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED)
   }
 
   /** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
@@ -1420,11 +1447,14 @@ package ecs {
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var createdAt: js.UndefOr[Timestamp]
     var desiredCount: js.UndefOr[Int]
+    var failedTasks: js.UndefOr[Int]
     var id: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var pendingCount: js.UndefOr[Int]
     var platformVersion: js.UndefOr[String]
+    var rolloutState: js.UndefOr[DeploymentRolloutState]
+    var rolloutStateReason: js.UndefOr[String]
     var runningCount: js.UndefOr[Int]
     var status: js.UndefOr[String]
     var taskDefinition: js.UndefOr[String]
@@ -1437,11 +1467,14 @@ package ecs {
         capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         desiredCount: js.UndefOr[Int] = js.undefined,
+        failedTasks: js.UndefOr[Int] = js.undefined,
         id: js.UndefOr[String] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         pendingCount: js.UndefOr[Int] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
+        rolloutState: js.UndefOr[DeploymentRolloutState] = js.undefined,
+        rolloutStateReason: js.UndefOr[String] = js.undefined,
         runningCount: js.UndefOr[Int] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined,
@@ -1451,11 +1484,14 @@ package ecs {
       capacityProviderStrategy.foreach(__v => __obj.updateDynamic("capacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
+      failedTasks.foreach(__v => __obj.updateDynamic("failedTasks")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
+      rolloutState.foreach(__v => __obj.updateDynamic("rolloutState")(__v.asInstanceOf[js.Any]))
+      rolloutStateReason.foreach(__v => __obj.updateDynamic("rolloutStateReason")(__v.asInstanceOf[js.Any]))
       runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
@@ -1464,10 +1500,34 @@ package ecs {
     }
   }
 
+  /** '''Note:'''The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+    * The ```deployment circuit breaker``` determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also enable Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html|Rolling update]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait DeploymentCircuitBreaker extends js.Object {
+    var enable: Boolean
+    var rollback: Boolean
+  }
+
+  object DeploymentCircuitBreaker {
+    @inline
+    def apply(
+        enable: Boolean,
+        rollback: Boolean
+    ): DeploymentCircuitBreaker = {
+      val __obj = js.Dynamic.literal(
+        "enable" -> enable.asInstanceOf[js.Any],
+        "rollback" -> rollback.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeploymentCircuitBreaker]
+    }
+  }
+
   /** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks.
     */
   @js.native
   trait DeploymentConfiguration extends js.Object {
+    var deploymentCircuitBreaker: js.UndefOr[DeploymentCircuitBreaker]
     var maximumPercent: js.UndefOr[BoxedInteger]
     var minimumHealthyPercent: js.UndefOr[BoxedInteger]
   }
@@ -1475,10 +1535,12 @@ package ecs {
   object DeploymentConfiguration {
     @inline
     def apply(
+        deploymentCircuitBreaker: js.UndefOr[DeploymentCircuitBreaker] = js.undefined,
         maximumPercent: js.UndefOr[BoxedInteger] = js.undefined,
         minimumHealthyPercent: js.UndefOr[BoxedInteger] = js.undefined
     ): DeploymentConfiguration = {
       val __obj = js.Dynamic.literal()
+      deploymentCircuitBreaker.foreach(__v => __obj.updateDynamic("deploymentCircuitBreaker")(__v.asInstanceOf[js.Any]))
       maximumPercent.foreach(__v => __obj.updateDynamic("maximumPercent")(__v.asInstanceOf[js.Any]))
       minimumHealthyPercent.foreach(__v => __obj.updateDynamic("minimumHealthyPercent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentConfiguration]
@@ -1512,6 +1574,16 @@ package ecs {
     val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
 
     @inline def values = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
+  }
+
+  @js.native
+  sealed trait DeploymentRolloutState extends js.Any
+  object DeploymentRolloutState {
+    val COMPLETED = "COMPLETED".asInstanceOf[DeploymentRolloutState]
+    val FAILED = "FAILED".asInstanceOf[DeploymentRolloutState]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentRolloutState]
+
+    @inline def values = js.Array(COMPLETED, FAILED, IN_PROGRESS)
   }
 
   @js.native
@@ -2943,6 +3015,7 @@ package ecs {
     */
   @js.native
   trait ManagedScaling extends js.Object {
+    var instanceWarmupPeriod: js.UndefOr[ManagedScalingInstanceWarmupPeriod]
     var maximumScalingStepSize: js.UndefOr[ManagedScalingStepSize]
     var minimumScalingStepSize: js.UndefOr[ManagedScalingStepSize]
     var status: js.UndefOr[ManagedScalingStatus]
@@ -2952,12 +3025,14 @@ package ecs {
   object ManagedScaling {
     @inline
     def apply(
+        instanceWarmupPeriod: js.UndefOr[ManagedScalingInstanceWarmupPeriod] = js.undefined,
         maximumScalingStepSize: js.UndefOr[ManagedScalingStepSize] = js.undefined,
         minimumScalingStepSize: js.UndefOr[ManagedScalingStepSize] = js.undefined,
         status: js.UndefOr[ManagedScalingStatus] = js.undefined,
         targetCapacity: js.UndefOr[ManagedScalingTargetCapacity] = js.undefined
     ): ManagedScaling = {
       val __obj = js.Dynamic.literal()
+      instanceWarmupPeriod.foreach(__v => __obj.updateDynamic("instanceWarmupPeriod")(__v.asInstanceOf[js.Any]))
       maximumScalingStepSize.foreach(__v => __obj.updateDynamic("maximumScalingStepSize")(__v.asInstanceOf[js.Any]))
       minimumScalingStepSize.foreach(__v => __obj.updateDynamic("minimumScalingStepSize")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -3226,8 +3301,7 @@ package ecs {
   }
 
   /** The configuration details for the App Mesh proxy.
-    * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    * For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
+    * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]]
     */
   @js.native
   trait ProxyConfiguration extends js.Object {
@@ -4842,6 +4916,42 @@ package ecs {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateCapacityProviderRequest extends js.Object {
+    var autoScalingGroupProvider: AutoScalingGroupProviderUpdate
+    var name: String
+  }
+
+  object UpdateCapacityProviderRequest {
+    @inline
+    def apply(
+        autoScalingGroupProvider: AutoScalingGroupProviderUpdate,
+        name: String
+    ): UpdateCapacityProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "autoScalingGroupProvider" -> autoScalingGroupProvider.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateCapacityProviderRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCapacityProviderResponse extends js.Object {
+    var capacityProvider: js.UndefOr[CapacityProvider]
+  }
+
+  object UpdateCapacityProviderResponse {
+    @inline
+    def apply(
+        capacityProvider: js.UndefOr[CapacityProvider] = js.undefined
+    ): UpdateCapacityProviderResponse = {
+      val __obj = js.Dynamic.literal()
+      capacityProvider.foreach(__v => __obj.updateDynamic("capacityProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCapacityProviderResponse]
     }
   }
 

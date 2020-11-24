@@ -35,6 +35,7 @@ package object forecast {
   type NextToken = String
   type ParameterKey = String
   type ParameterValue = String
+  type PredictorBacktestExportJobs = js.Array[PredictorBacktestExportJobSummary]
   type PredictorEvaluationResults = js.Array[EvaluationResult]
   type PredictorExecutions = js.Array[PredictorExecution]
   type Predictors = js.Array[PredictorSummary]
@@ -62,18 +63,21 @@ package object forecast {
     @inline def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
     @inline def createForecastExportJobFuture(params: CreateForecastExportJobRequest): Future[CreateForecastExportJobResponse] = service.createForecastExportJob(params).promise().toFuture
     @inline def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] = service.createForecast(params).promise().toFuture
+    @inline def createPredictorBacktestExportJobFuture(params: CreatePredictorBacktestExportJobRequest): Future[CreatePredictorBacktestExportJobResponse] = service.createPredictorBacktestExportJob(params).promise().toFuture
     @inline def createPredictorFuture(params: CreatePredictorRequest): Future[CreatePredictorResponse] = service.createPredictor(params).promise().toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] = service.deleteDataset(params).promise().toFuture
     @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
     @inline def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] = service.deleteDatasetImportJob(params).promise().toFuture
     @inline def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] = service.deleteForecastExportJob(params).promise().toFuture
     @inline def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] = service.deleteForecast(params).promise().toFuture
+    @inline def deletePredictorBacktestExportJobFuture(params: DeletePredictorBacktestExportJobRequest): Future[js.Object] = service.deletePredictorBacktestExportJob(params).promise().toFuture
     @inline def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] = service.deletePredictor(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] = service.describeDatasetGroup(params).promise().toFuture
     @inline def describeDatasetImportJobFuture(params: DescribeDatasetImportJobRequest): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
     @inline def describeForecastExportJobFuture(params: DescribeForecastExportJobRequest): Future[DescribeForecastExportJobResponse] = service.describeForecastExportJob(params).promise().toFuture
     @inline def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] = service.describeForecast(params).promise().toFuture
+    @inline def describePredictorBacktestExportJobFuture(params: DescribePredictorBacktestExportJobRequest): Future[DescribePredictorBacktestExportJobResponse] = service.describePredictorBacktestExportJob(params).promise().toFuture
     @inline def describePredictorFuture(params: DescribePredictorRequest): Future[DescribePredictorResponse] = service.describePredictor(params).promise().toFuture
     @inline def getAccuracyMetricsFuture(params: GetAccuracyMetricsRequest): Future[GetAccuracyMetricsResponse] = service.getAccuracyMetrics(params).promise().toFuture
     @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] = service.listDatasetGroups(params).promise().toFuture
@@ -81,6 +85,7 @@ package object forecast {
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
     @inline def listForecastExportJobsFuture(params: ListForecastExportJobsRequest): Future[ListForecastExportJobsResponse] = service.listForecastExportJobs(params).promise().toFuture
     @inline def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] = service.listForecasts(params).promise().toFuture
+    @inline def listPredictorBacktestExportJobsFuture(params: ListPredictorBacktestExportJobsRequest): Future[ListPredictorBacktestExportJobsResponse] = service.listPredictorBacktestExportJobs(params).promise().toFuture
     @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] = service.listPredictors(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
@@ -102,24 +107,28 @@ package forecast {
     def createForecast(params: CreateForecastRequest): Request[CreateForecastResponse] = js.native
     def createForecastExportJob(params: CreateForecastExportJobRequest): Request[CreateForecastExportJobResponse] = js.native
     def createPredictor(params: CreatePredictorRequest): Request[CreatePredictorResponse] = js.native
+    def createPredictorBacktestExportJob(params: CreatePredictorBacktestExportJobRequest): Request[CreatePredictorBacktestExportJobResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
     def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
     def deleteDatasetImportJob(params: DeleteDatasetImportJobRequest): Request[js.Object] = js.native
     def deleteForecast(params: DeleteForecastRequest): Request[js.Object] = js.native
     def deleteForecastExportJob(params: DeleteForecastExportJobRequest): Request[js.Object] = js.native
     def deletePredictor(params: DeletePredictorRequest): Request[js.Object] = js.native
+    def deletePredictorBacktestExportJob(params: DeletePredictorBacktestExportJobRequest): Request[js.Object] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
     def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] = js.native
     def describeForecast(params: DescribeForecastRequest): Request[DescribeForecastResponse] = js.native
     def describeForecastExportJob(params: DescribeForecastExportJobRequest): Request[DescribeForecastExportJobResponse] = js.native
     def describePredictor(params: DescribePredictorRequest): Request[DescribePredictorResponse] = js.native
+    def describePredictorBacktestExportJob(params: DescribePredictorBacktestExportJobRequest): Request[DescribePredictorBacktestExportJobResponse] = js.native
     def getAccuracyMetrics(params: GetAccuracyMetricsRequest): Request[GetAccuracyMetricsResponse] = js.native
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listForecastExportJobs(params: ListForecastExportJobsRequest): Request[ListForecastExportJobsResponse] = js.native
     def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse] = js.native
+    def listPredictorBacktestExportJobs(params: ListPredictorBacktestExportJobsRequest): Request[ListPredictorBacktestExportJobsResponse] = js.native
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -417,6 +426,49 @@ package forecast {
   }
 
   @js.native
+  trait CreatePredictorBacktestExportJobRequest extends js.Object {
+    var Destination: DataDestination
+    var PredictorArn: Arn
+    var PredictorBacktestExportJobName: Name
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreatePredictorBacktestExportJobRequest {
+    @inline
+    def apply(
+        Destination: DataDestination,
+        PredictorArn: Arn,
+        PredictorBacktestExportJobName: Name,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreatePredictorBacktestExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "PredictorArn" -> PredictorArn.asInstanceOf[js.Any],
+        "PredictorBacktestExportJobName" -> PredictorBacktestExportJobName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePredictorBacktestExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePredictorBacktestExportJobResponse extends js.Object {
+    var PredictorBacktestExportJobArn: js.UndefOr[Arn]
+  }
+
+  object CreatePredictorBacktestExportJobResponse {
+    @inline
+    def apply(
+        PredictorBacktestExportJobArn: js.UndefOr[Arn] = js.undefined
+    ): CreatePredictorBacktestExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      PredictorBacktestExportJobArn.foreach(__v => __obj.updateDynamic("PredictorBacktestExportJobArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePredictorBacktestExportJobResponse]
+    }
+  }
+
+  @js.native
   trait CreatePredictorRequest extends js.Object {
     var FeaturizationConfig: FeaturizationConfig
     var ForecastHorizon: Int
@@ -486,7 +538,7 @@ package forecast {
     }
   }
 
-  /** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request.
+  /** The destination for an export job, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key.
     */
   @js.native
   trait DataDestination extends js.Object {
@@ -712,6 +764,23 @@ package forecast {
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteForecastRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePredictorBacktestExportJobRequest extends js.Object {
+    var PredictorBacktestExportJobArn: Arn
+  }
+
+  object DeletePredictorBacktestExportJobRequest {
+    @inline
+    def apply(
+        PredictorBacktestExportJobArn: Arn
+    ): DeletePredictorBacktestExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "PredictorBacktestExportJobArn" -> PredictorBacktestExportJobArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeletePredictorBacktestExportJobRequest]
     }
   }
 
@@ -1014,6 +1083,60 @@ package forecast {
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeForecastResponse]
+    }
+  }
+
+  @js.native
+  trait DescribePredictorBacktestExportJobRequest extends js.Object {
+    var PredictorBacktestExportJobArn: Arn
+  }
+
+  object DescribePredictorBacktestExportJobRequest {
+    @inline
+    def apply(
+        PredictorBacktestExportJobArn: Arn
+    ): DescribePredictorBacktestExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "PredictorBacktestExportJobArn" -> PredictorBacktestExportJobArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribePredictorBacktestExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribePredictorBacktestExportJobResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Destination: js.UndefOr[DataDestination]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var PredictorArn: js.UndefOr[Arn]
+    var PredictorBacktestExportJobArn: js.UndefOr[Arn]
+    var PredictorBacktestExportJobName: js.UndefOr[Name]
+    var Status: js.UndefOr[Status]
+  }
+
+  object DescribePredictorBacktestExportJobResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Destination: js.UndefOr[DataDestination] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        PredictorArn: js.UndefOr[Arn] = js.undefined,
+        PredictorBacktestExportJobArn: js.UndefOr[Arn] = js.undefined,
+        PredictorBacktestExportJobName: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DescribePredictorBacktestExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      PredictorBacktestExportJobArn.foreach(__v => __obj.updateDynamic("PredictorBacktestExportJobArn")(__v.asInstanceOf[js.Any]))
+      PredictorBacktestExportJobName.foreach(__v => __obj.updateDynamic("PredictorBacktestExportJobName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePredictorBacktestExportJobResponse]
     }
   }
 
@@ -1727,6 +1850,47 @@ package forecast {
   }
 
   @js.native
+  trait ListPredictorBacktestExportJobsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListPredictorBacktestExportJobsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPredictorBacktestExportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPredictorBacktestExportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPredictorBacktestExportJobsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PredictorBacktestExportJobs: js.UndefOr[PredictorBacktestExportJobs]
+  }
+
+  object ListPredictorBacktestExportJobsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PredictorBacktestExportJobs: js.UndefOr[PredictorBacktestExportJobs] = js.undefined
+    ): ListPredictorBacktestExportJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PredictorBacktestExportJobs.foreach(__v => __obj.updateDynamic("PredictorBacktestExportJobs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPredictorBacktestExportJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListPredictorsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxResults]
@@ -1848,6 +2012,42 @@ package forecast {
     }
   }
 
+  /** Provides a summary of the predictor backtest export job properties used in the <a>ListPredictorBacktestExportJobs</a> operation. To get a complete set of properties, call the <a>DescribePredictorBacktestExportJob</a> operation, and provide the listed <code>PredictorBacktestExportJobArn</code>.
+    */
+  @js.native
+  trait PredictorBacktestExportJobSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Destination: js.UndefOr[DataDestination]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var PredictorBacktestExportJobArn: js.UndefOr[Arn]
+    var PredictorBacktestExportJobName: js.UndefOr[Name]
+    var Status: js.UndefOr[Status]
+  }
+
+  object PredictorBacktestExportJobSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Destination: js.UndefOr[DataDestination] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        PredictorBacktestExportJobArn: js.UndefOr[Arn] = js.undefined,
+        PredictorBacktestExportJobName: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): PredictorBacktestExportJobSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PredictorBacktestExportJobArn.foreach(__v => __obj.updateDynamic("PredictorBacktestExportJobArn")(__v.asInstanceOf[js.Any]))
+      PredictorBacktestExportJobName.foreach(__v => __obj.updateDynamic("PredictorBacktestExportJobName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictorBacktestExportJobSummary]
+    }
+  }
+
   /** The algorithm used to perform a backtest and the status of those tests.
     */
   @js.native
@@ -1923,7 +2123,7 @@ package forecast {
     }
   }
 
-  /** The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the <a>CreateForecastExportJob</a> request.
+  /** The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object.
     */
   @js.native
   trait S3Config extends js.Object {

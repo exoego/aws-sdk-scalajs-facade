@@ -209,6 +209,7 @@ package timestreamquery {
     var QueryId: QueryId
     var Rows: RowList
     var NextToken: js.UndefOr[String]
+    var QueryStatus: js.UndefOr[QueryStatus]
   }
 
   object QueryResponse {
@@ -217,7 +218,8 @@ package timestreamquery {
         ColumnInfo: ColumnInfoList,
         QueryId: QueryId,
         Rows: RowList,
-        NextToken: js.UndefOr[String] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined,
+        QueryStatus: js.UndefOr[QueryStatus] = js.undefined
     ): QueryResponse = {
       val __obj = js.Dynamic.literal(
         "ColumnInfo" -> ColumnInfo.asInstanceOf[js.Any],
@@ -226,7 +228,32 @@ package timestreamquery {
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryStatus.foreach(__v => __obj.updateDynamic("QueryStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryResponse]
+    }
+  }
+
+  /** Information about the status of the query, including progress and bytes scannned.
+    */
+  @js.native
+  trait QueryStatus extends js.Object {
+    var CumulativeBytesMetered: js.UndefOr[Double]
+    var CumulativeBytesScanned: js.UndefOr[Double]
+    var ProgressPercentage: js.UndefOr[Double]
+  }
+
+  object QueryStatus {
+    @inline
+    def apply(
+        CumulativeBytesMetered: js.UndefOr[Double] = js.undefined,
+        CumulativeBytesScanned: js.UndefOr[Double] = js.undefined,
+        ProgressPercentage: js.UndefOr[Double] = js.undefined
+    ): QueryStatus = {
+      val __obj = js.Dynamic.literal()
+      CumulativeBytesMetered.foreach(__v => __obj.updateDynamic("CumulativeBytesMetered")(__v.asInstanceOf[js.Any]))
+      CumulativeBytesScanned.foreach(__v => __obj.updateDynamic("CumulativeBytesScanned")(__v.asInstanceOf[js.Any]))
+      ProgressPercentage.foreach(__v => __obj.updateDynamic("ProgressPercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryStatus]
     }
   }
 

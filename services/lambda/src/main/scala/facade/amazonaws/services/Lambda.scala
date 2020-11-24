@@ -17,6 +17,9 @@ package object lambda {
   type BisectBatchOnFunctionError = Boolean
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BlobStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CodeSigningConfigArn = String
+  type CodeSigningConfigId = String
+  type CodeSigningConfigList = js.Array[CodeSigningConfig]
   type CompatibleRuntimes = js.Array[Runtime]
   type Date = js.Date
   type Description = String
@@ -30,6 +33,7 @@ package object lambda {
   type FileSystemArn = String
   type FileSystemConfigList = js.Array[FileSystemConfig]
   type FunctionArn = String
+  type FunctionArnList = js.Array[FunctionArn]
   type FunctionEventInvokeConfigList = js.Array[FunctionEventInvokeConfig]
   type FunctionList = js.Array[FunctionConfiguration]
   type FunctionName = String
@@ -81,6 +85,7 @@ package object lambda {
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
   type SensitiveString = String
+  type SigningProfileVersionArns = js.Array[Arn]
   type SourceAccessConfigurations = js.Array[SourceAccessConfiguration]
   type SourceOwner = String
   type StateReason = String
@@ -105,10 +110,13 @@ package object lambda {
     @inline def addLayerVersionPermissionFuture(params: AddLayerVersionPermissionRequest): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise().toFuture
     @inline def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] = service.addPermission(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasRequest): Future[AliasConfiguration] = service.createAlias(params).promise().toFuture
+    @inline def createCodeSigningConfigFuture(params: CreateCodeSigningConfigRequest): Future[CreateCodeSigningConfigResponse] = service.createCodeSigningConfig(params).promise().toFuture
     @inline def createEventSourceMappingFuture(params: CreateEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise().toFuture
     @inline def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] = service.createFunction(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteCodeSigningConfigFuture(params: DeleteCodeSigningConfigRequest): Future[DeleteCodeSigningConfigResponse] = service.deleteCodeSigningConfig(params).promise().toFuture
     @inline def deleteEventSourceMappingFuture(params: DeleteEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise().toFuture
+    @inline def deleteFunctionCodeSigningConfigFuture(params: DeleteFunctionCodeSigningConfigRequest): Future[js.Object] = service.deleteFunctionCodeSigningConfig(params).promise().toFuture
     @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] = service.deleteFunctionConcurrency(params).promise().toFuture
     @inline def deleteFunctionEventInvokeConfigFuture(params: DeleteFunctionEventInvokeConfigRequest): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise().toFuture
     @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] = service.deleteFunction(params).promise().toFuture
@@ -116,7 +124,9 @@ package object lambda {
     @inline def deleteProvisionedConcurrencyConfigFuture(params: DeleteProvisionedConcurrencyConfigRequest): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise().toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] = service.getAccountSettings(params).promise().toFuture
     @inline def getAliasFuture(params: GetAliasRequest): Future[AliasConfiguration] = service.getAlias(params).promise().toFuture
+    @inline def getCodeSigningConfigFuture(params: GetCodeSigningConfigRequest): Future[GetCodeSigningConfigResponse] = service.getCodeSigningConfig(params).promise().toFuture
     @inline def getEventSourceMappingFuture(params: GetEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.getEventSourceMapping(params).promise().toFuture
+    @inline def getFunctionCodeSigningConfigFuture(params: GetFunctionCodeSigningConfigRequest): Future[GetFunctionCodeSigningConfigResponse] = service.getFunctionCodeSigningConfig(params).promise().toFuture
     @inline def getFunctionConcurrencyFuture(params: GetFunctionConcurrencyRequest): Future[GetFunctionConcurrencyResponse] = service.getFunctionConcurrency(params).promise().toFuture
     @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] = service.getFunctionConfiguration(params).promise().toFuture
     @inline def getFunctionEventInvokeConfigFuture(params: GetFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise().toFuture
@@ -128,8 +138,10 @@ package object lambda {
     @inline def getProvisionedConcurrencyConfigFuture(params: GetProvisionedConcurrencyConfigRequest): Future[GetProvisionedConcurrencyConfigResponse] = service.getProvisionedConcurrencyConfig(params).promise().toFuture
     @inline def invokeFuture(params: InvocationRequest): Future[InvocationResponse] = service.invoke(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
+    @inline def listCodeSigningConfigsFuture(params: ListCodeSigningConfigsRequest): Future[ListCodeSigningConfigsResponse] = service.listCodeSigningConfigs(params).promise().toFuture
     @inline def listEventSourceMappingsFuture(params: ListEventSourceMappingsRequest): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise().toFuture
     @inline def listFunctionEventInvokeConfigsFuture(params: ListFunctionEventInvokeConfigsRequest): Future[ListFunctionEventInvokeConfigsResponse] = service.listFunctionEventInvokeConfigs(params).promise().toFuture
+    @inline def listFunctionsByCodeSigningConfigFuture(params: ListFunctionsByCodeSigningConfigRequest): Future[ListFunctionsByCodeSigningConfigResponse] = service.listFunctionsByCodeSigningConfig(params).promise().toFuture
     @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] = service.listFunctions(params).promise().toFuture
     @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] = service.listLayerVersions(params).promise().toFuture
     @inline def listLayersFuture(params: ListLayersRequest): Future[ListLayersResponse] = service.listLayers(params).promise().toFuture
@@ -138,6 +150,7 @@ package object lambda {
     @inline def listVersionsByFunctionFuture(params: ListVersionsByFunctionRequest): Future[ListVersionsByFunctionResponse] = service.listVersionsByFunction(params).promise().toFuture
     @inline def publishLayerVersionFuture(params: PublishLayerVersionRequest): Future[PublishLayerVersionResponse] = service.publishLayerVersion(params).promise().toFuture
     @inline def publishVersionFuture(params: PublishVersionRequest): Future[FunctionConfiguration] = service.publishVersion(params).promise().toFuture
+    @inline def putFunctionCodeSigningConfigFuture(params: PutFunctionCodeSigningConfigRequest): Future[PutFunctionCodeSigningConfigResponse] = service.putFunctionCodeSigningConfig(params).promise().toFuture
     @inline def putFunctionConcurrencyFuture(params: PutFunctionConcurrencyRequest): Future[Concurrency] = service.putFunctionConcurrency(params).promise().toFuture
     @inline def putFunctionEventInvokeConfigFuture(params: PutFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.putFunctionEventInvokeConfig(params).promise().toFuture
     @inline def putProvisionedConcurrencyConfigFuture(params: PutProvisionedConcurrencyConfigRequest): Future[PutProvisionedConcurrencyConfigResponse] = service.putProvisionedConcurrencyConfig(params).promise().toFuture
@@ -146,6 +159,7 @@ package object lambda {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateAliasFuture(params: UpdateAliasRequest): Future[AliasConfiguration] = service.updateAlias(params).promise().toFuture
+    @inline def updateCodeSigningConfigFuture(params: UpdateCodeSigningConfigRequest): Future[UpdateCodeSigningConfigResponse] = service.updateCodeSigningConfig(params).promise().toFuture
     @inline def updateEventSourceMappingFuture(params: UpdateEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.updateEventSourceMapping(params).promise().toFuture
     @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] = service.updateFunctionCode(params).promise().toFuture
     @inline def updateFunctionConfigurationFuture(params: UpdateFunctionConfigurationRequest): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise().toFuture
@@ -164,19 +178,24 @@ package lambda {
     def addLayerVersionPermission(params: AddLayerVersionPermissionRequest): Request[AddLayerVersionPermissionResponse] = js.native
     def addPermission(params: AddPermissionRequest): Request[AddPermissionResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[AliasConfiguration] = js.native
+    def createCodeSigningConfig(params: CreateCodeSigningConfigRequest): Request[CreateCodeSigningConfigResponse] = js.native
     def createEventSourceMapping(params: CreateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def createFunction(params: CreateFunctionRequest): Request[FunctionConfiguration] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
+    def deleteCodeSigningConfig(params: DeleteCodeSigningConfigRequest): Request[DeleteCodeSigningConfigResponse] = js.native
     def deleteEventSourceMapping(params: DeleteEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def deleteFunction(params: DeleteFunctionRequest): Request[js.Object] = js.native
+    def deleteFunctionCodeSigningConfig(params: DeleteFunctionCodeSigningConfigRequest): Request[js.Object] = js.native
     def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object] = js.native
     def deleteFunctionEventInvokeConfig(params: DeleteFunctionEventInvokeConfigRequest): Request[js.Object] = js.native
     def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object] = js.native
     def deleteProvisionedConcurrencyConfig(params: DeleteProvisionedConcurrencyConfigRequest): Request[js.Object] = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
     def getAlias(params: GetAliasRequest): Request[AliasConfiguration] = js.native
+    def getCodeSigningConfig(params: GetCodeSigningConfigRequest): Request[GetCodeSigningConfigResponse] = js.native
     def getEventSourceMapping(params: GetEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
+    def getFunctionCodeSigningConfig(params: GetFunctionCodeSigningConfigRequest): Request[GetFunctionCodeSigningConfigResponse] = js.native
     def getFunctionConcurrency(params: GetFunctionConcurrencyRequest): Request[GetFunctionConcurrencyResponse] = js.native
     def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
     def getFunctionEventInvokeConfig(params: GetFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
@@ -187,9 +206,11 @@ package lambda {
     def getProvisionedConcurrencyConfig(params: GetProvisionedConcurrencyConfigRequest): Request[GetProvisionedConcurrencyConfigResponse] = js.native
     def invoke(params: InvocationRequest): Request[InvocationResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
+    def listCodeSigningConfigs(params: ListCodeSigningConfigsRequest): Request[ListCodeSigningConfigsResponse] = js.native
     def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] = js.native
     def listFunctionEventInvokeConfigs(params: ListFunctionEventInvokeConfigsRequest): Request[ListFunctionEventInvokeConfigsResponse] = js.native
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
+    def listFunctionsByCodeSigningConfig(params: ListFunctionsByCodeSigningConfigRequest): Request[ListFunctionsByCodeSigningConfigResponse] = js.native
     def listLayerVersions(params: ListLayerVersionsRequest): Request[ListLayerVersionsResponse] = js.native
     def listLayers(params: ListLayersRequest): Request[ListLayersResponse] = js.native
     def listProvisionedConcurrencyConfigs(params: ListProvisionedConcurrencyConfigsRequest): Request[ListProvisionedConcurrencyConfigsResponse] = js.native
@@ -197,6 +218,7 @@ package lambda {
     def listVersionsByFunction(params: ListVersionsByFunctionRequest): Request[ListVersionsByFunctionResponse] = js.native
     def publishLayerVersion(params: PublishLayerVersionRequest): Request[PublishLayerVersionResponse] = js.native
     def publishVersion(params: PublishVersionRequest): Request[FunctionConfiguration] = js.native
+    def putFunctionCodeSigningConfig(params: PutFunctionCodeSigningConfigRequest): Request[PutFunctionCodeSigningConfigResponse] = js.native
     def putFunctionConcurrency(params: PutFunctionConcurrencyRequest): Request[Concurrency] = js.native
     def putFunctionEventInvokeConfig(params: PutFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
     def putProvisionedConcurrencyConfig(params: PutProvisionedConcurrencyConfigRequest): Request[PutProvisionedConcurrencyConfigResponse] = js.native
@@ -205,6 +227,7 @@ package lambda {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateAlias(params: UpdateAliasRequest): Request[AliasConfiguration] = js.native
+    def updateCodeSigningConfig(params: UpdateCodeSigningConfigRequest): Request[UpdateCodeSigningConfigResponse] = js.native
     def updateEventSourceMapping(params: UpdateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
@@ -426,6 +449,87 @@ package lambda {
     }
   }
 
+  /** List of signing profiles that can sign a code package.
+    */
+  @js.native
+  trait AllowedPublishers extends js.Object {
+    var SigningProfileVersionArns: SigningProfileVersionArns
+  }
+
+  object AllowedPublishers {
+    @inline
+    def apply(
+        SigningProfileVersionArns: SigningProfileVersionArns
+    ): AllowedPublishers = {
+      val __obj = js.Dynamic.literal(
+        "SigningProfileVersionArns" -> SigningProfileVersionArns.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AllowedPublishers]
+    }
+  }
+
+  /** Details about a Code signing configuration.
+    */
+  @js.native
+  trait CodeSigningConfig extends js.Object {
+    var AllowedPublishers: AllowedPublishers
+    var CodeSigningConfigArn: CodeSigningConfigArn
+    var CodeSigningConfigId: CodeSigningConfigId
+    var CodeSigningPolicies: CodeSigningPolicies
+    var LastModified: Timestamp
+    var Description: js.UndefOr[Description]
+  }
+
+  object CodeSigningConfig {
+    @inline
+    def apply(
+        AllowedPublishers: AllowedPublishers,
+        CodeSigningConfigArn: CodeSigningConfigArn,
+        CodeSigningConfigId: CodeSigningConfigId,
+        CodeSigningPolicies: CodeSigningPolicies,
+        LastModified: Timestamp,
+        Description: js.UndefOr[Description] = js.undefined
+    ): CodeSigningConfig = {
+      val __obj = js.Dynamic.literal(
+        "AllowedPublishers" -> AllowedPublishers.asInstanceOf[js.Any],
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any],
+        "CodeSigningConfigId" -> CodeSigningConfigId.asInstanceOf[js.Any],
+        "CodeSigningPolicies" -> CodeSigningPolicies.asInstanceOf[js.Any],
+        "LastModified" -> LastModified.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeSigningConfig]
+    }
+  }
+
+  /** Code signing configuration policies specifies the validation failure action for signature mismatch or expiry.
+    */
+  @js.native
+  trait CodeSigningPolicies extends js.Object {
+    var UntrustedArtifactOnDeployment: js.UndefOr[CodeSigningPolicy]
+  }
+
+  object CodeSigningPolicies {
+    @inline
+    def apply(
+        UntrustedArtifactOnDeployment: js.UndefOr[CodeSigningPolicy] = js.undefined
+    ): CodeSigningPolicies = {
+      val __obj = js.Dynamic.literal()
+      UntrustedArtifactOnDeployment.foreach(__v => __obj.updateDynamic("UntrustedArtifactOnDeployment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeSigningPolicies]
+    }
+  }
+
+  @js.native
+  sealed trait CodeSigningPolicy extends js.Any
+  object CodeSigningPolicy {
+    val Warn = "Warn".asInstanceOf[CodeSigningPolicy]
+    val Enforce = "Enforce".asInstanceOf[CodeSigningPolicy]
+
+    @inline def values = js.Array(Warn, Enforce)
+  }
+
   @js.native
   trait Concurrency extends js.Object {
     var ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions]
@@ -469,6 +573,47 @@ package lambda {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAliasRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCodeSigningConfigRequest extends js.Object {
+    var AllowedPublishers: AllowedPublishers
+    var CodeSigningPolicies: js.UndefOr[CodeSigningPolicies]
+    var Description: js.UndefOr[Description]
+  }
+
+  object CreateCodeSigningConfigRequest {
+    @inline
+    def apply(
+        AllowedPublishers: AllowedPublishers,
+        CodeSigningPolicies: js.UndefOr[CodeSigningPolicies] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined
+    ): CreateCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AllowedPublishers" -> AllowedPublishers.asInstanceOf[js.Any]
+      )
+
+      CodeSigningPolicies.foreach(__v => __obj.updateDynamic("CodeSigningPolicies")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCodeSigningConfigResponse extends js.Object {
+    var CodeSigningConfig: CodeSigningConfig
+  }
+
+  object CreateCodeSigningConfigResponse {
+    @inline
+    def apply(
+        CodeSigningConfig: CodeSigningConfig
+    ): CreateCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfig" -> CodeSigningConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateCodeSigningConfigResponse]
     }
   }
 
@@ -539,6 +684,7 @@ package lambda {
     var Handler: Handler
     var Role: RoleArn
     var Runtime: Runtime
+    var CodeSigningConfigArn: js.UndefOr[CodeSigningConfigArn]
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
@@ -561,6 +707,7 @@ package lambda {
         Handler: Handler,
         Role: RoleArn,
         Runtime: Runtime,
+        CodeSigningConfigArn: js.UndefOr[CodeSigningConfigArn] = js.undefined,
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
@@ -582,6 +729,7 @@ package lambda {
         "Runtime" -> Runtime.asInstanceOf[js.Any]
       )
 
+      CodeSigningConfigArn.foreach(__v => __obj.updateDynamic("CodeSigningConfigArn")(__v.asInstanceOf[js.Any]))
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
@@ -637,6 +785,34 @@ package lambda {
   }
 
   @js.native
+  trait DeleteCodeSigningConfigRequest extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+  }
+
+  object DeleteCodeSigningConfigRequest {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn
+    ): DeleteCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCodeSigningConfigResponse extends js.Object
+
+  object DeleteCodeSigningConfigResponse {
+    @inline
+    def apply(): DeleteCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteCodeSigningConfigResponse]
+    }
+  }
+
+  @js.native
   trait DeleteEventSourceMappingRequest extends js.Object {
     var UUID: String
   }
@@ -650,6 +826,23 @@ package lambda {
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteEventSourceMappingRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFunctionCodeSigningConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+  }
+
+  object DeleteFunctionCodeSigningConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName
+    ): DeleteFunctionCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFunctionCodeSigningConfigRequest]
     }
   }
 
@@ -1009,6 +1202,8 @@ package lambda {
     var RevisionId: js.UndefOr[String]
     var Role: js.UndefOr[RoleArn]
     var Runtime: js.UndefOr[Runtime]
+    var SigningJobArn: js.UndefOr[Arn]
+    var SigningProfileVersionArn: js.UndefOr[Arn]
     var State: js.UndefOr[State]
     var StateReason: js.UndefOr[StateReason]
     var StateReasonCode: js.UndefOr[StateReasonCode]
@@ -1041,6 +1236,8 @@ package lambda {
         RevisionId: js.UndefOr[String] = js.undefined,
         Role: js.UndefOr[RoleArn] = js.undefined,
         Runtime: js.UndefOr[Runtime] = js.undefined,
+        SigningJobArn: js.UndefOr[Arn] = js.undefined,
+        SigningProfileVersionArn: js.UndefOr[Arn] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
         StateReason: js.UndefOr[StateReason] = js.undefined,
         StateReasonCode: js.UndefOr[StateReasonCode] = js.undefined,
@@ -1070,6 +1267,8 @@ package lambda {
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
+      SigningJobArn.foreach(__v => __obj.updateDynamic("SigningJobArn")(__v.asInstanceOf[js.Any]))
+      SigningProfileVersionArn.foreach(__v => __obj.updateDynamic("SigningProfileVersionArn")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       StateReasonCode.foreach(__v => __obj.updateDynamic("StateReasonCode")(__v.asInstanceOf[js.Any]))
@@ -1168,6 +1367,40 @@ package lambda {
   }
 
   @js.native
+  trait GetCodeSigningConfigRequest extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+  }
+
+  object GetCodeSigningConfigRequest {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn
+    ): GetCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetCodeSigningConfigResponse extends js.Object {
+    var CodeSigningConfig: CodeSigningConfig
+  }
+
+  object GetCodeSigningConfigResponse {
+    @inline
+    def apply(
+        CodeSigningConfig: CodeSigningConfig
+    ): GetCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfig" -> CodeSigningConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetCodeSigningConfigResponse]
+    }
+  }
+
+  @js.native
   trait GetEventSourceMappingRequest extends js.Object {
     var UUID: String
   }
@@ -1181,6 +1414,43 @@ package lambda {
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GetEventSourceMappingRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionCodeSigningConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+  }
+
+  object GetFunctionCodeSigningConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName
+    ): GetFunctionCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFunctionCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionCodeSigningConfigResponse extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+    var FunctionName: FunctionName
+  }
+
+  object GetFunctionCodeSigningConfigResponse {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn,
+        FunctionName: FunctionName
+    ): GetFunctionCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFunctionCodeSigningConfigResponse]
     }
   }
 
@@ -1650,17 +1920,23 @@ package lambda {
   trait Layer extends js.Object {
     var Arn: js.UndefOr[LayerVersionArn]
     var CodeSize: js.UndefOr[Double]
+    var SigningJobArn: js.UndefOr[Arn]
+    var SigningProfileVersionArn: js.UndefOr[Arn]
   }
 
   object Layer {
     @inline
     def apply(
         Arn: js.UndefOr[LayerVersionArn] = js.undefined,
-        CodeSize: js.UndefOr[Double] = js.undefined
+        CodeSize: js.UndefOr[Double] = js.undefined,
+        SigningJobArn: js.UndefOr[Arn] = js.undefined,
+        SigningProfileVersionArn: js.UndefOr[Arn] = js.undefined
     ): Layer = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
+      SigningJobArn.foreach(__v => __obj.updateDynamic("SigningJobArn")(__v.asInstanceOf[js.Any]))
+      SigningProfileVersionArn.foreach(__v => __obj.updateDynamic("SigningProfileVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Layer]
     }
   }
@@ -1699,6 +1975,8 @@ package lambda {
     var CodeSha256: js.UndefOr[String]
     var CodeSize: js.UndefOr[Double]
     var Location: js.UndefOr[String]
+    var SigningJobArn: js.UndefOr[String]
+    var SigningProfileVersionArn: js.UndefOr[String]
   }
 
   object LayerVersionContentOutput {
@@ -1706,12 +1984,16 @@ package lambda {
     def apply(
         CodeSha256: js.UndefOr[String] = js.undefined,
         CodeSize: js.UndefOr[Double] = js.undefined,
-        Location: js.UndefOr[String] = js.undefined
+        Location: js.UndefOr[String] = js.undefined,
+        SigningJobArn: js.UndefOr[String] = js.undefined,
+        SigningProfileVersionArn: js.UndefOr[String] = js.undefined
     ): LayerVersionContentOutput = {
       val __obj = js.Dynamic.literal()
       CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
       CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      SigningJobArn.foreach(__v => __obj.updateDynamic("SigningJobArn")(__v.asInstanceOf[js.Any]))
+      SigningProfileVersionArn.foreach(__v => __obj.updateDynamic("SigningProfileVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayerVersionContentOutput]
     }
   }
@@ -1820,6 +2102,44 @@ package lambda {
   }
 
   @js.native
+  trait ListCodeSigningConfigsRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[MaxListItems]
+  }
+
+  object ListCodeSigningConfigsRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[MaxListItems] = js.undefined
+    ): ListCodeSigningConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCodeSigningConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCodeSigningConfigsResponse extends js.Object {
+    var CodeSigningConfigs: js.UndefOr[CodeSigningConfigList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object ListCodeSigningConfigsResponse {
+    @inline
+    def apply(
+        CodeSigningConfigs: js.UndefOr[CodeSigningConfigList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): ListCodeSigningConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      CodeSigningConfigs.foreach(__v => __obj.updateDynamic("CodeSigningConfigs")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCodeSigningConfigsResponse]
+    }
+  }
+
+  @js.native
   trait ListEventSourceMappingsRequest extends js.Object {
     var EventSourceArn: js.UndefOr[Arn]
     var FunctionName: js.UndefOr[FunctionName]
@@ -1903,6 +2223,49 @@ package lambda {
       FunctionEventInvokeConfigs.foreach(__v => __obj.updateDynamic("FunctionEventInvokeConfigs")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionEventInvokeConfigsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFunctionsByCodeSigningConfigRequest extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[MaxListItems]
+  }
+
+  object ListFunctionsByCodeSigningConfigRequest {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[MaxListItems] = js.undefined
+    ): ListFunctionsByCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionsByCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait ListFunctionsByCodeSigningConfigResponse extends js.Object {
+    var FunctionArns: js.UndefOr[FunctionArnList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object ListFunctionsByCodeSigningConfigResponse {
+    @inline
+    def apply(
+        FunctionArns: js.UndefOr[FunctionArnList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): ListFunctionsByCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      FunctionArns.foreach(__v => __obj.updateDynamic("FunctionArns")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionsByCodeSigningConfigResponse]
     }
   }
 
@@ -2344,6 +2707,46 @@ package lambda {
   }
 
   @js.native
+  trait PutFunctionCodeSigningConfigRequest extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+    var FunctionName: FunctionName
+  }
+
+  object PutFunctionCodeSigningConfigRequest {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn,
+        FunctionName: FunctionName
+    ): PutFunctionCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutFunctionCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait PutFunctionCodeSigningConfigResponse extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+    var FunctionName: FunctionName
+  }
+
+  object PutFunctionCodeSigningConfigResponse {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn,
+        FunctionName: FunctionName
+    ): PutFunctionCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutFunctionCodeSigningConfigResponse]
+    }
+  }
+
+  @js.native
   trait PutFunctionConcurrencyRequest extends js.Object {
     var FunctionName: FunctionName
     var ReservedConcurrentExecutions: ReservedConcurrentExecutions
@@ -2738,6 +3141,50 @@ package lambda {
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAliasRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCodeSigningConfigRequest extends js.Object {
+    var CodeSigningConfigArn: CodeSigningConfigArn
+    var AllowedPublishers: js.UndefOr[AllowedPublishers]
+    var CodeSigningPolicies: js.UndefOr[CodeSigningPolicies]
+    var Description: js.UndefOr[Description]
+  }
+
+  object UpdateCodeSigningConfigRequest {
+    @inline
+    def apply(
+        CodeSigningConfigArn: CodeSigningConfigArn,
+        AllowedPublishers: js.UndefOr[AllowedPublishers] = js.undefined,
+        CodeSigningPolicies: js.UndefOr[CodeSigningPolicies] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined
+    ): UpdateCodeSigningConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfigArn" -> CodeSigningConfigArn.asInstanceOf[js.Any]
+      )
+
+      AllowedPublishers.foreach(__v => __obj.updateDynamic("AllowedPublishers")(__v.asInstanceOf[js.Any]))
+      CodeSigningPolicies.foreach(__v => __obj.updateDynamic("CodeSigningPolicies")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCodeSigningConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCodeSigningConfigResponse extends js.Object {
+    var CodeSigningConfig: CodeSigningConfig
+  }
+
+  object UpdateCodeSigningConfigResponse {
+    @inline
+    def apply(
+        CodeSigningConfig: CodeSigningConfig
+    ): UpdateCodeSigningConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "CodeSigningConfig" -> CodeSigningConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateCodeSigningConfigResponse]
     }
   }
 

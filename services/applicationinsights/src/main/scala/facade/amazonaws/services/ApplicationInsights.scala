@@ -26,6 +26,12 @@ package object applicationinsights {
   type ConfigurationEventMonitoredResourceARN = String
   type ConfigurationEventResourceName = String
   type ConfigurationEventTime = js.Date
+  type CustomComponentName = String
+  type DetectedWorkload = js.Dictionary[WorkloadMetaData]
+  type EbsCause = String
+  type EbsEvent = String
+  type EbsRequestId = String
+  type EbsResult = String
   type Ec2State = String
   type EndTime = js.Date
   type Feedback = js.Dictionary[FeedbackValue]
@@ -46,10 +52,11 @@ package object applicationinsights {
   type LogPatternSetName = String
   type LogText = String
   type MaxEntities = Int
+  type MetaDataKey = String
+  type MetaDataValue = String
   type MetricName = String
   type MetricNamespace = String
   type Monitor = Boolean
-  type NewComponentName = String
   type ObservationId = String
   type ObservationList = js.Array[Observation]
   type OpsCenterEnabled = Boolean
@@ -57,15 +64,22 @@ package object applicationinsights {
   type PaginationToken = String
   type ProblemId = String
   type ProblemList = js.Array[Problem]
+  type RdsEventCategories = String
+  type RdsEventMessage = String
   type Remarks = String
   type RemoveSNSTopic = Boolean
   type ResourceARN = String
   type ResourceGroupName = String
   type ResourceList = js.Array[ResourceARN]
   type ResourceType = String
+  type S3EventName = String
   type SourceARN = String
   type SourceType = String
   type StartTime = js.Date
+  type StatesArn = String
+  type StatesExecutionArn = String
+  type StatesInput = String
+  type StatesStatus = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
@@ -73,6 +87,7 @@ package object applicationinsights {
   type Title = String
   type Unit = String
   type Value = Double
+  type WorkloadMetaData = js.Dictionary[MetaDataValue]
   type XRayErrorPercent = Int
   type XRayFaultPercent = Int
   type XRayNodeName = String
@@ -154,7 +169,10 @@ package applicationinsights {
   @js.native
   trait ApplicationComponent extends js.Object {
     var ComponentName: js.UndefOr[ComponentName]
+    var ComponentRemarks: js.UndefOr[Remarks]
+    var DetectedWorkload: js.UndefOr[DetectedWorkload]
     var Monitor: js.UndefOr[Monitor]
+    var OsType: js.UndefOr[OsType]
     var ResourceType: js.UndefOr[ResourceType]
     var Tier: js.UndefOr[Tier]
   }
@@ -163,13 +181,19 @@ package applicationinsights {
     @inline
     def apply(
         ComponentName: js.UndefOr[ComponentName] = js.undefined,
+        ComponentRemarks: js.UndefOr[Remarks] = js.undefined,
+        DetectedWorkload: js.UndefOr[DetectedWorkload] = js.undefined,
         Monitor: js.UndefOr[Monitor] = js.undefined,
+        OsType: js.UndefOr[OsType] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         Tier: js.UndefOr[Tier] = js.undefined
     ): ApplicationComponent = {
       val __obj = js.Dynamic.literal()
       ComponentName.foreach(__v => __obj.updateDynamic("ComponentName")(__v.asInstanceOf[js.Any]))
+      ComponentRemarks.foreach(__v => __obj.updateDynamic("ComponentRemarks")(__v.asInstanceOf[js.Any]))
+      DetectedWorkload.foreach(__v => __obj.updateDynamic("DetectedWorkload")(__v.asInstanceOf[js.Any]))
       Monitor.foreach(__v => __obj.updateDynamic("Monitor")(__v.asInstanceOf[js.Any]))
+      OsType.foreach(__v => __obj.updateDynamic("OsType")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationComponent]
@@ -215,8 +239,9 @@ package applicationinsights {
     val EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
     val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
     val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
+    val RDS = "RDS".asInstanceOf[CloudWatchEventSource]
 
-    @inline def values = js.Array(EC2, CODE_DEPLOY, HEALTH)
+    @inline def values = js.Array(EC2, CODE_DEPLOY, HEALTH, RDS)
   }
 
   /** The event information.
@@ -256,10 +281,11 @@ package applicationinsights {
   sealed trait ConfigurationEventResourceType extends js.Any
   object ConfigurationEventResourceType {
     val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
+    val CLOUDWATCH_LOG = "CLOUDWATCH_LOG".asInstanceOf[ConfigurationEventResourceType]
     val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
     val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
 
-    @inline def values = js.Array(CLOUDWATCH_ALARM, CLOUDFORMATION, SSM_ASSOCIATION)
+    @inline def values = js.Array(CLOUDWATCH_ALARM, CLOUDWATCH_LOG, CLOUDFORMATION, SSM_ASSOCIATION)
   }
 
   @js.native
@@ -320,7 +346,7 @@ package applicationinsights {
 
   @js.native
   trait CreateComponentRequest extends js.Object {
-    var ComponentName: ComponentName
+    var ComponentName: CustomComponentName
     var ResourceGroupName: ResourceGroupName
     var ResourceList: ResourceList
   }
@@ -328,7 +354,7 @@ package applicationinsights {
   object CreateComponentRequest {
     @inline
     def apply(
-        ComponentName: ComponentName,
+        ComponentName: CustomComponentName,
         ResourceGroupName: ResourceGroupName,
         ResourceList: ResourceList
     ): CreateComponentRequest = {
@@ -430,14 +456,14 @@ package applicationinsights {
 
   @js.native
   trait DeleteComponentRequest extends js.Object {
-    var ComponentName: ComponentName
+    var ComponentName: CustomComponentName
     var ResourceGroupName: ResourceGroupName
   }
 
   object DeleteComponentRequest {
     @inline
     def apply(
-        ComponentName: ComponentName,
+        ComponentName: CustomComponentName,
         ResourceGroupName: ResourceGroupName
     ): DeleteComponentRequest = {
       val __obj = js.Dynamic.literal(
@@ -1160,6 +1186,10 @@ package applicationinsights {
     var CodeDeployDeploymentId: js.UndefOr[CodeDeployDeploymentId]
     var CodeDeployInstanceGroupId: js.UndefOr[CodeDeployInstanceGroupId]
     var CodeDeployState: js.UndefOr[CodeDeployState]
+    var EbsCause: js.UndefOr[EbsCause]
+    var EbsEvent: js.UndefOr[EbsEvent]
+    var EbsRequestId: js.UndefOr[EbsRequestId]
+    var EbsResult: js.UndefOr[EbsResult]
     var Ec2State: js.UndefOr[Ec2State]
     var EndTime: js.UndefOr[EndTime]
     var HealthEventArn: js.UndefOr[HealthEventArn]
@@ -1174,9 +1204,16 @@ package applicationinsights {
     var LogText: js.UndefOr[LogText]
     var MetricName: js.UndefOr[MetricName]
     var MetricNamespace: js.UndefOr[MetricNamespace]
+    var RdsEventCategories: js.UndefOr[RdsEventCategories]
+    var RdsEventMessage: js.UndefOr[RdsEventMessage]
+    var S3EventName: js.UndefOr[S3EventName]
     var SourceARN: js.UndefOr[SourceARN]
     var SourceType: js.UndefOr[SourceType]
     var StartTime: js.UndefOr[StartTime]
+    var StatesArn: js.UndefOr[StatesArn]
+    var StatesExecutionArn: js.UndefOr[StatesExecutionArn]
+    var StatesInput: js.UndefOr[StatesInput]
+    var StatesStatus: js.UndefOr[StatesStatus]
     var Unit: js.UndefOr[Unit]
     var Value: js.UndefOr[Value]
     var XRayErrorPercent: js.UndefOr[XRayErrorPercent]
@@ -1199,6 +1236,10 @@ package applicationinsights {
         CodeDeployDeploymentId: js.UndefOr[CodeDeployDeploymentId] = js.undefined,
         CodeDeployInstanceGroupId: js.UndefOr[CodeDeployInstanceGroupId] = js.undefined,
         CodeDeployState: js.UndefOr[CodeDeployState] = js.undefined,
+        EbsCause: js.UndefOr[EbsCause] = js.undefined,
+        EbsEvent: js.UndefOr[EbsEvent] = js.undefined,
+        EbsRequestId: js.UndefOr[EbsRequestId] = js.undefined,
+        EbsResult: js.UndefOr[EbsResult] = js.undefined,
         Ec2State: js.UndefOr[Ec2State] = js.undefined,
         EndTime: js.UndefOr[EndTime] = js.undefined,
         HealthEventArn: js.UndefOr[HealthEventArn] = js.undefined,
@@ -1213,9 +1254,16 @@ package applicationinsights {
         LogText: js.UndefOr[LogText] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
         MetricNamespace: js.UndefOr[MetricNamespace] = js.undefined,
+        RdsEventCategories: js.UndefOr[RdsEventCategories] = js.undefined,
+        RdsEventMessage: js.UndefOr[RdsEventMessage] = js.undefined,
+        S3EventName: js.UndefOr[S3EventName] = js.undefined,
         SourceARN: js.UndefOr[SourceARN] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[StartTime] = js.undefined,
+        StatesArn: js.UndefOr[StatesArn] = js.undefined,
+        StatesExecutionArn: js.UndefOr[StatesExecutionArn] = js.undefined,
+        StatesInput: js.UndefOr[StatesInput] = js.undefined,
+        StatesStatus: js.UndefOr[StatesStatus] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined,
         XRayErrorPercent: js.UndefOr[XRayErrorPercent] = js.undefined,
@@ -1235,6 +1283,10 @@ package applicationinsights {
       CodeDeployDeploymentId.foreach(__v => __obj.updateDynamic("CodeDeployDeploymentId")(__v.asInstanceOf[js.Any]))
       CodeDeployInstanceGroupId.foreach(__v => __obj.updateDynamic("CodeDeployInstanceGroupId")(__v.asInstanceOf[js.Any]))
       CodeDeployState.foreach(__v => __obj.updateDynamic("CodeDeployState")(__v.asInstanceOf[js.Any]))
+      EbsCause.foreach(__v => __obj.updateDynamic("EbsCause")(__v.asInstanceOf[js.Any]))
+      EbsEvent.foreach(__v => __obj.updateDynamic("EbsEvent")(__v.asInstanceOf[js.Any]))
+      EbsRequestId.foreach(__v => __obj.updateDynamic("EbsRequestId")(__v.asInstanceOf[js.Any]))
+      EbsResult.foreach(__v => __obj.updateDynamic("EbsResult")(__v.asInstanceOf[js.Any]))
       Ec2State.foreach(__v => __obj.updateDynamic("Ec2State")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       HealthEventArn.foreach(__v => __obj.updateDynamic("HealthEventArn")(__v.asInstanceOf[js.Any]))
@@ -1249,9 +1301,16 @@ package applicationinsights {
       LogText.foreach(__v => __obj.updateDynamic("LogText")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       MetricNamespace.foreach(__v => __obj.updateDynamic("MetricNamespace")(__v.asInstanceOf[js.Any]))
+      RdsEventCategories.foreach(__v => __obj.updateDynamic("RdsEventCategories")(__v.asInstanceOf[js.Any]))
+      RdsEventMessage.foreach(__v => __obj.updateDynamic("RdsEventMessage")(__v.asInstanceOf[js.Any]))
+      S3EventName.foreach(__v => __obj.updateDynamic("S3EventName")(__v.asInstanceOf[js.Any]))
       SourceARN.foreach(__v => __obj.updateDynamic("SourceARN")(__v.asInstanceOf[js.Any]))
       SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      StatesArn.foreach(__v => __obj.updateDynamic("StatesArn")(__v.asInstanceOf[js.Any]))
+      StatesExecutionArn.foreach(__v => __obj.updateDynamic("StatesExecutionArn")(__v.asInstanceOf[js.Any]))
+      StatesInput.foreach(__v => __obj.updateDynamic("StatesInput")(__v.asInstanceOf[js.Any]))
+      StatesStatus.foreach(__v => __obj.updateDynamic("StatesStatus")(__v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       XRayErrorPercent.foreach(__v => __obj.updateDynamic("XRayErrorPercent")(__v.asInstanceOf[js.Any]))
@@ -1263,6 +1322,15 @@ package applicationinsights {
       XRayThrottlePercent.foreach(__v => __obj.updateDynamic("XRayThrottlePercent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Observation]
     }
+  }
+
+  @js.native
+  sealed trait OsType extends js.Any
+  object OsType {
+    val WINDOWS = "WINDOWS".asInstanceOf[OsType]
+    val LINUX = "LINUX".asInstanceOf[OsType]
+
+    @inline def values = js.Array(WINDOWS, LINUX)
   }
 
   /** Describes a problem that is detected by correlating observations.
@@ -1408,13 +1476,33 @@ package applicationinsights {
   @js.native
   sealed trait Tier extends js.Any
   object Tier {
+    val CUSTOM = "CUSTOM".asInstanceOf[Tier]
     val DEFAULT = "DEFAULT".asInstanceOf[Tier]
     val DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
     val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
+    val DOT_NET_WEB_TIER = "DOT_NET_WEB_TIER".asInstanceOf[Tier]
     val DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
     val SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
+    val SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP".asInstanceOf[Tier]
+    val MYSQL = "MYSQL".asInstanceOf[Tier]
+    val POSTGRESQL = "POSTGRESQL".asInstanceOf[Tier]
+    val JAVA_JMX = "JAVA_JMX".asInstanceOf[Tier]
+    val ORACLE = "ORACLE".asInstanceOf[Tier]
 
-    @inline def values = js.Array(DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB, SQL_SERVER)
+    @inline def values = js.Array(
+      CUSTOM,
+      DEFAULT,
+      DOT_NET_CORE,
+      DOT_NET_WORKER,
+      DOT_NET_WEB_TIER,
+      DOT_NET_WEB,
+      SQL_SERVER,
+      SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP,
+      MYSQL,
+      POSTGRESQL,
+      JAVA_JMX,
+      ORACLE
+    )
   }
 
   @js.native
@@ -1537,18 +1625,18 @@ package applicationinsights {
 
   @js.native
   trait UpdateComponentRequest extends js.Object {
-    var ComponentName: ComponentName
+    var ComponentName: CustomComponentName
     var ResourceGroupName: ResourceGroupName
-    var NewComponentName: js.UndefOr[NewComponentName]
+    var NewComponentName: js.UndefOr[CustomComponentName]
     var ResourceList: js.UndefOr[ResourceList]
   }
 
   object UpdateComponentRequest {
     @inline
     def apply(
-        ComponentName: ComponentName,
+        ComponentName: CustomComponentName,
         ResourceGroupName: ResourceGroupName,
-        NewComponentName: js.UndefOr[NewComponentName] = js.undefined,
+        NewComponentName: js.UndefOr[CustomComponentName] = js.undefined,
         ResourceList: js.UndefOr[ResourceList] = js.undefined
     ): UpdateComponentRequest = {
       val __obj = js.Dynamic.literal(

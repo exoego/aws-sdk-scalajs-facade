@@ -165,6 +165,7 @@ package object iot {
   type Fields = js.Array[Field]
   type FileId = Int
   type FileName = String
+  type FileType = Int
   type FindingId = String
   type FindingIds = js.Array[FindingId]
   type FirehoseSeparator = String
@@ -10645,6 +10646,7 @@ package iot {
     var codeSigning: js.UndefOr[CodeSigning]
     var fileLocation: js.UndefOr[FileLocation]
     var fileName: js.UndefOr[FileName]
+    var fileType: js.UndefOr[FileType]
     var fileVersion: js.UndefOr[OTAUpdateFileVersion]
   }
 
@@ -10655,6 +10657,7 @@ package iot {
         codeSigning: js.UndefOr[CodeSigning] = js.undefined,
         fileLocation: js.UndefOr[FileLocation] = js.undefined,
         fileName: js.UndefOr[FileName] = js.undefined,
+        fileType: js.UndefOr[FileType] = js.undefined,
         fileVersion: js.UndefOr[OTAUpdateFileVersion] = js.undefined
     ): OTAUpdateFile = {
       val __obj = js.Dynamic.literal()
@@ -10662,6 +10665,7 @@ package iot {
       codeSigning.foreach(__v => __obj.updateDynamic("codeSigning")(__v.asInstanceOf[js.Any]))
       fileLocation.foreach(__v => __obj.updateDynamic("fileLocation")(__v.asInstanceOf[js.Any]))
       fileName.foreach(__v => __obj.updateDynamic("fileName")(__v.asInstanceOf[js.Any]))
+      fileType.foreach(__v => __obj.updateDynamic("fileType")(__v.asInstanceOf[js.Any]))
       fileVersion.foreach(__v => __obj.updateDynamic("fileVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OTAUpdateFile]
     }

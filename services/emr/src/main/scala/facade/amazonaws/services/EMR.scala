@@ -56,6 +56,7 @@ package object emr {
   type ScalingRuleList = js.Array[ScalingRule]
   type SecurityConfigurationList = js.Array[SecurityConfigurationSummary]
   type SecurityGroupsList = js.Array[XmlStringMaxLen256]
+  type SessionMappingSummaryList = js.Array[SessionMappingSummary]
   type StepConfigList = js.Array[StepConfig]
   type StepDetailList = js.Array[StepDetail]
   type StepId = String
@@ -64,6 +65,8 @@ package object emr {
   type StepSummaryList = js.Array[StepSummary]
   type StringList = js.Array[String]
   type StringMap = js.Dictionary[String]
+  type StudioSummaryList = js.Array[StudioSummary]
+  type SubnetIdList = js.Array[String]
   type SupportedProductsList = js.Array[XmlStringMaxLen256]
   type TagList = js.Array[Tag]
   type WholeNumber = Int
@@ -80,13 +83,19 @@ package object emr {
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] = service.cancelSteps(params).promise().toFuture
     @inline def createSecurityConfigurationFuture(params: CreateSecurityConfigurationInput): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise().toFuture
+    @inline def createStudioFuture(params: CreateStudioInput): Future[CreateStudioOutput] = service.createStudio(params).promise().toFuture
+    @inline def createStudioSessionMappingFuture(params: CreateStudioSessionMappingInput): Future[js.Object] = service.createStudioSessionMapping(params).promise().toFuture
     @inline def deleteSecurityConfigurationFuture(params: DeleteSecurityConfigurationInput): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise().toFuture
+    @inline def deleteStudioFuture(params: DeleteStudioInput): Future[js.Object] = service.deleteStudio(params).promise().toFuture
+    @inline def deleteStudioSessionMappingFuture(params: DeleteStudioSessionMappingInput): Future[js.Object] = service.deleteStudioSessionMapping(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] = service.describeCluster(params).promise().toFuture
     @inline def describeNotebookExecutionFuture(params: DescribeNotebookExecutionInput): Future[DescribeNotebookExecutionOutput] = service.describeNotebookExecution(params).promise().toFuture
     @inline def describeSecurityConfigurationFuture(params: DescribeSecurityConfigurationInput): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise().toFuture
     @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] = service.describeStep(params).promise().toFuture
+    @inline def describeStudioFuture(params: DescribeStudioInput): Future[DescribeStudioOutput] = service.describeStudio(params).promise().toFuture
     @inline def getBlockPublicAccessConfigurationFuture(params: GetBlockPublicAccessConfigurationInput): Future[GetBlockPublicAccessConfigurationOutput] = service.getBlockPublicAccessConfiguration(params).promise().toFuture
     @inline def getManagedScalingPolicyFuture(params: GetManagedScalingPolicyInput): Future[GetManagedScalingPolicyOutput] = service.getManagedScalingPolicy(params).promise().toFuture
+    @inline def getStudioSessionMappingFuture(params: GetStudioSessionMappingInput): Future[GetStudioSessionMappingOutput] = service.getStudioSessionMapping(params).promise().toFuture
     @inline def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] = service.listBootstrapActions(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] = service.listClusters(params).promise().toFuture
     @inline def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] = service.listInstanceFleets(params).promise().toFuture
@@ -95,6 +104,8 @@ package object emr {
     @inline def listNotebookExecutionsFuture(params: ListNotebookExecutionsInput): Future[ListNotebookExecutionsOutput] = service.listNotebookExecutions(params).promise().toFuture
     @inline def listSecurityConfigurationsFuture(params: ListSecurityConfigurationsInput): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise().toFuture
     @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise().toFuture
+    @inline def listStudioSessionMappingsFuture(params: ListStudioSessionMappingsInput): Future[ListStudioSessionMappingsOutput] = service.listStudioSessionMappings(params).promise().toFuture
+    @inline def listStudiosFuture(params: ListStudiosInput): Future[ListStudiosOutput] = service.listStudios(params).promise().toFuture
     @inline def modifyClusterFuture(params: ModifyClusterInput): Future[ModifyClusterOutput] = service.modifyCluster(params).promise().toFuture
     @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] = service.modifyInstanceFleet(params).promise().toFuture
     @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] = service.modifyInstanceGroups(params).promise().toFuture
@@ -110,6 +121,7 @@ package object emr {
     @inline def startNotebookExecutionFuture(params: StartNotebookExecutionInput): Future[StartNotebookExecutionOutput] = service.startNotebookExecution(params).promise().toFuture
     @inline def stopNotebookExecutionFuture(params: StopNotebookExecutionInput): Future[js.Object] = service.stopNotebookExecution(params).promise().toFuture
     @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] = service.terminateJobFlows(params).promise().toFuture
+    @inline def updateStudioSessionMappingFuture(params: UpdateStudioSessionMappingInput): Future[js.Object] = service.updateStudioSessionMapping(params).promise().toFuture
 
   }
 }
@@ -127,13 +139,19 @@ package emr {
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def cancelSteps(params: CancelStepsInput): Request[CancelStepsOutput] = js.native
     def createSecurityConfiguration(params: CreateSecurityConfigurationInput): Request[CreateSecurityConfigurationOutput] = js.native
+    def createStudio(params: CreateStudioInput): Request[CreateStudioOutput] = js.native
+    def createStudioSessionMapping(params: CreateStudioSessionMappingInput): Request[js.Object] = js.native
     def deleteSecurityConfiguration(params: DeleteSecurityConfigurationInput): Request[DeleteSecurityConfigurationOutput] = js.native
+    def deleteStudio(params: DeleteStudioInput): Request[js.Object] = js.native
+    def deleteStudioSessionMapping(params: DeleteStudioSessionMappingInput): Request[js.Object] = js.native
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
     def describeNotebookExecution(params: DescribeNotebookExecutionInput): Request[DescribeNotebookExecutionOutput] = js.native
     def describeSecurityConfiguration(params: DescribeSecurityConfigurationInput): Request[DescribeSecurityConfigurationOutput] = js.native
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
+    def describeStudio(params: DescribeStudioInput): Request[DescribeStudioOutput] = js.native
     def getBlockPublicAccessConfiguration(params: GetBlockPublicAccessConfigurationInput): Request[GetBlockPublicAccessConfigurationOutput] = js.native
     def getManagedScalingPolicy(params: GetManagedScalingPolicyInput): Request[GetManagedScalingPolicyOutput] = js.native
+    def getStudioSessionMapping(params: GetStudioSessionMappingInput): Request[GetStudioSessionMappingOutput] = js.native
     def listBootstrapActions(params: ListBootstrapActionsInput): Request[ListBootstrapActionsOutput] = js.native
     def listClusters(params: ListClustersInput): Request[ListClustersOutput] = js.native
     def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput] = js.native
@@ -142,6 +160,8 @@ package emr {
     def listNotebookExecutions(params: ListNotebookExecutionsInput): Request[ListNotebookExecutionsOutput] = js.native
     def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] = js.native
     def listSteps(params: ListStepsInput): Request[ListStepsOutput] = js.native
+    def listStudioSessionMappings(params: ListStudioSessionMappingsInput): Request[ListStudioSessionMappingsOutput] = js.native
+    def listStudios(params: ListStudiosInput): Request[ListStudiosOutput] = js.native
     def modifyCluster(params: ModifyClusterInput): Request[ModifyClusterOutput] = js.native
     def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object] = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object] = js.native
@@ -157,6 +177,7 @@ package emr {
     def startNotebookExecution(params: StartNotebookExecutionInput): Request[StartNotebookExecutionOutput] = js.native
     def stopNotebookExecution(params: StopNotebookExecutionInput): Request[js.Object] = js.native
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
+    def updateStudioSessionMapping(params: UpdateStudioSessionMappingInput): Request[js.Object] = js.native
   }
 
   @js.native
@@ -369,6 +390,15 @@ package emr {
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Application]
     }
+  }
+
+  @js.native
+  sealed trait AuthMode extends js.Any
+  object AuthMode {
+    val SSO = "SSO".asInstanceOf[AuthMode]
+    val IAM = "IAM".asInstanceOf[AuthMode]
+
+    @inline def values = js.Array(SSO, IAM)
   }
 
   /** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
@@ -1067,6 +1097,103 @@ package emr {
   }
 
   @js.native
+  trait CreateStudioInput extends js.Object {
+    var AuthMode: AuthMode
+    var EngineSecurityGroupId: XmlStringMaxLen256
+    var Name: XmlStringMaxLen256
+    var ServiceRole: XmlString
+    var SubnetIds: SubnetIdList
+    var UserRole: XmlString
+    var VpcId: XmlStringMaxLen256
+    var WorkspaceSecurityGroupId: XmlStringMaxLen256
+    var DefaultS3Location: js.UndefOr[XmlString]
+    var Description: js.UndefOr[XmlStringMaxLen256]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateStudioInput {
+    @inline
+    def apply(
+        AuthMode: AuthMode,
+        EngineSecurityGroupId: XmlStringMaxLen256,
+        Name: XmlStringMaxLen256,
+        ServiceRole: XmlString,
+        SubnetIds: SubnetIdList,
+        UserRole: XmlString,
+        VpcId: XmlStringMaxLen256,
+        WorkspaceSecurityGroupId: XmlStringMaxLen256,
+        DefaultS3Location: js.UndefOr[XmlString] = js.undefined,
+        Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateStudioInput = {
+      val __obj = js.Dynamic.literal(
+        "AuthMode" -> AuthMode.asInstanceOf[js.Any],
+        "EngineSecurityGroupId" -> EngineSecurityGroupId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "UserRole" -> UserRole.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any],
+        "WorkspaceSecurityGroupId" -> WorkspaceSecurityGroupId.asInstanceOf[js.Any]
+      )
+
+      DefaultS3Location.foreach(__v => __obj.updateDynamic("DefaultS3Location")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStudioInput]
+    }
+  }
+
+  @js.native
+  trait CreateStudioOutput extends js.Object {
+    var StudioId: js.UndefOr[XmlStringMaxLen256]
+    var Url: js.UndefOr[XmlString]
+  }
+
+  object CreateStudioOutput {
+    @inline
+    def apply(
+        StudioId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Url: js.UndefOr[XmlString] = js.undefined
+    ): CreateStudioOutput = {
+      val __obj = js.Dynamic.literal()
+      StudioId.foreach(__v => __obj.updateDynamic("StudioId")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStudioOutput]
+    }
+  }
+
+  @js.native
+  trait CreateStudioSessionMappingInput extends js.Object {
+    var IdentityType: IdentityType
+    var SessionPolicyArn: XmlStringMaxLen256
+    var StudioId: XmlStringMaxLen256
+    var IdentityId: js.UndefOr[XmlStringMaxLen256]
+    var IdentityName: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object CreateStudioSessionMappingInput {
+    @inline
+    def apply(
+        IdentityType: IdentityType,
+        SessionPolicyArn: XmlStringMaxLen256,
+        StudioId: XmlStringMaxLen256,
+        IdentityId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityName: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): CreateStudioSessionMappingInput = {
+      val __obj = js.Dynamic.literal(
+        "IdentityType" -> IdentityType.asInstanceOf[js.Any],
+        "SessionPolicyArn" -> SessionPolicyArn.asInstanceOf[js.Any],
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStudioSessionMappingInput]
+    }
+  }
+
+  @js.native
   trait DeleteSecurityConfigurationInput extends js.Object {
     var Name: XmlString
   }
@@ -1091,6 +1218,50 @@ package emr {
     def apply(): DeleteSecurityConfigurationOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSecurityConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteStudioInput extends js.Object {
+    var StudioId: XmlStringMaxLen256
+  }
+
+  object DeleteStudioInput {
+    @inline
+    def apply(
+        StudioId: XmlStringMaxLen256
+    ): DeleteStudioInput = {
+      val __obj = js.Dynamic.literal(
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteStudioInput]
+    }
+  }
+
+  @js.native
+  trait DeleteStudioSessionMappingInput extends js.Object {
+    var IdentityType: IdentityType
+    var StudioId: XmlStringMaxLen256
+    var IdentityId: js.UndefOr[XmlStringMaxLen256]
+    var IdentityName: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object DeleteStudioSessionMappingInput {
+    @inline
+    def apply(
+        IdentityType: IdentityType,
+        StudioId: XmlStringMaxLen256,
+        IdentityId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityName: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): DeleteStudioSessionMappingInput = {
+      val __obj = js.Dynamic.literal(
+        "IdentityType" -> IdentityType.asInstanceOf[js.Any],
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteStudioSessionMappingInput]
     }
   }
 
@@ -1285,6 +1456,39 @@ package emr {
       val __obj = js.Dynamic.literal()
       Step.foreach(__v => __obj.updateDynamic("Step")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStepOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeStudioInput extends js.Object {
+    var StudioId: XmlStringMaxLen256
+  }
+
+  object DescribeStudioInput {
+    @inline
+    def apply(
+        StudioId: XmlStringMaxLen256
+    ): DescribeStudioInput = {
+      val __obj = js.Dynamic.literal(
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeStudioInput]
+    }
+  }
+
+  @js.native
+  trait DescribeStudioOutput extends js.Object {
+    var Studio: js.UndefOr[Studio]
+  }
+
+  object DescribeStudioOutput {
+    @inline
+    def apply(
+        Studio: js.UndefOr[Studio] = js.undefined
+    ): DescribeStudioOutput = {
+      val __obj = js.Dynamic.literal()
+      Studio.foreach(__v => __obj.updateDynamic("Studio")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStudioOutput]
     }
   }
 
@@ -1544,6 +1748,49 @@ package emr {
     }
   }
 
+  @js.native
+  trait GetStudioSessionMappingInput extends js.Object {
+    var IdentityType: IdentityType
+    var StudioId: XmlStringMaxLen256
+    var IdentityId: js.UndefOr[XmlStringMaxLen256]
+    var IdentityName: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object GetStudioSessionMappingInput {
+    @inline
+    def apply(
+        IdentityType: IdentityType,
+        StudioId: XmlStringMaxLen256,
+        IdentityId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityName: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): GetStudioSessionMappingInput = {
+      val __obj = js.Dynamic.literal(
+        "IdentityType" -> IdentityType.asInstanceOf[js.Any],
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStudioSessionMappingInput]
+    }
+  }
+
+  @js.native
+  trait GetStudioSessionMappingOutput extends js.Object {
+    var SessionMapping: js.UndefOr[SessionMappingDetail]
+  }
+
+  object GetStudioSessionMappingOutput {
+    @inline
+    def apply(
+        SessionMapping: js.UndefOr[SessionMappingDetail] = js.undefined
+    ): GetStudioSessionMappingOutput = {
+      val __obj = js.Dynamic.literal()
+      SessionMapping.foreach(__v => __obj.updateDynamic("SessionMapping")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStudioSessionMappingOutput]
+    }
+  }
+
   /** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
     */
   @js.native
@@ -1598,6 +1845,15 @@ package emr {
       Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HadoopStepConfig]
     }
+  }
+
+  @js.native
+  sealed trait IdentityType extends js.Any
+  object IdentityType {
+    val USER = "USER".asInstanceOf[IdentityType]
+    val GROUP = "GROUP".asInstanceOf[IdentityType]
+
+    @inline def values = js.Array(USER, GROUP)
   }
 
   /** Represents an EC2 instance provisioned as part of cluster.
@@ -1660,7 +1916,7 @@ package emr {
     @inline def values = js.Array(INSTANCE_FLEET, INSTANCE_GROUP)
   }
 
-  /** Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity.
+  /** Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot Instances, which are provisioned to meet a defined target capacity.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -1772,9 +2028,9 @@ package emr {
     }
   }
 
-  /** The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
+  /** The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot Instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait InstanceFleetProvisioningSpecifications extends js.Object {
@@ -2341,7 +2597,7 @@ package emr {
     }
   }
 
-  /** An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.
+  /** An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of five instance type configurations in a fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -2530,7 +2786,7 @@ package emr {
     }
   }
 
-  /** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
+  /** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
     */
   @js.native
   trait JobFlowInstancesConfig extends js.Object {
@@ -2652,7 +2908,7 @@ package emr {
     }
   }
 
-  /** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
+  /** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>Amazon EMR Management Guide</i>.
     */
   @js.native
   trait KerberosAttributes extends js.Object {
@@ -2684,7 +2940,7 @@ package emr {
     }
   }
 
-  /** A key value pair.
+  /** A key-value pair.
     */
   @js.native
   trait KeyValue extends js.Object {
@@ -3072,6 +3328,82 @@ package emr {
     }
   }
 
+  @js.native
+  trait ListStudioSessionMappingsInput extends js.Object {
+    var IdentityType: js.UndefOr[IdentityType]
+    var Marker: js.UndefOr[Marker]
+    var StudioId: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object ListStudioSessionMappingsInput {
+    @inline
+    def apply(
+        IdentityType: js.UndefOr[IdentityType] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        StudioId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): ListStudioSessionMappingsInput = {
+      val __obj = js.Dynamic.literal()
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      StudioId.foreach(__v => __obj.updateDynamic("StudioId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStudioSessionMappingsInput]
+    }
+  }
+
+  @js.native
+  trait ListStudioSessionMappingsOutput extends js.Object {
+    var Marker: js.UndefOr[Marker]
+    var SessionMappings: js.UndefOr[SessionMappingSummaryList]
+  }
+
+  object ListStudioSessionMappingsOutput {
+    @inline
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        SessionMappings: js.UndefOr[SessionMappingSummaryList] = js.undefined
+    ): ListStudioSessionMappingsOutput = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      SessionMappings.foreach(__v => __obj.updateDynamic("SessionMappings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStudioSessionMappingsOutput]
+    }
+  }
+
+  @js.native
+  trait ListStudiosInput extends js.Object {
+    var Marker: js.UndefOr[Marker]
+  }
+
+  object ListStudiosInput {
+    @inline
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListStudiosInput = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStudiosInput]
+    }
+  }
+
+  @js.native
+  trait ListStudiosOutput extends js.Object {
+    var Marker: js.UndefOr[Marker]
+    var Studios: js.UndefOr[StudioSummaryList]
+  }
+
+  object ListStudiosOutput {
+    @inline
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        Studios: js.UndefOr[StudioSummaryList] = js.undefined
+    ): ListStudiosOutput = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Studios.foreach(__v => __obj.updateDynamic("Studios")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStudiosOutput]
+    }
+  }
+
   /** Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
     */
   @js.native
@@ -3310,9 +3642,9 @@ package emr {
     @inline def values = js.Array(`lowest-price`)
   }
 
-  /** The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+  /** The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait OnDemandProvisioningSpecification extends js.Object {
@@ -3885,6 +4217,75 @@ package emr {
     }
   }
 
+  /** Details for an Amazon EMR Studio session mapping including creation time, user or group ID, Studio ID, and so on.
+    */
+  @js.native
+  trait SessionMappingDetail extends js.Object {
+    var CreationTime: js.UndefOr[Date]
+    var IdentityId: js.UndefOr[XmlStringMaxLen256]
+    var IdentityName: js.UndefOr[XmlStringMaxLen256]
+    var IdentityType: js.UndefOr[IdentityType]
+    var LastModifiedTime: js.UndefOr[Date]
+    var SessionPolicyArn: js.UndefOr[XmlStringMaxLen256]
+    var StudioId: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object SessionMappingDetail {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        IdentityId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityType: js.UndefOr[IdentityType] = js.undefined,
+        LastModifiedTime: js.UndefOr[Date] = js.undefined,
+        SessionPolicyArn: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        StudioId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): SessionMappingDetail = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      SessionPolicyArn.foreach(__v => __obj.updateDynamic("SessionPolicyArn")(__v.asInstanceOf[js.Any]))
+      StudioId.foreach(__v => __obj.updateDynamic("StudioId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SessionMappingDetail]
+    }
+  }
+
+  /** Details for an Amazon EMR Studio session mapping. The details do not include the time the session mapping was last modified.
+    */
+  @js.native
+  trait SessionMappingSummary extends js.Object {
+    var CreationTime: js.UndefOr[Date]
+    var IdentityId: js.UndefOr[XmlStringMaxLen256]
+    var IdentityName: js.UndefOr[XmlStringMaxLen256]
+    var IdentityType: js.UndefOr[IdentityType]
+    var SessionPolicyArn: js.UndefOr[XmlStringMaxLen256]
+    var StudioId: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object SessionMappingSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        IdentityId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityType: js.UndefOr[IdentityType] = js.undefined,
+        SessionPolicyArn: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        StudioId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): SessionMappingSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      SessionPolicyArn.foreach(__v => __obj.updateDynamic("SessionPolicyArn")(__v.asInstanceOf[js.Any]))
+      StudioId.foreach(__v => __obj.updateDynamic("StudioId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SessionMappingSummary]
+    }
+  }
+
   /** The input argument to the <a>TerminationProtection</a> operation.
     */
   @js.native
@@ -3984,9 +4385,9 @@ package emr {
     @inline def values = js.Array(`capacity-optimized`)
   }
 
-  /** The launch specification for Spot instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
+  /** The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
     */
   @js.native
   trait SpotProvisioningSpecification extends js.Object {
@@ -4365,6 +4766,99 @@ package emr {
     }
   }
 
+  /** Details for an Amazon EMR Studio including ID, creation time, name, and so on.
+    */
+  @js.native
+  trait Studio extends js.Object {
+    var AuthMode: js.UndefOr[AuthMode]
+    var CreationTime: js.UndefOr[Date]
+    var DefaultS3Location: js.UndefOr[XmlString]
+    var Description: js.UndefOr[XmlStringMaxLen256]
+    var EngineSecurityGroupId: js.UndefOr[XmlStringMaxLen256]
+    var Name: js.UndefOr[XmlStringMaxLen256]
+    var ServiceRole: js.UndefOr[XmlString]
+    var StudioArn: js.UndefOr[XmlStringMaxLen256]
+    var StudioId: js.UndefOr[XmlStringMaxLen256]
+    var SubnetIds: js.UndefOr[SubnetIdList]
+    var Tags: js.UndefOr[TagList]
+    var Url: js.UndefOr[XmlString]
+    var UserRole: js.UndefOr[XmlString]
+    var VpcId: js.UndefOr[XmlStringMaxLen256]
+    var WorkspaceSecurityGroupId: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object Studio {
+    @inline
+    def apply(
+        AuthMode: js.UndefOr[AuthMode] = js.undefined,
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        DefaultS3Location: js.UndefOr[XmlString] = js.undefined,
+        Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EngineSecurityGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        ServiceRole: js.UndefOr[XmlString] = js.undefined,
+        StudioArn: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        StudioId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        Url: js.UndefOr[XmlString] = js.undefined,
+        UserRole: js.UndefOr[XmlString] = js.undefined,
+        VpcId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        WorkspaceSecurityGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): Studio = {
+      val __obj = js.Dynamic.literal()
+      AuthMode.foreach(__v => __obj.updateDynamic("AuthMode")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DefaultS3Location.foreach(__v => __obj.updateDynamic("DefaultS3Location")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EngineSecurityGroupId.foreach(__v => __obj.updateDynamic("EngineSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      StudioArn.foreach(__v => __obj.updateDynamic("StudioArn")(__v.asInstanceOf[js.Any]))
+      StudioId.foreach(__v => __obj.updateDynamic("StudioId")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      UserRole.foreach(__v => __obj.updateDynamic("UserRole")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      WorkspaceSecurityGroupId.foreach(__v => __obj.updateDynamic("WorkspaceSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Studio]
+    }
+  }
+
+  /** Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details do not include subnets, IAM roles, security groups, or tags associated with the Studio.
+    */
+  @js.native
+  trait StudioSummary extends js.Object {
+    var CreationTime: js.UndefOr[Date]
+    var Description: js.UndefOr[XmlStringMaxLen256]
+    var Name: js.UndefOr[XmlStringMaxLen256]
+    var StudioId: js.UndefOr[XmlStringMaxLen256]
+    var Url: js.UndefOr[XmlStringMaxLen256]
+    var VpcId: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object StudioSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        StudioId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Url: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        VpcId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): StudioSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StudioId.foreach(__v => __obj.updateDynamic("StudioId")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StudioSummary]
+    }
+  }
+
   /** The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
     */
   @js.native
@@ -4386,7 +4880,7 @@ package emr {
     }
   }
 
-  /** A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
+  /** A key-value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -4486,6 +4980,36 @@ package emr {
       TERA_BITS_PER_SECOND,
       COUNT_PER_SECOND
     )
+  }
+
+  @js.native
+  trait UpdateStudioSessionMappingInput extends js.Object {
+    var IdentityType: IdentityType
+    var SessionPolicyArn: XmlStringMaxLen256
+    var StudioId: XmlStringMaxLen256
+    var IdentityId: js.UndefOr[XmlStringMaxLen256]
+    var IdentityName: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object UpdateStudioSessionMappingInput {
+    @inline
+    def apply(
+        IdentityType: IdentityType,
+        SessionPolicyArn: XmlStringMaxLen256,
+        StudioId: XmlStringMaxLen256,
+        IdentityId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdentityName: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): UpdateStudioSessionMappingInput = {
+      val __obj = js.Dynamic.literal(
+        "IdentityType" -> IdentityType.asInstanceOf[js.Any],
+        "SessionPolicyArn" -> SessionPolicyArn.asInstanceOf[js.Any],
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStudioSessionMappingInput]
+    }
   }
 
   /** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.

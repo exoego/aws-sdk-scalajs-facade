@@ -7,11 +7,11 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object signer {
+  type AccountId = String
+  type Arn = String
   type BucketName = String
   type CertificateArn = String
   type ClientRequestToken = String
-  type CompletedAt = js.Date
-  type CreatedAt = js.Date
   type DisplayName = String
   type EncryptionAlgorithms = js.Array[EncryptionAlgorithm]
   type HashAlgorithms = js.Array[HashAlgorithm]
@@ -21,10 +21,14 @@ package object signer {
   type MaxResults = Int
   type MaxSizeInMB = Int
   type NextToken = String
+  type Permissions = js.Array[Permission]
   type PlatformId = String
+  type PolicySizeBytes = Int
   type Prefix = String
   type ProfileName = String
+  type ProfileVersion = String
   type RequestedBy = String
+  type RevocationReasonString = String
   type SigningJobs = js.Array[SigningJob]
   type SigningParameterKey = String
   type SigningParameterValue = String
@@ -32,24 +36,30 @@ package object signer {
   type SigningPlatforms = js.Array[SigningPlatform]
   type SigningProfiles = js.Array[SigningProfile]
   type StatusReason = String
+  type Statuses = js.Array[SigningProfileStatus]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type Timestamp = js.Date
   type Version = String
-  type key = String
 
   implicit final class SignerOps(private val service: Signer) extends AnyVal {
 
+    @inline def addProfilePermissionFuture(params: AddProfilePermissionRequest): Future[AddProfilePermissionResponse] = service.addProfilePermission(params).promise().toFuture
     @inline def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] = service.cancelSigningProfile(params).promise().toFuture
     @inline def describeSigningJobFuture(params: DescribeSigningJobRequest): Future[DescribeSigningJobResponse] = service.describeSigningJob(params).promise().toFuture
     @inline def getSigningPlatformFuture(params: GetSigningPlatformRequest): Future[GetSigningPlatformResponse] = service.getSigningPlatform(params).promise().toFuture
     @inline def getSigningProfileFuture(params: GetSigningProfileRequest): Future[GetSigningProfileResponse] = service.getSigningProfile(params).promise().toFuture
+    @inline def listProfilePermissionsFuture(params: ListProfilePermissionsRequest): Future[ListProfilePermissionsResponse] = service.listProfilePermissions(params).promise().toFuture
     @inline def listSigningJobsFuture(params: ListSigningJobsRequest): Future[ListSigningJobsResponse] = service.listSigningJobs(params).promise().toFuture
     @inline def listSigningPlatformsFuture(params: ListSigningPlatformsRequest): Future[ListSigningPlatformsResponse] = service.listSigningPlatforms(params).promise().toFuture
     @inline def listSigningProfilesFuture(params: ListSigningProfilesRequest): Future[ListSigningProfilesResponse] = service.listSigningProfiles(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putSigningProfileFuture(params: PutSigningProfileRequest): Future[PutSigningProfileResponse] = service.putSigningProfile(params).promise().toFuture
+    @inline def removeProfilePermissionFuture(params: RemoveProfilePermissionRequest): Future[RemoveProfilePermissionResponse] = service.removeProfilePermission(params).promise().toFuture
+    @inline def revokeSignatureFuture(params: RevokeSignatureRequest): Future[js.Object] = service.revokeSignature(params).promise().toFuture
+    @inline def revokeSigningProfileFuture(params: RevokeSigningProfileRequest): Future[js.Object] = service.revokeSigningProfile(params).promise().toFuture
     @inline def startSigningJobFuture(params: StartSigningJobRequest): Future[StartSigningJobResponse] = service.startSigningJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -63,18 +73,72 @@ package signer {
   class Signer() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def addProfilePermission(params: AddProfilePermissionRequest): Request[AddProfilePermissionResponse] = js.native
     def cancelSigningProfile(params: CancelSigningProfileRequest): Request[js.Object] = js.native
     def describeSigningJob(params: DescribeSigningJobRequest): Request[DescribeSigningJobResponse] = js.native
     def getSigningPlatform(params: GetSigningPlatformRequest): Request[GetSigningPlatformResponse] = js.native
     def getSigningProfile(params: GetSigningProfileRequest): Request[GetSigningProfileResponse] = js.native
+    def listProfilePermissions(params: ListProfilePermissionsRequest): Request[ListProfilePermissionsResponse] = js.native
     def listSigningJobs(params: ListSigningJobsRequest): Request[ListSigningJobsResponse] = js.native
     def listSigningPlatforms(params: ListSigningPlatformsRequest): Request[ListSigningPlatformsResponse] = js.native
     def listSigningProfiles(params: ListSigningProfilesRequest): Request[ListSigningProfilesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putSigningProfile(params: PutSigningProfileRequest): Request[PutSigningProfileResponse] = js.native
+    def removeProfilePermission(params: RemoveProfilePermissionRequest): Request[RemoveProfilePermissionResponse] = js.native
+    def revokeSignature(params: RevokeSignatureRequest): Request[js.Object] = js.native
+    def revokeSigningProfile(params: RevokeSigningProfileRequest): Request[js.Object] = js.native
     def startSigningJob(params: StartSigningJobRequest): Request[StartSigningJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+
+  @js.native
+  trait AddProfilePermissionRequest extends js.Object {
+    var action: String
+    var principal: String
+    var profileName: ProfileName
+    var statementId: String
+    var profileVersion: js.UndefOr[ProfileVersion]
+    var revisionId: js.UndefOr[String]
+  }
+
+  object AddProfilePermissionRequest {
+    @inline
+    def apply(
+        action: String,
+        principal: String,
+        profileName: ProfileName,
+        statementId: String,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
+        revisionId: js.UndefOr[String] = js.undefined
+    ): AddProfilePermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any],
+        "principal" -> principal.asInstanceOf[js.Any],
+        "profileName" -> profileName.asInstanceOf[js.Any],
+        "statementId" -> statementId.asInstanceOf[js.Any]
+      )
+
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddProfilePermissionRequest]
+    }
+  }
+
+  @js.native
+  trait AddProfilePermissionResponse extends js.Object {
+    var revisionId: js.UndefOr[String]
+  }
+
+  object AddProfilePermissionResponse {
+    @inline
+    def apply(
+        revisionId: js.UndefOr[String] = js.undefined
+    ): AddProfilePermissionResponse = {
+      val __obj = js.Dynamic.literal()
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddProfilePermissionResponse]
+    }
   }
 
   @js.native
@@ -121,13 +185,19 @@ package signer {
 
   @js.native
   trait DescribeSigningJobResponse extends js.Object {
-    var completedAt: js.UndefOr[CompletedAt]
-    var createdAt: js.UndefOr[CreatedAt]
+    var completedAt: js.UndefOr[Timestamp]
+    var createdAt: js.UndefOr[Timestamp]
     var jobId: js.UndefOr[JobId]
+    var jobInvoker: js.UndefOr[AccountId]
+    var jobOwner: js.UndefOr[AccountId]
     var overrides: js.UndefOr[SigningPlatformOverrides]
+    var platformDisplayName: js.UndefOr[DisplayName]
     var platformId: js.UndefOr[PlatformId]
     var profileName: js.UndefOr[ProfileName]
+    var profileVersion: js.UndefOr[ProfileVersion]
     var requestedBy: js.UndefOr[RequestedBy]
+    var revocationRecord: js.UndefOr[SigningJobRevocationRecord]
+    var signatureExpiresAt: js.UndefOr[Timestamp]
     var signedObject: js.UndefOr[SignedObject]
     var signingMaterial: js.UndefOr[SigningMaterial]
     var signingParameters: js.UndefOr[SigningParameters]
@@ -139,13 +209,19 @@ package signer {
   object DescribeSigningJobResponse {
     @inline
     def apply(
-        completedAt: js.UndefOr[CompletedAt] = js.undefined,
-        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        completedAt: js.UndefOr[Timestamp] = js.undefined,
+        createdAt: js.UndefOr[Timestamp] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined,
+        jobInvoker: js.UndefOr[AccountId] = js.undefined,
+        jobOwner: js.UndefOr[AccountId] = js.undefined,
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
+        platformDisplayName: js.UndefOr[DisplayName] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
         profileName: js.UndefOr[ProfileName] = js.undefined,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
         requestedBy: js.UndefOr[RequestedBy] = js.undefined,
+        revocationRecord: js.UndefOr[SigningJobRevocationRecord] = js.undefined,
+        signatureExpiresAt: js.UndefOr[Timestamp] = js.undefined,
         signedObject: js.UndefOr[SignedObject] = js.undefined,
         signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
@@ -157,10 +233,16 @@ package signer {
       completedAt.foreach(__v => __obj.updateDynamic("completedAt")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      jobInvoker.foreach(__v => __obj.updateDynamic("jobInvoker")(__v.asInstanceOf[js.Any]))
+      jobOwner.foreach(__v => __obj.updateDynamic("jobOwner")(__v.asInstanceOf[js.Any]))
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      platformDisplayName.foreach(__v => __obj.updateDynamic("platformDisplayName")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
       profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
       requestedBy.foreach(__v => __obj.updateDynamic("requestedBy")(__v.asInstanceOf[js.Any]))
+      revocationRecord.foreach(__v => __obj.updateDynamic("revocationRecord")(__v.asInstanceOf[js.Any]))
+      signatureExpiresAt.foreach(__v => __obj.updateDynamic("signatureExpiresAt")(__v.asInstanceOf[js.Any]))
       signedObject.foreach(__v => __obj.updateDynamic("signedObject")(__v.asInstanceOf[js.Any]))
       signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
@@ -244,6 +326,7 @@ package signer {
     var maxSizeInMB: js.UndefOr[MaxSizeInMB]
     var partner: js.UndefOr[String]
     var platformId: js.UndefOr[PlatformId]
+    var revocationSupported: js.UndefOr[Boolean]
     var signingConfiguration: js.UndefOr[SigningConfiguration]
     var signingImageFormat: js.UndefOr[SigningImageFormat]
     var target: js.UndefOr[String]
@@ -257,6 +340,7 @@ package signer {
         maxSizeInMB: js.UndefOr[MaxSizeInMB] = js.undefined,
         partner: js.UndefOr[String] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
+        revocationSupported: js.UndefOr[Boolean] = js.undefined,
         signingConfiguration: js.UndefOr[SigningConfiguration] = js.undefined,
         signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
         target: js.UndefOr[String] = js.undefined
@@ -267,6 +351,7 @@ package signer {
       maxSizeInMB.foreach(__v => __obj.updateDynamic("maxSizeInMB")(__v.asInstanceOf[js.Any]))
       partner.foreach(__v => __obj.updateDynamic("partner")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      revocationSupported.foreach(__v => __obj.updateDynamic("revocationSupported")(__v.asInstanceOf[js.Any]))
       signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
       signingImageFormat.foreach(__v => __obj.updateDynamic("signingImageFormat")(__v.asInstanceOf[js.Any]))
       target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
@@ -277,16 +362,20 @@ package signer {
   @js.native
   trait GetSigningProfileRequest extends js.Object {
     var profileName: ProfileName
+    var profileOwner: js.UndefOr[AccountId]
   }
 
   object GetSigningProfileRequest {
     @inline
     def apply(
-        profileName: ProfileName
+        profileName: ProfileName,
+        profileOwner: js.UndefOr[AccountId] = js.undefined
     ): GetSigningProfileRequest = {
       val __obj = js.Dynamic.literal(
         "profileName" -> profileName.asInstanceOf[js.Any]
       )
+
+      profileOwner.foreach(__v => __obj.updateDynamic("profileOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSigningProfileRequest]
     }
   }
@@ -295,11 +384,17 @@ package signer {
   trait GetSigningProfileResponse extends js.Object {
     var arn: js.UndefOr[String]
     var overrides: js.UndefOr[SigningPlatformOverrides]
+    var platformDisplayName: js.UndefOr[DisplayName]
     var platformId: js.UndefOr[PlatformId]
     var profileName: js.UndefOr[ProfileName]
+    var profileVersion: js.UndefOr[ProfileVersion]
+    var profileVersionArn: js.UndefOr[Arn]
+    var revocationRecord: js.UndefOr[SigningProfileRevocationRecord]
+    var signatureValidityPeriod: js.UndefOr[SignatureValidityPeriod]
     var signingMaterial: js.UndefOr[SigningMaterial]
     var signingParameters: js.UndefOr[SigningParameters]
     var status: js.UndefOr[SigningProfileStatus]
+    var statusReason: js.UndefOr[String]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -308,21 +403,33 @@ package signer {
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
+        platformDisplayName: js.UndefOr[DisplayName] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
         profileName: js.UndefOr[ProfileName] = js.undefined,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
+        profileVersionArn: js.UndefOr[Arn] = js.undefined,
+        revocationRecord: js.UndefOr[SigningProfileRevocationRecord] = js.undefined,
+        signatureValidityPeriod: js.UndefOr[SignatureValidityPeriod] = js.undefined,
         signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
         status: js.UndefOr[SigningProfileStatus] = js.undefined,
+        statusReason: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): GetSigningProfileResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      platformDisplayName.foreach(__v => __obj.updateDynamic("platformDisplayName")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
       profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
+      profileVersionArn.foreach(__v => __obj.updateDynamic("profileVersionArn")(__v.asInstanceOf[js.Any]))
+      revocationRecord.foreach(__v => __obj.updateDynamic("revocationRecord")(__v.asInstanceOf[js.Any]))
+      signatureValidityPeriod.foreach(__v => __obj.updateDynamic("signatureValidityPeriod")(__v.asInstanceOf[js.Any]))
       signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSigningProfileResponse]
     }
@@ -370,28 +477,86 @@ package signer {
   }
 
   @js.native
+  trait ListProfilePermissionsRequest extends js.Object {
+    var profileName: ProfileName
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListProfilePermissionsRequest {
+    @inline
+    def apply(
+        profileName: ProfileName,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListProfilePermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "profileName" -> profileName.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProfilePermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListProfilePermissionsResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var permissions: js.UndefOr[Permissions]
+    var policySizeBytes: js.UndefOr[PolicySizeBytes]
+    var revisionId: js.UndefOr[String]
+  }
+
+  object ListProfilePermissionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        permissions: js.UndefOr[Permissions] = js.undefined,
+        policySizeBytes: js.UndefOr[PolicySizeBytes] = js.undefined,
+        revisionId: js.UndefOr[String] = js.undefined
+    ): ListProfilePermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      policySizeBytes.foreach(__v => __obj.updateDynamic("policySizeBytes")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProfilePermissionsResponse]
+    }
+  }
+
+  @js.native
   trait ListSigningJobsRequest extends js.Object {
+    var isRevoked: js.UndefOr[Boolean]
+    var jobInvoker: js.UndefOr[AccountId]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var platformId: js.UndefOr[PlatformId]
     var requestedBy: js.UndefOr[RequestedBy]
+    var signatureExpiresAfter: js.UndefOr[Timestamp]
+    var signatureExpiresBefore: js.UndefOr[Timestamp]
     var status: js.UndefOr[SigningStatus]
   }
 
   object ListSigningJobsRequest {
     @inline
     def apply(
+        isRevoked: js.UndefOr[Boolean] = js.undefined,
+        jobInvoker: js.UndefOr[AccountId] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
         requestedBy: js.UndefOr[RequestedBy] = js.undefined,
+        signatureExpiresAfter: js.UndefOr[Timestamp] = js.undefined,
+        signatureExpiresBefore: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[SigningStatus] = js.undefined
     ): ListSigningJobsRequest = {
       val __obj = js.Dynamic.literal()
+      isRevoked.foreach(__v => __obj.updateDynamic("isRevoked")(__v.asInstanceOf[js.Any]))
+      jobInvoker.foreach(__v => __obj.updateDynamic("jobInvoker")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
       requestedBy.foreach(__v => __obj.updateDynamic("requestedBy")(__v.asInstanceOf[js.Any]))
+      signatureExpiresAfter.foreach(__v => __obj.updateDynamic("signatureExpiresAfter")(__v.asInstanceOf[js.Any]))
+      signatureExpiresBefore.foreach(__v => __obj.updateDynamic("signatureExpiresBefore")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningJobsRequest]
     }
@@ -468,6 +633,8 @@ package signer {
     var includeCanceled: js.UndefOr[Boolean]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
+    var platformId: js.UndefOr[PlatformId]
+    var statuses: js.UndefOr[Statuses]
   }
 
   object ListSigningProfilesRequest {
@@ -475,12 +642,16 @@ package signer {
     def apply(
         includeCanceled: js.UndefOr[Boolean] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        statuses: js.UndefOr[Statuses] = js.undefined
     ): ListSigningProfilesRequest = {
       val __obj = js.Dynamic.literal()
       includeCanceled.foreach(__v => __obj.updateDynamic("includeCanceled")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      statuses.foreach(__v => __obj.updateDynamic("statuses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningProfilesRequest]
     }
   }
@@ -537,12 +708,40 @@ package signer {
     }
   }
 
+  /** A cross-account permission for a signing profile.
+    */
+  @js.native
+  trait Permission extends js.Object {
+    var action: js.UndefOr[String]
+    var principal: js.UndefOr[String]
+    var profileVersion: js.UndefOr[ProfileVersion]
+    var statementId: js.UndefOr[String]
+  }
+
+  object Permission {
+    @inline
+    def apply(
+        action: js.UndefOr[String] = js.undefined,
+        principal: js.UndefOr[String] = js.undefined,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
+        statementId: js.UndefOr[String] = js.undefined
+    ): Permission = {
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
+      statementId.foreach(__v => __obj.updateDynamic("statementId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Permission]
+    }
+  }
+
   @js.native
   trait PutSigningProfileRequest extends js.Object {
     var platformId: PlatformId
     var profileName: ProfileName
-    var signingMaterial: SigningMaterial
     var overrides: js.UndefOr[SigningPlatformOverrides]
+    var signatureValidityPeriod: js.UndefOr[SignatureValidityPeriod]
+    var signingMaterial: js.UndefOr[SigningMaterial]
     var signingParameters: js.UndefOr[SigningParameters]
     var tags: js.UndefOr[TagMap]
   }
@@ -552,18 +751,20 @@ package signer {
     def apply(
         platformId: PlatformId,
         profileName: ProfileName,
-        signingMaterial: SigningMaterial,
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
+        signatureValidityPeriod: js.UndefOr[SignatureValidityPeriod] = js.undefined,
+        signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): PutSigningProfileRequest = {
       val __obj = js.Dynamic.literal(
         "platformId" -> platformId.asInstanceOf[js.Any],
-        "profileName" -> profileName.asInstanceOf[js.Any],
-        "signingMaterial" -> signingMaterial.asInstanceOf[js.Any]
+        "profileName" -> profileName.asInstanceOf[js.Any]
       )
 
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      signatureValidityPeriod.foreach(__v => __obj.updateDynamic("signatureValidityPeriod")(__v.asInstanceOf[js.Any]))
+      signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSigningProfileRequest]
@@ -573,16 +774,111 @@ package signer {
   @js.native
   trait PutSigningProfileResponse extends js.Object {
     var arn: js.UndefOr[String]
+    var profileVersion: js.UndefOr[ProfileVersion]
+    var profileVersionArn: js.UndefOr[Arn]
   }
 
   object PutSigningProfileResponse {
     @inline
     def apply(
-        arn: js.UndefOr[String] = js.undefined
+        arn: js.UndefOr[String] = js.undefined,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
+        profileVersionArn: js.UndefOr[Arn] = js.undefined
     ): PutSigningProfileResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
+      profileVersionArn.foreach(__v => __obj.updateDynamic("profileVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSigningProfileResponse]
+    }
+  }
+
+  @js.native
+  trait RemoveProfilePermissionRequest extends js.Object {
+    var profileName: ProfileName
+    var revisionId: String
+    var statementId: String
+  }
+
+  object RemoveProfilePermissionRequest {
+    @inline
+    def apply(
+        profileName: ProfileName,
+        revisionId: String,
+        statementId: String
+    ): RemoveProfilePermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "profileName" -> profileName.asInstanceOf[js.Any],
+        "revisionId" -> revisionId.asInstanceOf[js.Any],
+        "statementId" -> statementId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveProfilePermissionRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveProfilePermissionResponse extends js.Object {
+    var revisionId: js.UndefOr[String]
+  }
+
+  object RemoveProfilePermissionResponse {
+    @inline
+    def apply(
+        revisionId: js.UndefOr[String] = js.undefined
+    ): RemoveProfilePermissionResponse = {
+      val __obj = js.Dynamic.literal()
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveProfilePermissionResponse]
+    }
+  }
+
+  @js.native
+  trait RevokeSignatureRequest extends js.Object {
+    var jobId: JobId
+    var reason: RevocationReasonString
+    var jobOwner: js.UndefOr[AccountId]
+  }
+
+  object RevokeSignatureRequest {
+    @inline
+    def apply(
+        jobId: JobId,
+        reason: RevocationReasonString,
+        jobOwner: js.UndefOr[AccountId] = js.undefined
+    ): RevokeSignatureRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "reason" -> reason.asInstanceOf[js.Any]
+      )
+
+      jobOwner.foreach(__v => __obj.updateDynamic("jobOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeSignatureRequest]
+    }
+  }
+
+  @js.native
+  trait RevokeSigningProfileRequest extends js.Object {
+    var effectiveTime: Timestamp
+    var profileName: ProfileName
+    var profileVersion: ProfileVersion
+    var reason: RevocationReasonString
+  }
+
+  object RevokeSigningProfileRequest {
+    @inline
+    def apply(
+        effectiveTime: Timestamp,
+        profileName: ProfileName,
+        profileVersion: ProfileVersion,
+        reason: RevocationReasonString
+    ): RevokeSigningProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "effectiveTime" -> effectiveTime.asInstanceOf[js.Any],
+        "profileName" -> profileName.asInstanceOf[js.Any],
+        "profileVersion" -> profileVersion.asInstanceOf[js.Any],
+        "reason" -> reason.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RevokeSigningProfileRequest]
     }
   }
 
@@ -612,14 +908,14 @@ package signer {
   @js.native
   trait S3SignedObject extends js.Object {
     var bucketName: js.UndefOr[BucketName]
-    var key: js.UndefOr[key]
+    var key: js.UndefOr[Key]
   }
 
   object S3SignedObject {
     @inline
     def apply(
         bucketName: js.UndefOr[BucketName] = js.undefined,
-        key: js.UndefOr[key] = js.undefined
+        key: js.UndefOr[Key] = js.undefined
     ): S3SignedObject = {
       val __obj = js.Dynamic.literal()
       bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
@@ -650,6 +946,27 @@ package signer {
         "version" -> version.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[S3Source]
+    }
+  }
+
+  /** The validity period for a signing job.
+    */
+  @js.native
+  trait SignatureValidityPeriod extends js.Object {
+    var `type`: js.UndefOr[ValidityType]
+    var value: js.UndefOr[Int]
+  }
+
+  object SignatureValidityPeriod {
+    @inline
+    def apply(
+        `type`: js.UndefOr[ValidityType] = js.undefined,
+        value: js.UndefOr[Int] = js.undefined
+    ): SignatureValidityPeriod = {
+      val __obj = js.Dynamic.literal()
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SignatureValidityPeriod]
     }
   }
 
@@ -740,8 +1057,16 @@ package signer {
     */
   @js.native
   trait SigningJob extends js.Object {
-    var createdAt: js.UndefOr[CreatedAt]
+    var createdAt: js.UndefOr[Timestamp]
+    var isRevoked: js.UndefOr[Boolean]
     var jobId: js.UndefOr[JobId]
+    var jobInvoker: js.UndefOr[AccountId]
+    var jobOwner: js.UndefOr[AccountId]
+    var platformDisplayName: js.UndefOr[DisplayName]
+    var platformId: js.UndefOr[PlatformId]
+    var profileName: js.UndefOr[ProfileName]
+    var profileVersion: js.UndefOr[ProfileVersion]
+    var signatureExpiresAt: js.UndefOr[Timestamp]
     var signedObject: js.UndefOr[SignedObject]
     var signingMaterial: js.UndefOr[SigningMaterial]
     var source: js.UndefOr[Source]
@@ -751,8 +1076,16 @@ package signer {
   object SigningJob {
     @inline
     def apply(
-        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        createdAt: js.UndefOr[Timestamp] = js.undefined,
+        isRevoked: js.UndefOr[Boolean] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined,
+        jobInvoker: js.UndefOr[AccountId] = js.undefined,
+        jobOwner: js.UndefOr[AccountId] = js.undefined,
+        platformDisplayName: js.UndefOr[DisplayName] = js.undefined,
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        profileName: js.UndefOr[ProfileName] = js.undefined,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
+        signatureExpiresAt: js.UndefOr[Timestamp] = js.undefined,
         signedObject: js.UndefOr[SignedObject] = js.undefined,
         signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         source: js.UndefOr[Source] = js.undefined,
@@ -760,12 +1093,44 @@ package signer {
     ): SigningJob = {
       val __obj = js.Dynamic.literal()
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      isRevoked.foreach(__v => __obj.updateDynamic("isRevoked")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      jobInvoker.foreach(__v => __obj.updateDynamic("jobInvoker")(__v.asInstanceOf[js.Any]))
+      jobOwner.foreach(__v => __obj.updateDynamic("jobOwner")(__v.asInstanceOf[js.Any]))
+      platformDisplayName.foreach(__v => __obj.updateDynamic("platformDisplayName")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
+      signatureExpiresAt.foreach(__v => __obj.updateDynamic("signatureExpiresAt")(__v.asInstanceOf[js.Any]))
       signedObject.foreach(__v => __obj.updateDynamic("signedObject")(__v.asInstanceOf[js.Any]))
       signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningJob]
+    }
+  }
+
+  /** Revocation information for a signing job.
+    */
+  @js.native
+  trait SigningJobRevocationRecord extends js.Object {
+    var reason: js.UndefOr[String]
+    var revokedAt: js.UndefOr[Timestamp]
+    var revokedBy: js.UndefOr[String]
+  }
+
+  object SigningJobRevocationRecord {
+    @inline
+    def apply(
+        reason: js.UndefOr[String] = js.undefined,
+        revokedAt: js.UndefOr[Timestamp] = js.undefined,
+        revokedBy: js.UndefOr[String] = js.undefined
+    ): SigningJobRevocationRecord = {
+      val __obj = js.Dynamic.literal()
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      revokedAt.foreach(__v => __obj.updateDynamic("revokedAt")(__v.asInstanceOf[js.Any]))
+      revokedBy.foreach(__v => __obj.updateDynamic("revokedBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SigningJobRevocationRecord]
     }
   }
 
@@ -797,6 +1162,7 @@ package signer {
     var maxSizeInMB: js.UndefOr[MaxSizeInMB]
     var partner: js.UndefOr[String]
     var platformId: js.UndefOr[String]
+    var revocationSupported: js.UndefOr[Boolean]
     var signingConfiguration: js.UndefOr[SigningConfiguration]
     var signingImageFormat: js.UndefOr[SigningImageFormat]
     var target: js.UndefOr[String]
@@ -810,6 +1176,7 @@ package signer {
         maxSizeInMB: js.UndefOr[MaxSizeInMB] = js.undefined,
         partner: js.UndefOr[String] = js.undefined,
         platformId: js.UndefOr[String] = js.undefined,
+        revocationSupported: js.UndefOr[Boolean] = js.undefined,
         signingConfiguration: js.UndefOr[SigningConfiguration] = js.undefined,
         signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
         target: js.UndefOr[String] = js.undefined
@@ -820,6 +1187,7 @@ package signer {
       maxSizeInMB.foreach(__v => __obj.updateDynamic("maxSizeInMB")(__v.asInstanceOf[js.Any]))
       partner.foreach(__v => __obj.updateDynamic("partner")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      revocationSupported.foreach(__v => __obj.updateDynamic("revocationSupported")(__v.asInstanceOf[js.Any]))
       signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
       signingImageFormat.foreach(__v => __obj.updateDynamic("signingImageFormat")(__v.asInstanceOf[js.Any]))
       target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
@@ -853,8 +1221,12 @@ package signer {
   @js.native
   trait SigningProfile extends js.Object {
     var arn: js.UndefOr[String]
+    var platformDisplayName: js.UndefOr[DisplayName]
     var platformId: js.UndefOr[PlatformId]
     var profileName: js.UndefOr[ProfileName]
+    var profileVersion: js.UndefOr[ProfileVersion]
+    var profileVersionArn: js.UndefOr[Arn]
+    var signatureValidityPeriod: js.UndefOr[SignatureValidityPeriod]
     var signingMaterial: js.UndefOr[SigningMaterial]
     var signingParameters: js.UndefOr[SigningParameters]
     var status: js.UndefOr[SigningProfileStatus]
@@ -865,8 +1237,12 @@ package signer {
     @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
+        platformDisplayName: js.UndefOr[DisplayName] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
         profileName: js.UndefOr[ProfileName] = js.undefined,
+        profileVersion: js.UndefOr[ProfileVersion] = js.undefined,
+        profileVersionArn: js.UndefOr[Arn] = js.undefined,
+        signatureValidityPeriod: js.UndefOr[SignatureValidityPeriod] = js.undefined,
         signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
         status: js.UndefOr[SigningProfileStatus] = js.undefined,
@@ -874,8 +1250,12 @@ package signer {
     ): SigningProfile = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      platformDisplayName.foreach(__v => __obj.updateDynamic("platformDisplayName")(__v.asInstanceOf[js.Any]))
       platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
       profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      profileVersion.foreach(__v => __obj.updateDynamic("profileVersion")(__v.asInstanceOf[js.Any]))
+      profileVersionArn.foreach(__v => __obj.updateDynamic("profileVersionArn")(__v.asInstanceOf[js.Any]))
+      signatureValidityPeriod.foreach(__v => __obj.updateDynamic("signatureValidityPeriod")(__v.asInstanceOf[js.Any]))
       signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
       signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -884,13 +1264,38 @@ package signer {
     }
   }
 
+  /** Revocation information for a signing profile.
+    */
+  @js.native
+  trait SigningProfileRevocationRecord extends js.Object {
+    var revocationEffectiveFrom: js.UndefOr[Timestamp]
+    var revokedAt: js.UndefOr[Timestamp]
+    var revokedBy: js.UndefOr[String]
+  }
+
+  object SigningProfileRevocationRecord {
+    @inline
+    def apply(
+        revocationEffectiveFrom: js.UndefOr[Timestamp] = js.undefined,
+        revokedAt: js.UndefOr[Timestamp] = js.undefined,
+        revokedBy: js.UndefOr[String] = js.undefined
+    ): SigningProfileRevocationRecord = {
+      val __obj = js.Dynamic.literal()
+      revocationEffectiveFrom.foreach(__v => __obj.updateDynamic("revocationEffectiveFrom")(__v.asInstanceOf[js.Any]))
+      revokedAt.foreach(__v => __obj.updateDynamic("revokedAt")(__v.asInstanceOf[js.Any]))
+      revokedBy.foreach(__v => __obj.updateDynamic("revokedBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SigningProfileRevocationRecord]
+    }
+  }
+
   @js.native
   sealed trait SigningProfileStatus extends js.Any
   object SigningProfileStatus {
     val Active = "Active".asInstanceOf[SigningProfileStatus]
     val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
+    val Revoked = "Revoked".asInstanceOf[SigningProfileStatus]
 
-    @inline def values = js.Array(Active, Canceled)
+    @inline def values = js.Array(Active, Canceled, Revoked)
   }
 
   @js.native
@@ -925,8 +1330,9 @@ package signer {
   trait StartSigningJobRequest extends js.Object {
     var clientRequestToken: ClientRequestToken
     var destination: Destination
+    var profileName: ProfileName
     var source: Source
-    var profileName: js.UndefOr[ProfileName]
+    var profileOwner: js.UndefOr[AccountId]
   }
 
   object StartSigningJobRequest {
@@ -934,16 +1340,18 @@ package signer {
     def apply(
         clientRequestToken: ClientRequestToken,
         destination: Destination,
+        profileName: ProfileName,
         source: Source,
-        profileName: js.UndefOr[ProfileName] = js.undefined
+        profileOwner: js.UndefOr[AccountId] = js.undefined
     ): StartSigningJobRequest = {
       val __obj = js.Dynamic.literal(
         "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
         "destination" -> destination.asInstanceOf[js.Any],
+        "profileName" -> profileName.asInstanceOf[js.Any],
         "source" -> source.asInstanceOf[js.Any]
       )
 
-      profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      profileOwner.foreach(__v => __obj.updateDynamic("profileOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSigningJobRequest]
     }
   }
@@ -951,15 +1359,18 @@ package signer {
   @js.native
   trait StartSigningJobResponse extends js.Object {
     var jobId: js.UndefOr[JobId]
+    var jobOwner: js.UndefOr[AccountId]
   }
 
   object StartSigningJobResponse {
     @inline
     def apply(
-        jobId: js.UndefOr[JobId] = js.undefined
+        jobId: js.UndefOr[JobId] = js.undefined,
+        jobOwner: js.UndefOr[AccountId] = js.undefined
     ): StartSigningJobResponse = {
       val __obj = js.Dynamic.literal()
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      jobOwner.foreach(__v => __obj.updateDynamic("jobOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSigningJobResponse]
     }
   }
@@ -1024,5 +1435,15 @@ package signer {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
+  }
+
+  @js.native
+  sealed trait ValidityType extends js.Any
+  object ValidityType {
+    val DAYS = "DAYS".asInstanceOf[ValidityType]
+    val MONTHS = "MONTHS".asInstanceOf[ValidityType]
+    val YEARS = "YEARS".asInstanceOf[ValidityType]
+
+    @inline def values = js.Array(DAYS, MONTHS, YEARS)
   }
 }

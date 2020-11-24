@@ -22,6 +22,9 @@ package object outposts {
   type SiteDescription = String
   type SiteId = String
   type SiteName = String
+  type TagKey = String
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type Token = String
   type outpostListDefinition = js.Array[Outpost]
   type siteListDefinition = js.Array[Site]
@@ -61,6 +64,7 @@ package outposts {
     var AvailabilityZone: js.UndefOr[AvailabilityZone]
     var AvailabilityZoneId: js.UndefOr[AvailabilityZoneId]
     var Description: js.UndefOr[OutpostDescription]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateOutpostInput {
@@ -70,7 +74,8 @@ package outposts {
         SiteId: SiteId,
         AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         AvailabilityZoneId: js.UndefOr[AvailabilityZoneId] = js.undefined,
-        Description: js.UndefOr[OutpostDescription] = js.undefined
+        Description: js.UndefOr[OutpostDescription] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateOutpostInput = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -80,6 +85,7 @@ package outposts {
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOutpostInput]
     }
   }
@@ -345,6 +351,7 @@ package outposts {
     var OutpostId: js.UndefOr[OutpostId]
     var OwnerId: js.UndefOr[OwnerId]
     var SiteId: js.UndefOr[SiteId]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object Outpost {
@@ -358,7 +365,8 @@ package outposts {
         OutpostArn: js.UndefOr[OutpostArn] = js.undefined,
         OutpostId: js.UndefOr[OutpostId] = js.undefined,
         OwnerId: js.UndefOr[OwnerId] = js.undefined,
-        SiteId: js.UndefOr[SiteId] = js.undefined
+        SiteId: js.UndefOr[SiteId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): Outpost = {
       val __obj = js.Dynamic.literal()
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
@@ -370,6 +378,7 @@ package outposts {
       OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       SiteId.foreach(__v => __obj.updateDynamic("SiteId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Outpost]
     }
   }
@@ -382,6 +391,7 @@ package outposts {
     var Description: js.UndefOr[SiteDescription]
     var Name: js.UndefOr[SiteName]
     var SiteId: js.UndefOr[SiteId]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object Site {
@@ -390,13 +400,15 @@ package outposts {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Description: js.UndefOr[SiteDescription] = js.undefined,
         Name: js.UndefOr[SiteName] = js.undefined,
-        SiteId: js.UndefOr[SiteId] = js.undefined
+        SiteId: js.UndefOr[SiteId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): Site = {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       SiteId.foreach(__v => __obj.updateDynamic("SiteId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Site]
     }
   }

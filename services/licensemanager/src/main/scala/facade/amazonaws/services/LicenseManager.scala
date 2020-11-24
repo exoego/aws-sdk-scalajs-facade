@@ -438,6 +438,7 @@ package licensemanager {
     */
   @js.native
   trait LicenseConfigurationAssociation extends js.Object {
+    var AmiAssociationScope: js.UndefOr[String]
     var AssociationTime: js.UndefOr[DateTime]
     var ResourceArn: js.UndefOr[String]
     var ResourceOwnerId: js.UndefOr[String]
@@ -447,12 +448,14 @@ package licensemanager {
   object LicenseConfigurationAssociation {
     @inline
     def apply(
+        AmiAssociationScope: js.UndefOr[String] = js.undefined,
         AssociationTime: js.UndefOr[DateTime] = js.undefined,
         ResourceArn: js.UndefOr[String] = js.undefined,
         ResourceOwnerId: js.UndefOr[String] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): LicenseConfigurationAssociation = {
       val __obj = js.Dynamic.literal()
+      AmiAssociationScope.foreach(__v => __obj.updateDynamic("AmiAssociationScope")(__v.asInstanceOf[js.Any]))
       AssociationTime.foreach(__v => __obj.updateDynamic("AssociationTime")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       ResourceOwnerId.foreach(__v => __obj.updateDynamic("ResourceOwnerId")(__v.asInstanceOf[js.Any]))
@@ -558,16 +561,20 @@ package licensemanager {
   @js.native
   trait LicenseSpecification extends js.Object {
     var LicenseConfigurationArn: String
+    var AmiAssociationScope: js.UndefOr[String]
   }
 
   object LicenseSpecification {
     @inline
     def apply(
-        LicenseConfigurationArn: String
+        LicenseConfigurationArn: String,
+        AmiAssociationScope: js.UndefOr[String] = js.undefined
     ): LicenseSpecification = {
       val __obj = js.Dynamic.literal(
         "LicenseConfigurationArn" -> LicenseConfigurationArn.asInstanceOf[js.Any]
       )
+
+      AmiAssociationScope.foreach(__v => __obj.updateDynamic("AmiAssociationScope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LicenseSpecification]
     }
   }

@@ -20,6 +20,8 @@ package object translate {
   type LanguageCodeStringList = js.Array[LanguageCodeString]
   type MaxResultsInteger = Int
   type NextToken = String
+  type ParallelDataArn = String
+  type ParallelDataPropertiesList = js.Array[ParallelDataProperties]
   type ResourceName = String
   type ResourceNameList = js.Array[ResourceName]
   type S3Uri = String
@@ -34,15 +36,20 @@ package object translate {
 
   implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
+    @inline def createParallelDataFuture(params: CreateParallelDataRequest): Future[CreateParallelDataResponse] = service.createParallelData(params).promise().toFuture
+    @inline def deleteParallelDataFuture(params: DeleteParallelDataRequest): Future[DeleteParallelDataResponse] = service.deleteParallelData(params).promise().toFuture
     @inline def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] = service.deleteTerminology(params).promise().toFuture
     @inline def describeTextTranslationJobFuture(params: DescribeTextTranslationJobRequest): Future[DescribeTextTranslationJobResponse] = service.describeTextTranslationJob(params).promise().toFuture
+    @inline def getParallelDataFuture(params: GetParallelDataRequest): Future[GetParallelDataResponse] = service.getParallelData(params).promise().toFuture
     @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] = service.getTerminology(params).promise().toFuture
     @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] = service.importTerminology(params).promise().toFuture
+    @inline def listParallelDataFuture(params: ListParallelDataRequest): Future[ListParallelDataResponse] = service.listParallelData(params).promise().toFuture
     @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] = service.listTerminologies(params).promise().toFuture
     @inline def listTextTranslationJobsFuture(params: ListTextTranslationJobsRequest): Future[ListTextTranslationJobsResponse] = service.listTextTranslationJobs(params).promise().toFuture
     @inline def startTextTranslationJobFuture(params: StartTextTranslationJobRequest): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise().toFuture
     @inline def stopTextTranslationJobFuture(params: StopTextTranslationJobRequest): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise().toFuture
     @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] = service.translateText(params).promise().toFuture
+    @inline def updateParallelDataFuture(params: UpdateParallelDataRequest): Future[UpdateParallelDataResponse] = service.updateParallelData(params).promise().toFuture
 
   }
 }
@@ -53,15 +60,20 @@ package translate {
   class Translate() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createParallelData(params: CreateParallelDataRequest): Request[CreateParallelDataResponse] = js.native
+    def deleteParallelData(params: DeleteParallelDataRequest): Request[DeleteParallelDataResponse] = js.native
     def deleteTerminology(params: DeleteTerminologyRequest): Request[js.Object] = js.native
     def describeTextTranslationJob(params: DescribeTextTranslationJobRequest): Request[DescribeTextTranslationJobResponse] = js.native
+    def getParallelData(params: GetParallelDataRequest): Request[GetParallelDataResponse] = js.native
     def getTerminology(params: GetTerminologyRequest): Request[GetTerminologyResponse] = js.native
     def importTerminology(params: ImportTerminologyRequest): Request[ImportTerminologyResponse] = js.native
+    def listParallelData(params: ListParallelDataRequest): Request[ListParallelDataResponse] = js.native
     def listTerminologies(params: ListTerminologiesRequest): Request[ListTerminologiesResponse] = js.native
     def listTextTranslationJobs(params: ListTextTranslationJobsRequest): Request[ListTextTranslationJobsResponse] = js.native
     def startTextTranslationJob(params: StartTextTranslationJobRequest): Request[StartTextTranslationJobResponse] = js.native
     def stopTextTranslationJob(params: StopTextTranslationJobRequest): Request[StopTextTranslationJobResponse] = js.native
     def translateText(params: TranslateTextRequest): Request[TranslateTextResponse] = js.native
+    def updateParallelData(params: UpdateParallelDataRequest): Request[UpdateParallelDataResponse] = js.native
   }
 
   /** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.
@@ -82,6 +94,91 @@ package translate {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Terms.foreach(__v => __obj.updateDynamic("Terms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppliedTerminology]
+    }
+  }
+
+  @js.native
+  trait CreateParallelDataRequest extends js.Object {
+    var ClientToken: ClientTokenString
+    var Name: ResourceName
+    var ParallelDataConfig: ParallelDataConfig
+    var Description: js.UndefOr[Description]
+    var EncryptionKey: js.UndefOr[EncryptionKey]
+  }
+
+  object CreateParallelDataRequest {
+    @inline
+    def apply(
+        ClientToken: ClientTokenString,
+        Name: ResourceName,
+        ParallelDataConfig: ParallelDataConfig,
+        Description: js.UndefOr[Description] = js.undefined,
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined
+    ): CreateParallelDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ParallelDataConfig" -> ParallelDataConfig.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateParallelDataRequest]
+    }
+  }
+
+  @js.native
+  trait CreateParallelDataResponse extends js.Object {
+    var Name: js.UndefOr[ResourceName]
+    var Status: js.UndefOr[ParallelDataStatus]
+  }
+
+  object CreateParallelDataResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        Status: js.UndefOr[ParallelDataStatus] = js.undefined
+    ): CreateParallelDataResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateParallelDataResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteParallelDataRequest extends js.Object {
+    var Name: ResourceName
+  }
+
+  object DeleteParallelDataRequest {
+    @inline
+    def apply(
+        Name: ResourceName
+    ): DeleteParallelDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteParallelDataRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteParallelDataResponse extends js.Object {
+    var Name: js.UndefOr[ResourceName]
+    var Status: js.UndefOr[ParallelDataStatus]
+  }
+
+  object DeleteParallelDataResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        Status: js.UndefOr[ParallelDataStatus] = js.undefined
+    ): DeleteParallelDataResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteParallelDataResponse]
     }
   }
 
@@ -135,7 +232,7 @@ package translate {
     }
   }
 
-  /** The encryption key used to encrypt the custom terminologies used by Amazon Translate.
+  /** The encryption key used to encrypt this object.
     */
   @js.native
   trait EncryptionKey extends js.Object {
@@ -163,6 +260,48 @@ package translate {
     val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
     @inline def values = js.Array(KMS)
+  }
+
+  @js.native
+  trait GetParallelDataRequest extends js.Object {
+    var Name: ResourceName
+  }
+
+  object GetParallelDataRequest {
+    @inline
+    def apply(
+        Name: ResourceName
+    ): GetParallelDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetParallelDataRequest]
+    }
+  }
+
+  @js.native
+  trait GetParallelDataResponse extends js.Object {
+    var AuxiliaryDataLocation: js.UndefOr[ParallelDataDataLocation]
+    var DataLocation: js.UndefOr[ParallelDataDataLocation]
+    var LatestUpdateAttemptAuxiliaryDataLocation: js.UndefOr[ParallelDataDataLocation]
+    var ParallelDataProperties: js.UndefOr[ParallelDataProperties]
+  }
+
+  object GetParallelDataResponse {
+    @inline
+    def apply(
+        AuxiliaryDataLocation: js.UndefOr[ParallelDataDataLocation] = js.undefined,
+        DataLocation: js.UndefOr[ParallelDataDataLocation] = js.undefined,
+        LatestUpdateAttemptAuxiliaryDataLocation: js.UndefOr[ParallelDataDataLocation] = js.undefined,
+        ParallelDataProperties: js.UndefOr[ParallelDataProperties] = js.undefined
+    ): GetParallelDataResponse = {
+      val __obj = js.Dynamic.literal()
+      AuxiliaryDataLocation.foreach(__v => __obj.updateDynamic("AuxiliaryDataLocation")(__v.asInstanceOf[js.Any]))
+      DataLocation.foreach(__v => __obj.updateDynamic("DataLocation")(__v.asInstanceOf[js.Any]))
+      LatestUpdateAttemptAuxiliaryDataLocation.foreach(__v => __obj.updateDynamic("LatestUpdateAttemptAuxiliaryDataLocation")(__v.asInstanceOf[js.Any]))
+      ParallelDataProperties.foreach(__v => __obj.updateDynamic("ParallelDataProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetParallelDataResponse]
+    }
   }
 
   @js.native
@@ -311,6 +450,44 @@ package translate {
   }
 
   @js.native
+  trait ListParallelDataRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListParallelDataRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListParallelDataRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListParallelDataRequest]
+    }
+  }
+
+  @js.native
+  trait ListParallelDataResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var ParallelDataPropertiesList: js.UndefOr[ParallelDataPropertiesList]
+  }
+
+  object ListParallelDataResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ParallelDataPropertiesList: js.UndefOr[ParallelDataPropertiesList] = js.undefined
+    ): ListParallelDataResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParallelDataPropertiesList.foreach(__v => __obj.updateDynamic("ParallelDataPropertiesList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListParallelDataResponse]
+    }
+  }
+
+  @js.native
   trait ListTerminologiesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResultsInteger]
     var NextToken: js.UndefOr[NextToken]
@@ -416,6 +593,138 @@ package translate {
     }
   }
 
+  /** Specifies the format and S3 location of the parallel data input file.
+    */
+  @js.native
+  trait ParallelDataConfig extends js.Object {
+    var Format: ParallelDataFormat
+    var S3Uri: S3Uri
+  }
+
+  object ParallelDataConfig {
+    @inline
+    def apply(
+        Format: ParallelDataFormat,
+        S3Uri: S3Uri
+    ): ParallelDataConfig = {
+      val __obj = js.Dynamic.literal(
+        "Format" -> Format.asInstanceOf[js.Any],
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ParallelDataConfig]
+    }
+  }
+
+  /** The location of the most recent parallel data input file that was successfully imported into Amazon Translate.
+    */
+  @js.native
+  trait ParallelDataDataLocation extends js.Object {
+    var Location: String
+    var RepositoryType: String
+  }
+
+  object ParallelDataDataLocation {
+    @inline
+    def apply(
+        Location: String,
+        RepositoryType: String
+    ): ParallelDataDataLocation = {
+      val __obj = js.Dynamic.literal(
+        "Location" -> Location.asInstanceOf[js.Any],
+        "RepositoryType" -> RepositoryType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ParallelDataDataLocation]
+    }
+  }
+
+  @js.native
+  sealed trait ParallelDataFormat extends js.Any
+  object ParallelDataFormat {
+    val TSV = "TSV".asInstanceOf[ParallelDataFormat]
+    val CSV = "CSV".asInstanceOf[ParallelDataFormat]
+    val TMX = "TMX".asInstanceOf[ParallelDataFormat]
+
+    @inline def values = js.Array(TSV, CSV, TMX)
+  }
+
+  /** The properties of a parallel data resource.
+    */
+  @js.native
+  trait ParallelDataProperties extends js.Object {
+    var Arn: js.UndefOr[ParallelDataArn]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[Description]
+    var EncryptionKey: js.UndefOr[EncryptionKey]
+    var FailedRecordCount: js.UndefOr[Double]
+    var ImportedDataSize: js.UndefOr[Double]
+    var ImportedRecordCount: js.UndefOr[Double]
+    var LastUpdatedAt: js.UndefOr[Timestamp]
+    var LatestUpdateAttemptAt: js.UndefOr[Timestamp]
+    var LatestUpdateAttemptStatus: js.UndefOr[ParallelDataStatus]
+    var Message: js.UndefOr[UnboundedLengthString]
+    var Name: js.UndefOr[ResourceName]
+    var ParallelDataConfig: js.UndefOr[ParallelDataConfig]
+    var SkippedRecordCount: js.UndefOr[Double]
+    var SourceLanguageCode: js.UndefOr[LanguageCodeString]
+    var Status: js.UndefOr[ParallelDataStatus]
+    var TargetLanguageCodes: js.UndefOr[LanguageCodeStringList]
+  }
+
+  object ParallelDataProperties {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ParallelDataArn] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined,
+        FailedRecordCount: js.UndefOr[Double] = js.undefined,
+        ImportedDataSize: js.UndefOr[Double] = js.undefined,
+        ImportedRecordCount: js.UndefOr[Double] = js.undefined,
+        LastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        LatestUpdateAttemptAt: js.UndefOr[Timestamp] = js.undefined,
+        LatestUpdateAttemptStatus: js.UndefOr[ParallelDataStatus] = js.undefined,
+        Message: js.UndefOr[UnboundedLengthString] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        ParallelDataConfig: js.UndefOr[ParallelDataConfig] = js.undefined,
+        SkippedRecordCount: js.UndefOr[Double] = js.undefined,
+        SourceLanguageCode: js.UndefOr[LanguageCodeString] = js.undefined,
+        Status: js.UndefOr[ParallelDataStatus] = js.undefined,
+        TargetLanguageCodes: js.UndefOr[LanguageCodeStringList] = js.undefined
+    ): ParallelDataProperties = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
+      FailedRecordCount.foreach(__v => __obj.updateDynamic("FailedRecordCount")(__v.asInstanceOf[js.Any]))
+      ImportedDataSize.foreach(__v => __obj.updateDynamic("ImportedDataSize")(__v.asInstanceOf[js.Any]))
+      ImportedRecordCount.foreach(__v => __obj.updateDynamic("ImportedRecordCount")(__v.asInstanceOf[js.Any]))
+      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      LatestUpdateAttemptAt.foreach(__v => __obj.updateDynamic("LatestUpdateAttemptAt")(__v.asInstanceOf[js.Any]))
+      LatestUpdateAttemptStatus.foreach(__v => __obj.updateDynamic("LatestUpdateAttemptStatus")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParallelDataConfig.foreach(__v => __obj.updateDynamic("ParallelDataConfig")(__v.asInstanceOf[js.Any]))
+      SkippedRecordCount.foreach(__v => __obj.updateDynamic("SkippedRecordCount")(__v.asInstanceOf[js.Any]))
+      SourceLanguageCode.foreach(__v => __obj.updateDynamic("SourceLanguageCode")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetLanguageCodes.foreach(__v => __obj.updateDynamic("TargetLanguageCodes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParallelDataProperties]
+    }
+  }
+
+  @js.native
+  sealed trait ParallelDataStatus extends js.Any
+  object ParallelDataStatus {
+    val CREATING = "CREATING".asInstanceOf[ParallelDataStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ParallelDataStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ParallelDataStatus]
+    val DELETING = "DELETING".asInstanceOf[ParallelDataStatus]
+    val FAILED = "FAILED".asInstanceOf[ParallelDataStatus]
+
+    @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
+  }
+
   @js.native
   trait StartTextTranslationJobRequest extends js.Object {
     var ClientToken: ClientTokenString
@@ -425,6 +734,7 @@ package translate {
     var SourceLanguageCode: LanguageCodeString
     var TargetLanguageCodes: TargetLanguageCodeStringList
     var JobName: js.UndefOr[JobName]
+    var ParallelDataNames: js.UndefOr[ResourceNameList]
     var TerminologyNames: js.UndefOr[ResourceNameList]
   }
 
@@ -438,6 +748,7 @@ package translate {
         SourceLanguageCode: LanguageCodeString,
         TargetLanguageCodes: TargetLanguageCodeStringList,
         JobName: js.UndefOr[JobName] = js.undefined,
+        ParallelDataNames: js.UndefOr[ResourceNameList] = js.undefined,
         TerminologyNames: js.UndefOr[ResourceNameList] = js.undefined
     ): StartTextTranslationJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -450,6 +761,7 @@ package translate {
       )
 
       JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      ParallelDataNames.foreach(__v => __obj.updateDynamic("ParallelDataNames")(__v.asInstanceOf[js.Any]))
       TerminologyNames.foreach(__v => __obj.updateDynamic("TerminologyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTextTranslationJobRequest]
     }
@@ -669,6 +981,7 @@ package translate {
     var JobStatus: js.UndefOr[JobStatus]
     var Message: js.UndefOr[UnboundedLengthString]
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
+    var ParallelDataNames: js.UndefOr[ResourceNameList]
     var SourceLanguageCode: js.UndefOr[LanguageCodeString]
     var SubmittedTime: js.UndefOr[Timestamp]
     var TargetLanguageCodes: js.UndefOr[TargetLanguageCodeStringList]
@@ -687,6 +1000,7 @@ package translate {
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
         Message: js.UndefOr[UnboundedLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+        ParallelDataNames: js.UndefOr[ResourceNameList] = js.undefined,
         SourceLanguageCode: js.UndefOr[LanguageCodeString] = js.undefined,
         SubmittedTime: js.UndefOr[Timestamp] = js.undefined,
         TargetLanguageCodes: js.UndefOr[TargetLanguageCodeStringList] = js.undefined,
@@ -702,6 +1016,7 @@ package translate {
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
+      ParallelDataNames.foreach(__v => __obj.updateDynamic("ParallelDataNames")(__v.asInstanceOf[js.Any]))
       SourceLanguageCode.foreach(__v => __obj.updateDynamic("SourceLanguageCode")(__v.asInstanceOf[js.Any]))
       SubmittedTime.foreach(__v => __obj.updateDynamic("SubmittedTime")(__v.asInstanceOf[js.Any]))
       TargetLanguageCodes.foreach(__v => __obj.updateDynamic("TargetLanguageCodes")(__v.asInstanceOf[js.Any]))
@@ -761,6 +1076,58 @@ package translate {
 
       AppliedTerminologies.foreach(__v => __obj.updateDynamic("AppliedTerminologies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TranslateTextResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateParallelDataRequest extends js.Object {
+    var ClientToken: ClientTokenString
+    var Name: ResourceName
+    var ParallelDataConfig: ParallelDataConfig
+    var Description: js.UndefOr[Description]
+  }
+
+  object UpdateParallelDataRequest {
+    @inline
+    def apply(
+        ClientToken: ClientTokenString,
+        Name: ResourceName,
+        ParallelDataConfig: ParallelDataConfig,
+        Description: js.UndefOr[Description] = js.undefined
+    ): UpdateParallelDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ParallelDataConfig" -> ParallelDataConfig.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateParallelDataRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateParallelDataResponse extends js.Object {
+    var LatestUpdateAttemptAt: js.UndefOr[Timestamp]
+    var LatestUpdateAttemptStatus: js.UndefOr[ParallelDataStatus]
+    var Name: js.UndefOr[ResourceName]
+    var Status: js.UndefOr[ParallelDataStatus]
+  }
+
+  object UpdateParallelDataResponse {
+    @inline
+    def apply(
+        LatestUpdateAttemptAt: js.UndefOr[Timestamp] = js.undefined,
+        LatestUpdateAttemptStatus: js.UndefOr[ParallelDataStatus] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        Status: js.UndefOr[ParallelDataStatus] = js.undefined
+    ): UpdateParallelDataResponse = {
+      val __obj = js.Dynamic.literal()
+      LatestUpdateAttemptAt.foreach(__v => __obj.updateDynamic("LatestUpdateAttemptAt")(__v.asInstanceOf[js.Any]))
+      LatestUpdateAttemptStatus.foreach(__v => __obj.updateDynamic("LatestUpdateAttemptStatus")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateParallelDataResponse]
     }
   }
 }
