@@ -1,33 +1,12 @@
 name: CI
 on: [pull_request]
 jobs:
-  ci:
+  format:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v10
-        with:
-          java-version: adopt@1.11
       - name: Check Scalafmt
-        run: sbt -jvm-opts .github/.jvmopts scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
-      - name: setup node.js
-        run: npm install
-      - name: Run Tests
-        run: sbt -jvm-opts .github/.jvmopts ++core/test ++awsDynamoDB/test ++awsCloudFrontSigner/test ++all/test
-      - name: Cache SBT ivy cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.ivy2/cache
-          key: ${{ runner.os }}-sbt-ivy-cache-${{ hashFiles('build.sbt') }}$-${{ hashFiles('project/plugins.sbt') }}-${{ hashFiles('project/Dependencies.scala') }}-${{ hashFiles('project/build.properties') }}
-      - name: Cache SBT
-        uses: actions/cache@v1
-        with:
-          path: ~/.sbt
-          key: ${{ runner.os }}-sbt-ivy-cache-${{ hashFiles('build.sbt') }}$-${{ hashFiles('project/plugins.sbt') }}-${{ hashFiles('project/Dependencies.scala') }}-${{ hashFiles('project/build.properties') }}
-      - name: Cache coursier cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.cache/coursier
-          key: ${{ runner.os }}-sbt-ivy-cache-${{ hashFiles('build.sbt') }}$-${{ hashFiles('project/plugins.sbt') }}-${{ hashFiles('project/Dependencies.scala') }}-${{ hashFiles('project/build.properties') }}
+        run: sbt -jvm-opts .github/.jvmopts ++2.13.3 scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
