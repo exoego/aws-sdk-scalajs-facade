@@ -26,6 +26,20 @@ package object lightsail {
   type CloudFormationStackRecordSourceInfoList = js.Array[CloudFormationStackRecordSourceInfo]
   type ContactMethodsList = js.Array[ContactMethod]
   type ContactProtocolsList = js.Array[ContactProtocol]
+  type ContainerImageList = js.Array[ContainerImage]
+  type ContainerLabel = String
+  type ContainerMap = js.Dictionary[Container]
+  type ContainerName = String
+  type ContainerServiceDeploymentList = js.Array[ContainerServiceDeployment]
+  type ContainerServiceList = js.Array[ContainerService]
+  type ContainerServiceLogEventList = js.Array[ContainerServiceLogEvent]
+  type ContainerServiceMetadataEntry = js.Dictionary[String]
+  type ContainerServiceMetadataEntryList = js.Array[ContainerServiceMetadataEntry]
+  type ContainerServiceName = String
+  type ContainerServicePowerList = js.Array[ContainerServicePower]
+  type ContainerServicePublicDomains = js.Dictionary[ContainerServicePublicDomainsList]
+  type ContainerServicePublicDomainsList = js.Array[String]
+  type ContainerServiceScale = Int
   type DiskInfoList = js.Array[DiskInfo]
   type DiskList = js.Array[Disk]
   type DiskMapList = js.Array[DiskMap]
@@ -41,6 +55,7 @@ package object lightsail {
   type DomainNameList = js.Array[DomainName]
   type DomainValidationRecordList = js.Array[DomainValidationRecord]
   type EligibleToRenew = String
+  type Environment = js.Dictionary[String]
   type ExportSnapshotRecordList = js.Array[ExportSnapshotRecord]
   type HeaderForwardList = js.Array[HeaderEnum]
   type HostKeysList = js.Array[HostKeyAttributes]
@@ -76,6 +91,7 @@ package object lightsail {
   type Port = Int
   type PortInfoList = js.Array[PortInfo]
   type PortList = js.Array[Port]
+  type PortMap = js.Dictionary[ContainerServiceProtocol]
   type RegionList = js.Array[Region]
   type RelationalDatabaseBlueprintList = js.Array[RelationalDatabaseBlueprint]
   type RelationalDatabaseBundleList = js.Array[RelationalDatabaseBundle]
@@ -116,6 +132,9 @@ package object lightsail {
     @inline def createCertificateFuture(params: CreateCertificateRequest): Future[CreateCertificateResult] = service.createCertificate(params).promise().toFuture
     @inline def createCloudFormationStackFuture(params: CreateCloudFormationStackRequest): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
     @inline def createContactMethodFuture(params: CreateContactMethodRequest): Future[CreateContactMethodResult] = service.createContactMethod(params).promise().toFuture
+    @inline def createContainerServiceDeploymentFuture(params: CreateContainerServiceDeploymentRequest): Future[CreateContainerServiceDeploymentResult] = service.createContainerServiceDeployment(params).promise().toFuture
+    @inline def createContainerServiceFuture(params: CreateContainerServiceRequest): Future[CreateContainerServiceResult] = service.createContainerService(params).promise().toFuture
+    @inline def createContainerServiceRegistryLoginFuture(params: CreateContainerServiceRegistryLoginRequest): Future[CreateContainerServiceRegistryLoginResult] = service.createContainerServiceRegistryLogin(params).promise().toFuture
     @inline def createDiskFromSnapshotFuture(params: CreateDiskFromSnapshotRequest): Future[CreateDiskFromSnapshotResult] = service.createDiskFromSnapshot(params).promise().toFuture
     @inline def createDiskFuture(params: CreateDiskRequest): Future[CreateDiskResult] = service.createDisk(params).promise().toFuture
     @inline def createDiskSnapshotFuture(params: CreateDiskSnapshotRequest): Future[CreateDiskSnapshotResult] = service.createDiskSnapshot(params).promise().toFuture
@@ -135,6 +154,8 @@ package object lightsail {
     @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] = service.deleteAutoSnapshot(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[DeleteCertificateResult] = service.deleteCertificate(params).promise().toFuture
     @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] = service.deleteContactMethod(params).promise().toFuture
+    @inline def deleteContainerImageFuture(params: DeleteContainerImageRequest): Future[DeleteContainerImageResult] = service.deleteContainerImage(params).promise().toFuture
+    @inline def deleteContainerServiceFuture(params: DeleteContainerServiceRequest): Future[DeleteContainerServiceResult] = service.deleteContainerService(params).promise().toFuture
     @inline def deleteDiskFuture(params: DeleteDiskRequest): Future[DeleteDiskResult] = service.deleteDisk(params).promise().toFuture
     @inline def deleteDiskSnapshotFuture(params: DeleteDiskSnapshotRequest): Future[DeleteDiskSnapshotResult] = service.deleteDiskSnapshot(params).promise().toFuture
     @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[DeleteDistributionResult] = service.deleteDistribution(params).promise().toFuture
@@ -164,6 +185,13 @@ package object lightsail {
     @inline def getCertificatesFuture(params: GetCertificatesRequest): Future[GetCertificatesResult] = service.getCertificates(params).promise().toFuture
     @inline def getCloudFormationStackRecordsFuture(params: GetCloudFormationStackRecordsRequest): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
     @inline def getContactMethodsFuture(params: GetContactMethodsRequest): Future[GetContactMethodsResult] = service.getContactMethods(params).promise().toFuture
+    @inline def getContainerAPIMetadataFuture(params: GetContainerAPIMetadataRequest): Future[GetContainerAPIMetadataResult] = service.getContainerAPIMetadata(params).promise().toFuture
+    @inline def getContainerImagesFuture(params: GetContainerImagesRequest): Future[GetContainerImagesResult] = service.getContainerImages(params).promise().toFuture
+    @inline def getContainerLogFuture(params: GetContainerLogRequest): Future[GetContainerLogResult] = service.getContainerLog(params).promise().toFuture
+    @inline def getContainerServiceDeploymentsFuture(params: GetContainerServiceDeploymentsRequest): Future[GetContainerServiceDeploymentsResult] = service.getContainerServiceDeployments(params).promise().toFuture
+    @inline def getContainerServiceMetricDataFuture(params: GetContainerServiceMetricDataRequest): Future[GetContainerServiceMetricDataResult] = service.getContainerServiceMetricData(params).promise().toFuture
+    @inline def getContainerServicePowersFuture(params: GetContainerServicePowersRequest): Future[GetContainerServicePowersResult] = service.getContainerServicePowers(params).promise().toFuture
+    @inline def getContainerServicesFuture(params: GetContainerServicesRequest): Future[ContainerServicesListResult] = service.getContainerServices(params).promise().toFuture
     @inline def getDiskFuture(params: GetDiskRequest): Future[GetDiskResult] = service.getDisk(params).promise().toFuture
     @inline def getDiskSnapshotFuture(params: GetDiskSnapshotRequest): Future[GetDiskSnapshotResult] = service.getDiskSnapshot(params).promise().toFuture
     @inline def getDiskSnapshotsFuture(params: GetDiskSnapshotsRequest): Future[GetDiskSnapshotsResult] = service.getDiskSnapshots(params).promise().toFuture
@@ -215,6 +243,7 @@ package object lightsail {
     @inline def putInstancePublicPortsFuture(params: PutInstancePublicPortsRequest): Future[PutInstancePublicPortsResult] = service.putInstancePublicPorts(params).promise().toFuture
     @inline def rebootInstanceFuture(params: RebootInstanceRequest): Future[RebootInstanceResult] = service.rebootInstance(params).promise().toFuture
     @inline def rebootRelationalDatabaseFuture(params: RebootRelationalDatabaseRequest): Future[RebootRelationalDatabaseResult] = service.rebootRelationalDatabase(params).promise().toFuture
+    @inline def registerContainerImageFuture(params: RegisterContainerImageRequest): Future[RegisterContainerImageResult] = service.registerContainerImage(params).promise().toFuture
     @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] = service.releaseStaticIp(params).promise().toFuture
     @inline def resetDistributionCacheFuture(params: ResetDistributionCacheRequest): Future[ResetDistributionCacheResult] = service.resetDistributionCache(params).promise().toFuture
     @inline def sendContactMethodVerificationFuture(params: SendContactMethodVerificationRequest): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
@@ -226,6 +255,7 @@ package object lightsail {
     @inline def testAlarmFuture(params: TestAlarmRequest): Future[TestAlarmResult] = service.testAlarm(params).promise().toFuture
     @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] = service.unpeerVpc(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
+    @inline def updateContainerServiceFuture(params: UpdateContainerServiceRequest): Future[UpdateContainerServiceResult] = service.updateContainerService(params).promise().toFuture
     @inline def updateDistributionBundleFuture(params: UpdateDistributionBundleRequest): Future[UpdateDistributionBundleResult] = service.updateDistributionBundle(params).promise().toFuture
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
     @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] = service.updateDomainEntry(params).promise().toFuture
@@ -253,6 +283,9 @@ package lightsail {
     def createCertificate(params: CreateCertificateRequest): Request[CreateCertificateResult] = js.native
     def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] = js.native
     def createContactMethod(params: CreateContactMethodRequest): Request[CreateContactMethodResult] = js.native
+    def createContainerService(params: CreateContainerServiceRequest): Request[CreateContainerServiceResult] = js.native
+    def createContainerServiceDeployment(params: CreateContainerServiceDeploymentRequest): Request[CreateContainerServiceDeploymentResult] = js.native
+    def createContainerServiceRegistryLogin(params: CreateContainerServiceRegistryLoginRequest): Request[CreateContainerServiceRegistryLoginResult] = js.native
     def createDisk(params: CreateDiskRequest): Request[CreateDiskResult] = js.native
     def createDiskFromSnapshot(params: CreateDiskFromSnapshotRequest): Request[CreateDiskFromSnapshotResult] = js.native
     def createDiskSnapshot(params: CreateDiskSnapshotRequest): Request[CreateDiskSnapshotResult] = js.native
@@ -272,6 +305,8 @@ package lightsail {
     def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[DeleteCertificateResult] = js.native
     def deleteContactMethod(params: DeleteContactMethodRequest): Request[DeleteContactMethodResult] = js.native
+    def deleteContainerImage(params: DeleteContainerImageRequest): Request[DeleteContainerImageResult] = js.native
+    def deleteContainerService(params: DeleteContainerServiceRequest): Request[DeleteContainerServiceResult] = js.native
     def deleteDisk(params: DeleteDiskRequest): Request[DeleteDiskResult] = js.native
     def deleteDiskSnapshot(params: DeleteDiskSnapshotRequest): Request[DeleteDiskSnapshotResult] = js.native
     def deleteDistribution(params: DeleteDistributionRequest): Request[DeleteDistributionResult] = js.native
@@ -301,6 +336,13 @@ package lightsail {
     def getCertificates(params: GetCertificatesRequest): Request[GetCertificatesResult] = js.native
     def getCloudFormationStackRecords(params: GetCloudFormationStackRecordsRequest): Request[GetCloudFormationStackRecordsResult] = js.native
     def getContactMethods(params: GetContactMethodsRequest): Request[GetContactMethodsResult] = js.native
+    def getContainerAPIMetadata(params: GetContainerAPIMetadataRequest): Request[GetContainerAPIMetadataResult] = js.native
+    def getContainerImages(params: GetContainerImagesRequest): Request[GetContainerImagesResult] = js.native
+    def getContainerLog(params: GetContainerLogRequest): Request[GetContainerLogResult] = js.native
+    def getContainerServiceDeployments(params: GetContainerServiceDeploymentsRequest): Request[GetContainerServiceDeploymentsResult] = js.native
+    def getContainerServiceMetricData(params: GetContainerServiceMetricDataRequest): Request[GetContainerServiceMetricDataResult] = js.native
+    def getContainerServicePowers(params: GetContainerServicePowersRequest): Request[GetContainerServicePowersResult] = js.native
+    def getContainerServices(params: GetContainerServicesRequest): Request[ContainerServicesListResult] = js.native
     def getDisk(params: GetDiskRequest): Request[GetDiskResult] = js.native
     def getDiskSnapshot(params: GetDiskSnapshotRequest): Request[GetDiskSnapshotResult] = js.native
     def getDiskSnapshots(params: GetDiskSnapshotsRequest): Request[GetDiskSnapshotsResult] = js.native
@@ -352,6 +394,7 @@ package lightsail {
     def putInstancePublicPorts(params: PutInstancePublicPortsRequest): Request[PutInstancePublicPortsResult] = js.native
     def rebootInstance(params: RebootInstanceRequest): Request[RebootInstanceResult] = js.native
     def rebootRelationalDatabase(params: RebootRelationalDatabaseRequest): Request[RebootRelationalDatabaseResult] = js.native
+    def registerContainerImage(params: RegisterContainerImageRequest): Request[RegisterContainerImageResult] = js.native
     def releaseStaticIp(params: ReleaseStaticIpRequest): Request[ReleaseStaticIpResult] = js.native
     def resetDistributionCache(params: ResetDistributionCacheRequest): Request[ResetDistributionCacheResult] = js.native
     def sendContactMethodVerification(params: SendContactMethodVerificationRequest): Request[SendContactMethodVerificationResult] = js.native
@@ -363,6 +406,7 @@ package lightsail {
     def testAlarm(params: TestAlarmRequest): Request[TestAlarmResult] = js.native
     def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
+    def updateContainerService(params: UpdateContainerServiceRequest): Request[UpdateContainerServiceResult] = js.native
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
     def updateDistributionBundle(params: UpdateDistributionBundleRequest): Request[UpdateDistributionBundleResult] = js.native
     def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult] = js.native
@@ -1356,6 +1400,388 @@ package lightsail {
     @inline def values = js.Array(Email, SMS)
   }
 
+  /** Describes the settings of a container that will be launched, or that is launched, to an Amazon Lightsail container service.
+    */
+  @js.native
+  trait Container extends js.Object {
+    var command: js.UndefOr[StringList]
+    var environment: js.UndefOr[Environment]
+    var image: js.UndefOr[String]
+    var ports: js.UndefOr[PortMap]
+  }
+
+  object Container {
+    @inline
+    def apply(
+        command: js.UndefOr[StringList] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
+        image: js.UndefOr[String] = js.undefined,
+        ports: js.UndefOr[PortMap] = js.undefined
+    ): Container = {
+      val __obj = js.Dynamic.literal()
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Container]
+    }
+  }
+
+  /** Describes a container image that is registered to an Amazon Lightsail container service.
+    */
+  @js.native
+  trait ContainerImage extends js.Object {
+    var createdAt: js.UndefOr[IsoDate]
+    var digest: js.UndefOr[String]
+    var image: js.UndefOr[String]
+  }
+
+  object ContainerImage {
+    @inline
+    def apply(
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        digest: js.UndefOr[String] = js.undefined,
+        image: js.UndefOr[String] = js.undefined
+    ): ContainerImage = {
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      digest.foreach(__v => __obj.updateDynamic("digest")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerImage]
+    }
+  }
+
+  /** Describes an Amazon Lightsail container service.
+    */
+  @js.native
+  trait ContainerService extends js.Object {
+    var arn: js.UndefOr[NonEmptyString]
+    var containerServiceName: js.UndefOr[ContainerServiceName]
+    var createdAt: js.UndefOr[IsoDate]
+    var currentDeployment: js.UndefOr[ContainerServiceDeployment]
+    var isDisabled: js.UndefOr[Boolean]
+    var location: js.UndefOr[ResourceLocation]
+    var nextDeployment: js.UndefOr[ContainerServiceDeployment]
+    var power: js.UndefOr[ContainerServicePowerName]
+    var powerId: js.UndefOr[String]
+    var principalArn: js.UndefOr[String]
+    var privateDomainName: js.UndefOr[String]
+    var publicDomainNames: js.UndefOr[ContainerServicePublicDomains]
+    var resourceType: js.UndefOr[ResourceType]
+    var scale: js.UndefOr[ContainerServiceScale]
+    var state: js.UndefOr[ContainerServiceState]
+    var tags: js.UndefOr[TagList]
+    var url: js.UndefOr[String]
+  }
+
+  object ContainerService {
+    @inline
+    def apply(
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        containerServiceName: js.UndefOr[ContainerServiceName] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        currentDeployment: js.UndefOr[ContainerServiceDeployment] = js.undefined,
+        isDisabled: js.UndefOr[Boolean] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        nextDeployment: js.UndefOr[ContainerServiceDeployment] = js.undefined,
+        power: js.UndefOr[ContainerServicePowerName] = js.undefined,
+        powerId: js.UndefOr[String] = js.undefined,
+        principalArn: js.UndefOr[String] = js.undefined,
+        privateDomainName: js.UndefOr[String] = js.undefined,
+        publicDomainNames: js.UndefOr[ContainerServicePublicDomains] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        scale: js.UndefOr[ContainerServiceScale] = js.undefined,
+        state: js.UndefOr[ContainerServiceState] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        url: js.UndefOr[String] = js.undefined
+    ): ContainerService = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      containerServiceName.foreach(__v => __obj.updateDynamic("containerServiceName")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      currentDeployment.foreach(__v => __obj.updateDynamic("currentDeployment")(__v.asInstanceOf[js.Any]))
+      isDisabled.foreach(__v => __obj.updateDynamic("isDisabled")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      nextDeployment.foreach(__v => __obj.updateDynamic("nextDeployment")(__v.asInstanceOf[js.Any]))
+      power.foreach(__v => __obj.updateDynamic("power")(__v.asInstanceOf[js.Any]))
+      powerId.foreach(__v => __obj.updateDynamic("powerId")(__v.asInstanceOf[js.Any]))
+      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
+      privateDomainName.foreach(__v => __obj.updateDynamic("privateDomainName")(__v.asInstanceOf[js.Any]))
+      publicDomainNames.foreach(__v => __obj.updateDynamic("publicDomainNames")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerService]
+    }
+  }
+
+  /** Describes a container deployment configuration of an Amazon Lightsail container service.
+    * A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.
+    */
+  @js.native
+  trait ContainerServiceDeployment extends js.Object {
+    var containers: js.UndefOr[ContainerMap]
+    var createdAt: js.UndefOr[IsoDate]
+    var publicEndpoint: js.UndefOr[ContainerServiceEndpoint]
+    var state: js.UndefOr[ContainerServiceDeploymentState]
+    var version: js.UndefOr[Int]
+  }
+
+  object ContainerServiceDeployment {
+    @inline
+    def apply(
+        containers: js.UndefOr[ContainerMap] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        publicEndpoint: js.UndefOr[ContainerServiceEndpoint] = js.undefined,
+        state: js.UndefOr[ContainerServiceDeploymentState] = js.undefined,
+        version: js.UndefOr[Int] = js.undefined
+    ): ContainerServiceDeployment = {
+      val __obj = js.Dynamic.literal()
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      publicEndpoint.foreach(__v => __obj.updateDynamic("publicEndpoint")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceDeployment]
+    }
+  }
+
+  /** Describes a container deployment configuration of an Amazon Lightsail container service.
+    * A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.
+    */
+  @js.native
+  trait ContainerServiceDeploymentRequest extends js.Object {
+    var containers: js.UndefOr[ContainerMap]
+    var publicEndpoint: js.UndefOr[EndpointRequest]
+  }
+
+  object ContainerServiceDeploymentRequest {
+    @inline
+    def apply(
+        containers: js.UndefOr[ContainerMap] = js.undefined,
+        publicEndpoint: js.UndefOr[EndpointRequest] = js.undefined
+    ): ContainerServiceDeploymentRequest = {
+      val __obj = js.Dynamic.literal()
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      publicEndpoint.foreach(__v => __obj.updateDynamic("publicEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceDeploymentRequest]
+    }
+  }
+
+  @js.native
+  sealed trait ContainerServiceDeploymentState extends js.Any
+  object ContainerServiceDeploymentState {
+    val ACTIVATING = "ACTIVATING".asInstanceOf[ContainerServiceDeploymentState]
+    val ACTIVE = "ACTIVE".asInstanceOf[ContainerServiceDeploymentState]
+    val INACTIVE = "INACTIVE".asInstanceOf[ContainerServiceDeploymentState]
+    val FAILED = "FAILED".asInstanceOf[ContainerServiceDeploymentState]
+
+    @inline def values = js.Array(ACTIVATING, ACTIVE, INACTIVE, FAILED)
+  }
+
+  /** Describes the public endpoint configuration of a deployment of an Amazon Lightsail container service.
+    */
+  @js.native
+  trait ContainerServiceEndpoint extends js.Object {
+    var containerName: js.UndefOr[String]
+    var containerPort: js.UndefOr[Int]
+    var healthCheck: js.UndefOr[ContainerServiceHealthCheckConfig]
+  }
+
+  object ContainerServiceEndpoint {
+    @inline
+    def apply(
+        containerName: js.UndefOr[String] = js.undefined,
+        containerPort: js.UndefOr[Int] = js.undefined,
+        healthCheck: js.UndefOr[ContainerServiceHealthCheckConfig] = js.undefined
+    ): ContainerServiceEndpoint = {
+      val __obj = js.Dynamic.literal()
+      containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
+      containerPort.foreach(__v => __obj.updateDynamic("containerPort")(__v.asInstanceOf[js.Any]))
+      healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceEndpoint]
+    }
+  }
+
+  /** Describes the health check configuration of an Amazon Lightsail container service.
+    */
+  @js.native
+  trait ContainerServiceHealthCheckConfig extends js.Object {
+    var healthyThreshold: js.UndefOr[Int]
+    var intervalSeconds: js.UndefOr[Int]
+    var path: js.UndefOr[String]
+    var successCodes: js.UndefOr[String]
+    var timeoutSeconds: js.UndefOr[Int]
+    var unhealthyThreshold: js.UndefOr[Int]
+  }
+
+  object ContainerServiceHealthCheckConfig {
+    @inline
+    def apply(
+        healthyThreshold: js.UndefOr[Int] = js.undefined,
+        intervalSeconds: js.UndefOr[Int] = js.undefined,
+        path: js.UndefOr[String] = js.undefined,
+        successCodes: js.UndefOr[String] = js.undefined,
+        timeoutSeconds: js.UndefOr[Int] = js.undefined,
+        unhealthyThreshold: js.UndefOr[Int] = js.undefined
+    ): ContainerServiceHealthCheckConfig = {
+      val __obj = js.Dynamic.literal()
+      healthyThreshold.foreach(__v => __obj.updateDynamic("healthyThreshold")(__v.asInstanceOf[js.Any]))
+      intervalSeconds.foreach(__v => __obj.updateDynamic("intervalSeconds")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      successCodes.foreach(__v => __obj.updateDynamic("successCodes")(__v.asInstanceOf[js.Any]))
+      timeoutSeconds.foreach(__v => __obj.updateDynamic("timeoutSeconds")(__v.asInstanceOf[js.Any]))
+      unhealthyThreshold.foreach(__v => __obj.updateDynamic("unhealthyThreshold")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceHealthCheckConfig]
+    }
+  }
+
+  /** Describes the log events of a container of an Amazon Lightsail container service.
+    */
+  @js.native
+  trait ContainerServiceLogEvent extends js.Object {
+    var createdAt: js.UndefOr[IsoDate]
+    var message: js.UndefOr[String]
+  }
+
+  object ContainerServiceLogEvent {
+    @inline
+    def apply(
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): ContainerServiceLogEvent = {
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceLogEvent]
+    }
+  }
+
+  @js.native
+  sealed trait ContainerServiceMetricName extends js.Any
+  object ContainerServiceMetricName {
+    val CPUUtilization = "CPUUtilization".asInstanceOf[ContainerServiceMetricName]
+    val MemoryUtilization = "MemoryUtilization".asInstanceOf[ContainerServiceMetricName]
+
+    @inline def values = js.Array(CPUUtilization, MemoryUtilization)
+  }
+
+  /** Describes the powers that can be specified for an Amazon Lightsail container service.
+    * The power specifies the amount of RAM, the number of vCPUs, and the base price of the container service.
+    */
+  @js.native
+  trait ContainerServicePower extends js.Object {
+    var cpuCount: js.UndefOr[Float]
+    var isActive: js.UndefOr[Boolean]
+    var name: js.UndefOr[String]
+    var powerId: js.UndefOr[String]
+    var price: js.UndefOr[Float]
+    var ramSizeInGb: js.UndefOr[Float]
+  }
+
+  object ContainerServicePower {
+    @inline
+    def apply(
+        cpuCount: js.UndefOr[Float] = js.undefined,
+        isActive: js.UndefOr[Boolean] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        powerId: js.UndefOr[String] = js.undefined,
+        price: js.UndefOr[Float] = js.undefined,
+        ramSizeInGb: js.UndefOr[Float] = js.undefined
+    ): ContainerServicePower = {
+      val __obj = js.Dynamic.literal()
+      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      powerId.foreach(__v => __obj.updateDynamic("powerId")(__v.asInstanceOf[js.Any]))
+      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
+      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServicePower]
+    }
+  }
+
+  @js.native
+  sealed trait ContainerServicePowerName extends js.Any
+  object ContainerServicePowerName {
+    val nano = "nano".asInstanceOf[ContainerServicePowerName]
+    val micro = "micro".asInstanceOf[ContainerServicePowerName]
+    val small = "small".asInstanceOf[ContainerServicePowerName]
+    val medium = "medium".asInstanceOf[ContainerServicePowerName]
+    val large = "large".asInstanceOf[ContainerServicePowerName]
+    val xlarge = "xlarge".asInstanceOf[ContainerServicePowerName]
+
+    @inline def values = js.Array(nano, micro, small, medium, large, xlarge)
+  }
+
+  @js.native
+  sealed trait ContainerServiceProtocol extends js.Any
+  object ContainerServiceProtocol {
+    val HTTP = "HTTP".asInstanceOf[ContainerServiceProtocol]
+    val HTTPS = "HTTPS".asInstanceOf[ContainerServiceProtocol]
+    val TCP = "TCP".asInstanceOf[ContainerServiceProtocol]
+    val UDP = "UDP".asInstanceOf[ContainerServiceProtocol]
+
+    @inline def values = js.Array(HTTP, HTTPS, TCP, UDP)
+  }
+
+  /** Describes the login information for the container image registry of an Amazon Lightsail account.
+    */
+  @js.native
+  trait ContainerServiceRegistryLogin extends js.Object {
+    var expiresAt: js.UndefOr[IsoDate]
+    var password: js.UndefOr[String]
+    var registry: js.UndefOr[String]
+    var username: js.UndefOr[String]
+  }
+
+  object ContainerServiceRegistryLogin {
+    @inline
+    def apply(
+        expiresAt: js.UndefOr[IsoDate] = js.undefined,
+        password: js.UndefOr[String] = js.undefined,
+        registry: js.UndefOr[String] = js.undefined,
+        username: js.UndefOr[String] = js.undefined
+    ): ContainerServiceRegistryLogin = {
+      val __obj = js.Dynamic.literal()
+      expiresAt.foreach(__v => __obj.updateDynamic("expiresAt")(__v.asInstanceOf[js.Any]))
+      password.foreach(__v => __obj.updateDynamic("password")(__v.asInstanceOf[js.Any]))
+      registry.foreach(__v => __obj.updateDynamic("registry")(__v.asInstanceOf[js.Any]))
+      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceRegistryLogin]
+    }
+  }
+
+  @js.native
+  sealed trait ContainerServiceState extends js.Any
+  object ContainerServiceState {
+    val PENDING = "PENDING".asInstanceOf[ContainerServiceState]
+    val READY = "READY".asInstanceOf[ContainerServiceState]
+    val RUNNING = "RUNNING".asInstanceOf[ContainerServiceState]
+    val UPDATING = "UPDATING".asInstanceOf[ContainerServiceState]
+    val DELETING = "DELETING".asInstanceOf[ContainerServiceState]
+    val DISABLED = "DISABLED".asInstanceOf[ContainerServiceState]
+
+    @inline def values = js.Array(PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED)
+  }
+
+  @js.native
+  trait ContainerServicesListResult extends js.Object {
+    var containerServices: js.UndefOr[ContainerServiceList]
+  }
+
+  object ContainerServicesListResult {
+    @inline
+    def apply(
+        containerServices: js.UndefOr[ContainerServiceList] = js.undefined
+    ): ContainerServicesListResult = {
+      val __obj = js.Dynamic.literal()
+      containerServices.foreach(__v => __obj.updateDynamic("containerServices")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServicesListResult]
+    }
+  }
+
   /** Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.
     * For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.
     */
@@ -1539,6 +1965,122 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateContactMethodResult]
+    }
+  }
+
+  @js.native
+  trait CreateContainerServiceDeploymentRequest extends js.Object {
+    var serviceName: ContainerServiceName
+    var containers: js.UndefOr[ContainerMap]
+    var publicEndpoint: js.UndefOr[EndpointRequest]
+  }
+
+  object CreateContainerServiceDeploymentRequest {
+    @inline
+    def apply(
+        serviceName: ContainerServiceName,
+        containers: js.UndefOr[ContainerMap] = js.undefined,
+        publicEndpoint: js.UndefOr[EndpointRequest] = js.undefined
+    ): CreateContainerServiceDeploymentRequest = {
+      val __obj = js.Dynamic.literal(
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      publicEndpoint.foreach(__v => __obj.updateDynamic("publicEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContainerServiceDeploymentRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContainerServiceDeploymentResult extends js.Object {
+    var containerService: js.UndefOr[ContainerService]
+  }
+
+  object CreateContainerServiceDeploymentResult {
+    @inline
+    def apply(
+        containerService: js.UndefOr[ContainerService] = js.undefined
+    ): CreateContainerServiceDeploymentResult = {
+      val __obj = js.Dynamic.literal()
+      containerService.foreach(__v => __obj.updateDynamic("containerService")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContainerServiceDeploymentResult]
+    }
+  }
+
+  @js.native
+  trait CreateContainerServiceRegistryLoginRequest extends js.Object
+
+  object CreateContainerServiceRegistryLoginRequest {
+    @inline
+    def apply(): CreateContainerServiceRegistryLoginRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateContainerServiceRegistryLoginRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContainerServiceRegistryLoginResult extends js.Object {
+    var registryLogin: js.UndefOr[ContainerServiceRegistryLogin]
+  }
+
+  object CreateContainerServiceRegistryLoginResult {
+    @inline
+    def apply(
+        registryLogin: js.UndefOr[ContainerServiceRegistryLogin] = js.undefined
+    ): CreateContainerServiceRegistryLoginResult = {
+      val __obj = js.Dynamic.literal()
+      registryLogin.foreach(__v => __obj.updateDynamic("registryLogin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContainerServiceRegistryLoginResult]
+    }
+  }
+
+  @js.native
+  trait CreateContainerServiceRequest extends js.Object {
+    var power: ContainerServicePowerName
+    var scale: ContainerServiceScale
+    var serviceName: ContainerServiceName
+    var deployment: js.UndefOr[ContainerServiceDeploymentRequest]
+    var publicDomainNames: js.UndefOr[ContainerServicePublicDomains]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateContainerServiceRequest {
+    @inline
+    def apply(
+        power: ContainerServicePowerName,
+        scale: ContainerServiceScale,
+        serviceName: ContainerServiceName,
+        deployment: js.UndefOr[ContainerServiceDeploymentRequest] = js.undefined,
+        publicDomainNames: js.UndefOr[ContainerServicePublicDomains] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateContainerServiceRequest = {
+      val __obj = js.Dynamic.literal(
+        "power" -> power.asInstanceOf[js.Any],
+        "scale" -> scale.asInstanceOf[js.Any],
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+
+      deployment.foreach(__v => __obj.updateDynamic("deployment")(__v.asInstanceOf[js.Any]))
+      publicDomainNames.foreach(__v => __obj.updateDynamic("publicDomainNames")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContainerServiceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContainerServiceResult extends js.Object {
+    var containerService: js.UndefOr[ContainerService]
+  }
+
+  object CreateContainerServiceResult {
+    @inline
+    def apply(
+        containerService: js.UndefOr[ContainerService] = js.undefined
+    ): CreateContainerServiceResult = {
+      val __obj = js.Dynamic.literal()
+      containerService.foreach(__v => __obj.updateDynamic("containerService")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContainerServiceResult]
     }
   }
 
@@ -2420,6 +2962,65 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteContactMethodResult]
+    }
+  }
+
+  @js.native
+  trait DeleteContainerImageRequest extends js.Object {
+    var image: String
+    var serviceName: ContainerServiceName
+  }
+
+  object DeleteContainerImageRequest {
+    @inline
+    def apply(
+        image: String,
+        serviceName: ContainerServiceName
+    ): DeleteContainerImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "image" -> image.asInstanceOf[js.Any],
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteContainerImageRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteContainerImageResult extends js.Object
+
+  object DeleteContainerImageResult {
+    @inline
+    def apply(): DeleteContainerImageResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteContainerImageResult]
+    }
+  }
+
+  @js.native
+  trait DeleteContainerServiceRequest extends js.Object {
+    var serviceName: ContainerServiceName
+  }
+
+  object DeleteContainerServiceRequest {
+    @inline
+    def apply(
+        serviceName: ContainerServiceName
+    ): DeleteContainerServiceRequest = {
+      val __obj = js.Dynamic.literal(
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteContainerServiceRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteContainerServiceResult extends js.Object
+
+  object DeleteContainerServiceResult {
+    @inline
+    def apply(): DeleteContainerServiceResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteContainerServiceResult]
     }
   }
 
@@ -3485,6 +4086,32 @@ package lightsail {
     }
   }
 
+  /** Describes the settings of a public endpoint for an Amazon Lightsail container service.
+    */
+  @js.native
+  trait EndpointRequest extends js.Object {
+    var containerName: String
+    var containerPort: Int
+    var healthCheck: js.UndefOr[ContainerServiceHealthCheckConfig]
+  }
+
+  object EndpointRequest {
+    @inline
+    def apply(
+        containerName: String,
+        containerPort: Int,
+        healthCheck: js.UndefOr[ContainerServiceHealthCheckConfig] = js.undefined
+    ): EndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "containerName" -> containerName.asInstanceOf[js.Any],
+        "containerPort" -> containerPort.asInstanceOf[js.Any]
+      )
+
+      healthCheck.foreach(__v => __obj.updateDynamic("healthCheck")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointRequest]
+    }
+  }
+
   /** Describes an export snapshot record.
     */
   @js.native
@@ -3908,6 +4535,245 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       contactMethods.foreach(__v => __obj.updateDynamic("contactMethods")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContactMethodsResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerAPIMetadataRequest extends js.Object
+
+  object GetContainerAPIMetadataRequest {
+    @inline
+    def apply(): GetContainerAPIMetadataRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetContainerAPIMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait GetContainerAPIMetadataResult extends js.Object {
+    var metadata: js.UndefOr[ContainerServiceMetadataEntryList]
+  }
+
+  object GetContainerAPIMetadataResult {
+    @inline
+    def apply(
+        metadata: js.UndefOr[ContainerServiceMetadataEntryList] = js.undefined
+    ): GetContainerAPIMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerAPIMetadataResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerImagesRequest extends js.Object {
+    var serviceName: ContainerServiceName
+  }
+
+  object GetContainerImagesRequest {
+    @inline
+    def apply(
+        serviceName: ContainerServiceName
+    ): GetContainerImagesRequest = {
+      val __obj = js.Dynamic.literal(
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContainerImagesRequest]
+    }
+  }
+
+  @js.native
+  trait GetContainerImagesResult extends js.Object {
+    var containerImages: js.UndefOr[ContainerImageList]
+  }
+
+  object GetContainerImagesResult {
+    @inline
+    def apply(
+        containerImages: js.UndefOr[ContainerImageList] = js.undefined
+    ): GetContainerImagesResult = {
+      val __obj = js.Dynamic.literal()
+      containerImages.foreach(__v => __obj.updateDynamic("containerImages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerImagesResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerLogRequest extends js.Object {
+    var containerName: String
+    var serviceName: ContainerServiceName
+    var endTime: js.UndefOr[IsoDate]
+    var filterPattern: js.UndefOr[String]
+    var pageToken: js.UndefOr[String]
+    var startTime: js.UndefOr[IsoDate]
+  }
+
+  object GetContainerLogRequest {
+    @inline
+    def apply(
+        containerName: String,
+        serviceName: ContainerServiceName,
+        endTime: js.UndefOr[IsoDate] = js.undefined,
+        filterPattern: js.UndefOr[String] = js.undefined,
+        pageToken: js.UndefOr[String] = js.undefined,
+        startTime: js.UndefOr[IsoDate] = js.undefined
+    ): GetContainerLogRequest = {
+      val __obj = js.Dynamic.literal(
+        "containerName" -> containerName.asInstanceOf[js.Any],
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      filterPattern.foreach(__v => __obj.updateDynamic("filterPattern")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerLogRequest]
+    }
+  }
+
+  @js.native
+  trait GetContainerLogResult extends js.Object {
+    var logEvents: js.UndefOr[ContainerServiceLogEventList]
+    var nextPageToken: js.UndefOr[String]
+  }
+
+  object GetContainerLogResult {
+    @inline
+    def apply(
+        logEvents: js.UndefOr[ContainerServiceLogEventList] = js.undefined,
+        nextPageToken: js.UndefOr[String] = js.undefined
+    ): GetContainerLogResult = {
+      val __obj = js.Dynamic.literal()
+      logEvents.foreach(__v => __obj.updateDynamic("logEvents")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerLogResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerServiceDeploymentsRequest extends js.Object {
+    var serviceName: ContainerServiceName
+  }
+
+  object GetContainerServiceDeploymentsRequest {
+    @inline
+    def apply(
+        serviceName: ContainerServiceName
+    ): GetContainerServiceDeploymentsRequest = {
+      val __obj = js.Dynamic.literal(
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContainerServiceDeploymentsRequest]
+    }
+  }
+
+  @js.native
+  trait GetContainerServiceDeploymentsResult extends js.Object {
+    var deployments: js.UndefOr[ContainerServiceDeploymentList]
+  }
+
+  object GetContainerServiceDeploymentsResult {
+    @inline
+    def apply(
+        deployments: js.UndefOr[ContainerServiceDeploymentList] = js.undefined
+    ): GetContainerServiceDeploymentsResult = {
+      val __obj = js.Dynamic.literal()
+      deployments.foreach(__v => __obj.updateDynamic("deployments")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerServiceDeploymentsResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerServiceMetricDataRequest extends js.Object {
+    var endTime: IsoDate
+    var metricName: ContainerServiceMetricName
+    var period: MetricPeriod
+    var serviceName: ContainerServiceName
+    var startTime: IsoDate
+    var statistics: MetricStatisticList
+  }
+
+  object GetContainerServiceMetricDataRequest {
+    @inline
+    def apply(
+        endTime: IsoDate,
+        metricName: ContainerServiceMetricName,
+        period: MetricPeriod,
+        serviceName: ContainerServiceName,
+        startTime: IsoDate,
+        statistics: MetricStatisticList
+    ): GetContainerServiceMetricDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
+        "serviceName" -> serviceName.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "statistics" -> statistics.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContainerServiceMetricDataRequest]
+    }
+  }
+
+  @js.native
+  trait GetContainerServiceMetricDataResult extends js.Object {
+    var metricData: js.UndefOr[MetricDatapointList]
+    var metricName: js.UndefOr[ContainerServiceMetricName]
+  }
+
+  object GetContainerServiceMetricDataResult {
+    @inline
+    def apply(
+        metricData: js.UndefOr[MetricDatapointList] = js.undefined,
+        metricName: js.UndefOr[ContainerServiceMetricName] = js.undefined
+    ): GetContainerServiceMetricDataResult = {
+      val __obj = js.Dynamic.literal()
+      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerServiceMetricDataResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerServicePowersRequest extends js.Object
+
+  object GetContainerServicePowersRequest {
+    @inline
+    def apply(): GetContainerServicePowersRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetContainerServicePowersRequest]
+    }
+  }
+
+  @js.native
+  trait GetContainerServicePowersResult extends js.Object {
+    var powers: js.UndefOr[ContainerServicePowerList]
+  }
+
+  object GetContainerServicePowersResult {
+    @inline
+    def apply(
+        powers: js.UndefOr[ContainerServicePowerList] = js.undefined
+    ): GetContainerServicePowersResult = {
+      val __obj = js.Dynamic.literal()
+      powers.foreach(__v => __obj.updateDynamic("powers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerServicePowersResult]
+    }
+  }
+
+  @js.native
+  trait GetContainerServicesRequest extends js.Object {
+    var serviceName: js.UndefOr[ContainerServiceName]
+  }
+
+  object GetContainerServicesRequest {
+    @inline
+    def apply(
+        serviceName: js.UndefOr[ContainerServiceName] = js.undefined
+    ): GetContainerServicesRequest = {
+      val __obj = js.Dynamic.literal()
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContainerServicesRequest]
     }
   }
 
@@ -7091,6 +7957,13 @@ package lightsail {
     val UpdateDistributionBundle = "UpdateDistributionBundle".asInstanceOf[OperationType]
     val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
     val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
+    val CreateContainerService = "CreateContainerService".asInstanceOf[OperationType]
+    val UpdateContainerService = "UpdateContainerService".asInstanceOf[OperationType]
+    val DeleteContainerService = "DeleteContainerService".asInstanceOf[OperationType]
+    val CreateContainerServiceDeployment = "CreateContainerServiceDeployment".asInstanceOf[OperationType]
+    val CreateContainerServiceRegistryLogin = "CreateContainerServiceRegistryLogin".asInstanceOf[OperationType]
+    val RegisterContainerImage = "RegisterContainerImage".asInstanceOf[OperationType]
+    val DeleteContainerImage = "DeleteContainerImage".asInstanceOf[OperationType]
 
     @inline def values = js.Array(
       DeleteKnownHostKeys,
@@ -7156,7 +8029,14 @@ package lightsail {
       DetachCertificateFromDistribution,
       UpdateDistributionBundle,
       CreateCertificate,
-      DeleteCertificate
+      DeleteCertificate,
+      CreateContainerService,
+      UpdateContainerService,
+      DeleteContainerService,
+      CreateContainerServiceDeployment,
+      CreateContainerServiceRegistryLogin,
+      RegisterContainerImage,
+      DeleteContainerImage
     )
   }
 
@@ -7617,6 +8497,45 @@ package lightsail {
       `ap-northeast-1`,
       `ap-northeast-2`
     )
+  }
+
+  @js.native
+  trait RegisterContainerImageRequest extends js.Object {
+    var digest: String
+    var label: ContainerLabel
+    var serviceName: ContainerServiceName
+  }
+
+  object RegisterContainerImageRequest {
+    @inline
+    def apply(
+        digest: String,
+        label: ContainerLabel,
+        serviceName: ContainerServiceName
+    ): RegisterContainerImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "digest" -> digest.asInstanceOf[js.Any],
+        "label" -> label.asInstanceOf[js.Any],
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegisterContainerImageRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterContainerImageResult extends js.Object {
+    var containerImage: js.UndefOr[ContainerImage]
+  }
+
+  object RegisterContainerImageResult {
+    @inline
+    def apply(
+        containerImage: js.UndefOr[ContainerImage] = js.undefined
+    ): RegisterContainerImageResult = {
+      val __obj = js.Dynamic.literal()
+      containerImage.foreach(__v => __obj.updateDynamic("containerImage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterContainerImageResult]
+    }
   }
 
   /** Describes a database.
@@ -8146,6 +9065,7 @@ package lightsail {
   @js.native
   sealed trait ResourceType extends js.Any
   object ResourceType {
+    val ContainerService = "ContainerService".asInstanceOf[ResourceType]
     val Instance = "Instance".asInstanceOf[ResourceType]
     val StaticIp = "StaticIp".asInstanceOf[ResourceType]
     val KeyPair = "KeyPair".asInstanceOf[ResourceType]
@@ -8166,6 +9086,7 @@ package lightsail {
     val Certificate = "Certificate".asInstanceOf[ResourceType]
 
     @inline def values = js.Array(
+      ContainerService,
       Instance,
       StaticIp,
       KeyPair,
@@ -8575,6 +9496,52 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceResult]
+    }
+  }
+
+  @js.native
+  trait UpdateContainerServiceRequest extends js.Object {
+    var serviceName: ContainerServiceName
+    var isDisabled: js.UndefOr[Boolean]
+    var power: js.UndefOr[ContainerServicePowerName]
+    var publicDomainNames: js.UndefOr[ContainerServicePublicDomains]
+    var scale: js.UndefOr[ContainerServiceScale]
+  }
+
+  object UpdateContainerServiceRequest {
+    @inline
+    def apply(
+        serviceName: ContainerServiceName,
+        isDisabled: js.UndefOr[Boolean] = js.undefined,
+        power: js.UndefOr[ContainerServicePowerName] = js.undefined,
+        publicDomainNames: js.UndefOr[ContainerServicePublicDomains] = js.undefined,
+        scale: js.UndefOr[ContainerServiceScale] = js.undefined
+    ): UpdateContainerServiceRequest = {
+      val __obj = js.Dynamic.literal(
+        "serviceName" -> serviceName.asInstanceOf[js.Any]
+      )
+
+      isDisabled.foreach(__v => __obj.updateDynamic("isDisabled")(__v.asInstanceOf[js.Any]))
+      power.foreach(__v => __obj.updateDynamic("power")(__v.asInstanceOf[js.Any]))
+      publicDomainNames.foreach(__v => __obj.updateDynamic("publicDomainNames")(__v.asInstanceOf[js.Any]))
+      scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContainerServiceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateContainerServiceResult extends js.Object {
+    var containerService: js.UndefOr[ContainerService]
+  }
+
+  object UpdateContainerServiceResult {
+    @inline
+    def apply(
+        containerService: js.UndefOr[ContainerService] = js.undefined
+    ): UpdateContainerServiceResult = {
+      val __obj = js.Dynamic.literal()
+      containerService.foreach(__v => __obj.updateDynamic("containerService")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContainerServiceResult]
     }
   }
 

@@ -1567,7 +1567,7 @@ package pinpoint {
     }
   }
 
-  /** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send.
+  /** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.
     */
   @js.native
   trait CampaignLimits extends js.Object {
@@ -1734,8 +1734,9 @@ package pinpoint {
     val COMPLETED = "COMPLETED".asInstanceOf[CampaignStatus]
     val PAUSED = "PAUSED".asInstanceOf[CampaignStatus]
     val DELETED = "DELETED".asInstanceOf[CampaignStatus]
+    val INVALID = "INVALID".asInstanceOf[CampaignStatus]
 
-    @inline def values = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED)
+    @inline def values = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED, INVALID)
   }
 
   /** Provides information about the configuration and other settings for all the campaigns that are associated with an application.
@@ -1863,6 +1864,8 @@ package pinpoint {
   }
 
   /** Specifies the settings for a yes/no split activity in a journey. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.
+    *
+    * '''Note:'''To create yes/no split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see [[https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html|Integrating Amazon Pinpoint with your application]] in the <i>Amazon Pinpoint Developer Guide</i>.
     */
   @js.native
   trait ConditionalSplitActivity extends js.Object {
@@ -4096,6 +4099,28 @@ package pinpoint {
     }
   }
 
+  /** Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.
+    */
+  @js.native
+  trait EventFilter extends js.Object {
+    var Dimensions: EventDimensions
+    var FilterType: FilterType
+  }
+
+  object EventFilter {
+    @inline
+    def apply(
+        Dimensions: EventDimensions,
+        FilterType: FilterType
+    ): EventFilter = {
+      val __obj = js.Dynamic.literal(
+        "Dimensions" -> Dimensions.asInstanceOf[js.Any],
+        "FilterType" -> FilterType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EventFilter]
+    }
+  }
+
   /** Provides the status code and message that result from processing an event.
     */
   @js.native
@@ -4114,6 +4139,27 @@ package pinpoint {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventItemResponse]
+    }
+  }
+
+  /** Specifies the settings for an event that causes a journey activity to start.
+    */
+  @js.native
+  trait EventStartCondition extends js.Object {
+    var EventFilter: js.UndefOr[EventFilter]
+    var SegmentId: js.UndefOr[__string]
+  }
+
+  object EventStartCondition {
+    @inline
+    def apply(
+        EventFilter: js.UndefOr[EventFilter] = js.undefined,
+        SegmentId: js.UndefOr[__string] = js.undefined
+    ): EventStartCondition = {
+      val __obj = js.Dynamic.literal()
+      EventFilter.foreach(__v => __obj.updateDynamic("EventFilter")(__v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventStartCondition]
     }
   }
 
@@ -7277,6 +7323,8 @@ package pinpoint {
   }
 
   /** Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
+    *
+    * '''Note:'''To create multivariate split activities that send participants down different paths based on push notification events (such as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information, see [[https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html|Integrating Amazon Pinpoint with your application]] in the <i>Amazon Pinpoint Developer Guide</i>.
     */
   @js.native
   trait MultiConditionalSplitActivity extends js.Object {
@@ -8770,6 +8818,7 @@ package pinpoint {
   @js.native
   trait StartCondition extends js.Object {
     var Description: js.UndefOr[__string]
+    var EventStartCondition: js.UndefOr[EventStartCondition]
     var SegmentStartCondition: js.UndefOr[SegmentCondition]
   }
 
@@ -8777,10 +8826,12 @@ package pinpoint {
     @inline
     def apply(
         Description: js.UndefOr[__string] = js.undefined,
+        EventStartCondition: js.UndefOr[EventStartCondition] = js.undefined,
         SegmentStartCondition: js.UndefOr[SegmentCondition] = js.undefined
     ): StartCondition = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventStartCondition.foreach(__v => __obj.updateDynamic("EventStartCondition")(__v.asInstanceOf[js.Any]))
       SegmentStartCondition.foreach(__v => __obj.updateDynamic("SegmentStartCondition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartCondition]
     }
@@ -10310,6 +10361,7 @@ package pinpoint {
   trait WriteApplicationSettingsRequest extends js.Object {
     var CampaignHook: js.UndefOr[CampaignHook]
     var CloudWatchMetricsEnabled: js.UndefOr[__boolean]
+    var EventTaggingEnabled: js.UndefOr[__boolean]
     var Limits: js.UndefOr[CampaignLimits]
     var QuietTime: js.UndefOr[QuietTime]
   }
@@ -10319,12 +10371,14 @@ package pinpoint {
     def apply(
         CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
         CloudWatchMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
+        EventTaggingEnabled: js.UndefOr[__boolean] = js.undefined,
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined
     ): WriteApplicationSettingsRequest = {
       val __obj = js.Dynamic.literal()
       CampaignHook.foreach(__v => __obj.updateDynamic("CampaignHook")(__v.asInstanceOf[js.Any]))
       CloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("CloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      EventTaggingEnabled.foreach(__v => __obj.updateDynamic("EventTaggingEnabled")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteApplicationSettingsRequest]

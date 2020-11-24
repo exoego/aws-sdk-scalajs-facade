@@ -10,6 +10,7 @@ package object savingsplans {
   type Amount = String
   type ClientToken = String
   type CurrencyList = js.Array[CurrencyCode]
+  type DateTime = js.Date
   type DurationsList = js.Array[SavingsPlansDuration]
   type EC2InstanceFamily = String
   type FilterValuesList = js.Array[JsonSafeFilterValueString]
@@ -65,6 +66,7 @@ package object savingsplans {
   implicit final class SavingsPlansOps(private val service: SavingsPlans) extends AnyVal {
 
     @inline def createSavingsPlanFuture(params: CreateSavingsPlanRequest): Future[CreateSavingsPlanResponse] = service.createSavingsPlan(params).promise().toFuture
+    @inline def deleteQueuedSavingsPlanFuture(params: DeleteQueuedSavingsPlanRequest): Future[DeleteQueuedSavingsPlanResponse] = service.deleteQueuedSavingsPlan(params).promise().toFuture
     @inline def describeSavingsPlanRatesFuture(params: DescribeSavingsPlanRatesRequest): Future[DescribeSavingsPlanRatesResponse] = service.describeSavingsPlanRates(params).promise().toFuture
     @inline def describeSavingsPlansFuture(params: DescribeSavingsPlansRequest): Future[DescribeSavingsPlansResponse] = service.describeSavingsPlans(params).promise().toFuture
     @inline def describeSavingsPlansOfferingRatesFuture(params: DescribeSavingsPlansOfferingRatesRequest): Future[DescribeSavingsPlansOfferingRatesResponse] = service.describeSavingsPlansOfferingRates(params).promise().toFuture
@@ -83,6 +85,7 @@ package savingsplans {
     def this(config: AWSConfig) = this()
 
     def createSavingsPlan(params: CreateSavingsPlanRequest): Request[CreateSavingsPlanResponse] = js.native
+    def deleteQueuedSavingsPlan(params: DeleteQueuedSavingsPlanRequest): Request[DeleteQueuedSavingsPlanResponse] = js.native
     def describeSavingsPlanRates(params: DescribeSavingsPlanRatesRequest): Request[DescribeSavingsPlanRatesResponse] = js.native
     def describeSavingsPlans(params: DescribeSavingsPlansRequest): Request[DescribeSavingsPlansResponse] = js.native
     def describeSavingsPlansOfferingRates(params: DescribeSavingsPlansOfferingRatesRequest): Request[DescribeSavingsPlansOfferingRatesResponse] = js.native
@@ -97,6 +100,7 @@ package savingsplans {
     var commitment: Amount
     var savingsPlanOfferingId: SavingsPlanOfferingId
     var clientToken: js.UndefOr[ClientToken]
+    var purchaseTime: js.UndefOr[DateTime]
     var tags: js.UndefOr[TagMap]
     var upfrontPaymentAmount: js.UndefOr[Amount]
   }
@@ -107,6 +111,7 @@ package savingsplans {
         commitment: Amount,
         savingsPlanOfferingId: SavingsPlanOfferingId,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        purchaseTime: js.UndefOr[DateTime] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         upfrontPaymentAmount: js.UndefOr[Amount] = js.undefined
     ): CreateSavingsPlanRequest = {
@@ -116,6 +121,7 @@ package savingsplans {
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      purchaseTime.foreach(__v => __obj.updateDynamic("purchaseTime")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       upfrontPaymentAmount.foreach(__v => __obj.updateDynamic("upfrontPaymentAmount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSavingsPlanRequest]
@@ -145,6 +151,34 @@ package savingsplans {
     val USD = "USD".asInstanceOf[CurrencyCode]
 
     @inline def values = js.Array(CNY, USD)
+  }
+
+  @js.native
+  trait DeleteQueuedSavingsPlanRequest extends js.Object {
+    var savingsPlanId: SavingsPlanId
+  }
+
+  object DeleteQueuedSavingsPlanRequest {
+    @inline
+    def apply(
+        savingsPlanId: SavingsPlanId
+    ): DeleteQueuedSavingsPlanRequest = {
+      val __obj = js.Dynamic.literal(
+        "savingsPlanId" -> savingsPlanId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteQueuedSavingsPlanRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteQueuedSavingsPlanResponse extends js.Object
+
+  object DeleteQueuedSavingsPlanResponse {
+    @inline
+    def apply(): DeleteQueuedSavingsPlanResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteQueuedSavingsPlanResponse]
+    }
   }
 
   @js.native
@@ -870,10 +904,9 @@ package savingsplans {
   object SavingsPlanRateServiceCode {
     val AmazonEC2 = "AmazonEC2".asInstanceOf[SavingsPlanRateServiceCode]
     val AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
-    val AmazonEKS = "AmazonEKS".asInstanceOf[SavingsPlanRateServiceCode]
     val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
 
-    @inline def values = js.Array(AmazonEC2, AmazonECS, AmazonEKS, AWSLambda)
+    @inline def values = js.Array(AmazonEC2, AmazonECS, AWSLambda)
   }
 
   @js.native
@@ -893,8 +926,10 @@ package savingsplans {
     val `payment-failed` = "payment-failed".asInstanceOf[SavingsPlanState]
     val active = "active".asInstanceOf[SavingsPlanState]
     val retired = "retired".asInstanceOf[SavingsPlanState]
+    val queued = "queued".asInstanceOf[SavingsPlanState]
+    val `queued-deleted` = "queued-deleted".asInstanceOf[SavingsPlanState]
 
-    @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired)
+    @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired, queued, `queued-deleted`)
   }
 
   @js.native

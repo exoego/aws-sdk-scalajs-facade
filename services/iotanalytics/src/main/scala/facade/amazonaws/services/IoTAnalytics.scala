@@ -44,6 +44,8 @@ package object iotanalytics {
   type IncludeStatisticsFlag = Boolean
   type IotEventsInputName = String
   type LambdaName = String
+  type LateDataRuleName = String
+  type LateDataRules = js.Array[LateDataRule]
   type LogResult = String
   type LoggingEnabled = Boolean
   type MathExpression = String
@@ -71,6 +73,7 @@ package object iotanalytics {
   type RoleArn = String
   type S3KeyPrefix = String
   type ScheduleExpression = String
+  type SessionTimeoutInMinutes = Int
   type SizeInBytes = Double
   type SqlQuery = String
   type StartTime = js.Date
@@ -292,6 +295,7 @@ package iotanalytics {
   trait Channel extends js.Object {
     var arn: js.UndefOr[ChannelArn]
     var creationTime: js.UndefOr[Timestamp]
+    var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var name: js.UndefOr[ChannelName]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
@@ -304,6 +308,7 @@ package iotanalytics {
     def apply(
         arn: js.UndefOr[ChannelArn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
+        lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
@@ -313,6 +318,7 @@ package iotanalytics {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -376,7 +382,7 @@ package iotanalytics {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
-  /** Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+  /** Where channel data is stored. You may choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This cannot be changed after creation of the channel.
     */
   @js.native
   trait ChannelStorage extends js.Object {
@@ -425,6 +431,7 @@ package iotanalytics {
     var channelName: js.UndefOr[ChannelName]
     var channelStorage: js.UndefOr[ChannelStorageSummary]
     var creationTime: js.UndefOr[Timestamp]
+    var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[ChannelStatus]
   }
@@ -435,6 +442,7 @@ package iotanalytics {
         channelName: js.UndefOr[ChannelName] = js.undefined,
         channelStorage: js.UndefOr[ChannelStorageSummary] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
+        lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[ChannelStatus] = js.undefined
     ): ChannelSummary = {
@@ -442,6 +450,7 @@ package iotanalytics {
       channelName.foreach(__v => __obj.updateDynamic("channelName")(__v.asInstanceOf[js.Any]))
       channelStorage.foreach(__v => __obj.updateDynamic("channelStorage")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSummary]
@@ -457,7 +466,7 @@ package iotanalytics {
     @inline def values = js.Array(ACU_1, ACU_2)
   }
 
-  /** Information needed to run the "containerAction" to produce data set contents.
+  /** Information required to run the <code>containerAction</code> to produce dataset contents.
     */
   @js.native
   trait ContainerDatasetAction extends js.Object {
@@ -538,16 +547,20 @@ package iotanalytics {
   @js.native
   trait CreateDatasetContentRequest extends js.Object {
     var datasetName: DatasetName
+    var versionId: js.UndefOr[DatasetContentVersion]
   }
 
   object CreateDatasetContentRequest {
     @inline
     def apply(
-        datasetName: DatasetName
+        datasetName: DatasetName,
+        versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): CreateDatasetContentRequest = {
       val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
+
+      versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetContentRequest]
     }
   }
@@ -573,6 +586,7 @@ package iotanalytics {
     var actions: DatasetActions
     var datasetName: DatasetName
     var contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules]
+    var lateDataRules: js.UndefOr[LateDataRules]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var tags: js.UndefOr[TagList]
     var triggers: js.UndefOr[DatasetTriggers]
@@ -585,6 +599,7 @@ package iotanalytics {
         actions: DatasetActions,
         datasetName: DatasetName,
         contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules] = js.undefined,
+        lateDataRules: js.UndefOr[LateDataRules] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
@@ -596,6 +611,7 @@ package iotanalytics {
       )
 
       contentDeliveryRules.foreach(__v => __obj.updateDynamic("contentDeliveryRules")(__v.asInstanceOf[js.Any]))
+      lateDataRules.foreach(__v => __obj.updateDynamic("lateDataRules")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
@@ -718,7 +734,7 @@ package iotanalytics {
     }
   }
 
-  /** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+  /** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or customer-managed S3 storage after the channel is created.
     */
   @js.native
   trait CustomerManagedChannelS3Storage extends js.Object {
@@ -768,7 +784,7 @@ package iotanalytics {
     }
   }
 
-  /** Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+  /** Use this to store data store data in an S3 bucket that you manage. When customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or customer-managed S3 storage after the data store is created.
     */
   @js.native
   trait CustomerManagedDatastoreS3Storage extends js.Object {
@@ -827,6 +843,7 @@ package iotanalytics {
     var contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules]
     var creationTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
+    var lateDataRules: js.UndefOr[LateDataRules]
     var name: js.UndefOr[DatasetName]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var status: js.UndefOr[DatasetStatus]
@@ -842,6 +859,7 @@ package iotanalytics {
         contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
+        lateDataRules: js.UndefOr[LateDataRules] = js.undefined,
         name: js.UndefOr[DatasetName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         status: js.UndefOr[DatasetStatus] = js.undefined,
@@ -854,6 +872,7 @@ package iotanalytics {
       contentDeliveryRules.foreach(__v => __obj.updateDynamic("contentDeliveryRules")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      lateDataRules.foreach(__v => __obj.updateDynamic("lateDataRules")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -863,7 +882,7 @@ package iotanalytics {
     }
   }
 
-  /** A "DatasetAction" object that specifies how data set contents are automatically created.
+  /** A <code>DatasetAction</code> object that specifies how data set contents are automatically created.
     */
   @js.native
   trait DatasetAction extends js.Object {
@@ -887,7 +906,7 @@ package iotanalytics {
     }
   }
 
-  /** Information about the action which automatically creates the data set's contents.
+  /** Information about the action that automatically creates the dataset's contents.
     */
   @js.native
   trait DatasetActionSummary extends js.Object {
@@ -917,7 +936,7 @@ package iotanalytics {
     @inline def values = js.Array(QUERY, CONTAINER)
   }
 
-  /** The destination to which data set contents are delivered.
+  /** The destination to which dataset contents are delivered.
     */
   @js.native
   trait DatasetContentDeliveryDestination extends js.Object {
@@ -938,7 +957,7 @@ package iotanalytics {
     }
   }
 
-  /** When data set contents are created they are delivered to destination specified here.
+  /** When dataset contents are created, they are delivered to destination specified here.
     */
   @js.native
   trait DatasetContentDeliveryRule extends js.Object {
@@ -992,7 +1011,7 @@ package iotanalytics {
     }
   }
 
-  /** Summary information about data set contents.
+  /** Summary information about dataset contents.
     */
   @js.native
   trait DatasetContentSummary extends js.Object {
@@ -1022,7 +1041,7 @@ package iotanalytics {
     }
   }
 
-  /** The data set whose latest contents are used as input to the notebook or application.
+  /** The dataset whose latest contents are used as input to the notebook or application.
     */
   @js.native
   trait DatasetContentVersionValue extends js.Object {
@@ -1105,7 +1124,7 @@ package iotanalytics {
     }
   }
 
-  /** The "DatasetTrigger" that specifies when the data set is automatically updated.
+  /** The <code>DatasetTrigger</code> that specifies when the data set is automatically updated.
     */
   @js.native
   trait DatasetTrigger extends js.Object {
@@ -1132,6 +1151,7 @@ package iotanalytics {
   trait Datastore extends js.Object {
     var arn: js.UndefOr[DatastoreArn]
     var creationTime: js.UndefOr[Timestamp]
+    var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var name: js.UndefOr[DatastoreName]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
@@ -1144,6 +1164,7 @@ package iotanalytics {
     def apply(
         arn: js.UndefOr[DatastoreArn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
+        lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[DatastoreName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
@@ -1153,6 +1174,7 @@ package iotanalytics {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -1162,7 +1184,7 @@ package iotanalytics {
     }
   }
 
-  /** The 'datastore' activity that specifies where to store the processed data.
+  /** The datastore activity that specifies where to store the processed data.
     */
   @js.native
   trait DatastoreActivity extends js.Object {
@@ -1212,7 +1234,7 @@ package iotanalytics {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING)
   }
 
-  /** Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+  /** Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You cannot change this storage option after the data store is created.
     */
   @js.native
   trait DatastoreStorage extends js.Object {
@@ -1261,6 +1283,7 @@ package iotanalytics {
     var creationTime: js.UndefOr[Timestamp]
     var datastoreName: js.UndefOr[DatastoreName]
     var datastoreStorage: js.UndefOr[DatastoreStorageSummary]
+    var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[DatastoreStatus]
   }
@@ -1271,6 +1294,7 @@ package iotanalytics {
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
         datastoreStorage: js.UndefOr[DatastoreStorageSummary] = js.undefined,
+        lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DatastoreStatus] = js.undefined
     ): DatastoreSummary = {
@@ -1278,6 +1302,7 @@ package iotanalytics {
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       datastoreName.foreach(__v => __obj.updateDynamic("datastoreName")(__v.asInstanceOf[js.Any]))
       datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreSummary]
@@ -1392,6 +1417,26 @@ package iotanalytics {
         "timeExpression" -> timeExpression.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeltaTime]
+    }
+  }
+
+  /** A structure that contains the configuration information of a delta time session window.
+    * <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see [[https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6| Creating a SQL dataset with a delta window (CLI)]] in the <i>AWS IoT Analytics User Guide</i>.
+    */
+  @js.native
+  trait DeltaTimeSessionWindowConfiguration extends js.Object {
+    var timeoutInMinutes: SessionTimeoutInMinutes
+  }
+
+  object DeltaTimeSessionWindowConfiguration {
+    @inline
+    def apply(
+        timeoutInMinutes: SessionTimeoutInMinutes
+    ): DeltaTimeSessionWindowConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "timeoutInMinutes" -> timeoutInMinutes.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeltaTimeSessionWindowConfiguration]
     }
   }
 
@@ -1600,7 +1645,7 @@ package iotanalytics {
     }
   }
 
-  /** An activity that adds information from the AWS IoT Device Shadows service to a message.
+  /** An activity that adds information from the AWS IoT Device Shadow service to a message.
     */
   @js.native
   trait DeviceShadowEnrichActivity extends js.Object {
@@ -1722,7 +1767,7 @@ package iotanalytics {
     }
   }
 
-  /** Configuration information for coordination with the AWS Glue ETL (extract, transform and load) service.
+  /** Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL) service.
     */
   @js.native
   trait GlueConfiguration extends js.Object {
@@ -1744,7 +1789,7 @@ package iotanalytics {
     }
   }
 
-  /** Configuration information for delivery of data set contents to AWS IoT Events.
+  /** Configuration information for delivery of dataset contents to AWS IoT Events.
     */
   @js.native
   trait IotEventsDestinationConfiguration extends js.Object {
@@ -1792,6 +1837,47 @@ package iotanalytics {
 
       next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaActivity]
+    }
+  }
+
+  /** A structure that contains the name and configuration information of a late data rule.
+    */
+  @js.native
+  trait LateDataRule extends js.Object {
+    var ruleConfiguration: LateDataRuleConfiguration
+    var ruleName: js.UndefOr[LateDataRuleName]
+  }
+
+  object LateDataRule {
+    @inline
+    def apply(
+        ruleConfiguration: LateDataRuleConfiguration,
+        ruleName: js.UndefOr[LateDataRuleName] = js.undefined
+    ): LateDataRule = {
+      val __obj = js.Dynamic.literal(
+        "ruleConfiguration" -> ruleConfiguration.asInstanceOf[js.Any]
+      )
+
+      ruleName.foreach(__v => __obj.updateDynamic("ruleName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LateDataRule]
+    }
+  }
+
+  /** The information needed to configure a delta time session window.
+    */
+  @js.native
+  trait LateDataRuleConfiguration extends js.Object {
+    var deltaTimeSessionWindowConfiguration: js.UndefOr[DeltaTimeSessionWindowConfiguration]
+  }
+
+  object LateDataRuleConfiguration {
+    @inline
+    def apply(
+        deltaTimeSessionWindowConfiguration: js.UndefOr[DeltaTimeSessionWindowConfiguration] = js.undefined
+    ): LateDataRuleConfiguration = {
+      val __obj = js.Dynamic.literal()
+      deltaTimeSessionWindowConfiguration.foreach(__v => __obj.updateDynamic("deltaTimeSessionWindowConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LateDataRuleConfiguration]
     }
   }
 
@@ -2254,7 +2340,7 @@ package iotanalytics {
     }
   }
 
-  /** Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
+  /** Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.
     */
   @js.native
   trait QueryFilter extends js.Object {
@@ -2333,7 +2419,7 @@ package iotanalytics {
     }
   }
 
-  /** The configuration of the resource used to execute the "containerAction".
+  /** The configuration of the resource used to execute the <code>containerAction</code>.
     */
   @js.native
   trait ResourceConfiguration extends js.Object {
@@ -2415,7 +2501,7 @@ package iotanalytics {
     }
   }
 
-  /** Configuration information for delivery of data set contents to Amazon S3.
+  /** Configuration information for delivery of dataset contents to Amazon Simple Storage Service (Amazon S3).
     */
   @js.native
   trait S3DestinationConfiguration extends js.Object {
@@ -2531,7 +2617,7 @@ package iotanalytics {
     }
   }
 
-  /** Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+  /** Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of service-managed or customer-managed S3 storage after the channel is created.
     */
   @js.native
   trait ServiceManagedChannelS3Storage extends js.Object
@@ -2544,7 +2630,7 @@ package iotanalytics {
     }
   }
 
-  /** Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+  /** Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
     */
   @js.native
   trait ServiceManagedChannelS3StorageSummary extends js.Object
@@ -2557,7 +2643,7 @@ package iotanalytics {
     }
   }
 
-  /** Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
+  /** Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of service-managed or customer-managed S3 storage after the data store is created.
     */
   @js.native
   trait ServiceManagedDatastoreS3Storage extends js.Object
@@ -2570,7 +2656,7 @@ package iotanalytics {
     }
   }
 
-  /** Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+  /** Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
     */
   @js.native
   trait ServiceManagedDatastoreS3StorageSummary extends js.Object
@@ -2646,7 +2732,7 @@ package iotanalytics {
     }
   }
 
-  /** A set of key/value pairs which are used to manage the resource.
+  /** A set of key-value pairs that are used to manage the resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2699,7 +2785,7 @@ package iotanalytics {
     }
   }
 
-  /** Information about the data set whose content generation triggers the new data set content generation.
+  /** Information about the dataset whose content generation triggers the new dataset content generation.
     */
   @js.native
   trait TriggeringDataset extends js.Object {
@@ -2778,6 +2864,7 @@ package iotanalytics {
     var actions: DatasetActions
     var datasetName: DatasetName
     var contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules]
+    var lateDataRules: js.UndefOr[LateDataRules]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var triggers: js.UndefOr[DatasetTriggers]
     var versioningConfiguration: js.UndefOr[VersioningConfiguration]
@@ -2789,6 +2876,7 @@ package iotanalytics {
         actions: DatasetActions,
         datasetName: DatasetName,
         contentDeliveryRules: js.UndefOr[DatasetContentDeliveryRules] = js.undefined,
+        lateDataRules: js.UndefOr[LateDataRules] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
@@ -2799,6 +2887,7 @@ package iotanalytics {
       )
 
       contentDeliveryRules.foreach(__v => __obj.updateDynamic("contentDeliveryRules")(__v.asInstanceOf[js.Any]))
+      lateDataRules.foreach(__v => __obj.updateDynamic("lateDataRules")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
       versioningConfiguration.foreach(__v => __obj.updateDynamic("versioningConfiguration")(__v.asInstanceOf[js.Any]))
@@ -2850,7 +2939,7 @@ package iotanalytics {
     }
   }
 
-  /** An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+  /** An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
     */
   @js.native
   trait Variable extends js.Object {
@@ -2882,7 +2971,7 @@ package iotanalytics {
     }
   }
 
-  /** Information about the versioning of data set contents.
+  /** Information about the versioning of dataset contents.
     */
   @js.native
   trait VersioningConfiguration extends js.Object {

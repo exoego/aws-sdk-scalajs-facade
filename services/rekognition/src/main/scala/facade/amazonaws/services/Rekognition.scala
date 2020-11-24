@@ -10,6 +10,7 @@ package object rekognition {
   type Assets = js.Array[Asset]
   type Attributes = js.Array[Attribute]
   type AudioMetadataList = js.Array[AudioMetadata]
+  type BodyParts = js.Array[ProtectiveEquipmentBodyPart]
   type BoundingBoxHeight = Float
   type BoundingBoxWidth = Float
   type CelebrityList = js.Array[Celebrity]
@@ -26,6 +27,7 @@ package object rekognition {
   type DateTime = js.Date
   type Degree = Float
   type Emotions = js.Array[Emotion]
+  type EquipmentDetections = js.Array[EquipmentDetection]
   type ExtendedPaginationToken = String
   type ExternalImageId = String
   type FaceDetailList = js.Array[FaceDetail]
@@ -72,6 +74,9 @@ package object rekognition {
   type ProjectVersionDescriptions = js.Array[ProjectVersionDescription]
   type ProjectVersionsPageSize = Int
   type ProjectsPageSize = Int
+  type ProtectiveEquipmentPersonIds = js.Array[UInteger]
+  type ProtectiveEquipmentPersons = js.Array[ProtectiveEquipmentPerson]
+  type ProtectiveEquipmentTypes = js.Array[ProtectiveEquipmentType]
   type Reasons = js.Array[Reason]
   type RegionsOfInterest = js.Array[RegionOfInterest]
   type RekognitionUniqueId = String
@@ -122,6 +127,7 @@ package object rekognition {
     @inline def detectFacesFuture(params: DetectFacesRequest): Future[DetectFacesResponse] = service.detectFaces(params).promise().toFuture
     @inline def detectLabelsFuture(params: DetectLabelsRequest): Future[DetectLabelsResponse] = service.detectLabels(params).promise().toFuture
     @inline def detectModerationLabelsFuture(params: DetectModerationLabelsRequest): Future[DetectModerationLabelsResponse] = service.detectModerationLabels(params).promise().toFuture
+    @inline def detectProtectiveEquipmentFuture(params: DetectProtectiveEquipmentRequest): Future[DetectProtectiveEquipmentResponse] = service.detectProtectiveEquipment(params).promise().toFuture
     @inline def detectTextFuture(params: DetectTextRequest): Future[DetectTextResponse] = service.detectText(params).promise().toFuture
     @inline def getCelebrityInfoFuture(params: GetCelebrityInfoRequest): Future[GetCelebrityInfoResponse] = service.getCelebrityInfo(params).promise().toFuture
     @inline def getCelebrityRecognitionFuture(params: GetCelebrityRecognitionRequest): Future[GetCelebrityRecognitionResponse] = service.getCelebrityRecognition(params).promise().toFuture
@@ -179,6 +185,7 @@ package rekognition {
     def detectFaces(params: DetectFacesRequest): Request[DetectFacesResponse] = js.native
     def detectLabels(params: DetectLabelsRequest): Request[DetectLabelsResponse] = js.native
     def detectModerationLabels(params: DetectModerationLabelsRequest): Request[DetectModerationLabelsResponse] = js.native
+    def detectProtectiveEquipment(params: DetectProtectiveEquipmentRequest): Request[DetectProtectiveEquipmentResponse] = js.native
     def detectText(params: DetectTextRequest): Request[DetectTextResponse] = js.native
     def getCelebrityInfo(params: GetCelebrityInfoRequest): Request[GetCelebrityInfoResponse] = js.native
     def getCelebrityRecognition(params: GetCelebrityRecognitionRequest): Request[GetCelebrityRecognitionResponse] = js.native
@@ -232,7 +239,7 @@ package rekognition {
     }
   }
 
-  /** Assets are the images that you use to train and evaluate a model version. Assets are referenced by Sagemaker GroundTruth manifest files.
+  /** Assets are the images that you use to train and evaluate a model version. Assets can also contain validation information that you use to debug a failed model training.
     */
   @js.native
   trait Asset extends js.Object {
@@ -307,7 +314,18 @@ package rekognition {
     }
   }
 
-  /** Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
+  @js.native
+  sealed trait BodyPart extends js.Any
+  object BodyPart {
+    val FACE = "FACE".asInstanceOf[BodyPart]
+    val HEAD = "HEAD".asInstanceOf[BodyPart]
+    val LEFT_HAND = "LEFT_HAND".asInstanceOf[BodyPart]
+    val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[BodyPart]
+
+    @inline def values = js.Array(FACE, HEAD, LEFT_HAND, RIGHT_HAND)
+  }
+
+  /** Identifies the bounding box around the label, face, text or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
     * The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).
     * The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     *
@@ -595,6 +613,27 @@ package rekognition {
     val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
 
     @inline def values = js.Array(NAME, TIMESTAMP)
+  }
+
+  /** Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <a>DetectProtectiveEquipment</a>.
+    */
+  @js.native
+  trait CoversBodyPart extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Value: js.UndefOr[Boolean]
+  }
+
+  object CoversBodyPart {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Value: js.UndefOr[Boolean] = js.undefined
+    ): CoversBodyPart = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CoversBodyPart]
+    }
   }
 
   @js.native
@@ -1307,6 +1346,49 @@ package rekognition {
     }
   }
 
+  @js.native
+  trait DetectProtectiveEquipmentRequest extends js.Object {
+    var Image: Image
+    var SummarizationAttributes: js.UndefOr[ProtectiveEquipmentSummarizationAttributes]
+  }
+
+  object DetectProtectiveEquipmentRequest {
+    @inline
+    def apply(
+        Image: Image,
+        SummarizationAttributes: js.UndefOr[ProtectiveEquipmentSummarizationAttributes] = js.undefined
+    ): DetectProtectiveEquipmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "Image" -> Image.asInstanceOf[js.Any]
+      )
+
+      SummarizationAttributes.foreach(__v => __obj.updateDynamic("SummarizationAttributes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectProtectiveEquipmentRequest]
+    }
+  }
+
+  @js.native
+  trait DetectProtectiveEquipmentResponse extends js.Object {
+    var Persons: js.UndefOr[ProtectiveEquipmentPersons]
+    var ProtectiveEquipmentModelVersion: js.UndefOr[String]
+    var Summary: js.UndefOr[ProtectiveEquipmentSummary]
+  }
+
+  object DetectProtectiveEquipmentResponse {
+    @inline
+    def apply(
+        Persons: js.UndefOr[ProtectiveEquipmentPersons] = js.undefined,
+        ProtectiveEquipmentModelVersion: js.UndefOr[String] = js.undefined,
+        Summary: js.UndefOr[ProtectiveEquipmentSummary] = js.undefined
+    ): DetectProtectiveEquipmentResponse = {
+      val __obj = js.Dynamic.literal()
+      Persons.foreach(__v => __obj.updateDynamic("Persons")(__v.asInstanceOf[js.Any]))
+      ProtectiveEquipmentModelVersion.foreach(__v => __obj.updateDynamic("ProtectiveEquipmentModelVersion")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectProtectiveEquipmentResponse]
+    }
+  }
+
   /** A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.
     */
   @js.native
@@ -1427,6 +1509,33 @@ package rekognition {
     val FEAR = "FEAR".asInstanceOf[EmotionName]
 
     @inline def values = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
+  }
+
+  /** Information about an item of Personal Protective Equipment (PPE) detected by <a>DetectProtectiveEquipment</a>. For more information, see <a>DetectProtectiveEquipment</a>.
+    */
+  @js.native
+  trait EquipmentDetection extends js.Object {
+    var BoundingBox: js.UndefOr[BoundingBox]
+    var Confidence: js.UndefOr[Percent]
+    var CoversBodyPart: js.UndefOr[CoversBodyPart]
+    var Type: js.UndefOr[ProtectiveEquipmentType]
+  }
+
+  object EquipmentDetection {
+    @inline
+    def apply(
+        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        CoversBodyPart: js.UndefOr[CoversBodyPart] = js.undefined,
+        Type: js.UndefOr[ProtectiveEquipmentType] = js.undefined
+    ): EquipmentDetection = {
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      CoversBodyPart.foreach(__v => __obj.updateDynamic("CoversBodyPart")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EquipmentDetection]
+    }
   }
 
   /** The evaluation results for the training of a model.
@@ -2226,7 +2335,7 @@ package rekognition {
     }
   }
 
-  /** The S3 bucket that contains the Ground Truth manifest file.
+  /** The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file.
     */
   @js.native
   trait GroundTruthManifest extends js.Object {
@@ -3053,6 +3162,7 @@ package rekognition {
     var BillableTrainingTimeInSeconds: js.UndefOr[ULong]
     var CreationTimestamp: js.UndefOr[DateTime]
     var EvaluationResult: js.UndefOr[EvaluationResult]
+    var ManifestSummary: js.UndefOr[GroundTruthManifest]
     var MinInferenceUnits: js.UndefOr[InferenceUnits]
     var OutputConfig: js.UndefOr[OutputConfig]
     var ProjectVersionArn: js.UndefOr[ProjectVersionArn]
@@ -3069,6 +3179,7 @@ package rekognition {
         BillableTrainingTimeInSeconds: js.UndefOr[ULong] = js.undefined,
         CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
         EvaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
+        ManifestSummary: js.UndefOr[GroundTruthManifest] = js.undefined,
         MinInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
         OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
         ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined,
@@ -3082,6 +3193,7 @@ package rekognition {
       BillableTrainingTimeInSeconds.foreach(__v => __obj.updateDynamic("BillableTrainingTimeInSeconds")(__v.asInstanceOf[js.Any]))
       CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
       EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
+      ManifestSummary.foreach(__v => __obj.updateDynamic("ManifestSummary")(__v.asInstanceOf[js.Any]))
       MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
       OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
       ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
@@ -3108,6 +3220,114 @@ package rekognition {
     val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
 
     @inline def values = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
+  }
+
+  /** Information about a body part detected by <a>DetectProtectiveEquipment</a> that contains PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for each person detected by <code>DetectProtectiveEquipment</code>.
+    */
+  @js.native
+  trait ProtectiveEquipmentBodyPart extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var EquipmentDetections: js.UndefOr[EquipmentDetections]
+    var Name: js.UndefOr[BodyPart]
+  }
+
+  object ProtectiveEquipmentBodyPart {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        EquipmentDetections: js.UndefOr[EquipmentDetections] = js.undefined,
+        Name: js.UndefOr[BodyPart] = js.undefined
+    ): ProtectiveEquipmentBodyPart = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      EquipmentDetections.foreach(__v => __obj.updateDynamic("EquipmentDetections")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtectiveEquipmentBodyPart]
+    }
+  }
+
+  /** A person detected by a call to <a>DetectProtectiveEquipment</a>. The API returns all persons detected in the input image in an array of <code>ProtectiveEquipmentPerson</code> objects.
+    */
+  @js.native
+  trait ProtectiveEquipmentPerson extends js.Object {
+    var BodyParts: js.UndefOr[BodyParts]
+    var BoundingBox: js.UndefOr[BoundingBox]
+    var Confidence: js.UndefOr[Percent]
+    var Id: js.UndefOr[UInteger]
+  }
+
+  object ProtectiveEquipmentPerson {
+    @inline
+    def apply(
+        BodyParts: js.UndefOr[BodyParts] = js.undefined,
+        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Id: js.UndefOr[UInteger] = js.undefined
+    ): ProtectiveEquipmentPerson = {
+      val __obj = js.Dynamic.literal()
+      BodyParts.foreach(__v => __obj.updateDynamic("BodyParts")(__v.asInstanceOf[js.Any]))
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtectiveEquipmentPerson]
+    }
+  }
+
+  /** Specifies summary attributes to return from a call to <a>DetectProtectiveEquipment</a>. You can specify which types of PPE to summarize. You can also specify a minimum confidence value for detections. Summary information is returned in the <code>Summary</code> (<a>ProtectiveEquipmentSummary</a>) field of the response from <code>DetectProtectiveEquipment</code>. The summary includes which persons in an image were detected wearing the requested types of person protective equipment (PPE), which persons were detected as not wearing PPE, and the persons in which a determination could not be made. For more information, see <a>ProtectiveEquipmentSummary</a>.
+    */
+  @js.native
+  trait ProtectiveEquipmentSummarizationAttributes extends js.Object {
+    var MinConfidence: Percent
+    var RequiredEquipmentTypes: ProtectiveEquipmentTypes
+  }
+
+  object ProtectiveEquipmentSummarizationAttributes {
+    @inline
+    def apply(
+        MinConfidence: Percent,
+        RequiredEquipmentTypes: ProtectiveEquipmentTypes
+    ): ProtectiveEquipmentSummarizationAttributes = {
+      val __obj = js.Dynamic.literal(
+        "MinConfidence" -> MinConfidence.asInstanceOf[js.Any],
+        "RequiredEquipmentTypes" -> RequiredEquipmentTypes.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProtectiveEquipmentSummarizationAttributes]
+    }
+  }
+
+  /** Summary information for required items of personal protective equipment (PPE) detected on persons by a call to <a>DetectProtectiveEquipment</a>. You specify the required type of PPE in the <code>SummarizationAttributes</code> (<a>ProtectiveEquipmentSummarizationAttributes</a>) input parameter. The summary includes which persons were detected wearing the required personal protective equipment (<code>PersonsWithRequiredEquipment</code>), which persons were detected as not wearing the required PPE (<code>PersonsWithoutRequiredEquipment</code>), and the persons in which a determination could not be made (<code>PersonsIndeterminate</code>).
+    * To get a total for each category, use the size of the field array. For example, to find out how many people were detected as wearing the specified PPE, use the size of the <code>PersonsWithRequiredEquipment</code> array. If you want to find out more about a person, such as the location (<a>BoundingBox</a>) of the person on the image, use the person ID in each array element. Each person ID matches the ID field of a <a>ProtectiveEquipmentPerson</a> object returned in the <code>Persons</code> array by <code>DetectProtectiveEquipment</code>.
+    */
+  @js.native
+  trait ProtectiveEquipmentSummary extends js.Object {
+    var PersonsIndeterminate: js.UndefOr[ProtectiveEquipmentPersonIds]
+    var PersonsWithRequiredEquipment: js.UndefOr[ProtectiveEquipmentPersonIds]
+    var PersonsWithoutRequiredEquipment: js.UndefOr[ProtectiveEquipmentPersonIds]
+  }
+
+  object ProtectiveEquipmentSummary {
+    @inline
+    def apply(
+        PersonsIndeterminate: js.UndefOr[ProtectiveEquipmentPersonIds] = js.undefined,
+        PersonsWithRequiredEquipment: js.UndefOr[ProtectiveEquipmentPersonIds] = js.undefined,
+        PersonsWithoutRequiredEquipment: js.UndefOr[ProtectiveEquipmentPersonIds] = js.undefined
+    ): ProtectiveEquipmentSummary = {
+      val __obj = js.Dynamic.literal()
+      PersonsIndeterminate.foreach(__v => __obj.updateDynamic("PersonsIndeterminate")(__v.asInstanceOf[js.Any]))
+      PersonsWithRequiredEquipment.foreach(__v => __obj.updateDynamic("PersonsWithRequiredEquipment")(__v.asInstanceOf[js.Any]))
+      PersonsWithoutRequiredEquipment.foreach(__v => __obj.updateDynamic("PersonsWithoutRequiredEquipment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtectiveEquipmentSummary]
+    }
+  }
+
+  @js.native
+  sealed trait ProtectiveEquipmentType extends js.Any
+  object ProtectiveEquipmentType {
+    val FACE_COVER = "FACE_COVER".asInstanceOf[ProtectiveEquipmentType]
+    val HAND_COVER = "HAND_COVER".asInstanceOf[ProtectiveEquipmentType]
+    val HEAD_COVER = "HEAD_COVER".asInstanceOf[ProtectiveEquipmentType]
+
+    @inline def values = js.Array(FACE_COVER, HAND_COVER, HEAD_COVER)
   }
 
   @js.native
@@ -4188,23 +4408,26 @@ package rekognition {
     }
   }
 
-  /** A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
+  /** Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.
     */
   @js.native
   trait TestingDataResult extends js.Object {
     var Input: js.UndefOr[TestingData]
     var Output: js.UndefOr[TestingData]
+    var Validation: js.UndefOr[ValidationData]
   }
 
   object TestingDataResult {
     @inline
     def apply(
         Input: js.UndefOr[TestingData] = js.undefined,
-        Output: js.UndefOr[TestingData] = js.undefined
+        Output: js.UndefOr[TestingData] = js.undefined,
+        Validation: js.UndefOr[ValidationData] = js.undefined
     ): TestingDataResult = {
       val __obj = js.Dynamic.literal()
       Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
       Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      Validation.foreach(__v => __obj.updateDynamic("Validation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestingDataResult]
     }
   }
@@ -4293,23 +4516,26 @@ package rekognition {
     }
   }
 
-  /** A Sagemaker Groundtruth format manifest file that represents the dataset used for training.
+  /** Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.
     */
   @js.native
   trait TrainingDataResult extends js.Object {
     var Input: js.UndefOr[TrainingData]
     var Output: js.UndefOr[TrainingData]
+    var Validation: js.UndefOr[ValidationData]
   }
 
   object TrainingDataResult {
     @inline
     def apply(
         Input: js.UndefOr[TrainingData] = js.undefined,
-        Output: js.UndefOr[TrainingData] = js.undefined
+        Output: js.UndefOr[TrainingData] = js.undefined,
+        Validation: js.UndefOr[ValidationData] = js.undefined
     ): TrainingDataResult = {
       val __obj = js.Dynamic.literal()
       Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
       Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      Validation.foreach(__v => __obj.updateDynamic("Validation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrainingDataResult]
     }
   }
@@ -4332,6 +4558,27 @@ package rekognition {
       FaceDetail.foreach(__v => __obj.updateDynamic("FaceDetail")(__v.asInstanceOf[js.Any]))
       Reasons.foreach(__v => __obj.updateDynamic("Reasons")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnindexedFace]
+    }
+  }
+
+  /** Contains the Amazon S3 bucket location of the validation data for a model training job.
+    * The validation data includes error information for individual JSON lines in the dataset. For more information, see Debugging a Failed Model Training in the Amazon Rekognition Custom Labels Developer Guide.
+    * You get the <code>ValidationData</code> object for the training dataset (<a>TrainingDataResult</a>) and the test dataset (<a>TestingDataResult</a>) by calling <a>DescribeProjectVersions</a>.
+    * The assets array contains a single <a>Asset</a> object. The <a>GroundTruthManifest</a> field of the Asset object contains the S3 bucket location of the validation data.
+    */
+  @js.native
+  trait ValidationData extends js.Object {
+    var Assets: js.UndefOr[Assets]
+  }
+
+  object ValidationData {
+    @inline
+    def apply(
+        Assets: js.UndefOr[Assets] = js.undefined
+    ): ValidationData = {
+      val __obj = js.Dynamic.literal()
+      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationData]
     }
   }
 

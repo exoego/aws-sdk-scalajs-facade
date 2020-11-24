@@ -208,7 +208,7 @@ package mq {
     @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
   }
 
-  /** The storage type of the broker.
+  /** The broker's storage type. <important>EFS is currently not Supported for RabbitMQ engine type.</important>
     */
   @js.native
   sealed trait BrokerStorageType extends js.Any
@@ -229,6 +229,7 @@ package mq {
     var BrokerState: js.UndefOr[BrokerState]
     var Created: js.UndefOr[__timestampIso8601]
     var DeploymentMode: js.UndefOr[DeploymentMode]
+    var EngineType: js.UndefOr[EngineType]
     var HostInstanceType: js.UndefOr[__string]
   }
 
@@ -241,6 +242,7 @@ package mq {
         BrokerState: js.UndefOr[BrokerState] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
         DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
+        EngineType: js.UndefOr[EngineType] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined
     ): BrokerSummary = {
       val __obj = js.Dynamic.literal()
@@ -250,6 +252,7 @@ package mq {
       BrokerState.foreach(__v => __obj.updateDynamic("BrokerState")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       DeploymentMode.foreach(__v => __obj.updateDynamic("DeploymentMode")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerSummary]
     }
@@ -312,7 +315,7 @@ package mq {
     }
   }
 
-  /** A list of information about the configuration.
+  /** A list of information about the configuration. <important>Does not apply to RabbitMQ brokers.</important>
     */
   @js.native
   trait ConfigurationId extends js.Object {
@@ -704,8 +707,9 @@ package mq {
   object DeploymentMode {
     val SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
     val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
+    val CLUSTER_MULTI_AZ = "CLUSTER_MULTI_AZ".asInstanceOf[DeploymentMode]
 
-    @inline def values = js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ)
+    @inline def values = js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ, CLUSTER_MULTI_AZ)
   }
 
   @js.native
@@ -1092,14 +1096,15 @@ package mq {
     }
   }
 
-  /** The type of broker engine. Note: Currently, Amazon MQ supports only ActiveMQ.
+  /** The type of broker engine. Note: Currently, Amazon MQ supports ActiveMQ and RabbitMQ.
     */
   @js.native
   sealed trait EngineType extends js.Any
   object EngineType {
     val ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
+    val RABBITMQ = "RABBITMQ".asInstanceOf[EngineType]
 
-    @inline def values = js.Array(ACTIVEMQ)
+    @inline def values = js.Array(ACTIVEMQ, RABBITMQ)
   }
 
   /** Id of the engine version.
@@ -1743,7 +1748,7 @@ package mq {
     }
   }
 
-  /** An ActiveMQ user associated with the broker.
+  /** A user associated with the broker.
     */
   @js.native
   trait User extends js.Object {
@@ -1794,7 +1799,7 @@ package mq {
     }
   }
 
-  /** Returns a list of all ActiveMQ users.
+  /** Returns a list of all broker users.
     */
   @js.native
   trait UserSummary extends js.Object {

@@ -95,6 +95,9 @@ package object s3 {
   type IfNoneMatch = String
   type IfUnmodifiedSince = js.Date
   type Initiated = js.Date
+  type IntelligentTieringConfigurationList = js.Array[IntelligentTieringConfiguration]
+  type IntelligentTieringDays = Int
+  type IntelligentTieringId = String
   type InventoryConfigurationList = js.Array[InventoryConfiguration]
   type InventoryId = String
   type InventoryOptionalFields = js.Array[InventoryOptionalField]
@@ -144,6 +147,7 @@ package object s3 {
   type ObjectLockToken = String
   type ObjectVersionId = String
   type ObjectVersionList = js.Array[ObjectVersion]
+  type OwnershipControlsRules = js.Array[OwnershipControlsRule]
   type PartNumber = Int
   type PartNumberMarker = Int
   type Parts = js.Array[Part]
@@ -190,6 +194,7 @@ package object s3 {
   type TargetBucket = String
   type TargetGrants = js.Array[TargetGrant]
   type TargetPrefix = String
+  type TieringList = js.Array[Tiering]
   type Token = String
   type TopicArn = String
   type TopicConfigurationList = js.Array[TopicConfiguration]
@@ -213,9 +218,11 @@ package object s3 {
     @inline def deleteBucketCorsFuture(params: DeleteBucketCorsRequest): Future[js.Object] = service.deleteBucketCors(params).promise().toFuture
     @inline def deleteBucketEncryptionFuture(params: DeleteBucketEncryptionRequest): Future[js.Object] = service.deleteBucketEncryption(params).promise().toFuture
     @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] = service.deleteBucket(params).promise().toFuture
+    @inline def deleteBucketIntelligentTieringConfigurationFuture(params: DeleteBucketIntelligentTieringConfigurationRequest): Future[js.Object] = service.deleteBucketIntelligentTieringConfiguration(params).promise().toFuture
     @inline def deleteBucketInventoryConfigurationFuture(params: DeleteBucketInventoryConfigurationRequest): Future[js.Object] = service.deleteBucketInventoryConfiguration(params).promise().toFuture
     @inline def deleteBucketLifecycleFuture(params: DeleteBucketLifecycleRequest): Future[js.Object] = service.deleteBucketLifecycle(params).promise().toFuture
     @inline def deleteBucketMetricsConfigurationFuture(params: DeleteBucketMetricsConfigurationRequest): Future[js.Object] = service.deleteBucketMetricsConfiguration(params).promise().toFuture
+    @inline def deleteBucketOwnershipControlsFuture(params: DeleteBucketOwnershipControlsRequest): Future[js.Object] = service.deleteBucketOwnershipControls(params).promise().toFuture
     @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] = service.deleteBucketPolicy(params).promise().toFuture
     @inline def deleteBucketReplicationFuture(params: DeleteBucketReplicationRequest): Future[js.Object] = service.deleteBucketReplication(params).promise().toFuture
     @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] = service.deleteBucketTagging(params).promise().toFuture
@@ -229,12 +236,14 @@ package object s3 {
     @inline def getBucketAnalyticsConfigurationFuture(params: GetBucketAnalyticsConfigurationRequest): Future[GetBucketAnalyticsConfigurationOutput] = service.getBucketAnalyticsConfiguration(params).promise().toFuture
     @inline def getBucketCorsFuture(params: GetBucketCorsRequest): Future[GetBucketCorsOutput] = service.getBucketCors(params).promise().toFuture
     @inline def getBucketEncryptionFuture(params: GetBucketEncryptionRequest): Future[GetBucketEncryptionOutput] = service.getBucketEncryption(params).promise().toFuture
+    @inline def getBucketIntelligentTieringConfigurationFuture(params: GetBucketIntelligentTieringConfigurationRequest): Future[GetBucketIntelligentTieringConfigurationOutput] = service.getBucketIntelligentTieringConfiguration(params).promise().toFuture
     @inline def getBucketInventoryConfigurationFuture(params: GetBucketInventoryConfigurationRequest): Future[GetBucketInventoryConfigurationOutput] = service.getBucketInventoryConfiguration(params).promise().toFuture
     @inline def getBucketLifecycleConfigurationFuture(params: GetBucketLifecycleConfigurationRequest): Future[GetBucketLifecycleConfigurationOutput] = service.getBucketLifecycleConfiguration(params).promise().toFuture
     @inline def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] = service.getBucketLocation(params).promise().toFuture
     @inline def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] = service.getBucketLogging(params).promise().toFuture
     @inline def getBucketMetricsConfigurationFuture(params: GetBucketMetricsConfigurationRequest): Future[GetBucketMetricsConfigurationOutput] = service.getBucketMetricsConfiguration(params).promise().toFuture
     @inline def getBucketNotificationConfigurationFuture(params: GetBucketNotificationConfigurationRequest): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise().toFuture
+    @inline def getBucketOwnershipControlsFuture(params: GetBucketOwnershipControlsRequest): Future[GetBucketOwnershipControlsOutput] = service.getBucketOwnershipControls(params).promise().toFuture
     @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] = service.getBucketPolicy(params).promise().toFuture
     @inline def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] = service.getBucketPolicyStatus(params).promise().toFuture
     @inline def getBucketReplicationFuture(params: GetBucketReplicationRequest): Future[GetBucketReplicationOutput] = service.getBucketReplication(params).promise().toFuture
@@ -253,6 +262,7 @@ package object s3 {
     @inline def headBucketFuture(params: HeadBucketRequest): Future[js.Object] = service.headBucket(params).promise().toFuture
     @inline def headObjectFuture(params: HeadObjectRequest): Future[HeadObjectOutput] = service.headObject(params).promise().toFuture
     @inline def listBucketAnalyticsConfigurationsFuture(params: ListBucketAnalyticsConfigurationsRequest): Future[ListBucketAnalyticsConfigurationsOutput] = service.listBucketAnalyticsConfigurations(params).promise().toFuture
+    @inline def listBucketIntelligentTieringConfigurationsFuture(params: ListBucketIntelligentTieringConfigurationsRequest): Future[ListBucketIntelligentTieringConfigurationsOutput] = service.listBucketIntelligentTieringConfigurations(params).promise().toFuture
     @inline def listBucketInventoryConfigurationsFuture(params: ListBucketInventoryConfigurationsRequest): Future[ListBucketInventoryConfigurationsOutput] = service.listBucketInventoryConfigurations(params).promise().toFuture
     @inline def listBucketMetricsConfigurationsFuture(params: ListBucketMetricsConfigurationsRequest): Future[ListBucketMetricsConfigurationsOutput] = service.listBucketMetricsConfigurations(params).promise().toFuture
     @inline def listBucketsFuture(): Future[ListBucketsOutput] = service.listBuckets().promise().toFuture
@@ -266,11 +276,13 @@ package object s3 {
     @inline def putBucketAnalyticsConfigurationFuture(params: PutBucketAnalyticsConfigurationRequest): Future[js.Object] = service.putBucketAnalyticsConfiguration(params).promise().toFuture
     @inline def putBucketCorsFuture(params: PutBucketCorsRequest): Future[js.Object] = service.putBucketCors(params).promise().toFuture
     @inline def putBucketEncryptionFuture(params: PutBucketEncryptionRequest): Future[js.Object] = service.putBucketEncryption(params).promise().toFuture
+    @inline def putBucketIntelligentTieringConfigurationFuture(params: PutBucketIntelligentTieringConfigurationRequest): Future[js.Object] = service.putBucketIntelligentTieringConfiguration(params).promise().toFuture
     @inline def putBucketInventoryConfigurationFuture(params: PutBucketInventoryConfigurationRequest): Future[js.Object] = service.putBucketInventoryConfiguration(params).promise().toFuture
     @inline def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise().toFuture
     @inline def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] = service.putBucketLogging(params).promise().toFuture
     @inline def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] = service.putBucketMetricsConfiguration(params).promise().toFuture
     @inline def putBucketNotificationConfigurationFuture(params: PutBucketNotificationConfigurationRequest): Future[js.Object] = service.putBucketNotificationConfiguration(params).promise().toFuture
+    @inline def putBucketOwnershipControlsFuture(params: PutBucketOwnershipControlsRequest): Future[js.Object] = service.putBucketOwnershipControls(params).promise().toFuture
     @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] = service.putBucketPolicy(params).promise().toFuture
     @inline def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] = service.putBucketReplication(params).promise().toFuture
     @inline def putBucketRequestPaymentFuture(params: PutBucketRequestPaymentRequest): Future[js.Object] = service.putBucketRequestPayment(params).promise().toFuture
@@ -466,9 +478,11 @@ package s3 {
     def deleteBucketAnalyticsConfiguration(params: DeleteBucketAnalyticsConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketCors(params: DeleteBucketCorsRequest): Request[js.Object] = js.native
     def deleteBucketEncryption(params: DeleteBucketEncryptionRequest): Request[js.Object] = js.native
+    def deleteBucketIntelligentTieringConfiguration(params: DeleteBucketIntelligentTieringConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketInventoryConfiguration(params: DeleteBucketInventoryConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketLifecycle(params: DeleteBucketLifecycleRequest): Request[js.Object] = js.native
     def deleteBucketMetricsConfiguration(params: DeleteBucketMetricsConfigurationRequest): Request[js.Object] = js.native
+    def deleteBucketOwnershipControls(params: DeleteBucketOwnershipControlsRequest): Request[js.Object] = js.native
     def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object] = js.native
     def deleteBucketReplication(params: DeleteBucketReplicationRequest): Request[js.Object] = js.native
     def deleteBucketTagging(params: DeleteBucketTaggingRequest): Request[js.Object] = js.native
@@ -482,12 +496,14 @@ package s3 {
     def getBucketAnalyticsConfiguration(params: GetBucketAnalyticsConfigurationRequest): Request[GetBucketAnalyticsConfigurationOutput] = js.native
     def getBucketCors(params: GetBucketCorsRequest): Request[GetBucketCorsOutput] = js.native
     def getBucketEncryption(params: GetBucketEncryptionRequest): Request[GetBucketEncryptionOutput] = js.native
+    def getBucketIntelligentTieringConfiguration(params: GetBucketIntelligentTieringConfigurationRequest): Request[GetBucketIntelligentTieringConfigurationOutput] = js.native
     def getBucketInventoryConfiguration(params: GetBucketInventoryConfigurationRequest): Request[GetBucketInventoryConfigurationOutput] = js.native
     def getBucketLifecycleConfiguration(params: GetBucketLifecycleConfigurationRequest): Request[GetBucketLifecycleConfigurationOutput] = js.native
     def getBucketLocation(params: GetBucketLocationRequest): Request[GetBucketLocationOutput] = js.native
     def getBucketLogging(params: GetBucketLoggingRequest): Request[GetBucketLoggingOutput] = js.native
     def getBucketMetricsConfiguration(params: GetBucketMetricsConfigurationRequest): Request[GetBucketMetricsConfigurationOutput] = js.native
     def getBucketNotificationConfiguration(params: GetBucketNotificationConfigurationRequest): Request[NotificationConfiguration] = js.native
+    def getBucketOwnershipControls(params: GetBucketOwnershipControlsRequest): Request[GetBucketOwnershipControlsOutput] = js.native
     def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyOutput] = js.native
     def getBucketPolicyStatus(params: GetBucketPolicyStatusRequest): Request[GetBucketPolicyStatusOutput] = js.native
     def getBucketReplication(params: GetBucketReplicationRequest): Request[GetBucketReplicationOutput] = js.native
@@ -506,6 +522,7 @@ package s3 {
     def headBucket(params: HeadBucketRequest): Request[js.Object] = js.native
     def headObject(params: HeadObjectRequest): Request[HeadObjectOutput] = js.native
     def listBucketAnalyticsConfigurations(params: ListBucketAnalyticsConfigurationsRequest): Request[ListBucketAnalyticsConfigurationsOutput] = js.native
+    def listBucketIntelligentTieringConfigurations(params: ListBucketIntelligentTieringConfigurationsRequest): Request[ListBucketIntelligentTieringConfigurationsOutput] = js.native
     def listBucketInventoryConfigurations(params: ListBucketInventoryConfigurationsRequest): Request[ListBucketInventoryConfigurationsOutput] = js.native
     def listBucketMetricsConfigurations(params: ListBucketMetricsConfigurationsRequest): Request[ListBucketMetricsConfigurationsOutput] = js.native
     def listBuckets(): Request[ListBucketsOutput] = js.native
@@ -519,11 +536,13 @@ package s3 {
     def putBucketAnalyticsConfiguration(params: PutBucketAnalyticsConfigurationRequest): Request[js.Object] = js.native
     def putBucketCors(params: PutBucketCorsRequest): Request[js.Object] = js.native
     def putBucketEncryption(params: PutBucketEncryptionRequest): Request[js.Object] = js.native
+    def putBucketIntelligentTieringConfiguration(params: PutBucketIntelligentTieringConfigurationRequest): Request[js.Object] = js.native
     def putBucketInventoryConfiguration(params: PutBucketInventoryConfigurationRequest): Request[js.Object] = js.native
     def putBucketLifecycleConfiguration(params: PutBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
     def putBucketLogging(params: PutBucketLoggingRequest): Request[js.Object] = js.native
     def putBucketMetricsConfiguration(params: PutBucketMetricsConfigurationRequest): Request[js.Object] = js.native
     def putBucketNotificationConfiguration(params: PutBucketNotificationConfigurationRequest): Request[js.Object] = js.native
+    def putBucketOwnershipControls(params: PutBucketOwnershipControlsRequest): Request[js.Object] = js.native
     def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object] = js.native
     def putBucketReplication(params: PutBucketReplicationRequest): Request[js.Object] = js.native
     def putBucketRequestPayment(params: PutBucketRequestPaymentRequest): Request[js.Object] = js.native
@@ -582,6 +601,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var UploadId: MultipartUploadId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
@@ -591,6 +611,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         UploadId: MultipartUploadId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): AbortMultipartUploadRequest = {
       val __obj = js.Dynamic.literal(
@@ -599,6 +620,7 @@ package s3 {
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AbortMultipartUploadRequest]
     }
@@ -787,6 +809,15 @@ package s3 {
     val CSV = "CSV".asInstanceOf[AnalyticsS3ExportFileFormat]
 
     @inline def values = js.Array(CSV)
+  }
+
+  @js.native
+  sealed trait ArchiveStatus extends js.Any
+  object ArchiveStatus {
+    val ARCHIVE_ACCESS = "ARCHIVE_ACCESS".asInstanceOf[ArchiveStatus]
+    val DEEP_ARCHIVE_ACCESS = "DEEP_ARCHIVE_ACCESS".asInstanceOf[ArchiveStatus]
+
+    @inline def values = js.Array(ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS)
   }
 
   /** In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts.
@@ -1154,6 +1185,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var UploadId: MultipartUploadId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MultipartUpload: js.UndefOr[CompletedMultipartUpload]
     var RequestPayer: js.UndefOr[RequestPayer]
   }
@@ -1164,6 +1196,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         UploadId: MultipartUploadId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MultipartUpload: js.UndefOr[CompletedMultipartUpload] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): CompleteMultipartUploadRequest = {
@@ -1173,6 +1206,7 @@ package s3 {
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MultipartUpload.foreach(__v => __obj.updateDynamic("MultipartUpload")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteMultipartUploadRequest]
@@ -1323,6 +1357,8 @@ package s3 {
     var CopySourceSSECustomerAlgorithm: js.UndefOr[CopySourceSSECustomerAlgorithm]
     var CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey]
     var CopySourceSSECustomerKeyMD5: js.UndefOr[CopySourceSSECustomerKeyMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
+    var ExpectedSourceBucketOwner: js.UndefOr[AccountId]
     var Expires: js.UndefOr[Expires]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var GrantRead: js.UndefOr[GrantRead]
@@ -1365,6 +1401,8 @@ package s3 {
         CopySourceSSECustomerAlgorithm: js.UndefOr[CopySourceSSECustomerAlgorithm] = js.undefined,
         CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey] = js.undefined,
         CopySourceSSECustomerKeyMD5: js.UndefOr[CopySourceSSECustomerKeyMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
+        ExpectedSourceBucketOwner: js.UndefOr[AccountId] = js.undefined,
         Expires: js.UndefOr[Expires] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
         GrantRead: js.UndefOr[GrantRead] = js.undefined,
@@ -1406,6 +1444,8 @@ package s3 {
       CopySourceSSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
       CopySourceSSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      ExpectedSourceBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedSourceBucketOwner")(__v.asInstanceOf[js.Any]))
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
@@ -1605,6 +1645,7 @@ package s3 {
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
     var ContentType: js.UndefOr[ContentType]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var Expires: js.UndefOr[Expires]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var GrantRead: js.UndefOr[GrantRead]
@@ -1637,6 +1678,7 @@ package s3 {
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
         ContentType: js.UndefOr[ContentType] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         Expires: js.UndefOr[Expires] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
         GrantRead: js.UndefOr[GrantRead] = js.undefined,
@@ -1668,6 +1710,7 @@ package s3 {
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
@@ -1742,18 +1785,22 @@ package s3 {
   trait DeleteBucketAnalyticsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: AnalyticsId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketAnalyticsConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        Id: AnalyticsId
+        Id: AnalyticsId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketAnalyticsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketAnalyticsConfigurationRequest]
     }
   }
@@ -1761,16 +1808,20 @@ package s3 {
   @js.native
   trait DeleteBucketCorsRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketCorsRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketCorsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketCorsRequest]
     }
   }
@@ -1778,17 +1829,41 @@ package s3 {
   @js.native
   trait DeleteBucketEncryptionRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketEncryptionRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketEncryptionRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketEncryptionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketIntelligentTieringConfigurationRequest extends js.Object {
+    var Bucket: BucketName
+    var Id: IntelligentTieringId
+  }
+
+  object DeleteBucketIntelligentTieringConfigurationRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        Id: IntelligentTieringId
+    ): DeleteBucketIntelligentTieringConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBucketIntelligentTieringConfigurationRequest]
     }
   }
 
@@ -1796,18 +1871,22 @@ package s3 {
   trait DeleteBucketInventoryConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: InventoryId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketInventoryConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        Id: InventoryId
+        Id: InventoryId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketInventoryConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketInventoryConfigurationRequest]
     }
   }
@@ -1815,16 +1894,20 @@ package s3 {
   @js.native
   trait DeleteBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketLifecycleRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketLifecycleRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketLifecycleRequest]
     }
   }
@@ -1833,35 +1916,64 @@ package s3 {
   trait DeleteBucketMetricsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: MetricsId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketMetricsConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        Id: MetricsId
+        Id: MetricsId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketMetricsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketMetricsConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketOwnershipControlsRequest extends js.Object {
+    var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
+  }
+
+  object DeleteBucketOwnershipControlsRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
+    ): DeleteBucketOwnershipControlsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBucketOwnershipControlsRequest]
     }
   }
 
   @js.native
   trait DeleteBucketPolicyRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketPolicyRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketPolicyRequest]
     }
   }
@@ -1869,16 +1981,20 @@ package s3 {
   @js.native
   trait DeleteBucketReplicationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketReplicationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketReplicationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketReplicationRequest]
     }
   }
@@ -1886,16 +2002,20 @@ package s3 {
   @js.native
   trait DeleteBucketRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketRequest]
     }
   }
@@ -1903,16 +2023,20 @@ package s3 {
   @js.native
   trait DeleteBucketTaggingRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketTaggingRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketTaggingRequest]
     }
   }
@@ -1920,16 +2044,20 @@ package s3 {
   @js.native
   trait DeleteBucketWebsiteRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeleteBucketWebsiteRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeleteBucketWebsiteRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBucketWebsiteRequest]
     }
   }
@@ -1964,9 +2092,10 @@ package s3 {
     }
   }
 
-  /** Specifies whether Amazon S3 replicates the delete markers. If you specify a <code>Filter</code>, you must specify this element. However, in the latest version of replication configuration (when <code>Filter</code> is specified), Amazon S3 doesn't replicate delete markers. Therefore, the <code>DeleteMarkerReplication</code> element can contain only &lt;Status&gt;Disabled&lt;/Status&gt;. For an example configuration, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config|Basic Rule Configuration]].
+  /** Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config|Basic Rule Configuration]].
+    * For more information about delete marker replication, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html|Basic Rule Configuration]].
     *
-    * '''Note:'''If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, Amazon S3 handled replication of delete markers differently. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations|Backward Compatibility]].
+    * '''Note:'''If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations|Backward Compatibility]].
     */
   @js.native
   trait DeleteMarkerReplication extends js.Object {
@@ -2020,6 +2149,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MFA: js.UndefOr[MFA]
     var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
@@ -2031,6 +2161,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MFA: js.UndefOr[MFA] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -2041,6 +2172,7 @@ package s3 {
       )
 
       BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -2068,6 +2200,7 @@ package s3 {
   trait DeleteObjectTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
@@ -2076,6 +2209,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): DeleteObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
@@ -2083,6 +2217,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteObjectTaggingRequest]
     }
@@ -2115,6 +2250,7 @@ package s3 {
     var Bucket: BucketName
     var Delete: Delete
     var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MFA: js.UndefOr[MFA]
     var RequestPayer: js.UndefOr[RequestPayer]
   }
@@ -2125,6 +2261,7 @@ package s3 {
         Bucket: BucketName,
         Delete: Delete,
         BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MFA: js.UndefOr[MFA] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): DeleteObjectsRequest = {
@@ -2134,6 +2271,7 @@ package s3 {
       )
 
       BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteObjectsRequest]
@@ -2143,16 +2281,20 @@ package s3 {
   @js.native
   trait DeletePublicAccessBlockRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object DeletePublicAccessBlockRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): DeletePublicAccessBlockRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePublicAccessBlockRequest]
     }
   }
@@ -2483,16 +2625,20 @@ package s3 {
   @js.native
   trait GetBucketAccelerateConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketAccelerateConfigurationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketAccelerateConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketAccelerateConfigurationRequest]
     }
   }
@@ -2519,16 +2665,20 @@ package s3 {
   @js.native
   trait GetBucketAclRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketAclRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketAclRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketAclRequest]
     }
   }
@@ -2553,18 +2703,22 @@ package s3 {
   trait GetBucketAnalyticsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: AnalyticsId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketAnalyticsConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        Id: AnalyticsId
+        Id: AnalyticsId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketAnalyticsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketAnalyticsConfigurationRequest]
     }
   }
@@ -2588,16 +2742,20 @@ package s3 {
   @js.native
   trait GetBucketCorsRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketCorsRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketCorsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketCorsRequest]
     }
   }
@@ -2621,17 +2779,57 @@ package s3 {
   @js.native
   trait GetBucketEncryptionRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketEncryptionRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketEncryptionRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketEncryptionRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketIntelligentTieringConfigurationOutput extends js.Object {
+    var IntelligentTieringConfiguration: js.UndefOr[IntelligentTieringConfiguration]
+  }
+
+  object GetBucketIntelligentTieringConfigurationOutput {
+    @inline
+    def apply(
+        IntelligentTieringConfiguration: js.UndefOr[IntelligentTieringConfiguration] = js.undefined
+    ): GetBucketIntelligentTieringConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      IntelligentTieringConfiguration.foreach(__v => __obj.updateDynamic("IntelligentTieringConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketIntelligentTieringConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait GetBucketIntelligentTieringConfigurationRequest extends js.Object {
+    var Bucket: BucketName
+    var Id: IntelligentTieringId
+  }
+
+  object GetBucketIntelligentTieringConfigurationRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        Id: IntelligentTieringId
+    ): GetBucketIntelligentTieringConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketIntelligentTieringConfigurationRequest]
     }
   }
 
@@ -2655,18 +2853,22 @@ package s3 {
   trait GetBucketInventoryConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: InventoryId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketInventoryConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        Id: InventoryId
+        Id: InventoryId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketInventoryConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketInventoryConfigurationRequest]
     }
   }
@@ -2690,16 +2892,20 @@ package s3 {
   @js.native
   trait GetBucketLifecycleConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketLifecycleConfigurationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketLifecycleConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketLifecycleConfigurationRequest]
     }
   }
@@ -2723,16 +2929,20 @@ package s3 {
   @js.native
   trait GetBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketLifecycleRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketLifecycleRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketLifecycleRequest]
     }
   }
@@ -2756,16 +2966,20 @@ package s3 {
   @js.native
   trait GetBucketLocationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketLocationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketLocationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketLocationRequest]
     }
   }
@@ -2789,16 +3003,20 @@ package s3 {
   @js.native
   trait GetBucketLoggingRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketLoggingRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketLoggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketLoggingRequest]
     }
   }
@@ -2823,18 +3041,22 @@ package s3 {
   trait GetBucketMetricsConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var Id: MetricsId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketMetricsConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        Id: MetricsId
+        Id: MetricsId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketMetricsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketMetricsConfigurationRequest]
     }
   }
@@ -2842,17 +3064,58 @@ package s3 {
   @js.native
   trait GetBucketNotificationConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketNotificationConfigurationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketNotificationConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketNotificationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketOwnershipControlsOutput extends js.Object {
+    var OwnershipControls: js.UndefOr[OwnershipControls]
+  }
+
+  object GetBucketOwnershipControlsOutput {
+    @inline
+    def apply(
+        OwnershipControls: js.UndefOr[OwnershipControls] = js.undefined
+    ): GetBucketOwnershipControlsOutput = {
+      val __obj = js.Dynamic.literal()
+      OwnershipControls.foreach(__v => __obj.updateDynamic("OwnershipControls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketOwnershipControlsOutput]
+    }
+  }
+
+  @js.native
+  trait GetBucketOwnershipControlsRequest extends js.Object {
+    var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
+  }
+
+  object GetBucketOwnershipControlsRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
+    ): GetBucketOwnershipControlsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketOwnershipControlsRequest]
     }
   }
 
@@ -2875,16 +3138,20 @@ package s3 {
   @js.native
   trait GetBucketPolicyRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketPolicyRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketPolicyRequest]
     }
   }
@@ -2908,16 +3175,20 @@ package s3 {
   @js.native
   trait GetBucketPolicyStatusRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketPolicyStatusRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketPolicyStatusRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketPolicyStatusRequest]
     }
   }
@@ -2941,16 +3212,20 @@ package s3 {
   @js.native
   trait GetBucketReplicationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketReplicationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketReplicationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketReplicationRequest]
     }
   }
@@ -2974,16 +3249,20 @@ package s3 {
   @js.native
   trait GetBucketRequestPaymentRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketRequestPaymentRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketRequestPaymentRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketRequestPaymentRequest]
     }
   }
@@ -3008,16 +3287,20 @@ package s3 {
   @js.native
   trait GetBucketTaggingRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketTaggingRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketTaggingRequest]
     }
   }
@@ -3044,16 +3327,20 @@ package s3 {
   @js.native
   trait GetBucketVersioningRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketVersioningRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketVersioningRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketVersioningRequest]
     }
   }
@@ -3086,16 +3373,20 @@ package s3 {
   @js.native
   trait GetBucketWebsiteRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetBucketWebsiteRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetBucketWebsiteRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketWebsiteRequest]
     }
   }
@@ -3126,6 +3417,7 @@ package s3 {
   trait GetObjectAclRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
@@ -3135,6 +3427,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectAclRequest = {
@@ -3143,6 +3436,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectAclRequest]
@@ -3169,6 +3463,7 @@ package s3 {
   trait GetObjectLegalHoldRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
@@ -3178,6 +3473,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectLegalHoldRequest = {
@@ -3186,6 +3482,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectLegalHoldRequest]
@@ -3211,16 +3508,20 @@ package s3 {
   @js.native
   trait GetObjectLockConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetObjectLockConfigurationRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetObjectLockConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectLockConfigurationRequest]
     }
   }
@@ -3335,6 +3636,7 @@ package s3 {
   trait GetObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var IfMatch: js.UndefOr[IfMatch]
     var IfModifiedSince: js.UndefOr[IfModifiedSince]
     var IfNoneMatch: js.UndefOr[IfNoneMatch]
@@ -3359,6 +3661,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         IfMatch: js.UndefOr[IfMatch] = js.undefined,
         IfModifiedSince: js.UndefOr[IfModifiedSince] = js.undefined,
         IfNoneMatch: js.UndefOr[IfNoneMatch] = js.undefined,
@@ -3382,6 +3685,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
       IfModifiedSince.foreach(__v => __obj.updateDynamic("IfModifiedSince")(__v.asInstanceOf[js.Any]))
       IfNoneMatch.foreach(__v => __obj.updateDynamic("IfNoneMatch")(__v.asInstanceOf[js.Any]))
@@ -3423,6 +3727,7 @@ package s3 {
   trait GetObjectRetentionRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
@@ -3432,6 +3737,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectRetentionRequest = {
@@ -3440,6 +3746,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectRetentionRequest]
@@ -3471,6 +3778,7 @@ package s3 {
   trait GetObjectTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
@@ -3479,6 +3787,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
@@ -3486,6 +3795,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectTaggingRequest]
     }
@@ -3514,6 +3824,7 @@ package s3 {
   trait GetObjectTorrentRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
   }
 
@@ -3522,6 +3833,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
     ): GetObjectTorrentRequest = {
       val __obj = js.Dynamic.literal(
@@ -3529,6 +3841,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectTorrentRequest]
     }
@@ -3553,16 +3866,20 @@ package s3 {
   @js.native
   trait GetPublicAccessBlockRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object GetPublicAccessBlockRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): GetPublicAccessBlockRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPublicAccessBlockRequest]
     }
   }
@@ -3642,16 +3959,20 @@ package s3 {
   @js.native
   trait HeadBucketRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object HeadBucketRequest {
     @inline
     def apply(
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): HeadBucketRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HeadBucketRequest]
     }
   }
@@ -3659,6 +3980,7 @@ package s3 {
   @js.native
   trait HeadObjectOutput extends js.Object {
     var AcceptRanges: js.UndefOr[AcceptRanges]
+    var ArchiveStatus: js.UndefOr[ArchiveStatus]
     var CacheControl: js.UndefOr[CacheControl]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
@@ -3692,6 +4014,7 @@ package s3 {
     @inline
     def apply(
         AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
+        ArchiveStatus: js.UndefOr[ArchiveStatus] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
@@ -3722,6 +4045,7 @@ package s3 {
     ): HeadObjectOutput = {
       val __obj = js.Dynamic.literal()
       AcceptRanges.foreach(__v => __obj.updateDynamic("AcceptRanges")(__v.asInstanceOf[js.Any]))
+      ArchiveStatus.foreach(__v => __obj.updateDynamic("ArchiveStatus")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
@@ -3757,6 +4081,7 @@ package s3 {
   trait HeadObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var IfMatch: js.UndefOr[IfMatch]
     var IfModifiedSince: js.UndefOr[IfModifiedSince]
     var IfNoneMatch: js.UndefOr[IfNoneMatch]
@@ -3775,6 +4100,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         IfMatch: js.UndefOr[IfMatch] = js.undefined,
         IfModifiedSince: js.UndefOr[IfModifiedSince] = js.undefined,
         IfNoneMatch: js.UndefOr[IfNoneMatch] = js.undefined,
@@ -3792,6 +4118,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
       IfModifiedSince.foreach(__v => __obj.updateDynamic("IfModifiedSince")(__v.asInstanceOf[js.Any]))
       IfNoneMatch.foreach(__v => __obj.updateDynamic("IfNoneMatch")(__v.asInstanceOf[js.Any]))
@@ -3872,6 +4199,99 @@ package s3 {
       Parquet.foreach(__v => __obj.updateDynamic("Parquet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSerialization]
     }
+  }
+
+  @js.native
+  sealed trait IntelligentTieringAccessTier extends js.Any
+  object IntelligentTieringAccessTier {
+    val ARCHIVE_ACCESS = "ARCHIVE_ACCESS".asInstanceOf[IntelligentTieringAccessTier]
+    val DEEP_ARCHIVE_ACCESS = "DEEP_ARCHIVE_ACCESS".asInstanceOf[IntelligentTieringAccessTier]
+
+    @inline def values = js.Array(ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS)
+  }
+
+  /** A container for specifying S3 Intelligent-Tiering filters. The filters determine the subset of objects to which the rule applies.
+    */
+  @js.native
+  trait IntelligentTieringAndOperator extends js.Object {
+    var Prefix: js.UndefOr[Prefix]
+    var Tags: js.UndefOr[TagSet]
+  }
+
+  object IntelligentTieringAndOperator {
+    @inline
+    def apply(
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        Tags: js.UndefOr[TagSet] = js.undefined
+    ): IntelligentTieringAndOperator = {
+      val __obj = js.Dynamic.literal()
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntelligentTieringAndOperator]
+    }
+  }
+
+  /** Specifies the S3 Intelligent-Tiering configuration for an Amazon S3 bucket.
+    * For information about the S3 Intelligent-Tiering storage class, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access|Storage class for automatically optimizing frequently and infrequently accessed objects]].
+    */
+  @js.native
+  trait IntelligentTieringConfiguration extends js.Object {
+    var Id: IntelligentTieringId
+    var Status: IntelligentTieringStatus
+    var Tierings: TieringList
+    var Filter: js.UndefOr[IntelligentTieringFilter]
+  }
+
+  object IntelligentTieringConfiguration {
+    @inline
+    def apply(
+        Id: IntelligentTieringId,
+        Status: IntelligentTieringStatus,
+        Tierings: TieringList,
+        Filter: js.UndefOr[IntelligentTieringFilter] = js.undefined
+    ): IntelligentTieringConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "Tierings" -> Tierings.asInstanceOf[js.Any]
+      )
+
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntelligentTieringConfiguration]
+    }
+  }
+
+  /** The <code>Filter</code> is used to identify objects that the S3 Intelligent-Tiering configuration applies to.
+    */
+  @js.native
+  trait IntelligentTieringFilter extends js.Object {
+    var And: js.UndefOr[IntelligentTieringAndOperator]
+    var Prefix: js.UndefOr[Prefix]
+    var Tag: js.UndefOr[Tag]
+  }
+
+  object IntelligentTieringFilter {
+    @inline
+    def apply(
+        And: js.UndefOr[IntelligentTieringAndOperator] = js.undefined,
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        Tag: js.UndefOr[Tag] = js.undefined
+    ): IntelligentTieringFilter = {
+      val __obj = js.Dynamic.literal()
+      And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntelligentTieringFilter]
+    }
+  }
+
+  @js.native
+  sealed trait IntelligentTieringStatus extends js.Any
+  object IntelligentTieringStatus {
+    val Enabled = "Enabled".asInstanceOf[IntelligentTieringStatus]
+    val Disabled = "Disabled".asInstanceOf[IntelligentTieringStatus]
+
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   /** Specifies the inventory configuration for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html|GET Bucket inventory]] in the <i>Amazon Simple Storage Service API Reference</i>.
@@ -4315,20 +4735,69 @@ package s3 {
   trait ListBucketAnalyticsConfigurationsRequest extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object ListBucketAnalyticsConfigurationsRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined
+        ContinuationToken: js.UndefOr[Token] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): ListBucketAnalyticsConfigurationsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBucketAnalyticsConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBucketIntelligentTieringConfigurationsOutput extends js.Object {
+    var ContinuationToken: js.UndefOr[Token]
+    var IntelligentTieringConfigurationList: js.UndefOr[IntelligentTieringConfigurationList]
+    var IsTruncated: js.UndefOr[IsTruncated]
+    var NextContinuationToken: js.UndefOr[NextToken]
+  }
+
+  object ListBucketIntelligentTieringConfigurationsOutput {
+    @inline
+    def apply(
+        ContinuationToken: js.UndefOr[Token] = js.undefined,
+        IntelligentTieringConfigurationList: js.UndefOr[IntelligentTieringConfigurationList] = js.undefined,
+        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
+        NextContinuationToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBucketIntelligentTieringConfigurationsOutput = {
+      val __obj = js.Dynamic.literal()
+      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
+      IntelligentTieringConfigurationList.foreach(__v => __obj.updateDynamic("IntelligentTieringConfigurationList")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      NextContinuationToken.foreach(__v => __obj.updateDynamic("NextContinuationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketIntelligentTieringConfigurationsOutput]
+    }
+  }
+
+  @js.native
+  trait ListBucketIntelligentTieringConfigurationsRequest extends js.Object {
+    var Bucket: BucketName
+    var ContinuationToken: js.UndefOr[Token]
+  }
+
+  object ListBucketIntelligentTieringConfigurationsRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        ContinuationToken: js.UndefOr[Token] = js.undefined
+    ): ListBucketIntelligentTieringConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBucketIntelligentTieringConfigurationsRequest]
     }
   }
 
@@ -4361,19 +4830,22 @@ package s3 {
   trait ListBucketInventoryConfigurationsRequest extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object ListBucketInventoryConfigurationsRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined
+        ContinuationToken: js.UndefOr[Token] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): ListBucketInventoryConfigurationsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBucketInventoryConfigurationsRequest]
     }
   }
@@ -4407,19 +4879,22 @@ package s3 {
   trait ListBucketMetricsConfigurationsRequest extends js.Object {
     var Bucket: BucketName
     var ContinuationToken: js.UndefOr[Token]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object ListBucketMetricsConfigurationsRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        ContinuationToken: js.UndefOr[Token] = js.undefined
+        ContinuationToken: js.UndefOr[Token] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): ListBucketMetricsConfigurationsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBucketMetricsConfigurationsRequest]
     }
   }
@@ -4497,6 +4972,7 @@ package s3 {
     var Bucket: BucketName
     var Delimiter: js.UndefOr[Delimiter]
     var EncodingType: js.UndefOr[EncodingType]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var KeyMarker: js.UndefOr[KeyMarker]
     var MaxUploads: js.UndefOr[MaxUploads]
     var Prefix: js.UndefOr[Prefix]
@@ -4509,6 +4985,7 @@ package s3 {
         Bucket: BucketName,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
         EncodingType: js.UndefOr[EncodingType] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         KeyMarker: js.UndefOr[KeyMarker] = js.undefined,
         MaxUploads: js.UndefOr[MaxUploads] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -4520,6 +4997,7 @@ package s3 {
 
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       KeyMarker.foreach(__v => __obj.updateDynamic("KeyMarker")(__v.asInstanceOf[js.Any]))
       MaxUploads.foreach(__v => __obj.updateDynamic("MaxUploads")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -4585,6 +5063,7 @@ package s3 {
     var Bucket: BucketName
     var Delimiter: js.UndefOr[Delimiter]
     var EncodingType: js.UndefOr[EncodingType]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var KeyMarker: js.UndefOr[KeyMarker]
     var MaxKeys: js.UndefOr[MaxKeys]
     var Prefix: js.UndefOr[Prefix]
@@ -4597,6 +5076,7 @@ package s3 {
         Bucket: BucketName,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
         EncodingType: js.UndefOr[EncodingType] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         KeyMarker: js.UndefOr[KeyMarker] = js.undefined,
         MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -4608,6 +5088,7 @@ package s3 {
 
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       KeyMarker.foreach(__v => __obj.updateDynamic("KeyMarker")(__v.asInstanceOf[js.Any]))
       MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -4664,6 +5145,7 @@ package s3 {
     var Bucket: BucketName
     var Delimiter: js.UndefOr[Delimiter]
     var EncodingType: js.UndefOr[EncodingType]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var Marker: js.UndefOr[Marker]
     var MaxKeys: js.UndefOr[MaxKeys]
     var Prefix: js.UndefOr[Prefix]
@@ -4676,6 +5158,7 @@ package s3 {
         Bucket: BucketName,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
         EncodingType: js.UndefOr[EncodingType] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
         MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -4687,6 +5170,7 @@ package s3 {
 
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -4750,6 +5234,7 @@ package s3 {
     var ContinuationToken: js.UndefOr[Token]
     var Delimiter: js.UndefOr[Delimiter]
     var EncodingType: js.UndefOr[EncodingType]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var FetchOwner: js.UndefOr[FetchOwner]
     var MaxKeys: js.UndefOr[MaxKeys]
     var Prefix: js.UndefOr[Prefix]
@@ -4764,6 +5249,7 @@ package s3 {
         ContinuationToken: js.UndefOr[Token] = js.undefined,
         Delimiter: js.UndefOr[Delimiter] = js.undefined,
         EncodingType: js.UndefOr[EncodingType] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         FetchOwner: js.UndefOr[FetchOwner] = js.undefined,
         MaxKeys: js.UndefOr[MaxKeys] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -4777,6 +5263,7 @@ package s3 {
       ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       FetchOwner.foreach(__v => __obj.updateDynamic("FetchOwner")(__v.asInstanceOf[js.Any]))
       MaxKeys.foreach(__v => __obj.updateDynamic("MaxKeys")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -4846,6 +5333,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var UploadId: MultipartUploadId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MaxParts: js.UndefOr[MaxParts]
     var PartNumberMarker: js.UndefOr[PartNumberMarker]
     var RequestPayer: js.UndefOr[RequestPayer]
@@ -4857,6 +5345,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         UploadId: MultipartUploadId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MaxParts: js.UndefOr[MaxParts] = js.undefined,
         PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
@@ -4867,6 +5356,7 @@ package s3 {
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MaxParts.foreach(__v => __obj.updateDynamic("MaxParts")(__v.asInstanceOf[js.Any]))
       PartNumberMarker.foreach(__v => __obj.updateDynamic("PartNumberMarker")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -4948,24 +5438,25 @@ package s3 {
     }
   }
 
-  /** A container specifying replication metrics-related settings enabling metrics and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified together with a <code>ReplicationTime</code> block.
+  /** A container specifying replication metrics-related settings enabling replication metrics and events.
     */
   @js.native
   trait Metrics extends js.Object {
-    var EventThreshold: ReplicationTimeValue
     var Status: MetricsStatus
+    var EventThreshold: js.UndefOr[ReplicationTimeValue]
   }
 
   object Metrics {
     @inline
     def apply(
-        EventThreshold: ReplicationTimeValue,
-        Status: MetricsStatus
+        Status: MetricsStatus,
+        EventThreshold: js.UndefOr[ReplicationTimeValue] = js.undefined
     ): Metrics = {
       val __obj = js.Dynamic.literal(
-        "EventThreshold" -> EventThreshold.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
+
+      EventThreshold.foreach(__v => __obj.updateDynamic("EventThreshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metrics]
     }
   }
@@ -5366,6 +5857,19 @@ package s3 {
     }
   }
 
+  /** The container element for object ownership for a bucket's ownership controls.
+    * BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+    * ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+    */
+  @js.native
+  sealed trait ObjectOwnership extends js.Any
+  object ObjectOwnership {
+    val BucketOwnerPreferred = "BucketOwnerPreferred".asInstanceOf[ObjectOwnership]
+    val ObjectWriter = "ObjectWriter".asInstanceOf[ObjectOwnership]
+
+    @inline def values = js.Array(BucketOwnerPreferred, ObjectWriter)
+  }
+
   @js.native
   sealed trait ObjectStorageClass extends js.Any
   object ObjectStorageClass {
@@ -5376,8 +5880,9 @@ package s3 {
     val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[ObjectStorageClass]
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[ObjectStorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
+    val OUTPOSTS = "OUTPOSTS".asInstanceOf[ObjectStorageClass]
 
-    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, OUTPOSTS)
   }
 
   /** The version of an object.
@@ -5493,6 +5998,44 @@ package s3 {
     val Destination = "Destination".asInstanceOf[OwnerOverride]
 
     @inline def values = js.Array(Destination)
+  }
+
+  /** The container element for a bucket's ownership controls.
+    */
+  @js.native
+  trait OwnershipControls extends js.Object {
+    var Rules: OwnershipControlsRules
+  }
+
+  object OwnershipControls {
+    @inline
+    def apply(
+        Rules: OwnershipControlsRules
+    ): OwnershipControls = {
+      val __obj = js.Dynamic.literal(
+        "Rules" -> Rules.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OwnershipControls]
+    }
+  }
+
+  /** The container element for an ownership control rule.
+    */
+  @js.native
+  trait OwnershipControlsRule extends js.Object {
+    var ObjectOwnership: ObjectOwnership
+  }
+
+  object OwnershipControlsRule {
+    @inline
+    def apply(
+        ObjectOwnership: ObjectOwnership
+    ): OwnershipControlsRule = {
+      val __obj = js.Dynamic.literal(
+        "ObjectOwnership" -> ObjectOwnership.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OwnershipControlsRule]
+    }
   }
 
   /** Container for Parquet.
@@ -5656,18 +6199,22 @@ package s3 {
   trait PutBucketAccelerateConfigurationRequest extends js.Object {
     var AccelerateConfiguration: AccelerateConfiguration
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketAccelerateConfigurationRequest {
     @inline
     def apply(
         AccelerateConfiguration: AccelerateConfiguration,
-        Bucket: BucketName
+        Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketAccelerateConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "AccelerateConfiguration" -> AccelerateConfiguration.asInstanceOf[js.Any],
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketAccelerateConfigurationRequest]
     }
   }
@@ -5678,6 +6225,7 @@ package s3 {
     var ACL: js.UndefOr[BucketCannedACL]
     var AccessControlPolicy: js.UndefOr[AccessControlPolicy]
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var GrantRead: js.UndefOr[GrantRead]
     var GrantReadACP: js.UndefOr[GrantReadACP]
@@ -5692,6 +6240,7 @@ package s3 {
         ACL: js.UndefOr[BucketCannedACL] = js.undefined,
         AccessControlPolicy: js.UndefOr[AccessControlPolicy] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
         GrantRead: js.UndefOr[GrantRead] = js.undefined,
         GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
@@ -5705,6 +6254,7 @@ package s3 {
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
@@ -5719,6 +6269,7 @@ package s3 {
     var AnalyticsConfiguration: AnalyticsConfiguration
     var Bucket: BucketName
     var Id: AnalyticsId
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketAnalyticsConfigurationRequest {
@@ -5726,13 +6277,16 @@ package s3 {
     def apply(
         AnalyticsConfiguration: AnalyticsConfiguration,
         Bucket: BucketName,
-        Id: AnalyticsId
+        Id: AnalyticsId,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketAnalyticsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "AnalyticsConfiguration" -> AnalyticsConfiguration.asInstanceOf[js.Any],
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketAnalyticsConfigurationRequest]
     }
   }
@@ -5742,6 +6296,7 @@ package s3 {
     var Bucket: BucketName
     var CORSConfiguration: CORSConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketCorsRequest {
@@ -5749,7 +6304,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         CORSConfiguration: CORSConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketCorsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -5757,6 +6313,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketCorsRequest]
     }
   }
@@ -5766,6 +6323,7 @@ package s3 {
     var Bucket: BucketName
     var ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketEncryptionRequest {
@@ -5773,7 +6331,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketEncryptionRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -5781,7 +6340,31 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketEncryptionRequest]
+    }
+  }
+
+  @js.native
+  trait PutBucketIntelligentTieringConfigurationRequest extends js.Object {
+    var Bucket: BucketName
+    var Id: IntelligentTieringId
+    var IntelligentTieringConfiguration: IntelligentTieringConfiguration
+  }
+
+  object PutBucketIntelligentTieringConfigurationRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        Id: IntelligentTieringId,
+        IntelligentTieringConfiguration: IntelligentTieringConfiguration
+    ): PutBucketIntelligentTieringConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IntelligentTieringConfiguration" -> IntelligentTieringConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutBucketIntelligentTieringConfigurationRequest]
     }
   }
 
@@ -5790,6 +6373,7 @@ package s3 {
     var Bucket: BucketName
     var Id: InventoryId
     var InventoryConfiguration: InventoryConfiguration
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketInventoryConfigurationRequest {
@@ -5797,13 +6381,16 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Id: InventoryId,
-        InventoryConfiguration: InventoryConfiguration
+        InventoryConfiguration: InventoryConfiguration,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketInventoryConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any],
         "InventoryConfiguration" -> InventoryConfiguration.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketInventoryConfigurationRequest]
     }
   }
@@ -5811,6 +6398,7 @@ package s3 {
   @js.native
   trait PutBucketLifecycleConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration]
   }
 
@@ -5818,12 +6406,14 @@ package s3 {
     @inline
     def apply(
         Bucket: BucketName,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration] = js.undefined
     ): PutBucketLifecycleConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketLifecycleConfigurationRequest]
     }
@@ -5833,6 +6423,7 @@ package s3 {
   trait PutBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var LifecycleConfiguration: js.UndefOr[LifecycleConfiguration]
   }
 
@@ -5841,6 +6432,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         LifecycleConfiguration: js.UndefOr[LifecycleConfiguration] = js.undefined
     ): PutBucketLifecycleRequest = {
       val __obj = js.Dynamic.literal(
@@ -5848,6 +6440,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketLifecycleRequest]
     }
@@ -5858,6 +6451,7 @@ package s3 {
     var Bucket: BucketName
     var BucketLoggingStatus: BucketLoggingStatus
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketLoggingRequest {
@@ -5865,7 +6459,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         BucketLoggingStatus: BucketLoggingStatus,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketLoggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -5873,6 +6468,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketLoggingRequest]
     }
   }
@@ -5882,6 +6478,7 @@ package s3 {
     var Bucket: BucketName
     var Id: MetricsId
     var MetricsConfiguration: MetricsConfiguration
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketMetricsConfigurationRequest {
@@ -5889,13 +6486,16 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Id: MetricsId,
-        MetricsConfiguration: MetricsConfiguration
+        MetricsConfiguration: MetricsConfiguration,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketMetricsConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "Id" -> Id.asInstanceOf[js.Any],
         "MetricsConfiguration" -> MetricsConfiguration.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketMetricsConfigurationRequest]
     }
   }
@@ -5904,18 +6504,22 @@ package s3 {
   trait PutBucketNotificationConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var NotificationConfiguration: NotificationConfiguration
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketNotificationConfigurationRequest {
     @inline
     def apply(
         Bucket: BucketName,
-        NotificationConfiguration: NotificationConfiguration
+        NotificationConfiguration: NotificationConfiguration,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketNotificationConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
         "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
       )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketNotificationConfigurationRequest]
     }
   }
@@ -5925,6 +6529,7 @@ package s3 {
     var Bucket: BucketName
     var NotificationConfiguration: NotificationConfigurationDeprecated
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketNotificationRequest {
@@ -5932,7 +6537,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         NotificationConfiguration: NotificationConfigurationDeprecated,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketNotificationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -5940,7 +6546,35 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketNotificationRequest]
+    }
+  }
+
+  @js.native
+  trait PutBucketOwnershipControlsRequest extends js.Object {
+    var Bucket: BucketName
+    var OwnershipControls: OwnershipControls
+    var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
+  }
+
+  object PutBucketOwnershipControlsRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        OwnershipControls: OwnershipControls,
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
+    ): PutBucketOwnershipControlsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "OwnershipControls" -> OwnershipControls.asInstanceOf[js.Any]
+      )
+
+      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketOwnershipControlsRequest]
     }
   }
 
@@ -5950,6 +6584,7 @@ package s3 {
     var Policy: Policy
     var ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess]
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketPolicyRequest {
@@ -5958,7 +6593,8 @@ package s3 {
         Bucket: BucketName,
         Policy: Policy,
         ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess] = js.undefined,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -5967,6 +6603,7 @@ package s3 {
 
       ConfirmRemoveSelfBucketAccess.foreach(__v => __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketPolicyRequest]
     }
   }
@@ -5976,6 +6613,7 @@ package s3 {
     var Bucket: BucketName
     var ReplicationConfiguration: ReplicationConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var Token: js.UndefOr[ObjectLockToken]
   }
 
@@ -5985,6 +6623,7 @@ package s3 {
         Bucket: BucketName,
         ReplicationConfiguration: ReplicationConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         Token: js.UndefOr[ObjectLockToken] = js.undefined
     ): PutBucketReplicationRequest = {
       val __obj = js.Dynamic.literal(
@@ -5993,6 +6632,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketReplicationRequest]
     }
@@ -6003,6 +6643,7 @@ package s3 {
     var Bucket: BucketName
     var RequestPaymentConfiguration: RequestPaymentConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketRequestPaymentRequest {
@@ -6010,7 +6651,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         RequestPaymentConfiguration: RequestPaymentConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketRequestPaymentRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -6018,6 +6660,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketRequestPaymentRequest]
     }
   }
@@ -6027,6 +6670,7 @@ package s3 {
     var Bucket: BucketName
     var Tagging: Tagging
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketTaggingRequest {
@@ -6034,7 +6678,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Tagging: Tagging,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketTaggingRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -6042,6 +6687,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketTaggingRequest]
     }
   }
@@ -6051,6 +6697,7 @@ package s3 {
     var Bucket: BucketName
     var VersioningConfiguration: VersioningConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MFA: js.UndefOr[MFA]
   }
 
@@ -6060,6 +6707,7 @@ package s3 {
         Bucket: BucketName,
         VersioningConfiguration: VersioningConfiguration,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MFA: js.UndefOr[MFA] = js.undefined
     ): PutBucketVersioningRequest = {
       val __obj = js.Dynamic.literal(
@@ -6068,6 +6716,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketVersioningRequest]
     }
@@ -6078,6 +6727,7 @@ package s3 {
     var Bucket: BucketName
     var WebsiteConfiguration: WebsiteConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutBucketWebsiteRequest {
@@ -6085,7 +6735,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         WebsiteConfiguration: WebsiteConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketWebsiteRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -6093,6 +6744,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketWebsiteRequest]
     }
   }
@@ -6120,6 +6772,7 @@ package s3 {
     var ACL: js.UndefOr[ObjectCannedACL]
     var AccessControlPolicy: js.UndefOr[AccessControlPolicy]
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var GrantRead: js.UndefOr[GrantRead]
     var GrantReadACP: js.UndefOr[GrantReadACP]
@@ -6137,6 +6790,7 @@ package s3 {
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
         AccessControlPolicy: js.UndefOr[AccessControlPolicy] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
         GrantRead: js.UndefOr[GrantRead] = js.undefined,
         GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
@@ -6153,6 +6807,7 @@ package s3 {
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
       GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
@@ -6185,6 +6840,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var LegalHold: js.UndefOr[ObjectLockLegalHold]
     var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
@@ -6196,6 +6852,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -6206,6 +6863,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       LegalHold.foreach(__v => __obj.updateDynamic("LegalHold")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -6233,6 +6891,7 @@ package s3 {
   trait PutObjectLockConfigurationRequest extends js.Object {
     var Bucket: BucketName
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration]
     var RequestPayer: js.UndefOr[RequestPayer]
     var Token: js.UndefOr[ObjectLockToken]
@@ -6243,6 +6902,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         Token: js.UndefOr[ObjectLockToken] = js.undefined
@@ -6252,6 +6912,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       ObjectLockConfiguration.foreach(__v => __obj.updateDynamic("ObjectLockConfiguration")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
@@ -6312,6 +6973,7 @@ package s3 {
     var ContentLength: js.UndefOr[ContentLength]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ContentType: js.UndefOr[ContentType]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var Expires: js.UndefOr[Expires]
     var GrantFullControl: js.UndefOr[GrantFullControl]
     var GrantRead: js.UndefOr[GrantRead]
@@ -6347,6 +7009,7 @@ package s3 {
         ContentLength: js.UndefOr[ContentLength] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ContentType: js.UndefOr[ContentType] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         Expires: js.UndefOr[Expires] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
         GrantRead: js.UndefOr[GrantRead] = js.undefined,
@@ -6381,6 +7044,7 @@ package s3 {
       ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
       GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
@@ -6426,6 +7090,7 @@ package s3 {
     var Key: ObjectKey
     var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var Retention: js.UndefOr[ObjectLockRetention]
     var VersionId: js.UndefOr[ObjectVersionId]
@@ -6438,6 +7103,7 @@ package s3 {
         Key: ObjectKey,
         BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         Retention: js.UndefOr[ObjectLockRetention] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -6449,6 +7115,7 @@ package s3 {
 
       BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -6478,6 +7145,7 @@ package s3 {
     var Key: ObjectKey
     var Tagging: Tagging
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
@@ -6488,6 +7156,7 @@ package s3 {
         Key: ObjectKey,
         Tagging: Tagging,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
@@ -6497,6 +7166,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutObjectTaggingRequest]
     }
@@ -6507,6 +7177,7 @@ package s3 {
     var Bucket: BucketName
     var PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
   object PutPublicAccessBlockRequest {
@@ -6514,7 +7185,8 @@ package s3 {
     def apply(
         Bucket: BucketName,
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration,
-        ContentMD5: js.UndefOr[ContentMD5] = js.undefined
+        ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutPublicAccessBlockRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -6522,6 +7194,7 @@ package s3 {
       )
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPublicAccessBlockRequest]
     }
   }
@@ -6555,7 +7228,7 @@ package s3 {
     }
   }
 
-  /** This data type is deprecated. Use <a>QueueConfiguration</a> for the same purposes. This data type specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
+  /** This data type is deprecated. Use [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_QueueConfiguration.html|QueueConfiguration]] for the same purposes. This data type specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.
     */
   @js.native
   trait QueueConfigurationDeprecated extends js.Object {
@@ -6925,6 +7598,7 @@ package s3 {
   trait RestoreObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var RestoreRequest: js.UndefOr[RestoreRequest]
     var VersionId: js.UndefOr[ObjectVersionId]
@@ -6935,6 +7609,7 @@ package s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         RestoreRequest: js.UndefOr[RestoreRequest] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
@@ -6944,6 +7619,7 @@ package s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       RestoreRequest.foreach(__v => __obj.updateDynamic("RestoreRequest")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -6995,7 +7671,7 @@ package s3 {
     @inline def values = js.Array(SELECT)
   }
 
-  /** Specifies the redirect behavior and when a redirect is applied.
+  /** Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects|Configuring advanced conditional redirects]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait RoutingRule extends js.Object {
@@ -7227,6 +7903,7 @@ package s3 {
     var InputSerialization: InputSerialization
     var Key: ObjectKey
     var OutputSerialization: OutputSerialization
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestProgress: js.UndefOr[RequestProgress]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
@@ -7243,6 +7920,7 @@ package s3 {
         InputSerialization: InputSerialization,
         Key: ObjectKey,
         OutputSerialization: OutputSerialization,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestProgress: js.UndefOr[RequestProgress] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
@@ -7258,6 +7936,7 @@ package s3 {
         "OutputSerialization" -> OutputSerialization.asInstanceOf[js.Any]
       )
 
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestProgress.foreach(__v => __obj.updateDynamic("RequestProgress")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
@@ -7462,8 +8141,9 @@ package s3 {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[StorageClass]
     val GLACIER = "GLACIER".asInstanceOf[StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
+    val OUTPOSTS = "OUTPOSTS".asInstanceOf[StorageClass]
 
-    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
+    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
   }
 
   /** Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.
@@ -7595,6 +8275,28 @@ package s3 {
     @inline def values = js.Array(Standard, Bulk, Expedited)
   }
 
+  /** The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead.
+    */
+  @js.native
+  trait Tiering extends js.Object {
+    var AccessTier: IntelligentTieringAccessTier
+    var Days: IntelligentTieringDays
+  }
+
+  object Tiering {
+    @inline
+    def apply(
+        AccessTier: IntelligentTieringAccessTier,
+        Days: IntelligentTieringDays
+    ): Tiering = {
+      val __obj = js.Dynamic.literal(
+        "AccessTier" -> AccessTier.asInstanceOf[js.Any],
+        "Days" -> Days.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tiering]
+    }
+  }
+
   /** A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events.
     */
   @js.native
@@ -7624,7 +8326,7 @@ package s3 {
     }
   }
 
-  /** A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events. This data type is deprecated. Use <a>TopicConfiguration</a> instead.
+  /** A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events. This data type is deprecated. Use [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_TopicConfiguration.html|TopicConfiguration]] instead.
     */
   @js.native
   trait TopicConfigurationDeprecated extends js.Object {
@@ -7746,6 +8448,8 @@ package s3 {
     var CopySourceSSECustomerAlgorithm: js.UndefOr[CopySourceSSECustomerAlgorithm]
     var CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey]
     var CopySourceSSECustomerKeyMD5: js.UndefOr[CopySourceSSECustomerKeyMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
+    var ExpectedSourceBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
@@ -7768,6 +8472,8 @@ package s3 {
         CopySourceSSECustomerAlgorithm: js.UndefOr[CopySourceSSECustomerAlgorithm] = js.undefined,
         CopySourceSSECustomerKey: js.UndefOr[CopySourceSSECustomerKey] = js.undefined,
         CopySourceSSECustomerKeyMD5: js.UndefOr[CopySourceSSECustomerKeyMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
+        ExpectedSourceBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
@@ -7789,6 +8495,8 @@ package s3 {
       CopySourceSSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       CopySourceSSECustomerKey.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKey")(__v.asInstanceOf[js.Any]))
       CopySourceSSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("CopySourceSSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      ExpectedSourceBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedSourceBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
@@ -7837,6 +8545,7 @@ package s3 {
     var Body: js.UndefOr[Body]
     var ContentLength: js.UndefOr[ContentLength]
     var ContentMD5: js.UndefOr[ContentMD5]
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
     var SSECustomerKey: js.UndefOr[SSECustomerKey]
@@ -7853,6 +8562,7 @@ package s3 {
         Body: js.UndefOr[Body] = js.undefined,
         ContentLength: js.UndefOr[ContentLength] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
         SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
@@ -7868,6 +8578,7 @@ package s3 {
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
       SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))

@@ -10,7 +10,9 @@ package object transcribeservice {
   type DataAccessRoleArn = String
   type DateTime = js.Date
   type FailureReason = String
+  type IdentifiedLanguageScore = Float
   type KMSKeyId = String
+  type LanguageOptions = js.Array[LanguageCode]
   type MaxAlternatives = Int
   type MaxResults = Int
   type MaxSpeakers = Int
@@ -20,6 +22,7 @@ package object transcribeservice {
   type Models = js.Array[LanguageModel]
   type NextToken = String
   type OutputBucketName = String
+  type OutputKey = String
   type Phrase = String
   type Phrases = js.Array[Phrase]
   type TranscriptionJobName = String
@@ -1154,8 +1157,11 @@ package transcribeservice {
     val mp4 = "mp4".asInstanceOf[MediaFormat]
     val wav = "wav".asInstanceOf[MediaFormat]
     val flac = "flac".asInstanceOf[MediaFormat]
+    val ogg = "ogg".asInstanceOf[MediaFormat]
+    val amr = "amr".asInstanceOf[MediaFormat]
+    val webm = "webm".asInstanceOf[MediaFormat]
 
-    @inline def values = js.Array(mp3, mp4, wav, flac)
+    @inline def values = js.Array(mp3, mp4, wav, flac, ogg, amr, webm)
   }
 
   /** Identifies the location of a medical transcript.
@@ -1423,6 +1429,7 @@ package transcribeservice {
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
     var OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId]
+    var OutputKey: js.UndefOr[OutputKey]
     var Settings: js.UndefOr[MedicalTranscriptionSetting]
   }
 
@@ -1438,6 +1445,7 @@ package transcribeservice {
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
         OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
+        OutputKey: js.UndefOr[OutputKey] = js.undefined,
         Settings: js.UndefOr[MedicalTranscriptionSetting] = js.undefined
     ): StartMedicalTranscriptionJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -1452,6 +1460,7 @@ package transcribeservice {
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
       OutputEncryptionKMSKeyId.foreach(__v => __obj.updateDynamic("OutputEncryptionKMSKeyId")(__v.asInstanceOf[js.Any]))
+      OutputKey.foreach(__v => __obj.updateDynamic("OutputKey")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMedicalTranscriptionJobRequest]
     }
@@ -1475,47 +1484,56 @@ package transcribeservice {
 
   @js.native
   trait StartTranscriptionJobRequest extends js.Object {
-    var LanguageCode: LanguageCode
     var Media: Media
     var TranscriptionJobName: TranscriptionJobName
     var ContentRedaction: js.UndefOr[ContentRedaction]
+    var IdentifyLanguage: js.UndefOr[Boolean]
     var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var LanguageOptions: js.UndefOr[LanguageOptions]
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
     var ModelSettings: js.UndefOr[ModelSettings]
     var OutputBucketName: js.UndefOr[OutputBucketName]
     var OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId]
+    var OutputKey: js.UndefOr[OutputKey]
     var Settings: js.UndefOr[Settings]
   }
 
   object StartTranscriptionJobRequest {
     @inline
     def apply(
-        LanguageCode: LanguageCode,
         Media: Media,
         TranscriptionJobName: TranscriptionJobName,
         ContentRedaction: js.UndefOr[ContentRedaction] = js.undefined,
+        IdentifyLanguage: js.UndefOr[Boolean] = js.undefined,
         JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageOptions: js.UndefOr[LanguageOptions] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
         ModelSettings: js.UndefOr[ModelSettings] = js.undefined,
         OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
         OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
+        OutputKey: js.UndefOr[OutputKey] = js.undefined,
         Settings: js.UndefOr[Settings] = js.undefined
     ): StartTranscriptionJobRequest = {
       val __obj = js.Dynamic.literal(
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
         "Media" -> Media.asInstanceOf[js.Any],
         "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
       )
 
       ContentRedaction.foreach(__v => __obj.updateDynamic("ContentRedaction")(__v.asInstanceOf[js.Any]))
+      IdentifyLanguage.foreach(__v => __obj.updateDynamic("IdentifyLanguage")(__v.asInstanceOf[js.Any]))
       JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageOptions.foreach(__v => __obj.updateDynamic("LanguageOptions")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
       ModelSettings.foreach(__v => __obj.updateDynamic("ModelSettings")(__v.asInstanceOf[js.Any]))
       OutputBucketName.foreach(__v => __obj.updateDynamic("OutputBucketName")(__v.asInstanceOf[js.Any]))
       OutputEncryptionKMSKeyId.foreach(__v => __obj.updateDynamic("OutputEncryptionKMSKeyId")(__v.asInstanceOf[js.Any]))
+      OutputKey.foreach(__v => __obj.updateDynamic("OutputKey")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTranscriptionJobRequest]
     }
@@ -1566,8 +1584,11 @@ package transcribeservice {
     var ContentRedaction: js.UndefOr[ContentRedaction]
     var CreationTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
+    var IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore]
+    var IdentifyLanguage: js.UndefOr[Boolean]
     var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var LanguageOptions: js.UndefOr[LanguageOptions]
     var Media: js.UndefOr[Media]
     var MediaFormat: js.UndefOr[MediaFormat]
     var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
@@ -1586,8 +1607,11 @@ package transcribeservice {
         ContentRedaction: js.UndefOr[ContentRedaction] = js.undefined,
         CreationTime: js.UndefOr[DateTime] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore] = js.undefined,
+        IdentifyLanguage: js.UndefOr[Boolean] = js.undefined,
         JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageOptions: js.UndefOr[LanguageOptions] = js.undefined,
         Media: js.UndefOr[Media] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
         MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
@@ -1603,8 +1627,11 @@ package transcribeservice {
       ContentRedaction.foreach(__v => __obj.updateDynamic("ContentRedaction")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      IdentifiedLanguageScore.foreach(__v => __obj.updateDynamic("IdentifiedLanguageScore")(__v.asInstanceOf[js.Any]))
+      IdentifyLanguage.foreach(__v => __obj.updateDynamic("IdentifyLanguage")(__v.asInstanceOf[js.Any]))
       JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageOptions.foreach(__v => __obj.updateDynamic("LanguageOptions")(__v.asInstanceOf[js.Any]))
       Media.foreach(__v => __obj.updateDynamic("Media")(__v.asInstanceOf[js.Any]))
       MediaFormat.foreach(__v => __obj.updateDynamic("MediaFormat")(__v.asInstanceOf[js.Any]))
       MediaSampleRateHertz.foreach(__v => __obj.updateDynamic("MediaSampleRateHertz")(__v.asInstanceOf[js.Any]))
@@ -1637,6 +1664,8 @@ package transcribeservice {
     var ContentRedaction: js.UndefOr[ContentRedaction]
     var CreationTime: js.UndefOr[DateTime]
     var FailureReason: js.UndefOr[FailureReason]
+    var IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore]
+    var IdentifyLanguage: js.UndefOr[Boolean]
     var LanguageCode: js.UndefOr[LanguageCode]
     var ModelSettings: js.UndefOr[ModelSettings]
     var OutputLocationType: js.UndefOr[OutputLocationType]
@@ -1652,6 +1681,8 @@ package transcribeservice {
         ContentRedaction: js.UndefOr[ContentRedaction] = js.undefined,
         CreationTime: js.UndefOr[DateTime] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore] = js.undefined,
+        IdentifyLanguage: js.UndefOr[Boolean] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         ModelSettings: js.UndefOr[ModelSettings] = js.undefined,
         OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
@@ -1664,6 +1695,8 @@ package transcribeservice {
       ContentRedaction.foreach(__v => __obj.updateDynamic("ContentRedaction")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      IdentifiedLanguageScore.foreach(__v => __obj.updateDynamic("IdentifiedLanguageScore")(__v.asInstanceOf[js.Any]))
+      IdentifyLanguage.foreach(__v => __obj.updateDynamic("IdentifyLanguage")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       ModelSettings.foreach(__v => __obj.updateDynamic("ModelSettings")(__v.asInstanceOf[js.Any]))
       OutputLocationType.foreach(__v => __obj.updateDynamic("OutputLocationType")(__v.asInstanceOf[js.Any]))

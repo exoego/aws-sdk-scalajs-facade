@@ -40,6 +40,7 @@ package object amplify {
   type CreateTime = js.Date
   type CustomDomain = String
   type CustomDomains = js.Array[CustomDomain]
+  type CustomHeaders = String
   type CustomRules = js.Array[CustomRule]
   type DNSRecord = String
   type DefaultDomain = String
@@ -57,6 +58,7 @@ package object amplify {
   type EnableBranchAutoBuild = Boolean
   type EnableBranchAutoDeletion = Boolean
   type EnableNotification = Boolean
+  type EnablePerformanceMode = Boolean
   type EnablePullRequestPreview = Boolean
   type EndTime = js.Date
   type EnvKey = String
@@ -220,6 +222,7 @@ package amplify {
     var autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
+    var customHeaders: js.UndefOr[CustomHeaders]
     var customRules: js.UndefOr[CustomRules]
     var enableAutoBranchCreation: js.UndefOr[EnableAutoBranchCreation]
     var enableBranchAutoDeletion: js.UndefOr[EnableBranchAutoDeletion]
@@ -247,6 +250,7 @@ package amplify {
         autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+        customHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         customRules: js.UndefOr[CustomRules] = js.undefined,
         enableAutoBranchCreation: js.UndefOr[EnableAutoBranchCreation] = js.undefined,
         enableBranchAutoDeletion: js.UndefOr[EnableBranchAutoDeletion] = js.undefined,
@@ -273,6 +277,7 @@ package amplify {
       autoBranchCreationPatterns.foreach(__v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      customHeaders.foreach(__v => __obj.updateDynamic("customHeaders")(__v.asInstanceOf[js.Any]))
       customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
       enableAutoBranchCreation.foreach(__v => __obj.updateDynamic("enableAutoBranchCreation")(__v.asInstanceOf[js.Any]))
       enableBranchAutoDeletion.foreach(__v => __obj.updateDynamic("enableBranchAutoDeletion")(__v.asInstanceOf[js.Any]))
@@ -313,6 +318,7 @@ package amplify {
     var buildSpec: js.UndefOr[BuildSpec]
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
     var enableBasicAuth: js.UndefOr[EnableBasicAuth]
+    var enablePerformanceMode: js.UndefOr[EnablePerformanceMode]
     var enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview]
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var framework: js.UndefOr[Framework]
@@ -327,6 +333,7 @@ package amplify {
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
         enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
         enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
+        enablePerformanceMode: js.UndefOr[EnablePerformanceMode] = js.undefined,
         enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         framework: js.UndefOr[Framework] = js.undefined,
@@ -338,6 +345,7 @@ package amplify {
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
       enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      enablePerformanceMode.foreach(__v => __obj.updateDynamic("enablePerformanceMode")(__v.asInstanceOf[js.Any]))
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
@@ -408,6 +416,7 @@ package amplify {
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
     var destinationBranch: js.UndefOr[BranchName]
+    var enablePerformanceMode: js.UndefOr[EnablePerformanceMode]
     var pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName]
     var sourceBranch: js.UndefOr[BranchName]
     var tags: js.UndefOr[TagMap]
@@ -439,6 +448,7 @@ package amplify {
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
         destinationBranch: js.UndefOr[BranchName] = js.undefined,
+        enablePerformanceMode: js.UndefOr[EnablePerformanceMode] = js.undefined,
         pullRequestEnvironmentName: js.UndefOr[PullRequestEnvironmentName] = js.undefined,
         sourceBranch: js.UndefOr[BranchName] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
@@ -469,6 +479,7 @@ package amplify {
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
       destinationBranch.foreach(__v => __obj.updateDynamic("destinationBranch")(__v.asInstanceOf[js.Any]))
+      enablePerformanceMode.foreach(__v => __obj.updateDynamic("enablePerformanceMode")(__v.asInstanceOf[js.Any]))
       pullRequestEnvironmentName.foreach(__v => __obj.updateDynamic("pullRequestEnvironmentName")(__v.asInstanceOf[js.Any]))
       sourceBranch.foreach(__v => __obj.updateDynamic("sourceBranch")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -487,6 +498,7 @@ package amplify {
     var autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
+    var customHeaders: js.UndefOr[CustomHeaders]
     var customRules: js.UndefOr[CustomRules]
     var description: js.UndefOr[Description]
     var enableAutoBranchCreation: js.UndefOr[EnableAutoBranchCreation]
@@ -510,6 +522,7 @@ package amplify {
         autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+        customHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         customRules: js.UndefOr[CustomRules] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         enableAutoBranchCreation: js.UndefOr[EnableAutoBranchCreation] = js.undefined,
@@ -532,6 +545,7 @@ package amplify {
       autoBranchCreationPatterns.foreach(__v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      customHeaders.foreach(__v => __obj.updateDynamic("customHeaders")(__v.asInstanceOf[js.Any]))
       customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       enableAutoBranchCreation.foreach(__v => __obj.updateDynamic("enableAutoBranchCreation")(__v.asInstanceOf[js.Any]))
@@ -627,6 +641,7 @@ package amplify {
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
     var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableNotification: js.UndefOr[EnableNotification]
+    var enablePerformanceMode: js.UndefOr[EnablePerformanceMode]
     var enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview]
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var framework: js.UndefOr[Framework]
@@ -649,6 +664,7 @@ package amplify {
         enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
         enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
         enableNotification: js.UndefOr[EnableNotification] = js.undefined,
+        enablePerformanceMode: js.UndefOr[EnablePerformanceMode] = js.undefined,
         enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         framework: js.UndefOr[Framework] = js.undefined,
@@ -670,6 +686,7 @@ package amplify {
       enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
       enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
       enableNotification.foreach(__v => __obj.updateDynamic("enableNotification")(__v.asInstanceOf[js.Any]))
+      enablePerformanceMode.foreach(__v => __obj.updateDynamic("enablePerformanceMode")(__v.asInstanceOf[js.Any]))
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
@@ -2359,6 +2376,7 @@ package amplify {
     var autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns]
     var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
     var buildSpec: js.UndefOr[BuildSpec]
+    var customHeaders: js.UndefOr[CustomHeaders]
     var customRules: js.UndefOr[CustomRules]
     var description: js.UndefOr[Description]
     var enableAutoBranchCreation: js.UndefOr[EnableAutoBranchCreation]
@@ -2382,6 +2400,7 @@ package amplify {
         autoBranchCreationPatterns: js.UndefOr[AutoBranchCreationPatterns] = js.undefined,
         basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
         buildSpec: js.UndefOr[BuildSpec] = js.undefined,
+        customHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         customRules: js.UndefOr[CustomRules] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         enableAutoBranchCreation: js.UndefOr[EnableAutoBranchCreation] = js.undefined,
@@ -2404,6 +2423,7 @@ package amplify {
       autoBranchCreationPatterns.foreach(__v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any]))
       basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
       buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      customHeaders.foreach(__v => __obj.updateDynamic("customHeaders")(__v.asInstanceOf[js.Any]))
       customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       enableAutoBranchCreation.foreach(__v => __obj.updateDynamic("enableAutoBranchCreation")(__v.asInstanceOf[js.Any]))
@@ -2453,6 +2473,7 @@ package amplify {
     var enableAutoBuild: js.UndefOr[EnableAutoBuild]
     var enableBasicAuth: js.UndefOr[EnableBasicAuth]
     var enableNotification: js.UndefOr[EnableNotification]
+    var enablePerformanceMode: js.UndefOr[EnablePerformanceMode]
     var enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview]
     var environmentVariables: js.UndefOr[EnvironmentVariables]
     var framework: js.UndefOr[Framework]
@@ -2474,6 +2495,7 @@ package amplify {
         enableAutoBuild: js.UndefOr[EnableAutoBuild] = js.undefined,
         enableBasicAuth: js.UndefOr[EnableBasicAuth] = js.undefined,
         enableNotification: js.UndefOr[EnableNotification] = js.undefined,
+        enablePerformanceMode: js.UndefOr[EnablePerformanceMode] = js.undefined,
         enablePullRequestPreview: js.UndefOr[EnablePullRequestPreview] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariables] = js.undefined,
         framework: js.UndefOr[Framework] = js.undefined,
@@ -2494,6 +2516,7 @@ package amplify {
       enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
       enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
       enableNotification.foreach(__v => __obj.updateDynamic("enableNotification")(__v.asInstanceOf[js.Any]))
+      enablePerformanceMode.foreach(__v => __obj.updateDynamic("enablePerformanceMode")(__v.asInstanceOf[js.Any]))
       enablePullRequestPreview.foreach(__v => __obj.updateDynamic("enablePullRequestPreview")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))

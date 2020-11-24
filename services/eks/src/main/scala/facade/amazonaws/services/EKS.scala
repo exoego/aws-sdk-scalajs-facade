@@ -148,6 +148,7 @@ package eks {
     var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var endpoint: js.UndefOr[String]
     var identity: js.UndefOr[Identity]
+    var kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigResponse]
     var logging: js.UndefOr[Logging]
     var name: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
@@ -168,6 +169,7 @@ package eks {
         encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         endpoint: js.UndefOr[String] = js.undefined,
         identity: js.UndefOr[Identity] = js.undefined,
+        kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigResponse] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
@@ -185,6 +187,7 @@ package eks {
       encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
       identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
+      kubernetesNetworkConfig.foreach(__v => __obj.updateDynamic("kubernetesNetworkConfig")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
@@ -216,6 +219,7 @@ package eks {
     var roleArn: String
     var clientRequestToken: js.UndefOr[String]
     var encryptionConfig: js.UndefOr[EncryptionConfigList]
+    var kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigRequest]
     var logging: js.UndefOr[Logging]
     var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[String]
@@ -229,6 +233,7 @@ package eks {
         roleArn: String,
         clientRequestToken: js.UndefOr[String] = js.undefined,
         encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
+        kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigRequest] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[String] = js.undefined
@@ -241,6 +246,7 @@ package eks {
 
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
+      kubernetesNetworkConfig.foreach(__v => __obj.updateDynamic("kubernetesNetworkConfig")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
@@ -677,6 +683,7 @@ package eks {
     val NodeCreationFailure = "NodeCreationFailure".asInstanceOf[ErrorCode]
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
+    val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[ErrorCode]
 
     @inline def values = js.Array(
       SubnetNotFound,
@@ -689,7 +696,8 @@ package eks {
       Unknown,
       NodeCreationFailure,
       PodEvictionFailure,
-      InsufficientFreeAddresses
+      InsufficientFreeAddresses,
+      ClusterUnreachable
     )
   }
 
@@ -831,6 +839,42 @@ package eks {
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       resourceIds.foreach(__v => __obj.updateDynamic("resourceIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Issue]
+    }
+  }
+
+  /** The Kubernetes network configuration for the cluster.
+    */
+  @js.native
+  trait KubernetesNetworkConfigRequest extends js.Object {
+    var serviceIpv4Cidr: js.UndefOr[String]
+  }
+
+  object KubernetesNetworkConfigRequest {
+    @inline
+    def apply(
+        serviceIpv4Cidr: js.UndefOr[String] = js.undefined
+    ): KubernetesNetworkConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      serviceIpv4Cidr.foreach(__v => __obj.updateDynamic("serviceIpv4Cidr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesNetworkConfigRequest]
+    }
+  }
+
+  /** The Kubernetes network configuration for the cluster.
+    */
+  @js.native
+  trait KubernetesNetworkConfigResponse extends js.Object {
+    var serviceIpv4Cidr: js.UndefOr[String]
+  }
+
+  object KubernetesNetworkConfigResponse {
+    @inline
+    def apply(
+        serviceIpv4Cidr: js.UndefOr[String] = js.undefined
+    ): KubernetesNetworkConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      serviceIpv4Cidr.foreach(__v => __obj.updateDynamic("serviceIpv4Cidr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesNetworkConfigResponse]
     }
   }
 
@@ -1226,6 +1270,7 @@ package eks {
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[NodegroupIssueCode]
     val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
     val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
+    val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[NodegroupIssueCode]
 
     @inline def values = js.Array(
       AutoScalingGroupNotFound,
@@ -1244,7 +1289,8 @@ package eks {
       InstanceLimitExceeded,
       InsufficientFreeAddresses,
       AccessDenied,
-      InternalFailure
+      InternalFailure,
+      ClusterUnreachable
     )
   }
 

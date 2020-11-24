@@ -7,19 +7,26 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object personalizeevents {
+  type Arn = String
   type Date = js.Date
   type EventList = js.Array[Event]
   type EventPropertiesJSON = String
   type FloatType = Float
   type Impression = js.Array[ItemId]
   type ItemId = String
+  type ItemList = js.Array[Item]
+  type ItemProperties = String
   type RecommendationId = String
   type StringType = String
   type UserId = String
+  type UserList = js.Array[User]
+  type UserProperties = String
 
   implicit final class PersonalizeEventsOps(private val service: PersonalizeEvents) extends AnyVal {
 
     @inline def putEventsFuture(params: PutEventsRequest): Future[js.Object] = service.putEvents(params).promise().toFuture
+    @inline def putItemsFuture(params: PutItemsRequest): Future[js.Object] = service.putItems(params).promise().toFuture
+    @inline def putUsersFuture(params: PutUsersRequest): Future[js.Object] = service.putUsers(params).promise().toFuture
 
   }
 }
@@ -31,6 +38,8 @@ package personalizeevents {
     def this(config: AWSConfig) = this()
 
     def putEvents(params: PutEventsRequest): Request[js.Object] = js.native
+    def putItems(params: PutItemsRequest): Request[js.Object] = js.native
+    def putUsers(params: PutUsersRequest): Request[js.Object] = js.native
   }
 
   /** Represents user interaction event information sent using the <code>PutEvents</code> API.
@@ -74,6 +83,29 @@ package personalizeevents {
     }
   }
 
+  /** Represents item metadata added to an Items dataset using the <code>PutItems</code> API.
+    */
+  @js.native
+  trait Item extends js.Object {
+    var itemId: StringType
+    var properties: js.UndefOr[ItemProperties]
+  }
+
+  object Item {
+    @inline
+    def apply(
+        itemId: StringType,
+        properties: js.UndefOr[ItemProperties] = js.undefined
+    ): Item = {
+      val __obj = js.Dynamic.literal(
+        "itemId" -> itemId.asInstanceOf[js.Any]
+      )
+
+      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Item]
+    }
+  }
+
   @js.native
   trait PutEventsRequest extends js.Object {
     var eventList: EventList
@@ -98,6 +130,69 @@ package personalizeevents {
 
       userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsRequest]
+    }
+  }
+
+  @js.native
+  trait PutItemsRequest extends js.Object {
+    var datasetArn: Arn
+    var items: ItemList
+  }
+
+  object PutItemsRequest {
+    @inline
+    def apply(
+        datasetArn: Arn,
+        items: ItemList
+    ): PutItemsRequest = {
+      val __obj = js.Dynamic.literal(
+        "datasetArn" -> datasetArn.asInstanceOf[js.Any],
+        "items" -> items.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutItemsRequest]
+    }
+  }
+
+  @js.native
+  trait PutUsersRequest extends js.Object {
+    var datasetArn: Arn
+    var users: UserList
+  }
+
+  object PutUsersRequest {
+    @inline
+    def apply(
+        datasetArn: Arn,
+        users: UserList
+    ): PutUsersRequest = {
+      val __obj = js.Dynamic.literal(
+        "datasetArn" -> datasetArn.asInstanceOf[js.Any],
+        "users" -> users.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutUsersRequest]
+    }
+  }
+
+  /** Represents user metadata added to a Users dataset using the <code>PutUsers</code> API.
+    */
+  @js.native
+  trait User extends js.Object {
+    var userId: StringType
+    var properties: js.UndefOr[UserProperties]
+  }
+
+  object User {
+    @inline
+    def apply(
+        userId: StringType,
+        properties: js.UndefOr[UserProperties] = js.undefined
+    ): User = {
+      val __obj = js.Dynamic.literal(
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[User]
     }
   }
 }

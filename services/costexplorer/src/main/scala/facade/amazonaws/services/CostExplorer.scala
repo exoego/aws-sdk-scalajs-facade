@@ -9,15 +9,20 @@ import facade.amazonaws._
 package object costexplorer {
   type AmortizedRecurringFee = String
   type AmortizedUpfrontFee = String
+  type Anomalies = js.Array[Anomaly]
+  type AnomalyMonitors = js.Array[AnomalyMonitor]
+  type AnomalySubscriptions = js.Array[AnomalySubscription]
   type Arn = String
   type AttributeType = String
   type AttributeValue = String
   type Attributes = js.Dictionary[AttributeValue]
   type CostCategoryMaxResults = Int
   type CostCategoryName = String
+  type CostCategoryProcessingStatusList = js.Array[CostCategoryProcessingStatus]
   type CostCategoryReferencesList = js.Array[CostCategoryReference]
   type CostCategoryRulesList = js.Array[CostCategoryRule]
   type CostCategoryValue = String
+  type CostCategoryValuesList = js.Array[CostCategoryValue]
   type CoverageHoursPercentage = String
   type CoverageNormalizedUnitsPercentage = String
   type CoveragesByTime = js.Array[CoverageByTime]
@@ -27,6 +32,7 @@ package object costexplorer {
   type Expressions = js.Array[Expression]
   type ForecastResultsByTime = js.Array[ForecastResult]
   type GenericBoolean = Boolean
+  type GenericDouble = Double
   type GenericString = String
   type GroupDefinitionKey = String
   type GroupDefinitions = js.Array[GroupDefinition]
@@ -43,6 +49,7 @@ package object costexplorer {
   type NetRISavings = String
   type NextPageToken = String
   type NonNegativeInteger = Int
+  type NullableNonNegativeDouble = Double
   type OnDemandCost = String
   type OnDemandCostOfRIHoursUsed = String
   type OnDemandHours = String
@@ -61,12 +68,15 @@ package object costexplorer {
   type ReservedNormalizedUnits = String
   type ResultsByTime = js.Array[ResultByTime]
   type RightsizingRecommendationList = js.Array[RightsizingRecommendation]
+  type RootCauses = js.Array[RootCause]
   type SavingsPlanArn = String
   type SavingsPlansCoverages = js.Array[SavingsPlansCoverage]
   type SavingsPlansPurchaseRecommendationDetailList = js.Array[SavingsPlansPurchaseRecommendationDetail]
   type SavingsPlansUtilizationDetails = js.Array[SavingsPlansUtilizationDetail]
   type SavingsPlansUtilizationsByTime = js.Array[SavingsPlansUtilizationByTime]
   type SearchString = String
+  type SubscriberAddress = String
+  type Subscribers = js.Array[Subscriber]
   type TagKey = String
   type TagList = js.Array[Entity]
   type TagValuesList = js.Array[TagValues]
@@ -89,9 +99,16 @@ package object costexplorer {
 
   implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
 
+    @inline def createAnomalyMonitorFuture(params: CreateAnomalyMonitorRequest): Future[CreateAnomalyMonitorResponse] = service.createAnomalyMonitor(params).promise().toFuture
+    @inline def createAnomalySubscriptionFuture(params: CreateAnomalySubscriptionRequest): Future[CreateAnomalySubscriptionResponse] = service.createAnomalySubscription(params).promise().toFuture
     @inline def createCostCategoryDefinitionFuture(params: CreateCostCategoryDefinitionRequest): Future[CreateCostCategoryDefinitionResponse] = service.createCostCategoryDefinition(params).promise().toFuture
+    @inline def deleteAnomalyMonitorFuture(params: DeleteAnomalyMonitorRequest): Future[DeleteAnomalyMonitorResponse] = service.deleteAnomalyMonitor(params).promise().toFuture
+    @inline def deleteAnomalySubscriptionFuture(params: DeleteAnomalySubscriptionRequest): Future[DeleteAnomalySubscriptionResponse] = service.deleteAnomalySubscription(params).promise().toFuture
     @inline def deleteCostCategoryDefinitionFuture(params: DeleteCostCategoryDefinitionRequest): Future[DeleteCostCategoryDefinitionResponse] = service.deleteCostCategoryDefinition(params).promise().toFuture
     @inline def describeCostCategoryDefinitionFuture(params: DescribeCostCategoryDefinitionRequest): Future[DescribeCostCategoryDefinitionResponse] = service.describeCostCategoryDefinition(params).promise().toFuture
+    @inline def getAnomaliesFuture(params: GetAnomaliesRequest): Future[GetAnomaliesResponse] = service.getAnomalies(params).promise().toFuture
+    @inline def getAnomalyMonitorsFuture(params: GetAnomalyMonitorsRequest): Future[GetAnomalyMonitorsResponse] = service.getAnomalyMonitors(params).promise().toFuture
+    @inline def getAnomalySubscriptionsFuture(params: GetAnomalySubscriptionsRequest): Future[GetAnomalySubscriptionsResponse] = service.getAnomalySubscriptions(params).promise().toFuture
     @inline def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] = service.getCostAndUsage(params).promise().toFuture
     @inline def getCostAndUsageWithResourcesFuture(params: GetCostAndUsageWithResourcesRequest): Future[GetCostAndUsageWithResourcesResponse] = service.getCostAndUsageWithResources(params).promise().toFuture
     @inline def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] = service.getCostForecast(params).promise().toFuture
@@ -107,6 +124,9 @@ package object costexplorer {
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise().toFuture
     @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] = service.getUsageForecast(params).promise().toFuture
     @inline def listCostCategoryDefinitionsFuture(params: ListCostCategoryDefinitionsRequest): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise().toFuture
+    @inline def provideAnomalyFeedbackFuture(params: ProvideAnomalyFeedbackRequest): Future[ProvideAnomalyFeedbackResponse] = service.provideAnomalyFeedback(params).promise().toFuture
+    @inline def updateAnomalyMonitorFuture(params: UpdateAnomalyMonitorRequest): Future[UpdateAnomalyMonitorResponse] = service.updateAnomalyMonitor(params).promise().toFuture
+    @inline def updateAnomalySubscriptionFuture(params: UpdateAnomalySubscriptionRequest): Future[UpdateAnomalySubscriptionResponse] = service.updateAnomalySubscription(params).promise().toFuture
     @inline def updateCostCategoryDefinitionFuture(params: UpdateCostCategoryDefinitionRequest): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
 
   }
@@ -118,9 +138,16 @@ package costexplorer {
   class CostExplorer() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createAnomalyMonitor(params: CreateAnomalyMonitorRequest): Request[CreateAnomalyMonitorResponse] = js.native
+    def createAnomalySubscription(params: CreateAnomalySubscriptionRequest): Request[CreateAnomalySubscriptionResponse] = js.native
     def createCostCategoryDefinition(params: CreateCostCategoryDefinitionRequest): Request[CreateCostCategoryDefinitionResponse] = js.native
+    def deleteAnomalyMonitor(params: DeleteAnomalyMonitorRequest): Request[DeleteAnomalyMonitorResponse] = js.native
+    def deleteAnomalySubscription(params: DeleteAnomalySubscriptionRequest): Request[DeleteAnomalySubscriptionResponse] = js.native
     def deleteCostCategoryDefinition(params: DeleteCostCategoryDefinitionRequest): Request[DeleteCostCategoryDefinitionResponse] = js.native
     def describeCostCategoryDefinition(params: DescribeCostCategoryDefinitionRequest): Request[DescribeCostCategoryDefinitionResponse] = js.native
+    def getAnomalies(params: GetAnomaliesRequest): Request[GetAnomaliesResponse] = js.native
+    def getAnomalyMonitors(params: GetAnomalyMonitorsRequest): Request[GetAnomalyMonitorsResponse] = js.native
+    def getAnomalySubscriptions(params: GetAnomalySubscriptionsRequest): Request[GetAnomalySubscriptionsResponse] = js.native
     def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
     def getCostAndUsageWithResources(params: GetCostAndUsageWithResourcesRequest): Request[GetCostAndUsageWithResourcesResponse] = js.native
     def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse] = js.native
@@ -136,6 +163,9 @@ package costexplorer {
     def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
     def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
     def listCostCategoryDefinitions(params: ListCostCategoryDefinitionsRequest): Request[ListCostCategoryDefinitionsResponse] = js.native
+    def provideAnomalyFeedback(params: ProvideAnomalyFeedbackRequest): Request[ProvideAnomalyFeedbackResponse] = js.native
+    def updateAnomalyMonitor(params: UpdateAnomalyMonitorRequest): Request[UpdateAnomalyMonitorResponse] = js.native
+    def updateAnomalySubscription(params: UpdateAnomalySubscriptionRequest): Request[UpdateAnomalySubscriptionResponse] = js.native
     def updateCostCategoryDefinition(params: UpdateCostCategoryDefinitionRequest): Request[UpdateCostCategoryDefinitionResponse] = js.native
   }
 
@@ -146,6 +176,197 @@ package costexplorer {
     val LINKED = "LINKED".asInstanceOf[AccountScope]
 
     @inline def values = js.Array(PAYER, LINKED)
+  }
+
+  /** An unusual cost pattern. This consists of the detailed metadata and the current status of the anomaly object.
+    */
+  @js.native
+  trait Anomaly extends js.Object {
+    var AnomalyId: GenericString
+    var AnomalyScore: AnomalyScore
+    var Impact: Impact
+    var MonitorArn: GenericString
+    var AnomalyEndDate: js.UndefOr[YearMonthDay]
+    var AnomalyStartDate: js.UndefOr[YearMonthDay]
+    var DimensionValue: js.UndefOr[GenericString]
+    var Feedback: js.UndefOr[AnomalyFeedbackType]
+    var RootCauses: js.UndefOr[RootCauses]
+  }
+
+  object Anomaly {
+    @inline
+    def apply(
+        AnomalyId: GenericString,
+        AnomalyScore: AnomalyScore,
+        Impact: Impact,
+        MonitorArn: GenericString,
+        AnomalyEndDate: js.UndefOr[YearMonthDay] = js.undefined,
+        AnomalyStartDate: js.UndefOr[YearMonthDay] = js.undefined,
+        DimensionValue: js.UndefOr[GenericString] = js.undefined,
+        Feedback: js.UndefOr[AnomalyFeedbackType] = js.undefined,
+        RootCauses: js.UndefOr[RootCauses] = js.undefined
+    ): Anomaly = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyId" -> AnomalyId.asInstanceOf[js.Any],
+        "AnomalyScore" -> AnomalyScore.asInstanceOf[js.Any],
+        "Impact" -> Impact.asInstanceOf[js.Any],
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+
+      AnomalyEndDate.foreach(__v => __obj.updateDynamic("AnomalyEndDate")(__v.asInstanceOf[js.Any]))
+      AnomalyStartDate.foreach(__v => __obj.updateDynamic("AnomalyStartDate")(__v.asInstanceOf[js.Any]))
+      DimensionValue.foreach(__v => __obj.updateDynamic("DimensionValue")(__v.asInstanceOf[js.Any]))
+      Feedback.foreach(__v => __obj.updateDynamic("Feedback")(__v.asInstanceOf[js.Any]))
+      RootCauses.foreach(__v => __obj.updateDynamic("RootCauses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Anomaly]
+    }
+  }
+
+  /** The time period for an anomaly.
+    */
+  @js.native
+  trait AnomalyDateInterval extends js.Object {
+    var StartDate: YearMonthDay
+    var EndDate: js.UndefOr[YearMonthDay]
+  }
+
+  object AnomalyDateInterval {
+    @inline
+    def apply(
+        StartDate: YearMonthDay,
+        EndDate: js.UndefOr[YearMonthDay] = js.undefined
+    ): AnomalyDateInterval = {
+      val __obj = js.Dynamic.literal(
+        "StartDate" -> StartDate.asInstanceOf[js.Any]
+      )
+
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalyDateInterval]
+    }
+  }
+
+  @js.native
+  sealed trait AnomalyFeedbackType extends js.Any
+  object AnomalyFeedbackType {
+    val YES = "YES".asInstanceOf[AnomalyFeedbackType]
+    val NO = "NO".asInstanceOf[AnomalyFeedbackType]
+    val PLANNED_ACTIVITY = "PLANNED_ACTIVITY".asInstanceOf[AnomalyFeedbackType]
+
+    @inline def values = js.Array(YES, NO, PLANNED_ACTIVITY)
+  }
+
+  /** This object continuously inspects your account's cost data for anomalies, based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object.
+    */
+  @js.native
+  trait AnomalyMonitor extends js.Object {
+    var MonitorName: GenericString
+    var MonitorType: MonitorType
+    var CreationDate: js.UndefOr[YearMonthDay]
+    var DimensionalValueCount: js.UndefOr[NonNegativeInteger]
+    var LastEvaluatedDate: js.UndefOr[YearMonthDay]
+    var LastUpdatedDate: js.UndefOr[YearMonthDay]
+    var MonitorArn: js.UndefOr[GenericString]
+    var MonitorDimension: js.UndefOr[MonitorDimension]
+    var MonitorSpecification: js.UndefOr[Expression]
+  }
+
+  object AnomalyMonitor {
+    @inline
+    def apply(
+        MonitorName: GenericString,
+        MonitorType: MonitorType,
+        CreationDate: js.UndefOr[YearMonthDay] = js.undefined,
+        DimensionalValueCount: js.UndefOr[NonNegativeInteger] = js.undefined,
+        LastEvaluatedDate: js.UndefOr[YearMonthDay] = js.undefined,
+        LastUpdatedDate: js.UndefOr[YearMonthDay] = js.undefined,
+        MonitorArn: js.UndefOr[GenericString] = js.undefined,
+        MonitorDimension: js.UndefOr[MonitorDimension] = js.undefined,
+        MonitorSpecification: js.UndefOr[Expression] = js.undefined
+    ): AnomalyMonitor = {
+      val __obj = js.Dynamic.literal(
+        "MonitorName" -> MonitorName.asInstanceOf[js.Any],
+        "MonitorType" -> MonitorType.asInstanceOf[js.Any]
+      )
+
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DimensionalValueCount.foreach(__v => __obj.updateDynamic("DimensionalValueCount")(__v.asInstanceOf[js.Any]))
+      LastEvaluatedDate.foreach(__v => __obj.updateDynamic("LastEvaluatedDate")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      MonitorDimension.foreach(__v => __obj.updateDynamic("MonitorDimension")(__v.asInstanceOf[js.Any]))
+      MonitorSpecification.foreach(__v => __obj.updateDynamic("MonitorSpecification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalyMonitor]
+    }
+  }
+
+  /** Quantifies the anomaly. The higher score means that it is more anomalous.
+    */
+  @js.native
+  trait AnomalyScore extends js.Object {
+    var CurrentScore: GenericDouble
+    var MaxScore: GenericDouble
+  }
+
+  object AnomalyScore {
+    @inline
+    def apply(
+        CurrentScore: GenericDouble,
+        MaxScore: GenericDouble
+    ): AnomalyScore = {
+      val __obj = js.Dynamic.literal(
+        "CurrentScore" -> CurrentScore.asInstanceOf[js.Any],
+        "MaxScore" -> MaxScore.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnomalyScore]
+    }
+  }
+
+  /** The association between a monitor, threshold, and list of subscribers used to deliver notifications about anomalies detected by a monitor that exceeds a threshold. The content consists of the detailed metadata and the current status of the <code>AnomalySubscription</code> object.
+    */
+  @js.native
+  trait AnomalySubscription extends js.Object {
+    var Frequency: AnomalySubscriptionFrequency
+    var MonitorArnList: Values
+    var Subscribers: Subscribers
+    var SubscriptionName: GenericString
+    var Threshold: NullableNonNegativeDouble
+    var AccountId: js.UndefOr[GenericString]
+    var SubscriptionArn: js.UndefOr[GenericString]
+  }
+
+  object AnomalySubscription {
+    @inline
+    def apply(
+        Frequency: AnomalySubscriptionFrequency,
+        MonitorArnList: Values,
+        Subscribers: Subscribers,
+        SubscriptionName: GenericString,
+        Threshold: NullableNonNegativeDouble,
+        AccountId: js.UndefOr[GenericString] = js.undefined,
+        SubscriptionArn: js.UndefOr[GenericString] = js.undefined
+    ): AnomalySubscription = {
+      val __obj = js.Dynamic.literal(
+        "Frequency" -> Frequency.asInstanceOf[js.Any],
+        "MonitorArnList" -> MonitorArnList.asInstanceOf[js.Any],
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
+        "Threshold" -> Threshold.asInstanceOf[js.Any]
+      )
+
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      SubscriptionArn.foreach(__v => __obj.updateDynamic("SubscriptionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalySubscription]
+    }
+  }
+
+  @js.native
+  sealed trait AnomalySubscriptionFrequency extends js.Any
+  object AnomalySubscriptionFrequency {
+    val DAILY = "DAILY".asInstanceOf[AnomalySubscriptionFrequency]
+    val IMMEDIATE = "IMMEDIATE".asInstanceOf[AnomalySubscriptionFrequency]
+    val WEEKLY = "WEEKLY".asInstanceOf[AnomalySubscriptionFrequency]
+
+    @inline def values = js.Array(DAILY, IMMEDIATE, WEEKLY)
   }
 
   @js.native
@@ -168,6 +389,7 @@ package costexplorer {
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
     var EffectiveEnd: js.UndefOr[ZonedDateTime]
+    var ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList]
   }
 
   object CostCategory {
@@ -178,7 +400,8 @@ package costexplorer {
         Name: CostCategoryName,
         RuleVersion: CostCategoryRuleVersion,
         Rules: CostCategoryRulesList,
-        EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined
+        EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
+        ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList] = js.undefined
     ): CostCategory = {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
@@ -189,7 +412,29 @@ package costexplorer {
       )
 
       EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
+      ProcessingStatus.foreach(__v => __obj.updateDynamic("ProcessingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategory]
+    }
+  }
+
+  /** The list of processing statuses for Cost Management products for a specific cost category.
+    */
+  @js.native
+  trait CostCategoryProcessingStatus extends js.Object {
+    var Component: js.UndefOr[CostCategoryStatusComponent]
+    var Status: js.UndefOr[CostCategoryStatus]
+  }
+
+  object CostCategoryProcessingStatus {
+    @inline
+    def apply(
+        Component: js.UndefOr[CostCategoryStatusComponent] = js.undefined,
+        Status: js.UndefOr[CostCategoryStatus] = js.undefined
+    ): CostCategoryProcessingStatus = {
+      val __obj = js.Dynamic.literal()
+      Component.foreach(__v => __obj.updateDynamic("Component")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostCategoryProcessingStatus]
     }
   }
 
@@ -203,6 +448,8 @@ package costexplorer {
     var EffectiveStart: js.UndefOr[ZonedDateTime]
     var Name: js.UndefOr[CostCategoryName]
     var NumberOfRules: js.UndefOr[NonNegativeInteger]
+    var ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList]
+    var Values: js.UndefOr[CostCategoryValuesList]
   }
 
   object CostCategoryReference {
@@ -212,7 +459,9 @@ package costexplorer {
         EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
         EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined,
         Name: js.UndefOr[CostCategoryName] = js.undefined,
-        NumberOfRules: js.UndefOr[NonNegativeInteger] = js.undefined
+        NumberOfRules: js.UndefOr[NonNegativeInteger] = js.undefined,
+        ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList] = js.undefined,
+        Values: js.UndefOr[CostCategoryValuesList] = js.undefined
     ): CostCategoryReference = {
       val __obj = js.Dynamic.literal()
       CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
@@ -220,6 +469,8 @@ package costexplorer {
       EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NumberOfRules.foreach(__v => __obj.updateDynamic("NumberOfRules")(__v.asInstanceOf[js.Any]))
+      ProcessingStatus.foreach(__v => __obj.updateDynamic("ProcessingStatus")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategoryReference]
     }
   }
@@ -256,11 +507,29 @@ package costexplorer {
     @inline def values = js.Array(`CostCategoryExpression.v1`)
   }
 
+  @js.native
+  sealed trait CostCategoryStatus extends js.Any
+  object CostCategoryStatus {
+    val PROCESSING = "PROCESSING".asInstanceOf[CostCategoryStatus]
+    val APPLIED = "APPLIED".asInstanceOf[CostCategoryStatus]
+
+    @inline def values = js.Array(PROCESSING, APPLIED)
+  }
+
+  @js.native
+  sealed trait CostCategoryStatusComponent extends js.Any
+  object CostCategoryStatusComponent {
+    val COST_EXPLORER = "COST_EXPLORER".asInstanceOf[CostCategoryStatusComponent]
+
+    @inline def values = js.Array(COST_EXPLORER)
+  }
+
   /** The Cost Categories values used for filtering the costs.
     */
   @js.native
   trait CostCategoryValues extends js.Object {
     var Key: js.UndefOr[CostCategoryName]
+    var MatchOptions: js.UndefOr[MatchOptions]
     var Values: js.UndefOr[Values]
   }
 
@@ -268,10 +537,12 @@ package costexplorer {
     @inline
     def apply(
         Key: js.UndefOr[CostCategoryName] = js.undefined,
+        MatchOptions: js.UndefOr[MatchOptions] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
     ): CostCategoryValues = {
       val __obj = js.Dynamic.literal()
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      MatchOptions.foreach(__v => __obj.updateDynamic("MatchOptions")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategoryValues]
     }
@@ -399,6 +670,74 @@ package costexplorer {
   }
 
   @js.native
+  trait CreateAnomalyMonitorRequest extends js.Object {
+    var AnomalyMonitor: AnomalyMonitor
+  }
+
+  object CreateAnomalyMonitorRequest {
+    @inline
+    def apply(
+        AnomalyMonitor: AnomalyMonitor
+    ): CreateAnomalyMonitorRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyMonitor" -> AnomalyMonitor.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAnomalyMonitorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAnomalyMonitorResponse extends js.Object {
+    var MonitorArn: GenericString
+  }
+
+  object CreateAnomalyMonitorResponse {
+    @inline
+    def apply(
+        MonitorArn: GenericString
+    ): CreateAnomalyMonitorResponse = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAnomalyMonitorResponse]
+    }
+  }
+
+  @js.native
+  trait CreateAnomalySubscriptionRequest extends js.Object {
+    var AnomalySubscription: AnomalySubscription
+  }
+
+  object CreateAnomalySubscriptionRequest {
+    @inline
+    def apply(
+        AnomalySubscription: AnomalySubscription
+    ): CreateAnomalySubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalySubscription" -> AnomalySubscription.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAnomalySubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAnomalySubscriptionResponse extends js.Object {
+    var SubscriptionArn: GenericString
+  }
+
+  object CreateAnomalySubscriptionResponse {
+    @inline
+    def apply(
+        SubscriptionArn: GenericString
+    ): CreateAnomalySubscriptionResponse = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAnomalySubscriptionResponse]
+    }
+  }
+
+  @js.native
   trait CreateCostCategoryDefinitionRequest extends js.Object {
     var Name: CostCategoryName
     var RuleVersion: CostCategoryRuleVersion
@@ -507,6 +846,62 @@ package costexplorer {
         "Start" -> Start.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DateInterval]
+    }
+  }
+
+  @js.native
+  trait DeleteAnomalyMonitorRequest extends js.Object {
+    var MonitorArn: GenericString
+  }
+
+  object DeleteAnomalyMonitorRequest {
+    @inline
+    def apply(
+        MonitorArn: GenericString
+    ): DeleteAnomalyMonitorRequest = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAnomalyMonitorRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAnomalyMonitorResponse extends js.Object
+
+  object DeleteAnomalyMonitorResponse {
+    @inline
+    def apply(): DeleteAnomalyMonitorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAnomalyMonitorResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteAnomalySubscriptionRequest extends js.Object {
+    var SubscriptionArn: GenericString
+  }
+
+  object DeleteAnomalySubscriptionRequest {
+    @inline
+    def apply(
+        SubscriptionArn: GenericString
+    ): DeleteAnomalySubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAnomalySubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAnomalySubscriptionResponse extends js.Object
+
+  object DeleteAnomalySubscriptionResponse {
+    @inline
+    def apply(): DeleteAnomalySubscriptionResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAnomalySubscriptionResponse]
     }
   }
 
@@ -694,6 +1089,33 @@ package costexplorer {
     }
   }
 
+  /** The EBS field that contains a list of EBS metrics associated with the current instance.
+    */
+  @js.native
+  trait EBSResourceUtilization extends js.Object {
+    var EbsReadBytesPerSecond: js.UndefOr[GenericString]
+    var EbsReadOpsPerSecond: js.UndefOr[GenericString]
+    var EbsWriteBytesPerSecond: js.UndefOr[GenericString]
+    var EbsWriteOpsPerSecond: js.UndefOr[GenericString]
+  }
+
+  object EBSResourceUtilization {
+    @inline
+    def apply(
+        EbsReadBytesPerSecond: js.UndefOr[GenericString] = js.undefined,
+        EbsReadOpsPerSecond: js.UndefOr[GenericString] = js.undefined,
+        EbsWriteBytesPerSecond: js.UndefOr[GenericString] = js.undefined,
+        EbsWriteOpsPerSecond: js.UndefOr[GenericString] = js.undefined
+    ): EBSResourceUtilization = {
+      val __obj = js.Dynamic.literal()
+      EbsReadBytesPerSecond.foreach(__v => __obj.updateDynamic("EbsReadBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      EbsReadOpsPerSecond.foreach(__v => __obj.updateDynamic("EbsReadOpsPerSecond")(__v.asInstanceOf[js.Any]))
+      EbsWriteBytesPerSecond.foreach(__v => __obj.updateDynamic("EbsWriteBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      EbsWriteOpsPerSecond.foreach(__v => __obj.updateDynamic("EbsWriteOpsPerSecond")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EBSResourceUtilization]
+    }
+  }
+
   /** Details about the Amazon EC2 instances that AWS recommends that you purchase.
     */
   @js.native
@@ -779,6 +1201,7 @@ package costexplorer {
     */
   @js.native
   trait EC2ResourceUtilization extends js.Object {
+    var EBSResourceUtilization: js.UndefOr[EBSResourceUtilization]
     var MaxCpuUtilizationPercentage: js.UndefOr[GenericString]
     var MaxMemoryUtilizationPercentage: js.UndefOr[GenericString]
     var MaxStorageUtilizationPercentage: js.UndefOr[GenericString]
@@ -787,11 +1210,13 @@ package costexplorer {
   object EC2ResourceUtilization {
     @inline
     def apply(
+        EBSResourceUtilization: js.UndefOr[EBSResourceUtilization] = js.undefined,
         MaxCpuUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
         MaxMemoryUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
         MaxStorageUtilizationPercentage: js.UndefOr[GenericString] = js.undefined
     ): EC2ResourceUtilization = {
       val __obj = js.Dynamic.literal()
+      EBSResourceUtilization.foreach(__v => __obj.updateDynamic("EBSResourceUtilization")(__v.asInstanceOf[js.Any]))
       MaxCpuUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxCpuUtilizationPercentage")(__v.asInstanceOf[js.Any]))
       MaxMemoryUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxMemoryUtilizationPercentage")(__v.asInstanceOf[js.Any]))
       MaxStorageUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxStorageUtilizationPercentage")(__v.asInstanceOf[js.Any]))
@@ -881,7 +1306,7 @@ package costexplorer {
   }
 
   /** Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
-    * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:
+    * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example looks like:
     * <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
     * The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
     * <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
@@ -950,33 +1375,176 @@ package costexplorer {
   }
 
   @js.native
+  trait GetAnomaliesRequest extends js.Object {
+    var DateInterval: AnomalyDateInterval
+    var Feedback: js.UndefOr[AnomalyFeedbackType]
+    var MaxResults: js.UndefOr[PageSize]
+    var MonitorArn: js.UndefOr[GenericString]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var TotalImpact: js.UndefOr[TotalImpactFilter]
+  }
+
+  object GetAnomaliesRequest {
+    @inline
+    def apply(
+        DateInterval: AnomalyDateInterval,
+        Feedback: js.UndefOr[AnomalyFeedbackType] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MonitorArn: js.UndefOr[GenericString] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        TotalImpact: js.UndefOr[TotalImpactFilter] = js.undefined
+    ): GetAnomaliesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DateInterval" -> DateInterval.asInstanceOf[js.Any]
+      )
+
+      Feedback.foreach(__v => __obj.updateDynamic("Feedback")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      TotalImpact.foreach(__v => __obj.updateDynamic("TotalImpact")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAnomaliesRequest]
+    }
+  }
+
+  @js.native
+  trait GetAnomaliesResponse extends js.Object {
+    var Anomalies: Anomalies
+    var NextPageToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetAnomaliesResponse {
+    @inline
+    def apply(
+        Anomalies: Anomalies,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetAnomaliesResponse = {
+      val __obj = js.Dynamic.literal(
+        "Anomalies" -> Anomalies.asInstanceOf[js.Any]
+      )
+
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAnomaliesResponse]
+    }
+  }
+
+  @js.native
+  trait GetAnomalyMonitorsRequest extends js.Object {
+    var MaxResults: js.UndefOr[PageSize]
+    var MonitorArnList: js.UndefOr[Values]
+    var NextPageToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetAnomalyMonitorsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MonitorArnList: js.UndefOr[Values] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetAnomalyMonitorsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MonitorArnList.foreach(__v => __obj.updateDynamic("MonitorArnList")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAnomalyMonitorsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAnomalyMonitorsResponse extends js.Object {
+    var AnomalyMonitors: AnomalyMonitors
+    var NextPageToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetAnomalyMonitorsResponse {
+    @inline
+    def apply(
+        AnomalyMonitors: AnomalyMonitors,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetAnomalyMonitorsResponse = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyMonitors" -> AnomalyMonitors.asInstanceOf[js.Any]
+      )
+
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAnomalyMonitorsResponse]
+    }
+  }
+
+  @js.native
+  trait GetAnomalySubscriptionsRequest extends js.Object {
+    var MaxResults: js.UndefOr[PageSize]
+    var MonitorArn: js.UndefOr[GenericString]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var SubscriptionArnList: js.UndefOr[Values]
+  }
+
+  object GetAnomalySubscriptionsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MonitorArn: js.UndefOr[GenericString] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        SubscriptionArnList: js.UndefOr[Values] = js.undefined
+    ): GetAnomalySubscriptionsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      SubscriptionArnList.foreach(__v => __obj.updateDynamic("SubscriptionArnList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAnomalySubscriptionsRequest]
+    }
+  }
+
+  @js.native
+  trait GetAnomalySubscriptionsResponse extends js.Object {
+    var AnomalySubscriptions: AnomalySubscriptions
+    var NextPageToken: js.UndefOr[NextPageToken]
+  }
+
+  object GetAnomalySubscriptionsResponse {
+    @inline
+    def apply(
+        AnomalySubscriptions: AnomalySubscriptions,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetAnomalySubscriptionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "AnomalySubscriptions" -> AnomalySubscriptions.asInstanceOf[js.Any]
+      )
+
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAnomalySubscriptionsResponse]
+    }
+  }
+
+  @js.native
   trait GetCostAndUsageRequest extends js.Object {
+    var Metrics: MetricNames
     var TimePeriod: DateInterval
     var Filter: js.UndefOr[Expression]
     var Granularity: js.UndefOr[Granularity]
     var GroupBy: js.UndefOr[GroupDefinitions]
-    var Metrics: js.UndefOr[MetricNames]
     var NextPageToken: js.UndefOr[NextPageToken]
   }
 
   object GetCostAndUsageRequest {
     @inline
     def apply(
+        Metrics: MetricNames,
         TimePeriod: DateInterval,
         Filter: js.UndefOr[Expression] = js.undefined,
         Granularity: js.UndefOr[Granularity] = js.undefined,
         GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
-        Metrics: js.UndefOr[MetricNames] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined
     ): GetCostAndUsageRequest = {
       val __obj = js.Dynamic.literal(
+        "Metrics" -> Metrics.asInstanceOf[js.Any],
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCostAndUsageRequest]
     }
@@ -1006,8 +1574,8 @@ package costexplorer {
 
   @js.native
   trait GetCostAndUsageWithResourcesRequest extends js.Object {
+    var Filter: Expression
     var TimePeriod: DateInterval
-    var Filter: js.UndefOr[Expression]
     var Granularity: js.UndefOr[Granularity]
     var GroupBy: js.UndefOr[GroupDefinitions]
     var Metrics: js.UndefOr[MetricNames]
@@ -1017,18 +1585,18 @@ package costexplorer {
   object GetCostAndUsageWithResourcesRequest {
     @inline
     def apply(
+        Filter: Expression,
         TimePeriod: DateInterval,
-        Filter: js.UndefOr[Expression] = js.undefined,
         Granularity: js.UndefOr[Granularity] = js.undefined,
         GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
         Metrics: js.UndefOr[MetricNames] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined
     ): GetCostAndUsageWithResourcesRequest = {
       val __obj = js.Dynamic.literal(
+        "Filter" -> Filter.asInstanceOf[js.Any],
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
-      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
       Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
@@ -1782,6 +2350,29 @@ package costexplorer {
     @inline def values = js.Array(DIMENSION, TAG, COST_CATEGORY)
   }
 
+  /** The anomaly's dollar value.
+    */
+  @js.native
+  trait Impact extends js.Object {
+    var MaxImpact: GenericDouble
+    var TotalImpact: js.UndefOr[GenericDouble]
+  }
+
+  object Impact {
+    @inline
+    def apply(
+        MaxImpact: GenericDouble,
+        TotalImpact: js.UndefOr[GenericDouble] = js.undefined
+    ): Impact = {
+      val __obj = js.Dynamic.literal(
+        "MaxImpact" -> MaxImpact.asInstanceOf[js.Any]
+      )
+
+      TotalImpact.foreach(__v => __obj.updateDynamic("TotalImpact")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Impact]
+    }
+  }
+
   /** Details about the instances that AWS recommends that you purchase.
     */
   @js.native
@@ -1930,6 +2521,36 @@ package costexplorer {
   }
 
   @js.native
+  sealed trait MonitorDimension extends js.Any
+  object MonitorDimension {
+    val SERVICE = "SERVICE".asInstanceOf[MonitorDimension]
+
+    @inline def values = js.Array(SERVICE)
+  }
+
+  @js.native
+  sealed trait MonitorType extends js.Any
+  object MonitorType {
+    val DIMENSIONAL = "DIMENSIONAL".asInstanceOf[MonitorType]
+    val CUSTOM = "CUSTOM".asInstanceOf[MonitorType]
+
+    @inline def values = js.Array(DIMENSIONAL, CUSTOM)
+  }
+
+  @js.native
+  sealed trait NumericOperator extends js.Any
+  object NumericOperator {
+    val EQUAL = "EQUAL".asInstanceOf[NumericOperator]
+    val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[NumericOperator]
+    val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[NumericOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[NumericOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[NumericOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[NumericOperator]
+
+    @inline def values = js.Array(EQUAL, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, BETWEEN)
+  }
+
+  @js.native
   sealed trait OfferingClass extends js.Any
   object OfferingClass {
     val STANDARD = "STANDARD".asInstanceOf[OfferingClass]
@@ -1949,6 +2570,43 @@ package costexplorer {
     val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
 
     @inline def values = js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
+  }
+
+  @js.native
+  trait ProvideAnomalyFeedbackRequest extends js.Object {
+    var AnomalyId: GenericString
+    var Feedback: AnomalyFeedbackType
+  }
+
+  object ProvideAnomalyFeedbackRequest {
+    @inline
+    def apply(
+        AnomalyId: GenericString,
+        Feedback: AnomalyFeedbackType
+    ): ProvideAnomalyFeedbackRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyId" -> AnomalyId.asInstanceOf[js.Any],
+        "Feedback" -> Feedback.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProvideAnomalyFeedbackRequest]
+    }
+  }
+
+  @js.native
+  trait ProvideAnomalyFeedbackResponse extends js.Object {
+    var AnomalyId: GenericString
+  }
+
+  object ProvideAnomalyFeedbackResponse {
+    @inline
+    def apply(
+        AnomalyId: GenericString
+    ): ProvideAnomalyFeedbackResponse = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyId" -> AnomalyId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProvideAnomalyFeedbackResponse]
+    }
   }
 
   /** Details about the Amazon RDS instances that AWS recommends that you purchase.
@@ -2465,6 +3123,33 @@ package costexplorer {
     @inline def values = js.Array(TERMINATE, MODIFY)
   }
 
+  /** The combination of AWS service, linked account, Region, and usage type where a cost anomaly is observed.
+    */
+  @js.native
+  trait RootCause extends js.Object {
+    var LinkedAccount: js.UndefOr[GenericString]
+    var Region: js.UndefOr[GenericString]
+    var Service: js.UndefOr[GenericString]
+    var UsageType: js.UndefOr[GenericString]
+  }
+
+  object RootCause {
+    @inline
+    def apply(
+        LinkedAccount: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        Service: js.UndefOr[GenericString] = js.undefined,
+        UsageType: js.UndefOr[GenericString] = js.undefined
+    ): RootCause = {
+      val __obj = js.Dynamic.literal()
+      LinkedAccount.foreach(__v => __obj.updateDynamic("LinkedAccount")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
+      UsageType.foreach(__v => __obj.updateDynamic("UsageType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RootCause]
+    }
+  }
+
   /** The amortized amount of Savings Plans purchased in a specific account during a specific time interval.
     */
   @js.native
@@ -2667,6 +3352,7 @@ package costexplorer {
     */
   @js.native
   trait SavingsPlansPurchaseRecommendationMetadata extends js.Object {
+    var AdditionalMetadata: js.UndefOr[GenericString]
     var GenerationTimestamp: js.UndefOr[GenericString]
     var RecommendationId: js.UndefOr[GenericString]
   }
@@ -2674,10 +3360,12 @@ package costexplorer {
   object SavingsPlansPurchaseRecommendationMetadata {
     @inline
     def apply(
+        AdditionalMetadata: js.UndefOr[GenericString] = js.undefined,
         GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
         RecommendationId: js.UndefOr[GenericString] = js.undefined
     ): SavingsPlansPurchaseRecommendationMetadata = {
       val __obj = js.Dynamic.literal()
+      AdditionalMetadata.foreach(__v => __obj.updateDynamic("AdditionalMetadata")(__v.asInstanceOf[js.Any]))
       GenerationTimestamp.foreach(__v => __obj.updateDynamic("GenerationTimestamp")(__v.asInstanceOf[js.Any]))
       RecommendationId.foreach(__v => __obj.updateDynamic("RecommendationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SavingsPlansPurchaseRecommendationMetadata]
@@ -2835,7 +3523,7 @@ package costexplorer {
     }
   }
 
-  /** A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+  /** A single daily or monthly Savings Plans utilization rate, and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
     */
   @js.native
   trait SavingsPlansUtilizationDetail extends js.Object {
@@ -2881,6 +3569,48 @@ package costexplorer {
       EC2Specification.foreach(__v => __obj.updateDynamic("EC2Specification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSpecification]
     }
+  }
+
+  /** The recipient of <code>AnomalySubscription</code> notifications.
+    */
+  @js.native
+  trait Subscriber extends js.Object {
+    var Address: js.UndefOr[SubscriberAddress]
+    var Status: js.UndefOr[SubscriberStatus]
+    var Type: js.UndefOr[SubscriberType]
+  }
+
+  object Subscriber {
+    @inline
+    def apply(
+        Address: js.UndefOr[SubscriberAddress] = js.undefined,
+        Status: js.UndefOr[SubscriberStatus] = js.undefined,
+        Type: js.UndefOr[SubscriberType] = js.undefined
+    ): Subscriber = {
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Subscriber]
+    }
+  }
+
+  @js.native
+  sealed trait SubscriberStatus extends js.Any
+  object SubscriberStatus {
+    val CONFIRMED = "CONFIRMED".asInstanceOf[SubscriberStatus]
+    val DECLINED = "DECLINED".asInstanceOf[SubscriberStatus]
+
+    @inline def values = js.Array(CONFIRMED, DECLINED)
+  }
+
+  @js.native
+  sealed trait SubscriberType extends js.Any
+  object SubscriberType {
+    val EMAIL = "EMAIL".asInstanceOf[SubscriberType]
+    val SNS = "SNS".asInstanceOf[SubscriberType]
+
+    @inline def values = js.Array(EMAIL, SNS)
   }
 
   @js.native
@@ -2976,6 +3706,120 @@ package costexplorer {
       CurrencyCode.foreach(__v => __obj.updateDynamic("CurrencyCode")(__v.asInstanceOf[js.Any]))
       EstimatedMonthlySavings.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateRecommendationDetail]
+    }
+  }
+
+  /** Filters cost anomalies based on the total impact.
+    */
+  @js.native
+  trait TotalImpactFilter extends js.Object {
+    var NumericOperator: NumericOperator
+    var StartValue: GenericDouble
+    var EndValue: js.UndefOr[GenericDouble]
+  }
+
+  object TotalImpactFilter {
+    @inline
+    def apply(
+        NumericOperator: NumericOperator,
+        StartValue: GenericDouble,
+        EndValue: js.UndefOr[GenericDouble] = js.undefined
+    ): TotalImpactFilter = {
+      val __obj = js.Dynamic.literal(
+        "NumericOperator" -> NumericOperator.asInstanceOf[js.Any],
+        "StartValue" -> StartValue.asInstanceOf[js.Any]
+      )
+
+      EndValue.foreach(__v => __obj.updateDynamic("EndValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TotalImpactFilter]
+    }
+  }
+
+  @js.native
+  trait UpdateAnomalyMonitorRequest extends js.Object {
+    var MonitorArn: GenericString
+    var MonitorName: js.UndefOr[GenericString]
+  }
+
+  object UpdateAnomalyMonitorRequest {
+    @inline
+    def apply(
+        MonitorArn: GenericString,
+        MonitorName: js.UndefOr[GenericString] = js.undefined
+    ): UpdateAnomalyMonitorRequest = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+
+      MonitorName.foreach(__v => __obj.updateDynamic("MonitorName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAnomalyMonitorRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAnomalyMonitorResponse extends js.Object {
+    var MonitorArn: GenericString
+  }
+
+  object UpdateAnomalyMonitorResponse {
+    @inline
+    def apply(
+        MonitorArn: GenericString
+    ): UpdateAnomalyMonitorResponse = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateAnomalyMonitorResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateAnomalySubscriptionRequest extends js.Object {
+    var SubscriptionArn: GenericString
+    var Frequency: js.UndefOr[AnomalySubscriptionFrequency]
+    var MonitorArnList: js.UndefOr[Values]
+    var Subscribers: js.UndefOr[Subscribers]
+    var SubscriptionName: js.UndefOr[GenericString]
+    var Threshold: js.UndefOr[NullableNonNegativeDouble]
+  }
+
+  object UpdateAnomalySubscriptionRequest {
+    @inline
+    def apply(
+        SubscriptionArn: GenericString,
+        Frequency: js.UndefOr[AnomalySubscriptionFrequency] = js.undefined,
+        MonitorArnList: js.UndefOr[Values] = js.undefined,
+        Subscribers: js.UndefOr[Subscribers] = js.undefined,
+        SubscriptionName: js.UndefOr[GenericString] = js.undefined,
+        Threshold: js.UndefOr[NullableNonNegativeDouble] = js.undefined
+    ): UpdateAnomalySubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
+      )
+
+      Frequency.foreach(__v => __obj.updateDynamic("Frequency")(__v.asInstanceOf[js.Any]))
+      MonitorArnList.foreach(__v => __obj.updateDynamic("MonitorArnList")(__v.asInstanceOf[js.Any]))
+      Subscribers.foreach(__v => __obj.updateDynamic("Subscribers")(__v.asInstanceOf[js.Any]))
+      SubscriptionName.foreach(__v => __obj.updateDynamic("SubscriptionName")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAnomalySubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAnomalySubscriptionResponse extends js.Object {
+    var SubscriptionArn: GenericString
+  }
+
+  object UpdateAnomalySubscriptionResponse {
+    @inline
+    def apply(
+        SubscriptionArn: GenericString
+    ): UpdateAnomalySubscriptionResponse = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateAnomalySubscriptionResponse]
     }
   }
 

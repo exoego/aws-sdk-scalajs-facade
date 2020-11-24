@@ -11,6 +11,7 @@ package object kinesisanalyticsv2 {
   type ApplicationName = String
   type ApplicationSummaries = js.Array[ApplicationSummary]
   type ApplicationVersionId = Double
+  type AuthorizedUrl = String
   type BooleanObject = Boolean
   type BucketARN = String
   type CheckpointInterval = Double
@@ -67,6 +68,7 @@ package object kinesisanalyticsv2 {
   type RoleARN = String
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
+  type SessionExpirationDurationInSeconds = Double
   type SnapshotName = String
   type SnapshotSummaries = js.Array[SnapshotDetails]
   type SqlRunConfigurations = js.Array[SqlRunConfiguration]
@@ -93,6 +95,7 @@ package object kinesisanalyticsv2 {
     @inline def addApplicationReferenceDataSourceFuture(params: AddApplicationReferenceDataSourceRequest): Future[AddApplicationReferenceDataSourceResponse] = service.addApplicationReferenceDataSource(params).promise().toFuture
     @inline def addApplicationVpcConfigurationFuture(params: AddApplicationVpcConfigurationRequest): Future[AddApplicationVpcConfigurationResponse] = service.addApplicationVpcConfiguration(params).promise().toFuture
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
+    @inline def createApplicationPresignedUrlFuture(params: CreateApplicationPresignedUrlRequest): Future[CreateApplicationPresignedUrlResponse] = service.createApplicationPresignedUrl(params).promise().toFuture
     @inline def createApplicationSnapshotFuture(params: CreateApplicationSnapshotRequest): Future[CreateApplicationSnapshotResponse] = service.createApplicationSnapshot(params).promise().toFuture
     @inline def deleteApplicationCloudWatchLoggingOptionFuture(params: DeleteApplicationCloudWatchLoggingOptionRequest): Future[DeleteApplicationCloudWatchLoggingOptionResponse] = service.deleteApplicationCloudWatchLoggingOption(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] = service.deleteApplication(params).promise().toFuture
@@ -129,6 +132,7 @@ package kinesisanalyticsv2 {
     def addApplicationReferenceDataSource(params: AddApplicationReferenceDataSourceRequest): Request[AddApplicationReferenceDataSourceResponse] = js.native
     def addApplicationVpcConfiguration(params: AddApplicationVpcConfigurationRequest): Request[AddApplicationVpcConfigurationResponse] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
+    def createApplicationPresignedUrl(params: CreateApplicationPresignedUrlRequest): Request[CreateApplicationPresignedUrlResponse] = js.native
     def createApplicationSnapshot(params: CreateApplicationSnapshotRequest): Request[CreateApplicationSnapshotResponse] = js.native
     def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResponse] = js.native
     def deleteApplicationCloudWatchLoggingOption(params: DeleteApplicationCloudWatchLoggingOptionRequest): Request[DeleteApplicationCloudWatchLoggingOptionResponse] = js.native
@@ -426,7 +430,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes code configuration for a Java-based Kinesis Data Analytics application.
+  /** Describes code configuration for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationCodeConfiguration extends js.Object {
@@ -449,7 +453,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes code configuration for a Java-based Kinesis Data Analytics application.
+  /** Describes code configuration for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationCodeConfigurationDescription extends js.Object {
@@ -472,7 +476,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes code configuration updates to a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationCodeConfigurationUpdate extends js.Object {
@@ -493,7 +497,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
+  /** Specifies the creation parameters for a Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationConfiguration extends js.Object {
@@ -528,7 +532,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes details about the application code and starting parameters for an Amazon Kinesis Data Analytics application.
+  /** Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationConfigurationDescription extends js.Object {
@@ -680,7 +684,7 @@ package kinesisanalyticsv2 {
     @inline def values = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
   }
 
-  /** Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+  /** Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationSnapshotConfiguration extends js.Object {
@@ -699,7 +703,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+  /** Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationSnapshotConfigurationDescription extends js.Object {
@@ -718,7 +722,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+  /** Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationSnapshotConfigurationUpdate extends js.Object {
@@ -746,8 +750,10 @@ package kinesisanalyticsv2 {
     val READY = "READY".asInstanceOf[ApplicationStatus]
     val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
     val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
+    val AUTOSCALING = "AUTOSCALING".asInstanceOf[ApplicationStatus]
+    val FORCE_STOPPING = "FORCE_STOPPING".asInstanceOf[ApplicationStatus]
 
-    @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
+    @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
   }
 
   /** Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
@@ -781,7 +787,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter:
+  /** For a SQL-based Kinesis Data Analytics application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter:
     * <code>"name1", "address1"</code>
     * <code>"name2", "address2"</code>
     */
@@ -805,7 +811,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see [[https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance| Checkpoints for Fault Tolerance]] in the [[https://ci.apache.org/projects/flink/flink-docs-release-1.6/|Apache Flink Documentation]].
+  /** Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance| Checkpoints for Fault Tolerance]] in the [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/|Apache Flink Documentation]].
     */
   @js.native
   trait CheckpointConfiguration extends js.Object {
@@ -834,7 +840,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait CheckpointConfigurationDescription extends js.Object {
@@ -861,7 +867,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to the checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes updates to the checkpointing parameters for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait CheckpointConfigurationUpdate extends js.Object {
@@ -956,7 +962,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data Analytics application.
+  /** Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait CodeContent extends js.Object {
@@ -980,7 +986,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes details about the application code for a Java-based Kinesis Data Analytics application.
+  /** Describes details about the application code for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait CodeContentDescription extends js.Object {
@@ -1016,7 +1022,7 @@ package kinesisanalyticsv2 {
     @inline def values = js.Array(PLAINTEXT, ZIPFILE)
   }
 
-  /** Describes an update to the code of a Java-based Kinesis Data Analytics application.
+  /** Describes an update to the code of a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait CodeContentUpdate extends js.Object {
@@ -1047,6 +1053,46 @@ package kinesisanalyticsv2 {
     val CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
 
     @inline def values = js.Array(DEFAULT, CUSTOM)
+  }
+
+  @js.native
+  trait CreateApplicationPresignedUrlRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var UrlType: UrlType
+    var SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds]
+  }
+
+  object CreateApplicationPresignedUrlRequest {
+    @inline
+    def apply(
+        ApplicationName: ApplicationName,
+        UrlType: UrlType,
+        SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds] = js.undefined
+    ): CreateApplicationPresignedUrlRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "UrlType" -> UrlType.asInstanceOf[js.Any]
+      )
+
+      SessionExpirationDurationInSeconds.foreach(__v => __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationPresignedUrlRequest]
+    }
+  }
+
+  @js.native
+  trait CreateApplicationPresignedUrlResponse extends js.Object {
+    var AuthorizedUrl: js.UndefOr[AuthorizedUrl]
+  }
+
+  object CreateApplicationPresignedUrlResponse {
+    @inline
+    def apply(
+        AuthorizedUrl: js.UndefOr[AuthorizedUrl] = js.undefined
+    ): CreateApplicationPresignedUrlResponse = {
+      val __obj = js.Dynamic.literal()
+      AuthorizedUrl.foreach(__v => __obj.updateDynamic("AuthorizedUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApplicationPresignedUrlResponse]
+    }
   }
 
   @js.native
@@ -1486,7 +1532,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application.
+  /** Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait DestinationSchema extends js.Object {
@@ -1560,7 +1606,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes execution properties for a Java-based Kinesis Data Analytics application.
+  /** Describes execution properties for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait EnvironmentProperties extends js.Object {
@@ -1579,7 +1625,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the execution properties for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes the execution properties for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait EnvironmentPropertyDescriptions extends js.Object {
@@ -1597,7 +1643,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to the execution property groups for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait EnvironmentPropertyUpdates extends js.Object {
@@ -1616,7 +1662,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait FlinkApplicationConfiguration extends js.Object {
@@ -1640,7 +1686,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait FlinkApplicationConfigurationDescription extends js.Object {
@@ -1667,7 +1713,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to the configuration parameters for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes updates to the configuration parameters for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait FlinkApplicationConfigurationUpdate extends js.Object {
@@ -1691,7 +1737,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+  /** Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait FlinkRunConfiguration extends js.Object {
@@ -1709,7 +1755,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you configure the application input for an SQL-based Amazon Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
+  /** When you configure the application input for a SQL-based Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
     */
   @js.native
   trait Input extends js.Object {
@@ -1744,7 +1790,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the application input configuration for an SQL-based Amazon Kinesis Data Analytics application.
+  /** Describes the application input configuration for a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait InputDescription extends js.Object {
@@ -1786,7 +1832,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream in an SQL-based Amazon Kinesis Data Analytics application.
+  /** An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait InputLambdaProcessor extends js.Object {
@@ -1805,7 +1851,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream.
+  /** For a SQL-based Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream.
     */
   @js.native
   trait InputLambdaProcessorDescription extends js.Object {
@@ -1828,7 +1874,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
+  /** For a SQL-based Kinesis Data Analytics application, represents an update to the <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream.
     */
   @js.native
   trait InputLambdaProcessorUpdate extends js.Object {
@@ -1847,7 +1893,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source.
+  /** For a SQL-based Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source.
     */
   @js.native
   trait InputParallelism extends js.Object {
@@ -1865,7 +1911,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, provides updates to the parallelism count.
+  /** For a SQL-based Kinesis Data Analytics application, provides updates to the parallelism count.
     */
   @js.native
   trait InputParallelismUpdate extends js.Object {
@@ -1884,7 +1930,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]].
+  /** For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|AWS Lambda]].
     */
   @js.native
   trait InputProcessingConfiguration extends js.Object {
@@ -1903,7 +1949,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is [[https://aws.amazon.com/documentation/lambda/|AWS Lambda]].
+  /** For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|AWS Lambda]].
     */
   @js.native
   trait InputProcessingConfigurationDescription extends js.Object {
@@ -1921,7 +1967,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes updates to an <a>InputProcessingConfiguration</a>.
+  /** For a SQL-based Kinesis Data Analytics application, describes updates to an <a>InputProcessingConfiguration</a>.
     */
   @js.native
   trait InputProcessingConfigurationUpdate extends js.Object {
@@ -1940,7 +1986,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates for an SQL-based Amazon Kinesis Data Analytics application's input schema.
+  /** Describes updates for an SQL-based Kinesis Data Analytics application's input schema.
     */
   @js.native
   trait InputSchemaUpdate extends js.Object {
@@ -1992,7 +2038,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).
+  /** For a SQL-based Kinesis Data Analytics application, describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).
     */
   @js.native
   trait InputUpdate extends js.Object {
@@ -2030,7 +2076,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.
+  /** For a SQL-based Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.
     */
   @js.native
   trait JSONMappingParameters extends js.Object {
@@ -2049,7 +2095,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN).
+  /** For a SQL-based Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN).
     */
   @js.native
   trait KinesisFirehoseInput extends js.Object {
@@ -2091,7 +2137,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, when updating application input configuration, provides information about a Kinesis Data Firehose delivery stream as the streaming source.
+  /** For a SQL-based Kinesis Data Analytics application, when updating application input configuration, provides information about a Kinesis Data Firehose delivery stream as the streaming source.
     */
   @js.native
   trait KinesisFirehoseInputUpdate extends js.Object {
@@ -2110,7 +2156,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of the delivery stream.
+  /** For a SQL-based Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of the delivery stream.
     */
   @js.native
   trait KinesisFirehoseOutput extends js.Object {
@@ -2129,7 +2175,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination.
+  /** For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination.
     */
   @js.native
   trait KinesisFirehoseOutputDescription extends js.Object {
@@ -2152,7 +2198,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, when updating an output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.
+  /** For a SQL-based Kinesis Data Analytics application, when updating an output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.
     */
   @js.native
   trait KinesisFirehoseOutputUpdate extends js.Object {
@@ -2171,7 +2217,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Identifies an Amazon Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).
+  /** Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).
     */
   @js.native
   trait KinesisStreamsInput extends js.Object {
@@ -2190,7 +2236,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration.
+  /** For a SQL-based Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration.
     */
   @js.native
   trait KinesisStreamsInputDescription extends js.Object {
@@ -2213,7 +2259,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you update the input configuration for an SQL-based Amazon Kinesis Data Analytics application, provides information about an Amazon Kinesis stream as the streaming source.
+  /** When you update the input configuration for a SQL-based Kinesis Data Analytics application, provides information about a Kinesis stream as the streaming source.
     */
   @js.native
   trait KinesisStreamsInputUpdate extends js.Object {
@@ -2232,7 +2278,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN).
+  /** When you configure a SQL-based Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN).
     */
   @js.native
   trait KinesisStreamsOutput extends js.Object {
@@ -2251,7 +2297,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination.
+  /** For an SQL-based Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination.
     */
   @js.native
   trait KinesisStreamsOutputDescription extends js.Object {
@@ -2274,7 +2320,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis data stream that is configured as the destination.
+  /** When you update a SQL-based Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about a Kinesis data stream that is configured as the destination.
     */
   @js.native
   trait KinesisStreamsOutputUpdate extends js.Object {
@@ -2293,7 +2339,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function.
+  /** When you configure a SQL-based Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function.
     */
   @js.native
   trait LambdaOutput extends js.Object {
@@ -2312,7 +2358,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application output, describes the AWS Lambda function that is configured as its destination.
+  /** For a SQL-based Kinesis Data Analytics application's output, describes the AWS Lambda function that is configured as its destination.
     */
   @js.native
   trait LambdaOutputDescription extends js.Object {
@@ -2335,7 +2381,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you update an SQL-based Amazon Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function that is configured as the destination.
+  /** When you update an SQL-based Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function that is configured as the destination.
     */
   @js.native
   trait LambdaOutputUpdate extends js.Object {
@@ -2481,7 +2527,7 @@ package kinesisanalyticsv2 {
     @inline def values = js.Array(INFO, WARN, ERROR, DEBUG)
   }
 
-  /** When you configure an SQL-based Amazon Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
+  /** When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
     */
   @js.native
   trait MappingParameters extends js.Object {
@@ -2513,7 +2559,7 @@ package kinesisanalyticsv2 {
     @inline def values = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
   }
 
-  /** Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
+  /** Describes configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
     */
   @js.native
   trait MonitoringConfiguration extends js.Object {
@@ -2539,7 +2585,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes configuration parameters for CloudWatch logging for a Java-based Kinesis Data Analytics application.
+  /** Describes configuration parameters for CloudWatch logging for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait MonitoringConfigurationDescription extends js.Object {
@@ -2563,7 +2609,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application.
+  /** Describes updates to configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait MonitoringConfigurationUpdate extends js.Object {
@@ -2587,7 +2633,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
+  /** Describes a SQL-based Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
     * <p/>
     */
   @js.native
@@ -2620,7 +2666,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
+  /** For a SQL-based Kinesis Data Analytics application, describes the application output configuration, which includes the in-application stream name and the destination where the stream data is written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait OutputDescription extends js.Object {
@@ -2653,7 +2699,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes updates to the output configuration identified by the <code>OutputId</code>.
+  /** For a SQL-based Kinesis Data Analytics application, describes updates to the output configuration identified by the <code>OutputId</code>.
     */
   @js.native
   trait OutputUpdate extends js.Object {
@@ -2688,7 +2734,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see [[https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html|Parallel Execution]] in the [[https://ci.apache.org/projects/flink/flink-docs-release-1.6/|Apache Flink Documentation]].
+  /** Describes parameters for how a Flink-based Kinesis Data Analytics application application executes multiple tasks simultaneously. For more information about parallelism, see [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html|Parallel Execution]] in the [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/|Apache Flink Documentation]].
     */
   @js.native
   trait ParallelismConfiguration extends js.Object {
@@ -2717,7 +2763,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks simultaneously.
+  /** Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.
     */
   @js.native
   trait ParallelismConfigurationDescription extends js.Object {
@@ -2747,7 +2793,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks simultaneously.
+  /** Describes updates to parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.
     */
   @js.native
   trait ParallelismConfigurationUpdate extends js.Object {
@@ -2774,7 +2820,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Property key-value pairs passed into a Java-based Kinesis Data Analytics application.
+  /** Property key-value pairs passed into a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait PropertyGroup extends js.Object {
@@ -2796,7 +2842,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
+  /** For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
     * Also used to describe the format of the reference data source.
     */
   @js.native
@@ -2823,7 +2869,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
+  /** For a SQL-based Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
     */
   @js.native
   trait RecordFormat extends js.Object {
@@ -2855,7 +2901,7 @@ package kinesisanalyticsv2 {
     @inline def values = js.Array(JSON, CSV)
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
+  /** For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
     */
   @js.native
   trait ReferenceDataSource extends js.Object {
@@ -2881,7 +2927,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the reference data source configured for an application.
+  /** For a SQL-based Kinesis Data Analytics application, describes the reference data source configured for an application.
     */
   @js.native
   trait ReferenceDataSourceDescription extends js.Object {
@@ -2910,7 +2956,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** When you update a reference data source configuration for a SQL-based Amazon Kinesis Data Analytics application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.
+  /** When you update a reference data source configuration for a SQL-based Kinesis Data Analytics application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.
     */
   @js.native
   trait ReferenceDataSourceUpdate extends js.Object {
@@ -2939,7 +2985,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the starting parameters for an Amazon Kinesis Data Analytics application.
+  /** Describes the starting parameters for an Kinesis Data Analytics application.
     */
   @js.native
   trait RunConfiguration extends js.Object {
@@ -2968,15 +3014,18 @@ package kinesisanalyticsv2 {
   @js.native
   trait RunConfigurationDescription extends js.Object {
     var ApplicationRestoreConfigurationDescription: js.UndefOr[ApplicationRestoreConfiguration]
+    var FlinkRunConfigurationDescription: js.UndefOr[FlinkRunConfiguration]
   }
 
   object RunConfigurationDescription {
     @inline
     def apply(
-        ApplicationRestoreConfigurationDescription: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined
+        ApplicationRestoreConfigurationDescription: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined,
+        FlinkRunConfigurationDescription: js.UndefOr[FlinkRunConfiguration] = js.undefined
     ): RunConfigurationDescription = {
       val __obj = js.Dynamic.literal()
       ApplicationRestoreConfigurationDescription.foreach(__v => __obj.updateDynamic("ApplicationRestoreConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      FlinkRunConfigurationDescription.foreach(__v => __obj.updateDynamic("FlinkRunConfigurationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunConfigurationDescription]
     }
   }
@@ -3008,11 +3057,12 @@ package kinesisanalyticsv2 {
     val `SQL-1_0` = "SQL-1_0".asInstanceOf[RuntimeEnvironment]
     val `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
     val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
+    val `FLINK-1_11` = "FLINK-1_11".asInstanceOf[RuntimeEnvironment]
 
-    @inline def values = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`)
+    @inline def values = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
   }
 
-  /** Describes the location of a Java-based Amazon Kinesis Data Analytics application's code stored in an S3 bucket.
+  /** Describes the location of a Flink-based Kinesis Data Analytics application's code stored in an S3 bucket.
     */
   @js.native
   trait S3ApplicationCodeLocationDescription extends js.Object {
@@ -3038,7 +3088,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.
+  /** For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.
     */
   @js.native
   trait S3Configuration extends js.Object {
@@ -3060,7 +3110,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For a Java-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
+  /** For a Flink-based Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
     */
   @js.native
   trait S3ContentLocation extends js.Object {
@@ -3086,7 +3136,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes an update for the Amazon S3 code content location for a Java-based Amazon Kinesis Data Analytics application.
+  /** Describes an update for the Amazon S3 code content location for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
   trait S3ContentLocationUpdate extends js.Object {
@@ -3110,7 +3160,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.
+  /** For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.
     * A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
     */
   @js.native
@@ -3132,7 +3182,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data.
+  /** For a SQL-based Kinesis Data Analytics application, provides the bucket name and object key name that stores the reference data.
     */
   @js.native
   trait S3ReferenceDataSourceDescription extends js.Object {
@@ -3158,7 +3208,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table.
+  /** For a SQL-based Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table.
     */
   @js.native
   trait S3ReferenceDataSourceUpdate extends js.Object {
@@ -3219,7 +3269,7 @@ package kinesisanalyticsv2 {
     @inline def values = js.Array(CREATING, READY, DELETING, FAILED)
   }
 
-  /** For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
+  /** For a SQL-based Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
     */
   @js.native
   trait SourceSchema extends js.Object {
@@ -3245,7 +3295,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application.
+  /** Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait SqlApplicationConfiguration extends js.Object {
@@ -3269,7 +3319,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application.
+  /** Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait SqlApplicationConfigurationDescription extends js.Object {
@@ -3293,7 +3343,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to the input streams, destination streams, and reference data sources for an SQL-based Kinesis Data Analytics application.
+  /** Describes updates to the input streams, destination streams, and reference data sources for a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait SqlApplicationConfigurationUpdate extends js.Object {
@@ -3317,7 +3367,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the starting parameters for an SQL-based Kinesis Data Analytics application.
+  /** Describes the starting parameters for a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait SqlRunConfiguration extends js.Object {
@@ -3373,16 +3423,20 @@ package kinesisanalyticsv2 {
   @js.native
   trait StopApplicationRequest extends js.Object {
     var ApplicationName: ApplicationName
+    var Force: js.UndefOr[BooleanObject]
   }
 
   object StopApplicationRequest {
     @inline
     def apply(
-        ApplicationName: ApplicationName
+        ApplicationName: ApplicationName,
+        Force: js.UndefOr[BooleanObject] = js.undefined
     ): StopApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
+
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopApplicationRequest]
     }
   }
@@ -3531,6 +3585,14 @@ package kinesisanalyticsv2 {
       )
       __obj.asInstanceOf[UpdateApplicationResponse]
     }
+  }
+
+  @js.native
+  sealed trait UrlType extends js.Any
+  object UrlType {
+    val FLINK_DASHBOARD_URL = "FLINK_DASHBOARD_URL".asInstanceOf[UrlType]
+
+    @inline def values = js.Array(FLINK_DASHBOARD_URL)
   }
 
   /** Describes the parameters of a VPC used by the application.

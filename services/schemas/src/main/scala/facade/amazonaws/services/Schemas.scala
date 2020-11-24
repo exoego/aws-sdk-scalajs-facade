@@ -41,6 +41,7 @@ package object schemas {
     @inline def describeDiscovererFuture(params: DescribeDiscovererRequest): Future[DescribeDiscovererResponse] = service.describeDiscoverer(params).promise().toFuture
     @inline def describeRegistryFuture(params: DescribeRegistryRequest): Future[DescribeRegistryResponse] = service.describeRegistry(params).promise().toFuture
     @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] = service.describeSchema(params).promise().toFuture
+    @inline def exportSchemaFuture(params: ExportSchemaRequest): Future[ExportSchemaResponse] = service.exportSchema(params).promise().toFuture
     @inline def getCodeBindingSourceFuture(params: GetCodeBindingSourceRequest): Future[GetCodeBindingSourceResponse] = service.getCodeBindingSource(params).promise().toFuture
     @inline def getDiscoveredSchemaFuture(params: GetDiscoveredSchemaRequest): Future[GetDiscoveredSchemaResponse] = service.getDiscoveredSchema(params).promise().toFuture
     @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] = service.getResourcePolicy(params).promise().toFuture
@@ -81,6 +82,7 @@ package schemas {
     def describeDiscoverer(params: DescribeDiscovererRequest): Request[DescribeDiscovererResponse] = js.native
     def describeRegistry(params: DescribeRegistryRequest): Request[DescribeRegistryResponse] = js.native
     def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse] = js.native
+    def exportSchema(params: ExportSchemaRequest): Request[ExportSchemaResponse] = js.native
     def getCodeBindingSource(params: GetCodeBindingSourceRequest): Request[GetCodeBindingSourceResponse] = js.native
     def getDiscoveredSchema(params: GetDiscoveredSchemaRequest): Request[GetDiscoveredSchemaResponse] = js.native
     def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse] = js.native
@@ -624,6 +626,61 @@ package schemas {
   }
 
   @js.native
+  trait ExportSchemaRequest extends js.Object {
+    var RegistryName: __string
+    var SchemaName: __string
+    var Type: __string
+    var SchemaVersion: js.UndefOr[__string]
+  }
+
+  object ExportSchemaRequest {
+    @inline
+    def apply(
+        RegistryName: __string,
+        SchemaName: __string,
+        Type: __string,
+        SchemaVersion: js.UndefOr[__string] = js.undefined
+    ): ExportSchemaRequest = {
+      val __obj = js.Dynamic.literal(
+        "RegistryName" -> RegistryName.asInstanceOf[js.Any],
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportSchemaRequest]
+    }
+  }
+
+  @js.native
+  trait ExportSchemaResponse extends js.Object {
+    var Content: js.UndefOr[__string]
+    var SchemaArn: js.UndefOr[__string]
+    var SchemaName: js.UndefOr[__string]
+    var SchemaVersion: js.UndefOr[__string]
+    var Type: js.UndefOr[__string]
+  }
+
+  object ExportSchemaResponse {
+    @inline
+    def apply(
+        Content: js.UndefOr[__string] = js.undefined,
+        SchemaArn: js.UndefOr[__string] = js.undefined,
+        SchemaName: js.UndefOr[__string] = js.undefined,
+        SchemaVersion: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[__string] = js.undefined
+    ): ExportSchemaResponse = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportSchemaResponse]
+    }
+  }
+
+  @js.native
   trait GetCodeBindingSourceRequest extends js.Object {
     var Language: __string
     var RegistryName: __string
@@ -1104,6 +1161,7 @@ package schemas {
     var SchemaArn: js.UndefOr[__string]
     var SchemaName: js.UndefOr[__string]
     var SchemaVersion: js.UndefOr[__string]
+    var Type: js.UndefOr[Type]
   }
 
   object SchemaVersionSummary {
@@ -1111,12 +1169,14 @@ package schemas {
     def apply(
         SchemaArn: js.UndefOr[__string] = js.undefined,
         SchemaName: js.UndefOr[__string] = js.undefined,
-        SchemaVersion: js.UndefOr[__string] = js.undefined
+        SchemaVersion: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[Type] = js.undefined
     ): SchemaVersionSummary = {
       val __obj = js.Dynamic.literal()
       SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaVersionSummary]
     }
   }
@@ -1150,17 +1210,20 @@ package schemas {
   trait SearchSchemaVersionSummary extends js.Object {
     var CreatedDate: js.UndefOr[__timestampIso8601]
     var SchemaVersion: js.UndefOr[__string]
+    var Type: js.UndefOr[Type]
   }
 
   object SearchSchemaVersionSummary {
     @inline
     def apply(
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-        SchemaVersion: js.UndefOr[__string] = js.undefined
+        SchemaVersion: js.UndefOr[__string] = js.undefined,
+        Type: js.UndefOr[Type] = js.undefined
     ): SearchSchemaVersionSummary = {
       val __obj = js.Dynamic.literal()
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchSchemaVersionSummary]
     }
   }
@@ -1309,8 +1372,9 @@ package schemas {
   sealed trait Type extends js.Any
   object Type {
     val OpenApi3 = "OpenApi3".asInstanceOf[Type]
+    val JSONSchemaDraft4 = "JSONSchemaDraft4".asInstanceOf[Type]
 
-    @inline def values = js.Array(OpenApi3)
+    @inline def values = js.Array(OpenApi3, JSONSchemaDraft4)
   }
 
   @js.native

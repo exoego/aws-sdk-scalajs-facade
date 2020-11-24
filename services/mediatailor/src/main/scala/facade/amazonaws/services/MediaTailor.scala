@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object mediatailor {
+  type __boolean = Boolean
   type __integer = Int
   type __integerMin1 = Int
   type __integerMin1Max100 = Int
@@ -41,6 +42,24 @@ package mediatailor {
     def putPlaybackConfiguration(params: PutPlaybackConfigurationRequest): Request[PutPlaybackConfigurationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+  }
+
+  /** The configuration for Ad Marker Passthrough. Ad marker passthrough can be used to pass ad markers from the origin to the customized manifest.
+    */
+  @js.native
+  trait AdMarkerPassthrough extends js.Object {
+    var Enabled: js.UndefOr[__boolean]
+  }
+
+  object AdMarkerPassthrough {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[__boolean] = js.undefined
+    ): AdMarkerPassthrough = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdMarkerPassthrough]
+    }
   }
 
   /** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break.
@@ -205,6 +224,7 @@ package mediatailor {
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
+    var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var PlaybackConfigurationArn: js.UndefOr[__string]
@@ -226,6 +246,7 @@ package mediatailor {
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
+        ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
@@ -244,6 +265,7 @@ package mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
+      ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
@@ -367,6 +389,24 @@ package mediatailor {
     }
   }
 
+  /** The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
+    */
+  @js.native
+  trait ManifestProcessingRules extends js.Object {
+    var AdMarkerPassthrough: js.UndefOr[AdMarkerPassthrough]
+  }
+
+  object ManifestProcessingRules {
+    @inline
+    def apply(
+        AdMarkerPassthrough: js.UndefOr[AdMarkerPassthrough] = js.undefined
+    ): ManifestProcessingRules = {
+      val __obj = js.Dynamic.literal()
+      AdMarkerPassthrough.foreach(__v => __obj.updateDynamic("AdMarkerPassthrough")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManifestProcessingRules]
+    }
+  }
+
   @js.native
   sealed trait Mode extends js.Any
   object Mode {
@@ -395,6 +435,7 @@ package mediatailor {
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
+    var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var PlaybackConfigurationArn: js.UndefOr[__string]
@@ -415,6 +456,7 @@ package mediatailor {
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
+        ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
@@ -432,6 +474,7 @@ package mediatailor {
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
+      ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
@@ -453,6 +496,7 @@ package mediatailor {
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
     var DashConfiguration: js.UndefOr[DashConfigurationForPut]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
+    var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var SlateAdUrl: js.UndefOr[__string]
@@ -470,6 +514,7 @@ package mediatailor {
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
         DashConfiguration: js.UndefOr[DashConfigurationForPut] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
+        ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         SlateAdUrl: js.UndefOr[__string] = js.undefined,
@@ -484,6 +529,7 @@ package mediatailor {
       CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
+      ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
@@ -503,6 +549,7 @@ package mediatailor {
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
+    var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
     var PlaybackConfigurationArn: js.UndefOr[__string]
@@ -524,6 +571,7 @@ package mediatailor {
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
+        ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
         PlaybackConfigurationArn: js.UndefOr[__string] = js.undefined,
@@ -542,6 +590,7 @@ package mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
+      ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
       PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))

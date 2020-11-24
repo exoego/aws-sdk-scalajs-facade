@@ -27,11 +27,13 @@ package object dynamodb {
   type BatchGetRequestMap = js.Dictionary[KeysAndAttributes]
   type BatchGetResponseMap = js.Dictionary[ItemList]
   type BatchWriteItemRequestMap = js.Dictionary[WriteRequests]
+  type BilledSizeBytes = Double
   type BinaryAttributeValue = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BinarySetAttributeValue = js.Array[BinaryAttributeValue]
   type BooleanAttributeValue = Boolean
   type BooleanObject = Boolean
   type ClientRequestToken = String
+  type ClientToken = String
   type ConditionExpression = String
   type ConsistentRead = Boolean
   type ConsumedCapacityMultiple = js.Array[ConsumedCapacity]
@@ -44,10 +46,19 @@ package object dynamodb {
   type ExceptionDescription = String
   type ExceptionName = String
   type ExpectedAttributeMap = js.Dictionary[ExpectedAttributeValue]
+  type ExportArn = String
+  type ExportEndTime = js.Date
+  type ExportManifest = String
+  type ExportNextToken = String
+  type ExportStartTime = js.Date
+  type ExportSummaries = js.Array[ExportSummary]
+  type ExportTime = js.Date
   type ExpressionAttributeNameMap = js.Dictionary[AttributeName]
   type ExpressionAttributeNameVariable = String
   type ExpressionAttributeValueMap = js.Dictionary[AttributeValue]
   type ExpressionAttributeValueVariable = String
+  type FailureCode = String
+  type FailureMessage = String
   type FilterConditionMap = js.Dictionary[Condition]
   type GlobalSecondaryIndexAutoScalingUpdateList = js.Array[GlobalSecondaryIndexAutoScalingUpdate]
   type GlobalSecondaryIndexDescriptionList = js.Array[GlobalSecondaryIndexDescription]
@@ -78,6 +89,7 @@ package object dynamodb {
   type LastUpdateDateTime = js.Date
   type ListAttributeValue = js.Array[AttributeValue]
   type ListContributorInsightsLimit = Int
+  type ListExportsMaxLimit = Int
   type ListTablesInputLimit = Int
   type LocalSecondaryIndexDescriptionList = js.Array[LocalSecondaryIndexDescription]
   type LocalSecondaryIndexList = js.Array[LocalSecondaryIndex]
@@ -113,6 +125,10 @@ package object dynamodb {
   type ReplicationGroupUpdateList = js.Array[ReplicationGroupUpdate]
   type ResourceArnString = String
   type RestoreInProgress = Boolean
+  type S3Bucket = String
+  type S3BucketOwner = String
+  type S3Prefix = String
+  type S3SseKmsKeyId = String
   type SSEEnabled = Boolean
   type ScanSegment = Int
   type ScanTotalSegments = Int
@@ -153,15 +169,18 @@ package object dynamodb {
     @inline def describeContinuousBackupsFuture(params: DescribeContinuousBackupsInput): Future[DescribeContinuousBackupsOutput] = service.describeContinuousBackups(params).promise().toFuture
     @inline def describeContributorInsightsFuture(params: DescribeContributorInsightsInput): Future[DescribeContributorInsightsOutput] = service.describeContributorInsights(params).promise().toFuture
     @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] = service.describeEndpoints(params).promise().toFuture
+    @inline def describeExportFuture(params: DescribeExportInput): Future[DescribeExportOutput] = service.describeExport(params).promise().toFuture
     @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] = service.describeGlobalTable(params).promise().toFuture
     @inline def describeGlobalTableSettingsFuture(params: DescribeGlobalTableSettingsInput): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise().toFuture
     @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] = service.describeLimits(params).promise().toFuture
     @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] = service.describeTable(params).promise().toFuture
     @inline def describeTableReplicaAutoScalingFuture(params: DescribeTableReplicaAutoScalingInput): Future[DescribeTableReplicaAutoScalingOutput] = service.describeTableReplicaAutoScaling(params).promise().toFuture
     @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] = service.describeTimeToLive(params).promise().toFuture
+    @inline def exportTableToPointInTimeFuture(params: ExportTableToPointInTimeInput): Future[ExportTableToPointInTimeOutput] = service.exportTableToPointInTime(params).promise().toFuture
     @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise().toFuture
     @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] = service.listBackups(params).promise().toFuture
     @inline def listContributorInsightsFuture(params: ListContributorInsightsInput): Future[ListContributorInsightsOutput] = service.listContributorInsights(params).promise().toFuture
+    @inline def listExportsFuture(params: ListExportsInput): Future[ListExportsOutput] = service.listExports(params).promise().toFuture
     @inline def listGlobalTablesFuture(params: ListGlobalTablesInput): Future[ListGlobalTablesOutput] = service.listGlobalTables(params).promise().toFuture
     @inline def listTablesFuture(params: ListTablesInput): Future[ListTablesOutput] = service.listTables(params).promise().toFuture
     @inline def listTagsOfResourceFuture(params: ListTagsOfResourceInput): Future[ListTagsOfResourceOutput] = service.listTagsOfResource(params).promise().toFuture
@@ -242,15 +261,18 @@ package dynamodb {
     def describeContinuousBackups(params: DescribeContinuousBackupsInput): Request[DescribeContinuousBackupsOutput] = js.native
     def describeContributorInsights(params: DescribeContributorInsightsInput): Request[DescribeContributorInsightsOutput] = js.native
     def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse] = js.native
+    def describeExport(params: DescribeExportInput): Request[DescribeExportOutput] = js.native
     def describeGlobalTable(params: DescribeGlobalTableInput): Request[DescribeGlobalTableOutput] = js.native
     def describeGlobalTableSettings(params: DescribeGlobalTableSettingsInput): Request[DescribeGlobalTableSettingsOutput] = js.native
     def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
     def describeTable(params: DescribeTableInput): Request[DescribeTableOutput] = js.native
     def describeTableReplicaAutoScaling(params: DescribeTableReplicaAutoScalingInput): Request[DescribeTableReplicaAutoScalingOutput] = js.native
     def describeTimeToLive(params: DescribeTimeToLiveInput): Request[DescribeTimeToLiveOutput] = js.native
+    def exportTableToPointInTime(params: ExportTableToPointInTimeInput): Request[ExportTableToPointInTimeOutput] = js.native
     def getItem(params: GetItemInput): Request[GetItemOutput] = js.native
     def listBackups(params: ListBackupsInput): Request[ListBackupsOutput] = js.native
     def listContributorInsights(params: ListContributorInsightsInput): Request[ListContributorInsightsOutput] = js.native
+    def listExports(params: ListExportsInput): Request[ListExportsOutput] = js.native
     def listGlobalTables(params: ListGlobalTablesInput): Request[ListGlobalTablesOutput] = js.native
     def listTables(params: ListTablesInput): Request[ListTablesOutput] = js.native
     def listTagsOfResource(params: ListTagsOfResourceInput): Request[ListTagsOfResourceOutput] = js.native
@@ -1061,7 +1083,7 @@ package dynamodb {
     @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
   }
 
-  /** Represents a Contributor Insights summary entry..
+  /** Represents a Contributor Insights summary entry.
     */
   @js.native
   trait ContributorInsightsSummary extends js.Object {
@@ -1698,6 +1720,39 @@ package dynamodb {
   }
 
   @js.native
+  trait DescribeExportInput extends js.Object {
+    var ExportArn: ExportArn
+  }
+
+  object DescribeExportInput {
+    @inline
+    def apply(
+        ExportArn: ExportArn
+    ): DescribeExportInput = {
+      val __obj = js.Dynamic.literal(
+        "ExportArn" -> ExportArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeExportInput]
+    }
+  }
+
+  @js.native
+  trait DescribeExportOutput extends js.Object {
+    var ExportDescription: js.UndefOr[ExportDescription]
+  }
+
+  object DescribeExportOutput {
+    @inline
+    def apply(
+        ExportDescription: js.UndefOr[ExportDescription] = js.undefined
+    ): DescribeExportOutput = {
+      val __obj = js.Dynamic.literal()
+      ExportDescription.foreach(__v => __obj.updateDynamic("ExportDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExportOutput]
+    }
+  }
+
+  @js.native
   trait DescribeGlobalTableInput extends js.Object {
     var GlobalTableName: TableName
   }
@@ -1958,6 +2013,176 @@ package dynamodb {
       Exists.foreach(__v => __obj.updateDynamic("Exists")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExpectedAttributeValue]
+    }
+  }
+
+  /** Represents the properties of the exported table.
+    */
+  @js.native
+  trait ExportDescription extends js.Object {
+    var BilledSizeBytes: js.UndefOr[BilledSizeBytes]
+    var ClientToken: js.UndefOr[ClientToken]
+    var EndTime: js.UndefOr[ExportEndTime]
+    var ExportArn: js.UndefOr[ExportArn]
+    var ExportFormat: js.UndefOr[ExportFormat]
+    var ExportManifest: js.UndefOr[ExportManifest]
+    var ExportStatus: js.UndefOr[ExportStatus]
+    var ExportTime: js.UndefOr[ExportTime]
+    var FailureCode: js.UndefOr[FailureCode]
+    var FailureMessage: js.UndefOr[FailureMessage]
+    var ItemCount: js.UndefOr[ItemCount]
+    var S3Bucket: js.UndefOr[S3Bucket]
+    var S3BucketOwner: js.UndefOr[S3BucketOwner]
+    var S3Prefix: js.UndefOr[S3Prefix]
+    var S3SseAlgorithm: js.UndefOr[S3SseAlgorithm]
+    var S3SseKmsKeyId: js.UndefOr[S3SseKmsKeyId]
+    var StartTime: js.UndefOr[ExportStartTime]
+    var TableArn: js.UndefOr[TableArn]
+    var TableId: js.UndefOr[TableId]
+  }
+
+  object ExportDescription {
+    @inline
+    def apply(
+        BilledSizeBytes: js.UndefOr[BilledSizeBytes] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        EndTime: js.UndefOr[ExportEndTime] = js.undefined,
+        ExportArn: js.UndefOr[ExportArn] = js.undefined,
+        ExportFormat: js.UndefOr[ExportFormat] = js.undefined,
+        ExportManifest: js.UndefOr[ExportManifest] = js.undefined,
+        ExportStatus: js.UndefOr[ExportStatus] = js.undefined,
+        ExportTime: js.UndefOr[ExportTime] = js.undefined,
+        FailureCode: js.UndefOr[FailureCode] = js.undefined,
+        FailureMessage: js.UndefOr[FailureMessage] = js.undefined,
+        ItemCount: js.UndefOr[ItemCount] = js.undefined,
+        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+        S3BucketOwner: js.UndefOr[S3BucketOwner] = js.undefined,
+        S3Prefix: js.UndefOr[S3Prefix] = js.undefined,
+        S3SseAlgorithm: js.UndefOr[S3SseAlgorithm] = js.undefined,
+        S3SseKmsKeyId: js.UndefOr[S3SseKmsKeyId] = js.undefined,
+        StartTime: js.UndefOr[ExportStartTime] = js.undefined,
+        TableArn: js.UndefOr[TableArn] = js.undefined,
+        TableId: js.UndefOr[TableId] = js.undefined
+    ): ExportDescription = {
+      val __obj = js.Dynamic.literal()
+      BilledSizeBytes.foreach(__v => __obj.updateDynamic("BilledSizeBytes")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ExportArn.foreach(__v => __obj.updateDynamic("ExportArn")(__v.asInstanceOf[js.Any]))
+      ExportFormat.foreach(__v => __obj.updateDynamic("ExportFormat")(__v.asInstanceOf[js.Any]))
+      ExportManifest.foreach(__v => __obj.updateDynamic("ExportManifest")(__v.asInstanceOf[js.Any]))
+      ExportStatus.foreach(__v => __obj.updateDynamic("ExportStatus")(__v.asInstanceOf[js.Any]))
+      ExportTime.foreach(__v => __obj.updateDynamic("ExportTime")(__v.asInstanceOf[js.Any]))
+      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3BucketOwner.foreach(__v => __obj.updateDynamic("S3BucketOwner")(__v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      S3SseAlgorithm.foreach(__v => __obj.updateDynamic("S3SseAlgorithm")(__v.asInstanceOf[js.Any]))
+      S3SseKmsKeyId.foreach(__v => __obj.updateDynamic("S3SseKmsKeyId")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      TableArn.foreach(__v => __obj.updateDynamic("TableArn")(__v.asInstanceOf[js.Any]))
+      TableId.foreach(__v => __obj.updateDynamic("TableId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportDescription]
+    }
+  }
+
+  @js.native
+  sealed trait ExportFormat extends js.Any
+  object ExportFormat {
+    val DYNAMODB_JSON = "DYNAMODB_JSON".asInstanceOf[ExportFormat]
+    val ION = "ION".asInstanceOf[ExportFormat]
+
+    @inline def values = js.Array(DYNAMODB_JSON, ION)
+  }
+
+  @js.native
+  sealed trait ExportStatus extends js.Any
+  object ExportStatus {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
+    val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
+    val FAILED = "FAILED".asInstanceOf[ExportStatus]
+
+    @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED)
+  }
+
+  /** Summary information about an export task.
+    */
+  @js.native
+  trait ExportSummary extends js.Object {
+    var ExportArn: js.UndefOr[ExportArn]
+    var ExportStatus: js.UndefOr[ExportStatus]
+  }
+
+  object ExportSummary {
+    @inline
+    def apply(
+        ExportArn: js.UndefOr[ExportArn] = js.undefined,
+        ExportStatus: js.UndefOr[ExportStatus] = js.undefined
+    ): ExportSummary = {
+      val __obj = js.Dynamic.literal()
+      ExportArn.foreach(__v => __obj.updateDynamic("ExportArn")(__v.asInstanceOf[js.Any]))
+      ExportStatus.foreach(__v => __obj.updateDynamic("ExportStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportSummary]
+    }
+  }
+
+  @js.native
+  trait ExportTableToPointInTimeInput extends js.Object {
+    var S3Bucket: S3Bucket
+    var TableArn: TableArn
+    var ClientToken: js.UndefOr[ClientToken]
+    var ExportFormat: js.UndefOr[ExportFormat]
+    var ExportTime: js.UndefOr[ExportTime]
+    var S3BucketOwner: js.UndefOr[S3BucketOwner]
+    var S3Prefix: js.UndefOr[S3Prefix]
+    var S3SseAlgorithm: js.UndefOr[S3SseAlgorithm]
+    var S3SseKmsKeyId: js.UndefOr[S3SseKmsKeyId]
+  }
+
+  object ExportTableToPointInTimeInput {
+    @inline
+    def apply(
+        S3Bucket: S3Bucket,
+        TableArn: TableArn,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        ExportFormat: js.UndefOr[ExportFormat] = js.undefined,
+        ExportTime: js.UndefOr[ExportTime] = js.undefined,
+        S3BucketOwner: js.UndefOr[S3BucketOwner] = js.undefined,
+        S3Prefix: js.UndefOr[S3Prefix] = js.undefined,
+        S3SseAlgorithm: js.UndefOr[S3SseAlgorithm] = js.undefined,
+        S3SseKmsKeyId: js.UndefOr[S3SseKmsKeyId] = js.undefined
+    ): ExportTableToPointInTimeInput = {
+      val __obj = js.Dynamic.literal(
+        "S3Bucket" -> S3Bucket.asInstanceOf[js.Any],
+        "TableArn" -> TableArn.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      ExportFormat.foreach(__v => __obj.updateDynamic("ExportFormat")(__v.asInstanceOf[js.Any]))
+      ExportTime.foreach(__v => __obj.updateDynamic("ExportTime")(__v.asInstanceOf[js.Any]))
+      S3BucketOwner.foreach(__v => __obj.updateDynamic("S3BucketOwner")(__v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      S3SseAlgorithm.foreach(__v => __obj.updateDynamic("S3SseAlgorithm")(__v.asInstanceOf[js.Any]))
+      S3SseKmsKeyId.foreach(__v => __obj.updateDynamic("S3SseKmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportTableToPointInTimeInput]
+    }
+  }
+
+  @js.native
+  trait ExportTableToPointInTimeOutput extends js.Object {
+    var ExportDescription: js.UndefOr[ExportDescription]
+  }
+
+  object ExportTableToPointInTimeOutput {
+    @inline
+    def apply(
+        ExportDescription: js.UndefOr[ExportDescription] = js.undefined
+    ): ExportTableToPointInTimeOutput = {
+      val __obj = js.Dynamic.literal()
+      ExportDescription.foreach(__v => __obj.updateDynamic("ExportDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportTableToPointInTimeOutput]
     }
   }
 
@@ -2512,6 +2737,47 @@ package dynamodb {
   }
 
   @js.native
+  trait ListExportsInput extends js.Object {
+    var MaxResults: js.UndefOr[ListExportsMaxLimit]
+    var NextToken: js.UndefOr[ExportNextToken]
+    var TableArn: js.UndefOr[TableArn]
+  }
+
+  object ListExportsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListExportsMaxLimit] = js.undefined,
+        NextToken: js.UndefOr[ExportNextToken] = js.undefined,
+        TableArn: js.UndefOr[TableArn] = js.undefined
+    ): ListExportsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TableArn.foreach(__v => __obj.updateDynamic("TableArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExportsInput]
+    }
+  }
+
+  @js.native
+  trait ListExportsOutput extends js.Object {
+    var ExportSummaries: js.UndefOr[ExportSummaries]
+    var NextToken: js.UndefOr[ExportNextToken]
+  }
+
+  object ListExportsOutput {
+    @inline
+    def apply(
+        ExportSummaries: js.UndefOr[ExportSummaries] = js.undefined,
+        NextToken: js.UndefOr[ExportNextToken] = js.undefined
+    ): ListExportsOutput = {
+      val __obj = js.Dynamic.literal()
+      ExportSummaries.foreach(__v => __obj.updateDynamic("ExportSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExportsOutput]
+    }
+  }
+
+  @js.native
   trait ListGlobalTablesInput extends js.Object {
     var ExclusiveStartGlobalTableName: js.UndefOr[TableName]
     var Limit: js.UndefOr[PositiveIntegerObject]
@@ -2800,7 +3066,7 @@ package dynamodb {
   }
 
   /** Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.
-    * For current minimum and maximum provisioned throughput values, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Limits]] in the <i>Amazon DynamoDB Developer Guide</i>.
+    * For current minimum and maximum provisioned throughput values, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Service, Account, and Table Quotas]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait ProvisionedThroughput extends js.Object {
@@ -3175,6 +3441,7 @@ package dynamodb {
     var KMSMasterKeyId: js.UndefOr[KMSMasterKeyId]
     var ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride]
     var RegionName: js.UndefOr[RegionName]
+    var ReplicaInaccessibleDateTime: js.UndefOr[Date]
     var ReplicaStatus: js.UndefOr[ReplicaStatus]
     var ReplicaStatusDescription: js.UndefOr[ReplicaStatusDescription]
     var ReplicaStatusPercentProgress: js.UndefOr[ReplicaStatusPercentProgress]
@@ -3187,6 +3454,7 @@ package dynamodb {
         KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
         ProvisionedThroughputOverride: js.UndefOr[ProvisionedThroughputOverride] = js.undefined,
         RegionName: js.UndefOr[RegionName] = js.undefined,
+        ReplicaInaccessibleDateTime: js.UndefOr[Date] = js.undefined,
         ReplicaStatus: js.UndefOr[ReplicaStatus] = js.undefined,
         ReplicaStatusDescription: js.UndefOr[ReplicaStatusDescription] = js.undefined,
         ReplicaStatusPercentProgress: js.UndefOr[ReplicaStatusPercentProgress] = js.undefined
@@ -3196,6 +3464,7 @@ package dynamodb {
       KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
       ProvisionedThroughputOverride.foreach(__v => __obj.updateDynamic("ProvisionedThroughputOverride")(__v.asInstanceOf[js.Any]))
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      ReplicaInaccessibleDateTime.foreach(__v => __obj.updateDynamic("ReplicaInaccessibleDateTime")(__v.asInstanceOf[js.Any]))
       ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
       ReplicaStatusDescription.foreach(__v => __obj.updateDynamic("ReplicaStatusDescription")(__v.asInstanceOf[js.Any]))
       ReplicaStatusPercentProgress.foreach(__v => __obj.updateDynamic("ReplicaStatusPercentProgress")(__v.asInstanceOf[js.Any]))
@@ -3434,8 +3703,10 @@ package dynamodb {
     val UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
     val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
+    val REGION_DISABLED = "REGION_DISABLED".asInstanceOf[ReplicaStatus]
+    val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[ReplicaStatus]
 
-    @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE)
+    @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
   }
 
   /** Represents one of the following:
@@ -3675,6 +3946,15 @@ package dynamodb {
     val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
 
     @inline def values = js.Array(ALL_OLD, NONE)
+  }
+
+  @js.native
+  sealed trait S3SseAlgorithm extends js.Any
+  object S3SseAlgorithm {
+    val AES256 = "AES256".asInstanceOf[S3SseAlgorithm]
+    val KMS = "KMS".asInstanceOf[S3SseAlgorithm]
+
+    @inline def values = js.Array(AES256, KMS)
   }
 
   /** The description of the server-side encryption status on the specified table.

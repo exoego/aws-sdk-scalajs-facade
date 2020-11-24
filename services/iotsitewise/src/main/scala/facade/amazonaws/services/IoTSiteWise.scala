@@ -70,6 +70,7 @@ package object iotsitewise {
   type Qualities = js.Array[Quality]
   type Resolution = String
   type SSOApplicationId = String
+  type SessionDurationSeconds = Int
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
@@ -92,6 +93,7 @@ package object iotsitewise {
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
     @inline def createGatewayFuture(params: CreateGatewayRequest): Future[CreateGatewayResponse] = service.createGateway(params).promise().toFuture
     @inline def createPortalFuture(params: CreatePortalRequest): Future[CreatePortalResponse] = service.createPortal(params).promise().toFuture
+    @inline def createPresignedPortalUrlFuture(params: CreatePresignedPortalUrlRequest): Future[CreatePresignedPortalUrlResponse] = service.createPresignedPortalUrl(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
     @inline def deleteAccessPolicyFuture(params: DeleteAccessPolicyRequest): Future[DeleteAccessPolicyResponse] = service.deleteAccessPolicy(params).promise().toFuture
     @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] = service.deleteAsset(params).promise().toFuture
@@ -156,6 +158,7 @@ package iotsitewise {
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createGateway(params: CreateGatewayRequest): Request[CreateGatewayResponse] = js.native
     def createPortal(params: CreatePortalRequest): Request[CreatePortalResponse] = js.native
+    def createPresignedPortalUrl(params: CreatePresignedPortalUrlRequest): Request[CreatePresignedPortalUrlResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
     def deleteAccessPolicy(params: DeleteAccessPolicyRequest): Request[DeleteAccessPolicyResponse] = js.native
     def deleteAsset(params: DeleteAssetRequest): Request[DeleteAssetResponse] = js.native
@@ -202,7 +205,7 @@ package iotsitewise {
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
   }
 
-  /** Contains an access policy that defines an AWS SSO identity's access to an AWS IoT SiteWise Monitor resource.
+  /** Contains an access policy that defines an identity's access to an AWS IoT SiteWise Monitor resource.
     */
   @js.native
   trait AccessPolicySummary extends js.Object {
@@ -487,7 +490,7 @@ package iotsitewise {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED)
   }
 
-  /** Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and Model States]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait AssetModelStatus extends js.Object {
@@ -620,7 +623,7 @@ package iotsitewise {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED)
   }
 
-  /** Contains information about the current status of an asset. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and Model States]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains information about the current status of an asset. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait AssetStatus extends js.Object {
@@ -766,6 +769,15 @@ package iotsitewise {
       defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Attribute]
     }
+  }
+
+  @js.native
+  sealed trait AuthMode extends js.Any
+  object AuthMode {
+    val IAM = "IAM".asInstanceOf[AuthMode]
+    val SSO = "SSO".asInstanceOf[AuthMode]
+
+    @inline def values = js.Array(IAM, SSO)
   }
 
   @js.native
@@ -1224,6 +1236,7 @@ package iotsitewise {
     var portalName: Name
     var roleArn: ARN
     var clientToken: js.UndefOr[ClientToken]
+    var portalAuthMode: js.UndefOr[AuthMode]
     var portalDescription: js.UndefOr[Description]
     var portalLogoImageFile: js.UndefOr[ImageFile]
     var tags: js.UndefOr[TagMap]
@@ -1236,6 +1249,7 @@ package iotsitewise {
         portalName: Name,
         roleArn: ARN,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        portalAuthMode: js.UndefOr[AuthMode] = js.undefined,
         portalDescription: js.UndefOr[Description] = js.undefined,
         portalLogoImageFile: js.UndefOr[ImageFile] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
@@ -1247,6 +1261,7 @@ package iotsitewise {
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      portalAuthMode.foreach(__v => __obj.updateDynamic("portalAuthMode")(__v.asInstanceOf[js.Any]))
       portalDescription.foreach(__v => __obj.updateDynamic("portalDescription")(__v.asInstanceOf[js.Any]))
       portalLogoImageFile.foreach(__v => __obj.updateDynamic("portalLogoImageFile")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1280,6 +1295,44 @@ package iotsitewise {
         "ssoApplicationId" -> ssoApplicationId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreatePortalResponse]
+    }
+  }
+
+  @js.native
+  trait CreatePresignedPortalUrlRequest extends js.Object {
+    var portalId: ID
+    var sessionDurationSeconds: js.UndefOr[SessionDurationSeconds]
+  }
+
+  object CreatePresignedPortalUrlRequest {
+    @inline
+    def apply(
+        portalId: ID,
+        sessionDurationSeconds: js.UndefOr[SessionDurationSeconds] = js.undefined
+    ): CreatePresignedPortalUrlRequest = {
+      val __obj = js.Dynamic.literal(
+        "portalId" -> portalId.asInstanceOf[js.Any]
+      )
+
+      sessionDurationSeconds.foreach(__v => __obj.updateDynamic("sessionDurationSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePresignedPortalUrlRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePresignedPortalUrlResponse extends js.Object {
+    var presignedPortalUrl: Url
+  }
+
+  object CreatePresignedPortalUrlResponse {
+    @inline
+    def apply(
+        presignedPortalUrl: Url
+    ): CreatePresignedPortalUrlResponse = {
+      val __obj = js.Dynamic.literal(
+        "presignedPortalUrl" -> presignedPortalUrl.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreatePresignedPortalUrlResponse]
     }
   }
 
@@ -2017,6 +2070,7 @@ package iotsitewise {
     var portalName: Name
     var portalStartUrl: Url
     var portalStatus: PortalStatus
+    var portalAuthMode: js.UndefOr[AuthMode]
     var portalDescription: js.UndefOr[Description]
     var portalLogoImageLocation: js.UndefOr[ImageLocation]
     var roleArn: js.UndefOr[ARN]
@@ -2034,6 +2088,7 @@ package iotsitewise {
         portalName: Name,
         portalStartUrl: Url,
         portalStatus: PortalStatus,
+        portalAuthMode: js.UndefOr[AuthMode] = js.undefined,
         portalDescription: js.UndefOr[Description] = js.undefined,
         portalLogoImageLocation: js.UndefOr[ImageLocation] = js.undefined,
         roleArn: js.UndefOr[ARN] = js.undefined
@@ -2050,6 +2105,7 @@ package iotsitewise {
         "portalStatus" -> portalStatus.asInstanceOf[js.Any]
       )
 
+      portalAuthMode.foreach(__v => __obj.updateDynamic("portalAuthMode")(__v.asInstanceOf[js.Any]))
       portalDescription.foreach(__v => __obj.updateDynamic("portalDescription")(__v.asInstanceOf[js.Any]))
       portalLogoImageLocation.foreach(__v => __obj.updateDynamic("portalLogoImageLocation")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
@@ -2469,13 +2525,33 @@ package iotsitewise {
     }
   }
 
-  /** Contains an AWS SSO identity ID for a user or group.
+  /** Contains information about an AWS Identity and Access Management (IAM) user.
+    */
+  @js.native
+  trait IAMUserIdentity extends js.Object {
+    var arn: ARN
+  }
+
+  object IAMUserIdentity {
+    @inline
+    def apply(
+        arn: ARN
+    ): IAMUserIdentity = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[IAMUserIdentity]
+    }
+  }
+
+  /** Contains an identity that can access an AWS IoT SiteWise Monitor resource.
     *
     * '''Note:'''Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the [[https://console.aws.amazon.com/singlesignon|AWS SSO console]].
     */
   @js.native
   trait Identity extends js.Object {
     var group: js.UndefOr[GroupIdentity]
+    var iamUser: js.UndefOr[IAMUserIdentity]
     var user: js.UndefOr[UserIdentity]
   }
 
@@ -2483,10 +2559,12 @@ package iotsitewise {
     @inline
     def apply(
         group: js.UndefOr[GroupIdentity] = js.undefined,
+        iamUser: js.UndefOr[IAMUserIdentity] = js.undefined,
         user: js.UndefOr[UserIdentity] = js.undefined
     ): Identity = {
       val __obj = js.Dynamic.literal()
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
+      iamUser.foreach(__v => __obj.updateDynamic("iamUser")(__v.asInstanceOf[js.Any]))
       user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Identity]
     }
@@ -2497,8 +2575,9 @@ package iotsitewise {
   object IdentityType {
     val USER = "USER".asInstanceOf[IdentityType]
     val GROUP = "GROUP".asInstanceOf[IdentityType]
+    val IAM = "IAM".asInstanceOf[IdentityType]
 
-    @inline def values = js.Array(USER, GROUP)
+    @inline def values = js.Array(USER, GROUP, IAM)
   }
 
   /** Contains an image that is one of the following:
@@ -2578,6 +2657,7 @@ package iotsitewise {
 
   @js.native
   trait ListAccessPoliciesRequest extends js.Object {
+    var iamArn: js.UndefOr[ARN]
     var identityId: js.UndefOr[IdentityId]
     var identityType: js.UndefOr[IdentityType]
     var maxResults: js.UndefOr[MaxResults]
@@ -2589,6 +2669,7 @@ package iotsitewise {
   object ListAccessPoliciesRequest {
     @inline
     def apply(
+        iamArn: js.UndefOr[ARN] = js.undefined,
         identityId: js.UndefOr[IdentityId] = js.undefined,
         identityType: js.UndefOr[IdentityType] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2597,6 +2678,7 @@ package iotsitewise {
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): ListAccessPoliciesRequest = {
       val __obj = js.Dynamic.literal()
+      iamArn.foreach(__v => __obj.updateDynamic("iamArn")(__v.asInstanceOf[js.Any]))
       identityId.foreach(__v => __obj.updateDynamic("identityId")(__v.asInstanceOf[js.Any]))
       identityType.foreach(__v => __obj.updateDynamic("identityType")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -2726,26 +2808,29 @@ package iotsitewise {
   @js.native
   trait ListAssociatedAssetsRequest extends js.Object {
     var assetId: ID
-    var hierarchyId: ID
+    var hierarchyId: js.UndefOr[ID]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
+    var traversalDirection: js.UndefOr[TraversalDirection]
   }
 
   object ListAssociatedAssetsRequest {
     @inline
     def apply(
         assetId: ID,
-        hierarchyId: ID,
+        hierarchyId: js.UndefOr[ID] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        traversalDirection: js.UndefOr[TraversalDirection] = js.undefined
     ): ListAssociatedAssetsRequest = {
       val __obj = js.Dynamic.literal(
-        "assetId" -> assetId.asInstanceOf[js.Any],
-        "hierarchyId" -> hierarchyId.asInstanceOf[js.Any]
+        "assetId" -> assetId.asInstanceOf[js.Any]
       )
 
+      hierarchyId.foreach(__v => __obj.updateDynamic("hierarchyId")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      traversalDirection.foreach(__v => __obj.updateDynamic("traversalDirection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociatedAssetsRequest]
     }
   }
@@ -3108,8 +3193,10 @@ package iotsitewise {
   sealed trait MonitorErrorCode extends js.Any
   object MonitorErrorCode {
     val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[MonitorErrorCode]
+    val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[MonitorErrorCode]
+    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[MonitorErrorCode]
 
-    @inline def values = js.Array(INTERNAL_FAILURE)
+    @inline def values = js.Array(INTERNAL_FAILURE, VALIDATION_ERROR, LIMIT_EXCEEDED)
   }
 
   /** Contains AWS IoT SiteWise Monitor error details.
@@ -3203,6 +3290,7 @@ package iotsitewise {
     var id: ID
     var name: Name
     var startUrl: Url
+    var status: PortalStatus
     var creationDate: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var lastUpdateDate: js.UndefOr[Timestamp]
@@ -3215,6 +3303,7 @@ package iotsitewise {
         id: ID,
         name: Name,
         startUrl: Url,
+        status: PortalStatus,
         creationDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         lastUpdateDate: js.UndefOr[Timestamp] = js.undefined,
@@ -3223,7 +3312,8 @@ package iotsitewise {
       val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
-        "startUrl" -> startUrl.asInstanceOf[js.Any]
+        "startUrl" -> startUrl.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
       )
 
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
@@ -3334,7 +3424,7 @@ package iotsitewise {
     @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN)
   }
 
-  /** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with Other Services]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with other services]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait PropertyNotification extends js.Object {
@@ -3392,7 +3482,7 @@ package iotsitewise {
     }
   }
 
-  /** Contains a list of value updates for an asset property in the list of asset entries consumed by the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html|BatchPutAssetPropertyValue]] API.
+  /** Contains a list of value updates for an asset property in the list of asset entries consumed by the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html|BatchPutAssetPropertyValue]] API operation.
     */
   @js.native
   trait PutAssetPropertyValueEntry extends js.Object {
@@ -3576,6 +3666,15 @@ package iotsitewise {
       )
       __obj.asInstanceOf[Transform]
     }
+  }
+
+  @js.native
+  sealed trait TraversalDirection extends js.Any
+  object TraversalDirection {
+    val PARENT = "PARENT".asInstanceOf[TraversalDirection]
+    val CHILD = "CHILD".asInstanceOf[TraversalDirection]
+
+    @inline def values = js.Array(PARENT, CHILD)
   }
 
   /** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations.

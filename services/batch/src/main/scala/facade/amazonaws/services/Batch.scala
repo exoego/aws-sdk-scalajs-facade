@@ -14,19 +14,27 @@ package object batch {
   type DeviceCgroupPermissions = js.Array[DeviceCgroupPermission]
   type DevicesList = js.Array[Device]
   type EnvironmentVariables = js.Array[KeyValuePair]
+  type EvaluateOnExitList = js.Array[EvaluateOnExit]
   type JobDefinitionList = js.Array[JobDefinition]
   type JobDependencyList = js.Array[JobDependency]
   type JobDetailList = js.Array[JobDetail]
   type JobQueueDetailList = js.Array[JobQueueDetail]
   type JobSummaryList = js.Array[JobSummary]
+  type LogConfigurationOptionsMap = js.Dictionary[String]
   type MountPoints = js.Array[MountPoint]
   type NetworkInterfaceList = js.Array[NetworkInterface]
   type NodePropertyOverrides = js.Array[NodePropertyOverride]
   type NodeRangeProperties = js.Array[NodeRangeProperty]
   type ParametersMap = js.Dictionary[String]
   type ResourceRequirements = js.Array[ResourceRequirement]
+  type SecretList = js.Array[Secret]
   type StringList = js.Array[String]
+  type TagKey = String
+  type TagKeysList = js.Array[TagKey]
+  type TagValue = String
+  type TagrisTagsMap = js.Dictionary[TagValue]
   type TagsMap = js.Dictionary[String]
+  type TmpfsList = js.Array[Tmpfs]
   type Ulimits = js.Array[Ulimit]
   type Volumes = js.Array[Volume]
 
@@ -43,9 +51,12 @@ package object batch {
     @inline def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] = service.describeJobQueues(params).promise().toFuture
     @inline def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] = service.describeJobs(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def registerJobDefinitionFuture(params: RegisterJobDefinitionRequest): Future[RegisterJobDefinitionResponse] = service.registerJobDefinition(params).promise().toFuture
     @inline def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] = service.submitJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] = service.terminateJob(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateComputeEnvironmentFuture(params: UpdateComputeEnvironmentRequest): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise().toFuture
     @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] = service.updateJobQueue(params).promise().toFuture
 
@@ -69,9 +80,12 @@ package batch {
     def describeJobQueues(params: DescribeJobQueuesRequest): Request[DescribeJobQueuesResponse] = js.native
     def describeJobs(params: DescribeJobsRequest): Request[DescribeJobsResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def registerJobDefinition(params: RegisterJobDefinitionRequest): Request[RegisterJobDefinitionResponse] = js.native
     def submitJob(params: SubmitJobRequest): Request[SubmitJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def terminateJob(params: TerminateJobRequest): Request[TerminateJobResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateComputeEnvironment(params: UpdateComputeEnvironmentRequest): Request[UpdateComputeEnvironmentResponse] = js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
   }
@@ -301,6 +315,7 @@ package batch {
     var state: js.UndefOr[CEState]
     var status: js.UndefOr[CEStatus]
     var statusReason: js.UndefOr[String]
+    var tags: js.UndefOr[TagrisTagsMap]
     var `type`: js.UndefOr[CEType]
   }
 
@@ -315,6 +330,7 @@ package batch {
         state: js.UndefOr[CEState] = js.undefined,
         status: js.UndefOr[CEStatus] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         `type`: js.UndefOr[CEType] = js.undefined
     ): ComputeEnvironmentDetail = {
       val __obj = js.Dynamic.literal(
@@ -328,6 +344,7 @@ package batch {
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeEnvironmentDetail]
     }
@@ -451,11 +468,13 @@ package batch {
     var command: js.UndefOr[StringList]
     var containerInstanceArn: js.UndefOr[String]
     var environment: js.UndefOr[EnvironmentVariables]
+    var executionRoleArn: js.UndefOr[String]
     var exitCode: js.UndefOr[Int]
     var image: js.UndefOr[String]
     var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
     var linuxParameters: js.UndefOr[LinuxParameters]
+    var logConfiguration: js.UndefOr[LogConfiguration]
     var logStreamName: js.UndefOr[String]
     var memory: js.UndefOr[Int]
     var mountPoints: js.UndefOr[MountPoints]
@@ -464,6 +483,7 @@ package batch {
     var readonlyRootFilesystem: js.UndefOr[Boolean]
     var reason: js.UndefOr[String]
     var resourceRequirements: js.UndefOr[ResourceRequirements]
+    var secrets: js.UndefOr[SecretList]
     var taskArn: js.UndefOr[String]
     var ulimits: js.UndefOr[Ulimits]
     var user: js.UndefOr[String]
@@ -477,11 +497,13 @@ package batch {
         command: js.UndefOr[StringList] = js.undefined,
         containerInstanceArn: js.UndefOr[String] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        executionRoleArn: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[Int] = js.undefined,
         image: js.UndefOr[String] = js.undefined,
         instanceType: js.UndefOr[String] = js.undefined,
         jobRoleArn: js.UndefOr[String] = js.undefined,
         linuxParameters: js.UndefOr[LinuxParameters] = js.undefined,
+        logConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
         logStreamName: js.UndefOr[String] = js.undefined,
         memory: js.UndefOr[Int] = js.undefined,
         mountPoints: js.UndefOr[MountPoints] = js.undefined,
@@ -490,6 +512,7 @@ package batch {
         readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
         resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined,
+        secrets: js.UndefOr[SecretList] = js.undefined,
         taskArn: js.UndefOr[String] = js.undefined,
         ulimits: js.UndefOr[Ulimits] = js.undefined,
         user: js.UndefOr[String] = js.undefined,
@@ -500,11 +523,13 @@ package batch {
       command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
       containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       jobRoleArn.foreach(__v => __obj.updateDynamic("jobRoleArn")(__v.asInstanceOf[js.Any]))
       linuxParameters.foreach(__v => __obj.updateDynamic("linuxParameters")(__v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
@@ -513,6 +538,7 @@ package batch {
       readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
+      secrets.foreach(__v => __obj.updateDynamic("secrets")(__v.asInstanceOf[js.Any]))
       taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
       ulimits.foreach(__v => __obj.updateDynamic("ulimits")(__v.asInstanceOf[js.Any]))
       user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
@@ -561,15 +587,18 @@ package batch {
   trait ContainerProperties extends js.Object {
     var command: js.UndefOr[StringList]
     var environment: js.UndefOr[EnvironmentVariables]
+    var executionRoleArn: js.UndefOr[String]
     var image: js.UndefOr[String]
     var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
     var linuxParameters: js.UndefOr[LinuxParameters]
+    var logConfiguration: js.UndefOr[LogConfiguration]
     var memory: js.UndefOr[Int]
     var mountPoints: js.UndefOr[MountPoints]
     var privileged: js.UndefOr[Boolean]
     var readonlyRootFilesystem: js.UndefOr[Boolean]
     var resourceRequirements: js.UndefOr[ResourceRequirements]
+    var secrets: js.UndefOr[SecretList]
     var ulimits: js.UndefOr[Ulimits]
     var user: js.UndefOr[String]
     var vcpus: js.UndefOr[Int]
@@ -581,15 +610,18 @@ package batch {
     def apply(
         command: js.UndefOr[StringList] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        executionRoleArn: js.UndefOr[String] = js.undefined,
         image: js.UndefOr[String] = js.undefined,
         instanceType: js.UndefOr[String] = js.undefined,
         jobRoleArn: js.UndefOr[String] = js.undefined,
         linuxParameters: js.UndefOr[LinuxParameters] = js.undefined,
+        logConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
         memory: js.UndefOr[Int] = js.undefined,
         mountPoints: js.UndefOr[MountPoints] = js.undefined,
         privileged: js.UndefOr[Boolean] = js.undefined,
         readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
         resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined,
+        secrets: js.UndefOr[SecretList] = js.undefined,
         ulimits: js.UndefOr[Ulimits] = js.undefined,
         user: js.UndefOr[String] = js.undefined,
         vcpus: js.UndefOr[Int] = js.undefined,
@@ -598,15 +630,18 @@ package batch {
       val __obj = js.Dynamic.literal()
       command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       jobRoleArn.foreach(__v => __obj.updateDynamic("jobRoleArn")(__v.asInstanceOf[js.Any]))
       linuxParameters.foreach(__v => __obj.updateDynamic("linuxParameters")(__v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
       privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
       readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
       resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
+      secrets.foreach(__v => __obj.updateDynamic("secrets")(__v.asInstanceOf[js.Any]))
       ulimits.foreach(__v => __obj.updateDynamic("ulimits")(__v.asInstanceOf[js.Any]))
       user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
       vcpus.foreach(__v => __obj.updateDynamic("vcpus")(__v.asInstanceOf[js.Any]))
@@ -643,6 +678,7 @@ package batch {
     var `type`: CEType
     var computeResources: js.UndefOr[ComputeResource]
     var state: js.UndefOr[CEState]
+    var tags: js.UndefOr[TagrisTagsMap]
   }
 
   object CreateComputeEnvironmentRequest {
@@ -652,7 +688,8 @@ package batch {
         serviceRole: String,
         `type`: CEType,
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
-        state: js.UndefOr[CEState] = js.undefined
+        state: js.UndefOr[CEState] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined
     ): CreateComputeEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
@@ -662,6 +699,7 @@ package batch {
 
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComputeEnvironmentRequest]
     }
   }
@@ -691,6 +729,7 @@ package batch {
     var jobQueueName: String
     var priority: Int
     var state: js.UndefOr[JQState]
+    var tags: js.UndefOr[TagrisTagsMap]
   }
 
   object CreateJobQueueRequest {
@@ -699,7 +738,8 @@ package batch {
         computeEnvironmentOrder: ComputeEnvironmentOrders,
         jobQueueName: String,
         priority: Int,
-        state: js.UndefOr[JQState] = js.undefined
+        state: js.UndefOr[JQState] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined
     ): CreateJobQueueRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
@@ -708,6 +748,7 @@ package batch {
       )
 
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobQueueRequest]
     }
   }
@@ -1014,6 +1055,35 @@ package batch {
     @inline def values = js.Array(READ, WRITE, MKNOD)
   }
 
+  /** Specifies a set of conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met.
+    */
+  @js.native
+  trait EvaluateOnExit extends js.Object {
+    var action: RetryAction
+    var onExitCode: js.UndefOr[String]
+    var onReason: js.UndefOr[String]
+    var onStatusReason: js.UndefOr[String]
+  }
+
+  object EvaluateOnExit {
+    @inline
+    def apply(
+        action: RetryAction,
+        onExitCode: js.UndefOr[String] = js.undefined,
+        onReason: js.UndefOr[String] = js.undefined,
+        onStatusReason: js.UndefOr[String] = js.undefined
+    ): EvaluateOnExit = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any]
+      )
+
+      onExitCode.foreach(__v => __obj.updateDynamic("onExitCode")(__v.asInstanceOf[js.Any]))
+      onReason.foreach(__v => __obj.updateDynamic("onReason")(__v.asInstanceOf[js.Any]))
+      onStatusReason.foreach(__v => __obj.updateDynamic("onStatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluateOnExit]
+    }
+  }
+
   /** Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
     */
   @js.native
@@ -1067,6 +1137,7 @@ package batch {
     var parameters: js.UndefOr[ParametersMap]
     var retryStrategy: js.UndefOr[RetryStrategy]
     var status: js.UndefOr[String]
+    var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
   }
 
@@ -1082,6 +1153,7 @@ package batch {
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDefinition = {
       val __obj = js.Dynamic.literal(
@@ -1096,6 +1168,7 @@ package batch {
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDefinition]
     }
@@ -1146,12 +1219,14 @@ package batch {
     var container: js.UndefOr[ContainerDetail]
     var createdAt: js.UndefOr[Double]
     var dependsOn: js.UndefOr[JobDependencyList]
+    var jobArn: js.UndefOr[String]
     var nodeDetails: js.UndefOr[NodeDetails]
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
     var retryStrategy: js.UndefOr[RetryStrategy]
     var statusReason: js.UndefOr[String]
     var stoppedAt: js.UndefOr[Double]
+    var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
   }
 
@@ -1169,12 +1244,14 @@ package batch {
         container: js.UndefOr[ContainerDetail] = js.undefined,
         createdAt: js.UndefOr[Double] = js.undefined,
         dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
+        jobArn: js.UndefOr[String] = js.undefined,
         nodeDetails: js.UndefOr[NodeDetails] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDetail = {
       val __obj = js.Dynamic.literal(
@@ -1191,12 +1268,14 @@ package batch {
       container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
       nodeDetails.foreach(__v => __obj.updateDynamic("nodeDetails")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDetail]
     }
@@ -1213,6 +1292,7 @@ package batch {
     var state: JQState
     var status: js.UndefOr[JQStatus]
     var statusReason: js.UndefOr[String]
+    var tags: js.UndefOr[TagrisTagsMap]
   }
 
   object JobQueueDetail {
@@ -1224,7 +1304,8 @@ package batch {
         priority: Int,
         state: JQState,
         status: js.UndefOr[JQStatus] = js.undefined,
-        statusReason: js.UndefOr[String] = js.undefined
+        statusReason: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined
     ): JobQueueDetail = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
@@ -1236,6 +1317,7 @@ package batch {
 
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobQueueDetail]
     }
   }
@@ -1263,6 +1345,7 @@ package batch {
     var arrayProperties: js.UndefOr[ArrayPropertiesSummary]
     var container: js.UndefOr[ContainerSummary]
     var createdAt: js.UndefOr[Double]
+    var jobArn: js.UndefOr[String]
     var nodeProperties: js.UndefOr[NodePropertiesSummary]
     var startedAt: js.UndefOr[Double]
     var status: js.UndefOr[JobStatus]
@@ -1278,6 +1361,7 @@ package batch {
         arrayProperties: js.UndefOr[ArrayPropertiesSummary] = js.undefined,
         container: js.UndefOr[ContainerSummary] = js.undefined,
         createdAt: js.UndefOr[Double] = js.undefined,
+        jobArn: js.UndefOr[String] = js.undefined,
         nodeProperties: js.UndefOr[NodePropertiesSummary] = js.undefined,
         startedAt: js.UndefOr[Double] = js.undefined,
         status: js.UndefOr[JobStatus] = js.undefined,
@@ -1292,6 +1376,7 @@ package batch {
       arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
       container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1369,15 +1454,30 @@ package batch {
   @js.native
   trait LinuxParameters extends js.Object {
     var devices: js.UndefOr[DevicesList]
+    var initProcessEnabled: js.UndefOr[Boolean]
+    var maxSwap: js.UndefOr[Int]
+    var sharedMemorySize: js.UndefOr[Int]
+    var swappiness: js.UndefOr[Int]
+    var tmpfs: js.UndefOr[TmpfsList]
   }
 
   object LinuxParameters {
     @inline
     def apply(
-        devices: js.UndefOr[DevicesList] = js.undefined
+        devices: js.UndefOr[DevicesList] = js.undefined,
+        initProcessEnabled: js.UndefOr[Boolean] = js.undefined,
+        maxSwap: js.UndefOr[Int] = js.undefined,
+        sharedMemorySize: js.UndefOr[Int] = js.undefined,
+        swappiness: js.UndefOr[Int] = js.undefined,
+        tmpfs: js.UndefOr[TmpfsList] = js.undefined
     ): LinuxParameters = {
       val __obj = js.Dynamic.literal()
       devices.foreach(__v => __obj.updateDynamic("devices")(__v.asInstanceOf[js.Any]))
+      initProcessEnabled.foreach(__v => __obj.updateDynamic("initProcessEnabled")(__v.asInstanceOf[js.Any]))
+      maxSwap.foreach(__v => __obj.updateDynamic("maxSwap")(__v.asInstanceOf[js.Any]))
+      sharedMemorySize.foreach(__v => __obj.updateDynamic("sharedMemorySize")(__v.asInstanceOf[js.Any]))
+      swappiness.foreach(__v => __obj.updateDynamic("swappiness")(__v.asInstanceOf[js.Any]))
+      tmpfs.foreach(__v => __obj.updateDynamic("tmpfs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LinuxParameters]
     }
   }
@@ -1432,6 +1532,79 @@ package batch {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResponse]
     }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: String
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagrisTagsMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /** Log configuration options to send to a custom log driver for the container.
+    */
+  @js.native
+  trait LogConfiguration extends js.Object {
+    var logDriver: LogDriver
+    var options: js.UndefOr[LogConfigurationOptionsMap]
+    var secretOptions: js.UndefOr[SecretList]
+  }
+
+  object LogConfiguration {
+    @inline
+    def apply(
+        logDriver: LogDriver,
+        options: js.UndefOr[LogConfigurationOptionsMap] = js.undefined,
+        secretOptions: js.UndefOr[SecretList] = js.undefined
+    ): LogConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "logDriver" -> logDriver.asInstanceOf[js.Any]
+      )
+
+      options.foreach(__v => __obj.updateDynamic("options")(__v.asInstanceOf[js.Any]))
+      secretOptions.foreach(__v => __obj.updateDynamic("secretOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait LogDriver extends js.Any
+  object LogDriver {
+    val `json-file` = "json-file".asInstanceOf[LogDriver]
+    val syslog = "syslog".asInstanceOf[LogDriver]
+    val journald = "journald".asInstanceOf[LogDriver]
+    val gelf = "gelf".asInstanceOf[LogDriver]
+    val fluentd = "fluentd".asInstanceOf[LogDriver]
+    val awslogs = "awslogs".asInstanceOf[LogDriver]
+    val splunk = "splunk".asInstanceOf[LogDriver]
+
+    @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
   }
 
   /** Details on a Docker volume mount point that is used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
@@ -1627,6 +1800,7 @@ package batch {
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
   }
 
@@ -1639,6 +1813,7 @@ package batch {
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): RegisterJobDefinitionRequest = {
       val __obj = js.Dynamic.literal(
@@ -1650,6 +1825,7 @@ package batch {
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterJobDefinitionRequest]
     }
@@ -1708,21 +1884,58 @@ package batch {
     @inline def values = js.Array(GPU)
   }
 
+  @js.native
+  sealed trait RetryAction extends js.Any
+  object RetryAction {
+    val RETRY = "RETRY".asInstanceOf[RetryAction]
+    val EXIT = "EXIT".asInstanceOf[RetryAction]
+
+    @inline def values = js.Array(RETRY, EXIT)
+  }
+
   /** The retry strategy associated with a job.
     */
   @js.native
   trait RetryStrategy extends js.Object {
     var attempts: js.UndefOr[Int]
+    var evaluateOnExit: js.UndefOr[EvaluateOnExitList]
   }
 
   object RetryStrategy {
     @inline
     def apply(
-        attempts: js.UndefOr[Int] = js.undefined
+        attempts: js.UndefOr[Int] = js.undefined,
+        evaluateOnExit: js.UndefOr[EvaluateOnExitList] = js.undefined
     ): RetryStrategy = {
       val __obj = js.Dynamic.literal()
       attempts.foreach(__v => __obj.updateDynamic("attempts")(__v.asInstanceOf[js.Any]))
+      evaluateOnExit.foreach(__v => __obj.updateDynamic("evaluateOnExit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetryStrategy]
+    }
+  }
+
+  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:
+    * * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.
+    * * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.
+    * For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait Secret extends js.Object {
+    var name: String
+    var valueFrom: String
+  }
+
+  object Secret {
+    @inline
+    def apply(
+        name: String,
+        valueFrom: String
+    ): Secret = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "valueFrom" -> valueFrom.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Secret]
     }
   }
 
@@ -1737,6 +1950,7 @@ package batch {
     var nodeOverrides: js.UndefOr[NodeOverrides]
     var parameters: js.UndefOr[ParametersMap]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
   }
 
@@ -1752,6 +1966,7 @@ package batch {
         nodeOverrides: js.UndefOr[NodeOverrides] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): SubmitJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -1766,6 +1981,7 @@ package batch {
       nodeOverrides.foreach(__v => __obj.updateDynamic("nodeOverrides")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubmitJobRequest]
     }
@@ -1775,19 +1991,54 @@ package batch {
   trait SubmitJobResponse extends js.Object {
     var jobId: String
     var jobName: String
+    var jobArn: js.UndefOr[String]
   }
 
   object SubmitJobResponse {
     @inline
     def apply(
         jobId: String,
-        jobName: String
+        jobName: String,
+        jobArn: js.UndefOr[String] = js.undefined
     ): SubmitJobResponse = {
       val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
       )
+
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubmitJobResponse]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tags: TagrisTagsMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tags: TagrisTagsMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -1822,6 +2073,32 @@ package batch {
     }
   }
 
+  /** The container path, mount options, and size of the tmpfs mount.
+    */
+  @js.native
+  trait Tmpfs extends js.Object {
+    var containerPath: String
+    var size: Int
+    var mountOptions: js.UndefOr[StringList]
+  }
+
+  object Tmpfs {
+    @inline
+    def apply(
+        containerPath: String,
+        size: Int,
+        mountOptions: js.UndefOr[StringList] = js.undefined
+    ): Tmpfs = {
+      val __obj = js.Dynamic.literal(
+        "containerPath" -> containerPath.asInstanceOf[js.Any],
+        "size" -> size.asInstanceOf[js.Any]
+      )
+
+      mountOptions.foreach(__v => __obj.updateDynamic("mountOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tmpfs]
+    }
+  }
+
   /** The <code>ulimit</code> settings to pass to the container.
     */
   @js.native
@@ -1844,6 +2121,37 @@ package batch {
         "softLimit" -> softLimit.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Ulimit]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tagKeys: TagKeysList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tagKeys: TagKeysList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

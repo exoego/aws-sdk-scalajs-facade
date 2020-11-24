@@ -512,6 +512,7 @@ package applicationautoscaling {
     val LambdaProvisionedConcurrencyUtilization = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
     val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
     val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
+    val KafkaBrokerStorageUtilization = "KafkaBrokerStorageUtilization".asInstanceOf[MetricType]
 
     @inline def values = js.Array(
       DynamoDBReadCapacityUtilization,
@@ -529,7 +530,8 @@ package applicationautoscaling {
       ComprehendInferenceUtilization,
       LambdaProvisionedConcurrencyUtilization,
       CassandraReadCapacityUtilization,
-      CassandraWriteCapacityUtilization
+      CassandraWriteCapacityUtilization,
+      KafkaBrokerStorageUtilization
     )
   }
 
@@ -735,9 +737,11 @@ package applicationautoscaling {
     val `sagemaker:variant:DesiredInstanceCount` = "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
     val `custom-resource:ResourceType:Property` = "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
     val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` = "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
+    val `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits` = "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
     val `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
     val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
     val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+    val `kafka:broker-storage:VolumeSize` = "kafka:broker-storage:VolumeSize".asInstanceOf[ScalableDimension]
 
     @inline def values = js.Array(
       `ecs:service:DesiredCount`,
@@ -752,9 +756,11 @@ package applicationautoscaling {
       `sagemaker:variant:DesiredInstanceCount`,
       `custom-resource:ResourceType:Property`,
       `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
+      `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`,
       `lambda:function:ProvisionedConcurrency`,
       `cassandra:table:ReadCapacityUnits`,
-      `cassandra:table:WriteCapacityUnits`
+      `cassandra:table:WriteCapacityUnits`,
+      `kafka:broker-storage:VolumeSize`
     )
   }
 
@@ -884,6 +890,7 @@ package applicationautoscaling {
   }
 
   /** Represents a scaling policy to use with Application Auto Scaling.
+    * For more information about configuring scaling policies for a specific service, see [[https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html|Getting started with Application Auto Scaling]] in the <i>Application Auto Scaling User Guide</i>.
     */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -991,8 +998,9 @@ package applicationautoscaling {
     val comprehend = "comprehend".asInstanceOf[ServiceNamespace]
     val lambda = "lambda".asInstanceOf[ServiceNamespace]
     val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
+    val kafka = "kafka".asInstanceOf[ServiceNamespace]
 
-    @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra)
+    @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
   }
 
   /** Represents a step adjustment for a [[https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html|StepScalingPolicyConfiguration]]. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.

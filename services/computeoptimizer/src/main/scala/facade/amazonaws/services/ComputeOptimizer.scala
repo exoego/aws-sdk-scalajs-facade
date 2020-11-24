@@ -372,6 +372,10 @@ package computeoptimizer {
     val Finding = "Finding".asInstanceOf[ExportableAutoScalingGroupField]
     val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableAutoScalingGroupField]
     val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsEbsReadOpsPerSecondMaximum = "UtilizationMetricsEbsReadOpsPerSecondMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsEbsWriteOpsPerSecondMaximum = "UtilizationMetricsEbsWriteOpsPerSecondMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsEbsReadBytesPerSecondMaximum = "UtilizationMetricsEbsReadBytesPerSecondMaximum".asInstanceOf[ExportableAutoScalingGroupField]
+    val UtilizationMetricsEbsWriteBytesPerSecondMaximum = "UtilizationMetricsEbsWriteBytesPerSecondMaximum".asInstanceOf[ExportableAutoScalingGroupField]
     val LookbackPeriodInDays = "LookbackPeriodInDays".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentConfigurationInstanceType = "CurrentConfigurationInstanceType".asInstanceOf[ExportableAutoScalingGroupField]
     val CurrentConfigurationDesiredCapacity = "CurrentConfigurationDesiredCapacity".asInstanceOf[ExportableAutoScalingGroupField]
@@ -407,6 +411,10 @@ package computeoptimizer {
       Finding,
       UtilizationMetricsCpuMaximum,
       UtilizationMetricsMemoryMaximum,
+      UtilizationMetricsEbsReadOpsPerSecondMaximum,
+      UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+      UtilizationMetricsEbsReadBytesPerSecondMaximum,
+      UtilizationMetricsEbsWriteBytesPerSecondMaximum,
       LookbackPeriodInDays,
       CurrentConfigurationInstanceType,
       CurrentConfigurationDesiredCapacity,
@@ -448,6 +456,10 @@ package computeoptimizer {
     val CurrentInstanceType = "CurrentInstanceType".asInstanceOf[ExportableInstanceField]
     val UtilizationMetricsCpuMaximum = "UtilizationMetricsCpuMaximum".asInstanceOf[ExportableInstanceField]
     val UtilizationMetricsMemoryMaximum = "UtilizationMetricsMemoryMaximum".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsEbsReadOpsPerSecondMaximum = "UtilizationMetricsEbsReadOpsPerSecondMaximum".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsEbsWriteOpsPerSecondMaximum = "UtilizationMetricsEbsWriteOpsPerSecondMaximum".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsEbsReadBytesPerSecondMaximum = "UtilizationMetricsEbsReadBytesPerSecondMaximum".asInstanceOf[ExportableInstanceField]
+    val UtilizationMetricsEbsWriteBytesPerSecondMaximum = "UtilizationMetricsEbsWriteBytesPerSecondMaximum".asInstanceOf[ExportableInstanceField]
     val CurrentOnDemandPrice = "CurrentOnDemandPrice".asInstanceOf[ExportableInstanceField]
     val CurrentStandardOneYearNoUpfrontReservedPrice = "CurrentStandardOneYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
     val CurrentStandardThreeYearNoUpfrontReservedPrice = "CurrentStandardThreeYearNoUpfrontReservedPrice".asInstanceOf[ExportableInstanceField]
@@ -479,6 +491,10 @@ package computeoptimizer {
       CurrentInstanceType,
       UtilizationMetricsCpuMaximum,
       UtilizationMetricsMemoryMaximum,
+      UtilizationMetricsEbsReadOpsPerSecondMaximum,
+      UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+      UtilizationMetricsEbsReadBytesPerSecondMaximum,
+      UtilizationMetricsEbsWriteBytesPerSecondMaximum,
       CurrentOnDemandPrice,
       CurrentStandardOneYearNoUpfrontReservedPrice,
       CurrentStandardThreeYearNoUpfrontReservedPrice,
@@ -915,8 +931,12 @@ package computeoptimizer {
   object MetricName {
     val Cpu = "Cpu".asInstanceOf[MetricName]
     val Memory = "Memory".asInstanceOf[MetricName]
+    val EBS_READ_OPS_PER_SECOND = "EBS_READ_OPS_PER_SECOND".asInstanceOf[MetricName]
+    val EBS_WRITE_OPS_PER_SECOND = "EBS_WRITE_OPS_PER_SECOND".asInstanceOf[MetricName]
+    val EBS_READ_BYTES_PER_SECOND = "EBS_READ_BYTES_PER_SECOND".asInstanceOf[MetricName]
+    val EBS_WRITE_BYTES_PER_SECOND = "EBS_WRITE_BYTES_PER_SECOND".asInstanceOf[MetricName]
 
-    @inline def values = js.Array(Cpu, Memory)
+    @inline def values = js.Array(Cpu, Memory, EBS_READ_OPS_PER_SECOND, EBS_WRITE_OPS_PER_SECOND, EBS_READ_BYTES_PER_SECOND, EBS_WRITE_BYTES_PER_SECOND)
   }
 
   @js.native
@@ -929,6 +949,8 @@ package computeoptimizer {
   }
 
   /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.
+    *
+    * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
     */
   @js.native
   trait ProjectedMetric extends js.Object {
@@ -1045,6 +1067,8 @@ package computeoptimizer {
   }
 
   /** Describes a projected utilization metric of a recommendation option.
+    *
+    * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
     */
   @js.native
   trait RecommendedOptionProjectedMetric extends js.Object {

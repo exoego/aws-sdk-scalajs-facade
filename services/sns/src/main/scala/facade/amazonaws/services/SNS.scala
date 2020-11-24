@@ -902,7 +902,7 @@ package sns {
   }
 
   /** The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
-    * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
+    * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Amazon SNS message attributes]] and [[https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html|Publishing to a mobile phone]] in the <i>Amazon SNS Developer Guide.</i>
     */
   @js.native
   trait MessageAttributeValue extends js.Object {
@@ -987,6 +987,8 @@ package sns {
   trait PublishInput extends js.Object {
     var Message: message
     var MessageAttributes: js.UndefOr[MessageAttributeMap]
+    var MessageDeduplicationId: js.UndefOr[String]
+    var MessageGroupId: js.UndefOr[String]
     var MessageStructure: js.UndefOr[messageStructure]
     var PhoneNumber: js.UndefOr[String]
     var Subject: js.UndefOr[subject]
@@ -999,6 +1001,8 @@ package sns {
     def apply(
         Message: message,
         MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
+        MessageDeduplicationId: js.UndefOr[String] = js.undefined,
+        MessageGroupId: js.UndefOr[String] = js.undefined,
         MessageStructure: js.UndefOr[messageStructure] = js.undefined,
         PhoneNumber: js.UndefOr[String] = js.undefined,
         Subject: js.UndefOr[subject] = js.undefined,
@@ -1010,6 +1014,8 @@ package sns {
       )
 
       MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageDeduplicationId.foreach(__v => __obj.updateDynamic("MessageDeduplicationId")(__v.asInstanceOf[js.Any]))
+      MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
       MessageStructure.foreach(__v => __obj.updateDynamic("MessageStructure")(__v.asInstanceOf[js.Any]))
       PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
@@ -1024,15 +1030,18 @@ package sns {
   @js.native
   trait PublishResponse extends js.Object {
     var MessageId: js.UndefOr[messageId]
+    var SequenceNumber: js.UndefOr[String]
   }
 
   object PublishResponse {
     @inline
     def apply(
-        MessageId: js.UndefOr[messageId] = js.undefined
+        MessageId: js.UndefOr[messageId] = js.undefined,
+        SequenceNumber: js.UndefOr[String] = js.undefined
     ): PublishResponse = {
       val __obj = js.Dynamic.literal()
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishResponse]
     }
   }

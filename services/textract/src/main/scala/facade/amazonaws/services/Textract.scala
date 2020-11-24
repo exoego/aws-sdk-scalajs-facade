@@ -23,6 +23,7 @@ package object textract {
   type ImageBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type JobId = String
   type JobTag = String
+  type KMSKeyId = String
   type MaxResults = Int
   type NonEmptyString = String
   type Pages = js.Array[UInteger]
@@ -133,6 +134,7 @@ package textract {
     var RowSpan: js.UndefOr[UInteger]
     var SelectionStatus: js.UndefOr[SelectionStatus]
     var Text: js.UndefOr[String]
+    var TextType: js.UndefOr[TextType]
   }
 
   object Block {
@@ -150,7 +152,8 @@ package textract {
         RowIndex: js.UndefOr[UInteger] = js.undefined,
         RowSpan: js.UndefOr[UInteger] = js.undefined,
         SelectionStatus: js.UndefOr[SelectionStatus] = js.undefined,
-        Text: js.UndefOr[String] = js.undefined
+        Text: js.UndefOr[String] = js.undefined,
+        TextType: js.UndefOr[TextType] = js.undefined
     ): Block = {
       val __obj = js.Dynamic.literal()
       BlockType.foreach(__v => __obj.updateDynamic("BlockType")(__v.asInstanceOf[js.Any]))
@@ -166,6 +169,7 @@ package textract {
       RowSpan.foreach(__v => __obj.updateDynamic("RowSpan")(__v.asInstanceOf[js.Any]))
       SelectionStatus.foreach(__v => __obj.updateDynamic("SelectionStatus")(__v.asInstanceOf[js.Any]))
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.updateDynamic("TextType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Block]
     }
   }
@@ -580,6 +584,29 @@ package textract {
     }
   }
 
+  /** Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.
+    */
+  @js.native
+  trait OutputConfig extends js.Object {
+    var S3Bucket: S3Bucket
+    var S3Prefix: js.UndefOr[S3ObjectName]
+  }
+
+  object OutputConfig {
+    @inline
+    def apply(
+        S3Bucket: S3Bucket,
+        S3Prefix: js.UndefOr[S3ObjectName] = js.undefined
+    ): OutputConfig = {
+      val __obj = js.Dynamic.literal(
+        "S3Bucket" -> S3Bucket.asInstanceOf[js.Any]
+      )
+
+      S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputConfig]
+    }
+  }
+
   /** The X and Y coordinates of a point on a document page. The X and Y values that are returned are ratios of the overall document page size. For example, if the input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the document page.
     * An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained polygon around detected text. For more information, see Geometry in the Amazon Textract Developer Guide.
     */
@@ -629,8 +656,9 @@ package textract {
   object RelationshipType {
     val VALUE = "VALUE".asInstanceOf[RelationshipType]
     val CHILD = "CHILD".asInstanceOf[RelationshipType]
+    val COMPLEX_FEATURES = "COMPLEX_FEATURES".asInstanceOf[RelationshipType]
 
-    @inline def values = js.Array(VALUE, CHILD)
+    @inline def values = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
   }
 
   /** The S3 bucket name and file name that identifies the document.
@@ -674,7 +702,9 @@ package textract {
     var FeatureTypes: FeatureTypes
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var JobTag: js.UndefOr[JobTag]
+    var KMSKeyId: js.UndefOr[KMSKeyId]
     var NotificationChannel: js.UndefOr[NotificationChannel]
+    var OutputConfig: js.UndefOr[OutputConfig]
   }
 
   object StartDocumentAnalysisRequest {
@@ -684,7 +714,9 @@ package textract {
         FeatureTypes: FeatureTypes,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
+        KMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
+        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined,
+        OutputConfig: js.UndefOr[OutputConfig] = js.undefined
     ): StartDocumentAnalysisRequest = {
       val __obj = js.Dynamic.literal(
         "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any],
@@ -693,7 +725,9 @@ package textract {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
       NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentAnalysisRequest]
     }
   }
@@ -719,7 +753,9 @@ package textract {
     var DocumentLocation: DocumentLocation
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var JobTag: js.UndefOr[JobTag]
+    var KMSKeyId: js.UndefOr[KMSKeyId]
     var NotificationChannel: js.UndefOr[NotificationChannel]
+    var OutputConfig: js.UndefOr[OutputConfig]
   }
 
   object StartDocumentTextDetectionRequest {
@@ -728,7 +764,9 @@ package textract {
         DocumentLocation: DocumentLocation,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         JobTag: js.UndefOr[JobTag] = js.undefined,
-        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
+        KMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
+        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined,
+        OutputConfig: js.UndefOr[OutputConfig] = js.undefined
     ): StartDocumentTextDetectionRequest = {
       val __obj = js.Dynamic.literal(
         "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any]
@@ -736,7 +774,9 @@ package textract {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
       NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentTextDetectionRequest]
     }
   }
@@ -755,6 +795,15 @@ package textract {
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentTextDetectionResponse]
     }
+  }
+
+  @js.native
+  sealed trait TextType extends js.Any
+  object TextType {
+    val HANDWRITING = "HANDWRITING".asInstanceOf[TextType]
+    val PRINTED = "PRINTED".asInstanceOf[TextType]
+
+    @inline def values = js.Array(HANDWRITING, PRINTED)
   }
 
   /** A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>) or asynchronous document text detection (<a>StartDocumentTextDetection</a>).

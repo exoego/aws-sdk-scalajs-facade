@@ -2215,13 +2215,16 @@ package elasticbeanstalk {
   @js.native
   sealed trait EnvironmentStatus extends js.Any
   object EnvironmentStatus {
+    val Aborting = "Aborting".asInstanceOf[EnvironmentStatus]
     val Launching = "Launching".asInstanceOf[EnvironmentStatus]
     val Updating = "Updating".asInstanceOf[EnvironmentStatus]
+    val LinkingFrom = "LinkingFrom".asInstanceOf[EnvironmentStatus]
+    val LinkingTo = "LinkingTo".asInstanceOf[EnvironmentStatus]
     val Ready = "Ready".asInstanceOf[EnvironmentStatus]
     val Terminating = "Terminating".asInstanceOf[EnvironmentStatus]
     val Terminated = "Terminated".asInstanceOf[EnvironmentStatus]
 
-    @inline def values = js.Array(Launching, Updating, Ready, Terminating, Terminated)
+    @inline def values = js.Array(Aborting, Launching, Updating, LinkingFrom, LinkingTo, Ready, Terminating, Terminated)
   }
 
   /** Describes the properties of an environment tier

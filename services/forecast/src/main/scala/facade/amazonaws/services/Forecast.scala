@@ -15,6 +15,7 @@ package object forecast {
   type DatasetImportJobs = js.Array[DatasetImportJobSummary]
   type Datasets = js.Array[DatasetSummary]
   type ErrorMessage = String
+  type ErrorMetrics = js.Array[ErrorMetric]
   type FeaturizationMethodParameters = js.Dictionary[ParameterValue]
   type FeaturizationPipeline = js.Array[FeaturizationMethod]
   type Featurizations = js.Array[Featurization]
@@ -424,6 +425,7 @@ package forecast {
     var AlgorithmArn: js.UndefOr[Arn]
     var EncryptionConfig: js.UndefOr[EncryptionConfig]
     var EvaluationParameters: js.UndefOr[EvaluationParameters]
+    var ForecastTypes: js.UndefOr[ForecastTypes]
     var HPOConfig: js.UndefOr[HyperParameterTuningJobConfig]
     var PerformAutoML: js.UndefOr[Boolean]
     var PerformHPO: js.UndefOr[Boolean]
@@ -441,6 +443,7 @@ package forecast {
         AlgorithmArn: js.UndefOr[Arn] = js.undefined,
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
         EvaluationParameters: js.UndefOr[EvaluationParameters] = js.undefined,
+        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
         HPOConfig: js.UndefOr[HyperParameterTuningJobConfig] = js.undefined,
         PerformAutoML: js.UndefOr[Boolean] = js.undefined,
         PerformHPO: js.UndefOr[Boolean] = js.undefined,
@@ -457,6 +460,7 @@ package forecast {
       AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
       EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
       EvaluationParameters.foreach(__v => __obj.updateDynamic("EvaluationParameters")(__v.asInstanceOf[js.Any]))
+      ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
       HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
       PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
       PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
@@ -1040,6 +1044,7 @@ package forecast {
     var EvaluationParameters: js.UndefOr[EvaluationParameters]
     var FeaturizationConfig: js.UndefOr[FeaturizationConfig]
     var ForecastHorizon: js.UndefOr[Int]
+    var ForecastTypes: js.UndefOr[ForecastTypes]
     var HPOConfig: js.UndefOr[HyperParameterTuningJobConfig]
     var InputDataConfig: js.UndefOr[InputDataConfig]
     var LastModificationTime: js.UndefOr[Timestamp]
@@ -1064,6 +1069,7 @@ package forecast {
         EvaluationParameters: js.UndefOr[EvaluationParameters] = js.undefined,
         FeaturizationConfig: js.UndefOr[FeaturizationConfig] = js.undefined,
         ForecastHorizon: js.UndefOr[Int] = js.undefined,
+        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
         HPOConfig: js.UndefOr[HyperParameterTuningJobConfig] = js.undefined,
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1085,6 +1091,7 @@ package forecast {
       EvaluationParameters.foreach(__v => __obj.updateDynamic("EvaluationParameters")(__v.asInstanceOf[js.Any]))
       FeaturizationConfig.foreach(__v => __obj.updateDynamic("FeaturizationConfig")(__v.asInstanceOf[js.Any]))
       ForecastHorizon.foreach(__v => __obj.updateDynamic("ForecastHorizon")(__v.asInstanceOf[js.Any]))
+      ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
       HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
@@ -1133,6 +1140,30 @@ package forecast {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[EncryptionConfig]
+    }
+  }
+
+  /** Provides detailed error metrics to evaluate the performance of a predictor. This object is part of the <a>Metrics</a> object.
+    */
+  @js.native
+  trait ErrorMetric extends js.Object {
+    var ForecastType: js.UndefOr[ForecastType]
+    var RMSE: js.UndefOr[Double]
+    var WAPE: js.UndefOr[Double]
+  }
+
+  object ErrorMetric {
+    @inline
+    def apply(
+        ForecastType: js.UndefOr[ForecastType] = js.undefined,
+        RMSE: js.UndefOr[Double] = js.undefined,
+        WAPE: js.UndefOr[Double] = js.undefined
+    ): ErrorMetric = {
+      val __obj = js.Dynamic.literal()
+      ForecastType.foreach(__v => __obj.updateDynamic("ForecastType")(__v.asInstanceOf[js.Any]))
+      RMSE.foreach(__v => __obj.updateDynamic("RMSE")(__v.asInstanceOf[js.Any]))
+      WAPE.foreach(__v => __obj.updateDynamic("WAPE")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorMetric]
     }
   }
 
@@ -1773,6 +1804,7 @@ package forecast {
     */
   @js.native
   trait Metrics extends js.Object {
+    var ErrorMetrics: js.UndefOr[ErrorMetrics]
     var RMSE: js.UndefOr[Double]
     var WeightedQuantileLosses: js.UndefOr[WeightedQuantileLosses]
   }
@@ -1780,10 +1812,12 @@ package forecast {
   object Metrics {
     @inline
     def apply(
+        ErrorMetrics: js.UndefOr[ErrorMetrics] = js.undefined,
         RMSE: js.UndefOr[Double] = js.undefined,
         WeightedQuantileLosses: js.UndefOr[WeightedQuantileLosses] = js.undefined
     ): Metrics = {
       val __obj = js.Dynamic.literal()
+      ErrorMetrics.foreach(__v => __obj.updateDynamic("ErrorMetrics")(__v.asInstanceOf[js.Any]))
       RMSE.foreach(__v => __obj.updateDynamic("RMSE")(__v.asInstanceOf[js.Any]))
       WeightedQuantileLosses.foreach(__v => __obj.updateDynamic("WeightedQuantileLosses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metrics]
@@ -2005,21 +2039,7 @@ package forecast {
   }
 
   /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
-    * The only supported feature is a holiday calendar. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] web site.
-    * India and Korea's holidays are not included in the Jollyday library, but both are supported by Amazon Forecast. Their holidays are:
-    * ```"IN" - INDIA```
-    * * <code>JANUARY 26 - REPUBLIC DAY</code>
-    * * <code>AUGUST 15 - INDEPENDENCE DAY</code>
-    * * <code>OCTOBER 2 GANDHI'S BIRTHDAY</code>
-    * ```"KR" - KOREA```
-    * * <code>JANUARY 1 - NEW YEAR</code>
-    * * <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code>
-    * * <code>MAY 5 - CHILDREN'S DAY</code>
-    * * <code>JUNE 6 - MEMORIAL DAY</code>
-    * * <code>AUGUST 15 - LIBERATION DAY</code>
-    * * <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code>
-    * * <code>OCTOBER 9 - HANGEUL DAY</code>
-    * * <code>DECEMBER 25 - CHRISTMAS DAY</code>
+    * The only supported feature is Holidays. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] website.
     */
   @js.native
   trait SupplementaryFeature extends js.Object {

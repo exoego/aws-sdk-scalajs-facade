@@ -70,6 +70,8 @@ package object lambda {
   type Principal = String
   type ProvisionedConcurrencyConfigList = js.Array[ProvisionedConcurrencyConfigListItem]
   type Qualifier = String
+  type Queue = String
+  type Queues = js.Array[Queue]
   type ReservedConcurrentExecutions = Int
   type ResourceArn = String
   type RoleArn = String
@@ -79,6 +81,7 @@ package object lambda {
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
   type SensitiveString = String
+  type SourceAccessConfigurations = js.Array[SourceAccessConfiguration]
   type SourceOwner = String
   type StateReason = String
   type StatementId = String
@@ -481,6 +484,8 @@ package lambda {
     var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
+    var Queues: js.UndefOr[Queues]
+    var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
     var Topics: js.UndefOr[Topics]
@@ -499,6 +504,8 @@ package lambda {
         MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
+        Queues: js.UndefOr[Queues] = js.undefined,
+        SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
         Topics: js.UndefOr[Topics] = js.undefined
@@ -516,6 +523,8 @@ package lambda {
       MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
+      Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
+      SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
       Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
@@ -839,6 +848,10 @@ package lambda {
     var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
+    var Queues: js.UndefOr[Queues]
+    var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
+    var StartingPosition: js.UndefOr[EventSourcePosition]
+    var StartingPositionTimestamp: js.UndefOr[Date]
     var State: js.UndefOr[String]
     var StateTransitionReason: js.UndefOr[String]
     var Topics: js.UndefOr[Topics]
@@ -859,6 +872,10 @@ package lambda {
         MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
+        Queues: js.UndefOr[Queues] = js.undefined,
+        SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
+        StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
+        StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
         State: js.UndefOr[String] = js.undefined,
         StateTransitionReason: js.UndefOr[String] = js.undefined,
         Topics: js.UndefOr[Topics] = js.undefined,
@@ -876,6 +893,10 @@ package lambda {
       MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
+      Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
+      SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
+      StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
+      StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
       Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
@@ -2534,6 +2555,35 @@ package lambda {
     )
   }
 
+  /** (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following format: <code> { "username": "your username", "password": "your password" }</code>
+    */
+  @js.native
+  trait SourceAccessConfiguration extends js.Object {
+    var Type: js.UndefOr[SourceAccessType]
+    var URI: js.UndefOr[Arn]
+  }
+
+  object SourceAccessConfiguration {
+    @inline
+    def apply(
+        Type: js.UndefOr[SourceAccessType] = js.undefined,
+        URI: js.UndefOr[Arn] = js.undefined
+    ): SourceAccessConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceAccessConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait SourceAccessType extends js.Any
+  object SourceAccessType {
+    val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[SourceAccessType]
+
+    @inline def values = js.Array(BASIC_AUTH)
+  }
+
   @js.native
   sealed trait State extends js.Any
   object State {
@@ -2703,6 +2753,7 @@ package lambda {
     var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
+    var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
   }
 
   object UpdateEventSourceMappingRequest {
@@ -2717,7 +2768,8 @@ package lambda {
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
         MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
-        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined
+        ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
+        SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined
     ): UpdateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
@@ -2732,6 +2784,7 @@ package lambda {
       MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
+      SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]
     }
   }

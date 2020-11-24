@@ -10,11 +10,27 @@ package object s3control {
   type AccessPointList = js.Array[AccessPoint]
   type AccessPointName = String
   type AccountId = String
+  type AwsOrgArn = String
   type BucketName = String
+  type Buckets = js.Array[S3BucketArnString]
+  type ConfigId = String
+  type ConfirmRemoveSelfBucketAccess = Boolean
   type ConfirmationRequired = Boolean
+  type ContinuationToken = String
   type CreationDate = js.Date
+  type Date = js.Date
+  type Days = Int
+  type DaysAfterInitiation = Int
+  type ExpiredObjectDeleteMarker = Boolean
   type FunctionArnString = String
+  type GrantFullControl = String
+  type GrantRead = String
+  type GrantReadACP = String
+  type GrantWrite = String
+  type GrantWriteACP = String
   type IAMRoleArn = String
+  type ID = String
+  type IsEnabled = Boolean
   type IsPublic = Boolean
   type JobArn = String
   type JobCreationTime = js.Date
@@ -32,50 +48,89 @@ package object s3control {
   type JobTerminationDate = js.Date
   type JobTotalNumberOfTasks = Double
   type KmsKeyArnString = String
+  type LifecycleRules = js.Array[LifecycleRule]
+  type Location = String
   type MaxLength1024String = String
   type MaxResults = Int
+  type MinStorageBytesPercentage = Double
   type NonEmptyMaxLength1024String = String
   type NonEmptyMaxLength2048String = String
   type NonEmptyMaxLength256String = String
   type NonEmptyMaxLength64String = String
+  type NoncurrentVersionTransitionList = js.Array[NoncurrentVersionTransition]
+  type ObjectLockEnabledForBucket = Boolean
   type Policy = String
+  type Prefix = String
+  type PublicAccessBlockEnabled = Boolean
+  type RegionalBucketList = js.Array[RegionalBucket]
+  type Regions = js.Array[S3AWSRegion]
   type ReportPrefixString = String
+  type S3AWSRegion = String
+  type S3AccessPointArn = String
   type S3BucketArnString = String
   type S3ContentLength = Double
   type S3ExpirationInDays = Int
   type S3GrantList = js.Array[S3Grant]
   type S3KeyArnString = String
   type S3ObjectVersionId = String
+  type S3RegionalBucketArn = String
   type S3TagSet = js.Array[S3Tag]
   type S3UserMetadata = js.Dictionary[MaxLength1024String]
+  type SSEKMSKeyId = String
   type Setting = Boolean
+  type StorageLensArn = String
+  type StorageLensConfigurationList = js.Array[ListStorageLensConfigurationEntry]
+  type StorageLensPrefixLevelDelimiter = String
+  type StorageLensPrefixLevelMaxDepth = Int
+  type StorageLensTags = js.Array[StorageLensTag]
   type StringForNextToken = String
   type SuspendedCause = String
   type SuspendedDate = js.Date
   type TagKeyString = String
   type TagValueString = String
   type TimeStamp = js.Date
+  type TransitionList = js.Array[Transition]
   type VpcId = String
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
-    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[js.Object] = service.createAccessPoint(params).promise().toFuture
+    @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[CreateAccessPointResult] = service.createAccessPoint(params).promise().toFuture
+    @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketResult] = service.createBucket(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
     @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] = service.deleteAccessPoint(params).promise().toFuture
     @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] = service.deleteAccessPointPolicy(params).promise().toFuture
+    @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] = service.deleteBucket(params).promise().toFuture
+    @inline def deleteBucketLifecycleConfigurationFuture(params: DeleteBucketLifecycleConfigurationRequest): Future[js.Object] = service.deleteBucketLifecycleConfiguration(params).promise().toFuture
+    @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] = service.deleteBucketPolicy(params).promise().toFuture
+    @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] = service.deleteBucketTagging(params).promise().toFuture
     @inline def deleteJobTaggingFuture(params: DeleteJobTaggingRequest): Future[DeleteJobTaggingResult] = service.deleteJobTagging(params).promise().toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] = service.deletePublicAccessBlock(params).promise().toFuture
+    @inline def deleteStorageLensConfigurationFuture(params: DeleteStorageLensConfigurationRequest): Future[js.Object] = service.deleteStorageLensConfiguration(params).promise().toFuture
+    @inline def deleteStorageLensConfigurationTaggingFuture(params: DeleteStorageLensConfigurationTaggingRequest): Future[DeleteStorageLensConfigurationTaggingResult] = service.deleteStorageLensConfigurationTagging(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] = service.describeJob(params).promise().toFuture
     @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] = service.getAccessPoint(params).promise().toFuture
     @inline def getAccessPointPolicyFuture(params: GetAccessPointPolicyRequest): Future[GetAccessPointPolicyResult] = service.getAccessPointPolicy(params).promise().toFuture
     @inline def getAccessPointPolicyStatusFuture(params: GetAccessPointPolicyStatusRequest): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise().toFuture
+    @inline def getBucketFuture(params: GetBucketRequest): Future[GetBucketResult] = service.getBucket(params).promise().toFuture
+    @inline def getBucketLifecycleConfigurationFuture(params: GetBucketLifecycleConfigurationRequest): Future[GetBucketLifecycleConfigurationResult] = service.getBucketLifecycleConfiguration(params).promise().toFuture
+    @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyResult] = service.getBucketPolicy(params).promise().toFuture
+    @inline def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingResult] = service.getBucketTagging(params).promise().toFuture
     @inline def getJobTaggingFuture(params: GetJobTaggingRequest): Future[GetJobTaggingResult] = service.getJobTagging(params).promise().toFuture
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] = service.getPublicAccessBlock(params).promise().toFuture
+    @inline def getStorageLensConfigurationFuture(params: GetStorageLensConfigurationRequest): Future[GetStorageLensConfigurationResult] = service.getStorageLensConfiguration(params).promise().toFuture
+    @inline def getStorageLensConfigurationTaggingFuture(params: GetStorageLensConfigurationTaggingRequest): Future[GetStorageLensConfigurationTaggingResult] = service.getStorageLensConfigurationTagging(params).promise().toFuture
     @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] = service.listAccessPoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def listRegionalBucketsFuture(params: ListRegionalBucketsRequest): Future[ListRegionalBucketsResult] = service.listRegionalBuckets(params).promise().toFuture
+    @inline def listStorageLensConfigurationsFuture(params: ListStorageLensConfigurationsRequest): Future[ListStorageLensConfigurationsResult] = service.listStorageLensConfigurations(params).promise().toFuture
     @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] = service.putAccessPointPolicy(params).promise().toFuture
+    @inline def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise().toFuture
+    @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] = service.putBucketPolicy(params).promise().toFuture
+    @inline def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] = service.putBucketTagging(params).promise().toFuture
     @inline def putJobTaggingFuture(params: PutJobTaggingRequest): Future[PutJobTaggingResult] = service.putJobTagging(params).promise().toFuture
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] = service.putPublicAccessBlock(params).promise().toFuture
+    @inline def putStorageLensConfigurationFuture(params: PutStorageLensConfigurationRequest): Future[js.Object] = service.putStorageLensConfiguration(params).promise().toFuture
+    @inline def putStorageLensConfigurationTaggingFuture(params: PutStorageLensConfigurationTaggingRequest): Future[PutStorageLensConfigurationTaggingResult] = service.putStorageLensConfigurationTagging(params).promise().toFuture
     @inline def updateJobPriorityFuture(params: UpdateJobPriorityRequest): Future[UpdateJobPriorityResult] = service.updateJobPriority(params).promise().toFuture
     @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] = service.updateJobStatus(params).promise().toFuture
 
@@ -88,25 +143,63 @@ package s3control {
   class S3Control() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createAccessPoint(params: CreateAccessPointRequest): Request[js.Object] = js.native
+    def createAccessPoint(params: CreateAccessPointRequest): Request[CreateAccessPointResult] = js.native
+    def createBucket(params: CreateBucketRequest): Request[CreateBucketResult] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
     def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object] = js.native
     def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object] = js.native
+    def deleteBucket(params: DeleteBucketRequest): Request[js.Object] = js.native
+    def deleteBucketLifecycleConfiguration(params: DeleteBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
+    def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object] = js.native
+    def deleteBucketTagging(params: DeleteBucketTaggingRequest): Request[js.Object] = js.native
     def deleteJobTagging(params: DeleteJobTaggingRequest): Request[DeleteJobTaggingResult] = js.native
     def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object] = js.native
+    def deleteStorageLensConfiguration(params: DeleteStorageLensConfigurationRequest): Request[js.Object] = js.native
+    def deleteStorageLensConfigurationTagging(params: DeleteStorageLensConfigurationTaggingRequest): Request[DeleteStorageLensConfigurationTaggingResult] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
     def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult] = js.native
     def getAccessPointPolicy(params: GetAccessPointPolicyRequest): Request[GetAccessPointPolicyResult] = js.native
     def getAccessPointPolicyStatus(params: GetAccessPointPolicyStatusRequest): Request[GetAccessPointPolicyStatusResult] = js.native
+    def getBucket(params: GetBucketRequest): Request[GetBucketResult] = js.native
+    def getBucketLifecycleConfiguration(params: GetBucketLifecycleConfigurationRequest): Request[GetBucketLifecycleConfigurationResult] = js.native
+    def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyResult] = js.native
+    def getBucketTagging(params: GetBucketTaggingRequest): Request[GetBucketTaggingResult] = js.native
     def getJobTagging(params: GetJobTaggingRequest): Request[GetJobTaggingResult] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
+    def getStorageLensConfiguration(params: GetStorageLensConfigurationRequest): Request[GetStorageLensConfigurationResult] = js.native
+    def getStorageLensConfigurationTagging(params: GetStorageLensConfigurationTaggingRequest): Request[GetStorageLensConfigurationTaggingResult] = js.native
     def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
+    def listRegionalBuckets(params: ListRegionalBucketsRequest): Request[ListRegionalBucketsResult] = js.native
+    def listStorageLensConfigurations(params: ListStorageLensConfigurationsRequest): Request[ListStorageLensConfigurationsResult] = js.native
     def putAccessPointPolicy(params: PutAccessPointPolicyRequest): Request[js.Object] = js.native
+    def putBucketLifecycleConfiguration(params: PutBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
+    def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object] = js.native
+    def putBucketTagging(params: PutBucketTaggingRequest): Request[js.Object] = js.native
     def putJobTagging(params: PutJobTaggingRequest): Request[PutJobTaggingResult] = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native
+    def putStorageLensConfiguration(params: PutStorageLensConfigurationRequest): Request[js.Object] = js.native
+    def putStorageLensConfigurationTagging(params: PutStorageLensConfigurationTaggingRequest): Request[PutStorageLensConfigurationTaggingResult] = js.native
     def updateJobPriority(params: UpdateJobPriorityRequest): Request[UpdateJobPriorityResult] = js.native
     def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult] = js.native
+  }
+
+  /** The container for abort incomplete multipart upload
+    */
+  @js.native
+  trait AbortIncompleteMultipartUpload extends js.Object {
+    var DaysAfterInitiation: js.UndefOr[DaysAfterInitiation]
+  }
+
+  object AbortIncompleteMultipartUpload {
+    @inline
+    def apply(
+        DaysAfterInitiation: js.UndefOr[DaysAfterInitiation] = js.undefined
+    ): AbortIncompleteMultipartUpload = {
+      val __obj = js.Dynamic.literal()
+      DaysAfterInitiation.foreach(__v => __obj.updateDynamic("DaysAfterInitiation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AbortIncompleteMultipartUpload]
+    }
   }
 
   /** An access point used to access a bucket.
@@ -116,6 +209,7 @@ package s3control {
     var Bucket: BucketName
     var Name: AccessPointName
     var NetworkOrigin: NetworkOrigin
+    var AccessPointArn: js.UndefOr[S3AccessPointArn]
     var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
@@ -125,6 +219,7 @@ package s3control {
         Bucket: BucketName,
         Name: AccessPointName,
         NetworkOrigin: NetworkOrigin,
+        AccessPointArn: js.UndefOr[S3AccessPointArn] = js.undefined,
         VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): AccessPoint = {
       val __obj = js.Dynamic.literal(
@@ -133,9 +228,101 @@ package s3control {
         "NetworkOrigin" -> NetworkOrigin.asInstanceOf[js.Any]
       )
 
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessPoint]
     }
+  }
+
+  /** A container for the account level Amazon S3 Storage Lens configuration.
+    */
+  @js.native
+  trait AccountLevel extends js.Object {
+    var BucketLevel: BucketLevel
+    var ActivityMetrics: js.UndefOr[ActivityMetrics]
+  }
+
+  object AccountLevel {
+    @inline
+    def apply(
+        BucketLevel: BucketLevel,
+        ActivityMetrics: js.UndefOr[ActivityMetrics] = js.undefined
+    ): AccountLevel = {
+      val __obj = js.Dynamic.literal(
+        "BucketLevel" -> BucketLevel.asInstanceOf[js.Any]
+      )
+
+      ActivityMetrics.foreach(__v => __obj.updateDynamic("ActivityMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountLevel]
+    }
+  }
+
+  /** A container for the activity metrics.
+    */
+  @js.native
+  trait ActivityMetrics extends js.Object {
+    var IsEnabled: js.UndefOr[IsEnabled]
+  }
+
+  object ActivityMetrics {
+    @inline
+    def apply(
+        IsEnabled: js.UndefOr[IsEnabled] = js.undefined
+    ): ActivityMetrics = {
+      val __obj = js.Dynamic.literal()
+      IsEnabled.foreach(__v => __obj.updateDynamic("IsEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivityMetrics]
+    }
+  }
+
+  @js.native
+  sealed trait BucketCannedACL extends js.Any
+  object BucketCannedACL {
+    val `private` = "private".asInstanceOf[BucketCannedACL]
+    val `public-read` = "public-read".asInstanceOf[BucketCannedACL]
+    val `public-read-write` = "public-read-write".asInstanceOf[BucketCannedACL]
+    val `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
+
+    @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`)
+  }
+
+  /** A container for the bucket-level configuration.
+    */
+  @js.native
+  trait BucketLevel extends js.Object {
+    var ActivityMetrics: js.UndefOr[ActivityMetrics]
+    var PrefixLevel: js.UndefOr[PrefixLevel]
+  }
+
+  object BucketLevel {
+    @inline
+    def apply(
+        ActivityMetrics: js.UndefOr[ActivityMetrics] = js.undefined,
+        PrefixLevel: js.UndefOr[PrefixLevel] = js.undefined
+    ): BucketLevel = {
+      val __obj = js.Dynamic.literal()
+      ActivityMetrics.foreach(__v => __obj.updateDynamic("ActivityMetrics")(__v.asInstanceOf[js.Any]))
+      PrefixLevel.foreach(__v => __obj.updateDynamic("PrefixLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketLevel]
+    }
+  }
+
+  @js.native
+  sealed trait BucketLocationConstraint extends js.Any
+  object BucketLocationConstraint {
+    val EU = "EU".asInstanceOf[BucketLocationConstraint]
+    val `eu-west-1` = "eu-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
+    val `us-west-2` = "us-west-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-south-1` = "ap-south-1".asInstanceOf[BucketLocationConstraint]
+    val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[BucketLocationConstraint]
+    val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[BucketLocationConstraint]
+    val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[BucketLocationConstraint]
+    val `sa-east-1` = "sa-east-1".asInstanceOf[BucketLocationConstraint]
+    val `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
+    val `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
+
+    @inline def values = js.Array(EU, `eu-west-1`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`, `cn-north-1`, `eu-central-1`)
   }
 
   @js.native
@@ -165,6 +352,106 @@ package s3control {
       PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccessPointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAccessPointResult extends js.Object {
+    var AccessPointArn: js.UndefOr[S3AccessPointArn]
+  }
+
+  object CreateAccessPointResult {
+    @inline
+    def apply(
+        AccessPointArn: js.UndefOr[S3AccessPointArn] = js.undefined
+    ): CreateAccessPointResult = {
+      val __obj = js.Dynamic.literal()
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessPointResult]
+    }
+  }
+
+  /** The container for the bucket configuration.
+    *
+    * '''Note:'''This is not supported by Amazon S3 on Outposts buckets.
+    */
+  @js.native
+  trait CreateBucketConfiguration extends js.Object {
+    var LocationConstraint: js.UndefOr[BucketLocationConstraint]
+  }
+
+  object CreateBucketConfiguration {
+    @inline
+    def apply(
+        LocationConstraint: js.UndefOr[BucketLocationConstraint] = js.undefined
+    ): CreateBucketConfiguration = {
+      val __obj = js.Dynamic.literal()
+      LocationConstraint.foreach(__v => __obj.updateDynamic("LocationConstraint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketConfiguration]
+    }
+  }
+
+  @js.native
+  trait CreateBucketRequest extends js.Object {
+    var Bucket: BucketName
+    var ACL: js.UndefOr[BucketCannedACL]
+    var CreateBucketConfiguration: js.UndefOr[CreateBucketConfiguration]
+    var GrantFullControl: js.UndefOr[GrantFullControl]
+    var GrantRead: js.UndefOr[GrantRead]
+    var GrantReadACP: js.UndefOr[GrantReadACP]
+    var GrantWrite: js.UndefOr[GrantWrite]
+    var GrantWriteACP: js.UndefOr[GrantWriteACP]
+    var ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket]
+    var OutpostId: js.UndefOr[NonEmptyMaxLength64String]
+  }
+
+  object CreateBucketRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        ACL: js.UndefOr[BucketCannedACL] = js.undefined,
+        CreateBucketConfiguration: js.UndefOr[CreateBucketConfiguration] = js.undefined,
+        GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
+        GrantRead: js.UndefOr[GrantRead] = js.undefined,
+        GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
+        GrantWrite: js.UndefOr[GrantWrite] = js.undefined,
+        GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
+        ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket] = js.undefined,
+        OutpostId: js.UndefOr[NonEmptyMaxLength64String] = js.undefined
+    ): CreateBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
+      CreateBucketConfiguration.foreach(__v => __obj.updateDynamic("CreateBucketConfiguration")(__v.asInstanceOf[js.Any]))
+      GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
+      GrantRead.foreach(__v => __obj.updateDynamic("GrantRead")(__v.asInstanceOf[js.Any]))
+      GrantReadACP.foreach(__v => __obj.updateDynamic("GrantReadACP")(__v.asInstanceOf[js.Any]))
+      GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
+      GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
+      ObjectLockEnabledForBucket.foreach(__v => __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any]))
+      OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBucketResult extends js.Object {
+    var BucketArn: js.UndefOr[S3RegionalBucketArn]
+    var Location: js.UndefOr[Location]
+  }
+
+  object CreateBucketResult {
+    @inline
+    def apply(
+        BucketArn: js.UndefOr[S3RegionalBucketArn] = js.undefined,
+        Location: js.UndefOr[Location] = js.undefined
+    ): CreateBucketResult = {
+      val __obj = js.Dynamic.literal()
+      BucketArn.foreach(__v => __obj.updateDynamic("BucketArn")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketResult]
     }
   }
 
@@ -270,6 +557,86 @@ package s3control {
   }
 
   @js.native
+  trait DeleteBucketLifecycleConfigurationRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object DeleteBucketLifecycleConfigurationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): DeleteBucketLifecycleConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBucketLifecycleConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object DeleteBucketPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): DeleteBucketPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBucketPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object DeleteBucketRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): DeleteBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBucketRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object DeleteBucketTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): DeleteBucketTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBucketTaggingRequest]
+    }
+  }
+
+  @js.native
   trait DeleteJobTaggingRequest extends js.Object {
     var AccountId: AccountId
     var JobId: JobId
@@ -318,6 +685,57 @@ package s3control {
   }
 
   @js.native
+  trait DeleteStorageLensConfigurationRequest extends js.Object {
+    var AccountId: AccountId
+    var ConfigId: ConfigId
+  }
+
+  object DeleteStorageLensConfigurationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConfigId: ConfigId
+    ): DeleteStorageLensConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ConfigId" -> ConfigId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteStorageLensConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteStorageLensConfigurationTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var ConfigId: ConfigId
+  }
+
+  object DeleteStorageLensConfigurationTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConfigId: ConfigId
+    ): DeleteStorageLensConfigurationTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ConfigId" -> ConfigId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteStorageLensConfigurationTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteStorageLensConfigurationTaggingResult extends js.Object
+
+  object DeleteStorageLensConfigurationTaggingResult {
+    @inline
+    def apply(): DeleteStorageLensConfigurationTaggingResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteStorageLensConfigurationTaggingResult]
+    }
+  }
+
+  @js.native
   trait DescribeJobRequest extends js.Object {
     var AccountId: AccountId
     var JobId: JobId
@@ -351,6 +769,45 @@ package s3control {
       Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResult]
     }
+  }
+
+  /** A container for what Amazon S3 Storage Lens will exclude.
+    */
+  @js.native
+  trait Exclude extends js.Object {
+    var Buckets: js.UndefOr[Buckets]
+    var Regions: js.UndefOr[Regions]
+  }
+
+  object Exclude {
+    @inline
+    def apply(
+        Buckets: js.UndefOr[Buckets] = js.undefined,
+        Regions: js.UndefOr[Regions] = js.undefined
+    ): Exclude = {
+      val __obj = js.Dynamic.literal()
+      Buckets.foreach(__v => __obj.updateDynamic("Buckets")(__v.asInstanceOf[js.Any]))
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Exclude]
+    }
+  }
+
+  @js.native
+  sealed trait ExpirationStatus extends js.Any
+  object ExpirationStatus {
+    val Enabled = "Enabled".asInstanceOf[ExpirationStatus]
+    val Disabled = "Disabled".asInstanceOf[ExpirationStatus]
+
+    @inline def values = js.Array(Enabled, Disabled)
+  }
+
+  @js.native
+  sealed trait Format extends js.Any
+  object Format {
+    val CSV = "CSV".asInstanceOf[Format]
+    val Parquet = "Parquet".asInstanceOf[Format]
+
+    @inline def values = js.Array(CSV, Parquet)
   }
 
   @js.native
@@ -477,6 +934,157 @@ package s3control {
   }
 
   @js.native
+  trait GetBucketLifecycleConfigurationRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object GetBucketLifecycleConfigurationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): GetBucketLifecycleConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketLifecycleConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketLifecycleConfigurationResult extends js.Object {
+    var Rules: js.UndefOr[LifecycleRules]
+  }
+
+  object GetBucketLifecycleConfigurationResult {
+    @inline
+    def apply(
+        Rules: js.UndefOr[LifecycleRules] = js.undefined
+    ): GetBucketLifecycleConfigurationResult = {
+      val __obj = js.Dynamic.literal()
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketLifecycleConfigurationResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object GetBucketPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): GetBucketPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketPolicyResult extends js.Object {
+    var Policy: js.UndefOr[Policy]
+  }
+
+  object GetBucketPolicyResult {
+    @inline
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined
+    ): GetBucketPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketPolicyResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object GetBucketRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): GetBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketResult extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var CreationDate: js.UndefOr[CreationDate]
+    var PublicAccessBlockEnabled: js.UndefOr[PublicAccessBlockEnabled]
+  }
+
+  object GetBucketResult {
+    @inline
+    def apply(
+        Bucket: js.UndefOr[BucketName] = js.undefined,
+        CreationDate: js.UndefOr[CreationDate] = js.undefined,
+        PublicAccessBlockEnabled: js.UndefOr[PublicAccessBlockEnabled] = js.undefined
+    ): GetBucketResult = {
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      PublicAccessBlockEnabled.foreach(__v => __obj.updateDynamic("PublicAccessBlockEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+  }
+
+  object GetBucketTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName
+    ): GetBucketTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketTaggingResult extends js.Object {
+    var TagSet: S3TagSet
+  }
+
+  object GetBucketTaggingResult {
+    @inline
+    def apply(
+        TagSet: S3TagSet
+    ): GetBucketTaggingResult = {
+      val __obj = js.Dynamic.literal(
+        "TagSet" -> TagSet.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketTaggingResult]
+    }
+  }
+
+  @js.native
   trait GetJobTaggingRequest extends js.Object {
     var AccountId: AccountId
     var JobId: JobId
@@ -542,6 +1150,99 @@ package s3control {
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GetPublicAccessBlockRequest]
+    }
+  }
+
+  @js.native
+  trait GetStorageLensConfigurationRequest extends js.Object {
+    var AccountId: AccountId
+    var ConfigId: ConfigId
+  }
+
+  object GetStorageLensConfigurationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConfigId: ConfigId
+    ): GetStorageLensConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ConfigId" -> ConfigId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetStorageLensConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetStorageLensConfigurationResult extends js.Object {
+    var StorageLensConfiguration: js.UndefOr[StorageLensConfiguration]
+  }
+
+  object GetStorageLensConfigurationResult {
+    @inline
+    def apply(
+        StorageLensConfiguration: js.UndefOr[StorageLensConfiguration] = js.undefined
+    ): GetStorageLensConfigurationResult = {
+      val __obj = js.Dynamic.literal()
+      StorageLensConfiguration.foreach(__v => __obj.updateDynamic("StorageLensConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStorageLensConfigurationResult]
+    }
+  }
+
+  @js.native
+  trait GetStorageLensConfigurationTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var ConfigId: ConfigId
+  }
+
+  object GetStorageLensConfigurationTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConfigId: ConfigId
+    ): GetStorageLensConfigurationTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ConfigId" -> ConfigId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetStorageLensConfigurationTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait GetStorageLensConfigurationTaggingResult extends js.Object {
+    var Tags: js.UndefOr[StorageLensTags]
+  }
+
+  object GetStorageLensConfigurationTaggingResult {
+    @inline
+    def apply(
+        Tags: js.UndefOr[StorageLensTags] = js.undefined
+    ): GetStorageLensConfigurationTaggingResult = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStorageLensConfigurationTaggingResult]
+    }
+  }
+
+  /** A container for what Amazon S3 Storage Lens configuration includes.
+    */
+  @js.native
+  trait Include extends js.Object {
+    var Buckets: js.UndefOr[Buckets]
+    var Regions: js.UndefOr[Regions]
+  }
+
+  object Include {
+    @inline
+    def apply(
+        Buckets: js.UndefOr[Buckets] = js.undefined,
+        Regions: js.UndefOr[Regions] = js.undefined
+    ): Include = {
+      val __obj = js.Dynamic.literal()
+      Buckets.foreach(__v => __obj.updateDynamic("Buckets")(__v.asInstanceOf[js.Any]))
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Include]
     }
   }
 
@@ -762,7 +1463,7 @@ package s3control {
     }
   }
 
-  /** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Available Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait JobOperation extends js.Object {
@@ -798,7 +1499,7 @@ package s3control {
     }
   }
 
-  /** Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the number of tasks that failed.
+  /** Describes the total number of tasks that the specified job has started, the number of tasks that succeeded, and the number of tasks that failed.
     */
   @js.native
   trait JobProgressSummary extends js.Object {
@@ -909,6 +1610,134 @@ package s3control {
     }
   }
 
+  /** The container for the Outposts bucket lifecycle configuration.
+    */
+  @js.native
+  trait LifecycleConfiguration extends js.Object {
+    var Rules: js.UndefOr[LifecycleRules]
+  }
+
+  object LifecycleConfiguration {
+    @inline
+    def apply(
+        Rules: js.UndefOr[LifecycleRules] = js.undefined
+    ): LifecycleConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleConfiguration]
+    }
+  }
+
+  /** The container of the Outposts bucket lifecycle expiration.
+    */
+  @js.native
+  trait LifecycleExpiration extends js.Object {
+    var Date: js.UndefOr[Date]
+    var Days: js.UndefOr[Days]
+    var ExpiredObjectDeleteMarker: js.UndefOr[ExpiredObjectDeleteMarker]
+  }
+
+  object LifecycleExpiration {
+    @inline
+    def apply(
+        Date: js.UndefOr[Date] = js.undefined,
+        Days: js.UndefOr[Days] = js.undefined,
+        ExpiredObjectDeleteMarker: js.UndefOr[ExpiredObjectDeleteMarker] = js.undefined
+    ): LifecycleExpiration = {
+      val __obj = js.Dynamic.literal()
+      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
+      Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
+      ExpiredObjectDeleteMarker.foreach(__v => __obj.updateDynamic("ExpiredObjectDeleteMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleExpiration]
+    }
+  }
+
+  /** The container for the Outposts bucket lifecycle rule.
+    */
+  @js.native
+  trait LifecycleRule extends js.Object {
+    var Status: ExpirationStatus
+    var AbortIncompleteMultipartUpload: js.UndefOr[AbortIncompleteMultipartUpload]
+    var Expiration: js.UndefOr[LifecycleExpiration]
+    var Filter: js.UndefOr[LifecycleRuleFilter]
+    var ID: js.UndefOr[ID]
+    var NoncurrentVersionExpiration: js.UndefOr[NoncurrentVersionExpiration]
+    var NoncurrentVersionTransitions: js.UndefOr[NoncurrentVersionTransitionList]
+    var Transitions: js.UndefOr[TransitionList]
+  }
+
+  object LifecycleRule {
+    @inline
+    def apply(
+        Status: ExpirationStatus,
+        AbortIncompleteMultipartUpload: js.UndefOr[AbortIncompleteMultipartUpload] = js.undefined,
+        Expiration: js.UndefOr[LifecycleExpiration] = js.undefined,
+        Filter: js.UndefOr[LifecycleRuleFilter] = js.undefined,
+        ID: js.UndefOr[ID] = js.undefined,
+        NoncurrentVersionExpiration: js.UndefOr[NoncurrentVersionExpiration] = js.undefined,
+        NoncurrentVersionTransitions: js.UndefOr[NoncurrentVersionTransitionList] = js.undefined,
+        Transitions: js.UndefOr[TransitionList] = js.undefined
+    ): LifecycleRule = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      AbortIncompleteMultipartUpload.foreach(__v => __obj.updateDynamic("AbortIncompleteMultipartUpload")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
+      NoncurrentVersionExpiration.foreach(__v => __obj.updateDynamic("NoncurrentVersionExpiration")(__v.asInstanceOf[js.Any]))
+      NoncurrentVersionTransitions.foreach(__v => __obj.updateDynamic("NoncurrentVersionTransitions")(__v.asInstanceOf[js.Any]))
+      Transitions.foreach(__v => __obj.updateDynamic("Transitions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleRule]
+    }
+  }
+
+  /** The container for the Outposts bucket lifecycle rule and operator.
+    */
+  @js.native
+  trait LifecycleRuleAndOperator extends js.Object {
+    var Prefix: js.UndefOr[Prefix]
+    var Tags: js.UndefOr[S3TagSet]
+  }
+
+  object LifecycleRuleAndOperator {
+    @inline
+    def apply(
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        Tags: js.UndefOr[S3TagSet] = js.undefined
+    ): LifecycleRuleAndOperator = {
+      val __obj = js.Dynamic.literal()
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleRuleAndOperator]
+    }
+  }
+
+  /** The container for the filter of the lifecycle rule.
+    */
+  @js.native
+  trait LifecycleRuleFilter extends js.Object {
+    var And: js.UndefOr[LifecycleRuleAndOperator]
+    var Prefix: js.UndefOr[Prefix]
+    var Tag: js.UndefOr[S3Tag]
+  }
+
+  object LifecycleRuleFilter {
+    @inline
+    def apply(
+        And: js.UndefOr[LifecycleRuleAndOperator] = js.undefined,
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        Tag: js.UndefOr[S3Tag] = js.undefined
+    ): LifecycleRuleFilter = {
+      val __obj = js.Dynamic.literal()
+      And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LifecycleRuleFilter]
+    }
+  }
+
   @js.native
   trait ListAccessPointsRequest extends js.Object {
     var AccountId: AccountId
@@ -1002,12 +1831,166 @@ package s3control {
   }
 
   @js.native
+  trait ListRegionalBucketsRequest extends js.Object {
+    var AccountId: AccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+    var OutpostId: js.UndefOr[NonEmptyMaxLength64String]
+  }
+
+  object ListRegionalBucketsRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
+        OutpostId: js.UndefOr[NonEmptyMaxLength64String] = js.undefined
+    ): ListRegionalBucketsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegionalBucketsRequest]
+    }
+  }
+
+  @js.native
+  trait ListRegionalBucketsResult extends js.Object {
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+    var RegionalBucketList: js.UndefOr[RegionalBucketList]
+  }
+
+  object ListRegionalBucketsResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
+        RegionalBucketList: js.UndefOr[RegionalBucketList] = js.undefined
+    ): ListRegionalBucketsResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegionalBucketList.foreach(__v => __obj.updateDynamic("RegionalBucketList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegionalBucketsResult]
+    }
+  }
+
+  /** Part of <code>ListStorageLensConfigurationResult</code>. Each entry includes the description of the S3 Storage Lens configuration, its home Region, whether it is enabled, its Amazon Resource Name (ARN), and config ID.
+    */
+  @js.native
+  trait ListStorageLensConfigurationEntry extends js.Object {
+    var HomeRegion: S3AWSRegion
+    var Id: ConfigId
+    var StorageLensArn: StorageLensArn
+    var IsEnabled: js.UndefOr[IsEnabled]
+  }
+
+  object ListStorageLensConfigurationEntry {
+    @inline
+    def apply(
+        HomeRegion: S3AWSRegion,
+        Id: ConfigId,
+        StorageLensArn: StorageLensArn,
+        IsEnabled: js.UndefOr[IsEnabled] = js.undefined
+    ): ListStorageLensConfigurationEntry = {
+      val __obj = js.Dynamic.literal(
+        "HomeRegion" -> HomeRegion.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "StorageLensArn" -> StorageLensArn.asInstanceOf[js.Any]
+      )
+
+      IsEnabled.foreach(__v => __obj.updateDynamic("IsEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStorageLensConfigurationEntry]
+    }
+  }
+
+  @js.native
+  trait ListStorageLensConfigurationsRequest extends js.Object {
+    var AccountId: AccountId
+    var NextToken: js.UndefOr[ContinuationToken]
+  }
+
+  object ListStorageLensConfigurationsRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        NextToken: js.UndefOr[ContinuationToken] = js.undefined
+    ): ListStorageLensConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStorageLensConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListStorageLensConfigurationsResult extends js.Object {
+    var NextToken: js.UndefOr[ContinuationToken]
+    var StorageLensConfigurationList: js.UndefOr[StorageLensConfigurationList]
+  }
+
+  object ListStorageLensConfigurationsResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[ContinuationToken] = js.undefined,
+        StorageLensConfigurationList: js.UndefOr[StorageLensConfigurationList] = js.undefined
+    ): ListStorageLensConfigurationsResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StorageLensConfigurationList.foreach(__v => __obj.updateDynamic("StorageLensConfigurationList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStorageLensConfigurationsResult]
+    }
+  }
+
+  @js.native
   sealed trait NetworkOrigin extends js.Any
   object NetworkOrigin {
     val Internet = "Internet".asInstanceOf[NetworkOrigin]
     val VPC = "VPC".asInstanceOf[NetworkOrigin]
 
     @inline def values = js.Array(Internet, VPC)
+  }
+
+  /** The container of the noncurrent version expiration.
+    */
+  @js.native
+  trait NoncurrentVersionExpiration extends js.Object {
+    var NoncurrentDays: js.UndefOr[Days]
+  }
+
+  object NoncurrentVersionExpiration {
+    @inline
+    def apply(
+        NoncurrentDays: js.UndefOr[Days] = js.undefined
+    ): NoncurrentVersionExpiration = {
+      val __obj = js.Dynamic.literal()
+      NoncurrentDays.foreach(__v => __obj.updateDynamic("NoncurrentDays")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NoncurrentVersionExpiration]
+    }
+  }
+
+  /** The container for the noncurrent version transition.
+    */
+  @js.native
+  trait NoncurrentVersionTransition extends js.Object {
+    var NoncurrentDays: js.UndefOr[Days]
+    var StorageClass: js.UndefOr[TransitionStorageClass]
+  }
+
+  object NoncurrentVersionTransition {
+    @inline
+    def apply(
+        NoncurrentDays: js.UndefOr[Days] = js.undefined,
+        StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
+    ): NoncurrentVersionTransition = {
+      val __obj = js.Dynamic.literal()
+      NoncurrentDays.foreach(__v => __obj.updateDynamic("NoncurrentDays")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NoncurrentVersionTransition]
+    }
   }
 
   @js.native
@@ -1022,6 +2005,14 @@ package s3control {
     val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
     @inline def values = js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention)
+  }
+
+  @js.native
+  sealed trait OutputSchemaVersion extends js.Any
+  object OutputSchemaVersion {
+    val V_1 = "V_1".asInstanceOf[OutputSchemaVersion]
+
+    @inline def values = js.Array(V_1)
   }
 
   /** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
@@ -1042,7 +2033,48 @@ package s3control {
     }
   }
 
-  /** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the Amazon Simple Storage Service Developer Guide.
+  /** A container for the prefix-level configuration.
+    */
+  @js.native
+  trait PrefixLevel extends js.Object {
+    var StorageMetrics: PrefixLevelStorageMetrics
+  }
+
+  object PrefixLevel {
+    @inline
+    def apply(
+        StorageMetrics: PrefixLevelStorageMetrics
+    ): PrefixLevel = {
+      val __obj = js.Dynamic.literal(
+        "StorageMetrics" -> StorageMetrics.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PrefixLevel]
+    }
+  }
+
+  /** A container for the prefix-level storage metrics for S3 Storage Lens.
+    */
+  @js.native
+  trait PrefixLevelStorageMetrics extends js.Object {
+    var IsEnabled: js.UndefOr[IsEnabled]
+    var SelectionCriteria: js.UndefOr[SelectionCriteria]
+  }
+
+  object PrefixLevelStorageMetrics {
+    @inline
+    def apply(
+        IsEnabled: js.UndefOr[IsEnabled] = js.undefined,
+        SelectionCriteria: js.UndefOr[SelectionCriteria] = js.undefined
+    ): PrefixLevelStorageMetrics = {
+      val __obj = js.Dynamic.literal()
+      IsEnabled.foreach(__v => __obj.updateDynamic("IsEnabled")(__v.asInstanceOf[js.Any]))
+      SelectionCriteria.foreach(__v => __obj.updateDynamic("SelectionCriteria")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrefixLevelStorageMetrics]
+    }
+  }
+
+  /** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    * This is not supported for Amazon S3 on Outposts.
     */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
@@ -1089,6 +2121,80 @@ package s3control {
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PutAccessPointPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutBucketLifecycleConfigurationRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+    var LifecycleConfiguration: js.UndefOr[LifecycleConfiguration]
+  }
+
+  object PutBucketLifecycleConfigurationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName,
+        LifecycleConfiguration: js.UndefOr[LifecycleConfiguration] = js.undefined
+    ): PutBucketLifecycleConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketLifecycleConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutBucketPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+    var Policy: Policy
+    var ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess]
+  }
+
+  object PutBucketPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName,
+        Policy: Policy,
+        ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess] = js.undefined
+    ): PutBucketPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any]
+      )
+
+      ConfirmRemoveSelfBucketAccess.foreach(__v => __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBucketPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutBucketTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var Bucket: BucketName
+    var Tagging: Tagging
+  }
+
+  object PutBucketTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Bucket: BucketName,
+        Tagging: Tagging
+    ): PutBucketTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Tagging" -> Tagging.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutBucketTaggingRequest]
     }
   }
 
@@ -1147,6 +2253,99 @@ package s3control {
   }
 
   @js.native
+  trait PutStorageLensConfigurationRequest extends js.Object {
+    var AccountId: AccountId
+    var ConfigId: ConfigId
+    var StorageLensConfiguration: StorageLensConfiguration
+    var Tags: js.UndefOr[StorageLensTags]
+  }
+
+  object PutStorageLensConfigurationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConfigId: ConfigId,
+        StorageLensConfiguration: StorageLensConfiguration,
+        Tags: js.UndefOr[StorageLensTags] = js.undefined
+    ): PutStorageLensConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ConfigId" -> ConfigId.asInstanceOf[js.Any],
+        "StorageLensConfiguration" -> StorageLensConfiguration.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutStorageLensConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutStorageLensConfigurationTaggingRequest extends js.Object {
+    var AccountId: AccountId
+    var ConfigId: ConfigId
+    var Tags: StorageLensTags
+  }
+
+  object PutStorageLensConfigurationTaggingRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ConfigId: ConfigId,
+        Tags: StorageLensTags
+    ): PutStorageLensConfigurationTaggingRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ConfigId" -> ConfigId.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutStorageLensConfigurationTaggingRequest]
+    }
+  }
+
+  @js.native
+  trait PutStorageLensConfigurationTaggingResult extends js.Object
+
+  object PutStorageLensConfigurationTaggingResult {
+    @inline
+    def apply(): PutStorageLensConfigurationTaggingResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutStorageLensConfigurationTaggingResult]
+    }
+  }
+
+  /** The container for the regional bucket.
+    */
+  @js.native
+  trait RegionalBucket extends js.Object {
+    var Bucket: BucketName
+    var CreationDate: CreationDate
+    var PublicAccessBlockEnabled: PublicAccessBlockEnabled
+    var BucketArn: js.UndefOr[S3RegionalBucketArn]
+    var OutpostId: js.UndefOr[NonEmptyMaxLength64String]
+  }
+
+  object RegionalBucket {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        CreationDate: CreationDate,
+        PublicAccessBlockEnabled: PublicAccessBlockEnabled,
+        BucketArn: js.UndefOr[S3RegionalBucketArn] = js.undefined,
+        OutpostId: js.UndefOr[NonEmptyMaxLength64String] = js.undefined
+    ): RegionalBucket = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "CreationDate" -> CreationDate.asInstanceOf[js.Any],
+        "PublicAccessBlockEnabled" -> PublicAccessBlockEnabled.asInstanceOf[js.Any]
+      )
+
+      BucketArn.foreach(__v => __obj.updateDynamic("BucketArn")(__v.asInstanceOf[js.Any]))
+      OutpostId.foreach(__v => __obj.updateDynamic("OutpostId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegionalBucket]
+    }
+  }
+
+  @js.native
   sealed trait RequestedJobStatus extends js.Any
   object RequestedJobStatus {
     val Cancelled = "Cancelled".asInstanceOf[RequestedJobStatus]
@@ -1199,6 +2398,41 @@ package s3control {
     }
   }
 
+  /** A container for the bucket where the Amazon S3 Storage Lens metrics export files are located.
+    */
+  @js.native
+  trait S3BucketDestination extends js.Object {
+    var AccountId: AccountId
+    var Arn: S3BucketArnString
+    var Format: Format
+    var OutputSchemaVersion: OutputSchemaVersion
+    var Encryption: js.UndefOr[StorageLensDataExportEncryption]
+    var Prefix: js.UndefOr[Prefix]
+  }
+
+  object S3BucketDestination {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Arn: S3BucketArnString,
+        Format: Format,
+        OutputSchemaVersion: OutputSchemaVersion,
+        Encryption: js.UndefOr[StorageLensDataExportEncryption] = js.undefined,
+        Prefix: js.UndefOr[Prefix] = js.undefined
+    ): S3BucketDestination = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
+        "OutputSchemaVersion" -> OutputSchemaVersion.asInstanceOf[js.Any]
+      )
+
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3BucketDestination]
+    }
+  }
+
   @js.native
   sealed trait S3CannedAccessControlList extends js.Any
   object S3CannedAccessControlList {
@@ -1213,7 +2447,7 @@ package s3control {
     @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
   }
 
-  /** Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
+  /** Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
     */
   @js.native
   trait S3CopyObjectOperation extends js.Object {
@@ -1340,7 +2574,7 @@ package s3control {
     @inline def values = js.Array(id, emailAddress, uri)
   }
 
-  /** Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|Restoring Archives]].
+  /** Contains the configuration parameters for an Initiate Glacier Restore job. S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|RestoreObject]].
     */
   @js.native
   trait S3InitiateRestoreObjectOperation extends js.Object {
@@ -1370,7 +2604,7 @@ package s3control {
     @inline def values = js.Array(COPY, REPLACE)
   }
 
-  /** <p/>
+  /** Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch Operations job.
     */
   @js.native
   trait S3ObjectLockLegalHold extends js.Object {
@@ -1497,7 +2731,7 @@ package s3control {
     @inline def values = js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP)
   }
 
-  /** <p/>
+  /** Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait S3Retention extends js.Object {
@@ -1527,7 +2761,7 @@ package s3control {
     @inline def values = js.Array(AES256, KMS)
   }
 
-  /** Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
+  /** Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
     */
   @js.native
   trait S3SetObjectAclOperation extends js.Object {
@@ -1545,7 +2779,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration parameters for a Set Object Legal Hold operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds|PUT Object Legal Hold]].
+  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes each object through to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait S3SetObjectLegalHoldOperation extends js.Object {
@@ -1564,7 +2798,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object Retention API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes|PUT Object Retention]].
+  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes each value through to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait S3SetObjectRetentionOperation extends js.Object {
@@ -1587,7 +2821,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
+  /** Contains the configuration parameters for a Set Object Tagging operation. S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
     */
   @js.native
   trait S3SetObjectTaggingOperation extends js.Object {
@@ -1638,6 +2872,239 @@ package s3control {
       )
       __obj.asInstanceOf[S3Tag]
     }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait SSEKMS extends js.Object {
+    var KeyId: SSEKMSKeyId
+  }
+
+  object SSEKMS {
+    @inline
+    def apply(
+        KeyId: SSEKMSKeyId
+    ): SSEKMS = {
+      val __obj = js.Dynamic.literal(
+        "KeyId" -> KeyId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SSEKMS]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait SSES3 extends js.Object
+
+  object SSES3 {
+    @inline
+    def apply(): SSES3 = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[SSES3]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait SelectionCriteria extends js.Object {
+    var Delimiter: js.UndefOr[StorageLensPrefixLevelDelimiter]
+    var MaxDepth: js.UndefOr[StorageLensPrefixLevelMaxDepth]
+    var MinStorageBytesPercentage: js.UndefOr[MinStorageBytesPercentage]
+  }
+
+  object SelectionCriteria {
+    @inline
+    def apply(
+        Delimiter: js.UndefOr[StorageLensPrefixLevelDelimiter] = js.undefined,
+        MaxDepth: js.UndefOr[StorageLensPrefixLevelMaxDepth] = js.undefined,
+        MinStorageBytesPercentage: js.UndefOr[MinStorageBytesPercentage] = js.undefined
+    ): SelectionCriteria = {
+      val __obj = js.Dynamic.literal()
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      MaxDepth.foreach(__v => __obj.updateDynamic("MaxDepth")(__v.asInstanceOf[js.Any]))
+      MinStorageBytesPercentage.foreach(__v => __obj.updateDynamic("MinStorageBytesPercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectionCriteria]
+    }
+  }
+
+  /** The AWS organization for your S3 Storage Lens.
+    */
+  @js.native
+  trait StorageLensAwsOrg extends js.Object {
+    var Arn: AwsOrgArn
+  }
+
+  object StorageLensAwsOrg {
+    @inline
+    def apply(
+        Arn: AwsOrgArn
+    ): StorageLensAwsOrg = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StorageLensAwsOrg]
+    }
+  }
+
+  /** A container for the Amazon S3 Storage Lens configuration.
+    */
+  @js.native
+  trait StorageLensConfiguration extends js.Object {
+    var AccountLevel: AccountLevel
+    var Id: ConfigId
+    var IsEnabled: IsEnabled
+    var AwsOrg: js.UndefOr[StorageLensAwsOrg]
+    var DataExport: js.UndefOr[StorageLensDataExport]
+    var Exclude: js.UndefOr[Exclude]
+    var Include: js.UndefOr[Include]
+    var StorageLensArn: js.UndefOr[StorageLensArn]
+  }
+
+  object StorageLensConfiguration {
+    @inline
+    def apply(
+        AccountLevel: AccountLevel,
+        Id: ConfigId,
+        IsEnabled: IsEnabled,
+        AwsOrg: js.UndefOr[StorageLensAwsOrg] = js.undefined,
+        DataExport: js.UndefOr[StorageLensDataExport] = js.undefined,
+        Exclude: js.UndefOr[Exclude] = js.undefined,
+        Include: js.UndefOr[Include] = js.undefined,
+        StorageLensArn: js.UndefOr[StorageLensArn] = js.undefined
+    ): StorageLensConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AccountLevel" -> AccountLevel.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IsEnabled" -> IsEnabled.asInstanceOf[js.Any]
+      )
+
+      AwsOrg.foreach(__v => __obj.updateDynamic("AwsOrg")(__v.asInstanceOf[js.Any]))
+      DataExport.foreach(__v => __obj.updateDynamic("DataExport")(__v.asInstanceOf[js.Any]))
+      Exclude.foreach(__v => __obj.updateDynamic("Exclude")(__v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
+      StorageLensArn.foreach(__v => __obj.updateDynamic("StorageLensArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageLensConfiguration]
+    }
+  }
+
+  /** A container to specify the properties of your S3 Storage Lens metrics export, including the destination, schema, and format.
+    */
+  @js.native
+  trait StorageLensDataExport extends js.Object {
+    var S3BucketDestination: S3BucketDestination
+  }
+
+  object StorageLensDataExport {
+    @inline
+    def apply(
+        S3BucketDestination: S3BucketDestination
+    ): StorageLensDataExport = {
+      val __obj = js.Dynamic.literal(
+        "S3BucketDestination" -> S3BucketDestination.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StorageLensDataExport]
+    }
+  }
+
+  /** A container for the encryption of the S3 Storage Lens metrics exports.
+    */
+  @js.native
+  trait StorageLensDataExportEncryption extends js.Object {
+    var SSEKMS: js.UndefOr[SSEKMS]
+    var SSES3: js.UndefOr[SSES3]
+  }
+
+  object StorageLensDataExportEncryption {
+    @inline
+    def apply(
+        SSEKMS: js.UndefOr[SSEKMS] = js.undefined,
+        SSES3: js.UndefOr[SSES3] = js.undefined
+    ): StorageLensDataExportEncryption = {
+      val __obj = js.Dynamic.literal()
+      SSEKMS.foreach(__v => __obj.updateDynamic("SSEKMS")(__v.asInstanceOf[js.Any]))
+      SSES3.foreach(__v => __obj.updateDynamic("SSES3")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StorageLensDataExportEncryption]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait StorageLensTag extends js.Object {
+    var Key: TagKeyString
+    var Value: TagValueString
+  }
+
+  object StorageLensTag {
+    @inline
+    def apply(
+        Key: TagKeyString,
+        Value: TagValueString
+    ): StorageLensTag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StorageLensTag]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait Tagging extends js.Object {
+    var TagSet: S3TagSet
+  }
+
+  object Tagging {
+    @inline
+    def apply(
+        TagSet: S3TagSet
+    ): Tagging = {
+      val __obj = js.Dynamic.literal(
+        "TagSet" -> TagSet.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tagging]
+    }
+  }
+
+  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html| Transitioning objects using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+    */
+  @js.native
+  trait Transition extends js.Object {
+    var Date: js.UndefOr[Date]
+    var Days: js.UndefOr[Days]
+    var StorageClass: js.UndefOr[TransitionStorageClass]
+  }
+
+  object Transition {
+    @inline
+    def apply(
+        Date: js.UndefOr[Date] = js.undefined,
+        Days: js.UndefOr[Days] = js.undefined,
+        StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
+    ): Transition = {
+      val __obj = js.Dynamic.literal()
+      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
+      Days.foreach(__v => __obj.updateDynamic("Days")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Transition]
+    }
+  }
+
+  @js.native
+  sealed trait TransitionStorageClass extends js.Any
+  object TransitionStorageClass {
+    val GLACIER = "GLACIER".asInstanceOf[TransitionStorageClass]
+    val STANDARD_IA = "STANDARD_IA".asInstanceOf[TransitionStorageClass]
+    val ONEZONE_IA = "ONEZONE_IA".asInstanceOf[TransitionStorageClass]
+    val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
+
+    @inline def values = js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
   }
 
   @js.native

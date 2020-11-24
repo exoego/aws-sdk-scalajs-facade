@@ -8,6 +8,9 @@ import facade.amazonaws._
 
 package object budgetsservice {
   type AccountId = String
+  type ActionHistories = js.Array[ActionHistory]
+  type ActionId = String
+  type Actions = js.Array[Action]
   type BudgetName = String
   type BudgetedAndActualAmountsList = js.Array[BudgetedAndActualAmounts]
   type Budgets = js.Array[Budget]
@@ -15,6 +18,10 @@ package object budgetsservice {
   type DimensionValues = js.Array[GenericString]
   type GenericString = String
   type GenericTimestamp = js.Date
+  type Group = String
+  type Groups = js.Array[Group]
+  type InstanceId = String
+  type InstanceIds = js.Array[InstanceId]
   type MaxResults = Int
   type NotificationThreshold = Double
   type NotificationWithSubscribersList = js.Array[NotificationWithSubscribers]
@@ -22,23 +29,41 @@ package object budgetsservice {
   type NullableBoolean = Boolean
   type NumericValue = String
   type PlannedBudgetLimits = js.Dictionary[Spend]
+  type PolicyArn = String
+  type PolicyId = String
+  type Region = String
+  type Role = String
+  type RoleArn = String
+  type Roles = js.Array[Role]
   type SubscriberAddress = String
   type Subscribers = js.Array[Subscriber]
+  type TargetId = String
+  type TargetIds = js.Array[TargetId]
   type UnitValue = String
+  type User = String
+  type Users = js.Array[User]
 
   implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
+    @inline def createBudgetActionFuture(params: CreateBudgetActionRequest): Future[CreateBudgetActionResponse] = service.createBudgetAction(params).promise().toFuture
     @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] = service.createBudget(params).promise().toFuture
     @inline def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] = service.createNotification(params).promise().toFuture
     @inline def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] = service.createSubscriber(params).promise().toFuture
+    @inline def deleteBudgetActionFuture(params: DeleteBudgetActionRequest): Future[DeleteBudgetActionResponse] = service.deleteBudgetAction(params).promise().toFuture
     @inline def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] = service.deleteBudget(params).promise().toFuture
     @inline def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] = service.deleteNotification(params).promise().toFuture
     @inline def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] = service.deleteSubscriber(params).promise().toFuture
+    @inline def describeBudgetActionFuture(params: DescribeBudgetActionRequest): Future[DescribeBudgetActionResponse] = service.describeBudgetAction(params).promise().toFuture
+    @inline def describeBudgetActionHistoriesFuture(params: DescribeBudgetActionHistoriesRequest): Future[DescribeBudgetActionHistoriesResponse] = service.describeBudgetActionHistories(params).promise().toFuture
+    @inline def describeBudgetActionsForAccountFuture(params: DescribeBudgetActionsForAccountRequest): Future[DescribeBudgetActionsForAccountResponse] = service.describeBudgetActionsForAccount(params).promise().toFuture
+    @inline def describeBudgetActionsForBudgetFuture(params: DescribeBudgetActionsForBudgetRequest): Future[DescribeBudgetActionsForBudgetResponse] = service.describeBudgetActionsForBudget(params).promise().toFuture
     @inline def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] = service.describeBudget(params).promise().toFuture
     @inline def describeBudgetPerformanceHistoryFuture(params: DescribeBudgetPerformanceHistoryRequest): Future[DescribeBudgetPerformanceHistoryResponse] = service.describeBudgetPerformanceHistory(params).promise().toFuture
     @inline def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] = service.describeBudgets(params).promise().toFuture
     @inline def describeNotificationsForBudgetFuture(params: DescribeNotificationsForBudgetRequest): Future[DescribeNotificationsForBudgetResponse] = service.describeNotificationsForBudget(params).promise().toFuture
     @inline def describeSubscribersForNotificationFuture(params: DescribeSubscribersForNotificationRequest): Future[DescribeSubscribersForNotificationResponse] = service.describeSubscribersForNotification(params).promise().toFuture
+    @inline def executeBudgetActionFuture(params: ExecuteBudgetActionRequest): Future[ExecuteBudgetActionResponse] = service.executeBudgetAction(params).promise().toFuture
+    @inline def updateBudgetActionFuture(params: UpdateBudgetActionRequest): Future[UpdateBudgetActionResponse] = service.updateBudgetAction(params).promise().toFuture
     @inline def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] = service.updateBudget(params).promise().toFuture
     @inline def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] = service.updateNotification(params).promise().toFuture
     @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] = service.updateSubscriber(params).promise().toFuture
@@ -53,24 +78,206 @@ package budgetsservice {
     def this(config: AWSConfig) = this()
 
     def createBudget(params: CreateBudgetRequest): Request[CreateBudgetResponse] = js.native
+    def createBudgetAction(params: CreateBudgetActionRequest): Request[CreateBudgetActionResponse] = js.native
     def createNotification(params: CreateNotificationRequest): Request[CreateNotificationResponse] = js.native
     def createSubscriber(params: CreateSubscriberRequest): Request[CreateSubscriberResponse] = js.native
     def deleteBudget(params: DeleteBudgetRequest): Request[DeleteBudgetResponse] = js.native
+    def deleteBudgetAction(params: DeleteBudgetActionRequest): Request[DeleteBudgetActionResponse] = js.native
     def deleteNotification(params: DeleteNotificationRequest): Request[DeleteNotificationResponse] = js.native
     def deleteSubscriber(params: DeleteSubscriberRequest): Request[DeleteSubscriberResponse] = js.native
     def describeBudget(params: DescribeBudgetRequest): Request[DescribeBudgetResponse] = js.native
+    def describeBudgetAction(params: DescribeBudgetActionRequest): Request[DescribeBudgetActionResponse] = js.native
+    def describeBudgetActionHistories(params: DescribeBudgetActionHistoriesRequest): Request[DescribeBudgetActionHistoriesResponse] = js.native
+    def describeBudgetActionsForAccount(params: DescribeBudgetActionsForAccountRequest): Request[DescribeBudgetActionsForAccountResponse] = js.native
+    def describeBudgetActionsForBudget(params: DescribeBudgetActionsForBudgetRequest): Request[DescribeBudgetActionsForBudgetResponse] = js.native
     def describeBudgetPerformanceHistory(params: DescribeBudgetPerformanceHistoryRequest): Request[DescribeBudgetPerformanceHistoryResponse] = js.native
     def describeBudgets(params: DescribeBudgetsRequest): Request[DescribeBudgetsResponse] = js.native
     def describeNotificationsForBudget(params: DescribeNotificationsForBudgetRequest): Request[DescribeNotificationsForBudgetResponse] = js.native
     def describeSubscribersForNotification(params: DescribeSubscribersForNotificationRequest): Request[DescribeSubscribersForNotificationResponse] = js.native
+    def executeBudgetAction(params: ExecuteBudgetActionRequest): Request[ExecuteBudgetActionResponse] = js.native
     def updateBudget(params: UpdateBudgetRequest): Request[UpdateBudgetResponse] = js.native
+    def updateBudgetAction(params: UpdateBudgetActionRequest): Request[UpdateBudgetActionResponse] = js.native
     def updateNotification(params: UpdateNotificationRequest): Request[UpdateNotificationResponse] = js.native
     def updateSubscriber(params: UpdateSubscriberRequest): Request[UpdateSubscriberResponse] = js.native
   }
 
+  /** A budget action resource.
+    */
+  @js.native
+  trait Action extends js.Object {
+    var ActionId: ActionId
+    var ActionThreshold: ActionThreshold
+    var ActionType: ActionType
+    var ApprovalModel: ApprovalModel
+    var BudgetName: BudgetName
+    var Definition: Definition
+    var ExecutionRoleArn: RoleArn
+    var NotificationType: NotificationType
+    var Status: ActionStatus
+    var Subscribers: Subscribers
+  }
+
+  object Action {
+    @inline
+    def apply(
+        ActionId: ActionId,
+        ActionThreshold: ActionThreshold,
+        ActionType: ActionType,
+        ApprovalModel: ApprovalModel,
+        BudgetName: BudgetName,
+        Definition: Definition,
+        ExecutionRoleArn: RoleArn,
+        NotificationType: NotificationType,
+        Status: ActionStatus,
+        Subscribers: Subscribers
+    ): Action = {
+      val __obj = js.Dynamic.literal(
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "ActionThreshold" -> ActionThreshold.asInstanceOf[js.Any],
+        "ActionType" -> ActionType.asInstanceOf[js.Any],
+        "ApprovalModel" -> ApprovalModel.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "Definition" -> Definition.asInstanceOf[js.Any],
+        "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
+        "NotificationType" -> NotificationType.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Action]
+    }
+  }
+
+  /** The historical records for a budget action.
+    */
+  @js.native
+  trait ActionHistory extends js.Object {
+    var ActionHistoryDetails: ActionHistoryDetails
+    var EventType: EventType
+    var Status: ActionStatus
+    var Timestamp: GenericTimestamp
+  }
+
+  object ActionHistory {
+    @inline
+    def apply(
+        ActionHistoryDetails: ActionHistoryDetails,
+        EventType: EventType,
+        Status: ActionStatus,
+        Timestamp: GenericTimestamp
+    ): ActionHistory = {
+      val __obj = js.Dynamic.literal(
+        "ActionHistoryDetails" -> ActionHistoryDetails.asInstanceOf[js.Any],
+        "EventType" -> EventType.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "Timestamp" -> Timestamp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionHistory]
+    }
+  }
+
+  /** The description of details of the event.
+    */
+  @js.native
+  trait ActionHistoryDetails extends js.Object {
+    var Action: Action
+    var Message: GenericString
+  }
+
+  object ActionHistoryDetails {
+    @inline
+    def apply(
+        Action: Action,
+        Message: GenericString
+    ): ActionHistoryDetails = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionHistoryDetails]
+    }
+  }
+
+  @js.native
+  sealed trait ActionStatus extends js.Any
+  object ActionStatus {
+    val STANDBY = "STANDBY".asInstanceOf[ActionStatus]
+    val PENDING = "PENDING".asInstanceOf[ActionStatus]
+    val EXECUTION_IN_PROGRESS = "EXECUTION_IN_PROGRESS".asInstanceOf[ActionStatus]
+    val EXECUTION_SUCCESS = "EXECUTION_SUCCESS".asInstanceOf[ActionStatus]
+    val EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[ActionStatus]
+    val REVERSE_IN_PROGRESS = "REVERSE_IN_PROGRESS".asInstanceOf[ActionStatus]
+    val REVERSE_SUCCESS = "REVERSE_SUCCESS".asInstanceOf[ActionStatus]
+    val REVERSE_FAILURE = "REVERSE_FAILURE".asInstanceOf[ActionStatus]
+    val RESET_IN_PROGRESS = "RESET_IN_PROGRESS".asInstanceOf[ActionStatus]
+    val RESET_FAILURE = "RESET_FAILURE".asInstanceOf[ActionStatus]
+
+    @inline def values = js.Array(
+      STANDBY,
+      PENDING,
+      EXECUTION_IN_PROGRESS,
+      EXECUTION_SUCCESS,
+      EXECUTION_FAILURE,
+      REVERSE_IN_PROGRESS,
+      REVERSE_SUCCESS,
+      REVERSE_FAILURE,
+      RESET_IN_PROGRESS,
+      RESET_FAILURE
+    )
+  }
+
+  @js.native
+  sealed trait ActionSubType extends js.Any
+  object ActionSubType {
+    val STOP_EC2_INSTANCES = "STOP_EC2_INSTANCES".asInstanceOf[ActionSubType]
+    val STOP_RDS_INSTANCES = "STOP_RDS_INSTANCES".asInstanceOf[ActionSubType]
+
+    @inline def values = js.Array(STOP_EC2_INSTANCES, STOP_RDS_INSTANCES)
+  }
+
+  /** The trigger threshold of the action.
+    */
+  @js.native
+  trait ActionThreshold extends js.Object {
+    var ActionThresholdType: ThresholdType
+    var ActionThresholdValue: NotificationThreshold
+  }
+
+  object ActionThreshold {
+    @inline
+    def apply(
+        ActionThresholdType: ThresholdType,
+        ActionThresholdValue: NotificationThreshold
+    ): ActionThreshold = {
+      val __obj = js.Dynamic.literal(
+        "ActionThresholdType" -> ActionThresholdType.asInstanceOf[js.Any],
+        "ActionThresholdValue" -> ActionThresholdValue.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionThreshold]
+    }
+  }
+
+  @js.native
+  sealed trait ActionType extends js.Any
+  object ActionType {
+    val APPLY_IAM_POLICY = "APPLY_IAM_POLICY".asInstanceOf[ActionType]
+    val APPLY_SCP_POLICY = "APPLY_SCP_POLICY".asInstanceOf[ActionType]
+    val RUN_SSM_DOCUMENTS = "RUN_SSM_DOCUMENTS".asInstanceOf[ActionType]
+
+    @inline def values = js.Array(APPLY_IAM_POLICY, APPLY_SCP_POLICY, RUN_SSM_DOCUMENTS)
+  }
+
+  @js.native
+  sealed trait ApprovalModel extends js.Any
+  object ApprovalModel {
+    val AUTOMATIC = "AUTOMATIC".asInstanceOf[ApprovalModel]
+    val MANUAL = "MANUAL".asInstanceOf[ApprovalModel]
+
+    @inline def values = js.Array(AUTOMATIC, MANUAL)
+  }
+
   /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.
     * This is the ARN pattern for a budget:
-    * <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
+    * <code>arn:aws:budgets::AccountId:budget/budgetName</code>
     */
   @js.native
   trait Budget extends js.Object {
@@ -151,7 +358,7 @@ package budgetsservice {
   }
 
   /** The type of a budget. It must be one of the following types:
-    * <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.
+    * <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
     */
   @js.native
   sealed trait BudgetType extends js.Any
@@ -190,7 +397,7 @@ package budgetsservice {
     }
   }
 
-  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage remains steady.
+  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much you are predicted to spend based on your historical usage profile.
     * For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
     */
   @js.native
@@ -228,7 +435,7 @@ package budgetsservice {
   }
 
   /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
-    * <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.
+    * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
     */
   @js.native
   trait CostTypes extends js.Object {
@@ -273,6 +480,70 @@ package budgetsservice {
       UseAmortized.foreach(__v => __obj.updateDynamic("UseAmortized")(__v.asInstanceOf[js.Any]))
       UseBlended.foreach(__v => __obj.updateDynamic("UseBlended")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostTypes]
+    }
+  }
+
+  @js.native
+  trait CreateBudgetActionRequest extends js.Object {
+    var AccountId: AccountId
+    var ActionThreshold: ActionThreshold
+    var ActionType: ActionType
+    var ApprovalModel: ApprovalModel
+    var BudgetName: BudgetName
+    var Definition: Definition
+    var ExecutionRoleArn: RoleArn
+    var NotificationType: NotificationType
+    var Subscribers: Subscribers
+  }
+
+  object CreateBudgetActionRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionThreshold: ActionThreshold,
+        ActionType: ActionType,
+        ApprovalModel: ApprovalModel,
+        BudgetName: BudgetName,
+        Definition: Definition,
+        ExecutionRoleArn: RoleArn,
+        NotificationType: NotificationType,
+        Subscribers: Subscribers
+    ): CreateBudgetActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionThreshold" -> ActionThreshold.asInstanceOf[js.Any],
+        "ActionType" -> ActionType.asInstanceOf[js.Any],
+        "ApprovalModel" -> ApprovalModel.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "Definition" -> Definition.asInstanceOf[js.Any],
+        "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
+        "NotificationType" -> NotificationType.asInstanceOf[js.Any],
+        "Subscribers" -> Subscribers.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateBudgetActionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBudgetActionResponse extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+  }
+
+  object CreateBudgetActionResponse {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName
+    ): CreateBudgetActionResponse = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateBudgetActionResponse]
     }
   }
 
@@ -397,6 +668,76 @@ package budgetsservice {
     }
   }
 
+  /** Specifies all of the type-specific parameters.
+    */
+  @js.native
+  trait Definition extends js.Object {
+    var IamActionDefinition: js.UndefOr[IamActionDefinition]
+    var ScpActionDefinition: js.UndefOr[ScpActionDefinition]
+    var SsmActionDefinition: js.UndefOr[SsmActionDefinition]
+  }
+
+  object Definition {
+    @inline
+    def apply(
+        IamActionDefinition: js.UndefOr[IamActionDefinition] = js.undefined,
+        ScpActionDefinition: js.UndefOr[ScpActionDefinition] = js.undefined,
+        SsmActionDefinition: js.UndefOr[SsmActionDefinition] = js.undefined
+    ): Definition = {
+      val __obj = js.Dynamic.literal()
+      IamActionDefinition.foreach(__v => __obj.updateDynamic("IamActionDefinition")(__v.asInstanceOf[js.Any]))
+      ScpActionDefinition.foreach(__v => __obj.updateDynamic("ScpActionDefinition")(__v.asInstanceOf[js.Any]))
+      SsmActionDefinition.foreach(__v => __obj.updateDynamic("SsmActionDefinition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Definition]
+    }
+  }
+
+  @js.native
+  trait DeleteBudgetActionRequest extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+  }
+
+  object DeleteBudgetActionRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName
+    ): DeleteBudgetActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBudgetActionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBudgetActionResponse extends js.Object {
+    var AccountId: AccountId
+    var Action: Action
+    var BudgetName: BudgetName
+  }
+
+  object DeleteBudgetActionResponse {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Action: Action,
+        BudgetName: BudgetName
+    ): DeleteBudgetActionResponse = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBudgetActionResponse]
+    }
+  }
+
   /** Request of DeleteBudget
     */
   @js.native
@@ -508,6 +849,199 @@ package budgetsservice {
     def apply(): DeleteSubscriberResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSubscriberResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionHistoriesRequest extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[GenericString]
+    var TimePeriod: js.UndefOr[TimePeriod]
+  }
+
+  object DescribeBudgetActionHistoriesRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined,
+        TimePeriod: js.UndefOr[TimePeriod] = js.undefined
+    ): DescribeBudgetActionHistoriesRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetActionHistoriesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionHistoriesResponse extends js.Object {
+    var ActionHistories: ActionHistories
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetActionHistoriesResponse {
+    @inline
+    def apply(
+        ActionHistories: ActionHistories,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetActionHistoriesResponse = {
+      val __obj = js.Dynamic.literal(
+        "ActionHistories" -> ActionHistories.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetActionHistoriesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionRequest extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+  }
+
+  object DescribeBudgetActionRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName
+    ): DescribeBudgetActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeBudgetActionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionResponse extends js.Object {
+    var AccountId: AccountId
+    var Action: Action
+    var BudgetName: BudgetName
+  }
+
+  object DescribeBudgetActionResponse {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Action: Action,
+        BudgetName: BudgetName
+    ): DescribeBudgetActionResponse = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Action" -> Action.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeBudgetActionResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionsForAccountRequest extends js.Object {
+    var AccountId: AccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetActionsForAccountRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetActionsForAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetActionsForAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionsForAccountResponse extends js.Object {
+    var Actions: Actions
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetActionsForAccountResponse {
+    @inline
+    def apply(
+        Actions: Actions,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetActionsForAccountResponse = {
+      val __obj = js.Dynamic.literal(
+        "Actions" -> Actions.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetActionsForAccountResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionsForBudgetRequest extends js.Object {
+    var AccountId: AccountId
+    var BudgetName: BudgetName
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetActionsForBudgetRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        BudgetName: BudgetName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetActionsForBudgetRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetActionsForBudgetRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetActionsForBudgetResponse extends js.Object {
+    var Actions: Actions
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetActionsForBudgetResponse {
+    @inline
+    def apply(
+        Actions: Actions,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetActionsForBudgetResponse = {
+      val __obj = js.Dynamic.literal(
+        "Actions" -> Actions.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetActionsForBudgetResponse]
     }
   }
 
@@ -750,7 +1284,111 @@ package budgetsservice {
     }
   }
 
-  /** A notification that is associated with a budget. A budget can have up to five notifications.
+  @js.native
+  sealed trait EventType extends js.Any
+  object EventType {
+    val SYSTEM = "SYSTEM".asInstanceOf[EventType]
+    val CREATE_ACTION = "CREATE_ACTION".asInstanceOf[EventType]
+    val DELETE_ACTION = "DELETE_ACTION".asInstanceOf[EventType]
+    val UPDATE_ACTION = "UPDATE_ACTION".asInstanceOf[EventType]
+    val EXECUTE_ACTION = "EXECUTE_ACTION".asInstanceOf[EventType]
+
+    @inline def values = js.Array(SYSTEM, CREATE_ACTION, DELETE_ACTION, UPDATE_ACTION, EXECUTE_ACTION)
+  }
+
+  @js.native
+  trait ExecuteBudgetActionRequest extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+    var ExecutionType: ExecutionType
+  }
+
+  object ExecuteBudgetActionRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName,
+        ExecutionType: ExecutionType
+    ): ExecuteBudgetActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "ExecutionType" -> ExecutionType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ExecuteBudgetActionRequest]
+    }
+  }
+
+  @js.native
+  trait ExecuteBudgetActionResponse extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+    var ExecutionType: ExecutionType
+  }
+
+  object ExecuteBudgetActionResponse {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName,
+        ExecutionType: ExecutionType
+    ): ExecuteBudgetActionResponse = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "ExecutionType" -> ExecutionType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ExecuteBudgetActionResponse]
+    }
+  }
+
+  @js.native
+  sealed trait ExecutionType extends js.Any
+  object ExecutionType {
+    val APPROVE_BUDGET_ACTION = "APPROVE_BUDGET_ACTION".asInstanceOf[ExecutionType]
+    val RETRY_BUDGET_ACTION = "RETRY_BUDGET_ACTION".asInstanceOf[ExecutionType]
+    val REVERSE_BUDGET_ACTION = "REVERSE_BUDGET_ACTION".asInstanceOf[ExecutionType]
+    val RESET_BUDGET_ACTION = "RESET_BUDGET_ACTION".asInstanceOf[ExecutionType]
+
+    @inline def values = js.Array(APPROVE_BUDGET_ACTION, RETRY_BUDGET_ACTION, REVERSE_BUDGET_ACTION, RESET_BUDGET_ACTION)
+  }
+
+  /** The AWS Identity and Access Management (IAM) action definition details.
+    */
+  @js.native
+  trait IamActionDefinition extends js.Object {
+    var PolicyArn: PolicyArn
+    var Groups: js.UndefOr[Groups]
+    var Roles: js.UndefOr[Roles]
+    var Users: js.UndefOr[Users]
+  }
+
+  object IamActionDefinition {
+    @inline
+    def apply(
+        PolicyArn: PolicyArn,
+        Groups: js.UndefOr[Groups] = js.undefined,
+        Roles: js.UndefOr[Roles] = js.undefined,
+        Users: js.UndefOr[Users] = js.undefined
+    ): IamActionDefinition = {
+      val __obj = js.Dynamic.literal(
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
+      )
+
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Roles.foreach(__v => __obj.updateDynamic("Roles")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IamActionDefinition]
+    }
+  }
+
+  /** A notification that is associated with a budget. A budget can have up to ten notifications.
     * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
     * For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:
     * * A notificationType of <code>ACTUAL</code>
@@ -830,6 +1468,28 @@ package budgetsservice {
     }
   }
 
+  /** The service control policies (SCP) action definition details.
+    */
+  @js.native
+  trait ScpActionDefinition extends js.Object {
+    var PolicyId: PolicyId
+    var TargetIds: TargetIds
+  }
+
+  object ScpActionDefinition {
+    @inline
+    def apply(
+        PolicyId: PolicyId,
+        TargetIds: TargetIds
+    ): ScpActionDefinition = {
+      val __obj = js.Dynamic.literal(
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "TargetIds" -> TargetIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ScpActionDefinition]
+    }
+  }
+
   /** The amount of cost or usage that is measured for a budget.
     * For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:
     * * An <code>Amount</code> of <code>3</code>
@@ -852,6 +1512,31 @@ package budgetsservice {
         "Unit" -> Unit.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Spend]
+    }
+  }
+
+  /** The AWS Systems Manager (SSM) action definition details.
+    */
+  @js.native
+  trait SsmActionDefinition extends js.Object {
+    var ActionSubType: ActionSubType
+    var InstanceIds: InstanceIds
+    var Region: Region
+  }
+
+  object SsmActionDefinition {
+    @inline
+    def apply(
+        ActionSubType: ActionSubType,
+        InstanceIds: InstanceIds,
+        Region: Region
+    ): SsmActionDefinition = {
+      val __obj = js.Dynamic.literal(
+        "ActionSubType" -> ActionSubType.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.asInstanceOf[js.Any],
+        "Region" -> Region.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SsmActionDefinition]
     }
   }
 
@@ -891,7 +1576,7 @@ package budgetsservice {
     @inline def values = js.Array(SNS, EMAIL)
   }
 
-  /** The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.
+  /** The type of threshold for a notification.
     */
   @js.native
   sealed trait ThresholdType extends js.Any
@@ -934,6 +1619,74 @@ package budgetsservice {
     val ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
 
     @inline def values = js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY)
+  }
+
+  @js.native
+  trait UpdateBudgetActionRequest extends js.Object {
+    var AccountId: AccountId
+    var ActionId: ActionId
+    var BudgetName: BudgetName
+    var ActionThreshold: js.UndefOr[ActionThreshold]
+    var ApprovalModel: js.UndefOr[ApprovalModel]
+    var Definition: js.UndefOr[Definition]
+    var ExecutionRoleArn: js.UndefOr[RoleArn]
+    var NotificationType: js.UndefOr[NotificationType]
+    var Subscribers: js.UndefOr[Subscribers]
+  }
+
+  object UpdateBudgetActionRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ActionId: ActionId,
+        BudgetName: BudgetName,
+        ActionThreshold: js.UndefOr[ActionThreshold] = js.undefined,
+        ApprovalModel: js.UndefOr[ApprovalModel] = js.undefined,
+        Definition: js.UndefOr[Definition] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        NotificationType: js.UndefOr[NotificationType] = js.undefined,
+        Subscribers: js.UndefOr[Subscribers] = js.undefined
+    ): UpdateBudgetActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ActionId" -> ActionId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any]
+      )
+
+      ActionThreshold.foreach(__v => __obj.updateDynamic("ActionThreshold")(__v.asInstanceOf[js.Any]))
+      ApprovalModel.foreach(__v => __obj.updateDynamic("ApprovalModel")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      NotificationType.foreach(__v => __obj.updateDynamic("NotificationType")(__v.asInstanceOf[js.Any]))
+      Subscribers.foreach(__v => __obj.updateDynamic("Subscribers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBudgetActionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBudgetActionResponse extends js.Object {
+    var AccountId: AccountId
+    var BudgetName: BudgetName
+    var NewAction: Action
+    var OldAction: Action
+  }
+
+  object UpdateBudgetActionResponse {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        BudgetName: BudgetName,
+        NewAction: Action,
+        OldAction: Action
+    ): UpdateBudgetActionResponse = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "BudgetName" -> BudgetName.asInstanceOf[js.Any],
+        "NewAction" -> NewAction.asInstanceOf[js.Any],
+        "OldAction" -> OldAction.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateBudgetActionResponse]
+    }
   }
 
   /** Request of UpdateBudget

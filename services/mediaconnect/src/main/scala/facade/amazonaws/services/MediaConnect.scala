@@ -14,7 +14,9 @@ package object mediaconnect {
   type __listOfGrantEntitlementRequest = js.Array[GrantEntitlementRequest]
   type __listOfListedEntitlement = js.Array[ListedEntitlement]
   type __listOfListedFlow = js.Array[ListedFlow]
+  type __listOfOffering = js.Array[Offering]
   type __listOfOutput = js.Array[Output]
+  type __listOfReservation = js.Array[Reservation]
   type __listOfSetSourceRequest = js.Array[SetSourceRequest]
   type __listOfSource = js.Array[Source]
   type __listOfVpcInterface = js.Array[VpcInterface]
@@ -31,10 +33,15 @@ package object mediaconnect {
     @inline def createFlowFuture(params: CreateFlowRequest): Future[CreateFlowResponse] = service.createFlow(params).promise().toFuture
     @inline def deleteFlowFuture(params: DeleteFlowRequest): Future[DeleteFlowResponse] = service.deleteFlow(params).promise().toFuture
     @inline def describeFlowFuture(params: DescribeFlowRequest): Future[DescribeFlowResponse] = service.describeFlow(params).promise().toFuture
+    @inline def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] = service.describeOffering(params).promise().toFuture
+    @inline def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] = service.describeReservation(params).promise().toFuture
     @inline def grantFlowEntitlementsFuture(params: GrantFlowEntitlementsRequest): Future[GrantFlowEntitlementsResponse] = service.grantFlowEntitlements(params).promise().toFuture
     @inline def listEntitlementsFuture(params: ListEntitlementsRequest): Future[ListEntitlementsResponse] = service.listEntitlements(params).promise().toFuture
     @inline def listFlowsFuture(params: ListFlowsRequest): Future[ListFlowsResponse] = service.listFlows(params).promise().toFuture
+    @inline def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] = service.listOfferings(params).promise().toFuture
+    @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] = service.listReservations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] = service.purchaseOffering(params).promise().toFuture
     @inline def removeFlowOutputFuture(params: RemoveFlowOutputRequest): Future[RemoveFlowOutputResponse] = service.removeFlowOutput(params).promise().toFuture
     @inline def removeFlowSourceFuture(params: RemoveFlowSourceRequest): Future[RemoveFlowSourceResponse] = service.removeFlowSource(params).promise().toFuture
     @inline def removeFlowVpcInterfaceFuture(params: RemoveFlowVpcInterfaceRequest): Future[RemoveFlowVpcInterfaceResponse] = service.removeFlowVpcInterface(params).promise().toFuture
@@ -63,10 +70,15 @@ package mediaconnect {
     def createFlow(params: CreateFlowRequest): Request[CreateFlowResponse] = js.native
     def deleteFlow(params: DeleteFlowRequest): Request[DeleteFlowResponse] = js.native
     def describeFlow(params: DescribeFlowRequest): Request[DescribeFlowResponse] = js.native
+    def describeOffering(params: DescribeOfferingRequest): Request[DescribeOfferingResponse] = js.native
+    def describeReservation(params: DescribeReservationRequest): Request[DescribeReservationResponse] = js.native
     def grantFlowEntitlements(params: GrantFlowEntitlementsRequest): Request[GrantFlowEntitlementsResponse] = js.native
     def listEntitlements(params: ListEntitlementsRequest): Request[ListEntitlementsResponse] = js.native
     def listFlows(params: ListFlowsRequest): Request[ListFlowsResponse] = js.native
+    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse] = js.native
+    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse] = js.native
     def removeFlowOutput(params: RemoveFlowOutputRequest): Request[RemoveFlowOutputResponse] = js.native
     def removeFlowSource(params: RemoveFlowSourceRequest): Request[RemoveFlowSourceResponse] = js.native
     def removeFlowVpcInterface(params: RemoveFlowVpcInterfaceRequest): Request[RemoveFlowVpcInterfaceResponse] = js.native
@@ -396,6 +408,80 @@ package mediaconnect {
     }
   }
 
+  @js.native
+  trait DescribeOfferingRequest extends js.Object {
+    var OfferingArn: __string
+  }
+
+  object DescribeOfferingRequest {
+    @inline
+    def apply(
+        OfferingArn: __string
+    ): DescribeOfferingRequest = {
+      val __obj = js.Dynamic.literal(
+        "OfferingArn" -> OfferingArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeOfferingRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeOfferingResponse extends js.Object {
+    var Offering: js.UndefOr[Offering]
+  }
+
+  object DescribeOfferingResponse {
+    @inline
+    def apply(
+        Offering: js.UndefOr[Offering] = js.undefined
+    ): DescribeOfferingResponse = {
+      val __obj = js.Dynamic.literal()
+      Offering.foreach(__v => __obj.updateDynamic("Offering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeOfferingResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeReservationRequest extends js.Object {
+    var ReservationArn: __string
+  }
+
+  object DescribeReservationRequest {
+    @inline
+    def apply(
+        ReservationArn: __string
+    ): DescribeReservationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ReservationArn" -> ReservationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeReservationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeReservationResponse extends js.Object {
+    var Reservation: js.UndefOr[Reservation]
+  }
+
+  object DescribeReservationResponse {
+    @inline
+    def apply(
+        Reservation: js.UndefOr[Reservation] = js.undefined
+    ): DescribeReservationResponse = {
+      val __obj = js.Dynamic.literal()
+      Reservation.foreach(__v => __obj.updateDynamic("Reservation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReservationResponse]
+    }
+  }
+
+  @js.native
+  sealed trait DurationUnits extends js.Any
+  object DurationUnits {
+    val MONTHS = "MONTHS".asInstanceOf[DurationUnits]
+
+    @inline def values = js.Array(MONTHS)
+  }
+
   /** Information about the encryption of the flow.
     */
   @js.native
@@ -723,6 +809,82 @@ package mediaconnect {
   }
 
   @js.native
+  trait ListOfferingsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListOfferingsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListOfferingsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingsRequest]
+    }
+  }
+
+  @js.native
+  trait ListOfferingsResponse extends js.Object {
+    var NextToken: js.UndefOr[__string]
+    var Offerings: js.UndefOr[__listOfOffering]
+  }
+
+  object ListOfferingsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Offerings: js.UndefOr[__listOfOffering] = js.undefined
+    ): ListOfferingsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Offerings.foreach(__v => __obj.updateDynamic("Offerings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOfferingsResponse]
+    }
+  }
+
+  @js.native
+  trait ListReservationsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListReservationsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListReservationsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReservationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListReservationsResponse extends js.Object {
+    var NextToken: js.UndefOr[__string]
+    var Reservations: js.UndefOr[__listOfReservation]
+  }
+
+  object ListReservationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Reservations: js.UndefOr[__listOfReservation] = js.undefined
+    ): ListReservationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Reservations.foreach(__v => __obj.updateDynamic("Reservations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReservationsResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: __string
   }
@@ -834,6 +996,46 @@ package mediaconnect {
     }
   }
 
+  /** A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    */
+  @js.native
+  trait Offering extends js.Object {
+    var CurrencyCode: __string
+    var Duration: __integer
+    var DurationUnits: DurationUnits
+    var OfferingArn: __string
+    var OfferingDescription: __string
+    var PricePerUnit: __string
+    var PriceUnits: PriceUnits
+    var ResourceSpecification: ResourceSpecification
+  }
+
+  object Offering {
+    @inline
+    def apply(
+        CurrencyCode: __string,
+        Duration: __integer,
+        DurationUnits: DurationUnits,
+        OfferingArn: __string,
+        OfferingDescription: __string,
+        PricePerUnit: __string,
+        PriceUnits: PriceUnits,
+        ResourceSpecification: ResourceSpecification
+    ): Offering = {
+      val __obj = js.Dynamic.literal(
+        "CurrencyCode" -> CurrencyCode.asInstanceOf[js.Any],
+        "Duration" -> Duration.asInstanceOf[js.Any],
+        "DurationUnits" -> DurationUnits.asInstanceOf[js.Any],
+        "OfferingArn" -> OfferingArn.asInstanceOf[js.Any],
+        "OfferingDescription" -> OfferingDescription.asInstanceOf[js.Any],
+        "PricePerUnit" -> PricePerUnit.asInstanceOf[js.Any],
+        "PriceUnits" -> PriceUnits.asInstanceOf[js.Any],
+        "ResourceSpecification" -> ResourceSpecification.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Offering]
+    }
+  }
+
   /** The settings for an output.
     */
   @js.native
@@ -885,6 +1087,14 @@ package mediaconnect {
   }
 
   @js.native
+  sealed trait PriceUnits extends js.Any
+  object PriceUnits {
+    val HOURLY = "HOURLY".asInstanceOf[PriceUnits]
+
+    @inline def values = js.Array(HOURLY)
+  }
+
+  @js.native
   sealed trait Protocol extends js.Any
   object Protocol {
     val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
@@ -894,6 +1104,47 @@ package mediaconnect {
     val rist = "rist".asInstanceOf[Protocol]
 
     @inline def values = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist)
+  }
+
+  /** A request to purchase a offering.
+    */
+  @js.native
+  trait PurchaseOfferingRequest extends js.Object {
+    var OfferingArn: __string
+    var ReservationName: __string
+    var Start: __string
+  }
+
+  object PurchaseOfferingRequest {
+    @inline
+    def apply(
+        OfferingArn: __string,
+        ReservationName: __string,
+        Start: __string
+    ): PurchaseOfferingRequest = {
+      val __obj = js.Dynamic.literal(
+        "OfferingArn" -> OfferingArn.asInstanceOf[js.Any],
+        "ReservationName" -> ReservationName.asInstanceOf[js.Any],
+        "Start" -> Start.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PurchaseOfferingRequest]
+    }
+  }
+
+  @js.native
+  trait PurchaseOfferingResponse extends js.Object {
+    var Reservation: js.UndefOr[Reservation]
+  }
+
+  object PurchaseOfferingResponse {
+    @inline
+    def apply(
+        Reservation: js.UndefOr[Reservation] = js.undefined
+    ): PurchaseOfferingResponse = {
+      val __obj = js.Dynamic.literal()
+      Reservation.foreach(__v => __obj.updateDynamic("Reservation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PurchaseOfferingResponse]
+    }
   }
 
   @js.native
@@ -1014,6 +1265,103 @@ package mediaconnect {
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveFlowVpcInterfaceResponse]
     }
+  }
+
+  /** A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
+    */
+  @js.native
+  trait Reservation extends js.Object {
+    var CurrencyCode: __string
+    var Duration: __integer
+    var DurationUnits: DurationUnits
+    var End: __string
+    var OfferingArn: __string
+    var OfferingDescription: __string
+    var PricePerUnit: __string
+    var PriceUnits: PriceUnits
+    var ReservationArn: __string
+    var ReservationName: __string
+    var ReservationState: ReservationState
+    var ResourceSpecification: ResourceSpecification
+    var Start: __string
+  }
+
+  object Reservation {
+    @inline
+    def apply(
+        CurrencyCode: __string,
+        Duration: __integer,
+        DurationUnits: DurationUnits,
+        End: __string,
+        OfferingArn: __string,
+        OfferingDescription: __string,
+        PricePerUnit: __string,
+        PriceUnits: PriceUnits,
+        ReservationArn: __string,
+        ReservationName: __string,
+        ReservationState: ReservationState,
+        ResourceSpecification: ResourceSpecification,
+        Start: __string
+    ): Reservation = {
+      val __obj = js.Dynamic.literal(
+        "CurrencyCode" -> CurrencyCode.asInstanceOf[js.Any],
+        "Duration" -> Duration.asInstanceOf[js.Any],
+        "DurationUnits" -> DurationUnits.asInstanceOf[js.Any],
+        "End" -> End.asInstanceOf[js.Any],
+        "OfferingArn" -> OfferingArn.asInstanceOf[js.Any],
+        "OfferingDescription" -> OfferingDescription.asInstanceOf[js.Any],
+        "PricePerUnit" -> PricePerUnit.asInstanceOf[js.Any],
+        "PriceUnits" -> PriceUnits.asInstanceOf[js.Any],
+        "ReservationArn" -> ReservationArn.asInstanceOf[js.Any],
+        "ReservationName" -> ReservationName.asInstanceOf[js.Any],
+        "ReservationState" -> ReservationState.asInstanceOf[js.Any],
+        "ResourceSpecification" -> ResourceSpecification.asInstanceOf[js.Any],
+        "Start" -> Start.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Reservation]
+    }
+  }
+
+  @js.native
+  sealed trait ReservationState extends js.Any
+  object ReservationState {
+    val ACTIVE = "ACTIVE".asInstanceOf[ReservationState]
+    val EXPIRED = "EXPIRED".asInstanceOf[ReservationState]
+    val PROCESSING = "PROCESSING".asInstanceOf[ReservationState]
+    val CANCELED = "CANCELED".asInstanceOf[ReservationState]
+
+    @inline def values = js.Array(ACTIVE, EXPIRED, PROCESSING, CANCELED)
+  }
+
+  /** A definition of what is being billed for, including the type and amount.
+    */
+  @js.native
+  trait ResourceSpecification extends js.Object {
+    var ResourceType: ResourceType
+    var ReservedBitrate: js.UndefOr[__integer]
+  }
+
+  object ResourceSpecification {
+    @inline
+    def apply(
+        ResourceType: ResourceType,
+        ReservedBitrate: js.UndefOr[__integer] = js.undefined
+    ): ResourceSpecification = {
+      val __obj = js.Dynamic.literal(
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      ReservedBitrate.foreach(__v => __obj.updateDynamic("ReservedBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceSpecification]
+    }
+  }
+
+  @js.native
+  sealed trait ResourceType extends js.Any
+  object ResourceType {
+    val Mbps_Outbound_Bandwidth = "Mbps_Outbound_Bandwidth".asInstanceOf[ResourceType]
+
+    @inline def values = js.Array(Mbps_Outbound_Bandwidth)
   }
 
   @js.native

@@ -1312,6 +1312,7 @@ package managedblockchain {
     var LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration]
     var MemberId: js.UndefOr[ResourceIdString]
     var NetworkId: js.UndefOr[ResourceIdString]
+    var StateDB: js.UndefOr[StateDBType]
     var Status: js.UndefOr[NodeStatus]
   }
 
@@ -1326,6 +1327,7 @@ package managedblockchain {
         LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined,
         MemberId: js.UndefOr[ResourceIdString] = js.undefined,
         NetworkId: js.UndefOr[ResourceIdString] = js.undefined,
+        StateDB: js.UndefOr[StateDBType] = js.undefined,
         Status: js.UndefOr[NodeStatus] = js.undefined
     ): Node = {
       val __obj = js.Dynamic.literal()
@@ -1337,6 +1339,7 @@ package managedblockchain {
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
+      StateDB.foreach(__v => __obj.updateDynamic("StateDB")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Node]
     }
@@ -1349,6 +1352,7 @@ package managedblockchain {
     var AvailabilityZone: AvailabilityZoneString
     var InstanceType: InstanceTypeString
     var LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration]
+    var StateDB: js.UndefOr[StateDBType]
   }
 
   object NodeConfiguration {
@@ -1356,7 +1360,8 @@ package managedblockchain {
     def apply(
         AvailabilityZone: AvailabilityZoneString,
         InstanceType: InstanceTypeString,
-        LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined
+        LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined,
+        StateDB: js.UndefOr[StateDBType] = js.undefined
     ): NodeConfiguration = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
@@ -1364,6 +1369,7 @@ package managedblockchain {
       )
 
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
+      StateDB.foreach(__v => __obj.updateDynamic("StateDB")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeConfiguration]
     }
   }
@@ -1655,6 +1661,15 @@ package managedblockchain {
       )
       __obj.asInstanceOf[RemoveAction]
     }
+  }
+
+  @js.native
+  sealed trait StateDBType extends js.Any
+  object StateDBType {
+    val LevelDB = "LevelDB".asInstanceOf[StateDBType]
+    val CouchDB = "CouchDB".asInstanceOf[StateDBType]
+
+    @inline def values = js.Array(LevelDB, CouchDB)
   }
 
   @js.native

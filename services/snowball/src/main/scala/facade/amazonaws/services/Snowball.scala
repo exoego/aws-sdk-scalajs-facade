@@ -36,10 +36,12 @@ package object snowball {
     @inline def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] = service.createAddress(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] = service.createCluster(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
+    @inline def createReturnShippingLabelFuture(params: CreateReturnShippingLabelRequest): Future[CreateReturnShippingLabelResult] = service.createReturnShippingLabel(params).promise().toFuture
     @inline def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] = service.describeAddress(params).promise().toFuture
     @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] = service.describeAddresses(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] = service.describeCluster(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] = service.describeJob(params).promise().toFuture
+    @inline def describeReturnShippingLabelFuture(params: DescribeReturnShippingLabelRequest): Future[DescribeReturnShippingLabelResult] = service.describeReturnShippingLabel(params).promise().toFuture
     @inline def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] = service.getJobManifest(params).promise().toFuture
     @inline def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] = service.getJobUnlockCode(params).promise().toFuture
     @inline def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] = service.getSnowballUsage(params).promise().toFuture
@@ -50,6 +52,7 @@ package object snowball {
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
     @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] = service.updateCluster(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] = service.updateJob(params).promise().toFuture
+    @inline def updateJobShipmentStateFuture(params: UpdateJobShipmentStateRequest): Future[UpdateJobShipmentStateResult] = service.updateJobShipmentState(params).promise().toFuture
 
   }
 }
@@ -65,10 +68,12 @@ package snowball {
     def createAddress(params: CreateAddressRequest): Request[CreateAddressResult] = js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResult] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
+    def createReturnShippingLabel(params: CreateReturnShippingLabelRequest): Request[CreateReturnShippingLabelResult] = js.native
     def describeAddress(params: DescribeAddressRequest): Request[DescribeAddressResult] = js.native
     def describeAddresses(params: DescribeAddressesRequest): Request[DescribeAddressesResult] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResult] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
+    def describeReturnShippingLabel(params: DescribeReturnShippingLabelRequest): Request[DescribeReturnShippingLabelResult] = js.native
     def getJobManifest(params: GetJobManifestRequest): Request[GetJobManifestResult] = js.native
     def getJobUnlockCode(params: GetJobUnlockCodeRequest): Request[GetJobUnlockCodeResult] = js.native
     def getSnowballUsage(params: GetSnowballUsageRequest): Request[GetSnowballUsageResult] = js.native
@@ -79,9 +84,10 @@ package snowball {
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
     def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResult] = js.native
     def updateJob(params: UpdateJobRequest): Request[UpdateJobResult] = js.native
+    def updateJobShipmentState(params: UpdateJobShipmentStateRequest): Request[UpdateJobShipmentStateResult] = js.native
   }
 
-  /** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
+  /** The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.
     */
   @js.native
   trait Address extends js.Object {
@@ -290,7 +296,7 @@ package snowball {
     @inline def values = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
   }
 
-  /** A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
+  /** A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.
     */
   @js.native
   trait CompatibleImage extends js.Object {
@@ -479,7 +485,44 @@ package snowball {
     }
   }
 
-  /** Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
+  @js.native
+  trait CreateReturnShippingLabelRequest extends js.Object {
+    var JobId: JobId
+    var ShippingOption: js.UndefOr[ShippingOption]
+  }
+
+  object CreateReturnShippingLabelRequest {
+    @inline
+    def apply(
+        JobId: JobId,
+        ShippingOption: js.UndefOr[ShippingOption] = js.undefined
+    ): CreateReturnShippingLabelRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReturnShippingLabelRequest]
+    }
+  }
+
+  @js.native
+  trait CreateReturnShippingLabelResult extends js.Object {
+    var Status: js.UndefOr[ShippingLabelStatus]
+  }
+
+  object CreateReturnShippingLabelResult {
+    @inline
+    def apply(
+        Status: js.UndefOr[ShippingLabelStatus] = js.undefined
+    ): CreateReturnShippingLabelResult = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReturnShippingLabelResult]
+    }
+  }
+
+  /** Defines the real-time status of a Snow device's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
     */
   @js.native
   trait DataTransfer extends js.Object {
@@ -646,6 +689,41 @@ package snowball {
     }
   }
 
+  @js.native
+  trait DescribeReturnShippingLabelRequest extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object DescribeReturnShippingLabelRequest {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): DescribeReturnShippingLabelRequest = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReturnShippingLabelRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeReturnShippingLabelResult extends js.Object {
+    var ExpirationDate: js.UndefOr[Timestamp]
+    var Status: js.UndefOr[ShippingLabelStatus]
+  }
+
+  object DescribeReturnShippingLabelResult {
+    @inline
+    def apply(
+        ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[ShippingLabelStatus] = js.undefined
+    ): DescribeReturnShippingLabelResult = {
+      val __obj = js.Dynamic.literal()
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReturnShippingLabelResult]
+    }
+  }
+
   /** The container for <code>SnowconeDeviceConfiguration</code>.
     */
   @js.native
@@ -664,7 +742,7 @@ package snowball {
     }
   }
 
-  /** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
+  /** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
     */
   @js.native
   trait Ec2AmiResource extends js.Object {
@@ -888,8 +966,8 @@ package snowball {
     }
   }
 
-  /** Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.
-    * For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.
+  /** Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.
+    * For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.
     * The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.
     * For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.
     */
@@ -1321,6 +1399,15 @@ package snowball {
     }
   }
 
+  @js.native
+  sealed trait ShipmentState extends js.Any
+  object ShipmentState {
+    val RECEIVED = "RECEIVED".asInstanceOf[ShipmentState]
+    val RETURNED = "RETURNED".asInstanceOf[ShipmentState]
+
+    @inline def values = js.Array(RECEIVED, RETURNED)
+  }
+
   /** A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.
     */
   @js.native
@@ -1343,6 +1430,17 @@ package snowball {
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShippingDetails]
     }
+  }
+
+  @js.native
+  sealed trait ShippingLabelStatus extends js.Any
+  object ShippingLabelStatus {
+    val InProgress = "InProgress".asInstanceOf[ShippingLabelStatus]
+    val TimedOut = "TimedOut".asInstanceOf[ShippingLabelStatus]
+    val Succeeded = "Succeeded".asInstanceOf[ShippingLabelStatus]
+    val Failed = "Failed".asInstanceOf[ShippingLabelStatus]
+
+    @inline def values = js.Array(InProgress, TimedOut, Succeeded, Failed)
   }
 
   @js.native
@@ -1519,6 +1617,37 @@ package snowball {
     def apply(): UpdateJobResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateJobResult]
+    }
+  }
+
+  @js.native
+  trait UpdateJobShipmentStateRequest extends js.Object {
+    var JobId: JobId
+    var ShipmentState: ShipmentState
+  }
+
+  object UpdateJobShipmentStateRequest {
+    @inline
+    def apply(
+        JobId: JobId,
+        ShipmentState: ShipmentState
+    ): UpdateJobShipmentStateRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "ShipmentState" -> ShipmentState.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateJobShipmentStateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateJobShipmentStateResult extends js.Object
+
+  object UpdateJobShipmentStateResult {
+    @inline
+    def apply(): UpdateJobShipmentStateResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateJobShipmentStateResult]
     }
   }
 

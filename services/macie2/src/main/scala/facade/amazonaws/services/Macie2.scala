@@ -8,11 +8,15 @@ import facade.amazonaws._
 
 package object macie2 {
   type BucketCriteria = js.Dictionary[BucketCriteriaAdditionalProperties]
+  type Cells = js.Array[Cell]
   type Criterion = js.Dictionary[CriterionAdditionalProperties]
   type CustomDetections = js.Array[CustomDetection]
   type DefaultDetections = js.Array[DefaultDetection]
   type KeyValuePairList = js.Array[KeyValuePair]
   type MaxResults = Int
+  type Pages = js.Array[Page]
+  type Ranges = js.Array[Range]
+  type Records = js.Array[Record]
   type SensitiveData = js.Array[SensitiveDataItem]
   type TagMap = js.Dictionary[__string]
   type __boolean = Boolean
@@ -252,7 +256,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about an account that's designated as a delegated administrator of Amazon Macie for an AWS organization.
+  /** Provides information about the delegated Amazon Macie administrator account for an AWS organization.
     */
   @js.native
   trait AdminAccount extends js.Object {
@@ -273,7 +277,7 @@ package macie2 {
     }
   }
 
-  /** The current status of an account as a delegated administrator of Amazon Macie for an AWS organization.
+  /** The current status of an account as the delegated Amazon Macie administrator account for an AWS organization.
     */
   @js.native
   sealed trait AdminStatus extends js.Any
@@ -482,6 +486,7 @@ package macie2 {
     var publiclyAccessible: js.UndefOr[__long]
     var publiclyReadable: js.UndefOr[__long]
     var publiclyWritable: js.UndefOr[__long]
+    var unknown: js.UndefOr[__long]
   }
 
   object BucketCountByEffectivePermission {
@@ -489,12 +494,14 @@ package macie2 {
     def apply(
         publiclyAccessible: js.UndefOr[__long] = js.undefined,
         publiclyReadable: js.UndefOr[__long] = js.undefined,
-        publiclyWritable: js.UndefOr[__long] = js.undefined
+        publiclyWritable: js.UndefOr[__long] = js.undefined,
+        unknown: js.UndefOr[__long] = js.undefined
     ): BucketCountByEffectivePermission = {
       val __obj = js.Dynamic.literal()
       publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
       publiclyReadable.foreach(__v => __obj.updateDynamic("publiclyReadable")(__v.asInstanceOf[js.Any]))
       publiclyWritable.foreach(__v => __obj.updateDynamic("publiclyWritable")(__v.asInstanceOf[js.Any]))
+      unknown.foreach(__v => __obj.updateDynamic("unknown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BucketCountByEffectivePermission]
     }
   }
@@ -530,6 +537,7 @@ package macie2 {
     var external: js.UndefOr[__long]
     var internal: js.UndefOr[__long]
     var notShared: js.UndefOr[__long]
+    var unknown: js.UndefOr[__long]
   }
 
   object BucketCountBySharedAccessType {
@@ -537,12 +545,14 @@ package macie2 {
     def apply(
         external: js.UndefOr[__long] = js.undefined,
         internal: js.UndefOr[__long] = js.undefined,
-        notShared: js.UndefOr[__long] = js.undefined
+        notShared: js.UndefOr[__long] = js.undefined,
+        unknown: js.UndefOr[__long] = js.undefined
     ): BucketCountBySharedAccessType = {
       val __obj = js.Dynamic.literal()
       external.foreach(__v => __obj.updateDynamic("external")(__v.asInstanceOf[js.Any]))
       internal.foreach(__v => __obj.updateDynamic("internal")(__v.asInstanceOf[js.Any]))
       notShared.foreach(__v => __obj.updateDynamic("notShared")(__v.asInstanceOf[js.Any]))
+      unknown.foreach(__v => __obj.updateDynamic("unknown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BucketCountBySharedAccessType]
     }
   }
@@ -583,7 +593,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about bucket-level permissions settings for an S3 bucket.
+  /** Provides information about the bucket-level permissions settings for an S3 bucket.
     */
   @js.native
   trait BucketLevelPermissions extends js.Object {
@@ -616,6 +626,8 @@ package macie2 {
     var bucketCreatedAt: js.UndefOr[__timestampIso8601]
     var bucketName: js.UndefOr[__string]
     var classifiableObjectCount: js.UndefOr[__long]
+    var classifiableSizeInBytes: js.UndefOr[__long]
+    var jobDetails: js.UndefOr[JobDetails]
     var lastUpdated: js.UndefOr[__timestampIso8601]
     var objectCount: js.UndefOr[__long]
     var objectCountByEncryptionType: js.UndefOr[ObjectCountByEncryptionType]
@@ -626,6 +638,8 @@ package macie2 {
     var sizeInBytes: js.UndefOr[__long]
     var sizeInBytesCompressed: js.UndefOr[__long]
     var tags: js.UndefOr[__listOfKeyValuePair]
+    var unclassifiableObjectCount: js.UndefOr[ObjectLevelStatistics]
+    var unclassifiableObjectSizeInBytes: js.UndefOr[ObjectLevelStatistics]
     var versioning: js.UndefOr[__boolean]
   }
 
@@ -637,6 +651,8 @@ package macie2 {
         bucketCreatedAt: js.UndefOr[__timestampIso8601] = js.undefined,
         bucketName: js.UndefOr[__string] = js.undefined,
         classifiableObjectCount: js.UndefOr[__long] = js.undefined,
+        classifiableSizeInBytes: js.UndefOr[__long] = js.undefined,
+        jobDetails: js.UndefOr[JobDetails] = js.undefined,
         lastUpdated: js.UndefOr[__timestampIso8601] = js.undefined,
         objectCount: js.UndefOr[__long] = js.undefined,
         objectCountByEncryptionType: js.UndefOr[ObjectCountByEncryptionType] = js.undefined,
@@ -647,6 +663,8 @@ package macie2 {
         sizeInBytes: js.UndefOr[__long] = js.undefined,
         sizeInBytesCompressed: js.UndefOr[__long] = js.undefined,
         tags: js.UndefOr[__listOfKeyValuePair] = js.undefined,
+        unclassifiableObjectCount: js.UndefOr[ObjectLevelStatistics] = js.undefined,
+        unclassifiableObjectSizeInBytes: js.UndefOr[ObjectLevelStatistics] = js.undefined,
         versioning: js.UndefOr[__boolean] = js.undefined
     ): BucketMetadata = {
       val __obj = js.Dynamic.literal()
@@ -655,6 +673,8 @@ package macie2 {
       bucketCreatedAt.foreach(__v => __obj.updateDynamic("bucketCreatedAt")(__v.asInstanceOf[js.Any]))
       bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
       classifiableObjectCount.foreach(__v => __obj.updateDynamic("classifiableObjectCount")(__v.asInstanceOf[js.Any]))
+      classifiableSizeInBytes.foreach(__v => __obj.updateDynamic("classifiableSizeInBytes")(__v.asInstanceOf[js.Any]))
+      jobDetails.foreach(__v => __obj.updateDynamic("jobDetails")(__v.asInstanceOf[js.Any]))
       lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
       objectCount.foreach(__v => __obj.updateDynamic("objectCount")(__v.asInstanceOf[js.Any]))
       objectCountByEncryptionType.foreach(__v => __obj.updateDynamic("objectCountByEncryptionType")(__v.asInstanceOf[js.Any]))
@@ -665,12 +685,14 @@ package macie2 {
       sizeInBytes.foreach(__v => __obj.updateDynamic("sizeInBytes")(__v.asInstanceOf[js.Any]))
       sizeInBytesCompressed.foreach(__v => __obj.updateDynamic("sizeInBytesCompressed")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      unclassifiableObjectCount.foreach(__v => __obj.updateDynamic("unclassifiableObjectCount")(__v.asInstanceOf[js.Any]))
+      unclassifiableObjectSizeInBytes.foreach(__v => __obj.updateDynamic("unclassifiableObjectSizeInBytes")(__v.asInstanceOf[js.Any]))
       versioning.foreach(__v => __obj.updateDynamic("versioning")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BucketMetadata]
     }
   }
 
-  /** The account-level and bucket-level permissions settings for an S3 bucket.
+  /** Provides information about the account-level and bucket-level permissions settings for an S3 bucket.
     */
   @js.native
   trait BucketPermissionConfiguration extends js.Object {
@@ -712,7 +734,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about permissions settings that determine whether an S3 bucket is publicly accessible.
+  /** Provides information about the permissions settings that determine whether an S3 bucket is publicly accessible.
     */
   @js.native
   trait BucketPublicAccess extends js.Object {
@@ -751,6 +773,33 @@ package macie2 {
       attributeName.foreach(__v => __obj.updateDynamic("attributeName")(__v.asInstanceOf[js.Any]))
       orderBy.foreach(__v => __obj.updateDynamic("orderBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BucketSortCriteria]
+    }
+  }
+
+  /** Specifies the location of an occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file.
+    */
+  @js.native
+  trait Cell extends js.Object {
+    var cellReference: js.UndefOr[__string]
+    var column: js.UndefOr[__long]
+    var columnName: js.UndefOr[__string]
+    var row: js.UndefOr[__long]
+  }
+
+  object Cell {
+    @inline
+    def apply(
+        cellReference: js.UndefOr[__string] = js.undefined,
+        column: js.UndefOr[__long] = js.undefined,
+        columnName: js.UndefOr[__string] = js.undefined,
+        row: js.UndefOr[__long] = js.undefined
+    ): Cell = {
+      val __obj = js.Dynamic.literal()
+      cellReference.foreach(__v => __obj.updateDynamic("cellReference")(__v.asInstanceOf[js.Any]))
+      column.foreach(__v => __obj.updateDynamic("column")(__v.asInstanceOf[js.Any]))
+      columnName.foreach(__v => __obj.updateDynamic("columnName")(__v.asInstanceOf[js.Any]))
+      row.foreach(__v => __obj.updateDynamic("row")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cell]
     }
   }
 
@@ -799,10 +848,11 @@ package macie2 {
     }
   }
 
-  /** Provides detailed information about a sensitive data finding, including the types and number of occurrences of the sensitive data that was found.
+  /** Provides the details of a sensitive data finding, including the types, number of occurrences, and locations of the sensitive data that was detected.
     */
   @js.native
   trait ClassificationResult extends js.Object {
+    var additionalOccurrences: js.UndefOr[__boolean]
     var customDataIdentifiers: js.UndefOr[CustomDataIdentifiers]
     var mimeType: js.UndefOr[__string]
     var sensitiveData: js.UndefOr[SensitiveData]
@@ -813,6 +863,7 @@ package macie2 {
   object ClassificationResult {
     @inline
     def apply(
+        additionalOccurrences: js.UndefOr[__boolean] = js.undefined,
         customDataIdentifiers: js.UndefOr[CustomDataIdentifiers] = js.undefined,
         mimeType: js.UndefOr[__string] = js.undefined,
         sensitiveData: js.UndefOr[SensitiveData] = js.undefined,
@@ -820,6 +871,7 @@ package macie2 {
         status: js.UndefOr[ClassificationResultStatus] = js.undefined
     ): ClassificationResult = {
       val __obj = js.Dynamic.literal()
+      additionalOccurrences.foreach(__v => __obj.updateDynamic("additionalOccurrences")(__v.asInstanceOf[js.Any]))
       customDataIdentifiers.foreach(__v => __obj.updateDynamic("customDataIdentifiers")(__v.asInstanceOf[js.Any]))
       mimeType.foreach(__v => __obj.updateDynamic("mimeType")(__v.asInstanceOf[js.Any]))
       sensitiveData.foreach(__v => __obj.updateDynamic("sensitiveData")(__v.asInstanceOf[js.Any]))
@@ -1131,6 +1183,7 @@ package macie2 {
   @js.native
   trait CriterionAdditionalProperties extends js.Object {
     var eq: js.UndefOr[__listOf__string]
+    var eqExactMatch: js.UndefOr[__listOf__string]
     var gt: js.UndefOr[__long]
     var gte: js.UndefOr[__long]
     var lt: js.UndefOr[__long]
@@ -1142,6 +1195,7 @@ package macie2 {
     @inline
     def apply(
         eq: js.UndefOr[__listOf__string] = js.undefined,
+        eqExactMatch: js.UndefOr[__listOf__string] = js.undefined,
         gt: js.UndefOr[__long] = js.undefined,
         gte: js.UndefOr[__long] = js.undefined,
         lt: js.UndefOr[__long] = js.undefined,
@@ -1150,6 +1204,7 @@ package macie2 {
     ): CriterionAdditionalProperties = {
       val __obj = js.Dynamic.literal()
       eq.foreach(__v => __obj.updateDynamic("eq")(__v.asInstanceOf[js.Any]))
+      eqExactMatch.foreach(__v => __obj.updateDynamic("eqExactMatch")(__v.asInstanceOf[js.Any]))
       gt.foreach(__v => __obj.updateDynamic("gt")(__v.asInstanceOf[js.Any]))
       gte.foreach(__v => __obj.updateDynamic("gte")(__v.asInstanceOf[js.Any]))
       lt.foreach(__v => __obj.updateDynamic("lt")(__v.asInstanceOf[js.Any]))
@@ -1199,7 +1254,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about the number of occurrences of the data that produced a sensitive data finding, and the custom data identifiers that detected the data for the finding.
+  /** Provides information about custom data identifiers that produced a sensitive data finding, and the number of occurrences of the data that they detected for the finding.
     */
   @js.native
   trait CustomDataIdentifiers extends js.Object {
@@ -1220,13 +1275,14 @@ package macie2 {
     }
   }
 
-  /** Provides information about a custom data identifier that produced a sensitive data finding, and the number of occurrences of the data that it detected for the finding.
+  /** Provides information about a custom data identifier that produced a sensitive data finding, and the sensitive data that it detected for the finding.
     */
   @js.native
   trait CustomDetection extends js.Object {
     var arn: js.UndefOr[__string]
     var count: js.UndefOr[__long]
     var name: js.UndefOr[__string]
+    var occurrences: js.UndefOr[Occurrences]
   }
 
   object CustomDetection {
@@ -1234,12 +1290,14 @@ package macie2 {
     def apply(
         arn: js.UndefOr[__string] = js.undefined,
         count: js.UndefOr[__long] = js.undefined,
-        name: js.UndefOr[__string] = js.undefined
+        name: js.UndefOr[__string] = js.undefined,
+        occurrences: js.UndefOr[Occurrences] = js.undefined
     ): CustomDetection = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      occurrences.foreach(__v => __obj.updateDynamic("occurrences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomDetection]
     }
   }
@@ -1304,11 +1362,12 @@ package macie2 {
     }
   }
 
-  /** Provides information about sensitive data that was detected by managed data identifiers and produced a sensitive data finding.
+  /** Provides information about a type of sensitive data that was detected by managed data identifiers and produced a sensitive data finding.
     */
   @js.native
   trait DefaultDetection extends js.Object {
     var count: js.UndefOr[__long]
+    var occurrences: js.UndefOr[Occurrences]
     var `type`: js.UndefOr[__string]
   }
 
@@ -1316,10 +1375,12 @@ package macie2 {
     @inline
     def apply(
         count: js.UndefOr[__long] = js.undefined,
+        occurrences: js.UndefOr[Occurrences] = js.undefined,
         `type`: js.UndefOr[__string] = js.undefined
     ): DefaultDetection = {
       val __obj = js.Dynamic.literal()
       count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      occurrences.foreach(__v => __obj.updateDynamic("occurrences")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultDetection]
     }
@@ -1514,6 +1575,7 @@ package macie2 {
     var jobId: js.UndefOr[__string]
     var jobStatus: js.UndefOr[JobStatus]
     var jobType: js.UndefOr[JobType]
+    var lastRunErrorStatus: js.UndefOr[LastRunErrorStatus]
     var lastRunTime: js.UndefOr[__timestampIso8601]
     var name: js.UndefOr[__string]
     var s3JobDefinition: js.UndefOr[S3JobDefinition]
@@ -1521,6 +1583,7 @@ package macie2 {
     var scheduleFrequency: js.UndefOr[JobScheduleFrequency]
     var statistics: js.UndefOr[Statistics]
     var tags: js.UndefOr[TagMap]
+    var userPausedDetails: js.UndefOr[UserPausedDetails]
   }
 
   object DescribeClassificationJobResponse {
@@ -1535,13 +1598,15 @@ package macie2 {
         jobId: js.UndefOr[__string] = js.undefined,
         jobStatus: js.UndefOr[JobStatus] = js.undefined,
         jobType: js.UndefOr[JobType] = js.undefined,
+        lastRunErrorStatus: js.UndefOr[LastRunErrorStatus] = js.undefined,
         lastRunTime: js.UndefOr[__timestampIso8601] = js.undefined,
         name: js.UndefOr[__string] = js.undefined,
         s3JobDefinition: js.UndefOr[S3JobDefinition] = js.undefined,
         samplingPercentage: js.UndefOr[__integer] = js.undefined,
         scheduleFrequency: js.UndefOr[JobScheduleFrequency] = js.undefined,
         statistics: js.UndefOr[Statistics] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
+        tags: js.UndefOr[TagMap] = js.undefined,
+        userPausedDetails: js.UndefOr[UserPausedDetails] = js.undefined
     ): DescribeClassificationJobResponse = {
       val __obj = js.Dynamic.literal()
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
@@ -1553,6 +1618,7 @@ package macie2 {
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       jobStatus.foreach(__v => __obj.updateDynamic("jobStatus")(__v.asInstanceOf[js.Any]))
       jobType.foreach(__v => __obj.updateDynamic("jobType")(__v.asInstanceOf[js.Any]))
+      lastRunErrorStatus.foreach(__v => __obj.updateDynamic("lastRunErrorStatus")(__v.asInstanceOf[js.Any]))
       lastRunTime.foreach(__v => __obj.updateDynamic("lastRunTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       s3JobDefinition.foreach(__v => __obj.updateDynamic("s3JobDefinition")(__v.asInstanceOf[js.Any]))
@@ -1560,6 +1626,7 @@ package macie2 {
       scheduleFrequency.foreach(__v => __obj.updateDynamic("scheduleFrequency")(__v.asInstanceOf[js.Any]))
       statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      userPausedDetails.foreach(__v => __obj.updateDynamic("userPausedDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClassificationJobResponse]
     }
   }
@@ -1717,8 +1784,9 @@ package macie2 {
   object EffectivePermission {
     val PUBLIC = "PUBLIC".asInstanceOf[EffectivePermission]
     val NOT_PUBLIC = "NOT_PUBLIC".asInstanceOf[EffectivePermission]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[EffectivePermission]
 
-    @inline def values = js.Array(PUBLIC, NOT_PUBLIC)
+    @inline def values = js.Array(PUBLIC, NOT_PUBLIC, UNKNOWN)
   }
 
   @js.native
@@ -1786,7 +1854,7 @@ package macie2 {
     }
   }
 
-  /** The type of server-side encryption that's used to encrypt objects in the S3 bucket. Valid values are:
+  /** The type of server-side encryption that's used to encrypt an S3 object or objects in an S3 bucket. Valid values are:
     */
   @js.native
   sealed trait EncryptionType extends js.Any
@@ -1840,7 +1908,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about a finding.
+  /** Provides the details of a finding.
     */
   @js.native
   trait Finding extends js.Object {
@@ -2037,7 +2105,7 @@ package macie2 {
     }
   }
 
-  /** The type of finding. Valid values are:
+  /** The type of finding. For details about each type, see [[https://docs.aws.amazon.com/macie/latest/user/findings-types.html|Types of Amazon Macie findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
     */
   @js.native
   sealed trait FindingType extends js.Any
@@ -2131,10 +2199,13 @@ package macie2 {
     var bucketCountByEncryptionType: js.UndefOr[BucketCountByEncryptionType]
     var bucketCountBySharedAccessType: js.UndefOr[BucketCountBySharedAccessType]
     var classifiableObjectCount: js.UndefOr[__long]
+    var classifiableSizeInBytes: js.UndefOr[__long]
     var lastUpdated: js.UndefOr[__timestampIso8601]
     var objectCount: js.UndefOr[__long]
     var sizeInBytes: js.UndefOr[__long]
     var sizeInBytesCompressed: js.UndefOr[__long]
+    var unclassifiableObjectCount: js.UndefOr[ObjectLevelStatistics]
+    var unclassifiableObjectSizeInBytes: js.UndefOr[ObjectLevelStatistics]
   }
 
   object GetBucketStatisticsResponse {
@@ -2145,10 +2216,13 @@ package macie2 {
         bucketCountByEncryptionType: js.UndefOr[BucketCountByEncryptionType] = js.undefined,
         bucketCountBySharedAccessType: js.UndefOr[BucketCountBySharedAccessType] = js.undefined,
         classifiableObjectCount: js.UndefOr[__long] = js.undefined,
+        classifiableSizeInBytes: js.UndefOr[__long] = js.undefined,
         lastUpdated: js.UndefOr[__timestampIso8601] = js.undefined,
         objectCount: js.UndefOr[__long] = js.undefined,
         sizeInBytes: js.UndefOr[__long] = js.undefined,
-        sizeInBytesCompressed: js.UndefOr[__long] = js.undefined
+        sizeInBytesCompressed: js.UndefOr[__long] = js.undefined,
+        unclassifiableObjectCount: js.UndefOr[ObjectLevelStatistics] = js.undefined,
+        unclassifiableObjectSizeInBytes: js.UndefOr[ObjectLevelStatistics] = js.undefined
     ): GetBucketStatisticsResponse = {
       val __obj = js.Dynamic.literal()
       bucketCount.foreach(__v => __obj.updateDynamic("bucketCount")(__v.asInstanceOf[js.Any]))
@@ -2156,10 +2230,13 @@ package macie2 {
       bucketCountByEncryptionType.foreach(__v => __obj.updateDynamic("bucketCountByEncryptionType")(__v.asInstanceOf[js.Any]))
       bucketCountBySharedAccessType.foreach(__v => __obj.updateDynamic("bucketCountBySharedAccessType")(__v.asInstanceOf[js.Any]))
       classifiableObjectCount.foreach(__v => __obj.updateDynamic("classifiableObjectCount")(__v.asInstanceOf[js.Any]))
+      classifiableSizeInBytes.foreach(__v => __obj.updateDynamic("classifiableSizeInBytes")(__v.asInstanceOf[js.Any]))
       lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
       objectCount.foreach(__v => __obj.updateDynamic("objectCount")(__v.asInstanceOf[js.Any]))
       sizeInBytes.foreach(__v => __obj.updateDynamic("sizeInBytes")(__v.asInstanceOf[js.Any]))
       sizeInBytesCompressed.foreach(__v => __obj.updateDynamic("sizeInBytesCompressed")(__v.asInstanceOf[js.Any]))
+      unclassifiableObjectCount.foreach(__v => __obj.updateDynamic("unclassifiableObjectCount")(__v.asInstanceOf[js.Any]))
+      unclassifiableObjectSizeInBytes.foreach(__v => __obj.updateDynamic("unclassifiableObjectSizeInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketStatisticsResponse]
     }
   }
@@ -2809,6 +2886,26 @@ package macie2 {
     }
   }
 
+  @js.native
+  sealed trait IsDefinedInJob extends js.Any
+  object IsDefinedInJob {
+    val TRUE = "TRUE".asInstanceOf[IsDefinedInJob]
+    val FALSE = "FALSE".asInstanceOf[IsDefinedInJob]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[IsDefinedInJob]
+
+    @inline def values = js.Array(TRUE, FALSE, UNKNOWN)
+  }
+
+  @js.native
+  sealed trait IsMonitoredByJob extends js.Any
+  object IsMonitoredByJob {
+    val TRUE = "TRUE".asInstanceOf[IsMonitoredByJob]
+    val FALSE = "FALSE".asInstanceOf[IsMonitoredByJob]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[IsMonitoredByJob]
+
+    @inline def values = js.Array(TRUE, FALSE, UNKNOWN)
+  }
+
   /** The operator to use in a condition. Valid values are:
     */
   @js.native
@@ -2823,6 +2920,33 @@ package macie2 {
     val CONTAINS = "CONTAINS".asInstanceOf[JobComparator]
 
     @inline def values = js.Array(EQ, GT, GTE, LT, LTE, NE, CONTAINS)
+  }
+
+  /** Specifies whether any one-time or recurring classification jobs are configured to analyze data in an S3 bucket, and, if so, the details of the job that ran most recently.
+    */
+  @js.native
+  trait JobDetails extends js.Object {
+    var isDefinedInJob: js.UndefOr[IsDefinedInJob]
+    var isMonitoredByJob: js.UndefOr[IsMonitoredByJob]
+    var lastJobId: js.UndefOr[__string]
+    var lastJobRunTime: js.UndefOr[__timestampIso8601]
+  }
+
+  object JobDetails {
+    @inline
+    def apply(
+        isDefinedInJob: js.UndefOr[IsDefinedInJob] = js.undefined,
+        isMonitoredByJob: js.UndefOr[IsMonitoredByJob] = js.undefined,
+        lastJobId: js.UndefOr[__string] = js.undefined,
+        lastJobRunTime: js.UndefOr[__timestampIso8601] = js.undefined
+    ): JobDetails = {
+      val __obj = js.Dynamic.literal()
+      isDefinedInJob.foreach(__v => __obj.updateDynamic("isDefinedInJob")(__v.asInstanceOf[js.Any]))
+      isMonitoredByJob.foreach(__v => __obj.updateDynamic("isMonitoredByJob")(__v.asInstanceOf[js.Any]))
+      lastJobId.foreach(__v => __obj.updateDynamic("lastJobId")(__v.asInstanceOf[js.Any]))
+      lastJobRunTime.foreach(__v => __obj.updateDynamic("lastJobRunTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobDetails]
+    }
   }
 
   /** Specifies the recurrence pattern for running a classification job.
@@ -2870,7 +2994,7 @@ package macie2 {
     }
   }
 
-  /** Specifies one or more property- and tag-based conditions that define criteria for including or excluding objects from a classification job.
+  /** Specifies one or more property- and tag-based conditions that define criteria for including or excluding objects from a classification job. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.
     */
   @js.native
   trait JobScopingBlock extends js.Object {
@@ -2888,7 +3012,7 @@ package macie2 {
     }
   }
 
-  /** The current status of a classification job. Possible values are:
+  /** The status of a classification job. Possible values are:
     */
   @js.native
   sealed trait JobStatus extends js.Any
@@ -2898,8 +3022,9 @@ package macie2 {
     val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
     val COMPLETE = "COMPLETE".asInstanceOf[JobStatus]
     val IDLE = "IDLE".asInstanceOf[JobStatus]
+    val USER_PAUSED = "USER_PAUSED".asInstanceOf[JobStatus]
 
-    @inline def values = js.Array(RUNNING, PAUSED, CANCELLED, COMPLETE, IDLE)
+    @inline def values = js.Array(RUNNING, PAUSED, CANCELLED, COMPLETE, IDLE, USER_PAUSED)
   }
 
   /** Provides information about a classification job, including the current status of the job.
@@ -2911,7 +3036,9 @@ package macie2 {
     var jobId: js.UndefOr[__string]
     var jobStatus: js.UndefOr[JobStatus]
     var jobType: js.UndefOr[JobType]
+    var lastRunErrorStatus: js.UndefOr[LastRunErrorStatus]
     var name: js.UndefOr[__string]
+    var userPausedDetails: js.UndefOr[UserPausedDetails]
   }
 
   object JobSummary {
@@ -2922,7 +3049,9 @@ package macie2 {
         jobId: js.UndefOr[__string] = js.undefined,
         jobStatus: js.UndefOr[JobStatus] = js.undefined,
         jobType: js.UndefOr[JobType] = js.undefined,
-        name: js.UndefOr[__string] = js.undefined
+        lastRunErrorStatus: js.UndefOr[LastRunErrorStatus] = js.undefined,
+        name: js.UndefOr[__string] = js.undefined,
+        userPausedDetails: js.UndefOr[UserPausedDetails] = js.undefined
     ): JobSummary = {
       val __obj = js.Dynamic.literal()
       bucketDefinitions.foreach(__v => __obj.updateDynamic("bucketDefinitions")(__v.asInstanceOf[js.Any]))
@@ -2930,7 +3059,9 @@ package macie2 {
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       jobStatus.foreach(__v => __obj.updateDynamic("jobStatus")(__v.asInstanceOf[js.Any]))
       jobType.foreach(__v => __obj.updateDynamic("jobType")(__v.asInstanceOf[js.Any]))
+      lastRunErrorStatus.foreach(__v => __obj.updateDynamic("lastRunErrorStatus")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      userPausedDetails.foreach(__v => __obj.updateDynamic("userPausedDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobSummary]
     }
   }
@@ -2965,6 +3096,35 @@ package macie2 {
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyValuePair]
     }
+  }
+
+  /** Specifies whether any account- or bucket-level access errors occurred when a classification job ran. For example, the job is configured to analyze data for a member account that was suspended, or the job is configured to analyze an S3 bucket that Amazon Macie isn't allowed to access.
+    */
+  @js.native
+  trait LastRunErrorStatus extends js.Object {
+    var code: js.UndefOr[LastRunErrorStatusCode]
+  }
+
+  object LastRunErrorStatus {
+    @inline
+    def apply(
+        code: js.UndefOr[LastRunErrorStatusCode] = js.undefined
+    ): LastRunErrorStatus = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LastRunErrorStatus]
+    }
+  }
+
+  /** Specifies whether any account- or bucket-level access errors occurred during the run of a one-time classification job or the most recent run of a recurring classification job. Possible values are:
+    */
+  @js.native
+  sealed trait LastRunErrorStatusCode extends js.Any
+  object LastRunErrorStatusCode {
+    val NONE = "NONE".asInstanceOf[LastRunErrorStatusCode]
+    val ERROR = "ERROR".asInstanceOf[LastRunErrorStatusCode]
+
+    @inline def values = js.Array(NONE, ERROR)
   }
 
   @js.native
@@ -3468,6 +3628,60 @@ package macie2 {
     }
   }
 
+  /** Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results.
+    */
+  @js.native
+  trait ObjectLevelStatistics extends js.Object {
+    var fileType: js.UndefOr[__long]
+    var storageClass: js.UndefOr[__long]
+    var total: js.UndefOr[__long]
+  }
+
+  object ObjectLevelStatistics {
+    @inline
+    def apply(
+        fileType: js.UndefOr[__long] = js.undefined,
+        storageClass: js.UndefOr[__long] = js.undefined,
+        total: js.UndefOr[__long] = js.undefined
+    ): ObjectLevelStatistics = {
+      val __obj = js.Dynamic.literal()
+      fileType.foreach(__v => __obj.updateDynamic("fileType")(__v.asInstanceOf[js.Any]))
+      storageClass.foreach(__v => __obj.updateDynamic("storageClass")(__v.asInstanceOf[js.Any]))
+      total.foreach(__v => __obj.updateDynamic("total")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLevelStatistics]
+    }
+  }
+
+  /** Provides the location of 1-15 occurrences of sensitive data that was detected by managed data identifiers or a custom data identifier and produced a sensitive data finding.
+    */
+  @js.native
+  trait Occurrences extends js.Object {
+    var cells: js.UndefOr[Cells]
+    var lineRanges: js.UndefOr[Ranges]
+    var offsetRanges: js.UndefOr[Ranges]
+    var pages: js.UndefOr[Pages]
+    var records: js.UndefOr[Records]
+  }
+
+  object Occurrences {
+    @inline
+    def apply(
+        cells: js.UndefOr[Cells] = js.undefined,
+        lineRanges: js.UndefOr[Ranges] = js.undefined,
+        offsetRanges: js.UndefOr[Ranges] = js.undefined,
+        pages: js.UndefOr[Pages] = js.undefined,
+        records: js.UndefOr[Records] = js.undefined
+    ): Occurrences = {
+      val __obj = js.Dynamic.literal()
+      cells.foreach(__v => __obj.updateDynamic("cells")(__v.asInstanceOf[js.Any]))
+      lineRanges.foreach(__v => __obj.updateDynamic("lineRanges")(__v.asInstanceOf[js.Any]))
+      offsetRanges.foreach(__v => __obj.updateDynamic("offsetRanges")(__v.asInstanceOf[js.Any]))
+      pages.foreach(__v => __obj.updateDynamic("pages")(__v.asInstanceOf[js.Any]))
+      records.foreach(__v => __obj.updateDynamic("records")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Occurrences]
+    }
+  }
+
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
@@ -3475,6 +3689,30 @@ package macie2 {
     val DESC = "DESC".asInstanceOf[OrderBy]
 
     @inline def values = js.Array(ASC, DESC)
+  }
+
+  /** Specifies the location of an occurrence of sensitive data in an Adobe Portable Document Format file.
+    */
+  @js.native
+  trait Page extends js.Object {
+    var lineRange: js.UndefOr[Range]
+    var offsetRange: js.UndefOr[Range]
+    var pageNumber: js.UndefOr[__long]
+  }
+
+  object Page {
+    @inline
+    def apply(
+        lineRange: js.UndefOr[Range] = js.undefined,
+        offsetRange: js.UndefOr[Range] = js.undefined,
+        pageNumber: js.UndefOr[__long] = js.undefined
+    ): Page = {
+      val __obj = js.Dynamic.literal()
+      lineRange.foreach(__v => __obj.updateDynamic("lineRange")(__v.asInstanceOf[js.Any]))
+      offsetRange.foreach(__v => __obj.updateDynamic("offsetRange")(__v.asInstanceOf[js.Any]))
+      pageNumber.foreach(__v => __obj.updateDynamic("pageNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Page]
+    }
   }
 
   /** Provides the details of a policy finding.
@@ -3528,6 +3766,51 @@ package macie2 {
       val __obj = js.Dynamic.literal()
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutClassificationExportConfigurationResponse]
+    }
+  }
+
+  /** Provides details about the location of an occurrence of sensitive data in an Adobe Portable Document Format file, Microsoft Word document, or non-binary text file.
+    */
+  @js.native
+  trait Range extends js.Object {
+    var end: js.UndefOr[__long]
+    var start: js.UndefOr[__long]
+    var startColumn: js.UndefOr[__long]
+  }
+
+  object Range {
+    @inline
+    def apply(
+        end: js.UndefOr[__long] = js.undefined,
+        start: js.UndefOr[__long] = js.undefined,
+        startColumn: js.UndefOr[__long] = js.undefined
+    ): Range = {
+      val __obj = js.Dynamic.literal()
+      end.foreach(__v => __obj.updateDynamic("end")(__v.asInstanceOf[js.Any]))
+      start.foreach(__v => __obj.updateDynamic("start")(__v.asInstanceOf[js.Any]))
+      startColumn.foreach(__v => __obj.updateDynamic("startColumn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Range]
+    }
+  }
+
+  /** Specifies the location of an occurrence of sensitive data in an Apache Avro object container or Apache Parquet file.
+    */
+  @js.native
+  trait Record extends js.Object {
+    var jsonPath: js.UndefOr[__string]
+    var recordIndex: js.UndefOr[__long]
+  }
+
+  object Record {
+    @inline
+    def apply(
+        jsonPath: js.UndefOr[__string] = js.undefined,
+        recordIndex: js.UndefOr[__long] = js.undefined
+    ): Record = {
+      val __obj = js.Dynamic.literal()
+      jsonPath.foreach(__v => __obj.updateDynamic("jsonPath")(__v.asInstanceOf[js.Any]))
+      recordIndex.foreach(__v => __obj.updateDynamic("recordIndex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Record]
     }
   }
 
@@ -3631,7 +3914,7 @@ package macie2 {
     }
   }
 
-  /** Specifies which S3 buckets contain the objects that a classification job analyzes.
+  /** Specifies which AWS account owns the S3 buckets that a classification job analyzes, and the buckets to analyze for the account.
     */
   @js.native
   trait S3BucketDefinitionForJob extends js.Object {
@@ -3785,7 +4068,7 @@ package macie2 {
     @inline def values = js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG)
   }
 
-  /** Specifies one or more property- and tag-based conditions that refine the scope of a classification job. These conditions define criteria that determine which objects a job analyzes.
+  /** Specifies one or more property- and tag-based conditions that refine the scope of a classification job. These conditions define criteria that determine which objects a job analyzes. Exclude conditions take precedence over include conditions.
     */
   @js.native
   trait Scoping extends js.Object {
@@ -3806,7 +4089,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about the category, type, and number of occurrences of sensitive data that produced a finding.
+  /** Provides information about the category, types, and occurrences of sensitive data that produced a sensitive data finding.
     */
   @js.native
   trait SensitiveDataItem extends js.Object {
@@ -3843,7 +4126,7 @@ package macie2 {
     @inline def values = js.Array(FINANCIAL_INFORMATION, PERSONAL_INFORMATION, CREDENTIALS, CUSTOM_IDENTIFIER)
   }
 
-  /** Provides information about the server-side encryption settings for an S3 bucket or object.
+  /** Provides information about the server-side encryption settings for an S3 bucket or S3 object.
     */
   @js.native
   trait ServerSideEncryption extends js.Object {
@@ -3960,7 +4243,7 @@ package macie2 {
     }
   }
 
-  /** Provides the numeric score and textual representation of a severity value.
+  /** Provides the numerical and qualitative representations of a finding's severity.
     */
   @js.native
   trait Severity extends js.Object {
@@ -3981,7 +4264,7 @@ package macie2 {
     }
   }
 
-  /** The textual representation of the finding's severity. Possible values are:
+  /** The qualitative representation of the finding's severity. Possible values are:
     */
   @js.native
   sealed trait SeverityDescription extends js.Any
@@ -3999,8 +4282,9 @@ package macie2 {
     val EXTERNAL = "EXTERNAL".asInstanceOf[SharedAccess]
     val INTERNAL = "INTERNAL".asInstanceOf[SharedAccess]
     val NOT_SHARED = "NOT_SHARED".asInstanceOf[SharedAccess]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[SharedAccess]
 
-    @inline def values = js.Array(EXTERNAL, INTERNAL, NOT_SHARED)
+    @inline def values = js.Array(EXTERNAL, INTERNAL, NOT_SHARED, UNKNOWN)
   }
 
   /** Specifies a property-based condition that determines whether an object is included or excluded from a classification job.
@@ -4027,7 +4311,7 @@ package macie2 {
     }
   }
 
-  /** Specifies criteria for sorting the results of a request for information about findings.
+  /** Specifies criteria for sorting the results of a request for findings.
     */
   @js.native
   trait SortCriteria extends js.Object {
@@ -4069,7 +4353,7 @@ package macie2 {
     }
   }
 
-  /** The storage class of the S3 bucket or object. Possible values are:
+  /** The storage class of the S3 object. Possible values are:
     */
   @js.native
   sealed trait StorageClass extends js.Any
@@ -4153,7 +4437,7 @@ package macie2 {
     @inline def values = js.Array(S3_OBJECT)
   }
 
-  /** Specifies a tag key and value, as a pair, to use in a tag-based condition for a classification job.
+  /** Specifies a tag key or tag key and value pair to use in a tag-based condition for a classification job.
     */
   @js.native
   trait TagValuePair extends js.Object {
@@ -4701,6 +4985,30 @@ package macie2 {
     val AWSService = "AWSService".asInstanceOf[UserIdentityType]
 
     @inline def values = js.Array(AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService)
+  }
+
+  /** Provides information about when a classification job was paused and when it will expire and be cancelled if it isn't resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED. The information in this object applies only to a job that was paused while it had a status of RUNNING.
+    */
+  @js.native
+  trait UserPausedDetails extends js.Object {
+    var jobExpiresAt: js.UndefOr[__timestampIso8601]
+    var jobImminentExpirationHealthEventArn: js.UndefOr[__string]
+    var jobPausedAt: js.UndefOr[__timestampIso8601]
+  }
+
+  object UserPausedDetails {
+    @inline
+    def apply(
+        jobExpiresAt: js.UndefOr[__timestampIso8601] = js.undefined,
+        jobImminentExpirationHealthEventArn: js.UndefOr[__string] = js.undefined,
+        jobPausedAt: js.UndefOr[__timestampIso8601] = js.undefined
+    ): UserPausedDetails = {
+      val __obj = js.Dynamic.literal()
+      jobExpiresAt.foreach(__v => __obj.updateDynamic("jobExpiresAt")(__v.asInstanceOf[js.Any]))
+      jobImminentExpirationHealthEventArn.foreach(__v => __obj.updateDynamic("jobImminentExpirationHealthEventArn")(__v.asInstanceOf[js.Any]))
+      jobPausedAt.foreach(__v => __obj.updateDynamic("jobPausedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserPausedDetails]
+    }
   }
 
   /** Specifies a weekly recurrence pattern for running a classification job.

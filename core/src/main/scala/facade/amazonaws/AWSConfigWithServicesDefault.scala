@@ -12,6 +12,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var apigatewaymanagementapi: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var apigatewayv2: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var appconfig: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var appflow: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var applicationautoscaling: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var applicationinsights: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var appmesh: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -59,6 +60,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var connectparticipant: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var costexplorer: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var cur: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var databrew: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var dataexchange: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var datapipeline: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var datasync: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -160,6 +162,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var mq: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var mturk: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var neptune: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var networkfirewall: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var networkmanager: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var opsworks: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var opsworkscm: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -181,6 +184,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var rds: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var rdsdataservice: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var redshift: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var redshiftdata: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var rekognition: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var resourcegroups: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var resourcegroupstaggingapi: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -190,6 +194,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var route53resolver: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var s3: js.UndefOr[S3ParamsWithEndpoint] = js.undefined
   var s3control: js.UndefOr[S3ParamsWithEndpoint] = js.undefined
+  var s3outposts: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var sagemaker: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var sagemakerruntime: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var savingsplans: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -198,6 +203,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var securityhub: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var serverlessapplicationrepository: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var servicecatalog: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var servicecatalogappregistry: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var servicediscovery: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var servicequotas: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var ses: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -211,6 +217,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var sqs: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var ssm: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var sso: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var ssoadmin: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var ssooidc: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var stepfunctions: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var storagegateway: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -219,6 +226,8 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var swf: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var synthetics: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var textract: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var timestreamquery: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var timestreamwrite: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var transcribeservice: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var transfer: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var translate: js.UndefOr[ParamsWithEndpoint] = js.undefined

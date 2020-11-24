@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object shield {
   type AttackId = String
   type AttackProperties = js.Array[AttackProperty]
+  type AttackStatisticsDataList = js.Array[AttackStatisticsDataItem]
   type AttackSummaries = js.Array[AttackSummary]
   type AttackTimestamp = js.Date
   type AttackVectorDescriptionList = js.Array[AttackVectorDescription]
@@ -25,11 +26,15 @@ package object shield {
   type MaxResults = Int
   type MitigationList = js.Array[Mitigation]
   type PhoneNumber = String
+  type ProtectionGroupId = String
+  type ProtectionGroupMembers = js.Array[ResourceArn]
+  type ProtectionGroups = js.Array[ProtectionGroup]
   type ProtectionId = String
   type ProtectionName = String
   type Protections = js.Array[Protection]
   type ResourceArn = String
   type ResourceArnFilterList = js.Array[ResourceArn]
+  type ResourceArnList = js.Array[ResourceArn]
   type RoleArn = String
   type SubResourceSummaryList = js.Array[SubResourceSummary]
   type SummarizedAttackVectorList = js.Array[SummarizedAttackVector]
@@ -45,12 +50,16 @@ package object shield {
     @inline def associateHealthCheckFuture(params: AssociateHealthCheckRequest): Future[AssociateHealthCheckResponse] = service.associateHealthCheck(params).promise().toFuture
     @inline def associateProactiveEngagementDetailsFuture(params: AssociateProactiveEngagementDetailsRequest): Future[AssociateProactiveEngagementDetailsResponse] = service.associateProactiveEngagementDetails(params).promise().toFuture
     @inline def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] = service.createProtection(params).promise().toFuture
+    @inline def createProtectionGroupFuture(params: CreateProtectionGroupRequest): Future[CreateProtectionGroupResponse] = service.createProtectionGroup(params).promise().toFuture
     @inline def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] = service.createSubscription(params).promise().toFuture
     @inline def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] = service.deleteProtection(params).promise().toFuture
+    @inline def deleteProtectionGroupFuture(params: DeleteProtectionGroupRequest): Future[DeleteProtectionGroupResponse] = service.deleteProtectionGroup(params).promise().toFuture
     @inline def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] = service.describeAttack(params).promise().toFuture
+    @inline def describeAttackStatisticsFuture(params: DescribeAttackStatisticsRequest): Future[DescribeAttackStatisticsResponse] = service.describeAttackStatistics(params).promise().toFuture
     @inline def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] = service.describeDRTAccess(params).promise().toFuture
     @inline def describeEmergencyContactSettingsFuture(params: DescribeEmergencyContactSettingsRequest): Future[DescribeEmergencyContactSettingsResponse] = service.describeEmergencyContactSettings(params).promise().toFuture
     @inline def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] = service.describeProtection(params).promise().toFuture
+    @inline def describeProtectionGroupFuture(params: DescribeProtectionGroupRequest): Future[DescribeProtectionGroupResponse] = service.describeProtectionGroup(params).promise().toFuture
     @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] = service.describeSubscription(params).promise().toFuture
     @inline def disableProactiveEngagementFuture(params: DisableProactiveEngagementRequest): Future[DisableProactiveEngagementResponse] = service.disableProactiveEngagement(params).promise().toFuture
     @inline def disassociateDRTLogBucketFuture(params: DisassociateDRTLogBucketRequest): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise().toFuture
@@ -59,8 +68,11 @@ package object shield {
     @inline def enableProactiveEngagementFuture(params: EnableProactiveEngagementRequest): Future[EnableProactiveEngagementResponse] = service.enableProactiveEngagement(params).promise().toFuture
     @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] = service.getSubscriptionState(params).promise().toFuture
     @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] = service.listAttacks(params).promise().toFuture
+    @inline def listProtectionGroupsFuture(params: ListProtectionGroupsRequest): Future[ListProtectionGroupsResponse] = service.listProtectionGroups(params).promise().toFuture
     @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] = service.listProtections(params).promise().toFuture
+    @inline def listResourcesInProtectionGroupFuture(params: ListResourcesInProtectionGroupRequest): Future[ListResourcesInProtectionGroupResponse] = service.listResourcesInProtectionGroup(params).promise().toFuture
     @inline def updateEmergencyContactSettingsFuture(params: UpdateEmergencyContactSettingsRequest): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise().toFuture
+    @inline def updateProtectionGroupFuture(params: UpdateProtectionGroupRequest): Future[UpdateProtectionGroupResponse] = service.updateProtectionGroup(params).promise().toFuture
     @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] = service.updateSubscription(params).promise().toFuture
 
   }
@@ -78,12 +90,16 @@ package shield {
     def associateHealthCheck(params: AssociateHealthCheckRequest): Request[AssociateHealthCheckResponse] = js.native
     def associateProactiveEngagementDetails(params: AssociateProactiveEngagementDetailsRequest): Request[AssociateProactiveEngagementDetailsResponse] = js.native
     def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse] = js.native
+    def createProtectionGroup(params: CreateProtectionGroupRequest): Request[CreateProtectionGroupResponse] = js.native
     def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse] = js.native
     def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse] = js.native
+    def deleteProtectionGroup(params: DeleteProtectionGroupRequest): Request[DeleteProtectionGroupResponse] = js.native
     def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse] = js.native
+    def describeAttackStatistics(params: DescribeAttackStatisticsRequest): Request[DescribeAttackStatisticsResponse] = js.native
     def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse] = js.native
     def describeEmergencyContactSettings(params: DescribeEmergencyContactSettingsRequest): Request[DescribeEmergencyContactSettingsResponse] = js.native
     def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse] = js.native
+    def describeProtectionGroup(params: DescribeProtectionGroupRequest): Request[DescribeProtectionGroupResponse] = js.native
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
     def disableProactiveEngagement(params: DisableProactiveEngagementRequest): Request[DisableProactiveEngagementResponse] = js.native
     def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] = js.native
@@ -92,8 +108,11 @@ package shield {
     def enableProactiveEngagement(params: EnableProactiveEngagementRequest): Request[EnableProactiveEngagementResponse] = js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
     def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse] = js.native
+    def listProtectionGroups(params: ListProtectionGroupsRequest): Request[ListProtectionGroupsResponse] = js.native
     def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse] = js.native
+    def listResourcesInProtectionGroup(params: ListResourcesInProtectionGroupRequest): Request[ListResourcesInProtectionGroupResponse] = js.native
     def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
+    def updateProtectionGroup(params: UpdateProtectionGroupRequest): Request[UpdateProtectionGroupResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
   }
 
@@ -305,6 +324,29 @@ package shield {
     @inline def values = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
   }
 
+  /** A single attack statistics data record. This is returned by <a>DescribeAttackStatistics</a> along with a time range indicating the time period that the attack statistics apply to.
+    */
+  @js.native
+  trait AttackStatisticsDataItem extends js.Object {
+    var AttackCount: Double
+    var AttackVolume: js.UndefOr[AttackVolume]
+  }
+
+  object AttackStatisticsDataItem {
+    @inline
+    def apply(
+        AttackCount: Double,
+        AttackVolume: js.UndefOr[AttackVolume] = js.undefined
+    ): AttackStatisticsDataItem = {
+      val __obj = js.Dynamic.literal(
+        "AttackCount" -> AttackCount.asInstanceOf[js.Any]
+      )
+
+      AttackVolume.foreach(__v => __obj.updateDynamic("AttackVolume")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttackStatisticsDataItem]
+    }
+  }
+
   /** Summarizes all DDoS attacks for a specified time period.
     */
   @js.native
@@ -354,6 +396,49 @@ package shield {
     }
   }
 
+  /** Information about the volume of attacks during the time period, included in an <a>AttackStatisticsDataItem</a>. If the accompanying <code>AttackCount</code> in the statistics object is zero, this setting might be empty.
+    */
+  @js.native
+  trait AttackVolume extends js.Object {
+    var BitsPerSecond: js.UndefOr[AttackVolumeStatistics]
+    var PacketsPerSecond: js.UndefOr[AttackVolumeStatistics]
+    var RequestsPerSecond: js.UndefOr[AttackVolumeStatistics]
+  }
+
+  object AttackVolume {
+    @inline
+    def apply(
+        BitsPerSecond: js.UndefOr[AttackVolumeStatistics] = js.undefined,
+        PacketsPerSecond: js.UndefOr[AttackVolumeStatistics] = js.undefined,
+        RequestsPerSecond: js.UndefOr[AttackVolumeStatistics] = js.undefined
+    ): AttackVolume = {
+      val __obj = js.Dynamic.literal()
+      BitsPerSecond.foreach(__v => __obj.updateDynamic("BitsPerSecond")(__v.asInstanceOf[js.Any]))
+      PacketsPerSecond.foreach(__v => __obj.updateDynamic("PacketsPerSecond")(__v.asInstanceOf[js.Any]))
+      RequestsPerSecond.foreach(__v => __obj.updateDynamic("RequestsPerSecond")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttackVolume]
+    }
+  }
+
+  /** Statistics objects for the various data types in <a>AttackVolume</a>.
+    */
+  @js.native
+  trait AttackVolumeStatistics extends js.Object {
+    var Max: Double
+  }
+
+  object AttackVolumeStatistics {
+    @inline
+    def apply(
+        Max: Double
+    ): AttackVolumeStatistics = {
+      val __obj = js.Dynamic.literal(
+        "Max" -> Max.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AttackVolumeStatistics]
+    }
+  }
+
   @js.native
   sealed trait AutoRenew extends js.Any
   object AutoRenew {
@@ -381,6 +466,47 @@ package shield {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Contributor]
+    }
+  }
+
+  @js.native
+  trait CreateProtectionGroupRequest extends js.Object {
+    var Aggregation: ProtectionGroupAggregation
+    var Pattern: ProtectionGroupPattern
+    var ProtectionGroupId: ProtectionGroupId
+    var Members: js.UndefOr[ProtectionGroupMembers]
+    var ResourceType: js.UndefOr[ProtectedResourceType]
+  }
+
+  object CreateProtectionGroupRequest {
+    @inline
+    def apply(
+        Aggregation: ProtectionGroupAggregation,
+        Pattern: ProtectionGroupPattern,
+        ProtectionGroupId: ProtectionGroupId,
+        Members: js.UndefOr[ProtectionGroupMembers] = js.undefined,
+        ResourceType: js.UndefOr[ProtectedResourceType] = js.undefined
+    ): CreateProtectionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Aggregation" -> Aggregation.asInstanceOf[js.Any],
+        "Pattern" -> Pattern.asInstanceOf[js.Any],
+        "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
+      )
+
+      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateProtectionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateProtectionGroupResponse extends js.Object
+
+  object CreateProtectionGroupResponse {
+    @inline
+    def apply(): CreateProtectionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateProtectionGroupResponse]
     }
   }
 
@@ -439,6 +565,34 @@ package shield {
     def apply(): CreateSubscriptionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateSubscriptionResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteProtectionGroupRequest extends js.Object {
+    var ProtectionGroupId: ProtectionGroupId
+  }
+
+  object DeleteProtectionGroupRequest {
+    @inline
+    def apply(
+        ProtectionGroupId: ProtectionGroupId
+    ): DeleteProtectionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteProtectionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteProtectionGroupResponse extends js.Object
+
+  object DeleteProtectionGroupResponse {
+    @inline
+    def apply(): DeleteProtectionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteProtectionGroupResponse]
     }
   }
 
@@ -528,6 +682,37 @@ package shield {
   }
 
   @js.native
+  trait DescribeAttackStatisticsRequest extends js.Object
+
+  object DescribeAttackStatisticsRequest {
+    @inline
+    def apply(): DescribeAttackStatisticsRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DescribeAttackStatisticsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAttackStatisticsResponse extends js.Object {
+    var DataItems: AttackStatisticsDataList
+    var TimeRange: TimeRange
+  }
+
+  object DescribeAttackStatisticsResponse {
+    @inline
+    def apply(
+        DataItems: AttackStatisticsDataList,
+        TimeRange: TimeRange
+    ): DescribeAttackStatisticsResponse = {
+      val __obj = js.Dynamic.literal(
+        "DataItems" -> DataItems.asInstanceOf[js.Any],
+        "TimeRange" -> TimeRange.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAttackStatisticsResponse]
+    }
+  }
+
+  @js.native
   trait DescribeDRTAccessRequest extends js.Object
 
   object DescribeDRTAccessRequest {
@@ -581,6 +766,40 @@ package shield {
       val __obj = js.Dynamic.literal()
       EmergencyContactList.foreach(__v => __obj.updateDynamic("EmergencyContactList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEmergencyContactSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeProtectionGroupRequest extends js.Object {
+    var ProtectionGroupId: ProtectionGroupId
+  }
+
+  object DescribeProtectionGroupRequest {
+    @inline
+    def apply(
+        ProtectionGroupId: ProtectionGroupId
+    ): DescribeProtectionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeProtectionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeProtectionGroupResponse extends js.Object {
+    var ProtectionGroup: ProtectionGroup
+  }
+
+  object DescribeProtectionGroupResponse {
+    @inline
+    def apply(
+        ProtectionGroup: ProtectionGroup
+    ): DescribeProtectionGroupResponse = {
+      val __obj = js.Dynamic.literal(
+        "ProtectionGroup" -> ProtectionGroup.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeProtectionGroupResponse]
     }
   }
 
@@ -894,6 +1113,46 @@ package shield {
   }
 
   @js.native
+  trait ListProtectionGroupsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListProtectionGroupsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListProtectionGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProtectionGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListProtectionGroupsResponse extends js.Object {
+    var ProtectionGroups: ProtectionGroups
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListProtectionGroupsResponse {
+    @inline
+    def apply(
+        ProtectionGroups: ProtectionGroups,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListProtectionGroupsResponse = {
+      val __obj = js.Dynamic.literal(
+        "ProtectionGroups" -> ProtectionGroups.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProtectionGroupsResponse]
+    }
+  }
+
+  @js.native
   trait ListProtectionsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
@@ -931,6 +1190,51 @@ package shield {
     }
   }
 
+  @js.native
+  trait ListResourcesInProtectionGroupRequest extends js.Object {
+    var ProtectionGroupId: ProtectionGroupId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListResourcesInProtectionGroupRequest {
+    @inline
+    def apply(
+        ProtectionGroupId: ProtectionGroupId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListResourcesInProtectionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourcesInProtectionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourcesInProtectionGroupResponse extends js.Object {
+    var ResourceArns: ResourceArnList
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListResourcesInProtectionGroupResponse {
+    @inline
+    def apply(
+        ResourceArns: ResourceArnList,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListResourcesInProtectionGroupResponse = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArns" -> ResourceArns.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourcesInProtectionGroupResponse]
+    }
+  }
+
   /** The mitigation applied to a DDoS attack.
     */
   @js.native
@@ -959,6 +1263,19 @@ package shield {
     @inline def values = js.Array(ENABLED, DISABLED, PENDING)
   }
 
+  @js.native
+  sealed trait ProtectedResourceType extends js.Any
+  object ProtectedResourceType {
+    val CLOUDFRONT_DISTRIBUTION = "CLOUDFRONT_DISTRIBUTION".asInstanceOf[ProtectedResourceType]
+    val ROUTE_53_HOSTED_ZONE = "ROUTE_53_HOSTED_ZONE".asInstanceOf[ProtectedResourceType]
+    val ELASTIC_IP_ALLOCATION = "ELASTIC_IP_ALLOCATION".asInstanceOf[ProtectedResourceType]
+    val CLASSIC_LOAD_BALANCER = "CLASSIC_LOAD_BALANCER".asInstanceOf[ProtectedResourceType]
+    val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ProtectedResourceType]
+    val GLOBAL_ACCELERATOR = "GLOBAL_ACCELERATOR".asInstanceOf[ProtectedResourceType]
+
+    @inline def values = js.Array(CLOUDFRONT_DISTRIBUTION, ROUTE_53_HOSTED_ZONE, ELASTIC_IP_ALLOCATION, CLASSIC_LOAD_BALANCER, APPLICATION_LOAD_BALANCER, GLOBAL_ACCELERATOR)
+  }
+
   /** An object that represents a resource that is under DDoS protection.
     */
   @js.native
@@ -983,6 +1300,137 @@ package shield {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Protection]
+    }
+  }
+
+  /** A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+    */
+  @js.native
+  trait ProtectionGroup extends js.Object {
+    var Aggregation: ProtectionGroupAggregation
+    var Members: ProtectionGroupMembers
+    var Pattern: ProtectionGroupPattern
+    var ProtectionGroupId: ProtectionGroupId
+    var ResourceType: js.UndefOr[ProtectedResourceType]
+  }
+
+  object ProtectionGroup {
+    @inline
+    def apply(
+        Aggregation: ProtectionGroupAggregation,
+        Members: ProtectionGroupMembers,
+        Pattern: ProtectionGroupPattern,
+        ProtectionGroupId: ProtectionGroupId,
+        ResourceType: js.UndefOr[ProtectedResourceType] = js.undefined
+    ): ProtectionGroup = {
+      val __obj = js.Dynamic.literal(
+        "Aggregation" -> Aggregation.asInstanceOf[js.Any],
+        "Members" -> Members.asInstanceOf[js.Any],
+        "Pattern" -> Pattern.asInstanceOf[js.Any],
+        "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
+      )
+
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtectionGroup]
+    }
+  }
+
+  @js.native
+  sealed trait ProtectionGroupAggregation extends js.Any
+  object ProtectionGroupAggregation {
+    val SUM = "SUM".asInstanceOf[ProtectionGroupAggregation]
+    val MEAN = "MEAN".asInstanceOf[ProtectionGroupAggregation]
+    val MAX = "MAX".asInstanceOf[ProtectionGroupAggregation]
+
+    @inline def values = js.Array(SUM, MEAN, MAX)
+  }
+
+  /** Limits settings on protection groups with arbitrary pattern type.
+    */
+  @js.native
+  trait ProtectionGroupArbitraryPatternLimits extends js.Object {
+    var MaxMembers: Double
+  }
+
+  object ProtectionGroupArbitraryPatternLimits {
+    @inline
+    def apply(
+        MaxMembers: Double
+    ): ProtectionGroupArbitraryPatternLimits = {
+      val __obj = js.Dynamic.literal(
+        "MaxMembers" -> MaxMembers.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProtectionGroupArbitraryPatternLimits]
+    }
+  }
+
+  /** Limits settings on protection groups for your subscription.
+    */
+  @js.native
+  trait ProtectionGroupLimits extends js.Object {
+    var MaxProtectionGroups: Double
+    var PatternTypeLimits: ProtectionGroupPatternTypeLimits
+  }
+
+  object ProtectionGroupLimits {
+    @inline
+    def apply(
+        MaxProtectionGroups: Double,
+        PatternTypeLimits: ProtectionGroupPatternTypeLimits
+    ): ProtectionGroupLimits = {
+      val __obj = js.Dynamic.literal(
+        "MaxProtectionGroups" -> MaxProtectionGroups.asInstanceOf[js.Any],
+        "PatternTypeLimits" -> PatternTypeLimits.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProtectionGroupLimits]
+    }
+  }
+
+  @js.native
+  sealed trait ProtectionGroupPattern extends js.Any
+  object ProtectionGroupPattern {
+    val ALL = "ALL".asInstanceOf[ProtectionGroupPattern]
+    val ARBITRARY = "ARBITRARY".asInstanceOf[ProtectionGroupPattern]
+    val BY_RESOURCE_TYPE = "BY_RESOURCE_TYPE".asInstanceOf[ProtectionGroupPattern]
+
+    @inline def values = js.Array(ALL, ARBITRARY, BY_RESOURCE_TYPE)
+  }
+
+  /** Limits settings by pattern type in the protection groups for your subscription.
+    */
+  @js.native
+  trait ProtectionGroupPatternTypeLimits extends js.Object {
+    var ArbitraryPatternLimits: ProtectionGroupArbitraryPatternLimits
+  }
+
+  object ProtectionGroupPatternTypeLimits {
+    @inline
+    def apply(
+        ArbitraryPatternLimits: ProtectionGroupArbitraryPatternLimits
+    ): ProtectionGroupPatternTypeLimits = {
+      val __obj = js.Dynamic.literal(
+        "ArbitraryPatternLimits" -> ArbitraryPatternLimits.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProtectionGroupPatternTypeLimits]
+    }
+  }
+
+  /** Limits settings on protections for your subscription.
+    */
+  @js.native
+  trait ProtectionLimits extends js.Object {
+    var ProtectedResourceTypeLimits: Limits
+  }
+
+  object ProtectionLimits {
+    @inline
+    def apply(
+        ProtectedResourceTypeLimits: Limits
+    ): ProtectionLimits = {
+      val __obj = js.Dynamic.literal(
+        "ProtectedResourceTypeLimits" -> ProtectedResourceTypeLimits.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProtectionLimits]
     }
   }
 
@@ -1026,6 +1474,7 @@ package shield {
     */
   @js.native
   trait Subscription extends js.Object {
+    var SubscriptionLimits: SubscriptionLimits
     var AutoRenew: js.UndefOr[AutoRenew]
     var EndTime: js.UndefOr[Timestamp]
     var Limits: js.UndefOr[Limits]
@@ -1037,6 +1486,7 @@ package shield {
   object Subscription {
     @inline
     def apply(
+        SubscriptionLimits: SubscriptionLimits,
         AutoRenew: js.UndefOr[AutoRenew] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         Limits: js.UndefOr[Limits] = js.undefined,
@@ -1044,7 +1494,10 @@ package shield {
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined
     ): Subscription = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "SubscriptionLimits" -> SubscriptionLimits.asInstanceOf[js.Any]
+      )
+
       AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
@@ -1052,6 +1505,28 @@ package shield {
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       TimeCommitmentInSeconds.foreach(__v => __obj.updateDynamic("TimeCommitmentInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]
+    }
+  }
+
+  /** Limits settings for your subscription.
+    */
+  @js.native
+  trait SubscriptionLimits extends js.Object {
+    var ProtectionGroupLimits: ProtectionGroupLimits
+    var ProtectionLimits: ProtectionLimits
+  }
+
+  object SubscriptionLimits {
+    @inline
+    def apply(
+        ProtectionGroupLimits: ProtectionGroupLimits,
+        ProtectionLimits: ProtectionLimits
+    ): SubscriptionLimits = {
+      val __obj = js.Dynamic.literal(
+        "ProtectionGroupLimits" -> ProtectionGroupLimits.asInstanceOf[js.Any],
+        "ProtectionLimits" -> ProtectionLimits.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SubscriptionLimits]
     }
   }
 
@@ -1176,6 +1651,47 @@ package shield {
     def apply(): UpdateEmergencyContactSettingsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateEmergencyContactSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateProtectionGroupRequest extends js.Object {
+    var Aggregation: ProtectionGroupAggregation
+    var Pattern: ProtectionGroupPattern
+    var ProtectionGroupId: ProtectionGroupId
+    var Members: js.UndefOr[ProtectionGroupMembers]
+    var ResourceType: js.UndefOr[ProtectedResourceType]
+  }
+
+  object UpdateProtectionGroupRequest {
+    @inline
+    def apply(
+        Aggregation: ProtectionGroupAggregation,
+        Pattern: ProtectionGroupPattern,
+        ProtectionGroupId: ProtectionGroupId,
+        Members: js.UndefOr[ProtectionGroupMembers] = js.undefined,
+        ResourceType: js.UndefOr[ProtectedResourceType] = js.undefined
+    ): UpdateProtectionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Aggregation" -> Aggregation.asInstanceOf[js.Any],
+        "Pattern" -> Pattern.asInstanceOf[js.Any],
+        "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
+      )
+
+      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProtectionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateProtectionGroupResponse extends js.Object
+
+  object UpdateProtectionGroupResponse {
+    @inline
+    def apply(): UpdateProtectionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateProtectionGroupResponse]
     }
   }
 

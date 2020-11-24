@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object glue {
   type ActionList = js.Array[Action]
+  type AdditionalPlanOptionsMap = js.Dictionary[GenericString]
   type AttemptCount = Int
   type BatchDeletePartitionValueList = js.Array[PartitionValueList]
   type BatchDeleteTableNameList = js.Array[NameString]
@@ -16,6 +17,8 @@ package object glue {
   type BatchStopJobRunErrorList = js.Array[BatchStopJobRunError]
   type BatchStopJobRunJobRunIdList = js.Array[IdString]
   type BatchStopJobRunSuccessfulSubmissionList = js.Array[BatchStopJobRunSuccessfulSubmission]
+  type BatchUpdatePartitionFailureList = js.Array[BatchUpdatePartitionFailureEntry]
+  type BatchUpdatePartitionRequestEntryList = js.Array[BatchUpdatePartitionRequestEntry]
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanNullable = Boolean
   type BooleanValue = Boolean
@@ -51,6 +54,7 @@ package object glue {
   type CrawlerMetricsList = js.Array[CrawlerMetrics]
   type CrawlerNameList = js.Array[NameString]
   type CrawlerSecurityConfiguration = String
+  type CreatedTimestamp = String
   type CronExpression = String
   type CsvColumnDelimiter = String
   type CsvHeader = js.Array[NameString]
@@ -70,6 +74,8 @@ package object glue {
   type DynamoDBTargetList = js.Array[DynamoDBTarget]
   type EdgeList = js.Array[Edge]
   type ErrorByName = js.Dictionary[ErrorDetail]
+  type ErrorCodeString = String
+  type ErrorMessageString = String
   type ErrorString = String
   type ExecutionTime = Int
   type FieldType = String
@@ -89,6 +95,7 @@ package object glue {
   type IdString = String
   type IntegerFlag = Int
   type IntegerValue = Int
+  type IsVersionValid = Boolean
   type JdbcTargetList = js.Array[JdbcTarget]
   type JobList = js.Array[Job]
   type JobName = String
@@ -96,9 +103,12 @@ package object glue {
   type JobRunList = js.Array[JobRun]
   type JsonPath = String
   type JsonValue = String
+  type KeyList = js.Array[NameString]
+  type KeySchemaElementList = js.Array[KeySchemaElement]
   type KeyString = String
   type KmsKeyArn = String
   type LabelCount = Int
+  type LatestSchemaVersionBoolean = Boolean
   type LocationMap = js.Dictionary[ColumnValuesString]
   type LocationString = String
   type LogGroup = String
@@ -107,9 +117,15 @@ package object glue {
   type MappingList = js.Array[MappingEntry]
   type MatchCriteria = js.Array[NameString]
   type MaxConcurrentRuns = Int
+  type MaxResultsNumber = Int
   type MaxRetries = Int
   type MessagePrefix = String
+  type MetadataInfoMap = js.Dictionary[MetadataInfo]
+  type MetadataKeyString = String
+  type MetadataList = js.Array[MetadataKeyValuePair]
+  type MetadataValueString = String
   type MillisecondsCount = Double
+  type MongoDBTargetList = js.Array[MongoDBTarget]
   type NameString = String
   type NameStringList = js.Array[NameString]
   type NodeIdList = js.Array[NameString]
@@ -128,6 +144,8 @@ package object glue {
   type ParametersMap = js.Dictionary[ParametersMapValue]
   type ParametersMapValue = String
   type PartitionErrors = js.Array[PartitionError]
+  type PartitionIndexDescriptorList = js.Array[PartitionIndexDescriptor]
+  type PartitionIndexList = js.Array[PartitionIndex]
   type PartitionInputList = js.Array[PartitionInput]
   type PartitionList = js.Array[Partition]
   type Path = String
@@ -140,7 +158,9 @@ package object glue {
   type PublicKeysList = js.Array[GenericString]
   type PythonScript = String
   type PythonVersionString = String
+  type QuerySchemaVersionMetadataMaxResults = Int
   type RecordsCount = Double
+  type RegistryListDefinition = js.Array[RegistryListItem]
   type ReplaceBoolean = Boolean
   type ResourceUriList = js.Array[ResourceUri]
   type Role = String
@@ -151,7 +171,17 @@ package object glue {
   type S3EncryptionList = js.Array[S3Encryption]
   type S3TargetList = js.Array[S3Target]
   type ScalaCode = String
+  type SchemaCheckpointNumber = Double
+  type SchemaDefinitionDiff = String
+  type SchemaDefinitionString = String
+  type SchemaListDefinition = js.Array[SchemaListItem]
   type SchemaPathString = String
+  type SchemaRegistryNameString = String
+  type SchemaRegistryTokenString = String
+  type SchemaValidationError = String
+  type SchemaVersionErrorList = js.Array[SchemaVersionErrorItem]
+  type SchemaVersionIdString = String
+  type SchemaVersionList = js.Array[SchemaVersionListItem]
   type ScriptLocationString = String
   type SearchPropertyPredicates = js.Array[PropertyPredicate]
   type SecurityConfigurationList = js.Array[SecurityConfiguration]
@@ -182,12 +212,15 @@ package object glue {
   type TypeString = String
   type URI = String
   type UpdateColumnStatisticsList = js.Array[ColumnStatistics]
+  type UpdatedTimestamp = String
   type UriString = String
   type UserDefinedFunctionList = js.Array[UserDefinedFunction]
   type ValueString = String
   type ValueStringList = js.Array[ValueString]
   type VersionId = Double
+  type VersionLongNumber = Double
   type VersionString = String
+  type VersionsString = String
   type ViewTextString = String
   type WorkflowNames = js.Array[NameString]
   type WorkflowRunProperties = js.Dictionary[GenericString]
@@ -208,7 +241,9 @@ package object glue {
     @inline def batchGetTriggersFuture(params: BatchGetTriggersRequest): Future[BatchGetTriggersResponse] = service.batchGetTriggers(params).promise().toFuture
     @inline def batchGetWorkflowsFuture(params: BatchGetWorkflowsRequest): Future[BatchGetWorkflowsResponse] = service.batchGetWorkflows(params).promise().toFuture
     @inline def batchStopJobRunFuture(params: BatchStopJobRunRequest): Future[BatchStopJobRunResponse] = service.batchStopJobRun(params).promise().toFuture
+    @inline def batchUpdatePartitionFuture(params: BatchUpdatePartitionRequest): Future[BatchUpdatePartitionResponse] = service.batchUpdatePartition(params).promise().toFuture
     @inline def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] = service.cancelMLTaskRun(params).promise().toFuture
+    @inline def checkSchemaVersionValidityFuture(params: CheckSchemaVersionValidityInput): Future[CheckSchemaVersionValidityResponse] = service.checkSchemaVersionValidity(params).promise().toFuture
     @inline def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] = service.createClassifier(params).promise().toFuture
     @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
     @inline def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] = service.createCrawler(params).promise().toFuture
@@ -217,6 +252,8 @@ package object glue {
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
     @inline def createMLTransformFuture(params: CreateMLTransformRequest): Future[CreateMLTransformResponse] = service.createMLTransform(params).promise().toFuture
     @inline def createPartitionFuture(params: CreatePartitionRequest): Future[CreatePartitionResponse] = service.createPartition(params).promise().toFuture
+    @inline def createRegistryFuture(params: CreateRegistryInput): Future[CreateRegistryResponse] = service.createRegistry(params).promise().toFuture
+    @inline def createSchemaFuture(params: CreateSchemaInput): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
     @inline def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] = service.createScript(params).promise().toFuture
     @inline def createSecurityConfigurationFuture(params: CreateSecurityConfigurationRequest): Future[CreateSecurityConfigurationResponse] = service.createSecurityConfiguration(params).promise().toFuture
     @inline def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] = service.createTable(params).promise().toFuture
@@ -233,7 +270,10 @@ package object glue {
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] = service.deleteJob(params).promise().toFuture
     @inline def deleteMLTransformFuture(params: DeleteMLTransformRequest): Future[DeleteMLTransformResponse] = service.deleteMLTransform(params).promise().toFuture
     @inline def deletePartitionFuture(params: DeletePartitionRequest): Future[DeletePartitionResponse] = service.deletePartition(params).promise().toFuture
+    @inline def deleteRegistryFuture(params: DeleteRegistryInput): Future[DeleteRegistryResponse] = service.deleteRegistry(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] = service.deleteResourcePolicy(params).promise().toFuture
+    @inline def deleteSchemaFuture(params: DeleteSchemaInput): Future[DeleteSchemaResponse] = service.deleteSchema(params).promise().toFuture
+    @inline def deleteSchemaVersionsFuture(params: DeleteSchemaVersionsInput): Future[DeleteSchemaVersionsResponse] = service.deleteSchemaVersions(params).promise().toFuture
     @inline def deleteSecurityConfigurationFuture(params: DeleteSecurityConfigurationRequest): Future[DeleteSecurityConfigurationResponse] = service.deleteSecurityConfiguration(params).promise().toFuture
     @inline def deleteTableFuture(params: DeleteTableRequest): Future[DeleteTableResponse] = service.deleteTable(params).promise().toFuture
     @inline def deleteTableVersionFuture(params: DeleteTableVersionRequest): Future[DeleteTableVersionResponse] = service.deleteTableVersion(params).promise().toFuture
@@ -267,10 +307,16 @@ package object glue {
     @inline def getMLTransformsFuture(params: GetMLTransformsRequest): Future[GetMLTransformsResponse] = service.getMLTransforms(params).promise().toFuture
     @inline def getMappingFuture(params: GetMappingRequest): Future[GetMappingResponse] = service.getMapping(params).promise().toFuture
     @inline def getPartitionFuture(params: GetPartitionRequest): Future[GetPartitionResponse] = service.getPartition(params).promise().toFuture
+    @inline def getPartitionIndexesFuture(params: GetPartitionIndexesRequest): Future[GetPartitionIndexesResponse] = service.getPartitionIndexes(params).promise().toFuture
     @inline def getPartitionsFuture(params: GetPartitionsRequest): Future[GetPartitionsResponse] = service.getPartitions(params).promise().toFuture
     @inline def getPlanFuture(params: GetPlanRequest): Future[GetPlanResponse] = service.getPlan(params).promise().toFuture
+    @inline def getRegistryFuture(params: GetRegistryInput): Future[GetRegistryResponse] = service.getRegistry(params).promise().toFuture
     @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] = service.getResourcePolicies(params).promise().toFuture
     @inline def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] = service.getResourcePolicy(params).promise().toFuture
+    @inline def getSchemaByDefinitionFuture(params: GetSchemaByDefinitionInput): Future[GetSchemaByDefinitionResponse] = service.getSchemaByDefinition(params).promise().toFuture
+    @inline def getSchemaFuture(params: GetSchemaInput): Future[GetSchemaResponse] = service.getSchema(params).promise().toFuture
+    @inline def getSchemaVersionFuture(params: GetSchemaVersionInput): Future[GetSchemaVersionResponse] = service.getSchemaVersion(params).promise().toFuture
+    @inline def getSchemaVersionsDiffFuture(params: GetSchemaVersionsDiffInput): Future[GetSchemaVersionsDiffResponse] = service.getSchemaVersionsDiff(params).promise().toFuture
     @inline def getSecurityConfigurationFuture(params: GetSecurityConfigurationRequest): Future[GetSecurityConfigurationResponse] = service.getSecurityConfiguration(params).promise().toFuture
     @inline def getSecurityConfigurationsFuture(params: GetSecurityConfigurationsRequest): Future[GetSecurityConfigurationsResponse] = service.getSecurityConfigurations(params).promise().toFuture
     @inline def getTableFuture(params: GetTableRequest): Future[GetTableResponse] = service.getTable(params).promise().toFuture
@@ -291,11 +337,18 @@ package object glue {
     @inline def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] = service.listDevEndpoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
     @inline def listMLTransformsFuture(params: ListMLTransformsRequest): Future[ListMLTransformsResponse] = service.listMLTransforms(params).promise().toFuture
+    @inline def listRegistriesFuture(params: ListRegistriesInput): Future[ListRegistriesResponse] = service.listRegistries(params).promise().toFuture
+    @inline def listSchemaVersionsFuture(params: ListSchemaVersionsInput): Future[ListSchemaVersionsResponse] = service.listSchemaVersions(params).promise().toFuture
+    @inline def listSchemasFuture(params: ListSchemasInput): Future[ListSchemasResponse] = service.listSchemas(params).promise().toFuture
     @inline def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] = service.listTriggers(params).promise().toFuture
     @inline def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] = service.listWorkflows(params).promise().toFuture
     @inline def putDataCatalogEncryptionSettingsFuture(params: PutDataCatalogEncryptionSettingsRequest): Future[PutDataCatalogEncryptionSettingsResponse] = service.putDataCatalogEncryptionSettings(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
+    @inline def putSchemaVersionMetadataFuture(params: PutSchemaVersionMetadataInput): Future[PutSchemaVersionMetadataResponse] = service.putSchemaVersionMetadata(params).promise().toFuture
     @inline def putWorkflowRunPropertiesFuture(params: PutWorkflowRunPropertiesRequest): Future[PutWorkflowRunPropertiesResponse] = service.putWorkflowRunProperties(params).promise().toFuture
+    @inline def querySchemaVersionMetadataFuture(params: QuerySchemaVersionMetadataInput): Future[QuerySchemaVersionMetadataResponse] = service.querySchemaVersionMetadata(params).promise().toFuture
+    @inline def registerSchemaVersionFuture(params: RegisterSchemaVersionInput): Future[RegisterSchemaVersionResponse] = service.registerSchemaVersion(params).promise().toFuture
+    @inline def removeSchemaVersionMetadataFuture(params: RemoveSchemaVersionMetadataInput): Future[RemoveSchemaVersionMetadataResponse] = service.removeSchemaVersionMetadata(params).promise().toFuture
     @inline def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] = service.resetJobBookmark(params).promise().toFuture
     @inline def resumeWorkflowRunFuture(params: ResumeWorkflowRunRequest): Future[ResumeWorkflowRunResponse] = service.resumeWorkflowRun(params).promise().toFuture
     @inline def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] = service.searchTables(params).promise().toFuture
@@ -325,6 +378,8 @@ package object glue {
     @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResponse] = service.updateJob(params).promise().toFuture
     @inline def updateMLTransformFuture(params: UpdateMLTransformRequest): Future[UpdateMLTransformResponse] = service.updateMLTransform(params).promise().toFuture
     @inline def updatePartitionFuture(params: UpdatePartitionRequest): Future[UpdatePartitionResponse] = service.updatePartition(params).promise().toFuture
+    @inline def updateRegistryFuture(params: UpdateRegistryInput): Future[UpdateRegistryResponse] = service.updateRegistry(params).promise().toFuture
+    @inline def updateSchemaFuture(params: UpdateSchemaInput): Future[UpdateSchemaResponse] = service.updateSchema(params).promise().toFuture
     @inline def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] = service.updateTable(params).promise().toFuture
     @inline def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] = service.updateTrigger(params).promise().toFuture
     @inline def updateUserDefinedFunctionFuture(params: UpdateUserDefinedFunctionRequest): Future[UpdateUserDefinedFunctionResponse] = service.updateUserDefinedFunction(params).promise().toFuture
@@ -351,7 +406,9 @@ package glue {
     def batchGetTriggers(params: BatchGetTriggersRequest): Request[BatchGetTriggersResponse] = js.native
     def batchGetWorkflows(params: BatchGetWorkflowsRequest): Request[BatchGetWorkflowsResponse] = js.native
     def batchStopJobRun(params: BatchStopJobRunRequest): Request[BatchStopJobRunResponse] = js.native
+    def batchUpdatePartition(params: BatchUpdatePartitionRequest): Request[BatchUpdatePartitionResponse] = js.native
     def cancelMLTaskRun(params: CancelMLTaskRunRequest): Request[CancelMLTaskRunResponse] = js.native
+    def checkSchemaVersionValidity(params: CheckSchemaVersionValidityInput): Request[CheckSchemaVersionValidityResponse] = js.native
     def createClassifier(params: CreateClassifierRequest): Request[CreateClassifierResponse] = js.native
     def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
     def createCrawler(params: CreateCrawlerRequest): Request[CreateCrawlerResponse] = js.native
@@ -360,6 +417,8 @@ package glue {
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createMLTransform(params: CreateMLTransformRequest): Request[CreateMLTransformResponse] = js.native
     def createPartition(params: CreatePartitionRequest): Request[CreatePartitionResponse] = js.native
+    def createRegistry(params: CreateRegistryInput): Request[CreateRegistryResponse] = js.native
+    def createSchema(params: CreateSchemaInput): Request[CreateSchemaResponse] = js.native
     def createScript(params: CreateScriptRequest): Request[CreateScriptResponse] = js.native
     def createSecurityConfiguration(params: CreateSecurityConfigurationRequest): Request[CreateSecurityConfigurationResponse] = js.native
     def createTable(params: CreateTableRequest): Request[CreateTableResponse] = js.native
@@ -376,7 +435,10 @@ package glue {
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResponse] = js.native
     def deleteMLTransform(params: DeleteMLTransformRequest): Request[DeleteMLTransformResponse] = js.native
     def deletePartition(params: DeletePartitionRequest): Request[DeletePartitionResponse] = js.native
+    def deleteRegistry(params: DeleteRegistryInput): Request[DeleteRegistryResponse] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
+    def deleteSchema(params: DeleteSchemaInput): Request[DeleteSchemaResponse] = js.native
+    def deleteSchemaVersions(params: DeleteSchemaVersionsInput): Request[DeleteSchemaVersionsResponse] = js.native
     def deleteSecurityConfiguration(params: DeleteSecurityConfigurationRequest): Request[DeleteSecurityConfigurationResponse] = js.native
     def deleteTable(params: DeleteTableRequest): Request[DeleteTableResponse] = js.native
     def deleteTableVersion(params: DeleteTableVersionRequest): Request[DeleteTableVersionResponse] = js.native
@@ -410,10 +472,16 @@ package glue {
     def getMLTransforms(params: GetMLTransformsRequest): Request[GetMLTransformsResponse] = js.native
     def getMapping(params: GetMappingRequest): Request[GetMappingResponse] = js.native
     def getPartition(params: GetPartitionRequest): Request[GetPartitionResponse] = js.native
+    def getPartitionIndexes(params: GetPartitionIndexesRequest): Request[GetPartitionIndexesResponse] = js.native
     def getPartitions(params: GetPartitionsRequest): Request[GetPartitionsResponse] = js.native
     def getPlan(params: GetPlanRequest): Request[GetPlanResponse] = js.native
+    def getRegistry(params: GetRegistryInput): Request[GetRegistryResponse] = js.native
     def getResourcePolicies(params: GetResourcePoliciesRequest): Request[GetResourcePoliciesResponse] = js.native
     def getResourcePolicy(params: GetResourcePolicyRequest): Request[GetResourcePolicyResponse] = js.native
+    def getSchema(params: GetSchemaInput): Request[GetSchemaResponse] = js.native
+    def getSchemaByDefinition(params: GetSchemaByDefinitionInput): Request[GetSchemaByDefinitionResponse] = js.native
+    def getSchemaVersion(params: GetSchemaVersionInput): Request[GetSchemaVersionResponse] = js.native
+    def getSchemaVersionsDiff(params: GetSchemaVersionsDiffInput): Request[GetSchemaVersionsDiffResponse] = js.native
     def getSecurityConfiguration(params: GetSecurityConfigurationRequest): Request[GetSecurityConfigurationResponse] = js.native
     def getSecurityConfigurations(params: GetSecurityConfigurationsRequest): Request[GetSecurityConfigurationsResponse] = js.native
     def getTable(params: GetTableRequest): Request[GetTableResponse] = js.native
@@ -434,11 +502,18 @@ package glue {
     def listDevEndpoints(params: ListDevEndpointsRequest): Request[ListDevEndpointsResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listMLTransforms(params: ListMLTransformsRequest): Request[ListMLTransformsResponse] = js.native
+    def listRegistries(params: ListRegistriesInput): Request[ListRegistriesResponse] = js.native
+    def listSchemaVersions(params: ListSchemaVersionsInput): Request[ListSchemaVersionsResponse] = js.native
+    def listSchemas(params: ListSchemasInput): Request[ListSchemasResponse] = js.native
     def listTriggers(params: ListTriggersRequest): Request[ListTriggersResponse] = js.native
     def listWorkflows(params: ListWorkflowsRequest): Request[ListWorkflowsResponse] = js.native
     def putDataCatalogEncryptionSettings(params: PutDataCatalogEncryptionSettingsRequest): Request[PutDataCatalogEncryptionSettingsResponse] = js.native
     def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
+    def putSchemaVersionMetadata(params: PutSchemaVersionMetadataInput): Request[PutSchemaVersionMetadataResponse] = js.native
     def putWorkflowRunProperties(params: PutWorkflowRunPropertiesRequest): Request[PutWorkflowRunPropertiesResponse] = js.native
+    def querySchemaVersionMetadata(params: QuerySchemaVersionMetadataInput): Request[QuerySchemaVersionMetadataResponse] = js.native
+    def registerSchemaVersion(params: RegisterSchemaVersionInput): Request[RegisterSchemaVersionResponse] = js.native
+    def removeSchemaVersionMetadata(params: RemoveSchemaVersionMetadataInput): Request[RemoveSchemaVersionMetadataResponse] = js.native
     def resetJobBookmark(params: ResetJobBookmarkRequest): Request[ResetJobBookmarkResponse] = js.native
     def resumeWorkflowRun(params: ResumeWorkflowRunRequest): Request[ResumeWorkflowRunResponse] = js.native
     def searchTables(params: SearchTablesRequest): Request[SearchTablesResponse] = js.native
@@ -468,6 +543,8 @@ package glue {
     def updateJob(params: UpdateJobRequest): Request[UpdateJobResponse] = js.native
     def updateMLTransform(params: UpdateMLTransformRequest): Request[UpdateMLTransformResponse] = js.native
     def updatePartition(params: UpdatePartitionRequest): Request[UpdatePartitionResponse] = js.native
+    def updateRegistry(params: UpdateRegistryInput): Request[UpdateRegistryResponse] = js.native
+    def updateSchema(params: UpdateSchemaInput): Request[UpdateSchemaResponse] = js.native
     def updateTable(params: UpdateTableRequest): Request[UpdateTableResponse] = js.native
     def updateTrigger(params: UpdateTriggerRequest): Request[UpdateTriggerResponse] = js.native
     def updateUserDefinedFunction(params: UpdateUserDefinedFunctionRequest): Request[UpdateUserDefinedFunctionResponse] = js.native
@@ -1030,7 +1107,93 @@ package glue {
     }
   }
 
-  /** Defines a binary column statistics data.
+  /** Contains information about a batch update partition error.
+    */
+  @js.native
+  trait BatchUpdatePartitionFailureEntry extends js.Object {
+    var ErrorDetail: js.UndefOr[ErrorDetail]
+    var PartitionValueList: js.UndefOr[BoundedPartitionValueList]
+  }
+
+  object BatchUpdatePartitionFailureEntry {
+    @inline
+    def apply(
+        ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
+        PartitionValueList: js.UndefOr[BoundedPartitionValueList] = js.undefined
+    ): BatchUpdatePartitionFailureEntry = {
+      val __obj = js.Dynamic.literal()
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      PartitionValueList.foreach(__v => __obj.updateDynamic("PartitionValueList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchUpdatePartitionFailureEntry]
+    }
+  }
+
+  @js.native
+  trait BatchUpdatePartitionRequest extends js.Object {
+    var DatabaseName: NameString
+    var Entries: BatchUpdatePartitionRequestEntryList
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object BatchUpdatePartitionRequest {
+    @inline
+    def apply(
+        DatabaseName: NameString,
+        Entries: BatchUpdatePartitionRequestEntryList,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): BatchUpdatePartitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Entries" -> Entries.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchUpdatePartitionRequest]
+    }
+  }
+
+  /** A structure that contains the values and structure used to update a partition.
+    */
+  @js.native
+  trait BatchUpdatePartitionRequestEntry extends js.Object {
+    var PartitionInput: PartitionInput
+    var PartitionValueList: BoundedPartitionValueList
+  }
+
+  object BatchUpdatePartitionRequestEntry {
+    @inline
+    def apply(
+        PartitionInput: PartitionInput,
+        PartitionValueList: BoundedPartitionValueList
+    ): BatchUpdatePartitionRequestEntry = {
+      val __obj = js.Dynamic.literal(
+        "PartitionInput" -> PartitionInput.asInstanceOf[js.Any],
+        "PartitionValueList" -> PartitionValueList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchUpdatePartitionRequestEntry]
+    }
+  }
+
+  @js.native
+  trait BatchUpdatePartitionResponse extends js.Object {
+    var Errors: js.UndefOr[BatchUpdatePartitionFailureList]
+  }
+
+  object BatchUpdatePartitionResponse {
+    @inline
+    def apply(
+        Errors: js.UndefOr[BatchUpdatePartitionFailureList] = js.undefined
+    ): BatchUpdatePartitionResponse = {
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchUpdatePartitionResponse]
+    }
+  }
+
+  /** Defines column statistics supported for bit sequence data values.
     */
   @js.native
   trait BinaryColumnStatisticsData extends js.Object {
@@ -1055,7 +1218,7 @@ package glue {
     }
   }
 
-  /** Defines a boolean column statistics.
+  /** Defines column statistics supported for Boolean data columns.
     */
   @js.native
   trait BooleanColumnStatisticsData extends js.Object {
@@ -1196,6 +1359,45 @@ package glue {
         "Tables" -> Tables.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CatalogTarget]
+    }
+  }
+
+  @js.native
+  trait CheckSchemaVersionValidityInput extends js.Object {
+    var DataFormat: DataFormat
+    var SchemaDefinition: SchemaDefinitionString
+  }
+
+  object CheckSchemaVersionValidityInput {
+    @inline
+    def apply(
+        DataFormat: DataFormat,
+        SchemaDefinition: SchemaDefinitionString
+    ): CheckSchemaVersionValidityInput = {
+      val __obj = js.Dynamic.literal(
+        "DataFormat" -> DataFormat.asInstanceOf[js.Any],
+        "SchemaDefinition" -> SchemaDefinition.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CheckSchemaVersionValidityInput]
+    }
+  }
+
+  @js.native
+  trait CheckSchemaVersionValidityResponse extends js.Object {
+    var Error: js.UndefOr[SchemaValidationError]
+    var Valid: js.UndefOr[IsVersionValid]
+  }
+
+  object CheckSchemaVersionValidityResponse {
+    @inline
+    def apply(
+        Error: js.UndefOr[SchemaValidationError] = js.undefined,
+        Valid: js.UndefOr[IsVersionValid] = js.undefined
+    ): CheckSchemaVersionValidityResponse = {
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      Valid.foreach(__v => __obj.updateDynamic("Valid")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CheckSchemaVersionValidityResponse]
     }
   }
 
@@ -1367,7 +1569,7 @@ package glue {
     }
   }
 
-  /** Defines a column containing error.
+  /** Encapsulates a column name that failed and the reason for failure.
     */
   @js.native
   trait ColumnError extends js.Object {
@@ -1388,7 +1590,7 @@ package glue {
     }
   }
 
-  /** Defines a column statistics.
+  /** Represents the generated column-level statistics for a table or partition.
     */
   @js.native
   trait ColumnStatistics extends js.Object {
@@ -1416,7 +1618,7 @@ package glue {
     }
   }
 
-  /** Defines a column statistics data.
+  /** Contains the individual types of column statistics data. Only one data object should be set and indicated by the <code>Type</code> attribute.
     */
   @js.native
   trait ColumnStatisticsData extends js.Object {
@@ -1457,7 +1659,7 @@ package glue {
     }
   }
 
-  /** Defines a column containing error.
+  /** Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for failure.
     */
   @js.native
   trait ColumnStatisticsError extends js.Object {
@@ -1502,6 +1704,21 @@ package glue {
     val LESS_THAN_EQUALS = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
 
     @inline def values = js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
+  }
+
+  @js.native
+  sealed trait Compatibility extends js.Any
+  object Compatibility {
+    val NONE = "NONE".asInstanceOf[Compatibility]
+    val DISABLED = "DISABLED".asInstanceOf[Compatibility]
+    val BACKWARD = "BACKWARD".asInstanceOf[Compatibility]
+    val BACKWARD_ALL = "BACKWARD_ALL".asInstanceOf[Compatibility]
+    val FORWARD = "FORWARD".asInstanceOf[Compatibility]
+    val FORWARD_ALL = "FORWARD_ALL".asInstanceOf[Compatibility]
+    val FULL = "FULL".asInstanceOf[Compatibility]
+    val FULL_ALL = "FULL_ALL".asInstanceOf[Compatibility]
+
+    @inline def values = js.Array(NONE, DISABLED, BACKWARD, BACKWARD_ALL, FORWARD, FORWARD_ALL, FULL, FULL_ALL)
   }
 
   /** Defines a condition under which a trigger fires.
@@ -1803,6 +2020,7 @@ package glue {
     var LastCrawl: js.UndefOr[LastCrawlInfo]
     var LastUpdated: js.UndefOr[Timestamp]
     var Name: js.UndefOr[NameString]
+    var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Role: js.UndefOr[Role]
     var Schedule: js.UndefOr[Schedule]
     var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
@@ -1825,6 +2043,7 @@ package glue {
         LastCrawl: js.UndefOr[LastCrawlInfo] = js.undefined,
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
+        RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
         SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
@@ -1844,6 +2063,7 @@ package glue {
       LastCrawl.foreach(__v => __obj.updateDynamic("LastCrawl")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
@@ -1929,6 +2149,7 @@ package glue {
     var CatalogTargets: js.UndefOr[CatalogTargetList]
     var DynamoDBTargets: js.UndefOr[DynamoDBTargetList]
     var JdbcTargets: js.UndefOr[JdbcTargetList]
+    var MongoDBTargets: js.UndefOr[MongoDBTargetList]
     var S3Targets: js.UndefOr[S3TargetList]
   }
 
@@ -1938,12 +2159,14 @@ package glue {
         CatalogTargets: js.UndefOr[CatalogTargetList] = js.undefined,
         DynamoDBTargets: js.UndefOr[DynamoDBTargetList] = js.undefined,
         JdbcTargets: js.UndefOr[JdbcTargetList] = js.undefined,
+        MongoDBTargets: js.UndefOr[MongoDBTargetList] = js.undefined,
         S3Targets: js.UndefOr[S3TargetList] = js.undefined
     ): CrawlerTargets = {
       val __obj = js.Dynamic.literal()
       CatalogTargets.foreach(__v => __obj.updateDynamic("CatalogTargets")(__v.asInstanceOf[js.Any]))
       DynamoDBTargets.foreach(__v => __obj.updateDynamic("DynamoDBTargets")(__v.asInstanceOf[js.Any]))
       JdbcTargets.foreach(__v => __obj.updateDynamic("JdbcTargets")(__v.asInstanceOf[js.Any]))
+      MongoDBTargets.foreach(__v => __obj.updateDynamic("MongoDBTargets")(__v.asInstanceOf[js.Any]))
       S3Targets.foreach(__v => __obj.updateDynamic("S3Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrawlerTargets]
     }
@@ -2027,6 +2250,7 @@ package glue {
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionString]
+    var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Schedule: js.UndefOr[CronExpression]
     var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
     var TablePrefix: js.UndefOr[TablePrefix]
@@ -2044,6 +2268,7 @@ package glue {
         CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Schedule: js.UndefOr[CronExpression] = js.undefined,
         SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
         TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
@@ -2060,6 +2285,7 @@ package glue {
       CrawlerSecurityConfiguration.foreach(__v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
       TablePrefix.foreach(__v => __obj.updateDynamic("TablePrefix")(__v.asInstanceOf[js.Any]))
@@ -2431,6 +2657,7 @@ package glue {
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var Tags: js.UndefOr[TagsMap]
     var Timeout: js.UndefOr[Timeout]
+    var TransformEncryption: js.UndefOr[TransformEncryption]
     var WorkerType: js.UndefOr[WorkerType]
   }
 
@@ -2448,6 +2675,7 @@ package glue {
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
+        TransformEncryption: js.UndefOr[TransformEncryption] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): CreateMLTransformRequest = {
       val __obj = js.Dynamic.literal(
@@ -2464,6 +2692,7 @@ package glue {
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TransformEncryption.foreach(__v => __obj.updateDynamic("TransformEncryption")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMLTransformRequest]
     }
@@ -2520,6 +2749,146 @@ package glue {
     def apply(): CreatePartitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreatePartitionResponse]
+    }
+  }
+
+  @js.native
+  trait CreateRegistryInput extends js.Object {
+    var RegistryName: SchemaRegistryNameString
+    var Description: js.UndefOr[DescriptionString]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateRegistryInput {
+    @inline
+    def apply(
+        RegistryName: SchemaRegistryNameString,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateRegistryInput = {
+      val __obj = js.Dynamic.literal(
+        "RegistryName" -> RegistryName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRegistryInput]
+    }
+  }
+
+  @js.native
+  trait CreateRegistryResponse extends js.Object {
+    var Description: js.UndefOr[DescriptionString]
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateRegistryResponse {
+    @inline
+    def apply(
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateRegistryResponse = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRegistryResponse]
+    }
+  }
+
+  @js.native
+  trait CreateSchemaInput extends js.Object {
+    var DataFormat: DataFormat
+    var SchemaName: SchemaRegistryNameString
+    var Compatibility: js.UndefOr[Compatibility]
+    var Description: js.UndefOr[DescriptionString]
+    var RegistryId: js.UndefOr[RegistryId]
+    var SchemaDefinition: js.UndefOr[SchemaDefinitionString]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateSchemaInput {
+    @inline
+    def apply(
+        DataFormat: DataFormat,
+        SchemaName: SchemaRegistryNameString,
+        Compatibility: js.UndefOr[Compatibility] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        RegistryId: js.UndefOr[RegistryId] = js.undefined,
+        SchemaDefinition: js.UndefOr[SchemaDefinitionString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateSchemaInput = {
+      val __obj = js.Dynamic.literal(
+        "DataFormat" -> DataFormat.asInstanceOf[js.Any],
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
+      )
+
+      Compatibility.foreach(__v => __obj.updateDynamic("Compatibility")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RegistryId.foreach(__v => __obj.updateDynamic("RegistryId")(__v.asInstanceOf[js.Any]))
+      SchemaDefinition.foreach(__v => __obj.updateDynamic("SchemaDefinition")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSchemaInput]
+    }
+  }
+
+  @js.native
+  trait CreateSchemaResponse extends js.Object {
+    var Compatibility: js.UndefOr[Compatibility]
+    var DataFormat: js.UndefOr[DataFormat]
+    var Description: js.UndefOr[DescriptionString]
+    var LatestSchemaVersion: js.UndefOr[VersionLongNumber]
+    var NextSchemaVersion: js.UndefOr[VersionLongNumber]
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaCheckpoint: js.UndefOr[SchemaCheckpointNumber]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaStatus: js.UndefOr[SchemaStatus]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var SchemaVersionStatus: js.UndefOr[SchemaVersionStatus]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateSchemaResponse {
+    @inline
+    def apply(
+        Compatibility: js.UndefOr[Compatibility] = js.undefined,
+        DataFormat: js.UndefOr[DataFormat] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        LatestSchemaVersion: js.UndefOr[VersionLongNumber] = js.undefined,
+        NextSchemaVersion: js.UndefOr[VersionLongNumber] = js.undefined,
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaCheckpoint: js.UndefOr[SchemaCheckpointNumber] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaStatus: js.UndefOr[SchemaStatus] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        SchemaVersionStatus: js.UndefOr[SchemaVersionStatus] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateSchemaResponse = {
+      val __obj = js.Dynamic.literal()
+      Compatibility.foreach(__v => __obj.updateDynamic("Compatibility")(__v.asInstanceOf[js.Any]))
+      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LatestSchemaVersion.foreach(__v => __obj.updateDynamic("LatestSchemaVersion")(__v.asInstanceOf[js.Any]))
+      NextSchemaVersion.foreach(__v => __obj.updateDynamic("NextSchemaVersion")(__v.asInstanceOf[js.Any]))
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaCheckpoint.foreach(__v => __obj.updateDynamic("SchemaCheckpoint")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      SchemaStatus.foreach(__v => __obj.updateDynamic("SchemaStatus")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionStatus.foreach(__v => __obj.updateDynamic("SchemaVersionStatus")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSchemaResponse]
     }
   }
 
@@ -2608,6 +2977,7 @@ package glue {
     var DatabaseName: NameString
     var TableInput: TableInput
     var CatalogId: js.UndefOr[CatalogIdString]
+    var PartitionIndexes: js.UndefOr[PartitionIndexList]
   }
 
   object CreateTableRequest {
@@ -2615,7 +2985,8 @@ package glue {
     def apply(
         DatabaseName: NameString,
         TableInput: TableInput,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        PartitionIndexes: js.UndefOr[PartitionIndexList] = js.undefined
     ): CreateTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -2623,6 +2994,7 @@ package glue {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      PartitionIndexes.foreach(__v => __obj.updateDynamic("PartitionIndexes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableRequest]
     }
   }
@@ -2881,6 +3253,14 @@ package glue {
     }
   }
 
+  @js.native
+  sealed trait DataFormat extends js.Any
+  object DataFormat {
+    val AVRO = "AVRO".asInstanceOf[DataFormat]
+
+    @inline def values = js.Array(AVRO)
+  }
+
   /** The AWS Lake Formation principal.
     */
   @js.native
@@ -2996,7 +3376,7 @@ package glue {
     }
   }
 
-  /** Defines a date column statistics data.
+  /** Defines column statistics supported for timestamp data columns.
     */
   @js.native
   trait DateColumnStatisticsData extends js.Object {
@@ -3025,7 +3405,7 @@ package glue {
     }
   }
 
-  /** Defines a decimal column statistics data.
+  /** Defines column statistics supported for fixed-point number data columns.
     */
   @js.native
   trait DecimalColumnStatisticsData extends js.Object {
@@ -3418,6 +3798,45 @@ package glue {
   }
 
   @js.native
+  trait DeleteRegistryInput extends js.Object {
+    var RegistryId: RegistryId
+  }
+
+  object DeleteRegistryInput {
+    @inline
+    def apply(
+        RegistryId: RegistryId
+    ): DeleteRegistryInput = {
+      val __obj = js.Dynamic.literal(
+        "RegistryId" -> RegistryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteRegistryInput]
+    }
+  }
+
+  @js.native
+  trait DeleteRegistryResponse extends js.Object {
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var Status: js.UndefOr[RegistryStatus]
+  }
+
+  object DeleteRegistryResponse {
+    @inline
+    def apply(
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        Status: js.UndefOr[RegistryStatus] = js.undefined
+    ): DeleteRegistryResponse = {
+      val __obj = js.Dynamic.literal()
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRegistryResponse]
+    }
+  }
+
+  @js.native
   trait DeleteResourcePolicyRequest extends js.Object {
     var PolicyHashCondition: js.UndefOr[HashString]
     var ResourceArn: js.UndefOr[GlueResourceArn]
@@ -3444,6 +3863,81 @@ package glue {
     def apply(): DeleteResourcePolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourcePolicyResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteSchemaInput extends js.Object {
+    var SchemaId: SchemaId
+  }
+
+  object DeleteSchemaInput {
+    @inline
+    def apply(
+        SchemaId: SchemaId
+    ): DeleteSchemaInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSchemaInput]
+    }
+  }
+
+  @js.native
+  trait DeleteSchemaResponse extends js.Object {
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+    var Status: js.UndefOr[SchemaStatus]
+  }
+
+  object DeleteSchemaResponse {
+    @inline
+    def apply(
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        Status: js.UndefOr[SchemaStatus] = js.undefined
+    ): DeleteSchemaResponse = {
+      val __obj = js.Dynamic.literal()
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSchemaResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteSchemaVersionsInput extends js.Object {
+    var SchemaId: SchemaId
+    var Versions: VersionsString
+  }
+
+  object DeleteSchemaVersionsInput {
+    @inline
+    def apply(
+        SchemaId: SchemaId,
+        Versions: VersionsString
+    ): DeleteSchemaVersionsInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any],
+        "Versions" -> Versions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSchemaVersionsInput]
+    }
+  }
+
+  @js.native
+  trait DeleteSchemaVersionsResponse extends js.Object {
+    var SchemaVersionErrors: js.UndefOr[SchemaVersionErrorList]
+  }
+
+  object DeleteSchemaVersionsResponse {
+    @inline
+    def apply(
+        SchemaVersionErrors: js.UndefOr[SchemaVersionErrorList] = js.undefined
+    ): DeleteSchemaVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      SchemaVersionErrors.foreach(__v => __obj.updateDynamic("SchemaVersionErrors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSchemaVersionsResponse]
     }
   }
 
@@ -3760,7 +4254,7 @@ package glue {
     }
   }
 
-  /** Defines a double column statistics data.
+  /** Defines column statistics supported for floating-point number data columns.
     */
   @js.native
   trait DoubleColumnStatisticsData extends js.Object {
@@ -3908,6 +4402,27 @@ package glue {
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetail]
+    }
+  }
+
+  /** An object containing error details.
+    */
+  @js.native
+  trait ErrorDetails extends js.Object {
+    var ErrorCode: js.UndefOr[ErrorCodeString]
+    var ErrorMessage: js.UndefOr[ErrorMessageString]
+  }
+
+  object ErrorDetails {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCodeString] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessageString] = js.undefined
+    ): ErrorDetails = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorDetails]
     }
   }
 
@@ -5038,6 +5553,7 @@ package glue {
     var Schema: js.UndefOr[TransformSchema]
     var Status: js.UndefOr[TransformStatusType]
     var Timeout: js.UndefOr[Timeout]
+    var TransformEncryption: js.UndefOr[TransformEncryption]
     var TransformId: js.UndefOr[HashString]
     var WorkerType: js.UndefOr[WorkerType]
   }
@@ -5061,6 +5577,7 @@ package glue {
         Schema: js.UndefOr[TransformSchema] = js.undefined,
         Status: js.UndefOr[TransformStatusType] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
+        TransformEncryption: js.UndefOr[TransformEncryption] = js.undefined,
         TransformId: js.UndefOr[HashString] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): GetMLTransformResponse = {
@@ -5081,6 +5598,7 @@ package glue {
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TransformEncryption.foreach(__v => __obj.updateDynamic("TransformEncryption")(__v.asInstanceOf[js.Any]))
       TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTransformResponse]
@@ -5171,6 +5689,52 @@ package glue {
         "Mapping" -> Mapping.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GetMappingResponse]
+    }
+  }
+
+  @js.native
+  trait GetPartitionIndexesRequest extends js.Object {
+    var DatabaseName: NameString
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object GetPartitionIndexesRequest {
+    @inline
+    def apply(
+        DatabaseName: NameString,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetPartitionIndexesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPartitionIndexesRequest]
+    }
+  }
+
+  @js.native
+  trait GetPartitionIndexesResponse extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var PartitionIndexDescriptorList: js.UndefOr[PartitionIndexDescriptorList]
+  }
+
+  object GetPartitionIndexesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        PartitionIndexDescriptorList: js.UndefOr[PartitionIndexDescriptorList] = js.undefined
+    ): GetPartitionIndexesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PartitionIndexDescriptorList.foreach(__v => __obj.updateDynamic("PartitionIndexDescriptorList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPartitionIndexesResponse]
     }
   }
 
@@ -5276,6 +5840,7 @@ package glue {
   trait GetPlanRequest extends js.Object {
     var Mapping: MappingList
     var Source: CatalogEntry
+    var AdditionalPlanOptionsMap: js.UndefOr[AdditionalPlanOptionsMap]
     var Language: js.UndefOr[Language]
     var Location: js.UndefOr[Location]
     var Sinks: js.UndefOr[CatalogEntries]
@@ -5286,6 +5851,7 @@ package glue {
     def apply(
         Mapping: MappingList,
         Source: CatalogEntry,
+        AdditionalPlanOptionsMap: js.UndefOr[AdditionalPlanOptionsMap] = js.undefined,
         Language: js.UndefOr[Language] = js.undefined,
         Location: js.UndefOr[Location] = js.undefined,
         Sinks: js.UndefOr[CatalogEntries] = js.undefined
@@ -5295,6 +5861,7 @@ package glue {
         "Source" -> Source.asInstanceOf[js.Any]
       )
 
+      AdditionalPlanOptionsMap.foreach(__v => __obj.updateDynamic("AdditionalPlanOptionsMap")(__v.asInstanceOf[js.Any]))
       Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       Sinks.foreach(__v => __obj.updateDynamic("Sinks")(__v.asInstanceOf[js.Any]))
@@ -5318,6 +5885,54 @@ package glue {
       PythonScript.foreach(__v => __obj.updateDynamic("PythonScript")(__v.asInstanceOf[js.Any]))
       ScalaCode.foreach(__v => __obj.updateDynamic("ScalaCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlanResponse]
+    }
+  }
+
+  @js.native
+  trait GetRegistryInput extends js.Object {
+    var RegistryId: RegistryId
+  }
+
+  object GetRegistryInput {
+    @inline
+    def apply(
+        RegistryId: RegistryId
+    ): GetRegistryInput = {
+      val __obj = js.Dynamic.literal(
+        "RegistryId" -> RegistryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetRegistryInput]
+    }
+  }
+
+  @js.native
+  trait GetRegistryResponse extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var Status: js.UndefOr[RegistryStatus]
+    var UpdatedTime: js.UndefOr[UpdatedTimestamp]
+  }
+
+  object GetRegistryResponse {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        Status: js.UndefOr[RegistryStatus] = js.undefined,
+        UpdatedTime: js.UndefOr[UpdatedTimestamp] = js.undefined
+    ): GetRegistryResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRegistryResponse]
     }
   }
 
@@ -5397,6 +6012,221 @@ package glue {
       PolicyInJson.foreach(__v => __obj.updateDynamic("PolicyInJson")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcePolicyResponse]
+    }
+  }
+
+  @js.native
+  trait GetSchemaByDefinitionInput extends js.Object {
+    var SchemaDefinition: SchemaDefinitionString
+    var SchemaId: SchemaId
+  }
+
+  object GetSchemaByDefinitionInput {
+    @inline
+    def apply(
+        SchemaDefinition: SchemaDefinitionString,
+        SchemaId: SchemaId
+    ): GetSchemaByDefinitionInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaDefinition" -> SchemaDefinition.asInstanceOf[js.Any],
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSchemaByDefinitionInput]
+    }
+  }
+
+  @js.native
+  trait GetSchemaByDefinitionResponse extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var DataFormat: js.UndefOr[DataFormat]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var Status: js.UndefOr[SchemaVersionStatus]
+  }
+
+  object GetSchemaByDefinitionResponse {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        DataFormat: js.UndefOr[DataFormat] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        Status: js.UndefOr[SchemaVersionStatus] = js.undefined
+    ): GetSchemaByDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSchemaByDefinitionResponse]
+    }
+  }
+
+  @js.native
+  trait GetSchemaInput extends js.Object {
+    var SchemaId: SchemaId
+  }
+
+  object GetSchemaInput {
+    @inline
+    def apply(
+        SchemaId: SchemaId
+    ): GetSchemaInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSchemaInput]
+    }
+  }
+
+  @js.native
+  trait GetSchemaResponse extends js.Object {
+    var Compatibility: js.UndefOr[Compatibility]
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var DataFormat: js.UndefOr[DataFormat]
+    var Description: js.UndefOr[DescriptionString]
+    var LatestSchemaVersion: js.UndefOr[VersionLongNumber]
+    var NextSchemaVersion: js.UndefOr[VersionLongNumber]
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaCheckpoint: js.UndefOr[SchemaCheckpointNumber]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaStatus: js.UndefOr[SchemaStatus]
+    var UpdatedTime: js.UndefOr[UpdatedTimestamp]
+  }
+
+  object GetSchemaResponse {
+    @inline
+    def apply(
+        Compatibility: js.UndefOr[Compatibility] = js.undefined,
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        DataFormat: js.UndefOr[DataFormat] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        LatestSchemaVersion: js.UndefOr[VersionLongNumber] = js.undefined,
+        NextSchemaVersion: js.UndefOr[VersionLongNumber] = js.undefined,
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaCheckpoint: js.UndefOr[SchemaCheckpointNumber] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaStatus: js.UndefOr[SchemaStatus] = js.undefined,
+        UpdatedTime: js.UndefOr[UpdatedTimestamp] = js.undefined
+    ): GetSchemaResponse = {
+      val __obj = js.Dynamic.literal()
+      Compatibility.foreach(__v => __obj.updateDynamic("Compatibility")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LatestSchemaVersion.foreach(__v => __obj.updateDynamic("LatestSchemaVersion")(__v.asInstanceOf[js.Any]))
+      NextSchemaVersion.foreach(__v => __obj.updateDynamic("NextSchemaVersion")(__v.asInstanceOf[js.Any]))
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaCheckpoint.foreach(__v => __obj.updateDynamic("SchemaCheckpoint")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      SchemaStatus.foreach(__v => __obj.updateDynamic("SchemaStatus")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSchemaResponse]
+    }
+  }
+
+  @js.native
+  trait GetSchemaVersionInput extends js.Object {
+    var SchemaId: js.UndefOr[SchemaId]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var SchemaVersionNumber: js.UndefOr[SchemaVersionNumber]
+  }
+
+  object GetSchemaVersionInput {
+    @inline
+    def apply(
+        SchemaId: js.UndefOr[SchemaId] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        SchemaVersionNumber: js.UndefOr[SchemaVersionNumber] = js.undefined
+    ): GetSchemaVersionInput = {
+      val __obj = js.Dynamic.literal()
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionNumber.foreach(__v => __obj.updateDynamic("SchemaVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSchemaVersionInput]
+    }
+  }
+
+  @js.native
+  trait GetSchemaVersionResponse extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var DataFormat: js.UndefOr[DataFormat]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaDefinition: js.UndefOr[SchemaDefinitionString]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var Status: js.UndefOr[SchemaVersionStatus]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object GetSchemaVersionResponse {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        DataFormat: js.UndefOr[DataFormat] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaDefinition: js.UndefOr[SchemaDefinitionString] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        Status: js.UndefOr[SchemaVersionStatus] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): GetSchemaVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaDefinition.foreach(__v => __obj.updateDynamic("SchemaDefinition")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSchemaVersionResponse]
+    }
+  }
+
+  @js.native
+  trait GetSchemaVersionsDiffInput extends js.Object {
+    var FirstSchemaVersionNumber: SchemaVersionNumber
+    var SchemaDiffType: SchemaDiffType
+    var SchemaId: SchemaId
+    var SecondSchemaVersionNumber: SchemaVersionNumber
+  }
+
+  object GetSchemaVersionsDiffInput {
+    @inline
+    def apply(
+        FirstSchemaVersionNumber: SchemaVersionNumber,
+        SchemaDiffType: SchemaDiffType,
+        SchemaId: SchemaId,
+        SecondSchemaVersionNumber: SchemaVersionNumber
+    ): GetSchemaVersionsDiffInput = {
+      val __obj = js.Dynamic.literal(
+        "FirstSchemaVersionNumber" -> FirstSchemaVersionNumber.asInstanceOf[js.Any],
+        "SchemaDiffType" -> SchemaDiffType.asInstanceOf[js.Any],
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any],
+        "SecondSchemaVersionNumber" -> SecondSchemaVersionNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSchemaVersionsDiffInput]
+    }
+  }
+
+  @js.native
+  trait GetSchemaVersionsDiffResponse extends js.Object {
+    var Diff: js.UndefOr[SchemaDefinitionDiff]
+  }
+
+  object GetSchemaVersionsDiffResponse {
+    @inline
+    def apply(
+        Diff: js.UndefOr[SchemaDefinitionDiff] = js.undefined
+    ): GetSchemaVersionsDiffResponse = {
+      val __obj = js.Dynamic.literal()
+      Diff.foreach(__v => __obj.updateDynamic("Diff")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSchemaVersionsDiffResponse]
     }
   }
 
@@ -6549,6 +7379,28 @@ package glue {
     }
   }
 
+  /** A partition key pair consisting of a name and a type.
+    */
+  @js.native
+  trait KeySchemaElement extends js.Object {
+    var Name: NameString
+    var Type: ColumnTypeString
+  }
+
+  object KeySchemaElement {
+    @inline
+    def apply(
+        Name: NameString,
+        Type: ColumnTypeString
+    ): KeySchemaElement = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KeySchemaElement]
+    }
+  }
+
   /** Specifies configuration properties for a labeling set generation task run.
     */
   @js.native
@@ -6792,6 +7644,128 @@ package glue {
   }
 
   @js.native
+  trait ListRegistriesInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxResultsNumber]
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+  }
+
+  object ListRegistriesInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResultsNumber] = js.undefined,
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined
+    ): ListRegistriesInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegistriesInput]
+    }
+  }
+
+  @js.native
+  trait ListRegistriesResponse extends js.Object {
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+    var Registries: js.UndefOr[RegistryListDefinition]
+  }
+
+  object ListRegistriesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined,
+        Registries: js.UndefOr[RegistryListDefinition] = js.undefined
+    ): ListRegistriesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Registries.foreach(__v => __obj.updateDynamic("Registries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRegistriesResponse]
+    }
+  }
+
+  @js.native
+  trait ListSchemaVersionsInput extends js.Object {
+    var SchemaId: SchemaId
+    var MaxResults: js.UndefOr[MaxResultsNumber]
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+  }
+
+  object ListSchemaVersionsInput {
+    @inline
+    def apply(
+        SchemaId: SchemaId,
+        MaxResults: js.UndefOr[MaxResultsNumber] = js.undefined,
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined
+    ): ListSchemaVersionsInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSchemaVersionsInput]
+    }
+  }
+
+  @js.native
+  trait ListSchemaVersionsResponse extends js.Object {
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+    var Schemas: js.UndefOr[SchemaVersionList]
+  }
+
+  object ListSchemaVersionsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined,
+        Schemas: js.UndefOr[SchemaVersionList] = js.undefined
+    ): ListSchemaVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Schemas.foreach(__v => __obj.updateDynamic("Schemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSchemaVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSchemasInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxResultsNumber]
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+    var RegistryId: js.UndefOr[RegistryId]
+  }
+
+  object ListSchemasInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResultsNumber] = js.undefined,
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined,
+        RegistryId: js.UndefOr[RegistryId] = js.undefined
+    ): ListSchemasInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegistryId.foreach(__v => __obj.updateDynamic("RegistryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSchemasInput]
+    }
+  }
+
+  @js.native
+  trait ListSchemasResponse extends js.Object {
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+    var Schemas: js.UndefOr[SchemaListDefinition]
+  }
+
+  object ListSchemasResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined,
+        Schemas: js.UndefOr[SchemaListDefinition] = js.undefined
+    ): ListSchemasResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Schemas.foreach(__v => __obj.updateDynamic("Schemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSchemasResponse]
+    }
+  }
+
+  @js.native
   trait ListTriggersRequest extends js.Object {
     var DependentJobName: js.UndefOr[NameString]
     var MaxResults: js.UndefOr[PageSize]
@@ -6914,7 +7888,7 @@ package glue {
     @inline def values = js.Array(EQUALS)
   }
 
-  /** Defines a long column statistics data.
+  /** Defines column statistics supported for integer data columns.
     */
   @js.native
   trait LongColumnStatisticsData extends js.Object {
@@ -6963,6 +7937,7 @@ package glue {
     var Schema: js.UndefOr[TransformSchema]
     var Status: js.UndefOr[TransformStatusType]
     var Timeout: js.UndefOr[Timeout]
+    var TransformEncryption: js.UndefOr[TransformEncryption]
     var TransformId: js.UndefOr[HashString]
     var WorkerType: js.UndefOr[WorkerType]
   }
@@ -6986,6 +7961,7 @@ package glue {
         Schema: js.UndefOr[TransformSchema] = js.undefined,
         Status: js.UndefOr[TransformStatusType] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
+        TransformEncryption: js.UndefOr[TransformEncryption] = js.undefined,
         TransformId: js.UndefOr[HashString] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): MLTransform = {
@@ -7006,10 +7982,43 @@ package glue {
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TransformEncryption.foreach(__v => __obj.updateDynamic("TransformEncryption")(__v.asInstanceOf[js.Any]))
       TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MLTransform]
     }
+  }
+
+  /** The encryption-at-rest settings of the transform that apply to accessing user data.
+    */
+  @js.native
+  trait MLUserDataEncryption extends js.Object {
+    var MlUserDataEncryptionMode: MLUserDataEncryptionModeString
+    var KmsKeyId: js.UndefOr[NameString]
+  }
+
+  object MLUserDataEncryption {
+    @inline
+    def apply(
+        MlUserDataEncryptionMode: MLUserDataEncryptionModeString,
+        KmsKeyId: js.UndefOr[NameString] = js.undefined
+    ): MLUserDataEncryption = {
+      val __obj = js.Dynamic.literal(
+        "MlUserDataEncryptionMode" -> MlUserDataEncryptionMode.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MLUserDataEncryption]
+    }
+  }
+
+  @js.native
+  sealed trait MLUserDataEncryptionModeString extends js.Any
+  object MLUserDataEncryptionModeString {
+    val DISABLED = "DISABLED".asInstanceOf[MLUserDataEncryptionModeString]
+    val `SSE-KMS` = "SSE-KMS".asInstanceOf[MLUserDataEncryptionModeString]
+
+    @inline def values = js.Array(DISABLED, `SSE-KMS`)
   }
 
   /** Defines a mapping.
@@ -7042,6 +8051,72 @@ package glue {
       TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MappingEntry]
+    }
+  }
+
+  /** A structure containing metadata information for a schema version.
+    */
+  @js.native
+  trait MetadataInfo extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var MetadataValue: js.UndefOr[MetadataValueString]
+  }
+
+  object MetadataInfo {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined
+    ): MetadataInfo = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetadataInfo]
+    }
+  }
+
+  /** A structure containing a key value pair for metadata.
+    */
+  @js.native
+  trait MetadataKeyValuePair extends js.Object {
+    var MetadataKey: js.UndefOr[MetadataKeyString]
+    var MetadataValue: js.UndefOr[MetadataValueString]
+  }
+
+  object MetadataKeyValuePair {
+    @inline
+    def apply(
+        MetadataKey: js.UndefOr[MetadataKeyString] = js.undefined,
+        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined
+    ): MetadataKeyValuePair = {
+      val __obj = js.Dynamic.literal()
+      MetadataKey.foreach(__v => __obj.updateDynamic("MetadataKey")(__v.asInstanceOf[js.Any]))
+      MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetadataKeyValuePair]
+    }
+  }
+
+  /** Specifies an Amazon DocumentDB or MongoDB data store to crawl.
+    */
+  @js.native
+  trait MongoDBTarget extends js.Object {
+    var ConnectionName: js.UndefOr[ConnectionName]
+    var Path: js.UndefOr[Path]
+    var ScanAll: js.UndefOr[NullableBoolean]
+  }
+
+  object MongoDBTarget {
+    @inline
+    def apply(
+        ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
+        Path: js.UndefOr[Path] = js.undefined,
+        ScanAll: js.UndefOr[NullableBoolean] = js.undefined
+    ): MongoDBTarget = {
+      val __obj = js.Dynamic.literal()
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      ScanAll.foreach(__v => __obj.updateDynamic("ScanAll")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MongoDBTarget]
     }
   }
 
@@ -7189,6 +8264,61 @@ package glue {
       PartitionValues.foreach(__v => __obj.updateDynamic("PartitionValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartitionError]
     }
+  }
+
+  /** A structure for a partition index.
+    */
+  @js.native
+  trait PartitionIndex extends js.Object {
+    var IndexName: NameString
+    var Keys: KeyList
+  }
+
+  object PartitionIndex {
+    @inline
+    def apply(
+        IndexName: NameString,
+        Keys: KeyList
+    ): PartitionIndex = {
+      val __obj = js.Dynamic.literal(
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "Keys" -> Keys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PartitionIndex]
+    }
+  }
+
+  /** A descriptor for a partition index in a table.
+    */
+  @js.native
+  trait PartitionIndexDescriptor extends js.Object {
+    var IndexName: NameString
+    var IndexStatus: PartitionIndexStatus
+    var Keys: KeySchemaElementList
+  }
+
+  object PartitionIndexDescriptor {
+    @inline
+    def apply(
+        IndexName: NameString,
+        IndexStatus: PartitionIndexStatus,
+        Keys: KeySchemaElementList
+    ): PartitionIndexDescriptor = {
+      val __obj = js.Dynamic.literal(
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "IndexStatus" -> IndexStatus.asInstanceOf[js.Any],
+        "Keys" -> Keys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PartitionIndexDescriptor]
+    }
+  }
+
+  @js.native
+  sealed trait PartitionIndexStatus extends js.Any
+  object PartitionIndexStatus {
+    val ACTIVE = "ACTIVE".asInstanceOf[PartitionIndexStatus]
+
+    @inline def values = js.Array(ACTIVE)
   }
 
   /** The structure used to create and update a partition.
@@ -7456,6 +8586,70 @@ package glue {
   }
 
   @js.native
+  trait PutSchemaVersionMetadataInput extends js.Object {
+    var MetadataKeyValue: MetadataKeyValuePair
+    var SchemaId: js.UndefOr[SchemaId]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var SchemaVersionNumber: js.UndefOr[SchemaVersionNumber]
+  }
+
+  object PutSchemaVersionMetadataInput {
+    @inline
+    def apply(
+        MetadataKeyValue: MetadataKeyValuePair,
+        SchemaId: js.UndefOr[SchemaId] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        SchemaVersionNumber: js.UndefOr[SchemaVersionNumber] = js.undefined
+    ): PutSchemaVersionMetadataInput = {
+      val __obj = js.Dynamic.literal(
+        "MetadataKeyValue" -> MetadataKeyValue.asInstanceOf[js.Any]
+      )
+
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionNumber.foreach(__v => __obj.updateDynamic("SchemaVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSchemaVersionMetadataInput]
+    }
+  }
+
+  @js.native
+  trait PutSchemaVersionMetadataResponse extends js.Object {
+    var LatestVersion: js.UndefOr[LatestSchemaVersionBoolean]
+    var MetadataKey: js.UndefOr[MetadataKeyString]
+    var MetadataValue: js.UndefOr[MetadataValueString]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object PutSchemaVersionMetadataResponse {
+    @inline
+    def apply(
+        LatestVersion: js.UndefOr[LatestSchemaVersionBoolean] = js.undefined,
+        MetadataKey: js.UndefOr[MetadataKeyString] = js.undefined,
+        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): PutSchemaVersionMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      MetadataKey.foreach(__v => __obj.updateDynamic("MetadataKey")(__v.asInstanceOf[js.Any]))
+      MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutSchemaVersionMetadataResponse]
+    }
+  }
+
+  @js.native
   trait PutWorkflowRunPropertiesRequest extends js.Object {
     var Name: NameString
     var RunId: IdString
@@ -7486,6 +8680,255 @@ package glue {
     def apply(): PutWorkflowRunPropertiesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutWorkflowRunPropertiesResponse]
+    }
+  }
+
+  @js.native
+  trait QuerySchemaVersionMetadataInput extends js.Object {
+    var MaxResults: js.UndefOr[QuerySchemaVersionMetadataMaxResults]
+    var MetadataList: js.UndefOr[MetadataList]
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+    var SchemaId: js.UndefOr[SchemaId]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var SchemaVersionNumber: js.UndefOr[SchemaVersionNumber]
+  }
+
+  object QuerySchemaVersionMetadataInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[QuerySchemaVersionMetadataMaxResults] = js.undefined,
+        MetadataList: js.UndefOr[MetadataList] = js.undefined,
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined,
+        SchemaId: js.UndefOr[SchemaId] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        SchemaVersionNumber: js.UndefOr[SchemaVersionNumber] = js.undefined
+    ): QuerySchemaVersionMetadataInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MetadataList.foreach(__v => __obj.updateDynamic("MetadataList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionNumber.foreach(__v => __obj.updateDynamic("SchemaVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuerySchemaVersionMetadataInput]
+    }
+  }
+
+  @js.native
+  trait QuerySchemaVersionMetadataResponse extends js.Object {
+    var MetadataInfoMap: js.UndefOr[MetadataInfoMap]
+    var NextToken: js.UndefOr[SchemaRegistryTokenString]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+  }
+
+  object QuerySchemaVersionMetadataResponse {
+    @inline
+    def apply(
+        MetadataInfoMap: js.UndefOr[MetadataInfoMap] = js.undefined,
+        NextToken: js.UndefOr[SchemaRegistryTokenString] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined
+    ): QuerySchemaVersionMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      MetadataInfoMap.foreach(__v => __obj.updateDynamic("MetadataInfoMap")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuerySchemaVersionMetadataResponse]
+    }
+  }
+
+  @js.native
+  sealed trait RecrawlBehavior extends js.Any
+  object RecrawlBehavior {
+    val CRAWL_EVERYTHING = "CRAWL_EVERYTHING".asInstanceOf[RecrawlBehavior]
+    val CRAWL_NEW_FOLDERS_ONLY = "CRAWL_NEW_FOLDERS_ONLY".asInstanceOf[RecrawlBehavior]
+
+    @inline def values = js.Array(CRAWL_EVERYTHING, CRAWL_NEW_FOLDERS_ONLY)
+  }
+
+  /** When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see [[https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html|Incremental Crawls in AWS Glue]] in the developer guide.
+    */
+  @js.native
+  trait RecrawlPolicy extends js.Object {
+    var RecrawlBehavior: js.UndefOr[RecrawlBehavior]
+  }
+
+  object RecrawlPolicy {
+    @inline
+    def apply(
+        RecrawlBehavior: js.UndefOr[RecrawlBehavior] = js.undefined
+    ): RecrawlPolicy = {
+      val __obj = js.Dynamic.literal()
+      RecrawlBehavior.foreach(__v => __obj.updateDynamic("RecrawlBehavior")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecrawlPolicy]
+    }
+  }
+
+  @js.native
+  trait RegisterSchemaVersionInput extends js.Object {
+    var SchemaDefinition: SchemaDefinitionString
+    var SchemaId: SchemaId
+  }
+
+  object RegisterSchemaVersionInput {
+    @inline
+    def apply(
+        SchemaDefinition: SchemaDefinitionString,
+        SchemaId: SchemaId
+    ): RegisterSchemaVersionInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaDefinition" -> SchemaDefinition.asInstanceOf[js.Any],
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegisterSchemaVersionInput]
+    }
+  }
+
+  @js.native
+  trait RegisterSchemaVersionResponse extends js.Object {
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var Status: js.UndefOr[SchemaVersionStatus]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object RegisterSchemaVersionResponse {
+    @inline
+    def apply(
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        Status: js.UndefOr[SchemaVersionStatus] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): RegisterSchemaVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterSchemaVersionResponse]
+    }
+  }
+
+  /** A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
+    */
+  @js.native
+  trait RegistryId extends js.Object {
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+  }
+
+  object RegistryId {
+    @inline
+    def apply(
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined
+    ): RegistryId = {
+      val __obj = js.Dynamic.literal()
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegistryId]
+    }
+  }
+
+  /** A structure containing the details for a registry.
+    */
+  @js.native
+  trait RegistryListItem extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var Status: js.UndefOr[RegistryStatus]
+    var UpdatedTime: js.UndefOr[UpdatedTimestamp]
+  }
+
+  object RegistryListItem {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        Status: js.UndefOr[RegistryStatus] = js.undefined,
+        UpdatedTime: js.UndefOr[UpdatedTimestamp] = js.undefined
+    ): RegistryListItem = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegistryListItem]
+    }
+  }
+
+  @js.native
+  sealed trait RegistryStatus extends js.Any
+  object RegistryStatus {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[RegistryStatus]
+    val DELETING = "DELETING".asInstanceOf[RegistryStatus]
+
+    @inline def values = js.Array(AVAILABLE, DELETING)
+  }
+
+  @js.native
+  trait RemoveSchemaVersionMetadataInput extends js.Object {
+    var MetadataKeyValue: MetadataKeyValuePair
+    var SchemaId: js.UndefOr[SchemaId]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var SchemaVersionNumber: js.UndefOr[SchemaVersionNumber]
+  }
+
+  object RemoveSchemaVersionMetadataInput {
+    @inline
+    def apply(
+        MetadataKeyValue: MetadataKeyValuePair,
+        SchemaId: js.UndefOr[SchemaId] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        SchemaVersionNumber: js.UndefOr[SchemaVersionNumber] = js.undefined
+    ): RemoveSchemaVersionMetadataInput = {
+      val __obj = js.Dynamic.literal(
+        "MetadataKeyValue" -> MetadataKeyValue.asInstanceOf[js.Any]
+      )
+
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionNumber.foreach(__v => __obj.updateDynamic("SchemaVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveSchemaVersionMetadataInput]
+    }
+  }
+
+  @js.native
+  trait RemoveSchemaVersionMetadataResponse extends js.Object {
+    var LatestVersion: js.UndefOr[LatestSchemaVersionBoolean]
+    var MetadataKey: js.UndefOr[MetadataKeyString]
+    var MetadataValue: js.UndefOr[MetadataValueString]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object RemoveSchemaVersionMetadataResponse {
+    @inline
+    def apply(
+        LatestVersion: js.UndefOr[LatestSchemaVersionBoolean] = js.undefined,
+        MetadataKey: js.UndefOr[MetadataKeyString] = js.undefined,
+        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): RemoveSchemaVersionMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      MetadataKey.foreach(__v => __obj.updateDynamic("MetadataKey")(__v.asInstanceOf[js.Any]))
+      MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveSchemaVersionMetadataResponse]
     }
   }
 
@@ -7734,6 +9177,187 @@ package glue {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaColumn]
     }
+  }
+
+  @js.native
+  sealed trait SchemaDiffType extends js.Any
+  object SchemaDiffType {
+    val SYNTAX_DIFF = "SYNTAX_DIFF".asInstanceOf[SchemaDiffType]
+
+    @inline def values = js.Array(SYNTAX_DIFF)
+  }
+
+  @js.native
+  trait SchemaId extends js.Object {
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+  }
+
+  object SchemaId {
+    @inline
+    def apply(
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined
+    ): SchemaId = {
+      val __obj = js.Dynamic.literal()
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaId]
+    }
+  }
+
+  /** An object that contains minimal details for a schema.
+    */
+  @js.native
+  trait SchemaListItem extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaStatus: js.UndefOr[SchemaStatus]
+    var UpdatedTime: js.UndefOr[UpdatedTimestamp]
+  }
+
+  object SchemaListItem {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaStatus: js.UndefOr[SchemaStatus] = js.undefined,
+        UpdatedTime: js.UndefOr[UpdatedTimestamp] = js.undefined
+    ): SchemaListItem = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      SchemaStatus.foreach(__v => __obj.updateDynamic("SchemaStatus")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaListItem]
+    }
+  }
+
+  /** An object that references a schema stored in the AWS Glue Schema Registry.
+    */
+  @js.native
+  trait SchemaReference extends js.Object {
+    var SchemaId: js.UndefOr[SchemaId]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var SchemaVersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object SchemaReference {
+    @inline
+    def apply(
+        SchemaId: js.UndefOr[SchemaId] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        SchemaVersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): SchemaReference = {
+      val __obj = js.Dynamic.literal()
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      SchemaVersionNumber.foreach(__v => __obj.updateDynamic("SchemaVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaReference]
+    }
+  }
+
+  @js.native
+  sealed trait SchemaStatus extends js.Any
+  object SchemaStatus {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[SchemaStatus]
+    val PENDING = "PENDING".asInstanceOf[SchemaStatus]
+    val DELETING = "DELETING".asInstanceOf[SchemaStatus]
+
+    @inline def values = js.Array(AVAILABLE, PENDING, DELETING)
+  }
+
+  /** An object that contains the error details for an operation on a schema version.
+    */
+  @js.native
+  trait SchemaVersionErrorItem extends js.Object {
+    var ErrorDetails: js.UndefOr[ErrorDetails]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object SchemaVersionErrorItem {
+    @inline
+    def apply(
+        ErrorDetails: js.UndefOr[ErrorDetails] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): SchemaVersionErrorItem = {
+      val __obj = js.Dynamic.literal()
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaVersionErrorItem]
+    }
+  }
+
+  /** An object containing the details about a schema version.
+    */
+  @js.native
+  trait SchemaVersionListItem extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaVersionId: js.UndefOr[SchemaVersionIdString]
+    var Status: js.UndefOr[SchemaVersionStatus]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object SchemaVersionListItem {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaVersionId: js.UndefOr[SchemaVersionIdString] = js.undefined,
+        Status: js.UndefOr[SchemaVersionStatus] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): SchemaVersionListItem = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaVersionListItem]
+    }
+  }
+
+  @js.native
+  trait SchemaVersionNumber extends js.Object {
+    var LatestVersion: js.UndefOr[LatestSchemaVersionBoolean]
+    var VersionNumber: js.UndefOr[VersionLongNumber]
+  }
+
+  object SchemaVersionNumber {
+    @inline
+    def apply(
+        LatestVersion: js.UndefOr[LatestSchemaVersionBoolean] = js.undefined,
+        VersionNumber: js.UndefOr[VersionLongNumber] = js.undefined
+    ): SchemaVersionNumber = {
+      val __obj = js.Dynamic.literal()
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaVersionNumber]
+    }
+  }
+
+  @js.native
+  sealed trait SchemaVersionStatus extends js.Any
+  object SchemaVersionStatus {
+    val AVAILABLE = "AVAILABLE".asInstanceOf[SchemaVersionStatus]
+    val PENDING = "PENDING".asInstanceOf[SchemaVersionStatus]
+    val FAILURE = "FAILURE".asInstanceOf[SchemaVersionStatus]
+    val DELETING = "DELETING".asInstanceOf[SchemaVersionStatus]
+
+    @inline def values = js.Array(AVAILABLE, PENDING, FAILURE, DELETING)
   }
 
   @js.native
@@ -8382,6 +10006,7 @@ package glue {
     var NumberOfBuckets: js.UndefOr[Int]
     var OutputFormat: js.UndefOr[FormatString]
     var Parameters: js.UndefOr[ParametersMap]
+    var SchemaReference: js.UndefOr[SchemaReference]
     var SerdeInfo: js.UndefOr[SerDeInfo]
     var SkewedInfo: js.UndefOr[SkewedInfo]
     var SortColumns: js.UndefOr[OrderList]
@@ -8399,6 +10024,7 @@ package glue {
         NumberOfBuckets: js.UndefOr[Int] = js.undefined,
         OutputFormat: js.UndefOr[FormatString] = js.undefined,
         Parameters: js.UndefOr[ParametersMap] = js.undefined,
+        SchemaReference: js.UndefOr[SchemaReference] = js.undefined,
         SerdeInfo: js.UndefOr[SerDeInfo] = js.undefined,
         SkewedInfo: js.UndefOr[SkewedInfo] = js.undefined,
         SortColumns: js.UndefOr[OrderList] = js.undefined,
@@ -8413,6 +10039,7 @@ package glue {
       NumberOfBuckets.foreach(__v => __obj.updateDynamic("NumberOfBuckets")(__v.asInstanceOf[js.Any]))
       OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      SchemaReference.foreach(__v => __obj.updateDynamic("SchemaReference")(__v.asInstanceOf[js.Any]))
       SerdeInfo.foreach(__v => __obj.updateDynamic("SerdeInfo")(__v.asInstanceOf[js.Any]))
       SkewedInfo.foreach(__v => __obj.updateDynamic("SkewedInfo")(__v.asInstanceOf[js.Any]))
       SortColumns.foreach(__v => __obj.updateDynamic("SortColumns")(__v.asInstanceOf[js.Any]))
@@ -8421,7 +10048,7 @@ package glue {
     }
   }
 
-  /** Defines a string column statistics data.
+  /** Defines column statistics supported for character sequence data values.
     */
   @js.native
   trait StringColumnStatisticsData extends js.Object {
@@ -8858,6 +10485,28 @@ package glue {
     val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TaskType]
 
     @inline def values = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
+  }
+
+  /** The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.
+    * Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.
+    */
+  @js.native
+  trait TransformEncryption extends js.Object {
+    var MlUserDataEncryption: js.UndefOr[MLUserDataEncryption]
+    var TaskRunSecurityConfigurationName: js.UndefOr[NameString]
+  }
+
+  object TransformEncryption {
+    @inline
+    def apply(
+        MlUserDataEncryption: js.UndefOr[MLUserDataEncryption] = js.undefined,
+        TaskRunSecurityConfigurationName: js.UndefOr[NameString] = js.undefined
+    ): TransformEncryption = {
+      val __obj = js.Dynamic.literal()
+      MlUserDataEncryption.foreach(__v => __obj.updateDynamic("MlUserDataEncryption")(__v.asInstanceOf[js.Any]))
+      TaskRunSecurityConfigurationName.foreach(__v => __obj.updateDynamic("TaskRunSecurityConfigurationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransformEncryption]
+    }
   }
 
   /** The criteria used to filter the machine learning transforms.
@@ -9300,6 +10949,7 @@ package glue {
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionStringRemovable]
+    var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Role: js.UndefOr[Role]
     var Schedule: js.UndefOr[CronExpression]
     var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
@@ -9316,6 +10966,7 @@ package glue {
         CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionStringRemovable] = js.undefined,
+        RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         Schedule: js.UndefOr[CronExpression] = js.undefined,
         SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
@@ -9331,6 +10982,7 @@ package glue {
       CrawlerSecurityConfiguration.foreach(__v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
@@ -9696,6 +11348,94 @@ package glue {
     def apply(): UpdatePartitionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdatePartitionResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateRegistryInput extends js.Object {
+    var Description: DescriptionString
+    var RegistryId: RegistryId
+  }
+
+  object UpdateRegistryInput {
+    @inline
+    def apply(
+        Description: DescriptionString,
+        RegistryId: RegistryId
+    ): UpdateRegistryInput = {
+      val __obj = js.Dynamic.literal(
+        "Description" -> Description.asInstanceOf[js.Any],
+        "RegistryId" -> RegistryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRegistryInput]
+    }
+  }
+
+  @js.native
+  trait UpdateRegistryResponse extends js.Object {
+    var RegistryArn: js.UndefOr[GlueResourceArn]
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+  }
+
+  object UpdateRegistryResponse {
+    @inline
+    def apply(
+        RegistryArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined
+    ): UpdateRegistryResponse = {
+      val __obj = js.Dynamic.literal()
+      RegistryArn.foreach(__v => __obj.updateDynamic("RegistryArn")(__v.asInstanceOf[js.Any]))
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRegistryResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateSchemaInput extends js.Object {
+    var SchemaId: SchemaId
+    var Compatibility: js.UndefOr[Compatibility]
+    var Description: js.UndefOr[DescriptionString]
+    var SchemaVersionNumber: js.UndefOr[SchemaVersionNumber]
+  }
+
+  object UpdateSchemaInput {
+    @inline
+    def apply(
+        SchemaId: SchemaId,
+        Compatibility: js.UndefOr[Compatibility] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        SchemaVersionNumber: js.UndefOr[SchemaVersionNumber] = js.undefined
+    ): UpdateSchemaInput = {
+      val __obj = js.Dynamic.literal(
+        "SchemaId" -> SchemaId.asInstanceOf[js.Any]
+      )
+
+      Compatibility.foreach(__v => __obj.updateDynamic("Compatibility")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      SchemaVersionNumber.foreach(__v => __obj.updateDynamic("SchemaVersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSchemaInput]
+    }
+  }
+
+  @js.native
+  trait UpdateSchemaResponse extends js.Object {
+    var RegistryName: js.UndefOr[SchemaRegistryNameString]
+    var SchemaArn: js.UndefOr[GlueResourceArn]
+    var SchemaName: js.UndefOr[SchemaRegistryNameString]
+  }
+
+  object UpdateSchemaResponse {
+    @inline
+    def apply(
+        RegistryName: js.UndefOr[SchemaRegistryNameString] = js.undefined,
+        SchemaArn: js.UndefOr[GlueResourceArn] = js.undefined,
+        SchemaName: js.UndefOr[SchemaRegistryNameString] = js.undefined
+    ): UpdateSchemaResponse = {
+      val __obj = js.Dynamic.literal()
+      RegistryName.foreach(__v => __obj.updateDynamic("RegistryName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSchemaResponse]
     }
   }
 

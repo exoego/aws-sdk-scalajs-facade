@@ -1344,9 +1344,9 @@ package configservice {
     var ConformancePackArn: ConformancePackArn
     var ConformancePackId: ConformancePackId
     var ConformancePackName: ConformancePackName
-    var DeliveryS3Bucket: DeliveryS3Bucket
     var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
     var CreatedBy: js.UndefOr[StringWithCharLimit256]
+    var DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket]
     var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
     var LastUpdateRequestedTime: js.UndefOr[Date]
   }
@@ -1357,21 +1357,21 @@ package configservice {
         ConformancePackArn: ConformancePackArn,
         ConformancePackId: ConformancePackId,
         ConformancePackName: ConformancePackName,
-        DeliveryS3Bucket: DeliveryS3Bucket,
         ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
         CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
+        DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket] = js.undefined,
         DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
         LastUpdateRequestedTime: js.UndefOr[Date] = js.undefined
     ): ConformancePackDetail = {
       val __obj = js.Dynamic.literal(
         "ConformancePackArn" -> ConformancePackArn.asInstanceOf[js.Any],
         "ConformancePackId" -> ConformancePackId.asInstanceOf[js.Any],
-        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any],
-        "DeliveryS3Bucket" -> DeliveryS3Bucket.asInstanceOf[js.Any]
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
       )
 
       ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      DeliveryS3Bucket.foreach(__v => __obj.updateDynamic("DeliveryS3Bucket")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       LastUpdateRequestedTime.foreach(__v => __obj.updateDynamic("LastUpdateRequestedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConformancePackDetail]
@@ -4157,11 +4157,11 @@ package configservice {
     */
   @js.native
   trait OrganizationConformancePack extends js.Object {
-    var DeliveryS3Bucket: DeliveryS3Bucket
     var LastUpdateTime: Date
     var OrganizationConformancePackArn: StringWithCharLimit256
     var OrganizationConformancePackName: OrganizationConformancePackName
     var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket]
     var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
   }
@@ -4169,22 +4169,22 @@ package configservice {
   object OrganizationConformancePack {
     @inline
     def apply(
-        DeliveryS3Bucket: DeliveryS3Bucket,
         LastUpdateTime: Date,
         OrganizationConformancePackArn: StringWithCharLimit256,
         OrganizationConformancePackName: OrganizationConformancePackName,
         ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket] = js.undefined,
         DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined
     ): OrganizationConformancePack = {
       val __obj = js.Dynamic.literal(
-        "DeliveryS3Bucket" -> DeliveryS3Bucket.asInstanceOf[js.Any],
         "LastUpdateTime" -> LastUpdateTime.asInstanceOf[js.Any],
         "OrganizationConformancePackArn" -> OrganizationConformancePackArn.asInstanceOf[js.Any],
         "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
       )
 
       ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
+      DeliveryS3Bucket.foreach(__v => __obj.updateDynamic("DeliveryS3Bucket")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationConformancePack]
@@ -4598,8 +4598,8 @@ package configservice {
   @js.native
   trait PutConformancePackRequest extends js.Object {
     var ConformancePackName: ConformancePackName
-    var DeliveryS3Bucket: DeliveryS3Bucket
     var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket]
     var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
     var TemplateBody: js.UndefOr[TemplateBody]
     var TemplateS3Uri: js.UndefOr[TemplateS3Uri]
@@ -4609,18 +4609,18 @@ package configservice {
     @inline
     def apply(
         ConformancePackName: ConformancePackName,
-        DeliveryS3Bucket: DeliveryS3Bucket,
         ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket] = js.undefined,
         DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
         TemplateS3Uri: js.UndefOr[TemplateS3Uri] = js.undefined
     ): PutConformancePackRequest = {
       val __obj = js.Dynamic.literal(
-        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any],
-        "DeliveryS3Bucket" -> DeliveryS3Bucket.asInstanceOf[js.Any]
+        "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
       )
 
       ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
+      DeliveryS3Bucket.foreach(__v => __obj.updateDynamic("DeliveryS3Bucket")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
       TemplateS3Uri.foreach(__v => __obj.updateDynamic("TemplateS3Uri")(__v.asInstanceOf[js.Any]))
@@ -4752,9 +4752,9 @@ package configservice {
 
   @js.native
   trait PutOrganizationConformancePackRequest extends js.Object {
-    var DeliveryS3Bucket: DeliveryS3Bucket
     var OrganizationConformancePackName: OrganizationConformancePackName
     var ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters]
+    var DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket]
     var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
     var TemplateBody: js.UndefOr[TemplateBody]
@@ -4764,20 +4764,20 @@ package configservice {
   object PutOrganizationConformancePackRequest {
     @inline
     def apply(
-        DeliveryS3Bucket: DeliveryS3Bucket,
         OrganizationConformancePackName: OrganizationConformancePackName,
         ConformancePackInputParameters: js.UndefOr[ConformancePackInputParameters] = js.undefined,
+        DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket] = js.undefined,
         DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
         TemplateS3Uri: js.UndefOr[TemplateS3Uri] = js.undefined
     ): PutOrganizationConformancePackRequest = {
       val __obj = js.Dynamic.literal(
-        "DeliveryS3Bucket" -> DeliveryS3Bucket.asInstanceOf[js.Any],
         "OrganizationConformancePackName" -> OrganizationConformancePackName.asInstanceOf[js.Any]
       )
 
       ConformancePackInputParameters.foreach(__v => __obj.updateDynamic("ConformancePackInputParameters")(__v.asInstanceOf[js.Any]))
+      DeliveryS3Bucket.foreach(__v => __obj.updateDynamic("DeliveryS3Bucket")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))

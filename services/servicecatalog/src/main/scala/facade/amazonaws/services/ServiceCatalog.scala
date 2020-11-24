@@ -61,8 +61,10 @@ package object servicecatalog {
   type OrganizationNodes = js.Array[OrganizationNode]
   type OutputDescription = String
   type OutputKey = String
+  type OutputKeys = js.Array[OutputKey]
   type OutputValue = String
   type PageSize = Int
+  type PageSizeMax100 = Int
   type PageToken = String
   type ParameterKey = String
   type ParameterType = String
@@ -140,6 +142,8 @@ package object servicecatalog {
   type ResourceDetails = js.Array[ResourceDetail]
   type ResourceId = String
   type ResourceType = String
+  type RetainPhysicalResources = Boolean
+  type RoleArn = String
   type Scope = js.Array[ResourceAttribute]
   type SearchFilterKey = String
   type SearchFilterValue = String
@@ -240,6 +244,8 @@ package object servicecatalog {
     @inline def executeProvisionedProductPlanFuture(params: ExecuteProvisionedProductPlanInput): Future[ExecuteProvisionedProductPlanOutput] = service.executeProvisionedProductPlan(params).promise().toFuture
     @inline def executeProvisionedProductServiceActionFuture(params: ExecuteProvisionedProductServiceActionInput): Future[ExecuteProvisionedProductServiceActionOutput] = service.executeProvisionedProductServiceAction(params).promise().toFuture
     @inline def getAWSOrganizationsAccessStatusFuture(params: GetAWSOrganizationsAccessStatusInput): Future[GetAWSOrganizationsAccessStatusOutput] = service.getAWSOrganizationsAccessStatus(params).promise().toFuture
+    @inline def getProvisionedProductOutputsFuture(params: GetProvisionedProductOutputsInput): Future[GetProvisionedProductOutputsOutput] = service.getProvisionedProductOutputs(params).promise().toFuture
+    @inline def importAsProvisionedProductFuture(params: ImportAsProvisionedProductInput): Future[ImportAsProvisionedProductOutput] = service.importAsProvisionedProduct(params).promise().toFuture
     @inline def listAcceptedPortfolioSharesFuture(params: ListAcceptedPortfolioSharesInput): Future[ListAcceptedPortfolioSharesOutput] = service.listAcceptedPortfolioShares(params).promise().toFuture
     @inline def listBudgetsForResourceFuture(params: ListBudgetsForResourceInput): Future[ListBudgetsForResourceOutput] = service.listBudgetsForResource(params).promise().toFuture
     @inline def listConstraintsForPortfolioFuture(params: ListConstraintsForPortfolioInput): Future[ListConstraintsForPortfolioOutput] = service.listConstraintsForPortfolio(params).promise().toFuture
@@ -333,6 +339,8 @@ package servicecatalog {
     def executeProvisionedProductPlan(params: ExecuteProvisionedProductPlanInput): Request[ExecuteProvisionedProductPlanOutput] = js.native
     def executeProvisionedProductServiceAction(params: ExecuteProvisionedProductServiceActionInput): Request[ExecuteProvisionedProductServiceActionOutput] = js.native
     def getAWSOrganizationsAccessStatus(params: GetAWSOrganizationsAccessStatusInput): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
+    def getProvisionedProductOutputs(params: GetProvisionedProductOutputsInput): Request[GetProvisionedProductOutputsOutput] = js.native
+    def importAsProvisionedProduct(params: ImportAsProvisionedProductInput): Request[ImportAsProvisionedProductOutput] = js.native
     def listAcceptedPortfolioShares(params: ListAcceptedPortfolioSharesInput): Request[ListAcceptedPortfolioSharesOutput] = js.native
     def listBudgetsForResource(params: ListBudgetsForResourceInput): Request[ListBudgetsForResourceOutput] = js.native
     def listConstraintsForPortfolio(params: ListConstraintsForPortfolioInput): Request[ListConstraintsForPortfolioOutput] = js.native
@@ -1883,23 +1891,26 @@ package servicecatalog {
     }
   }
 
+  /** DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned product identifier. Customers must provide either Id or Name.
+    */
   @js.native
   trait DescribeProvisionedProductInput extends js.Object {
-    var Id: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var Id: js.UndefOr[Id]
+    var Name: js.UndefOr[ProvisionedProductName]
   }
 
   object DescribeProvisionedProductInput {
     @inline
     def apply(
-        Id: Id,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[ProvisionedProductName] = js.undefined
     ): DescribeProvisionedProductInput = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductInput]
     }
   }
@@ -2639,6 +2650,105 @@ package servicecatalog {
     }
   }
 
+  @js.native
+  trait GetProvisionedProductOutputsInput extends js.Object {
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var OutputKeys: js.UndefOr[OutputKeys]
+    var PageSize: js.UndefOr[PageSize]
+    var PageToken: js.UndefOr[PageToken]
+    var ProvisionedProductId: js.UndefOr[Id]
+    var ProvisionedProductName: js.UndefOr[ProvisionedProductName]
+  }
+
+  object GetProvisionedProductOutputsInput {
+    @inline
+    def apply(
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        OutputKeys: js.UndefOr[OutputKeys] = js.undefined,
+        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageToken: js.UndefOr[PageToken] = js.undefined,
+        ProvisionedProductId: js.UndefOr[Id] = js.undefined,
+        ProvisionedProductName: js.UndefOr[ProvisionedProductName] = js.undefined
+    ): GetProvisionedProductOutputsInput = {
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      OutputKeys.foreach(__v => __obj.updateDynamic("OutputKeys")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProvisionedProductOutputsInput]
+    }
+  }
+
+  @js.native
+  trait GetProvisionedProductOutputsOutput extends js.Object {
+    var NextPageToken: js.UndefOr[PageToken]
+    var Outputs: js.UndefOr[RecordOutputs]
+  }
+
+  object GetProvisionedProductOutputsOutput {
+    @inline
+    def apply(
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        Outputs: js.UndefOr[RecordOutputs] = js.undefined
+    ): GetProvisionedProductOutputsOutput = {
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetProvisionedProductOutputsOutput]
+    }
+  }
+
+  @js.native
+  trait ImportAsProvisionedProductInput extends js.Object {
+    var IdempotencyToken: IdempotencyToken
+    var PhysicalId: PhysicalId
+    var ProductId: Id
+    var ProvisionedProductName: ProvisionedProductName
+    var ProvisioningArtifactId: Id
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+  }
+
+  object ImportAsProvisionedProductInput {
+    @inline
+    def apply(
+        IdempotencyToken: IdempotencyToken,
+        PhysicalId: PhysicalId,
+        ProductId: Id,
+        ProvisionedProductName: ProvisionedProductName,
+        ProvisioningArtifactId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): ImportAsProvisionedProductInput = {
+      val __obj = js.Dynamic.literal(
+        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
+        "PhysicalId" -> PhysicalId.asInstanceOf[js.Any],
+        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
+      )
+
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAsProvisionedProductInput]
+    }
+  }
+
+  @js.native
+  trait ImportAsProvisionedProductOutput extends js.Object {
+    var RecordDetail: js.UndefOr[RecordDetail]
+  }
+
+  object ImportAsProvisionedProductOutput {
+    @inline
+    def apply(
+        RecordDetail: js.UndefOr[RecordDetail] = js.undefined
+    ): ImportAsProvisionedProductOutput = {
+      val __obj = js.Dynamic.literal()
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAsProvisionedProductOutput]
+    }
+  }
+
   /** A launch path object.
     */
   @js.native
@@ -2926,7 +3036,7 @@ package servicecatalog {
     var PortfolioId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var OrganizationParentId: js.UndefOr[Id]
-    var PageSize: js.UndefOr[PageSize]
+    var PageSize: js.UndefOr[PageSizeMax100]
     var PageToken: js.UndefOr[PageToken]
   }
 
@@ -2936,7 +3046,7 @@ package servicecatalog {
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         OrganizationParentId: js.UndefOr[Id] = js.undefined,
-        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageSize: js.UndefOr[PageSizeMax100] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfolioAccessInput = {
       val __obj = js.Dynamic.literal(
@@ -3810,8 +3920,9 @@ package servicecatalog {
   sealed trait PropertyKey extends js.Any
   object PropertyKey {
     val OWNER = "OWNER".asInstanceOf[PropertyKey]
+    val LAUNCH_ROLE = "LAUNCH_ROLE".asInstanceOf[PropertyKey]
 
-    @inline def values = js.Array(OWNER)
+    @inline def values = js.Array(OWNER, LAUNCH_ROLE)
   }
 
   @js.native
@@ -3892,11 +4003,15 @@ package servicecatalog {
     var CreatedTime: js.UndefOr[CreatedTime]
     var Id: js.UndefOr[Id]
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
+    var LastProvisioningRecordId: js.UndefOr[Id]
     var LastRecordId: js.UndefOr[Id]
+    var LastSuccessfulProvisioningRecordId: js.UndefOr[Id]
     var Name: js.UndefOr[ProvisionedProductNameOrArn]
     var PhysicalId: js.UndefOr[PhysicalId]
     var ProductId: js.UndefOr[Id]
+    var ProductName: js.UndefOr[ProductViewName]
     var ProvisioningArtifactId: js.UndefOr[Id]
+    var ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName]
     var Status: js.UndefOr[ProvisionedProductStatus]
     var StatusMessage: js.UndefOr[ProvisionedProductStatusMessage]
     var Tags: js.UndefOr[Tags]
@@ -3912,11 +4027,15 @@ package servicecatalog {
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        LastProvisioningRecordId: js.UndefOr[Id] = js.undefined,
         LastRecordId: js.UndefOr[Id] = js.undefined,
+        LastSuccessfulProvisioningRecordId: js.UndefOr[Id] = js.undefined,
         Name: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
         PhysicalId: js.UndefOr[PhysicalId] = js.undefined,
         ProductId: js.UndefOr[Id] = js.undefined,
+        ProductName: js.UndefOr[ProductViewName] = js.undefined,
         ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningArtifactName: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Status: js.UndefOr[ProvisionedProductStatus] = js.undefined,
         StatusMessage: js.UndefOr[ProvisionedProductStatusMessage] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -3929,11 +4048,15 @@ package servicecatalog {
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      LastProvisioningRecordId.foreach(__v => __obj.updateDynamic("LastProvisioningRecordId")(__v.asInstanceOf[js.Any]))
       LastRecordId.foreach(__v => __obj.updateDynamic("LastRecordId")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulProvisioningRecordId.foreach(__v => __obj.updateDynamic("LastSuccessfulProvisioningRecordId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PhysicalId.foreach(__v => __obj.updateDynamic("PhysicalId")(__v.asInstanceOf[js.Any]))
       ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactName.foreach(__v => __obj.updateDynamic("ProvisioningArtifactName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3952,7 +4075,10 @@ package servicecatalog {
     var CreatedTime: js.UndefOr[CreatedTime]
     var Id: js.UndefOr[ProvisionedProductId]
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
+    var LastProvisioningRecordId: js.UndefOr[Id]
     var LastRecordId: js.UndefOr[LastRequestId]
+    var LastSuccessfulProvisioningRecordId: js.UndefOr[Id]
+    var LaunchRoleArn: js.UndefOr[RoleArn]
     var Name: js.UndefOr[ProvisionedProductNameOrArn]
     var ProductId: js.UndefOr[Id]
     var ProvisioningArtifactId: js.UndefOr[Id]
@@ -3968,7 +4094,10 @@ package servicecatalog {
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         Id: js.UndefOr[ProvisionedProductId] = js.undefined,
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        LastProvisioningRecordId: js.UndefOr[Id] = js.undefined,
         LastRecordId: js.UndefOr[LastRequestId] = js.undefined,
+        LastSuccessfulProvisioningRecordId: js.UndefOr[Id] = js.undefined,
+        LaunchRoleArn: js.UndefOr[RoleArn] = js.undefined,
         Name: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
         ProductId: js.UndefOr[Id] = js.undefined,
         ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
@@ -3981,7 +4110,10 @@ package servicecatalog {
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      LastProvisioningRecordId.foreach(__v => __obj.updateDynamic("LastProvisioningRecordId")(__v.asInstanceOf[js.Any]))
       LastRecordId.foreach(__v => __obj.updateDynamic("LastRecordId")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulProvisioningRecordId.foreach(__v => __obj.updateDynamic("LastSuccessfulProvisioningRecordId")(__v.asInstanceOf[js.Any]))
+      LaunchRoleArn.foreach(__v => __obj.updateDynamic("LaunchRoleArn")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
@@ -4437,6 +4569,7 @@ package servicecatalog {
   @js.native
   trait RecordDetail extends js.Object {
     var CreatedTime: js.UndefOr[CreatedTime]
+    var LaunchRoleArn: js.UndefOr[RoleArn]
     var PathId: js.UndefOr[Id]
     var ProductId: js.UndefOr[Id]
     var ProvisionedProductId: js.UndefOr[Id]
@@ -4455,6 +4588,7 @@ package servicecatalog {
     @inline
     def apply(
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+        LaunchRoleArn: js.UndefOr[RoleArn] = js.undefined,
         PathId: js.UndefOr[Id] = js.undefined,
         ProductId: js.UndefOr[Id] = js.undefined,
         ProvisionedProductId: js.UndefOr[Id] = js.undefined,
@@ -4470,6 +4604,7 @@ package servicecatalog {
     ): RecordDetail = {
       val __obj = js.Dynamic.literal()
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      LaunchRoleArn.foreach(__v => __obj.updateDynamic("LaunchRoleArn")(__v.asInstanceOf[js.Any]))
       PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
       ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
       ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
@@ -5256,6 +5391,7 @@ package servicecatalog {
     var IgnoreErrors: js.UndefOr[IgnoreErrors]
     var ProvisionedProductId: js.UndefOr[Id]
     var ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn]
+    var RetainPhysicalResources: js.UndefOr[RetainPhysicalResources]
   }
 
   object TerminateProvisionedProductInput {
@@ -5265,7 +5401,8 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         IgnoreErrors: js.UndefOr[IgnoreErrors] = js.undefined,
         ProvisionedProductId: js.UndefOr[Id] = js.undefined,
-        ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined
+        ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
+        RetainPhysicalResources: js.UndefOr[RetainPhysicalResources] = js.undefined
     ): TerminateProvisionedProductInput = {
       val __obj = js.Dynamic.literal(
         "TerminateToken" -> TerminateToken.asInstanceOf[js.Any]
@@ -5275,6 +5412,7 @@ package servicecatalog {
       IgnoreErrors.foreach(__v => __obj.updateDynamic("IgnoreErrors")(__v.asInstanceOf[js.Any]))
       ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
       ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
+      RetainPhysicalResources.foreach(__v => __obj.updateDynamic("RetainPhysicalResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateProvisionedProductInput]
     }
   }

@@ -20,6 +20,7 @@ package object dlm {
   type ExecutionRoleArn = String
   type Interval = Int
   type LifecyclePolicySummaryList = js.Array[LifecyclePolicySummary]
+  type NoReboot = Boolean
   type PolicyArn = String
   type PolicyDescription = String
   type PolicyId = String
@@ -403,6 +404,7 @@ package dlm {
   trait LifecyclePolicySummary extends js.Object {
     var Description: js.UndefOr[PolicyDescription]
     var PolicyId: js.UndefOr[PolicyId]
+    var PolicyType: js.UndefOr[PolicyTypeValues]
     var State: js.UndefOr[GettablePolicyStateValues]
     var Tags: js.UndefOr[TagMap]
   }
@@ -412,12 +414,14 @@ package dlm {
     def apply(
         Description: js.UndefOr[PolicyDescription] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
+        PolicyType: js.UndefOr[PolicyTypeValues] = js.undefined,
         State: js.UndefOr[GettablePolicyStateValues] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): LifecyclePolicySummary = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicySummary]
@@ -462,15 +466,18 @@ package dlm {
   @js.native
   trait Parameters extends js.Object {
     var ExcludeBootVolume: js.UndefOr[ExcludeBootVolume]
+    var NoReboot: js.UndefOr[NoReboot]
   }
 
   object Parameters {
     @inline
     def apply(
-        ExcludeBootVolume: js.UndefOr[ExcludeBootVolume] = js.undefined
+        ExcludeBootVolume: js.UndefOr[ExcludeBootVolume] = js.undefined,
+        NoReboot: js.UndefOr[NoReboot] = js.undefined
     ): Parameters = {
       val __obj = js.Dynamic.literal()
       ExcludeBootVolume.foreach(__v => __obj.updateDynamic("ExcludeBootVolume")(__v.asInstanceOf[js.Any]))
+      NoReboot.foreach(__v => __obj.updateDynamic("NoReboot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Parameters]
     }
   }
@@ -509,8 +516,9 @@ package dlm {
   sealed trait PolicyTypeValues extends js.Any
   object PolicyTypeValues {
     val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
+    val IMAGE_MANAGEMENT = "IMAGE_MANAGEMENT".asInstanceOf[PolicyTypeValues]
 
-    @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT)
+    @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT)
   }
 
   @js.native

@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object elasticache {
+  type AccessString = String
   type AllowedNodeGroupId = String
   type AvailabilityZonesList = js.Array[String]
   type BooleanOptional = Boolean
@@ -26,7 +27,12 @@ package object elasticache {
   type ClusterIdList = js.Array[String]
   type CustomerNodeEndpointList = js.Array[CustomerNodeEndpoint]
   type EC2SecurityGroupList = js.Array[EC2SecurityGroup]
+  type EngineType = String
   type EventList = js.Array[Event]
+  type FilterList = js.Array[Filter]
+  type FilterName = String
+  type FilterValue = String
+  type FilterValueList = js.Array[FilterValue]
   type GlobalNodeGroupIdList = js.Array[String]
   type GlobalNodeGroupList = js.Array[GlobalNodeGroup]
   type GlobalReplicationGroupList = js.Array[GlobalReplicationGroup]
@@ -42,9 +48,12 @@ package object elasticache {
   type NodeGroupsToRetainList = js.Array[AllowedNodeGroupId]
   type NodeSnapshotList = js.Array[NodeSnapshot]
   type NodeTypeList = js.Array[String]
+  type OutpostArnsList = js.Array[String]
   type ParameterNameValueList = js.Array[ParameterNameValue]
   type ParametersList = js.Array[Parameter]
+  type PasswordListInput = js.Array[String]
   type PreferredAvailabilityZoneList = js.Array[String]
+  type PreferredOutpostArnList = js.Array[String]
   type ProcessedUpdateActionList = js.Array[ProcessedUpdateAction]
   type RecurringChargeList = js.Array[RecurringCharge]
   type RegionalConfigurationList = js.Array[RegionalConfiguration]
@@ -52,6 +61,7 @@ package object elasticache {
   type ReplicaConfigurationList = js.Array[ConfigureShard]
   type ReplicationGroupIdList = js.Array[String]
   type ReplicationGroupList = js.Array[ReplicationGroup]
+  type ReplicationGroupOutpostArnList = js.Array[String]
   type ReservedCacheNodeList = js.Array[ReservedCacheNode]
   type ReservedCacheNodesOfferingList = js.Array[ReservedCacheNodesOffering]
   type ReshardingConfigurationList = js.Array[ReshardingConfiguration]
@@ -65,9 +75,19 @@ package object elasticache {
   type SubnetList = js.Array[Subnet]
   type TStamp = js.Date
   type TagList = js.Array[Tag]
+  type UGReplicationGroupIdList = js.Array[String]
   type UnprocessedUpdateActionList = js.Array[UnprocessedUpdateAction]
   type UpdateActionList = js.Array[UpdateAction]
   type UpdateActionStatusList = js.Array[UpdateActionStatus]
+  type UserGroupId = String
+  type UserGroupIdList = js.Array[UserGroupId]
+  type UserGroupIdListInput = js.Array[UserGroupId]
+  type UserGroupList = js.Array[UserGroup]
+  type UserId = String
+  type UserIdList = js.Array[UserId]
+  type UserIdListInput = js.Array[UserId]
+  type UserList = js.Array[User]
+  type UserName = String
 
   implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
 
@@ -84,6 +104,8 @@ package object elasticache {
     @inline def createGlobalReplicationGroupFuture(params: CreateGlobalReplicationGroupMessage): Future[CreateGlobalReplicationGroupResult] = service.createGlobalReplicationGroup(params).promise().toFuture
     @inline def createReplicationGroupFuture(params: CreateReplicationGroupMessage): Future[CreateReplicationGroupResult] = service.createReplicationGroup(params).promise().toFuture
     @inline def createSnapshotFuture(params: CreateSnapshotMessage): Future[CreateSnapshotResult] = service.createSnapshot(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserMessage): Future[User] = service.createUser(params).promise().toFuture
+    @inline def createUserGroupFuture(params: CreateUserGroupMessage): Future[UserGroup] = service.createUserGroup(params).promise().toFuture
     @inline def decreaseNodeGroupsInGlobalReplicationGroupFuture(params: DecreaseNodeGroupsInGlobalReplicationGroupMessage): Future[DecreaseNodeGroupsInGlobalReplicationGroupResult] = service.decreaseNodeGroupsInGlobalReplicationGroup(params).promise().toFuture
     @inline def decreaseReplicaCountFuture(params: DecreaseReplicaCountMessage): Future[DecreaseReplicaCountResult] = service.decreaseReplicaCount(params).promise().toFuture
     @inline def deleteCacheClusterFuture(params: DeleteCacheClusterMessage): Future[DeleteCacheClusterResult] = service.deleteCacheCluster(params).promise().toFuture
@@ -93,6 +115,8 @@ package object elasticache {
     @inline def deleteGlobalReplicationGroupFuture(params: DeleteGlobalReplicationGroupMessage): Future[DeleteGlobalReplicationGroupResult] = service.deleteGlobalReplicationGroup(params).promise().toFuture
     @inline def deleteReplicationGroupFuture(params: DeleteReplicationGroupMessage): Future[DeleteReplicationGroupResult] = service.deleteReplicationGroup(params).promise().toFuture
     @inline def deleteSnapshotFuture(params: DeleteSnapshotMessage): Future[DeleteSnapshotResult] = service.deleteSnapshot(params).promise().toFuture
+    @inline def deleteUserFuture(params: DeleteUserMessage): Future[User] = service.deleteUser(params).promise().toFuture
+    @inline def deleteUserGroupFuture(params: DeleteUserGroupMessage): Future[UserGroup] = service.deleteUserGroup(params).promise().toFuture
     @inline def describeCacheClustersFuture(params: DescribeCacheClustersMessage): Future[CacheClusterMessage] = service.describeCacheClusters(params).promise().toFuture
     @inline def describeCacheEngineVersionsFuture(params: DescribeCacheEngineVersionsMessage): Future[CacheEngineVersionMessage] = service.describeCacheEngineVersions(params).promise().toFuture
     @inline def describeCacheParameterGroupsFuture(params: DescribeCacheParameterGroupsMessage): Future[CacheParameterGroupsMessage] = service.describeCacheParameterGroups(params).promise().toFuture
@@ -108,6 +132,8 @@ package object elasticache {
     @inline def describeServiceUpdatesFuture(params: DescribeServiceUpdatesMessage): Future[ServiceUpdatesMessage] = service.describeServiceUpdates(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsMessage): Future[DescribeSnapshotsListMessage] = service.describeSnapshots(params).promise().toFuture
     @inline def describeUpdateActionsFuture(params: DescribeUpdateActionsMessage): Future[UpdateActionsMessage] = service.describeUpdateActions(params).promise().toFuture
+    @inline def describeUserGroupsFuture(params: DescribeUserGroupsMessage): Future[DescribeUserGroupsResult] = service.describeUserGroups(params).promise().toFuture
+    @inline def describeUsersFuture(params: DescribeUsersMessage): Future[DescribeUsersResult] = service.describeUsers(params).promise().toFuture
     @inline def disassociateGlobalReplicationGroupFuture(params: DisassociateGlobalReplicationGroupMessage): Future[DisassociateGlobalReplicationGroupResult] = service.disassociateGlobalReplicationGroup(params).promise().toFuture
     @inline def failoverGlobalReplicationGroupFuture(params: FailoverGlobalReplicationGroupMessage): Future[FailoverGlobalReplicationGroupResult] = service.failoverGlobalReplicationGroup(params).promise().toFuture
     @inline def increaseNodeGroupsInGlobalReplicationGroupFuture(params: IncreaseNodeGroupsInGlobalReplicationGroupMessage): Future[IncreaseNodeGroupsInGlobalReplicationGroupResult] = service.increaseNodeGroupsInGlobalReplicationGroup(params).promise().toFuture
@@ -120,6 +146,8 @@ package object elasticache {
     @inline def modifyGlobalReplicationGroupFuture(params: ModifyGlobalReplicationGroupMessage): Future[ModifyGlobalReplicationGroupResult] = service.modifyGlobalReplicationGroup(params).promise().toFuture
     @inline def modifyReplicationGroupFuture(params: ModifyReplicationGroupMessage): Future[ModifyReplicationGroupResult] = service.modifyReplicationGroup(params).promise().toFuture
     @inline def modifyReplicationGroupShardConfigurationFuture(params: ModifyReplicationGroupShardConfigurationMessage): Future[ModifyReplicationGroupShardConfigurationResult] = service.modifyReplicationGroupShardConfiguration(params).promise().toFuture
+    @inline def modifyUserFuture(params: ModifyUserMessage): Future[User] = service.modifyUser(params).promise().toFuture
+    @inline def modifyUserGroupFuture(params: ModifyUserGroupMessage): Future[UserGroup] = service.modifyUserGroup(params).promise().toFuture
     @inline def purchaseReservedCacheNodesOfferingFuture(params: PurchaseReservedCacheNodesOfferingMessage): Future[PurchaseReservedCacheNodesOfferingResult] = service.purchaseReservedCacheNodesOffering(params).promise().toFuture
     @inline def rebalanceSlotsInGlobalReplicationGroupFuture(params: RebalanceSlotsInGlobalReplicationGroupMessage): Future[RebalanceSlotsInGlobalReplicationGroupResult] = service.rebalanceSlotsInGlobalReplicationGroup(params).promise().toFuture
     @inline def rebootCacheClusterFuture(params: RebootCacheClusterMessage): Future[RebootCacheClusterResult] = service.rebootCacheCluster(params).promise().toFuture
@@ -151,6 +179,8 @@ package elasticache {
     def createGlobalReplicationGroup(params: CreateGlobalReplicationGroupMessage): Request[CreateGlobalReplicationGroupResult] = js.native
     def createReplicationGroup(params: CreateReplicationGroupMessage): Request[CreateReplicationGroupResult] = js.native
     def createSnapshot(params: CreateSnapshotMessage): Request[CreateSnapshotResult] = js.native
+    def createUser(params: CreateUserMessage): Request[User] = js.native
+    def createUserGroup(params: CreateUserGroupMessage): Request[UserGroup] = js.native
     def decreaseNodeGroupsInGlobalReplicationGroup(params: DecreaseNodeGroupsInGlobalReplicationGroupMessage): Request[DecreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
     def decreaseReplicaCount(params: DecreaseReplicaCountMessage): Request[DecreaseReplicaCountResult] = js.native
     def deleteCacheCluster(params: DeleteCacheClusterMessage): Request[DeleteCacheClusterResult] = js.native
@@ -160,6 +190,8 @@ package elasticache {
     def deleteGlobalReplicationGroup(params: DeleteGlobalReplicationGroupMessage): Request[DeleteGlobalReplicationGroupResult] = js.native
     def deleteReplicationGroup(params: DeleteReplicationGroupMessage): Request[DeleteReplicationGroupResult] = js.native
     def deleteSnapshot(params: DeleteSnapshotMessage): Request[DeleteSnapshotResult] = js.native
+    def deleteUser(params: DeleteUserMessage): Request[User] = js.native
+    def deleteUserGroup(params: DeleteUserGroupMessage): Request[UserGroup] = js.native
     def describeCacheClusters(params: DescribeCacheClustersMessage): Request[CacheClusterMessage] = js.native
     def describeCacheEngineVersions(params: DescribeCacheEngineVersionsMessage): Request[CacheEngineVersionMessage] = js.native
     def describeCacheParameterGroups(params: DescribeCacheParameterGroupsMessage): Request[CacheParameterGroupsMessage] = js.native
@@ -175,6 +207,8 @@ package elasticache {
     def describeServiceUpdates(params: DescribeServiceUpdatesMessage): Request[ServiceUpdatesMessage] = js.native
     def describeSnapshots(params: DescribeSnapshotsMessage): Request[DescribeSnapshotsListMessage] = js.native
     def describeUpdateActions(params: DescribeUpdateActionsMessage): Request[UpdateActionsMessage] = js.native
+    def describeUserGroups(params: DescribeUserGroupsMessage): Request[DescribeUserGroupsResult] = js.native
+    def describeUsers(params: DescribeUsersMessage): Request[DescribeUsersResult] = js.native
     def disassociateGlobalReplicationGroup(params: DisassociateGlobalReplicationGroupMessage): Request[DisassociateGlobalReplicationGroupResult] = js.native
     def failoverGlobalReplicationGroup(params: FailoverGlobalReplicationGroupMessage): Request[FailoverGlobalReplicationGroupResult] = js.native
     def increaseNodeGroupsInGlobalReplicationGroup(params: IncreaseNodeGroupsInGlobalReplicationGroupMessage): Request[IncreaseNodeGroupsInGlobalReplicationGroupResult] = js.native
@@ -187,6 +221,8 @@ package elasticache {
     def modifyGlobalReplicationGroup(params: ModifyGlobalReplicationGroupMessage): Request[ModifyGlobalReplicationGroupResult] = js.native
     def modifyReplicationGroup(params: ModifyReplicationGroupMessage): Request[ModifyReplicationGroupResult] = js.native
     def modifyReplicationGroupShardConfiguration(params: ModifyReplicationGroupShardConfigurationMessage): Request[ModifyReplicationGroupShardConfigurationResult] = js.native
+    def modifyUser(params: ModifyUserMessage): Request[User] = js.native
+    def modifyUserGroup(params: ModifyUserGroupMessage): Request[UserGroup] = js.native
     def purchaseReservedCacheNodesOffering(params: PurchaseReservedCacheNodesOfferingMessage): Request[PurchaseReservedCacheNodesOfferingResult] = js.native
     def rebalanceSlotsInGlobalReplicationGroup(params: RebalanceSlotsInGlobalReplicationGroupMessage): Request[RebalanceSlotsInGlobalReplicationGroupResult] = js.native
     def rebootCacheCluster(params: RebootCacheClusterMessage): Request[RebootCacheClusterResult] = js.native
@@ -263,8 +299,39 @@ package elasticache {
   object AuthTokenUpdateStrategyType {
     val SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
     val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
+    val DELETE = "DELETE".asInstanceOf[AuthTokenUpdateStrategyType]
 
-    @inline def values = js.Array(SET, ROTATE)
+    @inline def values = js.Array(SET, ROTATE, DELETE)
+  }
+
+  /** Indicates whether the user requires a password to authenticate.
+    */
+  @js.native
+  trait Authentication extends js.Object {
+    var PasswordCount: js.UndefOr[IntegerOptional]
+    var Type: js.UndefOr[AuthenticationType]
+  }
+
+  object Authentication {
+    @inline
+    def apply(
+        PasswordCount: js.UndefOr[IntegerOptional] = js.undefined,
+        Type: js.UndefOr[AuthenticationType] = js.undefined
+    ): Authentication = {
+      val __obj = js.Dynamic.literal()
+      PasswordCount.foreach(__v => __obj.updateDynamic("PasswordCount")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Authentication]
+    }
+  }
+
+  @js.native
+  sealed trait AuthenticationType extends js.Any
+  object AuthenticationType {
+    val password = "password".asInstanceOf[AuthenticationType]
+    val `no-password` = "no-password".asInstanceOf[AuthenticationType]
+
+    @inline def values = js.Array(password, `no-password`)
   }
 
   /** Represents the input of an AuthorizeCacheSecurityGroupIngress operation.
@@ -411,6 +478,7 @@ package elasticache {
     var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
     var PreferredAvailabilityZone: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PreferredOutpostArn: js.UndefOr[String]
     var ReplicationGroupId: js.UndefOr[String]
     var SecurityGroups: js.UndefOr[SecurityGroupMembershipList]
     var SnapshotRetentionLimit: js.UndefOr[IntegerOptional]
@@ -443,6 +511,7 @@ package elasticache {
         PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
         PreferredAvailabilityZone: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        PreferredOutpostArn: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroupMembershipList] = js.undefined,
         SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
@@ -472,6 +541,7 @@ package elasticache {
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      PreferredOutpostArn.foreach(__v => __obj.updateDynamic("PreferredOutpostArn")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
@@ -555,24 +625,32 @@ package elasticache {
 
   /** Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.
     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
-    * * General purpose:
+    * <li> General purpose:
     * <li> Current generation:
+    * ```M6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).
+    * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+    *
+    * '''Note:'''At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
     * ```M5 node types:``` <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
     * ```M4 node types:``` <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
     * ```T3 node types:``` <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>
     * ```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
-    * * Previous generation: (not recommended)
+    * </li> * Previous generation: (not recommended)
     * ```T1 node types:``` <code>cache.t1.micro</code>
     * ```M1 node types:``` <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
     * ```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
     * </li> * Compute optimized:
     * <li> Previous generation: (not recommended)
     * ```C1 node types:``` <code>cache.c1.xlarge</code>
-    * </li> * Memory optimized:
+    * </li> <li> Memory optimized:
     * <li> Current generation:
+    * ```R6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).
+    * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+    *
+    * '''Note:'''At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
     * ```R5 node types:``` <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
     * ```R4 node types:``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
-    * * Previous generation: (not recommended)
+    * </li> * Previous generation: (not recommended)
     * ```M2 node types:``` <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
     * ```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
     * </li>```Additional node type info```
@@ -587,6 +665,7 @@ package elasticache {
     var CacheNodeId: js.UndefOr[String]
     var CacheNodeStatus: js.UndefOr[String]
     var CustomerAvailabilityZone: js.UndefOr[String]
+    var CustomerOutpostArn: js.UndefOr[String]
     var Endpoint: js.UndefOr[Endpoint]
     var ParameterGroupStatus: js.UndefOr[String]
     var SourceCacheNodeId: js.UndefOr[String]
@@ -599,6 +678,7 @@ package elasticache {
         CacheNodeId: js.UndefOr[String] = js.undefined,
         CacheNodeStatus: js.UndefOr[String] = js.undefined,
         CustomerAvailabilityZone: js.UndefOr[String] = js.undefined,
+        CustomerOutpostArn: js.UndefOr[String] = js.undefined,
         Endpoint: js.UndefOr[Endpoint] = js.undefined,
         ParameterGroupStatus: js.UndefOr[String] = js.undefined,
         SourceCacheNodeId: js.UndefOr[String] = js.undefined
@@ -608,6 +688,7 @@ package elasticache {
       CacheNodeId.foreach(__v => __obj.updateDynamic("CacheNodeId")(__v.asInstanceOf[js.Any]))
       CacheNodeStatus.foreach(__v => __obj.updateDynamic("CacheNodeStatus")(__v.asInstanceOf[js.Any]))
       CustomerAvailabilityZone.foreach(__v => __obj.updateDynamic("CustomerAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CustomerOutpostArn.foreach(__v => __obj.updateDynamic("CustomerOutpostArn")(__v.asInstanceOf[js.Any]))
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       ParameterGroupStatus.foreach(__v => __obj.updateDynamic("ParameterGroupStatus")(__v.asInstanceOf[js.Any]))
       SourceCacheNodeId.foreach(__v => __obj.updateDynamic("SourceCacheNodeId")(__v.asInstanceOf[js.Any]))
@@ -1017,6 +1098,7 @@ package elasticache {
     var NewReplicaCount: Int
     var NodeGroupId: AllowedNodeGroupId
     var PreferredAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList]
+    var PreferredOutpostArns: js.UndefOr[PreferredOutpostArnList]
   }
 
   object ConfigureShard {
@@ -1024,7 +1106,8 @@ package elasticache {
     def apply(
         NewReplicaCount: Int,
         NodeGroupId: AllowedNodeGroupId,
-        PreferredAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList] = js.undefined
+        PreferredAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList] = js.undefined,
+        PreferredOutpostArns: js.UndefOr[PreferredOutpostArnList] = js.undefined
     ): ConfigureShard = {
       val __obj = js.Dynamic.literal(
         "NewReplicaCount" -> NewReplicaCount.asInstanceOf[js.Any],
@@ -1032,6 +1115,7 @@ package elasticache {
       )
 
       PreferredAvailabilityZones.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any]))
+      PreferredOutpostArns.foreach(__v => __obj.updateDynamic("PreferredOutpostArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigureShard]
     }
   }
@@ -1097,10 +1181,13 @@ package elasticache {
     var EngineVersion: js.UndefOr[String]
     var NotificationTopicArn: js.UndefOr[String]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
+    var OutpostMode: js.UndefOr[OutpostMode]
     var Port: js.UndefOr[IntegerOptional]
     var PreferredAvailabilityZone: js.UndefOr[String]
     var PreferredAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList]
     var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PreferredOutpostArn: js.UndefOr[String]
+    var PreferredOutpostArns: js.UndefOr[PreferredOutpostArnList]
     var ReplicationGroupId: js.UndefOr[String]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIdsList]
     var SnapshotArns: js.UndefOr[SnapshotArnsList]
@@ -1125,10 +1212,13 @@ package elasticache {
         EngineVersion: js.UndefOr[String] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        OutpostMode: js.UndefOr[OutpostMode] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredAvailabilityZone: js.UndefOr[String] = js.undefined,
         PreferredAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        PreferredOutpostArn: js.UndefOr[String] = js.undefined,
+        PreferredOutpostArns: js.UndefOr[PreferredOutpostArnList] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIdsList] = js.undefined,
         SnapshotArns: js.UndefOr[SnapshotArnsList] = js.undefined,
@@ -1152,10 +1242,13 @@ package elasticache {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
+      OutpostMode.foreach(__v => __obj.updateDynamic("OutpostMode")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
       PreferredAvailabilityZones.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZones")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      PreferredOutpostArn.foreach(__v => __obj.updateDynamic("PreferredOutpostArn")(__v.asInstanceOf[js.Any]))
+      PreferredOutpostArns.foreach(__v => __obj.updateDynamic("PreferredOutpostArns")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotArns.foreach(__v => __obj.updateDynamic("SnapshotArns")(__v.asInstanceOf[js.Any]))
@@ -1378,6 +1471,7 @@ package elasticache {
     var SnapshotWindow: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var TransitEncryptionEnabled: js.UndefOr[BooleanOptional]
+    var UserGroupIds: js.UndefOr[UserGroupIdListInput]
   }
 
   object CreateReplicationGroupMessage {
@@ -1413,7 +1507,8 @@ package elasticache {
         SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotWindow: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
-        TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined
+        TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        UserGroupIds: js.UndefOr[UserGroupIdListInput] = js.undefined
     ): CreateReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationGroupDescription" -> ReplicationGroupDescription.asInstanceOf[js.Any],
@@ -1449,6 +1544,7 @@ package elasticache {
       SnapshotWindow.foreach(__v => __obj.updateDynamic("SnapshotWindow")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TransitEncryptionEnabled.foreach(__v => __obj.updateDynamic("TransitEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      UserGroupIds.foreach(__v => __obj.updateDynamic("UserGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationGroupMessage]
     }
   }
@@ -1511,6 +1607,63 @@ package elasticache {
       val __obj = js.Dynamic.literal()
       Snapshot.foreach(__v => __obj.updateDynamic("Snapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait CreateUserGroupMessage extends js.Object {
+    var Engine: EngineType
+    var UserGroupId: String
+    var UserIds: js.UndefOr[UserIdListInput]
+  }
+
+  object CreateUserGroupMessage {
+    @inline
+    def apply(
+        Engine: EngineType,
+        UserGroupId: String,
+        UserIds: js.UndefOr[UserIdListInput] = js.undefined
+    ): CreateUserGroupMessage = {
+      val __obj = js.Dynamic.literal(
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "UserGroupId" -> UserGroupId.asInstanceOf[js.Any]
+      )
+
+      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserGroupMessage]
+    }
+  }
+
+  @js.native
+  trait CreateUserMessage extends js.Object {
+    var AccessString: AccessString
+    var Engine: EngineType
+    var UserId: UserId
+    var UserName: UserName
+    var NoPasswordRequired: js.UndefOr[BooleanOptional]
+    var Passwords: js.UndefOr[PasswordListInput]
+  }
+
+  object CreateUserMessage {
+    @inline
+    def apply(
+        AccessString: AccessString,
+        Engine: EngineType,
+        UserId: UserId,
+        UserName: UserName,
+        NoPasswordRequired: js.UndefOr[BooleanOptional] = js.undefined,
+        Passwords: js.UndefOr[PasswordListInput] = js.undefined
+    ): CreateUserMessage = {
+      val __obj = js.Dynamic.literal(
+        "AccessString" -> AccessString.asInstanceOf[js.Any],
+        "Engine" -> Engine.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      )
+
+      NoPasswordRequired.foreach(__v => __obj.updateDynamic("NoPasswordRequired")(__v.asInstanceOf[js.Any]))
+      Passwords.foreach(__v => __obj.updateDynamic("Passwords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserMessage]
     }
   }
 
@@ -1833,6 +1986,40 @@ package elasticache {
       val __obj = js.Dynamic.literal()
       Snapshot.foreach(__v => __obj.updateDynamic("Snapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSnapshotResult]
+    }
+  }
+
+  @js.native
+  trait DeleteUserGroupMessage extends js.Object {
+    var UserGroupId: String
+  }
+
+  object DeleteUserGroupMessage {
+    @inline
+    def apply(
+        UserGroupId: String
+    ): DeleteUserGroupMessage = {
+      val __obj = js.Dynamic.literal(
+        "UserGroupId" -> UserGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteUserGroupMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteUserMessage extends js.Object {
+    var UserId: UserId
+  }
+
+  object DeleteUserMessage {
+    @inline
+    def apply(
+        UserId: UserId
+    ): DeleteUserMessage = {
+      val __obj = js.Dynamic.literal(
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteUserMessage]
     }
   }
 
@@ -2347,6 +2534,94 @@ package elasticache {
   }
 
   @js.native
+  trait DescribeUserGroupsMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var UserGroupId: js.UndefOr[String]
+  }
+
+  object DescribeUserGroupsMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        UserGroupId: js.UndefOr[String] = js.undefined
+    ): DescribeUserGroupsMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      UserGroupId.foreach(__v => __obj.updateDynamic("UserGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUserGroupsMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeUserGroupsResult extends js.Object {
+    var Marker: js.UndefOr[String]
+    var UserGroups: js.UndefOr[UserGroupList]
+  }
+
+  object DescribeUserGroupsResult {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        UserGroups: js.UndefOr[UserGroupList] = js.undefined
+    ): DescribeUserGroupsResult = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      UserGroups.foreach(__v => __obj.updateDynamic("UserGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUserGroupsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeUsersMessage extends js.Object {
+    var Engine: js.UndefOr[EngineType]
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var UserId: js.UndefOr[UserId]
+  }
+
+  object DescribeUsersMessage {
+    @inline
+    def apply(
+        Engine: js.UndefOr[EngineType] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        UserId: js.UndefOr[UserId] = js.undefined
+    ): DescribeUsersMessage = {
+      val __obj = js.Dynamic.literal()
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsersMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeUsersResult extends js.Object {
+    var Marker: js.UndefOr[String]
+    var Users: js.UndefOr[UserList]
+  }
+
+  object DescribeUsersResult {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        Users: js.UndefOr[UserList] = js.undefined
+    ): DescribeUsersResult = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUsersResult]
+    }
+  }
+
+  @js.native
   trait DisassociateGlobalReplicationGroupMessage extends js.Object {
     var GlobalReplicationGroupId: String
     var ReplicationGroupId: String
@@ -2541,6 +2816,28 @@ package elasticache {
       val __obj = js.Dynamic.literal()
       GlobalReplicationGroup.foreach(__v => __obj.updateDynamic("GlobalReplicationGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailoverGlobalReplicationGroupResult]
+    }
+  }
+
+  /** Used to streamline results of a search based on the property being filtered.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var Name: FilterName
+    var Values: FilterValueList
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        Name: FilterName,
+        Values: FilterValueList
+    ): Filter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Filter]
     }
   }
 
@@ -3020,11 +3317,14 @@ package elasticache {
     var NotificationTopicStatus: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PrimaryClusterId: js.UndefOr[String]
+    var RemoveUserGroups: js.UndefOr[BooleanOptional]
     var ReplicationGroupDescription: js.UndefOr[String]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIdsList]
     var SnapshotRetentionLimit: js.UndefOr[IntegerOptional]
     var SnapshotWindow: js.UndefOr[String]
     var SnapshottingClusterId: js.UndefOr[String]
+    var UserGroupIdsToAdd: js.UndefOr[UserGroupIdList]
+    var UserGroupIdsToRemove: js.UndefOr[UserGroupIdList]
   }
 
   object ModifyReplicationGroupMessage {
@@ -3046,11 +3346,14 @@ package elasticache {
         NotificationTopicStatus: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PrimaryClusterId: js.UndefOr[String] = js.undefined,
+        RemoveUserGroups: js.UndefOr[BooleanOptional] = js.undefined,
         ReplicationGroupDescription: js.UndefOr[String] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIdsList] = js.undefined,
         SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotWindow: js.UndefOr[String] = js.undefined,
-        SnapshottingClusterId: js.UndefOr[String] = js.undefined
+        SnapshottingClusterId: js.UndefOr[String] = js.undefined,
+        UserGroupIdsToAdd: js.UndefOr[UserGroupIdList] = js.undefined,
+        UserGroupIdsToRemove: js.UndefOr[UserGroupIdList] = js.undefined
     ): ModifyReplicationGroupMessage = {
       val __obj = js.Dynamic.literal(
         "ReplicationGroupId" -> ReplicationGroupId.asInstanceOf[js.Any]
@@ -3071,11 +3374,14 @@ package elasticache {
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
+      RemoveUserGroups.foreach(__v => __obj.updateDynamic("RemoveUserGroups")(__v.asInstanceOf[js.Any]))
       ReplicationGroupDescription.foreach(__v => __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
       SnapshotWindow.foreach(__v => __obj.updateDynamic("SnapshotWindow")(__v.asInstanceOf[js.Any]))
       SnapshottingClusterId.foreach(__v => __obj.updateDynamic("SnapshottingClusterId")(__v.asInstanceOf[js.Any]))
+      UserGroupIdsToAdd.foreach(__v => __obj.updateDynamic("UserGroupIdsToAdd")(__v.asInstanceOf[js.Any]))
+      UserGroupIdsToRemove.foreach(__v => __obj.updateDynamic("UserGroupIdsToRemove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyReplicationGroupMessage]
     }
   }
@@ -3148,6 +3454,60 @@ package elasticache {
   }
 
   @js.native
+  trait ModifyUserGroupMessage extends js.Object {
+    var UserGroupId: String
+    var UserIdsToAdd: js.UndefOr[UserIdListInput]
+    var UserIdsToRemove: js.UndefOr[UserIdListInput]
+  }
+
+  object ModifyUserGroupMessage {
+    @inline
+    def apply(
+        UserGroupId: String,
+        UserIdsToAdd: js.UndefOr[UserIdListInput] = js.undefined,
+        UserIdsToRemove: js.UndefOr[UserIdListInput] = js.undefined
+    ): ModifyUserGroupMessage = {
+      val __obj = js.Dynamic.literal(
+        "UserGroupId" -> UserGroupId.asInstanceOf[js.Any]
+      )
+
+      UserIdsToAdd.foreach(__v => __obj.updateDynamic("UserIdsToAdd")(__v.asInstanceOf[js.Any]))
+      UserIdsToRemove.foreach(__v => __obj.updateDynamic("UserIdsToRemove")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyUserGroupMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyUserMessage extends js.Object {
+    var UserId: UserId
+    var AccessString: js.UndefOr[AccessString]
+    var AppendAccessString: js.UndefOr[AccessString]
+    var NoPasswordRequired: js.UndefOr[BooleanOptional]
+    var Passwords: js.UndefOr[PasswordListInput]
+  }
+
+  object ModifyUserMessage {
+    @inline
+    def apply(
+        UserId: UserId,
+        AccessString: js.UndefOr[AccessString] = js.undefined,
+        AppendAccessString: js.UndefOr[AccessString] = js.undefined,
+        NoPasswordRequired: js.UndefOr[BooleanOptional] = js.undefined,
+        Passwords: js.UndefOr[PasswordListInput] = js.undefined
+    ): ModifyUserMessage = {
+      val __obj = js.Dynamic.literal(
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
+
+      AccessString.foreach(__v => __obj.updateDynamic("AccessString")(__v.asInstanceOf[js.Any]))
+      AppendAccessString.foreach(__v => __obj.updateDynamic("AppendAccessString")(__v.asInstanceOf[js.Any]))
+      NoPasswordRequired.foreach(__v => __obj.updateDynamic("NoPasswordRequired")(__v.asInstanceOf[js.Any]))
+      Passwords.foreach(__v => __obj.updateDynamic("Passwords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyUserMessage]
+    }
+  }
+
+  @js.native
   sealed trait MultiAZStatus extends js.Any
   object MultiAZStatus {
     val enabled = "enabled".asInstanceOf[MultiAZStatus]
@@ -3195,8 +3555,10 @@ package elasticache {
   trait NodeGroupConfiguration extends js.Object {
     var NodeGroupId: js.UndefOr[AllowedNodeGroupId]
     var PrimaryAvailabilityZone: js.UndefOr[String]
+    var PrimaryOutpostArn: js.UndefOr[String]
     var ReplicaAvailabilityZones: js.UndefOr[AvailabilityZonesList]
     var ReplicaCount: js.UndefOr[IntegerOptional]
+    var ReplicaOutpostArns: js.UndefOr[OutpostArnsList]
     var Slots: js.UndefOr[String]
   }
 
@@ -3205,15 +3567,19 @@ package elasticache {
     def apply(
         NodeGroupId: js.UndefOr[AllowedNodeGroupId] = js.undefined,
         PrimaryAvailabilityZone: js.UndefOr[String] = js.undefined,
+        PrimaryOutpostArn: js.UndefOr[String] = js.undefined,
         ReplicaAvailabilityZones: js.UndefOr[AvailabilityZonesList] = js.undefined,
         ReplicaCount: js.UndefOr[IntegerOptional] = js.undefined,
+        ReplicaOutpostArns: js.UndefOr[OutpostArnsList] = js.undefined,
         Slots: js.UndefOr[String] = js.undefined
     ): NodeGroupConfiguration = {
       val __obj = js.Dynamic.literal()
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
       PrimaryAvailabilityZone.foreach(__v => __obj.updateDynamic("PrimaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      PrimaryOutpostArn.foreach(__v => __obj.updateDynamic("PrimaryOutpostArn")(__v.asInstanceOf[js.Any]))
       ReplicaAvailabilityZones.foreach(__v => __obj.updateDynamic("ReplicaAvailabilityZones")(__v.asInstanceOf[js.Any]))
       ReplicaCount.foreach(__v => __obj.updateDynamic("ReplicaCount")(__v.asInstanceOf[js.Any]))
+      ReplicaOutpostArns.foreach(__v => __obj.updateDynamic("ReplicaOutpostArns")(__v.asInstanceOf[js.Any]))
       Slots.foreach(__v => __obj.updateDynamic("Slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroupConfiguration]
     }
@@ -3227,6 +3593,7 @@ package elasticache {
     var CacheNodeId: js.UndefOr[String]
     var CurrentRole: js.UndefOr[String]
     var PreferredAvailabilityZone: js.UndefOr[String]
+    var PreferredOutpostArn: js.UndefOr[String]
     var ReadEndpoint: js.UndefOr[Endpoint]
   }
 
@@ -3237,6 +3604,7 @@ package elasticache {
         CacheNodeId: js.UndefOr[String] = js.undefined,
         CurrentRole: js.UndefOr[String] = js.undefined,
         PreferredAvailabilityZone: js.UndefOr[String] = js.undefined,
+        PreferredOutpostArn: js.UndefOr[String] = js.undefined,
         ReadEndpoint: js.UndefOr[Endpoint] = js.undefined
     ): NodeGroupMember = {
       val __obj = js.Dynamic.literal()
@@ -3244,6 +3612,7 @@ package elasticache {
       CacheNodeId.foreach(__v => __obj.updateDynamic("CacheNodeId")(__v.asInstanceOf[js.Any]))
       CurrentRole.foreach(__v => __obj.updateDynamic("CurrentRole")(__v.asInstanceOf[js.Any]))
       PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      PreferredOutpostArn.foreach(__v => __obj.updateDynamic("PreferredOutpostArn")(__v.asInstanceOf[js.Any]))
       ReadEndpoint.foreach(__v => __obj.updateDynamic("ReadEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeGroupMember]
     }
@@ -3389,6 +3758,15 @@ package elasticache {
       TopicStatus.foreach(__v => __obj.updateDynamic("TopicStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationConfiguration]
     }
+  }
+
+  @js.native
+  sealed trait OutpostMode extends js.Any
+  object OutpostMode {
+    val `single-outpost` = "single-outpost".asInstanceOf[OutpostMode]
+    val `cross-outpost` = "cross-outpost".asInstanceOf[OutpostMode]
+
+    @inline def values = js.Array(`single-outpost`, `cross-outpost`)
   }
 
   /** Describes an individual setting that controls some aspect of ElastiCache behavior.
@@ -3720,6 +4098,7 @@ package elasticache {
     var GlobalReplicationGroupInfo: js.UndefOr[GlobalReplicationGroupInfo]
     var KmsKeyId: js.UndefOr[String]
     var MemberClusters: js.UndefOr[ClusterIdList]
+    var MemberClustersOutpostArns: js.UndefOr[ReplicationGroupOutpostArnList]
     var MultiAZ: js.UndefOr[MultiAZStatus]
     var NodeGroups: js.UndefOr[NodeGroupList]
     var PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues]
@@ -3729,6 +4108,7 @@ package elasticache {
     var SnapshottingClusterId: js.UndefOr[String]
     var Status: js.UndefOr[String]
     var TransitEncryptionEnabled: js.UndefOr[BooleanOptional]
+    var UserGroupIds: js.UndefOr[UserGroupIdList]
   }
 
   object ReplicationGroup {
@@ -3746,6 +4126,7 @@ package elasticache {
         GlobalReplicationGroupInfo: js.UndefOr[GlobalReplicationGroupInfo] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         MemberClusters: js.UndefOr[ClusterIdList] = js.undefined,
+        MemberClustersOutpostArns: js.UndefOr[ReplicationGroupOutpostArnList] = js.undefined,
         MultiAZ: js.UndefOr[MultiAZStatus] = js.undefined,
         NodeGroups: js.UndefOr[NodeGroupList] = js.undefined,
         PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues] = js.undefined,
@@ -3754,7 +4135,8 @@ package elasticache {
         SnapshotWindow: js.UndefOr[String] = js.undefined,
         SnapshottingClusterId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
-        TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined
+        TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        UserGroupIds: js.UndefOr[UserGroupIdList] = js.undefined
     ): ReplicationGroup = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
@@ -3769,6 +4151,7 @@ package elasticache {
       GlobalReplicationGroupInfo.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupInfo")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MemberClusters.foreach(__v => __obj.updateDynamic("MemberClusters")(__v.asInstanceOf[js.Any]))
+      MemberClustersOutpostArns.foreach(__v => __obj.updateDynamic("MemberClustersOutpostArns")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       NodeGroups.foreach(__v => __obj.updateDynamic("NodeGroups")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
@@ -3778,6 +4161,7 @@ package elasticache {
       SnapshottingClusterId.foreach(__v => __obj.updateDynamic("SnapshottingClusterId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TransitEncryptionEnabled.foreach(__v => __obj.updateDynamic("TransitEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      UserGroupIds.foreach(__v => __obj.updateDynamic("UserGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationGroup]
     }
   }
@@ -3811,6 +4195,7 @@ package elasticache {
     var AutomaticFailoverStatus: js.UndefOr[PendingAutomaticFailoverStatus]
     var PrimaryClusterId: js.UndefOr[String]
     var Resharding: js.UndefOr[ReshardingStatus]
+    var UserGroups: js.UndefOr[UserGroupsUpdateStatus]
   }
 
   object ReplicationGroupPendingModifiedValues {
@@ -3819,13 +4204,15 @@ package elasticache {
         AuthTokenStatus: js.UndefOr[AuthTokenUpdateStatus] = js.undefined,
         AutomaticFailoverStatus: js.UndefOr[PendingAutomaticFailoverStatus] = js.undefined,
         PrimaryClusterId: js.UndefOr[String] = js.undefined,
-        Resharding: js.UndefOr[ReshardingStatus] = js.undefined
+        Resharding: js.UndefOr[ReshardingStatus] = js.undefined,
+        UserGroups: js.UndefOr[UserGroupsUpdateStatus] = js.undefined
     ): ReplicationGroupPendingModifiedValues = {
       val __obj = js.Dynamic.literal()
       AuthTokenStatus.foreach(__v => __obj.updateDynamic("AuthTokenStatus")(__v.asInstanceOf[js.Any]))
       AutomaticFailoverStatus.foreach(__v => __obj.updateDynamic("AutomaticFailoverStatus")(__v.asInstanceOf[js.Any]))
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
       Resharding.foreach(__v => __obj.updateDynamic("Resharding")(__v.asInstanceOf[js.Any]))
+      UserGroups.foreach(__v => __obj.updateDynamic("UserGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationGroupPendingModifiedValues]
     }
   }
@@ -4240,6 +4627,7 @@ package elasticache {
     var Port: js.UndefOr[IntegerOptional]
     var PreferredAvailabilityZone: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
+    var PreferredOutpostArn: js.UndefOr[String]
     var ReplicationGroupDescription: js.UndefOr[String]
     var ReplicationGroupId: js.UndefOr[String]
     var SnapshotName: js.UndefOr[String]
@@ -4271,6 +4659,7 @@ package elasticache {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredAvailabilityZone: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        PreferredOutpostArn: js.UndefOr[String] = js.undefined,
         ReplicationGroupDescription: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined,
         SnapshotName: js.UndefOr[String] = js.undefined,
@@ -4299,6 +4688,7 @@ package elasticache {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredAvailabilityZone.foreach(__v => __obj.updateDynamic("PreferredAvailabilityZone")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      PreferredOutpostArn.foreach(__v => __obj.updateDynamic("PreferredOutpostArn")(__v.asInstanceOf[js.Any]))
       ReplicationGroupDescription.foreach(__v => __obj.updateDynamic("ReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
       SnapshotName.foreach(__v => __obj.updateDynamic("SnapshotName")(__v.asInstanceOf[js.Any]))
@@ -4320,8 +4710,10 @@ package elasticache {
     val `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
     val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
     val `replication-group` = "replication-group".asInstanceOf[SourceType]
+    val user = "user".asInstanceOf[SourceType]
+    val `user-group` = "user-group".asInstanceOf[SourceType]
 
-    @inline def values = js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`)
+    @inline def values = js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`, user, `user-group`)
   }
 
   @js.native
@@ -4366,18 +4758,39 @@ package elasticache {
   trait Subnet extends js.Object {
     var SubnetAvailabilityZone: js.UndefOr[AvailabilityZone]
     var SubnetIdentifier: js.UndefOr[String]
+    var SubnetOutpost: js.UndefOr[SubnetOutpost]
   }
 
   object Subnet {
     @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-        SubnetIdentifier: js.UndefOr[String] = js.undefined
+        SubnetIdentifier: js.UndefOr[String] = js.undefined,
+        SubnetOutpost: js.UndefOr[SubnetOutpost] = js.undefined
     ): Subnet = {
       val __obj = js.Dynamic.literal()
       SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
       SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
+      SubnetOutpost.foreach(__v => __obj.updateDynamic("SubnetOutpost")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subnet]
+    }
+  }
+
+  /** The ID of the outpost subnet.
+    */
+  @js.native
+  trait SubnetOutpost extends js.Object {
+    var SubnetOutpostArn: js.UndefOr[String]
+  }
+
+  object SubnetOutpost {
+    @inline
+    def apply(
+        SubnetOutpostArn: js.UndefOr[String] = js.undefined
+    ): SubnetOutpost = {
+      val __obj = js.Dynamic.literal()
+      SubnetOutpostArn.foreach(__v => __obj.updateDynamic("SubnetOutpostArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubnetOutpost]
     }
   }
 
@@ -4624,6 +5037,119 @@ package elasticache {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       UpdateActions.foreach(__v => __obj.updateDynamic("UpdateActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateActionsMessage]
+    }
+  }
+
+  @js.native
+  trait User extends js.Object {
+    var ARN: js.UndefOr[String]
+    var AccessString: js.UndefOr[String]
+    var Authentication: js.UndefOr[Authentication]
+    var Engine: js.UndefOr[EngineType]
+    var Status: js.UndefOr[String]
+    var UserGroupIds: js.UndefOr[UserGroupIdList]
+    var UserId: js.UndefOr[String]
+    var UserName: js.UndefOr[String]
+  }
+
+  object User {
+    @inline
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        AccessString: js.UndefOr[String] = js.undefined,
+        Authentication: js.UndefOr[Authentication] = js.undefined,
+        Engine: js.UndefOr[EngineType] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        UserGroupIds: js.UndefOr[UserGroupIdList] = js.undefined,
+        UserId: js.UndefOr[String] = js.undefined,
+        UserName: js.UndefOr[String] = js.undefined
+    ): User = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      AccessString.foreach(__v => __obj.updateDynamic("AccessString")(__v.asInstanceOf[js.Any]))
+      Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UserGroupIds.foreach(__v => __obj.updateDynamic("UserGroupIds")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[User]
+    }
+  }
+
+  @js.native
+  trait UserGroup extends js.Object {
+    var ARN: js.UndefOr[String]
+    var Engine: js.UndefOr[EngineType]
+    var PendingChanges: js.UndefOr[UserGroupPendingChanges]
+    var ReplicationGroups: js.UndefOr[UGReplicationGroupIdList]
+    var Status: js.UndefOr[String]
+    var UserGroupId: js.UndefOr[String]
+    var UserIds: js.UndefOr[UserIdList]
+  }
+
+  object UserGroup {
+    @inline
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        Engine: js.UndefOr[EngineType] = js.undefined,
+        PendingChanges: js.UndefOr[UserGroupPendingChanges] = js.undefined,
+        ReplicationGroups: js.UndefOr[UGReplicationGroupIdList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        UserGroupId: js.UndefOr[String] = js.undefined,
+        UserIds: js.UndefOr[UserIdList] = js.undefined
+    ): UserGroup = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      PendingChanges.foreach(__v => __obj.updateDynamic("PendingChanges")(__v.asInstanceOf[js.Any]))
+      ReplicationGroups.foreach(__v => __obj.updateDynamic("ReplicationGroups")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UserGroupId.foreach(__v => __obj.updateDynamic("UserGroupId")(__v.asInstanceOf[js.Any]))
+      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserGroup]
+    }
+  }
+
+  /** Returns the updates being applied to the user group.
+    */
+  @js.native
+  trait UserGroupPendingChanges extends js.Object {
+    var UserIdsToAdd: js.UndefOr[UserIdList]
+    var UserIdsToRemove: js.UndefOr[UserIdList]
+  }
+
+  object UserGroupPendingChanges {
+    @inline
+    def apply(
+        UserIdsToAdd: js.UndefOr[UserIdList] = js.undefined,
+        UserIdsToRemove: js.UndefOr[UserIdList] = js.undefined
+    ): UserGroupPendingChanges = {
+      val __obj = js.Dynamic.literal()
+      UserIdsToAdd.foreach(__v => __obj.updateDynamic("UserIdsToAdd")(__v.asInstanceOf[js.Any]))
+      UserIdsToRemove.foreach(__v => __obj.updateDynamic("UserIdsToRemove")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserGroupPendingChanges]
+    }
+  }
+
+  /** The status of the user group update.
+    */
+  @js.native
+  trait UserGroupsUpdateStatus extends js.Object {
+    var UserGroupIdsToAdd: js.UndefOr[UserGroupIdList]
+    var UserGroupIdsToRemove: js.UndefOr[UserGroupIdList]
+  }
+
+  object UserGroupsUpdateStatus {
+    @inline
+    def apply(
+        UserGroupIdsToAdd: js.UndefOr[UserGroupIdList] = js.undefined,
+        UserGroupIdsToRemove: js.UndefOr[UserGroupIdList] = js.undefined
+    ): UserGroupsUpdateStatus = {
+      val __obj = js.Dynamic.literal()
+      UserGroupIdsToAdd.foreach(__v => __obj.updateDynamic("UserGroupIdsToAdd")(__v.asInstanceOf[js.Any]))
+      UserGroupIdsToRemove.foreach(__v => __obj.updateDynamic("UserGroupIdsToRemove")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserGroupsUpdateStatus]
     }
   }
 }

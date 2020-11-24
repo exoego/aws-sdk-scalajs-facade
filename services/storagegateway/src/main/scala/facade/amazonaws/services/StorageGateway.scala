@@ -13,6 +13,7 @@ package object storagegateway {
   type AutomaticTapeCreationPolicyInfos = js.Array[AutomaticTapeCreationPolicyInfo]
   type AutomaticTapeCreationRules = js.Array[AutomaticTapeCreationRule]
   type BandwidthDownloadRateLimit = Double
+  type BandwidthRateLimitIntervals = js.Array[BandwidthRateLimitInterval]
   type BandwidthType = String
   type BandwidthUploadRateLimit = Double
   type CacheStaleTimeoutInSeconds = Int
@@ -24,6 +25,7 @@ package object storagegateway {
   type CreatedDate = js.Date
   type DayOfMonth = Int
   type DayOfWeek = Int
+  type DaysOfWeek = js.Array[DayOfWeek]
   type DeprecationDate = String
   type Description = String
   type DeviceType = String
@@ -79,16 +81,22 @@ package object storagegateway {
   type NetworkInterfaceId = String
   type NextUpdateAvailabilityDate = String
   type NotificationId = String
+  type NotificationPolicy = String
   type NumTapesToCreate = Int
   type OrganizationalUnit = String
   type Path = String
   type PermissionId = Double
   type PermissionMode = String
+  type PoolARN = String
+  type PoolARNs = js.Array[PoolARN]
   type PoolId = String
+  type PoolInfos = js.Array[PoolInfo]
+  type PoolName = String
   type PositiveIntObject = Int
   type RecurrenceInHours = Int
   type RegionId = String
   type ResourceARN = String
+  type RetentionLockTimeInDays = Int
   type Role = String
   type SMBFileShareInfoList = js.Array[SMBFileShareInfo]
   type SMBGuestPassword = String
@@ -154,6 +162,7 @@ package object storagegateway {
     @inline def createSnapshotFromVolumeRecoveryPointFuture(params: CreateSnapshotFromVolumeRecoveryPointInput): Future[CreateSnapshotFromVolumeRecoveryPointOutput] = service.createSnapshotFromVolumeRecoveryPoint(params).promise().toFuture
     @inline def createSnapshotFuture(params: CreateSnapshotInput): Future[CreateSnapshotOutput] = service.createSnapshot(params).promise().toFuture
     @inline def createStorediSCSIVolumeFuture(params: CreateStorediSCSIVolumeInput): Future[CreateStorediSCSIVolumeOutput] = service.createStorediSCSIVolume(params).promise().toFuture
+    @inline def createTapePoolFuture(params: CreateTapePoolInput): Future[CreateTapePoolOutput] = service.createTapePool(params).promise().toFuture
     @inline def createTapeWithBarcodeFuture(params: CreateTapeWithBarcodeInput): Future[CreateTapeWithBarcodeOutput] = service.createTapeWithBarcode(params).promise().toFuture
     @inline def createTapesFuture(params: CreateTapesInput): Future[CreateTapesOutput] = service.createTapes(params).promise().toFuture
     @inline def deleteAutomaticTapeCreationPolicyFuture(params: DeleteAutomaticTapeCreationPolicyInput): Future[DeleteAutomaticTapeCreationPolicyOutput] = service.deleteAutomaticTapeCreationPolicy(params).promise().toFuture
@@ -164,9 +173,11 @@ package object storagegateway {
     @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleInput): Future[DeleteSnapshotScheduleOutput] = service.deleteSnapshotSchedule(params).promise().toFuture
     @inline def deleteTapeArchiveFuture(params: DeleteTapeArchiveInput): Future[DeleteTapeArchiveOutput] = service.deleteTapeArchive(params).promise().toFuture
     @inline def deleteTapeFuture(params: DeleteTapeInput): Future[DeleteTapeOutput] = service.deleteTape(params).promise().toFuture
+    @inline def deleteTapePoolFuture(params: DeleteTapePoolInput): Future[DeleteTapePoolOutput] = service.deleteTapePool(params).promise().toFuture
     @inline def deleteVolumeFuture(params: DeleteVolumeInput): Future[DeleteVolumeOutput] = service.deleteVolume(params).promise().toFuture
     @inline def describeAvailabilityMonitorTestFuture(params: DescribeAvailabilityMonitorTestInput): Future[DescribeAvailabilityMonitorTestOutput] = service.describeAvailabilityMonitorTest(params).promise().toFuture
     @inline def describeBandwidthRateLimitFuture(params: DescribeBandwidthRateLimitInput): Future[DescribeBandwidthRateLimitOutput] = service.describeBandwidthRateLimit(params).promise().toFuture
+    @inline def describeBandwidthRateLimitScheduleFuture(params: DescribeBandwidthRateLimitScheduleInput): Future[DescribeBandwidthRateLimitScheduleOutput] = service.describeBandwidthRateLimitSchedule(params).promise().toFuture
     @inline def describeCacheFuture(params: DescribeCacheInput): Future[DescribeCacheOutput] = service.describeCache(params).promise().toFuture
     @inline def describeCachediSCSIVolumesFuture(params: DescribeCachediSCSIVolumesInput): Future[DescribeCachediSCSIVolumesOutput] = service.describeCachediSCSIVolumes(params).promise().toFuture
     @inline def describeChapCredentialsFuture(params: DescribeChapCredentialsInput): Future[DescribeChapCredentialsOutput] = service.describeChapCredentials(params).promise().toFuture
@@ -191,6 +202,7 @@ package object storagegateway {
     @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] = service.listGateways(params).promise().toFuture
     @inline def listLocalDisksFuture(params: ListLocalDisksInput): Future[ListLocalDisksOutput] = service.listLocalDisks(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTapePoolsFuture(params: ListTapePoolsInput): Future[ListTapePoolsOutput] = service.listTapePools(params).promise().toFuture
     @inline def listTapesFuture(params: ListTapesInput): Future[ListTapesOutput] = service.listTapes(params).promise().toFuture
     @inline def listVolumeInitiatorsFuture(params: ListVolumeInitiatorsInput): Future[ListVolumeInitiatorsOutput] = service.listVolumeInitiators(params).promise().toFuture
     @inline def listVolumeRecoveryPointsFuture(params: ListVolumeRecoveryPointsInput): Future[ListVolumeRecoveryPointsOutput] = service.listVolumeRecoveryPoints(params).promise().toFuture
@@ -208,12 +220,14 @@ package object storagegateway {
     @inline def startGatewayFuture(params: StartGatewayInput): Future[StartGatewayOutput] = service.startGateway(params).promise().toFuture
     @inline def updateAutomaticTapeCreationPolicyFuture(params: UpdateAutomaticTapeCreationPolicyInput): Future[UpdateAutomaticTapeCreationPolicyOutput] = service.updateAutomaticTapeCreationPolicy(params).promise().toFuture
     @inline def updateBandwidthRateLimitFuture(params: UpdateBandwidthRateLimitInput): Future[UpdateBandwidthRateLimitOutput] = service.updateBandwidthRateLimit(params).promise().toFuture
+    @inline def updateBandwidthRateLimitScheduleFuture(params: UpdateBandwidthRateLimitScheduleInput): Future[UpdateBandwidthRateLimitScheduleOutput] = service.updateBandwidthRateLimitSchedule(params).promise().toFuture
     @inline def updateChapCredentialsFuture(params: UpdateChapCredentialsInput): Future[UpdateChapCredentialsOutput] = service.updateChapCredentials(params).promise().toFuture
     @inline def updateGatewayInformationFuture(params: UpdateGatewayInformationInput): Future[UpdateGatewayInformationOutput] = service.updateGatewayInformation(params).promise().toFuture
     @inline def updateGatewaySoftwareNowFuture(params: UpdateGatewaySoftwareNowInput): Future[UpdateGatewaySoftwareNowOutput] = service.updateGatewaySoftwareNow(params).promise().toFuture
     @inline def updateMaintenanceStartTimeFuture(params: UpdateMaintenanceStartTimeInput): Future[UpdateMaintenanceStartTimeOutput] = service.updateMaintenanceStartTime(params).promise().toFuture
     @inline def updateNFSFileShareFuture(params: UpdateNFSFileShareInput): Future[UpdateNFSFileShareOutput] = service.updateNFSFileShare(params).promise().toFuture
     @inline def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] = service.updateSMBFileShare(params).promise().toFuture
+    @inline def updateSMBFileShareVisibilityFuture(params: UpdateSMBFileShareVisibilityInput): Future[UpdateSMBFileShareVisibilityOutput] = service.updateSMBFileShareVisibility(params).promise().toFuture
     @inline def updateSMBSecurityStrategyFuture(params: UpdateSMBSecurityStrategyInput): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise().toFuture
     @inline def updateSnapshotScheduleFuture(params: UpdateSnapshotScheduleInput): Future[UpdateSnapshotScheduleOutput] = service.updateSnapshotSchedule(params).promise().toFuture
     @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] = service.updateVTLDeviceType(params).promise().toFuture
@@ -242,6 +256,7 @@ package storagegateway {
     def createSnapshot(params: CreateSnapshotInput): Request[CreateSnapshotOutput] = js.native
     def createSnapshotFromVolumeRecoveryPoint(params: CreateSnapshotFromVolumeRecoveryPointInput): Request[CreateSnapshotFromVolumeRecoveryPointOutput] = js.native
     def createStorediSCSIVolume(params: CreateStorediSCSIVolumeInput): Request[CreateStorediSCSIVolumeOutput] = js.native
+    def createTapePool(params: CreateTapePoolInput): Request[CreateTapePoolOutput] = js.native
     def createTapeWithBarcode(params: CreateTapeWithBarcodeInput): Request[CreateTapeWithBarcodeOutput] = js.native
     def createTapes(params: CreateTapesInput): Request[CreateTapesOutput] = js.native
     def deleteAutomaticTapeCreationPolicy(params: DeleteAutomaticTapeCreationPolicyInput): Request[DeleteAutomaticTapeCreationPolicyOutput] = js.native
@@ -252,9 +267,11 @@ package storagegateway {
     def deleteSnapshotSchedule(params: DeleteSnapshotScheduleInput): Request[DeleteSnapshotScheduleOutput] = js.native
     def deleteTape(params: DeleteTapeInput): Request[DeleteTapeOutput] = js.native
     def deleteTapeArchive(params: DeleteTapeArchiveInput): Request[DeleteTapeArchiveOutput] = js.native
+    def deleteTapePool(params: DeleteTapePoolInput): Request[DeleteTapePoolOutput] = js.native
     def deleteVolume(params: DeleteVolumeInput): Request[DeleteVolumeOutput] = js.native
     def describeAvailabilityMonitorTest(params: DescribeAvailabilityMonitorTestInput): Request[DescribeAvailabilityMonitorTestOutput] = js.native
     def describeBandwidthRateLimit(params: DescribeBandwidthRateLimitInput): Request[DescribeBandwidthRateLimitOutput] = js.native
+    def describeBandwidthRateLimitSchedule(params: DescribeBandwidthRateLimitScheduleInput): Request[DescribeBandwidthRateLimitScheduleOutput] = js.native
     def describeCache(params: DescribeCacheInput): Request[DescribeCacheOutput] = js.native
     def describeCachediSCSIVolumes(params: DescribeCachediSCSIVolumesInput): Request[DescribeCachediSCSIVolumesOutput] = js.native
     def describeChapCredentials(params: DescribeChapCredentialsInput): Request[DescribeChapCredentialsOutput] = js.native
@@ -279,6 +296,7 @@ package storagegateway {
     def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput] = js.native
     def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
+    def listTapePools(params: ListTapePoolsInput): Request[ListTapePoolsOutput] = js.native
     def listTapes(params: ListTapesInput): Request[ListTapesOutput] = js.native
     def listVolumeInitiators(params: ListVolumeInitiatorsInput): Request[ListVolumeInitiatorsOutput] = js.native
     def listVolumeRecoveryPoints(params: ListVolumeRecoveryPointsInput): Request[ListVolumeRecoveryPointsOutput] = js.native
@@ -296,12 +314,14 @@ package storagegateway {
     def startGateway(params: StartGatewayInput): Request[StartGatewayOutput] = js.native
     def updateAutomaticTapeCreationPolicy(params: UpdateAutomaticTapeCreationPolicyInput): Request[UpdateAutomaticTapeCreationPolicyOutput] = js.native
     def updateBandwidthRateLimit(params: UpdateBandwidthRateLimitInput): Request[UpdateBandwidthRateLimitOutput] = js.native
+    def updateBandwidthRateLimitSchedule(params: UpdateBandwidthRateLimitScheduleInput): Request[UpdateBandwidthRateLimitScheduleOutput] = js.native
     def updateChapCredentials(params: UpdateChapCredentialsInput): Request[UpdateChapCredentialsOutput] = js.native
     def updateGatewayInformation(params: UpdateGatewayInformationInput): Request[UpdateGatewayInformationOutput] = js.native
     def updateGatewaySoftwareNow(params: UpdateGatewaySoftwareNowInput): Request[UpdateGatewaySoftwareNowOutput] = js.native
     def updateMaintenanceStartTime(params: UpdateMaintenanceStartTimeInput): Request[UpdateMaintenanceStartTimeOutput] = js.native
     def updateNFSFileShare(params: UpdateNFSFileShareInput): Request[UpdateNFSFileShareOutput] = js.native
     def updateSMBFileShare(params: UpdateSMBFileShareInput): Request[UpdateSMBFileShareOutput] = js.native
+    def updateSMBFileShareVisibility(params: UpdateSMBFileShareVisibilityInput): Request[UpdateSMBFileShareVisibilityOutput] = js.native
     def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] = js.native
     def updateSnapshotSchedule(params: UpdateSnapshotScheduleInput): Request[UpdateSnapshotScheduleOutput] = js.native
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
@@ -542,18 +562,22 @@ package storagegateway {
   trait AssignTapePoolInput extends js.Object {
     var PoolId: PoolId
     var TapeARN: TapeARN
+    var BypassGovernanceRetention: js.UndefOr[Boolean]
   }
 
   object AssignTapePoolInput {
     @inline
     def apply(
         PoolId: PoolId,
-        TapeARN: TapeARN
+        TapeARN: TapeARN,
+        BypassGovernanceRetention: js.UndefOr[Boolean] = js.undefined
     ): AssignTapePoolInput = {
       val __obj = js.Dynamic.literal(
         "PoolId" -> PoolId.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
+
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssignTapePoolInput]
     }
   }
@@ -644,7 +668,7 @@ package storagegateway {
     }
   }
 
-  /** An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes.
+  /** An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see [[https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically|Creating Tapes Automatically]].
     */
   @js.native
   trait AutomaticTapeCreationRule extends js.Object {
@@ -652,6 +676,7 @@ package storagegateway {
     var PoolId: PoolId
     var TapeBarcodePrefix: TapeBarcodePrefix
     var TapeSizeInBytes: TapeSize
+    var Worm: js.UndefOr[Boolean]
   }
 
   object AutomaticTapeCreationRule {
@@ -660,7 +685,8 @@ package storagegateway {
         MinimumNumTapes: MinimumNumTapes,
         PoolId: PoolId,
         TapeBarcodePrefix: TapeBarcodePrefix,
-        TapeSizeInBytes: TapeSize
+        TapeSizeInBytes: TapeSize,
+        Worm: js.UndefOr[Boolean] = js.undefined
     ): AutomaticTapeCreationRule = {
       val __obj = js.Dynamic.literal(
         "MinimumNumTapes" -> MinimumNumTapes.asInstanceOf[js.Any],
@@ -668,6 +694,8 @@ package storagegateway {
         "TapeBarcodePrefix" -> TapeBarcodePrefix.asInstanceOf[js.Any],
         "TapeSizeInBytes" -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
+
+      Worm.foreach(__v => __obj.updateDynamic("Worm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutomaticTapeCreationRule]
     }
   }
@@ -680,6 +708,44 @@ package storagegateway {
     val PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
     @inline def values = js.Array(COMPLETE, FAILED, PENDING)
+  }
+
+  /** Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both.
+    */
+  @js.native
+  trait BandwidthRateLimitInterval extends js.Object {
+    var DaysOfWeek: DaysOfWeek
+    var EndHourOfDay: HourOfDay
+    var EndMinuteOfHour: MinuteOfHour
+    var StartHourOfDay: HourOfDay
+    var StartMinuteOfHour: MinuteOfHour
+    var AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit]
+    var AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit]
+  }
+
+  object BandwidthRateLimitInterval {
+    @inline
+    def apply(
+        DaysOfWeek: DaysOfWeek,
+        EndHourOfDay: HourOfDay,
+        EndMinuteOfHour: MinuteOfHour,
+        StartHourOfDay: HourOfDay,
+        StartMinuteOfHour: MinuteOfHour,
+        AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit] = js.undefined,
+        AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit] = js.undefined
+    ): BandwidthRateLimitInterval = {
+      val __obj = js.Dynamic.literal(
+        "DaysOfWeek" -> DaysOfWeek.asInstanceOf[js.Any],
+        "EndHourOfDay" -> EndHourOfDay.asInstanceOf[js.Any],
+        "EndMinuteOfHour" -> EndMinuteOfHour.asInstanceOf[js.Any],
+        "StartHourOfDay" -> StartHourOfDay.asInstanceOf[js.Any],
+        "StartMinuteOfHour" -> StartMinuteOfHour.asInstanceOf[js.Any]
+      )
+
+      AverageDownloadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
+      AverageUploadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BandwidthRateLimitInterval]
+    }
   }
 
   /** Lists refresh cache information.
@@ -940,6 +1006,7 @@ package storagegateway {
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults]
+    var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
@@ -962,6 +1029,7 @@ package storagegateway {
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
+        NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
@@ -983,6 +1051,7 @@ package storagegateway {
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       NFSFileShareDefaults.foreach(__v => __obj.updateDynamic("NFSFileShareDefaults")(__v.asInstanceOf[js.Any]))
+      NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
@@ -1014,6 +1083,7 @@ package storagegateway {
     var GatewayARN: GatewayARN
     var LocationARN: LocationARN
     var Role: Role
+    var AccessBasedEnumeration: js.UndefOr[Boolean]
     var AdminUserList: js.UndefOr[FileShareUserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
@@ -1025,6 +1095,7 @@ package storagegateway {
     var InvalidUserList: js.UndefOr[FileShareUserList]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
+    var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
@@ -1040,6 +1111,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         LocationARN: LocationARN,
         Role: Role,
+        AccessBasedEnumeration: js.UndefOr[Boolean] = js.undefined,
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
@@ -1051,6 +1123,7 @@ package storagegateway {
         InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
@@ -1065,6 +1138,7 @@ package storagegateway {
         "Role" -> Role.asInstanceOf[js.Any]
       )
 
+      AccessBasedEnumeration.foreach(__v => __obj.updateDynamic("AccessBasedEnumeration")(__v.asInstanceOf[js.Any]))
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
@@ -1076,6 +1150,7 @@ package storagegateway {
       InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
@@ -1271,6 +1346,52 @@ package storagegateway {
   }
 
   @js.native
+  trait CreateTapePoolInput extends js.Object {
+    var PoolName: PoolName
+    var StorageClass: TapeStorageClass
+    var RetentionLockTimeInDays: js.UndefOr[RetentionLockTimeInDays]
+    var RetentionLockType: js.UndefOr[RetentionLockType]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateTapePoolInput {
+    @inline
+    def apply(
+        PoolName: PoolName,
+        StorageClass: TapeStorageClass,
+        RetentionLockTimeInDays: js.UndefOr[RetentionLockTimeInDays] = js.undefined,
+        RetentionLockType: js.UndefOr[RetentionLockType] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateTapePoolInput = {
+      val __obj = js.Dynamic.literal(
+        "PoolName" -> PoolName.asInstanceOf[js.Any],
+        "StorageClass" -> StorageClass.asInstanceOf[js.Any]
+      )
+
+      RetentionLockTimeInDays.foreach(__v => __obj.updateDynamic("RetentionLockTimeInDays")(__v.asInstanceOf[js.Any]))
+      RetentionLockType.foreach(__v => __obj.updateDynamic("RetentionLockType")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTapePoolInput]
+    }
+  }
+
+  @js.native
+  trait CreateTapePoolOutput extends js.Object {
+    var PoolARN: js.UndefOr[PoolARN]
+  }
+
+  object CreateTapePoolOutput {
+    @inline
+    def apply(
+        PoolARN: js.UndefOr[PoolARN] = js.undefined
+    ): CreateTapePoolOutput = {
+      val __obj = js.Dynamic.literal()
+      PoolARN.foreach(__v => __obj.updateDynamic("PoolARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTapePoolOutput]
+    }
+  }
+
+  @js.native
   trait CreateTapeWithBarcodeInput extends js.Object {
     var GatewayARN: GatewayARN
     var TapeBarcode: TapeBarcode
@@ -1279,6 +1400,7 @@ package storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var PoolId: js.UndefOr[PoolId]
     var Tags: js.UndefOr[Tags]
+    var Worm: js.UndefOr[Boolean]
   }
 
   object CreateTapeWithBarcodeInput {
@@ -1290,7 +1412,8 @@ package storagegateway {
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        Worm: js.UndefOr[Boolean] = js.undefined
     ): CreateTapeWithBarcodeInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
@@ -1302,6 +1425,7 @@ package storagegateway {
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Worm.foreach(__v => __obj.updateDynamic("Worm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapeWithBarcodeInput]
     }
   }
@@ -1335,6 +1459,7 @@ package storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var PoolId: js.UndefOr[PoolId]
     var Tags: js.UndefOr[Tags]
+    var Worm: js.UndefOr[Boolean]
   }
 
   object CreateTapesInput {
@@ -1348,7 +1473,8 @@ package storagegateway {
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        Worm: js.UndefOr[Boolean] = js.undefined
     ): CreateTapesInput = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
@@ -1362,6 +1488,7 @@ package storagegateway {
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Worm.foreach(__v => __obj.updateDynamic("Worm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapesInput]
     }
   }
@@ -1613,16 +1740,20 @@ package storagegateway {
   @js.native
   trait DeleteTapeArchiveInput extends js.Object {
     var TapeARN: TapeARN
+    var BypassGovernanceRetention: js.UndefOr[Boolean]
   }
 
   object DeleteTapeArchiveInput {
     @inline
     def apply(
-        TapeARN: TapeARN
+        TapeARN: TapeARN,
+        BypassGovernanceRetention: js.UndefOr[Boolean] = js.undefined
     ): DeleteTapeArchiveInput = {
       val __obj = js.Dynamic.literal(
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
+
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTapeArchiveInput]
     }
   }
@@ -1647,18 +1778,22 @@ package storagegateway {
   trait DeleteTapeInput extends js.Object {
     var GatewayARN: GatewayARN
     var TapeARN: TapeARN
+    var BypassGovernanceRetention: js.UndefOr[Boolean]
   }
 
   object DeleteTapeInput {
     @inline
     def apply(
         GatewayARN: GatewayARN,
-        TapeARN: TapeARN
+        TapeARN: TapeARN,
+        BypassGovernanceRetention: js.UndefOr[Boolean] = js.undefined
     ): DeleteTapeInput = {
       val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
+
+      BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTapeInput]
     }
   }
@@ -1676,6 +1811,39 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTapeOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteTapePoolInput extends js.Object {
+    var PoolARN: PoolARN
+  }
+
+  object DeleteTapePoolInput {
+    @inline
+    def apply(
+        PoolARN: PoolARN
+    ): DeleteTapePoolInput = {
+      val __obj = js.Dynamic.literal(
+        "PoolARN" -> PoolARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteTapePoolInput]
+    }
+  }
+
+  @js.native
+  trait DeleteTapePoolOutput extends js.Object {
+    var PoolARN: js.UndefOr[PoolARN]
+  }
+
+  object DeleteTapePoolOutput {
+    @inline
+    def apply(
+        PoolARN: js.UndefOr[PoolARN] = js.undefined
+    ): DeleteTapePoolOutput = {
+      val __obj = js.Dynamic.literal()
+      PoolARN.foreach(__v => __obj.updateDynamic("PoolARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTapePoolOutput]
     }
   }
 
@@ -1795,6 +1963,42 @@ package storagegateway {
       AverageUploadRateLimitInBitsPerSec.foreach(__v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBandwidthRateLimitOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeBandwidthRateLimitScheduleInput extends js.Object {
+    var GatewayARN: GatewayARN
+  }
+
+  object DescribeBandwidthRateLimitScheduleInput {
+    @inline
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeBandwidthRateLimitScheduleInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeBandwidthRateLimitScheduleInput]
+    }
+  }
+
+  @js.native
+  trait DescribeBandwidthRateLimitScheduleOutput extends js.Object {
+    var BandwidthRateLimitIntervals: js.UndefOr[BandwidthRateLimitIntervals]
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object DescribeBandwidthRateLimitScheduleOutput {
+    @inline
+    def apply(
+        BandwidthRateLimitIntervals: js.UndefOr[BandwidthRateLimitIntervals] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DescribeBandwidthRateLimitScheduleOutput = {
+      val __obj = js.Dynamic.literal()
+      BandwidthRateLimitIntervals.foreach(__v => __obj.updateDynamic("BandwidthRateLimitIntervals")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBandwidthRateLimitScheduleOutput]
     }
   }
 
@@ -2153,6 +2357,7 @@ package storagegateway {
   trait DescribeSMBSettingsOutput extends js.Object {
     var ActiveDirectoryStatus: js.UndefOr[ActiveDirectoryStatus]
     var DomainName: js.UndefOr[DomainName]
+    var FileSharesVisible: js.UndefOr[Boolean]
     var GatewayARN: js.UndefOr[GatewayARN]
     var SMBGuestPasswordSet: js.UndefOr[Boolean]
     var SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy]
@@ -2163,6 +2368,7 @@ package storagegateway {
     def apply(
         ActiveDirectoryStatus: js.UndefOr[ActiveDirectoryStatus] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined,
+        FileSharesVisible: js.UndefOr[Boolean] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined,
         SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy] = js.undefined
@@ -2170,6 +2376,7 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       ActiveDirectoryStatus.foreach(__v => __obj.updateDynamic("ActiveDirectoryStatus")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      FileSharesVisible.foreach(__v => __obj.updateDynamic("FileSharesVisible")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       SMBGuestPasswordSet.foreach(__v => __obj.updateDynamic("SMBGuestPasswordSet")(__v.asInstanceOf[js.Any]))
       SMBSecurityStrategy.foreach(__v => __obj.updateDynamic("SMBSecurityStrategy")(__v.asInstanceOf[js.Any]))
@@ -3022,6 +3229,47 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait ListTapePoolsInput extends js.Object {
+    var Limit: js.UndefOr[PositiveIntObject]
+    var Marker: js.UndefOr[Marker]
+    var PoolARNs: js.UndefOr[PoolARNs]
+  }
+
+  object ListTapePoolsInput {
+    @inline
+    def apply(
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        PoolARNs: js.UndefOr[PoolARNs] = js.undefined
+    ): ListTapePoolsInput = {
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PoolARNs.foreach(__v => __obj.updateDynamic("PoolARNs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTapePoolsInput]
+    }
+  }
+
+  @js.native
+  trait ListTapePoolsOutput extends js.Object {
+    var Marker: js.UndefOr[Marker]
+    var PoolInfos: js.UndefOr[PoolInfos]
+  }
+
+  object ListTapePoolsOutput {
+    @inline
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        PoolInfos: js.UndefOr[PoolInfos] = js.undefined
+    ): ListTapePoolsOutput = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PoolInfos.foreach(__v => __obj.updateDynamic("PoolInfos")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTapePoolsOutput]
+    }
+  }
+
   /** A JSON object that contains one or more of the following fields:
     * * Limit
     * * Marker
@@ -3237,6 +3485,7 @@ package storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var LocationARN: js.UndefOr[LocationARN]
     var NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults]
+    var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
     var Path: js.UndefOr[Path]
     var ReadOnly: js.UndefOr[Boolean]
@@ -3262,6 +3511,7 @@ package storagegateway {
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         LocationARN: js.UndefOr[LocationARN] = js.undefined,
         NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
+        NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
@@ -3284,6 +3534,7 @@ package storagegateway {
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
       NFSFileShareDefaults.foreach(__v => __obj.updateDynamic("NFSFileShareDefaults")(__v.asInstanceOf[js.Any]))
+      NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
@@ -3369,6 +3620,48 @@ package storagegateway {
     val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
     @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`)
+  }
+
+  /** Describes a custom tape pool.
+    */
+  @js.native
+  trait PoolInfo extends js.Object {
+    var PoolARN: js.UndefOr[PoolARN]
+    var PoolName: js.UndefOr[PoolName]
+    var PoolStatus: js.UndefOr[PoolStatus]
+    var RetentionLockTimeInDays: js.UndefOr[RetentionLockTimeInDays]
+    var RetentionLockType: js.UndefOr[RetentionLockType]
+    var StorageClass: js.UndefOr[TapeStorageClass]
+  }
+
+  object PoolInfo {
+    @inline
+    def apply(
+        PoolARN: js.UndefOr[PoolARN] = js.undefined,
+        PoolName: js.UndefOr[PoolName] = js.undefined,
+        PoolStatus: js.UndefOr[PoolStatus] = js.undefined,
+        RetentionLockTimeInDays: js.UndefOr[RetentionLockTimeInDays] = js.undefined,
+        RetentionLockType: js.UndefOr[RetentionLockType] = js.undefined,
+        StorageClass: js.UndefOr[TapeStorageClass] = js.undefined
+    ): PoolInfo = {
+      val __obj = js.Dynamic.literal()
+      PoolARN.foreach(__v => __obj.updateDynamic("PoolARN")(__v.asInstanceOf[js.Any]))
+      PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
+      PoolStatus.foreach(__v => __obj.updateDynamic("PoolStatus")(__v.asInstanceOf[js.Any]))
+      RetentionLockTimeInDays.foreach(__v => __obj.updateDynamic("RetentionLockTimeInDays")(__v.asInstanceOf[js.Any]))
+      RetentionLockType.foreach(__v => __obj.updateDynamic("RetentionLockType")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PoolInfo]
+    }
+  }
+
+  @js.native
+  sealed trait PoolStatus extends js.Any
+  object PoolStatus {
+    val ACTIVE = "ACTIVE".asInstanceOf[PoolStatus]
+    val DELETED = "DELETED".asInstanceOf[PoolStatus]
+
+    @inline def values = js.Array(ACTIVE, DELETED)
   }
 
   @js.native
@@ -3484,6 +3777,16 @@ package storagegateway {
   }
 
   @js.native
+  sealed trait RetentionLockType extends js.Any
+  object RetentionLockType {
+    val COMPLIANCE = "COMPLIANCE".asInstanceOf[RetentionLockType]
+    val GOVERNANCE = "GOVERNANCE".asInstanceOf[RetentionLockType]
+    val NONE = "NONE".asInstanceOf[RetentionLockType]
+
+    @inline def values = js.Array(COMPLIANCE, GOVERNANCE, NONE)
+  }
+
+  @js.native
   trait RetrieveTapeArchiveInput extends js.Object {
     var GatewayARN: GatewayARN
     var TapeARN: TapeARN
@@ -3559,6 +3862,7 @@ package storagegateway {
     */
   @js.native
   trait SMBFileShareInfo extends js.Object {
+    var AccessBasedEnumeration: js.UndefOr[Boolean]
     var AdminUserList: js.UndefOr[FileShareUserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
@@ -3575,6 +3879,7 @@ package storagegateway {
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var LocationARN: js.UndefOr[LocationARN]
+    var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
     var Path: js.UndefOr[Path]
     var ReadOnly: js.UndefOr[Boolean]
@@ -3588,6 +3893,7 @@ package storagegateway {
   object SMBFileShareInfo {
     @inline
     def apply(
+        AccessBasedEnumeration: js.UndefOr[Boolean] = js.undefined,
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
@@ -3604,6 +3910,7 @@ package storagegateway {
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         LocationARN: js.UndefOr[LocationARN] = js.undefined,
+        NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
@@ -3614,6 +3921,7 @@ package storagegateway {
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): SMBFileShareInfo = {
       val __obj = js.Dynamic.literal()
+      AccessBasedEnumeration.foreach(__v => __obj.updateDynamic("AccessBasedEnumeration")(__v.asInstanceOf[js.Any]))
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
@@ -3630,6 +3938,7 @@ package storagegateway {
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
+      NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
@@ -3918,8 +4227,10 @@ package storagegateway {
   @js.native
   trait Tape extends js.Object {
     var KMSKey: js.UndefOr[KMSKey]
+    var PoolEntryDate: js.UndefOr[Time]
     var PoolId: js.UndefOr[PoolId]
     var Progress: js.UndefOr[DoubleObject]
+    var RetentionStartDate: js.UndefOr[Time]
     var TapeARN: js.UndefOr[TapeARN]
     var TapeBarcode: js.UndefOr[TapeBarcode]
     var TapeCreatedDate: js.UndefOr[Time]
@@ -3927,26 +4238,32 @@ package storagegateway {
     var TapeStatus: js.UndefOr[TapeStatus]
     var TapeUsedInBytes: js.UndefOr[TapeUsage]
     var VTLDevice: js.UndefOr[VTLDeviceARN]
+    var Worm: js.UndefOr[Boolean]
   }
 
   object Tape {
     @inline
     def apply(
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PoolEntryDate: js.UndefOr[Time] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
         Progress: js.UndefOr[DoubleObject] = js.undefined,
+        RetentionStartDate: js.UndefOr[Time] = js.undefined,
         TapeARN: js.UndefOr[TapeARN] = js.undefined,
         TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
         TapeCreatedDate: js.UndefOr[Time] = js.undefined,
         TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
         TapeStatus: js.UndefOr[TapeStatus] = js.undefined,
         TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined,
-        VTLDevice: js.UndefOr[VTLDeviceARN] = js.undefined
+        VTLDevice: js.UndefOr[VTLDeviceARN] = js.undefined,
+        Worm: js.UndefOr[Boolean] = js.undefined
     ): Tape = {
       val __obj = js.Dynamic.literal()
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PoolEntryDate.foreach(__v => __obj.updateDynamic("PoolEntryDate")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
       Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
+      RetentionStartDate.foreach(__v => __obj.updateDynamic("RetentionStartDate")(__v.asInstanceOf[js.Any]))
       TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       TapeBarcode.foreach(__v => __obj.updateDynamic("TapeBarcode")(__v.asInstanceOf[js.Any]))
       TapeCreatedDate.foreach(__v => __obj.updateDynamic("TapeCreatedDate")(__v.asInstanceOf[js.Any]))
@@ -3954,6 +4271,7 @@ package storagegateway {
       TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
       TapeUsedInBytes.foreach(__v => __obj.updateDynamic("TapeUsedInBytes")(__v.asInstanceOf[js.Any]))
       VTLDevice.foreach(__v => __obj.updateDynamic("VTLDevice")(__v.asInstanceOf[js.Any]))
+      Worm.foreach(__v => __obj.updateDynamic("Worm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tape]
     }
   }
@@ -3964,7 +4282,9 @@ package storagegateway {
   trait TapeArchive extends js.Object {
     var CompletionTime: js.UndefOr[Time]
     var KMSKey: js.UndefOr[KMSKey]
+    var PoolEntryDate: js.UndefOr[Time]
     var PoolId: js.UndefOr[PoolId]
+    var RetentionStartDate: js.UndefOr[Time]
     var RetrievedTo: js.UndefOr[GatewayARN]
     var TapeARN: js.UndefOr[TapeARN]
     var TapeBarcode: js.UndefOr[TapeBarcode]
@@ -3972,6 +4292,7 @@ package storagegateway {
     var TapeSizeInBytes: js.UndefOr[TapeSize]
     var TapeStatus: js.UndefOr[TapeArchiveStatus]
     var TapeUsedInBytes: js.UndefOr[TapeUsage]
+    var Worm: js.UndefOr[Boolean]
   }
 
   object TapeArchive {
@@ -3979,19 +4300,24 @@ package storagegateway {
     def apply(
         CompletionTime: js.UndefOr[Time] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PoolEntryDate: js.UndefOr[Time] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
+        RetentionStartDate: js.UndefOr[Time] = js.undefined,
         RetrievedTo: js.UndefOr[GatewayARN] = js.undefined,
         TapeARN: js.UndefOr[TapeARN] = js.undefined,
         TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
         TapeCreatedDate: js.UndefOr[Time] = js.undefined,
         TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
         TapeStatus: js.UndefOr[TapeArchiveStatus] = js.undefined,
-        TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined
+        TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined,
+        Worm: js.UndefOr[Boolean] = js.undefined
     ): TapeArchive = {
       val __obj = js.Dynamic.literal()
       CompletionTime.foreach(__v => __obj.updateDynamic("CompletionTime")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PoolEntryDate.foreach(__v => __obj.updateDynamic("PoolEntryDate")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      RetentionStartDate.foreach(__v => __obj.updateDynamic("RetentionStartDate")(__v.asInstanceOf[js.Any]))
       RetrievedTo.foreach(__v => __obj.updateDynamic("RetrievedTo")(__v.asInstanceOf[js.Any]))
       TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       TapeBarcode.foreach(__v => __obj.updateDynamic("TapeBarcode")(__v.asInstanceOf[js.Any]))
@@ -3999,6 +4325,7 @@ package storagegateway {
       TapeSizeInBytes.foreach(__v => __obj.updateDynamic("TapeSizeInBytes")(__v.asInstanceOf[js.Any]))
       TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
       TapeUsedInBytes.foreach(__v => __obj.updateDynamic("TapeUsedInBytes")(__v.asInstanceOf[js.Any]))
+      Worm.foreach(__v => __obj.updateDynamic("Worm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TapeArchive]
     }
   }
@@ -4008,7 +4335,9 @@ package storagegateway {
   @js.native
   trait TapeInfo extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
+    var PoolEntryDate: js.UndefOr[Time]
     var PoolId: js.UndefOr[PoolId]
+    var RetentionStartDate: js.UndefOr[Time]
     var TapeARN: js.UndefOr[TapeARN]
     var TapeBarcode: js.UndefOr[TapeBarcode]
     var TapeSizeInBytes: js.UndefOr[TapeSize]
@@ -4019,7 +4348,9 @@ package storagegateway {
     @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        PoolEntryDate: js.UndefOr[Time] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
+        RetentionStartDate: js.UndefOr[Time] = js.undefined,
         TapeARN: js.UndefOr[TapeARN] = js.undefined,
         TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
         TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
@@ -4027,7 +4358,9 @@ package storagegateway {
     ): TapeInfo = {
       val __obj = js.Dynamic.literal()
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      PoolEntryDate.foreach(__v => __obj.updateDynamic("PoolEntryDate")(__v.asInstanceOf[js.Any]))
       PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      RetentionStartDate.foreach(__v => __obj.updateDynamic("RetentionStartDate")(__v.asInstanceOf[js.Any]))
       TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       TapeBarcode.foreach(__v => __obj.updateDynamic("TapeBarcode")(__v.asInstanceOf[js.Any]))
       TapeSizeInBytes.foreach(__v => __obj.updateDynamic("TapeSizeInBytes")(__v.asInstanceOf[js.Any]))
@@ -4061,6 +4394,15 @@ package storagegateway {
       TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TapeRecoveryPointInfo]
     }
+  }
+
+  @js.native
+  sealed trait TapeStorageClass extends js.Any
+  object TapeStorageClass {
+    val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TapeStorageClass]
+    val GLACIER = "GLACIER".asInstanceOf[TapeStorageClass]
+
+    @inline def values = js.Array(DEEP_ARCHIVE, GLACIER)
   }
 
   @js.native
@@ -4142,6 +4484,42 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBandwidthRateLimitOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateBandwidthRateLimitScheduleInput extends js.Object {
+    var BandwidthRateLimitIntervals: BandwidthRateLimitIntervals
+    var GatewayARN: GatewayARN
+  }
+
+  object UpdateBandwidthRateLimitScheduleInput {
+    @inline
+    def apply(
+        BandwidthRateLimitIntervals: BandwidthRateLimitIntervals,
+        GatewayARN: GatewayARN
+    ): UpdateBandwidthRateLimitScheduleInput = {
+      val __obj = js.Dynamic.literal(
+        "BandwidthRateLimitIntervals" -> BandwidthRateLimitIntervals.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateBandwidthRateLimitScheduleInput]
+    }
+  }
+
+  @js.native
+  trait UpdateBandwidthRateLimitScheduleOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object UpdateBandwidthRateLimitScheduleOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateBandwidthRateLimitScheduleOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBandwidthRateLimitScheduleOutput]
     }
   }
 
@@ -4349,6 +4727,7 @@ package storagegateway {
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults]
+    var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
@@ -4367,6 +4746,7 @@ package storagegateway {
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
+        NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
@@ -4384,6 +4764,7 @@ package storagegateway {
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       NFSFileShareDefaults.foreach(__v => __obj.updateDynamic("NFSFileShareDefaults")(__v.asInstanceOf[js.Any]))
+      NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
@@ -4411,6 +4792,7 @@ package storagegateway {
   @js.native
   trait UpdateSMBFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
+    var AccessBasedEnumeration: js.UndefOr[Boolean]
     var AdminUserList: js.UndefOr[FileShareUserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var CacheAttributes: js.UndefOr[CacheAttributes]
@@ -4421,6 +4803,7 @@ package storagegateway {
     var InvalidUserList: js.UndefOr[FileShareUserList]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
+    var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
@@ -4432,6 +4815,7 @@ package storagegateway {
     @inline
     def apply(
         FileShareARN: FileShareARN,
+        AccessBasedEnumeration: js.UndefOr[Boolean] = js.undefined,
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
@@ -4442,6 +4826,7 @@ package storagegateway {
         InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
@@ -4452,6 +4837,7 @@ package storagegateway {
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
+      AccessBasedEnumeration.foreach(__v => __obj.updateDynamic("AccessBasedEnumeration")(__v.asInstanceOf[js.Any]))
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
@@ -4462,6 +4848,7 @@ package storagegateway {
       InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
       KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
@@ -4484,6 +4871,42 @@ package storagegateway {
       val __obj = js.Dynamic.literal()
       FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSMBFileShareOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateSMBFileShareVisibilityInput extends js.Object {
+    var FileSharesVisible: Boolean
+    var GatewayARN: GatewayARN
+  }
+
+  object UpdateSMBFileShareVisibilityInput {
+    @inline
+    def apply(
+        FileSharesVisible: Boolean,
+        GatewayARN: GatewayARN
+    ): UpdateSMBFileShareVisibilityInput = {
+      val __obj = js.Dynamic.literal(
+        "FileSharesVisible" -> FileSharesVisible.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateSMBFileShareVisibilityInput]
+    }
+  }
+
+  @js.native
+  trait UpdateSMBFileShareVisibilityOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object UpdateSMBFileShareVisibilityOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateSMBFileShareVisibilityOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSMBFileShareVisibilityOutput]
     }
   }
 

@@ -2104,7 +2104,56 @@ package ecs {
     @inline def values = js.Array(s3)
   }
 
-  /** A failed resource.
+  /** The authorization configuration details for Amazon FSx for Windows File Server file system. See [[https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html|FSxWindowsFileServerVolumeConfiguration]] in the <i>Amazon Elastic Container Service API Reference</i>.
+    * For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait FSxWindowsFileServerAuthorizationConfig extends js.Object {
+    var credentialsParameter: String
+    var domain: String
+  }
+
+  object FSxWindowsFileServerAuthorizationConfig {
+    @inline
+    def apply(
+        credentialsParameter: String,
+        domain: String
+    ): FSxWindowsFileServerAuthorizationConfig = {
+      val __obj = js.Dynamic.literal(
+        "credentialsParameter" -> credentialsParameter.asInstanceOf[js.Any],
+        "domain" -> domain.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FSxWindowsFileServerAuthorizationConfig]
+    }
+  }
+
+  /** This parameter is specified when you are using [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html|Amazon FSx for Windows File Server]] file system for task storage.
+    * For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait FSxWindowsFileServerVolumeConfiguration extends js.Object {
+    var authorizationConfig: FSxWindowsFileServerAuthorizationConfig
+    var fileSystemId: String
+    var rootDirectory: String
+  }
+
+  object FSxWindowsFileServerVolumeConfiguration {
+    @inline
+    def apply(
+        authorizationConfig: FSxWindowsFileServerAuthorizationConfig,
+        fileSystemId: String,
+        rootDirectory: String
+    ): FSxWindowsFileServerVolumeConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "authorizationConfig" -> authorizationConfig.asInstanceOf[js.Any],
+        "fileSystemId" -> fileSystemId.asInstanceOf[js.Any],
+        "rootDirectory" -> rootDirectory.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FSxWindowsFileServerVolumeConfiguration]
+    }
+  }
+
+  /** A failed resource. For a list of common causes, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html|API failure reasons]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait Failure extends js.Object {
@@ -2841,13 +2890,13 @@ package ecs {
     }
   }
 
-  /** The log configuration specification for the container.
-    * This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation.
+  /** The log configuration for the container. This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.
+    * By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information on the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation.
     * The following should be noted when specifying a log configuration for your containers:
     * * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.
     * * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.
-    * * For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS Container Agent Configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    * * For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
+    * * For tasks hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS container agent configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * * For tasks on AWS Fargate, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.
     */
   @js.native
   trait LogConfiguration extends js.Object {
@@ -4204,7 +4253,7 @@ package ecs {
     }
   }
 
-  /** A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--sysctl</code> option to [[https://docs.docker.com/engine/reference/run/|docker run]].
+  /** A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--sysctl</code> option to [[https://docs.docker.com/engine/reference/run/#security-configuration|docker run]].
     * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:
     * * For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.
     * * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
@@ -5084,12 +5133,13 @@ package ecs {
     }
   }
 
-  /** A data volume used in a task definition. For tasks that use Amazon Elastic File System (Amazon EFS) file storage, specify an <code>efsVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
+  /** A data volume used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
     */
   @js.native
   trait Volume extends js.Object {
     var dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration]
     var efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration]
+    var fsxWindowsFileServerVolumeConfiguration: js.UndefOr[FSxWindowsFileServerVolumeConfiguration]
     var host: js.UndefOr[HostVolumeProperties]
     var name: js.UndefOr[String]
   }
@@ -5099,12 +5149,14 @@ package ecs {
     def apply(
         dockerVolumeConfiguration: js.UndefOr[DockerVolumeConfiguration] = js.undefined,
         efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration] = js.undefined,
+        fsxWindowsFileServerVolumeConfiguration: js.UndefOr[FSxWindowsFileServerVolumeConfiguration] = js.undefined,
         host: js.UndefOr[HostVolumeProperties] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
       val __obj = js.Dynamic.literal()
       dockerVolumeConfiguration.foreach(__v => __obj.updateDynamic("dockerVolumeConfiguration")(__v.asInstanceOf[js.Any]))
       efsVolumeConfiguration.foreach(__v => __obj.updateDynamic("efsVolumeConfiguration")(__v.asInstanceOf[js.Any]))
+      fsxWindowsFileServerVolumeConfiguration.foreach(__v => __obj.updateDynamic("fsxWindowsFileServerVolumeConfiguration")(__v.asInstanceOf[js.Any]))
       host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Volume]

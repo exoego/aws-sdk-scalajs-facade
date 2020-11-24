@@ -405,6 +405,7 @@ package servicediscovery {
     var ServiceName: ServiceName
     var HealthStatus: js.UndefOr[HealthStatusFilter]
     var MaxResults: js.UndefOr[DiscoverMaxResults]
+    var OptionalParameters: js.UndefOr[Attributes]
     var QueryParameters: js.UndefOr[Attributes]
   }
 
@@ -415,6 +416,7 @@ package servicediscovery {
         ServiceName: ServiceName,
         HealthStatus: js.UndefOr[HealthStatusFilter] = js.undefined,
         MaxResults: js.UndefOr[DiscoverMaxResults] = js.undefined,
+        OptionalParameters: js.UndefOr[Attributes] = js.undefined,
         QueryParameters: js.UndefOr[Attributes] = js.undefined
     ): DiscoverInstancesRequest = {
       val __obj = js.Dynamic.literal(
@@ -424,6 +426,7 @@ package servicediscovery {
 
       HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      OptionalParameters.foreach(__v => __obj.updateDynamic("OptionalParameters")(__v.asInstanceOf[js.Any]))
       QueryParameters.foreach(__v => __obj.updateDynamic("QueryParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoverInstancesRequest]
     }

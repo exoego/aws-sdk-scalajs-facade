@@ -47,7 +47,9 @@ package object emr {
   type MetricDimensionList = js.Array[MetricDimension]
   type NewSupportedProductsList = js.Array[SupportedProductConfig]
   type NonNegativeDouble = Double
+  type NotebookExecutionSummaryList = js.Array[NotebookExecutionSummary]
   type OptionalArnType = String
+  type PlacementGroupConfigList = js.Array[PlacementGroupConfig]
   type Port = Int
   type PortRanges = js.Array[PortRange]
   type ResourceId = String
@@ -80,6 +82,7 @@ package object emr {
     @inline def createSecurityConfigurationFuture(params: CreateSecurityConfigurationInput): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise().toFuture
     @inline def deleteSecurityConfigurationFuture(params: DeleteSecurityConfigurationInput): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] = service.describeCluster(params).promise().toFuture
+    @inline def describeNotebookExecutionFuture(params: DescribeNotebookExecutionInput): Future[DescribeNotebookExecutionOutput] = service.describeNotebookExecution(params).promise().toFuture
     @inline def describeSecurityConfigurationFuture(params: DescribeSecurityConfigurationInput): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise().toFuture
     @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] = service.describeStep(params).promise().toFuture
     @inline def getBlockPublicAccessConfigurationFuture(params: GetBlockPublicAccessConfigurationInput): Future[GetBlockPublicAccessConfigurationOutput] = service.getBlockPublicAccessConfiguration(params).promise().toFuture
@@ -89,6 +92,7 @@ package object emr {
     @inline def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] = service.listInstanceFleets(params).promise().toFuture
     @inline def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] = service.listInstanceGroups(params).promise().toFuture
     @inline def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] = service.listInstances(params).promise().toFuture
+    @inline def listNotebookExecutionsFuture(params: ListNotebookExecutionsInput): Future[ListNotebookExecutionsOutput] = service.listNotebookExecutions(params).promise().toFuture
     @inline def listSecurityConfigurationsFuture(params: ListSecurityConfigurationsInput): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise().toFuture
     @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise().toFuture
     @inline def modifyClusterFuture(params: ModifyClusterInput): Future[ModifyClusterOutput] = service.modifyCluster(params).promise().toFuture
@@ -103,6 +107,8 @@ package object emr {
     @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] = service.runJobFlow(params).promise().toFuture
     @inline def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] = service.setTerminationProtection(params).promise().toFuture
     @inline def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] = service.setVisibleToAllUsers(params).promise().toFuture
+    @inline def startNotebookExecutionFuture(params: StartNotebookExecutionInput): Future[StartNotebookExecutionOutput] = service.startNotebookExecution(params).promise().toFuture
+    @inline def stopNotebookExecutionFuture(params: StopNotebookExecutionInput): Future[js.Object] = service.stopNotebookExecution(params).promise().toFuture
     @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] = service.terminateJobFlows(params).promise().toFuture
 
   }
@@ -123,6 +129,7 @@ package emr {
     def createSecurityConfiguration(params: CreateSecurityConfigurationInput): Request[CreateSecurityConfigurationOutput] = js.native
     def deleteSecurityConfiguration(params: DeleteSecurityConfigurationInput): Request[DeleteSecurityConfigurationOutput] = js.native
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
+    def describeNotebookExecution(params: DescribeNotebookExecutionInput): Request[DescribeNotebookExecutionOutput] = js.native
     def describeSecurityConfiguration(params: DescribeSecurityConfigurationInput): Request[DescribeSecurityConfigurationOutput] = js.native
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
     def getBlockPublicAccessConfiguration(params: GetBlockPublicAccessConfigurationInput): Request[GetBlockPublicAccessConfigurationOutput] = js.native
@@ -132,6 +139,7 @@ package emr {
     def listInstanceFleets(params: ListInstanceFleetsInput): Request[ListInstanceFleetsOutput] = js.native
     def listInstanceGroups(params: ListInstanceGroupsInput): Request[ListInstanceGroupsOutput] = js.native
     def listInstances(params: ListInstancesInput): Request[ListInstancesOutput] = js.native
+    def listNotebookExecutions(params: ListNotebookExecutionsInput): Request[ListNotebookExecutionsOutput] = js.native
     def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] = js.native
     def listSteps(params: ListStepsInput): Request[ListStepsOutput] = js.native
     def modifyCluster(params: ModifyClusterInput): Request[ModifyClusterOutput] = js.native
@@ -146,6 +154,8 @@ package emr {
     def runJobFlow(params: RunJobFlowInput): Request[RunJobFlowOutput] = js.native
     def setTerminationProtection(params: SetTerminationProtectionInput): Request[js.Object] = js.native
     def setVisibleToAllUsers(params: SetVisibleToAllUsersInput): Request[js.Object] = js.native
+    def startNotebookExecution(params: StartNotebookExecutionInput): Request[StartNotebookExecutionOutput] = js.native
+    def stopNotebookExecution(params: StopNotebookExecutionInput): Request[js.Object] = js.native
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
   }
 
@@ -699,6 +709,7 @@ package emr {
     var Name: js.UndefOr[String]
     var NormalizedInstanceHours: js.UndefOr[Int]
     var OutpostArn: js.UndefOr[OptionalArnType]
+    var PlacementGroups: js.UndefOr[PlacementGroupConfigList]
     var ReleaseLabel: js.UndefOr[String]
     var RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot]
     var RequestedAmiVersion: js.UndefOr[String]
@@ -733,6 +744,7 @@ package emr {
         Name: js.UndefOr[String] = js.undefined,
         NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
         OutpostArn: js.UndefOr[OptionalArnType] = js.undefined,
+        PlacementGroups: js.UndefOr[PlacementGroupConfigList] = js.undefined,
         ReleaseLabel: js.UndefOr[String] = js.undefined,
         RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
         RequestedAmiVersion: js.UndefOr[String] = js.undefined,
@@ -764,6 +776,7 @@ package emr {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
       OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
+      PlacementGroups.foreach(__v => __obj.updateDynamic("PlacementGroups")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
       RequestedAmiVersion.foreach(__v => __obj.updateDynamic("RequestedAmiVersion")(__v.asInstanceOf[js.Any]))
@@ -1164,6 +1177,39 @@ package emr {
   }
 
   @js.native
+  trait DescribeNotebookExecutionInput extends js.Object {
+    var NotebookExecutionId: XmlStringMaxLen256
+  }
+
+  object DescribeNotebookExecutionInput {
+    @inline
+    def apply(
+        NotebookExecutionId: XmlStringMaxLen256
+    ): DescribeNotebookExecutionInput = {
+      val __obj = js.Dynamic.literal(
+        "NotebookExecutionId" -> NotebookExecutionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeNotebookExecutionInput]
+    }
+  }
+
+  @js.native
+  trait DescribeNotebookExecutionOutput extends js.Object {
+    var NotebookExecution: js.UndefOr[NotebookExecution]
+  }
+
+  object DescribeNotebookExecutionOutput {
+    @inline
+    def apply(
+        NotebookExecution: js.UndefOr[NotebookExecution] = js.undefined
+    ): DescribeNotebookExecutionOutput = {
+      val __obj = js.Dynamic.literal()
+      NotebookExecution.foreach(__v => __obj.updateDynamic("NotebookExecution")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotebookExecutionOutput]
+    }
+  }
+
+  @js.native
   trait DescribeSecurityConfigurationInput extends js.Object {
     var Name: XmlString
   }
@@ -1374,6 +1420,40 @@ package emr {
       ServiceAccessSecurityGroup.foreach(__v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Ec2InstanceAttributes]
     }
+  }
+
+  /** Specifies the execution engine (cluster) to run the notebook and perform the notebook execution, for example, an EMR cluster.
+    */
+  @js.native
+  trait ExecutionEngineConfig extends js.Object {
+    var Id: XmlStringMaxLen256
+    var MasterInstanceSecurityGroupId: js.UndefOr[XmlStringMaxLen256]
+    var Type: js.UndefOr[ExecutionEngineType]
+  }
+
+  object ExecutionEngineConfig {
+    @inline
+    def apply(
+        Id: XmlStringMaxLen256,
+        MasterInstanceSecurityGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Type: js.UndefOr[ExecutionEngineType] = js.undefined
+    ): ExecutionEngineConfig = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      MasterInstanceSecurityGroupId.foreach(__v => __obj.updateDynamic("MasterInstanceSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutionEngineConfig]
+    }
+  }
+
+  @js.native
+  sealed trait ExecutionEngineType extends js.Any
+  object ExecutionEngineType {
+    val EMR = "EMR".asInstanceOf[ExecutionEngineType]
+
+    @inline def values = js.Array(EMR)
   }
 
   /** The details of the step failure. The service attempts to detect the root cause for many common failures.
@@ -2861,6 +2941,53 @@ package emr {
   }
 
   @js.native
+  trait ListNotebookExecutionsInput extends js.Object {
+    var EditorId: js.UndefOr[XmlStringMaxLen256]
+    var From: js.UndefOr[Date]
+    var Marker: js.UndefOr[Marker]
+    var Status: js.UndefOr[NotebookExecutionStatus]
+    var To: js.UndefOr[Date]
+  }
+
+  object ListNotebookExecutionsInput {
+    @inline
+    def apply(
+        EditorId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        From: js.UndefOr[Date] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        Status: js.UndefOr[NotebookExecutionStatus] = js.undefined,
+        To: js.UndefOr[Date] = js.undefined
+    ): ListNotebookExecutionsInput = {
+      val __obj = js.Dynamic.literal()
+      EditorId.foreach(__v => __obj.updateDynamic("EditorId")(__v.asInstanceOf[js.Any]))
+      From.foreach(__v => __obj.updateDynamic("From")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      To.foreach(__v => __obj.updateDynamic("To")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNotebookExecutionsInput]
+    }
+  }
+
+  @js.native
+  trait ListNotebookExecutionsOutput extends js.Object {
+    var Marker: js.UndefOr[Marker]
+    var NotebookExecutions: js.UndefOr[NotebookExecutionSummaryList]
+  }
+
+  object ListNotebookExecutionsOutput {
+    @inline
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        NotebookExecutions: js.UndefOr[NotebookExecutionSummaryList] = js.undefined
+    ): ListNotebookExecutionsOutput = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      NotebookExecutions.foreach(__v => __obj.updateDynamic("NotebookExecutions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListNotebookExecutionsOutput]
+    }
+  }
+
+  @js.native
   trait ListSecurityConfigurationsInput extends js.Object {
     var Marker: js.UndefOr[Marker]
   }
@@ -3071,6 +3198,110 @@ package emr {
     }
   }
 
+  /** A notebook execution. An execution is a specific instance that an EMR Notebook is run using the <code>StartNotebookExecution</code> action.
+    */
+  @js.native
+  trait NotebookExecution extends js.Object {
+    var Arn: js.UndefOr[XmlStringMaxLen256]
+    var EditorId: js.UndefOr[XmlStringMaxLen256]
+    var EndTime: js.UndefOr[Date]
+    var ExecutionEngine: js.UndefOr[ExecutionEngineConfig]
+    var LastStateChangeReason: js.UndefOr[XmlString]
+    var NotebookExecutionId: js.UndefOr[XmlStringMaxLen256]
+    var NotebookExecutionName: js.UndefOr[XmlStringMaxLen256]
+    var NotebookInstanceSecurityGroupId: js.UndefOr[XmlStringMaxLen256]
+    var NotebookParams: js.UndefOr[XmlString]
+    var OutputNotebookURI: js.UndefOr[XmlString]
+    var StartTime: js.UndefOr[Date]
+    var Status: js.UndefOr[NotebookExecutionStatus]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object NotebookExecution {
+    @inline
+    def apply(
+        Arn: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EditorId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EndTime: js.UndefOr[Date] = js.undefined,
+        ExecutionEngine: js.UndefOr[ExecutionEngineConfig] = js.undefined,
+        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
+        NotebookExecutionId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        NotebookExecutionName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        NotebookInstanceSecurityGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        NotebookParams: js.UndefOr[XmlString] = js.undefined,
+        OutputNotebookURI: js.UndefOr[XmlString] = js.undefined,
+        StartTime: js.UndefOr[Date] = js.undefined,
+        Status: js.UndefOr[NotebookExecutionStatus] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): NotebookExecution = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      EditorId.foreach(__v => __obj.updateDynamic("EditorId")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ExecutionEngine.foreach(__v => __obj.updateDynamic("ExecutionEngine")(__v.asInstanceOf[js.Any]))
+      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
+      NotebookExecutionId.foreach(__v => __obj.updateDynamic("NotebookExecutionId")(__v.asInstanceOf[js.Any]))
+      NotebookExecutionName.foreach(__v => __obj.updateDynamic("NotebookExecutionName")(__v.asInstanceOf[js.Any]))
+      NotebookInstanceSecurityGroupId.foreach(__v => __obj.updateDynamic("NotebookInstanceSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      NotebookParams.foreach(__v => __obj.updateDynamic("NotebookParams")(__v.asInstanceOf[js.Any]))
+      OutputNotebookURI.foreach(__v => __obj.updateDynamic("OutputNotebookURI")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotebookExecution]
+    }
+  }
+
+  @js.native
+  sealed trait NotebookExecutionStatus extends js.Any
+  object NotebookExecutionStatus {
+    val START_PENDING = "START_PENDING".asInstanceOf[NotebookExecutionStatus]
+    val STARTING = "STARTING".asInstanceOf[NotebookExecutionStatus]
+    val RUNNING = "RUNNING".asInstanceOf[NotebookExecutionStatus]
+    val FINISHING = "FINISHING".asInstanceOf[NotebookExecutionStatus]
+    val FINISHED = "FINISHED".asInstanceOf[NotebookExecutionStatus]
+    val FAILING = "FAILING".asInstanceOf[NotebookExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[NotebookExecutionStatus]
+    val STOP_PENDING = "STOP_PENDING".asInstanceOf[NotebookExecutionStatus]
+    val STOPPING = "STOPPING".asInstanceOf[NotebookExecutionStatus]
+    val STOPPED = "STOPPED".asInstanceOf[NotebookExecutionStatus]
+
+    @inline def values = js.Array(START_PENDING, STARTING, RUNNING, FINISHING, FINISHED, FAILING, FAILED, STOP_PENDING, STOPPING, STOPPED)
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait NotebookExecutionSummary extends js.Object {
+    var EditorId: js.UndefOr[XmlStringMaxLen256]
+    var EndTime: js.UndefOr[Date]
+    var NotebookExecutionId: js.UndefOr[XmlStringMaxLen256]
+    var NotebookExecutionName: js.UndefOr[XmlStringMaxLen256]
+    var StartTime: js.UndefOr[Date]
+    var Status: js.UndefOr[NotebookExecutionStatus]
+  }
+
+  object NotebookExecutionSummary {
+    @inline
+    def apply(
+        EditorId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EndTime: js.UndefOr[Date] = js.undefined,
+        NotebookExecutionId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        NotebookExecutionName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        StartTime: js.UndefOr[Date] = js.undefined,
+        Status: js.UndefOr[NotebookExecutionStatus] = js.undefined
+    ): NotebookExecutionSummary = {
+      val __obj = js.Dynamic.literal()
+      EditorId.foreach(__v => __obj.updateDynamic("EditorId")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      NotebookExecutionId.foreach(__v => __obj.updateDynamic("NotebookExecutionId")(__v.asInstanceOf[js.Any]))
+      NotebookExecutionName.foreach(__v => __obj.updateDynamic("NotebookExecutionName")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotebookExecutionSummary]
+    }
+  }
+
   @js.native
   sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
   object OnDemandProvisioningAllocationStrategy {
@@ -3098,6 +3329,41 @@ package emr {
       )
       __obj.asInstanceOf[OnDemandProvisioningSpecification]
     }
+  }
+
+  /** Placement group configuration for an Amazon EMR cluster. The configuration specifies the placement strategy that can be applied to instance roles during cluster creation.
+    * To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy to the EMR role.
+    */
+  @js.native
+  trait PlacementGroupConfig extends js.Object {
+    var InstanceRole: InstanceRoleType
+    var PlacementStrategy: js.UndefOr[PlacementGroupStrategy]
+  }
+
+  object PlacementGroupConfig {
+    @inline
+    def apply(
+        InstanceRole: InstanceRoleType,
+        PlacementStrategy: js.UndefOr[PlacementGroupStrategy] = js.undefined
+    ): PlacementGroupConfig = {
+      val __obj = js.Dynamic.literal(
+        "InstanceRole" -> InstanceRole.asInstanceOf[js.Any]
+      )
+
+      PlacementStrategy.foreach(__v => __obj.updateDynamic("PlacementStrategy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementGroupConfig]
+    }
+  }
+
+  @js.native
+  sealed trait PlacementGroupStrategy extends js.Any
+  object PlacementGroupStrategy {
+    val SPREAD = "SPREAD".asInstanceOf[PlacementGroupStrategy]
+    val PARTITION = "PARTITION".asInstanceOf[PlacementGroupStrategy]
+    val CLUSTER = "CLUSTER".asInstanceOf[PlacementGroupStrategy]
+    val NONE = "NONE".asInstanceOf[PlacementGroupStrategy]
+
+    @inline def values = js.Array(SPREAD, PARTITION, CLUSTER, NONE)
   }
 
   /** The Amazon EC2 Availability Zone configuration of the cluster (job flow).
@@ -3374,6 +3640,7 @@ package emr {
     var LogUri: js.UndefOr[XmlString]
     var ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy]
     var NewSupportedProducts: js.UndefOr[NewSupportedProductsList]
+    var PlacementGroupConfigs: js.UndefOr[PlacementGroupConfigList]
     var ReleaseLabel: js.UndefOr[XmlStringMaxLen256]
     var RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot]
     var ScaleDownBehavior: js.UndefOr[ScaleDownBehavior]
@@ -3405,6 +3672,7 @@ package emr {
         LogUri: js.UndefOr[XmlString] = js.undefined,
         ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy] = js.undefined,
         NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
+        PlacementGroupConfigs: js.UndefOr[PlacementGroupConfigList] = js.undefined,
         ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
         ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
@@ -3435,6 +3703,7 @@ package emr {
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       ManagedScalingPolicy.foreach(__v => __obj.updateDynamic("ManagedScalingPolicy")(__v.asInstanceOf[js.Any]))
       NewSupportedProducts.foreach(__v => __obj.updateDynamic("NewSupportedProducts")(__v.asInstanceOf[js.Any]))
+      PlacementGroupConfigs.foreach(__v => __obj.updateDynamic("PlacementGroupConfigs")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
       ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
@@ -3756,6 +4025,61 @@ package emr {
   }
 
   @js.native
+  trait StartNotebookExecutionInput extends js.Object {
+    var EditorId: XmlStringMaxLen256
+    var ExecutionEngine: ExecutionEngineConfig
+    var RelativePath: XmlString
+    var ServiceRole: XmlString
+    var NotebookExecutionName: js.UndefOr[XmlStringMaxLen256]
+    var NotebookInstanceSecurityGroupId: js.UndefOr[XmlStringMaxLen256]
+    var NotebookParams: js.UndefOr[XmlString]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object StartNotebookExecutionInput {
+    @inline
+    def apply(
+        EditorId: XmlStringMaxLen256,
+        ExecutionEngine: ExecutionEngineConfig,
+        RelativePath: XmlString,
+        ServiceRole: XmlString,
+        NotebookExecutionName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        NotebookInstanceSecurityGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        NotebookParams: js.UndefOr[XmlString] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): StartNotebookExecutionInput = {
+      val __obj = js.Dynamic.literal(
+        "EditorId" -> EditorId.asInstanceOf[js.Any],
+        "ExecutionEngine" -> ExecutionEngine.asInstanceOf[js.Any],
+        "RelativePath" -> RelativePath.asInstanceOf[js.Any],
+        "ServiceRole" -> ServiceRole.asInstanceOf[js.Any]
+      )
+
+      NotebookExecutionName.foreach(__v => __obj.updateDynamic("NotebookExecutionName")(__v.asInstanceOf[js.Any]))
+      NotebookInstanceSecurityGroupId.foreach(__v => __obj.updateDynamic("NotebookInstanceSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      NotebookParams.foreach(__v => __obj.updateDynamic("NotebookParams")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartNotebookExecutionInput]
+    }
+  }
+
+  @js.native
+  trait StartNotebookExecutionOutput extends js.Object {
+    var NotebookExecutionId: js.UndefOr[XmlStringMaxLen256]
+  }
+
+  object StartNotebookExecutionOutput {
+    @inline
+    def apply(
+        NotebookExecutionId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): StartNotebookExecutionOutput = {
+      val __obj = js.Dynamic.literal()
+      NotebookExecutionId.foreach(__v => __obj.updateDynamic("NotebookExecutionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartNotebookExecutionOutput]
+    }
+  }
+
+  @js.native
   sealed trait Statistic extends js.Any
   object Statistic {
     val SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
@@ -4021,6 +4345,23 @@ package emr {
       EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
       StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepTimeline]
+    }
+  }
+
+  @js.native
+  trait StopNotebookExecutionInput extends js.Object {
+    var NotebookExecutionId: XmlStringMaxLen256
+  }
+
+  object StopNotebookExecutionInput {
+    @inline
+    def apply(
+        NotebookExecutionId: XmlStringMaxLen256
+    ): StopNotebookExecutionInput = {
+      val __obj = js.Dynamic.literal(
+        "NotebookExecutionId" -> NotebookExecutionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopNotebookExecutionInput]
     }
   }
 

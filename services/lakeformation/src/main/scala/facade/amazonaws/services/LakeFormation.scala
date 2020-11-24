@@ -24,8 +24,10 @@ package object lakeformation {
   type PermissionList = js.Array[Permission]
   type PrincipalPermissionsList = js.Array[PrincipalPermissions]
   type PrincipalResourcePermissionsList = js.Array[PrincipalResourcePermissions]
+  type RAMResourceShareArn = String
   type ResourceArnString = String
   type ResourceInfoList = js.Array[ResourceInfo]
+  type ResourceShareList = js.Array[RAMResourceShareArn]
   type StringValue = String
   type StringValueList = js.Array[StringValue]
   type Token = String
@@ -410,6 +412,25 @@ package lakeformation {
     }
   }
 
+  /** A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.
+    * If a catalog resource is shared through AWS Resource Access Manager (AWS RAM), then there will exist a corresponding RAM share resource ARN.
+    */
+  @js.native
+  trait DetailsMap extends js.Object {
+    var ResourceShare: js.UndefOr[ResourceShareList]
+  }
+
+  object DetailsMap {
+    @inline
+    def apply(
+        ResourceShare: js.UndefOr[ResourceShareList] = js.undefined
+    ): DetailsMap = {
+      val __obj = js.Dynamic.literal()
+      ResourceShare.foreach(__v => __obj.updateDynamic("ResourceShare")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetailsMap]
+    }
+  }
+
   /** Contains details about an error.
     */
   @js.native
@@ -717,6 +738,7 @@ package lakeformation {
     */
   @js.native
   trait PrincipalResourcePermissions extends js.Object {
+    var AdditionalDetails: js.UndefOr[DetailsMap]
     var Permissions: js.UndefOr[PermissionList]
     var PermissionsWithGrantOption: js.UndefOr[PermissionList]
     var Principal: js.UndefOr[DataLakePrincipal]
@@ -726,12 +748,14 @@ package lakeformation {
   object PrincipalResourcePermissions {
     @inline
     def apply(
+        AdditionalDetails: js.UndefOr[DetailsMap] = js.undefined,
         Permissions: js.UndefOr[PermissionList] = js.undefined,
         PermissionsWithGrantOption: js.UndefOr[PermissionList] = js.undefined,
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined,
         Resource: js.UndefOr[Resource] = js.undefined
     ): PrincipalResourcePermissions = {
       val __obj = js.Dynamic.literal()
+      AdditionalDetails.foreach(__v => __obj.updateDynamic("AdditionalDetails")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       PermissionsWithGrantOption.foreach(__v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any]))
       Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))

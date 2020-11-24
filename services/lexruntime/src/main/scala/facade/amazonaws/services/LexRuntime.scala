@@ -8,6 +8,12 @@ import facade.amazonaws._
 
 package object lexruntime {
   type Accept = String
+  type ActiveContextName = String
+  type ActiveContextParametersMap = js.Dictionary[Text]
+  type ActiveContextTimeToLiveInSeconds = Int
+  type ActiveContextTurnsToLive = Int
+  type ActiveContextsList = js.Array[ActiveContext]
+  type ActiveContextsString = String
   type AttributesString = String
   type BlobStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BotAlias = String
@@ -20,6 +26,7 @@ package object lexruntime {
   type IntentName = String
   type IntentSummaryCheckpointLabel = String
   type IntentSummaryList = js.Array[IntentSummary]
+  type ParameterName = String
   type SentimentLabel = String
   type SentimentScore = String
   type StringMap = js.Dictionary[String]
@@ -52,6 +59,52 @@ package lexruntime {
     def postContent(params: PostContentRequest): Request[PostContentResponse] = js.native
     def postText(params: PostTextRequest): Request[PostTextResponse] = js.native
     def putSession(params: PutSessionRequest): Request[PutSessionResponse] = js.native
+  }
+
+  /** A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.
+    */
+  @js.native
+  trait ActiveContext extends js.Object {
+    var name: ActiveContextName
+    var parameters: ActiveContextParametersMap
+    var timeToLive: ActiveContextTimeToLive
+  }
+
+  object ActiveContext {
+    @inline
+    def apply(
+        name: ActiveContextName,
+        parameters: ActiveContextParametersMap,
+        timeToLive: ActiveContextTimeToLive
+    ): ActiveContext = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "parameters" -> parameters.asInstanceOf[js.Any],
+        "timeToLive" -> timeToLive.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActiveContext]
+    }
+  }
+
+  /** The length of time or number of turns that a context remains active.
+    */
+  @js.native
+  trait ActiveContextTimeToLive extends js.Object {
+    var timeToLiveInSeconds: js.UndefOr[ActiveContextTimeToLiveInSeconds]
+    var turnsToLive: js.UndefOr[ActiveContextTurnsToLive]
+  }
+
+  object ActiveContextTimeToLive {
+    @inline
+    def apply(
+        timeToLiveInSeconds: js.UndefOr[ActiveContextTimeToLiveInSeconds] = js.undefined,
+        turnsToLive: js.UndefOr[ActiveContextTurnsToLive] = js.undefined
+    ): ActiveContextTimeToLive = {
+      val __obj = js.Dynamic.literal()
+      timeToLiveInSeconds.foreach(__v => __obj.updateDynamic("timeToLiveInSeconds")(__v.asInstanceOf[js.Any]))
+      turnsToLive.foreach(__v => __obj.updateDynamic("turnsToLive")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActiveContextTimeToLive]
+    }
   }
 
   /** Represents an option to be shown on the client platform (Facebook, Slack, etc.)
@@ -274,6 +327,7 @@ package lexruntime {
 
   @js.native
   trait GetSessionResponse extends js.Object {
+    var activeContexts: js.UndefOr[ActiveContextsList]
     var dialogAction: js.UndefOr[DialogAction]
     var recentIntentSummaryView: js.UndefOr[IntentSummaryList]
     var sessionAttributes: js.UndefOr[StringMap]
@@ -283,12 +337,14 @@ package lexruntime {
   object GetSessionResponse {
     @inline
     def apply(
+        activeContexts: js.UndefOr[ActiveContextsList] = js.undefined,
         dialogAction: js.UndefOr[DialogAction] = js.undefined,
         recentIntentSummaryView: js.UndefOr[IntentSummaryList] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined,
         sessionId: js.UndefOr[String] = js.undefined
     ): GetSessionResponse = {
       val __obj = js.Dynamic.literal()
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
       recentIntentSummaryView.foreach(__v => __obj.updateDynamic("recentIntentSummaryView")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
@@ -372,6 +428,7 @@ package lexruntime {
     var inputStream: BlobStream
     var userId: UserId
     var accept: js.UndefOr[Accept]
+    var activeContexts: js.UndefOr[ActiveContextsString]
     var requestAttributes: js.UndefOr[AttributesString]
     var sessionAttributes: js.UndefOr[AttributesString]
   }
@@ -385,6 +442,7 @@ package lexruntime {
         inputStream: BlobStream,
         userId: UserId,
         accept: js.UndefOr[Accept] = js.undefined,
+        activeContexts: js.UndefOr[ActiveContextsString] = js.undefined,
         requestAttributes: js.UndefOr[AttributesString] = js.undefined,
         sessionAttributes: js.UndefOr[AttributesString] = js.undefined
     ): PostContentRequest = {
@@ -397,6 +455,7 @@ package lexruntime {
       )
 
       accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       requestAttributes.foreach(__v => __obj.updateDynamic("requestAttributes")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostContentRequest]
@@ -405,6 +464,7 @@ package lexruntime {
 
   @js.native
   trait PostContentResponse extends js.Object {
+    var activeContexts: js.UndefOr[ActiveContextsString]
     var alternativeIntents: js.UndefOr[String]
     var audioStream: js.UndefOr[BlobStream]
     var botVersion: js.UndefOr[BotVersion]
@@ -425,6 +485,7 @@ package lexruntime {
   object PostContentResponse {
     @inline
     def apply(
+        activeContexts: js.UndefOr[ActiveContextsString] = js.undefined,
         alternativeIntents: js.UndefOr[String] = js.undefined,
         audioStream: js.UndefOr[BlobStream] = js.undefined,
         botVersion: js.UndefOr[BotVersion] = js.undefined,
@@ -442,6 +503,7 @@ package lexruntime {
         slots: js.UndefOr[String] = js.undefined
     ): PostContentResponse = {
       val __obj = js.Dynamic.literal()
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       alternativeIntents.foreach(__v => __obj.updateDynamic("alternativeIntents")(__v.asInstanceOf[js.Any]))
       audioStream.foreach(__v => __obj.updateDynamic("audioStream")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
@@ -467,6 +529,7 @@ package lexruntime {
     var botName: BotName
     var inputText: Text
     var userId: UserId
+    var activeContexts: js.UndefOr[ActiveContextsList]
     var requestAttributes: js.UndefOr[StringMap]
     var sessionAttributes: js.UndefOr[StringMap]
   }
@@ -478,6 +541,7 @@ package lexruntime {
         botName: BotName,
         inputText: Text,
         userId: UserId,
+        activeContexts: js.UndefOr[ActiveContextsList] = js.undefined,
         requestAttributes: js.UndefOr[StringMap] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
     ): PostTextRequest = {
@@ -488,6 +552,7 @@ package lexruntime {
         "userId" -> userId.asInstanceOf[js.Any]
       )
 
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       requestAttributes.foreach(__v => __obj.updateDynamic("requestAttributes")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostTextRequest]
@@ -496,6 +561,7 @@ package lexruntime {
 
   @js.native
   trait PostTextResponse extends js.Object {
+    var activeContexts: js.UndefOr[ActiveContextsList]
     var alternativeIntents: js.UndefOr[IntentList]
     var botVersion: js.UndefOr[BotVersion]
     var dialogState: js.UndefOr[DialogState]
@@ -514,6 +580,7 @@ package lexruntime {
   object PostTextResponse {
     @inline
     def apply(
+        activeContexts: js.UndefOr[ActiveContextsList] = js.undefined,
         alternativeIntents: js.UndefOr[IntentList] = js.undefined,
         botVersion: js.UndefOr[BotVersion] = js.undefined,
         dialogState: js.UndefOr[DialogState] = js.undefined,
@@ -529,6 +596,7 @@ package lexruntime {
         slots: js.UndefOr[StringMap] = js.undefined
     ): PostTextResponse = {
       val __obj = js.Dynamic.literal()
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       alternativeIntents.foreach(__v => __obj.updateDynamic("alternativeIntents")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
@@ -576,6 +644,7 @@ package lexruntime {
     var botName: BotName
     var userId: UserId
     var accept: js.UndefOr[Accept]
+    var activeContexts: js.UndefOr[ActiveContextsList]
     var dialogAction: js.UndefOr[DialogAction]
     var recentIntentSummaryView: js.UndefOr[IntentSummaryList]
     var sessionAttributes: js.UndefOr[StringMap]
@@ -588,6 +657,7 @@ package lexruntime {
         botName: BotName,
         userId: UserId,
         accept: js.UndefOr[Accept] = js.undefined,
+        activeContexts: js.UndefOr[ActiveContextsList] = js.undefined,
         dialogAction: js.UndefOr[DialogAction] = js.undefined,
         recentIntentSummaryView: js.UndefOr[IntentSummaryList] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
@@ -599,6 +669,7 @@ package lexruntime {
       )
 
       accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
       recentIntentSummaryView.foreach(__v => __obj.updateDynamic("recentIntentSummaryView")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
@@ -608,6 +679,7 @@ package lexruntime {
 
   @js.native
   trait PutSessionResponse extends js.Object {
+    var activeContexts: js.UndefOr[ActiveContextsString]
     var audioStream: js.UndefOr[BlobStream]
     var contentType: js.UndefOr[HttpContentType]
     var dialogState: js.UndefOr[DialogState]
@@ -623,6 +695,7 @@ package lexruntime {
   object PutSessionResponse {
     @inline
     def apply(
+        activeContexts: js.UndefOr[ActiveContextsString] = js.undefined,
         audioStream: js.UndefOr[BlobStream] = js.undefined,
         contentType: js.UndefOr[HttpContentType] = js.undefined,
         dialogState: js.UndefOr[DialogState] = js.undefined,
@@ -635,6 +708,7 @@ package lexruntime {
         slots: js.UndefOr[String] = js.undefined
     ): PutSessionResponse = {
       val __obj = js.Dynamic.literal()
+      activeContexts.foreach(__v => __obj.updateDynamic("activeContexts")(__v.asInstanceOf[js.Any]))
       audioStream.foreach(__v => __obj.updateDynamic("audioStream")(__v.asInstanceOf[js.Any]))
       contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
       dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))

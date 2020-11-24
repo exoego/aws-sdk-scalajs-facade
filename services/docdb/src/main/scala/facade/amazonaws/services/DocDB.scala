@@ -417,6 +417,7 @@ package docdb {
     var EngineVersion: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
+    var PreSignedUrl: js.UndefOr[String]
     var PreferredBackupWindow: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[BooleanOptional]
@@ -440,6 +441,7 @@ package docdb {
         EngineVersion: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreSignedUrl: js.UndefOr[String] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
@@ -462,6 +464,7 @@ package docdb {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))

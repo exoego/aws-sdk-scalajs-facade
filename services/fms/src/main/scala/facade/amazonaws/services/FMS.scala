@@ -24,6 +24,9 @@ package object fms {
   type ListId = String
   type ManagedServiceData = String
   type MemberAccounts = js.Array[AWSAccountId]
+  type NetworkFirewallAction = String
+  type NetworkFirewallActionList = js.Array[NetworkFirewallAction]
+  type NetworkFirewallResourceName = String
   type PaginationMaxResults = Int
   type PaginationToken = String
   type PartialMatches = js.Array[PartialMatch]
@@ -52,6 +55,9 @@ package object fms {
   type ResourceTypeList = js.Array[ResourceType]
   type ResourceViolations = js.Array[ResourceViolation]
   type SecurityGroupRemediationActions = js.Array[SecurityGroupRemediationAction]
+  type StatefulRuleGroupList = js.Array[StatefulRuleGroup]
+  type StatelessRuleGroupList = js.Array[StatelessRuleGroup]
+  type StatelessRuleGroupPriority = Int
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
@@ -1011,6 +1017,144 @@ package fms {
     }
   }
 
+  /** Violation details for AWS Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.
+    */
+  @js.native
+  trait NetworkFirewallMissingExpectedRTViolation extends js.Object {
+    var AvailabilityZone: js.UndefOr[LengthBoundedString]
+    var CurrentRouteTable: js.UndefOr[ResourceId]
+    var ExpectedRouteTable: js.UndefOr[ResourceId]
+    var VPC: js.UndefOr[ResourceId]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object NetworkFirewallMissingExpectedRTViolation {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        CurrentRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        VPC: js.UndefOr[ResourceId] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): NetworkFirewallMissingExpectedRTViolation = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CurrentRouteTable.foreach(__v => __obj.updateDynamic("CurrentRouteTable")(__v.asInstanceOf[js.Any]))
+      ExpectedRouteTable.foreach(__v => __obj.updateDynamic("ExpectedRouteTable")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallMissingExpectedRTViolation]
+    }
+  }
+
+  /** Violation details for AWS Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC.
+    */
+  @js.native
+  trait NetworkFirewallMissingFirewallViolation extends js.Object {
+    var AvailabilityZone: js.UndefOr[LengthBoundedString]
+    var TargetViolationReason: js.UndefOr[TargetViolationReason]
+    var VPC: js.UndefOr[ResourceId]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object NetworkFirewallMissingFirewallViolation {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        TargetViolationReason: js.UndefOr[TargetViolationReason] = js.undefined,
+        VPC: js.UndefOr[ResourceId] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): NetworkFirewallMissingFirewallViolation = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      TargetViolationReason.foreach(__v => __obj.updateDynamic("TargetViolationReason")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallMissingFirewallViolation]
+    }
+  }
+
+  /** Violation details for AWS Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.
+    */
+  @js.native
+  trait NetworkFirewallMissingSubnetViolation extends js.Object {
+    var AvailabilityZone: js.UndefOr[LengthBoundedString]
+    var TargetViolationReason: js.UndefOr[TargetViolationReason]
+    var VPC: js.UndefOr[ResourceId]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object NetworkFirewallMissingSubnetViolation {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        TargetViolationReason: js.UndefOr[TargetViolationReason] = js.undefined,
+        VPC: js.UndefOr[ResourceId] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): NetworkFirewallMissingSubnetViolation = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      TargetViolationReason.foreach(__v => __obj.updateDynamic("TargetViolationReason")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallMissingSubnetViolation]
+    }
+  }
+
+  /** The definition of the AWS Network Firewall firewall policy.
+    */
+  @js.native
+  trait NetworkFirewallPolicyDescription extends js.Object {
+    var StatefulRuleGroups: js.UndefOr[StatefulRuleGroupList]
+    var StatelessCustomActions: js.UndefOr[NetworkFirewallActionList]
+    var StatelessDefaultActions: js.UndefOr[NetworkFirewallActionList]
+    var StatelessFragmentDefaultActions: js.UndefOr[NetworkFirewallActionList]
+    var StatelessRuleGroups: js.UndefOr[StatelessRuleGroupList]
+  }
+
+  object NetworkFirewallPolicyDescription {
+    @inline
+    def apply(
+        StatefulRuleGroups: js.UndefOr[StatefulRuleGroupList] = js.undefined,
+        StatelessCustomActions: js.UndefOr[NetworkFirewallActionList] = js.undefined,
+        StatelessDefaultActions: js.UndefOr[NetworkFirewallActionList] = js.undefined,
+        StatelessFragmentDefaultActions: js.UndefOr[NetworkFirewallActionList] = js.undefined,
+        StatelessRuleGroups: js.UndefOr[StatelessRuleGroupList] = js.undefined
+    ): NetworkFirewallPolicyDescription = {
+      val __obj = js.Dynamic.literal()
+      StatefulRuleGroups.foreach(__v => __obj.updateDynamic("StatefulRuleGroups")(__v.asInstanceOf[js.Any]))
+      StatelessCustomActions.foreach(__v => __obj.updateDynamic("StatelessCustomActions")(__v.asInstanceOf[js.Any]))
+      StatelessDefaultActions.foreach(__v => __obj.updateDynamic("StatelessDefaultActions")(__v.asInstanceOf[js.Any]))
+      StatelessFragmentDefaultActions.foreach(__v => __obj.updateDynamic("StatelessFragmentDefaultActions")(__v.asInstanceOf[js.Any]))
+      StatelessRuleGroups.foreach(__v => __obj.updateDynamic("StatelessRuleGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallPolicyDescription]
+    }
+  }
+
+  /** Violation details for AWS Network Firewall for a firewall policy that has a different <a>NetworkFirewallPolicyDescription</a> than is required by the Firewall Manager policy.
+    */
+  @js.native
+  trait NetworkFirewallPolicyModifiedViolation extends js.Object {
+    var CurrentPolicyDescription: js.UndefOr[NetworkFirewallPolicyDescription]
+    var ExpectedPolicyDescription: js.UndefOr[NetworkFirewallPolicyDescription]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object NetworkFirewallPolicyModifiedViolation {
+    @inline
+    def apply(
+        CurrentPolicyDescription: js.UndefOr[NetworkFirewallPolicyDescription] = js.undefined,
+        ExpectedPolicyDescription: js.UndefOr[NetworkFirewallPolicyDescription] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): NetworkFirewallPolicyModifiedViolation = {
+      val __obj = js.Dynamic.literal()
+      CurrentPolicyDescription.foreach(__v => __obj.updateDynamic("CurrentPolicyDescription")(__v.asInstanceOf[js.Any]))
+      ExpectedPolicyDescription.foreach(__v => __obj.updateDynamic("ExpectedPolicyDescription")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallPolicyModifiedViolation]
+    }
+  }
+
   /** The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.
     */
   @js.native
@@ -1440,6 +1584,10 @@ package fms {
     var AwsEc2InstanceViolation: js.UndefOr[AwsEc2InstanceViolation]
     var AwsEc2NetworkInterfaceViolation: js.UndefOr[AwsEc2NetworkInterfaceViolation]
     var AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation]
+    var NetworkFirewallMissingExpectedRTViolation: js.UndefOr[NetworkFirewallMissingExpectedRTViolation]
+    var NetworkFirewallMissingFirewallViolation: js.UndefOr[NetworkFirewallMissingFirewallViolation]
+    var NetworkFirewallMissingSubnetViolation: js.UndefOr[NetworkFirewallMissingSubnetViolation]
+    var NetworkFirewallPolicyModifiedViolation: js.UndefOr[NetworkFirewallPolicyModifiedViolation]
   }
 
   object ResourceViolation {
@@ -1447,12 +1595,20 @@ package fms {
     def apply(
         AwsEc2InstanceViolation: js.UndefOr[AwsEc2InstanceViolation] = js.undefined,
         AwsEc2NetworkInterfaceViolation: js.UndefOr[AwsEc2NetworkInterfaceViolation] = js.undefined,
-        AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation] = js.undefined
+        AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation] = js.undefined,
+        NetworkFirewallMissingExpectedRTViolation: js.UndefOr[NetworkFirewallMissingExpectedRTViolation] = js.undefined,
+        NetworkFirewallMissingFirewallViolation: js.UndefOr[NetworkFirewallMissingFirewallViolation] = js.undefined,
+        NetworkFirewallMissingSubnetViolation: js.UndefOr[NetworkFirewallMissingSubnetViolation] = js.undefined,
+        NetworkFirewallPolicyModifiedViolation: js.UndefOr[NetworkFirewallPolicyModifiedViolation] = js.undefined
     ): ResourceViolation = {
       val __obj = js.Dynamic.literal()
       AwsEc2InstanceViolation.foreach(__v => __obj.updateDynamic("AwsEc2InstanceViolation")(__v.asInstanceOf[js.Any]))
       AwsEc2NetworkInterfaceViolation.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterfaceViolation")(__v.asInstanceOf[js.Any]))
       AwsVPCSecurityGroupViolation.foreach(__v => __obj.updateDynamic("AwsVPCSecurityGroupViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallMissingExpectedRTViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingExpectedRTViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallMissingFirewallViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingFirewallViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallMissingSubnetViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingSubnetViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallPolicyModifiedViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallPolicyModifiedViolation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceViolation]
     }
   }
@@ -1549,8 +1705,54 @@ package fms {
     val SECURITY_GROUPS_COMMON = "SECURITY_GROUPS_COMMON".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_USAGE_AUDIT = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
+    val NETWORK_FIREWALL = "NETWORK_FIREWALL".asInstanceOf[SecurityServiceType]
 
-    @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT)
+    @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT, NETWORK_FIREWALL)
+  }
+
+  /** AWS Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+    */
+  @js.native
+  trait StatefulRuleGroup extends js.Object {
+    var ResourceId: js.UndefOr[ResourceId]
+    var RuleGroupName: js.UndefOr[NetworkFirewallResourceName]
+  }
+
+  object StatefulRuleGroup {
+    @inline
+    def apply(
+        ResourceId: js.UndefOr[ResourceId] = js.undefined,
+        RuleGroupName: js.UndefOr[NetworkFirewallResourceName] = js.undefined
+    ): StatefulRuleGroup = {
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      RuleGroupName.foreach(__v => __obj.updateDynamic("RuleGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatefulRuleGroup]
+    }
+  }
+
+  /** AWS Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+    */
+  @js.native
+  trait StatelessRuleGroup extends js.Object {
+    var Priority: js.UndefOr[StatelessRuleGroupPriority]
+    var ResourceId: js.UndefOr[ResourceId]
+    var RuleGroupName: js.UndefOr[NetworkFirewallResourceName]
+  }
+
+  object StatelessRuleGroup {
+    @inline
+    def apply(
+        Priority: js.UndefOr[StatelessRuleGroupPriority] = js.undefined,
+        ResourceId: js.UndefOr[ResourceId] = js.undefined,
+        RuleGroupName: js.UndefOr[NetworkFirewallResourceName] = js.undefined
+    ): StatelessRuleGroup = {
+      val __obj = js.Dynamic.literal()
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      RuleGroupName.foreach(__v => __obj.updateDynamic("RuleGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatelessRuleGroup]
+    }
   }
 
   /** A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
@@ -1687,6 +1889,10 @@ package fms {
     val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_UNUSED = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_REDUNDANT = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
+    val MISSING_FIREWALL = "MISSING_FIREWALL".asInstanceOf[ViolationReason]
+    val MISSING_FIREWALL_SUBNET_IN_AZ = "MISSING_FIREWALL_SUBNET_IN_AZ".asInstanceOf[ViolationReason]
+    val MISSING_EXPECTED_ROUTE_TABLE = "MISSING_EXPECTED_ROUTE_TABLE".asInstanceOf[ViolationReason]
+    val NETWORK_FIREWALL_POLICY_MODIFIED = "NETWORK_FIREWALL_POLICY_MODIFIED".asInstanceOf[ViolationReason]
 
     @inline def values = js.Array(
       WEB_ACL_MISSING_RULE_GROUP,
@@ -1697,7 +1903,11 @@ package fms {
       RESOURCE_MISSING_SECURITY_GROUP,
       RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
       SECURITY_GROUP_UNUSED,
-      SECURITY_GROUP_REDUNDANT
+      SECURITY_GROUP_REDUNDANT,
+      MISSING_FIREWALL,
+      MISSING_FIREWALL_SUBNET_IN_AZ,
+      MISSING_EXPECTED_ROUTE_TABLE,
+      NETWORK_FIREWALL_POLICY_MODIFIED
     )
   }
 }

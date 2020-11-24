@@ -15,13 +15,23 @@ package object workmail {
   type ActionsList = js.Array[AccessControlRuleAction]
   type Aliases = js.Array[EmailAddress]
   type AmazonResourceName = String
+  type Description = String
+  type DirectoryId = String
+  type DomainName = String
+  type Domains = js.Array[Domain]
   type EmailAddress = String
   type FolderConfigurations = js.Array[FolderConfiguration]
   type GroupName = String
   type Groups = js.Array[Group]
+  type HostedZoneId = String
+  type IdempotencyClientToken = String
   type IpAddress = String
   type IpRange = String
   type IpRangeList = js.Array[IpRange]
+  type Jobs = js.Array[MailboxExportJob]
+  type KmsKeyArn = String
+  type MailboxExportErrorInfo = String
+  type MailboxExportJobId = String
   type MailboxQuota = Int
   type MailboxSize = Double
   type MaxResults = Int
@@ -31,6 +41,7 @@ package object workmail {
   type OrganizationName = String
   type OrganizationSummaries = js.Array[OrganizationSummary]
   type Password = String
+  type Percentage = Int
   type PermissionValues = js.Array[PermissionType]
   type Permissions = js.Array[Permission]
   type PolicyDescription = String
@@ -39,6 +50,9 @@ package object workmail {
   type ResourceName = String
   type Resources = js.Array[Resource]
   type RetentionPeriod = Int
+  type RoleArn = String
+  type S3BucketName = String
+  type S3ObjectKey = String
   type ShortString = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -54,19 +68,23 @@ package object workmail {
 
     @inline def associateDelegateToResourceFuture(params: AssociateDelegateToResourceRequest): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise().toFuture
     @inline def associateMemberToGroupFuture(params: AssociateMemberToGroupRequest): Future[AssociateMemberToGroupResponse] = service.associateMemberToGroup(params).promise().toFuture
+    @inline def cancelMailboxExportJobFuture(params: CancelMailboxExportJobRequest): Future[CancelMailboxExportJobResponse] = service.cancelMailboxExportJob(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] = service.createAlias(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] = service.createOrganization(params).promise().toFuture
     @inline def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] = service.createResource(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def deleteAccessControlRuleFuture(params: DeleteAccessControlRuleRequest): Future[DeleteAccessControlRuleResponse] = service.deleteAccessControlRule(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] = service.deleteAlias(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
     @inline def deleteMailboxPermissionsFuture(params: DeleteMailboxPermissionsRequest): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
+    @inline def deleteOrganizationFuture(params: DeleteOrganizationRequest): Future[DeleteOrganizationResponse] = service.deleteOrganization(params).promise().toFuture
     @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] = service.deleteResource(params).promise().toFuture
     @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[DeleteRetentionPolicyResponse] = service.deleteRetentionPolicy(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] = service.deleteUser(params).promise().toFuture
     @inline def deregisterFromWorkMailFuture(params: DeregisterFromWorkMailRequest): Future[DeregisterFromWorkMailResponse] = service.deregisterFromWorkMail(params).promise().toFuture
     @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
+    @inline def describeMailboxExportJobFuture(params: DescribeMailboxExportJobRequest): Future[DescribeMailboxExportJobResponse] = service.describeMailboxExportJob(params).promise().toFuture
     @inline def describeOrganizationFuture(params: DescribeOrganizationRequest): Future[DescribeOrganizationResponse] = service.describeOrganization(params).promise().toFuture
     @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] = service.describeResource(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
@@ -79,6 +97,7 @@ package object workmail {
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
     @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] = service.listGroupMembers(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listMailboxExportJobsFuture(params: ListMailboxExportJobsRequest): Future[ListMailboxExportJobsResponse] = service.listMailboxExportJobs(params).promise().toFuture
     @inline def listMailboxPermissionsFuture(params: ListMailboxPermissionsRequest): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise().toFuture
     @inline def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] = service.listOrganizations(params).promise().toFuture
     @inline def listResourceDelegatesFuture(params: ListResourceDelegatesRequest): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise().toFuture
@@ -90,6 +109,7 @@ package object workmail {
     @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[PutRetentionPolicyResponse] = service.putRetentionPolicy(params).promise().toFuture
     @inline def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] = service.registerToWorkMail(params).promise().toFuture
     @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] = service.resetPassword(params).promise().toFuture
+    @inline def startMailboxExportJobFuture(params: StartMailboxExportJobRequest): Future[StartMailboxExportJobResponse] = service.startMailboxExportJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] = service.updateMailboxQuota(params).promise().toFuture
@@ -107,19 +127,23 @@ package workmail {
 
     def associateDelegateToResource(params: AssociateDelegateToResourceRequest): Request[AssociateDelegateToResourceResponse] = js.native
     def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] = js.native
+    def cancelMailboxExportJob(params: CancelMailboxExportJobRequest): Request[CancelMailboxExportJobResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
+    def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse] = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] = js.native
+    def deleteOrganization(params: DeleteOrganizationRequest): Request[DeleteOrganizationResponse] = js.native
     def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
     def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[DeleteRetentionPolicyResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
     def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
+    def describeMailboxExportJob(params: DescribeMailboxExportJobRequest): Request[DescribeMailboxExportJobResponse] = js.native
     def describeOrganization(params: DescribeOrganizationRequest): Request[DescribeOrganizationResponse] = js.native
     def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
@@ -132,6 +156,7 @@ package workmail {
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
+    def listMailboxExportJobs(params: ListMailboxExportJobsRequest): Request[ListMailboxExportJobsResponse] = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] = js.native
     def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse] = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
@@ -143,6 +168,7 @@ package workmail {
     def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[PutRetentionPolicyResponse] = js.native
     def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse] = js.native
     def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse] = js.native
+    def startMailboxExportJob(params: StartMailboxExportJobRequest): Request[StartMailboxExportJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse] = js.native
@@ -300,6 +326,40 @@ package workmail {
   }
 
   @js.native
+  trait CancelMailboxExportJobRequest extends js.Object {
+    var ClientToken: IdempotencyClientToken
+    var JobId: MailboxExportJobId
+    var OrganizationId: OrganizationId
+  }
+
+  object CancelMailboxExportJobRequest {
+    @inline
+    def apply(
+        ClientToken: IdempotencyClientToken,
+        JobId: MailboxExportJobId,
+        OrganizationId: OrganizationId
+    ): CancelMailboxExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelMailboxExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CancelMailboxExportJobResponse extends js.Object
+
+  object CancelMailboxExportJobResponse {
+    @inline
+    def apply(): CancelMailboxExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelMailboxExportJobResponse]
+    }
+  }
+
+  @js.native
   trait CreateAliasRequest extends js.Object {
     var Alias: EmailAddress
     var EntityId: WorkMailIdentifier
@@ -366,6 +426,55 @@ package workmail {
       val __obj = js.Dynamic.literal()
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateOrganizationRequest extends js.Object {
+    var Alias: OrganizationName
+    var ClientToken: js.UndefOr[IdempotencyClientToken]
+    var DirectoryId: js.UndefOr[DirectoryId]
+    var Domains: js.UndefOr[Domains]
+    var EnableInteroperability: js.UndefOr[Boolean]
+    var KmsKeyArn: js.UndefOr[KmsKeyArn]
+  }
+
+  object CreateOrganizationRequest {
+    @inline
+    def apply(
+        Alias: OrganizationName,
+        ClientToken: js.UndefOr[IdempotencyClientToken] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Domains: js.UndefOr[Domains] = js.undefined,
+        EnableInteroperability: js.UndefOr[Boolean] = js.undefined,
+        KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
+    ): CreateOrganizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Alias" -> Alias.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      Domains.foreach(__v => __obj.updateDynamic("Domains")(__v.asInstanceOf[js.Any]))
+      EnableInteroperability.foreach(__v => __obj.updateDynamic("EnableInteroperability")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateOrganizationResponse extends js.Object {
+    var OrganizationId: js.UndefOr[OrganizationId]
+  }
+
+  object CreateOrganizationResponse {
+    @inline
+    def apply(
+        OrganizationId: js.UndefOr[OrganizationId] = js.undefined
+    ): CreateOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOrganizationResponse]
     }
   }
 
@@ -603,6 +712,49 @@ package workmail {
   }
 
   @js.native
+  trait DeleteOrganizationRequest extends js.Object {
+    var DeleteDirectory: Boolean
+    var OrganizationId: OrganizationId
+    var ClientToken: js.UndefOr[IdempotencyClientToken]
+  }
+
+  object DeleteOrganizationRequest {
+    @inline
+    def apply(
+        DeleteDirectory: Boolean,
+        OrganizationId: OrganizationId,
+        ClientToken: js.UndefOr[IdempotencyClientToken] = js.undefined
+    ): DeleteOrganizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeleteDirectory" -> DeleteDirectory.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteOrganizationResponse extends js.Object {
+    var OrganizationId: js.UndefOr[OrganizationId]
+    var State: js.UndefOr[String]
+  }
+
+  object DeleteOrganizationResponse {
+    @inline
+    def apply(
+        OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
+        State: js.UndefOr[String] = js.undefined
+    ): DeleteOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteOrganizationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteResourceRequest extends js.Object {
     var OrganizationId: OrganizationId
     var ResourceId: ResourceId
@@ -774,6 +926,75 @@ package workmail {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGroupResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeMailboxExportJobRequest extends js.Object {
+    var JobId: MailboxExportJobId
+    var OrganizationId: OrganizationId
+  }
+
+  object DescribeMailboxExportJobRequest {
+    @inline
+    def apply(
+        JobId: MailboxExportJobId,
+        OrganizationId: OrganizationId
+    ): DescribeMailboxExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeMailboxExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeMailboxExportJobResponse extends js.Object {
+    var Description: js.UndefOr[Description]
+    var EndTime: js.UndefOr[Timestamp]
+    var EntityId: js.UndefOr[WorkMailIdentifier]
+    var ErrorInfo: js.UndefOr[MailboxExportErrorInfo]
+    var EstimatedProgress: js.UndefOr[Percentage]
+    var KmsKeyArn: js.UndefOr[KmsKeyArn]
+    var RoleArn: js.UndefOr[RoleArn]
+    var S3BucketName: js.UndefOr[S3BucketName]
+    var S3Path: js.UndefOr[S3ObjectKey]
+    var S3Prefix: js.UndefOr[S3ObjectKey]
+    var StartTime: js.UndefOr[Timestamp]
+    var State: js.UndefOr[MailboxExportJobState]
+  }
+
+  object DescribeMailboxExportJobResponse {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        EntityId: js.UndefOr[WorkMailIdentifier] = js.undefined,
+        ErrorInfo: js.UndefOr[MailboxExportErrorInfo] = js.undefined,
+        EstimatedProgress: js.UndefOr[Percentage] = js.undefined,
+        KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        S3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        S3Path: js.UndefOr[S3ObjectKey] = js.undefined,
+        S3Prefix: js.UndefOr[S3ObjectKey] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        State: js.UndefOr[MailboxExportJobState] = js.undefined
+    ): DescribeMailboxExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      EntityId.foreach(__v => __obj.updateDynamic("EntityId")(__v.asInstanceOf[js.Any]))
+      ErrorInfo.foreach(__v => __obj.updateDynamic("ErrorInfo")(__v.asInstanceOf[js.Any]))
+      EstimatedProgress.foreach(__v => __obj.updateDynamic("EstimatedProgress")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3Path.foreach(__v => __obj.updateDynamic("S3Path")(__v.asInstanceOf[js.Any]))
+      S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMailboxExportJobResponse]
     }
   }
 
@@ -1013,6 +1234,28 @@ package workmail {
     def apply(): DisassociateMemberFromGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
+    }
+  }
+
+  /** The domain to associate with an Amazon WorkMail organization.
+    * When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see [[https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html|Adding a domain]] in the <i>Amazon WorkMail Administrator Guide</i>.
+    */
+  @js.native
+  trait Domain extends js.Object {
+    var DomainName: js.UndefOr[DomainName]
+    var HostedZoneId: js.UndefOr[HostedZoneId]
+  }
+
+  object Domain {
+    @inline
+    def apply(
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        HostedZoneId: js.UndefOr[HostedZoneId] = js.undefined
+    ): Domain = {
+      val __obj = js.Dynamic.literal()
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Domain]
     }
   }
 
@@ -1392,6 +1635,49 @@ package workmail {
   }
 
   @js.native
+  trait ListMailboxExportJobsRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMailboxExportJobsRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMailboxExportJobsRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMailboxExportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMailboxExportJobsResponse extends js.Object {
+    var Jobs: js.UndefOr[Jobs]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMailboxExportJobsResponse {
+    @inline
+    def apply(
+        Jobs: js.UndefOr[Jobs] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMailboxExportJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMailboxExportJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListMailboxPermissionsRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var OrganizationId: OrganizationId
@@ -1640,6 +1926,59 @@ package workmail {
     }
   }
 
+  /** The details of a mailbox export job, including the user or resource ID associated with the mailbox and the S3 bucket that the mailbox contents are exported to.
+    */
+  @js.native
+  trait MailboxExportJob extends js.Object {
+    var Description: js.UndefOr[Description]
+    var EndTime: js.UndefOr[Timestamp]
+    var EntityId: js.UndefOr[WorkMailIdentifier]
+    var EstimatedProgress: js.UndefOr[Percentage]
+    var JobId: js.UndefOr[MailboxExportJobId]
+    var S3BucketName: js.UndefOr[S3BucketName]
+    var S3Path: js.UndefOr[S3ObjectKey]
+    var StartTime: js.UndefOr[Timestamp]
+    var State: js.UndefOr[MailboxExportJobState]
+  }
+
+  object MailboxExportJob {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        EntityId: js.UndefOr[WorkMailIdentifier] = js.undefined,
+        EstimatedProgress: js.UndefOr[Percentage] = js.undefined,
+        JobId: js.UndefOr[MailboxExportJobId] = js.undefined,
+        S3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        S3Path: js.UndefOr[S3ObjectKey] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        State: js.UndefOr[MailboxExportJobState] = js.undefined
+    ): MailboxExportJob = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      EntityId.foreach(__v => __obj.updateDynamic("EntityId")(__v.asInstanceOf[js.Any]))
+      EstimatedProgress.foreach(__v => __obj.updateDynamic("EstimatedProgress")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3Path.foreach(__v => __obj.updateDynamic("S3Path")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MailboxExportJob]
+    }
+  }
+
+  @js.native
+  sealed trait MailboxExportJobState extends js.Any
+  object MailboxExportJobState {
+    val RUNNING = "RUNNING".asInstanceOf[MailboxExportJobState]
+    val COMPLETED = "COMPLETED".asInstanceOf[MailboxExportJobState]
+    val FAILED = "FAILED".asInstanceOf[MailboxExportJobState]
+    val CANCELLED = "CANCELLED".asInstanceOf[MailboxExportJobState]
+
+    @inline def values = js.Array(RUNNING, COMPLETED, FAILED, CANCELLED)
+  }
+
   /** The representation of a user or group.
     */
   @js.native
@@ -1687,6 +2026,7 @@ package workmail {
   @js.native
   trait OrganizationSummary extends js.Object {
     var Alias: js.UndefOr[OrganizationName]
+    var DefaultMailDomain: js.UndefOr[DomainName]
     var ErrorMessage: js.UndefOr[String]
     var OrganizationId: js.UndefOr[OrganizationId]
     var State: js.UndefOr[String]
@@ -1696,12 +2036,14 @@ package workmail {
     @inline
     def apply(
         Alias: js.UndefOr[OrganizationName] = js.undefined,
+        DefaultMailDomain: js.UndefOr[DomainName] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
         OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
         State: js.UndefOr[String] = js.undefined
     ): OrganizationSummary = {
       val __obj = js.Dynamic.literal()
       Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      DefaultMailDomain.foreach(__v => __obj.updateDynamic("DefaultMailDomain")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -1999,6 +2341,61 @@ package workmail {
     val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
 
     @inline def values = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
+  }
+
+  @js.native
+  trait StartMailboxExportJobRequest extends js.Object {
+    var ClientToken: IdempotencyClientToken
+    var EntityId: WorkMailIdentifier
+    var KmsKeyArn: KmsKeyArn
+    var OrganizationId: OrganizationId
+    var RoleArn: RoleArn
+    var S3BucketName: S3BucketName
+    var S3Prefix: S3ObjectKey
+    var Description: js.UndefOr[Description]
+  }
+
+  object StartMailboxExportJobRequest {
+    @inline
+    def apply(
+        ClientToken: IdempotencyClientToken,
+        EntityId: WorkMailIdentifier,
+        KmsKeyArn: KmsKeyArn,
+        OrganizationId: OrganizationId,
+        RoleArn: RoleArn,
+        S3BucketName: S3BucketName,
+        S3Prefix: S3ObjectKey,
+        Description: js.UndefOr[Description] = js.undefined
+    ): StartMailboxExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "KmsKeyArn" -> KmsKeyArn.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
+        "S3Prefix" -> S3Prefix.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartMailboxExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartMailboxExportJobResponse extends js.Object {
+    var JobId: js.UndefOr[MailboxExportJobId]
+  }
+
+  object StartMailboxExportJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[MailboxExportJobId] = js.undefined
+    ): StartMailboxExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartMailboxExportJobResponse]
+    }
   }
 
   /** Describes a tag applied to a resource.

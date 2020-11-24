@@ -8,6 +8,8 @@ import facade.amazonaws._
 
 package object comprehend {
   type AnyLengthString = String
+  type AttributeNamesList = js.Array[AttributeNamesListItem]
+  type AttributeNamesListItem = String
   type BatchItemErrorList = js.Array[BatchItemError]
   type ClientRequestTokenString = String
   type ComprehendArn = String
@@ -19,12 +21,14 @@ package object comprehend {
   type CustomerInputStringList = js.Array[CustomerInputString]
   type DocumentClassificationJobPropertiesList = js.Array[DocumentClassificationJobProperties]
   type DocumentClassifierArn = String
+  type DocumentClassifierAugmentedManifestsList = js.Array[AugmentedManifestsListItem]
   type DocumentClassifierEndpointArn = String
   type DocumentClassifierPropertiesList = js.Array[DocumentClassifierProperties]
   type DominantLanguageDetectionJobPropertiesList = js.Array[DominantLanguageDetectionJobProperties]
   type EndpointPropertiesList = js.Array[EndpointProperties]
   type EntitiesDetectionJobPropertiesList = js.Array[EntitiesDetectionJobProperties]
   type EntityRecognizerArn = String
+  type EntityRecognizerAugmentedManifestsList = js.Array[AugmentedManifestsListItem]
   type EntityRecognizerEndpointArn = String
   type EntityRecognizerMetadataEntityTypesList = js.Array[EntityRecognizerMetadataEntityTypesListItem]
   type EntityRecognizerPropertiesList = js.Array[EntityRecognizerProperties]
@@ -47,9 +51,13 @@ package object comprehend {
   type ListOfEntities = js.Array[Entity]
   type ListOfKeyPhrases = js.Array[KeyPhrase]
   type ListOfLabels = js.Array[DocumentLabel]
+  type ListOfPiiEntities = js.Array[PiiEntity]
+  type ListOfPiiEntityTypes = js.Array[PiiEntityType]
   type ListOfSyntaxTokens = js.Array[SyntaxToken]
+  type MaskCharacter = String
   type MaxResultsInteger = Int
   type NumberOfTopicsInteger = Int
+  type PiiEntitiesDetectionJobPropertiesList = js.Array[PiiEntitiesDetectionJobProperties]
   type S3Uri = String
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
@@ -84,11 +92,13 @@ package object comprehend {
     @inline def describeEntitiesDetectionJobFuture(params: DescribeEntitiesDetectionJobRequest): Future[DescribeEntitiesDetectionJobResponse] = service.describeEntitiesDetectionJob(params).promise().toFuture
     @inline def describeEntityRecognizerFuture(params: DescribeEntityRecognizerRequest): Future[DescribeEntityRecognizerResponse] = service.describeEntityRecognizer(params).promise().toFuture
     @inline def describeKeyPhrasesDetectionJobFuture(params: DescribeKeyPhrasesDetectionJobRequest): Future[DescribeKeyPhrasesDetectionJobResponse] = service.describeKeyPhrasesDetectionJob(params).promise().toFuture
+    @inline def describePiiEntitiesDetectionJobFuture(params: DescribePiiEntitiesDetectionJobRequest): Future[DescribePiiEntitiesDetectionJobResponse] = service.describePiiEntitiesDetectionJob(params).promise().toFuture
     @inline def describeSentimentDetectionJobFuture(params: DescribeSentimentDetectionJobRequest): Future[DescribeSentimentDetectionJobResponse] = service.describeSentimentDetectionJob(params).promise().toFuture
     @inline def describeTopicsDetectionJobFuture(params: DescribeTopicsDetectionJobRequest): Future[DescribeTopicsDetectionJobResponse] = service.describeTopicsDetectionJob(params).promise().toFuture
     @inline def detectDominantLanguageFuture(params: DetectDominantLanguageRequest): Future[DetectDominantLanguageResponse] = service.detectDominantLanguage(params).promise().toFuture
     @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] = service.detectEntities(params).promise().toFuture
     @inline def detectKeyPhrasesFuture(params: DetectKeyPhrasesRequest): Future[DetectKeyPhrasesResponse] = service.detectKeyPhrases(params).promise().toFuture
+    @inline def detectPiiEntitiesFuture(params: DetectPiiEntitiesRequest): Future[DetectPiiEntitiesResponse] = service.detectPiiEntities(params).promise().toFuture
     @inline def detectSentimentFuture(params: DetectSentimentRequest): Future[DetectSentimentResponse] = service.detectSentiment(params).promise().toFuture
     @inline def detectSyntaxFuture(params: DetectSyntaxRequest): Future[DetectSyntaxResponse] = service.detectSyntax(params).promise().toFuture
     @inline def listDocumentClassificationJobsFuture(params: ListDocumentClassificationJobsRequest): Future[ListDocumentClassificationJobsResponse] = service.listDocumentClassificationJobs(params).promise().toFuture
@@ -98,6 +108,7 @@ package object comprehend {
     @inline def listEntitiesDetectionJobsFuture(params: ListEntitiesDetectionJobsRequest): Future[ListEntitiesDetectionJobsResponse] = service.listEntitiesDetectionJobs(params).promise().toFuture
     @inline def listEntityRecognizersFuture(params: ListEntityRecognizersRequest): Future[ListEntityRecognizersResponse] = service.listEntityRecognizers(params).promise().toFuture
     @inline def listKeyPhrasesDetectionJobsFuture(params: ListKeyPhrasesDetectionJobsRequest): Future[ListKeyPhrasesDetectionJobsResponse] = service.listKeyPhrasesDetectionJobs(params).promise().toFuture
+    @inline def listPiiEntitiesDetectionJobsFuture(params: ListPiiEntitiesDetectionJobsRequest): Future[ListPiiEntitiesDetectionJobsResponse] = service.listPiiEntitiesDetectionJobs(params).promise().toFuture
     @inline def listSentimentDetectionJobsFuture(params: ListSentimentDetectionJobsRequest): Future[ListSentimentDetectionJobsResponse] = service.listSentimentDetectionJobs(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTopicsDetectionJobsFuture(params: ListTopicsDetectionJobsRequest): Future[ListTopicsDetectionJobsResponse] = service.listTopicsDetectionJobs(params).promise().toFuture
@@ -105,11 +116,13 @@ package object comprehend {
     @inline def startDominantLanguageDetectionJobFuture(params: StartDominantLanguageDetectionJobRequest): Future[StartDominantLanguageDetectionJobResponse] = service.startDominantLanguageDetectionJob(params).promise().toFuture
     @inline def startEntitiesDetectionJobFuture(params: StartEntitiesDetectionJobRequest): Future[StartEntitiesDetectionJobResponse] = service.startEntitiesDetectionJob(params).promise().toFuture
     @inline def startKeyPhrasesDetectionJobFuture(params: StartKeyPhrasesDetectionJobRequest): Future[StartKeyPhrasesDetectionJobResponse] = service.startKeyPhrasesDetectionJob(params).promise().toFuture
+    @inline def startPiiEntitiesDetectionJobFuture(params: StartPiiEntitiesDetectionJobRequest): Future[StartPiiEntitiesDetectionJobResponse] = service.startPiiEntitiesDetectionJob(params).promise().toFuture
     @inline def startSentimentDetectionJobFuture(params: StartSentimentDetectionJobRequest): Future[StartSentimentDetectionJobResponse] = service.startSentimentDetectionJob(params).promise().toFuture
     @inline def startTopicsDetectionJobFuture(params: StartTopicsDetectionJobRequest): Future[StartTopicsDetectionJobResponse] = service.startTopicsDetectionJob(params).promise().toFuture
     @inline def stopDominantLanguageDetectionJobFuture(params: StopDominantLanguageDetectionJobRequest): Future[StopDominantLanguageDetectionJobResponse] = service.stopDominantLanguageDetectionJob(params).promise().toFuture
     @inline def stopEntitiesDetectionJobFuture(params: StopEntitiesDetectionJobRequest): Future[StopEntitiesDetectionJobResponse] = service.stopEntitiesDetectionJob(params).promise().toFuture
     @inline def stopKeyPhrasesDetectionJobFuture(params: StopKeyPhrasesDetectionJobRequest): Future[StopKeyPhrasesDetectionJobResponse] = service.stopKeyPhrasesDetectionJob(params).promise().toFuture
+    @inline def stopPiiEntitiesDetectionJobFuture(params: StopPiiEntitiesDetectionJobRequest): Future[StopPiiEntitiesDetectionJobResponse] = service.stopPiiEntitiesDetectionJob(params).promise().toFuture
     @inline def stopSentimentDetectionJobFuture(params: StopSentimentDetectionJobRequest): Future[StopSentimentDetectionJobResponse] = service.stopSentimentDetectionJob(params).promise().toFuture
     @inline def stopTrainingDocumentClassifierFuture(params: StopTrainingDocumentClassifierRequest): Future[StopTrainingDocumentClassifierResponse] = service.stopTrainingDocumentClassifier(params).promise().toFuture
     @inline def stopTrainingEntityRecognizerFuture(params: StopTrainingEntityRecognizerRequest): Future[StopTrainingEntityRecognizerResponse] = service.stopTrainingEntityRecognizer(params).promise().toFuture
@@ -145,11 +158,13 @@ package comprehend {
     def describeEntitiesDetectionJob(params: DescribeEntitiesDetectionJobRequest): Request[DescribeEntitiesDetectionJobResponse] = js.native
     def describeEntityRecognizer(params: DescribeEntityRecognizerRequest): Request[DescribeEntityRecognizerResponse] = js.native
     def describeKeyPhrasesDetectionJob(params: DescribeKeyPhrasesDetectionJobRequest): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
+    def describePiiEntitiesDetectionJob(params: DescribePiiEntitiesDetectionJobRequest): Request[DescribePiiEntitiesDetectionJobResponse] = js.native
     def describeSentimentDetectionJob(params: DescribeSentimentDetectionJobRequest): Request[DescribeSentimentDetectionJobResponse] = js.native
     def describeTopicsDetectionJob(params: DescribeTopicsDetectionJobRequest): Request[DescribeTopicsDetectionJobResponse] = js.native
     def detectDominantLanguage(params: DetectDominantLanguageRequest): Request[DetectDominantLanguageResponse] = js.native
     def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
     def detectKeyPhrases(params: DetectKeyPhrasesRequest): Request[DetectKeyPhrasesResponse] = js.native
+    def detectPiiEntities(params: DetectPiiEntitiesRequest): Request[DetectPiiEntitiesResponse] = js.native
     def detectSentiment(params: DetectSentimentRequest): Request[DetectSentimentResponse] = js.native
     def detectSyntax(params: DetectSyntaxRequest): Request[DetectSyntaxResponse] = js.native
     def listDocumentClassificationJobs(params: ListDocumentClassificationJobsRequest): Request[ListDocumentClassificationJobsResponse] = js.native
@@ -159,6 +174,7 @@ package comprehend {
     def listEntitiesDetectionJobs(params: ListEntitiesDetectionJobsRequest): Request[ListEntitiesDetectionJobsResponse] = js.native
     def listEntityRecognizers(params: ListEntityRecognizersRequest): Request[ListEntityRecognizersResponse] = js.native
     def listKeyPhrasesDetectionJobs(params: ListKeyPhrasesDetectionJobsRequest): Request[ListKeyPhrasesDetectionJobsResponse] = js.native
+    def listPiiEntitiesDetectionJobs(params: ListPiiEntitiesDetectionJobsRequest): Request[ListPiiEntitiesDetectionJobsResponse] = js.native
     def listSentimentDetectionJobs(params: ListSentimentDetectionJobsRequest): Request[ListSentimentDetectionJobsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTopicsDetectionJobs(params: ListTopicsDetectionJobsRequest): Request[ListTopicsDetectionJobsResponse] = js.native
@@ -166,17 +182,41 @@ package comprehend {
     def startDominantLanguageDetectionJob(params: StartDominantLanguageDetectionJobRequest): Request[StartDominantLanguageDetectionJobResponse] = js.native
     def startEntitiesDetectionJob(params: StartEntitiesDetectionJobRequest): Request[StartEntitiesDetectionJobResponse] = js.native
     def startKeyPhrasesDetectionJob(params: StartKeyPhrasesDetectionJobRequest): Request[StartKeyPhrasesDetectionJobResponse] = js.native
+    def startPiiEntitiesDetectionJob(params: StartPiiEntitiesDetectionJobRequest): Request[StartPiiEntitiesDetectionJobResponse] = js.native
     def startSentimentDetectionJob(params: StartSentimentDetectionJobRequest): Request[StartSentimentDetectionJobResponse] = js.native
     def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] = js.native
     def stopDominantLanguageDetectionJob(params: StopDominantLanguageDetectionJobRequest): Request[StopDominantLanguageDetectionJobResponse] = js.native
     def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] = js.native
     def stopKeyPhrasesDetectionJob(params: StopKeyPhrasesDetectionJobRequest): Request[StopKeyPhrasesDetectionJobResponse] = js.native
+    def stopPiiEntitiesDetectionJob(params: StopPiiEntitiesDetectionJobRequest): Request[StopPiiEntitiesDetectionJobResponse] = js.native
     def stopSentimentDetectionJob(params: StopSentimentDetectionJobRequest): Request[StopSentimentDetectionJobResponse] = js.native
     def stopTrainingDocumentClassifier(params: StopTrainingDocumentClassifierRequest): Request[StopTrainingDocumentClassifierResponse] = js.native
     def stopTrainingEntityRecognizer(params: StopTrainingEntityRecognizerRequest): Request[StopTrainingEntityRecognizerResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
+  }
+
+  /** An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
+    */
+  @js.native
+  trait AugmentedManifestsListItem extends js.Object {
+    var AttributeNames: AttributeNamesList
+    var S3Uri: S3Uri
+  }
+
+  object AugmentedManifestsListItem {
+    @inline
+    def apply(
+        AttributeNames: AttributeNamesList,
+        S3Uri: S3Uri
+    ): AugmentedManifestsListItem = {
+      val __obj = js.Dynamic.literal(
+        "AttributeNames" -> AttributeNames.asInstanceOf[js.Any],
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AugmentedManifestsListItem]
+    }
   }
 
   /** The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
@@ -1091,6 +1131,39 @@ package comprehend {
   }
 
   @js.native
+  trait DescribePiiEntitiesDetectionJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object DescribePiiEntitiesDetectionJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): DescribePiiEntitiesDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribePiiEntitiesDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribePiiEntitiesDetectionJobResponse extends js.Object {
+    var PiiEntitiesDetectionJobProperties: js.UndefOr[PiiEntitiesDetectionJobProperties]
+  }
+
+  object DescribePiiEntitiesDetectionJobResponse {
+    @inline
+    def apply(
+        PiiEntitiesDetectionJobProperties: js.UndefOr[PiiEntitiesDetectionJobProperties] = js.undefined
+    ): DescribePiiEntitiesDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      PiiEntitiesDetectionJobProperties.foreach(__v => __obj.updateDynamic("PiiEntitiesDetectionJobProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePiiEntitiesDetectionJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeSentimentDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
@@ -1262,6 +1335,42 @@ package comprehend {
       val __obj = js.Dynamic.literal()
       KeyPhrases.foreach(__v => __obj.updateDynamic("KeyPhrases")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectKeyPhrasesResponse]
+    }
+  }
+
+  @js.native
+  trait DetectPiiEntitiesRequest extends js.Object {
+    var LanguageCode: LanguageCode
+    var Text: String
+  }
+
+  object DetectPiiEntitiesRequest {
+    @inline
+    def apply(
+        LanguageCode: LanguageCode,
+        Text: String
+    ): DetectPiiEntitiesRequest = {
+      val __obj = js.Dynamic.literal(
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DetectPiiEntitiesRequest]
+    }
+  }
+
+  @js.native
+  trait DetectPiiEntitiesResponse extends js.Object {
+    var Entities: js.UndefOr[ListOfPiiEntities]
+  }
+
+  object DetectPiiEntitiesResponse {
+    @inline
+    def apply(
+        Entities: js.UndefOr[ListOfPiiEntities] = js.undefined
+    ): DetectPiiEntitiesResponse = {
+      val __obj = js.Dynamic.literal()
+      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectPiiEntitiesResponse]
     }
   }
 
@@ -1439,6 +1548,15 @@ package comprehend {
     }
   }
 
+  @js.native
+  sealed trait DocumentClassifierDataFormat extends js.Any
+  object DocumentClassifierDataFormat {
+    val COMPREHEND_CSV = "COMPREHEND_CSV".asInstanceOf[DocumentClassifierDataFormat]
+    val AUGMENTED_MANIFEST = "AUGMENTED_MANIFEST".asInstanceOf[DocumentClassifierDataFormat]
+
+    @inline def values = js.Array(COMPREHEND_CSV, AUGMENTED_MANIFEST)
+  }
+
   /** Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
     */
   @js.native
@@ -1468,21 +1586,25 @@ package comprehend {
     */
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
-    var S3Uri: S3Uri
+    var AugmentedManifests: js.UndefOr[DocumentClassifierAugmentedManifestsList]
+    var DataFormat: js.UndefOr[DocumentClassifierDataFormat]
     var LabelDelimiter: js.UndefOr[LabelDelimiter]
+    var S3Uri: js.UndefOr[S3Uri]
   }
 
   object DocumentClassifierInputDataConfig {
     @inline
     def apply(
-        S3Uri: S3Uri,
-        LabelDelimiter: js.UndefOr[LabelDelimiter] = js.undefined
+        AugmentedManifests: js.UndefOr[DocumentClassifierAugmentedManifestsList] = js.undefined,
+        DataFormat: js.UndefOr[DocumentClassifierDataFormat] = js.undefined,
+        LabelDelimiter: js.UndefOr[LabelDelimiter] = js.undefined,
+        S3Uri: js.UndefOr[S3Uri] = js.undefined
     ): DocumentClassifierInputDataConfig = {
-      val __obj = js.Dynamic.literal(
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      AugmentedManifests.foreach(__v => __obj.updateDynamic("AugmentedManifests")(__v.asInstanceOf[js.Any]))
+      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
       LabelDelimiter.foreach(__v => __obj.updateDynamic("LabelDelimiter")(__v.asInstanceOf[js.Any]))
+      S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentClassifierInputDataConfig]
     }
   }
@@ -1902,6 +2024,15 @@ package comprehend {
     }
   }
 
+  @js.native
+  sealed trait EntityRecognizerDataFormat extends js.Any
+  object EntityRecognizerDataFormat {
+    val COMPREHEND_CSV = "COMPREHEND_CSV".asInstanceOf[EntityRecognizerDataFormat]
+    val AUGMENTED_MANIFEST = "AUGMENTED_MANIFEST".asInstanceOf[EntityRecognizerDataFormat]
+
+    @inline def values = js.Array(COMPREHEND_CSV, AUGMENTED_MANIFEST)
+  }
+
   /** Describes the training documents submitted with an entity recognizer.
     */
   @js.native
@@ -1992,26 +2123,32 @@ package comprehend {
     */
   @js.native
   trait EntityRecognizerInputDataConfig extends js.Object {
-    var Documents: EntityRecognizerDocuments
     var EntityTypes: EntityTypesList
     var Annotations: js.UndefOr[EntityRecognizerAnnotations]
+    var AugmentedManifests: js.UndefOr[EntityRecognizerAugmentedManifestsList]
+    var DataFormat: js.UndefOr[EntityRecognizerDataFormat]
+    var Documents: js.UndefOr[EntityRecognizerDocuments]
     var EntityList: js.UndefOr[EntityRecognizerEntityList]
   }
 
   object EntityRecognizerInputDataConfig {
     @inline
     def apply(
-        Documents: EntityRecognizerDocuments,
         EntityTypes: EntityTypesList,
         Annotations: js.UndefOr[EntityRecognizerAnnotations] = js.undefined,
+        AugmentedManifests: js.UndefOr[EntityRecognizerAugmentedManifestsList] = js.undefined,
+        DataFormat: js.UndefOr[EntityRecognizerDataFormat] = js.undefined,
+        Documents: js.UndefOr[EntityRecognizerDocuments] = js.undefined,
         EntityList: js.UndefOr[EntityRecognizerEntityList] = js.undefined
     ): EntityRecognizerInputDataConfig = {
       val __obj = js.Dynamic.literal(
-        "Documents" -> Documents.asInstanceOf[js.Any],
         "EntityTypes" -> EntityTypes.asInstanceOf[js.Any]
       )
 
       Annotations.foreach(__v => __obj.updateDynamic("Annotations")(__v.asInstanceOf[js.Any]))
+      AugmentedManifests.foreach(__v => __obj.updateDynamic("AugmentedManifests")(__v.asInstanceOf[js.Any]))
+      DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
+      Documents.foreach(__v => __obj.updateDynamic("Documents")(__v.asInstanceOf[js.Any]))
       EntityList.foreach(__v => __obj.updateDynamic("EntityList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityRecognizerInputDataConfig]
     }
@@ -2162,7 +2299,7 @@ package comprehend {
     }
   }
 
-  /** Information about an individual item on a list of entity types.
+  /** An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
     */
   @js.native
   trait EntityTypesListItem extends js.Object {
@@ -2638,6 +2775,47 @@ package comprehend {
   }
 
   @js.native
+  trait ListPiiEntitiesDetectionJobsRequest extends js.Object {
+    var Filter: js.UndefOr[PiiEntitiesDetectionJobFilter]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListPiiEntitiesDetectionJobsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[PiiEntitiesDetectionJobFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListPiiEntitiesDetectionJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPiiEntitiesDetectionJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPiiEntitiesDetectionJobsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var PiiEntitiesDetectionJobPropertiesList: js.UndefOr[PiiEntitiesDetectionJobPropertiesList]
+  }
+
+  object ListPiiEntitiesDetectionJobsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        PiiEntitiesDetectionJobPropertiesList: js.UndefOr[PiiEntitiesDetectionJobPropertiesList] = js.undefined
+    ): ListPiiEntitiesDetectionJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PiiEntitiesDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("PiiEntitiesDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPiiEntitiesDetectionJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListSentimentDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[SentimentDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
@@ -2837,6 +3015,230 @@ package comprehend {
     val VERB = "VERB".asInstanceOf[PartOfSpeechTagType]
 
     @inline def values = js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
+  }
+
+  /** Provides information for filtering a list of PII entity detection jobs.
+    */
+  @js.native
+  trait PiiEntitiesDetectionJobFilter extends js.Object {
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var SubmitTimeAfter: js.UndefOr[Timestamp]
+    var SubmitTimeBefore: js.UndefOr[Timestamp]
+  }
+
+  object PiiEntitiesDetectionJobFilter {
+    @inline
+    def apply(
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
+    ): PiiEntitiesDetectionJobFilter = {
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
+      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PiiEntitiesDetectionJobFilter]
+    }
+  }
+
+  /** Provides information about a PII entities detection job.
+    */
+  @js.native
+  trait PiiEntitiesDetectionJobProperties extends js.Object {
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
+    var EndTime: js.UndefOr[Timestamp]
+    var InputDataConfig: js.UndefOr[InputDataConfig]
+    var JobId: js.UndefOr[JobId]
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var Message: js.UndefOr[AnyLengthString]
+    var Mode: js.UndefOr[PiiEntitiesDetectionMode]
+    var OutputDataConfig: js.UndefOr[PiiOutputDataConfig]
+    var RedactionConfig: js.UndefOr[RedactionConfig]
+    var SubmitTime: js.UndefOr[Timestamp]
+  }
+
+  object PiiEntitiesDetectionJobProperties {
+    @inline
+    def apply(
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        Message: js.UndefOr[AnyLengthString] = js.undefined,
+        Mode: js.UndefOr[PiiEntitiesDetectionMode] = js.undefined,
+        OutputDataConfig: js.UndefOr[PiiOutputDataConfig] = js.undefined,
+        RedactionConfig: js.UndefOr[RedactionConfig] = js.undefined,
+        SubmitTime: js.UndefOr[Timestamp] = js.undefined
+    ): PiiEntitiesDetectionJobProperties = {
+      val __obj = js.Dynamic.literal()
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
+      RedactionConfig.foreach(__v => __obj.updateDynamic("RedactionConfig")(__v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PiiEntitiesDetectionJobProperties]
+    }
+  }
+
+  @js.native
+  sealed trait PiiEntitiesDetectionMaskMode extends js.Any
+  object PiiEntitiesDetectionMaskMode {
+    val MASK = "MASK".asInstanceOf[PiiEntitiesDetectionMaskMode]
+    val REPLACE_WITH_PII_ENTITY_TYPE = "REPLACE_WITH_PII_ENTITY_TYPE".asInstanceOf[PiiEntitiesDetectionMaskMode]
+
+    @inline def values = js.Array(MASK, REPLACE_WITH_PII_ENTITY_TYPE)
+  }
+
+  @js.native
+  sealed trait PiiEntitiesDetectionMode extends js.Any
+  object PiiEntitiesDetectionMode {
+    val ONLY_REDACTION = "ONLY_REDACTION".asInstanceOf[PiiEntitiesDetectionMode]
+    val ONLY_OFFSETS = "ONLY_OFFSETS".asInstanceOf[PiiEntitiesDetectionMode]
+
+    @inline def values = js.Array(ONLY_REDACTION, ONLY_OFFSETS)
+  }
+
+  /** Provides information about a PII entity.
+    */
+  @js.native
+  trait PiiEntity extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var EndOffset: js.UndefOr[Int]
+    var Score: js.UndefOr[Float]
+    var Type: js.UndefOr[PiiEntityType]
+  }
+
+  object PiiEntity {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined,
+        Type: js.UndefOr[PiiEntityType] = js.undefined
+    ): PiiEntity = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PiiEntity]
+    }
+  }
+
+  @js.native
+  sealed trait PiiEntityType extends js.Any
+  object PiiEntityType {
+    val BANK_ACCOUNT_NUMBER = "BANK_ACCOUNT_NUMBER".asInstanceOf[PiiEntityType]
+    val BANK_ROUTING = "BANK_ROUTING".asInstanceOf[PiiEntityType]
+    val CREDIT_DEBIT_NUMBER = "CREDIT_DEBIT_NUMBER".asInstanceOf[PiiEntityType]
+    val CREDIT_DEBIT_CVV = "CREDIT_DEBIT_CVV".asInstanceOf[PiiEntityType]
+    val CREDIT_DEBIT_EXPIRY = "CREDIT_DEBIT_EXPIRY".asInstanceOf[PiiEntityType]
+    val PIN = "PIN".asInstanceOf[PiiEntityType]
+    val EMAIL = "EMAIL".asInstanceOf[PiiEntityType]
+    val ADDRESS = "ADDRESS".asInstanceOf[PiiEntityType]
+    val NAME = "NAME".asInstanceOf[PiiEntityType]
+    val PHONE = "PHONE".asInstanceOf[PiiEntityType]
+    val SSN = "SSN".asInstanceOf[PiiEntityType]
+    val DATE_TIME = "DATE_TIME".asInstanceOf[PiiEntityType]
+    val PASSPORT_NUMBER = "PASSPORT_NUMBER".asInstanceOf[PiiEntityType]
+    val DRIVER_ID = "DRIVER_ID".asInstanceOf[PiiEntityType]
+    val URL = "URL".asInstanceOf[PiiEntityType]
+    val AGE = "AGE".asInstanceOf[PiiEntityType]
+    val USERNAME = "USERNAME".asInstanceOf[PiiEntityType]
+    val PASSWORD = "PASSWORD".asInstanceOf[PiiEntityType]
+    val AWS_ACCESS_KEY = "AWS_ACCESS_KEY".asInstanceOf[PiiEntityType]
+    val AWS_SECRET_KEY = "AWS_SECRET_KEY".asInstanceOf[PiiEntityType]
+    val IP_ADDRESS = "IP_ADDRESS".asInstanceOf[PiiEntityType]
+    val MAC_ADDRESS = "MAC_ADDRESS".asInstanceOf[PiiEntityType]
+    val ALL = "ALL".asInstanceOf[PiiEntityType]
+
+    @inline def values = js.Array(
+      BANK_ACCOUNT_NUMBER,
+      BANK_ROUTING,
+      CREDIT_DEBIT_NUMBER,
+      CREDIT_DEBIT_CVV,
+      CREDIT_DEBIT_EXPIRY,
+      PIN,
+      EMAIL,
+      ADDRESS,
+      NAME,
+      PHONE,
+      SSN,
+      DATE_TIME,
+      PASSPORT_NUMBER,
+      DRIVER_ID,
+      URL,
+      AGE,
+      USERNAME,
+      PASSWORD,
+      AWS_ACCESS_KEY,
+      AWS_SECRET_KEY,
+      IP_ADDRESS,
+      MAC_ADDRESS,
+      ALL
+    )
+  }
+
+  /** Provides configuration parameters for the output of PII entity detection jobs.
+    */
+  @js.native
+  trait PiiOutputDataConfig extends js.Object {
+    var S3Uri: S3Uri
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+  }
+
+  object PiiOutputDataConfig {
+    @inline
+    def apply(
+        S3Uri: S3Uri,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+    ): PiiOutputDataConfig = {
+      val __obj = js.Dynamic.literal(
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PiiOutputDataConfig]
+    }
+  }
+
+  /** Provides configuration parameters for PII entity redaction.
+    */
+  @js.native
+  trait RedactionConfig extends js.Object {
+    var MaskCharacter: js.UndefOr[MaskCharacter]
+    var MaskMode: js.UndefOr[PiiEntitiesDetectionMaskMode]
+    var PiiEntityTypes: js.UndefOr[ListOfPiiEntityTypes]
+  }
+
+  object RedactionConfig {
+    @inline
+    def apply(
+        MaskCharacter: js.UndefOr[MaskCharacter] = js.undefined,
+        MaskMode: js.UndefOr[PiiEntitiesDetectionMaskMode] = js.undefined,
+        PiiEntityTypes: js.UndefOr[ListOfPiiEntityTypes] = js.undefined
+    ): RedactionConfig = {
+      val __obj = js.Dynamic.literal()
+      MaskCharacter.foreach(__v => __obj.updateDynamic("MaskCharacter")(__v.asInstanceOf[js.Any]))
+      MaskMode.foreach(__v => __obj.updateDynamic("MaskMode")(__v.asInstanceOf[js.Any]))
+      PiiEntityTypes.foreach(__v => __obj.updateDynamic("PiiEntityTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedactionConfig]
+    }
   }
 
   /** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
@@ -3188,6 +3590,64 @@ package comprehend {
   }
 
   @js.native
+  trait StartPiiEntitiesDetectionJobRequest extends js.Object {
+    var DataAccessRoleArn: IamRoleArn
+    var InputDataConfig: InputDataConfig
+    var LanguageCode: LanguageCode
+    var Mode: PiiEntitiesDetectionMode
+    var OutputDataConfig: OutputDataConfig
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var JobName: js.UndefOr[JobName]
+    var RedactionConfig: js.UndefOr[RedactionConfig]
+  }
+
+  object StartPiiEntitiesDetectionJobRequest {
+    @inline
+    def apply(
+        DataAccessRoleArn: IamRoleArn,
+        InputDataConfig: InputDataConfig,
+        LanguageCode: LanguageCode,
+        Mode: PiiEntitiesDetectionMode,
+        OutputDataConfig: OutputDataConfig,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        RedactionConfig: js.UndefOr[RedactionConfig] = js.undefined
+    ): StartPiiEntitiesDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Mode" -> Mode.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      RedactionConfig.foreach(__v => __obj.updateDynamic("RedactionConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPiiEntitiesDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartPiiEntitiesDetectionJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object StartPiiEntitiesDetectionJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): StartPiiEntitiesDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPiiEntitiesDetectionJobResponse]
+    }
+  }
+
+  @js.native
   trait StartSentimentDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3408,6 +3868,42 @@ package comprehend {
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopKeyPhrasesDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait StopPiiEntitiesDetectionJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object StopPiiEntitiesDetectionJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): StopPiiEntitiesDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopPiiEntitiesDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait StopPiiEntitiesDetectionJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object StopPiiEntitiesDetectionJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): StopPiiEntitiesDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopPiiEntitiesDetectionJobResponse]
     }
   }
 

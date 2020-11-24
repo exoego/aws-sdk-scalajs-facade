@@ -10,6 +10,7 @@ package object workspaces {
   type ARN = String
   type AccountModificationList = js.Array[AccountModification]
   type Alias = String
+  type ApplicationList = js.Array[Application]
   type AwsAccount = String
   type BooleanObject = Boolean
   type BundleId = String
@@ -18,6 +19,13 @@ package object workspaces {
   type BundleOwner = String
   type ClientPropertiesList = js.Array[ClientPropertiesResult]
   type ComputerName = String
+  type ConnectionAliasAssociationList = js.Array[ConnectionAliasAssociation]
+  type ConnectionAliasId = String
+  type ConnectionAliasIdList = js.Array[ConnectionAliasId]
+  type ConnectionAliasList = js.Array[ConnectionAlias]
+  type ConnectionAliasPermissions = js.Array[ConnectionAliasPermission]
+  type ConnectionIdentifier = String
+  type ConnectionString = String
   type DedicatedTenancyCidrRangeList = js.Array[DedicatedTenancyManagementCidrRange]
   type DedicatedTenancyManagementCidrRange = String
   type DefaultOu = String
@@ -89,12 +97,15 @@ package object workspaces {
 
   implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
 
+    @inline def associateConnectionAliasFuture(params: AssociateConnectionAliasRequest): Future[AssociateConnectionAliasResult] = service.associateConnectionAlias(params).promise().toFuture
     @inline def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] = service.associateIpGroups(params).promise().toFuture
     @inline def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] = service.authorizeIpRules(params).promise().toFuture
     @inline def copyWorkspaceImageFuture(params: CopyWorkspaceImageRequest): Future[CopyWorkspaceImageResult] = service.copyWorkspaceImage(params).promise().toFuture
+    @inline def createConnectionAliasFuture(params: CreateConnectionAliasRequest): Future[CreateConnectionAliasResult] = service.createConnectionAlias(params).promise().toFuture
     @inline def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] = service.createIpGroup(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] = service.createTags(params).promise().toFuture
     @inline def createWorkspacesFuture(params: CreateWorkspacesRequest): Future[CreateWorkspacesResult] = service.createWorkspaces(params).promise().toFuture
+    @inline def deleteConnectionAliasFuture(params: DeleteConnectionAliasRequest): Future[DeleteConnectionAliasResult] = service.deleteConnectionAlias(params).promise().toFuture
     @inline def deleteIpGroupFuture(params: DeleteIpGroupRequest): Future[DeleteIpGroupResult] = service.deleteIpGroup(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResult] = service.deleteTags(params).promise().toFuture
     @inline def deleteWorkspaceImageFuture(params: DeleteWorkspaceImageRequest): Future[DeleteWorkspaceImageResult] = service.deleteWorkspaceImage(params).promise().toFuture
@@ -102,6 +113,8 @@ package object workspaces {
     @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResult] = service.describeAccount(params).promise().toFuture
     @inline def describeAccountModificationsFuture(params: DescribeAccountModificationsRequest): Future[DescribeAccountModificationsResult] = service.describeAccountModifications(params).promise().toFuture
     @inline def describeClientPropertiesFuture(params: DescribeClientPropertiesRequest): Future[DescribeClientPropertiesResult] = service.describeClientProperties(params).promise().toFuture
+    @inline def describeConnectionAliasPermissionsFuture(params: DescribeConnectionAliasPermissionsRequest): Future[DescribeConnectionAliasPermissionsResult] = service.describeConnectionAliasPermissions(params).promise().toFuture
+    @inline def describeConnectionAliasesFuture(params: DescribeConnectionAliasesRequest): Future[DescribeConnectionAliasesResult] = service.describeConnectionAliases(params).promise().toFuture
     @inline def describeIpGroupsFuture(params: DescribeIpGroupsRequest): Future[DescribeIpGroupsResult] = service.describeIpGroups(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResult] = service.describeTags(params).promise().toFuture
     @inline def describeWorkspaceBundlesFuture(params: DescribeWorkspaceBundlesRequest): Future[DescribeWorkspaceBundlesResult] = service.describeWorkspaceBundles(params).promise().toFuture
@@ -111,6 +124,7 @@ package object workspaces {
     @inline def describeWorkspaceSnapshotsFuture(params: DescribeWorkspaceSnapshotsRequest): Future[DescribeWorkspaceSnapshotsResult] = service.describeWorkspaceSnapshots(params).promise().toFuture
     @inline def describeWorkspacesConnectionStatusFuture(params: DescribeWorkspacesConnectionStatusRequest): Future[DescribeWorkspacesConnectionStatusResult] = service.describeWorkspacesConnectionStatus(params).promise().toFuture
     @inline def describeWorkspacesFuture(params: DescribeWorkspacesRequest): Future[DescribeWorkspacesResult] = service.describeWorkspaces(params).promise().toFuture
+    @inline def disassociateConnectionAliasFuture(params: DisassociateConnectionAliasRequest): Future[DisassociateConnectionAliasResult] = service.disassociateConnectionAlias(params).promise().toFuture
     @inline def disassociateIpGroupsFuture(params: DisassociateIpGroupsRequest): Future[DisassociateIpGroupsResult] = service.disassociateIpGroups(params).promise().toFuture
     @inline def importWorkspaceImageFuture(params: ImportWorkspaceImageRequest): Future[ImportWorkspaceImageResult] = service.importWorkspaceImage(params).promise().toFuture
     @inline def listAvailableManagementCidrRangesFuture(params: ListAvailableManagementCidrRangesRequest): Future[ListAvailableManagementCidrRangesResult] = service.listAvailableManagementCidrRanges(params).promise().toFuture
@@ -130,6 +144,7 @@ package object workspaces {
     @inline def startWorkspacesFuture(params: StartWorkspacesRequest): Future[StartWorkspacesResult] = service.startWorkspaces(params).promise().toFuture
     @inline def stopWorkspacesFuture(params: StopWorkspacesRequest): Future[StopWorkspacesResult] = service.stopWorkspaces(params).promise().toFuture
     @inline def terminateWorkspacesFuture(params: TerminateWorkspacesRequest): Future[TerminateWorkspacesResult] = service.terminateWorkspaces(params).promise().toFuture
+    @inline def updateConnectionAliasPermissionFuture(params: UpdateConnectionAliasPermissionRequest): Future[UpdateConnectionAliasPermissionResult] = service.updateConnectionAliasPermission(params).promise().toFuture
     @inline def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] = service.updateRulesOfIpGroup(params).promise().toFuture
     @inline def updateWorkspaceImagePermissionFuture(params: UpdateWorkspaceImagePermissionRequest): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
 
@@ -142,12 +157,15 @@ package workspaces {
   class WorkSpaces() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateConnectionAlias(params: AssociateConnectionAliasRequest): Request[AssociateConnectionAliasResult] = js.native
     def associateIpGroups(params: AssociateIpGroupsRequest): Request[AssociateIpGroupsResult] = js.native
     def authorizeIpRules(params: AuthorizeIpRulesRequest): Request[AuthorizeIpRulesResult] = js.native
     def copyWorkspaceImage(params: CopyWorkspaceImageRequest): Request[CopyWorkspaceImageResult] = js.native
+    def createConnectionAlias(params: CreateConnectionAliasRequest): Request[CreateConnectionAliasResult] = js.native
     def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult] = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResult] = js.native
     def createWorkspaces(params: CreateWorkspacesRequest): Request[CreateWorkspacesResult] = js.native
+    def deleteConnectionAlias(params: DeleteConnectionAliasRequest): Request[DeleteConnectionAliasResult] = js.native
     def deleteIpGroup(params: DeleteIpGroupRequest): Request[DeleteIpGroupResult] = js.native
     def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResult] = js.native
     def deleteWorkspaceImage(params: DeleteWorkspaceImageRequest): Request[DeleteWorkspaceImageResult] = js.native
@@ -155,6 +173,8 @@ package workspaces {
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult] = js.native
     def describeAccountModifications(params: DescribeAccountModificationsRequest): Request[DescribeAccountModificationsResult] = js.native
     def describeClientProperties(params: DescribeClientPropertiesRequest): Request[DescribeClientPropertiesResult] = js.native
+    def describeConnectionAliasPermissions(params: DescribeConnectionAliasPermissionsRequest): Request[DescribeConnectionAliasPermissionsResult] = js.native
+    def describeConnectionAliases(params: DescribeConnectionAliasesRequest): Request[DescribeConnectionAliasesResult] = js.native
     def describeIpGroups(params: DescribeIpGroupsRequest): Request[DescribeIpGroupsResult] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
     def describeWorkspaceBundles(params: DescribeWorkspaceBundlesRequest): Request[DescribeWorkspaceBundlesResult] = js.native
@@ -164,6 +184,7 @@ package workspaces {
     def describeWorkspaceSnapshots(params: DescribeWorkspaceSnapshotsRequest): Request[DescribeWorkspaceSnapshotsResult] = js.native
     def describeWorkspaces(params: DescribeWorkspacesRequest): Request[DescribeWorkspacesResult] = js.native
     def describeWorkspacesConnectionStatus(params: DescribeWorkspacesConnectionStatusRequest): Request[DescribeWorkspacesConnectionStatusResult] = js.native
+    def disassociateConnectionAlias(params: DisassociateConnectionAliasRequest): Request[DisassociateConnectionAliasResult] = js.native
     def disassociateIpGroups(params: DisassociateIpGroupsRequest): Request[DisassociateIpGroupsResult] = js.native
     def importWorkspaceImage(params: ImportWorkspaceImageRequest): Request[ImportWorkspaceImageResult] = js.native
     def listAvailableManagementCidrRanges(params: ListAvailableManagementCidrRangesRequest): Request[ListAvailableManagementCidrRangesResult] = js.native
@@ -183,6 +204,7 @@ package workspaces {
     def startWorkspaces(params: StartWorkspacesRequest): Request[StartWorkspacesResult] = js.native
     def stopWorkspaces(params: StopWorkspacesRequest): Request[StopWorkspacesResult] = js.native
     def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult] = js.native
+    def updateConnectionAliasPermission(params: UpdateConnectionAliasPermissionRequest): Request[UpdateConnectionAliasPermissionResult] = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
     def updateWorkspaceImagePermission(params: UpdateWorkspaceImagePermissionRequest): Request[UpdateWorkspaceImagePermissionResult] = js.native
   }
@@ -230,6 +252,51 @@ package workspaces {
   }
 
   @js.native
+  sealed trait Application extends js.Any
+  object Application {
+    val Microsoft_Office_2016 = "Microsoft_Office_2016".asInstanceOf[Application]
+    val Microsoft_Office_2019 = "Microsoft_Office_2019".asInstanceOf[Application]
+
+    @inline def values = js.Array(Microsoft_Office_2016, Microsoft_Office_2019)
+  }
+
+  @js.native
+  trait AssociateConnectionAliasRequest extends js.Object {
+    var AliasId: ConnectionAliasId
+    var ResourceId: NonEmptyString
+  }
+
+  object AssociateConnectionAliasRequest {
+    @inline
+    def apply(
+        AliasId: ConnectionAliasId,
+        ResourceId: NonEmptyString
+    ): AssociateConnectionAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasId" -> AliasId.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateConnectionAliasRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateConnectionAliasResult extends js.Object {
+    var ConnectionIdentifier: js.UndefOr[ConnectionIdentifier]
+  }
+
+  object AssociateConnectionAliasResult {
+    @inline
+    def apply(
+        ConnectionIdentifier: js.UndefOr[ConnectionIdentifier] = js.undefined
+    ): AssociateConnectionAliasResult = {
+      val __obj = js.Dynamic.literal()
+      ConnectionIdentifier.foreach(__v => __obj.updateDynamic("ConnectionIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateConnectionAliasResult]
+    }
+  }
+
+  @js.native
   trait AssociateIpGroupsRequest extends js.Object {
     var DirectoryId: DirectoryId
     var GroupIds: IpGroupIdList
@@ -258,6 +325,18 @@ package workspaces {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateIpGroupsResult]
     }
+  }
+
+  @js.native
+  sealed trait AssociationStatus extends js.Any
+  object AssociationStatus {
+    val NOT_ASSOCIATED = "NOT_ASSOCIATED".asInstanceOf[AssociationStatus]
+    val ASSOCIATED_WITH_OWNER_ACCOUNT = "ASSOCIATED_WITH_OWNER_ACCOUNT".asInstanceOf[AssociationStatus]
+    val ASSOCIATED_WITH_SHARED_ACCOUNT = "ASSOCIATED_WITH_SHARED_ACCOUNT".asInstanceOf[AssociationStatus]
+    val PENDING_ASSOCIATION = "PENDING_ASSOCIATION".asInstanceOf[AssociationStatus]
+    val PENDING_DISASSOCIATION = "PENDING_DISASSOCIATION".asInstanceOf[AssociationStatus]
+
+    @inline def values = js.Array(NOT_ASSOCIATED, ASSOCIATED_WITH_OWNER_ACCOUNT, ASSOCIATED_WITH_SHARED_ACCOUNT, PENDING_ASSOCIATION, PENDING_DISASSOCIATION)
   }
 
   @js.native
@@ -362,6 +441,95 @@ package workspaces {
     }
   }
 
+  /** Describes a connection alias. Connection aliases are used for cross-Region redirection. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html| Cross-Region Redirection for Amazon WorkSpaces]].
+    */
+  @js.native
+  trait ConnectionAlias extends js.Object {
+    var AliasId: js.UndefOr[ConnectionAliasId]
+    var Associations: js.UndefOr[ConnectionAliasAssociationList]
+    var ConnectionString: js.UndefOr[ConnectionString]
+    var OwnerAccountId: js.UndefOr[AwsAccount]
+    var State: js.UndefOr[ConnectionAliasState]
+  }
+
+  object ConnectionAlias {
+    @inline
+    def apply(
+        AliasId: js.UndefOr[ConnectionAliasId] = js.undefined,
+        Associations: js.UndefOr[ConnectionAliasAssociationList] = js.undefined,
+        ConnectionString: js.UndefOr[ConnectionString] = js.undefined,
+        OwnerAccountId: js.UndefOr[AwsAccount] = js.undefined,
+        State: js.UndefOr[ConnectionAliasState] = js.undefined
+    ): ConnectionAlias = {
+      val __obj = js.Dynamic.literal()
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
+      ConnectionString.foreach(__v => __obj.updateDynamic("ConnectionString")(__v.asInstanceOf[js.Any]))
+      OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionAlias]
+    }
+  }
+
+  /** Describes a connection alias association that is used for cross-Region redirection. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html| Cross-Region Redirection for Amazon WorkSpaces]].
+    */
+  @js.native
+  trait ConnectionAliasAssociation extends js.Object {
+    var AssociatedAccountId: js.UndefOr[AwsAccount]
+    var AssociationStatus: js.UndefOr[AssociationStatus]
+    var ConnectionIdentifier: js.UndefOr[ConnectionIdentifier]
+    var ResourceId: js.UndefOr[NonEmptyString]
+  }
+
+  object ConnectionAliasAssociation {
+    @inline
+    def apply(
+        AssociatedAccountId: js.UndefOr[AwsAccount] = js.undefined,
+        AssociationStatus: js.UndefOr[AssociationStatus] = js.undefined,
+        ConnectionIdentifier: js.UndefOr[ConnectionIdentifier] = js.undefined,
+        ResourceId: js.UndefOr[NonEmptyString] = js.undefined
+    ): ConnectionAliasAssociation = {
+      val __obj = js.Dynamic.literal()
+      AssociatedAccountId.foreach(__v => __obj.updateDynamic("AssociatedAccountId")(__v.asInstanceOf[js.Any]))
+      AssociationStatus.foreach(__v => __obj.updateDynamic("AssociationStatus")(__v.asInstanceOf[js.Any]))
+      ConnectionIdentifier.foreach(__v => __obj.updateDynamic("ConnectionIdentifier")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionAliasAssociation]
+    }
+  }
+
+  /** Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection. For more information, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html| Cross-Region Redirection for Amazon WorkSpaces]].
+    */
+  @js.native
+  trait ConnectionAliasPermission extends js.Object {
+    var AllowAssociation: BooleanObject
+    var SharedAccountId: AwsAccount
+  }
+
+  object ConnectionAliasPermission {
+    @inline
+    def apply(
+        AllowAssociation: BooleanObject,
+        SharedAccountId: AwsAccount
+    ): ConnectionAliasPermission = {
+      val __obj = js.Dynamic.literal(
+        "AllowAssociation" -> AllowAssociation.asInstanceOf[js.Any],
+        "SharedAccountId" -> SharedAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ConnectionAliasPermission]
+    }
+  }
+
+  @js.native
+  sealed trait ConnectionAliasState extends js.Any
+  object ConnectionAliasState {
+    val CREATING = "CREATING".asInstanceOf[ConnectionAliasState]
+    val CREATED = "CREATED".asInstanceOf[ConnectionAliasState]
+    val DELETING = "DELETING".asInstanceOf[ConnectionAliasState]
+
+    @inline def values = js.Array(CREATING, CREATED, DELETING)
+  }
+
   @js.native
   sealed trait ConnectionState extends js.Any
   object ConnectionState {
@@ -415,6 +583,43 @@ package workspaces {
       val __obj = js.Dynamic.literal()
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyWorkspaceImageResult]
+    }
+  }
+
+  @js.native
+  trait CreateConnectionAliasRequest extends js.Object {
+    var ConnectionString: ConnectionString
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateConnectionAliasRequest {
+    @inline
+    def apply(
+        ConnectionString: ConnectionString,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateConnectionAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionString" -> ConnectionString.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionAliasRequest]
+    }
+  }
+
+  @js.native
+  trait CreateConnectionAliasResult extends js.Object {
+    var AliasId: js.UndefOr[ConnectionAliasId]
+  }
+
+  object CreateConnectionAliasResult {
+    @inline
+    def apply(
+        AliasId: js.UndefOr[ConnectionAliasId] = js.undefined
+    ): CreateConnectionAliasResult = {
+      val __obj = js.Dynamic.literal()
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionAliasResult]
     }
   }
 
@@ -585,6 +790,34 @@ package workspaces {
       EnableWorkDocs.foreach(__v => __obj.updateDynamic("EnableWorkDocs")(__v.asInstanceOf[js.Any]))
       UserEnabledAsLocalAdministrator.foreach(__v => __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultWorkspaceCreationProperties]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectionAliasRequest extends js.Object {
+    var AliasId: ConnectionAliasId
+  }
+
+  object DeleteConnectionAliasRequest {
+    @inline
+    def apply(
+        AliasId: ConnectionAliasId
+    ): DeleteConnectionAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasId" -> AliasId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteConnectionAliasRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectionAliasResult extends js.Object
+
+  object DeleteConnectionAliasResult {
+    @inline
+    def apply(): DeleteConnectionAliasResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteConnectionAliasResult]
     }
   }
 
@@ -798,6 +1031,96 @@ package workspaces {
       val __obj = js.Dynamic.literal()
       ClientPropertiesList.foreach(__v => __obj.updateDynamic("ClientPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClientPropertiesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectionAliasPermissionsRequest extends js.Object {
+    var AliasId: ConnectionAliasId
+    var MaxResults: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeConnectionAliasPermissionsRequest {
+    @inline
+    def apply(
+        AliasId: ConnectionAliasId,
+        MaxResults: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeConnectionAliasPermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasId" -> AliasId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectionAliasPermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectionAliasPermissionsResult extends js.Object {
+    var AliasId: js.UndefOr[ConnectionAliasId]
+    var ConnectionAliasPermissions: js.UndefOr[ConnectionAliasPermissions]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeConnectionAliasPermissionsResult {
+    @inline
+    def apply(
+        AliasId: js.UndefOr[ConnectionAliasId] = js.undefined,
+        ConnectionAliasPermissions: js.UndefOr[ConnectionAliasPermissions] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeConnectionAliasPermissionsResult = {
+      val __obj = js.Dynamic.literal()
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      ConnectionAliasPermissions.foreach(__v => __obj.updateDynamic("ConnectionAliasPermissions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectionAliasPermissionsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectionAliasesRequest extends js.Object {
+    var AliasIds: js.UndefOr[ConnectionAliasIdList]
+    var Limit: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[PaginationToken]
+    var ResourceId: js.UndefOr[NonEmptyString]
+  }
+
+  object DescribeConnectionAliasesRequest {
+    @inline
+    def apply(
+        AliasIds: js.UndefOr[ConnectionAliasIdList] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        ResourceId: js.UndefOr[NonEmptyString] = js.undefined
+    ): DescribeConnectionAliasesRequest = {
+      val __obj = js.Dynamic.literal()
+      AliasIds.foreach(__v => __obj.updateDynamic("AliasIds")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectionAliasesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectionAliasesResult extends js.Object {
+    var ConnectionAliases: js.UndefOr[ConnectionAliasList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeConnectionAliasesResult {
+    @inline
+    def apply(
+        ConnectionAliases: js.UndefOr[ConnectionAliasList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeConnectionAliasesResult = {
+      val __obj = js.Dynamic.literal()
+      ConnectionAliases.foreach(__v => __obj.updateDynamic("ConnectionAliases")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectionAliasesResult]
     }
   }
 
@@ -1172,6 +1495,34 @@ package workspaces {
   }
 
   @js.native
+  trait DisassociateConnectionAliasRequest extends js.Object {
+    var AliasId: ConnectionAliasId
+  }
+
+  object DisassociateConnectionAliasRequest {
+    @inline
+    def apply(
+        AliasId: ConnectionAliasId
+    ): DisassociateConnectionAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasId" -> AliasId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateConnectionAliasRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateConnectionAliasResult extends js.Object
+
+  object DisassociateConnectionAliasResult {
+    @inline
+    def apply(): DisassociateConnectionAliasResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateConnectionAliasResult]
+    }
+  }
+
+  @js.native
   trait DisassociateIpGroupsRequest extends js.Object {
     var DirectoryId: DirectoryId
     var GroupIds: IpGroupIdList
@@ -1250,7 +1601,7 @@ package workspaces {
     }
   }
 
-  /** Describes the AWS accounts that have been granted permission to use a shared image.
+  /** Describes the AWS accounts that have been granted permission to use a shared image. For more information about sharing images, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html| Share or Unshare a Custom WorkSpaces Image]].
     */
   @js.native
   trait ImagePermission extends js.Object {
@@ -1283,6 +1634,7 @@ package workspaces {
     var ImageDescription: WorkspaceImageDescription
     var ImageName: WorkspaceImageName
     var IngestionProcess: WorkspaceImageIngestionProcess
+    var Applications: js.UndefOr[ApplicationList]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -1293,6 +1645,7 @@ package workspaces {
         ImageDescription: WorkspaceImageDescription,
         ImageName: WorkspaceImageName,
         IngestionProcess: WorkspaceImageIngestionProcess,
+        Applications: js.UndefOr[ApplicationList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ImportWorkspaceImageRequest = {
       val __obj = js.Dynamic.literal(
@@ -1302,6 +1655,7 @@ package workspaces {
         "IngestionProcess" -> IngestionProcess.asInstanceOf[js.Any]
       )
 
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportWorkspaceImageRequest]
     }
@@ -2192,6 +2546,37 @@ package workspaces {
       val __obj = js.Dynamic.literal()
       FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateWorkspacesResult]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectionAliasPermissionRequest extends js.Object {
+    var AliasId: ConnectionAliasId
+    var ConnectionAliasPermission: ConnectionAliasPermission
+  }
+
+  object UpdateConnectionAliasPermissionRequest {
+    @inline
+    def apply(
+        AliasId: ConnectionAliasId,
+        ConnectionAliasPermission: ConnectionAliasPermission
+    ): UpdateConnectionAliasPermissionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AliasId" -> AliasId.asInstanceOf[js.Any],
+        "ConnectionAliasPermission" -> ConnectionAliasPermission.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateConnectionAliasPermissionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectionAliasPermissionResult extends js.Object
+
+  object UpdateConnectionAliasPermissionResult {
+    @inline
+    def apply(): UpdateConnectionAliasPermissionResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateConnectionAliasPermissionResult]
     }
   }
 

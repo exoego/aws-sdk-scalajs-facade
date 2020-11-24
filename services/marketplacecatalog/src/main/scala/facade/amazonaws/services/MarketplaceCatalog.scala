@@ -130,6 +130,7 @@ package marketplacecatalog {
     var ChangeSetName: js.UndefOr[ChangeSetName]
     var EndTime: js.UndefOr[DateTimeISO8601]
     var EntityIdList: js.UndefOr[ResourceIdList]
+    var FailureCode: js.UndefOr[FailureCode]
     var StartTime: js.UndefOr[DateTimeISO8601]
     var Status: js.UndefOr[ChangeStatus]
   }
@@ -142,6 +143,7 @@ package marketplacecatalog {
         ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
         EndTime: js.UndefOr[DateTimeISO8601] = js.undefined,
         EntityIdList: js.UndefOr[ResourceIdList] = js.undefined,
+        FailureCode: js.UndefOr[FailureCode] = js.undefined,
         StartTime: js.UndefOr[DateTimeISO8601] = js.undefined,
         Status: js.UndefOr[ChangeStatus] = js.undefined
     ): ChangeSetSummaryListItem = {
@@ -151,6 +153,7 @@ package marketplacecatalog {
       ChangeSetName.foreach(__v => __obj.updateDynamic("ChangeSetName")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       EntityIdList.foreach(__v => __obj.updateDynamic("EntityIdList")(__v.asInstanceOf[js.Any]))
+      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeSetSummaryListItem]
@@ -223,6 +226,7 @@ package marketplacecatalog {
     var ChangeSetId: js.UndefOr[ResourceId]
     var ChangeSetName: js.UndefOr[ChangeSetName]
     var EndTime: js.UndefOr[DateTimeISO8601]
+    var FailureCode: js.UndefOr[FailureCode]
     var FailureDescription: js.UndefOr[StringValue]
     var StartTime: js.UndefOr[DateTimeISO8601]
     var Status: js.UndefOr[ChangeStatus]
@@ -236,6 +240,7 @@ package marketplacecatalog {
         ChangeSetId: js.UndefOr[ResourceId] = js.undefined,
         ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
         EndTime: js.UndefOr[DateTimeISO8601] = js.undefined,
+        FailureCode: js.UndefOr[FailureCode] = js.undefined,
         FailureDescription: js.UndefOr[StringValue] = js.undefined,
         StartTime: js.UndefOr[DateTimeISO8601] = js.undefined,
         Status: js.UndefOr[ChangeStatus] = js.undefined
@@ -246,6 +251,7 @@ package marketplacecatalog {
       ChangeSetId.foreach(__v => __obj.updateDynamic("ChangeSetId")(__v.asInstanceOf[js.Any]))
       ChangeSetName.foreach(__v => __obj.updateDynamic("ChangeSetName")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
       FailureDescription.foreach(__v => __obj.updateDynamic("FailureDescription")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -376,6 +382,15 @@ package marketplacecatalog {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetail]
     }
+  }
+
+  @js.native
+  sealed trait FailureCode extends js.Any
+  object FailureCode {
+    val CLIENT_ERROR = "CLIENT_ERROR".asInstanceOf[FailureCode]
+    val SERVER_FAULT = "SERVER_FAULT".asInstanceOf[FailureCode]
+
+    @inline def values = js.Array(CLIENT_ERROR, SERVER_FAULT)
   }
 
   /** A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.

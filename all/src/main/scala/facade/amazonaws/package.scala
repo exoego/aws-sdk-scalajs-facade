@@ -45,6 +45,10 @@ package object amazonaws {
     def AppConfig(): services.appconfig.AppConfig = new services.appconfig.AppConfig()
     def AppConfig(config: AWSConfig): services.appconfig.AppConfig = new services.appconfig.AppConfig(config)
 
+    type Appflow = services.appflow.Appflow
+    def Appflow(): services.appflow.Appflow = new services.appflow.Appflow()
+    def Appflow(config: AWSConfig): services.appflow.Appflow = new services.appflow.Appflow(config)
+
     type ApplicationAutoScaling = services.applicationautoscaling.ApplicationAutoScaling
     def ApplicationAutoScaling(): services.applicationautoscaling.ApplicationAutoScaling = new services.applicationautoscaling.ApplicationAutoScaling()
     def ApplicationAutoScaling(config: AWSConfig): services.applicationautoscaling.ApplicationAutoScaling = new services.applicationautoscaling.ApplicationAutoScaling(config)
@@ -220,6 +224,10 @@ package object amazonaws {
     type CUR = services.cur.CUR
     def CUR(): services.cur.CUR = new services.cur.CUR()
     def CUR(config: AWSConfig): services.cur.CUR = new services.cur.CUR(config)
+
+    type DataBrew = services.databrew.DataBrew
+    def DataBrew(): services.databrew.DataBrew = new services.databrew.DataBrew()
+    def DataBrew(config: AWSConfig): services.databrew.DataBrew = new services.databrew.DataBrew(config)
 
     type DataExchange = services.dataexchange.DataExchange
     def DataExchange(): services.dataexchange.DataExchange = new services.dataexchange.DataExchange()
@@ -629,6 +637,10 @@ package object amazonaws {
     def Neptune(): services.neptune.Neptune = new services.neptune.Neptune()
     def Neptune(config: AWSConfig): services.neptune.Neptune = new services.neptune.Neptune(config)
 
+    type NetworkFirewall = services.networkfirewall.NetworkFirewall
+    def NetworkFirewall(): services.networkfirewall.NetworkFirewall = new services.networkfirewall.NetworkFirewall()
+    def NetworkFirewall(config: AWSConfig): services.networkfirewall.NetworkFirewall = new services.networkfirewall.NetworkFirewall(config)
+
     type NetworkManager = services.networkmanager.NetworkManager
     def NetworkManager(): services.networkmanager.NetworkManager = new services.networkmanager.NetworkManager()
     def NetworkManager(config: AWSConfig): services.networkmanager.NetworkManager = new services.networkmanager.NetworkManager(config)
@@ -709,6 +721,10 @@ package object amazonaws {
     def Redshift(): services.redshift.Redshift = new services.redshift.Redshift()
     def Redshift(config: AWSConfig): services.redshift.Redshift = new services.redshift.Redshift(config)
 
+    type RedshiftData = services.redshiftdata.RedshiftData
+    def RedshiftData(): services.redshiftdata.RedshiftData = new services.redshiftdata.RedshiftData()
+    def RedshiftData(config: AWSConfig): services.redshiftdata.RedshiftData = new services.redshiftdata.RedshiftData(config)
+
     type Rekognition = services.rekognition.Rekognition
     def Rekognition(): services.rekognition.Rekognition = new services.rekognition.Rekognition()
     def Rekognition(config: AWSConfig): services.rekognition.Rekognition = new services.rekognition.Rekognition(config)
@@ -753,6 +769,10 @@ package object amazonaws {
     def S3Control(): services.s3control.S3Control = new services.s3control.S3Control()
     def S3Control(config: AWSConfig): services.s3control.S3Control = new services.s3control.S3Control(config)
 
+    type S3Outposts = services.s3outposts.S3Outposts
+    def S3Outposts(): services.s3outposts.S3Outposts = new services.s3outposts.S3Outposts()
+    def S3Outposts(config: AWSConfig): services.s3outposts.S3Outposts = new services.s3outposts.S3Outposts(config)
+
     type SageMaker = services.sagemaker.SageMaker
     def SageMaker(): services.sagemaker.SageMaker = new services.sagemaker.SageMaker()
     def SageMaker(config: AWSConfig): services.sagemaker.SageMaker = new services.sagemaker.SageMaker(config)
@@ -792,6 +812,10 @@ package object amazonaws {
     type ServiceCatalog = services.servicecatalog.ServiceCatalog
     def ServiceCatalog(): services.servicecatalog.ServiceCatalog = new services.servicecatalog.ServiceCatalog()
     def ServiceCatalog(config: AWSConfig): services.servicecatalog.ServiceCatalog = new services.servicecatalog.ServiceCatalog(config)
+
+    type ServiceCatalogAppRegistry = services.servicecatalogappregistry.ServiceCatalogAppRegistry
+    def ServiceCatalogAppRegistry(): services.servicecatalogappregistry.ServiceCatalogAppRegistry = new services.servicecatalogappregistry.ServiceCatalogAppRegistry()
+    def ServiceCatalogAppRegistry(config: AWSConfig): services.servicecatalogappregistry.ServiceCatalogAppRegistry = new services.servicecatalogappregistry.ServiceCatalogAppRegistry(config)
 
     type ServiceDiscovery = services.servicediscovery.ServiceDiscovery
     def ServiceDiscovery(): services.servicediscovery.ServiceDiscovery = new services.servicediscovery.ServiceDiscovery()
@@ -837,6 +861,10 @@ package object amazonaws {
     def SSO(): services.sso.SSO = new services.sso.SSO()
     def SSO(config: AWSConfig): services.sso.SSO = new services.sso.SSO(config)
 
+    type SSOAdmin = services.ssoadmin.SSOAdmin
+    def SSOAdmin(): services.ssoadmin.SSOAdmin = new services.ssoadmin.SSOAdmin()
+    def SSOAdmin(config: AWSConfig): services.ssoadmin.SSOAdmin = new services.ssoadmin.SSOAdmin(config)
+
     type SSOOIDC = services.ssooidc.SSOOIDC
     def SSOOIDC(): services.ssooidc.SSOOIDC = new services.ssooidc.SSOOIDC()
     def SSOOIDC(config: AWSConfig): services.ssooidc.SSOOIDC = new services.ssooidc.SSOOIDC(config)
@@ -872,6 +900,14 @@ package object amazonaws {
     type Textract = services.textract.Textract
     def Textract(): services.textract.Textract = new services.textract.Textract()
     def Textract(config: AWSConfig): services.textract.Textract = new services.textract.Textract(config)
+
+    type TimestreamQuery = services.timestreamquery.TimestreamQuery
+    def TimestreamQuery(): services.timestreamquery.TimestreamQuery = new services.timestreamquery.TimestreamQuery()
+    def TimestreamQuery(config: AWSConfig): services.timestreamquery.TimestreamQuery = new services.timestreamquery.TimestreamQuery(config)
+
+    type TimestreamWrite = services.timestreamwrite.TimestreamWrite
+    def TimestreamWrite(): services.timestreamwrite.TimestreamWrite = new services.timestreamwrite.TimestreamWrite()
+    def TimestreamWrite(config: AWSConfig): services.timestreamwrite.TimestreamWrite = new services.timestreamwrite.TimestreamWrite(config)
 
     type TranscribeService = services.transcribeservice.TranscribeService
     def TranscribeService(): services.transcribeservice.TranscribeService = new services.transcribeservice.TranscribeService()

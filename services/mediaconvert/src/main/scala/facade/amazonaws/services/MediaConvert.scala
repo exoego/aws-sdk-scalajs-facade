@@ -37,12 +37,14 @@ package object mediaconvert {
   type __integerMin0Max47185920 = Int
   type __integerMin0Max500 = Int
   type __integerMin0Max50000 = Int
+  type __integerMin0Max65534 = Int
   type __integerMin0Max65535 = Int
   type __integerMin0Max7 = Int
   type __integerMin0Max8 = Int
   type __integerMin0Max9 = Int
   type __integerMin0Max96 = Int
   type __integerMin0Max99 = Int
+  type __integerMin100000Max100000000 = Int
   type __integerMin1000Max1152000000 = Int
   type __integerMin1000Max1466400000 = Int
   type __integerMin1000Max288000000 = Int
@@ -80,6 +82,7 @@ package object mediaconvert {
   type __integerMin32Max8182 = Int
   type __integerMin32Max8192 = Int
   type __integerMin384000Max768000 = Int
+  type __integerMin3Max15 = Int
   type __integerMin48000Max48000 = Int
   type __integerMin6000Max1024000 = Int
   type __integerMin64000Max640000 = Int
@@ -146,7 +149,9 @@ package object mediaconvert {
   type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI = String
   type __stringMin16Max24PatternAZaZ0922AZaZ0916 = String
   type __stringMin1Max100000 = String
+  type __stringMin1Max20 = String
   type __stringMin1Max256 = String
+  type __stringMin1Max50 = String
   type __stringMin24Max512PatternAZaZ0902 = String
   type __stringMin32Max32Pattern09aFAF32 = String
   type __stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12 = String
@@ -158,6 +163,7 @@ package object mediaconvert {
   type __stringPattern01D20305D205D = String
   type __stringPattern0940191020191209301 = String
   type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 = String
+  type __stringPattern0xAFaF0908190908 = String
   type __stringPatternAZaZ0902 = String
   type __stringPatternAZaZ0932 = String
   type __stringPatternAZaZ23AZaZ = String
@@ -168,8 +174,8 @@ package object mediaconvert {
   type __stringPatternIdentityAZaZ26AZaZ09163 = String
   type __stringPatternS3 = String
   type __stringPatternS3ASSETMAPXml = String
-  type __stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL = String
-  type __stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE = String
+  type __stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL = String
+  type __stringPatternS3MM2PPWWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE = String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
   type __stringPatternSNSignalProcessingNotificationNS = String
   type __stringPatternW = String
@@ -643,6 +649,48 @@ package mediaconvert {
     }
   }
 
+  /** You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
+    */
+  @js.native
+  sealed trait AudioChannelTag extends js.Any
+  object AudioChannelTag {
+    val L = "L".asInstanceOf[AudioChannelTag]
+    val R = "R".asInstanceOf[AudioChannelTag]
+    val C = "C".asInstanceOf[AudioChannelTag]
+    val LFE = "LFE".asInstanceOf[AudioChannelTag]
+    val LS = "LS".asInstanceOf[AudioChannelTag]
+    val RS = "RS".asInstanceOf[AudioChannelTag]
+    val LC = "LC".asInstanceOf[AudioChannelTag]
+    val RC = "RC".asInstanceOf[AudioChannelTag]
+    val CS = "CS".asInstanceOf[AudioChannelTag]
+    val LSD = "LSD".asInstanceOf[AudioChannelTag]
+    val RSD = "RSD".asInstanceOf[AudioChannelTag]
+    val TCS = "TCS".asInstanceOf[AudioChannelTag]
+    val VHL = "VHL".asInstanceOf[AudioChannelTag]
+    val VHC = "VHC".asInstanceOf[AudioChannelTag]
+    val VHR = "VHR".asInstanceOf[AudioChannelTag]
+
+    @inline def values = js.Array(L, R, C, LFE, LS, RS, LC, RC, CS, LSD, RSD, TCS, VHL, VHC, VHR)
+  }
+
+  /** When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+    */
+  @js.native
+  trait AudioChannelTaggingSettings extends js.Object {
+    var ChannelTag: js.UndefOr[AudioChannelTag]
+  }
+
+  object AudioChannelTaggingSettings {
+    @inline
+    def apply(
+        ChannelTag: js.UndefOr[AudioChannelTag] = js.undefined
+    ): AudioChannelTaggingSettings = {
+      val __obj = js.Dynamic.literal()
+      ChannelTag.foreach(__v => __obj.updateDynamic("ChannelTag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioChannelTaggingSettings]
+    }
+  }
+
   /** Type of Audio codec.
     */
   @js.native
@@ -726,6 +774,7 @@ package mediaconvert {
     */
   @js.native
   trait AudioDescription extends js.Object {
+    var AudioChannelTaggingSettings: js.UndefOr[AudioChannelTaggingSettings]
     var AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings]
     var AudioSourceName: js.UndefOr[__string]
     var AudioType: js.UndefOr[__integerMin0Max255]
@@ -741,6 +790,7 @@ package mediaconvert {
   object AudioDescription {
     @inline
     def apply(
+        AudioChannelTaggingSettings: js.UndefOr[AudioChannelTaggingSettings] = js.undefined,
         AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
         AudioSourceName: js.UndefOr[__string] = js.undefined,
         AudioType: js.UndefOr[__integerMin0Max255] = js.undefined,
@@ -753,6 +803,7 @@ package mediaconvert {
         StreamName: js.UndefOr[__stringPatternWS] = js.undefined
     ): AudioDescription = {
       val __obj = js.Dynamic.literal()
+      AudioChannelTaggingSettings.foreach(__v => __obj.updateDynamic("AudioChannelTaggingSettings")(__v.asInstanceOf[js.Any]))
       AudioNormalizationSettings.foreach(__v => __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any]))
       AudioSourceName.foreach(__v => __obj.updateDynamic("AudioSourceName")(__v.asInstanceOf[js.Any]))
       AudioType.foreach(__v => __obj.updateDynamic("AudioType")(__v.asInstanceOf[js.Any]))
@@ -863,7 +914,7 @@ package mediaconvert {
   trait AudioSelector extends js.Object {
     var CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3]
     var DefaultSelection: js.UndefOr[AudioDefaultSelection]
-    var ExternalAudioFileInput: js.UndefOr[__stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE]
+    var ExternalAudioFileInput: js.UndefOr[__stringPatternS3MM2PPWWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647]
     var Pids: js.UndefOr[__listOf__integerMin1Max2147483647]
@@ -878,7 +929,7 @@ package mediaconvert {
     def apply(
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
-        ExternalAudioFileInput: js.UndefOr[__stringPatternS3WWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE] = js.undefined,
+        ExternalAudioFileInput: js.UndefOr[__stringPatternS3MM2PPWWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Offset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
         Pids: js.UndefOr[__listOf__integerMin1Max2147483647] = js.undefined,
@@ -943,7 +994,49 @@ package mediaconvert {
     @inline def values = js.Array(FOLLOW_INPUT, USE_CONFIGURED)
   }
 
-  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
+    */
+  @js.native
+  trait AutomatedAbrSettings extends js.Object {
+    var MaxAbrBitrate: js.UndefOr[__integerMin100000Max100000000]
+    var MaxRenditions: js.UndefOr[__integerMin3Max15]
+    var MinAbrBitrate: js.UndefOr[__integerMin100000Max100000000]
+  }
+
+  object AutomatedAbrSettings {
+    @inline
+    def apply(
+        MaxAbrBitrate: js.UndefOr[__integerMin100000Max100000000] = js.undefined,
+        MaxRenditions: js.UndefOr[__integerMin3Max15] = js.undefined,
+        MinAbrBitrate: js.UndefOr[__integerMin100000Max100000000] = js.undefined
+    ): AutomatedAbrSettings = {
+      val __obj = js.Dynamic.literal()
+      MaxAbrBitrate.foreach(__v => __obj.updateDynamic("MaxAbrBitrate")(__v.asInstanceOf[js.Any]))
+      MaxRenditions.foreach(__v => __obj.updateDynamic("MaxRenditions")(__v.asInstanceOf[js.Any]))
+      MinAbrBitrate.foreach(__v => __obj.updateDynamic("MinAbrBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutomatedAbrSettings]
+    }
+  }
+
+  /** Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
+    */
+  @js.native
+  trait AutomatedEncodingSettings extends js.Object {
+    var AbrSettings: js.UndefOr[AutomatedAbrSettings]
+  }
+
+  object AutomatedEncodingSettings {
+    @inline
+    def apply(
+        AbrSettings: js.UndefOr[AutomatedAbrSettings] = js.undefined
+    ): AutomatedEncodingSettings = {
+      val __obj = js.Dynamic.literal()
+      AbrSettings.foreach(__v => __obj.updateDynamic("AbrSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutomatedEncodingSettings]
+    }
+  }
+
+  /** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
     */
   @js.native
   sealed trait Av1AdaptiveQuantization extends js.Any
@@ -969,15 +1062,16 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait Av1FramerateConversionAlgorithm extends js.Any
   object Av1FramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Av1FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Av1FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[Av1FramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
   /** Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
@@ -1062,7 +1156,7 @@ package mediaconvert {
     }
   }
 
-  /** Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     */
   @js.native
   sealed trait Av1SpatialAdaptiveQuantization extends js.Any
@@ -1089,6 +1183,116 @@ package mediaconvert {
       AvailBlankingImage.foreach(__v => __obj.updateDynamic("AvailBlankingImage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailBlanking]
     }
+  }
+
+  /** Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality.
+    */
+  @js.native
+  sealed trait AvcIntraClass extends js.Any
+  object AvcIntraClass {
+    val CLASS_50 = "CLASS_50".asInstanceOf[AvcIntraClass]
+    val CLASS_100 = "CLASS_100".asInstanceOf[AvcIntraClass]
+    val CLASS_200 = "CLASS_200".asInstanceOf[AvcIntraClass]
+
+    @inline def values = js.Array(CLASS_50, CLASS_100, CLASS_200)
+  }
+
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait AvcIntraFramerateControl extends js.Any
+  object AvcIntraFramerateControl {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[AvcIntraFramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[AvcIntraFramerateControl]
+
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
+  }
+
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    */
+  @js.native
+  sealed trait AvcIntraFramerateConversionAlgorithm extends js.Any
+  object AvcIntraFramerateConversionAlgorithm {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[AvcIntraFramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[AvcIntraFramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[AvcIntraFramerateConversionAlgorithm]
+
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
+  }
+
+  /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    */
+  @js.native
+  sealed trait AvcIntraInterlaceMode extends js.Any
+  object AvcIntraInterlaceMode {
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[AvcIntraInterlaceMode]
+    val TOP_FIELD = "TOP_FIELD".asInstanceOf[AvcIntraInterlaceMode]
+    val BOTTOM_FIELD = "BOTTOM_FIELD".asInstanceOf[AvcIntraInterlaceMode]
+    val FOLLOW_TOP_FIELD = "FOLLOW_TOP_FIELD".asInstanceOf[AvcIntraInterlaceMode]
+    val FOLLOW_BOTTOM_FIELD = "FOLLOW_BOTTOM_FIELD".asInstanceOf[AvcIntraInterlaceMode]
+
+    @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
+  }
+
+  /** Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see the relevant specification. For detailed information about SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936.
+    */
+  @js.native
+  trait AvcIntraSettings extends js.Object {
+    var AvcIntraClass: js.UndefOr[AvcIntraClass]
+    var FramerateControl: js.UndefOr[AvcIntraFramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[AvcIntraFramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
+    var FramerateNumerator: js.UndefOr[__integerMin24Max60000]
+    var InterlaceMode: js.UndefOr[AvcIntraInterlaceMode]
+    var SlowPal: js.UndefOr[AvcIntraSlowPal]
+    var Telecine: js.UndefOr[AvcIntraTelecine]
+  }
+
+  object AvcIntraSettings {
+    @inline
+    def apply(
+        AvcIntraClass: js.UndefOr[AvcIntraClass] = js.undefined,
+        FramerateControl: js.UndefOr[AvcIntraFramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[AvcIntraFramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin24Max60000] = js.undefined,
+        InterlaceMode: js.UndefOr[AvcIntraInterlaceMode] = js.undefined,
+        SlowPal: js.UndefOr[AvcIntraSlowPal] = js.undefined,
+        Telecine: js.UndefOr[AvcIntraTelecine] = js.undefined
+    ): AvcIntraSettings = {
+      val __obj = js.Dynamic.literal()
+      AvcIntraClass.foreach(__v => __obj.updateDynamic("AvcIntraClass")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
+      Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvcIntraSettings]
+    }
+  }
+
+  /** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    */
+  @js.native
+  sealed trait AvcIntraSlowPal extends js.Any
+  object AvcIntraSlowPal {
+    val DISABLED = "DISABLED".asInstanceOf[AvcIntraSlowPal]
+    val ENABLED = "ENABLED".asInstanceOf[AvcIntraSlowPal]
+
+    @inline def values = js.Array(DISABLED, ENABLED)
+  }
+
+  /** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    */
+  @js.native
+  sealed trait AvcIntraTelecine extends js.Any
+  object AvcIntraTelecine {
+    val NONE = "NONE".asInstanceOf[AvcIntraTelecine]
+    val HARD = "HARD".asInstanceOf[AvcIntraTelecine]
+
+    @inline def values = js.Array(NONE, HARD)
   }
 
   /** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
@@ -3748,19 +3952,20 @@ package mediaconvert {
     }
   }
 
-  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
     */
   @js.native
   sealed trait H264AdaptiveQuantization extends js.Any
   object H264AdaptiveQuantization {
     val OFF = "OFF".asInstanceOf[H264AdaptiveQuantization]
+    val AUTO = "AUTO".asInstanceOf[H264AdaptiveQuantization]
     val LOW = "LOW".asInstanceOf[H264AdaptiveQuantization]
     val MEDIUM = "MEDIUM".asInstanceOf[H264AdaptiveQuantization]
     val HIGH = "HIGH".asInstanceOf[H264AdaptiveQuantization]
     val HIGHER = "HIGHER".asInstanceOf[H264AdaptiveQuantization]
     val MAX = "MAX".asInstanceOf[H264AdaptiveQuantization]
 
-    @inline def values = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
+    @inline def values = js.Array(OFF, AUTO, LOW, MEDIUM, HIGH, HIGHER, MAX)
   }
 
   /** Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto (AUTO).
@@ -3844,7 +4049,7 @@ package mediaconvert {
     @inline def values = js.Array(CABAC, CAVLC)
   }
 
-  /** Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+  /** Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
     */
   @js.native
   sealed trait H264FieldEncoding extends js.Any
@@ -3855,7 +4060,7 @@ package mediaconvert {
     @inline def values = js.Array(PAFF, FORCE_FIELD)
   }
 
-  /** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+  /** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
     */
   @js.native
   sealed trait H264FlickerAdaptiveQuantization extends js.Any
@@ -3877,15 +4082,16 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait H264FramerateConversionAlgorithm extends js.Any
   object H264FramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H264FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[H264FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[H264FramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
   /** If enable, use reference B frames for GOP structures that have B frames > 1.
@@ -3910,9 +4116,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows.
-    * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+  /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     */
   @js.native
   sealed trait H264InterlaceMode extends js.Any
@@ -4140,7 +4344,7 @@ package mediaconvert {
     }
   }
 
-  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     */
   @js.native
   sealed trait H264SlowPal extends js.Any
@@ -4151,7 +4355,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /** Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
     */
   @js.native
   sealed trait H264SpatialAdaptiveQuantization extends js.Any
@@ -4173,7 +4377,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, RP2027)
   }
 
-  /** This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+  /** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     */
   @js.native
   sealed trait H264Telecine extends js.Any
@@ -4185,7 +4389,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
-  /** Adjust quantization within each frame based on temporal variation of content complexity.
+  /** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
     */
   @js.native
   sealed trait H264TemporalAdaptiveQuantization extends js.Any
@@ -4207,7 +4411,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
     */
   @js.native
   sealed trait H265AdaptiveQuantization extends js.Any
@@ -4284,7 +4488,7 @@ package mediaconvert {
     @inline def values = js.Array(ADAPTIVE, STATIC)
   }
 
-  /** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+  /** Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off (OFF).
     */
   @js.native
   sealed trait H265FlickerAdaptiveQuantization extends js.Any
@@ -4306,15 +4510,16 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait H265FramerateConversionAlgorithm extends js.Any
   object H265FramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[H265FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[H265FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[H265FramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
   /** If enable, use reference B frames for GOP structures that have B frames > 1.
@@ -4339,7 +4544,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /** Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose. If you don't choose a value, the service will default to Progressive (PROGRESSIVE).
+  /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     */
   @js.native
   sealed trait H265InterlaceMode extends js.Any
@@ -4568,7 +4773,7 @@ package mediaconvert {
     }
   }
 
-  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     */
   @js.native
   sealed trait H265SlowPal extends js.Any
@@ -4579,7 +4784,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /** Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     */
   @js.native
   sealed trait H265SpatialAdaptiveQuantization extends js.Any
@@ -4602,7 +4807,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
-  /** Adjust quantization within each frame based on temporal variation of content complexity.
+  /** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
     */
   @js.native
   sealed trait H265TemporalAdaptiveQuantization extends js.Any
@@ -4749,6 +4954,17 @@ package mediaconvert {
     @inline def values = js.Array(AUTOMATIC, M2TS)
   }
 
+  /** Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers from your audio segments.
+    */
+  @js.native
+  sealed trait HlsAudioOnlyHeader extends js.Any
+  object HlsAudioOnlyHeader {
+    val INCLUDE = "INCLUDE".asInstanceOf[HlsAudioOnlyHeader]
+    val EXCLUDE = "EXCLUDE".asInstanceOf[HlsAudioOnlyHeader]
+
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
+  }
+
   /** Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
     */
   @js.native
@@ -4887,6 +5103,7 @@ package mediaconvert {
   trait HlsGroupSettings extends js.Object {
     var AdMarkers: js.UndefOr[__listOfHlsAdMarkers]
     var AdditionalManifests: js.UndefOr[__listOfHlsAdditionalManifest]
+    var AudioOnlyHeader: js.UndefOr[HlsAudioOnlyHeader]
     var BaseUrl: js.UndefOr[__string]
     var CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping]
     var CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting]
@@ -4917,6 +5134,7 @@ package mediaconvert {
     def apply(
         AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
         AdditionalManifests: js.UndefOr[__listOfHlsAdditionalManifest] = js.undefined,
+        AudioOnlyHeader: js.UndefOr[HlsAudioOnlyHeader] = js.undefined,
         BaseUrl: js.UndefOr[__string] = js.undefined,
         CaptionLanguageMappings: js.UndefOr[__listOfHlsCaptionLanguageMapping] = js.undefined,
         CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
@@ -4944,6 +5162,7 @@ package mediaconvert {
       val __obj = js.Dynamic.literal()
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
       AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
+      AudioOnlyHeader.foreach(__v => __obj.updateDynamic("AudioOnlyHeader")(__v.asInstanceOf[js.Any]))
       BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
       CaptionLanguageMappings.foreach(__v => __obj.updateDynamic("CaptionLanguageMappings")(__v.asInstanceOf[js.Any]))
       CaptionLanguageSetting.foreach(__v => __obj.updateDynamic("CaptionLanguageSetting")(__v.asInstanceOf[js.Any]))
@@ -5229,11 +5448,12 @@ package mediaconvert {
     var DeblockFilter: js.UndefOr[InputDeblockFilter]
     var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
     var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
-    var FileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL]
+    var FileInput: js.UndefOr[__stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL]
     var FilterEnable: js.UndefOr[InputFilterEnable]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
     var ImageInserter: js.UndefOr[ImageInserter]
     var InputClippings: js.UndefOr[__listOfInputClipping]
+    var InputScanType: js.UndefOr[InputScanType]
     var Position: js.UndefOr[Rectangle]
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
     var PsiControl: js.UndefOr[InputPsiControl]
@@ -5253,11 +5473,12 @@ package mediaconvert {
         DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
         DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
         DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
-        FileInput: js.UndefOr[__stringPatternS3MM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL] = js.undefined,
+        FileInput: js.UndefOr[__stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL] = js.undefined,
         FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
+        InputScanType: js.UndefOr[InputScanType] = js.undefined,
         Position: js.UndefOr[Rectangle] = js.undefined,
         ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
@@ -5279,6 +5500,7 @@ package mediaconvert {
       FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
       InputClippings.foreach(__v => __obj.updateDynamic("InputClippings")(__v.asInstanceOf[js.Any]))
+      InputScanType.foreach(__v => __obj.updateDynamic("InputScanType")(__v.asInstanceOf[js.Any]))
       Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
       ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
       PsiControl.foreach(__v => __obj.updateDynamic("PsiControl")(__v.asInstanceOf[js.Any]))
@@ -5360,7 +5582,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /** Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+  /** Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
     */
   @js.native
   sealed trait InputFilterEnable extends js.Any
@@ -5397,6 +5619,17 @@ package mediaconvert {
     @inline def values = js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
   }
 
+  /** When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+    */
+  @js.native
+  sealed trait InputScanType extends js.Any
+  object InputScanType {
+    val AUTO = "AUTO".asInstanceOf[InputScanType]
+    val PSF = "PSF".asInstanceOf[InputScanType]
+
+    @inline def values = js.Array(AUTO, PSF)
+  }
+
   /** Specified video input in a template.
     */
   @js.native
@@ -5411,6 +5644,7 @@ package mediaconvert {
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
     var ImageInserter: js.UndefOr[ImageInserter]
     var InputClippings: js.UndefOr[__listOfInputClipping]
+    var InputScanType: js.UndefOr[InputScanType]
     var Position: js.UndefOr[Rectangle]
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
     var PsiControl: js.UndefOr[InputPsiControl]
@@ -5432,6 +5666,7 @@ package mediaconvert {
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
         InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
+        InputScanType: js.UndefOr[InputScanType] = js.undefined,
         Position: js.UndefOr[Rectangle] = js.undefined,
         ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
@@ -5450,6 +5685,7 @@ package mediaconvert {
       FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
       ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
       InputClippings.foreach(__v => __obj.updateDynamic("InputClippings")(__v.asInstanceOf[js.Any]))
+      InputScanType.foreach(__v => __obj.updateDynamic("InputScanType")(__v.asInstanceOf[js.Any]))
       Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
       ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
       PsiControl.foreach(__v => __obj.updateDynamic("PsiControl")(__v.asInstanceOf[js.Any]))
@@ -5520,7 +5756,7 @@ package mediaconvert {
     }
   }
 
-  /** Each job converts an input file into an output file or files. For more information, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+  /** Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     */
   @js.native
   trait Job extends js.Object {
@@ -5655,6 +5891,7 @@ package mediaconvert {
     var Inputs: js.UndefOr[__listOfInput]
     var MotionImageInserter: js.UndefOr[MotionImageInserter]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
+    var NielsenNonLinearWatermark: js.UndefOr[NielsenNonLinearWatermarkSettings]
     var OutputGroups: js.UndefOr[__listOfOutputGroup]
     var TimecodeConfig: js.UndefOr[TimecodeConfig]
     var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
@@ -5669,6 +5906,7 @@ package mediaconvert {
         Inputs: js.UndefOr[__listOfInput] = js.undefined,
         MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
         NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
+        NielsenNonLinearWatermark: js.UndefOr[NielsenNonLinearWatermarkSettings] = js.undefined,
         OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
         TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
         TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined
@@ -5680,6 +5918,7 @@ package mediaconvert {
       Inputs.foreach(__v => __obj.updateDynamic("Inputs")(__v.asInstanceOf[js.Any]))
       MotionImageInserter.foreach(__v => __obj.updateDynamic("MotionImageInserter")(__v.asInstanceOf[js.Any]))
       NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
+      NielsenNonLinearWatermark.foreach(__v => __obj.updateDynamic("NielsenNonLinearWatermark")(__v.asInstanceOf[js.Any]))
       OutputGroups.foreach(__v => __obj.updateDynamic("OutputGroups")(__v.asInstanceOf[js.Any]))
       TimecodeConfig.foreach(__v => __obj.updateDynamic("TimecodeConfig")(__v.asInstanceOf[js.Any]))
       TimedMetadataInsertion.foreach(__v => __obj.updateDynamic("TimedMetadataInsertion")(__v.asInstanceOf[js.Any]))
@@ -5779,6 +6018,7 @@ package mediaconvert {
     var Inputs: js.UndefOr[__listOfInputTemplate]
     var MotionImageInserter: js.UndefOr[MotionImageInserter]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
+    var NielsenNonLinearWatermark: js.UndefOr[NielsenNonLinearWatermarkSettings]
     var OutputGroups: js.UndefOr[__listOfOutputGroup]
     var TimecodeConfig: js.UndefOr[TimecodeConfig]
     var TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion]
@@ -5793,6 +6033,7 @@ package mediaconvert {
         Inputs: js.UndefOr[__listOfInputTemplate] = js.undefined,
         MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
         NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
+        NielsenNonLinearWatermark: js.UndefOr[NielsenNonLinearWatermarkSettings] = js.undefined,
         OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
         TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
         TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined
@@ -5804,6 +6045,7 @@ package mediaconvert {
       Inputs.foreach(__v => __obj.updateDynamic("Inputs")(__v.asInstanceOf[js.Any]))
       MotionImageInserter.foreach(__v => __obj.updateDynamic("MotionImageInserter")(__v.asInstanceOf[js.Any]))
       NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
+      NielsenNonLinearWatermark.foreach(__v => __obj.updateDynamic("NielsenNonLinearWatermark")(__v.asInstanceOf[js.Any]))
       OutputGroups.foreach(__v => __obj.updateDynamic("OutputGroups")(__v.asInstanceOf[js.Any]))
       TimecodeConfig.foreach(__v => __obj.updateDynamic("TimecodeConfig")(__v.asInstanceOf[js.Any]))
       TimedMetadataInsertion.foreach(__v => __obj.updateDynamic("TimedMetadataInsertion")(__v.asInstanceOf[js.Any]))
@@ -6924,7 +7166,7 @@ package mediaconvert {
     @inline def values = js.Array(XDCAM, MPEG)
   }
 
-  /** If set to OMNEON, inserts Omneon-compatible padding
+  /** To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
     */
   @js.native
   sealed trait MovPaddingControl extends js.Any
@@ -7161,7 +7403,7 @@ package mediaconvert {
     }
   }
 
-  /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+  /** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
     */
   @js.native
   sealed trait Mpeg2AdaptiveQuantization extends js.Any
@@ -7221,15 +7463,16 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait Mpeg2FramerateConversionAlgorithm extends js.Any
   object Mpeg2FramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[Mpeg2FramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
   /** Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
@@ -7243,9 +7486,7 @@ package mediaconvert {
     @inline def values = js.Array(FRAMES, SECONDS)
   }
 
-  /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
-    * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+  /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     */
   @js.native
   sealed trait Mpeg2InterlaceMode extends js.Any
@@ -7425,7 +7666,7 @@ package mediaconvert {
     }
   }
 
-  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     */
   @js.native
   sealed trait Mpeg2SlowPal extends js.Any
@@ -7436,7 +7677,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /** Adjust quantization within each frame based on spatial variation of content complexity.
+  /** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     */
   @js.native
   sealed trait Mpeg2SpatialAdaptiveQuantization extends js.Any
@@ -7447,7 +7688,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /** Produces a Type D-10 compatible bitstream (SMPTE 356M-2001).
+  /** Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
     */
   @js.native
   sealed trait Mpeg2Syntax extends js.Any
@@ -7458,7 +7699,7 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, D_10)
   }
 
-  /** Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970. Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player.
+  /** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     */
   @js.native
   sealed trait Mpeg2Telecine extends js.Any
@@ -7470,7 +7711,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, SOFT, HARD)
   }
 
-  /** Adjust quantization within each frame based on temporal variation of content complexity.
+  /** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
     */
   @js.native
   sealed trait Mpeg2TemporalAdaptiveQuantization extends js.Any
@@ -7589,20 +7830,35 @@ package mediaconvert {
     @inline def values = js.Array(NO_COPY, COPY_FROM_VIDEO)
   }
 
+  /** Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+    */
+  @js.native
+  sealed trait MxfProfile extends js.Any
+  object MxfProfile {
+    val D_10 = "D_10".asInstanceOf[MxfProfile]
+    val XDCAM = "XDCAM".asInstanceOf[MxfProfile]
+    val OP1A = "OP1A".asInstanceOf[MxfProfile]
+
+    @inline def values = js.Array(D_10, XDCAM, OP1A)
+  }
+
   /** MXF settings
     */
   @js.native
   trait MxfSettings extends js.Object {
     var AfdSignaling: js.UndefOr[MxfAfdSignaling]
+    var Profile: js.UndefOr[MxfProfile]
   }
 
   object MxfSettings {
     @inline
     def apply(
-        AfdSignaling: js.UndefOr[MxfAfdSignaling] = js.undefined
+        AfdSignaling: js.UndefOr[MxfAfdSignaling] = js.undefined,
+        Profile: js.UndefOr[MxfProfile] = js.undefined
     ): MxfSettings = {
       val __obj = js.Dynamic.literal()
       AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MxfSettings]
     }
   }
@@ -7634,6 +7890,18 @@ package mediaconvert {
     }
   }
 
+  /** Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+    */
+  @js.native
+  sealed trait NielsenActiveWatermarkProcessType extends js.Any
+  object NielsenActiveWatermarkProcessType {
+    val NAES2_AND_NW = "NAES2_AND_NW".asInstanceOf[NielsenActiveWatermarkProcessType]
+    val CBET = "CBET".asInstanceOf[NielsenActiveWatermarkProcessType]
+    val NAES2_AND_NW_AND_CBET = "NAES2_AND_NW_AND_CBET".asInstanceOf[NielsenActiveWatermarkProcessType]
+
+    @inline def values = js.Array(NAES2_AND_NW, CBET, NAES2_AND_NW_AND_CBET)
+  }
+
   /** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
     */
   @js.native
@@ -7655,7 +7923,77 @@ package mediaconvert {
     }
   }
 
-  /** Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to apply filtering, depending on input type and quality.
+  /** Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that  MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to  specifying these values, you also need to set up your cloud TIC server. These settings apply to  every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+    */
+  @js.native
+  trait NielsenNonLinearWatermarkSettings extends js.Object {
+    var ActiveWatermarkProcess: js.UndefOr[NielsenActiveWatermarkProcessType]
+    var AdiFilename: js.UndefOr[__stringPatternS3]
+    var AssetId: js.UndefOr[__stringMin1Max20]
+    var AssetName: js.UndefOr[__stringMin1Max50]
+    var CbetSourceId: js.UndefOr[__stringPattern0xAFaF0908190908]
+    var EpisodeId: js.UndefOr[__stringMin1Max20]
+    var MetadataDestination: js.UndefOr[__stringPatternS3]
+    var SourceId: js.UndefOr[__integerMin0Max65534]
+    var SourceWatermarkStatus: js.UndefOr[NielsenSourceWatermarkStatusType]
+    var TicServerUrl: js.UndefOr[__stringPatternHttps]
+    var UniqueTicPerAudioTrack: js.UndefOr[NielsenUniqueTicPerAudioTrackType]
+  }
+
+  object NielsenNonLinearWatermarkSettings {
+    @inline
+    def apply(
+        ActiveWatermarkProcess: js.UndefOr[NielsenActiveWatermarkProcessType] = js.undefined,
+        AdiFilename: js.UndefOr[__stringPatternS3] = js.undefined,
+        AssetId: js.UndefOr[__stringMin1Max20] = js.undefined,
+        AssetName: js.UndefOr[__stringMin1Max50] = js.undefined,
+        CbetSourceId: js.UndefOr[__stringPattern0xAFaF0908190908] = js.undefined,
+        EpisodeId: js.UndefOr[__stringMin1Max20] = js.undefined,
+        MetadataDestination: js.UndefOr[__stringPatternS3] = js.undefined,
+        SourceId: js.UndefOr[__integerMin0Max65534] = js.undefined,
+        SourceWatermarkStatus: js.UndefOr[NielsenSourceWatermarkStatusType] = js.undefined,
+        TicServerUrl: js.UndefOr[__stringPatternHttps] = js.undefined,
+        UniqueTicPerAudioTrack: js.UndefOr[NielsenUniqueTicPerAudioTrackType] = js.undefined
+    ): NielsenNonLinearWatermarkSettings = {
+      val __obj = js.Dynamic.literal()
+      ActiveWatermarkProcess.foreach(__v => __obj.updateDynamic("ActiveWatermarkProcess")(__v.asInstanceOf[js.Any]))
+      AdiFilename.foreach(__v => __obj.updateDynamic("AdiFilename")(__v.asInstanceOf[js.Any]))
+      AssetId.foreach(__v => __obj.updateDynamic("AssetId")(__v.asInstanceOf[js.Any]))
+      AssetName.foreach(__v => __obj.updateDynamic("AssetName")(__v.asInstanceOf[js.Any]))
+      CbetSourceId.foreach(__v => __obj.updateDynamic("CbetSourceId")(__v.asInstanceOf[js.Any]))
+      EpisodeId.foreach(__v => __obj.updateDynamic("EpisodeId")(__v.asInstanceOf[js.Any]))
+      MetadataDestination.foreach(__v => __obj.updateDynamic("MetadataDestination")(__v.asInstanceOf[js.Any]))
+      SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
+      SourceWatermarkStatus.foreach(__v => __obj.updateDynamic("SourceWatermarkStatus")(__v.asInstanceOf[js.Any]))
+      TicServerUrl.foreach(__v => __obj.updateDynamic("TicServerUrl")(__v.asInstanceOf[js.Any]))
+      UniqueTicPerAudioTrack.foreach(__v => __obj.updateDynamic("UniqueTicPerAudioTrack")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NielsenNonLinearWatermarkSettings]
+    }
+  }
+
+  /** Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
+    */
+  @js.native
+  sealed trait NielsenSourceWatermarkStatusType extends js.Any
+  object NielsenSourceWatermarkStatusType {
+    val CLEAN = "CLEAN".asInstanceOf[NielsenSourceWatermarkStatusType]
+    val WATERMARKED = "WATERMARKED".asInstanceOf[NielsenSourceWatermarkStatusType]
+
+    @inline def values = js.Array(CLEAN, WATERMARKED)
+  }
+
+  /** To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+    */
+  @js.native
+  sealed trait NielsenUniqueTicPerAudioTrackType extends js.Any
+  object NielsenUniqueTicPerAudioTrackType {
+    val RESERVE_UNIQUE_TICS_PER_TRACK = "RESERVE_UNIQUE_TICS_PER_TRACK".asInstanceOf[NielsenUniqueTicPerAudioTrackType]
+    val SAME_TICS_PER_TRACK = "SAME_TICS_PER_TRACK".asInstanceOf[NielsenUniqueTicPerAudioTrackType]
+
+    @inline def values = js.Array(RESERVE_UNIQUE_TICS_PER_TRACK, SAME_TICS_PER_TRACK)
+  }
+
+  /** Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
     */
   @js.native
   sealed trait NoiseFilterPostTemporalSharpening extends js.Any
@@ -7897,6 +8235,7 @@ package mediaconvert {
     */
   @js.native
   trait OutputGroup extends js.Object {
+    var AutomatedEncodingSettings: js.UndefOr[AutomatedEncodingSettings]
     var CustomName: js.UndefOr[__string]
     var Name: js.UndefOr[__string]
     var OutputGroupSettings: js.UndefOr[OutputGroupSettings]
@@ -7906,12 +8245,14 @@ package mediaconvert {
   object OutputGroup {
     @inline
     def apply(
+        AutomatedEncodingSettings: js.UndefOr[AutomatedEncodingSettings] = js.undefined,
         CustomName: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         OutputGroupSettings: js.UndefOr[OutputGroupSettings] = js.undefined,
         Outputs: js.UndefOr[__listOfOutput] = js.undefined
     ): OutputGroup = {
       val __obj = js.Dynamic.literal()
+      AutomatedEncodingSettings.foreach(__v => __obj.updateDynamic("AutomatedEncodingSettings")(__v.asInstanceOf[js.Any]))
       CustomName.foreach(__v => __obj.updateDynamic("CustomName")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OutputGroupSettings.foreach(__v => __obj.updateDynamic("OutputGroupSettings")(__v.asInstanceOf[js.Any]))
@@ -8149,20 +8490,19 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait ProresFramerateConversionAlgorithm extends js.Any
   object ProresFramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[ProresFramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[ProresFramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[ProresFramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
-  /** Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
-    * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
-    * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+  /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     */
   @js.native
   sealed trait ProresInterlaceMode extends js.Any
@@ -8235,7 +8575,7 @@ package mediaconvert {
     }
   }
 
-  /** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly.
+  /** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     */
   @js.native
   sealed trait ProresSlowPal extends js.Any
@@ -8246,7 +8586,7 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
-  /** Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player.
+  /** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     */
   @js.native
   sealed trait ProresTelecine extends js.Any
@@ -8955,7 +9295,7 @@ package mediaconvert {
     @inline def values = js.Array(PASSTHROUGH, NONE)
   }
 
-  /** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
+  /** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects.
     */
   @js.native
   trait TimedMetadataInsertion extends js.Object {
@@ -9229,34 +9569,145 @@ package mediaconvert {
     }
   }
 
+  /** Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
+    */
+  @js.native
+  sealed trait Vc3Class extends js.Any
+  object Vc3Class {
+    val CLASS_145_8BIT = "CLASS_145_8BIT".asInstanceOf[Vc3Class]
+    val CLASS_220_8BIT = "CLASS_220_8BIT".asInstanceOf[Vc3Class]
+    val CLASS_220_10BIT = "CLASS_220_10BIT".asInstanceOf[Vc3Class]
+
+    @inline def values = js.Array(CLASS_145_8BIT, CLASS_220_8BIT, CLASS_220_10BIT)
+  }
+
+  /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
+    */
+  @js.native
+  sealed trait Vc3FramerateControl extends js.Any
+  object Vc3FramerateControl {
+    val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE".asInstanceOf[Vc3FramerateControl]
+    val SPECIFIED = "SPECIFIED".asInstanceOf[Vc3FramerateControl]
+
+    @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
+  }
+
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+    */
+  @js.native
+  sealed trait Vc3FramerateConversionAlgorithm extends js.Any
+  object Vc3FramerateConversionAlgorithm {
+    val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vc3FramerateConversionAlgorithm]
+    val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vc3FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[Vc3FramerateConversionAlgorithm]
+
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
+  }
+
+  /** Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
+    */
+  @js.native
+  sealed trait Vc3InterlaceMode extends js.Any
+  object Vc3InterlaceMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[Vc3InterlaceMode]
+    val PROGRESSIVE = "PROGRESSIVE".asInstanceOf[Vc3InterlaceMode]
+
+    @inline def values = js.Array(INTERLACED, PROGRESSIVE)
+  }
+
+  /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+    */
+  @js.native
+  trait Vc3Settings extends js.Object {
+    var FramerateControl: js.UndefOr[Vc3FramerateControl]
+    var FramerateConversionAlgorithm: js.UndefOr[Vc3FramerateConversionAlgorithm]
+    var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
+    var FramerateNumerator: js.UndefOr[__integerMin24Max60000]
+    var InterlaceMode: js.UndefOr[Vc3InterlaceMode]
+    var SlowPal: js.UndefOr[Vc3SlowPal]
+    var Telecine: js.UndefOr[Vc3Telecine]
+    var Vc3Class: js.UndefOr[Vc3Class]
+  }
+
+  object Vc3Settings {
+    @inline
+    def apply(
+        FramerateControl: js.UndefOr[Vc3FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[Vc3FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin24Max60000] = js.undefined,
+        InterlaceMode: js.UndefOr[Vc3InterlaceMode] = js.undefined,
+        SlowPal: js.UndefOr[Vc3SlowPal] = js.undefined,
+        Telecine: js.UndefOr[Vc3Telecine] = js.undefined,
+        Vc3Class: js.UndefOr[Vc3Class] = js.undefined
+    ): Vc3Settings = {
+      val __obj = js.Dynamic.literal()
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
+      FramerateConversionAlgorithm.foreach(__v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
+      Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
+      Vc3Class.foreach(__v => __obj.updateDynamic("Vc3Class")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Vc3Settings]
+    }
+  }
+
+  /** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+    */
+  @js.native
+  sealed trait Vc3SlowPal extends js.Any
+  object Vc3SlowPal {
+    val DISABLED = "DISABLED".asInstanceOf[Vc3SlowPal]
+    val ENABLED = "ENABLED".asInstanceOf[Vc3SlowPal]
+
+    @inline def values = js.Array(DISABLED, ENABLED)
+  }
+
+  /** When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    */
+  @js.native
+  sealed trait Vc3Telecine extends js.Any
+  object Vc3Telecine {
+    val NONE = "NONE".asInstanceOf[Vc3Telecine]
+    val HARD = "HARD".asInstanceOf[Vc3Telecine]
+
+    @inline def values = js.Array(NONE, HARD)
+  }
+
   /** Type of video codec
     */
   @js.native
   sealed trait VideoCodec extends js.Any
   object VideoCodec {
-    val FRAME_CAPTURE = "FRAME_CAPTURE".asInstanceOf[VideoCodec]
     val AV1 = "AV1".asInstanceOf[VideoCodec]
+    val AVC_INTRA = "AVC_INTRA".asInstanceOf[VideoCodec]
+    val FRAME_CAPTURE = "FRAME_CAPTURE".asInstanceOf[VideoCodec]
     val H_264 = "H_264".asInstanceOf[VideoCodec]
     val H_265 = "H_265".asInstanceOf[VideoCodec]
     val MPEG2 = "MPEG2".asInstanceOf[VideoCodec]
     val PRORES = "PRORES".asInstanceOf[VideoCodec]
+    val VC3 = "VC3".asInstanceOf[VideoCodec]
     val VP8 = "VP8".asInstanceOf[VideoCodec]
     val VP9 = "VP9".asInstanceOf[VideoCodec]
 
-    @inline def values = js.Array(FRAME_CAPTURE, AV1, H_264, H_265, MPEG2, PRORES, VP8, VP9)
+    @inline def values = js.Array(AV1, AVC_INTRA, FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES, VC3, VP8, VP9)
   }
 
-  /** Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
+  /** Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {
     var Av1Settings: js.UndefOr[Av1Settings]
+    var AvcIntraSettings: js.UndefOr[AvcIntraSettings]
     var Codec: js.UndefOr[VideoCodec]
     var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
     var H264Settings: js.UndefOr[H264Settings]
     var H265Settings: js.UndefOr[H265Settings]
     var Mpeg2Settings: js.UndefOr[Mpeg2Settings]
     var ProresSettings: js.UndefOr[ProresSettings]
+    var Vc3Settings: js.UndefOr[Vc3Settings]
     var Vp8Settings: js.UndefOr[Vp8Settings]
     var Vp9Settings: js.UndefOr[Vp9Settings]
   }
@@ -9265,23 +9716,27 @@ package mediaconvert {
     @inline
     def apply(
         Av1Settings: js.UndefOr[Av1Settings] = js.undefined,
+        AvcIntraSettings: js.UndefOr[AvcIntraSettings] = js.undefined,
         Codec: js.UndefOr[VideoCodec] = js.undefined,
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
         H264Settings: js.UndefOr[H264Settings] = js.undefined,
         H265Settings: js.UndefOr[H265Settings] = js.undefined,
         Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
         ProresSettings: js.UndefOr[ProresSettings] = js.undefined,
+        Vc3Settings: js.UndefOr[Vc3Settings] = js.undefined,
         Vp8Settings: js.UndefOr[Vp8Settings] = js.undefined,
         Vp9Settings: js.UndefOr[Vp9Settings] = js.undefined
     ): VideoCodecSettings = {
       val __obj = js.Dynamic.literal()
       Av1Settings.foreach(__v => __obj.updateDynamic("Av1Settings")(__v.asInstanceOf[js.Any]))
+      AvcIntraSettings.foreach(__v => __obj.updateDynamic("AvcIntraSettings")(__v.asInstanceOf[js.Any]))
       Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
       FrameCaptureSettings.foreach(__v => __obj.updateDynamic("FrameCaptureSettings")(__v.asInstanceOf[js.Any]))
       H264Settings.foreach(__v => __obj.updateDynamic("H264Settings")(__v.asInstanceOf[js.Any]))
       H265Settings.foreach(__v => __obj.updateDynamic("H265Settings")(__v.asInstanceOf[js.Any]))
       Mpeg2Settings.foreach(__v => __obj.updateDynamic("Mpeg2Settings")(__v.asInstanceOf[js.Any]))
       ProresSettings.foreach(__v => __obj.updateDynamic("ProresSettings")(__v.asInstanceOf[js.Any]))
+      Vc3Settings.foreach(__v => __obj.updateDynamic("Vc3Settings")(__v.asInstanceOf[js.Any]))
       Vp8Settings.foreach(__v => __obj.updateDynamic("Vp8Settings")(__v.asInstanceOf[js.Any]))
       Vp9Settings.foreach(__v => __obj.updateDynamic("Vp9Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoCodecSettings]
@@ -9487,15 +9942,16 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait Vp8FramerateConversionAlgorithm extends js.Any
   object Vp8FramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp8FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp8FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[Vp8FramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
   /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
@@ -9595,15 +10051,16 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
-  /** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion.
+  /** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
     */
   @js.native
   sealed trait Vp9FramerateConversionAlgorithm extends js.Any
   object Vp9FramerateConversionAlgorithm {
     val DUPLICATE_DROP = "DUPLICATE_DROP".asInstanceOf[Vp9FramerateConversionAlgorithm]
     val INTERPOLATE = "INTERPOLATE".asInstanceOf[Vp9FramerateConversionAlgorithm]
+    val FRAMEFORMER = "FRAMEFORMER".asInstanceOf[Vp9FramerateConversionAlgorithm]
 
-    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE)
+    @inline def values = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
   }
 
   /** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.

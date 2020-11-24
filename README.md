@@ -2,7 +2,7 @@
 
 A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).
 
-[All **226 AWS**](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/top-level-namespace.html) are available as of 2020-07-17, and keep updating.
+[All **238 AWS**](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/top-level-namespace.html) are available as of 2020-11-23, and keep updating.
 
 You may find the below peer facades useful when developing app with AWS.
 

@@ -97,6 +97,7 @@ package object datasync {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] = service.updateAgent(params).promise().toFuture
+    @inline def updateTaskExecutionFuture(params: UpdateTaskExecutionRequest): Future[UpdateTaskExecutionResponse] = service.updateTaskExecution(params).promise().toFuture
     @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] = service.updateTask(params).promise().toFuture
 
   }
@@ -139,6 +140,7 @@ package datasync {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAgent(params: UpdateAgentRequest): Request[UpdateAgentResponse] = js.native
     def updateTask(params: UpdateTaskRequest): Request[UpdateTaskResponse] = js.native
+    def updateTaskExecution(params: UpdateTaskExecutionRequest): Request[UpdateTaskExecutionResponse] = js.native
   }
 
   /** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
@@ -465,6 +467,7 @@ package datasync {
   trait CreateLocationS3Request extends js.Object {
     var S3BucketArn: S3BucketArn
     var S3Config: S3Config
+    var AgentArns: js.UndefOr[AgentArnList]
     var S3StorageClass: js.UndefOr[S3StorageClass]
     var Subdirectory: js.UndefOr[S3Subdirectory]
     var Tags: js.UndefOr[InputTagList]
@@ -475,6 +478,7 @@ package datasync {
     def apply(
         S3BucketArn: S3BucketArn,
         S3Config: S3Config,
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
         S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined,
         Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined,
         Tags: js.UndefOr[InputTagList] = js.undefined
@@ -484,6 +488,7 @@ package datasync {
         "S3Config" -> S3Config.asInstanceOf[js.Any]
       )
 
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
       S3StorageClass.foreach(__v => __obj.updateDynamic("S3StorageClass")(__v.asInstanceOf[js.Any]))
       Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -963,6 +968,7 @@ package datasync {
 
   @js.native
   trait DescribeLocationS3Response extends js.Object {
+    var AgentArns: js.UndefOr[AgentArnList]
     var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
@@ -973,6 +979,7 @@ package datasync {
   object DescribeLocationS3Response {
     @inline
     def apply(
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined,
@@ -980,6 +987,7 @@ package datasync {
         S3StorageClass: js.UndefOr[S3StorageClass] = js.undefined
     ): DescribeLocationS3Response = {
       val __obj = js.Dynamic.literal()
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
@@ -1459,6 +1467,8 @@ package datasync {
     }
   }
 
+  /** You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all your Amazon S3 locations, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
+    */
   @js.native
   trait LocationFilter extends js.Object {
     var Name: LocationFilterName
@@ -1763,8 +1773,9 @@ package datasync {
     val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
     val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
     val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
+    val OUTPOSTS = "OUTPOSTS".asInstanceOf[S3StorageClass]
 
-    @inline def values = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE)
+    @inline def values = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
   }
 
   /** Represents the mount options that are available for DataSync to access an SMB location.
@@ -1966,6 +1977,8 @@ package datasync {
     @inline def values = js.Array(QUEUED, LAUNCHING, PREPARING, TRANSFERRING, VERIFYING, SUCCESS, ERROR)
   }
 
+  /** You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+    */
   @js.native
   trait TaskFilter extends js.Object {
     var Name: TaskFilterName
@@ -2142,6 +2155,37 @@ package datasync {
     def apply(): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAgentResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateTaskExecutionRequest extends js.Object {
+    var Options: Options
+    var TaskExecutionArn: TaskExecutionArn
+  }
+
+  object UpdateTaskExecutionRequest {
+    @inline
+    def apply(
+        Options: Options,
+        TaskExecutionArn: TaskExecutionArn
+    ): UpdateTaskExecutionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Options" -> Options.asInstanceOf[js.Any],
+        "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateTaskExecutionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateTaskExecutionResponse extends js.Object
+
+  object UpdateTaskExecutionResponse {
+    @inline
+    def apply(): UpdateTaskExecutionResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateTaskExecutionResponse]
     }
   }
 

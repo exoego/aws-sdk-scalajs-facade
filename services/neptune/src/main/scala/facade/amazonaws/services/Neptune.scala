@@ -11,6 +11,7 @@ package object neptune {
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type AvailabilityZones = js.Array[String]
   type BooleanOptional = Boolean
+  type DBClusterEndpointList = js.Array[DBClusterEndpoint]
   type DBClusterList = js.Array[DBCluster]
   type DBClusterMemberList = js.Array[DBClusterMember]
   type DBClusterOptionGroupMemberships = js.Array[DBClusterOptionGroupStatus]
@@ -48,6 +49,7 @@ package object neptune {
   type ReadReplicaDBInstanceIdentifierList = js.Array[String]
   type ReadReplicaIdentifierList = js.Array[String]
   type SourceIdsList = js.Array[String]
+  type StringList = js.Array[String]
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type SupportedCharacterSetsList = js.Array[CharacterSet]
@@ -68,6 +70,7 @@ package object neptune {
     @inline def copyDBClusterParameterGroupFuture(params: CopyDBClusterParameterGroupMessage): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise().toFuture
     @inline def copyDBClusterSnapshotFuture(params: CopyDBClusterSnapshotMessage): Future[CopyDBClusterSnapshotResult] = service.copyDBClusterSnapshot(params).promise().toFuture
     @inline def copyDBParameterGroupFuture(params: CopyDBParameterGroupMessage): Future[CopyDBParameterGroupResult] = service.copyDBParameterGroup(params).promise().toFuture
+    @inline def createDBClusterEndpointFuture(params: CreateDBClusterEndpointMessage): Future[CreateDBClusterEndpointOutput] = service.createDBClusterEndpoint(params).promise().toFuture
     @inline def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] = service.createDBCluster(params).promise().toFuture
     @inline def createDBClusterParameterGroupFuture(params: CreateDBClusterParameterGroupMessage): Future[CreateDBClusterParameterGroupResult] = service.createDBClusterParameterGroup(params).promise().toFuture
     @inline def createDBClusterSnapshotFuture(params: CreateDBClusterSnapshotMessage): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise().toFuture
@@ -75,6 +78,7 @@ package object neptune {
     @inline def createDBParameterGroupFuture(params: CreateDBParameterGroupMessage): Future[CreateDBParameterGroupResult] = service.createDBParameterGroup(params).promise().toFuture
     @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] = service.createDBSubnetGroup(params).promise().toFuture
     @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
+    @inline def deleteDBClusterEndpointFuture(params: DeleteDBClusterEndpointMessage): Future[DeleteDBClusterEndpointOutput] = service.deleteDBClusterEndpoint(params).promise().toFuture
     @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] = service.deleteDBCluster(params).promise().toFuture
     @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] = service.deleteDBClusterParameterGroup(params).promise().toFuture
     @inline def deleteDBClusterSnapshotFuture(params: DeleteDBClusterSnapshotMessage): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise().toFuture
@@ -82,6 +86,7 @@ package object neptune {
     @inline def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] = service.deleteDBParameterGroup(params).promise().toFuture
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] = service.deleteDBSubnetGroup(params).promise().toFuture
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def describeDBClusterEndpointsFuture(params: DescribeDBClusterEndpointsMessage): Future[DBClusterEndpointMessage] = service.describeDBClusterEndpoints(params).promise().toFuture
     @inline def describeDBClusterParameterGroupsFuture(params: DescribeDBClusterParameterGroupsMessage): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
     @inline def describeDBClusterParametersFuture(params: DescribeDBClusterParametersMessage): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
     @inline def describeDBClusterSnapshotAttributesFuture(params: DescribeDBClusterSnapshotAttributesMessage): Future[DescribeDBClusterSnapshotAttributesResult] = service.describeDBClusterSnapshotAttributes(params).promise().toFuture
@@ -102,6 +107,7 @@ package object neptune {
     @inline def describeValidDBInstanceModificationsFuture(params: DescribeValidDBInstanceModificationsMessage): Future[DescribeValidDBInstanceModificationsResult] = service.describeValidDBInstanceModifications(params).promise().toFuture
     @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] = service.failoverDBCluster(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyDBClusterEndpointFuture(params: ModifyDBClusterEndpointMessage): Future[ModifyDBClusterEndpointOutput] = service.modifyDBClusterEndpoint(params).promise().toFuture
     @inline def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] = service.modifyDBCluster(params).promise().toFuture
     @inline def modifyDBClusterParameterGroupFuture(params: ModifyDBClusterParameterGroupMessage): Future[DBClusterParameterGroupNameMessage] = service.modifyDBClusterParameterGroup(params).promise().toFuture
     @inline def modifyDBClusterSnapshotAttributeFuture(params: ModifyDBClusterSnapshotAttributeMessage): Future[ModifyDBClusterSnapshotAttributeResult] = service.modifyDBClusterSnapshotAttribute(params).promise().toFuture
@@ -138,6 +144,7 @@ package neptune {
     def copyDBClusterSnapshot(params: CopyDBClusterSnapshotMessage): Request[CopyDBClusterSnapshotResult] = js.native
     def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult] = js.native
     def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult] = js.native
+    def createDBClusterEndpoint(params: CreateDBClusterEndpointMessage): Request[CreateDBClusterEndpointOutput] = js.native
     def createDBClusterParameterGroup(params: CreateDBClusterParameterGroupMessage): Request[CreateDBClusterParameterGroupResult] = js.native
     def createDBClusterSnapshot(params: CreateDBClusterSnapshotMessage): Request[CreateDBClusterSnapshotResult] = js.native
     def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
@@ -145,12 +152,14 @@ package neptune {
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
+    def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DeleteDBClusterEndpointOutput] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] = js.native
     def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
     def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
+    def describeDBClusterEndpoints(params: DescribeDBClusterEndpointsMessage): Request[DBClusterEndpointMessage] = js.native
     def describeDBClusterParameterGroups(params: DescribeDBClusterParameterGroupsMessage): Request[DBClusterParameterGroupsMessage] = js.native
     def describeDBClusterParameters(params: DescribeDBClusterParametersMessage): Request[DBClusterParameterGroupDetails] = js.native
     def describeDBClusterSnapshotAttributes(params: DescribeDBClusterSnapshotAttributesMessage): Request[DescribeDBClusterSnapshotAttributesResult] = js.native
@@ -172,6 +181,7 @@ package neptune {
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult] = js.native
+    def modifyDBClusterEndpoint(params: ModifyDBClusterEndpointMessage): Request[ModifyDBClusterEndpointOutput] = js.native
     def modifyDBClusterParameterGroup(params: ModifyDBClusterParameterGroupMessage): Request[DBClusterParameterGroupNameMessage] = js.native
     def modifyDBClusterSnapshotAttribute(params: ModifyDBClusterSnapshotAttributeMessage): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
     def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
@@ -195,18 +205,22 @@ package neptune {
   trait AddRoleToDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var RoleArn: String
+    var FeatureName: js.UndefOr[String]
   }
 
   object AddRoleToDBClusterMessage {
     @inline
     def apply(
         DBClusterIdentifier: String,
-        RoleArn: String
+        RoleArn: String,
+        FeatureName: js.UndefOr[String] = js.undefined
     ): AddRoleToDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
+
+      FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddRoleToDBClusterMessage]
     }
   }
@@ -508,6 +522,89 @@ package neptune {
       val __obj = js.Dynamic.literal()
       DBParameterGroup.foreach(__v => __obj.updateDynamic("DBParameterGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyDBParameterGroupResult]
+    }
+  }
+
+  @js.native
+  trait CreateDBClusterEndpointMessage extends js.Object {
+    var DBClusterEndpointIdentifier: String
+    var DBClusterIdentifier: String
+    var EndpointType: String
+    var ExcludedMembers: js.UndefOr[StringList]
+    var StaticMembers: js.UndefOr[StringList]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateDBClusterEndpointMessage {
+    @inline
+    def apply(
+        DBClusterEndpointIdentifier: String,
+        DBClusterIdentifier: String,
+        EndpointType: String,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBClusterEndpointMessage = {
+      val __obj = js.Dynamic.literal(
+        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any],
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
+        "EndpointType" -> EndpointType.asInstanceOf[js.Any]
+      )
+
+      ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.updateDynamic("StaticMembers")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterEndpointMessage]
+    }
+  }
+
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:
+    * * <code>CreateDBClusterEndpoint</code>
+    * * <code>DescribeDBClusterEndpoints</code>
+    * * <code>ModifyDBClusterEndpoint</code>
+    * * <code>DeleteDBClusterEndpoint</code>
+    * For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.
+    */
+  @js.native
+  trait CreateDBClusterEndpointOutput extends js.Object {
+    var CustomEndpointType: js.UndefOr[String]
+    var DBClusterEndpointArn: js.UndefOr[String]
+    var DBClusterEndpointIdentifier: js.UndefOr[String]
+    var DBClusterEndpointResourceIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var Endpoint: js.UndefOr[String]
+    var EndpointType: js.UndefOr[String]
+    var ExcludedMembers: js.UndefOr[StringList]
+    var StaticMembers: js.UndefOr[StringList]
+    var Status: js.UndefOr[String]
+  }
+
+  object CreateDBClusterEndpointOutput {
+    @inline
+    def apply(
+        CustomEndpointType: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointResourceIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): CreateDBClusterEndpointOutput = {
+      val __obj = js.Dynamic.literal()
+      CustomEndpointType.foreach(__v => __obj.updateDynamic("CustomEndpointType")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointArn.foreach(__v => __obj.updateDynamic("DBClusterEndpointArn")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointResourceIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointResourceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.updateDynamic("StaticMembers")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBClusterEndpointOutput]
     }
   }
 
@@ -1122,6 +1219,75 @@ package neptune {
     }
   }
 
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:
+    * * <code>CreateDBClusterEndpoint</code>
+    * * <code>DescribeDBClusterEndpoints</code>
+    * * <code>ModifyDBClusterEndpoint</code>
+    * * <code>DeleteDBClusterEndpoint</code>
+    * For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.
+    */
+  @js.native
+  trait DBClusterEndpoint extends js.Object {
+    var CustomEndpointType: js.UndefOr[String]
+    var DBClusterEndpointArn: js.UndefOr[String]
+    var DBClusterEndpointIdentifier: js.UndefOr[String]
+    var DBClusterEndpointResourceIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var Endpoint: js.UndefOr[String]
+    var EndpointType: js.UndefOr[String]
+    var ExcludedMembers: js.UndefOr[StringList]
+    var StaticMembers: js.UndefOr[StringList]
+    var Status: js.UndefOr[String]
+  }
+
+  object DBClusterEndpoint {
+    @inline
+    def apply(
+        CustomEndpointType: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointResourceIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBClusterEndpoint = {
+      val __obj = js.Dynamic.literal()
+      CustomEndpointType.foreach(__v => __obj.updateDynamic("CustomEndpointType")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointArn.foreach(__v => __obj.updateDynamic("DBClusterEndpointArn")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointResourceIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointResourceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.updateDynamic("StaticMembers")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterEndpoint]
+    }
+  }
+
+  @js.native
+  trait DBClusterEndpointMessage extends js.Object {
+    var DBClusterEndpoints: js.UndefOr[DBClusterEndpointList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DBClusterEndpointMessage {
+    @inline
+    def apply(
+        DBClusterEndpoints: js.UndefOr[DBClusterEndpointList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBClusterEndpointMessage = {
+      val __obj = js.Dynamic.literal()
+      DBClusterEndpoints.foreach(__v => __obj.updateDynamic("DBClusterEndpoints")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBClusterEndpointMessage]
+    }
+  }
+
   /** Contains information about an instance that is part of a DB cluster.
     */
   @js.native
@@ -1275,6 +1441,7 @@ package neptune {
     */
   @js.native
   trait DBClusterRole extends js.Object {
+    var FeatureName: js.UndefOr[String]
     var RoleArn: js.UndefOr[String]
     var Status: js.UndefOr[String]
   }
@@ -1282,10 +1449,12 @@ package neptune {
   object DBClusterRole {
     @inline
     def apply(
+        FeatureName: js.UndefOr[String] = js.undefined,
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterRole = {
       val __obj = js.Dynamic.literal()
+      FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterRole]
@@ -1905,6 +2074,73 @@ package neptune {
   }
 
   @js.native
+  trait DeleteDBClusterEndpointMessage extends js.Object {
+    var DBClusterEndpointIdentifier: String
+  }
+
+  object DeleteDBClusterEndpointMessage {
+    @inline
+    def apply(
+        DBClusterEndpointIdentifier: String
+    ): DeleteDBClusterEndpointMessage = {
+      val __obj = js.Dynamic.literal(
+        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDBClusterEndpointMessage]
+    }
+  }
+
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:
+    * * <code>CreateDBClusterEndpoint</code>
+    * * <code>DescribeDBClusterEndpoints</code>
+    * * <code>ModifyDBClusterEndpoint</code>
+    * * <code>DeleteDBClusterEndpoint</code>
+    * For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
+    */
+  @js.native
+  trait DeleteDBClusterEndpointOutput extends js.Object {
+    var CustomEndpointType: js.UndefOr[String]
+    var DBClusterEndpointArn: js.UndefOr[String]
+    var DBClusterEndpointIdentifier: js.UndefOr[String]
+    var DBClusterEndpointResourceIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var Endpoint: js.UndefOr[String]
+    var EndpointType: js.UndefOr[String]
+    var ExcludedMembers: js.UndefOr[StringList]
+    var StaticMembers: js.UndefOr[StringList]
+    var Status: js.UndefOr[String]
+  }
+
+  object DeleteDBClusterEndpointOutput {
+    @inline
+    def apply(
+        CustomEndpointType: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointResourceIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DeleteDBClusterEndpointOutput = {
+      val __obj = js.Dynamic.literal()
+      CustomEndpointType.foreach(__v => __obj.updateDynamic("CustomEndpointType")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointArn.foreach(__v => __obj.updateDynamic("DBClusterEndpointArn")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointResourceIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointResourceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.updateDynamic("StaticMembers")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBClusterEndpointOutput]
+    }
+  }
+
+  @js.native
   trait DeleteDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var FinalDBSnapshotIdentifier: js.UndefOr[String]
@@ -2098,6 +2334,34 @@ package neptune {
       val __obj = js.Dynamic.literal()
       EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteEventSubscriptionResult]
+    }
+  }
+
+  @js.native
+  trait DescribeDBClusterEndpointsMessage extends js.Object {
+    var DBClusterEndpointIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeDBClusterEndpointsMessage {
+    @inline
+    def apply(
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBClusterEndpointsMessage = {
+      val __obj = js.Dynamic.literal()
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBClusterEndpointsMessage]
     }
   }
 
@@ -2712,6 +2976,7 @@ package neptune {
   }
 
   /** Specifies a connection endpoint.
+    * For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -2987,6 +3252,83 @@ package neptune {
 
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyDBClusterEndpointMessage extends js.Object {
+    var DBClusterEndpointIdentifier: String
+    var EndpointType: js.UndefOr[String]
+    var ExcludedMembers: js.UndefOr[StringList]
+    var StaticMembers: js.UndefOr[StringList]
+  }
+
+  object ModifyDBClusterEndpointMessage {
+    @inline
+    def apply(
+        DBClusterEndpointIdentifier: String,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined
+    ): ModifyDBClusterEndpointMessage = {
+      val __obj = js.Dynamic.literal(
+        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any]
+      )
+
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.updateDynamic("StaticMembers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterEndpointMessage]
+    }
+  }
+
+  /** This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:
+    * * <code>CreateDBClusterEndpoint</code>
+    * * <code>DescribeDBClusterEndpoints</code>
+    * * <code>ModifyDBClusterEndpoint</code>
+    * * <code>DeleteDBClusterEndpoint</code>
+    * For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
+    */
+  @js.native
+  trait ModifyDBClusterEndpointOutput extends js.Object {
+    var CustomEndpointType: js.UndefOr[String]
+    var DBClusterEndpointArn: js.UndefOr[String]
+    var DBClusterEndpointIdentifier: js.UndefOr[String]
+    var DBClusterEndpointResourceIdentifier: js.UndefOr[String]
+    var DBClusterIdentifier: js.UndefOr[String]
+    var Endpoint: js.UndefOr[String]
+    var EndpointType: js.UndefOr[String]
+    var ExcludedMembers: js.UndefOr[StringList]
+    var StaticMembers: js.UndefOr[StringList]
+    var Status: js.UndefOr[String]
+  }
+
+  object ModifyDBClusterEndpointOutput {
+    @inline
+    def apply(
+        CustomEndpointType: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointResourceIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): ModifyDBClusterEndpointOutput = {
+      val __obj = js.Dynamic.literal()
+      CustomEndpointType.foreach(__v => __obj.updateDynamic("CustomEndpointType")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointArn.foreach(__v => __obj.updateDynamic("DBClusterEndpointArn")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterEndpointResourceIdentifier.foreach(__v => __obj.updateDynamic("DBClusterEndpointResourceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      ExcludedMembers.foreach(__v => __obj.updateDynamic("ExcludedMembers")(__v.asInstanceOf[js.Any]))
+      StaticMembers.foreach(__v => __obj.updateDynamic("StaticMembers")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBClusterEndpointOutput]
     }
   }
 
@@ -3766,18 +4108,22 @@ package neptune {
   trait RemoveRoleFromDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var RoleArn: String
+    var FeatureName: js.UndefOr[String]
   }
 
   object RemoveRoleFromDBClusterMessage {
     @inline
     def apply(
         DBClusterIdentifier: String,
-        RoleArn: String
+        RoleArn: String,
+        FeatureName: js.UndefOr[String] = js.undefined
     ): RemoveRoleFromDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
+
+      FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveRoleFromDBClusterMessage]
     }
   }

@@ -172,7 +172,6 @@ package object ssm {
   type InstancesCount = Int
   type InventoryAggregatorExpression = String
   type InventoryAggregatorList = js.Array[InventoryAggregator]
-  type InventoryDeletionId = String
   type InventoryDeletionLastStatusMessage = String
   type InventoryDeletionLastStatusUpdateTime = js.Date
   type InventoryDeletionStartTime = js.Date
@@ -328,13 +327,22 @@ package object ssm {
   type ParametersFilterList = js.Array[ParametersFilter]
   type ParametersFilterValue = String
   type ParametersFilterValueList = js.Array[ParametersFilterValue]
+  type PatchAdvisoryId = String
+  type PatchAdvisoryIdList = js.Array[PatchAdvisoryId]
+  type PatchArch = String
   type PatchBaselineIdentityList = js.Array[PatchBaselineIdentity]
   type PatchBaselineMaxResults = Int
+  type PatchBugzillaId = String
+  type PatchBugzillaIdList = js.Array[PatchBugzillaId]
+  type PatchCVEId = String
+  type PatchCVEIdList = js.Array[PatchCVEId]
+  type PatchCVEIds = String
   type PatchClassification = String
   type PatchComplianceDataList = js.Array[PatchComplianceData]
   type PatchComplianceMaxResults = Int
   type PatchContentUrl = String
   type PatchDescription = String
+  type PatchEpoch = Int
   type PatchFailedCount = Int
   type PatchFilterList = js.Array[PatchFilter]
   type PatchFilterValue = String
@@ -354,6 +362,7 @@ package object ssm {
   type PatchMissingCount = Int
   type PatchMsrcNumber = String
   type PatchMsrcSeverity = String
+  type PatchName = String
   type PatchNotApplicableCount = Int
   type PatchOrchestratorFilterKey = String
   type PatchOrchestratorFilterList = js.Array[PatchOrchestratorFilter]
@@ -363,6 +372,8 @@ package object ssm {
   type PatchProductFamily = String
   type PatchPropertiesList = js.Array[PatchPropertyEntry]
   type PatchPropertyEntry = js.Dictionary[AttributeValue]
+  type PatchRelease = String
+  type PatchRepository = String
   type PatchRuleList = js.Array[PatchRule]
   type PatchSeverity = String
   type PatchSourceConfiguration = String
@@ -374,6 +385,7 @@ package object ssm {
   type PatchTitle = String
   type PatchUnreportedNotApplicableCount = Int
   type PatchVendor = String
+  type PatchVersion = String
   type PlatformTypeList = js.Array[PlatformType]
   type Product = String
   type PutInventoryMessage = String
@@ -464,6 +476,7 @@ package object ssm {
   type TimeoutSeconds = Int
   type TokenValue = String
   type TotalCount = Int
+  type UUID = String
   type Url = String
   type ValidNextStep = String
   type ValidNextStepList = js.Array[ValidNextStep]
@@ -1506,8 +1519,20 @@ package ssm {
     val StartTimeAfter = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
     val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
     val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
+    val TargetResourceGroup = "TargetResourceGroup".asInstanceOf[AutomationExecutionFilterKey]
 
-    @inline def values = js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey)
+    @inline def values = js.Array(
+      DocumentNamePrefix,
+      ExecutionStatus,
+      ExecutionId,
+      ParentExecutionId,
+      CurrentAction,
+      StartTimeBefore,
+      StartTimeAfter,
+      AutomationType,
+      TagKey,
+      TargetResourceGroup
+    )
   }
 
   /** Details about a specific Automation execution.
@@ -2830,7 +2855,7 @@ package ssm {
   @js.native
   trait DeleteInventoryRequest extends js.Object {
     var TypeName: InventoryItemTypeName
-    var ClientToken: js.UndefOr[ClientToken]
+    var ClientToken: js.UndefOr[UUID]
     var DryRun: js.UndefOr[DryRun]
     var SchemaDeleteOption: js.UndefOr[InventorySchemaDeleteOption]
   }
@@ -2839,7 +2864,7 @@ package ssm {
     @inline
     def apply(
         TypeName: InventoryItemTypeName,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        ClientToken: js.UndefOr[UUID] = js.undefined,
         DryRun: js.UndefOr[DryRun] = js.undefined,
         SchemaDeleteOption: js.UndefOr[InventorySchemaDeleteOption] = js.undefined
     ): DeleteInventoryRequest = {
@@ -2856,7 +2881,7 @@ package ssm {
 
   @js.native
   trait DeleteInventoryResult extends js.Object {
-    var DeletionId: js.UndefOr[InventoryDeletionId]
+    var DeletionId: js.UndefOr[UUID]
     var DeletionSummary: js.UndefOr[InventoryDeletionSummary]
     var TypeName: js.UndefOr[InventoryItemTypeName]
   }
@@ -2864,7 +2889,7 @@ package ssm {
   object DeleteInventoryResult {
     @inline
     def apply(
-        DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
+        DeletionId: js.UndefOr[UUID] = js.undefined,
         DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
         TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
     ): DeleteInventoryResult = {
@@ -3915,7 +3940,7 @@ package ssm {
 
   @js.native
   trait DescribeInventoryDeletionsRequest extends js.Object {
-    var DeletionId: js.UndefOr[InventoryDeletionId]
+    var DeletionId: js.UndefOr[UUID]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -3923,7 +3948,7 @@ package ssm {
   object DescribeInventoryDeletionsRequest {
     @inline
     def apply(
-        DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
+        DeletionId: js.UndefOr[UUID] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInventoryDeletionsRequest = {
@@ -4850,13 +4875,30 @@ package ssm {
 
   /** One or more filters. Use a filter to return a more specific list of documents.
     * For keys, you can specify one or more tags that have been applied to a document.
-    * Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.
-    * Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
-    * If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
+    * You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated values are as follows:
+    * <dl> <dt>DocumentType</dt> <dd>* ApplicationConfiguration
+    * * ApplicationConfigurationSchema
+    * * Automation
+    * * ChangeCalendar
+    * * Command
+    * * DeploymentStrategy
+    * * Package
+    * * Policy
+    * * Session
+    * </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
+    * * Amazon
+    * * Private
+    * * Public
+    * * Self
+    * * ThirdParty
+    * </dd> <dt>PlatformTypes</dt> <dd>* Linux
+    * * Windows
+    * </dd> </dl> <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
     * <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
+    * You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be used with this key, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|AWS resource and property types reference]] in the <i>AWS CloudFormation User Guide</i>.
     * If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.
     * To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
-    * For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command:
+    * For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code> command:
     * <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
     */
   @js.native
@@ -6642,7 +6684,7 @@ package ssm {
     }
   }
 
-  /** Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API.
+  /** Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to scope down the information returned by the API.
     */
   @js.native
   trait InstancePatchStateFilter extends js.Object {
@@ -6724,7 +6766,7 @@ package ssm {
     */
   @js.native
   trait InventoryDeletionStatusItem extends js.Object {
-    var DeletionId: js.UndefOr[InventoryDeletionId]
+    var DeletionId: js.UndefOr[UUID]
     var DeletionStartTime: js.UndefOr[InventoryDeletionStartTime]
     var DeletionSummary: js.UndefOr[InventoryDeletionSummary]
     var LastStatus: js.UndefOr[InventoryDeletionStatus]
@@ -6736,7 +6778,7 @@ package ssm {
   object InventoryDeletionStatusItem {
     @inline
     def apply(
-        DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
+        DeletionId: js.UndefOr[UUID] = js.undefined,
         DeletionStartTime: js.UndefOr[InventoryDeletionStartTime] = js.undefined,
         DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
         LastStatus: js.UndefOr[InventoryDeletionStatus] = js.undefined,
@@ -8837,11 +8879,6 @@ package ssm {
   }
 
   /** One or more filters. Use a filter to return a more specific list of results.
-    * <important> The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.
-    * For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.
-    * For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
-    * For examples of CLI commands demonstrating valid parameter filter constructions, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html|Searching for Systems Manager parameters]] in the <i>AWS Systems Manager User Guide</i>.
-    * </important>
     */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -8923,52 +8960,82 @@ package ssm {
     */
   @js.native
   trait Patch extends js.Object {
+    var AdvisoryIds: js.UndefOr[PatchAdvisoryIdList]
+    var Arch: js.UndefOr[PatchArch]
+    var BugzillaIds: js.UndefOr[PatchBugzillaIdList]
+    var CVEIds: js.UndefOr[PatchCVEIdList]
     var Classification: js.UndefOr[PatchClassification]
     var ContentUrl: js.UndefOr[PatchContentUrl]
     var Description: js.UndefOr[PatchDescription]
+    var Epoch: js.UndefOr[PatchEpoch]
     var Id: js.UndefOr[PatchId]
     var KbNumber: js.UndefOr[PatchKbNumber]
     var Language: js.UndefOr[PatchLanguage]
     var MsrcNumber: js.UndefOr[PatchMsrcNumber]
     var MsrcSeverity: js.UndefOr[PatchMsrcSeverity]
+    var Name: js.UndefOr[PatchName]
     var Product: js.UndefOr[PatchProduct]
     var ProductFamily: js.UndefOr[PatchProductFamily]
+    var Release: js.UndefOr[PatchRelease]
     var ReleaseDate: js.UndefOr[DateTime]
+    var Repository: js.UndefOr[PatchRepository]
+    var Severity: js.UndefOr[PatchSeverity]
     var Title: js.UndefOr[PatchTitle]
     var Vendor: js.UndefOr[PatchVendor]
+    var Version: js.UndefOr[PatchVersion]
   }
 
   object Patch {
     @inline
     def apply(
+        AdvisoryIds: js.UndefOr[PatchAdvisoryIdList] = js.undefined,
+        Arch: js.UndefOr[PatchArch] = js.undefined,
+        BugzillaIds: js.UndefOr[PatchBugzillaIdList] = js.undefined,
+        CVEIds: js.UndefOr[PatchCVEIdList] = js.undefined,
         Classification: js.UndefOr[PatchClassification] = js.undefined,
         ContentUrl: js.UndefOr[PatchContentUrl] = js.undefined,
         Description: js.UndefOr[PatchDescription] = js.undefined,
+        Epoch: js.UndefOr[PatchEpoch] = js.undefined,
         Id: js.UndefOr[PatchId] = js.undefined,
         KbNumber: js.UndefOr[PatchKbNumber] = js.undefined,
         Language: js.UndefOr[PatchLanguage] = js.undefined,
         MsrcNumber: js.UndefOr[PatchMsrcNumber] = js.undefined,
         MsrcSeverity: js.UndefOr[PatchMsrcSeverity] = js.undefined,
+        Name: js.UndefOr[PatchName] = js.undefined,
         Product: js.UndefOr[PatchProduct] = js.undefined,
         ProductFamily: js.UndefOr[PatchProductFamily] = js.undefined,
+        Release: js.UndefOr[PatchRelease] = js.undefined,
         ReleaseDate: js.UndefOr[DateTime] = js.undefined,
+        Repository: js.UndefOr[PatchRepository] = js.undefined,
+        Severity: js.UndefOr[PatchSeverity] = js.undefined,
         Title: js.UndefOr[PatchTitle] = js.undefined,
-        Vendor: js.UndefOr[PatchVendor] = js.undefined
+        Vendor: js.UndefOr[PatchVendor] = js.undefined,
+        Version: js.UndefOr[PatchVersion] = js.undefined
     ): Patch = {
       val __obj = js.Dynamic.literal()
+      AdvisoryIds.foreach(__v => __obj.updateDynamic("AdvisoryIds")(__v.asInstanceOf[js.Any]))
+      Arch.foreach(__v => __obj.updateDynamic("Arch")(__v.asInstanceOf[js.Any]))
+      BugzillaIds.foreach(__v => __obj.updateDynamic("BugzillaIds")(__v.asInstanceOf[js.Any]))
+      CVEIds.foreach(__v => __obj.updateDynamic("CVEIds")(__v.asInstanceOf[js.Any]))
       Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
       ContentUrl.foreach(__v => __obj.updateDynamic("ContentUrl")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Epoch.foreach(__v => __obj.updateDynamic("Epoch")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       KbNumber.foreach(__v => __obj.updateDynamic("KbNumber")(__v.asInstanceOf[js.Any]))
       Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       MsrcNumber.foreach(__v => __obj.updateDynamic("MsrcNumber")(__v.asInstanceOf[js.Any]))
       MsrcSeverity.foreach(__v => __obj.updateDynamic("MsrcSeverity")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Product.foreach(__v => __obj.updateDynamic("Product")(__v.asInstanceOf[js.Any]))
       ProductFamily.foreach(__v => __obj.updateDynamic("ProductFamily")(__v.asInstanceOf[js.Any]))
+      Release.foreach(__v => __obj.updateDynamic("Release")(__v.asInstanceOf[js.Any]))
       ReleaseDate.foreach(__v => __obj.updateDynamic("ReleaseDate")(__v.asInstanceOf[js.Any]))
+      Repository.foreach(__v => __obj.updateDynamic("Repository")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       Vendor.foreach(__v => __obj.updateDynamic("Vendor")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Patch]
     }
   }
@@ -9022,6 +9089,7 @@ package ssm {
     var Severity: PatchSeverity
     var State: PatchComplianceDataState
     var Title: PatchTitle
+    var CVEIds: js.UndefOr[PatchCVEIds]
   }
 
   object PatchComplianceData {
@@ -9032,7 +9100,8 @@ package ssm {
         KBId: PatchKbNumber,
         Severity: PatchSeverity,
         State: PatchComplianceDataState,
-        Title: PatchTitle
+        Title: PatchTitle,
+        CVEIds: js.UndefOr[PatchCVEIds] = js.undefined
     ): PatchComplianceData = {
       val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
@@ -9042,6 +9111,8 @@ package ssm {
         "State" -> State.asInstanceOf[js.Any],
         "Title" -> Title.asInstanceOf[js.Any]
       )
+
+      CVEIds.foreach(__v => __obj.updateDynamic("CVEIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchComplianceData]
     }
   }
@@ -9130,17 +9201,47 @@ package ssm {
   @js.native
   sealed trait PatchFilterKey extends js.Any
   object PatchFilterKey {
+    val ARCH = "ARCH".asInstanceOf[PatchFilterKey]
+    val ADVISORY_ID = "ADVISORY_ID".asInstanceOf[PatchFilterKey]
+    val BUGZILLA_ID = "BUGZILLA_ID".asInstanceOf[PatchFilterKey]
     val PATCH_SET = "PATCH_SET".asInstanceOf[PatchFilterKey]
     val PRODUCT = "PRODUCT".asInstanceOf[PatchFilterKey]
     val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
     val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchFilterKey]
+    val CVE_ID = "CVE_ID".asInstanceOf[PatchFilterKey]
+    val EPOCH = "EPOCH".asInstanceOf[PatchFilterKey]
     val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
+    val NAME = "NAME".asInstanceOf[PatchFilterKey]
     val PATCH_ID = "PATCH_ID".asInstanceOf[PatchFilterKey]
     val SECTION = "SECTION".asInstanceOf[PatchFilterKey]
     val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
+    val REPOSITORY = "REPOSITORY".asInstanceOf[PatchFilterKey]
+    val RELEASE = "RELEASE".asInstanceOf[PatchFilterKey]
     val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
+    val SECURITY = "SECURITY".asInstanceOf[PatchFilterKey]
+    val VERSION = "VERSION".asInstanceOf[PatchFilterKey]
 
-    @inline def values = js.Array(PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID, SECTION, PRIORITY, SEVERITY)
+    @inline def values = js.Array(
+      ARCH,
+      ADVISORY_ID,
+      BUGZILLA_ID,
+      PATCH_SET,
+      PRODUCT,
+      PRODUCT_FAMILY,
+      CLASSIFICATION,
+      CVE_ID,
+      EPOCH,
+      MSRC_SEVERITY,
+      NAME,
+      PATCH_ID,
+      SECTION,
+      PRIORITY,
+      REPOSITORY,
+      RELEASE,
+      SEVERITY,
+      SECURITY,
+      VERSION
+    )
   }
 
   /** The mapping between a patch group and the patch baseline the patch group is registered with.
@@ -10452,8 +10553,9 @@ package ssm {
     val Target = "Target".asInstanceOf[SessionFilterKey]
     val Owner = "Owner".asInstanceOf[SessionFilterKey]
     val Status = "Status".asInstanceOf[SessionFilterKey]
+    val SessionId = "SessionId".asInstanceOf[SessionFilterKey]
 
-    @inline def values = js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status)
+    @inline def values = js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status, SessionId)
   }
 
   /** Reserved for future use.

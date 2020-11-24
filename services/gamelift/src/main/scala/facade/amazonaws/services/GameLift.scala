@@ -47,7 +47,8 @@ package object gamelift {
   type GameServerGroups = js.Array[GameServerGroup]
   type GameServerId = String
   type GameServerInstanceId = String
-  type GameServerSortKey = String
+  type GameServerInstanceIds = js.Array[GameServerInstanceId]
+  type GameServerInstances = js.Array[GameServerInstance]
   type GameServers = js.Array[GameServer]
   type GameSessionActivationTimeoutSeconds = Int
   type GameSessionData = String
@@ -171,6 +172,7 @@ package object gamelift {
     @inline def describeFleetUtilizationFuture(params: DescribeFleetUtilizationInput): Future[DescribeFleetUtilizationOutput] = service.describeFleetUtilization(params).promise().toFuture
     @inline def describeGameServerFuture(params: DescribeGameServerInput): Future[DescribeGameServerOutput] = service.describeGameServer(params).promise().toFuture
     @inline def describeGameServerGroupFuture(params: DescribeGameServerGroupInput): Future[DescribeGameServerGroupOutput] = service.describeGameServerGroup(params).promise().toFuture
+    @inline def describeGameServerInstancesFuture(params: DescribeGameServerInstancesInput): Future[DescribeGameServerInstancesOutput] = service.describeGameServerInstances(params).promise().toFuture
     @inline def describeGameSessionDetailsFuture(params: DescribeGameSessionDetailsInput): Future[DescribeGameSessionDetailsOutput] = service.describeGameSessionDetails(params).promise().toFuture
     @inline def describeGameSessionPlacementFuture(params: DescribeGameSessionPlacementInput): Future[DescribeGameSessionPlacementOutput] = service.describeGameSessionPlacement(params).promise().toFuture
     @inline def describeGameSessionQueuesFuture(params: DescribeGameSessionQueuesInput): Future[DescribeGameSessionQueuesOutput] = service.describeGameSessionQueues(params).promise().toFuture
@@ -270,6 +272,7 @@ package gamelift {
     def describeFleetUtilization(params: DescribeFleetUtilizationInput): Request[DescribeFleetUtilizationOutput] = js.native
     def describeGameServer(params: DescribeGameServerInput): Request[DescribeGameServerOutput] = js.native
     def describeGameServerGroup(params: DescribeGameServerGroupInput): Request[DescribeGameServerGroupOutput] = js.native
+    def describeGameServerInstances(params: DescribeGameServerInstancesInput): Request[DescribeGameServerInstancesOutput] = js.native
     def describeGameSessionDetails(params: DescribeGameSessionDetailsInput): Request[DescribeGameSessionDetailsOutput] = js.native
     def describeGameSessionPlacement(params: DescribeGameSessionPlacementInput): Request[DescribeGameSessionPlacementOutput] = js.native
     def describeGameSessionQueues(params: DescribeGameSessionQueuesInput): Request[DescribeGameSessionQueuesOutput] = js.native
@@ -324,7 +327,7 @@ package gamelift {
     def validateMatchmakingRuleSet(params: ValidateMatchmakingRuleSetInput): Request[ValidateMatchmakingRuleSetOutput] = js.native
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait AcceptMatchInput extends js.Object {
@@ -476,8 +479,9 @@ package gamelift {
   object BalancingStrategy {
     val SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
     val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
+    val ON_DEMAND_ONLY = "ON_DEMAND_ONLY".asInstanceOf[BalancingStrategy]
 
-    @inline def values = js.Array(SPOT_ONLY, SPOT_PREFERRED)
+    @inline def values = js.Array(SPOT_ONLY, SPOT_PREFERRED, ON_DEMAND_ONLY)
   }
 
   /** Properties describing a custom game build.
@@ -614,7 +618,7 @@ package gamelift {
     @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateAliasInput extends js.Object {
@@ -643,7 +647,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateAliasOutput extends js.Object {
@@ -661,7 +665,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateBuildInput extends js.Object {
@@ -691,7 +695,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateBuildOutput extends js.Object {
@@ -715,7 +719,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateFleetInput extends js.Object {
@@ -789,7 +793,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateFleetOutput extends js.Object {
@@ -871,7 +875,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateGameSessionInput extends js.Object {
@@ -915,7 +919,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateGameSessionOutput extends js.Object {
@@ -933,7 +937,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateGameSessionQueueInput extends js.Object {
@@ -965,7 +969,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateGameSessionQueueOutput extends js.Object {
@@ -983,7 +987,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateMatchmakingConfigurationInput extends js.Object {
@@ -1042,7 +1046,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateMatchmakingConfigurationOutput extends js.Object {
@@ -1060,7 +1064,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateMatchmakingRuleSetInput extends js.Object {
@@ -1086,7 +1090,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateMatchmakingRuleSetOutput extends js.Object {
@@ -1105,7 +1109,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreatePlayerSessionInput extends js.Object {
@@ -1131,7 +1135,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreatePlayerSessionOutput extends js.Object {
@@ -1149,7 +1153,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreatePlayerSessionsInput extends js.Object {
@@ -1175,7 +1179,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreatePlayerSessionsOutput extends js.Object {
@@ -1237,7 +1241,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateVpcPeeringAuthorizationInput extends js.Object {
@@ -1259,7 +1263,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait CreateVpcPeeringAuthorizationOutput extends js.Object {
@@ -1277,7 +1281,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait CreateVpcPeeringConnectionInput extends js.Object {
@@ -1313,7 +1317,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteAliasInput extends js.Object {
@@ -1332,7 +1336,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteBuildInput extends js.Object {
@@ -1351,7 +1355,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteFleetInput extends js.Object {
@@ -1407,7 +1411,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteGameSessionQueueInput extends js.Object {
@@ -1437,7 +1441,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteMatchmakingConfigurationInput extends js.Object {
@@ -1467,7 +1471,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteMatchmakingRuleSetInput extends js.Object {
@@ -1486,7 +1490,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DeleteMatchmakingRuleSetOutput extends js.Object
@@ -1499,7 +1503,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteScalingPolicyInput extends js.Object {
@@ -1538,7 +1542,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteVpcPeeringAuthorizationInput extends js.Object {
@@ -1571,7 +1575,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DeleteVpcPeeringConnectionInput extends js.Object {
@@ -1624,7 +1628,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeAliasInput extends js.Object {
@@ -1643,7 +1647,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeAliasOutput extends js.Object {
@@ -1661,7 +1665,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeBuildInput extends js.Object {
@@ -1680,7 +1684,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeBuildOutput extends js.Object {
@@ -1698,7 +1702,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeEC2InstanceLimitsInput extends js.Object {
@@ -1716,7 +1720,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeEC2InstanceLimitsOutput extends js.Object {
@@ -1734,7 +1738,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeFleetAttributesInput extends js.Object {
@@ -1758,7 +1762,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeFleetAttributesOutput extends js.Object {
@@ -1779,7 +1783,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeFleetCapacityInput extends js.Object {
@@ -1803,7 +1807,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeFleetCapacityOutput extends js.Object {
@@ -1824,7 +1828,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeFleetEventsInput extends js.Object {
@@ -1856,7 +1860,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeFleetEventsOutput extends js.Object {
@@ -1877,7 +1881,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeFleetPortSettingsInput extends js.Object {
@@ -1896,7 +1900,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeFleetPortSettingsOutput extends js.Object {
@@ -1914,7 +1918,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeFleetUtilizationInput extends js.Object {
@@ -1938,7 +1942,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeFleetUtilizationOutput extends js.Object {
@@ -2013,6 +2017,52 @@ package gamelift {
   }
 
   @js.native
+  trait DescribeGameServerInstancesInput extends js.Object {
+    var GameServerGroupName: GameServerGroupNameOrArn
+    var InstanceIds: js.UndefOr[GameServerInstanceIds]
+    var Limit: js.UndefOr[PositiveInteger]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object DescribeGameServerInstancesInput {
+    @inline
+    def apply(
+        GameServerGroupName: GameServerGroupNameOrArn,
+        InstanceIds: js.UndefOr[GameServerInstanceIds] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameServerInstancesInput = {
+      val __obj = js.Dynamic.literal(
+        "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any]
+      )
+
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGameServerInstancesInput]
+    }
+  }
+
+  @js.native
+  trait DescribeGameServerInstancesOutput extends js.Object {
+    var GameServerInstances: js.UndefOr[GameServerInstances]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object DescribeGameServerInstancesOutput {
+    @inline
+    def apply(
+        GameServerInstances: js.UndefOr[GameServerInstances] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameServerInstancesOutput = {
+      val __obj = js.Dynamic.literal()
+      GameServerInstances.foreach(__v => __obj.updateDynamic("GameServerInstances")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGameServerInstancesOutput]
+    }
+  }
+
+  @js.native
   trait DescribeGameServerOutput extends js.Object {
     var GameServer: js.UndefOr[GameServer]
   }
@@ -2028,7 +2078,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeGameSessionDetailsInput extends js.Object {
@@ -2061,7 +2111,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeGameSessionDetailsOutput extends js.Object {
@@ -2082,7 +2132,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeGameSessionPlacementInput extends js.Object {
@@ -2101,7 +2151,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeGameSessionPlacementOutput extends js.Object {
@@ -2119,7 +2169,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeGameSessionQueuesInput extends js.Object {
@@ -2143,7 +2193,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeGameSessionQueuesOutput extends js.Object {
@@ -2164,7 +2214,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeGameSessionsInput extends js.Object {
@@ -2197,7 +2247,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeGameSessionsOutput extends js.Object {
@@ -2218,7 +2268,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeInstancesInput extends js.Object {
@@ -2247,7 +2297,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeInstancesOutput extends js.Object {
@@ -2268,7 +2318,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeMatchmakingConfigurationsInput extends js.Object {
@@ -2295,7 +2345,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeMatchmakingConfigurationsOutput extends js.Object {
@@ -2316,7 +2366,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeMatchmakingInput extends js.Object {
@@ -2335,7 +2385,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeMatchmakingOutput extends js.Object {
@@ -2353,7 +2403,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeMatchmakingRuleSetsInput extends js.Object {
@@ -2377,7 +2427,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeMatchmakingRuleSetsOutput extends js.Object {
@@ -2400,7 +2450,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribePlayerSessionsInput extends js.Object {
@@ -2433,7 +2483,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribePlayerSessionsOutput extends js.Object {
@@ -2454,7 +2504,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeRuntimeConfigurationInput extends js.Object {
@@ -2473,7 +2523,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeRuntimeConfigurationOutput extends js.Object {
@@ -2491,7 +2541,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeScalingPoliciesInput extends js.Object {
@@ -2520,7 +2570,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeScalingPoliciesOutput extends js.Object {
@@ -2601,7 +2651,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait DescribeVpcPeeringConnectionsInput extends js.Object {
@@ -2619,7 +2669,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait DescribeVpcPeeringConnectionsOutput extends js.Object {
@@ -3166,15 +3216,20 @@ package gamelift {
     }
   }
 
-  /** ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
-    * Properties describing a game server resource.
-    * A game server resource is created by a successful call to <a>RegisterGameServer</a> and deleted by calling <a>DeregisterGameServer</a>.
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * Properties describing a game server that is running on an instance in a <a>GameServerGroup</a>.
+    * A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>.
+    * * <a>RegisterGameServer</a>
+    * * <a>ListGameServers</a>
+    * * <a>ClaimGameServer</a>
+    * * <a>DescribeGameServer</a>
+    * * <a>UpdateGameServer</a>
+    * * <a>DeregisterGameServer</a>
     */
   @js.native
   trait GameServer extends js.Object {
     var ClaimStatus: js.UndefOr[GameServerClaimStatus]
     var ConnectionInfo: js.UndefOr[GameServerConnectionInfo]
-    var CustomSortKey: js.UndefOr[GameServerSortKey]
     var GameServerData: js.UndefOr[GameServerData]
     var GameServerGroupArn: js.UndefOr[GameServerGroupArn]
     var GameServerGroupName: js.UndefOr[GameServerGroupName]
@@ -3191,7 +3246,6 @@ package gamelift {
     def apply(
         ClaimStatus: js.UndefOr[GameServerClaimStatus] = js.undefined,
         ConnectionInfo: js.UndefOr[GameServerConnectionInfo] = js.undefined,
-        CustomSortKey: js.UndefOr[GameServerSortKey] = js.undefined,
         GameServerData: js.UndefOr[GameServerData] = js.undefined,
         GameServerGroupArn: js.UndefOr[GameServerGroupArn] = js.undefined,
         GameServerGroupName: js.UndefOr[GameServerGroupName] = js.undefined,
@@ -3205,7 +3259,6 @@ package gamelift {
       val __obj = js.Dynamic.literal()
       ClaimStatus.foreach(__v => __obj.updateDynamic("ClaimStatus")(__v.asInstanceOf[js.Any]))
       ConnectionInfo.foreach(__v => __obj.updateDynamic("ConnectionInfo")(__v.asInstanceOf[js.Any]))
-      CustomSortKey.foreach(__v => __obj.updateDynamic("CustomSortKey")(__v.asInstanceOf[js.Any]))
       GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
       GameServerGroupArn.foreach(__v => __obj.updateDynamic("GameServerGroupArn")(__v.asInstanceOf[js.Any]))
       GameServerGroupName.foreach(__v => __obj.updateDynamic("GameServerGroupName")(__v.asInstanceOf[js.Any]))
@@ -3227,9 +3280,17 @@ package gamelift {
     @inline def values = js.Array(CLAIMED)
   }
 
-  /** ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
-    * Properties describing a game server group resource. A game server group manages certain properties of a corresponding EC2 Auto Scaling group.
-    * A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>.
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding EC2 Auto Scaling group.
+    * A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively.
+    * * <a>CreateGameServerGroup</a>
+    * * <a>ListGameServerGroups</a>
+    * * <a>DescribeGameServerGroup</a>
+    * * <a>UpdateGameServerGroup</a>
+    * * <a>DeleteGameServerGroup</a>
+    * * <a>ResumeGameServerGroup</a>
+    * * <a>SuspendGameServerGroup</a>
+    * * <a>DescribeGameServerInstances</a>
     */
   @js.native
   trait GameServerGroup extends js.Object {
@@ -3288,8 +3349,8 @@ package gamelift {
     @inline def values = js.Array(REPLACE_INSTANCE_TYPES)
   }
 
-  /** ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
-    * Configuration settings for intelligent autoscaling that uses target tracking. An autoscaling policy can be specified when a new game server group is created with <a>CreateGameServerGroup</a>. If a group has an autoscaling policy, the Auto Scaling group takes action based on this policy, in addition to (and potentially in conflict with) any other autoscaling policies that are separately applied to the Auto Scaling group.
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group with <a>CreateGameServerGroup</a>. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group.
     */
   @js.native
   trait GameServerGroupAutoScalingPolicy extends js.Object {
@@ -3430,6 +3491,53 @@ package gamelift {
     val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
 
     @inline def values = js.Array(HEALTHY)
+  }
+
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group.
+    * Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.
+    * * <a>CreateGameServerGroup</a>
+    * * <a>ListGameServerGroups</a>
+    * * <a>DescribeGameServerGroup</a>
+    * * <a>UpdateGameServerGroup</a>
+    * * <a>DeleteGameServerGroup</a>
+    * * <a>ResumeGameServerGroup</a>
+    * * <a>SuspendGameServerGroup</a>
+    * * <a>DescribeGameServerInstances</a>
+    */
+  @js.native
+  trait GameServerInstance extends js.Object {
+    var GameServerGroupArn: js.UndefOr[GameServerGroupArn]
+    var GameServerGroupName: js.UndefOr[GameServerGroupName]
+    var InstanceId: js.UndefOr[GameServerInstanceId]
+    var InstanceStatus: js.UndefOr[GameServerInstanceStatus]
+  }
+
+  object GameServerInstance {
+    @inline
+    def apply(
+        GameServerGroupArn: js.UndefOr[GameServerGroupArn] = js.undefined,
+        GameServerGroupName: js.UndefOr[GameServerGroupName] = js.undefined,
+        InstanceId: js.UndefOr[GameServerInstanceId] = js.undefined,
+        InstanceStatus: js.UndefOr[GameServerInstanceStatus] = js.undefined
+    ): GameServerInstance = {
+      val __obj = js.Dynamic.literal()
+      GameServerGroupArn.foreach(__v => __obj.updateDynamic("GameServerGroupArn")(__v.asInstanceOf[js.Any]))
+      GameServerGroupName.foreach(__v => __obj.updateDynamic("GameServerGroupName")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceStatus.foreach(__v => __obj.updateDynamic("InstanceStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GameServerInstance]
+    }
+  }
+
+  @js.native
+  sealed trait GameServerInstanceStatus extends js.Any
+  object GameServerInstanceStatus {
+    val ACTIVE = "ACTIVE".asInstanceOf[GameServerInstanceStatus]
+    val DRAINING = "DRAINING".asInstanceOf[GameServerInstanceStatus]
+    val SPOT_TERMINATING = "SPOT_TERMINATING".asInstanceOf[GameServerInstanceStatus]
+
+    @inline def values = js.Array(ACTIVE, DRAINING, SPOT_TERMINATING)
   }
 
   @js.native
@@ -3747,7 +3855,7 @@ package gamelift {
     @inline def values = js.Array(INTERRUPTED)
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait GetGameSessionLogUrlInput extends js.Object {
@@ -3766,7 +3874,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait GetGameSessionLogUrlOutput extends js.Object {
@@ -3784,7 +3892,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait GetInstanceAccessInput extends js.Object {
@@ -3806,7 +3914,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait GetInstanceAccessOutput extends js.Object {
@@ -3914,8 +4022,8 @@ package gamelift {
     }
   }
 
-  /** ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
-    * An allowed instance type for your game server group. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * An allowed instance type for a <a>GameServerGroup</a>. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.
     */
   @js.native
   trait InstanceDefinition extends js.Object {
@@ -3985,8 +4093,8 @@ package gamelift {
     @inline def values = js.Array(TCP, UDP)
   }
 
-  /** ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
-    * An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group.
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <a>CreateGameServerGroup</a>.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -4010,7 +4118,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait ListAliasesInput extends js.Object {
@@ -4037,7 +4145,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait ListAliasesOutput extends js.Object {
@@ -4058,7 +4166,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait ListBuildsInput extends js.Object {
@@ -4082,7 +4190,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait ListBuildsOutput extends js.Object {
@@ -4103,7 +4211,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait ListFleetsInput extends js.Object {
@@ -4130,7 +4238,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait ListFleetsOutput extends js.Object {
@@ -4731,7 +4839,7 @@ package gamelift {
     @inline def values = js.Array(NoProtection, FullProtection)
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait PutScalingPolicyInput extends js.Object {
@@ -4778,7 +4886,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait PutScalingPolicyOutput extends js.Object {
@@ -4802,9 +4910,7 @@ package gamelift {
     var GameServerId: GameServerId
     var InstanceId: GameServerInstanceId
     var ConnectionInfo: js.UndefOr[GameServerConnectionInfo]
-    var CustomSortKey: js.UndefOr[GameServerSortKey]
     var GameServerData: js.UndefOr[GameServerData]
-    var Tags: js.UndefOr[TagList]
   }
 
   object RegisterGameServerInput {
@@ -4814,9 +4920,7 @@ package gamelift {
         GameServerId: GameServerId,
         InstanceId: GameServerInstanceId,
         ConnectionInfo: js.UndefOr[GameServerConnectionInfo] = js.undefined,
-        CustomSortKey: js.UndefOr[GameServerSortKey] = js.undefined,
-        GameServerData: js.UndefOr[GameServerData] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        GameServerData: js.UndefOr[GameServerData] = js.undefined
     ): RegisterGameServerInput = {
       val __obj = js.Dynamic.literal(
         "GameServerGroupName" -> GameServerGroupName.asInstanceOf[js.Any],
@@ -4825,9 +4929,7 @@ package gamelift {
       )
 
       ConnectionInfo.foreach(__v => __obj.updateDynamic("ConnectionInfo")(__v.asInstanceOf[js.Any]))
-      CustomSortKey.foreach(__v => __obj.updateDynamic("CustomSortKey")(__v.asInstanceOf[js.Any]))
       GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterGameServerInput]
     }
   }
@@ -4848,7 +4950,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait RequestUploadCredentialsInput extends js.Object {
@@ -4867,7 +4969,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait RequestUploadCredentialsOutput extends js.Object {
@@ -4888,7 +4990,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait ResolveAliasInput extends js.Object {
@@ -4907,7 +5009,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait ResolveAliasOutput extends js.Object {
@@ -5209,7 +5311,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait SearchGameSessionsInput extends js.Object {
@@ -5242,7 +5344,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait SearchGameSessionsOutput extends js.Object {
@@ -5329,7 +5431,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait StartGameSessionPlacementInput extends js.Object {
@@ -5370,7 +5472,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait StartGameSessionPlacementOutput extends js.Object {
@@ -5388,7 +5490,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait StartMatchBackfillInput extends js.Object {
@@ -5417,7 +5519,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait StartMatchBackfillOutput extends js.Object {
@@ -5435,7 +5537,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait StartMatchmakingInput extends js.Object {
@@ -5461,7 +5563,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait StartMatchmakingOutput extends js.Object {
@@ -5510,7 +5612,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait StopGameSessionPlacementInput extends js.Object {
@@ -5529,7 +5631,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait StopGameSessionPlacementOutput extends js.Object {
@@ -5547,7 +5649,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait StopMatchmakingInput extends js.Object {
@@ -5703,8 +5805,8 @@ package gamelift {
     }
   }
 
-  /** ```This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is subject to change.```
-    * Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value.
+  /** ```This data type is used with the Amazon GameLift FleetIQ and game server groups.```
+    * Settings for a target-based scaling policy as part of a <a>GameServerGroupAutoScalingPolicy</a>. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value.
     */
   @js.native
   trait TargetTrackingConfiguration extends js.Object {
@@ -5754,7 +5856,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateAliasInput extends js.Object {
@@ -5783,7 +5885,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateAliasOutput extends js.Object {
@@ -5801,7 +5903,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateBuildInput extends js.Object {
@@ -5827,7 +5929,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateBuildOutput extends js.Object {
@@ -5845,7 +5947,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateFleetAttributesInput extends js.Object {
@@ -5880,7 +5982,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateFleetAttributesOutput extends js.Object {
@@ -5898,7 +6000,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateFleetCapacityInput extends js.Object {
@@ -5927,7 +6029,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateFleetCapacityOutput extends js.Object {
@@ -5945,7 +6047,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateFleetPortSettingsInput extends js.Object {
@@ -5971,7 +6073,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateFleetPortSettingsOutput extends js.Object {
@@ -6039,7 +6141,6 @@ package gamelift {
   trait UpdateGameServerInput extends js.Object {
     var GameServerGroupName: GameServerGroupNameOrArn
     var GameServerId: GameServerId
-    var CustomSortKey: js.UndefOr[GameServerSortKey]
     var GameServerData: js.UndefOr[GameServerData]
     var HealthCheck: js.UndefOr[GameServerHealthCheck]
     var UtilizationStatus: js.UndefOr[GameServerUtilizationStatus]
@@ -6050,7 +6151,6 @@ package gamelift {
     def apply(
         GameServerGroupName: GameServerGroupNameOrArn,
         GameServerId: GameServerId,
-        CustomSortKey: js.UndefOr[GameServerSortKey] = js.undefined,
         GameServerData: js.UndefOr[GameServerData] = js.undefined,
         HealthCheck: js.UndefOr[GameServerHealthCheck] = js.undefined,
         UtilizationStatus: js.UndefOr[GameServerUtilizationStatus] = js.undefined
@@ -6060,7 +6160,6 @@ package gamelift {
         "GameServerId" -> GameServerId.asInstanceOf[js.Any]
       )
 
-      CustomSortKey.foreach(__v => __obj.updateDynamic("CustomSortKey")(__v.asInstanceOf[js.Any]))
       GameServerData.foreach(__v => __obj.updateDynamic("GameServerData")(__v.asInstanceOf[js.Any]))
       HealthCheck.foreach(__v => __obj.updateDynamic("HealthCheck")(__v.asInstanceOf[js.Any]))
       UtilizationStatus.foreach(__v => __obj.updateDynamic("UtilizationStatus")(__v.asInstanceOf[js.Any]))
@@ -6084,7 +6183,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateGameSessionInput extends js.Object {
@@ -6116,7 +6215,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateGameSessionOutput extends js.Object {
@@ -6134,7 +6233,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateGameSessionQueueInput extends js.Object {
@@ -6163,7 +6262,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateGameSessionQueueOutput extends js.Object {
@@ -6181,7 +6280,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateMatchmakingConfigurationInput extends js.Object {
@@ -6237,7 +6336,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateMatchmakingConfigurationOutput extends js.Object {
@@ -6255,7 +6354,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait UpdateRuntimeConfigurationInput extends js.Object {
@@ -6277,7 +6376,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait UpdateRuntimeConfigurationOutput extends js.Object {
@@ -6341,7 +6440,7 @@ package gamelift {
     }
   }
 
-  /** Represents the input for a request action.
+  /** Represents the input for a request operation.
     */
   @js.native
   trait ValidateMatchmakingRuleSetInput extends js.Object {
@@ -6360,7 +6459,7 @@ package gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request action.
+  /** Represents the returned data in response to a request operation.
     */
   @js.native
   trait ValidateMatchmakingRuleSetOutput extends js.Object {

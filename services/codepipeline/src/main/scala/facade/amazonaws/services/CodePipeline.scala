@@ -459,6 +459,7 @@ package codepipeline {
     */
   @js.native
   trait ActionExecution extends js.Object {
+    var actionExecutionId: js.UndefOr[ActionExecutionId]
     var errorDetails: js.UndefOr[ErrorDetails]
     var externalExecutionId: js.UndefOr[ExecutionId]
     var externalExecutionUrl: js.UndefOr[Url]
@@ -473,6 +474,7 @@ package codepipeline {
   object ActionExecution {
     @inline
     def apply(
+        actionExecutionId: js.UndefOr[ActionExecutionId] = js.undefined,
         errorDetails: js.UndefOr[ErrorDetails] = js.undefined,
         externalExecutionId: js.UndefOr[ExecutionId] = js.undefined,
         externalExecutionUrl: js.UndefOr[Url] = js.undefined,
@@ -484,6 +486,7 @@ package codepipeline {
         token: js.UndefOr[ActionExecutionToken] = js.undefined
     ): ActionExecution = {
       val __obj = js.Dynamic.literal()
+      actionExecutionId.foreach(__v => __obj.updateDynamic("actionExecutionId")(__v.asInstanceOf[js.Any]))
       errorDetails.foreach(__v => __obj.updateDynamic("errorDetails")(__v.asInstanceOf[js.Any]))
       externalExecutionId.foreach(__v => __obj.updateDynamic("externalExecutionId")(__v.asInstanceOf[js.Any]))
       externalExecutionUrl.foreach(__v => __obj.updateDynamic("externalExecutionUrl")(__v.asInstanceOf[js.Any]))
@@ -2868,6 +2871,7 @@ package codepipeline {
   @js.native
   trait StageState extends js.Object {
     var actionStates: js.UndefOr[ActionStateList]
+    var inboundExecution: js.UndefOr[StageExecution]
     var inboundTransitionState: js.UndefOr[TransitionState]
     var latestExecution: js.UndefOr[StageExecution]
     var stageName: js.UndefOr[StageName]
@@ -2877,12 +2881,14 @@ package codepipeline {
     @inline
     def apply(
         actionStates: js.UndefOr[ActionStateList] = js.undefined,
+        inboundExecution: js.UndefOr[StageExecution] = js.undefined,
         inboundTransitionState: js.UndefOr[TransitionState] = js.undefined,
         latestExecution: js.UndefOr[StageExecution] = js.undefined,
         stageName: js.UndefOr[StageName] = js.undefined
     ): StageState = {
       val __obj = js.Dynamic.literal()
       actionStates.foreach(__v => __obj.updateDynamic("actionStates")(__v.asInstanceOf[js.Any]))
+      inboundExecution.foreach(__v => __obj.updateDynamic("inboundExecution")(__v.asInstanceOf[js.Any]))
       inboundTransitionState.foreach(__v => __obj.updateDynamic("inboundTransitionState")(__v.asInstanceOf[js.Any]))
       latestExecution.foreach(__v => __obj.updateDynamic("latestExecution")(__v.asInstanceOf[js.Any]))
       stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))

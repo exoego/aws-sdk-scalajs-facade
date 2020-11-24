@@ -1320,16 +1320,20 @@ package codebuild {
   @js.native
   trait DeleteReportGroupInput extends js.Object {
     var arn: NonEmptyString
+    var deleteReports: js.UndefOr[Boolean]
   }
 
   object DeleteReportGroupInput {
     @inline
     def apply(
-        arn: NonEmptyString
+        arn: NonEmptyString,
+        deleteReports: js.UndefOr[Boolean] = js.undefined
     ): DeleteReportGroupInput = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
+
+      deleteReports.foreach(__v => __obj.updateDynamic("deleteReports")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteReportGroupInput]
     }
   }
@@ -3005,6 +3009,7 @@ package codebuild {
     var exportConfig: js.UndefOr[ReportExportConfig]
     var lastModified: js.UndefOr[Timestamp]
     var name: js.UndefOr[ReportGroupName]
+    var status: js.UndefOr[ReportGroupStatusType]
     var tags: js.UndefOr[TagList]
     var `type`: js.UndefOr[ReportType]
   }
@@ -3017,6 +3022,7 @@ package codebuild {
         exportConfig: js.UndefOr[ReportExportConfig] = js.undefined,
         lastModified: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[ReportGroupName] = js.undefined,
+        status: js.UndefOr[ReportGroupStatusType] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         `type`: js.UndefOr[ReportType] = js.undefined
     ): ReportGroup = {
@@ -3026,6 +3032,7 @@ package codebuild {
       exportConfig.foreach(__v => __obj.updateDynamic("exportConfig")(__v.asInstanceOf[js.Any]))
       lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportGroup]
@@ -3040,6 +3047,15 @@ package codebuild {
     val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ReportGroupSortByType]
 
     @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
+  }
+
+  @js.native
+  sealed trait ReportGroupStatusType extends js.Any
+  object ReportGroupStatusType {
+    val ACTIVE = "ACTIVE".asInstanceOf[ReportGroupStatusType]
+    val DELETING = "DELETING".asInstanceOf[ReportGroupStatusType]
+
+    @inline def values = js.Array(ACTIVE, DELETING)
   }
 
   @js.native
@@ -3717,19 +3733,22 @@ package codebuild {
     }
   }
 
-  /** A filter used to return specific types of test cases.
+  /** A filter used to return specific types of test cases. In order to pass the filter, the report must meet all of the filter properties.
     */
   @js.native
   trait TestCaseFilter extends js.Object {
+    var keyword: js.UndefOr[String]
     var status: js.UndefOr[String]
   }
 
   object TestCaseFilter {
     @inline
     def apply(
+        keyword: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined
     ): TestCaseFilter = {
       val __obj = js.Dynamic.literal()
+      keyword.foreach(__v => __obj.updateDynamic("keyword")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestCaseFilter]
     }
