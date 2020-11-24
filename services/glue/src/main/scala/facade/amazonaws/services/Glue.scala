@@ -10,6 +10,8 @@ package object glue {
   type ActionList = js.Array[Action]
   type AdditionalPlanOptionsMap = js.Dictionary[GenericString]
   type AttemptCount = Int
+  type BackfillErroredPartitionsList = js.Array[PartitionValueList]
+  type BackfillErrors = js.Array[BackfillError]
   type BatchDeletePartitionValueList = js.Array[PartitionValueList]
   type BatchDeleteTableNameList = js.Array[NameString]
   type BatchDeleteTableVersionList = js.Array[VersionString]
@@ -252,6 +254,7 @@ package object glue {
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
     @inline def createMLTransformFuture(params: CreateMLTransformRequest): Future[CreateMLTransformResponse] = service.createMLTransform(params).promise().toFuture
     @inline def createPartitionFuture(params: CreatePartitionRequest): Future[CreatePartitionResponse] = service.createPartition(params).promise().toFuture
+    @inline def createPartitionIndexFuture(params: CreatePartitionIndexRequest): Future[CreatePartitionIndexResponse] = service.createPartitionIndex(params).promise().toFuture
     @inline def createRegistryFuture(params: CreateRegistryInput): Future[CreateRegistryResponse] = service.createRegistry(params).promise().toFuture
     @inline def createSchemaFuture(params: CreateSchemaInput): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
     @inline def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] = service.createScript(params).promise().toFuture
@@ -270,6 +273,7 @@ package object glue {
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] = service.deleteJob(params).promise().toFuture
     @inline def deleteMLTransformFuture(params: DeleteMLTransformRequest): Future[DeleteMLTransformResponse] = service.deleteMLTransform(params).promise().toFuture
     @inline def deletePartitionFuture(params: DeletePartitionRequest): Future[DeletePartitionResponse] = service.deletePartition(params).promise().toFuture
+    @inline def deletePartitionIndexFuture(params: DeletePartitionIndexRequest): Future[DeletePartitionIndexResponse] = service.deletePartitionIndex(params).promise().toFuture
     @inline def deleteRegistryFuture(params: DeleteRegistryInput): Future[DeleteRegistryResponse] = service.deleteRegistry(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] = service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteSchemaFuture(params: DeleteSchemaInput): Future[DeleteSchemaResponse] = service.deleteSchema(params).promise().toFuture
@@ -417,6 +421,7 @@ package glue {
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createMLTransform(params: CreateMLTransformRequest): Request[CreateMLTransformResponse] = js.native
     def createPartition(params: CreatePartitionRequest): Request[CreatePartitionResponse] = js.native
+    def createPartitionIndex(params: CreatePartitionIndexRequest): Request[CreatePartitionIndexResponse] = js.native
     def createRegistry(params: CreateRegistryInput): Request[CreateRegistryResponse] = js.native
     def createSchema(params: CreateSchemaInput): Request[CreateSchemaResponse] = js.native
     def createScript(params: CreateScriptRequest): Request[CreateScriptResponse] = js.native
@@ -435,6 +440,7 @@ package glue {
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResponse] = js.native
     def deleteMLTransform(params: DeleteMLTransformRequest): Request[DeleteMLTransformResponse] = js.native
     def deletePartition(params: DeletePartitionRequest): Request[DeletePartitionResponse] = js.native
+    def deletePartitionIndex(params: DeletePartitionIndexRequest): Request[DeletePartitionIndexResponse] = js.native
     def deleteRegistry(params: DeleteRegistryInput): Request[DeleteRegistryResponse] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
     def deleteSchema(params: DeleteSchemaInput): Request[DeleteSchemaResponse] = js.native
@@ -582,6 +588,45 @@ package glue {
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Action]
     }
+  }
+
+  /** A list of errors that can occur when registering partition indexes for an existing table.
+    * These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:
+    * * EncryptedPartitionError: The partitions are encrypted.
+    * * InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column.
+    * * MissingPartitionValueError: The partitions are encrypted.
+    * * UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.
+    * * InternalError: Any error which does not belong to other error codes.
+    */
+  @js.native
+  trait BackfillError extends js.Object {
+    var Code: js.UndefOr[BackfillErrorCode]
+    var Partitions: js.UndefOr[BackfillErroredPartitionsList]
+  }
+
+  object BackfillError {
+    @inline
+    def apply(
+        Code: js.UndefOr[BackfillErrorCode] = js.undefined,
+        Partitions: js.UndefOr[BackfillErroredPartitionsList] = js.undefined
+    ): BackfillError = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackfillError]
+    }
+  }
+
+  @js.native
+  sealed trait BackfillErrorCode extends js.Any
+  object BackfillErrorCode {
+    val ENCRYPTED_PARTITION_ERROR = "ENCRYPTED_PARTITION_ERROR".asInstanceOf[BackfillErrorCode]
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[BackfillErrorCode]
+    val INVALID_PARTITION_TYPE_DATA_ERROR = "INVALID_PARTITION_TYPE_DATA_ERROR".asInstanceOf[BackfillErrorCode]
+    val MISSING_PARTITION_VALUE_ERROR = "MISSING_PARTITION_VALUE_ERROR".asInstanceOf[BackfillErrorCode]
+    val UNSUPPORTED_PARTITION_CHARACTER_ERROR = "UNSUPPORTED_PARTITION_CHARACTER_ERROR".asInstanceOf[BackfillErrorCode]
+
+    @inline def values = js.Array(ENCRYPTED_PARTITION_ERROR, INTERNAL_ERROR, INVALID_PARTITION_TYPE_DATA_ERROR, MISSING_PARTITION_VALUE_ERROR, UNSUPPORTED_PARTITION_CHARACTER_ERROR)
   }
 
   @js.native
@@ -2019,6 +2064,7 @@ package glue {
     var Description: js.UndefOr[DescriptionString]
     var LastCrawl: js.UndefOr[LastCrawlInfo]
     var LastUpdated: js.UndefOr[Timestamp]
+    var LineageConfiguration: js.UndefOr[LineageConfiguration]
     var Name: js.UndefOr[NameString]
     var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Role: js.UndefOr[Role]
@@ -2042,6 +2088,7 @@ package glue {
         Description: js.UndefOr[DescriptionString] = js.undefined,
         LastCrawl: js.UndefOr[LastCrawlInfo] = js.undefined,
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        LineageConfiguration: js.UndefOr[LineageConfiguration] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
         RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
@@ -2062,6 +2109,7 @@ package glue {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LastCrawl.foreach(__v => __obj.updateDynamic("LastCrawl")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      LineageConfiguration.foreach(__v => __obj.updateDynamic("LineageConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
@@ -2073,6 +2121,15 @@ package glue {
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Crawler]
     }
+  }
+
+  @js.native
+  sealed trait CrawlerLineageSettings extends js.Any
+  object CrawlerLineageSettings {
+    val ENABLE = "ENABLE".asInstanceOf[CrawlerLineageSettings]
+    val DISABLE = "DISABLE".asInstanceOf[CrawlerLineageSettings]
+
+    @inline def values = js.Array(ENABLE, DISABLE)
   }
 
   /** Metrics for a specified crawler.
@@ -2250,6 +2307,7 @@ package glue {
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionString]
+    var LineageConfiguration: js.UndefOr[LineageConfiguration]
     var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Schedule: js.UndefOr[CronExpression]
     var SchemaChangePolicy: js.UndefOr[SchemaChangePolicy]
@@ -2268,6 +2326,7 @@ package glue {
         CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        LineageConfiguration: js.UndefOr[LineageConfiguration] = js.undefined,
         RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Schedule: js.UndefOr[CronExpression] = js.undefined,
         SchemaChangePolicy: js.UndefOr[SchemaChangePolicy] = js.undefined,
@@ -2285,6 +2344,7 @@ package glue {
       CrawlerSecurityConfiguration.foreach(__v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LineageConfiguration.foreach(__v => __obj.updateDynamic("LineageConfiguration")(__v.asInstanceOf[js.Any]))
       RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
@@ -2711,6 +2771,44 @@ package glue {
       val __obj = js.Dynamic.literal()
       TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMLTransformResponse]
+    }
+  }
+
+  @js.native
+  trait CreatePartitionIndexRequest extends js.Object {
+    var DatabaseName: NameString
+    var PartitionIndex: PartitionIndex
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object CreatePartitionIndexRequest {
+    @inline
+    def apply(
+        DatabaseName: NameString,
+        PartitionIndex: PartitionIndex,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): CreatePartitionIndexRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionIndex" -> PartitionIndex.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePartitionIndexRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePartitionIndexResponse extends js.Object
+
+  object CreatePartitionIndexResponse {
+    @inline
+    def apply(): CreatePartitionIndexResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreatePartitionIndexResponse]
     }
   }
 
@@ -3756,6 +3854,44 @@ package glue {
       val __obj = js.Dynamic.literal()
       TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMLTransformResponse]
+    }
+  }
+
+  @js.native
+  trait DeletePartitionIndexRequest extends js.Object {
+    var DatabaseName: NameString
+    var IndexName: NameString
+    var TableName: NameString
+    var CatalogId: js.UndefOr[CatalogIdString]
+  }
+
+  object DeletePartitionIndexRequest {
+    @inline
+    def apply(
+        DatabaseName: NameString,
+        IndexName: NameString,
+        TableName: NameString,
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+    ): DeletePartitionIndexRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePartitionIndexRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePartitionIndexResponse extends js.Object
+
+  object DeletePartitionIndexResponse {
+    @inline
+    def apply(): DeletePartitionIndexResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeletePartitionIndexResponse]
     }
   }
 
@@ -7471,6 +7607,24 @@ package glue {
     @inline def values = js.Array(SUCCEEDED, CANCELLED, FAILED)
   }
 
+  /** Specifies data lineage configuration settings for the crawler.
+    */
+  @js.native
+  trait LineageConfiguration extends js.Object {
+    var CrawlerLineageSettings: js.UndefOr[CrawlerLineageSettings]
+  }
+
+  object LineageConfiguration {
+    @inline
+    def apply(
+        CrawlerLineageSettings: js.UndefOr[CrawlerLineageSettings] = js.undefined
+    ): LineageConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CrawlerLineageSettings.foreach(__v => __obj.updateDynamic("CrawlerLineageSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineageConfiguration]
+    }
+  }
+
   @js.native
   trait ListCrawlersRequest extends js.Object {
     var MaxResults: js.UndefOr[PageSize]
@@ -8295,6 +8449,7 @@ package glue {
     var IndexName: NameString
     var IndexStatus: PartitionIndexStatus
     var Keys: KeySchemaElementList
+    var BackfillErrors: js.UndefOr[BackfillErrors]
   }
 
   object PartitionIndexDescriptor {
@@ -8302,13 +8457,16 @@ package glue {
     def apply(
         IndexName: NameString,
         IndexStatus: PartitionIndexStatus,
-        Keys: KeySchemaElementList
+        Keys: KeySchemaElementList,
+        BackfillErrors: js.UndefOr[BackfillErrors] = js.undefined
     ): PartitionIndexDescriptor = {
       val __obj = js.Dynamic.literal(
         "IndexName" -> IndexName.asInstanceOf[js.Any],
         "IndexStatus" -> IndexStatus.asInstanceOf[js.Any],
         "Keys" -> Keys.asInstanceOf[js.Any]
       )
+
+      BackfillErrors.foreach(__v => __obj.updateDynamic("BackfillErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartitionIndexDescriptor]
     }
   }
@@ -8316,9 +8474,12 @@ package glue {
   @js.native
   sealed trait PartitionIndexStatus extends js.Any
   object PartitionIndexStatus {
+    val CREATING = "CREATING".asInstanceOf[PartitionIndexStatus]
     val ACTIVE = "ACTIVE".asInstanceOf[PartitionIndexStatus]
+    val DELETING = "DELETING".asInstanceOf[PartitionIndexStatus]
+    val FAILED = "FAILED".asInstanceOf[PartitionIndexStatus]
 
-    @inline def values = js.Array(ACTIVE)
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED)
   }
 
   /** The structure used to create and update a partition.
@@ -10949,6 +11110,7 @@ package glue {
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionStringRemovable]
+    var LineageConfiguration: js.UndefOr[LineageConfiguration]
     var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Role: js.UndefOr[Role]
     var Schedule: js.UndefOr[CronExpression]
@@ -10966,6 +11128,7 @@ package glue {
         CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionStringRemovable] = js.undefined,
+        LineageConfiguration: js.UndefOr[LineageConfiguration] = js.undefined,
         RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         Schedule: js.UndefOr[CronExpression] = js.undefined,
@@ -10982,6 +11145,7 @@ package glue {
       CrawlerSecurityConfiguration.foreach(__v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LineageConfiguration.foreach(__v => __obj.updateDynamic("LineageConfiguration")(__v.asInstanceOf[js.Any]))
       RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))

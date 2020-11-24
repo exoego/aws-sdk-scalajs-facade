@@ -86,6 +86,7 @@ package object dynamodb {
   type KeyList = js.Array[Key]
   type KeySchema = js.Array[KeySchemaElement]
   type KeySchemaAttributeName = String
+  type KinesisDataStreamDestinations = js.Array[KinesisDataStreamDestination]
   type LastUpdateDateTime = js.Date
   type ListAttributeValue = js.Array[AttributeValue]
   type ListContributorInsightsLimit = Int
@@ -102,8 +103,14 @@ package object dynamodb {
   type NullAttributeValue = Boolean
   type NumberAttributeValue = String
   type NumberSetAttributeValue = js.Array[NumberAttributeValue]
+  type ParameterizedStatements = js.Array[ParameterizedStatement]
+  type PartiQLBatchRequest = js.Array[BatchStatementRequest]
+  type PartiQLBatchResponse = js.Array[BatchStatementResponse]
+  type PartiQLNextToken = String
+  type PartiQLStatement = String
   type PositiveIntegerObject = Int
   type PositiveLongObject = Double
+  type PreparedStatementParameters = js.Array[AttributeValue]
   type ProjectionExpression = String
   type PutItemInputAttributeMap = js.Dictionary[AttributeValue]
   type RegionName = String
@@ -157,6 +164,7 @@ package object dynamodb {
 
   implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
 
+    @inline def batchExecuteStatementFuture(params: BatchExecuteStatementInput): Future[BatchExecuteStatementOutput] = service.batchExecuteStatement(params).promise().toFuture
     @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] = service.batchGetItem(params).promise().toFuture
     @inline def batchWriteItemFuture(params: BatchWriteItemInput): Future[BatchWriteItemOutput] = service.batchWriteItem(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupInput): Future[CreateBackupOutput] = service.createBackup(params).promise().toFuture
@@ -172,10 +180,15 @@ package object dynamodb {
     @inline def describeExportFuture(params: DescribeExportInput): Future[DescribeExportOutput] = service.describeExport(params).promise().toFuture
     @inline def describeGlobalTableFuture(params: DescribeGlobalTableInput): Future[DescribeGlobalTableOutput] = service.describeGlobalTable(params).promise().toFuture
     @inline def describeGlobalTableSettingsFuture(params: DescribeGlobalTableSettingsInput): Future[DescribeGlobalTableSettingsOutput] = service.describeGlobalTableSettings(params).promise().toFuture
+    @inline def describeKinesisStreamingDestinationFuture(params: DescribeKinesisStreamingDestinationInput): Future[DescribeKinesisStreamingDestinationOutput] = service.describeKinesisStreamingDestination(params).promise().toFuture
     @inline def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] = service.describeLimits(params).promise().toFuture
     @inline def describeTableFuture(params: DescribeTableInput): Future[DescribeTableOutput] = service.describeTable(params).promise().toFuture
     @inline def describeTableReplicaAutoScalingFuture(params: DescribeTableReplicaAutoScalingInput): Future[DescribeTableReplicaAutoScalingOutput] = service.describeTableReplicaAutoScaling(params).promise().toFuture
     @inline def describeTimeToLiveFuture(params: DescribeTimeToLiveInput): Future[DescribeTimeToLiveOutput] = service.describeTimeToLive(params).promise().toFuture
+    @inline def disableKinesisStreamingDestinationFuture(params: KinesisStreamingDestinationInput): Future[KinesisStreamingDestinationOutput] = service.disableKinesisStreamingDestination(params).promise().toFuture
+    @inline def enableKinesisStreamingDestinationFuture(params: KinesisStreamingDestinationInput): Future[KinesisStreamingDestinationOutput] = service.enableKinesisStreamingDestination(params).promise().toFuture
+    @inline def executeStatementFuture(params: ExecuteStatementInput): Future[ExecuteStatementOutput] = service.executeStatement(params).promise().toFuture
+    @inline def executeTransactionFuture(params: ExecuteTransactionInput): Future[ExecuteTransactionOutput] = service.executeTransaction(params).promise().toFuture
     @inline def exportTableToPointInTimeFuture(params: ExportTableToPointInTimeInput): Future[ExportTableToPointInTimeOutput] = service.exportTableToPointInTime(params).promise().toFuture
     @inline def getItemFuture(params: GetItemInput): Future[GetItemOutput] = service.getItem(params).promise().toFuture
     @inline def listBackupsFuture(params: ListBackupsInput): Future[ListBackupsOutput] = service.listBackups(params).promise().toFuture
@@ -249,6 +262,7 @@ package dynamodb {
   class DynamoDB() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def batchExecuteStatement(params: BatchExecuteStatementInput): Request[BatchExecuteStatementOutput] = js.native
     def batchGetItem(params: BatchGetItemInput): Request[BatchGetItemOutput] = js.native
     def batchWriteItem(params: BatchWriteItemInput): Request[BatchWriteItemOutput] = js.native
     def createBackup(params: CreateBackupInput): Request[CreateBackupOutput] = js.native
@@ -264,10 +278,15 @@ package dynamodb {
     def describeExport(params: DescribeExportInput): Request[DescribeExportOutput] = js.native
     def describeGlobalTable(params: DescribeGlobalTableInput): Request[DescribeGlobalTableOutput] = js.native
     def describeGlobalTableSettings(params: DescribeGlobalTableSettingsInput): Request[DescribeGlobalTableSettingsOutput] = js.native
+    def describeKinesisStreamingDestination(params: DescribeKinesisStreamingDestinationInput): Request[DescribeKinesisStreamingDestinationOutput] = js.native
     def describeLimits(params: DescribeLimitsInput): Request[DescribeLimitsOutput] = js.native
     def describeTable(params: DescribeTableInput): Request[DescribeTableOutput] = js.native
     def describeTableReplicaAutoScaling(params: DescribeTableReplicaAutoScalingInput): Request[DescribeTableReplicaAutoScalingOutput] = js.native
     def describeTimeToLive(params: DescribeTimeToLiveInput): Request[DescribeTimeToLiveOutput] = js.native
+    def disableKinesisStreamingDestination(params: KinesisStreamingDestinationInput): Request[KinesisStreamingDestinationOutput] = js.native
+    def enableKinesisStreamingDestination(params: KinesisStreamingDestinationInput): Request[KinesisStreamingDestinationOutput] = js.native
+    def executeStatement(params: ExecuteStatementInput): Request[ExecuteStatementOutput] = js.native
+    def executeTransaction(params: ExecuteTransactionInput): Request[ExecuteTransactionOutput] = js.native
     def exportTableToPointInTime(params: ExportTableToPointInTimeInput): Request[ExportTableToPointInTimeOutput] = js.native
     def getItem(params: GetItemInput): Request[GetItemOutput] = js.native
     def listBackups(params: ListBackupsInput): Request[ListBackupsOutput] = js.native
@@ -752,6 +771,39 @@ package dynamodb {
     @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP, ALL)
   }
 
+  @js.native
+  trait BatchExecuteStatementInput extends js.Object {
+    var Statements: PartiQLBatchRequest
+  }
+
+  object BatchExecuteStatementInput {
+    @inline
+    def apply(
+        Statements: PartiQLBatchRequest
+    ): BatchExecuteStatementInput = {
+      val __obj = js.Dynamic.literal(
+        "Statements" -> Statements.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchExecuteStatementInput]
+    }
+  }
+
+  @js.native
+  trait BatchExecuteStatementOutput extends js.Object {
+    var Responses: js.UndefOr[PartiQLBatchResponse]
+  }
+
+  object BatchExecuteStatementOutput {
+    @inline
+    def apply(
+        Responses: js.UndefOr[PartiQLBatchResponse] = js.undefined
+    ): BatchExecuteStatementOutput = {
+      val __obj = js.Dynamic.literal()
+      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchExecuteStatementOutput]
+    }
+  }
+
   /** Represents the input of a <code>BatchGetItem</code> operation.
     */
   @js.native
@@ -796,6 +848,107 @@ package dynamodb {
       Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
       UnprocessedKeys.foreach(__v => __obj.updateDynamic("UnprocessedKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetItemOutput]
+    }
+  }
+
+  /** An error associated with a statement in a PartiQL batch that was run.
+    */
+  @js.native
+  trait BatchStatementError extends js.Object {
+    var Code: js.UndefOr[BatchStatementErrorCodeEnum]
+    var Message: js.UndefOr[String]
+  }
+
+  object BatchStatementError {
+    @inline
+    def apply(
+        Code: js.UndefOr[BatchStatementErrorCodeEnum] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): BatchStatementError = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchStatementError]
+    }
+  }
+
+  @js.native
+  sealed trait BatchStatementErrorCodeEnum extends js.Any
+  object BatchStatementErrorCodeEnum {
+    val ConditionalCheckFailed = "ConditionalCheckFailed".asInstanceOf[BatchStatementErrorCodeEnum]
+    val ItemCollectionSizeLimitExceeded = "ItemCollectionSizeLimitExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
+    val RequestLimitExceeded = "RequestLimitExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
+    val ValidationError = "ValidationError".asInstanceOf[BatchStatementErrorCodeEnum]
+    val ProvisionedThroughputExceeded = "ProvisionedThroughputExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
+    val TransactionConflict = "TransactionConflict".asInstanceOf[BatchStatementErrorCodeEnum]
+    val ThrottlingError = "ThrottlingError".asInstanceOf[BatchStatementErrorCodeEnum]
+    val InternalServerError = "InternalServerError".asInstanceOf[BatchStatementErrorCodeEnum]
+    val ResourceNotFound = "ResourceNotFound".asInstanceOf[BatchStatementErrorCodeEnum]
+    val AccessDenied = "AccessDenied".asInstanceOf[BatchStatementErrorCodeEnum]
+    val DuplicateItem = "DuplicateItem".asInstanceOf[BatchStatementErrorCodeEnum]
+
+    @inline def values = js.Array(
+      ConditionalCheckFailed,
+      ItemCollectionSizeLimitExceeded,
+      RequestLimitExceeded,
+      ValidationError,
+      ProvisionedThroughputExceeded,
+      TransactionConflict,
+      ThrottlingError,
+      InternalServerError,
+      ResourceNotFound,
+      AccessDenied,
+      DuplicateItem
+    )
+  }
+
+  /** A PartiQL batch statement request.
+    */
+  @js.native
+  trait BatchStatementRequest extends js.Object {
+    var Statement: PartiQLStatement
+    var ConsistentRead: js.UndefOr[ConsistentRead]
+    var Parameters: js.UndefOr[PreparedStatementParameters]
+  }
+
+  object BatchStatementRequest {
+    @inline
+    def apply(
+        Statement: PartiQLStatement,
+        ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
+        Parameters: js.UndefOr[PreparedStatementParameters] = js.undefined
+    ): BatchStatementRequest = {
+      val __obj = js.Dynamic.literal(
+        "Statement" -> Statement.asInstanceOf[js.Any]
+      )
+
+      ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchStatementRequest]
+    }
+  }
+
+  /** A PartiQL batch statement response..
+    */
+  @js.native
+  trait BatchStatementResponse extends js.Object {
+    var Error: js.UndefOr[BatchStatementError]
+    var Item: js.UndefOr[AttributeMap]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object BatchStatementResponse {
+    @inline
+    def apply(
+        Error: js.UndefOr[BatchStatementError] = js.undefined,
+        Item: js.UndefOr[AttributeMap] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): BatchStatementResponse = {
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      Item.foreach(__v => __obj.updateDynamic("Item")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchStatementResponse]
     }
   }
 
@@ -1821,6 +1974,42 @@ package dynamodb {
     }
   }
 
+  @js.native
+  trait DescribeKinesisStreamingDestinationInput extends js.Object {
+    var TableName: TableName
+  }
+
+  object DescribeKinesisStreamingDestinationInput {
+    @inline
+    def apply(
+        TableName: TableName
+    ): DescribeKinesisStreamingDestinationInput = {
+      val __obj = js.Dynamic.literal(
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeKinesisStreamingDestinationInput]
+    }
+  }
+
+  @js.native
+  trait DescribeKinesisStreamingDestinationOutput extends js.Object {
+    var KinesisDataStreamDestinations: js.UndefOr[KinesisDataStreamDestinations]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object DescribeKinesisStreamingDestinationOutput {
+    @inline
+    def apply(
+        KinesisDataStreamDestinations: js.UndefOr[KinesisDataStreamDestinations] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): DescribeKinesisStreamingDestinationOutput = {
+      val __obj = js.Dynamic.literal()
+      KinesisDataStreamDestinations.foreach(__v => __obj.updateDynamic("KinesisDataStreamDestinations")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeKinesisStreamingDestinationOutput]
+    }
+  }
+
   /** Represents the input of a <code>DescribeLimits</code> operation. Has no content.
     */
   @js.native
@@ -1964,6 +2153,18 @@ package dynamodb {
     }
   }
 
+  @js.native
+  sealed trait DestinationStatus extends js.Any
+  object DestinationStatus {
+    val ENABLING = "ENABLING".asInstanceOf[DestinationStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[DestinationStatus]
+    val DISABLING = "DISABLING".asInstanceOf[DestinationStatus]
+    val DISABLED = "DISABLED".asInstanceOf[DestinationStatus]
+    val ENABLE_FAILED = "ENABLE_FAILED".asInstanceOf[DestinationStatus]
+
+    @inline def values = js.Array(ENABLING, ACTIVE, DISABLING, DISABLED, ENABLE_FAILED)
+  }
+
   /** An endpoint information details.
     */
   @js.native
@@ -1983,6 +2184,89 @@ package dynamodb {
         "CachePeriodInMinutes" -> CachePeriodInMinutes.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Endpoint]
+    }
+  }
+
+  @js.native
+  trait ExecuteStatementInput extends js.Object {
+    var Statement: PartiQLStatement
+    var ConsistentRead: js.UndefOr[ConsistentRead]
+    var NextToken: js.UndefOr[PartiQLNextToken]
+    var Parameters: js.UndefOr[PreparedStatementParameters]
+  }
+
+  object ExecuteStatementInput {
+    @inline
+    def apply(
+        Statement: PartiQLStatement,
+        ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
+        NextToken: js.UndefOr[PartiQLNextToken] = js.undefined,
+        Parameters: js.UndefOr[PreparedStatementParameters] = js.undefined
+    ): ExecuteStatementInput = {
+      val __obj = js.Dynamic.literal(
+        "Statement" -> Statement.asInstanceOf[js.Any]
+      )
+
+      ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteStatementInput]
+    }
+  }
+
+  @js.native
+  trait ExecuteStatementOutput extends js.Object {
+    var Items: js.UndefOr[ItemList]
+    var NextToken: js.UndefOr[PartiQLNextToken]
+  }
+
+  object ExecuteStatementOutput {
+    @inline
+    def apply(
+        Items: js.UndefOr[ItemList] = js.undefined,
+        NextToken: js.UndefOr[PartiQLNextToken] = js.undefined
+    ): ExecuteStatementOutput = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteStatementOutput]
+    }
+  }
+
+  @js.native
+  trait ExecuteTransactionInput extends js.Object {
+    var TransactStatements: ParameterizedStatements
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+  }
+
+  object ExecuteTransactionInput {
+    @inline
+    def apply(
+        TransactStatements: ParameterizedStatements,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): ExecuteTransactionInput = {
+      val __obj = js.Dynamic.literal(
+        "TransactStatements" -> TransactStatements.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteTransactionInput]
+    }
+  }
+
+  @js.native
+  trait ExecuteTransactionOutput extends js.Object {
+    var Responses: js.UndefOr[ItemResponseList]
+  }
+
+  object ExecuteTransactionOutput {
+    @inline
+    def apply(
+        Responses: js.UndefOr[ItemResponseList] = js.undefined
+    ): ExecuteTransactionOutput = {
+      val __obj = js.Dynamic.literal()
+      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteTransactionOutput]
     }
   }
 
@@ -2645,6 +2929,72 @@ package dynamodb {
     }
   }
 
+  /** Describes a Kinesis data stream destination.
+    */
+  @js.native
+  trait KinesisDataStreamDestination extends js.Object {
+    var DestinationStatus: js.UndefOr[DestinationStatus]
+    var DestinationStatusDescription: js.UndefOr[String]
+    var StreamArn: js.UndefOr[StreamArn]
+  }
+
+  object KinesisDataStreamDestination {
+    @inline
+    def apply(
+        DestinationStatus: js.UndefOr[DestinationStatus] = js.undefined,
+        DestinationStatusDescription: js.UndefOr[String] = js.undefined,
+        StreamArn: js.UndefOr[StreamArn] = js.undefined
+    ): KinesisDataStreamDestination = {
+      val __obj = js.Dynamic.literal()
+      DestinationStatus.foreach(__v => __obj.updateDynamic("DestinationStatus")(__v.asInstanceOf[js.Any]))
+      DestinationStatusDescription.foreach(__v => __obj.updateDynamic("DestinationStatusDescription")(__v.asInstanceOf[js.Any]))
+      StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisDataStreamDestination]
+    }
+  }
+
+  @js.native
+  trait KinesisStreamingDestinationInput extends js.Object {
+    var StreamArn: StreamArn
+    var TableName: TableName
+  }
+
+  object KinesisStreamingDestinationInput {
+    @inline
+    def apply(
+        StreamArn: StreamArn,
+        TableName: TableName
+    ): KinesisStreamingDestinationInput = {
+      val __obj = js.Dynamic.literal(
+        "StreamArn" -> StreamArn.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KinesisStreamingDestinationInput]
+    }
+  }
+
+  @js.native
+  trait KinesisStreamingDestinationOutput extends js.Object {
+    var DestinationStatus: js.UndefOr[DestinationStatus]
+    var StreamArn: js.UndefOr[StreamArn]
+    var TableName: js.UndefOr[TableName]
+  }
+
+  object KinesisStreamingDestinationOutput {
+    @inline
+    def apply(
+        DestinationStatus: js.UndefOr[DestinationStatus] = js.undefined,
+        StreamArn: js.UndefOr[StreamArn] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): KinesisStreamingDestinationOutput = {
+      val __obj = js.Dynamic.literal()
+      DestinationStatus.foreach(__v => __obj.updateDynamic("DestinationStatus")(__v.asInstanceOf[js.Any]))
+      StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisStreamingDestinationOutput]
+    }
+  }
+
   @js.native
   trait ListBackupsInput extends js.Object {
     var BackupType: js.UndefOr[BackupTypeFilter]
@@ -2979,6 +3329,29 @@ package dynamodb {
       KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
       Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocalSecondaryIndexInfo]
+    }
+  }
+
+  /** Represents a PartiQL statment that uses parameters.
+    */
+  @js.native
+  trait ParameterizedStatement extends js.Object {
+    var Statement: PartiQLStatement
+    var Parameters: js.UndefOr[PreparedStatementParameters]
+  }
+
+  object ParameterizedStatement {
+    @inline
+    def apply(
+        Statement: PartiQLStatement,
+        Parameters: js.UndefOr[PreparedStatementParameters] = js.undefined
+    ): ParameterizedStatement = {
+      val __obj = js.Dynamic.literal(
+        "Statement" -> Statement.asInstanceOf[js.Any]
+      )
+
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterizedStatement]
     }
   }
 

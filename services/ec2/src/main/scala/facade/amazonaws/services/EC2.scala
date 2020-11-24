@@ -413,6 +413,7 @@ package object ec2 {
   type PriceScheduleSpecificationList = js.Array[PriceScheduleSpecification]
   type PricingDetailsList = js.Array[PricingDetail]
   type PrincipalIdFormatList = js.Array[PrincipalIdFormat]
+  type PrivateDnsDetailsSet = js.Array[PrivateDnsDetails]
   type PrivateIpAddressConfigSet = js.Array[ScheduledInstancesPrivateIpAddressConfig]
   type PrivateIpAddressSpecificationList = js.Array[PrivateIpAddressSpecification]
   type PrivateIpAddressStringList = js.Array[String]
@@ -28832,6 +28833,24 @@ package ec2 {
     @inline def values = js.Array(All, Service, OrganizationUnit, Account, User, Role)
   }
 
+  /** Information about the Private DNS name for interface endpoints.
+    */
+  @js.native
+  trait PrivateDnsDetails extends js.Object {
+    var PrivateDnsName: js.UndefOr[String]
+  }
+
+  object PrivateDnsDetails {
+    @inline
+    def apply(
+        PrivateDnsName: js.UndefOr[String] = js.undefined
+    ): PrivateDnsDetails = {
+      val __obj = js.Dynamic.literal()
+      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrivateDnsDetails]
+    }
+  }
+
   /** Information about the private DNS name for the service endpoint. For more information about these parameters, see [[https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html|VPC Endpoint Service Private DNS Name Verification]] in the <i>Amazon Virtual Private Cloud User Guide</i>.
     */
   @js.native
@@ -32706,6 +32725,7 @@ package ec2 {
     var Owner: js.UndefOr[String]
     var PrivateDnsName: js.UndefOr[String]
     var PrivateDnsNameVerificationState: js.UndefOr[DnsNameState]
+    var PrivateDnsNames: js.UndefOr[PrivateDnsDetailsSet]
     var ServiceId: js.UndefOr[String]
     var ServiceName: js.UndefOr[String]
     var ServiceType: js.UndefOr[ServiceTypeDetailSet]
@@ -32723,6 +32743,7 @@ package ec2 {
         Owner: js.UndefOr[String] = js.undefined,
         PrivateDnsName: js.UndefOr[String] = js.undefined,
         PrivateDnsNameVerificationState: js.UndefOr[DnsNameState] = js.undefined,
+        PrivateDnsNames: js.UndefOr[PrivateDnsDetailsSet] = js.undefined,
         ServiceId: js.UndefOr[String] = js.undefined,
         ServiceName: js.UndefOr[String] = js.undefined,
         ServiceType: js.UndefOr[ServiceTypeDetailSet] = js.undefined,
@@ -32737,6 +32758,7 @@ package ec2 {
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
       PrivateDnsNameVerificationState.foreach(__v => __obj.updateDynamic("PrivateDnsNameVerificationState")(__v.asInstanceOf[js.Any]))
+      PrivateDnsNames.foreach(__v => __obj.updateDynamic("PrivateDnsNames")(__v.asInstanceOf[js.Any]))
       ServiceId.foreach(__v => __obj.updateDynamic("ServiceId")(__v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       ServiceType.foreach(__v => __obj.updateDynamic("ServiceType")(__v.asInstanceOf[js.Any]))

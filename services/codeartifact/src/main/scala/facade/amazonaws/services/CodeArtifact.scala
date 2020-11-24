@@ -1715,8 +1715,9 @@ package codeartifact {
     val npm = "npm".asInstanceOf[PackageFormat]
     val pypi = "pypi".asInstanceOf[PackageFormat]
     val maven = "maven".asInstanceOf[PackageFormat]
+    val nuget = "nuget".asInstanceOf[PackageFormat]
 
-    @inline def values = js.Array(npm, pypi, maven)
+    @inline def values = js.Array(npm, pypi, maven, nuget)
   }
 
   /** Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html"> <code>ListPackages</code> </a> operation returns a list of <code>PackageSummary</code> objects.

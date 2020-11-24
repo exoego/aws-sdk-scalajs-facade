@@ -7,6 +7,10 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object ssoadmin {
+  type AccessControlAttributeKey = String
+  type AccessControlAttributeList = js.Array[AccessControlAttribute]
+  type AccessControlAttributeValueSource = String
+  type AccessControlAttributeValueSourceList = js.Array[AccessControlAttributeValueSource]
   type AccountAssignmentList = js.Array[AccountAssignment]
   type AccountAssignmentOperationStatusList = js.Array[AccountAssignmentOperationStatusMetadata]
   type AccountId = String
@@ -16,6 +20,7 @@ package object ssoadmin {
   type Duration = String
   type GeneralArn = String
   type Id = String
+  type InstanceAccessControlAttributeConfigurationStatusReason = String
   type InstanceArn = String
   type InstanceList = js.Array[InstanceMetadata]
   type ManagedPolicyArn = String
@@ -42,12 +47,15 @@ package object ssoadmin {
 
     @inline def attachManagedPolicyToPermissionSetFuture(params: AttachManagedPolicyToPermissionSetRequest): Future[AttachManagedPolicyToPermissionSetResponse] = service.attachManagedPolicyToPermissionSet(params).promise().toFuture
     @inline def createAccountAssignmentFuture(params: CreateAccountAssignmentRequest): Future[CreateAccountAssignmentResponse] = service.createAccountAssignment(params).promise().toFuture
+    @inline def createInstanceAccessControlAttributeConfigurationFuture(params: CreateInstanceAccessControlAttributeConfigurationRequest): Future[CreateInstanceAccessControlAttributeConfigurationResponse] = service.createInstanceAccessControlAttributeConfiguration(params).promise().toFuture
     @inline def createPermissionSetFuture(params: CreatePermissionSetRequest): Future[CreatePermissionSetResponse] = service.createPermissionSet(params).promise().toFuture
     @inline def deleteAccountAssignmentFuture(params: DeleteAccountAssignmentRequest): Future[DeleteAccountAssignmentResponse] = service.deleteAccountAssignment(params).promise().toFuture
     @inline def deleteInlinePolicyFromPermissionSetFuture(params: DeleteInlinePolicyFromPermissionSetRequest): Future[DeleteInlinePolicyFromPermissionSetResponse] = service.deleteInlinePolicyFromPermissionSet(params).promise().toFuture
+    @inline def deleteInstanceAccessControlAttributeConfigurationFuture(params: DeleteInstanceAccessControlAttributeConfigurationRequest): Future[DeleteInstanceAccessControlAttributeConfigurationResponse] = service.deleteInstanceAccessControlAttributeConfiguration(params).promise().toFuture
     @inline def deletePermissionSetFuture(params: DeletePermissionSetRequest): Future[DeletePermissionSetResponse] = service.deletePermissionSet(params).promise().toFuture
     @inline def describeAccountAssignmentCreationStatusFuture(params: DescribeAccountAssignmentCreationStatusRequest): Future[DescribeAccountAssignmentCreationStatusResponse] = service.describeAccountAssignmentCreationStatus(params).promise().toFuture
     @inline def describeAccountAssignmentDeletionStatusFuture(params: DescribeAccountAssignmentDeletionStatusRequest): Future[DescribeAccountAssignmentDeletionStatusResponse] = service.describeAccountAssignmentDeletionStatus(params).promise().toFuture
+    @inline def describeInstanceAccessControlAttributeConfigurationFuture(params: DescribeInstanceAccessControlAttributeConfigurationRequest): Future[DescribeInstanceAccessControlAttributeConfigurationResponse] = service.describeInstanceAccessControlAttributeConfiguration(params).promise().toFuture
     @inline def describePermissionSetFuture(params: DescribePermissionSetRequest): Future[DescribePermissionSetResponse] = service.describePermissionSet(params).promise().toFuture
     @inline def describePermissionSetProvisioningStatusFuture(params: DescribePermissionSetProvisioningStatusRequest): Future[DescribePermissionSetProvisioningStatusResponse] = service.describePermissionSetProvisioningStatus(params).promise().toFuture
     @inline def detachManagedPolicyFromPermissionSetFuture(params: DetachManagedPolicyFromPermissionSetRequest): Future[DetachManagedPolicyFromPermissionSetResponse] = service.detachManagedPolicyFromPermissionSet(params).promise().toFuture
@@ -66,6 +74,7 @@ package object ssoadmin {
     @inline def putInlinePolicyToPermissionSetFuture(params: PutInlinePolicyToPermissionSetRequest): Future[PutInlinePolicyToPermissionSetResponse] = service.putInlinePolicyToPermissionSet(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateInstanceAccessControlAttributeConfigurationFuture(params: UpdateInstanceAccessControlAttributeConfigurationRequest): Future[UpdateInstanceAccessControlAttributeConfigurationResponse] = service.updateInstanceAccessControlAttributeConfiguration(params).promise().toFuture
     @inline def updatePermissionSetFuture(params: UpdatePermissionSetRequest): Future[UpdatePermissionSetResponse] = service.updatePermissionSet(params).promise().toFuture
 
   }
@@ -79,12 +88,15 @@ package ssoadmin {
 
     def attachManagedPolicyToPermissionSet(params: AttachManagedPolicyToPermissionSetRequest): Request[AttachManagedPolicyToPermissionSetResponse] = js.native
     def createAccountAssignment(params: CreateAccountAssignmentRequest): Request[CreateAccountAssignmentResponse] = js.native
+    def createInstanceAccessControlAttributeConfiguration(params: CreateInstanceAccessControlAttributeConfigurationRequest): Request[CreateInstanceAccessControlAttributeConfigurationResponse] = js.native
     def createPermissionSet(params: CreatePermissionSetRequest): Request[CreatePermissionSetResponse] = js.native
     def deleteAccountAssignment(params: DeleteAccountAssignmentRequest): Request[DeleteAccountAssignmentResponse] = js.native
     def deleteInlinePolicyFromPermissionSet(params: DeleteInlinePolicyFromPermissionSetRequest): Request[DeleteInlinePolicyFromPermissionSetResponse] = js.native
+    def deleteInstanceAccessControlAttributeConfiguration(params: DeleteInstanceAccessControlAttributeConfigurationRequest): Request[DeleteInstanceAccessControlAttributeConfigurationResponse] = js.native
     def deletePermissionSet(params: DeletePermissionSetRequest): Request[DeletePermissionSetResponse] = js.native
     def describeAccountAssignmentCreationStatus(params: DescribeAccountAssignmentCreationStatusRequest): Request[DescribeAccountAssignmentCreationStatusResponse] = js.native
     def describeAccountAssignmentDeletionStatus(params: DescribeAccountAssignmentDeletionStatusRequest): Request[DescribeAccountAssignmentDeletionStatusResponse] = js.native
+    def describeInstanceAccessControlAttributeConfiguration(params: DescribeInstanceAccessControlAttributeConfigurationRequest): Request[DescribeInstanceAccessControlAttributeConfigurationResponse] = js.native
     def describePermissionSet(params: DescribePermissionSetRequest): Request[DescribePermissionSetResponse] = js.native
     def describePermissionSetProvisioningStatus(params: DescribePermissionSetProvisioningStatusRequest): Request[DescribePermissionSetProvisioningStatusResponse] = js.native
     def detachManagedPolicyFromPermissionSet(params: DetachManagedPolicyFromPermissionSetRequest): Request[DetachManagedPolicyFromPermissionSetResponse] = js.native
@@ -103,7 +115,49 @@ package ssoadmin {
     def putInlinePolicyToPermissionSet(params: PutInlinePolicyToPermissionSetRequest): Request[PutInlinePolicyToPermissionSetResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateInstanceAccessControlAttributeConfiguration(params: UpdateInstanceAccessControlAttributeConfigurationRequest): Request[UpdateInstanceAccessControlAttributeConfigurationResponse] = js.native
     def updatePermissionSet(params: UpdatePermissionSetRequest): Request[UpdatePermissionSetResponse] = js.native
+  }
+
+  /** These are AWS SSO identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permission policies that determine who can access your AWS resources based upon the configured attribute value(s). When you enable ABAC and specify AccessControlAttributes, AWS SSO passes the attribute(s) value of the authenticated user into IAM for use in policy evaluation.
+    */
+  @js.native
+  trait AccessControlAttribute extends js.Object {
+    var Key: AccessControlAttributeKey
+    var Value: AccessControlAttributeValue
+  }
+
+  object AccessControlAttribute {
+    @inline
+    def apply(
+        Key: AccessControlAttributeKey,
+        Value: AccessControlAttributeValue
+    ): AccessControlAttribute = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AccessControlAttribute]
+    }
+  }
+
+  /** The value used for mapping a specified attribute to an identity source.
+    */
+  @js.native
+  trait AccessControlAttributeValue extends js.Object {
+    var Source: AccessControlAttributeValueSourceList
+  }
+
+  object AccessControlAttributeValue {
+    @inline
+    def apply(
+        Source: AccessControlAttributeValueSourceList
+    ): AccessControlAttributeValue = {
+      val __obj = js.Dynamic.literal(
+        "Source" -> Source.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AccessControlAttributeValue]
+    }
   }
 
   /** The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.
@@ -305,6 +359,37 @@ package ssoadmin {
   }
 
   @js.native
+  trait CreateInstanceAccessControlAttributeConfigurationRequest extends js.Object {
+    var InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration
+    var InstanceArn: InstanceArn
+  }
+
+  object CreateInstanceAccessControlAttributeConfigurationRequest {
+    @inline
+    def apply(
+        InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration,
+        InstanceArn: InstanceArn
+    ): CreateInstanceAccessControlAttributeConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceAccessControlAttributeConfiguration" -> InstanceAccessControlAttributeConfiguration.asInstanceOf[js.Any],
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateInstanceAccessControlAttributeConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateInstanceAccessControlAttributeConfigurationResponse extends js.Object
+
+  object CreateInstanceAccessControlAttributeConfigurationResponse {
+    @inline
+    def apply(): CreateInstanceAccessControlAttributeConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateInstanceAccessControlAttributeConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait CreatePermissionSetRequest extends js.Object {
     var InstanceArn: InstanceArn
     var Name: PermissionSetName
@@ -433,6 +518,34 @@ package ssoadmin {
   }
 
   @js.native
+  trait DeleteInstanceAccessControlAttributeConfigurationRequest extends js.Object {
+    var InstanceArn: InstanceArn
+  }
+
+  object DeleteInstanceAccessControlAttributeConfigurationRequest {
+    @inline
+    def apply(
+        InstanceArn: InstanceArn
+    ): DeleteInstanceAccessControlAttributeConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteInstanceAccessControlAttributeConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteInstanceAccessControlAttributeConfigurationResponse extends js.Object
+
+  object DeleteInstanceAccessControlAttributeConfigurationResponse {
+    @inline
+    def apply(): DeleteInstanceAccessControlAttributeConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteInstanceAccessControlAttributeConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DeletePermissionSetRequest extends js.Object {
     var InstanceArn: InstanceArn
     var PermissionSetArn: PermissionSetArn
@@ -532,6 +645,45 @@ package ssoadmin {
       val __obj = js.Dynamic.literal()
       AccountAssignmentDeletionStatus.foreach(__v => __obj.updateDynamic("AccountAssignmentDeletionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountAssignmentDeletionStatusResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceAccessControlAttributeConfigurationRequest extends js.Object {
+    var InstanceArn: InstanceArn
+  }
+
+  object DescribeInstanceAccessControlAttributeConfigurationRequest {
+    @inline
+    def apply(
+        InstanceArn: InstanceArn
+    ): DescribeInstanceAccessControlAttributeConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeInstanceAccessControlAttributeConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInstanceAccessControlAttributeConfigurationResponse extends js.Object {
+    var InstanceAccessControlAttributeConfiguration: js.UndefOr[InstanceAccessControlAttributeConfiguration]
+    var Status: js.UndefOr[InstanceAccessControlAttributeConfigurationStatus]
+    var StatusReason: js.UndefOr[InstanceAccessControlAttributeConfigurationStatusReason]
+  }
+
+  object DescribeInstanceAccessControlAttributeConfigurationResponse {
+    @inline
+    def apply(
+        InstanceAccessControlAttributeConfiguration: js.UndefOr[InstanceAccessControlAttributeConfiguration] = js.undefined,
+        Status: js.UndefOr[InstanceAccessControlAttributeConfigurationStatus] = js.undefined,
+        StatusReason: js.UndefOr[InstanceAccessControlAttributeConfigurationStatusReason] = js.undefined
+    ): DescribeInstanceAccessControlAttributeConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      InstanceAccessControlAttributeConfiguration.foreach(__v => __obj.updateDynamic("InstanceAccessControlAttributeConfiguration")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInstanceAccessControlAttributeConfigurationResponse]
     }
   }
 
@@ -675,6 +827,35 @@ package ssoadmin {
       InlinePolicy.foreach(__v => __obj.updateDynamic("InlinePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInlinePolicyForPermissionSetResponse]
     }
+  }
+
+  /** Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
+    */
+  @js.native
+  trait InstanceAccessControlAttributeConfiguration extends js.Object {
+    var AccessControlAttributes: AccessControlAttributeList
+  }
+
+  object InstanceAccessControlAttributeConfiguration {
+    @inline
+    def apply(
+        AccessControlAttributes: AccessControlAttributeList
+    ): InstanceAccessControlAttributeConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AccessControlAttributes" -> AccessControlAttributes.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InstanceAccessControlAttributeConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait InstanceAccessControlAttributeConfigurationStatus extends js.Any
+  object InstanceAccessControlAttributeConfigurationStatus {
+    val ENABLED = "ENABLED".asInstanceOf[InstanceAccessControlAttributeConfigurationStatus]
+    val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[InstanceAccessControlAttributeConfigurationStatus]
+    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[InstanceAccessControlAttributeConfigurationStatus]
+
+    @inline def values = js.Array(ENABLED, CREATION_IN_PROGRESS, CREATION_FAILED)
   }
 
   /** Provides information about the SSO instance.
@@ -1469,6 +1650,37 @@ package ssoadmin {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateInstanceAccessControlAttributeConfigurationRequest extends js.Object {
+    var InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration
+    var InstanceArn: InstanceArn
+  }
+
+  object UpdateInstanceAccessControlAttributeConfigurationRequest {
+    @inline
+    def apply(
+        InstanceAccessControlAttributeConfiguration: InstanceAccessControlAttributeConfiguration,
+        InstanceArn: InstanceArn
+    ): UpdateInstanceAccessControlAttributeConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceAccessControlAttributeConfiguration" -> InstanceAccessControlAttributeConfiguration.asInstanceOf[js.Any],
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateInstanceAccessControlAttributeConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateInstanceAccessControlAttributeConfigurationResponse extends js.Object
+
+  object UpdateInstanceAccessControlAttributeConfigurationResponse {
+    @inline
+    def apply(): UpdateInstanceAccessControlAttributeConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateInstanceAccessControlAttributeConfigurationResponse]
     }
   }
 

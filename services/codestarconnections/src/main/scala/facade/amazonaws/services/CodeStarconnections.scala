@@ -44,6 +44,7 @@ package object codestarconnections {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def updateHostFuture(params: UpdateHostInput): Future[UpdateHostOutput] = service.updateHost(params).promise().toFuture
 
   }
 }
@@ -65,6 +66,7 @@ package codestarconnections {
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateHost(params: UpdateHostInput): Request[UpdateHostOutput] = js.native
   }
 
   /** A resource that is used to connect third-party source providers with services like AWS CodePipeline.
@@ -581,6 +583,41 @@ package codestarconnections {
     def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateHostInput extends js.Object {
+    var HostArn: HostArn
+    var ProviderEndpoint: js.UndefOr[Url]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
+  }
+
+  object UpdateHostInput {
+    @inline
+    def apply(
+        HostArn: HostArn,
+        ProviderEndpoint: js.UndefOr[Url] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
+    ): UpdateHostInput = {
+      val __obj = js.Dynamic.literal(
+        "HostArn" -> HostArn.asInstanceOf[js.Any]
+      )
+
+      ProviderEndpoint.foreach(__v => __obj.updateDynamic("ProviderEndpoint")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateHostInput]
+    }
+  }
+
+  @js.native
+  trait UpdateHostOutput extends js.Object
+
+  object UpdateHostOutput {
+    @inline
+    def apply(): UpdateHostOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateHostOutput]
     }
   }
 
