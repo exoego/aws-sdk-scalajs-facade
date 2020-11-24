@@ -366,7 +366,34 @@ package object s3 {
       loop()
     }
 
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
+      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return The managed upload object that can call send() or track progress.
+      */
+    def upload(params: PutObjectRequest): managedupload.ManagedUpload = service.asInstanceOf[js.Dynamic].upload(params).asInstanceOf[managedupload.ManagedUpload]
+
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
+      * You can configure the concurrent queue size by setting options.
+      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return The managed upload object that can call send() or track progress.
+      */
+    def upload(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): managedupload.ManagedUpload = service.asInstanceOf[js.Dynamic].upload(params, options).asInstanceOf[managedupload.ManagedUpload]
+
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
+      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return The response data from the successful upload
+      */
+    def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = service.upload(params).sendFuture()
+
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
+      * You can configure the concurrent queue size by setting options.
+      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return The response data from the successful upload
+      */
+    def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = service.upload(params, options).sendFuture()
+
   }
+
   @js.native
   sealed trait Operation extends js.Any
   object Operation {
@@ -377,32 +404,36 @@ package object s3 {
     @inline def copyObject = "copyObject".asInstanceOf[Operation]
     @inline def createBucket = "createBucket".asInstanceOf[Operation]
     @inline def createMultipartUpload = "createMultipartUpload".asInstanceOf[Operation]
+    @inline def deleteBucket = "deleteBucket".asInstanceOf[Operation]
     @inline def deleteBucketAnalyticsConfiguration = "deleteBucketAnalyticsConfiguration".asInstanceOf[Operation]
     @inline def deleteBucketCors = "deleteBucketCors".asInstanceOf[Operation]
     @inline def deleteBucketEncryption = "deleteBucketEncryption".asInstanceOf[Operation]
-    @inline def deleteBucket = "deleteBucket".asInstanceOf[Operation]
+    @inline def deleteBucketIntelligentTieringConfiguration = "deleteBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
     @inline def deleteBucketInventoryConfiguration = "deleteBucketInventoryConfiguration".asInstanceOf[Operation]
     @inline def deleteBucketLifecycle = "deleteBucketLifecycle".asInstanceOf[Operation]
     @inline def deleteBucketMetricsConfiguration = "deleteBucketMetricsConfiguration".asInstanceOf[Operation]
+    @inline def deleteBucketOwnershipControls = "deleteBucketOwnershipControls".asInstanceOf[Operation]
     @inline def deleteBucketPolicy = "deleteBucketPolicy".asInstanceOf[Operation]
     @inline def deleteBucketReplication = "deleteBucketReplication".asInstanceOf[Operation]
     @inline def deleteBucketTagging = "deleteBucketTagging".asInstanceOf[Operation]
     @inline def deleteBucketWebsite = "deleteBucketWebsite".asInstanceOf[Operation]
     @inline def deleteObject = "deleteObject".asInstanceOf[Operation]
-    @inline def deleteObjectTagging = "deleteObjectTagging".asInstanceOf[Operation]
     @inline def deleteObjects = "deleteObjects".asInstanceOf[Operation]
+    @inline def deleteObjectTagging = "deleteObjectTagging".asInstanceOf[Operation]
     @inline def deletePublicAccessBlock = "deletePublicAccessBlock".asInstanceOf[Operation]
     @inline def getBucketAccelerateConfiguration = "getBucketAccelerateConfiguration".asInstanceOf[Operation]
     @inline def getBucketAcl = "getBucketAcl".asInstanceOf[Operation]
     @inline def getBucketAnalyticsConfiguration = "getBucketAnalyticsConfiguration".asInstanceOf[Operation]
     @inline def getBucketCors = "getBucketCors".asInstanceOf[Operation]
     @inline def getBucketEncryption = "getBucketEncryption".asInstanceOf[Operation]
+    @inline def getBucketIntelligentTieringConfiguration = "getBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
     @inline def getBucketInventoryConfiguration = "getBucketInventoryConfiguration".asInstanceOf[Operation]
     @inline def getBucketLifecycleConfiguration = "getBucketLifecycleConfiguration".asInstanceOf[Operation]
     @inline def getBucketLocation = "getBucketLocation".asInstanceOf[Operation]
     @inline def getBucketLogging = "getBucketLogging".asInstanceOf[Operation]
     @inline def getBucketMetricsConfiguration = "getBucketMetricsConfiguration".asInstanceOf[Operation]
     @inline def getBucketNotificationConfiguration = "getBucketNotificationConfiguration".asInstanceOf[Operation]
+    @inline def getBucketOwnershipControls = "getBucketOwnershipControls".asInstanceOf[Operation]
     @inline def getBucketPolicy = "getBucketPolicy".asInstanceOf[Operation]
     @inline def getBucketPolicyStatus = "getBucketPolicyStatus".asInstanceOf[Operation]
     @inline def getBucketReplication = "getBucketReplication".asInstanceOf[Operation]
@@ -410,8 +441,8 @@ package object s3 {
     @inline def getBucketTagging = "getBucketTagging".asInstanceOf[Operation]
     @inline def getBucketVersioning = "getBucketVersioning".asInstanceOf[Operation]
     @inline def getBucketWebsite = "getBucketWebsite".asInstanceOf[Operation]
-    @inline def getObjectAcl = "getObjectAcl".asInstanceOf[Operation]
     @inline def getObject = "getObject".asInstanceOf[Operation]
+    @inline def getObjectAcl = "getObjectAcl".asInstanceOf[Operation]
     @inline def getObjectLegalHold = "getObjectLegalHold".asInstanceOf[Operation]
     @inline def getObjectLockConfiguration = "getObjectLockConfiguration".asInstanceOf[Operation]
     @inline def getObjectRetention = "getObjectRetention".asInstanceOf[Operation]
@@ -421,32 +452,35 @@ package object s3 {
     @inline def headBucket = "headBucket".asInstanceOf[Operation]
     @inline def headObject = "headObject".asInstanceOf[Operation]
     @inline def listBucketAnalyticsConfigurations = "listBucketAnalyticsConfigurations".asInstanceOf[Operation]
+    @inline def listBucketIntelligentTieringConfigurations = "listBucketIntelligentTieringConfigurations".asInstanceOf[Operation]
     @inline def listBucketInventoryConfigurations = "listBucketInventoryConfigurations".asInstanceOf[Operation]
     @inline def listBucketMetricsConfigurations = "listBucketMetricsConfigurations".asInstanceOf[Operation]
     @inline def listBuckets = "listBuckets".asInstanceOf[Operation]
     @inline def listMultipartUploads = "listMultipartUploads".asInstanceOf[Operation]
-    @inline def listObjectVersions = "listObjectVersions".asInstanceOf[Operation]
     @inline def listObjects = "listObjects".asInstanceOf[Operation]
     @inline def listObjectsV2 = "listObjectsV2".asInstanceOf[Operation]
+    @inline def listObjectVersions = "listObjectVersions".asInstanceOf[Operation]
     @inline def listParts = "listParts".asInstanceOf[Operation]
     @inline def putBucketAccelerateConfiguration = "putBucketAccelerateConfiguration".asInstanceOf[Operation]
     @inline def putBucketAcl = "putBucketAcl".asInstanceOf[Operation]
     @inline def putBucketAnalyticsConfiguration = "putBucketAnalyticsConfiguration".asInstanceOf[Operation]
     @inline def putBucketCors = "putBucketCors".asInstanceOf[Operation]
     @inline def putBucketEncryption = "putBucketEncryption".asInstanceOf[Operation]
+    @inline def putBucketIntelligentTieringConfiguration = "putBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
     @inline def putBucketInventoryConfiguration = "putBucketInventoryConfiguration".asInstanceOf[Operation]
     @inline def putBucketLifecycleConfiguration = "putBucketLifecycleConfiguration".asInstanceOf[Operation]
     @inline def putBucketLogging = "putBucketLogging".asInstanceOf[Operation]
     @inline def putBucketMetricsConfiguration = "putBucketMetricsConfiguration".asInstanceOf[Operation]
     @inline def putBucketNotificationConfiguration = "putBucketNotificationConfiguration".asInstanceOf[Operation]
+    @inline def putBucketOwnershipControls = "putBucketOwnershipControls".asInstanceOf[Operation]
     @inline def putBucketPolicy = "putBucketPolicy".asInstanceOf[Operation]
     @inline def putBucketReplication = "putBucketReplication".asInstanceOf[Operation]
     @inline def putBucketRequestPayment = "putBucketRequestPayment".asInstanceOf[Operation]
     @inline def putBucketTagging = "putBucketTagging".asInstanceOf[Operation]
     @inline def putBucketVersioning = "putBucketVersioning".asInstanceOf[Operation]
     @inline def putBucketWebsite = "putBucketWebsite".asInstanceOf[Operation]
-    @inline def putObjectAcl = "putObjectAcl".asInstanceOf[Operation]
     @inline def putObject = "putObject".asInstanceOf[Operation]
+    @inline def putObjectAcl = "putObjectAcl".asInstanceOf[Operation]
     @inline def putObjectLegalHold = "putObjectLegalHold".asInstanceOf[Operation]
     @inline def putObjectLockConfiguration = "putObjectLockConfiguration".asInstanceOf[Operation]
     @inline def putObjectRetention = "putObjectRetention".asInstanceOf[Operation]
@@ -454,8 +488,8 @@ package object s3 {
     @inline def putPublicAccessBlock = "putPublicAccessBlock".asInstanceOf[Operation]
     @inline def restoreObject = "restoreObject".asInstanceOf[Operation]
     @inline def selectObjectContent = "selectObjectContent".asInstanceOf[Operation]
-    @inline def uploadPartCopy = "uploadPartCopy".asInstanceOf[Operation]
     @inline def uploadPart = "uploadPart".asInstanceOf[Operation]
+    @inline def uploadPartCopy = "uploadPartCopy".asInstanceOf[Operation]
   }
 }
 

@@ -18,4 +18,4 @@ jobs:
           node-version: '12'
       - run: npm install
       - name: Run Tests
-        run: sbt -jvm-opts .github/.jvmopts ++${{ matrix.scala }} core/test awsDynamoDB/test awsCloudFrontSigner/test all/test
+        run: sbt -jvm-opts .github/.jvmopts ++${{ matrix.scala }} core/test awsDynamoDB/test awsS3/test awsCloudFrontSigner/test all/test
