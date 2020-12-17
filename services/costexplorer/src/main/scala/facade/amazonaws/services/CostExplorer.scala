@@ -46,6 +46,7 @@ package object costexplorer {
   type MetricNames = js.Array[MetricName]
   type MetricUnit = String
   type Metrics = js.Dictionary[MetricValue]
+  type MonitorArnList = js.Array[Arn]
   type NetRISavings = String
   type NextPageToken = String
   type NonNegativeInteger = Int
@@ -326,7 +327,7 @@ package costexplorer {
   @js.native
   trait AnomalySubscription extends js.Object {
     var Frequency: AnomalySubscriptionFrequency
-    var MonitorArnList: Values
+    var MonitorArnList: MonitorArnList
     var Subscribers: Subscribers
     var SubscriptionName: GenericString
     var Threshold: NullableNonNegativeDouble
@@ -338,7 +339,7 @@ package costexplorer {
     @inline
     def apply(
         Frequency: AnomalySubscriptionFrequency,
-        MonitorArnList: Values,
+        MonitorArnList: MonitorArnList,
         Subscribers: Subscribers,
         SubscriptionName: GenericString,
         Threshold: NullableNonNegativeDouble,
@@ -3777,7 +3778,7 @@ package costexplorer {
   trait UpdateAnomalySubscriptionRequest extends js.Object {
     var SubscriptionArn: GenericString
     var Frequency: js.UndefOr[AnomalySubscriptionFrequency]
-    var MonitorArnList: js.UndefOr[Values]
+    var MonitorArnList: js.UndefOr[MonitorArnList]
     var Subscribers: js.UndefOr[Subscribers]
     var SubscriptionName: js.UndefOr[GenericString]
     var Threshold: js.UndefOr[NullableNonNegativeDouble]
@@ -3788,7 +3789,7 @@ package costexplorer {
     def apply(
         SubscriptionArn: GenericString,
         Frequency: js.UndefOr[AnomalySubscriptionFrequency] = js.undefined,
-        MonitorArnList: js.UndefOr[Values] = js.undefined,
+        MonitorArnList: js.UndefOr[MonitorArnList] = js.undefined,
         Subscribers: js.UndefOr[Subscribers] = js.undefined,
         SubscriptionName: js.UndefOr[GenericString] = js.undefined,
         Threshold: js.UndefOr[NullableNonNegativeDouble] = js.undefined

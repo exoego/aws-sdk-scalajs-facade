@@ -28,6 +28,7 @@ package object servicecatalogappregistry {
   type Resources = js.Array[ResourceInfo]
   type StackArn = String
   type TagKey = String
+  type TagKeys = js.Array[TagKey]
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
   type Timestamp = js.Date
@@ -48,6 +49,9 @@ package object servicecatalogappregistry {
     @inline def listAssociatedAttributeGroupsFuture(params: ListAssociatedAttributeGroupsRequest): Future[ListAssociatedAttributeGroupsResponse] = service.listAssociatedAttributeGroups(params).promise().toFuture
     @inline def listAssociatedResourcesFuture(params: ListAssociatedResourcesRequest): Future[ListAssociatedResourcesResponse] = service.listAssociatedResources(params).promise().toFuture
     @inline def listAttributeGroupsFuture(params: ListAttributeGroupsRequest): Future[ListAttributeGroupsResponse] = service.listAttributeGroups(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
     @inline def updateAttributeGroupFuture(params: UpdateAttributeGroupRequest): Future[UpdateAttributeGroupResponse] = service.updateAttributeGroup(params).promise().toFuture
 
@@ -74,6 +78,9 @@ package servicecatalogappregistry {
     def listAssociatedAttributeGroups(params: ListAssociatedAttributeGroupsRequest): Request[ListAssociatedAttributeGroupsResponse] = js.native
     def listAssociatedResources(params: ListAssociatedResourcesRequest): Request[ListAssociatedResourcesResponse] = js.native
     def listAttributeGroups(params: ListAttributeGroupsRequest): Request[ListAttributeGroupsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
     def updateAttributeGroup(params: UpdateAttributeGroupRequest): Request[UpdateAttributeGroupResponse] = js.native
   }
@@ -803,6 +810,39 @@ package servicecatalogappregistry {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** Information about the resource.
     */
   @js.native
@@ -830,6 +870,68 @@ package servicecatalogappregistry {
     val CFN_STACK = "CFN_STACK".asInstanceOf[ResourceType]
 
     @inline def values = js.Array(CFN_STACK)
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tags: Tags
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native

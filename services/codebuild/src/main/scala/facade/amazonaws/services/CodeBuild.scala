@@ -49,6 +49,7 @@ package object codebuild {
   type ReportArns = js.Array[NonEmptyString]
   type ReportGroupArns = js.Array[NonEmptyString]
   type ReportGroupName = String
+  type ReportGroupTrendRawDataList = js.Array[ReportWithRawData]
   type ReportGroups = js.Array[ReportGroup]
   type ReportStatusCounts = js.Dictionary[WrapperInt]
   type Reports = js.Array[Report]
@@ -86,6 +87,7 @@ package object codebuild {
     @inline def deleteWebhookFuture(params: DeleteWebhookInput): Future[DeleteWebhookOutput] = service.deleteWebhook(params).promise().toFuture
     @inline def describeCodeCoveragesFuture(params: DescribeCodeCoveragesInput): Future[DescribeCodeCoveragesOutput] = service.describeCodeCoverages(params).promise().toFuture
     @inline def describeTestCasesFuture(params: DescribeTestCasesInput): Future[DescribeTestCasesOutput] = service.describeTestCases(params).promise().toFuture
+    @inline def getReportGroupTrendFuture(params: GetReportGroupTrendInput): Future[GetReportGroupTrendOutput] = service.getReportGroupTrend(params).promise().toFuture
     @inline def getResourcePolicyFuture(params: GetResourcePolicyInput): Future[GetResourcePolicyOutput] = service.getResourcePolicy(params).promise().toFuture
     @inline def importSourceCredentialsFuture(params: ImportSourceCredentialsInput): Future[ImportSourceCredentialsOutput] = service.importSourceCredentials(params).promise().toFuture
     @inline def invalidateProjectCacheFuture(params: InvalidateProjectCacheInput): Future[InvalidateProjectCacheOutput] = service.invalidateProjectCache(params).promise().toFuture
@@ -139,6 +141,7 @@ package codebuild {
     def deleteWebhook(params: DeleteWebhookInput): Request[DeleteWebhookOutput] = js.native
     def describeCodeCoverages(params: DescribeCodeCoveragesInput): Request[DescribeCodeCoveragesOutput] = js.native
     def describeTestCases(params: DescribeTestCasesInput): Request[DescribeTestCasesOutput] = js.native
+    def getReportGroupTrend(params: GetReportGroupTrendInput): Request[GetReportGroupTrendOutput] = js.native
     def getResourcePolicy(params: GetResourcePolicyInput): Request[GetResourcePolicyOutput] = js.native
     def importSourceCredentials(params: ImportSourceCredentialsInput): Request[ImportSourceCredentialsOutput] = js.native
     def invalidateProjectCache(params: InvalidateProjectCacheInput): Request[InvalidateProjectCacheOutput] = js.native
@@ -1711,6 +1714,49 @@ package codebuild {
   }
 
   @js.native
+  trait GetReportGroupTrendInput extends js.Object {
+    var reportGroupArn: NonEmptyString
+    var trendField: ReportGroupTrendFieldType
+    var numOfReports: js.UndefOr[PageSize]
+  }
+
+  object GetReportGroupTrendInput {
+    @inline
+    def apply(
+        reportGroupArn: NonEmptyString,
+        trendField: ReportGroupTrendFieldType,
+        numOfReports: js.UndefOr[PageSize] = js.undefined
+    ): GetReportGroupTrendInput = {
+      val __obj = js.Dynamic.literal(
+        "reportGroupArn" -> reportGroupArn.asInstanceOf[js.Any],
+        "trendField" -> trendField.asInstanceOf[js.Any]
+      )
+
+      numOfReports.foreach(__v => __obj.updateDynamic("numOfReports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetReportGroupTrendInput]
+    }
+  }
+
+  @js.native
+  trait GetReportGroupTrendOutput extends js.Object {
+    var rawData: js.UndefOr[ReportGroupTrendRawDataList]
+    var stats: js.UndefOr[ReportGroupTrendStats]
+  }
+
+  object GetReportGroupTrendOutput {
+    @inline
+    def apply(
+        rawData: js.UndefOr[ReportGroupTrendRawDataList] = js.undefined,
+        stats: js.UndefOr[ReportGroupTrendStats] = js.undefined
+    ): GetReportGroupTrendOutput = {
+      val __obj = js.Dynamic.literal()
+      rawData.foreach(__v => __obj.updateDynamic("rawData")(__v.asInstanceOf[js.Any]))
+      stats.foreach(__v => __obj.updateDynamic("stats")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetReportGroupTrendOutput]
+    }
+  }
+
+  @js.native
   trait GetResourcePolicyInput extends js.Object {
     var resourceArn: NonEmptyString
   }
@@ -3059,6 +3105,44 @@ package codebuild {
   }
 
   @js.native
+  sealed trait ReportGroupTrendFieldType extends js.Any
+  object ReportGroupTrendFieldType {
+    val PASS_RATE = "PASS_RATE".asInstanceOf[ReportGroupTrendFieldType]
+    val DURATION = "DURATION".asInstanceOf[ReportGroupTrendFieldType]
+    val TOTAL = "TOTAL".asInstanceOf[ReportGroupTrendFieldType]
+    val LINE_COVERAGE = "LINE_COVERAGE".asInstanceOf[ReportGroupTrendFieldType]
+    val LINES_COVERED = "LINES_COVERED".asInstanceOf[ReportGroupTrendFieldType]
+    val LINES_MISSED = "LINES_MISSED".asInstanceOf[ReportGroupTrendFieldType]
+    val BRANCH_COVERAGE = "BRANCH_COVERAGE".asInstanceOf[ReportGroupTrendFieldType]
+    val BRANCHES_COVERED = "BRANCHES_COVERED".asInstanceOf[ReportGroupTrendFieldType]
+    val BRANCHES_MISSED = "BRANCHES_MISSED".asInstanceOf[ReportGroupTrendFieldType]
+
+    @inline def values = js.Array(PASS_RATE, DURATION, TOTAL, LINE_COVERAGE, LINES_COVERED, LINES_MISSED, BRANCH_COVERAGE, BRANCHES_COVERED, BRANCHES_MISSED)
+  }
+
+  @js.native
+  trait ReportGroupTrendStats extends js.Object {
+    var average: js.UndefOr[String]
+    var max: js.UndefOr[String]
+    var min: js.UndefOr[String]
+  }
+
+  object ReportGroupTrendStats {
+    @inline
+    def apply(
+        average: js.UndefOr[String] = js.undefined,
+        max: js.UndefOr[String] = js.undefined,
+        min: js.UndefOr[String] = js.undefined
+    ): ReportGroupTrendStats = {
+      val __obj = js.Dynamic.literal()
+      average.foreach(__v => __obj.updateDynamic("average")(__v.asInstanceOf[js.Any]))
+      max.foreach(__v => __obj.updateDynamic("max")(__v.asInstanceOf[js.Any]))
+      min.foreach(__v => __obj.updateDynamic("min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportGroupTrendStats]
+    }
+  }
+
+  @js.native
   sealed trait ReportPackagingType extends js.Any
   object ReportPackagingType {
     val ZIP = "ZIP".asInstanceOf[ReportPackagingType]
@@ -3086,6 +3170,25 @@ package codebuild {
     val CODE_COVERAGE = "CODE_COVERAGE".asInstanceOf[ReportType]
 
     @inline def values = js.Array(TEST, CODE_COVERAGE)
+  }
+
+  @js.native
+  trait ReportWithRawData extends js.Object {
+    var data: js.UndefOr[String]
+    var reportArn: js.UndefOr[NonEmptyString]
+  }
+
+  object ReportWithRawData {
+    @inline
+    def apply(
+        data: js.UndefOr[String] = js.undefined,
+        reportArn: js.UndefOr[NonEmptyString] = js.undefined
+    ): ReportWithRawData = {
+      val __obj = js.Dynamic.literal()
+      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
+      reportArn.foreach(__v => __obj.updateDynamic("reportArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportWithRawData]
+    }
   }
 
   /** Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon Simple Storage Service (Amazon S3).

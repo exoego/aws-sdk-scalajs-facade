@@ -52,11 +52,15 @@ package object kendra {
   type DocumentMetadataConfigurationName = String
   type Duration = String
   type ErrorMessage = String
+  type ExcludeMimeTypesList = js.Array[MimeType]
+  type ExcludeSharedDrivesList = js.Array[SharedDriveId]
+  type ExcludeUserAccountsList = js.Array[UserAccount]
   type FacetList = js.Array[Facet]
   type FacetResultList = js.Array[FacetResult]
   type FaqId = String
   type FaqName = String
   type FaqSummaryItems = js.Array[FaqSummary]
+  type FeedbackToken = String
   type GroupAttributeField = String
   type HighlightList = js.Array[Highlight]
   type Importance = Int
@@ -73,7 +77,9 @@ package object kendra {
   type MaxResultsIntegerForListDataSourcesRequest = Int
   type MaxResultsIntegerForListFaqsRequest = Int
   type MaxResultsIntegerForListIndicesRequest = Int
+  type MaxResultsIntegerForListThesauriRequest = Int
   type MetricValue = String
+  type MimeType = String
   type NextToken = String
   type OneDriveUser = String
   type OneDriveUserList = js.Array[OneDriveUser]
@@ -98,6 +104,7 @@ package object kendra {
   type SecurityGroupIdList = js.Array[VpcSecurityGroupId]
   type ServiceNowHostUrl = String
   type SharePointUrlList = js.Array[Url]
+  type SharedDriveId = String
   type StorageCapacityUnit = Int
   type SubnetId = String
   type SubnetIdList = js.Array[SubnetId]
@@ -107,14 +114,19 @@ package object kendra {
   type TagList = js.Array[Tag]
   type TagValue = String
   type TenantDomain = String
+  type ThesaurusId = String
+  type ThesaurusName = String
+  type ThesaurusSummaryItems = js.Array[ThesaurusSummary]
   type Timestamp = js.Date
   type Title = String
   type Token = String
   type Url = String
+  type UserAccount = String
   type UserNameAttributeField = String
   type UserTokenConfigurationList = js.Array[UserTokenConfiguration]
   type ValueImportanceMap = js.Dictionary[Importance]
   type ValueImportanceMapKey = String
+  type VisitorId = String
   type VpcSecurityGroupId = String
 
   implicit final class KendraOps(private val service: Kendra) extends AnyVal {
@@ -124,17 +136,21 @@ package object kendra {
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
     @inline def createFaqFuture(params: CreateFaqRequest): Future[CreateFaqResponse] = service.createFaq(params).promise().toFuture
     @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] = service.createIndex(params).promise().toFuture
+    @inline def createThesaurusFuture(params: CreateThesaurusRequest): Future[CreateThesaurusResponse] = service.createThesaurus(params).promise().toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[js.Object] = service.deleteDataSource(params).promise().toFuture
     @inline def deleteFaqFuture(params: DeleteFaqRequest): Future[js.Object] = service.deleteFaq(params).promise().toFuture
     @inline def deleteIndexFuture(params: DeleteIndexRequest): Future[js.Object] = service.deleteIndex(params).promise().toFuture
+    @inline def deleteThesaurusFuture(params: DeleteThesaurusRequest): Future[js.Object] = service.deleteThesaurus(params).promise().toFuture
     @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] = service.describeDataSource(params).promise().toFuture
     @inline def describeFaqFuture(params: DescribeFaqRequest): Future[DescribeFaqResponse] = service.describeFaq(params).promise().toFuture
     @inline def describeIndexFuture(params: DescribeIndexRequest): Future[DescribeIndexResponse] = service.describeIndex(params).promise().toFuture
+    @inline def describeThesaurusFuture(params: DescribeThesaurusRequest): Future[DescribeThesaurusResponse] = service.describeThesaurus(params).promise().toFuture
     @inline def listDataSourceSyncJobsFuture(params: ListDataSourceSyncJobsRequest): Future[ListDataSourceSyncJobsResponse] = service.listDataSourceSyncJobs(params).promise().toFuture
     @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
     @inline def listFaqsFuture(params: ListFaqsRequest): Future[ListFaqsResponse] = service.listFaqs(params).promise().toFuture
     @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] = service.listIndices(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listThesauriFuture(params: ListThesauriRequest): Future[ListThesauriResponse] = service.listThesauri(params).promise().toFuture
     @inline def queryFuture(params: QueryRequest): Future[QueryResult] = service.query(params).promise().toFuture
     @inline def startDataSourceSyncJobFuture(params: StartDataSourceSyncJobRequest): Future[StartDataSourceSyncJobResponse] = service.startDataSourceSyncJob(params).promise().toFuture
     @inline def stopDataSourceSyncJobFuture(params: StopDataSourceSyncJobRequest): Future[js.Object] = service.stopDataSourceSyncJob(params).promise().toFuture
@@ -143,6 +159,7 @@ package object kendra {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[js.Object] = service.updateDataSource(params).promise().toFuture
     @inline def updateIndexFuture(params: UpdateIndexRequest): Future[js.Object] = service.updateIndex(params).promise().toFuture
+    @inline def updateThesaurusFuture(params: UpdateThesaurusRequest): Future[js.Object] = service.updateThesaurus(params).promise().toFuture
 
   }
 }
@@ -158,17 +175,21 @@ package kendra {
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
     def createFaq(params: CreateFaqRequest): Request[CreateFaqResponse] = js.native
     def createIndex(params: CreateIndexRequest): Request[CreateIndexResponse] = js.native
+    def createThesaurus(params: CreateThesaurusRequest): Request[CreateThesaurusResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[js.Object] = js.native
     def deleteFaq(params: DeleteFaqRequest): Request[js.Object] = js.native
     def deleteIndex(params: DeleteIndexRequest): Request[js.Object] = js.native
+    def deleteThesaurus(params: DeleteThesaurusRequest): Request[js.Object] = js.native
     def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
     def describeFaq(params: DescribeFaqRequest): Request[DescribeFaqResponse] = js.native
     def describeIndex(params: DescribeIndexRequest): Request[DescribeIndexResponse] = js.native
+    def describeThesaurus(params: DescribeThesaurusRequest): Request[DescribeThesaurusResponse] = js.native
     def listDataSourceSyncJobs(params: ListDataSourceSyncJobsRequest): Request[ListDataSourceSyncJobsResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
     def listFaqs(params: ListFaqsRequest): Request[ListFaqsResponse] = js.native
     def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listThesauri(params: ListThesauriRequest): Request[ListThesauriResponse] = js.native
     def query(params: QueryRequest): Request[QueryResult] = js.native
     def startDataSourceSyncJob(params: StartDataSourceSyncJobRequest): Request[StartDataSourceSyncJobResponse] = js.native
     def stopDataSourceSyncJob(params: StopDataSourceSyncJobRequest): Request[js.Object] = js.native
@@ -177,9 +198,10 @@ package kendra {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[js.Object] = js.native
     def updateIndex(params: UpdateIndexRequest): Request[js.Object] = js.native
+    def updateThesaurus(params: UpdateThesaurusRequest): Request[js.Object] = js.native
   }
 
-  /** Access Control List files for the documents in a data source.
+  /** Access Control List files for the documents in a data source. For the format of the file, see [[https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html|Access control for S3 data sources]].
     */
   @js.native
   trait AccessControlListConfiguration extends js.Object {
@@ -1043,12 +1065,65 @@ package kendra {
     }
   }
 
+  @js.native
+  trait CreateThesaurusRequest extends js.Object {
+    var IndexId: IndexId
+    var Name: ThesaurusName
+    var RoleArn: RoleArn
+    var SourceS3Path: S3Path
+    var ClientToken: js.UndefOr[ClientTokenName]
+    var Description: js.UndefOr[Description]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateThesaurusRequest {
+    @inline
+    def apply(
+        IndexId: IndexId,
+        Name: ThesaurusName,
+        RoleArn: RoleArn,
+        SourceS3Path: S3Path,
+        ClientToken: js.UndefOr[ClientTokenName] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateThesaurusRequest = {
+      val __obj = js.Dynamic.literal(
+        "IndexId" -> IndexId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "SourceS3Path" -> SourceS3Path.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateThesaurusRequest]
+    }
+  }
+
+  @js.native
+  trait CreateThesaurusResponse extends js.Object {
+    var Id: js.UndefOr[ThesaurusId]
+  }
+
+  object CreateThesaurusResponse {
+    @inline
+    def apply(
+        Id: js.UndefOr[ThesaurusId] = js.undefined
+    ): CreateThesaurusResponse = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateThesaurusResponse]
+    }
+  }
+
   /** Configuration information for a Amazon Kendra data source.
     */
   @js.native
   trait DataSourceConfiguration extends js.Object {
     var ConfluenceConfiguration: js.UndefOr[ConfluenceConfiguration]
     var DatabaseConfiguration: js.UndefOr[DatabaseConfiguration]
+    var GoogleDriveConfiguration: js.UndefOr[GoogleDriveConfiguration]
     var OneDriveConfiguration: js.UndefOr[OneDriveConfiguration]
     var S3Configuration: js.UndefOr[S3DataSourceConfiguration]
     var SalesforceConfiguration: js.UndefOr[SalesforceConfiguration]
@@ -1061,6 +1136,7 @@ package kendra {
     def apply(
         ConfluenceConfiguration: js.UndefOr[ConfluenceConfiguration] = js.undefined,
         DatabaseConfiguration: js.UndefOr[DatabaseConfiguration] = js.undefined,
+        GoogleDriveConfiguration: js.UndefOr[GoogleDriveConfiguration] = js.undefined,
         OneDriveConfiguration: js.UndefOr[OneDriveConfiguration] = js.undefined,
         S3Configuration: js.UndefOr[S3DataSourceConfiguration] = js.undefined,
         SalesforceConfiguration: js.UndefOr[SalesforceConfiguration] = js.undefined,
@@ -1070,6 +1146,7 @@ package kendra {
       val __obj = js.Dynamic.literal()
       ConfluenceConfiguration.foreach(__v => __obj.updateDynamic("ConfluenceConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseConfiguration.foreach(__v => __obj.updateDynamic("DatabaseConfiguration")(__v.asInstanceOf[js.Any]))
+      GoogleDriveConfiguration.foreach(__v => __obj.updateDynamic("GoogleDriveConfiguration")(__v.asInstanceOf[js.Any]))
       OneDriveConfiguration.foreach(__v => __obj.updateDynamic("OneDriveConfiguration")(__v.asInstanceOf[js.Any]))
       S3Configuration.foreach(__v => __obj.updateDynamic("S3Configuration")(__v.asInstanceOf[js.Any]))
       SalesforceConfiguration.foreach(__v => __obj.updateDynamic("SalesforceConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1266,8 +1343,9 @@ package kendra {
     val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
     val CUSTOM = "CUSTOM".asInstanceOf[DataSourceType]
     val CONFLUENCE = "CONFLUENCE".asInstanceOf[DataSourceType]
+    val GOOGLEDRIVE = "GOOGLEDRIVE".asInstanceOf[DataSourceType]
 
-    @inline def values = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE)
+    @inline def values = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
   }
 
   /** Provides information for connecting to an Amazon VPC.
@@ -1392,6 +1470,26 @@ package kendra {
         "Id" -> Id.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteIndexRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteThesaurusRequest extends js.Object {
+    var Id: ThesaurusId
+    var IndexId: IndexId
+  }
+
+  object DeleteThesaurusRequest {
+    @inline
+    def apply(
+        Id: ThesaurusId,
+        IndexId: IndexId
+    ): DeleteThesaurusRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteThesaurusRequest]
     }
   }
 
@@ -1602,6 +1700,78 @@ package kendra {
       UserContextPolicy.foreach(__v => __obj.updateDynamic("UserContextPolicy")(__v.asInstanceOf[js.Any]))
       UserTokenConfigurations.foreach(__v => __obj.updateDynamic("UserTokenConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIndexResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeThesaurusRequest extends js.Object {
+    var Id: ThesaurusId
+    var IndexId: IndexId
+  }
+
+  object DescribeThesaurusRequest {
+    @inline
+    def apply(
+        Id: ThesaurusId,
+        IndexId: IndexId
+    ): DescribeThesaurusRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeThesaurusRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeThesaurusResponse extends js.Object {
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[Description]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var FileSizeBytes: js.UndefOr[Double]
+    var Id: js.UndefOr[ThesaurusId]
+    var IndexId: js.UndefOr[IndexId]
+    var Name: js.UndefOr[ThesaurusName]
+    var RoleArn: js.UndefOr[RoleArn]
+    var SourceS3Path: js.UndefOr[S3Path]
+    var Status: js.UndefOr[ThesaurusStatus]
+    var SynonymRuleCount: js.UndefOr[Double]
+    var TermCount: js.UndefOr[Double]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object DescribeThesaurusResponse {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        FileSizeBytes: js.UndefOr[Double] = js.undefined,
+        Id: js.UndefOr[ThesaurusId] = js.undefined,
+        IndexId: js.UndefOr[IndexId] = js.undefined,
+        Name: js.UndefOr[ThesaurusName] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        SourceS3Path: js.UndefOr[S3Path] = js.undefined,
+        Status: js.UndefOr[ThesaurusStatus] = js.undefined,
+        SynonymRuleCount: js.UndefOr[Double] = js.undefined,
+        TermCount: js.UndefOr[Double] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): DescribeThesaurusResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      FileSizeBytes.foreach(__v => __obj.updateDynamic("FileSizeBytes")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IndexId.foreach(__v => __obj.updateDynamic("IndexId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      SourceS3Path.foreach(__v => __obj.updateDynamic("SourceS3Path")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SynonymRuleCount.foreach(__v => __obj.updateDynamic("SynonymRuleCount")(__v.asInstanceOf[js.Any]))
+      TermCount.foreach(__v => __obj.updateDynamic("TermCount")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeThesaurusResponse]
     }
   }
 
@@ -1896,6 +2066,44 @@ package kendra {
     }
   }
 
+  /** Provides configuration information for data sources that connect to Google Drive.
+    */
+  @js.native
+  trait GoogleDriveConfiguration extends js.Object {
+    var SecretArn: SecretArn
+    var ExcludeMimeTypes: js.UndefOr[ExcludeMimeTypesList]
+    var ExcludeSharedDrives: js.UndefOr[ExcludeSharedDrivesList]
+    var ExcludeUserAccounts: js.UndefOr[ExcludeUserAccountsList]
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+  }
+
+  object GoogleDriveConfiguration {
+    @inline
+    def apply(
+        SecretArn: SecretArn,
+        ExcludeMimeTypes: js.UndefOr[ExcludeMimeTypesList] = js.undefined,
+        ExcludeSharedDrives: js.UndefOr[ExcludeSharedDrivesList] = js.undefined,
+        ExcludeUserAccounts: js.UndefOr[ExcludeUserAccountsList] = js.undefined,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined
+    ): GoogleDriveConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+      )
+
+      ExcludeMimeTypes.foreach(__v => __obj.updateDynamic("ExcludeMimeTypes")(__v.asInstanceOf[js.Any]))
+      ExcludeSharedDrives.foreach(__v => __obj.updateDynamic("ExcludeSharedDrives")(__v.asInstanceOf[js.Any]))
+      ExcludeUserAccounts.foreach(__v => __obj.updateDynamic("ExcludeUserAccounts")(__v.asInstanceOf[js.Any]))
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GoogleDriveConfiguration]
+    }
+  }
+
   /** Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.
     */
   @js.native
@@ -1903,6 +2111,7 @@ package kendra {
     var BeginOffset: Int
     var EndOffset: Int
     var TopAnswer: js.UndefOr[Boolean]
+    var Type: js.UndefOr[HighlightType]
   }
 
   object Highlight {
@@ -1910,7 +2119,8 @@ package kendra {
     def apply(
         BeginOffset: Int,
         EndOffset: Int,
-        TopAnswer: js.UndefOr[Boolean] = js.undefined
+        TopAnswer: js.UndefOr[Boolean] = js.undefined,
+        Type: js.UndefOr[HighlightType] = js.undefined
     ): Highlight = {
       val __obj = js.Dynamic.literal(
         "BeginOffset" -> BeginOffset.asInstanceOf[js.Any],
@@ -1918,8 +2128,18 @@ package kendra {
       )
 
       TopAnswer.foreach(__v => __obj.updateDynamic("TopAnswer")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Highlight]
     }
+  }
+
+  @js.native
+  sealed trait HighlightType extends js.Any
+  object HighlightType {
+    val STANDARD = "STANDARD".asInstanceOf[HighlightType]
+    val THESAURUS_SYNONYM = "THESAURUS_SYNONYM".asInstanceOf[HighlightType]
+
+    @inline def values = js.Array(STANDARD, THESAURUS_SYNONYM)
   }
 
   /** A summary of information about an index.
@@ -2279,6 +2499,49 @@ package kendra {
     }
   }
 
+  @js.native
+  trait ListThesauriRequest extends js.Object {
+    var IndexId: IndexId
+    var MaxResults: js.UndefOr[MaxResultsIntegerForListThesauriRequest]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListThesauriRequest {
+    @inline
+    def apply(
+        IndexId: IndexId,
+        MaxResults: js.UndefOr[MaxResultsIntegerForListThesauriRequest] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListThesauriRequest = {
+      val __obj = js.Dynamic.literal(
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThesauriRequest]
+    }
+  }
+
+  @js.native
+  trait ListThesauriResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var ThesaurusSummaryItems: js.UndefOr[ThesaurusSummaryItems]
+  }
+
+  object ListThesauriResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ThesaurusSummaryItems: js.UndefOr[ThesaurusSummaryItems] = js.undefined
+    ): ListThesauriResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ThesaurusSummaryItems.foreach(__v => __obj.updateDynamic("ThesaurusSummaryItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThesauriResponse]
+    }
+  }
+
   /** Provides configuration information for data sources that connect to OneDrive.
     */
   @js.native
@@ -2402,6 +2665,7 @@ package kendra {
     var RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList]
     var SortingConfiguration: js.UndefOr[SortingConfiguration]
     var UserContext: js.UndefOr[UserContext]
+    var VisitorId: js.UndefOr[VisitorId]
   }
 
   object QueryRequest {
@@ -2416,7 +2680,8 @@ package kendra {
         QueryResultTypeFilter: js.UndefOr[QueryResultType] = js.undefined,
         RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList] = js.undefined,
         SortingConfiguration: js.UndefOr[SortingConfiguration] = js.undefined,
-        UserContext: js.UndefOr[UserContext] = js.undefined
+        UserContext: js.UndefOr[UserContext] = js.undefined,
+        VisitorId: js.UndefOr[VisitorId] = js.undefined
     ): QueryRequest = {
       val __obj = js.Dynamic.literal(
         "IndexId" -> IndexId.asInstanceOf[js.Any],
@@ -2431,6 +2696,7 @@ package kendra {
       RequestedDocumentAttributes.foreach(__v => __obj.updateDynamic("RequestedDocumentAttributes")(__v.asInstanceOf[js.Any]))
       SortingConfiguration.foreach(__v => __obj.updateDynamic("SortingConfiguration")(__v.asInstanceOf[js.Any]))
       UserContext.foreach(__v => __obj.updateDynamic("UserContext")(__v.asInstanceOf[js.Any]))
+      VisitorId.foreach(__v => __obj.updateDynamic("VisitorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryRequest]
     }
   }
@@ -2471,6 +2737,7 @@ package kendra {
     var DocumentId: js.UndefOr[DocumentId]
     var DocumentTitle: js.UndefOr[TextWithHighlights]
     var DocumentURI: js.UndefOr[Url]
+    var FeedbackToken: js.UndefOr[FeedbackToken]
     var Id: js.UndefOr[ResultId]
     var ScoreAttributes: js.UndefOr[ScoreAttributes]
     var Type: js.UndefOr[QueryResultType]
@@ -2485,6 +2752,7 @@ package kendra {
         DocumentId: js.UndefOr[DocumentId] = js.undefined,
         DocumentTitle: js.UndefOr[TextWithHighlights] = js.undefined,
         DocumentURI: js.UndefOr[Url] = js.undefined,
+        FeedbackToken: js.UndefOr[FeedbackToken] = js.undefined,
         Id: js.UndefOr[ResultId] = js.undefined,
         ScoreAttributes: js.UndefOr[ScoreAttributes] = js.undefined,
         Type: js.UndefOr[QueryResultType] = js.undefined
@@ -2496,6 +2764,7 @@ package kendra {
       DocumentId.foreach(__v => __obj.updateDynamic("DocumentId")(__v.asInstanceOf[js.Any]))
       DocumentTitle.foreach(__v => __obj.updateDynamic("DocumentTitle")(__v.asInstanceOf[js.Any]))
       DocumentURI.foreach(__v => __obj.updateDynamic("DocumentURI")(__v.asInstanceOf[js.Any]))
+      FeedbackToken.foreach(__v => __obj.updateDynamic("FeedbackToken")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ScoreAttributes.foreach(__v => __obj.updateDynamic("ScoreAttributes")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -3366,6 +3635,49 @@ package kendra {
     }
   }
 
+  @js.native
+  sealed trait ThesaurusStatus extends js.Any
+  object ThesaurusStatus {
+    val CREATING = "CREATING".asInstanceOf[ThesaurusStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ThesaurusStatus]
+    val DELETING = "DELETING".asInstanceOf[ThesaurusStatus]
+    val UPDATING = "UPDATING".asInstanceOf[ThesaurusStatus]
+    val ACTIVE_BUT_UPDATE_FAILED = "ACTIVE_BUT_UPDATE_FAILED".asInstanceOf[ThesaurusStatus]
+    val FAILED = "FAILED".asInstanceOf[ThesaurusStatus]
+
+    @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
+  }
+
+  /** An array of summary information for one or more thesauruses.
+    */
+  @js.native
+  trait ThesaurusSummary extends js.Object {
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Id: js.UndefOr[ThesaurusId]
+    var Name: js.UndefOr[ThesaurusName]
+    var Status: js.UndefOr[ThesaurusStatus]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object ThesaurusSummary {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Id: js.UndefOr[ThesaurusId] = js.undefined,
+        Name: js.UndefOr[ThesaurusName] = js.undefined,
+        Status: js.UndefOr[ThesaurusStatus] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): ThesaurusSummary = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThesaurusSummary]
+    }
+  }
+
   /** Provides a range of time.
     */
   @js.native
@@ -3490,6 +3802,39 @@ package kendra {
       UserContextPolicy.foreach(__v => __obj.updateDynamic("UserContextPolicy")(__v.asInstanceOf[js.Any]))
       UserTokenConfigurations.foreach(__v => __obj.updateDynamic("UserTokenConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIndexRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateThesaurusRequest extends js.Object {
+    var Id: ThesaurusId
+    var IndexId: IndexId
+    var Description: js.UndefOr[Description]
+    var Name: js.UndefOr[ThesaurusName]
+    var RoleArn: js.UndefOr[RoleArn]
+    var SourceS3Path: js.UndefOr[S3Path]
+  }
+
+  object UpdateThesaurusRequest {
+    @inline
+    def apply(
+        Id: ThesaurusId,
+        IndexId: IndexId,
+        Description: js.UndefOr[Description] = js.undefined,
+        Name: js.UndefOr[ThesaurusName] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        SourceS3Path: js.UndefOr[S3Path] = js.undefined
+    ): UpdateThesaurusRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      SourceS3Path.foreach(__v => __obj.updateDynamic("SourceS3Path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateThesaurusRequest]
     }
   }
 

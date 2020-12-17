@@ -25,6 +25,9 @@ package object lambda {
   type Description = String
   type DestinationArn = String
   type Enabled = Boolean
+  type Endpoint = String
+  type EndpointLists = js.Array[Endpoint]
+  type Endpoints = js.Dictionary[EndpointLists]
   type EnvironmentVariableName = String
   type EnvironmentVariableValue = String
   type EnvironmentVariables = js.Dictionary[EnvironmentVariableValue]
@@ -37,6 +40,7 @@ package object lambda {
   type FunctionEventInvokeConfigList = js.Array[FunctionEventInvokeConfig]
   type FunctionList = js.Array[FunctionConfiguration]
   type FunctionName = String
+  type FunctionResponseTypeList = js.Array[FunctionResponseType]
   type Handler = String
   type HttpStatus = Int
   type KMSKeyArn = String
@@ -90,6 +94,7 @@ package object lambda {
   type SourceOwner = String
   type StateReason = String
   type StatementId = String
+  type StringList = js.Array[String]
   type SubnetId = String
   type SubnetIds = js.Array[SubnetId]
   type TagKey = String
@@ -100,10 +105,13 @@ package object lambda {
   type Timestamp = String
   type Topic = String
   type Topics = js.Array[Topic]
+  type TumblingWindowInSeconds = Int
+  type URI = String
   type UnreservedConcurrentExecutions = Int
   type Version = String
   type VpcId = String
   type Weight = Double
+  type WorkingDirectory = String
 
   implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
 
@@ -619,44 +627,49 @@ package lambda {
 
   @js.native
   trait CreateEventSourceMappingRequest extends js.Object {
-    var EventSourceArn: Arn
     var FunctionName: FunctionName
     var BatchSize: js.UndefOr[BatchSize]
     var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var Enabled: js.UndefOr[Enabled]
+    var EventSourceArn: js.UndefOr[Arn]
+    var FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
     var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var Queues: js.UndefOr[Queues]
+    var SelfManagedEventSource: js.UndefOr[SelfManagedEventSource]
     var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
     var Topics: js.UndefOr[Topics]
+    var TumblingWindowInSeconds: js.UndefOr[TumblingWindowInSeconds]
   }
 
   object CreateEventSourceMappingRequest {
     @inline
     def apply(
-        EventSourceArn: Arn,
         FunctionName: FunctionName,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
         BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
+        EventSourceArn: js.UndefOr[Arn] = js.undefined,
+        FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
         MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         Queues: js.UndefOr[Queues] = js.undefined,
+        SelfManagedEventSource: js.UndefOr[SelfManagedEventSource] = js.undefined,
         SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
-        Topics: js.UndefOr[Topics] = js.undefined
+        Topics: js.UndefOr[Topics] = js.undefined,
+        TumblingWindowInSeconds: js.UndefOr[TumblingWindowInSeconds] = js.undefined
     ): CreateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
-        "EventSourceArn" -> EventSourceArn.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
@@ -664,15 +677,19 @@ package lambda {
       BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
+      FunctionResponseTypes.foreach(__v => __obj.updateDynamic("FunctionResponseTypes")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
+      SelfManagedEventSource.foreach(__v => __obj.updateDynamic("SelfManagedEventSource")(__v.asInstanceOf[js.Any]))
       SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
       Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
+      TumblingWindowInSeconds.foreach(__v => __obj.updateDynamic("TumblingWindowInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventSourceMappingRequest]
     }
   }
@@ -681,18 +698,20 @@ package lambda {
   trait CreateFunctionRequest extends js.Object {
     var Code: FunctionCode
     var FunctionName: FunctionName
-    var Handler: Handler
     var Role: RoleArn
-    var Runtime: Runtime
     var CodeSigningConfigArn: js.UndefOr[CodeSigningConfigArn]
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
     var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
+    var Handler: js.UndefOr[Handler]
+    var ImageConfig: js.UndefOr[ImageConfig]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var Layers: js.UndefOr[LayerList]
     var MemorySize: js.UndefOr[MemorySize]
+    var PackageType: js.UndefOr[PackageType]
     var Publish: js.UndefOr[Boolean]
+    var Runtime: js.UndefOr[Runtime]
     var Tags: js.UndefOr[Tags]
     var Timeout: js.UndefOr[Timeout]
     var TracingConfig: js.UndefOr[TracingConfig]
@@ -704,18 +723,20 @@ package lambda {
     def apply(
         Code: FunctionCode,
         FunctionName: FunctionName,
-        Handler: Handler,
         Role: RoleArn,
-        Runtime: Runtime,
         CodeSigningConfigArn: js.UndefOr[CodeSigningConfigArn] = js.undefined,
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
         FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
+        Handler: js.UndefOr[Handler] = js.undefined,
+        ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         Layers: js.UndefOr[LayerList] = js.undefined,
         MemorySize: js.UndefOr[MemorySize] = js.undefined,
+        PackageType: js.UndefOr[PackageType] = js.undefined,
         Publish: js.UndefOr[Boolean] = js.undefined,
+        Runtime: js.UndefOr[Runtime] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
@@ -724,9 +745,7 @@ package lambda {
       val __obj = js.Dynamic.literal(
         "Code" -> Code.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
-        "Handler" -> Handler.asInstanceOf[js.Any],
-        "Role" -> Role.asInstanceOf[js.Any],
-        "Runtime" -> Runtime.asInstanceOf[js.Any]
+        "Role" -> Role.asInstanceOf[js.Any]
       )
 
       CodeSigningConfigArn.foreach(__v => __obj.updateDynamic("CodeSigningConfigArn")(__v.asInstanceOf[js.Any]))
@@ -734,10 +753,14 @@ package lambda {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
+      Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
+      ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
+      PackageType.foreach(__v => __obj.updateDynamic("PackageType")(__v.asInstanceOf[js.Any]))
       Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
+      Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
@@ -966,6 +989,14 @@ package lambda {
     }
   }
 
+  @js.native
+  sealed trait EndPointType extends js.Any
+  object EndPointType {
+    val KAFKA_BOOTSTRAP_SERVERS = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[EndPointType]
+
+    @inline def values = js.Array(KAFKA_BOOTSTRAP_SERVERS)
+  }
+
   /** A function's environment variable settings.
     */
   @js.native
@@ -1035,6 +1066,7 @@ package lambda {
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var EventSourceArn: js.UndefOr[Arn]
     var FunctionArn: js.UndefOr[FunctionArn]
+    var FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList]
     var LastModified: js.UndefOr[Date]
     var LastProcessingResult: js.UndefOr[String]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
@@ -1042,12 +1074,14 @@ package lambda {
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var Queues: js.UndefOr[Queues]
+    var SelfManagedEventSource: js.UndefOr[SelfManagedEventSource]
     var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
     var State: js.UndefOr[String]
     var StateTransitionReason: js.UndefOr[String]
     var Topics: js.UndefOr[Topics]
+    var TumblingWindowInSeconds: js.UndefOr[TumblingWindowInSeconds]
     var UUID: js.UndefOr[String]
   }
 
@@ -1059,6 +1093,7 @@ package lambda {
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         EventSourceArn: js.UndefOr[Arn] = js.undefined,
         FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
+        FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList] = js.undefined,
         LastModified: js.UndefOr[Date] = js.undefined,
         LastProcessingResult: js.UndefOr[String] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
@@ -1066,12 +1101,14 @@ package lambda {
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         Queues: js.UndefOr[Queues] = js.undefined,
+        SelfManagedEventSource: js.UndefOr[SelfManagedEventSource] = js.undefined,
         SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
         State: js.UndefOr[String] = js.undefined,
         StateTransitionReason: js.UndefOr[String] = js.undefined,
         Topics: js.UndefOr[Topics] = js.undefined,
+        TumblingWindowInSeconds: js.UndefOr[TumblingWindowInSeconds] = js.undefined,
         UUID: js.UndefOr[String] = js.undefined
     ): EventSourceMappingConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -1080,6 +1117,7 @@ package lambda {
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
+      FunctionResponseTypes.foreach(__v => __obj.updateDynamic("FunctionResponseTypes")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       LastProcessingResult.foreach(__v => __obj.updateDynamic("LastProcessingResult")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
@@ -1087,12 +1125,14 @@ package lambda {
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
+      SelfManagedEventSource.foreach(__v => __obj.updateDynamic("SelfManagedEventSource")(__v.asInstanceOf[js.Any]))
       SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
       Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
+      TumblingWindowInSeconds.foreach(__v => __obj.updateDynamic("TumblingWindowInSeconds")(__v.asInstanceOf[js.Any]))
       UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSourceMappingConfiguration]
     }
@@ -1130,10 +1170,11 @@ package lambda {
     }
   }
 
-  /** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.
+  /** The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.
     */
   @js.native
   trait FunctionCode extends js.Object {
+    var ImageUri: js.UndefOr[String]
     var S3Bucket: js.UndefOr[S3Bucket]
     var S3Key: js.UndefOr[S3Key]
     var S3ObjectVersion: js.UndefOr[S3ObjectVersion]
@@ -1143,12 +1184,14 @@ package lambda {
   object FunctionCode {
     @inline
     def apply(
+        ImageUri: js.UndefOr[String] = js.undefined,
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         S3Key: js.UndefOr[S3Key] = js.undefined,
         S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         ZipFile: js.UndefOr[Blob] = js.undefined
     ): FunctionCode = {
       val __obj = js.Dynamic.literal()
+      ImageUri.foreach(__v => __obj.updateDynamic("ImageUri")(__v.asInstanceOf[js.Any]))
       S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
       S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
       S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
@@ -1161,19 +1204,25 @@ package lambda {
     */
   @js.native
   trait FunctionCodeLocation extends js.Object {
+    var ImageUri: js.UndefOr[String]
     var Location: js.UndefOr[String]
     var RepositoryType: js.UndefOr[String]
+    var ResolvedImageUri: js.UndefOr[String]
   }
 
   object FunctionCodeLocation {
     @inline
     def apply(
+        ImageUri: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined,
-        RepositoryType: js.UndefOr[String] = js.undefined
+        RepositoryType: js.UndefOr[String] = js.undefined,
+        ResolvedImageUri: js.UndefOr[String] = js.undefined
     ): FunctionCodeLocation = {
       val __obj = js.Dynamic.literal()
+      ImageUri.foreach(__v => __obj.updateDynamic("ImageUri")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       RepositoryType.foreach(__v => __obj.updateDynamic("RepositoryType")(__v.asInstanceOf[js.Any]))
+      ResolvedImageUri.foreach(__v => __obj.updateDynamic("ResolvedImageUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionCodeLocation]
     }
   }
@@ -1191,6 +1240,7 @@ package lambda {
     var FunctionArn: js.UndefOr[NameSpacedFunctionArn]
     var FunctionName: js.UndefOr[NamespacedFunctionName]
     var Handler: js.UndefOr[Handler]
+    var ImageConfigResponse: js.UndefOr[ImageConfigResponse]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var LastModified: js.UndefOr[Timestamp]
     var LastUpdateStatus: js.UndefOr[LastUpdateStatus]
@@ -1199,6 +1249,7 @@ package lambda {
     var Layers: js.UndefOr[LayersReferenceList]
     var MasterArn: js.UndefOr[FunctionArn]
     var MemorySize: js.UndefOr[MemorySize]
+    var PackageType: js.UndefOr[PackageType]
     var RevisionId: js.UndefOr[String]
     var Role: js.UndefOr[RoleArn]
     var Runtime: js.UndefOr[Runtime]
@@ -1225,6 +1276,7 @@ package lambda {
         FunctionArn: js.UndefOr[NameSpacedFunctionArn] = js.undefined,
         FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
+        ImageConfigResponse: js.UndefOr[ImageConfigResponse] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         LastModified: js.UndefOr[Timestamp] = js.undefined,
         LastUpdateStatus: js.UndefOr[LastUpdateStatus] = js.undefined,
@@ -1233,6 +1285,7 @@ package lambda {
         Layers: js.UndefOr[LayersReferenceList] = js.undefined,
         MasterArn: js.UndefOr[FunctionArn] = js.undefined,
         MemorySize: js.UndefOr[MemorySize] = js.undefined,
+        PackageType: js.UndefOr[PackageType] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined,
         Role: js.UndefOr[RoleArn] = js.undefined,
         Runtime: js.UndefOr[Runtime] = js.undefined,
@@ -1256,6 +1309,7 @@ package lambda {
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
+      ImageConfigResponse.foreach(__v => __obj.updateDynamic("ImageConfigResponse")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       LastUpdateStatus.foreach(__v => __obj.updateDynamic("LastUpdateStatus")(__v.asInstanceOf[js.Any]))
@@ -1264,6 +1318,7 @@ package lambda {
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MasterArn.foreach(__v => __obj.updateDynamic("MasterArn")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
+      PackageType.foreach(__v => __obj.updateDynamic("PackageType")(__v.asInstanceOf[js.Any]))
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
@@ -1306,6 +1361,14 @@ package lambda {
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionEventInvokeConfig]
     }
+  }
+
+  @js.native
+  sealed trait FunctionResponseType extends js.Any
+  object FunctionResponseType {
+    val ReportBatchItemFailures = "ReportBatchItemFailures".asInstanceOf[FunctionResponseType]
+
+    @inline def values = js.Array(ReportBatchItemFailures)
   }
 
   @js.native
@@ -1779,6 +1842,72 @@ package lambda {
     }
   }
 
+  /** Configuration values that override the container image Dockerfile settings. See [[https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html|Container settings]].
+    */
+  @js.native
+  trait ImageConfig extends js.Object {
+    var Command: js.UndefOr[StringList]
+    var EntryPoint: js.UndefOr[StringList]
+    var WorkingDirectory: js.UndefOr[WorkingDirectory]
+  }
+
+  object ImageConfig {
+    @inline
+    def apply(
+        Command: js.UndefOr[StringList] = js.undefined,
+        EntryPoint: js.UndefOr[StringList] = js.undefined,
+        WorkingDirectory: js.UndefOr[WorkingDirectory] = js.undefined
+    ): ImageConfig = {
+      val __obj = js.Dynamic.literal()
+      Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
+      EntryPoint.foreach(__v => __obj.updateDynamic("EntryPoint")(__v.asInstanceOf[js.Any]))
+      WorkingDirectory.foreach(__v => __obj.updateDynamic("WorkingDirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageConfig]
+    }
+  }
+
+  /** Error response to GetFunctionConfiguration.
+    */
+  @js.native
+  trait ImageConfigError extends js.Object {
+    var ErrorCode: js.UndefOr[String]
+    var Message: js.UndefOr[SensitiveString]
+  }
+
+  object ImageConfigError {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[SensitiveString] = js.undefined
+    ): ImageConfigError = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageConfigError]
+    }
+  }
+
+  /** Response to GetFunctionConfiguration request.
+    */
+  @js.native
+  trait ImageConfigResponse extends js.Object {
+    var Error: js.UndefOr[ImageConfigError]
+    var ImageConfig: js.UndefOr[ImageConfig]
+  }
+
+  object ImageConfigResponse {
+    @inline
+    def apply(
+        Error: js.UndefOr[ImageConfigError] = js.undefined,
+        ImageConfig: js.UndefOr[ImageConfig] = js.undefined
+    ): ImageConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageConfigResponse]
+    }
+  }
+
   @js.native
   trait InvocationRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
@@ -1910,8 +2039,22 @@ package lambda {
     val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
+    val ImageDeleted = "ImageDeleted".asInstanceOf[LastUpdateStatusReasonCode]
+    val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[LastUpdateStatusReasonCode]
+    val InvalidImage = "InvalidImage".asInstanceOf[LastUpdateStatusReasonCode]
 
-    @inline def values = js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup)
+    @inline def values = js.Array(
+      EniLimitExceeded,
+      InsufficientRolePermissions,
+      InvalidConfiguration,
+      InternalError,
+      SubnetOutOfIPAddresses,
+      InvalidSubnet,
+      InvalidSecurityGroup,
+      ImageDeleted,
+      ImageAccessDenied,
+      InvalidImage
+    )
   }
 
   /** An [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
@@ -2566,6 +2709,15 @@ package lambda {
     }
   }
 
+  @js.native
+  sealed trait PackageType extends js.Any
+  object PackageType {
+    val Zip = "Zip".asInstanceOf[PackageType]
+    val Image = "Image".asInstanceOf[PackageType]
+
+    @inline def values = js.Array(Zip, Image)
+  }
+
   /** Details about the provisioned concurrency configuration for a function alias or version.
     */
   @js.native
@@ -2958,19 +3110,37 @@ package lambda {
     )
   }
 
-  /** (MQ) The Secrets Manager secret that stores your broker credentials. To store your secret, use the following format: <code> { "username": "your username", "password": "your password" }</code>
+  /** The Self-Managed Apache Kafka cluster for your event source.
+    */
+  @js.native
+  trait SelfManagedEventSource extends js.Object {
+    var Endpoints: js.UndefOr[Endpoints]
+  }
+
+  object SelfManagedEventSource {
+    @inline
+    def apply(
+        Endpoints: js.UndefOr[Endpoints] = js.undefined
+    ): SelfManagedEventSource = {
+      val __obj = js.Dynamic.literal()
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelfManagedEventSource]
+    }
+  }
+
+  /** You can specify the authentication protocol, or the VPC components to secure access to your event source.
     */
   @js.native
   trait SourceAccessConfiguration extends js.Object {
     var Type: js.UndefOr[SourceAccessType]
-    var URI: js.UndefOr[Arn]
+    var URI: js.UndefOr[URI]
   }
 
   object SourceAccessConfiguration {
     @inline
     def apply(
         Type: js.UndefOr[SourceAccessType] = js.undefined,
-        URI: js.UndefOr[Arn] = js.undefined
+        URI: js.UndefOr[URI] = js.undefined
     ): SourceAccessConfiguration = {
       val __obj = js.Dynamic.literal()
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -2983,8 +3153,12 @@ package lambda {
   sealed trait SourceAccessType extends js.Any
   object SourceAccessType {
     val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[SourceAccessType]
+    val VPC_SUBNET = "VPC_SUBNET".asInstanceOf[SourceAccessType]
+    val VPC_SECURITY_GROUP = "VPC_SECURITY_GROUP".asInstanceOf[SourceAccessType]
+    val SASL_SCRAM_512_AUTH = "SASL_SCRAM_512_AUTH".asInstanceOf[SourceAccessType]
+    val SASL_SCRAM_256_AUTH = "SASL_SCRAM_256_AUTH".asInstanceOf[SourceAccessType]
 
-    @inline def values = js.Array(BASIC_AUTH)
+    @inline def values = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
   }
 
   @js.native
@@ -3011,6 +3185,9 @@ package lambda {
     val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[StateReasonCode]
     val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
     val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
+    val ImageDeleted = "ImageDeleted".asInstanceOf[StateReasonCode]
+    val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[StateReasonCode]
+    val InvalidImage = "InvalidImage".asInstanceOf[StateReasonCode]
 
     @inline def values = js.Array(
       Idle,
@@ -3022,7 +3199,10 @@ package lambda {
       InternalError,
       SubnetOutOfIPAddresses,
       InvalidSubnet,
-      InvalidSecurityGroup
+      InvalidSecurityGroup,
+      ImageDeleted,
+      ImageAccessDenied,
+      InvalidImage
     )
   }
 
@@ -3196,11 +3376,13 @@ package lambda {
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var Enabled: js.UndefOr[Enabled]
     var FunctionName: js.UndefOr[FunctionName]
+    var FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
     var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
     var MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping]
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
+    var TumblingWindowInSeconds: js.UndefOr[TumblingWindowInSeconds]
   }
 
   object UpdateEventSourceMappingRequest {
@@ -3212,11 +3394,13 @@ package lambda {
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
         FunctionName: js.UndefOr[FunctionName] = js.undefined,
+        FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
         MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
         MaximumRetryAttempts: js.UndefOr[MaximumRetryAttemptsEventSourceMapping] = js.undefined,
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
-        SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined
+        SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
+        TumblingWindowInSeconds: js.UndefOr[TumblingWindowInSeconds] = js.undefined
     ): UpdateEventSourceMappingRequest = {
       val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
@@ -3227,11 +3411,13 @@ package lambda {
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
+      FunctionResponseTypes.foreach(__v => __obj.updateDynamic("FunctionResponseTypes")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
+      TumblingWindowInSeconds.foreach(__v => __obj.updateDynamic("TumblingWindowInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]
     }
   }
@@ -3240,6 +3426,7 @@ package lambda {
   trait UpdateFunctionCodeRequest extends js.Object {
     var FunctionName: FunctionName
     var DryRun: js.UndefOr[Boolean]
+    var ImageUri: js.UndefOr[String]
     var Publish: js.UndefOr[Boolean]
     var RevisionId: js.UndefOr[String]
     var S3Bucket: js.UndefOr[S3Bucket]
@@ -3253,6 +3440,7 @@ package lambda {
     def apply(
         FunctionName: FunctionName,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        ImageUri: js.UndefOr[String] = js.undefined,
         Publish: js.UndefOr[Boolean] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined,
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
@@ -3265,6 +3453,7 @@ package lambda {
       )
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      ImageUri.foreach(__v => __obj.updateDynamic("ImageUri")(__v.asInstanceOf[js.Any]))
       Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
@@ -3283,6 +3472,7 @@ package lambda {
     var Environment: js.UndefOr[Environment]
     var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var Handler: js.UndefOr[Handler]
+    var ImageConfig: js.UndefOr[ImageConfig]
     var KMSKeyArn: js.UndefOr[KMSKeyArn]
     var Layers: js.UndefOr[LayerList]
     var MemorySize: js.UndefOr[MemorySize]
@@ -3303,6 +3493,7 @@ package lambda {
         Environment: js.UndefOr[Environment] = js.undefined,
         FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
+        ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined,
         Layers: js.UndefOr[LayerList] = js.undefined,
         MemorySize: js.UndefOr[MemorySize] = js.undefined,
@@ -3322,6 +3513,7 @@ package lambda {
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
+      ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))

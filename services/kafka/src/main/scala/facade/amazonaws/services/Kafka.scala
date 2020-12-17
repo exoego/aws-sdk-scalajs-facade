@@ -550,11 +550,12 @@ package kafka {
     val CREATING = "CREATING".asInstanceOf[ClusterState]
     val DELETING = "DELETING".asInstanceOf[ClusterState]
     val FAILED = "FAILED".asInstanceOf[ClusterState]
+    val HEALING = "HEALING".asInstanceOf[ClusterState]
     val MAINTENANCE = "MAINTENANCE".asInstanceOf[ClusterState]
     val REBOOTING_BROKER = "REBOOTING_BROKER".asInstanceOf[ClusterState]
     val UPDATING = "UPDATING".asInstanceOf[ClusterState]
 
-    @inline def values = js.Array(ACTIVE, CREATING, DELETING, FAILED, MAINTENANCE, REBOOTING_BROKER, UPDATING)
+    @inline def values = js.Array(ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, UPDATING)
   }
 
   /** Contains source Kafka versions and compatible target Kafka versions.

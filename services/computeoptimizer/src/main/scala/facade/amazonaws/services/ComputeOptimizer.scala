@@ -21,6 +21,8 @@ package object computeoptimizer {
   type DestinationBucket = String
   type DestinationKey = String
   type DestinationKeyPrefix = String
+  type EBSFilters = js.Array[EBSFilter]
+  type EBSUtilizationMetrics = js.Array[EBSUtilizationMetric]
   type ExportableAutoScalingGroupFields = js.Array[ExportableAutoScalingGroupField]
   type ExportableInstanceFields = js.Array[ExportableInstanceField]
   type FailureReason = String
@@ -68,6 +70,16 @@ package object computeoptimizer {
   type Timestamp = js.Date
   type Timestamps = js.Array[Timestamp]
   type UtilizationMetrics = js.Array[UtilizationMetric]
+  type VolumeArn = String
+  type VolumeArns = js.Array[VolumeArn]
+  type VolumeBaselineIOPS = Int
+  type VolumeBaselineThroughput = Int
+  type VolumeBurstIOPS = Int
+  type VolumeBurstThroughput = Int
+  type VolumeRecommendationOptions = js.Array[VolumeRecommendationOption]
+  type VolumeRecommendations = js.Array[VolumeRecommendation]
+  type VolumeSize = Int
+  type VolumeType = String
 
   implicit final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
 
@@ -75,6 +87,7 @@ package object computeoptimizer {
     @inline def exportAutoScalingGroupRecommendationsFuture(params: ExportAutoScalingGroupRecommendationsRequest): Future[ExportAutoScalingGroupRecommendationsResponse] = service.exportAutoScalingGroupRecommendations(params).promise().toFuture
     @inline def exportEC2InstanceRecommendationsFuture(params: ExportEC2InstanceRecommendationsRequest): Future[ExportEC2InstanceRecommendationsResponse] = service.exportEC2InstanceRecommendations(params).promise().toFuture
     @inline def getAutoScalingGroupRecommendationsFuture(params: GetAutoScalingGroupRecommendationsRequest): Future[GetAutoScalingGroupRecommendationsResponse] = service.getAutoScalingGroupRecommendations(params).promise().toFuture
+    @inline def getEBSVolumeRecommendationsFuture(params: GetEBSVolumeRecommendationsRequest): Future[GetEBSVolumeRecommendationsResponse] = service.getEBSVolumeRecommendations(params).promise().toFuture
     @inline def getEC2InstanceRecommendationsFuture(params: GetEC2InstanceRecommendationsRequest): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise().toFuture
     @inline def getEC2RecommendationProjectedMetricsFuture(params: GetEC2RecommendationProjectedMetricsRequest): Future[GetEC2RecommendationProjectedMetricsResponse] = service.getEC2RecommendationProjectedMetrics(params).promise().toFuture
     @inline def getEnrollmentStatusFuture(params: GetEnrollmentStatusRequest): Future[GetEnrollmentStatusResponse] = service.getEnrollmentStatus(params).promise().toFuture
@@ -94,6 +107,7 @@ package computeoptimizer {
     def exportAutoScalingGroupRecommendations(params: ExportAutoScalingGroupRecommendationsRequest): Request[ExportAutoScalingGroupRecommendationsResponse] = js.native
     def exportEC2InstanceRecommendations(params: ExportEC2InstanceRecommendationsRequest): Request[ExportEC2InstanceRecommendationsResponse] = js.native
     def getAutoScalingGroupRecommendations(params: GetAutoScalingGroupRecommendationsRequest): Request[GetAutoScalingGroupRecommendationsResponse] = js.native
+    def getEBSVolumeRecommendations(params: GetEBSVolumeRecommendationsRequest): Request[GetEBSVolumeRecommendationsResponse] = js.native
     def getEC2InstanceRecommendations(params: GetEC2InstanceRecommendationsRequest): Request[GetEC2InstanceRecommendationsResponse] = js.native
     def getEC2RecommendationProjectedMetrics(params: GetEC2RecommendationProjectedMetricsRequest): Request[GetEC2RecommendationProjectedMetricsResponse] = js.native
     def getEnrollmentStatus(params: GetEnrollmentStatusRequest): Request[GetEnrollmentStatusResponse] = js.native
@@ -238,6 +252,81 @@ package computeoptimizer {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       recommendationExportJobs.foreach(__v => __obj.updateDynamic("recommendationExportJobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecommendationExportJobsResponse]
+    }
+  }
+
+  /** Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations.
+    * This filter is used with the <code>GetEBSVolumeRecommendations</code> action.
+    */
+  @js.native
+  trait EBSFilter extends js.Object {
+    var name: js.UndefOr[EBSFilterName]
+    var values: js.UndefOr[FilterValues]
+  }
+
+  object EBSFilter {
+    @inline
+    def apply(
+        name: js.UndefOr[EBSFilterName] = js.undefined,
+        values: js.UndefOr[FilterValues] = js.undefined
+    ): EBSFilter = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EBSFilter]
+    }
+  }
+
+  @js.native
+  sealed trait EBSFilterName extends js.Any
+  object EBSFilterName {
+    val Finding = "Finding".asInstanceOf[EBSFilterName]
+
+    @inline def values = js.Array(Finding)
+  }
+
+  @js.native
+  sealed trait EBSFinding extends js.Any
+  object EBSFinding {
+    val Optimized = "Optimized".asInstanceOf[EBSFinding]
+    val NotOptimized = "NotOptimized".asInstanceOf[EBSFinding]
+
+    @inline def values = js.Array(Optimized, NotOptimized)
+  }
+
+  @js.native
+  sealed trait EBSMetricName extends js.Any
+  object EBSMetricName {
+    val VolumeReadOpsPerSecond = "VolumeReadOpsPerSecond".asInstanceOf[EBSMetricName]
+    val VolumeWriteOpsPerSecond = "VolumeWriteOpsPerSecond".asInstanceOf[EBSMetricName]
+    val VolumeReadBytesPerSecond = "VolumeReadBytesPerSecond".asInstanceOf[EBSMetricName]
+    val VolumeWriteBytesPerSecond = "VolumeWriteBytesPerSecond".asInstanceOf[EBSMetricName]
+
+    @inline def values = js.Array(VolumeReadOpsPerSecond, VolumeWriteOpsPerSecond, VolumeReadBytesPerSecond, VolumeWriteBytesPerSecond)
+  }
+
+  /** Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.
+    * Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
+    */
+  @js.native
+  trait EBSUtilizationMetric extends js.Object {
+    var name: js.UndefOr[EBSMetricName]
+    var statistic: js.UndefOr[MetricStatistic]
+    var value: js.UndefOr[MetricValue]
+  }
+
+  object EBSUtilizationMetric {
+    @inline
+    def apply(
+        name: js.UndefOr[EBSMetricName] = js.undefined,
+        statistic: js.UndefOr[MetricStatistic] = js.undefined,
+        value: js.UndefOr[MetricValue] = js.undefined
+    ): EBSUtilizationMetric = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EBSUtilizationMetric]
     }
   }
 
@@ -528,6 +617,7 @@ package computeoptimizer {
   }
 
   /** Describes a filter that returns a more specific list of recommendations.
+    * This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
     */
   @js.native
   trait Filter extends js.Object {
@@ -615,6 +705,56 @@ package computeoptimizer {
       errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAutoScalingGroupRecommendationsResponse]
+    }
+  }
+
+  @js.native
+  trait GetEBSVolumeRecommendationsRequest extends js.Object {
+    var accountIds: js.UndefOr[AccountIds]
+    var filters: js.UndefOr[EBSFilters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var volumeArns: js.UndefOr[VolumeArns]
+  }
+
+  object GetEBSVolumeRecommendationsRequest {
+    @inline
+    def apply(
+        accountIds: js.UndefOr[AccountIds] = js.undefined,
+        filters: js.UndefOr[EBSFilters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        volumeArns: js.UndefOr[VolumeArns] = js.undefined
+    ): GetEBSVolumeRecommendationsRequest = {
+      val __obj = js.Dynamic.literal()
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      volumeArns.foreach(__v => __obj.updateDynamic("volumeArns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEBSVolumeRecommendationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetEBSVolumeRecommendationsResponse extends js.Object {
+    var errors: js.UndefOr[GetRecommendationErrors]
+    var nextToken: js.UndefOr[NextToken]
+    var volumeRecommendations: js.UndefOr[VolumeRecommendations]
+  }
+
+  object GetEBSVolumeRecommendationsResponse {
+    @inline
+    def apply(
+        errors: js.UndefOr[GetRecommendationErrors] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        volumeRecommendations: js.UndefOr[VolumeRecommendations] = js.undefined
+    ): GetEBSVolumeRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      volumeRecommendations.foreach(__v => __obj.updateDynamic("volumeRecommendations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEBSVolumeRecommendationsResponse]
     }
   }
 
@@ -948,7 +1088,8 @@ package computeoptimizer {
     @inline def values = js.Array(Maximum, Average)
   }
 
-  /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance.
+  /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period.
+    * Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
     *
     * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
     */
@@ -1038,8 +1179,9 @@ package computeoptimizer {
   object RecommendationSourceType {
     val Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
+    val EbsVolume = "EbsVolume".asInstanceOf[RecommendationSourceType]
 
-    @inline def values = js.Array(Ec2Instance, AutoScalingGroup)
+    @inline def values = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume)
   }
 
   /** A summary of a recommendation.
@@ -1220,6 +1362,7 @@ package computeoptimizer {
   }
 
   /** Describes a utilization metric of a resource, such as an Amazon EC2 instance.
+    * Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
     */
   @js.native
   trait UtilizationMetric extends js.Object {
@@ -1240,6 +1383,102 @@ package computeoptimizer {
       statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UtilizationMetric]
+    }
+  }
+
+  /** Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.
+    */
+  @js.native
+  trait VolumeConfiguration extends js.Object {
+    var volumeBaselineIOPS: js.UndefOr[VolumeBaselineIOPS]
+    var volumeBaselineThroughput: js.UndefOr[VolumeBaselineThroughput]
+    var volumeBurstIOPS: js.UndefOr[VolumeBurstIOPS]
+    var volumeBurstThroughput: js.UndefOr[VolumeBurstThroughput]
+    var volumeSize: js.UndefOr[VolumeSize]
+    var volumeType: js.UndefOr[VolumeType]
+  }
+
+  object VolumeConfiguration {
+    @inline
+    def apply(
+        volumeBaselineIOPS: js.UndefOr[VolumeBaselineIOPS] = js.undefined,
+        volumeBaselineThroughput: js.UndefOr[VolumeBaselineThroughput] = js.undefined,
+        volumeBurstIOPS: js.UndefOr[VolumeBurstIOPS] = js.undefined,
+        volumeBurstThroughput: js.UndefOr[VolumeBurstThroughput] = js.undefined,
+        volumeSize: js.UndefOr[VolumeSize] = js.undefined,
+        volumeType: js.UndefOr[VolumeType] = js.undefined
+    ): VolumeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      volumeBaselineIOPS.foreach(__v => __obj.updateDynamic("volumeBaselineIOPS")(__v.asInstanceOf[js.Any]))
+      volumeBaselineThroughput.foreach(__v => __obj.updateDynamic("volumeBaselineThroughput")(__v.asInstanceOf[js.Any]))
+      volumeBurstIOPS.foreach(__v => __obj.updateDynamic("volumeBurstIOPS")(__v.asInstanceOf[js.Any]))
+      volumeBurstThroughput.foreach(__v => __obj.updateDynamic("volumeBurstThroughput")(__v.asInstanceOf[js.Any]))
+      volumeSize.foreach(__v => __obj.updateDynamic("volumeSize")(__v.asInstanceOf[js.Any]))
+      volumeType.foreach(__v => __obj.updateDynamic("volumeType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeConfiguration]
+    }
+  }
+
+  /** Describes an Amazon Elastic Block Store (Amazon EBS) volume recommendation.
+    */
+  @js.native
+  trait VolumeRecommendation extends js.Object {
+    var accountId: js.UndefOr[AccountId]
+    var currentConfiguration: js.UndefOr[VolumeConfiguration]
+    var finding: js.UndefOr[EBSFinding]
+    var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
+    var lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays]
+    var utilizationMetrics: js.UndefOr[EBSUtilizationMetrics]
+    var volumeArn: js.UndefOr[VolumeArn]
+    var volumeRecommendationOptions: js.UndefOr[VolumeRecommendationOptions]
+  }
+
+  object VolumeRecommendation {
+    @inline
+    def apply(
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        currentConfiguration: js.UndefOr[VolumeConfiguration] = js.undefined,
+        finding: js.UndefOr[EBSFinding] = js.undefined,
+        lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
+        lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays] = js.undefined,
+        utilizationMetrics: js.UndefOr[EBSUtilizationMetrics] = js.undefined,
+        volumeArn: js.UndefOr[VolumeArn] = js.undefined,
+        volumeRecommendationOptions: js.UndefOr[VolumeRecommendationOptions] = js.undefined
+    ): VolumeRecommendation = {
+      val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      currentConfiguration.foreach(__v => __obj.updateDynamic("currentConfiguration")(__v.asInstanceOf[js.Any]))
+      finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
+      lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
+      lookBackPeriodInDays.foreach(__v => __obj.updateDynamic("lookBackPeriodInDays")(__v.asInstanceOf[js.Any]))
+      utilizationMetrics.foreach(__v => __obj.updateDynamic("utilizationMetrics")(__v.asInstanceOf[js.Any]))
+      volumeArn.foreach(__v => __obj.updateDynamic("volumeArn")(__v.asInstanceOf[js.Any]))
+      volumeRecommendationOptions.foreach(__v => __obj.updateDynamic("volumeRecommendationOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeRecommendation]
+    }
+  }
+
+  /** Describes a recommendation option for an Amazon Elastic Block Store (Amazon EBS) instance.
+    */
+  @js.native
+  trait VolumeRecommendationOption extends js.Object {
+    var configuration: js.UndefOr[VolumeConfiguration]
+    var performanceRisk: js.UndefOr[PerformanceRisk]
+    var rank: js.UndefOr[Rank]
+  }
+
+  object VolumeRecommendationOption {
+    @inline
+    def apply(
+        configuration: js.UndefOr[VolumeConfiguration] = js.undefined,
+        performanceRisk: js.UndefOr[PerformanceRisk] = js.undefined,
+        rank: js.UndefOr[Rank] = js.undefined
+    ): VolumeRecommendationOption = {
+      val __obj = js.Dynamic.literal()
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
+      rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeRecommendationOption]
     }
   }
 }

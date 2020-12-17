@@ -32,10 +32,12 @@ package object connect {
   type ContactFlowSummaryList = js.Array[ContactFlowSummary]
   type ContactFlowTypes = js.Array[ContactFlowType]
   type ContactId = String
+  type ContactReferences = js.Dictionary[Reference]
   type CurrentMetricDataCollections = js.Array[CurrentMetricData]
   type CurrentMetricResults = js.Array[CurrentMetricResult]
   type CurrentMetrics = js.Array[CurrentMetric]
   type Delay = Int
+  type Description = String
   type DirectoryAlias = String
   type DirectoryId = String
   type DirectoryUserId = String
@@ -61,6 +63,8 @@ package object connect {
   type InstanceId = String
   type InstanceStorageConfigs = js.Array[InstanceStorageConfig]
   type InstanceSummaryList = js.Array[InstanceSummary]
+  type IntegrationAssociationId = String
+  type IntegrationAssociationSummaryList = js.Array[IntegrationAssociationSummary]
   type KeyId = String
   type LexBotsList = js.Array[LexBot]
   type LexRegion = String
@@ -71,6 +75,7 @@ package object connect {
   type MaxResult25 = Int
   type MaxResult7 = Int
   type MediaConcurrencies = js.Array[MediaConcurrency]
+  type Name = String
   type NextToken = String
   type Origin = String
   type OriginsList = js.Array[Origin]
@@ -94,6 +99,8 @@ package object connect {
   type QueueSummaryList = js.Array[QueueSummary]
   type QueueTypes = js.Array[QueueType]
   type Queues = js.Array[QueueId]
+  type ReferenceKey = String
+  type ReferenceValue = String
   type RoutingProfileDescription = String
   type RoutingProfileId = String
   type RoutingProfileName = String
@@ -107,12 +114,16 @@ package object connect {
   type SecurityProfileName = String
   type SecurityProfileSummaryList = js.Array[SecurityProfileSummary]
   type SecurityToken = String
+  type SourceApplicationName = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type ThresholdValue = Double
   type Timestamp = js.Date
+  type URI = String
+  type UseCaseId = String
+  type UseCaseSummaryList = js.Array[UseCase]
   type UserId = String
   type UserSummaryList = js.Array[UserSummary]
   type Value = Double
@@ -128,10 +139,14 @@ package object connect {
     @inline def associateSecurityKeyFuture(params: AssociateSecurityKeyRequest): Future[AssociateSecurityKeyResponse] = service.associateSecurityKey(params).promise().toFuture
     @inline def createContactFlowFuture(params: CreateContactFlowRequest): Future[CreateContactFlowResponse] = service.createContactFlow(params).promise().toFuture
     @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResponse] = service.createInstance(params).promise().toFuture
+    @inline def createIntegrationAssociationFuture(params: CreateIntegrationAssociationRequest): Future[CreateIntegrationAssociationResponse] = service.createIntegrationAssociation(params).promise().toFuture
     @inline def createRoutingProfileFuture(params: CreateRoutingProfileRequest): Future[CreateRoutingProfileResponse] = service.createRoutingProfile(params).promise().toFuture
+    @inline def createUseCaseFuture(params: CreateUseCaseRequest): Future[CreateUseCaseResponse] = service.createUseCase(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def createUserHierarchyGroupFuture(params: CreateUserHierarchyGroupRequest): Future[CreateUserHierarchyGroupResponse] = service.createUserHierarchyGroup(params).promise().toFuture
     @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] = service.deleteInstance(params).promise().toFuture
+    @inline def deleteIntegrationAssociationFuture(params: DeleteIntegrationAssociationRequest): Future[js.Object] = service.deleteIntegrationAssociation(params).promise().toFuture
+    @inline def deleteUseCaseFuture(params: DeleteUseCaseRequest): Future[js.Object] = service.deleteUseCase(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
     @inline def deleteUserHierarchyGroupFuture(params: DeleteUserHierarchyGroupRequest): Future[js.Object] = service.deleteUserHierarchyGroup(params).promise().toFuture
     @inline def describeContactFlowFuture(params: DescribeContactFlowRequest): Future[DescribeContactFlowResponse] = service.describeContactFlow(params).promise().toFuture
@@ -158,6 +173,7 @@ package object connect {
     @inline def listInstanceAttributesFuture(params: ListInstanceAttributesRequest): Future[ListInstanceAttributesResponse] = service.listInstanceAttributes(params).promise().toFuture
     @inline def listInstanceStorageConfigsFuture(params: ListInstanceStorageConfigsRequest): Future[ListInstanceStorageConfigsResponse] = service.listInstanceStorageConfigs(params).promise().toFuture
     @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] = service.listInstances(params).promise().toFuture
+    @inline def listIntegrationAssociationsFuture(params: ListIntegrationAssociationsRequest): Future[ListIntegrationAssociationsResponse] = service.listIntegrationAssociations(params).promise().toFuture
     @inline def listLambdaFunctionsFuture(params: ListLambdaFunctionsRequest): Future[ListLambdaFunctionsResponse] = service.listLambdaFunctions(params).promise().toFuture
     @inline def listLexBotsFuture(params: ListLexBotsRequest): Future[ListLexBotsResponse] = service.listLexBots(params).promise().toFuture
     @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] = service.listPhoneNumbers(params).promise().toFuture
@@ -168,12 +184,14 @@ package object connect {
     @inline def listSecurityKeysFuture(params: ListSecurityKeysRequest): Future[ListSecurityKeysResponse] = service.listSecurityKeys(params).promise().toFuture
     @inline def listSecurityProfilesFuture(params: ListSecurityProfilesRequest): Future[ListSecurityProfilesResponse] = service.listSecurityProfiles(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listUseCasesFuture(params: ListUseCasesRequest): Future[ListUseCasesResponse] = service.listUseCases(params).promise().toFuture
     @inline def listUserHierarchyGroupsFuture(params: ListUserHierarchyGroupsRequest): Future[ListUserHierarchyGroupsResponse] = service.listUserHierarchyGroups(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
     @inline def resumeContactRecordingFuture(params: ResumeContactRecordingRequest): Future[ResumeContactRecordingResponse] = service.resumeContactRecording(params).promise().toFuture
     @inline def startChatContactFuture(params: StartChatContactRequest): Future[StartChatContactResponse] = service.startChatContact(params).promise().toFuture
     @inline def startContactRecordingFuture(params: StartContactRecordingRequest): Future[StartContactRecordingResponse] = service.startContactRecording(params).promise().toFuture
     @inline def startOutboundVoiceContactFuture(params: StartOutboundVoiceContactRequest): Future[StartOutboundVoiceContactResponse] = service.startOutboundVoiceContact(params).promise().toFuture
+    @inline def startTaskContactFuture(params: StartTaskContactRequest): Future[StartTaskContactResponse] = service.startTaskContact(params).promise().toFuture
     @inline def stopContactFuture(params: StopContactRequest): Future[StopContactResponse] = service.stopContact(params).promise().toFuture
     @inline def stopContactRecordingFuture(params: StopContactRecordingRequest): Future[StopContactRecordingResponse] = service.stopContactRecording(params).promise().toFuture
     @inline def suspendContactRecordingFuture(params: SuspendContactRecordingRequest): Future[SuspendContactRecordingResponse] = service.suspendContactRecording(params).promise().toFuture
@@ -213,10 +231,14 @@ package connect {
     def associateSecurityKey(params: AssociateSecurityKeyRequest): Request[AssociateSecurityKeyResponse] = js.native
     def createContactFlow(params: CreateContactFlowRequest): Request[CreateContactFlowResponse] = js.native
     def createInstance(params: CreateInstanceRequest): Request[CreateInstanceResponse] = js.native
+    def createIntegrationAssociation(params: CreateIntegrationAssociationRequest): Request[CreateIntegrationAssociationResponse] = js.native
     def createRoutingProfile(params: CreateRoutingProfileRequest): Request[CreateRoutingProfileResponse] = js.native
+    def createUseCase(params: CreateUseCaseRequest): Request[CreateUseCaseResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def createUserHierarchyGroup(params: CreateUserHierarchyGroupRequest): Request[CreateUserHierarchyGroupResponse] = js.native
     def deleteInstance(params: DeleteInstanceRequest): Request[js.Object] = js.native
+    def deleteIntegrationAssociation(params: DeleteIntegrationAssociationRequest): Request[js.Object] = js.native
+    def deleteUseCase(params: DeleteUseCaseRequest): Request[js.Object] = js.native
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def deleteUserHierarchyGroup(params: DeleteUserHierarchyGroupRequest): Request[js.Object] = js.native
     def describeContactFlow(params: DescribeContactFlowRequest): Request[DescribeContactFlowResponse] = js.native
@@ -243,6 +265,7 @@ package connect {
     def listInstanceAttributes(params: ListInstanceAttributesRequest): Request[ListInstanceAttributesResponse] = js.native
     def listInstanceStorageConfigs(params: ListInstanceStorageConfigsRequest): Request[ListInstanceStorageConfigsResponse] = js.native
     def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse] = js.native
+    def listIntegrationAssociations(params: ListIntegrationAssociationsRequest): Request[ListIntegrationAssociationsResponse] = js.native
     def listLambdaFunctions(params: ListLambdaFunctionsRequest): Request[ListLambdaFunctionsResponse] = js.native
     def listLexBots(params: ListLexBotsRequest): Request[ListLexBotsResponse] = js.native
     def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse] = js.native
@@ -253,12 +276,14 @@ package connect {
     def listSecurityKeys(params: ListSecurityKeysRequest): Request[ListSecurityKeysResponse] = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listUseCases(params: ListUseCasesRequest): Request[ListUseCasesResponse] = js.native
     def listUserHierarchyGroups(params: ListUserHierarchyGroupsRequest): Request[ListUserHierarchyGroupsResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
     def resumeContactRecording(params: ResumeContactRecordingRequest): Request[ResumeContactRecordingResponse] = js.native
     def startChatContact(params: StartChatContactRequest): Request[StartChatContactResponse] = js.native
     def startContactRecording(params: StartContactRecordingRequest): Request[StartContactRecordingResponse] = js.native
     def startOutboundVoiceContact(params: StartOutboundVoiceContactRequest): Request[StartOutboundVoiceContactResponse] = js.native
+    def startTaskContact(params: StartTaskContactRequest): Request[StartTaskContactResponse] = js.native
     def stopContact(params: StopContactRequest): Request[StopContactResponse] = js.native
     def stopContactRecording(params: StopContactRecordingRequest): Request[StopContactRecordingResponse] = js.native
     def suspendContactRecording(params: SuspendContactRecordingRequest): Request[SuspendContactRecordingResponse] = js.native
@@ -466,8 +491,9 @@ package connect {
   object Channel {
     val VOICE = "VOICE".asInstanceOf[Channel]
     val CHAT = "CHAT".asInstanceOf[Channel]
+    val TASK = "TASK".asInstanceOf[Channel]
 
-    @inline def values = js.Array(VOICE, CHAT)
+    @inline def values = js.Array(VOICE, CHAT, TASK)
   }
 
   /** A chat message.
@@ -685,6 +711,57 @@ package connect {
   }
 
   @js.native
+  trait CreateIntegrationAssociationRequest extends js.Object {
+    var InstanceId: InstanceId
+    var IntegrationArn: ARN
+    var IntegrationType: IntegrationType
+    var SourceApplicationName: SourceApplicationName
+    var SourceApplicationUrl: URI
+    var SourceType: SourceType
+  }
+
+  object CreateIntegrationAssociationRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        IntegrationArn: ARN,
+        IntegrationType: IntegrationType,
+        SourceApplicationName: SourceApplicationName,
+        SourceApplicationUrl: URI,
+        SourceType: SourceType
+    ): CreateIntegrationAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "IntegrationArn" -> IntegrationArn.asInstanceOf[js.Any],
+        "IntegrationType" -> IntegrationType.asInstanceOf[js.Any],
+        "SourceApplicationName" -> SourceApplicationName.asInstanceOf[js.Any],
+        "SourceApplicationUrl" -> SourceApplicationUrl.asInstanceOf[js.Any],
+        "SourceType" -> SourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateIntegrationAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateIntegrationAssociationResponse extends js.Object {
+    var IntegrationAssociationArn: js.UndefOr[ARN]
+    var IntegrationAssociationId: js.UndefOr[IntegrationAssociationId]
+  }
+
+  object CreateIntegrationAssociationResponse {
+    @inline
+    def apply(
+        IntegrationAssociationArn: js.UndefOr[ARN] = js.undefined,
+        IntegrationAssociationId: js.UndefOr[IntegrationAssociationId] = js.undefined
+    ): CreateIntegrationAssociationResponse = {
+      val __obj = js.Dynamic.literal()
+      IntegrationAssociationArn.foreach(__v => __obj.updateDynamic("IntegrationAssociationArn")(__v.asInstanceOf[js.Any]))
+      IntegrationAssociationId.foreach(__v => __obj.updateDynamic("IntegrationAssociationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIntegrationAssociationResponse]
+    }
+  }
+
+  @js.native
   trait CreateRoutingProfileRequest extends js.Object {
     var DefaultOutboundQueueId: QueueId
     var Description: RoutingProfileDescription
@@ -736,6 +813,48 @@ package connect {
       RoutingProfileArn.foreach(__v => __obj.updateDynamic("RoutingProfileArn")(__v.asInstanceOf[js.Any]))
       RoutingProfileId.foreach(__v => __obj.updateDynamic("RoutingProfileId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRoutingProfileResponse]
+    }
+  }
+
+  @js.native
+  trait CreateUseCaseRequest extends js.Object {
+    var InstanceId: InstanceId
+    var IntegrationAssociationId: IntegrationAssociationId
+    var UseCaseType: UseCaseType
+  }
+
+  object CreateUseCaseRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        IntegrationAssociationId: IntegrationAssociationId,
+        UseCaseType: UseCaseType
+    ): CreateUseCaseRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "IntegrationAssociationId" -> IntegrationAssociationId.asInstanceOf[js.Any],
+        "UseCaseType" -> UseCaseType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateUseCaseRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUseCaseResponse extends js.Object {
+    var UseCaseArn: js.UndefOr[ARN]
+    var UseCaseId: js.UndefOr[UseCaseId]
+  }
+
+  object CreateUseCaseResponse {
+    @inline
+    def apply(
+        UseCaseArn: js.UndefOr[ARN] = js.undefined,
+        UseCaseId: js.UndefOr[UseCaseId] = js.undefined
+    ): CreateUseCaseResponse = {
+      val __obj = js.Dynamic.literal()
+      UseCaseArn.foreach(__v => __obj.updateDynamic("UseCaseArn")(__v.asInstanceOf[js.Any]))
+      UseCaseId.foreach(__v => __obj.updateDynamic("UseCaseId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUseCaseResponse]
     }
   }
 
@@ -986,6 +1105,49 @@ package connect {
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteInstanceRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteIntegrationAssociationRequest extends js.Object {
+    var InstanceId: InstanceId
+    var IntegrationAssociationId: IntegrationAssociationId
+  }
+
+  object DeleteIntegrationAssociationRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        IntegrationAssociationId: IntegrationAssociationId
+    ): DeleteIntegrationAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "IntegrationAssociationId" -> IntegrationAssociationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteIntegrationAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteUseCaseRequest extends js.Object {
+    var InstanceId: InstanceId
+    var IntegrationAssociationId: IntegrationAssociationId
+    var UseCaseId: UseCaseId
+  }
+
+  object DeleteUseCaseRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        IntegrationAssociationId: IntegrationAssociationId,
+        UseCaseId: UseCaseId
+    ): DeleteUseCaseRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "IntegrationAssociationId" -> IntegrationAssociationId.asInstanceOf[js.Any],
+        "UseCaseId" -> UseCaseId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteUseCaseRequest]
     }
   }
 
@@ -2233,6 +2395,53 @@ package connect {
     }
   }
 
+  /** Contains summary information about the associated AppIntegrations.
+    */
+  @js.native
+  trait IntegrationAssociationSummary extends js.Object {
+    var InstanceId: js.UndefOr[InstanceId]
+    var IntegrationArn: js.UndefOr[ARN]
+    var IntegrationAssociationArn: js.UndefOr[ARN]
+    var IntegrationAssociationId: js.UndefOr[IntegrationAssociationId]
+    var IntegrationType: js.UndefOr[IntegrationType]
+    var SourceApplicationName: js.UndefOr[SourceApplicationName]
+    var SourceApplicationUrl: js.UndefOr[URI]
+    var SourceType: js.UndefOr[SourceType]
+  }
+
+  object IntegrationAssociationSummary {
+    @inline
+    def apply(
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        IntegrationArn: js.UndefOr[ARN] = js.undefined,
+        IntegrationAssociationArn: js.UndefOr[ARN] = js.undefined,
+        IntegrationAssociationId: js.UndefOr[IntegrationAssociationId] = js.undefined,
+        IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
+        SourceApplicationName: js.UndefOr[SourceApplicationName] = js.undefined,
+        SourceApplicationUrl: js.UndefOr[URI] = js.undefined,
+        SourceType: js.UndefOr[SourceType] = js.undefined
+    ): IntegrationAssociationSummary = {
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      IntegrationArn.foreach(__v => __obj.updateDynamic("IntegrationArn")(__v.asInstanceOf[js.Any]))
+      IntegrationAssociationArn.foreach(__v => __obj.updateDynamic("IntegrationAssociationArn")(__v.asInstanceOf[js.Any]))
+      IntegrationAssociationId.foreach(__v => __obj.updateDynamic("IntegrationAssociationId")(__v.asInstanceOf[js.Any]))
+      IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
+      SourceApplicationName.foreach(__v => __obj.updateDynamic("SourceApplicationName")(__v.asInstanceOf[js.Any]))
+      SourceApplicationUrl.foreach(__v => __obj.updateDynamic("SourceApplicationUrl")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntegrationAssociationSummary]
+    }
+  }
+
+  @js.native
+  sealed trait IntegrationType extends js.Any
+  object IntegrationType {
+    val EVENT = "EVENT".asInstanceOf[IntegrationType]
+
+    @inline def values = js.Array(EVENT)
+  }
+
   /** Configuration information of a Kinesis Firehose delivery stream.
     */
   @js.native
@@ -2573,6 +2782,49 @@ package connect {
       InstanceSummaryList.foreach(__v => __obj.updateDynamic("InstanceSummaryList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstancesResponse]
+    }
+  }
+
+  @js.native
+  trait ListIntegrationAssociationsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult100]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListIntegrationAssociationsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIntegrationAssociationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIntegrationAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListIntegrationAssociationsResponse extends js.Object {
+    var IntegrationAssociationSummaryList: js.UndefOr[IntegrationAssociationSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListIntegrationAssociationsResponse {
+    @inline
+    def apply(
+        IntegrationAssociationSummaryList: js.UndefOr[IntegrationAssociationSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIntegrationAssociationsResponse = {
+      val __obj = js.Dynamic.literal()
+      IntegrationAssociationSummaryList.foreach(__v => __obj.updateDynamic("IntegrationAssociationSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIntegrationAssociationsResponse]
     }
   }
 
@@ -3005,6 +3257,54 @@ package connect {
       val __obj = js.Dynamic.literal()
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /** Provides summary information about the use cases for the specified Amazon Connect AppIntegration association.
+    */
+  @js.native
+  trait ListUseCasesRequest extends js.Object {
+    var InstanceId: InstanceId
+    var IntegrationAssociationId: IntegrationAssociationId
+    var MaxResults: js.UndefOr[MaxResult100]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListUseCasesRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        IntegrationAssociationId: IntegrationAssociationId,
+        MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListUseCasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "IntegrationAssociationId" -> IntegrationAssociationId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUseCasesRequest]
+    }
+  }
+
+  @js.native
+  trait ListUseCasesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var UseCaseSummaryList: js.UndefOr[UseCaseSummaryList]
+  }
+
+  object ListUseCasesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        UseCaseSummaryList: js.UndefOr[UseCaseSummaryList] = js.undefined
+    ): ListUseCasesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UseCaseSummaryList.foreach(__v => __obj.updateDynamic("UseCaseSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUseCasesResponse]
     }
   }
 
@@ -3746,6 +4046,36 @@ package connect {
     @inline def values = js.Array(STANDARD, AGENT)
   }
 
+  /** A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8 bytes across all references for a contact.
+    */
+  @js.native
+  trait Reference extends js.Object {
+    var Type: ReferenceType
+    var Value: ReferenceValue
+  }
+
+  object Reference {
+    @inline
+    def apply(
+        Type: ReferenceType,
+        Value: ReferenceValue
+    ): Reference = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Reference]
+    }
+  }
+
+  @js.native
+  sealed trait ReferenceType extends js.Any
+  object ReferenceType {
+    val URL = "URL".asInstanceOf[ReferenceType]
+
+    @inline def values = js.Array(URL)
+  }
+
   @js.native
   trait ResumeContactRecordingRequest extends js.Object {
     var ContactId: ContactId
@@ -3999,6 +4329,15 @@ package connect {
   }
 
   @js.native
+  sealed trait SourceType extends js.Any
+  object SourceType {
+    val SALESFORCE = "SALESFORCE".asInstanceOf[SourceType]
+    val ZENDESK = "ZENDESK".asInstanceOf[SourceType]
+
+    @inline def values = js.Array(SALESFORCE, ZENDESK)
+  }
+
+  @js.native
   trait StartChatContactRequest extends js.Object {
     var ContactFlowId: ContactFlowId
     var InstanceId: InstanceId
@@ -4139,6 +4478,61 @@ package connect {
       val __obj = js.Dynamic.literal()
       ContactId.foreach(__v => __obj.updateDynamic("ContactId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartOutboundVoiceContactResponse]
+    }
+  }
+
+  @js.native
+  trait StartTaskContactRequest extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var InstanceId: InstanceId
+    var Name: Name
+    var Attributes: js.UndefOr[Attributes]
+    var ClientToken: js.UndefOr[ClientToken]
+    var Description: js.UndefOr[Description]
+    var PreviousContactId: js.UndefOr[ContactId]
+    var References: js.UndefOr[ContactReferences]
+  }
+
+  object StartTaskContactRequest {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        InstanceId: InstanceId,
+        Name: Name,
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        PreviousContactId: js.UndefOr[ContactId] = js.undefined,
+        References: js.UndefOr[ContactReferences] = js.undefined
+    ): StartTaskContactRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PreviousContactId.foreach(__v => __obj.updateDynamic("PreviousContactId")(__v.asInstanceOf[js.Any]))
+      References.foreach(__v => __obj.updateDynamic("References")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTaskContactRequest]
+    }
+  }
+
+  @js.native
+  trait StartTaskContactResponse extends js.Object {
+    var ContactId: js.UndefOr[ContactId]
+  }
+
+  object StartTaskContactResponse {
+    @inline
+    def apply(
+        ContactId: js.UndefOr[ContactId] = js.undefined
+    ): StartTaskContactResponse = {
+      val __obj = js.Dynamic.literal()
+      ContactId.foreach(__v => __obj.updateDynamic("ContactId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTaskContactResponse]
     }
   }
 
@@ -4719,6 +5113,38 @@ package connect {
       )
       __obj.asInstanceOf[UpdateUserSecurityProfilesRequest]
     }
+  }
+
+  /** Contains the use case.
+    */
+  @js.native
+  trait UseCase extends js.Object {
+    var UseCaseArn: js.UndefOr[ARN]
+    var UseCaseId: js.UndefOr[UseCaseId]
+    var UseCaseType: js.UndefOr[UseCaseType]
+  }
+
+  object UseCase {
+    @inline
+    def apply(
+        UseCaseArn: js.UndefOr[ARN] = js.undefined,
+        UseCaseId: js.UndefOr[UseCaseId] = js.undefined,
+        UseCaseType: js.UndefOr[UseCaseType] = js.undefined
+    ): UseCase = {
+      val __obj = js.Dynamic.literal()
+      UseCaseArn.foreach(__v => __obj.updateDynamic("UseCaseArn")(__v.asInstanceOf[js.Any]))
+      UseCaseId.foreach(__v => __obj.updateDynamic("UseCaseId")(__v.asInstanceOf[js.Any]))
+      UseCaseType.foreach(__v => __obj.updateDynamic("UseCaseType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UseCase]
+    }
+  }
+
+  @js.native
+  sealed trait UseCaseType extends js.Any
+  object UseCaseType {
+    val RULES_EVALUATION = "RULES_EVALUATION".asInstanceOf[UseCaseType]
+
+    @inline def values = js.Array(RULES_EVALUATION)
   }
 
   /** Contains information about a user account for a Amazon Connect instance.

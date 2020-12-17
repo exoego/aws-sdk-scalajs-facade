@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object quicksight {
   type ActionList = js.Array[String]
   type ActiveIAMPolicyAssignmentList = js.Array[ActiveIAMPolicyAssignment]
+  type AdditionalDashboardIdList = js.Array[RestrictiveResourceId]
   type AliasName = String
   type AnalysisErrorList = js.Array[AnalysisError]
   type AnalysisName = String
@@ -95,6 +96,7 @@ package object quicksight {
   type ProjectedColumnList = js.Array[String]
   type Query = String
   type RecoveryWindowInDays = Double
+  type RelationalTableCatalog = String
   type RelationalTableName = String
   type RelationalTableSchema = String
   type ResourceId = String
@@ -4413,6 +4415,16 @@ package quicksight {
     @inline def values = js.Array(STANDARD, ENTERPRISE)
   }
 
+  @js.native
+  sealed trait EmbeddingIdentityType extends js.Any
+  object EmbeddingIdentityType {
+    val IAM = "IAM".asInstanceOf[EmbeddingIdentityType]
+    val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[EmbeddingIdentityType]
+    val ANONYMOUS = "ANONYMOUS".asInstanceOf[EmbeddingIdentityType]
+
+    @inline def values = js.Array(IAM, QUICKSIGHT, ANONYMOUS)
+  }
+
   /** Error information for the SPICE ingestion of a dataset.
     */
   @js.native
@@ -4543,7 +4555,9 @@ package quicksight {
   trait GetDashboardEmbedUrlRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var DashboardId: RestrictiveResourceId
-    var IdentityType: IdentityType
+    var IdentityType: EmbeddingIdentityType
+    var AdditionalDashboardIds: js.UndefOr[AdditionalDashboardIdList]
+    var Namespace: js.UndefOr[Namespace]
     var ResetDisabled: js.UndefOr[Boolean]
     var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
     var StatePersistenceEnabled: js.UndefOr[Boolean]
@@ -4556,7 +4570,9 @@ package quicksight {
     def apply(
         AwsAccountId: AwsAccountId,
         DashboardId: RestrictiveResourceId,
-        IdentityType: IdentityType,
+        IdentityType: EmbeddingIdentityType,
+        AdditionalDashboardIds: js.UndefOr[AdditionalDashboardIdList] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
         ResetDisabled: js.UndefOr[Boolean] = js.undefined,
         SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined,
         StatePersistenceEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -4569,6 +4585,8 @@ package quicksight {
         "IdentityType" -> IdentityType.asInstanceOf[js.Any]
       )
 
+      AdditionalDashboardIds.foreach(__v => __obj.updateDynamic("AdditionalDashboardIds")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       ResetDisabled.foreach(__v => __obj.updateDynamic("ResetDisabled")(__v.asInstanceOf[js.Any]))
       SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
       StatePersistenceEnabled.foreach(__v => __obj.updateDynamic("StatePersistenceEnabled")(__v.asInstanceOf[js.Any]))
@@ -4578,6 +4596,8 @@ package quicksight {
     }
   }
 
+  /** Output returned from the <code>GetDashboardEmbedUrl</code> operation.
+    */
   @js.native
   trait GetDashboardEmbedUrlResponse extends js.Object {
     var EmbedUrl: js.UndefOr[EmbeddingUrl]
@@ -5034,7 +5054,7 @@ package quicksight {
     }
   }
 
-  /** Join instruction.
+  /** The instructions associated with a join.
     */
   @js.native
   trait JoinInstruction extends js.Object {
@@ -5042,6 +5062,8 @@ package quicksight {
     var OnClause: OnClause
     var RightOperand: LogicalTableId
     var Type: JoinType
+    var LeftJoinKeyProperties: js.UndefOr[JoinKeyProperties]
+    var RightJoinKeyProperties: js.UndefOr[JoinKeyProperties]
   }
 
   object JoinInstruction {
@@ -5050,7 +5072,9 @@ package quicksight {
         LeftOperand: LogicalTableId,
         OnClause: OnClause,
         RightOperand: LogicalTableId,
-        Type: JoinType
+        Type: JoinType,
+        LeftJoinKeyProperties: js.UndefOr[JoinKeyProperties] = js.undefined,
+        RightJoinKeyProperties: js.UndefOr[JoinKeyProperties] = js.undefined
     ): JoinInstruction = {
       val __obj = js.Dynamic.literal(
         "LeftOperand" -> LeftOperand.asInstanceOf[js.Any],
@@ -5058,7 +5082,28 @@ package quicksight {
         "RightOperand" -> RightOperand.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
+
+      LeftJoinKeyProperties.foreach(__v => __obj.updateDynamic("LeftJoinKeyProperties")(__v.asInstanceOf[js.Any]))
+      RightJoinKeyProperties.foreach(__v => __obj.updateDynamic("RightJoinKeyProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JoinInstruction]
+    }
+  }
+
+  /** Properties associated with the columns participating in a join.
+    */
+  @js.native
+  trait JoinKeyProperties extends js.Object {
+    var UniqueKey: js.UndefOr[Boolean]
+  }
+
+  object JoinKeyProperties {
+    @inline
+    def apply(
+        UniqueKey: js.UndefOr[Boolean] = js.undefined
+    ): JoinKeyProperties = {
+      val __obj = js.Dynamic.literal()
+      UniqueKey.foreach(__v => __obj.updateDynamic("UniqueKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JoinKeyProperties]
     }
   }
 
@@ -6622,6 +6667,7 @@ package quicksight {
     var DataSourceArn: Arn
     var InputColumns: InputColumnList
     var Name: RelationalTableName
+    var Catalog: js.UndefOr[RelationalTableCatalog]
     var Schema: js.UndefOr[RelationalTableSchema]
   }
 
@@ -6631,6 +6677,7 @@ package quicksight {
         DataSourceArn: Arn,
         InputColumns: InputColumnList,
         Name: RelationalTableName,
+        Catalog: js.UndefOr[RelationalTableCatalog] = js.undefined,
         Schema: js.UndefOr[RelationalTableSchema] = js.undefined
     ): RelationalTable = {
       val __obj = js.Dynamic.literal(
@@ -6639,6 +6686,7 @@ package quicksight {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Catalog.foreach(__v => __obj.updateDynamic("Catalog")(__v.asInstanceOf[js.Any]))
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalTable]
     }

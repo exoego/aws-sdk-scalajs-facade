@@ -7,22 +7,29 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object eks {
+  type AddonIssueList = js.Array[AddonIssue]
+  type AddonVersionInfoList = js.Array[AddonVersionInfo]
+  type Addons = js.Array[AddonInfo]
   type AutoScalingGroupList = js.Array[AutoScalingGroup]
   type BoxedBoolean = Boolean
   type BoxedInteger = Int
   type Capacity = Int
   type ClusterName = String
+  type Compatibilities = js.Array[Compatibility]
+  type DescribeAddonVersionsRequestMaxResults = Int
   type EncryptionConfigList = js.Array[EncryptionConfig]
   type ErrorDetails = js.Array[ErrorDetail]
   type FargateProfileLabel = js.Dictionary[String]
   type FargateProfileSelectors = js.Array[FargateProfileSelector]
   type FargateProfilesRequestMaxResults = Int
   type IssueList = js.Array[Issue]
+  type ListAddonsRequestMaxResults = Int
   type ListClustersRequestMaxResults = Int
   type ListNodegroupsRequestMaxResults = Int
   type ListUpdatesRequestMaxResults = Int
   type LogSetups = js.Array[LogSetup]
   type LogTypes = js.Array[LogType]
+  type RoleArn = String
   type StringList = js.Array[String]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -37,16 +44,21 @@ package object eks {
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
+    @inline def createAddonFuture(params: CreateAddonRequest): Future[CreateAddonResponse] = service.createAddon(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
     @inline def createFargateProfileFuture(params: CreateFargateProfileRequest): Future[CreateFargateProfileResponse] = service.createFargateProfile(params).promise().toFuture
     @inline def createNodegroupFuture(params: CreateNodegroupRequest): Future[CreateNodegroupResponse] = service.createNodegroup(params).promise().toFuture
+    @inline def deleteAddonFuture(params: DeleteAddonRequest): Future[DeleteAddonResponse] = service.deleteAddon(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] = service.deleteCluster(params).promise().toFuture
     @inline def deleteFargateProfileFuture(params: DeleteFargateProfileRequest): Future[DeleteFargateProfileResponse] = service.deleteFargateProfile(params).promise().toFuture
     @inline def deleteNodegroupFuture(params: DeleteNodegroupRequest): Future[DeleteNodegroupResponse] = service.deleteNodegroup(params).promise().toFuture
+    @inline def describeAddonFuture(params: DescribeAddonRequest): Future[DescribeAddonResponse] = service.describeAddon(params).promise().toFuture
+    @inline def describeAddonVersionsFuture(params: DescribeAddonVersionsRequest): Future[DescribeAddonVersionsResponse] = service.describeAddonVersions(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] = service.describeCluster(params).promise().toFuture
     @inline def describeFargateProfileFuture(params: DescribeFargateProfileRequest): Future[DescribeFargateProfileResponse] = service.describeFargateProfile(params).promise().toFuture
     @inline def describeNodegroupFuture(params: DescribeNodegroupRequest): Future[DescribeNodegroupResponse] = service.describeNodegroup(params).promise().toFuture
     @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] = service.describeUpdate(params).promise().toFuture
+    @inline def listAddonsFuture(params: ListAddonsRequest): Future[ListAddonsResponse] = service.listAddons(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
     @inline def listFargateProfilesFuture(params: ListFargateProfilesRequest): Future[ListFargateProfilesResponse] = service.listFargateProfiles(params).promise().toFuture
     @inline def listNodegroupsFuture(params: ListNodegroupsRequest): Future[ListNodegroupsResponse] = service.listNodegroups(params).promise().toFuture
@@ -54,6 +66,7 @@ package object eks {
     @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] = service.listUpdates(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAddonFuture(params: UpdateAddonRequest): Future[UpdateAddonResponse] = service.updateAddon(params).promise().toFuture
     @inline def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] = service.updateClusterConfig(params).promise().toFuture
     @inline def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] = service.updateClusterVersion(params).promise().toFuture
     @inline def updateNodegroupConfigFuture(params: UpdateNodegroupConfigRequest): Future[UpdateNodegroupConfigResponse] = service.updateNodegroupConfig(params).promise().toFuture
@@ -68,16 +81,21 @@ package eks {
   class EKS() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createAddon(params: CreateAddonRequest): Request[CreateAddonResponse] = js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createFargateProfile(params: CreateFargateProfileRequest): Request[CreateFargateProfileResponse] = js.native
     def createNodegroup(params: CreateNodegroupRequest): Request[CreateNodegroupResponse] = js.native
+    def deleteAddon(params: DeleteAddonRequest): Request[DeleteAddonResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def deleteFargateProfile(params: DeleteFargateProfileRequest): Request[DeleteFargateProfileResponse] = js.native
     def deleteNodegroup(params: DeleteNodegroupRequest): Request[DeleteNodegroupResponse] = js.native
+    def describeAddon(params: DescribeAddonRequest): Request[DescribeAddonResponse] = js.native
+    def describeAddonVersions(params: DescribeAddonVersionsRequest): Request[DescribeAddonVersionsResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
     def describeFargateProfile(params: DescribeFargateProfileRequest): Request[DescribeFargateProfileResponse] = js.native
     def describeNodegroup(params: DescribeNodegroupRequest): Request[DescribeNodegroupResponse] = js.native
     def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse] = js.native
+    def listAddons(params: ListAddonsRequest): Request[ListAddonsResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
     def listFargateProfiles(params: ListFargateProfilesRequest): Request[ListFargateProfilesResponse] = js.native
     def listNodegroups(params: ListNodegroupsRequest): Request[ListNodegroupsResponse] = js.native
@@ -85,6 +103,7 @@ package eks {
     def listUpdates(params: ListUpdatesRequest): Request[ListUpdatesResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAddon(params: UpdateAddonRequest): Request[UpdateAddonResponse] = js.native
     def updateClusterConfig(params: UpdateClusterConfigRequest): Request[UpdateClusterConfigResponse] = js.native
     def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse] = js.native
     def updateNodegroupConfig(params: UpdateNodegroupConfigRequest): Request[UpdateNodegroupConfigResponse] = js.native
@@ -99,6 +118,167 @@ package eks {
     val AL2_ARM_64 = "AL2_ARM_64".asInstanceOf[AMITypes]
 
     @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
+  }
+
+  /** An Amazon EKS add-on.
+    */
+  @js.native
+  trait Addon extends js.Object {
+    var addonArn: js.UndefOr[String]
+    var addonName: js.UndefOr[String]
+    var addonVersion: js.UndefOr[String]
+    var clusterName: js.UndefOr[ClusterName]
+    var createdAt: js.UndefOr[Timestamp]
+    var health: js.UndefOr[AddonHealth]
+    var modifiedAt: js.UndefOr[Timestamp]
+    var serviceAccountRoleArn: js.UndefOr[String]
+    var status: js.UndefOr[AddonStatus]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object Addon {
+    @inline
+    def apply(
+        addonArn: js.UndefOr[String] = js.undefined,
+        addonName: js.UndefOr[String] = js.undefined,
+        addonVersion: js.UndefOr[String] = js.undefined,
+        clusterName: js.UndefOr[ClusterName] = js.undefined,
+        createdAt: js.UndefOr[Timestamp] = js.undefined,
+        health: js.UndefOr[AddonHealth] = js.undefined,
+        modifiedAt: js.UndefOr[Timestamp] = js.undefined,
+        serviceAccountRoleArn: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[AddonStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): Addon = {
+      val __obj = js.Dynamic.literal()
+      addonArn.foreach(__v => __obj.updateDynamic("addonArn")(__v.asInstanceOf[js.Any]))
+      addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
+      addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
+      clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
+      modifiedAt.foreach(__v => __obj.updateDynamic("modifiedAt")(__v.asInstanceOf[js.Any]))
+      serviceAccountRoleArn.foreach(__v => __obj.updateDynamic("serviceAccountRoleArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Addon]
+    }
+  }
+
+  /** The health of the add-on.
+    */
+  @js.native
+  trait AddonHealth extends js.Object {
+    var issues: js.UndefOr[AddonIssueList]
+  }
+
+  object AddonHealth {
+    @inline
+    def apply(
+        issues: js.UndefOr[AddonIssueList] = js.undefined
+    ): AddonHealth = {
+      val __obj = js.Dynamic.literal()
+      issues.foreach(__v => __obj.updateDynamic("issues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddonHealth]
+    }
+  }
+
+  /** Information about an add-on.
+    */
+  @js.native
+  trait AddonInfo extends js.Object {
+    var addonName: js.UndefOr[String]
+    var addonVersions: js.UndefOr[AddonVersionInfoList]
+    var `type`: js.UndefOr[String]
+  }
+
+  object AddonInfo {
+    @inline
+    def apply(
+        addonName: js.UndefOr[String] = js.undefined,
+        addonVersions: js.UndefOr[AddonVersionInfoList] = js.undefined,
+        `type`: js.UndefOr[String] = js.undefined
+    ): AddonInfo = {
+      val __obj = js.Dynamic.literal()
+      addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
+      addonVersions.foreach(__v => __obj.updateDynamic("addonVersions")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddonInfo]
+    }
+  }
+
+  /** An issue related to an add-on.
+    */
+  @js.native
+  trait AddonIssue extends js.Object {
+    var code: js.UndefOr[AddonIssueCode]
+    var message: js.UndefOr[String]
+    var resourceIds: js.UndefOr[StringList]
+  }
+
+  object AddonIssue {
+    @inline
+    def apply(
+        code: js.UndefOr[AddonIssueCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined,
+        resourceIds: js.UndefOr[StringList] = js.undefined
+    ): AddonIssue = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      resourceIds.foreach(__v => __obj.updateDynamic("resourceIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddonIssue]
+    }
+  }
+
+  @js.native
+  sealed trait AddonIssueCode extends js.Any
+  object AddonIssueCode {
+    val AccessDenied = "AccessDenied".asInstanceOf[AddonIssueCode]
+    val InternalFailure = "InternalFailure".asInstanceOf[AddonIssueCode]
+    val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[AddonIssueCode]
+    val InsufficientNumberOfReplicas = "InsufficientNumberOfReplicas".asInstanceOf[AddonIssueCode]
+    val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[AddonIssueCode]
+
+    @inline def values = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict)
+  }
+
+  @js.native
+  sealed trait AddonStatus extends js.Any
+  object AddonStatus {
+    val CREATING = "CREATING".asInstanceOf[AddonStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[AddonStatus]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[AddonStatus]
+    val UPDATING = "UPDATING".asInstanceOf[AddonStatus]
+    val DELETING = "DELETING".asInstanceOf[AddonStatus]
+    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AddonStatus]
+    val DEGRADED = "DEGRADED".asInstanceOf[AddonStatus]
+
+    @inline def values = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED)
+  }
+
+  /** Information about an add-on version.
+    */
+  @js.native
+  trait AddonVersionInfo extends js.Object {
+    var addonVersion: js.UndefOr[String]
+    var architecture: js.UndefOr[StringList]
+    var compatibilities: js.UndefOr[Compatibilities]
+  }
+
+  object AddonVersionInfo {
+    @inline
+    def apply(
+        addonVersion: js.UndefOr[String] = js.undefined,
+        architecture: js.UndefOr[StringList] = js.undefined,
+        compatibilities: js.UndefOr[Compatibilities] = js.undefined
+    ): AddonVersionInfo = {
+      val __obj = js.Dynamic.literal()
+      addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
+      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
+      compatibilities.foreach(__v => __obj.updateDynamic("compatibilities")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddonVersionInfo]
+    }
   }
 
   /** An Auto Scaling group that is associated with an Amazon EKS managed node group.
@@ -117,6 +297,15 @@ package eks {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroup]
     }
+  }
+
+  @js.native
+  sealed trait CapacityTypes extends js.Any
+  object CapacityTypes {
+    val ON_DEMAND = "ON_DEMAND".asInstanceOf[CapacityTypes]
+    val SPOT = "SPOT".asInstanceOf[CapacityTypes]
+
+    @inline def values = js.Array(ON_DEMAND, SPOT)
   }
 
   /** An object representing the <code>certificate-authority-data</code> for your cluster.
@@ -210,6 +399,82 @@ package eks {
     val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
     @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
+  }
+
+  /** Compatibility information.
+    */
+  @js.native
+  trait Compatibility extends js.Object {
+    var clusterVersion: js.UndefOr[String]
+    var defaultVersion: js.UndefOr[Boolean]
+    var platformVersions: js.UndefOr[StringList]
+  }
+
+  object Compatibility {
+    @inline
+    def apply(
+        clusterVersion: js.UndefOr[String] = js.undefined,
+        defaultVersion: js.UndefOr[Boolean] = js.undefined,
+        platformVersions: js.UndefOr[StringList] = js.undefined
+    ): Compatibility = {
+      val __obj = js.Dynamic.literal()
+      clusterVersion.foreach(__v => __obj.updateDynamic("clusterVersion")(__v.asInstanceOf[js.Any]))
+      defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
+      platformVersions.foreach(__v => __obj.updateDynamic("platformVersions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Compatibility]
+    }
+  }
+
+  @js.native
+  trait CreateAddonRequest extends js.Object {
+    var addonName: String
+    var clusterName: ClusterName
+    var addonVersion: js.UndefOr[String]
+    var clientRequestToken: js.UndefOr[String]
+    var resolveConflicts: js.UndefOr[ResolveConflicts]
+    var serviceAccountRoleArn: js.UndefOr[RoleArn]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateAddonRequest {
+    @inline
+    def apply(
+        addonName: String,
+        clusterName: ClusterName,
+        addonVersion: js.UndefOr[String] = js.undefined,
+        clientRequestToken: js.UndefOr[String] = js.undefined,
+        resolveConflicts: js.UndefOr[ResolveConflicts] = js.undefined,
+        serviceAccountRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateAddonRequest = {
+      val __obj = js.Dynamic.literal(
+        "addonName" -> addonName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any]
+      )
+
+      addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      resolveConflicts.foreach(__v => __obj.updateDynamic("resolveConflicts")(__v.asInstanceOf[js.Any]))
+      serviceAccountRoleArn.foreach(__v => __obj.updateDynamic("serviceAccountRoleArn")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAddonRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAddonResponse extends js.Object {
+    var addon: js.UndefOr[Addon]
+  }
+
+  object CreateAddonResponse {
+    @inline
+    def apply(
+        addon: js.UndefOr[Addon] = js.undefined
+    ): CreateAddonResponse = {
+      val __obj = js.Dynamic.literal()
+      addon.foreach(__v => __obj.updateDynamic("addon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAddonResponse]
+    }
   }
 
   @js.native
@@ -329,6 +594,7 @@ package eks {
     var nodegroupName: String
     var subnets: StringList
     var amiType: js.UndefOr[AMITypes]
+    var capacityType: js.UndefOr[CapacityTypes]
     var clientRequestToken: js.UndefOr[String]
     var diskSize: js.UndefOr[BoxedInteger]
     var instanceTypes: js.UndefOr[StringList]
@@ -349,6 +615,7 @@ package eks {
         nodegroupName: String,
         subnets: StringList,
         amiType: js.UndefOr[AMITypes] = js.undefined,
+        capacityType: js.UndefOr[CapacityTypes] = js.undefined,
         clientRequestToken: js.UndefOr[String] = js.undefined,
         diskSize: js.UndefOr[BoxedInteger] = js.undefined,
         instanceTypes: js.UndefOr[StringList] = js.undefined,
@@ -368,6 +635,7 @@ package eks {
       )
 
       amiType.foreach(__v => __obj.updateDynamic("amiType")(__v.asInstanceOf[js.Any]))
+      capacityType.foreach(__v => __obj.updateDynamic("capacityType")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       diskSize.foreach(__v => __obj.updateDynamic("diskSize")(__v.asInstanceOf[js.Any]))
       instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
@@ -395,6 +663,42 @@ package eks {
       val __obj = js.Dynamic.literal()
       nodegroup.foreach(__v => __obj.updateDynamic("nodegroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNodegroupResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteAddonRequest extends js.Object {
+    var addonName: String
+    var clusterName: ClusterName
+  }
+
+  object DeleteAddonRequest {
+    @inline
+    def apply(
+        addonName: String,
+        clusterName: ClusterName
+    ): DeleteAddonRequest = {
+      val __obj = js.Dynamic.literal(
+        "addonName" -> addonName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAddonRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAddonResponse extends js.Object {
+    var addon: js.UndefOr[Addon]
+  }
+
+  object DeleteAddonResponse {
+    @inline
+    def apply(
+        addon: js.UndefOr[Addon] = js.undefined
+    ): DeleteAddonResponse = {
+      val __obj = js.Dynamic.literal()
+      addon.foreach(__v => __obj.updateDynamic("addon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAddonResponse]
     }
   }
 
@@ -500,6 +804,86 @@ package eks {
       val __obj = js.Dynamic.literal()
       nodegroup.foreach(__v => __obj.updateDynamic("nodegroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteNodegroupResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAddonRequest extends js.Object {
+    var addonName: String
+    var clusterName: ClusterName
+  }
+
+  object DescribeAddonRequest {
+    @inline
+    def apply(
+        addonName: String,
+        clusterName: ClusterName
+    ): DescribeAddonRequest = {
+      val __obj = js.Dynamic.literal(
+        "addonName" -> addonName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAddonRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAddonResponse extends js.Object {
+    var addon: js.UndefOr[Addon]
+  }
+
+  object DescribeAddonResponse {
+    @inline
+    def apply(
+        addon: js.UndefOr[Addon] = js.undefined
+    ): DescribeAddonResponse = {
+      val __obj = js.Dynamic.literal()
+      addon.foreach(__v => __obj.updateDynamic("addon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAddonResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAddonVersionsRequest extends js.Object {
+    var addonName: js.UndefOr[String]
+    var kubernetesVersion: js.UndefOr[String]
+    var maxResults: js.UndefOr[DescribeAddonVersionsRequestMaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object DescribeAddonVersionsRequest {
+    @inline
+    def apply(
+        addonName: js.UndefOr[String] = js.undefined,
+        kubernetesVersion: js.UndefOr[String] = js.undefined,
+        maxResults: js.UndefOr[DescribeAddonVersionsRequestMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeAddonVersionsRequest = {
+      val __obj = js.Dynamic.literal()
+      addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
+      kubernetesVersion.foreach(__v => __obj.updateDynamic("kubernetesVersion")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAddonVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAddonVersionsResponse extends js.Object {
+    var addons: js.UndefOr[Addons]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object DescribeAddonVersionsResponse {
+    @inline
+    def apply(
+        addons: js.UndefOr[Addons] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeAddonVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      addons.foreach(__v => __obj.updateDynamic("addons")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAddonVersionsResponse]
     }
   }
 
@@ -612,6 +996,7 @@ package eks {
   trait DescribeUpdateRequest extends js.Object {
     var name: String
     var updateId: String
+    var addonName: js.UndefOr[String]
     var nodegroupName: js.UndefOr[String]
   }
 
@@ -620,6 +1005,7 @@ package eks {
     def apply(
         name: String,
         updateId: String,
+        addonName: js.UndefOr[String] = js.undefined,
         nodegroupName: js.UndefOr[String] = js.undefined
     ): DescribeUpdateRequest = {
       val __obj = js.Dynamic.literal(
@@ -627,6 +1013,7 @@ package eks {
         "updateId" -> updateId.asInstanceOf[js.Any]
       )
 
+      addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
       nodegroupName.foreach(__v => __obj.updateDynamic("nodegroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUpdateRequest]
     }
@@ -684,6 +1071,8 @@ package eks {
     val PodEvictionFailure = "PodEvictionFailure".asInstanceOf[ErrorCode]
     val InsufficientFreeAddresses = "InsufficientFreeAddresses".asInstanceOf[ErrorCode]
     val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[ErrorCode]
+    val InsufficientNumberOfReplicas = "InsufficientNumberOfReplicas".asInstanceOf[ErrorCode]
+    val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[ErrorCode]
 
     @inline def values = js.Array(
       SubnetNotFound,
@@ -697,7 +1086,9 @@ package eks {
       NodeCreationFailure,
       PodEvictionFailure,
       InsufficientFreeAddresses,
-      ClusterUnreachable
+      ClusterUnreachable,
+      InsufficientNumberOfReplicas,
+      ConfigurationConflict
     )
   }
 
@@ -904,6 +1295,49 @@ package eks {
   }
 
   @js.native
+  trait ListAddonsRequest extends js.Object {
+    var clusterName: ClusterName
+    var maxResults: js.UndefOr[ListAddonsRequestMaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListAddonsRequest {
+    @inline
+    def apply(
+        clusterName: ClusterName,
+        maxResults: js.UndefOr[ListAddonsRequestMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListAddonsRequest = {
+      val __obj = js.Dynamic.literal(
+        "clusterName" -> clusterName.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAddonsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAddonsResponse extends js.Object {
+    var addons: js.UndefOr[StringList]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListAddonsResponse {
+    @inline
+    def apply(
+        addons: js.UndefOr[StringList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListAddonsResponse = {
+      val __obj = js.Dynamic.literal()
+      addons.foreach(__v => __obj.updateDynamic("addons")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAddonsResponse]
+    }
+  }
+
+  @js.native
   trait ListClustersRequest extends js.Object {
     var maxResults: js.UndefOr[ListClustersRequestMaxResults]
     var nextToken: js.UndefOr[String]
@@ -1063,6 +1497,7 @@ package eks {
   @js.native
   trait ListUpdatesRequest extends js.Object {
     var name: String
+    var addonName: js.UndefOr[String]
     var maxResults: js.UndefOr[ListUpdatesRequestMaxResults]
     var nextToken: js.UndefOr[String]
     var nodegroupName: js.UndefOr[String]
@@ -1072,6 +1507,7 @@ package eks {
     @inline
     def apply(
         name: String,
+        addonName: js.UndefOr[String] = js.undefined,
         maxResults: js.UndefOr[ListUpdatesRequestMaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined,
         nodegroupName: js.UndefOr[String] = js.undefined
@@ -1080,6 +1516,7 @@ package eks {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       nodegroupName.foreach(__v => __obj.updateDynamic("nodegroupName")(__v.asInstanceOf[js.Any]))
@@ -1162,6 +1599,7 @@ package eks {
   @js.native
   trait Nodegroup extends js.Object {
     var amiType: js.UndefOr[AMITypes]
+    var capacityType: js.UndefOr[CapacityTypes]
     var clusterName: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
     var diskSize: js.UndefOr[BoxedInteger]
@@ -1187,6 +1625,7 @@ package eks {
     @inline
     def apply(
         amiType: js.UndefOr[AMITypes] = js.undefined,
+        capacityType: js.UndefOr[CapacityTypes] = js.undefined,
         clusterName: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         diskSize: js.UndefOr[BoxedInteger] = js.undefined,
@@ -1209,6 +1648,7 @@ package eks {
     ): Nodegroup = {
       val __obj = js.Dynamic.literal()
       amiType.foreach(__v => __obj.updateDynamic("amiType")(__v.asInstanceOf[js.Any]))
+      capacityType.foreach(__v => __obj.updateDynamic("capacityType")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       diskSize.foreach(__v => __obj.updateDynamic("diskSize")(__v.asInstanceOf[js.Any]))
@@ -1411,6 +1851,15 @@ package eks {
   }
 
   @js.native
+  sealed trait ResolveConflicts extends js.Any
+  object ResolveConflicts {
+    val OVERWRITE = "OVERWRITE".asInstanceOf[ResolveConflicts]
+    val NONE = "NONE".asInstanceOf[ResolveConflicts]
+
+    @inline def values = js.Array(OVERWRITE, NONE)
+  }
+
+  @js.native
   trait TagResourceRequest extends js.Object {
     var resourceArn: String
     var tags: TagMap
@@ -1502,6 +1951,55 @@ package eks {
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Update]
+    }
+  }
+
+  @js.native
+  trait UpdateAddonRequest extends js.Object {
+    var addonName: String
+    var clusterName: ClusterName
+    var addonVersion: js.UndefOr[String]
+    var clientRequestToken: js.UndefOr[String]
+    var resolveConflicts: js.UndefOr[ResolveConflicts]
+    var serviceAccountRoleArn: js.UndefOr[RoleArn]
+  }
+
+  object UpdateAddonRequest {
+    @inline
+    def apply(
+        addonName: String,
+        clusterName: ClusterName,
+        addonVersion: js.UndefOr[String] = js.undefined,
+        clientRequestToken: js.UndefOr[String] = js.undefined,
+        resolveConflicts: js.UndefOr[ResolveConflicts] = js.undefined,
+        serviceAccountRoleArn: js.UndefOr[RoleArn] = js.undefined
+    ): UpdateAddonRequest = {
+      val __obj = js.Dynamic.literal(
+        "addonName" -> addonName.asInstanceOf[js.Any],
+        "clusterName" -> clusterName.asInstanceOf[js.Any]
+      )
+
+      addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      resolveConflicts.foreach(__v => __obj.updateDynamic("resolveConflicts")(__v.asInstanceOf[js.Any]))
+      serviceAccountRoleArn.foreach(__v => __obj.updateDynamic("serviceAccountRoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAddonRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAddonResponse extends js.Object {
+    var update: js.UndefOr[Update]
+  }
+
+  object UpdateAddonResponse {
+    @inline
+    def apply(
+        update: js.UndefOr[Update] = js.undefined
+    ): UpdateAddonResponse = {
+      val __obj = js.Dynamic.literal()
+      update.foreach(__v => __obj.updateDynamic("update")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAddonResponse]
     }
   }
 
@@ -1743,6 +2241,9 @@ package eks {
     val MinSize = "MinSize".asInstanceOf[UpdateParamType]
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
+    val AddonVersion = "AddonVersion".asInstanceOf[UpdateParamType]
+    val ServiceAccountRoleArn = "ServiceAccountRoleArn".asInstanceOf[UpdateParamType]
+    val ResolveConflicts = "ResolveConflicts".asInstanceOf[UpdateParamType]
 
     @inline def values = js.Array(
       Version,
@@ -1756,7 +2257,10 @@ package eks {
       MaxSize,
       MinSize,
       ReleaseVersion,
-      PublicAccessCidrs
+      PublicAccessCidrs,
+      AddonVersion,
+      ServiceAccountRoleArn,
+      ResolveConflicts
     )
   }
 
@@ -1778,8 +2282,9 @@ package eks {
     val EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
     val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
     val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
+    val AddonUpdate = "AddonUpdate".asInstanceOf[UpdateType]
 
-    @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate)
+    @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate, AddonUpdate)
   }
 
   /** An object representing the VPC configuration to use for an Amazon EKS cluster.

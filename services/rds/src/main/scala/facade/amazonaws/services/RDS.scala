@@ -26,6 +26,7 @@ package object rds {
   type DBClusterSnapshotList = js.Array[DBClusterSnapshot]
   type DBEngineVersionList = js.Array[DBEngineVersion]
   type DBInstanceAutomatedBackupList = js.Array[DBInstanceAutomatedBackup]
+  type DBInstanceAutomatedBackupsReplicationList = js.Array[DBInstanceAutomatedBackupsReplication]
   type DBInstanceList = js.Array[DBInstance]
   type DBInstanceRoles = js.Array[DBInstanceRole]
   type DBInstanceStatusInfoList = js.Array[DBInstanceStatusInfo]
@@ -233,10 +234,12 @@ package object rds {
     @inline def revokeDBSecurityGroupIngressFuture(params: RevokeDBSecurityGroupIngressMessage): Future[RevokeDBSecurityGroupIngressResult] = service.revokeDBSecurityGroupIngress(params).promise().toFuture
     @inline def startActivityStreamFuture(params: StartActivityStreamRequest): Future[StartActivityStreamResponse] = service.startActivityStream(params).promise().toFuture
     @inline def startDBClusterFuture(params: StartDBClusterMessage): Future[StartDBClusterResult] = service.startDBCluster(params).promise().toFuture
+    @inline def startDBInstanceAutomatedBackupsReplicationFuture(params: StartDBInstanceAutomatedBackupsReplicationMessage): Future[StartDBInstanceAutomatedBackupsReplicationResult] = service.startDBInstanceAutomatedBackupsReplication(params).promise().toFuture
     @inline def startDBInstanceFuture(params: StartDBInstanceMessage): Future[StartDBInstanceResult] = service.startDBInstance(params).promise().toFuture
     @inline def startExportTaskFuture(params: StartExportTaskMessage): Future[ExportTask] = service.startExportTask(params).promise().toFuture
     @inline def stopActivityStreamFuture(params: StopActivityStreamRequest): Future[StopActivityStreamResponse] = service.stopActivityStream(params).promise().toFuture
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
+    @inline def stopDBInstanceAutomatedBackupsReplicationFuture(params: StopDBInstanceAutomatedBackupsReplicationMessage): Future[StopDBInstanceAutomatedBackupsReplicationResult] = service.stopDBInstanceAutomatedBackupsReplication(params).promise().toFuture
     @inline def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] = service.stopDBInstance(params).promise().toFuture
 
   }
@@ -374,10 +377,12 @@ package rds {
     def startActivityStream(params: StartActivityStreamRequest): Request[StartActivityStreamResponse] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
     def startDBInstance(params: StartDBInstanceMessage): Request[StartDBInstanceResult] = js.native
+    def startDBInstanceAutomatedBackupsReplication(params: StartDBInstanceAutomatedBackupsReplicationMessage): Request[StartDBInstanceAutomatedBackupsReplicationResult] = js.native
     def startExportTask(params: StartExportTaskMessage): Request[ExportTask] = js.native
     def stopActivityStream(params: StopActivityStreamRequest): Request[StopActivityStreamResponse] = js.native
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
     def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult] = js.native
+    def stopDBInstanceAutomatedBackupsReplication(params: StopDBInstanceAutomatedBackupsReplicationMessage): Request[StopDBInstanceAutomatedBackupsReplicationResult] = js.native
   }
 
   /** Data returned by the ```DescribeAccountAttributes``` action.
@@ -2978,6 +2983,7 @@ package rds {
     var CopyTagsToSnapshot: js.UndefOr[Boolean]
     var DBClusterIdentifier: js.UndefOr[String]
     var DBInstanceArn: js.UndefOr[String]
+    var DBInstanceAutomatedBackupsReplications: js.UndefOr[DBInstanceAutomatedBackupsReplicationList]
     var DBInstanceClass: js.UndefOr[String]
     var DBInstanceIdentifier: js.UndefOr[String]
     var DBInstanceStatus: js.UndefOr[String]
@@ -3044,6 +3050,7 @@ package rds {
         CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceArn: js.UndefOr[String] = js.undefined,
+        DBInstanceAutomatedBackupsReplications: js.UndefOr[DBInstanceAutomatedBackupsReplicationList] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceStatus: js.UndefOr[String] = js.undefined,
@@ -3107,6 +3114,7 @@ package rds {
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceArn.foreach(__v => __obj.updateDynamic("DBInstanceArn")(__v.asInstanceOf[js.Any]))
+      DBInstanceAutomatedBackupsReplications.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsReplications")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceStatus.foreach(__v => __obj.updateDynamic("DBInstanceStatus")(__v.asInstanceOf[js.Any]))
@@ -3162,13 +3170,16 @@ package rds {
     }
   }
 
-  /** An automated backup of a DB instance. It it consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.
+  /** An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.
     */
   @js.native
   trait DBInstanceAutomatedBackup extends js.Object {
     var AllocatedStorage: js.UndefOr[Int]
     var AvailabilityZone: js.UndefOr[String]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var DBInstanceArn: js.UndefOr[String]
+    var DBInstanceAutomatedBackupsArn: js.UndefOr[String]
+    var DBInstanceAutomatedBackupsReplications: js.UndefOr[DBInstanceAutomatedBackupsReplicationList]
     var DBInstanceIdentifier: js.UndefOr[String]
     var DbiResourceId: js.UndefOr[String]
     var Encrypted: js.UndefOr[Boolean]
@@ -3196,7 +3207,10 @@ package rds {
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         DBInstanceArn: js.UndefOr[String] = js.undefined,
+        DBInstanceAutomatedBackupsArn: js.UndefOr[String] = js.undefined,
+        DBInstanceAutomatedBackupsReplications: js.UndefOr[DBInstanceAutomatedBackupsReplicationList] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         DbiResourceId: js.UndefOr[String] = js.undefined,
         Encrypted: js.UndefOr[Boolean] = js.undefined,
@@ -3221,7 +3235,10 @@ package rds {
       val __obj = js.Dynamic.literal()
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       DBInstanceArn.foreach(__v => __obj.updateDynamic("DBInstanceArn")(__v.asInstanceOf[js.Any]))
+      DBInstanceAutomatedBackupsArn.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsArn")(__v.asInstanceOf[js.Any]))
+      DBInstanceAutomatedBackupsReplications.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsReplications")(__v.asInstanceOf[js.Any]))
       DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
@@ -3264,6 +3281,24 @@ package rds {
       DBInstanceAutomatedBackups.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackups")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBInstanceAutomatedBackupMessage]
+    }
+  }
+
+  /** Automated backups of a DB instance replicated to another AWS Region. They consist of system backups, transaction logs, and database instance properties.
+    */
+  @js.native
+  trait DBInstanceAutomatedBackupsReplication extends js.Object {
+    var DBInstanceAutomatedBackupsArn: js.UndefOr[String]
+  }
+
+  object DBInstanceAutomatedBackupsReplication {
+    @inline
+    def apply(
+        DBInstanceAutomatedBackupsArn: js.UndefOr[String] = js.undefined
+    ): DBInstanceAutomatedBackupsReplication = {
+      val __obj = js.Dynamic.literal()
+      DBInstanceAutomatedBackupsArn.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBInstanceAutomatedBackupsReplication]
     }
   }
 
@@ -4062,17 +4097,19 @@ package rds {
     */
   @js.native
   trait DeleteDBInstanceAutomatedBackupMessage extends js.Object {
-    var DbiResourceId: String
+    var DBInstanceAutomatedBackupsArn: js.UndefOr[String]
+    var DbiResourceId: js.UndefOr[String]
   }
 
   object DeleteDBInstanceAutomatedBackupMessage {
     @inline
     def apply(
-        DbiResourceId: String
+        DBInstanceAutomatedBackupsArn: js.UndefOr[String] = js.undefined,
+        DbiResourceId: js.UndefOr[String] = js.undefined
     ): DeleteDBInstanceAutomatedBackupMessage = {
-      val __obj = js.Dynamic.literal(
-        "DbiResourceId" -> DbiResourceId.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      DBInstanceAutomatedBackupsArn.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsArn")(__v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBInstanceAutomatedBackupMessage]
     }
   }
@@ -4740,6 +4777,7 @@ package rds {
     */
   @js.native
   trait DescribeDBInstanceAutomatedBackupsMessage extends js.Object {
+    var DBInstanceAutomatedBackupsArn: js.UndefOr[String]
     var DBInstanceIdentifier: js.UndefOr[String]
     var DbiResourceId: js.UndefOr[String]
     var Filters: js.UndefOr[FilterList]
@@ -4750,6 +4788,7 @@ package rds {
   object DescribeDBInstanceAutomatedBackupsMessage {
     @inline
     def apply(
+        DBInstanceAutomatedBackupsArn: js.UndefOr[String] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         DbiResourceId: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4757,6 +4796,7 @@ package rds {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBInstanceAutomatedBackupsMessage = {
       val __obj = js.Dynamic.literal()
+      DBInstanceAutomatedBackupsArn.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsArn")(__v.asInstanceOf[js.Any]))
       DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
@@ -9269,6 +9309,7 @@ package rds {
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var RestoreTime: js.UndefOr[TStamp]
+    var SourceDBInstanceAutomatedBackupsArn: js.UndefOr[String]
     var SourceDBInstanceIdentifier: js.UndefOr[String]
     var SourceDbiResourceId: js.UndefOr[String]
     var StorageType: js.UndefOr[String]
@@ -9306,6 +9347,7 @@ package rds {
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         RestoreTime: js.UndefOr[TStamp] = js.undefined,
+        SourceDBInstanceAutomatedBackupsArn: js.UndefOr[String] = js.undefined,
         SourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         SourceDbiResourceId: js.UndefOr[String] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
@@ -9342,6 +9384,7 @@ package rds {
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       RestoreTime.foreach(__v => __obj.updateDynamic("RestoreTime")(__v.asInstanceOf[js.Any]))
+      SourceDBInstanceAutomatedBackupsArn.foreach(__v => __obj.updateDynamic("SourceDBInstanceAutomatedBackupsArn")(__v.asInstanceOf[js.Any]))
       SourceDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("SourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       SourceDbiResourceId.foreach(__v => __obj.updateDynamic("SourceDbiResourceId")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -9509,6 +9552,7 @@ package rds {
     var Endpoint: js.UndefOr[String]
     var RegionName: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var SupportsDBInstanceAutomatedBackupsReplication: js.UndefOr[Boolean]
   }
 
   object SourceRegion {
@@ -9516,12 +9560,14 @@ package rds {
     def apply(
         Endpoint: js.UndefOr[String] = js.undefined,
         RegionName: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined
+        Status: js.UndefOr[String] = js.undefined,
+        SupportsDBInstanceAutomatedBackupsReplication: js.UndefOr[Boolean] = js.undefined
     ): SourceRegion = {
       val __obj = js.Dynamic.literal()
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SupportsDBInstanceAutomatedBackupsReplication.foreach(__v => __obj.updateDynamic("SupportsDBInstanceAutomatedBackupsReplication")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceRegion]
     }
   }
@@ -9645,6 +9691,49 @@ package rds {
       val __obj = js.Dynamic.literal()
       DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDBClusterResult]
+    }
+  }
+
+  @js.native
+  trait StartDBInstanceAutomatedBackupsReplicationMessage extends js.Object {
+    var SourceDBInstanceArn: String
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var KmsKeyId: js.UndefOr[String]
+    var PreSignedUrl: js.UndefOr[String]
+  }
+
+  object StartDBInstanceAutomatedBackupsReplicationMessage {
+    @inline
+    def apply(
+        SourceDBInstanceArn: String,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        PreSignedUrl: js.UndefOr[String] = js.undefined
+    ): StartDBInstanceAutomatedBackupsReplicationMessage = {
+      val __obj = js.Dynamic.literal(
+        "SourceDBInstanceArn" -> SourceDBInstanceArn.asInstanceOf[js.Any]
+      )
+
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDBInstanceAutomatedBackupsReplicationMessage]
+    }
+  }
+
+  @js.native
+  trait StartDBInstanceAutomatedBackupsReplicationResult extends js.Object {
+    var DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup]
+  }
+
+  object StartDBInstanceAutomatedBackupsReplicationResult {
+    @inline
+    def apply(
+        DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup] = js.undefined
+    ): StartDBInstanceAutomatedBackupsReplicationResult = {
+      val __obj = js.Dynamic.literal()
+      DBInstanceAutomatedBackup.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDBInstanceAutomatedBackupsReplicationResult]
     }
   }
 
@@ -9790,6 +9879,39 @@ package rds {
       val __obj = js.Dynamic.literal()
       DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopDBClusterResult]
+    }
+  }
+
+  @js.native
+  trait StopDBInstanceAutomatedBackupsReplicationMessage extends js.Object {
+    var SourceDBInstanceArn: String
+  }
+
+  object StopDBInstanceAutomatedBackupsReplicationMessage {
+    @inline
+    def apply(
+        SourceDBInstanceArn: String
+    ): StopDBInstanceAutomatedBackupsReplicationMessage = {
+      val __obj = js.Dynamic.literal(
+        "SourceDBInstanceArn" -> SourceDBInstanceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopDBInstanceAutomatedBackupsReplicationMessage]
+    }
+  }
+
+  @js.native
+  trait StopDBInstanceAutomatedBackupsReplicationResult extends js.Object {
+    var DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup]
+  }
+
+  object StopDBInstanceAutomatedBackupsReplicationResult {
+    @inline
+    def apply(
+        DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup] = js.undefined
+    ): StopDBInstanceAutomatedBackupsReplicationResult = {
+      val __obj = js.Dynamic.literal()
+      DBInstanceAutomatedBackup.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopDBInstanceAutomatedBackupsReplicationResult]
     }
   }
 

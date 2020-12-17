@@ -18,6 +18,9 @@ package object iotanalytics {
   type ChannelArn = String
   type ChannelName = String
   type ChannelSummaries = js.Array[ChannelSummary]
+  type ColumnDataType = String
+  type ColumnName = String
+  type Columns = js.Array[Column]
   type DatasetActionName = String
   type DatasetActionSummaries = js.Array[DatasetActionSummary]
   type DatasetActions = js.Array[DatasetAction]
@@ -72,6 +75,8 @@ package object iotanalytics {
   type RetentionPeriodInDays = Int
   type RoleArn = String
   type S3KeyPrefix = String
+  type S3PathChannelMessage = String
+  type S3PathChannelMessages = js.Array[S3PathChannelMessage]
   type ScheduleExpression = String
   type SessionTimeoutInMinutes = Int
   type SizeInBytes = Double
@@ -354,6 +359,24 @@ package iotanalytics {
     }
   }
 
+  /** Specifies one or more sets of channel messages.
+    */
+  @js.native
+  trait ChannelMessages extends js.Object {
+    var s3Paths: js.UndefOr[S3PathChannelMessages]
+  }
+
+  object ChannelMessages {
+    @inline
+    def apply(
+        s3Paths: js.UndefOr[S3PathChannelMessages] = js.undefined
+    ): ChannelMessages = {
+      val __obj = js.Dynamic.literal()
+      s3Paths.foreach(__v => __obj.updateDynamic("s3Paths")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChannelMessages]
+    }
+  }
+
   /** Statistics information about the channel.
     */
   @js.native
@@ -454,6 +477,28 @@ package iotanalytics {
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSummary]
+    }
+  }
+
+  /** Contains information about a column that stores your data.
+    */
+  @js.native
+  trait Column extends js.Object {
+    var name: ColumnName
+    var `type`: ColumnDataType
+  }
+
+  object Column {
+    @inline
+    def apply(
+        name: ColumnName,
+        `type`: ColumnDataType
+    ): Column = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Column]
     }
   }
 
@@ -646,6 +691,7 @@ package iotanalytics {
   trait CreateDatastoreRequest extends js.Object {
     var datastoreName: DatastoreName
     var datastoreStorage: js.UndefOr[DatastoreStorage]
+    var fileFormatConfiguration: js.UndefOr[FileFormatConfiguration]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
     var tags: js.UndefOr[TagList]
   }
@@ -655,6 +701,7 @@ package iotanalytics {
     def apply(
         datastoreName: DatastoreName,
         datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
+        fileFormatConfiguration: js.UndefOr[FileFormatConfiguration] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDatastoreRequest = {
@@ -663,6 +710,7 @@ package iotanalytics {
       )
 
       datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      fileFormatConfiguration.foreach(__v => __obj.updateDynamic("fileFormatConfiguration")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatastoreRequest]
@@ -1151,6 +1199,7 @@ package iotanalytics {
   trait Datastore extends js.Object {
     var arn: js.UndefOr[DatastoreArn]
     var creationTime: js.UndefOr[Timestamp]
+    var fileFormatConfiguration: js.UndefOr[FileFormatConfiguration]
     var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var name: js.UndefOr[DatastoreName]
@@ -1164,6 +1213,7 @@ package iotanalytics {
     def apply(
         arn: js.UndefOr[DatastoreArn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
+        fileFormatConfiguration: js.UndefOr[FileFormatConfiguration] = js.undefined,
         lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[DatastoreName] = js.undefined,
@@ -1174,6 +1224,7 @@ package iotanalytics {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      fileFormatConfiguration.foreach(__v => __obj.updateDynamic("fileFormatConfiguration")(__v.asInstanceOf[js.Any]))
       lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1283,6 +1334,7 @@ package iotanalytics {
     var creationTime: js.UndefOr[Timestamp]
     var datastoreName: js.UndefOr[DatastoreName]
     var datastoreStorage: js.UndefOr[DatastoreStorageSummary]
+    var fileFormatType: js.UndefOr[FileFormatType]
     var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[DatastoreStatus]
@@ -1294,6 +1346,7 @@ package iotanalytics {
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
         datastoreStorage: js.UndefOr[DatastoreStorageSummary] = js.undefined,
+        fileFormatType: js.UndefOr[FileFormatType] = js.undefined,
         lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DatastoreStatus] = js.undefined
@@ -1302,6 +1355,7 @@ package iotanalytics {
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       datastoreName.foreach(__v => __obj.updateDynamic("datastoreName")(__v.asInstanceOf[js.Any]))
       datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      fileFormatType.foreach(__v => __obj.updateDynamic("fileFormatType")(__v.asInstanceOf[js.Any]))
       lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1698,6 +1752,38 @@ package iotanalytics {
     }
   }
 
+  /** Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and [[https://parquet.apache.org/|Parquet]].
+    * The default file format is JSON. You can specify only one format.
+    * You can't change the file format after you create the data store.
+    */
+  @js.native
+  trait FileFormatConfiguration extends js.Object {
+    var jsonConfiguration: js.UndefOr[JsonConfiguration]
+    var parquetConfiguration: js.UndefOr[ParquetConfiguration]
+  }
+
+  object FileFormatConfiguration {
+    @inline
+    def apply(
+        jsonConfiguration: js.UndefOr[JsonConfiguration] = js.undefined,
+        parquetConfiguration: js.UndefOr[ParquetConfiguration] = js.undefined
+    ): FileFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      jsonConfiguration.foreach(__v => __obj.updateDynamic("jsonConfiguration")(__v.asInstanceOf[js.Any]))
+      parquetConfiguration.foreach(__v => __obj.updateDynamic("parquetConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileFormatConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait FileFormatType extends js.Any
+  object FileFormatType {
+    val JSON = "JSON".asInstanceOf[FileFormatType]
+    val PARQUET = "PARQUET".asInstanceOf[FileFormatType]
+
+    @inline def values = js.Array(JSON, PARQUET)
+  }
+
   /** An activity that filters a message based on its attributes.
     */
   @js.native
@@ -1808,6 +1894,19 @@ package iotanalytics {
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[IotEventsDestinationConfiguration]
+    }
+  }
+
+  /** Contains the configuration information of the JSON format.
+    */
+  @js.native
+  trait JsonConfiguration extends js.Object
+
+  object JsonConfiguration {
+    @inline
+    def apply(): JsonConfiguration = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[JsonConfiguration]
     }
   }
 
@@ -2218,6 +2317,24 @@ package iotanalytics {
     }
   }
 
+  /** Contains the configuration information of the Parquet format.
+    */
+  @js.native
+  trait ParquetConfiguration extends js.Object {
+    var schemaDefinition: js.UndefOr[SchemaDefinition]
+  }
+
+  object ParquetConfiguration {
+    @inline
+    def apply(
+        schemaDefinition: js.UndefOr[SchemaDefinition] = js.undefined
+    ): ParquetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      schemaDefinition.foreach(__v => __obj.updateDynamic("schemaDefinition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParquetConfiguration]
+    }
+  }
+
   /** Contains information about a pipeline.
     */
   @js.native
@@ -2591,6 +2708,24 @@ package iotanalytics {
     }
   }
 
+  /** Information needed to define a schema.
+    */
+  @js.native
+  trait SchemaDefinition extends js.Object {
+    var columns: js.UndefOr[Columns]
+  }
+
+  object SchemaDefinition {
+    @inline
+    def apply(
+        columns: js.UndefOr[Columns] = js.undefined
+    ): SchemaDefinition = {
+      val __obj = js.Dynamic.literal()
+      columns.foreach(__v => __obj.updateDynamic("columns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaDefinition]
+    }
+  }
+
   /** Creates a new message using only the specified attributes from the original message.
     */
   @js.native
@@ -2695,6 +2830,7 @@ package iotanalytics {
   @js.native
   trait StartPipelineReprocessingRequest extends js.Object {
     var pipelineName: PipelineName
+    var channelMessages: js.UndefOr[ChannelMessages]
     var endTime: js.UndefOr[EndTime]
     var startTime: js.UndefOr[StartTime]
   }
@@ -2703,6 +2839,7 @@ package iotanalytics {
     @inline
     def apply(
         pipelineName: PipelineName,
+        channelMessages: js.UndefOr[ChannelMessages] = js.undefined,
         endTime: js.UndefOr[EndTime] = js.undefined,
         startTime: js.UndefOr[StartTime] = js.undefined
     ): StartPipelineReprocessingRequest = {
@@ -2710,6 +2847,7 @@ package iotanalytics {
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
+      channelMessages.foreach(__v => __obj.updateDynamic("channelMessages")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPipelineReprocessingRequest]
@@ -2899,6 +3037,7 @@ package iotanalytics {
   trait UpdateDatastoreRequest extends js.Object {
     var datastoreName: DatastoreName
     var datastoreStorage: js.UndefOr[DatastoreStorage]
+    var fileFormatConfiguration: js.UndefOr[FileFormatConfiguration]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
   }
 
@@ -2907,6 +3046,7 @@ package iotanalytics {
     def apply(
         datastoreName: DatastoreName,
         datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
+        fileFormatConfiguration: js.UndefOr[FileFormatConfiguration] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateDatastoreRequest = {
       val __obj = js.Dynamic.literal(
@@ -2914,6 +3054,7 @@ package iotanalytics {
       )
 
       datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      fileFormatConfiguration.foreach(__v => __obj.updateDynamic("fileFormatConfiguration")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatastoreRequest]
     }

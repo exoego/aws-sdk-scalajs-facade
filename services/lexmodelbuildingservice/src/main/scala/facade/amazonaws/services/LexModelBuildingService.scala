@@ -2101,13 +2101,14 @@ package lexmodelbuildingservice {
     val `en-AU` = "en-AU".asInstanceOf[Locale]
     val `en-GB` = "en-GB".asInstanceOf[Locale]
     val `en-US` = "en-US".asInstanceOf[Locale]
+    val `es-419` = "es-419".asInstanceOf[Locale]
     val `es-ES` = "es-ES".asInstanceOf[Locale]
     val `es-US` = "es-US".asInstanceOf[Locale]
     val `fr-FR` = "fr-FR".asInstanceOf[Locale]
     val `fr-CA` = "fr-CA".asInstanceOf[Locale]
     val `it-IT` = "it-IT".asInstanceOf[Locale]
 
-    @inline def values = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`)
+    @inline def values = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`)
   }
 
   /** Settings used to configure delivery mode and destination for conversation logs.

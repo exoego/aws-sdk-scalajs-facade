@@ -2598,6 +2598,66 @@ package cognitoidentityprovider {
     }
   }
 
+  /** A custom email sender Lambda configuration type.
+    */
+  @js.native
+  trait CustomEmailLambdaVersionConfigType extends js.Object {
+    var LambdaArn: ArnType
+    var LambdaVersion: CustomEmailSenderLambdaVersionType
+  }
+
+  object CustomEmailLambdaVersionConfigType {
+    @inline
+    def apply(
+        LambdaArn: ArnType,
+        LambdaVersion: CustomEmailSenderLambdaVersionType
+    ): CustomEmailLambdaVersionConfigType = {
+      val __obj = js.Dynamic.literal(
+        "LambdaArn" -> LambdaArn.asInstanceOf[js.Any],
+        "LambdaVersion" -> LambdaVersion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomEmailLambdaVersionConfigType]
+    }
+  }
+
+  @js.native
+  sealed trait CustomEmailSenderLambdaVersionType extends js.Any
+  object CustomEmailSenderLambdaVersionType {
+    val V1_0 = "V1_0".asInstanceOf[CustomEmailSenderLambdaVersionType]
+
+    @inline def values = js.Array(V1_0)
+  }
+
+  /** A custom SMS sender Lambda configuration type.
+    */
+  @js.native
+  trait CustomSMSLambdaVersionConfigType extends js.Object {
+    var LambdaArn: ArnType
+    var LambdaVersion: CustomSMSSenderLambdaVersionType
+  }
+
+  object CustomSMSLambdaVersionConfigType {
+    @inline
+    def apply(
+        LambdaArn: ArnType,
+        LambdaVersion: CustomSMSSenderLambdaVersionType
+    ): CustomSMSLambdaVersionConfigType = {
+      val __obj = js.Dynamic.literal(
+        "LambdaArn" -> LambdaArn.asInstanceOf[js.Any],
+        "LambdaVersion" -> LambdaVersion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomSMSLambdaVersionConfigType]
+    }
+  }
+
+  @js.native
+  sealed trait CustomSMSSenderLambdaVersionType extends js.Any
+  object CustomSMSSenderLambdaVersionType {
+    val V1_0 = "V1_0".asInstanceOf[CustomSMSSenderLambdaVersionType]
+
+    @inline def values = js.Array(V1_0)
+  }
+
   @js.native
   sealed trait DefaultEmailOptionType extends js.Any
   object DefaultEmailOptionType {
@@ -3197,6 +3257,8 @@ package cognitoidentityprovider {
   }
 
   /** The email configuration type.
+    *
+    * '''Note:'''Amazon Cognito has specific regions for use with Amazon SES. For more information on the supported regions, see [[https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html|Email Settings for Amazon Cognito User Pools]].
     */
   @js.native
   trait EmailConfigurationType extends js.Object {
@@ -4025,8 +4087,11 @@ package cognitoidentityprovider {
   @js.native
   trait LambdaConfigType extends js.Object {
     var CreateAuthChallenge: js.UndefOr[ArnType]
+    var CustomEmailSender: js.UndefOr[CustomEmailLambdaVersionConfigType]
     var CustomMessage: js.UndefOr[ArnType]
+    var CustomSMSSender: js.UndefOr[CustomSMSLambdaVersionConfigType]
     var DefineAuthChallenge: js.UndefOr[ArnType]
+    var KMSKeyID: js.UndefOr[ArnType]
     var PostAuthentication: js.UndefOr[ArnType]
     var PostConfirmation: js.UndefOr[ArnType]
     var PreAuthentication: js.UndefOr[ArnType]
@@ -4040,8 +4105,11 @@ package cognitoidentityprovider {
     @inline
     def apply(
         CreateAuthChallenge: js.UndefOr[ArnType] = js.undefined,
+        CustomEmailSender: js.UndefOr[CustomEmailLambdaVersionConfigType] = js.undefined,
         CustomMessage: js.UndefOr[ArnType] = js.undefined,
+        CustomSMSSender: js.UndefOr[CustomSMSLambdaVersionConfigType] = js.undefined,
         DefineAuthChallenge: js.UndefOr[ArnType] = js.undefined,
+        KMSKeyID: js.UndefOr[ArnType] = js.undefined,
         PostAuthentication: js.UndefOr[ArnType] = js.undefined,
         PostConfirmation: js.UndefOr[ArnType] = js.undefined,
         PreAuthentication: js.UndefOr[ArnType] = js.undefined,
@@ -4052,8 +4120,11 @@ package cognitoidentityprovider {
     ): LambdaConfigType = {
       val __obj = js.Dynamic.literal()
       CreateAuthChallenge.foreach(__v => __obj.updateDynamic("CreateAuthChallenge")(__v.asInstanceOf[js.Any]))
+      CustomEmailSender.foreach(__v => __obj.updateDynamic("CustomEmailSender")(__v.asInstanceOf[js.Any]))
       CustomMessage.foreach(__v => __obj.updateDynamic("CustomMessage")(__v.asInstanceOf[js.Any]))
+      CustomSMSSender.foreach(__v => __obj.updateDynamic("CustomSMSSender")(__v.asInstanceOf[js.Any]))
       DefineAuthChallenge.foreach(__v => __obj.updateDynamic("DefineAuthChallenge")(__v.asInstanceOf[js.Any]))
+      KMSKeyID.foreach(__v => __obj.updateDynamic("KMSKeyID")(__v.asInstanceOf[js.Any]))
       PostAuthentication.foreach(__v => __obj.updateDynamic("PostAuthentication")(__v.asInstanceOf[js.Any]))
       PostConfirmation.foreach(__v => __obj.updateDynamic("PostConfirmation")(__v.asInstanceOf[js.Any]))
       PreAuthentication.foreach(__v => __obj.updateDynamic("PreAuthentication")(__v.asInstanceOf[js.Any]))
@@ -5048,7 +5119,7 @@ package cognitoidentityprovider {
     @inline def values = js.Array(Low, Medium, High)
   }
 
-  /** The type used for enabling SMS MFA at the user level.
+  /** The type used for enabling SMS MFA at the user level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is enabled for a user, the user will be prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign in attempts, disable MFA for users and turn on Adaptive Authentication for the user pool.
     */
   @js.native
   trait SMSMfaSettingsType extends js.Object {
@@ -5447,7 +5518,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /** The type used for enabling software token MFA at the user level.
+  /** The type used for enabling software token MFA at the user level. If an MFA type is enabled for a user, the user will be prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign in attempts, disable MFA for users and turn on Adaptive Authentication for the user pool.
     */
   @js.native
   trait SoftwareTokenMfaSettingsType extends js.Object {

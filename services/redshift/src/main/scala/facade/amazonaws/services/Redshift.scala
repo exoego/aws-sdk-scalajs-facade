@@ -70,6 +70,7 @@ package object redshift {
   type SnapshotScheduleList = js.Array[SnapshotSchedule]
   type SnapshotSortingEntityList = js.Array[SnapshotSortingEntity]
   type SourceIdsList = js.Array[String]
+  type SpartaProxyVpcEndpointList = js.Array[SpartaProxyVpcEndpoint]
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type SupportedOperationList = js.Array[SupportedOperation]
@@ -617,6 +618,7 @@ package redshift {
     var AllowVersionUpgrade: js.UndefOr[Boolean]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[Int]
     var AvailabilityZone: js.UndefOr[String]
+    var AvailabilityZoneRelocationStatus: js.UndefOr[String]
     var ClusterAvailabilityStatus: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
     var ClusterIdentifier: js.UndefOr[String]
@@ -669,6 +671,7 @@ package redshift {
         AllowVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        AvailabilityZoneRelocationStatus: js.UndefOr[String] = js.undefined,
         ClusterAvailabilityStatus: js.UndefOr[String] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
         ClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -718,6 +721,7 @@ package redshift {
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AvailabilityZoneRelocationStatus.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocationStatus")(__v.asInstanceOf[js.Any]))
       ClusterAvailabilityStatus.foreach(__v => __obj.updateDynamic("ClusterAvailabilityStatus")(__v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
@@ -1316,6 +1320,7 @@ package redshift {
     var AllowVersionUpgrade: js.UndefOr[BooleanOptional]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
     var AvailabilityZone: js.UndefOr[String]
+    var AvailabilityZoneRelocation: js.UndefOr[BooleanOptional]
     var ClusterParameterGroupName: js.UndefOr[String]
     var ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList]
     var ClusterSubnetGroupName: js.UndefOr[String]
@@ -1351,6 +1356,7 @@ package redshift {
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        AvailabilityZoneRelocation: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
         ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
@@ -1385,6 +1391,7 @@ package redshift {
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AvailabilityZoneRelocation.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocation")(__v.asInstanceOf[js.Any]))
       ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
@@ -3329,17 +3336,20 @@ package redshift {
   trait Endpoint extends js.Object {
     var Address: js.UndefOr[String]
     var Port: js.UndefOr[Int]
+    var VpcEndpoints: js.UndefOr[SpartaProxyVpcEndpointList]
   }
 
   object Endpoint {
     @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
-        Port: js.UndefOr[Int] = js.undefined
+        Port: js.UndefOr[Int] = js.undefined,
+        VpcEndpoints: js.UndefOr[SpartaProxyVpcEndpointList] = js.undefined
     ): Endpoint = {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      VpcEndpoints.foreach(__v => __obj.updateDynamic("VpcEndpoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }
@@ -3960,6 +3970,8 @@ package redshift {
     var ClusterIdentifier: String
     var AllowVersionUpgrade: js.UndefOr[BooleanOptional]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
+    var AvailabilityZone: js.UndefOr[String]
+    var AvailabilityZoneRelocation: js.UndefOr[BooleanOptional]
     var ClusterParameterGroupName: js.UndefOr[String]
     var ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList]
     var ClusterType: js.UndefOr[String]
@@ -3976,6 +3988,7 @@ package redshift {
     var NewClusterIdentifier: js.UndefOr[String]
     var NodeType: js.UndefOr[String]
     var NumberOfNodes: js.UndefOr[IntegerOptional]
+    var Port: js.UndefOr[IntegerOptional]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -3987,6 +4000,8 @@ package redshift {
         ClusterIdentifier: String,
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        AvailabilityZoneRelocation: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
         ClusterType: js.UndefOr[String] = js.undefined,
@@ -4003,6 +4018,7 @@ package redshift {
         NewClusterIdentifier: js.UndefOr[String] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined,
         NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
@@ -4013,6 +4029,8 @@ package redshift {
 
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AvailabilityZoneRelocation.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocation")(__v.asInstanceOf[js.Any]))
       ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
@@ -4029,6 +4047,7 @@ package redshift {
       NewClusterIdentifier.foreach(__v => __obj.updateDynamic("NewClusterIdentifier")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -4912,7 +4931,7 @@ package redshift {
     var Classic: js.UndefOr[BooleanOptional]
     var ClusterType: js.UndefOr[String]
     var NodeType: js.UndefOr[String]
-    var NumberOfNodes: js.UndefOr[Int]
+    var NumberOfNodes: js.UndefOr[IntegerOptional]
   }
 
   object ResizeClusterMessage {
@@ -4922,7 +4941,7 @@ package redshift {
         Classic: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterType: js.UndefOr[String] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined,
-        NumberOfNodes: js.UndefOr[Int] = js.undefined
+        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined
     ): ResizeClusterMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
@@ -5046,6 +5065,7 @@ package redshift {
     var AllowVersionUpgrade: js.UndefOr[BooleanOptional]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
     var AvailabilityZone: js.UndefOr[String]
+    var AvailabilityZoneRelocation: js.UndefOr[BooleanOptional]
     var ClusterParameterGroupName: js.UndefOr[String]
     var ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList]
     var ClusterSubnetGroupName: js.UndefOr[String]
@@ -5077,6 +5097,7 @@ package redshift {
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        AvailabilityZoneRelocation: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
         ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
@@ -5107,6 +5128,7 @@ package redshift {
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AvailabilityZoneRelocation.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocation")(__v.asInstanceOf[js.Any]))
       ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
@@ -5579,6 +5601,7 @@ package redshift {
     var ElapsedTimeInSeconds: js.UndefOr[Double]
     var Encrypted: js.UndefOr[Boolean]
     var EncryptedWithHSM: js.UndefOr[Boolean]
+    var EngineFullVersion: js.UndefOr[String]
     var EnhancedVpcRouting: js.UndefOr[Boolean]
     var EstimatedSecondsToCompletion: js.UndefOr[Double]
     var KmsKeyId: js.UndefOr[String]
@@ -5617,6 +5640,7 @@ package redshift {
         ElapsedTimeInSeconds: js.UndefOr[Double] = js.undefined,
         Encrypted: js.UndefOr[Boolean] = js.undefined,
         EncryptedWithHSM: js.UndefOr[Boolean] = js.undefined,
+        EngineFullVersion: js.UndefOr[String] = js.undefined,
         EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
         EstimatedSecondsToCompletion: js.UndefOr[Double] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -5652,6 +5676,7 @@ package redshift {
       ElapsedTimeInSeconds.foreach(__v => __obj.updateDynamic("ElapsedTimeInSeconds")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       EncryptedWithHSM.foreach(__v => __obj.updateDynamic("EncryptedWithHSM")(__v.asInstanceOf[js.Any]))
+      EngineFullVersion.foreach(__v => __obj.updateDynamic("EngineFullVersion")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
       EstimatedSecondsToCompletion.foreach(__v => __obj.updateDynamic("EstimatedSecondsToCompletion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -5859,6 +5884,24 @@ package redshift {
     val `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
 
     @inline def values = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
+  }
+
+  /** The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
+    */
+  @js.native
+  trait SpartaProxyVpcEndpoint extends js.Object {
+    var VpcEndpointId: js.UndefOr[String]
+  }
+
+  object SpartaProxyVpcEndpoint {
+    @inline
+    def apply(
+        VpcEndpointId: js.UndefOr[String] = js.undefined
+    ): SpartaProxyVpcEndpoint = {
+      val __obj = js.Dynamic.literal()
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SpartaProxyVpcEndpoint]
+    }
   }
 
   /** Describes a subnet.

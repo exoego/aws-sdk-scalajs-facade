@@ -7,6 +7,8 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object cloudtrail {
+  type AdvancedEventSelectors = js.Array[AdvancedEventSelector]
+  type AdvancedFieldSelectors = js.Array[AdvancedFieldSelector]
   type ByteBuffer = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DataResourceValues = js.Array[String]
   type DataResources = js.Array[DataResource]
@@ -18,10 +20,14 @@ package object cloudtrail {
   type LookupAttributesList = js.Array[LookupAttribute]
   type MaxResults = Int
   type NextToken = String
+  type Operator = js.Array[OperatorValue]
+  type OperatorValue = String
   type PublicKeyList = js.Array[PublicKey]
   type ResourceIdList = js.Array[String]
   type ResourceList = js.Array[Resource]
   type ResourceTagList = js.Array[ResourceTag]
+  type SelectorField = String
+  type SelectorName = String
   type TagsList = js.Array[Tag]
   type TrailList = js.Array[Trail]
   type TrailNameList = js.Array[String]
@@ -110,6 +116,74 @@ package cloudtrail {
     def apply(): AddTagsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AddTagsResponse]
+    }
+  }
+
+  /** Advanced event selectors let you create fine-grained selectors for the following AWS CloudTrail event record ﬁelds. They help you control costs by logging only those events that are important to you. For more information about advanced event selectors, see [[https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html|Logging data events for trails]] in the <i>AWS CloudTrail User Guide</i>.
+    * * <code>readOnly</code>
+    * * <code>eventSource</code>
+    * * <code>eventName</code>
+    * * <code>eventCategory</code>
+    * * <code>resources.type</code>
+    * * <code>resources.ARN</code>
+    * You cannot apply both event selectors and advanced event selectors to a trail.
+    */
+  @js.native
+  trait AdvancedEventSelector extends js.Object {
+    var FieldSelectors: AdvancedFieldSelectors
+    var Name: js.UndefOr[SelectorName]
+  }
+
+  object AdvancedEventSelector {
+    @inline
+    def apply(
+        FieldSelectors: AdvancedFieldSelectors,
+        Name: js.UndefOr[SelectorName] = js.undefined
+    ): AdvancedEventSelector = {
+      val __obj = js.Dynamic.literal(
+        "FieldSelectors" -> FieldSelectors.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdvancedEventSelector]
+    }
+  }
+
+  /** A single selector statement in an advanced event selector.
+    */
+  @js.native
+  trait AdvancedFieldSelector extends js.Object {
+    var Field: SelectorField
+    var EndsWith: js.UndefOr[Operator]
+    var Equals: js.UndefOr[Operator]
+    var NotEndsWith: js.UndefOr[Operator]
+    var NotEquals: js.UndefOr[Operator]
+    var NotStartsWith: js.UndefOr[Operator]
+    var StartsWith: js.UndefOr[Operator]
+  }
+
+  object AdvancedFieldSelector {
+    @inline
+    def apply(
+        Field: SelectorField,
+        EndsWith: js.UndefOr[Operator] = js.undefined,
+        Equals: js.UndefOr[Operator] = js.undefined,
+        NotEndsWith: js.UndefOr[Operator] = js.undefined,
+        NotEquals: js.UndefOr[Operator] = js.undefined,
+        NotStartsWith: js.UndefOr[Operator] = js.undefined,
+        StartsWith: js.UndefOr[Operator] = js.undefined
+    ): AdvancedFieldSelector = {
+      val __obj = js.Dynamic.literal(
+        "Field" -> Field.asInstanceOf[js.Any]
+      )
+
+      EndsWith.foreach(__v => __obj.updateDynamic("EndsWith")(__v.asInstanceOf[js.Any]))
+      Equals.foreach(__v => __obj.updateDynamic("Equals")(__v.asInstanceOf[js.Any]))
+      NotEndsWith.foreach(__v => __obj.updateDynamic("NotEndsWith")(__v.asInstanceOf[js.Any]))
+      NotEquals.foreach(__v => __obj.updateDynamic("NotEquals")(__v.asInstanceOf[js.Any]))
+      NotStartsWith.foreach(__v => __obj.updateDynamic("NotStartsWith")(__v.asInstanceOf[js.Any]))
+      StartsWith.foreach(__v => __obj.updateDynamic("StartsWith")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdvancedFieldSelector]
     }
   }
 
@@ -223,6 +297,7 @@ package cloudtrail {
   /** The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
     *
     * '''Note:'''The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
+    * If you are using advanced event selectors, the maximum total number of values for all conditions, across all advanced event selectors for the trail, is 500.
     * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.
     * <ol> * A user uploads an image file to <code>bucket-1</code>.
     * * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.
@@ -376,6 +451,7 @@ package cloudtrail {
 
   /** Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.
     * You can configure up to five event selectors for a trail.
+    * You cannot apply both event selectors and advanced event selectors to a trail.
     */
   @js.native
   trait EventSelector extends js.Object {
@@ -421,6 +497,7 @@ package cloudtrail {
 
   @js.native
   trait GetEventSelectorsResponse extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
     var EventSelectors: js.UndefOr[EventSelectors]
     var TrailARN: js.UndefOr[String]
   }
@@ -428,10 +505,12 @@ package cloudtrail {
   object GetEventSelectorsResponse {
     @inline
     def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
         EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): GetEventSelectorsResponse = {
       val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
       EventSelectors.foreach(__v => __obj.updateDynamic("EventSelectors")(__v.asInstanceOf[js.Any]))
       TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEventSelectorsResponse]
@@ -862,26 +941,31 @@ package cloudtrail {
 
   @js.native
   trait PutEventSelectorsRequest extends js.Object {
-    var EventSelectors: EventSelectors
     var TrailName: String
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var EventSelectors: js.UndefOr[EventSelectors]
   }
 
   object PutEventSelectorsRequest {
     @inline
     def apply(
-        EventSelectors: EventSelectors,
-        TrailName: String
+        TrailName: String,
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        EventSelectors: js.UndefOr[EventSelectors] = js.undefined
     ): PutEventSelectorsRequest = {
       val __obj = js.Dynamic.literal(
-        "EventSelectors" -> EventSelectors.asInstanceOf[js.Any],
         "TrailName" -> TrailName.asInstanceOf[js.Any]
       )
+
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      EventSelectors.foreach(__v => __obj.updateDynamic("EventSelectors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventSelectorsRequest]
     }
   }
 
   @js.native
   trait PutEventSelectorsResponse extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
     var EventSelectors: js.UndefOr[EventSelectors]
     var TrailARN: js.UndefOr[String]
   }
@@ -889,10 +973,12 @@ package cloudtrail {
   object PutEventSelectorsResponse {
     @inline
     def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
         EventSelectors: js.UndefOr[EventSelectors] = js.undefined,
         TrailARN: js.UndefOr[String] = js.undefined
     ): PutEventSelectorsResponse = {
       val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
       EventSelectors.foreach(__v => __obj.updateDynamic("EventSelectors")(__v.asInstanceOf[js.Any]))
       TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventSelectorsResponse]

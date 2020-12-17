@@ -27,6 +27,7 @@ package object forecast {
   type ForecastTypes = js.Array[ForecastType]
   type Forecasts = js.Array[ForecastSummary]
   type Frequency = String
+  type GeolocationFormat = String
   type IntegerParameterRanges = js.Array[IntegerParameterRange]
   type KMSKeyArn = String
   type MaxResults = Int
@@ -49,9 +50,11 @@ package object forecast {
   type Tags = js.Array[Tag]
   type TestWindowDetails = js.Array[TestWindowSummary]
   type TestWindows = js.Array[WindowSummary]
+  type TimeZone = String
   type Timestamp = js.Date
   type TimestampFormat = String
   type TrainingParameters = js.Dictionary[ParameterValue]
+  type UseGeolocationForTimeZone = Boolean
   type Value = String
   type Values = js.Array[Value]
   type WeightedQuantileLosses = js.Array[WeightedQuantileLoss]
@@ -143,8 +146,9 @@ package forecast {
     val integer = "integer".asInstanceOf[AttributeType]
     val float = "float".asInstanceOf[AttributeType]
     val timestamp = "timestamp".asInstanceOf[AttributeType]
+    val geolocation = "geolocation".asInstanceOf[AttributeType]
 
-    @inline def values = js.Array(string, integer, float, timestamp)
+    @inline def values = js.Array(string, integer, float, timestamp, geolocation)
   }
 
   /** Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
@@ -246,8 +250,11 @@ package forecast {
     var DataSource: DataSource
     var DatasetArn: Arn
     var DatasetImportJobName: Name
+    var GeolocationFormat: js.UndefOr[GeolocationFormat]
     var Tags: js.UndefOr[Tags]
+    var TimeZone: js.UndefOr[TimeZone]
     var TimestampFormat: js.UndefOr[TimestampFormat]
+    var UseGeolocationForTimeZone: js.UndefOr[UseGeolocationForTimeZone]
   }
 
   object CreateDatasetImportJobRequest {
@@ -256,8 +263,11 @@ package forecast {
         DataSource: DataSource,
         DatasetArn: Arn,
         DatasetImportJobName: Name,
+        GeolocationFormat: js.UndefOr[GeolocationFormat] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
+        TimeZone: js.UndefOr[TimeZone] = js.undefined,
+        TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined,
+        UseGeolocationForTimeZone: js.UndefOr[UseGeolocationForTimeZone] = js.undefined
     ): CreateDatasetImportJobRequest = {
       val __obj = js.Dynamic.literal(
         "DataSource" -> DataSource.asInstanceOf[js.Any],
@@ -265,8 +275,11 @@ package forecast {
         "DatasetImportJobName" -> DatasetImportJobName.asInstanceOf[js.Any]
       )
 
+      GeolocationFormat.foreach(__v => __obj.updateDynamic("GeolocationFormat")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       TimestampFormat.foreach(__v => __obj.updateDynamic("TimestampFormat")(__v.asInstanceOf[js.Any]))
+      UseGeolocationForTimeZone.foreach(__v => __obj.updateDynamic("UseGeolocationForTimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetImportJobRequest]
     }
   }
@@ -538,7 +551,7 @@ package forecast {
     }
   }
 
-  /** The destination for an export job, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key.
+  /** The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional).
     */
   @js.native
   trait DataDestination extends js.Object {
@@ -878,10 +891,13 @@ package forecast {
     var DatasetImportJobArn: js.UndefOr[Arn]
     var DatasetImportJobName: js.UndefOr[Name]
     var FieldStatistics: js.UndefOr[FieldStatistics]
+    var GeolocationFormat: js.UndefOr[GeolocationFormat]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
     var Status: js.UndefOr[Status]
+    var TimeZone: js.UndefOr[TimeZone]
     var TimestampFormat: js.UndefOr[TimestampFormat]
+    var UseGeolocationForTimeZone: js.UndefOr[UseGeolocationForTimeZone]
   }
 
   object DescribeDatasetImportJobResponse {
@@ -894,10 +910,13 @@ package forecast {
         DatasetImportJobArn: js.UndefOr[Arn] = js.undefined,
         DatasetImportJobName: js.UndefOr[Name] = js.undefined,
         FieldStatistics: js.UndefOr[FieldStatistics] = js.undefined,
+        GeolocationFormat: js.UndefOr[GeolocationFormat] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined,
-        TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
+        TimeZone: js.UndefOr[TimeZone] = js.undefined,
+        TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined,
+        UseGeolocationForTimeZone: js.UndefOr[UseGeolocationForTimeZone] = js.undefined
     ): DescribeDatasetImportJobResponse = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
@@ -907,10 +926,13 @@ package forecast {
       DatasetImportJobArn.foreach(__v => __obj.updateDynamic("DatasetImportJobArn")(__v.asInstanceOf[js.Any]))
       DatasetImportJobName.foreach(__v => __obj.updateDynamic("DatasetImportJobName")(__v.asInstanceOf[js.Any]))
       FieldStatistics.foreach(__v => __obj.updateDynamic("FieldStatistics")(__v.asInstanceOf[js.Any]))
+      GeolocationFormat.foreach(__v => __obj.updateDynamic("GeolocationFormat")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       TimestampFormat.foreach(__v => __obj.updateDynamic("TimestampFormat")(__v.asInstanceOf[js.Any]))
+      UseGeolocationForTimeZone.foreach(__v => __obj.updateDynamic("UseGeolocationForTimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetImportJobResponse]
     }
   }
@@ -2238,8 +2260,11 @@ package forecast {
     }
   }
 
-  /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object.
-    * The only supported feature is Holidays. If you use the calendar, all data in the datasets should belong to the same country as the calendar. For the holiday calendar data, see the [[http://jollyday.sourceforge.net/data.html|Jollyday]] website.
+  /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in featurizations.
+    * ```Weather Index```
+    * The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
+    * ```Holidays```
+    * Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
     */
   @js.native
   trait SupplementaryFeature extends js.Object {
