@@ -1,6 +1,6 @@
 import scala.util._
 
-crossScalaVersions in ThisBuild := Seq("2.13.3", "2.12.12")
+crossScalaVersions in ThisBuild := Seq("2.13.4", "2.12.12")
 organization in ThisBuild := "net.exoego"
 concurrentRestrictions in ThisBuild += Tags.limit(
   ScalaJSTags.Link,
