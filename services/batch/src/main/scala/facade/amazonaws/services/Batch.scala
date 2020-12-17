@@ -13,8 +13,11 @@ package object batch {
   type ComputeEnvironmentOrders = js.Array[ComputeEnvironmentOrder]
   type DeviceCgroupPermissions = js.Array[DeviceCgroupPermission]
   type DevicesList = js.Array[Device]
+  type Ec2ConfigurationList = js.Array[Ec2Configuration]
   type EnvironmentVariables = js.Array[KeyValuePair]
   type EvaluateOnExitList = js.Array[EvaluateOnExit]
+  type ImageIdOverride = String
+  type ImageType = String
   type JobDefinitionList = js.Array[JobDefinition]
   type JobDependencyList = js.Array[JobDependency]
   type JobDetailList = js.Array[JobDetail]
@@ -26,6 +29,7 @@ package object batch {
   type NodePropertyOverrides = js.Array[NodePropertyOverride]
   type NodeRangeProperties = js.Array[NodeRangeProperty]
   type ParametersMap = js.Dictionary[String]
+  type PlatformCapabilityList = js.Array[PlatformCapability]
   type ResourceRequirements = js.Array[ResourceRequirement]
   type SecretList = js.Array[Secret]
   type StringList = js.Array[String]
@@ -162,6 +166,15 @@ package batch {
     }
   }
 
+  @js.native
+  sealed trait AssignPublicIp extends js.Any
+  object AssignPublicIp {
+    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
+    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
   /** An object representing the details of a container that is part of a job attempt.
     */
   @js.native
@@ -268,8 +281,10 @@ package batch {
   object CRType {
     val EC2 = "EC2".asInstanceOf[CRType]
     val SPOT = "SPOT".asInstanceOf[CRType]
+    val FARGATE = "FARGATE".asInstanceOf[CRType]
+    val FARGATE_SPOT = "FARGATE_SPOT".asInstanceOf[CRType]
 
-    @inline def values = js.Array(EC2, SPOT)
+    @inline def values = js.Array(EC2, SPOT, FARGATE, FARGATE_SPOT)
   }
 
   @js.native
@@ -376,18 +391,19 @@ package batch {
     */
   @js.native
   trait ComputeResource extends js.Object {
-    var instanceRole: String
-    var instanceTypes: StringList
     var maxvCpus: Int
-    var minvCpus: Int
     var subnets: StringList
     var `type`: CRType
     var allocationStrategy: js.UndefOr[CRAllocationStrategy]
     var bidPercentage: js.UndefOr[Int]
     var desiredvCpus: js.UndefOr[Int]
+    var ec2Configuration: js.UndefOr[Ec2ConfigurationList]
     var ec2KeyPair: js.UndefOr[String]
     var imageId: js.UndefOr[String]
+    var instanceRole: js.UndefOr[String]
+    var instanceTypes: js.UndefOr[StringList]
     var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var minvCpus: js.UndefOr[Int]
     var placementGroup: js.UndefOr[String]
     var securityGroupIds: js.UndefOr[StringList]
     var spotIamFleetRole: js.UndefOr[String]
@@ -397,28 +413,26 @@ package batch {
   object ComputeResource {
     @inline
     def apply(
-        instanceRole: String,
-        instanceTypes: StringList,
         maxvCpus: Int,
-        minvCpus: Int,
         subnets: StringList,
         `type`: CRType,
         allocationStrategy: js.UndefOr[CRAllocationStrategy] = js.undefined,
         bidPercentage: js.UndefOr[Int] = js.undefined,
         desiredvCpus: js.UndefOr[Int] = js.undefined,
+        ec2Configuration: js.UndefOr[Ec2ConfigurationList] = js.undefined,
         ec2KeyPair: js.UndefOr[String] = js.undefined,
         imageId: js.UndefOr[String] = js.undefined,
+        instanceRole: js.UndefOr[String] = js.undefined,
+        instanceTypes: js.UndefOr[StringList] = js.undefined,
         launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+        minvCpus: js.UndefOr[Int] = js.undefined,
         placementGroup: js.UndefOr[String] = js.undefined,
         securityGroupIds: js.UndefOr[StringList] = js.undefined,
         spotIamFleetRole: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ComputeResource = {
       val __obj = js.Dynamic.literal(
-        "instanceRole" -> instanceRole.asInstanceOf[js.Any],
-        "instanceTypes" -> instanceTypes.asInstanceOf[js.Any],
         "maxvCpus" -> maxvCpus.asInstanceOf[js.Any],
-        "minvCpus" -> minvCpus.asInstanceOf[js.Any],
         "subnets" -> subnets.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
@@ -426,9 +440,13 @@ package batch {
       allocationStrategy.foreach(__v => __obj.updateDynamic("allocationStrategy")(__v.asInstanceOf[js.Any]))
       bidPercentage.foreach(__v => __obj.updateDynamic("bidPercentage")(__v.asInstanceOf[js.Any]))
       desiredvCpus.foreach(__v => __obj.updateDynamic("desiredvCpus")(__v.asInstanceOf[js.Any]))
+      ec2Configuration.foreach(__v => __obj.updateDynamic("ec2Configuration")(__v.asInstanceOf[js.Any]))
       ec2KeyPair.foreach(__v => __obj.updateDynamic("ec2KeyPair")(__v.asInstanceOf[js.Any]))
       imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
+      instanceRole.foreach(__v => __obj.updateDynamic("instanceRole")(__v.asInstanceOf[js.Any]))
+      instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
+      minvCpus.foreach(__v => __obj.updateDynamic("minvCpus")(__v.asInstanceOf[js.Any]))
       placementGroup.foreach(__v => __obj.updateDynamic("placementGroup")(__v.asInstanceOf[js.Any]))
       securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
       spotIamFleetRole.foreach(__v => __obj.updateDynamic("spotIamFleetRole")(__v.asInstanceOf[js.Any]))
@@ -444,6 +462,8 @@ package batch {
     var desiredvCpus: js.UndefOr[Int]
     var maxvCpus: js.UndefOr[Int]
     var minvCpus: js.UndefOr[Int]
+    var securityGroupIds: js.UndefOr[StringList]
+    var subnets: js.UndefOr[StringList]
   }
 
   object ComputeResourceUpdate {
@@ -451,12 +471,16 @@ package batch {
     def apply(
         desiredvCpus: js.UndefOr[Int] = js.undefined,
         maxvCpus: js.UndefOr[Int] = js.undefined,
-        minvCpus: js.UndefOr[Int] = js.undefined
+        minvCpus: js.UndefOr[Int] = js.undefined,
+        securityGroupIds: js.UndefOr[StringList] = js.undefined,
+        subnets: js.UndefOr[StringList] = js.undefined
     ): ComputeResourceUpdate = {
       val __obj = js.Dynamic.literal()
       desiredvCpus.foreach(__v => __obj.updateDynamic("desiredvCpus")(__v.asInstanceOf[js.Any]))
       maxvCpus.foreach(__v => __obj.updateDynamic("maxvCpus")(__v.asInstanceOf[js.Any]))
       minvCpus.foreach(__v => __obj.updateDynamic("minvCpus")(__v.asInstanceOf[js.Any]))
+      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
+      subnets.foreach(__v => __obj.updateDynamic("subnets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeResourceUpdate]
     }
   }
@@ -470,6 +494,7 @@ package batch {
     var environment: js.UndefOr[EnvironmentVariables]
     var executionRoleArn: js.UndefOr[String]
     var exitCode: js.UndefOr[Int]
+    var fargatePlatformConfiguration: js.UndefOr[FargatePlatformConfiguration]
     var image: js.UndefOr[String]
     var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
@@ -478,6 +503,7 @@ package batch {
     var logStreamName: js.UndefOr[String]
     var memory: js.UndefOr[Int]
     var mountPoints: js.UndefOr[MountPoints]
+    var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var networkInterfaces: js.UndefOr[NetworkInterfaceList]
     var privileged: js.UndefOr[Boolean]
     var readonlyRootFilesystem: js.UndefOr[Boolean]
@@ -499,6 +525,7 @@ package batch {
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[Int] = js.undefined,
+        fargatePlatformConfiguration: js.UndefOr[FargatePlatformConfiguration] = js.undefined,
         image: js.UndefOr[String] = js.undefined,
         instanceType: js.UndefOr[String] = js.undefined,
         jobRoleArn: js.UndefOr[String] = js.undefined,
@@ -507,6 +534,7 @@ package batch {
         logStreamName: js.UndefOr[String] = js.undefined,
         memory: js.UndefOr[Int] = js.undefined,
         mountPoints: js.UndefOr[MountPoints] = js.undefined,
+        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         networkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
         privileged: js.UndefOr[Boolean] = js.undefined,
         readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
@@ -525,6 +553,7 @@ package batch {
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      fargatePlatformConfiguration.foreach(__v => __obj.updateDynamic("fargatePlatformConfiguration")(__v.asInstanceOf[js.Any]))
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       jobRoleArn.foreach(__v => __obj.updateDynamic("jobRoleArn")(__v.asInstanceOf[js.Any]))
@@ -533,6 +562,7 @@ package batch {
       logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       networkInterfaces.foreach(__v => __obj.updateDynamic("networkInterfaces")(__v.asInstanceOf[js.Any]))
       privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
       readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
@@ -588,6 +618,7 @@ package batch {
     var command: js.UndefOr[StringList]
     var environment: js.UndefOr[EnvironmentVariables]
     var executionRoleArn: js.UndefOr[String]
+    var fargatePlatformConfiguration: js.UndefOr[FargatePlatformConfiguration]
     var image: js.UndefOr[String]
     var instanceType: js.UndefOr[String]
     var jobRoleArn: js.UndefOr[String]
@@ -595,6 +626,7 @@ package batch {
     var logConfiguration: js.UndefOr[LogConfiguration]
     var memory: js.UndefOr[Int]
     var mountPoints: js.UndefOr[MountPoints]
+    var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var privileged: js.UndefOr[Boolean]
     var readonlyRootFilesystem: js.UndefOr[Boolean]
     var resourceRequirements: js.UndefOr[ResourceRequirements]
@@ -611,6 +643,7 @@ package batch {
         command: js.UndefOr[StringList] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
+        fargatePlatformConfiguration: js.UndefOr[FargatePlatformConfiguration] = js.undefined,
         image: js.UndefOr[String] = js.undefined,
         instanceType: js.UndefOr[String] = js.undefined,
         jobRoleArn: js.UndefOr[String] = js.undefined,
@@ -618,6 +651,7 @@ package batch {
         logConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
         memory: js.UndefOr[Int] = js.undefined,
         mountPoints: js.UndefOr[MountPoints] = js.undefined,
+        networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         privileged: js.UndefOr[Boolean] = js.undefined,
         readonlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
         resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined,
@@ -631,6 +665,7 @@ package batch {
       command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
+      fargatePlatformConfiguration.foreach(__v => __obj.updateDynamic("fargatePlatformConfiguration")(__v.asInstanceOf[js.Any]))
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       jobRoleArn.foreach(__v => __obj.updateDynamic("jobRoleArn")(__v.asInstanceOf[js.Any]))
@@ -638,6 +673,7 @@ package batch {
       logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
+      networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
       readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
       resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
@@ -1020,6 +1056,8 @@ package batch {
   }
 
   /** An object representing a container instance host device.
+    *
+    * '''Note:'''This object isn't applicable to jobs running on Fargate resources and shouldn't be provided.
     */
   @js.native
   trait Device extends js.Object {
@@ -1055,6 +1093,31 @@ package batch {
     @inline def values = js.Array(READ, WRITE, MKNOD)
   }
 
+  /** Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If the <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL1</code>.
+    *
+    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
+    */
+  @js.native
+  trait Ec2Configuration extends js.Object {
+    var imageType: ImageType
+    var imageIdOverride: js.UndefOr[ImageIdOverride]
+  }
+
+  object Ec2Configuration {
+    @inline
+    def apply(
+        imageType: ImageType,
+        imageIdOverride: js.UndefOr[ImageIdOverride] = js.undefined
+    ): Ec2Configuration = {
+      val __obj = js.Dynamic.literal(
+        "imageType" -> imageType.asInstanceOf[js.Any]
+      )
+
+      imageIdOverride.foreach(__v => __obj.updateDynamic("imageIdOverride")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Ec2Configuration]
+    }
+  }
+
   /** Specifies a set of conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met.
     */
   @js.native
@@ -1084,7 +1147,25 @@ package batch {
     }
   }
 
-  /** Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+  /** The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify this parameter.
+    */
+  @js.native
+  trait FargatePlatformConfiguration extends js.Object {
+    var platformVersion: js.UndefOr[String]
+  }
+
+  object FargatePlatformConfiguration {
+    @inline
+    def apply(
+        platformVersion: js.UndefOr[String] = js.undefined
+    ): FargatePlatformConfiguration = {
+      val __obj = js.Dynamic.literal()
+      platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FargatePlatformConfiguration]
+    }
+  }
+
+  /** Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to persist after the containers associated with it stop running.
     */
   @js.native
   trait Host extends js.Object {
@@ -1135,6 +1216,8 @@ package batch {
     var containerProperties: js.UndefOr[ContainerProperties]
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
+    var platformCapabilities: js.UndefOr[PlatformCapabilityList]
+    var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
     var status: js.UndefOr[String]
     var tags: js.UndefOr[TagrisTagsMap]
@@ -1151,6 +1234,8 @@ package batch {
         containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
+        platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
+        propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
@@ -1166,6 +1251,8 @@ package batch {
       containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1223,6 +1310,8 @@ package batch {
     var nodeDetails: js.UndefOr[NodeDetails]
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
+    var platformCapabilities: js.UndefOr[PlatformCapabilityList]
+    var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
     var statusReason: js.UndefOr[String]
     var stoppedAt: js.UndefOr[Double]
@@ -1248,6 +1337,8 @@ package batch {
         nodeDetails: js.UndefOr[NodeDetails] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
+        platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
+        propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined,
@@ -1272,6 +1363,8 @@ package batch {
       nodeDetails.foreach(__v => __obj.updateDynamic("nodeDetails")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
@@ -1426,6 +1519,9 @@ package batch {
   }
 
   /** An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
+    * If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.
+    *
+    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1631,6 +1727,24 @@ package batch {
     }
   }
 
+  /** The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify this parameter.
+    */
+  @js.native
+  trait NetworkConfiguration extends js.Object {
+    var assignPublicIp: js.UndefOr[AssignPublicIp]
+  }
+
+  object NetworkConfiguration {
+    @inline
+    def apply(
+        assignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined
+    ): NetworkConfiguration = {
+      val __obj = js.Dynamic.literal()
+      assignPublicIp.foreach(__v => __obj.updateDynamic("assignPublicIp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkConfiguration]
+    }
+  }
+
   /** An object representing the elastic network interface for a multi-node parallel job node.
     */
   @js.native
@@ -1677,6 +1791,8 @@ package batch {
   }
 
   /** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
+    *
+    * '''Note:'''This isn't applicable to jobs running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.
     */
   @js.native
   trait NodeOverrides extends js.Object {
@@ -1793,12 +1909,23 @@ package batch {
   }
 
   @js.native
+  sealed trait PlatformCapability extends js.Any
+  object PlatformCapability {
+    val EC2 = "EC2".asInstanceOf[PlatformCapability]
+    val FARGATE = "FARGATE".asInstanceOf[PlatformCapability]
+
+    @inline def values = js.Array(EC2, FARGATE)
+  }
+
+  @js.native
   trait RegisterJobDefinitionRequest extends js.Object {
     var jobDefinitionName: String
     var `type`: JobDefinitionType
     var containerProperties: js.UndefOr[ContainerProperties]
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
+    var platformCapabilities: js.UndefOr[PlatformCapabilityList]
+    var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
     var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
@@ -1812,6 +1939,8 @@ package batch {
         containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
+        platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
+        propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
@@ -1824,6 +1953,8 @@ package batch {
       containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
@@ -1854,7 +1985,7 @@ package batch {
     }
   }
 
-  /** The type and amount of a resource to assign to a container. Currently, the only supported resource type is <code>GPU</code>.
+  /** The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
     */
   @js.native
   trait ResourceRequirement extends js.Object {
@@ -1880,8 +2011,10 @@ package batch {
   sealed trait ResourceType extends js.Any
   object ResourceType {
     val GPU = "GPU".asInstanceOf[ResourceType]
+    val VCPU = "VCPU".asInstanceOf[ResourceType]
+    val MEMORY = "MEMORY".asInstanceOf[ResourceType]
 
-    @inline def values = js.Array(GPU)
+    @inline def values = js.Array(GPU, VCPU, MEMORY)
   }
 
   @js.native
@@ -1893,7 +2026,7 @@ package batch {
     @inline def values = js.Array(RETRY, EXIT)
   }
 
-  /** The retry strategy associated with a job.
+  /** The retry strategy associated with a job. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html|Automated job retries]] in the <i>AWS Batch User Guide</i>.
     */
   @js.native
   trait RetryStrategy extends js.Object {
@@ -1917,7 +2050,7 @@ package batch {
   /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:
     * * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.
     * * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.
-    * For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>AWS Batch User Guide</i>.
     */
   @js.native
   trait Secret extends js.Object {
@@ -1949,6 +2082,7 @@ package batch {
     var dependsOn: js.UndefOr[JobDependencyList]
     var nodeOverrides: js.UndefOr[NodeOverrides]
     var parameters: js.UndefOr[ParametersMap]
+    var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
     var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
@@ -1965,6 +2099,7 @@ package batch {
         dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
         nodeOverrides: js.UndefOr[NodeOverrides] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
+        propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
@@ -1980,6 +2115,7 @@ package batch {
       dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
       nodeOverrides.foreach(__v => __obj.updateDynamic("nodeOverrides")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
@@ -2074,6 +2210,8 @@ package batch {
   }
 
   /** The container path, mount options, and size of the tmpfs mount.
+    *
+    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
     */
   @js.native
   trait Tmpfs extends js.Object {
@@ -2100,6 +2238,8 @@ package batch {
   }
 
   /** The <code>ulimit</code> settings to pass to the container.
+    *
+    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
     */
   @js.native
   trait Ulimit extends js.Object {

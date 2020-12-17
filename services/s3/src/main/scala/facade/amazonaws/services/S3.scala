@@ -21,6 +21,7 @@ package object s3 {
   type AnalyticsConfigurationList = js.Array[AnalyticsConfiguration]
   type AnalyticsId = String
   type Body = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BucketKeyEnabled = Boolean
   type BucketName = String
   type Buckets = js.Array[Bucket]
   type BypassGovernanceRetention = Boolean
@@ -1177,6 +1178,7 @@ package s3 {
   @js.native
   trait CompleteMultipartUploadOutput extends js.Object {
     var Bucket: js.UndefOr[BucketName]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var ETag: js.UndefOr[ETag]
     var Expiration: js.UndefOr[Expiration]
     var Key: js.UndefOr[ObjectKey]
@@ -1191,6 +1193,7 @@ package s3 {
     @inline
     def apply(
         Bucket: js.UndefOr[BucketName] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         Expiration: js.UndefOr[Expiration] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -1202,6 +1205,7 @@ package s3 {
     ): CompleteMultipartUploadOutput = {
       val __obj = js.Dynamic.literal()
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
@@ -1332,6 +1336,7 @@ package s3 {
 
   @js.native
   trait CopyObjectOutput extends js.Object {
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CopyObjectResult: js.UndefOr[CopyObjectResult]
     var CopySourceVersionId: js.UndefOr[CopySourceVersionId]
     var Expiration: js.UndefOr[Expiration]
@@ -1347,6 +1352,7 @@ package s3 {
   object CopyObjectOutput {
     @inline
     def apply(
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CopyObjectResult: js.UndefOr[CopyObjectResult] = js.undefined,
         CopySourceVersionId: js.UndefOr[CopySourceVersionId] = js.undefined,
         Expiration: js.UndefOr[Expiration] = js.undefined,
@@ -1359,6 +1365,7 @@ package s3 {
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): CopyObjectOutput = {
       val __obj = js.Dynamic.literal()
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CopyObjectResult.foreach(__v => __obj.updateDynamic("CopyObjectResult")(__v.asInstanceOf[js.Any]))
       CopySourceVersionId.foreach(__v => __obj.updateDynamic("CopySourceVersionId")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
@@ -1379,6 +1386,7 @@ package s3 {
     var CopySource: CopySource
     var Key: ObjectKey
     var ACL: js.UndefOr[ObjectCannedACL]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
@@ -1423,6 +1431,7 @@ package s3 {
         CopySource: CopySource,
         Key: ObjectKey,
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
@@ -1466,6 +1475,7 @@ package s3 {
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
@@ -1628,6 +1638,7 @@ package s3 {
     var AbortDate: js.UndefOr[AbortDate]
     var AbortRuleId: js.UndefOr[AbortRuleId]
     var Bucket: js.UndefOr[BucketName]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var Key: js.UndefOr[ObjectKey]
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
@@ -1644,6 +1655,7 @@ package s3 {
         AbortDate: js.UndefOr[AbortDate] = js.undefined,
         AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
         Bucket: js.UndefOr[BucketName] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
@@ -1657,6 +1669,7 @@ package s3 {
       AbortDate.foreach(__v => __obj.updateDynamic("AbortDate")(__v.asInstanceOf[js.Any]))
       AbortRuleId.foreach(__v => __obj.updateDynamic("AbortRuleId")(__v.asInstanceOf[js.Any]))
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
@@ -1674,6 +1687,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var ACL: js.UndefOr[ObjectCannedACL]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
@@ -1707,6 +1721,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
@@ -1739,6 +1754,7 @@ package s3 {
       )
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
@@ -3564,6 +3580,7 @@ package s3 {
   trait GetObjectOutput extends js.Object {
     var AcceptRanges: js.UndefOr[AcceptRanges]
     var Body: js.UndefOr[Body]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
@@ -3600,6 +3617,7 @@ package s3 {
     def apply(
         AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
         Body: js.UndefOr[Body] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
@@ -3633,6 +3651,7 @@ package s3 {
       val __obj = js.Dynamic.literal()
       AcceptRanges.foreach(__v => __obj.updateDynamic("AcceptRanges")(__v.asInstanceOf[js.Any]))
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
@@ -4015,6 +4034,7 @@ package s3 {
   trait HeadObjectOutput extends js.Object {
     var AcceptRanges: js.UndefOr[AcceptRanges]
     var ArchiveStatus: js.UndefOr[ArchiveStatus]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
@@ -4049,6 +4069,7 @@ package s3 {
     def apply(
         AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
         ArchiveStatus: js.UndefOr[ArchiveStatus] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
@@ -4080,6 +4101,7 @@ package s3 {
       val __obj = js.Dynamic.literal()
       AcceptRanges.foreach(__v => __obj.updateDynamic("AcceptRanges")(__v.asInstanceOf[js.Any]))
       ArchiveStatus.foreach(__v => __obj.updateDynamic("ArchiveStatus")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
@@ -6956,6 +6978,7 @@ package s3 {
 
   @js.native
   trait PutObjectOutput extends js.Object {
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var ETag: js.UndefOr[ETag]
     var Expiration: js.UndefOr[Expiration]
     var RequestCharged: js.UndefOr[RequestCharged]
@@ -6970,6 +6993,7 @@ package s3 {
   object PutObjectOutput {
     @inline
     def apply(
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         Expiration: js.UndefOr[Expiration] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
@@ -6981,6 +7005,7 @@ package s3 {
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectOutput = {
       val __obj = js.Dynamic.literal()
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
@@ -7000,6 +7025,7 @@ package s3 {
     var Key: ObjectKey
     var ACL: js.UndefOr[ObjectCannedACL]
     var Body: js.UndefOr[Body]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
@@ -7036,6 +7062,7 @@ package s3 {
         Key: ObjectKey,
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
         Body: js.UndefOr[Body] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
@@ -7071,6 +7098,7 @@ package s3 {
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
@@ -7367,6 +7395,36 @@ package s3 {
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedirectAllRequestsTo]
     }
+  }
+
+  /** A filter that you can specify for selection for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas.
+    *
+    * '''Note:'''If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed.
+    */
+  @js.native
+  trait ReplicaModifications extends js.Object {
+    var Status: ReplicaModificationsStatus
+  }
+
+  object ReplicaModifications {
+    @inline
+    def apply(
+        Status: ReplicaModificationsStatus
+    ): ReplicaModifications = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReplicaModifications]
+    }
+  }
+
+  @js.native
+  sealed trait ReplicaModificationsStatus extends js.Any
+  object ReplicaModificationsStatus {
+    val Enabled = "Enabled".asInstanceOf[ReplicaModificationsStatus]
+    val Disabled = "Disabled".asInstanceOf[ReplicaModificationsStatus]
+
+    @inline def values = js.Array(Enabled, Disabled)
   }
 
   /** A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.
@@ -8064,15 +8122,18 @@ package s3 {
   @js.native
   trait ServerSideEncryptionRule extends js.Object {
     var ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
   }
 
   object ServerSideEncryptionRule {
     @inline
     def apply(
-        ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined
+        ApplyServerSideEncryptionByDefault: js.UndefOr[ServerSideEncryptionByDefault] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined
     ): ServerSideEncryptionRule = {
       val __obj = js.Dynamic.literal()
       ApplyServerSideEncryptionByDefault.foreach(__v => __obj.updateDynamic("ApplyServerSideEncryptionByDefault")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerSideEncryptionRule]
     }
   }
@@ -8081,15 +8142,18 @@ package s3 {
     */
   @js.native
   trait SourceSelectionCriteria extends js.Object {
+    var ReplicaModifications: js.UndefOr[ReplicaModifications]
     var SseKmsEncryptedObjects: js.UndefOr[SseKmsEncryptedObjects]
   }
 
   object SourceSelectionCriteria {
     @inline
     def apply(
+        ReplicaModifications: js.UndefOr[ReplicaModifications] = js.undefined,
         SseKmsEncryptedObjects: js.UndefOr[SseKmsEncryptedObjects] = js.undefined
     ): SourceSelectionCriteria = {
       val __obj = js.Dynamic.literal()
+      ReplicaModifications.foreach(__v => __obj.updateDynamic("ReplicaModifications")(__v.asInstanceOf[js.Any]))
       SseKmsEncryptedObjects.foreach(__v => __obj.updateDynamic("SseKmsEncryptedObjects")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceSelectionCriteria]
     }
@@ -8435,6 +8499,7 @@ package s3 {
 
   @js.native
   trait UploadPartCopyOutput extends js.Object {
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CopyPartResult: js.UndefOr[CopyPartResult]
     var CopySourceVersionId: js.UndefOr[CopySourceVersionId]
     var RequestCharged: js.UndefOr[RequestCharged]
@@ -8447,6 +8512,7 @@ package s3 {
   object UploadPartCopyOutput {
     @inline
     def apply(
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CopyPartResult: js.UndefOr[CopyPartResult] = js.undefined,
         CopySourceVersionId: js.UndefOr[CopySourceVersionId] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
@@ -8456,6 +8522,7 @@ package s3 {
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined
     ): UploadPartCopyOutput = {
       val __obj = js.Dynamic.literal()
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CopyPartResult.foreach(__v => __obj.updateDynamic("CopyPartResult")(__v.asInstanceOf[js.Any]))
       CopySourceVersionId.foreach(__v => __obj.updateDynamic("CopySourceVersionId")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
@@ -8541,6 +8608,7 @@ package s3 {
 
   @js.native
   trait UploadPartOutput extends js.Object {
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var ETag: js.UndefOr[ETag]
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
@@ -8552,6 +8620,7 @@ package s3 {
   object UploadPartOutput {
     @inline
     def apply(
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
@@ -8560,6 +8629,7 @@ package s3 {
         ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined
     ): UploadPartOutput = {
       val __obj = js.Dynamic.literal()
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))

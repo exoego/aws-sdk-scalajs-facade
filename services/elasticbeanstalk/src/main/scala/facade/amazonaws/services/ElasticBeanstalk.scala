@@ -78,6 +78,7 @@ package object elasticbeanstalk {
   type LoadBalancerListenersDescription = js.Array[Listener]
   type Maintainer = String
   type ManagedActionHistoryItems = js.Array[ManagedActionHistoryItem]
+  type ManagedActionHistoryMaxItems = Int
   type ManagedActions = js.Array[ManagedAction]
   type MaxRecords = Int
   type Message = String
@@ -1642,7 +1643,7 @@ package elasticbeanstalk {
   trait DescribeEnvironmentManagedActionHistoryRequest extends js.Object {
     var EnvironmentId: js.UndefOr[EnvironmentId]
     var EnvironmentName: js.UndefOr[EnvironmentName]
-    var MaxItems: js.UndefOr[Int]
+    var MaxItems: js.UndefOr[ManagedActionHistoryMaxItems]
     var NextToken: js.UndefOr[String]
   }
 
@@ -1651,7 +1652,7 @@ package elasticbeanstalk {
     def apply(
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-        MaxItems: js.UndefOr[Int] = js.undefined,
+        MaxItems: js.UndefOr[ManagedActionHistoryMaxItems] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryRequest = {
       val __obj = js.Dynamic.literal()

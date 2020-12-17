@@ -66,6 +66,7 @@ package object directoryservice {
   type ManualSnapshotsLimitReached = Boolean
   type NextToken = String
   type Notes = String
+  type OCSPUrl = String
   type OrganizationalUnitDN = String
   type PageLimit = Int
   type Password = String
@@ -152,9 +153,11 @@ package object directoryservice {
     @inline def describeSharedDirectoriesFuture(params: DescribeSharedDirectoriesRequest): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] = service.describeSnapshots(params).promise().toFuture
     @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] = service.describeTrusts(params).promise().toFuture
+    @inline def disableClientAuthenticationFuture(params: DisableClientAuthenticationRequest): Future[DisableClientAuthenticationResult] = service.disableClientAuthentication(params).promise().toFuture
     @inline def disableLDAPSFuture(params: DisableLDAPSRequest): Future[DisableLDAPSResult] = service.disableLDAPS(params).promise().toFuture
     @inline def disableRadiusFuture(params: DisableRadiusRequest): Future[DisableRadiusResult] = service.disableRadius(params).promise().toFuture
     @inline def disableSsoFuture(params: DisableSsoRequest): Future[DisableSsoResult] = service.disableSso(params).promise().toFuture
+    @inline def enableClientAuthenticationFuture(params: EnableClientAuthenticationRequest): Future[EnableClientAuthenticationResult] = service.enableClientAuthentication(params).promise().toFuture
     @inline def enableLDAPSFuture(params: EnableLDAPSRequest): Future[EnableLDAPSResult] = service.enableLDAPS(params).promise().toFuture
     @inline def enableRadiusFuture(params: EnableRadiusRequest): Future[EnableRadiusResult] = service.enableRadius(params).promise().toFuture
     @inline def enableSsoFuture(params: EnableSsoRequest): Future[EnableSsoResult] = service.enableSso(params).promise().toFuture
@@ -222,9 +225,11 @@ package directoryservice {
     def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] = js.native
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult] = js.native
     def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult] = js.native
+    def disableClientAuthentication(params: DisableClientAuthenticationRequest): Request[DisableClientAuthenticationResult] = js.native
     def disableLDAPS(params: DisableLDAPSRequest): Request[DisableLDAPSResult] = js.native
     def disableRadius(params: DisableRadiusRequest): Request[DisableRadiusResult] = js.native
     def disableSso(params: DisableSsoRequest): Request[DisableSsoResult] = js.native
+    def enableClientAuthentication(params: EnableClientAuthenticationRequest): Request[EnableClientAuthenticationResult] = js.native
     def enableLDAPS(params: EnableLDAPSRequest): Request[EnableLDAPSResult] = js.native
     def enableRadius(params: EnableRadiusRequest): Request[EnableRadiusResult] = js.native
     def enableSso(params: EnableSsoRequest): Request[EnableSsoResult] = js.native
@@ -443,30 +448,36 @@ package directoryservice {
   @js.native
   trait Certificate extends js.Object {
     var CertificateId: js.UndefOr[CertificateId]
+    var ClientCertAuthSettings: js.UndefOr[ClientCertAuthSettings]
     var CommonName: js.UndefOr[CertificateCN]
     var ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime]
     var RegisteredDateTime: js.UndefOr[CertificateRegisteredDateTime]
     var State: js.UndefOr[CertificateState]
     var StateReason: js.UndefOr[CertificateStateReason]
+    var Type: js.UndefOr[CertificateType]
   }
 
   object Certificate {
     @inline
     def apply(
         CertificateId: js.UndefOr[CertificateId] = js.undefined,
+        ClientCertAuthSettings: js.UndefOr[ClientCertAuthSettings] = js.undefined,
         CommonName: js.UndefOr[CertificateCN] = js.undefined,
         ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime] = js.undefined,
         RegisteredDateTime: js.UndefOr[CertificateRegisteredDateTime] = js.undefined,
         State: js.UndefOr[CertificateState] = js.undefined,
-        StateReason: js.UndefOr[CertificateStateReason] = js.undefined
+        StateReason: js.UndefOr[CertificateStateReason] = js.undefined,
+        Type: js.UndefOr[CertificateType] = js.undefined
     ): Certificate = {
       val __obj = js.Dynamic.literal()
       CertificateId.foreach(__v => __obj.updateDynamic("CertificateId")(__v.asInstanceOf[js.Any]))
+      ClientCertAuthSettings.foreach(__v => __obj.updateDynamic("ClientCertAuthSettings")(__v.asInstanceOf[js.Any]))
       CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
       ExpiryDateTime.foreach(__v => __obj.updateDynamic("ExpiryDateTime")(__v.asInstanceOf[js.Any]))
       RegisteredDateTime.foreach(__v => __obj.updateDynamic("RegisteredDateTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Certificate]
     }
   }
@@ -479,6 +490,7 @@ package directoryservice {
     var CommonName: js.UndefOr[CertificateCN]
     var ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime]
     var State: js.UndefOr[CertificateState]
+    var Type: js.UndefOr[CertificateType]
   }
 
   object CertificateInfo {
@@ -487,13 +499,15 @@ package directoryservice {
         CertificateId: js.UndefOr[CertificateId] = js.undefined,
         CommonName: js.UndefOr[CertificateCN] = js.undefined,
         ExpiryDateTime: js.UndefOr[CertificateExpiryDateTime] = js.undefined,
-        State: js.UndefOr[CertificateState] = js.undefined
+        State: js.UndefOr[CertificateState] = js.undefined,
+        Type: js.UndefOr[CertificateType] = js.undefined
     ): CertificateInfo = {
       val __obj = js.Dynamic.literal()
       CertificateId.foreach(__v => __obj.updateDynamic("CertificateId")(__v.asInstanceOf[js.Any]))
       CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
       ExpiryDateTime.foreach(__v => __obj.updateDynamic("ExpiryDateTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateInfo]
     }
   }
@@ -509,6 +523,41 @@ package directoryservice {
     val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
     @inline def values = js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
+  }
+
+  @js.native
+  sealed trait CertificateType extends js.Any
+  object CertificateType {
+    val ClientCertAuth = "ClientCertAuth".asInstanceOf[CertificateType]
+    val ClientLDAPS = "ClientLDAPS".asInstanceOf[CertificateType]
+
+    @inline def values = js.Array(ClientCertAuth, ClientLDAPS)
+  }
+
+  @js.native
+  sealed trait ClientAuthenticationType extends js.Any
+  object ClientAuthenticationType {
+    val SmartCard = "SmartCard".asInstanceOf[ClientAuthenticationType]
+
+    @inline def values = js.Array(SmartCard)
+  }
+
+  /** Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations.
+    */
+  @js.native
+  trait ClientCertAuthSettings extends js.Object {
+    var OCSPUrl: js.UndefOr[OCSPUrl]
+  }
+
+  object ClientCertAuthSettings {
+    @inline
+    def apply(
+        OCSPUrl: js.UndefOr[OCSPUrl] = js.undefined
+    ): ClientCertAuthSettings = {
+      val __obj = js.Dynamic.literal()
+      OCSPUrl.foreach(__v => __obj.updateDynamic("OCSPUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClientCertAuthSettings]
+    }
   }
 
   /** Contains information about a computer account in a directory.
@@ -1959,6 +2008,37 @@ package directoryservice {
   }
 
   @js.native
+  trait DisableClientAuthenticationRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Type: ClientAuthenticationType
+  }
+
+  object DisableClientAuthenticationRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Type: ClientAuthenticationType
+    ): DisableClientAuthenticationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisableClientAuthenticationRequest]
+    }
+  }
+
+  @js.native
+  trait DisableClientAuthenticationResult extends js.Object
+
+  object DisableClientAuthenticationResult {
+    @inline
+    def apply(): DisableClientAuthenticationResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisableClientAuthenticationResult]
+    }
+  }
+
+  @js.native
   trait DisableLDAPSRequest extends js.Object {
     var DirectoryId: DirectoryId
     var Type: LDAPSType
@@ -2117,6 +2197,37 @@ package directoryservice {
     val Failed = "Failed".asInstanceOf[DomainControllerStatus]
 
     @inline def values = js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
+  }
+
+  @js.native
+  trait EnableClientAuthenticationRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Type: ClientAuthenticationType
+  }
+
+  object EnableClientAuthenticationRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Type: ClientAuthenticationType
+    ): EnableClientAuthenticationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EnableClientAuthenticationRequest]
+    }
+  }
+
+  @js.native
+  trait EnableClientAuthenticationResult extends js.Object
+
+  object EnableClientAuthenticationResult {
+    @inline
+    def apply(): EnableClientAuthenticationResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[EnableClientAuthenticationResult]
+    }
   }
 
   @js.native
@@ -2762,7 +2873,7 @@ package directoryservice {
     @inline def values = js.Array(Creating, Completed, Failed)
   }
 
-  /** The replicated regional information for a directory.
+  /** The replicated Region information for a directory.
     */
   @js.native
   trait RegionDescription extends js.Object {
@@ -2838,18 +2949,25 @@ package directoryservice {
   trait RegisterCertificateRequest extends js.Object {
     var CertificateData: CertificateData
     var DirectoryId: DirectoryId
+    var ClientCertAuthSettings: js.UndefOr[ClientCertAuthSettings]
+    var Type: js.UndefOr[CertificateType]
   }
 
   object RegisterCertificateRequest {
     @inline
     def apply(
         CertificateData: CertificateData,
-        DirectoryId: DirectoryId
+        DirectoryId: DirectoryId,
+        ClientCertAuthSettings: js.UndefOr[ClientCertAuthSettings] = js.undefined,
+        Type: js.UndefOr[CertificateType] = js.undefined
     ): RegisterCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateData" -> CertificateData.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
       )
+
+      ClientCertAuthSettings.foreach(__v => __obj.updateDynamic("ClientCertAuthSettings")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCertificateRequest]
     }
   }

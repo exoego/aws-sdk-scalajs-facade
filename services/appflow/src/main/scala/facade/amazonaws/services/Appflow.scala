@@ -86,6 +86,7 @@ package object appflow {
   type Timezone = String
   type TriggerTypeList = js.Array[TriggerType]
   type UpdatedBy = String
+  type UpsolverBucketName = String
   type Username = String
   type Value = String
   type Warehouse = String
@@ -370,6 +371,7 @@ package appflow {
     var Slack: js.UndefOr[SlackMetadata]
     var Snowflake: js.UndefOr[SnowflakeMetadata]
     var Trendmicro: js.UndefOr[TrendmicroMetadata]
+    var Upsolver: js.UndefOr[UpsolverMetadata]
     var Veeva: js.UndefOr[VeevaMetadata]
     var Zendesk: js.UndefOr[ZendeskMetadata]
   }
@@ -392,6 +394,7 @@ package appflow {
         Slack: js.UndefOr[SlackMetadata] = js.undefined,
         Snowflake: js.UndefOr[SnowflakeMetadata] = js.undefined,
         Trendmicro: js.UndefOr[TrendmicroMetadata] = js.undefined,
+        Upsolver: js.UndefOr[UpsolverMetadata] = js.undefined,
         Veeva: js.UndefOr[VeevaMetadata] = js.undefined,
         Zendesk: js.UndefOr[ZendeskMetadata] = js.undefined
     ): ConnectorMetadata = {
@@ -411,6 +414,7 @@ package appflow {
       Slack.foreach(__v => __obj.updateDynamic("Slack")(__v.asInstanceOf[js.Any]))
       Snowflake.foreach(__v => __obj.updateDynamic("Snowflake")(__v.asInstanceOf[js.Any]))
       Trendmicro.foreach(__v => __obj.updateDynamic("Trendmicro")(__v.asInstanceOf[js.Any]))
+      Upsolver.foreach(__v => __obj.updateDynamic("Upsolver")(__v.asInstanceOf[js.Any]))
       Veeva.foreach(__v => __obj.updateDynamic("Veeva")(__v.asInstanceOf[js.Any]))
       Zendesk.foreach(__v => __obj.updateDynamic("Zendesk")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectorMetadata]
@@ -696,6 +700,7 @@ package appflow {
     val Amplitude = "Amplitude".asInstanceOf[ConnectorType]
     val Veeva = "Veeva".asInstanceOf[ConnectorType]
     val EventBridge = "EventBridge".asInstanceOf[ConnectorType]
+    val Upsolver = "Upsolver".asInstanceOf[ConnectorType]
 
     @inline def values = js.Array(
       Salesforce,
@@ -714,7 +719,8 @@ package appflow {
       Infornexus,
       Amplitude,
       Veeva,
-      EventBridge
+      EventBridge,
+      Upsolver
     )
   }
 
@@ -1259,6 +1265,7 @@ package appflow {
     var S3: js.UndefOr[S3DestinationProperties]
     var Salesforce: js.UndefOr[SalesforceDestinationProperties]
     var Snowflake: js.UndefOr[SnowflakeDestinationProperties]
+    var Upsolver: js.UndefOr[UpsolverDestinationProperties]
   }
 
   object DestinationConnectorProperties {
@@ -1268,7 +1275,8 @@ package appflow {
         Redshift: js.UndefOr[RedshiftDestinationProperties] = js.undefined,
         S3: js.UndefOr[S3DestinationProperties] = js.undefined,
         Salesforce: js.UndefOr[SalesforceDestinationProperties] = js.undefined,
-        Snowflake: js.UndefOr[SnowflakeDestinationProperties] = js.undefined
+        Snowflake: js.UndefOr[SnowflakeDestinationProperties] = js.undefined,
+        Upsolver: js.UndefOr[UpsolverDestinationProperties] = js.undefined
     ): DestinationConnectorProperties = {
       val __obj = js.Dynamic.literal()
       EventBridge.foreach(__v => __obj.updateDynamic("EventBridge")(__v.asInstanceOf[js.Any]))
@@ -1276,6 +1284,7 @@ package appflow {
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       Snowflake.foreach(__v => __obj.updateDynamic("Snowflake")(__v.asInstanceOf[js.Any]))
+      Upsolver.foreach(__v => __obj.updateDynamic("Upsolver")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationConnectorProperties]
     }
   }
@@ -3753,6 +3762,71 @@ package appflow {
       val __obj = js.Dynamic.literal()
       flowStatus.foreach(__v => __obj.updateDynamic("flowStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowResponse]
+    }
+  }
+
+  /** The properties that are applied when Upsolver is used as a destination.
+    */
+  @js.native
+  trait UpsolverDestinationProperties extends js.Object {
+    var bucketName: UpsolverBucketName
+    var s3OutputFormatConfig: UpsolverS3OutputFormatConfig
+    var bucketPrefix: js.UndefOr[BucketPrefix]
+  }
+
+  object UpsolverDestinationProperties {
+    @inline
+    def apply(
+        bucketName: UpsolverBucketName,
+        s3OutputFormatConfig: UpsolverS3OutputFormatConfig,
+        bucketPrefix: js.UndefOr[BucketPrefix] = js.undefined
+    ): UpsolverDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "s3OutputFormatConfig" -> s3OutputFormatConfig.asInstanceOf[js.Any]
+      )
+
+      bucketPrefix.foreach(__v => __obj.updateDynamic("bucketPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpsolverDestinationProperties]
+    }
+  }
+
+  /** The connector metadata specific to Upsolver.
+    */
+  @js.native
+  trait UpsolverMetadata extends js.Object
+
+  object UpsolverMetadata {
+    @inline
+    def apply(): UpsolverMetadata = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpsolverMetadata]
+    }
+  }
+
+  /** The configuration that determines how Amazon AppFlow formats the flow output data when Upsolver is used as the destination.
+    */
+  @js.native
+  trait UpsolverS3OutputFormatConfig extends js.Object {
+    var prefixConfig: PrefixConfig
+    var aggregationConfig: js.UndefOr[AggregationConfig]
+    var fileType: js.UndefOr[FileType]
+  }
+
+  object UpsolverS3OutputFormatConfig {
+    @inline
+    def apply(
+        prefixConfig: PrefixConfig,
+        aggregationConfig: js.UndefOr[AggregationConfig] = js.undefined,
+        fileType: js.UndefOr[FileType] = js.undefined
+    ): UpsolverS3OutputFormatConfig = {
+      val __obj = js.Dynamic.literal(
+        "prefixConfig" -> prefixConfig.asInstanceOf[js.Any]
+      )
+
+      aggregationConfig.foreach(__v => __obj.updateDynamic("aggregationConfig")(__v.asInstanceOf[js.Any]))
+      fileType.foreach(__v => __obj.updateDynamic("fileType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpsolverS3OutputFormatConfig]
     }
   }
 

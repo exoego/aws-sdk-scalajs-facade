@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object networkmanager {
+  type ConnectionList = js.Array[Connection]
   type CustomerGatewayAssociationList = js.Array[CustomerGatewayAssociation]
   type DateTime = js.Date
   type DeviceList = js.Array[Device]
@@ -21,16 +22,20 @@ package object networkmanager {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TransitGatewayConnectPeerAssociationList = js.Array[TransitGatewayConnectPeerAssociation]
   type TransitGatewayRegistrationList = js.Array[TransitGatewayRegistration]
 
   implicit final class NetworkManagerOps(private val service: NetworkManager) extends AnyVal {
 
     @inline def associateCustomerGatewayFuture(params: AssociateCustomerGatewayRequest): Future[AssociateCustomerGatewayResponse] = service.associateCustomerGateway(params).promise().toFuture
     @inline def associateLinkFuture(params: AssociateLinkRequest): Future[AssociateLinkResponse] = service.associateLink(params).promise().toFuture
+    @inline def associateTransitGatewayConnectPeerFuture(params: AssociateTransitGatewayConnectPeerRequest): Future[AssociateTransitGatewayConnectPeerResponse] = service.associateTransitGatewayConnectPeer(params).promise().toFuture
+    @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
     @inline def createDeviceFuture(params: CreateDeviceRequest): Future[CreateDeviceResponse] = service.createDevice(params).promise().toFuture
     @inline def createGlobalNetworkFuture(params: CreateGlobalNetworkRequest): Future[CreateGlobalNetworkResponse] = service.createGlobalNetwork(params).promise().toFuture
     @inline def createLinkFuture(params: CreateLinkRequest): Future[CreateLinkResponse] = service.createLink(params).promise().toFuture
     @inline def createSiteFuture(params: CreateSiteRequest): Future[CreateSiteResponse] = service.createSite(params).promise().toFuture
+    @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
     @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] = service.deleteDevice(params).promise().toFuture
     @inline def deleteGlobalNetworkFuture(params: DeleteGlobalNetworkRequest): Future[DeleteGlobalNetworkResponse] = service.deleteGlobalNetwork(params).promise().toFuture
     @inline def deleteLinkFuture(params: DeleteLinkRequest): Future[DeleteLinkResponse] = service.deleteLink(params).promise().toFuture
@@ -39,16 +44,20 @@ package object networkmanager {
     @inline def describeGlobalNetworksFuture(params: DescribeGlobalNetworksRequest): Future[DescribeGlobalNetworksResponse] = service.describeGlobalNetworks(params).promise().toFuture
     @inline def disassociateCustomerGatewayFuture(params: DisassociateCustomerGatewayRequest): Future[DisassociateCustomerGatewayResponse] = service.disassociateCustomerGateway(params).promise().toFuture
     @inline def disassociateLinkFuture(params: DisassociateLinkRequest): Future[DisassociateLinkResponse] = service.disassociateLink(params).promise().toFuture
+    @inline def disassociateTransitGatewayConnectPeerFuture(params: DisassociateTransitGatewayConnectPeerRequest): Future[DisassociateTransitGatewayConnectPeerResponse] = service.disassociateTransitGatewayConnectPeer(params).promise().toFuture
+    @inline def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] = service.getConnections(params).promise().toFuture
     @inline def getCustomerGatewayAssociationsFuture(params: GetCustomerGatewayAssociationsRequest): Future[GetCustomerGatewayAssociationsResponse] = service.getCustomerGatewayAssociations(params).promise().toFuture
     @inline def getDevicesFuture(params: GetDevicesRequest): Future[GetDevicesResponse] = service.getDevices(params).promise().toFuture
     @inline def getLinkAssociationsFuture(params: GetLinkAssociationsRequest): Future[GetLinkAssociationsResponse] = service.getLinkAssociations(params).promise().toFuture
     @inline def getLinksFuture(params: GetLinksRequest): Future[GetLinksResponse] = service.getLinks(params).promise().toFuture
     @inline def getSitesFuture(params: GetSitesRequest): Future[GetSitesResponse] = service.getSites(params).promise().toFuture
+    @inline def getTransitGatewayConnectPeerAssociationsFuture(params: GetTransitGatewayConnectPeerAssociationsRequest): Future[GetTransitGatewayConnectPeerAssociationsResponse] = service.getTransitGatewayConnectPeerAssociations(params).promise().toFuture
     @inline def getTransitGatewayRegistrationsFuture(params: GetTransitGatewayRegistrationsRequest): Future[GetTransitGatewayRegistrationsResponse] = service.getTransitGatewayRegistrations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def registerTransitGatewayFuture(params: RegisterTransitGatewayRequest): Future[RegisterTransitGatewayResponse] = service.registerTransitGateway(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] = service.updateConnection(params).promise().toFuture
     @inline def updateDeviceFuture(params: UpdateDeviceRequest): Future[UpdateDeviceResponse] = service.updateDevice(params).promise().toFuture
     @inline def updateGlobalNetworkFuture(params: UpdateGlobalNetworkRequest): Future[UpdateGlobalNetworkResponse] = service.updateGlobalNetwork(params).promise().toFuture
     @inline def updateLinkFuture(params: UpdateLinkRequest): Future[UpdateLinkResponse] = service.updateLink(params).promise().toFuture
@@ -65,10 +74,13 @@ package networkmanager {
 
     def associateCustomerGateway(params: AssociateCustomerGatewayRequest): Request[AssociateCustomerGatewayResponse] = js.native
     def associateLink(params: AssociateLinkRequest): Request[AssociateLinkResponse] = js.native
+    def associateTransitGatewayConnectPeer(params: AssociateTransitGatewayConnectPeerRequest): Request[AssociateTransitGatewayConnectPeerResponse] = js.native
+    def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
     def createDevice(params: CreateDeviceRequest): Request[CreateDeviceResponse] = js.native
     def createGlobalNetwork(params: CreateGlobalNetworkRequest): Request[CreateGlobalNetworkResponse] = js.native
     def createLink(params: CreateLinkRequest): Request[CreateLinkResponse] = js.native
     def createSite(params: CreateSiteRequest): Request[CreateSiteResponse] = js.native
+    def deleteConnection(params: DeleteConnectionRequest): Request[DeleteConnectionResponse] = js.native
     def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse] = js.native
     def deleteGlobalNetwork(params: DeleteGlobalNetworkRequest): Request[DeleteGlobalNetworkResponse] = js.native
     def deleteLink(params: DeleteLinkRequest): Request[DeleteLinkResponse] = js.native
@@ -77,20 +89,45 @@ package networkmanager {
     def describeGlobalNetworks(params: DescribeGlobalNetworksRequest): Request[DescribeGlobalNetworksResponse] = js.native
     def disassociateCustomerGateway(params: DisassociateCustomerGatewayRequest): Request[DisassociateCustomerGatewayResponse] = js.native
     def disassociateLink(params: DisassociateLinkRequest): Request[DisassociateLinkResponse] = js.native
+    def disassociateTransitGatewayConnectPeer(params: DisassociateTransitGatewayConnectPeerRequest): Request[DisassociateTransitGatewayConnectPeerResponse] = js.native
+    def getConnections(params: GetConnectionsRequest): Request[GetConnectionsResponse] = js.native
     def getCustomerGatewayAssociations(params: GetCustomerGatewayAssociationsRequest): Request[GetCustomerGatewayAssociationsResponse] = js.native
     def getDevices(params: GetDevicesRequest): Request[GetDevicesResponse] = js.native
     def getLinkAssociations(params: GetLinkAssociationsRequest): Request[GetLinkAssociationsResponse] = js.native
     def getLinks(params: GetLinksRequest): Request[GetLinksResponse] = js.native
     def getSites(params: GetSitesRequest): Request[GetSitesResponse] = js.native
+    def getTransitGatewayConnectPeerAssociations(params: GetTransitGatewayConnectPeerAssociationsRequest): Request[GetTransitGatewayConnectPeerAssociationsResponse] = js.native
     def getTransitGatewayRegistrations(params: GetTransitGatewayRegistrationsRequest): Request[GetTransitGatewayRegistrationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def registerTransitGateway(params: RegisterTransitGatewayRequest): Request[RegisterTransitGatewayResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse] = js.native
     def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse] = js.native
     def updateGlobalNetwork(params: UpdateGlobalNetworkRequest): Request[UpdateGlobalNetworkResponse] = js.native
     def updateLink(params: UpdateLinkRequest): Request[UpdateLinkResponse] = js.native
     def updateSite(params: UpdateSiteRequest): Request[UpdateSiteResponse] = js.native
+  }
+
+  /** Specifies a location in AWS.
+    */
+  @js.native
+  trait AWSLocation extends js.Object {
+    var SubnetArn: js.UndefOr[String]
+    var Zone: js.UndefOr[String]
+  }
+
+  object AWSLocation {
+    @inline
+    def apply(
+        SubnetArn: js.UndefOr[String] = js.undefined,
+        Zone: js.UndefOr[String] = js.undefined
+    ): AWSLocation = {
+      val __obj = js.Dynamic.literal()
+      SubnetArn.foreach(__v => __obj.updateDynamic("SubnetArn")(__v.asInstanceOf[js.Any]))
+      Zone.foreach(__v => __obj.updateDynamic("Zone")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AWSLocation]
+    }
   }
 
   @js.native
@@ -175,6 +212,49 @@ package networkmanager {
     }
   }
 
+  @js.native
+  trait AssociateTransitGatewayConnectPeerRequest extends js.Object {
+    var DeviceId: String
+    var GlobalNetworkId: String
+    var TransitGatewayConnectPeerArn: String
+    var LinkId: js.UndefOr[String]
+  }
+
+  object AssociateTransitGatewayConnectPeerRequest {
+    @inline
+    def apply(
+        DeviceId: String,
+        GlobalNetworkId: String,
+        TransitGatewayConnectPeerArn: String,
+        LinkId: js.UndefOr[String] = js.undefined
+    ): AssociateTransitGatewayConnectPeerRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
+        "TransitGatewayConnectPeerArn" -> TransitGatewayConnectPeerArn.asInstanceOf[js.Any]
+      )
+
+      LinkId.foreach(__v => __obj.updateDynamic("LinkId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateTransitGatewayConnectPeerRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateTransitGatewayConnectPeerResponse extends js.Object {
+    var TransitGatewayConnectPeerAssociation: js.UndefOr[TransitGatewayConnectPeerAssociation]
+  }
+
+  object AssociateTransitGatewayConnectPeerResponse {
+    @inline
+    def apply(
+        TransitGatewayConnectPeerAssociation: js.UndefOr[TransitGatewayConnectPeerAssociation] = js.undefined
+    ): AssociateTransitGatewayConnectPeerResponse = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayConnectPeerAssociation.foreach(__v => __obj.updateDynamic("TransitGatewayConnectPeerAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateTransitGatewayConnectPeerResponse]
+    }
+  }
+
   /** Describes bandwidth information.
     */
   @js.native
@@ -196,9 +276,121 @@ package networkmanager {
     }
   }
 
+  /** Describes a connection.
+    */
+  @js.native
+  trait Connection extends js.Object {
+    var ConnectedDeviceId: js.UndefOr[String]
+    var ConnectedLinkId: js.UndefOr[String]
+    var ConnectionArn: js.UndefOr[String]
+    var ConnectionId: js.UndefOr[String]
+    var CreatedAt: js.UndefOr[DateTime]
+    var Description: js.UndefOr[String]
+    var DeviceId: js.UndefOr[String]
+    var GlobalNetworkId: js.UndefOr[String]
+    var LinkId: js.UndefOr[String]
+    var State: js.UndefOr[ConnectionState]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object Connection {
+    @inline
+    def apply(
+        ConnectedDeviceId: js.UndefOr[String] = js.undefined,
+        ConnectedLinkId: js.UndefOr[String] = js.undefined,
+        ConnectionArn: js.UndefOr[String] = js.undefined,
+        ConnectionId: js.UndefOr[String] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        DeviceId: js.UndefOr[String] = js.undefined,
+        GlobalNetworkId: js.UndefOr[String] = js.undefined,
+        LinkId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[ConnectionState] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): Connection = {
+      val __obj = js.Dynamic.literal()
+      ConnectedDeviceId.foreach(__v => __obj.updateDynamic("ConnectedDeviceId")(__v.asInstanceOf[js.Any]))
+      ConnectedLinkId.foreach(__v => __obj.updateDynamic("ConnectedLinkId")(__v.asInstanceOf[js.Any]))
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      GlobalNetworkId.foreach(__v => __obj.updateDynamic("GlobalNetworkId")(__v.asInstanceOf[js.Any]))
+      LinkId.foreach(__v => __obj.updateDynamic("LinkId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Connection]
+    }
+  }
+
+  @js.native
+  sealed trait ConnectionState extends js.Any
+  object ConnectionState {
+    val PENDING = "PENDING".asInstanceOf[ConnectionState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionState]
+    val DELETING = "DELETING".asInstanceOf[ConnectionState]
+    val UPDATING = "UPDATING".asInstanceOf[ConnectionState]
+
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  }
+
+  @js.native
+  trait CreateConnectionRequest extends js.Object {
+    var ConnectedDeviceId: String
+    var DeviceId: String
+    var GlobalNetworkId: String
+    var ConnectedLinkId: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var LinkId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateConnectionRequest {
+    @inline
+    def apply(
+        ConnectedDeviceId: String,
+        DeviceId: String,
+        GlobalNetworkId: String,
+        ConnectedLinkId: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        LinkId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectedDeviceId" -> ConnectedDeviceId.asInstanceOf[js.Any],
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
+      )
+
+      ConnectedLinkId.foreach(__v => __obj.updateDynamic("ConnectedLinkId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LinkId.foreach(__v => __obj.updateDynamic("LinkId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateConnectionResponse extends js.Object {
+    var Connection: js.UndefOr[Connection]
+  }
+
+  object CreateConnectionResponse {
+    @inline
+    def apply(
+        Connection: js.UndefOr[Connection] = js.undefined
+    ): CreateConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionResponse]
+    }
+  }
+
   @js.native
   trait CreateDeviceRequest extends js.Object {
     var GlobalNetworkId: String
+    var AWSLocation: js.UndefOr[AWSLocation]
     var Description: js.UndefOr[String]
     var Location: js.UndefOr[Location]
     var Model: js.UndefOr[String]
@@ -213,6 +405,7 @@ package networkmanager {
     @inline
     def apply(
         GlobalNetworkId: String,
+        AWSLocation: js.UndefOr[AWSLocation] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[Location] = js.undefined,
         Model: js.UndefOr[String] = js.undefined,
@@ -226,6 +419,7 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
 
+      AWSLocation.foreach(__v => __obj.updateDynamic("AWSLocation")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       Model.foreach(__v => __obj.updateDynamic("Model")(__v.asInstanceOf[js.Any]))
@@ -423,6 +617,42 @@ package networkmanager {
     val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
     @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  }
+
+  @js.native
+  trait DeleteConnectionRequest extends js.Object {
+    var ConnectionId: String
+    var GlobalNetworkId: String
+  }
+
+  object DeleteConnectionRequest {
+    @inline
+    def apply(
+        ConnectionId: String,
+        GlobalNetworkId: String
+    ): DeleteConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectionResponse extends js.Object {
+    var Connection: js.UndefOr[Connection]
+  }
+
+  object DeleteConnectionResponse {
+    @inline
+    def apply(
+        Connection: js.UndefOr[Connection] = js.undefined
+    ): DeleteConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteConnectionResponse]
+    }
   }
 
   @js.native
@@ -647,6 +877,7 @@ package networkmanager {
     */
   @js.native
   trait Device extends js.Object {
+    var AWSLocation: js.UndefOr[AWSLocation]
     var CreatedAt: js.UndefOr[DateTime]
     var Description: js.UndefOr[String]
     var DeviceArn: js.UndefOr[String]
@@ -665,6 +896,7 @@ package networkmanager {
   object Device {
     @inline
     def apply(
+        AWSLocation: js.UndefOr[AWSLocation] = js.undefined,
         CreatedAt: js.UndefOr[DateTime] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         DeviceArn: js.UndefOr[String] = js.undefined,
@@ -680,6 +912,7 @@ package networkmanager {
         Vendor: js.UndefOr[String] = js.undefined
     ): Device = {
       val __obj = js.Dynamic.literal()
+      AWSLocation.foreach(__v => __obj.updateDynamic("AWSLocation")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
@@ -780,6 +1013,91 @@ package networkmanager {
       val __obj = js.Dynamic.literal()
       LinkAssociation.foreach(__v => __obj.updateDynamic("LinkAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateLinkResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateTransitGatewayConnectPeerRequest extends js.Object {
+    var GlobalNetworkId: String
+    var TransitGatewayConnectPeerArn: String
+  }
+
+  object DisassociateTransitGatewayConnectPeerRequest {
+    @inline
+    def apply(
+        GlobalNetworkId: String,
+        TransitGatewayConnectPeerArn: String
+    ): DisassociateTransitGatewayConnectPeerRequest = {
+      val __obj = js.Dynamic.literal(
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any],
+        "TransitGatewayConnectPeerArn" -> TransitGatewayConnectPeerArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateTransitGatewayConnectPeerRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateTransitGatewayConnectPeerResponse extends js.Object {
+    var TransitGatewayConnectPeerAssociation: js.UndefOr[TransitGatewayConnectPeerAssociation]
+  }
+
+  object DisassociateTransitGatewayConnectPeerResponse {
+    @inline
+    def apply(
+        TransitGatewayConnectPeerAssociation: js.UndefOr[TransitGatewayConnectPeerAssociation] = js.undefined
+    ): DisassociateTransitGatewayConnectPeerResponse = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayConnectPeerAssociation.foreach(__v => __obj.updateDynamic("TransitGatewayConnectPeerAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateTransitGatewayConnectPeerResponse]
+    }
+  }
+
+  @js.native
+  trait GetConnectionsRequest extends js.Object {
+    var GlobalNetworkId: String
+    var ConnectionIds: js.UndefOr[StringList]
+    var DeviceId: js.UndefOr[String]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetConnectionsRequest {
+    @inline
+    def apply(
+        GlobalNetworkId: String,
+        ConnectionIds: js.UndefOr[StringList] = js.undefined,
+        DeviceId: js.UndefOr[String] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetConnectionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
+      )
+
+      ConnectionIds.foreach(__v => __obj.updateDynamic("ConnectionIds")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionsRequest]
+    }
+  }
+
+  @js.native
+  trait GetConnectionsResponse extends js.Object {
+    var Connections: js.UndefOr[ConnectionList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetConnectionsResponse {
+    @inline
+    def apply(
+        Connections: js.UndefOr[ConnectionList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetConnectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionsResponse]
     }
   }
 
@@ -1025,6 +1343,52 @@ package networkmanager {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Sites.foreach(__v => __obj.updateDynamic("Sites")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSitesResponse]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayConnectPeerAssociationsRequest extends js.Object {
+    var GlobalNetworkId: String
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayConnectPeerArns: js.UndefOr[StringList]
+  }
+
+  object GetTransitGatewayConnectPeerAssociationsRequest {
+    @inline
+    def apply(
+        GlobalNetworkId: String,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayConnectPeerArns: js.UndefOr[StringList] = js.undefined
+    ): GetTransitGatewayConnectPeerAssociationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayConnectPeerArns.foreach(__v => __obj.updateDynamic("TransitGatewayConnectPeerArns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTransitGatewayConnectPeerAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayConnectPeerAssociationsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var TransitGatewayConnectPeerAssociations: js.UndefOr[TransitGatewayConnectPeerAssociationList]
+  }
+
+  object GetTransitGatewayConnectPeerAssociationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        TransitGatewayConnectPeerAssociations: js.UndefOr[TransitGatewayConnectPeerAssociationList] = js.undefined
+    ): GetTransitGatewayConnectPeerAssociationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TransitGatewayConnectPeerAssociations.foreach(__v => __obj.updateDynamic("TransitGatewayConnectPeerAssociations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTransitGatewayConnectPeerAssociationsResponse]
     }
   }
 
@@ -1410,6 +1774,47 @@ package networkmanager {
     }
   }
 
+  /** Describes a transit gateway Connect peer association.
+    */
+  @js.native
+  trait TransitGatewayConnectPeerAssociation extends js.Object {
+    var DeviceId: js.UndefOr[String]
+    var GlobalNetworkId: js.UndefOr[String]
+    var LinkId: js.UndefOr[String]
+    var State: js.UndefOr[TransitGatewayConnectPeerAssociationState]
+    var TransitGatewayConnectPeerArn: js.UndefOr[String]
+  }
+
+  object TransitGatewayConnectPeerAssociation {
+    @inline
+    def apply(
+        DeviceId: js.UndefOr[String] = js.undefined,
+        GlobalNetworkId: js.UndefOr[String] = js.undefined,
+        LinkId: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[TransitGatewayConnectPeerAssociationState] = js.undefined,
+        TransitGatewayConnectPeerArn: js.UndefOr[String] = js.undefined
+    ): TransitGatewayConnectPeerAssociation = {
+      val __obj = js.Dynamic.literal()
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      GlobalNetworkId.foreach(__v => __obj.updateDynamic("GlobalNetworkId")(__v.asInstanceOf[js.Any]))
+      LinkId.foreach(__v => __obj.updateDynamic("LinkId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      TransitGatewayConnectPeerArn.foreach(__v => __obj.updateDynamic("TransitGatewayConnectPeerArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransitGatewayConnectPeerAssociation]
+    }
+  }
+
+  @js.native
+  sealed trait TransitGatewayConnectPeerAssociationState extends js.Any
+  object TransitGatewayConnectPeerAssociationState {
+    val PENDING = "PENDING".asInstanceOf[TransitGatewayConnectPeerAssociationState]
+    val AVAILABLE = "AVAILABLE".asInstanceOf[TransitGatewayConnectPeerAssociationState]
+    val DELETING = "DELETING".asInstanceOf[TransitGatewayConnectPeerAssociationState]
+    val DELETED = "DELETED".asInstanceOf[TransitGatewayConnectPeerAssociationState]
+
+    @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  }
+
   /** Describes the registration of a transit gateway to a global network.
     */
   @js.native
@@ -1499,9 +1904,56 @@ package networkmanager {
   }
 
   @js.native
+  trait UpdateConnectionRequest extends js.Object {
+    var ConnectionId: String
+    var GlobalNetworkId: String
+    var ConnectedLinkId: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var LinkId: js.UndefOr[String]
+  }
+
+  object UpdateConnectionRequest {
+    @inline
+    def apply(
+        ConnectionId: String,
+        GlobalNetworkId: String,
+        ConnectedLinkId: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        LinkId: js.UndefOr[String] = js.undefined
+    ): UpdateConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
+        "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
+      )
+
+      ConnectedLinkId.foreach(__v => __obj.updateDynamic("ConnectedLinkId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LinkId.foreach(__v => __obj.updateDynamic("LinkId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectionResponse extends js.Object {
+    var Connection: js.UndefOr[Connection]
+  }
+
+  object UpdateConnectionResponse {
+    @inline
+    def apply(
+        Connection: js.UndefOr[Connection] = js.undefined
+    ): UpdateConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionResponse]
+    }
+  }
+
+  @js.native
   trait UpdateDeviceRequest extends js.Object {
     var DeviceId: String
     var GlobalNetworkId: String
+    var AWSLocation: js.UndefOr[AWSLocation]
     var Description: js.UndefOr[String]
     var Location: js.UndefOr[Location]
     var Model: js.UndefOr[String]
@@ -1516,6 +1968,7 @@ package networkmanager {
     def apply(
         DeviceId: String,
         GlobalNetworkId: String,
+        AWSLocation: js.UndefOr[AWSLocation] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[Location] = js.undefined,
         Model: js.UndefOr[String] = js.undefined,
@@ -1529,6 +1982,7 @@ package networkmanager {
         "GlobalNetworkId" -> GlobalNetworkId.asInstanceOf[js.Any]
       )
 
+      AWSLocation.foreach(__v => __obj.updateDynamic("AWSLocation")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       Model.foreach(__v => __obj.updateDynamic("Model")(__v.asInstanceOf[js.Any]))

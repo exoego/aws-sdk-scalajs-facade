@@ -174,7 +174,7 @@ package object mediaconvert {
   type __stringPatternIdentityAZaZ26AZaZ09163 = String
   type __stringPatternS3 = String
   type __stringPatternS3ASSETMAPXml = String
-  type __stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL = String
+  type __stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLOOGGGGaAHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLOOGGGGaA = String
   type __stringPatternS3MM2PPWWEEBBMMMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEEHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE = String
   type __stringPatternSNManifestConfirmConditionNotificationNS = String
   type __stringPatternSNSignalProcessingNotificationNS = String
@@ -1738,7 +1738,7 @@ package mediaconvert {
     }
   }
 
-  /** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
+  /** Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
     */
   @js.native
   sealed trait CmafClientCache extends js.Any
@@ -1986,6 +1986,17 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
+  /** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    */
+  @js.native
+  sealed trait CmfcAudioDuration extends js.Any
+  object CmfcAudioDuration {
+    val DEFAULT_CODEC_DURATION = "DEFAULT_CODEC_DURATION".asInstanceOf[CmfcAudioDuration]
+    val MATCH_VIDEO_DURATION = "MATCH_VIDEO_DURATION".asInstanceOf[CmfcAudioDuration]
+
+    @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
+  }
+
   /** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     */
   @js.native
@@ -2012,6 +2023,7 @@ package mediaconvert {
     */
   @js.native
   trait CmfcSettings extends js.Object {
+    var AudioDuration: js.UndefOr[CmfcAudioDuration]
     var Scte35Esam: js.UndefOr[CmfcScte35Esam]
     var Scte35Source: js.UndefOr[CmfcScte35Source]
   }
@@ -2019,10 +2031,12 @@ package mediaconvert {
   object CmfcSettings {
     @inline
     def apply(
+        AudioDuration: js.UndefOr[CmfcAudioDuration] = js.undefined,
         Scte35Esam: js.UndefOr[CmfcScte35Esam] = js.undefined,
         Scte35Source: js.UndefOr[CmfcScte35Source] = js.undefined
     ): CmfcSettings = {
       val __obj = js.Dynamic.literal()
+      AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
       Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
       Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmfcSettings]
@@ -2464,6 +2478,7 @@ package mediaconvert {
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
     var HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance]
     var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
+    var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
     var MpdProfile: js.UndefOr[DashIsoMpdProfile]
     var SegmentControl: js.UndefOr[DashIsoSegmentControl]
     var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
@@ -2481,6 +2496,7 @@ package mediaconvert {
         FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance] = js.undefined,
         MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
         MpdProfile: js.UndefOr[DashIsoMpdProfile] = js.undefined,
         SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
@@ -2495,6 +2511,7 @@ package mediaconvert {
       FragmentLength.foreach(__v => __obj.updateDynamic("FragmentLength")(__v.asInstanceOf[js.Any]))
       HbbtvCompliance.foreach(__v => __obj.updateDynamic("HbbtvCompliance")(__v.asInstanceOf[js.Any]))
       MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
+      MinFinalSegmentLength.foreach(__v => __obj.updateDynamic("MinFinalSegmentLength")(__v.asInstanceOf[js.Any]))
       MpdProfile.foreach(__v => __obj.updateDynamic("MpdProfile")(__v.asInstanceOf[js.Any]))
       SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
@@ -5017,7 +5034,7 @@ package mediaconvert {
     @inline def values = js.Array(INSERT, OMIT, NONE)
   }
 
-  /** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay.
+  /** Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
     */
   @js.native
   sealed trait HlsClientCache extends js.Any
@@ -5448,7 +5465,7 @@ package mediaconvert {
     var DeblockFilter: js.UndefOr[InputDeblockFilter]
     var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
     var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
-    var FileInput: js.UndefOr[__stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL]
+    var FileInput: js.UndefOr[__stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLOOGGGGaAHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLOOGGGGaA]
     var FilterEnable: js.UndefOr[InputFilterEnable]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
     var ImageInserter: js.UndefOr[ImageInserter]
@@ -5473,7 +5490,7 @@ package mediaconvert {
         DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
         DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
         DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
-        FileInput: js.UndefOr[__stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL] = js.undefined,
+        FileInput: js.UndefOr[__stringPatternS3MM2PPMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLOOGGGGaAHttpsMM2VVMMPPEEGGMMPP3AAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMKKAAMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8WWEEBBMMLLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLLOOGGGGaA] = js.undefined,
         FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
         ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
@@ -6674,6 +6691,17 @@ package mediaconvert {
     @inline def values = js.Array(DVB, ATSC)
   }
 
+  /** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    */
+  @js.native
+  sealed trait M2tsAudioDuration extends js.Any
+  object M2tsAudioDuration {
+    val DEFAULT_CODEC_DURATION = "DEFAULT_CODEC_DURATION".asInstanceOf[M2tsAudioDuration]
+    val MATCH_VIDEO_DURATION = "MATCH_VIDEO_DURATION".asInstanceOf[M2tsAudioDuration]
+
+    @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
+  }
+
   /** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
     */
   @js.native
@@ -6822,6 +6850,7 @@ package mediaconvert {
   @js.native
   trait M2tsSettings extends js.Object {
     var AudioBufferModel: js.UndefOr[M2tsAudioBufferModel]
+    var AudioDuration: js.UndefOr[M2tsAudioDuration]
     var AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647]
     var AudioPids: js.UndefOr[__listOf__integerMin32Max8182]
     var Bitrate: js.UndefOr[__integerMin0Max2147483647]
@@ -6863,6 +6892,7 @@ package mediaconvert {
     @inline
     def apply(
         AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
+        AudioDuration: js.UndefOr[M2tsAudioDuration] = js.undefined,
         AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
         Bitrate: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
@@ -6901,6 +6931,7 @@ package mediaconvert {
     ): M2tsSettings = {
       val __obj = js.Dynamic.literal()
       AudioBufferModel.foreach(__v => __obj.updateDynamic("AudioBufferModel")(__v.asInstanceOf[js.Any]))
+      AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
       AudioFramesPerPes.foreach(__v => __obj.updateDynamic("AudioFramesPerPes")(__v.asInstanceOf[js.Any]))
       AudioPids.foreach(__v => __obj.updateDynamic("AudioPids")(__v.asInstanceOf[js.Any]))
       Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
@@ -6940,6 +6971,17 @@ package mediaconvert {
     }
   }
 
+  /** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    */
+  @js.native
+  sealed trait M3u8AudioDuration extends js.Any
+  object M3u8AudioDuration {
+    val DEFAULT_CODEC_DURATION = "DEFAULT_CODEC_DURATION".asInstanceOf[M3u8AudioDuration]
+    val MATCH_VIDEO_DURATION = "MATCH_VIDEO_DURATION".asInstanceOf[M3u8AudioDuration]
+
+    @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
+  }
+
   /** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     */
   @js.native
@@ -6977,6 +7019,7 @@ package mediaconvert {
     */
   @js.native
   trait M3u8Settings extends js.Object {
+    var AudioDuration: js.UndefOr[M3u8AudioDuration]
     var AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647]
     var AudioPids: js.UndefOr[__listOf__integerMin32Max8182]
     var NielsenId3: js.UndefOr[M3u8NielsenId3]
@@ -6998,6 +7041,7 @@ package mediaconvert {
   object M3u8Settings {
     @inline
     def apply(
+        AudioDuration: js.UndefOr[M3u8AudioDuration] = js.undefined,
         AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
         NielsenId3: js.UndefOr[M3u8NielsenId3] = js.undefined,
@@ -7016,6 +7060,7 @@ package mediaconvert {
         VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined
     ): M3u8Settings = {
       val __obj = js.Dynamic.literal()
+      AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
       AudioFramesPerPes.foreach(__v => __obj.updateDynamic("AudioFramesPerPes")(__v.asInstanceOf[js.Any]))
       AudioPids.foreach(__v => __obj.updateDynamic("AudioPids")(__v.asInstanceOf[js.Any]))
       NielsenId3.foreach(__v => __obj.updateDynamic("NielsenId3")(__v.asInstanceOf[js.Any]))
@@ -7320,6 +7365,7 @@ package mediaconvert {
     */
   @js.native
   trait Mp4Settings extends js.Object {
+    var AudioDuration: js.UndefOr[CmfcAudioDuration]
     var CslgAtom: js.UndefOr[Mp4CslgAtom]
     var CttsVersion: js.UndefOr[__integerMin0Max1]
     var FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox]
@@ -7330,6 +7376,7 @@ package mediaconvert {
   object Mp4Settings {
     @inline
     def apply(
+        AudioDuration: js.UndefOr[CmfcAudioDuration] = js.undefined,
         CslgAtom: js.UndefOr[Mp4CslgAtom] = js.undefined,
         CttsVersion: js.UndefOr[__integerMin0Max1] = js.undefined,
         FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox] = js.undefined,
@@ -7337,6 +7384,7 @@ package mediaconvert {
         Mp4MajorBrand: js.UndefOr[__string] = js.undefined
     ): Mp4Settings = {
       val __obj = js.Dynamic.literal()
+      AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
       CslgAtom.foreach(__v => __obj.updateDynamic("CslgAtom")(__v.asInstanceOf[js.Any]))
       CttsVersion.foreach(__v => __obj.updateDynamic("CttsVersion")(__v.asInstanceOf[js.Any]))
       FreeSpaceBox.foreach(__v => __obj.updateDynamic("FreeSpaceBox")(__v.asInstanceOf[js.Any]))
@@ -7344,6 +7392,28 @@ package mediaconvert {
       Mp4MajorBrand.foreach(__v => __obj.updateDynamic("Mp4MajorBrand")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Mp4Settings]
     }
+  }
+
+  /** Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <Accessibility> elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude (EXCLUDE), to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng"/>
+    */
+  @js.native
+  sealed trait MpdAccessibilityCaptionHints extends js.Any
+  object MpdAccessibilityCaptionHints {
+    val INCLUDE = "INCLUDE".asInstanceOf[MpdAccessibilityCaptionHints]
+    val EXCLUDE = "EXCLUDE".asInstanceOf[MpdAccessibilityCaptionHints]
+
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
+  }
+
+  /** Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    */
+  @js.native
+  sealed trait MpdAudioDuration extends js.Any
+  object MpdAudioDuration {
+    val DEFAULT_CODEC_DURATION = "DEFAULT_CODEC_DURATION".asInstanceOf[MpdAudioDuration]
+    val MATCH_VIDEO_DURATION = "MATCH_VIDEO_DURATION".asInstanceOf[MpdAudioDuration]
+
+    @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
   }
 
   /** Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
@@ -7383,6 +7453,8 @@ package mediaconvert {
     */
   @js.native
   trait MpdSettings extends js.Object {
+    var AccessibilityCaptionHints: js.UndefOr[MpdAccessibilityCaptionHints]
+    var AudioDuration: js.UndefOr[MpdAudioDuration]
     var CaptionContainerType: js.UndefOr[MpdCaptionContainerType]
     var Scte35Esam: js.UndefOr[MpdScte35Esam]
     var Scte35Source: js.UndefOr[MpdScte35Source]
@@ -7391,11 +7463,15 @@ package mediaconvert {
   object MpdSettings {
     @inline
     def apply(
+        AccessibilityCaptionHints: js.UndefOr[MpdAccessibilityCaptionHints] = js.undefined,
+        AudioDuration: js.UndefOr[MpdAudioDuration] = js.undefined,
         CaptionContainerType: js.UndefOr[MpdCaptionContainerType] = js.undefined,
         Scte35Esam: js.UndefOr[MpdScte35Esam] = js.undefined,
         Scte35Source: js.UndefOr[MpdScte35Source] = js.undefined
     ): MpdSettings = {
       val __obj = js.Dynamic.literal()
+      AccessibilityCaptionHints.foreach(__v => __obj.updateDynamic("AccessibilityCaptionHints")(__v.asInstanceOf[js.Any]))
+      AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
       CaptionContainerType.foreach(__v => __obj.updateDynamic("CaptionContainerType")(__v.asInstanceOf[js.Any]))
       Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
       Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))

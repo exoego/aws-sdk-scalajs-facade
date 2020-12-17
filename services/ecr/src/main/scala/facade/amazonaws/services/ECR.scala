@@ -54,7 +54,11 @@ package object ecr {
   type PartSize = Double
   type ProxyEndpoint = String
   type PushTimestamp = js.Date
+  type Region = String
   type RegistryId = String
+  type RegistryPolicyText = String
+  type ReplicationDestinationList = js.Array[ReplicationDestination]
+  type ReplicationRuleList = js.Array[ReplicationRule]
   type RepositoryList = js.Array[Repository]
   type RepositoryName = String
   type RepositoryNameList = js.Array[RepositoryName]
@@ -79,15 +83,18 @@ package object ecr {
     @inline def completeLayerUploadFuture(params: CompleteLayerUploadRequest): Future[CompleteLayerUploadResponse] = service.completeLayerUpload(params).promise().toFuture
     @inline def createRepositoryFuture(params: CreateRepositoryRequest): Future[CreateRepositoryResponse] = service.createRepository(params).promise().toFuture
     @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
+    @inline def deleteRegistryPolicyFuture(params: DeleteRegistryPolicyRequest): Future[DeleteRegistryPolicyResponse] = service.deleteRegistryPolicy(params).promise().toFuture
     @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResponse] = service.deleteRepository(params).promise().toFuture
     @inline def deleteRepositoryPolicyFuture(params: DeleteRepositoryPolicyRequest): Future[DeleteRepositoryPolicyResponse] = service.deleteRepositoryPolicy(params).promise().toFuture
     @inline def describeImageScanFindingsFuture(params: DescribeImageScanFindingsRequest): Future[DescribeImageScanFindingsResponse] = service.describeImageScanFindings(params).promise().toFuture
     @inline def describeImagesFuture(params: DescribeImagesRequest): Future[DescribeImagesResponse] = service.describeImages(params).promise().toFuture
+    @inline def describeRegistryFuture(params: DescribeRegistryRequest): Future[DescribeRegistryResponse] = service.describeRegistry(params).promise().toFuture
     @inline def describeRepositoriesFuture(params: DescribeRepositoriesRequest): Future[DescribeRepositoriesResponse] = service.describeRepositories(params).promise().toFuture
     @inline def getAuthorizationTokenFuture(params: GetAuthorizationTokenRequest): Future[GetAuthorizationTokenResponse] = service.getAuthorizationToken(params).promise().toFuture
     @inline def getDownloadUrlForLayerFuture(params: GetDownloadUrlForLayerRequest): Future[GetDownloadUrlForLayerResponse] = service.getDownloadUrlForLayer(params).promise().toFuture
     @inline def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] = service.getLifecyclePolicy(params).promise().toFuture
     @inline def getLifecyclePolicyPreviewFuture(params: GetLifecyclePolicyPreviewRequest): Future[GetLifecyclePolicyPreviewResponse] = service.getLifecyclePolicyPreview(params).promise().toFuture
+    @inline def getRegistryPolicyFuture(params: GetRegistryPolicyRequest): Future[GetRegistryPolicyResponse] = service.getRegistryPolicy(params).promise().toFuture
     @inline def getRepositoryPolicyFuture(params: GetRepositoryPolicyRequest): Future[GetRepositoryPolicyResponse] = service.getRepositoryPolicy(params).promise().toFuture
     @inline def initiateLayerUploadFuture(params: InitiateLayerUploadRequest): Future[InitiateLayerUploadResponse] = service.initiateLayerUpload(params).promise().toFuture
     @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] = service.listImages(params).promise().toFuture
@@ -96,6 +103,8 @@ package object ecr {
     @inline def putImageScanningConfigurationFuture(params: PutImageScanningConfigurationRequest): Future[PutImageScanningConfigurationResponse] = service.putImageScanningConfiguration(params).promise().toFuture
     @inline def putImageTagMutabilityFuture(params: PutImageTagMutabilityRequest): Future[PutImageTagMutabilityResponse] = service.putImageTagMutability(params).promise().toFuture
     @inline def putLifecyclePolicyFuture(params: PutLifecyclePolicyRequest): Future[PutLifecyclePolicyResponse] = service.putLifecyclePolicy(params).promise().toFuture
+    @inline def putRegistryPolicyFuture(params: PutRegistryPolicyRequest): Future[PutRegistryPolicyResponse] = service.putRegistryPolicy(params).promise().toFuture
+    @inline def putReplicationConfigurationFuture(params: PutReplicationConfigurationRequest): Future[PutReplicationConfigurationResponse] = service.putReplicationConfiguration(params).promise().toFuture
     @inline def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] = service.setRepositoryPolicy(params).promise().toFuture
     @inline def startImageScanFuture(params: StartImageScanRequest): Future[StartImageScanResponse] = service.startImageScan(params).promise().toFuture
     @inline def startLifecyclePolicyPreviewFuture(params: StartLifecyclePolicyPreviewRequest): Future[StartLifecyclePolicyPreviewResponse] = service.startLifecyclePolicyPreview(params).promise().toFuture
@@ -118,15 +127,18 @@ package ecr {
     def completeLayerUpload(params: CompleteLayerUploadRequest): Request[CompleteLayerUploadResponse] = js.native
     def createRepository(params: CreateRepositoryRequest): Request[CreateRepositoryResponse] = js.native
     def deleteLifecyclePolicy(params: DeleteLifecyclePolicyRequest): Request[DeleteLifecyclePolicyResponse] = js.native
+    def deleteRegistryPolicy(params: DeleteRegistryPolicyRequest): Request[DeleteRegistryPolicyResponse] = js.native
     def deleteRepository(params: DeleteRepositoryRequest): Request[DeleteRepositoryResponse] = js.native
     def deleteRepositoryPolicy(params: DeleteRepositoryPolicyRequest): Request[DeleteRepositoryPolicyResponse] = js.native
     def describeImageScanFindings(params: DescribeImageScanFindingsRequest): Request[DescribeImageScanFindingsResponse] = js.native
     def describeImages(params: DescribeImagesRequest): Request[DescribeImagesResponse] = js.native
+    def describeRegistry(params: DescribeRegistryRequest): Request[DescribeRegistryResponse] = js.native
     def describeRepositories(params: DescribeRepositoriesRequest): Request[DescribeRepositoriesResponse] = js.native
     def getAuthorizationToken(params: GetAuthorizationTokenRequest): Request[GetAuthorizationTokenResponse] = js.native
     def getDownloadUrlForLayer(params: GetDownloadUrlForLayerRequest): Request[GetDownloadUrlForLayerResponse] = js.native
     def getLifecyclePolicy(params: GetLifecyclePolicyRequest): Request[GetLifecyclePolicyResponse] = js.native
     def getLifecyclePolicyPreview(params: GetLifecyclePolicyPreviewRequest): Request[GetLifecyclePolicyPreviewResponse] = js.native
+    def getRegistryPolicy(params: GetRegistryPolicyRequest): Request[GetRegistryPolicyResponse] = js.native
     def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse] = js.native
     def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse] = js.native
     def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
@@ -135,6 +147,8 @@ package ecr {
     def putImageScanningConfiguration(params: PutImageScanningConfigurationRequest): Request[PutImageScanningConfigurationResponse] = js.native
     def putImageTagMutability(params: PutImageTagMutabilityRequest): Request[PutImageTagMutabilityResponse] = js.native
     def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse] = js.native
+    def putRegistryPolicy(params: PutRegistryPolicyRequest): Request[PutRegistryPolicyResponse] = js.native
+    def putReplicationConfiguration(params: PutReplicationConfigurationRequest): Request[PutReplicationConfigurationResponse] = js.native
     def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse] = js.native
     def startImageScan(params: StartImageScanRequest): Request[StartImageScanResponse] = js.native
     def startLifecyclePolicyPreview(params: StartLifecyclePolicyPreviewRequest): Request[StartLifecyclePolicyPreviewResponse] = js.native
@@ -469,6 +483,36 @@ package ecr {
   }
 
   @js.native
+  trait DeleteRegistryPolicyRequest extends js.Object
+
+  object DeleteRegistryPolicyRequest {
+    @inline
+    def apply(): DeleteRegistryPolicyRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteRegistryPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRegistryPolicyResponse extends js.Object {
+    var policyText: js.UndefOr[RegistryPolicyText]
+    var registryId: js.UndefOr[RegistryId]
+  }
+
+  object DeleteRegistryPolicyResponse {
+    @inline
+    def apply(
+        policyText: js.UndefOr[RegistryPolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): DeleteRegistryPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      policyText.foreach(__v => __obj.updateDynamic("policyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRegistryPolicyResponse]
+    }
+  }
+
+  @js.native
   trait DeleteRepositoryPolicyRequest extends js.Object {
     var repositoryName: RepositoryName
     var registryId: js.UndefOr[RegistryId]
@@ -679,6 +723,36 @@ package ecr {
       imageDetails.foreach(__v => __obj.updateDynamic("imageDetails")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImagesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeRegistryRequest extends js.Object
+
+  object DescribeRegistryRequest {
+    @inline
+    def apply(): DescribeRegistryRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DescribeRegistryRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRegistryResponse extends js.Object {
+    var registryId: js.UndefOr[RegistryId]
+    var replicationConfiguration: js.UndefOr[ReplicationConfiguration]
+  }
+
+  object DescribeRegistryResponse {
+    @inline
+    def apply(
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        replicationConfiguration: js.UndefOr[ReplicationConfiguration] = js.undefined
+    ): DescribeRegistryResponse = {
+      val __obj = js.Dynamic.literal()
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      replicationConfiguration.foreach(__v => __obj.updateDynamic("replicationConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRegistryResponse]
     }
   }
 
@@ -958,6 +1032,36 @@ package ecr {
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLifecyclePolicyResponse]
+    }
+  }
+
+  @js.native
+  trait GetRegistryPolicyRequest extends js.Object
+
+  object GetRegistryPolicyRequest {
+    @inline
+    def apply(): GetRegistryPolicyRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetRegistryPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetRegistryPolicyResponse extends js.Object {
+    var policyText: js.UndefOr[RegistryPolicyText]
+    var registryId: js.UndefOr[RegistryId]
+  }
+
+  object GetRegistryPolicyResponse {
+    @inline
+    def apply(
+        policyText: js.UndefOr[RegistryPolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): GetRegistryPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      policyText.foreach(__v => __obj.updateDynamic("policyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRegistryPolicyResponse]
     }
   }
 
@@ -1763,6 +1867,135 @@ package ecr {
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecyclePolicyResponse]
+    }
+  }
+
+  @js.native
+  trait PutRegistryPolicyRequest extends js.Object {
+    var policyText: RegistryPolicyText
+  }
+
+  object PutRegistryPolicyRequest {
+    @inline
+    def apply(
+        policyText: RegistryPolicyText
+    ): PutRegistryPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "policyText" -> policyText.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutRegistryPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutRegistryPolicyResponse extends js.Object {
+    var policyText: js.UndefOr[RegistryPolicyText]
+    var registryId: js.UndefOr[RegistryId]
+  }
+
+  object PutRegistryPolicyResponse {
+    @inline
+    def apply(
+        policyText: js.UndefOr[RegistryPolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): PutRegistryPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      policyText.foreach(__v => __obj.updateDynamic("policyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRegistryPolicyResponse]
+    }
+  }
+
+  @js.native
+  trait PutReplicationConfigurationRequest extends js.Object {
+    var replicationConfiguration: ReplicationConfiguration
+  }
+
+  object PutReplicationConfigurationRequest {
+    @inline
+    def apply(
+        replicationConfiguration: ReplicationConfiguration
+    ): PutReplicationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "replicationConfiguration" -> replicationConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutReplicationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutReplicationConfigurationResponse extends js.Object {
+    var replicationConfiguration: js.UndefOr[ReplicationConfiguration]
+  }
+
+  object PutReplicationConfigurationResponse {
+    @inline
+    def apply(
+        replicationConfiguration: js.UndefOr[ReplicationConfiguration] = js.undefined
+    ): PutReplicationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      replicationConfiguration.foreach(__v => __obj.updateDynamic("replicationConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutReplicationConfigurationResponse]
+    }
+  }
+
+  /** The replication configuration for a registry.
+    */
+  @js.native
+  trait ReplicationConfiguration extends js.Object {
+    var rules: ReplicationRuleList
+  }
+
+  object ReplicationConfiguration {
+    @inline
+    def apply(
+        rules: ReplicationRuleList
+    ): ReplicationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "rules" -> rules.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReplicationConfiguration]
+    }
+  }
+
+  /** An array of objects representing the details of a replication destination.
+    */
+  @js.native
+  trait ReplicationDestination extends js.Object {
+    var region: Region
+    var registryId: RegistryId
+  }
+
+  object ReplicationDestination {
+    @inline
+    def apply(
+        region: Region,
+        registryId: RegistryId
+    ): ReplicationDestination = {
+      val __obj = js.Dynamic.literal(
+        "region" -> region.asInstanceOf[js.Any],
+        "registryId" -> registryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReplicationDestination]
+    }
+  }
+
+  /** An array of objects representing the replication destinations for a replication configuration. A replication configuration may contain only one replication rule but the rule may contain one or more replication destinations.
+    */
+  @js.native
+  trait ReplicationRule extends js.Object {
+    var destinations: ReplicationDestinationList
+  }
+
+  object ReplicationRule {
+    @inline
+    def apply(
+        destinations: ReplicationDestinationList
+    ): ReplicationRule = {
+      val __obj = js.Dynamic.literal(
+        "destinations" -> destinations.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReplicationRule]
     }
   }
 

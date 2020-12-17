@@ -68,6 +68,7 @@ package object ssm {
   type BatchErrorMessage = String
   type CalendarNameOrARN = String
   type CalendarNameOrARNList = js.Array[CalendarNameOrARN]
+  type ChangeRequestName = String
   type ClientToken = String
   type CloudWatchLogGroupName = String
   type CloudWatchOutputEnabled = Boolean
@@ -112,6 +113,7 @@ package object ssm {
   type DescribeActivationsFilterList = js.Array[DescribeActivationsFilter]
   type DescriptionInDocument = String
   type DocumentARN = String
+  type DocumentAuthor = String
   type DocumentContent = String
   type DocumentFilterList = js.Array[DocumentFilter]
   type DocumentFilterValue = String
@@ -128,6 +130,9 @@ package object ssm {
   type DocumentParameterList = js.Array[DocumentParameter]
   type DocumentParameterName = String
   type DocumentRequiresList = js.Array[DocumentRequires]
+  type DocumentReviewComment = String
+  type DocumentReviewCommentList = js.Array[DocumentReviewCommentSource]
+  type DocumentReviewerResponseList = js.Array[DocumentReviewerResponseSource]
   type DocumentSchemaVersion = String
   type DocumentSha1 = String
   type DocumentStatusInformation = String
@@ -143,6 +148,7 @@ package object ssm {
   type ExpirationDate = js.Date
   type FailedCreateAssociationList = js.Array[FailedCreateAssociation]
   type GetInventorySchemaMaxResults = Int
+  type GetOpsMetadataMaxResults = Int
   type GetParametersByPathMaxResults = Int
   type IPAddress = String
   type ISO8601String = String
@@ -206,6 +212,7 @@ package object ssm {
   type LastResourceDataSyncMessage = String
   type LastResourceDataSyncTime = js.Date
   type LastSuccessfulResourceDataSyncTime = js.Date
+  type ListOpsMetadataMaxResults = Int
   type MaintenanceWindowAllowUnassociatedTargets = Boolean
   type MaintenanceWindowCutoff = Int
   type MaintenanceWindowDescription = String
@@ -257,6 +264,10 @@ package object ssm {
   type MaxErrors = String
   type MaxResults = Int
   type MaxResultsEC2Compatible = Int
+  type MetadataKey = String
+  type MetadataKeysToDeleteList = js.Array[MetadataKey]
+  type MetadataMap = js.Dictionary[MetadataValue]
+  type MetadataValueString = String
   type NextToken = String
   type NormalStringMap = js.Dictionary[String]
   type NotificationArn = String
@@ -283,6 +294,11 @@ package object ssm {
   type OpsItemDataKey = String
   type OpsItemDataValueString = String
   type OpsItemDescription = String
+  type OpsItemEventFilterValue = String
+  type OpsItemEventFilterValues = js.Array[OpsItemEventFilterValue]
+  type OpsItemEventFilters = js.Array[OpsItemEventFilter]
+  type OpsItemEventMaxResults = Int
+  type OpsItemEventSummaries = js.Array[OpsItemEventSummary]
   type OpsItemFilterValue = String
   type OpsItemFilterValues = js.Array[OpsItemFilterValue]
   type OpsItemFilters = js.Array[OpsItemFilter]
@@ -296,6 +312,14 @@ package object ssm {
   type OpsItemSource = String
   type OpsItemSummaries = js.Array[OpsItemSummary]
   type OpsItemTitle = String
+  type OpsItemType = String
+  type OpsMetadataArn = String
+  type OpsMetadataFilterKey = String
+  type OpsMetadataFilterList = js.Array[OpsMetadataFilter]
+  type OpsMetadataFilterValue = String
+  type OpsMetadataFilterValueList = js.Array[OpsMetadataFilterValue]
+  type OpsMetadataList = js.Array[OpsMetadata]
+  type OpsMetadataResourceId = String
   type OpsResultAttributeList = js.Array[OpsResultAttribute]
   type OutputSourceId = String
   type OutputSourceType = String
@@ -419,6 +443,9 @@ package object ssm {
   type ResourceId = String
   type ResponseCode = Int
   type ResultAttributeList = js.Array[ResultAttribute]
+  type ReviewInformationList = js.Array[ReviewInformation]
+  type Reviewer = String
+  type Runbooks = js.Array[Runbook]
   type S3BucketName = String
   type S3KeyPrefix = String
   type S3Region = String
@@ -493,6 +520,7 @@ package object ssm {
     @inline def createDocumentFuture(params: CreateDocumentRequest): Future[CreateDocumentResult] = service.createDocument(params).promise().toFuture
     @inline def createMaintenanceWindowFuture(params: CreateMaintenanceWindowRequest): Future[CreateMaintenanceWindowResult] = service.createMaintenanceWindow(params).promise().toFuture
     @inline def createOpsItemFuture(params: CreateOpsItemRequest): Future[CreateOpsItemResponse] = service.createOpsItem(params).promise().toFuture
+    @inline def createOpsMetadataFuture(params: CreateOpsMetadataRequest): Future[CreateOpsMetadataResult] = service.createOpsMetadata(params).promise().toFuture
     @inline def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] = service.createPatchBaseline(params).promise().toFuture
     @inline def createResourceDataSyncFuture(params: CreateResourceDataSyncRequest): Future[CreateResourceDataSyncResult] = service.createResourceDataSync(params).promise().toFuture
     @inline def deleteActivationFuture(params: DeleteActivationRequest): Future[DeleteActivationResult] = service.deleteActivation(params).promise().toFuture
@@ -500,6 +528,7 @@ package object ssm {
     @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[DeleteDocumentResult] = service.deleteDocument(params).promise().toFuture
     @inline def deleteInventoryFuture(params: DeleteInventoryRequest): Future[DeleteInventoryResult] = service.deleteInventory(params).promise().toFuture
     @inline def deleteMaintenanceWindowFuture(params: DeleteMaintenanceWindowRequest): Future[DeleteMaintenanceWindowResult] = service.deleteMaintenanceWindow(params).promise().toFuture
+    @inline def deleteOpsMetadataFuture(params: DeleteOpsMetadataRequest): Future[DeleteOpsMetadataResult] = service.deleteOpsMetadata(params).promise().toFuture
     @inline def deleteParameterFuture(params: DeleteParameterRequest): Future[DeleteParameterResult] = service.deleteParameter(params).promise().toFuture
     @inline def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] = service.deleteParameters(params).promise().toFuture
     @inline def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] = service.deletePatchBaseline(params).promise().toFuture
@@ -555,6 +584,7 @@ package object ssm {
     @inline def getMaintenanceWindowFuture(params: GetMaintenanceWindowRequest): Future[GetMaintenanceWindowResult] = service.getMaintenanceWindow(params).promise().toFuture
     @inline def getMaintenanceWindowTaskFuture(params: GetMaintenanceWindowTaskRequest): Future[GetMaintenanceWindowTaskResult] = service.getMaintenanceWindowTask(params).promise().toFuture
     @inline def getOpsItemFuture(params: GetOpsItemRequest): Future[GetOpsItemResponse] = service.getOpsItem(params).promise().toFuture
+    @inline def getOpsMetadataFuture(params: GetOpsMetadataRequest): Future[GetOpsMetadataResult] = service.getOpsMetadata(params).promise().toFuture
     @inline def getOpsSummaryFuture(params: GetOpsSummaryRequest): Future[GetOpsSummaryResult] = service.getOpsSummary(params).promise().toFuture
     @inline def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] = service.getParameter(params).promise().toFuture
     @inline def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] = service.getParameterHistory(params).promise().toFuture
@@ -570,9 +600,12 @@ package object ssm {
     @inline def listCommandsFuture(params: ListCommandsRequest): Future[ListCommandsResult] = service.listCommands(params).promise().toFuture
     @inline def listComplianceItemsFuture(params: ListComplianceItemsRequest): Future[ListComplianceItemsResult] = service.listComplianceItems(params).promise().toFuture
     @inline def listComplianceSummariesFuture(params: ListComplianceSummariesRequest): Future[ListComplianceSummariesResult] = service.listComplianceSummaries(params).promise().toFuture
+    @inline def listDocumentMetadataHistoryFuture(params: ListDocumentMetadataHistoryRequest): Future[ListDocumentMetadataHistoryResponse] = service.listDocumentMetadataHistory(params).promise().toFuture
     @inline def listDocumentVersionsFuture(params: ListDocumentVersionsRequest): Future[ListDocumentVersionsResult] = service.listDocumentVersions(params).promise().toFuture
     @inline def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] = service.listDocuments(params).promise().toFuture
     @inline def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] = service.listInventoryEntries(params).promise().toFuture
+    @inline def listOpsItemEventsFuture(params: ListOpsItemEventsRequest): Future[ListOpsItemEventsResponse] = service.listOpsItemEvents(params).promise().toFuture
+    @inline def listOpsMetadataFuture(params: ListOpsMetadataRequest): Future[ListOpsMetadataResult] = service.listOpsMetadata(params).promise().toFuture
     @inline def listResourceComplianceSummariesFuture(params: ListResourceComplianceSummariesRequest): Future[ListResourceComplianceSummariesResult] = service.listResourceComplianceSummaries(params).promise().toFuture
     @inline def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] = service.listResourceDataSync(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
@@ -591,6 +624,7 @@ package object ssm {
     @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] = service.sendCommand(params).promise().toFuture
     @inline def startAssociationsOnceFuture(params: StartAssociationsOnceRequest): Future[StartAssociationsOnceResult] = service.startAssociationsOnce(params).promise().toFuture
     @inline def startAutomationExecutionFuture(params: StartAutomationExecutionRequest): Future[StartAutomationExecutionResult] = service.startAutomationExecution(params).promise().toFuture
+    @inline def startChangeRequestExecutionFuture(params: StartChangeRequestExecutionRequest): Future[StartChangeRequestExecutionResult] = service.startChangeRequestExecution(params).promise().toFuture
     @inline def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] = service.startSession(params).promise().toFuture
     @inline def stopAutomationExecutionFuture(params: StopAutomationExecutionRequest): Future[StopAutomationExecutionResult] = service.stopAutomationExecution(params).promise().toFuture
     @inline def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] = service.terminateSession(params).promise().toFuture
@@ -598,11 +632,13 @@ package object ssm {
     @inline def updateAssociationStatusFuture(params: UpdateAssociationStatusRequest): Future[UpdateAssociationStatusResult] = service.updateAssociationStatus(params).promise().toFuture
     @inline def updateDocumentDefaultVersionFuture(params: UpdateDocumentDefaultVersionRequest): Future[UpdateDocumentDefaultVersionResult] = service.updateDocumentDefaultVersion(params).promise().toFuture
     @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[UpdateDocumentResult] = service.updateDocument(params).promise().toFuture
+    @inline def updateDocumentMetadataFuture(params: UpdateDocumentMetadataRequest): Future[UpdateDocumentMetadataResponse] = service.updateDocumentMetadata(params).promise().toFuture
     @inline def updateMaintenanceWindowFuture(params: UpdateMaintenanceWindowRequest): Future[UpdateMaintenanceWindowResult] = service.updateMaintenanceWindow(params).promise().toFuture
     @inline def updateMaintenanceWindowTargetFuture(params: UpdateMaintenanceWindowTargetRequest): Future[UpdateMaintenanceWindowTargetResult] = service.updateMaintenanceWindowTarget(params).promise().toFuture
     @inline def updateMaintenanceWindowTaskFuture(params: UpdateMaintenanceWindowTaskRequest): Future[UpdateMaintenanceWindowTaskResult] = service.updateMaintenanceWindowTask(params).promise().toFuture
     @inline def updateManagedInstanceRoleFuture(params: UpdateManagedInstanceRoleRequest): Future[UpdateManagedInstanceRoleResult] = service.updateManagedInstanceRole(params).promise().toFuture
     @inline def updateOpsItemFuture(params: UpdateOpsItemRequest): Future[UpdateOpsItemResponse] = service.updateOpsItem(params).promise().toFuture
+    @inline def updateOpsMetadataFuture(params: UpdateOpsMetadataRequest): Future[UpdateOpsMetadataResult] = service.updateOpsMetadata(params).promise().toFuture
     @inline def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] = service.updatePatchBaseline(params).promise().toFuture
     @inline def updateResourceDataSyncFuture(params: UpdateResourceDataSyncRequest): Future[UpdateResourceDataSyncResult] = service.updateResourceDataSync(params).promise().toFuture
     @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] = service.updateServiceSetting(params).promise().toFuture
@@ -625,6 +661,7 @@ package ssm {
     def createDocument(params: CreateDocumentRequest): Request[CreateDocumentResult] = js.native
     def createMaintenanceWindow(params: CreateMaintenanceWindowRequest): Request[CreateMaintenanceWindowResult] = js.native
     def createOpsItem(params: CreateOpsItemRequest): Request[CreateOpsItemResponse] = js.native
+    def createOpsMetadata(params: CreateOpsMetadataRequest): Request[CreateOpsMetadataResult] = js.native
     def createPatchBaseline(params: CreatePatchBaselineRequest): Request[CreatePatchBaselineResult] = js.native
     def createResourceDataSync(params: CreateResourceDataSyncRequest): Request[CreateResourceDataSyncResult] = js.native
     def deleteActivation(params: DeleteActivationRequest): Request[DeleteActivationResult] = js.native
@@ -632,6 +669,7 @@ package ssm {
     def deleteDocument(params: DeleteDocumentRequest): Request[DeleteDocumentResult] = js.native
     def deleteInventory(params: DeleteInventoryRequest): Request[DeleteInventoryResult] = js.native
     def deleteMaintenanceWindow(params: DeleteMaintenanceWindowRequest): Request[DeleteMaintenanceWindowResult] = js.native
+    def deleteOpsMetadata(params: DeleteOpsMetadataRequest): Request[DeleteOpsMetadataResult] = js.native
     def deleteParameter(params: DeleteParameterRequest): Request[DeleteParameterResult] = js.native
     def deleteParameters(params: DeleteParametersRequest): Request[DeleteParametersResult] = js.native
     def deletePatchBaseline(params: DeletePatchBaselineRequest): Request[DeletePatchBaselineResult] = js.native
@@ -687,6 +725,7 @@ package ssm {
     def getMaintenanceWindowExecutionTaskInvocation(params: GetMaintenanceWindowExecutionTaskInvocationRequest): Request[GetMaintenanceWindowExecutionTaskInvocationResult] = js.native
     def getMaintenanceWindowTask(params: GetMaintenanceWindowTaskRequest): Request[GetMaintenanceWindowTaskResult] = js.native
     def getOpsItem(params: GetOpsItemRequest): Request[GetOpsItemResponse] = js.native
+    def getOpsMetadata(params: GetOpsMetadataRequest): Request[GetOpsMetadataResult] = js.native
     def getOpsSummary(params: GetOpsSummaryRequest): Request[GetOpsSummaryResult] = js.native
     def getParameter(params: GetParameterRequest): Request[GetParameterResult] = js.native
     def getParameterHistory(params: GetParameterHistoryRequest): Request[GetParameterHistoryResult] = js.native
@@ -702,9 +741,12 @@ package ssm {
     def listCommands(params: ListCommandsRequest): Request[ListCommandsResult] = js.native
     def listComplianceItems(params: ListComplianceItemsRequest): Request[ListComplianceItemsResult] = js.native
     def listComplianceSummaries(params: ListComplianceSummariesRequest): Request[ListComplianceSummariesResult] = js.native
+    def listDocumentMetadataHistory(params: ListDocumentMetadataHistoryRequest): Request[ListDocumentMetadataHistoryResponse] = js.native
     def listDocumentVersions(params: ListDocumentVersionsRequest): Request[ListDocumentVersionsResult] = js.native
     def listDocuments(params: ListDocumentsRequest): Request[ListDocumentsResult] = js.native
     def listInventoryEntries(params: ListInventoryEntriesRequest): Request[ListInventoryEntriesResult] = js.native
+    def listOpsItemEvents(params: ListOpsItemEventsRequest): Request[ListOpsItemEventsResponse] = js.native
+    def listOpsMetadata(params: ListOpsMetadataRequest): Request[ListOpsMetadataResult] = js.native
     def listResourceComplianceSummaries(params: ListResourceComplianceSummariesRequest): Request[ListResourceComplianceSummariesResult] = js.native
     def listResourceDataSync(params: ListResourceDataSyncRequest): Request[ListResourceDataSyncResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
@@ -723,6 +765,7 @@ package ssm {
     def sendCommand(params: SendCommandRequest): Request[SendCommandResult] = js.native
     def startAssociationsOnce(params: StartAssociationsOnceRequest): Request[StartAssociationsOnceResult] = js.native
     def startAutomationExecution(params: StartAutomationExecutionRequest): Request[StartAutomationExecutionResult] = js.native
+    def startChangeRequestExecution(params: StartChangeRequestExecutionRequest): Request[StartChangeRequestExecutionResult] = js.native
     def startSession(params: StartSessionRequest): Request[StartSessionResponse] = js.native
     def stopAutomationExecution(params: StopAutomationExecutionRequest): Request[StopAutomationExecutionResult] = js.native
     def terminateSession(params: TerminateSessionRequest): Request[TerminateSessionResponse] = js.native
@@ -730,11 +773,13 @@ package ssm {
     def updateAssociationStatus(params: UpdateAssociationStatusRequest): Request[UpdateAssociationStatusResult] = js.native
     def updateDocument(params: UpdateDocumentRequest): Request[UpdateDocumentResult] = js.native
     def updateDocumentDefaultVersion(params: UpdateDocumentDefaultVersionRequest): Request[UpdateDocumentDefaultVersionResult] = js.native
+    def updateDocumentMetadata(params: UpdateDocumentMetadataRequest): Request[UpdateDocumentMetadataResponse] = js.native
     def updateMaintenanceWindow(params: UpdateMaintenanceWindowRequest): Request[UpdateMaintenanceWindowResult] = js.native
     def updateMaintenanceWindowTarget(params: UpdateMaintenanceWindowTargetRequest): Request[UpdateMaintenanceWindowTargetResult] = js.native
     def updateMaintenanceWindowTask(params: UpdateMaintenanceWindowTaskRequest): Request[UpdateMaintenanceWindowTaskResult] = js.native
     def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] = js.native
     def updateOpsItem(params: UpdateOpsItemRequest): Request[UpdateOpsItemResponse] = js.native
+    def updateOpsMetadata(params: UpdateOpsMetadataRequest): Request[UpdateOpsMetadataResult] = js.native
     def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult] = js.native
     def updateResourceDataSync(params: UpdateResourceDataSyncRequest): Request[UpdateResourceDataSyncResult] = js.native
     def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
@@ -922,6 +967,7 @@ package ssm {
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var Status: js.UndefOr[AssociationStatus]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
+    var TargetLocations: js.UndefOr[TargetLocations]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -949,6 +995,7 @@ package ssm {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Status: js.UndefOr[AssociationStatus] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationDescription = {
       val __obj = js.Dynamic.literal()
@@ -973,6 +1020,7 @@ package ssm {
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationDescription]
     }
@@ -1263,6 +1311,7 @@ package ssm {
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
+    var TargetLocations: js.UndefOr[TargetLocations]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -1283,6 +1332,7 @@ package ssm {
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationVersionInfo = {
       val __obj = js.Dynamic.literal()
@@ -1300,6 +1350,7 @@ package ssm {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationVersionInfo]
     }
@@ -1399,8 +1450,11 @@ package ssm {
     */
   @js.native
   trait AutomationExecution extends js.Object {
+    var AssociationId: js.UndefOr[String]
     var AutomationExecutionId: js.UndefOr[AutomationExecutionId]
     var AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus]
+    var AutomationSubtype: js.UndefOr[AutomationSubtype]
+    var ChangeRequestName: js.UndefOr[ChangeRequestName]
     var CurrentAction: js.UndefOr[String]
     var CurrentStepName: js.UndefOr[String]
     var DocumentName: js.UndefOr[DocumentName]
@@ -1412,11 +1466,14 @@ package ssm {
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
     var MaxErrors: js.UndefOr[MaxErrors]
     var Mode: js.UndefOr[ExecutionMode]
+    var OpsItemId: js.UndefOr[String]
     var Outputs: js.UndefOr[AutomationParameterMap]
     var Parameters: js.UndefOr[AutomationParameterMap]
     var ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId]
     var ProgressCounters: js.UndefOr[ProgressCounters]
     var ResolvedTargets: js.UndefOr[ResolvedTargets]
+    var Runbooks: js.UndefOr[Runbooks]
+    var ScheduledTime: js.UndefOr[DateTime]
     var StepExecutions: js.UndefOr[StepExecutionList]
     var StepExecutionsTruncated: js.UndefOr[Boolean]
     var Target: js.UndefOr[String]
@@ -1429,8 +1486,11 @@ package ssm {
   object AutomationExecution {
     @inline
     def apply(
+        AssociationId: js.UndefOr[String] = js.undefined,
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
+        AutomationSubtype: js.UndefOr[AutomationSubtype] = js.undefined,
+        ChangeRequestName: js.UndefOr[ChangeRequestName] = js.undefined,
         CurrentAction: js.UndefOr[String] = js.undefined,
         CurrentStepName: js.UndefOr[String] = js.undefined,
         DocumentName: js.UndefOr[DocumentName] = js.undefined,
@@ -1442,11 +1502,14 @@ package ssm {
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
         MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
         Mode: js.UndefOr[ExecutionMode] = js.undefined,
+        OpsItemId: js.UndefOr[String] = js.undefined,
         Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
         Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
         ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         ProgressCounters: js.UndefOr[ProgressCounters] = js.undefined,
         ResolvedTargets: js.UndefOr[ResolvedTargets] = js.undefined,
+        Runbooks: js.UndefOr[Runbooks] = js.undefined,
+        ScheduledTime: js.UndefOr[DateTime] = js.undefined,
         StepExecutions: js.UndefOr[StepExecutionList] = js.undefined,
         StepExecutionsTruncated: js.UndefOr[Boolean] = js.undefined,
         Target: js.UndefOr[String] = js.undefined,
@@ -1456,8 +1519,11 @@ package ssm {
         Targets: js.UndefOr[Targets] = js.undefined
     ): AutomationExecution = {
       val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionStatus.foreach(__v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any]))
+      AutomationSubtype.foreach(__v => __obj.updateDynamic("AutomationSubtype")(__v.asInstanceOf[js.Any]))
+      ChangeRequestName.foreach(__v => __obj.updateDynamic("ChangeRequestName")(__v.asInstanceOf[js.Any]))
       CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
       CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
       DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
@@ -1469,11 +1535,14 @@ package ssm {
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ParentAutomationExecutionId.foreach(__v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any]))
       ProgressCounters.foreach(__v => __obj.updateDynamic("ProgressCounters")(__v.asInstanceOf[js.Any]))
       ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
+      Runbooks.foreach(__v => __obj.updateDynamic("Runbooks")(__v.asInstanceOf[js.Any]))
+      ScheduledTime.foreach(__v => __obj.updateDynamic("ScheduledTime")(__v.asInstanceOf[js.Any]))
       StepExecutions.foreach(__v => __obj.updateDynamic("StepExecutions")(__v.asInstanceOf[js.Any]))
       StepExecutionsTruncated.foreach(__v => __obj.updateDynamic("StepExecutionsTruncated")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
@@ -1520,6 +1589,8 @@ package ssm {
     val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
     val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
     val TargetResourceGroup = "TargetResourceGroup".asInstanceOf[AutomationExecutionFilterKey]
+    val AutomationSubtype = "AutomationSubtype".asInstanceOf[AutomationExecutionFilterKey]
+    val OpsItemId = "OpsItemId".asInstanceOf[AutomationExecutionFilterKey]
 
     @inline def values = js.Array(
       DocumentNamePrefix,
@@ -1531,7 +1602,9 @@ package ssm {
       StartTimeAfter,
       AutomationType,
       TagKey,
-      TargetResourceGroup
+      TargetResourceGroup,
+      AutomationSubtype,
+      OpsItemId
     )
   }
 
@@ -1539,9 +1612,12 @@ package ssm {
     */
   @js.native
   trait AutomationExecutionMetadata extends js.Object {
+    var AssociationId: js.UndefOr[String]
     var AutomationExecutionId: js.UndefOr[AutomationExecutionId]
     var AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus]
+    var AutomationSubtype: js.UndefOr[AutomationSubtype]
     var AutomationType: js.UndefOr[AutomationType]
+    var ChangeRequestName: js.UndefOr[ChangeRequestName]
     var CurrentAction: js.UndefOr[String]
     var CurrentStepName: js.UndefOr[String]
     var DocumentName: js.UndefOr[DocumentName]
@@ -1554,9 +1630,12 @@ package ssm {
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
     var MaxErrors: js.UndefOr[MaxErrors]
     var Mode: js.UndefOr[ExecutionMode]
+    var OpsItemId: js.UndefOr[String]
     var Outputs: js.UndefOr[AutomationParameterMap]
     var ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId]
     var ResolvedTargets: js.UndefOr[ResolvedTargets]
+    var Runbooks: js.UndefOr[Runbooks]
+    var ScheduledTime: js.UndefOr[DateTime]
     var Target: js.UndefOr[String]
     var TargetMaps: js.UndefOr[TargetMaps]
     var TargetParameterName: js.UndefOr[AutomationParameterKey]
@@ -1566,9 +1645,12 @@ package ssm {
   object AutomationExecutionMetadata {
     @inline
     def apply(
+        AssociationId: js.UndefOr[String] = js.undefined,
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
+        AutomationSubtype: js.UndefOr[AutomationSubtype] = js.undefined,
         AutomationType: js.UndefOr[AutomationType] = js.undefined,
+        ChangeRequestName: js.UndefOr[ChangeRequestName] = js.undefined,
         CurrentAction: js.UndefOr[String] = js.undefined,
         CurrentStepName: js.UndefOr[String] = js.undefined,
         DocumentName: js.UndefOr[DocumentName] = js.undefined,
@@ -1581,18 +1663,24 @@ package ssm {
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
         MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
         Mode: js.UndefOr[ExecutionMode] = js.undefined,
+        OpsItemId: js.UndefOr[String] = js.undefined,
         Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
         ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         ResolvedTargets: js.UndefOr[ResolvedTargets] = js.undefined,
+        Runbooks: js.UndefOr[Runbooks] = js.undefined,
+        ScheduledTime: js.UndefOr[DateTime] = js.undefined,
         Target: js.UndefOr[String] = js.undefined,
         TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AutomationExecutionMetadata = {
       val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionStatus.foreach(__v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any]))
+      AutomationSubtype.foreach(__v => __obj.updateDynamic("AutomationSubtype")(__v.asInstanceOf[js.Any]))
       AutomationType.foreach(__v => __obj.updateDynamic("AutomationType")(__v.asInstanceOf[js.Any]))
+      ChangeRequestName.foreach(__v => __obj.updateDynamic("ChangeRequestName")(__v.asInstanceOf[js.Any]))
       CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
       CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
       DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
@@ -1605,9 +1693,12 @@ package ssm {
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       ParentAutomationExecutionId.foreach(__v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any]))
       ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
+      Runbooks.foreach(__v => __obj.updateDynamic("Runbooks")(__v.asInstanceOf[js.Any]))
+      ScheduledTime.foreach(__v => __obj.updateDynamic("ScheduledTime")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
@@ -1627,8 +1718,45 @@ package ssm {
     val Cancelling = "Cancelling".asInstanceOf[AutomationExecutionStatus]
     val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
     val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
+    val PendingApproval = "PendingApproval".asInstanceOf[AutomationExecutionStatus]
+    val Approved = "Approved".asInstanceOf[AutomationExecutionStatus]
+    val Rejected = "Rejected".asInstanceOf[AutomationExecutionStatus]
+    val Scheduled = "Scheduled".asInstanceOf[AutomationExecutionStatus]
+    val RunbookInProgress = "RunbookInProgress".asInstanceOf[AutomationExecutionStatus]
+    val PendingChangeCalendarOverride = "PendingChangeCalendarOverride".asInstanceOf[AutomationExecutionStatus]
+    val ChangeCalendarOverrideApproved = "ChangeCalendarOverrideApproved".asInstanceOf[AutomationExecutionStatus]
+    val ChangeCalendarOverrideRejected = "ChangeCalendarOverrideRejected".asInstanceOf[AutomationExecutionStatus]
+    val CompletedWithSuccess = "CompletedWithSuccess".asInstanceOf[AutomationExecutionStatus]
+    val CompletedWithFailure = "CompletedWithFailure".asInstanceOf[AutomationExecutionStatus]
 
-    @inline def values = js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed)
+    @inline def values = js.Array(
+      Pending,
+      InProgress,
+      Waiting,
+      Success,
+      TimedOut,
+      Cancelling,
+      Cancelled,
+      Failed,
+      PendingApproval,
+      Approved,
+      Rejected,
+      Scheduled,
+      RunbookInProgress,
+      PendingChangeCalendarOverride,
+      ChangeCalendarOverrideApproved,
+      ChangeCalendarOverrideRejected,
+      CompletedWithSuccess,
+      CompletedWithFailure
+    )
+  }
+
+  @js.native
+  sealed trait AutomationSubtype extends js.Any
+  object AutomationSubtype {
+    val ChangeRequest = "ChangeRequest".asInstanceOf[AutomationSubtype]
+
+    @inline def values = js.Array(ChangeRequest)
   }
 
   @js.native
@@ -2325,6 +2453,7 @@ package ssm {
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
+    var TargetLocations: js.UndefOr[TargetLocations]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -2344,6 +2473,7 @@ package ssm {
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
@@ -2362,6 +2492,7 @@ package ssm {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationBatchRequestEntry]
     }
@@ -2401,6 +2532,7 @@ package ssm {
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
+    var TargetLocations: js.UndefOr[TargetLocations]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -2420,6 +2552,7 @@ package ssm {
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationRequest = {
       val __obj = js.Dynamic.literal(
@@ -2438,6 +2571,7 @@ package ssm {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationRequest]
     }
@@ -2589,9 +2723,14 @@ package ssm {
     var Description: OpsItemDescription
     var Source: OpsItemSource
     var Title: OpsItemTitle
+    var ActualEndTime: js.UndefOr[DateTime]
+    var ActualStartTime: js.UndefOr[DateTime]
     var Category: js.UndefOr[OpsItemCategory]
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
+    var OpsItemType: js.UndefOr[OpsItemType]
+    var PlannedEndTime: js.UndefOr[DateTime]
+    var PlannedStartTime: js.UndefOr[DateTime]
     var Priority: js.UndefOr[OpsItemPriority]
     var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
     var Severity: js.UndefOr[OpsItemSeverity]
@@ -2604,9 +2743,14 @@ package ssm {
         Description: OpsItemDescription,
         Source: OpsItemSource,
         Title: OpsItemTitle,
+        ActualEndTime: js.UndefOr[DateTime] = js.undefined,
+        ActualStartTime: js.UndefOr[DateTime] = js.undefined,
         Category: js.UndefOr[OpsItemCategory] = js.undefined,
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
+        OpsItemType: js.UndefOr[OpsItemType] = js.undefined,
+        PlannedEndTime: js.UndefOr[DateTime] = js.undefined,
+        PlannedStartTime: js.UndefOr[DateTime] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
         Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
@@ -2618,9 +2762,14 @@ package ssm {
         "Title" -> Title.asInstanceOf[js.Any]
       )
 
+      ActualEndTime.foreach(__v => __obj.updateDynamic("ActualEndTime")(__v.asInstanceOf[js.Any]))
+      ActualStartTime.foreach(__v => __obj.updateDynamic("ActualStartTime")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
+      OpsItemType.foreach(__v => __obj.updateDynamic("OpsItemType")(__v.asInstanceOf[js.Any]))
+      PlannedEndTime.foreach(__v => __obj.updateDynamic("PlannedEndTime")(__v.asInstanceOf[js.Any]))
+      PlannedStartTime.foreach(__v => __obj.updateDynamic("PlannedStartTime")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
       Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
@@ -2642,6 +2791,43 @@ package ssm {
       val __obj = js.Dynamic.literal()
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpsItemResponse]
+    }
+  }
+
+  @js.native
+  trait CreateOpsMetadataRequest extends js.Object {
+    var ResourceId: OpsMetadataResourceId
+    var Metadata: js.UndefOr[MetadataMap]
+  }
+
+  object CreateOpsMetadataRequest {
+    @inline
+    def apply(
+        ResourceId: OpsMetadataResourceId,
+        Metadata: js.UndefOr[MetadataMap] = js.undefined
+    ): CreateOpsMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOpsMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait CreateOpsMetadataResult extends js.Object {
+    var OpsMetadataArn: js.UndefOr[OpsMetadataArn]
+  }
+
+  object CreateOpsMetadataResult {
+    @inline
+    def apply(
+        OpsMetadataArn: js.UndefOr[OpsMetadataArn] = js.undefined
+    ): CreateOpsMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      OpsMetadataArn.foreach(__v => __obj.updateDynamic("OpsMetadataArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOpsMetadataResult]
     }
   }
 
@@ -2931,6 +3117,34 @@ package ssm {
       val __obj = js.Dynamic.literal()
       WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMaintenanceWindowResult]
+    }
+  }
+
+  @js.native
+  trait DeleteOpsMetadataRequest extends js.Object {
+    var OpsMetadataArn: OpsMetadataArn
+  }
+
+  object DeleteOpsMetadataRequest {
+    @inline
+    def apply(
+        OpsMetadataArn: OpsMetadataArn
+    ): DeleteOpsMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "OpsMetadataArn" -> OpsMetadataArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteOpsMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteOpsMetadataResult extends js.Object
+
+  object DeleteOpsMetadataResult {
+    @inline
+    def apply(): DeleteOpsMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteOpsMetadataResult]
     }
   }
 
@@ -4696,7 +4910,9 @@ package ssm {
     */
   @js.native
   trait DocumentDescription extends js.Object {
+    var ApprovedVersion: js.UndefOr[DocumentVersion]
     var AttachmentsInformation: js.UndefOr[AttachmentInformationList]
+    var Author: js.UndefOr[DocumentAuthor]
     var CreatedDate: js.UndefOr[DateTime]
     var DefaultVersion: js.UndefOr[DocumentVersion]
     var Description: js.UndefOr[DescriptionInDocument]
@@ -4709,8 +4925,11 @@ package ssm {
     var Name: js.UndefOr[DocumentARN]
     var Owner: js.UndefOr[DocumentOwner]
     var Parameters: js.UndefOr[DocumentParameterList]
+    var PendingReviewVersion: js.UndefOr[DocumentVersion]
     var PlatformTypes: js.UndefOr[PlatformTypeList]
     var Requires: js.UndefOr[DocumentRequiresList]
+    var ReviewInformation: js.UndefOr[ReviewInformationList]
+    var ReviewStatus: js.UndefOr[ReviewStatus]
     var SchemaVersion: js.UndefOr[DocumentSchemaVersion]
     var Sha1: js.UndefOr[DocumentSha1]
     var Status: js.UndefOr[DocumentStatus]
@@ -4723,7 +4942,9 @@ package ssm {
   object DocumentDescription {
     @inline
     def apply(
+        ApprovedVersion: js.UndefOr[DocumentVersion] = js.undefined,
         AttachmentsInformation: js.UndefOr[AttachmentInformationList] = js.undefined,
+        Author: js.UndefOr[DocumentAuthor] = js.undefined,
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
         DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Description: js.UndefOr[DescriptionInDocument] = js.undefined,
@@ -4736,8 +4957,11 @@ package ssm {
         Name: js.UndefOr[DocumentARN] = js.undefined,
         Owner: js.UndefOr[DocumentOwner] = js.undefined,
         Parameters: js.UndefOr[DocumentParameterList] = js.undefined,
+        PendingReviewVersion: js.UndefOr[DocumentVersion] = js.undefined,
         PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
         Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
+        ReviewInformation: js.UndefOr[ReviewInformationList] = js.undefined,
+        ReviewStatus: js.UndefOr[ReviewStatus] = js.undefined,
         SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
         Sha1: js.UndefOr[DocumentSha1] = js.undefined,
         Status: js.UndefOr[DocumentStatus] = js.undefined,
@@ -4747,7 +4971,9 @@ package ssm {
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DocumentDescription = {
       val __obj = js.Dynamic.literal()
+      ApprovedVersion.foreach(__v => __obj.updateDynamic("ApprovedVersion")(__v.asInstanceOf[js.Any]))
       AttachmentsInformation.foreach(__v => __obj.updateDynamic("AttachmentsInformation")(__v.asInstanceOf[js.Any]))
+      Author.foreach(__v => __obj.updateDynamic("Author")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       DefaultVersion.foreach(__v => __obj.updateDynamic("DefaultVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -4760,8 +4986,11 @@ package ssm {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PendingReviewVersion.foreach(__v => __obj.updateDynamic("PendingReviewVersion")(__v.asInstanceOf[js.Any]))
       PlatformTypes.foreach(__v => __obj.updateDynamic("PlatformTypes")(__v.asInstanceOf[js.Any]))
       Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
+      ReviewInformation.foreach(__v => __obj.updateDynamic("ReviewInformation")(__v.asInstanceOf[js.Any]))
+      ReviewStatus.foreach(__v => __obj.updateDynamic("ReviewStatus")(__v.asInstanceOf[js.Any]))
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
       Sha1.foreach(__v => __obj.updateDynamic("Sha1")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4829,6 +5058,7 @@ package ssm {
     */
   @js.native
   trait DocumentIdentifier extends js.Object {
+    var Author: js.UndefOr[DocumentAuthor]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -4836,6 +5066,7 @@ package ssm {
     var Owner: js.UndefOr[DocumentOwner]
     var PlatformTypes: js.UndefOr[PlatformTypeList]
     var Requires: js.UndefOr[DocumentRequiresList]
+    var ReviewStatus: js.UndefOr[ReviewStatus]
     var SchemaVersion: js.UndefOr[DocumentSchemaVersion]
     var Tags: js.UndefOr[TagList]
     var TargetType: js.UndefOr[TargetType]
@@ -4845,6 +5076,7 @@ package ssm {
   object DocumentIdentifier {
     @inline
     def apply(
+        Author: js.UndefOr[DocumentAuthor] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -4852,12 +5084,14 @@ package ssm {
         Owner: js.UndefOr[DocumentOwner] = js.undefined,
         PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
         Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
+        ReviewStatus: js.UndefOr[ReviewStatus] = js.undefined,
         SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TargetType: js.UndefOr[TargetType] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DocumentIdentifier = {
       val __obj = js.Dynamic.literal()
+      Author.foreach(__v => __obj.updateDynamic("Author")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -4865,6 +5099,7 @@ package ssm {
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       PlatformTypes.foreach(__v => __obj.updateDynamic("PlatformTypes")(__v.asInstanceOf[js.Any]))
       Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
+      ReviewStatus.foreach(__v => __obj.updateDynamic("ReviewStatus")(__v.asInstanceOf[js.Any]))
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
@@ -4917,6 +5152,32 @@ package ssm {
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentKeyValuesFilter]
+    }
+  }
+
+  @js.native
+  sealed trait DocumentMetadataEnum extends js.Any
+  object DocumentMetadataEnum {
+    val DocumentReviews = "DocumentReviews".asInstanceOf[DocumentMetadataEnum]
+
+    @inline def values = js.Array(DocumentReviews)
+  }
+
+  /** Details about the response to a document review request.
+    */
+  @js.native
+  trait DocumentMetadataResponseInfo extends js.Object {
+    var ReviewerResponse: js.UndefOr[DocumentReviewerResponseList]
+  }
+
+  object DocumentMetadataResponseInfo {
+    @inline
+    def apply(
+        ReviewerResponse: js.UndefOr[DocumentReviewerResponseList] = js.undefined
+    ): DocumentMetadataResponseInfo = {
+      val __obj = js.Dynamic.literal()
+      ReviewerResponse.foreach(__v => __obj.updateDynamic("ReviewerResponse")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentMetadataResponseInfo]
     }
   }
 
@@ -4987,6 +5248,99 @@ package ssm {
     }
   }
 
+  @js.native
+  sealed trait DocumentReviewAction extends js.Any
+  object DocumentReviewAction {
+    val SendForReview = "SendForReview".asInstanceOf[DocumentReviewAction]
+    val UpdateReview = "UpdateReview".asInstanceOf[DocumentReviewAction]
+    val Approve = "Approve".asInstanceOf[DocumentReviewAction]
+    val Reject = "Reject".asInstanceOf[DocumentReviewAction]
+
+    @inline def values = js.Array(SendForReview, UpdateReview, Approve, Reject)
+  }
+
+  /** Information about comments added to a document review request.
+    */
+  @js.native
+  trait DocumentReviewCommentSource extends js.Object {
+    var Content: js.UndefOr[DocumentReviewComment]
+    var Type: js.UndefOr[DocumentReviewCommentType]
+  }
+
+  object DocumentReviewCommentSource {
+    @inline
+    def apply(
+        Content: js.UndefOr[DocumentReviewComment] = js.undefined,
+        Type: js.UndefOr[DocumentReviewCommentType] = js.undefined
+    ): DocumentReviewCommentSource = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentReviewCommentSource]
+    }
+  }
+
+  @js.native
+  sealed trait DocumentReviewCommentType extends js.Any
+  object DocumentReviewCommentType {
+    val Comment = "Comment".asInstanceOf[DocumentReviewCommentType]
+
+    @inline def values = js.Array(Comment)
+  }
+
+  /** Information about a reviewer's response to a document review request.
+    */
+  @js.native
+  trait DocumentReviewerResponseSource extends js.Object {
+    var Comment: js.UndefOr[DocumentReviewCommentList]
+    var CreateTime: js.UndefOr[DateTime]
+    var ReviewStatus: js.UndefOr[ReviewStatus]
+    var Reviewer: js.UndefOr[Reviewer]
+    var UpdatedTime: js.UndefOr[DateTime]
+  }
+
+  object DocumentReviewerResponseSource {
+    @inline
+    def apply(
+        Comment: js.UndefOr[DocumentReviewCommentList] = js.undefined,
+        CreateTime: js.UndefOr[DateTime] = js.undefined,
+        ReviewStatus: js.UndefOr[ReviewStatus] = js.undefined,
+        Reviewer: js.UndefOr[Reviewer] = js.undefined,
+        UpdatedTime: js.UndefOr[DateTime] = js.undefined
+    ): DocumentReviewerResponseSource = {
+      val __obj = js.Dynamic.literal()
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      ReviewStatus.foreach(__v => __obj.updateDynamic("ReviewStatus")(__v.asInstanceOf[js.Any]))
+      Reviewer.foreach(__v => __obj.updateDynamic("Reviewer")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentReviewerResponseSource]
+    }
+  }
+
+  /** Information about a document approval review.
+    */
+  @js.native
+  trait DocumentReviews extends js.Object {
+    var Action: DocumentReviewAction
+    var Comment: js.UndefOr[DocumentReviewCommentList]
+  }
+
+  object DocumentReviews {
+    @inline
+    def apply(
+        Action: DocumentReviewAction,
+        Comment: js.UndefOr[DocumentReviewCommentList] = js.undefined
+    ): DocumentReviews = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any]
+      )
+
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentReviews]
+    }
+  }
+
   /** The status of a document.
     */
   @js.native
@@ -5013,8 +5367,20 @@ package ssm {
     val ApplicationConfigurationSchema = "ApplicationConfigurationSchema".asInstanceOf[DocumentType]
     val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
     val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
+    val `Automation.ChangeTemplate` = "Automation.ChangeTemplate".asInstanceOf[DocumentType]
 
-    @inline def values = js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar)
+    @inline def values = js.Array(
+      Command,
+      Policy,
+      Automation,
+      Session,
+      Package,
+      ApplicationConfiguration,
+      ApplicationConfigurationSchema,
+      DeploymentStrategy,
+      ChangeCalendar,
+      `Automation.ChangeTemplate`
+    )
   }
 
   /** Version information about the document.
@@ -5026,6 +5392,7 @@ package ssm {
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var IsDefaultVersion: js.UndefOr[Boolean]
     var Name: js.UndefOr[DocumentName]
+    var ReviewStatus: js.UndefOr[ReviewStatus]
     var Status: js.UndefOr[DocumentStatus]
     var StatusInformation: js.UndefOr[DocumentStatusInformation]
     var VersionName: js.UndefOr[DocumentVersionName]
@@ -5039,6 +5406,7 @@ package ssm {
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         IsDefaultVersion: js.UndefOr[Boolean] = js.undefined,
         Name: js.UndefOr[DocumentName] = js.undefined,
+        ReviewStatus: js.UndefOr[ReviewStatus] = js.undefined,
         Status: js.UndefOr[DocumentStatus] = js.undefined,
         StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
@@ -5049,6 +5417,7 @@ package ssm {
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReviewStatus.foreach(__v => __obj.updateDynamic("ReviewStatus")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusInformation.foreach(__v => __obj.updateDynamic("StatusInformation")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
@@ -5460,6 +5829,7 @@ package ssm {
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var Name: js.UndefOr[DocumentARN]
     var Requires: js.UndefOr[DocumentRequiresList]
+    var ReviewStatus: js.UndefOr[ReviewStatus]
     var Status: js.UndefOr[DocumentStatus]
     var StatusInformation: js.UndefOr[DocumentStatusInformation]
     var VersionName: js.UndefOr[DocumentVersionName]
@@ -5475,6 +5845,7 @@ package ssm {
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Name: js.UndefOr[DocumentARN] = js.undefined,
         Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
+        ReviewStatus: js.UndefOr[ReviewStatus] = js.undefined,
         Status: js.UndefOr[DocumentStatus] = js.undefined,
         StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
@@ -5487,6 +5858,7 @@ package ssm {
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
+      ReviewStatus.foreach(__v => __obj.updateDynamic("ReviewStatus")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusInformation.foreach(__v => __obj.updateDynamic("StatusInformation")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
@@ -5960,6 +6332,52 @@ package ssm {
       val __obj = js.Dynamic.literal()
       OpsItem.foreach(__v => __obj.updateDynamic("OpsItem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpsItemResponse]
+    }
+  }
+
+  @js.native
+  trait GetOpsMetadataRequest extends js.Object {
+    var OpsMetadataArn: OpsMetadataArn
+    var MaxResults: js.UndefOr[GetOpsMetadataMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetOpsMetadataRequest {
+    @inline
+    def apply(
+        OpsMetadataArn: OpsMetadataArn,
+        MaxResults: js.UndefOr[GetOpsMetadataMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetOpsMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "OpsMetadataArn" -> OpsMetadataArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOpsMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait GetOpsMetadataResult extends js.Object {
+    var Metadata: js.UndefOr[MetadataMap]
+    var NextToken: js.UndefOr[NextToken]
+    var ResourceId: js.UndefOr[OpsMetadataResourceId]
+  }
+
+  object GetOpsMetadataResult {
+    @inline
+    def apply(
+        Metadata: js.UndefOr[MetadataMap] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResourceId: js.UndefOr[OpsMetadataResourceId] = js.undefined
+    ): GetOpsMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOpsMetadataResult]
     }
   }
 
@@ -7378,6 +7796,64 @@ package ssm {
   }
 
   @js.native
+  trait ListDocumentMetadataHistoryRequest extends js.Object {
+    var Metadata: DocumentMetadataEnum
+    var Name: DocumentName
+    var DocumentVersion: js.UndefOr[DocumentVersion]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDocumentMetadataHistoryRequest {
+    @inline
+    def apply(
+        Metadata: DocumentMetadataEnum,
+        Name: DocumentName,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDocumentMetadataHistoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "Metadata" -> Metadata.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDocumentMetadataHistoryRequest]
+    }
+  }
+
+  @js.native
+  trait ListDocumentMetadataHistoryResponse extends js.Object {
+    var Author: js.UndefOr[DocumentAuthor]
+    var DocumentVersion: js.UndefOr[DocumentVersion]
+    var Metadata: js.UndefOr[DocumentMetadataResponseInfo]
+    var Name: js.UndefOr[DocumentName]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDocumentMetadataHistoryResponse {
+    @inline
+    def apply(
+        Author: js.UndefOr[DocumentAuthor] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Metadata: js.UndefOr[DocumentMetadataResponseInfo] = js.undefined,
+        Name: js.UndefOr[DocumentName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDocumentMetadataHistoryResponse = {
+      val __obj = js.Dynamic.literal()
+      Author.foreach(__v => __obj.updateDynamic("Author")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDocumentMetadataHistoryResponse]
+    }
+  }
+
+  @js.native
   trait ListDocumentVersionsRequest extends js.Object {
     var Name: DocumentARN
     var MaxResults: js.UndefOr[MaxResults]
@@ -7522,6 +7998,88 @@ package ssm {
       SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInventoryEntriesResult]
+    }
+  }
+
+  @js.native
+  trait ListOpsItemEventsRequest extends js.Object {
+    var Filters: js.UndefOr[OpsItemEventFilters]
+    var MaxResults: js.UndefOr[OpsItemEventMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListOpsItemEventsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[OpsItemEventFilters] = js.undefined,
+        MaxResults: js.UndefOr[OpsItemEventMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListOpsItemEventsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpsItemEventsRequest]
+    }
+  }
+
+  @js.native
+  trait ListOpsItemEventsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var Summaries: js.UndefOr[OpsItemEventSummaries]
+  }
+
+  object ListOpsItemEventsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Summaries: js.UndefOr[OpsItemEventSummaries] = js.undefined
+    ): ListOpsItemEventsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Summaries.foreach(__v => __obj.updateDynamic("Summaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpsItemEventsResponse]
+    }
+  }
+
+  @js.native
+  trait ListOpsMetadataRequest extends js.Object {
+    var Filters: js.UndefOr[OpsMetadataFilterList]
+    var MaxResults: js.UndefOr[ListOpsMetadataMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListOpsMetadataRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[OpsMetadataFilterList] = js.undefined,
+        MaxResults: js.UndefOr[ListOpsMetadataMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListOpsMetadataRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpsMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait ListOpsMetadataResult extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var OpsMetadataList: js.UndefOr[OpsMetadataList]
+  }
+
+  object ListOpsMetadataResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        OpsMetadataList: js.UndefOr[OpsMetadataList] = js.undefined
+    ): ListOpsMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OpsMetadataList.foreach(__v => __obj.updateDynamic("OpsMetadataList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpsMetadataResult]
     }
   }
 
@@ -8186,6 +8744,24 @@ package ssm {
     @inline def values = js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA)
   }
 
+  /** Metadata to assign to an Application Manager application.
+    */
+  @js.native
+  trait MetadataValue extends js.Object {
+    var Value: js.UndefOr[MetadataValueString]
+  }
+
+  object MetadataValue {
+    @inline
+    def apply(
+        Value: js.UndefOr[MetadataValueString] = js.undefined
+    ): MetadataValue = {
+      val __obj = js.Dynamic.literal()
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetadataValue]
+    }
+  }
+
   @js.native
   trait ModifyDocumentPermissionRequest extends js.Object {
     var Name: DocumentName
@@ -8306,8 +8882,9 @@ package ssm {
     val CENTOS = "CENTOS".asInstanceOf[OperatingSystem]
     val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
     val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
+    val MACOS = "MACOS".asInstanceOf[OperatingSystem]
 
-    @inline def values = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN)
+    @inline def values = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS)
   }
 
   /** One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
@@ -8428,6 +9005,8 @@ package ssm {
     */
   @js.native
   trait OpsItem extends js.Object {
+    var ActualEndTime: js.UndefOr[DateTime]
+    var ActualStartTime: js.UndefOr[DateTime]
     var Category: js.UndefOr[OpsItemCategory]
     var CreatedBy: js.UndefOr[String]
     var CreatedTime: js.UndefOr[DateTime]
@@ -8437,6 +9016,9 @@ package ssm {
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var OpsItemId: js.UndefOr[OpsItemId]
+    var OpsItemType: js.UndefOr[OpsItemType]
+    var PlannedEndTime: js.UndefOr[DateTime]
+    var PlannedStartTime: js.UndefOr[DateTime]
     var Priority: js.UndefOr[OpsItemPriority]
     var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
     var Severity: js.UndefOr[OpsItemSeverity]
@@ -8449,6 +9031,8 @@ package ssm {
   object OpsItem {
     @inline
     def apply(
+        ActualEndTime: js.UndefOr[DateTime] = js.undefined,
+        ActualStartTime: js.UndefOr[DateTime] = js.undefined,
         Category: js.UndefOr[OpsItemCategory] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -8458,6 +9042,9 @@ package ssm {
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
+        OpsItemType: js.UndefOr[OpsItemType] = js.undefined,
+        PlannedEndTime: js.UndefOr[DateTime] = js.undefined,
+        PlannedStartTime: js.UndefOr[DateTime] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
         Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
@@ -8467,6 +9054,8 @@ package ssm {
         Version: js.UndefOr[String] = js.undefined
     ): OpsItem = {
       val __obj = js.Dynamic.literal()
+      ActualEndTime.foreach(__v => __obj.updateDynamic("ActualEndTime")(__v.asInstanceOf[js.Any]))
+      ActualStartTime.foreach(__v => __obj.updateDynamic("ActualStartTime")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
@@ -8476,6 +9065,9 @@ package ssm {
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      OpsItemType.foreach(__v => __obj.updateDynamic("OpsItemType")(__v.asInstanceOf[js.Any]))
+      PlannedEndTime.foreach(__v => __obj.updateDynamic("PlannedEndTime")(__v.asInstanceOf[js.Any]))
+      PlannedStartTime.foreach(__v => __obj.updateDynamic("PlannedStartTime")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
       Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
@@ -8517,6 +9109,83 @@ package ssm {
     }
   }
 
+  /** Describes a filter for a specific list of OpsItem events. You can filter event information by using tags. You specify tags by using a key-value pair mapping.
+    */
+  @js.native
+  trait OpsItemEventFilter extends js.Object {
+    var Key: OpsItemEventFilterKey
+    var Operator: OpsItemEventFilterOperator
+    var Values: OpsItemEventFilterValues
+  }
+
+  object OpsItemEventFilter {
+    @inline
+    def apply(
+        Key: OpsItemEventFilterKey,
+        Operator: OpsItemEventFilterOperator,
+        Values: OpsItemEventFilterValues
+    ): OpsItemEventFilter = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OpsItemEventFilter]
+    }
+  }
+
+  @js.native
+  sealed trait OpsItemEventFilterKey extends js.Any
+  object OpsItemEventFilterKey {
+    val OpsItemId = "OpsItemId".asInstanceOf[OpsItemEventFilterKey]
+
+    @inline def values = js.Array(OpsItemId)
+  }
+
+  @js.native
+  sealed trait OpsItemEventFilterOperator extends js.Any
+  object OpsItemEventFilterOperator {
+    val Equal = "Equal".asInstanceOf[OpsItemEventFilterOperator]
+
+    @inline def values = js.Array(Equal)
+  }
+
+  /** Summary information about an OpsItem event.
+    */
+  @js.native
+  trait OpsItemEventSummary extends js.Object {
+    var CreatedBy: js.UndefOr[OpsItemIdentity]
+    var CreatedTime: js.UndefOr[DateTime]
+    var Detail: js.UndefOr[String]
+    var DetailType: js.UndefOr[String]
+    var EventId: js.UndefOr[String]
+    var OpsItemId: js.UndefOr[String]
+    var Source: js.UndefOr[String]
+  }
+
+  object OpsItemEventSummary {
+    @inline
+    def apply(
+        CreatedBy: js.UndefOr[OpsItemIdentity] = js.undefined,
+        CreatedTime: js.UndefOr[DateTime] = js.undefined,
+        Detail: js.UndefOr[String] = js.undefined,
+        DetailType: js.UndefOr[String] = js.undefined,
+        EventId: js.UndefOr[String] = js.undefined,
+        OpsItemId: js.UndefOr[String] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined
+    ): OpsItemEventSummary = {
+      val __obj = js.Dynamic.literal()
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
+      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.updateDynamic("EventId")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItemEventSummary]
+    }
+  }
+
   /** Describes an OpsItem filter.
     */
   @js.native
@@ -8553,6 +9222,10 @@ package ssm {
     val OpsItemId = "OpsItemId".asInstanceOf[OpsItemFilterKey]
     val CreatedTime = "CreatedTime".asInstanceOf[OpsItemFilterKey]
     val LastModifiedTime = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
+    val ActualStartTime = "ActualStartTime".asInstanceOf[OpsItemFilterKey]
+    val ActualEndTime = "ActualEndTime".asInstanceOf[OpsItemFilterKey]
+    val PlannedStartTime = "PlannedStartTime".asInstanceOf[OpsItemFilterKey]
+    val PlannedEndTime = "PlannedEndTime".asInstanceOf[OpsItemFilterKey]
     val OperationalData = "OperationalData".asInstanceOf[OpsItemFilterKey]
     val OperationalDataKey = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
     val OperationalDataValue = "OperationalDataValue".asInstanceOf[OpsItemFilterKey]
@@ -8560,6 +9233,13 @@ package ssm {
     val AutomationId = "AutomationId".asInstanceOf[OpsItemFilterKey]
     val Category = "Category".asInstanceOf[OpsItemFilterKey]
     val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
+    val OpsItemType = "OpsItemType".asInstanceOf[OpsItemFilterKey]
+    val ChangeRequestByRequesterArn = "ChangeRequestByRequesterArn".asInstanceOf[OpsItemFilterKey]
+    val ChangeRequestByRequesterName = "ChangeRequestByRequesterName".asInstanceOf[OpsItemFilterKey]
+    val ChangeRequestByApproverArn = "ChangeRequestByApproverArn".asInstanceOf[OpsItemFilterKey]
+    val ChangeRequestByApproverName = "ChangeRequestByApproverName".asInstanceOf[OpsItemFilterKey]
+    val ChangeRequestByTemplate = "ChangeRequestByTemplate".asInstanceOf[OpsItemFilterKey]
+    val ChangeRequestByTargetsResourceGroup = "ChangeRequestByTargetsResourceGroup".asInstanceOf[OpsItemFilterKey]
 
     @inline def values = js.Array(
       Status,
@@ -8570,13 +9250,24 @@ package ssm {
       OpsItemId,
       CreatedTime,
       LastModifiedTime,
+      ActualStartTime,
+      ActualEndTime,
+      PlannedStartTime,
+      PlannedEndTime,
       OperationalData,
       OperationalDataKey,
       OperationalDataValue,
       ResourceId,
       AutomationId,
       Category,
-      Severity
+      Severity,
+      OpsItemType,
+      ChangeRequestByRequesterArn,
+      ChangeRequestByRequesterName,
+      ChangeRequestByApproverArn,
+      ChangeRequestByApproverName,
+      ChangeRequestByTemplate,
+      ChangeRequestByTargetsResourceGroup
     )
   }
 
@@ -8589,6 +9280,24 @@ package ssm {
     val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
     @inline def values = js.Array(Equal, Contains, GreaterThan, LessThan)
+  }
+
+  /** Information about the user or resource that created an OpsItem event.
+    */
+  @js.native
+  trait OpsItemIdentity extends js.Object {
+    var Arn: js.UndefOr[String]
+  }
+
+  object OpsItemIdentity {
+    @inline
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined
+    ): OpsItemIdentity = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItemIdentity]
+    }
   }
 
   /** A notification about the OpsItem.
@@ -8615,14 +9324,50 @@ package ssm {
     val Open = "Open".asInstanceOf[OpsItemStatus]
     val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
     val Resolved = "Resolved".asInstanceOf[OpsItemStatus]
+    val Pending = "Pending".asInstanceOf[OpsItemStatus]
+    val TimedOut = "TimedOut".asInstanceOf[OpsItemStatus]
+    val Cancelling = "Cancelling".asInstanceOf[OpsItemStatus]
+    val Cancelled = "Cancelled".asInstanceOf[OpsItemStatus]
+    val Failed = "Failed".asInstanceOf[OpsItemStatus]
+    val CompletedWithSuccess = "CompletedWithSuccess".asInstanceOf[OpsItemStatus]
+    val CompletedWithFailure = "CompletedWithFailure".asInstanceOf[OpsItemStatus]
+    val Scheduled = "Scheduled".asInstanceOf[OpsItemStatus]
+    val RunbookInProgress = "RunbookInProgress".asInstanceOf[OpsItemStatus]
+    val PendingChangeCalendarOverride = "PendingChangeCalendarOverride".asInstanceOf[OpsItemStatus]
+    val ChangeCalendarOverrideApproved = "ChangeCalendarOverrideApproved".asInstanceOf[OpsItemStatus]
+    val ChangeCalendarOverrideRejected = "ChangeCalendarOverrideRejected".asInstanceOf[OpsItemStatus]
+    val PendingApproval = "PendingApproval".asInstanceOf[OpsItemStatus]
+    val Approved = "Approved".asInstanceOf[OpsItemStatus]
+    val Rejected = "Rejected".asInstanceOf[OpsItemStatus]
 
-    @inline def values = js.Array(Open, InProgress, Resolved)
+    @inline def values = js.Array(
+      Open,
+      InProgress,
+      Resolved,
+      Pending,
+      TimedOut,
+      Cancelling,
+      Cancelled,
+      Failed,
+      CompletedWithSuccess,
+      CompletedWithFailure,
+      Scheduled,
+      RunbookInProgress,
+      PendingChangeCalendarOverride,
+      ChangeCalendarOverrideApproved,
+      ChangeCalendarOverrideRejected,
+      PendingApproval,
+      Approved,
+      Rejected
+    )
   }
 
   /** A count of OpsItems.
     */
   @js.native
   trait OpsItemSummary extends js.Object {
+    var ActualEndTime: js.UndefOr[DateTime]
+    var ActualStartTime: js.UndefOr[DateTime]
     var Category: js.UndefOr[OpsItemCategory]
     var CreatedBy: js.UndefOr[String]
     var CreatedTime: js.UndefOr[DateTime]
@@ -8630,6 +9375,9 @@ package ssm {
     var LastModifiedTime: js.UndefOr[DateTime]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var OpsItemId: js.UndefOr[OpsItemId]
+    var OpsItemType: js.UndefOr[OpsItemType]
+    var PlannedEndTime: js.UndefOr[DateTime]
+    var PlannedStartTime: js.UndefOr[DateTime]
     var Priority: js.UndefOr[OpsItemPriority]
     var Severity: js.UndefOr[OpsItemSeverity]
     var Source: js.UndefOr[OpsItemSource]
@@ -8640,6 +9388,8 @@ package ssm {
   object OpsItemSummary {
     @inline
     def apply(
+        ActualEndTime: js.UndefOr[DateTime] = js.undefined,
+        ActualStartTime: js.UndefOr[DateTime] = js.undefined,
         Category: js.UndefOr[OpsItemCategory] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -8647,6 +9397,9 @@ package ssm {
         LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
+        OpsItemType: js.UndefOr[OpsItemType] = js.undefined,
+        PlannedEndTime: js.UndefOr[DateTime] = js.undefined,
+        PlannedStartTime: js.UndefOr[DateTime] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
         Source: js.UndefOr[OpsItemSource] = js.undefined,
@@ -8654,6 +9407,8 @@ package ssm {
         Title: js.UndefOr[OpsItemTitle] = js.undefined
     ): OpsItemSummary = {
       val __obj = js.Dynamic.literal()
+      ActualEndTime.foreach(__v => __obj.updateDynamic("ActualEndTime")(__v.asInstanceOf[js.Any]))
+      ActualStartTime.foreach(__v => __obj.updateDynamic("ActualStartTime")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
@@ -8661,12 +9416,67 @@ package ssm {
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      OpsItemType.foreach(__v => __obj.updateDynamic("OpsItemType")(__v.asInstanceOf[js.Any]))
+      PlannedEndTime.foreach(__v => __obj.updateDynamic("PlannedEndTime")(__v.asInstanceOf[js.Any]))
+      PlannedStartTime.foreach(__v => __obj.updateDynamic("PlannedStartTime")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItemSummary]
+    }
+  }
+
+  /** Operational metadata for an application in Application Manager.
+    */
+  @js.native
+  trait OpsMetadata extends js.Object {
+    var CreationDate: js.UndefOr[DateTime]
+    var LastModifiedDate: js.UndefOr[DateTime]
+    var LastModifiedUser: js.UndefOr[String]
+    var OpsMetadataArn: js.UndefOr[OpsMetadataArn]
+    var ResourceId: js.UndefOr[OpsMetadataResourceId]
+  }
+
+  object OpsMetadata {
+    @inline
+    def apply(
+        CreationDate: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedUser: js.UndefOr[String] = js.undefined,
+        OpsMetadataArn: js.UndefOr[OpsMetadataArn] = js.undefined,
+        ResourceId: js.UndefOr[OpsMetadataResourceId] = js.undefined
+    ): OpsMetadata = {
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      LastModifiedUser.foreach(__v => __obj.updateDynamic("LastModifiedUser")(__v.asInstanceOf[js.Any]))
+      OpsMetadataArn.foreach(__v => __obj.updateDynamic("OpsMetadataArn")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsMetadata]
+    }
+  }
+
+  /** A filter to limit the number of OpsMetadata objects displayed.
+    */
+  @js.native
+  trait OpsMetadataFilter extends js.Object {
+    var Key: OpsMetadataFilterKey
+    var Values: OpsMetadataFilterValueList
+  }
+
+  object OpsMetadataFilter {
+    @inline
+    def apply(
+        Key: OpsMetadataFilterKey,
+        Values: OpsMetadataFilterValueList
+    ): OpsMetadataFilter = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OpsMetadataFilter]
     }
   }
 
@@ -10263,6 +11073,84 @@ package ssm {
     }
   }
 
+  /** Information about the result of a document review request.
+    */
+  @js.native
+  trait ReviewInformation extends js.Object {
+    var ReviewedTime: js.UndefOr[DateTime]
+    var Reviewer: js.UndefOr[Reviewer]
+    var Status: js.UndefOr[ReviewStatus]
+  }
+
+  object ReviewInformation {
+    @inline
+    def apply(
+        ReviewedTime: js.UndefOr[DateTime] = js.undefined,
+        Reviewer: js.UndefOr[Reviewer] = js.undefined,
+        Status: js.UndefOr[ReviewStatus] = js.undefined
+    ): ReviewInformation = {
+      val __obj = js.Dynamic.literal()
+      ReviewedTime.foreach(__v => __obj.updateDynamic("ReviewedTime")(__v.asInstanceOf[js.Any]))
+      Reviewer.foreach(__v => __obj.updateDynamic("Reviewer")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReviewInformation]
+    }
+  }
+
+  @js.native
+  sealed trait ReviewStatus extends js.Any
+  object ReviewStatus {
+    val APPROVED = "APPROVED".asInstanceOf[ReviewStatus]
+    val NOT_REVIEWED = "NOT_REVIEWED".asInstanceOf[ReviewStatus]
+    val PENDING = "PENDING".asInstanceOf[ReviewStatus]
+    val REJECTED = "REJECTED".asInstanceOf[ReviewStatus]
+
+    @inline def values = js.Array(APPROVED, NOT_REVIEWED, PENDING, REJECTED)
+  }
+
+  /** Information about an Automation runbook (Automation document) used in a runbook workflow in Change Manager.
+    *
+    * '''Note:'''The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.
+    */
+  @js.native
+  trait Runbook extends js.Object {
+    var DocumentName: DocumentARN
+    var DocumentVersion: js.UndefOr[DocumentVersion]
+    var MaxConcurrency: js.UndefOr[MaxConcurrency]
+    var MaxErrors: js.UndefOr[MaxErrors]
+    var Parameters: js.UndefOr[AutomationParameterMap]
+    var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetParameterName: js.UndefOr[AutomationParameterKey]
+    var Targets: js.UndefOr[Targets]
+  }
+
+  object Runbook {
+    @inline
+    def apply(
+        DocumentName: DocumentARN,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): Runbook = {
+      val __obj = js.Dynamic.literal(
+        "DocumentName" -> DocumentName.asInstanceOf[js.Any]
+      )
+
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Runbook]
+    }
+  }
+
   /** An S3 bucket where you want to store the results of this request.
     */
   @js.native
@@ -10742,6 +11630,61 @@ package ssm {
   }
 
   @js.native
+  trait StartChangeRequestExecutionRequest extends js.Object {
+    var DocumentName: DocumentARN
+    var Runbooks: Runbooks
+    var ChangeRequestName: js.UndefOr[ChangeRequestName]
+    var ClientToken: js.UndefOr[IdempotencyToken]
+    var DocumentVersion: js.UndefOr[DocumentVersion]
+    var Parameters: js.UndefOr[AutomationParameterMap]
+    var ScheduledTime: js.UndefOr[DateTime]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object StartChangeRequestExecutionRequest {
+    @inline
+    def apply(
+        DocumentName: DocumentARN,
+        Runbooks: Runbooks,
+        ChangeRequestName: js.UndefOr[ChangeRequestName] = js.undefined,
+        ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        ScheduledTime: js.UndefOr[DateTime] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): StartChangeRequestExecutionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DocumentName" -> DocumentName.asInstanceOf[js.Any],
+        "Runbooks" -> Runbooks.asInstanceOf[js.Any]
+      )
+
+      ChangeRequestName.foreach(__v => __obj.updateDynamic("ChangeRequestName")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduledTime.foreach(__v => __obj.updateDynamic("ScheduledTime")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartChangeRequestExecutionRequest]
+    }
+  }
+
+  @js.native
+  trait StartChangeRequestExecutionResult extends js.Object {
+    var AutomationExecutionId: js.UndefOr[AutomationExecutionId]
+  }
+
+  object StartChangeRequestExecutionResult {
+    @inline
+    def apply(
+        AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined
+    ): StartChangeRequestExecutionResult = {
+      val __obj = js.Dynamic.literal()
+      AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartChangeRequestExecutionResult]
+    }
+  }
+
+  @js.native
   trait StartSessionRequest extends js.Object {
     var Target: SessionTarget
     var DocumentName: js.UndefOr[DocumentARN]
@@ -11085,6 +12028,7 @@ package ssm {
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
+    var TargetLocations: js.UndefOr[TargetLocations]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -11105,6 +12049,7 @@ package ssm {
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): UpdateAssociationRequest = {
       val __obj = js.Dynamic.literal(
@@ -11124,6 +12069,7 @@ package ssm {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssociationRequest]
     }
@@ -11217,6 +12163,41 @@ package ssm {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDocumentDefaultVersionResult]
+    }
+  }
+
+  @js.native
+  trait UpdateDocumentMetadataRequest extends js.Object {
+    var DocumentReviews: DocumentReviews
+    var Name: DocumentName
+    var DocumentVersion: js.UndefOr[DocumentVersion]
+  }
+
+  object UpdateDocumentMetadataRequest {
+    @inline
+    def apply(
+        DocumentReviews: DocumentReviews,
+        Name: DocumentName,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined
+    ): UpdateDocumentMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "DocumentReviews" -> DocumentReviews.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDocumentMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDocumentMetadataResponse extends js.Object
+
+  object UpdateDocumentMetadataResponse {
+    @inline
+    def apply(): UpdateDocumentMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateDocumentMetadataResponse]
     }
   }
 
@@ -11585,11 +12566,15 @@ package ssm {
   @js.native
   trait UpdateOpsItemRequest extends js.Object {
     var OpsItemId: OpsItemId
+    var ActualEndTime: js.UndefOr[DateTime]
+    var ActualStartTime: js.UndefOr[DateTime]
     var Category: js.UndefOr[OpsItemCategory]
     var Description: js.UndefOr[OpsItemDescription]
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList]
+    var PlannedEndTime: js.UndefOr[DateTime]
+    var PlannedStartTime: js.UndefOr[DateTime]
     var Priority: js.UndefOr[OpsItemPriority]
     var RelatedOpsItems: js.UndefOr[RelatedOpsItems]
     var Severity: js.UndefOr[OpsItemSeverity]
@@ -11601,11 +12586,15 @@ package ssm {
     @inline
     def apply(
         OpsItemId: OpsItemId,
+        ActualEndTime: js.UndefOr[DateTime] = js.undefined,
+        ActualStartTime: js.UndefOr[DateTime] = js.undefined,
         Category: js.UndefOr[OpsItemCategory] = js.undefined,
         Description: js.UndefOr[OpsItemDescription] = js.undefined,
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList] = js.undefined,
+        PlannedEndTime: js.UndefOr[DateTime] = js.undefined,
+        PlannedStartTime: js.UndefOr[DateTime] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
         Severity: js.UndefOr[OpsItemSeverity] = js.undefined,
@@ -11616,11 +12605,15 @@ package ssm {
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
 
+      ActualEndTime.foreach(__v => __obj.updateDynamic("ActualEndTime")(__v.asInstanceOf[js.Any]))
+      ActualStartTime.foreach(__v => __obj.updateDynamic("ActualStartTime")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       OperationalDataToDelete.foreach(__v => __obj.updateDynamic("OperationalDataToDelete")(__v.asInstanceOf[js.Any]))
+      PlannedEndTime.foreach(__v => __obj.updateDynamic("PlannedEndTime")(__v.asInstanceOf[js.Any]))
+      PlannedStartTime.foreach(__v => __obj.updateDynamic("PlannedStartTime")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
       Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
@@ -11638,6 +12631,46 @@ package ssm {
     def apply(): UpdateOpsItemResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateOpsItemResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateOpsMetadataRequest extends js.Object {
+    var OpsMetadataArn: OpsMetadataArn
+    var KeysToDelete: js.UndefOr[MetadataKeysToDeleteList]
+    var MetadataToUpdate: js.UndefOr[MetadataMap]
+  }
+
+  object UpdateOpsMetadataRequest {
+    @inline
+    def apply(
+        OpsMetadataArn: OpsMetadataArn,
+        KeysToDelete: js.UndefOr[MetadataKeysToDeleteList] = js.undefined,
+        MetadataToUpdate: js.UndefOr[MetadataMap] = js.undefined
+    ): UpdateOpsMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "OpsMetadataArn" -> OpsMetadataArn.asInstanceOf[js.Any]
+      )
+
+      KeysToDelete.foreach(__v => __obj.updateDynamic("KeysToDelete")(__v.asInstanceOf[js.Any]))
+      MetadataToUpdate.foreach(__v => __obj.updateDynamic("MetadataToUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateOpsMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateOpsMetadataResult extends js.Object {
+    var OpsMetadataArn: js.UndefOr[OpsMetadataArn]
+  }
+
+  object UpdateOpsMetadataResult {
+    @inline
+    def apply(
+        OpsMetadataArn: js.UndefOr[OpsMetadataArn] = js.undefined
+    ): UpdateOpsMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      OpsMetadataArn.foreach(__v => __obj.updateDynamic("OpsMetadataArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateOpsMetadataResult]
     }
   }
 

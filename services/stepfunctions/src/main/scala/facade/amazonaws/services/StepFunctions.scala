@@ -9,6 +9,8 @@ import facade.amazonaws._
 package object stepfunctions {
   type ActivityList = js.Array[ActivityListItem]
   type Arn = String
+  type BilledDuration = Double
+  type BilledMemoryUsed = Double
   type ConnectorParameters = String
   type Definition = String
   type Enabled = Boolean
@@ -38,7 +40,7 @@ package object stepfunctions {
   type Timestamp = js.Date
   type TraceHeader = String
   type UnsignedInteger = Int
-  type included = Boolean
+  type includedDetails = Boolean
   type truncated = Boolean
 
   implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
@@ -61,6 +63,7 @@ package object stepfunctions {
     @inline def sendTaskHeartbeatFuture(params: SendTaskHeartbeatInput): Future[SendTaskHeartbeatOutput] = service.sendTaskHeartbeat(params).promise().toFuture
     @inline def sendTaskSuccessFuture(params: SendTaskSuccessInput): Future[SendTaskSuccessOutput] = service.sendTaskSuccess(params).promise().toFuture
     @inline def startExecutionFuture(params: StartExecutionInput): Future[StartExecutionOutput] = service.startExecution(params).promise().toFuture
+    @inline def startSyncExecutionFuture(params: StartSyncExecutionInput): Future[StartSyncExecutionOutput] = service.startSyncExecution(params).promise().toFuture
     @inline def stopExecutionFuture(params: StopExecutionInput): Future[StopExecutionOutput] = service.stopExecution(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
@@ -93,6 +96,7 @@ package stepfunctions {
     def sendTaskHeartbeat(params: SendTaskHeartbeatInput): Request[SendTaskHeartbeatOutput] = js.native
     def sendTaskSuccess(params: SendTaskSuccessInput): Request[SendTaskSuccessOutput] = js.native
     def startExecution(params: StartExecutionInput): Request[StartExecutionOutput] = js.native
+    def startSyncExecution(params: StartSyncExecutionInput): Request[StartSyncExecutionOutput] = js.native
     def stopExecution(params: StopExecutionInput): Request[StopExecutionOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
@@ -258,17 +262,38 @@ package stepfunctions {
     }
   }
 
+  /** An object that describes workflow billing details.
+    */
+  @js.native
+  trait BillingDetails extends js.Object {
+    var billedDurationInMilliseconds: js.UndefOr[BilledDuration]
+    var billedMemoryUsedInMB: js.UndefOr[BilledMemoryUsed]
+  }
+
+  object BillingDetails {
+    @inline
+    def apply(
+        billedDurationInMilliseconds: js.UndefOr[BilledDuration] = js.undefined,
+        billedMemoryUsedInMB: js.UndefOr[BilledMemoryUsed] = js.undefined
+    ): BillingDetails = {
+      val __obj = js.Dynamic.literal()
+      billedDurationInMilliseconds.foreach(__v => __obj.updateDynamic("billedDurationInMilliseconds")(__v.asInstanceOf[js.Any]))
+      billedMemoryUsedInMB.foreach(__v => __obj.updateDynamic("billedMemoryUsedInMB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BillingDetails]
+    }
+  }
+
   /** Provides details about execution input or output.
     */
   @js.native
   trait CloudWatchEventsExecutionDataDetails extends js.Object {
-    var included: js.UndefOr[included]
+    var included: js.UndefOr[includedDetails]
   }
 
   object CloudWatchEventsExecutionDataDetails {
     @inline
     def apply(
-        included: js.UndefOr[included] = js.undefined
+        included: js.UndefOr[includedDetails] = js.undefined
     ): CloudWatchEventsExecutionDataDetails = {
       val __obj = js.Dynamic.literal()
       included.foreach(__v => __obj.updateDynamic("included")(__v.asInstanceOf[js.Any]))
@@ -1699,6 +1724,90 @@ package stepfunctions {
     }
   }
 
+  @js.native
+  trait StartSyncExecutionInput extends js.Object {
+    var stateMachineArn: Arn
+    var input: js.UndefOr[SensitiveData]
+    var name: js.UndefOr[Name]
+    var traceHeader: js.UndefOr[TraceHeader]
+  }
+
+  object StartSyncExecutionInput {
+    @inline
+    def apply(
+        stateMachineArn: Arn,
+        input: js.UndefOr[SensitiveData] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        traceHeader: js.UndefOr[TraceHeader] = js.undefined
+    ): StartSyncExecutionInput = {
+      val __obj = js.Dynamic.literal(
+        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
+      )
+
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      traceHeader.foreach(__v => __obj.updateDynamic("traceHeader")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSyncExecutionInput]
+    }
+  }
+
+  @js.native
+  trait StartSyncExecutionOutput extends js.Object {
+    var executionArn: Arn
+    var startDate: Timestamp
+    var status: SyncExecutionStatus
+    var stopDate: Timestamp
+    var billingDetails: js.UndefOr[BillingDetails]
+    var cause: js.UndefOr[SensitiveCause]
+    var error: js.UndefOr[SensitiveError]
+    var input: js.UndefOr[SensitiveData]
+    var inputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails]
+    var name: js.UndefOr[Name]
+    var output: js.UndefOr[SensitiveData]
+    var outputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails]
+    var stateMachineArn: js.UndefOr[Arn]
+    var traceHeader: js.UndefOr[TraceHeader]
+  }
+
+  object StartSyncExecutionOutput {
+    @inline
+    def apply(
+        executionArn: Arn,
+        startDate: Timestamp,
+        status: SyncExecutionStatus,
+        stopDate: Timestamp,
+        billingDetails: js.UndefOr[BillingDetails] = js.undefined,
+        cause: js.UndefOr[SensitiveCause] = js.undefined,
+        error: js.UndefOr[SensitiveError] = js.undefined,
+        input: js.UndefOr[SensitiveData] = js.undefined,
+        inputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        output: js.UndefOr[SensitiveData] = js.undefined,
+        outputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails] = js.undefined,
+        stateMachineArn: js.UndefOr[Arn] = js.undefined,
+        traceHeader: js.UndefOr[TraceHeader] = js.undefined
+    ): StartSyncExecutionOutput = {
+      val __obj = js.Dynamic.literal(
+        "executionArn" -> executionArn.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "stopDate" -> stopDate.asInstanceOf[js.Any]
+      )
+
+      billingDetails.foreach(__v => __obj.updateDynamic("billingDetails")(__v.asInstanceOf[js.Any]))
+      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
+      stateMachineArn.foreach(__v => __obj.updateDynamic("stateMachineArn")(__v.asInstanceOf[js.Any]))
+      traceHeader.foreach(__v => __obj.updateDynamic("traceHeader")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSyncExecutionOutput]
+    }
+  }
+
   /** Contains details about a state entered during an execution.
     */
   @js.native
@@ -1836,6 +1945,16 @@ package stepfunctions {
       )
       __obj.asInstanceOf[StopExecutionOutput]
     }
+  }
+
+  @js.native
+  sealed trait SyncExecutionStatus extends js.Any
+  object SyncExecutionStatus {
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[SyncExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[SyncExecutionStatus]
+    val TIMED_OUT = "TIMED_OUT".asInstanceOf[SyncExecutionStatus]
+
+    @inline def values = js.Array(SUCCEEDED, FAILED, TIMED_OUT)
   }
 
   /** Tags are key-value pairs that can be associated with Step Functions state machines and activities.

@@ -2925,7 +2925,7 @@ package guardduty {
     }
   }
 
-  /** Contains information about the master account and invitation.
+  /** Contains information about the administrator account and invitation.
     */
   @js.native
   trait Master extends js.Object {

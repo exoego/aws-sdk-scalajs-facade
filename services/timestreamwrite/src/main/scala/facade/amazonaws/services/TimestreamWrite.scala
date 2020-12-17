@@ -15,6 +15,7 @@ package object timestreamwrite {
   type MagneticStoreRetentionPeriodInDays = Double
   type MemoryStoreRetentionPeriodInHours = Double
   type PaginationLimit = Int
+  type RecordVersion = Double
   type Records = js.Array[Record]
   type ResourceName = String
   type StringValue2048 = String
@@ -508,6 +509,7 @@ package timestreamwrite {
     var MeasureValueType: js.UndefOr[MeasureValueType]
     var Time: js.UndefOr[StringValue256]
     var TimeUnit: js.UndefOr[TimeUnit]
+    var Version: js.UndefOr[RecordVersion]
   }
 
   object Record {
@@ -518,7 +520,8 @@ package timestreamwrite {
         MeasureValue: js.UndefOr[StringValue2048] = js.undefined,
         MeasureValueType: js.UndefOr[MeasureValueType] = js.undefined,
         Time: js.UndefOr[StringValue256] = js.undefined,
-        TimeUnit: js.UndefOr[TimeUnit] = js.undefined
+        TimeUnit: js.UndefOr[TimeUnit] = js.undefined,
+        Version: js.UndefOr[RecordVersion] = js.undefined
     ): Record = {
       val __obj = js.Dynamic.literal()
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
@@ -527,6 +530,7 @@ package timestreamwrite {
       MeasureValueType.foreach(__v => __obj.updateDynamic("MeasureValueType")(__v.asInstanceOf[js.Any]))
       Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
       TimeUnit.foreach(__v => __obj.updateDynamic("TimeUnit")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
   }

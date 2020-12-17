@@ -34,6 +34,8 @@ package object comprehend {
   type EntityRecognizerPropertiesList = js.Array[EntityRecognizerProperties]
   type EntityTypeName = String
   type EntityTypesList = js.Array[EntityTypesListItem]
+  type EventTypeString = String
+  type EventsDetectionJobPropertiesList = js.Array[EventsDetectionJobProperties]
   type IamRoleArn = String
   type InferenceUnitsInteger = Int
   type JobId = String
@@ -68,6 +70,7 @@ package object comprehend {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TargetEventTypes = js.Array[EventTypeString]
   type Timestamp = js.Date
   type TopicsDetectionJobPropertiesList = js.Array[TopicsDetectionJobProperties]
 
@@ -91,6 +94,7 @@ package object comprehend {
     @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] = service.describeEndpoint(params).promise().toFuture
     @inline def describeEntitiesDetectionJobFuture(params: DescribeEntitiesDetectionJobRequest): Future[DescribeEntitiesDetectionJobResponse] = service.describeEntitiesDetectionJob(params).promise().toFuture
     @inline def describeEntityRecognizerFuture(params: DescribeEntityRecognizerRequest): Future[DescribeEntityRecognizerResponse] = service.describeEntityRecognizer(params).promise().toFuture
+    @inline def describeEventsDetectionJobFuture(params: DescribeEventsDetectionJobRequest): Future[DescribeEventsDetectionJobResponse] = service.describeEventsDetectionJob(params).promise().toFuture
     @inline def describeKeyPhrasesDetectionJobFuture(params: DescribeKeyPhrasesDetectionJobRequest): Future[DescribeKeyPhrasesDetectionJobResponse] = service.describeKeyPhrasesDetectionJob(params).promise().toFuture
     @inline def describePiiEntitiesDetectionJobFuture(params: DescribePiiEntitiesDetectionJobRequest): Future[DescribePiiEntitiesDetectionJobResponse] = service.describePiiEntitiesDetectionJob(params).promise().toFuture
     @inline def describeSentimentDetectionJobFuture(params: DescribeSentimentDetectionJobRequest): Future[DescribeSentimentDetectionJobResponse] = service.describeSentimentDetectionJob(params).promise().toFuture
@@ -107,6 +111,7 @@ package object comprehend {
     @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResponse] = service.listEndpoints(params).promise().toFuture
     @inline def listEntitiesDetectionJobsFuture(params: ListEntitiesDetectionJobsRequest): Future[ListEntitiesDetectionJobsResponse] = service.listEntitiesDetectionJobs(params).promise().toFuture
     @inline def listEntityRecognizersFuture(params: ListEntityRecognizersRequest): Future[ListEntityRecognizersResponse] = service.listEntityRecognizers(params).promise().toFuture
+    @inline def listEventsDetectionJobsFuture(params: ListEventsDetectionJobsRequest): Future[ListEventsDetectionJobsResponse] = service.listEventsDetectionJobs(params).promise().toFuture
     @inline def listKeyPhrasesDetectionJobsFuture(params: ListKeyPhrasesDetectionJobsRequest): Future[ListKeyPhrasesDetectionJobsResponse] = service.listKeyPhrasesDetectionJobs(params).promise().toFuture
     @inline def listPiiEntitiesDetectionJobsFuture(params: ListPiiEntitiesDetectionJobsRequest): Future[ListPiiEntitiesDetectionJobsResponse] = service.listPiiEntitiesDetectionJobs(params).promise().toFuture
     @inline def listSentimentDetectionJobsFuture(params: ListSentimentDetectionJobsRequest): Future[ListSentimentDetectionJobsResponse] = service.listSentimentDetectionJobs(params).promise().toFuture
@@ -115,12 +120,14 @@ package object comprehend {
     @inline def startDocumentClassificationJobFuture(params: StartDocumentClassificationJobRequest): Future[StartDocumentClassificationJobResponse] = service.startDocumentClassificationJob(params).promise().toFuture
     @inline def startDominantLanguageDetectionJobFuture(params: StartDominantLanguageDetectionJobRequest): Future[StartDominantLanguageDetectionJobResponse] = service.startDominantLanguageDetectionJob(params).promise().toFuture
     @inline def startEntitiesDetectionJobFuture(params: StartEntitiesDetectionJobRequest): Future[StartEntitiesDetectionJobResponse] = service.startEntitiesDetectionJob(params).promise().toFuture
+    @inline def startEventsDetectionJobFuture(params: StartEventsDetectionJobRequest): Future[StartEventsDetectionJobResponse] = service.startEventsDetectionJob(params).promise().toFuture
     @inline def startKeyPhrasesDetectionJobFuture(params: StartKeyPhrasesDetectionJobRequest): Future[StartKeyPhrasesDetectionJobResponse] = service.startKeyPhrasesDetectionJob(params).promise().toFuture
     @inline def startPiiEntitiesDetectionJobFuture(params: StartPiiEntitiesDetectionJobRequest): Future[StartPiiEntitiesDetectionJobResponse] = service.startPiiEntitiesDetectionJob(params).promise().toFuture
     @inline def startSentimentDetectionJobFuture(params: StartSentimentDetectionJobRequest): Future[StartSentimentDetectionJobResponse] = service.startSentimentDetectionJob(params).promise().toFuture
     @inline def startTopicsDetectionJobFuture(params: StartTopicsDetectionJobRequest): Future[StartTopicsDetectionJobResponse] = service.startTopicsDetectionJob(params).promise().toFuture
     @inline def stopDominantLanguageDetectionJobFuture(params: StopDominantLanguageDetectionJobRequest): Future[StopDominantLanguageDetectionJobResponse] = service.stopDominantLanguageDetectionJob(params).promise().toFuture
     @inline def stopEntitiesDetectionJobFuture(params: StopEntitiesDetectionJobRequest): Future[StopEntitiesDetectionJobResponse] = service.stopEntitiesDetectionJob(params).promise().toFuture
+    @inline def stopEventsDetectionJobFuture(params: StopEventsDetectionJobRequest): Future[StopEventsDetectionJobResponse] = service.stopEventsDetectionJob(params).promise().toFuture
     @inline def stopKeyPhrasesDetectionJobFuture(params: StopKeyPhrasesDetectionJobRequest): Future[StopKeyPhrasesDetectionJobResponse] = service.stopKeyPhrasesDetectionJob(params).promise().toFuture
     @inline def stopPiiEntitiesDetectionJobFuture(params: StopPiiEntitiesDetectionJobRequest): Future[StopPiiEntitiesDetectionJobResponse] = service.stopPiiEntitiesDetectionJob(params).promise().toFuture
     @inline def stopSentimentDetectionJobFuture(params: StopSentimentDetectionJobRequest): Future[StopSentimentDetectionJobResponse] = service.stopSentimentDetectionJob(params).promise().toFuture
@@ -157,6 +164,7 @@ package comprehend {
     def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
     def describeEntitiesDetectionJob(params: DescribeEntitiesDetectionJobRequest): Request[DescribeEntitiesDetectionJobResponse] = js.native
     def describeEntityRecognizer(params: DescribeEntityRecognizerRequest): Request[DescribeEntityRecognizerResponse] = js.native
+    def describeEventsDetectionJob(params: DescribeEventsDetectionJobRequest): Request[DescribeEventsDetectionJobResponse] = js.native
     def describeKeyPhrasesDetectionJob(params: DescribeKeyPhrasesDetectionJobRequest): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
     def describePiiEntitiesDetectionJob(params: DescribePiiEntitiesDetectionJobRequest): Request[DescribePiiEntitiesDetectionJobResponse] = js.native
     def describeSentimentDetectionJob(params: DescribeSentimentDetectionJobRequest): Request[DescribeSentimentDetectionJobResponse] = js.native
@@ -173,6 +181,7 @@ package comprehend {
     def listEndpoints(params: ListEndpointsRequest): Request[ListEndpointsResponse] = js.native
     def listEntitiesDetectionJobs(params: ListEntitiesDetectionJobsRequest): Request[ListEntitiesDetectionJobsResponse] = js.native
     def listEntityRecognizers(params: ListEntityRecognizersRequest): Request[ListEntityRecognizersResponse] = js.native
+    def listEventsDetectionJobs(params: ListEventsDetectionJobsRequest): Request[ListEventsDetectionJobsResponse] = js.native
     def listKeyPhrasesDetectionJobs(params: ListKeyPhrasesDetectionJobsRequest): Request[ListKeyPhrasesDetectionJobsResponse] = js.native
     def listPiiEntitiesDetectionJobs(params: ListPiiEntitiesDetectionJobsRequest): Request[ListPiiEntitiesDetectionJobsResponse] = js.native
     def listSentimentDetectionJobs(params: ListSentimentDetectionJobsRequest): Request[ListSentimentDetectionJobsResponse] = js.native
@@ -181,12 +190,14 @@ package comprehend {
     def startDocumentClassificationJob(params: StartDocumentClassificationJobRequest): Request[StartDocumentClassificationJobResponse] = js.native
     def startDominantLanguageDetectionJob(params: StartDominantLanguageDetectionJobRequest): Request[StartDominantLanguageDetectionJobResponse] = js.native
     def startEntitiesDetectionJob(params: StartEntitiesDetectionJobRequest): Request[StartEntitiesDetectionJobResponse] = js.native
+    def startEventsDetectionJob(params: StartEventsDetectionJobRequest): Request[StartEventsDetectionJobResponse] = js.native
     def startKeyPhrasesDetectionJob(params: StartKeyPhrasesDetectionJobRequest): Request[StartKeyPhrasesDetectionJobResponse] = js.native
     def startPiiEntitiesDetectionJob(params: StartPiiEntitiesDetectionJobRequest): Request[StartPiiEntitiesDetectionJobResponse] = js.native
     def startSentimentDetectionJob(params: StartSentimentDetectionJobRequest): Request[StartSentimentDetectionJobResponse] = js.native
     def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] = js.native
     def stopDominantLanguageDetectionJob(params: StopDominantLanguageDetectionJobRequest): Request[StopDominantLanguageDetectionJobResponse] = js.native
     def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] = js.native
+    def stopEventsDetectionJob(params: StopEventsDetectionJobRequest): Request[StopEventsDetectionJobResponse] = js.native
     def stopKeyPhrasesDetectionJob(params: StopKeyPhrasesDetectionJobRequest): Request[StopKeyPhrasesDetectionJobResponse] = js.native
     def stopPiiEntitiesDetectionJob(params: StopPiiEntitiesDetectionJobRequest): Request[StopPiiEntitiesDetectionJobResponse] = js.native
     def stopSentimentDetectionJob(params: StopSentimentDetectionJobRequest): Request[StopSentimentDetectionJobResponse] = js.native
@@ -1098,6 +1109,39 @@ package comprehend {
   }
 
   @js.native
+  trait DescribeEventsDetectionJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object DescribeEventsDetectionJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): DescribeEventsDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeEventsDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEventsDetectionJobResponse extends js.Object {
+    var EventsDetectionJobProperties: js.UndefOr[EventsDetectionJobProperties]
+  }
+
+  object DescribeEventsDetectionJobResponse {
+    @inline
+    def apply(
+        EventsDetectionJobProperties: js.UndefOr[EventsDetectionJobProperties] = js.undefined
+    ): DescribeEventsDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      EventsDetectionJobProperties.foreach(__v => __obj.updateDynamic("EventsDetectionJobProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventsDetectionJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeKeyPhrasesDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
@@ -1816,7 +1860,7 @@ package comprehend {
     }
   }
 
-  /** The filter used to determine which endpoints are are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.
+  /** The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time.
     */
   @js.native
   trait EndpointFilter extends js.Object {
@@ -2318,6 +2362,81 @@ package comprehend {
     }
   }
 
+  /** Provides information for filtering a list of event detection jobs.
+    */
+  @js.native
+  trait EventsDetectionJobFilter extends js.Object {
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var SubmitTimeAfter: js.UndefOr[Timestamp]
+    var SubmitTimeBefore: js.UndefOr[Timestamp]
+  }
+
+  object EventsDetectionJobFilter {
+    @inline
+    def apply(
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
+    ): EventsDetectionJobFilter = {
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
+      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsDetectionJobFilter]
+    }
+  }
+
+  /** Provides information about an events detection job.
+    */
+  @js.native
+  trait EventsDetectionJobProperties extends js.Object {
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
+    var EndTime: js.UndefOr[Timestamp]
+    var InputDataConfig: js.UndefOr[InputDataConfig]
+    var JobId: js.UndefOr[JobId]
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var Message: js.UndefOr[AnyLengthString]
+    var OutputDataConfig: js.UndefOr[OutputDataConfig]
+    var SubmitTime: js.UndefOr[Timestamp]
+    var TargetEventTypes: js.UndefOr[TargetEventTypes]
+  }
+
+  object EventsDetectionJobProperties {
+    @inline
+    def apply(
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        Message: js.UndefOr[AnyLengthString] = js.undefined,
+        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
+        TargetEventTypes: js.UndefOr[TargetEventTypes] = js.undefined
+    ): EventsDetectionJobProperties = {
+      val __obj = js.Dynamic.literal()
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
+      TargetEventTypes.foreach(__v => __obj.updateDynamic("TargetEventTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventsDetectionJobProperties]
+    }
+  }
+
   /** The input properties for a topic detection job.
     */
   @js.native
@@ -2730,6 +2849,47 @@ package comprehend {
       EntityRecognizerPropertiesList.foreach(__v => __obj.updateDynamic("EntityRecognizerPropertiesList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntityRecognizersResponse]
+    }
+  }
+
+  @js.native
+  trait ListEventsDetectionJobsRequest extends js.Object {
+    var Filter: js.UndefOr[EventsDetectionJobFilter]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListEventsDetectionJobsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[EventsDetectionJobFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEventsDetectionJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventsDetectionJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListEventsDetectionJobsResponse extends js.Object {
+    var EventsDetectionJobPropertiesList: js.UndefOr[EventsDetectionJobPropertiesList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListEventsDetectionJobsResponse {
+    @inline
+    def apply(
+        EventsDetectionJobPropertiesList: js.UndefOr[EventsDetectionJobPropertiesList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEventsDetectionJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      EventsDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("EventsDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventsDetectionJobsResponse]
     }
   }
 
@@ -3532,6 +3692,61 @@ package comprehend {
   }
 
   @js.native
+  trait StartEventsDetectionJobRequest extends js.Object {
+    var DataAccessRoleArn: IamRoleArn
+    var InputDataConfig: InputDataConfig
+    var LanguageCode: LanguageCode
+    var OutputDataConfig: OutputDataConfig
+    var TargetEventTypes: TargetEventTypes
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var JobName: js.UndefOr[JobName]
+  }
+
+  object StartEventsDetectionJobRequest {
+    @inline
+    def apply(
+        DataAccessRoleArn: IamRoleArn,
+        InputDataConfig: InputDataConfig,
+        LanguageCode: LanguageCode,
+        OutputDataConfig: OutputDataConfig,
+        TargetEventTypes: TargetEventTypes,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined
+    ): StartEventsDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "TargetEventTypes" -> TargetEventTypes.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartEventsDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartEventsDetectionJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object StartEventsDetectionJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): StartEventsDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartEventsDetectionJobResponse]
+    }
+  }
+
+  @js.native
   trait StartKeyPhrasesDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -3832,6 +4047,42 @@ package comprehend {
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopEntitiesDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait StopEventsDetectionJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object StopEventsDetectionJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): StopEventsDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopEventsDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait StopEventsDetectionJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object StopEventsDetectionJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): StopEventsDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopEventsDetectionJobResponse]
     }
   }
 
@@ -4236,7 +4487,7 @@ package comprehend {
     }
   }
 
-  /** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For For more information, see [[https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html|Amazon VPC]].
+  /** Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see [[https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html|Amazon VPC]].
     */
   @js.native
   trait VpcConfig extends js.Object {

@@ -13,9 +13,12 @@ package object iotsitewise {
   type AggregatedDoubleValue = Double
   type AggregatedValues = js.Array[AggregatedValue]
   type AmazonResourceName = String
+  type AssetCompositeModels = js.Array[AssetCompositeModel]
   type AssetErrorMessage = String
   type AssetHierarchies = js.Array[AssetHierarchy]
   type AssetIDs = js.Array[ID]
+  type AssetModelCompositeModelDefinitions = js.Array[AssetModelCompositeModelDefinition]
+  type AssetModelCompositeModels = js.Array[AssetModelCompositeModel]
   type AssetModelHierarchies = js.Array[AssetModelHierarchy]
   type AssetModelHierarchyDefinitions = js.Array[AssetModelHierarchyDefinition]
   type AssetModelProperties = js.Array[AssetModelProperty]
@@ -25,6 +28,7 @@ package object iotsitewise {
   type AssetPropertyAlias = String
   type AssetPropertyValueHistory = js.Array[AssetPropertyValue]
   type AssetPropertyValues = js.Array[AssetPropertyValue]
+  type AssetRelationshipSummaries = js.Array[AssetRelationshipSummary]
   type AssetSummaries = js.Array[AssetSummary]
   type AssociatedAssetsSummaries = js.Array[AssociatedAssetsSummary]
   type BatchAssociateProjectAssetsErrors = js.Array[AssetErrorDetails]
@@ -50,6 +54,7 @@ package object iotsitewise {
   type IdentityId = String
   type ImageFileData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Interval = String
+  type KmsKeyId = String
   type Macro = String
   type MaxResults = Int
   type MonitorErrorMessage = String
@@ -70,7 +75,6 @@ package object iotsitewise {
   type Qualities = js.Array[Quality]
   type Resolution = String
   type SSOApplicationId = String
-  type SessionDurationSeconds = Int
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
@@ -93,7 +97,6 @@ package object iotsitewise {
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
     @inline def createGatewayFuture(params: CreateGatewayRequest): Future[CreateGatewayResponse] = service.createGateway(params).promise().toFuture
     @inline def createPortalFuture(params: CreatePortalRequest): Future[CreatePortalResponse] = service.createPortal(params).promise().toFuture
-    @inline def createPresignedPortalUrlFuture(params: CreatePresignedPortalUrlRequest): Future[CreatePresignedPortalUrlResponse] = service.createPresignedPortalUrl(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
     @inline def deleteAccessPolicyFuture(params: DeleteAccessPolicyRequest): Future[DeleteAccessPolicyResponse] = service.deleteAccessPolicy(params).promise().toFuture
     @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[DeleteAssetResponse] = service.deleteAsset(params).promise().toFuture
@@ -107,6 +110,7 @@ package object iotsitewise {
     @inline def describeAssetModelFuture(params: DescribeAssetModelRequest): Future[DescribeAssetModelResponse] = service.describeAssetModel(params).promise().toFuture
     @inline def describeAssetPropertyFuture(params: DescribeAssetPropertyRequest): Future[DescribeAssetPropertyResponse] = service.describeAssetProperty(params).promise().toFuture
     @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] = service.describeDashboard(params).promise().toFuture
+    @inline def describeDefaultEncryptionConfigurationFuture(params: DescribeDefaultEncryptionConfigurationRequest): Future[DescribeDefaultEncryptionConfigurationResponse] = service.describeDefaultEncryptionConfiguration(params).promise().toFuture
     @inline def describeGatewayCapabilityConfigurationFuture(params: DescribeGatewayCapabilityConfigurationRequest): Future[DescribeGatewayCapabilityConfigurationResponse] = service.describeGatewayCapabilityConfiguration(params).promise().toFuture
     @inline def describeGatewayFuture(params: DescribeGatewayRequest): Future[DescribeGatewayResponse] = service.describeGateway(params).promise().toFuture
     @inline def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
@@ -118,6 +122,7 @@ package object iotsitewise {
     @inline def getAssetPropertyValueHistoryFuture(params: GetAssetPropertyValueHistoryRequest): Future[GetAssetPropertyValueHistoryResponse] = service.getAssetPropertyValueHistory(params).promise().toFuture
     @inline def listAccessPoliciesFuture(params: ListAccessPoliciesRequest): Future[ListAccessPoliciesResponse] = service.listAccessPolicies(params).promise().toFuture
     @inline def listAssetModelsFuture(params: ListAssetModelsRequest): Future[ListAssetModelsResponse] = service.listAssetModels(params).promise().toFuture
+    @inline def listAssetRelationshipsFuture(params: ListAssetRelationshipsRequest): Future[ListAssetRelationshipsResponse] = service.listAssetRelationships(params).promise().toFuture
     @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] = service.listAssets(params).promise().toFuture
     @inline def listAssociatedAssetsFuture(params: ListAssociatedAssetsRequest): Future[ListAssociatedAssetsResponse] = service.listAssociatedAssets(params).promise().toFuture
     @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] = service.listDashboards(params).promise().toFuture
@@ -126,6 +131,7 @@ package object iotsitewise {
     @inline def listProjectAssetsFuture(params: ListProjectAssetsRequest): Future[ListProjectAssetsResponse] = service.listProjectAssets(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putDefaultEncryptionConfigurationFuture(params: PutDefaultEncryptionConfigurationRequest): Future[PutDefaultEncryptionConfigurationResponse] = service.putDefaultEncryptionConfiguration(params).promise().toFuture
     @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[PutLoggingOptionsResponse] = service.putLoggingOptions(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -158,7 +164,6 @@ package iotsitewise {
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createGateway(params: CreateGatewayRequest): Request[CreateGatewayResponse] = js.native
     def createPortal(params: CreatePortalRequest): Request[CreatePortalResponse] = js.native
-    def createPresignedPortalUrl(params: CreatePresignedPortalUrlRequest): Request[CreatePresignedPortalUrlResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
     def deleteAccessPolicy(params: DeleteAccessPolicyRequest): Request[DeleteAccessPolicyResponse] = js.native
     def deleteAsset(params: DeleteAssetRequest): Request[DeleteAssetResponse] = js.native
@@ -172,6 +177,7 @@ package iotsitewise {
     def describeAssetModel(params: DescribeAssetModelRequest): Request[DescribeAssetModelResponse] = js.native
     def describeAssetProperty(params: DescribeAssetPropertyRequest): Request[DescribeAssetPropertyResponse] = js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
+    def describeDefaultEncryptionConfiguration(params: DescribeDefaultEncryptionConfigurationRequest): Request[DescribeDefaultEncryptionConfigurationResponse] = js.native
     def describeGateway(params: DescribeGatewayRequest): Request[DescribeGatewayResponse] = js.native
     def describeGatewayCapabilityConfiguration(params: DescribeGatewayCapabilityConfigurationRequest): Request[DescribeGatewayCapabilityConfigurationResponse] = js.native
     def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] = js.native
@@ -183,6 +189,7 @@ package iotsitewise {
     def getAssetPropertyValueHistory(params: GetAssetPropertyValueHistoryRequest): Request[GetAssetPropertyValueHistoryResponse] = js.native
     def listAccessPolicies(params: ListAccessPoliciesRequest): Request[ListAccessPoliciesResponse] = js.native
     def listAssetModels(params: ListAssetModelsRequest): Request[ListAssetModelsResponse] = js.native
+    def listAssetRelationships(params: ListAssetRelationshipsRequest): Request[ListAssetRelationshipsResponse] = js.native
     def listAssets(params: ListAssetsRequest): Request[ListAssetsResponse] = js.native
     def listAssociatedAssets(params: ListAssociatedAssetsRequest): Request[ListAssociatedAssetsResponse] = js.native
     def listDashboards(params: ListDashboardsRequest): Request[ListDashboardsResponse] = js.native
@@ -191,6 +198,7 @@ package iotsitewise {
     def listProjectAssets(params: ListProjectAssetsRequest): Request[ListProjectAssetsResponse] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putDefaultEncryptionConfiguration(params: PutDefaultEncryptionConfigurationRequest): Request[PutDefaultEncryptionConfigurationResponse] = js.native
     def putLoggingOptions(params: PutLoggingOptionsRequest): Request[PutLoggingOptionsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -312,6 +320,35 @@ package iotsitewise {
     }
   }
 
+  /** Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.
+    */
+  @js.native
+  trait AssetCompositeModel extends js.Object {
+    var name: Name
+    var properties: AssetProperties
+    var `type`: Name
+    var description: js.UndefOr[Description]
+  }
+
+  object AssetCompositeModel {
+    @inline
+    def apply(
+        name: Name,
+        properties: AssetProperties,
+        `type`: Name,
+        description: js.UndefOr[Description] = js.undefined
+    ): AssetCompositeModel = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "properties" -> properties.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetCompositeModel]
+    }
+  }
+
   @js.native
   sealed trait AssetErrorCode extends js.Any
   object AssetErrorCode {
@@ -365,6 +402,85 @@ package iotsitewise {
 
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetHierarchy]
+    }
+  }
+
+  /** Contains information about a parent asset and a child asset that are related through an asset hierarchy.
+    */
+  @js.native
+  trait AssetHierarchyInfo extends js.Object {
+    var childAssetId: js.UndefOr[ID]
+    var parentAssetId: js.UndefOr[ID]
+  }
+
+  object AssetHierarchyInfo {
+    @inline
+    def apply(
+        childAssetId: js.UndefOr[ID] = js.undefined,
+        parentAssetId: js.UndefOr[ID] = js.undefined
+    ): AssetHierarchyInfo = {
+      val __obj = js.Dynamic.literal()
+      childAssetId.foreach(__v => __obj.updateDynamic("childAssetId")(__v.asInstanceOf[js.Any]))
+      parentAssetId.foreach(__v => __obj.updateDynamic("parentAssetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetHierarchyInfo]
+    }
+  }
+
+  /** Contains information about a composite model in an asset model. This object contains the asset property definitions that you define in the composite model.
+    */
+  @js.native
+  trait AssetModelCompositeModel extends js.Object {
+    var name: Name
+    var `type`: Name
+    var description: js.UndefOr[Description]
+    var properties: js.UndefOr[AssetModelProperties]
+  }
+
+  object AssetModelCompositeModel {
+    @inline
+    def apply(
+        name: Name,
+        `type`: Name,
+        description: js.UndefOr[Description] = js.undefined,
+        properties: js.UndefOr[AssetModelProperties] = js.undefined
+    ): AssetModelCompositeModel = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetModelCompositeModel]
+    }
+  }
+
+  /** Contains a composite model definition in an asset model. This composite model definition is applied to all assets created from the asset model.
+    */
+  @js.native
+  trait AssetModelCompositeModelDefinition extends js.Object {
+    var name: Name
+    var `type`: Name
+    var description: js.UndefOr[Description]
+    var properties: js.UndefOr[AssetModelPropertyDefinitions]
+  }
+
+  object AssetModelCompositeModelDefinition {
+    @inline
+    def apply(
+        name: Name,
+        `type`: Name,
+        description: js.UndefOr[Description] = js.undefined,
+        properties: js.UndefOr[AssetModelPropertyDefinitions] = js.undefined
+    ): AssetModelCompositeModelDefinition = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetModelCompositeModelDefinition]
     }
   }
 
@@ -423,6 +539,7 @@ package iotsitewise {
     var dataType: PropertyDataType
     var name: Name
     var `type`: PropertyType
+    var dataTypeSpec: js.UndefOr[Name]
     var id: js.UndefOr[ID]
     var unit: js.UndefOr[PropertyUnit]
   }
@@ -433,6 +550,7 @@ package iotsitewise {
         dataType: PropertyDataType,
         name: Name,
         `type`: PropertyType,
+        dataTypeSpec: js.UndefOr[Name] = js.undefined,
         id: js.UndefOr[ID] = js.undefined,
         unit: js.UndefOr[PropertyUnit] = js.undefined
     ): AssetModelProperty = {
@@ -442,6 +560,7 @@ package iotsitewise {
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
+      dataTypeSpec.foreach(__v => __obj.updateDynamic("dataTypeSpec")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetModelProperty]
@@ -455,6 +574,7 @@ package iotsitewise {
     var dataType: PropertyDataType
     var name: Name
     var `type`: PropertyType
+    var dataTypeSpec: js.UndefOr[Name]
     var unit: js.UndefOr[PropertyUnit]
   }
 
@@ -464,6 +584,7 @@ package iotsitewise {
         dataType: PropertyDataType,
         name: Name,
         `type`: PropertyType,
+        dataTypeSpec: js.UndefOr[Name] = js.undefined,
         unit: js.UndefOr[PropertyUnit] = js.undefined
     ): AssetModelPropertyDefinition = {
       val __obj = js.Dynamic.literal(
@@ -472,6 +593,7 @@ package iotsitewise {
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
+      dataTypeSpec.foreach(__v => __obj.updateDynamic("dataTypeSpec")(__v.asInstanceOf[js.Any]))
       unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetModelPropertyDefinition]
     }
@@ -558,6 +680,7 @@ package iotsitewise {
     var id: ID
     var name: Name
     var alias: js.UndefOr[PropertyAlias]
+    var dataTypeSpec: js.UndefOr[Name]
     var notification: js.UndefOr[PropertyNotification]
     var unit: js.UndefOr[PropertyUnit]
   }
@@ -569,6 +692,7 @@ package iotsitewise {
         id: ID,
         name: Name,
         alias: js.UndefOr[PropertyAlias] = js.undefined,
+        dataTypeSpec: js.UndefOr[Name] = js.undefined,
         notification: js.UndefOr[PropertyNotification] = js.undefined,
         unit: js.UndefOr[PropertyUnit] = js.undefined
     ): AssetProperty = {
@@ -579,6 +703,7 @@ package iotsitewise {
       )
 
       alias.foreach(__v => __obj.updateDynamic("alias")(__v.asInstanceOf[js.Any]))
+      dataTypeSpec.foreach(__v => __obj.updateDynamic("dataTypeSpec")(__v.asInstanceOf[js.Any]))
       notification.foreach(__v => __obj.updateDynamic("notification")(__v.asInstanceOf[js.Any]))
       unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetProperty]
@@ -609,6 +734,37 @@ package iotsitewise {
       quality.foreach(__v => __obj.updateDynamic("quality")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetPropertyValue]
     }
+  }
+
+  /** Contains information about assets that are related to one another.
+    */
+  @js.native
+  trait AssetRelationshipSummary extends js.Object {
+    var relationshipType: AssetRelationshipType
+    var hierarchyInfo: js.UndefOr[AssetHierarchyInfo]
+  }
+
+  object AssetRelationshipSummary {
+    @inline
+    def apply(
+        relationshipType: AssetRelationshipType,
+        hierarchyInfo: js.UndefOr[AssetHierarchyInfo] = js.undefined
+    ): AssetRelationshipSummary = {
+      val __obj = js.Dynamic.literal(
+        "relationshipType" -> relationshipType.asInstanceOf[js.Any]
+      )
+
+      hierarchyInfo.foreach(__v => __obj.updateDynamic("hierarchyInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetRelationshipSummary]
+    }
+  }
+
+  @js.native
+  sealed trait AssetRelationshipType extends js.Any
+  object AssetRelationshipType {
+    val HIERARCHY = "HIERARCHY".asInstanceOf[AssetRelationshipType]
+
+    @inline def values = js.Array(HIERARCHY)
   }
 
   @js.native
@@ -977,6 +1133,86 @@ package iotsitewise {
     @inline def values = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
   }
 
+  /** Contains information about a composite model property on an asset.
+    */
+  @js.native
+  trait CompositeModelProperty extends js.Object {
+    var assetProperty: Property
+    var name: Name
+    var `type`: Name
+  }
+
+  object CompositeModelProperty {
+    @inline
+    def apply(
+        assetProperty: Property,
+        name: Name,
+        `type`: Name
+    ): CompositeModelProperty = {
+      val __obj = js.Dynamic.literal(
+        "assetProperty" -> assetProperty.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CompositeModelProperty]
+    }
+  }
+
+  /** Contains the details of an AWS IoT SiteWise configuration error.
+    */
+  @js.native
+  trait ConfigurationErrorDetails extends js.Object {
+    var code: ErrorCode
+    var message: ErrorMessage
+  }
+
+  object ConfigurationErrorDetails {
+    @inline
+    def apply(
+        code: ErrorCode,
+        message: ErrorMessage
+    ): ConfigurationErrorDetails = {
+      val __obj = js.Dynamic.literal(
+        "code" -> code.asInstanceOf[js.Any],
+        "message" -> message.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ConfigurationErrorDetails]
+    }
+  }
+
+  @js.native
+  sealed trait ConfigurationState extends js.Any
+  object ConfigurationState {
+    val ACTIVE = "ACTIVE".asInstanceOf[ConfigurationState]
+    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ConfigurationState]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ConfigurationState]
+
+    @inline def values = js.Array(ACTIVE, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+  }
+
+  /** Contains current status information for the configuration.
+    */
+  @js.native
+  trait ConfigurationStatus extends js.Object {
+    var state: ConfigurationState
+    var error: js.UndefOr[ConfigurationErrorDetails]
+  }
+
+  object ConfigurationStatus {
+    @inline
+    def apply(
+        state: ConfigurationState,
+        error: js.UndefOr[ConfigurationErrorDetails] = js.undefined
+    ): ConfigurationStatus = {
+      val __obj = js.Dynamic.literal(
+        "state" -> state.asInstanceOf[js.Any]
+      )
+
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationStatus]
+    }
+  }
+
   @js.native
   trait CreateAccessPolicyRequest extends js.Object {
     var accessPolicyIdentity: Identity
@@ -1030,6 +1266,7 @@ package iotsitewise {
   @js.native
   trait CreateAssetModelRequest extends js.Object {
     var assetModelName: Name
+    var assetModelCompositeModels: js.UndefOr[AssetModelCompositeModelDefinitions]
     var assetModelDescription: js.UndefOr[Description]
     var assetModelHierarchies: js.UndefOr[AssetModelHierarchyDefinitions]
     var assetModelProperties: js.UndefOr[AssetModelPropertyDefinitions]
@@ -1041,6 +1278,7 @@ package iotsitewise {
     @inline
     def apply(
         assetModelName: Name,
+        assetModelCompositeModels: js.UndefOr[AssetModelCompositeModelDefinitions] = js.undefined,
         assetModelDescription: js.UndefOr[Description] = js.undefined,
         assetModelHierarchies: js.UndefOr[AssetModelHierarchyDefinitions] = js.undefined,
         assetModelProperties: js.UndefOr[AssetModelPropertyDefinitions] = js.undefined,
@@ -1051,6 +1289,7 @@ package iotsitewise {
         "assetModelName" -> assetModelName.asInstanceOf[js.Any]
       )
 
+      assetModelCompositeModels.foreach(__v => __obj.updateDynamic("assetModelCompositeModels")(__v.asInstanceOf[js.Any]))
       assetModelDescription.foreach(__v => __obj.updateDynamic("assetModelDescription")(__v.asInstanceOf[js.Any]))
       assetModelHierarchies.foreach(__v => __obj.updateDynamic("assetModelHierarchies")(__v.asInstanceOf[js.Any]))
       assetModelProperties.foreach(__v => __obj.updateDynamic("assetModelProperties")(__v.asInstanceOf[js.Any]))
@@ -1295,44 +1534,6 @@ package iotsitewise {
         "ssoApplicationId" -> ssoApplicationId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreatePortalResponse]
-    }
-  }
-
-  @js.native
-  trait CreatePresignedPortalUrlRequest extends js.Object {
-    var portalId: ID
-    var sessionDurationSeconds: js.UndefOr[SessionDurationSeconds]
-  }
-
-  object CreatePresignedPortalUrlRequest {
-    @inline
-    def apply(
-        portalId: ID,
-        sessionDurationSeconds: js.UndefOr[SessionDurationSeconds] = js.undefined
-    ): CreatePresignedPortalUrlRequest = {
-      val __obj = js.Dynamic.literal(
-        "portalId" -> portalId.asInstanceOf[js.Any]
-      )
-
-      sessionDurationSeconds.foreach(__v => __obj.updateDynamic("sessionDurationSeconds")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreatePresignedPortalUrlRequest]
-    }
-  }
-
-  @js.native
-  trait CreatePresignedPortalUrlResponse extends js.Object {
-    var presignedPortalUrl: Url
-  }
-
-  object CreatePresignedPortalUrlResponse {
-    @inline
-    def apply(
-        presignedPortalUrl: Url
-    ): CreatePresignedPortalUrlResponse = {
-      val __obj = js.Dynamic.literal(
-        "presignedPortalUrl" -> presignedPortalUrl.asInstanceOf[js.Any]
-      )
-      __obj.asInstanceOf[CreatePresignedPortalUrlResponse]
     }
   }
 
@@ -1725,6 +1926,7 @@ package iotsitewise {
     var assetModelName: Name
     var assetModelProperties: AssetModelProperties
     var assetModelStatus: AssetModelStatus
+    var assetModelCompositeModels: js.UndefOr[AssetModelCompositeModels]
   }
 
   object DescribeAssetModelResponse {
@@ -1738,7 +1940,8 @@ package iotsitewise {
         assetModelLastUpdateDate: Timestamp,
         assetModelName: Name,
         assetModelProperties: AssetModelProperties,
-        assetModelStatus: AssetModelStatus
+        assetModelStatus: AssetModelStatus,
+        assetModelCompositeModels: js.UndefOr[AssetModelCompositeModels] = js.undefined
     ): DescribeAssetModelResponse = {
       val __obj = js.Dynamic.literal(
         "assetModelArn" -> assetModelArn.asInstanceOf[js.Any],
@@ -1751,6 +1954,8 @@ package iotsitewise {
         "assetModelProperties" -> assetModelProperties.asInstanceOf[js.Any],
         "assetModelStatus" -> assetModelStatus.asInstanceOf[js.Any]
       )
+
+      assetModelCompositeModels.foreach(__v => __obj.updateDynamic("assetModelCompositeModels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetModelResponse]
     }
   }
@@ -1780,7 +1985,8 @@ package iotsitewise {
     var assetId: ID
     var assetModelId: ID
     var assetName: Name
-    var assetProperty: Property
+    var assetProperty: js.UndefOr[Property]
+    var compositeModel: js.UndefOr[CompositeModelProperty]
   }
 
   object DescribeAssetPropertyResponse {
@@ -1789,14 +1995,17 @@ package iotsitewise {
         assetId: ID,
         assetModelId: ID,
         assetName: Name,
-        assetProperty: Property
+        assetProperty: js.UndefOr[Property] = js.undefined,
+        compositeModel: js.UndefOr[CompositeModelProperty] = js.undefined
     ): DescribeAssetPropertyResponse = {
       val __obj = js.Dynamic.literal(
         "assetId" -> assetId.asInstanceOf[js.Any],
         "assetModelId" -> assetModelId.asInstanceOf[js.Any],
-        "assetName" -> assetName.asInstanceOf[js.Any],
-        "assetProperty" -> assetProperty.asInstanceOf[js.Any]
+        "assetName" -> assetName.asInstanceOf[js.Any]
       )
+
+      assetProperty.foreach(__v => __obj.updateDynamic("assetProperty")(__v.asInstanceOf[js.Any]))
+      compositeModel.foreach(__v => __obj.updateDynamic("compositeModel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetPropertyResponse]
     }
   }
@@ -1829,6 +2038,7 @@ package iotsitewise {
     var assetName: Name
     var assetProperties: AssetProperties
     var assetStatus: AssetStatus
+    var assetCompositeModels: js.UndefOr[AssetCompositeModels]
   }
 
   object DescribeAssetResponse {
@@ -1842,7 +2052,8 @@ package iotsitewise {
         assetModelId: ID,
         assetName: Name,
         assetProperties: AssetProperties,
-        assetStatus: AssetStatus
+        assetStatus: AssetStatus,
+        assetCompositeModels: js.UndefOr[AssetCompositeModels] = js.undefined
     ): DescribeAssetResponse = {
       val __obj = js.Dynamic.literal(
         "assetArn" -> assetArn.asInstanceOf[js.Any],
@@ -1855,6 +2066,8 @@ package iotsitewise {
         "assetProperties" -> assetProperties.asInstanceOf[js.Any],
         "assetStatus" -> assetStatus.asInstanceOf[js.Any]
       )
+
+      assetCompositeModels.foreach(__v => __obj.updateDynamic("assetCompositeModels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetResponse]
     }
   }
@@ -1912,6 +2125,41 @@ package iotsitewise {
 
       dashboardDescription.foreach(__v => __obj.updateDynamic("dashboardDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDashboardResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeDefaultEncryptionConfigurationRequest extends js.Object
+
+  object DescribeDefaultEncryptionConfigurationRequest {
+    @inline
+    def apply(): DescribeDefaultEncryptionConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DescribeDefaultEncryptionConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDefaultEncryptionConfigurationResponse extends js.Object {
+    var configurationStatus: ConfigurationStatus
+    var encryptionType: EncryptionType
+    var kmsKeyArn: js.UndefOr[ARN]
+  }
+
+  object DescribeDefaultEncryptionConfigurationResponse {
+    @inline
+    def apply(
+        configurationStatus: ConfigurationStatus,
+        encryptionType: EncryptionType,
+        kmsKeyArn: js.UndefOr[ARN] = js.undefined
+    ): DescribeDefaultEncryptionConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "configurationStatus" -> configurationStatus.asInstanceOf[js.Any],
+        "encryptionType" -> encryptionType.asInstanceOf[js.Any]
+      )
+
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDefaultEncryptionConfigurationResponse]
     }
   }
 
@@ -2191,6 +2439,15 @@ package iotsitewise {
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateAssetsRequest]
     }
+  }
+
+  @js.native
+  sealed trait EncryptionType extends js.Any
+  object EncryptionType {
+    val SITEWISE_DEFAULT_ENCRYPTION = "SITEWISE_DEFAULT_ENCRYPTION".asInstanceOf[EncryptionType]
+    val KMS_BASED_ENCRYPTION = "KMS_BASED_ENCRYPTION".asInstanceOf[EncryptionType]
+
+    @inline def values = js.Array(SITEWISE_DEFAULT_ENCRYPTION, KMS_BASED_ENCRYPTION)
   }
 
   @js.native
@@ -2747,6 +3004,54 @@ package iotsitewise {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssetModelsResponse]
+    }
+  }
+
+  @js.native
+  trait ListAssetRelationshipsRequest extends js.Object {
+    var assetId: ID
+    var traversalType: TraversalType
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssetRelationshipsRequest {
+    @inline
+    def apply(
+        assetId: ID,
+        traversalType: TraversalType,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssetRelationshipsRequest = {
+      val __obj = js.Dynamic.literal(
+        "assetId" -> assetId.asInstanceOf[js.Any],
+        "traversalType" -> traversalType.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetRelationshipsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssetRelationshipsResponse extends js.Object {
+    var assetRelationshipSummaries: AssetRelationshipSummaries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssetRelationshipsResponse {
+    @inline
+    def apply(
+        assetRelationshipSummaries: AssetRelationshipSummaries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssetRelationshipsResponse = {
+      val __obj = js.Dynamic.literal(
+        "assetRelationshipSummaries" -> assetRelationshipSummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetRelationshipsResponse]
     }
   }
 
@@ -3420,8 +3725,9 @@ package iotsitewise {
     val INTEGER = "INTEGER".asInstanceOf[PropertyDataType]
     val DOUBLE = "DOUBLE".asInstanceOf[PropertyDataType]
     val BOOLEAN = "BOOLEAN".asInstanceOf[PropertyDataType]
+    val STRUCT = "STRUCT".asInstanceOf[PropertyDataType]
 
-    @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN)
+    @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN, STRUCT)
   }
 
   /** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with other services]] in the <i>AWS IoT SiteWise User Guide</i>.
@@ -3511,6 +3817,51 @@ package iotsitewise {
       propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
       propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAssetPropertyValueEntry]
+    }
+  }
+
+  @js.native
+  trait PutDefaultEncryptionConfigurationRequest extends js.Object {
+    var encryptionType: EncryptionType
+    var kmsKeyId: js.UndefOr[KmsKeyId]
+  }
+
+  object PutDefaultEncryptionConfigurationRequest {
+    @inline
+    def apply(
+        encryptionType: EncryptionType,
+        kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+    ): PutDefaultEncryptionConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "encryptionType" -> encryptionType.asInstanceOf[js.Any]
+      )
+
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutDefaultEncryptionConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutDefaultEncryptionConfigurationResponse extends js.Object {
+    var configurationStatus: ConfigurationStatus
+    var encryptionType: EncryptionType
+    var kmsKeyArn: js.UndefOr[ARN]
+  }
+
+  object PutDefaultEncryptionConfigurationResponse {
+    @inline
+    def apply(
+        configurationStatus: ConfigurationStatus,
+        encryptionType: EncryptionType,
+        kmsKeyArn: js.UndefOr[ARN] = js.undefined
+    ): PutDefaultEncryptionConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "configurationStatus" -> configurationStatus.asInstanceOf[js.Any],
+        "encryptionType" -> encryptionType.asInstanceOf[js.Any]
+      )
+
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutDefaultEncryptionConfigurationResponse]
     }
   }
 
@@ -3677,6 +4028,14 @@ package iotsitewise {
     @inline def values = js.Array(PARENT, CHILD)
   }
 
+  @js.native
+  sealed trait TraversalType extends js.Any
+  object TraversalType {
+    val PATH_TO_ROOT = "PATH_TO_ROOT".asInstanceOf[TraversalType]
+
+    @inline def values = js.Array(PATH_TO_ROOT)
+  }
+
   /** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations.
     */
   @js.native
@@ -3772,6 +4131,7 @@ package iotsitewise {
   trait UpdateAssetModelRequest extends js.Object {
     var assetModelId: ID
     var assetModelName: Name
+    var assetModelCompositeModels: js.UndefOr[AssetModelCompositeModels]
     var assetModelDescription: js.UndefOr[Description]
     var assetModelHierarchies: js.UndefOr[AssetModelHierarchies]
     var assetModelProperties: js.UndefOr[AssetModelProperties]
@@ -3783,6 +4143,7 @@ package iotsitewise {
     def apply(
         assetModelId: ID,
         assetModelName: Name,
+        assetModelCompositeModels: js.UndefOr[AssetModelCompositeModels] = js.undefined,
         assetModelDescription: js.UndefOr[Description] = js.undefined,
         assetModelHierarchies: js.UndefOr[AssetModelHierarchies] = js.undefined,
         assetModelProperties: js.UndefOr[AssetModelProperties] = js.undefined,
@@ -3793,6 +4154,7 @@ package iotsitewise {
         "assetModelName" -> assetModelName.asInstanceOf[js.Any]
       )
 
+      assetModelCompositeModels.foreach(__v => __obj.updateDynamic("assetModelCompositeModels")(__v.asInstanceOf[js.Any]))
       assetModelDescription.foreach(__v => __obj.updateDynamic("assetModelDescription")(__v.asInstanceOf[js.Any]))
       assetModelHierarchies.foreach(__v => __obj.updateDynamic("assetModelHierarchies")(__v.asInstanceOf[js.Any]))
       assetModelProperties.foreach(__v => __obj.updateDynamic("assetModelProperties")(__v.asInstanceOf[js.Any]))

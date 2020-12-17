@@ -52,6 +52,7 @@ package object cloudformation {
   type LimitName = String
   type LimitValue = Int
   type LogGroupName = String
+  type LogicalIdHierarchy = String
   type LogicalResourceId = String
   type LogicalResourceIds = js.Array[LogicalResourceId]
   type MaxConcurrentCount = Int
@@ -156,6 +157,7 @@ package object cloudformation {
   type TransformsList = js.Array[TransformName]
   type Type = String
   type TypeArn = String
+  type TypeHierarchy = String
   type TypeName = String
   type TypeSchema = String
   type TypeSummaries = js.Array[TypeSummary]
@@ -1014,7 +1016,7 @@ package cloudformation {
     }
   }
 
-  /** [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization master account, even if the master account is in your organization or in an OU in your organization.
+  /** [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization.
     * For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
     */
   @js.native
@@ -2653,6 +2655,7 @@ package cloudformation {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ProvisioningType: js.UndefOr[ProvisioningType]
+    var Type: js.UndefOr[RegistryType]
     var Visibility: js.UndefOr[Visibility]
   }
 
@@ -2663,6 +2666,7 @@ package cloudformation {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ProvisioningType: js.UndefOr[ProvisioningType] = js.undefined,
+        Type: js.UndefOr[RegistryType] = js.undefined,
         Visibility: js.UndefOr[Visibility] = js.undefined
     ): ListTypesInput = {
       val __obj = js.Dynamic.literal()
@@ -2670,6 +2674,7 @@ package cloudformation {
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ProvisioningType.foreach(__v => __obj.updateDynamic("ProvisioningType")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTypesInput]
     }
@@ -2713,6 +2718,28 @@ package cloudformation {
         "LogRoleArn" -> LogRoleArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[LoggingConfig]
+    }
+  }
+
+  /** Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.
+    * For more information on modules, see [[AWSCloudFormation/latest/UserGuide/modules.html|Using modules to encapsulate and reuse resource configurations]] in the <i>CloudFormation User Guide</i>.
+    */
+  @js.native
+  trait ModuleInfo extends js.Object {
+    var LogicalIdHierarchy: js.UndefOr[LogicalIdHierarchy]
+    var TypeHierarchy: js.UndefOr[TypeHierarchy]
+  }
+
+  object ModuleInfo {
+    @inline
+    def apply(
+        LogicalIdHierarchy: js.UndefOr[LogicalIdHierarchy] = js.undefined,
+        TypeHierarchy: js.UndefOr[TypeHierarchy] = js.undefined
+    ): ModuleInfo = {
+      val __obj = js.Dynamic.literal()
+      LogicalIdHierarchy.foreach(__v => __obj.updateDynamic("LogicalIdHierarchy")(__v.asInstanceOf[js.Any]))
+      TypeHierarchy.foreach(__v => __obj.updateDynamic("TypeHierarchy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModuleInfo]
     }
   }
 
@@ -3021,8 +3048,9 @@ package cloudformation {
   sealed trait RegistryType extends js.Any
   object RegistryType {
     val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
+    val MODULE = "MODULE".asInstanceOf[RegistryType]
 
-    @inline def values = js.Array(RESOURCE)
+    @inline def values = js.Array(RESOURCE, MODULE)
   }
 
   @js.native
@@ -3066,6 +3094,7 @@ package cloudformation {
     var ChangeSetId: js.UndefOr[ChangeSetId]
     var Details: js.UndefOr[ResourceChangeDetails]
     var LogicalResourceId: js.UndefOr[LogicalResourceId]
+    var ModuleInfo: js.UndefOr[ModuleInfo]
     var PhysicalResourceId: js.UndefOr[PhysicalResourceId]
     var Replacement: js.UndefOr[Replacement]
     var ResourceType: js.UndefOr[ResourceType]
@@ -3079,6 +3108,7 @@ package cloudformation {
         ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
         Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
         LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
+        ModuleInfo: js.UndefOr[ModuleInfo] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
         Replacement: js.UndefOr[Replacement] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
@@ -3089,6 +3119,7 @@ package cloudformation {
       ChangeSetId.foreach(__v => __obj.updateDynamic("ChangeSetId")(__v.asInstanceOf[js.Any]))
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       LogicalResourceId.foreach(__v => __obj.updateDynamic("LogicalResourceId")(__v.asInstanceOf[js.Any]))
+      ModuleInfo.foreach(__v => __obj.updateDynamic("ModuleInfo")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
       Replacement.foreach(__v => __obj.updateDynamic("Replacement")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
@@ -3753,6 +3784,7 @@ package cloudformation {
     var Timestamp: Timestamp
     var Description: js.UndefOr[Description]
     var DriftInformation: js.UndefOr[StackResourceDriftInformation]
+    var ModuleInfo: js.UndefOr[ModuleInfo]
     var PhysicalResourceId: js.UndefOr[PhysicalResourceId]
     var ResourceStatusReason: js.UndefOr[ResourceStatusReason]
     var StackId: js.UndefOr[StackId]
@@ -3768,6 +3800,7 @@ package cloudformation {
         Timestamp: Timestamp,
         Description: js.UndefOr[Description] = js.undefined,
         DriftInformation: js.UndefOr[StackResourceDriftInformation] = js.undefined,
+        ModuleInfo: js.UndefOr[ModuleInfo] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
         ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
@@ -3782,6 +3815,7 @@ package cloudformation {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DriftInformation.foreach(__v => __obj.updateDynamic("DriftInformation")(__v.asInstanceOf[js.Any]))
+      ModuleInfo.foreach(__v => __obj.updateDynamic("ModuleInfo")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
       ResourceStatusReason.foreach(__v => __obj.updateDynamic("ResourceStatusReason")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
@@ -3801,6 +3835,7 @@ package cloudformation {
     var Description: js.UndefOr[Description]
     var DriftInformation: js.UndefOr[StackResourceDriftInformation]
     var Metadata: js.UndefOr[Metadata]
+    var ModuleInfo: js.UndefOr[ModuleInfo]
     var PhysicalResourceId: js.UndefOr[PhysicalResourceId]
     var ResourceStatusReason: js.UndefOr[ResourceStatusReason]
     var StackId: js.UndefOr[StackId]
@@ -3817,6 +3852,7 @@ package cloudformation {
         Description: js.UndefOr[Description] = js.undefined,
         DriftInformation: js.UndefOr[StackResourceDriftInformation] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
+        ModuleInfo: js.UndefOr[ModuleInfo] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
         ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined,
@@ -3832,6 +3868,7 @@ package cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DriftInformation.foreach(__v => __obj.updateDynamic("DriftInformation")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      ModuleInfo.foreach(__v => __obj.updateDynamic("ModuleInfo")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
       ResourceStatusReason.foreach(__v => __obj.updateDynamic("ResourceStatusReason")(__v.asInstanceOf[js.Any]))
       StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
@@ -3853,6 +3890,7 @@ package cloudformation {
     var Timestamp: Timestamp
     var ActualProperties: js.UndefOr[Properties]
     var ExpectedProperties: js.UndefOr[Properties]
+    var ModuleInfo: js.UndefOr[ModuleInfo]
     var PhysicalResourceId: js.UndefOr[PhysicalResourceId]
     var PhysicalResourceIdContext: js.UndefOr[PhysicalResourceIdContext]
     var PropertyDifferences: js.UndefOr[PropertyDifferences]
@@ -3868,6 +3906,7 @@ package cloudformation {
         Timestamp: Timestamp,
         ActualProperties: js.UndefOr[Properties] = js.undefined,
         ExpectedProperties: js.UndefOr[Properties] = js.undefined,
+        ModuleInfo: js.UndefOr[ModuleInfo] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
         PhysicalResourceIdContext: js.UndefOr[PhysicalResourceIdContext] = js.undefined,
         PropertyDifferences: js.UndefOr[PropertyDifferences] = js.undefined
@@ -3882,6 +3921,7 @@ package cloudformation {
 
       ActualProperties.foreach(__v => __obj.updateDynamic("ActualProperties")(__v.asInstanceOf[js.Any]))
       ExpectedProperties.foreach(__v => __obj.updateDynamic("ExpectedProperties")(__v.asInstanceOf[js.Any]))
+      ModuleInfo.foreach(__v => __obj.updateDynamic("ModuleInfo")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
       PhysicalResourceIdContext.foreach(__v => __obj.updateDynamic("PhysicalResourceIdContext")(__v.asInstanceOf[js.Any]))
       PropertyDifferences.foreach(__v => __obj.updateDynamic("PropertyDifferences")(__v.asInstanceOf[js.Any]))
@@ -3955,6 +3995,7 @@ package cloudformation {
     var ResourceStatus: ResourceStatus
     var ResourceType: ResourceType
     var DriftInformation: js.UndefOr[StackResourceDriftInformationSummary]
+    var ModuleInfo: js.UndefOr[ModuleInfo]
     var PhysicalResourceId: js.UndefOr[PhysicalResourceId]
     var ResourceStatusReason: js.UndefOr[ResourceStatusReason]
   }
@@ -3967,6 +4008,7 @@ package cloudformation {
         ResourceStatus: ResourceStatus,
         ResourceType: ResourceType,
         DriftInformation: js.UndefOr[StackResourceDriftInformationSummary] = js.undefined,
+        ModuleInfo: js.UndefOr[ModuleInfo] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
         ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined
     ): StackResourceSummary = {
@@ -3978,6 +4020,7 @@ package cloudformation {
       )
 
       DriftInformation.foreach(__v => __obj.updateDynamic("DriftInformation")(__v.asInstanceOf[js.Any]))
+      ModuleInfo.foreach(__v => __obj.updateDynamic("ModuleInfo")(__v.asInstanceOf[js.Any]))
       PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
       ResourceStatusReason.foreach(__v => __obj.updateDynamic("ResourceStatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackResourceSummary]

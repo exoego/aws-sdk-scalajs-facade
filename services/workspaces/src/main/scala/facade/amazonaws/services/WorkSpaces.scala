@@ -2996,8 +2996,9 @@ package workspaces {
     val BYOL_REGULAR = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
     val BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
     val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
+    val BYOL_REGULAR_WSP = "BYOL_REGULAR_WSP".asInstanceOf[WorkspaceImageIngestionProcess]
 
-    @inline def values = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO)
+    @inline def values = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
   }
 
   @js.native

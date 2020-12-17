@@ -48,7 +48,6 @@ package object iot {
   type AuditDetails = js.Dictionary[AuditCheckDetails]
   type AuditFindings = js.Array[AuditFinding]
   type AuditMitigationActionExecutionMetadataList = js.Array[AuditMitigationActionExecutionMetadata]
-  type AuditMitigationActionsTaskId = String
   type AuditMitigationActionsTaskMetadataList = js.Array[AuditMitigationActionsTaskMetadata]
   type AuditMitigationActionsTaskStatistics = js.Dictionary[TaskStatisticsForAuditCheck]
   type AuditNotificationTargetConfigurations = js.Dictionary[AuditNotificationTarget]
@@ -76,6 +75,7 @@ package object iot {
   type AwsJobTimeoutInProgressTimeoutInMinutes = Double
   type BatchMode = Boolean
   type BehaviorMetric = String
+  type BehaviorModelTrainingSummaries = js.Array[BehaviorModelTrainingSummary]
   type BehaviorName = String
   type Behaviors = js.Array[Behavior]
   type BillingGroupArn = String
@@ -101,6 +101,7 @@ package object iot {
   type Cidr = String
   type Cidrs = js.Array[Cidr]
   type ClientId = String
+  type ClientProperties = js.Dictionary[String]
   type ClientRequestToken = String
   type Code = String
   type CognitoIdentityPoolId = String
@@ -114,7 +115,10 @@ package object iot {
   type CreatedAtDate = js.Date
   type CreationDate = js.Date
   type CredentialDurationSeconds = Int
+  type CustomMetricArn = String
+  type CustomMetricDisplayName = String
   type CustomerVersion = Int
+  type DataCollectionPercentage = Double
   type DateType = js.Date
   type DayOfMonth = String
   type DeleteAdditionalMetricsToRetain = Boolean
@@ -128,6 +132,10 @@ package object iot {
   type DetailsKey = String
   type DetailsMap = js.Dictionary[DetailsValue]
   type DetailsValue = String
+  type DetectMitigationActionExecutionErrorCode = String
+  type DetectMitigationActionExecutionList = js.Array[DetectMitigationActionExecution]
+  type DetectMitigationActionsTaskSummaryList = js.Array[DetectMitigationActionsTaskSummary]
+  type DetectMitigationActionsToExecuteList = js.Array[MitigationActionName]
   type DeviceDefenderThingName = String
   type DimensionArn = String
   type DimensionName = String
@@ -176,6 +184,7 @@ package object iot {
   type Forced = Boolean
   type FunctionArn = String
   type GenerationId = String
+  type GenericLongValue = Double
   type HashAlgorithm = String
   type HashKeyField = String
   type HashKeyValue = String
@@ -214,6 +223,8 @@ package object iot {
   type KeyValue = String
   type LaserMaxResults = Int
   type LastModifiedDate = js.Date
+  type LastUpdatedAtDate = js.Date
+  type ListSuppressedAlerts = Boolean
   type ListSuppressedFindings = Boolean
   type LogGroupName = String
   type LogTargetConfigurations = js.Array[LogTargetConfiguration]
@@ -225,6 +236,8 @@ package object iot {
   type MaximumPerMinute = Int
   type Message = String
   type MessageId = String
+  type MetricName = String
+  type MetricNames = js.Array[MetricName]
   type Minimum = Double
   type MinimumNumberOfExecutedThings = Int
   type MissingContextValue = String
@@ -235,6 +248,7 @@ package object iot {
   type MitigationActionList = js.Array[MitigationAction]
   type MitigationActionName = String
   type MitigationActionNameList = js.Array[MitigationActionName]
+  type MitigationActionsTaskId = String
   type MqttClientId = String
   type MqttPassword = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type MqttUsername = String
@@ -242,6 +256,9 @@ package object iot {
   type NextToken = String
   type NonCompliantChecksCount = Int
   type NonCompliantResourcesCount = Double
+  type NullableBoolean = Boolean
+  type Number = Double
+  type NumberList = js.Array[Number]
   type NumberOfThings = Int
   type OTAUpdateArn = String
   type OTAUpdateDescription = String
@@ -278,6 +295,7 @@ package object iot {
   type Port = Int
   type Ports = js.Array[Port]
   type Prefix = String
+  type PrimitiveBoolean = Boolean
   type Principal = String
   type PrincipalArn = String
   type PrincipalId = String
@@ -342,6 +360,8 @@ package object iot {
   type ScheduledAuditName = String
   type SearchableAttributes = js.Array[AttributeName]
   type Seconds = Int
+  type SecurityGroupId = String
+  type SecurityGroupList = js.Array[SecurityGroupId]
   type SecurityProfileArn = String
   type SecurityProfileDescription = String
   type SecurityProfileIdentifiers = js.Array[SecurityProfileIdentifier]
@@ -376,11 +396,15 @@ package object iot {
   type StreamName = String
   type StreamVersion = Int
   type StreamsSummary = js.Array[StreamSummary]
+  type StringList = js.Array[stringValue]
   type StringMap = js.Dictionary[String]
+  type SubnetId = String
+  type SubnetIdList = js.Array[SubnetId]
   type SucceededFindingsCount = Double
   type SucceededThings = Int
   type Sum = Double
   type SumOfSquares = Double
+  type SuppressAlerts = Boolean
   type SuppressIndefinitely = Boolean
   type SuppressedNonCompliantResourcesCount = Double
   type TableName = String
@@ -391,6 +415,7 @@ package object iot {
   type Target = String
   type TargetArn = String
   type TargetAuditCheckNames = js.Array[AuditCheckName]
+  type TargetViolationIdsForDetectMitigationActions = js.Array[ViolationId]
   type Targets = js.Array[Target]
   type TaskId = String
   type TaskIdList = js.Array[TaskId]
@@ -428,6 +453,7 @@ package object iot {
   type TimestreamTableName = String
   type TimestreamTimestampUnit = String
   type TimestreamTimestampValue = String
+  type TinyMaxResults = Int
   type Token = String
   type TokenKeyName = String
   type TokenSignature = String
@@ -452,7 +478,9 @@ package object iot {
   type VersionNumber = Double
   type ViolationEvents = js.Array[ViolationEvent]
   type ViolationId = String
+  type VpcId = String
   type WaitingForDataCollectionChecksCount = Int
+  type stringValue = String
 
   implicit final class IotOps(private val service: Iot) extends AnyVal {
 
@@ -466,6 +494,7 @@ package object iot {
     @inline def cancelAuditMitigationActionsTaskFuture(params: CancelAuditMitigationActionsTaskRequest): Future[CancelAuditMitigationActionsTaskResponse] = service.cancelAuditMitigationActionsTask(params).promise().toFuture
     @inline def cancelAuditTaskFuture(params: CancelAuditTaskRequest): Future[CancelAuditTaskResponse] = service.cancelAuditTask(params).promise().toFuture
     @inline def cancelCertificateTransferFuture(params: CancelCertificateTransferRequest): Future[js.Object] = service.cancelCertificateTransfer(params).promise().toFuture
+    @inline def cancelDetectMitigationActionsTaskFuture(params: CancelDetectMitigationActionsTaskRequest): Future[CancelDetectMitigationActionsTaskResponse] = service.cancelDetectMitigationActionsTask(params).promise().toFuture
     @inline def cancelJobExecutionFuture(params: CancelJobExecutionRequest): Future[js.Object] = service.cancelJobExecution(params).promise().toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
     @inline def clearDefaultAuthorizerFuture(params: ClearDefaultAuthorizerRequest): Future[ClearDefaultAuthorizerResponse] = service.clearDefaultAuthorizer(params).promise().toFuture
@@ -474,6 +503,7 @@ package object iot {
     @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[CreateAuthorizerResponse] = service.createAuthorizer(params).promise().toFuture
     @inline def createBillingGroupFuture(params: CreateBillingGroupRequest): Future[CreateBillingGroupResponse] = service.createBillingGroup(params).promise().toFuture
     @inline def createCertificateFromCsrFuture(params: CreateCertificateFromCsrRequest): Future[CreateCertificateFromCsrResponse] = service.createCertificateFromCsr(params).promise().toFuture
+    @inline def createCustomMetricFuture(params: CreateCustomMetricRequest): Future[CreateCustomMetricResponse] = service.createCustomMetric(params).promise().toFuture
     @inline def createDimensionFuture(params: CreateDimensionRequest): Future[CreateDimensionResponse] = service.createDimension(params).promise().toFuture
     @inline def createDomainConfigurationFuture(params: CreateDomainConfigurationRequest): Future[CreateDomainConfigurationResponse] = service.createDomainConfiguration(params).promise().toFuture
     @inline def createDynamicThingGroupFuture(params: CreateDynamicThingGroupRequest): Future[CreateDynamicThingGroupResponse] = service.createDynamicThingGroup(params).promise().toFuture
@@ -501,6 +531,7 @@ package object iot {
     @inline def deleteBillingGroupFuture(params: DeleteBillingGroupRequest): Future[DeleteBillingGroupResponse] = service.deleteBillingGroup(params).promise().toFuture
     @inline def deleteCACertificateFuture(params: DeleteCACertificateRequest): Future[DeleteCACertificateResponse] = service.deleteCACertificate(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] = service.deleteCertificate(params).promise().toFuture
+    @inline def deleteCustomMetricFuture(params: DeleteCustomMetricRequest): Future[DeleteCustomMetricResponse] = service.deleteCustomMetric(params).promise().toFuture
     @inline def deleteDimensionFuture(params: DeleteDimensionRequest): Future[DeleteDimensionResponse] = service.deleteDimension(params).promise().toFuture
     @inline def deleteDomainConfigurationFuture(params: DeleteDomainConfigurationRequest): Future[DeleteDomainConfigurationResponse] = service.deleteDomainConfiguration(params).promise().toFuture
     @inline def deleteDynamicThingGroupFuture(params: DeleteDynamicThingGroupRequest): Future[DeleteDynamicThingGroupResponse] = service.deleteDynamicThingGroup(params).promise().toFuture
@@ -533,7 +564,9 @@ package object iot {
     @inline def describeBillingGroupFuture(params: DescribeBillingGroupRequest): Future[DescribeBillingGroupResponse] = service.describeBillingGroup(params).promise().toFuture
     @inline def describeCACertificateFuture(params: DescribeCACertificateRequest): Future[DescribeCACertificateResponse] = service.describeCACertificate(params).promise().toFuture
     @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] = service.describeCertificate(params).promise().toFuture
+    @inline def describeCustomMetricFuture(params: DescribeCustomMetricRequest): Future[DescribeCustomMetricResponse] = service.describeCustomMetric(params).promise().toFuture
     @inline def describeDefaultAuthorizerFuture(params: DescribeDefaultAuthorizerRequest): Future[DescribeDefaultAuthorizerResponse] = service.describeDefaultAuthorizer(params).promise().toFuture
+    @inline def describeDetectMitigationActionsTaskFuture(params: DescribeDetectMitigationActionsTaskRequest): Future[DescribeDetectMitigationActionsTaskResponse] = service.describeDetectMitigationActionsTask(params).promise().toFuture
     @inline def describeDimensionFuture(params: DescribeDimensionRequest): Future[DescribeDimensionResponse] = service.describeDimension(params).promise().toFuture
     @inline def describeDomainConfigurationFuture(params: DescribeDomainConfigurationRequest): Future[DescribeDomainConfigurationResponse] = service.describeDomainConfiguration(params).promise().toFuture
     @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] = service.describeEndpoint(params).promise().toFuture
@@ -557,6 +590,7 @@ package object iot {
     @inline def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] = service.detachThingPrincipal(params).promise().toFuture
     @inline def disableTopicRuleFuture(params: DisableTopicRuleRequest): Future[js.Object] = service.disableTopicRule(params).promise().toFuture
     @inline def enableTopicRuleFuture(params: EnableTopicRuleRequest): Future[js.Object] = service.enableTopicRule(params).promise().toFuture
+    @inline def getBehaviorModelTrainingSummariesFuture(params: GetBehaviorModelTrainingSummariesRequest): Future[GetBehaviorModelTrainingSummariesResponse] = service.getBehaviorModelTrainingSummaries(params).promise().toFuture
     @inline def getCardinalityFuture(params: GetCardinalityRequest): Future[GetCardinalityResponse] = service.getCardinality(params).promise().toFuture
     @inline def getEffectivePoliciesFuture(params: GetEffectivePoliciesRequest): Future[GetEffectivePoliciesResponse] = service.getEffectivePolicies(params).promise().toFuture
     @inline def getIndexingConfigurationFuture(params: GetIndexingConfigurationRequest): Future[GetIndexingConfigurationResponse] = service.getIndexingConfiguration(params).promise().toFuture
@@ -583,6 +617,9 @@ package object iot {
     @inline def listCACertificatesFuture(params: ListCACertificatesRequest): Future[ListCACertificatesResponse] = service.listCACertificates(params).promise().toFuture
     @inline def listCertificatesByCAFuture(params: ListCertificatesByCARequest): Future[ListCertificatesByCAResponse] = service.listCertificatesByCA(params).promise().toFuture
     @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] = service.listCertificates(params).promise().toFuture
+    @inline def listCustomMetricsFuture(params: ListCustomMetricsRequest): Future[ListCustomMetricsResponse] = service.listCustomMetrics(params).promise().toFuture
+    @inline def listDetectMitigationActionsExecutionsFuture(params: ListDetectMitigationActionsExecutionsRequest): Future[ListDetectMitigationActionsExecutionsResponse] = service.listDetectMitigationActionsExecutions(params).promise().toFuture
+    @inline def listDetectMitigationActionsTasksFuture(params: ListDetectMitigationActionsTasksRequest): Future[ListDetectMitigationActionsTasksResponse] = service.listDetectMitigationActionsTasks(params).promise().toFuture
     @inline def listDimensionsFuture(params: ListDimensionsRequest): Future[ListDimensionsResponse] = service.listDimensions(params).promise().toFuture
     @inline def listDomainConfigurationsFuture(params: ListDomainConfigurationsRequest): Future[ListDomainConfigurationsResponse] = service.listDomainConfigurations(params).promise().toFuture
     @inline def listIndicesFuture(params: ListIndicesRequest): Future[ListIndicesResponse] = service.listIndices(params).promise().toFuture
@@ -633,6 +670,7 @@ package object iot {
     @inline def setV2LoggingLevelFuture(params: SetV2LoggingLevelRequest): Future[js.Object] = service.setV2LoggingLevel(params).promise().toFuture
     @inline def setV2LoggingOptionsFuture(params: SetV2LoggingOptionsRequest): Future[js.Object] = service.setV2LoggingOptions(params).promise().toFuture
     @inline def startAuditMitigationActionsTaskFuture(params: StartAuditMitigationActionsTaskRequest): Future[StartAuditMitigationActionsTaskResponse] = service.startAuditMitigationActionsTask(params).promise().toFuture
+    @inline def startDetectMitigationActionsTaskFuture(params: StartDetectMitigationActionsTaskRequest): Future[StartDetectMitigationActionsTaskResponse] = service.startDetectMitigationActionsTask(params).promise().toFuture
     @inline def startOnDemandAuditTaskFuture(params: StartOnDemandAuditTaskRequest): Future[StartOnDemandAuditTaskResponse] = service.startOnDemandAuditTask(params).promise().toFuture
     @inline def startThingRegistrationTaskFuture(params: StartThingRegistrationTaskRequest): Future[StartThingRegistrationTaskResponse] = service.startThingRegistrationTask(params).promise().toFuture
     @inline def stopThingRegistrationTaskFuture(params: StopThingRegistrationTaskRequest): Future[StopThingRegistrationTaskResponse] = service.stopThingRegistrationTask(params).promise().toFuture
@@ -647,6 +685,7 @@ package object iot {
     @inline def updateBillingGroupFuture(params: UpdateBillingGroupRequest): Future[UpdateBillingGroupResponse] = service.updateBillingGroup(params).promise().toFuture
     @inline def updateCACertificateFuture(params: UpdateCACertificateRequest): Future[js.Object] = service.updateCACertificate(params).promise().toFuture
     @inline def updateCertificateFuture(params: UpdateCertificateRequest): Future[js.Object] = service.updateCertificate(params).promise().toFuture
+    @inline def updateCustomMetricFuture(params: UpdateCustomMetricRequest): Future[UpdateCustomMetricResponse] = service.updateCustomMetric(params).promise().toFuture
     @inline def updateDimensionFuture(params: UpdateDimensionRequest): Future[UpdateDimensionResponse] = service.updateDimension(params).promise().toFuture
     @inline def updateDomainConfigurationFuture(params: UpdateDomainConfigurationRequest): Future[UpdateDomainConfigurationResponse] = service.updateDomainConfiguration(params).promise().toFuture
     @inline def updateDynamicThingGroupFuture(params: UpdateDynamicThingGroupRequest): Future[UpdateDynamicThingGroupResponse] = service.updateDynamicThingGroup(params).promise().toFuture
@@ -688,6 +727,7 @@ package iot {
     def cancelAuditMitigationActionsTask(params: CancelAuditMitigationActionsTaskRequest): Request[CancelAuditMitigationActionsTaskResponse] = js.native
     def cancelAuditTask(params: CancelAuditTaskRequest): Request[CancelAuditTaskResponse] = js.native
     def cancelCertificateTransfer(params: CancelCertificateTransferRequest): Request[js.Object] = js.native
+    def cancelDetectMitigationActionsTask(params: CancelDetectMitigationActionsTaskRequest): Request[CancelDetectMitigationActionsTaskResponse] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def cancelJobExecution(params: CancelJobExecutionRequest): Request[js.Object] = js.native
     def clearDefaultAuthorizer(params: ClearDefaultAuthorizerRequest): Request[ClearDefaultAuthorizerResponse] = js.native
@@ -696,6 +736,7 @@ package iot {
     def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse] = js.native
     def createBillingGroup(params: CreateBillingGroupRequest): Request[CreateBillingGroupResponse] = js.native
     def createCertificateFromCsr(params: CreateCertificateFromCsrRequest): Request[CreateCertificateFromCsrResponse] = js.native
+    def createCustomMetric(params: CreateCustomMetricRequest): Request[CreateCustomMetricResponse] = js.native
     def createDimension(params: CreateDimensionRequest): Request[CreateDimensionResponse] = js.native
     def createDomainConfiguration(params: CreateDomainConfigurationRequest): Request[CreateDomainConfigurationResponse] = js.native
     def createDynamicThingGroup(params: CreateDynamicThingGroupRequest): Request[CreateDynamicThingGroupResponse] = js.native
@@ -723,6 +764,7 @@ package iot {
     def deleteBillingGroup(params: DeleteBillingGroupRequest): Request[DeleteBillingGroupResponse] = js.native
     def deleteCACertificate(params: DeleteCACertificateRequest): Request[DeleteCACertificateResponse] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
+    def deleteCustomMetric(params: DeleteCustomMetricRequest): Request[DeleteCustomMetricResponse] = js.native
     def deleteDimension(params: DeleteDimensionRequest): Request[DeleteDimensionResponse] = js.native
     def deleteDomainConfiguration(params: DeleteDomainConfigurationRequest): Request[DeleteDomainConfigurationResponse] = js.native
     def deleteDynamicThingGroup(params: DeleteDynamicThingGroupRequest): Request[DeleteDynamicThingGroupResponse] = js.native
@@ -755,7 +797,9 @@ package iot {
     def describeBillingGroup(params: DescribeBillingGroupRequest): Request[DescribeBillingGroupResponse] = js.native
     def describeCACertificate(params: DescribeCACertificateRequest): Request[DescribeCACertificateResponse] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
+    def describeCustomMetric(params: DescribeCustomMetricRequest): Request[DescribeCustomMetricResponse] = js.native
     def describeDefaultAuthorizer(params: DescribeDefaultAuthorizerRequest): Request[DescribeDefaultAuthorizerResponse] = js.native
+    def describeDetectMitigationActionsTask(params: DescribeDetectMitigationActionsTaskRequest): Request[DescribeDetectMitigationActionsTaskResponse] = js.native
     def describeDimension(params: DescribeDimensionRequest): Request[DescribeDimensionResponse] = js.native
     def describeDomainConfiguration(params: DescribeDomainConfigurationRequest): Request[DescribeDomainConfigurationResponse] = js.native
     def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
@@ -779,6 +823,7 @@ package iot {
     def detachThingPrincipal(params: DetachThingPrincipalRequest): Request[DetachThingPrincipalResponse] = js.native
     def disableTopicRule(params: DisableTopicRuleRequest): Request[js.Object] = js.native
     def enableTopicRule(params: EnableTopicRuleRequest): Request[js.Object] = js.native
+    def getBehaviorModelTrainingSummaries(params: GetBehaviorModelTrainingSummariesRequest): Request[GetBehaviorModelTrainingSummariesResponse] = js.native
     def getCardinality(params: GetCardinalityRequest): Request[GetCardinalityResponse] = js.native
     def getEffectivePolicies(params: GetEffectivePoliciesRequest): Request[GetEffectivePoliciesResponse] = js.native
     def getIndexingConfiguration(params: GetIndexingConfigurationRequest): Request[GetIndexingConfigurationResponse] = js.native
@@ -805,6 +850,9 @@ package iot {
     def listCACertificates(params: ListCACertificatesRequest): Request[ListCACertificatesResponse] = js.native
     def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
     def listCertificatesByCA(params: ListCertificatesByCARequest): Request[ListCertificatesByCAResponse] = js.native
+    def listCustomMetrics(params: ListCustomMetricsRequest): Request[ListCustomMetricsResponse] = js.native
+    def listDetectMitigationActionsExecutions(params: ListDetectMitigationActionsExecutionsRequest): Request[ListDetectMitigationActionsExecutionsResponse] = js.native
+    def listDetectMitigationActionsTasks(params: ListDetectMitigationActionsTasksRequest): Request[ListDetectMitigationActionsTasksResponse] = js.native
     def listDimensions(params: ListDimensionsRequest): Request[ListDimensionsResponse] = js.native
     def listDomainConfigurations(params: ListDomainConfigurationsRequest): Request[ListDomainConfigurationsResponse] = js.native
     def listIndices(params: ListIndicesRequest): Request[ListIndicesResponse] = js.native
@@ -855,6 +903,7 @@ package iot {
     def setV2LoggingLevel(params: SetV2LoggingLevelRequest): Request[js.Object] = js.native
     def setV2LoggingOptions(params: SetV2LoggingOptionsRequest): Request[js.Object] = js.native
     def startAuditMitigationActionsTask(params: StartAuditMitigationActionsTaskRequest): Request[StartAuditMitigationActionsTaskResponse] = js.native
+    def startDetectMitigationActionsTask(params: StartDetectMitigationActionsTaskRequest): Request[StartDetectMitigationActionsTaskResponse] = js.native
     def startOnDemandAuditTask(params: StartOnDemandAuditTaskRequest): Request[StartOnDemandAuditTaskResponse] = js.native
     def startThingRegistrationTask(params: StartThingRegistrationTaskRequest): Request[StartThingRegistrationTaskResponse] = js.native
     def stopThingRegistrationTask(params: StopThingRegistrationTaskRequest): Request[StopThingRegistrationTaskResponse] = js.native
@@ -869,6 +918,7 @@ package iot {
     def updateBillingGroup(params: UpdateBillingGroupRequest): Request[UpdateBillingGroupResponse] = js.native
     def updateCACertificate(params: UpdateCACertificateRequest): Request[js.Object] = js.native
     def updateCertificate(params: UpdateCertificateRequest): Request[js.Object] = js.native
+    def updateCustomMetric(params: UpdateCustomMetricRequest): Request[UpdateCustomMetricResponse] = js.native
     def updateDimension(params: UpdateDimensionRequest): Request[UpdateDimensionResponse] = js.native
     def updateDomainConfiguration(params: UpdateDomainConfigurationRequest): Request[UpdateDomainConfigurationResponse] = js.native
     def updateDynamicThingGroup(params: UpdateDynamicThingGroupRequest): Request[UpdateDynamicThingGroupResponse] = js.native
@@ -981,6 +1031,7 @@ package iot {
     var iotAnalytics: js.UndefOr[IotAnalyticsAction]
     var iotEvents: js.UndefOr[IotEventsAction]
     var iotSiteWise: js.UndefOr[IotSiteWiseAction]
+    var kafka: js.UndefOr[KafkaAction]
     var kinesis: js.UndefOr[KinesisAction]
     var lambda: js.UndefOr[LambdaAction]
     var republish: js.UndefOr[RepublishAction]
@@ -1006,6 +1057,7 @@ package iot {
         iotAnalytics: js.UndefOr[IotAnalyticsAction] = js.undefined,
         iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
         iotSiteWise: js.UndefOr[IotSiteWiseAction] = js.undefined,
+        kafka: js.UndefOr[KafkaAction] = js.undefined,
         kinesis: js.UndefOr[KinesisAction] = js.undefined,
         lambda: js.UndefOr[LambdaAction] = js.undefined,
         republish: js.UndefOr[RepublishAction] = js.undefined,
@@ -1028,6 +1080,7 @@ package iot {
       iotAnalytics.foreach(__v => __obj.updateDynamic("iotAnalytics")(__v.asInstanceOf[js.Any]))
       iotEvents.foreach(__v => __obj.updateDynamic("iotEvents")(__v.asInstanceOf[js.Any]))
       iotSiteWise.foreach(__v => __obj.updateDynamic("iotSiteWise")(__v.asInstanceOf[js.Any]))
+      kafka.foreach(__v => __obj.updateDynamic("kafka")(__v.asInstanceOf[js.Any]))
       kinesis.foreach(__v => __obj.updateDynamic("kinesis")(__v.asInstanceOf[js.Any]))
       lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
       republish.foreach(__v => __obj.updateDynamic("republish")(__v.asInstanceOf[js.Any]))
@@ -1061,6 +1114,7 @@ package iot {
     var lastViolationValue: js.UndefOr[MetricValue]
     var securityProfileName: js.UndefOr[SecurityProfileName]
     var thingName: js.UndefOr[DeviceDefenderThingName]
+    var violationEventAdditionalInfo: js.UndefOr[ViolationEventAdditionalInfo]
     var violationId: js.UndefOr[ViolationId]
     var violationStartTime: js.UndefOr[Timestamp]
   }
@@ -1073,6 +1127,7 @@ package iot {
         lastViolationValue: js.UndefOr[MetricValue] = js.undefined,
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined,
+        violationEventAdditionalInfo: js.UndefOr[ViolationEventAdditionalInfo] = js.undefined,
         violationId: js.UndefOr[ViolationId] = js.undefined,
         violationStartTime: js.UndefOr[Timestamp] = js.undefined
     ): ActiveViolation = {
@@ -1082,6 +1137,7 @@ package iot {
       lastViolationValue.foreach(__v => __obj.updateDynamic("lastViolationValue")(__v.asInstanceOf[js.Any]))
       securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
       thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      violationEventAdditionalInfo.foreach(__v => __obj.updateDynamic("violationEventAdditionalInfo")(__v.asInstanceOf[js.Any]))
       violationId.foreach(__v => __obj.updateDynamic("violationId")(__v.asInstanceOf[js.Any]))
       violationStartTime.foreach(__v => __obj.updateDynamic("violationStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActiveViolation]
@@ -1639,7 +1695,7 @@ package iot {
     var message: js.UndefOr[ErrorMessage]
     var startTime: js.UndefOr[Timestamp]
     var status: js.UndefOr[AuditMitigationActionsExecutionStatus]
-    var taskId: js.UndefOr[AuditMitigationActionsTaskId]
+    var taskId: js.UndefOr[MitigationActionsTaskId]
   }
 
   object AuditMitigationActionExecutionMetadata {
@@ -1653,7 +1709,7 @@ package iot {
         message: js.UndefOr[ErrorMessage] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[AuditMitigationActionsExecutionStatus] = js.undefined,
-        taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined
     ): AuditMitigationActionExecutionMetadata = {
       val __obj = js.Dynamic.literal()
       actionId.foreach(__v => __obj.updateDynamic("actionId")(__v.asInstanceOf[js.Any]))
@@ -1687,7 +1743,7 @@ package iot {
   @js.native
   trait AuditMitigationActionsTaskMetadata extends js.Object {
     var startTime: js.UndefOr[Timestamp]
-    var taskId: js.UndefOr[AuditMitigationActionsTaskId]
+    var taskId: js.UndefOr[MitigationActionsTaskId]
     var taskStatus: js.UndefOr[AuditMitigationActionsTaskStatus]
   }
 
@@ -1695,7 +1751,7 @@ package iot {
     @inline
     def apply(
         startTime: js.UndefOr[Timestamp] = js.undefined,
-        taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined,
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined,
         taskStatus: js.UndefOr[AuditMitigationActionsTaskStatus] = js.undefined
     ): AuditMitigationActionsTaskMetadata = {
       val __obj = js.Dynamic.literal()
@@ -2191,6 +2247,7 @@ package iot {
     var criteria: js.UndefOr[BehaviorCriteria]
     var metric: js.UndefOr[BehaviorMetric]
     var metricDimension: js.UndefOr[MetricDimension]
+    var suppressAlerts: js.UndefOr[SuppressAlerts]
   }
 
   object Behavior {
@@ -2199,7 +2256,8 @@ package iot {
         name: BehaviorName,
         criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
         metric: js.UndefOr[BehaviorMetric] = js.undefined,
-        metricDimension: js.UndefOr[MetricDimension] = js.undefined
+        metricDimension: js.UndefOr[MetricDimension] = js.undefined,
+        suppressAlerts: js.UndefOr[SuppressAlerts] = js.undefined
     ): Behavior = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
@@ -2208,6 +2266,7 @@ package iot {
       criteria.foreach(__v => __obj.updateDynamic("criteria")(__v.asInstanceOf[js.Any]))
       metric.foreach(__v => __obj.updateDynamic("metric")(__v.asInstanceOf[js.Any]))
       metricDimension.foreach(__v => __obj.updateDynamic("metricDimension")(__v.asInstanceOf[js.Any]))
+      suppressAlerts.foreach(__v => __obj.updateDynamic("suppressAlerts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Behavior]
     }
   }
@@ -2220,6 +2279,7 @@ package iot {
     var consecutiveDatapointsToAlarm: js.UndefOr[ConsecutiveDatapointsToAlarm]
     var consecutiveDatapointsToClear: js.UndefOr[ConsecutiveDatapointsToClear]
     var durationSeconds: js.UndefOr[DurationSeconds]
+    var mlDetectionConfig: js.UndefOr[MachineLearningDetectionConfig]
     var statisticalThreshold: js.UndefOr[StatisticalThreshold]
     var value: js.UndefOr[MetricValue]
   }
@@ -2231,6 +2291,7 @@ package iot {
         consecutiveDatapointsToAlarm: js.UndefOr[ConsecutiveDatapointsToAlarm] = js.undefined,
         consecutiveDatapointsToClear: js.UndefOr[ConsecutiveDatapointsToClear] = js.undefined,
         durationSeconds: js.UndefOr[DurationSeconds] = js.undefined,
+        mlDetectionConfig: js.UndefOr[MachineLearningDetectionConfig] = js.undefined,
         statisticalThreshold: js.UndefOr[StatisticalThreshold] = js.undefined,
         value: js.UndefOr[MetricValue] = js.undefined
     ): BehaviorCriteria = {
@@ -2239,9 +2300,53 @@ package iot {
       consecutiveDatapointsToAlarm.foreach(__v => __obj.updateDynamic("consecutiveDatapointsToAlarm")(__v.asInstanceOf[js.Any]))
       consecutiveDatapointsToClear.foreach(__v => __obj.updateDynamic("consecutiveDatapointsToClear")(__v.asInstanceOf[js.Any]))
       durationSeconds.foreach(__v => __obj.updateDynamic("durationSeconds")(__v.asInstanceOf[js.Any]))
+      mlDetectionConfig.foreach(__v => __obj.updateDynamic("mlDetectionConfig")(__v.asInstanceOf[js.Any]))
       statisticalThreshold.foreach(__v => __obj.updateDynamic("statisticalThreshold")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BehaviorCriteria]
+    }
+  }
+
+  @js.native
+  sealed trait BehaviorCriteriaType extends js.Any
+  object BehaviorCriteriaType {
+    val STATIC = "STATIC".asInstanceOf[BehaviorCriteriaType]
+    val STATISTICAL = "STATISTICAL".asInstanceOf[BehaviorCriteriaType]
+    val MACHINE_LEARNING = "MACHINE_LEARNING".asInstanceOf[BehaviorCriteriaType]
+
+    @inline def values = js.Array(STATIC, STATISTICAL, MACHINE_LEARNING)
+  }
+
+  /** The summary of an ML Detect behavior model.
+    */
+  @js.native
+  trait BehaviorModelTrainingSummary extends js.Object {
+    var behaviorName: js.UndefOr[BehaviorName]
+    var datapointsCollectionPercentage: js.UndefOr[DataCollectionPercentage]
+    var lastModelRefreshDate: js.UndefOr[Timestamp]
+    var modelStatus: js.UndefOr[ModelStatus]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var trainingDataCollectionStartDate: js.UndefOr[Timestamp]
+  }
+
+  object BehaviorModelTrainingSummary {
+    @inline
+    def apply(
+        behaviorName: js.UndefOr[BehaviorName] = js.undefined,
+        datapointsCollectionPercentage: js.UndefOr[DataCollectionPercentage] = js.undefined,
+        lastModelRefreshDate: js.UndefOr[Timestamp] = js.undefined,
+        modelStatus: js.UndefOr[ModelStatus] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        trainingDataCollectionStartDate: js.UndefOr[Timestamp] = js.undefined
+    ): BehaviorModelTrainingSummary = {
+      val __obj = js.Dynamic.literal()
+      behaviorName.foreach(__v => __obj.updateDynamic("behaviorName")(__v.asInstanceOf[js.Any]))
+      datapointsCollectionPercentage.foreach(__v => __obj.updateDynamic("datapointsCollectionPercentage")(__v.asInstanceOf[js.Any]))
+      lastModelRefreshDate.foreach(__v => __obj.updateDynamic("lastModelRefreshDate")(__v.asInstanceOf[js.Any]))
+      modelStatus.foreach(__v => __obj.updateDynamic("modelStatus")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      trainingDataCollectionStartDate.foreach(__v => __obj.updateDynamic("trainingDataCollectionStartDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BehaviorModelTrainingSummary]
     }
   }
 
@@ -2375,13 +2480,13 @@ package iot {
 
   @js.native
   trait CancelAuditMitigationActionsTaskRequest extends js.Object {
-    var taskId: AuditMitigationActionsTaskId
+    var taskId: MitigationActionsTaskId
   }
 
   object CancelAuditMitigationActionsTaskRequest {
     @inline
     def apply(
-        taskId: AuditMitigationActionsTaskId
+        taskId: MitigationActionsTaskId
     ): CancelAuditMitigationActionsTaskRequest = {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
@@ -2445,6 +2550,34 @@ package iot {
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CancelCertificateTransferRequest]
+    }
+  }
+
+  @js.native
+  trait CancelDetectMitigationActionsTaskRequest extends js.Object {
+    var taskId: MitigationActionsTaskId
+  }
+
+  object CancelDetectMitigationActionsTaskRequest {
+    @inline
+    def apply(
+        taskId: MitigationActionsTaskId
+    ): CancelDetectMitigationActionsTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelDetectMitigationActionsTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CancelDetectMitigationActionsTaskResponse extends js.Object
+
+  object CancelDetectMitigationActionsTaskResponse {
+    @inline
+    def apply(): CancelDetectMitigationActionsTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelDetectMitigationActionsTaskResponse]
     }
   }
 
@@ -2853,8 +2986,31 @@ package iot {
     val `not-in-cidr-set` = "not-in-cidr-set".asInstanceOf[ComparisonOperator]
     val `in-port-set` = "in-port-set".asInstanceOf[ComparisonOperator]
     val `not-in-port-set` = "not-in-port-set".asInstanceOf[ComparisonOperator]
+    val `in-set` = "in-set".asInstanceOf[ComparisonOperator]
+    val `not-in-set` = "not-in-set".asInstanceOf[ComparisonOperator]
 
-    @inline def values = js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`)
+    @inline def values = js.Array(
+      `less-than`,
+      `less-than-equals`,
+      `greater-than`,
+      `greater-than-equals`,
+      `in-cidr-set`,
+      `not-in-cidr-set`,
+      `in-port-set`,
+      `not-in-port-set`,
+      `in-set`,
+      `not-in-set`
+    )
+  }
+
+  @js.native
+  sealed trait ConfidenceLevel extends js.Any
+  object ConfidenceLevel {
+    val LOW = "LOW".asInstanceOf[ConfidenceLevel]
+    val MEDIUM = "MEDIUM".asInstanceOf[ConfidenceLevel]
+    val HIGH = "HIGH".asInstanceOf[ConfidenceLevel]
+
+    @inline def values = js.Array(LOW, MEDIUM, HIGH)
   }
 
   /** Configuration.
@@ -3092,6 +3248,55 @@ package iot {
       certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
       certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateFromCsrResponse]
+    }
+  }
+
+  @js.native
+  trait CreateCustomMetricRequest extends js.Object {
+    var clientRequestToken: ClientRequestToken
+    var metricName: MetricName
+    var metricType: CustomMetricType
+    var displayName: js.UndefOr[CustomMetricDisplayName]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateCustomMetricRequest {
+    @inline
+    def apply(
+        clientRequestToken: ClientRequestToken,
+        metricName: MetricName,
+        metricType: CustomMetricType,
+        displayName: js.UndefOr[CustomMetricDisplayName] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateCustomMetricRequest = {
+      val __obj = js.Dynamic.literal(
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "metricType" -> metricType.asInstanceOf[js.Any]
+      )
+
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCustomMetricRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCustomMetricResponse extends js.Object {
+    var metricArn: js.UndefOr[CustomMetricArn]
+    var metricName: js.UndefOr[MetricName]
+  }
+
+  object CreateCustomMetricResponse {
+    @inline
+    def apply(
+        metricArn: js.UndefOr[CustomMetricArn] = js.undefined,
+        metricName: js.UndefOr[MetricName] = js.undefined
+    ): CreateCustomMetricResponse = {
+      val __obj = js.Dynamic.literal()
+      metricArn.foreach(__v => __obj.updateDynamic("metricArn")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCustomMetricResponse]
     }
   }
 
@@ -4208,6 +4413,17 @@ package iot {
   }
 
   @js.native
+  sealed trait CustomMetricType extends js.Any
+  object CustomMetricType {
+    val `string-list` = "string-list".asInstanceOf[CustomMetricType]
+    val `ip-address-list` = "ip-address-list".asInstanceOf[CustomMetricType]
+    val `number-list` = "number-list".asInstanceOf[CustomMetricType]
+    val number = "number".asInstanceOf[CustomMetricType]
+
+    @inline def values = js.Array(`string-list`, `ip-address-list`, `number-list`, number)
+  }
+
+  @js.native
   sealed trait DayOfWeek extends js.Any
   object DayOfWeek {
     val SUN = "SUN".asInstanceOf[DayOfWeek]
@@ -4391,6 +4607,34 @@ package iot {
 
       forceDelete.foreach(__v => __obj.updateDynamic("forceDelete")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomMetricRequest extends js.Object {
+    var metricName: MetricName
+  }
+
+  object DeleteCustomMetricRequest {
+    @inline
+    def apply(
+        metricName: MetricName
+    ): DeleteCustomMetricRequest = {
+      val __obj = js.Dynamic.literal(
+        "metricName" -> metricName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCustomMetricRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomMetricResponse extends js.Object
+
+  object DeleteCustomMetricResponse {
+    @inline
+    def apply(): DeleteCustomMetricResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteCustomMetricResponse]
     }
   }
 
@@ -5133,13 +5377,13 @@ package iot {
 
   @js.native
   trait DescribeAuditMitigationActionsTaskRequest extends js.Object {
-    var taskId: AuditMitigationActionsTaskId
+    var taskId: MitigationActionsTaskId
   }
 
   object DescribeAuditMitigationActionsTaskRequest {
     @inline
     def apply(
-        taskId: AuditMitigationActionsTaskId
+        taskId: MitigationActionsTaskId
     ): DescribeAuditMitigationActionsTaskRequest = {
       val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
@@ -5437,6 +5681,54 @@ package iot {
   }
 
   @js.native
+  trait DescribeCustomMetricRequest extends js.Object {
+    var metricName: MetricName
+  }
+
+  object DescribeCustomMetricRequest {
+    @inline
+    def apply(
+        metricName: MetricName
+    ): DescribeCustomMetricRequest = {
+      val __obj = js.Dynamic.literal(
+        "metricName" -> metricName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeCustomMetricRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCustomMetricResponse extends js.Object {
+    var creationDate: js.UndefOr[Timestamp]
+    var displayName: js.UndefOr[CustomMetricDisplayName]
+    var lastModifiedDate: js.UndefOr[Timestamp]
+    var metricArn: js.UndefOr[CustomMetricArn]
+    var metricName: js.UndefOr[MetricName]
+    var metricType: js.UndefOr[CustomMetricType]
+  }
+
+  object DescribeCustomMetricResponse {
+    @inline
+    def apply(
+        creationDate: js.UndefOr[Timestamp] = js.undefined,
+        displayName: js.UndefOr[CustomMetricDisplayName] = js.undefined,
+        lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+        metricArn: js.UndefOr[CustomMetricArn] = js.undefined,
+        metricName: js.UndefOr[MetricName] = js.undefined,
+        metricType: js.UndefOr[CustomMetricType] = js.undefined
+    ): DescribeCustomMetricResponse = {
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      metricArn.foreach(__v => __obj.updateDynamic("metricArn")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      metricType.foreach(__v => __obj.updateDynamic("metricType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCustomMetricResponse]
+    }
+  }
+
+  @js.native
   trait DescribeDefaultAuthorizerRequest extends js.Object
 
   object DescribeDefaultAuthorizerRequest {
@@ -5460,6 +5752,39 @@ package iot {
       val __obj = js.Dynamic.literal()
       authorizerDescription.foreach(__v => __obj.updateDynamic("authorizerDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDefaultAuthorizerResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeDetectMitigationActionsTaskRequest extends js.Object {
+    var taskId: MitigationActionsTaskId
+  }
+
+  object DescribeDetectMitigationActionsTaskRequest {
+    @inline
+    def apply(
+        taskId: MitigationActionsTaskId
+    ): DescribeDetectMitigationActionsTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeDetectMitigationActionsTaskRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDetectMitigationActionsTaskResponse extends js.Object {
+    var taskSummary: js.UndefOr[DetectMitigationActionsTaskSummary]
+  }
+
+  object DescribeDetectMitigationActionsTaskResponse {
+    @inline
+    def apply(
+        taskSummary: js.UndefOr[DetectMitigationActionsTaskSummary] = js.undefined
+    ): DescribeDetectMitigationActionsTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      taskSummary.foreach(__v => __obj.updateDynamic("taskSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDetectMitigationActionsTaskResponse]
     }
   }
 
@@ -6444,6 +6769,163 @@ package iot {
     }
   }
 
+  /** Describes which mitigation actions should be executed.
+    */
+  @js.native
+  trait DetectMitigationActionExecution extends js.Object {
+    var actionName: js.UndefOr[MitigationActionName]
+    var errorCode: js.UndefOr[DetectMitigationActionExecutionErrorCode]
+    var executionEndDate: js.UndefOr[Timestamp]
+    var executionStartDate: js.UndefOr[Timestamp]
+    var message: js.UndefOr[ErrorMessage]
+    var status: js.UndefOr[DetectMitigationActionExecutionStatus]
+    var taskId: js.UndefOr[MitigationActionsTaskId]
+    var thingName: js.UndefOr[DeviceDefenderThingName]
+    var violationId: js.UndefOr[ViolationId]
+  }
+
+  object DetectMitigationActionExecution {
+    @inline
+    def apply(
+        actionName: js.UndefOr[MitigationActionName] = js.undefined,
+        errorCode: js.UndefOr[DetectMitigationActionExecutionErrorCode] = js.undefined,
+        executionEndDate: js.UndefOr[Timestamp] = js.undefined,
+        executionStartDate: js.UndefOr[Timestamp] = js.undefined,
+        message: js.UndefOr[ErrorMessage] = js.undefined,
+        status: js.UndefOr[DetectMitigationActionExecutionStatus] = js.undefined,
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined,
+        thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined,
+        violationId: js.UndefOr[ViolationId] = js.undefined
+    ): DetectMitigationActionExecution = {
+      val __obj = js.Dynamic.literal()
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      executionEndDate.foreach(__v => __obj.updateDynamic("executionEndDate")(__v.asInstanceOf[js.Any]))
+      executionStartDate.foreach(__v => __obj.updateDynamic("executionStartDate")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      violationId.foreach(__v => __obj.updateDynamic("violationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectMitigationActionExecution]
+    }
+  }
+
+  @js.native
+  sealed trait DetectMitigationActionExecutionStatus extends js.Any
+  object DetectMitigationActionExecutionStatus {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DetectMitigationActionExecutionStatus]
+    val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[DetectMitigationActionExecutionStatus]
+    val FAILED = "FAILED".asInstanceOf[DetectMitigationActionExecutionStatus]
+    val SKIPPED = "SKIPPED".asInstanceOf[DetectMitigationActionExecutionStatus]
+
+    @inline def values = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, SKIPPED)
+  }
+
+  /** The statistics of a mitigation action task.
+    */
+  @js.native
+  trait DetectMitigationActionsTaskStatistics extends js.Object {
+    var actionsExecuted: js.UndefOr[GenericLongValue]
+    var actionsFailed: js.UndefOr[GenericLongValue]
+    var actionsSkipped: js.UndefOr[GenericLongValue]
+  }
+
+  object DetectMitigationActionsTaskStatistics {
+    @inline
+    def apply(
+        actionsExecuted: js.UndefOr[GenericLongValue] = js.undefined,
+        actionsFailed: js.UndefOr[GenericLongValue] = js.undefined,
+        actionsSkipped: js.UndefOr[GenericLongValue] = js.undefined
+    ): DetectMitigationActionsTaskStatistics = {
+      val __obj = js.Dynamic.literal()
+      actionsExecuted.foreach(__v => __obj.updateDynamic("actionsExecuted")(__v.asInstanceOf[js.Any]))
+      actionsFailed.foreach(__v => __obj.updateDynamic("actionsFailed")(__v.asInstanceOf[js.Any]))
+      actionsSkipped.foreach(__v => __obj.updateDynamic("actionsSkipped")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectMitigationActionsTaskStatistics]
+    }
+  }
+
+  @js.native
+  sealed trait DetectMitigationActionsTaskStatus extends js.Any
+  object DetectMitigationActionsTaskStatus {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DetectMitigationActionsTaskStatus]
+    val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[DetectMitigationActionsTaskStatus]
+    val FAILED = "FAILED".asInstanceOf[DetectMitigationActionsTaskStatus]
+    val CANCELED = "CANCELED".asInstanceOf[DetectMitigationActionsTaskStatus]
+
+    @inline def values = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, CANCELED)
+  }
+
+  /** The summary of the mitigation action tasks.
+    */
+  @js.native
+  trait DetectMitigationActionsTaskSummary extends js.Object {
+    var actionsDefinition: js.UndefOr[MitigationActionList]
+    var onlyActiveViolationsIncluded: js.UndefOr[PrimitiveBoolean]
+    var suppressedAlertsIncluded: js.UndefOr[PrimitiveBoolean]
+    var target: js.UndefOr[DetectMitigationActionsTaskTarget]
+    var taskEndTime: js.UndefOr[Timestamp]
+    var taskId: js.UndefOr[MitigationActionsTaskId]
+    var taskStartTime: js.UndefOr[Timestamp]
+    var taskStatistics: js.UndefOr[DetectMitigationActionsTaskStatistics]
+    var taskStatus: js.UndefOr[DetectMitigationActionsTaskStatus]
+    var violationEventOccurrenceRange: js.UndefOr[ViolationEventOccurrenceRange]
+  }
+
+  object DetectMitigationActionsTaskSummary {
+    @inline
+    def apply(
+        actionsDefinition: js.UndefOr[MitigationActionList] = js.undefined,
+        onlyActiveViolationsIncluded: js.UndefOr[PrimitiveBoolean] = js.undefined,
+        suppressedAlertsIncluded: js.UndefOr[PrimitiveBoolean] = js.undefined,
+        target: js.UndefOr[DetectMitigationActionsTaskTarget] = js.undefined,
+        taskEndTime: js.UndefOr[Timestamp] = js.undefined,
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined,
+        taskStartTime: js.UndefOr[Timestamp] = js.undefined,
+        taskStatistics: js.UndefOr[DetectMitigationActionsTaskStatistics] = js.undefined,
+        taskStatus: js.UndefOr[DetectMitigationActionsTaskStatus] = js.undefined,
+        violationEventOccurrenceRange: js.UndefOr[ViolationEventOccurrenceRange] = js.undefined
+    ): DetectMitigationActionsTaskSummary = {
+      val __obj = js.Dynamic.literal()
+      actionsDefinition.foreach(__v => __obj.updateDynamic("actionsDefinition")(__v.asInstanceOf[js.Any]))
+      onlyActiveViolationsIncluded.foreach(__v => __obj.updateDynamic("onlyActiveViolationsIncluded")(__v.asInstanceOf[js.Any]))
+      suppressedAlertsIncluded.foreach(__v => __obj.updateDynamic("suppressedAlertsIncluded")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
+      taskEndTime.foreach(__v => __obj.updateDynamic("taskEndTime")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      taskStartTime.foreach(__v => __obj.updateDynamic("taskStartTime")(__v.asInstanceOf[js.Any]))
+      taskStatistics.foreach(__v => __obj.updateDynamic("taskStatistics")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
+      violationEventOccurrenceRange.foreach(__v => __obj.updateDynamic("violationEventOccurrenceRange")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectMitigationActionsTaskSummary]
+    }
+  }
+
+  /** The target of a mitigation action task.
+    */
+  @js.native
+  trait DetectMitigationActionsTaskTarget extends js.Object {
+    var behaviorName: js.UndefOr[BehaviorName]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+    var violationIds: js.UndefOr[TargetViolationIdsForDetectMitigationActions]
+  }
+
+  object DetectMitigationActionsTaskTarget {
+    @inline
+    def apply(
+        behaviorName: js.UndefOr[BehaviorName] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        violationIds: js.UndefOr[TargetViolationIdsForDetectMitigationActions] = js.undefined
+    ): DetectMitigationActionsTaskTarget = {
+      val __obj = js.Dynamic.literal()
+      behaviorName.foreach(__v => __obj.updateDynamic("behaviorName")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      violationIds.foreach(__v => __obj.updateDynamic("violationIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectMitigationActionsTaskTarget]
+    }
+  }
+
   @js.native
   sealed trait DeviceCertificateUpdateAction extends js.Any
   object DeviceCertificateUpdateAction {
@@ -6886,6 +7368,47 @@ package iot {
       batchMode.foreach(__v => __obj.updateDynamic("batchMode")(__v.asInstanceOf[js.Any]))
       separator.foreach(__v => __obj.updateDynamic("separator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirehoseAction]
+    }
+  }
+
+  @js.native
+  trait GetBehaviorModelTrainingSummariesRequest extends js.Object {
+    var maxResults: js.UndefOr[TinyMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var securityProfileName: js.UndefOr[SecurityProfileName]
+  }
+
+  object GetBehaviorModelTrainingSummariesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[TinyMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined
+    ): GetBehaviorModelTrainingSummariesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBehaviorModelTrainingSummariesRequest]
+    }
+  }
+
+  @js.native
+  trait GetBehaviorModelTrainingSummariesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var summaries: js.UndefOr[BehaviorModelTrainingSummaries]
+  }
+
+  object GetBehaviorModelTrainingSummariesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        summaries: js.UndefOr[BehaviorModelTrainingSummaries] = js.undefined
+    ): GetBehaviorModelTrainingSummariesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBehaviorModelTrainingSummariesResponse]
     }
   }
 
@@ -8060,6 +8583,38 @@ package iot {
     }
   }
 
+  /** Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.
+    */
+  @js.native
+  trait KafkaAction extends js.Object {
+    var clientProperties: ClientProperties
+    var destinationArn: AwsArn
+    var topic: String
+    var key: js.UndefOr[String]
+    var partition: js.UndefOr[String]
+  }
+
+  object KafkaAction {
+    @inline
+    def apply(
+        clientProperties: ClientProperties,
+        destinationArn: AwsArn,
+        topic: String,
+        key: js.UndefOr[String] = js.undefined,
+        partition: js.UndefOr[String] = js.undefined
+    ): KafkaAction = {
+      val __obj = js.Dynamic.literal(
+        "clientProperties" -> clientProperties.asInstanceOf[js.Any],
+        "destinationArn" -> destinationArn.asInstanceOf[js.Any],
+        "topic" -> topic.asInstanceOf[js.Any]
+      )
+
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      partition.foreach(__v => __obj.updateDynamic("partition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KafkaAction]
+    }
+  }
+
   /** Describes a key pair.
     */
   @js.native
@@ -8128,6 +8683,8 @@ package iot {
 
   @js.native
   trait ListActiveViolationsRequest extends js.Object {
+    var behaviorCriteriaType: js.UndefOr[BehaviorCriteriaType]
+    var listSuppressedAlerts: js.UndefOr[ListSuppressedAlerts]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var securityProfileName: js.UndefOr[SecurityProfileName]
@@ -8137,12 +8694,16 @@ package iot {
   object ListActiveViolationsRequest {
     @inline
     def apply(
+        behaviorCriteriaType: js.UndefOr[BehaviorCriteriaType] = js.undefined,
+        listSuppressedAlerts: js.UndefOr[ListSuppressedAlerts] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined
     ): ListActiveViolationsRequest = {
       val __obj = js.Dynamic.literal()
+      behaviorCriteriaType.foreach(__v => __obj.updateDynamic("behaviorCriteriaType")(__v.asInstanceOf[js.Any]))
+      listSuppressedAlerts.foreach(__v => __obj.updateDynamic("listSuppressedAlerts")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
@@ -8275,7 +8836,7 @@ package iot {
   @js.native
   trait ListAuditMitigationActionsExecutionsRequest extends js.Object {
     var findingId: FindingId
-    var taskId: AuditMitigationActionsTaskId
+    var taskId: MitigationActionsTaskId
     var actionStatus: js.UndefOr[AuditMitigationActionsExecutionStatus]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
@@ -8285,7 +8846,7 @@ package iot {
     @inline
     def apply(
         findingId: FindingId,
-        taskId: AuditMitigationActionsTaskId,
+        taskId: MitigationActionsTaskId,
         actionStatus: js.UndefOr[AuditMitigationActionsExecutionStatus] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -8697,6 +9258,143 @@ package iot {
       certificates.foreach(__v => __obj.updateDynamic("certificates")(__v.asInstanceOf[js.Any]))
       nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesResponse]
+    }
+  }
+
+  @js.native
+  trait ListCustomMetricsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCustomMetricsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCustomMetricsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomMetricsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCustomMetricsResponse extends js.Object {
+    var metricNames: js.UndefOr[MetricNames]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCustomMetricsResponse {
+    @inline
+    def apply(
+        metricNames: js.UndefOr[MetricNames] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCustomMetricsResponse = {
+      val __obj = js.Dynamic.literal()
+      metricNames.foreach(__v => __obj.updateDynamic("metricNames")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomMetricsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDetectMitigationActionsExecutionsRequest extends js.Object {
+    var endTime: js.UndefOr[Timestamp]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var startTime: js.UndefOr[Timestamp]
+    var taskId: js.UndefOr[MitigationActionsTaskId]
+    var thingName: js.UndefOr[DeviceDefenderThingName]
+    var violationId: js.UndefOr[ViolationId]
+  }
+
+  object ListDetectMitigationActionsExecutionsRequest {
+    @inline
+    def apply(
+        endTime: js.UndefOr[Timestamp] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined,
+        thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined,
+        violationId: js.UndefOr[ViolationId] = js.undefined
+    ): ListDetectMitigationActionsExecutionsRequest = {
+      val __obj = js.Dynamic.literal()
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      violationId.foreach(__v => __obj.updateDynamic("violationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDetectMitigationActionsExecutionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDetectMitigationActionsExecutionsResponse extends js.Object {
+    var actionsExecutions: js.UndefOr[DetectMitigationActionExecutionList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDetectMitigationActionsExecutionsResponse {
+    @inline
+    def apply(
+        actionsExecutions: js.UndefOr[DetectMitigationActionExecutionList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDetectMitigationActionsExecutionsResponse = {
+      val __obj = js.Dynamic.literal()
+      actionsExecutions.foreach(__v => __obj.updateDynamic("actionsExecutions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDetectMitigationActionsExecutionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDetectMitigationActionsTasksRequest extends js.Object {
+    var endTime: Timestamp
+    var startTime: Timestamp
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDetectMitigationActionsTasksRequest {
+    @inline
+    def apply(
+        endTime: Timestamp,
+        startTime: Timestamp,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDetectMitigationActionsTasksRequest = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDetectMitigationActionsTasksRequest]
+    }
+  }
+
+  @js.native
+  trait ListDetectMitigationActionsTasksResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var tasks: js.UndefOr[DetectMitigationActionsTaskSummaryList]
+  }
+
+  object ListDetectMitigationActionsTasksResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        tasks: js.UndefOr[DetectMitigationActionsTaskSummaryList] = js.undefined
+    ): ListDetectMitigationActionsTasksResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDetectMitigationActionsTasksResponse]
     }
   }
 
@@ -9531,6 +10229,7 @@ package iot {
   trait ListSecurityProfilesRequest extends js.Object {
     var dimensionName: js.UndefOr[DimensionName]
     var maxResults: js.UndefOr[MaxResults]
+    var metricName: js.UndefOr[MetricName]
     var nextToken: js.UndefOr[NextToken]
   }
 
@@ -9539,11 +10238,13 @@ package iot {
     def apply(
         dimensionName: js.UndefOr[DimensionName] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
+        metricName: js.UndefOr[MetricName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSecurityProfilesRequest = {
       val __obj = js.Dynamic.literal()
       dimensionName.foreach(__v => __obj.updateDynamic("dimensionName")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesRequest]
     }
@@ -10278,6 +10979,8 @@ package iot {
   trait ListViolationEventsRequest extends js.Object {
     var endTime: Timestamp
     var startTime: Timestamp
+    var behaviorCriteriaType: js.UndefOr[BehaviorCriteriaType]
+    var listSuppressedAlerts: js.UndefOr[ListSuppressedAlerts]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var securityProfileName: js.UndefOr[SecurityProfileName]
@@ -10289,6 +10992,8 @@ package iot {
     def apply(
         endTime: Timestamp,
         startTime: Timestamp,
+        behaviorCriteriaType: js.UndefOr[BehaviorCriteriaType] = js.undefined,
+        listSuppressedAlerts: js.UndefOr[ListSuppressedAlerts] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
@@ -10299,6 +11004,8 @@ package iot {
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
+      behaviorCriteriaType.foreach(__v => __obj.updateDynamic("behaviorCriteriaType")(__v.asInstanceOf[js.Any]))
+      listSuppressedAlerts.foreach(__v => __obj.updateDynamic("listSuppressedAlerts")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
@@ -10414,6 +11121,25 @@ package iot {
     }
   }
 
+  /** The configuration of an ML Detect Security Profile.
+    */
+  @js.native
+  trait MachineLearningDetectionConfig extends js.Object {
+    var confidenceLevel: ConfidenceLevel
+  }
+
+  object MachineLearningDetectionConfig {
+    @inline
+    def apply(
+        confidenceLevel: ConfidenceLevel
+    ): MachineLearningDetectionConfig = {
+      val __obj = js.Dynamic.literal(
+        "confidenceLevel" -> confidenceLevel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MachineLearningDetectionConfig]
+    }
+  }
+
   @js.native
   sealed trait MessageFormat extends js.Any
   object MessageFormat {
@@ -10475,7 +11201,10 @@ package iot {
   trait MetricValue extends js.Object {
     var cidrs: js.UndefOr[Cidrs]
     var count: js.UndefOr[UnsignedLong]
+    var number: js.UndefOr[Number]
+    var numbers: js.UndefOr[NumberList]
     var ports: js.UndefOr[Ports]
+    var strings: js.UndefOr[StringList]
   }
 
   object MetricValue {
@@ -10483,12 +11212,18 @@ package iot {
     def apply(
         cidrs: js.UndefOr[Cidrs] = js.undefined,
         count: js.UndefOr[UnsignedLong] = js.undefined,
-        ports: js.UndefOr[Ports] = js.undefined
+        number: js.UndefOr[Number] = js.undefined,
+        numbers: js.UndefOr[NumberList] = js.undefined,
+        ports: js.UndefOr[Ports] = js.undefined,
+        strings: js.UndefOr[StringList] = js.undefined
     ): MetricValue = {
       val __obj = js.Dynamic.literal()
       cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      number.foreach(__v => __obj.updateDynamic("number")(__v.asInstanceOf[js.Any]))
+      numbers.foreach(__v => __obj.updateDynamic("numbers")(__v.asInstanceOf[js.Any]))
       ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
+      strings.foreach(__v => __obj.updateDynamic("strings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricValue]
     }
   }
@@ -10588,6 +11323,16 @@ package iot {
     val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
     @inline def values = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
+  }
+
+  @js.native
+  sealed trait ModelStatus extends js.Any
+  object ModelStatus {
+    val PENDING_BUILD = "PENDING_BUILD".asInstanceOf[ModelStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[ModelStatus]
+    val EXPIRED = "EXPIRED".asInstanceOf[ModelStatus]
+
+    @inline def values = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
   }
 
   /** Specifies the MQTT context to use for the test authorizer request
@@ -12098,7 +12843,7 @@ package iot {
     var auditCheckToActionsMapping: AuditCheckToActionsMapping
     var clientRequestToken: ClientRequestToken
     var target: AuditMitigationActionsTaskTarget
-    var taskId: AuditMitigationActionsTaskId
+    var taskId: MitigationActionsTaskId
   }
 
   object StartAuditMitigationActionsTaskRequest {
@@ -12107,7 +12852,7 @@ package iot {
         auditCheckToActionsMapping: AuditCheckToActionsMapping,
         clientRequestToken: ClientRequestToken,
         target: AuditMitigationActionsTaskTarget,
-        taskId: AuditMitigationActionsTaskId
+        taskId: MitigationActionsTaskId
     ): StartAuditMitigationActionsTaskRequest = {
       val __obj = js.Dynamic.literal(
         "auditCheckToActionsMapping" -> auditCheckToActionsMapping.asInstanceOf[js.Any],
@@ -12121,17 +12866,69 @@ package iot {
 
   @js.native
   trait StartAuditMitigationActionsTaskResponse extends js.Object {
-    var taskId: js.UndefOr[AuditMitigationActionsTaskId]
+    var taskId: js.UndefOr[MitigationActionsTaskId]
   }
 
   object StartAuditMitigationActionsTaskResponse {
     @inline
     def apply(
-        taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined
     ): StartAuditMitigationActionsTaskResponse = {
       val __obj = js.Dynamic.literal()
       taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAuditMitigationActionsTaskResponse]
+    }
+  }
+
+  @js.native
+  trait StartDetectMitigationActionsTaskRequest extends js.Object {
+    var actions: DetectMitigationActionsToExecuteList
+    var clientRequestToken: ClientRequestToken
+    var target: DetectMitigationActionsTaskTarget
+    var taskId: MitigationActionsTaskId
+    var includeOnlyActiveViolations: js.UndefOr[NullableBoolean]
+    var includeSuppressedAlerts: js.UndefOr[NullableBoolean]
+    var violationEventOccurrenceRange: js.UndefOr[ViolationEventOccurrenceRange]
+  }
+
+  object StartDetectMitigationActionsTaskRequest {
+    @inline
+    def apply(
+        actions: DetectMitigationActionsToExecuteList,
+        clientRequestToken: ClientRequestToken,
+        target: DetectMitigationActionsTaskTarget,
+        taskId: MitigationActionsTaskId,
+        includeOnlyActiveViolations: js.UndefOr[NullableBoolean] = js.undefined,
+        includeSuppressedAlerts: js.UndefOr[NullableBoolean] = js.undefined,
+        violationEventOccurrenceRange: js.UndefOr[ViolationEventOccurrenceRange] = js.undefined
+    ): StartDetectMitigationActionsTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "actions" -> actions.asInstanceOf[js.Any],
+        "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
+        "target" -> target.asInstanceOf[js.Any],
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      )
+
+      includeOnlyActiveViolations.foreach(__v => __obj.updateDynamic("includeOnlyActiveViolations")(__v.asInstanceOf[js.Any]))
+      includeSuppressedAlerts.foreach(__v => __obj.updateDynamic("includeSuppressedAlerts")(__v.asInstanceOf[js.Any]))
+      violationEventOccurrenceRange.foreach(__v => __obj.updateDynamic("violationEventOccurrenceRange")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDetectMitigationActionsTaskRequest]
+    }
+  }
+
+  @js.native
+  trait StartDetectMitigationActionsTaskResponse extends js.Object {
+    var taskId: js.UndefOr[MitigationActionsTaskId]
+  }
+
+  object StartDetectMitigationActionsTaskResponse {
+    @inline
+    def apply(
+        taskId: js.UndefOr[MitigationActionsTaskId] = js.undefined
+    ): StartDetectMitigationActionsTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDetectMitigationActionsTaskResponse]
     }
   }
 
@@ -12234,7 +13031,7 @@ package iot {
     }
   }
 
-  /** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.
+  /** A statistical ranking (percentile) that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.
     */
   @js.native
   trait StatisticalThreshold extends js.Object {
@@ -13177,24 +13974,33 @@ package iot {
   @js.native
   trait TopicRuleDestination extends js.Object {
     var arn: js.UndefOr[AwsArn]
+    var createdAt: js.UndefOr[CreatedAtDate]
     var httpUrlProperties: js.UndefOr[HttpUrlDestinationProperties]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAtDate]
     var status: js.UndefOr[TopicRuleDestinationStatus]
     var statusReason: js.UndefOr[String]
+    var vpcProperties: js.UndefOr[VpcDestinationProperties]
   }
 
   object TopicRuleDestination {
     @inline
     def apply(
         arn: js.UndefOr[AwsArn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
         httpUrlProperties: js.UndefOr[HttpUrlDestinationProperties] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAtDate] = js.undefined,
         status: js.UndefOr[TopicRuleDestinationStatus] = js.undefined,
-        statusReason: js.UndefOr[String] = js.undefined
+        statusReason: js.UndefOr[String] = js.undefined,
+        vpcProperties: js.UndefOr[VpcDestinationProperties] = js.undefined
     ): TopicRuleDestination = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       httpUrlProperties.foreach(__v => __obj.updateDynamic("httpUrlProperties")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      vpcProperties.foreach(__v => __obj.updateDynamic("vpcProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicRuleDestination]
     }
   }
@@ -13204,15 +14010,18 @@ package iot {
   @js.native
   trait TopicRuleDestinationConfiguration extends js.Object {
     var httpUrlConfiguration: js.UndefOr[HttpUrlDestinationConfiguration]
+    var vpcConfiguration: js.UndefOr[VpcDestinationConfiguration]
   }
 
   object TopicRuleDestinationConfiguration {
     @inline
     def apply(
-        httpUrlConfiguration: js.UndefOr[HttpUrlDestinationConfiguration] = js.undefined
+        httpUrlConfiguration: js.UndefOr[HttpUrlDestinationConfiguration] = js.undefined,
+        vpcConfiguration: js.UndefOr[VpcDestinationConfiguration] = js.undefined
     ): TopicRuleDestinationConfiguration = {
       val __obj = js.Dynamic.literal()
       httpUrlConfiguration.foreach(__v => __obj.updateDynamic("httpUrlConfiguration")(__v.asInstanceOf[js.Any]))
+      vpcConfiguration.foreach(__v => __obj.updateDynamic("vpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicRuleDestinationConfiguration]
     }
   }
@@ -13224,8 +14033,9 @@ package iot {
     val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TopicRuleDestinationStatus]
     val DISABLED = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
     val ERROR = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
+    val DELETING = "DELETING".asInstanceOf[TopicRuleDestinationStatus]
 
-    @inline def values = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR)
+    @inline def values = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
   }
 
   /** Information about the topic rule destination.
@@ -13233,24 +14043,33 @@ package iot {
   @js.native
   trait TopicRuleDestinationSummary extends js.Object {
     var arn: js.UndefOr[AwsArn]
+    var createdAt: js.UndefOr[CreatedAtDate]
     var httpUrlSummary: js.UndefOr[HttpUrlDestinationSummary]
+    var lastUpdatedAt: js.UndefOr[LastUpdatedAtDate]
     var status: js.UndefOr[TopicRuleDestinationStatus]
     var statusReason: js.UndefOr[String]
+    var vpcDestinationSummary: js.UndefOr[VpcDestinationSummary]
   }
 
   object TopicRuleDestinationSummary {
     @inline
     def apply(
         arn: js.UndefOr[AwsArn] = js.undefined,
+        createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
         httpUrlSummary: js.UndefOr[HttpUrlDestinationSummary] = js.undefined,
+        lastUpdatedAt: js.UndefOr[LastUpdatedAtDate] = js.undefined,
         status: js.UndefOr[TopicRuleDestinationStatus] = js.undefined,
-        statusReason: js.UndefOr[String] = js.undefined
+        statusReason: js.UndefOr[String] = js.undefined,
+        vpcDestinationSummary: js.UndefOr[VpcDestinationSummary] = js.undefined
     ): TopicRuleDestinationSummary = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       httpUrlSummary.foreach(__v => __obj.updateDynamic("httpUrlSummary")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      vpcDestinationSummary.foreach(__v => __obj.updateDynamic("vpcDestinationSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicRuleDestinationSummary]
     }
   }
@@ -13658,6 +14477,57 @@ package iot {
         "newStatus" -> newStatus.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCustomMetricRequest extends js.Object {
+    var displayName: CustomMetricDisplayName
+    var metricName: MetricName
+  }
+
+  object UpdateCustomMetricRequest {
+    @inline
+    def apply(
+        displayName: CustomMetricDisplayName,
+        metricName: MetricName
+    ): UpdateCustomMetricRequest = {
+      val __obj = js.Dynamic.literal(
+        "displayName" -> displayName.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateCustomMetricRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCustomMetricResponse extends js.Object {
+    var creationDate: js.UndefOr[Timestamp]
+    var displayName: js.UndefOr[CustomMetricDisplayName]
+    var lastModifiedDate: js.UndefOr[Timestamp]
+    var metricArn: js.UndefOr[CustomMetricArn]
+    var metricName: js.UndefOr[MetricName]
+    var metricType: js.UndefOr[CustomMetricType]
+  }
+
+  object UpdateCustomMetricResponse {
+    @inline
+    def apply(
+        creationDate: js.UndefOr[Timestamp] = js.undefined,
+        displayName: js.UndefOr[CustomMetricDisplayName] = js.undefined,
+        lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+        metricArn: js.UndefOr[CustomMetricArn] = js.undefined,
+        metricName: js.UndefOr[MetricName] = js.undefined,
+        metricType: js.UndefOr[CustomMetricType] = js.undefined
+    ): UpdateCustomMetricResponse = {
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      metricArn.foreach(__v => __obj.updateDynamic("metricArn")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      metricType.foreach(__v => __obj.updateDynamic("metricType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCustomMetricResponse]
     }
   }
 
@@ -14452,6 +15322,7 @@ package iot {
     var metricValue: js.UndefOr[MetricValue]
     var securityProfileName: js.UndefOr[SecurityProfileName]
     var thingName: js.UndefOr[DeviceDefenderThingName]
+    var violationEventAdditionalInfo: js.UndefOr[ViolationEventAdditionalInfo]
     var violationEventTime: js.UndefOr[Timestamp]
     var violationEventType: js.UndefOr[ViolationEventType]
     var violationId: js.UndefOr[ViolationId]
@@ -14464,6 +15335,7 @@ package iot {
         metricValue: js.UndefOr[MetricValue] = js.undefined,
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined,
+        violationEventAdditionalInfo: js.UndefOr[ViolationEventAdditionalInfo] = js.undefined,
         violationEventTime: js.UndefOr[Timestamp] = js.undefined,
         violationEventType: js.UndefOr[ViolationEventType] = js.undefined,
         violationId: js.UndefOr[ViolationId] = js.undefined
@@ -14473,10 +15345,51 @@ package iot {
       metricValue.foreach(__v => __obj.updateDynamic("metricValue")(__v.asInstanceOf[js.Any]))
       securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
       thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      violationEventAdditionalInfo.foreach(__v => __obj.updateDynamic("violationEventAdditionalInfo")(__v.asInstanceOf[js.Any]))
       violationEventTime.foreach(__v => __obj.updateDynamic("violationEventTime")(__v.asInstanceOf[js.Any]))
       violationEventType.foreach(__v => __obj.updateDynamic("violationEventType")(__v.asInstanceOf[js.Any]))
       violationId.foreach(__v => __obj.updateDynamic("violationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ViolationEvent]
+    }
+  }
+
+  /** The details of a violation event.
+    */
+  @js.native
+  trait ViolationEventAdditionalInfo extends js.Object {
+    var confidenceLevel: js.UndefOr[ConfidenceLevel]
+  }
+
+  object ViolationEventAdditionalInfo {
+    @inline
+    def apply(
+        confidenceLevel: js.UndefOr[ConfidenceLevel] = js.undefined
+    ): ViolationEventAdditionalInfo = {
+      val __obj = js.Dynamic.literal()
+      confidenceLevel.foreach(__v => __obj.updateDynamic("confidenceLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ViolationEventAdditionalInfo]
+    }
+  }
+
+  /** Specifies the time period of which violation events occurred between.
+    */
+  @js.native
+  trait ViolationEventOccurrenceRange extends js.Object {
+    var endTime: Timestamp
+    var startTime: Timestamp
+  }
+
+  object ViolationEventOccurrenceRange {
+    @inline
+    def apply(
+        endTime: Timestamp,
+        startTime: Timestamp
+    ): ViolationEventOccurrenceRange = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ViolationEventOccurrenceRange]
     }
   }
 
@@ -14488,5 +15401,88 @@ package iot {
     val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
 
     @inline def values = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
+  }
+
+  /** The configuration information for a virtual private cloud (VPC) destination.
+    */
+  @js.native
+  trait VpcDestinationConfiguration extends js.Object {
+    var roleArn: AwsArn
+    var subnetIds: SubnetIdList
+    var vpcId: VpcId
+    var securityGroups: js.UndefOr[SecurityGroupList]
+  }
+
+  object VpcDestinationConfiguration {
+    @inline
+    def apply(
+        roleArn: AwsArn,
+        subnetIds: SubnetIdList,
+        vpcId: VpcId,
+        securityGroups: js.UndefOr[SecurityGroupList] = js.undefined
+    ): VpcDestinationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "subnetIds" -> subnetIds.asInstanceOf[js.Any],
+        "vpcId" -> vpcId.asInstanceOf[js.Any]
+      )
+
+      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcDestinationConfiguration]
+    }
+  }
+
+  /** The properties of a virtual private cloud (VPC) destination.
+    */
+  @js.native
+  trait VpcDestinationProperties extends js.Object {
+    var roleArn: js.UndefOr[AwsArn]
+    var securityGroups: js.UndefOr[SecurityGroupList]
+    var subnetIds: js.UndefOr[SubnetIdList]
+    var vpcId: js.UndefOr[VpcId]
+  }
+
+  object VpcDestinationProperties {
+    @inline
+    def apply(
+        roleArn: js.UndefOr[AwsArn] = js.undefined,
+        securityGroups: js.UndefOr[SecurityGroupList] = js.undefined,
+        subnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        vpcId: js.UndefOr[VpcId] = js.undefined
+    ): VpcDestinationProperties = {
+      val __obj = js.Dynamic.literal()
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
+      subnetIds.foreach(__v => __obj.updateDynamic("subnetIds")(__v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcDestinationProperties]
+    }
+  }
+
+  /** The summary of a virtual private cloud (VPC) destination.
+    */
+  @js.native
+  trait VpcDestinationSummary extends js.Object {
+    var roleArn: js.UndefOr[AwsArn]
+    var securityGroups: js.UndefOr[SecurityGroupList]
+    var subnetIds: js.UndefOr[SubnetIdList]
+    var vpcId: js.UndefOr[VpcId]
+  }
+
+  object VpcDestinationSummary {
+    @inline
+    def apply(
+        roleArn: js.UndefOr[AwsArn] = js.undefined,
+        securityGroups: js.UndefOr[SecurityGroupList] = js.undefined,
+        subnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        vpcId: js.UndefOr[VpcId] = js.undefined
+    ): VpcDestinationSummary = {
+      val __obj = js.Dynamic.literal()
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
+      subnetIds.foreach(__v => __obj.updateDynamic("subnetIds")(__v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcDestinationSummary]
+    }
   }
 }

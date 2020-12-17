@@ -992,7 +992,6 @@ package gamelift {
   @js.native
   trait CreateMatchmakingConfigurationInput extends js.Object {
     var AcceptanceRequired: BooleanModel
-    var GameSessionQueueArns: QueueArnsList
     var Name: MatchmakingIdStringModel
     var RequestTimeoutSeconds: MatchmakingRequestTimeoutInteger
     var RuleSetName: MatchmakingRuleSetName
@@ -1001,8 +1000,10 @@ package gamelift {
     var BackfillMode: js.UndefOr[BackfillMode]
     var CustomEventData: js.UndefOr[CustomEventData]
     var Description: js.UndefOr[NonZeroAndMaxString]
+    var FlexMatchMode: js.UndefOr[FlexMatchMode]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionData: js.UndefOr[GameSessionData]
+    var GameSessionQueueArns: js.UndefOr[QueueArnsList]
     var NotificationTarget: js.UndefOr[SnsArnStringModel]
     var Tags: js.UndefOr[TagList]
   }
@@ -1011,7 +1012,6 @@ package gamelift {
     @inline
     def apply(
         AcceptanceRequired: BooleanModel,
-        GameSessionQueueArns: QueueArnsList,
         Name: MatchmakingIdStringModel,
         RequestTimeoutSeconds: MatchmakingRequestTimeoutInteger,
         RuleSetName: MatchmakingRuleSetName,
@@ -1020,14 +1020,15 @@ package gamelift {
         BackfillMode: js.UndefOr[BackfillMode] = js.undefined,
         CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        FlexMatchMode: js.UndefOr[FlexMatchMode] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
         NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateMatchmakingConfigurationInput = {
       val __obj = js.Dynamic.literal(
         "AcceptanceRequired" -> AcceptanceRequired.asInstanceOf[js.Any],
-        "GameSessionQueueArns" -> GameSessionQueueArns.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any],
         "RequestTimeoutSeconds" -> RequestTimeoutSeconds.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
@@ -1038,8 +1039,10 @@ package gamelift {
       BackfillMode.foreach(__v => __obj.updateDynamic("BackfillMode")(__v.asInstanceOf[js.Any]))
       CustomEventData.foreach(__v => __obj.updateDynamic("CustomEventData")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FlexMatchMode.foreach(__v => __obj.updateDynamic("FlexMatchMode")(__v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
       GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionQueueArns.foreach(__v => __obj.updateDynamic("GameSessionQueueArns")(__v.asInstanceOf[js.Any]))
       NotificationTarget.foreach(__v => __obj.updateDynamic("NotificationTarget")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMatchmakingConfigurationInput]
@@ -2799,6 +2802,14 @@ package gamelift {
     val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[EC2InstanceType]
     val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[EC2InstanceType]
     val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.large` = "c5a.large".asInstanceOf[EC2InstanceType]
+    val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[EC2InstanceType]
+    val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[EC2InstanceType]
     val `r3.large` = "r3.large".asInstanceOf[EC2InstanceType]
     val `r3.xlarge` = "r3.xlarge".asInstanceOf[EC2InstanceType]
     val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[EC2InstanceType]
@@ -2818,6 +2829,14 @@ package gamelift {
     val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[EC2InstanceType]
     val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[EC2InstanceType]
     val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.large` = "r5a.large".asInstanceOf[EC2InstanceType]
+    val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[EC2InstanceType]
+    val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[EC2InstanceType]
     val `m3.medium` = "m3.medium".asInstanceOf[EC2InstanceType]
     val `m3.large` = "m3.large".asInstanceOf[EC2InstanceType]
     val `m3.xlarge` = "m3.xlarge".asInstanceOf[EC2InstanceType]
@@ -2835,6 +2854,14 @@ package gamelift {
     val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[EC2InstanceType]
     val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
     val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.large` = "m5a.large".asInstanceOf[EC2InstanceType]
+    val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[EC2InstanceType]
+    val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[EC2InstanceType]
 
     @inline def values = js.Array(
       `t2.micro`,
@@ -2859,6 +2886,14 @@ package gamelift {
       `c5.12xlarge`,
       `c5.18xlarge`,
       `c5.24xlarge`,
+      `c5a.large`,
+      `c5a.xlarge`,
+      `c5a.2xlarge`,
+      `c5a.4xlarge`,
+      `c5a.8xlarge`,
+      `c5a.12xlarge`,
+      `c5a.16xlarge`,
+      `c5a.24xlarge`,
       `r3.large`,
       `r3.xlarge`,
       `r3.2xlarge`,
@@ -2878,6 +2913,14 @@ package gamelift {
       `r5.12xlarge`,
       `r5.16xlarge`,
       `r5.24xlarge`,
+      `r5a.large`,
+      `r5a.xlarge`,
+      `r5a.2xlarge`,
+      `r5a.4xlarge`,
+      `r5a.8xlarge`,
+      `r5a.12xlarge`,
+      `r5a.16xlarge`,
+      `r5a.24xlarge`,
       `m3.medium`,
       `m3.large`,
       `m3.xlarge`,
@@ -2894,7 +2937,15 @@ package gamelift {
       `m5.8xlarge`,
       `m5.12xlarge`,
       `m5.16xlarge`,
-      `m5.24xlarge`
+      `m5.24xlarge`,
+      `m5a.large`,
+      `m5a.xlarge`,
+      `m5a.2xlarge`,
+      `m5a.4xlarge`,
+      `m5a.8xlarge`,
+      `m5a.12xlarge`,
+      `m5a.16xlarge`,
+      `m5a.24xlarge`
     )
   }
 
@@ -3192,6 +3243,15 @@ package gamelift {
       MaximumPlayerSessionCount.foreach(__v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetUtilization]
     }
+  }
+
+  @js.native
+  sealed trait FlexMatchMode extends js.Any
+  object FlexMatchMode {
+    val STANDALONE = "STANDALONE".asInstanceOf[FlexMatchMode]
+    val WITH_QUEUE = "WITH_QUEUE".asInstanceOf[FlexMatchMode]
+
+    @inline def values = js.Array(STANDALONE, WITH_QUEUE)
   }
 
   /** Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create| Amazon GameLift Developer Guide]].
@@ -3640,7 +3700,7 @@ package gamelift {
     }
   }
 
-  /** Connection information for the new game session that is created with matchmaking. (with <a>StartMatchmaking</a>). Once a match is set, the FlexMatch engine places the match and creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
+  /** Connection information for a new game session that is created in response to a <a>StartMatchmaking</a> request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
     */
   @js.native
   trait GameSessionConnectionInfo extends js.Object {
@@ -4448,6 +4508,7 @@ package gamelift {
     var CreationTime: js.UndefOr[Timestamp]
     var CustomEventData: js.UndefOr[CustomEventData]
     var Description: js.UndefOr[NonZeroAndMaxString]
+    var FlexMatchMode: js.UndefOr[FlexMatchMode]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionData: js.UndefOr[GameSessionData]
     var GameSessionQueueArns: js.UndefOr[QueueArnsList]
@@ -4469,6 +4530,7 @@ package gamelift {
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        FlexMatchMode: js.UndefOr[FlexMatchMode] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
         GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
@@ -4487,6 +4549,7 @@ package gamelift {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       CustomEventData.foreach(__v => __obj.updateDynamic("CustomEventData")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FlexMatchMode.foreach(__v => __obj.updateDynamic("FlexMatchMode")(__v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
       GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
       GameSessionQueueArns.foreach(__v => __obj.updateDynamic("GameSessionQueueArns")(__v.asInstanceOf[js.Any]))
@@ -4515,7 +4578,7 @@ package gamelift {
   }
 
   /** Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.
-    * A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html|Build a FlexMatch Rule Set]].
+    * A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html|Build a FlexMatch Rule Set]].
     * * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled.
     * * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.
     * * Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role.
@@ -5495,8 +5558,8 @@ package gamelift {
   @js.native
   trait StartMatchBackfillInput extends js.Object {
     var ConfigurationName: MatchmakingConfigurationName
-    var GameSessionArn: ArnStringModel
     var Players: PlayerList
+    var GameSessionArn: js.UndefOr[ArnStringModel]
     var TicketId: js.UndefOr[MatchmakingIdStringModel]
   }
 
@@ -5504,16 +5567,16 @@ package gamelift {
     @inline
     def apply(
         ConfigurationName: MatchmakingConfigurationName,
-        GameSessionArn: ArnStringModel,
         Players: PlayerList,
+        GameSessionArn: js.UndefOr[ArnStringModel] = js.undefined,
         TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): StartMatchBackfillInput = {
       val __obj = js.Dynamic.literal(
         "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any],
-        "GameSessionArn" -> GameSessionArn.asInstanceOf[js.Any],
         "Players" -> Players.asInstanceOf[js.Any]
       )
 
+      GameSessionArn.foreach(__v => __obj.updateDynamic("GameSessionArn")(__v.asInstanceOf[js.Any]))
       TicketId.foreach(__v => __obj.updateDynamic("TicketId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMatchBackfillInput]
     }
@@ -6291,6 +6354,7 @@ package gamelift {
     var BackfillMode: js.UndefOr[BackfillMode]
     var CustomEventData: js.UndefOr[CustomEventData]
     var Description: js.UndefOr[NonZeroAndMaxString]
+    var FlexMatchMode: js.UndefOr[FlexMatchMode]
     var GameProperties: js.UndefOr[GamePropertyList]
     var GameSessionData: js.UndefOr[GameSessionData]
     var GameSessionQueueArns: js.UndefOr[QueueArnsList]
@@ -6309,6 +6373,7 @@ package gamelift {
         BackfillMode: js.UndefOr[BackfillMode] = js.undefined,
         CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        FlexMatchMode: js.UndefOr[FlexMatchMode] = js.undefined,
         GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
         GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
@@ -6326,6 +6391,7 @@ package gamelift {
       BackfillMode.foreach(__v => __obj.updateDynamic("BackfillMode")(__v.asInstanceOf[js.Any]))
       CustomEventData.foreach(__v => __obj.updateDynamic("CustomEventData")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FlexMatchMode.foreach(__v => __obj.updateDynamic("FlexMatchMode")(__v.asInstanceOf[js.Any]))
       GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
       GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
       GameSessionQueueArns.foreach(__v => __obj.updateDynamic("GameSessionQueueArns")(__v.asInstanceOf[js.Any]))

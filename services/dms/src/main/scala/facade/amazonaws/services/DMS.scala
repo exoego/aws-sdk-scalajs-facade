@@ -4310,8 +4310,10 @@ package dms {
     var BucketName: js.UndefOr[String]
     var CdcInsertsAndUpdates: js.UndefOr[BooleanOptional]
     var CdcInsertsOnly: js.UndefOr[BooleanOptional]
+    var CdcPath: js.UndefOr[String]
     var CompressionType: js.UndefOr[CompressionTypeValue]
     var CsvDelimiter: js.UndefOr[String]
+    var CsvNoSupValue: js.UndefOr[String]
     var CsvRowDelimiter: js.UndefOr[String]
     var DataFormat: js.UndefOr[DataFormatValue]
     var DataPageSize: js.UndefOr[IntegerOptional]
@@ -4326,10 +4328,12 @@ package dms {
     var IncludeOpForFullLoad: js.UndefOr[BooleanOptional]
     var ParquetTimestampInMillisecond: js.UndefOr[BooleanOptional]
     var ParquetVersion: js.UndefOr[ParquetVersionValue]
+    var PreserveTransactions: js.UndefOr[BooleanOptional]
     var RowGroupLength: js.UndefOr[IntegerOptional]
     var ServerSideEncryptionKmsKeyId: js.UndefOr[String]
     var ServiceAccessRoleArn: js.UndefOr[String]
     var TimestampColumnName: js.UndefOr[String]
+    var UseCsvNoSupValue: js.UndefOr[BooleanOptional]
   }
 
   object S3Settings {
@@ -4339,8 +4343,10 @@ package dms {
         BucketName: js.UndefOr[String] = js.undefined,
         CdcInsertsAndUpdates: js.UndefOr[BooleanOptional] = js.undefined,
         CdcInsertsOnly: js.UndefOr[BooleanOptional] = js.undefined,
+        CdcPath: js.UndefOr[String] = js.undefined,
         CompressionType: js.UndefOr[CompressionTypeValue] = js.undefined,
         CsvDelimiter: js.UndefOr[String] = js.undefined,
+        CsvNoSupValue: js.UndefOr[String] = js.undefined,
         CsvRowDelimiter: js.UndefOr[String] = js.undefined,
         DataFormat: js.UndefOr[DataFormatValue] = js.undefined,
         DataPageSize: js.UndefOr[IntegerOptional] = js.undefined,
@@ -4355,18 +4361,22 @@ package dms {
         IncludeOpForFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
         ParquetTimestampInMillisecond: js.UndefOr[BooleanOptional] = js.undefined,
         ParquetVersion: js.UndefOr[ParquetVersionValue] = js.undefined,
+        PreserveTransactions: js.UndefOr[BooleanOptional] = js.undefined,
         RowGroupLength: js.UndefOr[IntegerOptional] = js.undefined,
         ServerSideEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
         ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
-        TimestampColumnName: js.UndefOr[String] = js.undefined
+        TimestampColumnName: js.UndefOr[String] = js.undefined,
+        UseCsvNoSupValue: js.UndefOr[BooleanOptional] = js.undefined
     ): S3Settings = {
       val __obj = js.Dynamic.literal()
       BucketFolder.foreach(__v => __obj.updateDynamic("BucketFolder")(__v.asInstanceOf[js.Any]))
       BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
       CdcInsertsAndUpdates.foreach(__v => __obj.updateDynamic("CdcInsertsAndUpdates")(__v.asInstanceOf[js.Any]))
       CdcInsertsOnly.foreach(__v => __obj.updateDynamic("CdcInsertsOnly")(__v.asInstanceOf[js.Any]))
+      CdcPath.foreach(__v => __obj.updateDynamic("CdcPath")(__v.asInstanceOf[js.Any]))
       CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
       CsvDelimiter.foreach(__v => __obj.updateDynamic("CsvDelimiter")(__v.asInstanceOf[js.Any]))
+      CsvNoSupValue.foreach(__v => __obj.updateDynamic("CsvNoSupValue")(__v.asInstanceOf[js.Any]))
       CsvRowDelimiter.foreach(__v => __obj.updateDynamic("CsvRowDelimiter")(__v.asInstanceOf[js.Any]))
       DataFormat.foreach(__v => __obj.updateDynamic("DataFormat")(__v.asInstanceOf[js.Any]))
       DataPageSize.foreach(__v => __obj.updateDynamic("DataPageSize")(__v.asInstanceOf[js.Any]))
@@ -4381,10 +4391,12 @@ package dms {
       IncludeOpForFullLoad.foreach(__v => __obj.updateDynamic("IncludeOpForFullLoad")(__v.asInstanceOf[js.Any]))
       ParquetTimestampInMillisecond.foreach(__v => __obj.updateDynamic("ParquetTimestampInMillisecond")(__v.asInstanceOf[js.Any]))
       ParquetVersion.foreach(__v => __obj.updateDynamic("ParquetVersion")(__v.asInstanceOf[js.Any]))
+      PreserveTransactions.foreach(__v => __obj.updateDynamic("PreserveTransactions")(__v.asInstanceOf[js.Any]))
       RowGroupLength.foreach(__v => __obj.updateDynamic("RowGroupLength")(__v.asInstanceOf[js.Any]))
       ServerSideEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
       TimestampColumnName.foreach(__v => __obj.updateDynamic("TimestampColumnName")(__v.asInstanceOf[js.Any]))
+      UseCsvNoSupValue.foreach(__v => __obj.updateDynamic("UseCsvNoSupValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Settings]
     }
   }

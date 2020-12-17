@@ -137,6 +137,8 @@ package pi {
   }
 
   /** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.
+    *
+    * '''Note:'''Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.
     */
   @js.native
   trait DimensionGroup extends js.Object {
@@ -253,21 +255,7 @@ package pi {
     }
   }
 
-  /** The request failed due to an unknown error.
-    */
-  @js.native
-  trait InternalServiceErrorException extends js.Object {
-    val Message: String
-  }
-
-  /** One of the arguments provided is invalid for this request.
-    */
-  @js.native
-  trait InvalidArgumentExceptionException extends js.Object {
-    val Message: String
-  }
-
-  /** A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.
+  /** A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.
     */
   @js.native
   trait MetricKeyDataPoints extends js.Object {
@@ -312,13 +300,6 @@ package pi {
       GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricQuery]
     }
-  }
-
-  /** The user is not authorized to perform this request.
-    */
-  @js.native
-  trait NotAuthorizedExceptionException extends js.Object {
-    val Message: String
   }
 
   /** If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension.

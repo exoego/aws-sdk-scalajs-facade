@@ -145,7 +145,7 @@ package fsx {
     }
   }
 
-  /** Describes a specific Amazon FSx Administrative Action for the current Windows file system.
+  /** Describes a specific Amazon FSx administrative action for the current Windows or Lustre file system.
     */
   @js.native
   trait AdministrativeAction extends js.Object {
@@ -198,8 +198,11 @@ package fsx {
 
   /** Describes the type of administrative action, as follows:
     * * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system).
-    * * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. Storage optimization is the process of migrating the file system data to the new, larger disks. You can track the storage migration progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing Storage Capacity]].
-    * * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system. For more information, see .
+    * * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.
+    * <li> For Windows, storage optimization is the process of migrating the file system data to the new, larger disks.
+    * * For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.
+    * You can track the storage optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing storage capacity]] in the <i>Amazon FSx for Windows File Server User Guide</i> and [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html|Managing storage and throughput capacity]] in the <i>Amazon FSx for Lustre User Guide</i>.
+    * </li> * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system. For more information, see .
     * * <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see .
     */
   @js.native
@@ -300,7 +303,9 @@ package fsx {
     @inline def values = js.Array(NONE, NEW, NEW_CHANGED)
   }
 
-  /** A backup of an Amazon FSx for file system.
+  /** A backup of an Amazon FSx file system. For more information see:
+    * * [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html|Working with backups for Windows file systems]]
+    * * [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html|Working with backups for Lustre file systems]]
     */
   @js.native
   trait Backup extends js.Object {
@@ -370,9 +375,10 @@ package fsx {
 
   /** The lifecycle status of the backup.
     * * <code>AVAILABLE</code> - The backup is fully available.
-    * * <code>CREATING</code> - FSx is creating the new user-intiated backup
-    * * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; FSx is backing up the file system.
-    * * <code>DELETED</code> - The backup was deleted is no longer available.
+    * * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.
+    * * <code>CREATING</code> - Amazon FSx is creating the new user-intiated backup
+    * * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system.
+    * * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
     * * <code>FAILED</code> - Amazon FSx could not complete the backup.
     */
   @js.native
@@ -383,8 +389,9 @@ package fsx {
     val TRANSFERRING = "TRANSFERRING".asInstanceOf[BackupLifecycle]
     val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
     val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
+    val PENDING = "PENDING".asInstanceOf[BackupLifecycle]
 
-    @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED)
+    @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED, PENDING)
   }
 
   /** The type of the backup.
