@@ -8,7 +8,7 @@ import scala.concurrent.ExecutionContext
 class S3Test extends AsyncFunSuite {
   override implicit val executionContext = ExecutionContext.Implicits.global
 
-  val service = new S3(AWSConfig(endpoint = "localhost"))
+  val service = new S3(AWSConfig(endpoint = "http://localhost"))
 
   test("upload") {
     val upload = service.upload(PutObjectRequest(

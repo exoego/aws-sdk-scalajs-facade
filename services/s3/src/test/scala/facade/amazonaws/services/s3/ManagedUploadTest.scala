@@ -16,7 +16,7 @@ class ManagedUploadTest extends AsyncFunSuite {
         Key = "test",
         Body = ""
       ),
-      service = new s3.S3(AWSConfig(endpoint = "localhost"))
+      service = new s3.S3(AWSConfig(endpoint = "http://localhost"))
     ))
 
     assert(instance.maxTotalParts > 0)
