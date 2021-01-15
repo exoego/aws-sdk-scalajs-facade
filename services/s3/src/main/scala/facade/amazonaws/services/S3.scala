@@ -384,14 +384,20 @@ package object s3 {
       * Note that this is the only operation for which the SDK can retry requests with stream bodies.
       * @return The response data from the successful upload
       */
-    def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = service.upload(params).sendFuture()
+    def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = {
+      import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
+      service.upload(params).sendFuture()
+    }
 
     /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
       * You can configure the concurrent queue size by setting options.
       * Note that this is the only operation for which the SDK can retry requests with stream bodies.
       * @return The response data from the successful upload
       */
-    def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = service.upload(params, options).sendFuture()
+    def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = {
+      import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
+      service.upload(params, options).sendFuture()
+    }
 
   }
 
