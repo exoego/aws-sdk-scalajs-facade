@@ -50,6 +50,7 @@ package object servicecatalogappregistry {
     @inline def listAssociatedResourcesFuture(params: ListAssociatedResourcesRequest): Future[ListAssociatedResourcesResponse] = service.listAssociatedResources(params).promise().toFuture
     @inline def listAttributeGroupsFuture(params: ListAttributeGroupsRequest): Future[ListAttributeGroupsResponse] = service.listAttributeGroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def syncResourceFuture(params: SyncResourceRequest): Future[SyncResourceResponse] = service.syncResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
@@ -79,6 +80,7 @@ package servicecatalogappregistry {
     def listAssociatedResources(params: ListAssociatedResourcesRequest): Request[ListAssociatedResourcesResponse] = js.native
     def listAttributeGroups(params: ListAttributeGroupsRequest): Request[ListAttributeGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def syncResource(params: SyncResourceRequest): Request[SyncResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
@@ -870,6 +872,57 @@ package servicecatalogappregistry {
     val CFN_STACK = "CFN_STACK".asInstanceOf[ResourceType]
 
     @inline def values = js.Array(CFN_STACK)
+  }
+
+  @js.native
+  sealed trait SyncAction extends js.Any
+  object SyncAction {
+    val START_SYNC = "START_SYNC".asInstanceOf[SyncAction]
+    val NO_ACTION = "NO_ACTION".asInstanceOf[SyncAction]
+
+    @inline def values = js.Array(START_SYNC, NO_ACTION)
+  }
+
+  @js.native
+  trait SyncResourceRequest extends js.Object {
+    var resource: ResourceSpecifier
+    var resourceType: ResourceType
+  }
+
+  object SyncResourceRequest {
+    @inline
+    def apply(
+        resource: ResourceSpecifier,
+        resourceType: ResourceType
+    ): SyncResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resource" -> resource.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SyncResourceRequest]
+    }
+  }
+
+  @js.native
+  trait SyncResourceResponse extends js.Object {
+    var actionTaken: js.UndefOr[SyncAction]
+    var applicationArn: js.UndefOr[ApplicationArn]
+    var resourceArn: js.UndefOr[Arn]
+  }
+
+  object SyncResourceResponse {
+    @inline
+    def apply(
+        actionTaken: js.UndefOr[SyncAction] = js.undefined,
+        applicationArn: js.UndefOr[ApplicationArn] = js.undefined,
+        resourceArn: js.UndefOr[Arn] = js.undefined
+    ): SyncResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      actionTaken.foreach(__v => __obj.updateDynamic("actionTaken")(__v.asInstanceOf[js.Any]))
+      applicationArn.foreach(__v => __obj.updateDynamic("applicationArn")(__v.asInstanceOf[js.Any]))
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SyncResourceResponse]
+    }
   }
 
   @js.native

@@ -171,6 +171,8 @@ package kms {
   trait AliasListEntry extends js.Object {
     var AliasArn: js.UndefOr[ArnType]
     var AliasName: js.UndefOr[AliasNameType]
+    var CreationDate: js.UndefOr[DateType]
+    var LastUpdatedDate: js.UndefOr[DateType]
     var TargetKeyId: js.UndefOr[KeyIdType]
   }
 
@@ -179,11 +181,15 @@ package kms {
     def apply(
         AliasArn: js.UndefOr[ArnType] = js.undefined,
         AliasName: js.UndefOr[AliasNameType] = js.undefined,
+        CreationDate: js.UndefOr[DateType] = js.undefined,
+        LastUpdatedDate: js.UndefOr[DateType] = js.undefined,
         TargetKeyId: js.UndefOr[KeyIdType] = js.undefined
     ): AliasListEntry = {
       val __obj = js.Dynamic.literal()
       AliasArn.foreach(__v => __obj.updateDynamic("AliasArn")(__v.asInstanceOf[js.Any]))
       AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
       TargetKeyId.foreach(__v => __obj.updateDynamic("TargetKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AliasListEntry]
     }
@@ -1310,7 +1316,7 @@ package kms {
   }
 
   /** Use this structure to allow [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]].
-    * AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a [[https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks|symmetric CMK]]. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
+    * AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a [[https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks|symmetric CMK]]. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     * <important> In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.
     * However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.
     * To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see [[https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context|kms:EncryptionContext:]] in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
@@ -1624,6 +1630,8 @@ package kms {
   @js.native
   trait ListGrantsRequest extends js.Object {
     var KeyId: KeyIdType
+    var GrantId: js.UndefOr[GrantIdType]
+    var GranteePrincipal: js.UndefOr[PrincipalIdType]
     var Limit: js.UndefOr[LimitType]
     var Marker: js.UndefOr[MarkerType]
   }
@@ -1632,6 +1640,8 @@ package kms {
     @inline
     def apply(
         KeyId: KeyIdType,
+        GrantId: js.UndefOr[GrantIdType] = js.undefined,
+        GranteePrincipal: js.UndefOr[PrincipalIdType] = js.undefined,
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): ListGrantsRequest = {
@@ -1639,6 +1649,8 @@ package kms {
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
 
+      GrantId.foreach(__v => __obj.updateDynamic("GrantId")(__v.asInstanceOf[js.Any]))
+      GranteePrincipal.foreach(__v => __obj.updateDynamic("GranteePrincipal")(__v.asInstanceOf[js.Any]))
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGrantsRequest]

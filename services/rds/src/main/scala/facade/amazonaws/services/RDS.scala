@@ -876,6 +876,36 @@ package rds {
     }
   }
 
+  /** This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.
+    */
+  @js.native
+  trait ClusterPendingModifiedValues extends js.Object {
+    var DBClusterIdentifier: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional]
+    var MasterUserPassword: js.UndefOr[String]
+    var PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports]
+  }
+
+  object ClusterPendingModifiedValues {
+    @inline
+    def apply(
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports] = js.undefined
+    ): ClusterPendingModifiedValues = {
+      val __obj = js.Dynamic.literal()
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
+      PendingCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("PendingCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterPendingModifiedValues]
+    }
+  }
+
   /** Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.
     */
   @js.native
@@ -1505,6 +1535,7 @@ package rds {
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
+    var EnableCustomerOwnedIp: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -1557,6 +1588,7 @@ package rds {
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableCustomerOwnedIp: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -1608,6 +1640,7 @@ package rds {
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableCustomerOwnedIp.foreach(__v => __obj.updateDynamic("EnableCustomerOwnedIp")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -2175,7 +2208,7 @@ package rds {
   }
 
   /** A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.
-    * For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a>
+    * For more information about RDS on VMware, see the [[https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html| RDS on VMware User Guide.]]
     */
   @js.native
   trait CustomAvailabilityZone extends js.Object {
@@ -2269,6 +2302,7 @@ package rds {
     var LatestRestorableTime: js.UndefOr[TStamp]
     var MasterUsername: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var PendingModifiedValues: js.UndefOr[ClusterPendingModifiedValues]
     var PercentProgress: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PreferredBackupWindow: js.UndefOr[String]
@@ -2329,6 +2363,7 @@ package rds {
         LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        PendingModifiedValues: js.UndefOr[ClusterPendingModifiedValues] = js.undefined,
         PercentProgress: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
@@ -2386,6 +2421,7 @@ package rds {
       LatestRestorableTime.foreach(__v => __obj.updateDynamic("LatestRestorableTime")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
@@ -2981,6 +3017,7 @@ package rds {
     var CACertificateIdentifier: js.UndefOr[String]
     var CharacterSetName: js.UndefOr[String]
     var CopyTagsToSnapshot: js.UndefOr[Boolean]
+    var CustomerOwnedIpEnabled: js.UndefOr[BooleanOptional]
     var DBClusterIdentifier: js.UndefOr[String]
     var DBInstanceArn: js.UndefOr[String]
     var DBInstanceAutomatedBackupsReplications: js.UndefOr[DBInstanceAutomatedBackupsReplicationList]
@@ -3048,6 +3085,7 @@ package rds {
         CACertificateIdentifier: js.UndefOr[String] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined,
         CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
+        CustomerOwnedIpEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceArn: js.UndefOr[String] = js.undefined,
         DBInstanceAutomatedBackupsReplications: js.UndefOr[DBInstanceAutomatedBackupsReplicationList] = js.undefined,
@@ -3112,6 +3150,7 @@ package rds {
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
       CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpEnabled.foreach(__v => __obj.updateDynamic("CustomerOwnedIpEnabled")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceArn.foreach(__v => __obj.updateDynamic("DBInstanceArn")(__v.asInstanceOf[js.Any]))
       DBInstanceAutomatedBackupsReplications.foreach(__v => __obj.updateDynamic("DBInstanceAutomatedBackupsReplications")(__v.asInstanceOf[js.Any]))
@@ -6845,6 +6884,7 @@ package rds {
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
+    var EnableCustomerOwnedIp: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -6893,6 +6933,7 @@ package rds {
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+        EnableCustomerOwnedIp: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -6940,6 +6981,7 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
+      EnableCustomerOwnedIp.foreach(__v => __obj.updateDynamic("EnableCustomerOwnedIp")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -7282,7 +7324,9 @@ package rds {
 
   @js.native
   trait ModifyGlobalClusterMessage extends js.Object {
+    var AllowMajorVersionUpgrade: js.UndefOr[BooleanOptional]
     var DeletionProtection: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
     var GlobalClusterIdentifier: js.UndefOr[String]
     var NewGlobalClusterIdentifier: js.UndefOr[String]
   }
@@ -7290,12 +7334,16 @@ package rds {
   object ModifyGlobalClusterMessage {
     @inline
     def apply(
+        AllowMajorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
         NewGlobalClusterIdentifier: js.UndefOr[String] = js.undefined
     ): ModifyGlobalClusterMessage = {
       val __obj = js.Dynamic.literal()
+      AllowMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
       NewGlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("NewGlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyGlobalClusterMessage]
@@ -7968,7 +8016,7 @@ package rds {
     }
   }
 
-  /** This data type is used as a response element in the <code>ModifyDBInstance</code> action.
+  /** This data type is used as a response element in the <code>ModifyDBInstance</code> operation and contains changes that will be applied during the next maintenance window.
     */
   @js.native
   trait PendingModifiedValues extends js.Object {
@@ -7979,6 +8027,7 @@ package rds {
     var DBInstanceIdentifier: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional]
     var Iops: js.UndefOr[IntegerOptional]
     var LicenseModel: js.UndefOr[String]
     var MasterUserPassword: js.UndefOr[String]
@@ -7999,6 +8048,7 @@ package rds {
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         LicenseModel: js.UndefOr[String] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
@@ -8016,6 +8066,7 @@ package rds {
       DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
@@ -9019,6 +9070,7 @@ package rds {
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
+    var EnableCustomerOwnedIp: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var Engine: js.UndefOr[String]
     var Iops: js.UndefOr[IntegerOptional]
@@ -9052,6 +9104,7 @@ package rds {
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableCustomerOwnedIp: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
@@ -9084,6 +9137,7 @@ package rds {
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableCustomerOwnedIp.foreach(__v => __obj.updateDynamic("EnableCustomerOwnedIp")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
@@ -9298,6 +9352,7 @@ package rds {
     var Domain: js.UndefOr[String]
     var DomainIAMRoleName: js.UndefOr[String]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
+    var EnableCustomerOwnedIp: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var Engine: js.UndefOr[String]
     var Iops: js.UndefOr[IntegerOptional]
@@ -9336,6 +9391,7 @@ package rds {
         Domain: js.UndefOr[String] = js.undefined,
         DomainIAMRoleName: js.UndefOr[String] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableCustomerOwnedIp: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
@@ -9373,6 +9429,7 @@ package rds {
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       DomainIAMRoleName.foreach(__v => __obj.updateDynamic("DomainIAMRoleName")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
+      EnableCustomerOwnedIp.foreach(__v => __obj.updateDynamic("EnableCustomerOwnedIp")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
@@ -10254,7 +10311,7 @@ package rds {
   }
 
   /** Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
-    * For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a>
+    * For more information about RDS on VMware, see the [[https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html| RDS on VMware User Guide.]]
     */
   @js.native
   trait VpnDetails extends js.Object {

@@ -175,7 +175,7 @@ package batch {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /** An object representing the details of a container that is part of a job attempt.
+  /** An object representing the details of a container that's part of a job attempt.
     */
   @js.native
   trait AttemptContainerDetail extends js.Object {
@@ -287,6 +287,8 @@ package batch {
     @inline def values = js.Array(EC2, SPOT, FARGATE, FARGATE_SPOT)
   }
 
+  /** Contains the parameters for <code>CancelJob</code>.
+    */
   @js.native
   trait CancelJobRequest extends js.Object {
     var jobId: String
@@ -365,7 +367,9 @@ package batch {
     }
   }
 
-  /** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
+  /** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+    *
+    * '''Note:'''All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't support mixing compute environment architecture types in a single job queue.
     */
   @js.native
   trait ComputeEnvironmentOrder extends js.Object {
@@ -387,7 +391,7 @@ package batch {
     }
   }
 
-  /** An object representing an AWS Batch compute resource.
+  /** An object representing an AWS Batch compute resource. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>AWS Batch User Guide</i>.
     */
   @js.native
   trait ComputeResource extends js.Object {
@@ -455,7 +459,7 @@ package batch {
     }
   }
 
-  /** An object representing the attributes of a compute environment that can be updated.
+  /** An object representing the attributes of a compute environment that can be updated. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>AWS Batch User Guide</i>.
     */
   @js.native
   trait ComputeResourceUpdate extends js.Object {
@@ -485,7 +489,7 @@ package batch {
     }
   }
 
-  /** An object representing the details of a container that is part of a job.
+  /** An object representing the details of a container that's part of a job.
     */
   @js.native
   trait ContainerDetail extends js.Object {
@@ -611,7 +615,7 @@ package batch {
     }
   }
 
-  /** Container properties are used in job definitions to describe the container that is launched as part of a job.
+  /** Container properties are used in job definitions to describe the container that's launched as part of a job.
     */
   @js.native
   trait ContainerProperties extends js.Object {
@@ -707,6 +711,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>CreateComputeEnvironment</code>.
+    */
   @js.native
   trait CreateComputeEnvironmentRequest extends js.Object {
     var computeEnvironmentName: String
@@ -759,6 +765,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>CreateJobQueue</code>.
+    */
   @js.native
   trait CreateJobQueueRequest extends js.Object {
     var computeEnvironmentOrder: ComputeEnvironmentOrders
@@ -809,6 +817,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>DeleteComputeEnvironment</code>.
+    */
   @js.native
   trait DeleteComputeEnvironmentRequest extends js.Object {
     var computeEnvironment: String
@@ -837,6 +847,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>DeleteJobQueue</code>.
+    */
   @js.native
   trait DeleteJobQueueRequest extends js.Object {
     var jobQueue: String
@@ -893,6 +905,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>DescribeComputeEnvironments</code>.
+    */
   @js.native
   trait DescribeComputeEnvironmentsRequest extends js.Object {
     var computeEnvironments: js.UndefOr[StringList]
@@ -934,6 +948,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>DescribeJobDefinitions</code>.
+    */
   @js.native
   trait DescribeJobDefinitionsRequest extends js.Object {
     var jobDefinitionName: js.UndefOr[String]
@@ -981,6 +997,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>DescribeJobQueues</code>.
+    */
   @js.native
   trait DescribeJobQueuesRequest extends js.Object {
     var jobQueues: js.UndefOr[StringList]
@@ -1022,6 +1040,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>DescribeJobs</code>.
+    */
   @js.native
   trait DescribeJobsRequest extends js.Object {
     var jobs: StringList
@@ -1578,6 +1598,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>ListJobs</code>.
+    */
   @js.native
   trait ListJobsRequest extends js.Object {
     var arrayJobId: js.UndefOr[String]
@@ -1703,7 +1725,7 @@ package batch {
     @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
   }
 
-  /** Details on a Docker volume mount point that is used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
+  /** Details on a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
     */
   @js.native
   trait MountPoint extends js.Object {
@@ -1790,7 +1812,7 @@ package batch {
     }
   }
 
-  /** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
+  /** Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
     *
     * '''Note:'''This isn't applicable to jobs running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.
     */
@@ -1838,7 +1860,7 @@ package batch {
     }
   }
 
-  /** An object representing the properties of a node that is associated with a multi-node parallel job.
+  /** An object representing the properties of a node that's associated with a multi-node parallel job.
     */
   @js.native
   trait NodePropertiesSummary extends js.Object {
@@ -1862,7 +1884,7 @@ package batch {
     }
   }
 
-  /** Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
+  /** Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
     */
   @js.native
   trait NodePropertyOverride extends js.Object {
@@ -1917,6 +1939,8 @@ package batch {
     @inline def values = js.Array(EC2, FARGATE)
   }
 
+  /** Contains the parameters for <code>RegisterJobDefinition</code>.
+    */
   @js.native
   trait RegisterJobDefinitionRequest extends js.Object {
     var jobDefinitionName: String
@@ -2072,6 +2096,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>SubmitJob</code>.
+    */
   @js.native
   trait SubmitJobRequest extends js.Object {
     var jobDefinition: String
@@ -2178,6 +2204,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>TerminateJob</code>.
+    */
   @js.native
   trait TerminateJobRequest extends js.Object {
     var jobId: String
@@ -2295,6 +2323,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>UpdateComputeEnvironment</code>.
+    */
   @js.native
   trait UpdateComputeEnvironmentRequest extends js.Object {
     var computeEnvironment: String
@@ -2341,6 +2371,8 @@ package batch {
     }
   }
 
+  /** Contains the parameters for <code>UpdateJobQueue</code>.
+    */
   @js.native
   trait UpdateJobQueueRequest extends js.Object {
     var jobQueue: String

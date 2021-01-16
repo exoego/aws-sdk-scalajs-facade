@@ -7,16 +7,20 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object servicequotas {
+  type AmazonResourceName = String
   type AwsRegion = String
   type CustomerServiceEngagementId = String
   type DateTime = js.Date
   type ErrorMessage = String
   type GlobalQuota = Boolean
+  type InputTagKeys = js.Array[TagKey]
+  type InputTags = js.Array[Tag]
   type MaxResults = Int
   type MetricDimensionName = String
   type MetricDimensionValue = String
   type MetricDimensionsMapDefinition = js.Dictionary[MetricDimensionValue]
   type NextToken = String
+  type OutputTags = js.Array[Tag]
   type PeriodValue = Int
   type QuotaAdjustable = Boolean
   type QuotaArn = String
@@ -35,6 +39,8 @@ package object servicequotas {
   type ServiceQuotaIncreaseRequestInTemplateList = js.Array[ServiceQuotaIncreaseRequestInTemplate]
   type ServiceQuotaListDefinition = js.Array[ServiceQuota]
   type Statistic = String
+  type TagKey = String
+  type TagValue = String
 
   implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
 
@@ -52,8 +58,11 @@ package object servicequotas {
     @inline def listServiceQuotaIncreaseRequestsInTemplateFuture(params: ListServiceQuotaIncreaseRequestsInTemplateRequest): Future[ListServiceQuotaIncreaseRequestsInTemplateResponse] = service.listServiceQuotaIncreaseRequestsInTemplate(params).promise().toFuture
     @inline def listServiceQuotasFuture(params: ListServiceQuotasRequest): Future[ListServiceQuotasResponse] = service.listServiceQuotas(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putServiceQuotaIncreaseRequestIntoTemplateFuture(params: PutServiceQuotaIncreaseRequestIntoTemplateRequest): Future[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = service.putServiceQuotaIncreaseRequestIntoTemplate(params).promise().toFuture
     @inline def requestServiceQuotaIncreaseFuture(params: RequestServiceQuotaIncreaseRequest): Future[RequestServiceQuotaIncreaseResponse] = service.requestServiceQuotaIncrease(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 }
@@ -78,8 +87,11 @@ package servicequotas {
     def listServiceQuotaIncreaseRequestsInTemplate(params: ListServiceQuotaIncreaseRequestsInTemplateRequest): Request[ListServiceQuotaIncreaseRequestsInTemplateResponse] = js.native
     def listServiceQuotas(params: ListServiceQuotasRequest): Request[ListServiceQuotasResponse] = js.native
     def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putServiceQuotaIncreaseRequestIntoTemplate(params: PutServiceQuotaIncreaseRequestIntoTemplateRequest): Request[PutServiceQuotaIncreaseRequestIntoTemplateResponse] = js.native
     def requestServiceQuotaIncrease(params: RequestServiceQuotaIncreaseRequest): Request[RequestServiceQuotaIncreaseResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -171,7 +183,7 @@ package servicequotas {
     @inline def values = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
   }
 
-  /** Returns an error that explains why the action did not succeed.
+  /** An error that explains why an action did not succeed.
     */
   @js.native
   trait ErrorReason extends js.Object {
@@ -624,7 +636,40 @@ package servicequotas {
     }
   }
 
-  /** A structure that uses CloudWatch metrics to gather data about the service quota.
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[OutputTags]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[OutputTags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /** Information about the CloudWatch metric that reflects quota usage.
     */
   @js.native
   trait MetricInfo extends js.Object {
@@ -707,7 +752,7 @@ package servicequotas {
     }
   }
 
-  /** A structure that contains information about the quota period.
+  /** Information about the quota period.
     */
   @js.native
   trait QuotaPeriod extends js.Object {
@@ -779,7 +824,7 @@ package servicequotas {
     @inline def values = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
   }
 
-  /** A structure that contains information about a requested change for a quota.
+  /** Information about a quota increase request.
     */
   @js.native
   trait RequestedServiceQuotaChange extends js.Object {
@@ -836,7 +881,7 @@ package servicequotas {
     }
   }
 
-  /** A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>. It does not include all details of the service quota. To get those values, use the <a>ListServiceQuotas</a> operation.
+  /** Information about a service.
     */
   @js.native
   trait ServiceInfo extends js.Object {
@@ -857,7 +902,7 @@ package servicequotas {
     }
   }
 
-  /** A structure that contains the full set of details that define the service quota.
+  /** Information about a quota.
     */
   @js.native
   trait ServiceQuota extends js.Object {
@@ -908,7 +953,7 @@ package servicequotas {
     }
   }
 
-  /** A structure that contains information about one service quota increase request.
+  /** Information about a quota increase request.
     */
   @js.native
   trait ServiceQuotaIncreaseRequestInTemplate extends js.Object {
@@ -954,5 +999,89 @@ package servicequotas {
     val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
     @inline def values = js.Array(ASSOCIATED, DISASSOCIATED)
+  }
+
+  /** A complex data type that contains a tag key and tag value.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: InputTags
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: InputTags
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: InputTagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: InputTagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 }

@@ -2862,6 +2862,7 @@ package sagemaker {
     var Mode: js.UndefOr[ContainerMode]
     var ModelDataUrl: js.UndefOr[Url]
     var ModelPackageName: js.UndefOr[VersionedArnOrName]
+    var MultiModelConfig: js.UndefOr[MultiModelConfig]
   }
 
   object ContainerDefinition {
@@ -2873,7 +2874,8 @@ package sagemaker {
         ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
         Mode: js.UndefOr[ContainerMode] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
-        ModelPackageName: js.UndefOr[VersionedArnOrName] = js.undefined
+        ModelPackageName: js.UndefOr[VersionedArnOrName] = js.undefined,
+        MultiModelConfig: js.UndefOr[MultiModelConfig] = js.undefined
     ): ContainerDefinition = {
       val __obj = js.Dynamic.literal()
       ContainerHostname.foreach(__v => __obj.updateDynamic("ContainerHostname")(__v.asInstanceOf[js.Any]))
@@ -2883,6 +2885,7 @@ package sagemaker {
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       ModelDataUrl.foreach(__v => __obj.updateDynamic("ModelDataUrl")(__v.asInstanceOf[js.Any]))
       ModelPackageName.foreach(__v => __obj.updateDynamic("ModelPackageName")(__v.asInstanceOf[js.Any]))
+      MultiModelConfig.foreach(__v => __obj.updateDynamic("MultiModelConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDefinition]
     }
   }
@@ -15716,6 +15719,15 @@ package sagemaker {
     }
   }
 
+  @js.native
+  sealed trait ModelCacheSetting extends js.Any
+  object ModelCacheSetting {
+    val Enabled = "Enabled".asInstanceOf[ModelCacheSetting]
+    val Disabled = "Disabled".asInstanceOf[ModelCacheSetting]
+
+    @inline def values = js.Array(Enabled, Disabled)
+  }
+
   /** Configures the timeout and maximum number of retries for processing a transform job invocation.
     */
   @js.native
@@ -16957,6 +16969,24 @@ package sagemaker {
     val ModelExplainability = "ModelExplainability".asInstanceOf[MonitoringType]
 
     @inline def values = js.Array(DataQuality, ModelQuality, ModelBias, ModelExplainability)
+  }
+
+  /** Specifies additional configuration for hosting multi-model endpoints.
+    */
+  @js.native
+  trait MultiModelConfig extends js.Object {
+    var ModelCacheSetting: js.UndefOr[ModelCacheSetting]
+  }
+
+  object MultiModelConfig {
+    @inline
+    def apply(
+        ModelCacheSetting: js.UndefOr[ModelCacheSetting] = js.undefined
+    ): MultiModelConfig = {
+      val __obj = js.Dynamic.literal()
+      ModelCacheSetting.foreach(__v => __obj.updateDynamic("ModelCacheSetting")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiModelConfig]
+    }
   }
 
   /** A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API.
@@ -22969,7 +22999,8 @@ package sagemaker {
     @inline def values = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
   }
 
-  /** A collection of settings.
+  /** A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the <a>CreateUserProfile</a> API is called, and as <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called.
+    * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.
     */
   @js.native
   trait UserSettings extends js.Object {

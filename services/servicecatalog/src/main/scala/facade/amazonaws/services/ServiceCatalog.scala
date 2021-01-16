@@ -12,8 +12,7 @@ package object servicecatalog {
   type AccountId = String
   type AccountIds = js.Array[AccountId]
   type AddTags = js.Array[Tag]
-  type AllowedValue = String
-  type AllowedValues = js.Array[AllowedValue]
+  type AllowedValues = js.Array[String]
   type ApproximateCount = Int
   type AttributeValue = String
   type BudgetName = String
@@ -57,12 +56,14 @@ package object servicecatalog {
   type NoEcho = Boolean
   type NotificationArn = String
   type NotificationArns = js.Array[NotificationArn]
+  type NullableBoolean = Boolean
   type OrganizationNodeValue = String
   type OrganizationNodes = js.Array[OrganizationNode]
   type OutputDescription = String
   type OutputKey = String
   type OutputKeys = js.Array[OutputKey]
   type OutputValue = String
+  type Owner = String
   type PageSize = Int
   type PageSizeMax100 = Int
   type PageToken = String
@@ -76,6 +77,7 @@ package object servicecatalog {
   type PortfolioDetails = js.Array[PortfolioDetail]
   type PortfolioDisplayName = String
   type PortfolioName = String
+  type PortfolioShareDetails = js.Array[PortfolioShareDetail]
   type PrincipalARN = String
   type Principals = js.Array[Principal]
   type ProductArn = String
@@ -223,6 +225,7 @@ package object servicecatalog {
     @inline def describeCopyProductStatusFuture(params: DescribeCopyProductStatusInput): Future[DescribeCopyProductStatusOutput] = service.describeCopyProductStatus(params).promise().toFuture
     @inline def describePortfolioFuture(params: DescribePortfolioInput): Future[DescribePortfolioOutput] = service.describePortfolio(params).promise().toFuture
     @inline def describePortfolioShareStatusFuture(params: DescribePortfolioShareStatusInput): Future[DescribePortfolioShareStatusOutput] = service.describePortfolioShareStatus(params).promise().toFuture
+    @inline def describePortfolioSharesFuture(params: DescribePortfolioSharesInput): Future[DescribePortfolioSharesOutput] = service.describePortfolioShares(params).promise().toFuture
     @inline def describeProductAsAdminFuture(params: DescribeProductAsAdminInput): Future[DescribeProductAsAdminOutput] = service.describeProductAsAdmin(params).promise().toFuture
     @inline def describeProductFuture(params: DescribeProductInput): Future[DescribeProductOutput] = service.describeProduct(params).promise().toFuture
     @inline def describeProductViewFuture(params: DescribeProductViewInput): Future[DescribeProductViewOutput] = service.describeProductView(params).promise().toFuture
@@ -273,6 +276,7 @@ package object servicecatalog {
     @inline def terminateProvisionedProductFuture(params: TerminateProvisionedProductInput): Future[TerminateProvisionedProductOutput] = service.terminateProvisionedProduct(params).promise().toFuture
     @inline def updateConstraintFuture(params: UpdateConstraintInput): Future[UpdateConstraintOutput] = service.updateConstraint(params).promise().toFuture
     @inline def updatePortfolioFuture(params: UpdatePortfolioInput): Future[UpdatePortfolioOutput] = service.updatePortfolio(params).promise().toFuture
+    @inline def updatePortfolioShareFuture(params: UpdatePortfolioShareInput): Future[UpdatePortfolioShareOutput] = service.updatePortfolioShare(params).promise().toFuture
     @inline def updateProductFuture(params: UpdateProductInput): Future[UpdateProductOutput] = service.updateProduct(params).promise().toFuture
     @inline def updateProvisionedProductFuture(params: UpdateProvisionedProductInput): Future[UpdateProvisionedProductOutput] = service.updateProvisionedProduct(params).promise().toFuture
     @inline def updateProvisionedProductPropertiesFuture(params: UpdateProvisionedProductPropertiesInput): Future[UpdateProvisionedProductPropertiesOutput] = service.updateProvisionedProductProperties(params).promise().toFuture
@@ -318,6 +322,7 @@ package servicecatalog {
     def describeCopyProductStatus(params: DescribeCopyProductStatusInput): Request[DescribeCopyProductStatusOutput] = js.native
     def describePortfolio(params: DescribePortfolioInput): Request[DescribePortfolioOutput] = js.native
     def describePortfolioShareStatus(params: DescribePortfolioShareStatusInput): Request[DescribePortfolioShareStatusOutput] = js.native
+    def describePortfolioShares(params: DescribePortfolioSharesInput): Request[DescribePortfolioSharesOutput] = js.native
     def describeProduct(params: DescribeProductInput): Request[DescribeProductOutput] = js.native
     def describeProductAsAdmin(params: DescribeProductAsAdminInput): Request[DescribeProductAsAdminOutput] = js.native
     def describeProductView(params: DescribeProductViewInput): Request[DescribeProductViewOutput] = js.native
@@ -368,6 +373,7 @@ package servicecatalog {
     def terminateProvisionedProduct(params: TerminateProvisionedProductInput): Request[TerminateProvisionedProductOutput] = js.native
     def updateConstraint(params: UpdateConstraintInput): Request[UpdateConstraintOutput] = js.native
     def updatePortfolio(params: UpdatePortfolioInput): Request[UpdatePortfolioOutput] = js.native
+    def updatePortfolioShare(params: UpdatePortfolioShareInput): Request[UpdatePortfolioShareOutput] = js.native
     def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput] = js.native
     def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] = js.native
     def updateProvisionedProductProperties(params: UpdateProvisionedProductPropertiesInput): Request[UpdateProvisionedProductPropertiesOutput] = js.native
@@ -988,6 +994,7 @@ package servicecatalog {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var AccountId: js.UndefOr[AccountId]
     var OrganizationNode: js.UndefOr[OrganizationNode]
+    var ShareTagOptions: js.UndefOr[Boolean]
   }
 
   object CreatePortfolioShareInput {
@@ -996,7 +1003,8 @@ package servicecatalog {
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccountId: js.UndefOr[AccountId] = js.undefined,
-        OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined
+        OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined,
+        ShareTagOptions: js.UndefOr[Boolean] = js.undefined
     ): CreatePortfolioShareInput = {
       val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
@@ -1005,6 +1013,7 @@ package servicecatalog {
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       OrganizationNode.foreach(__v => __obj.updateDynamic("OrganizationNode")(__v.asInstanceOf[js.Any]))
+      ShareTagOptions.foreach(__v => __obj.updateDynamic("ShareTagOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePortfolioShareInput]
     }
   }
@@ -1755,10 +1764,68 @@ package servicecatalog {
   }
 
   @js.native
+  sealed trait DescribePortfolioShareType extends js.Any
+  object DescribePortfolioShareType {
+    val ACCOUNT = "ACCOUNT".asInstanceOf[DescribePortfolioShareType]
+    val ORGANIZATION = "ORGANIZATION".asInstanceOf[DescribePortfolioShareType]
+    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[DescribePortfolioShareType]
+    val ORGANIZATION_MEMBER_ACCOUNT = "ORGANIZATION_MEMBER_ACCOUNT".asInstanceOf[DescribePortfolioShareType]
+
+    @inline def values = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATIONAL_UNIT, ORGANIZATION_MEMBER_ACCOUNT)
+  }
+
+  @js.native
+  trait DescribePortfolioSharesInput extends js.Object {
+    var PortfolioId: Id
+    var Type: DescribePortfolioShareType
+    var PageSize: js.UndefOr[PageSizeMax100]
+    var PageToken: js.UndefOr[PageToken]
+  }
+
+  object DescribePortfolioSharesInput {
+    @inline
+    def apply(
+        PortfolioId: Id,
+        Type: DescribePortfolioShareType,
+        PageSize: js.UndefOr[PageSizeMax100] = js.undefined,
+        PageToken: js.UndefOr[PageToken] = js.undefined
+    ): DescribePortfolioSharesInput = {
+      val __obj = js.Dynamic.literal(
+        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePortfolioSharesInput]
+    }
+  }
+
+  @js.native
+  trait DescribePortfolioSharesOutput extends js.Object {
+    var NextPageToken: js.UndefOr[PageToken]
+    var PortfolioShareDetails: js.UndefOr[PortfolioShareDetails]
+  }
+
+  object DescribePortfolioSharesOutput {
+    @inline
+    def apply(
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        PortfolioShareDetails: js.UndefOr[PortfolioShareDetails] = js.undefined
+    ): DescribePortfolioSharesOutput = {
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      PortfolioShareDetails.foreach(__v => __obj.updateDynamic("PortfolioShareDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePortfolioSharesOutput]
+    }
+  }
+
+  @js.native
   trait DescribeProductAsAdminInput extends js.Object {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var Id: js.UndefOr[Id]
     var Name: js.UndefOr[ProductViewName]
+    var SourcePortfolioId: js.UndefOr[Id]
   }
 
   object DescribeProductAsAdminInput {
@@ -1766,12 +1833,14 @@ package servicecatalog {
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
-        Name: js.UndefOr[ProductViewName] = js.undefined
+        Name: js.UndefOr[ProductViewName] = js.undefined,
+        SourcePortfolioId: js.UndefOr[Id] = js.undefined
     ): DescribeProductAsAdminInput = {
       val __obj = js.Dynamic.literal()
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SourcePortfolioId.foreach(__v => __obj.updateDynamic("SourcePortfolioId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductAsAdminInput]
     }
   }
@@ -3696,16 +3765,34 @@ package servicecatalog {
     */
   @js.native
   trait ParameterConstraints extends js.Object {
+    var AllowedPattern: js.UndefOr[String]
     var AllowedValues: js.UndefOr[AllowedValues]
+    var ConstraintDescription: js.UndefOr[String]
+    var MaxLength: js.UndefOr[String]
+    var MaxValue: js.UndefOr[String]
+    var MinLength: js.UndefOr[String]
+    var MinValue: js.UndefOr[String]
   }
 
   object ParameterConstraints {
     @inline
     def apply(
-        AllowedValues: js.UndefOr[AllowedValues] = js.undefined
+        AllowedPattern: js.UndefOr[String] = js.undefined,
+        AllowedValues: js.UndefOr[AllowedValues] = js.undefined,
+        ConstraintDescription: js.UndefOr[String] = js.undefined,
+        MaxLength: js.UndefOr[String] = js.undefined,
+        MaxValue: js.UndefOr[String] = js.undefined,
+        MinLength: js.UndefOr[String] = js.undefined,
+        MinValue: js.UndefOr[String] = js.undefined
     ): ParameterConstraints = {
       val __obj = js.Dynamic.literal()
+      AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
       AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
+      ConstraintDescription.foreach(__v => __obj.updateDynamic("ConstraintDescription")(__v.asInstanceOf[js.Any]))
+      MaxLength.foreach(__v => __obj.updateDynamic("MaxLength")(__v.asInstanceOf[js.Any]))
+      MaxValue.foreach(__v => __obj.updateDynamic("MaxValue")(__v.asInstanceOf[js.Any]))
+      MinLength.foreach(__v => __obj.updateDynamic("MinLength")(__v.asInstanceOf[js.Any]))
+      MinValue.foreach(__v => __obj.updateDynamic("MinValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterConstraints]
     }
   }
@@ -3740,6 +3827,33 @@ package servicecatalog {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ProviderName.foreach(__v => __obj.updateDynamic("ProviderName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortfolioDetail]
+    }
+  }
+
+  /** Information about the portfolio share.
+    */
+  @js.native
+  trait PortfolioShareDetail extends js.Object {
+    var Accepted: js.UndefOr[Boolean]
+    var PrincipalId: js.UndefOr[Id]
+    var ShareTagOptions: js.UndefOr[Boolean]
+    var Type: js.UndefOr[DescribePortfolioShareType]
+  }
+
+  object PortfolioShareDetail {
+    @inline
+    def apply(
+        Accepted: js.UndefOr[Boolean] = js.undefined,
+        PrincipalId: js.UndefOr[Id] = js.undefined,
+        ShareTagOptions: js.UndefOr[Boolean] = js.undefined,
+        Type: js.UndefOr[DescribePortfolioShareType] = js.undefined
+    ): PortfolioShareDetail = {
+      val __obj = js.Dynamic.literal()
+      Accepted.foreach(__v => __obj.updateDynamic("Accepted")(__v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
+      ShareTagOptions.foreach(__v => __obj.updateDynamic("ShareTagOptions")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortfolioShareDetail]
     }
   }
 
@@ -4531,7 +4645,11 @@ package servicecatalog {
     }
   }
 
-  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
+  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type
+    * One or more AWS accounts that will have access to the provisioned product.
+    * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+    * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.
+    * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
     */
   @js.native
   trait ProvisioningPreferences extends js.Object {
@@ -5343,6 +5461,7 @@ package servicecatalog {
     var Active: js.UndefOr[TagOptionActive]
     var Id: js.UndefOr[TagOptionId]
     var Key: js.UndefOr[TagOptionKey]
+    var Owner: js.UndefOr[Owner]
     var Value: js.UndefOr[TagOptionValue]
   }
 
@@ -5352,12 +5471,14 @@ package servicecatalog {
         Active: js.UndefOr[TagOptionActive] = js.undefined,
         Id: js.UndefOr[TagOptionId] = js.undefined,
         Key: js.UndefOr[TagOptionKey] = js.undefined,
+        Owner: js.UndefOr[Owner] = js.undefined,
         Value: js.UndefOr[TagOptionValue] = js.undefined
     ): TagOptionDetail = {
       val __obj = js.Dynamic.literal()
       Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagOptionDetail]
     }
@@ -5534,6 +5655,55 @@ package servicecatalog {
       PortfolioDetail.foreach(__v => __obj.updateDynamic("PortfolioDetail")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePortfolioOutput]
+    }
+  }
+
+  @js.native
+  trait UpdatePortfolioShareInput extends js.Object {
+    var PortfolioId: Id
+    var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var AccountId: js.UndefOr[AccountId]
+    var OrganizationNode: js.UndefOr[OrganizationNode]
+    var ShareTagOptions: js.UndefOr[NullableBoolean]
+  }
+
+  object UpdatePortfolioShareInput {
+    @inline
+    def apply(
+        PortfolioId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined,
+        ShareTagOptions: js.UndefOr[NullableBoolean] = js.undefined
+    ): UpdatePortfolioShareInput = {
+      val __obj = js.Dynamic.literal(
+        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
+      )
+
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      OrganizationNode.foreach(__v => __obj.updateDynamic("OrganizationNode")(__v.asInstanceOf[js.Any]))
+      ShareTagOptions.foreach(__v => __obj.updateDynamic("ShareTagOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePortfolioShareInput]
+    }
+  }
+
+  @js.native
+  trait UpdatePortfolioShareOutput extends js.Object {
+    var PortfolioShareToken: js.UndefOr[Id]
+    var Status: js.UndefOr[ShareStatus]
+  }
+
+  object UpdatePortfolioShareOutput {
+    @inline
+    def apply(
+        PortfolioShareToken: js.UndefOr[Id] = js.undefined,
+        Status: js.UndefOr[ShareStatus] = js.undefined
+    ): UpdatePortfolioShareOutput = {
+      val __obj = js.Dynamic.literal()
+      PortfolioShareToken.foreach(__v => __obj.updateDynamic("PortfolioShareToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePortfolioShareOutput]
     }
   }
 

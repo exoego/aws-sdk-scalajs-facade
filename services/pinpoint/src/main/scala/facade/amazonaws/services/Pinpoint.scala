@@ -1256,8 +1256,13 @@ package pinpoint {
   object AttributeType {
     val INCLUSIVE = "INCLUSIVE".asInstanceOf[AttributeType]
     val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[AttributeType]
+    val CONTAINS = "CONTAINS".asInstanceOf[AttributeType]
+    val BEFORE = "BEFORE".asInstanceOf[AttributeType]
+    val AFTER = "AFTER".asInstanceOf[AttributeType]
+    val ON = "ON".asInstanceOf[AttributeType]
+    val BETWEEN = "BETWEEN".asInstanceOf[AttributeType]
 
-    @inline def values = js.Array(INCLUSIVE, EXCLUSIVE)
+    @inline def values = js.Array(INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
   }
 
   /** Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.

@@ -99,6 +99,11 @@ package object connect {
   type QueueSummaryList = js.Array[QueueSummary]
   type QueueTypes = js.Array[QueueType]
   type Queues = js.Array[QueueId]
+  type QuickConnectDescription = String
+  type QuickConnectId = String
+  type QuickConnectName = String
+  type QuickConnectSummaryList = js.Array[QuickConnectSummary]
+  type QuickConnectTypes = js.Array[QuickConnectType]
   type ReferenceKey = String
   type ReferenceValue = String
   type RoutingProfileDescription = String
@@ -140,12 +145,14 @@ package object connect {
     @inline def createContactFlowFuture(params: CreateContactFlowRequest): Future[CreateContactFlowResponse] = service.createContactFlow(params).promise().toFuture
     @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResponse] = service.createInstance(params).promise().toFuture
     @inline def createIntegrationAssociationFuture(params: CreateIntegrationAssociationRequest): Future[CreateIntegrationAssociationResponse] = service.createIntegrationAssociation(params).promise().toFuture
+    @inline def createQuickConnectFuture(params: CreateQuickConnectRequest): Future[CreateQuickConnectResponse] = service.createQuickConnect(params).promise().toFuture
     @inline def createRoutingProfileFuture(params: CreateRoutingProfileRequest): Future[CreateRoutingProfileResponse] = service.createRoutingProfile(params).promise().toFuture
     @inline def createUseCaseFuture(params: CreateUseCaseRequest): Future[CreateUseCaseResponse] = service.createUseCase(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def createUserHierarchyGroupFuture(params: CreateUserHierarchyGroupRequest): Future[CreateUserHierarchyGroupResponse] = service.createUserHierarchyGroup(params).promise().toFuture
     @inline def deleteInstanceFuture(params: DeleteInstanceRequest): Future[js.Object] = service.deleteInstance(params).promise().toFuture
     @inline def deleteIntegrationAssociationFuture(params: DeleteIntegrationAssociationRequest): Future[js.Object] = service.deleteIntegrationAssociation(params).promise().toFuture
+    @inline def deleteQuickConnectFuture(params: DeleteQuickConnectRequest): Future[js.Object] = service.deleteQuickConnect(params).promise().toFuture
     @inline def deleteUseCaseFuture(params: DeleteUseCaseRequest): Future[js.Object] = service.deleteUseCase(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
     @inline def deleteUserHierarchyGroupFuture(params: DeleteUserHierarchyGroupRequest): Future[js.Object] = service.deleteUserHierarchyGroup(params).promise().toFuture
@@ -153,6 +160,7 @@ package object connect {
     @inline def describeInstanceAttributeFuture(params: DescribeInstanceAttributeRequest): Future[DescribeInstanceAttributeResponse] = service.describeInstanceAttribute(params).promise().toFuture
     @inline def describeInstanceFuture(params: DescribeInstanceRequest): Future[DescribeInstanceResponse] = service.describeInstance(params).promise().toFuture
     @inline def describeInstanceStorageConfigFuture(params: DescribeInstanceStorageConfigRequest): Future[DescribeInstanceStorageConfigResponse] = service.describeInstanceStorageConfig(params).promise().toFuture
+    @inline def describeQuickConnectFuture(params: DescribeQuickConnectRequest): Future[DescribeQuickConnectResponse] = service.describeQuickConnect(params).promise().toFuture
     @inline def describeRoutingProfileFuture(params: DescribeRoutingProfileRequest): Future[DescribeRoutingProfileResponse] = service.describeRoutingProfile(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
     @inline def describeUserHierarchyGroupFuture(params: DescribeUserHierarchyGroupRequest): Future[DescribeUserHierarchyGroupResponse] = service.describeUserHierarchyGroup(params).promise().toFuture
@@ -179,6 +187,7 @@ package object connect {
     @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] = service.listPhoneNumbers(params).promise().toFuture
     @inline def listPromptsFuture(params: ListPromptsRequest): Future[ListPromptsResponse] = service.listPrompts(params).promise().toFuture
     @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] = service.listQueues(params).promise().toFuture
+    @inline def listQuickConnectsFuture(params: ListQuickConnectsRequest): Future[ListQuickConnectsResponse] = service.listQuickConnects(params).promise().toFuture
     @inline def listRoutingProfileQueuesFuture(params: ListRoutingProfileQueuesRequest): Future[ListRoutingProfileQueuesResponse] = service.listRoutingProfileQueues(params).promise().toFuture
     @inline def listRoutingProfilesFuture(params: ListRoutingProfilesRequest): Future[ListRoutingProfilesResponse] = service.listRoutingProfiles(params).promise().toFuture
     @inline def listSecurityKeysFuture(params: ListSecurityKeysRequest): Future[ListSecurityKeysResponse] = service.listSecurityKeys(params).promise().toFuture
@@ -202,6 +211,8 @@ package object connect {
     @inline def updateContactFlowNameFuture(params: UpdateContactFlowNameRequest): Future[js.Object] = service.updateContactFlowName(params).promise().toFuture
     @inline def updateInstanceAttributeFuture(params: UpdateInstanceAttributeRequest): Future[js.Object] = service.updateInstanceAttribute(params).promise().toFuture
     @inline def updateInstanceStorageConfigFuture(params: UpdateInstanceStorageConfigRequest): Future[js.Object] = service.updateInstanceStorageConfig(params).promise().toFuture
+    @inline def updateQuickConnectConfigFuture(params: UpdateQuickConnectConfigRequest): Future[js.Object] = service.updateQuickConnectConfig(params).promise().toFuture
+    @inline def updateQuickConnectNameFuture(params: UpdateQuickConnectNameRequest): Future[js.Object] = service.updateQuickConnectName(params).promise().toFuture
     @inline def updateRoutingProfileConcurrencyFuture(params: UpdateRoutingProfileConcurrencyRequest): Future[js.Object] = service.updateRoutingProfileConcurrency(params).promise().toFuture
     @inline def updateRoutingProfileDefaultOutboundQueueFuture(params: UpdateRoutingProfileDefaultOutboundQueueRequest): Future[js.Object] = service.updateRoutingProfileDefaultOutboundQueue(params).promise().toFuture
     @inline def updateRoutingProfileNameFuture(params: UpdateRoutingProfileNameRequest): Future[js.Object] = service.updateRoutingProfileName(params).promise().toFuture
@@ -232,12 +243,14 @@ package connect {
     def createContactFlow(params: CreateContactFlowRequest): Request[CreateContactFlowResponse] = js.native
     def createInstance(params: CreateInstanceRequest): Request[CreateInstanceResponse] = js.native
     def createIntegrationAssociation(params: CreateIntegrationAssociationRequest): Request[CreateIntegrationAssociationResponse] = js.native
+    def createQuickConnect(params: CreateQuickConnectRequest): Request[CreateQuickConnectResponse] = js.native
     def createRoutingProfile(params: CreateRoutingProfileRequest): Request[CreateRoutingProfileResponse] = js.native
     def createUseCase(params: CreateUseCaseRequest): Request[CreateUseCaseResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def createUserHierarchyGroup(params: CreateUserHierarchyGroupRequest): Request[CreateUserHierarchyGroupResponse] = js.native
     def deleteInstance(params: DeleteInstanceRequest): Request[js.Object] = js.native
     def deleteIntegrationAssociation(params: DeleteIntegrationAssociationRequest): Request[js.Object] = js.native
+    def deleteQuickConnect(params: DeleteQuickConnectRequest): Request[js.Object] = js.native
     def deleteUseCase(params: DeleteUseCaseRequest): Request[js.Object] = js.native
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def deleteUserHierarchyGroup(params: DeleteUserHierarchyGroupRequest): Request[js.Object] = js.native
@@ -245,6 +258,7 @@ package connect {
     def describeInstance(params: DescribeInstanceRequest): Request[DescribeInstanceResponse] = js.native
     def describeInstanceAttribute(params: DescribeInstanceAttributeRequest): Request[DescribeInstanceAttributeResponse] = js.native
     def describeInstanceStorageConfig(params: DescribeInstanceStorageConfigRequest): Request[DescribeInstanceStorageConfigResponse] = js.native
+    def describeQuickConnect(params: DescribeQuickConnectRequest): Request[DescribeQuickConnectResponse] = js.native
     def describeRoutingProfile(params: DescribeRoutingProfileRequest): Request[DescribeRoutingProfileResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def describeUserHierarchyGroup(params: DescribeUserHierarchyGroupRequest): Request[DescribeUserHierarchyGroupResponse] = js.native
@@ -271,6 +285,7 @@ package connect {
     def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse] = js.native
     def listPrompts(params: ListPromptsRequest): Request[ListPromptsResponse] = js.native
     def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse] = js.native
+    def listQuickConnects(params: ListQuickConnectsRequest): Request[ListQuickConnectsResponse] = js.native
     def listRoutingProfileQueues(params: ListRoutingProfileQueuesRequest): Request[ListRoutingProfileQueuesResponse] = js.native
     def listRoutingProfiles(params: ListRoutingProfilesRequest): Request[ListRoutingProfilesResponse] = js.native
     def listSecurityKeys(params: ListSecurityKeysRequest): Request[ListSecurityKeysResponse] = js.native
@@ -294,6 +309,8 @@ package connect {
     def updateContactFlowName(params: UpdateContactFlowNameRequest): Request[js.Object] = js.native
     def updateInstanceAttribute(params: UpdateInstanceAttributeRequest): Request[js.Object] = js.native
     def updateInstanceStorageConfig(params: UpdateInstanceStorageConfigRequest): Request[js.Object] = js.native
+    def updateQuickConnectConfig(params: UpdateQuickConnectConfigRequest): Request[js.Object] = js.native
+    def updateQuickConnectName(params: UpdateQuickConnectNameRequest): Request[js.Object] = js.native
     def updateRoutingProfileConcurrency(params: UpdateRoutingProfileConcurrencyRequest): Request[js.Object] = js.native
     def updateRoutingProfileDefaultOutboundQueue(params: UpdateRoutingProfileDefaultOutboundQueueRequest): Request[js.Object] = js.native
     def updateRoutingProfileName(params: UpdateRoutingProfileNameRequest): Request[js.Object] = js.native
@@ -762,6 +779,55 @@ package connect {
   }
 
   @js.native
+  trait CreateQuickConnectRequest extends js.Object {
+    var InstanceId: InstanceId
+    var Name: QuickConnectName
+    var QuickConnectConfig: QuickConnectConfig
+    var Description: js.UndefOr[QuickConnectDescription]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateQuickConnectRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        Name: QuickConnectName,
+        QuickConnectConfig: QuickConnectConfig,
+        Description: js.UndefOr[QuickConnectDescription] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateQuickConnectRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "QuickConnectConfig" -> QuickConnectConfig.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateQuickConnectRequest]
+    }
+  }
+
+  @js.native
+  trait CreateQuickConnectResponse extends js.Object {
+    var QuickConnectARN: js.UndefOr[ARN]
+    var QuickConnectId: js.UndefOr[QuickConnectId]
+  }
+
+  object CreateQuickConnectResponse {
+    @inline
+    def apply(
+        QuickConnectARN: js.UndefOr[ARN] = js.undefined,
+        QuickConnectId: js.UndefOr[QuickConnectId] = js.undefined
+    ): CreateQuickConnectResponse = {
+      val __obj = js.Dynamic.literal()
+      QuickConnectARN.foreach(__v => __obj.updateDynamic("QuickConnectARN")(__v.asInstanceOf[js.Any]))
+      QuickConnectId.foreach(__v => __obj.updateDynamic("QuickConnectId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateQuickConnectResponse]
+    }
+  }
+
+  @js.native
   trait CreateRoutingProfileRequest extends js.Object {
     var DefaultOutboundQueueId: QueueId
     var Description: RoutingProfileDescription
@@ -1129,6 +1195,26 @@ package connect {
   }
 
   @js.native
+  trait DeleteQuickConnectRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QuickConnectId: QuickConnectId
+  }
+
+  object DeleteQuickConnectRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QuickConnectId: QuickConnectId
+    ): DeleteQuickConnectRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QuickConnectId" -> QuickConnectId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteQuickConnectRequest]
+    }
+  }
+
+  @js.native
   trait DeleteUseCaseRequest extends js.Object {
     var InstanceId: InstanceId
     var IntegrationAssociationId: IntegrationAssociationId
@@ -1332,6 +1418,42 @@ package connect {
       val __obj = js.Dynamic.literal()
       StorageConfig.foreach(__v => __obj.updateDynamic("StorageConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceStorageConfigResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeQuickConnectRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QuickConnectId: QuickConnectId
+  }
+
+  object DescribeQuickConnectRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QuickConnectId: QuickConnectId
+    ): DescribeQuickConnectRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QuickConnectId" -> QuickConnectId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeQuickConnectRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeQuickConnectResponse extends js.Object {
+    var QuickConnect: js.UndefOr[QuickConnect]
+  }
+
+  object DescribeQuickConnectResponse {
+    @inline
+    def apply(
+        QuickConnect: js.UndefOr[QuickConnect] = js.undefined
+    ): DescribeQuickConnectResponse = {
+      val __obj = js.Dynamic.literal()
+      QuickConnect.foreach(__v => __obj.updateDynamic("QuickConnect")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeQuickConnectResponse]
     }
   }
 
@@ -3053,6 +3175,52 @@ package connect {
   }
 
   @js.native
+  trait ListQuickConnectsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxResults: js.UndefOr[MaxResult1000]
+    var NextToken: js.UndefOr[NextToken]
+    var QuickConnectTypes: js.UndefOr[QuickConnectTypes]
+  }
+
+  object ListQuickConnectsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        QuickConnectTypes: js.UndefOr[QuickConnectTypes] = js.undefined
+    ): ListQuickConnectsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QuickConnectTypes.foreach(__v => __obj.updateDynamic("QuickConnectTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQuickConnectsRequest]
+    }
+  }
+
+  @js.native
+  trait ListQuickConnectsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var QuickConnectSummaryList: js.UndefOr[QuickConnectSummaryList]
+  }
+
+  object ListQuickConnectsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        QuickConnectSummaryList: js.UndefOr[QuickConnectSummaryList] = js.undefined
+    ): ListQuickConnectsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QuickConnectSummaryList.foreach(__v => __obj.updateDynamic("QuickConnectSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQuickConnectsResponse]
+    }
+  }
+
+  @js.native
   trait ListRoutingProfileQueuesRequest extends js.Object {
     var InstanceId: InstanceId
     var RoutingProfileId: RoutingProfileId
@@ -3917,6 +4085,25 @@ package connect {
     )
   }
 
+  /** Contains information about a phone number for a quick connect.
+    */
+  @js.native
+  trait PhoneNumberQuickConnectConfig extends js.Object {
+    var PhoneNumber: PhoneNumber
+  }
+
+  object PhoneNumberQuickConnectConfig {
+    @inline
+    def apply(
+        PhoneNumber: PhoneNumber
+    ): PhoneNumberQuickConnectConfig = {
+      val __obj = js.Dynamic.literal(
+        "PhoneNumber" -> PhoneNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PhoneNumberQuickConnectConfig]
+    }
+  }
+
   /** Contains summary information about a phone number for a contact center.
     */
   @js.native
@@ -3989,6 +4176,28 @@ package connect {
     }
   }
 
+  /** Contains information about a queue for a quick connect. The contact flow must be of type Transfer to Queue.
+    */
+  @js.native
+  trait QueueQuickConnectConfig extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var QueueId: QueueId
+  }
+
+  object QueueQuickConnectConfig {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        QueueId: QueueId
+    ): QueueQuickConnectConfig = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[QueueQuickConnectConfig]
+    }
+  }
+
   /** Contains information about a queue resource for which metrics are returned.
     */
   @js.native
@@ -4044,6 +4253,105 @@ package connect {
     val AGENT = "AGENT".asInstanceOf[QueueType]
 
     @inline def values = js.Array(STANDARD, AGENT)
+  }
+
+  /** Contains information about a quick connect.
+    */
+  @js.native
+  trait QuickConnect extends js.Object {
+    var Description: js.UndefOr[QuickConnectDescription]
+    var Name: js.UndefOr[QuickConnectName]
+    var QuickConnectARN: js.UndefOr[ARN]
+    var QuickConnectConfig: js.UndefOr[QuickConnectConfig]
+    var QuickConnectId: js.UndefOr[QuickConnectId]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object QuickConnect {
+    @inline
+    def apply(
+        Description: js.UndefOr[QuickConnectDescription] = js.undefined,
+        Name: js.UndefOr[QuickConnectName] = js.undefined,
+        QuickConnectARN: js.UndefOr[ARN] = js.undefined,
+        QuickConnectConfig: js.UndefOr[QuickConnectConfig] = js.undefined,
+        QuickConnectId: js.UndefOr[QuickConnectId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): QuickConnect = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      QuickConnectARN.foreach(__v => __obj.updateDynamic("QuickConnectARN")(__v.asInstanceOf[js.Any]))
+      QuickConnectConfig.foreach(__v => __obj.updateDynamic("QuickConnectConfig")(__v.asInstanceOf[js.Any]))
+      QuickConnectId.foreach(__v => __obj.updateDynamic("QuickConnectId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuickConnect]
+    }
+  }
+
+  /** Contains configuration settings for a quick connect.
+    */
+  @js.native
+  trait QuickConnectConfig extends js.Object {
+    var QuickConnectType: QuickConnectType
+    var PhoneConfig: js.UndefOr[PhoneNumberQuickConnectConfig]
+    var QueueConfig: js.UndefOr[QueueQuickConnectConfig]
+    var UserConfig: js.UndefOr[UserQuickConnectConfig]
+  }
+
+  object QuickConnectConfig {
+    @inline
+    def apply(
+        QuickConnectType: QuickConnectType,
+        PhoneConfig: js.UndefOr[PhoneNumberQuickConnectConfig] = js.undefined,
+        QueueConfig: js.UndefOr[QueueQuickConnectConfig] = js.undefined,
+        UserConfig: js.UndefOr[UserQuickConnectConfig] = js.undefined
+    ): QuickConnectConfig = {
+      val __obj = js.Dynamic.literal(
+        "QuickConnectType" -> QuickConnectType.asInstanceOf[js.Any]
+      )
+
+      PhoneConfig.foreach(__v => __obj.updateDynamic("PhoneConfig")(__v.asInstanceOf[js.Any]))
+      QueueConfig.foreach(__v => __obj.updateDynamic("QueueConfig")(__v.asInstanceOf[js.Any]))
+      UserConfig.foreach(__v => __obj.updateDynamic("UserConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuickConnectConfig]
+    }
+  }
+
+  /** Contains summary information about a quick connect.
+    */
+  @js.native
+  trait QuickConnectSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[QuickConnectId]
+    var Name: js.UndefOr[QuickConnectName]
+    var QuickConnectType: js.UndefOr[QuickConnectType]
+  }
+
+  object QuickConnectSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[QuickConnectId] = js.undefined,
+        Name: js.UndefOr[QuickConnectName] = js.undefined,
+        QuickConnectType: js.UndefOr[QuickConnectType] = js.undefined
+    ): QuickConnectSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      QuickConnectType.foreach(__v => __obj.updateDynamic("QuickConnectType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuickConnectSummary]
+    }
+  }
+
+  @js.native
+  sealed trait QuickConnectType extends js.Any
+  object QuickConnectType {
+    val USER = "USER".asInstanceOf[QuickConnectType]
+    val QUEUE = "QUEUE".asInstanceOf[QuickConnectType]
+    val PHONE_NUMBER = "PHONE_NUMBER".asInstanceOf[QuickConnectType]
+
+    @inline def values = js.Array(USER, QUEUE, PHONE_NUMBER)
   }
 
   /** A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8 bytes across all references for a contact.
@@ -4861,6 +5169,56 @@ package connect {
   }
 
   @js.native
+  trait UpdateQuickConnectConfigRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QuickConnectConfig: QuickConnectConfig
+    var QuickConnectId: QuickConnectId
+  }
+
+  object UpdateQuickConnectConfigRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QuickConnectConfig: QuickConnectConfig,
+        QuickConnectId: QuickConnectId
+    ): UpdateQuickConnectConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QuickConnectConfig" -> QuickConnectConfig.asInstanceOf[js.Any],
+        "QuickConnectId" -> QuickConnectId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateQuickConnectConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateQuickConnectNameRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QuickConnectId: QuickConnectId
+    var Description: js.UndefOr[QuickConnectDescription]
+    var Name: js.UndefOr[QuickConnectName]
+  }
+
+  object UpdateQuickConnectNameRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QuickConnectId: QuickConnectId,
+        Description: js.UndefOr[QuickConnectDescription] = js.undefined,
+        Name: js.UndefOr[QuickConnectName] = js.undefined
+    ): UpdateQuickConnectNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QuickConnectId" -> QuickConnectId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateQuickConnectNameRequest]
+    }
+  }
+
+  @js.native
   trait UpdateRoutingProfileConcurrencyRequest extends js.Object {
     var InstanceId: InstanceId
     var MediaConcurrencies: MediaConcurrencies
@@ -5242,6 +5600,28 @@ package connect {
       AutoAccept.foreach(__v => __obj.updateDynamic("AutoAccept")(__v.asInstanceOf[js.Any]))
       DeskPhoneNumber.foreach(__v => __obj.updateDynamic("DeskPhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPhoneConfig]
+    }
+  }
+
+  /** Contains information about the quick connect configuration settings for a user. The contact flow must be of type Transfer to Agent.
+    */
+  @js.native
+  trait UserQuickConnectConfig extends js.Object {
+    var ContactFlowId: ContactFlowId
+    var UserId: UserId
+  }
+
+  object UserQuickConnectConfig {
+    @inline
+    def apply(
+        ContactFlowId: ContactFlowId,
+        UserId: UserId
+    ): UserQuickConnectConfig = {
+      val __obj = js.Dynamic.literal(
+        "ContactFlowId" -> ContactFlowId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UserQuickConnectConfig]
     }
   }
 

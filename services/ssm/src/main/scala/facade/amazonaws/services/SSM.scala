@@ -129,6 +129,7 @@ package object ssm {
   type DocumentParameterDescrption = String
   type DocumentParameterList = js.Array[DocumentParameter]
   type DocumentParameterName = String
+  type DocumentPermissionMaxResults = Int
   type DocumentRequiresList = js.Array[DocumentRequires]
   type DocumentReviewComment = String
   type DocumentReviewCommentList = js.Array[DocumentReviewCommentSource]
@@ -3769,18 +3770,25 @@ package ssm {
   trait DescribeDocumentPermissionRequest extends js.Object {
     var Name: DocumentName
     var PermissionType: DocumentPermissionType
+    var MaxResults: js.UndefOr[DocumentPermissionMaxResults]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object DescribeDocumentPermissionRequest {
     @inline
     def apply(
         Name: DocumentName,
-        PermissionType: DocumentPermissionType
+        PermissionType: DocumentPermissionType,
+        MaxResults: js.UndefOr[DocumentPermissionMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeDocumentPermissionRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
       )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentPermissionRequest]
     }
   }
@@ -3789,17 +3797,20 @@ package ssm {
   trait DescribeDocumentPermissionResponse extends js.Object {
     var AccountIds: js.UndefOr[AccountIdList]
     var AccountSharingInfoList: js.UndefOr[AccountSharingInfoList]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object DescribeDocumentPermissionResponse {
     @inline
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined,
-        AccountSharingInfoList: js.UndefOr[AccountSharingInfoList] = js.undefined
+        AccountSharingInfoList: js.UndefOr[AccountSharingInfoList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeDocumentPermissionResponse = {
       val __obj = js.Dynamic.literal()
       AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
       AccountSharingInfoList.foreach(__v => __obj.updateDynamic("AccountSharingInfoList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentPermissionResponse]
     }
   }
@@ -10561,18 +10572,18 @@ package ssm {
 
   @js.native
   trait RegisterTaskWithMaintenanceWindowRequest extends js.Object {
-    var MaxConcurrency: MaxConcurrency
-    var MaxErrors: MaxErrors
-    var Targets: Targets
     var TaskArn: MaintenanceWindowTaskArn
     var TaskType: MaintenanceWindowTaskType
     var WindowId: MaintenanceWindowId
     var ClientToken: js.UndefOr[ClientToken]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
+    var MaxConcurrency: js.UndefOr[MaxConcurrency]
+    var MaxErrors: js.UndefOr[MaxErrors]
     var Name: js.UndefOr[MaintenanceWindowName]
     var Priority: js.UndefOr[MaintenanceWindowTaskPriority]
     var ServiceRoleArn: js.UndefOr[ServiceRole]
+    var Targets: js.UndefOr[Targets]
     var TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters]
     var TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters]
   }
@@ -10580,25 +10591,22 @@ package ssm {
   object RegisterTaskWithMaintenanceWindowRequest {
     @inline
     def apply(
-        MaxConcurrency: MaxConcurrency,
-        MaxErrors: MaxErrors,
-        Targets: Targets,
         TaskArn: MaintenanceWindowTaskArn,
         TaskType: MaintenanceWindowTaskType,
         WindowId: MaintenanceWindowId,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
         ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
         TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
         TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined
     ): RegisterTaskWithMaintenanceWindowRequest = {
       val __obj = js.Dynamic.literal(
-        "MaxConcurrency" -> MaxConcurrency.asInstanceOf[js.Any],
-        "MaxErrors" -> MaxErrors.asInstanceOf[js.Any],
-        "Targets" -> Targets.asInstanceOf[js.Any],
         "TaskArn" -> TaskArn.asInstanceOf[js.Any],
         "TaskType" -> TaskType.asInstanceOf[js.Any],
         "WindowId" -> WindowId.asInstanceOf[js.Any]
@@ -10607,9 +10615,12 @@ package ssm {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       TaskInvocationParameters.foreach(__v => __obj.updateDynamic("TaskInvocationParameters")(__v.asInstanceOf[js.Any]))
       TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTaskWithMaintenanceWindowRequest]
@@ -11910,6 +11921,8 @@ package ssm {
   }
 
   /** An array of search criteria that targets instances using a Key,Value combination that you specify.
+    *
+    * '''Note:'''One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html|Registering maintenance window tasks without targets]] in the <i>AWS Systems Manager User Guide</i>.
     * Supported formats include the following.
     * * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code>
     * * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>

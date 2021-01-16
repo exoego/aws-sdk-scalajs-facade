@@ -1463,7 +1463,7 @@ package s3control {
     }
   }
 
-  /** The operation that you want this job to perform on each object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait JobOperation extends js.Object {
@@ -2447,7 +2447,7 @@ package s3control {
     @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
   }
 
-  /** Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes each value through to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
+  /** Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes every object to the underlying PUT Copy object API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html|PUT Object - Copy]].
     */
   @js.native
   trait S3CopyObjectOperation extends js.Object {
@@ -2574,7 +2574,7 @@ package s3control {
     @inline def values = js.Array(id, emailAddress, uri)
   }
 
-  /** Contains the configuration parameters for an Initiate Glacier Restore job. S3 Batch Operations passes each value through to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|RestoreObject]].
+  /** Contains the configuration parameters for an S3 Initiate Restore Object job. S3 Batch Operations passes every object to the underlying POST Object restore API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request|RestoreObject]].
     */
   @js.native
   trait S3InitiateRestoreObjectOperation extends js.Object {
@@ -2761,7 +2761,7 @@ package s3control {
     @inline def values = js.Array(AES256, KMS)
   }
 
-  /** Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes each value through to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
+  /** Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes every object to the underlying PUT Object acl API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html|PUT Object acl]].
     */
   @js.native
   trait S3SetObjectAclOperation extends js.Object {
@@ -2779,7 +2779,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes each object through to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait S3SetObjectLegalHoldOperation extends js.Object {
@@ -2798,7 +2798,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes each value through to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
     */
   @js.native
   trait S3SetObjectRetentionOperation extends js.Object {
@@ -2821,7 +2821,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration parameters for a Set Object Tagging operation. S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
+  /** Contains the configuration parameters for a Set Object Tagging operation. S3 Batch Operations passes every object to the underlying PUT Object tagging API. For more information about the parameters for this operation, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html|PUT Object tagging]].
     */
   @js.native
   trait S3SetObjectTaggingOperation extends js.Object {

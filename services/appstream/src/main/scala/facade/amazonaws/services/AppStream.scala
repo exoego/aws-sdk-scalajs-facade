@@ -215,8 +215,18 @@ package appstream {
     val FILE_UPLOAD = "FILE_UPLOAD".asInstanceOf[Action]
     val FILE_DOWNLOAD = "FILE_DOWNLOAD".asInstanceOf[Action]
     val PRINTING_TO_LOCAL_DEVICE = "PRINTING_TO_LOCAL_DEVICE".asInstanceOf[Action]
+    val DOMAIN_PASSWORD_SIGNIN = "DOMAIN_PASSWORD_SIGNIN".asInstanceOf[Action]
+    val DOMAIN_SMART_CARD_SIGNIN = "DOMAIN_SMART_CARD_SIGNIN".asInstanceOf[Action]
 
-    @inline def values = js.Array(CLIPBOARD_COPY_FROM_LOCAL_DEVICE, CLIPBOARD_COPY_TO_LOCAL_DEVICE, FILE_UPLOAD, FILE_DOWNLOAD, PRINTING_TO_LOCAL_DEVICE)
+    @inline def values = js.Array(
+      CLIPBOARD_COPY_FROM_LOCAL_DEVICE,
+      CLIPBOARD_COPY_TO_LOCAL_DEVICE,
+      FILE_UPLOAD,
+      FILE_DOWNLOAD,
+      PRINTING_TO_LOCAL_DEVICE,
+      DOMAIN_PASSWORD_SIGNIN,
+      DOMAIN_SMART_CARD_SIGNIN
+    )
   }
 
   /** Describes an application in the application catalog.
@@ -1888,6 +1898,8 @@ package appstream {
     val SECURITY_GROUPS_NOT_FOUND = "SECURITY_GROUPS_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val IGW_NOT_ATTACHED = "IGW_NOT_ATTACHED".asInstanceOf[FleetErrorCode]
     val IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION = "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION".asInstanceOf[FleetErrorCode]
+    val FLEET_STOPPED = "FLEET_STOPPED".asInstanceOf[FleetErrorCode]
+    val FLEET_INSTANCE_PROVISIONING_FAILURE = "FLEET_INSTANCE_PROVISIONING_FAILURE".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_FILE_NOT_FOUND = "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_ACCESS_DENIED = "DOMAIN_JOIN_ERROR_ACCESS_DENIED".asInstanceOf[FleetErrorCode]
     val DOMAIN_JOIN_ERROR_LOGON_FAILURE = "DOMAIN_JOIN_ERROR_LOGON_FAILURE".asInstanceOf[FleetErrorCode]
@@ -1918,6 +1930,8 @@ package appstream {
       SECURITY_GROUPS_NOT_FOUND,
       IGW_NOT_ATTACHED,
       IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION,
+      FLEET_STOPPED,
+      FLEET_INSTANCE_PROVISIONING_FAILURE,
       DOMAIN_JOIN_ERROR_FILE_NOT_FOUND,
       DOMAIN_JOIN_ERROR_ACCESS_DENIED,
       DOMAIN_JOIN_ERROR_LOGON_FAILURE,
@@ -2164,8 +2178,10 @@ package appstream {
     val FAILED = "FAILED".asInstanceOf[ImageState]
     val COPYING = "COPYING".asInstanceOf[ImageState]
     val DELETING = "DELETING".asInstanceOf[ImageState]
+    val CREATING = "CREATING".asInstanceOf[ImageState]
+    val IMPORTING = "IMPORTING".asInstanceOf[ImageState]
 
-    @inline def values = js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING)
+    @inline def values = js.Array(PENDING, AVAILABLE, FAILED, COPYING, DELETING, CREATING, IMPORTING)
   }
 
   /** Describes the reason why the last image state change occurred.

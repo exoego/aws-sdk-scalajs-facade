@@ -1991,6 +1991,7 @@ package ec2 {
     var DryRun: js.UndefOr[Boolean]
     var NetworkBorderGroup: js.UndefOr[String]
     var PublicIpv4Pool: js.UndefOr[Ipv4PoolEc2Id]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
   }
 
   object AllocateAddressRequest {
@@ -2001,7 +2002,8 @@ package ec2 {
         Domain: js.UndefOr[DomainType] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         NetworkBorderGroup: js.UndefOr[String] = js.undefined,
-        PublicIpv4Pool: js.UndefOr[Ipv4PoolEc2Id] = js.undefined
+        PublicIpv4Pool: js.UndefOr[Ipv4PoolEc2Id] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
     ): AllocateAddressRequest = {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
@@ -2010,6 +2012,7 @@ package ec2 {
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       NetworkBorderGroup.foreach(__v => __obj.updateDynamic("NetworkBorderGroup")(__v.asInstanceOf[js.Any]))
       PublicIpv4Pool.foreach(__v => __obj.updateDynamic("PublicIpv4Pool")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllocateAddressRequest]
     }
   }
@@ -23637,6 +23640,14 @@ package ec2 {
     val `c6gd.8xlarge` = "c6gd.8xlarge".asInstanceOf[InstanceType]
     val `c6gd.12xlarge` = "c6gd.12xlarge".asInstanceOf[InstanceType]
     val `c6gd.16xlarge` = "c6gd.16xlarge".asInstanceOf[InstanceType]
+    val `c6gn.medium` = "c6gn.medium".asInstanceOf[InstanceType]
+    val `c6gn.large` = "c6gn.large".asInstanceOf[InstanceType]
+    val `c6gn.xlarge` = "c6gn.xlarge".asInstanceOf[InstanceType]
+    val `c6gn.2xlarge` = "c6gn.2xlarge".asInstanceOf[InstanceType]
+    val `c6gn.4xlarge` = "c6gn.4xlarge".asInstanceOf[InstanceType]
+    val `c6gn.8xlarge` = "c6gn.8xlarge".asInstanceOf[InstanceType]
+    val `c6gn.12xlarge` = "c6gn.12xlarge".asInstanceOf[InstanceType]
+    val `c6gn.16xlarge` = "c6gn.16xlarge".asInstanceOf[InstanceType]
     val `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
     val `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
     val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
@@ -24020,6 +24031,14 @@ package ec2 {
       `c6gd.8xlarge`,
       `c6gd.12xlarge`,
       `c6gd.16xlarge`,
+      `c6gn.medium`,
+      `c6gn.large`,
+      `c6gn.xlarge`,
+      `c6gn.2xlarge`,
+      `c6gn.4xlarge`,
+      `c6gn.8xlarge`,
+      `c6gn.12xlarge`,
+      `c6gn.16xlarge`,
       `cc1.4xlarge`,
       `cc2.8xlarge`,
       `g2.2xlarge`,
@@ -27748,6 +27767,7 @@ package ec2 {
     var VolumeId: VolumeId
     var DryRun: js.UndefOr[Boolean]
     var Iops: js.UndefOr[Int]
+    var MultiAttachEnabled: js.UndefOr[Boolean]
     var Size: js.UndefOr[Int]
     var Throughput: js.UndefOr[Int]
     var VolumeType: js.UndefOr[VolumeType]
@@ -27759,6 +27779,7 @@ package ec2 {
         VolumeId: VolumeId,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[Int] = js.undefined,
+        MultiAttachEnabled: js.UndefOr[Boolean] = js.undefined,
         Size: js.UndefOr[Int] = js.undefined,
         Throughput: js.UndefOr[Int] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
@@ -27769,6 +27790,7 @@ package ec2 {
 
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      MultiAttachEnabled.foreach(__v => __obj.updateDynamic("MultiAttachEnabled")(__v.asInstanceOf[js.Any]))
       Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       Throughput.foreach(__v => __obj.updateDynamic("Throughput")(__v.asInstanceOf[js.Any]))
       VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
@@ -38170,6 +38192,7 @@ package ec2 {
     var EndTime: js.UndefOr[DateTime]
     var ModificationState: js.UndefOr[VolumeModificationState]
     var OriginalIops: js.UndefOr[Int]
+    var OriginalMultiAttachEnabled: js.UndefOr[Boolean]
     var OriginalSize: js.UndefOr[Int]
     var OriginalThroughput: js.UndefOr[Int]
     var OriginalVolumeType: js.UndefOr[VolumeType]
@@ -38177,6 +38200,7 @@ package ec2 {
     var StartTime: js.UndefOr[DateTime]
     var StatusMessage: js.UndefOr[String]
     var TargetIops: js.UndefOr[Int]
+    var TargetMultiAttachEnabled: js.UndefOr[Boolean]
     var TargetSize: js.UndefOr[Int]
     var TargetThroughput: js.UndefOr[Int]
     var TargetVolumeType: js.UndefOr[VolumeType]
@@ -38189,6 +38213,7 @@ package ec2 {
         EndTime: js.UndefOr[DateTime] = js.undefined,
         ModificationState: js.UndefOr[VolumeModificationState] = js.undefined,
         OriginalIops: js.UndefOr[Int] = js.undefined,
+        OriginalMultiAttachEnabled: js.UndefOr[Boolean] = js.undefined,
         OriginalSize: js.UndefOr[Int] = js.undefined,
         OriginalThroughput: js.UndefOr[Int] = js.undefined,
         OriginalVolumeType: js.UndefOr[VolumeType] = js.undefined,
@@ -38196,6 +38221,7 @@ package ec2 {
         StartTime: js.UndefOr[DateTime] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined,
         TargetIops: js.UndefOr[Int] = js.undefined,
+        TargetMultiAttachEnabled: js.UndefOr[Boolean] = js.undefined,
         TargetSize: js.UndefOr[Int] = js.undefined,
         TargetThroughput: js.UndefOr[Int] = js.undefined,
         TargetVolumeType: js.UndefOr[VolumeType] = js.undefined,
@@ -38205,6 +38231,7 @@ package ec2 {
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       ModificationState.foreach(__v => __obj.updateDynamic("ModificationState")(__v.asInstanceOf[js.Any]))
       OriginalIops.foreach(__v => __obj.updateDynamic("OriginalIops")(__v.asInstanceOf[js.Any]))
+      OriginalMultiAttachEnabled.foreach(__v => __obj.updateDynamic("OriginalMultiAttachEnabled")(__v.asInstanceOf[js.Any]))
       OriginalSize.foreach(__v => __obj.updateDynamic("OriginalSize")(__v.asInstanceOf[js.Any]))
       OriginalThroughput.foreach(__v => __obj.updateDynamic("OriginalThroughput")(__v.asInstanceOf[js.Any]))
       OriginalVolumeType.foreach(__v => __obj.updateDynamic("OriginalVolumeType")(__v.asInstanceOf[js.Any]))
@@ -38212,6 +38239,7 @@ package ec2 {
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       TargetIops.foreach(__v => __obj.updateDynamic("TargetIops")(__v.asInstanceOf[js.Any]))
+      TargetMultiAttachEnabled.foreach(__v => __obj.updateDynamic("TargetMultiAttachEnabled")(__v.asInstanceOf[js.Any]))
       TargetSize.foreach(__v => __obj.updateDynamic("TargetSize")(__v.asInstanceOf[js.Any]))
       TargetThroughput.foreach(__v => __obj.updateDynamic("TargetThroughput")(__v.asInstanceOf[js.Any]))
       TargetVolumeType.foreach(__v => __obj.updateDynamic("TargetVolumeType")(__v.asInstanceOf[js.Any]))

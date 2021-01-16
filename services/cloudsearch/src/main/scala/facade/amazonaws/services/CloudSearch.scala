@@ -1789,6 +1789,11 @@ package cloudsearch {
     val `search.m3.large` = "search.m3.large".asInstanceOf[PartitionInstanceType]
     val `search.m3.xlarge` = "search.m3.xlarge".asInstanceOf[PartitionInstanceType]
     val `search.m3.2xlarge` = "search.m3.2xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.small` = "search.small".asInstanceOf[PartitionInstanceType]
+    val `search.medium` = "search.medium".asInstanceOf[PartitionInstanceType]
+    val `search.large` = "search.large".asInstanceOf[PartitionInstanceType]
+    val `search.xlarge` = "search.xlarge".asInstanceOf[PartitionInstanceType]
+    val `search.2xlarge` = "search.2xlarge".asInstanceOf[PartitionInstanceType]
 
     @inline def values = js.Array(
       `search.m1.small`,
@@ -1798,7 +1803,12 @@ package cloudsearch {
       `search.m3.medium`,
       `search.m3.large`,
       `search.m3.xlarge`,
-      `search.m3.2xlarge`
+      `search.m3.2xlarge`,
+      `search.small`,
+      `search.medium`,
+      `search.large`,
+      `search.xlarge`,
+      `search.2xlarge`
     )
   }
 

@@ -26,8 +26,10 @@ package object resourcegroups {
   type GroupName = String
   type GroupParameterList = js.Array[GroupConfigurationParameter]
   type GroupString = String
+  type ListGroupResourcesItemList = js.Array[ListGroupResourcesItem]
   type MaxResults = Int
   type NextToken = String
+  type PendingResourceList = js.Array[PendingResource]
   type Query = String
   type QueryErrorList = js.Array[QueryError]
   type QueryErrorMessage = String
@@ -54,6 +56,7 @@ package object resourcegroups {
     @inline def groupResourcesFuture(params: GroupResourcesInput): Future[GroupResourcesOutput] = service.groupResources(params).promise().toFuture
     @inline def listGroupResourcesFuture(params: ListGroupResourcesInput): Future[ListGroupResourcesOutput] = service.listGroupResources(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsInput): Future[ListGroupsOutput] = service.listGroups(params).promise().toFuture
+    @inline def putGroupConfigurationFuture(params: PutGroupConfigurationInput): Future[PutGroupConfigurationOutput] = service.putGroupConfiguration(params).promise().toFuture
     @inline def searchResourcesFuture(params: SearchResourcesInput): Future[SearchResourcesOutput] = service.searchResources(params).promise().toFuture
     @inline def tagFuture(params: TagInput): Future[TagOutput] = service.tag(params).promise().toFuture
     @inline def ungroupResourcesFuture(params: UngroupResourcesInput): Future[UngroupResourcesOutput] = service.ungroupResources(params).promise().toFuture
@@ -79,6 +82,7 @@ package resourcegroups {
     def groupResources(params: GroupResourcesInput): Request[GroupResourcesOutput] = js.native
     def listGroupResources(params: ListGroupResourcesInput): Request[ListGroupResourcesOutput] = js.native
     def listGroups(params: ListGroupsInput): Request[ListGroupsOutput] = js.native
+    def putGroupConfiguration(params: PutGroupConfigurationInput): Request[PutGroupConfigurationOutput] = js.native
     def searchResources(params: SearchResourcesInput): Request[SearchResourcesOutput] = js.native
     def tag(params: TagInput): Request[TagOutput] = js.native
     def ungroupResources(params: UngroupResourcesInput): Request[UngroupResourcesOutput] = js.native
@@ -340,7 +344,7 @@ package resourcegroups {
   }
 
   /** A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:
-    * * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group.
+    * * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <a>PutGroupConfiguration</a> operation.
     * * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
     */
   @js.native
@@ -367,7 +371,7 @@ package resourcegroups {
     }
   }
 
-  /** A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group.
+  /** A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group by using <a>CreateGroup</a>, or later by using the <a>PutGroupConfiguration</a> operation. For details about group service configuration syntax, see [[https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html|Service configurations for resource groups]].
     */
   @js.native
   trait GroupConfiguration extends js.Object {
@@ -394,7 +398,7 @@ package resourcegroups {
     }
   }
 
-  /** An item in a group configuration. A group configuration can have one or more items.
+  /** An item in a group configuration. A group service configuration can have one or more items. For details about group service configuration syntax, see [[https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html|Service configurations for resource groups]].
     */
   @js.native
   trait GroupConfigurationItem extends js.Object {
@@ -417,7 +421,7 @@ package resourcegroups {
     }
   }
 
-  /** A parameter for a group configuration item.
+  /** A parameter for a group configuration item. For details about group service configuration syntax, see [[https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html|Service configurations for resource groups]].
     */
   @js.native
   trait GroupConfigurationParameter extends js.Object {
@@ -547,6 +551,7 @@ package resourcegroups {
   @js.native
   trait GroupResourcesOutput extends js.Object {
     var Failed: js.UndefOr[FailedResourceList]
+    var Pending: js.UndefOr[PendingResourceList]
     var Succeeded: js.UndefOr[ResourceArnList]
   }
 
@@ -554,10 +559,12 @@ package resourcegroups {
     @inline
     def apply(
         Failed: js.UndefOr[FailedResourceList] = js.undefined,
+        Pending: js.UndefOr[PendingResourceList] = js.undefined,
         Succeeded: js.UndefOr[ResourceArnList] = js.undefined
     ): GroupResourcesOutput = {
       val __obj = js.Dynamic.literal()
       Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
       Succeeded.foreach(__v => __obj.updateDynamic("Succeeded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupResourcesOutput]
     }
@@ -591,11 +598,33 @@ package resourcegroups {
     }
   }
 
+  /** A structure returned by the <a>ListGroupResources</a> operation that contains identity and group membership status information for one of the resources in the group.
+    */
+  @js.native
+  trait ListGroupResourcesItem extends js.Object {
+    var Identifier: js.UndefOr[ResourceIdentifier]
+    var Status: js.UndefOr[ResourceStatus]
+  }
+
+  object ListGroupResourcesItem {
+    @inline
+    def apply(
+        Identifier: js.UndefOr[ResourceIdentifier] = js.undefined,
+        Status: js.UndefOr[ResourceStatus] = js.undefined
+    ): ListGroupResourcesItem = {
+      val __obj = js.Dynamic.literal()
+      Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupResourcesItem]
+    }
+  }
+
   @js.native
   trait ListGroupResourcesOutput extends js.Object {
     var NextToken: js.UndefOr[NextToken]
     var QueryErrors: js.UndefOr[QueryErrorList]
     var ResourceIdentifiers: js.UndefOr[ResourceIdentifierList]
+    var Resources: js.UndefOr[ListGroupResourcesItemList]
   }
 
   object ListGroupResourcesOutput {
@@ -603,12 +632,14 @@ package resourcegroups {
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
-        ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
+        ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined,
+        Resources: js.UndefOr[ListGroupResourcesItemList] = js.undefined
     ): ListGroupResourcesOutput = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       QueryErrors.foreach(__v => __obj.updateDynamic("QueryErrors")(__v.asInstanceOf[js.Any]))
       ResourceIdentifiers.foreach(__v => __obj.updateDynamic("ResourceIdentifiers")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupResourcesOutput]
     }
   }
@@ -654,6 +685,54 @@ package resourcegroups {
       Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsOutput]
+    }
+  }
+
+  /** A structure that identifies a resource that is currently pending addition to the group as a member. Adding a resource to a resource group happens asynchronously as a background task and this one isn't completed yet.
+    */
+  @js.native
+  trait PendingResource extends js.Object {
+    var ResourceArn: js.UndefOr[ResourceArn]
+  }
+
+  object PendingResource {
+    @inline
+    def apply(
+        ResourceArn: js.UndefOr[ResourceArn] = js.undefined
+    ): PendingResource = {
+      val __obj = js.Dynamic.literal()
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingResource]
+    }
+  }
+
+  @js.native
+  trait PutGroupConfigurationInput extends js.Object {
+    var Configuration: js.UndefOr[GroupConfigurationList]
+    var Group: js.UndefOr[GroupString]
+  }
+
+  object PutGroupConfigurationInput {
+    @inline
+    def apply(
+        Configuration: js.UndefOr[GroupConfigurationList] = js.undefined,
+        Group: js.UndefOr[GroupString] = js.undefined
+    ): PutGroupConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutGroupConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait PutGroupConfigurationOutput extends js.Object
+
+  object PutGroupConfigurationOutput {
+    @inline
+    def apply(): PutGroupConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutGroupConfigurationOutput]
     }
   }
 
@@ -726,7 +805,7 @@ package resourcegroups {
     @inline def values = js.Array(`resource-type`)
   }
 
-  /** The ARN of a resource, and its resource type.
+  /** A structure that contains the ARN of a resource and its resource type.
     */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -785,6 +864,32 @@ package resourcegroups {
       )
       __obj.asInstanceOf[ResourceQuery]
     }
+  }
+
+  /** A structure that identifies the current group membership status for a resource. Adding a resource to a resource group is performed asynchronously as a background task. A <code>PENDING</code> status indicates, for this resource, that the process isn't completed yet.
+    */
+  @js.native
+  trait ResourceStatus extends js.Object {
+    var Name: js.UndefOr[ResourceStatusValue]
+  }
+
+  object ResourceStatus {
+    @inline
+    def apply(
+        Name: js.UndefOr[ResourceStatusValue] = js.undefined
+    ): ResourceStatus = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceStatus]
+    }
+  }
+
+  @js.native
+  sealed trait ResourceStatusValue extends js.Any
+  object ResourceStatusValue {
+    val PENDING = "PENDING".asInstanceOf[ResourceStatusValue]
+
+    @inline def values = js.Array(PENDING)
   }
 
   @js.native
@@ -895,6 +1000,7 @@ package resourcegroups {
   @js.native
   trait UngroupResourcesOutput extends js.Object {
     var Failed: js.UndefOr[FailedResourceList]
+    var Pending: js.UndefOr[PendingResourceList]
     var Succeeded: js.UndefOr[ResourceArnList]
   }
 
@@ -902,10 +1008,12 @@ package resourcegroups {
     @inline
     def apply(
         Failed: js.UndefOr[FailedResourceList] = js.undefined,
+        Pending: js.UndefOr[PendingResourceList] = js.undefined,
         Succeeded: js.UndefOr[ResourceArnList] = js.undefined
     ): UngroupResourcesOutput = {
       val __obj = js.Dynamic.literal()
       Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
       Succeeded.foreach(__v => __obj.updateDynamic("Succeeded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UngroupResourcesOutput]
     }

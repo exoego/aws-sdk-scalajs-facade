@@ -12,11 +12,14 @@ package object qldbsession {
   type IonText = String
   type LedgerName = String
   type PageToken = String
+  type ProcessingTimeMilliseconds = Double
+  type ReadIOs = Double
   type SessionToken = String
   type Statement = String
   type StatementParameters = js.Array[ValueHolder]
   type TransactionId = String
   type ValueHolders = js.Array[ValueHolder]
+  type WriteIOs = Double
 
   implicit final class QLDBSessionOps(private val service: QLDBSession) extends AnyVal {
 
@@ -50,12 +53,17 @@ package qldbsession {
   /** Contains the details of the aborted transaction.
     */
   @js.native
-  trait AbortTransactionResult extends js.Object
+  trait AbortTransactionResult extends js.Object {
+    var TimingInformation: js.UndefOr[TimingInformation]
+  }
 
   object AbortTransactionResult {
     @inline
-    def apply(): AbortTransactionResult = {
+    def apply(
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined
+    ): AbortTransactionResult = {
       val __obj = js.Dynamic.literal()
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AbortTransactionResult]
     }
   }
@@ -87,6 +95,8 @@ package qldbsession {
   @js.native
   trait CommitTransactionResult extends js.Object {
     var CommitDigest: js.UndefOr[CommitDigest]
+    var ConsumedIOs: js.UndefOr[IOUsage]
+    var TimingInformation: js.UndefOr[TimingInformation]
     var TransactionId: js.UndefOr[TransactionId]
   }
 
@@ -94,10 +104,14 @@ package qldbsession {
     @inline
     def apply(
         CommitDigest: js.UndefOr[CommitDigest] = js.undefined,
+        ConsumedIOs: js.UndefOr[IOUsage] = js.undefined,
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined,
         TransactionId: js.UndefOr[TransactionId] = js.undefined
     ): CommitTransactionResult = {
       val __obj = js.Dynamic.literal()
       CommitDigest.foreach(__v => __obj.updateDynamic("CommitDigest")(__v.asInstanceOf[js.Any]))
+      ConsumedIOs.foreach(__v => __obj.updateDynamic("ConsumedIOs")(__v.asInstanceOf[js.Any]))
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommitTransactionResult]
     }
@@ -119,12 +133,17 @@ package qldbsession {
   /** Contains the details of the ended session.
     */
   @js.native
-  trait EndSessionResult extends js.Object
+  trait EndSessionResult extends js.Object {
+    var TimingInformation: js.UndefOr[TimingInformation]
+  }
 
   object EndSessionResult {
     @inline
-    def apply(): EndSessionResult = {
+    def apply(
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined
+    ): EndSessionResult = {
       val __obj = js.Dynamic.literal()
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndSessionResult]
     }
   }
@@ -159,16 +178,22 @@ package qldbsession {
     */
   @js.native
   trait ExecuteStatementResult extends js.Object {
+    var ConsumedIOs: js.UndefOr[IOUsage]
     var FirstPage: js.UndefOr[Page]
+    var TimingInformation: js.UndefOr[TimingInformation]
   }
 
   object ExecuteStatementResult {
     @inline
     def apply(
-        FirstPage: js.UndefOr[Page] = js.undefined
+        ConsumedIOs: js.UndefOr[IOUsage] = js.undefined,
+        FirstPage: js.UndefOr[Page] = js.undefined,
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined
     ): ExecuteStatementResult = {
       val __obj = js.Dynamic.literal()
+      ConsumedIOs.foreach(__v => __obj.updateDynamic("ConsumedIOs")(__v.asInstanceOf[js.Any]))
       FirstPage.foreach(__v => __obj.updateDynamic("FirstPage")(__v.asInstanceOf[js.Any]))
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteStatementResult]
     }
   }
@@ -199,17 +224,44 @@ package qldbsession {
     */
   @js.native
   trait FetchPageResult extends js.Object {
+    var ConsumedIOs: js.UndefOr[IOUsage]
     var Page: js.UndefOr[Page]
+    var TimingInformation: js.UndefOr[TimingInformation]
   }
 
   object FetchPageResult {
     @inline
     def apply(
-        Page: js.UndefOr[Page] = js.undefined
+        ConsumedIOs: js.UndefOr[IOUsage] = js.undefined,
+        Page: js.UndefOr[Page] = js.undefined,
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined
     ): FetchPageResult = {
       val __obj = js.Dynamic.literal()
+      ConsumedIOs.foreach(__v => __obj.updateDynamic("ConsumedIOs")(__v.asInstanceOf[js.Any]))
       Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FetchPageResult]
+    }
+  }
+
+  /** Contains I/O usage metrics for a command that was invoked.
+    */
+  @js.native
+  trait IOUsage extends js.Object {
+    var ReadIOs: js.UndefOr[ReadIOs]
+    var WriteIOs: js.UndefOr[WriteIOs]
+  }
+
+  object IOUsage {
+    @inline
+    def apply(
+        ReadIOs: js.UndefOr[ReadIOs] = js.undefined,
+        WriteIOs: js.UndefOr[WriteIOs] = js.undefined
+    ): IOUsage = {
+      val __obj = js.Dynamic.literal()
+      ReadIOs.foreach(__v => __obj.updateDynamic("ReadIOs")(__v.asInstanceOf[js.Any]))
+      WriteIOs.foreach(__v => __obj.updateDynamic("WriteIOs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IOUsage]
     }
   }
 
@@ -329,15 +381,18 @@ package qldbsession {
   @js.native
   trait StartSessionResult extends js.Object {
     var SessionToken: js.UndefOr[SessionToken]
+    var TimingInformation: js.UndefOr[TimingInformation]
   }
 
   object StartSessionResult {
     @inline
     def apply(
-        SessionToken: js.UndefOr[SessionToken] = js.undefined
+        SessionToken: js.UndefOr[SessionToken] = js.undefined,
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined
     ): StartSessionResult = {
       val __obj = js.Dynamic.literal()
       SessionToken.foreach(__v => __obj.updateDynamic("SessionToken")(__v.asInstanceOf[js.Any]))
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSessionResult]
     }
   }
@@ -359,21 +414,42 @@ package qldbsession {
     */
   @js.native
   trait StartTransactionResult extends js.Object {
+    var TimingInformation: js.UndefOr[TimingInformation]
     var TransactionId: js.UndefOr[TransactionId]
   }
 
   object StartTransactionResult {
     @inline
     def apply(
+        TimingInformation: js.UndefOr[TimingInformation] = js.undefined,
         TransactionId: js.UndefOr[TransactionId] = js.undefined
     ): StartTransactionResult = {
       val __obj = js.Dynamic.literal()
+      TimingInformation.foreach(__v => __obj.updateDynamic("TimingInformation")(__v.asInstanceOf[js.Any]))
       TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTransactionResult]
     }
   }
 
-  /** A structure that can contain an Amazon Ion value in multiple encoding formats.
+  /** Contains server-side performance information for a command. Amazon QLDB captures timing information between the times when it receives the request and when it sends the corresponding response.
+    */
+  @js.native
+  trait TimingInformation extends js.Object {
+    var ProcessingTimeMilliseconds: js.UndefOr[ProcessingTimeMilliseconds]
+  }
+
+  object TimingInformation {
+    @inline
+    def apply(
+        ProcessingTimeMilliseconds: js.UndefOr[ProcessingTimeMilliseconds] = js.undefined
+    ): TimingInformation = {
+      val __obj = js.Dynamic.literal()
+      ProcessingTimeMilliseconds.foreach(__v => __obj.updateDynamic("ProcessingTimeMilliseconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimingInformation]
+    }
+  }
+
+  /** A structure that can contain a value in multiple encoding formats.
     */
   @js.native
   trait ValueHolder extends js.Object {

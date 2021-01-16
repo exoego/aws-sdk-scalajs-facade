@@ -68,6 +68,7 @@ package object codepipeline {
   type Percentage = Int
   type PipelineArn = String
   type PipelineExecutionId = String
+  type PipelineExecutionStatusSummary = String
   type PipelineExecutionSummaryList = js.Array[PipelineExecutionSummary]
   type PipelineList = js.Array[PipelineSummary]
   type PipelineName = String
@@ -2183,6 +2184,7 @@ package codepipeline {
     var pipelineName: js.UndefOr[PipelineName]
     var pipelineVersion: js.UndefOr[PipelineVersion]
     var status: js.UndefOr[PipelineExecutionStatus]
+    var statusSummary: js.UndefOr[PipelineExecutionStatusSummary]
   }
 
   object PipelineExecution {
@@ -2192,7 +2194,8 @@ package codepipeline {
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined,
         pipelineName: js.UndefOr[PipelineName] = js.undefined,
         pipelineVersion: js.UndefOr[PipelineVersion] = js.undefined,
-        status: js.UndefOr[PipelineExecutionStatus] = js.undefined
+        status: js.UndefOr[PipelineExecutionStatus] = js.undefined,
+        statusSummary: js.UndefOr[PipelineExecutionStatusSummary] = js.undefined
     ): PipelineExecution = {
       val __obj = js.Dynamic.literal()
       artifactRevisions.foreach(__v => __obj.updateDynamic("artifactRevisions")(__v.asInstanceOf[js.Any]))
@@ -2200,6 +2203,7 @@ package codepipeline {
       pipelineName.foreach(__v => __obj.updateDynamic("pipelineName")(__v.asInstanceOf[js.Any]))
       pipelineVersion.foreach(__v => __obj.updateDynamic("pipelineVersion")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusSummary.foreach(__v => __obj.updateDynamic("statusSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecution]
     }
   }
@@ -2207,6 +2211,7 @@ package codepipeline {
   @js.native
   sealed trait PipelineExecutionStatus extends js.Any
   object PipelineExecutionStatus {
+    val Cancelled = "Cancelled".asInstanceOf[PipelineExecutionStatus]
     val InProgress = "InProgress".asInstanceOf[PipelineExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[PipelineExecutionStatus]
     val Stopping = "Stopping".asInstanceOf[PipelineExecutionStatus]
@@ -2214,7 +2219,7 @@ package codepipeline {
     val Superseded = "Superseded".asInstanceOf[PipelineExecutionStatus]
     val Failed = "Failed".asInstanceOf[PipelineExecutionStatus]
 
-    @inline def values = js.Array(InProgress, Stopped, Stopping, Succeeded, Superseded, Failed)
+    @inline def values = js.Array(Cancelled, InProgress, Stopped, Stopping, Succeeded, Superseded, Failed)
   }
 
   /** Summary information about a pipeline execution.
@@ -2849,13 +2854,14 @@ package codepipeline {
   @js.native
   sealed trait StageExecutionStatus extends js.Any
   object StageExecutionStatus {
+    val Cancelled = "Cancelled".asInstanceOf[StageExecutionStatus]
     val InProgress = "InProgress".asInstanceOf[StageExecutionStatus]
     val Failed = "Failed".asInstanceOf[StageExecutionStatus]
     val Stopped = "Stopped".asInstanceOf[StageExecutionStatus]
     val Stopping = "Stopping".asInstanceOf[StageExecutionStatus]
     val Succeeded = "Succeeded".asInstanceOf[StageExecutionStatus]
 
-    @inline def values = js.Array(InProgress, Failed, Stopped, Stopping, Succeeded)
+    @inline def values = js.Array(Cancelled, InProgress, Failed, Stopped, Stopping, Succeeded)
   }
 
   @js.native

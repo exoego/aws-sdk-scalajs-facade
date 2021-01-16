@@ -2164,6 +2164,8 @@ package dms {
     var NestingLevel: js.UndefOr[NestingLevelValue]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var Username: js.UndefOr[String]
   }
@@ -2178,6 +2180,8 @@ package dms {
         NestingLevel: js.UndefOr[NestingLevelValue] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): DocDbSettings = {
@@ -2189,6 +2193,8 @@ package dms {
       NestingLevel.foreach(__v => __obj.updateDynamic("NestingLevel")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocDbSettings]
@@ -2473,7 +2479,7 @@ package dms {
     }
   }
 
-  /** Identifies the name and value of a filter object. This filter is used to limit the number and type of AWS DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter to the following APIs.
+  /** Identifies the name and value of a filter object. This filter is used to limit the number and type of AWS DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2504,6 +2510,8 @@ package dms {
     var MaxKBytesPerRead: js.UndefOr[IntegerOptional]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var SetDataCaptureChanges: js.UndefOr[BooleanOptional]
     var Username: js.UndefOr[String]
@@ -2517,6 +2525,8 @@ package dms {
         MaxKBytesPerRead: js.UndefOr[IntegerOptional] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         SetDataCaptureChanges: js.UndefOr[BooleanOptional] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
@@ -2527,6 +2537,8 @@ package dms {
       MaxKBytesPerRead.foreach(__v => __obj.updateDynamic("MaxKBytesPerRead")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       SetDataCaptureChanges.foreach(__v => __obj.updateDynamic("SetDataCaptureChanges")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
@@ -2721,6 +2733,8 @@ package dms {
     var Port: js.UndefOr[IntegerOptional]
     var ReadBackupOnly: js.UndefOr[BooleanOptional]
     var SafeguardPolicy: js.UndefOr[SafeguardPolicy]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var UseBcpFullLoad: js.UndefOr[BooleanOptional]
     var Username: js.UndefOr[String]
@@ -2736,6 +2750,8 @@ package dms {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         ReadBackupOnly: js.UndefOr[BooleanOptional] = js.undefined,
         SafeguardPolicy: js.UndefOr[SafeguardPolicy] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         UseBcpFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
@@ -2748,6 +2764,8 @@ package dms {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       ReadBackupOnly.foreach(__v => __obj.updateDynamic("ReadBackupOnly")(__v.asInstanceOf[js.Any]))
       SafeguardPolicy.foreach(__v => __obj.updateDynamic("SafeguardPolicy")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       UseBcpFullLoad.foreach(__v => __obj.updateDynamic("UseBcpFullLoad")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
@@ -3128,6 +3146,8 @@ package dms {
     var NestingLevel: js.UndefOr[NestingLevelValue]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var Username: js.UndefOr[String]
   }
@@ -3145,6 +3165,8 @@ package dms {
         NestingLevel: js.UndefOr[NestingLevelValue] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): MongoDbSettings = {
@@ -3159,6 +3181,8 @@ package dms {
       NestingLevel.foreach(__v => __obj.updateDynamic("NestingLevel")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MongoDbSettings]
@@ -3216,6 +3240,8 @@ package dms {
     var ParallelLoadThreads: js.UndefOr[IntegerOptional]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var ServerTimezone: js.UndefOr[String]
     var TargetDbType: js.UndefOr[TargetDbType]
@@ -3232,6 +3258,8 @@ package dms {
         ParallelLoadThreads: js.UndefOr[IntegerOptional] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         ServerTimezone: js.UndefOr[String] = js.undefined,
         TargetDbType: js.UndefOr[TargetDbType] = js.undefined,
@@ -3245,6 +3273,8 @@ package dms {
       ParallelLoadThreads.foreach(__v => __obj.updateDynamic("ParallelLoadThreads")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       ServerTimezone.foreach(__v => __obj.updateDynamic("ServerTimezone")(__v.asInstanceOf[js.Any]))
       TargetDbType.foreach(__v => __obj.updateDynamic("TargetDbType")(__v.asInstanceOf[js.Any]))
@@ -3328,6 +3358,10 @@ package dms {
     var ReadTableSpaceName: js.UndefOr[BooleanOptional]
     var ReplacePathPrefix: js.UndefOr[BooleanOptional]
     var RetryInterval: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerOracleAsmAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerOracleAsmSecretId: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var SecurityDbEncryption: js.UndefOr[SecretString]
     var SecurityDbEncryptionName: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
@@ -3363,6 +3397,10 @@ package dms {
         ReadTableSpaceName: js.UndefOr[BooleanOptional] = js.undefined,
         ReplacePathPrefix: js.UndefOr[BooleanOptional] = js.undefined,
         RetryInterval: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerOracleAsmAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerOracleAsmSecretId: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         SecurityDbEncryption: js.UndefOr[SecretString] = js.undefined,
         SecurityDbEncryptionName: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
@@ -3395,6 +3433,10 @@ package dms {
       ReadTableSpaceName.foreach(__v => __obj.updateDynamic("ReadTableSpaceName")(__v.asInstanceOf[js.Any]))
       ReplacePathPrefix.foreach(__v => __obj.updateDynamic("ReplacePathPrefix")(__v.asInstanceOf[js.Any]))
       RetryInterval.foreach(__v => __obj.updateDynamic("RetryInterval")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerOracleAsmAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerOracleAsmAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerOracleAsmSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerOracleAsmSecretId")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       SecurityDbEncryption.foreach(__v => __obj.updateDynamic("SecurityDbEncryption")(__v.asInstanceOf[js.Any]))
       SecurityDbEncryptionName.foreach(__v => __obj.updateDynamic("SecurityDbEncryptionName")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
@@ -3502,6 +3544,8 @@ package dms {
     var MaxFileSize: js.UndefOr[IntegerOptional]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var SlotName: js.UndefOr[String]
     var Username: js.UndefOr[String]
@@ -3519,6 +3563,8 @@ package dms {
         MaxFileSize: js.UndefOr[IntegerOptional] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         SlotName: js.UndefOr[String] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
@@ -3533,6 +3579,8 @@ package dms {
       MaxFileSize.foreach(__v => __obj.updateDynamic("MaxFileSize")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       SlotName.foreach(__v => __obj.updateDynamic("SlotName")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
@@ -3601,6 +3649,8 @@ package dms {
     var RemoveQuotes: js.UndefOr[BooleanOptional]
     var ReplaceChars: js.UndefOr[String]
     var ReplaceInvalidChars: js.UndefOr[String]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var ServerSideEncryptionKmsKeyId: js.UndefOr[String]
     var ServiceAccessRoleArn: js.UndefOr[String]
@@ -3634,6 +3684,8 @@ package dms {
         RemoveQuotes: js.UndefOr[BooleanOptional] = js.undefined,
         ReplaceChars: js.UndefOr[String] = js.undefined,
         ReplaceInvalidChars: js.UndefOr[String] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         ServerSideEncryptionKmsKeyId: js.UndefOr[String] = js.undefined,
         ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
@@ -3664,6 +3716,8 @@ package dms {
       RemoveQuotes.foreach(__v => __obj.updateDynamic("RemoveQuotes")(__v.asInstanceOf[js.Any]))
       ReplaceChars.foreach(__v => __obj.updateDynamic("ReplaceChars")(__v.asInstanceOf[js.Any]))
       ReplaceInvalidChars.foreach(__v => __obj.updateDynamic("ReplaceInvalidChars")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       ServerSideEncryptionKmsKeyId.foreach(__v => __obj.updateDynamic("ServerSideEncryptionKmsKeyId")(__v.asInstanceOf[js.Any]))
       ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
@@ -4676,6 +4730,8 @@ package dms {
     var DatabaseName: js.UndefOr[String]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var SecretsManagerAccessRoleArn: js.UndefOr[String]
+    var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var Username: js.UndefOr[String]
   }
@@ -4686,6 +4742,8 @@ package dms {
         DatabaseName: js.UndefOr[String] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
+        SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): SybaseSettings = {
@@ -4693,6 +4751,8 @@ package dms {
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SybaseSettings]

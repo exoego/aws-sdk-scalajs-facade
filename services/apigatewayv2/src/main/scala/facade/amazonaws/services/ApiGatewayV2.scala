@@ -21,6 +21,7 @@ package object apigatewayv2 {
   type IntegerWithLengthBetweenMinus1And86400 = Int
   type IntegrationParameters = js.Dictionary[StringWithLengthBetween1And512]
   type NextToken = String
+  type ResponseParameters = js.Dictionary[IntegrationParameters]
   type RouteModels = js.Dictionary[StringWithLengthBetween1And128]
   type RouteParameters = js.Dictionary[ParameterConstraints]
   type RouteSettingsMap = js.Dictionary[RouteSettings]
@@ -861,6 +862,7 @@ package apigatewayv2 {
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
+    var ResponseParameters: js.UndefOr[ResponseParameters]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
     var TlsConfig: js.UndefOr[TlsConfigInput]
@@ -883,6 +885,7 @@ package apigatewayv2 {
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        ResponseParameters: js.UndefOr[ResponseParameters] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
         TlsConfig: js.UndefOr[TlsConfigInput] = js.undefined
@@ -904,6 +907,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
@@ -998,6 +1002,7 @@ package apigatewayv2 {
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
+    var ResponseParameters: js.UndefOr[ResponseParameters]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
     var TlsConfig: js.UndefOr[TlsConfig]
@@ -1022,6 +1027,7 @@ package apigatewayv2 {
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        ResponseParameters: js.UndefOr[ResponseParameters] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
         TlsConfig: js.UndefOr[TlsConfig] = js.undefined
@@ -1043,6 +1049,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
@@ -2601,6 +2608,7 @@ package apigatewayv2 {
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
+    var ResponseParameters: js.UndefOr[ResponseParameters]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
     var TlsConfig: js.UndefOr[TlsConfig]
@@ -2625,6 +2633,7 @@ package apigatewayv2 {
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        ResponseParameters: js.UndefOr[ResponseParameters] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
         TlsConfig: js.UndefOr[TlsConfig] = js.undefined
@@ -2646,6 +2655,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
@@ -3388,6 +3398,7 @@ package apigatewayv2 {
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
+    var ResponseParameters: js.UndefOr[ResponseParameters]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
     var TlsConfig: js.UndefOr[TlsConfig]
@@ -3412,6 +3423,7 @@ package apigatewayv2 {
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        ResponseParameters: js.UndefOr[ResponseParameters] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
         TlsConfig: js.UndefOr[TlsConfig] = js.undefined
@@ -3433,6 +3445,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
@@ -4424,6 +4437,7 @@ package apigatewayv2 {
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
+    var ResponseParameters: js.UndefOr[ResponseParameters]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
     var TlsConfig: js.UndefOr[TlsConfigInput]
@@ -4447,6 +4461,7 @@ package apigatewayv2 {
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        ResponseParameters: js.UndefOr[ResponseParameters] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
         TlsConfig: js.UndefOr[TlsConfigInput] = js.undefined
@@ -4469,6 +4484,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))
@@ -4566,6 +4582,7 @@ package apigatewayv2 {
     var PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64]
     var RequestParameters: js.UndefOr[IntegrationParameters]
     var RequestTemplates: js.UndefOr[TemplateMap]
+    var ResponseParameters: js.UndefOr[ResponseParameters]
     var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000]
     var TlsConfig: js.UndefOr[TlsConfig]
@@ -4590,6 +4607,7 @@ package apigatewayv2 {
         PayloadFormatVersion: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        ResponseParameters: js.UndefOr[ResponseParameters] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And30000] = js.undefined,
         TlsConfig: js.UndefOr[TlsConfig] = js.undefined
@@ -4611,6 +4629,7 @@ package apigatewayv2 {
       PayloadFormatVersion.foreach(__v => __obj.updateDynamic("PayloadFormatVersion")(__v.asInstanceOf[js.Any]))
       RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       TemplateSelectionExpression.foreach(__v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any]))
       TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       TlsConfig.foreach(__v => __obj.updateDynamic("TlsConfig")(__v.asInstanceOf[js.Any]))

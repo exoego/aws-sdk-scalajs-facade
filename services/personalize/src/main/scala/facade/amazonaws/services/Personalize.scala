@@ -2186,7 +2186,7 @@ package personalize {
     }
   }
 
-  /** Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes.
+  /** Describes the properties for hyperparameter optimization (HPO).
     */
   @js.native
   trait HPOConfig extends js.Object {
@@ -2211,6 +2211,8 @@ package personalize {
   }
 
   /** The metric to optimize during hyperparameter optimization (HPO).
+    *
+    * '''Note:'''Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
     */
   @js.native
   trait HPOObjective extends js.Object {
