@@ -557,7 +557,7 @@ package macie2 {
     }
   }
 
-  /** Specifies the operator to use in an attribute-based condition that filters the results of a query for information about S3 buckets.
+  /** Specifies the operator to use in a property-based condition that filters the results of a query for information about S3 buckets.
     */
   @js.native
   trait BucketCriteriaAdditionalProperties extends js.Object {
@@ -1178,7 +1178,7 @@ package macie2 {
     }
   }
 
-  /** Specifies the operator to use in a property-based condition that filters the results of a query for findings.
+  /** Specifies the operator to use in a property-based condition that filters the results of a query for findings. For detailed information and examples of each operator, see [[https://docs.aws.amazon.com/macie/latest/user/findings-filter-basics.html|Fundamentals of filtering findings]] in the <i>Amazon Macie User Guide</i>.
     */
   @js.native
   trait CriterionAdditionalProperties extends js.Object {
@@ -4987,7 +4987,7 @@ package macie2 {
     @inline def values = js.Array(AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService)
   }
 
-  /** Provides information about when a classification job was paused and when it will expire and be cancelled if it isn't resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED. The information in this object applies only to a job that was paused while it had a status of RUNNING.
+  /** Provides information about when a classification job was paused. For a one-time job, this object also specifies when the job will expire and be cancelled if it isn't resumed. For a recurring job, this object also specifies when the paused job run will expire and be cancelled if it isn't resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED. The information in this object applies only to a job that was paused while it had a status of RUNNING.
     */
   @js.native
   trait UserPausedDetails extends js.Object {

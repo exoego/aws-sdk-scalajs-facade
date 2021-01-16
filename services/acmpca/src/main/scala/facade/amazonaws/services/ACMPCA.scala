@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object acmpca {
   type ASN1PrintableString64 = String
   type AWSPolicy = String
+  type AccessDescriptionList = js.Array[AccessDescription]
   type AccountId = String
   type ActionList = js.Array[ActionType]
   type Arn = String
@@ -21,6 +22,7 @@ package object acmpca {
   type CountryCodeString = String
   type CsrBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CsrBody = String
+  type CustomObjectIdentifier = String
   type IdempotencyToken = String
   type Integer1To5000 = Int
   type MaxResults = Int
@@ -34,7 +36,9 @@ package object acmpca {
   type String128 = String
   type String16 = String
   type String253 = String
+  type String256 = String
   type String3 = String
+  type String39 = String
   type String3To255 = String
   type String40 = String
   type String5 = String
@@ -161,6 +165,59 @@ package acmpca {
     }
   }
 
+  /** Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in [[https://tools.ietf.org/html/rfc5280|RFC 5280]].
+    */
+  @js.native
+  trait AccessDescription extends js.Object {
+    var AccessLocation: GeneralName
+    var AccessMethod: AccessMethod
+  }
+
+  object AccessDescription {
+    @inline
+    def apply(
+        AccessLocation: GeneralName,
+        AccessMethod: AccessMethod
+    ): AccessDescription = {
+      val __obj = js.Dynamic.literal(
+        "AccessLocation" -> AccessLocation.asInstanceOf[js.Any],
+        "AccessMethod" -> AccessMethod.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AccessDescription]
+    }
+  }
+
+  /** Describes the type and format of extension access. Only one of <code>CustomObjectIdentifier</code> or <code>AccessMethodType</code> may be provided. Providing both results in <code>InvalidArgsException</code>.
+    */
+  @js.native
+  trait AccessMethod extends js.Object {
+    var AccessMethodType: js.UndefOr[AccessMethodType]
+    var CustomObjectIdentifier: js.UndefOr[CustomObjectIdentifier]
+  }
+
+  object AccessMethod {
+    @inline
+    def apply(
+        AccessMethodType: js.UndefOr[AccessMethodType] = js.undefined,
+        CustomObjectIdentifier: js.UndefOr[CustomObjectIdentifier] = js.undefined
+    ): AccessMethod = {
+      val __obj = js.Dynamic.literal()
+      AccessMethodType.foreach(__v => __obj.updateDynamic("AccessMethodType")(__v.asInstanceOf[js.Any]))
+      CustomObjectIdentifier.foreach(__v => __obj.updateDynamic("CustomObjectIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessMethod]
+    }
+  }
+
+  @js.native
+  sealed trait AccessMethodType extends js.Any
+  object AccessMethodType {
+    val CA_REPOSITORY = "CA_REPOSITORY".asInstanceOf[AccessMethodType]
+    val RESOURCE_PKI_MANIFEST = "RESOURCE_PKI_MANIFEST".asInstanceOf[AccessMethodType]
+    val RESOURCE_PKI_NOTIFY = "RESOURCE_PKI_NOTIFY".asInstanceOf[AccessMethodType]
+
+    @inline def values = js.Array(CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY)
+  }
+
   @js.native
   sealed trait ActionType extends js.Any
   object ActionType {
@@ -251,6 +308,7 @@ package acmpca {
     var KeyAlgorithm: KeyAlgorithm
     var SigningAlgorithm: SigningAlgorithm
     var Subject: ASN1Subject
+    var CsrExtensions: js.UndefOr[CsrExtensions]
   }
 
   object CertificateAuthorityConfiguration {
@@ -258,13 +316,16 @@ package acmpca {
     def apply(
         KeyAlgorithm: KeyAlgorithm,
         SigningAlgorithm: SigningAlgorithm,
-        Subject: ASN1Subject
+        Subject: ASN1Subject,
+        CsrExtensions: js.UndefOr[CsrExtensions] = js.undefined
     ): CertificateAuthorityConfiguration = {
       val __obj = js.Dynamic.literal(
         "KeyAlgorithm" -> KeyAlgorithm.asInstanceOf[js.Any],
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
+
+      CsrExtensions.foreach(__v => __obj.updateDynamic("CsrExtensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateAuthorityConfiguration]
     }
   }
@@ -456,6 +517,27 @@ package acmpca {
     }
   }
 
+  /** Describes the certificate extensions to be added to the certificate signing request (CSR).
+    */
+  @js.native
+  trait CsrExtensions extends js.Object {
+    var KeyUsage: js.UndefOr[KeyUsage]
+    var SubjectInformationAccess: js.UndefOr[AccessDescriptionList]
+  }
+
+  object CsrExtensions {
+    @inline
+    def apply(
+        KeyUsage: js.UndefOr[KeyUsage] = js.undefined,
+        SubjectInformationAccess: js.UndefOr[AccessDescriptionList] = js.undefined
+    ): CsrExtensions = {
+      val __obj = js.Dynamic.literal()
+      KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
+      SubjectInformationAccess.foreach(__v => __obj.updateDynamic("SubjectInformationAccess")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CsrExtensions]
+    }
+  }
+
   @js.native
   trait DeleteCertificateAuthorityRequest extends js.Object {
     var CertificateAuthorityArn: Arn
@@ -596,6 +678,29 @@ package acmpca {
     }
   }
 
+  /** Describes an Electronic Data Interchange (EDI) entity as described in as defined in [[https://tools.ietf.org/html/rfc5280|Subject Alternative Name]] in RFC 5280.
+    */
+  @js.native
+  trait EdiPartyName extends js.Object {
+    var PartyName: String256
+    var NameAssigner: js.UndefOr[String256]
+  }
+
+  object EdiPartyName {
+    @inline
+    def apply(
+        PartyName: String256,
+        NameAssigner: js.UndefOr[String256] = js.undefined
+    ): EdiPartyName = {
+      val __obj = js.Dynamic.literal(
+        "PartyName" -> PartyName.asInstanceOf[js.Any]
+      )
+
+      NameAssigner.foreach(__v => __obj.updateDynamic("NameAssigner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EdiPartyName]
+    }
+  }
+
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason {
@@ -604,6 +709,45 @@ package acmpca {
     val OTHER = "OTHER".asInstanceOf[FailureReason]
 
     @inline def values = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
+  }
+
+  /** Describes an ASN.1 X.400 <code>GeneralName</code> as defined in [[https://tools.ietf.org/html/rfc5280|RFC 5280]]. Only one of the following naming options should be providied. Providing more than one option results in an <code>InvalidArgsException</code> error.
+    */
+  @js.native
+  trait GeneralName extends js.Object {
+    var DirectoryName: js.UndefOr[ASN1Subject]
+    var DnsName: js.UndefOr[String253]
+    var EdiPartyName: js.UndefOr[EdiPartyName]
+    var IpAddress: js.UndefOr[String39]
+    var OtherName: js.UndefOr[OtherName]
+    var RegisteredId: js.UndefOr[CustomObjectIdentifier]
+    var Rfc822Name: js.UndefOr[String256]
+    var UniformResourceIdentifier: js.UndefOr[String253]
+  }
+
+  object GeneralName {
+    @inline
+    def apply(
+        DirectoryName: js.UndefOr[ASN1Subject] = js.undefined,
+        DnsName: js.UndefOr[String253] = js.undefined,
+        EdiPartyName: js.UndefOr[EdiPartyName] = js.undefined,
+        IpAddress: js.UndefOr[String39] = js.undefined,
+        OtherName: js.UndefOr[OtherName] = js.undefined,
+        RegisteredId: js.UndefOr[CustomObjectIdentifier] = js.undefined,
+        Rfc822Name: js.UndefOr[String256] = js.undefined,
+        UniformResourceIdentifier: js.UndefOr[String253] = js.undefined
+    ): GeneralName = {
+      val __obj = js.Dynamic.literal()
+      DirectoryName.foreach(__v => __obj.updateDynamic("DirectoryName")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
+      EdiPartyName.foreach(__v => __obj.updateDynamic("EdiPartyName")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      OtherName.foreach(__v => __obj.updateDynamic("OtherName")(__v.asInstanceOf[js.Any]))
+      RegisteredId.foreach(__v => __obj.updateDynamic("RegisteredId")(__v.asInstanceOf[js.Any]))
+      Rfc822Name.foreach(__v => __obj.updateDynamic("Rfc822Name")(__v.asInstanceOf[js.Any]))
+      UniformResourceIdentifier.foreach(__v => __obj.updateDynamic("UniformResourceIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeneralName]
+    }
   }
 
   @js.native
@@ -831,6 +975,48 @@ package acmpca {
     @inline def values = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
   }
 
+  /** Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.
+    */
+  @js.native
+  trait KeyUsage extends js.Object {
+    var CRLSign: js.UndefOr[Boolean]
+    var DataEncipherment: js.UndefOr[Boolean]
+    var DecipherOnly: js.UndefOr[Boolean]
+    var DigitalSignature: js.UndefOr[Boolean]
+    var EncipherOnly: js.UndefOr[Boolean]
+    var KeyAgreement: js.UndefOr[Boolean]
+    var KeyCertSign: js.UndefOr[Boolean]
+    var KeyEncipherment: js.UndefOr[Boolean]
+    var NonRepudiation: js.UndefOr[Boolean]
+  }
+
+  object KeyUsage {
+    @inline
+    def apply(
+        CRLSign: js.UndefOr[Boolean] = js.undefined,
+        DataEncipherment: js.UndefOr[Boolean] = js.undefined,
+        DecipherOnly: js.UndefOr[Boolean] = js.undefined,
+        DigitalSignature: js.UndefOr[Boolean] = js.undefined,
+        EncipherOnly: js.UndefOr[Boolean] = js.undefined,
+        KeyAgreement: js.UndefOr[Boolean] = js.undefined,
+        KeyCertSign: js.UndefOr[Boolean] = js.undefined,
+        KeyEncipherment: js.UndefOr[Boolean] = js.undefined,
+        NonRepudiation: js.UndefOr[Boolean] = js.undefined
+    ): KeyUsage = {
+      val __obj = js.Dynamic.literal()
+      CRLSign.foreach(__v => __obj.updateDynamic("CRLSign")(__v.asInstanceOf[js.Any]))
+      DataEncipherment.foreach(__v => __obj.updateDynamic("DataEncipherment")(__v.asInstanceOf[js.Any]))
+      DecipherOnly.foreach(__v => __obj.updateDynamic("DecipherOnly")(__v.asInstanceOf[js.Any]))
+      DigitalSignature.foreach(__v => __obj.updateDynamic("DigitalSignature")(__v.asInstanceOf[js.Any]))
+      EncipherOnly.foreach(__v => __obj.updateDynamic("EncipherOnly")(__v.asInstanceOf[js.Any]))
+      KeyAgreement.foreach(__v => __obj.updateDynamic("KeyAgreement")(__v.asInstanceOf[js.Any]))
+      KeyCertSign.foreach(__v => __obj.updateDynamic("KeyCertSign")(__v.asInstanceOf[js.Any]))
+      KeyEncipherment.foreach(__v => __obj.updateDynamic("KeyEncipherment")(__v.asInstanceOf[js.Any]))
+      NonRepudiation.foreach(__v => __obj.updateDynamic("NonRepudiation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyUsage]
+    }
+  }
+
   @js.native
   trait ListCertificateAuthoritiesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
@@ -955,6 +1141,28 @@ package acmpca {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
+    }
+  }
+
+  /** Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of [[https://csrc.nist.gov/glossary/term/Object_Identifier|Object Identifier (OID)]].
+    */
+  @js.native
+  trait OtherName extends js.Object {
+    var TypeId: CustomObjectIdentifier
+    var Value: String256
+  }
+
+  object OtherName {
+    @inline
+    def apply(
+        TypeId: CustomObjectIdentifier,
+        Value: String256
+    ): OtherName = {
+      val __obj = js.Dynamic.literal(
+        "TypeId" -> TypeId.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OtherName]
     }
   }
 

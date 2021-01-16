@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object outposts {
   type AccountId = String
+  type Arn = String
   type AvailabilityZone = String
   type AvailabilityZoneId = String
   type InstanceType = String
@@ -23,6 +24,7 @@ package object outposts {
   type SiteId = String
   type SiteName = String
   type TagKey = String
+  type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type Token = String
@@ -38,6 +40,9 @@ package object outposts {
     @inline def getOutpostInstanceTypesFuture(params: GetOutpostInstanceTypesInput): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise().toFuture
     @inline def listOutpostsFuture(params: ListOutpostsInput): Future[ListOutpostsOutput] = service.listOutposts(params).promise().toFuture
     @inline def listSitesFuture(params: ListSitesInput): Future[ListSitesOutput] = service.listSites(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 }
@@ -55,6 +60,9 @@ package outposts {
     def getOutpostInstanceTypes(params: GetOutpostInstanceTypesInput): Request[GetOutpostInstanceTypesOutput] = js.native
     def listOutposts(params: ListOutpostsInput): Request[ListOutpostsOutput] = js.native
     def listSites(params: ListSitesInput): Request[ListSitesOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -338,6 +346,39 @@ package outposts {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** Information about an Outpost.
     */
   @js.native
@@ -410,6 +451,68 @@ package outposts {
       SiteId.foreach(__v => __obj.updateDynamic("SiteId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Site]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

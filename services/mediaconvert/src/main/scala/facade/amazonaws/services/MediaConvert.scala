@@ -12,6 +12,7 @@ package object mediaconvert {
   type __doubleMin0Max2147483647 = Double
   type __doubleMinNegative59Max0 = Double
   type __doubleMinNegative60Max3 = Double
+  type __doubleMinNegative60Max6 = Double
   type __doubleMinNegative60MaxNegative1 = Double
   type __doubleMinNegative6Max3 = Double
   type __integer = Int
@@ -127,6 +128,7 @@ package object mediaconvert {
   type __listOfQueue = js.Array[Queue]
   type __listOfQueueTransition = js.Array[QueueTransition]
   type __listOfTeletextPageType = js.Array[TeletextPageType]
+  type __listOf__doubleMinNegative60Max6 = js.Array[__doubleMinNegative60Max6]
   type __listOf__integerMin1Max2147483647 = js.Array[__integerMin1Max2147483647]
   type __listOf__integerMin32Max8182 = js.Array[__integerMin32Max8182]
   type __listOf__integerMinNegative60Max6 = js.Array[__integerMinNegative60Max6]
@@ -1185,7 +1187,7 @@ package mediaconvert {
     }
   }
 
-  /** Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality.
+  /** Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
     */
   @js.native
   sealed trait AvcIntraClass extends js.Any
@@ -1193,8 +1195,9 @@ package mediaconvert {
     val CLASS_50 = "CLASS_50".asInstanceOf[AvcIntraClass]
     val CLASS_100 = "CLASS_100".asInstanceOf[AvcIntraClass]
     val CLASS_200 = "CLASS_200".asInstanceOf[AvcIntraClass]
+    val CLASS_4K_2K = "CLASS_4K_2K".asInstanceOf[AvcIntraClass]
 
-    @inline def values = js.Array(CLASS_50, CLASS_100, CLASS_200)
+    @inline def values = js.Array(CLASS_50, CLASS_100, CLASS_200, CLASS_4K_2K)
   }
 
   /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
@@ -1234,16 +1237,29 @@ package mediaconvert {
     @inline def values = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
   }
 
-  /** Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see the relevant specification. For detailed information about SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936.
+  /** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    */
+  @js.native
+  sealed trait AvcIntraScanTypeConversionMode extends js.Any
+  object AvcIntraScanTypeConversionMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[AvcIntraScanTypeConversionMode]
+    val INTERLACED_OPTIMIZE = "INTERLACED_OPTIMIZE".asInstanceOf[AvcIntraScanTypeConversionMode]
+
+    @inline def values = js.Array(INTERLACED, INTERLACED_OPTIMIZE)
+  }
+
+  /** Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see the relevant specification. For detailed information about SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
     */
   @js.native
   trait AvcIntraSettings extends js.Object {
     var AvcIntraClass: js.UndefOr[AvcIntraClass]
+    var AvcIntraUhdSettings: js.UndefOr[AvcIntraUhdSettings]
     var FramerateControl: js.UndefOr[AvcIntraFramerateControl]
     var FramerateConversionAlgorithm: js.UndefOr[AvcIntraFramerateConversionAlgorithm]
     var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
     var FramerateNumerator: js.UndefOr[__integerMin24Max60000]
     var InterlaceMode: js.UndefOr[AvcIntraInterlaceMode]
+    var ScanTypeConversionMode: js.UndefOr[AvcIntraScanTypeConversionMode]
     var SlowPal: js.UndefOr[AvcIntraSlowPal]
     var Telecine: js.UndefOr[AvcIntraTelecine]
   }
@@ -1252,21 +1268,25 @@ package mediaconvert {
     @inline
     def apply(
         AvcIntraClass: js.UndefOr[AvcIntraClass] = js.undefined,
+        AvcIntraUhdSettings: js.UndefOr[AvcIntraUhdSettings] = js.undefined,
         FramerateControl: js.UndefOr[AvcIntraFramerateControl] = js.undefined,
         FramerateConversionAlgorithm: js.UndefOr[AvcIntraFramerateConversionAlgorithm] = js.undefined,
         FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin24Max60000] = js.undefined,
         InterlaceMode: js.UndefOr[AvcIntraInterlaceMode] = js.undefined,
+        ScanTypeConversionMode: js.UndefOr[AvcIntraScanTypeConversionMode] = js.undefined,
         SlowPal: js.UndefOr[AvcIntraSlowPal] = js.undefined,
         Telecine: js.UndefOr[AvcIntraTelecine] = js.undefined
     ): AvcIntraSettings = {
       val __obj = js.Dynamic.literal()
       AvcIntraClass.foreach(__v => __obj.updateDynamic("AvcIntraClass")(__v.asInstanceOf[js.Any]))
+      AvcIntraUhdSettings.foreach(__v => __obj.updateDynamic("AvcIntraUhdSettings")(__v.asInstanceOf[js.Any]))
       FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateConversionAlgorithm.foreach(__v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any]))
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
       InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      ScanTypeConversionMode.foreach(__v => __obj.updateDynamic("ScanTypeConversionMode")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
       Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvcIntraSettings]
@@ -1293,6 +1313,35 @@ package mediaconvert {
     val HARD = "HARD".asInstanceOf[AvcIntraTelecine]
 
     @inline def values = js.Array(NONE, HARD)
+  }
+
+  /** Optional. Use Quality tuning level (qualityTuningLevel) to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass (MULTI_PASS), your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS), your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
+    */
+  @js.native
+  sealed trait AvcIntraUhdQualityTuningLevel extends js.Any
+  object AvcIntraUhdQualityTuningLevel {
+    val SINGLE_PASS = "SINGLE_PASS".asInstanceOf[AvcIntraUhdQualityTuningLevel]
+    val MULTI_PASS = "MULTI_PASS".asInstanceOf[AvcIntraUhdQualityTuningLevel]
+
+    @inline def values = js.Array(SINGLE_PASS, MULTI_PASS)
+  }
+
+  /** Optional when you set AVC-Intra class (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class to a different value, this object isn't allowed.
+    */
+  @js.native
+  trait AvcIntraUhdSettings extends js.Object {
+    var QualityTuningLevel: js.UndefOr[AvcIntraUhdQualityTuningLevel]
+  }
+
+  object AvcIntraUhdSettings {
+    @inline
+    def apply(
+        QualityTuningLevel: js.UndefOr[AvcIntraUhdQualityTuningLevel] = js.undefined
+    ): AvcIntraUhdSettings = {
+      val __obj = js.Dynamic.literal()
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvcIntraUhdSettings]
+    }
   }
 
   /** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
@@ -1699,7 +1748,7 @@ package mediaconvert {
     @inline def values = js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
   }
 
-  /** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification).
+  /** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
     */
   @js.native
   trait ChannelMapping extends js.Object {
@@ -1997,6 +2046,17 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
   }
 
+  /** Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
+    */
+  @js.native
+  sealed trait CmfcIFrameOnlyManifest extends js.Any
+  object CmfcIFrameOnlyManifest {
+    val INCLUDE = "INCLUDE".asInstanceOf[CmfcIFrameOnlyManifest]
+    val EXCLUDE = "EXCLUDE".asInstanceOf[CmfcIFrameOnlyManifest]
+
+    @inline def values = js.Array(INCLUDE, EXCLUDE)
+  }
+
   /** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
     */
   @js.native
@@ -2024,6 +2084,7 @@ package mediaconvert {
   @js.native
   trait CmfcSettings extends js.Object {
     var AudioDuration: js.UndefOr[CmfcAudioDuration]
+    var IFrameOnlyManifest: js.UndefOr[CmfcIFrameOnlyManifest]
     var Scte35Esam: js.UndefOr[CmfcScte35Esam]
     var Scte35Source: js.UndefOr[CmfcScte35Source]
   }
@@ -2032,11 +2093,13 @@ package mediaconvert {
     @inline
     def apply(
         AudioDuration: js.UndefOr[CmfcAudioDuration] = js.undefined,
+        IFrameOnlyManifest: js.UndefOr[CmfcIFrameOnlyManifest] = js.undefined,
         Scte35Esam: js.UndefOr[CmfcScte35Esam] = js.undefined,
         Scte35Source: js.UndefOr[CmfcScte35Source] = js.undefined
     ): CmfcSettings = {
       val __obj = js.Dynamic.literal()
       AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
+      IFrameOnlyManifest.foreach(__v => __obj.updateDynamic("IFrameOnlyManifest")(__v.asInstanceOf[js.Any]))
       Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
       Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmfcSettings]
@@ -4217,6 +4280,17 @@ package mediaconvert {
     @inline def values = js.Array(DISABLED, ENABLED)
   }
 
+  /** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    */
+  @js.native
+  sealed trait H264ScanTypeConversionMode extends js.Any
+  object H264ScanTypeConversionMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[H264ScanTypeConversionMode]
+    val INTERLACED_OPTIMIZE = "INTERLACED_OPTIMIZE".asInstanceOf[H264ScanTypeConversionMode]
+
+    @inline def values = js.Array(INTERLACED, INTERLACED_OPTIMIZE)
+  }
+
   /** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     */
   @js.native
@@ -4263,6 +4337,7 @@ package mediaconvert {
     var QvbrSettings: js.UndefOr[H264QvbrSettings]
     var RateControlMode: js.UndefOr[H264RateControlMode]
     var RepeatPps: js.UndefOr[H264RepeatPps]
+    var ScanTypeConversionMode: js.UndefOr[H264ScanTypeConversionMode]
     var SceneChangeDetect: js.UndefOr[H264SceneChangeDetect]
     var Slices: js.UndefOr[__integerMin1Max32]
     var SlowPal: js.UndefOr[H264SlowPal]
@@ -4307,6 +4382,7 @@ package mediaconvert {
         QvbrSettings: js.UndefOr[H264QvbrSettings] = js.undefined,
         RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
         RepeatPps: js.UndefOr[H264RepeatPps] = js.undefined,
+        ScanTypeConversionMode: js.UndefOr[H264ScanTypeConversionMode] = js.undefined,
         SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
         Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
         SlowPal: js.UndefOr[H264SlowPal] = js.undefined,
@@ -4348,6 +4424,7 @@ package mediaconvert {
       QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
       RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
       RepeatPps.foreach(__v => __obj.updateDynamic("RepeatPps")(__v.asInstanceOf[js.Any]))
+      ScanTypeConversionMode.foreach(__v => __obj.updateDynamic("ScanTypeConversionMode")(__v.asInstanceOf[js.Any]))
       SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
       Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
@@ -4646,6 +4723,17 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT, ADAPTIVE, OFF)
   }
 
+  /** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    */
+  @js.native
+  sealed trait H265ScanTypeConversionMode extends js.Any
+  object H265ScanTypeConversionMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[H265ScanTypeConversionMode]
+    val INTERLACED_OPTIMIZE = "INTERLACED_OPTIMIZE".asInstanceOf[H265ScanTypeConversionMode]
+
+    @inline def values = js.Array(INTERLACED, INTERLACED_OPTIMIZE)
+  }
+
   /** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     */
   @js.native
@@ -4691,6 +4779,7 @@ package mediaconvert {
     var QvbrSettings: js.UndefOr[H265QvbrSettings]
     var RateControlMode: js.UndefOr[H265RateControlMode]
     var SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode]
+    var ScanTypeConversionMode: js.UndefOr[H265ScanTypeConversionMode]
     var SceneChangeDetect: js.UndefOr[H265SceneChangeDetect]
     var Slices: js.UndefOr[__integerMin1Max32]
     var SlowPal: js.UndefOr[H265SlowPal]
@@ -4735,6 +4824,7 @@ package mediaconvert {
         QvbrSettings: js.UndefOr[H265QvbrSettings] = js.undefined,
         RateControlMode: js.UndefOr[H265RateControlMode] = js.undefined,
         SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode] = js.undefined,
+        ScanTypeConversionMode: js.UndefOr[H265ScanTypeConversionMode] = js.undefined,
         SceneChangeDetect: js.UndefOr[H265SceneChangeDetect] = js.undefined,
         Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
         SlowPal: js.UndefOr[H265SlowPal] = js.undefined,
@@ -4776,6 +4866,7 @@ package mediaconvert {
       QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
       RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
       SampleAdaptiveOffsetFilterMode.foreach(__v => __obj.updateDynamic("SampleAdaptiveOffsetFilterMode")(__v.asInstanceOf[js.Any]))
+      ScanTypeConversionMode.foreach(__v => __obj.updateDynamic("ScanTypeConversionMode")(__v.asInstanceOf[js.Any]))
       SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
       Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
@@ -5207,7 +5298,7 @@ package mediaconvert {
     }
   }
 
-  /** When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+  /** Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
     */
   @js.native
   sealed trait HlsIFrameOnlyManifest extends js.Any
@@ -7612,7 +7703,7 @@ package mediaconvert {
     @inline def values = js.Array(SINGLE_PASS, MULTI_PASS)
   }
 
-  /** Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr).
+  /** Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
     */
   @js.native
   sealed trait Mpeg2RateControlMode extends js.Any
@@ -7621,6 +7712,17 @@ package mediaconvert {
     val CBR = "CBR".asInstanceOf[Mpeg2RateControlMode]
 
     @inline def values = js.Array(VBR, CBR)
+  }
+
+  /** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    */
+  @js.native
+  sealed trait Mpeg2ScanTypeConversionMode extends js.Any
+  object Mpeg2ScanTypeConversionMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[Mpeg2ScanTypeConversionMode]
+    val INTERLACED_OPTIMIZE = "INTERLACED_OPTIMIZE".asInstanceOf[Mpeg2ScanTypeConversionMode]
+
+    @inline def values = js.Array(INTERLACED, INTERLACED_OPTIMIZE)
   }
 
   /** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default.
@@ -7662,6 +7764,7 @@ package mediaconvert {
     var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
     var QualityTuningLevel: js.UndefOr[Mpeg2QualityTuningLevel]
     var RateControlMode: js.UndefOr[Mpeg2RateControlMode]
+    var ScanTypeConversionMode: js.UndefOr[Mpeg2ScanTypeConversionMode]
     var SceneChangeDetect: js.UndefOr[Mpeg2SceneChangeDetect]
     var SlowPal: js.UndefOr[Mpeg2SlowPal]
     var Softness: js.UndefOr[__integerMin0Max128]
@@ -7698,6 +7801,7 @@ package mediaconvert {
         ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         QualityTuningLevel: js.UndefOr[Mpeg2QualityTuningLevel] = js.undefined,
         RateControlMode: js.UndefOr[Mpeg2RateControlMode] = js.undefined,
+        ScanTypeConversionMode: js.UndefOr[Mpeg2ScanTypeConversionMode] = js.undefined,
         SceneChangeDetect: js.UndefOr[Mpeg2SceneChangeDetect] = js.undefined,
         SlowPal: js.UndefOr[Mpeg2SlowPal] = js.undefined,
         Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
@@ -7731,6 +7835,7 @@ package mediaconvert {
       ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
       QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
       RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      ScanTypeConversionMode.foreach(__v => __obj.updateDynamic("ScanTypeConversionMode")(__v.asInstanceOf[js.Any]))
       SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
       Softness.foreach(__v => __obj.updateDynamic("Softness")(__v.asInstanceOf[js.Any]))
@@ -8273,15 +8378,18 @@ package mediaconvert {
   @js.native
   trait OutputChannelMapping extends js.Object {
     var InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6]
+    var InputChannelsFineTune: js.UndefOr[__listOf__doubleMinNegative60Max6]
   }
 
   object OutputChannelMapping {
     @inline
     def apply(
-        InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6] = js.undefined
+        InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6] = js.undefined,
+        InputChannelsFineTune: js.UndefOr[__listOf__doubleMinNegative60Max6] = js.undefined
     ): OutputChannelMapping = {
       val __obj = js.Dynamic.literal()
       InputChannels.foreach(__v => __obj.updateDynamic("InputChannels")(__v.asInstanceOf[js.Any]))
+      InputChannelsFineTune.foreach(__v => __obj.updateDynamic("InputChannelsFineTune")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputChannelMapping]
     }
   }
@@ -8542,7 +8650,7 @@ package mediaconvert {
     @inline def values = js.Array(ON_DEMAND, RESERVED)
   }
 
-  /** Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to use for this output.
+  /** Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
     */
   @js.native
   sealed trait ProresCodecProfile extends js.Any
@@ -8603,6 +8711,17 @@ package mediaconvert {
     @inline def values = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
   }
 
+  /** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    */
+  @js.native
+  sealed trait ProresScanTypeConversionMode extends js.Any
+  object ProresScanTypeConversionMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[ProresScanTypeConversionMode]
+    val INTERLACED_OPTIMIZE = "INTERLACED_OPTIMIZE".asInstanceOf[ProresScanTypeConversionMode]
+
+    @inline def values = js.Array(INTERLACED, INTERLACED_OPTIMIZE)
+  }
+
   /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
     */
   @js.native
@@ -8616,6 +8735,7 @@ package mediaconvert {
     var ParControl: js.UndefOr[ProresParControl]
     var ParDenominator: js.UndefOr[__integerMin1Max2147483647]
     var ParNumerator: js.UndefOr[__integerMin1Max2147483647]
+    var ScanTypeConversionMode: js.UndefOr[ProresScanTypeConversionMode]
     var SlowPal: js.UndefOr[ProresSlowPal]
     var Telecine: js.UndefOr[ProresTelecine]
   }
@@ -8632,6 +8752,7 @@ package mediaconvert {
         ParControl: js.UndefOr[ProresParControl] = js.undefined,
         ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ScanTypeConversionMode: js.UndefOr[ProresScanTypeConversionMode] = js.undefined,
         SlowPal: js.UndefOr[ProresSlowPal] = js.undefined,
         Telecine: js.UndefOr[ProresTelecine] = js.undefined
     ): ProresSettings = {
@@ -8645,6 +8766,7 @@ package mediaconvert {
       ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
       ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
       ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      ScanTypeConversionMode.foreach(__v => __obj.updateDynamic("ScanTypeConversionMode")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
       Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProresSettings]
@@ -9691,6 +9813,17 @@ package mediaconvert {
     @inline def values = js.Array(INTERLACED, PROGRESSIVE)
   }
 
+  /** Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+    */
+  @js.native
+  sealed trait Vc3ScanTypeConversionMode extends js.Any
+  object Vc3ScanTypeConversionMode {
+    val INTERLACED = "INTERLACED".asInstanceOf[Vc3ScanTypeConversionMode]
+    val INTERLACED_OPTIMIZE = "INTERLACED_OPTIMIZE".asInstanceOf[Vc3ScanTypeConversionMode]
+
+    @inline def values = js.Array(INTERLACED, INTERLACED_OPTIMIZE)
+  }
+
   /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
     */
   @js.native
@@ -9700,6 +9833,7 @@ package mediaconvert {
     var FramerateDenominator: js.UndefOr[__integerMin1Max1001]
     var FramerateNumerator: js.UndefOr[__integerMin24Max60000]
     var InterlaceMode: js.UndefOr[Vc3InterlaceMode]
+    var ScanTypeConversionMode: js.UndefOr[Vc3ScanTypeConversionMode]
     var SlowPal: js.UndefOr[Vc3SlowPal]
     var Telecine: js.UndefOr[Vc3Telecine]
     var Vc3Class: js.UndefOr[Vc3Class]
@@ -9713,6 +9847,7 @@ package mediaconvert {
         FramerateDenominator: js.UndefOr[__integerMin1Max1001] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin24Max60000] = js.undefined,
         InterlaceMode: js.UndefOr[Vc3InterlaceMode] = js.undefined,
+        ScanTypeConversionMode: js.UndefOr[Vc3ScanTypeConversionMode] = js.undefined,
         SlowPal: js.UndefOr[Vc3SlowPal] = js.undefined,
         Telecine: js.UndefOr[Vc3Telecine] = js.undefined,
         Vc3Class: js.UndefOr[Vc3Class] = js.undefined
@@ -9723,6 +9858,7 @@ package mediaconvert {
       FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
       FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
       InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      ScanTypeConversionMode.foreach(__v => __obj.updateDynamic("ScanTypeConversionMode")(__v.asInstanceOf[js.Any]))
       SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
       Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       Vc3Class.foreach(__v => __obj.updateDynamic("Vc3Class")(__v.asInstanceOf[js.Any]))

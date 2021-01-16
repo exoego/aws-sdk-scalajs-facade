@@ -51,6 +51,7 @@ package object route53 {
   type IPAddressCidr = String
   type Inverted = Boolean
   type IsPrivateZone = Boolean
+  type KeySigningKeys = js.Array[KeySigningKey]
   type LimitValue = Double
   type MaxResults = String
   type MeasureLatency = Boolean
@@ -83,7 +84,14 @@ package object route53 {
   type ResourceTagSetList = js.Array[ResourceTagSet]
   type ResourceURI = String
   type SearchString = String
+  type ServeSignature = String
   type ServicePrincipal = String
+  type SigningKeyInteger = Int
+  type SigningKeyName = String
+  type SigningKeyStatus = String
+  type SigningKeyStatusMessage = String
+  type SigningKeyString = String
+  type SigningKeyTag = Int
   type Status = String
   type SubnetMask = String
   type TTL = Double
@@ -114,28 +122,35 @@ package object route53 {
 
   implicit final class Route53Ops(private val service: Route53) extends AnyVal {
 
+    @inline def activateKeySigningKeyFuture(params: ActivateKeySigningKeyRequest): Future[ActivateKeySigningKeyResponse] = service.activateKeySigningKey(params).promise().toFuture
     @inline def associateVPCWithHostedZoneFuture(params: AssociateVPCWithHostedZoneRequest): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise().toFuture
     @inline def changeResourceRecordSetsFuture(params: ChangeResourceRecordSetsRequest): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise().toFuture
     @inline def changeTagsForResourceFuture(params: ChangeTagsForResourceRequest): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise().toFuture
     @inline def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] = service.createHealthCheck(params).promise().toFuture
     @inline def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] = service.createHostedZone(params).promise().toFuture
+    @inline def createKeySigningKeyFuture(params: CreateKeySigningKeyRequest): Future[CreateKeySigningKeyResponse] = service.createKeySigningKey(params).promise().toFuture
     @inline def createQueryLoggingConfigFuture(params: CreateQueryLoggingConfigRequest): Future[CreateQueryLoggingConfigResponse] = service.createQueryLoggingConfig(params).promise().toFuture
     @inline def createReusableDelegationSetFuture(params: CreateReusableDelegationSetRequest): Future[CreateReusableDelegationSetResponse] = service.createReusableDelegationSet(params).promise().toFuture
     @inline def createTrafficPolicyFuture(params: CreateTrafficPolicyRequest): Future[CreateTrafficPolicyResponse] = service.createTrafficPolicy(params).promise().toFuture
     @inline def createTrafficPolicyInstanceFuture(params: CreateTrafficPolicyInstanceRequest): Future[CreateTrafficPolicyInstanceResponse] = service.createTrafficPolicyInstance(params).promise().toFuture
     @inline def createTrafficPolicyVersionFuture(params: CreateTrafficPolicyVersionRequest): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise().toFuture
     @inline def createVPCAssociationAuthorizationFuture(params: CreateVPCAssociationAuthorizationRequest): Future[CreateVPCAssociationAuthorizationResponse] = service.createVPCAssociationAuthorization(params).promise().toFuture
+    @inline def deactivateKeySigningKeyFuture(params: DeactivateKeySigningKeyRequest): Future[DeactivateKeySigningKeyResponse] = service.deactivateKeySigningKey(params).promise().toFuture
     @inline def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] = service.deleteHealthCheck(params).promise().toFuture
     @inline def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] = service.deleteHostedZone(params).promise().toFuture
+    @inline def deleteKeySigningKeyFuture(params: DeleteKeySigningKeyRequest): Future[DeleteKeySigningKeyResponse] = service.deleteKeySigningKey(params).promise().toFuture
     @inline def deleteQueryLoggingConfigFuture(params: DeleteQueryLoggingConfigRequest): Future[DeleteQueryLoggingConfigResponse] = service.deleteQueryLoggingConfig(params).promise().toFuture
     @inline def deleteReusableDelegationSetFuture(params: DeleteReusableDelegationSetRequest): Future[DeleteReusableDelegationSetResponse] = service.deleteReusableDelegationSet(params).promise().toFuture
     @inline def deleteTrafficPolicyFuture(params: DeleteTrafficPolicyRequest): Future[DeleteTrafficPolicyResponse] = service.deleteTrafficPolicy(params).promise().toFuture
     @inline def deleteTrafficPolicyInstanceFuture(params: DeleteTrafficPolicyInstanceRequest): Future[DeleteTrafficPolicyInstanceResponse] = service.deleteTrafficPolicyInstance(params).promise().toFuture
     @inline def deleteVPCAssociationAuthorizationFuture(params: DeleteVPCAssociationAuthorizationRequest): Future[DeleteVPCAssociationAuthorizationResponse] = service.deleteVPCAssociationAuthorization(params).promise().toFuture
+    @inline def disableHostedZoneDNSSECFuture(params: DisableHostedZoneDNSSECRequest): Future[DisableHostedZoneDNSSECResponse] = service.disableHostedZoneDNSSEC(params).promise().toFuture
     @inline def disassociateVPCFromHostedZoneFuture(params: DisassociateVPCFromHostedZoneRequest): Future[DisassociateVPCFromHostedZoneResponse] = service.disassociateVPCFromHostedZone(params).promise().toFuture
+    @inline def enableHostedZoneDNSSECFuture(params: EnableHostedZoneDNSSECRequest): Future[EnableHostedZoneDNSSECResponse] = service.enableHostedZoneDNSSEC(params).promise().toFuture
     @inline def getAccountLimitFuture(params: GetAccountLimitRequest): Future[GetAccountLimitResponse] = service.getAccountLimit(params).promise().toFuture
     @inline def getChangeFuture(params: GetChangeRequest): Future[GetChangeResponse] = service.getChange(params).promise().toFuture
     @inline def getCheckerIpRangesFuture(params: GetCheckerIpRangesRequest): Future[GetCheckerIpRangesResponse] = service.getCheckerIpRanges(params).promise().toFuture
+    @inline def getDNSSECFuture(params: GetDNSSECRequest): Future[GetDNSSECResponse] = service.getDNSSEC(params).promise().toFuture
     @inline def getGeoLocationFuture(params: GetGeoLocationRequest): Future[GetGeoLocationResponse] = service.getGeoLocation(params).promise().toFuture
     @inline def getHealthCheckCountFuture(params: GetHealthCheckCountRequest): Future[GetHealthCheckCountResponse] = service.getHealthCheckCount(params).promise().toFuture
     @inline def getHealthCheckFuture(params: GetHealthCheckRequest): Future[GetHealthCheckResponse] = service.getHealthCheck(params).promise().toFuture
@@ -181,28 +196,35 @@ package route53 {
   class Route53() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def activateKeySigningKey(params: ActivateKeySigningKeyRequest): Request[ActivateKeySigningKeyResponse] = js.native
     def associateVPCWithHostedZone(params: AssociateVPCWithHostedZoneRequest): Request[AssociateVPCWithHostedZoneResponse] = js.native
     def changeResourceRecordSets(params: ChangeResourceRecordSetsRequest): Request[ChangeResourceRecordSetsResponse] = js.native
     def changeTagsForResource(params: ChangeTagsForResourceRequest): Request[ChangeTagsForResourceResponse] = js.native
     def createHealthCheck(params: CreateHealthCheckRequest): Request[CreateHealthCheckResponse] = js.native
     def createHostedZone(params: CreateHostedZoneRequest): Request[CreateHostedZoneResponse] = js.native
+    def createKeySigningKey(params: CreateKeySigningKeyRequest): Request[CreateKeySigningKeyResponse] = js.native
     def createQueryLoggingConfig(params: CreateQueryLoggingConfigRequest): Request[CreateQueryLoggingConfigResponse] = js.native
     def createReusableDelegationSet(params: CreateReusableDelegationSetRequest): Request[CreateReusableDelegationSetResponse] = js.native
     def createTrafficPolicy(params: CreateTrafficPolicyRequest): Request[CreateTrafficPolicyResponse] = js.native
     def createTrafficPolicyInstance(params: CreateTrafficPolicyInstanceRequest): Request[CreateTrafficPolicyInstanceResponse] = js.native
     def createTrafficPolicyVersion(params: CreateTrafficPolicyVersionRequest): Request[CreateTrafficPolicyVersionResponse] = js.native
     def createVPCAssociationAuthorization(params: CreateVPCAssociationAuthorizationRequest): Request[CreateVPCAssociationAuthorizationResponse] = js.native
+    def deactivateKeySigningKey(params: DeactivateKeySigningKeyRequest): Request[DeactivateKeySigningKeyResponse] = js.native
     def deleteHealthCheck(params: DeleteHealthCheckRequest): Request[DeleteHealthCheckResponse] = js.native
     def deleteHostedZone(params: DeleteHostedZoneRequest): Request[DeleteHostedZoneResponse] = js.native
+    def deleteKeySigningKey(params: DeleteKeySigningKeyRequest): Request[DeleteKeySigningKeyResponse] = js.native
     def deleteQueryLoggingConfig(params: DeleteQueryLoggingConfigRequest): Request[DeleteQueryLoggingConfigResponse] = js.native
     def deleteReusableDelegationSet(params: DeleteReusableDelegationSetRequest): Request[DeleteReusableDelegationSetResponse] = js.native
     def deleteTrafficPolicy(params: DeleteTrafficPolicyRequest): Request[DeleteTrafficPolicyResponse] = js.native
     def deleteTrafficPolicyInstance(params: DeleteTrafficPolicyInstanceRequest): Request[DeleteTrafficPolicyInstanceResponse] = js.native
     def deleteVPCAssociationAuthorization(params: DeleteVPCAssociationAuthorizationRequest): Request[DeleteVPCAssociationAuthorizationResponse] = js.native
+    def disableHostedZoneDNSSEC(params: DisableHostedZoneDNSSECRequest): Request[DisableHostedZoneDNSSECResponse] = js.native
     def disassociateVPCFromHostedZone(params: DisassociateVPCFromHostedZoneRequest): Request[DisassociateVPCFromHostedZoneResponse] = js.native
+    def enableHostedZoneDNSSEC(params: EnableHostedZoneDNSSECRequest): Request[EnableHostedZoneDNSSECResponse] = js.native
     def getAccountLimit(params: GetAccountLimitRequest): Request[GetAccountLimitResponse] = js.native
     def getChange(params: GetChangeRequest): Request[GetChangeResponse] = js.native
     def getCheckerIpRanges(params: GetCheckerIpRangesRequest): Request[GetCheckerIpRangesResponse] = js.native
+    def getDNSSEC(params: GetDNSSECRequest): Request[GetDNSSECResponse] = js.native
     def getGeoLocation(params: GetGeoLocationRequest): Request[GetGeoLocationResponse] = js.native
     def getHealthCheck(params: GetHealthCheckRequest): Request[GetHealthCheckResponse] = js.native
     def getHealthCheckCount(params: GetHealthCheckCountRequest): Request[GetHealthCheckCountResponse] = js.native
@@ -278,6 +300,43 @@ package route53 {
       MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
       MAX_TRAFFIC_POLICIES_BY_OWNER
     )
+  }
+
+  @js.native
+  trait ActivateKeySigningKeyRequest extends js.Object {
+    var HostedZoneId: ResourceId
+    var Name: SigningKeyName
+  }
+
+  object ActivateKeySigningKeyRequest {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId,
+        Name: SigningKeyName
+    ): ActivateKeySigningKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActivateKeySigningKeyRequest]
+    }
+  }
+
+  @js.native
+  trait ActivateKeySigningKeyResponse extends js.Object {
+    var ChangeInfo: ChangeInfo
+  }
+
+  object ActivateKeySigningKeyResponse {
+    @inline
+    def apply(
+        ChangeInfo: ChangeInfo
+    ): ActivateKeySigningKeyResponse = {
+      val __obj = js.Dynamic.literal(
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActivateKeySigningKeyResponse]
+    }
   }
 
   /** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
@@ -774,6 +833,58 @@ package route53 {
   }
 
   @js.native
+  trait CreateKeySigningKeyRequest extends js.Object {
+    var CallerReference: Nonce
+    var HostedZoneId: ResourceId
+    var KeyManagementServiceArn: SigningKeyString
+    var Name: SigningKeyName
+    var Status: SigningKeyStatus
+  }
+
+  object CreateKeySigningKeyRequest {
+    @inline
+    def apply(
+        CallerReference: Nonce,
+        HostedZoneId: ResourceId,
+        KeyManagementServiceArn: SigningKeyString,
+        Name: SigningKeyName,
+        Status: SigningKeyStatus
+    ): CreateKeySigningKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "CallerReference" -> CallerReference.asInstanceOf[js.Any],
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "KeyManagementServiceArn" -> KeyManagementServiceArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateKeySigningKeyRequest]
+    }
+  }
+
+  @js.native
+  trait CreateKeySigningKeyResponse extends js.Object {
+    var ChangeInfo: ChangeInfo
+    var KeySigningKey: KeySigningKey
+    var Location: ResourceURI
+  }
+
+  object CreateKeySigningKeyResponse {
+    @inline
+    def apply(
+        ChangeInfo: ChangeInfo,
+        KeySigningKey: KeySigningKey,
+        Location: ResourceURI
+    ): CreateKeySigningKeyResponse = {
+      val __obj = js.Dynamic.literal(
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any],
+        "KeySigningKey" -> KeySigningKey.asInstanceOf[js.Any],
+        "Location" -> Location.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateKeySigningKeyResponse]
+    }
+  }
+
+  @js.native
   trait CreateQueryLoggingConfigRequest extends js.Object {
     var CloudWatchLogsLogGroupArn: CloudWatchLogsLogGroupArn
     var HostedZoneId: ResourceId
@@ -1047,6 +1158,64 @@ package route53 {
     }
   }
 
+  /** A string repesenting the status of DNSSEC signing.
+    */
+  @js.native
+  trait DNSSECStatus extends js.Object {
+    var ServeSignature: js.UndefOr[ServeSignature]
+    var StatusMessage: js.UndefOr[SigningKeyStatusMessage]
+  }
+
+  object DNSSECStatus {
+    @inline
+    def apply(
+        ServeSignature: js.UndefOr[ServeSignature] = js.undefined,
+        StatusMessage: js.UndefOr[SigningKeyStatusMessage] = js.undefined
+    ): DNSSECStatus = {
+      val __obj = js.Dynamic.literal()
+      ServeSignature.foreach(__v => __obj.updateDynamic("ServeSignature")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DNSSECStatus]
+    }
+  }
+
+  @js.native
+  trait DeactivateKeySigningKeyRequest extends js.Object {
+    var HostedZoneId: ResourceId
+    var Name: SigningKeyName
+  }
+
+  object DeactivateKeySigningKeyRequest {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId,
+        Name: SigningKeyName
+    ): DeactivateKeySigningKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeactivateKeySigningKeyRequest]
+    }
+  }
+
+  @js.native
+  trait DeactivateKeySigningKeyResponse extends js.Object {
+    var ChangeInfo: ChangeInfo
+  }
+
+  object DeactivateKeySigningKeyResponse {
+    @inline
+    def apply(
+        ChangeInfo: ChangeInfo
+    ): DeactivateKeySigningKeyResponse = {
+      val __obj = js.Dynamic.literal(
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeactivateKeySigningKeyResponse]
+    }
+  }
+
   /** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.
     */
   @js.native
@@ -1140,6 +1309,43 @@ package route53 {
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteHostedZoneResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteKeySigningKeyRequest extends js.Object {
+    var HostedZoneId: ResourceId
+    var Name: SigningKeyName
+  }
+
+  object DeleteKeySigningKeyRequest {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId,
+        Name: SigningKeyName
+    ): DeleteKeySigningKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteKeySigningKeyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteKeySigningKeyResponse extends js.Object {
+    var ChangeInfo: ChangeInfo
+  }
+
+  object DeleteKeySigningKeyResponse {
+    @inline
+    def apply(
+        ChangeInfo: ChangeInfo
+    ): DeleteKeySigningKeyResponse = {
+      val __obj = js.Dynamic.literal(
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteKeySigningKeyResponse]
     }
   }
 
@@ -1327,6 +1533,40 @@ package route53 {
     }
   }
 
+  @js.native
+  trait DisableHostedZoneDNSSECRequest extends js.Object {
+    var HostedZoneId: ResourceId
+  }
+
+  object DisableHostedZoneDNSSECRequest {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId
+    ): DisableHostedZoneDNSSECRequest = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisableHostedZoneDNSSECRequest]
+    }
+  }
+
+  @js.native
+  trait DisableHostedZoneDNSSECResponse extends js.Object {
+    var ChangeInfo: ChangeInfo
+  }
+
+  object DisableHostedZoneDNSSECResponse {
+    @inline
+    def apply(
+        ChangeInfo: ChangeInfo
+    ): DisableHostedZoneDNSSECResponse = {
+      val __obj = js.Dynamic.literal(
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisableHostedZoneDNSSECResponse]
+    }
+  }
+
   /** A complex type that contains information about the VPC that you want to disassociate from a specified private hosted zone.
     */
   @js.native
@@ -1369,6 +1609,40 @@ package route53 {
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DisassociateVPCFromHostedZoneResponse]
+    }
+  }
+
+  @js.native
+  trait EnableHostedZoneDNSSECRequest extends js.Object {
+    var HostedZoneId: ResourceId
+  }
+
+  object EnableHostedZoneDNSSECRequest {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId
+    ): EnableHostedZoneDNSSECRequest = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EnableHostedZoneDNSSECRequest]
+    }
+  }
+
+  @js.native
+  trait EnableHostedZoneDNSSECResponse extends js.Object {
+    var ChangeInfo: ChangeInfo
+  }
+
+  object EnableHostedZoneDNSSECResponse {
+    @inline
+    def apply(
+        ChangeInfo: ChangeInfo
+    ): EnableHostedZoneDNSSECResponse = {
+      val __obj = js.Dynamic.literal(
+        "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EnableHostedZoneDNSSECResponse]
     }
   }
 
@@ -1537,6 +1811,43 @@ package route53 {
         "CheckerIpRanges" -> CheckerIpRanges.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GetCheckerIpRangesResponse]
+    }
+  }
+
+  @js.native
+  trait GetDNSSECRequest extends js.Object {
+    var HostedZoneId: ResourceId
+  }
+
+  object GetDNSSECRequest {
+    @inline
+    def apply(
+        HostedZoneId: ResourceId
+    ): GetDNSSECRequest = {
+      val __obj = js.Dynamic.literal(
+        "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDNSSECRequest]
+    }
+  }
+
+  @js.native
+  trait GetDNSSECResponse extends js.Object {
+    var KeySigningKeys: KeySigningKeys
+    var Status: DNSSECStatus
+  }
+
+  object GetDNSSECResponse {
+    @inline
+    def apply(
+        KeySigningKeys: KeySigningKeys,
+        Status: DNSSECStatus
+    ): GetDNSSECResponse = {
+      val __obj = js.Dynamic.literal(
+        "KeySigningKeys" -> KeySigningKeys.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDNSSECResponse]
     }
   }
 
@@ -2374,6 +2685,69 @@ package route53 {
     val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
 
     @inline def values = js.Array(Healthy, Unhealthy, LastKnownStatus)
+  }
+
+  /** A key signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.
+    */
+  @js.native
+  trait KeySigningKey extends js.Object {
+    var CreatedDate: js.UndefOr[TimeStamp]
+    var DNSKEYRecord: js.UndefOr[SigningKeyString]
+    var DSRecord: js.UndefOr[SigningKeyString]
+    var DigestAlgorithmMnemonic: js.UndefOr[SigningKeyString]
+    var DigestAlgorithmType: js.UndefOr[SigningKeyInteger]
+    var DigestValue: js.UndefOr[SigningKeyString]
+    var Flag: js.UndefOr[SigningKeyInteger]
+    var KeyTag: js.UndefOr[SigningKeyTag]
+    var KmsArn: js.UndefOr[SigningKeyString]
+    var LastModifiedDate: js.UndefOr[TimeStamp]
+    var Name: js.UndefOr[SigningKeyName]
+    var PublicKey: js.UndefOr[SigningKeyString]
+    var SigningAlgorithmMnemonic: js.UndefOr[SigningKeyString]
+    var SigningAlgorithmType: js.UndefOr[SigningKeyInteger]
+    var Status: js.UndefOr[SigningKeyStatus]
+    var StatusMessage: js.UndefOr[SigningKeyStatusMessage]
+  }
+
+  object KeySigningKey {
+    @inline
+    def apply(
+        CreatedDate: js.UndefOr[TimeStamp] = js.undefined,
+        DNSKEYRecord: js.UndefOr[SigningKeyString] = js.undefined,
+        DSRecord: js.UndefOr[SigningKeyString] = js.undefined,
+        DigestAlgorithmMnemonic: js.UndefOr[SigningKeyString] = js.undefined,
+        DigestAlgorithmType: js.UndefOr[SigningKeyInteger] = js.undefined,
+        DigestValue: js.UndefOr[SigningKeyString] = js.undefined,
+        Flag: js.UndefOr[SigningKeyInteger] = js.undefined,
+        KeyTag: js.UndefOr[SigningKeyTag] = js.undefined,
+        KmsArn: js.UndefOr[SigningKeyString] = js.undefined,
+        LastModifiedDate: js.UndefOr[TimeStamp] = js.undefined,
+        Name: js.UndefOr[SigningKeyName] = js.undefined,
+        PublicKey: js.UndefOr[SigningKeyString] = js.undefined,
+        SigningAlgorithmMnemonic: js.UndefOr[SigningKeyString] = js.undefined,
+        SigningAlgorithmType: js.UndefOr[SigningKeyInteger] = js.undefined,
+        Status: js.UndefOr[SigningKeyStatus] = js.undefined,
+        StatusMessage: js.UndefOr[SigningKeyStatusMessage] = js.undefined
+    ): KeySigningKey = {
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DNSKEYRecord.foreach(__v => __obj.updateDynamic("DNSKEYRecord")(__v.asInstanceOf[js.Any]))
+      DSRecord.foreach(__v => __obj.updateDynamic("DSRecord")(__v.asInstanceOf[js.Any]))
+      DigestAlgorithmMnemonic.foreach(__v => __obj.updateDynamic("DigestAlgorithmMnemonic")(__v.asInstanceOf[js.Any]))
+      DigestAlgorithmType.foreach(__v => __obj.updateDynamic("DigestAlgorithmType")(__v.asInstanceOf[js.Any]))
+      DigestValue.foreach(__v => __obj.updateDynamic("DigestValue")(__v.asInstanceOf[js.Any]))
+      Flag.foreach(__v => __obj.updateDynamic("Flag")(__v.asInstanceOf[js.Any]))
+      KeyTag.foreach(__v => __obj.updateDynamic("KeyTag")(__v.asInstanceOf[js.Any]))
+      KmsArn.foreach(__v => __obj.updateDynamic("KmsArn")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      SigningAlgorithmMnemonic.foreach(__v => __obj.updateDynamic("SigningAlgorithmMnemonic")(__v.asInstanceOf[js.Any]))
+      SigningAlgorithmType.foreach(__v => __obj.updateDynamic("SigningAlgorithmType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeySigningKey]
+    }
   }
 
   /** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.
@@ -3314,8 +3688,9 @@ package route53 {
     val SPF = "SPF".asInstanceOf[RRType]
     val AAAA = "AAAA".asInstanceOf[RRType]
     val CAA = "CAA".asInstanceOf[RRType]
+    val DS = "DS".asInstanceOf[RRType]
 
-    @inline def values = js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA)
+    @inline def values = js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA, DS)
   }
 
   @js.native

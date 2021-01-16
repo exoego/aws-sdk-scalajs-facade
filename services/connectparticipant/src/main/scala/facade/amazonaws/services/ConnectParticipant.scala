@@ -7,30 +7,45 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object connectparticipant {
+  type ArtifactId = String
+  type AttachmentIdList = js.Array[ArtifactId]
+  type AttachmentName = String
+  type AttachmentSizeInBytes = Double
+  type Attachments = js.Array[AttachmentItem]
   type ChatContent = String
   type ChatContentType = String
   type ChatItemId = String
   type ClientToken = String
   type ConnectionTypeList = js.Array[ConnectionType]
   type ContactId = String
+  type ContentType = String
   type DisplayName = String
   type ISO8601Datetime = String
   type Instant = String
   type MaxResults = Int
   type MostRecent = Int
   type NextToken = String
+  type NonEmptyClientToken = String
   type ParticipantId = String
   type ParticipantToken = String
+  type PreSignedAttachmentUrl = String
   type PreSignedConnectionUrl = String
   type Transcript = js.Array[Item]
+  type UploadMetadataSignedHeaders = js.Dictionary[UploadMetadataSignedHeadersValue]
+  type UploadMetadataSignedHeadersKey = String
+  type UploadMetadataSignedHeadersValue = String
+  type UploadMetadataUrl = String
 
   implicit final class ConnectParticipantOps(private val service: ConnectParticipant) extends AnyVal {
 
+    @inline def completeAttachmentUploadFuture(params: CompleteAttachmentUploadRequest): Future[CompleteAttachmentUploadResponse] = service.completeAttachmentUpload(params).promise().toFuture
     @inline def createParticipantConnectionFuture(params: CreateParticipantConnectionRequest): Future[CreateParticipantConnectionResponse] = service.createParticipantConnection(params).promise().toFuture
     @inline def disconnectParticipantFuture(params: DisconnectParticipantRequest): Future[DisconnectParticipantResponse] = service.disconnectParticipant(params).promise().toFuture
+    @inline def getAttachmentFuture(params: GetAttachmentRequest): Future[GetAttachmentResponse] = service.getAttachment(params).promise().toFuture
     @inline def getTranscriptFuture(params: GetTranscriptRequest): Future[GetTranscriptResponse] = service.getTranscript(params).promise().toFuture
     @inline def sendEventFuture(params: SendEventRequest): Future[SendEventResponse] = service.sendEvent(params).promise().toFuture
     @inline def sendMessageFuture(params: SendMessageRequest): Future[SendMessageResponse] = service.sendMessage(params).promise().toFuture
+    @inline def startAttachmentUploadFuture(params: StartAttachmentUploadRequest): Future[StartAttachmentUploadResponse] = service.startAttachmentUpload(params).promise().toFuture
 
   }
 }
@@ -41,21 +56,102 @@ package connectparticipant {
   class ConnectParticipant() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def completeAttachmentUpload(params: CompleteAttachmentUploadRequest): Request[CompleteAttachmentUploadResponse] = js.native
     def createParticipantConnection(params: CreateParticipantConnectionRequest): Request[CreateParticipantConnectionResponse] = js.native
     def disconnectParticipant(params: DisconnectParticipantRequest): Request[DisconnectParticipantResponse] = js.native
+    def getAttachment(params: GetAttachmentRequest): Request[GetAttachmentResponse] = js.native
     def getTranscript(params: GetTranscriptRequest): Request[GetTranscriptResponse] = js.native
     def sendEvent(params: SendEventRequest): Request[SendEventResponse] = js.native
     def sendMessage(params: SendMessageRequest): Request[SendMessageResponse] = js.native
+    def startAttachmentUpload(params: StartAttachmentUploadRequest): Request[StartAttachmentUploadResponse] = js.native
+  }
+
+  @js.native
+  sealed trait ArtifactStatus extends js.Any
+  object ArtifactStatus {
+    val APPROVED = "APPROVED".asInstanceOf[ArtifactStatus]
+    val REJECTED = "REJECTED".asInstanceOf[ArtifactStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ArtifactStatus]
+
+    @inline def values = js.Array(APPROVED, REJECTED, IN_PROGRESS)
+  }
+
+  /** The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.
+    */
+  @js.native
+  trait AttachmentItem extends js.Object {
+    var AttachmentId: js.UndefOr[ArtifactId]
+    var AttachmentName: js.UndefOr[AttachmentName]
+    var ContentType: js.UndefOr[ContentType]
+    var Status: js.UndefOr[ArtifactStatus]
+  }
+
+  object AttachmentItem {
+    @inline
+    def apply(
+        AttachmentId: js.UndefOr[ArtifactId] = js.undefined,
+        AttachmentName: js.UndefOr[AttachmentName] = js.undefined,
+        ContentType: js.UndefOr[ContentType] = js.undefined,
+        Status: js.UndefOr[ArtifactStatus] = js.undefined
+    ): AttachmentItem = {
+      val __obj = js.Dynamic.literal()
+      AttachmentId.foreach(__v => __obj.updateDynamic("AttachmentId")(__v.asInstanceOf[js.Any]))
+      AttachmentName.foreach(__v => __obj.updateDynamic("AttachmentName")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttachmentItem]
+    }
   }
 
   @js.native
   sealed trait ChatItemType extends js.Any
   object ChatItemType {
+    val TYPING = "TYPING".asInstanceOf[ChatItemType]
+    val PARTICIPANT_JOINED = "PARTICIPANT_JOINED".asInstanceOf[ChatItemType]
+    val PARTICIPANT_LEFT = "PARTICIPANT_LEFT".asInstanceOf[ChatItemType]
+    val CHAT_ENDED = "CHAT_ENDED".asInstanceOf[ChatItemType]
+    val TRANSFER_SUCCEEDED = "TRANSFER_SUCCEEDED".asInstanceOf[ChatItemType]
+    val TRANSFER_FAILED = "TRANSFER_FAILED".asInstanceOf[ChatItemType]
     val MESSAGE = "MESSAGE".asInstanceOf[ChatItemType]
     val EVENT = "EVENT".asInstanceOf[ChatItemType]
+    val ATTACHMENT = "ATTACHMENT".asInstanceOf[ChatItemType]
     val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
 
-    @inline def values = js.Array(MESSAGE, EVENT, CONNECTION_ACK)
+    @inline def values = js.Array(TYPING, PARTICIPANT_JOINED, PARTICIPANT_LEFT, CHAT_ENDED, TRANSFER_SUCCEEDED, TRANSFER_FAILED, MESSAGE, EVENT, ATTACHMENT, CONNECTION_ACK)
+  }
+
+  @js.native
+  trait CompleteAttachmentUploadRequest extends js.Object {
+    var AttachmentIds: AttachmentIdList
+    var ClientToken: NonEmptyClientToken
+    var ConnectionToken: ParticipantToken
+  }
+
+  object CompleteAttachmentUploadRequest {
+    @inline
+    def apply(
+        AttachmentIds: AttachmentIdList,
+        ClientToken: NonEmptyClientToken,
+        ConnectionToken: ParticipantToken
+    ): CompleteAttachmentUploadRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttachmentIds" -> AttachmentIds.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CompleteAttachmentUploadRequest]
+    }
+  }
+
+  @js.native
+  trait CompleteAttachmentUploadResponse extends js.Object
+
+  object CompleteAttachmentUploadResponse {
+    @inline
+    def apply(): CompleteAttachmentUploadResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CompleteAttachmentUploadResponse]
+    }
   }
 
   /** Connection credentials.
@@ -160,6 +256,45 @@ package connectparticipant {
   }
 
   @js.native
+  trait GetAttachmentRequest extends js.Object {
+    var AttachmentId: ArtifactId
+    var ConnectionToken: ParticipantToken
+  }
+
+  object GetAttachmentRequest {
+    @inline
+    def apply(
+        AttachmentId: ArtifactId,
+        ConnectionToken: ParticipantToken
+    ): GetAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttachmentId" -> AttachmentId.asInstanceOf[js.Any],
+        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait GetAttachmentResponse extends js.Object {
+    var Url: js.UndefOr[PreSignedAttachmentUrl]
+    var UrlExpiry: js.UndefOr[ISO8601Datetime]
+  }
+
+  object GetAttachmentResponse {
+    @inline
+    def apply(
+        Url: js.UndefOr[PreSignedAttachmentUrl] = js.undefined,
+        UrlExpiry: js.UndefOr[ISO8601Datetime] = js.undefined
+    ): GetAttachmentResponse = {
+      val __obj = js.Dynamic.literal()
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      UrlExpiry.foreach(__v => __obj.updateDynamic("UrlExpiry")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAttachmentResponse]
+    }
+  }
+
+  @js.native
   trait GetTranscriptRequest extends js.Object {
     var ConnectionToken: ParticipantToken
     var ContactId: js.UndefOr[ContactId]
@@ -222,6 +357,7 @@ package connectparticipant {
   @js.native
   trait Item extends js.Object {
     var AbsoluteTime: js.UndefOr[Instant]
+    var Attachments: js.UndefOr[Attachments]
     var Content: js.UndefOr[ChatContent]
     var ContentType: js.UndefOr[ChatContentType]
     var DisplayName: js.UndefOr[DisplayName]
@@ -235,6 +371,7 @@ package connectparticipant {
     @inline
     def apply(
         AbsoluteTime: js.UndefOr[Instant] = js.undefined,
+        Attachments: js.UndefOr[Attachments] = js.undefined,
         Content: js.UndefOr[ChatContent] = js.undefined,
         ContentType: js.UndefOr[ChatContentType] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
@@ -245,6 +382,7 @@ package connectparticipant {
     ): Item = {
       val __obj = js.Dynamic.literal()
       AbsoluteTime.foreach(__v => __obj.updateDynamic("AbsoluteTime")(__v.asInstanceOf[js.Any]))
+      Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
@@ -376,6 +514,54 @@ package connectparticipant {
     @inline def values = js.Array(DESCENDING, ASCENDING)
   }
 
+  @js.native
+  trait StartAttachmentUploadRequest extends js.Object {
+    var AttachmentName: AttachmentName
+    var AttachmentSizeInBytes: AttachmentSizeInBytes
+    var ClientToken: NonEmptyClientToken
+    var ConnectionToken: ParticipantToken
+    var ContentType: ContentType
+  }
+
+  object StartAttachmentUploadRequest {
+    @inline
+    def apply(
+        AttachmentName: AttachmentName,
+        AttachmentSizeInBytes: AttachmentSizeInBytes,
+        ClientToken: NonEmptyClientToken,
+        ConnectionToken: ParticipantToken,
+        ContentType: ContentType
+    ): StartAttachmentUploadRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttachmentName" -> AttachmentName.asInstanceOf[js.Any],
+        "AttachmentSizeInBytes" -> AttachmentSizeInBytes.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "ConnectionToken" -> ConnectionToken.asInstanceOf[js.Any],
+        "ContentType" -> ContentType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartAttachmentUploadRequest]
+    }
+  }
+
+  @js.native
+  trait StartAttachmentUploadResponse extends js.Object {
+    var AttachmentId: js.UndefOr[ArtifactId]
+    var UploadMetadata: js.UndefOr[UploadMetadata]
+  }
+
+  object StartAttachmentUploadResponse {
+    @inline
+    def apply(
+        AttachmentId: js.UndefOr[ArtifactId] = js.undefined,
+        UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined
+    ): StartAttachmentUploadResponse = {
+      val __obj = js.Dynamic.literal()
+      AttachmentId.foreach(__v => __obj.updateDynamic("AttachmentId")(__v.asInstanceOf[js.Any]))
+      UploadMetadata.foreach(__v => __obj.updateDynamic("UploadMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartAttachmentUploadResponse]
+    }
+  }
+
   /** A filtering option for where to start. For example, if you sent 100 messages, start with message 50.
     */
   @js.native
@@ -397,6 +583,30 @@ package connectparticipant {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       MostRecent.foreach(__v => __obj.updateDynamic("MostRecent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPosition]
+    }
+  }
+
+  /** Fields to be used while uploading the attachment.
+    */
+  @js.native
+  trait UploadMetadata extends js.Object {
+    var HeadersToInclude: js.UndefOr[UploadMetadataSignedHeaders]
+    var Url: js.UndefOr[UploadMetadataUrl]
+    var UrlExpiry: js.UndefOr[ISO8601Datetime]
+  }
+
+  object UploadMetadata {
+    @inline
+    def apply(
+        HeadersToInclude: js.UndefOr[UploadMetadataSignedHeaders] = js.undefined,
+        Url: js.UndefOr[UploadMetadataUrl] = js.undefined,
+        UrlExpiry: js.UndefOr[ISO8601Datetime] = js.undefined
+    ): UploadMetadata = {
+      val __obj = js.Dynamic.literal()
+      HeadersToInclude.foreach(__v => __obj.updateDynamic("HeadersToInclude")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      UrlExpiry.foreach(__v => __obj.updateDynamic("UrlExpiry")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UploadMetadata]
     }
   }
 

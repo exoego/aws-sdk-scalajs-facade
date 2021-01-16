@@ -41,6 +41,9 @@ package object cognitoidentity {
   type OIDCProviderList = js.Array[ARNString]
   type OIDCToken = String
   type PaginationKey = String
+  type PrincipalTagID = String
+  type PrincipalTagValue = String
+  type PrincipalTags = js.Dictionary[PrincipalTagValue]
   type QueryLimit = Int
   type RoleMappingMap = js.Dictionary[RoleMapping]
   type RoleType = String
@@ -52,6 +55,7 @@ package object cognitoidentity {
   type TagValueType = String
   type TokenDuration = Double
   type UnprocessedIdentityIdList = js.Array[UnprocessedIdentityId]
+  type UseDefaults = Boolean
 
   implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
 
@@ -65,12 +69,14 @@ package object cognitoidentity {
     @inline def getIdentityPoolRolesFuture(params: GetIdentityPoolRolesInput): Future[GetIdentityPoolRolesResponse] = service.getIdentityPoolRoles(params).promise().toFuture
     @inline def getOpenIdTokenForDeveloperIdentityFuture(params: GetOpenIdTokenForDeveloperIdentityInput): Future[GetOpenIdTokenForDeveloperIdentityResponse] = service.getOpenIdTokenForDeveloperIdentity(params).promise().toFuture
     @inline def getOpenIdTokenFuture(params: GetOpenIdTokenInput): Future[GetOpenIdTokenResponse] = service.getOpenIdToken(params).promise().toFuture
+    @inline def getPrincipalTagAttributeMapFuture(params: GetPrincipalTagAttributeMapInput): Future[GetPrincipalTagAttributeMapResponse] = service.getPrincipalTagAttributeMap(params).promise().toFuture
     @inline def listIdentitiesFuture(params: ListIdentitiesInput): Future[ListIdentitiesResponse] = service.listIdentities(params).promise().toFuture
     @inline def listIdentityPoolsFuture(params: ListIdentityPoolsInput): Future[ListIdentityPoolsResponse] = service.listIdentityPools(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def lookupDeveloperIdentityFuture(params: LookupDeveloperIdentityInput): Future[LookupDeveloperIdentityResponse] = service.lookupDeveloperIdentity(params).promise().toFuture
     @inline def mergeDeveloperIdentitiesFuture(params: MergeDeveloperIdentitiesInput): Future[MergeDeveloperIdentitiesResponse] = service.mergeDeveloperIdentities(params).promise().toFuture
     @inline def setIdentityPoolRolesFuture(params: SetIdentityPoolRolesInput): Future[js.Object] = service.setIdentityPoolRoles(params).promise().toFuture
+    @inline def setPrincipalTagAttributeMapFuture(params: SetPrincipalTagAttributeMapInput): Future[SetPrincipalTagAttributeMapResponse] = service.setPrincipalTagAttributeMap(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def unlinkDeveloperIdentityFuture(params: UnlinkDeveloperIdentityInput): Future[js.Object] = service.unlinkDeveloperIdentity(params).promise().toFuture
     @inline def unlinkIdentityFuture(params: UnlinkIdentityInput): Future[js.Object] = service.unlinkIdentity(params).promise().toFuture
@@ -96,12 +102,14 @@ package cognitoidentity {
     def getIdentityPoolRoles(params: GetIdentityPoolRolesInput): Request[GetIdentityPoolRolesResponse] = js.native
     def getOpenIdToken(params: GetOpenIdTokenInput): Request[GetOpenIdTokenResponse] = js.native
     def getOpenIdTokenForDeveloperIdentity(params: GetOpenIdTokenForDeveloperIdentityInput): Request[GetOpenIdTokenForDeveloperIdentityResponse] = js.native
+    def getPrincipalTagAttributeMap(params: GetPrincipalTagAttributeMapInput): Request[GetPrincipalTagAttributeMapResponse] = js.native
     def listIdentities(params: ListIdentitiesInput): Request[ListIdentitiesResponse] = js.native
     def listIdentityPools(params: ListIdentityPoolsInput): Request[ListIdentityPoolsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceResponse] = js.native
     def lookupDeveloperIdentity(params: LookupDeveloperIdentityInput): Request[LookupDeveloperIdentityResponse] = js.native
     def mergeDeveloperIdentities(params: MergeDeveloperIdentitiesInput): Request[MergeDeveloperIdentitiesResponse] = js.native
     def setIdentityPoolRoles(params: SetIdentityPoolRolesInput): Request[js.Object] = js.native
+    def setPrincipalTagAttributeMap(params: SetPrincipalTagAttributeMapInput): Request[SetPrincipalTagAttributeMapResponse] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceResponse] = js.native
     def unlinkDeveloperIdentity(params: UnlinkDeveloperIdentityInput): Request[js.Object] = js.native
     def unlinkIdentity(params: UnlinkIdentityInput): Request[js.Object] = js.native
@@ -457,6 +465,7 @@ package cognitoidentity {
     var IdentityPoolId: IdentityPoolId
     var Logins: LoginsMap
     var IdentityId: js.UndefOr[IdentityId]
+    var PrincipalTags: js.UndefOr[PrincipalTags]
     var TokenDuration: js.UndefOr[TokenDuration]
   }
 
@@ -466,6 +475,7 @@ package cognitoidentity {
         IdentityPoolId: IdentityPoolId,
         Logins: LoginsMap,
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        PrincipalTags: js.UndefOr[PrincipalTags] = js.undefined,
         TokenDuration: js.UndefOr[TokenDuration] = js.undefined
     ): GetOpenIdTokenForDeveloperIdentityInput = {
       val __obj = js.Dynamic.literal(
@@ -474,6 +484,7 @@ package cognitoidentity {
       )
 
       IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      PrincipalTags.foreach(__v => __obj.updateDynamic("PrincipalTags")(__v.asInstanceOf[js.Any]))
       TokenDuration.foreach(__v => __obj.updateDynamic("TokenDuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIdTokenForDeveloperIdentityInput]
     }
@@ -541,6 +552,51 @@ package cognitoidentity {
       IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
       Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIdTokenResponse]
+    }
+  }
+
+  @js.native
+  trait GetPrincipalTagAttributeMapInput extends js.Object {
+    var IdentityPoolId: IdentityPoolId
+    var IdentityProviderName: IdentityProviderName
+  }
+
+  object GetPrincipalTagAttributeMapInput {
+    @inline
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        IdentityProviderName: IdentityProviderName
+    ): GetPrincipalTagAttributeMapInput = {
+      val __obj = js.Dynamic.literal(
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
+        "IdentityProviderName" -> IdentityProviderName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPrincipalTagAttributeMapInput]
+    }
+  }
+
+  @js.native
+  trait GetPrincipalTagAttributeMapResponse extends js.Object {
+    var IdentityPoolId: js.UndefOr[IdentityPoolId]
+    var IdentityProviderName: js.UndefOr[IdentityProviderName]
+    var PrincipalTags: js.UndefOr[PrincipalTags]
+    var UseDefaults: js.UndefOr[UseDefaults]
+  }
+
+  object GetPrincipalTagAttributeMapResponse {
+    @inline
+    def apply(
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        IdentityProviderName: js.UndefOr[IdentityProviderName] = js.undefined,
+        PrincipalTags: js.UndefOr[PrincipalTags] = js.undefined,
+        UseDefaults: js.UndefOr[UseDefaults] = js.undefined
+    ): GetPrincipalTagAttributeMapResponse = {
+      val __obj = js.Dynamic.literal()
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      IdentityProviderName.foreach(__v => __obj.updateDynamic("IdentityProviderName")(__v.asInstanceOf[js.Any]))
+      PrincipalTags.foreach(__v => __obj.updateDynamic("PrincipalTags")(__v.asInstanceOf[js.Any]))
+      UseDefaults.foreach(__v => __obj.updateDynamic("UseDefaults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPrincipalTagAttributeMapResponse]
     }
   }
 
@@ -987,6 +1043,58 @@ package cognitoidentity {
 
       RoleMappings.foreach(__v => __obj.updateDynamic("RoleMappings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetIdentityPoolRolesInput]
+    }
+  }
+
+  @js.native
+  trait SetPrincipalTagAttributeMapInput extends js.Object {
+    var IdentityPoolId: IdentityPoolId
+    var IdentityProviderName: IdentityProviderName
+    var PrincipalTags: js.UndefOr[PrincipalTags]
+    var UseDefaults: js.UndefOr[UseDefaults]
+  }
+
+  object SetPrincipalTagAttributeMapInput {
+    @inline
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        IdentityProviderName: IdentityProviderName,
+        PrincipalTags: js.UndefOr[PrincipalTags] = js.undefined,
+        UseDefaults: js.UndefOr[UseDefaults] = js.undefined
+    ): SetPrincipalTagAttributeMapInput = {
+      val __obj = js.Dynamic.literal(
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
+        "IdentityProviderName" -> IdentityProviderName.asInstanceOf[js.Any]
+      )
+
+      PrincipalTags.foreach(__v => __obj.updateDynamic("PrincipalTags")(__v.asInstanceOf[js.Any]))
+      UseDefaults.foreach(__v => __obj.updateDynamic("UseDefaults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetPrincipalTagAttributeMapInput]
+    }
+  }
+
+  @js.native
+  trait SetPrincipalTagAttributeMapResponse extends js.Object {
+    var IdentityPoolId: js.UndefOr[IdentityPoolId]
+    var IdentityProviderName: js.UndefOr[IdentityProviderName]
+    var PrincipalTags: js.UndefOr[PrincipalTags]
+    var UseDefaults: js.UndefOr[UseDefaults]
+  }
+
+  object SetPrincipalTagAttributeMapResponse {
+    @inline
+    def apply(
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        IdentityProviderName: js.UndefOr[IdentityProviderName] = js.undefined,
+        PrincipalTags: js.UndefOr[PrincipalTags] = js.undefined,
+        UseDefaults: js.UndefOr[UseDefaults] = js.undefined
+    ): SetPrincipalTagAttributeMapResponse = {
+      val __obj = js.Dynamic.literal()
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      IdentityProviderName.foreach(__v => __obj.updateDynamic("IdentityProviderName")(__v.asInstanceOf[js.Any]))
+      PrincipalTags.foreach(__v => __obj.updateDynamic("PrincipalTags")(__v.asInstanceOf[js.Any]))
+      UseDefaults.foreach(__v => __obj.updateDynamic("UseDefaults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetPrincipalTagAttributeMapResponse]
     }
   }
 

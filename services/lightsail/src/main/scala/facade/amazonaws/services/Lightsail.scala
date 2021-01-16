@@ -69,7 +69,8 @@ package object lightsail {
   type InstancePortStateList = js.Array[InstancePortState]
   type InstanceSnapshotList = js.Array[InstanceSnapshot]
   type IpAddress = String
-  type IpV6Address = String
+  type Ipv6Address = String
+  type Ipv6AddressList = js.Array[Ipv6Address]
   type IsoDate = js.Date
   type IssuerCA = String
   type KeyAlgorithm = String
@@ -247,6 +248,7 @@ package object lightsail {
     @inline def releaseStaticIpFuture(params: ReleaseStaticIpRequest): Future[ReleaseStaticIpResult] = service.releaseStaticIp(params).promise().toFuture
     @inline def resetDistributionCacheFuture(params: ResetDistributionCacheRequest): Future[ResetDistributionCacheResult] = service.resetDistributionCache(params).promise().toFuture
     @inline def sendContactMethodVerificationFuture(params: SendContactMethodVerificationRequest): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
+    @inline def setIpAddressTypeFuture(params: SetIpAddressTypeRequest): Future[SetIpAddressTypeResult] = service.setIpAddressType(params).promise().toFuture
     @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] = service.startInstance(params).promise().toFuture
     @inline def startRelationalDatabaseFuture(params: StartRelationalDatabaseRequest): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise().toFuture
     @inline def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] = service.stopInstance(params).promise().toFuture
@@ -398,6 +400,7 @@ package lightsail {
     def releaseStaticIp(params: ReleaseStaticIpRequest): Request[ReleaseStaticIpResult] = js.native
     def resetDistributionCache(params: ResetDistributionCacheRequest): Request[ResetDistributionCacheResult] = js.native
     def sendContactMethodVerification(params: SendContactMethodVerificationRequest): Request[SendContactMethodVerificationResult] = js.native
+    def setIpAddressType(params: SetIpAddressTypeRequest): Request[SetIpAddressTypeResult] = js.native
     def startInstance(params: StartInstanceRequest): Request[StartInstanceResult] = js.native
     def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] = js.native
     def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult] = js.native
@@ -2239,6 +2242,7 @@ package lightsail {
     var origin: InputOrigin
     var cacheBehaviorSettings: js.UndefOr[CacheSettings]
     var cacheBehaviors: js.UndefOr[CacheBehaviorList]
+    var ipAddressType: js.UndefOr[IpAddressType]
     var tags: js.UndefOr[TagList]
   }
 
@@ -2251,6 +2255,7 @@ package lightsail {
         origin: InputOrigin,
         cacheBehaviorSettings: js.UndefOr[CacheSettings] = js.undefined,
         cacheBehaviors: js.UndefOr[CacheBehaviorList] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDistributionRequest = {
       val __obj = js.Dynamic.literal(
@@ -2262,6 +2267,7 @@ package lightsail {
 
       cacheBehaviorSettings.foreach(__v => __obj.updateDynamic("cacheBehaviorSettings")(__v.asInstanceOf[js.Any]))
       cacheBehaviors.foreach(__v => __obj.updateDynamic("cacheBehaviors")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDistributionRequest]
     }
@@ -2407,6 +2413,7 @@ package lightsail {
     var addOns: js.UndefOr[AddOnRequestList]
     var attachedDiskMapping: js.UndefOr[AttachedDiskMap]
     var instanceSnapshotName: js.UndefOr[ResourceName]
+    var ipAddressType: js.UndefOr[IpAddressType]
     var keyPairName: js.UndefOr[ResourceName]
     var restoreDate: js.UndefOr[String]
     var sourceInstanceName: js.UndefOr[String]
@@ -2424,6 +2431,7 @@ package lightsail {
         addOns: js.UndefOr[AddOnRequestList] = js.undefined,
         attachedDiskMapping: js.UndefOr[AttachedDiskMap] = js.undefined,
         instanceSnapshotName: js.UndefOr[ResourceName] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
         keyPairName: js.UndefOr[ResourceName] = js.undefined,
         restoreDate: js.UndefOr[String] = js.undefined,
         sourceInstanceName: js.UndefOr[String] = js.undefined,
@@ -2440,6 +2448,7 @@ package lightsail {
       addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       attachedDiskMapping.foreach(__v => __obj.updateDynamic("attachedDiskMapping")(__v.asInstanceOf[js.Any]))
       instanceSnapshotName.foreach(__v => __obj.updateDynamic("instanceSnapshotName")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
       restoreDate.foreach(__v => __obj.updateDynamic("restoreDate")(__v.asInstanceOf[js.Any]))
       sourceInstanceName.foreach(__v => __obj.updateDynamic("sourceInstanceName")(__v.asInstanceOf[js.Any]))
@@ -2474,6 +2483,7 @@ package lightsail {
     var instanceNames: StringList
     var addOns: js.UndefOr[AddOnRequestList]
     var customImageName: js.UndefOr[ResourceName]
+    var ipAddressType: js.UndefOr[IpAddressType]
     var keyPairName: js.UndefOr[ResourceName]
     var tags: js.UndefOr[TagList]
     var userData: js.UndefOr[String]
@@ -2488,6 +2498,7 @@ package lightsail {
         instanceNames: StringList,
         addOns: js.UndefOr[AddOnRequestList] = js.undefined,
         customImageName: js.UndefOr[ResourceName] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
         keyPairName: js.UndefOr[ResourceName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         userData: js.UndefOr[String] = js.undefined
@@ -2501,6 +2512,7 @@ package lightsail {
 
       addOns.foreach(__v => __obj.updateDynamic("addOns")(__v.asInstanceOf[js.Any]))
       customImageName.foreach(__v => __obj.updateDynamic("customImageName")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
@@ -2578,6 +2590,7 @@ package lightsail {
     var certificateDomainName: js.UndefOr[DomainName]
     var certificateName: js.UndefOr[ResourceName]
     var healthCheckPath: js.UndefOr[String]
+    var ipAddressType: js.UndefOr[IpAddressType]
     var tags: js.UndefOr[TagList]
   }
 
@@ -2590,6 +2603,7 @@ package lightsail {
         certificateDomainName: js.UndefOr[DomainName] = js.undefined,
         certificateName: js.UndefOr[ResourceName] = js.undefined,
         healthCheckPath: js.UndefOr[String] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateLoadBalancerRequest = {
       val __obj = js.Dynamic.literal(
@@ -2601,6 +2615,7 @@ package lightsail {
       certificateDomainName.foreach(__v => __obj.updateDynamic("certificateDomainName")(__v.asInstanceOf[js.Any]))
       certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
       healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerRequest]
     }
@@ -6539,7 +6554,8 @@ package lightsail {
     var bundleId: js.UndefOr[NonEmptyString]
     var createdAt: js.UndefOr[IsoDate]
     var hardware: js.UndefOr[InstanceHardware]
-    var ipv6Address: js.UndefOr[IpV6Address]
+    var ipAddressType: js.UndefOr[IpAddressType]
+    var ipv6Addresses: js.UndefOr[Ipv6AddressList]
     var isStaticIp: js.UndefOr[Boolean]
     var location: js.UndefOr[ResourceLocation]
     var name: js.UndefOr[ResourceName]
@@ -6564,7 +6580,8 @@ package lightsail {
         bundleId: js.UndefOr[NonEmptyString] = js.undefined,
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         hardware: js.UndefOr[InstanceHardware] = js.undefined,
-        ipv6Address: js.UndefOr[IpV6Address] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
+        ipv6Addresses: js.UndefOr[Ipv6AddressList] = js.undefined,
         isStaticIp: js.UndefOr[Boolean] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
@@ -6586,7 +6603,8 @@ package lightsail {
       bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       hardware.foreach(__v => __obj.updateDynamic("hardware")(__v.asInstanceOf[js.Any]))
-      ipv6Address.foreach(__v => __obj.updateDynamic("ipv6Address")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
+      ipv6Addresses.foreach(__v => __obj.updateDynamic("ipv6Addresses")(__v.asInstanceOf[js.Any]))
       isStaticIp.foreach(__v => __obj.updateDynamic("isStaticIp")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -6836,6 +6854,7 @@ package lightsail {
     var cidrs: js.UndefOr[StringList]
     var commonName: js.UndefOr[String]
     var fromPort: js.UndefOr[Port]
+    var ipv6Cidrs: js.UndefOr[StringList]
     var protocol: js.UndefOr[NetworkProtocol]
     var toPort: js.UndefOr[Port]
   }
@@ -6850,6 +6869,7 @@ package lightsail {
         cidrs: js.UndefOr[StringList] = js.undefined,
         commonName: js.UndefOr[String] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
+        ipv6Cidrs: js.UndefOr[StringList] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): InstancePortInfo = {
@@ -6861,6 +6881,7 @@ package lightsail {
       cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       commonName.foreach(__v => __obj.updateDynamic("commonName")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
+      ipv6Cidrs.foreach(__v => __obj.updateDynamic("ipv6Cidrs")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstancePortInfo]
@@ -6874,6 +6895,7 @@ package lightsail {
     var cidrListAliases: js.UndefOr[StringList]
     var cidrs: js.UndefOr[StringList]
     var fromPort: js.UndefOr[Port]
+    var ipv6Cidrs: js.UndefOr[StringList]
     var protocol: js.UndefOr[NetworkProtocol]
     var state: js.UndefOr[PortState]
     var toPort: js.UndefOr[Port]
@@ -6885,6 +6907,7 @@ package lightsail {
         cidrListAliases: js.UndefOr[StringList] = js.undefined,
         cidrs: js.UndefOr[StringList] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
+        ipv6Cidrs: js.UndefOr[StringList] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         state: js.UndefOr[PortState] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
@@ -6893,6 +6916,7 @@ package lightsail {
       cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
       cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
+      ipv6Cidrs.foreach(__v => __obj.updateDynamic("ipv6Cidrs")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
@@ -7019,6 +7043,15 @@ package lightsail {
   }
 
   @js.native
+  sealed trait IpAddressType extends js.Any
+  object IpAddressType {
+    val dualstack = "dualstack".asInstanceOf[IpAddressType]
+    val ipv4 = "ipv4".asInstanceOf[IpAddressType]
+
+    @inline def values = js.Array(dualstack, ipv4)
+  }
+
+  @js.native
   trait IsVpcPeeredRequest extends js.Object
 
   object IsVpcPeeredRequest {
@@ -7098,6 +7131,7 @@ package lightsail {
     var createdAt: js.UndefOr[IsoDate]
     var defaultCacheBehavior: js.UndefOr[CacheBehavior]
     var domainName: js.UndefOr[String]
+    var ipAddressType: js.UndefOr[IpAddressType]
     var isEnabled: js.UndefOr[Boolean]
     var location: js.UndefOr[ResourceLocation]
     var name: js.UndefOr[ResourceName]
@@ -7122,6 +7156,7 @@ package lightsail {
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         defaultCacheBehavior: js.UndefOr[CacheBehavior] = js.undefined,
         domainName: js.UndefOr[String] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
         isEnabled: js.UndefOr[Boolean] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
@@ -7143,6 +7178,7 @@ package lightsail {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       defaultCacheBehavior.foreach(__v => __obj.updateDynamic("defaultCacheBehavior")(__v.asInstanceOf[js.Any]))
       domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       isEnabled.foreach(__v => __obj.updateDynamic("isEnabled")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -7167,6 +7203,7 @@ package lightsail {
     var healthCheckPath: js.UndefOr[NonEmptyString]
     var instanceHealthSummary: js.UndefOr[InstanceHealthSummaryList]
     var instancePort: js.UndefOr[Int]
+    var ipAddressType: js.UndefOr[IpAddressType]
     var location: js.UndefOr[ResourceLocation]
     var name: js.UndefOr[ResourceName]
     var protocol: js.UndefOr[LoadBalancerProtocol]
@@ -7188,6 +7225,7 @@ package lightsail {
         healthCheckPath: js.UndefOr[NonEmptyString] = js.undefined,
         instanceHealthSummary: js.UndefOr[InstanceHealthSummaryList] = js.undefined,
         instancePort: js.UndefOr[Int] = js.undefined,
+        ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         protocol: js.UndefOr[LoadBalancerProtocol] = js.undefined,
@@ -7206,6 +7244,7 @@ package lightsail {
       healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
       instanceHealthSummary.foreach(__v => __obj.updateDynamic("instanceHealthSummary")(__v.asInstanceOf[js.Any]))
       instancePort.foreach(__v => __obj.updateDynamic("instancePort")(__v.asInstanceOf[js.Any]))
+      ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
@@ -7955,6 +7994,7 @@ package lightsail {
     val AttachCertificateToDistribution = "AttachCertificateToDistribution".asInstanceOf[OperationType]
     val DetachCertificateFromDistribution = "DetachCertificateFromDistribution".asInstanceOf[OperationType]
     val UpdateDistributionBundle = "UpdateDistributionBundle".asInstanceOf[OperationType]
+    val SetIpAddressType = "SetIpAddressType".asInstanceOf[OperationType]
     val CreateCertificate = "CreateCertificate".asInstanceOf[OperationType]
     val DeleteCertificate = "DeleteCertificate".asInstanceOf[OperationType]
     val CreateContainerService = "CreateContainerService".asInstanceOf[OperationType]
@@ -8028,6 +8068,7 @@ package lightsail {
       AttachCertificateToDistribution,
       DetachCertificateFromDistribution,
       UpdateDistributionBundle,
+      SetIpAddressType,
       CreateCertificate,
       DeleteCertificate,
       CreateContainerService,
@@ -8189,6 +8230,7 @@ package lightsail {
     var cidrListAliases: js.UndefOr[StringList]
     var cidrs: js.UndefOr[StringList]
     var fromPort: js.UndefOr[Port]
+    var ipv6Cidrs: js.UndefOr[StringList]
     var protocol: js.UndefOr[NetworkProtocol]
     var toPort: js.UndefOr[Port]
   }
@@ -8199,6 +8241,7 @@ package lightsail {
         cidrListAliases: js.UndefOr[StringList] = js.undefined,
         cidrs: js.UndefOr[StringList] = js.undefined,
         fromPort: js.UndefOr[Port] = js.undefined,
+        ipv6Cidrs: js.UndefOr[StringList] = js.undefined,
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): PortInfo = {
@@ -8206,6 +8249,7 @@ package lightsail {
       cidrListAliases.foreach(__v => __obj.updateDynamic("cidrListAliases")(__v.asInstanceOf[js.Any]))
       cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
       fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
+      ipv6Cidrs.foreach(__v => __obj.updateDynamic("ipv6Cidrs")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortInfo]
@@ -9138,6 +9182,45 @@ package lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendContactMethodVerificationResult]
+    }
+  }
+
+  @js.native
+  trait SetIpAddressTypeRequest extends js.Object {
+    var ipAddressType: IpAddressType
+    var resourceName: ResourceName
+    var resourceType: ResourceType
+  }
+
+  object SetIpAddressTypeRequest {
+    @inline
+    def apply(
+        ipAddressType: IpAddressType,
+        resourceName: ResourceName,
+        resourceType: ResourceType
+    ): SetIpAddressTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "ipAddressType" -> ipAddressType.asInstanceOf[js.Any],
+        "resourceName" -> resourceName.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SetIpAddressTypeRequest]
+    }
+  }
+
+  @js.native
+  trait SetIpAddressTypeResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object SetIpAddressTypeResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): SetIpAddressTypeResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetIpAddressTypeResult]
     }
   }
 

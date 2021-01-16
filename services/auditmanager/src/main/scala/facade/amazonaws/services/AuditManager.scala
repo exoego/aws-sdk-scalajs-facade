@@ -497,6 +497,7 @@ package auditmanager {
     */
   @js.native
   trait AssessmentFrameworkMetadata extends js.Object {
+    var arn: js.UndefOr[AuditManagerArn]
     var complianceType: js.UndefOr[ComplianceType]
     var controlSetsCount: js.UndefOr[ControlSetsCount]
     var controlsCount: js.UndefOr[ControlsCount]
@@ -512,6 +513,7 @@ package auditmanager {
   object AssessmentFrameworkMetadata {
     @inline
     def apply(
+        arn: js.UndefOr[AuditManagerArn] = js.undefined,
         complianceType: js.UndefOr[ComplianceType] = js.undefined,
         controlSetsCount: js.UndefOr[ControlSetsCount] = js.undefined,
         controlsCount: js.UndefOr[ControlsCount] = js.undefined,
@@ -524,6 +526,7 @@ package auditmanager {
         `type`: js.UndefOr[FrameworkType] = js.undefined
     ): AssessmentFrameworkMetadata = {
       val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       complianceType.foreach(__v => __obj.updateDynamic("complianceType")(__v.asInstanceOf[js.Any]))
       controlSetsCount.foreach(__v => __obj.updateDynamic("controlSetsCount")(__v.asInstanceOf[js.Any]))
       controlsCount.foreach(__v => __obj.updateDynamic("controlsCount")(__v.asInstanceOf[js.Any]))
@@ -1377,6 +1380,7 @@ package auditmanager {
     var name: FrameworkName
     var complianceType: js.UndefOr[ComplianceType]
     var description: js.UndefOr[FrameworkDescription]
+    var tags: js.UndefOr[TagMap]
   }
 
   object CreateAssessmentFrameworkRequest {
@@ -1385,7 +1389,8 @@ package auditmanager {
         controlSets: CreateAssessmentFrameworkControlSets,
         name: FrameworkName,
         complianceType: js.UndefOr[ComplianceType] = js.undefined,
-        description: js.UndefOr[FrameworkDescription] = js.undefined
+        description: js.UndefOr[FrameworkDescription] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): CreateAssessmentFrameworkRequest = {
       val __obj = js.Dynamic.literal(
         "controlSets" -> controlSets.asInstanceOf[js.Any],
@@ -1394,6 +1399,7 @@ package auditmanager {
 
       complianceType.foreach(__v => __obj.updateDynamic("complianceType")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssessmentFrameworkRequest]
     }
   }
@@ -1991,6 +1997,7 @@ package auditmanager {
     var lastUpdatedBy: js.UndefOr[LastUpdatedBy]
     var logo: js.UndefOr[Filename]
     var name: js.UndefOr[FrameworkName]
+    var tags: js.UndefOr[TagMap]
     var `type`: js.UndefOr[FrameworkType]
   }
 
@@ -2009,6 +2016,7 @@ package auditmanager {
         lastUpdatedBy: js.UndefOr[LastUpdatedBy] = js.undefined,
         logo: js.UndefOr[Filename] = js.undefined,
         name: js.UndefOr[FrameworkName] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
         `type`: js.UndefOr[FrameworkType] = js.undefined
     ): Framework = {
       val __obj = js.Dynamic.literal()
@@ -2024,6 +2032,7 @@ package auditmanager {
       lastUpdatedBy.foreach(__v => __obj.updateDynamic("lastUpdatedBy")(__v.asInstanceOf[js.Any]))
       logo.foreach(__v => __obj.updateDynamic("logo")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Framework]
     }

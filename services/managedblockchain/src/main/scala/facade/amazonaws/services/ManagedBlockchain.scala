@@ -93,6 +93,7 @@ package managedblockchain {
   }
 
   /** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait ApprovalThresholdPolicy extends js.Object {
@@ -219,25 +220,26 @@ package managedblockchain {
   @js.native
   trait CreateNodeInput extends js.Object {
     var ClientRequestToken: ClientRequestTokenString
-    var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var NodeConfiguration: NodeConfiguration
+    var MemberId: js.UndefOr[ResourceIdString]
   }
 
   object CreateNodeInput {
     @inline
     def apply(
         ClientRequestToken: ClientRequestTokenString,
-        MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
-        NodeConfiguration: NodeConfiguration
+        NodeConfiguration: NodeConfiguration,
+        MemberId: js.UndefOr[ResourceIdString] = js.undefined
     ): CreateNodeInput = {
       val __obj = js.Dynamic.literal(
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeConfiguration" -> NodeConfiguration.asInstanceOf[js.Any]
       )
+
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNodeInput]
     }
   }
@@ -337,23 +339,24 @@ package managedblockchain {
 
   @js.native
   trait DeleteNodeInput extends js.Object {
-    var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var NodeId: ResourceIdString
+    var MemberId: js.UndefOr[ResourceIdString]
   }
 
   object DeleteNodeInput {
     @inline
     def apply(
-        MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
-        NodeId: ResourceIdString
+        NodeId: ResourceIdString,
+        MemberId: js.UndefOr[ResourceIdString] = js.undefined
     ): DeleteNodeInput = {
       val __obj = js.Dynamic.literal(
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
+
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteNodeInput]
     }
   }
@@ -382,8 +385,9 @@ package managedblockchain {
   sealed trait Framework extends js.Any
   object Framework {
     val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
+    val ETHEREUM = "ETHEREUM".asInstanceOf[Framework]
 
-    @inline def values = js.Array(HYPERLEDGER_FABRIC)
+    @inline def values = js.Array(HYPERLEDGER_FABRIC, ETHEREUM)
   }
 
   @js.native
@@ -457,23 +461,24 @@ package managedblockchain {
 
   @js.native
   trait GetNodeInput extends js.Object {
-    var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var NodeId: ResourceIdString
+    var MemberId: js.UndefOr[ResourceIdString]
   }
 
   object GetNodeInput {
     @inline
     def apply(
-        MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
-        NodeId: ResourceIdString
+        NodeId: ResourceIdString,
+        MemberId: js.UndefOr[ResourceIdString] = js.undefined
     ): GetNodeInput = {
       val __obj = js.Dynamic.literal(
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
+
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetNodeInput]
     }
   }
@@ -531,6 +536,7 @@ package managedblockchain {
   }
 
   /** An invitation to an AWS account to create a member and join the network.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -573,6 +579,7 @@ package managedblockchain {
   }
 
   /** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait InviteAction extends js.Object {
@@ -730,9 +737,9 @@ package managedblockchain {
 
   @js.native
   trait ListNodesInput extends js.Object {
-    var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var MaxResults: js.UndefOr[NodeListMaxResults]
+    var MemberId: js.UndefOr[ResourceIdString]
     var NextToken: js.UndefOr[PaginationToken]
     var Status: js.UndefOr[NodeStatus]
   }
@@ -740,18 +747,18 @@ package managedblockchain {
   object ListNodesInput {
     @inline
     def apply(
-        MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
         MaxResults: js.UndefOr[NodeListMaxResults] = js.undefined,
+        MemberId: js.UndefOr[ResourceIdString] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Status: js.UndefOr[NodeStatus] = js.undefined
     ): ListNodesInput = {
       val __obj = js.Dynamic.literal(
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any]
       )
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNodesInput]
@@ -903,6 +910,7 @@ package managedblockchain {
   }
 
   /** Member configuration properties.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Member extends js.Object {
@@ -942,6 +950,7 @@ package managedblockchain {
   }
 
   /** Configuration properties of the member.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait MemberConfiguration extends js.Object {
@@ -1099,6 +1108,7 @@ package managedblockchain {
   }
 
   /** A summary of configuration properties for a member.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait MemberSummary extends js.Object {
@@ -1176,6 +1186,24 @@ package managedblockchain {
     }
   }
 
+  /** Attributes of Ethereum for a network.
+    */
+  @js.native
+  trait NetworkEthereumAttributes extends js.Object {
+    var ChainId: js.UndefOr[String]
+  }
+
+  object NetworkEthereumAttributes {
+    @inline
+    def apply(
+        ChainId: js.UndefOr[String] = js.undefined
+    ): NetworkEthereumAttributes = {
+      val __obj = js.Dynamic.literal()
+      ChainId.foreach(__v => __obj.updateDynamic("ChainId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkEthereumAttributes]
+    }
+  }
+
   /** Attributes of Hyperledger Fabric for a network.
     */
   @js.native
@@ -1220,15 +1248,18 @@ package managedblockchain {
     */
   @js.native
   trait NetworkFrameworkAttributes extends js.Object {
+    var Ethereum: js.UndefOr[NetworkEthereumAttributes]
     var Fabric: js.UndefOr[NetworkFabricAttributes]
   }
 
   object NetworkFrameworkAttributes {
     @inline
     def apply(
+        Ethereum: js.UndefOr[NetworkEthereumAttributes] = js.undefined,
         Fabric: js.UndefOr[NetworkFabricAttributes] = js.undefined
     ): NetworkFrameworkAttributes = {
       val __obj = js.Dynamic.literal()
+      Ethereum.foreach(__v => __obj.updateDynamic("Ethereum")(__v.asInstanceOf[js.Any]))
       Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkFrameworkAttributes]
     }
@@ -1300,7 +1331,7 @@ package managedblockchain {
     }
   }
 
-  /** Configuration properties of a peer node.
+  /** Configuration properties of a node.
     */
   @js.native
   trait Node extends js.Object {
@@ -1345,12 +1376,12 @@ package managedblockchain {
     }
   }
 
-  /** Configuration properties of a peer node.
+  /** Configuration properties of a node.
     */
   @js.native
   trait NodeConfiguration extends js.Object {
-    var AvailabilityZone: AvailabilityZoneString
     var InstanceType: InstanceTypeString
+    var AvailabilityZone: js.UndefOr[AvailabilityZoneString]
     var LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration]
     var StateDB: js.UndefOr[StateDBType]
   }
@@ -1358,23 +1389,44 @@ package managedblockchain {
   object NodeConfiguration {
     @inline
     def apply(
-        AvailabilityZone: AvailabilityZoneString,
         InstanceType: InstanceTypeString,
+        AvailabilityZone: js.UndefOr[AvailabilityZoneString] = js.undefined,
         LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined,
         StateDB: js.UndefOr[StateDBType] = js.undefined
     ): NodeConfiguration = {
       val __obj = js.Dynamic.literal(
-        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       StateDB.foreach(__v => __obj.updateDynamic("StateDB")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeConfiguration]
     }
   }
 
-  /** Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.
+  /** Attributes of an Ethereum node.
+    */
+  @js.native
+  trait NodeEthereumAttributes extends js.Object {
+    var HttpEndpoint: js.UndefOr[String]
+    var WebSocketEndpoint: js.UndefOr[String]
+  }
+
+  object NodeEthereumAttributes {
+    @inline
+    def apply(
+        HttpEndpoint: js.UndefOr[String] = js.undefined,
+        WebSocketEndpoint: js.UndefOr[String] = js.undefined
+    ): NodeEthereumAttributes = {
+      val __obj = js.Dynamic.literal()
+      HttpEndpoint.foreach(__v => __obj.updateDynamic("HttpEndpoint")(__v.asInstanceOf[js.Any]))
+      WebSocketEndpoint.foreach(__v => __obj.updateDynamic("WebSocketEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NodeEthereumAttributes]
+    }
+  }
+
+  /** Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on Managed Blockchain.
     */
   @js.native
   trait NodeFabricAttributes extends js.Object {
@@ -1416,25 +1468,28 @@ package managedblockchain {
     }
   }
 
-  /** Attributes relevant to a peer node on a Managed Blockchain network for the blockchain framework that the network uses.
+  /** Attributes relevant to a node on a Managed Blockchain network for the blockchain framework that the network uses.
     */
   @js.native
   trait NodeFrameworkAttributes extends js.Object {
+    var Ethereum: js.UndefOr[NodeEthereumAttributes]
     var Fabric: js.UndefOr[NodeFabricAttributes]
   }
 
   object NodeFrameworkAttributes {
     @inline
     def apply(
+        Ethereum: js.UndefOr[NodeEthereumAttributes] = js.undefined,
         Fabric: js.UndefOr[NodeFabricAttributes] = js.undefined
     ): NodeFrameworkAttributes = {
       val __obj = js.Dynamic.literal()
+      Ethereum.foreach(__v => __obj.updateDynamic("Ethereum")(__v.asInstanceOf[js.Any]))
       Fabric.foreach(__v => __obj.updateDynamic("Fabric")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeFrameworkAttributes]
     }
   }
 
-  /** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.
+  /** Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.
     */
   @js.native
   trait NodeLogPublishingConfiguration extends js.Object {
@@ -1457,16 +1512,17 @@ package managedblockchain {
   object NodeStatus {
     val CREATING = "CREATING".asInstanceOf[NodeStatus]
     val AVAILABLE = "AVAILABLE".asInstanceOf[NodeStatus]
+    val UNHEALTHY = "UNHEALTHY".asInstanceOf[NodeStatus]
     val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodeStatus]
     val UPDATING = "UPDATING".asInstanceOf[NodeStatus]
     val DELETING = "DELETING".asInstanceOf[NodeStatus]
     val DELETED = "DELETED".asInstanceOf[NodeStatus]
     val FAILED = "FAILED".asInstanceOf[NodeStatus]
 
-    @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
+    @inline def values = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
   }
 
-  /** A summary of configuration properties for a peer node.
+  /** A summary of configuration properties for a node.
     */
   @js.native
   trait NodeSummary extends js.Object {
@@ -1497,6 +1553,7 @@ package managedblockchain {
   }
 
   /** Properties of a proposal on a Managed Blockchain network.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Proposal extends js.Object {
@@ -1548,6 +1605,7 @@ package managedblockchain {
   }
 
   /** The actions to carry out if a proposal is <code>APPROVED</code>.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait ProposalActions extends js.Object {
@@ -1581,6 +1639,7 @@ package managedblockchain {
   }
 
   /** Properties of a proposal.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait ProposalSummary extends js.Object {
@@ -1645,6 +1704,7 @@ package managedblockchain {
   }
 
   /** An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait RemoveAction extends js.Object {
@@ -1718,27 +1778,27 @@ package managedblockchain {
 
   @js.native
   trait UpdateNodeInput extends js.Object {
-    var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
     var NodeId: ResourceIdString
     var LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration]
+    var MemberId: js.UndefOr[ResourceIdString]
   }
 
   object UpdateNodeInput {
     @inline
     def apply(
-        MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
         NodeId: ResourceIdString,
-        LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined
+        LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined,
+        MemberId: js.UndefOr[ResourceIdString] = js.undefined
     ): UpdateNodeInput = {
       val __obj = js.Dynamic.literal(
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
         "NetworkId" -> NetworkId.asInstanceOf[js.Any],
         "NodeId" -> NodeId.asInstanceOf[js.Any]
       )
 
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateNodeInput]
     }
   }
@@ -1792,6 +1852,7 @@ package managedblockchain {
   }
 
   /** Properties of an individual vote that a member cast for a proposal.
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait VoteSummary extends js.Object {
@@ -1825,6 +1886,7 @@ package managedblockchain {
   }
 
   /** The voting rules for the network to decide if a proposal is accepted
+    * Applies only to Hyperledger Fabric.
     */
   @js.native
   trait VotingPolicy extends js.Object {

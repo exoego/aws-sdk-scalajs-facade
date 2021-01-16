@@ -43,6 +43,7 @@ package object iotwireless {
   type FNwkSIntKey = String
   type FPort = Int
   type FactoryPresetFreqsList = js.Array[PresetFreq]
+  type Fingerprint = String
   type GatewayEui = String
   type HrAllowed = Boolean
   type ISODateTimeString = String
@@ -1975,7 +1976,7 @@ package iotwireless {
     }
   }
 
-  /** LoRa object for create functions.
+  /** LoRaWAN object for create functions.
     */
   @js.native
   trait LoRaWANDevice extends js.Object {
@@ -2329,7 +2330,7 @@ package iotwireless {
     }
   }
 
-  /** LoRa object for update functions.
+  /** LoRaWAN object for update functions.
     */
   @js.native
   trait LoRaWANUpdateDevice extends js.Object {
@@ -2592,18 +2593,18 @@ package iotwireless {
   @js.native
   trait SidewalkAccountInfoWithFingerprint extends js.Object {
     var AmazonId: js.UndefOr[AmazonId]
-    var AppServerPrivateKey: js.UndefOr[AppServerPrivateKey]
+    var Fingerprint: js.UndefOr[Fingerprint]
   }
 
   object SidewalkAccountInfoWithFingerprint {
     @inline
     def apply(
         AmazonId: js.UndefOr[AmazonId] = js.undefined,
-        AppServerPrivateKey: js.UndefOr[AppServerPrivateKey] = js.undefined
+        Fingerprint: js.UndefOr[Fingerprint] = js.undefined
     ): SidewalkAccountInfoWithFingerprint = {
       val __obj = js.Dynamic.literal()
       AmazonId.foreach(__v => __obj.updateDynamic("AmazonId")(__v.asInstanceOf[js.Any]))
-      AppServerPrivateKey.foreach(__v => __obj.updateDynamic("AppServerPrivateKey")(__v.asInstanceOf[js.Any]))
+      Fingerprint.foreach(__v => __obj.updateDynamic("Fingerprint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SidewalkAccountInfoWithFingerprint]
     }
   }

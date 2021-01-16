@@ -806,6 +806,8 @@ package sqs {
     val ContentBasedDeduplication = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
     val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
     val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
+    val DeduplicationScope = "DeduplicationScope".asInstanceOf[QueueAttributeName]
+    val FifoThroughputLimit = "FifoThroughputLimit".asInstanceOf[QueueAttributeName]
 
     @inline def values = js.Array(
       All,
@@ -825,7 +827,9 @@ package sqs {
       FifoQueue,
       ContentBasedDeduplication,
       KmsMasterKeyId,
-      KmsDataKeyReusePeriodSeconds
+      KmsDataKeyReusePeriodSeconds,
+      DeduplicationScope,
+      FifoThroughputLimit
     )
   }
 

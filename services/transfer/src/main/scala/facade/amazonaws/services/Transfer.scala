@@ -26,9 +26,11 @@ package object transfer {
   type NextToken = String
   type NullableRole = String
   type Policy = String
+  type PosixId = Double
   type Protocols = js.Array[Protocol]
   type Response = String
   type Role = String
+  type SecondaryGids = js.Array[PosixId]
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
   type SecurityPolicyName = String
@@ -112,6 +114,7 @@ package transfer {
   @js.native
   trait CreateServerRequest extends js.Object {
     var Certificate: js.UndefOr[Certificate]
+    var Domain: js.UndefOr[Domain]
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
     var HostKey: js.UndefOr[HostKey]
@@ -127,6 +130,7 @@ package transfer {
     @inline
     def apply(
         Certificate: js.UndefOr[Certificate] = js.undefined,
+        Domain: js.UndefOr[Domain] = js.undefined,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         HostKey: js.UndefOr[HostKey] = js.undefined,
@@ -139,6 +143,7 @@ package transfer {
     ): CreateServerRequest = {
       val __obj = js.Dynamic.literal()
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       HostKey.foreach(__v => __obj.updateDynamic("HostKey")(__v.asInstanceOf[js.Any]))
@@ -178,6 +183,7 @@ package transfer {
     var HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings]
     var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Policy: js.UndefOr[Policy]
+    var PosixProfile: js.UndefOr[PosixProfile]
     var SshPublicKeyBody: js.UndefOr[SshPublicKeyBody]
     var Tags: js.UndefOr[Tags]
   }
@@ -192,6 +198,7 @@ package transfer {
         HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings] = js.undefined,
         HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Policy: js.UndefOr[Policy] = js.undefined,
+        PosixProfile: js.UndefOr[PosixProfile] = js.undefined,
         SshPublicKeyBody: js.UndefOr[SshPublicKeyBody] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateUserRequest = {
@@ -205,6 +212,7 @@ package transfer {
       HomeDirectoryMappings.foreach(__v => __obj.updateDynamic("HomeDirectoryMappings")(__v.asInstanceOf[js.Any]))
       HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PosixProfile.foreach(__v => __obj.updateDynamic("PosixProfile")(__v.asInstanceOf[js.Any]))
       SshPublicKeyBody.foreach(__v => __obj.updateDynamic("SshPublicKeyBody")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
@@ -440,6 +448,7 @@ package transfer {
   trait DescribedServer extends js.Object {
     var Arn: Arn
     var Certificate: js.UndefOr[Certificate]
+    var Domain: js.UndefOr[Domain]
     var EndpointDetails: js.UndefOr[EndpointDetails]
     var EndpointType: js.UndefOr[EndpointType]
     var HostKeyFingerprint: js.UndefOr[HostKeyFingerprint]
@@ -459,6 +468,7 @@ package transfer {
     def apply(
         Arn: Arn,
         Certificate: js.UndefOr[Certificate] = js.undefined,
+        Domain: js.UndefOr[Domain] = js.undefined,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         HostKeyFingerprint: js.UndefOr[HostKeyFingerprint] = js.undefined,
@@ -477,6 +487,7 @@ package transfer {
       )
 
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       HostKeyFingerprint.foreach(__v => __obj.updateDynamic("HostKeyFingerprint")(__v.asInstanceOf[js.Any]))
@@ -502,6 +513,7 @@ package transfer {
     var HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings]
     var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Policy: js.UndefOr[Policy]
+    var PosixProfile: js.UndefOr[PosixProfile]
     var Role: js.UndefOr[Role]
     var SshPublicKeys: js.UndefOr[SshPublicKeys]
     var Tags: js.UndefOr[Tags]
@@ -516,6 +528,7 @@ package transfer {
         HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings] = js.undefined,
         HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Policy: js.UndefOr[Policy] = js.undefined,
+        PosixProfile: js.UndefOr[PosixProfile] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         SshPublicKeys: js.UndefOr[SshPublicKeys] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -529,12 +542,22 @@ package transfer {
       HomeDirectoryMappings.foreach(__v => __obj.updateDynamic("HomeDirectoryMappings")(__v.asInstanceOf[js.Any]))
       HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PosixProfile.foreach(__v => __obj.updateDynamic("PosixProfile")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       SshPublicKeys.foreach(__v => __obj.updateDynamic("SshPublicKeys")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribedUser]
     }
+  }
+
+  @js.native
+  sealed trait Domain extends js.Any
+  object Domain {
+    val S3 = "S3".asInstanceOf[Domain]
+    val EFS = "EFS".asInstanceOf[Domain]
+
+    @inline def values = js.Array(S3, EFS)
   }
 
   /** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
@@ -867,6 +890,7 @@ package transfer {
   @js.native
   trait ListedServer extends js.Object {
     var Arn: Arn
+    var Domain: js.UndefOr[Domain]
     var EndpointType: js.UndefOr[EndpointType]
     var IdentityProviderType: js.UndefOr[IdentityProviderType]
     var LoggingRole: js.UndefOr[Role]
@@ -879,6 +903,7 @@ package transfer {
     @inline
     def apply(
         Arn: Arn,
+        Domain: js.UndefOr[Domain] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         LoggingRole: js.UndefOr[Role] = js.undefined,
@@ -890,6 +915,7 @@ package transfer {
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
       LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
@@ -932,6 +958,30 @@ package transfer {
       SshPublicKeyCount.foreach(__v => __obj.updateDynamic("SshPublicKeyCount")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListedUser]
+    }
+  }
+
+  @js.native
+  trait PosixProfile extends js.Object {
+    var Gid: PosixId
+    var Uid: PosixId
+    var SecondaryGids: js.UndefOr[SecondaryGids]
+  }
+
+  object PosixProfile {
+    @inline
+    def apply(
+        Gid: PosixId,
+        Uid: PosixId,
+        SecondaryGids: js.UndefOr[SecondaryGids] = js.undefined
+    ): PosixProfile = {
+      val __obj = js.Dynamic.literal(
+        "Gid" -> Gid.asInstanceOf[js.Any],
+        "Uid" -> Uid.asInstanceOf[js.Any]
+      )
+
+      SecondaryGids.foreach(__v => __obj.updateDynamic("SecondaryGids")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PosixProfile]
     }
   }
 
@@ -1206,6 +1256,7 @@ package transfer {
     var HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings]
     var HomeDirectoryType: js.UndefOr[HomeDirectoryType]
     var Policy: js.UndefOr[Policy]
+    var PosixProfile: js.UndefOr[PosixProfile]
     var Role: js.UndefOr[Role]
   }
 
@@ -1218,6 +1269,7 @@ package transfer {
         HomeDirectoryMappings: js.UndefOr[HomeDirectoryMappings] = js.undefined,
         HomeDirectoryType: js.UndefOr[HomeDirectoryType] = js.undefined,
         Policy: js.UndefOr[Policy] = js.undefined,
+        PosixProfile: js.UndefOr[PosixProfile] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined
     ): UpdateUserRequest = {
       val __obj = js.Dynamic.literal(
@@ -1229,6 +1281,7 @@ package transfer {
       HomeDirectoryMappings.foreach(__v => __obj.updateDynamic("HomeDirectoryMappings")(__v.asInstanceOf[js.Any]))
       HomeDirectoryType.foreach(__v => __obj.updateDynamic("HomeDirectoryType")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PosixProfile.foreach(__v => __obj.updateDynamic("PosixProfile")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }

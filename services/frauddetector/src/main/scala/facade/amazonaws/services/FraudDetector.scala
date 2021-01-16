@@ -2323,8 +2323,9 @@ package frauddetector {
   object ModelVersionStatus {
     val ACTIVE = "ACTIVE".asInstanceOf[ModelVersionStatus]
     val INACTIVE = "INACTIVE".asInstanceOf[ModelVersionStatus]
+    val TRAINING_CANCELLED = "TRAINING_CANCELLED".asInstanceOf[ModelVersionStatus]
 
-    @inline def values = js.Array(ACTIVE, INACTIVE)
+    @inline def values = js.Array(ACTIVE, INACTIVE, TRAINING_CANCELLED)
   }
 
   /** The outcome.

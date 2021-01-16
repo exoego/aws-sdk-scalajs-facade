@@ -63,6 +63,7 @@ package object devopsguru {
   type RecommendationRelatedEvents = js.Array[RecommendationRelatedEvent]
   type Recommendations = js.Array[Recommendation]
   type RelatedAnomalySourceDetails = js.Array[RecommendationRelatedAnomalySourceDetail]
+  type ResourceHours = Double
   type SearchInsightsMaxResults = Int
   type SsmOpsItemId = String
   type StackName = String
@@ -306,7 +307,7 @@ package devopsguru {
     }
   }
 
-  /** The dimension of a Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behaviour. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension|Dimensions]] in the <i>Amazon CloudWatch User Guide</i>.
+  /** The dimension of a Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension|Dimensions]] in the <i>Amazon CloudWatch User Guide</i>.
     */
   @js.native
   trait CloudWatchMetricsDimension extends js.Object {
@@ -358,6 +359,7 @@ package devopsguru {
     var MetricsAnalyzed: NumMetricsAnalyzed
     var OpenProactiveInsights: NumOpenProactiveInsights
     var OpenReactiveInsights: NumOpenReactiveInsights
+    var ResourceHours: ResourceHours
   }
 
   object DescribeAccountHealthResponse {
@@ -365,12 +367,14 @@ package devopsguru {
     def apply(
         MetricsAnalyzed: NumMetricsAnalyzed,
         OpenProactiveInsights: NumOpenProactiveInsights,
-        OpenReactiveInsights: NumOpenReactiveInsights
+        OpenReactiveInsights: NumOpenReactiveInsights,
+        ResourceHours: ResourceHours
     ): DescribeAccountHealthResponse = {
       val __obj = js.Dynamic.literal(
         "MetricsAnalyzed" -> MetricsAnalyzed.asInstanceOf[js.Any],
         "OpenProactiveInsights" -> OpenProactiveInsights.asInstanceOf[js.Any],
-        "OpenReactiveInsights" -> OpenReactiveInsights.asInstanceOf[js.Any]
+        "OpenReactiveInsights" -> OpenReactiveInsights.asInstanceOf[js.Any],
+        "ResourceHours" -> ResourceHours.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DescribeAccountHealthResponse]
     }

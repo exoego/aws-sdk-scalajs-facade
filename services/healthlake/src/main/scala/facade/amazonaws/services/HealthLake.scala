@@ -27,8 +27,10 @@ package object healthlake {
     @inline def createFHIRDatastoreFuture(params: CreateFHIRDatastoreRequest): Future[CreateFHIRDatastoreResponse] = service.createFHIRDatastore(params).promise().toFuture
     @inline def deleteFHIRDatastoreFuture(params: DeleteFHIRDatastoreRequest): Future[DeleteFHIRDatastoreResponse] = service.deleteFHIRDatastore(params).promise().toFuture
     @inline def describeFHIRDatastoreFuture(params: DescribeFHIRDatastoreRequest): Future[DescribeFHIRDatastoreResponse] = service.describeFHIRDatastore(params).promise().toFuture
+    @inline def describeFHIRExportJobFuture(params: DescribeFHIRExportJobRequest): Future[DescribeFHIRExportJobResponse] = service.describeFHIRExportJob(params).promise().toFuture
     @inline def describeFHIRImportJobFuture(params: DescribeFHIRImportJobRequest): Future[DescribeFHIRImportJobResponse] = service.describeFHIRImportJob(params).promise().toFuture
     @inline def listFHIRDatastoresFuture(params: ListFHIRDatastoresRequest): Future[ListFHIRDatastoresResponse] = service.listFHIRDatastores(params).promise().toFuture
+    @inline def startFHIRExportJobFuture(params: StartFHIRExportJobRequest): Future[StartFHIRExportJobResponse] = service.startFHIRExportJob(params).promise().toFuture
     @inline def startFHIRImportJobFuture(params: StartFHIRImportJobRequest): Future[StartFHIRImportJobResponse] = service.startFHIRImportJob(params).promise().toFuture
 
   }
@@ -43,8 +45,10 @@ package healthlake {
     def createFHIRDatastore(params: CreateFHIRDatastoreRequest): Request[CreateFHIRDatastoreResponse] = js.native
     def deleteFHIRDatastore(params: DeleteFHIRDatastoreRequest): Request[DeleteFHIRDatastoreResponse] = js.native
     def describeFHIRDatastore(params: DescribeFHIRDatastoreRequest): Request[DescribeFHIRDatastoreResponse] = js.native
+    def describeFHIRExportJob(params: DescribeFHIRExportJobRequest): Request[DescribeFHIRExportJobResponse] = js.native
     def describeFHIRImportJob(params: DescribeFHIRImportJobRequest): Request[DescribeFHIRImportJobResponse] = js.native
     def listFHIRDatastores(params: ListFHIRDatastoresRequest): Request[ListFHIRDatastoresResponse] = js.native
+    def startFHIRExportJob(params: StartFHIRExportJobRequest): Request[StartFHIRExportJobResponse] = js.native
     def startFHIRImportJob(params: StartFHIRImportJobRequest): Request[StartFHIRImportJobResponse] = js.native
   }
 
@@ -101,7 +105,7 @@ package healthlake {
     }
   }
 
-  /** The filters applied to datastore query.
+  /** The filters applied to Data Store query.
     */
   @js.native
   trait DatastoreFilter extends js.Object {
@@ -128,7 +132,7 @@ package healthlake {
     }
   }
 
-  /** Displays the properties of the datastore, including the ID, Arn, name, and the status of the datastore.
+  /** Displays the properties of the Data Store, including the ID, Arn, name, and the status of the Data Store.
     */
   @js.native
   trait DatastoreProperties extends js.Object {
@@ -256,6 +260,43 @@ package healthlake {
   }
 
   @js.native
+  trait DescribeFHIRExportJobRequest extends js.Object {
+    var DatastoreId: DatastoreId
+    var JobId: JobId
+  }
+
+  object DescribeFHIRExportJobRequest {
+    @inline
+    def apply(
+        DatastoreId: DatastoreId,
+        JobId: JobId
+    ): DescribeFHIRExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatastoreId" -> DatastoreId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFHIRExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFHIRExportJobResponse extends js.Object {
+    var ExportJobProperties: ExportJobProperties
+  }
+
+  object DescribeFHIRExportJobResponse {
+    @inline
+    def apply(
+        ExportJobProperties: ExportJobProperties
+    ): DescribeFHIRExportJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "ExportJobProperties" -> ExportJobProperties.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFHIRExportJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeFHIRImportJobRequest extends js.Object {
     var DatastoreId: DatastoreId
     var JobId: JobId
@@ -292,6 +333,50 @@ package healthlake {
     }
   }
 
+  /** The properties of a FHIR export job, including the ID, ARN, name, and the status of the job.
+    */
+  @js.native
+  trait ExportJobProperties extends js.Object {
+    var DatastoreId: DatastoreId
+    var JobId: JobId
+    var JobStatus: JobStatus
+    var OutputDataConfig: OutputDataConfig
+    var SubmitTime: Timestamp
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
+    var EndTime: js.UndefOr[Timestamp]
+    var JobName: js.UndefOr[JobName]
+    var Message: js.UndefOr[Message]
+  }
+
+  object ExportJobProperties {
+    @inline
+    def apply(
+        DatastoreId: DatastoreId,
+        JobId: JobId,
+        JobStatus: JobStatus,
+        OutputDataConfig: OutputDataConfig,
+        SubmitTime: Timestamp,
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined
+    ): ExportJobProperties = {
+      val __obj = js.Dynamic.literal(
+        "DatastoreId" -> DatastoreId.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
+        "SubmitTime" -> SubmitTime.asInstanceOf[js.Any]
+      )
+
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportJobProperties]
+    }
+  }
+
   @js.native
   sealed trait FHIRVersion extends js.Any
   object FHIRVersion {
@@ -300,7 +385,7 @@ package healthlake {
     @inline def values = js.Array(R4)
   }
 
-  /** Displays the properties of the import job, including the ID, Arn, Name, and the status of the datastore.
+  /** Displays the properties of the import job, including the ID, Arn, Name, and the status of the Data Store.
     */
   @js.native
   trait ImportJobProperties extends js.Object {
@@ -416,7 +501,25 @@ package healthlake {
     }
   }
 
-  /** The input properties for the preloaded datastore. Only data preloaded from Synthea is supported.
+  /** The output data configuration that was supplied when the export job was created.
+    */
+  @js.native
+  trait OutputDataConfig extends js.Object {
+    var S3Uri: js.UndefOr[S3Uri]
+  }
+
+  object OutputDataConfig {
+    @inline
+    def apply(
+        S3Uri: js.UndefOr[S3Uri] = js.undefined
+    ): OutputDataConfig = {
+      val __obj = js.Dynamic.literal()
+      S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputDataConfig]
+    }
+  }
+
+  /** The input properties for the preloaded Data Store. Only data preloaded from Synthea is supported.
     */
   @js.native
   trait PreloadDataConfig extends js.Object {
@@ -441,6 +544,60 @@ package healthlake {
     val SYNTHEA = "SYNTHEA".asInstanceOf[PreloadDataType]
 
     @inline def values = js.Array(SYNTHEA)
+  }
+
+  @js.native
+  trait StartFHIRExportJobRequest extends js.Object {
+    var ClientToken: ClientTokenString
+    var DataAccessRoleArn: IamRoleArn
+    var DatastoreId: DatastoreId
+    var OutputDataConfig: OutputDataConfig
+    var JobName: js.UndefOr[JobName]
+  }
+
+  object StartFHIRExportJobRequest {
+    @inline
+    def apply(
+        ClientToken: ClientTokenString,
+        DataAccessRoleArn: IamRoleArn,
+        DatastoreId: DatastoreId,
+        OutputDataConfig: OutputDataConfig,
+        JobName: js.UndefOr[JobName] = js.undefined
+    ): StartFHIRExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "DatastoreId" -> DatastoreId.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any]
+      )
+
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFHIRExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartFHIRExportJobResponse extends js.Object {
+    var JobId: JobId
+    var JobStatus: JobStatus
+    var DatastoreId: js.UndefOr[DatastoreId]
+  }
+
+  object StartFHIRExportJobResponse {
+    @inline
+    def apply(
+        JobId: JobId,
+        JobStatus: JobStatus,
+        DatastoreId: js.UndefOr[DatastoreId] = js.undefined
+    ): StartFHIRExportJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any]
+      )
+
+      DatastoreId.foreach(__v => __obj.updateDynamic("DatastoreId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFHIRExportJobResponse]
+    }
   }
 
   @js.native

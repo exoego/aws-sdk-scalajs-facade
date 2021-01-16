@@ -7,14 +7,19 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object dlm {
+  type ActionList = js.Array[Action]
+  type ActionName = String
   type AvailabilityZone = String
   type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type AwsAccountId = String
   type CmkArn = String
   type CopyTags = Boolean
   type CopyTagsNullable = Boolean
   type Count = Int
   type CronExpression = String
+  type CrossRegionCopyActionList = js.Array[CrossRegionCopyAction]
   type CrossRegionCopyRules = js.Array[CrossRegionCopyRule]
+  type DescriptionRegex = String
   type Encrypted = Boolean
   type ExcludeBootVolume = Boolean
   type ExecutionRoleArn = String
@@ -28,6 +33,9 @@ package object dlm {
   type ResourceTypeValuesList = js.Array[ResourceTypeValues]
   type ScheduleList = js.Array[Schedule]
   type ScheduleName = String
+  type ShareRules = js.Array[ShareRule]
+  type ShareTargetAccountList = js.Array[AwsAccountId]
+  type SnapshotOwnerList = js.Array[AwsAccountId]
   type StatusMessage = String
   type TagFilter = String
   type TagKey = String
@@ -36,6 +44,7 @@ package object dlm {
   type TagValue = String
   type TagsToAddFilterList = js.Array[TagFilter]
   type TagsToAddList = js.Array[Tag]
+  type Target = String
   type TargetRegion = String
   type TargetTagList = js.Array[Tag]
   type TargetTagsFilterList = js.Array[TagFilter]
@@ -72,6 +81,28 @@ package dlm {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLifecyclePolicy(params: UpdateLifecyclePolicyRequest): Request[UpdateLifecyclePolicyResponse] = js.native
+  }
+
+  /** Specifies an action for an event-based policy.
+    */
+  @js.native
+  trait Action extends js.Object {
+    var CrossRegionCopy: CrossRegionCopyActionList
+    var Name: ActionName
+  }
+
+  object Action {
+    @inline
+    def apply(
+        CrossRegionCopy: CrossRegionCopyActionList,
+        Name: ActionName
+    ): Action = {
+      val __obj = js.Dynamic.literal(
+        "CrossRegionCopy" -> CrossRegionCopy.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Action]
+    }
   }
 
   @js.native
@@ -145,6 +176,32 @@ package dlm {
       IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
       Times.foreach(__v => __obj.updateDynamic("Times")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRule]
+    }
+  }
+
+  /** Specifies a rule for copying shared snapshots across Regions.
+    */
+  @js.native
+  trait CrossRegionCopyAction extends js.Object {
+    var EncryptionConfiguration: EncryptionConfiguration
+    var Target: Target
+    var RetainRule: js.UndefOr[CrossRegionCopyRetainRule]
+  }
+
+  object CrossRegionCopyAction {
+    @inline
+    def apply(
+        EncryptionConfiguration: EncryptionConfiguration,
+        Target: Target,
+        RetainRule: js.UndefOr[CrossRegionCopyRetainRule] = js.undefined
+    ): CrossRegionCopyAction = {
+      val __obj = js.Dynamic.literal(
+        "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
+        "Target" -> Target.asInstanceOf[js.Any]
+      )
+
+      RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrossRegionCopyAction]
     }
   }
 
@@ -227,6 +284,93 @@ package dlm {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
     }
+  }
+
+  /** Specifies the encryption settings for shared snapshots that are copied across Regions.
+    */
+  @js.native
+  trait EncryptionConfiguration extends js.Object {
+    var Encrypted: Encrypted
+    var CmkArn: js.UndefOr[CmkArn]
+  }
+
+  object EncryptionConfiguration {
+    @inline
+    def apply(
+        Encrypted: Encrypted,
+        CmkArn: js.UndefOr[CmkArn] = js.undefined
+    ): EncryptionConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Encrypted" -> Encrypted.asInstanceOf[js.Any]
+      )
+
+      CmkArn.foreach(__v => __obj.updateDynamic("CmkArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
+    }
+  }
+
+  /** Specifies an event that triggers an event-based policy.
+    */
+  @js.native
+  trait EventParameters extends js.Object {
+    var DescriptionRegex: DescriptionRegex
+    var EventType: EventTypeValues
+    var SnapshotOwner: SnapshotOwnerList
+  }
+
+  object EventParameters {
+    @inline
+    def apply(
+        DescriptionRegex: DescriptionRegex,
+        EventType: EventTypeValues,
+        SnapshotOwner: SnapshotOwnerList
+    ): EventParameters = {
+      val __obj = js.Dynamic.literal(
+        "DescriptionRegex" -> DescriptionRegex.asInstanceOf[js.Any],
+        "EventType" -> EventType.asInstanceOf[js.Any],
+        "SnapshotOwner" -> SnapshotOwner.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EventParameters]
+    }
+  }
+
+  /** Specifies an event that triggers an event-based policy.
+    */
+  @js.native
+  trait EventSource extends js.Object {
+    var Type: EventSourceValues
+    var Parameters: js.UndefOr[EventParameters]
+  }
+
+  object EventSource {
+    @inline
+    def apply(
+        Type: EventSourceValues,
+        Parameters: js.UndefOr[EventParameters] = js.undefined
+    ): EventSource = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSource]
+    }
+  }
+
+  @js.native
+  sealed trait EventSourceValues extends js.Any
+  object EventSourceValues {
+    val MANAGED_CWE = "MANAGED_CWE".asInstanceOf[EventSourceValues]
+
+    @inline def values = js.Array(MANAGED_CWE)
+  }
+
+  @js.native
+  sealed trait EventTypeValues extends js.Any
+  object EventTypeValues {
+    val shareSnapshot = "shareSnapshot".asInstanceOf[EventTypeValues]
+
+    @inline def values = js.Array(shareSnapshot)
   }
 
   /** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
@@ -486,6 +630,8 @@ package dlm {
     */
   @js.native
   trait PolicyDetails extends js.Object {
+    var Actions: js.UndefOr[ActionList]
+    var EventSource: js.UndefOr[EventSource]
     var Parameters: js.UndefOr[Parameters]
     var PolicyType: js.UndefOr[PolicyTypeValues]
     var ResourceTypes: js.UndefOr[ResourceTypeValuesList]
@@ -496,6 +642,8 @@ package dlm {
   object PolicyDetails {
     @inline
     def apply(
+        Actions: js.UndefOr[ActionList] = js.undefined,
+        EventSource: js.UndefOr[EventSource] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         PolicyType: js.UndefOr[PolicyTypeValues] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypeValuesList] = js.undefined,
@@ -503,6 +651,8 @@ package dlm {
         TargetTags: js.UndefOr[TargetTagList] = js.undefined
     ): PolicyDetails = {
       val __obj = js.Dynamic.literal()
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      EventSource.foreach(__v => __obj.updateDynamic("EventSource")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
@@ -517,8 +667,9 @@ package dlm {
   object PolicyTypeValues {
     val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
     val IMAGE_MANAGEMENT = "IMAGE_MANAGEMENT".asInstanceOf[PolicyTypeValues]
+    val EVENT_BASED_POLICY = "EVENT_BASED_POLICY".asInstanceOf[PolicyTypeValues]
 
-    @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT)
+    @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT, EVENT_BASED_POLICY)
   }
 
   @js.native
@@ -565,7 +716,7 @@ package dlm {
     @inline def values = js.Array(DAYS, WEEKS, MONTHS, YEARS)
   }
 
-  /** Specifies a backup schedule.
+  /** Specifies a backup schedule for a snapshot or AMI lifecycle policy.
     */
   @js.native
   trait Schedule extends js.Object {
@@ -575,6 +726,7 @@ package dlm {
     var FastRestoreRule: js.UndefOr[FastRestoreRule]
     var Name: js.UndefOr[ScheduleName]
     var RetainRule: js.UndefOr[RetainRule]
+    var ShareRules: js.UndefOr[ShareRules]
     var TagsToAdd: js.UndefOr[TagsToAddList]
     var VariableTags: js.UndefOr[VariableTagsList]
   }
@@ -588,6 +740,7 @@ package dlm {
         FastRestoreRule: js.UndefOr[FastRestoreRule] = js.undefined,
         Name: js.UndefOr[ScheduleName] = js.undefined,
         RetainRule: js.UndefOr[RetainRule] = js.undefined,
+        ShareRules: js.UndefOr[ShareRules] = js.undefined,
         TagsToAdd: js.UndefOr[TagsToAddList] = js.undefined,
         VariableTags: js.UndefOr[VariableTagsList] = js.undefined
     ): Schedule = {
@@ -598,6 +751,7 @@ package dlm {
       FastRestoreRule.foreach(__v => __obj.updateDynamic("FastRestoreRule")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
+      ShareRules.foreach(__v => __obj.updateDynamic("ShareRules")(__v.asInstanceOf[js.Any]))
       TagsToAdd.foreach(__v => __obj.updateDynamic("TagsToAdd")(__v.asInstanceOf[js.Any]))
       VariableTags.foreach(__v => __obj.updateDynamic("VariableTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
@@ -611,6 +765,32 @@ package dlm {
     val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
 
     @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  /** Specifies a rule for sharing snapshots across AWS accounts.
+    */
+  @js.native
+  trait ShareRule extends js.Object {
+    var TargetAccounts: ShareTargetAccountList
+    var UnshareInterval: js.UndefOr[Interval]
+    var UnshareIntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
+  }
+
+  object ShareRule {
+    @inline
+    def apply(
+        TargetAccounts: ShareTargetAccountList,
+        UnshareInterval: js.UndefOr[Interval] = js.undefined,
+        UnshareIntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
+    ): ShareRule = {
+      val __obj = js.Dynamic.literal(
+        "TargetAccounts" -> TargetAccounts.asInstanceOf[js.Any]
+      )
+
+      UnshareInterval.foreach(__v => __obj.updateDynamic("UnshareInterval")(__v.asInstanceOf[js.Any]))
+      UnshareIntervalUnit.foreach(__v => __obj.updateDynamic("UnshareIntervalUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShareRule]
+    }
   }
 
   /** Specifies a tag for a resource.

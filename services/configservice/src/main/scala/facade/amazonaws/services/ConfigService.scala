@@ -109,6 +109,11 @@ package object configservice {
   type ParameterValue = String
   type PendingAggregationRequestList = js.Array[PendingAggregationRequest]
   type Percentage = Int
+  type QueryArn = String
+  type QueryDescription = String
+  type QueryExpression = String
+  type QueryId = String
+  type QueryName = String
   type RecorderName = String
   type ReevaluateConfigRuleNames = js.Array[ConfigRuleName]
   type RelatedEvent = String
@@ -144,6 +149,7 @@ package object configservice {
   type SourceDetails = js.Array[SourceDetail]
   type StackArn = String
   type StaticParameterValues = js.Array[StringWithCharLimit256]
+  type StoredQueryMetadataList = js.Array[StoredQueryMetadata]
   type StringWithCharLimit1024 = String
   type StringWithCharLimit128 = String
   type StringWithCharLimit2048 = String
@@ -184,6 +190,7 @@ package object configservice {
     @inline def deleteRemediationExceptionsFuture(params: DeleteRemediationExceptionsRequest): Future[DeleteRemediationExceptionsResponse] = service.deleteRemediationExceptions(params).promise().toFuture
     @inline def deleteResourceConfigFuture(params: DeleteResourceConfigRequest): Future[js.Object] = service.deleteResourceConfig(params).promise().toFuture
     @inline def deleteRetentionConfigurationFuture(params: DeleteRetentionConfigurationRequest): Future[js.Object] = service.deleteRetentionConfiguration(params).promise().toFuture
+    @inline def deleteStoredQueryFuture(params: DeleteStoredQueryRequest): Future[DeleteStoredQueryResponse] = service.deleteStoredQuery(params).promise().toFuture
     @inline def deliverConfigSnapshotFuture(params: DeliverConfigSnapshotRequest): Future[DeliverConfigSnapshotResponse] = service.deliverConfigSnapshot(params).promise().toFuture
     @inline def describeAggregateComplianceByConfigRulesFuture(params: DescribeAggregateComplianceByConfigRulesRequest): Future[DescribeAggregateComplianceByConfigRulesResponse] = service.describeAggregateComplianceByConfigRules(params).promise().toFuture
     @inline def describeAggregationAuthorizationsFuture(params: DescribeAggregationAuthorizationsRequest): Future[DescribeAggregationAuthorizationsResponse] = service.describeAggregationAuthorizations(params).promise().toFuture
@@ -223,8 +230,10 @@ package object configservice {
     @inline def getOrganizationConfigRuleDetailedStatusFuture(params: GetOrganizationConfigRuleDetailedStatusRequest): Future[GetOrganizationConfigRuleDetailedStatusResponse] = service.getOrganizationConfigRuleDetailedStatus(params).promise().toFuture
     @inline def getOrganizationConformancePackDetailedStatusFuture(params: GetOrganizationConformancePackDetailedStatusRequest): Future[GetOrganizationConformancePackDetailedStatusResponse] = service.getOrganizationConformancePackDetailedStatus(params).promise().toFuture
     @inline def getResourceConfigHistoryFuture(params: GetResourceConfigHistoryRequest): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise().toFuture
+    @inline def getStoredQueryFuture(params: GetStoredQueryRequest): Future[GetStoredQueryResponse] = service.getStoredQuery(params).promise().toFuture
     @inline def listAggregateDiscoveredResourcesFuture(params: ListAggregateDiscoveredResourcesRequest): Future[ListAggregateDiscoveredResourcesResponse] = service.listAggregateDiscoveredResources(params).promise().toFuture
     @inline def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResponse] = service.listDiscoveredResources(params).promise().toFuture
+    @inline def listStoredQueriesFuture(params: ListStoredQueriesRequest): Future[ListStoredQueriesResponse] = service.listStoredQueries(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putAggregationAuthorizationFuture(params: PutAggregationAuthorizationRequest): Future[PutAggregationAuthorizationResponse] = service.putAggregationAuthorization(params).promise().toFuture
     @inline def putConfigRuleFuture(params: PutConfigRuleRequest): Future[js.Object] = service.putConfigRule(params).promise().toFuture
@@ -233,12 +242,14 @@ package object configservice {
     @inline def putConformancePackFuture(params: PutConformancePackRequest): Future[PutConformancePackResponse] = service.putConformancePack(params).promise().toFuture
     @inline def putDeliveryChannelFuture(params: PutDeliveryChannelRequest): Future[js.Object] = service.putDeliveryChannel(params).promise().toFuture
     @inline def putEvaluationsFuture(params: PutEvaluationsRequest): Future[PutEvaluationsResponse] = service.putEvaluations(params).promise().toFuture
+    @inline def putExternalEvaluationFuture(params: PutExternalEvaluationRequest): Future[PutExternalEvaluationResponse] = service.putExternalEvaluation(params).promise().toFuture
     @inline def putOrganizationConfigRuleFuture(params: PutOrganizationConfigRuleRequest): Future[PutOrganizationConfigRuleResponse] = service.putOrganizationConfigRule(params).promise().toFuture
     @inline def putOrganizationConformancePackFuture(params: PutOrganizationConformancePackRequest): Future[PutOrganizationConformancePackResponse] = service.putOrganizationConformancePack(params).promise().toFuture
     @inline def putRemediationConfigurationsFuture(params: PutRemediationConfigurationsRequest): Future[PutRemediationConfigurationsResponse] = service.putRemediationConfigurations(params).promise().toFuture
     @inline def putRemediationExceptionsFuture(params: PutRemediationExceptionsRequest): Future[PutRemediationExceptionsResponse] = service.putRemediationExceptions(params).promise().toFuture
     @inline def putResourceConfigFuture(params: PutResourceConfigRequest): Future[js.Object] = service.putResourceConfig(params).promise().toFuture
     @inline def putRetentionConfigurationFuture(params: PutRetentionConfigurationRequest): Future[PutRetentionConfigurationResponse] = service.putRetentionConfiguration(params).promise().toFuture
+    @inline def putStoredQueryFuture(params: PutStoredQueryRequest): Future[PutStoredQueryResponse] = service.putStoredQuery(params).promise().toFuture
     @inline def selectAggregateResourceConfigFuture(params: SelectAggregateResourceConfigRequest): Future[SelectAggregateResourceConfigResponse] = service.selectAggregateResourceConfig(params).promise().toFuture
     @inline def selectResourceConfigFuture(params: SelectResourceConfigRequest): Future[SelectResourceConfigResponse] = service.selectResourceConfig(params).promise().toFuture
     @inline def startConfigRulesEvaluationFuture(params: StartConfigRulesEvaluationRequest): Future[StartConfigRulesEvaluationResponse] = service.startConfigRulesEvaluation(params).promise().toFuture
@@ -273,6 +284,7 @@ package configservice {
     def deleteRemediationExceptions(params: DeleteRemediationExceptionsRequest): Request[DeleteRemediationExceptionsResponse] = js.native
     def deleteResourceConfig(params: DeleteResourceConfigRequest): Request[js.Object] = js.native
     def deleteRetentionConfiguration(params: DeleteRetentionConfigurationRequest): Request[js.Object] = js.native
+    def deleteStoredQuery(params: DeleteStoredQueryRequest): Request[DeleteStoredQueryResponse] = js.native
     def deliverConfigSnapshot(params: DeliverConfigSnapshotRequest): Request[DeliverConfigSnapshotResponse] = js.native
     def describeAggregateComplianceByConfigRules(params: DescribeAggregateComplianceByConfigRulesRequest): Request[DescribeAggregateComplianceByConfigRulesResponse] = js.native
     def describeAggregationAuthorizations(params: DescribeAggregationAuthorizationsRequest): Request[DescribeAggregationAuthorizationsResponse] = js.native
@@ -312,8 +324,10 @@ package configservice {
     def getOrganizationConfigRuleDetailedStatus(params: GetOrganizationConfigRuleDetailedStatusRequest): Request[GetOrganizationConfigRuleDetailedStatusResponse] = js.native
     def getOrganizationConformancePackDetailedStatus(params: GetOrganizationConformancePackDetailedStatusRequest): Request[GetOrganizationConformancePackDetailedStatusResponse] = js.native
     def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] = js.native
+    def getStoredQuery(params: GetStoredQueryRequest): Request[GetStoredQueryResponse] = js.native
     def listAggregateDiscoveredResources(params: ListAggregateDiscoveredResourcesRequest): Request[ListAggregateDiscoveredResourcesResponse] = js.native
     def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResponse] = js.native
+    def listStoredQueries(params: ListStoredQueriesRequest): Request[ListStoredQueriesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAggregationAuthorization(params: PutAggregationAuthorizationRequest): Request[PutAggregationAuthorizationResponse] = js.native
     def putConfigRule(params: PutConfigRuleRequest): Request[js.Object] = js.native
@@ -322,12 +336,14 @@ package configservice {
     def putConformancePack(params: PutConformancePackRequest): Request[PutConformancePackResponse] = js.native
     def putDeliveryChannel(params: PutDeliveryChannelRequest): Request[js.Object] = js.native
     def putEvaluations(params: PutEvaluationsRequest): Request[PutEvaluationsResponse] = js.native
+    def putExternalEvaluation(params: PutExternalEvaluationRequest): Request[PutExternalEvaluationResponse] = js.native
     def putOrganizationConfigRule(params: PutOrganizationConfigRuleRequest): Request[PutOrganizationConfigRuleResponse] = js.native
     def putOrganizationConformancePack(params: PutOrganizationConformancePackRequest): Request[PutOrganizationConformancePackResponse] = js.native
     def putRemediationConfigurations(params: PutRemediationConfigurationsRequest): Request[PutRemediationConfigurationsResponse] = js.native
     def putRemediationExceptions(params: PutRemediationExceptionsRequest): Request[PutRemediationExceptionsResponse] = js.native
     def putResourceConfig(params: PutResourceConfigRequest): Request[js.Object] = js.native
     def putRetentionConfiguration(params: PutRetentionConfigurationRequest): Request[PutRetentionConfigurationResponse] = js.native
+    def putStoredQuery(params: PutStoredQueryRequest): Request[PutStoredQueryResponse] = js.native
     def selectAggregateResourceConfig(params: SelectAggregateResourceConfigRequest): Request[SelectAggregateResourceConfigResponse] = js.native
     def selectResourceConfig(params: SelectResourceConfigRequest): Request[SelectResourceConfigResponse] = js.native
     def startConfigRulesEvaluation(params: StartConfigRulesEvaluationRequest): Request[StartConfigRulesEvaluationResponse] = js.native
@@ -1835,6 +1851,34 @@ package configservice {
     }
   }
 
+  @js.native
+  trait DeleteStoredQueryRequest extends js.Object {
+    var QueryName: QueryName
+  }
+
+  object DeleteStoredQueryRequest {
+    @inline
+    def apply(
+        QueryName: QueryName
+    ): DeleteStoredQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "QueryName" -> QueryName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteStoredQueryRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteStoredQueryResponse extends js.Object
+
+  object DeleteStoredQueryResponse {
+    @inline
+    def apply(): DeleteStoredQueryResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteStoredQueryResponse]
+    }
+  }
+
   /** The input for the <a>DeliverConfigSnapshot</a> action.
     */
   @js.native
@@ -3072,6 +3116,36 @@ package configservice {
     }
   }
 
+  @js.native
+  trait ExternalEvaluation extends js.Object {
+    var ComplianceResourceId: BaseResourceId
+    var ComplianceResourceType: StringWithCharLimit256
+    var ComplianceType: ComplianceType
+    var OrderingTimestamp: OrderingTimestamp
+    var Annotation: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object ExternalEvaluation {
+    @inline
+    def apply(
+        ComplianceResourceId: BaseResourceId,
+        ComplianceResourceType: StringWithCharLimit256,
+        ComplianceType: ComplianceType,
+        OrderingTimestamp: OrderingTimestamp,
+        Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): ExternalEvaluation = {
+      val __obj = js.Dynamic.literal(
+        "ComplianceResourceId" -> ComplianceResourceId.asInstanceOf[js.Any],
+        "ComplianceResourceType" -> ComplianceResourceType.asInstanceOf[js.Any],
+        "ComplianceType" -> ComplianceType.asInstanceOf[js.Any],
+        "OrderingTimestamp" -> OrderingTimestamp.asInstanceOf[js.Any]
+      )
+
+      Annotation.foreach(__v => __obj.updateDynamic("Annotation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExternalEvaluation]
+    }
+  }
+
   /** List of each of the failed delete remediation exceptions with specific reasons.
     */
   @js.native
@@ -3796,6 +3870,39 @@ package configservice {
     }
   }
 
+  @js.native
+  trait GetStoredQueryRequest extends js.Object {
+    var QueryName: QueryName
+  }
+
+  object GetStoredQueryRequest {
+    @inline
+    def apply(
+        QueryName: QueryName
+    ): GetStoredQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "QueryName" -> QueryName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetStoredQueryRequest]
+    }
+  }
+
+  @js.native
+  trait GetStoredQueryResponse extends js.Object {
+    var StoredQuery: js.UndefOr[StoredQuery]
+  }
+
+  object GetStoredQueryResponse {
+    @inline
+    def apply(
+        StoredQuery: js.UndefOr[StoredQuery] = js.undefined
+    ): GetStoredQueryResponse = {
+      val __obj = js.Dynamic.literal()
+      StoredQuery.foreach(__v => __obj.updateDynamic("StoredQuery")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStoredQueryResponse]
+    }
+  }
+
   /** The count of resources that are grouped by the group name.
     */
   @js.native
@@ -3920,6 +4027,44 @@ package configservice {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       resourceIdentifiers.foreach(__v => __obj.updateDynamic("resourceIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDiscoveredResourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListStoredQueriesRequest extends js.Object {
+    var MaxResults: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListStoredQueriesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListStoredQueriesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStoredQueriesRequest]
+    }
+  }
+
+  @js.native
+  trait ListStoredQueriesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var StoredQueryMetadata: js.UndefOr[StoredQueryMetadataList]
+  }
+
+  object ListStoredQueriesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        StoredQueryMetadata: js.UndefOr[StoredQueryMetadataList] = js.undefined
+    ): ListStoredQueriesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StoredQueryMetadata.foreach(__v => __obj.updateDynamic("StoredQueryMetadata")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStoredQueriesResponse]
     }
   }
 
@@ -4708,6 +4853,37 @@ package configservice {
   }
 
   @js.native
+  trait PutExternalEvaluationRequest extends js.Object {
+    var ConfigRuleName: ConfigRuleName
+    var ExternalEvaluation: ExternalEvaluation
+  }
+
+  object PutExternalEvaluationRequest {
+    @inline
+    def apply(
+        ConfigRuleName: ConfigRuleName,
+        ExternalEvaluation: ExternalEvaluation
+    ): PutExternalEvaluationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigRuleName" -> ConfigRuleName.asInstanceOf[js.Any],
+        "ExternalEvaluation" -> ExternalEvaluation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutExternalEvaluationRequest]
+    }
+  }
+
+  @js.native
+  trait PutExternalEvaluationResponse extends js.Object
+
+  object PutExternalEvaluationResponse {
+    @inline
+    def apply(): PutExternalEvaluationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutExternalEvaluationResponse]
+    }
+  }
+
+  @js.native
   trait PutOrganizationConfigRuleRequest extends js.Object {
     var OrganizationConfigRuleName: OrganizationConfigRuleName
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
@@ -4941,6 +5117,43 @@ package configservice {
       val __obj = js.Dynamic.literal()
       RetentionConfiguration.foreach(__v => __obj.updateDynamic("RetentionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRetentionConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait PutStoredQueryRequest extends js.Object {
+    var StoredQuery: StoredQuery
+    var Tags: js.UndefOr[TagsList]
+  }
+
+  object PutStoredQueryRequest {
+    @inline
+    def apply(
+        StoredQuery: StoredQuery,
+        Tags: js.UndefOr[TagsList] = js.undefined
+    ): PutStoredQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "StoredQuery" -> StoredQuery.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutStoredQueryRequest]
+    }
+  }
+
+  @js.native
+  trait PutStoredQueryResponse extends js.Object {
+    var QueryArn: js.UndefOr[QueryArn]
+  }
+
+  object PutStoredQueryResponse {
+    @inline
+    def apply(
+        QueryArn: js.UndefOr[QueryArn] = js.undefined
+    ): PutStoredQueryResponse = {
+      val __obj = js.Dynamic.literal()
+      QueryArn.foreach(__v => __obj.updateDynamic("QueryArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutStoredQueryResponse]
     }
   }
 
@@ -5445,6 +5658,9 @@ package configservice {
     val `AWS::CloudFront::Distribution` = "AWS::CloudFront::Distribution".asInstanceOf[ResourceType]
     val `AWS::CloudFront::StreamingDistribution` = "AWS::CloudFront::StreamingDistribution".asInstanceOf[ResourceType]
     val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
+    val `AWS::NetworkFirewall::Firewall` = "AWS::NetworkFirewall::Firewall".asInstanceOf[ResourceType]
+    val `AWS::NetworkFirewall::FirewallPolicy` = "AWS::NetworkFirewall::FirewallPolicy".asInstanceOf[ResourceType]
+    val `AWS::NetworkFirewall::RuleGroup` = "AWS::NetworkFirewall::RuleGroup".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::Application` = "AWS::ElasticBeanstalk::Application".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::ApplicationVersion` = "AWS::ElasticBeanstalk::ApplicationVersion".asInstanceOf[ResourceType]
     val `AWS::ElasticBeanstalk::Environment` = "AWS::ElasticBeanstalk::Environment".asInstanceOf[ResourceType]
@@ -5540,6 +5756,9 @@ package configservice {
       `AWS::CloudFront::Distribution`,
       `AWS::CloudFront::StreamingDistribution`,
       `AWS::Lambda::Function`,
+      `AWS::NetworkFirewall::Firewall`,
+      `AWS::NetworkFirewall::FirewallPolicy`,
+      `AWS::NetworkFirewall::RuleGroup`,
       `AWS::ElasticBeanstalk::Application`,
       `AWS::ElasticBeanstalk::ApplicationVersion`,
       `AWS::ElasticBeanstalk::Environment`,
@@ -5961,6 +6180,67 @@ package configservice {
         "ConfigurationRecorderName" -> ConfigurationRecorderName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[StopConfigurationRecorderRequest]
+    }
+  }
+
+  /** Provides the details of a stored query.
+    */
+  @js.native
+  trait StoredQuery extends js.Object {
+    var QueryName: QueryName
+    var Description: js.UndefOr[QueryDescription]
+    var Expression: js.UndefOr[QueryExpression]
+    var QueryArn: js.UndefOr[QueryArn]
+    var QueryId: js.UndefOr[QueryId]
+  }
+
+  object StoredQuery {
+    @inline
+    def apply(
+        QueryName: QueryName,
+        Description: js.UndefOr[QueryDescription] = js.undefined,
+        Expression: js.UndefOr[QueryExpression] = js.undefined,
+        QueryArn: js.UndefOr[QueryArn] = js.undefined,
+        QueryId: js.UndefOr[QueryId] = js.undefined
+    ): StoredQuery = {
+      val __obj = js.Dynamic.literal(
+        "QueryName" -> QueryName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      QueryArn.foreach(__v => __obj.updateDynamic("QueryArn")(__v.asInstanceOf[js.Any]))
+      QueryId.foreach(__v => __obj.updateDynamic("QueryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StoredQuery]
+    }
+  }
+
+  /** Returns details of a specific query.
+    */
+  @js.native
+  trait StoredQueryMetadata extends js.Object {
+    var QueryArn: QueryArn
+    var QueryId: QueryId
+    var QueryName: QueryName
+    var Description: js.UndefOr[QueryDescription]
+  }
+
+  object StoredQueryMetadata {
+    @inline
+    def apply(
+        QueryArn: QueryArn,
+        QueryId: QueryId,
+        QueryName: QueryName,
+        Description: js.UndefOr[QueryDescription] = js.undefined
+    ): StoredQueryMetadata = {
+      val __obj = js.Dynamic.literal(
+        "QueryArn" -> QueryArn.asInstanceOf[js.Any],
+        "QueryId" -> QueryId.asInstanceOf[js.Any],
+        "QueryName" -> QueryName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StoredQueryMetadata]
     }
   }
 

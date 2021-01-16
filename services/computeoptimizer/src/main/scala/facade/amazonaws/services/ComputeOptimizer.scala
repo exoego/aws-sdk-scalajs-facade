@@ -29,6 +29,9 @@ package object computeoptimizer {
   type FilterValue = String
   type FilterValues = js.Array[FilterValue]
   type Filters = js.Array[Filter]
+  type FunctionArn = String
+  type FunctionArns = js.Array[FunctionArn]
+  type FunctionVersion = String
   type GetRecommendationErrors = js.Array[GetRecommendationError]
   type Identifier = String
   type IncludeMemberAccounts = Boolean
@@ -40,23 +43,32 @@ package object computeoptimizer {
   type JobFilters = js.Array[JobFilter]
   type JobId = String
   type JobIds = js.Array[JobId]
+  type LambdaFunctionMemoryProjectedMetrics = js.Array[LambdaFunctionMemoryProjectedMetric]
+  type LambdaFunctionMemoryRecommendationOptions = js.Array[LambdaFunctionMemoryRecommendationOption]
+  type LambdaFunctionRecommendationFilters = js.Array[LambdaFunctionRecommendationFilter]
+  type LambdaFunctionRecommendationFindingReasonCodes = js.Array[LambdaFunctionRecommendationFindingReasonCode]
+  type LambdaFunctionRecommendations = js.Array[LambdaFunctionRecommendation]
+  type LambdaFunctionUtilizationMetrics = js.Array[LambdaFunctionUtilizationMetric]
   type LastRefreshTimestamp = js.Date
   type LastUpdatedTimestamp = js.Date
   type LookBackPeriodInDays = Double
   type MaxResults = Int
   type MaxSize = Int
   type MemberAccountsEnrolled = Boolean
+  type MemorySize = Int
   type Message = String
   type MetadataKey = String
   type MetricValue = Double
   type MetricValues = js.Array[MetricValue]
   type MinSize = Int
   type NextToken = String
+  type NumberOfInvocations = Double
   type PerformanceRisk = Double
   type Period = Int
   type ProjectedMetrics = js.Array[ProjectedMetric]
   type ProjectedUtilizationMetrics = js.Array[UtilizationMetric]
   type Rank = Int
+  type ReasonCodeSummaries = js.Array[ReasonCodeSummary]
   type RecommendationExportJobs = js.Array[RecommendationExportJob]
   type RecommendationOptions = js.Array[InstanceRecommendationOption]
   type RecommendationSourceArn = String
@@ -91,6 +103,7 @@ package object computeoptimizer {
     @inline def getEC2InstanceRecommendationsFuture(params: GetEC2InstanceRecommendationsRequest): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise().toFuture
     @inline def getEC2RecommendationProjectedMetricsFuture(params: GetEC2RecommendationProjectedMetricsRequest): Future[GetEC2RecommendationProjectedMetricsResponse] = service.getEC2RecommendationProjectedMetrics(params).promise().toFuture
     @inline def getEnrollmentStatusFuture(params: GetEnrollmentStatusRequest): Future[GetEnrollmentStatusResponse] = service.getEnrollmentStatus(params).promise().toFuture
+    @inline def getLambdaFunctionRecommendationsFuture(params: GetLambdaFunctionRecommendationsRequest): Future[GetLambdaFunctionRecommendationsResponse] = service.getLambdaFunctionRecommendations(params).promise().toFuture
     @inline def getRecommendationSummariesFuture(params: GetRecommendationSummariesRequest): Future[GetRecommendationSummariesResponse] = service.getRecommendationSummaries(params).promise().toFuture
     @inline def updateEnrollmentStatusFuture(params: UpdateEnrollmentStatusRequest): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise().toFuture
 
@@ -111,6 +124,7 @@ package computeoptimizer {
     def getEC2InstanceRecommendations(params: GetEC2InstanceRecommendationsRequest): Request[GetEC2InstanceRecommendationsResponse] = js.native
     def getEC2RecommendationProjectedMetrics(params: GetEC2RecommendationProjectedMetricsRequest): Request[GetEC2RecommendationProjectedMetricsResponse] = js.native
     def getEnrollmentStatus(params: GetEnrollmentStatusRequest): Request[GetEnrollmentStatusResponse] = js.native
+    def getLambdaFunctionRecommendations(params: GetLambdaFunctionRecommendationsRequest): Request[GetLambdaFunctionRecommendationsResponse] = js.native
     def getRecommendationSummaries(params: GetRecommendationSummariesRequest): Request[GetRecommendationSummariesResponse] = js.native
     def updateEnrollmentStatus(params: UpdateEnrollmentStatusRequest): Request[UpdateEnrollmentStatusResponse] = js.native
   }
@@ -659,6 +673,15 @@ package computeoptimizer {
   }
 
   @js.native
+  sealed trait FindingReasonCode extends js.Any
+  object FindingReasonCode {
+    val MemoryOverprovisioned = "MemoryOverprovisioned".asInstanceOf[FindingReasonCode]
+    val MemoryUnderprovisioned = "MemoryUnderprovisioned".asInstanceOf[FindingReasonCode]
+
+    @inline def values = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned)
+  }
+
+  @js.native
   trait GetAutoScalingGroupRecommendationsRequest extends js.Object {
     var accountIds: js.UndefOr[AccountIds]
     var autoScalingGroupArns: js.UndefOr[AutoScalingGroupArns]
@@ -886,6 +909,53 @@ package computeoptimizer {
     }
   }
 
+  @js.native
+  trait GetLambdaFunctionRecommendationsRequest extends js.Object {
+    var accountIds: js.UndefOr[AccountIds]
+    var filters: js.UndefOr[LambdaFunctionRecommendationFilters]
+    var functionArns: js.UndefOr[FunctionArns]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetLambdaFunctionRecommendationsRequest {
+    @inline
+    def apply(
+        accountIds: js.UndefOr[AccountIds] = js.undefined,
+        filters: js.UndefOr[LambdaFunctionRecommendationFilters] = js.undefined,
+        functionArns: js.UndefOr[FunctionArns] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetLambdaFunctionRecommendationsRequest = {
+      val __obj = js.Dynamic.literal()
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      functionArns.foreach(__v => __obj.updateDynamic("functionArns")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLambdaFunctionRecommendationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetLambdaFunctionRecommendationsResponse extends js.Object {
+    var lambdaFunctionRecommendations: js.UndefOr[LambdaFunctionRecommendations]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetLambdaFunctionRecommendationsResponse {
+    @inline
+    def apply(
+        lambdaFunctionRecommendations: js.UndefOr[LambdaFunctionRecommendations] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetLambdaFunctionRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      lambdaFunctionRecommendations.foreach(__v => __obj.updateDynamic("lambdaFunctionRecommendations")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLambdaFunctionRecommendationsResponse]
+    }
+  }
+
   /** Describes an error experienced when getting recommendations.
     * For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.
     */
@@ -1067,6 +1137,213 @@ package computeoptimizer {
   }
 
   @js.native
+  sealed trait LambdaFunctionMemoryMetricName extends js.Any
+  object LambdaFunctionMemoryMetricName {
+    val Duration = "Duration".asInstanceOf[LambdaFunctionMemoryMetricName]
+
+    @inline def values = js.Array(Duration)
+  }
+
+  @js.native
+  sealed trait LambdaFunctionMemoryMetricStatistic extends js.Any
+  object LambdaFunctionMemoryMetricStatistic {
+    val LowerBound = "LowerBound".asInstanceOf[LambdaFunctionMemoryMetricStatistic]
+    val UpperBound = "UpperBound".asInstanceOf[LambdaFunctionMemoryMetricStatistic]
+    val Expected = "Expected".asInstanceOf[LambdaFunctionMemoryMetricStatistic]
+
+    @inline def values = js.Array(LowerBound, UpperBound, Expected)
+  }
+
+  /** Describes a projected utilization metric of an AWS Lambda function recommendation option.
+    */
+  @js.native
+  trait LambdaFunctionMemoryProjectedMetric extends js.Object {
+    var name: js.UndefOr[LambdaFunctionMemoryMetricName]
+    var statistic: js.UndefOr[LambdaFunctionMemoryMetricStatistic]
+    var value: js.UndefOr[MetricValue]
+  }
+
+  object LambdaFunctionMemoryProjectedMetric {
+    @inline
+    def apply(
+        name: js.UndefOr[LambdaFunctionMemoryMetricName] = js.undefined,
+        statistic: js.UndefOr[LambdaFunctionMemoryMetricStatistic] = js.undefined,
+        value: js.UndefOr[MetricValue] = js.undefined
+    ): LambdaFunctionMemoryProjectedMetric = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionMemoryProjectedMetric]
+    }
+  }
+
+  /** Describes a recommendation option for an AWS Lambda function.
+    */
+  @js.native
+  trait LambdaFunctionMemoryRecommendationOption extends js.Object {
+    var memorySize: js.UndefOr[MemorySize]
+    var projectedUtilizationMetrics: js.UndefOr[LambdaFunctionMemoryProjectedMetrics]
+    var rank: js.UndefOr[Rank]
+  }
+
+  object LambdaFunctionMemoryRecommendationOption {
+    @inline
+    def apply(
+        memorySize: js.UndefOr[MemorySize] = js.undefined,
+        projectedUtilizationMetrics: js.UndefOr[LambdaFunctionMemoryProjectedMetrics] = js.undefined,
+        rank: js.UndefOr[Rank] = js.undefined
+    ): LambdaFunctionMemoryRecommendationOption = {
+      val __obj = js.Dynamic.literal()
+      memorySize.foreach(__v => __obj.updateDynamic("memorySize")(__v.asInstanceOf[js.Any]))
+      projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
+      rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionMemoryRecommendationOption]
+    }
+  }
+
+  @js.native
+  sealed trait LambdaFunctionMetricName extends js.Any
+  object LambdaFunctionMetricName {
+    val Duration = "Duration".asInstanceOf[LambdaFunctionMetricName]
+    val Memory = "Memory".asInstanceOf[LambdaFunctionMetricName]
+
+    @inline def values = js.Array(Duration, Memory)
+  }
+
+  @js.native
+  sealed trait LambdaFunctionMetricStatistic extends js.Any
+  object LambdaFunctionMetricStatistic {
+    val Maximum = "Maximum".asInstanceOf[LambdaFunctionMetricStatistic]
+    val Average = "Average".asInstanceOf[LambdaFunctionMetricStatistic]
+
+    @inline def values = js.Array(Maximum, Average)
+  }
+
+  /** Describes an AWS Lambda function recommendation.
+    */
+  @js.native
+  trait LambdaFunctionRecommendation extends js.Object {
+    var accountId: js.UndefOr[AccountId]
+    var currentMemorySize: js.UndefOr[MemorySize]
+    var finding: js.UndefOr[LambdaFunctionRecommendationFinding]
+    var findingReasonCodes: js.UndefOr[LambdaFunctionRecommendationFindingReasonCodes]
+    var functionArn: js.UndefOr[FunctionArn]
+    var functionVersion: js.UndefOr[FunctionVersion]
+    var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
+    var lookbackPeriodInDays: js.UndefOr[LookBackPeriodInDays]
+    var memorySizeRecommendationOptions: js.UndefOr[LambdaFunctionMemoryRecommendationOptions]
+    var numberOfInvocations: js.UndefOr[NumberOfInvocations]
+    var utilizationMetrics: js.UndefOr[LambdaFunctionUtilizationMetrics]
+  }
+
+  object LambdaFunctionRecommendation {
+    @inline
+    def apply(
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        currentMemorySize: js.UndefOr[MemorySize] = js.undefined,
+        finding: js.UndefOr[LambdaFunctionRecommendationFinding] = js.undefined,
+        findingReasonCodes: js.UndefOr[LambdaFunctionRecommendationFindingReasonCodes] = js.undefined,
+        functionArn: js.UndefOr[FunctionArn] = js.undefined,
+        functionVersion: js.UndefOr[FunctionVersion] = js.undefined,
+        lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
+        lookbackPeriodInDays: js.UndefOr[LookBackPeriodInDays] = js.undefined,
+        memorySizeRecommendationOptions: js.UndefOr[LambdaFunctionMemoryRecommendationOptions] = js.undefined,
+        numberOfInvocations: js.UndefOr[NumberOfInvocations] = js.undefined,
+        utilizationMetrics: js.UndefOr[LambdaFunctionUtilizationMetrics] = js.undefined
+    ): LambdaFunctionRecommendation = {
+      val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      currentMemorySize.foreach(__v => __obj.updateDynamic("currentMemorySize")(__v.asInstanceOf[js.Any]))
+      finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
+      findingReasonCodes.foreach(__v => __obj.updateDynamic("findingReasonCodes")(__v.asInstanceOf[js.Any]))
+      functionArn.foreach(__v => __obj.updateDynamic("functionArn")(__v.asInstanceOf[js.Any]))
+      functionVersion.foreach(__v => __obj.updateDynamic("functionVersion")(__v.asInstanceOf[js.Any]))
+      lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
+      lookbackPeriodInDays.foreach(__v => __obj.updateDynamic("lookbackPeriodInDays")(__v.asInstanceOf[js.Any]))
+      memorySizeRecommendationOptions.foreach(__v => __obj.updateDynamic("memorySizeRecommendationOptions")(__v.asInstanceOf[js.Any]))
+      numberOfInvocations.foreach(__v => __obj.updateDynamic("numberOfInvocations")(__v.asInstanceOf[js.Any]))
+      utilizationMetrics.foreach(__v => __obj.updateDynamic("utilizationMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionRecommendation]
+    }
+  }
+
+  /** Describes a filter that returns a more specific list of AWS Lambda function recommendations.
+    */
+  @js.native
+  trait LambdaFunctionRecommendationFilter extends js.Object {
+    var name: js.UndefOr[LambdaFunctionRecommendationFilterName]
+    var values: js.UndefOr[FilterValues]
+  }
+
+  object LambdaFunctionRecommendationFilter {
+    @inline
+    def apply(
+        name: js.UndefOr[LambdaFunctionRecommendationFilterName] = js.undefined,
+        values: js.UndefOr[FilterValues] = js.undefined
+    ): LambdaFunctionRecommendationFilter = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionRecommendationFilter]
+    }
+  }
+
+  @js.native
+  sealed trait LambdaFunctionRecommendationFilterName extends js.Any
+  object LambdaFunctionRecommendationFilterName {
+    val Finding = "Finding".asInstanceOf[LambdaFunctionRecommendationFilterName]
+    val FindingReasonCode = "FindingReasonCode".asInstanceOf[LambdaFunctionRecommendationFilterName]
+
+    @inline def values = js.Array(Finding, FindingReasonCode)
+  }
+
+  @js.native
+  sealed trait LambdaFunctionRecommendationFinding extends js.Any
+  object LambdaFunctionRecommendationFinding {
+    val Optimized = "Optimized".asInstanceOf[LambdaFunctionRecommendationFinding]
+    val NotOptimized = "NotOptimized".asInstanceOf[LambdaFunctionRecommendationFinding]
+    val Unavailable = "Unavailable".asInstanceOf[LambdaFunctionRecommendationFinding]
+
+    @inline def values = js.Array(Optimized, NotOptimized, Unavailable)
+  }
+
+  @js.native
+  sealed trait LambdaFunctionRecommendationFindingReasonCode extends js.Any
+  object LambdaFunctionRecommendationFindingReasonCode {
+    val MemoryOverprovisioned = "MemoryOverprovisioned".asInstanceOf[LambdaFunctionRecommendationFindingReasonCode]
+    val MemoryUnderprovisioned = "MemoryUnderprovisioned".asInstanceOf[LambdaFunctionRecommendationFindingReasonCode]
+    val InsufficientData = "InsufficientData".asInstanceOf[LambdaFunctionRecommendationFindingReasonCode]
+    val Inconclusive = "Inconclusive".asInstanceOf[LambdaFunctionRecommendationFindingReasonCode]
+
+    @inline def values = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned, InsufficientData, Inconclusive)
+  }
+
+  /** Describes a utilization metric of an AWS Lambda function.
+    */
+  @js.native
+  trait LambdaFunctionUtilizationMetric extends js.Object {
+    var name: js.UndefOr[LambdaFunctionMetricName]
+    var statistic: js.UndefOr[LambdaFunctionMetricStatistic]
+    var value: js.UndefOr[MetricValue]
+  }
+
+  object LambdaFunctionUtilizationMetric {
+    @inline
+    def apply(
+        name: js.UndefOr[LambdaFunctionMetricName] = js.undefined,
+        statistic: js.UndefOr[LambdaFunctionMetricStatistic] = js.undefined,
+        value: js.UndefOr[MetricValue] = js.undefined
+    ): LambdaFunctionUtilizationMetric = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionUtilizationMetric]
+    }
+  }
+
+  @js.native
   sealed trait MetricName extends js.Any
   object MetricName {
     val Cpu = "Cpu".asInstanceOf[MetricName]
@@ -1112,6 +1389,27 @@ package computeoptimizer {
       timestamps.foreach(__v => __obj.updateDynamic("timestamps")(__v.asInstanceOf[js.Any]))
       values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectedMetric]
+    }
+  }
+
+  /** A summary of a finding reason code.
+    */
+  @js.native
+  trait ReasonCodeSummary extends js.Object {
+    var name: js.UndefOr[FindingReasonCode]
+    var value: js.UndefOr[SummaryValue]
+  }
+
+  object ReasonCodeSummary {
+    @inline
+    def apply(
+        name: js.UndefOr[FindingReasonCode] = js.undefined,
+        value: js.UndefOr[SummaryValue] = js.undefined
+    ): ReasonCodeSummary = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReasonCodeSummary]
     }
   }
 
@@ -1180,8 +1478,9 @@ package computeoptimizer {
     val Ec2Instance = "Ec2Instance".asInstanceOf[RecommendationSourceType]
     val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[RecommendationSourceType]
     val EbsVolume = "EbsVolume".asInstanceOf[RecommendationSourceType]
+    val LambdaFunction = "LambdaFunction".asInstanceOf[RecommendationSourceType]
 
-    @inline def values = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume)
+    @inline def values = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction)
   }
 
   /** A summary of a recommendation.
@@ -1305,6 +1604,7 @@ package computeoptimizer {
   @js.native
   trait Summary extends js.Object {
     var name: js.UndefOr[Finding]
+    var reasonCodeSummaries: js.UndefOr[ReasonCodeSummaries]
     var value: js.UndefOr[SummaryValue]
   }
 
@@ -1312,10 +1612,12 @@ package computeoptimizer {
     @inline
     def apply(
         name: js.UndefOr[Finding] = js.undefined,
+        reasonCodeSummaries: js.UndefOr[ReasonCodeSummaries] = js.undefined,
         value: js.UndefOr[SummaryValue] = js.undefined
     ): Summary = {
       val __obj = js.Dynamic.literal()
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      reasonCodeSummaries.foreach(__v => __obj.updateDynamic("reasonCodeSummaries")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Summary]
     }

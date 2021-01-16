@@ -38,6 +38,7 @@ package object glue {
   type CodeGenNodeArgs = js.Array[CodeGenNodeArg]
   type CodeGenNodeType = String
   type ColumnErrors = js.Array[ColumnError]
+  type ColumnImportanceList = js.Array[ColumnImportance]
   type ColumnList = js.Array[Column]
   type ColumnNameString = String
   type ColumnStatisticsErrors = js.Array[ColumnStatisticsError]
@@ -1635,6 +1636,28 @@ package glue {
     }
   }
 
+  /** A structure containing the column name and column importance score for a column.
+    * Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.
+    */
+  @js.native
+  trait ColumnImportance extends js.Object {
+    var ColumnName: js.UndefOr[NameString]
+    var Importance: js.UndefOr[GenericBoundedDouble]
+  }
+
+  object ColumnImportance {
+    @inline
+    def apply(
+        ColumnName: js.UndefOr[NameString] = js.undefined,
+        Importance: js.UndefOr[GenericBoundedDouble] = js.undefined
+    ): ColumnImportance = {
+      val __obj = js.Dynamic.literal()
+      ColumnName.foreach(__v => __obj.updateDynamic("ColumnName")(__v.asInstanceOf[js.Any]))
+      Importance.foreach(__v => __obj.updateDynamic("Importance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnImportance]
+    }
+  }
+
   /** Represents the generated column-level statistics for a table or partition.
     */
   @js.native
@@ -1950,6 +1973,10 @@ package glue {
     val KAFKA_SSL_ENABLED = "KAFKA_SSL_ENABLED".asInstanceOf[ConnectionPropertyKey]
     val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
     val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
+    val SECRET_ID = "SECRET_ID".asInstanceOf[ConnectionPropertyKey]
+    val CONNECTOR_URL = "CONNECTOR_URL".asInstanceOf[ConnectionPropertyKey]
+    val CONNECTOR_TYPE = "CONNECTOR_TYPE".asInstanceOf[ConnectionPropertyKey]
+    val CONNECTOR_CLASS_NAME = "CONNECTOR_CLASS_NAME".asInstanceOf[ConnectionPropertyKey]
 
     @inline def values = js.Array(
       HOST,
@@ -1972,7 +1999,11 @@ package glue {
       KAFKA_BOOTSTRAP_SERVERS,
       KAFKA_SSL_ENABLED,
       KAFKA_CUSTOM_CERT,
-      KAFKA_SKIP_CUSTOM_CERT_VALIDATION
+      KAFKA_SKIP_CUSTOM_CERT_VALIDATION,
+      SECRET_ID,
+      CONNECTOR_URL,
+      CONNECTOR_TYPE,
+      CONNECTOR_CLASS_NAME
     )
   }
 
@@ -1984,8 +2015,10 @@ package glue {
     val MONGODB = "MONGODB".asInstanceOf[ConnectionType]
     val KAFKA = "KAFKA".asInstanceOf[ConnectionType]
     val NETWORK = "NETWORK".asInstanceOf[ConnectionType]
+    val MARKETPLACE = "MARKETPLACE".asInstanceOf[ConnectionType]
+    val CUSTOM = "CUSTOM".asInstanceOf[ConnectionType]
 
-    @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK)
+    @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK, MARKETPLACE, CUSTOM)
   }
 
   /** Specifies the connections used by a job.
@@ -4636,6 +4669,7 @@ package glue {
   @js.native
   trait FindMatchesMetrics extends js.Object {
     var AreaUnderPRCurve: js.UndefOr[GenericBoundedDouble]
+    var ColumnImportances: js.UndefOr[ColumnImportanceList]
     var ConfusionMatrix: js.UndefOr[ConfusionMatrix]
     var F1: js.UndefOr[GenericBoundedDouble]
     var Precision: js.UndefOr[GenericBoundedDouble]
@@ -4646,6 +4680,7 @@ package glue {
     @inline
     def apply(
         AreaUnderPRCurve: js.UndefOr[GenericBoundedDouble] = js.undefined,
+        ColumnImportances: js.UndefOr[ColumnImportanceList] = js.undefined,
         ConfusionMatrix: js.UndefOr[ConfusionMatrix] = js.undefined,
         F1: js.UndefOr[GenericBoundedDouble] = js.undefined,
         Precision: js.UndefOr[GenericBoundedDouble] = js.undefined,
@@ -4653,6 +4688,7 @@ package glue {
     ): FindMatchesMetrics = {
       val __obj = js.Dynamic.literal()
       AreaUnderPRCurve.foreach(__v => __obj.updateDynamic("AreaUnderPRCurve")(__v.asInstanceOf[js.Any]))
+      ColumnImportances.foreach(__v => __obj.updateDynamic("ColumnImportances")(__v.asInstanceOf[js.Any]))
       ConfusionMatrix.foreach(__v => __obj.updateDynamic("ConfusionMatrix")(__v.asInstanceOf[js.Any]))
       F1.foreach(__v => __obj.updateDynamic("F1")(__v.asInstanceOf[js.Any]))
       Precision.foreach(__v => __obj.updateDynamic("Precision")(__v.asInstanceOf[js.Any]))
@@ -9348,6 +9384,8 @@ package glue {
     @inline def values = js.Array(SYNTAX_DIFF)
   }
 
+  /** The unique ID of the schema in the AWS Glue schema registry.
+    */
   @js.native
   trait SchemaId extends js.Object {
     var RegistryName: js.UndefOr[SchemaRegistryNameString]
@@ -9491,6 +9529,8 @@ package glue {
     }
   }
 
+  /** A structure containing the schema version information.
+    */
   @js.native
   trait SchemaVersionNumber extends js.Object {
     var LatestVersion: js.UndefOr[LatestSchemaVersionBoolean]

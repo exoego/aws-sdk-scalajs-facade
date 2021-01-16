@@ -25,6 +25,7 @@ package object route53resolver {
   type Name = String
   type NextToken = String
   type Port = Int
+  type ResolverDnssecConfigList = js.Array[ResolverDnssecConfig]
   type ResolverEndpoints = js.Array[ResolverEndpoint]
   type ResolverQueryLogConfigAssociationErrorMessage = String
   type ResolverQueryLogConfigAssociationList = js.Array[ResolverQueryLogConfigAssociation]
@@ -60,6 +61,7 @@ package object route53resolver {
     @inline def disassociateResolverEndpointIpAddressFuture(params: DisassociateResolverEndpointIpAddressRequest): Future[DisassociateResolverEndpointIpAddressResponse] = service.disassociateResolverEndpointIpAddress(params).promise().toFuture
     @inline def disassociateResolverQueryLogConfigFuture(params: DisassociateResolverQueryLogConfigRequest): Future[DisassociateResolverQueryLogConfigResponse] = service.disassociateResolverQueryLogConfig(params).promise().toFuture
     @inline def disassociateResolverRuleFuture(params: DisassociateResolverRuleRequest): Future[DisassociateResolverRuleResponse] = service.disassociateResolverRule(params).promise().toFuture
+    @inline def getResolverDnssecConfigFuture(params: GetResolverDnssecConfigRequest): Future[GetResolverDnssecConfigResponse] = service.getResolverDnssecConfig(params).promise().toFuture
     @inline def getResolverEndpointFuture(params: GetResolverEndpointRequest): Future[GetResolverEndpointResponse] = service.getResolverEndpoint(params).promise().toFuture
     @inline def getResolverQueryLogConfigAssociationFuture(params: GetResolverQueryLogConfigAssociationRequest): Future[GetResolverQueryLogConfigAssociationResponse] = service.getResolverQueryLogConfigAssociation(params).promise().toFuture
     @inline def getResolverQueryLogConfigFuture(params: GetResolverQueryLogConfigRequest): Future[GetResolverQueryLogConfigResponse] = service.getResolverQueryLogConfig(params).promise().toFuture
@@ -67,6 +69,7 @@ package object route53resolver {
     @inline def getResolverRuleAssociationFuture(params: GetResolverRuleAssociationRequest): Future[GetResolverRuleAssociationResponse] = service.getResolverRuleAssociation(params).promise().toFuture
     @inline def getResolverRuleFuture(params: GetResolverRuleRequest): Future[GetResolverRuleResponse] = service.getResolverRule(params).promise().toFuture
     @inline def getResolverRulePolicyFuture(params: GetResolverRulePolicyRequest): Future[GetResolverRulePolicyResponse] = service.getResolverRulePolicy(params).promise().toFuture
+    @inline def listResolverDnssecConfigsFuture(params: ListResolverDnssecConfigsRequest): Future[ListResolverDnssecConfigsResponse] = service.listResolverDnssecConfigs(params).promise().toFuture
     @inline def listResolverEndpointIpAddressesFuture(params: ListResolverEndpointIpAddressesRequest): Future[ListResolverEndpointIpAddressesResponse] = service.listResolverEndpointIpAddresses(params).promise().toFuture
     @inline def listResolverEndpointsFuture(params: ListResolverEndpointsRequest): Future[ListResolverEndpointsResponse] = service.listResolverEndpoints(params).promise().toFuture
     @inline def listResolverQueryLogConfigAssociationsFuture(params: ListResolverQueryLogConfigAssociationsRequest): Future[ListResolverQueryLogConfigAssociationsResponse] = service.listResolverQueryLogConfigAssociations(params).promise().toFuture
@@ -78,6 +81,7 @@ package object route53resolver {
     @inline def putResolverRulePolicyFuture(params: PutResolverRulePolicyRequest): Future[PutResolverRulePolicyResponse] = service.putResolverRulePolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateResolverDnssecConfigFuture(params: UpdateResolverDnssecConfigRequest): Future[UpdateResolverDnssecConfigResponse] = service.updateResolverDnssecConfig(params).promise().toFuture
     @inline def updateResolverEndpointFuture(params: UpdateResolverEndpointRequest): Future[UpdateResolverEndpointResponse] = service.updateResolverEndpoint(params).promise().toFuture
     @inline def updateResolverRuleFuture(params: UpdateResolverRuleRequest): Future[UpdateResolverRuleResponse] = service.updateResolverRule(params).promise().toFuture
 
@@ -102,6 +106,7 @@ package route53resolver {
     def disassociateResolverEndpointIpAddress(params: DisassociateResolverEndpointIpAddressRequest): Request[DisassociateResolverEndpointIpAddressResponse] = js.native
     def disassociateResolverQueryLogConfig(params: DisassociateResolverQueryLogConfigRequest): Request[DisassociateResolverQueryLogConfigResponse] = js.native
     def disassociateResolverRule(params: DisassociateResolverRuleRequest): Request[DisassociateResolverRuleResponse] = js.native
+    def getResolverDnssecConfig(params: GetResolverDnssecConfigRequest): Request[GetResolverDnssecConfigResponse] = js.native
     def getResolverEndpoint(params: GetResolverEndpointRequest): Request[GetResolverEndpointResponse] = js.native
     def getResolverQueryLogConfig(params: GetResolverQueryLogConfigRequest): Request[GetResolverQueryLogConfigResponse] = js.native
     def getResolverQueryLogConfigAssociation(params: GetResolverQueryLogConfigAssociationRequest): Request[GetResolverQueryLogConfigAssociationResponse] = js.native
@@ -109,6 +114,7 @@ package route53resolver {
     def getResolverRule(params: GetResolverRuleRequest): Request[GetResolverRuleResponse] = js.native
     def getResolverRuleAssociation(params: GetResolverRuleAssociationRequest): Request[GetResolverRuleAssociationResponse] = js.native
     def getResolverRulePolicy(params: GetResolverRulePolicyRequest): Request[GetResolverRulePolicyResponse] = js.native
+    def listResolverDnssecConfigs(params: ListResolverDnssecConfigsRequest): Request[ListResolverDnssecConfigsResponse] = js.native
     def listResolverEndpointIpAddresses(params: ListResolverEndpointIpAddressesRequest): Request[ListResolverEndpointIpAddressesResponse] = js.native
     def listResolverEndpoints(params: ListResolverEndpointsRequest): Request[ListResolverEndpointsResponse] = js.native
     def listResolverQueryLogConfigAssociations(params: ListResolverQueryLogConfigAssociationsRequest): Request[ListResolverQueryLogConfigAssociationsResponse] = js.native
@@ -120,6 +126,7 @@ package route53resolver {
     def putResolverRulePolicy(params: PutResolverRulePolicyRequest): Request[PutResolverRulePolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateResolverDnssecConfig(params: UpdateResolverDnssecConfigRequest): Request[UpdateResolverDnssecConfigResponse] = js.native
     def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] = js.native
     def updateResolverRule(params: UpdateResolverRuleRequest): Request[UpdateResolverRuleResponse] = js.native
   }
@@ -587,7 +594,7 @@ package route53resolver {
     }
   }
 
-  /** For Resolver list operations ([[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html|ListResolverEndpoints]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html|ListResolverRules]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html|ListResolverRuleAssociations]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html|ListResolverQueryLogConfigs]], and [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html|ListResolverQueryLogConfigAssociations]]), an optional specification to return a subset of objects.
+  /** For Resolver list operations ([[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html|ListResolverEndpoints]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html|ListResolverRules]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html|ListResolverRuleAssociations]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html|ListResolverQueryLogConfigs]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html|ListResolverQueryLogConfigAssociations]]), and [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html|ListResolverDnssecConfigs]]), an optional specification to return a subset of objects.
     * To filter objects, such as Resolver endpoints or Resolver rules, you specify <code>Name</code> and <code>Values</code>. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>.
     */
   @js.native
@@ -606,6 +613,39 @@ package route53resolver {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filter]
+    }
+  }
+
+  @js.native
+  trait GetResolverDnssecConfigRequest extends js.Object {
+    var ResourceId: ResourceId
+  }
+
+  object GetResolverDnssecConfigRequest {
+    @inline
+    def apply(
+        ResourceId: ResourceId
+    ): GetResolverDnssecConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResolverDnssecConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetResolverDnssecConfigResponse extends js.Object {
+    var ResolverDNSSECConfig: js.UndefOr[ResolverDnssecConfig]
+  }
+
+  object GetResolverDnssecConfigResponse {
+    @inline
+    def apply(
+        ResolverDNSSECConfig: js.UndefOr[ResolverDnssecConfig] = js.undefined
+    ): GetResolverDnssecConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      ResolverDNSSECConfig.foreach(__v => __obj.updateDynamic("ResolverDNSSECConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResolverDnssecConfigResponse]
     }
   }
 
@@ -937,6 +977,47 @@ package route53resolver {
       IpId.foreach(__v => __obj.updateDynamic("IpId")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpAddressUpdate]
+    }
+  }
+
+  @js.native
+  trait ListResolverDnssecConfigsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListResolverDnssecConfigsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverDnssecConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResolverDnssecConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResolverDnssecConfigsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var ResolverDnssecConfigs: js.UndefOr[ResolverDnssecConfigList]
+  }
+
+  object ListResolverDnssecConfigsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResolverDnssecConfigs: js.UndefOr[ResolverDnssecConfigList] = js.undefined
+    ): ListResolverDnssecConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResolverDnssecConfigs.foreach(__v => __obj.updateDynamic("ResolverDnssecConfigs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResolverDnssecConfigsResponse]
     }
   }
 
@@ -1340,6 +1421,44 @@ package route53resolver {
       val __obj = js.Dynamic.literal()
       ReturnValue.foreach(__v => __obj.updateDynamic("ReturnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResolverRulePolicyResponse]
+    }
+  }
+
+  @js.native
+  sealed trait ResolverDNSSECValidationStatus extends js.Any
+  object ResolverDNSSECValidationStatus {
+    val ENABLING = "ENABLING".asInstanceOf[ResolverDNSSECValidationStatus]
+    val ENABLED = "ENABLED".asInstanceOf[ResolverDNSSECValidationStatus]
+    val DISABLING = "DISABLING".asInstanceOf[ResolverDNSSECValidationStatus]
+    val DISABLED = "DISABLED".asInstanceOf[ResolverDNSSECValidationStatus]
+
+    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  }
+
+  /** A complex type that contains information about a configuration for DNSSEC validation.
+    */
+  @js.native
+  trait ResolverDnssecConfig extends js.Object {
+    var Id: js.UndefOr[ResourceId]
+    var OwnerId: js.UndefOr[AccountId]
+    var ResourceId: js.UndefOr[ResourceId]
+    var ValidationStatus: js.UndefOr[ResolverDNSSECValidationStatus]
+  }
+
+  object ResolverDnssecConfig {
+    @inline
+    def apply(
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        OwnerId: js.UndefOr[AccountId] = js.undefined,
+        ResourceId: js.UndefOr[ResourceId] = js.undefined,
+        ValidationStatus: js.UndefOr[ResolverDNSSECValidationStatus] = js.undefined
+    ): ResolverDnssecConfig = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ValidationStatus.foreach(__v => __obj.updateDynamic("ValidationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResolverDnssecConfig]
     }
   }
 
@@ -1805,6 +1924,42 @@ package route53resolver {
   }
 
   @js.native
+  trait UpdateResolverDnssecConfigRequest extends js.Object {
+    var ResourceId: ResourceId
+    var Validation: Validation
+  }
+
+  object UpdateResolverDnssecConfigRequest {
+    @inline
+    def apply(
+        ResourceId: ResourceId,
+        Validation: Validation
+    ): UpdateResolverDnssecConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "Validation" -> Validation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateResolverDnssecConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResolverDnssecConfigResponse extends js.Object {
+    var ResolverDNSSECConfig: js.UndefOr[ResolverDnssecConfig]
+  }
+
+  object UpdateResolverDnssecConfigResponse {
+    @inline
+    def apply(
+        ResolverDNSSECConfig: js.UndefOr[ResolverDnssecConfig] = js.undefined
+    ): UpdateResolverDnssecConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      ResolverDNSSECConfig.foreach(__v => __obj.updateDynamic("ResolverDNSSECConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResolverDnssecConfigResponse]
+    }
+  }
+
+  @js.native
   trait UpdateResolverEndpointRequest extends js.Object {
     var ResolverEndpointId: ResourceId
     var Name: js.UndefOr[Name]
@@ -1875,5 +2030,14 @@ package route53resolver {
       ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverRuleResponse]
     }
+  }
+
+  @js.native
+  sealed trait Validation extends js.Any
+  object Validation {
+    val ENABLE = "ENABLE".asInstanceOf[Validation]
+    val DISABLE = "DISABLE".asInstanceOf[Validation]
+
+    @inline def values = js.Array(ENABLE, DISABLE)
   }
 }
