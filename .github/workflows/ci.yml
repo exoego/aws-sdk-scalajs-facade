@@ -15,7 +15,7 @@ jobs:
       - uses: coursier/cache-action@v5
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '14'
       - run: npm install
       - name: Run Tests
         run: sbt -jvm-opts .github/.jvmopts ++${{ matrix.scala }} core/test awsDynamoDB/test awsS3/test awsCloudFrontSigner/test all/test
