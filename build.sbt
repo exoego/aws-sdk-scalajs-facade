@@ -1,7 +1,7 @@
 import scala.util._
 
-lazy val scala213Version = "2.13.4"
-lazy val scala212Version = "2.12.12"
+lazy val scala213Version = "2.13.5"
+lazy val scala212Version = "2.12.13"
 crossScalaVersions in ThisBuild := Seq(scala213Version, scala212Version)
 scalaVersion in ThisBuild := scala213Version
 organization in ThisBuild := "net.exoego"
