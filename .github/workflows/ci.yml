@@ -28,3 +28,20 @@ jobs:
       - run: npm install
       - name: Run Tests
         run: sbt -jvm-opts .github/.jvmopts ++${{ matrix.scala }} core/test awsDynamoDB/test awsS3/test awsCloudFrontSigner/test all/test
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: olafurpg/setup-scala@v10
+      - name: Cache Coursier
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/coursier
+          key: sbt-coursier-${{ hashFiles('project/*.sbt', 'project/*.scala') }}
+      - name: Cache SBT
+        uses: actions/cache@v2
+        with:
+          path: ~/.sbt
+          key: sbt-${{ hashFiles('project/build.properties', 'project/plugins.sbt') }}
+      - name: Check Scalafmt
+        run: sbt -jvm-opts .github/.jvmopts scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
