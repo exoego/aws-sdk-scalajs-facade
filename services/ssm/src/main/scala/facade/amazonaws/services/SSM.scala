@@ -1769,6 +1769,48 @@ package ssm {
     @inline def values = js.Array(CrossAccount, Local)
   }
 
+  /** Defines the basic information about a patch baseline override.
+    */
+  @js.native
+  trait BaselineOverride extends js.Object {
+    var ApprovalRules: js.UndefOr[PatchRuleGroup]
+    var ApprovedPatches: js.UndefOr[PatchIdList]
+    var ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel]
+    var ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean]
+    var GlobalFilters: js.UndefOr[PatchFilterGroup]
+    var OperatingSystem: js.UndefOr[OperatingSystem]
+    var RejectedPatches: js.UndefOr[PatchIdList]
+    var RejectedPatchesAction: js.UndefOr[PatchAction]
+    var Sources: js.UndefOr[PatchSourceList]
+  }
+
+  object BaselineOverride {
+    @inline
+    def apply(
+        ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
+        ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
+        GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
+        Sources: js.UndefOr[PatchSourceList] = js.undefined
+    ): BaselineOverride = {
+      val __obj = js.Dynamic.literal()
+      ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
+      ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
+      ApprovedPatchesComplianceLevel.foreach(__v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any]))
+      ApprovedPatchesEnableNonSecurity.foreach(__v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any]))
+      GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      RejectedPatches.foreach(__v => __obj.updateDynamic("RejectedPatches")(__v.asInstanceOf[js.Any]))
+      RejectedPatchesAction.foreach(__v => __obj.updateDynamic("RejectedPatchesAction")(__v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaselineOverride]
+    }
+  }
+
   @js.native
   sealed trait CalendarState extends js.Any
   object CalendarState {
@@ -2799,19 +2841,22 @@ package ssm {
   trait CreateOpsMetadataRequest extends js.Object {
     var ResourceId: OpsMetadataResourceId
     var Metadata: js.UndefOr[MetadataMap]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateOpsMetadataRequest {
     @inline
     def apply(
         ResourceId: OpsMetadataResourceId,
-        Metadata: js.UndefOr[MetadataMap] = js.undefined
+        Metadata: js.UndefOr[MetadataMap] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateOpsMetadataRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpsMetadataRequest]
     }
   }
@@ -5763,18 +5808,22 @@ package ssm {
   trait GetDeployablePatchSnapshotForInstanceRequest extends js.Object {
     var InstanceId: InstanceId
     var SnapshotId: SnapshotId
+    var BaselineOverride: js.UndefOr[BaselineOverride]
   }
 
   object GetDeployablePatchSnapshotForInstanceRequest {
     @inline
     def apply(
         InstanceId: InstanceId,
-        SnapshotId: SnapshotId
+        SnapshotId: SnapshotId,
+        BaselineOverride: js.UndefOr[BaselineOverride] = js.undefined
     ): GetDeployablePatchSnapshotForInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
+
+      BaselineOverride.foreach(__v => __obj.updateDynamic("BaselineOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeployablePatchSnapshotForInstanceRequest]
     }
   }
@@ -6821,6 +6870,7 @@ package ssm {
   }
 
   /** An S3 bucket where you want to store the results of this request.
+    * For the minimal permissions required to enable Amazon S3 output for an association, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html|Creating associations]] in the <i>Systems Manager User Guide</i>.
     */
   @js.native
   trait InstanceAssociationOutputLocation extends js.Object {
@@ -11022,8 +11072,9 @@ package ssm {
     val Parameter = "Parameter".asInstanceOf[ResourceTypeForTagging]
     val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
     val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
+    val OpsMetadata = "OpsMetadata".asInstanceOf[ResourceTypeForTagging]
 
-    @inline def values = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem)
+    @inline def values = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata)
   }
 
   /** The inventory item result attribute.

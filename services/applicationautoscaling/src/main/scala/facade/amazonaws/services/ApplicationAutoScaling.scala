@@ -545,7 +545,7 @@ package applicationautoscaling {
   }
 
   /** Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
-    * Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building Dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
+    * Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
     */
   @js.native
   trait PredefinedMetricSpecification extends js.Object {
@@ -635,6 +635,7 @@ package applicationautoscaling {
     var ScalableTargetAction: js.UndefOr[ScalableTargetAction]
     var Schedule: js.UndefOr[ResourceIdMaxLen1600]
     var StartTime: js.UndefOr[TimestampType]
+    var Timezone: js.UndefOr[ResourceIdMaxLen1600]
   }
 
   object PutScheduledActionRequest {
@@ -647,7 +648,8 @@ package applicationautoscaling {
         EndTime: js.UndefOr[TimestampType] = js.undefined,
         ScalableTargetAction: js.UndefOr[ScalableTargetAction] = js.undefined,
         Schedule: js.UndefOr[ResourceIdMaxLen1600] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
+        StartTime: js.UndefOr[TimestampType] = js.undefined,
+        Timezone: js.UndefOr[ResourceIdMaxLen1600] = js.undefined
     ): PutScheduledActionRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
@@ -660,6 +662,7 @@ package applicationautoscaling {
       ScalableTargetAction.foreach(__v => __obj.updateDynamic("ScalableTargetAction")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScheduledActionRequest]
     }
   }
@@ -951,6 +954,7 @@ package applicationautoscaling {
     var ScalableDimension: js.UndefOr[ScalableDimension]
     var ScalableTargetAction: js.UndefOr[ScalableTargetAction]
     var StartTime: js.UndefOr[TimestampType]
+    var Timezone: js.UndefOr[ResourceIdMaxLen1600]
   }
 
   object ScheduledAction {
@@ -965,7 +969,8 @@ package applicationautoscaling {
         EndTime: js.UndefOr[TimestampType] = js.undefined,
         ScalableDimension: js.UndefOr[ScalableDimension] = js.undefined,
         ScalableTargetAction: js.UndefOr[ScalableTargetAction] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
+        StartTime: js.UndefOr[TimestampType] = js.undefined,
+        Timezone: js.UndefOr[ResourceIdMaxLen1600] = js.undefined
     ): ScheduledAction = {
       val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
@@ -980,6 +985,7 @@ package applicationautoscaling {
       ScalableDimension.foreach(__v => __obj.updateDynamic("ScalableDimension")(__v.asInstanceOf[js.Any]))
       ScalableTargetAction.foreach(__v => __obj.updateDynamic("ScalableTargetAction")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledAction]
     }
   }

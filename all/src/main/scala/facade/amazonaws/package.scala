@@ -397,6 +397,10 @@ package object amazonaws {
     def Firehose(): services.firehose.Firehose = new services.firehose.Firehose()
     def Firehose(config: AWSConfig): services.firehose.Firehose = new services.firehose.Firehose(config)
 
+    type Fis = services.fis.Fis
+    def Fis(): services.fis.Fis = new services.fis.Fis()
+    def Fis(config: AWSConfig): services.fis.Fis = new services.fis.Fis(config)
+
     type FMS = services.fms.FMS
     def FMS(): services.fms.FMS = new services.fms.FMS()
     def FMS(config: AWSConfig): services.fms.FMS = new services.fms.FMS(config)
@@ -685,6 +689,10 @@ package object amazonaws {
     def MobileAnalytics(): services.mobileanalytics.MobileAnalytics = new services.mobileanalytics.MobileAnalytics()
     def MobileAnalytics(config: AWSConfig): services.mobileanalytics.MobileAnalytics = new services.mobileanalytics.MobileAnalytics(config)
 
+    type LexModelsV2 = services.lexmodelsv2.LexModelsV2
+    def LexModelsV2(): services.lexmodelsv2.LexModelsV2 = new services.lexmodelsv2.LexModelsV2()
+    def LexModelsV2(config: AWSConfig): services.lexmodelsv2.LexModelsV2 = new services.lexmodelsv2.LexModelsV2(config)
+
     type CloudWatch = services.cloudwatch.CloudWatch
     def CloudWatch(): services.cloudwatch.CloudWatch = new services.cloudwatch.CloudWatch()
     def CloudWatch(config: AWSConfig): services.cloudwatch.CloudWatch = new services.cloudwatch.CloudWatch(config)
@@ -824,6 +832,10 @@ package object amazonaws {
     type LexRuntime = services.lexruntime.LexRuntime
     def LexRuntime(): services.lexruntime.LexRuntime = new services.lexruntime.LexRuntime()
     def LexRuntime(config: AWSConfig): services.lexruntime.LexRuntime = new services.lexruntime.LexRuntime(config)
+
+    type LexRuntimeV2 = services.lexruntimev2.LexRuntimeV2
+    def LexRuntimeV2(): services.lexruntimev2.LexRuntimeV2 = new services.lexruntimev2.LexRuntimeV2()
+    def LexRuntimeV2(config: AWSConfig): services.lexruntimev2.LexRuntimeV2 = new services.lexruntimev2.LexRuntimeV2(config)
 
     type SageMakerRuntime = services.sagemakerruntime.SageMakerRuntime
     def SageMakerRuntime(): services.sagemakerruntime.SageMakerRuntime = new services.sagemakerruntime.SageMakerRuntime()

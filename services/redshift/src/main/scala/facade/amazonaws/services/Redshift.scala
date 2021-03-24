@@ -47,6 +47,7 @@ package object redshift {
   type ImportTablesNotStarted = js.Array[String]
   type IntegerOptional = Int
   type LongOptional = Double
+  type NetworkInterfaceList = js.Array[NetworkInterface]
   type NodeConfigurationOptionList = js.Array[NodeConfigurationOption]
   type NodeConfigurationOptionsFilterList = js.Array[NodeConfigurationOptionsFilter]
   type OrderableClusterOptionsList = js.Array[OrderableClusterOption]
@@ -70,7 +71,6 @@ package object redshift {
   type SnapshotScheduleList = js.Array[SnapshotSchedule]
   type SnapshotSortingEntityList = js.Array[SnapshotSortingEntity]
   type SourceIdsList = js.Array[String]
-  type SpartaProxyVpcEndpointList = js.Array[SpartaProxyVpcEndpoint]
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type SupportedOperationList = js.Array[SupportedOperation]
@@ -84,6 +84,7 @@ package object redshift {
   type TrackList = js.Array[MaintenanceTrack]
   type UsageLimits = js.Array[UsageLimit]
   type ValueStringList = js.Array[String]
+  type VpcEndpointsList = js.Array[VpcEndpoint]
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
@@ -661,6 +662,7 @@ package redshift {
     var SnapshotScheduleIdentifier: js.UndefOr[String]
     var SnapshotScheduleState: js.UndefOr[ScheduleState]
     var Tags: js.UndefOr[TagList]
+    var TotalStorageCapacityInMegaBytes: js.UndefOr[LongOptional]
     var VpcId: js.UndefOr[String]
     var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
   }
@@ -714,6 +716,7 @@ package redshift {
         SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
         SnapshotScheduleState: js.UndefOr[ScheduleState] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
+        TotalStorageCapacityInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): Cluster = {
@@ -764,6 +767,7 @@ package redshift {
       SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
       SnapshotScheduleState.foreach(__v => __obj.updateDynamic("SnapshotScheduleState")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TotalStorageCapacityInMegaBytes.foreach(__v => __obj.updateDynamic("TotalStorageCapacityInMegaBytes")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cluster]
@@ -3336,7 +3340,7 @@ package redshift {
   trait Endpoint extends js.Object {
     var Address: js.UndefOr[String]
     var Port: js.UndefOr[Int]
-    var VpcEndpoints: js.UndefOr[SpartaProxyVpcEndpointList]
+    var VpcEndpoints: js.UndefOr[VpcEndpointsList]
   }
 
   object Endpoint {
@@ -3344,7 +3348,7 @@ package redshift {
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined,
-        VpcEndpoints: js.UndefOr[SpartaProxyVpcEndpointList] = js.undefined
+        VpcEndpoints: js.UndefOr[VpcEndpointsList] = js.undefined
     ): Endpoint = {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
@@ -4375,6 +4379,33 @@ package redshift {
       Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
       BreachAction.foreach(__v => __obj.updateDynamic("BreachAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyUsageLimitMessage]
+    }
+  }
+
+  /** Describes a network interface.
+    */
+  @js.native
+  trait NetworkInterface extends js.Object {
+    var AvailabilityZone: js.UndefOr[String]
+    var NetworkInterfaceId: js.UndefOr[String]
+    var PrivateIpAddress: js.UndefOr[String]
+    var SubnetId: js.UndefOr[String]
+  }
+
+  object NetworkInterface {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[String] = js.undefined,
+        PrivateIpAddress: js.UndefOr[String] = js.undefined,
+        SubnetId: js.UndefOr[String] = js.undefined
+    ): NetworkInterface = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInterface]
     }
   }
 
@@ -5886,24 +5917,6 @@ package redshift {
     @inline def values = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
   }
 
-  /** The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
-    */
-  @js.native
-  trait SpartaProxyVpcEndpoint extends js.Object {
-    var VpcEndpointId: js.UndefOr[String]
-  }
-
-  object SpartaProxyVpcEndpoint {
-    @inline
-    def apply(
-        VpcEndpointId: js.UndefOr[String] = js.undefined
-    ): SpartaProxyVpcEndpoint = {
-      val __obj = js.Dynamic.literal()
-      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[SpartaProxyVpcEndpoint]
-    }
-  }
-
   /** Describes a subnet.
     */
   @js.native
@@ -6257,6 +6270,30 @@ package redshift {
     val monthly = "monthly".asInstanceOf[UsageLimitPeriod]
 
     @inline def values = js.Array(daily, weekly, monthly)
+  }
+
+  /** The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
+    */
+  @js.native
+  trait VpcEndpoint extends js.Object {
+    var NetworkInterfaces: js.UndefOr[NetworkInterfaceList]
+    var VpcEndpointId: js.UndefOr[String]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object VpcEndpoint {
+    @inline
+    def apply(
+        NetworkInterfaces: js.UndefOr[NetworkInterfaceList] = js.undefined,
+        VpcEndpointId: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): VpcEndpoint = {
+      val __obj = js.Dynamic.literal()
+      NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpoint]
+    }
   }
 
   /** Describes the members of a VPC security group.

@@ -97,6 +97,9 @@ package object datasync {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] = service.updateAgent(params).promise().toFuture
+    @inline def updateLocationNfsFuture(params: UpdateLocationNfsRequest): Future[UpdateLocationNfsResponse] = service.updateLocationNfs(params).promise().toFuture
+    @inline def updateLocationObjectStorageFuture(params: UpdateLocationObjectStorageRequest): Future[UpdateLocationObjectStorageResponse] = service.updateLocationObjectStorage(params).promise().toFuture
+    @inline def updateLocationSmbFuture(params: UpdateLocationSmbRequest): Future[UpdateLocationSmbResponse] = service.updateLocationSmb(params).promise().toFuture
     @inline def updateTaskExecutionFuture(params: UpdateTaskExecutionRequest): Future[UpdateTaskExecutionResponse] = service.updateTaskExecution(params).promise().toFuture
     @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] = service.updateTask(params).promise().toFuture
 
@@ -139,6 +142,9 @@ package datasync {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAgent(params: UpdateAgentRequest): Request[UpdateAgentResponse] = js.native
+    def updateLocationNfs(params: UpdateLocationNfsRequest): Request[UpdateLocationNfsResponse] = js.native
+    def updateLocationObjectStorage(params: UpdateLocationObjectStorageRequest): Request[UpdateLocationObjectStorageResponse] = js.native
+    def updateLocationSmb(params: UpdateLocationSmbRequest): Request[UpdateLocationSmbResponse] = js.native
     def updateTask(params: UpdateTaskRequest): Request[UpdateTaskResponse] = js.native
     def updateTaskExecution(params: UpdateTaskExecutionRequest): Request[UpdateTaskExecutionResponse] = js.native
   }
@@ -2155,6 +2161,138 @@ package datasync {
     def apply(): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAgentResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationNfsRequest extends js.Object {
+    var LocationArn: LocationArn
+    var MountOptions: js.UndefOr[NfsMountOptions]
+    var OnPremConfig: js.UndefOr[OnPremConfig]
+    var Subdirectory: js.UndefOr[NfsSubdirectory]
+  }
+
+  object UpdateLocationNfsRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn,
+        MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
+        OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined,
+        Subdirectory: js.UndefOr[NfsSubdirectory] = js.undefined
+    ): UpdateLocationNfsRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      OnPremConfig.foreach(__v => __obj.updateDynamic("OnPremConfig")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLocationNfsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationNfsResponse extends js.Object
+
+  object UpdateLocationNfsResponse {
+    @inline
+    def apply(): UpdateLocationNfsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLocationNfsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationObjectStorageRequest extends js.Object {
+    var LocationArn: LocationArn
+    var AccessKey: js.UndefOr[ObjectStorageAccessKey]
+    var AgentArns: js.UndefOr[AgentArnList]
+    var SecretKey: js.UndefOr[ObjectStorageSecretKey]
+    var ServerPort: js.UndefOr[ObjectStorageServerPort]
+    var ServerProtocol: js.UndefOr[ObjectStorageServerProtocol]
+    var Subdirectory: js.UndefOr[S3Subdirectory]
+  }
+
+  object UpdateLocationObjectStorageRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn,
+        AccessKey: js.UndefOr[ObjectStorageAccessKey] = js.undefined,
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
+        SecretKey: js.UndefOr[ObjectStorageSecretKey] = js.undefined,
+        ServerPort: js.UndefOr[ObjectStorageServerPort] = js.undefined,
+        ServerProtocol: js.UndefOr[ObjectStorageServerProtocol] = js.undefined,
+        Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined
+    ): UpdateLocationObjectStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      AccessKey.foreach(__v => __obj.updateDynamic("AccessKey")(__v.asInstanceOf[js.Any]))
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
+      SecretKey.foreach(__v => __obj.updateDynamic("SecretKey")(__v.asInstanceOf[js.Any]))
+      ServerPort.foreach(__v => __obj.updateDynamic("ServerPort")(__v.asInstanceOf[js.Any]))
+      ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLocationObjectStorageRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationObjectStorageResponse extends js.Object
+
+  object UpdateLocationObjectStorageResponse {
+    @inline
+    def apply(): UpdateLocationObjectStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLocationObjectStorageResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationSmbRequest extends js.Object {
+    var LocationArn: LocationArn
+    var AgentArns: js.UndefOr[AgentArnList]
+    var Domain: js.UndefOr[SmbDomain]
+    var MountOptions: js.UndefOr[SmbMountOptions]
+    var Password: js.UndefOr[SmbPassword]
+    var Subdirectory: js.UndefOr[SmbSubdirectory]
+    var User: js.UndefOr[SmbUser]
+  }
+
+  object UpdateLocationSmbRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn,
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
+        Domain: js.UndefOr[SmbDomain] = js.undefined,
+        MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
+        Password: js.UndefOr[SmbPassword] = js.undefined,
+        Subdirectory: js.UndefOr[SmbSubdirectory] = js.undefined,
+        User: js.UndefOr[SmbUser] = js.undefined
+    ): UpdateLocationSmbRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLocationSmbRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationSmbResponse extends js.Object
+
+  object UpdateLocationSmbResponse {
+    @inline
+    def apply(): UpdateLocationSmbResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLocationSmbResponse]
     }
   }
 

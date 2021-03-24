@@ -225,18 +225,24 @@ package object iam {
     @inline def listGroupPoliciesFuture(params: ListGroupPoliciesRequest): Future[ListGroupPoliciesResponse] = service.listGroupPolicies(params).promise().toFuture
     @inline def listGroupsForUserFuture(params: ListGroupsForUserRequest): Future[ListGroupsForUserResponse] = service.listGroupsForUser(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listInstanceProfileTagsFuture(params: ListInstanceProfileTagsRequest): Future[ListInstanceProfileTagsResponse] = service.listInstanceProfileTags(params).promise().toFuture
     @inline def listInstanceProfilesForRoleFuture(params: ListInstanceProfilesForRoleRequest): Future[ListInstanceProfilesForRoleResponse] = service.listInstanceProfilesForRole(params).promise().toFuture
     @inline def listInstanceProfilesFuture(params: ListInstanceProfilesRequest): Future[ListInstanceProfilesResponse] = service.listInstanceProfiles(params).promise().toFuture
+    @inline def listMFADeviceTagsFuture(params: ListMFADeviceTagsRequest): Future[ListMFADeviceTagsResponse] = service.listMFADeviceTags(params).promise().toFuture
     @inline def listMFADevicesFuture(params: ListMFADevicesRequest): Future[ListMFADevicesResponse] = service.listMFADevices(params).promise().toFuture
+    @inline def listOpenIDConnectProviderTagsFuture(params: ListOpenIDConnectProviderTagsRequest): Future[ListOpenIDConnectProviderTagsResponse] = service.listOpenIDConnectProviderTags(params).promise().toFuture
     @inline def listOpenIDConnectProvidersFuture(params: ListOpenIDConnectProvidersRequest): Future[ListOpenIDConnectProvidersResponse] = service.listOpenIDConnectProviders(params).promise().toFuture
     @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] = service.listPolicies(params).promise().toFuture
     @inline def listPoliciesGrantingServiceAccessFuture(params: ListPoliciesGrantingServiceAccessRequest): Future[ListPoliciesGrantingServiceAccessResponse] = service.listPoliciesGrantingServiceAccess(params).promise().toFuture
+    @inline def listPolicyTagsFuture(params: ListPolicyTagsRequest): Future[ListPolicyTagsResponse] = service.listPolicyTags(params).promise().toFuture
     @inline def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] = service.listPolicyVersions(params).promise().toFuture
     @inline def listRolePoliciesFuture(params: ListRolePoliciesRequest): Future[ListRolePoliciesResponse] = service.listRolePolicies(params).promise().toFuture
     @inline def listRoleTagsFuture(params: ListRoleTagsRequest): Future[ListRoleTagsResponse] = service.listRoleTags(params).promise().toFuture
     @inline def listRolesFuture(params: ListRolesRequest): Future[ListRolesResponse] = service.listRoles(params).promise().toFuture
+    @inline def listSAMLProviderTagsFuture(params: ListSAMLProviderTagsRequest): Future[ListSAMLProviderTagsResponse] = service.listSAMLProviderTags(params).promise().toFuture
     @inline def listSAMLProvidersFuture(params: ListSAMLProvidersRequest): Future[ListSAMLProvidersResponse] = service.listSAMLProviders(params).promise().toFuture
     @inline def listSSHPublicKeysFuture(params: ListSSHPublicKeysRequest): Future[ListSSHPublicKeysResponse] = service.listSSHPublicKeys(params).promise().toFuture
+    @inline def listServerCertificateTagsFuture(params: ListServerCertificateTagsRequest): Future[ListServerCertificateTagsResponse] = service.listServerCertificateTags(params).promise().toFuture
     @inline def listServerCertificatesFuture(params: ListServerCertificatesRequest): Future[ListServerCertificatesResponse] = service.listServerCertificates(params).promise().toFuture
     @inline def listServiceSpecificCredentialsFuture(params: ListServiceSpecificCredentialsRequest): Future[ListServiceSpecificCredentialsResponse] = service.listServiceSpecificCredentials(params).promise().toFuture
     @inline def listSigningCertificatesFuture(params: ListSigningCertificatesRequest): Future[ListSigningCertificatesResponse] = service.listSigningCertificates(params).promise().toFuture
@@ -258,9 +264,21 @@ package object iam {
     @inline def setSecurityTokenServicePreferencesFuture(params: SetSecurityTokenServicePreferencesRequest): Future[js.Object] = service.setSecurityTokenServicePreferences(params).promise().toFuture
     @inline def simulateCustomPolicyFuture(params: SimulateCustomPolicyRequest): Future[SimulatePolicyResponse] = service.simulateCustomPolicy(params).promise().toFuture
     @inline def simulatePrincipalPolicyFuture(params: SimulatePrincipalPolicyRequest): Future[SimulatePolicyResponse] = service.simulatePrincipalPolicy(params).promise().toFuture
+    @inline def tagInstanceProfileFuture(params: TagInstanceProfileRequest): Future[js.Object] = service.tagInstanceProfile(params).promise().toFuture
+    @inline def tagMFADeviceFuture(params: TagMFADeviceRequest): Future[js.Object] = service.tagMFADevice(params).promise().toFuture
+    @inline def tagOpenIDConnectProviderFuture(params: TagOpenIDConnectProviderRequest): Future[js.Object] = service.tagOpenIDConnectProvider(params).promise().toFuture
+    @inline def tagPolicyFuture(params: TagPolicyRequest): Future[js.Object] = service.tagPolicy(params).promise().toFuture
     @inline def tagRoleFuture(params: TagRoleRequest): Future[js.Object] = service.tagRole(params).promise().toFuture
+    @inline def tagSAMLProviderFuture(params: TagSAMLProviderRequest): Future[js.Object] = service.tagSAMLProvider(params).promise().toFuture
+    @inline def tagServerCertificateFuture(params: TagServerCertificateRequest): Future[js.Object] = service.tagServerCertificate(params).promise().toFuture
     @inline def tagUserFuture(params: TagUserRequest): Future[js.Object] = service.tagUser(params).promise().toFuture
+    @inline def untagInstanceProfileFuture(params: UntagInstanceProfileRequest): Future[js.Object] = service.untagInstanceProfile(params).promise().toFuture
+    @inline def untagMFADeviceFuture(params: UntagMFADeviceRequest): Future[js.Object] = service.untagMFADevice(params).promise().toFuture
+    @inline def untagOpenIDConnectProviderFuture(params: UntagOpenIDConnectProviderRequest): Future[js.Object] = service.untagOpenIDConnectProvider(params).promise().toFuture
+    @inline def untagPolicyFuture(params: UntagPolicyRequest): Future[js.Object] = service.untagPolicy(params).promise().toFuture
     @inline def untagRoleFuture(params: UntagRoleRequest): Future[js.Object] = service.untagRole(params).promise().toFuture
+    @inline def untagSAMLProviderFuture(params: UntagSAMLProviderRequest): Future[js.Object] = service.untagSAMLProvider(params).promise().toFuture
+    @inline def untagServerCertificateFuture(params: UntagServerCertificateRequest): Future[js.Object] = service.untagServerCertificate(params).promise().toFuture
     @inline def untagUserFuture(params: UntagUserRequest): Future[js.Object] = service.untagUser(params).promise().toFuture
     @inline def updateAccessKeyFuture(params: UpdateAccessKeyRequest): Future[js.Object] = service.updateAccessKey(params).promise().toFuture
     @inline def updateAccountPasswordPolicyFuture(params: UpdateAccountPasswordPolicyRequest): Future[js.Object] = service.updateAccountPasswordPolicy(params).promise().toFuture
@@ -375,18 +393,24 @@ package iam {
     def listGroupPolicies(params: ListGroupPoliciesRequest): Request[ListGroupPoliciesResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listGroupsForUser(params: ListGroupsForUserRequest): Request[ListGroupsForUserResponse] = js.native
+    def listInstanceProfileTags(params: ListInstanceProfileTagsRequest): Request[ListInstanceProfileTagsResponse] = js.native
     def listInstanceProfiles(params: ListInstanceProfilesRequest): Request[ListInstanceProfilesResponse] = js.native
     def listInstanceProfilesForRole(params: ListInstanceProfilesForRoleRequest): Request[ListInstanceProfilesForRoleResponse] = js.native
+    def listMFADeviceTags(params: ListMFADeviceTagsRequest): Request[ListMFADeviceTagsResponse] = js.native
     def listMFADevices(params: ListMFADevicesRequest): Request[ListMFADevicesResponse] = js.native
+    def listOpenIDConnectProviderTags(params: ListOpenIDConnectProviderTagsRequest): Request[ListOpenIDConnectProviderTagsResponse] = js.native
     def listOpenIDConnectProviders(params: ListOpenIDConnectProvidersRequest): Request[ListOpenIDConnectProvidersResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
     def listPoliciesGrantingServiceAccess(params: ListPoliciesGrantingServiceAccessRequest): Request[ListPoliciesGrantingServiceAccessResponse] = js.native
+    def listPolicyTags(params: ListPolicyTagsRequest): Request[ListPolicyTagsResponse] = js.native
     def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse] = js.native
     def listRolePolicies(params: ListRolePoliciesRequest): Request[ListRolePoliciesResponse] = js.native
     def listRoleTags(params: ListRoleTagsRequest): Request[ListRoleTagsResponse] = js.native
     def listRoles(params: ListRolesRequest): Request[ListRolesResponse] = js.native
+    def listSAMLProviderTags(params: ListSAMLProviderTagsRequest): Request[ListSAMLProviderTagsResponse] = js.native
     def listSAMLProviders(params: ListSAMLProvidersRequest): Request[ListSAMLProvidersResponse] = js.native
     def listSSHPublicKeys(params: ListSSHPublicKeysRequest): Request[ListSSHPublicKeysResponse] = js.native
+    def listServerCertificateTags(params: ListServerCertificateTagsRequest): Request[ListServerCertificateTagsResponse] = js.native
     def listServerCertificates(params: ListServerCertificatesRequest): Request[ListServerCertificatesResponse] = js.native
     def listServiceSpecificCredentials(params: ListServiceSpecificCredentialsRequest): Request[ListServiceSpecificCredentialsResponse] = js.native
     def listSigningCertificates(params: ListSigningCertificatesRequest): Request[ListSigningCertificatesResponse] = js.native
@@ -408,9 +432,21 @@ package iam {
     def setSecurityTokenServicePreferences(params: SetSecurityTokenServicePreferencesRequest): Request[js.Object] = js.native
     def simulateCustomPolicy(params: SimulateCustomPolicyRequest): Request[SimulatePolicyResponse] = js.native
     def simulatePrincipalPolicy(params: SimulatePrincipalPolicyRequest): Request[SimulatePolicyResponse] = js.native
+    def tagInstanceProfile(params: TagInstanceProfileRequest): Request[js.Object] = js.native
+    def tagMFADevice(params: TagMFADeviceRequest): Request[js.Object] = js.native
+    def tagOpenIDConnectProvider(params: TagOpenIDConnectProviderRequest): Request[js.Object] = js.native
+    def tagPolicy(params: TagPolicyRequest): Request[js.Object] = js.native
     def tagRole(params: TagRoleRequest): Request[js.Object] = js.native
+    def tagSAMLProvider(params: TagSAMLProviderRequest): Request[js.Object] = js.native
+    def tagServerCertificate(params: TagServerCertificateRequest): Request[js.Object] = js.native
     def tagUser(params: TagUserRequest): Request[js.Object] = js.native
+    def untagInstanceProfile(params: UntagInstanceProfileRequest): Request[js.Object] = js.native
+    def untagMFADevice(params: UntagMFADeviceRequest): Request[js.Object] = js.native
+    def untagOpenIDConnectProvider(params: UntagOpenIDConnectProviderRequest): Request[js.Object] = js.native
+    def untagPolicy(params: UntagPolicyRequest): Request[js.Object] = js.native
     def untagRole(params: UntagRoleRequest): Request[js.Object] = js.native
+    def untagSAMLProvider(params: UntagSAMLProviderRequest): Request[js.Object] = js.native
+    def untagServerCertificate(params: UntagServerCertificateRequest): Request[js.Object] = js.native
     def untagUser(params: UntagUserRequest): Request[js.Object] = js.native
     def updateAccessKey(params: UpdateAccessKeyRequest): Request[js.Object] = js.native
     def updateAccountPasswordPolicy(params: UpdateAccountPasswordPolicyRequest): Request[js.Object] = js.native
@@ -687,7 +723,7 @@ package iam {
 
   /** Contains information about an attached permissions boundary.
     * An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.
-    * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
+    * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities ]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait AttachedPermissionsBoundary extends js.Object {
@@ -710,7 +746,7 @@ package iam {
 
   /** Contains information about an attached policy.
     * An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait AttachedPolicy extends js.Object {
@@ -891,19 +927,22 @@ package iam {
   trait CreateInstanceProfileRequest extends js.Object {
     var InstanceProfileName: instanceProfileNameType
     var Path: js.UndefOr[pathType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateInstanceProfileRequest {
     @inline
     def apply(
         InstanceProfileName: instanceProfileNameType,
-        Path: js.UndefOr[pathType] = js.undefined
+        Path: js.UndefOr[pathType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateInstanceProfileRequest = {
       val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]
       )
 
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceProfileRequest]
     }
   }
@@ -975,6 +1014,7 @@ package iam {
     var ThumbprintList: thumbprintListType
     var Url: OpenIDConnectProviderUrlType
     var ClientIDList: js.UndefOr[clientIDListType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateOpenIDConnectProviderRequest {
@@ -982,7 +1022,8 @@ package iam {
     def apply(
         ThumbprintList: thumbprintListType,
         Url: OpenIDConnectProviderUrlType,
-        ClientIDList: js.UndefOr[clientIDListType] = js.undefined
+        ClientIDList: js.UndefOr[clientIDListType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateOpenIDConnectProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ThumbprintList" -> ThumbprintList.asInstanceOf[js.Any],
@@ -990,6 +1031,7 @@ package iam {
       )
 
       ClientIDList.foreach(__v => __obj.updateDynamic("ClientIDList")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpenIDConnectProviderRequest]
     }
   }
@@ -999,15 +1041,18 @@ package iam {
   @js.native
   trait CreateOpenIDConnectProviderResponse extends js.Object {
     var OpenIDConnectProviderArn: js.UndefOr[arnType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateOpenIDConnectProviderResponse {
     @inline
     def apply(
-        OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined
+        OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateOpenIDConnectProviderResponse = {
       val __obj = js.Dynamic.literal()
       OpenIDConnectProviderArn.foreach(__v => __obj.updateDynamic("OpenIDConnectProviderArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpenIDConnectProviderResponse]
     }
   }
@@ -1018,6 +1063,7 @@ package iam {
     var PolicyName: policyNameType
     var Description: js.UndefOr[policyDescriptionType]
     var Path: js.UndefOr[policyPathType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreatePolicyRequest {
@@ -1026,7 +1072,8 @@ package iam {
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType,
         Description: js.UndefOr[policyDescriptionType] = js.undefined,
-        Path: js.UndefOr[policyPathType] = js.undefined
+        Path: js.UndefOr[policyPathType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreatePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
@@ -1035,6 +1082,7 @@ package iam {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyRequest]
     }
   }
@@ -1158,18 +1206,22 @@ package iam {
   trait CreateSAMLProviderRequest extends js.Object {
     var Name: SAMLProviderNameType
     var SAMLMetadataDocument: SAMLMetadataDocumentType
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateSAMLProviderRequest {
     @inline
     def apply(
         Name: SAMLProviderNameType,
-        SAMLMetadataDocument: SAMLMetadataDocumentType
+        SAMLMetadataDocument: SAMLMetadataDocumentType,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateSAMLProviderRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSAMLProviderRequest]
     }
   }
@@ -1179,15 +1231,18 @@ package iam {
   @js.native
   trait CreateSAMLProviderResponse extends js.Object {
     var SAMLProviderArn: js.UndefOr[arnType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateSAMLProviderResponse {
     @inline
     def apply(
-        SAMLProviderArn: js.UndefOr[arnType] = js.undefined
+        SAMLProviderArn: js.UndefOr[arnType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateSAMLProviderResponse = {
       val __obj = js.Dynamic.literal()
       SAMLProviderArn.foreach(__v => __obj.updateDynamic("SAMLProviderArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSAMLProviderResponse]
     }
   }
@@ -1317,19 +1372,22 @@ package iam {
   trait CreateVirtualMFADeviceRequest extends js.Object {
     var VirtualMFADeviceName: virtualMFADeviceName
     var Path: js.UndefOr[pathType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object CreateVirtualMFADeviceRequest {
     @inline
     def apply(
         VirtualMFADeviceName: virtualMFADeviceName,
-        Path: js.UndefOr[pathType] = js.undefined
+        Path: js.UndefOr[pathType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateVirtualMFADeviceRequest = {
       val __obj = js.Dynamic.literal(
         "VirtualMFADeviceName" -> VirtualMFADeviceName.asInstanceOf[js.Any]
       )
 
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVirtualMFADeviceRequest]
     }
   }
@@ -2545,6 +2603,7 @@ package iam {
   trait GetOpenIDConnectProviderResponse extends js.Object {
     var ClientIDList: js.UndefOr[clientIDListType]
     var CreateDate: js.UndefOr[dateType]
+    var Tags: js.UndefOr[tagListType]
     var ThumbprintList: js.UndefOr[thumbprintListType]
     var Url: js.UndefOr[OpenIDConnectProviderUrlType]
   }
@@ -2554,12 +2613,14 @@ package iam {
     def apply(
         ClientIDList: js.UndefOr[clientIDListType] = js.undefined,
         CreateDate: js.UndefOr[dateType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined,
         ThumbprintList: js.UndefOr[thumbprintListType] = js.undefined,
         Url: js.UndefOr[OpenIDConnectProviderUrlType] = js.undefined
     ): GetOpenIDConnectProviderResponse = {
       val __obj = js.Dynamic.literal()
       ClientIDList.foreach(__v => __obj.updateDynamic("ClientIDList")(__v.asInstanceOf[js.Any]))
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ThumbprintList.foreach(__v => __obj.updateDynamic("ThumbprintList")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIDConnectProviderResponse]
@@ -2812,6 +2873,7 @@ package iam {
   trait GetSAMLProviderResponse extends js.Object {
     var CreateDate: js.UndefOr[dateType]
     var SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType]
+    var Tags: js.UndefOr[tagListType]
     var ValidUntil: js.UndefOr[dateType]
   }
 
@@ -2820,11 +2882,13 @@ package iam {
     def apply(
         CreateDate: js.UndefOr[dateType] = js.undefined,
         SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined,
         ValidUntil: js.UndefOr[dateType] = js.undefined
     ): GetSAMLProviderResponse = {
       val __obj = js.Dynamic.literal()
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       SAMLMetadataDocument.foreach(__v => __obj.updateDynamic("SAMLMetadataDocument")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ValidUntil.foreach(__v => __obj.updateDynamic("ValidUntil")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSAMLProviderResponse]
     }
@@ -3238,6 +3302,7 @@ package iam {
     var InstanceProfileName: instanceProfileNameType
     var Path: pathType
     var Roles: roleListType
+    var Tags: js.UndefOr[tagListType]
   }
 
   object InstanceProfile {
@@ -3248,7 +3313,8 @@ package iam {
         InstanceProfileId: idType,
         InstanceProfileName: instanceProfileNameType,
         Path: pathType,
-        Roles: roleListType
+        Roles: roleListType,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): InstanceProfile = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any],
@@ -3258,6 +3324,8 @@ package iam {
         "Path" -> Path.asInstanceOf[js.Any],
         "Roles" -> Roles.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceProfile]
     }
   }
@@ -3720,6 +3788,54 @@ package iam {
   }
 
   @js.native
+  trait ListInstanceProfileTagsRequest extends js.Object {
+    var InstanceProfileName: instanceProfileNameType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object ListInstanceProfileTagsRequest {
+    @inline
+    def apply(
+        InstanceProfileName: instanceProfileNameType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListInstanceProfileTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceProfileTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListInstanceProfileTagsResponse extends js.Object {
+    var Tags: tagListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[responseMarkerType]
+  }
+
+  object ListInstanceProfileTagsResponse {
+    @inline
+    def apply(
+        Tags: tagListType,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
+    ): ListInstanceProfileTagsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInstanceProfileTagsResponse]
+    }
+  }
+
+  @js.native
   trait ListInstanceProfilesForRoleRequest extends js.Object {
     var RoleName: roleNameType
     var Marker: js.UndefOr[markerType]
@@ -3818,6 +3934,54 @@ package iam {
   }
 
   @js.native
+  trait ListMFADeviceTagsRequest extends js.Object {
+    var SerialNumber: serialNumberType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object ListMFADeviceTagsRequest {
+    @inline
+    def apply(
+        SerialNumber: serialNumberType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListMFADeviceTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMFADeviceTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMFADeviceTagsResponse extends js.Object {
+    var Tags: tagListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[responseMarkerType]
+  }
+
+  object ListMFADeviceTagsResponse {
+    @inline
+    def apply(
+        Tags: tagListType,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
+    ): ListMFADeviceTagsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMFADeviceTagsResponse]
+    }
+  }
+
+  @js.native
   trait ListMFADevicesRequest extends js.Object {
     var Marker: js.UndefOr[markerType]
     var MaxItems: js.UndefOr[maxItemsType]
@@ -3862,6 +4026,54 @@ package iam {
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMFADevicesResponse]
+    }
+  }
+
+  @js.native
+  trait ListOpenIDConnectProviderTagsRequest extends js.Object {
+    var OpenIDConnectProviderArn: arnType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object ListOpenIDConnectProviderTagsRequest {
+    @inline
+    def apply(
+        OpenIDConnectProviderArn: arnType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListOpenIDConnectProviderTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpenIDConnectProviderTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListOpenIDConnectProviderTagsResponse extends js.Object {
+    var Tags: tagListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[responseMarkerType]
+  }
+
+  object ListOpenIDConnectProviderTagsResponse {
+    @inline
+    def apply(
+        Tags: tagListType,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
+    ): ListOpenIDConnectProviderTagsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpenIDConnectProviderTagsResponse]
     }
   }
 
@@ -4016,6 +4228,54 @@ package iam {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesResponse]
+    }
+  }
+
+  @js.native
+  trait ListPolicyTagsRequest extends js.Object {
+    var PolicyArn: arnType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object ListPolicyTagsRequest {
+    @inline
+    def apply(
+        PolicyArn: arnType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListPolicyTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPolicyTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPolicyTagsResponse extends js.Object {
+    var Tags: tagListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[responseMarkerType]
+  }
+
+  object ListPolicyTagsResponse {
+    @inline
+    def apply(
+        Tags: tagListType,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
+    ): ListPolicyTagsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPolicyTagsResponse]
     }
   }
 
@@ -4214,6 +4474,54 @@ package iam {
   }
 
   @js.native
+  trait ListSAMLProviderTagsRequest extends js.Object {
+    var SAMLProviderArn: arnType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object ListSAMLProviderTagsRequest {
+    @inline
+    def apply(
+        SAMLProviderArn: arnType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListSAMLProviderTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSAMLProviderTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSAMLProviderTagsResponse extends js.Object {
+    var Tags: tagListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[responseMarkerType]
+  }
+
+  object ListSAMLProviderTagsResponse {
+    @inline
+    def apply(
+        Tags: tagListType,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
+    ): ListSAMLProviderTagsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSAMLProviderTagsResponse]
+    }
+  }
+
+  @js.native
   trait ListSAMLProvidersRequest extends js.Object
 
   object ListSAMLProvidersRequest {
@@ -4285,6 +4593,54 @@ package iam {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       SSHPublicKeys.foreach(__v => __obj.updateDynamic("SSHPublicKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSSHPublicKeysResponse]
+    }
+  }
+
+  @js.native
+  trait ListServerCertificateTagsRequest extends js.Object {
+    var ServerCertificateName: serverCertificateNameType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object ListServerCertificateTagsRequest {
+    @inline
+    def apply(
+        ServerCertificateName: serverCertificateNameType,
+        Marker: js.UndefOr[markerType] = js.undefined,
+        MaxItems: js.UndefOr[maxItemsType] = js.undefined
+    ): ListServerCertificateTagsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServerCertificateTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListServerCertificateTagsResponse extends js.Object {
+    var Tags: tagListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[responseMarkerType]
+  }
+
+  object ListServerCertificateTagsResponse {
+    @inline
+    def apply(
+        Tags: tagListType,
+        IsTruncated: js.UndefOr[booleanType] = js.undefined,
+        Marker: js.UndefOr[responseMarkerType] = js.undefined
+    ): ListServerCertificateTagsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServerCertificateTagsResponse]
     }
   }
 
@@ -4668,7 +5024,7 @@ package iam {
 
   /** Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.
     * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
-    * For more information about managed policies, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait ManagedPolicyDetail extends js.Object {
@@ -4829,7 +5185,7 @@ package iam {
 
   /** Contains information about a managed policy.
     * This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait Policy extends js.Object {
@@ -4843,6 +5199,7 @@ package iam {
     var PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType]
     var PolicyId: js.UndefOr[idType]
     var PolicyName: js.UndefOr[policyNameType]
+    var Tags: js.UndefOr[tagListType]
     var UpdateDate: js.UndefOr[dateType]
   }
 
@@ -4859,6 +5216,7 @@ package iam {
         PermissionsBoundaryUsageCount: js.UndefOr[attachmentCountType] = js.undefined,
         PolicyId: js.UndefOr[idType] = js.undefined,
         PolicyName: js.UndefOr[policyNameType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined,
         UpdateDate: js.UndefOr[dateType] = js.undefined
     ): Policy = {
       val __obj = js.Dynamic.literal()
@@ -4872,6 +5230,7 @@ package iam {
       PermissionsBoundaryUsageCount.foreach(__v => __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdateDate.foreach(__v => __obj.updateDynamic("UpdateDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policy]
     }
@@ -4944,7 +5303,7 @@ package iam {
 
   /** Contains information about a group that a managed policy is attached to.
     * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyGroup extends js.Object {
@@ -4967,7 +5326,7 @@ package iam {
 
   /** Contains information about a role that a managed policy is attached to.
     * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyRole extends js.Object {
@@ -5003,7 +5362,7 @@ package iam {
   }
 
   /** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
-    * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
+    * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities ]] in the <i>IAM User Guide</i>.
     */
   @js.native
   sealed trait PolicyUsageType extends js.Any
@@ -5016,7 +5375,7 @@ package iam {
 
   /** Contains information about a user that a managed policy is attached to.
     * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyUser extends js.Object {
@@ -5039,7 +5398,7 @@ package iam {
 
   /** Contains information about a version of a managed policy.
     * This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>IAM User Guide</i>.
+    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -5476,7 +5835,7 @@ package iam {
     }
   }
 
-  /** Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period|Regions Where Data Is Tracked]] in the <i>IAM User Guide</i>.
+  /** Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period|Regions where data is tracked]] in the <i>IAM User Guide</i>.
     * This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.
     */
   @js.native
@@ -5617,6 +5976,7 @@ package iam {
     var CertificateBody: certificateBodyType
     var ServerCertificateMetadata: ServerCertificateMetadata
     var CertificateChain: js.UndefOr[certificateChainType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object ServerCertificate {
@@ -5624,7 +5984,8 @@ package iam {
     def apply(
         CertificateBody: certificateBodyType,
         ServerCertificateMetadata: ServerCertificateMetadata,
-        CertificateChain: js.UndefOr[certificateChainType] = js.undefined
+        CertificateChain: js.UndefOr[certificateChainType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): ServerCertificate = {
       val __obj = js.Dynamic.literal(
         "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
@@ -5632,6 +5993,7 @@ package iam {
       )
 
       CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerCertificate]
     }
   }
@@ -6003,7 +6365,7 @@ package iam {
     }
   }
 
-  /** A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html|Tagging IAM Identities]] in the <i>IAM User Guide</i>.
+  /** A structure that represents user-provided metadata that can be associated with an IAM resource. For more information about tagging, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html|Tagging IAM resources]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -6026,6 +6388,86 @@ package iam {
   }
 
   @js.native
+  trait TagInstanceProfileRequest extends js.Object {
+    var InstanceProfileName: instanceProfileNameType
+    var Tags: tagListType
+  }
+
+  object TagInstanceProfileRequest {
+    @inline
+    def apply(
+        InstanceProfileName: instanceProfileNameType,
+        Tags: tagListType
+    ): TagInstanceProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagInstanceProfileRequest]
+    }
+  }
+
+  @js.native
+  trait TagMFADeviceRequest extends js.Object {
+    var SerialNumber: serialNumberType
+    var Tags: tagListType
+  }
+
+  object TagMFADeviceRequest {
+    @inline
+    def apply(
+        SerialNumber: serialNumberType,
+        Tags: tagListType
+    ): TagMFADeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagMFADeviceRequest]
+    }
+  }
+
+  @js.native
+  trait TagOpenIDConnectProviderRequest extends js.Object {
+    var OpenIDConnectProviderArn: arnType
+    var Tags: tagListType
+  }
+
+  object TagOpenIDConnectProviderRequest {
+    @inline
+    def apply(
+        OpenIDConnectProviderArn: arnType,
+        Tags: tagListType
+    ): TagOpenIDConnectProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagOpenIDConnectProviderRequest]
+    }
+  }
+
+  @js.native
+  trait TagPolicyRequest extends js.Object {
+    var PolicyArn: arnType
+    var Tags: tagListType
+  }
+
+  object TagPolicyRequest {
+    @inline
+    def apply(
+        PolicyArn: arnType,
+        Tags: tagListType
+    ): TagPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagPolicyRequest]
+    }
+  }
+
+  @js.native
   trait TagRoleRequest extends js.Object {
     var RoleName: roleNameType
     var Tags: tagListType
@@ -6042,6 +6484,46 @@ package iam {
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[TagRoleRequest]
+    }
+  }
+
+  @js.native
+  trait TagSAMLProviderRequest extends js.Object {
+    var SAMLProviderArn: arnType
+    var Tags: tagListType
+  }
+
+  object TagSAMLProviderRequest {
+    @inline
+    def apply(
+        SAMLProviderArn: arnType,
+        Tags: tagListType
+    ): TagSAMLProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagSAMLProviderRequest]
+    }
+  }
+
+  @js.native
+  trait TagServerCertificateRequest extends js.Object {
+    var ServerCertificateName: serverCertificateNameType
+    var Tags: tagListType
+  }
+
+  object TagServerCertificateRequest {
+    @inline
+    def apply(
+        ServerCertificateName: serverCertificateNameType,
+        Tags: tagListType
+    ): TagServerCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagServerCertificateRequest]
     }
   }
 
@@ -6094,6 +6576,86 @@ package iam {
   }
 
   @js.native
+  trait UntagInstanceProfileRequest extends js.Object {
+    var InstanceProfileName: instanceProfileNameType
+    var TagKeys: tagKeyListType
+  }
+
+  object UntagInstanceProfileRequest {
+    @inline
+    def apply(
+        InstanceProfileName: instanceProfileNameType,
+        TagKeys: tagKeyListType
+    ): UntagInstanceProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagInstanceProfileRequest]
+    }
+  }
+
+  @js.native
+  trait UntagMFADeviceRequest extends js.Object {
+    var SerialNumber: serialNumberType
+    var TagKeys: tagKeyListType
+  }
+
+  object UntagMFADeviceRequest {
+    @inline
+    def apply(
+        SerialNumber: serialNumberType,
+        TagKeys: tagKeyListType
+    ): UntagMFADeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagMFADeviceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagOpenIDConnectProviderRequest extends js.Object {
+    var OpenIDConnectProviderArn: arnType
+    var TagKeys: tagKeyListType
+  }
+
+  object UntagOpenIDConnectProviderRequest {
+    @inline
+    def apply(
+        OpenIDConnectProviderArn: arnType,
+        TagKeys: tagKeyListType
+    ): UntagOpenIDConnectProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagOpenIDConnectProviderRequest]
+    }
+  }
+
+  @js.native
+  trait UntagPolicyRequest extends js.Object {
+    var PolicyArn: arnType
+    var TagKeys: tagKeyListType
+  }
+
+  object UntagPolicyRequest {
+    @inline
+    def apply(
+        PolicyArn: arnType,
+        TagKeys: tagKeyListType
+    ): UntagPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagPolicyRequest]
+    }
+  }
+
+  @js.native
   trait UntagRoleRequest extends js.Object {
     var RoleName: roleNameType
     var TagKeys: tagKeyListType
@@ -6110,6 +6672,46 @@ package iam {
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UntagRoleRequest]
+    }
+  }
+
+  @js.native
+  trait UntagSAMLProviderRequest extends js.Object {
+    var SAMLProviderArn: arnType
+    var TagKeys: tagKeyListType
+  }
+
+  object UntagSAMLProviderRequest {
+    @inline
+    def apply(
+        SAMLProviderArn: arnType,
+        TagKeys: tagKeyListType
+    ): UntagSAMLProviderRequest = {
+      val __obj = js.Dynamic.literal(
+        "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagSAMLProviderRequest]
+    }
+  }
+
+  @js.native
+  trait UntagServerCertificateRequest extends js.Object {
+    var ServerCertificateName: serverCertificateNameType
+    var TagKeys: tagKeyListType
+  }
+
+  object UntagServerCertificateRequest {
+    @inline
+    def apply(
+        ServerCertificateName: serverCertificateNameType,
+        TagKeys: tagKeyListType
+    ): UntagServerCertificateRequest = {
+      val __obj = js.Dynamic.literal(
+        "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagServerCertificateRequest]
     }
   }
 
@@ -6558,6 +7160,7 @@ package iam {
     var ServerCertificateName: serverCertificateNameType
     var CertificateChain: js.UndefOr[certificateChainType]
     var Path: js.UndefOr[pathType]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object UploadServerCertificateRequest {
@@ -6567,7 +7170,8 @@ package iam {
         PrivateKey: privateKeyType,
         ServerCertificateName: serverCertificateNameType,
         CertificateChain: js.UndefOr[certificateChainType] = js.undefined,
-        Path: js.UndefOr[pathType] = js.undefined
+        Path: js.UndefOr[pathType] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): UploadServerCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
@@ -6577,6 +7181,7 @@ package iam {
 
       CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadServerCertificateRequest]
     }
   }
@@ -6586,15 +7191,18 @@ package iam {
   @js.native
   trait UploadServerCertificateResponse extends js.Object {
     var ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata]
+    var Tags: js.UndefOr[tagListType]
   }
 
   object UploadServerCertificateResponse {
     @inline
     def apply(
-        ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata] = js.undefined
+        ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined
     ): UploadServerCertificateResponse = {
       val __obj = js.Dynamic.literal()
       ServerCertificateMetadata.foreach(__v => __obj.updateDynamic("ServerCertificateMetadata")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadServerCertificateResponse]
     }
   }
@@ -6738,6 +7346,7 @@ package iam {
     var Base32StringSeed: js.UndefOr[BootstrapDatum]
     var EnableDate: js.UndefOr[dateType]
     var QRCodePNG: js.UndefOr[BootstrapDatum]
+    var Tags: js.UndefOr[tagListType]
     var User: js.UndefOr[User]
   }
 
@@ -6748,6 +7357,7 @@ package iam {
         Base32StringSeed: js.UndefOr[BootstrapDatum] = js.undefined,
         EnableDate: js.UndefOr[dateType] = js.undefined,
         QRCodePNG: js.UndefOr[BootstrapDatum] = js.undefined,
+        Tags: js.UndefOr[tagListType] = js.undefined,
         User: js.UndefOr[User] = js.undefined
     ): VirtualMFADevice = {
       val __obj = js.Dynamic.literal(
@@ -6757,6 +7367,7 @@ package iam {
       Base32StringSeed.foreach(__v => __obj.updateDynamic("Base32StringSeed")(__v.asInstanceOf[js.Any]))
       EnableDate.foreach(__v => __obj.updateDynamic("EnableDate")(__v.asInstanceOf[js.Any]))
       QRCodePNG.foreach(__v => __obj.updateDynamic("QRCodePNG")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualMFADevice]
     }

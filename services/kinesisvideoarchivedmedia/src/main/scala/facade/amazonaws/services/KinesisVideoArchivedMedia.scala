@@ -8,14 +8,16 @@ import facade.amazonaws._
 
 package object kinesisvideoarchivedmedia {
   type ContentType = String
+  type DASHMaxResults = Double
   type DASHStreamingSessionURL = String
   type Expires = Int
   type FragmentList = js.Array[Fragment]
   type FragmentNumberList = js.Array[FragmentNumberString]
   type FragmentNumberString = String
+  type HLSMaxResults = Double
   type HLSStreamingSessionURL = String
+  type ListFragmentsMaxResults = Double
   type NextToken = String
-  type PageLimit = Double
   type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ResourceARN = String
   type StreamName = String
@@ -78,7 +80,6 @@ package kinesisvideoarchivedmedia {
   }
 
   /** The range of timestamps for which to return fragments.
-    * The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
     */
   @js.native
   trait ClipTimestampRange extends js.Object {
@@ -169,8 +170,7 @@ package kinesisvideoarchivedmedia {
 
   /** The start and end of the timestamp range for the requested media.
     * This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
-    *
-    * '''Note:'''The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
+    * The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly at or after the start time are included in the session. Fragments that start before the start time and continue past it are not included in the session.
     */
   @js.native
   trait DASHTimestampRange extends js.Object {
@@ -307,7 +307,7 @@ package kinesisvideoarchivedmedia {
     var DisplayFragmentNumber: js.UndefOr[DASHDisplayFragmentNumber]
     var DisplayFragmentTimestamp: js.UndefOr[DASHDisplayFragmentTimestamp]
     var Expires: js.UndefOr[Expires]
-    var MaxManifestFragmentResults: js.UndefOr[PageLimit]
+    var MaxManifestFragmentResults: js.UndefOr[DASHMaxResults]
     var PlaybackMode: js.UndefOr[DASHPlaybackMode]
     var StreamARN: js.UndefOr[ResourceARN]
     var StreamName: js.UndefOr[StreamName]
@@ -320,7 +320,7 @@ package kinesisvideoarchivedmedia {
         DisplayFragmentNumber: js.UndefOr[DASHDisplayFragmentNumber] = js.undefined,
         DisplayFragmentTimestamp: js.UndefOr[DASHDisplayFragmentTimestamp] = js.undefined,
         Expires: js.UndefOr[Expires] = js.undefined,
-        MaxManifestFragmentResults: js.UndefOr[PageLimit] = js.undefined,
+        MaxManifestFragmentResults: js.UndefOr[DASHMaxResults] = js.undefined,
         PlaybackMode: js.UndefOr[DASHPlaybackMode] = js.undefined,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
@@ -361,7 +361,7 @@ package kinesisvideoarchivedmedia {
     var DisplayFragmentTimestamp: js.UndefOr[HLSDisplayFragmentTimestamp]
     var Expires: js.UndefOr[Expires]
     var HLSFragmentSelector: js.UndefOr[HLSFragmentSelector]
-    var MaxMediaPlaylistFragmentResults: js.UndefOr[PageLimit]
+    var MaxMediaPlaylistFragmentResults: js.UndefOr[HLSMaxResults]
     var PlaybackMode: js.UndefOr[HLSPlaybackMode]
     var StreamARN: js.UndefOr[ResourceARN]
     var StreamName: js.UndefOr[StreamName]
@@ -375,7 +375,7 @@ package kinesisvideoarchivedmedia {
         DisplayFragmentTimestamp: js.UndefOr[HLSDisplayFragmentTimestamp] = js.undefined,
         Expires: js.UndefOr[Expires] = js.undefined,
         HLSFragmentSelector: js.UndefOr[HLSFragmentSelector] = js.undefined,
-        MaxMediaPlaylistFragmentResults: js.UndefOr[PageLimit] = js.undefined,
+        MaxMediaPlaylistFragmentResults: js.UndefOr[HLSMaxResults] = js.undefined,
         PlaybackMode: js.UndefOr[HLSPlaybackMode] = js.undefined,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
@@ -413,19 +413,23 @@ package kinesisvideoarchivedmedia {
   @js.native
   trait GetMediaForFragmentListInput extends js.Object {
     var Fragments: FragmentNumberList
-    var StreamName: StreamName
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
   }
 
   object GetMediaForFragmentListInput {
     @inline
     def apply(
         Fragments: FragmentNumberList,
-        StreamName: StreamName
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
     ): GetMediaForFragmentListInput = {
       val __obj = js.Dynamic.literal(
-        "Fragments" -> Fragments.asInstanceOf[js.Any],
-        "StreamName" -> StreamName.asInstanceOf[js.Any]
+        "Fragments" -> Fragments.asInstanceOf[js.Any]
       )
+
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMediaForFragmentListInput]
     }
   }
@@ -510,8 +514,6 @@ package kinesisvideoarchivedmedia {
 
   /** The start and end of the timestamp range for the requested media.
     * This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
-    *
-    * '''Note:'''The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.
     */
   @js.native
   trait HLSTimestampRange extends js.Object {
@@ -534,27 +536,28 @@ package kinesisvideoarchivedmedia {
 
   @js.native
   trait ListFragmentsInput extends js.Object {
-    var StreamName: StreamName
     var FragmentSelector: js.UndefOr[FragmentSelector]
-    var MaxResults: js.UndefOr[PageLimit]
+    var MaxResults: js.UndefOr[ListFragmentsMaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
   }
 
   object ListFragmentsInput {
     @inline
     def apply(
-        StreamName: StreamName,
         FragmentSelector: js.UndefOr[FragmentSelector] = js.undefined,
-        MaxResults: js.UndefOr[PageLimit] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        MaxResults: js.UndefOr[ListFragmentsMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
     ): ListFragmentsInput = {
-      val __obj = js.Dynamic.literal(
-        "StreamName" -> StreamName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       FragmentSelector.foreach(__v => __obj.updateDynamic("FragmentSelector")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFragmentsInput]
     }
   }

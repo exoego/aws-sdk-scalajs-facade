@@ -19,16 +19,20 @@ package object acmpca {
   type CertificateBodyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CertificateChain = String
   type CertificateChainBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CertificatePolicyList = js.Array[PolicyInformation]
   type CountryCodeString = String
   type CsrBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CsrBody = String
   type CustomObjectIdentifier = String
+  type ExtendedKeyUsageList = js.Array[ExtendedKeyUsage]
+  type GeneralNameList = js.Array[GeneralName]
   type IdempotencyToken = String
   type Integer1To5000 = Int
   type MaxResults = Int
   type NextToken = String
   type PermanentDeletionTimeInDays = Int
   type PermissionList = js.Array[Permission]
+  type PolicyQualifierInfoList = js.Array[PolicyQualifierInfo]
   type PositiveLong = Double
   type Principal = String
   type S3BucketName = String
@@ -108,7 +112,7 @@ package acmpca {
     def updateCertificateAuthority(params: UpdateCertificateAuthorityRequest): Request[js.Object] = js.native
   }
 
-  /** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The ```Subject``` field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The ```Subject``` must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
+  /** Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.
     */
   @js.native
   trait ASN1Subject extends js.Object {
@@ -226,6 +230,28 @@ package acmpca {
     val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
 
     @inline def values = js.Array(IssueCertificate, GetCertificate, ListPermissions)
+  }
+
+  /** Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored.
+    * If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies [[xxxxx|order of operation rules]] to determine what information is used.
+    */
+  @js.native
+  trait ApiPassthrough extends js.Object {
+    var Extensions: js.UndefOr[Extensions]
+    var Subject: js.UndefOr[ASN1Subject]
+  }
+
+  object ApiPassthrough {
+    @inline
+    def apply(
+        Extensions: js.UndefOr[Extensions] = js.undefined,
+        Subject: js.UndefOr[ASN1Subject] = js.undefined
+    ): ApiPassthrough = {
+      val __obj = js.Dynamic.literal()
+      Extensions.foreach(__v => __obj.updateDynamic("Extensions")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApiPassthrough]
+    }
   }
 
   @js.native
@@ -701,6 +727,70 @@ package acmpca {
     }
   }
 
+  /** Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.
+    */
+  @js.native
+  trait ExtendedKeyUsage extends js.Object {
+    var ExtendedKeyUsageObjectIdentifier: js.UndefOr[CustomObjectIdentifier]
+    var ExtendedKeyUsageType: js.UndefOr[ExtendedKeyUsageType]
+  }
+
+  object ExtendedKeyUsage {
+    @inline
+    def apply(
+        ExtendedKeyUsageObjectIdentifier: js.UndefOr[CustomObjectIdentifier] = js.undefined,
+        ExtendedKeyUsageType: js.UndefOr[ExtendedKeyUsageType] = js.undefined
+    ): ExtendedKeyUsage = {
+      val __obj = js.Dynamic.literal()
+      ExtendedKeyUsageObjectIdentifier.foreach(__v => __obj.updateDynamic("ExtendedKeyUsageObjectIdentifier")(__v.asInstanceOf[js.Any]))
+      ExtendedKeyUsageType.foreach(__v => __obj.updateDynamic("ExtendedKeyUsageType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExtendedKeyUsage]
+    }
+  }
+
+  @js.native
+  sealed trait ExtendedKeyUsageType extends js.Any
+  object ExtendedKeyUsageType {
+    val SERVER_AUTH = "SERVER_AUTH".asInstanceOf[ExtendedKeyUsageType]
+    val CLIENT_AUTH = "CLIENT_AUTH".asInstanceOf[ExtendedKeyUsageType]
+    val CODE_SIGNING = "CODE_SIGNING".asInstanceOf[ExtendedKeyUsageType]
+    val EMAIL_PROTECTION = "EMAIL_PROTECTION".asInstanceOf[ExtendedKeyUsageType]
+    val TIME_STAMPING = "TIME_STAMPING".asInstanceOf[ExtendedKeyUsageType]
+    val OCSP_SIGNING = "OCSP_SIGNING".asInstanceOf[ExtendedKeyUsageType]
+    val SMART_CARD_LOGIN = "SMART_CARD_LOGIN".asInstanceOf[ExtendedKeyUsageType]
+    val DOCUMENT_SIGNING = "DOCUMENT_SIGNING".asInstanceOf[ExtendedKeyUsageType]
+    val CERTIFICATE_TRANSPARENCY = "CERTIFICATE_TRANSPARENCY".asInstanceOf[ExtendedKeyUsageType]
+
+    @inline def values = js.Array(SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, EMAIL_PROTECTION, TIME_STAMPING, OCSP_SIGNING, SMART_CARD_LOGIN, DOCUMENT_SIGNING, CERTIFICATE_TRANSPARENCY)
+  }
+
+  /** Contains X.509 extension information for a certificate.
+    */
+  @js.native
+  trait Extensions extends js.Object {
+    var CertificatePolicies: js.UndefOr[CertificatePolicyList]
+    var ExtendedKeyUsage: js.UndefOr[ExtendedKeyUsageList]
+    var KeyUsage: js.UndefOr[KeyUsage]
+    var SubjectAlternativeNames: js.UndefOr[GeneralNameList]
+  }
+
+  object Extensions {
+    @inline
+    def apply(
+        CertificatePolicies: js.UndefOr[CertificatePolicyList] = js.undefined,
+        ExtendedKeyUsage: js.UndefOr[ExtendedKeyUsageList] = js.undefined,
+        KeyUsage: js.UndefOr[KeyUsage] = js.undefined,
+        SubjectAlternativeNames: js.UndefOr[GeneralNameList] = js.undefined
+    ): Extensions = {
+      val __obj = js.Dynamic.literal()
+      CertificatePolicies.foreach(__v => __obj.updateDynamic("CertificatePolicies")(__v.asInstanceOf[js.Any]))
+      ExtendedKeyUsage.foreach(__v => __obj.updateDynamic("ExtendedKeyUsage")(__v.asInstanceOf[js.Any]))
+      KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
+      SubjectAlternativeNames.foreach(__v => __obj.updateDynamic("SubjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Extensions]
+    }
+  }
+
   @js.native
   sealed trait FailureReason extends js.Any
   object FailureReason {
@@ -711,7 +801,7 @@ package acmpca {
     @inline def values = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
   }
 
-  /** Describes an ASN.1 X.400 <code>GeneralName</code> as defined in [[https://tools.ietf.org/html/rfc5280|RFC 5280]]. Only one of the following naming options should be providied. Providing more than one option results in an <code>InvalidArgsException</code> error.
+  /** Describes an ASN.1 X.400 <code>GeneralName</code> as defined in [[https://tools.ietf.org/html/rfc5280|RFC 5280]]. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.
     */
   @js.native
   trait GeneralName extends js.Object {
@@ -921,8 +1011,10 @@ package acmpca {
     var Csr: CsrBlob
     var SigningAlgorithm: SigningAlgorithm
     var Validity: Validity
+    var ApiPassthrough: js.UndefOr[ApiPassthrough]
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
     var TemplateArn: js.UndefOr[Arn]
+    var ValidityNotBefore: js.UndefOr[Validity]
   }
 
   object IssueCertificateRequest {
@@ -932,8 +1024,10 @@ package acmpca {
         Csr: CsrBlob,
         SigningAlgorithm: SigningAlgorithm,
         Validity: Validity,
+        ApiPassthrough: js.UndefOr[ApiPassthrough] = js.undefined,
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
-        TemplateArn: js.UndefOr[Arn] = js.undefined
+        TemplateArn: js.UndefOr[Arn] = js.undefined,
+        ValidityNotBefore: js.UndefOr[Validity] = js.undefined
     ): IssueCertificateRequest = {
       val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
@@ -942,8 +1036,10 @@ package acmpca {
         "Validity" -> Validity.asInstanceOf[js.Any]
       )
 
+      ApiPassthrough.foreach(__v => __obj.updateDynamic("ApiPassthrough")(__v.asInstanceOf[js.Any]))
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
       TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
+      ValidityNotBefore.foreach(__v => __obj.updateDynamic("ValidityNotBefore")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IssueCertificateRequest]
     }
   }
@@ -1199,6 +1295,59 @@ package acmpca {
     }
   }
 
+  /** Defines the X.509 <code>CertificatePolicies</code> extension.
+    */
+  @js.native
+  trait PolicyInformation extends js.Object {
+    var CertPolicyId: CustomObjectIdentifier
+    var PolicyQualifiers: js.UndefOr[PolicyQualifierInfoList]
+  }
+
+  object PolicyInformation {
+    @inline
+    def apply(
+        CertPolicyId: CustomObjectIdentifier,
+        PolicyQualifiers: js.UndefOr[PolicyQualifierInfoList] = js.undefined
+    ): PolicyInformation = {
+      val __obj = js.Dynamic.literal(
+        "CertPolicyId" -> CertPolicyId.asInstanceOf[js.Any]
+      )
+
+      PolicyQualifiers.foreach(__v => __obj.updateDynamic("PolicyQualifiers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyInformation]
+    }
+  }
+
+  @js.native
+  sealed trait PolicyQualifierId extends js.Any
+  object PolicyQualifierId {
+    val CPS = "CPS".asInstanceOf[PolicyQualifierId]
+
+    @inline def values = js.Array(CPS)
+  }
+
+  /** Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.
+    */
+  @js.native
+  trait PolicyQualifierInfo extends js.Object {
+    var PolicyQualifierId: PolicyQualifierId
+    var Qualifier: Qualifier
+  }
+
+  object PolicyQualifierInfo {
+    @inline
+    def apply(
+        PolicyQualifierId: PolicyQualifierId,
+        Qualifier: Qualifier
+    ): PolicyQualifierInfo = {
+      val __obj = js.Dynamic.literal(
+        "PolicyQualifierId" -> PolicyQualifierId.asInstanceOf[js.Any],
+        "Qualifier" -> Qualifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PolicyQualifierInfo]
+    }
+  }
+
   @js.native
   trait PutPolicyRequest extends js.Object {
     var Policy: AWSPolicy
@@ -1216,6 +1365,25 @@ package acmpca {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PutPolicyRequest]
+    }
+  }
+
+  /** Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the [[https://tools.ietf.org/html/rfc5280#section-4.2.1.4|certification practice statement (CPS) qualifier]] defined in RFC 5280.
+    */
+  @js.native
+  trait Qualifier extends js.Object {
+    var CpsUri: String256
+  }
+
+  object Qualifier {
+    @inline
+    def apply(
+        CpsUri: String256
+    ): Qualifier = {
+      val __obj = js.Dynamic.literal(
+        "CpsUri" -> CpsUri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Qualifier]
     }
   }
 
@@ -1401,8 +1569,8 @@ package acmpca {
     }
   }
 
-  /** Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280.
-    * You can issue a certificate by calling the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html|IssueCertificate]] action.
+  /** Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280.
+    * ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.
     */
   @js.native
   trait Validity extends js.Object {

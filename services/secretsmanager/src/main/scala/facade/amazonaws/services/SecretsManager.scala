@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object secretsmanager {
+  type AddReplicaRegionListType = js.Array[ReplicaRegionType]
   type AutomaticallyRotateAfterDaysType = Double
   type BooleanType = Boolean
   type ClientRequestTokenType = String
@@ -36,6 +37,9 @@ package object secretsmanager {
   type PasswordLengthType = Double
   type RandomPasswordType = String
   type RecoveryWindowInDaysType = Double
+  type RegionType = String
+  type RemoveReplicaRegionListType = js.Array[RegionType]
+  type ReplicationStatusListType = js.Array[ReplicationStatusType]
   type RequireEachIncludedTypeType = Boolean
   type RotationEnabledType = Boolean
   type RotationLambdaARNType = String
@@ -50,6 +54,7 @@ package object secretsmanager {
   type SecretVersionStagesType = js.Array[SecretVersionStageType]
   type SecretVersionsListType = js.Array[SecretVersionsListEntry]
   type SecretVersionsToStagesMapType = js.Dictionary[SecretVersionStagesType]
+  type StatusMessageType = String
   type TagKeyListType = js.Array[TagKeyType]
   type TagKeyType = String
   type TagListType = js.Array[Tag]
@@ -71,8 +76,11 @@ package object secretsmanager {
     @inline def listSecretsFuture(params: ListSecretsRequest): Future[ListSecretsResponse] = service.listSecrets(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
     @inline def putSecretValueFuture(params: PutSecretValueRequest): Future[PutSecretValueResponse] = service.putSecretValue(params).promise().toFuture
+    @inline def removeRegionsFromReplicationFuture(params: RemoveRegionsFromReplicationRequest): Future[RemoveRegionsFromReplicationResponse] = service.removeRegionsFromReplication(params).promise().toFuture
+    @inline def replicateSecretToRegionsFuture(params: ReplicateSecretToRegionsRequest): Future[ReplicateSecretToRegionsResponse] = service.replicateSecretToRegions(params).promise().toFuture
     @inline def restoreSecretFuture(params: RestoreSecretRequest): Future[RestoreSecretResponse] = service.restoreSecret(params).promise().toFuture
     @inline def rotateSecretFuture(params: RotateSecretRequest): Future[RotateSecretResponse] = service.rotateSecret(params).promise().toFuture
+    @inline def stopReplicationToReplicaFuture(params: StopReplicationToReplicaRequest): Future[StopReplicationToReplicaResponse] = service.stopReplicationToReplica(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] = service.updateSecret(params).promise().toFuture
@@ -100,8 +108,11 @@ package secretsmanager {
     def listSecrets(params: ListSecretsRequest): Request[ListSecretsResponse] = js.native
     def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def putSecretValue(params: PutSecretValueRequest): Request[PutSecretValueResponse] = js.native
+    def removeRegionsFromReplication(params: RemoveRegionsFromReplicationRequest): Request[RemoveRegionsFromReplicationResponse] = js.native
+    def replicateSecretToRegions(params: ReplicateSecretToRegionsRequest): Request[ReplicateSecretToRegionsResponse] = js.native
     def restoreSecret(params: RestoreSecretRequest): Request[RestoreSecretResponse] = js.native
     def rotateSecret(params: RotateSecretRequest): Request[RotateSecretResponse] = js.native
+    def stopReplicationToReplica(params: StopReplicationToReplicaRequest): Request[StopReplicationToReplicaResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateSecret(params: UpdateSecretRequest): Request[UpdateSecretResponse] = js.native
@@ -151,8 +162,10 @@ package secretsmanager {
   @js.native
   trait CreateSecretRequest extends js.Object {
     var Name: NameType
+    var AddReplicaRegions: js.UndefOr[AddReplicaRegionListType]
     var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
     var Description: js.UndefOr[DescriptionType]
+    var ForceOverwriteReplicaSecret: js.UndefOr[BooleanType]
     var KmsKeyId: js.UndefOr[KmsKeyIdType]
     var SecretBinary: js.UndefOr[SecretBinaryType]
     var SecretString: js.UndefOr[SecretStringType]
@@ -163,8 +176,10 @@ package secretsmanager {
     @inline
     def apply(
         Name: NameType,
+        AddReplicaRegions: js.UndefOr[AddReplicaRegionListType] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
+        ForceOverwriteReplicaSecret: js.UndefOr[BooleanType] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
         SecretBinary: js.UndefOr[SecretBinaryType] = js.undefined,
         SecretString: js.UndefOr[SecretStringType] = js.undefined,
@@ -174,8 +189,10 @@ package secretsmanager {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AddReplicaRegions.foreach(__v => __obj.updateDynamic("AddReplicaRegions")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ForceOverwriteReplicaSecret.foreach(__v => __obj.updateDynamic("ForceOverwriteReplicaSecret")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       SecretBinary.foreach(__v => __obj.updateDynamic("SecretBinary")(__v.asInstanceOf[js.Any]))
       SecretString.foreach(__v => __obj.updateDynamic("SecretString")(__v.asInstanceOf[js.Any]))
@@ -188,6 +205,7 @@ package secretsmanager {
   trait CreateSecretResponse extends js.Object {
     var ARN: js.UndefOr[SecretARNType]
     var Name: js.UndefOr[SecretNameType]
+    var ReplicationStatus: js.UndefOr[ReplicationStatusListType]
     var VersionId: js.UndefOr[SecretVersionIdType]
   }
 
@@ -196,11 +214,13 @@ package secretsmanager {
     def apply(
         ARN: js.UndefOr[SecretARNType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
+        ReplicationStatus: js.UndefOr[ReplicationStatusListType] = js.undefined,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined
     ): CreateSecretResponse = {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSecretResponse]
     }
@@ -317,6 +337,8 @@ package secretsmanager {
     var LastRotatedDate: js.UndefOr[LastRotatedDateType]
     var Name: js.UndefOr[SecretNameType]
     var OwningService: js.UndefOr[OwningServiceType]
+    var PrimaryRegion: js.UndefOr[RegionType]
+    var ReplicationStatus: js.UndefOr[ReplicationStatusListType]
     var RotationEnabled: js.UndefOr[RotationEnabledType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
@@ -337,6 +359,8 @@ package secretsmanager {
         LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
         OwningService: js.UndefOr[OwningServiceType] = js.undefined,
+        PrimaryRegion: js.UndefOr[RegionType] = js.undefined,
+        ReplicationStatus: js.UndefOr[ReplicationStatusListType] = js.undefined,
         RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined,
         RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
         RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
@@ -354,6 +378,8 @@ package secretsmanager {
       LastRotatedDate.foreach(__v => __obj.updateDynamic("LastRotatedDate")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwningService.foreach(__v => __obj.updateDynamic("OwningService")(__v.asInstanceOf[js.Any]))
+      PrimaryRegion.foreach(__v => __obj.updateDynamic("PrimaryRegion")(__v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
       RotationEnabled.foreach(__v => __obj.updateDynamic("RotationEnabled")(__v.asInstanceOf[js.Any]))
       RotationLambdaARN.foreach(__v => __obj.updateDynamic("RotationLambdaARN")(__v.asInstanceOf[js.Any]))
       RotationRules.foreach(__v => __obj.updateDynamic("RotationRules")(__v.asInstanceOf[js.Any]))
@@ -363,7 +389,7 @@ package secretsmanager {
     }
   }
 
-  /** Allows you to filter your list of secrets.
+  /** Allows you to add filters when you use the search function in Secrets Manager.
     */
   @js.native
   trait Filter extends js.Object {
@@ -391,9 +417,10 @@ package secretsmanager {
     val name = "name".asInstanceOf[FilterNameStringType]
     val `tag-key` = "tag-key".asInstanceOf[FilterNameStringType]
     val `tag-value` = "tag-value".asInstanceOf[FilterNameStringType]
+    val `primary-region` = "primary-region".asInstanceOf[FilterNameStringType]
     val all = "all".asInstanceOf[FilterNameStringType]
 
-    @inline def values = js.Array(description, name, `tag-key`, `tag-value`, all)
+    @inline def values = js.Array(description, name, `tag-key`, `tag-value`, `primary-region`, all)
   }
 
   @js.native
@@ -741,6 +768,139 @@ package secretsmanager {
   }
 
   @js.native
+  trait RemoveRegionsFromReplicationRequest extends js.Object {
+    var RemoveReplicaRegions: RemoveReplicaRegionListType
+    var SecretId: SecretIdType
+  }
+
+  object RemoveRegionsFromReplicationRequest {
+    @inline
+    def apply(
+        RemoveReplicaRegions: RemoveReplicaRegionListType,
+        SecretId: SecretIdType
+    ): RemoveRegionsFromReplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "RemoveReplicaRegions" -> RemoveReplicaRegions.asInstanceOf[js.Any],
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveRegionsFromReplicationRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveRegionsFromReplicationResponse extends js.Object {
+    var ARN: js.UndefOr[SecretARNType]
+    var ReplicationStatus: js.UndefOr[ReplicationStatusListType]
+  }
+
+  object RemoveRegionsFromReplicationResponse {
+    @inline
+    def apply(
+        ARN: js.UndefOr[SecretARNType] = js.undefined,
+        ReplicationStatus: js.UndefOr[ReplicationStatusListType] = js.undefined
+    ): RemoveRegionsFromReplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveRegionsFromReplicationResponse]
+    }
+  }
+
+  /** (Optional) Custom type consisting of a <code>Region</code> (required) and the <code>KmsKeyId</code> which can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.
+    */
+  @js.native
+  trait ReplicaRegionType extends js.Object {
+    var KmsKeyId: js.UndefOr[KmsKeyIdType]
+    var Region: js.UndefOr[RegionType]
+  }
+
+  object ReplicaRegionType {
+    @inline
+    def apply(
+        KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
+        Region: js.UndefOr[RegionType] = js.undefined
+    ): ReplicaRegionType = {
+      val __obj = js.Dynamic.literal()
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicaRegionType]
+    }
+  }
+
+  @js.native
+  trait ReplicateSecretToRegionsRequest extends js.Object {
+    var AddReplicaRegions: AddReplicaRegionListType
+    var SecretId: SecretIdType
+    var ForceOverwriteReplicaSecret: js.UndefOr[BooleanType]
+  }
+
+  object ReplicateSecretToRegionsRequest {
+    @inline
+    def apply(
+        AddReplicaRegions: AddReplicaRegionListType,
+        SecretId: SecretIdType,
+        ForceOverwriteReplicaSecret: js.UndefOr[BooleanType] = js.undefined
+    ): ReplicateSecretToRegionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AddReplicaRegions" -> AddReplicaRegions.asInstanceOf[js.Any],
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
+
+      ForceOverwriteReplicaSecret.foreach(__v => __obj.updateDynamic("ForceOverwriteReplicaSecret")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicateSecretToRegionsRequest]
+    }
+  }
+
+  @js.native
+  trait ReplicateSecretToRegionsResponse extends js.Object {
+    var ARN: js.UndefOr[SecretARNType]
+    var ReplicationStatus: js.UndefOr[ReplicationStatusListType]
+  }
+
+  object ReplicateSecretToRegionsResponse {
+    @inline
+    def apply(
+        ARN: js.UndefOr[SecretARNType] = js.undefined,
+        ReplicationStatus: js.UndefOr[ReplicationStatusListType] = js.undefined
+    ): ReplicateSecretToRegionsResponse = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicateSecretToRegionsResponse]
+    }
+  }
+
+  /** A replication object consisting of a <code>RegionReplicationStatus</code> object and includes a Region, KMSKeyId, status, and status message.
+    */
+  @js.native
+  trait ReplicationStatusType extends js.Object {
+    var KmsKeyId: js.UndefOr[KmsKeyIdType]
+    var LastAccessedDate: js.UndefOr[LastAccessedDateType]
+    var Region: js.UndefOr[RegionType]
+    var Status: js.UndefOr[StatusType]
+    var StatusMessage: js.UndefOr[StatusMessageType]
+  }
+
+  object ReplicationStatusType {
+    @inline
+    def apply(
+        KmsKeyId: js.UndefOr[KmsKeyIdType] = js.undefined,
+        LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
+        Region: js.UndefOr[RegionType] = js.undefined,
+        Status: js.UndefOr[StatusType] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessageType] = js.undefined
+    ): ReplicationStatusType = {
+      val __obj = js.Dynamic.literal()
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LastAccessedDate.foreach(__v => __obj.updateDynamic("LastAccessedDate")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationStatusType]
+    }
+  }
+
+  @js.native
   trait RestoreSecretRequest extends js.Object {
     var SecretId: SecretIdType
   }
@@ -857,6 +1017,7 @@ package secretsmanager {
     var LastRotatedDate: js.UndefOr[LastRotatedDateType]
     var Name: js.UndefOr[SecretNameType]
     var OwningService: js.UndefOr[OwningServiceType]
+    var PrimaryRegion: js.UndefOr[RegionType]
     var RotationEnabled: js.UndefOr[RotationEnabledType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
@@ -877,6 +1038,7 @@ package secretsmanager {
         LastRotatedDate: js.UndefOr[LastRotatedDateType] = js.undefined,
         Name: js.UndefOr[SecretNameType] = js.undefined,
         OwningService: js.UndefOr[OwningServiceType] = js.undefined,
+        PrimaryRegion: js.UndefOr[RegionType] = js.undefined,
         RotationEnabled: js.UndefOr[RotationEnabledType] = js.undefined,
         RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
         RotationRules: js.UndefOr[RotationRulesType] = js.undefined,
@@ -894,6 +1056,7 @@ package secretsmanager {
       LastRotatedDate.foreach(__v => __obj.updateDynamic("LastRotatedDate")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OwningService.foreach(__v => __obj.updateDynamic("OwningService")(__v.asInstanceOf[js.Any]))
+      PrimaryRegion.foreach(__v => __obj.updateDynamic("PrimaryRegion")(__v.asInstanceOf[js.Any]))
       RotationEnabled.foreach(__v => __obj.updateDynamic("RotationEnabled")(__v.asInstanceOf[js.Any]))
       RotationLambdaARN.foreach(__v => __obj.updateDynamic("RotationLambdaARN")(__v.asInstanceOf[js.Any]))
       RotationRules.foreach(__v => __obj.updateDynamic("RotationRules")(__v.asInstanceOf[js.Any]))
@@ -937,6 +1100,49 @@ package secretsmanager {
     val desc = "desc".asInstanceOf[SortOrderType]
 
     @inline def values = js.Array(asc, desc)
+  }
+
+  @js.native
+  sealed trait StatusType extends js.Any
+  object StatusType {
+    val InSync = "InSync".asInstanceOf[StatusType]
+    val Failed = "Failed".asInstanceOf[StatusType]
+    val InProgress = "InProgress".asInstanceOf[StatusType]
+
+    @inline def values = js.Array(InSync, Failed, InProgress)
+  }
+
+  @js.native
+  trait StopReplicationToReplicaRequest extends js.Object {
+    var SecretId: SecretIdType
+  }
+
+  object StopReplicationToReplicaRequest {
+    @inline
+    def apply(
+        SecretId: SecretIdType
+    ): StopReplicationToReplicaRequest = {
+      val __obj = js.Dynamic.literal(
+        "SecretId" -> SecretId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopReplicationToReplicaRequest]
+    }
+  }
+
+  @js.native
+  trait StopReplicationToReplicaResponse extends js.Object {
+    var ARN: js.UndefOr[SecretARNType]
+  }
+
+  object StopReplicationToReplicaResponse {
+    @inline
+    def apply(
+        ARN: js.UndefOr[SecretARNType] = js.undefined
+    ): StopReplicationToReplicaResponse = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopReplicationToReplicaResponse]
+    }
   }
 
   /** A structure that contains information about a tag.

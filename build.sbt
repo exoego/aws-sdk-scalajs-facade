@@ -127,6 +127,7 @@ lazy val awsEMRcontainers = defineAwsProject("EMRcontainers")
 lazy val awsES = defineAwsProject("ES")
 lazy val awsEventBridge = defineAwsProject("EventBridge")
 lazy val awsFirehose = defineAwsProject("Firehose")
+lazy val awsFis = defineAwsProject("Fis")
 lazy val awsFMS = defineAwsProject("FMS")
 lazy val awsForecast = defineAwsProject("Forecast")
 lazy val awsForecastQuery = defineAwsProject("ForecastQuery")
@@ -137,6 +138,7 @@ lazy val awsGlacier = defineAwsProject("Glacier")
 lazy val awsGlobalAccelerator = defineAwsProject("GlobalAccelerator")
 lazy val awsGlue = defineAwsProject("Glue")
 lazy val awsGreengrass = defineAwsProject("Greengrass")
+lazy val awsGreengrassV2 = defineAwsProject("GreengrassV2")
 lazy val awsGroundStation = defineAwsProject("GroundStation")
 lazy val awsGuardDuty = defineAwsProject("GuardDuty")
 lazy val awsHealth = defineAwsProject("Health")
@@ -161,7 +163,6 @@ lazy val awsIoTSecureTunneling = defineAwsProject("IoTSecureTunneling")
 lazy val awsIoTSiteWise = defineAwsProject("IoTSiteWise")
 lazy val awsIotThingsGraph = defineAwsProject("IotThingsGraph")
 lazy val awsIoTWireless = defineAwsProject("IoTWireless")
-lazy val awsGreengrassV2 = defineAwsProject("GreengrassV2")
 lazy val awsIVS = defineAwsProject("IVS")
 lazy val awsKafka = defineAwsProject("Kafka")
 lazy val awsKendra = defineAwsProject("Kendra")
@@ -176,7 +177,9 @@ lazy val awsKMS = defineAwsProject("KMS")
 lazy val awsLakeFormation = defineAwsProject("LakeFormation")
 lazy val awsLambda = defineAwsProject("Lambda")
 lazy val awsLexModelBuildingService = defineAwsProject("LexModelBuildingService")
+lazy val awsLexModelsV2 = defineAwsProject("LexModelsV2")
 lazy val awsLexRuntime = defineAwsProject("LexRuntime")
+lazy val awsLexRuntimeV2 = defineAwsProject("LexRuntimeV2")
 lazy val awsLicenseManager = defineAwsProject("LicenseManager")
 lazy val awsLightsail = defineAwsProject("Lightsail")
 lazy val awsLocation = defineAwsProject("Location")
@@ -408,6 +411,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsES,
   awsEventBridge,
   awsFirehose,
+  awsFis,
   awsFMS,
   awsForecast,
   awsForecastQuery,
@@ -456,7 +460,9 @@ lazy val subProjects: Seq[Project] = Seq(
   awsLakeFormation,
   awsLambda,
   awsLexModelBuildingService,
+  awsLexModelsV2,
   awsLexRuntime,
+  awsLexRuntimeV2,
   awsLicenseManager,
   awsLightsail,
   awsLocation,

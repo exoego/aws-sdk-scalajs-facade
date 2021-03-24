@@ -1349,8 +1349,9 @@ package configservice {
   object ConformancePackComplianceType {
     val COMPLIANT = "COMPLIANT".asInstanceOf[ConformancePackComplianceType]
     val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ConformancePackComplianceType]
+    val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[ConformancePackComplianceType]
 
-    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
+    @inline def values = js.Array(COMPLIANT, NON_COMPLIANT, INSUFFICIENT_DATA)
   }
 
   /** Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region.
@@ -1924,6 +1925,7 @@ package configservice {
     var name: js.UndefOr[ChannelName]
     var s3BucketName: js.UndefOr[String]
     var s3KeyPrefix: js.UndefOr[String]
+    var s3KmsKeyArn: js.UndefOr[String]
     var snsTopicARN: js.UndefOr[String]
   }
 
@@ -1934,6 +1936,7 @@ package configservice {
         name: js.UndefOr[ChannelName] = js.undefined,
         s3BucketName: js.UndefOr[String] = js.undefined,
         s3KeyPrefix: js.UndefOr[String] = js.undefined,
+        s3KmsKeyArn: js.UndefOr[String] = js.undefined,
         snsTopicARN: js.UndefOr[String] = js.undefined
     ): DeliveryChannel = {
       val __obj = js.Dynamic.literal()
@@ -1941,6 +1944,7 @@ package configservice {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
       s3KeyPrefix.foreach(__v => __obj.updateDynamic("s3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      s3KmsKeyArn.foreach(__v => __obj.updateDynamic("s3KmsKeyArn")(__v.asInstanceOf[js.Any]))
       snsTopicARN.foreach(__v => __obj.updateDynamic("snsTopicARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryChannel]
     }
@@ -3116,6 +3120,8 @@ package configservice {
     }
   }
 
+  /** Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
+    */
   @js.native
   trait ExternalEvaluation extends js.Object {
     var ComplianceResourceId: BaseResourceId

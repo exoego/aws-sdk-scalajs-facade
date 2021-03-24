@@ -3254,6 +3254,7 @@ package elasticache {
     var GlobalReplicationGroupId: String
     var AutomaticFailoverEnabled: js.UndefOr[BooleanOptional]
     var CacheNodeType: js.UndefOr[String]
+    var CacheParameterGroupName: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var GlobalReplicationGroupDescription: js.UndefOr[String]
   }
@@ -3265,6 +3266,7 @@ package elasticache {
         GlobalReplicationGroupId: String,
         AutomaticFailoverEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         CacheNodeType: js.UndefOr[String] = js.undefined,
+        CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         GlobalReplicationGroupDescription: js.UndefOr[String] = js.undefined
     ): ModifyGlobalReplicationGroupMessage = {
@@ -3275,6 +3277,7 @@ package elasticache {
 
       AutomaticFailoverEnabled.foreach(__v => __obj.updateDynamic("AutomaticFailoverEnabled")(__v.asInstanceOf[js.Any]))
       CacheNodeType.foreach(__v => __obj.updateDynamic("CacheNodeType")(__v.asInstanceOf[js.Any]))
+      CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalReplicationGroupDescription.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyGlobalReplicationGroupMessage]

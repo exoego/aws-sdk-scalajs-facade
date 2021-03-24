@@ -68,16 +68,19 @@ package object macie2 {
     @inline def describeOrganizationConfigurationFuture(params: DescribeOrganizationConfigurationRequest): Future[DescribeOrganizationConfigurationResponse] = service.describeOrganizationConfiguration(params).promise().toFuture
     @inline def disableMacieFuture(params: DisableMacieRequest): Future[DisableMacieResponse] = service.disableMacie(params).promise().toFuture
     @inline def disableOrganizationAdminAccountFuture(params: DisableOrganizationAdminAccountRequest): Future[DisableOrganizationAdminAccountResponse] = service.disableOrganizationAdminAccount(params).promise().toFuture
+    @inline def disassociateFromAdministratorAccountFuture(params: DisassociateFromAdministratorAccountRequest): Future[DisassociateFromAdministratorAccountResponse] = service.disassociateFromAdministratorAccount(params).promise().toFuture
     @inline def disassociateFromMasterAccountFuture(params: DisassociateFromMasterAccountRequest): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
     @inline def disassociateMemberFuture(params: DisassociateMemberRequest): Future[DisassociateMemberResponse] = service.disassociateMember(params).promise().toFuture
     @inline def enableMacieFuture(params: EnableMacieRequest): Future[EnableMacieResponse] = service.enableMacie(params).promise().toFuture
     @inline def enableOrganizationAdminAccountFuture(params: EnableOrganizationAdminAccountRequest): Future[EnableOrganizationAdminAccountResponse] = service.enableOrganizationAdminAccount(params).promise().toFuture
+    @inline def getAdministratorAccountFuture(params: GetAdministratorAccountRequest): Future[GetAdministratorAccountResponse] = service.getAdministratorAccount(params).promise().toFuture
     @inline def getBucketStatisticsFuture(params: GetBucketStatisticsRequest): Future[GetBucketStatisticsResponse] = service.getBucketStatistics(params).promise().toFuture
     @inline def getClassificationExportConfigurationFuture(params: GetClassificationExportConfigurationRequest): Future[GetClassificationExportConfigurationResponse] = service.getClassificationExportConfiguration(params).promise().toFuture
     @inline def getCustomDataIdentifierFuture(params: GetCustomDataIdentifierRequest): Future[GetCustomDataIdentifierResponse] = service.getCustomDataIdentifier(params).promise().toFuture
     @inline def getFindingStatisticsFuture(params: GetFindingStatisticsRequest): Future[GetFindingStatisticsResponse] = service.getFindingStatistics(params).promise().toFuture
     @inline def getFindingsFilterFuture(params: GetFindingsFilterRequest): Future[GetFindingsFilterResponse] = service.getFindingsFilter(params).promise().toFuture
     @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] = service.getFindings(params).promise().toFuture
+    @inline def getFindingsPublicationConfigurationFuture(params: GetFindingsPublicationConfigurationRequest): Future[GetFindingsPublicationConfigurationResponse] = service.getFindingsPublicationConfiguration(params).promise().toFuture
     @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
     @inline def getMacieSessionFuture(params: GetMacieSessionRequest): Future[GetMacieSessionResponse] = service.getMacieSession(params).promise().toFuture
     @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
@@ -93,6 +96,7 @@ package object macie2 {
     @inline def listOrganizationAdminAccountsFuture(params: ListOrganizationAdminAccountsRequest): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putClassificationExportConfigurationFuture(params: PutClassificationExportConfigurationRequest): Future[PutClassificationExportConfigurationResponse] = service.putClassificationExportConfiguration(params).promise().toFuture
+    @inline def putFindingsPublicationConfigurationFuture(params: PutFindingsPublicationConfigurationRequest): Future[PutFindingsPublicationConfigurationResponse] = service.putFindingsPublicationConfiguration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def testCustomDataIdentifierFuture(params: TestCustomDataIdentifierRequest): Future[TestCustomDataIdentifierResponse] = service.testCustomDataIdentifier(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -129,16 +133,19 @@ package macie2 {
     def describeOrganizationConfiguration(params: DescribeOrganizationConfigurationRequest): Request[DescribeOrganizationConfigurationResponse] = js.native
     def disableMacie(params: DisableMacieRequest): Request[DisableMacieResponse] = js.native
     def disableOrganizationAdminAccount(params: DisableOrganizationAdminAccountRequest): Request[DisableOrganizationAdminAccountResponse] = js.native
+    def disassociateFromAdministratorAccount(params: DisassociateFromAdministratorAccountRequest): Request[DisassociateFromAdministratorAccountResponse] = js.native
     def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
     def disassociateMember(params: DisassociateMemberRequest): Request[DisassociateMemberResponse] = js.native
     def enableMacie(params: EnableMacieRequest): Request[EnableMacieResponse] = js.native
     def enableOrganizationAdminAccount(params: EnableOrganizationAdminAccountRequest): Request[EnableOrganizationAdminAccountResponse] = js.native
+    def getAdministratorAccount(params: GetAdministratorAccountRequest): Request[GetAdministratorAccountResponse] = js.native
     def getBucketStatistics(params: GetBucketStatisticsRequest): Request[GetBucketStatisticsResponse] = js.native
     def getClassificationExportConfiguration(params: GetClassificationExportConfigurationRequest): Request[GetClassificationExportConfigurationResponse] = js.native
     def getCustomDataIdentifier(params: GetCustomDataIdentifierRequest): Request[GetCustomDataIdentifierResponse] = js.native
     def getFindingStatistics(params: GetFindingStatisticsRequest): Request[GetFindingStatisticsResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
     def getFindingsFilter(params: GetFindingsFilterRequest): Request[GetFindingsFilterResponse] = js.native
+    def getFindingsPublicationConfiguration(params: GetFindingsPublicationConfigurationRequest): Request[GetFindingsPublicationConfigurationResponse] = js.native
     def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse] = js.native
     def getMacieSession(params: GetMacieSessionRequest): Request[GetMacieSessionResponse] = js.native
     def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
@@ -154,6 +161,7 @@ package macie2 {
     def listOrganizationAdminAccounts(params: ListOrganizationAdminAccountsRequest): Request[ListOrganizationAdminAccountsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putClassificationExportConfiguration(params: PutClassificationExportConfigurationRequest): Request[PutClassificationExportConfigurationResponse] = js.native
+    def putFindingsPublicationConfiguration(params: PutFindingsPublicationConfigurationRequest): Request[PutFindingsPublicationConfigurationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def testCustomDataIdentifier(params: TestCustomDataIdentifierRequest): Request[TestCustomDataIdentifierResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -167,19 +175,23 @@ package macie2 {
   @js.native
   trait AcceptInvitationRequest extends js.Object {
     var invitationId: __string
-    var masterAccount: __string
+    var administratorAccountId: js.UndefOr[__string]
+    var masterAccount: js.UndefOr[__string]
   }
 
   object AcceptInvitationRequest {
     @inline
     def apply(
         invitationId: __string,
-        masterAccount: __string
+        administratorAccountId: js.UndefOr[__string] = js.undefined,
+        masterAccount: js.UndefOr[__string] = js.undefined
     ): AcceptInvitationRequest = {
       val __obj = js.Dynamic.literal(
-        "invitationId" -> invitationId.asInstanceOf[js.Any],
-        "masterAccount" -> masterAccount.asInstanceOf[js.Any]
+        "invitationId" -> invitationId.asInstanceOf[js.Any]
       )
+
+      administratorAccountId.foreach(__v => __obj.updateDynamic("administratorAccountId")(__v.asInstanceOf[js.Any]))
+      masterAccount.foreach(__v => __obj.updateDynamic("masterAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptInvitationRequest]
     }
   }
@@ -216,7 +228,7 @@ package macie2 {
     }
   }
 
-  /** Specifies details for an account to associate with an Amazon Macie master account.
+  /** Specifies details for an account to associate with an Amazon Macie administrator account.
     */
   @js.native
   trait AccountDetail extends js.Object {
@@ -238,7 +250,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about account-level permissions settings that apply to an S3 bucket.
+  /** Provides information about the account-level permissions settings that apply to an S3 bucket.
     */
   @js.native
   trait AccountLevelPermissions extends js.Object {
@@ -277,7 +289,7 @@ package macie2 {
     }
   }
 
-  /** The current status of an account as the delegated Amazon Macie administrator account for an AWS organization.
+  /** The current status of an account as the delegated Amazon Macie administrator account for an AWS organization. Possible values are:
     */
   @js.native
   sealed trait AdminStatus extends js.Any
@@ -452,7 +464,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account level or bucket level. For detailed information about each setting, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html|Using Amazon S3 block public access]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account level or bucket level. For detailed information about each setting, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html|Blocking public access to your Amazon S3 storage]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait BlockPublicAccess extends js.Object {
@@ -506,7 +518,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about the number of S3 buckets that use certain types of server-side encryption or don't encrypt objects by default.
+  /** Provides information about the number of S3 buckets that use certain types of server-side encryption by default or don't encrypt new objects by default.
     */
   @js.native
   trait BucketCountByEncryptionType extends js.Object {
@@ -634,6 +646,7 @@ package macie2 {
     var publicAccess: js.UndefOr[BucketPublicAccess]
     var region: js.UndefOr[__string]
     var replicationDetails: js.UndefOr[ReplicationDetails]
+    var serverSideEncryption: js.UndefOr[BucketServerSideEncryption]
     var sharedAccess: js.UndefOr[SharedAccess]
     var sizeInBytes: js.UndefOr[__long]
     var sizeInBytesCompressed: js.UndefOr[__long]
@@ -659,6 +672,7 @@ package macie2 {
         publicAccess: js.UndefOr[BucketPublicAccess] = js.undefined,
         region: js.UndefOr[__string] = js.undefined,
         replicationDetails: js.UndefOr[ReplicationDetails] = js.undefined,
+        serverSideEncryption: js.UndefOr[BucketServerSideEncryption] = js.undefined,
         sharedAccess: js.UndefOr[SharedAccess] = js.undefined,
         sizeInBytes: js.UndefOr[__long] = js.undefined,
         sizeInBytesCompressed: js.UndefOr[__long] = js.undefined,
@@ -681,6 +695,7 @@ package macie2 {
       publicAccess.foreach(__v => __obj.updateDynamic("publicAccess")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       replicationDetails.foreach(__v => __obj.updateDynamic("replicationDetails")(__v.asInstanceOf[js.Any]))
+      serverSideEncryption.foreach(__v => __obj.updateDynamic("serverSideEncryption")(__v.asInstanceOf[js.Any]))
       sharedAccess.foreach(__v => __obj.updateDynamic("sharedAccess")(__v.asInstanceOf[js.Any]))
       sizeInBytes.foreach(__v => __obj.updateDynamic("sizeInBytes")(__v.asInstanceOf[js.Any]))
       sizeInBytesCompressed.foreach(__v => __obj.updateDynamic("sizeInBytesCompressed")(__v.asInstanceOf[js.Any]))
@@ -752,6 +767,27 @@ package macie2 {
       effectivePermission.foreach(__v => __obj.updateDynamic("effectivePermission")(__v.asInstanceOf[js.Any]))
       permissionConfiguration.foreach(__v => __obj.updateDynamic("permissionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BucketPublicAccess]
+    }
+  }
+
+  /** Provides information about the default server-side encryption settings for an S3 bucket. For detailed information about these settings, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html|Setting default server-side encryption behavior for Amazon S3 buckets]] in the <i>Amazon Simple Storage Service User Guide</i>.
+    */
+  @js.native
+  trait BucketServerSideEncryption extends js.Object {
+    var kmsMasterKeyId: js.UndefOr[__string]
+    var `type`: js.UndefOr[Type]
+  }
+
+  object BucketServerSideEncryption {
+    @inline
+    def apply(
+        kmsMasterKeyId: js.UndefOr[__string] = js.undefined,
+        `type`: js.UndefOr[Type] = js.undefined
+    ): BucketServerSideEncryption = {
+      val __obj = js.Dynamic.literal()
+      kmsMasterKeyId.foreach(__v => __obj.updateDynamic("kmsMasterKeyId")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketServerSideEncryption]
     }
   }
 
@@ -1214,7 +1250,7 @@ package macie2 {
     }
   }
 
-  /** The type of currency that data for a usage metric is reported in. Possible values are:
+  /** The type of currency that the data for an Amazon Macie usage metric is reported in. Possible values are:
     */
   @js.native
   sealed trait Currency extends js.Any
@@ -1712,6 +1748,28 @@ package macie2 {
   }
 
   @js.native
+  trait DisassociateFromAdministratorAccountRequest extends js.Object
+
+  object DisassociateFromAdministratorAccountRequest {
+    @inline
+    def apply(): DisassociateFromAdministratorAccountRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateFromAdministratorAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateFromAdministratorAccountResponse extends js.Object
+
+  object DisassociateFromAdministratorAccountResponse {
+    @inline
+    def apply(): DisassociateFromAdministratorAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateFromAdministratorAccountResponse]
+    }
+  }
+
+  @js.native
   trait DisassociateFromMasterAccountRequest extends js.Object
 
   object DisassociateFromMasterAccountRequest {
@@ -1867,7 +1925,7 @@ package macie2 {
     @inline def values = js.Array(NONE, AES256, `aws:kms`, UNKNOWN)
   }
 
-  /** The source of an error, issue, or delay. Possible values are:
+  /** The source of an issue or delay. Possible values are:
     */
   @js.native
   sealed trait ErrorCode extends js.Any
@@ -2061,7 +2119,7 @@ package macie2 {
     }
   }
 
-  /** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). Valid values are:
+  /** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see [[https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html|Monitoring and processing findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
     */
   @js.native
   sealed trait FindingPublishingFrequency extends js.Any
@@ -2173,6 +2231,33 @@ package macie2 {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindingsFilterListItem]
+    }
+  }
+
+  @js.native
+  trait GetAdministratorAccountRequest extends js.Object
+
+  object GetAdministratorAccountRequest {
+    @inline
+    def apply(): GetAdministratorAccountRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetAdministratorAccountRequest]
+    }
+  }
+
+  @js.native
+  trait GetAdministratorAccountResponse extends js.Object {
+    var administrator: js.UndefOr[Invitation]
+  }
+
+  object GetAdministratorAccountResponse {
+    @inline
+    def apply(
+        administrator: js.UndefOr[Invitation] = js.undefined
+    ): GetAdministratorAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      administrator.foreach(__v => __obj.updateDynamic("administrator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAdministratorAccountResponse]
     }
   }
 
@@ -2429,6 +2514,33 @@ package macie2 {
   }
 
   @js.native
+  trait GetFindingsPublicationConfigurationRequest extends js.Object
+
+  object GetFindingsPublicationConfigurationRequest {
+    @inline
+    def apply(): GetFindingsPublicationConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetFindingsPublicationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetFindingsPublicationConfigurationResponse extends js.Object {
+    var securityHubConfiguration: js.UndefOr[SecurityHubConfiguration]
+  }
+
+  object GetFindingsPublicationConfigurationResponse {
+    @inline
+    def apply(
+        securityHubConfiguration: js.UndefOr[SecurityHubConfiguration] = js.undefined
+    ): GetFindingsPublicationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      securityHubConfiguration.foreach(__v => __obj.updateDynamic("securityHubConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFindingsPublicationConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait GetFindingsRequest extends js.Object {
     var findingIds: __listOf__string
     var sortCriteria: js.UndefOr[SortCriteria]
@@ -2578,6 +2690,7 @@ package macie2 {
   @js.native
   trait GetMemberResponse extends js.Object {
     var accountId: js.UndefOr[__string]
+    var administratorAccountId: js.UndefOr[__string]
     var arn: js.UndefOr[__string]
     var email: js.UndefOr[__string]
     var invitedAt: js.UndefOr[__timestampIso8601]
@@ -2591,6 +2704,7 @@ package macie2 {
     @inline
     def apply(
         accountId: js.UndefOr[__string] = js.undefined,
+        administratorAccountId: js.UndefOr[__string] = js.undefined,
         arn: js.UndefOr[__string] = js.undefined,
         email: js.UndefOr[__string] = js.undefined,
         invitedAt: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -2601,6 +2715,7 @@ package macie2 {
     ): GetMemberResponse = {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      administratorAccountId.foreach(__v => __obj.updateDynamic("administratorAccountId")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       invitedAt.foreach(__v => __obj.updateDynamic("invitedAt")(__v.asInstanceOf[js.Any]))
@@ -2618,6 +2733,7 @@ package macie2 {
     var maxResults: js.UndefOr[__integer]
     var nextToken: js.UndefOr[__string]
     var sortBy: js.UndefOr[UsageStatisticsSortBy]
+    var timeRange: js.UndefOr[TimeRange]
   }
 
   object GetUsageStatisticsRequest {
@@ -2626,13 +2742,15 @@ package macie2 {
         filterBy: js.UndefOr[__listOfUsageStatisticsFilter] = js.undefined,
         maxResults: js.UndefOr[__integer] = js.undefined,
         nextToken: js.UndefOr[__string] = js.undefined,
-        sortBy: js.UndefOr[UsageStatisticsSortBy] = js.undefined
+        sortBy: js.UndefOr[UsageStatisticsSortBy] = js.undefined,
+        timeRange: js.UndefOr[TimeRange] = js.undefined
     ): GetUsageStatisticsRequest = {
       val __obj = js.Dynamic.literal()
       filterBy.foreach(__v => __obj.updateDynamic("filterBy")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      timeRange.foreach(__v => __obj.updateDynamic("timeRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUsageStatisticsRequest]
     }
   }
@@ -2641,43 +2759,54 @@ package macie2 {
   trait GetUsageStatisticsResponse extends js.Object {
     var nextToken: js.UndefOr[__string]
     var records: js.UndefOr[__listOfUsageRecord]
+    var timeRange: js.UndefOr[TimeRange]
   }
 
   object GetUsageStatisticsResponse {
     @inline
     def apply(
         nextToken: js.UndefOr[__string] = js.undefined,
-        records: js.UndefOr[__listOfUsageRecord] = js.undefined
+        records: js.UndefOr[__listOfUsageRecord] = js.undefined,
+        timeRange: js.UndefOr[TimeRange] = js.undefined
     ): GetUsageStatisticsResponse = {
       val __obj = js.Dynamic.literal()
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       records.foreach(__v => __obj.updateDynamic("records")(__v.asInstanceOf[js.Any]))
+      timeRange.foreach(__v => __obj.updateDynamic("timeRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUsageStatisticsResponse]
     }
   }
 
   @js.native
-  trait GetUsageTotalsRequest extends js.Object
+  trait GetUsageTotalsRequest extends js.Object {
+    var timeRange: js.UndefOr[__string]
+  }
 
   object GetUsageTotalsRequest {
     @inline
-    def apply(): GetUsageTotalsRequest = {
+    def apply(
+        timeRange: js.UndefOr[__string] = js.undefined
+    ): GetUsageTotalsRequest = {
       val __obj = js.Dynamic.literal()
+      timeRange.foreach(__v => __obj.updateDynamic("timeRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUsageTotalsRequest]
     }
   }
 
   @js.native
   trait GetUsageTotalsResponse extends js.Object {
+    var timeRange: js.UndefOr[TimeRange]
     var usageTotals: js.UndefOr[__listOfUsageTotal]
   }
 
   object GetUsageTotalsResponse {
     @inline
     def apply(
+        timeRange: js.UndefOr[TimeRange] = js.undefined,
         usageTotals: js.UndefOr[__listOfUsageTotal] = js.undefined
     ): GetUsageTotalsResponse = {
       val __obj = js.Dynamic.literal()
+      timeRange.foreach(__v => __obj.updateDynamic("timeRange")(__v.asInstanceOf[js.Any]))
       usageTotals.foreach(__v => __obj.updateDynamic("usageTotals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUsageTotalsResponse]
     }
@@ -2918,8 +3047,9 @@ package macie2 {
     val LTE = "LTE".asInstanceOf[JobComparator]
     val NE = "NE".asInstanceOf[JobComparator]
     val CONTAINS = "CONTAINS".asInstanceOf[JobComparator]
+    val STARTS_WITH = "STARTS_WITH".asInstanceOf[JobComparator]
 
-    @inline def values = js.Array(EQ, GT, GTE, LT, LTE, NE, CONTAINS)
+    @inline def values = js.Array(EQ, GT, GTE, LT, LTE, NE, CONTAINS, STARTS_WITH)
   }
 
   /** Specifies whether any one-time or recurring classification jobs are configured to analyze data in an S3 bucket, and, if so, the details of the job that ran most recently.
@@ -3544,11 +3674,12 @@ package macie2 {
     @inline def values = js.Array(PAUSED, ENABLED)
   }
 
-  /** Provides information about an account that's associated with an Amazon Macie master account.
+  /** Provides information about an account that's associated with an Amazon Macie administrator account.
     */
   @js.native
   trait Member extends js.Object {
     var accountId: js.UndefOr[__string]
+    var administratorAccountId: js.UndefOr[__string]
     var arn: js.UndefOr[__string]
     var email: js.UndefOr[__string]
     var invitedAt: js.UndefOr[__timestampIso8601]
@@ -3562,6 +3693,7 @@ package macie2 {
     @inline
     def apply(
         accountId: js.UndefOr[__string] = js.undefined,
+        administratorAccountId: js.UndefOr[__string] = js.undefined,
         arn: js.UndefOr[__string] = js.undefined,
         email: js.UndefOr[__string] = js.undefined,
         invitedAt: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -3572,6 +3704,7 @@ package macie2 {
     ): Member = {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      administratorAccountId.foreach(__v => __obj.updateDynamic("administratorAccountId")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
       invitedAt.foreach(__v => __obj.updateDynamic("invitedAt")(__v.asInstanceOf[js.Any]))
@@ -3628,7 +3761,7 @@ package macie2 {
     }
   }
 
-  /** Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results.
+  /** Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, total storage size values are based on the size of the latest version of each applicable object in the bucket.
     */
   @js.native
   trait ObjectLevelStatistics extends js.Object {
@@ -3769,6 +3902,36 @@ package macie2 {
     }
   }
 
+  @js.native
+  trait PutFindingsPublicationConfigurationRequest extends js.Object {
+    var clientToken: js.UndefOr[__string]
+    var securityHubConfiguration: js.UndefOr[SecurityHubConfiguration]
+  }
+
+  object PutFindingsPublicationConfigurationRequest {
+    @inline
+    def apply(
+        clientToken: js.UndefOr[__string] = js.undefined,
+        securityHubConfiguration: js.UndefOr[SecurityHubConfiguration] = js.undefined
+    ): PutFindingsPublicationConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      securityHubConfiguration.foreach(__v => __obj.updateDynamic("securityHubConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutFindingsPublicationConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutFindingsPublicationConfigurationResponse extends js.Object
+
+  object PutFindingsPublicationConfigurationResponse {
+    @inline
+    def apply(): PutFindingsPublicationConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutFindingsPublicationConfigurationResponse]
+    }
+  }
+
   /** Provides details about the location of an occurrence of sensitive data in an Adobe Portable Document Format file, Microsoft Word document, or non-binary text file.
     */
   @js.native
@@ -3814,7 +3977,7 @@ package macie2 {
     }
   }
 
-  /** The current status of the relationship between an account and an associated Amazon Macie master account (<i>inviter account</i>). Possible values are:
+  /** The current status of the relationship between an account and an associated Amazon Macie administrator account (<i>inviter account</i>). Possible values are:
     */
   @js.native
   sealed trait RelationshipStatus extends js.Any
@@ -3918,19 +4081,20 @@ package macie2 {
     */
   @js.native
   trait S3BucketDefinitionForJob extends js.Object {
-    var accountId: js.UndefOr[__string]
-    var buckets: js.UndefOr[__listOf__string]
+    var accountId: __string
+    var buckets: __listOf__string
   }
 
   object S3BucketDefinitionForJob {
     @inline
     def apply(
-        accountId: js.UndefOr[__string] = js.undefined,
-        buckets: js.UndefOr[__listOf__string] = js.undefined
+        accountId: __string,
+        buckets: __listOf__string
     ): S3BucketDefinitionForJob = {
-      val __obj = js.Dynamic.literal()
-      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
-      buckets.foreach(__v => __obj.updateDynamic("buckets")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "accountId" -> accountId.asInstanceOf[js.Any],
+        "buckets" -> buckets.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[S3BucketDefinitionForJob]
     }
   }
@@ -4064,8 +4228,9 @@ package macie2 {
     val OBJECT_LAST_MODIFIED_DATE = "OBJECT_LAST_MODIFIED_DATE".asInstanceOf[ScopeFilterKey]
     val OBJECT_SIZE = "OBJECT_SIZE".asInstanceOf[ScopeFilterKey]
     val TAG = "TAG".asInstanceOf[ScopeFilterKey]
+    val OBJECT_KEY = "OBJECT_KEY".asInstanceOf[ScopeFilterKey]
 
-    @inline def values = js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG)
+    @inline def values = js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG, OBJECT_KEY)
   }
 
   /** Specifies one or more property- and tag-based conditions that refine the scope of a classification job. These conditions define criteria that determine which objects a job analyzes. Exclude conditions take precedence over include conditions.
@@ -4086,6 +4251,28 @@ package macie2 {
       excludes.foreach(__v => __obj.updateDynamic("excludes")(__v.asInstanceOf[js.Any]))
       includes.foreach(__v => __obj.updateDynamic("includes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Scoping]
+    }
+  }
+
+  /** Specifies configuration settings that determine which findings are published to AWS Security Hub automatically. For information about how Macie publishes findings to Security Hub, see [[https://docs.aws.amazon.com/macie/latest/user/securityhub-integration.html|Amazon Macie integration with Security Hub]] in the <i>Amazon Macie User Guide</i>.
+    */
+  @js.native
+  trait SecurityHubConfiguration extends js.Object {
+    var publishClassificationFindings: __boolean
+    var publishPolicyFindings: __boolean
+  }
+
+  object SecurityHubConfiguration {
+    @inline
+    def apply(
+        publishClassificationFindings: __boolean,
+        publishPolicyFindings: __boolean
+    ): SecurityHubConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "publishClassificationFindings" -> publishClassificationFindings.asInstanceOf[js.Any],
+        "publishPolicyFindings" -> publishPolicyFindings.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SecurityHubConfiguration]
     }
   }
 
@@ -4147,7 +4334,7 @@ package macie2 {
     }
   }
 
-  /** Specifies a current quota for an account.
+  /** Specifies a current quota for an Amazon Macie account.
     */
   @js.native
   trait ServiceLimit extends js.Object {
@@ -4504,6 +4691,27 @@ package macie2 {
     }
   }
 
+  /** An inclusive time period that Amazon Macie usage data applies to. Possible values are:
+    */
+  @js.native
+  sealed trait TimeRange extends js.Any
+  object TimeRange {
+    val MONTH_TO_DATE = "MONTH_TO_DATE".asInstanceOf[TimeRange]
+    val PAST_30_DAYS = "PAST_30_DAYS".asInstanceOf[TimeRange]
+
+    @inline def values = js.Array(MONTH_TO_DATE, PAST_30_DAYS)
+  }
+
+  @js.native
+  sealed trait Type extends js.Any
+  object Type {
+    val NONE = "NONE".asInstanceOf[Type]
+    val AES256 = "AES256".asInstanceOf[Type]
+    val `aws:kms` = "aws:kms".asInstanceOf[Type]
+
+    @inline def values = js.Array(NONE, AES256, `aws:kms`)
+  }
+
   @js.native
   sealed trait Unit extends js.Any
   object Unit {
@@ -4739,7 +4947,7 @@ package macie2 {
     }
   }
 
-  /** Provides data for a specific usage metric and the corresponding quota for an account. The value for the metric is an aggregated value that reports usage during the past 30 days.
+  /** Provides data for a specific usage metric and the corresponding quota for an Amazon Macie account.
     */
   @js.native
   trait UsageByAccount extends js.Object {
@@ -4766,7 +4974,7 @@ package macie2 {
     }
   }
 
-  /** Provides quota and aggregated usage data for an account.
+  /** Provides quota and aggregated usage data for an Amazon Macie account.
     */
   @js.native
   trait UsageRecord extends js.Object {
@@ -4790,7 +4998,7 @@ package macie2 {
     }
   }
 
-  /** Specifies a condition for filtering the results of a query for account quotas and usage data.
+  /** Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie accounts.
     */
   @js.native
   trait UsageStatisticsFilter extends js.Object {
@@ -4814,7 +5022,7 @@ package macie2 {
     }
   }
 
-  /** The operator to use in a condition that filters the results of a query for account quotas and usage data. Valid values are:
+  /** The operator to use in a condition that filters the results of a query for Amazon Macie account quotas and usage data. Valid values are:
     */
   @js.native
   sealed trait UsageStatisticsFilterComparator extends js.Any
@@ -4830,7 +5038,7 @@ package macie2 {
     @inline def values = js.Array(GT, GTE, LT, LTE, EQ, NE, CONTAINS)
   }
 
-  /** The field to use in a condition that filters the results of a query for account quotas and usage data. Valid values are:
+  /** The field to use in a condition that filters the results of a query for Amazon Macie account quotas and usage data. Valid values are:
     */
   @js.native
   sealed trait UsageStatisticsFilterKey extends js.Any
@@ -4843,7 +5051,7 @@ package macie2 {
     @inline def values = js.Array(accountId, serviceLimit, freeTrialStartDate, total)
   }
 
-  /** Specifies criteria for sorting the results of a query for account quotas and usage data.
+  /** Specifies criteria for sorting the results of a query for Amazon Macie account quotas and usage data.
     */
   @js.native
   trait UsageStatisticsSortBy extends js.Object {
@@ -4864,7 +5072,7 @@ package macie2 {
     }
   }
 
-  /** The field to use to sort the results of a query for account quotas and usage data. Valid values are:
+  /** The field to use to sort the results of a query for Amazon Macie account quotas and usage data. Valid values are:
     */
   @js.native
   sealed trait UsageStatisticsSortKey extends js.Any
@@ -4877,7 +5085,7 @@ package macie2 {
     @inline def values = js.Array(accountId, total, serviceLimitValue, freeTrialStartDate)
   }
 
-  /** Provides aggregated data for a usage metric. The value for the metric reports usage data for an account during the past 30 days.
+  /** Provides aggregated data for an Amazon Macie usage metric. The value for the metric reports estimated usage data for an account for the preceding 30 days or the current calendar month to date, depending on the time period (timeRange) specified in the request.
     */
   @js.native
   trait UsageTotal extends js.Object {
@@ -4901,7 +5109,7 @@ package macie2 {
     }
   }
 
-  /** The name of a usage metric for an account. Possible values are:
+  /** The name of an Amazon Macie usage metric for an account. Possible values are:
     */
   @js.native
   sealed trait UsageType extends js.Any

@@ -164,6 +164,7 @@ package object sagemaker {
   type ExperimentEntityName = String
   type ExperimentSourceArn = String
   type ExperimentSummaries = js.Array[ExperimentSummary]
+  type ExpiresInSeconds = Int
   type FailureReason = String
   type FeatureDefinitions = js.Array[FeatureDefinition]
   type FeatureGroupArn = String
@@ -186,6 +187,7 @@ package object sagemaker {
   type FlowDefinitionTaskKeywords = js.Array[FlowDefinitionTaskKeyword]
   type FlowDefinitionTaskTimeLimitInSeconds = Int
   type FlowDefinitionTaskTitle = String
+  type FrameworkVersion = String
   type GenerateCandidateDefinitionsOnly = Boolean
   type GitConfigUrl = String
   type Group = String
@@ -382,6 +384,7 @@ package object sagemaker {
   type RedshiftQueryString = String
   type RedshiftUserName = String
   type RenderingErrorList = js.Array[RenderingError]
+  type RepositoryCredentialsProviderArn = String
   type ResourceArn = String
   type ResourceId = String
   type ResourcePropertyName = String
@@ -4266,6 +4269,7 @@ package sagemaker {
     var ModelName: ModelName
     var Containers: js.UndefOr[ContainerDefinitionList]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
+    var InferenceExecutionConfig: js.UndefOr[InferenceExecutionConfig]
     var PrimaryContainer: js.UndefOr[ContainerDefinition]
     var Tags: js.UndefOr[TagList]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -4278,6 +4282,7 @@ package sagemaker {
         ModelName: ModelName,
         Containers: js.UndefOr[ContainerDefinitionList] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+        InferenceExecutionConfig: js.UndefOr[InferenceExecutionConfig] = js.undefined,
         PrimaryContainer: js.UndefOr[ContainerDefinition] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -4289,6 +4294,7 @@ package sagemaker {
 
       Containers.foreach(__v => __obj.updateDynamic("Containers")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
+      InferenceExecutionConfig.foreach(__v => __obj.updateDynamic("InferenceExecutionConfig")(__v.asInstanceOf[js.Any]))
       PrimaryContainer.foreach(__v => __obj.updateDynamic("PrimaryContainer")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -4692,6 +4698,7 @@ package sagemaker {
   trait CreatePresignedDomainUrlRequest extends js.Object {
     var DomainId: DomainId
     var UserProfileName: UserProfileName
+    var ExpiresInSeconds: js.UndefOr[ExpiresInSeconds]
     var SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds]
   }
 
@@ -4700,6 +4707,7 @@ package sagemaker {
     def apply(
         DomainId: DomainId,
         UserProfileName: UserProfileName,
+        ExpiresInSeconds: js.UndefOr[ExpiresInSeconds] = js.undefined,
         SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds] = js.undefined
     ): CreatePresignedDomainUrlRequest = {
       val __obj = js.Dynamic.literal(
@@ -4707,6 +4715,7 @@ package sagemaker {
         "UserProfileName" -> UserProfileName.asInstanceOf[js.Any]
       )
 
+      ExpiresInSeconds.foreach(__v => __obj.updateDynamic("ExpiresInSeconds")(__v.asInstanceOf[js.Any]))
       SessionExpirationDurationInSeconds.foreach(__v => __obj.updateDynamic("SessionExpirationDurationInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePresignedDomainUrlRequest]
     }
@@ -8321,6 +8330,7 @@ package sagemaker {
     var ModelName: ModelName
     var Containers: js.UndefOr[ContainerDefinitionList]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
+    var InferenceExecutionConfig: js.UndefOr[InferenceExecutionConfig]
     var PrimaryContainer: js.UndefOr[ContainerDefinition]
     var VpcConfig: js.UndefOr[VpcConfig]
   }
@@ -8334,6 +8344,7 @@ package sagemaker {
         ModelName: ModelName,
         Containers: js.UndefOr[ContainerDefinitionList] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+        InferenceExecutionConfig: js.UndefOr[InferenceExecutionConfig] = js.undefined,
         PrimaryContainer: js.UndefOr[ContainerDefinition] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): DescribeModelOutput = {
@@ -8346,6 +8357,7 @@ package sagemaker {
 
       Containers.foreach(__v => __obj.updateDynamic("Containers")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
+      InferenceExecutionConfig.foreach(__v => __obj.updateDynamic("InferenceExecutionConfig")(__v.asInstanceOf[js.Any]))
       PrimaryContainer.foreach(__v => __obj.updateDynamic("PrimaryContainer")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeModelOutput]
@@ -11633,16 +11645,20 @@ package sagemaker {
   @js.native
   trait ImageConfig extends js.Object {
     var RepositoryAccessMode: RepositoryAccessMode
+    var RepositoryAuthConfig: js.UndefOr[RepositoryAuthConfig]
   }
 
   object ImageConfig {
     @inline
     def apply(
-        RepositoryAccessMode: RepositoryAccessMode
+        RepositoryAccessMode: RepositoryAccessMode,
+        RepositoryAuthConfig: js.UndefOr[RepositoryAuthConfig] = js.undefined
     ): ImageConfig = {
       val __obj = js.Dynamic.literal(
         "RepositoryAccessMode" -> RepositoryAccessMode.asInstanceOf[js.Any]
       )
+
+      RepositoryAuthConfig.foreach(__v => __obj.updateDynamic("RepositoryAuthConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageConfig]
     }
   }
@@ -11749,6 +11765,34 @@ package sagemaker {
     @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
   }
 
+  /** Specifies details about how containers in a multi-container endpoint are run.
+    */
+  @js.native
+  trait InferenceExecutionConfig extends js.Object {
+    var Mode: InferenceExecutionMode
+  }
+
+  object InferenceExecutionConfig {
+    @inline
+    def apply(
+        Mode: InferenceExecutionMode
+    ): InferenceExecutionConfig = {
+      val __obj = js.Dynamic.literal(
+        "Mode" -> Mode.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InferenceExecutionConfig]
+    }
+  }
+
+  @js.native
+  sealed trait InferenceExecutionMode extends js.Any
+  object InferenceExecutionMode {
+    val Serial = "Serial".asInstanceOf[InferenceExecutionMode]
+    val Direct = "Direct".asInstanceOf[InferenceExecutionMode]
+
+    @inline def values = js.Array(Serial, Direct)
+  }
+
   /** Defines how to perform inference generation after a training job is run.
     */
   @js.native
@@ -11788,6 +11832,7 @@ package sagemaker {
     var DataInputConfig: DataInputConfig
     var Framework: Framework
     var S3Uri: S3Uri
+    var FrameworkVersion: js.UndefOr[FrameworkVersion]
   }
 
   object InputConfig {
@@ -11795,13 +11840,16 @@ package sagemaker {
     def apply(
         DataInputConfig: DataInputConfig,
         Framework: Framework,
-        S3Uri: S3Uri
+        S3Uri: S3Uri,
+        FrameworkVersion: js.UndefOr[FrameworkVersion] = js.undefined
     ): InputConfig = {
       val __obj = js.Dynamic.literal(
         "DataInputConfig" -> DataInputConfig.asInstanceOf[js.Any],
         "Framework" -> Framework.asInstanceOf[js.Any],
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
+
+      FrameworkVersion.foreach(__v => __obj.updateDynamic("FrameworkVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputConfig]
     }
   }
@@ -18267,7 +18315,7 @@ package sagemaker {
     }
   }
 
-  /** The output configuration for the processing job.
+  /** Configuration for uploading output from the processing container.
     */
   @js.native
   trait ProcessingOutputConfig extends js.Object {
@@ -18336,7 +18384,7 @@ package sagemaker {
     @inline def values = js.Array(ManifestFile, S3Prefix)
   }
 
-  /** Configuration for processing job inputs in Amazon S3.
+  /** Configuration for downloading input data from Amazon S3 into the processing container.
     */
   @js.native
   trait ProcessingS3Input extends js.Object {
@@ -18380,7 +18428,7 @@ package sagemaker {
     @inline def values = js.Array(Pipe, File)
   }
 
-  /** Configuration for processing job outputs in Amazon S3.
+  /** Configuration for uploading output data to Amazon S3 from the processing container.
     */
   @js.native
   trait ProcessingS3Output extends js.Object {
@@ -18414,7 +18462,7 @@ package sagemaker {
     @inline def values = js.Array(Continuous, EndOfJob)
   }
 
-  /** Specifies a time limit for how long the processing job is allowed to run.
+  /** Configures conditions under which the processing job should be stopped, such as how long the processing job has been running. After the condition is met, the processing job is stopped.
     */
   @js.native
   trait ProcessingStoppingCondition extends js.Object {
@@ -18442,6 +18490,7 @@ package sagemaker {
     var ModelName: ModelName
     var VariantName: VariantName
     var AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType]
+    var CoreDumpConfig: js.UndefOr[ProductionVariantCoreDumpConfig]
     var InitialVariantWeight: js.UndefOr[VariantWeight]
   }
 
@@ -18453,6 +18502,7 @@ package sagemaker {
         ModelName: ModelName,
         VariantName: VariantName,
         AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType] = js.undefined,
+        CoreDumpConfig: js.UndefOr[ProductionVariantCoreDumpConfig] = js.undefined,
         InitialVariantWeight: js.UndefOr[VariantWeight] = js.undefined
     ): ProductionVariant = {
       val __obj = js.Dynamic.literal(
@@ -18463,6 +18513,7 @@ package sagemaker {
       )
 
       AcceleratorType.foreach(__v => __obj.updateDynamic("AcceleratorType")(__v.asInstanceOf[js.Any]))
+      CoreDumpConfig.foreach(__v => __obj.updateDynamic("CoreDumpConfig")(__v.asInstanceOf[js.Any]))
       InitialVariantWeight.foreach(__v => __obj.updateDynamic("InitialVariantWeight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductionVariant]
     }
@@ -18479,6 +18530,29 @@ package sagemaker {
     val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
     @inline def values = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
+  }
+
+  /** Specifies configuration for a core dump from the model container when the process crashes.
+    */
+  @js.native
+  trait ProductionVariantCoreDumpConfig extends js.Object {
+    var DestinationS3Uri: DestinationS3Uri
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+  }
+
+  object ProductionVariantCoreDumpConfig {
+    @inline
+    def apply(
+        DestinationS3Uri: DestinationS3Uri,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+    ): ProductionVariantCoreDumpConfig = {
+      val __obj = js.Dynamic.literal(
+        "DestinationS3Uri" -> DestinationS3Uri.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProductionVariantCoreDumpConfig]
+    }
   }
 
   @js.native
@@ -19281,6 +19355,25 @@ package sagemaker {
     @inline def values = js.Array(Platform, Vpc)
   }
 
+  /** Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field of the <code>ImageConfig</code> object that you passed to a call to <a>CreateModel</a> and the private Docker registry where the model image is hosted requires authentication.
+    */
+  @js.native
+  trait RepositoryAuthConfig extends js.Object {
+    var RepositoryCredentialsProviderArn: RepositoryCredentialsProviderArn
+  }
+
+  object RepositoryAuthConfig {
+    @inline
+    def apply(
+        RepositoryCredentialsProviderArn: RepositoryCredentialsProviderArn
+    ): RepositoryAuthConfig = {
+      val __obj = js.Dynamic.literal(
+        "RepositoryCredentialsProviderArn" -> RepositoryCredentialsProviderArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RepositoryAuthConfig]
+    }
+  }
+
   /** The resolved attributes.
     */
   @js.native
@@ -19500,19 +19593,22 @@ package sagemaker {
   trait S3StorageConfig extends js.Object {
     var S3Uri: S3Uri
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var ResolvedOutputS3Uri: js.UndefOr[S3Uri]
   }
 
   object S3StorageConfig {
     @inline
     def apply(
         S3Uri: S3Uri,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        ResolvedOutputS3Uri: js.UndefOr[S3Uri] = js.undefined
     ): S3StorageConfig = {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
 
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      ResolvedOutputS3Uri.foreach(__v => __obj.updateDynamic("ResolvedOutputS3Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3StorageConfig]
     }
   }
@@ -20438,6 +20534,7 @@ package sagemaker {
     val ml_p3 = "ml_p3".asInstanceOf[TargetDevice]
     val ml_g4dn = "ml_g4dn".asInstanceOf[TargetDevice]
     val ml_inf1 = "ml_inf1".asInstanceOf[TargetDevice]
+    val ml_eia2 = "ml_eia2".asInstanceOf[TargetDevice]
     val jetson_tx1 = "jetson_tx1".asInstanceOf[TargetDevice]
     val jetson_tx2 = "jetson_tx2".asInstanceOf[TargetDevice]
     val jetson_nano = "jetson_nano".asInstanceOf[TargetDevice]
@@ -20468,6 +20565,7 @@ package sagemaker {
       ml_p3,
       ml_g4dn,
       ml_inf1,
+      ml_eia2,
       jetson_tx1,
       jetson_tx2,
       jetson_nano,

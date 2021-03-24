@@ -22,7 +22,8 @@ package object codeguruprofiler {
   type FindingsReportSummaries = js.Array[FindingsReportSummary]
   type FleetInstanceId = String
   type FrameMetricData = js.Array[FrameMetricDatum]
-  type FrameMetricValues = js.Array[Double]
+  type FrameMetricValue = Double
+  type FrameMetricValues = js.Array[FrameMetricValue]
   type FrameMetrics = js.Array[FrameMetric]
   type ListOfTimestamps = js.Array[TimestampStructure]
   type Locale = String
@@ -207,13 +208,13 @@ package codeguruprofiler {
   @js.native
   sealed trait AgentParameterField extends js.Any
   object AgentParameterField {
-    val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
-    val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
-    val MinimumTimeForReportingInMilliseconds = "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
-    val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
     val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
+    val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
+    val MinimumTimeForReportingInMilliseconds = "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
+    val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
+    val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
 
-    @inline def values = js.Array(MaxStackDepth, MemoryUsageLimitPercent, MinimumTimeForReportingInMilliseconds, ReportingIntervalInMilliseconds, SamplingIntervalInMilliseconds)
+    @inline def values = js.Array(SamplingIntervalInMilliseconds, ReportingIntervalInMilliseconds, MinimumTimeForReportingInMilliseconds, MemoryUsageLimitPercent, MaxStackDepth)
   }
 
   /** Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes).
@@ -240,11 +241,11 @@ package codeguruprofiler {
   @js.native
   sealed trait AggregationPeriod extends js.Any
   object AggregationPeriod {
-    val P1D = "P1D".asInstanceOf[AggregationPeriod]
-    val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
     val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
+    val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
+    val P1D = "P1D".asInstanceOf[AggregationPeriod]
 
-    @inline def values = js.Array(P1D, PT1H, PT5M)
+    @inline def values = js.Array(PT5M, PT1H, P1D)
   }
 
   /** Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time.
@@ -399,10 +400,10 @@ package codeguruprofiler {
   @js.native
   sealed trait ComputePlatform extends js.Any
   object ComputePlatform {
-    val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
     val Default = "Default".asInstanceOf[ComputePlatform]
+    val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
 
-    @inline def values = js.Array(AWSLambda, Default)
+    @inline def values = js.Array(Default, AWSLambda)
   }
 
   /** The structure representing the configureAgentRequest.
@@ -582,10 +583,10 @@ package codeguruprofiler {
   @js.native
   sealed trait FeedbackType extends js.Any
   object FeedbackType {
-    val Negative = "Negative".asInstanceOf[FeedbackType]
     val Positive = "Positive".asInstanceOf[FeedbackType]
+    val Negative = "Negative".asInstanceOf[FeedbackType]
 
-    @inline def values = js.Array(Negative, Positive)
+    @inline def values = js.Array(Positive, Negative)
   }
 
   /** Information about potential recommendations that might be created from the analysis of profiling data.
@@ -1141,26 +1142,26 @@ package codeguruprofiler {
   @js.native
   sealed trait MetadataField extends js.Any
   object MetadataField {
+    val ComputePlatform = "ComputePlatform".asInstanceOf[MetadataField]
     val AgentId = "AgentId".asInstanceOf[MetadataField]
     val AwsRequestId = "AwsRequestId".asInstanceOf[MetadataField]
-    val ComputePlatform = "ComputePlatform".asInstanceOf[MetadataField]
     val ExecutionEnvironment = "ExecutionEnvironment".asInstanceOf[MetadataField]
     val LambdaFunctionArn = "LambdaFunctionArn".asInstanceOf[MetadataField]
     val LambdaMemoryLimitInMB = "LambdaMemoryLimitInMB".asInstanceOf[MetadataField]
-    val LambdaPreviousExecutionTimeInMilliseconds = "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
     val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
     val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
+    val LambdaPreviousExecutionTimeInMilliseconds = "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
 
     @inline def values = js.Array(
+      ComputePlatform,
       AgentId,
       AwsRequestId,
-      ComputePlatform,
       ExecutionEnvironment,
       LambdaFunctionArn,
       LambdaMemoryLimitInMB,
-      LambdaPreviousExecutionTimeInMilliseconds,
       LambdaRemainingTimeInMilliseconds,
-      LambdaTimeGapBetweenInvokesInMilliseconds
+      LambdaTimeGapBetweenInvokesInMilliseconds,
+      LambdaPreviousExecutionTimeInMilliseconds
     )
   }
 
@@ -1218,10 +1219,10 @@ package codeguruprofiler {
   @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
-    val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
     val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
+    val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
 
-    @inline def values = js.Array(TimestampAscending, TimestampDescending)
+    @inline def values = js.Array(TimestampDescending, TimestampAscending)
   }
 
   /** A set of rules used to make a recommendation during an analysis.

@@ -24,6 +24,8 @@ package object connect {
   type ChatContent = String
   type ChatContentType = String
   type ClientToken = String
+  type CommonDescriptionLength250 = String
+  type CommonNameLength127 = String
   type Concurrency = Int
   type ContactFlowContent = String
   type ContactFlowDescription = String
@@ -55,6 +57,8 @@ package object connect {
   type HistoricalMetricResults = js.Array[HistoricalMetricResult]
   type HistoricalMetrics = js.Array[HistoricalMetric]
   type Hours = Int
+  type Hours24Format = Int
+  type HoursOfOperationConfigList = js.Array[HoursOfOperationConfig]
   type HoursOfOperationId = String
   type HoursOfOperationName = String
   type HoursOfOperationSummaryList = js.Array[HoursOfOperationSummary]
@@ -75,10 +79,12 @@ package object connect {
   type MaxResult25 = Int
   type MaxResult7 = Int
   type MediaConcurrencies = js.Array[MediaConcurrency]
+  type MinutesLimit60 = Int
   type Name = String
   type NextToken = String
   type Origin = String
   type OriginsList = js.Array[Origin]
+  type OutboundCallerIdName = String
   type OutboundCallsEnabled = Boolean
   type PEM = String
   type ParticipantId = String
@@ -94,7 +100,9 @@ package object connect {
   type PromptId = String
   type PromptName = String
   type PromptSummaryList = js.Array[PromptSummary]
+  type QueueDescription = String
   type QueueId = String
+  type QueueMaxContacts = Int
   type QueueName = String
   type QueueSummaryList = js.Array[QueueSummary]
   type QueueTypes = js.Array[QueueType]
@@ -104,6 +112,7 @@ package object connect {
   type QuickConnectName = String
   type QuickConnectSummaryList = js.Array[QuickConnectSummary]
   type QuickConnectTypes = js.Array[QuickConnectType]
+  type QuickConnectsList = js.Array[QuickConnectId]
   type ReferenceKey = String
   type ReferenceValue = String
   type RoutingProfileDescription = String
@@ -125,6 +134,7 @@ package object connect {
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type ThresholdValue = Double
+  type TimeZone = String
   type Timestamp = js.Date
   type URI = String
   type UseCaseId = String
@@ -140,11 +150,13 @@ package object connect {
     @inline def associateInstanceStorageConfigFuture(params: AssociateInstanceStorageConfigRequest): Future[AssociateInstanceStorageConfigResponse] = service.associateInstanceStorageConfig(params).promise().toFuture
     @inline def associateLambdaFunctionFuture(params: AssociateLambdaFunctionRequest): Future[js.Object] = service.associateLambdaFunction(params).promise().toFuture
     @inline def associateLexBotFuture(params: AssociateLexBotRequest): Future[js.Object] = service.associateLexBot(params).promise().toFuture
+    @inline def associateQueueQuickConnectsFuture(params: AssociateQueueQuickConnectsRequest): Future[js.Object] = service.associateQueueQuickConnects(params).promise().toFuture
     @inline def associateRoutingProfileQueuesFuture(params: AssociateRoutingProfileQueuesRequest): Future[js.Object] = service.associateRoutingProfileQueues(params).promise().toFuture
     @inline def associateSecurityKeyFuture(params: AssociateSecurityKeyRequest): Future[AssociateSecurityKeyResponse] = service.associateSecurityKey(params).promise().toFuture
     @inline def createContactFlowFuture(params: CreateContactFlowRequest): Future[CreateContactFlowResponse] = service.createContactFlow(params).promise().toFuture
     @inline def createInstanceFuture(params: CreateInstanceRequest): Future[CreateInstanceResponse] = service.createInstance(params).promise().toFuture
     @inline def createIntegrationAssociationFuture(params: CreateIntegrationAssociationRequest): Future[CreateIntegrationAssociationResponse] = service.createIntegrationAssociation(params).promise().toFuture
+    @inline def createQueueFuture(params: CreateQueueRequest): Future[CreateQueueResponse] = service.createQueue(params).promise().toFuture
     @inline def createQuickConnectFuture(params: CreateQuickConnectRequest): Future[CreateQuickConnectResponse] = service.createQuickConnect(params).promise().toFuture
     @inline def createRoutingProfileFuture(params: CreateRoutingProfileRequest): Future[CreateRoutingProfileResponse] = service.createRoutingProfile(params).promise().toFuture
     @inline def createUseCaseFuture(params: CreateUseCaseRequest): Future[CreateUseCaseResponse] = service.createUseCase(params).promise().toFuture
@@ -157,9 +169,11 @@ package object connect {
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise().toFuture
     @inline def deleteUserHierarchyGroupFuture(params: DeleteUserHierarchyGroupRequest): Future[js.Object] = service.deleteUserHierarchyGroup(params).promise().toFuture
     @inline def describeContactFlowFuture(params: DescribeContactFlowRequest): Future[DescribeContactFlowResponse] = service.describeContactFlow(params).promise().toFuture
+    @inline def describeHoursOfOperationFuture(params: DescribeHoursOfOperationRequest): Future[DescribeHoursOfOperationResponse] = service.describeHoursOfOperation(params).promise().toFuture
     @inline def describeInstanceAttributeFuture(params: DescribeInstanceAttributeRequest): Future[DescribeInstanceAttributeResponse] = service.describeInstanceAttribute(params).promise().toFuture
     @inline def describeInstanceFuture(params: DescribeInstanceRequest): Future[DescribeInstanceResponse] = service.describeInstance(params).promise().toFuture
     @inline def describeInstanceStorageConfigFuture(params: DescribeInstanceStorageConfigRequest): Future[DescribeInstanceStorageConfigResponse] = service.describeInstanceStorageConfig(params).promise().toFuture
+    @inline def describeQueueFuture(params: DescribeQueueRequest): Future[DescribeQueueResponse] = service.describeQueue(params).promise().toFuture
     @inline def describeQuickConnectFuture(params: DescribeQuickConnectRequest): Future[DescribeQuickConnectResponse] = service.describeQuickConnect(params).promise().toFuture
     @inline def describeRoutingProfileFuture(params: DescribeRoutingProfileRequest): Future[DescribeRoutingProfileResponse] = service.describeRoutingProfile(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
@@ -169,6 +183,7 @@ package object connect {
     @inline def disassociateInstanceStorageConfigFuture(params: DisassociateInstanceStorageConfigRequest): Future[js.Object] = service.disassociateInstanceStorageConfig(params).promise().toFuture
     @inline def disassociateLambdaFunctionFuture(params: DisassociateLambdaFunctionRequest): Future[js.Object] = service.disassociateLambdaFunction(params).promise().toFuture
     @inline def disassociateLexBotFuture(params: DisassociateLexBotRequest): Future[js.Object] = service.disassociateLexBot(params).promise().toFuture
+    @inline def disassociateQueueQuickConnectsFuture(params: DisassociateQueueQuickConnectsRequest): Future[js.Object] = service.disassociateQueueQuickConnects(params).promise().toFuture
     @inline def disassociateRoutingProfileQueuesFuture(params: DisassociateRoutingProfileQueuesRequest): Future[js.Object] = service.disassociateRoutingProfileQueues(params).promise().toFuture
     @inline def disassociateSecurityKeyFuture(params: DisassociateSecurityKeyRequest): Future[js.Object] = service.disassociateSecurityKey(params).promise().toFuture
     @inline def getContactAttributesFuture(params: GetContactAttributesRequest): Future[GetContactAttributesResponse] = service.getContactAttributes(params).promise().toFuture
@@ -186,6 +201,7 @@ package object connect {
     @inline def listLexBotsFuture(params: ListLexBotsRequest): Future[ListLexBotsResponse] = service.listLexBots(params).promise().toFuture
     @inline def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] = service.listPhoneNumbers(params).promise().toFuture
     @inline def listPromptsFuture(params: ListPromptsRequest): Future[ListPromptsResponse] = service.listPrompts(params).promise().toFuture
+    @inline def listQueueQuickConnectsFuture(params: ListQueueQuickConnectsRequest): Future[ListQueueQuickConnectsResponse] = service.listQueueQuickConnects(params).promise().toFuture
     @inline def listQueuesFuture(params: ListQueuesRequest): Future[ListQueuesResponse] = service.listQueues(params).promise().toFuture
     @inline def listQuickConnectsFuture(params: ListQuickConnectsRequest): Future[ListQuickConnectsResponse] = service.listQuickConnects(params).promise().toFuture
     @inline def listRoutingProfileQueuesFuture(params: ListRoutingProfileQueuesRequest): Future[ListRoutingProfileQueuesResponse] = service.listRoutingProfileQueues(params).promise().toFuture
@@ -211,6 +227,11 @@ package object connect {
     @inline def updateContactFlowNameFuture(params: UpdateContactFlowNameRequest): Future[js.Object] = service.updateContactFlowName(params).promise().toFuture
     @inline def updateInstanceAttributeFuture(params: UpdateInstanceAttributeRequest): Future[js.Object] = service.updateInstanceAttribute(params).promise().toFuture
     @inline def updateInstanceStorageConfigFuture(params: UpdateInstanceStorageConfigRequest): Future[js.Object] = service.updateInstanceStorageConfig(params).promise().toFuture
+    @inline def updateQueueHoursOfOperationFuture(params: UpdateQueueHoursOfOperationRequest): Future[js.Object] = service.updateQueueHoursOfOperation(params).promise().toFuture
+    @inline def updateQueueMaxContactsFuture(params: UpdateQueueMaxContactsRequest): Future[js.Object] = service.updateQueueMaxContacts(params).promise().toFuture
+    @inline def updateQueueNameFuture(params: UpdateQueueNameRequest): Future[js.Object] = service.updateQueueName(params).promise().toFuture
+    @inline def updateQueueOutboundCallerConfigFuture(params: UpdateQueueOutboundCallerConfigRequest): Future[js.Object] = service.updateQueueOutboundCallerConfig(params).promise().toFuture
+    @inline def updateQueueStatusFuture(params: UpdateQueueStatusRequest): Future[js.Object] = service.updateQueueStatus(params).promise().toFuture
     @inline def updateQuickConnectConfigFuture(params: UpdateQuickConnectConfigRequest): Future[js.Object] = service.updateQuickConnectConfig(params).promise().toFuture
     @inline def updateQuickConnectNameFuture(params: UpdateQuickConnectNameRequest): Future[js.Object] = service.updateQuickConnectName(params).promise().toFuture
     @inline def updateRoutingProfileConcurrencyFuture(params: UpdateRoutingProfileConcurrencyRequest): Future[js.Object] = service.updateRoutingProfileConcurrency(params).promise().toFuture
@@ -238,11 +259,13 @@ package connect {
     def associateInstanceStorageConfig(params: AssociateInstanceStorageConfigRequest): Request[AssociateInstanceStorageConfigResponse] = js.native
     def associateLambdaFunction(params: AssociateLambdaFunctionRequest): Request[js.Object] = js.native
     def associateLexBot(params: AssociateLexBotRequest): Request[js.Object] = js.native
+    def associateQueueQuickConnects(params: AssociateQueueQuickConnectsRequest): Request[js.Object] = js.native
     def associateRoutingProfileQueues(params: AssociateRoutingProfileQueuesRequest): Request[js.Object] = js.native
     def associateSecurityKey(params: AssociateSecurityKeyRequest): Request[AssociateSecurityKeyResponse] = js.native
     def createContactFlow(params: CreateContactFlowRequest): Request[CreateContactFlowResponse] = js.native
     def createInstance(params: CreateInstanceRequest): Request[CreateInstanceResponse] = js.native
     def createIntegrationAssociation(params: CreateIntegrationAssociationRequest): Request[CreateIntegrationAssociationResponse] = js.native
+    def createQueue(params: CreateQueueRequest): Request[CreateQueueResponse] = js.native
     def createQuickConnect(params: CreateQuickConnectRequest): Request[CreateQuickConnectResponse] = js.native
     def createRoutingProfile(params: CreateRoutingProfileRequest): Request[CreateRoutingProfileResponse] = js.native
     def createUseCase(params: CreateUseCaseRequest): Request[CreateUseCaseResponse] = js.native
@@ -255,9 +278,11 @@ package connect {
     def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
     def deleteUserHierarchyGroup(params: DeleteUserHierarchyGroupRequest): Request[js.Object] = js.native
     def describeContactFlow(params: DescribeContactFlowRequest): Request[DescribeContactFlowResponse] = js.native
+    def describeHoursOfOperation(params: DescribeHoursOfOperationRequest): Request[DescribeHoursOfOperationResponse] = js.native
     def describeInstance(params: DescribeInstanceRequest): Request[DescribeInstanceResponse] = js.native
     def describeInstanceAttribute(params: DescribeInstanceAttributeRequest): Request[DescribeInstanceAttributeResponse] = js.native
     def describeInstanceStorageConfig(params: DescribeInstanceStorageConfigRequest): Request[DescribeInstanceStorageConfigResponse] = js.native
+    def describeQueue(params: DescribeQueueRequest): Request[DescribeQueueResponse] = js.native
     def describeQuickConnect(params: DescribeQuickConnectRequest): Request[DescribeQuickConnectResponse] = js.native
     def describeRoutingProfile(params: DescribeRoutingProfileRequest): Request[DescribeRoutingProfileResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
@@ -267,6 +292,7 @@ package connect {
     def disassociateInstanceStorageConfig(params: DisassociateInstanceStorageConfigRequest): Request[js.Object] = js.native
     def disassociateLambdaFunction(params: DisassociateLambdaFunctionRequest): Request[js.Object] = js.native
     def disassociateLexBot(params: DisassociateLexBotRequest): Request[js.Object] = js.native
+    def disassociateQueueQuickConnects(params: DisassociateQueueQuickConnectsRequest): Request[js.Object] = js.native
     def disassociateRoutingProfileQueues(params: DisassociateRoutingProfileQueuesRequest): Request[js.Object] = js.native
     def disassociateSecurityKey(params: DisassociateSecurityKeyRequest): Request[js.Object] = js.native
     def getContactAttributes(params: GetContactAttributesRequest): Request[GetContactAttributesResponse] = js.native
@@ -284,6 +310,7 @@ package connect {
     def listLexBots(params: ListLexBotsRequest): Request[ListLexBotsResponse] = js.native
     def listPhoneNumbers(params: ListPhoneNumbersRequest): Request[ListPhoneNumbersResponse] = js.native
     def listPrompts(params: ListPromptsRequest): Request[ListPromptsResponse] = js.native
+    def listQueueQuickConnects(params: ListQueueQuickConnectsRequest): Request[ListQueueQuickConnectsResponse] = js.native
     def listQueues(params: ListQueuesRequest): Request[ListQueuesResponse] = js.native
     def listQuickConnects(params: ListQuickConnectsRequest): Request[ListQuickConnectsResponse] = js.native
     def listRoutingProfileQueues(params: ListRoutingProfileQueuesRequest): Request[ListRoutingProfileQueuesResponse] = js.native
@@ -309,6 +336,11 @@ package connect {
     def updateContactFlowName(params: UpdateContactFlowNameRequest): Request[js.Object] = js.native
     def updateInstanceAttribute(params: UpdateInstanceAttributeRequest): Request[js.Object] = js.native
     def updateInstanceStorageConfig(params: UpdateInstanceStorageConfigRequest): Request[js.Object] = js.native
+    def updateQueueHoursOfOperation(params: UpdateQueueHoursOfOperationRequest): Request[js.Object] = js.native
+    def updateQueueMaxContacts(params: UpdateQueueMaxContactsRequest): Request[js.Object] = js.native
+    def updateQueueName(params: UpdateQueueNameRequest): Request[js.Object] = js.native
+    def updateQueueOutboundCallerConfig(params: UpdateQueueOutboundCallerConfigRequest): Request[js.Object] = js.native
+    def updateQueueStatus(params: UpdateQueueStatusRequest): Request[js.Object] = js.native
     def updateQuickConnectConfig(params: UpdateQuickConnectConfigRequest): Request[js.Object] = js.native
     def updateQuickConnectName(params: UpdateQuickConnectNameRequest): Request[js.Object] = js.native
     def updateRoutingProfileConcurrency(params: UpdateRoutingProfileConcurrencyRequest): Request[js.Object] = js.native
@@ -420,6 +452,29 @@ package connect {
         "LexBot" -> LexBot.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AssociateLexBotRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateQueueQuickConnectsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+    var QuickConnectIds: QuickConnectsList
+  }
+
+  object AssociateQueueQuickConnectsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueId: QueueId,
+        QuickConnectIds: QuickConnectsList
+    ): AssociateQueueQuickConnectsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any],
+        "QuickConnectIds" -> QuickConnectIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateQueueQuickConnectsRequest]
     }
   }
 
@@ -775,6 +830,64 @@ package connect {
       IntegrationAssociationArn.foreach(__v => __obj.updateDynamic("IntegrationAssociationArn")(__v.asInstanceOf[js.Any]))
       IntegrationAssociationId.foreach(__v => __obj.updateDynamic("IntegrationAssociationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationAssociationResponse]
+    }
+  }
+
+  @js.native
+  trait CreateQueueRequest extends js.Object {
+    var HoursOfOperationId: HoursOfOperationId
+    var InstanceId: InstanceId
+    var Name: CommonNameLength127
+    var Description: js.UndefOr[QueueDescription]
+    var MaxContacts: js.UndefOr[QueueMaxContacts]
+    var OutboundCallerConfig: js.UndefOr[OutboundCallerConfig]
+    var QuickConnectIds: js.UndefOr[QuickConnectsList]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateQueueRequest {
+    @inline
+    def apply(
+        HoursOfOperationId: HoursOfOperationId,
+        InstanceId: InstanceId,
+        Name: CommonNameLength127,
+        Description: js.UndefOr[QueueDescription] = js.undefined,
+        MaxContacts: js.UndefOr[QueueMaxContacts] = js.undefined,
+        OutboundCallerConfig: js.UndefOr[OutboundCallerConfig] = js.undefined,
+        QuickConnectIds: js.UndefOr[QuickConnectsList] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateQueueRequest = {
+      val __obj = js.Dynamic.literal(
+        "HoursOfOperationId" -> HoursOfOperationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxContacts.foreach(__v => __obj.updateDynamic("MaxContacts")(__v.asInstanceOf[js.Any]))
+      OutboundCallerConfig.foreach(__v => __obj.updateDynamic("OutboundCallerConfig")(__v.asInstanceOf[js.Any]))
+      QuickConnectIds.foreach(__v => __obj.updateDynamic("QuickConnectIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateQueueRequest]
+    }
+  }
+
+  @js.native
+  trait CreateQueueResponse extends js.Object {
+    var QueueArn: js.UndefOr[ARN]
+    var QueueId: js.UndefOr[QueueId]
+  }
+
+  object CreateQueueResponse {
+    @inline
+    def apply(
+        QueueArn: js.UndefOr[ARN] = js.undefined,
+        QueueId: js.UndefOr[QueueId] = js.undefined
+    ): CreateQueueResponse = {
+      val __obj = js.Dynamic.literal()
+      QueueArn.foreach(__v => __obj.updateDynamic("QueueArn")(__v.asInstanceOf[js.Any]))
+      QueueId.foreach(__v => __obj.updateDynamic("QueueId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateQueueResponse]
     }
   }
 
@@ -1314,6 +1427,42 @@ package connect {
   }
 
   @js.native
+  trait DescribeHoursOfOperationRequest extends js.Object {
+    var HoursOfOperationId: HoursOfOperationId
+    var InstanceId: InstanceId
+  }
+
+  object DescribeHoursOfOperationRequest {
+    @inline
+    def apply(
+        HoursOfOperationId: HoursOfOperationId,
+        InstanceId: InstanceId
+    ): DescribeHoursOfOperationRequest = {
+      val __obj = js.Dynamic.literal(
+        "HoursOfOperationId" -> HoursOfOperationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeHoursOfOperationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeHoursOfOperationResponse extends js.Object {
+    var HoursOfOperation: js.UndefOr[HoursOfOperation]
+  }
+
+  object DescribeHoursOfOperationResponse {
+    @inline
+    def apply(
+        HoursOfOperation: js.UndefOr[HoursOfOperation] = js.undefined
+    ): DescribeHoursOfOperationResponse = {
+      val __obj = js.Dynamic.literal()
+      HoursOfOperation.foreach(__v => __obj.updateDynamic("HoursOfOperation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeHoursOfOperationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeInstanceAttributeRequest extends js.Object {
     var AttributeType: InstanceAttributeType
     var InstanceId: InstanceId
@@ -1418,6 +1567,42 @@ package connect {
       val __obj = js.Dynamic.literal()
       StorageConfig.foreach(__v => __obj.updateDynamic("StorageConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceStorageConfigResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeQueueRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+  }
+
+  object DescribeQueueRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueId: QueueId
+    ): DescribeQueueRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeQueueRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeQueueResponse extends js.Object {
+    var Queue: js.UndefOr[Queue]
+  }
+
+  object DescribeQueueResponse {
+    @inline
+    def apply(
+        Queue: js.UndefOr[Queue] = js.undefined
+    ): DescribeQueueResponse = {
+      val __obj = js.Dynamic.literal()
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeQueueResponse]
     }
   }
 
@@ -1712,6 +1897,29 @@ package connect {
         "LexRegion" -> LexRegion.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DisassociateLexBotRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateQueueQuickConnectsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+    var QuickConnectIds: QuickConnectsList
+  }
+
+  object DisassociateQueueQuickConnectsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueId: QueueId,
+        QuickConnectIds: QuickConnectsList
+    ): DisassociateQueueQuickConnectsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any],
+        "QuickConnectIds" -> QuickConnectIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateQueueQuickConnectsRequest]
     }
   }
 
@@ -2316,6 +2524,80 @@ package connect {
     }
   }
 
+  /** Information about of the hours of operation.
+    */
+  @js.native
+  trait HoursOfOperation extends js.Object {
+    var Config: js.UndefOr[HoursOfOperationConfigList]
+    var Description: js.UndefOr[CommonDescriptionLength250]
+    var HoursOfOperationArn: js.UndefOr[ARN]
+    var HoursOfOperationId: js.UndefOr[HoursOfOperationId]
+    var Name: js.UndefOr[CommonNameLength127]
+    var Tags: js.UndefOr[TagMap]
+    var TimeZone: js.UndefOr[TimeZone]
+  }
+
+  object HoursOfOperation {
+    @inline
+    def apply(
+        Config: js.UndefOr[HoursOfOperationConfigList] = js.undefined,
+        Description: js.UndefOr[CommonDescriptionLength250] = js.undefined,
+        HoursOfOperationArn: js.UndefOr[ARN] = js.undefined,
+        HoursOfOperationId: js.UndefOr[HoursOfOperationId] = js.undefined,
+        Name: js.UndefOr[CommonNameLength127] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        TimeZone: js.UndefOr[TimeZone] = js.undefined
+    ): HoursOfOperation = {
+      val __obj = js.Dynamic.literal()
+      Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HoursOfOperationArn.foreach(__v => __obj.updateDynamic("HoursOfOperationArn")(__v.asInstanceOf[js.Any]))
+      HoursOfOperationId.foreach(__v => __obj.updateDynamic("HoursOfOperationId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoursOfOperation]
+    }
+  }
+
+  /** Contains information about the hours of operation.
+    */
+  @js.native
+  trait HoursOfOperationConfig extends js.Object {
+    var Day: js.UndefOr[HoursOfOperationDays]
+    var EndTime: js.UndefOr[HoursOfOperationTimeSlice]
+    var StartTime: js.UndefOr[HoursOfOperationTimeSlice]
+  }
+
+  object HoursOfOperationConfig {
+    @inline
+    def apply(
+        Day: js.UndefOr[HoursOfOperationDays] = js.undefined,
+        EndTime: js.UndefOr[HoursOfOperationTimeSlice] = js.undefined,
+        StartTime: js.UndefOr[HoursOfOperationTimeSlice] = js.undefined
+    ): HoursOfOperationConfig = {
+      val __obj = js.Dynamic.literal()
+      Day.foreach(__v => __obj.updateDynamic("Day")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoursOfOperationConfig]
+    }
+  }
+
+  @js.native
+  sealed trait HoursOfOperationDays extends js.Any
+  object HoursOfOperationDays {
+    val SUNDAY = "SUNDAY".asInstanceOf[HoursOfOperationDays]
+    val MONDAY = "MONDAY".asInstanceOf[HoursOfOperationDays]
+    val TUESDAY = "TUESDAY".asInstanceOf[HoursOfOperationDays]
+    val WEDNESDAY = "WEDNESDAY".asInstanceOf[HoursOfOperationDays]
+    val THURSDAY = "THURSDAY".asInstanceOf[HoursOfOperationDays]
+    val FRIDAY = "FRIDAY".asInstanceOf[HoursOfOperationDays]
+    val SATURDAY = "SATURDAY".asInstanceOf[HoursOfOperationDays]
+
+    @inline def values = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
+  }
+
   /** Contains summary information about hours of operation for a contact center.
     */
   @js.native
@@ -2337,6 +2619,27 @@ package connect {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HoursOfOperationSummary]
+    }
+  }
+
+  /** The start time or end time for an hours of operation.
+    */
+  @js.native
+  trait HoursOfOperationTimeSlice extends js.Object {
+    var Hours: js.UndefOr[Hours24Format]
+    var Minutes: js.UndefOr[MinutesLimit60]
+  }
+
+  object HoursOfOperationTimeSlice {
+    @inline
+    def apply(
+        Hours: js.UndefOr[Hours24Format] = js.undefined,
+        Minutes: js.UndefOr[MinutesLimit60] = js.undefined
+    ): HoursOfOperationTimeSlice = {
+      val __obj = js.Dynamic.literal()
+      Hours.foreach(__v => __obj.updateDynamic("Hours")(__v.asInstanceOf[js.Any]))
+      Minutes.foreach(__v => __obj.updateDynamic("Minutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoursOfOperationTimeSlice]
     }
   }
 
@@ -2564,7 +2867,7 @@ package connect {
     @inline def values = js.Array(EVENT)
   }
 
-  /** Configuration information of a Kinesis Firehose delivery stream.
+  /** Configuration information of a Kinesis Data Firehose delivery stream.
     */
   @js.native
   trait KinesisFirehoseConfig extends js.Object {
@@ -3129,6 +3432,52 @@ package connect {
   }
 
   @js.native
+  trait ListQueueQuickConnectsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+    var MaxResults: js.UndefOr[MaxResult100]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListQueueQuickConnectsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueId: QueueId,
+        MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListQueueQuickConnectsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueueQuickConnectsRequest]
+    }
+  }
+
+  @js.native
+  trait ListQueueQuickConnectsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var QuickConnectSummaryList: js.UndefOr[QuickConnectSummaryList]
+  }
+
+  object ListQueueQuickConnectsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        QuickConnectSummaryList: js.UndefOr[QuickConnectSummaryList] = js.undefined
+    ): ListQueueQuickConnectsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QuickConnectSummaryList.foreach(__v => __obj.updateDynamic("QuickConnectSummaryList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueueQuickConnectsResponse]
+    }
+  }
+
+  @js.native
   trait ListQueuesRequest extends js.Object {
     var InstanceId: InstanceId
     var MaxResults: js.UndefOr[MaxResult1000]
@@ -3581,6 +3930,30 @@ package connect {
         "Concurrency" -> Concurrency.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[MediaConcurrency]
+    }
+  }
+
+  /** The outbound caller ID name, number, and outbound whisper flow.
+    */
+  @js.native
+  trait OutboundCallerConfig extends js.Object {
+    var OutboundCallerIdName: js.UndefOr[OutboundCallerIdName]
+    var OutboundCallerIdNumberId: js.UndefOr[PhoneNumberId]
+    var OutboundFlowId: js.UndefOr[ContactFlowId]
+  }
+
+  object OutboundCallerConfig {
+    @inline
+    def apply(
+        OutboundCallerIdName: js.UndefOr[OutboundCallerIdName] = js.undefined,
+        OutboundCallerIdNumberId: js.UndefOr[PhoneNumberId] = js.undefined,
+        OutboundFlowId: js.UndefOr[ContactFlowId] = js.undefined
+    ): OutboundCallerConfig = {
+      val __obj = js.Dynamic.literal()
+      OutboundCallerIdName.foreach(__v => __obj.updateDynamic("OutboundCallerIdName")(__v.asInstanceOf[js.Any]))
+      OutboundCallerIdNumberId.foreach(__v => __obj.updateDynamic("OutboundCallerIdNumberId")(__v.asInstanceOf[js.Any]))
+      OutboundFlowId.foreach(__v => __obj.updateDynamic("OutboundFlowId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutboundCallerConfig]
     }
   }
 
@@ -4176,6 +4549,48 @@ package connect {
     }
   }
 
+  /** Contains information about a queue.
+    */
+  @js.native
+  trait Queue extends js.Object {
+    var Description: js.UndefOr[QueueDescription]
+    var HoursOfOperationId: js.UndefOr[HoursOfOperationId]
+    var MaxContacts: js.UndefOr[QueueMaxContacts]
+    var Name: js.UndefOr[CommonNameLength127]
+    var OutboundCallerConfig: js.UndefOr[OutboundCallerConfig]
+    var QueueArn: js.UndefOr[ARN]
+    var QueueId: js.UndefOr[QueueId]
+    var Status: js.UndefOr[QueueStatus]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object Queue {
+    @inline
+    def apply(
+        Description: js.UndefOr[QueueDescription] = js.undefined,
+        HoursOfOperationId: js.UndefOr[HoursOfOperationId] = js.undefined,
+        MaxContacts: js.UndefOr[QueueMaxContacts] = js.undefined,
+        Name: js.UndefOr[CommonNameLength127] = js.undefined,
+        OutboundCallerConfig: js.UndefOr[OutboundCallerConfig] = js.undefined,
+        QueueArn: js.UndefOr[ARN] = js.undefined,
+        QueueId: js.UndefOr[QueueId] = js.undefined,
+        Status: js.UndefOr[QueueStatus] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): Queue = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HoursOfOperationId.foreach(__v => __obj.updateDynamic("HoursOfOperationId")(__v.asInstanceOf[js.Any]))
+      MaxContacts.foreach(__v => __obj.updateDynamic("MaxContacts")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutboundCallerConfig.foreach(__v => __obj.updateDynamic("OutboundCallerConfig")(__v.asInstanceOf[js.Any]))
+      QueueArn.foreach(__v => __obj.updateDynamic("QueueArn")(__v.asInstanceOf[js.Any]))
+      QueueId.foreach(__v => __obj.updateDynamic("QueueId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Queue]
+    }
+  }
+
   /** Contains information about a queue for a quick connect. The contact flow must be of type Transfer to Queue.
     */
   @js.native
@@ -4217,6 +4632,15 @@ package connect {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueueReference]
     }
+  }
+
+  @js.native
+  sealed trait QueueStatus extends js.Any
+  object QueueStatus {
+    val ENABLED = "ENABLED".asInstanceOf[QueueStatus]
+    val DISABLED = "DISABLED".asInstanceOf[QueueStatus]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /** Contains summary information about a queue.
@@ -4562,7 +4986,7 @@ package connect {
     }
   }
 
-  /** Information about the S3 storage type.
+  /** Information about the Amazon Simple Storage Service (Amazon S3) storage type.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -5165,6 +5589,125 @@ package connect {
         "StorageConfig" -> StorageConfig.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateInstanceStorageConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateQueueHoursOfOperationRequest extends js.Object {
+    var HoursOfOperationId: HoursOfOperationId
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+  }
+
+  object UpdateQueueHoursOfOperationRequest {
+    @inline
+    def apply(
+        HoursOfOperationId: HoursOfOperationId,
+        InstanceId: InstanceId,
+        QueueId: QueueId
+    ): UpdateQueueHoursOfOperationRequest = {
+      val __obj = js.Dynamic.literal(
+        "HoursOfOperationId" -> HoursOfOperationId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateQueueHoursOfOperationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateQueueMaxContactsRequest extends js.Object {
+    var InstanceId: InstanceId
+    var MaxContacts: QueueMaxContacts
+    var QueueId: QueueId
+  }
+
+  object UpdateQueueMaxContactsRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        MaxContacts: QueueMaxContacts,
+        QueueId: QueueId
+    ): UpdateQueueMaxContactsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "MaxContacts" -> MaxContacts.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateQueueMaxContactsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateQueueNameRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+    var Description: js.UndefOr[QueueDescription]
+    var Name: js.UndefOr[CommonNameLength127]
+  }
+
+  object UpdateQueueNameRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueId: QueueId,
+        Description: js.UndefOr[QueueDescription] = js.undefined,
+        Name: js.UndefOr[CommonNameLength127] = js.undefined
+    ): UpdateQueueNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateQueueNameRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateQueueOutboundCallerConfigRequest extends js.Object {
+    var InstanceId: InstanceId
+    var OutboundCallerConfig: OutboundCallerConfig
+    var QueueId: QueueId
+  }
+
+  object UpdateQueueOutboundCallerConfigRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        OutboundCallerConfig: OutboundCallerConfig,
+        QueueId: QueueId
+    ): UpdateQueueOutboundCallerConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "OutboundCallerConfig" -> OutboundCallerConfig.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateQueueOutboundCallerConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateQueueStatusRequest extends js.Object {
+    var InstanceId: InstanceId
+    var QueueId: QueueId
+    var Status: QueueStatus
+  }
+
+  object UpdateQueueStatusRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        QueueId: QueueId,
+        Status: QueueStatus
+    ): UpdateQueueStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "QueueId" -> QueueId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateQueueStatusRequest]
     }
   }
 

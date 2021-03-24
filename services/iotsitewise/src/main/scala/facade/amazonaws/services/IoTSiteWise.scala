@@ -2782,6 +2782,25 @@ package iotsitewise {
     }
   }
 
+  /** Contains information about an AWS Identity and Access Management (IAM) role. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html|IAM roles]] in the <i>IAM User Guide</i>.
+    */
+  @js.native
+  trait IAMRoleIdentity extends js.Object {
+    var arn: ARN
+  }
+
+  object IAMRoleIdentity {
+    @inline
+    def apply(
+        arn: ARN
+    ): IAMRoleIdentity = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[IAMRoleIdentity]
+    }
+  }
+
   /** Contains information about an AWS Identity and Access Management (IAM) user.
     */
   @js.native
@@ -2808,6 +2827,7 @@ package iotsitewise {
   @js.native
   trait Identity extends js.Object {
     var group: js.UndefOr[GroupIdentity]
+    var iamRole: js.UndefOr[IAMRoleIdentity]
     var iamUser: js.UndefOr[IAMUserIdentity]
     var user: js.UndefOr[UserIdentity]
   }
@@ -2816,11 +2836,13 @@ package iotsitewise {
     @inline
     def apply(
         group: js.UndefOr[GroupIdentity] = js.undefined,
+        iamRole: js.UndefOr[IAMRoleIdentity] = js.undefined,
         iamUser: js.UndefOr[IAMUserIdentity] = js.undefined,
         user: js.UndefOr[UserIdentity] = js.undefined
     ): Identity = {
       val __obj = js.Dynamic.literal()
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
       iamUser.foreach(__v => __obj.updateDynamic("iamUser")(__v.asInstanceOf[js.Any]))
       user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Identity]
@@ -3436,7 +3458,7 @@ package iotsitewise {
     }
   }
 
-  /** Contains an asset measurement property. This structure is empty. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset measurement property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Measurement extends js.Object

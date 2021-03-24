@@ -26,6 +26,7 @@ package object glue {
   type BooleanValue = Boolean
   type BoundedPartitionValueList = js.Array[ValueString]
   type CatalogEntries = js.Array[CatalogEntry]
+  type CatalogGetterPageSize = Int
   type CatalogIdString = String
   type CatalogTablesList = js.Array[NameString]
   type CatalogTargetList = js.Array[CatalogTarget]
@@ -5238,7 +5239,7 @@ package glue {
   @js.native
   trait GetDatabasesRequest extends js.Object {
     var CatalogId: js.UndefOr[CatalogIdString]
-    var MaxResults: js.UndefOr[PageSize]
+    var MaxResults: js.UndefOr[CatalogGetterPageSize]
     var NextToken: js.UndefOr[Token]
     var ResourceShareType: js.UndefOr[ResourceShareType]
   }
@@ -5247,7 +5248,7 @@ package glue {
     @inline
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MaxResults: js.UndefOr[CatalogGetterPageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
         ResourceShareType: js.UndefOr[ResourceShareType] = js.undefined
     ): GetDatabasesRequest = {
@@ -5958,6 +5959,7 @@ package glue {
     var DatabaseName: NameString
     var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var ExcludeColumnSchema: js.UndefOr[BooleanNullable]
     var Expression: js.UndefOr[PredicateString]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
@@ -5970,6 +5972,7 @@ package glue {
         DatabaseName: NameString,
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        ExcludeColumnSchema: js.UndefOr[BooleanNullable] = js.undefined,
         Expression: js.UndefOr[PredicateString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
@@ -5981,6 +5984,7 @@ package glue {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      ExcludeColumnSchema.foreach(__v => __obj.updateDynamic("ExcludeColumnSchema")(__v.asInstanceOf[js.Any]))
       Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -6561,7 +6565,7 @@ package glue {
     var DatabaseName: NameString
     var TableName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
-    var MaxResults: js.UndefOr[PageSize]
+    var MaxResults: js.UndefOr[CatalogGetterPageSize]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -6571,7 +6575,7 @@ package glue {
         DatabaseName: NameString,
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MaxResults: js.UndefOr[CatalogGetterPageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetTableVersionsRequest = {
       val __obj = js.Dynamic.literal(
@@ -6610,7 +6614,7 @@ package glue {
     var DatabaseName: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
     var Expression: js.UndefOr[FilterString]
-    var MaxResults: js.UndefOr[PageSize]
+    var MaxResults: js.UndefOr[CatalogGetterPageSize]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -6620,7 +6624,7 @@ package glue {
         DatabaseName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         Expression: js.UndefOr[FilterString] = js.undefined,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MaxResults: js.UndefOr[CatalogGetterPageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetTablesRequest = {
       val __obj = js.Dynamic.literal(
@@ -6806,7 +6810,7 @@ package glue {
     var Pattern: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
     var DatabaseName: js.UndefOr[NameString]
-    var MaxResults: js.UndefOr[PageSize]
+    var MaxResults: js.UndefOr[CatalogGetterPageSize]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -6816,7 +6820,7 @@ package glue {
         Pattern: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         DatabaseName: js.UndefOr[NameString] = js.undefined,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MaxResults: js.UndefOr[CatalogGetterPageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetUserDefinedFunctionsRequest = {
       val __obj = js.Dynamic.literal(

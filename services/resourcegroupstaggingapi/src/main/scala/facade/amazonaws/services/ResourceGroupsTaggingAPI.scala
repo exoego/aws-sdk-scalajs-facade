@@ -21,7 +21,8 @@ package object resourcegroupstaggingapi {
   type Region = String
   type RegionFilterList = js.Array[Region]
   type ResourceARN = String
-  type ResourceARNList = js.Array[ResourceARN]
+  type ResourceARNListForGet = js.Array[ResourceARN]
+  type ResourceARNListForTagUntag = js.Array[ResourceARN]
   type ResourceTagMappingList = js.Array[ResourceTagMapping]
   type ResourceTypeFilterList = js.Array[AmazonResourceType]
   type ResourcesPerPage = Int
@@ -226,6 +227,7 @@ package resourcegroupstaggingapi {
     var ExcludeCompliantResources: js.UndefOr[ExcludeCompliantResources]
     var IncludeComplianceDetails: js.UndefOr[IncludeComplianceDetails]
     var PaginationToken: js.UndefOr[PaginationToken]
+    var ResourceARNList: js.UndefOr[ResourceARNListForGet]
     var ResourceTypeFilters: js.UndefOr[ResourceTypeFilterList]
     var ResourcesPerPage: js.UndefOr[ResourcesPerPage]
     var TagFilters: js.UndefOr[TagFilterList]
@@ -238,6 +240,7 @@ package resourcegroupstaggingapi {
         ExcludeCompliantResources: js.UndefOr[ExcludeCompliantResources] = js.undefined,
         IncludeComplianceDetails: js.UndefOr[IncludeComplianceDetails] = js.undefined,
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
+        ResourceARNList: js.UndefOr[ResourceARNListForGet] = js.undefined,
         ResourceTypeFilters: js.UndefOr[ResourceTypeFilterList] = js.undefined,
         ResourcesPerPage: js.UndefOr[ResourcesPerPage] = js.undefined,
         TagFilters: js.UndefOr[TagFilterList] = js.undefined,
@@ -247,6 +250,7 @@ package resourcegroupstaggingapi {
       ExcludeCompliantResources.foreach(__v => __obj.updateDynamic("ExcludeCompliantResources")(__v.asInstanceOf[js.Any]))
       IncludeComplianceDetails.foreach(__v => __obj.updateDynamic("IncludeComplianceDetails")(__v.asInstanceOf[js.Any]))
       PaginationToken.foreach(__v => __obj.updateDynamic("PaginationToken")(__v.asInstanceOf[js.Any]))
+      ResourceARNList.foreach(__v => __obj.updateDynamic("ResourceARNList")(__v.asInstanceOf[js.Any]))
       ResourceTypeFilters.foreach(__v => __obj.updateDynamic("ResourceTypeFilters")(__v.asInstanceOf[js.Any]))
       ResourcesPerPage.foreach(__v => __obj.updateDynamic("ResourcesPerPage")(__v.asInstanceOf[js.Any]))
       TagFilters.foreach(__v => __obj.updateDynamic("TagFilters")(__v.asInstanceOf[js.Any]))
@@ -489,14 +493,14 @@ package resourcegroupstaggingapi {
 
   @js.native
   trait TagResourcesInput extends js.Object {
-    var ResourceARNList: ResourceARNList
+    var ResourceARNList: ResourceARNListForTagUntag
     var Tags: TagMap
   }
 
   object TagResourcesInput {
     @inline
     def apply(
-        ResourceARNList: ResourceARNList,
+        ResourceARNList: ResourceARNListForTagUntag,
         Tags: TagMap
     ): TagResourcesInput = {
       val __obj = js.Dynamic.literal(
@@ -535,14 +539,14 @@ package resourcegroupstaggingapi {
 
   @js.native
   trait UntagResourcesInput extends js.Object {
-    var ResourceARNList: ResourceARNList
+    var ResourceARNList: ResourceARNListForTagUntag
     var TagKeys: TagKeyListForUntag
   }
 
   object UntagResourcesInput {
     @inline
     def apply(
-        ResourceARNList: ResourceARNList,
+        ResourceARNList: ResourceARNListForTagUntag,
         TagKeys: TagKeyListForUntag
     ): UntagResourcesInput = {
       val __obj = js.Dynamic.literal(

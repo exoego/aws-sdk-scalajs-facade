@@ -30,6 +30,7 @@ package object dlm {
   type PolicyDescription = String
   type PolicyId = String
   type PolicyIdList = js.Array[PolicyId]
+  type ResourceLocationList = js.Array[ResourceLocationValues]
   type ResourceTypeValuesList = js.Array[ResourceTypeValues]
   type ScheduleList = js.Array[Schedule]
   type ScheduleName = String
@@ -159,6 +160,7 @@ package dlm {
     var CronExpression: js.UndefOr[CronExpression]
     var Interval: js.UndefOr[Interval]
     var IntervalUnit: js.UndefOr[IntervalUnitValues]
+    var Location: js.UndefOr[LocationValues]
     var Times: js.UndefOr[TimesList]
   }
 
@@ -168,12 +170,14 @@ package dlm {
         CronExpression: js.UndefOr[CronExpression] = js.undefined,
         Interval: js.UndefOr[Interval] = js.undefined,
         IntervalUnit: js.UndefOr[IntervalUnitValues] = js.undefined,
+        Location: js.UndefOr[LocationValues] = js.undefined,
         Times: js.UndefOr[TimesList] = js.undefined
     ): CreateRule = {
       val __obj = js.Dynamic.literal()
       CronExpression.foreach(__v => __obj.updateDynamic("CronExpression")(__v.asInstanceOf[js.Any]))
       Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
       IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       Times.foreach(__v => __obj.updateDynamic("Times")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRule]
     }
@@ -231,29 +235,32 @@ package dlm {
   @js.native
   trait CrossRegionCopyRule extends js.Object {
     var Encrypted: Encrypted
-    var TargetRegion: TargetRegion
     var CmkArn: js.UndefOr[CmkArn]
     var CopyTags: js.UndefOr[CopyTagsNullable]
     var RetainRule: js.UndefOr[CrossRegionCopyRetainRule]
+    var Target: js.UndefOr[Target]
+    var TargetRegion: js.UndefOr[TargetRegion]
   }
 
   object CrossRegionCopyRule {
     @inline
     def apply(
         Encrypted: Encrypted,
-        TargetRegion: TargetRegion,
         CmkArn: js.UndefOr[CmkArn] = js.undefined,
         CopyTags: js.UndefOr[CopyTagsNullable] = js.undefined,
-        RetainRule: js.UndefOr[CrossRegionCopyRetainRule] = js.undefined
+        RetainRule: js.UndefOr[CrossRegionCopyRetainRule] = js.undefined,
+        Target: js.UndefOr[Target] = js.undefined,
+        TargetRegion: js.UndefOr[TargetRegion] = js.undefined
     ): CrossRegionCopyRule = {
       val __obj = js.Dynamic.literal(
-        "Encrypted" -> Encrypted.asInstanceOf[js.Any],
-        "TargetRegion" -> TargetRegion.asInstanceOf[js.Any]
+        "Encrypted" -> Encrypted.asInstanceOf[js.Any]
       )
 
       CmkArn.foreach(__v => __obj.updateDynamic("CmkArn")(__v.asInstanceOf[js.Any]))
       CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
       RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
+      TargetRegion.foreach(__v => __obj.updateDynamic("TargetRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrossRegionCopyRule]
     }
   }
@@ -605,6 +612,15 @@ package dlm {
     }
   }
 
+  @js.native
+  sealed trait LocationValues extends js.Any
+  object LocationValues {
+    val CLOUD = "CLOUD".asInstanceOf[LocationValues]
+    val OUTPOST_LOCAL = "OUTPOST_LOCAL".asInstanceOf[LocationValues]
+
+    @inline def values = js.Array(CLOUD, OUTPOST_LOCAL)
+  }
+
   /** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.
     */
   @js.native
@@ -634,6 +650,7 @@ package dlm {
     var EventSource: js.UndefOr[EventSource]
     var Parameters: js.UndefOr[Parameters]
     var PolicyType: js.UndefOr[PolicyTypeValues]
+    var ResourceLocations: js.UndefOr[ResourceLocationList]
     var ResourceTypes: js.UndefOr[ResourceTypeValuesList]
     var Schedules: js.UndefOr[ScheduleList]
     var TargetTags: js.UndefOr[TargetTagList]
@@ -646,6 +663,7 @@ package dlm {
         EventSource: js.UndefOr[EventSource] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         PolicyType: js.UndefOr[PolicyTypeValues] = js.undefined,
+        ResourceLocations: js.UndefOr[ResourceLocationList] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypeValuesList] = js.undefined,
         Schedules: js.UndefOr[ScheduleList] = js.undefined,
         TargetTags: js.UndefOr[TargetTagList] = js.undefined
@@ -655,6 +673,7 @@ package dlm {
       EventSource.foreach(__v => __obj.updateDynamic("EventSource")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
+      ResourceLocations.foreach(__v => __obj.updateDynamic("ResourceLocations")(__v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       Schedules.foreach(__v => __obj.updateDynamic("Schedules")(__v.asInstanceOf[js.Any]))
       TargetTags.foreach(__v => __obj.updateDynamic("TargetTags")(__v.asInstanceOf[js.Any]))
@@ -670,6 +689,15 @@ package dlm {
     val EVENT_BASED_POLICY = "EVENT_BASED_POLICY".asInstanceOf[PolicyTypeValues]
 
     @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT, EVENT_BASED_POLICY)
+  }
+
+  @js.native
+  sealed trait ResourceLocationValues extends js.Any
+  object ResourceLocationValues {
+    val CLOUD = "CLOUD".asInstanceOf[ResourceLocationValues]
+    val OUTPOST = "OUTPOST".asInstanceOf[ResourceLocationValues]
+
+    @inline def values = js.Array(CLOUD, OUTPOST)
   }
 
   @js.native

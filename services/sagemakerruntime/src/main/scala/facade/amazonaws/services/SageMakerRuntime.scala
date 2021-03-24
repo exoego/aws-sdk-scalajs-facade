@@ -12,6 +12,7 @@ package object sagemakerruntime {
   type EndpointName = String
   type Header = String
   type InferenceId = String
+  type TargetContainerHostnameHeader = String
   type TargetModelHeader = String
   type TargetVariantHeader = String
 
@@ -39,6 +40,7 @@ package sagemakerruntime {
     var ContentType: js.UndefOr[Header]
     var CustomAttributes: js.UndefOr[CustomAttributesHeader]
     var InferenceId: js.UndefOr[InferenceId]
+    var TargetContainerHostname: js.UndefOr[TargetContainerHostnameHeader]
     var TargetModel: js.UndefOr[TargetModelHeader]
     var TargetVariant: js.UndefOr[TargetVariantHeader]
   }
@@ -52,6 +54,7 @@ package sagemakerruntime {
         ContentType: js.UndefOr[Header] = js.undefined,
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
         InferenceId: js.UndefOr[InferenceId] = js.undefined,
+        TargetContainerHostname: js.UndefOr[TargetContainerHostnameHeader] = js.undefined,
         TargetModel: js.UndefOr[TargetModelHeader] = js.undefined,
         TargetVariant: js.UndefOr[TargetVariantHeader] = js.undefined
     ): InvokeEndpointInput = {
@@ -64,6 +67,7 @@ package sagemakerruntime {
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       CustomAttributes.foreach(__v => __obj.updateDynamic("CustomAttributes")(__v.asInstanceOf[js.Any]))
       InferenceId.foreach(__v => __obj.updateDynamic("InferenceId")(__v.asInstanceOf[js.Any]))
+      TargetContainerHostname.foreach(__v => __obj.updateDynamic("TargetContainerHostname")(__v.asInstanceOf[js.Any]))
       TargetModel.foreach(__v => __obj.updateDynamic("TargetModel")(__v.asInstanceOf[js.Any]))
       TargetVariant.foreach(__v => __obj.updateDynamic("TargetVariant")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeEndpointInput]

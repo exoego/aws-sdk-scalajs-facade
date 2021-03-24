@@ -352,7 +352,7 @@ package cloudformation {
     }
   }
 
-  /** [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).
+  /** [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).
     */
   @js.native
   trait AutoDeployment extends js.Object {
@@ -371,6 +371,15 @@ package cloudformation {
       RetainStacksOnAccountRemoval.foreach(__v => __obj.updateDynamic("RetainStacksOnAccountRemoval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoDeployment]
     }
+  }
+
+  @js.native
+  sealed trait CallAs extends js.Any
+  object CallAs {
+    val SELF = "SELF".asInstanceOf[CallAs]
+    val DELEGATED_ADMIN = "DELEGATED_ADMIN".asInstanceOf[CallAs]
+
+    @inline def values = js.Array(SELF, DELEGATED_ADMIN)
   }
 
   /** The input for the <a>CancelUpdateStack</a> action.
@@ -739,6 +748,7 @@ package cloudformation {
     var Regions: RegionList
     var StackSetName: StackSetName
     var Accounts: js.UndefOr[AccountList]
+    var CallAs: js.UndefOr[CallAs]
     var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
@@ -751,6 +761,7 @@ package cloudformation {
         Regions: RegionList,
         StackSetName: StackSetName,
         Accounts: js.UndefOr[AccountList] = js.undefined,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
@@ -762,6 +773,7 @@ package cloudformation {
       )
 
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
@@ -809,6 +821,7 @@ package cloudformation {
     var StackSetName: StackSetName
     var AdministrationRoleARN: js.UndefOr[RoleARN]
     var AutoDeployment: js.UndefOr[AutoDeployment]
+    var CallAs: js.UndefOr[CallAs]
     var Capabilities: js.UndefOr[Capabilities]
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[Description]
@@ -826,6 +839,7 @@ package cloudformation {
         StackSetName: StackSetName,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
         AutoDeployment: js.UndefOr[AutoDeployment] = js.undefined,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -842,6 +856,7 @@ package cloudformation {
 
       AdministrationRoleARN.foreach(__v => __obj.updateDynamic("AdministrationRoleARN")(__v.asInstanceOf[js.Any]))
       AutoDeployment.foreach(__v => __obj.updateDynamic("AutoDeployment")(__v.asInstanceOf[js.Any]))
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -942,6 +957,7 @@ package cloudformation {
     var RetainStacks: RetainStacks
     var StackSetName: StackSetName
     var Accounts: js.UndefOr[AccountList]
+    var CallAs: js.UndefOr[CallAs]
     var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
@@ -954,6 +970,7 @@ package cloudformation {
         RetainStacks: RetainStacks,
         StackSetName: StackSetName,
         Accounts: js.UndefOr[AccountList] = js.undefined,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined
@@ -965,6 +982,7 @@ package cloudformation {
       )
 
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
@@ -991,16 +1009,20 @@ package cloudformation {
   @js.native
   trait DeleteStackSetInput extends js.Object {
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
   }
 
   object DeleteStackSetInput {
     @inline
     def apply(
-        StackSetName: StackSetName
+        StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined
     ): DeleteStackSetInput = {
       val __obj = js.Dynamic.literal(
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
+
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteStackSetInput]
     }
   }
@@ -1016,7 +1038,7 @@ package cloudformation {
     }
   }
 
-  /** [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization.
+  /** [Service-managed permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization.
     * For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
     */
   @js.native
@@ -1320,6 +1342,7 @@ package cloudformation {
     var StackInstanceAccount: Account
     var StackInstanceRegion: Region
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
   }
 
   object DescribeStackInstanceInput {
@@ -1327,13 +1350,16 @@ package cloudformation {
     def apply(
         StackInstanceAccount: Account,
         StackInstanceRegion: Region,
-        StackSetName: StackSetName
+        StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined
     ): DescribeStackInstanceInput = {
       val __obj = js.Dynamic.literal(
         "StackInstanceAccount" -> StackInstanceAccount.asInstanceOf[js.Any],
         "StackInstanceRegion" -> StackInstanceRegion.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
+
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackInstanceInput]
     }
   }
@@ -1487,16 +1513,20 @@ package cloudformation {
   @js.native
   trait DescribeStackSetInput extends js.Object {
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
   }
 
   object DescribeStackSetInput {
     @inline
     def apply(
-        StackSetName: StackSetName
+        StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined
     ): DescribeStackSetInput = {
       val __obj = js.Dynamic.literal(
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
+
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackSetInput]
     }
   }
@@ -1505,18 +1535,22 @@ package cloudformation {
   trait DescribeStackSetOperationInput extends js.Object {
     var OperationId: ClientRequestToken
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
   }
 
   object DescribeStackSetOperationInput {
     @inline
     def apply(
         OperationId: ClientRequestToken,
-        StackSetName: StackSetName
+        StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined
     ): DescribeStackSetOperationInput = {
       val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
+
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackSetOperationInput]
     }
   }
@@ -1801,6 +1835,7 @@ package cloudformation {
   @js.native
   trait DetectStackSetDriftInput extends js.Object {
     var StackSetName: StackSetNameOrId
+    var CallAs: js.UndefOr[CallAs]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
   }
@@ -1809,6 +1844,7 @@ package cloudformation {
     @inline
     def apply(
         StackSetName: StackSetNameOrId,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined
     ): DetectStackSetDriftInput = {
@@ -1816,6 +1852,7 @@ package cloudformation {
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectStackSetDriftInput]
@@ -2284,6 +2321,7 @@ package cloudformation {
   @js.native
   trait ListStackInstancesInput extends js.Object {
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
     var Filters: js.UndefOr[StackInstanceFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
@@ -2295,6 +2333,7 @@ package cloudformation {
     @inline
     def apply(
         StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         Filters: js.UndefOr[StackInstanceFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -2305,6 +2344,7 @@ package cloudformation {
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -2381,6 +2421,7 @@ package cloudformation {
   trait ListStackSetOperationResultsInput extends js.Object {
     var OperationId: ClientRequestToken
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -2390,6 +2431,7 @@ package cloudformation {
     def apply(
         OperationId: ClientRequestToken,
         StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListStackSetOperationResultsInput = {
@@ -2398,6 +2440,7 @@ package cloudformation {
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStackSetOperationResultsInput]
@@ -2426,6 +2469,7 @@ package cloudformation {
   @js.native
   trait ListStackSetOperationsInput extends js.Object {
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -2434,6 +2478,7 @@ package cloudformation {
     @inline
     def apply(
         StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListStackSetOperationsInput = {
@@ -2441,6 +2486,7 @@ package cloudformation {
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
 
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStackSetOperationsInput]
@@ -2468,6 +2514,7 @@ package cloudformation {
 
   @js.native
   trait ListStackSetsInput extends js.Object {
+    var CallAs: js.UndefOr[CallAs]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var Status: js.UndefOr[StackSetStatus]
@@ -2476,11 +2523,13 @@ package cloudformation {
   object ListStackSetsInput {
     @inline
     def apply(
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[StackSetStatus] = js.undefined
     ): ListStackSetsInput = {
       val __obj = js.Dynamic.literal()
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4486,18 +4535,22 @@ package cloudformation {
   trait StopStackSetOperationInput extends js.Object {
     var OperationId: ClientRequestToken
     var StackSetName: StackSetName
+    var CallAs: js.UndefOr[CallAs]
   }
 
   object StopStackSetOperationInput {
     @inline
     def apply(
         OperationId: ClientRequestToken,
-        StackSetName: StackSetName
+        StackSetName: StackSetName,
+        CallAs: js.UndefOr[CallAs] = js.undefined
     ): StopStackSetOperationInput = {
       val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
       )
+
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopStackSetOperationInput]
     }
   }
@@ -4710,6 +4763,7 @@ package cloudformation {
     var Regions: RegionList
     var StackSetName: StackSetNameOrId
     var Accounts: js.UndefOr[AccountList]
+    var CallAs: js.UndefOr[CallAs]
     var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
@@ -4722,6 +4776,7 @@ package cloudformation {
         Regions: RegionList,
         StackSetName: StackSetNameOrId,
         Accounts: js.UndefOr[AccountList] = js.undefined,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
@@ -4733,6 +4788,7 @@ package cloudformation {
       )
 
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
@@ -4781,6 +4837,7 @@ package cloudformation {
     var Accounts: js.UndefOr[AccountList]
     var AdministrationRoleARN: js.UndefOr[RoleARN]
     var AutoDeployment: js.UndefOr[AutoDeployment]
+    var CallAs: js.UndefOr[CallAs]
     var Capabilities: js.UndefOr[Capabilities]
     var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var Description: js.UndefOr[Description]
@@ -4803,6 +4860,7 @@ package cloudformation {
         Accounts: js.UndefOr[AccountList] = js.undefined,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
         AutoDeployment: js.UndefOr[AutoDeployment] = js.undefined,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -4824,6 +4882,7 @@ package cloudformation {
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
       AdministrationRoleARN.foreach(__v => __obj.updateDynamic("AdministrationRoleARN")(__v.asInstanceOf[js.Any]))
       AutoDeployment.foreach(__v => __obj.updateDynamic("AutoDeployment")(__v.asInstanceOf[js.Any]))
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))

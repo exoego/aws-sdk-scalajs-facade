@@ -38,6 +38,7 @@ package object imagebuilder {
   type FilterValues = js.Array[FilterValue]
   type ImageBuildVersionArn = String
   type ImageBuilderArn = String
+  type ImagePackageList = js.Array[ImagePackage]
   type ImagePipelineArn = String
   type ImagePipelineList = js.Array[ImagePipeline]
   type ImageRecipeArn = String
@@ -52,6 +53,7 @@ package object imagebuilder {
   type InlineComponentData = String
   type InlineDockerFileTemplate = String
   type InstanceBlockDeviceMappings = js.Array[InstanceBlockDeviceMapping]
+  type InstanceProfileNameType = String
   type InstanceType = String
   type InstanceTypeList = js.Array[InstanceType]
   type LicenseConfigurationArn = String
@@ -73,6 +75,7 @@ package object imagebuilder {
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type Timezone = String
   type Uri = String
   type VersionNumber = String
 
@@ -110,6 +113,7 @@ package object imagebuilder {
     @inline def listContainerRecipesFuture(params: ListContainerRecipesRequest): Future[ListContainerRecipesResponse] = service.listContainerRecipes(params).promise().toFuture
     @inline def listDistributionConfigurationsFuture(params: ListDistributionConfigurationsRequest): Future[ListDistributionConfigurationsResponse] = service.listDistributionConfigurations(params).promise().toFuture
     @inline def listImageBuildVersionsFuture(params: ListImageBuildVersionsRequest): Future[ListImageBuildVersionsResponse] = service.listImageBuildVersions(params).promise().toFuture
+    @inline def listImagePackagesFuture(params: ListImagePackagesRequest): Future[ListImagePackagesResponse] = service.listImagePackages(params).promise().toFuture
     @inline def listImagePipelineImagesFuture(params: ListImagePipelineImagesRequest): Future[ListImagePipelineImagesResponse] = service.listImagePipelineImages(params).promise().toFuture
     @inline def listImagePipelinesFuture(params: ListImagePipelinesRequest): Future[ListImagePipelinesResponse] = service.listImagePipelines(params).promise().toFuture
     @inline def listImageRecipesFuture(params: ListImageRecipesRequest): Future[ListImageRecipesResponse] = service.listImageRecipes(params).promise().toFuture
@@ -168,6 +172,7 @@ package imagebuilder {
     def listContainerRecipes(params: ListContainerRecipesRequest): Request[ListContainerRecipesResponse] = js.native
     def listDistributionConfigurations(params: ListDistributionConfigurationsRequest): Request[ListDistributionConfigurationsResponse] = js.native
     def listImageBuildVersions(params: ListImageBuildVersionsRequest): Request[ListImageBuildVersionsResponse] = js.native
+    def listImagePackages(params: ListImagePackagesRequest): Request[ListImagePackagesResponse] = js.native
     def listImagePipelineImages(params: ListImagePipelineImagesRequest): Request[ListImagePipelineImagesResponse] = js.native
     def listImagePipelines(params: ListImagePipelinesRequest): Request[ListImagePipelinesResponse] = js.native
     def listImageRecipes(params: ListImageRecipesRequest): Request[ListImageRecipesResponse] = js.native
@@ -1521,10 +1526,11 @@ package imagebuilder {
     val io1 = "io1".asInstanceOf[EbsVolumeType]
     val io2 = "io2".asInstanceOf[EbsVolumeType]
     val gp2 = "gp2".asInstanceOf[EbsVolumeType]
+    val gp3 = "gp3".asInstanceOf[EbsVolumeType]
     val sc1 = "sc1".asInstanceOf[EbsVolumeType]
     val st1 = "st1".asInstanceOf[EbsVolumeType]
 
-    @inline def values = js.Array(standard, io1, io2, gp2, sc1, st1)
+    @inline def values = js.Array(standard, io1, io2, gp2, gp3, sc1, st1)
   }
 
   /** A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
@@ -2017,6 +2023,27 @@ package imagebuilder {
     }
   }
 
+  /** Represents a package installed on an Image Builder image.
+    */
+  @js.native
+  trait ImagePackage extends js.Object {
+    var packageName: js.UndefOr[NonEmptyString]
+    var packageVersion: js.UndefOr[NonEmptyString]
+  }
+
+  object ImagePackage {
+    @inline
+    def apply(
+        packageName: js.UndefOr[NonEmptyString] = js.undefined,
+        packageVersion: js.UndefOr[NonEmptyString] = js.undefined
+    ): ImagePackage = {
+      val __obj = js.Dynamic.literal()
+      packageName.foreach(__v => __obj.updateDynamic("packageName")(__v.asInstanceOf[js.Any]))
+      packageVersion.foreach(__v => __obj.updateDynamic("packageVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImagePackage]
+    }
+  }
+
   /** Details of an image pipeline.
     */
   @js.native
@@ -2410,7 +2437,7 @@ package imagebuilder {
     var dateCreated: js.UndefOr[DateTime]
     var dateUpdated: js.UndefOr[DateTime]
     var description: js.UndefOr[NonEmptyString]
-    var instanceProfileName: js.UndefOr[NonEmptyString]
+    var instanceProfileName: js.UndefOr[InstanceProfileNameType]
     var instanceTypes: js.UndefOr[InstanceTypeList]
     var keyPair: js.UndefOr[NonEmptyString]
     var logging: js.UndefOr[Logging]
@@ -2430,7 +2457,7 @@ package imagebuilder {
         dateCreated: js.UndefOr[DateTime] = js.undefined,
         dateUpdated: js.UndefOr[DateTime] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
-        instanceProfileName: js.UndefOr[NonEmptyString] = js.undefined,
+        instanceProfileName: js.UndefOr[InstanceProfileNameType] = js.undefined,
         instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
@@ -2470,6 +2497,8 @@ package imagebuilder {
     var dateCreated: js.UndefOr[DateTime]
     var dateUpdated: js.UndefOr[DateTime]
     var description: js.UndefOr[NonEmptyString]
+    var instanceProfileName: js.UndefOr[InstanceProfileNameType]
+    var instanceTypes: js.UndefOr[InstanceTypeList]
     var name: js.UndefOr[ResourceName]
     var resourceTags: js.UndefOr[ResourceTagMap]
     var tags: js.UndefOr[TagMap]
@@ -2482,6 +2511,8 @@ package imagebuilder {
         dateCreated: js.UndefOr[DateTime] = js.undefined,
         dateUpdated: js.UndefOr[DateTime] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined,
+        instanceProfileName: js.UndefOr[InstanceProfileNameType] = js.undefined,
+        instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         resourceTags: js.UndefOr[ResourceTagMap] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
@@ -2491,6 +2522,8 @@ package imagebuilder {
       dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
       dateUpdated.foreach(__v => __obj.updateDynamic("dateUpdated")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      instanceProfileName.foreach(__v => __obj.updateDynamic("instanceProfileName")(__v.asInstanceOf[js.Any]))
+      instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -2779,6 +2812,52 @@ package imagebuilder {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImageBuildVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListImagePackagesRequest extends js.Object {
+    var imageBuildVersionArn: ImageBuildVersionArn
+    var maxResults: js.UndefOr[RestrictedInteger]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListImagePackagesRequest {
+    @inline
+    def apply(
+        imageBuildVersionArn: ImageBuildVersionArn,
+        maxResults: js.UndefOr[RestrictedInteger] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListImagePackagesRequest = {
+      val __obj = js.Dynamic.literal(
+        "imageBuildVersionArn" -> imageBuildVersionArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImagePackagesRequest]
+    }
+  }
+
+  @js.native
+  trait ListImagePackagesResponse extends js.Object {
+    var imagePackageList: js.UndefOr[ImagePackageList]
+    var nextToken: js.UndefOr[PaginationToken]
+    var requestId: js.UndefOr[NonEmptyString]
+  }
+
+  object ListImagePackagesResponse {
+    @inline
+    def apply(
+        imagePackageList: js.UndefOr[ImagePackageList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        requestId: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListImagePackagesResponse = {
+      val __obj = js.Dynamic.literal()
+      imagePackageList.foreach(__v => __obj.updateDynamic("imagePackageList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImagePackagesResponse]
     }
   }
 
@@ -3311,17 +3390,20 @@ package imagebuilder {
   trait Schedule extends js.Object {
     var pipelineExecutionStartCondition: js.UndefOr[PipelineExecutionStartCondition]
     var scheduleExpression: js.UndefOr[NonEmptyString]
+    var timezone: js.UndefOr[Timezone]
   }
 
   object Schedule {
     @inline
     def apply(
         pipelineExecutionStartCondition: js.UndefOr[PipelineExecutionStartCondition] = js.undefined,
-        scheduleExpression: js.UndefOr[NonEmptyString] = js.undefined
+        scheduleExpression: js.UndefOr[NonEmptyString] = js.undefined,
+        timezone: js.UndefOr[Timezone] = js.undefined
     ): Schedule = {
       val __obj = js.Dynamic.literal()
       pipelineExecutionStartCondition.foreach(__v => __obj.updateDynamic("pipelineExecutionStartCondition")(__v.asInstanceOf[js.Any]))
       scheduleExpression.foreach(__v => __obj.updateDynamic("scheduleExpression")(__v.asInstanceOf[js.Any]))
+      timezone.foreach(__v => __obj.updateDynamic("timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
   }

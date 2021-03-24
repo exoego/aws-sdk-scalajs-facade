@@ -91,6 +91,7 @@ package object forecast {
     @inline def listPredictorBacktestExportJobsFuture(params: ListPredictorBacktestExportJobsRequest): Future[ListPredictorBacktestExportJobsResponse] = service.listPredictorBacktestExportJobs(params).promise().toFuture
     @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] = service.listPredictors(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def stopResourceFuture(params: StopResourceRequest): Future[js.Object] = service.stopResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] = service.updateDatasetGroup(params).promise().toFuture
@@ -134,6 +135,7 @@ package forecast {
     def listPredictorBacktestExportJobs(params: ListPredictorBacktestExportJobsRequest): Request[ListPredictorBacktestExportJobsResponse] = js.native
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def stopResource(params: StopResourceRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatasetGroup(params: UpdateDatasetGroupRequest): Request[UpdateDatasetGroupResponse] = js.native
@@ -2257,6 +2259,23 @@ package forecast {
       Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
       Stddev.foreach(__v => __obj.updateDynamic("Stddev")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Statistics]
+    }
+  }
+
+  @js.native
+  trait StopResourceRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object StopResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): StopResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopResourceRequest]
     }
   }
 

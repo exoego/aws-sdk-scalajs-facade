@@ -9,6 +9,12 @@ import facade.amazonaws._
 package object iotevents {
   type Actions = js.Array[Action]
   type AmazonResourceName = String
+  type AnalysisId = String
+  type AnalysisMessage = String
+  type AnalysisResultLocationPath = String
+  type AnalysisResultLocations = js.Array[AnalysisResultLocation]
+  type AnalysisResults = js.Array[AnalysisResult]
+  type AnalysisType = String
   type AssetId = String
   type AssetPropertyAlias = String
   type AssetPropertyBooleanValue = String
@@ -47,6 +53,7 @@ package object iotevents {
   type KeyValue = String
   type LoggingEnabled = Boolean
   type MQTTTopic = String
+  type MaxAnalysisResults = Int
   type MaxResults = Int
   type NextToken = String
   type QueueUrl = String
@@ -70,14 +77,17 @@ package object iotevents {
     @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] = service.createInput(params).promise().toFuture
     @inline def deleteDetectorModelFuture(params: DeleteDetectorModelRequest): Future[DeleteDetectorModelResponse] = service.deleteDetectorModel(params).promise().toFuture
     @inline def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] = service.deleteInput(params).promise().toFuture
+    @inline def describeDetectorModelAnalysisFuture(params: DescribeDetectorModelAnalysisRequest): Future[DescribeDetectorModelAnalysisResponse] = service.describeDetectorModelAnalysis(params).promise().toFuture
     @inline def describeDetectorModelFuture(params: DescribeDetectorModelRequest): Future[DescribeDetectorModelResponse] = service.describeDetectorModel(params).promise().toFuture
     @inline def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] = service.describeInput(params).promise().toFuture
     @inline def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
+    @inline def getDetectorModelAnalysisResultsFuture(params: GetDetectorModelAnalysisResultsRequest): Future[GetDetectorModelAnalysisResultsResponse] = service.getDetectorModelAnalysisResults(params).promise().toFuture
     @inline def listDetectorModelVersionsFuture(params: ListDetectorModelVersionsRequest): Future[ListDetectorModelVersionsResponse] = service.listDetectorModelVersions(params).promise().toFuture
     @inline def listDetectorModelsFuture(params: ListDetectorModelsRequest): Future[ListDetectorModelsResponse] = service.listDetectorModels(params).promise().toFuture
     @inline def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] = service.listInputs(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[js.Object] = service.putLoggingOptions(params).promise().toFuture
+    @inline def startDetectorModelAnalysisFuture(params: StartDetectorModelAnalysisRequest): Future[StartDetectorModelAnalysisResponse] = service.startDetectorModelAnalysis(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDetectorModelFuture(params: UpdateDetectorModelRequest): Future[UpdateDetectorModelResponse] = service.updateDetectorModel(params).promise().toFuture
@@ -97,13 +107,16 @@ package iotevents {
     def deleteDetectorModel(params: DeleteDetectorModelRequest): Request[DeleteDetectorModelResponse] = js.native
     def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse] = js.native
     def describeDetectorModel(params: DescribeDetectorModelRequest): Request[DescribeDetectorModelResponse] = js.native
+    def describeDetectorModelAnalysis(params: DescribeDetectorModelAnalysisRequest): Request[DescribeDetectorModelAnalysisResponse] = js.native
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse] = js.native
     def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] = js.native
+    def getDetectorModelAnalysisResults(params: GetDetectorModelAnalysisResultsRequest): Request[GetDetectorModelAnalysisResultsResponse] = js.native
     def listDetectorModelVersions(params: ListDetectorModelVersionsRequest): Request[ListDetectorModelVersionsResponse] = js.native
     def listDetectorModels(params: ListDetectorModelsRequest): Request[ListDetectorModelsResponse] = js.native
     def listInputs(params: ListInputsRequest): Request[ListInputsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putLoggingOptions(params: PutLoggingOptionsRequest): Request[js.Object] = js.native
+    def startDetectorModelAnalysis(params: StartDetectorModelAnalysisRequest): Request[StartDetectorModelAnalysisResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDetectorModel(params: UpdateDetectorModelRequest): Request[UpdateDetectorModelResponse] = js.native
@@ -164,10 +177,78 @@ package iotevents {
     }
   }
 
+  /** Contains the result of the analysis.
+    */
+  @js.native
+  trait AnalysisResult extends js.Object {
+    var level: js.UndefOr[AnalysisResultLevel]
+    var locations: js.UndefOr[AnalysisResultLocations]
+    var message: js.UndefOr[AnalysisMessage]
+    var `type`: js.UndefOr[AnalysisType]
+  }
+
+  object AnalysisResult {
+    @inline
+    def apply(
+        level: js.UndefOr[AnalysisResultLevel] = js.undefined,
+        locations: js.UndefOr[AnalysisResultLocations] = js.undefined,
+        message: js.UndefOr[AnalysisMessage] = js.undefined,
+        `type`: js.UndefOr[AnalysisType] = js.undefined
+    ): AnalysisResult = {
+      val __obj = js.Dynamic.literal()
+      level.foreach(__v => __obj.updateDynamic("level")(__v.asInstanceOf[js.Any]))
+      locations.foreach(__v => __obj.updateDynamic("locations")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalysisResult]
+    }
+  }
+
+  @js.native
+  sealed trait AnalysisResultLevel extends js.Any
+  object AnalysisResultLevel {
+    val INFO = "INFO".asInstanceOf[AnalysisResultLevel]
+    val WARNING = "WARNING".asInstanceOf[AnalysisResultLevel]
+    val ERROR = "ERROR".asInstanceOf[AnalysisResultLevel]
+
+    @inline def values = js.Array(INFO, WARNING, ERROR)
+  }
+
+  /** Contains information that you can use to locate the field in your detector model that the analysis result references.
+    */
+  @js.native
+  trait AnalysisResultLocation extends js.Object {
+    var path: js.UndefOr[AnalysisResultLocationPath]
+  }
+
+  object AnalysisResultLocation {
+    @inline
+    def apply(
+        path: js.UndefOr[AnalysisResultLocationPath] = js.undefined
+    ): AnalysisResultLocation = {
+      val __obj = js.Dynamic.literal()
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalysisResultLocation]
+    }
+  }
+
+  @js.native
+  sealed trait AnalysisStatus extends js.Any
+  object AnalysisStatus {
+    val RUNNING = "RUNNING".asInstanceOf[AnalysisStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[AnalysisStatus]
+    val FAILED = "FAILED".asInstanceOf[AnalysisStatus]
+
+    @inline def values = js.Array(RUNNING, COMPLETE, FAILED)
+  }
+
   /** A structure that contains timestamp information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html|TimeInNanos]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * For parameters that are string data type, you can specify the following options:
-    * * Use a string. For example, the <code>timeInSeconds</code> value can be <code>'1586400675'</code>.
-    * * Use an expression. For example, the <code>timeInSeconds</code> value can be <code>'{input.TemperatureInput.sensorData.timestamp/1000}'</code>.
+    * You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>. The expressions accept literals, operators, functions, references, and substitution templates.
+    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>timeInSeconds</code> parameter can be <code>'1586400675'</code>.
+    * * For references, you must specify either variables or input values. For example, the value for the <code>offsetInNanos</code> parameter can be <code>variable.time</code>.
+    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>timeInSeconds</code> parameter uses a substitution template.
+    * <code>'{input.TemperatureInput.sensorData.timestamp / 1000}'</code>
     * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
@@ -192,9 +273,9 @@ package iotevents {
   }
 
   /** A structure that contains value information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html|AssetPropertyValue]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * For parameters that are string data type, you can specify the following options:
-    * * Use a string. For example, the <code>quality</code> value can be <code>'GOOD'</code>.
-    * * Use an expression. For example, the <code>quality</code> value can be <code>input.TemperatureInput.sensorData.quality</code> .
+    * You must use expressions for all parameters in <code>AssetPropertyValue</code>. The expressions accept literals, operators, functions, references, and substitution templates.
+    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>quality</code> parameter can be <code>'GOOD'</code>.
+    * * For references, you must specify either variables or input values. For example, the value for the <code>quality</code> parameter can be <code>input.TemperatureInput.sensorData.quality</code>.
     * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
@@ -222,11 +303,14 @@ package iotevents {
   }
 
   /** A structure that contains an asset property value. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html|Variant]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * <important> You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * </important> For parameters that are string data type, you can specify the following options:
-    * * Use a string. For example, the <code>doubleValue</code> value can be <code>'47.9'</code>.
-    * * Use an expression. For example, the <code>doubleValue</code> value can be <code>input.TemperatureInput.sensorData.temperature</code>.
+    * You must use expressions for all parameters in <code>AssetPropertyVariant</code>. The expressions accept literals, operators, functions, references, and substitution templates.
+    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>integerValue</code> parameter can be <code>'100'</code>.
+    * * For references, you must specify either variables or parameters. For example, the value for the <code>booleanValue</code> parameter can be <code>variable.offline</code>.
+    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>doubleValue</code> parameter uses a substitution template.
+    * <code>'{input.TemperatureInput.sensorData.temperature * 6 / 5 + 32}'</code>
     * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
     */
   @js.native
   trait AssetPropertyVariant extends js.Object {
@@ -439,6 +523,39 @@ package iotevents {
     def apply(): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteInputResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeDetectorModelAnalysisRequest extends js.Object {
+    var analysisId: AnalysisId
+  }
+
+  object DescribeDetectorModelAnalysisRequest {
+    @inline
+    def apply(
+        analysisId: AnalysisId
+    ): DescribeDetectorModelAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "analysisId" -> analysisId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeDetectorModelAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDetectorModelAnalysisResponse extends js.Object {
+    var status: js.UndefOr[AnalysisStatus]
+  }
+
+  object DescribeDetectorModelAnalysisResponse {
+    @inline
+    def apply(
+        status: js.UndefOr[AnalysisStatus] = js.undefined
+    ): DescribeDetectorModelAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDetectorModelAnalysisResponse]
     }
   }
 
@@ -727,14 +844,18 @@ package iotevents {
     }
   }
 
-  /** Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.
-    * The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of the DynamoDB table.
-    *
-    * '''Note:'''If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The <code>rangeKeyField</code> value must match the sort key.
-    * <p/> The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data at runtime. The syntax is <code>{sql-expression}</code>.
-    * You can use expressions for parameters that are string data type. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
-    *
-    * '''Note:'''If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is <code>&lt;payload-field&gt;_raw</code>.
+  /** Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.
+    * You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.
+    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.
+    * * For references, you must specify either variables or input values. For example, the value for the <code>hashKeyField</code> parameter can be <code>input.GreenhouseInput.name</code>.
+    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template.
+    * <code>'{input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code>
+    * * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.
+    * <code>'GreenhouseTemperatureTable ' + input.GreenhouseInput.date</code>
+    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code>&lt;payload-field&gt;_raw</code>.
     */
   @js.native
   trait DynamoDBAction extends js.Object {
@@ -781,9 +902,18 @@ package iotevents {
     }
   }
 
-  /** Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can also customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.
-    * <important> The <code>type</code> value for <code>Payload</code> must be <code>JSON</code>.
-    * </important> You can use expressions for parameters that are strings. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+  /** Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.
+    * You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.
+    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>tableName</code> parameter can be <code>'GreenhouseTemperatureTable'</code>.
+    * * For references, you must specify either variables or input values. For example, the value for the <code>tableName</code> parameter can be <code>variable.ddbtableName</code>.
+    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>contentExpression</code> parameter in <code>Payload</code> uses a substitution template.
+    * <code>'{"sensorID": "{input.GreenhouseInput.sensor_id}", "temperature": "{input.GreenhouseInput.temperature * 9 / 5 + 32}"}'</code>
+    * * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.
+    * <code>'GreenhouseTemperatureTable ' + input.GreenhouseInput.date</code>
+    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+    * The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.
     */
   @js.native
   trait DynamoDBv2Action extends js.Object {
@@ -864,6 +994,49 @@ package iotevents {
       payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       separator.foreach(__v => __obj.updateDynamic("separator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirehoseAction]
+    }
+  }
+
+  @js.native
+  trait GetDetectorModelAnalysisResultsRequest extends js.Object {
+    var analysisId: AnalysisId
+    var maxResults: js.UndefOr[MaxAnalysisResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetDetectorModelAnalysisResultsRequest {
+    @inline
+    def apply(
+        analysisId: AnalysisId,
+        maxResults: js.UndefOr[MaxAnalysisResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetDetectorModelAnalysisResultsRequest = {
+      val __obj = js.Dynamic.literal(
+        "analysisId" -> analysisId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDetectorModelAnalysisResultsRequest]
+    }
+  }
+
+  @js.native
+  trait GetDetectorModelAnalysisResultsResponse extends js.Object {
+    var analysisResults: js.UndefOr[AnalysisResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetDetectorModelAnalysisResultsResponse {
+    @inline
+    def apply(
+        analysisResults: js.UndefOr[AnalysisResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetDetectorModelAnalysisResultsResponse = {
+      val __obj = js.Dynamic.literal()
+      analysisResults.foreach(__v => __obj.updateDynamic("analysisResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDetectorModelAnalysisResultsResponse]
     }
   }
 
@@ -1010,10 +1183,13 @@ package iotevents {
   }
 
   /** Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.
-    * <important> You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
-    * </important> For parameters that are string data type, you can specify the following options:
-    * * Use a string. For example, the <code>propertyAlias</code> value can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
-    * * Use an expression. For example, the <code>propertyAlias</code> value can be <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/{input.TemperatureInput.sensorData.turbineID}/temperature'</code>.
+    * You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.
+    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
+    * * For references, you must specify either variables or input values. For example, the value for the <code>assetId</code> parameter can be <code>input.TurbineInput.assetId1</code>.
+    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>propertyAlias</code> parameter uses a substitution template.
+    * <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/ {input.TemperatureInput.sensorData.turbineID}/temperature'</code>
+    * You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
     * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
@@ -1502,6 +1678,39 @@ package iotevents {
       payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       useBase64.foreach(__v => __obj.updateDynamic("useBase64")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqsAction]
+    }
+  }
+
+  @js.native
+  trait StartDetectorModelAnalysisRequest extends js.Object {
+    var detectorModelDefinition: DetectorModelDefinition
+  }
+
+  object StartDetectorModelAnalysisRequest {
+    @inline
+    def apply(
+        detectorModelDefinition: DetectorModelDefinition
+    ): StartDetectorModelAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "detectorModelDefinition" -> detectorModelDefinition.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartDetectorModelAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait StartDetectorModelAnalysisResponse extends js.Object {
+    var analysisId: js.UndefOr[AnalysisId]
+  }
+
+  object StartDetectorModelAnalysisResponse {
+    @inline
+    def apply(
+        analysisId: js.UndefOr[AnalysisId] = js.undefined
+    ): StartDetectorModelAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      analysisId.foreach(__v => __obj.updateDynamic("analysisId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDetectorModelAnalysisResponse]
     }
   }
 

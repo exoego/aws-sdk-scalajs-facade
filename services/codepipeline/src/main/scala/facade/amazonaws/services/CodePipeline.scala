@@ -23,7 +23,12 @@ package object codepipeline {
   type ActionProvider = String
   type ActionRunOrder = Int
   type ActionStateList = js.Array[ActionState]
+  type ActionTypeDescription = String
   type ActionTypeList = js.Array[ActionType]
+  type ActionTypeOwner = String
+  type ActionTypeProperties = js.Array[ActionTypeProperty]
+  type AllowedAccount = String
+  type AllowedAccounts = js.Array[AllowedAccount]
   type ApprovalSummary = String
   type ApprovalToken = String
   type ArtifactDetailList = js.Array[ArtifactDetail]
@@ -49,15 +54,20 @@ package object codepipeline {
   type InputArtifactList = js.Array[InputArtifact]
   type JobId = String
   type JobList = js.Array[Job]
+  type JobTimeout = Int
   type JsonPath = String
+  type LambdaFunctionArn = String
   type LastChangedAt = js.Date
   type LastChangedBy = String
   type LastUpdatedBy = String
   type MatchEquals = String
   type MaxBatchSize = Int
+  type MaxPipelines = Int
   type MaxResults = Int
+  type MaximumActionTypeArtifactCount = Int
   type MaximumArtifactCount = Int
   type Message = String
+  type MinimumActionTypeArtifactCount = Int
   type MinimumArtifactCount = Int
   type NextToken = String
   type Nonce = String
@@ -74,6 +84,10 @@ package object codepipeline {
   type PipelineName = String
   type PipelineStageDeclarationList = js.Array[StageDeclaration]
   type PipelineVersion = Int
+  type PolicyStatementsTemplate = String
+  type PollingAccountList = js.Array[AccountId]
+  type PollingServicePrincipalList = js.Array[ServicePrincipal]
+  type PropertyDescription = String
   type QueryParamMap = js.Dictionary[ActionConfigurationQueryableValue]
   type ResolvedActionConfigurationMap = js.Dictionary[String]
   type ResourceArn = String
@@ -86,6 +100,7 @@ package object codepipeline {
   type S3Key = String
   type S3ObjectKey = String
   type SecretAccessKey = String
+  type ServicePrincipal = String
   type SessionToken = String
   type SourceRevisionList = js.Array[SourceRevision]
   type StageActionDeclarationList = js.Array[ActionDeclaration]
@@ -128,6 +143,7 @@ package object codepipeline {
     @inline def deregisterWebhookWithThirdPartyFuture(params: DeregisterWebhookWithThirdPartyInput): Future[DeregisterWebhookWithThirdPartyOutput] = service.deregisterWebhookWithThirdParty(params).promise().toFuture
     @inline def disableStageTransitionFuture(params: DisableStageTransitionInput): Future[js.Object] = service.disableStageTransition(params).promise().toFuture
     @inline def enableStageTransitionFuture(params: EnableStageTransitionInput): Future[js.Object] = service.enableStageTransition(params).promise().toFuture
+    @inline def getActionTypeFuture(params: GetActionTypeInput): Future[GetActionTypeOutput] = service.getActionType(params).promise().toFuture
     @inline def getJobDetailsFuture(params: GetJobDetailsInput): Future[GetJobDetailsOutput] = service.getJobDetails(params).promise().toFuture
     @inline def getPipelineExecutionFuture(params: GetPipelineExecutionInput): Future[GetPipelineExecutionOutput] = service.getPipelineExecution(params).promise().toFuture
     @inline def getPipelineFuture(params: GetPipelineInput): Future[GetPipelineOutput] = service.getPipeline(params).promise().toFuture
@@ -154,6 +170,7 @@ package object codepipeline {
     @inline def stopPipelineExecutionFuture(params: StopPipelineExecutionInput): Future[StopPipelineExecutionOutput] = service.stopPipelineExecution(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def updateActionTypeFuture(params: UpdateActionTypeInput): Future[js.Object] = service.updateActionType(params).promise().toFuture
     @inline def updatePipelineFuture(params: UpdatePipelineInput): Future[UpdatePipelineOutput] = service.updatePipeline(params).promise().toFuture
 
   }
@@ -175,6 +192,7 @@ package codepipeline {
     def deregisterWebhookWithThirdParty(params: DeregisterWebhookWithThirdPartyInput): Request[DeregisterWebhookWithThirdPartyOutput] = js.native
     def disableStageTransition(params: DisableStageTransitionInput): Request[js.Object] = js.native
     def enableStageTransition(params: EnableStageTransitionInput): Request[js.Object] = js.native
+    def getActionType(params: GetActionTypeInput): Request[GetActionTypeOutput] = js.native
     def getJobDetails(params: GetJobDetailsInput): Request[GetJobDetailsOutput] = js.native
     def getPipeline(params: GetPipelineInput): Request[GetPipelineOutput] = js.native
     def getPipelineExecution(params: GetPipelineExecutionInput): Request[GetPipelineExecutionOutput] = js.native
@@ -201,6 +219,7 @@ package codepipeline {
     def stopPipelineExecution(params: StopPipelineExecutionInput): Request[StopPipelineExecutionOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateActionType(params: UpdateActionTypeInput): Request[js.Object] = js.native
     def updatePipeline(params: UpdatePipelineInput): Request[UpdatePipelineOutput] = js.native
   }
 
@@ -756,6 +775,98 @@ package codepipeline {
     }
   }
 
+  /** Information about parameters for artifacts associated with the action type, such as the minimum and maximum artifacts allowed.
+    */
+  @js.native
+  trait ActionTypeArtifactDetails extends js.Object {
+    var maximumCount: MaximumActionTypeArtifactCount
+    var minimumCount: MinimumActionTypeArtifactCount
+  }
+
+  object ActionTypeArtifactDetails {
+    @inline
+    def apply(
+        maximumCount: MaximumActionTypeArtifactCount,
+        minimumCount: MinimumActionTypeArtifactCount
+    ): ActionTypeArtifactDetails = {
+      val __obj = js.Dynamic.literal(
+        "maximumCount" -> maximumCount.asInstanceOf[js.Any],
+        "minimumCount" -> minimumCount.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionTypeArtifactDetails]
+    }
+  }
+
+  /** The parameters for the action type definition that are provided when the action type is created or updated.
+    */
+  @js.native
+  trait ActionTypeDeclaration extends js.Object {
+    var executor: ActionTypeExecutor
+    var id: ActionTypeIdentifier
+    var inputArtifactDetails: ActionTypeArtifactDetails
+    var outputArtifactDetails: ActionTypeArtifactDetails
+    var description: js.UndefOr[ActionTypeDescription]
+    var permissions: js.UndefOr[ActionTypePermissions]
+    var properties: js.UndefOr[ActionTypeProperties]
+    var urls: js.UndefOr[ActionTypeUrls]
+  }
+
+  object ActionTypeDeclaration {
+    @inline
+    def apply(
+        executor: ActionTypeExecutor,
+        id: ActionTypeIdentifier,
+        inputArtifactDetails: ActionTypeArtifactDetails,
+        outputArtifactDetails: ActionTypeArtifactDetails,
+        description: js.UndefOr[ActionTypeDescription] = js.undefined,
+        permissions: js.UndefOr[ActionTypePermissions] = js.undefined,
+        properties: js.UndefOr[ActionTypeProperties] = js.undefined,
+        urls: js.UndefOr[ActionTypeUrls] = js.undefined
+    ): ActionTypeDeclaration = {
+      val __obj = js.Dynamic.literal(
+        "executor" -> executor.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "inputArtifactDetails" -> inputArtifactDetails.asInstanceOf[js.Any],
+        "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      urls.foreach(__v => __obj.updateDynamic("urls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionTypeDeclaration]
+    }
+  }
+
+  /** The action engine, or executor, for an action type created for a provider, where the action is to be used by customers of the provider. The action engine is associated with the model used to create and update the action, such as the Lambda integration model.
+    */
+  @js.native
+  trait ActionTypeExecutor extends js.Object {
+    var configuration: ExecutorConfiguration
+    var `type`: ExecutorType
+    var jobTimeout: js.UndefOr[JobTimeout]
+    var policyStatementsTemplate: js.UndefOr[PolicyStatementsTemplate]
+  }
+
+  object ActionTypeExecutor {
+    @inline
+    def apply(
+        configuration: ExecutorConfiguration,
+        `type`: ExecutorType,
+        jobTimeout: js.UndefOr[JobTimeout] = js.undefined,
+        policyStatementsTemplate: js.UndefOr[PolicyStatementsTemplate] = js.undefined
+    ): ActionTypeExecutor = {
+      val __obj = js.Dynamic.literal(
+        "configuration" -> configuration.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      jobTimeout.foreach(__v => __obj.updateDynamic("jobTimeout")(__v.asInstanceOf[js.Any]))
+      policyStatementsTemplate.foreach(__v => __obj.updateDynamic("policyStatementsTemplate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionTypeExecutor]
+    }
+  }
+
   /** Represents information about an action type.
     */
   @js.native
@@ -784,6 +895,88 @@ package codepipeline {
     }
   }
 
+  /** Specifies the category, owner, provider, and version of the action type.
+    */
+  @js.native
+  trait ActionTypeIdentifier extends js.Object {
+    var category: ActionCategory
+    var owner: ActionTypeOwner
+    var provider: ActionProvider
+    var version: Version
+  }
+
+  object ActionTypeIdentifier {
+    @inline
+    def apply(
+        category: ActionCategory,
+        owner: ActionTypeOwner,
+        provider: ActionProvider,
+        version: Version
+    ): ActionTypeIdentifier = {
+      val __obj = js.Dynamic.literal(
+        "category" -> category.asInstanceOf[js.Any],
+        "owner" -> owner.asInstanceOf[js.Any],
+        "provider" -> provider.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionTypeIdentifier]
+    }
+  }
+
+  /** Details identifying the users with permissions to use the action type.
+    */
+  @js.native
+  trait ActionTypePermissions extends js.Object {
+    var allowedAccounts: AllowedAccounts
+  }
+
+  object ActionTypePermissions {
+    @inline
+    def apply(
+        allowedAccounts: AllowedAccounts
+    ): ActionTypePermissions = {
+      val __obj = js.Dynamic.literal(
+        "allowedAccounts" -> allowedAccounts.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionTypePermissions]
+    }
+  }
+
+  /** Represents information about each property specified in the action configuration, such as the description and key name that display for the customer using the action type.
+    */
+  @js.native
+  trait ActionTypeProperty extends js.Object {
+    var key: Boolean
+    var name: ActionConfigurationKey
+    var noEcho: Boolean
+    var optional: Boolean
+    var description: js.UndefOr[PropertyDescription]
+    var queryable: js.UndefOr[Boolean]
+  }
+
+  object ActionTypeProperty {
+    @inline
+    def apply(
+        key: Boolean,
+        name: ActionConfigurationKey,
+        noEcho: Boolean,
+        optional: Boolean,
+        description: js.UndefOr[PropertyDescription] = js.undefined,
+        queryable: js.UndefOr[Boolean] = js.undefined
+    ): ActionTypeProperty = {
+      val __obj = js.Dynamic.literal(
+        "key" -> key.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "noEcho" -> noEcho.asInstanceOf[js.Any],
+        "optional" -> optional.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      queryable.foreach(__v => __obj.updateDynamic("queryable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionTypeProperty]
+    }
+  }
+
   /** Returns information about the settings for an action type.
     */
   @js.native
@@ -808,6 +1001,33 @@ package codepipeline {
       revisionUrlTemplate.foreach(__v => __obj.updateDynamic("revisionUrlTemplate")(__v.asInstanceOf[js.Any]))
       thirdPartyConfigurationUrl.foreach(__v => __obj.updateDynamic("thirdPartyConfigurationUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionTypeSettings]
+    }
+  }
+
+  /** Returns information about URLs for web pages that display to customers as links on the pipeline view, such as an external configuration page for the action type.
+    */
+  @js.native
+  trait ActionTypeUrls extends js.Object {
+    var configurationUrl: js.UndefOr[Url]
+    var entityUrlTemplate: js.UndefOr[UrlTemplate]
+    var executionUrlTemplate: js.UndefOr[UrlTemplate]
+    var revisionUrlTemplate: js.UndefOr[UrlTemplate]
+  }
+
+  object ActionTypeUrls {
+    @inline
+    def apply(
+        configurationUrl: js.UndefOr[Url] = js.undefined,
+        entityUrlTemplate: js.UndefOr[UrlTemplate] = js.undefined,
+        executionUrlTemplate: js.UndefOr[UrlTemplate] = js.undefined,
+        revisionUrlTemplate: js.UndefOr[UrlTemplate] = js.undefined
+    ): ActionTypeUrls = {
+      val __obj = js.Dynamic.literal()
+      configurationUrl.foreach(__v => __obj.updateDynamic("configurationUrl")(__v.asInstanceOf[js.Any]))
+      entityUrlTemplate.foreach(__v => __obj.updateDynamic("entityUrlTemplate")(__v.asInstanceOf[js.Any]))
+      executionUrlTemplate.foreach(__v => __obj.updateDynamic("executionUrlTemplate")(__v.asInstanceOf[js.Any]))
+      revisionUrlTemplate.foreach(__v => __obj.updateDynamic("revisionUrlTemplate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionTypeUrls]
     }
   }
 
@@ -1422,6 +1642,36 @@ package codepipeline {
     }
   }
 
+  /** The action engine, or executor, related to the supported integration model used to create and update the action type. The available executor types are <code>Lambda</code> and <code>JobWorker</code>.
+    */
+  @js.native
+  trait ExecutorConfiguration extends js.Object {
+    var jobWorkerExecutorConfiguration: js.UndefOr[JobWorkerExecutorConfiguration]
+    var lambdaExecutorConfiguration: js.UndefOr[LambdaExecutorConfiguration]
+  }
+
+  object ExecutorConfiguration {
+    @inline
+    def apply(
+        jobWorkerExecutorConfiguration: js.UndefOr[JobWorkerExecutorConfiguration] = js.undefined,
+        lambdaExecutorConfiguration: js.UndefOr[LambdaExecutorConfiguration] = js.undefined
+    ): ExecutorConfiguration = {
+      val __obj = js.Dynamic.literal()
+      jobWorkerExecutorConfiguration.foreach(__v => __obj.updateDynamic("jobWorkerExecutorConfiguration")(__v.asInstanceOf[js.Any]))
+      lambdaExecutorConfiguration.foreach(__v => __obj.updateDynamic("lambdaExecutorConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecutorConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait ExecutorType extends js.Any
+  object ExecutorType {
+    val JobWorker = "JobWorker".asInstanceOf[ExecutorType]
+    val Lambda = "Lambda".asInstanceOf[ExecutorType]
+
+    @inline def values = js.Array(JobWorker, Lambda)
+  }
+
   /** Represents information about failure details.
     */
   @js.native
@@ -1459,6 +1709,48 @@ package codepipeline {
     val SystemUnavailable = "SystemUnavailable".asInstanceOf[FailureType]
 
     @inline def values = js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable)
+  }
+
+  @js.native
+  trait GetActionTypeInput extends js.Object {
+    var category: ActionCategory
+    var owner: ActionTypeOwner
+    var provider: ActionProvider
+    var version: Version
+  }
+
+  object GetActionTypeInput {
+    @inline
+    def apply(
+        category: ActionCategory,
+        owner: ActionTypeOwner,
+        provider: ActionProvider,
+        version: Version
+    ): GetActionTypeInput = {
+      val __obj = js.Dynamic.literal(
+        "category" -> category.asInstanceOf[js.Any],
+        "owner" -> owner.asInstanceOf[js.Any],
+        "provider" -> provider.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetActionTypeInput]
+    }
+  }
+
+  @js.native
+  trait GetActionTypeOutput extends js.Object {
+    var actionType: js.UndefOr[ActionTypeDeclaration]
+  }
+
+  object GetActionTypeOutput {
+    @inline
+    def apply(
+        actionType: js.UndefOr[ActionTypeDeclaration] = js.undefined
+    ): GetActionTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      actionType.foreach(__v => __obj.updateDynamic("actionType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetActionTypeOutput]
+    }
   }
 
   /** Represents the input of a <code>GetJobDetails</code> action.
@@ -1794,6 +2086,46 @@ package codepipeline {
     @inline def values = js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed)
   }
 
+  /** Details about the polling configuration for the <code>JobWorker</code> action engine, or executor.
+    */
+  @js.native
+  trait JobWorkerExecutorConfiguration extends js.Object {
+    var pollingAccounts: js.UndefOr[PollingAccountList]
+    var pollingServicePrincipals: js.UndefOr[PollingServicePrincipalList]
+  }
+
+  object JobWorkerExecutorConfiguration {
+    @inline
+    def apply(
+        pollingAccounts: js.UndefOr[PollingAccountList] = js.undefined,
+        pollingServicePrincipals: js.UndefOr[PollingServicePrincipalList] = js.undefined
+    ): JobWorkerExecutorConfiguration = {
+      val __obj = js.Dynamic.literal()
+      pollingAccounts.foreach(__v => __obj.updateDynamic("pollingAccounts")(__v.asInstanceOf[js.Any]))
+      pollingServicePrincipals.foreach(__v => __obj.updateDynamic("pollingServicePrincipals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobWorkerExecutorConfiguration]
+    }
+  }
+
+  /** Details about the configuration for the <code>Lambda</code> action engine, or executor.
+    */
+  @js.native
+  trait LambdaExecutorConfiguration extends js.Object {
+    var lambdaFunctionArn: LambdaFunctionArn
+  }
+
+  object LambdaExecutorConfiguration {
+    @inline
+    def apply(
+        lambdaFunctionArn: LambdaFunctionArn
+    ): LambdaExecutorConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "lambdaFunctionArn" -> lambdaFunctionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LambdaExecutorConfiguration]
+    }
+  }
+
   @js.native
   trait ListActionExecutionsInput extends js.Object {
     var pipelineName: PipelineName
@@ -1846,17 +2178,20 @@ package codepipeline {
   trait ListActionTypesInput extends js.Object {
     var actionOwnerFilter: js.UndefOr[ActionOwner]
     var nextToken: js.UndefOr[NextToken]
+    var regionFilter: js.UndefOr[AWSRegionName]
   }
 
   object ListActionTypesInput {
     @inline
     def apply(
         actionOwnerFilter: js.UndefOr[ActionOwner] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        regionFilter: js.UndefOr[AWSRegionName] = js.undefined
     ): ListActionTypesInput = {
       val __obj = js.Dynamic.literal()
       actionOwnerFilter.foreach(__v => __obj.updateDynamic("actionOwnerFilter")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      regionFilter.foreach(__v => __obj.updateDynamic("regionFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActionTypesInput]
     }
   }
@@ -1935,15 +2270,18 @@ package codepipeline {
     */
   @js.native
   trait ListPipelinesInput extends js.Object {
+    var maxResults: js.UndefOr[MaxPipelines]
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListPipelinesInput {
     @inline
     def apply(
+        maxResults: js.UndefOr[MaxPipelines] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPipelinesInput = {
       val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesInput]
     }
@@ -3218,6 +3556,23 @@ package codepipeline {
     def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateActionTypeInput extends js.Object {
+    var actionType: ActionTypeDeclaration
+  }
+
+  object UpdateActionTypeInput {
+    @inline
+    def apply(
+        actionType: ActionTypeDeclaration
+    ): UpdateActionTypeInput = {
+      val __obj = js.Dynamic.literal(
+        "actionType" -> actionType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateActionTypeInput]
     }
   }
 

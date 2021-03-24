@@ -17,6 +17,7 @@ package object dataexchange {
   type ListOfDataSetEntry = js.Array[DataSetEntry]
   type ListOfJobEntry = js.Array[JobEntry]
   type ListOfJobError = js.Array[JobError]
+  type ListOfRevisionDestinationEntry = js.Array[RevisionDestinationEntry]
   type ListOfRevisionEntry = js.Array[RevisionEntry]
   type ListOf__string = js.Array[__string]
   type MapOf__string = js.Dictionary[__string]
@@ -687,6 +688,58 @@ package dataexchange {
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportAssetsToS3ResponseDetails]
+    }
+  }
+
+  /** Details of the operation to be performed by the job.
+    */
+  @js.native
+  trait ExportRevisionsToS3RequestDetails extends js.Object {
+    var DataSetId: Id
+    var RevisionDestinations: ListOfRevisionDestinationEntry
+    var Encryption: js.UndefOr[ExportServerSideEncryption]
+  }
+
+  object ExportRevisionsToS3RequestDetails {
+    @inline
+    def apply(
+        DataSetId: Id,
+        RevisionDestinations: ListOfRevisionDestinationEntry,
+        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined
+    ): ExportRevisionsToS3RequestDetails = {
+      val __obj = js.Dynamic.literal(
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionDestinations" -> RevisionDestinations.asInstanceOf[js.Any]
+      )
+
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportRevisionsToS3RequestDetails]
+    }
+  }
+
+  /** Details about the export revisions to Amazon S3 response.
+    */
+  @js.native
+  trait ExportRevisionsToS3ResponseDetails extends js.Object {
+    var DataSetId: Id
+    var RevisionDestinations: ListOfRevisionDestinationEntry
+    var Encryption: js.UndefOr[ExportServerSideEncryption]
+  }
+
+  object ExportRevisionsToS3ResponseDetails {
+    @inline
+    def apply(
+        DataSetId: Id,
+        RevisionDestinations: ListOfRevisionDestinationEntry,
+        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined
+    ): ExportRevisionsToS3ResponseDetails = {
+      val __obj = js.Dynamic.literal(
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionDestinations" -> RevisionDestinations.asInstanceOf[js.Any]
+      )
+
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportRevisionsToS3ResponseDetails]
     }
   }
 
@@ -1428,6 +1481,7 @@ package dataexchange {
   trait RequestDetails extends js.Object {
     var ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlRequestDetails]
     var ExportAssetsToS3: js.UndefOr[ExportAssetsToS3RequestDetails]
+    var ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3RequestDetails]
     var ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlRequestDetails]
     var ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3RequestDetails]
   }
@@ -1437,12 +1491,14 @@ package dataexchange {
     def apply(
         ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlRequestDetails] = js.undefined,
         ExportAssetsToS3: js.UndefOr[ExportAssetsToS3RequestDetails] = js.undefined,
+        ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3RequestDetails] = js.undefined,
         ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlRequestDetails] = js.undefined,
         ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3RequestDetails] = js.undefined
     ): RequestDetails = {
       val __obj = js.Dynamic.literal()
       ExportAssetToSignedUrl.foreach(__v => __obj.updateDynamic("ExportAssetToSignedUrl")(__v.asInstanceOf[js.Any]))
       ExportAssetsToS3.foreach(__v => __obj.updateDynamic("ExportAssetsToS3")(__v.asInstanceOf[js.Any]))
+      ExportRevisionsToS3.foreach(__v => __obj.updateDynamic("ExportRevisionsToS3")(__v.asInstanceOf[js.Any]))
       ImportAssetFromSignedUrl.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrl")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestDetails]
@@ -1455,6 +1511,7 @@ package dataexchange {
   trait ResponseDetails extends js.Object {
     var ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlResponseDetails]
     var ExportAssetsToS3: js.UndefOr[ExportAssetsToS3ResponseDetails]
+    var ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3ResponseDetails]
     var ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlResponseDetails]
     var ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3ResponseDetails]
   }
@@ -1464,15 +1521,43 @@ package dataexchange {
     def apply(
         ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlResponseDetails] = js.undefined,
         ExportAssetsToS3: js.UndefOr[ExportAssetsToS3ResponseDetails] = js.undefined,
+        ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3ResponseDetails] = js.undefined,
         ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlResponseDetails] = js.undefined,
         ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3ResponseDetails] = js.undefined
     ): ResponseDetails = {
       val __obj = js.Dynamic.literal()
       ExportAssetToSignedUrl.foreach(__v => __obj.updateDynamic("ExportAssetToSignedUrl")(__v.asInstanceOf[js.Any]))
       ExportAssetsToS3.foreach(__v => __obj.updateDynamic("ExportAssetsToS3")(__v.asInstanceOf[js.Any]))
+      ExportRevisionsToS3.foreach(__v => __obj.updateDynamic("ExportRevisionsToS3")(__v.asInstanceOf[js.Any]))
       ImportAssetFromSignedUrl.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrl")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseDetails]
+    }
+  }
+
+  /** The destination where the assets in the revision will be exported.
+    */
+  @js.native
+  trait RevisionDestinationEntry extends js.Object {
+    var Bucket: __string
+    var RevisionId: Id
+    var KeyPattern: js.UndefOr[__string]
+  }
+
+  object RevisionDestinationEntry {
+    @inline
+    def apply(
+        Bucket: __string,
+        RevisionId: Id,
+        KeyPattern: js.UndefOr[__string] = js.undefined
+    ): RevisionDestinationEntry = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
+      )
+
+      KeyPattern.foreach(__v => __obj.updateDynamic("KeyPattern")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevisionDestinationEntry]
     }
   }
 
@@ -1617,8 +1702,9 @@ package dataexchange {
     val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
     val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
     val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
+    val EXPORT_REVISIONS_TO_S3 = "EXPORT_REVISIONS_TO_S3".asInstanceOf[Type]
 
-    @inline def values = js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL)
+    @inline def values = js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL, EXPORT_REVISIONS_TO_S3)
   }
 
   @js.native

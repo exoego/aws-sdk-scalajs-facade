@@ -79,6 +79,7 @@ package object devopsguru {
     @inline def describeAccountHealthFuture(params: DescribeAccountHealthRequest): Future[DescribeAccountHealthResponse] = service.describeAccountHealth(params).promise().toFuture
     @inline def describeAccountOverviewFuture(params: DescribeAccountOverviewRequest): Future[DescribeAccountOverviewResponse] = service.describeAccountOverview(params).promise().toFuture
     @inline def describeAnomalyFuture(params: DescribeAnomalyRequest): Future[DescribeAnomalyResponse] = service.describeAnomaly(params).promise().toFuture
+    @inline def describeFeedbackFuture(params: DescribeFeedbackRequest): Future[DescribeFeedbackResponse] = service.describeFeedback(params).promise().toFuture
     @inline def describeInsightFuture(params: DescribeInsightRequest): Future[DescribeInsightResponse] = service.describeInsight(params).promise().toFuture
     @inline def describeResourceCollectionHealthFuture(params: DescribeResourceCollectionHealthRequest): Future[DescribeResourceCollectionHealthResponse] = service.describeResourceCollectionHealth(params).promise().toFuture
     @inline def describeServiceIntegrationFuture(params: DescribeServiceIntegrationRequest): Future[DescribeServiceIntegrationResponse] = service.describeServiceIntegration(params).promise().toFuture
@@ -107,6 +108,7 @@ package devopsguru {
     def describeAccountHealth(params: DescribeAccountHealthRequest): Request[DescribeAccountHealthResponse] = js.native
     def describeAccountOverview(params: DescribeAccountOverviewRequest): Request[DescribeAccountOverviewResponse] = js.native
     def describeAnomaly(params: DescribeAnomalyRequest): Request[DescribeAnomalyResponse] = js.native
+    def describeFeedback(params: DescribeFeedbackRequest): Request[DescribeFeedbackResponse] = js.native
     def describeInsight(params: DescribeInsightRequest): Request[DescribeInsightResponse] = js.native
     def describeResourceCollectionHealth(params: DescribeResourceCollectionHealthRequest): Request[DescribeResourceCollectionHealthResponse] = js.native
     def describeServiceIntegration(params: DescribeServiceIntegrationRequest): Request[DescribeServiceIntegrationResponse] = js.native
@@ -457,6 +459,38 @@ package devopsguru {
       ProactiveAnomaly.foreach(__v => __obj.updateDynamic("ProactiveAnomaly")(__v.asInstanceOf[js.Any]))
       ReactiveAnomaly.foreach(__v => __obj.updateDynamic("ReactiveAnomaly")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAnomalyResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFeedbackRequest extends js.Object {
+    var InsightId: js.UndefOr[InsightId]
+  }
+
+  object DescribeFeedbackRequest {
+    @inline
+    def apply(
+        InsightId: js.UndefOr[InsightId] = js.undefined
+    ): DescribeFeedbackRequest = {
+      val __obj = js.Dynamic.literal()
+      InsightId.foreach(__v => __obj.updateDynamic("InsightId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFeedbackRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFeedbackResponse extends js.Object {
+    var InsightFeedback: js.UndefOr[InsightFeedback]
+  }
+
+  object DescribeFeedbackResponse {
+    @inline
+    def apply(
+        InsightFeedback: js.UndefOr[InsightFeedback] = js.undefined
+    ): DescribeFeedbackResponse = {
+      val __obj = js.Dynamic.literal()
+      InsightFeedback.foreach(__v => __obj.updateDynamic("InsightFeedback")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFeedbackResponse]
     }
   }
 

@@ -64,6 +64,7 @@ package object iotwireless {
   type NwkSEncKey = String
   type NwkSKey = String
   type PackageVersion = String
+  type PartnerAccountArn = String
   type PartnerAccountId = String
   type PayloadData = String
   type PingSlotDr = Int
@@ -115,6 +116,7 @@ package object iotwireless {
   type WirelessGatewayId = String
   type WirelessGatewayName = String
   type WirelessGatewayStatisticsList = js.Array[WirelessGatewayStatistics]
+  type WirelessGatewayTaskDefinitionArn = String
   type WirelessGatewayTaskDefinitionId = String
   type WirelessGatewayTaskDefinitionList = js.Array[UpdateWirelessGatewayTaskEntry]
   type WirelessGatewayTaskName = String
@@ -281,34 +283,40 @@ package iotwireless {
   trait AssociateAwsAccountWithPartnerAccountRequest extends js.Object {
     var Sidewalk: SidewalkAccountInfo
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Tags: js.UndefOr[TagList]
   }
 
   object AssociateAwsAccountWithPartnerAccountRequest {
     @inline
     def apply(
         Sidewalk: SidewalkAccountInfo,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): AssociateAwsAccountWithPartnerAccountRequest = {
       val __obj = js.Dynamic.literal(
         "Sidewalk" -> Sidewalk.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateAwsAccountWithPartnerAccountRequest]
     }
   }
 
   @js.native
   trait AssociateAwsAccountWithPartnerAccountResponse extends js.Object {
+    var Arn: js.UndefOr[PartnerAccountArn]
     var Sidewalk: js.UndefOr[SidewalkAccountInfo]
   }
 
   object AssociateAwsAccountWithPartnerAccountResponse {
     @inline
     def apply(
+        Arn: js.UndefOr[PartnerAccountArn] = js.undefined,
         Sidewalk: js.UndefOr[SidewalkAccountInfo] = js.undefined
     ): AssociateAwsAccountWithPartnerAccountResponse = {
       val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateAwsAccountWithPartnerAccountResponse]
     }
@@ -661,6 +669,7 @@ package iotwireless {
     var AutoCreateTasks: AutoCreateTasks
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Name: js.UndefOr[WirelessGatewayTaskName]
+    var Tags: js.UndefOr[TagList]
     var Update: js.UndefOr[UpdateWirelessGatewayTaskCreate]
   }
 
@@ -670,6 +679,7 @@ package iotwireless {
         AutoCreateTasks: AutoCreateTasks,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Name: js.UndefOr[WirelessGatewayTaskName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         Update: js.UndefOr[UpdateWirelessGatewayTaskCreate] = js.undefined
     ): CreateWirelessGatewayTaskDefinitionRequest = {
       val __obj = js.Dynamic.literal(
@@ -678,6 +688,7 @@ package iotwireless {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Update.foreach(__v => __obj.updateDynamic("Update")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWirelessGatewayTaskDefinitionRequest]
     }
@@ -685,15 +696,18 @@ package iotwireless {
 
   @js.native
   trait CreateWirelessGatewayTaskDefinitionResponse extends js.Object {
+    var Arn: js.UndefOr[WirelessGatewayTaskDefinitionArn]
     var Id: js.UndefOr[WirelessGatewayTaskDefinitionId]
   }
 
   object CreateWirelessGatewayTaskDefinitionResponse {
     @inline
     def apply(
+        Arn: js.UndefOr[WirelessGatewayTaskDefinitionArn] = js.undefined,
         Id: js.UndefOr[WirelessGatewayTaskDefinitionId] = js.undefined
     ): CreateWirelessGatewayTaskDefinitionResponse = {
       val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWirelessGatewayTaskDefinitionResponse]
     }
@@ -1110,8 +1124,9 @@ package iotwireless {
   sealed trait ExpressionType extends js.Any
   object ExpressionType {
     val RuleName = "RuleName".asInstanceOf[ExpressionType]
+    val MqttTopic = "MqttTopic".asInstanceOf[ExpressionType]
 
-    @inline def values = js.Array(RuleName)
+    @inline def values = js.Array(RuleName, MqttTopic)
   }
 
   @js.native
@@ -1442,15 +1457,18 @@ package iotwireless {
   @js.native
   trait GetWirelessGatewayCertificateResponse extends js.Object {
     var IotCertificateId: js.UndefOr[IotCertificateId]
+    var LoRaWANNetworkServerCertificateId: js.UndefOr[IotCertificateId]
   }
 
   object GetWirelessGatewayCertificateResponse {
     @inline
     def apply(
-        IotCertificateId: js.UndefOr[IotCertificateId] = js.undefined
+        IotCertificateId: js.UndefOr[IotCertificateId] = js.undefined,
+        LoRaWANNetworkServerCertificateId: js.UndefOr[IotCertificateId] = js.undefined
     ): GetWirelessGatewayCertificateResponse = {
       val __obj = js.Dynamic.literal()
       IotCertificateId.foreach(__v => __obj.updateDynamic("IotCertificateId")(__v.asInstanceOf[js.Any]))
+      LoRaWANNetworkServerCertificateId.foreach(__v => __obj.updateDynamic("LoRaWANNetworkServerCertificateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWirelessGatewayCertificateResponse]
     }
   }
@@ -1597,6 +1615,7 @@ package iotwireless {
 
   @js.native
   trait GetWirelessGatewayTaskDefinitionResponse extends js.Object {
+    var Arn: js.UndefOr[WirelessGatewayTaskDefinitionArn]
     var AutoCreateTasks: js.UndefOr[AutoCreateTasks]
     var Name: js.UndefOr[WirelessGatewayTaskName]
     var Update: js.UndefOr[UpdateWirelessGatewayTaskCreate]
@@ -1605,11 +1624,13 @@ package iotwireless {
   object GetWirelessGatewayTaskDefinitionResponse {
     @inline
     def apply(
+        Arn: js.UndefOr[WirelessGatewayTaskDefinitionArn] = js.undefined,
         AutoCreateTasks: js.UndefOr[AutoCreateTasks] = js.undefined,
         Name: js.UndefOr[WirelessGatewayTaskName] = js.undefined,
         Update: js.UndefOr[UpdateWirelessGatewayTaskCreate] = js.undefined
     ): GetWirelessGatewayTaskDefinitionResponse = {
       val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       AutoCreateTasks.foreach(__v => __obj.updateDynamic("AutoCreateTasks")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Update.foreach(__v => __obj.updateDynamic("Update")(__v.asInstanceOf[js.Any]))
@@ -2593,6 +2614,7 @@ package iotwireless {
   @js.native
   trait SidewalkAccountInfoWithFingerprint extends js.Object {
     var AmazonId: js.UndefOr[AmazonId]
+    var Arn: js.UndefOr[PartnerAccountArn]
     var Fingerprint: js.UndefOr[Fingerprint]
   }
 
@@ -2600,10 +2622,12 @@ package iotwireless {
     @inline
     def apply(
         AmazonId: js.UndefOr[AmazonId] = js.undefined,
+        Arn: js.UndefOr[PartnerAccountArn] = js.undefined,
         Fingerprint: js.UndefOr[Fingerprint] = js.undefined
     ): SidewalkAccountInfoWithFingerprint = {
       val __obj = js.Dynamic.literal()
       AmazonId.foreach(__v => __obj.updateDynamic("AmazonId")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Fingerprint.foreach(__v => __obj.updateDynamic("Fingerprint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SidewalkAccountInfoWithFingerprint]
     }
@@ -2959,6 +2983,7 @@ package iotwireless {
     */
   @js.native
   trait UpdateWirelessGatewayTaskEntry extends js.Object {
+    var Arn: js.UndefOr[WirelessGatewayTaskDefinitionArn]
     var Id: js.UndefOr[WirelessGatewayTaskDefinitionId]
     var LoRaWAN: js.UndefOr[LoRaWANUpdateGatewayTaskEntry]
   }
@@ -2966,10 +2991,12 @@ package iotwireless {
   object UpdateWirelessGatewayTaskEntry {
     @inline
     def apply(
+        Arn: js.UndefOr[WirelessGatewayTaskDefinitionArn] = js.undefined,
         Id: js.UndefOr[WirelessGatewayTaskDefinitionId] = js.undefined,
         LoRaWAN: js.UndefOr[LoRaWANUpdateGatewayTaskEntry] = js.undefined
     ): UpdateWirelessGatewayTaskEntry = {
       val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWirelessGatewayTaskEntry]

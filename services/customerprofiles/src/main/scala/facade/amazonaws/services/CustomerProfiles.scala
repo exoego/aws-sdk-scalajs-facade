@@ -404,20 +404,19 @@ package customerprofiles {
   @js.native
   trait DeleteIntegrationRequest extends js.Object {
     var DomainName: name
-    var Uri: js.UndefOr[string1To255]
+    var Uri: string1To255
   }
 
   object DeleteIntegrationRequest {
     @inline
     def apply(
         DomainName: name,
-        Uri: js.UndefOr[string1To255] = js.undefined
+        Uri: string1To255
     ): DeleteIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Uri" -> Uri.asInstanceOf[js.Any]
       )
-
-      Uri.foreach(__v => __obj.updateDynamic("Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteIntegrationRequest]
     }
   }
@@ -704,20 +703,19 @@ package customerprofiles {
   @js.native
   trait GetIntegrationRequest extends js.Object {
     var DomainName: name
-    var Uri: js.UndefOr[string1To255]
+    var Uri: string1To255
   }
 
   object GetIntegrationRequest {
     @inline
     def apply(
         DomainName: name,
-        Uri: js.UndefOr[string1To255] = js.undefined
+        Uri: string1To255
     ): GetIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "Uri" -> Uri.asInstanceOf[js.Any]
       )
-
-      Uri.foreach(__v => __obj.updateDynamic("Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationRequest]
     }
   }

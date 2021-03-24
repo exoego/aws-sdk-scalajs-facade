@@ -188,6 +188,7 @@ package object sesv2 {
     @inline def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] = service.putDedicatedIpInPool(params).promise().toFuture
     @inline def putDedicatedIpWarmupAttributesFuture(params: PutDedicatedIpWarmupAttributesRequest): Future[PutDedicatedIpWarmupAttributesResponse] = service.putDedicatedIpWarmupAttributes(params).promise().toFuture
     @inline def putDeliverabilityDashboardOptionFuture(params: PutDeliverabilityDashboardOptionRequest): Future[PutDeliverabilityDashboardOptionResponse] = service.putDeliverabilityDashboardOption(params).promise().toFuture
+    @inline def putEmailIdentityConfigurationSetAttributesFuture(params: PutEmailIdentityConfigurationSetAttributesRequest): Future[PutEmailIdentityConfigurationSetAttributesResponse] = service.putEmailIdentityConfigurationSetAttributes(params).promise().toFuture
     @inline def putEmailIdentityDkimAttributesFuture(params: PutEmailIdentityDkimAttributesRequest): Future[PutEmailIdentityDkimAttributesResponse] = service.putEmailIdentityDkimAttributes(params).promise().toFuture
     @inline def putEmailIdentityDkimSigningAttributesFuture(params: PutEmailIdentityDkimSigningAttributesRequest): Future[PutEmailIdentityDkimSigningAttributesResponse] = service.putEmailIdentityDkimSigningAttributes(params).promise().toFuture
     @inline def putEmailIdentityFeedbackAttributesFuture(params: PutEmailIdentityFeedbackAttributesRequest): Future[PutEmailIdentityFeedbackAttributesResponse] = service.putEmailIdentityFeedbackAttributes(params).promise().toFuture
@@ -278,6 +279,7 @@ package sesv2 {
     def putDedicatedIpInPool(params: PutDedicatedIpInPoolRequest): Request[PutDedicatedIpInPoolResponse] = js.native
     def putDedicatedIpWarmupAttributes(params: PutDedicatedIpWarmupAttributesRequest): Request[PutDedicatedIpWarmupAttributesResponse] = js.native
     def putDeliverabilityDashboardOption(params: PutDeliverabilityDashboardOptionRequest): Request[PutDeliverabilityDashboardOptionResponse] = js.native
+    def putEmailIdentityConfigurationSetAttributes(params: PutEmailIdentityConfigurationSetAttributesRequest): Request[PutEmailIdentityConfigurationSetAttributesResponse] = js.native
     def putEmailIdentityDkimAttributes(params: PutEmailIdentityDkimAttributesRequest): Request[PutEmailIdentityDkimAttributesResponse] = js.native
     def putEmailIdentityDkimSigningAttributes(params: PutEmailIdentityDkimSigningAttributesRequest): Request[PutEmailIdentityDkimSigningAttributesResponse] = js.native
     def putEmailIdentityFeedbackAttributes(params: PutEmailIdentityFeedbackAttributesRequest): Request[PutEmailIdentityFeedbackAttributesResponse] = js.native
@@ -992,6 +994,7 @@ package sesv2 {
   @js.native
   trait CreateEmailIdentityRequest extends js.Object {
     var EmailIdentity: Identity
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
     var DkimSigningAttributes: js.UndefOr[DkimSigningAttributes]
     var Tags: js.UndefOr[TagList]
   }
@@ -1000,6 +1003,7 @@ package sesv2 {
     @inline
     def apply(
         EmailIdentity: Identity,
+        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
         DkimSigningAttributes: js.UndefOr[DkimSigningAttributes] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEmailIdentityRequest = {
@@ -1007,6 +1011,7 @@ package sesv2 {
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
       DkimSigningAttributes.foreach(__v => __obj.updateDynamic("DkimSigningAttributes")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEmailIdentityRequest]
@@ -2671,6 +2676,7 @@ package sesv2 {
     */
   @js.native
   trait GetEmailIdentityResponse extends js.Object {
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
     var DkimAttributes: js.UndefOr[DkimAttributes]
     var FeedbackForwardingStatus: js.UndefOr[Enabled]
     var IdentityType: js.UndefOr[IdentityType]
@@ -2683,6 +2689,7 @@ package sesv2 {
   object GetEmailIdentityResponse {
     @inline
     def apply(
+        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
         DkimAttributes: js.UndefOr[DkimAttributes] = js.undefined,
         FeedbackForwardingStatus: js.UndefOr[Enabled] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
@@ -2692,6 +2699,7 @@ package sesv2 {
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): GetEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
       DkimAttributes.foreach(__v => __obj.updateDynamic("DkimAttributes")(__v.asInstanceOf[js.Any]))
       FeedbackForwardingStatus.foreach(__v => __obj.updateDynamic("FeedbackForwardingStatus")(__v.asInstanceOf[js.Any]))
       IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
@@ -4201,6 +4209,42 @@ package sesv2 {
     def apply(): PutDeliverabilityDashboardOptionResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
+    }
+  }
+
+  /** A request to associate a configuration set with an email identity.
+    */
+  @js.native
+  trait PutEmailIdentityConfigurationSetAttributesRequest extends js.Object {
+    var EmailIdentity: Identity
+    var ConfigurationSetName: js.UndefOr[ConfigurationSetName]
+  }
+
+  object PutEmailIdentityConfigurationSetAttributesRequest {
+    @inline
+    def apply(
+        EmailIdentity: Identity,
+        ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined
+    ): PutEmailIdentityConfigurationSetAttributesRequest = {
+      val __obj = js.Dynamic.literal(
+        "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
+      )
+
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutEmailIdentityConfigurationSetAttributesRequest]
+    }
+  }
+
+  /** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
+    */
+  @js.native
+  trait PutEmailIdentityConfigurationSetAttributesResponse extends js.Object
+
+  object PutEmailIdentityConfigurationSetAttributesResponse {
+    @inline
+    def apply(): PutEmailIdentityConfigurationSetAttributesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutEmailIdentityConfigurationSetAttributesResponse]
     }
   }
 

@@ -39,6 +39,10 @@ package object shield {
   type SubResourceSummaryList = js.Array[SubResourceSummary]
   type SummarizedAttackVectorList = js.Array[SummarizedAttackVector]
   type SummarizedCounterList = js.Array[SummarizedCounter]
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type Timestamp = js.Date
   type Token = String
   type TopContributors = js.Array[Contributor]
@@ -71,6 +75,9 @@ package object shield {
     @inline def listProtectionGroupsFuture(params: ListProtectionGroupsRequest): Future[ListProtectionGroupsResponse] = service.listProtectionGroups(params).promise().toFuture
     @inline def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] = service.listProtections(params).promise().toFuture
     @inline def listResourcesInProtectionGroupFuture(params: ListResourcesInProtectionGroupRequest): Future[ListResourcesInProtectionGroupResponse] = service.listResourcesInProtectionGroup(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateEmergencyContactSettingsFuture(params: UpdateEmergencyContactSettingsRequest): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise().toFuture
     @inline def updateProtectionGroupFuture(params: UpdateProtectionGroupRequest): Future[UpdateProtectionGroupResponse] = service.updateProtectionGroup(params).promise().toFuture
     @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] = service.updateSubscription(params).promise().toFuture
@@ -111,6 +118,9 @@ package shield {
     def listProtectionGroups(params: ListProtectionGroupsRequest): Request[ListProtectionGroupsResponse] = js.native
     def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse] = js.native
     def listResourcesInProtectionGroup(params: ListResourcesInProtectionGroupRequest): Request[ListResourcesInProtectionGroupResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
     def updateProtectionGroup(params: UpdateProtectionGroupRequest): Request[UpdateProtectionGroupResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
@@ -476,6 +486,7 @@ package shield {
     var ProtectionGroupId: ProtectionGroupId
     var Members: js.UndefOr[ProtectionGroupMembers]
     var ResourceType: js.UndefOr[ProtectedResourceType]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateProtectionGroupRequest {
@@ -485,7 +496,8 @@ package shield {
         Pattern: ProtectionGroupPattern,
         ProtectionGroupId: ProtectionGroupId,
         Members: js.UndefOr[ProtectionGroupMembers] = js.undefined,
-        ResourceType: js.UndefOr[ProtectedResourceType] = js.undefined
+        ResourceType: js.UndefOr[ProtectedResourceType] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateProtectionGroupRequest = {
       val __obj = js.Dynamic.literal(
         "Aggregation" -> Aggregation.asInstanceOf[js.Any],
@@ -495,6 +507,7 @@ package shield {
 
       Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProtectionGroupRequest]
     }
   }
@@ -514,18 +527,22 @@ package shield {
   trait CreateProtectionRequest extends js.Object {
     var Name: ProtectionName
     var ResourceArn: ResourceArn
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateProtectionRequest {
     @inline
     def apply(
         Name: ProtectionName,
-        ResourceArn: ResourceArn
+        ResourceArn: ResourceArn,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateProtectionRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProtectionRequest]
     }
   }
@@ -1235,6 +1252,39 @@ package shield {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** The mitigation applied to a DDoS attack.
     */
   @js.native
@@ -1283,6 +1333,7 @@ package shield {
     var HealthCheckIds: js.UndefOr[HealthCheckIds]
     var Id: js.UndefOr[ProtectionId]
     var Name: js.UndefOr[ProtectionName]
+    var ProtectionArn: js.UndefOr[ResourceArn]
     var ResourceArn: js.UndefOr[ResourceArn]
   }
 
@@ -1292,12 +1343,14 @@ package shield {
         HealthCheckIds: js.UndefOr[HealthCheckIds] = js.undefined,
         Id: js.UndefOr[ProtectionId] = js.undefined,
         Name: js.UndefOr[ProtectionName] = js.undefined,
+        ProtectionArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): Protection = {
       val __obj = js.Dynamic.literal()
       HealthCheckIds.foreach(__v => __obj.updateDynamic("HealthCheckIds")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProtectionArn.foreach(__v => __obj.updateDynamic("ProtectionArn")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Protection]
     }
@@ -1311,6 +1364,7 @@ package shield {
     var Members: ProtectionGroupMembers
     var Pattern: ProtectionGroupPattern
     var ProtectionGroupId: ProtectionGroupId
+    var ProtectionGroupArn: js.UndefOr[ResourceArn]
     var ResourceType: js.UndefOr[ProtectedResourceType]
   }
 
@@ -1321,6 +1375,7 @@ package shield {
         Members: ProtectionGroupMembers,
         Pattern: ProtectionGroupPattern,
         ProtectionGroupId: ProtectionGroupId,
+        ProtectionGroupArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceType: js.UndefOr[ProtectedResourceType] = js.undefined
     ): ProtectionGroup = {
       val __obj = js.Dynamic.literal(
@@ -1330,6 +1385,7 @@ package shield {
         "ProtectionGroupId" -> ProtectionGroupId.asInstanceOf[js.Any]
       )
 
+      ProtectionGroupArn.foreach(__v => __obj.updateDynamic("ProtectionGroupArn")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProtectionGroup]
     }
@@ -1480,6 +1536,7 @@ package shield {
     var Limits: js.UndefOr[Limits]
     var ProactiveEngagementStatus: js.UndefOr[ProactiveEngagementStatus]
     var StartTime: js.UndefOr[Timestamp]
+    var SubscriptionArn: js.UndefOr[ResourceArn]
     var TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds]
   }
 
@@ -1492,6 +1549,7 @@ package shield {
         Limits: js.UndefOr[Limits] = js.undefined,
         ProactiveEngagementStatus: js.UndefOr[ProactiveEngagementStatus] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined,
+        SubscriptionArn: js.UndefOr[ResourceArn] = js.undefined,
         TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined
     ): Subscription = {
       val __obj = js.Dynamic.literal(
@@ -1503,6 +1561,7 @@ package shield {
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       ProactiveEngagementStatus.foreach(__v => __obj.updateDynamic("ProactiveEngagementStatus")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      SubscriptionArn.foreach(__v => __obj.updateDynamic("SubscriptionArn")(__v.asInstanceOf[js.Any]))
       TimeCommitmentInSeconds.foreach(__v => __obj.updateDynamic("TimeCommitmentInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]
     }
@@ -1595,6 +1654,58 @@ package shield {
     }
   }
 
+  /** A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: ResourceArn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: ResourceArn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   /** The time range.
     */
   @js.native
@@ -1625,6 +1736,37 @@ package shield {
     val REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
     @inline def values = js.Array(BITS, BYTES, PACKETS, REQUESTS)
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: ResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: ResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native
