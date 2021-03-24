@@ -3,10 +3,18 @@ on: [pull_request]
 jobs:
   format:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     steps:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v10
+      - name: Cache Coursier
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/coursier
+          key: sbt-coursier-${{ hashFiles('project/*.sbt', 'project/*.scala') }}
+      - name: Cache SBT
+        uses: actions/cache@v2
+        with:
+          path: ~/.sbt
+          key: sbt-${{ hashFiles('project/build.properties', 'project/plugins.sbt') }}
       - name: Check Scalafmt
-        run: sbt -jvm-opts .github/.jvmopts ++2.13.4 scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+        run: sbt -jvm-opts .github/.jvmopts ++2.13.5 scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
