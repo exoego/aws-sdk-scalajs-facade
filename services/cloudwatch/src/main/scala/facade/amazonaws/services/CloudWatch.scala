@@ -50,6 +50,7 @@ package object cloudwatch {
   type FailureCode = String
   type FailureDescription = String
   type FailureResource = String
+  type GetMetricDataLabelTimezone = String
   type GetMetricDataMaxDatapoints = Int
   type HistoryData = String
   type HistorySummary = String
@@ -1085,6 +1086,7 @@ package cloudwatch {
     var EndTime: Timestamp
     var MetricDataQueries: MetricDataQueries
     var StartTime: Timestamp
+    var LabelOptions: js.UndefOr[LabelOptions]
     var MaxDatapoints: js.UndefOr[GetMetricDataMaxDatapoints]
     var NextToken: js.UndefOr[NextToken]
     var ScanBy: js.UndefOr[ScanBy]
@@ -1096,6 +1098,7 @@ package cloudwatch {
         EndTime: Timestamp,
         MetricDataQueries: MetricDataQueries,
         StartTime: Timestamp,
+        LabelOptions: js.UndefOr[LabelOptions] = js.undefined,
         MaxDatapoints: js.UndefOr[GetMetricDataMaxDatapoints] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScanBy: js.UndefOr[ScanBy] = js.undefined
@@ -1106,6 +1109,7 @@ package cloudwatch {
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
+      LabelOptions.foreach(__v => __obj.updateDynamic("LabelOptions")(__v.asInstanceOf[js.Any]))
       MaxDatapoints.foreach(__v => __obj.updateDynamic("MaxDatapoints")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ScanBy.foreach(__v => __obj.updateDynamic("ScanBy")(__v.asInstanceOf[js.Any]))
@@ -1360,6 +1364,25 @@ package cloudwatch {
       Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
       UniqueContributors.foreach(__v => __obj.updateDynamic("UniqueContributors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InsightRuleMetricDatapoint]
+    }
+  }
+
+  /** This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels that are associated with returned metrics display the correct time for your time zone.
+    * The <code>Timezone</code> value affects a label only if you have a time-based dynamic expression in the label. For more information about dynamic expressions in labels, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html|Using Dynamic Labels]].
+    */
+  @js.native
+  trait LabelOptions extends js.Object {
+    var Timezone: js.UndefOr[GetMetricDataLabelTimezone]
+  }
+
+  object LabelOptions {
+    @inline
+    def apply(
+        Timezone: js.UndefOr[GetMetricDataLabelTimezone] = js.undefined
+    ): LabelOptions = {
+      val __obj = js.Dynamic.literal()
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LabelOptions]
     }
   }
 

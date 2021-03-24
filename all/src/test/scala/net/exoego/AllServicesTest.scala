@@ -408,6 +408,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.firehose.Firehose(config)
   }
 
+  test("Fis") {
+    val instance = new services.fis.Fis(config)
+  }
+
   test("Forecast") {
     val instance = new services.forecast.Forecast(config)
   }
@@ -596,8 +600,16 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.lexmodelbuildingservice.LexModelBuildingService(config)
   }
 
+  test("LexModelsV2") {
+    val instance = new services.lexmodelsv2.LexModelsV2(config)
+  }
+
   test("LexRuntime") {
     val instance = new services.lexruntime.LexRuntime(config)
+  }
+
+  test("LexRuntimeV2") {
+    val instance = new services.lexruntimev2.LexRuntimeV2(config)
   }
 
   test("LicenseManager") {

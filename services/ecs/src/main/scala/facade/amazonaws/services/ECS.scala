@@ -43,6 +43,8 @@ package object ecs {
   type InferenceAccelerators = js.Array[InferenceAccelerator]
   type LoadBalancers = js.Array[LoadBalancer]
   type LogConfigurationOptionsMap = js.Dictionary[String]
+  type ManagedAgentStateChanges = js.Array[ManagedAgentStateChange]
+  type ManagedAgents = js.Array[ManagedAgent]
   type ManagedScalingInstanceWarmupPeriod = Int
   type ManagedScalingStepSize = Int
   type ManagedScalingTargetCapacity = Int
@@ -58,6 +60,7 @@ package object ecs {
   type ResourceRequirements = js.Array[ResourceRequirement]
   type Resources = js.Array[Resource]
   type SecretList = js.Array[Secret]
+  type SensitiveString = String
   type ServiceEvents = js.Array[ServiceEvent]
   type ServiceFieldList = js.Array[ServiceField]
   type ServiceRegistries = js.Array[ServiceRegistry]
@@ -105,6 +108,7 @@ package object ecs {
     @inline def describeTaskSetsFuture(params: DescribeTaskSetsRequest): Future[DescribeTaskSetsResponse] = service.describeTaskSets(params).promise().toFuture
     @inline def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] = service.describeTasks(params).promise().toFuture
     @inline def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] = service.discoverPollEndpoint(params).promise().toFuture
+    @inline def executeCommandFuture(params: ExecuteCommandRequest): Future[ExecuteCommandResponse] = service.executeCommand(params).promise().toFuture
     @inline def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] = service.listAccountSettings(params).promise().toFuture
     @inline def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] = service.listAttributes(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
@@ -129,6 +133,7 @@ package object ecs {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateCapacityProviderFuture(params: UpdateCapacityProviderRequest): Future[UpdateCapacityProviderResponse] = service.updateCapacityProvider(params).promise().toFuture
+    @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResponse] = service.updateCluster(params).promise().toFuture
     @inline def updateClusterSettingsFuture(params: UpdateClusterSettingsRequest): Future[UpdateClusterSettingsResponse] = service.updateClusterSettings(params).promise().toFuture
     @inline def updateContainerAgentFuture(params: UpdateContainerAgentRequest): Future[UpdateContainerAgentResponse] = service.updateContainerAgent(params).promise().toFuture
     @inline def updateContainerInstancesStateFuture(params: UpdateContainerInstancesStateRequest): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise().toFuture
@@ -165,6 +170,7 @@ package ecs {
     def describeTaskSets(params: DescribeTaskSetsRequest): Request[DescribeTaskSetsResponse] = js.native
     def describeTasks(params: DescribeTasksRequest): Request[DescribeTasksResponse] = js.native
     def discoverPollEndpoint(params: DiscoverPollEndpointRequest): Request[DiscoverPollEndpointResponse] = js.native
+    def executeCommand(params: ExecuteCommandRequest): Request[ExecuteCommandResponse] = js.native
     def listAccountSettings(params: ListAccountSettingsRequest): Request[ListAccountSettingsResponse] = js.native
     def listAttributes(params: ListAttributesRequest): Request[ListAttributesResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
@@ -189,6 +195,7 @@ package ecs {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateCapacityProvider(params: UpdateCapacityProviderRequest): Request[UpdateCapacityProviderResponse] = js.native
+    def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResponse] = js.native
     def updateClusterSettings(params: UpdateClusterSettingsRequest): Request[UpdateClusterSettingsResponse] = js.native
     def updateContainerAgent(params: UpdateContainerAgentRequest): Request[UpdateContainerAgentResponse] = js.native
     def updateContainerInstancesState(params: UpdateContainerInstancesStateRequest): Request[UpdateContainerInstancesStateResponse] = js.native
@@ -423,7 +430,10 @@ package ecs {
     @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
-  /** The details of a capacity provider strategy.
+  /** The details of a capacity provider strategy. A capacity provider strategy can be set when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity provider strategy for a cluster with the <a>CreateCluster</a> API.
+    * Only capacity providers that are already associated with a cluster and have an <code>ACTIVE</code> or <code>UPDATING</code> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster.
+    * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
+    * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a capacity provider strategy.
     */
   @js.native
   trait CapacityProviderStrategyItem extends js.Object {
@@ -472,6 +482,7 @@ package ecs {
     var capacityProviders: js.UndefOr[StringList]
     var clusterArn: js.UndefOr[String]
     var clusterName: js.UndefOr[String]
+    var configuration: js.UndefOr[ClusterConfiguration]
     var defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var pendingTasksCount: js.UndefOr[Int]
     var registeredContainerInstancesCount: js.UndefOr[Int]
@@ -491,6 +502,7 @@ package ecs {
         capacityProviders: js.UndefOr[StringList] = js.undefined,
         clusterArn: js.UndefOr[String] = js.undefined,
         clusterName: js.UndefOr[String] = js.undefined,
+        configuration: js.UndefOr[ClusterConfiguration] = js.undefined,
         defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         pendingTasksCount: js.UndefOr[Int] = js.undefined,
         registeredContainerInstancesCount: js.UndefOr[Int] = js.undefined,
@@ -507,6 +519,7 @@ package ecs {
       capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
       clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       defaultCapacityProviderStrategy.foreach(__v => __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
       registeredContainerInstancesCount.foreach(__v => __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any]))
@@ -519,15 +532,34 @@ package ecs {
     }
   }
 
+  /** The execute command configuration for the cluster.
+    */
+  @js.native
+  trait ClusterConfiguration extends js.Object {
+    var executeCommandConfiguration: js.UndefOr[ExecuteCommandConfiguration]
+  }
+
+  object ClusterConfiguration {
+    @inline
+    def apply(
+        executeCommandConfiguration: js.UndefOr[ExecuteCommandConfiguration] = js.undefined
+    ): ClusterConfiguration = {
+      val __obj = js.Dynamic.literal()
+      executeCommandConfiguration.foreach(__v => __obj.updateDynamic("executeCommandConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterConfiguration]
+    }
+  }
+
   @js.native
   sealed trait ClusterField extends js.Any
   object ClusterField {
     val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[ClusterField]
+    val CONFIGURATIONS = "CONFIGURATIONS".asInstanceOf[ClusterField]
     val SETTINGS = "SETTINGS".asInstanceOf[ClusterField]
     val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
     val TAGS = "TAGS".asInstanceOf[ClusterField]
 
-    @inline def values = js.Array(ATTACHMENTS, SETTINGS, STATISTICS, TAGS)
+    @inline def values = js.Array(ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS)
   }
 
   /** The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster.
@@ -589,6 +621,7 @@ package ecs {
     var image: js.UndefOr[String]
     var imageDigest: js.UndefOr[String]
     var lastStatus: js.UndefOr[String]
+    var managedAgents: js.UndefOr[ManagedAgents]
     var memory: js.UndefOr[String]
     var memoryReservation: js.UndefOr[String]
     var name: js.UndefOr[String]
@@ -610,6 +643,7 @@ package ecs {
         image: js.UndefOr[String] = js.undefined,
         imageDigest: js.UndefOr[String] = js.undefined,
         lastStatus: js.UndefOr[String] = js.undefined,
+        managedAgents: js.UndefOr[ManagedAgents] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
         memoryReservation: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -628,6 +662,7 @@ package ecs {
       image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
       lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
+      managedAgents.foreach(__v => __obj.updateDynamic("managedAgents")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       memoryReservation.foreach(__v => __obj.updateDynamic("memoryReservation")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1013,6 +1048,7 @@ package ecs {
   trait CreateClusterRequest extends js.Object {
     var capacityProviders: js.UndefOr[StringList]
     var clusterName: js.UndefOr[String]
+    var configuration: js.UndefOr[ClusterConfiguration]
     var defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
     var settings: js.UndefOr[ClusterSettings]
     var tags: js.UndefOr[Tags]
@@ -1023,6 +1059,7 @@ package ecs {
     def apply(
         capacityProviders: js.UndefOr[StringList] = js.undefined,
         clusterName: js.UndefOr[String] = js.undefined,
+        configuration: js.UndefOr[ClusterConfiguration] = js.undefined,
         defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
         settings: js.UndefOr[ClusterSettings] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
@@ -1030,6 +1067,7 @@ package ecs {
       val __obj = js.Dynamic.literal()
       capacityProviders.foreach(__v => __obj.updateDynamic("capacityProviders")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       defaultCapacityProviderStrategy.foreach(__v => __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1063,6 +1101,7 @@ package ecs {
     var deploymentController: js.UndefOr[DeploymentController]
     var desiredCount: js.UndefOr[BoxedInteger]
     var enableECSManagedTags: js.UndefOr[Boolean]
+    var enableExecuteCommand: js.UndefOr[Boolean]
     var healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger]
     var launchType: js.UndefOr[LaunchType]
     var loadBalancers: js.UndefOr[LoadBalancers]
@@ -1089,6 +1128,7 @@ package ecs {
         deploymentController: js.UndefOr[DeploymentController] = js.undefined,
         desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
         enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
+        enableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
         healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
         loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
@@ -1114,6 +1154,7 @@ package ecs {
       deploymentController.foreach(__v => __obj.updateDynamic("deploymentController")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
+      enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
@@ -2145,8 +2186,8 @@ package ecs {
   }
 
   /** A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see [[https://docs.docker.com/compose/env-file/|Declare default environment variables in file]].
-    * If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying Environment Variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    * This field is not valid for containers in tasks using the Fargate launch type.
+    * If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying environment variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    * This field is only valid for containers in Fargate tasks that use platform version <code>1.4.0</code> or later.
     */
   @js.native
   trait EnvironmentFile extends js.Object {
@@ -2174,6 +2215,131 @@ package ecs {
     val s3 = "s3".asInstanceOf[EnvironmentFileType]
 
     @inline def values = js.Array(s3)
+  }
+
+  /** The details of the execute command configuration.
+    */
+  @js.native
+  trait ExecuteCommandConfiguration extends js.Object {
+    var kmsKeyId: js.UndefOr[String]
+    var logConfiguration: js.UndefOr[ExecuteCommandLogConfiguration]
+    var logging: js.UndefOr[ExecuteCommandLogging]
+  }
+
+  object ExecuteCommandConfiguration {
+    @inline
+    def apply(
+        kmsKeyId: js.UndefOr[String] = js.undefined,
+        logConfiguration: js.UndefOr[ExecuteCommandLogConfiguration] = js.undefined,
+        logging: js.UndefOr[ExecuteCommandLogging] = js.undefined
+    ): ExecuteCommandConfiguration = {
+      val __obj = js.Dynamic.literal()
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
+      logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteCommandConfiguration]
+    }
+  }
+
+  /** The log configuration for the results of the execute command actions. The logs can be sent to CloudWatch Logs or an Amazon S3 bucket.
+    */
+  @js.native
+  trait ExecuteCommandLogConfiguration extends js.Object {
+    var cloudWatchEncryptionEnabled: js.UndefOr[Boolean]
+    var cloudWatchLogGroupName: js.UndefOr[String]
+    var s3BucketName: js.UndefOr[String]
+    var s3EncryptionEnabled: js.UndefOr[Boolean]
+    var s3KeyPrefix: js.UndefOr[String]
+  }
+
+  object ExecuteCommandLogConfiguration {
+    @inline
+    def apply(
+        cloudWatchEncryptionEnabled: js.UndefOr[Boolean] = js.undefined,
+        cloudWatchLogGroupName: js.UndefOr[String] = js.undefined,
+        s3BucketName: js.UndefOr[String] = js.undefined,
+        s3EncryptionEnabled: js.UndefOr[Boolean] = js.undefined,
+        s3KeyPrefix: js.UndefOr[String] = js.undefined
+    ): ExecuteCommandLogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      cloudWatchEncryptionEnabled.foreach(__v => __obj.updateDynamic("cloudWatchEncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      cloudWatchLogGroupName.foreach(__v => __obj.updateDynamic("cloudWatchLogGroupName")(__v.asInstanceOf[js.Any]))
+      s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
+      s3EncryptionEnabled.foreach(__v => __obj.updateDynamic("s3EncryptionEnabled")(__v.asInstanceOf[js.Any]))
+      s3KeyPrefix.foreach(__v => __obj.updateDynamic("s3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteCommandLogConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait ExecuteCommandLogging extends js.Any
+  object ExecuteCommandLogging {
+    val NONE = "NONE".asInstanceOf[ExecuteCommandLogging]
+    val DEFAULT = "DEFAULT".asInstanceOf[ExecuteCommandLogging]
+    val OVERRIDE = "OVERRIDE".asInstanceOf[ExecuteCommandLogging]
+
+    @inline def values = js.Array(NONE, DEFAULT, OVERRIDE)
+  }
+
+  @js.native
+  trait ExecuteCommandRequest extends js.Object {
+    var command: String
+    var interactive: Boolean
+    var task: String
+    var cluster: js.UndefOr[String]
+    var container: js.UndefOr[String]
+  }
+
+  object ExecuteCommandRequest {
+    @inline
+    def apply(
+        command: String,
+        interactive: Boolean,
+        task: String,
+        cluster: js.UndefOr[String] = js.undefined,
+        container: js.UndefOr[String] = js.undefined
+    ): ExecuteCommandRequest = {
+      val __obj = js.Dynamic.literal(
+        "command" -> command.asInstanceOf[js.Any],
+        "interactive" -> interactive.asInstanceOf[js.Any],
+        "task" -> task.asInstanceOf[js.Any]
+      )
+
+      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
+      container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteCommandRequest]
+    }
+  }
+
+  @js.native
+  trait ExecuteCommandResponse extends js.Object {
+    var clusterArn: js.UndefOr[String]
+    var containerArn: js.UndefOr[String]
+    var containerName: js.UndefOr[String]
+    var interactive: js.UndefOr[Boolean]
+    var session: js.UndefOr[Session]
+    var taskArn: js.UndefOr[String]
+  }
+
+  object ExecuteCommandResponse {
+    @inline
+    def apply(
+        clusterArn: js.UndefOr[String] = js.undefined,
+        containerArn: js.UndefOr[String] = js.undefined,
+        containerName: js.UndefOr[String] = js.undefined,
+        interactive: js.UndefOr[Boolean] = js.undefined,
+        session: js.UndefOr[Session] = js.undefined,
+        taskArn: js.UndefOr[String] = js.undefined
+    ): ExecuteCommandResponse = {
+      val __obj = js.Dynamic.literal()
+      clusterArn.foreach(__v => __obj.updateDynamic("clusterArn")(__v.asInstanceOf[js.Any]))
+      containerArn.foreach(__v => __obj.updateDynamic("containerArn")(__v.asInstanceOf[js.Any]))
+      containerName.foreach(__v => __obj.updateDynamic("containerName")(__v.asInstanceOf[js.Any]))
+      interactive.foreach(__v => __obj.updateDynamic("interactive")(__v.asInstanceOf[js.Any]))
+      session.foreach(__v => __obj.updateDynamic("session")(__v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteCommandResponse]
+    }
   }
 
   /** The authorization configuration details for Amazon FSx for Windows File Server file system. See [[https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html|FSxWindowsFileServerVolumeConfiguration]] in the <i>Amazon Elastic Container Service API Reference</i>.
@@ -3009,6 +3175,70 @@ package ecs {
     @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
   }
 
+  /** Details about the managed agent status for the container.
+    */
+  @js.native
+  trait ManagedAgent extends js.Object {
+    var lastStartedAt: js.UndefOr[Timestamp]
+    var lastStatus: js.UndefOr[String]
+    var name: js.UndefOr[ManagedAgentName]
+    var reason: js.UndefOr[String]
+  }
+
+  object ManagedAgent {
+    @inline
+    def apply(
+        lastStartedAt: js.UndefOr[Timestamp] = js.undefined,
+        lastStatus: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[ManagedAgentName] = js.undefined,
+        reason: js.UndefOr[String] = js.undefined
+    ): ManagedAgent = {
+      val __obj = js.Dynamic.literal()
+      lastStartedAt.foreach(__v => __obj.updateDynamic("lastStartedAt")(__v.asInstanceOf[js.Any]))
+      lastStatus.foreach(__v => __obj.updateDynamic("lastStatus")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedAgent]
+    }
+  }
+
+  @js.native
+  sealed trait ManagedAgentName extends js.Any
+  object ManagedAgentName {
+    val ExecuteCommandAgent = "ExecuteCommandAgent".asInstanceOf[ManagedAgentName]
+
+    @inline def values = js.Array(ExecuteCommandAgent)
+  }
+
+  /** An object representing a change in state for a managed agent.
+    */
+  @js.native
+  trait ManagedAgentStateChange extends js.Object {
+    var containerName: String
+    var managedAgentName: ManagedAgentName
+    var status: String
+    var reason: js.UndefOr[String]
+  }
+
+  object ManagedAgentStateChange {
+    @inline
+    def apply(
+        containerName: String,
+        managedAgentName: ManagedAgentName,
+        status: String,
+        reason: js.UndefOr[String] = js.undefined
+    ): ManagedAgentStateChange = {
+      val __obj = js.Dynamic.literal(
+        "containerName" -> containerName.asInstanceOf[js.Any],
+        "managedAgentName" -> managedAgentName.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedAgentStateChange]
+    }
+  }
+
   /** The managed scaling settings for the Auto Scaling group capacity provider.
     * When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     * If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
@@ -3712,6 +3942,7 @@ package ecs {
     var cluster: js.UndefOr[String]
     var count: js.UndefOr[BoxedInteger]
     var enableECSManagedTags: js.UndefOr[Boolean]
+    var enableExecuteCommand: js.UndefOr[Boolean]
     var group: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
@@ -3733,6 +3964,7 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         count: js.UndefOr[BoxedInteger] = js.undefined,
         enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
+        enableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
         group: js.UndefOr[String] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
@@ -3753,6 +3985,7 @@ package ecs {
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
+      enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
@@ -3872,6 +4105,7 @@ package ecs {
     var deployments: js.UndefOr[Deployments]
     var desiredCount: js.UndefOr[Int]
     var enableECSManagedTags: js.UndefOr[Boolean]
+    var enableExecuteCommand: js.UndefOr[Boolean]
     var events: js.UndefOr[ServiceEvents]
     var healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger]
     var launchType: js.UndefOr[LaunchType]
@@ -3906,6 +4140,7 @@ package ecs {
         deployments: js.UndefOr[Deployments] = js.undefined,
         desiredCount: js.UndefOr[Int] = js.undefined,
         enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
+        enableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
         events: js.UndefOr[ServiceEvents] = js.undefined,
         healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
         launchType: js.UndefOr[LaunchType] = js.undefined,
@@ -3937,6 +4172,7 @@ package ecs {
       deployments.foreach(__v => __obj.updateDynamic("deployments")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
+      enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
       healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
@@ -4020,6 +4256,30 @@ package ecs {
     }
   }
 
+  /** The details of the execute command session.
+    */
+  @js.native
+  trait Session extends js.Object {
+    var sessionId: js.UndefOr[String]
+    var streamUrl: js.UndefOr[String]
+    var tokenValue: js.UndefOr[SensitiveString]
+  }
+
+  object Session {
+    @inline
+    def apply(
+        sessionId: js.UndefOr[String] = js.undefined,
+        streamUrl: js.UndefOr[String] = js.undefined,
+        tokenValue: js.UndefOr[SensitiveString] = js.undefined
+    ): Session = {
+      val __obj = js.Dynamic.literal()
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
+      streamUrl.foreach(__v => __obj.updateDynamic("streamUrl")(__v.asInstanceOf[js.Any]))
+      tokenValue.foreach(__v => __obj.updateDynamic("tokenValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Session]
+    }
+  }
+
   /** The current account setting for a resource.
     */
   @js.native
@@ -4080,6 +4340,7 @@ package ecs {
     var taskDefinition: String
     var cluster: js.UndefOr[String]
     var enableECSManagedTags: js.UndefOr[Boolean]
+    var enableExecuteCommand: js.UndefOr[Boolean]
     var group: js.UndefOr[String]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var overrides: js.UndefOr[TaskOverride]
@@ -4096,6 +4357,7 @@ package ecs {
         taskDefinition: String,
         cluster: js.UndefOr[String] = js.undefined,
         enableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
+        enableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
         group: js.UndefOr[String] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         overrides: js.UndefOr[TaskOverride] = js.undefined,
@@ -4111,6 +4373,7 @@ package ecs {
 
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
+      enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
@@ -4277,6 +4540,7 @@ package ecs {
     var cluster: js.UndefOr[String]
     var containers: js.UndefOr[ContainerStateChanges]
     var executionStoppedAt: js.UndefOr[Timestamp]
+    var managedAgents: js.UndefOr[ManagedAgentStateChanges]
     var pullStartedAt: js.UndefOr[Timestamp]
     var pullStoppedAt: js.UndefOr[Timestamp]
     var reason: js.UndefOr[String]
@@ -4291,6 +4555,7 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         containers: js.UndefOr[ContainerStateChanges] = js.undefined,
         executionStoppedAt: js.UndefOr[Timestamp] = js.undefined,
+        managedAgents: js.UndefOr[ManagedAgentStateChanges] = js.undefined,
         pullStartedAt: js.UndefOr[Timestamp] = js.undefined,
         pullStoppedAt: js.UndefOr[Timestamp] = js.undefined,
         reason: js.UndefOr[String] = js.undefined,
@@ -4302,6 +4567,7 @@ package ecs {
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
       executionStoppedAt.foreach(__v => __obj.updateDynamic("executionStoppedAt")(__v.asInstanceOf[js.Any]))
+      managedAgents.foreach(__v => __obj.updateDynamic("managedAgents")(__v.asInstanceOf[js.Any]))
       pullStartedAt.foreach(__v => __obj.updateDynamic("pullStartedAt")(__v.asInstanceOf[js.Any]))
       pullStoppedAt.foreach(__v => __obj.updateDynamic("pullStoppedAt")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
@@ -4435,6 +4701,7 @@ package ecs {
     var cpu: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
     var desiredStatus: js.UndefOr[String]
+    var enableExecuteCommand: js.UndefOr[Boolean]
     var executionStoppedAt: js.UndefOr[Timestamp]
     var group: js.UndefOr[String]
     var healthStatus: js.UndefOr[HealthStatus]
@@ -4473,6 +4740,7 @@ package ecs {
         cpu: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         desiredStatus: js.UndefOr[String] = js.undefined,
+        enableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
         executionStoppedAt: js.UndefOr[Timestamp] = js.undefined,
         group: js.UndefOr[String] = js.undefined,
         healthStatus: js.UndefOr[HealthStatus] = js.undefined,
@@ -4508,6 +4776,7 @@ package ecs {
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       desiredStatus.foreach(__v => __obj.updateDynamic("desiredStatus")(__v.asInstanceOf[js.Any]))
+      enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       executionStoppedAt.foreach(__v => __obj.updateDynamic("executionStoppedAt")(__v.asInstanceOf[js.Any]))
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
       healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
@@ -4540,6 +4809,7 @@ package ecs {
     var compatibilities: js.UndefOr[CompatibilityList]
     var containerDefinitions: js.UndefOr[ContainerDefinitions]
     var cpu: js.UndefOr[String]
+    var deregisteredAt: js.UndefOr[Timestamp]
     var executionRoleArn: js.UndefOr[String]
     var family: js.UndefOr[String]
     var inferenceAccelerators: js.UndefOr[InferenceAccelerators]
@@ -4549,6 +4819,8 @@ package ecs {
     var pidMode: js.UndefOr[PidMode]
     var placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints]
     var proxyConfiguration: js.UndefOr[ProxyConfiguration]
+    var registeredAt: js.UndefOr[Timestamp]
+    var registeredBy: js.UndefOr[String]
     var requiresAttributes: js.UndefOr[RequiresAttributes]
     var requiresCompatibilities: js.UndefOr[CompatibilityList]
     var revision: js.UndefOr[Int]
@@ -4564,6 +4836,7 @@ package ecs {
         compatibilities: js.UndefOr[CompatibilityList] = js.undefined,
         containerDefinitions: js.UndefOr[ContainerDefinitions] = js.undefined,
         cpu: js.UndefOr[String] = js.undefined,
+        deregisteredAt: js.UndefOr[Timestamp] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         family: js.UndefOr[String] = js.undefined,
         inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
@@ -4573,6 +4846,8 @@ package ecs {
         pidMode: js.UndefOr[PidMode] = js.undefined,
         placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints] = js.undefined,
         proxyConfiguration: js.UndefOr[ProxyConfiguration] = js.undefined,
+        registeredAt: js.UndefOr[Timestamp] = js.undefined,
+        registeredBy: js.UndefOr[String] = js.undefined,
         requiresAttributes: js.UndefOr[RequiresAttributes] = js.undefined,
         requiresCompatibilities: js.UndefOr[CompatibilityList] = js.undefined,
         revision: js.UndefOr[Int] = js.undefined,
@@ -4585,6 +4860,7 @@ package ecs {
       compatibilities.foreach(__v => __obj.updateDynamic("compatibilities")(__v.asInstanceOf[js.Any]))
       containerDefinitions.foreach(__v => __obj.updateDynamic("containerDefinitions")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
+      deregisteredAt.foreach(__v => __obj.updateDynamic("deregisteredAt")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       family.foreach(__v => __obj.updateDynamic("family")(__v.asInstanceOf[js.Any]))
       inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
@@ -4594,6 +4870,8 @@ package ecs {
       pidMode.foreach(__v => __obj.updateDynamic("pidMode")(__v.asInstanceOf[js.Any]))
       placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
       proxyConfiguration.foreach(__v => __obj.updateDynamic("proxyConfiguration")(__v.asInstanceOf[js.Any]))
+      registeredAt.foreach(__v => __obj.updateDynamic("registeredAt")(__v.asInstanceOf[js.Any]))
+      registeredBy.foreach(__v => __obj.updateDynamic("registeredBy")(__v.asInstanceOf[js.Any]))
       requiresAttributes.foreach(__v => __obj.updateDynamic("requiresAttributes")(__v.asInstanceOf[js.Any]))
       requiresCompatibilities.foreach(__v => __obj.updateDynamic("requiresCompatibilities")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
@@ -4623,9 +4901,9 @@ package ecs {
     @inline def values = js.Array(TAGS)
   }
 
-  /** An object representing a constraint on task placement in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** An object representing a constraint on task placement in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task placement constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
-    * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
+    * '''Note:'''Task placement constraints are not supported for tasks run on AWS Fargate.
     */
   @js.native
   trait TaskDefinitionPlacementConstraint extends js.Object {
@@ -4956,6 +5234,46 @@ package ecs {
   }
 
   @js.native
+  trait UpdateClusterRequest extends js.Object {
+    var cluster: String
+    var configuration: js.UndefOr[ClusterConfiguration]
+    var settings: js.UndefOr[ClusterSettings]
+  }
+
+  object UpdateClusterRequest {
+    @inline
+    def apply(
+        cluster: String,
+        configuration: js.UndefOr[ClusterConfiguration] = js.undefined,
+        settings: js.UndefOr[ClusterSettings] = js.undefined
+    ): UpdateClusterRequest = {
+      val __obj = js.Dynamic.literal(
+        "cluster" -> cluster.asInstanceOf[js.Any]
+      )
+
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateClusterResponse extends js.Object {
+    var cluster: js.UndefOr[Cluster]
+  }
+
+  object UpdateClusterResponse {
+    @inline
+    def apply(
+        cluster: js.UndefOr[Cluster] = js.undefined
+    ): UpdateClusterResponse = {
+      val __obj = js.Dynamic.literal()
+      cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClusterResponse]
+    }
+  }
+
+  @js.native
   trait UpdateClusterSettingsRequest extends js.Object {
     var cluster: String
     var settings: ClusterSettings
@@ -5117,6 +5435,7 @@ package ecs {
     var cluster: js.UndefOr[String]
     var deploymentConfiguration: js.UndefOr[DeploymentConfiguration]
     var desiredCount: js.UndefOr[BoxedInteger]
+    var enableExecuteCommand: js.UndefOr[BoxedBoolean]
     var forceNewDeployment: js.UndefOr[Boolean]
     var healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
@@ -5134,6 +5453,7 @@ package ecs {
         cluster: js.UndefOr[String] = js.undefined,
         deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
         desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
+        enableExecuteCommand: js.UndefOr[BoxedBoolean] = js.undefined,
         forceNewDeployment: js.UndefOr[Boolean] = js.undefined,
         healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
@@ -5150,6 +5470,7 @@ package ecs {
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
+      enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       forceNewDeployment.foreach(__v => __obj.updateDynamic("forceNewDeployment")(__v.asInstanceOf[js.Any]))
       healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))

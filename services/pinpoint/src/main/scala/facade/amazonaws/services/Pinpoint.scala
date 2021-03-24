@@ -1693,21 +1693,30 @@ package pinpoint {
   @js.native
   trait CampaignSmsMessage extends js.Object {
     var Body: js.UndefOr[__string]
+    var EntityId: js.UndefOr[__string]
     var MessageType: js.UndefOr[MessageType]
+    var OriginationNumber: js.UndefOr[__string]
     var SenderId: js.UndefOr[__string]
+    var TemplateId: js.UndefOr[__string]
   }
 
   object CampaignSmsMessage {
     @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
+        EntityId: js.UndefOr[__string] = js.undefined,
         MessageType: js.UndefOr[MessageType] = js.undefined,
-        SenderId: js.UndefOr[__string] = js.undefined
+        OriginationNumber: js.UndefOr[__string] = js.undefined,
+        SenderId: js.UndefOr[__string] = js.undefined,
+        TemplateId: js.UndefOr[__string] = js.undefined
     ): CampaignSmsMessage = {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      EntityId.foreach(__v => __obj.updateDynamic("EntityId")(__v.asInstanceOf[js.Any]))
       MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      OriginationNumber.foreach(__v => __obj.updateDynamic("OriginationNumber")(__v.asInstanceOf[js.Any]))
       SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignSmsMessage]
     }
   }
@@ -6793,19 +6802,28 @@ package pinpoint {
     */
   @js.native
   trait JourneySMSMessage extends js.Object {
+    var EntityId: js.UndefOr[__string]
     var MessageType: js.UndefOr[MessageType]
+    var OriginationNumber: js.UndefOr[__string]
     var SenderId: js.UndefOr[__string]
+    var TemplateId: js.UndefOr[__string]
   }
 
   object JourneySMSMessage {
     @inline
     def apply(
+        EntityId: js.UndefOr[__string] = js.undefined,
         MessageType: js.UndefOr[MessageType] = js.undefined,
-        SenderId: js.UndefOr[__string] = js.undefined
+        OriginationNumber: js.UndefOr[__string] = js.undefined,
+        SenderId: js.UndefOr[__string] = js.undefined,
+        TemplateId: js.UndefOr[__string] = js.undefined
     ): JourneySMSMessage = {
       val __obj = js.Dynamic.literal()
+      EntityId.foreach(__v => __obj.updateDynamic("EntityId")(__v.asInstanceOf[js.Any]))
       MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      OriginationNumber.foreach(__v => __obj.updateDynamic("OriginationNumber")(__v.asInstanceOf[js.Any]))
       SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JourneySMSMessage]
     }
   }
@@ -8064,33 +8082,39 @@ package pinpoint {
   @js.native
   trait SMSMessage extends js.Object {
     var Body: js.UndefOr[__string]
+    var EntityId: js.UndefOr[__string]
     var Keyword: js.UndefOr[__string]
     var MediaUrl: js.UndefOr[__string]
     var MessageType: js.UndefOr[MessageType]
     var OriginationNumber: js.UndefOr[__string]
     var SenderId: js.UndefOr[__string]
     var Substitutions: js.UndefOr[MapOfListOf__string]
+    var TemplateId: js.UndefOr[__string]
   }
 
   object SMSMessage {
     @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
+        EntityId: js.UndefOr[__string] = js.undefined,
         Keyword: js.UndefOr[__string] = js.undefined,
         MediaUrl: js.UndefOr[__string] = js.undefined,
         MessageType: js.UndefOr[MessageType] = js.undefined,
         OriginationNumber: js.UndefOr[__string] = js.undefined,
         SenderId: js.UndefOr[__string] = js.undefined,
-        Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
+        Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+        TemplateId: js.UndefOr[__string] = js.undefined
     ): SMSMessage = {
       val __obj = js.Dynamic.literal()
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      EntityId.foreach(__v => __obj.updateDynamic("EntityId")(__v.asInstanceOf[js.Any]))
       Keyword.foreach(__v => __obj.updateDynamic("Keyword")(__v.asInstanceOf[js.Any]))
       MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
       MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
       OriginationNumber.foreach(__v => __obj.updateDynamic("OriginationNumber")(__v.asInstanceOf[js.Any]))
       SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
       Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSMessage]
     }
   }

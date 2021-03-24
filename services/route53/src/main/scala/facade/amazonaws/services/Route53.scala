@@ -2687,7 +2687,7 @@ package route53 {
     @inline def values = js.Array(Healthy, Unhealthy, LastKnownStatus)
   }
 
-  /** A key signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.
+  /** A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.
     */
   @js.native
   trait KeySigningKey extends js.Object {

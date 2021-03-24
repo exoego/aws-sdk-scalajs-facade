@@ -398,6 +398,7 @@ package costexplorer {
     var Name: CostCategoryName
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
+    var DefaultValue: js.UndefOr[CostCategoryValue]
     var EffectiveEnd: js.UndefOr[ZonedDateTime]
     var ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList]
   }
@@ -410,6 +411,7 @@ package costexplorer {
         Name: CostCategoryName,
         RuleVersion: CostCategoryRuleVersion,
         Rules: CostCategoryRulesList,
+        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
         EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
         ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList] = js.undefined
     ): CostCategory = {
@@ -421,10 +423,41 @@ package costexplorer {
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
       EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
       ProcessingStatus.foreach(__v => __obj.updateDynamic("ProcessingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategory]
     }
+  }
+
+  /** When creating or updating a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you wanted to dynamically group costs based on the value of a specific tag key, you would first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.
+    */
+  @js.native
+  trait CostCategoryInheritedValueDimension extends js.Object {
+    var DimensionKey: js.UndefOr[GenericString]
+    var DimensionName: js.UndefOr[CostCategoryInheritedValueDimensionName]
+  }
+
+  object CostCategoryInheritedValueDimension {
+    @inline
+    def apply(
+        DimensionKey: js.UndefOr[GenericString] = js.undefined,
+        DimensionName: js.UndefOr[CostCategoryInheritedValueDimensionName] = js.undefined
+    ): CostCategoryInheritedValueDimension = {
+      val __obj = js.Dynamic.literal()
+      DimensionKey.foreach(__v => __obj.updateDynamic("DimensionKey")(__v.asInstanceOf[js.Any]))
+      DimensionName.foreach(__v => __obj.updateDynamic("DimensionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostCategoryInheritedValueDimension]
+    }
+  }
+
+  @js.native
+  sealed trait CostCategoryInheritedValueDimensionName extends js.Any
+  object CostCategoryInheritedValueDimensionName {
+    val LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[CostCategoryInheritedValueDimensionName]
+    val TAG = "TAG".asInstanceOf[CostCategoryInheritedValueDimensionName]
+
+    @inline def values = js.Array(LINKED_ACCOUNT_NAME, TAG)
   }
 
   /** The list of processing statuses for Cost Management products for a specific cost category.
@@ -454,6 +487,7 @@ package costexplorer {
   @js.native
   trait CostCategoryReference extends js.Object {
     var CostCategoryArn: js.UndefOr[Arn]
+    var DefaultValue: js.UndefOr[CostCategoryValue]
     var EffectiveEnd: js.UndefOr[ZonedDateTime]
     var EffectiveStart: js.UndefOr[ZonedDateTime]
     var Name: js.UndefOr[CostCategoryName]
@@ -466,6 +500,7 @@ package costexplorer {
     @inline
     def apply(
         CostCategoryArn: js.UndefOr[Arn] = js.undefined,
+        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
         EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
         EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined,
         Name: js.UndefOr[CostCategoryName] = js.undefined,
@@ -475,6 +510,7 @@ package costexplorer {
     ): CostCategoryReference = {
       val __obj = js.Dynamic.literal()
       CostCategoryArn.foreach(__v => __obj.updateDynamic("CostCategoryArn")(__v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
       EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
       EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -489,22 +525,36 @@ package costexplorer {
     */
   @js.native
   trait CostCategoryRule extends js.Object {
-    var Rule: Expression
-    var Value: CostCategoryValue
+    var InheritedValue: js.UndefOr[CostCategoryInheritedValueDimension]
+    var Rule: js.UndefOr[Expression]
+    var Type: js.UndefOr[CostCategoryRuleType]
+    var Value: js.UndefOr[CostCategoryValue]
   }
 
   object CostCategoryRule {
     @inline
     def apply(
-        Rule: Expression,
-        Value: CostCategoryValue
+        InheritedValue: js.UndefOr[CostCategoryInheritedValueDimension] = js.undefined,
+        Rule: js.UndefOr[Expression] = js.undefined,
+        Type: js.UndefOr[CostCategoryRuleType] = js.undefined,
+        Value: js.UndefOr[CostCategoryValue] = js.undefined
     ): CostCategoryRule = {
-      val __obj = js.Dynamic.literal(
-        "Rule" -> Rule.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      InheritedValue.foreach(__v => __obj.updateDynamic("InheritedValue")(__v.asInstanceOf[js.Any]))
+      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategoryRule]
     }
+  }
+
+  @js.native
+  sealed trait CostCategoryRuleType extends js.Any
+  object CostCategoryRuleType {
+    val REGULAR = "REGULAR".asInstanceOf[CostCategoryRuleType]
+    val INHERITED_VALUE = "INHERITED_VALUE".asInstanceOf[CostCategoryRuleType]
+
+    @inline def values = js.Array(REGULAR, INHERITED_VALUE)
   }
 
   /** The rule schema version in this particular Cost Category.
@@ -754,6 +804,7 @@ package costexplorer {
     var Name: CostCategoryName
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
+    var DefaultValue: js.UndefOr[CostCategoryValue]
   }
 
   object CreateCostCategoryDefinitionRequest {
@@ -761,13 +812,16 @@ package costexplorer {
     def apply(
         Name: CostCategoryName,
         RuleVersion: CostCategoryRuleVersion,
-        Rules: CostCategoryRulesList
+        Rules: CostCategoryRulesList,
+        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined
     ): CreateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
+
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCostCategoryDefinitionRequest]
     }
   }
@@ -4020,6 +4074,7 @@ package costexplorer {
     var CostCategoryArn: Arn
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
+    var DefaultValue: js.UndefOr[CostCategoryValue]
   }
 
   object UpdateCostCategoryDefinitionRequest {
@@ -4027,13 +4082,16 @@ package costexplorer {
     def apply(
         CostCategoryArn: Arn,
         RuleVersion: CostCategoryRuleVersion,
-        Rules: CostCategoryRulesList
+        Rules: CostCategoryRulesList,
+        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined
     ): UpdateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
         "RuleVersion" -> RuleVersion.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
+
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCostCategoryDefinitionRequest]
     }
   }

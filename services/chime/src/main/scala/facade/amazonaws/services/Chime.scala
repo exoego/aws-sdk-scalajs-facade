@@ -598,7 +598,7 @@ package chime {
     }
   }
 
-  /** An instance of a Chime messaging application.
+  /** The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging application.
     */
   @js.native
   trait AppInstance extends js.Object {
@@ -628,7 +628,7 @@ package chime {
     }
   }
 
-  /** Promotes a user to the administrator role for the duration of an app instance.
+  /** The details of an <code>AppInstanceAdmin</code>.
     */
   @js.native
   trait AppInstanceAdmin extends js.Object {
@@ -652,7 +652,7 @@ package chime {
     }
   }
 
-  /** The identity and metadata of an administrator.
+  /** Summary of the details of an <code>AppInstanceAdmin</code>.
     */
   @js.native
   trait AppInstanceAdminSummary extends js.Object {
@@ -679,7 +679,7 @@ package chime {
     @inline def values = js.Array(Channel, ChannelMessage)
   }
 
-  /** The length of time in days to retain messages.
+  /** The details of the data-retention settings for an <code>AppInstance</code>.
     */
   @js.native
   trait AppInstanceRetentionSettings extends js.Object {
@@ -697,7 +697,7 @@ package chime {
     }
   }
 
-  /** The streaming configuration of an app instance.
+  /** The details of the streaming configuration of an <code>AppInstance</code>.
     */
   @js.native
   trait AppInstanceStreamingConfiguration extends js.Object {
@@ -719,7 +719,7 @@ package chime {
     }
   }
 
-  /** The summary data for an app instance.
+  /** Summary of the data for an <code>AppInstance</code>.
     */
   @js.native
   trait AppInstanceSummary extends js.Object {
@@ -743,7 +743,7 @@ package chime {
     }
   }
 
-  /** The app instance user.
+  /** The details of an <code>AppInstanceUser</code>.
     */
   @js.native
   trait AppInstanceUser extends js.Object {
@@ -773,7 +773,7 @@ package chime {
     }
   }
 
-  /** Lists the channels to which app instance users belong.
+  /** Summary of the membership details of an <code>AppInstanceUser</code>.
     */
   @js.native
   trait AppInstanceUserMembershipSummary extends js.Object {
@@ -794,7 +794,7 @@ package chime {
     }
   }
 
-  /** The app instance user summary data .
+  /** Summary of the details of an <code>AppInstanceUser</code>.
     */
   @js.native
   trait AppInstanceUserSummary extends js.Object {
@@ -963,7 +963,7 @@ package chime {
     }
   }
 
-  /** An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.
+  /** An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code> . The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.
     * We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.
     */
   @js.native
@@ -1328,7 +1328,7 @@ package chime {
     @inline def values = js.Array(Voice, SMS)
   }
 
-  /** Creates a channel.
+  /** The details of a channel.
     */
   @js.native
   trait Channel extends js.Object {
@@ -1370,7 +1370,7 @@ package chime {
     }
   }
 
-  /** Bans a user from a channel.
+  /** The details of a channel ban.
     */
   @js.native
   trait ChannelBan extends js.Object {
@@ -1397,7 +1397,7 @@ package chime {
     }
   }
 
-  /** The summary data for the channel ban.
+  /** Summary of the details of a <code>ChannelBan</code>.
     */
   @js.native
   trait ChannelBanSummary extends js.Object {
@@ -1415,7 +1415,7 @@ package chime {
     }
   }
 
-  /** Creates a channel member.
+  /** The details of a channel member.
     */
   @js.native
   trait ChannelMembership extends js.Object {
@@ -1448,7 +1448,7 @@ package chime {
     }
   }
 
-  /** Returns the channel membership summary data for an app instance.
+  /** Summary of the channel membership details of an <code>AppInstanceUser</code>.
     */
   @js.native
   trait ChannelMembershipForAppInstanceUserSummary extends js.Object {
@@ -1469,7 +1469,7 @@ package chime {
     }
   }
 
-  /** The summary data of a channel membership.
+  /** Summary of the details of a <code>ChannelMembership</code>.
     */
   @js.native
   trait ChannelMembershipSummary extends js.Object {
@@ -1496,7 +1496,7 @@ package chime {
     @inline def values = js.Array(DEFAULT, HIDDEN)
   }
 
-  /** Creates a message in a channel.
+  /** The details of a message in a channel.
     */
   @js.native
   trait ChannelMessage extends js.Object {
@@ -1553,7 +1553,7 @@ package chime {
     @inline def values = js.Array(PERSISTENT, NON_PERSISTENT)
   }
 
-  /** A summary of the messages in a channel.
+  /** Summary of the messages in a <code>Channel</code>.
     */
   @js.native
   trait ChannelMessageSummary extends js.Object {
@@ -1613,7 +1613,7 @@ package chime {
     @inline def values = js.Array(UNRESTRICTED, RESTRICTED)
   }
 
-  /** Returns the summary data for a moderated channel.
+  /** Summary of the details of a moderated channel.
     */
   @js.native
   trait ChannelModeratedByAppInstanceUserSummary extends js.Object {
@@ -1631,7 +1631,7 @@ package chime {
     }
   }
 
-  /** Creates a moderator on a channel.
+  /** The details of a channel moderator.
     */
   @js.native
   trait ChannelModerator extends js.Object {
@@ -1658,7 +1658,7 @@ package chime {
     }
   }
 
-  /** Summary data of the moderators in a channel.
+  /** Summary of the details of a <code>ChannelModerator</code>.
     */
   @js.native
   trait ChannelModeratorSummary extends js.Object {
@@ -1685,7 +1685,7 @@ package chime {
     @inline def values = js.Array(PUBLIC, PRIVATE)
   }
 
-  /** The retention settings for a channel.
+  /** The details of the retention settings for a channel.
     */
   @js.native
   trait ChannelRetentionSettings extends js.Object {
@@ -1703,7 +1703,7 @@ package chime {
     }
   }
 
-  /** The summary data for a channel.
+  /** Summary of the details of a <code>Channel</code>.
     */
   @js.native
   trait ChannelSummary extends js.Object {
@@ -1736,7 +1736,7 @@ package chime {
     }
   }
 
-  /** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account.
+  /** The retention settings that determine how long to retain conversation messages for an Amazon Chime Enterprise account.
     */
   @js.native
   trait ConversationRetentionSettings extends js.Object {
@@ -1831,6 +1831,7 @@ package chime {
     var ClientRequestToken: ClientRequestToken
     var Name: NonEmptyResourceName
     var Metadata: js.UndefOr[Metadata]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateAppInstanceRequest {
@@ -1838,7 +1839,8 @@ package chime {
     def apply(
         ClientRequestToken: ClientRequestToken,
         Name: NonEmptyResourceName,
-        Metadata: js.UndefOr[Metadata] = js.undefined
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAppInstanceRequest = {
       val __obj = js.Dynamic.literal(
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
@@ -1846,6 +1848,7 @@ package chime {
       )
 
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppInstanceRequest]
     }
   }
@@ -1873,6 +1876,7 @@ package chime {
     var ClientRequestToken: ClientRequestToken
     var Name: UserName
     var Metadata: js.UndefOr[Metadata]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateAppInstanceUserRequest {
@@ -1882,7 +1886,8 @@ package chime {
         AppInstanceUserId: UserId,
         ClientRequestToken: ClientRequestToken,
         Name: UserName,
-        Metadata: js.UndefOr[Metadata] = js.undefined
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAppInstanceUserRequest = {
       val __obj = js.Dynamic.literal(
         "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any],
@@ -1892,6 +1897,7 @@ package chime {
       )
 
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppInstanceUserRequest]
     }
   }
@@ -2043,18 +2049,22 @@ package chime {
   trait CreateChannelBanRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MemberArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object CreateChannelBanRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): CreateChannelBanRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelBanRequest]
     }
   }
@@ -2083,6 +2093,7 @@ package chime {
     var ChannelArn: ChimeArn
     var MemberArn: ChimeArn
     var Type: ChannelMembershipType
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object CreateChannelMembershipRequest {
@@ -2090,13 +2101,16 @@ package chime {
     def apply(
         ChannelArn: ChimeArn,
         MemberArn: ChimeArn,
-        Type: ChannelMembershipType
+        Type: ChannelMembershipType,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): CreateChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelMembershipRequest]
     }
   }
@@ -2124,18 +2138,22 @@ package chime {
   trait CreateChannelModeratorRequest extends js.Object {
     var ChannelArn: ChimeArn
     var ChannelModeratorArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object CreateChannelModeratorRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        ChannelModeratorArn: ChimeArn
+        ChannelModeratorArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): CreateChannelModeratorRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChannelModeratorArn" -> ChannelModeratorArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelModeratorRequest]
     }
   }
@@ -2164,6 +2182,7 @@ package chime {
     var AppInstanceArn: ChimeArn
     var ClientRequestToken: ClientRequestToken
     var Name: NonEmptyResourceName
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var Metadata: js.UndefOr[Metadata]
     var Mode: js.UndefOr[ChannelMode]
     var Privacy: js.UndefOr[ChannelPrivacy]
@@ -2176,6 +2195,7 @@ package chime {
         AppInstanceArn: ChimeArn,
         ClientRequestToken: ClientRequestToken,
         Name: NonEmptyResourceName,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
         Mode: js.UndefOr[ChannelMode] = js.undefined,
         Privacy: js.UndefOr[ChannelPrivacy] = js.undefined,
@@ -2187,6 +2207,7 @@ package chime {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
@@ -2536,24 +2557,23 @@ package chime {
 
   @js.native
   trait CreateSipMediaApplicationCallRequest extends js.Object {
+    var FromPhoneNumber: E164PhoneNumber
     var SipMediaApplicationId: NonEmptyString
-    var FromPhoneNumber: js.UndefOr[E164PhoneNumber]
-    var ToPhoneNumber: js.UndefOr[E164PhoneNumber]
+    var ToPhoneNumber: E164PhoneNumber
   }
 
   object CreateSipMediaApplicationCallRequest {
     @inline
     def apply(
+        FromPhoneNumber: E164PhoneNumber,
         SipMediaApplicationId: NonEmptyString,
-        FromPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
-        ToPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined
+        ToPhoneNumber: E164PhoneNumber
     ): CreateSipMediaApplicationCallRequest = {
       val __obj = js.Dynamic.literal(
-        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any]
+        "FromPhoneNumber" -> FromPhoneNumber.asInstanceOf[js.Any],
+        "SipMediaApplicationId" -> SipMediaApplicationId.asInstanceOf[js.Any],
+        "ToPhoneNumber" -> ToPhoneNumber.asInstanceOf[js.Any]
       )
-
-      FromPhoneNumber.foreach(__v => __obj.updateDynamic("FromPhoneNumber")(__v.asInstanceOf[js.Any]))
-      ToPhoneNumber.foreach(__v => __obj.updateDynamic("ToPhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSipMediaApplicationCallRequest]
     }
   }
@@ -2578,7 +2598,7 @@ package chime {
   trait CreateSipMediaApplicationRequest extends js.Object {
     var AwsRegion: String
     var Endpoints: SipMediaApplicationEndpointList
-    var Name: js.UndefOr[SipMediaApplicationName]
+    var Name: SipMediaApplicationName
   }
 
   object CreateSipMediaApplicationRequest {
@@ -2586,14 +2606,13 @@ package chime {
     def apply(
         AwsRegion: String,
         Endpoints: SipMediaApplicationEndpointList,
-        Name: js.UndefOr[SipMediaApplicationName] = js.undefined
+        Name: SipMediaApplicationName
     ): CreateSipMediaApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "AwsRegion" -> AwsRegion.asInstanceOf[js.Any],
-        "Endpoints" -> Endpoints.asInstanceOf[js.Any]
+        "Endpoints" -> Endpoints.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
       )
-
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSipMediaApplicationRequest]
     }
   }
@@ -2950,18 +2969,22 @@ package chime {
   trait DeleteChannelBanRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MemberArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DeleteChannelBanRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DeleteChannelBanRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelBanRequest]
     }
   }
@@ -2970,18 +2993,22 @@ package chime {
   trait DeleteChannelMembershipRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MemberArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DeleteChannelMembershipRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DeleteChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelMembershipRequest]
     }
   }
@@ -2990,18 +3017,22 @@ package chime {
   trait DeleteChannelMessageRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MessageId: MessageId
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DeleteChannelMessageRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DeleteChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelMessageRequest]
     }
   }
@@ -3010,18 +3041,22 @@ package chime {
   trait DeleteChannelModeratorRequest extends js.Object {
     var ChannelArn: ChimeArn
     var ChannelModeratorArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DeleteChannelModeratorRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        ChannelModeratorArn: ChimeArn
+        ChannelModeratorArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DeleteChannelModeratorRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChannelModeratorArn" -> ChannelModeratorArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelModeratorRequest]
     }
   }
@@ -3029,16 +3064,20 @@ package chime {
   @js.native
   trait DeleteChannelRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DeleteChannelRequest {
     @inline
     def apply(
-        ChannelArn: ChimeArn
+        ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DeleteChannelRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
@@ -3439,18 +3478,22 @@ package chime {
   trait DescribeChannelBanRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MemberArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DescribeChannelBanRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DescribeChannelBanRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelBanRequest]
     }
   }
@@ -3475,18 +3518,22 @@ package chime {
   trait DescribeChannelMembershipForAppInstanceUserRequest extends js.Object {
     var AppInstanceUserArn: ChimeArn
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DescribeChannelMembershipForAppInstanceUserRequest {
     @inline
     def apply(
         AppInstanceUserArn: ChimeArn,
-        ChannelArn: ChimeArn
+        ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DescribeChannelMembershipForAppInstanceUserRequest = {
       val __obj = js.Dynamic.literal(
         "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any],
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelMembershipForAppInstanceUserRequest]
     }
   }
@@ -3511,18 +3558,22 @@ package chime {
   trait DescribeChannelMembershipRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MemberArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DescribeChannelMembershipRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DescribeChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelMembershipRequest]
     }
   }
@@ -3547,18 +3598,22 @@ package chime {
   trait DescribeChannelModeratedByAppInstanceUserRequest extends js.Object {
     var AppInstanceUserArn: ChimeArn
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DescribeChannelModeratedByAppInstanceUserRequest {
     @inline
     def apply(
         AppInstanceUserArn: ChimeArn,
-        ChannelArn: ChimeArn
+        ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DescribeChannelModeratedByAppInstanceUserRequest = {
       val __obj = js.Dynamic.literal(
         "AppInstanceUserArn" -> AppInstanceUserArn.asInstanceOf[js.Any],
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelModeratedByAppInstanceUserRequest]
     }
   }
@@ -3583,18 +3638,22 @@ package chime {
   trait DescribeChannelModeratorRequest extends js.Object {
     var ChannelArn: ChimeArn
     var ChannelModeratorArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DescribeChannelModeratorRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        ChannelModeratorArn: ChimeArn
+        ChannelModeratorArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DescribeChannelModeratorRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChannelModeratorArn" -> ChannelModeratorArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelModeratorRequest]
     }
   }
@@ -3618,16 +3677,20 @@ package chime {
   @js.native
   trait DescribeChannelRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object DescribeChannelRequest {
     @inline
     def apply(
-        ChannelArn: ChimeArn
+        ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): DescribeChannelRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelRequest]
     }
   }
@@ -4114,18 +4177,22 @@ package chime {
   trait GetChannelMessageRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MessageId: MessageId
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object GetChannelMessageRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): GetChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetChannelMessageRequest]
     }
   }
@@ -4922,7 +4989,7 @@ package chime {
     }
   }
 
-  /** The ARN and name of a user.
+  /** The details of a user.
     */
   @js.native
   trait Identity extends js.Object {
@@ -5330,6 +5397,7 @@ package chime {
   @js.native
   trait ListChannelBansRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -5338,6 +5406,7 @@ package chime {
     @inline
     def apply(
         ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelBansRequest = {
@@ -5345,6 +5414,7 @@ package chime {
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelBansRequest]
@@ -5376,6 +5446,7 @@ package chime {
   @js.native
   trait ListChannelMembershipsForAppInstanceUserRequest extends js.Object {
     var AppInstanceUserArn: js.UndefOr[ChimeArn]
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -5384,11 +5455,13 @@ package chime {
     @inline
     def apply(
         AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelMembershipsForAppInstanceUserRequest = {
       val __obj = js.Dynamic.literal()
       AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelMembershipsForAppInstanceUserRequest]
@@ -5417,6 +5490,7 @@ package chime {
   @js.native
   trait ListChannelMembershipsRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var Type: js.UndefOr[ChannelMembershipType]
@@ -5426,6 +5500,7 @@ package chime {
     @inline
     def apply(
         ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Type: js.UndefOr[ChannelMembershipType] = js.undefined
@@ -5434,6 +5509,7 @@ package chime {
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -5466,6 +5542,7 @@ package chime {
   @js.native
   trait ListChannelMessagesRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var NotAfter: js.UndefOr[Timestamp]
@@ -5477,6 +5554,7 @@ package chime {
     @inline
     def apply(
         ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         NotAfter: js.UndefOr[Timestamp] = js.undefined,
@@ -5487,6 +5565,7 @@ package chime {
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
@@ -5521,6 +5600,7 @@ package chime {
   @js.native
   trait ListChannelModeratorsRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -5529,6 +5609,7 @@ package chime {
     @inline
     def apply(
         ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelModeratorsRequest = {
@@ -5536,6 +5617,7 @@ package chime {
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelModeratorsRequest]
@@ -5567,6 +5649,7 @@ package chime {
   @js.native
   trait ListChannelsModeratedByAppInstanceUserRequest extends js.Object {
     var AppInstanceUserArn: js.UndefOr[ChimeArn]
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -5575,11 +5658,13 @@ package chime {
     @inline
     def apply(
         AppInstanceUserArn: js.UndefOr[ChimeArn] = js.undefined,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelsModeratedByAppInstanceUserRequest = {
       val __obj = js.Dynamic.literal()
       AppInstanceUserArn.foreach(__v => __obj.updateDynamic("AppInstanceUserArn")(__v.asInstanceOf[js.Any]))
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsModeratedByAppInstanceUserRequest]
@@ -5608,6 +5693,7 @@ package chime {
   @js.native
   trait ListChannelsRequest extends js.Object {
     var AppInstanceArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var Privacy: js.UndefOr[ChannelPrivacy]
@@ -5617,6 +5703,7 @@ package chime {
     @inline
     def apply(
         AppInstanceArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Privacy: js.UndefOr[ChannelPrivacy] = js.undefined
@@ -5625,6 +5712,7 @@ package chime {
         "AppInstanceArn" -> AppInstanceArn.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
@@ -6330,7 +6418,7 @@ package chime {
     }
   }
 
-  /** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>).
+  /** The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>).
     */
   @js.native
   trait MeetingNotificationConfiguration extends js.Object {
@@ -6436,7 +6524,7 @@ package chime {
     }
   }
 
-  /** The endpoint of a meeting session.
+  /** The websocket endpoint used to connect to Amazon Chime SDK messaging.
     */
   @js.native
   trait MessagingSessionEndpoint extends js.Object {
@@ -7342,18 +7430,22 @@ package chime {
   trait RedactChannelMessageRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MessageId: MessageId
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object RedactChannelMessageRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): RedactChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedactChannelMessageRequest]
     }
   }
@@ -7560,7 +7652,7 @@ package chime {
     }
   }
 
-  /** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages.
+  /** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat-room messages and chat-conversation messages.
     */
   @js.native
   trait RetentionSettings extends js.Object {
@@ -7653,7 +7745,7 @@ package chime {
     @inline def values = js.Array(Administrator, Member)
   }
 
-  /** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account.
+  /** The retention settings that determine how long to retain chat-room messages for an Amazon Chime Enterprise account.
     */
   @js.native
   trait RoomRetentionSettings extends js.Object {
@@ -7728,6 +7820,7 @@ package chime {
     var Content: NonEmptyContent
     var Persistence: ChannelMessagePersistenceType
     var Type: ChannelMessageType
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var Metadata: js.UndefOr[Metadata]
   }
 
@@ -7739,6 +7832,7 @@ package chime {
         Content: NonEmptyContent,
         Persistence: ChannelMessagePersistenceType,
         Type: ChannelMessageType,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined
     ): SendChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
@@ -7749,6 +7843,7 @@ package chime {
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendChannelMessageRequest]
     }
@@ -7791,7 +7886,7 @@ package chime {
     }
   }
 
-  /** The SIP media application details, including name and endpoints. An AWS account can have multiple SIP media applications.
+  /** The details of the SIP media application, including name and endpoints. An AWS account can have multiple SIP media applications.
     */
   @js.native
   trait SipMediaApplication extends js.Object {
@@ -7842,7 +7937,7 @@ package chime {
     }
   }
 
-  /** Endpoints to specify as part of a SIP media application.
+  /** The endpoint assigned to the SIP media application.
     */
   @js.native
   trait SipMediaApplicationEndpoint extends js.Object {
@@ -7917,7 +8012,7 @@ package chime {
     }
   }
 
-  /** Target SIP media application along with other details like priority and AWS Region to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
+  /** Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
     */
   @js.native
   trait SipRuleTargetApplication extends js.Object {
@@ -8420,6 +8515,7 @@ package chime {
   trait UpdateChannelMessageRequest extends js.Object {
     var ChannelArn: ChimeArn
     var MessageId: MessageId
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var Content: js.UndefOr[Content]
     var Metadata: js.UndefOr[Metadata]
   }
@@ -8429,6 +8525,7 @@ package chime {
     def apply(
         ChannelArn: ChimeArn,
         MessageId: MessageId,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         Content: js.UndefOr[Content] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined
     ): UpdateChannelMessageRequest = {
@@ -8437,6 +8534,7 @@ package chime {
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelMessageRequest]
@@ -8465,16 +8563,20 @@ package chime {
   @js.native
   trait UpdateChannelReadMarkerRequest extends js.Object {
     var ChannelArn: ChimeArn
+    var ChimeBearer: js.UndefOr[ChimeArn]
   }
 
   object UpdateChannelReadMarkerRequest {
     @inline
     def apply(
-        ChannelArn: ChimeArn
+        ChannelArn: ChimeArn,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined
     ): UpdateChannelReadMarkerRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any]
       )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelReadMarkerRequest]
     }
   }
@@ -8500,6 +8602,7 @@ package chime {
     var ChannelArn: ChimeArn
     var Mode: ChannelMode
     var Name: NonEmptyResourceName
+    var ChimeBearer: js.UndefOr[ChimeArn]
     var Metadata: js.UndefOr[Metadata]
   }
 
@@ -8509,6 +8612,7 @@ package chime {
         ChannelArn: ChimeArn,
         Mode: ChannelMode,
         Name: NonEmptyResourceName,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined
     ): UpdateChannelRequest = {
       val __obj = js.Dynamic.literal(
@@ -8517,6 +8621,7 @@ package chime {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelRequest]
     }

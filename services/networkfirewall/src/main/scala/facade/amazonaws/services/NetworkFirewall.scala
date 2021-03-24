@@ -1456,20 +1456,23 @@ package networkfirewall {
     }
   }
 
-  /** <p/>
+  /** Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of a <a>SyncState</a> for a firewall.
     */
   @js.native
   trait PerObjectStatus extends js.Object {
     var SyncStatus: js.UndefOr[PerObjectSyncStatus]
+    var UpdateToken: js.UndefOr[UpdateToken]
   }
 
   object PerObjectStatus {
     @inline
     def apply(
-        SyncStatus: js.UndefOr[PerObjectSyncStatus] = js.undefined
+        SyncStatus: js.UndefOr[PerObjectSyncStatus] = js.undefined,
+        UpdateToken: js.UndefOr[UpdateToken] = js.undefined
     ): PerObjectStatus = {
       val __obj = js.Dynamic.literal()
       SyncStatus.foreach(__v => __obj.updateDynamic("SyncStatus")(__v.asInstanceOf[js.Any]))
+      UpdateToken.foreach(__v => __obj.updateDynamic("UpdateToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PerObjectStatus]
     }
   }
@@ -1772,6 +1775,8 @@ package networkfirewall {
   }
 
   /** Stateful inspection criteria for a domain list rule group.
+    * For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.
+    * By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html|Stateful domain list rule groups in AWS Network Firewall]] in the <i>Network Firewall Developer Guide</i>
     */
   @js.native
   trait RulesSourceList extends js.Object {

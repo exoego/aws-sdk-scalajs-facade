@@ -1842,7 +1842,7 @@ package lambda {
     }
   }
 
-  /** Configuration values that override the container image Dockerfile settings. See [[https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html|Container settings]].
+  /** Configuration values that override the container image Dockerfile settings. See [[https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms|Container settings]].
     */
   @js.native
   trait ImageConfig extends js.Object {
@@ -3065,6 +3065,7 @@ package lambda {
     val `nodejs8.10` = "nodejs8.10".asInstanceOf[Runtime]
     val `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
     val `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
+    val `nodejs14.x` = "nodejs14.x".asInstanceOf[Runtime]
     val java8 = "java8".asInstanceOf[Runtime]
     val `java8.al2` = "java8.al2".asInstanceOf[Runtime]
     val java11 = "java11".asInstanceOf[Runtime]
@@ -3090,6 +3091,7 @@ package lambda {
       `nodejs8.10`,
       `nodejs10.x`,
       `nodejs12.x`,
+      `nodejs14.x`,
       java8,
       `java8.al2`,
       java11,

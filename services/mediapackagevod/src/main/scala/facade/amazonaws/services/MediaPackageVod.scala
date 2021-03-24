@@ -25,6 +25,7 @@ package object mediapackagevod {
 
   implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
+    @inline def configureLogsFuture(params: ConfigureLogsRequest): Future[ConfigureLogsResponse] = service.configureLogs(params).promise().toFuture
     @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] = service.createAsset(params).promise().toFuture
     @inline def createPackagingConfigurationFuture(params: CreatePackagingConfigurationRequest): Future[CreatePackagingConfigurationResponse] = service.createPackagingConfiguration(params).promise().toFuture
     @inline def createPackagingGroupFuture(params: CreatePackagingGroupRequest): Future[CreatePackagingGroupResponse] = service.createPackagingGroup(params).promise().toFuture
@@ -51,6 +52,7 @@ package mediapackagevod {
   class MediaPackageVod() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def configureLogs(params: ConfigureLogsRequest): Request[ConfigureLogsResponse] = js.native
     def createAsset(params: CreateAssetRequest): Request[CreateAssetResponse] = js.native
     def createPackagingConfiguration(params: CreatePackagingConfigurationRequest): Request[CreatePackagingConfigurationResponse] = js.native
     def createPackagingGroup(params: CreatePackagingGroupRequest): Request[CreatePackagingGroupResponse] = js.native
@@ -182,6 +184,60 @@ package mediapackagevod {
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafPackage]
+    }
+  }
+
+  /** The option to configure log subscription.
+    */
+  @js.native
+  trait ConfigureLogsRequest extends js.Object {
+    var Id: __string
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
+  }
+
+  object ConfigureLogsRequest {
+    @inline
+    def apply(
+        Id: __string,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined
+    ): ConfigureLogsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureLogsRequest]
+    }
+  }
+
+  @js.native
+  trait ConfigureLogsResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var Authorization: js.UndefOr[Authorization]
+    var DomainName: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
+    var Id: js.UndefOr[__string]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ConfigureLogsResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Authorization: js.UndefOr[Authorization] = js.undefined,
+        DomainName: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ConfigureLogsResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureLogsResponse]
     }
   }
 
@@ -341,6 +397,7 @@ package mediapackagevod {
   trait CreatePackagingGroupRequest extends js.Object {
     var Id: __string
     var Authorization: js.UndefOr[Authorization]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -349,6 +406,7 @@ package mediapackagevod {
     def apply(
         Id: __string,
         Authorization: js.UndefOr[Authorization] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePackagingGroupRequest = {
       val __obj = js.Dynamic.literal(
@@ -356,6 +414,7 @@ package mediapackagevod {
       )
 
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePackagingGroupRequest]
     }
@@ -366,6 +425,7 @@ package mediapackagevod {
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var Id: js.UndefOr[__string]
     var Tags: js.UndefOr[Tags]
   }
@@ -376,6 +436,7 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePackagingGroupResponse = {
@@ -383,6 +444,7 @@ package mediapackagevod {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePackagingGroupResponse]
@@ -687,6 +749,7 @@ package mediapackagevod {
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var Id: js.UndefOr[__string]
     var Tags: js.UndefOr[Tags]
   }
@@ -697,6 +760,7 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribePackagingGroupResponse = {
@@ -704,9 +768,28 @@ package mediapackagevod {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePackagingGroupResponse]
+    }
+  }
+
+  /** Configure egress access logging.
+    */
+  @js.native
+  trait EgressAccessLogs extends js.Object {
+    var LogGroupName: js.UndefOr[__string]
+  }
+
+  object EgressAccessLogs {
+    @inline
+    def apply(
+        LogGroupName: js.UndefOr[__string] = js.undefined
+    ): EgressAccessLogs = {
+      val __obj = js.Dynamic.literal()
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EgressAccessLogs]
     }
   }
 
@@ -1102,6 +1185,7 @@ package mediapackagevod {
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var Id: js.UndefOr[__string]
     var Tags: js.UndefOr[Tags]
   }
@@ -1112,6 +1196,7 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): PackagingGroup = {
@@ -1119,6 +1204,7 @@ package mediapackagevod {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackagingGroup]
@@ -1271,6 +1357,7 @@ package mediapackagevod {
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
+    var EgressAccessLogs: js.UndefOr[EgressAccessLogs]
     var Id: js.UndefOr[__string]
     var Tags: js.UndefOr[Tags]
   }
@@ -1281,6 +1368,7 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
+        EgressAccessLogs: js.UndefOr[EgressAccessLogs] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdatePackagingGroupResponse = {
@@ -1288,6 +1376,7 @@ package mediapackagevod {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EgressAccessLogs.foreach(__v => __obj.updateDynamic("EgressAccessLogs")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePackagingGroupResponse]

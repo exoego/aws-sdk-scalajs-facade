@@ -27,6 +27,7 @@ package object mwaa {
   type LoggingEnabled = Boolean
   type MaxWorkers = Int
   type MetricData = js.Array[MetricDatum]
+  type MinWorkers = Int
   type NextToken = String
   type RelativePath = String
   type S3BucketArn = String
@@ -135,6 +136,7 @@ package mwaa {
     var KmsKey: js.UndefOr[KmsKey]
     var LoggingConfiguration: js.UndefOr[LoggingConfigurationInput]
     var MaxWorkers: js.UndefOr[MaxWorkers]
+    var MinWorkers: js.UndefOr[MinWorkers]
     var PluginsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
     var PluginsS3Path: js.UndefOr[RelativePath]
     var RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
@@ -158,6 +160,7 @@ package mwaa {
         KmsKey: js.UndefOr[KmsKey] = js.undefined,
         LoggingConfiguration: js.UndefOr[LoggingConfigurationInput] = js.undefined,
         MaxWorkers: js.UndefOr[MaxWorkers] = js.undefined,
+        MinWorkers: js.UndefOr[MinWorkers] = js.undefined,
         PluginsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         PluginsS3Path: js.UndefOr[RelativePath] = js.undefined,
         RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
@@ -180,6 +183,7 @@ package mwaa {
       KmsKey.foreach(__v => __obj.updateDynamic("KmsKey")(__v.asInstanceOf[js.Any]))
       LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       MaxWorkers.foreach(__v => __obj.updateDynamic("MaxWorkers")(__v.asInstanceOf[js.Any]))
+      MinWorkers.foreach(__v => __obj.updateDynamic("MinWorkers")(__v.asInstanceOf[js.Any]))
       PluginsS3ObjectVersion.foreach(__v => __obj.updateDynamic("PluginsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
       PluginsS3Path.foreach(__v => __obj.updateDynamic("PluginsS3Path")(__v.asInstanceOf[js.Any]))
       RequirementsS3ObjectVersion.foreach(__v => __obj.updateDynamic("RequirementsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
@@ -308,6 +312,7 @@ package mwaa {
     var LastUpdate: js.UndefOr[LastUpdate]
     var LoggingConfiguration: js.UndefOr[LoggingConfiguration]
     var MaxWorkers: js.UndefOr[MaxWorkers]
+    var MinWorkers: js.UndefOr[MinWorkers]
     var Name: js.UndefOr[EnvironmentName]
     var NetworkConfiguration: js.UndefOr[NetworkConfiguration]
     var PluginsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
@@ -337,6 +342,7 @@ package mwaa {
         LastUpdate: js.UndefOr[LastUpdate] = js.undefined,
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
         MaxWorkers: js.UndefOr[MaxWorkers] = js.undefined,
+        MinWorkers: js.UndefOr[MinWorkers] = js.undefined,
         Name: js.UndefOr[EnvironmentName] = js.undefined,
         NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         PluginsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
@@ -363,6 +369,7 @@ package mwaa {
       LastUpdate.foreach(__v => __obj.updateDynamic("LastUpdate")(__v.asInstanceOf[js.Any]))
       LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       MaxWorkers.foreach(__v => __obj.updateDynamic("MaxWorkers")(__v.asInstanceOf[js.Any]))
+      MinWorkers.foreach(__v => __obj.updateDynamic("MinWorkers")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
       PluginsS3ObjectVersion.foreach(__v => __obj.updateDynamic("PluginsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
@@ -389,8 +396,10 @@ package mwaa {
     val UPDATING = "UPDATING".asInstanceOf[EnvironmentStatus]
     val DELETING = "DELETING".asInstanceOf[EnvironmentStatus]
     val DELETED = "DELETED".asInstanceOf[EnvironmentStatus]
+    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[EnvironmentStatus]
+    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[EnvironmentStatus]
 
-    @inline def values = js.Array(CREATING, CREATE_FAILED, AVAILABLE, UPDATING, DELETING, DELETED)
+    @inline def values = js.Array(CREATING, CREATE_FAILED, AVAILABLE, UPDATING, DELETING, DELETED, UNAVAILABLE, UPDATE_FAILED)
   }
 
   @js.native
@@ -889,6 +898,7 @@ package mwaa {
     var ExecutionRoleArn: js.UndefOr[IamRoleArn]
     var LoggingConfiguration: js.UndefOr[LoggingConfigurationInput]
     var MaxWorkers: js.UndefOr[MaxWorkers]
+    var MinWorkers: js.UndefOr[MinWorkers]
     var NetworkConfiguration: js.UndefOr[UpdateNetworkConfigurationInput]
     var PluginsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
     var PluginsS3Path: js.UndefOr[RelativePath]
@@ -910,6 +920,7 @@ package mwaa {
         ExecutionRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         LoggingConfiguration: js.UndefOr[LoggingConfigurationInput] = js.undefined,
         MaxWorkers: js.UndefOr[MaxWorkers] = js.undefined,
+        MinWorkers: js.UndefOr[MinWorkers] = js.undefined,
         NetworkConfiguration: js.UndefOr[UpdateNetworkConfigurationInput] = js.undefined,
         PluginsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         PluginsS3Path: js.UndefOr[RelativePath] = js.undefined,
@@ -930,6 +941,7 @@ package mwaa {
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
       LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       MaxWorkers.foreach(__v => __obj.updateDynamic("MaxWorkers")(__v.asInstanceOf[js.Any]))
+      MinWorkers.foreach(__v => __obj.updateDynamic("MinWorkers")(__v.asInstanceOf[js.Any]))
       NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
       PluginsS3ObjectVersion.foreach(__v => __obj.updateDynamic("PluginsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
       PluginsS3Path.foreach(__v => __obj.updateDynamic("PluginsS3Path")(__v.asInstanceOf[js.Any]))

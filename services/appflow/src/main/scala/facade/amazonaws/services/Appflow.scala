@@ -37,6 +37,7 @@ package object appflow {
   type Description = String
   type DestinationField = String
   type DestinationFlowConfigList = js.Array[DestinationFlowConfig]
+  type DomainName = String
   type EntitiesPath = String
   type ExecutionId = String
   type ExecutionMessage = String
@@ -62,6 +63,7 @@ package object appflow {
   type OAuthScope = String
   type OAuthScopeList = js.Array[OAuthScope]
   type Object = String
+  type ObjectTypeName = String
   type Password = String
   type PrivateLinkServiceName = String
   type Property = String
@@ -71,6 +73,7 @@ package object appflow {
   type RegionList = js.Array[Region]
   type RoleArn = String
   type ScheduleExpression = String
+  type ScheduleOffset = Double
   type SchedulingFrequencyTypeList = js.Array[ScheduleFrequencyType]
   type SecretKey = String
   type SourceFields = js.Array[String]
@@ -357,10 +360,12 @@ package appflow {
   @js.native
   trait ConnectorMetadata extends js.Object {
     var Amplitude: js.UndefOr[AmplitudeMetadata]
+    var CustomerProfiles: js.UndefOr[CustomerProfilesMetadata]
     var Datadog: js.UndefOr[DatadogMetadata]
     var Dynatrace: js.UndefOr[DynatraceMetadata]
     var EventBridge: js.UndefOr[EventBridgeMetadata]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsMetadata]
+    var Honeycode: js.UndefOr[HoneycodeMetadata]
     var InforNexus: js.UndefOr[InforNexusMetadata]
     var Marketo: js.UndefOr[MarketoMetadata]
     var Redshift: js.UndefOr[RedshiftMetadata]
@@ -380,10 +385,12 @@ package appflow {
     @inline
     def apply(
         Amplitude: js.UndefOr[AmplitudeMetadata] = js.undefined,
+        CustomerProfiles: js.UndefOr[CustomerProfilesMetadata] = js.undefined,
         Datadog: js.UndefOr[DatadogMetadata] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceMetadata] = js.undefined,
         EventBridge: js.UndefOr[EventBridgeMetadata] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsMetadata] = js.undefined,
+        Honeycode: js.UndefOr[HoneycodeMetadata] = js.undefined,
         InforNexus: js.UndefOr[InforNexusMetadata] = js.undefined,
         Marketo: js.UndefOr[MarketoMetadata] = js.undefined,
         Redshift: js.UndefOr[RedshiftMetadata] = js.undefined,
@@ -400,10 +407,12 @@ package appflow {
     ): ConnectorMetadata = {
       val __obj = js.Dynamic.literal()
       Amplitude.foreach(__v => __obj.updateDynamic("Amplitude")(__v.asInstanceOf[js.Any]))
+      CustomerProfiles.foreach(__v => __obj.updateDynamic("CustomerProfiles")(__v.asInstanceOf[js.Any]))
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       EventBridge.foreach(__v => __obj.updateDynamic("EventBridge")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
+      Honeycode.foreach(__v => __obj.updateDynamic("Honeycode")(__v.asInstanceOf[js.Any]))
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
@@ -568,6 +577,7 @@ package appflow {
     var Datadog: js.UndefOr[DatadogConnectorProfileCredentials]
     var Dynatrace: js.UndefOr[DynatraceConnectorProfileCredentials]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileCredentials]
+    var Honeycode: js.UndefOr[HoneycodeConnectorProfileCredentials]
     var InforNexus: js.UndefOr[InforNexusConnectorProfileCredentials]
     var Marketo: js.UndefOr[MarketoConnectorProfileCredentials]
     var Redshift: js.UndefOr[RedshiftConnectorProfileCredentials]
@@ -588,6 +598,7 @@ package appflow {
         Datadog: js.UndefOr[DatadogConnectorProfileCredentials] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceConnectorProfileCredentials] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileCredentials] = js.undefined,
+        Honeycode: js.UndefOr[HoneycodeConnectorProfileCredentials] = js.undefined,
         InforNexus: js.UndefOr[InforNexusConnectorProfileCredentials] = js.undefined,
         Marketo: js.UndefOr[MarketoConnectorProfileCredentials] = js.undefined,
         Redshift: js.UndefOr[RedshiftConnectorProfileCredentials] = js.undefined,
@@ -605,6 +616,7 @@ package appflow {
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
+      Honeycode.foreach(__v => __obj.updateDynamic("Honeycode")(__v.asInstanceOf[js.Any]))
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
@@ -628,6 +640,7 @@ package appflow {
     var Datadog: js.UndefOr[DatadogConnectorProfileProperties]
     var Dynatrace: js.UndefOr[DynatraceConnectorProfileProperties]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileProperties]
+    var Honeycode: js.UndefOr[HoneycodeConnectorProfileProperties]
     var InforNexus: js.UndefOr[InforNexusConnectorProfileProperties]
     var Marketo: js.UndefOr[MarketoConnectorProfileProperties]
     var Redshift: js.UndefOr[RedshiftConnectorProfileProperties]
@@ -648,6 +661,7 @@ package appflow {
         Datadog: js.UndefOr[DatadogConnectorProfileProperties] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceConnectorProfileProperties] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileProperties] = js.undefined,
+        Honeycode: js.UndefOr[HoneycodeConnectorProfileProperties] = js.undefined,
         InforNexus: js.UndefOr[InforNexusConnectorProfileProperties] = js.undefined,
         Marketo: js.UndefOr[MarketoConnectorProfileProperties] = js.undefined,
         Redshift: js.UndefOr[RedshiftConnectorProfileProperties] = js.undefined,
@@ -665,6 +679,7 @@ package appflow {
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
+      Honeycode.foreach(__v => __obj.updateDynamic("Honeycode")(__v.asInstanceOf[js.Any]))
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
@@ -700,7 +715,10 @@ package appflow {
     val Amplitude = "Amplitude".asInstanceOf[ConnectorType]
     val Veeva = "Veeva".asInstanceOf[ConnectorType]
     val EventBridge = "EventBridge".asInstanceOf[ConnectorType]
+    val LookoutMetrics = "LookoutMetrics".asInstanceOf[ConnectorType]
     val Upsolver = "Upsolver".asInstanceOf[ConnectorType]
+    val Honeycode = "Honeycode".asInstanceOf[ConnectorType]
+    val CustomerProfiles = "CustomerProfiles".asInstanceOf[ConnectorType]
 
     @inline def values = js.Array(
       Salesforce,
@@ -720,7 +738,10 @@ package appflow {
       Amplitude,
       Veeva,
       EventBridge,
-      Upsolver
+      LookoutMetrics,
+      Upsolver,
+      Honeycode,
+      CustomerProfiles
     )
   }
 
@@ -825,6 +846,42 @@ package appflow {
       flowArn.foreach(__v => __obj.updateDynamic("flowArn")(__v.asInstanceOf[js.Any]))
       flowStatus.foreach(__v => __obj.updateDynamic("flowStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowResponse]
+    }
+  }
+
+  /** The properties that are applied when Amazon Connect Customer Profiles is used as a destination.
+    */
+  @js.native
+  trait CustomerProfilesDestinationProperties extends js.Object {
+    var domainName: DomainName
+    var objectTypeName: js.UndefOr[ObjectTypeName]
+  }
+
+  object CustomerProfilesDestinationProperties {
+    @inline
+    def apply(
+        domainName: DomainName,
+        objectTypeName: js.UndefOr[ObjectTypeName] = js.undefined
+    ): CustomerProfilesDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+
+      objectTypeName.foreach(__v => __obj.updateDynamic("objectTypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerProfilesDestinationProperties]
+    }
+  }
+
+  /** The connector metadata specific to Amazon Connect Customer Profiles.
+    */
+  @js.native
+  trait CustomerProfilesMetadata extends js.Object
+
+  object CustomerProfilesMetadata {
+    @inline
+    def apply(): CustomerProfilesMetadata = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CustomerProfilesMetadata]
     }
   }
 
@@ -1260,7 +1317,10 @@ package appflow {
     */
   @js.native
   trait DestinationConnectorProperties extends js.Object {
+    var CustomerProfiles: js.UndefOr[CustomerProfilesDestinationProperties]
     var EventBridge: js.UndefOr[EventBridgeDestinationProperties]
+    var Honeycode: js.UndefOr[HoneycodeDestinationProperties]
+    var LookoutMetrics: js.UndefOr[LookoutMetricsDestinationProperties]
     var Redshift: js.UndefOr[RedshiftDestinationProperties]
     var S3: js.UndefOr[S3DestinationProperties]
     var Salesforce: js.UndefOr[SalesforceDestinationProperties]
@@ -1271,7 +1331,10 @@ package appflow {
   object DestinationConnectorProperties {
     @inline
     def apply(
+        CustomerProfiles: js.UndefOr[CustomerProfilesDestinationProperties] = js.undefined,
         EventBridge: js.UndefOr[EventBridgeDestinationProperties] = js.undefined,
+        Honeycode: js.UndefOr[HoneycodeDestinationProperties] = js.undefined,
+        LookoutMetrics: js.UndefOr[LookoutMetricsDestinationProperties] = js.undefined,
         Redshift: js.UndefOr[RedshiftDestinationProperties] = js.undefined,
         S3: js.UndefOr[S3DestinationProperties] = js.undefined,
         Salesforce: js.UndefOr[SalesforceDestinationProperties] = js.undefined,
@@ -1279,7 +1342,10 @@ package appflow {
         Upsolver: js.UndefOr[UpsolverDestinationProperties] = js.undefined
     ): DestinationConnectorProperties = {
       val __obj = js.Dynamic.literal()
+      CustomerProfiles.foreach(__v => __obj.updateDynamic("CustomerProfiles")(__v.asInstanceOf[js.Any]))
       EventBridge.foreach(__v => __obj.updateDynamic("EventBridge")(__v.asInstanceOf[js.Any]))
+      Honeycode.foreach(__v => __obj.updateDynamic("Honeycode")(__v.asInstanceOf[js.Any]))
+      LookoutMetrics.foreach(__v => __obj.updateDynamic("LookoutMetrics")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
@@ -1562,6 +1628,8 @@ package appflow {
     */
   @js.native
   trait ExecutionRecord extends js.Object {
+    var dataPullEndTime: js.UndefOr[Date]
+    var dataPullStartTime: js.UndefOr[Date]
     var executionId: js.UndefOr[ExecutionId]
     var executionResult: js.UndefOr[ExecutionResult]
     var executionStatus: js.UndefOr[ExecutionStatus]
@@ -1572,6 +1640,8 @@ package appflow {
   object ExecutionRecord {
     @inline
     def apply(
+        dataPullEndTime: js.UndefOr[Date] = js.undefined,
+        dataPullStartTime: js.UndefOr[Date] = js.undefined,
         executionId: js.UndefOr[ExecutionId] = js.undefined,
         executionResult: js.UndefOr[ExecutionResult] = js.undefined,
         executionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
@@ -1579,6 +1649,8 @@ package appflow {
         startedAt: js.UndefOr[Date] = js.undefined
     ): ExecutionRecord = {
       val __obj = js.Dynamic.literal()
+      dataPullEndTime.foreach(__v => __obj.updateDynamic("dataPullEndTime")(__v.asInstanceOf[js.Any]))
+      dataPullStartTime.foreach(__v => __obj.updateDynamic("dataPullStartTime")(__v.asInstanceOf[js.Any]))
       executionId.foreach(__v => __obj.updateDynamic("executionId")(__v.asInstanceOf[js.Any]))
       executionResult.foreach(__v => __obj.updateDynamic("executionResult")(__v.asInstanceOf[js.Any]))
       executionStatus.foreach(__v => __obj.updateDynamic("executionStatus")(__v.asInstanceOf[js.Any]))
@@ -1816,6 +1888,84 @@ package appflow {
         "object" -> `object`.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GoogleAnalyticsSourceProperties]
+    }
+  }
+
+  /** The connector-specific credentials required when using Amazon Honeycode.
+    */
+  @js.native
+  trait HoneycodeConnectorProfileCredentials extends js.Object {
+    var accessToken: js.UndefOr[AccessToken]
+    var oAuthRequest: js.UndefOr[ConnectorOAuthRequest]
+    var refreshToken: js.UndefOr[RefreshToken]
+  }
+
+  object HoneycodeConnectorProfileCredentials {
+    @inline
+    def apply(
+        accessToken: js.UndefOr[AccessToken] = js.undefined,
+        oAuthRequest: js.UndefOr[ConnectorOAuthRequest] = js.undefined,
+        refreshToken: js.UndefOr[RefreshToken] = js.undefined
+    ): HoneycodeConnectorProfileCredentials = {
+      val __obj = js.Dynamic.literal()
+      accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
+      oAuthRequest.foreach(__v => __obj.updateDynamic("oAuthRequest")(__v.asInstanceOf[js.Any]))
+      refreshToken.foreach(__v => __obj.updateDynamic("refreshToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoneycodeConnectorProfileCredentials]
+    }
+  }
+
+  /** The connector-specific properties required when using Amazon Honeycode.
+    */
+  @js.native
+  trait HoneycodeConnectorProfileProperties extends js.Object
+
+  object HoneycodeConnectorProfileProperties {
+    @inline
+    def apply(): HoneycodeConnectorProfileProperties = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[HoneycodeConnectorProfileProperties]
+    }
+  }
+
+  /** The properties that are applied when Amazon Honeycode is used as a destination.
+    */
+  @js.native
+  trait HoneycodeDestinationProperties extends js.Object {
+    var `object`: Object
+    var errorHandlingConfig: js.UndefOr[ErrorHandlingConfig]
+  }
+
+  object HoneycodeDestinationProperties {
+    @inline
+    def apply(
+        `object`: Object,
+        errorHandlingConfig: js.UndefOr[ErrorHandlingConfig] = js.undefined
+    ): HoneycodeDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "object" -> `object`.asInstanceOf[js.Any]
+      )
+
+      errorHandlingConfig.foreach(__v => __obj.updateDynamic("errorHandlingConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoneycodeDestinationProperties]
+    }
+  }
+
+  /** The connector metadata specific to Amazon Honeycode.
+    */
+  @js.native
+  trait HoneycodeMetadata extends js.Object {
+    var oAuthScopes: js.UndefOr[OAuthScopeList]
+  }
+
+  object HoneycodeMetadata {
+    @inline
+    def apply(
+        oAuthScopes: js.UndefOr[OAuthScopeList] = js.undefined
+    ): HoneycodeMetadata = {
+      val __obj = js.Dynamic.literal()
+      oAuthScopes.foreach(__v => __obj.updateDynamic("oAuthScopes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HoneycodeMetadata]
     }
   }
 
@@ -2061,6 +2211,19 @@ package appflow {
       val __obj = js.Dynamic.literal()
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /** The properties that are applied when Amazon Lookout for Metrics is used as a destination.
+    */
+  @js.native
+  trait LookoutMetricsDestinationProperties extends js.Object
+
+  object LookoutMetricsDestinationProperties {
+    @inline
+    def apply(): LookoutMetricsDestinationProperties = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[LookoutMetricsDestinationProperties]
     }
   }
 
@@ -2730,7 +2893,9 @@ package appflow {
   trait ScheduledTriggerProperties extends js.Object {
     var scheduleExpression: ScheduleExpression
     var dataPullMode: js.UndefOr[DataPullMode]
+    var firstExecutionFrom: js.UndefOr[Date]
     var scheduleEndTime: js.UndefOr[Date]
+    var scheduleOffset: js.UndefOr[ScheduleOffset]
     var scheduleStartTime: js.UndefOr[Date]
     var timezone: js.UndefOr[Timezone]
   }
@@ -2740,7 +2905,9 @@ package appflow {
     def apply(
         scheduleExpression: ScheduleExpression,
         dataPullMode: js.UndefOr[DataPullMode] = js.undefined,
+        firstExecutionFrom: js.UndefOr[Date] = js.undefined,
         scheduleEndTime: js.UndefOr[Date] = js.undefined,
+        scheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         scheduleStartTime: js.UndefOr[Date] = js.undefined,
         timezone: js.UndefOr[Timezone] = js.undefined
     ): ScheduledTriggerProperties = {
@@ -2749,7 +2916,9 @@ package appflow {
       )
 
       dataPullMode.foreach(__v => __obj.updateDynamic("dataPullMode")(__v.asInstanceOf[js.Any]))
+      firstExecutionFrom.foreach(__v => __obj.updateDynamic("firstExecutionFrom")(__v.asInstanceOf[js.Any]))
       scheduleEndTime.foreach(__v => __obj.updateDynamic("scheduleEndTime")(__v.asInstanceOf[js.Any]))
+      scheduleOffset.foreach(__v => __obj.updateDynamic("scheduleOffset")(__v.asInstanceOf[js.Any]))
       scheduleStartTime.foreach(__v => __obj.updateDynamic("scheduleStartTime")(__v.asInstanceOf[js.Any]))
       timezone.foreach(__v => __obj.updateDynamic("timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledTriggerProperties]

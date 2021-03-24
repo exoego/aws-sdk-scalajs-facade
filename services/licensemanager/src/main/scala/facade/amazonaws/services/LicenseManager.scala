@@ -2688,7 +2688,7 @@ package licensemanager {
   trait ProductInformationFilter extends js.Object {
     var ProductInformationFilterComparator: String
     var ProductInformationFilterName: String
-    var ProductInformationFilterValue: StringList
+    var ProductInformationFilterValue: js.UndefOr[StringList]
   }
 
   object ProductInformationFilter {
@@ -2696,13 +2696,14 @@ package licensemanager {
     def apply(
         ProductInformationFilterComparator: String,
         ProductInformationFilterName: String,
-        ProductInformationFilterValue: StringList
+        ProductInformationFilterValue: js.UndefOr[StringList] = js.undefined
     ): ProductInformationFilter = {
       val __obj = js.Dynamic.literal(
         "ProductInformationFilterComparator" -> ProductInformationFilterComparator.asInstanceOf[js.Any],
-        "ProductInformationFilterName" -> ProductInformationFilterName.asInstanceOf[js.Any],
-        "ProductInformationFilterValue" -> ProductInformationFilterValue.asInstanceOf[js.Any]
+        "ProductInformationFilterName" -> ProductInformationFilterName.asInstanceOf[js.Any]
       )
+
+      ProductInformationFilterValue.foreach(__v => __obj.updateDynamic("ProductInformationFilterValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductInformationFilter]
     }
   }

@@ -1009,6 +1009,7 @@ package alexaforbusiness {
     var Name: AddressBookName
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[AddressBookDescription]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateAddressBookRequest {
@@ -1016,7 +1017,8 @@ package alexaforbusiness {
     def apply(
         Name: AddressBookName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-        Description: js.UndefOr[AddressBookDescription] = js.undefined
+        Description: js.UndefOr[AddressBookDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAddressBookRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -1024,6 +1026,7 @@ package alexaforbusiness {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAddressBookRequest]
     }
   }
@@ -1107,6 +1110,7 @@ package alexaforbusiness {
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var IPDialIn: js.UndefOr[IPDialIn]
     var PSTNDialIn: js.UndefOr[PSTNDialIn]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateConferenceProviderRequest {
@@ -1117,7 +1121,8 @@ package alexaforbusiness {
         MeetingSetting: MeetingSetting,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-        PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined
+        PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateConferenceProviderRequest = {
       val __obj = js.Dynamic.literal(
         "ConferenceProviderName" -> ConferenceProviderName.asInstanceOf[js.Any],
@@ -1128,6 +1133,7 @@ package alexaforbusiness {
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       IPDialIn.foreach(__v => __obj.updateDynamic("IPDialIn")(__v.asInstanceOf[js.Any]))
       PSTNDialIn.foreach(__v => __obj.updateDynamic("PSTNDialIn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConferenceProviderRequest]
     }
   }
@@ -1157,6 +1163,7 @@ package alexaforbusiness {
     var PhoneNumber: js.UndefOr[RawPhoneNumber]
     var PhoneNumbers: js.UndefOr[PhoneNumberList]
     var SipAddresses: js.UndefOr[SipAddressList]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateContactRequest {
@@ -1168,7 +1175,8 @@ package alexaforbusiness {
         LastName: js.UndefOr[ContactName] = js.undefined,
         PhoneNumber: js.UndefOr[RawPhoneNumber] = js.undefined,
         PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined,
-        SipAddresses: js.UndefOr[SipAddressList] = js.undefined
+        SipAddresses: js.UndefOr[SipAddressList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateContactRequest = {
       val __obj = js.Dynamic.literal(
         "FirstName" -> FirstName.asInstanceOf[js.Any]
@@ -1180,6 +1188,7 @@ package alexaforbusiness {
       PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
       SipAddresses.foreach(__v => __obj.updateDynamic("SipAddresses")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateContactRequest]
     }
   }
@@ -1230,6 +1239,7 @@ package alexaforbusiness {
     var ClientRequestToken: ClientRequestToken
     var Name: GatewayGroupName
     var Description: js.UndefOr[GatewayGroupDescription]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateGatewayGroupRequest {
@@ -1237,7 +1247,8 @@ package alexaforbusiness {
     def apply(
         ClientRequestToken: ClientRequestToken,
         Name: GatewayGroupName,
-        Description: js.UndefOr[GatewayGroupDescription] = js.undefined
+        Description: js.UndefOr[GatewayGroupDescription] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateGatewayGroupRequest = {
       val __obj = js.Dynamic.literal(
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
@@ -1245,6 +1256,7 @@ package alexaforbusiness {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGatewayGroupRequest]
     }
   }
@@ -1325,6 +1337,7 @@ package alexaforbusiness {
     var Description: js.UndefOr[NetworkProfileDescription]
     var EapMethod: js.UndefOr[NetworkEapMethod]
     var NextPassword: js.UndefOr[NextWiFiPassword]
+    var Tags: js.UndefOr[TagList]
     var TrustAnchors: js.UndefOr[TrustAnchorList]
   }
 
@@ -1340,6 +1353,7 @@ package alexaforbusiness {
         Description: js.UndefOr[NetworkProfileDescription] = js.undefined,
         EapMethod: js.UndefOr[NetworkEapMethod] = js.undefined,
         NextPassword: js.UndefOr[NextWiFiPassword] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TrustAnchors: js.UndefOr[TrustAnchorList] = js.undefined
     ): CreateNetworkProfileRequest = {
       val __obj = js.Dynamic.literal(
@@ -1354,6 +1368,7 @@ package alexaforbusiness {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EapMethod.foreach(__v => __obj.updateDynamic("EapMethod")(__v.asInstanceOf[js.Any]))
       NextPassword.foreach(__v => __obj.updateDynamic("NextPassword")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TrustAnchors.foreach(__v => __obj.updateDynamic("TrustAnchors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNetworkProfileRequest]
     }
@@ -4042,6 +4057,7 @@ package alexaforbusiness {
     var UserCode: UserCode
     var DeviceSerialNumber: js.UndefOr[DeviceSerialNumberForAVS]
     var RoomArn: js.UndefOr[Arn]
+    var Tags: js.UndefOr[TagList]
   }
 
   object RegisterAVSDeviceRequest {
@@ -4052,7 +4068,8 @@ package alexaforbusiness {
         ProductId: ProductId,
         UserCode: UserCode,
         DeviceSerialNumber: js.UndefOr[DeviceSerialNumberForAVS] = js.undefined,
-        RoomArn: js.UndefOr[Arn] = js.undefined
+        RoomArn: js.UndefOr[Arn] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): RegisterAVSDeviceRequest = {
       val __obj = js.Dynamic.literal(
         "AmazonId" -> AmazonId.asInstanceOf[js.Any],
@@ -4063,6 +4080,7 @@ package alexaforbusiness {
 
       DeviceSerialNumber.foreach(__v => __obj.updateDynamic("DeviceSerialNumber")(__v.asInstanceOf[js.Any]))
       RoomArn.foreach(__v => __obj.updateDynamic("RoomArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterAVSDeviceRequest]
     }
   }

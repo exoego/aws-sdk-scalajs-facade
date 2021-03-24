@@ -10,6 +10,9 @@ package object es {
   type ARN = String
   type AdditionalLimitList = js.Array[AdditionalLimit]
   type AdvancedOptions = js.Dictionary[String]
+  type AutoTuneDate = js.Date
+  type AutoTuneList = js.Array[AutoTune]
+  type AutoTuneMaintenanceScheduleList = js.Array[AutoTuneMaintenanceSchedule]
   type BackendRole = String
   type CloudWatchLogsLogGroupArn = String
   type CommitMessage = String
@@ -28,6 +31,7 @@ package object es {
   type DomainNameFqdn = String
   type DomainNameList = js.Array[DomainName]
   type DomainPackageDetailsList = js.Array[DomainPackageDetails]
+  type DurationValue = Double
   type ElasticsearchDomainStatusList = js.Array[ElasticsearchDomainStatus]
   type ElasticsearchInstanceTypeList = js.Array[ESPartitionInstanceType]
   type ElasticsearchVersionList = js.Array[ElasticsearchVersionString]
@@ -77,7 +81,9 @@ package object es {
   type S3Key = String
   type SAMLEntityId = String
   type SAMLMetadata = String
+  type ScheduledAutoTuneDescription = String
   type ServiceUrl = String
+  type StartAt = js.Date
   type StartTimestamp = js.Date
   type StorageSubTypeName = String
   type StorageTypeLimitList = js.Array[StorageTypeLimit]
@@ -110,6 +116,7 @@ package object es {
     @inline def deleteInboundCrossClusterSearchConnectionFuture(params: DeleteInboundCrossClusterSearchConnectionRequest): Future[DeleteInboundCrossClusterSearchConnectionResponse] = service.deleteInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def deleteOutboundCrossClusterSearchConnectionFuture(params: DeleteOutboundCrossClusterSearchConnectionRequest): Future[DeleteOutboundCrossClusterSearchConnectionResponse] = service.deleteOutboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def deletePackageFuture(params: DeletePackageRequest): Future[DeletePackageResponse] = service.deletePackage(params).promise().toFuture
+    @inline def describeDomainAutoTunesFuture(params: DescribeDomainAutoTunesRequest): Future[DescribeDomainAutoTunesResponse] = service.describeDomainAutoTunes(params).promise().toFuture
     @inline def describeElasticsearchDomainConfigFuture(params: DescribeElasticsearchDomainConfigRequest): Future[DescribeElasticsearchDomainConfigResponse] = service.describeElasticsearchDomainConfig(params).promise().toFuture
     @inline def describeElasticsearchDomainFuture(params: DescribeElasticsearchDomainRequest): Future[DescribeElasticsearchDomainResponse] = service.describeElasticsearchDomain(params).promise().toFuture
     @inline def describeElasticsearchDomainsFuture(params: DescribeElasticsearchDomainsRequest): Future[DescribeElasticsearchDomainsResponse] = service.describeElasticsearchDomains(params).promise().toFuture
@@ -159,6 +166,7 @@ package es {
     def deleteInboundCrossClusterSearchConnection(params: DeleteInboundCrossClusterSearchConnectionRequest): Request[DeleteInboundCrossClusterSearchConnectionResponse] = js.native
     def deleteOutboundCrossClusterSearchConnection(params: DeleteOutboundCrossClusterSearchConnectionRequest): Request[DeleteOutboundCrossClusterSearchConnectionResponse] = js.native
     def deletePackage(params: DeletePackageRequest): Request[DeletePackageResponse] = js.native
+    def describeDomainAutoTunes(params: DescribeDomainAutoTunesRequest): Request[DescribeDomainAutoTunesResponse] = js.native
     def describeElasticsearchDomain(params: DescribeElasticsearchDomainRequest): Request[DescribeElasticsearchDomainResponse] = js.native
     def describeElasticsearchDomainConfig(params: DescribeElasticsearchDomainConfigRequest): Request[DescribeElasticsearchDomainConfigResponse] = js.native
     def describeElasticsearchDomains(params: DescribeElasticsearchDomainsRequest): Request[DescribeElasticsearchDomainsResponse] = js.native
@@ -428,6 +436,240 @@ package es {
     }
   }
 
+  /** Specifies Auto-Tune type and Auto-Tune action details.
+    */
+  @js.native
+  trait AutoTune extends js.Object {
+    var AutoTuneDetails: js.UndefOr[AutoTuneDetails]
+    var AutoTuneType: js.UndefOr[AutoTuneType]
+  }
+
+  object AutoTune {
+    @inline
+    def apply(
+        AutoTuneDetails: js.UndefOr[AutoTuneDetails] = js.undefined,
+        AutoTuneType: js.UndefOr[AutoTuneType] = js.undefined
+    ): AutoTune = {
+      val __obj = js.Dynamic.literal()
+      AutoTuneDetails.foreach(__v => __obj.updateDynamic("AutoTuneDetails")(__v.asInstanceOf[js.Any]))
+      AutoTuneType.foreach(__v => __obj.updateDynamic("AutoTuneType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTune]
+    }
+  }
+
+  /** Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
+    */
+  @js.native
+  sealed trait AutoTuneDesiredState extends js.Any
+  object AutoTuneDesiredState {
+    val ENABLED = "ENABLED".asInstanceOf[AutoTuneDesiredState]
+    val DISABLED = "DISABLED".asInstanceOf[AutoTuneDesiredState]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  /** Specifies details of the Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
+    */
+  @js.native
+  trait AutoTuneDetails extends js.Object {
+    var ScheduledAutoTuneDetails: js.UndefOr[ScheduledAutoTuneDetails]
+  }
+
+  object AutoTuneDetails {
+    @inline
+    def apply(
+        ScheduledAutoTuneDetails: js.UndefOr[ScheduledAutoTuneDetails] = js.undefined
+    ): AutoTuneDetails = {
+      val __obj = js.Dynamic.literal()
+      ScheduledAutoTuneDetails.foreach(__v => __obj.updateDynamic("ScheduledAutoTuneDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneDetails]
+    }
+  }
+
+  /** Specifies Auto-Tune maitenance schedule. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
+    */
+  @js.native
+  trait AutoTuneMaintenanceSchedule extends js.Object {
+    var CronExpressionForRecurrence: js.UndefOr[String]
+    var Duration: js.UndefOr[Duration]
+    var StartAt: js.UndefOr[StartAt]
+  }
+
+  object AutoTuneMaintenanceSchedule {
+    @inline
+    def apply(
+        CronExpressionForRecurrence: js.UndefOr[String] = js.undefined,
+        Duration: js.UndefOr[Duration] = js.undefined,
+        StartAt: js.UndefOr[StartAt] = js.undefined
+    ): AutoTuneMaintenanceSchedule = {
+      val __obj = js.Dynamic.literal()
+      CronExpressionForRecurrence.foreach(__v => __obj.updateDynamic("CronExpressionForRecurrence")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      StartAt.foreach(__v => __obj.updateDynamic("StartAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneMaintenanceSchedule]
+    }
+  }
+
+  /** Specifies the Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules.
+    */
+  @js.native
+  trait AutoTuneOptions extends js.Object {
+    var DesiredState: js.UndefOr[AutoTuneDesiredState]
+    var MaintenanceSchedules: js.UndefOr[AutoTuneMaintenanceScheduleList]
+    var RollbackOnDisable: js.UndefOr[RollbackOnDisable]
+  }
+
+  object AutoTuneOptions {
+    @inline
+    def apply(
+        DesiredState: js.UndefOr[AutoTuneDesiredState] = js.undefined,
+        MaintenanceSchedules: js.UndefOr[AutoTuneMaintenanceScheduleList] = js.undefined,
+        RollbackOnDisable: js.UndefOr[RollbackOnDisable] = js.undefined
+    ): AutoTuneOptions = {
+      val __obj = js.Dynamic.literal()
+      DesiredState.foreach(__v => __obj.updateDynamic("DesiredState")(__v.asInstanceOf[js.Any]))
+      MaintenanceSchedules.foreach(__v => __obj.updateDynamic("MaintenanceSchedules")(__v.asInstanceOf[js.Any]))
+      RollbackOnDisable.foreach(__v => __obj.updateDynamic("RollbackOnDisable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneOptions]
+    }
+  }
+
+  /** Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+    */
+  @js.native
+  trait AutoTuneOptionsInput extends js.Object {
+    var DesiredState: js.UndefOr[AutoTuneDesiredState]
+    var MaintenanceSchedules: js.UndefOr[AutoTuneMaintenanceScheduleList]
+  }
+
+  object AutoTuneOptionsInput {
+    @inline
+    def apply(
+        DesiredState: js.UndefOr[AutoTuneDesiredState] = js.undefined,
+        MaintenanceSchedules: js.UndefOr[AutoTuneMaintenanceScheduleList] = js.undefined
+    ): AutoTuneOptionsInput = {
+      val __obj = js.Dynamic.literal()
+      DesiredState.foreach(__v => __obj.updateDynamic("DesiredState")(__v.asInstanceOf[js.Any]))
+      MaintenanceSchedules.foreach(__v => __obj.updateDynamic("MaintenanceSchedules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneOptionsInput]
+    }
+  }
+
+  /** Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+    */
+  @js.native
+  trait AutoTuneOptionsOutput extends js.Object {
+    var ErrorMessage: js.UndefOr[String]
+    var State: js.UndefOr[AutoTuneState]
+  }
+
+  object AutoTuneOptionsOutput {
+    @inline
+    def apply(
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        State: js.UndefOr[AutoTuneState] = js.undefined
+    ): AutoTuneOptionsOutput = {
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneOptionsOutput]
+    }
+  }
+
+  /** Specifies the status of Auto-Tune options for the specified Elasticsearch domain.
+    */
+  @js.native
+  trait AutoTuneOptionsStatus extends js.Object {
+    var Options: js.UndefOr[AutoTuneOptions]
+    var Status: js.UndefOr[AutoTuneStatus]
+  }
+
+  object AutoTuneOptionsStatus {
+    @inline
+    def apply(
+        Options: js.UndefOr[AutoTuneOptions] = js.undefined,
+        Status: js.UndefOr[AutoTuneStatus] = js.undefined
+    ): AutoTuneOptionsStatus = {
+      val __obj = js.Dynamic.literal()
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneOptionsStatus]
+    }
+  }
+
+  /** Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>.
+    */
+  @js.native
+  sealed trait AutoTuneState extends js.Any
+  object AutoTuneState {
+    val ENABLED = "ENABLED".asInstanceOf[AutoTuneState]
+    val DISABLED = "DISABLED".asInstanceOf[AutoTuneState]
+    val ENABLE_IN_PROGRESS = "ENABLE_IN_PROGRESS".asInstanceOf[AutoTuneState]
+    val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AutoTuneState]
+    val DISABLED_AND_ROLLBACK_SCHEDULED = "DISABLED_AND_ROLLBACK_SCHEDULED".asInstanceOf[AutoTuneState]
+    val DISABLED_AND_ROLLBACK_IN_PROGRESS = "DISABLED_AND_ROLLBACK_IN_PROGRESS".asInstanceOf[AutoTuneState]
+    val DISABLED_AND_ROLLBACK_COMPLETE = "DISABLED_AND_ROLLBACK_COMPLETE".asInstanceOf[AutoTuneState]
+    val DISABLED_AND_ROLLBACK_ERROR = "DISABLED_AND_ROLLBACK_ERROR".asInstanceOf[AutoTuneState]
+    val ERROR = "ERROR".asInstanceOf[AutoTuneState]
+
+    @inline def values = js.Array(
+      ENABLED,
+      DISABLED,
+      ENABLE_IN_PROGRESS,
+      DISABLE_IN_PROGRESS,
+      DISABLED_AND_ROLLBACK_SCHEDULED,
+      DISABLED_AND_ROLLBACK_IN_PROGRESS,
+      DISABLED_AND_ROLLBACK_COMPLETE,
+      DISABLED_AND_ROLLBACK_ERROR,
+      ERROR
+    )
+  }
+
+  /** Provides the current status of the Auto-Tune options.
+    */
+  @js.native
+  trait AutoTuneStatus extends js.Object {
+    var CreationDate: UpdateTimestamp
+    var State: AutoTuneState
+    var UpdateDate: UpdateTimestamp
+    var ErrorMessage: js.UndefOr[String]
+    var PendingDeletion: js.UndefOr[Boolean]
+    var UpdateVersion: js.UndefOr[UIntValue]
+  }
+
+  object AutoTuneStatus {
+    @inline
+    def apply(
+        CreationDate: UpdateTimestamp,
+        State: AutoTuneState,
+        UpdateDate: UpdateTimestamp,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        PendingDeletion: js.UndefOr[Boolean] = js.undefined,
+        UpdateVersion: js.UndefOr[UIntValue] = js.undefined
+    ): AutoTuneStatus = {
+      val __obj = js.Dynamic.literal(
+        "CreationDate" -> CreationDate.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "UpdateDate" -> UpdateDate.asInstanceOf[js.Any]
+      )
+
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      PendingDeletion.foreach(__v => __obj.updateDynamic("PendingDeletion")(__v.asInstanceOf[js.Any]))
+      UpdateVersion.foreach(__v => __obj.updateDynamic("UpdateVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTuneStatus]
+    }
+  }
+
+  /** Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION.
+    */
+  @js.native
+  sealed trait AutoTuneType extends js.Any
+  object AutoTuneType {
+    val SCHEDULED_ACTION = "SCHEDULED_ACTION".asInstanceOf[AutoTuneType]
+
+    @inline def values = js.Array(SCHEDULED_ACTION)
+  }
+
   /** Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.
     */
   @js.native
@@ -541,6 +783,7 @@ package es {
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput]
+    var AutoTuneOptions: js.UndefOr[AutoTuneOptionsInput]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
@@ -550,6 +793,7 @@ package es {
     var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
     var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions]
     var SnapshotOptions: js.UndefOr[SnapshotOptions]
+    var TagList: js.UndefOr[TagList]
     var VPCOptions: js.UndefOr[VPCOptions]
   }
 
@@ -560,6 +804,7 @@ package es {
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput] = js.undefined,
+        AutoTuneOptions: js.UndefOr[AutoTuneOptionsInput] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
@@ -569,6 +814,7 @@ package es {
         LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
         NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
         SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
         VPCOptions: js.UndefOr[VPCOptions] = js.undefined
     ): CreateElasticsearchDomainRequest = {
       val __obj = js.Dynamic.literal(
@@ -578,6 +824,7 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
+      AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
@@ -587,6 +834,7 @@ package es {
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
       NodeToNodeEncryptionOptions.foreach(__v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateElasticsearchDomainRequest]
     }
@@ -870,6 +1118,53 @@ package es {
     val ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
     @inline def values = js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE)
+  }
+
+  /** Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation.
+    */
+  @js.native
+  trait DescribeDomainAutoTunesRequest extends js.Object {
+    var DomainName: DomainName
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeDomainAutoTunesRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDomainAutoTunesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainAutoTunesRequest]
+    }
+  }
+
+  /** The result of <code>DescribeDomainAutoTunes</code> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
+    */
+  @js.native
+  trait DescribeDomainAutoTunesResponse extends js.Object {
+    var AutoTunes: js.UndefOr[AutoTuneList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeDomainAutoTunesResponse {
+    @inline
+    def apply(
+        AutoTunes: js.UndefOr[AutoTuneList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDomainAutoTunesResponse = {
+      val __obj = js.Dynamic.literal()
+      AutoTunes.foreach(__v => __obj.updateDynamic("AutoTunes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainAutoTunesResponse]
+    }
   }
 
   /** Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information.
@@ -1472,6 +1767,27 @@ package es {
     @inline def values = js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED)
   }
 
+  /** Specifies maintenance schedule duration: duration value and duration unit. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
+    */
+  @js.native
+  trait Duration extends js.Object {
+    var Unit: js.UndefOr[TimeUnit]
+    var Value: js.UndefOr[DurationValue]
+  }
+
+  object Duration {
+    @inline
+    def apply(
+        Unit: js.UndefOr[TimeUnit] = js.undefined,
+        Value: js.UndefOr[DurationValue] = js.undefined
+    ): Duration = {
+      val __obj = js.Dynamic.literal()
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Duration]
+    }
+  }
+
   /** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.
     */
   @js.native
@@ -1728,6 +2044,7 @@ package es {
     var AccessPolicies: js.UndefOr[AccessPoliciesStatus]
     var AdvancedOptions: js.UndefOr[AdvancedOptionsStatus]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus]
+    var AutoTuneOptions: js.UndefOr[AutoTuneOptionsStatus]
     var CognitoOptions: js.UndefOr[CognitoOptionsStatus]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
     var EBSOptions: js.UndefOr[EBSOptionsStatus]
@@ -1746,6 +2063,7 @@ package es {
         AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus] = js.undefined,
+        AutoTuneOptions: js.UndefOr[AutoTuneOptionsStatus] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptionsStatus] = js.undefined,
@@ -1761,6 +2079,7 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
+      AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
@@ -1786,6 +2105,7 @@ package es {
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions]
+    var AutoTuneOptions: js.UndefOr[AutoTuneOptionsOutput]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
@@ -1814,6 +2134,7 @@ package es {
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions] = js.undefined,
+        AutoTuneOptions: js.UndefOr[AutoTuneOptionsOutput] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         Created: js.UndefOr[Boolean] = js.undefined,
         Deleted: js.UndefOr[Boolean] = js.undefined,
@@ -1841,6 +2162,7 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
+      AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
@@ -3086,6 +3408,17 @@ package es {
     @inline def values = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
   }
 
+  /** Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK.
+    */
+  @js.native
+  sealed trait RollbackOnDisable extends js.Any
+  object RollbackOnDisable {
+    val NO_ROLLBACK = "NO_ROLLBACK".asInstanceOf[RollbackOnDisable]
+    val DEFAULT_ROLLBACK = "DEFAULT_ROLLBACK".asInstanceOf[RollbackOnDisable]
+
+    @inline def values = js.Array(NO_ROLLBACK, DEFAULT_ROLLBACK)
+  }
+
   /** Specifies the SAML Identity Provider's information.
     */
   @js.native
@@ -3172,6 +3505,56 @@ package es {
       SubjectKey.foreach(__v => __obj.updateDynamic("SubjectKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SAMLOptionsOutput]
     }
+  }
+
+  /** Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+    */
+  @js.native
+  sealed trait ScheduledAutoTuneActionType extends js.Any
+  object ScheduledAutoTuneActionType {
+    val JVM_HEAP_SIZE_TUNING = "JVM_HEAP_SIZE_TUNING".asInstanceOf[ScheduledAutoTuneActionType]
+    val JVM_YOUNG_GEN_TUNING = "JVM_YOUNG_GEN_TUNING".asInstanceOf[ScheduledAutoTuneActionType]
+
+    @inline def values = js.Array(JVM_HEAP_SIZE_TUNING, JVM_YOUNG_GEN_TUNING)
+  }
+
+  /** Specifies details of the scheduled Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
+    */
+  @js.native
+  trait ScheduledAutoTuneDetails extends js.Object {
+    var Action: js.UndefOr[ScheduledAutoTuneDescription]
+    var ActionType: js.UndefOr[ScheduledAutoTuneActionType]
+    var Date: js.UndefOr[AutoTuneDate]
+    var Severity: js.UndefOr[ScheduledAutoTuneSeverityType]
+  }
+
+  object ScheduledAutoTuneDetails {
+    @inline
+    def apply(
+        Action: js.UndefOr[ScheduledAutoTuneDescription] = js.undefined,
+        ActionType: js.UndefOr[ScheduledAutoTuneActionType] = js.undefined,
+        Date: js.UndefOr[AutoTuneDate] = js.undefined,
+        Severity: js.UndefOr[ScheduledAutoTuneSeverityType] = js.undefined
+    ): ScheduledAutoTuneDetails = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
+      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduledAutoTuneDetails]
+    }
+  }
+
+  /** Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH.
+    */
+  @js.native
+  sealed trait ScheduledAutoTuneSeverityType extends js.Any
+  object ScheduledAutoTuneSeverityType {
+    val LOW = "LOW".asInstanceOf[ScheduledAutoTuneSeverityType]
+    val MEDIUM = "MEDIUM".asInstanceOf[ScheduledAutoTuneSeverityType]
+    val HIGH = "HIGH".asInstanceOf[ScheduledAutoTuneSeverityType]
+
+    @inline def values = js.Array(LOW, MEDIUM, HIGH)
   }
 
   /** The current options of an Elasticsearch domain service software options.
@@ -3366,6 +3749,16 @@ package es {
     }
   }
 
+  /** Specifies the unit of a maintenance schedule duration. Valid value is HOUR. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
+    */
+  @js.native
+  sealed trait TimeUnit extends js.Any
+  object TimeUnit {
+    val HOURS = "HOURS".asInstanceOf[TimeUnit]
+
+    @inline def values = js.Array(HOURS)
+  }
+
   /** Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.
     */
   @js.native
@@ -3374,11 +3767,14 @@ package es {
     var AccessPolicies: js.UndefOr[PolicyDocument]
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput]
+    var AutoTuneOptions: js.UndefOr[AutoTuneOptions]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
     var EBSOptions: js.UndefOr[EBSOptions]
     var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
+    var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
     var LogPublishingOptions: js.UndefOr[LogPublishingOptions]
+    var NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions]
     var SnapshotOptions: js.UndefOr[SnapshotOptions]
     var VPCOptions: js.UndefOr[VPCOptions]
   }
@@ -3390,11 +3786,14 @@ package es {
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsInput] = js.undefined,
+        AutoTuneOptions: js.UndefOr[AutoTuneOptions] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
         ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
+        EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
         LogPublishingOptions: js.UndefOr[LogPublishingOptions] = js.undefined,
+        NodeToNodeEncryptionOptions: js.UndefOr[NodeToNodeEncryptionOptions] = js.undefined,
         SnapshotOptions: js.UndefOr[SnapshotOptions] = js.undefined,
         VPCOptions: js.UndefOr[VPCOptions] = js.undefined
     ): UpdateElasticsearchDomainConfigRequest = {
@@ -3405,11 +3804,14 @@ package es {
       AccessPolicies.foreach(__v => __obj.updateDynamic("AccessPolicies")(__v.asInstanceOf[js.Any]))
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
+      AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
       ElasticsearchClusterConfig.foreach(__v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any]))
+      EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
       LogPublishingOptions.foreach(__v => __obj.updateDynamic("LogPublishingOptions")(__v.asInstanceOf[js.Any]))
+      NodeToNodeEncryptionOptions.foreach(__v => __obj.updateDynamic("NodeToNodeEncryptionOptions")(__v.asInstanceOf[js.Any]))
       SnapshotOptions.foreach(__v => __obj.updateDynamic("SnapshotOptions")(__v.asInstanceOf[js.Any]))
       VPCOptions.foreach(__v => __obj.updateDynamic("VPCOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateElasticsearchDomainConfigRequest]

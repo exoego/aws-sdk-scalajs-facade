@@ -29,6 +29,8 @@ package object securityhub {
   type AwsDynamoDbTableLocalSecondaryIndexList = js.Array[AwsDynamoDbTableLocalSecondaryIndex]
   type AwsDynamoDbTableReplicaGlobalSecondaryIndexList = js.Array[AwsDynamoDbTableReplicaGlobalSecondaryIndex]
   type AwsDynamoDbTableReplicaList = js.Array[AwsDynamoDbTableReplica]
+  type AwsEc2NetworkInterfaceIpV6AddressList = js.Array[AwsEc2NetworkInterfaceIpV6AddressDetail]
+  type AwsEc2NetworkInterfacePrivateIpAddressList = js.Array[AwsEc2NetworkInterfacePrivateIpAddressDetail]
   type AwsEc2NetworkInterfaceSecurityGroupList = js.Array[AwsEc2NetworkInterfaceSecurityGroup]
   type AwsEc2SecurityGroupIpPermissionList = js.Array[AwsEc2SecurityGroupIpPermission]
   type AwsEc2SecurityGroupIpRangeList = js.Array[AwsEc2SecurityGroupIpRange]
@@ -74,10 +76,13 @@ package object securityhub {
   type AwsSecurityFindingList = js.Array[AwsSecurityFinding]
   type AwsSnsTopicSubscriptionList = js.Array[AwsSnsTopicSubscription]
   type AwsWafWebAclRuleList = js.Array[AwsWafWebAclRule]
+  type BatchImportFindingsRequestFindingList = js.Array[AwsSecurityFinding]
   type BatchUpdateFindingsUnprocessedFindingsList = js.Array[BatchUpdateFindingsUnprocessedFinding]
   type CategoryList = js.Array[NonEmptyString]
+  type Cells = js.Array[Cell]
   type CidrBlockAssociationList = js.Array[CidrBlockAssociation]
   type CrossAccountMaxResults = Int
+  type CustomDataIdentifiersDetectionsList = js.Array[CustomDataIdentifiersDetections]
   type CvssList = js.Array[Cvss]
   type DateFilterList = js.Array[DateFilter]
   type FieldMap = js.Dictionary[NonEmptyString]
@@ -98,16 +103,22 @@ package object securityhub {
   type NonEmptyString = String
   type NonEmptyStringList = js.Array[NonEmptyString]
   type NumberFilterList = js.Array[NumberFilter]
+  type Pages = js.Array[Page]
+  type PortProbeDetailList = js.Array[PortProbeDetail]
   type PortRangeList = js.Array[PortRange]
   type ProductSubscriptionArnList = js.Array[NonEmptyString]
   type ProductsList = js.Array[Product]
+  type Ranges = js.Array[Range]
   type RatioScale = Int
+  type Records = js.Array[Record]
   type RelatedFindingList = js.Array[RelatedFinding]
   type RelatedRequirementsList = js.Array[NonEmptyString]
   type ResourceArn = String
   type ResourceList = js.Array[Resource]
   type ResultList = js.Array[Result]
   type SecurityGroups = js.Array[NonEmptyString]
+  type SensitiveDataDetectionsList = js.Array[SensitiveDataDetections]
+  type SensitiveDataResultList = js.Array[SensitiveDataResult]
   type SizeBytes = Double
   type SoftwarePackageList = js.Array[SoftwarePackage]
   type SortCriteria = js.Array[SortCriterion]
@@ -294,6 +305,130 @@ package securityhub {
     }
   }
 
+  /** Provides details about one of the following actions that affects or that was taken on a resource:
+    * * A remote IP address issued an AWS API call
+    * * A DNS request was received
+    * * A remote IP address attempted to connect to an EC2 instance
+    * * A remote IP address attempted a port probe on an EC2 instance
+    */
+  @js.native
+  trait Action extends js.Object {
+    var ActionType: js.UndefOr[NonEmptyString]
+    var AwsApiCallAction: js.UndefOr[AwsApiCallAction]
+    var DnsRequestAction: js.UndefOr[DnsRequestAction]
+    var NetworkConnectionAction: js.UndefOr[NetworkConnectionAction]
+    var PortProbeAction: js.UndefOr[PortProbeAction]
+  }
+
+  object Action {
+    @inline
+    def apply(
+        ActionType: js.UndefOr[NonEmptyString] = js.undefined,
+        AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
+        DnsRequestAction: js.UndefOr[DnsRequestAction] = js.undefined,
+        NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
+        PortProbeAction: js.UndefOr[PortProbeAction] = js.undefined
+    ): Action = {
+      val __obj = js.Dynamic.literal()
+      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
+      AwsApiCallAction.foreach(__v => __obj.updateDynamic("AwsApiCallAction")(__v.asInstanceOf[js.Any]))
+      DnsRequestAction.foreach(__v => __obj.updateDynamic("DnsRequestAction")(__v.asInstanceOf[js.Any]))
+      NetworkConnectionAction.foreach(__v => __obj.updateDynamic("NetworkConnectionAction")(__v.asInstanceOf[js.Any]))
+      PortProbeAction.foreach(__v => __obj.updateDynamic("PortProbeAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Action]
+    }
+  }
+
+  /** Provides information about the IP address where the scanned port is located.
+    */
+  @js.native
+  trait ActionLocalIpDetails extends js.Object {
+    var IpAddressV4: js.UndefOr[NonEmptyString]
+  }
+
+  object ActionLocalIpDetails {
+    @inline
+    def apply(
+        IpAddressV4: js.UndefOr[NonEmptyString] = js.undefined
+    ): ActionLocalIpDetails = {
+      val __obj = js.Dynamic.literal()
+      IpAddressV4.foreach(__v => __obj.updateDynamic("IpAddressV4")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionLocalIpDetails]
+    }
+  }
+
+  /** For <code>NetworkConnectionAction</code> and <code>PortProbeDetails</code>, <code>LocalPortDetails</code> provides information about the local port that was involved in the action.
+    */
+  @js.native
+  trait ActionLocalPortDetails extends js.Object {
+    var Port: js.UndefOr[Int]
+    var PortName: js.UndefOr[NonEmptyString]
+  }
+
+  object ActionLocalPortDetails {
+    @inline
+    def apply(
+        Port: js.UndefOr[Int] = js.undefined,
+        PortName: js.UndefOr[NonEmptyString] = js.undefined
+    ): ActionLocalPortDetails = {
+      val __obj = js.Dynamic.literal()
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PortName.foreach(__v => __obj.updateDynamic("PortName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionLocalPortDetails]
+    }
+  }
+
+  /** For <code>AwsApiAction</code>, <code>NetworkConnectionAction</code>, and <code>PortProbeAction</code>, <code>RemoteIpDetails</code> provides information about the remote IP address that was involved in the action.
+    */
+  @js.native
+  trait ActionRemoteIpDetails extends js.Object {
+    var City: js.UndefOr[City]
+    var Country: js.UndefOr[Country]
+    var GeoLocation: js.UndefOr[GeoLocation]
+    var IpAddressV4: js.UndefOr[NonEmptyString]
+    var Organization: js.UndefOr[IpOrganizationDetails]
+  }
+
+  object ActionRemoteIpDetails {
+    @inline
+    def apply(
+        City: js.UndefOr[City] = js.undefined,
+        Country: js.UndefOr[Country] = js.undefined,
+        GeoLocation: js.UndefOr[GeoLocation] = js.undefined,
+        IpAddressV4: js.UndefOr[NonEmptyString] = js.undefined,
+        Organization: js.UndefOr[IpOrganizationDetails] = js.undefined
+    ): ActionRemoteIpDetails = {
+      val __obj = js.Dynamic.literal()
+      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      GeoLocation.foreach(__v => __obj.updateDynamic("GeoLocation")(__v.asInstanceOf[js.Any]))
+      IpAddressV4.foreach(__v => __obj.updateDynamic("IpAddressV4")(__v.asInstanceOf[js.Any]))
+      Organization.foreach(__v => __obj.updateDynamic("Organization")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionRemoteIpDetails]
+    }
+  }
+
+  /** Provides information about the remote port that was involved in an attempted network connection.
+    */
+  @js.native
+  trait ActionRemotePortDetails extends js.Object {
+    var Port: js.UndefOr[Int]
+    var PortName: js.UndefOr[NonEmptyString]
+  }
+
+  object ActionRemotePortDetails {
+    @inline
+    def apply(
+        Port: js.UndefOr[Int] = js.undefined,
+        PortName: js.UndefOr[NonEmptyString] = js.undefined
+    ): ActionRemotePortDetails = {
+      val __obj = js.Dynamic.literal()
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PortName.foreach(__v => __obj.updateDynamic("PortName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionRemotePortDetails]
+    }
+  }
+
   /** An <code>ActionTarget</code> object.
     */
   @js.native
@@ -367,6 +502,63 @@ package securityhub {
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       ZoneName.foreach(__v => __obj.updateDynamic("ZoneName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
+    }
+  }
+
+  /** Provided if <code>ActionType</code> is <code>AWS_API_CALL</code>. It provides details about the API call that was detected.
+    */
+  @js.native
+  trait AwsApiCallAction extends js.Object {
+    var AffectedResources: js.UndefOr[FieldMap]
+    var Api: js.UndefOr[NonEmptyString]
+    var CallerType: js.UndefOr[NonEmptyString]
+    var DomainDetails: js.UndefOr[AwsApiCallActionDomainDetails]
+    var FirstSeen: js.UndefOr[NonEmptyString]
+    var LastSeen: js.UndefOr[NonEmptyString]
+    var RemoteIpDetails: js.UndefOr[ActionRemoteIpDetails]
+    var ServiceName: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsApiCallAction {
+    @inline
+    def apply(
+        AffectedResources: js.UndefOr[FieldMap] = js.undefined,
+        Api: js.UndefOr[NonEmptyString] = js.undefined,
+        CallerType: js.UndefOr[NonEmptyString] = js.undefined,
+        DomainDetails: js.UndefOr[AwsApiCallActionDomainDetails] = js.undefined,
+        FirstSeen: js.UndefOr[NonEmptyString] = js.undefined,
+        LastSeen: js.UndefOr[NonEmptyString] = js.undefined,
+        RemoteIpDetails: js.UndefOr[ActionRemoteIpDetails] = js.undefined,
+        ServiceName: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsApiCallAction = {
+      val __obj = js.Dynamic.literal()
+      AffectedResources.foreach(__v => __obj.updateDynamic("AffectedResources")(__v.asInstanceOf[js.Any]))
+      Api.foreach(__v => __obj.updateDynamic("Api")(__v.asInstanceOf[js.Any]))
+      CallerType.foreach(__v => __obj.updateDynamic("CallerType")(__v.asInstanceOf[js.Any]))
+      DomainDetails.foreach(__v => __obj.updateDynamic("DomainDetails")(__v.asInstanceOf[js.Any]))
+      FirstSeen.foreach(__v => __obj.updateDynamic("FirstSeen")(__v.asInstanceOf[js.Any]))
+      LastSeen.foreach(__v => __obj.updateDynamic("LastSeen")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsApiCallAction]
+    }
+  }
+
+  /** Provided if <code>CallerType</code> is <code>domain</code>. It provides information about the DNS domain that issued the API call.
+    */
+  @js.native
+  trait AwsApiCallActionDomainDetails extends js.Object {
+    var Domain: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsApiCallActionDomainDetails {
+    @inline
+    def apply(
+        Domain: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsApiCallActionDomainDetails = {
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsApiCallActionDomainDetails]
     }
   }
 
@@ -1997,7 +2189,11 @@ package securityhub {
   @js.native
   trait AwsEc2NetworkInterfaceDetails extends js.Object {
     var Attachment: js.UndefOr[AwsEc2NetworkInterfaceAttachment]
+    var IpV6Addresses: js.UndefOr[AwsEc2NetworkInterfaceIpV6AddressList]
     var NetworkInterfaceId: js.UndefOr[NonEmptyString]
+    var PrivateIpAddresses: js.UndefOr[AwsEc2NetworkInterfacePrivateIpAddressList]
+    var PublicDnsName: js.UndefOr[NonEmptyString]
+    var PublicIp: js.UndefOr[NonEmptyString]
     var SecurityGroups: js.UndefOr[AwsEc2NetworkInterfaceSecurityGroupList]
     var SourceDestCheck: js.UndefOr[Boolean]
   }
@@ -2006,16 +2202,63 @@ package securityhub {
     @inline
     def apply(
         Attachment: js.UndefOr[AwsEc2NetworkInterfaceAttachment] = js.undefined,
+        IpV6Addresses: js.UndefOr[AwsEc2NetworkInterfaceIpV6AddressList] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NonEmptyString] = js.undefined,
+        PrivateIpAddresses: js.UndefOr[AwsEc2NetworkInterfacePrivateIpAddressList] = js.undefined,
+        PublicDnsName: js.UndefOr[NonEmptyString] = js.undefined,
+        PublicIp: js.UndefOr[NonEmptyString] = js.undefined,
         SecurityGroups: js.UndefOr[AwsEc2NetworkInterfaceSecurityGroupList] = js.undefined,
         SourceDestCheck: js.UndefOr[Boolean] = js.undefined
     ): AwsEc2NetworkInterfaceDetails = {
       val __obj = js.Dynamic.literal()
       Attachment.foreach(__v => __obj.updateDynamic("Attachment")(__v.asInstanceOf[js.Any]))
+      IpV6Addresses.foreach(__v => __obj.updateDynamic("IpV6Addresses")(__v.asInstanceOf[js.Any]))
       NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
+      PublicDnsName.foreach(__v => __obj.updateDynamic("PublicDnsName")(__v.asInstanceOf[js.Any]))
+      PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       SourceDestCheck.foreach(__v => __obj.updateDynamic("SourceDestCheck")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsEc2NetworkInterfaceDetails]
+    }
+  }
+
+  /** Provides information about an IPV6 address that is associated with the network interface.
+    */
+  @js.native
+  trait AwsEc2NetworkInterfaceIpV6AddressDetail extends js.Object {
+    var IpV6Address: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2NetworkInterfaceIpV6AddressDetail {
+    @inline
+    def apply(
+        IpV6Address: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2NetworkInterfaceIpV6AddressDetail = {
+      val __obj = js.Dynamic.literal()
+      IpV6Address.foreach(__v => __obj.updateDynamic("IpV6Address")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2NetworkInterfaceIpV6AddressDetail]
+    }
+  }
+
+  /** Provides information about a private IPv4 address that is with the network interface.
+    */
+  @js.native
+  trait AwsEc2NetworkInterfacePrivateIpAddressDetail extends js.Object {
+    var PrivateDnsName: js.UndefOr[NonEmptyString]
+    var PrivateIpAddress: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsEc2NetworkInterfacePrivateIpAddressDetail {
+    @inline
+    def apply(
+        PrivateDnsName: js.UndefOr[NonEmptyString] = js.undefined,
+        PrivateIpAddress: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2NetworkInterfacePrivateIpAddressDetail = {
+      val __obj = js.Dynamic.literal()
+      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsEc2NetworkInterfacePrivateIpAddressDetail]
     }
   }
 
@@ -4146,7 +4389,7 @@ package securityhub {
     }
   }
 
-  /** <p/>
+  /** An option group membership.
     */
   @js.native
   trait AwsRdsDbOptionGroupMembership extends js.Object {
@@ -4167,7 +4410,7 @@ package securityhub {
     }
   }
 
-  /** <p/>
+  /** Provides information about a parameter group for a DB instance.
     */
   @js.native
   trait AwsRdsDbParameterGroup extends js.Object {
@@ -4188,7 +4431,7 @@ package securityhub {
     }
   }
 
-  /** <p/>
+  /** Changes to a DB instance that are currently pending.
     */
   @js.native
   trait AwsRdsDbPendingModifiedValues extends js.Object {
@@ -4248,7 +4491,7 @@ package securityhub {
     }
   }
 
-  /** <p/>
+  /** A processor feature.
     */
   @js.native
   trait AwsRdsDbProcessorFeature extends js.Object {
@@ -4269,7 +4512,7 @@ package securityhub {
     }
   }
 
-  /** <p/>
+  /** Provides details about an Amazon RDS DB cluster snapshot.
     */
   @js.native
   trait AwsRdsDbSnapshotDetails extends js.Object {
@@ -4986,6 +5229,33 @@ package securityhub {
     }
   }
 
+  /** provides information about the Amazon S3 Public Access Block configuration for accounts.
+    */
+  @js.native
+  trait AwsS3AccountPublicAccessBlockDetails extends js.Object {
+    var BlockPublicAcls: js.UndefOr[Boolean]
+    var BlockPublicPolicy: js.UndefOr[Boolean]
+    var IgnorePublicAcls: js.UndefOr[Boolean]
+    var RestrictPublicBuckets: js.UndefOr[Boolean]
+  }
+
+  object AwsS3AccountPublicAccessBlockDetails {
+    @inline
+    def apply(
+        BlockPublicAcls: js.UndefOr[Boolean] = js.undefined,
+        BlockPublicPolicy: js.UndefOr[Boolean] = js.undefined,
+        IgnorePublicAcls: js.UndefOr[Boolean] = js.undefined,
+        RestrictPublicBuckets: js.UndefOr[Boolean] = js.undefined
+    ): AwsS3AccountPublicAccessBlockDetails = {
+      val __obj = js.Dynamic.literal()
+      BlockPublicAcls.foreach(__v => __obj.updateDynamic("BlockPublicAcls")(__v.asInstanceOf[js.Any]))
+      BlockPublicPolicy.foreach(__v => __obj.updateDynamic("BlockPublicPolicy")(__v.asInstanceOf[js.Any]))
+      IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
+      RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsS3AccountPublicAccessBlockDetails]
+    }
+  }
+
   /** The details of an Amazon S3 bucket.
     */
   @js.native
@@ -4993,6 +5263,7 @@ package securityhub {
     var CreatedAt: js.UndefOr[NonEmptyString]
     var OwnerId: js.UndefOr[NonEmptyString]
     var OwnerName: js.UndefOr[NonEmptyString]
+    var PublicAccessBlockConfiguration: js.UndefOr[AwsS3AccountPublicAccessBlockDetails]
     var ServerSideEncryptionConfiguration: js.UndefOr[AwsS3BucketServerSideEncryptionConfiguration]
   }
 
@@ -5002,12 +5273,14 @@ package securityhub {
         CreatedAt: js.UndefOr[NonEmptyString] = js.undefined,
         OwnerId: js.UndefOr[NonEmptyString] = js.undefined,
         OwnerName: js.UndefOr[NonEmptyString] = js.undefined,
+        PublicAccessBlockConfiguration: js.UndefOr[AwsS3AccountPublicAccessBlockDetails] = js.undefined,
         ServerSideEncryptionConfiguration: js.UndefOr[AwsS3BucketServerSideEncryptionConfiguration] = js.undefined
     ): AwsS3BucketDetails = {
       val __obj = js.Dynamic.literal()
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       OwnerName.foreach(__v => __obj.updateDynamic("OwnerName")(__v.asInstanceOf[js.Any]))
+      PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
       ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsS3BucketDetails]
     }
@@ -5174,13 +5447,13 @@ package securityhub {
     var ProductArn: NonEmptyString
     var Resources: ResourceList
     var SchemaVersion: NonEmptyString
-    var Severity: Severity
     var Title: NonEmptyString
-    var Types: TypeList
     var UpdatedAt: NonEmptyString
+    var Action: js.UndefOr[Action]
     var Compliance: js.UndefOr[Compliance]
     var Confidence: js.UndefOr[Int]
     var Criticality: js.UndefOr[Int]
+    var FindingProviderFields: js.UndefOr[FindingProviderFields]
     var FirstObservedAt: js.UndefOr[NonEmptyString]
     var LastObservedAt: js.UndefOr[NonEmptyString]
     var Malware: js.UndefOr[MalwareList]
@@ -5193,8 +5466,10 @@ package securityhub {
     var RecordState: js.UndefOr[RecordState]
     var RelatedFindings: js.UndefOr[RelatedFindingList]
     var Remediation: js.UndefOr[Remediation]
+    var Severity: js.UndefOr[Severity]
     var SourceUrl: js.UndefOr[NonEmptyString]
     var ThreatIntelIndicators: js.UndefOr[ThreatIntelIndicatorList]
+    var Types: js.UndefOr[TypeList]
     var UserDefinedFields: js.UndefOr[FieldMap]
     var VerificationState: js.UndefOr[VerificationState]
     var Vulnerabilities: js.UndefOr[VulnerabilityList]
@@ -5213,13 +5488,13 @@ package securityhub {
         ProductArn: NonEmptyString,
         Resources: ResourceList,
         SchemaVersion: NonEmptyString,
-        Severity: Severity,
         Title: NonEmptyString,
-        Types: TypeList,
         UpdatedAt: NonEmptyString,
+        Action: js.UndefOr[Action] = js.undefined,
         Compliance: js.UndefOr[Compliance] = js.undefined,
         Confidence: js.UndefOr[Int] = js.undefined,
         Criticality: js.UndefOr[Int] = js.undefined,
+        FindingProviderFields: js.UndefOr[FindingProviderFields] = js.undefined,
         FirstObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
         LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
         Malware: js.UndefOr[MalwareList] = js.undefined,
@@ -5232,8 +5507,10 @@ package securityhub {
         RecordState: js.UndefOr[RecordState] = js.undefined,
         RelatedFindings: js.UndefOr[RelatedFindingList] = js.undefined,
         Remediation: js.UndefOr[Remediation] = js.undefined,
+        Severity: js.UndefOr[Severity] = js.undefined,
         SourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
         ThreatIntelIndicators: js.UndefOr[ThreatIntelIndicatorList] = js.undefined,
+        Types: js.UndefOr[TypeList] = js.undefined,
         UserDefinedFields: js.UndefOr[FieldMap] = js.undefined,
         VerificationState: js.UndefOr[VerificationState] = js.undefined,
         Vulnerabilities: js.UndefOr[VulnerabilityList] = js.undefined,
@@ -5249,15 +5526,15 @@ package securityhub {
         "ProductArn" -> ProductArn.asInstanceOf[js.Any],
         "Resources" -> Resources.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
-        "Severity" -> Severity.asInstanceOf[js.Any],
         "Title" -> Title.asInstanceOf[js.Any],
-        "Types" -> Types.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
       Compliance.foreach(__v => __obj.updateDynamic("Compliance")(__v.asInstanceOf[js.Any]))
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       Criticality.foreach(__v => __obj.updateDynamic("Criticality")(__v.asInstanceOf[js.Any]))
+      FindingProviderFields.foreach(__v => __obj.updateDynamic("FindingProviderFields")(__v.asInstanceOf[js.Any]))
       FirstObservedAt.foreach(__v => __obj.updateDynamic("FirstObservedAt")(__v.asInstanceOf[js.Any]))
       LastObservedAt.foreach(__v => __obj.updateDynamic("LastObservedAt")(__v.asInstanceOf[js.Any]))
       Malware.foreach(__v => __obj.updateDynamic("Malware")(__v.asInstanceOf[js.Any]))
@@ -5270,8 +5547,10 @@ package securityhub {
       RecordState.foreach(__v => __obj.updateDynamic("RecordState")(__v.asInstanceOf[js.Any]))
       RelatedFindings.foreach(__v => __obj.updateDynamic("RelatedFindings")(__v.asInstanceOf[js.Any]))
       Remediation.foreach(__v => __obj.updateDynamic("Remediation")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
       ThreatIntelIndicators.foreach(__v => __obj.updateDynamic("ThreatIntelIndicators")(__v.asInstanceOf[js.Any]))
+      Types.foreach(__v => __obj.updateDynamic("Types")(__v.asInstanceOf[js.Any]))
       UserDefinedFields.foreach(__v => __obj.updateDynamic("UserDefinedFields")(__v.asInstanceOf[js.Any]))
       VerificationState.foreach(__v => __obj.updateDynamic("VerificationState")(__v.asInstanceOf[js.Any]))
       Vulnerabilities.foreach(__v => __obj.updateDynamic("Vulnerabilities")(__v.asInstanceOf[js.Any]))
@@ -5293,6 +5572,13 @@ package securityhub {
     var CreatedAt: js.UndefOr[DateFilterList]
     var Criticality: js.UndefOr[NumberFilterList]
     var Description: js.UndefOr[StringFilterList]
+    var FindingProviderFieldsConfidence: js.UndefOr[NumberFilterList]
+    var FindingProviderFieldsCriticality: js.UndefOr[NumberFilterList]
+    var FindingProviderFieldsRelatedFindingsId: js.UndefOr[StringFilterList]
+    var FindingProviderFieldsRelatedFindingsProductArn: js.UndefOr[StringFilterList]
+    var FindingProviderFieldsSeverityLabel: js.UndefOr[StringFilterList]
+    var FindingProviderFieldsSeverityOriginal: js.UndefOr[StringFilterList]
+    var FindingProviderFieldsTypes: js.UndefOr[StringFilterList]
     var FirstObservedAt: js.UndefOr[DateFilterList]
     var GeneratorId: js.UndefOr[StringFilterList]
     var Id: js.UndefOr[StringFilterList]
@@ -5382,6 +5668,13 @@ package securityhub {
         CreatedAt: js.UndefOr[DateFilterList] = js.undefined,
         Criticality: js.UndefOr[NumberFilterList] = js.undefined,
         Description: js.UndefOr[StringFilterList] = js.undefined,
+        FindingProviderFieldsConfidence: js.UndefOr[NumberFilterList] = js.undefined,
+        FindingProviderFieldsCriticality: js.UndefOr[NumberFilterList] = js.undefined,
+        FindingProviderFieldsRelatedFindingsId: js.UndefOr[StringFilterList] = js.undefined,
+        FindingProviderFieldsRelatedFindingsProductArn: js.UndefOr[StringFilterList] = js.undefined,
+        FindingProviderFieldsSeverityLabel: js.UndefOr[StringFilterList] = js.undefined,
+        FindingProviderFieldsSeverityOriginal: js.UndefOr[StringFilterList] = js.undefined,
+        FindingProviderFieldsTypes: js.UndefOr[StringFilterList] = js.undefined,
         FirstObservedAt: js.UndefOr[DateFilterList] = js.undefined,
         GeneratorId: js.UndefOr[StringFilterList] = js.undefined,
         Id: js.UndefOr[StringFilterList] = js.undefined,
@@ -5468,6 +5761,13 @@ package securityhub {
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Criticality.foreach(__v => __obj.updateDynamic("Criticality")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsConfidence.foreach(__v => __obj.updateDynamic("FindingProviderFieldsConfidence")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsCriticality.foreach(__v => __obj.updateDynamic("FindingProviderFieldsCriticality")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsRelatedFindingsId.foreach(__v => __obj.updateDynamic("FindingProviderFieldsRelatedFindingsId")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsRelatedFindingsProductArn.foreach(__v => __obj.updateDynamic("FindingProviderFieldsRelatedFindingsProductArn")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsSeverityLabel.foreach(__v => __obj.updateDynamic("FindingProviderFieldsSeverityLabel")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsSeverityOriginal.foreach(__v => __obj.updateDynamic("FindingProviderFieldsSeverityOriginal")(__v.asInstanceOf[js.Any]))
+      FindingProviderFieldsTypes.foreach(__v => __obj.updateDynamic("FindingProviderFieldsTypes")(__v.asInstanceOf[js.Any]))
       FirstObservedAt.foreach(__v => __obj.updateDynamic("FirstObservedAt")(__v.asInstanceOf[js.Any]))
       GeneratorId.foreach(__v => __obj.updateDynamic("GeneratorId")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
@@ -5646,6 +5946,111 @@ package securityhub {
     }
   }
 
+  /** Provides the details about the compliance status for a patch.
+    */
+  @js.native
+  trait AwsSsmComplianceSummary extends js.Object {
+    var ComplianceType: js.UndefOr[NonEmptyString]
+    var CompliantCriticalCount: js.UndefOr[Int]
+    var CompliantHighCount: js.UndefOr[Int]
+    var CompliantInformationalCount: js.UndefOr[Int]
+    var CompliantLowCount: js.UndefOr[Int]
+    var CompliantMediumCount: js.UndefOr[Int]
+    var CompliantUnspecifiedCount: js.UndefOr[Int]
+    var ExecutionType: js.UndefOr[NonEmptyString]
+    var NonCompliantCriticalCount: js.UndefOr[Int]
+    var NonCompliantHighCount: js.UndefOr[Int]
+    var NonCompliantInformationalCount: js.UndefOr[Int]
+    var NonCompliantLowCount: js.UndefOr[Int]
+    var NonCompliantMediumCount: js.UndefOr[Int]
+    var NonCompliantUnspecifiedCount: js.UndefOr[Int]
+    var OverallSeverity: js.UndefOr[NonEmptyString]
+    var PatchBaselineId: js.UndefOr[NonEmptyString]
+    var PatchGroup: js.UndefOr[NonEmptyString]
+    var Status: js.UndefOr[NonEmptyString]
+  }
+
+  object AwsSsmComplianceSummary {
+    @inline
+    def apply(
+        ComplianceType: js.UndefOr[NonEmptyString] = js.undefined,
+        CompliantCriticalCount: js.UndefOr[Int] = js.undefined,
+        CompliantHighCount: js.UndefOr[Int] = js.undefined,
+        CompliantInformationalCount: js.UndefOr[Int] = js.undefined,
+        CompliantLowCount: js.UndefOr[Int] = js.undefined,
+        CompliantMediumCount: js.UndefOr[Int] = js.undefined,
+        CompliantUnspecifiedCount: js.UndefOr[Int] = js.undefined,
+        ExecutionType: js.UndefOr[NonEmptyString] = js.undefined,
+        NonCompliantCriticalCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantHighCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantInformationalCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantLowCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantMediumCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantUnspecifiedCount: js.UndefOr[Int] = js.undefined,
+        OverallSeverity: js.UndefOr[NonEmptyString] = js.undefined,
+        PatchBaselineId: js.UndefOr[NonEmptyString] = js.undefined,
+        PatchGroup: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsSsmComplianceSummary = {
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      CompliantCriticalCount.foreach(__v => __obj.updateDynamic("CompliantCriticalCount")(__v.asInstanceOf[js.Any]))
+      CompliantHighCount.foreach(__v => __obj.updateDynamic("CompliantHighCount")(__v.asInstanceOf[js.Any]))
+      CompliantInformationalCount.foreach(__v => __obj.updateDynamic("CompliantInformationalCount")(__v.asInstanceOf[js.Any]))
+      CompliantLowCount.foreach(__v => __obj.updateDynamic("CompliantLowCount")(__v.asInstanceOf[js.Any]))
+      CompliantMediumCount.foreach(__v => __obj.updateDynamic("CompliantMediumCount")(__v.asInstanceOf[js.Any]))
+      CompliantUnspecifiedCount.foreach(__v => __obj.updateDynamic("CompliantUnspecifiedCount")(__v.asInstanceOf[js.Any]))
+      ExecutionType.foreach(__v => __obj.updateDynamic("ExecutionType")(__v.asInstanceOf[js.Any]))
+      NonCompliantCriticalCount.foreach(__v => __obj.updateDynamic("NonCompliantCriticalCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantHighCount.foreach(__v => __obj.updateDynamic("NonCompliantHighCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantInformationalCount.foreach(__v => __obj.updateDynamic("NonCompliantInformationalCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantLowCount.foreach(__v => __obj.updateDynamic("NonCompliantLowCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantMediumCount.foreach(__v => __obj.updateDynamic("NonCompliantMediumCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantUnspecifiedCount.foreach(__v => __obj.updateDynamic("NonCompliantUnspecifiedCount")(__v.asInstanceOf[js.Any]))
+      OverallSeverity.foreach(__v => __obj.updateDynamic("OverallSeverity")(__v.asInstanceOf[js.Any]))
+      PatchBaselineId.foreach(__v => __obj.updateDynamic("PatchBaselineId")(__v.asInstanceOf[js.Any]))
+      PatchGroup.foreach(__v => __obj.updateDynamic("PatchGroup")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsSsmComplianceSummary]
+    }
+  }
+
+  /** Provides details about the compliance for a patch.
+    */
+  @js.native
+  trait AwsSsmPatch extends js.Object {
+    var ComplianceSummary: js.UndefOr[AwsSsmComplianceSummary]
+  }
+
+  object AwsSsmPatch {
+    @inline
+    def apply(
+        ComplianceSummary: js.UndefOr[AwsSsmComplianceSummary] = js.undefined
+    ): AwsSsmPatch = {
+      val __obj = js.Dynamic.literal()
+      ComplianceSummary.foreach(__v => __obj.updateDynamic("ComplianceSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsSsmPatch]
+    }
+  }
+
+  /** Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.
+    */
+  @js.native
+  trait AwsSsmPatchComplianceDetails extends js.Object {
+    var Patch: js.UndefOr[AwsSsmPatch]
+  }
+
+  object AwsSsmPatchComplianceDetails {
+    @inline
+    def apply(
+        Patch: js.UndefOr[AwsSsmPatch] = js.undefined
+    ): AwsSsmPatchComplianceDetails = {
+      val __obj = js.Dynamic.literal()
+      Patch.foreach(__v => __obj.updateDynamic("Patch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsSsmPatchComplianceDetails]
+    }
+  }
+
   /** Details about a WAF WebACL.
     */
   @js.native
@@ -5774,13 +6179,13 @@ package securityhub {
 
   @js.native
   trait BatchImportFindingsRequest extends js.Object {
-    var Findings: AwsSecurityFindingList
+    var Findings: BatchImportFindingsRequestFindingList
   }
 
   object BatchImportFindingsRequest {
     @inline
     def apply(
-        Findings: AwsSecurityFindingList
+        Findings: BatchImportFindingsRequestFindingList
     ): BatchImportFindingsRequest = {
       val __obj = js.Dynamic.literal(
         "Findings" -> Findings.asInstanceOf[js.Any]
@@ -5903,6 +6308,33 @@ package securityhub {
     }
   }
 
+  /** An occurrence of sensitive data detected in a Microsoft Excel workbook, comma-separated value (CSV) file, or tab-separated value (TSV) file.
+    */
+  @js.native
+  trait Cell extends js.Object {
+    var CellReference: js.UndefOr[NonEmptyString]
+    var Column: js.UndefOr[Double]
+    var ColumnName: js.UndefOr[NonEmptyString]
+    var Row: js.UndefOr[Double]
+  }
+
+  object Cell {
+    @inline
+    def apply(
+        CellReference: js.UndefOr[NonEmptyString] = js.undefined,
+        Column: js.UndefOr[Double] = js.undefined,
+        ColumnName: js.UndefOr[NonEmptyString] = js.undefined,
+        Row: js.UndefOr[Double] = js.undefined
+    ): Cell = {
+      val __obj = js.Dynamic.literal()
+      CellReference.foreach(__v => __obj.updateDynamic("CellReference")(__v.asInstanceOf[js.Any]))
+      Column.foreach(__v => __obj.updateDynamic("Column")(__v.asInstanceOf[js.Any]))
+      ColumnName.foreach(__v => __obj.updateDynamic("ColumnName")(__v.asInstanceOf[js.Any]))
+      Row.foreach(__v => __obj.updateDynamic("Row")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cell]
+    }
+  }
+
   /** An IPv4 CIDR block association.
     */
   @js.native
@@ -5924,6 +6356,78 @@ package securityhub {
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
       CidrBlockState.foreach(__v => __obj.updateDynamic("CidrBlockState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CidrBlockAssociation]
+    }
+  }
+
+  /** Information about a city.
+    */
+  @js.native
+  trait City extends js.Object {
+    var CityName: js.UndefOr[NonEmptyString]
+  }
+
+  object City {
+    @inline
+    def apply(
+        CityName: js.UndefOr[NonEmptyString] = js.undefined
+    ): City = {
+      val __obj = js.Dynamic.literal()
+      CityName.foreach(__v => __obj.updateDynamic("CityName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[City]
+    }
+  }
+
+  /** Details about the sensitive data that was detected on the resource.
+    */
+  @js.native
+  trait ClassificationResult extends js.Object {
+    var AdditionalOccurrences: js.UndefOr[Boolean]
+    var CustomDataIdentifiers: js.UndefOr[CustomDataIdentifiersResult]
+    var MimeType: js.UndefOr[NonEmptyString]
+    var SensitiveData: js.UndefOr[SensitiveDataResultList]
+    var SizeClassified: js.UndefOr[Double]
+    var Status: js.UndefOr[ClassificationStatus]
+  }
+
+  object ClassificationResult {
+    @inline
+    def apply(
+        AdditionalOccurrences: js.UndefOr[Boolean] = js.undefined,
+        CustomDataIdentifiers: js.UndefOr[CustomDataIdentifiersResult] = js.undefined,
+        MimeType: js.UndefOr[NonEmptyString] = js.undefined,
+        SensitiveData: js.UndefOr[SensitiveDataResultList] = js.undefined,
+        SizeClassified: js.UndefOr[Double] = js.undefined,
+        Status: js.UndefOr[ClassificationStatus] = js.undefined
+    ): ClassificationResult = {
+      val __obj = js.Dynamic.literal()
+      AdditionalOccurrences.foreach(__v => __obj.updateDynamic("AdditionalOccurrences")(__v.asInstanceOf[js.Any]))
+      CustomDataIdentifiers.foreach(__v => __obj.updateDynamic("CustomDataIdentifiers")(__v.asInstanceOf[js.Any]))
+      MimeType.foreach(__v => __obj.updateDynamic("MimeType")(__v.asInstanceOf[js.Any]))
+      SensitiveData.foreach(__v => __obj.updateDynamic("SensitiveData")(__v.asInstanceOf[js.Any]))
+      SizeClassified.foreach(__v => __obj.updateDynamic("SizeClassified")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClassificationResult]
+    }
+  }
+
+  /** Provides details about the current status of the sensitive data detection.
+    */
+  @js.native
+  trait ClassificationStatus extends js.Object {
+    var Code: js.UndefOr[NonEmptyString]
+    var Reason: js.UndefOr[NonEmptyString]
+  }
+
+  object ClassificationStatus {
+    @inline
+    def apply(
+        Code: js.UndefOr[NonEmptyString] = js.undefined,
+        Reason: js.UndefOr[NonEmptyString] = js.undefined
+    ): ClassificationStatus = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClassificationStatus]
     }
   }
 
@@ -5996,6 +6500,27 @@ package securityhub {
     val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
 
     @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  /** Information about a country.
+    */
+  @js.native
+  trait Country extends js.Object {
+    var CountryCode: js.UndefOr[NonEmptyString]
+    var CountryName: js.UndefOr[NonEmptyString]
+  }
+
+  object Country {
+    @inline
+    def apply(
+        CountryCode: js.UndefOr[NonEmptyString] = js.undefined,
+        CountryName: js.UndefOr[NonEmptyString] = js.undefined
+    ): Country = {
+      val __obj = js.Dynamic.literal()
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
+      CountryName.foreach(__v => __obj.updateDynamic("CountryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Country]
+    }
   }
 
   @js.native
@@ -6111,6 +6636,54 @@ package securityhub {
     }
   }
 
+  /** The list of detected instances of sensitive data.
+    */
+  @js.native
+  trait CustomDataIdentifiersDetections extends js.Object {
+    var Arn: js.UndefOr[NonEmptyString]
+    var Count: js.UndefOr[Double]
+    var Name: js.UndefOr[NonEmptyString]
+    var Occurrences: js.UndefOr[Occurrences]
+  }
+
+  object CustomDataIdentifiersDetections {
+    @inline
+    def apply(
+        Arn: js.UndefOr[NonEmptyString] = js.undefined,
+        Count: js.UndefOr[Double] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        Occurrences: js.UndefOr[Occurrences] = js.undefined
+    ): CustomDataIdentifiersDetections = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Occurrences.foreach(__v => __obj.updateDynamic("Occurrences")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomDataIdentifiersDetections]
+    }
+  }
+
+  /** Contains an instance of sensitive data that was detected by a customer-defined identifier.
+    */
+  @js.native
+  trait CustomDataIdentifiersResult extends js.Object {
+    var Detections: js.UndefOr[CustomDataIdentifiersDetectionsList]
+    var TotalCount: js.UndefOr[Double]
+  }
+
+  object CustomDataIdentifiersResult {
+    @inline
+    def apply(
+        Detections: js.UndefOr[CustomDataIdentifiersDetectionsList] = js.undefined,
+        TotalCount: js.UndefOr[Double] = js.undefined
+    ): CustomDataIdentifiersResult = {
+      val __obj = js.Dynamic.literal()
+      Detections.foreach(__v => __obj.updateDynamic("Detections")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomDataIdentifiersResult]
+    }
+  }
+
   /** CVSS scores from the advisory related to the vulnerability.
     */
   @js.native
@@ -6132,6 +6705,27 @@ package securityhub {
       BaseVector.foreach(__v => __obj.updateDynamic("BaseVector")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cvss]
+    }
+  }
+
+  /** Provides details about sensitive data that was detected on a resource.
+    */
+  @js.native
+  trait DataClassificationDetails extends js.Object {
+    var DetailedResultsLocation: js.UndefOr[NonEmptyString]
+    var Result: js.UndefOr[ClassificationResult]
+  }
+
+  object DataClassificationDetails {
+    @inline
+    def apply(
+        DetailedResultsLocation: js.UndefOr[NonEmptyString] = js.undefined,
+        Result: js.UndefOr[ClassificationResult] = js.undefined
+    ): DataClassificationDetails = {
+      val __obj = js.Dynamic.literal()
+      DetailedResultsLocation.foreach(__v => __obj.updateDynamic("DetailedResultsLocation")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataClassificationDetails]
     }
   }
 
@@ -6470,17 +7064,20 @@ package securityhub {
   trait DescribeProductsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var ProductArn: js.UndefOr[NonEmptyString]
   }
 
   object DescribeProductsRequest {
     @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ProductArn: js.UndefOr[NonEmptyString] = js.undefined
     ): DescribeProductsRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProductArn.foreach(__v => __obj.updateDynamic("ProductArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductsRequest]
     }
   }
@@ -6715,6 +7312,30 @@ package securityhub {
     }
   }
 
+  /** Provided if <code>ActionType</code> is <code>DNS_REQUEST</code>. It provides details about the DNS request that was detected.
+    */
+  @js.native
+  trait DnsRequestAction extends js.Object {
+    var Blocked: js.UndefOr[Boolean]
+    var Domain: js.UndefOr[NonEmptyString]
+    var Protocol: js.UndefOr[NonEmptyString]
+  }
+
+  object DnsRequestAction {
+    @inline
+    def apply(
+        Blocked: js.UndefOr[Boolean] = js.undefined,
+        Domain: js.UndefOr[NonEmptyString] = js.undefined,
+        Protocol: js.UndefOr[NonEmptyString] = js.undefined
+    ): DnsRequestAction = {
+      val __obj = js.Dynamic.literal()
+      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DnsRequestAction]
+    }
+  }
+
   @js.native
   trait EnableImportFindingsForProductRequest extends js.Object {
     var ProductArn: NonEmptyString
@@ -6803,6 +7424,78 @@ package securityhub {
     def apply(): EnableSecurityHubResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableSecurityHubResponse]
+    }
+  }
+
+  /** In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update values for confidence, criticality, related findings, severity, and types.
+    */
+  @js.native
+  trait FindingProviderFields extends js.Object {
+    var Confidence: js.UndefOr[RatioScale]
+    var Criticality: js.UndefOr[RatioScale]
+    var RelatedFindings: js.UndefOr[RelatedFindingList]
+    var Severity: js.UndefOr[FindingProviderSeverity]
+    var Types: js.UndefOr[TypeList]
+  }
+
+  object FindingProviderFields {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[RatioScale] = js.undefined,
+        Criticality: js.UndefOr[RatioScale] = js.undefined,
+        RelatedFindings: js.UndefOr[RelatedFindingList] = js.undefined,
+        Severity: js.UndefOr[FindingProviderSeverity] = js.undefined,
+        Types: js.UndefOr[TypeList] = js.undefined
+    ): FindingProviderFields = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Criticality.foreach(__v => __obj.updateDynamic("Criticality")(__v.asInstanceOf[js.Any]))
+      RelatedFindings.foreach(__v => __obj.updateDynamic("RelatedFindings")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      Types.foreach(__v => __obj.updateDynamic("Types")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FindingProviderFields]
+    }
+  }
+
+  /** The severity assigned to the finding by the finding provider.
+    */
+  @js.native
+  trait FindingProviderSeverity extends js.Object {
+    var Label: js.UndefOr[SeverityLabel]
+    var Original: js.UndefOr[NonEmptyString]
+  }
+
+  object FindingProviderSeverity {
+    @inline
+    def apply(
+        Label: js.UndefOr[SeverityLabel] = js.undefined,
+        Original: js.UndefOr[NonEmptyString] = js.undefined
+    ): FindingProviderSeverity = {
+      val __obj = js.Dynamic.literal()
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      Original.foreach(__v => __obj.updateDynamic("Original")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FindingProviderSeverity]
+    }
+  }
+
+  /** Provides the latitude and longitude coordinates of a location.
+    */
+  @js.native
+  trait GeoLocation extends js.Object {
+    var Lat: js.UndefOr[Double]
+    var Lon: js.UndefOr[Double]
+  }
+
+  object GeoLocation {
+    @inline
+    def apply(
+        Lat: js.UndefOr[Double] = js.undefined,
+        Lon: js.UndefOr[Double] = js.undefined
+    ): GeoLocation = {
+      val __obj = js.Dynamic.literal()
+      Lat.foreach(__v => __obj.updateDynamic("Lat")(__v.asInstanceOf[js.Any]))
+      Lon.foreach(__v => __obj.updateDynamic("Lon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeoLocation]
     }
   }
 
@@ -7244,6 +7937,33 @@ package securityhub {
       val __obj = js.Dynamic.literal()
       Cidr.foreach(__v => __obj.updateDynamic("Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpFilter]
+    }
+  }
+
+  /** Provides information about an internet provider.
+    */
+  @js.native
+  trait IpOrganizationDetails extends js.Object {
+    var Asn: js.UndefOr[Int]
+    var AsnOrg: js.UndefOr[NonEmptyString]
+    var Isp: js.UndefOr[NonEmptyString]
+    var Org: js.UndefOr[NonEmptyString]
+  }
+
+  object IpOrganizationDetails {
+    @inline
+    def apply(
+        Asn: js.UndefOr[Int] = js.undefined,
+        AsnOrg: js.UndefOr[NonEmptyString] = js.undefined,
+        Isp: js.UndefOr[NonEmptyString] = js.undefined,
+        Org: js.UndefOr[NonEmptyString] = js.undefined
+    ): IpOrganizationDetails = {
+      val __obj = js.Dynamic.literal()
+      Asn.foreach(__v => __obj.updateDynamic("Asn")(__v.asInstanceOf[js.Any]))
+      AsnOrg.foreach(__v => __obj.updateDynamic("AsnOrg")(__v.asInstanceOf[js.Any]))
+      Isp.foreach(__v => __obj.updateDynamic("Isp")(__v.asInstanceOf[js.Any]))
+      Org.foreach(__v => __obj.updateDynamic("Org")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IpOrganizationDetails]
     }
   }
 
@@ -7692,6 +8412,39 @@ package securityhub {
     }
   }
 
+  /** Provided if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. It provides details about the attempted network connection that was detected.
+    */
+  @js.native
+  trait NetworkConnectionAction extends js.Object {
+    var Blocked: js.UndefOr[Boolean]
+    var ConnectionDirection: js.UndefOr[NonEmptyString]
+    var LocalPortDetails: js.UndefOr[ActionLocalPortDetails]
+    var Protocol: js.UndefOr[NonEmptyString]
+    var RemoteIpDetails: js.UndefOr[ActionRemoteIpDetails]
+    var RemotePortDetails: js.UndefOr[ActionRemotePortDetails]
+  }
+
+  object NetworkConnectionAction {
+    @inline
+    def apply(
+        Blocked: js.UndefOr[Boolean] = js.undefined,
+        ConnectionDirection: js.UndefOr[NonEmptyString] = js.undefined,
+        LocalPortDetails: js.UndefOr[ActionLocalPortDetails] = js.undefined,
+        Protocol: js.UndefOr[NonEmptyString] = js.undefined,
+        RemoteIpDetails: js.UndefOr[ActionRemoteIpDetails] = js.undefined,
+        RemotePortDetails: js.UndefOr[ActionRemotePortDetails] = js.undefined
+    ): NetworkConnectionAction = {
+      val __obj = js.Dynamic.literal()
+      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
+      ConnectionDirection.foreach(__v => __obj.updateDynamic("ConnectionDirection")(__v.asInstanceOf[js.Any]))
+      LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
+      RemotePortDetails.foreach(__v => __obj.updateDynamic("RemotePortDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkConnectionAction]
+    }
+  }
+
   @js.native
   sealed trait NetworkDirection extends js.Any
   object NetworkDirection {
@@ -7844,6 +8597,60 @@ package securityhub {
     }
   }
 
+  /** The detected occurrences of sensitive data.
+    */
+  @js.native
+  trait Occurrences extends js.Object {
+    var Cells: js.UndefOr[Cells]
+    var LineRanges: js.UndefOr[Ranges]
+    var OffsetRanges: js.UndefOr[Ranges]
+    var Pages: js.UndefOr[Pages]
+    var Records: js.UndefOr[Records]
+  }
+
+  object Occurrences {
+    @inline
+    def apply(
+        Cells: js.UndefOr[Cells] = js.undefined,
+        LineRanges: js.UndefOr[Ranges] = js.undefined,
+        OffsetRanges: js.UndefOr[Ranges] = js.undefined,
+        Pages: js.UndefOr[Pages] = js.undefined,
+        Records: js.UndefOr[Records] = js.undefined
+    ): Occurrences = {
+      val __obj = js.Dynamic.literal()
+      Cells.foreach(__v => __obj.updateDynamic("Cells")(__v.asInstanceOf[js.Any]))
+      LineRanges.foreach(__v => __obj.updateDynamic("LineRanges")(__v.asInstanceOf[js.Any]))
+      OffsetRanges.foreach(__v => __obj.updateDynamic("OffsetRanges")(__v.asInstanceOf[js.Any]))
+      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
+      Records.foreach(__v => __obj.updateDynamic("Records")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Occurrences]
+    }
+  }
+
+  /** An occurrence of sensitive data in an Adobe Portable Document Format (PDF) file.
+    */
+  @js.native
+  trait Page extends js.Object {
+    var LineRange: js.UndefOr[Range]
+    var OffsetRange: js.UndefOr[Range]
+    var PageNumber: js.UndefOr[Double]
+  }
+
+  object Page {
+    @inline
+    def apply(
+        LineRange: js.UndefOr[Range] = js.undefined,
+        OffsetRange: js.UndefOr[Range] = js.undefined,
+        PageNumber: js.UndefOr[Double] = js.undefined
+    ): Page = {
+      val __obj = js.Dynamic.literal()
+      LineRange.foreach(__v => __obj.updateDynamic("LineRange")(__v.asInstanceOf[js.Any]))
+      OffsetRange.foreach(__v => __obj.updateDynamic("OffsetRange")(__v.asInstanceOf[js.Any]))
+      PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Page]
+    }
+  }
+
   @js.native
   sealed trait Partition extends js.Any
   object Partition {
@@ -7901,6 +8708,51 @@ package securityhub {
       OperationStartTime.foreach(__v => __obj.updateDynamic("OperationStartTime")(__v.asInstanceOf[js.Any]))
       RebootOption.foreach(__v => __obj.updateDynamic("RebootOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchSummary]
+    }
+  }
+
+  /** Provided if <code>ActionType</code> is <code>PORT_PROBE</code>. It provides details about the attempted port probe that was detected.
+    */
+  @js.native
+  trait PortProbeAction extends js.Object {
+    var Blocked: js.UndefOr[Boolean]
+    var PortProbeDetails: js.UndefOr[PortProbeDetailList]
+  }
+
+  object PortProbeAction {
+    @inline
+    def apply(
+        Blocked: js.UndefOr[Boolean] = js.undefined,
+        PortProbeDetails: js.UndefOr[PortProbeDetailList] = js.undefined
+    ): PortProbeAction = {
+      val __obj = js.Dynamic.literal()
+      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
+      PortProbeDetails.foreach(__v => __obj.updateDynamic("PortProbeDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortProbeAction]
+    }
+  }
+
+  /** A port scan that was part of the port probe. For each scan, PortProbeDetails provides information about the local IP address and port that were scanned, and the remote IP address that the scan originated from.
+    */
+  @js.native
+  trait PortProbeDetail extends js.Object {
+    var LocalIpDetails: js.UndefOr[ActionLocalIpDetails]
+    var LocalPortDetails: js.UndefOr[ActionLocalPortDetails]
+    var RemoteIpDetails: js.UndefOr[ActionRemoteIpDetails]
+  }
+
+  object PortProbeDetail {
+    @inline
+    def apply(
+        LocalIpDetails: js.UndefOr[ActionLocalIpDetails] = js.undefined,
+        LocalPortDetails: js.UndefOr[ActionLocalPortDetails] = js.undefined,
+        RemoteIpDetails: js.UndefOr[ActionRemoteIpDetails] = js.undefined
+    ): PortProbeDetail = {
+      val __obj = js.Dynamic.literal()
+      LocalIpDetails.foreach(__v => __obj.updateDynamic("LocalIpDetails")(__v.asInstanceOf[js.Any]))
+      LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PortProbeDetail]
     }
   }
 
@@ -8002,6 +8854,30 @@ package securityhub {
     }
   }
 
+  /** Identifies where the sensitive data begins and ends.
+    */
+  @js.native
+  trait Range extends js.Object {
+    var End: js.UndefOr[Double]
+    var Start: js.UndefOr[Double]
+    var StartColumn: js.UndefOr[Double]
+  }
+
+  object Range {
+    @inline
+    def apply(
+        End: js.UndefOr[Double] = js.undefined,
+        Start: js.UndefOr[Double] = js.undefined,
+        StartColumn: js.UndefOr[Double] = js.undefined
+    ): Range = {
+      val __obj = js.Dynamic.literal()
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
+      StartColumn.foreach(__v => __obj.updateDynamic("StartColumn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Range]
+    }
+  }
+
   /** A recommendation on how to remediate the issue identified in a finding.
     */
   @js.native
@@ -8020,6 +8896,27 @@ package securityhub {
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Recommendation]
+    }
+  }
+
+  /** An occurrence of sensitive data in an Apache Avro object container or an Apache Parquet file.
+    */
+  @js.native
+  trait Record extends js.Object {
+    var JsonPath: js.UndefOr[NonEmptyString]
+    var RecordIndex: js.UndefOr[Double]
+  }
+
+  object Record {
+    @inline
+    def apply(
+        JsonPath: js.UndefOr[NonEmptyString] = js.undefined,
+        RecordIndex: js.UndefOr[Double] = js.undefined
+    ): Record = {
+      val __obj = js.Dynamic.literal()
+      JsonPath.foreach(__v => __obj.updateDynamic("JsonPath")(__v.asInstanceOf[js.Any]))
+      RecordIndex.foreach(__v => __obj.updateDynamic("RecordIndex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Record]
     }
   }
 
@@ -8078,6 +8975,7 @@ package securityhub {
   trait Resource extends js.Object {
     var Id: NonEmptyString
     var Type: NonEmptyString
+    var DataClassification: js.UndefOr[DataClassificationDetails]
     var Details: js.UndefOr[ResourceDetails]
     var Partition: js.UndefOr[Partition]
     var Region: js.UndefOr[NonEmptyString]
@@ -8090,6 +8988,7 @@ package securityhub {
     def apply(
         Id: NonEmptyString,
         Type: NonEmptyString,
+        DataClassification: js.UndefOr[DataClassificationDetails] = js.undefined,
         Details: js.UndefOr[ResourceDetails] = js.undefined,
         Partition: js.UndefOr[Partition] = js.undefined,
         Region: js.UndefOr[NonEmptyString] = js.undefined,
@@ -8101,6 +9000,7 @@ package securityhub {
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
+      DataClassification.foreach(__v => __obj.updateDynamic("DataClassification")(__v.asInstanceOf[js.Any]))
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
@@ -8149,11 +9049,13 @@ package securityhub {
     var AwsRdsDbInstance: js.UndefOr[AwsRdsDbInstanceDetails]
     var AwsRdsDbSnapshot: js.UndefOr[AwsRdsDbSnapshotDetails]
     var AwsRedshiftCluster: js.UndefOr[AwsRedshiftClusterDetails]
+    var AwsS3AccountPublicAccessBlock: js.UndefOr[AwsS3AccountPublicAccessBlockDetails]
     var AwsS3Bucket: js.UndefOr[AwsS3BucketDetails]
     var AwsS3Object: js.UndefOr[AwsS3ObjectDetails]
     var AwsSecretsManagerSecret: js.UndefOr[AwsSecretsManagerSecretDetails]
     var AwsSnsTopic: js.UndefOr[AwsSnsTopicDetails]
     var AwsSqsQueue: js.UndefOr[AwsSqsQueueDetails]
+    var AwsSsmPatchCompliance: js.UndefOr[AwsSsmPatchComplianceDetails]
     var AwsWafWebAcl: js.UndefOr[AwsWafWebAclDetails]
     var Container: js.UndefOr[ContainerDetails]
     var Other: js.UndefOr[FieldMap]
@@ -8194,11 +9096,13 @@ package securityhub {
         AwsRdsDbInstance: js.UndefOr[AwsRdsDbInstanceDetails] = js.undefined,
         AwsRdsDbSnapshot: js.UndefOr[AwsRdsDbSnapshotDetails] = js.undefined,
         AwsRedshiftCluster: js.UndefOr[AwsRedshiftClusterDetails] = js.undefined,
+        AwsS3AccountPublicAccessBlock: js.UndefOr[AwsS3AccountPublicAccessBlockDetails] = js.undefined,
         AwsS3Bucket: js.UndefOr[AwsS3BucketDetails] = js.undefined,
         AwsS3Object: js.UndefOr[AwsS3ObjectDetails] = js.undefined,
         AwsSecretsManagerSecret: js.UndefOr[AwsSecretsManagerSecretDetails] = js.undefined,
         AwsSnsTopic: js.UndefOr[AwsSnsTopicDetails] = js.undefined,
         AwsSqsQueue: js.UndefOr[AwsSqsQueueDetails] = js.undefined,
+        AwsSsmPatchCompliance: js.UndefOr[AwsSsmPatchComplianceDetails] = js.undefined,
         AwsWafWebAcl: js.UndefOr[AwsWafWebAclDetails] = js.undefined,
         Container: js.UndefOr[ContainerDetails] = js.undefined,
         Other: js.UndefOr[FieldMap] = js.undefined
@@ -8236,11 +9140,13 @@ package securityhub {
       AwsRdsDbInstance.foreach(__v => __obj.updateDynamic("AwsRdsDbInstance")(__v.asInstanceOf[js.Any]))
       AwsRdsDbSnapshot.foreach(__v => __obj.updateDynamic("AwsRdsDbSnapshot")(__v.asInstanceOf[js.Any]))
       AwsRedshiftCluster.foreach(__v => __obj.updateDynamic("AwsRedshiftCluster")(__v.asInstanceOf[js.Any]))
+      AwsS3AccountPublicAccessBlock.foreach(__v => __obj.updateDynamic("AwsS3AccountPublicAccessBlock")(__v.asInstanceOf[js.Any]))
       AwsS3Bucket.foreach(__v => __obj.updateDynamic("AwsS3Bucket")(__v.asInstanceOf[js.Any]))
       AwsS3Object.foreach(__v => __obj.updateDynamic("AwsS3Object")(__v.asInstanceOf[js.Any]))
       AwsSecretsManagerSecret.foreach(__v => __obj.updateDynamic("AwsSecretsManagerSecret")(__v.asInstanceOf[js.Any]))
       AwsSnsTopic.foreach(__v => __obj.updateDynamic("AwsSnsTopic")(__v.asInstanceOf[js.Any]))
       AwsSqsQueue.foreach(__v => __obj.updateDynamic("AwsSqsQueue")(__v.asInstanceOf[js.Any]))
+      AwsSsmPatchCompliance.foreach(__v => __obj.updateDynamic("AwsSsmPatchCompliance")(__v.asInstanceOf[js.Any]))
       AwsWafWebAcl.foreach(__v => __obj.updateDynamic("AwsWafWebAcl")(__v.asInstanceOf[js.Any]))
       Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
       Other.foreach(__v => __obj.updateDynamic("Other")(__v.asInstanceOf[js.Any]))
@@ -8266,6 +9172,54 @@ package securityhub {
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       ProcessingResult.foreach(__v => __obj.updateDynamic("ProcessingResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Result]
+    }
+  }
+
+  /** The list of detected instances of sensitive data.
+    */
+  @js.native
+  trait SensitiveDataDetections extends js.Object {
+    var Count: js.UndefOr[Double]
+    var Occurrences: js.UndefOr[Occurrences]
+    var Type: js.UndefOr[NonEmptyString]
+  }
+
+  object SensitiveDataDetections {
+    @inline
+    def apply(
+        Count: js.UndefOr[Double] = js.undefined,
+        Occurrences: js.UndefOr[Occurrences] = js.undefined,
+        Type: js.UndefOr[NonEmptyString] = js.undefined
+    ): SensitiveDataDetections = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Occurrences.foreach(__v => __obj.updateDynamic("Occurrences")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SensitiveDataDetections]
+    }
+  }
+
+  /** Contains a detected instance of sensitive data that are based on built-in identifiers.
+    */
+  @js.native
+  trait SensitiveDataResult extends js.Object {
+    var Category: js.UndefOr[NonEmptyString]
+    var Detections: js.UndefOr[SensitiveDataDetectionsList]
+    var TotalCount: js.UndefOr[Double]
+  }
+
+  object SensitiveDataResult {
+    @inline
+    def apply(
+        Category: js.UndefOr[NonEmptyString] = js.undefined,
+        Detections: js.UndefOr[SensitiveDataDetectionsList] = js.undefined,
+        TotalCount: js.UndefOr[Double] = js.undefined
+    ): SensitiveDataResult = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Detections.foreach(__v => __obj.updateDynamic("Detections")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SensitiveDataResult]
     }
   }
 

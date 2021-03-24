@@ -10,6 +10,7 @@ package object s3control {
   type AccessPointList = js.Array[AccessPoint]
   type AccessPointName = String
   type AccountId = String
+  type AwsLambdaTransformationPayload = String
   type AwsOrgArn = String
   type BucketName = String
   type Buckets = js.Array[S3BucketArnString]
@@ -58,6 +59,14 @@ package object s3control {
   type NonEmptyMaxLength256String = String
   type NonEmptyMaxLength64String = String
   type NoncurrentVersionTransitionList = js.Array[NoncurrentVersionTransition]
+  type ObjectLambdaAccessPointArn = String
+  type ObjectLambdaAccessPointList = js.Array[ObjectLambdaAccessPoint]
+  type ObjectLambdaAccessPointName = String
+  type ObjectLambdaAllowedFeaturesList = js.Array[ObjectLambdaAllowedFeature]
+  type ObjectLambdaPolicy = String
+  type ObjectLambdaSupportingAccessPointArn = String
+  type ObjectLambdaTransformationConfigurationActionsList = js.Array[ObjectLambdaTransformationConfigurationAction]
+  type ObjectLambdaTransformationConfigurationsList = js.Array[ObjectLambdaTransformationConfiguration]
   type ObjectLockEnabledForBucket = Boolean
   type Policy = String
   type Prefix = String
@@ -94,10 +103,13 @@ package object s3control {
 
   implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
+    @inline def createAccessPointForObjectLambdaFuture(params: CreateAccessPointForObjectLambdaRequest): Future[CreateAccessPointForObjectLambdaResult] = service.createAccessPointForObjectLambda(params).promise().toFuture
     @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[CreateAccessPointResult] = service.createAccessPoint(params).promise().toFuture
     @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketResult] = service.createBucket(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
+    @inline def deleteAccessPointForObjectLambdaFuture(params: DeleteAccessPointForObjectLambdaRequest): Future[js.Object] = service.deleteAccessPointForObjectLambda(params).promise().toFuture
     @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] = service.deleteAccessPoint(params).promise().toFuture
+    @inline def deleteAccessPointPolicyForObjectLambdaFuture(params: DeleteAccessPointPolicyForObjectLambdaRequest): Future[js.Object] = service.deleteAccessPointPolicyForObjectLambda(params).promise().toFuture
     @inline def deleteAccessPointPolicyFuture(params: DeleteAccessPointPolicyRequest): Future[js.Object] = service.deleteAccessPointPolicy(params).promise().toFuture
     @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[js.Object] = service.deleteBucket(params).promise().toFuture
     @inline def deleteBucketLifecycleConfigurationFuture(params: DeleteBucketLifecycleConfigurationRequest): Future[js.Object] = service.deleteBucketLifecycleConfiguration(params).promise().toFuture
@@ -108,8 +120,12 @@ package object s3control {
     @inline def deleteStorageLensConfigurationFuture(params: DeleteStorageLensConfigurationRequest): Future[js.Object] = service.deleteStorageLensConfiguration(params).promise().toFuture
     @inline def deleteStorageLensConfigurationTaggingFuture(params: DeleteStorageLensConfigurationTaggingRequest): Future[DeleteStorageLensConfigurationTaggingResult] = service.deleteStorageLensConfigurationTagging(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] = service.describeJob(params).promise().toFuture
+    @inline def getAccessPointConfigurationForObjectLambdaFuture(params: GetAccessPointConfigurationForObjectLambdaRequest): Future[GetAccessPointConfigurationForObjectLambdaResult] = service.getAccessPointConfigurationForObjectLambda(params).promise().toFuture
+    @inline def getAccessPointForObjectLambdaFuture(params: GetAccessPointForObjectLambdaRequest): Future[GetAccessPointForObjectLambdaResult] = service.getAccessPointForObjectLambda(params).promise().toFuture
     @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] = service.getAccessPoint(params).promise().toFuture
+    @inline def getAccessPointPolicyForObjectLambdaFuture(params: GetAccessPointPolicyForObjectLambdaRequest): Future[GetAccessPointPolicyForObjectLambdaResult] = service.getAccessPointPolicyForObjectLambda(params).promise().toFuture
     @inline def getAccessPointPolicyFuture(params: GetAccessPointPolicyRequest): Future[GetAccessPointPolicyResult] = service.getAccessPointPolicy(params).promise().toFuture
+    @inline def getAccessPointPolicyStatusForObjectLambdaFuture(params: GetAccessPointPolicyStatusForObjectLambdaRequest): Future[GetAccessPointPolicyStatusForObjectLambdaResult] = service.getAccessPointPolicyStatusForObjectLambda(params).promise().toFuture
     @inline def getAccessPointPolicyStatusFuture(params: GetAccessPointPolicyStatusRequest): Future[GetAccessPointPolicyStatusResult] = service.getAccessPointPolicyStatus(params).promise().toFuture
     @inline def getBucketFuture(params: GetBucketRequest): Future[GetBucketResult] = service.getBucket(params).promise().toFuture
     @inline def getBucketLifecycleConfigurationFuture(params: GetBucketLifecycleConfigurationRequest): Future[GetBucketLifecycleConfigurationResult] = service.getBucketLifecycleConfiguration(params).promise().toFuture
@@ -119,10 +135,13 @@ package object s3control {
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] = service.getPublicAccessBlock(params).promise().toFuture
     @inline def getStorageLensConfigurationFuture(params: GetStorageLensConfigurationRequest): Future[GetStorageLensConfigurationResult] = service.getStorageLensConfiguration(params).promise().toFuture
     @inline def getStorageLensConfigurationTaggingFuture(params: GetStorageLensConfigurationTaggingRequest): Future[GetStorageLensConfigurationTaggingResult] = service.getStorageLensConfigurationTagging(params).promise().toFuture
+    @inline def listAccessPointsForObjectLambdaFuture(params: ListAccessPointsForObjectLambdaRequest): Future[ListAccessPointsForObjectLambdaResult] = service.listAccessPointsForObjectLambda(params).promise().toFuture
     @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] = service.listAccessPoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
     @inline def listRegionalBucketsFuture(params: ListRegionalBucketsRequest): Future[ListRegionalBucketsResult] = service.listRegionalBuckets(params).promise().toFuture
     @inline def listStorageLensConfigurationsFuture(params: ListStorageLensConfigurationsRequest): Future[ListStorageLensConfigurationsResult] = service.listStorageLensConfigurations(params).promise().toFuture
+    @inline def putAccessPointConfigurationForObjectLambdaFuture(params: PutAccessPointConfigurationForObjectLambdaRequest): Future[js.Object] = service.putAccessPointConfigurationForObjectLambda(params).promise().toFuture
+    @inline def putAccessPointPolicyForObjectLambdaFuture(params: PutAccessPointPolicyForObjectLambdaRequest): Future[js.Object] = service.putAccessPointPolicyForObjectLambda(params).promise().toFuture
     @inline def putAccessPointPolicyFuture(params: PutAccessPointPolicyRequest): Future[js.Object] = service.putAccessPointPolicy(params).promise().toFuture
     @inline def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] = service.putBucketLifecycleConfiguration(params).promise().toFuture
     @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] = service.putBucketPolicy(params).promise().toFuture
@@ -144,10 +163,13 @@ package s3control {
     def this(config: AWSConfig) = this()
 
     def createAccessPoint(params: CreateAccessPointRequest): Request[CreateAccessPointResult] = js.native
+    def createAccessPointForObjectLambda(params: CreateAccessPointForObjectLambdaRequest): Request[CreateAccessPointForObjectLambdaResult] = js.native
     def createBucket(params: CreateBucketRequest): Request[CreateBucketResult] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
     def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object] = js.native
+    def deleteAccessPointForObjectLambda(params: DeleteAccessPointForObjectLambdaRequest): Request[js.Object] = js.native
     def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object] = js.native
+    def deleteAccessPointPolicyForObjectLambda(params: DeleteAccessPointPolicyForObjectLambdaRequest): Request[js.Object] = js.native
     def deleteBucket(params: DeleteBucketRequest): Request[js.Object] = js.native
     def deleteBucketLifecycleConfiguration(params: DeleteBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
     def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object] = js.native
@@ -158,8 +180,12 @@ package s3control {
     def deleteStorageLensConfigurationTagging(params: DeleteStorageLensConfigurationTaggingRequest): Request[DeleteStorageLensConfigurationTaggingResult] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
     def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult] = js.native
+    def getAccessPointConfigurationForObjectLambda(params: GetAccessPointConfigurationForObjectLambdaRequest): Request[GetAccessPointConfigurationForObjectLambdaResult] = js.native
+    def getAccessPointForObjectLambda(params: GetAccessPointForObjectLambdaRequest): Request[GetAccessPointForObjectLambdaResult] = js.native
     def getAccessPointPolicy(params: GetAccessPointPolicyRequest): Request[GetAccessPointPolicyResult] = js.native
+    def getAccessPointPolicyForObjectLambda(params: GetAccessPointPolicyForObjectLambdaRequest): Request[GetAccessPointPolicyForObjectLambdaResult] = js.native
     def getAccessPointPolicyStatus(params: GetAccessPointPolicyStatusRequest): Request[GetAccessPointPolicyStatusResult] = js.native
+    def getAccessPointPolicyStatusForObjectLambda(params: GetAccessPointPolicyStatusForObjectLambdaRequest): Request[GetAccessPointPolicyStatusForObjectLambdaResult] = js.native
     def getBucket(params: GetBucketRequest): Request[GetBucketResult] = js.native
     def getBucketLifecycleConfiguration(params: GetBucketLifecycleConfigurationRequest): Request[GetBucketLifecycleConfigurationResult] = js.native
     def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyResult] = js.native
@@ -169,10 +195,13 @@ package s3control {
     def getStorageLensConfiguration(params: GetStorageLensConfigurationRequest): Request[GetStorageLensConfigurationResult] = js.native
     def getStorageLensConfigurationTagging(params: GetStorageLensConfigurationTaggingRequest): Request[GetStorageLensConfigurationTaggingResult] = js.native
     def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult] = js.native
+    def listAccessPointsForObjectLambda(params: ListAccessPointsForObjectLambdaRequest): Request[ListAccessPointsForObjectLambdaResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
     def listRegionalBuckets(params: ListRegionalBucketsRequest): Request[ListRegionalBucketsResult] = js.native
     def listStorageLensConfigurations(params: ListStorageLensConfigurationsRequest): Request[ListStorageLensConfigurationsResult] = js.native
+    def putAccessPointConfigurationForObjectLambda(params: PutAccessPointConfigurationForObjectLambdaRequest): Request[js.Object] = js.native
     def putAccessPointPolicy(params: PutAccessPointPolicyRequest): Request[js.Object] = js.native
+    def putAccessPointPolicyForObjectLambda(params: PutAccessPointPolicyForObjectLambdaRequest): Request[js.Object] = js.native
     def putBucketLifecycleConfiguration(params: PutBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
     def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object] = js.native
     def putBucketTagging(params: PutBucketTaggingRequest): Request[js.Object] = js.native
@@ -275,6 +304,29 @@ package s3control {
     }
   }
 
+  /** AWS Lambda function used to transform objects through an Object Lambda Access Point.
+    */
+  @js.native
+  trait AwsLambdaTransformation extends js.Object {
+    var FunctionArn: FunctionArnString
+    var FunctionPayload: js.UndefOr[AwsLambdaTransformationPayload]
+  }
+
+  object AwsLambdaTransformation {
+    @inline
+    def apply(
+        FunctionArn: FunctionArnString,
+        FunctionPayload: js.UndefOr[AwsLambdaTransformationPayload] = js.undefined
+    ): AwsLambdaTransformation = {
+      val __obj = js.Dynamic.literal(
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any]
+      )
+
+      FunctionPayload.foreach(__v => __obj.updateDynamic("FunctionPayload")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsLambdaTransformation]
+    }
+  }
+
   @js.native
   sealed trait BucketCannedACL extends js.Any
   object BucketCannedACL {
@@ -323,6 +375,45 @@ package s3control {
     val `eu-central-1` = "eu-central-1".asInstanceOf[BucketLocationConstraint]
 
     @inline def values = js.Array(EU, `eu-west-1`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`, `cn-north-1`, `eu-central-1`)
+  }
+
+  @js.native
+  trait CreateAccessPointForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Configuration: ObjectLambdaConfiguration
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object CreateAccessPointForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Configuration: ObjectLambdaConfiguration,
+        Name: ObjectLambdaAccessPointName
+    ): CreateAccessPointForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Configuration" -> Configuration.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAccessPointForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAccessPointForObjectLambdaResult extends js.Object {
+    var ObjectLambdaAccessPointArn: js.UndefOr[ObjectLambdaAccessPointArn]
+  }
+
+  object CreateAccessPointForObjectLambdaResult {
+    @inline
+    def apply(
+        ObjectLambdaAccessPointArn: js.UndefOr[ObjectLambdaAccessPointArn] = js.undefined
+    ): CreateAccessPointForObjectLambdaResult = {
+      val __obj = js.Dynamic.literal()
+      ObjectLambdaAccessPointArn.foreach(__v => __obj.updateDynamic("ObjectLambdaAccessPointArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessPointForObjectLambdaResult]
+    }
   }
 
   @js.native
@@ -513,6 +604,46 @@ package s3control {
       val __obj = js.Dynamic.literal()
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResult]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessPointForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object DeleteAccessPointForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName
+    ): DeleteAccessPointForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAccessPointForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessPointPolicyForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object DeleteAccessPointPolicyForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName
+    ): DeleteAccessPointPolicyForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAccessPointPolicyForObjectLambdaRequest]
     }
   }
 
@@ -811,6 +942,120 @@ package s3control {
   }
 
   @js.native
+  trait GetAccessPointConfigurationForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object GetAccessPointConfigurationForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName
+    ): GetAccessPointConfigurationForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessPointConfigurationForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointConfigurationForObjectLambdaResult extends js.Object {
+    var Configuration: js.UndefOr[ObjectLambdaConfiguration]
+  }
+
+  object GetAccessPointConfigurationForObjectLambdaResult {
+    @inline
+    def apply(
+        Configuration: js.UndefOr[ObjectLambdaConfiguration] = js.undefined
+    ): GetAccessPointConfigurationForObjectLambdaResult = {
+      val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointConfigurationForObjectLambdaResult]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object GetAccessPointForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName
+    ): GetAccessPointForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessPointForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointForObjectLambdaResult extends js.Object {
+    var CreationDate: js.UndefOr[CreationDate]
+    var Name: js.UndefOr[ObjectLambdaAccessPointName]
+    var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
+  }
+
+  object GetAccessPointForObjectLambdaResult {
+    @inline
+    def apply(
+        CreationDate: js.UndefOr[CreationDate] = js.undefined,
+        Name: js.UndefOr[ObjectLambdaAccessPointName] = js.undefined,
+        PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
+    ): GetAccessPointForObjectLambdaResult = {
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointForObjectLambdaResult]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object GetAccessPointPolicyForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName
+    ): GetAccessPointPolicyForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessPointPolicyForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyForObjectLambdaResult extends js.Object {
+    var Policy: js.UndefOr[ObjectLambdaPolicy]
+  }
+
+  object GetAccessPointPolicyForObjectLambdaResult {
+    @inline
+    def apply(
+        Policy: js.UndefOr[ObjectLambdaPolicy] = js.undefined
+    ): GetAccessPointPolicyForObjectLambdaResult = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointPolicyForObjectLambdaResult]
+    }
+  }
+
+  @js.native
   trait GetAccessPointPolicyRequest extends js.Object {
     var AccountId: AccountId
     var Name: AccessPointName
@@ -843,6 +1088,42 @@ package s3control {
       val __obj = js.Dynamic.literal()
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessPointPolicyResult]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyStatusForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object GetAccessPointPolicyStatusForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName
+    ): GetAccessPointPolicyStatusForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessPointPolicyStatusForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPointPolicyStatusForObjectLambdaResult extends js.Object {
+    var PolicyStatus: js.UndefOr[PolicyStatus]
+  }
+
+  object GetAccessPointPolicyStatusForObjectLambdaResult {
+    @inline
+    def apply(
+        PolicyStatus: js.UndefOr[PolicyStatus] = js.undefined
+    ): GetAccessPointPolicyStatusForObjectLambdaResult = {
+      val __obj = js.Dynamic.literal()
+      PolicyStatus.foreach(__v => __obj.updateDynamic("PolicyStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessPointPolicyStatusForObjectLambdaResult]
     }
   }
 
@@ -1463,11 +1744,12 @@ package s3control {
     }
   }
 
-  /** The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait JobOperation extends js.Object {
     var LambdaInvoke: js.UndefOr[LambdaInvokeOperation]
+    var S3DeleteObjectTagging: js.UndefOr[S3DeleteObjectTaggingOperation]
     var S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation]
     var S3PutObjectAcl: js.UndefOr[S3SetObjectAclOperation]
     var S3PutObjectCopy: js.UndefOr[S3CopyObjectOperation]
@@ -1480,6 +1762,7 @@ package s3control {
     @inline
     def apply(
         LambdaInvoke: js.UndefOr[LambdaInvokeOperation] = js.undefined,
+        S3DeleteObjectTagging: js.UndefOr[S3DeleteObjectTaggingOperation] = js.undefined,
         S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation] = js.undefined,
         S3PutObjectAcl: js.UndefOr[S3SetObjectAclOperation] = js.undefined,
         S3PutObjectCopy: js.UndefOr[S3CopyObjectOperation] = js.undefined,
@@ -1489,6 +1772,7 @@ package s3control {
     ): JobOperation = {
       val __obj = js.Dynamic.literal()
       LambdaInvoke.foreach(__v => __obj.updateDynamic("LambdaInvoke")(__v.asInstanceOf[js.Any]))
+      S3DeleteObjectTagging.foreach(__v => __obj.updateDynamic("S3DeleteObjectTagging")(__v.asInstanceOf[js.Any]))
       S3InitiateRestoreObject.foreach(__v => __obj.updateDynamic("S3InitiateRestoreObject")(__v.asInstanceOf[js.Any]))
       S3PutObjectAcl.foreach(__v => __obj.updateDynamic("S3PutObjectAcl")(__v.asInstanceOf[js.Any]))
       S3PutObjectCopy.foreach(__v => __obj.updateDynamic("S3PutObjectCopy")(__v.asInstanceOf[js.Any]))
@@ -1735,6 +2019,49 @@ package s3control {
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleRuleFilter]
+    }
+  }
+
+  @js.native
+  trait ListAccessPointsForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+  }
+
+  object ListAccessPointsForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+    ): ListAccessPointsForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPointsForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait ListAccessPointsForObjectLambdaResult extends js.Object {
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+    var ObjectLambdaAccessPointList: js.UndefOr[ObjectLambdaAccessPointList]
+  }
+
+  object ListAccessPointsForObjectLambdaResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
+        ObjectLambdaAccessPointList: js.UndefOr[ObjectLambdaAccessPointList] = js.undefined
+    ): ListAccessPointsForObjectLambdaResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ObjectLambdaAccessPointList.foreach(__v => __obj.updateDynamic("ObjectLambdaAccessPointList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPointsForObjectLambdaResult]
     }
   }
 
@@ -1993,6 +2320,115 @@ package s3control {
     }
   }
 
+  /** An access point with an attached AWS Lambda function used to access transformed data from an Amazon S3 bucket.
+    */
+  @js.native
+  trait ObjectLambdaAccessPoint extends js.Object {
+    var Name: ObjectLambdaAccessPointName
+    var ObjectLambdaAccessPointArn: js.UndefOr[ObjectLambdaAccessPointArn]
+  }
+
+  object ObjectLambdaAccessPoint {
+    @inline
+    def apply(
+        Name: ObjectLambdaAccessPointName,
+        ObjectLambdaAccessPointArn: js.UndefOr[ObjectLambdaAccessPointArn] = js.undefined
+    ): ObjectLambdaAccessPoint = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      ObjectLambdaAccessPointArn.foreach(__v => __obj.updateDynamic("ObjectLambdaAccessPointArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLambdaAccessPoint]
+    }
+  }
+
+  @js.native
+  sealed trait ObjectLambdaAllowedFeature extends js.Any
+  object ObjectLambdaAllowedFeature {
+    val `GetObject-Range` = "GetObject-Range".asInstanceOf[ObjectLambdaAllowedFeature]
+    val `GetObject-PartNumber` = "GetObject-PartNumber".asInstanceOf[ObjectLambdaAllowedFeature]
+
+    @inline def values = js.Array(`GetObject-Range`, `GetObject-PartNumber`)
+  }
+
+  /** A configuration used when creating an Object Lambda Access Point.
+    */
+  @js.native
+  trait ObjectLambdaConfiguration extends js.Object {
+    var SupportingAccessPoint: ObjectLambdaSupportingAccessPointArn
+    var TransformationConfigurations: ObjectLambdaTransformationConfigurationsList
+    var AllowedFeatures: js.UndefOr[ObjectLambdaAllowedFeaturesList]
+    var CloudWatchMetricsEnabled: js.UndefOr[Boolean]
+  }
+
+  object ObjectLambdaConfiguration {
+    @inline
+    def apply(
+        SupportingAccessPoint: ObjectLambdaSupportingAccessPointArn,
+        TransformationConfigurations: ObjectLambdaTransformationConfigurationsList,
+        AllowedFeatures: js.UndefOr[ObjectLambdaAllowedFeaturesList] = js.undefined,
+        CloudWatchMetricsEnabled: js.UndefOr[Boolean] = js.undefined
+    ): ObjectLambdaConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "SupportingAccessPoint" -> SupportingAccessPoint.asInstanceOf[js.Any],
+        "TransformationConfigurations" -> TransformationConfigurations.asInstanceOf[js.Any]
+      )
+
+      AllowedFeatures.foreach(__v => __obj.updateDynamic("AllowedFeatures")(__v.asInstanceOf[js.Any]))
+      CloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("CloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLambdaConfiguration]
+    }
+  }
+
+  /** A container for AwsLambdaTransformation.
+    */
+  @js.native
+  trait ObjectLambdaContentTransformation extends js.Object {
+    var AwsLambda: js.UndefOr[AwsLambdaTransformation]
+  }
+
+  object ObjectLambdaContentTransformation {
+    @inline
+    def apply(
+        AwsLambda: js.UndefOr[AwsLambdaTransformation] = js.undefined
+    ): ObjectLambdaContentTransformation = {
+      val __obj = js.Dynamic.literal()
+      AwsLambda.foreach(__v => __obj.updateDynamic("AwsLambda")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectLambdaContentTransformation]
+    }
+  }
+
+  /** A configuration used when creating an Object Lambda Access Point transformation.
+    */
+  @js.native
+  trait ObjectLambdaTransformationConfiguration extends js.Object {
+    var Actions: ObjectLambdaTransformationConfigurationActionsList
+    var ContentTransformation: ObjectLambdaContentTransformation
+  }
+
+  object ObjectLambdaTransformationConfiguration {
+    @inline
+    def apply(
+        Actions: ObjectLambdaTransformationConfigurationActionsList,
+        ContentTransformation: ObjectLambdaContentTransformation
+    ): ObjectLambdaTransformationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Actions" -> Actions.asInstanceOf[js.Any],
+        "ContentTransformation" -> ContentTransformation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ObjectLambdaTransformationConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait ObjectLambdaTransformationConfigurationAction extends js.Any
+  object ObjectLambdaTransformationConfigurationAction {
+    val GetObject = "GetObject".asInstanceOf[ObjectLambdaTransformationConfigurationAction]
+
+    @inline def values = js.Array(GetObject)
+  }
+
   @js.native
   sealed trait OperationName extends js.Any
   object OperationName {
@@ -2000,11 +2436,21 @@ package s3control {
     val S3PutObjectCopy = "S3PutObjectCopy".asInstanceOf[OperationName]
     val S3PutObjectAcl = "S3PutObjectAcl".asInstanceOf[OperationName]
     val S3PutObjectTagging = "S3PutObjectTagging".asInstanceOf[OperationName]
+    val S3DeleteObjectTagging = "S3DeleteObjectTagging".asInstanceOf[OperationName]
     val S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
     val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
     val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
-    @inline def values = js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention)
+    @inline def values = js.Array(
+      LambdaInvoke,
+      S3PutObjectCopy,
+      S3PutObjectAcl,
+      S3PutObjectTagging,
+      S3DeleteObjectTagging,
+      S3InitiateRestoreObject,
+      S3PutObjectLegalHold,
+      S3PutObjectRetention
+    )
   }
 
   @js.native
@@ -2015,7 +2461,7 @@ package s3control {
     @inline def values = js.Array(V_1)
   }
 
-  /** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait PolicyStatus extends js.Object {
@@ -2098,6 +2544,52 @@ package s3control {
       IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
       RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublicAccessBlockConfiguration]
+    }
+  }
+
+  @js.native
+  trait PutAccessPointConfigurationForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Configuration: ObjectLambdaConfiguration
+    var Name: ObjectLambdaAccessPointName
+  }
+
+  object PutAccessPointConfigurationForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Configuration: ObjectLambdaConfiguration,
+        Name: ObjectLambdaAccessPointName
+    ): PutAccessPointConfigurationForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Configuration" -> Configuration.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutAccessPointConfigurationForObjectLambdaRequest]
+    }
+  }
+
+  @js.native
+  trait PutAccessPointPolicyForObjectLambdaRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: ObjectLambdaAccessPointName
+    var Policy: ObjectLambdaPolicy
+  }
+
+  object PutAccessPointPolicyForObjectLambdaRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: ObjectLambdaAccessPointName,
+        Policy: ObjectLambdaPolicy
+    ): PutAccessPointPolicyForObjectLambdaRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutAccessPointPolicyForObjectLambdaRequest]
     }
   }
 
@@ -2510,6 +3002,19 @@ package s3control {
     }
   }
 
+  /** Contains no configuration parameters because the DELETE Object tagging API only accepts the bucket name and key name as parameters, which are defined in the job's manifest.
+    */
+  @js.native
+  trait S3DeleteObjectTaggingOperation extends js.Object
+
+  object S3DeleteObjectTaggingOperation {
+    @inline
+    def apply(): S3DeleteObjectTaggingOperation = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[S3DeleteObjectTaggingOperation]
+    }
+  }
+
   @js.native
   sealed trait S3GlacierJobTier extends js.Any
   object S3GlacierJobTier {
@@ -2731,7 +3236,7 @@ package s3control {
     @inline def values = js.Array(FULL_CONTROL, READ, WRITE, READ_ACP, WRITE_ACP)
   }
 
-  /** Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait S3Retention extends js.Object {
@@ -2779,7 +3284,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait S3SetObjectLegalHoldOperation extends js.Object {
@@ -2798,7 +3303,7 @@ package s3control {
     }
   }
 
-  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait S3SetObjectRetentionOperation extends js.Object {
@@ -3071,7 +3576,7 @@ package s3control {
     }
   }
 
-  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html| Transitioning objects using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html| Transitioning objects using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait Transition extends js.Object {

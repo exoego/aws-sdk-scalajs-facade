@@ -27,9 +27,11 @@ package object databrew {
   type DatasetList = js.Array[Dataset]
   type DatasetName = String
   type Date = js.Date
+  type Delimiter = String
   type EncryptionKeyArn = String
   type ErrorCode = String
   type ExecutionTime = Int
+  type HeaderRow = Boolean
   type HiddenColumnList = js.Array[ColumnName]
   type JobList = js.Array[Job]
   type JobName = String
@@ -37,6 +39,7 @@ package object databrew {
   type JobRunErrorMessage = String
   type JobRunId = String
   type JobRunList = js.Array[JobRun]
+  type JobSize = Double
   type Key = String
   type LastModifiedBy = String
   type LogGroupName = String
@@ -99,6 +102,7 @@ package object databrew {
     @inline def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] = service.deleteSchedule(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] = service.describeJob(params).promise().toFuture
+    @inline def describeJobRunFuture(params: DescribeJobRunRequest): Future[DescribeJobRunResponse] = service.describeJobRun(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] = service.describeProject(params).promise().toFuture
     @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] = service.describeRecipe(params).promise().toFuture
     @inline def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] = service.describeSchedule(params).promise().toFuture
@@ -147,6 +151,7 @@ package databrew {
     def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResponse] = js.native
+    def describeJobRun(params: DescribeJobRunRequest): Request[DescribeJobRunResponse] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
     def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse] = js.native
     def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse] = js.native
@@ -262,6 +267,7 @@ package databrew {
   trait CreateDatasetRequest extends js.Object {
     var Input: Input
     var Name: DatasetName
+    var Format: js.UndefOr[InputFormat]
     var FormatOptions: js.UndefOr[FormatOptions]
     var Tags: js.UndefOr[TagMap]
   }
@@ -271,6 +277,7 @@ package databrew {
     def apply(
         Input: Input,
         Name: DatasetName,
+        Format: js.UndefOr[InputFormat] = js.undefined,
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDatasetRequest = {
@@ -279,6 +286,7 @@ package databrew {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetRequest]
@@ -310,6 +318,7 @@ package databrew {
     var RoleArn: Arn
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
+    var JobSample: js.UndefOr[JobSample]
     var LogSubscription: js.UndefOr[LogSubscription]
     var MaxCapacity: js.UndefOr[MaxCapacity]
     var MaxRetries: js.UndefOr[MaxRetries]
@@ -326,6 +335,7 @@ package databrew {
         RoleArn: Arn,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
+        JobSample: js.UndefOr[JobSample] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
@@ -341,6 +351,7 @@ package databrew {
 
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
+      JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
@@ -576,7 +587,46 @@ package databrew {
     }
   }
 
-  /** Represents how metadata stored in the AWS Glue Data Catalog is defined in an AWS Glue DataBrew dataset.
+  /** Options that define how DataBrew will read a Csv file when creating a dataset from that file.
+    */
+  @js.native
+  trait CsvOptions extends js.Object {
+    var Delimiter: js.UndefOr[Delimiter]
+    var HeaderRow: js.UndefOr[HeaderRow]
+  }
+
+  object CsvOptions {
+    @inline
+    def apply(
+        Delimiter: js.UndefOr[Delimiter] = js.undefined,
+        HeaderRow: js.UndefOr[HeaderRow] = js.undefined
+    ): CsvOptions = {
+      val __obj = js.Dynamic.literal()
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      HeaderRow.foreach(__v => __obj.updateDynamic("HeaderRow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CsvOptions]
+    }
+  }
+
+  /** Options that define how DataBrew will write a Csv file.
+    */
+  @js.native
+  trait CsvOutputOptions extends js.Object {
+    var Delimiter: js.UndefOr[Delimiter]
+  }
+
+  object CsvOutputOptions {
+    @inline
+    def apply(
+        Delimiter: js.UndefOr[Delimiter] = js.undefined
+    ): CsvOutputOptions = {
+      val __obj = js.Dynamic.literal()
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CsvOutputOptions]
+    }
+  }
+
+  /** Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew dataset.
     */
   @js.native
   trait DataCatalogInputDefinition extends js.Object {
@@ -605,7 +655,7 @@ package databrew {
     }
   }
 
-  /** Represents a dataset that can be processed by AWS Glue DataBrew.
+  /** Represents a dataset that can be processed by DataBrew.
     */
   @js.native
   trait Dataset extends js.Object {
@@ -614,6 +664,7 @@ package databrew {
     var AccountId: js.UndefOr[AccountId]
     var CreateDate: js.UndefOr[Date]
     var CreatedBy: js.UndefOr[CreatedBy]
+    var Format: js.UndefOr[InputFormat]
     var FormatOptions: js.UndefOr[FormatOptions]
     var LastModifiedBy: js.UndefOr[LastModifiedBy]
     var LastModifiedDate: js.UndefOr[Date]
@@ -630,6 +681,7 @@ package databrew {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         CreateDate: js.UndefOr[Date] = js.undefined,
         CreatedBy: js.UndefOr[CreatedBy] = js.undefined,
+        Format: js.UndefOr[InputFormat] = js.undefined,
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
         LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
@@ -645,6 +697,7 @@ package databrew {
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
@@ -854,6 +907,7 @@ package databrew {
     var Name: DatasetName
     var CreateDate: js.UndefOr[Date]
     var CreatedBy: js.UndefOr[CreatedBy]
+    var Format: js.UndefOr[InputFormat]
     var FormatOptions: js.UndefOr[FormatOptions]
     var LastModifiedBy: js.UndefOr[LastModifiedBy]
     var LastModifiedDate: js.UndefOr[Date]
@@ -869,6 +923,7 @@ package databrew {
         Name: DatasetName,
         CreateDate: js.UndefOr[Date] = js.undefined,
         CreatedBy: js.UndefOr[CreatedBy] = js.undefined,
+        Format: js.UndefOr[InputFormat] = js.undefined,
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
         LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
@@ -883,6 +938,7 @@ package databrew {
 
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
@@ -918,6 +974,7 @@ package databrew {
     var DatasetName: js.UndefOr[DatasetName]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
+    var JobSample: js.UndefOr[JobSample]
     var LastModifiedBy: js.UndefOr[LastModifiedBy]
     var LastModifiedDate: js.UndefOr[Date]
     var LogSubscription: js.UndefOr[LogSubscription]
@@ -942,6 +999,7 @@ package databrew {
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
+        JobSample: js.UndefOr[JobSample] = js.undefined,
         LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
@@ -965,6 +1023,7 @@ package databrew {
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
+      JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
@@ -979,6 +1038,86 @@ package databrew {
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeJobRunRequest extends js.Object {
+    var Name: JobName
+    var RunId: JobRunId
+  }
+
+  object DescribeJobRunRequest {
+    @inline
+    def apply(
+        Name: JobName,
+        RunId: JobRunId
+    ): DescribeJobRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeJobRunRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeJobRunResponse extends js.Object {
+    var JobName: JobName
+    var Attempt: js.UndefOr[Attempt]
+    var CompletedOn: js.UndefOr[Date]
+    var DatasetName: js.UndefOr[DatasetName]
+    var ErrorMessage: js.UndefOr[JobRunErrorMessage]
+    var ExecutionTime: js.UndefOr[ExecutionTime]
+    var JobSample: js.UndefOr[JobSample]
+    var LogGroupName: js.UndefOr[LogGroupName]
+    var LogSubscription: js.UndefOr[LogSubscription]
+    var Outputs: js.UndefOr[OutputList]
+    var RecipeReference: js.UndefOr[RecipeReference]
+    var RunId: js.UndefOr[JobRunId]
+    var StartedBy: js.UndefOr[StartedBy]
+    var StartedOn: js.UndefOr[Date]
+    var State: js.UndefOr[JobRunState]
+  }
+
+  object DescribeJobRunResponse {
+    @inline
+    def apply(
+        JobName: JobName,
+        Attempt: js.UndefOr[Attempt] = js.undefined,
+        CompletedOn: js.UndefOr[Date] = js.undefined,
+        DatasetName: js.UndefOr[DatasetName] = js.undefined,
+        ErrorMessage: js.UndefOr[JobRunErrorMessage] = js.undefined,
+        ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
+        JobSample: js.UndefOr[JobSample] = js.undefined,
+        LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
+        LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
+        Outputs: js.UndefOr[OutputList] = js.undefined,
+        RecipeReference: js.UndefOr[RecipeReference] = js.undefined,
+        RunId: js.UndefOr[JobRunId] = js.undefined,
+        StartedBy: js.UndefOr[StartedBy] = js.undefined,
+        StartedOn: js.UndefOr[Date] = js.undefined,
+        State: js.UndefOr[JobRunState] = js.undefined
+    ): DescribeJobRunResponse = {
+      val __obj = js.Dynamic.literal(
+        "JobName" -> JobName.asInstanceOf[js.Any]
+      )
+
+      Attempt.foreach(__v => __obj.updateDynamic("Attempt")(__v.asInstanceOf[js.Any]))
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      RecipeReference.foreach(__v => __obj.updateDynamic("RecipeReference")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      StartedBy.foreach(__v => __obj.updateDynamic("StartedBy")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobRunResponse]
     }
   }
 
@@ -1203,6 +1342,7 @@ package databrew {
     */
   @js.native
   trait ExcelOptions extends js.Object {
+    var HeaderRow: js.UndefOr[HeaderRow]
     var SheetIndexes: js.UndefOr[SheetIndexList]
     var SheetNames: js.UndefOr[SheetNameList]
   }
@@ -1210,20 +1350,23 @@ package databrew {
   object ExcelOptions {
     @inline
     def apply(
+        HeaderRow: js.UndefOr[HeaderRow] = js.undefined,
         SheetIndexes: js.UndefOr[SheetIndexList] = js.undefined,
         SheetNames: js.UndefOr[SheetNameList] = js.undefined
     ): ExcelOptions = {
       val __obj = js.Dynamic.literal()
+      HeaderRow.foreach(__v => __obj.updateDynamic("HeaderRow")(__v.asInstanceOf[js.Any]))
       SheetIndexes.foreach(__v => __obj.updateDynamic("SheetIndexes")(__v.asInstanceOf[js.Any]))
       SheetNames.foreach(__v => __obj.updateDynamic("SheetNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExcelOptions]
     }
   }
 
-  /** Options that define how Microsoft Excel input is to be interpreted by DataBrew.
+  /** Options that define the structure of either Csv, Excel, or JSON input.
     */
   @js.native
   trait FormatOptions extends js.Object {
+    var Csv: js.UndefOr[CsvOptions]
     var Excel: js.UndefOr[ExcelOptions]
     var Json: js.UndefOr[JsonOptions]
   }
@@ -1231,17 +1374,19 @@ package databrew {
   object FormatOptions {
     @inline
     def apply(
+        Csv: js.UndefOr[CsvOptions] = js.undefined,
         Excel: js.UndefOr[ExcelOptions] = js.undefined,
         Json: js.UndefOr[JsonOptions] = js.undefined
     ): FormatOptions = {
       val __obj = js.Dynamic.literal()
+      Csv.foreach(__v => __obj.updateDynamic("Csv")(__v.asInstanceOf[js.Any]))
       Excel.foreach(__v => __obj.updateDynamic("Excel")(__v.asInstanceOf[js.Any]))
       Json.foreach(__v => __obj.updateDynamic("Json")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FormatOptions]
     }
   }
 
-  /** Information on how AWS Glue DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
+  /** Information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
     */
   @js.native
   trait Input extends js.Object {
@@ -1262,7 +1407,18 @@ package databrew {
     }
   }
 
-  /** Represents all of the attributes of an AWS Glue DataBrew job.
+  @js.native
+  sealed trait InputFormat extends js.Any
+  object InputFormat {
+    val CSV = "CSV".asInstanceOf[InputFormat]
+    val JSON = "JSON".asInstanceOf[InputFormat]
+    val PARQUET = "PARQUET".asInstanceOf[InputFormat]
+    val EXCEL = "EXCEL".asInstanceOf[InputFormat]
+
+    @inline def values = js.Array(CSV, JSON, PARQUET, EXCEL)
+  }
+
+  /** Represents all of the attributes of a DataBrew job.
     */
   @js.native
   trait Job extends js.Object {
@@ -1273,6 +1429,7 @@ package databrew {
     var DatasetName: js.UndefOr[DatasetName]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
+    var JobSample: js.UndefOr[JobSample]
     var LastModifiedBy: js.UndefOr[LastModifiedBy]
     var LastModifiedDate: js.UndefOr[Date]
     var LogSubscription: js.UndefOr[LogSubscription]
@@ -1298,6 +1455,7 @@ package databrew {
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
+        JobSample: js.UndefOr[JobSample] = js.undefined,
         LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
@@ -1322,6 +1480,7 @@ package databrew {
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
+      JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
@@ -1339,7 +1498,7 @@ package databrew {
     }
   }
 
-  /** Represents one run of an AWS Glue DataBrew job.
+  /** Represents one run of a DataBrew job.
     */
   @js.native
   trait JobRun extends js.Object {
@@ -1349,6 +1508,7 @@ package databrew {
     var ErrorMessage: js.UndefOr[JobRunErrorMessage]
     var ExecutionTime: js.UndefOr[ExecutionTime]
     var JobName: js.UndefOr[JobName]
+    var JobSample: js.UndefOr[JobSample]
     var LogGroupName: js.UndefOr[LogGroupName]
     var LogSubscription: js.UndefOr[LogSubscription]
     var Outputs: js.UndefOr[OutputList]
@@ -1368,6 +1528,7 @@ package databrew {
         ErrorMessage: js.UndefOr[JobRunErrorMessage] = js.undefined,
         ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
+        JobSample: js.UndefOr[JobSample] = js.undefined,
         LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         Outputs: js.UndefOr[OutputList] = js.undefined,
@@ -1384,6 +1545,7 @@ package databrew {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
       LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
@@ -1408,6 +1570,27 @@ package databrew {
     val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
 
     @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  }
+
+  /** Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+    */
+  @js.native
+  trait JobSample extends js.Object {
+    var Mode: js.UndefOr[SampleMode]
+    var Size: js.UndefOr[JobSize]
+  }
+
+  object JobSample {
+    @inline
+    def apply(
+        Mode: js.UndefOr[SampleMode] = js.undefined,
+        Size: js.UndefOr[JobSize] = js.undefined
+    ): JobSample = {
+      val __obj = js.Dynamic.literal()
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobSample]
+    }
   }
 
   @js.native
@@ -1781,13 +1964,14 @@ package databrew {
     @inline def values = js.Array(ENABLE, DISABLE)
   }
 
-  /** Represents individual output from a particular job run.
+  /** Parameters that specify how and where DataBrew will write the output generated by recipe jobs or profile jobs.
     */
   @js.native
   trait Output extends js.Object {
     var Location: S3Location
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var Format: js.UndefOr[OutputFormat]
+    var FormatOptions: js.UndefOr[OutputFormatOptions]
     var Overwrite: js.UndefOr[OverwriteOutput]
     var PartitionColumns: js.UndefOr[ColumnNameList]
   }
@@ -1798,6 +1982,7 @@ package databrew {
         Location: S3Location,
         CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
         Format: js.UndefOr[OutputFormat] = js.undefined,
+        FormatOptions: js.UndefOr[OutputFormatOptions] = js.undefined,
         Overwrite: js.UndefOr[OverwriteOutput] = js.undefined,
         PartitionColumns: js.UndefOr[ColumnNameList] = js.undefined
     ): Output = {
@@ -1807,6 +1992,7 @@ package databrew {
 
       CompressionFormat.foreach(__v => __obj.updateDynamic("CompressionFormat")(__v.asInstanceOf[js.Any]))
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       Overwrite.foreach(__v => __obj.updateDynamic("Overwrite")(__v.asInstanceOf[js.Any]))
       PartitionColumns.foreach(__v => __obj.updateDynamic("PartitionColumns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Output]
@@ -1827,7 +2013,25 @@ package databrew {
     @inline def values = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
   }
 
-  /** Represents all of the attributes of an AWS Glue DataBrew project.
+  /** Options that define the structure of Csv job output.
+    */
+  @js.native
+  trait OutputFormatOptions extends js.Object {
+    var Csv: js.UndefOr[CsvOutputOptions]
+  }
+
+  object OutputFormatOptions {
+    @inline
+    def apply(
+        Csv: js.UndefOr[CsvOutputOptions] = js.undefined
+    ): OutputFormatOptions = {
+      val __obj = js.Dynamic.literal()
+      Csv.foreach(__v => __obj.updateDynamic("Csv")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutputFormatOptions]
+    }
+  }
+
+  /** Represents all of the attributes of a DataBrew project.
     */
   @js.native
   trait Project extends js.Object {
@@ -1924,7 +2128,7 @@ package databrew {
     }
   }
 
-  /** Represents one or more actions to be performed on an AWS Glue DataBrew dataset.
+  /** Represents one or more actions to be performed on a DataBrew dataset.
     */
   @js.native
   trait Recipe extends js.Object {
@@ -1980,7 +2184,7 @@ package databrew {
     }
   }
 
-  /** Represents a transformation and associated parameters that are used to apply a change to an AWS Glue DataBrew dataset. For more information, see [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html|Recipe structure]] and [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html|ecipe actions reference]] .
+  /** Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html|Recipe structure]] and [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html|Recipe actions reference]].
     */
   @js.native
   trait RecipeAction extends js.Object {
@@ -2003,7 +2207,7 @@ package databrew {
     }
   }
 
-  /** Represents all of the attributes of an AWS Glue DataBrew recipe.
+  /** Represents the name and version of a DataBrew recipe.
     */
   @js.native
   trait RecipeReference extends js.Object {
@@ -2026,7 +2230,7 @@ package databrew {
     }
   }
 
-  /** Represents a single step to be performed in an AWS Glue DataBrew recipe.
+  /** Represents a single step from a DataBrew recipe to be performed.
     */
   @js.native
   trait RecipeStep extends js.Object {
@@ -2096,7 +2300,7 @@ package databrew {
     }
   }
 
-  /** Represents the sample size and sampling type for AWS Glue DataBrew to use for interactive data analysis.
+  /** Represents the sample size and sampling type for DataBrew to use for interactive data analysis.
     */
   @js.native
   trait Sample extends js.Object {
@@ -2117,6 +2321,15 @@ package databrew {
       Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Sample]
     }
+  }
+
+  @js.native
+  sealed trait SampleMode extends js.Any
+  object SampleMode {
+    val FULL_DATASET = "FULL_DATASET".asInstanceOf[SampleMode]
+    val CUSTOM_ROWS = "CUSTOM_ROWS".asInstanceOf[SampleMode]
+
+    @inline def values = js.Array(FULL_DATASET, CUSTOM_ROWS)
   }
 
   @js.native
@@ -2438,6 +2651,7 @@ package databrew {
   trait UpdateDatasetRequest extends js.Object {
     var Input: Input
     var Name: DatasetName
+    var Format: js.UndefOr[InputFormat]
     var FormatOptions: js.UndefOr[FormatOptions]
   }
 
@@ -2446,6 +2660,7 @@ package databrew {
     def apply(
         Input: Input,
         Name: DatasetName,
+        Format: js.UndefOr[InputFormat] = js.undefined,
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined
     ): UpdateDatasetRequest = {
       val __obj = js.Dynamic.literal(
@@ -2453,6 +2668,7 @@ package databrew {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatasetRequest]
     }
@@ -2482,6 +2698,7 @@ package databrew {
     var RoleArn: Arn
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
+    var JobSample: js.UndefOr[JobSample]
     var LogSubscription: js.UndefOr[LogSubscription]
     var MaxCapacity: js.UndefOr[MaxCapacity]
     var MaxRetries: js.UndefOr[MaxRetries]
@@ -2496,6 +2713,7 @@ package databrew {
         RoleArn: Arn,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
+        JobSample: js.UndefOr[JobSample] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
@@ -2509,6 +2727,7 @@ package databrew {
 
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
+      JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
@@ -2720,7 +2939,7 @@ package databrew {
     }
   }
 
-  /** Represents the data being being transformed during an AWS Glue DataBrew project session.
+  /** Represents the data being being transformed during an action.
     */
   @js.native
   trait ViewFrame extends js.Object {

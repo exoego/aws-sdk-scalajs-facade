@@ -37,6 +37,11 @@ package object lookoutvision {
   type S3ObjectKey = String
   type S3ObjectVersion = String
   type Stream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type TagArn = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
 
   implicit final class LookoutVisionOps(private val service: LookoutVision) extends AnyVal {
 
@@ -53,8 +58,11 @@ package object lookoutvision {
     @inline def listDatasetEntriesFuture(params: ListDatasetEntriesRequest): Future[ListDatasetEntriesResponse] = service.listDatasetEntries(params).promise().toFuture
     @inline def listModelsFuture(params: ListModelsRequest): Future[ListModelsResponse] = service.listModels(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def startModelFuture(params: StartModelRequest): Future[StartModelResponse] = service.startModel(params).promise().toFuture
     @inline def stopModelFuture(params: StopModelRequest): Future[StopModelResponse] = service.stopModel(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDatasetEntriesFuture(params: UpdateDatasetEntriesRequest): Future[UpdateDatasetEntriesResponse] = service.updateDatasetEntries(params).promise().toFuture
 
   }
@@ -79,8 +87,11 @@ package lookoutvision {
     def listDatasetEntries(params: ListDatasetEntriesRequest): Request[ListDatasetEntriesResponse] = js.native
     def listModels(params: ListModelsRequest): Request[ListModelsResponse] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startModel(params: StartModelRequest): Request[StartModelResponse] = js.native
     def stopModel(params: StopModelRequest): Request[StopModelResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatasetEntries(params: UpdateDatasetEntriesRequest): Request[UpdateDatasetEntriesResponse] = js.native
   }
 
@@ -132,8 +143,9 @@ package lookoutvision {
     var OutputConfig: OutputConfig
     var ProjectName: ProjectName
     var ClientToken: js.UndefOr[ClientToken]
-    var Description: js.UndefOr[ModelDescription]
+    var Description: js.UndefOr[ModelDescriptionMessage]
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateModelRequest {
@@ -142,8 +154,9 @@ package lookoutvision {
         OutputConfig: OutputConfig,
         ProjectName: ProjectName,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
-        Description: js.UndefOr[ModelDescription] = js.undefined,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        Description: js.UndefOr[ModelDescriptionMessage] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateModelRequest = {
       val __obj = js.Dynamic.literal(
         "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
@@ -153,6 +166,7 @@ package lookoutvision {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelRequest]
     }
   }
@@ -833,6 +847,39 @@ package lookoutvision {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: TagArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: TagArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** Describes an Amazon Lookout for Vision model.
     */
   @js.native
@@ -887,12 +934,13 @@ package lookoutvision {
   @js.native
   sealed trait ModelHostingStatus extends js.Any
   object ModelHostingStatus {
-    val RUNNING = "RUNNING".asInstanceOf[ModelHostingStatus]
-    val STARTING = "STARTING".asInstanceOf[ModelHostingStatus]
-    val STOPPED = "STOPPED".asInstanceOf[ModelHostingStatus]
-    val FAILED = "FAILED".asInstanceOf[ModelHostingStatus]
+    val STARTING_HOSTING = "STARTING_HOSTING".asInstanceOf[ModelHostingStatus]
+    val HOSTED = "HOSTED".asInstanceOf[ModelHostingStatus]
+    val HOSTING_FAILED = "HOSTING_FAILED".asInstanceOf[ModelHostingStatus]
+    val STOPPING_HOSTING = "STOPPING_HOSTING".asInstanceOf[ModelHostingStatus]
+    val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[ModelHostingStatus]
 
-    @inline def values = js.Array(RUNNING, STARTING, STOPPED, FAILED)
+    @inline def values = js.Array(STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING)
   }
 
   /** Describes an Amazon Lookout for Vision model.
@@ -1063,7 +1111,7 @@ package lookoutvision {
     }
   }
 
-  /** Information about the location of a manifest file.
+  /** Information about the location training output.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -1166,6 +1214,90 @@ package lookoutvision {
       val __obj = js.Dynamic.literal()
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopModelResponse]
+    }
+  }
+
+  /** A key and value pair that is attached to the specified Amazon Lookout for Vision model.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: TagArn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: TagArn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: TagArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: TagArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

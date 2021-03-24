@@ -512,6 +512,7 @@ package globalaccelerator {
     var Name: GenericString
     var Enabled: js.UndefOr[GenericBoolean]
     var IpAddressType: js.UndefOr[IpAddressType]
+    var IpAddresses: js.UndefOr[IpAddresses]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -522,6 +523,7 @@ package globalaccelerator {
         Name: GenericString,
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
+        IpAddresses: js.UndefOr[IpAddresses] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateCustomRoutingAcceleratorRequest = {
       val __obj = js.Dynamic.literal(
@@ -531,6 +533,7 @@ package globalaccelerator {
 
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
+      IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomRoutingAcceleratorRequest]
     }

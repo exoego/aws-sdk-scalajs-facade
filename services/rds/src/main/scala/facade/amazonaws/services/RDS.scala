@@ -12,11 +12,13 @@ package object rds {
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type AvailabilityZones = js.Array[String]
   type AvailableProcessorFeatureList = js.Array[AvailableProcessorFeature]
+  type AwsBackupRecoveryPointArn = String
   type BooleanOptional = Boolean
   type CertificateList = js.Array[Certificate]
   type CustomAvailabilityZoneList = js.Array[CustomAvailabilityZone]
   type DBClusterBacktrackList = js.Array[DBClusterBacktrack]
   type DBClusterEndpointList = js.Array[DBClusterEndpoint]
+  type DBClusterIdentifier = String
   type DBClusterList = js.Array[DBCluster]
   type DBClusterMemberList = js.Array[DBClusterMember]
   type DBClusterOptionGroupMemberships = js.Array[DBClusterOptionGroupStatus]
@@ -32,7 +34,10 @@ package object rds {
   type DBInstanceStatusInfoList = js.Array[DBInstanceStatusInfo]
   type DBParameterGroupList = js.Array[DBParameterGroup]
   type DBParameterGroupStatusList = js.Array[DBParameterGroupStatus]
+  type DBProxyEndpointList = js.Array[DBProxyEndpoint]
+  type DBProxyEndpointName = String
   type DBProxyList = js.Array[DBProxy]
+  type DBProxyName = String
   type DBSecurityGroupMembershipList = js.Array[DBSecurityGroupMembership]
   type DBSecurityGroupNameList = js.Array[String]
   type DBSecurityGroups = js.Array[DBSecurityGroup]
@@ -53,6 +58,7 @@ package object rds {
   type FeatureNameList = js.Array[String]
   type FilterList = js.Array[Filter]
   type FilterValueList = js.Array[String]
+  type GlobalClusterIdentifier = String
   type GlobalClusterList = js.Array[GlobalCluster]
   type GlobalClusterMemberList = js.Array[GlobalClusterMember]
   type IPRangeList = js.Array[IPRange]
@@ -130,6 +136,7 @@ package object rds {
     @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] = service.createDBInstance(params).promise().toFuture
     @inline def createDBInstanceReadReplicaFuture(params: CreateDBInstanceReadReplicaMessage): Future[CreateDBInstanceReadReplicaResult] = service.createDBInstanceReadReplica(params).promise().toFuture
     @inline def createDBParameterGroupFuture(params: CreateDBParameterGroupMessage): Future[CreateDBParameterGroupResult] = service.createDBParameterGroup(params).promise().toFuture
+    @inline def createDBProxyEndpointFuture(params: CreateDBProxyEndpointRequest): Future[CreateDBProxyEndpointResponse] = service.createDBProxyEndpoint(params).promise().toFuture
     @inline def createDBProxyFuture(params: CreateDBProxyRequest): Future[CreateDBProxyResponse] = service.createDBProxy(params).promise().toFuture
     @inline def createDBSecurityGroupFuture(params: CreateDBSecurityGroupMessage): Future[CreateDBSecurityGroupResult] = service.createDBSecurityGroup(params).promise().toFuture
     @inline def createDBSnapshotFuture(params: CreateDBSnapshotMessage): Future[CreateDBSnapshotResult] = service.createDBSnapshot(params).promise().toFuture
@@ -145,6 +152,7 @@ package object rds {
     @inline def deleteDBInstanceAutomatedBackupFuture(params: DeleteDBInstanceAutomatedBackupMessage): Future[DeleteDBInstanceAutomatedBackupResult] = service.deleteDBInstanceAutomatedBackup(params).promise().toFuture
     @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] = service.deleteDBInstance(params).promise().toFuture
     @inline def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] = service.deleteDBParameterGroup(params).promise().toFuture
+    @inline def deleteDBProxyEndpointFuture(params: DeleteDBProxyEndpointRequest): Future[DeleteDBProxyEndpointResponse] = service.deleteDBProxyEndpoint(params).promise().toFuture
     @inline def deleteDBProxyFuture(params: DeleteDBProxyRequest): Future[DeleteDBProxyResponse] = service.deleteDBProxy(params).promise().toFuture
     @inline def deleteDBSecurityGroupFuture(params: DeleteDBSecurityGroupMessage): Future[js.Object] = service.deleteDBSecurityGroup(params).promise().toFuture
     @inline def deleteDBSnapshotFuture(params: DeleteDBSnapshotMessage): Future[DeleteDBSnapshotResult] = service.deleteDBSnapshot(params).promise().toFuture
@@ -171,6 +179,7 @@ package object rds {
     @inline def describeDBParameterGroupsFuture(params: DescribeDBParameterGroupsMessage): Future[DBParameterGroupsMessage] = service.describeDBParameterGroups(params).promise().toFuture
     @inline def describeDBParametersFuture(params: DescribeDBParametersMessage): Future[DBParameterGroupDetails] = service.describeDBParameters(params).promise().toFuture
     @inline def describeDBProxiesFuture(params: DescribeDBProxiesRequest): Future[DescribeDBProxiesResponse] = service.describeDBProxies(params).promise().toFuture
+    @inline def describeDBProxyEndpointsFuture(params: DescribeDBProxyEndpointsRequest): Future[DescribeDBProxyEndpointsResponse] = service.describeDBProxyEndpoints(params).promise().toFuture
     @inline def describeDBProxyTargetGroupsFuture(params: DescribeDBProxyTargetGroupsRequest): Future[DescribeDBProxyTargetGroupsResponse] = service.describeDBProxyTargetGroups(params).promise().toFuture
     @inline def describeDBProxyTargetsFuture(params: DescribeDBProxyTargetsRequest): Future[DescribeDBProxyTargetsResponse] = service.describeDBProxyTargets(params).promise().toFuture
     @inline def describeDBSecurityGroupsFuture(params: DescribeDBSecurityGroupsMessage): Future[DBSecurityGroupMessage] = service.describeDBSecurityGroups(params).promise().toFuture
@@ -195,6 +204,7 @@ package object rds {
     @inline def describeValidDBInstanceModificationsFuture(params: DescribeValidDBInstanceModificationsMessage): Future[DescribeValidDBInstanceModificationsResult] = service.describeValidDBInstanceModifications(params).promise().toFuture
     @inline def downloadDBLogFilePortionFuture(params: DownloadDBLogFilePortionMessage): Future[DownloadDBLogFilePortionDetails] = service.downloadDBLogFilePortion(params).promise().toFuture
     @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] = service.failoverDBCluster(params).promise().toFuture
+    @inline def failoverGlobalClusterFuture(params: FailoverGlobalClusterMessage): Future[FailoverGlobalClusterResult] = service.failoverGlobalCluster(params).promise().toFuture
     @inline def importInstallationMediaFuture(params: ImportInstallationMediaMessage): Future[InstallationMedia] = service.importInstallationMedia(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] = service.listTagsForResource(params).promise().toFuture
     @inline def modifyCertificatesFuture(params: ModifyCertificatesMessage): Future[ModifyCertificatesResult] = service.modifyCertificates(params).promise().toFuture
@@ -205,6 +215,7 @@ package object rds {
     @inline def modifyDBClusterSnapshotAttributeFuture(params: ModifyDBClusterSnapshotAttributeMessage): Future[ModifyDBClusterSnapshotAttributeResult] = service.modifyDBClusterSnapshotAttribute(params).promise().toFuture
     @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] = service.modifyDBInstance(params).promise().toFuture
     @inline def modifyDBParameterGroupFuture(params: ModifyDBParameterGroupMessage): Future[DBParameterGroupNameMessage] = service.modifyDBParameterGroup(params).promise().toFuture
+    @inline def modifyDBProxyEndpointFuture(params: ModifyDBProxyEndpointRequest): Future[ModifyDBProxyEndpointResponse] = service.modifyDBProxyEndpoint(params).promise().toFuture
     @inline def modifyDBProxyFuture(params: ModifyDBProxyRequest): Future[ModifyDBProxyResponse] = service.modifyDBProxy(params).promise().toFuture
     @inline def modifyDBProxyTargetGroupFuture(params: ModifyDBProxyTargetGroupRequest): Future[ModifyDBProxyTargetGroupResponse] = service.modifyDBProxyTargetGroup(params).promise().toFuture
     @inline def modifyDBSnapshotAttributeFuture(params: ModifyDBSnapshotAttributeMessage): Future[ModifyDBSnapshotAttributeResult] = service.modifyDBSnapshotAttribute(params).promise().toFuture
@@ -273,6 +284,7 @@ package rds {
     def createDBInstanceReadReplica(params: CreateDBInstanceReadReplicaMessage): Request[CreateDBInstanceReadReplicaResult] = js.native
     def createDBParameterGroup(params: CreateDBParameterGroupMessage): Request[CreateDBParameterGroupResult] = js.native
     def createDBProxy(params: CreateDBProxyRequest): Request[CreateDBProxyResponse] = js.native
+    def createDBProxyEndpoint(params: CreateDBProxyEndpointRequest): Request[CreateDBProxyEndpointResponse] = js.native
     def createDBSecurityGroup(params: CreateDBSecurityGroupMessage): Request[CreateDBSecurityGroupResult] = js.native
     def createDBSnapshot(params: CreateDBSnapshotMessage): Request[CreateDBSnapshotResult] = js.native
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
@@ -288,6 +300,7 @@ package rds {
     def deleteDBInstanceAutomatedBackup(params: DeleteDBInstanceAutomatedBackupMessage): Request[DeleteDBInstanceAutomatedBackupResult] = js.native
     def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBProxy(params: DeleteDBProxyRequest): Request[DeleteDBProxyResponse] = js.native
+    def deleteDBProxyEndpoint(params: DeleteDBProxyEndpointRequest): Request[DeleteDBProxyEndpointResponse] = js.native
     def deleteDBSecurityGroup(params: DeleteDBSecurityGroupMessage): Request[js.Object] = js.native
     def deleteDBSnapshot(params: DeleteDBSnapshotMessage): Request[DeleteDBSnapshotResult] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
@@ -313,6 +326,7 @@ package rds {
     def describeDBParameterGroups(params: DescribeDBParameterGroupsMessage): Request[DBParameterGroupsMessage] = js.native
     def describeDBParameters(params: DescribeDBParametersMessage): Request[DBParameterGroupDetails] = js.native
     def describeDBProxies(params: DescribeDBProxiesRequest): Request[DescribeDBProxiesResponse] = js.native
+    def describeDBProxyEndpoints(params: DescribeDBProxyEndpointsRequest): Request[DescribeDBProxyEndpointsResponse] = js.native
     def describeDBProxyTargetGroups(params: DescribeDBProxyTargetGroupsRequest): Request[DescribeDBProxyTargetGroupsResponse] = js.native
     def describeDBProxyTargets(params: DescribeDBProxyTargetsRequest): Request[DescribeDBProxyTargetsResponse] = js.native
     def describeDBSecurityGroups(params: DescribeDBSecurityGroupsMessage): Request[DBSecurityGroupMessage] = js.native
@@ -337,6 +351,7 @@ package rds {
     def describeValidDBInstanceModifications(params: DescribeValidDBInstanceModificationsMessage): Request[DescribeValidDBInstanceModificationsResult] = js.native
     def downloadDBLogFilePortion(params: DownloadDBLogFilePortionMessage): Request[DownloadDBLogFilePortionDetails] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
+    def failoverGlobalCluster(params: FailoverGlobalClusterMessage): Request[FailoverGlobalClusterResult] = js.native
     def importInstallationMedia(params: ImportInstallationMediaMessage): Request[InstallationMedia] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyCertificates(params: ModifyCertificatesMessage): Request[ModifyCertificatesResult] = js.native
@@ -348,6 +363,7 @@ package rds {
     def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBParameterGroup(params: ModifyDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
     def modifyDBProxy(params: ModifyDBProxyRequest): Request[ModifyDBProxyResponse] = js.native
+    def modifyDBProxyEndpoint(params: ModifyDBProxyEndpointRequest): Request[ModifyDBProxyEndpointResponse] = js.native
     def modifyDBProxyTargetGroup(params: ModifyDBProxyTargetGroupRequest): Request[ModifyDBProxyTargetGroupResponse] = js.native
     def modifyDBSnapshot(params: ModifyDBSnapshotMessage): Request[ModifyDBSnapshotResult] = js.native
     def modifyDBSnapshotAttribute(params: ModifyDBSnapshotAttributeMessage): Request[ModifyDBSnapshotAttributeResult] = js.native
@@ -1866,6 +1882,55 @@ package rds {
   }
 
   @js.native
+  trait CreateDBProxyEndpointRequest extends js.Object {
+    var DBProxyEndpointName: DBProxyEndpointName
+    var DBProxyName: DBProxyName
+    var VpcSubnetIds: StringList
+    var Tags: js.UndefOr[TagList]
+    var TargetRole: js.UndefOr[DBProxyEndpointTargetRole]
+    var VpcSecurityGroupIds: js.UndefOr[StringList]
+  }
+
+  object CreateDBProxyEndpointRequest {
+    @inline
+    def apply(
+        DBProxyEndpointName: DBProxyEndpointName,
+        DBProxyName: DBProxyName,
+        VpcSubnetIds: StringList,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetRole: js.UndefOr[DBProxyEndpointTargetRole] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[StringList] = js.undefined
+    ): CreateDBProxyEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DBProxyEndpointName" -> DBProxyEndpointName.asInstanceOf[js.Any],
+        "DBProxyName" -> DBProxyName.asInstanceOf[js.Any],
+        "VpcSubnetIds" -> VpcSubnetIds.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetRole.foreach(__v => __obj.updateDynamic("TargetRole")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBProxyEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDBProxyEndpointResponse extends js.Object {
+    var DBProxyEndpoint: js.UndefOr[DBProxyEndpoint]
+  }
+
+  object CreateDBProxyEndpointResponse {
+    @inline
+    def apply(
+        DBProxyEndpoint: js.UndefOr[DBProxyEndpoint] = js.undefined
+    ): CreateDBProxyEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      DBProxyEndpoint.foreach(__v => __obj.updateDynamic("DBProxyEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDBProxyEndpointResponse]
+    }
+  }
+
+  @js.native
   trait CreateDBProxyRequest extends js.Object {
     var Auth: UserAuthConfigList
     var DBProxyName: String
@@ -2782,6 +2847,7 @@ package rds {
     var DBClusterSnapshotArn: js.UndefOr[String]
     var DBClusterSnapshotIdentifier: js.UndefOr[String]
     var Engine: js.UndefOr[String]
+    var EngineMode: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean]
     var KmsKeyId: js.UndefOr[String]
@@ -2808,6 +2874,7 @@ package rds {
         DBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
+        EngineMode: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -2831,6 +2898,7 @@ package rds {
       DBClusterSnapshotArn.foreach(__v => __obj.updateDynamic("DBClusterSnapshotArn")(__v.asInstanceOf[js.Any]))
       DBClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -3013,6 +3081,7 @@ package rds {
     var AssociatedRoles: js.UndefOr[DBInstanceRoles]
     var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
     var AvailabilityZone: js.UndefOr[String]
+    var AwsBackupRecoveryPointArn: js.UndefOr[String]
     var BackupRetentionPeriod: js.UndefOr[Int]
     var CACertificateIdentifier: js.UndefOr[String]
     var CharacterSetName: js.UndefOr[String]
@@ -3081,6 +3150,7 @@ package rds {
         AssociatedRoles: js.UndefOr[DBInstanceRoles] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        AwsBackupRecoveryPointArn: js.UndefOr[String] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
         CACertificateIdentifier: js.UndefOr[String] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined,
@@ -3146,6 +3216,7 @@ package rds {
       AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AwsBackupRecoveryPointArn.foreach(__v => __obj.updateDynamic("AwsBackupRecoveryPointArn")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
       CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
@@ -3546,6 +3617,7 @@ package rds {
     var RoleArn: js.UndefOr[String]
     var Status: js.UndefOr[DBProxyStatus]
     var UpdatedDate: js.UndefOr[TStamp]
+    var VpcId: js.UndefOr[String]
     var VpcSecurityGroupIds: js.UndefOr[StringList]
     var VpcSubnetIds: js.UndefOr[StringList]
   }
@@ -3565,6 +3637,7 @@ package rds {
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[DBProxyStatus] = js.undefined,
         UpdatedDate: js.UndefOr[TStamp] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[StringList] = js.undefined,
         VpcSubnetIds: js.UndefOr[StringList] = js.undefined
     ): DBProxy = {
@@ -3581,10 +3654,82 @@ package rds {
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedDate.foreach(__v => __obj.updateDynamic("UpdatedDate")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       VpcSubnetIds.foreach(__v => __obj.updateDynamic("VpcSubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBProxy]
     }
+  }
+
+  /** The data structure representing an endpoint associated with a DB proxy. RDS automatically creates one endpoint for each DB proxy. For Aurora DB clusters, you can associate additional endpoints with the same DB proxy. These endpoints can be read/write or read-only. They can also reside in different VPCs than the associated DB proxy.
+    * This data type is used as a response element in the <code>DescribeDBProxyEndpoints</code> operation.
+    */
+  @js.native
+  trait DBProxyEndpoint extends js.Object {
+    var CreatedDate: js.UndefOr[TStamp]
+    var DBProxyEndpointArn: js.UndefOr[String]
+    var DBProxyEndpointName: js.UndefOr[String]
+    var DBProxyName: js.UndefOr[String]
+    var Endpoint: js.UndefOr[String]
+    var IsDefault: js.UndefOr[Boolean]
+    var Status: js.UndefOr[DBProxyEndpointStatus]
+    var TargetRole: js.UndefOr[DBProxyEndpointTargetRole]
+    var VpcId: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[StringList]
+    var VpcSubnetIds: js.UndefOr[StringList]
+  }
+
+  object DBProxyEndpoint {
+    @inline
+    def apply(
+        CreatedDate: js.UndefOr[TStamp] = js.undefined,
+        DBProxyEndpointArn: js.UndefOr[String] = js.undefined,
+        DBProxyEndpointName: js.UndefOr[String] = js.undefined,
+        DBProxyName: js.UndefOr[String] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        IsDefault: js.UndefOr[Boolean] = js.undefined,
+        Status: js.UndefOr[DBProxyEndpointStatus] = js.undefined,
+        TargetRole: js.UndefOr[DBProxyEndpointTargetRole] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[StringList] = js.undefined,
+        VpcSubnetIds: js.UndefOr[StringList] = js.undefined
+    ): DBProxyEndpoint = {
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DBProxyEndpointArn.foreach(__v => __obj.updateDynamic("DBProxyEndpointArn")(__v.asInstanceOf[js.Any]))
+      DBProxyEndpointName.foreach(__v => __obj.updateDynamic("DBProxyEndpointName")(__v.asInstanceOf[js.Any]))
+      DBProxyName.foreach(__v => __obj.updateDynamic("DBProxyName")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetRole.foreach(__v => __obj.updateDynamic("TargetRole")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      VpcSubnetIds.foreach(__v => __obj.updateDynamic("VpcSubnetIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DBProxyEndpoint]
+    }
+  }
+
+  @js.native
+  sealed trait DBProxyEndpointStatus extends js.Any
+  object DBProxyEndpointStatus {
+    val available = "available".asInstanceOf[DBProxyEndpointStatus]
+    val modifying = "modifying".asInstanceOf[DBProxyEndpointStatus]
+    val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyEndpointStatus]
+    val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyEndpointStatus]
+    val creating = "creating".asInstanceOf[DBProxyEndpointStatus]
+    val deleting = "deleting".asInstanceOf[DBProxyEndpointStatus]
+
+    @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
+  }
+
+  @js.native
+  sealed trait DBProxyEndpointTargetRole extends js.Any
+  object DBProxyEndpointTargetRole {
+    val READ_WRITE = "READ_WRITE".asInstanceOf[DBProxyEndpointTargetRole]
+    val READ_ONLY = "READ_ONLY".asInstanceOf[DBProxyEndpointTargetRole]
+
+    @inline def values = js.Array(READ_WRITE, READ_ONLY)
   }
 
   @js.native
@@ -3611,6 +3756,7 @@ package rds {
     var Endpoint: js.UndefOr[String]
     var Port: js.UndefOr[Int]
     var RdsResourceId: js.UndefOr[String]
+    var Role: js.UndefOr[TargetRole]
     var TargetArn: js.UndefOr[String]
     var TargetHealth: js.UndefOr[TargetHealth]
     var TrackedClusterId: js.UndefOr[String]
@@ -3623,6 +3769,7 @@ package rds {
         Endpoint: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined,
         RdsResourceId: js.UndefOr[String] = js.undefined,
+        Role: js.UndefOr[TargetRole] = js.undefined,
         TargetArn: js.UndefOr[String] = js.undefined,
         TargetHealth: js.UndefOr[TargetHealth] = js.undefined,
         TrackedClusterId: js.UndefOr[String] = js.undefined,
@@ -3632,6 +3779,7 @@ package rds {
       Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RdsResourceId.foreach(__v => __obj.updateDynamic("RdsResourceId")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
       TargetHealth.foreach(__v => __obj.updateDynamic("TargetHealth")(__v.asInstanceOf[js.Any]))
       TrackedClusterId.foreach(__v => __obj.updateDynamic("TrackedClusterId")(__v.asInstanceOf[js.Any]))
@@ -4230,6 +4378,39 @@ package rds {
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteDBParameterGroupMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteDBProxyEndpointRequest extends js.Object {
+    var DBProxyEndpointName: DBProxyEndpointName
+  }
+
+  object DeleteDBProxyEndpointRequest {
+    @inline
+    def apply(
+        DBProxyEndpointName: DBProxyEndpointName
+    ): DeleteDBProxyEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DBProxyEndpointName" -> DBProxyEndpointName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDBProxyEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDBProxyEndpointResponse extends js.Object {
+    var DBProxyEndpoint: js.UndefOr[DBProxyEndpoint]
+  }
+
+  object DeleteDBProxyEndpointResponse {
+    @inline
+    def apply(
+        DBProxyEndpoint: js.UndefOr[DBProxyEndpoint] = js.undefined
+    ): DeleteDBProxyEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      DBProxyEndpoint.foreach(__v => __obj.updateDynamic("DBProxyEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDBProxyEndpointResponse]
     }
   }
 
@@ -5053,6 +5234,53 @@ package rds {
       DBProxies.foreach(__v => __obj.updateDynamic("DBProxies")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBProxiesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeDBProxyEndpointsRequest extends js.Object {
+    var DBProxyEndpointName: js.UndefOr[DBProxyEndpointName]
+    var DBProxyName: js.UndefOr[DBProxyName]
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[MaxRecords]
+  }
+
+  object DescribeDBProxyEndpointsRequest {
+    @inline
+    def apply(
+        DBProxyEndpointName: js.UndefOr[DBProxyEndpointName] = js.undefined,
+        DBProxyName: js.UndefOr[DBProxyName] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined
+    ): DescribeDBProxyEndpointsRequest = {
+      val __obj = js.Dynamic.literal()
+      DBProxyEndpointName.foreach(__v => __obj.updateDynamic("DBProxyEndpointName")(__v.asInstanceOf[js.Any]))
+      DBProxyName.foreach(__v => __obj.updateDynamic("DBProxyName")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBProxyEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDBProxyEndpointsResponse extends js.Object {
+    var DBProxyEndpoints: js.UndefOr[DBProxyEndpointList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeDBProxyEndpointsResponse {
+    @inline
+    def apply(
+        DBProxyEndpoints: js.UndefOr[DBProxyEndpointList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeDBProxyEndpointsResponse = {
+      val __obj = js.Dynamic.literal()
+      DBProxyEndpoints.foreach(__v => __obj.updateDynamic("DBProxyEndpoints")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDBProxyEndpointsResponse]
     }
   }
 
@@ -6301,6 +6529,76 @@ package rds {
     }
   }
 
+  @js.native
+  trait FailoverGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+    var TargetDbClusterIdentifier: DBClusterIdentifier
+  }
+
+  object FailoverGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier,
+        TargetDbClusterIdentifier: DBClusterIdentifier
+    ): FailoverGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any],
+        "TargetDbClusterIdentifier" -> TargetDbClusterIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FailoverGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait FailoverGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object FailoverGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): FailoverGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverGlobalClusterResult]
+    }
+  }
+
+  /** Contains the state of scheduled or in-process failover operations on an Aurora global database (<a>GlobalCluster</a>). This Data type is empty unless a failover operation is scheduled or is currently underway on the Aurora global database.
+    */
+  @js.native
+  trait FailoverState extends js.Object {
+    var FromDbClusterArn: js.UndefOr[String]
+    var Status: js.UndefOr[FailoverStatus]
+    var ToDbClusterArn: js.UndefOr[String]
+  }
+
+  object FailoverState {
+    @inline
+    def apply(
+        FromDbClusterArn: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[FailoverStatus] = js.undefined,
+        ToDbClusterArn: js.UndefOr[String] = js.undefined
+    ): FailoverState = {
+      val __obj = js.Dynamic.literal()
+      FromDbClusterArn.foreach(__v => __obj.updateDynamic("FromDbClusterArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ToDbClusterArn.foreach(__v => __obj.updateDynamic("ToDbClusterArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverState]
+    }
+  }
+
+  @js.native
+  sealed trait FailoverStatus extends js.Any
+  object FailoverStatus {
+    val pending = "pending".asInstanceOf[FailoverStatus]
+    val `failing-over` = "failing-over".asInstanceOf[FailoverStatus]
+    val cancelling = "cancelling".asInstanceOf[FailoverStatus]
+
+    @inline def values = js.Array(pending, `failing-over`, cancelling)
+  }
+
   /** A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as IDs. The filters supported by a describe operation are documented with the describe operation.
     *
     * '''Note:'''Currently, wildcards are not supported in filters.
@@ -6339,6 +6637,7 @@ package rds {
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var FailoverState: js.UndefOr[FailoverState]
     var GlobalClusterArn: js.UndefOr[String]
     var GlobalClusterIdentifier: js.UndefOr[String]
     var GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList]
@@ -6354,6 +6653,7 @@ package rds {
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        FailoverState: js.UndefOr[FailoverState] = js.undefined,
         GlobalClusterArn: js.UndefOr[String] = js.undefined,
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
         GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList] = js.undefined,
@@ -6366,6 +6666,7 @@ package rds {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      FailoverState.foreach(__v => __obj.updateDynamic("FailoverState")(__v.asInstanceOf[js.Any]))
       GlobalClusterArn.foreach(__v => __obj.updateDynamic("GlobalClusterArn")(__v.asInstanceOf[js.Any]))
       GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
       GlobalClusterMembers.foreach(__v => __obj.updateDynamic("GlobalClusterMembers")(__v.asInstanceOf[js.Any]))
@@ -6871,6 +7172,7 @@ package rds {
     var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
     var ApplyImmediately: js.UndefOr[Boolean]
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var AwsBackupRecoveryPointArn: js.UndefOr[AwsBackupRecoveryPointArn]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CACertificateIdentifier: js.UndefOr[String]
     var CertificateRotationRestart: js.UndefOr[BooleanOptional]
@@ -6920,6 +7222,7 @@ package rds {
         AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        AwsBackupRecoveryPointArn: js.UndefOr[AwsBackupRecoveryPointArn] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         CACertificateIdentifier: js.UndefOr[String] = js.undefined,
         CertificateRotationRestart: js.UndefOr[BooleanOptional] = js.undefined,
@@ -6968,6 +7271,7 @@ package rds {
       AllowMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AwsBackupRecoveryPointArn.foreach(__v => __obj.updateDynamic("AwsBackupRecoveryPointArn")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
       CertificateRotationRestart.foreach(__v => __obj.updateDynamic("CertificateRotationRestart")(__v.asInstanceOf[js.Any]))
@@ -7046,6 +7350,46 @@ package rds {
         "Parameters" -> Parameters.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ModifyDBParameterGroupMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyDBProxyEndpointRequest extends js.Object {
+    var DBProxyEndpointName: DBProxyEndpointName
+    var NewDBProxyEndpointName: js.UndefOr[DBProxyEndpointName]
+    var VpcSecurityGroupIds: js.UndefOr[StringList]
+  }
+
+  object ModifyDBProxyEndpointRequest {
+    @inline
+    def apply(
+        DBProxyEndpointName: DBProxyEndpointName,
+        NewDBProxyEndpointName: js.UndefOr[DBProxyEndpointName] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[StringList] = js.undefined
+    ): ModifyDBProxyEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DBProxyEndpointName" -> DBProxyEndpointName.asInstanceOf[js.Any]
+      )
+
+      NewDBProxyEndpointName.foreach(__v => __obj.updateDynamic("NewDBProxyEndpointName")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBProxyEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyDBProxyEndpointResponse extends js.Object {
+    var DBProxyEndpoint: js.UndefOr[DBProxyEndpoint]
+  }
+
+  object ModifyDBProxyEndpointResponse {
+    @inline
+    def apply(
+        DBProxyEndpoint: js.UndefOr[DBProxyEndpoint] = js.undefined
+    ): ModifyDBProxyEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      DBProxyEndpoint.foreach(__v => __obj.updateDynamic("DBProxyEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyDBProxyEndpointResponse]
     }
   }
 
@@ -10106,8 +10450,19 @@ package rds {
     val CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
     val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
     val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
+    val INVALID_REPLICATION_STATE = "INVALID_REPLICATION_STATE".asInstanceOf[TargetHealthReason]
 
-    @inline def values = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY)
+    @inline def values = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY, INVALID_REPLICATION_STATE)
+  }
+
+  @js.native
+  sealed trait TargetRole extends js.Any
+  object TargetRole {
+    val READ_WRITE = "READ_WRITE".asInstanceOf[TargetRole]
+    val READ_ONLY = "READ_ONLY".asInstanceOf[TargetRole]
+    val UNKNOWN = "UNKNOWN".asInstanceOf[TargetRole]
+
+    @inline def values = js.Array(READ_WRITE, READ_ONLY, UNKNOWN)
   }
 
   @js.native
@@ -10157,6 +10512,9 @@ package rds {
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var IsMajorVersionUpgrade: js.UndefOr[Boolean]
+    var SupportedEngineModes: js.UndefOr[EngineModeList]
+    var SupportsGlobalDatabases: js.UndefOr[BooleanOptional]
+    var SupportsParallelQuery: js.UndefOr[BooleanOptional]
   }
 
   object UpgradeTarget {
@@ -10166,7 +10524,10 @@ package rds {
         Description: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
-        IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined
+        IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
+        SupportsGlobalDatabases: js.UndefOr[BooleanOptional] = js.undefined,
+        SupportsParallelQuery: js.UndefOr[BooleanOptional] = js.undefined
     ): UpgradeTarget = {
       val __obj = js.Dynamic.literal()
       AutoUpgrade.foreach(__v => __obj.updateDynamic("AutoUpgrade")(__v.asInstanceOf[js.Any]))
@@ -10174,6 +10535,9 @@ package rds {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       IsMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("IsMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
+      SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
+      SupportsParallelQuery.foreach(__v => __obj.updateDynamic("SupportsParallelQuery")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradeTarget]
     }
   }

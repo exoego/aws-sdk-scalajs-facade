@@ -28,6 +28,7 @@ package object acm {
   type MaxItems = Int
   type NextToken = String
   type PassphraseBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PositiveInteger = Int
   type PrivateKey = String
   type PrivateKeyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type TStamp = js.Date
@@ -42,10 +43,12 @@ package object acm {
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] = service.deleteCertificate(params).promise().toFuture
     @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] = service.describeCertificate(params).promise().toFuture
     @inline def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] = service.exportCertificate(params).promise().toFuture
+    @inline def getAccountConfigurationFuture(): Future[GetAccountConfigurationResponse] = service.getAccountConfiguration().promise().toFuture
     @inline def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] = service.getCertificate(params).promise().toFuture
     @inline def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] = service.importCertificate(params).promise().toFuture
     @inline def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] = service.listCertificates(params).promise().toFuture
     @inline def listTagsForCertificateFuture(params: ListTagsForCertificateRequest): Future[ListTagsForCertificateResponse] = service.listTagsForCertificate(params).promise().toFuture
+    @inline def putAccountConfigurationFuture(params: PutAccountConfigurationRequest): Future[js.Object] = service.putAccountConfiguration(params).promise().toFuture
     @inline def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] = service.removeTagsFromCertificate(params).promise().toFuture
     @inline def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] = service.renewCertificate(params).promise().toFuture
     @inline def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] = service.requestCertificate(params).promise().toFuture
@@ -65,10 +68,12 @@ package acm {
     def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
     def exportCertificate(params: ExportCertificateRequest): Request[ExportCertificateResponse] = js.native
+    def getAccountConfiguration(): Request[GetAccountConfigurationResponse] = js.native
     def getCertificate(params: GetCertificateRequest): Request[GetCertificateResponse] = js.native
     def importCertificate(params: ImportCertificateRequest): Request[ImportCertificateResponse] = js.native
     def listCertificates(params: ListCertificatesRequest): Request[ListCertificatesResponse] = js.native
     def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] = js.native
+    def putAccountConfiguration(params: PutAccountConfigurationRequest): Request[js.Object] = js.native
     def removeTagsFromCertificate(params: RemoveTagsFromCertificateRequest): Request[js.Object] = js.native
     def renewCertificate(params: RenewCertificateRequest): Request[js.Object] = js.native
     def requestCertificate(params: RequestCertificateRequest): Request[RequestCertificateResponse] = js.native
@@ -378,6 +383,24 @@ package acm {
     }
   }
 
+  /** Object containing expiration events options associated with an AWS account.
+    */
+  @js.native
+  trait ExpiryEventsConfiguration extends js.Object {
+    var DaysBeforeExpiry: js.UndefOr[PositiveInteger]
+  }
+
+  object ExpiryEventsConfiguration {
+    @inline
+    def apply(
+        DaysBeforeExpiry: js.UndefOr[PositiveInteger] = js.undefined
+    ): ExpiryEventsConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DaysBeforeExpiry.foreach(__v => __obj.updateDynamic("DaysBeforeExpiry")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpiryEventsConfiguration]
+    }
+  }
+
   @js.native
   trait ExportCertificateRequest extends js.Object {
     var CertificateArn: Arn
@@ -536,6 +559,22 @@ package acm {
       keyTypes.foreach(__v => __obj.updateDynamic("keyTypes")(__v.asInstanceOf[js.Any]))
       keyUsage.foreach(__v => __obj.updateDynamic("keyUsage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filters]
+    }
+  }
+
+  @js.native
+  trait GetAccountConfigurationResponse extends js.Object {
+    var ExpiryEvents: js.UndefOr[ExpiryEventsConfiguration]
+  }
+
+  object GetAccountConfigurationResponse {
+    @inline
+    def apply(
+        ExpiryEvents: js.UndefOr[ExpiryEventsConfiguration] = js.undefined
+    ): GetAccountConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      ExpiryEvents.foreach(__v => __obj.updateDynamic("ExpiryEvents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccountConfigurationResponse]
     }
   }
 
@@ -756,6 +795,27 @@ package acm {
       val __obj = js.Dynamic.literal()
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForCertificateResponse]
+    }
+  }
+
+  @js.native
+  trait PutAccountConfigurationRequest extends js.Object {
+    var IdempotencyToken: IdempotencyToken
+    var ExpiryEvents: js.UndefOr[ExpiryEventsConfiguration]
+  }
+
+  object PutAccountConfigurationRequest {
+    @inline
+    def apply(
+        IdempotencyToken: IdempotencyToken,
+        ExpiryEvents: js.UndefOr[ExpiryEventsConfiguration] = js.undefined
+    ): PutAccountConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any]
+      )
+
+      ExpiryEvents.foreach(__v => __obj.updateDynamic("ExpiryEvents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountConfigurationRequest]
     }
   }
 

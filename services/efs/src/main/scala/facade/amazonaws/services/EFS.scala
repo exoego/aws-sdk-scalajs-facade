@@ -13,6 +13,7 @@ package object efs {
   type AvailabilityZoneId = String
   type AvailabilityZoneName = String
   type AwsAccountId = String
+  type Backup = Boolean
   type BypassPolicyLockoutSafetyCheck = Boolean
   type ClientToken = String
   type CreationToken = String
@@ -160,7 +161,7 @@ package efs {
     }
   }
 
-  /** The backup policy for the file system, showing the curent status. If <code>ENABLED</code>, the file system is being backed up.
+  /** The backup policy for the file system used to create automatic daily backups. If status has a value of <code>ENABLED</code>, the file system is being automatically backed up. For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups|Automatic backups]].
     */
   @js.native
   trait BackupPolicy extends js.Object {
@@ -228,6 +229,8 @@ package efs {
   @js.native
   trait CreateFileSystemRequest extends js.Object {
     var CreationToken: CreationToken
+    var AvailabilityZoneName: js.UndefOr[AvailabilityZoneName]
+    var Backup: js.UndefOr[Backup]
     var Encrypted: js.UndefOr[Encrypted]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var PerformanceMode: js.UndefOr[PerformanceMode]
@@ -240,6 +243,8 @@ package efs {
     @inline
     def apply(
         CreationToken: CreationToken,
+        AvailabilityZoneName: js.UndefOr[AvailabilityZoneName] = js.undefined,
+        Backup: js.UndefOr[Backup] = js.undefined,
         Encrypted: js.UndefOr[Encrypted] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         PerformanceMode: js.UndefOr[PerformanceMode] = js.undefined,
@@ -251,6 +256,8 @@ package efs {
         "CreationToken" -> CreationToken.asInstanceOf[js.Any]
       )
 
+      AvailabilityZoneName.foreach(__v => __obj.updateDynamic("AvailabilityZoneName")(__v.asInstanceOf[js.Any]))
+      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceMode.foreach(__v => __obj.updateDynamic("PerformanceMode")(__v.asInstanceOf[js.Any]))
@@ -313,6 +320,7 @@ package efs {
   }
 
   /** Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties.
+    * Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.
     * <important> If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.
     * </important>
     */
@@ -732,6 +740,8 @@ package efs {
     var PerformanceMode: PerformanceMode
     var SizeInBytes: FileSystemSize
     var Tags: Tags
+    var AvailabilityZoneId: js.UndefOr[AvailabilityZoneId]
+    var AvailabilityZoneName: js.UndefOr[AvailabilityZoneName]
     var Encrypted: js.UndefOr[Encrypted]
     var FileSystemArn: js.UndefOr[FileSystemArn]
     var KmsKeyId: js.UndefOr[KmsKeyId]
@@ -752,6 +762,8 @@ package efs {
         PerformanceMode: PerformanceMode,
         SizeInBytes: FileSystemSize,
         Tags: Tags,
+        AvailabilityZoneId: js.UndefOr[AvailabilityZoneId] = js.undefined,
+        AvailabilityZoneName: js.UndefOr[AvailabilityZoneName] = js.undefined,
         Encrypted: js.UndefOr[Encrypted] = js.undefined,
         FileSystemArn: js.UndefOr[FileSystemArn] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
@@ -771,6 +783,8 @@ package efs {
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
+      AvailabilityZoneId.foreach(__v => __obj.updateDynamic("AvailabilityZoneId")(__v.asInstanceOf[js.Any]))
+      AvailabilityZoneName.foreach(__v => __obj.updateDynamic("AvailabilityZoneName")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       FileSystemArn.foreach(__v => __obj.updateDynamic("FileSystemArn")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -837,8 +851,9 @@ package efs {
     val updating = "updating".asInstanceOf[LifeCycleState]
     val deleting = "deleting".asInstanceOf[LifeCycleState]
     val deleted = "deleted".asInstanceOf[LifeCycleState]
+    val error = "error".asInstanceOf[LifeCycleState]
 
-    @inline def values = js.Array(creating, available, updating, deleting, deleted)
+    @inline def values = js.Array(creating, available, updating, deleting, deleted, error)
   }
 
   @js.native

@@ -58,6 +58,10 @@ package object ecrpublic {
   type RepositoryNameList = js.Array[RepositoryName]
   type RepositoryPolicyText = String
   type ResourceUrl = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type UploadId = String
   type Url = String
   type UsageText = String
@@ -79,10 +83,13 @@ package object ecrpublic {
     @inline def getRepositoryCatalogDataFuture(params: GetRepositoryCatalogDataRequest): Future[GetRepositoryCatalogDataResponse] = service.getRepositoryCatalogData(params).promise().toFuture
     @inline def getRepositoryPolicyFuture(params: GetRepositoryPolicyRequest): Future[GetRepositoryPolicyResponse] = service.getRepositoryPolicy(params).promise().toFuture
     @inline def initiateLayerUploadFuture(params: InitiateLayerUploadRequest): Future[InitiateLayerUploadResponse] = service.initiateLayerUpload(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putImageFuture(params: PutImageRequest): Future[PutImageResponse] = service.putImage(params).promise().toFuture
     @inline def putRegistryCatalogDataFuture(params: PutRegistryCatalogDataRequest): Future[PutRegistryCatalogDataResponse] = service.putRegistryCatalogData(params).promise().toFuture
     @inline def putRepositoryCatalogDataFuture(params: PutRepositoryCatalogDataRequest): Future[PutRepositoryCatalogDataResponse] = service.putRepositoryCatalogData(params).promise().toFuture
     @inline def setRepositoryPolicyFuture(params: SetRepositoryPolicyRequest): Future[SetRepositoryPolicyResponse] = service.setRepositoryPolicy(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] = service.uploadLayerPart(params).promise().toFuture
 
   }
@@ -109,10 +116,13 @@ package ecrpublic {
     def getRepositoryCatalogData(params: GetRepositoryCatalogDataRequest): Request[GetRepositoryCatalogDataResponse] = js.native
     def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse] = js.native
     def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putImage(params: PutImageRequest): Request[PutImageResponse] = js.native
     def putRegistryCatalogData(params: PutRegistryCatalogDataRequest): Request[PutRegistryCatalogDataResponse] = js.native
     def putRepositoryCatalogData(params: PutRepositoryCatalogDataRequest): Request[PutRepositoryCatalogDataResponse] = js.native
     def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
   }
 
@@ -279,19 +289,22 @@ package ecrpublic {
   trait CreateRepositoryRequest extends js.Object {
     var repositoryName: RepositoryName
     var catalogData: js.UndefOr[RepositoryCatalogDataInput]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateRepositoryRequest {
     @inline
     def apply(
         repositoryName: RepositoryName,
-        catalogData: js.UndefOr[RepositoryCatalogDataInput] = js.undefined
+        catalogData: js.UndefOr[RepositoryCatalogDataInput] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateRepositoryRequest = {
       val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
       catalogData.foreach(__v => __obj.updateDynamic("catalogData")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryRequest]
     }
   }
@@ -974,6 +987,39 @@ package ecrpublic {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait PutImageRequest extends js.Object {
     var imageManifest: ImageManifest
     var repositoryName: RepositoryName
@@ -1357,6 +1403,89 @@ package ecrpublic {
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetRepositoryPolicyResponse]
+    }
+  }
+
+  /** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

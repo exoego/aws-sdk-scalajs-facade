@@ -57,6 +57,10 @@ package object quicksight {
   type EmbeddingUrl = String
   type EntryPoint = String
   type Expression = String
+  type FieldFolderDescription = String
+  type FieldFolderMap = js.Dictionary[FieldFolder]
+  type FieldFolderPath = String
+  type FolderColumnList = js.Array[String]
   type GroupDescription = String
   type GroupList = js.Array[Group]
   type GroupMemberList = js.Array[GroupMember]
@@ -1251,6 +1255,7 @@ package quicksight {
     var PhysicalTableMap: PhysicalTableMap
     var ColumnGroups: js.UndefOr[ColumnGroupList]
     var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
+    var FieldFolders: js.UndefOr[FieldFolderMap]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
@@ -1267,6 +1272,7 @@ package quicksight {
         PhysicalTableMap: PhysicalTableMap,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
         ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
+        FieldFolders: js.UndefOr[FieldFolderMap] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined,
@@ -1282,6 +1288,7 @@ package quicksight {
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
       ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
+      FieldFolders.foreach(__v => __obj.updateDynamic("FieldFolders")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
@@ -2311,6 +2318,7 @@ package quicksight {
     var ConsumedSpiceCapacityInBytes: js.UndefOr[Double]
     var CreatedTime: js.UndefOr[Timestamp]
     var DataSetId: js.UndefOr[ResourceId]
+    var FieldFolders: js.UndefOr[FieldFolderMap]
     var ImportMode: js.UndefOr[DataSetImportMode]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
@@ -2329,6 +2337,7 @@ package quicksight {
         ConsumedSpiceCapacityInBytes: js.UndefOr[Double] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DataSetId: js.UndefOr[ResourceId] = js.undefined,
+        FieldFolders: js.UndefOr[FieldFolderMap] = js.undefined,
         ImportMode: js.UndefOr[DataSetImportMode] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
@@ -2344,6 +2353,7 @@ package quicksight {
       ConsumedSpiceCapacityInBytes.foreach(__v => __obj.updateDynamic("ConsumedSpiceCapacityInBytes")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
+      FieldFolders.foreach(__v => __obj.updateDynamic("FieldFolders")(__v.asInstanceOf[js.Any]))
       ImportMode.foreach(__v => __obj.updateDynamic("ImportMode")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
@@ -4461,6 +4471,27 @@ package quicksight {
       val __obj = js.Dynamic.literal()
       AvailabilityStatus.foreach(__v => __obj.updateDynamic("AvailabilityStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportToCSVOption]
+    }
+  }
+
+  /** A FieldFolder element is a folder that contains fields and nested subfolders.
+    */
+  @js.native
+  trait FieldFolder extends js.Object {
+    var columns: js.UndefOr[FolderColumnList]
+    var description: js.UndefOr[FieldFolderDescription]
+  }
+
+  object FieldFolder {
+    @inline
+    def apply(
+        columns: js.UndefOr[FolderColumnList] = js.undefined,
+        description: js.UndefOr[FieldFolderDescription] = js.undefined
+    ): FieldFolder = {
+      val __obj = js.Dynamic.literal()
+      columns.foreach(__v => __obj.updateDynamic("columns")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldFolder]
     }
   }
 
@@ -6816,7 +6847,8 @@ package quicksight {
     }
   }
 
-  /** The row-level security configuration for the dataset.
+  /** Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html|Using Row-Level Security (RLS) to Restrict Access to a Dataset]] in the <i>Amazon QuickSight User Guide</i>.
+    * The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.
     */
   @js.native
   trait RowLevelPermissionDataSet extends js.Object {
@@ -8434,6 +8466,7 @@ package quicksight {
     var PhysicalTableMap: PhysicalTableMap
     var ColumnGroups: js.UndefOr[ColumnGroupList]
     var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
+    var FieldFolders: js.UndefOr[FieldFolderMap]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
   }
@@ -8448,6 +8481,7 @@ package quicksight {
         PhysicalTableMap: PhysicalTableMap,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
         ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
+        FieldFolders: js.UndefOr[FieldFolderMap] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
         RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined
     ): UpdateDataSetRequest = {
@@ -8461,6 +8495,7 @@ package quicksight {
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
       ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
+      FieldFolders.foreach(__v => __obj.updateDynamic("FieldFolders")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSetRequest]

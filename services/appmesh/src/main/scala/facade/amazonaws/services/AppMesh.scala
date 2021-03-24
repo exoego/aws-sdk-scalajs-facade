@@ -51,7 +51,10 @@ package object appmesh {
   type ResourceName = String
   type RouteList = js.Array[RouteRef]
   type RoutePriority = Int
+  type SdsSecretName = String
   type ServiceName = String
+  type SubjectAlternativeName = String
+  type SubjectAlternativeNameList = js.Array[SubjectAlternativeName]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[TagRef]
@@ -65,6 +68,7 @@ package object appmesh {
   type VirtualGatewayHealthCheckTimeoutMillis = Double
   type VirtualGatewayList = js.Array[VirtualGatewayRef]
   type VirtualGatewayListeners = js.Array[VirtualGatewayListener]
+  type VirtualGatewaySdsSecretName = String
   type VirtualNodeList = js.Array[VirtualNodeRef]
   type VirtualRouterList = js.Array[VirtualRouterRef]
   type VirtualRouterListeners = js.Array[VirtualRouterListener]
@@ -290,6 +294,7 @@ package appmesh {
   @js.native
   trait ClientPolicyTls extends js.Object {
     var validation: TlsValidationContext
+    var certificate: js.UndefOr[ClientTlsCertificate]
     var enforce: js.UndefOr[Boolean]
     var ports: js.UndefOr[PortSet]
   }
@@ -298,6 +303,7 @@ package appmesh {
     @inline
     def apply(
         validation: TlsValidationContext,
+        certificate: js.UndefOr[ClientTlsCertificate] = js.undefined,
         enforce: js.UndefOr[Boolean] = js.undefined,
         ports: js.UndefOr[PortSet] = js.undefined
     ): ClientPolicyTls = {
@@ -305,9 +311,31 @@ package appmesh {
         "validation" -> validation.asInstanceOf[js.Any]
       )
 
+      certificate.foreach(__v => __obj.updateDynamic("certificate")(__v.asInstanceOf[js.Any]))
       enforce.foreach(__v => __obj.updateDynamic("enforce")(__v.asInstanceOf[js.Any]))
       ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClientPolicyTls]
+    }
+  }
+
+  /** An object that represents the client's certificate.
+    */
+  @js.native
+  trait ClientTlsCertificate extends js.Object {
+    var file: js.UndefOr[ListenerTlsFileCertificate]
+    var sds: js.UndefOr[ListenerTlsSdsCertificate]
+  }
+
+  object ClientTlsCertificate {
+    @inline
+    def apply(
+        file: js.UndefOr[ListenerTlsFileCertificate] = js.undefined,
+        sds: js.UndefOr[ListenerTlsSdsCertificate] = js.undefined
+    ): ClientTlsCertificate = {
+      val __obj = js.Dynamic.literal()
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClientTlsCertificate]
     }
   }
 
@@ -2590,18 +2618,22 @@ package appmesh {
   trait ListenerTls extends js.Object {
     var certificate: ListenerTlsCertificate
     var mode: ListenerTlsMode
+    var validation: js.UndefOr[ListenerTlsValidationContext]
   }
 
   object ListenerTls {
     @inline
     def apply(
         certificate: ListenerTlsCertificate,
-        mode: ListenerTlsMode
+        mode: ListenerTlsMode,
+        validation: js.UndefOr[ListenerTlsValidationContext] = js.undefined
     ): ListenerTls = {
       val __obj = js.Dynamic.literal(
         "certificate" -> certificate.asInstanceOf[js.Any],
         "mode" -> mode.asInstanceOf[js.Any]
       )
+
+      validation.foreach(__v => __obj.updateDynamic("validation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListenerTls]
     }
   }
@@ -2631,17 +2663,20 @@ package appmesh {
   trait ListenerTlsCertificate extends js.Object {
     var acm: js.UndefOr[ListenerTlsAcmCertificate]
     var file: js.UndefOr[ListenerTlsFileCertificate]
+    var sds: js.UndefOr[ListenerTlsSdsCertificate]
   }
 
   object ListenerTlsCertificate {
     @inline
     def apply(
         acm: js.UndefOr[ListenerTlsAcmCertificate] = js.undefined,
-        file: js.UndefOr[ListenerTlsFileCertificate] = js.undefined
+        file: js.UndefOr[ListenerTlsFileCertificate] = js.undefined,
+        sds: js.UndefOr[ListenerTlsSdsCertificate] = js.undefined
     ): ListenerTlsCertificate = {
       val __obj = js.Dynamic.literal()
       acm.foreach(__v => __obj.updateDynamic("acm")(__v.asInstanceOf[js.Any]))
       file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListenerTlsCertificate]
     }
   }
@@ -2676,6 +2711,69 @@ package appmesh {
     val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
 
     @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
+  }
+
+  /** An object that represents the listener's Secret Discovery Service certificate. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
+    */
+  @js.native
+  trait ListenerTlsSdsCertificate extends js.Object {
+    var secretName: SdsSecretName
+  }
+
+  object ListenerTlsSdsCertificate {
+    @inline
+    def apply(
+        secretName: SdsSecretName
+    ): ListenerTlsSdsCertificate = {
+      val __obj = js.Dynamic.literal(
+        "secretName" -> secretName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListenerTlsSdsCertificate]
+    }
+  }
+
+  /** An object that represents a listener's Transport Layer Security (TLS) validation context.
+    */
+  @js.native
+  trait ListenerTlsValidationContext extends js.Object {
+    var trust: ListenerTlsValidationContextTrust
+    var subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames]
+  }
+
+  object ListenerTlsValidationContext {
+    @inline
+    def apply(
+        trust: ListenerTlsValidationContextTrust,
+        subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames] = js.undefined
+    ): ListenerTlsValidationContext = {
+      val __obj = js.Dynamic.literal(
+        "trust" -> trust.asInstanceOf[js.Any]
+      )
+
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListenerTlsValidationContext]
+    }
+  }
+
+  /** An object that represents a listener's Transport Layer Security (TLS) validation context trust.
+    */
+  @js.native
+  trait ListenerTlsValidationContextTrust extends js.Object {
+    var file: js.UndefOr[TlsValidationContextFileTrust]
+    var sds: js.UndefOr[TlsValidationContextSdsTrust]
+  }
+
+  object ListenerTlsValidationContextTrust {
+    @inline
+    def apply(
+        file: js.UndefOr[TlsValidationContextFileTrust] = js.undefined,
+        sds: js.UndefOr[TlsValidationContextSdsTrust] = js.undefined
+    ): ListenerTlsValidationContextTrust = {
+      val __obj = js.Dynamic.literal()
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListenerTlsValidationContextTrust]
+    }
   }
 
   /** An object that represents the logging information for a virtual node.
@@ -3084,6 +3182,44 @@ package appmesh {
     }
   }
 
+  /** An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.
+    */
+  @js.native
+  trait SubjectAlternativeNameMatchers extends js.Object {
+    var exact: SubjectAlternativeNameList
+  }
+
+  object SubjectAlternativeNameMatchers {
+    @inline
+    def apply(
+        exact: SubjectAlternativeNameList
+    ): SubjectAlternativeNameMatchers = {
+      val __obj = js.Dynamic.literal(
+        "exact" -> exact.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SubjectAlternativeNameMatchers]
+    }
+  }
+
+  /** An object that represents the subject alternative names secured by the certificate.
+    */
+  @js.native
+  trait SubjectAlternativeNames extends js.Object {
+    var `match`: SubjectAlternativeNameMatchers
+  }
+
+  object SubjectAlternativeNames {
+    @inline
+    def apply(
+        `match`: SubjectAlternativeNameMatchers
+    ): SubjectAlternativeNames = {
+      val __obj = js.Dynamic.literal(
+        "match" -> `match`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SubjectAlternativeNames]
+    }
+  }
+
   /** Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
@@ -3209,26 +3345,30 @@ package appmesh {
     }
   }
 
-  /** An object that represents a Transport Layer Security (TLS) validation context.
+  /** An object that represents how the proxy will validate its peer during Transport Layer Security (TLS) negotiation.
     */
   @js.native
   trait TlsValidationContext extends js.Object {
     var trust: TlsValidationContextTrust
+    var subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames]
   }
 
   object TlsValidationContext {
     @inline
     def apply(
-        trust: TlsValidationContextTrust
+        trust: TlsValidationContextTrust,
+        subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames] = js.undefined
     ): TlsValidationContext = {
       val __obj = js.Dynamic.literal(
         "trust" -> trust.asInstanceOf[js.Any]
       )
+
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TlsValidationContext]
     }
   }
 
-  /** An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust for an AWS Certicate Manager (ACM) certificate.
     */
   @js.native
   trait TlsValidationContextAcmTrust extends js.Object {
@@ -3266,23 +3406,45 @@ package appmesh {
     }
   }
 
+  /** An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
+    */
+  @js.native
+  trait TlsValidationContextSdsTrust extends js.Object {
+    var secretName: SdsSecretName
+  }
+
+  object TlsValidationContextSdsTrust {
+    @inline
+    def apply(
+        secretName: SdsSecretName
+    ): TlsValidationContextSdsTrust = {
+      val __obj = js.Dynamic.literal(
+        "secretName" -> secretName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TlsValidationContextSdsTrust]
+    }
+  }
+
   /** An object that represents a Transport Layer Security (TLS) validation context trust.
     */
   @js.native
   trait TlsValidationContextTrust extends js.Object {
     var acm: js.UndefOr[TlsValidationContextAcmTrust]
     var file: js.UndefOr[TlsValidationContextFileTrust]
+    var sds: js.UndefOr[TlsValidationContextSdsTrust]
   }
 
   object TlsValidationContextTrust {
     @inline
     def apply(
         acm: js.UndefOr[TlsValidationContextAcmTrust] = js.undefined,
-        file: js.UndefOr[TlsValidationContextFileTrust] = js.undefined
+        file: js.UndefOr[TlsValidationContextFileTrust] = js.undefined,
+        sds: js.UndefOr[TlsValidationContextSdsTrust] = js.undefined
     ): TlsValidationContextTrust = {
       val __obj = js.Dynamic.literal()
       acm.foreach(__v => __obj.updateDynamic("acm")(__v.asInstanceOf[js.Any]))
       file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TlsValidationContextTrust]
     }
   }
@@ -3730,6 +3892,7 @@ package appmesh {
   @js.native
   trait VirtualGatewayClientPolicyTls extends js.Object {
     var validation: VirtualGatewayTlsValidationContext
+    var certificate: js.UndefOr[VirtualGatewayClientTlsCertificate]
     var enforce: js.UndefOr[Boolean]
     var ports: js.UndefOr[PortSet]
   }
@@ -3738,6 +3901,7 @@ package appmesh {
     @inline
     def apply(
         validation: VirtualGatewayTlsValidationContext,
+        certificate: js.UndefOr[VirtualGatewayClientTlsCertificate] = js.undefined,
         enforce: js.UndefOr[Boolean] = js.undefined,
         ports: js.UndefOr[PortSet] = js.undefined
     ): VirtualGatewayClientPolicyTls = {
@@ -3745,9 +3909,31 @@ package appmesh {
         "validation" -> validation.asInstanceOf[js.Any]
       )
 
+      certificate.foreach(__v => __obj.updateDynamic("certificate")(__v.asInstanceOf[js.Any]))
       enforce.foreach(__v => __obj.updateDynamic("enforce")(__v.asInstanceOf[js.Any]))
       ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayClientPolicyTls]
+    }
+  }
+
+  /** An object that represents the virtual gateway's client's Transport Layer Security (TLS) certificate.
+    */
+  @js.native
+  trait VirtualGatewayClientTlsCertificate extends js.Object {
+    var file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate]
+    var sds: js.UndefOr[VirtualGatewayListenerTlsSdsCertificate]
+  }
+
+  object VirtualGatewayClientTlsCertificate {
+    @inline
+    def apply(
+        file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate] = js.undefined,
+        sds: js.UndefOr[VirtualGatewayListenerTlsSdsCertificate] = js.undefined
+    ): VirtualGatewayClientTlsCertificate = {
+      val __obj = js.Dynamic.literal()
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayClientTlsCertificate]
     }
   }
 
@@ -3961,18 +4147,22 @@ package appmesh {
   trait VirtualGatewayListenerTls extends js.Object {
     var certificate: VirtualGatewayListenerTlsCertificate
     var mode: VirtualGatewayListenerTlsMode
+    var validation: js.UndefOr[VirtualGatewayListenerTlsValidationContext]
   }
 
   object VirtualGatewayListenerTls {
     @inline
     def apply(
         certificate: VirtualGatewayListenerTlsCertificate,
-        mode: VirtualGatewayListenerTlsMode
+        mode: VirtualGatewayListenerTlsMode,
+        validation: js.UndefOr[VirtualGatewayListenerTlsValidationContext] = js.undefined
     ): VirtualGatewayListenerTls = {
       val __obj = js.Dynamic.literal(
         "certificate" -> certificate.asInstanceOf[js.Any],
         "mode" -> mode.asInstanceOf[js.Any]
       )
+
+      validation.foreach(__v => __obj.updateDynamic("validation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayListenerTls]
     }
   }
@@ -4002,17 +4192,20 @@ package appmesh {
   trait VirtualGatewayListenerTlsCertificate extends js.Object {
     var acm: js.UndefOr[VirtualGatewayListenerTlsAcmCertificate]
     var file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate]
+    var sds: js.UndefOr[VirtualGatewayListenerTlsSdsCertificate]
   }
 
   object VirtualGatewayListenerTlsCertificate {
     @inline
     def apply(
         acm: js.UndefOr[VirtualGatewayListenerTlsAcmCertificate] = js.undefined,
-        file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate] = js.undefined
+        file: js.UndefOr[VirtualGatewayListenerTlsFileCertificate] = js.undefined,
+        sds: js.UndefOr[VirtualGatewayListenerTlsSdsCertificate] = js.undefined
     ): VirtualGatewayListenerTlsCertificate = {
       val __obj = js.Dynamic.literal()
       acm.foreach(__v => __obj.updateDynamic("acm")(__v.asInstanceOf[js.Any]))
       file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayListenerTlsCertificate]
     }
   }
@@ -4047,6 +4240,69 @@ package appmesh {
     val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
 
     @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
+  }
+
+  /** An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
+    */
+  @js.native
+  trait VirtualGatewayListenerTlsSdsCertificate extends js.Object {
+    var secretName: VirtualGatewaySdsSecretName
+  }
+
+  object VirtualGatewayListenerTlsSdsCertificate {
+    @inline
+    def apply(
+        secretName: VirtualGatewaySdsSecretName
+    ): VirtualGatewayListenerTlsSdsCertificate = {
+      val __obj = js.Dynamic.literal(
+        "secretName" -> secretName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualGatewayListenerTlsSdsCertificate]
+    }
+  }
+
+  /** An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.
+    */
+  @js.native
+  trait VirtualGatewayListenerTlsValidationContext extends js.Object {
+    var trust: VirtualGatewayListenerTlsValidationContextTrust
+    var subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames]
+  }
+
+  object VirtualGatewayListenerTlsValidationContext {
+    @inline
+    def apply(
+        trust: VirtualGatewayListenerTlsValidationContextTrust,
+        subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames] = js.undefined
+    ): VirtualGatewayListenerTlsValidationContext = {
+      val __obj = js.Dynamic.literal(
+        "trust" -> trust.asInstanceOf[js.Any]
+      )
+
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayListenerTlsValidationContext]
+    }
+  }
+
+  /** An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context trust.
+    */
+  @js.native
+  trait VirtualGatewayListenerTlsValidationContextTrust extends js.Object {
+    var file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust]
+    var sds: js.UndefOr[VirtualGatewayTlsValidationContextSdsTrust]
+  }
+
+  object VirtualGatewayListenerTlsValidationContextTrust {
+    @inline
+    def apply(
+        file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust] = js.undefined,
+        sds: js.UndefOr[VirtualGatewayTlsValidationContextSdsTrust] = js.undefined
+    ): VirtualGatewayListenerTlsValidationContextTrust = {
+      val __obj = js.Dynamic.literal()
+      file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualGatewayListenerTlsValidationContextTrust]
+    }
   }
 
   /** An object that represents logging information.
@@ -4199,21 +4455,25 @@ package appmesh {
   @js.native
   trait VirtualGatewayTlsValidationContext extends js.Object {
     var trust: VirtualGatewayTlsValidationContextTrust
+    var subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames]
   }
 
   object VirtualGatewayTlsValidationContext {
     @inline
     def apply(
-        trust: VirtualGatewayTlsValidationContextTrust
+        trust: VirtualGatewayTlsValidationContextTrust,
+        subjectAlternativeNames: js.UndefOr[SubjectAlternativeNames] = js.undefined
     ): VirtualGatewayTlsValidationContext = {
       val __obj = js.Dynamic.literal(
         "trust" -> trust.asInstanceOf[js.Any]
       )
+
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayTlsValidationContext]
     }
   }
 
-  /** An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust for an AWS Certicate Manager (ACM) certificate.
     */
   @js.native
   trait VirtualGatewayTlsValidationContextAcmTrust extends js.Object {
@@ -4251,23 +4511,45 @@ package appmesh {
     }
   }
 
+  /** An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
+    */
+  @js.native
+  trait VirtualGatewayTlsValidationContextSdsTrust extends js.Object {
+    var secretName: VirtualGatewaySdsSecretName
+  }
+
+  object VirtualGatewayTlsValidationContextSdsTrust {
+    @inline
+    def apply(
+        secretName: VirtualGatewaySdsSecretName
+    ): VirtualGatewayTlsValidationContextSdsTrust = {
+      val __obj = js.Dynamic.literal(
+        "secretName" -> secretName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VirtualGatewayTlsValidationContextSdsTrust]
+    }
+  }
+
   /** An object that represents a Transport Layer Security (TLS) validation context trust.
     */
   @js.native
   trait VirtualGatewayTlsValidationContextTrust extends js.Object {
     var acm: js.UndefOr[VirtualGatewayTlsValidationContextAcmTrust]
     var file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust]
+    var sds: js.UndefOr[VirtualGatewayTlsValidationContextSdsTrust]
   }
 
   object VirtualGatewayTlsValidationContextTrust {
     @inline
     def apply(
         acm: js.UndefOr[VirtualGatewayTlsValidationContextAcmTrust] = js.undefined,
-        file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust] = js.undefined
+        file: js.UndefOr[VirtualGatewayTlsValidationContextFileTrust] = js.undefined,
+        sds: js.UndefOr[VirtualGatewayTlsValidationContextSdsTrust] = js.undefined
     ): VirtualGatewayTlsValidationContextTrust = {
       val __obj = js.Dynamic.literal()
       acm.foreach(__v => __obj.updateDynamic("acm")(__v.asInstanceOf[js.Any]))
       file.foreach(__v => __obj.updateDynamic("file")(__v.asInstanceOf[js.Any]))
+      sds.foreach(__v => __obj.updateDynamic("sds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayTlsValidationContextTrust]
     }
   }

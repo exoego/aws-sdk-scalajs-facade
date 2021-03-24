@@ -17,6 +17,7 @@ package object autoscaling {
   type AutoScalingGroupMaxSize = Int
   type AutoScalingGroupMinSize = Int
   type AutoScalingGroupNames = js.Array[XmlStringMaxLen255]
+  type AutoScalingGroupState = String
   type AutoScalingGroups = js.Array[AutoScalingGroup]
   type AutoScalingInstances = js.Array[AutoScalingInstanceDetails]
   type AutoScalingNotificationTypes = js.Array[XmlStringMaxLen255]
@@ -28,6 +29,8 @@ package object autoscaling {
   type BlockDeviceEbsVolumeType = String
   type BlockDeviceMappings = js.Array[BlockDeviceMapping]
   type CapacityRebalanceEnabled = Boolean
+  type CheckpointDelay = Int
+  type CheckpointPercentages = js.Array[NonZeroIntPercent]
   type ClassicLinkVPCSecurityGroups = js.Array[XmlStringMaxLen255]
   type Cooldown = Int
   type DisableScaleIn = Boolean
@@ -41,6 +44,7 @@ package object autoscaling {
   type HealthCheckGracePeriod = Int
   type HeartbeatTimeout = Int
   type HonorCooldown = Boolean
+  type IncludeDeletedGroups = Boolean
   type InstanceIds = js.Array[XmlStringMaxLen19]
   type InstanceMetadataHttpPutResponseHopLimit = Int
   type InstanceProtected = Boolean
@@ -81,6 +85,7 @@ package object autoscaling {
   type MixedInstanceSpotPrice = String
   type MonitoringEnabled = Boolean
   type NoDevice = Boolean
+  type NonZeroIntPercent = Int
   type NotificationConfigurations = js.Array[NotificationConfiguration]
   type NotificationTargetResourceName = String
   type NumberOfAutoScalingGroups = Int
@@ -287,6 +292,8 @@ package autoscaling {
     var Cause: XmlStringMaxLen1023
     var StartTime: TimestampType
     var StatusCode: ScalingActivityStatusCode
+    var AutoScalingGroupARN: js.UndefOr[ResourceName]
+    var AutoScalingGroupState: js.UndefOr[AutoScalingGroupState]
     var Description: js.UndefOr[XmlString]
     var Details: js.UndefOr[XmlString]
     var EndTime: js.UndefOr[TimestampType]
@@ -302,6 +309,8 @@ package autoscaling {
         Cause: XmlStringMaxLen1023,
         StartTime: TimestampType,
         StatusCode: ScalingActivityStatusCode,
+        AutoScalingGroupARN: js.UndefOr[ResourceName] = js.undefined,
+        AutoScalingGroupState: js.UndefOr[AutoScalingGroupState] = js.undefined,
         Description: js.UndefOr[XmlString] = js.undefined,
         Details: js.UndefOr[XmlString] = js.undefined,
         EndTime: js.UndefOr[TimestampType] = js.undefined,
@@ -316,6 +325,8 @@ package autoscaling {
         "StatusCode" -> StatusCode.asInstanceOf[js.Any]
       )
 
+      AutoScalingGroupARN.foreach(__v => __obj.updateDynamic("AutoScalingGroupARN")(__v.asInstanceOf[js.Any]))
+      AutoScalingGroupState.foreach(__v => __obj.updateDynamic("AutoScalingGroupState")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
@@ -1542,6 +1553,7 @@ package autoscaling {
   trait DescribeScalingActivitiesType extends js.Object {
     var ActivityIds: js.UndefOr[ActivityIds]
     var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
+    var IncludeDeletedGroups: js.UndefOr[IncludeDeletedGroups]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
@@ -1551,12 +1563,14 @@ package autoscaling {
     def apply(
         ActivityIds: js.UndefOr[ActivityIds] = js.undefined,
         AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        IncludeDeletedGroups: js.UndefOr[IncludeDeletedGroups] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
     ): DescribeScalingActivitiesType = {
       val __obj = js.Dynamic.literal()
       ActivityIds.foreach(__v => __obj.updateDynamic("ActivityIds")(__v.asInstanceOf[js.Any]))
       AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
+      IncludeDeletedGroups.foreach(__v => __obj.updateDynamic("IncludeDeletedGroups")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScalingActivitiesType]
@@ -2317,7 +2331,7 @@ package autoscaling {
   }
 
   /** Describes a launch template and overrides.
-    * You specify these parameters as part of a mixed instances policy.
+    * You specify these properties as part of a mixed instances policy.
     * When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
     */
   @js.native
@@ -2637,7 +2651,7 @@ package autoscaling {
   }
 
   /** Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling groups with multiple instance types and purchase options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or launch template.
+    * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level property instead of a launch configuration or launch template.
     */
   @js.native
   trait MixedInstancesPolicy extends js.Object {
@@ -2919,6 +2933,7 @@ package autoscaling {
     var Recurrence: js.UndefOr[XmlStringMaxLen255]
     var StartTime: js.UndefOr[TimestampType]
     var Time: js.UndefOr[TimestampType]
+    var TimeZone: js.UndefOr[XmlStringMaxLen255]
   }
 
   object PutScheduledUpdateGroupActionType {
@@ -2932,7 +2947,8 @@ package autoscaling {
         MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
         Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined,
-        Time: js.UndefOr[TimestampType] = js.undefined
+        Time: js.UndefOr[TimestampType] = js.undefined,
+        TimeZone: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): PutScheduledUpdateGroupActionType = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
@@ -2946,6 +2962,7 @@ package autoscaling {
       Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScheduledUpdateGroupActionType]
     }
   }
@@ -2989,9 +3006,12 @@ package autoscaling {
   }
 
   /** Describes information used to start an instance refresh.
+    * All properties are optional. However, if you specify a value for <code>CheckpointDelay</code>, you must also provide a value for <code>CheckpointPercentages</code>.
     */
   @js.native
   trait RefreshPreferences extends js.Object {
+    var CheckpointDelay: js.UndefOr[CheckpointDelay]
+    var CheckpointPercentages: js.UndefOr[CheckpointPercentages]
     var InstanceWarmup: js.UndefOr[RefreshInstanceWarmup]
     var MinHealthyPercentage: js.UndefOr[IntPercent]
   }
@@ -2999,10 +3019,14 @@ package autoscaling {
   object RefreshPreferences {
     @inline
     def apply(
+        CheckpointDelay: js.UndefOr[CheckpointDelay] = js.undefined,
+        CheckpointPercentages: js.UndefOr[CheckpointPercentages] = js.undefined,
         InstanceWarmup: js.UndefOr[RefreshInstanceWarmup] = js.undefined,
         MinHealthyPercentage: js.UndefOr[IntPercent] = js.undefined
     ): RefreshPreferences = {
       val __obj = js.Dynamic.literal()
+      CheckpointDelay.foreach(__v => __obj.updateDynamic("CheckpointDelay")(__v.asInstanceOf[js.Any]))
+      CheckpointPercentages.foreach(__v => __obj.updateDynamic("CheckpointPercentages")(__v.asInstanceOf[js.Any]))
       InstanceWarmup.foreach(__v => __obj.updateDynamic("InstanceWarmup")(__v.asInstanceOf[js.Any]))
       MinHealthyPercentage.foreach(__v => __obj.updateDynamic("MinHealthyPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RefreshPreferences]
@@ -3163,6 +3187,7 @@ package autoscaling {
     var ScheduledActionName: js.UndefOr[XmlStringMaxLen255]
     var StartTime: js.UndefOr[TimestampType]
     var Time: js.UndefOr[TimestampType]
+    var TimeZone: js.UndefOr[XmlStringMaxLen255]
   }
 
   object ScheduledUpdateGroupAction {
@@ -3177,7 +3202,8 @@ package autoscaling {
         ScheduledActionARN: js.UndefOr[ResourceName] = js.undefined,
         ScheduledActionName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined,
-        Time: js.UndefOr[TimestampType] = js.undefined
+        Time: js.UndefOr[TimestampType] = js.undefined,
+        TimeZone: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): ScheduledUpdateGroupAction = {
       val __obj = js.Dynamic.literal()
       AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
@@ -3190,12 +3216,12 @@ package autoscaling {
       ScheduledActionName.foreach(__v => __obj.updateDynamic("ScheduledActionName")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledUpdateGroupAction]
     }
   }
 
   /** Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a> operation.
-    * When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
     */
   @js.native
   trait ScheduledUpdateGroupActionRequest extends js.Object {
@@ -3206,6 +3232,7 @@ package autoscaling {
     var MinSize: js.UndefOr[AutoScalingGroupMinSize]
     var Recurrence: js.UndefOr[XmlStringMaxLen255]
     var StartTime: js.UndefOr[TimestampType]
+    var TimeZone: js.UndefOr[XmlStringMaxLen255]
   }
 
   object ScheduledUpdateGroupActionRequest {
@@ -3217,7 +3244,8 @@ package autoscaling {
         MaxSize: js.UndefOr[AutoScalingGroupMaxSize] = js.undefined,
         MinSize: js.UndefOr[AutoScalingGroupMinSize] = js.undefined,
         Recurrence: js.UndefOr[XmlStringMaxLen255] = js.undefined,
-        StartTime: js.UndefOr[TimestampType] = js.undefined
+        StartTime: js.UndefOr[TimestampType] = js.undefined,
+        TimeZone: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): ScheduledUpdateGroupActionRequest = {
       val __obj = js.Dynamic.literal(
         "ScheduledActionName" -> ScheduledActionName.asInstanceOf[js.Any]
@@ -3229,6 +3257,7 @@ package autoscaling {
       MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
       Recurrence.foreach(__v => __obj.updateDynamic("Recurrence")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledUpdateGroupActionRequest]
     }
   }

@@ -77,6 +77,7 @@ package object backup {
     @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] = service.describeRecoveryPoint(params).promise().toFuture
     @inline def describeRegionSettingsFuture(params: DescribeRegionSettingsInput): Future[DescribeRegionSettingsOutput] = service.describeRegionSettings(params).promise().toFuture
     @inline def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] = service.describeRestoreJob(params).promise().toFuture
+    @inline def disassociateRecoveryPointFuture(params: DisassociateRecoveryPointInput): Future[js.Object] = service.disassociateRecoveryPoint(params).promise().toFuture
     @inline def exportBackupPlanTemplateFuture(params: ExportBackupPlanTemplateInput): Future[ExportBackupPlanTemplateOutput] = service.exportBackupPlanTemplate(params).promise().toFuture
     @inline def getBackupPlanFromJSONFuture(params: GetBackupPlanFromJSONInput): Future[GetBackupPlanFromJSONOutput] = service.getBackupPlanFromJSON(params).promise().toFuture
     @inline def getBackupPlanFromTemplateFuture(params: GetBackupPlanFromTemplateInput): Future[GetBackupPlanFromTemplateOutput] = service.getBackupPlanFromTemplate(params).promise().toFuture
@@ -137,6 +138,7 @@ package backup {
     def describeRecoveryPoint(params: DescribeRecoveryPointInput): Request[DescribeRecoveryPointOutput] = js.native
     def describeRegionSettings(params: DescribeRegionSettingsInput): Request[DescribeRegionSettingsOutput] = js.native
     def describeRestoreJob(params: DescribeRestoreJobInput): Request[DescribeRestoreJobOutput] = js.native
+    def disassociateRecoveryPoint(params: DisassociateRecoveryPointInput): Request[js.Object] = js.native
     def exportBackupPlanTemplate(params: ExportBackupPlanTemplateInput): Request[ExportBackupPlanTemplateOutput] = js.native
     def getBackupPlan(params: GetBackupPlanInput): Request[GetBackupPlanOutput] = js.native
     def getBackupPlanFromJSON(params: GetBackupPlanFromJSONInput): Request[GetBackupPlanFromJSONOutput] = js.native
@@ -406,6 +408,7 @@ package backup {
     var TargetBackupVaultName: BackupVaultName
     var CompletionWindowMinutes: js.UndefOr[WindowMinutes]
     var CopyActions: js.UndefOr[CopyActions]
+    var EnableContinuousBackup: js.UndefOr[Boolean]
     var Lifecycle: js.UndefOr[Lifecycle]
     var RecoveryPointTags: js.UndefOr[Tags]
     var RuleId: js.UndefOr[String]
@@ -420,6 +423,7 @@ package backup {
         TargetBackupVaultName: BackupVaultName,
         CompletionWindowMinutes: js.UndefOr[WindowMinutes] = js.undefined,
         CopyActions: js.UndefOr[CopyActions] = js.undefined,
+        EnableContinuousBackup: js.UndefOr[Boolean] = js.undefined,
         Lifecycle: js.UndefOr[Lifecycle] = js.undefined,
         RecoveryPointTags: js.UndefOr[Tags] = js.undefined,
         RuleId: js.UndefOr[String] = js.undefined,
@@ -433,6 +437,7 @@ package backup {
 
       CompletionWindowMinutes.foreach(__v => __obj.updateDynamic("CompletionWindowMinutes")(__v.asInstanceOf[js.Any]))
       CopyActions.foreach(__v => __obj.updateDynamic("CopyActions")(__v.asInstanceOf[js.Any]))
+      EnableContinuousBackup.foreach(__v => __obj.updateDynamic("EnableContinuousBackup")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       RecoveryPointTags.foreach(__v => __obj.updateDynamic("RecoveryPointTags")(__v.asInstanceOf[js.Any]))
       RuleId.foreach(__v => __obj.updateDynamic("RuleId")(__v.asInstanceOf[js.Any]))
@@ -450,6 +455,7 @@ package backup {
     var TargetBackupVaultName: BackupVaultName
     var CompletionWindowMinutes: js.UndefOr[WindowMinutes]
     var CopyActions: js.UndefOr[CopyActions]
+    var EnableContinuousBackup: js.UndefOr[Boolean]
     var Lifecycle: js.UndefOr[Lifecycle]
     var RecoveryPointTags: js.UndefOr[Tags]
     var ScheduleExpression: js.UndefOr[CronExpression]
@@ -463,6 +469,7 @@ package backup {
         TargetBackupVaultName: BackupVaultName,
         CompletionWindowMinutes: js.UndefOr[WindowMinutes] = js.undefined,
         CopyActions: js.UndefOr[CopyActions] = js.undefined,
+        EnableContinuousBackup: js.UndefOr[Boolean] = js.undefined,
         Lifecycle: js.UndefOr[Lifecycle] = js.undefined,
         RecoveryPointTags: js.UndefOr[Tags] = js.undefined,
         ScheduleExpression: js.UndefOr[CronExpression] = js.undefined,
@@ -475,6 +482,7 @@ package backup {
 
       CompletionWindowMinutes.foreach(__v => __obj.updateDynamic("CompletionWindowMinutes")(__v.asInstanceOf[js.Any]))
       CopyActions.foreach(__v => __obj.updateDynamic("CopyActions")(__v.asInstanceOf[js.Any]))
+      EnableContinuousBackup.foreach(__v => __obj.updateDynamic("EnableContinuousBackup")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       RecoveryPointTags.foreach(__v => __obj.updateDynamic("RecoveryPointTags")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
@@ -619,6 +627,7 @@ package backup {
   /** Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.
     * The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.
     * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+    * Only Amazon EFS file system backups can be transitioned to cold storage.
     */
   @js.native
   trait CalculatedLifecycle extends js.Object {
@@ -1470,6 +1479,26 @@ package backup {
   }
 
   @js.native
+  trait DisassociateRecoveryPointInput extends js.Object {
+    var BackupVaultName: BackupVaultName
+    var RecoveryPointArn: ARN
+  }
+
+  object DisassociateRecoveryPointInput {
+    @inline
+    def apply(
+        BackupVaultName: BackupVaultName,
+        RecoveryPointArn: ARN
+    ): DisassociateRecoveryPointInput = {
+      val __obj = js.Dynamic.literal(
+        "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any],
+        "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateRecoveryPointInput]
+    }
+  }
+
+  @js.native
   trait ExportBackupPlanTemplateInput extends js.Object {
     var BackupPlanId: String
   }
@@ -1818,6 +1847,7 @@ package backup {
 
   /** Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.
     * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+    * Only Amazon EFS file system backups can be transitioned to cold storage.
     */
   @js.native
   trait Lifecycle extends js.Object {

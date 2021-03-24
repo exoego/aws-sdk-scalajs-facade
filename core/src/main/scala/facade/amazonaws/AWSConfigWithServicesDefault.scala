@@ -101,6 +101,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var es: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var eventbridge: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var firehose: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var fis: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var fms: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var forecastqueryservice: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var forecastservice: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -150,7 +151,9 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var lakeformation: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var lambda: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var lexmodelbuildingservice: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var lexmodelsv2: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var lexruntime: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var lexruntimev2: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var licensemanager: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var lightsail: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var location: js.UndefOr[ParamsWithEndpoint] = js.undefined

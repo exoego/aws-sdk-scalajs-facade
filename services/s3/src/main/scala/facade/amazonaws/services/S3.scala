@@ -69,6 +69,8 @@ package object s3 {
   type EmailAddress = String
   type EnableRequestProgress = Boolean
   type End = Double
+  type ErrorCode = String
+  type ErrorMessage = String
   type Errors = js.Array[Error]
   type EventList = js.Array[Event]
   type Expiration = String
@@ -81,6 +83,7 @@ package object s3 {
   type FieldDelimiter = String
   type FilterRuleList = js.Array[FilterRule]
   type FilterRuleValue = String
+  type GetObjectResponseStatusCode = Int
   type GrantFullControl = String
   type GrantRead = String
   type GrantReadACP = String
@@ -167,6 +170,8 @@ package object s3 {
   type ReplaceKeyWith = String
   type ReplicaKmsKeyID = String
   type ReplicationRules = js.Array[ReplicationRule]
+  type RequestRoute = String
+  type RequestToken = String
   type ResponseCacheControl = String
   type ResponseContentDisposition = String
   type ResponseContentEncoding = String
@@ -301,6 +306,7 @@ package object s3 {
     @inline def selectObjectContentFuture(params: SelectObjectContentRequest): Future[SelectObjectContentOutput] = service.selectObjectContent(params).promise().toFuture
     @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] = service.uploadPartCopy(params).promise().toFuture
     @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] = service.uploadPart(params).promise().toFuture
+    @inline def writeGetObjectResponseFuture(params: WriteGetObjectResponseRequest): Future[js.Object] = service.writeGetObjectResponse(params).promise().toFuture
     import scala.concurrent.Future
 
     /** Get a pre-signed URL for a given operation name.
@@ -384,14 +390,20 @@ package object s3 {
       * Note that this is the only operation for which the SDK can retry requests with stream bodies.
       * @return The response data from the successful upload
       */
-    def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = service.upload(params).sendFuture()
+    def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = {
+      import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
+      service.upload(params).sendFuture()
+    }
 
     /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
       * You can configure the concurrent queue size by setting options.
       * Note that this is the only operation for which the SDK can retry requests with stream bodies.
       * @return The response data from the successful upload
       */
-    def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = service.upload(params, options).sendFuture()
+    def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = {
+      import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
+      service.upload(params, options).sendFuture()
+    }
 
   }
 
@@ -595,6 +607,7 @@ package s3 {
     def selectObjectContent(params: SelectObjectContentRequest): Request[SelectObjectContentOutput] = js.native
     def uploadPart(params: UploadPartRequest): Request[UploadPartOutput] = js.native
     def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput] = js.native
+    def writeGetObjectResponse(params: WriteGetObjectResponseRequest): Request[js.Object] = js.native
   }
 
   /** Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
@@ -1037,6 +1050,7 @@ package s3 {
     var AllowedOrigins: AllowedOrigins
     var AllowedHeaders: js.UndefOr[AllowedHeaders]
     var ExposeHeaders: js.UndefOr[ExposeHeaders]
+    var ID: js.UndefOr[ID]
     var MaxAgeSeconds: js.UndefOr[MaxAgeSeconds]
   }
 
@@ -1047,6 +1061,7 @@ package s3 {
         AllowedOrigins: AllowedOrigins,
         AllowedHeaders: js.UndefOr[AllowedHeaders] = js.undefined,
         ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
+        ID: js.UndefOr[ID] = js.undefined,
         MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined
     ): CORSRule = {
       val __obj = js.Dynamic.literal(
@@ -1056,6 +1071,7 @@ package s3 {
 
       AllowedHeaders.foreach(__v => __obj.updateDynamic("AllowedHeaders")(__v.asInstanceOf[js.Any]))
       ExposeHeaders.foreach(__v => __obj.updateDynamic("ExposeHeaders")(__v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
       MaxAgeSeconds.foreach(__v => __obj.updateDynamic("MaxAgeSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CORSRule]
     }
@@ -2571,7 +2587,7 @@ package s3 {
     )
   }
 
-  /** Optional configuration to replicate existing source bucket objects. For more information, see [[ https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication|Replicating Existing Objects]] in the <i>Amazon S3 Developer Guide</i>.
+  /** Optional configuration to replicate existing source bucket objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication|Replicating Existing Objects]] in the <i>Amazon S3 Developer Guide</i>.
     */
   @js.native
   trait ExistingObjectReplication extends js.Object {
@@ -3832,6 +3848,7 @@ package s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var ExpectedBucketOwner: js.UndefOr[AccountId]
+    var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
@@ -3841,6 +3858,7 @@ package s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
+        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): GetObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
@@ -3849,6 +3867,7 @@ package s3 {
       )
 
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectTaggingRequest]
     }
@@ -6224,7 +6243,7 @@ package s3 {
     @inline def values = js.Array(http, https)
   }
 
-  /** The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
@@ -7208,6 +7227,7 @@ package s3 {
     var Tagging: Tagging
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
+    var RequestPayer: js.UndefOr[RequestPayer]
     var VersionId: js.UndefOr[ObjectVersionId]
   }
 
@@ -7219,6 +7239,7 @@ package s3 {
         Tagging: Tagging,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
+        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): PutObjectTaggingRequest = {
       val __obj = js.Dynamic.literal(
@@ -7229,6 +7250,7 @@ package s3 {
 
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutObjectTaggingRequest]
     }
@@ -7496,7 +7518,7 @@ package s3 {
   /** A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter.
     * For example:
     * * If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.
-    * * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag
+    * * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.
     */
   @js.native
   trait ReplicationRuleAndOperator extends js.Object {
@@ -7763,7 +7785,7 @@ package s3 {
     @inline def values = js.Array(SELECT)
   }
 
-  /** Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects|Configuring advanced conditional redirects]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects|Configuring advanced conditional redirects]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait RoutingRule extends js.Object {
@@ -7786,7 +7808,7 @@ package s3 {
     }
   }
 
-  /** Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|Put Bucket Lifecycle Configuration]] in the <i>Amazon Simple Storage Service API Reference</i>. For examples, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples|Put Bucket Lifecycle Configuration Examples]]
+  /** Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|Put Bucket Lifecycle Configuration]] in the <i>Amazon Simple Storage Service API Reference</i>. For examples, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples|Put Bucket Lifecycle Configuration Examples]].
     */
   @js.native
   trait Rule extends js.Object {
@@ -8451,7 +8473,7 @@ package s3 {
     }
   }
 
-  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html|Transitioning Objects Using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html|Transitioning Objects Using Amazon S3 Lifecycle]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait Transition extends js.Object {
@@ -8736,6 +8758,129 @@ package s3 {
       RedirectAllRequestsTo.foreach(__v => __obj.updateDynamic("RedirectAllRequestsTo")(__v.asInstanceOf[js.Any]))
       RoutingRules.foreach(__v => __obj.updateDynamic("RoutingRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebsiteConfiguration]
+    }
+  }
+
+  @js.native
+  trait WriteGetObjectResponseRequest extends js.Object {
+    var RequestRoute: RequestRoute
+    var RequestToken: RequestToken
+    var AcceptRanges: js.UndefOr[AcceptRanges]
+    var Body: js.UndefOr[Body]
+    var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
+    var CacheControl: js.UndefOr[CacheControl]
+    var ContentDisposition: js.UndefOr[ContentDisposition]
+    var ContentEncoding: js.UndefOr[ContentEncoding]
+    var ContentLanguage: js.UndefOr[ContentLanguage]
+    var ContentLength: js.UndefOr[ContentLength]
+    var ContentRange: js.UndefOr[ContentRange]
+    var ContentType: js.UndefOr[ContentType]
+    var DeleteMarker: js.UndefOr[DeleteMarker]
+    var ETag: js.UndefOr[ETag]
+    var ErrorCode: js.UndefOr[ErrorCode]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var Expiration: js.UndefOr[Expiration]
+    var Expires: js.UndefOr[Expires]
+    var LastModified: js.UndefOr[LastModified]
+    var Metadata: js.UndefOr[Metadata]
+    var MissingMeta: js.UndefOr[MissingMeta]
+    var ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus]
+    var ObjectLockMode: js.UndefOr[ObjectLockMode]
+    var ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate]
+    var PartsCount: js.UndefOr[PartsCount]
+    var ReplicationStatus: js.UndefOr[ReplicationStatus]
+    var RequestCharged: js.UndefOr[RequestCharged]
+    var Restore: js.UndefOr[Restore]
+    var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
+    var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var SSEKMSKeyId: js.UndefOr[SSEKMSKeyId]
+    var ServerSideEncryption: js.UndefOr[ServerSideEncryption]
+    var StatusCode: js.UndefOr[GetObjectResponseStatusCode]
+    var StorageClass: js.UndefOr[StorageClass]
+    var TagCount: js.UndefOr[TagCount]
+    var VersionId: js.UndefOr[ObjectVersionId]
+  }
+
+  object WriteGetObjectResponseRequest {
+    @inline
+    def apply(
+        RequestRoute: RequestRoute,
+        RequestToken: RequestToken,
+        AcceptRanges: js.UndefOr[AcceptRanges] = js.undefined,
+        Body: js.UndefOr[Body] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
+        CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
+        ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
+        ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
+        ContentLength: js.UndefOr[ContentLength] = js.undefined,
+        ContentRange: js.UndefOr[ContentRange] = js.undefined,
+        ContentType: js.UndefOr[ContentType] = js.undefined,
+        DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
+        ETag: js.UndefOr[ETag] = js.undefined,
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        Expiration: js.UndefOr[Expiration] = js.undefined,
+        Expires: js.UndefOr[Expires] = js.undefined,
+        LastModified: js.UndefOr[LastModified] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        MissingMeta: js.UndefOr[MissingMeta] = js.undefined,
+        ObjectLockLegalHoldStatus: js.UndefOr[ObjectLockLegalHoldStatus] = js.undefined,
+        ObjectLockMode: js.UndefOr[ObjectLockMode] = js.undefined,
+        ObjectLockRetainUntilDate: js.UndefOr[ObjectLockRetainUntilDate] = js.undefined,
+        PartsCount: js.UndefOr[PartsCount] = js.undefined,
+        ReplicationStatus: js.UndefOr[ReplicationStatus] = js.undefined,
+        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
+        Restore: js.UndefOr[Restore] = js.undefined,
+        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
+        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        SSEKMSKeyId: js.UndefOr[SSEKMSKeyId] = js.undefined,
+        ServerSideEncryption: js.UndefOr[ServerSideEncryption] = js.undefined,
+        StatusCode: js.UndefOr[GetObjectResponseStatusCode] = js.undefined,
+        StorageClass: js.UndefOr[StorageClass] = js.undefined,
+        TagCount: js.UndefOr[TagCount] = js.undefined,
+        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
+    ): WriteGetObjectResponseRequest = {
+      val __obj = js.Dynamic.literal(
+        "RequestRoute" -> RequestRoute.asInstanceOf[js.Any],
+        "RequestToken" -> RequestToken.asInstanceOf[js.Any]
+      )
+
+      AcceptRanges.foreach(__v => __obj.updateDynamic("AcceptRanges")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
+      ContentRange.foreach(__v => __obj.updateDynamic("ContentRange")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      DeleteMarker.foreach(__v => __obj.updateDynamic("DeleteMarker")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      MissingMeta.foreach(__v => __obj.updateDynamic("MissingMeta")(__v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(__v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any]))
+      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(__v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any]))
+      PartsCount.foreach(__v => __obj.updateDynamic("PartsCount")(__v.asInstanceOf[js.Any]))
+      ReplicationStatus.foreach(__v => __obj.updateDynamic("ReplicationStatus")(__v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
+      Restore.foreach(__v => __obj.updateDynamic("Restore")(__v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
+      SSEKMSKeyId.foreach(__v => __obj.updateDynamic("SSEKMSKeyId")(__v.asInstanceOf[js.Any]))
+      ServerSideEncryption.foreach(__v => __obj.updateDynamic("ServerSideEncryption")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      TagCount.foreach(__v => __obj.updateDynamic("TagCount")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteGetObjectResponseRequest]
     }
   }
 }

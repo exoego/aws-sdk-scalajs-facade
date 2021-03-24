@@ -26,6 +26,9 @@ package object servicediscovery {
   type Message = String
   type NamespaceFilters = js.Array[NamespaceFilter]
   type NamespaceName = String
+  type NamespaceNameHttp = String
+  type NamespaceNamePrivate = String
+  type NamespaceNamePublic = String
   type NamespaceSummariesList = js.Array[NamespaceSummary]
   type NextToken = String
   type OperationFilters = js.Array[OperationFilter]
@@ -108,7 +111,7 @@ package servicediscovery {
 
   @js.native
   trait CreateHttpNamespaceRequest extends js.Object {
-    var Name: NamespaceName
+    var Name: NamespaceNameHttp
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
     var Tags: js.UndefOr[TagList]
@@ -117,7 +120,7 @@ package servicediscovery {
   object CreateHttpNamespaceRequest {
     @inline
     def apply(
-        Name: NamespaceName,
+        Name: NamespaceNameHttp,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -151,7 +154,7 @@ package servicediscovery {
 
   @js.native
   trait CreatePrivateDnsNamespaceRequest extends js.Object {
-    var Name: NamespaceName
+    var Name: NamespaceNamePrivate
     var Vpc: ResourceId
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
@@ -161,7 +164,7 @@ package servicediscovery {
   object CreatePrivateDnsNamespaceRequest {
     @inline
     def apply(
-        Name: NamespaceName,
+        Name: NamespaceNamePrivate,
         Vpc: ResourceId,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
@@ -197,7 +200,7 @@ package servicediscovery {
 
   @js.native
   trait CreatePublicDnsNamespaceRequest extends js.Object {
-    var Name: NamespaceName
+    var Name: NamespaceNamePublic
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
     var Tags: js.UndefOr[TagList]
@@ -206,7 +209,7 @@ package servicediscovery {
   object CreatePublicDnsNamespaceRequest {
     @inline
     def apply(
-        Name: NamespaceName,
+        Name: NamespaceNamePublic,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -248,6 +251,7 @@ package servicediscovery {
     var HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig]
     var NamespaceId: js.UndefOr[ResourceId]
     var Tags: js.UndefOr[TagList]
+    var Type: js.UndefOr[ServiceTypeOption]
   }
 
   object CreateServiceRequest {
@@ -260,7 +264,8 @@ package servicediscovery {
         HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
         HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
         NamespaceId: js.UndefOr[ResourceId] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        Type: js.UndefOr[ServiceTypeOption] = js.undefined
     ): CreateServiceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -273,6 +278,7 @@ package servicediscovery {
       HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
       NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceRequest]
     }
   }
@@ -838,7 +844,7 @@ package servicediscovery {
     var Attributes: js.UndefOr[Attributes]
     var HealthStatus: js.UndefOr[HealthStatus]
     var InstanceId: js.UndefOr[ResourceId]
-    var NamespaceName: js.UndefOr[NamespaceName]
+    var NamespaceName: js.UndefOr[NamespaceNameHttp]
     var ServiceName: js.UndefOr[ServiceName]
   }
 
@@ -848,7 +854,7 @@ package servicediscovery {
         Attributes: js.UndefOr[Attributes] = js.undefined,
         HealthStatus: js.UndefOr[HealthStatus] = js.undefined,
         InstanceId: js.UndefOr[ResourceId] = js.undefined,
-        NamespaceName: js.UndefOr[NamespaceName] = js.undefined,
+        NamespaceName: js.UndefOr[NamespaceNameHttp] = js.undefined,
         ServiceName: js.UndefOr[ServiceName] = js.undefined
     ): HttpInstanceSummary = {
       val __obj = js.Dynamic.literal()
@@ -1480,6 +1486,7 @@ package servicediscovery {
     var InstanceCount: js.UndefOr[ResourceCount]
     var Name: js.UndefOr[ServiceName]
     var NamespaceId: js.UndefOr[ResourceId]
+    var Type: js.UndefOr[ServiceType]
   }
 
   object Service {
@@ -1495,7 +1502,8 @@ package servicediscovery {
         Id: js.UndefOr[ResourceId] = js.undefined,
         InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
         Name: js.UndefOr[ServiceName] = js.undefined,
-        NamespaceId: js.UndefOr[ResourceId] = js.undefined
+        NamespaceId: js.UndefOr[ResourceId] = js.undefined,
+        Type: js.UndefOr[ServiceType] = js.undefined
     ): Service = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -1509,6 +1517,7 @@ package servicediscovery {
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
     }
   }
@@ -1584,6 +1593,7 @@ package servicediscovery {
     var Id: js.UndefOr[ResourceId]
     var InstanceCount: js.UndefOr[ResourceCount]
     var Name: js.UndefOr[ServiceName]
+    var Type: js.UndefOr[ServiceType]
   }
 
   object ServiceSummary {
@@ -1597,7 +1607,8 @@ package servicediscovery {
         HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
         Id: js.UndefOr[ResourceId] = js.undefined,
         InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
-        Name: js.UndefOr[ServiceName] = js.undefined
+        Name: js.UndefOr[ServiceName] = js.undefined,
+        Type: js.UndefOr[ServiceType] = js.undefined
     ): ServiceSummary = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -1609,8 +1620,27 @@ package servicediscovery {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSummary]
     }
+  }
+
+  @js.native
+  sealed trait ServiceType extends js.Any
+  object ServiceType {
+    val HTTP = "HTTP".asInstanceOf[ServiceType]
+    val DNS_HTTP = "DNS_HTTP".asInstanceOf[ServiceType]
+    val DNS = "DNS".asInstanceOf[ServiceType]
+
+    @inline def values = js.Array(HTTP, DNS_HTTP, DNS)
+  }
+
+  @js.native
+  sealed trait ServiceTypeOption extends js.Any
+  object ServiceTypeOption {
+    val HTTP = "HTTP".asInstanceOf[ServiceTypeOption]
+
+    @inline def values = js.Array(HTTP)
   }
 
   /** A custom key-value pair associated with a resource.

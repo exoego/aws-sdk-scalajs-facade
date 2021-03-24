@@ -7,39 +7,78 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object accessanalyzer {
+  type AccessPointArn = String
+  type AccessPointPolicy = String
+  type AccessPreviewFindingId = String
+  type AccessPreviewFindingsList = js.Array[AccessPreviewFinding]
+  type AccessPreviewId = String
+  type AccessPreviewsList = js.Array[AccessPreviewSummary]
+  type AclCanonicalId = String
+  type AclUri = String
   type ActionList = js.Array[String]
   type AnalyzedResourcesList = js.Array[AnalyzedResourceSummary]
   type AnalyzerArn = String
   type AnalyzersList = js.Array[AnalyzerSummary]
   type ArchiveRulesList = js.Array[ArchiveRuleSummary]
   type ConditionKeyMap = js.Dictionary[String]
+  type ConfigurationsMap = js.Dictionary[Configuration]
+  type ConfigurationsMapKey = String
   type FilterCriteriaMap = js.Dictionary[Criterion]
   type FindingId = String
   type FindingIdList = js.Array[FindingId]
   type FindingSourceList = js.Array[FindingSource]
   type FindingsList = js.Array[FindingSummary]
+  type GranteePrincipal = String
+  type IamTrustPolicy = String
   type InlineArchiveRulesList = js.Array[InlineArchiveRule]
+  type IssueCode = String
+  type IssuingAccount = String
+  type KmsConstraintsKey = String
+  type KmsConstraintsMap = js.Dictionary[KmsConstraintsValue]
+  type KmsConstraintsValue = String
+  type KmsGrantConfigurationsList = js.Array[KmsGrantConfiguration]
+  type KmsGrantOperationsList = js.Array[KmsGrantOperation]
+  type KmsKeyPoliciesMap = js.Dictionary[KmsKeyPolicy]
+  type KmsKeyPolicy = String
+  type LearnMoreLink = String
+  type LocationList = js.Array[Location]
   type Name = String
+  type PathElementList = js.Array[PathElement]
+  type PolicyDocument = String
+  type PolicyName = String
   type PrincipalMap = js.Dictionary[String]
   type ResourceArn = String
+  type RetiringPrincipal = String
+  type S3AccessPointConfigurationsMap = js.Dictionary[S3AccessPointConfiguration]
+  type S3BucketAclGrantConfigurationsList = js.Array[S3BucketAclGrantConfiguration]
+  type S3BucketPolicy = String
+  type SecretsManagerSecretKmsId = String
+  type SecretsManagerSecretPolicy = String
   type SharedViaList = js.Array[String]
+  type SqsQueuePolicy = String
   type TagKeys = js.Array[String]
   type TagsMap = js.Dictionary[String]
   type Timestamp = js.Date
   type Token = String
+  type ValidatePolicyFindingList = js.Array[ValidatePolicyFinding]
   type ValueList = js.Array[String]
+  type VpcId = String
 
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
     @inline def applyArchiveRuleFuture(params: ApplyArchiveRuleRequest): Future[js.Object] = service.applyArchiveRule(params).promise().toFuture
+    @inline def createAccessPreviewFuture(params: CreateAccessPreviewRequest): Future[CreateAccessPreviewResponse] = service.createAccessPreview(params).promise().toFuture
     @inline def createAnalyzerFuture(params: CreateAnalyzerRequest): Future[CreateAnalyzerResponse] = service.createAnalyzer(params).promise().toFuture
     @inline def createArchiveRuleFuture(params: CreateArchiveRuleRequest): Future[js.Object] = service.createArchiveRule(params).promise().toFuture
     @inline def deleteAnalyzerFuture(params: DeleteAnalyzerRequest): Future[js.Object] = service.deleteAnalyzer(params).promise().toFuture
     @inline def deleteArchiveRuleFuture(params: DeleteArchiveRuleRequest): Future[js.Object] = service.deleteArchiveRule(params).promise().toFuture
+    @inline def getAccessPreviewFuture(params: GetAccessPreviewRequest): Future[GetAccessPreviewResponse] = service.getAccessPreview(params).promise().toFuture
     @inline def getAnalyzedResourceFuture(params: GetAnalyzedResourceRequest): Future[GetAnalyzedResourceResponse] = service.getAnalyzedResource(params).promise().toFuture
     @inline def getAnalyzerFuture(params: GetAnalyzerRequest): Future[GetAnalyzerResponse] = service.getAnalyzer(params).promise().toFuture
     @inline def getArchiveRuleFuture(params: GetArchiveRuleRequest): Future[GetArchiveRuleResponse] = service.getArchiveRule(params).promise().toFuture
     @inline def getFindingFuture(params: GetFindingRequest): Future[GetFindingResponse] = service.getFinding(params).promise().toFuture
+    @inline def listAccessPreviewFindingsFuture(params: ListAccessPreviewFindingsRequest): Future[ListAccessPreviewFindingsResponse] = service.listAccessPreviewFindings(params).promise().toFuture
+    @inline def listAccessPreviewsFuture(params: ListAccessPreviewsRequest): Future[ListAccessPreviewsResponse] = service.listAccessPreviews(params).promise().toFuture
     @inline def listAnalyzedResourcesFuture(params: ListAnalyzedResourcesRequest): Future[ListAnalyzedResourcesResponse] = service.listAnalyzedResources(params).promise().toFuture
     @inline def listAnalyzersFuture(params: ListAnalyzersRequest): Future[ListAnalyzersResponse] = service.listAnalyzers(params).promise().toFuture
     @inline def listArchiveRulesFuture(params: ListArchiveRulesRequest): Future[ListArchiveRulesResponse] = service.listArchiveRules(params).promise().toFuture
@@ -50,6 +89,7 @@ package object accessanalyzer {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateArchiveRuleFuture(params: UpdateArchiveRuleRequest): Future[js.Object] = service.updateArchiveRule(params).promise().toFuture
     @inline def updateFindingsFuture(params: UpdateFindingsRequest): Future[js.Object] = service.updateFindings(params).promise().toFuture
+    @inline def validatePolicyFuture(params: ValidatePolicyRequest): Future[ValidatePolicyResponse] = service.validatePolicy(params).promise().toFuture
 
   }
 }
@@ -61,14 +101,18 @@ package accessanalyzer {
     def this(config: AWSConfig) = this()
 
     def applyArchiveRule(params: ApplyArchiveRuleRequest): Request[js.Object] = js.native
+    def createAccessPreview(params: CreateAccessPreviewRequest): Request[CreateAccessPreviewResponse] = js.native
     def createAnalyzer(params: CreateAnalyzerRequest): Request[CreateAnalyzerResponse] = js.native
     def createArchiveRule(params: CreateArchiveRuleRequest): Request[js.Object] = js.native
     def deleteAnalyzer(params: DeleteAnalyzerRequest): Request[js.Object] = js.native
     def deleteArchiveRule(params: DeleteArchiveRuleRequest): Request[js.Object] = js.native
+    def getAccessPreview(params: GetAccessPreviewRequest): Request[GetAccessPreviewResponse] = js.native
     def getAnalyzedResource(params: GetAnalyzedResourceRequest): Request[GetAnalyzedResourceResponse] = js.native
     def getAnalyzer(params: GetAnalyzerRequest): Request[GetAnalyzerResponse] = js.native
     def getArchiveRule(params: GetArchiveRuleRequest): Request[GetArchiveRuleResponse] = js.native
     def getFinding(params: GetFindingRequest): Request[GetFindingResponse] = js.native
+    def listAccessPreviewFindings(params: ListAccessPreviewFindingsRequest): Request[ListAccessPreviewFindingsResponse] = js.native
+    def listAccessPreviews(params: ListAccessPreviewsRequest): Request[ListAccessPreviewsResponse] = js.native
     def listAnalyzedResources(params: ListAnalyzedResourcesRequest): Request[ListAnalyzedResourcesResponse] = js.native
     def listAnalyzers(params: ListAnalyzersRequest): Request[ListAnalyzersResponse] = js.native
     def listArchiveRules(params: ListArchiveRulesRequest): Request[ListArchiveRulesResponse] = js.native
@@ -79,6 +123,207 @@ package accessanalyzer {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateArchiveRule(params: UpdateArchiveRuleRequest): Request[js.Object] = js.native
     def updateFindings(params: UpdateFindingsRequest): Request[js.Object] = js.native
+    def validatePolicy(params: ValidatePolicyRequest): Request[ValidatePolicyResponse] = js.native
+  }
+
+  /** Contains information about an access preview.
+    */
+  @js.native
+  trait AccessPreview extends js.Object {
+    var analyzerArn: AnalyzerArn
+    var configurations: ConfigurationsMap
+    var createdAt: Timestamp
+    var id: AccessPreviewId
+    var status: AccessPreviewStatus
+    var statusReason: js.UndefOr[AccessPreviewStatusReason]
+  }
+
+  object AccessPreview {
+    @inline
+    def apply(
+        analyzerArn: AnalyzerArn,
+        configurations: ConfigurationsMap,
+        createdAt: Timestamp,
+        id: AccessPreviewId,
+        status: AccessPreviewStatus,
+        statusReason: js.UndefOr[AccessPreviewStatusReason] = js.undefined
+    ): AccessPreview = {
+      val __obj = js.Dynamic.literal(
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
+        "configurations" -> configurations.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessPreview]
+    }
+  }
+
+  /** An access preview finding generated by the access preview.
+    */
+  @js.native
+  trait AccessPreviewFinding extends js.Object {
+    var changeType: FindingChangeType
+    var createdAt: Timestamp
+    var id: AccessPreviewFindingId
+    var resourceOwnerAccount: String
+    var resourceType: ResourceType
+    var status: FindingStatus
+    var action: js.UndefOr[ActionList]
+    var condition: js.UndefOr[ConditionKeyMap]
+    var error: js.UndefOr[String]
+    var existingFindingId: js.UndefOr[FindingId]
+    var existingFindingStatus: js.UndefOr[FindingStatus]
+    var isPublic: js.UndefOr[Boolean]
+    var principal: js.UndefOr[PrincipalMap]
+    var resource: js.UndefOr[String]
+    var sources: js.UndefOr[FindingSourceList]
+  }
+
+  object AccessPreviewFinding {
+    @inline
+    def apply(
+        changeType: FindingChangeType,
+        createdAt: Timestamp,
+        id: AccessPreviewFindingId,
+        resourceOwnerAccount: String,
+        resourceType: ResourceType,
+        status: FindingStatus,
+        action: js.UndefOr[ActionList] = js.undefined,
+        condition: js.UndefOr[ConditionKeyMap] = js.undefined,
+        error: js.UndefOr[String] = js.undefined,
+        existingFindingId: js.UndefOr[FindingId] = js.undefined,
+        existingFindingStatus: js.UndefOr[FindingStatus] = js.undefined,
+        isPublic: js.UndefOr[Boolean] = js.undefined,
+        principal: js.UndefOr[PrincipalMap] = js.undefined,
+        resource: js.UndefOr[String] = js.undefined,
+        sources: js.UndefOr[FindingSourceList] = js.undefined
+    ): AccessPreviewFinding = {
+      val __obj = js.Dynamic.literal(
+        "changeType" -> changeType.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "resourceOwnerAccount" -> resourceOwnerAccount.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
+      condition.foreach(__v => __obj.updateDynamic("condition")(__v.asInstanceOf[js.Any]))
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      existingFindingId.foreach(__v => __obj.updateDynamic("existingFindingId")(__v.asInstanceOf[js.Any]))
+      existingFindingStatus.foreach(__v => __obj.updateDynamic("existingFindingStatus")(__v.asInstanceOf[js.Any]))
+      isPublic.foreach(__v => __obj.updateDynamic("isPublic")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
+      resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessPreviewFinding]
+    }
+  }
+
+  @js.native
+  sealed trait AccessPreviewStatus extends js.Any
+  object AccessPreviewStatus {
+    val COMPLETED = "COMPLETED".asInstanceOf[AccessPreviewStatus]
+    val CREATING = "CREATING".asInstanceOf[AccessPreviewStatus]
+    val FAILED = "FAILED".asInstanceOf[AccessPreviewStatus]
+
+    @inline def values = js.Array(COMPLETED, CREATING, FAILED)
+  }
+
+  /** Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.
+    */
+  @js.native
+  trait AccessPreviewStatusReason extends js.Object {
+    var code: AccessPreviewStatusReasonCode
+  }
+
+  object AccessPreviewStatusReason {
+    @inline
+    def apply(
+        code: AccessPreviewStatusReasonCode
+    ): AccessPreviewStatusReason = {
+      val __obj = js.Dynamic.literal(
+        "code" -> code.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AccessPreviewStatusReason]
+    }
+  }
+
+  @js.native
+  sealed trait AccessPreviewStatusReasonCode extends js.Any
+  object AccessPreviewStatusReasonCode {
+    val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[AccessPreviewStatusReasonCode]
+    val INVALID_CONFIGURATION = "INVALID_CONFIGURATION".asInstanceOf[AccessPreviewStatusReasonCode]
+
+    @inline def values = js.Array(INTERNAL_ERROR, INVALID_CONFIGURATION)
+  }
+
+  /** Contains a summary of information about an access preview.
+    */
+  @js.native
+  trait AccessPreviewSummary extends js.Object {
+    var analyzerArn: AnalyzerArn
+    var createdAt: Timestamp
+    var id: AccessPreviewId
+    var status: AccessPreviewStatus
+    var statusReason: js.UndefOr[AccessPreviewStatusReason]
+  }
+
+  object AccessPreviewSummary {
+    @inline
+    def apply(
+        analyzerArn: AnalyzerArn,
+        createdAt: Timestamp,
+        id: AccessPreviewId,
+        status: AccessPreviewStatus,
+        statusReason: js.UndefOr[AccessPreviewStatusReason] = js.undefined
+    ): AccessPreviewSummary = {
+      val __obj = js.Dynamic.literal(
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessPreviewSummary]
+    }
+  }
+
+  /** You specify each grantee as a type-value pair using one of these types. You can specify only one type of grantee. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html|PutBucketAcl]].
+    */
+  @js.native
+  trait AclGrantee extends js.Object {
+    var id: js.UndefOr[AclCanonicalId]
+    var uri: js.UndefOr[AclUri]
+  }
+
+  object AclGrantee {
+    @inline
+    def apply(
+        id: js.UndefOr[AclCanonicalId] = js.undefined,
+        uri: js.UndefOr[AclUri] = js.undefined
+    ): AclGrantee = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AclGrantee]
+    }
+  }
+
+  @js.native
+  sealed trait AclPermission extends js.Any
+  object AclPermission {
+    val READ = "READ".asInstanceOf[AclPermission]
+    val WRITE = "WRITE".asInstanceOf[AclPermission]
+    val READ_ACP = "READ_ACP".asInstanceOf[AclPermission]
+    val WRITE_ACP = "WRITE_ACP".asInstanceOf[AclPermission]
+    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[AclPermission]
+
+    @inline def values = js.Array(READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL)
   }
 
   /** Contains details about the analyzed resource.
@@ -262,6 +507,77 @@ package accessanalyzer {
         "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ArchiveRuleSummary]
+    }
+  }
+
+  /** Access control configuration structures for your resource. You specify the configuration as a type-value pair. You can specify only one type of access control configuration.
+    */
+  @js.native
+  trait Configuration extends js.Object {
+    var iamRole: js.UndefOr[IamRoleConfiguration]
+    var kmsKey: js.UndefOr[KmsKeyConfiguration]
+    var s3Bucket: js.UndefOr[S3BucketConfiguration]
+    var secretsManagerSecret: js.UndefOr[SecretsManagerSecretConfiguration]
+    var sqsQueue: js.UndefOr[SqsQueueConfiguration]
+  }
+
+  object Configuration {
+    @inline
+    def apply(
+        iamRole: js.UndefOr[IamRoleConfiguration] = js.undefined,
+        kmsKey: js.UndefOr[KmsKeyConfiguration] = js.undefined,
+        s3Bucket: js.UndefOr[S3BucketConfiguration] = js.undefined,
+        secretsManagerSecret: js.UndefOr[SecretsManagerSecretConfiguration] = js.undefined,
+        sqsQueue: js.UndefOr[SqsQueueConfiguration] = js.undefined
+    ): Configuration = {
+      val __obj = js.Dynamic.literal()
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      kmsKey.foreach(__v => __obj.updateDynamic("kmsKey")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      secretsManagerSecret.foreach(__v => __obj.updateDynamic("secretsManagerSecret")(__v.asInstanceOf[js.Any]))
+      sqsQueue.foreach(__v => __obj.updateDynamic("sqsQueue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Configuration]
+    }
+  }
+
+  @js.native
+  trait CreateAccessPreviewRequest extends js.Object {
+    var analyzerArn: AnalyzerArn
+    var configurations: ConfigurationsMap
+    var clientToken: js.UndefOr[String]
+  }
+
+  object CreateAccessPreviewRequest {
+    @inline
+    def apply(
+        analyzerArn: AnalyzerArn,
+        configurations: ConfigurationsMap,
+        clientToken: js.UndefOr[String] = js.undefined
+    ): CreateAccessPreviewRequest = {
+      val __obj = js.Dynamic.literal(
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
+        "configurations" -> configurations.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessPreviewRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAccessPreviewResponse extends js.Object {
+    var id: AccessPreviewId
+  }
+
+  object CreateAccessPreviewResponse {
+    @inline
+    def apply(
+        id: AccessPreviewId
+    ): CreateAccessPreviewResponse = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAccessPreviewResponse]
     }
   }
 
@@ -479,6 +795,16 @@ package accessanalyzer {
     }
   }
 
+  @js.native
+  sealed trait FindingChangeType extends js.Any
+  object FindingChangeType {
+    val CHANGED = "CHANGED".asInstanceOf[FindingChangeType]
+    val NEW = "NEW".asInstanceOf[FindingChangeType]
+    val UNCHANGED = "UNCHANGED".asInstanceOf[FindingChangeType]
+
+    @inline def values = js.Array(CHANGED, NEW, UNCHANGED)
+  }
+
   /** The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.
     */
   @js.native
@@ -605,6 +931,43 @@ package accessanalyzer {
       resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
       sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindingSummary]
+    }
+  }
+
+  @js.native
+  trait GetAccessPreviewRequest extends js.Object {
+    var accessPreviewId: AccessPreviewId
+    var analyzerArn: AnalyzerArn
+  }
+
+  object GetAccessPreviewRequest {
+    @inline
+    def apply(
+        accessPreviewId: AccessPreviewId,
+        analyzerArn: AnalyzerArn
+    ): GetAccessPreviewRequest = {
+      val __obj = js.Dynamic.literal(
+        "accessPreviewId" -> accessPreviewId.asInstanceOf[js.Any],
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessPreviewRequest]
+    }
+  }
+
+  @js.native
+  trait GetAccessPreviewResponse extends js.Object {
+    var accessPreview: AccessPreview
+  }
+
+  object GetAccessPreviewResponse {
+    @inline
+    def apply(
+        accessPreview: AccessPreview
+    ): GetAccessPreviewResponse = {
+      val __obj = js.Dynamic.literal(
+        "accessPreview" -> accessPreview.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessPreviewResponse]
     }
   }
 
@@ -767,6 +1130,24 @@ package accessanalyzer {
     }
   }
 
+  /** The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html|IAM and STS quotas]].
+    */
+  @js.native
+  trait IamRoleConfiguration extends js.Object {
+    var trustPolicy: js.UndefOr[IamTrustPolicy]
+  }
+
+  object IamRoleConfiguration {
+    @inline
+    def apply(
+        trustPolicy: js.UndefOr[IamTrustPolicy] = js.undefined
+    ): IamRoleConfiguration = {
+      val __obj = js.Dynamic.literal()
+      trustPolicy.foreach(__v => __obj.updateDynamic("trustPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IamRoleConfiguration]
+    }
+  }
+
   /** An criterion statement in an archive rule. Each archive rule may have multiple criteria.
     */
   @js.native
@@ -786,6 +1167,226 @@ package accessanalyzer {
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[InlineArchiveRule]
+    }
+  }
+
+  /** This configuration sets the Amazon S3 access point network origin to <code>Internet</code>.
+    */
+  @js.native
+  trait InternetConfiguration extends js.Object
+
+  object InternetConfiguration {
+    @inline
+    def apply(): InternetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[InternetConfiguration]
+    }
+  }
+
+  /** A proposed grant configuration for a KMS key. For more information, see [[https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html|CreateGrant]].
+    */
+  @js.native
+  trait KmsGrantConfiguration extends js.Object {
+    var granteePrincipal: GranteePrincipal
+    var issuingAccount: IssuingAccount
+    var operations: KmsGrantOperationsList
+    var constraints: js.UndefOr[KmsGrantConstraints]
+    var retiringPrincipal: js.UndefOr[RetiringPrincipal]
+  }
+
+  object KmsGrantConfiguration {
+    @inline
+    def apply(
+        granteePrincipal: GranteePrincipal,
+        issuingAccount: IssuingAccount,
+        operations: KmsGrantOperationsList,
+        constraints: js.UndefOr[KmsGrantConstraints] = js.undefined,
+        retiringPrincipal: js.UndefOr[RetiringPrincipal] = js.undefined
+    ): KmsGrantConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "granteePrincipal" -> granteePrincipal.asInstanceOf[js.Any],
+        "issuingAccount" -> issuingAccount.asInstanceOf[js.Any],
+        "operations" -> operations.asInstanceOf[js.Any]
+      )
+
+      constraints.foreach(__v => __obj.updateDynamic("constraints")(__v.asInstanceOf[js.Any]))
+      retiringPrincipal.foreach(__v => __obj.updateDynamic("retiringPrincipal")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KmsGrantConfiguration]
+    }
+  }
+
+  /** Use this structure to propose allowing [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]]. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see [[https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html|GrantConstraints]].
+    */
+  @js.native
+  trait KmsGrantConstraints extends js.Object {
+    var encryptionContextEquals: js.UndefOr[KmsConstraintsMap]
+    var encryptionContextSubset: js.UndefOr[KmsConstraintsMap]
+  }
+
+  object KmsGrantConstraints {
+    @inline
+    def apply(
+        encryptionContextEquals: js.UndefOr[KmsConstraintsMap] = js.undefined,
+        encryptionContextSubset: js.UndefOr[KmsConstraintsMap] = js.undefined
+    ): KmsGrantConstraints = {
+      val __obj = js.Dynamic.literal()
+      encryptionContextEquals.foreach(__v => __obj.updateDynamic("encryptionContextEquals")(__v.asInstanceOf[js.Any]))
+      encryptionContextSubset.foreach(__v => __obj.updateDynamic("encryptionContextSubset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KmsGrantConstraints]
+    }
+  }
+
+  @js.native
+  sealed trait KmsGrantOperation extends js.Any
+  object KmsGrantOperation {
+    val CreateGrant = "CreateGrant".asInstanceOf[KmsGrantOperation]
+    val Decrypt = "Decrypt".asInstanceOf[KmsGrantOperation]
+    val DescribeKey = "DescribeKey".asInstanceOf[KmsGrantOperation]
+    val Encrypt = "Encrypt".asInstanceOf[KmsGrantOperation]
+    val GenerateDataKey = "GenerateDataKey".asInstanceOf[KmsGrantOperation]
+    val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[KmsGrantOperation]
+    val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[KmsGrantOperation]
+    val GenerateDataKeyWithoutPlaintext = "GenerateDataKeyWithoutPlaintext".asInstanceOf[KmsGrantOperation]
+    val GetPublicKey = "GetPublicKey".asInstanceOf[KmsGrantOperation]
+    val ReEncryptFrom = "ReEncryptFrom".asInstanceOf[KmsGrantOperation]
+    val ReEncryptTo = "ReEncryptTo".asInstanceOf[KmsGrantOperation]
+    val RetireGrant = "RetireGrant".asInstanceOf[KmsGrantOperation]
+    val Sign = "Sign".asInstanceOf[KmsGrantOperation]
+    val Verify = "Verify".asInstanceOf[KmsGrantOperation]
+
+    @inline def values = js.Array(
+      CreateGrant,
+      Decrypt,
+      DescribeKey,
+      Encrypt,
+      GenerateDataKey,
+      GenerateDataKeyPair,
+      GenerateDataKeyPairWithoutPlaintext,
+      GenerateDataKeyWithoutPlaintext,
+      GetPublicKey,
+      ReEncryptFrom,
+      ReEncryptTo,
+      RetireGrant,
+      Sign,
+      Verify
+    )
+  }
+
+  /** Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see [[https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default|Default key policy]]. For more information about key policy limits, see [[https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html|Resource quotas]].
+    * <p/>
+    */
+  @js.native
+  trait KmsKeyConfiguration extends js.Object {
+    var grants: js.UndefOr[KmsGrantConfigurationsList]
+    var keyPolicies: js.UndefOr[KmsKeyPoliciesMap]
+  }
+
+  object KmsKeyConfiguration {
+    @inline
+    def apply(
+        grants: js.UndefOr[KmsGrantConfigurationsList] = js.undefined,
+        keyPolicies: js.UndefOr[KmsKeyPoliciesMap] = js.undefined
+    ): KmsKeyConfiguration = {
+      val __obj = js.Dynamic.literal()
+      grants.foreach(__v => __obj.updateDynamic("grants")(__v.asInstanceOf[js.Any]))
+      keyPolicies.foreach(__v => __obj.updateDynamic("keyPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KmsKeyConfiguration]
+    }
+  }
+
+  @js.native
+  trait ListAccessPreviewFindingsRequest extends js.Object {
+    var accessPreviewId: AccessPreviewId
+    var analyzerArn: AnalyzerArn
+    var filter: js.UndefOr[FilterCriteriaMap]
+    var maxResults: js.UndefOr[Int]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAccessPreviewFindingsRequest {
+    @inline
+    def apply(
+        accessPreviewId: AccessPreviewId,
+        analyzerArn: AnalyzerArn,
+        filter: js.UndefOr[FilterCriteriaMap] = js.undefined,
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAccessPreviewFindingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "accessPreviewId" -> accessPreviewId.asInstanceOf[js.Any],
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any]
+      )
+
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPreviewFindingsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAccessPreviewFindingsResponse extends js.Object {
+    var findings: AccessPreviewFindingsList
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAccessPreviewFindingsResponse {
+    @inline
+    def apply(
+        findings: AccessPreviewFindingsList,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAccessPreviewFindingsResponse = {
+      val __obj = js.Dynamic.literal(
+        "findings" -> findings.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPreviewFindingsResponse]
+    }
+  }
+
+  @js.native
+  trait ListAccessPreviewsRequest extends js.Object {
+    var analyzerArn: AnalyzerArn
+    var maxResults: js.UndefOr[Int]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAccessPreviewsRequest {
+    @inline
+    def apply(
+        analyzerArn: AnalyzerArn,
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAccessPreviewsRequest = {
+      val __obj = js.Dynamic.literal(
+        "analyzerArn" -> analyzerArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPreviewsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAccessPreviewsResponse extends js.Object {
+    var accessPreviews: AccessPreviewsList
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAccessPreviewsResponse {
+    @inline
+    def apply(
+        accessPreviews: AccessPreviewsList,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAccessPreviewsResponse = {
+      val __obj = js.Dynamic.literal(
+        "accessPreviews" -> accessPreviews.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessPreviewsResponse]
     }
   }
 
@@ -1030,12 +1631,134 @@ package accessanalyzer {
   }
 
   @js.native
+  sealed trait Locale extends js.Any
+  object Locale {
+    val DE = "DE".asInstanceOf[Locale]
+    val EN = "EN".asInstanceOf[Locale]
+    val ES = "ES".asInstanceOf[Locale]
+    val FR = "FR".asInstanceOf[Locale]
+    val IT = "IT".asInstanceOf[Locale]
+    val JA = "JA".asInstanceOf[Locale]
+    val KO = "KO".asInstanceOf[Locale]
+    val PT_BR = "PT_BR".asInstanceOf[Locale]
+    val ZH_CN = "ZH_CN".asInstanceOf[Locale]
+    val ZH_TW = "ZH_TW".asInstanceOf[Locale]
+
+    @inline def values = js.Array(DE, EN, ES, FR, IT, JA, KO, PT_BR, ZH_CN, ZH_TW)
+  }
+
+  /** A location in a policy that is represented as a path through the JSON representation and a corresponding span.
+    */
+  @js.native
+  trait Location extends js.Object {
+    var path: PathElementList
+    var span: Span
+  }
+
+  object Location {
+    @inline
+    def apply(
+        path: PathElementList,
+        span: Span
+    ): Location = {
+      val __obj = js.Dynamic.literal(
+        "path" -> path.asInstanceOf[js.Any],
+        "span" -> span.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Location]
+    }
+  }
+
+  /** The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 Access point. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]].
+    */
+  @js.native
+  trait NetworkOriginConfiguration extends js.Object {
+    var internetConfiguration: js.UndefOr[InternetConfiguration]
+    var vpcConfiguration: js.UndefOr[VpcConfiguration]
+  }
+
+  object NetworkOriginConfiguration {
+    @inline
+    def apply(
+        internetConfiguration: js.UndefOr[InternetConfiguration] = js.undefined,
+        vpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
+    ): NetworkOriginConfiguration = {
+      val __obj = js.Dynamic.literal()
+      internetConfiguration.foreach(__v => __obj.updateDynamic("internetConfiguration")(__v.asInstanceOf[js.Any]))
+      vpcConfiguration.foreach(__v => __obj.updateDynamic("vpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkOriginConfiguration]
+    }
+  }
+
+  @js.native
   sealed trait OrderBy extends js.Any
   object OrderBy {
     val ASC = "ASC".asInstanceOf[OrderBy]
     val DESC = "DESC".asInstanceOf[OrderBy]
 
     @inline def values = js.Array(ASC, DESC)
+  }
+
+  /** A single element in a path through the JSON representation of a policy.
+    */
+  @js.native
+  trait PathElement extends js.Object {
+    var index: js.UndefOr[Int]
+    var key: js.UndefOr[String]
+    var substring: js.UndefOr[Substring]
+    var value: js.UndefOr[String]
+  }
+
+  object PathElement {
+    @inline
+    def apply(
+        index: js.UndefOr[Int] = js.undefined,
+        key: js.UndefOr[String] = js.undefined,
+        substring: js.UndefOr[Substring] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): PathElement = {
+      val __obj = js.Dynamic.literal()
+      index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      substring.foreach(__v => __obj.updateDynamic("substring")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PathElement]
+    }
+  }
+
+  @js.native
+  sealed trait PolicyType extends js.Any
+  object PolicyType {
+    val IDENTITY_POLICY = "IDENTITY_POLICY".asInstanceOf[PolicyType]
+    val RESOURCE_POLICY = "RESOURCE_POLICY".asInstanceOf[PolicyType]
+    val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
+
+    @inline def values = js.Array(IDENTITY_POLICY, RESOURCE_POLICY, SERVICE_CONTROL_POLICY)
+  }
+
+  /** A position in a policy.
+    */
+  @js.native
+  trait Position extends js.Object {
+    var column: Int
+    var line: Int
+    var offset: Int
+  }
+
+  object Position {
+    @inline
+    def apply(
+        column: Int,
+        line: Int,
+        offset: Int
+    ): Position = {
+      val __obj = js.Dynamic.literal(
+        "column" -> column.asInstanceOf[js.Any],
+        "line" -> line.asInstanceOf[js.Any],
+        "offset" -> offset.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Position]
+    }
   }
 
   @js.native
@@ -1058,8 +1781,134 @@ package accessanalyzer {
     val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
     val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
     val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
+    val `AWS::SecretsManager::Secret` = "AWS::SecretsManager::Secret".asInstanceOf[ResourceType]
 
-    @inline def values = js.Array(`AWS::S3::Bucket`, `AWS::IAM::Role`, `AWS::SQS::Queue`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::KMS::Key`)
+    @inline def values = js.Array(
+      `AWS::S3::Bucket`,
+      `AWS::IAM::Role`,
+      `AWS::SQS::Queue`,
+      `AWS::Lambda::Function`,
+      `AWS::Lambda::LayerVersion`,
+      `AWS::KMS::Key`,
+      `AWS::SecretsManager::Secret`
+    )
+  }
+
+  /** The configuration for an Amazon S3 access point for the bucket. You can propose up to 10 access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see [[https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]]. For more information about access point policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html|Access points restrictions and limitations]].
+    */
+  @js.native
+  trait S3AccessPointConfiguration extends js.Object {
+    var accessPointPolicy: js.UndefOr[AccessPointPolicy]
+    var networkOrigin: js.UndefOr[NetworkOriginConfiguration]
+    var publicAccessBlock: js.UndefOr[S3PublicAccessBlockConfiguration]
+  }
+
+  object S3AccessPointConfiguration {
+    @inline
+    def apply(
+        accessPointPolicy: js.UndefOr[AccessPointPolicy] = js.undefined,
+        networkOrigin: js.UndefOr[NetworkOriginConfiguration] = js.undefined,
+        publicAccessBlock: js.UndefOr[S3PublicAccessBlockConfiguration] = js.undefined
+    ): S3AccessPointConfiguration = {
+      val __obj = js.Dynamic.literal()
+      accessPointPolicy.foreach(__v => __obj.updateDynamic("accessPointPolicy")(__v.asInstanceOf[js.Any]))
+      networkOrigin.foreach(__v => __obj.updateDynamic("networkOrigin")(__v.asInstanceOf[js.Any]))
+      publicAccessBlock.foreach(__v => __obj.updateDynamic("publicAccessBlock")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3AccessPointConfiguration]
+    }
+  }
+
+  /** A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls|How to Specify an ACL]].
+    */
+  @js.native
+  trait S3BucketAclGrantConfiguration extends js.Object {
+    var grantee: AclGrantee
+    var permission: AclPermission
+  }
+
+  object S3BucketAclGrantConfiguration {
+    @inline
+    def apply(
+        grantee: AclGrantee,
+        permission: AclPermission
+    ): S3BucketAclGrantConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "grantee" -> grantee.asInstanceOf[js.Any],
+        "permission" -> permission.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3BucketAclGrantConfiguration]
+    }
+  }
+
+  /** Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, and Amazon S3 access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html|Bucket Policy Examples]].
+    */
+  @js.native
+  trait S3BucketConfiguration extends js.Object {
+    var accessPoints: js.UndefOr[S3AccessPointConfigurationsMap]
+    var bucketAclGrants: js.UndefOr[S3BucketAclGrantConfigurationsList]
+    var bucketPolicy: js.UndefOr[S3BucketPolicy]
+    var bucketPublicAccessBlock: js.UndefOr[S3PublicAccessBlockConfiguration]
+  }
+
+  object S3BucketConfiguration {
+    @inline
+    def apply(
+        accessPoints: js.UndefOr[S3AccessPointConfigurationsMap] = js.undefined,
+        bucketAclGrants: js.UndefOr[S3BucketAclGrantConfigurationsList] = js.undefined,
+        bucketPolicy: js.UndefOr[S3BucketPolicy] = js.undefined,
+        bucketPublicAccessBlock: js.UndefOr[S3PublicAccessBlockConfiguration] = js.undefined
+    ): S3BucketConfiguration = {
+      val __obj = js.Dynamic.literal()
+      accessPoints.foreach(__v => __obj.updateDynamic("accessPoints")(__v.asInstanceOf[js.Any]))
+      bucketAclGrants.foreach(__v => __obj.updateDynamic("bucketAclGrants")(__v.asInstanceOf[js.Any]))
+      bucketPolicy.foreach(__v => __obj.updateDynamic("bucketPolicy")(__v.asInstanceOf[js.Any]))
+      bucketPublicAccessBlock.foreach(__v => __obj.updateDynamic("bucketPublicAccessBlock")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3BucketConfiguration]
+    }
+  }
+
+  /** The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html|PublicAccessBlockConfiguration]].
+    */
+  @js.native
+  trait S3PublicAccessBlockConfiguration extends js.Object {
+    var ignorePublicAcls: Boolean
+    var restrictPublicBuckets: Boolean
+  }
+
+  object S3PublicAccessBlockConfiguration {
+    @inline
+    def apply(
+        ignorePublicAcls: Boolean,
+        restrictPublicBuckets: Boolean
+    ): S3PublicAccessBlockConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "ignorePublicAcls" -> ignorePublicAcls.asInstanceOf[js.Any],
+        "restrictPublicBuckets" -> restrictPublicBuckets.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3PublicAccessBlockConfiguration]
+    }
+  }
+
+  /** The configuration for a Secrets Manager secret. For more information, see [[https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html|CreateSecret]].
+    * You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the default CMK of the AWS account. If you specify an empty string for the KMS key ID, the access preview uses the default CMK of the AWS account. For more information about secret policy limits, see [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html|Quotas for AWS Secrets Manager.]].
+    */
+  @js.native
+  trait SecretsManagerSecretConfiguration extends js.Object {
+    var kmsKeyId: js.UndefOr[SecretsManagerSecretKmsId]
+    var secretPolicy: js.UndefOr[SecretsManagerSecretPolicy]
+  }
+
+  object SecretsManagerSecretConfiguration {
+    @inline
+    def apply(
+        kmsKeyId: js.UndefOr[SecretsManagerSecretKmsId] = js.undefined,
+        secretPolicy: js.UndefOr[SecretsManagerSecretPolicy] = js.undefined
+    ): SecretsManagerSecretConfiguration = {
+      val __obj = js.Dynamic.literal()
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      secretPolicy.foreach(__v => __obj.updateDynamic("secretPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecretsManagerSecretConfiguration]
+    }
   }
 
   /** The criteria used to sort.
@@ -1080,6 +1929,46 @@ package accessanalyzer {
       attributeName.foreach(__v => __obj.updateDynamic("attributeName")(__v.asInstanceOf[js.Any]))
       orderBy.foreach(__v => __obj.updateDynamic("orderBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortCriteria]
+    }
+  }
+
+  /** A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).
+    */
+  @js.native
+  trait Span extends js.Object {
+    var end: Position
+    var start: Position
+  }
+
+  object Span {
+    @inline
+    def apply(
+        end: Position,
+        start: Position
+    ): Span = {
+      val __obj = js.Dynamic.literal(
+        "end" -> end.asInstanceOf[js.Any],
+        "start" -> start.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Span]
+    }
+  }
+
+  /** The proposed access control configuration for an SQS queue. You can propose a configuration for a new SQS queue or an existing SQS queue that you own by specifying the SQS policy. If the configuration is for an existing SQS queue and you do not specify the SQS policy, the access preview uses the existing SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an SQS queue without a policy. To propose deletion of an existing SQS queue policy, you can specify an empty string for the SQS policy. For more information about SQS policy limits, see [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html|Quotas related to policies]].
+    */
+  @js.native
+  trait SqsQueueConfiguration extends js.Object {
+    var queuePolicy: js.UndefOr[SqsQueuePolicy]
+  }
+
+  object SqsQueueConfiguration {
+    @inline
+    def apply(
+        queuePolicy: js.UndefOr[SqsQueuePolicy] = js.undefined
+    ): SqsQueueConfiguration = {
+      val __obj = js.Dynamic.literal()
+      queuePolicy.foreach(__v => __obj.updateDynamic("queuePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SqsQueueConfiguration]
     }
   }
 
@@ -1105,7 +1994,7 @@ package accessanalyzer {
     }
   }
 
-  /** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.
+  /** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.
     */
   @js.native
   trait StatusReason extends js.Object {
@@ -1121,6 +2010,28 @@ package accessanalyzer {
         "code" -> code.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[StatusReason]
+    }
+  }
+
+  /** A reference to a substring of a literal string in a JSON document.
+    */
+  @js.native
+  trait Substring extends js.Object {
+    var length: Int
+    var start: Int
+  }
+
+  object Substring {
+    @inline
+    def apply(
+        length: Int,
+        start: Int
+    ): Substring = {
+      val __obj = js.Dynamic.literal(
+        "length" -> length.asInstanceOf[js.Any],
+        "start" -> start.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Substring]
     }
   }
 
@@ -1261,6 +2172,118 @@ package accessanalyzer {
       ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
       resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFindingsRequest]
+    }
+  }
+
+  /** A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.
+    */
+  @js.native
+  trait ValidatePolicyFinding extends js.Object {
+    var findingDetails: String
+    var findingType: ValidatePolicyFindingType
+    var issueCode: IssueCode
+    var learnMoreLink: LearnMoreLink
+    var locations: LocationList
+  }
+
+  object ValidatePolicyFinding {
+    @inline
+    def apply(
+        findingDetails: String,
+        findingType: ValidatePolicyFindingType,
+        issueCode: IssueCode,
+        learnMoreLink: LearnMoreLink,
+        locations: LocationList
+    ): ValidatePolicyFinding = {
+      val __obj = js.Dynamic.literal(
+        "findingDetails" -> findingDetails.asInstanceOf[js.Any],
+        "findingType" -> findingType.asInstanceOf[js.Any],
+        "issueCode" -> issueCode.asInstanceOf[js.Any],
+        "learnMoreLink" -> learnMoreLink.asInstanceOf[js.Any],
+        "locations" -> locations.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ValidatePolicyFinding]
+    }
+  }
+
+  @js.native
+  sealed trait ValidatePolicyFindingType extends js.Any
+  object ValidatePolicyFindingType {
+    val ERROR = "ERROR".asInstanceOf[ValidatePolicyFindingType]
+    val SECURITY_WARNING = "SECURITY_WARNING".asInstanceOf[ValidatePolicyFindingType]
+    val SUGGESTION = "SUGGESTION".asInstanceOf[ValidatePolicyFindingType]
+    val WARNING = "WARNING".asInstanceOf[ValidatePolicyFindingType]
+
+    @inline def values = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
+  }
+
+  @js.native
+  trait ValidatePolicyRequest extends js.Object {
+    var policyDocument: PolicyDocument
+    var policyType: PolicyType
+    var locale: js.UndefOr[Locale]
+    var maxResults: js.UndefOr[Int]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ValidatePolicyRequest {
+    @inline
+    def apply(
+        policyDocument: PolicyDocument,
+        policyType: PolicyType,
+        locale: js.UndefOr[Locale] = js.undefined,
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ValidatePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "policyDocument" -> policyDocument.asInstanceOf[js.Any],
+        "policyType" -> policyType.asInstanceOf[js.Any]
+      )
+
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidatePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait ValidatePolicyResponse extends js.Object {
+    var findings: ValidatePolicyFindingList
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ValidatePolicyResponse {
+    @inline
+    def apply(
+        findings: ValidatePolicyFindingList,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ValidatePolicyResponse = {
+      val __obj = js.Dynamic.literal(
+        "findings" -> findings.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidatePolicyResponse]
+    }
+  }
+
+  /** The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html|VpcConfiguration]].
+    */
+  @js.native
+  trait VpcConfiguration extends js.Object {
+    var vpcId: VpcId
+  }
+
+  object VpcConfiguration {
+    @inline
+    def apply(
+        vpcId: VpcId
+    ): VpcConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "vpcId" -> vpcId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VpcConfiguration]
     }
   }
 }

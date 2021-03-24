@@ -559,6 +559,7 @@ package appsync {
     var description: js.UndefOr[String]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var syncConfig: js.UndefOr[SyncConfig]
   }
 
   object CreateFunctionRequest {
@@ -570,7 +571,8 @@ package appsync {
         name: ResourceName,
         description: js.UndefOr[String] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
-        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
+        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): CreateFunctionRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
@@ -582,6 +584,7 @@ package appsync {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionRequest]
     }
   }
@@ -1174,6 +1177,7 @@ package appsync {
     var name: js.UndefOr[ResourceName]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var syncConfig: js.UndefOr[SyncConfig]
   }
 
   object FunctionConfiguration {
@@ -1186,7 +1190,8 @@ package appsync {
         functionVersion: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
-        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
+        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): FunctionConfiguration = {
       val __obj = js.Dynamic.literal()
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
@@ -1197,6 +1202,7 @@ package appsync {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
     }
   }
@@ -2474,6 +2480,7 @@ package appsync {
     var description: js.UndefOr[String]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var syncConfig: js.UndefOr[SyncConfig]
   }
 
   object UpdateFunctionRequest {
@@ -2486,7 +2493,8 @@ package appsync {
         name: ResourceName,
         description: js.UndefOr[String] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
-        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined
+        responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): UpdateFunctionRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
@@ -2499,6 +2507,7 @@ package appsync {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFunctionRequest]
     }
   }

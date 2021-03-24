@@ -82,6 +82,7 @@ package object robomaker {
   type TagValue = String
   type TemplateName = String
   type TemplateSummaries = js.Array[TemplateSummary]
+  type UploadConfigurations = js.Array[UploadConfiguration]
   type Version = String
   type VersionQualifier = String
   type WorldConfigs = js.Array[WorldConfig]
@@ -3301,6 +3302,8 @@ package robomaker {
     var application: Arn
     var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
+    var uploadConfigurations: js.UndefOr[UploadConfigurations]
+    var useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean]
   }
 
   object RobotApplicationConfig {
@@ -3308,7 +3311,9 @@ package robomaker {
     def apply(
         application: Arn,
         launchConfig: LaunchConfig,
-        applicationVersion: js.UndefOr[Version] = js.undefined
+        applicationVersion: js.UndefOr[Version] = js.undefined,
+        uploadConfigurations: js.UndefOr[UploadConfigurations] = js.undefined,
+        useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean] = js.undefined
     ): RobotApplicationConfig = {
       val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any],
@@ -3316,6 +3321,8 @@ package robomaker {
       )
 
       applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
+      uploadConfigurations.foreach(__v => __obj.updateDynamic("uploadConfigurations")(__v.asInstanceOf[js.Any]))
+      useDefaultUploadConfigurations.foreach(__v => __obj.updateDynamic("useDefaultUploadConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotApplicationConfig]
     }
   }
@@ -3508,6 +3515,8 @@ package robomaker {
     var application: Arn
     var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
+    var uploadConfigurations: js.UndefOr[UploadConfigurations]
+    var useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean]
     var worldConfigs: js.UndefOr[WorldConfigs]
   }
 
@@ -3517,6 +3526,8 @@ package robomaker {
         application: Arn,
         launchConfig: LaunchConfig,
         applicationVersion: js.UndefOr[Version] = js.undefined,
+        uploadConfigurations: js.UndefOr[UploadConfigurations] = js.undefined,
+        useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean] = js.undefined,
         worldConfigs: js.UndefOr[WorldConfigs] = js.undefined
     ): SimulationApplicationConfig = {
       val __obj = js.Dynamic.literal(
@@ -3525,6 +3536,8 @@ package robomaker {
       )
 
       applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
+      uploadConfigurations.foreach(__v => __obj.updateDynamic("uploadConfigurations")(__v.asInstanceOf[js.Any]))
+      useDefaultUploadConfigurations.foreach(__v => __obj.updateDynamic("useDefaultUploadConfigurations")(__v.asInstanceOf[js.Any]))
       worldConfigs.foreach(__v => __obj.updateDynamic("worldConfigs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationApplicationConfig]
     }
@@ -3731,6 +3744,7 @@ package robomaker {
     val WrongRegionS3Output = "WrongRegionS3Output".asInstanceOf[SimulationJobErrorCode]
     val WrongRegionRobotApplication = "WrongRegionRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
+    val UploadContentMismatchError = "UploadContentMismatchError".asInstanceOf[SimulationJobErrorCode]
 
     @inline def values = js.Array(
       InternalServiceError,
@@ -3759,7 +3773,8 @@ package robomaker {
       WrongRegionS3Bucket,
       WrongRegionS3Output,
       WrongRegionRobotApplication,
-      WrongRegionSimulationApplication
+      WrongRegionSimulationApplication,
+      UploadContentMismatchError
     )
   }
 
@@ -4374,6 +4389,40 @@ package robomaker {
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorldTemplateResponse]
+    }
+  }
+
+  @js.native
+  sealed trait UploadBehavior extends js.Any
+  object UploadBehavior {
+    val UPLOAD_ON_TERMINATE = "UPLOAD_ON_TERMINATE".asInstanceOf[UploadBehavior]
+    val UPLOAD_ROLLING_AUTO_REMOVE = "UPLOAD_ROLLING_AUTO_REMOVE".asInstanceOf[UploadBehavior]
+
+    @inline def values = js.Array(UPLOAD_ON_TERMINATE, UPLOAD_ROLLING_AUTO_REMOVE)
+  }
+
+  /** Provides upload configuration information. Files are uploaded from the simulation job to a location you specify.
+    */
+  @js.native
+  trait UploadConfiguration extends js.Object {
+    var name: Name
+    var path: Path
+    var uploadBehavior: UploadBehavior
+  }
+
+  object UploadConfiguration {
+    @inline
+    def apply(
+        name: Name,
+        path: Path,
+        uploadBehavior: UploadBehavior
+    ): UploadConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "path" -> path.asInstanceOf[js.Any],
+        "uploadBehavior" -> uploadBehavior.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UploadConfiguration]
     }
   }
 

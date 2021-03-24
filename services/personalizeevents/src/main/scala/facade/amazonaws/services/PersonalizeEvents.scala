@@ -83,7 +83,7 @@ package personalizeevents {
     }
   }
 
-  /** Represents item metadata added to an Items dataset using the <code>PutItems</code> API.
+  /** Represents item metadata added to an Items dataset using the <code>PutItems</code> API. For more information see [[https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html|Importing Items Incrementally]].
     */
   @js.native
   trait Item extends js.Object {
@@ -173,7 +173,7 @@ package personalizeevents {
     }
   }
 
-  /** Represents user metadata added to a Users dataset using the <code>PutUsers</code> API.
+  /** Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see [[https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html|Importing Users Incrementally]].
     */
   @js.native
   trait User extends js.Object {

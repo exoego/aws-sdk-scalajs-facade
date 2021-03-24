@@ -77,7 +77,7 @@ package detective {
     }
   }
 
-  /** An AWS account that is the master of or a member of a behavior graph.
+  /** An AWS account that is the administrator account of or a member of a behavior graph.
     */
   @js.native
   trait Account extends js.Object {
@@ -119,6 +119,7 @@ package detective {
   trait CreateMembersRequest extends js.Object {
     var Accounts: AccountList
     var GraphArn: GraphArn
+    var DisableEmailNotification: js.UndefOr[Boolean]
     var Message: js.UndefOr[EmailMessage]
   }
 
@@ -127,6 +128,7 @@ package detective {
     def apply(
         Accounts: AccountList,
         GraphArn: GraphArn,
+        DisableEmailNotification: js.UndefOr[Boolean] = js.undefined,
         Message: js.UndefOr[EmailMessage] = js.undefined
     ): CreateMembersRequest = {
       val __obj = js.Dynamic.literal(
@@ -134,6 +136,7 @@ package detective {
         "GraphArn" -> GraphArn.asInstanceOf[js.Any]
       )
 
+      DisableEmailNotification.foreach(__v => __obj.updateDynamic("DisableEmailNotification")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMembersRequest]
     }
@@ -415,6 +418,7 @@ package detective {
   @js.native
   trait MemberDetail extends js.Object {
     var AccountId: js.UndefOr[AccountId]
+    var AdministratorId: js.UndefOr[AccountId]
     var DisabledReason: js.UndefOr[MemberDisabledReason]
     var EmailAddress: js.UndefOr[EmailAddress]
     var GraphArn: js.UndefOr[GraphArn]
@@ -430,6 +434,7 @@ package detective {
     @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
+        AdministratorId: js.UndefOr[AccountId] = js.undefined,
         DisabledReason: js.UndefOr[MemberDisabledReason] = js.undefined,
         EmailAddress: js.UndefOr[EmailAddress] = js.undefined,
         GraphArn: js.UndefOr[GraphArn] = js.undefined,
@@ -442,6 +447,7 @@ package detective {
     ): MemberDetail = {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AdministratorId.foreach(__v => __obj.updateDynamic("AdministratorId")(__v.asInstanceOf[js.Any]))
       DisabledReason.foreach(__v => __obj.updateDynamic("DisabledReason")(__v.asInstanceOf[js.Any]))
       EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
       GraphArn.foreach(__v => __obj.updateDynamic("GraphArn")(__v.asInstanceOf[js.Any]))

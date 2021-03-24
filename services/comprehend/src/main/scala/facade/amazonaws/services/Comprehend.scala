@@ -51,6 +51,7 @@ package object comprehend {
   type ListOfDetectSyntaxResult = js.Array[BatchDetectSyntaxItemResult]
   type ListOfDominantLanguages = js.Array[DominantLanguage]
   type ListOfEntities = js.Array[Entity]
+  type ListOfEntityLabels = js.Array[EntityLabel]
   type ListOfKeyPhrases = js.Array[KeyPhrase]
   type ListOfLabels = js.Array[DocumentLabel]
   type ListOfPiiEntities = js.Array[PiiEntity]
@@ -82,6 +83,7 @@ package object comprehend {
     @inline def batchDetectSentimentFuture(params: BatchDetectSentimentRequest): Future[BatchDetectSentimentResponse] = service.batchDetectSentiment(params).promise().toFuture
     @inline def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] = service.batchDetectSyntax(params).promise().toFuture
     @inline def classifyDocumentFuture(params: ClassifyDocumentRequest): Future[ClassifyDocumentResponse] = service.classifyDocument(params).promise().toFuture
+    @inline def containsPiiEntitiesFuture(params: ContainsPiiEntitiesRequest): Future[ContainsPiiEntitiesResponse] = service.containsPiiEntities(params).promise().toFuture
     @inline def createDocumentClassifierFuture(params: CreateDocumentClassifierRequest): Future[CreateDocumentClassifierResponse] = service.createDocumentClassifier(params).promise().toFuture
     @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResponse] = service.createEndpoint(params).promise().toFuture
     @inline def createEntityRecognizerFuture(params: CreateEntityRecognizerRequest): Future[CreateEntityRecognizerResponse] = service.createEntityRecognizer(params).promise().toFuture
@@ -152,6 +154,7 @@ package comprehend {
     def batchDetectSentiment(params: BatchDetectSentimentRequest): Request[BatchDetectSentimentResponse] = js.native
     def batchDetectSyntax(params: BatchDetectSyntaxRequest): Request[BatchDetectSyntaxResponse] = js.native
     def classifyDocument(params: ClassifyDocumentRequest): Request[ClassifyDocumentResponse] = js.native
+    def containsPiiEntities(params: ContainsPiiEntitiesRequest): Request[ContainsPiiEntitiesResponse] = js.native
     def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] = js.native
     def createEndpoint(params: CreateEndpointRequest): Request[CreateEndpointResponse] = js.native
     def createEntityRecognizer(params: CreateEntityRecognizerRequest): Request[CreateEntityRecognizerResponse] = js.native
@@ -661,6 +664,42 @@ package comprehend {
       Classes.foreach(__v => __obj.updateDynamic("Classes")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClassifyDocumentResponse]
+    }
+  }
+
+  @js.native
+  trait ContainsPiiEntitiesRequest extends js.Object {
+    var LanguageCode: LanguageCode
+    var Text: String
+  }
+
+  object ContainsPiiEntitiesRequest {
+    @inline
+    def apply(
+        LanguageCode: LanguageCode,
+        Text: String
+    ): ContainsPiiEntitiesRequest = {
+      val __obj = js.Dynamic.literal(
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ContainsPiiEntitiesRequest]
+    }
+  }
+
+  @js.native
+  trait ContainsPiiEntitiesResponse extends js.Object {
+    var Labels: js.UndefOr[ListOfEntityLabels]
+  }
+
+  object ContainsPiiEntitiesResponse {
+    @inline
+    def apply(
+        Labels: js.UndefOr[ListOfEntityLabels] = js.undefined
+    ): ContainsPiiEntitiesResponse = {
+      val __obj = js.Dynamic.literal()
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainsPiiEntitiesResponse]
     }
   }
 
@@ -2046,6 +2085,27 @@ package comprehend {
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Entity]
+    }
+  }
+
+  /** Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.
+    */
+  @js.native
+  trait EntityLabel extends js.Object {
+    var Name: js.UndefOr[PiiEntityType]
+    var Score: js.UndefOr[Float]
+  }
+
+  object EntityLabel {
+    @inline
+    def apply(
+        Name: js.UndefOr[PiiEntityType] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined
+    ): EntityLabel = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EntityLabel]
     }
   }
 

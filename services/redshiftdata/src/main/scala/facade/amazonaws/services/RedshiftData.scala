@@ -173,6 +173,7 @@ package redshiftdata {
     var DbUser: js.UndefOr[String]
     var Duration: js.UndefOr[Double]
     var Error: js.UndefOr[String]
+    var HasResultSet: js.UndefOr[Boolean]
     var QueryString: js.UndefOr[StatementString]
     var RedshiftPid: js.UndefOr[Double]
     var RedshiftQueryId: js.UndefOr[Double]
@@ -193,6 +194,7 @@ package redshiftdata {
         DbUser: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[Double] = js.undefined,
         Error: js.UndefOr[String] = js.undefined,
+        HasResultSet: js.UndefOr[Boolean] = js.undefined,
         QueryString: js.UndefOr[StatementString] = js.undefined,
         RedshiftPid: js.UndefOr[Double] = js.undefined,
         RedshiftQueryId: js.UndefOr[Double] = js.undefined,
@@ -212,6 +214,7 @@ package redshiftdata {
       DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
       Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      HasResultSet.foreach(__v => __obj.updateDynamic("HasResultSet")(__v.asInstanceOf[js.Any]))
       QueryString.foreach(__v => __obj.updateDynamic("QueryString")(__v.asInstanceOf[js.Any]))
       RedshiftPid.foreach(__v => __obj.updateDynamic("RedshiftPid")(__v.asInstanceOf[js.Any]))
       RedshiftQueryId.foreach(__v => __obj.updateDynamic("RedshiftQueryId")(__v.asInstanceOf[js.Any]))
@@ -227,7 +230,8 @@ package redshiftdata {
   @js.native
   trait DescribeTableRequest extends js.Object {
     var ClusterIdentifier: Location
-    var Database: js.UndefOr[String]
+    var Database: String
+    var ConnectedDatabase: js.UndefOr[String]
     var DbUser: js.UndefOr[String]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[String]
@@ -240,7 +244,8 @@ package redshiftdata {
     @inline
     def apply(
         ClusterIdentifier: Location,
-        Database: js.UndefOr[String] = js.undefined,
+        Database: String,
+        ConnectedDatabase: js.UndefOr[String] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -249,10 +254,11 @@ package redshiftdata {
         Table: js.UndefOr[String] = js.undefined
     ): DescribeTableRequest = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "Database" -> Database.asInstanceOf[js.Any]
       )
 
-      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      ConnectedDatabase.foreach(__v => __obj.updateDynamic("ConnectedDatabase")(__v.asInstanceOf[js.Any]))
       DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -489,6 +495,7 @@ package redshiftdata {
   trait ListSchemasRequest extends js.Object {
     var ClusterIdentifier: Location
     var Database: String
+    var ConnectedDatabase: js.UndefOr[String]
     var DbUser: js.UndefOr[String]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[String]
@@ -501,6 +508,7 @@ package redshiftdata {
     def apply(
         ClusterIdentifier: Location,
         Database: String,
+        ConnectedDatabase: js.UndefOr[String] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -512,6 +520,7 @@ package redshiftdata {
         "Database" -> Database.asInstanceOf[js.Any]
       )
 
+      ConnectedDatabase.foreach(__v => __obj.updateDynamic("ConnectedDatabase")(__v.asInstanceOf[js.Any]))
       DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -544,6 +553,7 @@ package redshiftdata {
   trait ListStatementsRequest extends js.Object {
     var MaxResults: js.UndefOr[ListStatementsLimit]
     var NextToken: js.UndefOr[String]
+    var RoleLevel: js.UndefOr[Boolean]
     var StatementName: js.UndefOr[StatementNameString]
     var Status: js.UndefOr[StatusString]
   }
@@ -553,12 +563,14 @@ package redshiftdata {
     def apply(
         MaxResults: js.UndefOr[ListStatementsLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
+        RoleLevel: js.UndefOr[Boolean] = js.undefined,
         StatementName: js.UndefOr[StatementNameString] = js.undefined,
         Status: js.UndefOr[StatusString] = js.undefined
     ): ListStatementsRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RoleLevel.foreach(__v => __obj.updateDynamic("RoleLevel")(__v.asInstanceOf[js.Any]))
       StatementName.foreach(__v => __obj.updateDynamic("StatementName")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStatementsRequest]
@@ -590,6 +602,7 @@ package redshiftdata {
   trait ListTablesRequest extends js.Object {
     var ClusterIdentifier: Location
     var Database: String
+    var ConnectedDatabase: js.UndefOr[String]
     var DbUser: js.UndefOr[String]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[String]
@@ -603,6 +616,7 @@ package redshiftdata {
     def apply(
         ClusterIdentifier: Location,
         Database: String,
+        ConnectedDatabase: js.UndefOr[String] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -615,6 +629,7 @@ package redshiftdata {
         "Database" -> Database.asInstanceOf[js.Any]
       )
 
+      ConnectedDatabase.foreach(__v => __obj.updateDynamic("ConnectedDatabase")(__v.asInstanceOf[js.Any]))
       DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -685,15 +700,15 @@ package redshiftdata {
   @js.native
   sealed trait StatusString extends js.Any
   object StatusString {
-    val ABORTED = "ABORTED".asInstanceOf[StatusString]
-    val ALL = "ALL".asInstanceOf[StatusString]
-    val FAILED = "FAILED".asInstanceOf[StatusString]
-    val FINISHED = "FINISHED".asInstanceOf[StatusString]
+    val SUBMITTED = "SUBMITTED".asInstanceOf[StatusString]
     val PICKED = "PICKED".asInstanceOf[StatusString]
     val STARTED = "STARTED".asInstanceOf[StatusString]
-    val SUBMITTED = "SUBMITTED".asInstanceOf[StatusString]
+    val FINISHED = "FINISHED".asInstanceOf[StatusString]
+    val ABORTED = "ABORTED".asInstanceOf[StatusString]
+    val FAILED = "FAILED".asInstanceOf[StatusString]
+    val ALL = "ALL".asInstanceOf[StatusString]
 
-    @inline def values = js.Array(ABORTED, ALL, FAILED, FINISHED, PICKED, STARTED, SUBMITTED)
+    @inline def values = js.Array(SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
   }
 
   /** The properties of a table.

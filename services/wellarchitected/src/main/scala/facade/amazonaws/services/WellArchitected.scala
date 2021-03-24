@@ -58,6 +58,10 @@ package object wellarchitected {
   type ShareInvitationSummaries = js.Array[ShareInvitationSummary]
   type SharedWith = String
   type SharedWithPrefix = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type Timestamp = js.Date
   type WorkloadAccountIds = js.Array[AwsAccountId]
   type WorkloadArchitecturalDesign = String
@@ -99,8 +103,11 @@ package object wellarchitected {
     @inline def listMilestonesFuture(params: ListMilestonesInput): Future[ListMilestonesOutput] = service.listMilestones(params).promise().toFuture
     @inline def listNotificationsFuture(params: ListNotificationsInput): Future[ListNotificationsOutput] = service.listNotifications(params).promise().toFuture
     @inline def listShareInvitationsFuture(params: ListShareInvitationsInput): Future[ListShareInvitationsOutput] = service.listShareInvitations(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
     @inline def listWorkloadSharesFuture(params: ListWorkloadSharesInput): Future[ListWorkloadSharesOutput] = service.listWorkloadShares(params).promise().toFuture
     @inline def listWorkloadsFuture(params: ListWorkloadsInput): Future[ListWorkloadsOutput] = service.listWorkloads(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateAnswerFuture(params: UpdateAnswerInput): Future[UpdateAnswerOutput] = service.updateAnswer(params).promise().toFuture
     @inline def updateLensReviewFuture(params: UpdateLensReviewInput): Future[UpdateLensReviewOutput] = service.updateLensReview(params).promise().toFuture
     @inline def updateShareInvitationFuture(params: UpdateShareInvitationInput): Future[UpdateShareInvitationOutput] = service.updateShareInvitation(params).promise().toFuture
@@ -137,8 +144,11 @@ package wellarchitected {
     def listMilestones(params: ListMilestonesInput): Request[ListMilestonesOutput] = js.native
     def listNotifications(params: ListNotificationsInput): Request[ListNotificationsOutput] = js.native
     def listShareInvitations(params: ListShareInvitationsInput): Request[ListShareInvitationsOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def listWorkloadShares(params: ListWorkloadSharesInput): Request[ListWorkloadSharesOutput] = js.native
     def listWorkloads(params: ListWorkloadsInput): Request[ListWorkloadsOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateAnswer(params: UpdateAnswerInput): Request[UpdateAnswerOutput] = js.native
     def updateLensReview(params: UpdateLensReviewInput): Request[UpdateLensReviewOutput] = js.native
     def updateShareInvitation(params: UpdateShareInvitationInput): Request[UpdateShareInvitationOutput] = js.native
@@ -341,6 +351,7 @@ package wellarchitected {
     var NonAwsRegions: js.UndefOr[WorkloadNonAwsRegions]
     var Notes: js.UndefOr[Notes]
     var PillarPriorities: js.UndefOr[WorkloadPillarPriorities]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateWorkloadInput {
@@ -359,7 +370,8 @@ package wellarchitected {
         IndustryType: js.UndefOr[WorkloadIndustryType] = js.undefined,
         NonAwsRegions: js.UndefOr[WorkloadNonAwsRegions] = js.undefined,
         Notes: js.UndefOr[Notes] = js.undefined,
-        PillarPriorities: js.UndefOr[WorkloadPillarPriorities] = js.undefined
+        PillarPriorities: js.UndefOr[WorkloadPillarPriorities] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateWorkloadInput = {
       val __obj = js.Dynamic.literal(
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
@@ -378,6 +390,7 @@ package wellarchitected {
       NonAwsRegions.foreach(__v => __obj.updateDynamic("NonAwsRegions")(__v.asInstanceOf[js.Any]))
       Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
       PillarPriorities.foreach(__v => __obj.updateDynamic("PillarPriorities")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkloadInput]
     }
   }
@@ -1369,6 +1382,39 @@ package wellarchitected {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var WorkloadArn: WorkloadArn
+  }
+
+  object ListTagsForResourceInput {
+    @inline
+    def apply(
+        WorkloadArn: WorkloadArn
+    ): ListTagsForResourceInput = {
+      val __obj = js.Dynamic.literal(
+        "WorkloadArn" -> WorkloadArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceOutput {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
   /** Input for List Workload Share
     */
   @js.native
@@ -1730,6 +1776,68 @@ package wellarchitected {
     @inline def values = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED)
   }
 
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var Tags: TagMap
+    var WorkloadArn: WorkloadArn
+  }
+
+  object TagResourceInput {
+    @inline
+    def apply(
+        Tags: TagMap,
+        WorkloadArn: WorkloadArn
+    ): TagResourceInput = {
+      val __obj = js.Dynamic.literal(
+        "Tags" -> Tags.asInstanceOf[js.Any],
+        "WorkloadArn" -> WorkloadArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceOutput extends js.Object
+
+  object TagResourceOutput {
+    @inline
+    def apply(): TagResourceOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var TagKeys: TagKeyList
+    var WorkloadArn: WorkloadArn
+  }
+
+  object UntagResourceInput {
+    @inline
+    def apply(
+        TagKeys: TagKeyList,
+        WorkloadArn: WorkloadArn
+    ): UntagResourceInput = {
+      val __obj = js.Dynamic.literal(
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any],
+        "WorkloadArn" -> WorkloadArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceOutput extends js.Object
+
+  object UntagResourceOutput {
+    @inline
+    def apply(): UntagResourceOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceOutput]
+    }
+  }
+
   /** Input to update answer.
     */
   @js.native
@@ -2070,6 +2178,7 @@ package wellarchitected {
     var ReviewRestrictionDate: js.UndefOr[Timestamp]
     var RiskCounts: js.UndefOr[RiskCounts]
     var ShareInvitationId: js.UndefOr[ShareInvitationId]
+    var Tags: js.UndefOr[TagMap]
     var UpdatedAt: js.UndefOr[Timestamp]
     var WorkloadArn: js.UndefOr[WorkloadArn]
     var WorkloadId: js.UndefOr[WorkloadId]
@@ -2097,6 +2206,7 @@ package wellarchitected {
         ReviewRestrictionDate: js.UndefOr[Timestamp] = js.undefined,
         RiskCounts: js.UndefOr[RiskCounts] = js.undefined,
         ShareInvitationId: js.UndefOr[ShareInvitationId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined,
         WorkloadArn: js.UndefOr[WorkloadArn] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined,
@@ -2121,6 +2231,7 @@ package wellarchitected {
       ReviewRestrictionDate.foreach(__v => __obj.updateDynamic("ReviewRestrictionDate")(__v.asInstanceOf[js.Any]))
       RiskCounts.foreach(__v => __obj.updateDynamic("RiskCounts")(__v.asInstanceOf[js.Any]))
       ShareInvitationId.foreach(__v => __obj.updateDynamic("ShareInvitationId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       WorkloadArn.foreach(__v => __obj.updateDynamic("WorkloadArn")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))

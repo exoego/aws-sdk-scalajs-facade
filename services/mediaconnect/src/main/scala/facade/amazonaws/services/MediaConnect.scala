@@ -226,6 +226,7 @@ package mediaconnect {
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
     var MaxLatency: js.UndefOr[__integer]
+    var MinLatency: js.UndefOr[__integer]
     var Name: js.UndefOr[__string]
     var Port: js.UndefOr[__integer]
     var RemoteId: js.UndefOr[__string]
@@ -243,6 +244,7 @@ package mediaconnect {
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MinLatency: js.UndefOr[__integer] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         RemoteId: js.UndefOr[__string] = js.undefined,
@@ -259,6 +261,7 @@ package mediaconnect {
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RemoteId.foreach(__v => __obj.updateDynamic("RemoteId")(__v.asInstanceOf[js.Any]))
@@ -486,8 +489,8 @@ package mediaconnect {
     */
   @js.native
   trait Encryption extends js.Object {
-    var Algorithm: Algorithm
     var RoleArn: __string
+    var Algorithm: js.UndefOr[Algorithm]
     var ConstantInitializationVector: js.UndefOr[__string]
     var DeviceId: js.UndefOr[__string]
     var KeyType: js.UndefOr[KeyType]
@@ -500,8 +503,8 @@ package mediaconnect {
   object Encryption {
     @inline
     def apply(
-        Algorithm: Algorithm,
         RoleArn: __string,
+        Algorithm: js.UndefOr[Algorithm] = js.undefined,
         ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
         DeviceId: js.UndefOr[__string] = js.undefined,
         KeyType: js.UndefOr[KeyType] = js.undefined,
@@ -511,10 +514,10 @@ package mediaconnect {
         Url: js.UndefOr[__string] = js.undefined
     ): Encryption = {
       val __obj = js.Dynamic.literal(
-        "Algorithm" -> Algorithm.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
+      Algorithm.foreach(__v => __obj.updateDynamic("Algorithm")(__v.asInstanceOf[js.Any]))
       ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       KeyType.foreach(__v => __obj.updateDynamic("KeyType")(__v.asInstanceOf[js.Any]))
@@ -728,8 +731,9 @@ package mediaconnect {
   object KeyType {
     val speke = "speke".asInstanceOf[KeyType]
     val `static-key` = "static-key".asInstanceOf[KeyType]
+    val `srt-password` = "srt-password".asInstanceOf[KeyType]
 
-    @inline def values = js.Array(speke, `static-key`)
+    @inline def values = js.Array(speke, `static-key`, `srt-password`)
   }
 
   @js.native
@@ -1102,8 +1106,9 @@ package mediaconnect {
     val rtp = "rtp".asInstanceOf[Protocol]
     val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
     val rist = "rist".asInstanceOf[Protocol]
+    val `srt-listener` = "srt-listener".asInstanceOf[Protocol]
 
-    @inline def values = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist)
+    @inline def values = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `srt-listener`)
   }
 
   /** A request to purchase a offering.
@@ -1413,6 +1418,7 @@ package mediaconnect {
     var IngestPort: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var MinLatency: js.UndefOr[__integer]
     var Name: js.UndefOr[__string]
     var Protocol: js.UndefOr[Protocol]
     var StreamId: js.UndefOr[__string]
@@ -1429,6 +1435,7 @@ package mediaconnect {
         IngestPort: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MinLatency: js.UndefOr[__integer] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
@@ -1442,6 +1449,7 @@ package mediaconnect {
       IngestPort.foreach(__v => __obj.updateDynamic("IngestPort")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
@@ -1635,6 +1643,7 @@ package mediaconnect {
     var CidrAllowList: js.UndefOr[__listOf__string]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var MinLatency: js.UndefOr[__integer]
     var RemoteId: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
@@ -1647,6 +1656,7 @@ package mediaconnect {
         CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MinLatency: js.UndefOr[__integer] = js.undefined,
         RemoteId: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
@@ -1658,6 +1668,7 @@ package mediaconnect {
       CidrAllowList.foreach(__v => __obj.updateDynamic("CidrAllowList")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       RemoteId.foreach(__v => __obj.updateDynamic("RemoteId")(__v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.updateDynamic("SmoothingLatency")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
@@ -1813,6 +1824,7 @@ package mediaconnect {
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[UpdateEncryption]
     var MaxLatency: js.UndefOr[__integer]
+    var MinLatency: js.UndefOr[__integer]
     var Port: js.UndefOr[__integer]
     var Protocol: js.UndefOr[Protocol]
     var RemoteId: js.UndefOr[__string]
@@ -1831,6 +1843,7 @@ package mediaconnect {
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MinLatency: js.UndefOr[__integer] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
         RemoteId: js.UndefOr[__string] = js.undefined,
@@ -1848,6 +1861,7 @@ package mediaconnect {
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       RemoteId.foreach(__v => __obj.updateDynamic("RemoteId")(__v.asInstanceOf[js.Any]))
@@ -1928,6 +1942,7 @@ package mediaconnect {
     var IngestPort: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var MinLatency: js.UndefOr[__integer]
     var Protocol: js.UndefOr[Protocol]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceName: js.UndefOr[__string]
@@ -1945,6 +1960,7 @@ package mediaconnect {
         IngestPort: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MinLatency: js.UndefOr[__integer] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceName: js.UndefOr[__string] = js.undefined,
@@ -1961,6 +1977,7 @@ package mediaconnect {
       IngestPort.foreach(__v => __obj.updateDynamic("IngestPort")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))

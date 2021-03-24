@@ -909,6 +909,7 @@ package codedeploy {
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var outdatedInstancesStrategy: js.UndefOr[OutdatedInstancesStrategy]
     var tags: js.UndefOr[TagList]
     var triggerConfigurations: js.UndefOr[TriggerConfigList]
   }
@@ -931,6 +932,7 @@ package codedeploy {
         loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
         onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
         onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        outdatedInstancesStrategy: js.UndefOr[OutdatedInstancesStrategy] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): CreateDeploymentGroupInput = {
@@ -952,6 +954,7 @@ package codedeploy {
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       onPremisesInstanceTagFilters.foreach(__v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any]))
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
+      outdatedInstancesStrategy.foreach(__v => __obj.updateDynamic("outdatedInstancesStrategy")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentGroupInput]
@@ -1222,10 +1225,11 @@ package codedeploy {
     val autoscaling = "autoscaling".asInstanceOf[DeploymentCreator]
     val codeDeployRollback = "codeDeployRollback".asInstanceOf[DeploymentCreator]
     val CodeDeploy = "CodeDeploy".asInstanceOf[DeploymentCreator]
+    val CodeDeployAutoUpdate = "CodeDeployAutoUpdate".asInstanceOf[DeploymentCreator]
     val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
     val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
-    @inline def values = js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CloudFormation, CloudFormationRollback)
+    @inline def values = js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CodeDeployAutoUpdate, CloudFormation, CloudFormationRollback)
   }
 
   /** Information about a deployment group.
@@ -1250,6 +1254,7 @@ package codedeploy {
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var outdatedInstancesStrategy: js.UndefOr[OutdatedInstancesStrategy]
     var serviceRoleArn: js.UndefOr[Role]
     var targetRevision: js.UndefOr[RevisionLocation]
     var triggerConfigurations: js.UndefOr[TriggerConfigList]
@@ -1276,6 +1281,7 @@ package codedeploy {
         loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
         onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
         onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        outdatedInstancesStrategy: js.UndefOr[OutdatedInstancesStrategy] = js.undefined,
         serviceRoleArn: js.UndefOr[Role] = js.undefined,
         targetRevision: js.UndefOr[RevisionLocation] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
@@ -1299,6 +1305,7 @@ package codedeploy {
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       onPremisesInstanceTagFilters.foreach(__v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any]))
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
+      outdatedInstancesStrategy.foreach(__v => __obj.updateDynamic("outdatedInstancesStrategy")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       targetRevision.foreach(__v => __obj.updateDynamic("targetRevision")(__v.asInstanceOf[js.Any]))
       triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
@@ -1332,6 +1339,7 @@ package codedeploy {
     var instanceTerminationWaitTimeStarted: js.UndefOr[Boolean]
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
     var previousRevision: js.UndefOr[RevisionLocation]
+    var relatedDeployments: js.UndefOr[RelatedDeployments]
     var revision: js.UndefOr[RevisionLocation]
     var rollbackInfo: js.UndefOr[RollbackInfo]
     var startTime: js.UndefOr[Timestamp]
@@ -1365,6 +1373,7 @@ package codedeploy {
         instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
         loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
         previousRevision: js.UndefOr[RevisionLocation] = js.undefined,
+        relatedDeployments: js.UndefOr[RelatedDeployments] = js.undefined,
         revision: js.UndefOr[RevisionLocation] = js.undefined,
         rollbackInfo: js.UndefOr[RollbackInfo] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1395,6 +1404,7 @@ package codedeploy {
       instanceTerminationWaitTimeStarted.foreach(__v => __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       previousRevision.foreach(__v => __obj.updateDynamic("previousRevision")(__v.asInstanceOf[js.Any]))
+      relatedDeployments.foreach(__v => __obj.updateDynamic("relatedDeployments")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       rollbackInfo.foreach(__v => __obj.updateDynamic("rollbackInfo")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
@@ -3102,6 +3112,15 @@ package codedeploy {
   }
 
   @js.native
+  sealed trait OutdatedInstancesStrategy extends js.Any
+  object OutdatedInstancesStrategy {
+    val UPDATE = "UPDATE".asInstanceOf[OutdatedInstancesStrategy]
+    val IGNORE = "IGNORE".asInstanceOf[OutdatedInstancesStrategy]
+
+    @inline def values = js.Array(UPDATE, IGNORE)
+  }
+
+  @js.native
   trait PutLifecycleEventHookExecutionStatusInput extends js.Object {
     var deploymentId: js.UndefOr[DeploymentId]
     var lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId]
@@ -3220,6 +3239,27 @@ package codedeploy {
     val Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
 
     @inline def values = js.Array(Registered, Deregistered)
+  }
+
+  /** Information about deployments related to the specified deployment.
+    */
+  @js.native
+  trait RelatedDeployments extends js.Object {
+    var autoUpdateOutdatedInstancesDeploymentIds: js.UndefOr[DeploymentsList]
+    var autoUpdateOutdatedInstancesRootDeploymentId: js.UndefOr[DeploymentId]
+  }
+
+  object RelatedDeployments {
+    @inline
+    def apply(
+        autoUpdateOutdatedInstancesDeploymentIds: js.UndefOr[DeploymentsList] = js.undefined,
+        autoUpdateOutdatedInstancesRootDeploymentId: js.UndefOr[DeploymentId] = js.undefined
+    ): RelatedDeployments = {
+      val __obj = js.Dynamic.literal()
+      autoUpdateOutdatedInstancesDeploymentIds.foreach(__v => __obj.updateDynamic("autoUpdateOutdatedInstancesDeploymentIds")(__v.asInstanceOf[js.Any]))
+      autoUpdateOutdatedInstancesRootDeploymentId.foreach(__v => __obj.updateDynamic("autoUpdateOutdatedInstancesRootDeploymentId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RelatedDeployments]
+    }
   }
 
   /** Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.
@@ -3860,6 +3900,7 @@ package codedeploy {
     var newDeploymentGroupName: js.UndefOr[DeploymentGroupName]
     var onPremisesInstanceTagFilters: js.UndefOr[TagFilterList]
     var onPremisesTagSet: js.UndefOr[OnPremisesTagSet]
+    var outdatedInstancesStrategy: js.UndefOr[OutdatedInstancesStrategy]
     var serviceRoleArn: js.UndefOr[Role]
     var triggerConfigurations: js.UndefOr[TriggerConfigList]
   }
@@ -3882,6 +3923,7 @@ package codedeploy {
         newDeploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
         onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
         onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        outdatedInstancesStrategy: js.UndefOr[OutdatedInstancesStrategy] = js.undefined,
         serviceRoleArn: js.UndefOr[Role] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): UpdateDeploymentGroupInput = {
@@ -3903,6 +3945,7 @@ package codedeploy {
       newDeploymentGroupName.foreach(__v => __obj.updateDynamic("newDeploymentGroupName")(__v.asInstanceOf[js.Any]))
       onPremisesInstanceTagFilters.foreach(__v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any]))
       onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
+      outdatedInstancesStrategy.foreach(__v => __obj.updateDynamic("outdatedInstancesStrategy")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeploymentGroupInput]

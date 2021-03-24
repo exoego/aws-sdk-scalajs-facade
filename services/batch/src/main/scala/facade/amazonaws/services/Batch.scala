@@ -716,9 +716,9 @@ package batch {
   @js.native
   trait CreateComputeEnvironmentRequest extends js.Object {
     var computeEnvironmentName: String
-    var serviceRole: String
     var `type`: CEType
     var computeResources: js.UndefOr[ComputeResource]
+    var serviceRole: js.UndefOr[String]
     var state: js.UndefOr[CEState]
     var tags: js.UndefOr[TagrisTagsMap]
   }
@@ -727,19 +727,19 @@ package batch {
     @inline
     def apply(
         computeEnvironmentName: String,
-        serviceRole: String,
         `type`: CEType,
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
+        serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined
     ): CreateComputeEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
-        "serviceRole" -> serviceRole.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComputeEnvironmentRequest]
@@ -1167,7 +1167,7 @@ package batch {
     }
   }
 
-  /** The platform configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify this parameter.
+  /** The platform configuration for jobs running on Fargate resources. For jobs that run on EC2 resources, you shouldn't specify this parameter.
     */
   @js.native
   trait FargatePlatformConfiguration extends js.Object {

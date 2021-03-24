@@ -81,6 +81,8 @@ package object workspaces {
   type UserName = String
   type UserVolumeSizeGib = Int
   type VolumeEncryptionKey = String
+  type WorkspaceBundleDescription = String
+  type WorkspaceBundleName = String
   type WorkspaceConnectionStatusList = js.Array[WorkspaceConnectionStatus]
   type WorkspaceErrorCode = String
   type WorkspaceId = String
@@ -104,10 +106,12 @@ package object workspaces {
     @inline def createConnectionAliasFuture(params: CreateConnectionAliasRequest): Future[CreateConnectionAliasResult] = service.createConnectionAlias(params).promise().toFuture
     @inline def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] = service.createIpGroup(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] = service.createTags(params).promise().toFuture
+    @inline def createWorkspaceBundleFuture(params: CreateWorkspaceBundleRequest): Future[CreateWorkspaceBundleResult] = service.createWorkspaceBundle(params).promise().toFuture
     @inline def createWorkspacesFuture(params: CreateWorkspacesRequest): Future[CreateWorkspacesResult] = service.createWorkspaces(params).promise().toFuture
     @inline def deleteConnectionAliasFuture(params: DeleteConnectionAliasRequest): Future[DeleteConnectionAliasResult] = service.deleteConnectionAlias(params).promise().toFuture
     @inline def deleteIpGroupFuture(params: DeleteIpGroupRequest): Future[DeleteIpGroupResult] = service.deleteIpGroup(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResult] = service.deleteTags(params).promise().toFuture
+    @inline def deleteWorkspaceBundleFuture(params: DeleteWorkspaceBundleRequest): Future[DeleteWorkspaceBundleResult] = service.deleteWorkspaceBundle(params).promise().toFuture
     @inline def deleteWorkspaceImageFuture(params: DeleteWorkspaceImageRequest): Future[DeleteWorkspaceImageResult] = service.deleteWorkspaceImage(params).promise().toFuture
     @inline def deregisterWorkspaceDirectoryFuture(params: DeregisterWorkspaceDirectoryRequest): Future[DeregisterWorkspaceDirectoryResult] = service.deregisterWorkspaceDirectory(params).promise().toFuture
     @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResult] = service.describeAccount(params).promise().toFuture
@@ -146,6 +150,7 @@ package object workspaces {
     @inline def terminateWorkspacesFuture(params: TerminateWorkspacesRequest): Future[TerminateWorkspacesResult] = service.terminateWorkspaces(params).promise().toFuture
     @inline def updateConnectionAliasPermissionFuture(params: UpdateConnectionAliasPermissionRequest): Future[UpdateConnectionAliasPermissionResult] = service.updateConnectionAliasPermission(params).promise().toFuture
     @inline def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] = service.updateRulesOfIpGroup(params).promise().toFuture
+    @inline def updateWorkspaceBundleFuture(params: UpdateWorkspaceBundleRequest): Future[UpdateWorkspaceBundleResult] = service.updateWorkspaceBundle(params).promise().toFuture
     @inline def updateWorkspaceImagePermissionFuture(params: UpdateWorkspaceImagePermissionRequest): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
 
   }
@@ -164,10 +169,12 @@ package workspaces {
     def createConnectionAlias(params: CreateConnectionAliasRequest): Request[CreateConnectionAliasResult] = js.native
     def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult] = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResult] = js.native
+    def createWorkspaceBundle(params: CreateWorkspaceBundleRequest): Request[CreateWorkspaceBundleResult] = js.native
     def createWorkspaces(params: CreateWorkspacesRequest): Request[CreateWorkspacesResult] = js.native
     def deleteConnectionAlias(params: DeleteConnectionAliasRequest): Request[DeleteConnectionAliasResult] = js.native
     def deleteIpGroup(params: DeleteIpGroupRequest): Request[DeleteIpGroupResult] = js.native
     def deleteTags(params: DeleteTagsRequest): Request[DeleteTagsResult] = js.native
+    def deleteWorkspaceBundle(params: DeleteWorkspaceBundleRequest): Request[DeleteWorkspaceBundleResult] = js.native
     def deleteWorkspaceImage(params: DeleteWorkspaceImageRequest): Request[DeleteWorkspaceImageResult] = js.native
     def deregisterWorkspaceDirectory(params: DeregisterWorkspaceDirectoryRequest): Request[DeregisterWorkspaceDirectoryResult] = js.native
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResult] = js.native
@@ -206,6 +213,7 @@ package workspaces {
     def terminateWorkspaces(params: TerminateWorkspacesRequest): Request[TerminateWorkspacesResult] = js.native
     def updateConnectionAliasPermission(params: UpdateConnectionAliasPermissionRequest): Request[UpdateConnectionAliasPermissionResult] = js.native
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
+    def updateWorkspaceBundle(params: UpdateWorkspaceBundleRequest): Request[UpdateWorkspaceBundleResult] = js.native
     def updateWorkspaceImagePermission(params: UpdateWorkspaceImagePermissionRequest): Request[UpdateWorkspaceImagePermissionResult] = js.native
   }
 
@@ -423,7 +431,7 @@ package workspaces {
     @inline def values = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
   }
 
-  /** Describes the compute type.
+  /** Describes the compute type of the bundle.
     */
   @js.native
   trait ComputeType extends js.Object {
@@ -698,6 +706,58 @@ package workspaces {
   }
 
   @js.native
+  trait CreateWorkspaceBundleRequest extends js.Object {
+    var BundleDescription: WorkspaceBundleDescription
+    var BundleName: WorkspaceBundleName
+    var ComputeType: ComputeType
+    var ImageId: WorkspaceImageId
+    var UserStorage: UserStorage
+    var RootStorage: js.UndefOr[RootStorage]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateWorkspaceBundleRequest {
+    @inline
+    def apply(
+        BundleDescription: WorkspaceBundleDescription,
+        BundleName: WorkspaceBundleName,
+        ComputeType: ComputeType,
+        ImageId: WorkspaceImageId,
+        UserStorage: UserStorage,
+        RootStorage: js.UndefOr[RootStorage] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateWorkspaceBundleRequest = {
+      val __obj = js.Dynamic.literal(
+        "BundleDescription" -> BundleDescription.asInstanceOf[js.Any],
+        "BundleName" -> BundleName.asInstanceOf[js.Any],
+        "ComputeType" -> ComputeType.asInstanceOf[js.Any],
+        "ImageId" -> ImageId.asInstanceOf[js.Any],
+        "UserStorage" -> UserStorage.asInstanceOf[js.Any]
+      )
+
+      RootStorage.foreach(__v => __obj.updateDynamic("RootStorage")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorkspaceBundleRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWorkspaceBundleResult extends js.Object {
+    var WorkspaceBundle: js.UndefOr[WorkspaceBundle]
+  }
+
+  object CreateWorkspaceBundleResult {
+    @inline
+    def apply(
+        WorkspaceBundle: js.UndefOr[WorkspaceBundle] = js.undefined
+    ): CreateWorkspaceBundleResult = {
+      val __obj = js.Dynamic.literal()
+      WorkspaceBundle.foreach(__v => __obj.updateDynamic("WorkspaceBundle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWorkspaceBundleResult]
+    }
+  }
+
+  @js.native
   trait CreateWorkspacesRequest extends js.Object {
     var Workspaces: WorkspaceRequestList
   }
@@ -877,6 +937,33 @@ package workspaces {
     def apply(): DeleteTagsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTagsResult]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkspaceBundleRequest extends js.Object {
+    var BundleId: js.UndefOr[BundleId]
+  }
+
+  object DeleteWorkspaceBundleRequest {
+    @inline
+    def apply(
+        BundleId: js.UndefOr[BundleId] = js.undefined
+    ): DeleteWorkspaceBundleRequest = {
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteWorkspaceBundleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkspaceBundleResult extends js.Object
+
+  object DeleteWorkspaceBundleResult {
+    @inline
+    def apply(): DeleteWorkspaceBundleResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteWorkspaceBundleResult]
     }
   }
 
@@ -2612,6 +2699,36 @@ package workspaces {
   }
 
   @js.native
+  trait UpdateWorkspaceBundleRequest extends js.Object {
+    var BundleId: js.UndefOr[BundleId]
+    var ImageId: js.UndefOr[WorkspaceImageId]
+  }
+
+  object UpdateWorkspaceBundleRequest {
+    @inline
+    def apply(
+        BundleId: js.UndefOr[BundleId] = js.undefined,
+        ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
+    ): UpdateWorkspaceBundleRequest = {
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateWorkspaceBundleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateWorkspaceBundleResult extends js.Object
+
+  object UpdateWorkspaceBundleResult {
+    @inline
+    def apply(): UpdateWorkspaceBundleResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateWorkspaceBundleResult]
+    }
+  }
+
+  @js.native
   trait UpdateWorkspaceImagePermissionRequest extends js.Object {
     var AllowCopyImage: BooleanObject
     var ImageId: WorkspaceImageId
@@ -2645,7 +2762,7 @@ package workspaces {
     }
   }
 
-  /** Describes the user storage for a WorkSpace bundle.
+  /** Describes the user volume for a WorkSpace bundle.
     */
   @js.native
   trait UserStorage extends js.Object {
@@ -2765,6 +2882,7 @@ package workspaces {
   trait WorkspaceBundle extends js.Object {
     var BundleId: js.UndefOr[BundleId]
     var ComputeType: js.UndefOr[ComputeType]
+    var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[Description]
     var ImageId: js.UndefOr[WorkspaceImageId]
     var LastUpdatedTime: js.UndefOr[Timestamp]
@@ -2779,6 +2897,7 @@ package workspaces {
     def apply(
         BundleId: js.UndefOr[BundleId] = js.undefined,
         ComputeType: js.UndefOr[ComputeType] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2790,6 +2909,7 @@ package workspaces {
       val __obj = js.Dynamic.literal()
       BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
       ComputeType.foreach(__v => __obj.updateDynamic("ComputeType")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))

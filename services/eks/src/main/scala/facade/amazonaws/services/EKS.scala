@@ -22,9 +22,11 @@ package object eks {
   type FargateProfileLabel = js.Dictionary[String]
   type FargateProfileSelectors = js.Array[FargateProfileSelector]
   type FargateProfilesRequestMaxResults = Int
+  type IdentityProviderConfigs = js.Array[IdentityProviderConfig]
   type IssueList = js.Array[Issue]
   type ListAddonsRequestMaxResults = Int
   type ListClustersRequestMaxResults = Int
+  type ListIdentityProviderConfigsRequestMaxResults = Int
   type ListNodegroupsRequestMaxResults = Int
   type ListUpdatesRequestMaxResults = Int
   type LogSetups = js.Array[LogSetup]
@@ -41,9 +43,14 @@ package object eks {
   type labelValue = String
   type labelsKeyList = js.Array[String]
   type labelsMap = js.Dictionary[labelValue]
+  type requiredClaimsKey = String
+  type requiredClaimsMap = js.Dictionary[requiredClaimsValue]
+  type requiredClaimsValue = String
 
   implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
+    @inline def associateEncryptionConfigFuture(params: AssociateEncryptionConfigRequest): Future[AssociateEncryptionConfigResponse] = service.associateEncryptionConfig(params).promise().toFuture
+    @inline def associateIdentityProviderConfigFuture(params: AssociateIdentityProviderConfigRequest): Future[AssociateIdentityProviderConfigResponse] = service.associateIdentityProviderConfig(params).promise().toFuture
     @inline def createAddonFuture(params: CreateAddonRequest): Future[CreateAddonResponse] = service.createAddon(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
     @inline def createFargateProfileFuture(params: CreateFargateProfileRequest): Future[CreateFargateProfileResponse] = service.createFargateProfile(params).promise().toFuture
@@ -56,11 +63,14 @@ package object eks {
     @inline def describeAddonVersionsFuture(params: DescribeAddonVersionsRequest): Future[DescribeAddonVersionsResponse] = service.describeAddonVersions(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] = service.describeCluster(params).promise().toFuture
     @inline def describeFargateProfileFuture(params: DescribeFargateProfileRequest): Future[DescribeFargateProfileResponse] = service.describeFargateProfile(params).promise().toFuture
+    @inline def describeIdentityProviderConfigFuture(params: DescribeIdentityProviderConfigRequest): Future[DescribeIdentityProviderConfigResponse] = service.describeIdentityProviderConfig(params).promise().toFuture
     @inline def describeNodegroupFuture(params: DescribeNodegroupRequest): Future[DescribeNodegroupResponse] = service.describeNodegroup(params).promise().toFuture
     @inline def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] = service.describeUpdate(params).promise().toFuture
+    @inline def disassociateIdentityProviderConfigFuture(params: DisassociateIdentityProviderConfigRequest): Future[DisassociateIdentityProviderConfigResponse] = service.disassociateIdentityProviderConfig(params).promise().toFuture
     @inline def listAddonsFuture(params: ListAddonsRequest): Future[ListAddonsResponse] = service.listAddons(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
     @inline def listFargateProfilesFuture(params: ListFargateProfilesRequest): Future[ListFargateProfilesResponse] = service.listFargateProfiles(params).promise().toFuture
+    @inline def listIdentityProviderConfigsFuture(params: ListIdentityProviderConfigsRequest): Future[ListIdentityProviderConfigsResponse] = service.listIdentityProviderConfigs(params).promise().toFuture
     @inline def listNodegroupsFuture(params: ListNodegroupsRequest): Future[ListNodegroupsResponse] = service.listNodegroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] = service.listUpdates(params).promise().toFuture
@@ -81,6 +91,8 @@ package eks {
   class EKS() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateEncryptionConfig(params: AssociateEncryptionConfigRequest): Request[AssociateEncryptionConfigResponse] = js.native
+    def associateIdentityProviderConfig(params: AssociateIdentityProviderConfigRequest): Request[AssociateIdentityProviderConfigResponse] = js.native
     def createAddon(params: CreateAddonRequest): Request[CreateAddonResponse] = js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createFargateProfile(params: CreateFargateProfileRequest): Request[CreateFargateProfileResponse] = js.native
@@ -93,11 +105,14 @@ package eks {
     def describeAddonVersions(params: DescribeAddonVersionsRequest): Request[DescribeAddonVersionsResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
     def describeFargateProfile(params: DescribeFargateProfileRequest): Request[DescribeFargateProfileResponse] = js.native
+    def describeIdentityProviderConfig(params: DescribeIdentityProviderConfigRequest): Request[DescribeIdentityProviderConfigResponse] = js.native
     def describeNodegroup(params: DescribeNodegroupRequest): Request[DescribeNodegroupResponse] = js.native
     def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse] = js.native
+    def disassociateIdentityProviderConfig(params: DisassociateIdentityProviderConfigRequest): Request[DisassociateIdentityProviderConfigResponse] = js.native
     def listAddons(params: ListAddonsRequest): Request[ListAddonsResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
     def listFargateProfiles(params: ListFargateProfilesRequest): Request[ListFargateProfilesResponse] = js.native
+    def listIdentityProviderConfigs(params: ListIdentityProviderConfigsRequest): Request[ListIdentityProviderConfigsResponse] = js.native
     def listNodegroups(params: ListNodegroupsRequest): Request[ListNodegroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUpdates(params: ListUpdatesRequest): Request[ListUpdatesResponse] = js.native
@@ -239,8 +254,9 @@ package eks {
     val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[AddonIssueCode]
     val InsufficientNumberOfReplicas = "InsufficientNumberOfReplicas".asInstanceOf[AddonIssueCode]
     val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[AddonIssueCode]
+    val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[AddonIssueCode]
 
-    @inline def values = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict)
+    @inline def values = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
   }
 
   @js.native
@@ -278,6 +294,92 @@ package eks {
       architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
       compatibilities.foreach(__v => __obj.updateDynamic("compatibilities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddonVersionInfo]
+    }
+  }
+
+  @js.native
+  trait AssociateEncryptionConfigRequest extends js.Object {
+    var clusterName: String
+    var encryptionConfig: EncryptionConfigList
+    var clientRequestToken: js.UndefOr[String]
+  }
+
+  object AssociateEncryptionConfigRequest {
+    @inline
+    def apply(
+        clusterName: String,
+        encryptionConfig: EncryptionConfigList,
+        clientRequestToken: js.UndefOr[String] = js.undefined
+    ): AssociateEncryptionConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
+        "encryptionConfig" -> encryptionConfig.asInstanceOf[js.Any]
+      )
+
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateEncryptionConfigRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateEncryptionConfigResponse extends js.Object {
+    var update: js.UndefOr[Update]
+  }
+
+  object AssociateEncryptionConfigResponse {
+    @inline
+    def apply(
+        update: js.UndefOr[Update] = js.undefined
+    ): AssociateEncryptionConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      update.foreach(__v => __obj.updateDynamic("update")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateEncryptionConfigResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateIdentityProviderConfigRequest extends js.Object {
+    var clusterName: String
+    var oidc: OidcIdentityProviderConfigRequest
+    var clientRequestToken: js.UndefOr[String]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object AssociateIdentityProviderConfigRequest {
+    @inline
+    def apply(
+        clusterName: String,
+        oidc: OidcIdentityProviderConfigRequest,
+        clientRequestToken: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): AssociateIdentityProviderConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
+        "oidc" -> oidc.asInstanceOf[js.Any]
+      )
+
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateIdentityProviderConfigRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateIdentityProviderConfigResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+    var update: js.UndefOr[Update]
+  }
+
+  object AssociateIdentityProviderConfigResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined,
+        update: js.UndefOr[Update] = js.undefined
+    ): AssociateIdentityProviderConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      update.foreach(__v => __obj.updateDynamic("update")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateIdentityProviderConfigResponse]
     }
   }
 
@@ -957,6 +1059,42 @@ package eks {
   }
 
   @js.native
+  trait DescribeIdentityProviderConfigRequest extends js.Object {
+    var clusterName: String
+    var identityProviderConfig: IdentityProviderConfig
+  }
+
+  object DescribeIdentityProviderConfigRequest {
+    @inline
+    def apply(
+        clusterName: String,
+        identityProviderConfig: IdentityProviderConfig
+    ): DescribeIdentityProviderConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
+        "identityProviderConfig" -> identityProviderConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeIdentityProviderConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeIdentityProviderConfigResponse extends js.Object {
+    var identityProviderConfig: js.UndefOr[IdentityProviderConfigResponse]
+  }
+
+  object DescribeIdentityProviderConfigResponse {
+    @inline
+    def apply(
+        identityProviderConfig: js.UndefOr[IdentityProviderConfigResponse] = js.undefined
+    ): DescribeIdentityProviderConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      identityProviderConfig.foreach(__v => __obj.updateDynamic("identityProviderConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeIdentityProviderConfigResponse]
+    }
+  }
+
+  @js.native
   trait DescribeNodegroupRequest extends js.Object {
     var clusterName: String
     var nodegroupName: String
@@ -1035,6 +1173,46 @@ package eks {
     }
   }
 
+  @js.native
+  trait DisassociateIdentityProviderConfigRequest extends js.Object {
+    var clusterName: String
+    var identityProviderConfig: IdentityProviderConfig
+    var clientRequestToken: js.UndefOr[String]
+  }
+
+  object DisassociateIdentityProviderConfigRequest {
+    @inline
+    def apply(
+        clusterName: String,
+        identityProviderConfig: IdentityProviderConfig,
+        clientRequestToken: js.UndefOr[String] = js.undefined
+    ): DisassociateIdentityProviderConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "clusterName" -> clusterName.asInstanceOf[js.Any],
+        "identityProviderConfig" -> identityProviderConfig.asInstanceOf[js.Any]
+      )
+
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateIdentityProviderConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateIdentityProviderConfigResponse extends js.Object {
+    var update: js.UndefOr[Update]
+  }
+
+  object DisassociateIdentityProviderConfigResponse {
+    @inline
+    def apply(
+        update: js.UndefOr[Update] = js.undefined
+    ): DisassociateIdentityProviderConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      update.foreach(__v => __obj.updateDynamic("update")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateIdentityProviderConfigResponse]
+    }
+  }
+
   /** The encryption configuration for the cluster.
     */
   @js.native
@@ -1073,6 +1251,7 @@ package eks {
     val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[ErrorCode]
     val InsufficientNumberOfReplicas = "InsufficientNumberOfReplicas".asInstanceOf[ErrorCode]
     val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[ErrorCode]
+    val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[ErrorCode]
 
     @inline def values = js.Array(
       SubnetNotFound,
@@ -1088,7 +1267,8 @@ package eks {
       InsufficientFreeAddresses,
       ClusterUnreachable,
       InsufficientNumberOfReplicas,
-      ConfigurationConflict
+      ConfigurationConflict,
+      AdmissionRequestDenied
     )
   }
 
@@ -1191,7 +1371,7 @@ package eks {
     @inline def values = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
   }
 
-  /** An object representing an identity provider for authentication credentials.
+  /** An object representing an identity provider.
     */
   @js.native
   trait Identity extends js.Object {
@@ -1206,6 +1386,46 @@ package eks {
       val __obj = js.Dynamic.literal()
       oidc.foreach(__v => __obj.updateDynamic("oidc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Identity]
+    }
+  }
+
+  /** An object representing an identity provider configuration.
+    */
+  @js.native
+  trait IdentityProviderConfig extends js.Object {
+    var name: String
+    var `type`: String
+  }
+
+  object IdentityProviderConfig {
+    @inline
+    def apply(
+        name: String,
+        `type`: String
+    ): IdentityProviderConfig = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[IdentityProviderConfig]
+    }
+  }
+
+  /** An object that represents an identity configuration.
+    */
+  @js.native
+  trait IdentityProviderConfigResponse extends js.Object {
+    var oidc: js.UndefOr[OidcIdentityProviderConfig]
+  }
+
+  object IdentityProviderConfigResponse {
+    @inline
+    def apply(
+        oidc: js.UndefOr[OidcIdentityProviderConfig] = js.undefined
+    ): IdentityProviderConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      oidc.foreach(__v => __obj.updateDynamic("oidc")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IdentityProviderConfigResponse]
     }
   }
 
@@ -1415,6 +1635,49 @@ package eks {
       fargateProfileNames.foreach(__v => __obj.updateDynamic("fargateProfileNames")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFargateProfilesResponse]
+    }
+  }
+
+  @js.native
+  trait ListIdentityProviderConfigsRequest extends js.Object {
+    var clusterName: String
+    var maxResults: js.UndefOr[ListIdentityProviderConfigsRequestMaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListIdentityProviderConfigsRequest {
+    @inline
+    def apply(
+        clusterName: String,
+        maxResults: js.UndefOr[ListIdentityProviderConfigsRequestMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListIdentityProviderConfigsRequest = {
+      val __obj = js.Dynamic.literal(
+        "clusterName" -> clusterName.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIdentityProviderConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListIdentityProviderConfigsResponse extends js.Object {
+    var identityProviderConfigs: js.UndefOr[IdentityProviderConfigs]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListIdentityProviderConfigsResponse {
+    @inline
+    def apply(
+        identityProviderConfigs: js.UndefOr[IdentityProviderConfigs] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListIdentityProviderConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      identityProviderConfigs.foreach(__v => __obj.updateDynamic("identityProviderConfigs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIdentityProviderConfigsResponse]
     }
   }
 
@@ -1793,7 +2056,7 @@ package eks {
     @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
   }
 
-  /** An object representing the [[https://openid.net/connect/|OpenID Connect]] identity provider information for the cluster.
+  /** An object representing the [[https://openid.net/connect/|OpenID Connect]] (OIDC) identity provider information for the cluster.
     */
   @js.native
   trait OIDC extends js.Object {
@@ -1808,6 +2071,98 @@ package eks {
       val __obj = js.Dynamic.literal()
       issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OIDC]
+    }
+  }
+
+  /** An object that represents the configuration for an OpenID Connect (OIDC) identity provider.
+    */
+  @js.native
+  trait OidcIdentityProviderConfig extends js.Object {
+    var clientId: js.UndefOr[String]
+    var clusterName: js.UndefOr[String]
+    var groupsClaim: js.UndefOr[String]
+    var groupsPrefix: js.UndefOr[String]
+    var identityProviderConfigArn: js.UndefOr[String]
+    var identityProviderConfigName: js.UndefOr[String]
+    var issuerUrl: js.UndefOr[String]
+    var requiredClaims: js.UndefOr[requiredClaimsMap]
+    var status: js.UndefOr[configStatus]
+    var tags: js.UndefOr[TagMap]
+    var usernameClaim: js.UndefOr[String]
+    var usernamePrefix: js.UndefOr[String]
+  }
+
+  object OidcIdentityProviderConfig {
+    @inline
+    def apply(
+        clientId: js.UndefOr[String] = js.undefined,
+        clusterName: js.UndefOr[String] = js.undefined,
+        groupsClaim: js.UndefOr[String] = js.undefined,
+        groupsPrefix: js.UndefOr[String] = js.undefined,
+        identityProviderConfigArn: js.UndefOr[String] = js.undefined,
+        identityProviderConfigName: js.UndefOr[String] = js.undefined,
+        issuerUrl: js.UndefOr[String] = js.undefined,
+        requiredClaims: js.UndefOr[requiredClaimsMap] = js.undefined,
+        status: js.UndefOr[configStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        usernameClaim: js.UndefOr[String] = js.undefined,
+        usernamePrefix: js.UndefOr[String] = js.undefined
+    ): OidcIdentityProviderConfig = {
+      val __obj = js.Dynamic.literal()
+      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
+      clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      groupsClaim.foreach(__v => __obj.updateDynamic("groupsClaim")(__v.asInstanceOf[js.Any]))
+      groupsPrefix.foreach(__v => __obj.updateDynamic("groupsPrefix")(__v.asInstanceOf[js.Any]))
+      identityProviderConfigArn.foreach(__v => __obj.updateDynamic("identityProviderConfigArn")(__v.asInstanceOf[js.Any]))
+      identityProviderConfigName.foreach(__v => __obj.updateDynamic("identityProviderConfigName")(__v.asInstanceOf[js.Any]))
+      issuerUrl.foreach(__v => __obj.updateDynamic("issuerUrl")(__v.asInstanceOf[js.Any]))
+      requiredClaims.foreach(__v => __obj.updateDynamic("requiredClaims")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      usernameClaim.foreach(__v => __obj.updateDynamic("usernameClaim")(__v.asInstanceOf[js.Any]))
+      usernamePrefix.foreach(__v => __obj.updateDynamic("usernamePrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OidcIdentityProviderConfig]
+    }
+  }
+
+  /** An object representing an OpenID Connect (OIDC) configuration. Before associating an OIDC identity provider to your cluster, review the considerations in [[https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html|Authenticating users for your cluster from an OpenID Connect identity provider]] in the <i>Amazon EKS User Guide</i>.
+    */
+  @js.native
+  trait OidcIdentityProviderConfigRequest extends js.Object {
+    var clientId: String
+    var identityProviderConfigName: String
+    var issuerUrl: String
+    var groupsClaim: js.UndefOr[String]
+    var groupsPrefix: js.UndefOr[String]
+    var requiredClaims: js.UndefOr[requiredClaimsMap]
+    var usernameClaim: js.UndefOr[String]
+    var usernamePrefix: js.UndefOr[String]
+  }
+
+  object OidcIdentityProviderConfigRequest {
+    @inline
+    def apply(
+        clientId: String,
+        identityProviderConfigName: String,
+        issuerUrl: String,
+        groupsClaim: js.UndefOr[String] = js.undefined,
+        groupsPrefix: js.UndefOr[String] = js.undefined,
+        requiredClaims: js.UndefOr[requiredClaimsMap] = js.undefined,
+        usernameClaim: js.UndefOr[String] = js.undefined,
+        usernamePrefix: js.UndefOr[String] = js.undefined
+    ): OidcIdentityProviderConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "clientId" -> clientId.asInstanceOf[js.Any],
+        "identityProviderConfigName" -> identityProviderConfigName.asInstanceOf[js.Any],
+        "issuerUrl" -> issuerUrl.asInstanceOf[js.Any]
+      )
+
+      groupsClaim.foreach(__v => __obj.updateDynamic("groupsClaim")(__v.asInstanceOf[js.Any]))
+      groupsPrefix.foreach(__v => __obj.updateDynamic("groupsPrefix")(__v.asInstanceOf[js.Any]))
+      requiredClaims.foreach(__v => __obj.updateDynamic("requiredClaims")(__v.asInstanceOf[js.Any]))
+      usernameClaim.foreach(__v => __obj.updateDynamic("usernameClaim")(__v.asInstanceOf[js.Any]))
+      usernamePrefix.foreach(__v => __obj.updateDynamic("usernamePrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OidcIdentityProviderConfigRequest]
     }
   }
 
@@ -2241,6 +2596,8 @@ package eks {
     val MinSize = "MinSize".asInstanceOf[UpdateParamType]
     val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
     val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
+    val IdentityProviderConfig = "IdentityProviderConfig".asInstanceOf[UpdateParamType]
+    val EncryptionConfig = "EncryptionConfig".asInstanceOf[UpdateParamType]
     val AddonVersion = "AddonVersion".asInstanceOf[UpdateParamType]
     val ServiceAccountRoleArn = "ServiceAccountRoleArn".asInstanceOf[UpdateParamType]
     val ResolveConflicts = "ResolveConflicts".asInstanceOf[UpdateParamType]
@@ -2258,6 +2615,8 @@ package eks {
       MinSize,
       ReleaseVersion,
       PublicAccessCidrs,
+      IdentityProviderConfig,
+      EncryptionConfig,
       AddonVersion,
       ServiceAccountRoleArn,
       ResolveConflicts
@@ -2282,9 +2641,21 @@ package eks {
     val EndpointAccessUpdate = "EndpointAccessUpdate".asInstanceOf[UpdateType]
     val LoggingUpdate = "LoggingUpdate".asInstanceOf[UpdateType]
     val ConfigUpdate = "ConfigUpdate".asInstanceOf[UpdateType]
+    val AssociateIdentityProviderConfig = "AssociateIdentityProviderConfig".asInstanceOf[UpdateType]
+    val DisassociateIdentityProviderConfig = "DisassociateIdentityProviderConfig".asInstanceOf[UpdateType]
+    val AssociateEncryptionConfig = "AssociateEncryptionConfig".asInstanceOf[UpdateType]
     val AddonUpdate = "AddonUpdate".asInstanceOf[UpdateType]
 
-    @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate, AddonUpdate)
+    @inline def values = js.Array(
+      VersionUpdate,
+      EndpointAccessUpdate,
+      LoggingUpdate,
+      ConfigUpdate,
+      AssociateIdentityProviderConfig,
+      DisassociateIdentityProviderConfig,
+      AssociateEncryptionConfig,
+      AddonUpdate
+    )
   }
 
   /** An object representing the VPC configuration to use for an Amazon EKS cluster.
@@ -2351,5 +2722,15 @@ package eks {
       vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcConfigResponse]
     }
+  }
+
+  @js.native
+  sealed trait configStatus extends js.Any
+  object configStatus {
+    val CREATING = "CREATING".asInstanceOf[configStatus]
+    val DELETING = "DELETING".asInstanceOf[configStatus]
+    val ACTIVE = "ACTIVE".asInstanceOf[configStatus]
+
+    @inline def values = js.Array(CREATING, DELETING, ACTIVE)
   }
 }

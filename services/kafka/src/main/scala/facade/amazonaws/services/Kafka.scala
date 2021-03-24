@@ -60,6 +60,7 @@ package object kafka {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateBrokerCountFuture(params: UpdateBrokerCountRequest): Future[UpdateBrokerCountResponse] = service.updateBrokerCount(params).promise().toFuture
     @inline def updateBrokerStorageFuture(params: UpdateBrokerStorageRequest): Future[UpdateBrokerStorageResponse] = service.updateBrokerStorage(params).promise().toFuture
+    @inline def updateBrokerTypeFuture(params: UpdateBrokerTypeRequest): Future[UpdateBrokerTypeResponse] = service.updateBrokerType(params).promise().toFuture
     @inline def updateClusterConfigurationFuture(params: UpdateClusterConfigurationRequest): Future[UpdateClusterConfigurationResponse] = service.updateClusterConfiguration(params).promise().toFuture
     @inline def updateClusterKafkaVersionFuture(params: UpdateClusterKafkaVersionRequest): Future[UpdateClusterKafkaVersionResponse] = service.updateClusterKafkaVersion(params).promise().toFuture
     @inline def updateConfigurationFuture(params: UpdateConfigurationRequest): Future[UpdateConfigurationResponse] = service.updateConfiguration(params).promise().toFuture
@@ -99,6 +100,7 @@ package kafka {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateBrokerCount(params: UpdateBrokerCountRequest): Request[UpdateBrokerCountResponse] = js.native
     def updateBrokerStorage(params: UpdateBrokerStorageRequest): Request[UpdateBrokerStorageResponse] = js.native
+    def updateBrokerType(params: UpdateBrokerTypeRequest): Request[UpdateBrokerTypeResponse] = js.native
     def updateClusterConfiguration(params: UpdateClusterConfigurationRequest): Request[UpdateClusterConfigurationResponse] = js.native
     def updateClusterKafkaVersion(params: UpdateClusterKafkaVersionRequest): Request[UpdateClusterKafkaVersionResponse] = js.native
     def updateConfiguration(params: UpdateConfigurationRequest): Request[UpdateConfigurationResponse] = js.native
@@ -1659,6 +1661,7 @@ package kafka {
     var BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo]
     var ConfigurationInfo: js.UndefOr[ConfigurationInfo]
     var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
+    var InstanceType: js.UndefOr[__stringMin5Max32]
     var KafkaVersion: js.UndefOr[__string]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var NumberOfBrokerNodes: js.UndefOr[__integer]
@@ -1671,6 +1674,7 @@ package kafka {
         BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo] = js.undefined,
         ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
+        InstanceType: js.UndefOr[__stringMin5Max32] = js.undefined,
         KafkaVersion: js.UndefOr[__string] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
@@ -1680,6 +1684,7 @@ package kafka {
       BrokerEBSVolumeInfo.foreach(__v => __obj.updateDynamic("BrokerEBSVolumeInfo")(__v.asInstanceOf[js.Any]))
       ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       KafkaVersion.foreach(__v => __obj.updateDynamic("KafkaVersion")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
@@ -2150,6 +2155,48 @@ package kafka {
       ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerStorageResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateBrokerTypeRequest extends js.Object {
+    var ClusterArn: __string
+    var CurrentVersion: __string
+    var TargetInstanceType: __string
+  }
+
+  object UpdateBrokerTypeRequest {
+    @inline
+    def apply(
+        ClusterArn: __string,
+        CurrentVersion: __string,
+        TargetInstanceType: __string
+    ): UpdateBrokerTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
+        "TargetInstanceType" -> TargetInstanceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateBrokerTypeRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBrokerTypeResponse extends js.Object {
+    var ClusterArn: js.UndefOr[__string]
+    var ClusterOperationArn: js.UndefOr[__string]
+  }
+
+  object UpdateBrokerTypeResponse {
+    @inline
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterOperationArn: js.UndefOr[__string] = js.undefined
+    ): UpdateBrokerTypeResponse = {
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBrokerTypeResponse]
     }
   }
 

@@ -9,12 +9,26 @@ import facade.amazonaws._
 package object cloudwatchevents {
   type AccountId = String
   type Action = String
+  type ApiDestinationArn = String
+  type ApiDestinationDescription = String
+  type ApiDestinationInvocationRateLimitPerSecond = Int
+  type ApiDestinationName = String
+  type ApiDestinationResponseList = js.Array[ApiDestination]
   type ArchiveArn = String
   type ArchiveDescription = String
   type ArchiveName = String
   type ArchiveResponseList = js.Array[Archive]
   type ArchiveStateReason = String
   type Arn = String
+  type AuthHeaderParameters = String
+  type ConnectionArn = String
+  type ConnectionBodyParametersList = js.Array[ConnectionBodyParameter]
+  type ConnectionDescription = String
+  type ConnectionHeaderParametersList = js.Array[ConnectionHeaderParameter]
+  type ConnectionName = String
+  type ConnectionQueryStringParametersList = js.Array[ConnectionQueryStringParameter]
+  type ConnectionResponseList = js.Array[Connection]
+  type ConnectionStateReason = String
   type CreatedBy = String
   type Database = String
   type DbUser = String
@@ -34,6 +48,7 @@ package object cloudwatchevents {
   type HeaderKey = String
   type HeaderParametersMap = js.Dictionary[HeaderValue]
   type HeaderValue = String
+  type HttpsEndpoint = String
   type InputTransformerPathKey = String
   type LimitMax100 = Int
   type LimitMin1 = Int
@@ -79,6 +94,7 @@ package object cloudwatchevents {
   type RunCommandTargetValues = js.Array[RunCommandTargetValue]
   type RunCommandTargets = js.Array[RunCommandTarget]
   type ScheduleExpression = String
+  type SecretsManagerSecretArn = String
   type Sql = String
   type StatementId = String
   type StatementName = String
@@ -95,6 +111,7 @@ package object cloudwatchevents {
   type TargetList = js.Array[Target]
   type TargetPartitionKeyPath = String
   type Timestamp = js.Date
+  type TraceHeader = String
   type TransformerInput = String
   type TransformerPaths = js.Dictionary[TargetInputPath]
 
@@ -102,15 +119,22 @@ package object cloudwatchevents {
 
     @inline def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] = service.activateEventSource(params).promise().toFuture
     @inline def cancelReplayFuture(params: CancelReplayRequest): Future[CancelReplayResponse] = service.cancelReplay(params).promise().toFuture
+    @inline def createApiDestinationFuture(params: CreateApiDestinationRequest): Future[CreateApiDestinationResponse] = service.createApiDestination(params).promise().toFuture
     @inline def createArchiveFuture(params: CreateArchiveRequest): Future[CreateArchiveResponse] = service.createArchive(params).promise().toFuture
+    @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
     @inline def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] = service.createEventBus(params).promise().toFuture
     @inline def createPartnerEventSourceFuture(params: CreatePartnerEventSourceRequest): Future[CreatePartnerEventSourceResponse] = service.createPartnerEventSource(params).promise().toFuture
     @inline def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] = service.deactivateEventSource(params).promise().toFuture
+    @inline def deauthorizeConnectionFuture(params: DeauthorizeConnectionRequest): Future[DeauthorizeConnectionResponse] = service.deauthorizeConnection(params).promise().toFuture
+    @inline def deleteApiDestinationFuture(params: DeleteApiDestinationRequest): Future[DeleteApiDestinationResponse] = service.deleteApiDestination(params).promise().toFuture
     @inline def deleteArchiveFuture(params: DeleteArchiveRequest): Future[DeleteArchiveResponse] = service.deleteArchive(params).promise().toFuture
+    @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
     @inline def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] = service.deleteEventBus(params).promise().toFuture
     @inline def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] = service.deletePartnerEventSource(params).promise().toFuture
     @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] = service.deleteRule(params).promise().toFuture
+    @inline def describeApiDestinationFuture(params: DescribeApiDestinationRequest): Future[DescribeApiDestinationResponse] = service.describeApiDestination(params).promise().toFuture
     @inline def describeArchiveFuture(params: DescribeArchiveRequest): Future[DescribeArchiveResponse] = service.describeArchive(params).promise().toFuture
+    @inline def describeConnectionFuture(params: DescribeConnectionRequest): Future[DescribeConnectionResponse] = service.describeConnection(params).promise().toFuture
     @inline def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] = service.describeEventBus(params).promise().toFuture
     @inline def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] = service.describeEventSource(params).promise().toFuture
     @inline def describePartnerEventSourceFuture(params: DescribePartnerEventSourceRequest): Future[DescribePartnerEventSourceResponse] = service.describePartnerEventSource(params).promise().toFuture
@@ -118,7 +142,9 @@ package object cloudwatchevents {
     @inline def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] = service.describeRule(params).promise().toFuture
     @inline def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] = service.disableRule(params).promise().toFuture
     @inline def enableRuleFuture(params: EnableRuleRequest): Future[js.Object] = service.enableRule(params).promise().toFuture
+    @inline def listApiDestinationsFuture(params: ListApiDestinationsRequest): Future[ListApiDestinationsResponse] = service.listApiDestinations(params).promise().toFuture
     @inline def listArchivesFuture(params: ListArchivesRequest): Future[ListArchivesResponse] = service.listArchives(params).promise().toFuture
+    @inline def listConnectionsFuture(params: ListConnectionsRequest): Future[ListConnectionsResponse] = service.listConnections(params).promise().toFuture
     @inline def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] = service.listEventBuses(params).promise().toFuture
     @inline def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] = service.listEventSources(params).promise().toFuture
     @inline def listPartnerEventSourceAccountsFuture(params: ListPartnerEventSourceAccountsRequest): Future[ListPartnerEventSourceAccountsResponse] = service.listPartnerEventSourceAccounts(params).promise().toFuture
@@ -139,7 +165,9 @@ package object cloudwatchevents {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] = service.testEventPattern(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateApiDestinationFuture(params: UpdateApiDestinationRequest): Future[UpdateApiDestinationResponse] = service.updateApiDestination(params).promise().toFuture
     @inline def updateArchiveFuture(params: UpdateArchiveRequest): Future[UpdateArchiveResponse] = service.updateArchive(params).promise().toFuture
+    @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] = service.updateConnection(params).promise().toFuture
 
   }
 }
@@ -152,15 +180,22 @@ package cloudwatchevents {
 
     def activateEventSource(params: ActivateEventSourceRequest): Request[js.Object] = js.native
     def cancelReplay(params: CancelReplayRequest): Request[CancelReplayResponse] = js.native
+    def createApiDestination(params: CreateApiDestinationRequest): Request[CreateApiDestinationResponse] = js.native
     def createArchive(params: CreateArchiveRequest): Request[CreateArchiveResponse] = js.native
+    def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
     def createEventBus(params: CreateEventBusRequest): Request[CreateEventBusResponse] = js.native
     def createPartnerEventSource(params: CreatePartnerEventSourceRequest): Request[CreatePartnerEventSourceResponse] = js.native
     def deactivateEventSource(params: DeactivateEventSourceRequest): Request[js.Object] = js.native
+    def deauthorizeConnection(params: DeauthorizeConnectionRequest): Request[DeauthorizeConnectionResponse] = js.native
+    def deleteApiDestination(params: DeleteApiDestinationRequest): Request[DeleteApiDestinationResponse] = js.native
     def deleteArchive(params: DeleteArchiveRequest): Request[DeleteArchiveResponse] = js.native
+    def deleteConnection(params: DeleteConnectionRequest): Request[DeleteConnectionResponse] = js.native
     def deleteEventBus(params: DeleteEventBusRequest): Request[js.Object] = js.native
     def deletePartnerEventSource(params: DeletePartnerEventSourceRequest): Request[js.Object] = js.native
     def deleteRule(params: DeleteRuleRequest): Request[js.Object] = js.native
+    def describeApiDestination(params: DescribeApiDestinationRequest): Request[DescribeApiDestinationResponse] = js.native
     def describeArchive(params: DescribeArchiveRequest): Request[DescribeArchiveResponse] = js.native
+    def describeConnection(params: DescribeConnectionRequest): Request[DescribeConnectionResponse] = js.native
     def describeEventBus(params: DescribeEventBusRequest): Request[DescribeEventBusResponse] = js.native
     def describeEventSource(params: DescribeEventSourceRequest): Request[DescribeEventSourceResponse] = js.native
     def describePartnerEventSource(params: DescribePartnerEventSourceRequest): Request[DescribePartnerEventSourceResponse] = js.native
@@ -168,7 +203,9 @@ package cloudwatchevents {
     def describeRule(params: DescribeRuleRequest): Request[DescribeRuleResponse] = js.native
     def disableRule(params: DisableRuleRequest): Request[js.Object] = js.native
     def enableRule(params: EnableRuleRequest): Request[js.Object] = js.native
+    def listApiDestinations(params: ListApiDestinationsRequest): Request[ListApiDestinationsResponse] = js.native
     def listArchives(params: ListArchivesRequest): Request[ListArchivesResponse] = js.native
+    def listConnections(params: ListConnectionsRequest): Request[ListConnectionsResponse] = js.native
     def listEventBuses(params: ListEventBusesRequest): Request[ListEventBusesResponse] = js.native
     def listEventSources(params: ListEventSourcesRequest): Request[ListEventSourcesResponse] = js.native
     def listPartnerEventSourceAccounts(params: ListPartnerEventSourceAccountsRequest): Request[ListPartnerEventSourceAccountsResponse] = js.native
@@ -189,7 +226,9 @@ package cloudwatchevents {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def testEventPattern(params: TestEventPatternRequest): Request[TestEventPatternResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateApiDestination(params: UpdateApiDestinationRequest): Request[UpdateApiDestinationResponse] = js.native
     def updateArchive(params: UpdateArchiveRequest): Request[UpdateArchiveResponse] = js.native
+    def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse] = js.native
   }
 
   @js.native
@@ -207,6 +246,71 @@ package cloudwatchevents {
       )
       __obj.asInstanceOf[ActivateEventSourceRequest]
     }
+  }
+
+  /** Contains details about an API destination.
+    */
+  @js.native
+  trait ApiDestination extends js.Object {
+    var ApiDestinationArn: js.UndefOr[ApiDestinationArn]
+    var ApiDestinationState: js.UndefOr[ApiDestinationState]
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var CreationTime: js.UndefOr[Timestamp]
+    var HttpMethod: js.UndefOr[ApiDestinationHttpMethod]
+    var InvocationEndpoint: js.UndefOr[HttpsEndpoint]
+    var InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[ApiDestinationName]
+  }
+
+  object ApiDestination {
+    @inline
+    def apply(
+        ApiDestinationArn: js.UndefOr[ApiDestinationArn] = js.undefined,
+        ApiDestinationState: js.UndefOr[ApiDestinationState] = js.undefined,
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        HttpMethod: js.UndefOr[ApiDestinationHttpMethod] = js.undefined,
+        InvocationEndpoint: js.UndefOr[HttpsEndpoint] = js.undefined,
+        InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ApiDestinationName] = js.undefined
+    ): ApiDestination = {
+      val __obj = js.Dynamic.literal()
+      ApiDestinationArn.foreach(__v => __obj.updateDynamic("ApiDestinationArn")(__v.asInstanceOf[js.Any]))
+      ApiDestinationState.foreach(__v => __obj.updateDynamic("ApiDestinationState")(__v.asInstanceOf[js.Any]))
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      HttpMethod.foreach(__v => __obj.updateDynamic("HttpMethod")(__v.asInstanceOf[js.Any]))
+      InvocationEndpoint.foreach(__v => __obj.updateDynamic("InvocationEndpoint")(__v.asInstanceOf[js.Any]))
+      InvocationRateLimitPerSecond.foreach(__v => __obj.updateDynamic("InvocationRateLimitPerSecond")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApiDestination]
+    }
+  }
+
+  @js.native
+  sealed trait ApiDestinationHttpMethod extends js.Any
+  object ApiDestinationHttpMethod {
+    val POST = "POST".asInstanceOf[ApiDestinationHttpMethod]
+    val GET = "GET".asInstanceOf[ApiDestinationHttpMethod]
+    val HEAD = "HEAD".asInstanceOf[ApiDestinationHttpMethod]
+    val OPTIONS = "OPTIONS".asInstanceOf[ApiDestinationHttpMethod]
+    val PUT = "PUT".asInstanceOf[ApiDestinationHttpMethod]
+    val PATCH = "PATCH".asInstanceOf[ApiDestinationHttpMethod]
+    val DELETE = "DELETE".asInstanceOf[ApiDestinationHttpMethod]
+
+    @inline def values = js.Array(POST, GET, HEAD, OPTIONS, PUT, PATCH, DELETE)
+  }
+
+  @js.native
+  sealed trait ApiDestinationState extends js.Any
+  object ApiDestinationState {
+    val ACTIVE = "ACTIVE".asInstanceOf[ApiDestinationState]
+    val INACTIVE = "INACTIVE".asInstanceOf[ApiDestinationState]
+
+    @inline def values = js.Array(ACTIVE, INACTIVE)
   }
 
   /** An <code>Archive</code> object that contains details about an archive.
@@ -426,6 +530,341 @@ package cloudwatchevents {
     }
   }
 
+  /** Contains information about a connection.
+    */
+  @js.native
+  trait Connection extends js.Object {
+    var AuthorizationType: js.UndefOr[ConnectionAuthorizationType]
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastAuthorizedTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[ConnectionName]
+    var StateReason: js.UndefOr[ConnectionStateReason]
+  }
+
+  object Connection {
+    @inline
+    def apply(
+        AuthorizationType: js.UndefOr[ConnectionAuthorizationType] = js.undefined,
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastAuthorizedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ConnectionName] = js.undefined,
+        StateReason: js.UndefOr[ConnectionStateReason] = js.undefined
+    ): Connection = {
+      val __obj = js.Dynamic.literal()
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastAuthorizedTime.foreach(__v => __obj.updateDynamic("LastAuthorizedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Connection]
+    }
+  }
+
+  /** Contains the authorization parameters for the connection if API Key is specified as the authorization type.
+    */
+  @js.native
+  trait ConnectionApiKeyAuthResponseParameters extends js.Object {
+    var ApiKeyName: js.UndefOr[AuthHeaderParameters]
+  }
+
+  object ConnectionApiKeyAuthResponseParameters {
+    @inline
+    def apply(
+        ApiKeyName: js.UndefOr[AuthHeaderParameters] = js.undefined
+    ): ConnectionApiKeyAuthResponseParameters = {
+      val __obj = js.Dynamic.literal()
+      ApiKeyName.foreach(__v => __obj.updateDynamic("ApiKeyName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionApiKeyAuthResponseParameters]
+    }
+  }
+
+  /** Contains the authorization parameters to use for the connection.
+    */
+  @js.native
+  trait ConnectionAuthResponseParameters extends js.Object {
+    var ApiKeyAuthParameters: js.UndefOr[ConnectionApiKeyAuthResponseParameters]
+    var BasicAuthParameters: js.UndefOr[ConnectionBasicAuthResponseParameters]
+    var InvocationHttpParameters: js.UndefOr[ConnectionHttpParameters]
+    var OAuthParameters: js.UndefOr[ConnectionOAuthResponseParameters]
+  }
+
+  object ConnectionAuthResponseParameters {
+    @inline
+    def apply(
+        ApiKeyAuthParameters: js.UndefOr[ConnectionApiKeyAuthResponseParameters] = js.undefined,
+        BasicAuthParameters: js.UndefOr[ConnectionBasicAuthResponseParameters] = js.undefined,
+        InvocationHttpParameters: js.UndefOr[ConnectionHttpParameters] = js.undefined,
+        OAuthParameters: js.UndefOr[ConnectionOAuthResponseParameters] = js.undefined
+    ): ConnectionAuthResponseParameters = {
+      val __obj = js.Dynamic.literal()
+      ApiKeyAuthParameters.foreach(__v => __obj.updateDynamic("ApiKeyAuthParameters")(__v.asInstanceOf[js.Any]))
+      BasicAuthParameters.foreach(__v => __obj.updateDynamic("BasicAuthParameters")(__v.asInstanceOf[js.Any]))
+      InvocationHttpParameters.foreach(__v => __obj.updateDynamic("InvocationHttpParameters")(__v.asInstanceOf[js.Any]))
+      OAuthParameters.foreach(__v => __obj.updateDynamic("OAuthParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionAuthResponseParameters]
+    }
+  }
+
+  @js.native
+  sealed trait ConnectionAuthorizationType extends js.Any
+  object ConnectionAuthorizationType {
+    val BASIC = "BASIC".asInstanceOf[ConnectionAuthorizationType]
+    val OAUTH_CLIENT_CREDENTIALS = "OAUTH_CLIENT_CREDENTIALS".asInstanceOf[ConnectionAuthorizationType]
+    val API_KEY = "API_KEY".asInstanceOf[ConnectionAuthorizationType]
+
+    @inline def values = js.Array(BASIC, OAUTH_CLIENT_CREDENTIALS, API_KEY)
+  }
+
+  /** Contains the authorization parameters for the connection if Basic is specified as the authorization type.
+    */
+  @js.native
+  trait ConnectionBasicAuthResponseParameters extends js.Object {
+    var Username: js.UndefOr[AuthHeaderParameters]
+  }
+
+  object ConnectionBasicAuthResponseParameters {
+    @inline
+    def apply(
+        Username: js.UndefOr[AuthHeaderParameters] = js.undefined
+    ): ConnectionBasicAuthResponseParameters = {
+      val __obj = js.Dynamic.literal()
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionBasicAuthResponseParameters]
+    }
+  }
+
+  /** Additional parameter included in the body. You can include up to 100 additional body parameters per request. An event payload cannot exceed 64 KB.
+    */
+  @js.native
+  trait ConnectionBodyParameter extends js.Object {
+    var IsValueSecret: js.UndefOr[Boolean]
+    var Key: js.UndefOr[String]
+    var Value: js.UndefOr[String]
+  }
+
+  object ConnectionBodyParameter {
+    @inline
+    def apply(
+        IsValueSecret: js.UndefOr[Boolean] = js.undefined,
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): ConnectionBodyParameter = {
+      val __obj = js.Dynamic.literal()
+      IsValueSecret.foreach(__v => __obj.updateDynamic("IsValueSecret")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionBodyParameter]
+    }
+  }
+
+  /** Additional parameter included in the header. You can include up to 100 additional header parameters per request. An event payload cannot exceed 64 KB.
+    */
+  @js.native
+  trait ConnectionHeaderParameter extends js.Object {
+    var IsValueSecret: js.UndefOr[Boolean]
+    var Key: js.UndefOr[HeaderKey]
+    var Value: js.UndefOr[HeaderValue]
+  }
+
+  object ConnectionHeaderParameter {
+    @inline
+    def apply(
+        IsValueSecret: js.UndefOr[Boolean] = js.undefined,
+        Key: js.UndefOr[HeaderKey] = js.undefined,
+        Value: js.UndefOr[HeaderValue] = js.undefined
+    ): ConnectionHeaderParameter = {
+      val __obj = js.Dynamic.literal()
+      IsValueSecret.foreach(__v => __obj.updateDynamic("IsValueSecret")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionHeaderParameter]
+    }
+  }
+
+  /** Contains additional parameters for the connection.
+    */
+  @js.native
+  trait ConnectionHttpParameters extends js.Object {
+    var BodyParameters: js.UndefOr[ConnectionBodyParametersList]
+    var HeaderParameters: js.UndefOr[ConnectionHeaderParametersList]
+    var QueryStringParameters: js.UndefOr[ConnectionQueryStringParametersList]
+  }
+
+  object ConnectionHttpParameters {
+    @inline
+    def apply(
+        BodyParameters: js.UndefOr[ConnectionBodyParametersList] = js.undefined,
+        HeaderParameters: js.UndefOr[ConnectionHeaderParametersList] = js.undefined,
+        QueryStringParameters: js.UndefOr[ConnectionQueryStringParametersList] = js.undefined
+    ): ConnectionHttpParameters = {
+      val __obj = js.Dynamic.literal()
+      BodyParameters.foreach(__v => __obj.updateDynamic("BodyParameters")(__v.asInstanceOf[js.Any]))
+      HeaderParameters.foreach(__v => __obj.updateDynamic("HeaderParameters")(__v.asInstanceOf[js.Any]))
+      QueryStringParameters.foreach(__v => __obj.updateDynamic("QueryStringParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionHttpParameters]
+    }
+  }
+
+  /** Contains the client response parameters for the connection when OAuth is specified as the authorization type.
+    */
+  @js.native
+  trait ConnectionOAuthClientResponseParameters extends js.Object {
+    var ClientID: js.UndefOr[AuthHeaderParameters]
+  }
+
+  object ConnectionOAuthClientResponseParameters {
+    @inline
+    def apply(
+        ClientID: js.UndefOr[AuthHeaderParameters] = js.undefined
+    ): ConnectionOAuthClientResponseParameters = {
+      val __obj = js.Dynamic.literal()
+      ClientID.foreach(__v => __obj.updateDynamic("ClientID")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionOAuthClientResponseParameters]
+    }
+  }
+
+  @js.native
+  sealed trait ConnectionOAuthHttpMethod extends js.Any
+  object ConnectionOAuthHttpMethod {
+    val GET = "GET".asInstanceOf[ConnectionOAuthHttpMethod]
+    val POST = "POST".asInstanceOf[ConnectionOAuthHttpMethod]
+    val PUT = "PUT".asInstanceOf[ConnectionOAuthHttpMethod]
+
+    @inline def values = js.Array(GET, POST, PUT)
+  }
+
+  /** Contains the response parameters when OAuth is specified as the authorization type.
+    */
+  @js.native
+  trait ConnectionOAuthResponseParameters extends js.Object {
+    var AuthorizationEndpoint: js.UndefOr[HttpsEndpoint]
+    var ClientParameters: js.UndefOr[ConnectionOAuthClientResponseParameters]
+    var HttpMethod: js.UndefOr[ConnectionOAuthHttpMethod]
+    var OAuthHttpParameters: js.UndefOr[ConnectionHttpParameters]
+  }
+
+  object ConnectionOAuthResponseParameters {
+    @inline
+    def apply(
+        AuthorizationEndpoint: js.UndefOr[HttpsEndpoint] = js.undefined,
+        ClientParameters: js.UndefOr[ConnectionOAuthClientResponseParameters] = js.undefined,
+        HttpMethod: js.UndefOr[ConnectionOAuthHttpMethod] = js.undefined,
+        OAuthHttpParameters: js.UndefOr[ConnectionHttpParameters] = js.undefined
+    ): ConnectionOAuthResponseParameters = {
+      val __obj = js.Dynamic.literal()
+      AuthorizationEndpoint.foreach(__v => __obj.updateDynamic("AuthorizationEndpoint")(__v.asInstanceOf[js.Any]))
+      ClientParameters.foreach(__v => __obj.updateDynamic("ClientParameters")(__v.asInstanceOf[js.Any]))
+      HttpMethod.foreach(__v => __obj.updateDynamic("HttpMethod")(__v.asInstanceOf[js.Any]))
+      OAuthHttpParameters.foreach(__v => __obj.updateDynamic("OAuthHttpParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionOAuthResponseParameters]
+    }
+  }
+
+  /** Additional query string parameter for the connection. You can include up to 100 additional query string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB.
+    */
+  @js.native
+  trait ConnectionQueryStringParameter extends js.Object {
+    var IsValueSecret: js.UndefOr[Boolean]
+    var Key: js.UndefOr[QueryStringKey]
+    var Value: js.UndefOr[QueryStringValue]
+  }
+
+  object ConnectionQueryStringParameter {
+    @inline
+    def apply(
+        IsValueSecret: js.UndefOr[Boolean] = js.undefined,
+        Key: js.UndefOr[QueryStringKey] = js.undefined,
+        Value: js.UndefOr[QueryStringValue] = js.undefined
+    ): ConnectionQueryStringParameter = {
+      val __obj = js.Dynamic.literal()
+      IsValueSecret.foreach(__v => __obj.updateDynamic("IsValueSecret")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionQueryStringParameter]
+    }
+  }
+
+  @js.native
+  sealed trait ConnectionState extends js.Any
+  object ConnectionState {
+    val CREATING = "CREATING".asInstanceOf[ConnectionState]
+    val UPDATING = "UPDATING".asInstanceOf[ConnectionState]
+    val DELETING = "DELETING".asInstanceOf[ConnectionState]
+    val AUTHORIZED = "AUTHORIZED".asInstanceOf[ConnectionState]
+    val DEAUTHORIZED = "DEAUTHORIZED".asInstanceOf[ConnectionState]
+    val AUTHORIZING = "AUTHORIZING".asInstanceOf[ConnectionState]
+    val DEAUTHORIZING = "DEAUTHORIZING".asInstanceOf[ConnectionState]
+
+    @inline def values = js.Array(CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
+  }
+
+  @js.native
+  trait CreateApiDestinationRequest extends js.Object {
+    var ConnectionArn: ConnectionArn
+    var HttpMethod: ApiDestinationHttpMethod
+    var InvocationEndpoint: HttpsEndpoint
+    var Name: ApiDestinationName
+    var Description: js.UndefOr[ApiDestinationDescription]
+    var InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond]
+  }
+
+  object CreateApiDestinationRequest {
+    @inline
+    def apply(
+        ConnectionArn: ConnectionArn,
+        HttpMethod: ApiDestinationHttpMethod,
+        InvocationEndpoint: HttpsEndpoint,
+        Name: ApiDestinationName,
+        Description: js.UndefOr[ApiDestinationDescription] = js.undefined,
+        InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond] = js.undefined
+    ): CreateApiDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionArn" -> ConnectionArn.asInstanceOf[js.Any],
+        "HttpMethod" -> HttpMethod.asInstanceOf[js.Any],
+        "InvocationEndpoint" -> InvocationEndpoint.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      InvocationRateLimitPerSecond.foreach(__v => __obj.updateDynamic("InvocationRateLimitPerSecond")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApiDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateApiDestinationResponse extends js.Object {
+    var ApiDestinationArn: js.UndefOr[ApiDestinationArn]
+    var ApiDestinationState: js.UndefOr[ApiDestinationState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object CreateApiDestinationResponse {
+    @inline
+    def apply(
+        ApiDestinationArn: js.UndefOr[ApiDestinationArn] = js.undefined,
+        ApiDestinationState: js.UndefOr[ApiDestinationState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): CreateApiDestinationResponse = {
+      val __obj = js.Dynamic.literal()
+      ApiDestinationArn.foreach(__v => __obj.updateDynamic("ApiDestinationArn")(__v.asInstanceOf[js.Any]))
+      ApiDestinationState.foreach(__v => __obj.updateDynamic("ApiDestinationState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateApiDestinationResponse]
+    }
+  }
+
   @js.native
   trait CreateArchiveRequest extends js.Object {
     var ArchiveName: ArchiveName
@@ -478,6 +917,180 @@ package cloudwatchevents {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateArchiveResponse]
+    }
+  }
+
+  /** Contains the API key authorization parameters for the connection.
+    */
+  @js.native
+  trait CreateConnectionApiKeyAuthRequestParameters extends js.Object {
+    var ApiKeyName: AuthHeaderParameters
+    var ApiKeyValue: AuthHeaderParameters
+  }
+
+  object CreateConnectionApiKeyAuthRequestParameters {
+    @inline
+    def apply(
+        ApiKeyName: AuthHeaderParameters,
+        ApiKeyValue: AuthHeaderParameters
+    ): CreateConnectionApiKeyAuthRequestParameters = {
+      val __obj = js.Dynamic.literal(
+        "ApiKeyName" -> ApiKeyName.asInstanceOf[js.Any],
+        "ApiKeyValue" -> ApiKeyValue.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateConnectionApiKeyAuthRequestParameters]
+    }
+  }
+
+  /** Contains the authorization parameters for the connection.
+    */
+  @js.native
+  trait CreateConnectionAuthRequestParameters extends js.Object {
+    var ApiKeyAuthParameters: js.UndefOr[CreateConnectionApiKeyAuthRequestParameters]
+    var BasicAuthParameters: js.UndefOr[CreateConnectionBasicAuthRequestParameters]
+    var InvocationHttpParameters: js.UndefOr[ConnectionHttpParameters]
+    var OAuthParameters: js.UndefOr[CreateConnectionOAuthRequestParameters]
+  }
+
+  object CreateConnectionAuthRequestParameters {
+    @inline
+    def apply(
+        ApiKeyAuthParameters: js.UndefOr[CreateConnectionApiKeyAuthRequestParameters] = js.undefined,
+        BasicAuthParameters: js.UndefOr[CreateConnectionBasicAuthRequestParameters] = js.undefined,
+        InvocationHttpParameters: js.UndefOr[ConnectionHttpParameters] = js.undefined,
+        OAuthParameters: js.UndefOr[CreateConnectionOAuthRequestParameters] = js.undefined
+    ): CreateConnectionAuthRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      ApiKeyAuthParameters.foreach(__v => __obj.updateDynamic("ApiKeyAuthParameters")(__v.asInstanceOf[js.Any]))
+      BasicAuthParameters.foreach(__v => __obj.updateDynamic("BasicAuthParameters")(__v.asInstanceOf[js.Any]))
+      InvocationHttpParameters.foreach(__v => __obj.updateDynamic("InvocationHttpParameters")(__v.asInstanceOf[js.Any]))
+      OAuthParameters.foreach(__v => __obj.updateDynamic("OAuthParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionAuthRequestParameters]
+    }
+  }
+
+  /** Contains the Basic authorization parameters to use for the connection.
+    */
+  @js.native
+  trait CreateConnectionBasicAuthRequestParameters extends js.Object {
+    var Password: AuthHeaderParameters
+    var Username: AuthHeaderParameters
+  }
+
+  object CreateConnectionBasicAuthRequestParameters {
+    @inline
+    def apply(
+        Password: AuthHeaderParameters,
+        Username: AuthHeaderParameters
+    ): CreateConnectionBasicAuthRequestParameters = {
+      val __obj = js.Dynamic.literal(
+        "Password" -> Password.asInstanceOf[js.Any],
+        "Username" -> Username.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateConnectionBasicAuthRequestParameters]
+    }
+  }
+
+  /** Contains the Basic authorization parameters to use for the connection.
+    */
+  @js.native
+  trait CreateConnectionOAuthClientRequestParameters extends js.Object {
+    var ClientID: AuthHeaderParameters
+    var ClientSecret: AuthHeaderParameters
+  }
+
+  object CreateConnectionOAuthClientRequestParameters {
+    @inline
+    def apply(
+        ClientID: AuthHeaderParameters,
+        ClientSecret: AuthHeaderParameters
+    ): CreateConnectionOAuthClientRequestParameters = {
+      val __obj = js.Dynamic.literal(
+        "ClientID" -> ClientID.asInstanceOf[js.Any],
+        "ClientSecret" -> ClientSecret.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateConnectionOAuthClientRequestParameters]
+    }
+  }
+
+  /** Contains the OAuth authorization parameters to use for the connection.
+    */
+  @js.native
+  trait CreateConnectionOAuthRequestParameters extends js.Object {
+    var AuthorizationEndpoint: HttpsEndpoint
+    var ClientParameters: CreateConnectionOAuthClientRequestParameters
+    var HttpMethod: ConnectionOAuthHttpMethod
+    var OAuthHttpParameters: js.UndefOr[ConnectionHttpParameters]
+  }
+
+  object CreateConnectionOAuthRequestParameters {
+    @inline
+    def apply(
+        AuthorizationEndpoint: HttpsEndpoint,
+        ClientParameters: CreateConnectionOAuthClientRequestParameters,
+        HttpMethod: ConnectionOAuthHttpMethod,
+        OAuthHttpParameters: js.UndefOr[ConnectionHttpParameters] = js.undefined
+    ): CreateConnectionOAuthRequestParameters = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizationEndpoint" -> AuthorizationEndpoint.asInstanceOf[js.Any],
+        "ClientParameters" -> ClientParameters.asInstanceOf[js.Any],
+        "HttpMethod" -> HttpMethod.asInstanceOf[js.Any]
+      )
+
+      OAuthHttpParameters.foreach(__v => __obj.updateDynamic("OAuthHttpParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionOAuthRequestParameters]
+    }
+  }
+
+  @js.native
+  trait CreateConnectionRequest extends js.Object {
+    var AuthParameters: CreateConnectionAuthRequestParameters
+    var AuthorizationType: ConnectionAuthorizationType
+    var Name: ConnectionName
+    var Description: js.UndefOr[ConnectionDescription]
+  }
+
+  object CreateConnectionRequest {
+    @inline
+    def apply(
+        AuthParameters: CreateConnectionAuthRequestParameters,
+        AuthorizationType: ConnectionAuthorizationType,
+        Name: ConnectionName,
+        Description: js.UndefOr[ConnectionDescription] = js.undefined
+    ): CreateConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AuthParameters" -> AuthParameters.asInstanceOf[js.Any],
+        "AuthorizationType" -> AuthorizationType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateConnectionResponse extends js.Object {
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object CreateConnectionResponse {
+    @inline
+    def apply(
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): CreateConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateConnectionResponse]
     }
   }
 
@@ -593,6 +1206,79 @@ package cloudwatchevents {
   }
 
   @js.native
+  trait DeauthorizeConnectionRequest extends js.Object {
+    var Name: ConnectionName
+  }
+
+  object DeauthorizeConnectionRequest {
+    @inline
+    def apply(
+        Name: ConnectionName
+    ): DeauthorizeConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeauthorizeConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait DeauthorizeConnectionResponse extends js.Object {
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastAuthorizedTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object DeauthorizeConnectionResponse {
+    @inline
+    def apply(
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastAuthorizedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): DeauthorizeConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastAuthorizedTime.foreach(__v => __obj.updateDynamic("LastAuthorizedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeauthorizeConnectionResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteApiDestinationRequest extends js.Object {
+    var Name: ApiDestinationName
+  }
+
+  object DeleteApiDestinationRequest {
+    @inline
+    def apply(
+        Name: ApiDestinationName
+    ): DeleteApiDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteApiDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteApiDestinationResponse extends js.Object
+
+  object DeleteApiDestinationResponse {
+    @inline
+    def apply(): DeleteApiDestinationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteApiDestinationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteArchiveRequest extends js.Object {
     var ArchiveName: ArchiveName
   }
@@ -617,6 +1303,51 @@ package cloudwatchevents {
     def apply(): DeleteArchiveResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteArchiveResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectionRequest extends js.Object {
+    var Name: ConnectionName
+  }
+
+  object DeleteConnectionRequest {
+    @inline
+    def apply(
+        Name: ConnectionName
+    ): DeleteConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteConnectionResponse extends js.Object {
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastAuthorizedTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object DeleteConnectionResponse {
+    @inline
+    def apply(
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastAuthorizedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): DeleteConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastAuthorizedTime.foreach(__v => __obj.updateDynamic("LastAuthorizedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteConnectionResponse]
     }
   }
 
@@ -682,6 +1413,66 @@ package cloudwatchevents {
   }
 
   @js.native
+  trait DescribeApiDestinationRequest extends js.Object {
+    var Name: ApiDestinationName
+  }
+
+  object DescribeApiDestinationRequest {
+    @inline
+    def apply(
+        Name: ApiDestinationName
+    ): DescribeApiDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeApiDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeApiDestinationResponse extends js.Object {
+    var ApiDestinationArn: js.UndefOr[ApiDestinationArn]
+    var ApiDestinationState: js.UndefOr[ApiDestinationState]
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var CreationTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[ApiDestinationDescription]
+    var HttpMethod: js.UndefOr[ApiDestinationHttpMethod]
+    var InvocationEndpoint: js.UndefOr[HttpsEndpoint]
+    var InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[ApiDestinationName]
+  }
+
+  object DescribeApiDestinationResponse {
+    @inline
+    def apply(
+        ApiDestinationArn: js.UndefOr[ApiDestinationArn] = js.undefined,
+        ApiDestinationState: js.UndefOr[ApiDestinationState] = js.undefined,
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ApiDestinationDescription] = js.undefined,
+        HttpMethod: js.UndefOr[ApiDestinationHttpMethod] = js.undefined,
+        InvocationEndpoint: js.UndefOr[HttpsEndpoint] = js.undefined,
+        InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ApiDestinationName] = js.undefined
+    ): DescribeApiDestinationResponse = {
+      val __obj = js.Dynamic.literal()
+      ApiDestinationArn.foreach(__v => __obj.updateDynamic("ApiDestinationArn")(__v.asInstanceOf[js.Any]))
+      ApiDestinationState.foreach(__v => __obj.updateDynamic("ApiDestinationState")(__v.asInstanceOf[js.Any]))
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HttpMethod.foreach(__v => __obj.updateDynamic("HttpMethod")(__v.asInstanceOf[js.Any]))
+      InvocationEndpoint.foreach(__v => __obj.updateDynamic("InvocationEndpoint")(__v.asInstanceOf[js.Any]))
+      InvocationRateLimitPerSecond.foreach(__v => __obj.updateDynamic("InvocationRateLimitPerSecond")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeApiDestinationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeArchiveRequest extends js.Object {
     var ArchiveName: ArchiveName
   }
@@ -741,6 +1532,69 @@ package cloudwatchevents {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeArchiveResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectionRequest extends js.Object {
+    var Name: ConnectionName
+  }
+
+  object DescribeConnectionRequest {
+    @inline
+    def apply(
+        Name: ConnectionName
+    ): DescribeConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectionResponse extends js.Object {
+    var AuthParameters: js.UndefOr[ConnectionAuthResponseParameters]
+    var AuthorizationType: js.UndefOr[ConnectionAuthorizationType]
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[ConnectionDescription]
+    var LastAuthorizedTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[ConnectionName]
+    var SecretArn: js.UndefOr[SecretsManagerSecretArn]
+    var StateReason: js.UndefOr[ConnectionStateReason]
+  }
+
+  object DescribeConnectionResponse {
+    @inline
+    def apply(
+        AuthParameters: js.UndefOr[ConnectionAuthResponseParameters] = js.undefined,
+        AuthorizationType: js.UndefOr[ConnectionAuthorizationType] = js.undefined,
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ConnectionDescription] = js.undefined,
+        LastAuthorizedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ConnectionName] = js.undefined,
+        SecretArn: js.UndefOr[SecretsManagerSecretArn] = js.undefined,
+        StateReason: js.UndefOr[ConnectionStateReason] = js.undefined
+    ): DescribeConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      AuthParameters.foreach(__v => __obj.updateDynamic("AuthParameters")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastAuthorizedTime.foreach(__v => __obj.updateDynamic("LastAuthorizedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectionResponse]
     }
   }
 
@@ -1140,7 +1994,7 @@ package cloudwatchevents {
     @inline def values = js.Array(PENDING, ACTIVE, DELETED)
   }
 
-  /** These are custom parameter to be used when the target is an API Gateway REST APIs.
+  /** These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.
     */
   @js.native
   trait HttpParameters extends js.Object {
@@ -1216,6 +2070,50 @@ package cloudwatchevents {
   }
 
   @js.native
+  trait ListApiDestinationsRequest extends js.Object {
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var Limit: js.UndefOr[LimitMax100]
+    var NamePrefix: js.UndefOr[ApiDestinationName]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApiDestinationsRequest {
+    @inline
+    def apply(
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        Limit: js.UndefOr[LimitMax100] = js.undefined,
+        NamePrefix: js.UndefOr[ApiDestinationName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApiDestinationsRequest = {
+      val __obj = js.Dynamic.literal()
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApiDestinationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListApiDestinationsResponse extends js.Object {
+    var ApiDestinations: js.UndefOr[ApiDestinationResponseList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApiDestinationsResponse {
+    @inline
+    def apply(
+        ApiDestinations: js.UndefOr[ApiDestinationResponseList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApiDestinationsResponse = {
+      val __obj = js.Dynamic.literal()
+      ApiDestinations.foreach(__v => __obj.updateDynamic("ApiDestinations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApiDestinationsResponse]
+    }
+  }
+
+  @js.native
   trait ListArchivesRequest extends js.Object {
     var EventSourceArn: js.UndefOr[Arn]
     var Limit: js.UndefOr[LimitMax100]
@@ -1259,6 +2157,50 @@ package cloudwatchevents {
       Archives.foreach(__v => __obj.updateDynamic("Archives")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListArchivesResponse]
+    }
+  }
+
+  @js.native
+  trait ListConnectionsRequest extends js.Object {
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var Limit: js.UndefOr[LimitMax100]
+    var NamePrefix: js.UndefOr[ConnectionName]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListConnectionsRequest {
+    @inline
+    def apply(
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        Limit: js.UndefOr[LimitMax100] = js.undefined,
+        NamePrefix: js.UndefOr[ConnectionName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListConnectionsRequest = {
+      val __obj = js.Dynamic.literal()
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConnectionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListConnectionsResponse extends js.Object {
+    var Connections: js.UndefOr[ConnectionResponseList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListConnectionsResponse {
+    @inline
+    def apply(
+        Connections: js.UndefOr[ConnectionResponseList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListConnectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConnectionsResponse]
     }
   }
 
@@ -1739,6 +2681,7 @@ package cloudwatchevents {
     var Resources: js.UndefOr[EventResourceList]
     var Source: js.UndefOr[String]
     var Time: js.UndefOr[EventTime]
+    var TraceHeader: js.UndefOr[TraceHeader]
   }
 
   object PutEventsRequestEntry {
@@ -1749,7 +2692,8 @@ package cloudwatchevents {
         EventBusName: js.UndefOr[NonPartnerEventBusNameOrArn] = js.undefined,
         Resources: js.UndefOr[EventResourceList] = js.undefined,
         Source: js.UndefOr[String] = js.undefined,
-        Time: js.UndefOr[EventTime] = js.undefined
+        Time: js.UndefOr[EventTime] = js.undefined,
+        TraceHeader: js.UndefOr[TraceHeader] = js.undefined
     ): PutEventsRequestEntry = {
       val __obj = js.Dynamic.literal()
       Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
@@ -1758,6 +2702,7 @@ package cloudwatchevents {
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
+      TraceHeader.foreach(__v => __obj.updateDynamic("TraceHeader")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsRequestEntry]
     }
   }
@@ -2626,6 +3571,64 @@ package cloudwatchevents {
   }
 
   @js.native
+  trait UpdateApiDestinationRequest extends js.Object {
+    var Name: ApiDestinationName
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var Description: js.UndefOr[ApiDestinationDescription]
+    var HttpMethod: js.UndefOr[ApiDestinationHttpMethod]
+    var InvocationEndpoint: js.UndefOr[HttpsEndpoint]
+    var InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond]
+  }
+
+  object UpdateApiDestinationRequest {
+    @inline
+    def apply(
+        Name: ApiDestinationName,
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        Description: js.UndefOr[ApiDestinationDescription] = js.undefined,
+        HttpMethod: js.UndefOr[ApiDestinationHttpMethod] = js.undefined,
+        InvocationEndpoint: js.UndefOr[HttpsEndpoint] = js.undefined,
+        InvocationRateLimitPerSecond: js.UndefOr[ApiDestinationInvocationRateLimitPerSecond] = js.undefined
+    ): UpdateApiDestinationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HttpMethod.foreach(__v => __obj.updateDynamic("HttpMethod")(__v.asInstanceOf[js.Any]))
+      InvocationEndpoint.foreach(__v => __obj.updateDynamic("InvocationEndpoint")(__v.asInstanceOf[js.Any]))
+      InvocationRateLimitPerSecond.foreach(__v => __obj.updateDynamic("InvocationRateLimitPerSecond")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApiDestinationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateApiDestinationResponse extends js.Object {
+    var ApiDestinationArn: js.UndefOr[ApiDestinationArn]
+    var ApiDestinationState: js.UndefOr[ApiDestinationState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object UpdateApiDestinationResponse {
+    @inline
+    def apply(
+        ApiDestinationArn: js.UndefOr[ApiDestinationArn] = js.undefined,
+        ApiDestinationState: js.UndefOr[ApiDestinationState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): UpdateApiDestinationResponse = {
+      val __obj = js.Dynamic.literal()
+      ApiDestinationArn.foreach(__v => __obj.updateDynamic("ApiDestinationArn")(__v.asInstanceOf[js.Any]))
+      ApiDestinationState.foreach(__v => __obj.updateDynamic("ApiDestinationState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApiDestinationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateArchiveRequest extends js.Object {
     var ArchiveName: ArchiveName
     var Description: js.UndefOr[ArchiveDescription]
@@ -2674,6 +3677,178 @@ package cloudwatchevents {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateArchiveResponse]
+    }
+  }
+
+  /** Contains the API key authorization parameters to use to update the connection.
+    */
+  @js.native
+  trait UpdateConnectionApiKeyAuthRequestParameters extends js.Object {
+    var ApiKeyName: js.UndefOr[AuthHeaderParameters]
+    var ApiKeyValue: js.UndefOr[AuthHeaderParameters]
+  }
+
+  object UpdateConnectionApiKeyAuthRequestParameters {
+    @inline
+    def apply(
+        ApiKeyName: js.UndefOr[AuthHeaderParameters] = js.undefined,
+        ApiKeyValue: js.UndefOr[AuthHeaderParameters] = js.undefined
+    ): UpdateConnectionApiKeyAuthRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      ApiKeyName.foreach(__v => __obj.updateDynamic("ApiKeyName")(__v.asInstanceOf[js.Any]))
+      ApiKeyValue.foreach(__v => __obj.updateDynamic("ApiKeyValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionApiKeyAuthRequestParameters]
+    }
+  }
+
+  /** Contains the additional parameters to use for the connection.
+    */
+  @js.native
+  trait UpdateConnectionAuthRequestParameters extends js.Object {
+    var ApiKeyAuthParameters: js.UndefOr[UpdateConnectionApiKeyAuthRequestParameters]
+    var BasicAuthParameters: js.UndefOr[UpdateConnectionBasicAuthRequestParameters]
+    var InvocationHttpParameters: js.UndefOr[ConnectionHttpParameters]
+    var OAuthParameters: js.UndefOr[UpdateConnectionOAuthRequestParameters]
+  }
+
+  object UpdateConnectionAuthRequestParameters {
+    @inline
+    def apply(
+        ApiKeyAuthParameters: js.UndefOr[UpdateConnectionApiKeyAuthRequestParameters] = js.undefined,
+        BasicAuthParameters: js.UndefOr[UpdateConnectionBasicAuthRequestParameters] = js.undefined,
+        InvocationHttpParameters: js.UndefOr[ConnectionHttpParameters] = js.undefined,
+        OAuthParameters: js.UndefOr[UpdateConnectionOAuthRequestParameters] = js.undefined
+    ): UpdateConnectionAuthRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      ApiKeyAuthParameters.foreach(__v => __obj.updateDynamic("ApiKeyAuthParameters")(__v.asInstanceOf[js.Any]))
+      BasicAuthParameters.foreach(__v => __obj.updateDynamic("BasicAuthParameters")(__v.asInstanceOf[js.Any]))
+      InvocationHttpParameters.foreach(__v => __obj.updateDynamic("InvocationHttpParameters")(__v.asInstanceOf[js.Any]))
+      OAuthParameters.foreach(__v => __obj.updateDynamic("OAuthParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionAuthRequestParameters]
+    }
+  }
+
+  /** Contains the Basic authorization parameters for the connection.
+    */
+  @js.native
+  trait UpdateConnectionBasicAuthRequestParameters extends js.Object {
+    var Password: js.UndefOr[AuthHeaderParameters]
+    var Username: js.UndefOr[AuthHeaderParameters]
+  }
+
+  object UpdateConnectionBasicAuthRequestParameters {
+    @inline
+    def apply(
+        Password: js.UndefOr[AuthHeaderParameters] = js.undefined,
+        Username: js.UndefOr[AuthHeaderParameters] = js.undefined
+    ): UpdateConnectionBasicAuthRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionBasicAuthRequestParameters]
+    }
+  }
+
+  /** Contains the OAuth authorization parameters to use for the connection.
+    */
+  @js.native
+  trait UpdateConnectionOAuthClientRequestParameters extends js.Object {
+    var ClientID: js.UndefOr[AuthHeaderParameters]
+    var ClientSecret: js.UndefOr[AuthHeaderParameters]
+  }
+
+  object UpdateConnectionOAuthClientRequestParameters {
+    @inline
+    def apply(
+        ClientID: js.UndefOr[AuthHeaderParameters] = js.undefined,
+        ClientSecret: js.UndefOr[AuthHeaderParameters] = js.undefined
+    ): UpdateConnectionOAuthClientRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      ClientID.foreach(__v => __obj.updateDynamic("ClientID")(__v.asInstanceOf[js.Any]))
+      ClientSecret.foreach(__v => __obj.updateDynamic("ClientSecret")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionOAuthClientRequestParameters]
+    }
+  }
+
+  /** Contains the OAuth request parameters to use for the connection.
+    */
+  @js.native
+  trait UpdateConnectionOAuthRequestParameters extends js.Object {
+    var AuthorizationEndpoint: js.UndefOr[HttpsEndpoint]
+    var ClientParameters: js.UndefOr[UpdateConnectionOAuthClientRequestParameters]
+    var HttpMethod: js.UndefOr[ConnectionOAuthHttpMethod]
+    var OAuthHttpParameters: js.UndefOr[ConnectionHttpParameters]
+  }
+
+  object UpdateConnectionOAuthRequestParameters {
+    @inline
+    def apply(
+        AuthorizationEndpoint: js.UndefOr[HttpsEndpoint] = js.undefined,
+        ClientParameters: js.UndefOr[UpdateConnectionOAuthClientRequestParameters] = js.undefined,
+        HttpMethod: js.UndefOr[ConnectionOAuthHttpMethod] = js.undefined,
+        OAuthHttpParameters: js.UndefOr[ConnectionHttpParameters] = js.undefined
+    ): UpdateConnectionOAuthRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      AuthorizationEndpoint.foreach(__v => __obj.updateDynamic("AuthorizationEndpoint")(__v.asInstanceOf[js.Any]))
+      ClientParameters.foreach(__v => __obj.updateDynamic("ClientParameters")(__v.asInstanceOf[js.Any]))
+      HttpMethod.foreach(__v => __obj.updateDynamic("HttpMethod")(__v.asInstanceOf[js.Any]))
+      OAuthHttpParameters.foreach(__v => __obj.updateDynamic("OAuthHttpParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionOAuthRequestParameters]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectionRequest extends js.Object {
+    var Name: ConnectionName
+    var AuthParameters: js.UndefOr[UpdateConnectionAuthRequestParameters]
+    var AuthorizationType: js.UndefOr[ConnectionAuthorizationType]
+    var Description: js.UndefOr[ConnectionDescription]
+  }
+
+  object UpdateConnectionRequest {
+    @inline
+    def apply(
+        Name: ConnectionName,
+        AuthParameters: js.UndefOr[UpdateConnectionAuthRequestParameters] = js.undefined,
+        AuthorizationType: js.UndefOr[ConnectionAuthorizationType] = js.undefined,
+        Description: js.UndefOr[ConnectionDescription] = js.undefined
+    ): UpdateConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AuthParameters.foreach(__v => __obj.updateDynamic("AuthParameters")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectionResponse extends js.Object {
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+    var ConnectionState: js.UndefOr[ConnectionState]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastAuthorizedTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object UpdateConnectionResponse {
+    @inline
+    def apply(
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
+        ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastAuthorizedTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): UpdateConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastAuthorizedTime.foreach(__v => __obj.updateDynamic("LastAuthorizedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionResponse]
     }
   }
 }

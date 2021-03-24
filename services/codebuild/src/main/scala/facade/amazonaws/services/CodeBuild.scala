@@ -602,6 +602,7 @@ package codebuild {
     var cache: js.UndefOr[ProjectCache]
     var complete: js.UndefOr[Boolean]
     var currentPhase: js.UndefOr[String]
+    var debugSessionEnabled: js.UndefOr[WrapperBoolean]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var endTime: js.UndefOr[Timestamp]
     var environment: js.UndefOr[ProjectEnvironment]
@@ -636,6 +637,7 @@ package codebuild {
         cache: js.UndefOr[ProjectCache] = js.undefined,
         complete: js.UndefOr[Boolean] = js.undefined,
         currentPhase: js.UndefOr[String] = js.undefined,
+        debugSessionEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
@@ -667,6 +669,7 @@ package codebuild {
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
       complete.foreach(__v => __obj.updateDynamic("complete")(__v.asInstanceOf[js.Any]))
       currentPhase.foreach(__v => __obj.updateDynamic("currentPhase")(__v.asInstanceOf[js.Any]))
+      debugSessionEnabled.foreach(__v => __obj.updateDynamic("debugSessionEnabled")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
@@ -1057,6 +1060,7 @@ package codebuild {
     var badgeEnabled: js.UndefOr[WrapperBoolean]
     var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
     var cache: js.UndefOr[ProjectCache]
+    var concurrentBuildLimit: js.UndefOr[WrapperInt]
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var fileSystemLocations: js.UndefOr[ProjectFileSystemLocations]
@@ -1082,6 +1086,7 @@ package codebuild {
         badgeEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
         buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
+        concurrentBuildLimit: js.UndefOr[WrapperInt] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         fileSystemLocations: js.UndefOr[ProjectFileSystemLocations] = js.undefined,
@@ -1106,6 +1111,7 @@ package codebuild {
       badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
       buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      concurrentBuildLimit.foreach(__v => __obj.updateDynamic("concurrentBuildLimit")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       fileSystemLocations.foreach(__v => __obj.updateDynamic("fileSystemLocations")(__v.asInstanceOf[js.Any]))
@@ -2531,6 +2537,7 @@ package codebuild {
     var badge: js.UndefOr[ProjectBadge]
     var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
     var cache: js.UndefOr[ProjectCache]
+    var concurrentBuildLimit: js.UndefOr[WrapperInt]
     var created: js.UndefOr[Timestamp]
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
@@ -2560,6 +2567,7 @@ package codebuild {
         badge: js.UndefOr[ProjectBadge] = js.undefined,
         buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
+        concurrentBuildLimit: js.UndefOr[WrapperInt] = js.undefined,
         created: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
@@ -2586,6 +2594,7 @@ package codebuild {
       badge.foreach(__v => __obj.updateDynamic("badge")(__v.asInstanceOf[js.Any]))
       buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      concurrentBuildLimit.foreach(__v => __obj.updateDynamic("concurrentBuildLimit")(__v.asInstanceOf[js.Any]))
       created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
@@ -3120,6 +3129,8 @@ package codebuild {
     @inline def values = js.Array(PASS_RATE, DURATION, TOTAL, LINE_COVERAGE, LINES_COVERED, LINES_MISSED, BRANCH_COVERAGE, BRANCHES_COVERED, BRANCHES_MISSED)
   }
 
+  /** Contains trend statistics for a set of reports. The actual values depend on the type of trend being collected. For more information, see .
+    */
   @js.native
   trait ReportGroupTrendStats extends js.Object {
     var average: js.UndefOr[String]
@@ -3172,6 +3183,8 @@ package codebuild {
     @inline def values = js.Array(TEST, CODE_COVERAGE)
   }
 
+  /** Contains the unmodified data for the report. For more information, see .
+    */
   @js.native
   trait ReportWithRawData extends js.Object {
     var data: js.UndefOr[String]
@@ -3191,7 +3204,7 @@ package codebuild {
     }
   }
 
-  /** Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon Simple Storage Service (Amazon S3).
+  /** Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon S3.
     */
   @js.native
   trait ResolvedArtifact extends js.Object {
@@ -3328,6 +3341,7 @@ package codebuild {
   @js.native
   trait S3ReportExportConfig extends js.Object {
     var bucket: js.UndefOr[NonEmptyString]
+    var bucketOwner: js.UndefOr[String]
     var encryptionDisabled: js.UndefOr[WrapperBoolean]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var packaging: js.UndefOr[ReportPackagingType]
@@ -3338,6 +3352,7 @@ package codebuild {
     @inline
     def apply(
         bucket: js.UndefOr[NonEmptyString] = js.undefined,
+        bucketOwner: js.UndefOr[String] = js.undefined,
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         packaging: js.UndefOr[ReportPackagingType] = js.undefined,
@@ -3345,6 +3360,7 @@ package codebuild {
     ): S3ReportExportConfig = {
       val __obj = js.Dynamic.literal()
       bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      bucketOwner.foreach(__v => __obj.updateDynamic("bucketOwner")(__v.asInstanceOf[js.Any]))
       encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       packaging.foreach(__v => __obj.updateDynamic("packaging")(__v.asInstanceOf[js.Any]))
@@ -3461,6 +3477,7 @@ package codebuild {
     var cacheOverride: js.UndefOr[ProjectCache]
     var certificateOverride: js.UndefOr[String]
     var computeTypeOverride: js.UndefOr[ComputeType]
+    var debugSessionEnabled: js.UndefOr[WrapperBoolean]
     var encryptionKeyOverride: js.UndefOr[NonEmptyString]
     var environmentTypeOverride: js.UndefOr[EnvironmentType]
     var environmentVariablesOverride: js.UndefOr[EnvironmentVariables]
@@ -3496,6 +3513,7 @@ package codebuild {
         cacheOverride: js.UndefOr[ProjectCache] = js.undefined,
         certificateOverride: js.UndefOr[String] = js.undefined,
         computeTypeOverride: js.UndefOr[ComputeType] = js.undefined,
+        debugSessionEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
         encryptionKeyOverride: js.UndefOr[NonEmptyString] = js.undefined,
         environmentTypeOverride: js.UndefOr[EnvironmentType] = js.undefined,
         environmentVariablesOverride: js.UndefOr[EnvironmentVariables] = js.undefined,
@@ -3530,6 +3548,7 @@ package codebuild {
       cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
       certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
       computeTypeOverride.foreach(__v => __obj.updateDynamic("computeTypeOverride")(__v.asInstanceOf[js.Any]))
+      debugSessionEnabled.foreach(__v => __obj.updateDynamic("debugSessionEnabled")(__v.asInstanceOf[js.Any]))
       encryptionKeyOverride.foreach(__v => __obj.updateDynamic("encryptionKeyOverride")(__v.asInstanceOf[js.Any]))
       environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
       environmentVariablesOverride.foreach(__v => __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any]))
@@ -3889,6 +3908,7 @@ package codebuild {
     var badgeEnabled: js.UndefOr[WrapperBoolean]
     var buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig]
     var cache: js.UndefOr[ProjectCache]
+    var concurrentBuildLimit: js.UndefOr[WrapperInt]
     var description: js.UndefOr[ProjectDescription]
     var encryptionKey: js.UndefOr[NonEmptyString]
     var environment: js.UndefOr[ProjectEnvironment]
@@ -3914,6 +3934,7 @@ package codebuild {
         badgeEnabled: js.UndefOr[WrapperBoolean] = js.undefined,
         buildBatchConfig: js.UndefOr[ProjectBuildBatchConfig] = js.undefined,
         cache: js.UndefOr[ProjectCache] = js.undefined,
+        concurrentBuildLimit: js.UndefOr[WrapperInt] = js.undefined,
         description: js.UndefOr[ProjectDescription] = js.undefined,
         encryptionKey: js.UndefOr[NonEmptyString] = js.undefined,
         environment: js.UndefOr[ProjectEnvironment] = js.undefined,
@@ -3938,6 +3959,7 @@ package codebuild {
       badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
       buildBatchConfig.foreach(__v => __obj.updateDynamic("buildBatchConfig")(__v.asInstanceOf[js.Any]))
       cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      concurrentBuildLimit.foreach(__v => __obj.updateDynamic("concurrentBuildLimit")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))

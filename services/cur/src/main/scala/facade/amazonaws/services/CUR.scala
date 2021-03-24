@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object cur {
   type AdditionalArtifactList = js.Array[AdditionalArtifact]
+  type BillingViewArn = String
   type DeleteResponseMessage = String
   type GenericString = String
   type MaxResults = Int
@@ -274,6 +275,7 @@ package cur {
     var S3Region: AWSRegion
     var TimeUnit: TimeUnit
     var AdditionalArtifacts: js.UndefOr[AdditionalArtifactList]
+    var BillingViewArn: js.UndefOr[BillingViewArn]
     var RefreshClosedReports: js.UndefOr[RefreshClosedReports]
     var ReportVersioning: js.UndefOr[ReportVersioning]
   }
@@ -290,6 +292,7 @@ package cur {
         S3Region: AWSRegion,
         TimeUnit: TimeUnit,
         AdditionalArtifacts: js.UndefOr[AdditionalArtifactList] = js.undefined,
+        BillingViewArn: js.UndefOr[BillingViewArn] = js.undefined,
         RefreshClosedReports: js.UndefOr[RefreshClosedReports] = js.undefined,
         ReportVersioning: js.UndefOr[ReportVersioning] = js.undefined
     ): ReportDefinition = {
@@ -305,6 +308,7 @@ package cur {
       )
 
       AdditionalArtifacts.foreach(__v => __obj.updateDynamic("AdditionalArtifacts")(__v.asInstanceOf[js.Any]))
+      BillingViewArn.foreach(__v => __obj.updateDynamic("BillingViewArn")(__v.asInstanceOf[js.Any]))
       RefreshClosedReports.foreach(__v => __obj.updateDynamic("RefreshClosedReports")(__v.asInstanceOf[js.Any]))
       ReportVersioning.foreach(__v => __obj.updateDynamic("ReportVersioning")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportDefinition]

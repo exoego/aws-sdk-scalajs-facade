@@ -121,6 +121,7 @@ package object emr {
     @inline def startNotebookExecutionFuture(params: StartNotebookExecutionInput): Future[StartNotebookExecutionOutput] = service.startNotebookExecution(params).promise().toFuture
     @inline def stopNotebookExecutionFuture(params: StopNotebookExecutionInput): Future[js.Object] = service.stopNotebookExecution(params).promise().toFuture
     @inline def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] = service.terminateJobFlows(params).promise().toFuture
+    @inline def updateStudioFuture(params: UpdateStudioInput): Future[js.Object] = service.updateStudio(params).promise().toFuture
     @inline def updateStudioSessionMappingFuture(params: UpdateStudioSessionMappingInput): Future[js.Object] = service.updateStudioSessionMapping(params).promise().toFuture
 
   }
@@ -177,6 +178,7 @@ package emr {
     def startNotebookExecution(params: StartNotebookExecutionInput): Request[StartNotebookExecutionOutput] = js.native
     def stopNotebookExecution(params: StopNotebookExecutionInput): Request[js.Object] = js.native
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
+    def updateStudio(params: UpdateStudioInput): Request[js.Object] = js.native
     def updateStudioSessionMapping(params: UpdateStudioSessionMappingInput): Request[js.Object] = js.native
   }
 
@@ -1099,6 +1101,7 @@ package emr {
   @js.native
   trait CreateStudioInput extends js.Object {
     var AuthMode: AuthMode
+    var DefaultS3Location: XmlString
     var EngineSecurityGroupId: XmlStringMaxLen256
     var Name: XmlStringMaxLen256
     var ServiceRole: XmlString
@@ -1106,7 +1109,6 @@ package emr {
     var UserRole: XmlString
     var VpcId: XmlStringMaxLen256
     var WorkspaceSecurityGroupId: XmlStringMaxLen256
-    var DefaultS3Location: js.UndefOr[XmlString]
     var Description: js.UndefOr[XmlStringMaxLen256]
     var Tags: js.UndefOr[TagList]
   }
@@ -1115,6 +1117,7 @@ package emr {
     @inline
     def apply(
         AuthMode: AuthMode,
+        DefaultS3Location: XmlString,
         EngineSecurityGroupId: XmlStringMaxLen256,
         Name: XmlStringMaxLen256,
         ServiceRole: XmlString,
@@ -1122,12 +1125,12 @@ package emr {
         UserRole: XmlString,
         VpcId: XmlStringMaxLen256,
         WorkspaceSecurityGroupId: XmlStringMaxLen256,
-        DefaultS3Location: js.UndefOr[XmlString] = js.undefined,
         Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateStudioInput = {
       val __obj = js.Dynamic.literal(
         "AuthMode" -> AuthMode.asInstanceOf[js.Any],
+        "DefaultS3Location" -> DefaultS3Location.asInstanceOf[js.Any],
         "EngineSecurityGroupId" -> EngineSecurityGroupId.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any],
         "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
@@ -1137,7 +1140,6 @@ package emr {
         "WorkspaceSecurityGroupId" -> WorkspaceSecurityGroupId.asInstanceOf[js.Any]
       )
 
-      DefaultS3Location.foreach(__v => __obj.updateDynamic("DefaultS3Location")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStudioInput]
@@ -3634,6 +3636,47 @@ package emr {
     }
   }
 
+  /** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+    */
+  @js.native
+  trait OnDemandCapacityReservationOptions extends js.Object {
+    var CapacityReservationPreference: js.UndefOr[OnDemandCapacityReservationPreference]
+    var CapacityReservationResourceGroupArn: js.UndefOr[XmlStringMaxLen256]
+    var UsageStrategy: js.UndefOr[OnDemandCapacityReservationUsageStrategy]
+  }
+
+  object OnDemandCapacityReservationOptions {
+    @inline
+    def apply(
+        CapacityReservationPreference: js.UndefOr[OnDemandCapacityReservationPreference] = js.undefined,
+        CapacityReservationResourceGroupArn: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        UsageStrategy: js.UndefOr[OnDemandCapacityReservationUsageStrategy] = js.undefined
+    ): OnDemandCapacityReservationOptions = {
+      val __obj = js.Dynamic.literal()
+      CapacityReservationPreference.foreach(__v => __obj.updateDynamic("CapacityReservationPreference")(__v.asInstanceOf[js.Any]))
+      CapacityReservationResourceGroupArn.foreach(__v => __obj.updateDynamic("CapacityReservationResourceGroupArn")(__v.asInstanceOf[js.Any]))
+      UsageStrategy.foreach(__v => __obj.updateDynamic("UsageStrategy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OnDemandCapacityReservationOptions]
+    }
+  }
+
+  @js.native
+  sealed trait OnDemandCapacityReservationPreference extends js.Any
+  object OnDemandCapacityReservationPreference {
+    val open = "open".asInstanceOf[OnDemandCapacityReservationPreference]
+    val none = "none".asInstanceOf[OnDemandCapacityReservationPreference]
+
+    @inline def values = js.Array(open, none)
+  }
+
+  @js.native
+  sealed trait OnDemandCapacityReservationUsageStrategy extends js.Any
+  object OnDemandCapacityReservationUsageStrategy {
+    val `use-capacity-reservations-first` = "use-capacity-reservations-first".asInstanceOf[OnDemandCapacityReservationUsageStrategy]
+
+    @inline def values = js.Array(`use-capacity-reservations-first`)
+  }
+
   @js.native
   sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
   object OnDemandProvisioningAllocationStrategy {
@@ -3649,16 +3692,20 @@ package emr {
   @js.native
   trait OnDemandProvisioningSpecification extends js.Object {
     var AllocationStrategy: OnDemandProvisioningAllocationStrategy
+    var CapacityReservationOptions: js.UndefOr[OnDemandCapacityReservationOptions]
   }
 
   object OnDemandProvisioningSpecification {
     @inline
     def apply(
-        AllocationStrategy: OnDemandProvisioningAllocationStrategy
+        AllocationStrategy: OnDemandProvisioningAllocationStrategy,
+        CapacityReservationOptions: js.UndefOr[OnDemandCapacityReservationOptions] = js.undefined
     ): OnDemandProvisioningSpecification = {
       val __obj = js.Dynamic.literal(
         "AllocationStrategy" -> AllocationStrategy.asInstanceOf[js.Any]
       )
+
+      CapacityReservationOptions.foreach(__v => __obj.updateDynamic("CapacityReservationOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OnDemandProvisioningSpecification]
     }
   }
@@ -4859,7 +4906,7 @@ package emr {
     }
   }
 
-  /** The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
+  /** The list of supported product configurations that allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.
     */
   @js.native
   trait SupportedProductConfig extends js.Object {
@@ -4980,6 +5027,36 @@ package emr {
       TERA_BITS_PER_SECOND,
       COUNT_PER_SECOND
     )
+  }
+
+  @js.native
+  trait UpdateStudioInput extends js.Object {
+    var StudioId: XmlStringMaxLen256
+    var DefaultS3Location: js.UndefOr[XmlString]
+    var Description: js.UndefOr[XmlStringMaxLen256]
+    var Name: js.UndefOr[XmlStringMaxLen256]
+    var SubnetIds: js.UndefOr[SubnetIdList]
+  }
+
+  object UpdateStudioInput {
+    @inline
+    def apply(
+        StudioId: XmlStringMaxLen256,
+        DefaultS3Location: js.UndefOr[XmlString] = js.undefined,
+        Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIdList] = js.undefined
+    ): UpdateStudioInput = {
+      val __obj = js.Dynamic.literal(
+        "StudioId" -> StudioId.asInstanceOf[js.Any]
+      )
+
+      DefaultS3Location.foreach(__v => __obj.updateDynamic("DefaultS3Location")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStudioInput]
+    }
   }
 
   @js.native

@@ -19,6 +19,7 @@ package object athena {
   type DatabaseString = String
   type Date = js.Date
   type DescriptionString = String
+  type EngineVersionsList = js.Array[EngineVersion]
   type ErrorCode = String
   type ErrorMessage = String
   type ExpressionString = String
@@ -26,7 +27,9 @@ package object athena {
   type KeyString = String
   type MaxDataCatalogsCount = Int
   type MaxDatabasesCount = Int
+  type MaxEngineVersionsCount = Int
   type MaxNamedQueriesCount = Int
+  type MaxPreparedStatementsCount = Int
   type MaxQueryExecutionsCount = Int
   type MaxQueryResults = Int
   type MaxTableMetadataCount = Int
@@ -38,11 +41,13 @@ package object athena {
   type NamedQueryList = js.Array[NamedQuery]
   type ParametersMap = js.Dictionary[ParametersMapValue]
   type ParametersMapValue = String
+  type PreparedStatementsList = js.Array[PreparedStatementSummary]
   type QueryExecutionId = String
   type QueryExecutionIdList = js.Array[QueryExecutionId]
   type QueryExecutionList = js.Array[QueryExecution]
   type QueryString = String
   type RowList = js.Array[Row]
+  type StatementName = String
   type TableMetadataList = js.Array[TableMetadata]
   type TableTypeString = String
   type TagKey = String
@@ -66,20 +71,25 @@ package object athena {
     @inline def batchGetQueryExecutionFuture(params: BatchGetQueryExecutionInput): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise().toFuture
     @inline def createDataCatalogFuture(params: CreateDataCatalogInput): Future[CreateDataCatalogOutput] = service.createDataCatalog(params).promise().toFuture
     @inline def createNamedQueryFuture(params: CreateNamedQueryInput): Future[CreateNamedQueryOutput] = service.createNamedQuery(params).promise().toFuture
+    @inline def createPreparedStatementFuture(params: CreatePreparedStatementInput): Future[CreatePreparedStatementOutput] = service.createPreparedStatement(params).promise().toFuture
     @inline def createWorkGroupFuture(params: CreateWorkGroupInput): Future[CreateWorkGroupOutput] = service.createWorkGroup(params).promise().toFuture
     @inline def deleteDataCatalogFuture(params: DeleteDataCatalogInput): Future[DeleteDataCatalogOutput] = service.deleteDataCatalog(params).promise().toFuture
     @inline def deleteNamedQueryFuture(params: DeleteNamedQueryInput): Future[DeleteNamedQueryOutput] = service.deleteNamedQuery(params).promise().toFuture
+    @inline def deletePreparedStatementFuture(params: DeletePreparedStatementInput): Future[DeletePreparedStatementOutput] = service.deletePreparedStatement(params).promise().toFuture
     @inline def deleteWorkGroupFuture(params: DeleteWorkGroupInput): Future[DeleteWorkGroupOutput] = service.deleteWorkGroup(params).promise().toFuture
     @inline def getDataCatalogFuture(params: GetDataCatalogInput): Future[GetDataCatalogOutput] = service.getDataCatalog(params).promise().toFuture
     @inline def getDatabaseFuture(params: GetDatabaseInput): Future[GetDatabaseOutput] = service.getDatabase(params).promise().toFuture
     @inline def getNamedQueryFuture(params: GetNamedQueryInput): Future[GetNamedQueryOutput] = service.getNamedQuery(params).promise().toFuture
+    @inline def getPreparedStatementFuture(params: GetPreparedStatementInput): Future[GetPreparedStatementOutput] = service.getPreparedStatement(params).promise().toFuture
     @inline def getQueryExecutionFuture(params: GetQueryExecutionInput): Future[GetQueryExecutionOutput] = service.getQueryExecution(params).promise().toFuture
     @inline def getQueryResultsFuture(params: GetQueryResultsInput): Future[GetQueryResultsOutput] = service.getQueryResults(params).promise().toFuture
     @inline def getTableMetadataFuture(params: GetTableMetadataInput): Future[GetTableMetadataOutput] = service.getTableMetadata(params).promise().toFuture
     @inline def getWorkGroupFuture(params: GetWorkGroupInput): Future[GetWorkGroupOutput] = service.getWorkGroup(params).promise().toFuture
     @inline def listDataCatalogsFuture(params: ListDataCatalogsInput): Future[ListDataCatalogsOutput] = service.listDataCatalogs(params).promise().toFuture
     @inline def listDatabasesFuture(params: ListDatabasesInput): Future[ListDatabasesOutput] = service.listDatabases(params).promise().toFuture
+    @inline def listEngineVersionsFuture(params: ListEngineVersionsInput): Future[ListEngineVersionsOutput] = service.listEngineVersions(params).promise().toFuture
     @inline def listNamedQueriesFuture(params: ListNamedQueriesInput): Future[ListNamedQueriesOutput] = service.listNamedQueries(params).promise().toFuture
+    @inline def listPreparedStatementsFuture(params: ListPreparedStatementsInput): Future[ListPreparedStatementsOutput] = service.listPreparedStatements(params).promise().toFuture
     @inline def listQueryExecutionsFuture(params: ListQueryExecutionsInput): Future[ListQueryExecutionsOutput] = service.listQueryExecutions(params).promise().toFuture
     @inline def listTableMetadataFuture(params: ListTableMetadataInput): Future[ListTableMetadataOutput] = service.listTableMetadata(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
@@ -89,6 +99,7 @@ package object athena {
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateDataCatalogFuture(params: UpdateDataCatalogInput): Future[UpdateDataCatalogOutput] = service.updateDataCatalog(params).promise().toFuture
+    @inline def updatePreparedStatementFuture(params: UpdatePreparedStatementInput): Future[UpdatePreparedStatementOutput] = service.updatePreparedStatement(params).promise().toFuture
     @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] = service.updateWorkGroup(params).promise().toFuture
 
   }
@@ -104,20 +115,25 @@ package athena {
     def batchGetQueryExecution(params: BatchGetQueryExecutionInput): Request[BatchGetQueryExecutionOutput] = js.native
     def createDataCatalog(params: CreateDataCatalogInput): Request[CreateDataCatalogOutput] = js.native
     def createNamedQuery(params: CreateNamedQueryInput): Request[CreateNamedQueryOutput] = js.native
+    def createPreparedStatement(params: CreatePreparedStatementInput): Request[CreatePreparedStatementOutput] = js.native
     def createWorkGroup(params: CreateWorkGroupInput): Request[CreateWorkGroupOutput] = js.native
     def deleteDataCatalog(params: DeleteDataCatalogInput): Request[DeleteDataCatalogOutput] = js.native
     def deleteNamedQuery(params: DeleteNamedQueryInput): Request[DeleteNamedQueryOutput] = js.native
+    def deletePreparedStatement(params: DeletePreparedStatementInput): Request[DeletePreparedStatementOutput] = js.native
     def deleteWorkGroup(params: DeleteWorkGroupInput): Request[DeleteWorkGroupOutput] = js.native
     def getDataCatalog(params: GetDataCatalogInput): Request[GetDataCatalogOutput] = js.native
     def getDatabase(params: GetDatabaseInput): Request[GetDatabaseOutput] = js.native
     def getNamedQuery(params: GetNamedQueryInput): Request[GetNamedQueryOutput] = js.native
+    def getPreparedStatement(params: GetPreparedStatementInput): Request[GetPreparedStatementOutput] = js.native
     def getQueryExecution(params: GetQueryExecutionInput): Request[GetQueryExecutionOutput] = js.native
     def getQueryResults(params: GetQueryResultsInput): Request[GetQueryResultsOutput] = js.native
     def getTableMetadata(params: GetTableMetadataInput): Request[GetTableMetadataOutput] = js.native
     def getWorkGroup(params: GetWorkGroupInput): Request[GetWorkGroupOutput] = js.native
     def listDataCatalogs(params: ListDataCatalogsInput): Request[ListDataCatalogsOutput] = js.native
     def listDatabases(params: ListDatabasesInput): Request[ListDatabasesOutput] = js.native
+    def listEngineVersions(params: ListEngineVersionsInput): Request[ListEngineVersionsOutput] = js.native
     def listNamedQueries(params: ListNamedQueriesInput): Request[ListNamedQueriesOutput] = js.native
+    def listPreparedStatements(params: ListPreparedStatementsInput): Request[ListPreparedStatementsOutput] = js.native
     def listQueryExecutions(params: ListQueryExecutionsInput): Request[ListQueryExecutionsOutput] = js.native
     def listTableMetadata(params: ListTableMetadataInput): Request[ListTableMetadataOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
@@ -127,6 +143,7 @@ package athena {
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateDataCatalog(params: UpdateDataCatalogInput): Request[UpdateDataCatalogOutput] = js.native
+    def updatePreparedStatement(params: UpdatePreparedStatementInput): Request[UpdatePreparedStatementOutput] = js.native
     def updateWorkGroup(params: UpdateWorkGroupInput): Request[UpdateWorkGroupOutput] = js.native
   }
 
@@ -376,6 +393,44 @@ package athena {
   }
 
   @js.native
+  trait CreatePreparedStatementInput extends js.Object {
+    var QueryStatement: QueryString
+    var StatementName: StatementName
+    var WorkGroup: WorkGroupName
+    var Description: js.UndefOr[DescriptionString]
+  }
+
+  object CreatePreparedStatementInput {
+    @inline
+    def apply(
+        QueryStatement: QueryString,
+        StatementName: StatementName,
+        WorkGroup: WorkGroupName,
+        Description: js.UndefOr[DescriptionString] = js.undefined
+    ): CreatePreparedStatementInput = {
+      val __obj = js.Dynamic.literal(
+        "QueryStatement" -> QueryStatement.asInstanceOf[js.Any],
+        "StatementName" -> StatementName.asInstanceOf[js.Any],
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePreparedStatementInput]
+    }
+  }
+
+  @js.native
+  trait CreatePreparedStatementOutput extends js.Object
+
+  object CreatePreparedStatementOutput {
+    @inline
+    def apply(): CreatePreparedStatementOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreatePreparedStatementOutput]
+    }
+  }
+
+  @js.native
   trait CreateWorkGroupInput extends js.Object {
     var Name: WorkGroupName
     var Configuration: js.UndefOr[WorkGroupConfiguration]
@@ -574,6 +629,37 @@ package athena {
   }
 
   @js.native
+  trait DeletePreparedStatementInput extends js.Object {
+    var StatementName: StatementName
+    var WorkGroup: WorkGroupName
+  }
+
+  object DeletePreparedStatementInput {
+    @inline
+    def apply(
+        StatementName: StatementName,
+        WorkGroup: WorkGroupName
+    ): DeletePreparedStatementInput = {
+      val __obj = js.Dynamic.literal(
+        "StatementName" -> StatementName.asInstanceOf[js.Any],
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeletePreparedStatementInput]
+    }
+  }
+
+  @js.native
+  trait DeletePreparedStatementOutput extends js.Object
+
+  object DeletePreparedStatementOutput {
+    @inline
+    def apply(): DeletePreparedStatementOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeletePreparedStatementOutput]
+    }
+  }
+
+  @js.native
   trait DeleteWorkGroupInput extends js.Object {
     var WorkGroup: WorkGroupName
     var RecursiveDeleteOption: js.UndefOr[BoxedBoolean]
@@ -636,6 +722,27 @@ package athena {
     val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
 
     @inline def values = js.Array(SSE_S3, SSE_KMS, CSE_KMS)
+  }
+
+  /** The Athena engine version for running queries.
+    */
+  @js.native
+  trait EngineVersion extends js.Object {
+    var EffectiveEngineVersion: js.UndefOr[NameString]
+    var SelectedEngineVersion: js.UndefOr[NameString]
+  }
+
+  object EngineVersion {
+    @inline
+    def apply(
+        EffectiveEngineVersion: js.UndefOr[NameString] = js.undefined,
+        SelectedEngineVersion: js.UndefOr[NameString] = js.undefined
+    ): EngineVersion = {
+      val __obj = js.Dynamic.literal()
+      EffectiveEngineVersion.foreach(__v => __obj.updateDynamic("EffectiveEngineVersion")(__v.asInstanceOf[js.Any]))
+      SelectedEngineVersion.foreach(__v => __obj.updateDynamic("SelectedEngineVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EngineVersion]
+    }
   }
 
   @js.native
@@ -737,6 +844,42 @@ package athena {
       val __obj = js.Dynamic.literal()
       NamedQuery.foreach(__v => __obj.updateDynamic("NamedQuery")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetNamedQueryOutput]
+    }
+  }
+
+  @js.native
+  trait GetPreparedStatementInput extends js.Object {
+    var StatementName: StatementName
+    var WorkGroup: WorkGroupName
+  }
+
+  object GetPreparedStatementInput {
+    @inline
+    def apply(
+        StatementName: StatementName,
+        WorkGroup: WorkGroupName
+    ): GetPreparedStatementInput = {
+      val __obj = js.Dynamic.literal(
+        "StatementName" -> StatementName.asInstanceOf[js.Any],
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPreparedStatementInput]
+    }
+  }
+
+  @js.native
+  trait GetPreparedStatementOutput extends js.Object {
+    var PreparedStatement: js.UndefOr[PreparedStatement]
+  }
+
+  object GetPreparedStatementOutput {
+    @inline
+    def apply(
+        PreparedStatement: js.UndefOr[PreparedStatement] = js.undefined
+    ): GetPreparedStatementOutput = {
+      val __obj = js.Dynamic.literal()
+      PreparedStatement.foreach(__v => __obj.updateDynamic("PreparedStatement")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPreparedStatementOutput]
     }
   }
 
@@ -973,6 +1116,44 @@ package athena {
   }
 
   @js.native
+  trait ListEngineVersionsInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxEngineVersionsCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListEngineVersionsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxEngineVersionsCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListEngineVersionsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEngineVersionsInput]
+    }
+  }
+
+  @js.native
+  trait ListEngineVersionsOutput extends js.Object {
+    var EngineVersions: js.UndefOr[EngineVersionsList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListEngineVersionsOutput {
+    @inline
+    def apply(
+        EngineVersions: js.UndefOr[EngineVersionsList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListEngineVersionsOutput = {
+      val __obj = js.Dynamic.literal()
+      EngineVersions.foreach(__v => __obj.updateDynamic("EngineVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEngineVersionsOutput]
+    }
+  }
+
+  @js.native
   trait ListNamedQueriesInput extends js.Object {
     var MaxResults: js.UndefOr[MaxNamedQueriesCount]
     var NextToken: js.UndefOr[Token]
@@ -1010,6 +1191,49 @@ package athena {
       NamedQueryIds.foreach(__v => __obj.updateDynamic("NamedQueryIds")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNamedQueriesOutput]
+    }
+  }
+
+  @js.native
+  trait ListPreparedStatementsInput extends js.Object {
+    var WorkGroup: WorkGroupName
+    var MaxResults: js.UndefOr[MaxPreparedStatementsCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListPreparedStatementsInput {
+    @inline
+    def apply(
+        WorkGroup: WorkGroupName,
+        MaxResults: js.UndefOr[MaxPreparedStatementsCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListPreparedStatementsInput = {
+      val __obj = js.Dynamic.literal(
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPreparedStatementsInput]
+    }
+  }
+
+  @js.native
+  trait ListPreparedStatementsOutput extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var PreparedStatements: js.UndefOr[PreparedStatementsList]
+  }
+
+  object ListPreparedStatementsOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        PreparedStatements: js.UndefOr[PreparedStatementsList] = js.undefined
+    ): ListPreparedStatementsOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PreparedStatements.foreach(__v => __obj.updateDynamic("PreparedStatements")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPreparedStatementsOutput]
     }
   }
 
@@ -1219,10 +1443,62 @@ package athena {
     }
   }
 
+  /** A prepared SQL statement for use with Athena.
+    */
+  @js.native
+  trait PreparedStatement extends js.Object {
+    var Description: js.UndefOr[DescriptionString]
+    var LastModifiedTime: js.UndefOr[Date]
+    var QueryStatement: js.UndefOr[QueryString]
+    var StatementName: js.UndefOr[StatementName]
+    var WorkGroupName: js.UndefOr[WorkGroupName]
+  }
+
+  object PreparedStatement {
+    @inline
+    def apply(
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        LastModifiedTime: js.UndefOr[Date] = js.undefined,
+        QueryStatement: js.UndefOr[QueryString] = js.undefined,
+        StatementName: js.UndefOr[StatementName] = js.undefined,
+        WorkGroupName: js.UndefOr[WorkGroupName] = js.undefined
+    ): PreparedStatement = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      QueryStatement.foreach(__v => __obj.updateDynamic("QueryStatement")(__v.asInstanceOf[js.Any]))
+      StatementName.foreach(__v => __obj.updateDynamic("StatementName")(__v.asInstanceOf[js.Any]))
+      WorkGroupName.foreach(__v => __obj.updateDynamic("WorkGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PreparedStatement]
+    }
+  }
+
+  /** The name and last modified time of the prepared statement.
+    */
+  @js.native
+  trait PreparedStatementSummary extends js.Object {
+    var LastModifiedTime: js.UndefOr[Date]
+    var StatementName: js.UndefOr[StatementName]
+  }
+
+  object PreparedStatementSummary {
+    @inline
+    def apply(
+        LastModifiedTime: js.UndefOr[Date] = js.undefined,
+        StatementName: js.UndefOr[StatementName] = js.undefined
+    ): PreparedStatementSummary = {
+      val __obj = js.Dynamic.literal()
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      StatementName.foreach(__v => __obj.updateDynamic("StatementName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PreparedStatementSummary]
+    }
+  }
+
   /** Information about a single instance of a query execution.
     */
   @js.native
   trait QueryExecution extends js.Object {
+    var EngineVersion: js.UndefOr[EngineVersion]
     var Query: js.UndefOr[QueryString]
     var QueryExecutionContext: js.UndefOr[QueryExecutionContext]
     var QueryExecutionId: js.UndefOr[QueryExecutionId]
@@ -1236,6 +1512,7 @@ package athena {
   object QueryExecution {
     @inline
     def apply(
+        EngineVersion: js.UndefOr[EngineVersion] = js.undefined,
         Query: js.UndefOr[QueryString] = js.undefined,
         QueryExecutionContext: js.UndefOr[QueryExecutionContext] = js.undefined,
         QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined,
@@ -1246,6 +1523,7 @@ package athena {
         WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
     ): QueryExecution = {
       val __obj = js.Dynamic.literal()
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Query.foreach(__v => __obj.updateDynamic("Query")(__v.asInstanceOf[js.Any]))
       QueryExecutionContext.foreach(__v => __obj.updateDynamic("QueryExecutionContext")(__v.asInstanceOf[js.Any]))
       QueryExecutionId.foreach(__v => __obj.updateDynamic("QueryExecutionId")(__v.asInstanceOf[js.Any]))
@@ -1751,6 +2029,44 @@ package athena {
   }
 
   @js.native
+  trait UpdatePreparedStatementInput extends js.Object {
+    var QueryStatement: QueryString
+    var StatementName: StatementName
+    var WorkGroup: WorkGroupName
+    var Description: js.UndefOr[DescriptionString]
+  }
+
+  object UpdatePreparedStatementInput {
+    @inline
+    def apply(
+        QueryStatement: QueryString,
+        StatementName: StatementName,
+        WorkGroup: WorkGroupName,
+        Description: js.UndefOr[DescriptionString] = js.undefined
+    ): UpdatePreparedStatementInput = {
+      val __obj = js.Dynamic.literal(
+        "QueryStatement" -> QueryStatement.asInstanceOf[js.Any],
+        "StatementName" -> StatementName.asInstanceOf[js.Any],
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePreparedStatementInput]
+    }
+  }
+
+  @js.native
+  trait UpdatePreparedStatementOutput extends js.Object
+
+  object UpdatePreparedStatementOutput {
+    @inline
+    def apply(): UpdatePreparedStatementOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdatePreparedStatementOutput]
+    }
+  }
+
+  @js.native
   trait UpdateWorkGroupInput extends js.Object {
     var WorkGroup: WorkGroupName
     var ConfigurationUpdates: js.UndefOr[WorkGroupConfigurationUpdates]
@@ -1826,6 +2142,7 @@ package athena {
   trait WorkGroupConfiguration extends js.Object {
     var BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue]
     var EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean]
+    var EngineVersion: js.UndefOr[EngineVersion]
     var PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
     var RequesterPaysEnabled: js.UndefOr[BoxedBoolean]
     var ResultConfiguration: js.UndefOr[ResultConfiguration]
@@ -1836,6 +2153,7 @@ package athena {
     def apply(
         BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
         EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
+        EngineVersion: js.UndefOr[EngineVersion] = js.undefined,
         PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         RequesterPaysEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined
@@ -1843,6 +2161,7 @@ package athena {
       val __obj = js.Dynamic.literal()
       BytesScannedCutoffPerQuery.foreach(__v => __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any]))
       EnforceWorkGroupConfiguration.foreach(__v => __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       PublishCloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
       RequesterPaysEnabled.foreach(__v => __obj.updateDynamic("RequesterPaysEnabled")(__v.asInstanceOf[js.Any]))
       ResultConfiguration.foreach(__v => __obj.updateDynamic("ResultConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1856,6 +2175,7 @@ package athena {
   trait WorkGroupConfigurationUpdates extends js.Object {
     var BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue]
     var EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean]
+    var EngineVersion: js.UndefOr[EngineVersion]
     var PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
     var RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean]
     var RequesterPaysEnabled: js.UndefOr[BoxedBoolean]
@@ -1867,6 +2187,7 @@ package athena {
     def apply(
         BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
         EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
+        EngineVersion: js.UndefOr[EngineVersion] = js.undefined,
         PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
         RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean] = js.undefined,
         RequesterPaysEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -1875,6 +2196,7 @@ package athena {
       val __obj = js.Dynamic.literal()
       BytesScannedCutoffPerQuery.foreach(__v => __obj.updateDynamic("BytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any]))
       EnforceWorkGroupConfiguration.foreach(__v => __obj.updateDynamic("EnforceWorkGroupConfiguration")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       PublishCloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("PublishCloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
       RemoveBytesScannedCutoffPerQuery.foreach(__v => __obj.updateDynamic("RemoveBytesScannedCutoffPerQuery")(__v.asInstanceOf[js.Any]))
       RequesterPaysEnabled.foreach(__v => __obj.updateDynamic("RequesterPaysEnabled")(__v.asInstanceOf[js.Any]))
@@ -1898,6 +2220,7 @@ package athena {
   trait WorkGroupSummary extends js.Object {
     var CreationTime: js.UndefOr[Date]
     var Description: js.UndefOr[WorkGroupDescriptionString]
+    var EngineVersion: js.UndefOr[EngineVersion]
     var Name: js.UndefOr[WorkGroupName]
     var State: js.UndefOr[WorkGroupState]
   }
@@ -1907,12 +2230,14 @@ package athena {
     def apply(
         CreationTime: js.UndefOr[Date] = js.undefined,
         Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
+        EngineVersion: js.UndefOr[EngineVersion] = js.undefined,
         Name: js.UndefOr[WorkGroupName] = js.undefined,
         State: js.UndefOr[WorkGroupState] = js.undefined
     ): WorkGroupSummary = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkGroupSummary]
