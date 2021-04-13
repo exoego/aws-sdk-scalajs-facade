@@ -613,6 +613,14 @@ package object amazonaws {
     def CloudWatchLogs(): services.cloudwatchlogs.CloudWatchLogs = new services.cloudwatchlogs.CloudWatchLogs()
     def CloudWatchLogs(config: AWSConfig): services.cloudwatchlogs.CloudWatchLogs = new services.cloudwatchlogs.CloudWatchLogs(config)
 
+    type LookoutEquipment = services.lookoutequipment.LookoutEquipment
+    def LookoutEquipment(): services.lookoutequipment.LookoutEquipment = new services.lookoutequipment.LookoutEquipment()
+    def LookoutEquipment(config: AWSConfig): services.lookoutequipment.LookoutEquipment = new services.lookoutequipment.LookoutEquipment(config)
+
+    type LookoutMetrics = services.lookoutmetrics.LookoutMetrics
+    def LookoutMetrics(): services.lookoutmetrics.LookoutMetrics = new services.lookoutmetrics.LookoutMetrics()
+    def LookoutMetrics(config: AWSConfig): services.lookoutmetrics.LookoutMetrics = new services.lookoutmetrics.LookoutMetrics(config)
+
     type LookoutVision = services.lookoutvision.LookoutVision
     def LookoutVision(): services.lookoutvision.LookoutVision = new services.lookoutvision.LookoutVision()
     def LookoutVision(config: AWSConfig): services.lookoutvision.LookoutVision = new services.lookoutvision.LookoutVision(config)
@@ -676,6 +684,10 @@ package object amazonaws {
     type MarketplaceMetering = services.marketplacemetering.MarketplaceMetering
     def MarketplaceMetering(): services.marketplacemetering.MarketplaceMetering = new services.marketplacemetering.MarketplaceMetering()
     def MarketplaceMetering(config: AWSConfig): services.marketplacemetering.MarketplaceMetering = new services.marketplacemetering.MarketplaceMetering(config)
+
+    type Mgn = services.mgn.Mgn
+    def Mgn(): services.mgn.Mgn = new services.mgn.Mgn()
+    def Mgn(config: AWSConfig): services.mgn.Mgn = new services.mgn.Mgn(config)
 
     type MigrationHubConfig = services.migrationhubconfig.MigrationHubConfig
     def MigrationHubConfig(): services.migrationhubconfig.MigrationHubConfig = new services.migrationhubconfig.MigrationHubConfig()

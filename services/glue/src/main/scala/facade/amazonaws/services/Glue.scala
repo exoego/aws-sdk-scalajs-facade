@@ -143,6 +143,7 @@ package object glue {
   type NullableInteger = Int
   type OrchestrationStringList = js.Array[GenericString]
   type OrderList = js.Array[Order]
+  type OtherMetadataValueList = js.Array[OtherMetadataValueListItem]
   type PageSize = Int
   type PaginationToken = String
   type ParametersMap = js.Dictionary[ParametersMapValue]
@@ -8254,17 +8255,20 @@ package glue {
   trait MetadataInfo extends js.Object {
     var CreatedTime: js.UndefOr[CreatedTimestamp]
     var MetadataValue: js.UndefOr[MetadataValueString]
+    var OtherMetadataValueList: js.UndefOr[OtherMetadataValueList]
   }
 
   object MetadataInfo {
     @inline
     def apply(
         CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
-        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined
+        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined,
+        OtherMetadataValueList: js.UndefOr[OtherMetadataValueList] = js.undefined
     ): MetadataInfo = {
       val __obj = js.Dynamic.literal()
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
+      OtherMetadataValueList.foreach(__v => __obj.updateDynamic("OtherMetadataValueList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetadataInfo]
     }
   }
@@ -8394,6 +8398,27 @@ package glue {
         "SortOrder" -> SortOrder.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Order]
+    }
+  }
+
+  /** A structure containing other metadata for a schema version belonging to the same metadata key.
+    */
+  @js.native
+  trait OtherMetadataValueListItem extends js.Object {
+    var CreatedTime: js.UndefOr[CreatedTimestamp]
+    var MetadataValue: js.UndefOr[MetadataValueString]
+  }
+
+  object OtherMetadataValueListItem {
+    @inline
+    def apply(
+        CreatedTime: js.UndefOr[CreatedTimestamp] = js.undefined,
+        MetadataValue: js.UndefOr[MetadataValueString] = js.undefined
+    ): OtherMetadataValueListItem = {
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OtherMetadataValueListItem]
     }
   }
 

@@ -50,6 +50,7 @@ package object sagemaker {
   type AutoMLJobSummaries = js.Array[AutoMLJobSummary]
   type AutoMLMaxResults = Int
   type AutoMLNameContains = String
+  type AutoMLPartialFailureReasons = js.Array[AutoMLPartialFailureReason]
   type BillableTimeInSeconds = Int
   type BlockedReason = String
   type Branch = String
@@ -165,6 +166,7 @@ package object sagemaker {
   type ExperimentSourceArn = String
   type ExperimentSummaries = js.Array[ExperimentSummary]
   type ExpiresInSeconds = Int
+  type ExplainabilityLocation = String
   type FailureReason = String
   type FeatureDefinitions = js.Array[FeatureDefinition]
   type FeatureGroupArn = String
@@ -445,6 +447,9 @@ package object sagemaker {
   type TerminationWaitInSeconds = Int
   type ThingName = String
   type Timestamp = js.Date
+  type TrainingEnvironmentKey = String
+  type TrainingEnvironmentMap = js.Dictionary[TrainingEnvironmentValue]
+  type TrainingEnvironmentValue = String
   type TrainingInstanceCount = Int
   type TrainingInstanceTypes = js.Array[TrainingInstanceType]
   type TrainingJobArn = String
@@ -1854,6 +1859,7 @@ package sagemaker {
     var CreationTime: Timestamp
     var LastModifiedTime: Timestamp
     var ObjectiveStatus: ObjectiveStatus
+    var CandidateProperties: js.UndefOr[CandidateProperties]
     var EndTime: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[AutoMLFailureReason]
     var FinalAutoMLJobObjectiveMetric: js.UndefOr[FinalAutoMLJobObjectiveMetric]
@@ -1869,6 +1875,7 @@ package sagemaker {
         CreationTime: Timestamp,
         LastModifiedTime: Timestamp,
         ObjectiveStatus: ObjectiveStatus,
+        CandidateProperties: js.UndefOr[CandidateProperties] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[AutoMLFailureReason] = js.undefined,
         FinalAutoMLJobObjectiveMetric: js.UndefOr[FinalAutoMLJobObjectiveMetric] = js.undefined,
@@ -1883,6 +1890,7 @@ package sagemaker {
         "ObjectiveStatus" -> ObjectiveStatus.asInstanceOf[js.Any]
       )
 
+      CandidateProperties.foreach(__v => __obj.updateDynamic("CandidateProperties")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       FinalAutoMLJobObjectiveMetric.foreach(__v => __obj.updateDynamic("FinalAutoMLJobObjectiveMetric")(__v.asInstanceOf[js.Any]))
@@ -1916,7 +1924,7 @@ package sagemaker {
     }
   }
 
-  /** Similar to Channel. A channel is a named input source that training algorithms can consume. Refer to Channel for detailed descriptions.
+  /** A channel is a named input source that training algorithms can consume. For more information, see .
     */
   @js.native
   trait AutoMLChannel extends js.Object {
@@ -1942,7 +1950,7 @@ package sagemaker {
     }
   }
 
-  /** A list of container definitions that describe the different containers that make up one AutoML candidate. Refer to ContainerDefinition for more details.
+  /** A list of container definitions that describe the different containers that make up an AutoML candidate. For more information, see .
     */
   @js.native
   trait AutoMLContainerDefinition extends js.Object {
@@ -2032,7 +2040,7 @@ package sagemaker {
     }
   }
 
-  /** A collection of settings used for a job.
+  /** A collection of settings used for an AutoML job.
     */
   @js.native
   trait AutoMLJobConfig extends js.Object {
@@ -2094,6 +2102,9 @@ package sagemaker {
     val MaxAutoMLJobRuntimeReached = "MaxAutoMLJobRuntimeReached".asInstanceOf[AutoMLJobSecondaryStatus]
     val Stopping = "Stopping".asInstanceOf[AutoMLJobSecondaryStatus]
     val CandidateDefinitionsGenerated = "CandidateDefinitionsGenerated".asInstanceOf[AutoMLJobSecondaryStatus]
+    val GeneratingExplainabilityReport = "GeneratingExplainabilityReport".asInstanceOf[AutoMLJobSecondaryStatus]
+    val Completed = "Completed".asInstanceOf[AutoMLJobSecondaryStatus]
+    val ExplainabilityError = "ExplainabilityError".asInstanceOf[AutoMLJobSecondaryStatus]
 
     @inline def values = js.Array(
       Starting,
@@ -2105,7 +2116,10 @@ package sagemaker {
       Stopped,
       MaxAutoMLJobRuntimeReached,
       Stopping,
-      CandidateDefinitionsGenerated
+      CandidateDefinitionsGenerated,
+      GeneratingExplainabilityReport,
+      Completed,
+      ExplainabilityError
     )
   }
 
@@ -2121,7 +2135,7 @@ package sagemaker {
     @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
-  /** Provides a summary about a job.
+  /** Provides a summary about an AutoML job.
     */
   @js.native
   trait AutoMLJobSummary extends js.Object {
@@ -2133,6 +2147,7 @@ package sagemaker {
     var LastModifiedTime: Timestamp
     var EndTime: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[AutoMLFailureReason]
+    var PartialFailureReasons: js.UndefOr[AutoMLPartialFailureReasons]
   }
 
   object AutoMLJobSummary {
@@ -2145,7 +2160,8 @@ package sagemaker {
         CreationTime: Timestamp,
         LastModifiedTime: Timestamp,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
-        FailureReason: js.UndefOr[AutoMLFailureReason] = js.undefined
+        FailureReason: js.UndefOr[AutoMLFailureReason] = js.undefined,
+        PartialFailureReasons: js.UndefOr[AutoMLPartialFailureReasons] = js.undefined
     ): AutoMLJobSummary = {
       val __obj = js.Dynamic.literal(
         "AutoMLJobArn" -> AutoMLJobArn.asInstanceOf[js.Any],
@@ -2158,6 +2174,7 @@ package sagemaker {
 
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      PartialFailureReasons.foreach(__v => __obj.updateDynamic("PartialFailureReasons")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLJobSummary]
     }
   }
@@ -2194,6 +2211,24 @@ package sagemaker {
 
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLOutputDataConfig]
+    }
+  }
+
+  /** The reason for a partial failure of an AutoML job.
+    */
+  @js.native
+  trait AutoMLPartialFailureReason extends js.Object {
+    var PartialFailureMessage: js.UndefOr[AutoMLFailureReason]
+  }
+
+  object AutoMLPartialFailureReason {
+    @inline
+    def apply(
+        PartialFailureMessage: js.UndefOr[AutoMLFailureReason] = js.undefined
+    ): AutoMLPartialFailureReason = {
+      val __obj = js.Dynamic.literal()
+      PartialFailureMessage.foreach(__v => __obj.updateDynamic("PartialFailureMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoMLPartialFailureReason]
     }
   }
 
@@ -2375,6 +2410,43 @@ package sagemaker {
       val __obj = js.Dynamic.literal()
       SourcePipelineExecutionArn.foreach(__v => __obj.updateDynamic("SourcePipelineExecutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheHitResult]
+    }
+  }
+
+  /** Location of artifacts for an AutoML candidate job.
+    */
+  @js.native
+  trait CandidateArtifactLocations extends js.Object {
+    var Explainability: ExplainabilityLocation
+  }
+
+  object CandidateArtifactLocations {
+    @inline
+    def apply(
+        Explainability: ExplainabilityLocation
+    ): CandidateArtifactLocations = {
+      val __obj = js.Dynamic.literal(
+        "Explainability" -> Explainability.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CandidateArtifactLocations]
+    }
+  }
+
+  /** The properties of an AutoML candidate job.
+    */
+  @js.native
+  trait CandidateProperties extends js.Object {
+    var CandidateArtifactLocations: js.UndefOr[CandidateArtifactLocations]
+  }
+
+  object CandidateProperties {
+    @inline
+    def apply(
+        CandidateArtifactLocations: js.UndefOr[CandidateArtifactLocations] = js.undefined
+    ): CandidateProperties = {
+      val __obj = js.Dynamic.literal()
+      CandidateArtifactLocations.foreach(__v => __obj.updateDynamic("CandidateArtifactLocations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CandidateProperties]
     }
   }
 
@@ -4900,6 +4972,7 @@ package sagemaker {
     var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
     var EnableManagedSpotTraining: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
+    var Environment: js.UndefOr[TrainingEnvironmentMap]
     var ExperimentConfig: js.UndefOr[ExperimentConfig]
     var HyperParameters: js.UndefOr[HyperParameters]
     var InputDataConfig: js.UndefOr[InputDataConfig]
@@ -4925,6 +4998,7 @@ package sagemaker {
         EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
         EnableManagedSpotTraining: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+        Environment: js.UndefOr[TrainingEnvironmentMap] = js.undefined,
         ExperimentConfig: js.UndefOr[ExperimentConfig] = js.undefined,
         HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
@@ -4949,6 +5023,7 @@ package sagemaker {
       EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
       EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       HyperParameters.foreach(__v => __obj.updateDynamic("HyperParameters")(__v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
@@ -6961,6 +7036,7 @@ package sagemaker {
     var EndTime: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[AutoMLFailureReason]
     var GenerateCandidateDefinitionsOnly: js.UndefOr[GenerateCandidateDefinitionsOnly]
+    var PartialFailureReasons: js.UndefOr[AutoMLPartialFailureReasons]
     var ProblemType: js.UndefOr[ProblemType]
     var ResolvedAttributes: js.UndefOr[ResolvedAttributes]
   }
@@ -6984,6 +7060,7 @@ package sagemaker {
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[AutoMLFailureReason] = js.undefined,
         GenerateCandidateDefinitionsOnly: js.UndefOr[GenerateCandidateDefinitionsOnly] = js.undefined,
+        PartialFailureReasons: js.UndefOr[AutoMLPartialFailureReasons] = js.undefined,
         ProblemType: js.UndefOr[ProblemType] = js.undefined,
         ResolvedAttributes: js.UndefOr[ResolvedAttributes] = js.undefined
     ): DescribeAutoMLJobResponse = {
@@ -7006,6 +7083,7 @@ package sagemaker {
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       GenerateCandidateDefinitionsOnly.foreach(__v => __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any]))
+      PartialFailureReasons.foreach(__v => __obj.updateDynamic("PartialFailureReasons")(__v.asInstanceOf[js.Any]))
       ProblemType.foreach(__v => __obj.updateDynamic("ProblemType")(__v.asInstanceOf[js.Any]))
       ResolvedAttributes.foreach(__v => __obj.updateDynamic("ResolvedAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutoMLJobResponse]
@@ -9152,6 +9230,7 @@ package sagemaker {
     var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
     var EnableManagedSpotTraining: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
+    var Environment: js.UndefOr[TrainingEnvironmentMap]
     var ExperimentConfig: js.UndefOr[ExperimentConfig]
     var FailureReason: js.UndefOr[FailureReason]
     var FinalMetricDataList: js.UndefOr[FinalMetricDataList]
@@ -9195,6 +9274,7 @@ package sagemaker {
         EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
         EnableManagedSpotTraining: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+        Environment: js.UndefOr[TrainingEnvironmentMap] = js.undefined,
         ExperimentConfig: js.UndefOr[ExperimentConfig] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
@@ -9237,6 +9317,7 @@ package sagemaker {
       EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
       EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       FinalMetricDataList.foreach(__v => __obj.updateDynamic("FinalMetricDataList")(__v.asInstanceOf[js.Any]))
@@ -12321,7 +12402,7 @@ package sagemaker {
     }
   }
 
-  /** Provides configuration information for labeling jobs.
+  /** Configure encryption on the storage volume attached to the ML compute instance used to run automated data labeling model training and inference.
     */
   @js.native
   trait LabelingJobResourceConfig extends js.Object {
@@ -19908,7 +19989,7 @@ package sagemaker {
     }
   }
 
-  /** Specifies options when sharing an Amazon SageMaker Studio notebook. These settings are specified as part of <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called, and as part of <code>UserSettings</code> when the <a>CreateUserProfile</a> API is called.
+  /** Specifies options for sharing SageMaker Studio notebooks. These settings are specified as part of <code>DefaultUserSettings</code> when the <code>CreateDomain</code> API is called, and as part of <code>UserSettings</code> when the <code>CreateUserProfile</code> API is called. When <code>SharingSettings</code> is not specified, notebook sharing isn't allowed.
     */
   @js.native
   trait SharingSettings extends js.Object {
@@ -20831,6 +20912,7 @@ package sagemaker {
     var EnableInterContainerTrafficEncryption: js.UndefOr[Boolean]
     var EnableManagedSpotTraining: js.UndefOr[Boolean]
     var EnableNetworkIsolation: js.UndefOr[Boolean]
+    var Environment: js.UndefOr[TrainingEnvironmentMap]
     var ExperimentConfig: js.UndefOr[ExperimentConfig]
     var FailureReason: js.UndefOr[FailureReason]
     var FinalMetricDataList: js.UndefOr[FinalMetricDataList]
@@ -20871,6 +20953,7 @@ package sagemaker {
         EnableInterContainerTrafficEncryption: js.UndefOr[Boolean] = js.undefined,
         EnableManagedSpotTraining: js.UndefOr[Boolean] = js.undefined,
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+        Environment: js.UndefOr[TrainingEnvironmentMap] = js.undefined,
         ExperimentConfig: js.UndefOr[ExperimentConfig] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
@@ -20908,6 +20991,7 @@ package sagemaker {
       EnableInterContainerTrafficEncryption.foreach(__v => __obj.updateDynamic("EnableInterContainerTrafficEncryption")(__v.asInstanceOf[js.Any]))
       EnableManagedSpotTraining.foreach(__v => __obj.updateDynamic("EnableManagedSpotTraining")(__v.asInstanceOf[js.Any]))
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       ExperimentConfig.foreach(__v => __obj.updateDynamic("ExperimentConfig")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       FinalMetricDataList.foreach(__v => __obj.updateDynamic("FinalMetricDataList")(__v.asInstanceOf[js.Any]))
@@ -23097,7 +23181,7 @@ package sagemaker {
     @inline def values = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
   }
 
-  /** A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the <a>CreateUserProfile</a> API is called, and as <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is called.
+  /** A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code> when the <code>CreateDomain</code> API is called.
     * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.
     */
   @js.native

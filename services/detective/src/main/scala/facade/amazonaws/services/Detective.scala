@@ -18,6 +18,10 @@ package object detective {
   type MemberResultsLimit = Int
   type PaginationToken = String
   type Percentage = Double
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type Timestamp = js.Date
   type UnprocessedAccountList = js.Array[UnprocessedAccount]
   type UnprocessedReason = String
@@ -25,7 +29,7 @@ package object detective {
   implicit final class DetectiveOps(private val service: Detective) extends AnyVal {
 
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[js.Object] = service.acceptInvitation(params).promise().toFuture
-    @inline def createGraphFuture(): Future[CreateGraphResponse] = service.createGraph().promise().toFuture
+    @inline def createGraphFuture(params: CreateGraphRequest): Future[CreateGraphResponse] = service.createGraph(params).promise().toFuture
     @inline def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] = service.createMembers(params).promise().toFuture
     @inline def deleteGraphFuture(params: DeleteGraphRequest): Future[js.Object] = service.deleteGraph(params).promise().toFuture
     @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] = service.deleteMembers(params).promise().toFuture
@@ -34,8 +38,11 @@ package object detective {
     @inline def listGraphsFuture(params: ListGraphsRequest): Future[ListGraphsResponse] = service.listGraphs(params).promise().toFuture
     @inline def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] = service.listInvitations(params).promise().toFuture
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def rejectInvitationFuture(params: RejectInvitationRequest): Future[js.Object] = service.rejectInvitation(params).promise().toFuture
     @inline def startMonitoringMemberFuture(params: StartMonitoringMemberRequest): Future[js.Object] = service.startMonitoringMember(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 }
@@ -47,7 +54,7 @@ package detective {
     def this(config: AWSConfig) = this()
 
     def acceptInvitation(params: AcceptInvitationRequest): Request[js.Object] = js.native
-    def createGraph(): Request[CreateGraphResponse] = js.native
+    def createGraph(params: CreateGraphRequest): Request[CreateGraphResponse] = js.native
     def createMembers(params: CreateMembersRequest): Request[CreateMembersResponse] = js.native
     def deleteGraph(params: DeleteGraphRequest): Request[js.Object] = js.native
     def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse] = js.native
@@ -56,8 +63,11 @@ package detective {
     def listGraphs(params: ListGraphsRequest): Request[ListGraphsResponse] = js.native
     def listInvitations(params: ListInvitationsRequest): Request[ListInvitationsResponse] = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def rejectInvitation(params: RejectInvitationRequest): Request[js.Object] = js.native
     def startMonitoringMember(params: StartMonitoringMemberRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   @js.native
@@ -96,6 +106,22 @@ package detective {
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Account]
+    }
+  }
+
+  @js.native
+  trait CreateGraphRequest extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateGraphRequest {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateGraphRequest = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGraphRequest]
     }
   }
 
@@ -413,6 +439,39 @@ package detective {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: GraphArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: GraphArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** Details about a member account that was invited to contribute to a behavior graph.
     */
   @js.native
@@ -519,6 +578,37 @@ package detective {
     }
   }
 
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: GraphArn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: GraphArn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   /** A member account that was included in a request but for which the request could not be processed.
     */
   @js.native
@@ -537,6 +627,37 @@ package detective {
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnprocessedAccount]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: GraphArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: GraphArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

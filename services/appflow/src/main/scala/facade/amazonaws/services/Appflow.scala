@@ -1326,6 +1326,7 @@ package appflow {
     var Salesforce: js.UndefOr[SalesforceDestinationProperties]
     var Snowflake: js.UndefOr[SnowflakeDestinationProperties]
     var Upsolver: js.UndefOr[UpsolverDestinationProperties]
+    var Zendesk: js.UndefOr[ZendeskDestinationProperties]
   }
 
   object DestinationConnectorProperties {
@@ -1339,7 +1340,8 @@ package appflow {
         S3: js.UndefOr[S3DestinationProperties] = js.undefined,
         Salesforce: js.UndefOr[SalesforceDestinationProperties] = js.undefined,
         Snowflake: js.UndefOr[SnowflakeDestinationProperties] = js.undefined,
-        Upsolver: js.UndefOr[UpsolverDestinationProperties] = js.undefined
+        Upsolver: js.UndefOr[UpsolverDestinationProperties] = js.undefined,
+        Zendesk: js.UndefOr[ZendeskDestinationProperties] = js.undefined
     ): DestinationConnectorProperties = {
       val __obj = js.Dynamic.literal()
       CustomerProfiles.foreach(__v => __obj.updateDynamic("CustomerProfiles")(__v.asInstanceOf[js.Any]))
@@ -1351,6 +1353,7 @@ package appflow {
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       Snowflake.foreach(__v => __obj.updateDynamic("Snowflake")(__v.asInstanceOf[js.Any]))
       Upsolver.foreach(__v => __obj.updateDynamic("Upsolver")(__v.asInstanceOf[js.Any]))
+      Zendesk.foreach(__v => __obj.updateDynamic("Zendesk")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationConnectorProperties]
     }
   }
@@ -4215,6 +4218,33 @@ package appflow {
         "instanceUrl" -> instanceUrl.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ZendeskConnectorProfileProperties]
+    }
+  }
+
+  @js.native
+  trait ZendeskDestinationProperties extends js.Object {
+    var `object`: Object
+    var errorHandlingConfig: js.UndefOr[ErrorHandlingConfig]
+    var idFieldNames: js.UndefOr[IdFieldNameList]
+    var writeOperationType: js.UndefOr[WriteOperationType]
+  }
+
+  object ZendeskDestinationProperties {
+    @inline
+    def apply(
+        `object`: Object,
+        errorHandlingConfig: js.UndefOr[ErrorHandlingConfig] = js.undefined,
+        idFieldNames: js.UndefOr[IdFieldNameList] = js.undefined,
+        writeOperationType: js.UndefOr[WriteOperationType] = js.undefined
+    ): ZendeskDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "object" -> `object`.asInstanceOf[js.Any]
+      )
+
+      errorHandlingConfig.foreach(__v => __obj.updateDynamic("errorHandlingConfig")(__v.asInstanceOf[js.Any]))
+      idFieldNames.foreach(__v => __obj.updateDynamic("idFieldNames")(__v.asInstanceOf[js.Any]))
+      writeOperationType.foreach(__v => __obj.updateDynamic("writeOperationType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ZendeskDestinationProperties]
     }
   }
 

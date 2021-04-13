@@ -80,6 +80,7 @@ package object rekognition {
   type Reasons = js.Array[Reason]
   type RegionsOfInterest = js.Array[RegionOfInterest]
   type RekognitionUniqueId = String
+  type ResourceArn = String
   type RoleArn = String
   type S3Bucket = String
   type S3KeyPrefix = String
@@ -94,6 +95,10 @@ package object rekognition {
   type StreamProcessorArn = String
   type StreamProcessorList = js.Array[StreamProcessor]
   type StreamProcessorName = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type TextDetectionList = js.Array[TextDetection]
   type TextDetectionResults = js.Array[TextDetectionResult]
   type Timecode = String
@@ -142,6 +147,7 @@ package object rekognition {
     @inline def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] = service.listCollections(params).promise().toFuture
     @inline def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] = service.listFaces(params).promise().toFuture
     @inline def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] = service.listStreamProcessors(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def recognizeCelebritiesFuture(params: RecognizeCelebritiesRequest): Future[RecognizeCelebritiesResponse] = service.recognizeCelebrities(params).promise().toFuture
     @inline def searchFacesByImageFuture(params: SearchFacesByImageRequest): Future[SearchFacesByImageResponse] = service.searchFacesByImage(params).promise().toFuture
     @inline def searchFacesFuture(params: SearchFacesRequest): Future[SearchFacesResponse] = service.searchFaces(params).promise().toFuture
@@ -157,6 +163,8 @@ package object rekognition {
     @inline def startTextDetectionFuture(params: StartTextDetectionRequest): Future[StartTextDetectionResponse] = service.startTextDetection(params).promise().toFuture
     @inline def stopProjectVersionFuture(params: StopProjectVersionRequest): Future[StopProjectVersionResponse] = service.stopProjectVersion(params).promise().toFuture
     @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] = service.stopStreamProcessor(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 }
@@ -200,6 +208,7 @@ package rekognition {
     def listCollections(params: ListCollectionsRequest): Request[ListCollectionsResponse] = js.native
     def listFaces(params: ListFacesRequest): Request[ListFacesResponse] = js.native
     def listStreamProcessors(params: ListStreamProcessorsRequest): Request[ListStreamProcessorsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def recognizeCelebrities(params: RecognizeCelebritiesRequest): Request[RecognizeCelebritiesResponse] = js.native
     def searchFaces(params: SearchFacesRequest): Request[SearchFacesResponse] = js.native
     def searchFacesByImage(params: SearchFacesByImageRequest): Request[SearchFacesByImageResponse] = js.native
@@ -215,6 +224,8 @@ package rekognition {
     def startTextDetection(params: StartTextDetectionRequest): Request[StartTextDetectionResponse] = js.native
     def stopProjectVersion(params: StopProjectVersionRequest): Request[StopProjectVersionResponse] = js.native
     def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
 
   /** Structure containing the estimated age range, in years, for a face.
@@ -639,16 +650,20 @@ package rekognition {
   @js.native
   trait CreateCollectionRequest extends js.Object {
     var CollectionId: CollectionId
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateCollectionRequest {
     @inline
     def apply(
-        CollectionId: CollectionId
+        CollectionId: CollectionId,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateCollectionRequest = {
       val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCollectionRequest]
     }
   }
@@ -715,6 +730,7 @@ package rekognition {
     var TestingData: TestingData
     var TrainingData: TrainingData
     var VersionName: VersionName
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateProjectVersionRequest {
@@ -724,7 +740,8 @@ package rekognition {
         ProjectArn: ProjectArn,
         TestingData: TestingData,
         TrainingData: TrainingData,
-        VersionName: VersionName
+        VersionName: VersionName,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateProjectVersionRequest = {
       val __obj = js.Dynamic.literal(
         "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
@@ -733,6 +750,8 @@ package rekognition {
         "TrainingData" -> TrainingData.asInstanceOf[js.Any],
         "VersionName" -> VersionName.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectVersionRequest]
     }
   }
@@ -760,6 +779,7 @@ package rekognition {
     var Output: StreamProcessorOutput
     var RoleArn: RoleArn
     var Settings: StreamProcessorSettings
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateStreamProcessorRequest {
@@ -769,7 +789,8 @@ package rekognition {
         Name: StreamProcessorName,
         Output: StreamProcessorOutput,
         RoleArn: RoleArn,
-        Settings: StreamProcessorSettings
+        Settings: StreamProcessorSettings,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateStreamProcessorRequest = {
       val __obj = js.Dynamic.literal(
         "Input" -> Input.asInstanceOf[js.Any],
@@ -778,6 +799,8 @@ package rekognition {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamProcessorRequest]
     }
   }
@@ -2858,6 +2881,39 @@ package rekognition {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
     */
   @js.native
@@ -4356,6 +4412,37 @@ package rekognition {
     }
   }
 
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   /** Information about a technical cue segment. For more information, see <a>SegmentDetection</a>.
     */
   @js.native
@@ -4558,6 +4645,37 @@ package rekognition {
       FaceDetail.foreach(__v => __obj.updateDynamic("FaceDetail")(__v.asInstanceOf[js.Any]))
       Reasons.foreach(__v => __obj.updateDynamic("Reasons")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnindexedFace]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

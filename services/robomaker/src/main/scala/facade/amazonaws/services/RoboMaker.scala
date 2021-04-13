@@ -82,6 +82,8 @@ package object robomaker {
   type TagValue = String
   type TemplateName = String
   type TemplateSummaries = js.Array[TemplateSummary]
+  type Tools = js.Array[Tool]
+  type UnrestrictedCommand = String
   type UploadConfigurations = js.Array[UploadConfiguration]
   type Version = String
   type VersionQualifier = String
@@ -1546,7 +1548,11 @@ package robomaker {
     val PostLaunchFileFailure = "PostLaunchFileFailure".asInstanceOf[DeploymentJobErrorCode]
     val BadPermissionError = "BadPermissionError".asInstanceOf[DeploymentJobErrorCode]
     val DownloadConditionFailed = "DownloadConditionFailed".asInstanceOf[DeploymentJobErrorCode]
+    val BadLambdaAssociated = "BadLambdaAssociated".asInstanceOf[DeploymentJobErrorCode]
     val InternalServerError = "InternalServerError".asInstanceOf[DeploymentJobErrorCode]
+    val RobotApplicationDoesNotExist = "RobotApplicationDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
+    val DeploymentFleetDoesNotExist = "DeploymentFleetDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
+    val FleetDeploymentTimeout = "FleetDeploymentTimeout".asInstanceOf[DeploymentJobErrorCode]
 
     @inline def values = js.Array(
       ResourceNotFound,
@@ -1568,7 +1574,11 @@ package robomaker {
       PostLaunchFileFailure,
       BadPermissionError,
       DownloadConditionFailed,
-      InternalServerError
+      BadLambdaAssociated,
+      InternalServerError,
+      RobotApplicationDoesNotExist,
+      DeploymentFleetDoesNotExist,
+      FleetDeploymentTimeout
     )
   }
 
@@ -2325,6 +2335,15 @@ package robomaker {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorldTemplateResponse]
     }
+  }
+
+  @js.native
+  sealed trait ExitBehavior extends js.Any
+  object ExitBehavior {
+    val FAIL = "FAIL".asInstanceOf[ExitBehavior]
+    val RESTART = "RESTART".asInstanceOf[ExitBehavior]
+
+    @inline def values = js.Array(FAIL, RESTART)
   }
 
   /** Information about a failed create simulation job request.
@@ -3302,7 +3321,9 @@ package robomaker {
     var application: Arn
     var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
+    var tools: js.UndefOr[Tools]
     var uploadConfigurations: js.UndefOr[UploadConfigurations]
+    var useDefaultTools: js.UndefOr[BoxedBoolean]
     var useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean]
   }
 
@@ -3312,7 +3333,9 @@ package robomaker {
         application: Arn,
         launchConfig: LaunchConfig,
         applicationVersion: js.UndefOr[Version] = js.undefined,
+        tools: js.UndefOr[Tools] = js.undefined,
         uploadConfigurations: js.UndefOr[UploadConfigurations] = js.undefined,
+        useDefaultTools: js.UndefOr[BoxedBoolean] = js.undefined,
         useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean] = js.undefined
     ): RobotApplicationConfig = {
       val __obj = js.Dynamic.literal(
@@ -3321,7 +3344,9 @@ package robomaker {
       )
 
       applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
+      tools.foreach(__v => __obj.updateDynamic("tools")(__v.asInstanceOf[js.Any]))
       uploadConfigurations.foreach(__v => __obj.updateDynamic("uploadConfigurations")(__v.asInstanceOf[js.Any]))
+      useDefaultTools.foreach(__v => __obj.updateDynamic("useDefaultTools")(__v.asInstanceOf[js.Any]))
       useDefaultUploadConfigurations.foreach(__v => __obj.updateDynamic("useDefaultUploadConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotApplicationConfig]
     }
@@ -3515,7 +3540,9 @@ package robomaker {
     var application: Arn
     var launchConfig: LaunchConfig
     var applicationVersion: js.UndefOr[Version]
+    var tools: js.UndefOr[Tools]
     var uploadConfigurations: js.UndefOr[UploadConfigurations]
+    var useDefaultTools: js.UndefOr[BoxedBoolean]
     var useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean]
     var worldConfigs: js.UndefOr[WorldConfigs]
   }
@@ -3526,7 +3553,9 @@ package robomaker {
         application: Arn,
         launchConfig: LaunchConfig,
         applicationVersion: js.UndefOr[Version] = js.undefined,
+        tools: js.UndefOr[Tools] = js.undefined,
         uploadConfigurations: js.UndefOr[UploadConfigurations] = js.undefined,
+        useDefaultTools: js.UndefOr[BoxedBoolean] = js.undefined,
         useDefaultUploadConfigurations: js.UndefOr[BoxedBoolean] = js.undefined,
         worldConfigs: js.UndefOr[WorldConfigs] = js.undefined
     ): SimulationApplicationConfig = {
@@ -3536,7 +3565,9 @@ package robomaker {
       )
 
       applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
+      tools.foreach(__v => __obj.updateDynamic("tools")(__v.asInstanceOf[js.Any]))
       uploadConfigurations.foreach(__v => __obj.updateDynamic("uploadConfigurations")(__v.asInstanceOf[js.Any]))
+      useDefaultTools.foreach(__v => __obj.updateDynamic("useDefaultTools")(__v.asInstanceOf[js.Any]))
       useDefaultUploadConfigurations.foreach(__v => __obj.updateDynamic("useDefaultUploadConfigurations")(__v.asInstanceOf[js.Any]))
       worldConfigs.foreach(__v => __obj.updateDynamic("worldConfigs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationApplicationConfig]
@@ -3720,6 +3751,8 @@ package robomaker {
     val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobErrorCode]
     val RobotApplicationCrash = "RobotApplicationCrash".asInstanceOf[SimulationJobErrorCode]
     val SimulationApplicationCrash = "SimulationApplicationCrash".asInstanceOf[SimulationJobErrorCode]
+    val RobotApplicationHealthCheckFailure = "RobotApplicationHealthCheckFailure".asInstanceOf[SimulationJobErrorCode]
+    val SimulationApplicationHealthCheckFailure = "SimulationApplicationHealthCheckFailure".asInstanceOf[SimulationJobErrorCode]
     val BadPermissionsRobotApplication = "BadPermissionsRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val BadPermissionsSimulationApplication = "BadPermissionsSimulationApplication".asInstanceOf[SimulationJobErrorCode]
     val BadPermissionsS3Object = "BadPermissionsS3Object".asInstanceOf[SimulationJobErrorCode]
@@ -3731,6 +3764,7 @@ package robomaker {
     val InvalidBundleRobotApplication = "InvalidBundleRobotApplication".asInstanceOf[SimulationJobErrorCode]
     val InvalidBundleSimulationApplication = "InvalidBundleSimulationApplication".asInstanceOf[SimulationJobErrorCode]
     val InvalidS3Resource = "InvalidS3Resource".asInstanceOf[SimulationJobErrorCode]
+    val ThrottlingError = "ThrottlingError".asInstanceOf[SimulationJobErrorCode]
     val LimitExceeded = "LimitExceeded".asInstanceOf[SimulationJobErrorCode]
     val MismatchedEtag = "MismatchedEtag".asInstanceOf[SimulationJobErrorCode]
     val RobotApplicationVersionMismatchedEtag = "RobotApplicationVersionMismatchedEtag".asInstanceOf[SimulationJobErrorCode]
@@ -3750,6 +3784,8 @@ package robomaker {
       InternalServiceError,
       RobotApplicationCrash,
       SimulationApplicationCrash,
+      RobotApplicationHealthCheckFailure,
+      SimulationApplicationHealthCheckFailure,
       BadPermissionsRobotApplication,
       BadPermissionsSimulationApplication,
       BadPermissionsS3Object,
@@ -3761,6 +3797,7 @@ package robomaker {
       InvalidBundleRobotApplication,
       InvalidBundleSimulationApplication,
       InvalidS3Resource,
+      ThrottlingError,
       LimitExceeded,
       MismatchedEtag,
       RobotApplicationVersionMismatchedEtag,
@@ -4172,6 +4209,38 @@ package robomaker {
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateSummary]
+    }
+  }
+
+  /** Information about a tool. Tools are used in a simulation job.
+    */
+  @js.native
+  trait Tool extends js.Object {
+    var command: UnrestrictedCommand
+    var name: Name
+    var exitBehavior: js.UndefOr[ExitBehavior]
+    var streamOutputToCloudWatch: js.UndefOr[BoxedBoolean]
+    var streamUI: js.UndefOr[BoxedBoolean]
+  }
+
+  object Tool {
+    @inline
+    def apply(
+        command: UnrestrictedCommand,
+        name: Name,
+        exitBehavior: js.UndefOr[ExitBehavior] = js.undefined,
+        streamOutputToCloudWatch: js.UndefOr[BoxedBoolean] = js.undefined,
+        streamUI: js.UndefOr[BoxedBoolean] = js.undefined
+    ): Tool = {
+      val __obj = js.Dynamic.literal(
+        "command" -> command.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      exitBehavior.foreach(__v => __obj.updateDynamic("exitBehavior")(__v.asInstanceOf[js.Any]))
+      streamOutputToCloudWatch.foreach(__v => __obj.updateDynamic("streamOutputToCloudWatch")(__v.asInstanceOf[js.Any]))
+      streamUI.foreach(__v => __obj.updateDynamic("streamUI")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Tool]
     }
   }
 

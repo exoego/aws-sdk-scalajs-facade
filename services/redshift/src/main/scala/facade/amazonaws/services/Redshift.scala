@@ -33,6 +33,8 @@ package object redshift {
   type DoubleOptional = Double
   type EC2SecurityGroupList = js.Array[EC2SecurityGroup]
   type EligibleTracksToUpdateList = js.Array[UpdateTarget]
+  type EndpointAccesses = js.Array[EndpointAccess]
+  type EndpointAuthorizations = js.Array[EndpointAuthorization]
   type EventCategoriesList = js.Array[String]
   type EventCategoriesMapList = js.Array[EventCategoriesMap]
   type EventInfoMapList = js.Array[EventInfoMap]
@@ -85,6 +87,7 @@ package object redshift {
   type UsageLimits = js.Array[UsageLimit]
   type ValueStringList = js.Array[String]
   type VpcEndpointsList = js.Array[VpcEndpoint]
+  type VpcIdentifierList = js.Array[String]
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
@@ -92,6 +95,7 @@ package object redshift {
 
     @inline def acceptReservedNodeExchangeFuture(params: AcceptReservedNodeExchangeInputMessage): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise().toFuture
     @inline def authorizeClusterSecurityGroupIngressFuture(params: AuthorizeClusterSecurityGroupIngressMessage): Future[AuthorizeClusterSecurityGroupIngressResult] = service.authorizeClusterSecurityGroupIngress(params).promise().toFuture
+    @inline def authorizeEndpointAccessFuture(params: AuthorizeEndpointAccessMessage): Future[EndpointAuthorization] = service.authorizeEndpointAccess(params).promise().toFuture
     @inline def authorizeSnapshotAccessFuture(params: AuthorizeSnapshotAccessMessage): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise().toFuture
     @inline def batchDeleteClusterSnapshotsFuture(params: BatchDeleteClusterSnapshotsRequest): Future[BatchDeleteClusterSnapshotsResult] = service.batchDeleteClusterSnapshots(params).promise().toFuture
     @inline def batchModifyClusterSnapshotsFuture(params: BatchModifyClusterSnapshotsMessage): Future[BatchModifyClusterSnapshotsOutputMessage] = service.batchModifyClusterSnapshots(params).promise().toFuture
@@ -102,6 +106,7 @@ package object redshift {
     @inline def createClusterSecurityGroupFuture(params: CreateClusterSecurityGroupMessage): Future[CreateClusterSecurityGroupResult] = service.createClusterSecurityGroup(params).promise().toFuture
     @inline def createClusterSnapshotFuture(params: CreateClusterSnapshotMessage): Future[CreateClusterSnapshotResult] = service.createClusterSnapshot(params).promise().toFuture
     @inline def createClusterSubnetGroupFuture(params: CreateClusterSubnetGroupMessage): Future[CreateClusterSubnetGroupResult] = service.createClusterSubnetGroup(params).promise().toFuture
+    @inline def createEndpointAccessFuture(params: CreateEndpointAccessMessage): Future[EndpointAccess] = service.createEndpointAccess(params).promise().toFuture
     @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
     @inline def createHsmClientCertificateFuture(params: CreateHsmClientCertificateMessage): Future[CreateHsmClientCertificateResult] = service.createHsmClientCertificate(params).promise().toFuture
     @inline def createHsmConfigurationFuture(params: CreateHsmConfigurationMessage): Future[CreateHsmConfigurationResult] = service.createHsmConfiguration(params).promise().toFuture
@@ -115,6 +120,7 @@ package object redshift {
     @inline def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] = service.deleteClusterSecurityGroup(params).promise().toFuture
     @inline def deleteClusterSnapshotFuture(params: DeleteClusterSnapshotMessage): Future[DeleteClusterSnapshotResult] = service.deleteClusterSnapshot(params).promise().toFuture
     @inline def deleteClusterSubnetGroupFuture(params: DeleteClusterSubnetGroupMessage): Future[js.Object] = service.deleteClusterSubnetGroup(params).promise().toFuture
+    @inline def deleteEndpointAccessFuture(params: DeleteEndpointAccessMessage): Future[EndpointAccess] = service.deleteEndpointAccess(params).promise().toFuture
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] = service.deleteEventSubscription(params).promise().toFuture
     @inline def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] = service.deleteHsmClientCertificate(params).promise().toFuture
     @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] = service.deleteHsmConfiguration(params).promise().toFuture
@@ -134,6 +140,8 @@ package object redshift {
     @inline def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] = service.describeClusterVersions(params).promise().toFuture
     @inline def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] = service.describeClusters(params).promise().toFuture
     @inline def describeDefaultClusterParametersFuture(params: DescribeDefaultClusterParametersMessage): Future[DescribeDefaultClusterParametersResult] = service.describeDefaultClusterParameters(params).promise().toFuture
+    @inline def describeEndpointAccessFuture(params: DescribeEndpointAccessMessage): Future[EndpointAccessList] = service.describeEndpointAccess(params).promise().toFuture
+    @inline def describeEndpointAuthorizationFuture(params: DescribeEndpointAuthorizationMessage): Future[EndpointAuthorizationList] = service.describeEndpointAuthorization(params).promise().toFuture
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] = service.describeEventCategories(params).promise().toFuture
     @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
@@ -158,6 +166,7 @@ package object redshift {
     @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] = service.enableSnapshotCopy(params).promise().toFuture
     @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] = service.getClusterCredentials(params).promise().toFuture
     @inline def getReservedNodeExchangeOfferingsFuture(params: GetReservedNodeExchangeOfferingsInputMessage): Future[GetReservedNodeExchangeOfferingsOutputMessage] = service.getReservedNodeExchangeOfferings(params).promise().toFuture
+    @inline def modifyAquaConfigurationFuture(params: ModifyAquaInputMessage): Future[ModifyAquaOutputMessage] = service.modifyAquaConfiguration(params).promise().toFuture
     @inline def modifyClusterDbRevisionFuture(params: ModifyClusterDbRevisionMessage): Future[ModifyClusterDbRevisionResult] = service.modifyClusterDbRevision(params).promise().toFuture
     @inline def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] = service.modifyCluster(params).promise().toFuture
     @inline def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] = service.modifyClusterIamRoles(params).promise().toFuture
@@ -166,6 +175,7 @@ package object redshift {
     @inline def modifyClusterSnapshotFuture(params: ModifyClusterSnapshotMessage): Future[ModifyClusterSnapshotResult] = service.modifyClusterSnapshot(params).promise().toFuture
     @inline def modifyClusterSnapshotScheduleFuture(params: ModifyClusterSnapshotScheduleMessage): Future[js.Object] = service.modifyClusterSnapshotSchedule(params).promise().toFuture
     @inline def modifyClusterSubnetGroupFuture(params: ModifyClusterSubnetGroupMessage): Future[ModifyClusterSubnetGroupResult] = service.modifyClusterSubnetGroup(params).promise().toFuture
+    @inline def modifyEndpointAccessFuture(params: ModifyEndpointAccessMessage): Future[EndpointAccess] = service.modifyEndpointAccess(params).promise().toFuture
     @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
     @inline def modifyScheduledActionFuture(params: ModifyScheduledActionMessage): Future[ScheduledAction] = service.modifyScheduledAction(params).promise().toFuture
     @inline def modifySnapshotCopyRetentionPeriodFuture(params: ModifySnapshotCopyRetentionPeriodMessage): Future[ModifySnapshotCopyRetentionPeriodResult] = service.modifySnapshotCopyRetentionPeriod(params).promise().toFuture
@@ -180,6 +190,7 @@ package object redshift {
     @inline def restoreTableFromClusterSnapshotFuture(params: RestoreTableFromClusterSnapshotMessage): Future[RestoreTableFromClusterSnapshotResult] = service.restoreTableFromClusterSnapshot(params).promise().toFuture
     @inline def resumeClusterFuture(params: ResumeClusterMessage): Future[ResumeClusterResult] = service.resumeCluster(params).promise().toFuture
     @inline def revokeClusterSecurityGroupIngressFuture(params: RevokeClusterSecurityGroupIngressMessage): Future[RevokeClusterSecurityGroupIngressResult] = service.revokeClusterSecurityGroupIngress(params).promise().toFuture
+    @inline def revokeEndpointAccessFuture(params: RevokeEndpointAccessMessage): Future[EndpointAuthorization] = service.revokeEndpointAccess(params).promise().toFuture
     @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] = service.revokeSnapshotAccess(params).promise().toFuture
     @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] = service.rotateEncryptionKey(params).promise().toFuture
 
@@ -194,6 +205,7 @@ package redshift {
 
     def acceptReservedNodeExchange(params: AcceptReservedNodeExchangeInputMessage): Request[AcceptReservedNodeExchangeOutputMessage] = js.native
     def authorizeClusterSecurityGroupIngress(params: AuthorizeClusterSecurityGroupIngressMessage): Request[AuthorizeClusterSecurityGroupIngressResult] = js.native
+    def authorizeEndpointAccess(params: AuthorizeEndpointAccessMessage): Request[EndpointAuthorization] = js.native
     def authorizeSnapshotAccess(params: AuthorizeSnapshotAccessMessage): Request[AuthorizeSnapshotAccessResult] = js.native
     def batchDeleteClusterSnapshots(params: BatchDeleteClusterSnapshotsRequest): Request[BatchDeleteClusterSnapshotsResult] = js.native
     def batchModifyClusterSnapshots(params: BatchModifyClusterSnapshotsMessage): Request[BatchModifyClusterSnapshotsOutputMessage] = js.native
@@ -204,6 +216,7 @@ package redshift {
     def createClusterSecurityGroup(params: CreateClusterSecurityGroupMessage): Request[CreateClusterSecurityGroupResult] = js.native
     def createClusterSnapshot(params: CreateClusterSnapshotMessage): Request[CreateClusterSnapshotResult] = js.native
     def createClusterSubnetGroup(params: CreateClusterSubnetGroupMessage): Request[CreateClusterSubnetGroupResult] = js.native
+    def createEndpointAccess(params: CreateEndpointAccessMessage): Request[EndpointAccess] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
     def createHsmClientCertificate(params: CreateHsmClientCertificateMessage): Request[CreateHsmClientCertificateResult] = js.native
     def createHsmConfiguration(params: CreateHsmConfigurationMessage): Request[CreateHsmConfigurationResult] = js.native
@@ -217,6 +230,7 @@ package redshift {
     def deleteClusterSecurityGroup(params: DeleteClusterSecurityGroupMessage): Request[js.Object] = js.native
     def deleteClusterSnapshot(params: DeleteClusterSnapshotMessage): Request[DeleteClusterSnapshotResult] = js.native
     def deleteClusterSubnetGroup(params: DeleteClusterSubnetGroupMessage): Request[js.Object] = js.native
+    def deleteEndpointAccess(params: DeleteEndpointAccessMessage): Request[EndpointAccess] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[js.Object] = js.native
     def deleteHsmClientCertificate(params: DeleteHsmClientCertificateMessage): Request[js.Object] = js.native
     def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage): Request[js.Object] = js.native
@@ -236,6 +250,8 @@ package redshift {
     def describeClusterVersions(params: DescribeClusterVersionsMessage): Request[ClusterVersionsMessage] = js.native
     def describeClusters(params: DescribeClustersMessage): Request[ClustersMessage] = js.native
     def describeDefaultClusterParameters(params: DescribeDefaultClusterParametersMessage): Request[DescribeDefaultClusterParametersResult] = js.native
+    def describeEndpointAccess(params: DescribeEndpointAccessMessage): Request[EndpointAccessList] = js.native
+    def describeEndpointAuthorization(params: DescribeEndpointAuthorizationMessage): Request[EndpointAuthorizationList] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
@@ -260,6 +276,7 @@ package redshift {
     def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult] = js.native
     def getClusterCredentials(params: GetClusterCredentialsMessage): Request[ClusterCredentials] = js.native
     def getReservedNodeExchangeOfferings(params: GetReservedNodeExchangeOfferingsInputMessage): Request[GetReservedNodeExchangeOfferingsOutputMessage] = js.native
+    def modifyAquaConfiguration(params: ModifyAquaInputMessage): Request[ModifyAquaOutputMessage] = js.native
     def modifyCluster(params: ModifyClusterMessage): Request[ModifyClusterResult] = js.native
     def modifyClusterDbRevision(params: ModifyClusterDbRevisionMessage): Request[ModifyClusterDbRevisionResult] = js.native
     def modifyClusterIamRoles(params: ModifyClusterIamRolesMessage): Request[ModifyClusterIamRolesResult] = js.native
@@ -268,6 +285,7 @@ package redshift {
     def modifyClusterSnapshot(params: ModifyClusterSnapshotMessage): Request[ModifyClusterSnapshotResult] = js.native
     def modifyClusterSnapshotSchedule(params: ModifyClusterSnapshotScheduleMessage): Request[js.Object] = js.native
     def modifyClusterSubnetGroup(params: ModifyClusterSubnetGroupMessage): Request[ModifyClusterSubnetGroupResult] = js.native
+    def modifyEndpointAccess(params: ModifyEndpointAccessMessage): Request[EndpointAccess] = js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
     def modifyScheduledAction(params: ModifyScheduledActionMessage): Request[ScheduledAction] = js.native
     def modifySnapshotCopyRetentionPeriod(params: ModifySnapshotCopyRetentionPeriodMessage): Request[ModifySnapshotCopyRetentionPeriodResult] = js.native
@@ -282,6 +300,7 @@ package redshift {
     def restoreTableFromClusterSnapshot(params: RestoreTableFromClusterSnapshotMessage): Request[RestoreTableFromClusterSnapshotResult] = js.native
     def resumeCluster(params: ResumeClusterMessage): Request[ResumeClusterResult] = js.native
     def revokeClusterSecurityGroupIngress(params: RevokeClusterSecurityGroupIngressMessage): Request[RevokeClusterSecurityGroupIngressResult] = js.native
+    def revokeEndpointAccess(params: RevokeEndpointAccessMessage): Request[EndpointAuthorization] = js.native
     def revokeSnapshotAccess(params: RevokeSnapshotAccessMessage): Request[RevokeSnapshotAccessResult] = js.native
     def rotateEncryptionKey(params: RotateEncryptionKeyMessage): Request[RotateEncryptionKeyResult] = js.native
   }
@@ -390,6 +409,47 @@ package redshift {
     @inline def values = js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`)
   }
 
+  /** The AQUA (Advanced Query Accelerator) configuration of the cluster.
+    */
+  @js.native
+  trait AquaConfiguration extends js.Object {
+    var AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus]
+    var AquaStatus: js.UndefOr[AquaStatus]
+  }
+
+  object AquaConfiguration {
+    @inline
+    def apply(
+        AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus] = js.undefined,
+        AquaStatus: js.UndefOr[AquaStatus] = js.undefined
+    ): AquaConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AquaConfigurationStatus.foreach(__v => __obj.updateDynamic("AquaConfigurationStatus")(__v.asInstanceOf[js.Any]))
+      AquaStatus.foreach(__v => __obj.updateDynamic("AquaStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AquaConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait AquaConfigurationStatus extends js.Any
+  object AquaConfigurationStatus {
+    val enabled = "enabled".asInstanceOf[AquaConfigurationStatus]
+    val disabled = "disabled".asInstanceOf[AquaConfigurationStatus]
+    val auto = "auto".asInstanceOf[AquaConfigurationStatus]
+
+    @inline def values = js.Array(enabled, disabled, auto)
+  }
+
+  @js.native
+  sealed trait AquaStatus extends js.Any
+  object AquaStatus {
+    val enabled = "enabled".asInstanceOf[AquaStatus]
+    val disabled = "disabled".asInstanceOf[AquaStatus]
+    val applying = "applying".asInstanceOf[AquaStatus]
+
+    @inline def values = js.Array(enabled, disabled, applying)
+  }
+
   /** Describes an attribute value.
     */
   @js.native
@@ -406,6 +466,15 @@ package redshift {
       AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeValueTarget]
     }
+  }
+
+  @js.native
+  sealed trait AuthorizationStatus extends js.Any
+  object AuthorizationStatus {
+    val Authorized = "Authorized".asInstanceOf[AuthorizationStatus]
+    val Revoking = "Revoking".asInstanceOf[AuthorizationStatus]
+
+    @inline def values = js.Array(Authorized, Revoking)
   }
 
   /** <p/>
@@ -450,6 +519,30 @@ package redshift {
       val __obj = js.Dynamic.literal()
       ClusterSecurityGroup.foreach(__v => __obj.updateDynamic("ClusterSecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizeClusterSecurityGroupIngressResult]
+    }
+  }
+
+  @js.native
+  trait AuthorizeEndpointAccessMessage extends js.Object {
+    var Account: String
+    var ClusterIdentifier: js.UndefOr[String]
+    var VpcIds: js.UndefOr[VpcIdentifierList]
+  }
+
+  object AuthorizeEndpointAccessMessage {
+    @inline
+    def apply(
+        Account: String,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        VpcIds: js.UndefOr[VpcIdentifierList] = js.undefined
+    ): AuthorizeEndpointAccessMessage = {
+      val __obj = js.Dynamic.literal(
+        "Account" -> Account.asInstanceOf[js.Any]
+      )
+
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      VpcIds.foreach(__v => __obj.updateDynamic("VpcIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizeEndpointAccessMessage]
     }
   }
 
@@ -617,6 +710,7 @@ package redshift {
   @js.native
   trait Cluster extends js.Object {
     var AllowVersionUpgrade: js.UndefOr[Boolean]
+    var AquaConfiguration: js.UndefOr[AquaConfiguration]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[Int]
     var AvailabilityZone: js.UndefOr[String]
     var AvailabilityZoneRelocationStatus: js.UndefOr[String]
@@ -671,6 +765,7 @@ package redshift {
     @inline
     def apply(
         AllowVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        AquaConfiguration: js.UndefOr[AquaConfiguration] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         AvailabilityZoneRelocationStatus: js.UndefOr[String] = js.undefined,
@@ -722,6 +817,7 @@ package redshift {
     ): Cluster = {
       val __obj = js.Dynamic.literal()
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AquaConfiguration.foreach(__v => __obj.updateDynamic("AquaConfiguration")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       AvailabilityZoneRelocationStatus.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocationStatus")(__v.asInstanceOf[js.Any]))
@@ -1322,6 +1418,7 @@ package redshift {
     var NodeType: String
     var AdditionalInfo: js.UndefOr[String]
     var AllowVersionUpgrade: js.UndefOr[BooleanOptional]
+    var AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
     var AvailabilityZone: js.UndefOr[String]
     var AvailabilityZoneRelocation: js.UndefOr[BooleanOptional]
@@ -1358,6 +1455,7 @@ package redshift {
         NodeType: String,
         AdditionalInfo: js.UndefOr[String] = js.undefined,
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         AvailabilityZoneRelocation: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1393,6 +1491,7 @@ package redshift {
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AquaConfigurationStatus.foreach(__v => __obj.updateDynamic("AquaConfigurationStatus")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       AvailabilityZoneRelocation.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocation")(__v.asInstanceOf[js.Any]))
@@ -1612,6 +1711,36 @@ package redshift {
       val __obj = js.Dynamic.literal()
       ClusterSubnetGroup.foreach(__v => __obj.updateDynamic("ClusterSubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterSubnetGroupResult]
+    }
+  }
+
+  @js.native
+  trait CreateEndpointAccessMessage extends js.Object {
+    var EndpointName: String
+    var SubnetGroupName: String
+    var ClusterIdentifier: js.UndefOr[String]
+    var ResourceOwner: js.UndefOr[String]
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
+  }
+
+  object CreateEndpointAccessMessage {
+    @inline
+    def apply(
+        EndpointName: String,
+        SubnetGroupName: String,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ResourceOwner: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): CreateEndpointAccessMessage = {
+      val __obj = js.Dynamic.literal(
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
+        "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]
+      )
+
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointAccessMessage]
     }
   }
 
@@ -2176,6 +2305,23 @@ package redshift {
     }
   }
 
+  @js.native
+  trait DeleteEndpointAccessMessage extends js.Object {
+    var EndpointName: String
+  }
+
+  object DeleteEndpointAccessMessage {
+    @inline
+    def apply(
+        EndpointName: String
+    ): DeleteEndpointAccessMessage = {
+      val __obj = js.Dynamic.literal(
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEndpointAccessMessage]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -2651,6 +2797,65 @@ package redshift {
       val __obj = js.Dynamic.literal()
       DefaultClusterParameters.foreach(__v => __obj.updateDynamic("DefaultClusterParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDefaultClusterParametersResult]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointAccessMessage extends js.Object {
+    var ClusterIdentifier: js.UndefOr[String]
+    var EndpointName: js.UndefOr[String]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ResourceOwner: js.UndefOr[String]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object DescribeEndpointAccessMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        EndpointName: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ResourceOwner: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): DescribeEndpointAccessMessage = {
+      val __obj = js.Dynamic.literal()
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointAccessMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointAuthorizationMessage extends js.Object {
+    var Account: js.UndefOr[String]
+    var ClusterIdentifier: js.UndefOr[String]
+    var Grantee: js.UndefOr[BooleanOptional]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeEndpointAuthorizationMessage {
+    @inline
+    def apply(
+        Account: js.UndefOr[String] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Grantee: js.UndefOr[BooleanOptional] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeEndpointAuthorizationMessage = {
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointAuthorizationMessage]
     }
   }
 
@@ -3358,6 +3563,131 @@ package redshift {
     }
   }
 
+  /** Describes a Redshift-managed VPC endpoint.
+    */
+  @js.native
+  trait EndpointAccess extends js.Object {
+    var Address: js.UndefOr[String]
+    var ClusterIdentifier: js.UndefOr[String]
+    var EndpointCreateTime: js.UndefOr[TStamp]
+    var EndpointName: js.UndefOr[String]
+    var EndpointStatus: js.UndefOr[String]
+    var Port: js.UndefOr[Int]
+    var ResourceOwner: js.UndefOr[String]
+    var SubnetGroupName: js.UndefOr[String]
+    var VpcEndpoint: js.UndefOr[VpcEndpoint]
+    var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
+  }
+
+  object EndpointAccess {
+    @inline
+    def apply(
+        Address: js.UndefOr[String] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        EndpointCreateTime: js.UndefOr[TStamp] = js.undefined,
+        EndpointName: js.UndefOr[String] = js.undefined,
+        EndpointStatus: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        ResourceOwner: js.UndefOr[String] = js.undefined,
+        SubnetGroupName: js.UndefOr[String] = js.undefined,
+        VpcEndpoint: js.UndefOr[VpcEndpoint] = js.undefined,
+        VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
+    ): EndpointAccess = {
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      EndpointCreateTime.foreach(__v => __obj.updateDynamic("EndpointCreateTime")(__v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.updateDynamic("EndpointStatus")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
+      SubnetGroupName.foreach(__v => __obj.updateDynamic("SubnetGroupName")(__v.asInstanceOf[js.Any]))
+      VpcEndpoint.foreach(__v => __obj.updateDynamic("VpcEndpoint")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointAccess]
+    }
+  }
+
+  @js.native
+  trait EndpointAccessList extends js.Object {
+    var EndpointAccessList: js.UndefOr[EndpointAccesses]
+    var Marker: js.UndefOr[String]
+  }
+
+  object EndpointAccessList {
+    @inline
+    def apply(
+        EndpointAccessList: js.UndefOr[EndpointAccesses] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EndpointAccessList = {
+      val __obj = js.Dynamic.literal()
+      EndpointAccessList.foreach(__v => __obj.updateDynamic("EndpointAccessList")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointAccessList]
+    }
+  }
+
+  /** Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.
+    */
+  @js.native
+  trait EndpointAuthorization extends js.Object {
+    var AllowedAllVPCs: js.UndefOr[Boolean]
+    var AllowedVPCs: js.UndefOr[VpcIdentifierList]
+    var AuthorizeTime: js.UndefOr[TStamp]
+    var ClusterIdentifier: js.UndefOr[String]
+    var ClusterStatus: js.UndefOr[String]
+    var EndpointCount: js.UndefOr[Int]
+    var Grantee: js.UndefOr[String]
+    var Grantor: js.UndefOr[String]
+    var Status: js.UndefOr[AuthorizationStatus]
+  }
+
+  object EndpointAuthorization {
+    @inline
+    def apply(
+        AllowedAllVPCs: js.UndefOr[Boolean] = js.undefined,
+        AllowedVPCs: js.UndefOr[VpcIdentifierList] = js.undefined,
+        AuthorizeTime: js.UndefOr[TStamp] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ClusterStatus: js.UndefOr[String] = js.undefined,
+        EndpointCount: js.UndefOr[Int] = js.undefined,
+        Grantee: js.UndefOr[String] = js.undefined,
+        Grantor: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[AuthorizationStatus] = js.undefined
+    ): EndpointAuthorization = {
+      val __obj = js.Dynamic.literal()
+      AllowedAllVPCs.foreach(__v => __obj.updateDynamic("AllowedAllVPCs")(__v.asInstanceOf[js.Any]))
+      AllowedVPCs.foreach(__v => __obj.updateDynamic("AllowedVPCs")(__v.asInstanceOf[js.Any]))
+      AuthorizeTime.foreach(__v => __obj.updateDynamic("AuthorizeTime")(__v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      ClusterStatus.foreach(__v => __obj.updateDynamic("ClusterStatus")(__v.asInstanceOf[js.Any]))
+      EndpointCount.foreach(__v => __obj.updateDynamic("EndpointCount")(__v.asInstanceOf[js.Any]))
+      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
+      Grantor.foreach(__v => __obj.updateDynamic("Grantor")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointAuthorization]
+    }
+  }
+
+  @js.native
+  trait EndpointAuthorizationList extends js.Object {
+    var EndpointAuthorizationList: js.UndefOr[EndpointAuthorizations]
+    var Marker: js.UndefOr[String]
+  }
+
+  object EndpointAuthorizationList {
+    @inline
+    def apply(
+        EndpointAuthorizationList: js.UndefOr[EndpointAuthorizations] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EndpointAuthorizationList = {
+      val __obj = js.Dynamic.literal()
+      EndpointAuthorizationList.foreach(__v => __obj.updateDynamic("EndpointAuthorizationList")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointAuthorizationList]
+    }
+  }
+
   /** Describes an event.
     */
   @js.native
@@ -3841,6 +4171,43 @@ package redshift {
   }
 
   @js.native
+  trait ModifyAquaInputMessage extends js.Object {
+    var ClusterIdentifier: String
+    var AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus]
+  }
+
+  object ModifyAquaInputMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: String,
+        AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus] = js.undefined
+    ): ModifyAquaInputMessage = {
+      val __obj = js.Dynamic.literal(
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      AquaConfigurationStatus.foreach(__v => __obj.updateDynamic("AquaConfigurationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyAquaInputMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyAquaOutputMessage extends js.Object {
+    var AquaConfiguration: js.UndefOr[AquaConfiguration]
+  }
+
+  object ModifyAquaOutputMessage {
+    @inline
+    def apply(
+        AquaConfiguration: js.UndefOr[AquaConfiguration] = js.undefined
+    ): ModifyAquaOutputMessage = {
+      val __obj = js.Dynamic.literal()
+      AquaConfiguration.foreach(__v => __obj.updateDynamic("AquaConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyAquaOutputMessage]
+    }
+  }
+
+  @js.native
   trait ModifyClusterDbRevisionMessage extends js.Object {
     var ClusterIdentifier: String
     var RevisionTarget: String
@@ -4200,6 +4567,27 @@ package redshift {
       val __obj = js.Dynamic.literal()
       ClusterSubnetGroup.foreach(__v => __obj.updateDynamic("ClusterSubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyClusterSubnetGroupResult]
+    }
+  }
+
+  @js.native
+  trait ModifyEndpointAccessMessage extends js.Object {
+    var EndpointName: String
+    var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
+  }
+
+  object ModifyEndpointAccessMessage {
+    @inline
+    def apply(
+        EndpointName: String,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): ModifyEndpointAccessMessage = {
+      val __obj = js.Dynamic.literal(
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any]
+      )
+
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEndpointAccessMessage]
     }
   }
 
@@ -5094,6 +5482,7 @@ package redshift {
     var SnapshotIdentifier: String
     var AdditionalInfo: js.UndefOr[String]
     var AllowVersionUpgrade: js.UndefOr[BooleanOptional]
+    var AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus]
     var AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
     var AvailabilityZone: js.UndefOr[String]
     var AvailabilityZoneRelocation: js.UndefOr[BooleanOptional]
@@ -5126,6 +5515,7 @@ package redshift {
         SnapshotIdentifier: String,
         AdditionalInfo: js.UndefOr[String] = js.undefined,
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus] = js.undefined,
         AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         AvailabilityZoneRelocation: js.UndefOr[BooleanOptional] = js.undefined,
@@ -5157,6 +5547,7 @@ package redshift {
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       AllowVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AquaConfigurationStatus.foreach(__v => __obj.updateDynamic("AquaConfigurationStatus")(__v.asInstanceOf[js.Any]))
       AutomatedSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("AutomatedSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       AvailabilityZoneRelocation.foreach(__v => __obj.updateDynamic("AvailabilityZoneRelocation")(__v.asInstanceOf[js.Any]))
@@ -5242,6 +5633,7 @@ package redshift {
     var SnapshotIdentifier: String
     var SourceDatabaseName: String
     var SourceTableName: String
+    var EnableCaseSensitiveIdentifier: js.UndefOr[BooleanOptional]
     var SourceSchemaName: js.UndefOr[String]
     var TargetDatabaseName: js.UndefOr[String]
     var TargetSchemaName: js.UndefOr[String]
@@ -5255,6 +5647,7 @@ package redshift {
         SnapshotIdentifier: String,
         SourceDatabaseName: String,
         SourceTableName: String,
+        EnableCaseSensitiveIdentifier: js.UndefOr[BooleanOptional] = js.undefined,
         SourceSchemaName: js.UndefOr[String] = js.undefined,
         TargetDatabaseName: js.UndefOr[String] = js.undefined,
         TargetSchemaName: js.UndefOr[String] = js.undefined
@@ -5267,6 +5660,7 @@ package redshift {
         "SourceTableName" -> SourceTableName.asInstanceOf[js.Any]
       )
 
+      EnableCaseSensitiveIdentifier.foreach(__v => __obj.updateDynamic("EnableCaseSensitiveIdentifier")(__v.asInstanceOf[js.Any]))
       SourceSchemaName.foreach(__v => __obj.updateDynamic("SourceSchemaName")(__v.asInstanceOf[js.Any]))
       TargetDatabaseName.foreach(__v => __obj.updateDynamic("TargetDatabaseName")(__v.asInstanceOf[js.Any]))
       TargetSchemaName.foreach(__v => __obj.updateDynamic("TargetSchemaName")(__v.asInstanceOf[js.Any]))
@@ -5391,6 +5785,31 @@ package redshift {
       val __obj = js.Dynamic.literal()
       ClusterSecurityGroup.foreach(__v => __obj.updateDynamic("ClusterSecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevokeClusterSecurityGroupIngressResult]
+    }
+  }
+
+  @js.native
+  trait RevokeEndpointAccessMessage extends js.Object {
+    var Account: js.UndefOr[String]
+    var ClusterIdentifier: js.UndefOr[String]
+    var Force: js.UndefOr[Boolean]
+    var VpcIds: js.UndefOr[VpcIdentifierList]
+  }
+
+  object RevokeEndpointAccessMessage {
+    @inline
+    def apply(
+        Account: js.UndefOr[String] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Force: js.UndefOr[Boolean] = js.undefined,
+        VpcIds: js.UndefOr[VpcIdentifierList] = js.undefined
+    ): RevokeEndpointAccessMessage = {
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
+      VpcIds.foreach(__v => __obj.updateDynamic("VpcIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeEndpointAccessMessage]
     }
   }
 
@@ -6272,7 +6691,7 @@ package redshift {
     @inline def values = js.Array(daily, weekly, monthly)
   }
 
-  /** The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
+  /** The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
     */
   @js.native
   trait VpcEndpoint extends js.Object {

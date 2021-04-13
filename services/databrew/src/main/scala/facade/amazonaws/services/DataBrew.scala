@@ -21,16 +21,21 @@ package object databrew {
   type Condition = String
   type ConditionExpressionList = js.Array[ConditionExpression]
   type ConditionValue = String
+  type CreateColumn = Boolean
   type CreatedBy = String
   type CronExpression = String
   type DatabaseName = String
+  type DatabaseTableName = String
   type DatasetList = js.Array[Dataset]
   type DatasetName = String
   type Date = js.Date
+  type DatetimeFormat = String
   type Delimiter = String
   type EncryptionKeyArn = String
   type ErrorCode = String
   type ExecutionTime = Int
+  type Expression = String
+  type GlueConnectionName = String
   type HeaderRow = Boolean
   type HiddenColumnList = js.Array[ColumnName]
   type JobList = js.Array[Job]
@@ -42,8 +47,10 @@ package object databrew {
   type JobSize = Double
   type Key = String
   type LastModifiedBy = String
+  type LocaleCode = String
   type LogGroupName = String
   type MaxCapacity = Int
+  type MaxFiles = Int
   type MaxResults100 = Int
   type MaxRetries = Int
   type MultiLine = Boolean
@@ -55,6 +62,8 @@ package object databrew {
   type ParameterMap = js.Dictionary[ParameterValue]
   type ParameterName = String
   type ParameterValue = String
+  type PathParameterName = String
+  type PathParametersMap = js.Dictionary[DatasetParameter]
   type Preview = Boolean
   type ProjectList = js.Array[Project]
   type ProjectName = String
@@ -85,6 +94,9 @@ package object databrew {
   type TagValue = String
   type TargetColumn = String
   type Timeout = Int
+  type TimezoneOffset = String
+  type ValueReference = String
+  type ValuesMap = js.Dictionary[ConditionValue]
 
   implicit final class DataBrewOps(private val service: DataBrew) extends AnyVal {
 
@@ -236,7 +248,7 @@ package databrew {
   }
 
   /** Represents an individual condition that evaluates to true or false.
-    * Conditions are used with recipe actions: The action is only performed for column values where the condition evaluates to true.
+    * Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.
     * If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.
     */
   @js.native
@@ -269,6 +281,7 @@ package databrew {
     var Name: DatasetName
     var Format: js.UndefOr[InputFormat]
     var FormatOptions: js.UndefOr[FormatOptions]
+    var PathOptions: js.UndefOr[PathOptions]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -279,6 +292,7 @@ package databrew {
         Name: DatasetName,
         Format: js.UndefOr[InputFormat] = js.undefined,
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
+        PathOptions: js.UndefOr[PathOptions] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDatasetRequest = {
       val __obj = js.Dynamic.literal(
@@ -288,6 +302,7 @@ package databrew {
 
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
+      PathOptions.foreach(__v => __obj.updateDynamic("PathOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetRequest]
     }
@@ -587,7 +602,7 @@ package databrew {
     }
   }
 
-  /** Options that define how DataBrew will read a Csv file when creating a dataset from that file.
+  /** Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a dataset from that file.
     */
   @js.native
   trait CsvOptions extends js.Object {
@@ -608,7 +623,7 @@ package databrew {
     }
   }
 
-  /** Options that define how DataBrew will write a Csv file.
+  /** Represents a set of options that define how DataBrew will write a comma-separated value (CSV) file.
     */
   @js.native
   trait CsvOutputOptions extends js.Object {
@@ -655,6 +670,32 @@ package databrew {
     }
   }
 
+  /** Connection information for dataset input files stored in a database.
+    */
+  @js.native
+  trait DatabaseInputDefinition extends js.Object {
+    var DatabaseTableName: DatabaseTableName
+    var GlueConnectionName: GlueConnectionName
+    var TempDirectory: js.UndefOr[S3Location]
+  }
+
+  object DatabaseInputDefinition {
+    @inline
+    def apply(
+        DatabaseTableName: DatabaseTableName,
+        GlueConnectionName: GlueConnectionName,
+        TempDirectory: js.UndefOr[S3Location] = js.undefined
+    ): DatabaseInputDefinition = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseTableName" -> DatabaseTableName.asInstanceOf[js.Any],
+        "GlueConnectionName" -> GlueConnectionName.asInstanceOf[js.Any]
+      )
+
+      TempDirectory.foreach(__v => __obj.updateDynamic("TempDirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseInputDefinition]
+    }
+  }
+
   /** Represents a dataset that can be processed by DataBrew.
     */
   @js.native
@@ -668,6 +709,7 @@ package databrew {
     var FormatOptions: js.UndefOr[FormatOptions]
     var LastModifiedBy: js.UndefOr[LastModifiedBy]
     var LastModifiedDate: js.UndefOr[Date]
+    var PathOptions: js.UndefOr[PathOptions]
     var ResourceArn: js.UndefOr[Arn]
     var Source: js.UndefOr[Source]
     var Tags: js.UndefOr[TagMap]
@@ -685,6 +727,7 @@ package databrew {
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
         LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        PathOptions: js.UndefOr[PathOptions] = js.undefined,
         ResourceArn: js.UndefOr[Arn] = js.undefined,
         Source: js.UndefOr[Source] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
@@ -701,10 +744,69 @@ package databrew {
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      PathOptions.foreach(__v => __obj.updateDynamic("PathOptions")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Dataset]
+    }
+  }
+
+  /** Represents a dataset paramater that defines type and conditions for a parameter in the S3 path of the dataset.
+    */
+  @js.native
+  trait DatasetParameter extends js.Object {
+    var Name: PathParameterName
+    var Type: ParameterType
+    var CreateColumn: js.UndefOr[CreateColumn]
+    var DatetimeOptions: js.UndefOr[DatetimeOptions]
+    var Filter: js.UndefOr[FilterExpression]
+  }
+
+  object DatasetParameter {
+    @inline
+    def apply(
+        Name: PathParameterName,
+        Type: ParameterType,
+        CreateColumn: js.UndefOr[CreateColumn] = js.undefined,
+        DatetimeOptions: js.UndefOr[DatetimeOptions] = js.undefined,
+        Filter: js.UndefOr[FilterExpression] = js.undefined
+    ): DatasetParameter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      CreateColumn.foreach(__v => __obj.updateDynamic("CreateColumn")(__v.asInstanceOf[js.Any]))
+      DatetimeOptions.foreach(__v => __obj.updateDynamic("DatetimeOptions")(__v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetParameter]
+    }
+  }
+
+  /** Represents additional options for correct interpretation of datetime parameters used in the S3 path of a dataset.
+    */
+  @js.native
+  trait DatetimeOptions extends js.Object {
+    var Format: DatetimeFormat
+    var LocaleCode: js.UndefOr[LocaleCode]
+    var TimezoneOffset: js.UndefOr[TimezoneOffset]
+  }
+
+  object DatetimeOptions {
+    @inline
+    def apply(
+        Format: DatetimeFormat,
+        LocaleCode: js.UndefOr[LocaleCode] = js.undefined,
+        TimezoneOffset: js.UndefOr[TimezoneOffset] = js.undefined
+    ): DatetimeOptions = {
+      val __obj = js.Dynamic.literal(
+        "Format" -> Format.asInstanceOf[js.Any]
+      )
+
+      LocaleCode.foreach(__v => __obj.updateDynamic("LocaleCode")(__v.asInstanceOf[js.Any]))
+      TimezoneOffset.foreach(__v => __obj.updateDynamic("TimezoneOffset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatetimeOptions]
     }
   }
 
@@ -911,6 +1013,7 @@ package databrew {
     var FormatOptions: js.UndefOr[FormatOptions]
     var LastModifiedBy: js.UndefOr[LastModifiedBy]
     var LastModifiedDate: js.UndefOr[Date]
+    var PathOptions: js.UndefOr[PathOptions]
     var ResourceArn: js.UndefOr[Arn]
     var Source: js.UndefOr[Source]
     var Tags: js.UndefOr[TagMap]
@@ -927,6 +1030,7 @@ package databrew {
         FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
         LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        PathOptions: js.UndefOr[PathOptions] = js.undefined,
         ResourceArn: js.UndefOr[Arn] = js.undefined,
         Source: js.UndefOr[Source] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
@@ -942,6 +1046,7 @@ package databrew {
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      PathOptions.foreach(__v => __obj.updateDynamic("PathOptions")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1338,7 +1443,7 @@ package databrew {
     @inline def values = js.Array(`SSE-KMS`, `SSE-S3`)
   }
 
-  /** Options that define how DataBrew will interpret a Microsoft Excel file, when creating a dataset from that file.
+  /** Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset from that file.
     */
   @js.native
   trait ExcelOptions extends js.Object {
@@ -1362,7 +1467,55 @@ package databrew {
     }
   }
 
-  /** Options that define the structure of either Csv, Excel, or JSON input.
+  /** Represents a limit imposed on number of S3 files that should be selected for a dataset from a connected S3 path.
+    */
+  @js.native
+  trait FilesLimit extends js.Object {
+    var MaxFiles: MaxFiles
+    var Order: js.UndefOr[Order]
+    var OrderedBy: js.UndefOr[OrderedBy]
+  }
+
+  object FilesLimit {
+    @inline
+    def apply(
+        MaxFiles: MaxFiles,
+        Order: js.UndefOr[Order] = js.undefined,
+        OrderedBy: js.UndefOr[OrderedBy] = js.undefined
+    ): FilesLimit = {
+      val __obj = js.Dynamic.literal(
+        "MaxFiles" -> MaxFiles.asInstanceOf[js.Any]
+      )
+
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
+      OrderedBy.foreach(__v => __obj.updateDynamic("OrderedBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilesLimit]
+    }
+  }
+
+  /** Represents a structure for defining parameter conditions.
+    */
+  @js.native
+  trait FilterExpression extends js.Object {
+    var Expression: Expression
+    var ValuesMap: ValuesMap
+  }
+
+  object FilterExpression {
+    @inline
+    def apply(
+        Expression: Expression,
+        ValuesMap: ValuesMap
+    ): FilterExpression = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "ValuesMap" -> ValuesMap.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FilterExpression]
+    }
+  }
+
+  /** Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
     */
   @js.native
   trait FormatOptions extends js.Object {
@@ -1386,11 +1539,12 @@ package databrew {
     }
   }
 
-  /** Information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
+  /** Represents information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
     */
   @js.native
   trait Input extends js.Object {
     var DataCatalogInputDefinition: js.UndefOr[DataCatalogInputDefinition]
+    var DatabaseInputDefinition: js.UndefOr[DatabaseInputDefinition]
     var S3InputDefinition: js.UndefOr[S3Location]
   }
 
@@ -1398,10 +1552,12 @@ package databrew {
     @inline
     def apply(
         DataCatalogInputDefinition: js.UndefOr[DataCatalogInputDefinition] = js.undefined,
+        DatabaseInputDefinition: js.UndefOr[DatabaseInputDefinition] = js.undefined,
         S3InputDefinition: js.UndefOr[S3Location] = js.undefined
     ): Input = {
       val __obj = js.Dynamic.literal()
       DataCatalogInputDefinition.foreach(__v => __obj.updateDynamic("DataCatalogInputDefinition")(__v.asInstanceOf[js.Any]))
+      DatabaseInputDefinition.foreach(__v => __obj.updateDynamic("DatabaseInputDefinition")(__v.asInstanceOf[js.Any]))
       S3InputDefinition.foreach(__v => __obj.updateDynamic("S3InputDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Input]
     }
@@ -1572,7 +1728,7 @@ package databrew {
     @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
   }
 
-  /** Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+  /** A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
     */
   @js.native
   trait JobSample extends js.Object {
@@ -1964,7 +2120,24 @@ package databrew {
     @inline def values = js.Array(ENABLE, DISABLE)
   }
 
-  /** Parameters that specify how and where DataBrew will write the output generated by recipe jobs or profile jobs.
+  @js.native
+  sealed trait Order extends js.Any
+  object Order {
+    val DESCENDING = "DESCENDING".asInstanceOf[Order]
+    val ASCENDING = "ASCENDING".asInstanceOf[Order]
+
+    @inline def values = js.Array(DESCENDING, ASCENDING)
+  }
+
+  @js.native
+  sealed trait OrderedBy extends js.Any
+  object OrderedBy {
+    val LAST_MODIFIED_DATE = "LAST_MODIFIED_DATE".asInstanceOf[OrderedBy]
+
+    @inline def values = js.Array(LAST_MODIFIED_DATE)
+  }
+
+  /** Represents options that specify how and where DataBrew writes the output generated by recipe jobs or profile jobs.
     */
   @js.native
   trait Output extends js.Object {
@@ -2013,7 +2186,7 @@ package databrew {
     @inline def values = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
   }
 
-  /** Options that define the structure of Csv job output.
+  /** Represents a set of options that define the structure of comma-separated (CSV) job output.
     */
   @js.native
   trait OutputFormatOptions extends js.Object {
@@ -2028,6 +2201,40 @@ package databrew {
       val __obj = js.Dynamic.literal()
       Csv.foreach(__v => __obj.updateDynamic("Csv")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputFormatOptions]
+    }
+  }
+
+  @js.native
+  sealed trait ParameterType extends js.Any
+  object ParameterType {
+    val Datetime = "Datetime".asInstanceOf[ParameterType]
+    val Number = "Number".asInstanceOf[ParameterType]
+    val String = "String".asInstanceOf[ParameterType]
+
+    @inline def values = js.Array(Datetime, Number, String)
+  }
+
+  /** Represents a set of options that define how DataBrew selects files for a given S3 path in a dataset.
+    */
+  @js.native
+  trait PathOptions extends js.Object {
+    var FilesLimit: js.UndefOr[FilesLimit]
+    var LastModifiedDateCondition: js.UndefOr[FilterExpression]
+    var Parameters: js.UndefOr[PathParametersMap]
+  }
+
+  object PathOptions {
+    @inline
+    def apply(
+        FilesLimit: js.UndefOr[FilesLimit] = js.undefined,
+        LastModifiedDateCondition: js.UndefOr[FilterExpression] = js.undefined,
+        Parameters: js.UndefOr[PathParametersMap] = js.undefined
+    ): PathOptions = {
+      val __obj = js.Dynamic.literal()
+      FilesLimit.foreach(__v => __obj.updateDynamic("FilesLimit")(__v.asInstanceOf[js.Any]))
+      LastModifiedDateCondition.foreach(__v => __obj.updateDynamic("LastModifiedDateCondition")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PathOptions]
     }
   }
 
@@ -2277,7 +2484,7 @@ package databrew {
     }
   }
 
-  /** An Amazon S3 location (bucket name an object key) where DataBrew can read input data, or write output from a job.
+  /** Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -2468,8 +2675,9 @@ package databrew {
   object Source {
     val S3 = "S3".asInstanceOf[Source]
     val `DATA-CATALOG` = "DATA-CATALOG".asInstanceOf[Source]
+    val DATABASE = "DATABASE".asInstanceOf[Source]
 
-    @inline def values = js.Array(S3, `DATA-CATALOG`)
+    @inline def values = js.Array(S3, `DATA-CATALOG`, DATABASE)
   }
 
   @js.native
@@ -2653,6 +2861,7 @@ package databrew {
     var Name: DatasetName
     var Format: js.UndefOr[InputFormat]
     var FormatOptions: js.UndefOr[FormatOptions]
+    var PathOptions: js.UndefOr[PathOptions]
   }
 
   object UpdateDatasetRequest {
@@ -2661,7 +2870,8 @@ package databrew {
         Input: Input,
         Name: DatasetName,
         Format: js.UndefOr[InputFormat] = js.undefined,
-        FormatOptions: js.UndefOr[FormatOptions] = js.undefined
+        FormatOptions: js.UndefOr[FormatOptions] = js.undefined,
+        PathOptions: js.UndefOr[PathOptions] = js.undefined
     ): UpdateDatasetRequest = {
       val __obj = js.Dynamic.literal(
         "Input" -> Input.asInstanceOf[js.Any],
@@ -2670,6 +2880,7 @@ package databrew {
 
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
+      PathOptions.foreach(__v => __obj.updateDynamic("PathOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatasetRequest]
     }
   }
@@ -2939,7 +3150,7 @@ package databrew {
     }
   }
 
-  /** Represents the data being being transformed during an action.
+  /** Represents the data being transformed during an action.
     */
   @js.native
   trait ViewFrame extends js.Object {

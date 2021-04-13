@@ -139,11 +139,6 @@ package cloudhsm {
     @inline def values = js.Array(`5.1`, `5.3`)
   }
 
-  /** Indicates that an internal error occurred.
-    */
-  @js.native
-  trait CloudHsmInternalExceptionException extends js.Object {}
-
   @js.native
   sealed trait CloudHsmObjectState extends js.Any
   object CloudHsmObjectState {
@@ -152,14 +147,6 @@ package cloudhsm {
     val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
 
     @inline def values = js.Array(READY, UPDATING, DEGRADED)
-  }
-
-  /** Indicates that an exception occurred in the AWS CloudHSM service.
-    */
-  @js.native
-  trait CloudHsmServiceExceptionException extends js.Object {
-    val message: String
-    val retryable: Boolean
   }
 
   /** Contains the inputs for the <a>CreateHapgRequest</a> action.
@@ -674,11 +661,6 @@ package cloudhsm {
 
     @inline def values = js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
   }
-
-  /** Indicates that one or more of the request parameters are not valid.
-    */
-  @js.native
-  trait InvalidRequestExceptionException extends js.Object {}
 
   /** Contains the inputs for the <a>ListAvailableZones</a> action.
     */

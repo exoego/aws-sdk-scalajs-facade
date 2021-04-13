@@ -119,6 +119,7 @@ package object medialive {
   type __longMin0Max1099511627775 = Double
   type __longMin0Max4294967295 = Double
   type __longMin0Max8589934591 = Double
+  type __longMin0Max86400000 = Double
   type __string = String
   type __stringMax1000 = String
   type __stringMax256 = String
@@ -1980,7 +1981,7 @@ package medialive {
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
     var Tags: js.UndefOr[Tags]
-    var Vpc: js.UndefOr[VpcOutputSettings]
+    var Vpc: js.UndefOr[VpcOutputSettingsDescription]
   }
 
   object Channel {
@@ -2002,7 +2003,7 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        Vpc: js.UndefOr[VpcOutputSettings] = js.undefined
+        Vpc: js.UndefOr[VpcOutputSettingsDescription] = js.undefined
     ): Channel = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -2093,7 +2094,7 @@ package medialive {
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
     var Tags: js.UndefOr[Tags]
-    var Vpc: js.UndefOr[VpcOutputSettings]
+    var Vpc: js.UndefOr[VpcOutputSettingsDescription]
   }
 
   object ChannelSummary {
@@ -2113,7 +2114,7 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        Vpc: js.UndefOr[VpcOutputSettings] = js.undefined
+        Vpc: js.UndefOr[VpcOutputSettingsDescription] = js.undefined
     ): ChannelSummary = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -2537,7 +2538,7 @@ package medialive {
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
     var Tags: js.UndefOr[Tags]
-    var Vpc: js.UndefOr[VpcOutputSettings]
+    var Vpc: js.UndefOr[VpcOutputSettingsDescription]
   }
 
   object DeleteChannelResponse {
@@ -2559,7 +2560,7 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        Vpc: js.UndefOr[VpcOutputSettings] = js.undefined
+        Vpc: js.UndefOr[VpcOutputSettingsDescription] = js.undefined
     ): DeleteChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -2944,7 +2945,7 @@ package medialive {
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
     var Tags: js.UndefOr[Tags]
-    var Vpc: js.UndefOr[VpcOutputSettings]
+    var Vpc: js.UndefOr[VpcOutputSettingsDescription]
   }
 
   object DescribeChannelResponse {
@@ -2966,7 +2967,7 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        Vpc: js.UndefOr[VpcOutputSettings] = js.undefined
+        Vpc: js.UndefOr[VpcOutputSettingsDescription] = js.undefined
     ): DescribeChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -4214,6 +4215,7 @@ package medialive {
     var CaptionDescriptions: js.UndefOr[__listOfCaptionDescription]
     var FeatureActivations: js.UndefOr[FeatureActivations]
     var GlobalConfiguration: js.UndefOr[GlobalConfiguration]
+    var MotionGraphicsConfiguration: js.UndefOr[MotionGraphicsConfiguration]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
   }
 
@@ -4230,6 +4232,7 @@ package medialive {
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
         FeatureActivations: js.UndefOr[FeatureActivations] = js.undefined,
         GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined,
+        MotionGraphicsConfiguration: js.UndefOr[MotionGraphicsConfiguration] = js.undefined,
         NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined
     ): EncoderSettings = {
       val __obj = js.Dynamic.literal(
@@ -4245,6 +4248,7 @@ package medialive {
       CaptionDescriptions.foreach(__v => __obj.updateDynamic("CaptionDescriptions")(__v.asInstanceOf[js.Any]))
       FeatureActivations.foreach(__v => __obj.updateDynamic("FeatureActivations")(__v.asInstanceOf[js.Any]))
       GlobalConfiguration.foreach(__v => __obj.updateDynamic("GlobalConfiguration")(__v.asInstanceOf[js.Any]))
+      MotionGraphicsConfiguration.foreach(__v => __obj.updateDynamic("MotionGraphicsConfiguration")(__v.asInstanceOf[js.Any]))
       NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncoderSettings]
     }
@@ -6184,6 +6188,19 @@ package medialive {
       NumRetries.foreach(__v => __obj.updateDynamic("NumRetries")(__v.asInstanceOf[js.Any]))
       RestartDelay.foreach(__v => __obj.updateDynamic("RestartDelay")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsWebdavSettings]
+    }
+  }
+
+  /** Html Motion Graphics Settings
+    */
+  @js.native
+  trait HtmlMotionGraphicsSettings extends js.Object
+
+  object HtmlMotionGraphicsSettings {
+    @inline
+    def apply(): HtmlMotionGraphicsSettings = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[HtmlMotionGraphicsSettings]
     }
   }
 
@@ -8372,6 +8389,98 @@ package medialive {
     }
   }
 
+  /** Settings to specify the rendering of motion graphics into the video stream.
+    */
+  @js.native
+  trait MotionGraphicsActivateScheduleActionSettings extends js.Object {
+    var Duration: js.UndefOr[__longMin0Max86400000]
+    var PasswordParam: js.UndefOr[__string]
+    var Url: js.UndefOr[__string]
+    var Username: js.UndefOr[__string]
+  }
+
+  object MotionGraphicsActivateScheduleActionSettings {
+    @inline
+    def apply(
+        Duration: js.UndefOr[__longMin0Max86400000] = js.undefined,
+        PasswordParam: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined,
+        Username: js.UndefOr[__string] = js.undefined
+    ): MotionGraphicsActivateScheduleActionSettings = {
+      val __obj = js.Dynamic.literal()
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      PasswordParam.foreach(__v => __obj.updateDynamic("PasswordParam")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MotionGraphicsActivateScheduleActionSettings]
+    }
+  }
+
+  /** Motion Graphics Configuration
+    */
+  @js.native
+  trait MotionGraphicsConfiguration extends js.Object {
+    var MotionGraphicsSettings: MotionGraphicsSettings
+    var MotionGraphicsInsertion: js.UndefOr[MotionGraphicsInsertion]
+  }
+
+  object MotionGraphicsConfiguration {
+    @inline
+    def apply(
+        MotionGraphicsSettings: MotionGraphicsSettings,
+        MotionGraphicsInsertion: js.UndefOr[MotionGraphicsInsertion] = js.undefined
+    ): MotionGraphicsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "MotionGraphicsSettings" -> MotionGraphicsSettings.asInstanceOf[js.Any]
+      )
+
+      MotionGraphicsInsertion.foreach(__v => __obj.updateDynamic("MotionGraphicsInsertion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MotionGraphicsConfiguration]
+    }
+  }
+
+  /** Settings to specify the ending of rendering motion graphics into the video stream.
+    */
+  @js.native
+  trait MotionGraphicsDeactivateScheduleActionSettings extends js.Object
+
+  object MotionGraphicsDeactivateScheduleActionSettings {
+    @inline
+    def apply(): MotionGraphicsDeactivateScheduleActionSettings = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[MotionGraphicsDeactivateScheduleActionSettings]
+    }
+  }
+
+  /** Motion Graphics Insertion
+    */
+  @js.native
+  sealed trait MotionGraphicsInsertion extends js.Any
+  object MotionGraphicsInsertion {
+    val DISABLED = "DISABLED".asInstanceOf[MotionGraphicsInsertion]
+    val ENABLED = "ENABLED".asInstanceOf[MotionGraphicsInsertion]
+
+    @inline def values = js.Array(DISABLED, ENABLED)
+  }
+
+  /** Motion Graphics Settings
+    */
+  @js.native
+  trait MotionGraphicsSettings extends js.Object {
+    var HtmlMotionGraphicsSettings: js.UndefOr[HtmlMotionGraphicsSettings]
+  }
+
+  object MotionGraphicsSettings {
+    @inline
+    def apply(
+        HtmlMotionGraphicsSettings: js.UndefOr[HtmlMotionGraphicsSettings] = js.undefined
+    ): MotionGraphicsSettings = {
+      val __obj = js.Dynamic.literal()
+      HtmlMotionGraphicsSettings.foreach(__v => __obj.updateDynamic("HtmlMotionGraphicsSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MotionGraphicsSettings]
+    }
+  }
+
   /** Mp2 Coding Mode
     */
   @js.native
@@ -9527,6 +9636,8 @@ package medialive {
   trait PipelineDetail extends js.Object {
     var ActiveInputAttachmentName: js.UndefOr[__string]
     var ActiveInputSwitchActionName: js.UndefOr[__string]
+    var ActiveMotionGraphicsActionName: js.UndefOr[__string]
+    var ActiveMotionGraphicsUri: js.UndefOr[__string]
     var PipelineId: js.UndefOr[__string]
   }
 
@@ -9535,11 +9646,15 @@ package medialive {
     def apply(
         ActiveInputAttachmentName: js.UndefOr[__string] = js.undefined,
         ActiveInputSwitchActionName: js.UndefOr[__string] = js.undefined,
+        ActiveMotionGraphicsActionName: js.UndefOr[__string] = js.undefined,
+        ActiveMotionGraphicsUri: js.UndefOr[__string] = js.undefined,
         PipelineId: js.UndefOr[__string] = js.undefined
     ): PipelineDetail = {
       val __obj = js.Dynamic.literal()
       ActiveInputAttachmentName.foreach(__v => __obj.updateDynamic("ActiveInputAttachmentName")(__v.asInstanceOf[js.Any]))
       ActiveInputSwitchActionName.foreach(__v => __obj.updateDynamic("ActiveInputSwitchActionName")(__v.asInstanceOf[js.Any]))
+      ActiveMotionGraphicsActionName.foreach(__v => __obj.updateDynamic("ActiveMotionGraphicsActionName")(__v.asInstanceOf[js.Any]))
+      ActiveMotionGraphicsUri.foreach(__v => __obj.updateDynamic("ActiveMotionGraphicsUri")(__v.asInstanceOf[js.Any]))
       PipelineId.foreach(__v => __obj.updateDynamic("PipelineId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineDetail]
     }
@@ -10116,6 +10231,8 @@ package medialive {
     var HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings]
     var InputPrepareSettings: js.UndefOr[InputPrepareScheduleActionSettings]
     var InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings]
+    var MotionGraphicsImageActivateSettings: js.UndefOr[MotionGraphicsActivateScheduleActionSettings]
+    var MotionGraphicsImageDeactivateSettings: js.UndefOr[MotionGraphicsDeactivateScheduleActionSettings]
     var PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings]
     var Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings]
     var Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings]
@@ -10131,6 +10248,8 @@ package medialive {
         HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
         InputPrepareSettings: js.UndefOr[InputPrepareScheduleActionSettings] = js.undefined,
         InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
+        MotionGraphicsImageActivateSettings: js.UndefOr[MotionGraphicsActivateScheduleActionSettings] = js.undefined,
+        MotionGraphicsImageDeactivateSettings: js.UndefOr[MotionGraphicsDeactivateScheduleActionSettings] = js.undefined,
         PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings] = js.undefined,
         Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings] = js.undefined,
         Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings] = js.undefined,
@@ -10143,6 +10262,8 @@ package medialive {
       HlsTimedMetadataSettings.foreach(__v => __obj.updateDynamic("HlsTimedMetadataSettings")(__v.asInstanceOf[js.Any]))
       InputPrepareSettings.foreach(__v => __obj.updateDynamic("InputPrepareSettings")(__v.asInstanceOf[js.Any]))
       InputSwitchSettings.foreach(__v => __obj.updateDynamic("InputSwitchSettings")(__v.asInstanceOf[js.Any]))
+      MotionGraphicsImageActivateSettings.foreach(__v => __obj.updateDynamic("MotionGraphicsImageActivateSettings")(__v.asInstanceOf[js.Any]))
+      MotionGraphicsImageDeactivateSettings.foreach(__v => __obj.updateDynamic("MotionGraphicsImageDeactivateSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
       Scte35ReturnToNetworkSettings.foreach(__v => __obj.updateDynamic("Scte35ReturnToNetworkSettings")(__v.asInstanceOf[js.Any]))
       Scte35SpliceInsertSettings.foreach(__v => __obj.updateDynamic("Scte35SpliceInsertSettings")(__v.asInstanceOf[js.Any]))
@@ -10755,7 +10876,7 @@ package medialive {
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
     var Tags: js.UndefOr[Tags]
-    var Vpc: js.UndefOr[VpcOutputSettings]
+    var Vpc: js.UndefOr[VpcOutputSettingsDescription]
   }
 
   object StartChannelResponse {
@@ -10777,7 +10898,7 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        Vpc: js.UndefOr[VpcOutputSettings] = js.undefined
+        Vpc: js.UndefOr[VpcOutputSettingsDescription] = js.undefined
     ): StartChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -11013,7 +11134,7 @@ package medialive {
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
     var Tags: js.UndefOr[Tags]
-    var Vpc: js.UndefOr[VpcOutputSettings]
+    var Vpc: js.UndefOr[VpcOutputSettingsDescription]
   }
 
   object StopChannelResponse {
@@ -11035,7 +11156,7 @@ package medialive {
         RoleArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ChannelState] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        Vpc: js.UndefOr[VpcOutputSettings] = js.undefined
+        Vpc: js.UndefOr[VpcOutputSettingsDescription] = js.undefined
     ): StopChannelResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -12003,6 +12124,7 @@ package medialive {
   @js.native
   trait VideoSelector extends js.Object {
     var ColorSpace: js.UndefOr[VideoSelectorColorSpace]
+    var ColorSpaceSettings: js.UndefOr[VideoSelectorColorSpaceSettings]
     var ColorSpaceUsage: js.UndefOr[VideoSelectorColorSpaceUsage]
     var SelectorSettings: js.UndefOr[VideoSelectorSettings]
   }
@@ -12011,11 +12133,13 @@ package medialive {
     @inline
     def apply(
         ColorSpace: js.UndefOr[VideoSelectorColorSpace] = js.undefined,
+        ColorSpaceSettings: js.UndefOr[VideoSelectorColorSpaceSettings] = js.undefined,
         ColorSpaceUsage: js.UndefOr[VideoSelectorColorSpaceUsage] = js.undefined,
         SelectorSettings: js.UndefOr[VideoSelectorSettings] = js.undefined
     ): VideoSelector = {
       val __obj = js.Dynamic.literal()
       ColorSpace.foreach(__v => __obj.updateDynamic("ColorSpace")(__v.asInstanceOf[js.Any]))
+      ColorSpaceSettings.foreach(__v => __obj.updateDynamic("ColorSpaceSettings")(__v.asInstanceOf[js.Any]))
       ColorSpaceUsage.foreach(__v => __obj.updateDynamic("ColorSpaceUsage")(__v.asInstanceOf[js.Any]))
       SelectorSettings.foreach(__v => __obj.updateDynamic("SelectorSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoSelector]
@@ -12028,10 +12152,30 @@ package medialive {
   sealed trait VideoSelectorColorSpace extends js.Any
   object VideoSelectorColorSpace {
     val FOLLOW = "FOLLOW".asInstanceOf[VideoSelectorColorSpace]
+    val HDR10 = "HDR10".asInstanceOf[VideoSelectorColorSpace]
+    val HLG_2020 = "HLG_2020".asInstanceOf[VideoSelectorColorSpace]
     val REC_601 = "REC_601".asInstanceOf[VideoSelectorColorSpace]
     val REC_709 = "REC_709".asInstanceOf[VideoSelectorColorSpace]
 
-    @inline def values = js.Array(FOLLOW, REC_601, REC_709)
+    @inline def values = js.Array(FOLLOW, HDR10, HLG_2020, REC_601, REC_709)
+  }
+
+  /** Video Selector Color Space Settings
+    */
+  @js.native
+  trait VideoSelectorColorSpaceSettings extends js.Object {
+    var Hdr10Settings: js.UndefOr[Hdr10Settings]
+  }
+
+  object VideoSelectorColorSpaceSettings {
+    @inline
+    def apply(
+        Hdr10Settings: js.UndefOr[Hdr10Settings] = js.undefined
+    ): VideoSelectorColorSpaceSettings = {
+      val __obj = js.Dynamic.literal()
+      Hdr10Settings.foreach(__v => __obj.updateDynamic("Hdr10Settings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoSelectorColorSpaceSettings]
+    }
   }
 
   /** Video Selector Color Space Usage
@@ -12126,6 +12270,33 @@ package medialive {
       PublicAddressAllocationIds.foreach(__v => __obj.updateDynamic("PublicAddressAllocationIds")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcOutputSettings]
+    }
+  }
+
+  /** The properties for a private VPC Output
+    */
+  @js.native
+  trait VpcOutputSettingsDescription extends js.Object {
+    var AvailabilityZones: js.UndefOr[__listOf__string]
+    var NetworkInterfaceIds: js.UndefOr[__listOf__string]
+    var SecurityGroupIds: js.UndefOr[__listOf__string]
+    var SubnetIds: js.UndefOr[__listOf__string]
+  }
+
+  object VpcOutputSettingsDescription {
+    @inline
+    def apply(
+        AvailabilityZones: js.UndefOr[__listOf__string] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[__listOf__string] = js.undefined,
+        SecurityGroupIds: js.UndefOr[__listOf__string] = js.undefined,
+        SubnetIds: js.UndefOr[__listOf__string] = js.undefined
+    ): VpcOutputSettingsDescription = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcOutputSettingsDescription]
     }
   }
 

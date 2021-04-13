@@ -80,6 +80,7 @@ package object appstream {
     @inline def createImageBuilderStreamingURLFuture(params: CreateImageBuilderStreamingURLRequest): Future[CreateImageBuilderStreamingURLResult] = service.createImageBuilderStreamingURL(params).promise().toFuture
     @inline def createStackFuture(params: CreateStackRequest): Future[CreateStackResult] = service.createStack(params).promise().toFuture
     @inline def createStreamingURLFuture(params: CreateStreamingURLRequest): Future[CreateStreamingURLResult] = service.createStreamingURL(params).promise().toFuture
+    @inline def createUpdatedImageFuture(params: CreateUpdatedImageRequest): Future[CreateUpdatedImageResult] = service.createUpdatedImage(params).promise().toFuture
     @inline def createUsageReportSubscriptionFuture(params: CreateUsageReportSubscriptionRequest): Future[CreateUsageReportSubscriptionResult] = service.createUsageReportSubscription(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResult] = service.createUser(params).promise().toFuture
     @inline def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] = service.deleteDirectoryConfig(params).promise().toFuture
@@ -137,6 +138,7 @@ package appstream {
     def createImageBuilderStreamingURL(params: CreateImageBuilderStreamingURLRequest): Request[CreateImageBuilderStreamingURLResult] = js.native
     def createStack(params: CreateStackRequest): Request[CreateStackResult] = js.native
     def createStreamingURL(params: CreateStreamingURLRequest): Request[CreateStreamingURLResult] = js.native
+    def createUpdatedImage(params: CreateUpdatedImageRequest): Request[CreateUpdatedImageResult] = js.native
     def createUsageReportSubscription(params: CreateUsageReportSubscriptionRequest): Request[CreateUsageReportSubscriptionResult] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResult] = js.native
     def deleteDirectoryConfig(params: DeleteDirectoryConfigRequest): Request[DeleteDirectoryConfigResult] = js.native
@@ -855,6 +857,58 @@ package appstream {
       Expires.foreach(__v => __obj.updateDynamic("Expires")(__v.asInstanceOf[js.Any]))
       StreamingURL.foreach(__v => __obj.updateDynamic("StreamingURL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamingURLResult]
+    }
+  }
+
+  @js.native
+  trait CreateUpdatedImageRequest extends js.Object {
+    var existingImageName: Name
+    var newImageName: Name
+    var dryRun: js.UndefOr[Boolean]
+    var newImageDescription: js.UndefOr[Description]
+    var newImageDisplayName: js.UndefOr[DisplayName]
+    var newImageTags: js.UndefOr[Tags]
+  }
+
+  object CreateUpdatedImageRequest {
+    @inline
+    def apply(
+        existingImageName: Name,
+        newImageName: Name,
+        dryRun: js.UndefOr[Boolean] = js.undefined,
+        newImageDescription: js.UndefOr[Description] = js.undefined,
+        newImageDisplayName: js.UndefOr[DisplayName] = js.undefined,
+        newImageTags: js.UndefOr[Tags] = js.undefined
+    ): CreateUpdatedImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "existingImageName" -> existingImageName.asInstanceOf[js.Any],
+        "newImageName" -> newImageName.asInstanceOf[js.Any]
+      )
+
+      dryRun.foreach(__v => __obj.updateDynamic("dryRun")(__v.asInstanceOf[js.Any]))
+      newImageDescription.foreach(__v => __obj.updateDynamic("newImageDescription")(__v.asInstanceOf[js.Any]))
+      newImageDisplayName.foreach(__v => __obj.updateDynamic("newImageDisplayName")(__v.asInstanceOf[js.Any]))
+      newImageTags.foreach(__v => __obj.updateDynamic("newImageTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUpdatedImageRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUpdatedImageResult extends js.Object {
+    var canUpdateImage: js.UndefOr[Boolean]
+    var image: js.UndefOr[Image]
+  }
+
+  object CreateUpdatedImageResult {
+    @inline
+    def apply(
+        canUpdateImage: js.UndefOr[Boolean] = js.undefined,
+        image: js.UndefOr[Image] = js.undefined
+    ): CreateUpdatedImageResult = {
+      val __obj = js.Dynamic.literal()
+      canUpdateImage.foreach(__v => __obj.updateDynamic("canUpdateImage")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUpdatedImageResult]
     }
   }
 
@@ -1981,6 +2035,7 @@ package appstream {
     var DisplayName: js.UndefOr[String]
     var ImageBuilderName: js.UndefOr[String]
     var ImageBuilderSupported: js.UndefOr[Boolean]
+    var ImageErrors: js.UndefOr[ResourceErrors]
     var ImagePermissions: js.UndefOr[ImagePermissions]
     var Platform: js.UndefOr[PlatformType]
     var PublicBaseImageReleasedDate: js.UndefOr[Timestamp]
@@ -2002,6 +2057,7 @@ package appstream {
         DisplayName: js.UndefOr[String] = js.undefined,
         ImageBuilderName: js.UndefOr[String] = js.undefined,
         ImageBuilderSupported: js.UndefOr[Boolean] = js.undefined,
+        ImageErrors: js.UndefOr[ResourceErrors] = js.undefined,
         ImagePermissions: js.UndefOr[ImagePermissions] = js.undefined,
         Platform: js.UndefOr[PlatformType] = js.undefined,
         PublicBaseImageReleasedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -2022,6 +2078,7 @@ package appstream {
       DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       ImageBuilderName.foreach(__v => __obj.updateDynamic("ImageBuilderName")(__v.asInstanceOf[js.Any]))
       ImageBuilderSupported.foreach(__v => __obj.updateDynamic("ImageBuilderSupported")(__v.asInstanceOf[js.Any]))
+      ImageErrors.foreach(__v => __obj.updateDynamic("ImageErrors")(__v.asInstanceOf[js.Any]))
       ImagePermissions.foreach(__v => __obj.updateDynamic("ImagePermissions")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       PublicBaseImageReleasedDate.foreach(__v => __obj.updateDynamic("PublicBaseImageReleasedDate")(__v.asInstanceOf[js.Any]))
@@ -2115,8 +2172,10 @@ package appstream {
     val SNAPSHOTTING = "SNAPSHOTTING".asInstanceOf[ImageBuilderState]
     val DELETING = "DELETING".asInstanceOf[ImageBuilderState]
     val FAILED = "FAILED".asInstanceOf[ImageBuilderState]
+    val UPDATING = "UPDATING".asInstanceOf[ImageBuilderState]
+    val PENDING_QUALIFICATION = "PENDING_QUALIFICATION".asInstanceOf[ImageBuilderState]
 
-    @inline def values = js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED)
+    @inline def values = js.Array(PENDING, UPDATING_AGENT, RUNNING, STOPPING, STOPPED, REBOOTING, SNAPSHOTTING, DELETING, FAILED, UPDATING, PENDING_QUALIFICATION)
   }
 
   /** Describes the reason why the last image builder state change occurred.

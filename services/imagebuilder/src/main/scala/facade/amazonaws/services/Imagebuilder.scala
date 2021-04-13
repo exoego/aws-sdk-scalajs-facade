@@ -56,6 +56,8 @@ package object imagebuilder {
   type InstanceProfileNameType = String
   type InstanceType = String
   type InstanceTypeList = js.Array[InstanceType]
+  type LaunchTemplateConfigurationList = js.Array[LaunchTemplateConfiguration]
+  type LaunchTemplateId = String
   type LicenseConfigurationArn = String
   type LicenseConfigurationArnList = js.Array[LicenseConfigurationArn]
   type NonEmptyString = String
@@ -540,6 +542,7 @@ package imagebuilder {
     var description: js.UndefOr[NonEmptyString]
     var dockerfileTemplateData: js.UndefOr[DockerFileTemplate]
     var encrypted: js.UndefOr[NullableBoolean]
+    var instanceConfiguration: js.UndefOr[InstanceConfiguration]
     var kmsKeyId: js.UndefOr[NonEmptyString]
     var name: js.UndefOr[ResourceName]
     var owner: js.UndefOr[NonEmptyString]
@@ -561,6 +564,7 @@ package imagebuilder {
         description: js.UndefOr[NonEmptyString] = js.undefined,
         dockerfileTemplateData: js.UndefOr[DockerFileTemplate] = js.undefined,
         encrypted: js.UndefOr[NullableBoolean] = js.undefined,
+        instanceConfiguration: js.UndefOr[InstanceConfiguration] = js.undefined,
         kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         owner: js.UndefOr[NonEmptyString] = js.undefined,
@@ -579,6 +583,7 @@ package imagebuilder {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       dockerfileTemplateData.foreach(__v => __obj.updateDynamic("dockerfileTemplateData")(__v.asInstanceOf[js.Any]))
       encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
+      instanceConfiguration.foreach(__v => __obj.updateDynamic("instanceConfiguration")(__v.asInstanceOf[js.Any]))
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
@@ -722,14 +727,15 @@ package imagebuilder {
     var clientToken: ClientToken
     var components: ComponentConfigurationList
     var containerType: ContainerType
-    var dockerfileTemplateData: InlineDockerFileTemplate
     var name: ResourceName
     var parentImage: NonEmptyString
     var semanticVersion: VersionNumber
     var targetRepository: TargetContainerRepository
     var description: js.UndefOr[NonEmptyString]
+    var dockerfileTemplateData: js.UndefOr[InlineDockerFileTemplate]
     var dockerfileTemplateUri: js.UndefOr[Uri]
     var imageOsVersionOverride: js.UndefOr[NonEmptyString]
+    var instanceConfiguration: js.UndefOr[InstanceConfiguration]
     var kmsKeyId: js.UndefOr[NonEmptyString]
     var platformOverride: js.UndefOr[Platform]
     var tags: js.UndefOr[TagMap]
@@ -742,14 +748,15 @@ package imagebuilder {
         clientToken: ClientToken,
         components: ComponentConfigurationList,
         containerType: ContainerType,
-        dockerfileTemplateData: InlineDockerFileTemplate,
         name: ResourceName,
         parentImage: NonEmptyString,
         semanticVersion: VersionNumber,
         targetRepository: TargetContainerRepository,
         description: js.UndefOr[NonEmptyString] = js.undefined,
+        dockerfileTemplateData: js.UndefOr[InlineDockerFileTemplate] = js.undefined,
         dockerfileTemplateUri: js.UndefOr[Uri] = js.undefined,
         imageOsVersionOverride: js.UndefOr[NonEmptyString] = js.undefined,
+        instanceConfiguration: js.UndefOr[InstanceConfiguration] = js.undefined,
         kmsKeyId: js.UndefOr[NonEmptyString] = js.undefined,
         platformOverride: js.UndefOr[Platform] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
@@ -759,7 +766,6 @@ package imagebuilder {
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "components" -> components.asInstanceOf[js.Any],
         "containerType" -> containerType.asInstanceOf[js.Any],
-        "dockerfileTemplateData" -> dockerfileTemplateData.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
         "parentImage" -> parentImage.asInstanceOf[js.Any],
         "semanticVersion" -> semanticVersion.asInstanceOf[js.Any],
@@ -767,8 +773,10 @@ package imagebuilder {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      dockerfileTemplateData.foreach(__v => __obj.updateDynamic("dockerfileTemplateData")(__v.asInstanceOf[js.Any]))
       dockerfileTemplateUri.foreach(__v => __obj.updateDynamic("dockerfileTemplateUri")(__v.asInstanceOf[js.Any]))
       imageOsVersionOverride.foreach(__v => __obj.updateDynamic("imageOsVersionOverride")(__v.asInstanceOf[js.Any]))
+      instanceConfiguration.foreach(__v => __obj.updateDynamic("instanceConfiguration")(__v.asInstanceOf[js.Any]))
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       platformOverride.foreach(__v => __obj.updateDynamic("platformOverride")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1052,7 +1060,7 @@ package imagebuilder {
   @js.native
   trait CreateInfrastructureConfigurationRequest extends js.Object {
     var clientToken: ClientToken
-    var instanceProfileName: NonEmptyString
+    var instanceProfileName: InstanceProfileNameType
     var name: ResourceName
     var description: js.UndefOr[NonEmptyString]
     var instanceTypes: js.UndefOr[InstanceTypeList]
@@ -1070,7 +1078,7 @@ package imagebuilder {
     @inline
     def apply(
         clientToken: ClientToken,
-        instanceProfileName: NonEmptyString,
+        instanceProfileName: InstanceProfileNameType,
         name: ResourceName,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
@@ -1384,6 +1392,7 @@ package imagebuilder {
     var region: NonEmptyString
     var amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration]
     var containerDistributionConfiguration: js.UndefOr[ContainerDistributionConfiguration]
+    var launchTemplateConfigurations: js.UndefOr[LaunchTemplateConfigurationList]
     var licenseConfigurationArns: js.UndefOr[LicenseConfigurationArnList]
   }
 
@@ -1393,6 +1402,7 @@ package imagebuilder {
         region: NonEmptyString,
         amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration] = js.undefined,
         containerDistributionConfiguration: js.UndefOr[ContainerDistributionConfiguration] = js.undefined,
+        launchTemplateConfigurations: js.UndefOr[LaunchTemplateConfigurationList] = js.undefined,
         licenseConfigurationArns: js.UndefOr[LicenseConfigurationArnList] = js.undefined
     ): Distribution = {
       val __obj = js.Dynamic.literal(
@@ -1401,6 +1411,7 @@ package imagebuilder {
 
       amiDistributionConfiguration.foreach(__v => __obj.updateDynamic("amiDistributionConfiguration")(__v.asInstanceOf[js.Any]))
       containerDistributionConfiguration.foreach(__v => __obj.updateDynamic("containerDistributionConfiguration")(__v.asInstanceOf[js.Any]))
+      launchTemplateConfigurations.foreach(__v => __obj.updateDynamic("launchTemplateConfigurations")(__v.asInstanceOf[js.Any]))
       licenseConfigurationArns.foreach(__v => __obj.updateDynamic("licenseConfigurationArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Distribution]
     }
@@ -2558,6 +2569,27 @@ package imagebuilder {
     }
   }
 
+  /** Defines a custom source AMI and block device mapping configurations of an instance used for building and testing container images.
+    */
+  @js.native
+  trait InstanceConfiguration extends js.Object {
+    var blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings]
+    var image: js.UndefOr[NonEmptyString]
+  }
+
+  object InstanceConfiguration {
+    @inline
+    def apply(
+        blockDeviceMappings: js.UndefOr[InstanceBlockDeviceMappings] = js.undefined,
+        image: js.UndefOr[NonEmptyString] = js.undefined
+    ): InstanceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      blockDeviceMappings.foreach(__v => __obj.updateDynamic("blockDeviceMappings")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceConfiguration]
+    }
+  }
+
   /** Describes the configuration for a launch permission. The launch permission modification request is sent to the [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]] API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html|EC2 ModifyImageAttribute]].
     */
   @js.native
@@ -2576,6 +2608,32 @@ package imagebuilder {
       userGroups.foreach(__v => __obj.updateDynamic("userGroups")(__v.asInstanceOf[js.Any]))
       userIds.foreach(__v => __obj.updateDynamic("userIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchPermissionConfiguration]
+    }
+  }
+
+  /** Identifies an EC2 launch template to use for a specific account.
+    */
+  @js.native
+  trait LaunchTemplateConfiguration extends js.Object {
+    var launchTemplateId: LaunchTemplateId
+    var accountId: js.UndefOr[AccountId]
+    var setDefaultVersion: js.UndefOr[Boolean]
+  }
+
+  object LaunchTemplateConfiguration {
+    @inline
+    def apply(
+        launchTemplateId: LaunchTemplateId,
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        setDefaultVersion: js.UndefOr[Boolean] = js.undefined
+    ): LaunchTemplateConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "launchTemplateId" -> launchTemplateId.asInstanceOf[js.Any]
+      )
+
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      setDefaultVersion.foreach(__v => __obj.updateDynamic("setDefaultVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LaunchTemplateConfiguration]
     }
   }
 
@@ -3657,7 +3715,7 @@ package imagebuilder {
   trait UpdateInfrastructureConfigurationRequest extends js.Object {
     var clientToken: ClientToken
     var infrastructureConfigurationArn: InfrastructureConfigurationArn
-    var instanceProfileName: NonEmptyString
+    var instanceProfileName: InstanceProfileNameType
     var description: js.UndefOr[NonEmptyString]
     var instanceTypes: js.UndefOr[InstanceTypeList]
     var keyPair: js.UndefOr[NonEmptyString]
@@ -3674,7 +3732,7 @@ package imagebuilder {
     def apply(
         clientToken: ClientToken,
         infrastructureConfigurationArn: InfrastructureConfigurationArn,
-        instanceProfileName: NonEmptyString,
+        instanceProfileName: InstanceProfileNameType,
         description: js.UndefOr[NonEmptyString] = js.undefined,
         instanceTypes: js.UndefOr[InstanceTypeList] = js.undefined,
         keyPair: js.UndefOr[NonEmptyString] = js.undefined,

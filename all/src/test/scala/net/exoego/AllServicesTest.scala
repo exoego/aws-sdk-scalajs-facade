@@ -624,6 +624,14 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.location.Location(config)
   }
 
+  test("LookoutEquipment") {
+    val instance = new services.lookoutequipment.LookoutEquipment(config)
+  }
+
+  test("LookoutMetrics") {
+    val instance = new services.lookoutmetrics.LookoutMetrics(config)
+  }
+
   test("LookoutVision") {
     val instance = new services.lookoutvision.LookoutVision(config)
   }
@@ -702,6 +710,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("MediaTailor") {
     val instance = new services.mediatailor.MediaTailor(config)
+  }
+
+  test("Mgn") {
+    val instance = new services.mgn.Mgn(config)
   }
 
   test("MigrationHub") {

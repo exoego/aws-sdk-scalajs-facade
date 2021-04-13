@@ -11,12 +11,15 @@ package object fms {
   type AppsList = js.Array[App]
   type AppsListsData = js.Array[AppsListDataSummary]
   type AwsEc2NetworkInterfaceViolations = js.Array[AwsEc2NetworkInterfaceViolation]
+  type BasicInteger = Int
   type CIDR = String
   type ComplianceViolators = js.Array[ComplianceViolator]
   type CustomerPolicyScopeId = String
   type CustomerPolicyScopeIdList = js.Array[CustomerPolicyScopeId]
   type CustomerPolicyScopeMap = js.Dictionary[CustomerPolicyScopeIdList]
   type DetailedInfo = String
+  type DnsRuleGroupPriorities = js.Array[DnsRuleGroupPriority]
+  type DnsRuleGroupPriority = Int
   type EvaluationResults = js.Array[EvaluationResult]
   type IPPortNumber = Double
   type IssueInfoMap = js.Dictionary[DetailedInfo]
@@ -440,6 +443,81 @@ package fms {
     def apply(): DisassociateAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateAdminAccountRequest]
+    }
+  }
+
+  /** A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again.
+    */
+  @js.native
+  trait DnsDuplicateRuleGroupViolation extends js.Object {
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+    var ViolationTargetDescription: js.UndefOr[LengthBoundedString]
+  }
+
+  object DnsDuplicateRuleGroupViolation {
+    @inline
+    def apply(
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined,
+        ViolationTargetDescription: js.UndefOr[LengthBoundedString] = js.undefined
+    ): DnsDuplicateRuleGroupViolation = {
+      val __obj = js.Dynamic.literal()
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      ViolationTargetDescription.foreach(__v => __obj.updateDynamic("ViolationTargetDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DnsDuplicateRuleGroupViolation]
+    }
+  }
+
+  /** The VPC that Firewall Manager was applying a DNS Fireall policy to reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed due to the limit.
+    */
+  @js.native
+  trait DnsRuleGroupLimitExceededViolation extends js.Object {
+    var NumberOfRuleGroupsAlreadyAssociated: js.UndefOr[BasicInteger]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+    var ViolationTargetDescription: js.UndefOr[LengthBoundedString]
+  }
+
+  object DnsRuleGroupLimitExceededViolation {
+    @inline
+    def apply(
+        NumberOfRuleGroupsAlreadyAssociated: js.UndefOr[BasicInteger] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined,
+        ViolationTargetDescription: js.UndefOr[LengthBoundedString] = js.undefined
+    ): DnsRuleGroupLimitExceededViolation = {
+      val __obj = js.Dynamic.literal()
+      NumberOfRuleGroupsAlreadyAssociated.foreach(__v => __obj.updateDynamic("NumberOfRuleGroupsAlreadyAssociated")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      ViolationTargetDescription.foreach(__v => __obj.updateDynamic("ViolationTargetDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DnsRuleGroupLimitExceededViolation]
+    }
+  }
+
+  /** A rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated.
+    */
+  @js.native
+  trait DnsRuleGroupPriorityConflictViolation extends js.Object {
+    var ConflictingPolicyId: js.UndefOr[PolicyId]
+    var ConflictingPriority: js.UndefOr[DnsRuleGroupPriority]
+    var UnavailablePriorities: js.UndefOr[DnsRuleGroupPriorities]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+    var ViolationTargetDescription: js.UndefOr[LengthBoundedString]
+  }
+
+  object DnsRuleGroupPriorityConflictViolation {
+    @inline
+    def apply(
+        ConflictingPolicyId: js.UndefOr[PolicyId] = js.undefined,
+        ConflictingPriority: js.UndefOr[DnsRuleGroupPriority] = js.undefined,
+        UnavailablePriorities: js.UndefOr[DnsRuleGroupPriorities] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined,
+        ViolationTargetDescription: js.UndefOr[LengthBoundedString] = js.undefined
+    ): DnsRuleGroupPriorityConflictViolation = {
+      val __obj = js.Dynamic.literal()
+      ConflictingPolicyId.foreach(__v => __obj.updateDynamic("ConflictingPolicyId")(__v.asInstanceOf[js.Any]))
+      ConflictingPriority.foreach(__v => __obj.updateDynamic("ConflictingPriority")(__v.asInstanceOf[js.Any]))
+      UnavailablePriorities.foreach(__v => __obj.updateDynamic("UnavailablePriorities")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      ViolationTargetDescription.foreach(__v => __obj.updateDynamic("ViolationTargetDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DnsRuleGroupPriorityConflictViolation]
     }
   }
 
@@ -1584,6 +1662,9 @@ package fms {
     var AwsEc2InstanceViolation: js.UndefOr[AwsEc2InstanceViolation]
     var AwsEc2NetworkInterfaceViolation: js.UndefOr[AwsEc2NetworkInterfaceViolation]
     var AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation]
+    var DnsDuplicateRuleGroupViolation: js.UndefOr[DnsDuplicateRuleGroupViolation]
+    var DnsRuleGroupLimitExceededViolation: js.UndefOr[DnsRuleGroupLimitExceededViolation]
+    var DnsRuleGroupPriorityConflictViolation: js.UndefOr[DnsRuleGroupPriorityConflictViolation]
     var NetworkFirewallMissingExpectedRTViolation: js.UndefOr[NetworkFirewallMissingExpectedRTViolation]
     var NetworkFirewallMissingFirewallViolation: js.UndefOr[NetworkFirewallMissingFirewallViolation]
     var NetworkFirewallMissingSubnetViolation: js.UndefOr[NetworkFirewallMissingSubnetViolation]
@@ -1596,6 +1677,9 @@ package fms {
         AwsEc2InstanceViolation: js.UndefOr[AwsEc2InstanceViolation] = js.undefined,
         AwsEc2NetworkInterfaceViolation: js.UndefOr[AwsEc2NetworkInterfaceViolation] = js.undefined,
         AwsVPCSecurityGroupViolation: js.UndefOr[AwsVPCSecurityGroupViolation] = js.undefined,
+        DnsDuplicateRuleGroupViolation: js.UndefOr[DnsDuplicateRuleGroupViolation] = js.undefined,
+        DnsRuleGroupLimitExceededViolation: js.UndefOr[DnsRuleGroupLimitExceededViolation] = js.undefined,
+        DnsRuleGroupPriorityConflictViolation: js.UndefOr[DnsRuleGroupPriorityConflictViolation] = js.undefined,
         NetworkFirewallMissingExpectedRTViolation: js.UndefOr[NetworkFirewallMissingExpectedRTViolation] = js.undefined,
         NetworkFirewallMissingFirewallViolation: js.UndefOr[NetworkFirewallMissingFirewallViolation] = js.undefined,
         NetworkFirewallMissingSubnetViolation: js.UndefOr[NetworkFirewallMissingSubnetViolation] = js.undefined,
@@ -1605,6 +1689,9 @@ package fms {
       AwsEc2InstanceViolation.foreach(__v => __obj.updateDynamic("AwsEc2InstanceViolation")(__v.asInstanceOf[js.Any]))
       AwsEc2NetworkInterfaceViolation.foreach(__v => __obj.updateDynamic("AwsEc2NetworkInterfaceViolation")(__v.asInstanceOf[js.Any]))
       AwsVPCSecurityGroupViolation.foreach(__v => __obj.updateDynamic("AwsVPCSecurityGroupViolation")(__v.asInstanceOf[js.Any]))
+      DnsDuplicateRuleGroupViolation.foreach(__v => __obj.updateDynamic("DnsDuplicateRuleGroupViolation")(__v.asInstanceOf[js.Any]))
+      DnsRuleGroupLimitExceededViolation.foreach(__v => __obj.updateDynamic("DnsRuleGroupLimitExceededViolation")(__v.asInstanceOf[js.Any]))
+      DnsRuleGroupPriorityConflictViolation.foreach(__v => __obj.updateDynamic("DnsRuleGroupPriorityConflictViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallMissingExpectedRTViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingExpectedRTViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallMissingFirewallViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingFirewallViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallMissingSubnetViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingSubnetViolation")(__v.asInstanceOf[js.Any]))
@@ -1706,8 +1793,9 @@ package fms {
     val SECURITY_GROUPS_CONTENT_AUDIT = "SECURITY_GROUPS_CONTENT_AUDIT".asInstanceOf[SecurityServiceType]
     val SECURITY_GROUPS_USAGE_AUDIT = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
     val NETWORK_FIREWALL = "NETWORK_FIREWALL".asInstanceOf[SecurityServiceType]
+    val DNS_FIREWALL = "DNS_FIREWALL".asInstanceOf[SecurityServiceType]
 
-    @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT, NETWORK_FIREWALL)
+    @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT, NETWORK_FIREWALL, DNS_FIREWALL)
   }
 
   /** AWS Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
@@ -1889,10 +1977,12 @@ package fms {
     val RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_UNUSED = "SECURITY_GROUP_UNUSED".asInstanceOf[ViolationReason]
     val SECURITY_GROUP_REDUNDANT = "SECURITY_GROUP_REDUNDANT".asInstanceOf[ViolationReason]
+    val FMS_CREATED_SECURITY_GROUP_EDITED = "FMS_CREATED_SECURITY_GROUP_EDITED".asInstanceOf[ViolationReason]
     val MISSING_FIREWALL = "MISSING_FIREWALL".asInstanceOf[ViolationReason]
     val MISSING_FIREWALL_SUBNET_IN_AZ = "MISSING_FIREWALL_SUBNET_IN_AZ".asInstanceOf[ViolationReason]
     val MISSING_EXPECTED_ROUTE_TABLE = "MISSING_EXPECTED_ROUTE_TABLE".asInstanceOf[ViolationReason]
     val NETWORK_FIREWALL_POLICY_MODIFIED = "NETWORK_FIREWALL_POLICY_MODIFIED".asInstanceOf[ViolationReason]
+    val RESOURCE_MISSING_DNS_FIREWALL = "RESOURCE_MISSING_DNS_FIREWALL".asInstanceOf[ViolationReason]
 
     @inline def values = js.Array(
       WEB_ACL_MISSING_RULE_GROUP,
@@ -1904,10 +1994,12 @@ package fms {
       RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
       SECURITY_GROUP_UNUSED,
       SECURITY_GROUP_REDUNDANT,
+      FMS_CREATED_SECURITY_GROUP_EDITED,
       MISSING_FIREWALL,
       MISSING_FIREWALL_SUBNET_IN_AZ,
       MISSING_EXPECTED_ROUTE_TABLE,
-      NETWORK_FIREWALL_POLICY_MODIFIED
+      NETWORK_FIREWALL_POLICY_MODIFIED,
+      RESOURCE_MISSING_DNS_FIREWALL
     )
   }
 }

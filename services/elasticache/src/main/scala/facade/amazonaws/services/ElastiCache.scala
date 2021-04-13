@@ -1127,6 +1127,7 @@ package elasticache {
     var SourceSnapshotName: String
     var TargetSnapshotName: String
     var KmsKeyId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
     var TargetBucket: js.UndefOr[String]
   }
 
@@ -1136,6 +1137,7 @@ package elasticache {
         SourceSnapshotName: String,
         TargetSnapshotName: String,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TargetBucket: js.UndefOr[String] = js.undefined
     ): CopySnapshotMessage = {
       val __obj = js.Dynamic.literal(
@@ -1144,6 +1146,7 @@ package elasticache {
       )
 
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetBucket.foreach(__v => __obj.updateDynamic("TargetBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotMessage]
     }
@@ -1283,6 +1286,7 @@ package elasticache {
     var CacheParameterGroupFamily: String
     var CacheParameterGroupName: String
     var Description: String
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateCacheParameterGroupMessage {
@@ -1290,13 +1294,16 @@ package elasticache {
     def apply(
         CacheParameterGroupFamily: String,
         CacheParameterGroupName: String,
-        Description: String
+        Description: String,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCacheParameterGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheParameterGroupFamily" -> CacheParameterGroupFamily.asInstanceOf[js.Any],
         "CacheParameterGroupName" -> CacheParameterGroupName.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCacheParameterGroupMessage]
     }
   }
@@ -1323,18 +1330,22 @@ package elasticache {
   trait CreateCacheSecurityGroupMessage extends js.Object {
     var CacheSecurityGroupName: String
     var Description: String
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateCacheSecurityGroupMessage {
     @inline
     def apply(
         CacheSecurityGroupName: String,
-        Description: String
+        Description: String,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCacheSecurityGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheSecurityGroupName" -> CacheSecurityGroupName.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCacheSecurityGroupMessage]
     }
   }
@@ -1362,6 +1373,7 @@ package elasticache {
     var CacheSubnetGroupDescription: String
     var CacheSubnetGroupName: String
     var SubnetIds: SubnetIdentifierList
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateCacheSubnetGroupMessage {
@@ -1369,13 +1381,16 @@ package elasticache {
     def apply(
         CacheSubnetGroupDescription: String,
         CacheSubnetGroupName: String,
-        SubnetIds: SubnetIdentifierList
+        SubnetIds: SubnetIdentifierList,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCacheSubnetGroupMessage = {
       val __obj = js.Dynamic.literal(
         "CacheSubnetGroupDescription" -> CacheSubnetGroupDescription.asInstanceOf[js.Any],
         "CacheSubnetGroupName" -> CacheSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCacheSubnetGroupMessage]
     }
   }
@@ -1573,6 +1588,7 @@ package elasticache {
     var CacheClusterId: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var ReplicationGroupId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateSnapshotMessage {
@@ -1581,7 +1597,8 @@ package elasticache {
         SnapshotName: String,
         CacheClusterId: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
-        ReplicationGroupId: js.UndefOr[String] = js.undefined
+        ReplicationGroupId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateSnapshotMessage = {
       val __obj = js.Dynamic.literal(
         "SnapshotName" -> SnapshotName.asInstanceOf[js.Any]
@@ -1590,6 +1607,7 @@ package elasticache {
       CacheClusterId.foreach(__v => __obj.updateDynamic("CacheClusterId")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotMessage]
     }
   }
@@ -1614,6 +1632,7 @@ package elasticache {
   trait CreateUserGroupMessage extends js.Object {
     var Engine: EngineType
     var UserGroupId: String
+    var Tags: js.UndefOr[TagList]
     var UserIds: js.UndefOr[UserIdListInput]
   }
 
@@ -1622,6 +1641,7 @@ package elasticache {
     def apply(
         Engine: EngineType,
         UserGroupId: String,
+        Tags: js.UndefOr[TagList] = js.undefined,
         UserIds: js.UndefOr[UserIdListInput] = js.undefined
     ): CreateUserGroupMessage = {
       val __obj = js.Dynamic.literal(
@@ -1629,6 +1649,7 @@ package elasticache {
         "UserGroupId" -> UserGroupId.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserGroupMessage]
     }
@@ -1642,6 +1663,7 @@ package elasticache {
     var UserName: UserName
     var NoPasswordRequired: js.UndefOr[BooleanOptional]
     var Passwords: js.UndefOr[PasswordListInput]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateUserMessage {
@@ -1652,7 +1674,8 @@ package elasticache {
         UserId: UserId,
         UserName: UserName,
         NoPasswordRequired: js.UndefOr[BooleanOptional] = js.undefined,
-        Passwords: js.UndefOr[PasswordListInput] = js.undefined
+        Passwords: js.UndefOr[PasswordListInput] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateUserMessage = {
       val __obj = js.Dynamic.literal(
         "AccessString" -> AccessString.asInstanceOf[js.Any],
@@ -1663,6 +1686,7 @@ package elasticache {
 
       NoPasswordRequired.foreach(__v => __obj.updateDynamic("NoPasswordRequired")(__v.asInstanceOf[js.Any]))
       Passwords.foreach(__v => __obj.updateDynamic("Passwords")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserMessage]
     }
   }
@@ -2863,7 +2887,7 @@ package elasticache {
   }
 
   /** Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.
-    * * The ```GlobalReplicationGroupIdSuffix``` represents the name of the Global Datastore, which is what you use to associate a secondary cluster.
+    * * The ```GlobalReplicationGroupIdSuffix``` represents the name of the Global datastore, which is what you use to associate a secondary cluster.
     */
   @js.native
   trait GlobalReplicationGroup extends js.Object {
@@ -2917,7 +2941,7 @@ package elasticache {
     }
   }
 
-  /** The name of the Global Datastore and role of this replication group in the Global Datastore.
+  /** The name of the Global datastore and role of this replication group in the Global datastore.
     */
   @js.native
   trait GlobalReplicationGroupInfo extends js.Object {
@@ -2938,7 +2962,7 @@ package elasticache {
     }
   }
 
-  /** A member of a Global Datastore. It contains the Replication Group Id, the AWS region and the role of the replication group.
+  /** A member of a Global datastore. It contains the Replication Group Id, the AWS region and the role of the replication group.
     */
   @js.native
   trait GlobalReplicationGroupMember extends js.Object {
@@ -3908,6 +3932,7 @@ package elasticache {
     var ReservedCacheNodesOfferingId: String
     var CacheNodeCount: js.UndefOr[IntegerOptional]
     var ReservedCacheNodeId: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
   }
 
   object PurchaseReservedCacheNodesOfferingMessage {
@@ -3915,7 +3940,8 @@ package elasticache {
     def apply(
         ReservedCacheNodesOfferingId: String,
         CacheNodeCount: js.UndefOr[IntegerOptional] = js.undefined,
-        ReservedCacheNodeId: js.UndefOr[String] = js.undefined
+        ReservedCacheNodeId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): PurchaseReservedCacheNodesOfferingMessage = {
       val __obj = js.Dynamic.literal(
         "ReservedCacheNodesOfferingId" -> ReservedCacheNodesOfferingId.asInstanceOf[js.Any]
@@ -3923,6 +3949,7 @@ package elasticache {
 
       CacheNodeCount.foreach(__v => __obj.updateDynamic("CacheNodeCount")(__v.asInstanceOf[js.Any]))
       ReservedCacheNodeId.foreach(__v => __obj.updateDynamic("ReservedCacheNodeId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseReservedCacheNodesOfferingMessage]
     }
   }
@@ -4797,7 +4824,7 @@ package elasticache {
     }
   }
 
-  /** A cost allocation Tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. A tag with a null Value is permitted.
+  /** A tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on replication groups, those actions will be replicated to all nodes in the replication group. A tag with a null Value is permitted.
     */
   @js.native
   trait Tag extends js.Object {

@@ -57,10 +57,12 @@ package object fsx {
   type OrganizationalUnitDistinguishedName = String
   type PerUnitStorageThroughput = Int
   type ProgressPercent = Int
+  type Region = String
   type RequestTime = js.Date
   type ResourceARN = String
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
+  type SourceBackupId = String
   type StartTime = js.Date
   type StorageCapacity = Int
   type SubnetId = String
@@ -80,6 +82,7 @@ package object fsx {
 
     @inline def associateFileSystemAliasesFuture(params: AssociateFileSystemAliasesRequest): Future[AssociateFileSystemAliasesResponse] = service.associateFileSystemAliases(params).promise().toFuture
     @inline def cancelDataRepositoryTaskFuture(params: CancelDataRepositoryTaskRequest): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise().toFuture
+    @inline def copyBackupFuture(params: CopyBackupRequest): Future[CopyBackupResponse] = service.copyBackup(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] = service.createBackup(params).promise().toFuture
     @inline def createDataRepositoryTaskFuture(params: CreateDataRepositoryTaskRequest): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise().toFuture
     @inline def createFileSystemFromBackupFuture(params: CreateFileSystemFromBackupRequest): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise().toFuture
@@ -107,6 +110,7 @@ package fsx {
 
     def associateFileSystemAliases(params: AssociateFileSystemAliasesRequest): Request[AssociateFileSystemAliasesResponse] = js.native
     def cancelDataRepositoryTask(params: CancelDataRepositoryTaskRequest): Request[CancelDataRepositoryTaskResponse] = js.native
+    def copyBackup(params: CopyBackupRequest): Request[CopyBackupResponse] = js.native
     def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
     def createDataRepositoryTask(params: CreateDataRepositoryTaskRequest): Request[CreateDataRepositoryTaskResponse] = js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[CreateFileSystemResponse] = js.native
@@ -130,17 +134,20 @@ package fsx {
   trait ActiveDirectoryBackupAttributes extends js.Object {
     var ActiveDirectoryId: js.UndefOr[DirectoryId]
     var DomainName: js.UndefOr[ActiveDirectoryFullyQualifiedName]
+    var ResourceARN: js.UndefOr[ResourceARN]
   }
 
   object ActiveDirectoryBackupAttributes {
     @inline
     def apply(
         ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-        DomainName: js.UndefOr[ActiveDirectoryFullyQualifiedName] = js.undefined
+        DomainName: js.UndefOr[ActiveDirectoryFullyQualifiedName] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): ActiveDirectoryBackupAttributes = {
       val __obj = js.Dynamic.literal()
       ActiveDirectoryId.foreach(__v => __obj.updateDynamic("ActiveDirectoryId")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActiveDirectoryBackupAttributes]
     }
   }
@@ -303,9 +310,7 @@ package fsx {
     @inline def values = js.Array(NONE, NEW, NEW_CHANGED)
   }
 
-  /** A backup of an Amazon FSx file system. For more information see:
-    * * [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html|Working with backups for Windows file systems]]
-    * * [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html|Working with backups for Lustre file systems]]
+  /** A backup of an Amazon FSx file system.
     */
   @js.native
   trait Backup extends js.Object {
@@ -317,8 +322,11 @@ package fsx {
     var DirectoryInformation: js.UndefOr[ActiveDirectoryBackupAttributes]
     var FailureDetails: js.UndefOr[BackupFailureDetails]
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var OwnerId: js.UndefOr[AWSAccountId]
     var ProgressPercent: js.UndefOr[ProgressPercent]
     var ResourceARN: js.UndefOr[ResourceARN]
+    var SourceBackupId: js.UndefOr[BackupId]
+    var SourceBackupRegion: js.UndefOr[Region]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -333,8 +341,11 @@ package fsx {
         DirectoryInformation: js.UndefOr[ActiveDirectoryBackupAttributes] = js.undefined,
         FailureDetails: js.UndefOr[BackupFailureDetails] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
         ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        SourceBackupId: js.UndefOr[BackupId] = js.undefined,
+        SourceBackupRegion: js.UndefOr[Region] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): Backup = {
       val __obj = js.Dynamic.literal(
@@ -348,8 +359,11 @@ package fsx {
       DirectoryInformation.foreach(__v => __obj.updateDynamic("DirectoryInformation")(__v.asInstanceOf[js.Any]))
       FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       ProgressPercent.foreach(__v => __obj.updateDynamic("ProgressPercent")(__v.asInstanceOf[js.Any]))
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      SourceBackupId.foreach(__v => __obj.updateDynamic("SourceBackupId")(__v.asInstanceOf[js.Any]))
+      SourceBackupRegion.foreach(__v => __obj.updateDynamic("SourceBackupRegion")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Backup]
     }
@@ -378,6 +392,7 @@ package fsx {
     * * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.
     * * <code>CREATING</code> - Amazon FSx is creating the new user-intiated backup
     * * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system.
+    * * <code>COPYING</code> - Amazon FSx is copying the backup.
     * * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
     * * <code>FAILED</code> - Amazon FSx could not complete the backup.
     */
@@ -390,8 +405,9 @@ package fsx {
     val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
     val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
     val PENDING = "PENDING".asInstanceOf[BackupLifecycle]
+    val COPYING = "COPYING".asInstanceOf[BackupLifecycle]
 
-    @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED, PENDING)
+    @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED, PENDING, COPYING)
   }
 
   /** The type of the backup.
@@ -470,6 +486,55 @@ package fsx {
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompletionReport]
+    }
+  }
+
+  @js.native
+  trait CopyBackupRequest extends js.Object {
+    var SourceBackupId: SourceBackupId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var CopyTags: js.UndefOr[Flag]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var SourceRegion: js.UndefOr[Region]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CopyBackupRequest {
+    @inline
+    def apply(
+        SourceBackupId: SourceBackupId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        CopyTags: js.UndefOr[Flag] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        SourceRegion: js.UndefOr[Region] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CopyBackupRequest = {
+      val __obj = js.Dynamic.literal(
+        "SourceBackupId" -> SourceBackupId.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyBackupRequest]
+    }
+  }
+
+  @js.native
+  trait CopyBackupResponse extends js.Object {
+    var Backup: js.UndefOr[Backup]
+  }
+
+  object CopyBackupResponse {
+    @inline
+    def apply(
+        Backup: js.UndefOr[Backup] = js.undefined
+    ): CopyBackupResponse = {
+      val __obj = js.Dynamic.literal()
+      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyBackupResponse]
     }
   }
 
@@ -573,6 +638,7 @@ package fsx {
     var BackupId: BackupId
     var SubnetIds: SubnetIds
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var StorageType: js.UndefOr[StorageType]
@@ -586,6 +652,7 @@ package fsx {
         BackupId: BackupId,
         SubnetIds: SubnetIds,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         StorageType: js.UndefOr[StorageType] = js.undefined,
@@ -598,6 +665,7 @@ package fsx {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -1726,7 +1794,7 @@ package fsx {
     }
   }
 
-  /** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.
+  /** The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html| Using Amazon FSx with your self-managed Microsoft Active Directory]].
     */
   @js.native
   trait SelfManagedActiveDirectoryConfiguration extends js.Object {

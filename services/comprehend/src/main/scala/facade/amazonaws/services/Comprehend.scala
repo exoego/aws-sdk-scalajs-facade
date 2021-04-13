@@ -711,6 +711,7 @@ package comprehend {
     var LanguageCode: LanguageCode
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var Mode: js.UndefOr[DocumentClassifierMode]
+    var ModelKmsKeyId: js.UndefOr[KmsKeyId]
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
     var Tags: js.UndefOr[TagList]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
@@ -726,6 +727,7 @@ package comprehend {
         LanguageCode: LanguageCode,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
+        ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
@@ -740,6 +742,7 @@ package comprehend {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -770,6 +773,7 @@ package comprehend {
     var EndpointName: ComprehendEndpointName
     var ModelArn: ComprehendModelArn
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -780,6 +784,7 @@ package comprehend {
         EndpointName: ComprehendEndpointName,
         ModelArn: ComprehendModelArn,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEndpointRequest = {
       val __obj = js.Dynamic.literal(
@@ -789,6 +794,7 @@ package comprehend {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointRequest]
     }
@@ -817,6 +823,7 @@ package comprehend {
     var LanguageCode: LanguageCode
     var RecognizerName: ComprehendArnName
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var ModelKmsKeyId: js.UndefOr[KmsKeyId]
     var Tags: js.UndefOr[TagList]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -830,6 +837,7 @@ package comprehend {
         LanguageCode: LanguageCode,
         RecognizerName: ComprehendArnName,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -842,6 +850,7 @@ package comprehend {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -1734,6 +1743,7 @@ package comprehend {
     var LanguageCode: js.UndefOr[LanguageCode]
     var Message: js.UndefOr[AnyLengthString]
     var Mode: js.UndefOr[DocumentClassifierMode]
+    var ModelKmsKeyId: js.UndefOr[KmsKeyId]
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
     var Status: js.UndefOr[ModelStatus]
     var SubmitTime: js.UndefOr[Timestamp]
@@ -1754,6 +1764,7 @@ package comprehend {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
+        ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1771,6 +1782,7 @@ package comprehend {
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
@@ -1932,6 +1944,7 @@ package comprehend {
   trait EndpointProperties extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
     var CurrentInferenceUnits: js.UndefOr[InferenceUnitsInteger]
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var DesiredInferenceUnits: js.UndefOr[InferenceUnitsInteger]
     var EndpointArn: js.UndefOr[ComprehendEndpointArn]
     var LastModifiedTime: js.UndefOr[Timestamp]
@@ -1945,6 +1958,7 @@ package comprehend {
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         CurrentInferenceUnits: js.UndefOr[InferenceUnitsInteger] = js.undefined,
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         DesiredInferenceUnits: js.UndefOr[InferenceUnitsInteger] = js.undefined,
         EndpointArn: js.UndefOr[ComprehendEndpointArn] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1955,6 +1969,7 @@ package comprehend {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       CurrentInferenceUnits.foreach(__v => __obj.updateDynamic("CurrentInferenceUnits")(__v.asInstanceOf[js.Any]))
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
       DesiredInferenceUnits.foreach(__v => __obj.updateDynamic("DesiredInferenceUnits")(__v.asInstanceOf[js.Any]))
       EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
@@ -2319,6 +2334,7 @@ package comprehend {
     var InputDataConfig: js.UndefOr[EntityRecognizerInputDataConfig]
     var LanguageCode: js.UndefOr[LanguageCode]
     var Message: js.UndefOr[AnyLengthString]
+    var ModelKmsKeyId: js.UndefOr[KmsKeyId]
     var RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata]
     var Status: js.UndefOr[ModelStatus]
     var SubmitTime: js.UndefOr[Timestamp]
@@ -2337,6 +2353,7 @@ package comprehend {
         InputDataConfig: js.UndefOr[EntityRecognizerInputDataConfig] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Message: js.UndefOr[AnyLengthString] = js.undefined,
+        ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata] = js.undefined,
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2352,6 +2369,7 @@ package comprehend {
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
       RecognizerMetadata.foreach(__v => __obj.updateDynamic("RecognizerMetadata")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))

@@ -481,6 +481,7 @@ package object iot {
   type VpcId = String
   type WaitingForDataCollectionChecksCount = Int
   type stringValue = String
+  type usePrefixAttributeValue = Boolean
 
   implicit final class IotOps(private val service: Iot) extends AnyVal {
 
@@ -10806,6 +10807,7 @@ package iot {
     var maxResults: js.UndefOr[RegistryMaxResults]
     var nextToken: js.UndefOr[NextToken]
     var thingTypeName: js.UndefOr[ThingTypeName]
+    var usePrefixAttributeValue: js.UndefOr[usePrefixAttributeValue]
   }
 
   object ListThingsRequest {
@@ -10815,7 +10817,8 @@ package iot {
         attributeValue: js.UndefOr[AttributeValue] = js.undefined,
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
-        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+        usePrefixAttributeValue: js.UndefOr[usePrefixAttributeValue] = js.undefined
     ): ListThingsRequest = {
       val __obj = js.Dynamic.literal()
       attributeName.foreach(__v => __obj.updateDynamic("attributeName")(__v.asInstanceOf[js.Any]))
@@ -10823,6 +10826,7 @@ package iot {
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
+      usePrefixAttributeValue.foreach(__v => __obj.updateDynamic("usePrefixAttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsRequest]
     }
   }

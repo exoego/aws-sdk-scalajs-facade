@@ -25,8 +25,6 @@ package object machinelearning {
   type EntityId = String
   type EntityName = String
   type EpochTime = js.Date
-  type ErrorCode = Int
-  type ErrorMessage = String
   type Evaluations = js.Array[Evaluation]
   type IntegerType = Int
   type Label = String
@@ -261,7 +259,7 @@ package machinelearning {
   /** A list of the variables to use in searching or filtering <code>BatchPrediction</code>.
     * * <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.
     * * <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.
-    * * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code>``` ``` <code>Name</code>.
+    * * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code> <code>Name</code>.
     * * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.
     * * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.
     * * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.
@@ -595,8 +593,7 @@ package machinelearning {
 
   /** Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
     * The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
-    *
-    * '''Note:'''The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.
+    * ```Note:``` The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.
     */
   @js.native
   trait CreateRealtimeEndpointOutput extends js.Object {
@@ -690,10 +687,10 @@ package machinelearning {
   /** A list of the variables to use in searching or filtering <code>DataSource</code>.
     * * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.
     * * <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.
-    * * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> ``` ``` <code>Name</code>.
+    * * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
     * * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
     * * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.
-    * '''Note:'''<title>Note</title> The variable names should match the variable names in the <code>DataSource</code>.
+    * ```Note:``` The variable names should match the variable names in the <code>DataSource</code>.
     */
   @js.native
   sealed trait DataSourceFilterVariable extends js.Any
@@ -1246,7 +1243,9 @@ package machinelearning {
     }
   }
 
-  /** Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
+  /** Contains the key values of <code>DetailsMap</code>:
+    * * <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>.
+    * * <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
     */
   @js.native
   sealed trait DetailsAttributes extends js.Any
@@ -1713,43 +1712,6 @@ package machinelearning {
     }
   }
 
-  /** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.
-    */
-  @js.native
-  trait IdempotentParameterMismatchExceptionException extends js.Object {
-    val message: ErrorMessage
-    val code: ErrorCode
-  }
-
-  /** An error on the server occurred when trying to process a request.
-    */
-  @js.native
-  trait InternalServerExceptionException extends js.Object {
-    val message: ErrorMessage
-    val code: ErrorCode
-  }
-
-  /** An error on the client occurred. Typically, the cause is an invalid input value.
-    */
-  @js.native
-  trait InvalidInputExceptionException extends js.Object {
-    val message: ErrorMessage
-    val code: ErrorCode
-  }
-
-  @js.native
-  trait InvalidTagExceptionException extends js.Object {
-    val message: ErrorMessage
-  }
-
-  /** The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ErrorMessage
-    val code: ErrorCode
-  }
-
   /** Represents the output of a <code>GetMLModel</code> operation.
     * The content consists of the detailed metadata and the current status of the <code>MLModel</code>.
     */
@@ -1854,7 +1816,7 @@ package machinelearning {
     * * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
     * * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.
     * * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
-    * For more information about performance metrics, please see the [[http://docs.aws.amazon.com/machine-learning/latest/dg|Amazon Machine Learning Developer Guide]].
+    * For more information about performance metrics, please see the [[https://docs.aws.amazon.com/machine-learning/latest/dg|Amazon Machine Learning Developer Guide]].
     */
   @js.native
   trait PerformanceMetrics extends js.Object {
@@ -1940,13 +1902,6 @@ package machinelearning {
       predictedValue.foreach(__v => __obj.updateDynamic("predictedValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Prediction]
     }
-  }
-
-  /** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.
-    */
-  @js.native
-  trait PredictorNotMountedExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   /** The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
@@ -2220,14 +2175,6 @@ package machinelearning {
     }
   }
 
-  /** A specified resource cannot be located.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: ErrorMessage
-    val code: ErrorCode
-  }
-
   /** Describes the data specification of a <code>DataSource</code>.
     */
   @js.native
@@ -2289,11 +2236,6 @@ package machinelearning {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
-  }
-
-  @js.native
-  trait TagLimitExceededExceptionException extends js.Object {
-    val message: ErrorMessage
   }
 
   @js.native

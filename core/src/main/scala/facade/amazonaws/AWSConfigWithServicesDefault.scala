@@ -157,6 +157,8 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var licensemanager: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var lightsail: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var location: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var lookoutequipment: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var lookoutmetrics: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var lookoutvision: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var machinelearning: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var macie: js.UndefOr[ParamsWithEndpoint] = js.undefined
@@ -174,6 +176,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var mediastore: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var mediastoredata: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var mediatailor: js.UndefOr[ParamsWithEndpoint] = js.undefined
+  var mgn: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var migrationhub: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var migrationhubconfig: js.UndefOr[ParamsWithEndpoint] = js.undefined
   var mobile: js.UndefOr[ParamsWithEndpoint] = js.undefined

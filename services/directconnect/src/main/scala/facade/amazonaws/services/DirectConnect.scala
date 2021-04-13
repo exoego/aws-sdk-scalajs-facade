@@ -10,6 +10,7 @@ package object directconnect {
   type ASN = Int
   type AmazonAddress = String
   type AssociatedGatewayId = String
+  type AvailableMacSecPortSpeeds = js.Array[PortSpeed]
   type AvailablePortSpeeds = js.Array[PortSpeed]
   @deprecated("Deprecated in AWS SDK", "forever")
   type AwsDevice = String
@@ -21,6 +22,8 @@ package object directconnect {
   type Bandwidth = String
   type BooleanFlag = Boolean
   type CIDR = String
+  type Cak = String
+  type Ckn = String
   type ConnectionId = String
   type ConnectionList = js.Array[Connection]
   type ConnectionName = String
@@ -34,6 +37,7 @@ package object directconnect {
   type DirectConnectGatewayId = String
   type DirectConnectGatewayList = js.Array[DirectConnectGateway]
   type DirectConnectGatewayName = String
+  type EncryptionMode = String
   type EndTime = js.Date
   type FailureTestHistoryStatus = String
   type GatewayIdToAssociate = String
@@ -52,20 +56,27 @@ package object directconnect {
   type LocationName = String
   type LongAsn = Double
   type MTU = Int
+  type MacSecCapable = Boolean
+  type MacSecKeyList = js.Array[MacSecKey]
   type MaxResultSetSize = Int
   type OwnerAccount = String
   type PaginationToken = String
   type PartnerName = String
+  type PortEncryptionStatus = String
   type PortSpeed = String
   type ProviderList = js.Array[ProviderName]
   type ProviderName = String
   type Region = String
+  type RequestMACSec = Boolean
   type ResourceArn = String
   type ResourceArnList = js.Array[ResourceArn]
   type ResourceTagList = js.Array[ResourceTag]
   type RouteFilterPrefixList = js.Array[RouteFilterPrefix]
   type RouterConfig = String
+  type SecretARN = String
+  type StartOnDate = String
   type StartTime = js.Date
+  type State = String
   type StateChangeError = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -95,6 +106,7 @@ package object directconnect {
     @inline def allocateTransitVirtualInterfaceFuture(params: AllocateTransitVirtualInterfaceRequest): Future[AllocateTransitVirtualInterfaceResult] = service.allocateTransitVirtualInterface(params).promise().toFuture
     @inline def associateConnectionWithLagFuture(params: AssociateConnectionWithLagRequest): Future[Connection] = service.associateConnectionWithLag(params).promise().toFuture
     @inline def associateHostedConnectionFuture(params: AssociateHostedConnectionRequest): Future[Connection] = service.associateHostedConnection(params).promise().toFuture
+    @inline def associateMacSecKeyFuture(params: AssociateMacSecKeyRequest): Future[AssociateMacSecKeyResponse] = service.associateMacSecKey(params).promise().toFuture
     @inline def associateVirtualInterfaceFuture(params: AssociateVirtualInterfaceRequest): Future[VirtualInterface] = service.associateVirtualInterface(params).promise().toFuture
     @inline def confirmConnectionFuture(params: ConfirmConnectionRequest): Future[ConfirmConnectionResponse] = service.confirmConnection(params).promise().toFuture
     @inline def confirmPrivateVirtualInterfaceFuture(params: ConfirmPrivateVirtualInterfaceRequest): Future[ConfirmPrivateVirtualInterfaceResponse] = service.confirmPrivateVirtualInterface(params).promise().toFuture
@@ -132,11 +144,13 @@ package object directconnect {
     @inline def describeVirtualGatewaysFuture(): Future[VirtualGateways] = service.describeVirtualGateways().promise().toFuture
     @inline def describeVirtualInterfacesFuture(params: DescribeVirtualInterfacesRequest): Future[VirtualInterfaces] = service.describeVirtualInterfaces(params).promise().toFuture
     @inline def disassociateConnectionFromLagFuture(params: DisassociateConnectionFromLagRequest): Future[Connection] = service.disassociateConnectionFromLag(params).promise().toFuture
+    @inline def disassociateMacSecKeyFuture(params: DisassociateMacSecKeyRequest): Future[DisassociateMacSecKeyResponse] = service.disassociateMacSecKey(params).promise().toFuture
     @inline def listVirtualInterfaceTestHistoryFuture(params: ListVirtualInterfaceTestHistoryRequest): Future[ListVirtualInterfaceTestHistoryResponse] = service.listVirtualInterfaceTestHistory(params).promise().toFuture
     @inline def startBgpFailoverTestFuture(params: StartBgpFailoverTestRequest): Future[StartBgpFailoverTestResponse] = service.startBgpFailoverTest(params).promise().toFuture
     @inline def stopBgpFailoverTestFuture(params: StopBgpFailoverTestRequest): Future[StopBgpFailoverTestResponse] = service.stopBgpFailoverTest(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[Connection] = service.updateConnection(params).promise().toFuture
     @inline def updateDirectConnectGatewayAssociationFuture(params: UpdateDirectConnectGatewayAssociationRequest): Future[UpdateDirectConnectGatewayAssociationResult] = service.updateDirectConnectGatewayAssociation(params).promise().toFuture
     @inline def updateLagFuture(params: UpdateLagRequest): Future[Lag] = service.updateLag(params).promise().toFuture
     @inline def updateVirtualInterfaceAttributesFuture(params: UpdateVirtualInterfaceAttributesRequest): Future[VirtualInterface] = service.updateVirtualInterfaceAttributes(params).promise().toFuture
@@ -161,6 +175,7 @@ package directconnect {
     def allocateTransitVirtualInterface(params: AllocateTransitVirtualInterfaceRequest): Request[AllocateTransitVirtualInterfaceResult] = js.native
     def associateConnectionWithLag(params: AssociateConnectionWithLagRequest): Request[Connection] = js.native
     def associateHostedConnection(params: AssociateHostedConnectionRequest): Request[Connection] = js.native
+    def associateMacSecKey(params: AssociateMacSecKeyRequest): Request[AssociateMacSecKeyResponse] = js.native
     def associateVirtualInterface(params: AssociateVirtualInterfaceRequest): Request[VirtualInterface] = js.native
     def confirmConnection(params: ConfirmConnectionRequest): Request[ConfirmConnectionResponse] = js.native
     def confirmPrivateVirtualInterface(params: ConfirmPrivateVirtualInterfaceRequest): Request[ConfirmPrivateVirtualInterfaceResponse] = js.native
@@ -198,11 +213,13 @@ package directconnect {
     def describeVirtualGateways(): Request[VirtualGateways] = js.native
     def describeVirtualInterfaces(params: DescribeVirtualInterfacesRequest): Request[VirtualInterfaces] = js.native
     def disassociateConnectionFromLag(params: DisassociateConnectionFromLagRequest): Request[Connection] = js.native
+    def disassociateMacSecKey(params: DisassociateMacSecKeyRequest): Request[DisassociateMacSecKeyResponse] = js.native
     def listVirtualInterfaceTestHistory(params: ListVirtualInterfaceTestHistoryRequest): Request[ListVirtualInterfaceTestHistoryResponse] = js.native
     def startBgpFailoverTest(params: StartBgpFailoverTestRequest): Request[StartBgpFailoverTestResponse] = js.native
     def stopBgpFailoverTest(params: StopBgpFailoverTestRequest): Request[StopBgpFailoverTestResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateConnection(params: UpdateConnectionRequest): Request[Connection] = js.native
     def updateDirectConnectGatewayAssociation(params: UpdateDirectConnectGatewayAssociationRequest): Request[UpdateDirectConnectGatewayAssociationResult] = js.native
     def updateLag(params: UpdateLagRequest): Request[Lag] = js.native
     def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] = js.native
@@ -444,6 +461,52 @@ package directconnect {
         "parentConnectionId" -> parentConnectionId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AssociateHostedConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateMacSecKeyRequest extends js.Object {
+    var connectionId: ConnectionId
+    var cak: js.UndefOr[Cak]
+    var ckn: js.UndefOr[Ckn]
+    var secretARN: js.UndefOr[SecretARN]
+  }
+
+  object AssociateMacSecKeyRequest {
+    @inline
+    def apply(
+        connectionId: ConnectionId,
+        cak: js.UndefOr[Cak] = js.undefined,
+        ckn: js.UndefOr[Ckn] = js.undefined,
+        secretARN: js.UndefOr[SecretARN] = js.undefined
+    ): AssociateMacSecKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectionId" -> connectionId.asInstanceOf[js.Any]
+      )
+
+      cak.foreach(__v => __obj.updateDynamic("cak")(__v.asInstanceOf[js.Any]))
+      ckn.foreach(__v => __obj.updateDynamic("ckn")(__v.asInstanceOf[js.Any]))
+      secretARN.foreach(__v => __obj.updateDynamic("secretARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateMacSecKeyRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateMacSecKeyResponse extends js.Object {
+    var connectionId: js.UndefOr[ConnectionId]
+    var macSecKeys: js.UndefOr[MacSecKeyList]
+  }
+
+  object AssociateMacSecKeyResponse {
+    @inline
+    def apply(
+        connectionId: js.UndefOr[ConnectionId] = js.undefined,
+        macSecKeys: js.UndefOr[MacSecKeyList] = js.undefined
+    ): AssociateMacSecKeyResponse = {
+      val __obj = js.Dynamic.literal()
+      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
+      macSecKeys.foreach(__v => __obj.updateDynamic("macSecKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateMacSecKeyResponse]
     }
   }
 
@@ -710,13 +773,17 @@ package directconnect {
     var connectionId: js.UndefOr[ConnectionId]
     var connectionName: js.UndefOr[ConnectionName]
     var connectionState: js.UndefOr[ConnectionState]
+    var encryptionMode: js.UndefOr[EncryptionMode]
     var hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy]
     var jumboFrameCapable: js.UndefOr[JumboFrameCapable]
     var lagId: js.UndefOr[LagId]
     var loaIssueTime: js.UndefOr[LoaIssueTime]
     var location: js.UndefOr[LocationCode]
+    var macSecCapable: js.UndefOr[MacSecCapable]
+    var macSecKeys: js.UndefOr[MacSecKeyList]
     var ownerAccount: js.UndefOr[OwnerAccount]
     var partnerName: js.UndefOr[PartnerName]
+    var portEncryptionStatus: js.UndefOr[PortEncryptionStatus]
     var providerName: js.UndefOr[ProviderName]
     var region: js.UndefOr[Region]
     var tags: js.UndefOr[TagList]
@@ -732,13 +799,17 @@ package directconnect {
         connectionId: js.UndefOr[ConnectionId] = js.undefined,
         connectionName: js.UndefOr[ConnectionName] = js.undefined,
         connectionState: js.UndefOr[ConnectionState] = js.undefined,
+        encryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
         jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
         lagId: js.UndefOr[LagId] = js.undefined,
         loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
         location: js.UndefOr[LocationCode] = js.undefined,
+        macSecCapable: js.UndefOr[MacSecCapable] = js.undefined,
+        macSecKeys: js.UndefOr[MacSecKeyList] = js.undefined,
         ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
         partnerName: js.UndefOr[PartnerName] = js.undefined,
+        portEncryptionStatus: js.UndefOr[PortEncryptionStatus] = js.undefined,
         providerName: js.UndefOr[ProviderName] = js.undefined,
         region: js.UndefOr[Region] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
@@ -751,13 +822,17 @@ package directconnect {
       connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
       connectionName.foreach(__v => __obj.updateDynamic("connectionName")(__v.asInstanceOf[js.Any]))
       connectionState.foreach(__v => __obj.updateDynamic("connectionState")(__v.asInstanceOf[js.Any]))
+      encryptionMode.foreach(__v => __obj.updateDynamic("encryptionMode")(__v.asInstanceOf[js.Any]))
       hasLogicalRedundancy.foreach(__v => __obj.updateDynamic("hasLogicalRedundancy")(__v.asInstanceOf[js.Any]))
       jumboFrameCapable.foreach(__v => __obj.updateDynamic("jumboFrameCapable")(__v.asInstanceOf[js.Any]))
       lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
       loaIssueTime.foreach(__v => __obj.updateDynamic("loaIssueTime")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      macSecCapable.foreach(__v => __obj.updateDynamic("macSecCapable")(__v.asInstanceOf[js.Any]))
+      macSecKeys.foreach(__v => __obj.updateDynamic("macSecKeys")(__v.asInstanceOf[js.Any]))
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
       partnerName.foreach(__v => __obj.updateDynamic("partnerName")(__v.asInstanceOf[js.Any]))
+      portEncryptionStatus.foreach(__v => __obj.updateDynamic("portEncryptionStatus")(__v.asInstanceOf[js.Any]))
       providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -840,6 +915,7 @@ package directconnect {
     var location: LocationCode
     var lagId: js.UndefOr[LagId]
     var providerName: js.UndefOr[ProviderName]
+    var requestMACSec: js.UndefOr[RequestMACSec]
     var tags: js.UndefOr[TagList]
   }
 
@@ -851,6 +927,7 @@ package directconnect {
         location: LocationCode,
         lagId: js.UndefOr[LagId] = js.undefined,
         providerName: js.UndefOr[ProviderName] = js.undefined,
+        requestMACSec: js.UndefOr[RequestMACSec] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateConnectionRequest = {
       val __obj = js.Dynamic.literal(
@@ -861,6 +938,7 @@ package directconnect {
 
       lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
       providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
+      requestMACSec.foreach(__v => __obj.updateDynamic("requestMACSec")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectionRequest]
     }
@@ -1034,6 +1112,7 @@ package directconnect {
     var childConnectionTags: js.UndefOr[TagList]
     var connectionId: js.UndefOr[ConnectionId]
     var providerName: js.UndefOr[ProviderName]
+    var requestMACSec: js.UndefOr[RequestMACSec]
     var tags: js.UndefOr[TagList]
   }
 
@@ -1047,6 +1126,7 @@ package directconnect {
         childConnectionTags: js.UndefOr[TagList] = js.undefined,
         connectionId: js.UndefOr[ConnectionId] = js.undefined,
         providerName: js.UndefOr[ProviderName] = js.undefined,
+        requestMACSec: js.UndefOr[RequestMACSec] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateLagRequest = {
       val __obj = js.Dynamic.literal(
@@ -1059,6 +1139,7 @@ package directconnect {
       childConnectionTags.foreach(__v => __obj.updateDynamic("childConnectionTags")(__v.asInstanceOf[js.Any]))
       connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
       providerName.foreach(__v => __obj.updateDynamic("providerName")(__v.asInstanceOf[js.Any]))
+      requestMACSec.foreach(__v => __obj.updateDynamic("requestMACSec")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLagRequest]
     }
@@ -2029,6 +2110,45 @@ package directconnect {
   }
 
   @js.native
+  trait DisassociateMacSecKeyRequest extends js.Object {
+    var connectionId: ConnectionId
+    var secretARN: SecretARN
+  }
+
+  object DisassociateMacSecKeyRequest {
+    @inline
+    def apply(
+        connectionId: ConnectionId,
+        secretARN: SecretARN
+    ): DisassociateMacSecKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectionId" -> connectionId.asInstanceOf[js.Any],
+        "secretARN" -> secretARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateMacSecKeyRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateMacSecKeyResponse extends js.Object {
+    var connectionId: js.UndefOr[ConnectionId]
+    var macSecKeys: js.UndefOr[MacSecKeyList]
+  }
+
+  object DisassociateMacSecKeyResponse {
+    @inline
+    def apply(
+        connectionId: js.UndefOr[ConnectionId] = js.undefined,
+        macSecKeys: js.UndefOr[MacSecKeyList] = js.undefined
+    ): DisassociateMacSecKeyResponse = {
+      val __obj = js.Dynamic.literal()
+      connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
+      macSecKeys.foreach(__v => __obj.updateDynamic("macSecKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateMacSecKeyResponse]
+    }
+  }
+
+  @js.native
   sealed trait GatewayType extends js.Any
   object GatewayType {
     val virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
@@ -2143,12 +2263,15 @@ package directconnect {
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
     var connections: js.UndefOr[ConnectionList]
     var connectionsBandwidth: js.UndefOr[Bandwidth]
+    var encryptionMode: js.UndefOr[EncryptionMode]
     var hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy]
     var jumboFrameCapable: js.UndefOr[JumboFrameCapable]
     var lagId: js.UndefOr[LagId]
     var lagName: js.UndefOr[LagName]
     var lagState: js.UndefOr[LagState]
     var location: js.UndefOr[LocationCode]
+    var macSecCapable: js.UndefOr[MacSecCapable]
+    var macSecKeys: js.UndefOr[MacSecKeyList]
     var minimumLinks: js.UndefOr[Count]
     var numberOfConnections: js.UndefOr[Count]
     var ownerAccount: js.UndefOr[OwnerAccount]
@@ -2165,12 +2288,15 @@ package directconnect {
         awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
         connections: js.UndefOr[ConnectionList] = js.undefined,
         connectionsBandwidth: js.UndefOr[Bandwidth] = js.undefined,
+        encryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
         jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
         lagId: js.UndefOr[LagId] = js.undefined,
         lagName: js.UndefOr[LagName] = js.undefined,
         lagState: js.UndefOr[LagState] = js.undefined,
         location: js.UndefOr[LocationCode] = js.undefined,
+        macSecCapable: js.UndefOr[MacSecCapable] = js.undefined,
+        macSecKeys: js.UndefOr[MacSecKeyList] = js.undefined,
         minimumLinks: js.UndefOr[Count] = js.undefined,
         numberOfConnections: js.UndefOr[Count] = js.undefined,
         ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
@@ -2184,12 +2310,15 @@ package directconnect {
       awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
       connections.foreach(__v => __obj.updateDynamic("connections")(__v.asInstanceOf[js.Any]))
       connectionsBandwidth.foreach(__v => __obj.updateDynamic("connectionsBandwidth")(__v.asInstanceOf[js.Any]))
+      encryptionMode.foreach(__v => __obj.updateDynamic("encryptionMode")(__v.asInstanceOf[js.Any]))
       hasLogicalRedundancy.foreach(__v => __obj.updateDynamic("hasLogicalRedundancy")(__v.asInstanceOf[js.Any]))
       jumboFrameCapable.foreach(__v => __obj.updateDynamic("jumboFrameCapable")(__v.asInstanceOf[js.Any]))
       lagId.foreach(__v => __obj.updateDynamic("lagId")(__v.asInstanceOf[js.Any]))
       lagName.foreach(__v => __obj.updateDynamic("lagName")(__v.asInstanceOf[js.Any]))
       lagState.foreach(__v => __obj.updateDynamic("lagState")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      macSecCapable.foreach(__v => __obj.updateDynamic("macSecCapable")(__v.asInstanceOf[js.Any]))
+      macSecKeys.foreach(__v => __obj.updateDynamic("macSecKeys")(__v.asInstanceOf[js.Any]))
       minimumLinks.foreach(__v => __obj.updateDynamic("minimumLinks")(__v.asInstanceOf[js.Any]))
       numberOfConnections.foreach(__v => __obj.updateDynamic("numberOfConnections")(__v.asInstanceOf[js.Any]))
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
@@ -2313,6 +2442,7 @@ package directconnect {
     */
   @js.native
   trait Location extends js.Object {
+    var availableMacSecPortSpeeds: js.UndefOr[AvailableMacSecPortSpeeds]
     var availablePortSpeeds: js.UndefOr[AvailablePortSpeeds]
     var availableProviders: js.UndefOr[ProviderList]
     var locationCode: js.UndefOr[LocationCode]
@@ -2323,6 +2453,7 @@ package directconnect {
   object Location {
     @inline
     def apply(
+        availableMacSecPortSpeeds: js.UndefOr[AvailableMacSecPortSpeeds] = js.undefined,
         availablePortSpeeds: js.UndefOr[AvailablePortSpeeds] = js.undefined,
         availableProviders: js.UndefOr[ProviderList] = js.undefined,
         locationCode: js.UndefOr[LocationCode] = js.undefined,
@@ -2330,6 +2461,7 @@ package directconnect {
         region: js.UndefOr[Region] = js.undefined
     ): Location = {
       val __obj = js.Dynamic.literal()
+      availableMacSecPortSpeeds.foreach(__v => __obj.updateDynamic("availableMacSecPortSpeeds")(__v.asInstanceOf[js.Any]))
       availablePortSpeeds.foreach(__v => __obj.updateDynamic("availablePortSpeeds")(__v.asInstanceOf[js.Any]))
       availableProviders.foreach(__v => __obj.updateDynamic("availableProviders")(__v.asInstanceOf[js.Any]))
       locationCode.foreach(__v => __obj.updateDynamic("locationCode")(__v.asInstanceOf[js.Any]))
@@ -2352,6 +2484,33 @@ package directconnect {
       val __obj = js.Dynamic.literal()
       locations.foreach(__v => __obj.updateDynamic("locations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Locations]
+    }
+  }
+
+  /** Information about the MAC Security (MACsec) secret key.
+    */
+  @js.native
+  trait MacSecKey extends js.Object {
+    var ckn: js.UndefOr[Ckn]
+    var secretARN: js.UndefOr[SecretARN]
+    var startOn: js.UndefOr[StartOnDate]
+    var state: js.UndefOr[State]
+  }
+
+  object MacSecKey {
+    @inline
+    def apply(
+        ckn: js.UndefOr[Ckn] = js.undefined,
+        secretARN: js.UndefOr[SecretARN] = js.undefined,
+        startOn: js.UndefOr[StartOnDate] = js.undefined,
+        state: js.UndefOr[State] = js.undefined
+    ): MacSecKey = {
+      val __obj = js.Dynamic.literal()
+      ckn.foreach(__v => __obj.updateDynamic("ckn")(__v.asInstanceOf[js.Any]))
+      secretARN.foreach(__v => __obj.updateDynamic("secretARN")(__v.asInstanceOf[js.Any]))
+      startOn.foreach(__v => __obj.updateDynamic("startOn")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MacSecKey]
     }
   }
 
@@ -2852,6 +3011,30 @@ package directconnect {
   }
 
   @js.native
+  trait UpdateConnectionRequest extends js.Object {
+    var connectionId: ConnectionId
+    var connectionName: js.UndefOr[ConnectionName]
+    var encryptionMode: js.UndefOr[EncryptionMode]
+  }
+
+  object UpdateConnectionRequest {
+    @inline
+    def apply(
+        connectionId: ConnectionId,
+        connectionName: js.UndefOr[ConnectionName] = js.undefined,
+        encryptionMode: js.UndefOr[EncryptionMode] = js.undefined
+    ): UpdateConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectionId" -> connectionId.asInstanceOf[js.Any]
+      )
+
+      connectionName.foreach(__v => __obj.updateDynamic("connectionName")(__v.asInstanceOf[js.Any]))
+      encryptionMode.foreach(__v => __obj.updateDynamic("encryptionMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectionRequest]
+    }
+  }
+
+  @js.native
   trait UpdateDirectConnectGatewayAssociationRequest extends js.Object {
     var addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
     var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
@@ -2892,6 +3075,7 @@ package directconnect {
   @js.native
   trait UpdateLagRequest extends js.Object {
     var lagId: LagId
+    var encryptionMode: js.UndefOr[EncryptionMode]
     var lagName: js.UndefOr[LagName]
     var minimumLinks: js.UndefOr[Count]
   }
@@ -2900,6 +3084,7 @@ package directconnect {
     @inline
     def apply(
         lagId: LagId,
+        encryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         lagName: js.UndefOr[LagName] = js.undefined,
         minimumLinks: js.UndefOr[Count] = js.undefined
     ): UpdateLagRequest = {
@@ -2907,6 +3092,7 @@ package directconnect {
         "lagId" -> lagId.asInstanceOf[js.Any]
       )
 
+      encryptionMode.foreach(__v => __obj.updateDynamic("encryptionMode")(__v.asInstanceOf[js.Any]))
       lagName.foreach(__v => __obj.updateDynamic("lagName")(__v.asInstanceOf[js.Any]))
       minimumLinks.foreach(__v => __obj.updateDynamic("minimumLinks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLagRequest]

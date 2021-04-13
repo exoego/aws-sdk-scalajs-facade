@@ -9,14 +9,20 @@ import facade.amazonaws._
 package object wafv2 {
   type Action = String
   type CapacityUnit = Double
+  type Conditions = js.Array[Condition]
   type ConsumedCapacity = Double
   type Country = String
   type CountryCodes = js.Array[CountryCode]
+  type CustomHTTPHeaderName = String
+  type CustomHTTPHeaderValue = String
+  type CustomHTTPHeaders = js.Array[CustomHTTPHeader]
+  type CustomResponseBodies = js.Dictionary[CustomResponseBody]
   type EntityDescription = String
   type EntityId = String
   type EntityName = String
   type ExcludedRules = js.Array[ExcludedRule]
   type FieldToMatchData = String
+  type Filters = js.Array[Filter]
   type FirewallManagerRuleGroups = js.Array[FirewallManagerRuleGroup]
   type ForwardedIPHeaderName = String
   type HTTPHeaders = js.Array[HTTPHeader]
@@ -30,6 +36,10 @@ package object wafv2 {
   type IPString = String
   type JsonPointerPath = String
   type JsonPointerPaths = js.Array[JsonPointerPath]
+  type LabelMatchKey = String
+  type LabelName = String
+  type LabelSummaries = js.Array[LabelSummary]
+  type Labels = js.Array[Label]
   type ListMaxItems = Double
   type LockToken = String
   type LogDestinationConfigs = js.Array[ResourceArn]
@@ -47,6 +57,8 @@ package object wafv2 {
   type RegularExpressionList = js.Array[Regex]
   type ResourceArn = String
   type ResourceArns = js.Array[ResourceArn]
+  type ResponseContent = String
+  type ResponseStatusCode = Int
   type RuleGroupSummaries = js.Array[RuleGroupSummary]
   type RulePriority = Int
   type RuleSummaries = js.Array[RuleSummary]
@@ -161,6 +173,35 @@ package wafv2 {
     def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
   }
 
+  /** A single action condition for a <a>Condition</a> in a logging filter.
+    */
+  @js.native
+  trait ActionCondition extends js.Object {
+    var Action: ActionValue
+  }
+
+  object ActionCondition {
+    @inline
+    def apply(
+        Action: ActionValue
+    ): ActionCondition = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ActionCondition]
+    }
+  }
+
+  @js.native
+  sealed trait ActionValue extends js.Any
+  object ActionValue {
+    val ALLOW = "ALLOW".asInstanceOf[ActionValue]
+    val BLOCK = "BLOCK".asInstanceOf[ActionValue]
+    val COUNT = "COUNT".asInstanceOf[ActionValue]
+
+    @inline def values = js.Array(ALLOW, BLOCK, COUNT)
+  }
+
   /** Inspect all of the elements that AWS WAF has parsed and extracted from the web request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>.
     * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
@@ -189,16 +230,21 @@ package wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should allow requests.
-    * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that AWS WAF should allow the request and optionally defines additional custom handling for the request.
+    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
-  trait AllowAction extends js.Object
+  trait AllowAction extends js.Object {
+    var CustomRequestHandling: js.UndefOr[CustomRequestHandling]
+  }
 
   object AllowAction {
     @inline
-    def apply(): AllowAction = {
+    def apply(
+        CustomRequestHandling: js.UndefOr[CustomRequestHandling] = js.undefined
+    ): AllowAction = {
       val __obj = js.Dynamic.literal()
+      CustomRequestHandling.foreach(__v => __obj.updateDynamic("CustomRequestHandling")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllowAction]
     }
   }
@@ -253,16 +299,21 @@ package wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should block requests.
-    * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that AWS WAF should block the request and optionally defines additional custom handling for the response to the web request.
+    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
-  trait BlockAction extends js.Object
+  trait BlockAction extends js.Object {
+    var CustomResponse: js.UndefOr[CustomResponse]
+  }
 
   object BlockAction {
     @inline
-    def apply(): BlockAction = {
+    def apply(
+        CustomResponse: js.UndefOr[CustomResponse] = js.undefined
+    ): BlockAction = {
       val __obj = js.Dynamic.literal()
+      CustomResponse.foreach(__v => __obj.updateDynamic("CustomResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlockAction]
     }
   }
@@ -368,16 +419,42 @@ package wafv2 {
     @inline def values = js.Array(EQ, NE, LE, LT, GE, GT)
   }
 
-  /** Specifies that AWS WAF should count requests.
-    * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** A single match condition for a <a>Filter</a>.
     */
   @js.native
-  trait CountAction extends js.Object
+  trait Condition extends js.Object {
+    var ActionCondition: js.UndefOr[ActionCondition]
+    var LabelNameCondition: js.UndefOr[LabelNameCondition]
+  }
+
+  object Condition {
+    @inline
+    def apply(
+        ActionCondition: js.UndefOr[ActionCondition] = js.undefined,
+        LabelNameCondition: js.UndefOr[LabelNameCondition] = js.undefined
+    ): Condition = {
+      val __obj = js.Dynamic.literal()
+      ActionCondition.foreach(__v => __obj.updateDynamic("ActionCondition")(__v.asInstanceOf[js.Any]))
+      LabelNameCondition.foreach(__v => __obj.updateDynamic("LabelNameCondition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Condition]
+    }
+  }
+
+  /** Specifies that AWS WAF should count the request. Optionally defines additional custom handling for the request.
+    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+    */
+  @js.native
+  trait CountAction extends js.Object {
+    var CustomRequestHandling: js.UndefOr[CustomRequestHandling]
+  }
 
   object CountAction {
     @inline
-    def apply(): CountAction = {
+    def apply(
+        CustomRequestHandling: js.UndefOr[CustomRequestHandling] = js.undefined
+    ): CountAction = {
       val __obj = js.Dynamic.literal()
+      CustomRequestHandling.foreach(__v => __obj.updateDynamic("CustomRequestHandling")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CountAction]
     }
   }
@@ -989,6 +1066,7 @@ package wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VisibilityConfig: VisibilityConfig
+    var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var Rules: js.UndefOr[Rules]
     var Tags: js.UndefOr[TagList]
@@ -1001,6 +1079,7 @@ package wafv2 {
         Name: EntityName,
         Scope: Scope,
         VisibilityConfig: VisibilityConfig,
+        CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -1012,6 +1091,7 @@ package wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1041,6 +1121,7 @@ package wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VisibilityConfig: VisibilityConfig
+    var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var Rules: js.UndefOr[Rules]
     var Tags: js.UndefOr[TagList]
@@ -1053,6 +1134,7 @@ package wafv2 {
         Name: EntityName,
         Scope: Scope,
         VisibilityConfig: VisibilityConfig,
+        CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -1064,6 +1146,7 @@ package wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1087,7 +1170,98 @@ package wafv2 {
     }
   }
 
-  /** In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so count is not allowed.
+  /** A custom header for custom request and response handling. This is used in <a>CustomResponse</a> and <a>CustomRequestHandling</a>.
+    */
+  @js.native
+  trait CustomHTTPHeader extends js.Object {
+    var Name: CustomHTTPHeaderName
+    var Value: CustomHTTPHeaderValue
+  }
+
+  object CustomHTTPHeader {
+    @inline
+    def apply(
+        Name: CustomHTTPHeaderName,
+        Value: CustomHTTPHeaderValue
+    ): CustomHTTPHeader = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomHTTPHeader]
+    }
+  }
+
+  /** Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count.
+    * For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
+    */
+  @js.native
+  trait CustomRequestHandling extends js.Object {
+    var InsertHeaders: CustomHTTPHeaders
+  }
+
+  object CustomRequestHandling {
+    @inline
+    def apply(
+        InsertHeaders: CustomHTTPHeaders
+    ): CustomRequestHandling = {
+      val __obj = js.Dynamic.literal(
+        "InsertHeaders" -> InsertHeaders.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomRequestHandling]
+    }
+  }
+
+  /** A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <a>BlockAction</a>.
+    * For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
+    */
+  @js.native
+  trait CustomResponse extends js.Object {
+    var ResponseCode: ResponseStatusCode
+    var CustomResponseBodyKey: js.UndefOr[EntityName]
+    var ResponseHeaders: js.UndefOr[CustomHTTPHeaders]
+  }
+
+  object CustomResponse {
+    @inline
+    def apply(
+        ResponseCode: ResponseStatusCode,
+        CustomResponseBodyKey: js.UndefOr[EntityName] = js.undefined,
+        ResponseHeaders: js.UndefOr[CustomHTTPHeaders] = js.undefined
+    ): CustomResponse = {
+      val __obj = js.Dynamic.literal(
+        "ResponseCode" -> ResponseCode.asInstanceOf[js.Any]
+      )
+
+      CustomResponseBodyKey.foreach(__v => __obj.updateDynamic("CustomResponseBodyKey")(__v.asInstanceOf[js.Any]))
+      ResponseHeaders.foreach(__v => __obj.updateDynamic("ResponseHeaders")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomResponse]
+    }
+  }
+
+  /** The response body to use in a custom response to a web request. This is referenced by key from <a>CustomResponse</a> <code>CustomResponseBodyKey</code>.
+    */
+  @js.native
+  trait CustomResponseBody extends js.Object {
+    var Content: ResponseContent
+    var ContentType: ResponseContentType
+  }
+
+  object CustomResponseBody {
+    @inline
+    def apply(
+        Content: ResponseContent,
+        ContentType: ResponseContentType
+    ): CustomResponseBody = {
+      val __obj = js.Dynamic.literal(
+        "Content" -> Content.asInstanceOf[js.Any],
+        "ContentType" -> ContentType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomResponseBody]
+    }
+  }
+
+  /** In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.
     */
   @js.native
   trait DefaultAction extends js.Object {
@@ -1373,18 +1547,27 @@ package wafv2 {
 
   @js.native
   trait DescribeManagedRuleGroupResponse extends js.Object {
+    var AvailableLabels: js.UndefOr[LabelSummaries]
     var Capacity: js.UndefOr[CapacityUnit]
+    var ConsumedLabels: js.UndefOr[LabelSummaries]
+    var LabelNamespace: js.UndefOr[LabelName]
     var Rules: js.UndefOr[RuleSummaries]
   }
 
   object DescribeManagedRuleGroupResponse {
     @inline
     def apply(
+        AvailableLabels: js.UndefOr[LabelSummaries] = js.undefined,
         Capacity: js.UndefOr[CapacityUnit] = js.undefined,
+        ConsumedLabels: js.UndefOr[LabelSummaries] = js.undefined,
+        LabelNamespace: js.UndefOr[LabelName] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
     ): DescribeManagedRuleGroupResponse = {
       val __obj = js.Dynamic.literal()
+      AvailableLabels.foreach(__v => __obj.updateDynamic("AvailableLabels")(__v.asInstanceOf[js.Any]))
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
+      ConsumedLabels.foreach(__v => __obj.updateDynamic("ConsumedLabels")(__v.asInstanceOf[js.Any]))
+      LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeManagedRuleGroupResponse]
     }
@@ -1483,6 +1666,49 @@ package wafv2 {
       UriPath.foreach(__v => __obj.updateDynamic("UriPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FieldToMatch]
     }
+  }
+
+  /** A single logging filter, used in <a>LoggingFilter</a>.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var Behavior: FilterBehavior
+    var Conditions: Conditions
+    var Requirement: FilterRequirement
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        Behavior: FilterBehavior,
+        Conditions: Conditions,
+        Requirement: FilterRequirement
+    ): Filter = {
+      val __obj = js.Dynamic.literal(
+        "Behavior" -> Behavior.asInstanceOf[js.Any],
+        "Conditions" -> Conditions.asInstanceOf[js.Any],
+        "Requirement" -> Requirement.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
+  @js.native
+  sealed trait FilterBehavior extends js.Any
+  object FilterBehavior {
+    val KEEP = "KEEP".asInstanceOf[FilterBehavior]
+    val DROP = "DROP".asInstanceOf[FilterBehavior]
+
+    @inline def values = js.Array(KEEP, DROP)
+  }
+
+  @js.native
+  sealed trait FilterRequirement extends js.Any
+  object FilterRequirement {
+    val MEETS_ALL = "MEETS_ALL".asInstanceOf[FilterRequirement]
+    val MEETS_ANY = "MEETS_ANY".asInstanceOf[FilterRequirement]
+
+    @inline def values = js.Array(MEETS_ALL, MEETS_ANY)
   }
 
   /** A rule group that's defined for an AWS Firewall Manager WAF policy.
@@ -2196,6 +2422,96 @@ package wafv2 {
     @inline def values = js.Array(ALL, KEY, VALUE)
   }
 
+  /** A single label container. This is used as an element of a label array in multiple contexts, for example, in <code>RuleLabels</code> inside a <a>Rule</a> and in <code>Labels</code> inside a <a>SampledHTTPRequest</a>.
+    */
+  @js.native
+  trait Label extends js.Object {
+    var Name: LabelName
+  }
+
+  object Label {
+    @inline
+    def apply(
+        Name: LabelName
+    ): Label = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Label]
+    }
+  }
+
+  @js.native
+  sealed trait LabelMatchScope extends js.Any
+  object LabelMatchScope {
+    val LABEL = "LABEL".asInstanceOf[LabelMatchScope]
+    val NAMESPACE = "NAMESPACE".asInstanceOf[LabelMatchScope]
+
+    @inline def values = js.Array(LABEL, NAMESPACE)
+  }
+
+  /** A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL.
+    * The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF performs the search for labels that were added in the same context as the label match statement.
+    */
+  @js.native
+  trait LabelMatchStatement extends js.Object {
+    var Key: LabelMatchKey
+    var Scope: LabelMatchScope
+  }
+
+  object LabelMatchStatement {
+    @inline
+    def apply(
+        Key: LabelMatchKey,
+        Scope: LabelMatchScope
+    ): LabelMatchStatement = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LabelMatchStatement]
+    }
+  }
+
+  /** A single label name condition for a <a>Condition</a> in a logging filter.
+    */
+  @js.native
+  trait LabelNameCondition extends js.Object {
+    var LabelName: LabelName
+  }
+
+  object LabelNameCondition {
+    @inline
+    def apply(
+        LabelName: LabelName
+    ): LabelNameCondition = {
+      val __obj = js.Dynamic.literal(
+        "LabelName" -> LabelName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LabelNameCondition]
+    }
+  }
+
+  /** List of labels used by one or more of the rules of a <a>RuleGroup</a>. This summary object is used for the following rule group lists:
+    * * <code>AvailableLabels</code> - Labels that rules add to matching requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.
+    * * <code>ConsumedLabels</code> - Labels that rules match against. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+    */
+  @js.native
+  trait LabelSummary extends js.Object {
+    var Name: js.UndefOr[LabelName]
+  }
+
+  object LabelSummary {
+    @inline
+    def apply(
+        Name: js.UndefOr[LabelName] = js.undefined
+    ): LabelSummary = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LabelSummary]
+    }
+  }
+
   @js.native
   trait ListAvailableManagedRuleGroupsRequest extends js.Object {
     var Scope: Scope
@@ -2532,12 +2848,13 @@ package wafv2 {
     }
   }
 
-  /** Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs.
+  /** Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
     var LogDestinationConfigs: LogDestinationConfigs
     var ResourceArn: ResourceArn
+    var LoggingFilter: js.UndefOr[LoggingFilter]
     var ManagedByFirewallManager: js.UndefOr[Boolean]
     var RedactedFields: js.UndefOr[RedactedFields]
   }
@@ -2547,6 +2864,7 @@ package wafv2 {
     def apply(
         LogDestinationConfigs: LogDestinationConfigs,
         ResourceArn: ResourceArn,
+        LoggingFilter: js.UndefOr[LoggingFilter] = js.undefined,
         ManagedByFirewallManager: js.UndefOr[Boolean] = js.undefined,
         RedactedFields: js.UndefOr[RedactedFields] = js.undefined
     ): LoggingConfiguration = {
@@ -2555,9 +2873,33 @@ package wafv2 {
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
+      LoggingFilter.foreach(__v => __obj.updateDynamic("LoggingFilter")(__v.asInstanceOf[js.Any]))
       ManagedByFirewallManager.foreach(__v => __obj.updateDynamic("ManagedByFirewallManager")(__v.asInstanceOf[js.Any]))
       RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingConfiguration]
+    }
+  }
+
+  /** Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <a>LoggingConfiguration</a>.
+    * You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+    */
+  @js.native
+  trait LoggingFilter extends js.Object {
+    var DefaultBehavior: FilterBehavior
+    var Filters: Filters
+  }
+
+  object LoggingFilter {
+    @inline
+    def apply(
+        DefaultBehavior: FilterBehavior,
+        Filters: Filters
+    ): LoggingFilter = {
+      val __obj = js.Dynamic.literal(
+        "DefaultBehavior" -> DefaultBehavior.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LoggingFilter]
     }
   }
 
@@ -2569,6 +2911,7 @@ package wafv2 {
     var Name: EntityName
     var VendorName: VendorName
     var ExcludedRules: js.UndefOr[ExcludedRules]
+    var ScopeDownStatement: js.UndefOr[Statement]
   }
 
   object ManagedRuleGroupStatement {
@@ -2576,7 +2919,8 @@ package wafv2 {
     def apply(
         Name: EntityName,
         VendorName: VendorName,
-        ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined
+        ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined,
+        ScopeDownStatement: js.UndefOr[Statement] = js.undefined
     ): ManagedRuleGroupStatement = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -2584,6 +2928,7 @@ package wafv2 {
       )
 
       ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
+      ScopeDownStatement.foreach(__v => __obj.updateDynamic("ScopeDownStatement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedRuleGroupStatement]
     }
   }
@@ -2627,7 +2972,7 @@ package wafv2 {
   }
 
   /** Specifies that AWS WAF should do nothing. This is generally used to try out a rule without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>.
-    * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait NoneAction extends js.Object
@@ -2973,6 +3318,16 @@ package wafv2 {
     @inline def values = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC)
   }
 
+  @js.native
+  sealed trait ResponseContentType extends js.Any
+  object ResponseContentType {
+    val TEXT_PLAIN = "TEXT_PLAIN".asInstanceOf[ResponseContentType]
+    val TEXT_HTML = "TEXT_HTML".asInstanceOf[ResponseContentType]
+    val APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ResponseContentType]
+
+    @inline def values = js.Array(TEXT_PLAIN, TEXT_HTML, APPLICATION_JSON)
+  }
+
   /** A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them.
     */
   @js.native
@@ -2983,6 +3338,7 @@ package wafv2 {
     var VisibilityConfig: VisibilityConfig
     var Action: js.UndefOr[RuleAction]
     var OverrideAction: js.UndefOr[OverrideAction]
+    var RuleLabels: js.UndefOr[Labels]
   }
 
   object Rule {
@@ -2993,7 +3349,8 @@ package wafv2 {
         Statement: Statement,
         VisibilityConfig: VisibilityConfig,
         Action: js.UndefOr[RuleAction] = js.undefined,
-        OverrideAction: js.UndefOr[OverrideAction] = js.undefined
+        OverrideAction: js.UndefOr[OverrideAction] = js.undefined,
+        RuleLabels: js.UndefOr[Labels] = js.undefined
     ): Rule = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -3004,6 +3361,7 @@ package wafv2 {
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
       OverrideAction.foreach(__v => __obj.updateDynamic("OverrideAction")(__v.asInstanceOf[js.Any]))
+      RuleLabels.foreach(__v => __obj.updateDynamic("RuleLabels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
   }
@@ -3041,7 +3399,11 @@ package wafv2 {
     var Id: EntityId
     var Name: EntityName
     var VisibilityConfig: VisibilityConfig
+    var AvailableLabels: js.UndefOr[LabelSummaries]
+    var ConsumedLabels: js.UndefOr[LabelSummaries]
+    var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
+    var LabelNamespace: js.UndefOr[LabelName]
     var Rules: js.UndefOr[Rules]
   }
 
@@ -3053,7 +3415,11 @@ package wafv2 {
         Id: EntityId,
         Name: EntityName,
         VisibilityConfig: VisibilityConfig,
+        AvailableLabels: js.UndefOr[LabelSummaries] = js.undefined,
+        ConsumedLabels: js.UndefOr[LabelSummaries] = js.undefined,
+        CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
+        LabelNamespace: js.UndefOr[LabelName] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined
     ): RuleGroup = {
       val __obj = js.Dynamic.literal(
@@ -3064,7 +3430,11 @@ package wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      AvailableLabels.foreach(__v => __obj.updateDynamic("AvailableLabels")(__v.asInstanceOf[js.Any]))
+      ConsumedLabels.foreach(__v => __obj.updateDynamic("ConsumedLabels")(__v.asInstanceOf[js.Any]))
+      CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuleGroup]
     }
@@ -3152,6 +3522,9 @@ package wafv2 {
     var Request: HTTPRequest
     var Weight: SampleWeight
     var Action: js.UndefOr[Action]
+    var Labels: js.UndefOr[Labels]
+    var RequestHeadersInserted: js.UndefOr[HTTPHeaders]
+    var ResponseCodeSent: js.UndefOr[ResponseStatusCode]
     var RuleNameWithinRuleGroup: js.UndefOr[EntityName]
     var Timestamp: js.UndefOr[Timestamp]
   }
@@ -3162,6 +3535,9 @@ package wafv2 {
         Request: HTTPRequest,
         Weight: SampleWeight,
         Action: js.UndefOr[Action] = js.undefined,
+        Labels: js.UndefOr[Labels] = js.undefined,
+        RequestHeadersInserted: js.UndefOr[HTTPHeaders] = js.undefined,
+        ResponseCodeSent: js.UndefOr[ResponseStatusCode] = js.undefined,
         RuleNameWithinRuleGroup: js.UndefOr[EntityName] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): SampledHTTPRequest = {
@@ -3171,6 +3547,9 @@ package wafv2 {
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      RequestHeadersInserted.foreach(__v => __obj.updateDynamic("RequestHeadersInserted")(__v.asInstanceOf[js.Any]))
+      ResponseCodeSent.foreach(__v => __obj.updateDynamic("ResponseCodeSent")(__v.asInstanceOf[js.Any]))
       RuleNameWithinRuleGroup.foreach(__v => __obj.updateDynamic("RuleNameWithinRuleGroup")(__v.asInstanceOf[js.Any]))
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SampledHTTPRequest]
@@ -3285,6 +3664,7 @@ package wafv2 {
     var ByteMatchStatement: js.UndefOr[ByteMatchStatement]
     var GeoMatchStatement: js.UndefOr[GeoMatchStatement]
     var IPSetReferenceStatement: js.UndefOr[IPSetReferenceStatement]
+    var LabelMatchStatement: js.UndefOr[LabelMatchStatement]
     var ManagedRuleGroupStatement: js.UndefOr[ManagedRuleGroupStatement]
     var NotStatement: js.UndefOr[NotStatement]
     var OrStatement: js.UndefOr[OrStatement]
@@ -3303,6 +3683,7 @@ package wafv2 {
         ByteMatchStatement: js.UndefOr[ByteMatchStatement] = js.undefined,
         GeoMatchStatement: js.UndefOr[GeoMatchStatement] = js.undefined,
         IPSetReferenceStatement: js.UndefOr[IPSetReferenceStatement] = js.undefined,
+        LabelMatchStatement: js.UndefOr[LabelMatchStatement] = js.undefined,
         ManagedRuleGroupStatement: js.UndefOr[ManagedRuleGroupStatement] = js.undefined,
         NotStatement: js.UndefOr[NotStatement] = js.undefined,
         OrStatement: js.UndefOr[OrStatement] = js.undefined,
@@ -3318,6 +3699,7 @@ package wafv2 {
       ByteMatchStatement.foreach(__v => __obj.updateDynamic("ByteMatchStatement")(__v.asInstanceOf[js.Any]))
       GeoMatchStatement.foreach(__v => __obj.updateDynamic("GeoMatchStatement")(__v.asInstanceOf[js.Any]))
       IPSetReferenceStatement.foreach(__v => __obj.updateDynamic("IPSetReferenceStatement")(__v.asInstanceOf[js.Any]))
+      LabelMatchStatement.foreach(__v => __obj.updateDynamic("LabelMatchStatement")(__v.asInstanceOf[js.Any]))
       ManagedRuleGroupStatement.foreach(__v => __obj.updateDynamic("ManagedRuleGroupStatement")(__v.asInstanceOf[js.Any]))
       NotStatement.foreach(__v => __obj.updateDynamic("NotStatement")(__v.asInstanceOf[js.Any]))
       OrStatement.foreach(__v => __obj.updateDynamic("OrStatement")(__v.asInstanceOf[js.Any]))
@@ -3602,6 +3984,7 @@ package wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VisibilityConfig: VisibilityConfig
+    var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var Rules: js.UndefOr[Rules]
   }
@@ -3614,6 +3997,7 @@ package wafv2 {
         Name: EntityName,
         Scope: Scope,
         VisibilityConfig: VisibilityConfig,
+        CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined
     ): UpdateRuleGroupRequest = {
@@ -3625,6 +4009,7 @@ package wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuleGroupRequest]
@@ -3655,6 +4040,7 @@ package wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VisibilityConfig: VisibilityConfig
+    var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var Rules: js.UndefOr[Rules]
   }
@@ -3668,6 +4054,7 @@ package wafv2 {
         Name: EntityName,
         Scope: Scope,
         VisibilityConfig: VisibilityConfig,
+        CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined
     ): UpdateWebACLRequest = {
@@ -3680,6 +4067,7 @@ package wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebACLRequest]
@@ -3751,7 +4139,9 @@ package wafv2 {
     var Name: EntityName
     var VisibilityConfig: VisibilityConfig
     var Capacity: js.UndefOr[ConsumedCapacity]
+    var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
+    var LabelNamespace: js.UndefOr[LabelName]
     var ManagedByFirewallManager: js.UndefOr[Boolean]
     var PostProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups]
     var PreProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups]
@@ -3767,7 +4157,9 @@ package wafv2 {
         Name: EntityName,
         VisibilityConfig: VisibilityConfig,
         Capacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
+        LabelNamespace: js.UndefOr[LabelName] = js.undefined,
         ManagedByFirewallManager: js.UndefOr[Boolean] = js.undefined,
         PostProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups] = js.undefined,
         PreProcessFirewallManagerRuleGroups: js.UndefOr[FirewallManagerRuleGroups] = js.undefined,
@@ -3782,7 +4174,9 @@ package wafv2 {
       )
 
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
+      CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
       ManagedByFirewallManager.foreach(__v => __obj.updateDynamic("ManagedByFirewallManager")(__v.asInstanceOf[js.Any]))
       PostProcessFirewallManagerRuleGroups.foreach(__v => __obj.updateDynamic("PostProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any]))
       PreProcessFirewallManagerRuleGroups.foreach(__v => __obj.updateDynamic("PreProcessFirewallManagerRuleGroups")(__v.asInstanceOf[js.Any]))

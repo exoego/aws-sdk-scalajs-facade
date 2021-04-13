@@ -76,6 +76,7 @@ package object cloudwatch {
   type InsightRuleUnboundLong = Double
   type InsightRules = js.Array[InsightRule]
   type LastModified = js.Date
+  type ListMetricStreamsMaxResults = Int
   type MaxRecords = Int
   type MaxReturnedResultsCount = Int
   type Message = String
@@ -90,6 +91,11 @@ package object cloudwatch {
   type MetricId = String
   type MetricLabel = String
   type MetricName = String
+  type MetricStreamEntries = js.Array[MetricStreamEntry]
+  type MetricStreamFilters = js.Array[MetricStreamFilter]
+  type MetricStreamName = String
+  type MetricStreamNames = js.Array[MetricStreamName]
+  type MetricStreamState = String
   type MetricWidget = String
   type MetricWidgetImage = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Metrics = js.Array[Metric]
@@ -122,6 +128,7 @@ package object cloudwatch {
     @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] = service.deleteAnomalyDetector(params).promise().toFuture
     @inline def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] = service.deleteDashboards(params).promise().toFuture
     @inline def deleteInsightRulesFuture(params: DeleteInsightRulesInput): Future[DeleteInsightRulesOutput] = service.deleteInsightRules(params).promise().toFuture
+    @inline def deleteMetricStreamFuture(params: DeleteMetricStreamInput): Future[DeleteMetricStreamOutput] = service.deleteMetricStream(params).promise().toFuture
     @inline def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] = service.describeAlarmHistory(params).promise().toFuture
     @inline def describeAlarmsForMetricFuture(params: DescribeAlarmsForMetricInput): Future[DescribeAlarmsForMetricOutput] = service.describeAlarmsForMetric(params).promise().toFuture
     @inline def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] = service.describeAlarms(params).promise().toFuture
@@ -135,8 +142,10 @@ package object cloudwatch {
     @inline def getInsightRuleReportFuture(params: GetInsightRuleReportInput): Future[GetInsightRuleReportOutput] = service.getInsightRuleReport(params).promise().toFuture
     @inline def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] = service.getMetricData(params).promise().toFuture
     @inline def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] = service.getMetricStatistics(params).promise().toFuture
+    @inline def getMetricStreamFuture(params: GetMetricStreamInput): Future[GetMetricStreamOutput] = service.getMetricStream(params).promise().toFuture
     @inline def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] = service.getMetricWidgetImage(params).promise().toFuture
     @inline def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] = service.listDashboards(params).promise().toFuture
+    @inline def listMetricStreamsFuture(params: ListMetricStreamsInput): Future[ListMetricStreamsOutput] = service.listMetricStreams(params).promise().toFuture
     @inline def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] = service.listMetrics(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
     @inline def putAnomalyDetectorFuture(params: PutAnomalyDetectorInput): Future[PutAnomalyDetectorOutput] = service.putAnomalyDetector(params).promise().toFuture
@@ -145,7 +154,10 @@ package object cloudwatch {
     @inline def putInsightRuleFuture(params: PutInsightRuleInput): Future[PutInsightRuleOutput] = service.putInsightRule(params).promise().toFuture
     @inline def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] = service.putMetricAlarm(params).promise().toFuture
     @inline def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] = service.putMetricData(params).promise().toFuture
+    @inline def putMetricStreamFuture(params: PutMetricStreamInput): Future[PutMetricStreamOutput] = service.putMetricStream(params).promise().toFuture
     @inline def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] = service.setAlarmState(params).promise().toFuture
+    @inline def startMetricStreamsFuture(params: StartMetricStreamsInput): Future[StartMetricStreamsOutput] = service.startMetricStreams(params).promise().toFuture
+    @inline def stopMetricStreamsFuture(params: StopMetricStreamsInput): Future[StopMetricStreamsOutput] = service.stopMetricStreams(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
 
@@ -162,6 +174,7 @@ package cloudwatch {
     def deleteAnomalyDetector(params: DeleteAnomalyDetectorInput): Request[DeleteAnomalyDetectorOutput] = js.native
     def deleteDashboards(params: DeleteDashboardsInput): Request[DeleteDashboardsOutput] = js.native
     def deleteInsightRules(params: DeleteInsightRulesInput): Request[DeleteInsightRulesOutput] = js.native
+    def deleteMetricStream(params: DeleteMetricStreamInput): Request[DeleteMetricStreamOutput] = js.native
     def describeAlarmHistory(params: DescribeAlarmHistoryInput): Request[DescribeAlarmHistoryOutput] = js.native
     def describeAlarms(params: DescribeAlarmsInput): Request[DescribeAlarmsOutput] = js.native
     def describeAlarmsForMetric(params: DescribeAlarmsForMetricInput): Request[DescribeAlarmsForMetricOutput] = js.native
@@ -175,8 +188,10 @@ package cloudwatch {
     def getInsightRuleReport(params: GetInsightRuleReportInput): Request[GetInsightRuleReportOutput] = js.native
     def getMetricData(params: GetMetricDataInput): Request[GetMetricDataOutput] = js.native
     def getMetricStatistics(params: GetMetricStatisticsInput): Request[GetMetricStatisticsOutput] = js.native
+    def getMetricStream(params: GetMetricStreamInput): Request[GetMetricStreamOutput] = js.native
     def getMetricWidgetImage(params: GetMetricWidgetImageInput): Request[GetMetricWidgetImageOutput] = js.native
     def listDashboards(params: ListDashboardsInput): Request[ListDashboardsOutput] = js.native
+    def listMetricStreams(params: ListMetricStreamsInput): Request[ListMetricStreamsOutput] = js.native
     def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def putAnomalyDetector(params: PutAnomalyDetectorInput): Request[PutAnomalyDetectorOutput] = js.native
@@ -185,7 +200,10 @@ package cloudwatch {
     def putInsightRule(params: PutInsightRuleInput): Request[PutInsightRuleOutput] = js.native
     def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object] = js.native
     def putMetricData(params: PutMetricDataInput): Request[js.Object] = js.native
+    def putMetricStream(params: PutMetricStreamInput): Request[PutMetricStreamOutput] = js.native
     def setAlarmState(params: SetAlarmStateInput): Request[js.Object] = js.native
+    def startMetricStreams(params: StartMetricStreamsInput): Request[StartMetricStreamsOutput] = js.native
+    def stopMetricStreams(params: StopMetricStreamsInput): Request[StopMetricStreamsOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
   }
@@ -572,6 +590,34 @@ package cloudwatch {
       val __obj = js.Dynamic.literal()
       Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInsightRulesOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteMetricStreamInput extends js.Object {
+    var Name: MetricStreamName
+  }
+
+  object DeleteMetricStreamInput {
+    @inline
+    def apply(
+        Name: MetricStreamName
+    ): DeleteMetricStreamInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMetricStreamInput]
+    }
+  }
+
+  @js.native
+  trait DeleteMetricStreamOutput extends js.Object
+
+  object DeleteMetricStreamOutput {
+    @inline
+    def apply(): DeleteMetricStreamOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteMetricStreamOutput]
     }
   }
 
@@ -1201,6 +1247,66 @@ package cloudwatch {
   }
 
   @js.native
+  trait GetMetricStreamInput extends js.Object {
+    var Name: MetricStreamName
+  }
+
+  object GetMetricStreamInput {
+    @inline
+    def apply(
+        Name: MetricStreamName
+    ): GetMetricStreamInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMetricStreamInput]
+    }
+  }
+
+  @js.native
+  trait GetMetricStreamOutput extends js.Object {
+    var Arn: js.UndefOr[AmazonResourceName]
+    var CreationDate: js.UndefOr[Timestamp]
+    var ExcludeFilters: js.UndefOr[MetricStreamFilters]
+    var FirehoseArn: js.UndefOr[AmazonResourceName]
+    var IncludeFilters: js.UndefOr[MetricStreamFilters]
+    var LastUpdateDate: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[MetricStreamName]
+    var OutputFormat: js.UndefOr[MetricStreamOutputFormat]
+    var RoleArn: js.UndefOr[AmazonResourceName]
+    var State: js.UndefOr[MetricStreamState]
+  }
+
+  object GetMetricStreamOutput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        ExcludeFilters: js.UndefOr[MetricStreamFilters] = js.undefined,
+        FirehoseArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        IncludeFilters: js.UndefOr[MetricStreamFilters] = js.undefined,
+        LastUpdateDate: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[MetricStreamName] = js.undefined,
+        OutputFormat: js.UndefOr[MetricStreamOutputFormat] = js.undefined,
+        RoleArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        State: js.UndefOr[MetricStreamState] = js.undefined
+    ): GetMetricStreamOutput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      ExcludeFilters.foreach(__v => __obj.updateDynamic("ExcludeFilters")(__v.asInstanceOf[js.Any]))
+      FirehoseArn.foreach(__v => __obj.updateDynamic("FirehoseArn")(__v.asInstanceOf[js.Any]))
+      IncludeFilters.foreach(__v => __obj.updateDynamic("IncludeFilters")(__v.asInstanceOf[js.Any]))
+      LastUpdateDate.foreach(__v => __obj.updateDynamic("LastUpdateDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMetricStreamOutput]
+    }
+  }
+
+  @js.native
   trait GetMetricWidgetImageInput extends js.Object {
     var MetricWidget: MetricWidget
     var OutputFormat: js.UndefOr[OutputFormat]
@@ -1421,6 +1527,44 @@ package cloudwatch {
       DashboardEntries.foreach(__v => __obj.updateDynamic("DashboardEntries")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDashboardsOutput]
+    }
+  }
+
+  @js.native
+  trait ListMetricStreamsInput extends js.Object {
+    var MaxResults: js.UndefOr[ListMetricStreamsMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricStreamsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListMetricStreamsMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricStreamsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricStreamsInput]
+    }
+  }
+
+  @js.native
+  trait ListMetricStreamsOutput extends js.Object {
+    var Entries: js.UndefOr[MetricStreamEntries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricStreamsOutput {
+    @inline
+    def apply(
+        Entries: js.UndefOr[MetricStreamEntries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricStreamsOutput = {
+      val __obj = js.Dynamic.literal()
+      Entries.foreach(__v => __obj.updateDynamic("Entries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricStreamsOutput]
     }
   }
 
@@ -1790,6 +1934,69 @@ package cloudwatch {
     }
   }
 
+  /** This structure contains the configuration information about one metric stream.
+    */
+  @js.native
+  trait MetricStreamEntry extends js.Object {
+    var Arn: js.UndefOr[AmazonResourceName]
+    var CreationDate: js.UndefOr[Timestamp]
+    var FirehoseArn: js.UndefOr[AmazonResourceName]
+    var LastUpdateDate: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[MetricStreamName]
+    var OutputFormat: js.UndefOr[MetricStreamOutputFormat]
+    var State: js.UndefOr[MetricStreamState]
+  }
+
+  object MetricStreamEntry {
+    @inline
+    def apply(
+        Arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        FirehoseArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        LastUpdateDate: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[MetricStreamName] = js.undefined,
+        OutputFormat: js.UndefOr[MetricStreamOutputFormat] = js.undefined,
+        State: js.UndefOr[MetricStreamState] = js.undefined
+    ): MetricStreamEntry = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      FirehoseArn.foreach(__v => __obj.updateDynamic("FirehoseArn")(__v.asInstanceOf[js.Any]))
+      LastUpdateDate.foreach(__v => __obj.updateDynamic("LastUpdateDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricStreamEntry]
+    }
+  }
+
+  /** This structure contains the name of one of the metric namespaces that is listed in a filter of a metric stream.
+    */
+  @js.native
+  trait MetricStreamFilter extends js.Object {
+    var Namespace: js.UndefOr[Namespace]
+  }
+
+  object MetricStreamFilter {
+    @inline
+    def apply(
+        Namespace: js.UndefOr[Namespace] = js.undefined
+    ): MetricStreamFilter = {
+      val __obj = js.Dynamic.literal()
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricStreamFilter]
+    }
+  }
+
+  @js.native
+  sealed trait MetricStreamOutputFormat extends js.Any
+  object MetricStreamOutputFormat {
+    val json = "json".asInstanceOf[MetricStreamOutputFormat]
+    val `opentelemetry0.7` = "opentelemetry0.7".asInstanceOf[MetricStreamOutputFormat]
+
+    @inline def values = js.Array(json, `opentelemetry0.7`)
+  }
+
   /** This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
     */
   @js.native
@@ -2072,6 +2279,58 @@ package cloudwatch {
     }
   }
 
+  @js.native
+  trait PutMetricStreamInput extends js.Object {
+    var FirehoseArn: AmazonResourceName
+    var Name: MetricStreamName
+    var OutputFormat: MetricStreamOutputFormat
+    var RoleArn: AmazonResourceName
+    var ExcludeFilters: js.UndefOr[MetricStreamFilters]
+    var IncludeFilters: js.UndefOr[MetricStreamFilters]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object PutMetricStreamInput {
+    @inline
+    def apply(
+        FirehoseArn: AmazonResourceName,
+        Name: MetricStreamName,
+        OutputFormat: MetricStreamOutputFormat,
+        RoleArn: AmazonResourceName,
+        ExcludeFilters: js.UndefOr[MetricStreamFilters] = js.undefined,
+        IncludeFilters: js.UndefOr[MetricStreamFilters] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): PutMetricStreamInput = {
+      val __obj = js.Dynamic.literal(
+        "FirehoseArn" -> FirehoseArn.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      ExcludeFilters.foreach(__v => __obj.updateDynamic("ExcludeFilters")(__v.asInstanceOf[js.Any]))
+      IncludeFilters.foreach(__v => __obj.updateDynamic("IncludeFilters")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutMetricStreamInput]
+    }
+  }
+
+  @js.native
+  trait PutMetricStreamOutput extends js.Object {
+    var Arn: js.UndefOr[AmazonResourceName]
+  }
+
+  object PutMetricStreamOutput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[AmazonResourceName] = js.undefined
+    ): PutMetricStreamOutput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutMetricStreamOutput]
+    }
+  }
+
   /** Specifies one range of days or times to exclude from use for training an anomaly detection model.
     */
   @js.native
@@ -2201,6 +2460,34 @@ package cloudwatch {
   }
 
   @js.native
+  trait StartMetricStreamsInput extends js.Object {
+    var Names: MetricStreamNames
+  }
+
+  object StartMetricStreamsInput {
+    @inline
+    def apply(
+        Names: MetricStreamNames
+    ): StartMetricStreamsInput = {
+      val __obj = js.Dynamic.literal(
+        "Names" -> Names.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartMetricStreamsInput]
+    }
+  }
+
+  @js.native
+  trait StartMetricStreamsOutput extends js.Object
+
+  object StartMetricStreamsOutput {
+    @inline
+    def apply(): StartMetricStreamsOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartMetricStreamsOutput]
+    }
+  }
+
+  @js.native
   sealed trait StateValue extends js.Any
   object StateValue {
     val OK = "OK".asInstanceOf[StateValue]
@@ -2258,6 +2545,34 @@ package cloudwatch {
     val PartialData = "PartialData".asInstanceOf[StatusCode]
 
     @inline def values = js.Array(Complete, InternalError, PartialData)
+  }
+
+  @js.native
+  trait StopMetricStreamsInput extends js.Object {
+    var Names: MetricStreamNames
+  }
+
+  object StopMetricStreamsInput {
+    @inline
+    def apply(
+        Names: MetricStreamNames
+    ): StopMetricStreamsInput = {
+      val __obj = js.Dynamic.literal(
+        "Names" -> Names.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopMetricStreamsInput]
+    }
+  }
+
+  @js.native
+  trait StopMetricStreamsOutput extends js.Object
+
+  object StopMetricStreamsOutput {
+    @inline
+    def apply(): StopMetricStreamsOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StopMetricStreamsOutput]
+    }
   }
 
   /** A key-value pair associated with a CloudWatch resource.

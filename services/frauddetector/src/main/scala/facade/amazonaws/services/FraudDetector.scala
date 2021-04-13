@@ -9,6 +9,7 @@ import facade.amazonaws._
 package object frauddetector {
   type BatchCreateVariableErrorList = js.Array[BatchCreateVariableError]
   type BatchGetVariableErrorList = js.Array[BatchGetVariableError]
+  type BatchPredictionList = js.Array[BatchPrediction]
   type CsvIndexToVariableMap = js.Dictionary[String]
   type DetectorList = js.Array[Detector]
   type DetectorVersionMaxResults = Int
@@ -37,6 +38,7 @@ package object frauddetector {
   type VariableEntryList = js.Array[VariableEntry]
   type VariableList = js.Array[Variable]
   type VariablesMaxResults = Int
+  type batchPredictionsMaxPageSize = Int
   type blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type contentType = String
   type description = String
@@ -76,11 +78,14 @@ package object frauddetector {
 
     @inline def batchCreateVariableFuture(params: BatchCreateVariableRequest): Future[BatchCreateVariableResult] = service.batchCreateVariable(params).promise().toFuture
     @inline def batchGetVariableFuture(params: BatchGetVariableRequest): Future[BatchGetVariableResult] = service.batchGetVariable(params).promise().toFuture
+    @inline def cancelBatchPredictionJobFuture(params: CancelBatchPredictionJobRequest): Future[CancelBatchPredictionJobResult] = service.cancelBatchPredictionJob(params).promise().toFuture
+    @inline def createBatchPredictionJobFuture(params: CreateBatchPredictionJobRequest): Future[CreateBatchPredictionJobResult] = service.createBatchPredictionJob(params).promise().toFuture
     @inline def createDetectorVersionFuture(params: CreateDetectorVersionRequest): Future[CreateDetectorVersionResult] = service.createDetectorVersion(params).promise().toFuture
     @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResult] = service.createModel(params).promise().toFuture
     @inline def createModelVersionFuture(params: CreateModelVersionRequest): Future[CreateModelVersionResult] = service.createModelVersion(params).promise().toFuture
     @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResult] = service.createRule(params).promise().toFuture
     @inline def createVariableFuture(params: CreateVariableRequest): Future[CreateVariableResult] = service.createVariable(params).promise().toFuture
+    @inline def deleteBatchPredictionJobFuture(params: DeleteBatchPredictionJobRequest): Future[DeleteBatchPredictionJobResult] = service.deleteBatchPredictionJob(params).promise().toFuture
     @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResult] = service.deleteDetector(params).promise().toFuture
     @inline def deleteDetectorVersionFuture(params: DeleteDetectorVersionRequest): Future[DeleteDetectorVersionResult] = service.deleteDetectorVersion(params).promise().toFuture
     @inline def deleteEntityTypeFuture(params: DeleteEntityTypeRequest): Future[DeleteEntityTypeResult] = service.deleteEntityType(params).promise().toFuture
@@ -95,6 +100,7 @@ package object frauddetector {
     @inline def deleteVariableFuture(params: DeleteVariableRequest): Future[DeleteVariableResult] = service.deleteVariable(params).promise().toFuture
     @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResult] = service.describeDetector(params).promise().toFuture
     @inline def describeModelVersionsFuture(params: DescribeModelVersionsRequest): Future[DescribeModelVersionsResult] = service.describeModelVersions(params).promise().toFuture
+    @inline def getBatchPredictionJobsFuture(params: GetBatchPredictionJobsRequest): Future[GetBatchPredictionJobsResult] = service.getBatchPredictionJobs(params).promise().toFuture
     @inline def getDetectorVersionFuture(params: GetDetectorVersionRequest): Future[GetDetectorVersionResult] = service.getDetectorVersion(params).promise().toFuture
     @inline def getDetectorsFuture(params: GetDetectorsRequest): Future[GetDetectorsResult] = service.getDetectors(params).promise().toFuture
     @inline def getEntityTypesFuture(params: GetEntityTypesRequest): Future[GetEntityTypesResult] = service.getEntityTypes(params).promise().toFuture
@@ -139,11 +145,14 @@ package frauddetector {
 
     def batchCreateVariable(params: BatchCreateVariableRequest): Request[BatchCreateVariableResult] = js.native
     def batchGetVariable(params: BatchGetVariableRequest): Request[BatchGetVariableResult] = js.native
+    def cancelBatchPredictionJob(params: CancelBatchPredictionJobRequest): Request[CancelBatchPredictionJobResult] = js.native
+    def createBatchPredictionJob(params: CreateBatchPredictionJobRequest): Request[CreateBatchPredictionJobResult] = js.native
     def createDetectorVersion(params: CreateDetectorVersionRequest): Request[CreateDetectorVersionResult] = js.native
     def createModel(params: CreateModelRequest): Request[CreateModelResult] = js.native
     def createModelVersion(params: CreateModelVersionRequest): Request[CreateModelVersionResult] = js.native
     def createRule(params: CreateRuleRequest): Request[CreateRuleResult] = js.native
     def createVariable(params: CreateVariableRequest): Request[CreateVariableResult] = js.native
+    def deleteBatchPredictionJob(params: DeleteBatchPredictionJobRequest): Request[DeleteBatchPredictionJobResult] = js.native
     def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResult] = js.native
     def deleteDetectorVersion(params: DeleteDetectorVersionRequest): Request[DeleteDetectorVersionResult] = js.native
     def deleteEntityType(params: DeleteEntityTypeRequest): Request[DeleteEntityTypeResult] = js.native
@@ -158,6 +167,7 @@ package frauddetector {
     def deleteVariable(params: DeleteVariableRequest): Request[DeleteVariableResult] = js.native
     def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResult] = js.native
     def describeModelVersions(params: DescribeModelVersionsRequest): Request[DescribeModelVersionsResult] = js.native
+    def getBatchPredictionJobs(params: GetBatchPredictionJobsRequest): Request[GetBatchPredictionJobsResult] = js.native
     def getDetectorVersion(params: GetDetectorVersionRequest): Request[GetDetectorVersionResult] = js.native
     def getDetectors(params: GetDetectorsRequest): Request[GetDetectorsResult] = js.native
     def getEntityTypes(params: GetEntityTypesRequest): Request[GetEntityTypesResult] = js.native
@@ -190,6 +200,19 @@ package frauddetector {
     def updateRuleMetadata(params: UpdateRuleMetadataRequest): Request[UpdateRuleMetadataResult] = js.native
     def updateRuleVersion(params: UpdateRuleVersionRequest): Request[UpdateRuleVersionResult] = js.native
     def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult] = js.native
+  }
+
+  @js.native
+  sealed trait AsyncJobStatus extends js.Any
+  object AsyncJobStatus {
+    val IN_PROGRESS_INITIALIZING = "IN_PROGRESS_INITIALIZING".asInstanceOf[AsyncJobStatus]
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AsyncJobStatus]
+    val CANCEL_IN_PROGRESS = "CANCEL_IN_PROGRESS".asInstanceOf[AsyncJobStatus]
+    val CANCELED = "CANCELED".asInstanceOf[AsyncJobStatus]
+    val COMPLETE = "COMPLETE".asInstanceOf[AsyncJobStatus]
+    val FAILED = "FAILED".asInstanceOf[AsyncJobStatus]
+
+    @inline def values = js.Array(IN_PROGRESS_INITIALIZING, IN_PROGRESS, CANCEL_IN_PROGRESS, CANCELED, COMPLETE, FAILED)
   }
 
   /** Provides the error of the batch create variable API.
@@ -310,6 +333,144 @@ package frauddetector {
       errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       variables.foreach(__v => __obj.updateDynamic("variables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetVariableResult]
+    }
+  }
+
+  /** The batch prediction details.
+    */
+  @js.native
+  trait BatchPrediction extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
+    var completionTime: js.UndefOr[time]
+    var detectorName: js.UndefOr[identifier]
+    var detectorVersion: js.UndefOr[floatVersionString]
+    var eventTypeName: js.UndefOr[identifier]
+    var failureReason: js.UndefOr[String]
+    var iamRoleArn: js.UndefOr[iamRoleArn]
+    var inputPath: js.UndefOr[s3BucketLocation]
+    var jobId: js.UndefOr[identifier]
+    var lastHeartbeatTime: js.UndefOr[time]
+    var outputPath: js.UndefOr[s3BucketLocation]
+    var processedRecordsCount: js.UndefOr[Int]
+    var startTime: js.UndefOr[time]
+    var status: js.UndefOr[AsyncJobStatus]
+    var totalRecordsCount: js.UndefOr[Int]
+  }
+
+  object BatchPrediction {
+    @inline
+    def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
+        completionTime: js.UndefOr[time] = js.undefined,
+        detectorName: js.UndefOr[identifier] = js.undefined,
+        detectorVersion: js.UndefOr[floatVersionString] = js.undefined,
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
+        failureReason: js.UndefOr[String] = js.undefined,
+        iamRoleArn: js.UndefOr[iamRoleArn] = js.undefined,
+        inputPath: js.UndefOr[s3BucketLocation] = js.undefined,
+        jobId: js.UndefOr[identifier] = js.undefined,
+        lastHeartbeatTime: js.UndefOr[time] = js.undefined,
+        outputPath: js.UndefOr[s3BucketLocation] = js.undefined,
+        processedRecordsCount: js.UndefOr[Int] = js.undefined,
+        startTime: js.UndefOr[time] = js.undefined,
+        status: js.UndefOr[AsyncJobStatus] = js.undefined,
+        totalRecordsCount: js.UndefOr[Int] = js.undefined
+    ): BatchPrediction = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      completionTime.foreach(__v => __obj.updateDynamic("completionTime")(__v.asInstanceOf[js.Any]))
+      detectorName.foreach(__v => __obj.updateDynamic("detectorName")(__v.asInstanceOf[js.Any]))
+      detectorVersion.foreach(__v => __obj.updateDynamic("detectorVersion")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      iamRoleArn.foreach(__v => __obj.updateDynamic("iamRoleArn")(__v.asInstanceOf[js.Any]))
+      inputPath.foreach(__v => __obj.updateDynamic("inputPath")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      lastHeartbeatTime.foreach(__v => __obj.updateDynamic("lastHeartbeatTime")(__v.asInstanceOf[js.Any]))
+      outputPath.foreach(__v => __obj.updateDynamic("outputPath")(__v.asInstanceOf[js.Any]))
+      processedRecordsCount.foreach(__v => __obj.updateDynamic("processedRecordsCount")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      totalRecordsCount.foreach(__v => __obj.updateDynamic("totalRecordsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchPrediction]
+    }
+  }
+
+  @js.native
+  trait CancelBatchPredictionJobRequest extends js.Object {
+    var jobId: identifier
+  }
+
+  object CancelBatchPredictionJobRequest {
+    @inline
+    def apply(
+        jobId: identifier
+    ): CancelBatchPredictionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelBatchPredictionJobRequest]
+    }
+  }
+
+  @js.native
+  trait CancelBatchPredictionJobResult extends js.Object
+
+  object CancelBatchPredictionJobResult {
+    @inline
+    def apply(): CancelBatchPredictionJobResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelBatchPredictionJobResult]
+    }
+  }
+
+  @js.native
+  trait CreateBatchPredictionJobRequest extends js.Object {
+    var detectorName: identifier
+    var eventTypeName: identifier
+    var iamRoleArn: iamRoleArn
+    var inputPath: s3BucketLocation
+    var jobId: identifier
+    var outputPath: s3BucketLocation
+    var detectorVersion: js.UndefOr[wholeNumberVersionString]
+    var tags: js.UndefOr[tagList]
+  }
+
+  object CreateBatchPredictionJobRequest {
+    @inline
+    def apply(
+        detectorName: identifier,
+        eventTypeName: identifier,
+        iamRoleArn: iamRoleArn,
+        inputPath: s3BucketLocation,
+        jobId: identifier,
+        outputPath: s3BucketLocation,
+        detectorVersion: js.UndefOr[wholeNumberVersionString] = js.undefined,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): CreateBatchPredictionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "detectorName" -> detectorName.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
+        "iamRoleArn" -> iamRoleArn.asInstanceOf[js.Any],
+        "inputPath" -> inputPath.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "outputPath" -> outputPath.asInstanceOf[js.Any]
+      )
+
+      detectorVersion.foreach(__v => __obj.updateDynamic("detectorVersion")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBatchPredictionJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBatchPredictionJobResult extends js.Object
+
+  object CreateBatchPredictionJobResult {
+    @inline
+    def apply(): CreateBatchPredictionJobResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateBatchPredictionJobResult]
     }
   }
 
@@ -608,6 +769,34 @@ package frauddetector {
       fieldLevelMessages.foreach(__v => __obj.updateDynamic("fieldLevelMessages")(__v.asInstanceOf[js.Any]))
       fileLevelMessages.foreach(__v => __obj.updateDynamic("fileLevelMessages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataValidationMetrics]
+    }
+  }
+
+  @js.native
+  trait DeleteBatchPredictionJobRequest extends js.Object {
+    var jobId: identifier
+  }
+
+  object DeleteBatchPredictionJobRequest {
+    @inline
+    def apply(
+        jobId: identifier
+    ): DeleteBatchPredictionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBatchPredictionJobRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBatchPredictionJobResult extends js.Object
+
+  object DeleteBatchPredictionJobResult {
+    @inline
+    def apply(): DeleteBatchPredictionJobResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteBatchPredictionJobResult]
     }
   }
 
@@ -1334,6 +1523,47 @@ package frauddetector {
       title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileValidationMessage]
+    }
+  }
+
+  @js.native
+  trait GetBatchPredictionJobsRequest extends js.Object {
+    var jobId: js.UndefOr[identifier]
+    var maxResults: js.UndefOr[batchPredictionsMaxPageSize]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetBatchPredictionJobsRequest {
+    @inline
+    def apply(
+        jobId: js.UndefOr[identifier] = js.undefined,
+        maxResults: js.UndefOr[batchPredictionsMaxPageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetBatchPredictionJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBatchPredictionJobsRequest]
+    }
+  }
+
+  @js.native
+  trait GetBatchPredictionJobsResult extends js.Object {
+    var batchPredictions: js.UndefOr[BatchPredictionList]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetBatchPredictionJobsResult {
+    @inline
+    def apply(
+        batchPredictions: js.UndefOr[BatchPredictionList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetBatchPredictionJobsResult = {
+      val __obj = js.Dynamic.literal()
+      batchPredictions.foreach(__v => __obj.updateDynamic("batchPredictions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBatchPredictionJobsResult]
     }
   }
 

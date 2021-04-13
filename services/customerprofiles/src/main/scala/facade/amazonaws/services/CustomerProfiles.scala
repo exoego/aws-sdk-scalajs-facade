@@ -8,22 +8,39 @@ import facade.amazonaws._
 
 package object customerprofiles {
   type Attributes = js.Dictionary[string1To255]
+  type BucketName = String
+  type BucketPrefix = String
+  type ConnectorProfileName = String
+  type Date = js.Date
+  type DatetimeTypeFieldName = String
+  type DestinationField = String
   type DomainList = js.Array[ListDomainItem]
   type FieldMap = js.Dictionary[ObjectTypeField]
   type FieldNameList = js.Array[name]
+  type FlowDescription = String
+  type FlowName = String
   type IntegrationList = js.Array[ListIntegrationItem]
   type KeyMap = js.Dictionary[ObjectTypeKeyList]
+  type KmsArn = String
+  type Object = String
   type ObjectTypeKeyList = js.Array[ObjectTypeKey]
   type ProfileList = js.Array[Profile]
   type ProfileObjectList = js.Array[ListProfileObjectsItem]
   type ProfileObjectTypeList = js.Array[ListProfileObjectTypeItem]
   type ProfileObjectTypeTemplateList = js.Array[ListProfileObjectTypeTemplateItem]
+  type Property = String
+  type ScheduleExpression = String
+  type ScheduleOffset = Double
+  type SourceFields = js.Array[stringTo2048]
   type StandardIdentifierList = js.Array[StandardIdentifier]
   type TagArn = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type TaskPropertiesMap = js.Dictionary[Property]
+  type Tasks = js.Array[Task]
+  type Timezone = String
   type UpdateAttributes = js.Dictionary[string0To255]
   type encryptionKey = String
   type expirationDaysInteger = Int
@@ -36,6 +53,7 @@ package object customerprofiles {
   type string0To255 = String
   type string1To1000 = String
   type string1To255 = String
+  type stringTo2048 = String
   type stringifiedJson = String
   type text = String
   type timestamp = js.Date
@@ -203,6 +221,36 @@ package customerprofiles {
     }
   }
 
+  /** The operation to be performed on the provided source fields.
+    */
+  @js.native
+  trait ConnectorOperator extends js.Object {
+    var Marketo: js.UndefOr[MarketoConnectorOperator]
+    var S3: js.UndefOr[S3ConnectorOperator]
+    var Salesforce: js.UndefOr[SalesforceConnectorOperator]
+    var ServiceNow: js.UndefOr[ServiceNowConnectorOperator]
+    var Zendesk: js.UndefOr[ZendeskConnectorOperator]
+  }
+
+  object ConnectorOperator {
+    @inline
+    def apply(
+        Marketo: js.UndefOr[MarketoConnectorOperator] = js.undefined,
+        S3: js.UndefOr[S3ConnectorOperator] = js.undefined,
+        Salesforce: js.UndefOr[SalesforceConnectorOperator] = js.undefined,
+        ServiceNow: js.UndefOr[ServiceNowConnectorOperator] = js.undefined,
+        Zendesk: js.UndefOr[ZendeskConnectorOperator] = js.undefined
+    ): ConnectorOperator = {
+      val __obj = js.Dynamic.literal()
+      Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
+      S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
+      Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
+      ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
+      Zendesk.foreach(__v => __obj.updateDynamic("Zendesk")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectorOperator]
+    }
+  }
+
   @js.native
   trait CreateDomainRequest extends js.Object {
     var DefaultExpirationDays: expirationDaysInteger
@@ -365,6 +413,15 @@ package customerprofiles {
       )
       __obj.asInstanceOf[CreateProfileResponse]
     }
+  }
+
+  @js.native
+  sealed trait DataPullMode extends js.Any
+  object DataPullMode {
+    val Incremental = "Incremental".asInstanceOf[DataPullMode]
+    val Complete = "Complete".asInstanceOf[DataPullMode]
+
+    @inline def values = js.Array(Incremental, Complete)
   }
 
   @js.native
@@ -634,6 +691,41 @@ package customerprofiles {
     @inline def values = js.Array(STRING, NUMBER, PHONE_NUMBER, EMAIL_ADDRESS, NAME)
   }
 
+  /** The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.
+    */
+  @js.native
+  trait FlowDefinition extends js.Object {
+    var FlowName: FlowName
+    var KmsArn: KmsArn
+    var SourceFlowConfig: SourceFlowConfig
+    var Tasks: Tasks
+    var TriggerConfig: TriggerConfig
+    var Description: js.UndefOr[FlowDescription]
+  }
+
+  object FlowDefinition {
+    @inline
+    def apply(
+        FlowName: FlowName,
+        KmsArn: KmsArn,
+        SourceFlowConfig: SourceFlowConfig,
+        Tasks: Tasks,
+        TriggerConfig: TriggerConfig,
+        Description: js.UndefOr[FlowDescription] = js.undefined
+    ): FlowDefinition = {
+      val __obj = js.Dynamic.literal(
+        "FlowName" -> FlowName.asInstanceOf[js.Any],
+        "KmsArn" -> KmsArn.asInstanceOf[js.Any],
+        "SourceFlowConfig" -> SourceFlowConfig.asInstanceOf[js.Any],
+        "Tasks" -> Tasks.asInstanceOf[js.Any],
+        "TriggerConfig" -> TriggerConfig.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FlowDefinition]
+    }
+  }
+
   @js.native
   sealed trait Gender extends js.Any
   object Gender {
@@ -866,6 +958,24 @@ package customerprofiles {
       SourceObject.foreach(__v => __obj.updateDynamic("SourceObject")(__v.asInstanceOf[js.Any]))
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProfileObjectTypeTemplateResponse]
+    }
+  }
+
+  /** Specifies the configuration used when importing incremental records from the source.
+    */
+  @js.native
+  trait IncrementalPullConfig extends js.Object {
+    var DatetimeTypeFieldName: js.UndefOr[DatetimeTypeFieldName]
+  }
+
+  object IncrementalPullConfig {
+    @inline
+    def apply(
+        DatetimeTypeFieldName: js.UndefOr[DatetimeTypeFieldName] = js.undefined
+    ): IncrementalPullConfig = {
+      val __obj = js.Dynamic.literal()
+      DatetimeTypeFieldName.foreach(__v => __obj.updateDynamic("DatetimeTypeFieldName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IncrementalPullConfig]
     }
   }
 
@@ -1300,6 +1410,65 @@ package customerprofiles {
     }
   }
 
+  @js.native
+  sealed trait MarketoConnectorOperator extends js.Any
+  object MarketoConnectorOperator {
+    val PROJECTION = "PROJECTION".asInstanceOf[MarketoConnectorOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[MarketoConnectorOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[MarketoConnectorOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[MarketoConnectorOperator]
+    val ADDITION = "ADDITION".asInstanceOf[MarketoConnectorOperator]
+    val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[MarketoConnectorOperator]
+    val DIVISION = "DIVISION".asInstanceOf[MarketoConnectorOperator]
+    val SUBTRACTION = "SUBTRACTION".asInstanceOf[MarketoConnectorOperator]
+    val MASK_ALL = "MASK_ALL".asInstanceOf[MarketoConnectorOperator]
+    val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[MarketoConnectorOperator]
+    val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[MarketoConnectorOperator]
+    val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[MarketoConnectorOperator]
+    val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[MarketoConnectorOperator]
+    val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[MarketoConnectorOperator]
+    val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[MarketoConnectorOperator]
+    val NO_OP = "NO_OP".asInstanceOf[MarketoConnectorOperator]
+
+    @inline def values = js.Array(
+      PROJECTION,
+      LESS_THAN,
+      GREATER_THAN,
+      BETWEEN,
+      ADDITION,
+      MULTIPLICATION,
+      DIVISION,
+      SUBTRACTION,
+      MASK_ALL,
+      MASK_FIRST_N,
+      MASK_LAST_N,
+      VALIDATE_NON_NULL,
+      VALIDATE_NON_ZERO,
+      VALIDATE_NON_NEGATIVE,
+      VALIDATE_NUMERIC,
+      NO_OP
+    )
+  }
+
+  /** The properties that are applied when Marketo is being used as a source.
+    */
+  @js.native
+  trait MarketoSourceProperties extends js.Object {
+    var Object: Object
+  }
+
+  object MarketoSourceProperties {
+    @inline
+    def apply(
+        Object: Object
+    ): MarketoSourceProperties = {
+      val __obj = js.Dynamic.literal(
+        "Object" -> Object.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MarketoSourceProperties]
+    }
+  }
+
   /** Represents a field in a ProfileObjectType.
     */
   @js.native
@@ -1343,6 +1512,42 @@ package customerprofiles {
       StandardIdentifiers.foreach(__v => __obj.updateDynamic("StandardIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectTypeKey]
     }
+  }
+
+  @js.native
+  sealed trait OperatorPropertiesKeys extends js.Any
+  object OperatorPropertiesKeys {
+    val VALUE = "VALUE".asInstanceOf[OperatorPropertiesKeys]
+    val VALUES = "VALUES".asInstanceOf[OperatorPropertiesKeys]
+    val DATA_TYPE = "DATA_TYPE".asInstanceOf[OperatorPropertiesKeys]
+    val UPPER_BOUND = "UPPER_BOUND".asInstanceOf[OperatorPropertiesKeys]
+    val LOWER_BOUND = "LOWER_BOUND".asInstanceOf[OperatorPropertiesKeys]
+    val SOURCE_DATA_TYPE = "SOURCE_DATA_TYPE".asInstanceOf[OperatorPropertiesKeys]
+    val DESTINATION_DATA_TYPE = "DESTINATION_DATA_TYPE".asInstanceOf[OperatorPropertiesKeys]
+    val VALIDATION_ACTION = "VALIDATION_ACTION".asInstanceOf[OperatorPropertiesKeys]
+    val MASK_VALUE = "MASK_VALUE".asInstanceOf[OperatorPropertiesKeys]
+    val MASK_LENGTH = "MASK_LENGTH".asInstanceOf[OperatorPropertiesKeys]
+    val TRUNCATE_LENGTH = "TRUNCATE_LENGTH".asInstanceOf[OperatorPropertiesKeys]
+    val MATH_OPERATION_FIELDS_ORDER = "MATH_OPERATION_FIELDS_ORDER".asInstanceOf[OperatorPropertiesKeys]
+    val CONCAT_FORMAT = "CONCAT_FORMAT".asInstanceOf[OperatorPropertiesKeys]
+    val SUBFIELD_CATEGORY_MAP = "SUBFIELD_CATEGORY_MAP".asInstanceOf[OperatorPropertiesKeys]
+
+    @inline def values = js.Array(
+      VALUE,
+      VALUES,
+      DATA_TYPE,
+      UPPER_BOUND,
+      LOWER_BOUND,
+      SOURCE_DATA_TYPE,
+      DESTINATION_DATA_TYPE,
+      VALIDATION_ACTION,
+      MASK_VALUE,
+      MASK_LENGTH,
+      TRUNCATE_LENGTH,
+      MATH_OPERATION_FIELDS_ORDER,
+      CONCAT_FORMAT,
+      SUBFIELD_CATEGORY_MAP
+    )
   }
 
   @js.native
@@ -1440,8 +1645,9 @@ package customerprofiles {
   trait PutIntegrationRequest extends js.Object {
     var DomainName: name
     var ObjectTypeName: typeName
-    var Uri: string1To255
+    var FlowDefinition: js.UndefOr[FlowDefinition]
     var Tags: js.UndefOr[TagMap]
+    var Uri: js.UndefOr[string1To255]
   }
 
   object PutIntegrationRequest {
@@ -1449,16 +1655,18 @@ package customerprofiles {
     def apply(
         DomainName: name,
         ObjectTypeName: typeName,
-        Uri: string1To255,
-        Tags: js.UndefOr[TagMap] = js.undefined
+        FlowDefinition: js.UndefOr[FlowDefinition] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        Uri: js.UndefOr[string1To255] = js.undefined
     ): PutIntegrationRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any],
-        "Uri" -> Uri.asInstanceOf[js.Any]
+        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any]
       )
 
+      FlowDefinition.foreach(__v => __obj.updateDynamic("FlowDefinition")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Uri.foreach(__v => __obj.updateDynamic("Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutIntegrationRequest]
     }
   }
@@ -1629,6 +1837,191 @@ package customerprofiles {
   }
 
   @js.native
+  sealed trait S3ConnectorOperator extends js.Any
+  object S3ConnectorOperator {
+    val PROJECTION = "PROJECTION".asInstanceOf[S3ConnectorOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[S3ConnectorOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[S3ConnectorOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[S3ConnectorOperator]
+    val LESS_THAN_OR_EQUAL_TO = "LESS_THAN_OR_EQUAL_TO".asInstanceOf[S3ConnectorOperator]
+    val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[S3ConnectorOperator]
+    val EQUAL_TO = "EQUAL_TO".asInstanceOf[S3ConnectorOperator]
+    val NOT_EQUAL_TO = "NOT_EQUAL_TO".asInstanceOf[S3ConnectorOperator]
+    val ADDITION = "ADDITION".asInstanceOf[S3ConnectorOperator]
+    val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[S3ConnectorOperator]
+    val DIVISION = "DIVISION".asInstanceOf[S3ConnectorOperator]
+    val SUBTRACTION = "SUBTRACTION".asInstanceOf[S3ConnectorOperator]
+    val MASK_ALL = "MASK_ALL".asInstanceOf[S3ConnectorOperator]
+    val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[S3ConnectorOperator]
+    val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[S3ConnectorOperator]
+    val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[S3ConnectorOperator]
+    val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[S3ConnectorOperator]
+    val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[S3ConnectorOperator]
+    val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[S3ConnectorOperator]
+    val NO_OP = "NO_OP".asInstanceOf[S3ConnectorOperator]
+
+    @inline def values = js.Array(
+      PROJECTION,
+      LESS_THAN,
+      GREATER_THAN,
+      BETWEEN,
+      LESS_THAN_OR_EQUAL_TO,
+      GREATER_THAN_OR_EQUAL_TO,
+      EQUAL_TO,
+      NOT_EQUAL_TO,
+      ADDITION,
+      MULTIPLICATION,
+      DIVISION,
+      SUBTRACTION,
+      MASK_ALL,
+      MASK_FIRST_N,
+      MASK_LAST_N,
+      VALIDATE_NON_NULL,
+      VALIDATE_NON_ZERO,
+      VALIDATE_NON_NEGATIVE,
+      VALIDATE_NUMERIC,
+      NO_OP
+    )
+  }
+
+  /** The properties that are applied when Amazon S3 is being used as the flow source.
+    */
+  @js.native
+  trait S3SourceProperties extends js.Object {
+    var BucketName: BucketName
+    var BucketPrefix: js.UndefOr[BucketPrefix]
+  }
+
+  object S3SourceProperties {
+    @inline
+    def apply(
+        BucketName: BucketName,
+        BucketPrefix: js.UndefOr[BucketPrefix] = js.undefined
+    ): S3SourceProperties = {
+      val __obj = js.Dynamic.literal(
+        "BucketName" -> BucketName.asInstanceOf[js.Any]
+      )
+
+      BucketPrefix.foreach(__v => __obj.updateDynamic("BucketPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3SourceProperties]
+    }
+  }
+
+  @js.native
+  sealed trait SalesforceConnectorOperator extends js.Any
+  object SalesforceConnectorOperator {
+    val PROJECTION = "PROJECTION".asInstanceOf[SalesforceConnectorOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[SalesforceConnectorOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[SalesforceConnectorOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[SalesforceConnectorOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[SalesforceConnectorOperator]
+    val LESS_THAN_OR_EQUAL_TO = "LESS_THAN_OR_EQUAL_TO".asInstanceOf[SalesforceConnectorOperator]
+    val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[SalesforceConnectorOperator]
+    val EQUAL_TO = "EQUAL_TO".asInstanceOf[SalesforceConnectorOperator]
+    val NOT_EQUAL_TO = "NOT_EQUAL_TO".asInstanceOf[SalesforceConnectorOperator]
+    val ADDITION = "ADDITION".asInstanceOf[SalesforceConnectorOperator]
+    val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[SalesforceConnectorOperator]
+    val DIVISION = "DIVISION".asInstanceOf[SalesforceConnectorOperator]
+    val SUBTRACTION = "SUBTRACTION".asInstanceOf[SalesforceConnectorOperator]
+    val MASK_ALL = "MASK_ALL".asInstanceOf[SalesforceConnectorOperator]
+    val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[SalesforceConnectorOperator]
+    val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[SalesforceConnectorOperator]
+    val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[SalesforceConnectorOperator]
+    val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[SalesforceConnectorOperator]
+    val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[SalesforceConnectorOperator]
+    val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[SalesforceConnectorOperator]
+    val NO_OP = "NO_OP".asInstanceOf[SalesforceConnectorOperator]
+
+    @inline def values = js.Array(
+      PROJECTION,
+      LESS_THAN,
+      CONTAINS,
+      GREATER_THAN,
+      BETWEEN,
+      LESS_THAN_OR_EQUAL_TO,
+      GREATER_THAN_OR_EQUAL_TO,
+      EQUAL_TO,
+      NOT_EQUAL_TO,
+      ADDITION,
+      MULTIPLICATION,
+      DIVISION,
+      SUBTRACTION,
+      MASK_ALL,
+      MASK_FIRST_N,
+      MASK_LAST_N,
+      VALIDATE_NON_NULL,
+      VALIDATE_NON_ZERO,
+      VALIDATE_NON_NEGATIVE,
+      VALIDATE_NUMERIC,
+      NO_OP
+    )
+  }
+
+  /** The properties that are applied when Salesforce is being used as a source.
+    */
+  @js.native
+  trait SalesforceSourceProperties extends js.Object {
+    var Object: Object
+    var EnableDynamicFieldUpdate: js.UndefOr[Boolean]
+    var IncludeDeletedRecords: js.UndefOr[Boolean]
+  }
+
+  object SalesforceSourceProperties {
+    @inline
+    def apply(
+        Object: Object,
+        EnableDynamicFieldUpdate: js.UndefOr[Boolean] = js.undefined,
+        IncludeDeletedRecords: js.UndefOr[Boolean] = js.undefined
+    ): SalesforceSourceProperties = {
+      val __obj = js.Dynamic.literal(
+        "Object" -> Object.asInstanceOf[js.Any]
+      )
+
+      EnableDynamicFieldUpdate.foreach(__v => __obj.updateDynamic("EnableDynamicFieldUpdate")(__v.asInstanceOf[js.Any]))
+      IncludeDeletedRecords.foreach(__v => __obj.updateDynamic("IncludeDeletedRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SalesforceSourceProperties]
+    }
+  }
+
+  /** Specifies the configuration details of a scheduled-trigger flow that you define. Currently, these settings only apply to the scheduled-trigger type.
+    */
+  @js.native
+  trait ScheduledTriggerProperties extends js.Object {
+    var ScheduleExpression: ScheduleExpression
+    var DataPullMode: js.UndefOr[DataPullMode]
+    var FirstExecutionFrom: js.UndefOr[Date]
+    var ScheduleEndTime: js.UndefOr[Date]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
+    var ScheduleStartTime: js.UndefOr[Date]
+    var Timezone: js.UndefOr[Timezone]
+  }
+
+  object ScheduledTriggerProperties {
+    @inline
+    def apply(
+        ScheduleExpression: ScheduleExpression,
+        DataPullMode: js.UndefOr[DataPullMode] = js.undefined,
+        FirstExecutionFrom: js.UndefOr[Date] = js.undefined,
+        ScheduleEndTime: js.UndefOr[Date] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
+        ScheduleStartTime: js.UndefOr[Date] = js.undefined,
+        Timezone: js.UndefOr[Timezone] = js.undefined
+    ): ScheduledTriggerProperties = {
+      val __obj = js.Dynamic.literal(
+        "ScheduleExpression" -> ScheduleExpression.asInstanceOf[js.Any]
+      )
+
+      DataPullMode.foreach(__v => __obj.updateDynamic("DataPullMode")(__v.asInstanceOf[js.Any]))
+      FirstExecutionFrom.foreach(__v => __obj.updateDynamic("FirstExecutionFrom")(__v.asInstanceOf[js.Any]))
+      ScheduleEndTime.foreach(__v => __obj.updateDynamic("ScheduleEndTime")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
+      ScheduleStartTime.foreach(__v => __obj.updateDynamic("ScheduleStartTime")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduledTriggerProperties]
+    }
+  }
+
+  @js.native
   trait SearchProfilesRequest extends js.Object {
     var DomainName: name
     var KeyName: name
@@ -1678,6 +2071,146 @@ package customerprofiles {
   }
 
   @js.native
+  sealed trait ServiceNowConnectorOperator extends js.Any
+  object ServiceNowConnectorOperator {
+    val PROJECTION = "PROJECTION".asInstanceOf[ServiceNowConnectorOperator]
+    val CONTAINS = "CONTAINS".asInstanceOf[ServiceNowConnectorOperator]
+    val LESS_THAN = "LESS_THAN".asInstanceOf[ServiceNowConnectorOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ServiceNowConnectorOperator]
+    val BETWEEN = "BETWEEN".asInstanceOf[ServiceNowConnectorOperator]
+    val LESS_THAN_OR_EQUAL_TO = "LESS_THAN_OR_EQUAL_TO".asInstanceOf[ServiceNowConnectorOperator]
+    val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ServiceNowConnectorOperator]
+    val EQUAL_TO = "EQUAL_TO".asInstanceOf[ServiceNowConnectorOperator]
+    val NOT_EQUAL_TO = "NOT_EQUAL_TO".asInstanceOf[ServiceNowConnectorOperator]
+    val ADDITION = "ADDITION".asInstanceOf[ServiceNowConnectorOperator]
+    val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[ServiceNowConnectorOperator]
+    val DIVISION = "DIVISION".asInstanceOf[ServiceNowConnectorOperator]
+    val SUBTRACTION = "SUBTRACTION".asInstanceOf[ServiceNowConnectorOperator]
+    val MASK_ALL = "MASK_ALL".asInstanceOf[ServiceNowConnectorOperator]
+    val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[ServiceNowConnectorOperator]
+    val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[ServiceNowConnectorOperator]
+    val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[ServiceNowConnectorOperator]
+    val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[ServiceNowConnectorOperator]
+    val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[ServiceNowConnectorOperator]
+    val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[ServiceNowConnectorOperator]
+    val NO_OP = "NO_OP".asInstanceOf[ServiceNowConnectorOperator]
+
+    @inline def values = js.Array(
+      PROJECTION,
+      CONTAINS,
+      LESS_THAN,
+      GREATER_THAN,
+      BETWEEN,
+      LESS_THAN_OR_EQUAL_TO,
+      GREATER_THAN_OR_EQUAL_TO,
+      EQUAL_TO,
+      NOT_EQUAL_TO,
+      ADDITION,
+      MULTIPLICATION,
+      DIVISION,
+      SUBTRACTION,
+      MASK_ALL,
+      MASK_FIRST_N,
+      MASK_LAST_N,
+      VALIDATE_NON_NULL,
+      VALIDATE_NON_ZERO,
+      VALIDATE_NON_NEGATIVE,
+      VALIDATE_NUMERIC,
+      NO_OP
+    )
+  }
+
+  /** The properties that are applied when ServiceNow is being used as a source.
+    */
+  @js.native
+  trait ServiceNowSourceProperties extends js.Object {
+    var Object: Object
+  }
+
+  object ServiceNowSourceProperties {
+    @inline
+    def apply(
+        Object: Object
+    ): ServiceNowSourceProperties = {
+      val __obj = js.Dynamic.literal(
+        "Object" -> Object.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ServiceNowSourceProperties]
+    }
+  }
+
+  /** Specifies the information that is required to query a particular Amazon AppFlow connector. Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.
+    */
+  @js.native
+  trait SourceConnectorProperties extends js.Object {
+    var Marketo: js.UndefOr[MarketoSourceProperties]
+    var S3: js.UndefOr[S3SourceProperties]
+    var Salesforce: js.UndefOr[SalesforceSourceProperties]
+    var ServiceNow: js.UndefOr[ServiceNowSourceProperties]
+    var Zendesk: js.UndefOr[ZendeskSourceProperties]
+  }
+
+  object SourceConnectorProperties {
+    @inline
+    def apply(
+        Marketo: js.UndefOr[MarketoSourceProperties] = js.undefined,
+        S3: js.UndefOr[S3SourceProperties] = js.undefined,
+        Salesforce: js.UndefOr[SalesforceSourceProperties] = js.undefined,
+        ServiceNow: js.UndefOr[ServiceNowSourceProperties] = js.undefined,
+        Zendesk: js.UndefOr[ZendeskSourceProperties] = js.undefined
+    ): SourceConnectorProperties = {
+      val __obj = js.Dynamic.literal()
+      Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
+      S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
+      Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
+      ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
+      Zendesk.foreach(__v => __obj.updateDynamic("Zendesk")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceConnectorProperties]
+    }
+  }
+
+  @js.native
+  sealed trait SourceConnectorType extends js.Any
+  object SourceConnectorType {
+    val Salesforce = "Salesforce".asInstanceOf[SourceConnectorType]
+    val Marketo = "Marketo".asInstanceOf[SourceConnectorType]
+    val Zendesk = "Zendesk".asInstanceOf[SourceConnectorType]
+    val Servicenow = "Servicenow".asInstanceOf[SourceConnectorType]
+    val S3 = "S3".asInstanceOf[SourceConnectorType]
+
+    @inline def values = js.Array(Salesforce, Marketo, Zendesk, Servicenow, S3)
+  }
+
+  /** Contains information about the configuration of the source connector used in the flow.
+    */
+  @js.native
+  trait SourceFlowConfig extends js.Object {
+    var ConnectorType: SourceConnectorType
+    var SourceConnectorProperties: SourceConnectorProperties
+    var ConnectorProfileName: js.UndefOr[ConnectorProfileName]
+    var IncrementalPullConfig: js.UndefOr[IncrementalPullConfig]
+  }
+
+  object SourceFlowConfig {
+    @inline
+    def apply(
+        ConnectorType: SourceConnectorType,
+        SourceConnectorProperties: SourceConnectorProperties,
+        ConnectorProfileName: js.UndefOr[ConnectorProfileName] = js.undefined,
+        IncrementalPullConfig: js.UndefOr[IncrementalPullConfig] = js.undefined
+    ): SourceFlowConfig = {
+      val __obj = js.Dynamic.literal(
+        "ConnectorType" -> ConnectorType.asInstanceOf[js.Any],
+        "SourceConnectorProperties" -> SourceConnectorProperties.asInstanceOf[js.Any]
+      )
+
+      ConnectorProfileName.foreach(__v => __obj.updateDynamic("ConnectorProfileName")(__v.asInstanceOf[js.Any]))
+      IncrementalPullConfig.foreach(__v => __obj.updateDynamic("IncrementalPullConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceFlowConfig]
+    }
+  }
+
+  @js.native
   sealed trait StandardIdentifier extends js.Any
   object StandardIdentifier {
     val PROFILE = "PROFILE".asInstanceOf[StandardIdentifier]
@@ -1718,6 +2251,103 @@ package customerprofiles {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
+  }
+
+  /** A class for modeling different type of tasks. Task implementation varies based on the TaskType.
+    */
+  @js.native
+  trait Task extends js.Object {
+    var SourceFields: SourceFields
+    var TaskType: TaskType
+    var ConnectorOperator: js.UndefOr[ConnectorOperator]
+    var DestinationField: js.UndefOr[DestinationField]
+    var TaskProperties: js.UndefOr[TaskPropertiesMap]
+  }
+
+  object Task {
+    @inline
+    def apply(
+        SourceFields: SourceFields,
+        TaskType: TaskType,
+        ConnectorOperator: js.UndefOr[ConnectorOperator] = js.undefined,
+        DestinationField: js.UndefOr[DestinationField] = js.undefined,
+        TaskProperties: js.UndefOr[TaskPropertiesMap] = js.undefined
+    ): Task = {
+      val __obj = js.Dynamic.literal(
+        "SourceFields" -> SourceFields.asInstanceOf[js.Any],
+        "TaskType" -> TaskType.asInstanceOf[js.Any]
+      )
+
+      ConnectorOperator.foreach(__v => __obj.updateDynamic("ConnectorOperator")(__v.asInstanceOf[js.Any]))
+      DestinationField.foreach(__v => __obj.updateDynamic("DestinationField")(__v.asInstanceOf[js.Any]))
+      TaskProperties.foreach(__v => __obj.updateDynamic("TaskProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Task]
+    }
+  }
+
+  @js.native
+  sealed trait TaskType extends js.Any
+  object TaskType {
+    val Arithmetic = "Arithmetic".asInstanceOf[TaskType]
+    val Filter = "Filter".asInstanceOf[TaskType]
+    val Map = "Map".asInstanceOf[TaskType]
+    val Mask = "Mask".asInstanceOf[TaskType]
+    val Merge = "Merge".asInstanceOf[TaskType]
+    val Truncate = "Truncate".asInstanceOf[TaskType]
+    val Validate = "Validate".asInstanceOf[TaskType]
+
+    @inline def values = js.Array(Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
+  }
+
+  /** The trigger settings that determine how and when Amazon AppFlow runs the specified flow.
+    */
+  @js.native
+  trait TriggerConfig extends js.Object {
+    var TriggerType: TriggerType
+    var TriggerProperties: js.UndefOr[TriggerProperties]
+  }
+
+  object TriggerConfig {
+    @inline
+    def apply(
+        TriggerType: TriggerType,
+        TriggerProperties: js.UndefOr[TriggerProperties] = js.undefined
+    ): TriggerConfig = {
+      val __obj = js.Dynamic.literal(
+        "TriggerType" -> TriggerType.asInstanceOf[js.Any]
+      )
+
+      TriggerProperties.foreach(__v => __obj.updateDynamic("TriggerProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TriggerConfig]
+    }
+  }
+
+  /** Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the Scheduled trigger type.
+    */
+  @js.native
+  trait TriggerProperties extends js.Object {
+    var Scheduled: js.UndefOr[ScheduledTriggerProperties]
+  }
+
+  object TriggerProperties {
+    @inline
+    def apply(
+        Scheduled: js.UndefOr[ScheduledTriggerProperties] = js.undefined
+    ): TriggerProperties = {
+      val __obj = js.Dynamic.literal()
+      Scheduled.foreach(__v => __obj.updateDynamic("Scheduled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TriggerProperties]
+    }
+  }
+
+  @js.native
+  sealed trait TriggerType extends js.Any
+  object TriggerType {
+    val Scheduled = "Scheduled".asInstanceOf[TriggerType]
+    val Event = "Event".asInstanceOf[TriggerType]
+    val OnDemand = "OnDemand".asInstanceOf[TriggerType]
+
+    @inline def values = js.Array(Scheduled, Event, OnDemand)
   }
 
   @js.native
@@ -1960,6 +2590,61 @@ package customerprofiles {
         "ProfileId" -> ProfileId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateProfileResponse]
+    }
+  }
+
+  @js.native
+  sealed trait ZendeskConnectorOperator extends js.Any
+  object ZendeskConnectorOperator {
+    val PROJECTION = "PROJECTION".asInstanceOf[ZendeskConnectorOperator]
+    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ZendeskConnectorOperator]
+    val ADDITION = "ADDITION".asInstanceOf[ZendeskConnectorOperator]
+    val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[ZendeskConnectorOperator]
+    val DIVISION = "DIVISION".asInstanceOf[ZendeskConnectorOperator]
+    val SUBTRACTION = "SUBTRACTION".asInstanceOf[ZendeskConnectorOperator]
+    val MASK_ALL = "MASK_ALL".asInstanceOf[ZendeskConnectorOperator]
+    val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[ZendeskConnectorOperator]
+    val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[ZendeskConnectorOperator]
+    val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[ZendeskConnectorOperator]
+    val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[ZendeskConnectorOperator]
+    val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[ZendeskConnectorOperator]
+    val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[ZendeskConnectorOperator]
+    val NO_OP = "NO_OP".asInstanceOf[ZendeskConnectorOperator]
+
+    @inline def values = js.Array(
+      PROJECTION,
+      GREATER_THAN,
+      ADDITION,
+      MULTIPLICATION,
+      DIVISION,
+      SUBTRACTION,
+      MASK_ALL,
+      MASK_FIRST_N,
+      MASK_LAST_N,
+      VALIDATE_NON_NULL,
+      VALIDATE_NON_ZERO,
+      VALIDATE_NON_NEGATIVE,
+      VALIDATE_NUMERIC,
+      NO_OP
+    )
+  }
+
+  /** The properties that are applied when using Zendesk as a flow source.
+    */
+  @js.native
+  trait ZendeskSourceProperties extends js.Object {
+    var Object: Object
+  }
+
+  object ZendeskSourceProperties {
+    @inline
+    def apply(
+        Object: Object
+    ): ZendeskSourceProperties = {
+      val __obj = js.Dynamic.literal(
+        "Object" -> Object.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ZendeskSourceProperties]
     }
   }
 }

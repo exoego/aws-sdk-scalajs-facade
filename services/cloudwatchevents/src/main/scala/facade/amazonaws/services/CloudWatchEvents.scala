@@ -93,6 +93,9 @@ package object cloudwatchevents {
   type RunCommandTargetValue = String
   type RunCommandTargetValues = js.Array[RunCommandTargetValue]
   type RunCommandTargets = js.Array[RunCommandTarget]
+  type SageMakerPipelineParameterList = js.Array[SageMakerPipelineParameter]
+  type SageMakerPipelineParameterName = String
+  type SageMakerPipelineParameterValue = String
   type ScheduleExpression = String
   type SecretsManagerSecretArn = String
   type Sql = String
@@ -3311,6 +3314,46 @@ package cloudwatchevents {
     }
   }
 
+  /** Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.
+    */
+  @js.native
+  trait SageMakerPipelineParameter extends js.Object {
+    var Name: SageMakerPipelineParameterName
+    var Value: SageMakerPipelineParameterValue
+  }
+
+  object SageMakerPipelineParameter {
+    @inline
+    def apply(
+        Name: SageMakerPipelineParameterName,
+        Value: SageMakerPipelineParameterValue
+    ): SageMakerPipelineParameter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SageMakerPipelineParameter]
+    }
+  }
+
+  /** These are custom parameters to use when the target is a SageMaker Model Building Pipeline that starts based on EventBridge events.
+    */
+  @js.native
+  trait SageMakerPipelineParameters extends js.Object {
+    var PipelineParameterList: js.UndefOr[SageMakerPipelineParameterList]
+  }
+
+  object SageMakerPipelineParameters {
+    @inline
+    def apply(
+        PipelineParameterList: js.UndefOr[SageMakerPipelineParameterList] = js.undefined
+    ): SageMakerPipelineParameters = {
+      val __obj = js.Dynamic.literal()
+      PipelineParameterList.foreach(__v => __obj.updateDynamic("PipelineParameterList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SageMakerPipelineParameters]
+    }
+  }
+
   /** This structure includes the custom parameter to be used when the target is an SQS FIFO queue.
     */
   @js.native
@@ -3459,6 +3502,7 @@ package cloudwatchevents {
     var RetryPolicy: js.UndefOr[RetryPolicy]
     var RoleArn: js.UndefOr[RoleArn]
     var RunCommandParameters: js.UndefOr[RunCommandParameters]
+    var SageMakerPipelineParameters: js.UndefOr[SageMakerPipelineParameters]
     var SqsParameters: js.UndefOr[SqsParameters]
   }
 
@@ -3479,6 +3523,7 @@ package cloudwatchevents {
         RetryPolicy: js.UndefOr[RetryPolicy] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         RunCommandParameters: js.UndefOr[RunCommandParameters] = js.undefined,
+        SageMakerPipelineParameters: js.UndefOr[SageMakerPipelineParameters] = js.undefined,
         SqsParameters: js.UndefOr[SqsParameters] = js.undefined
     ): Target = {
       val __obj = js.Dynamic.literal(
@@ -3498,6 +3543,7 @@ package cloudwatchevents {
       RetryPolicy.foreach(__v => __obj.updateDynamic("RetryPolicy")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       RunCommandParameters.foreach(__v => __obj.updateDynamic("RunCommandParameters")(__v.asInstanceOf[js.Any]))
+      SageMakerPipelineParameters.foreach(__v => __obj.updateDynamic("SageMakerPipelineParameters")(__v.asInstanceOf[js.Any]))
       SqsParameters.foreach(__v => __obj.updateDynamic("SqsParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Target]
     }

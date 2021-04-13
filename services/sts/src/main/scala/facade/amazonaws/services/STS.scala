@@ -31,6 +31,7 @@ package object sts {
   type roleSessionNameType = String
   type serialNumberType = String
   type sessionPolicyDocumentType = String
+  type sourceIdentityType = String
   type tagKeyListType = js.Array[tagKeyType]
   type tagKeyType = String
   type tagListType = js.Array[Tag]
@@ -81,6 +82,7 @@ package sts {
     var Policy: js.UndefOr[sessionPolicyDocumentType]
     var PolicyArns: js.UndefOr[policyDescriptorListType]
     var SerialNumber: js.UndefOr[serialNumberType]
+    var SourceIdentity: js.UndefOr[sourceIdentityType]
     var Tags: js.UndefOr[tagListType]
     var TokenCode: js.UndefOr[tokenCodeType]
     var TransitiveTagKeys: js.UndefOr[tagKeyListType]
@@ -96,6 +98,7 @@ package sts {
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
         PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined,
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
+        SourceIdentity: js.UndefOr[sourceIdentityType] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined,
         TokenCode: js.UndefOr[tokenCodeType] = js.undefined,
         TransitiveTagKeys: js.UndefOr[tagKeyListType] = js.undefined
@@ -110,6 +113,7 @@ package sts {
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
       SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      SourceIdentity.foreach(__v => __obj.updateDynamic("SourceIdentity")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TokenCode.foreach(__v => __obj.updateDynamic("TokenCode")(__v.asInstanceOf[js.Any]))
       TransitiveTagKeys.foreach(__v => __obj.updateDynamic("TransitiveTagKeys")(__v.asInstanceOf[js.Any]))
@@ -124,6 +128,7 @@ package sts {
     var AssumedRoleUser: js.UndefOr[AssumedRoleUser]
     var Credentials: js.UndefOr[Credentials]
     var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
+    var SourceIdentity: js.UndefOr[sourceIdentityType]
   }
 
   object AssumeRoleResponse {
@@ -131,12 +136,14 @@ package sts {
     def apply(
         AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
         Credentials: js.UndefOr[Credentials] = js.undefined,
-        PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
+        PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
+        SourceIdentity: js.UndefOr[sourceIdentityType] = js.undefined
     ): AssumeRoleResponse = {
       val __obj = js.Dynamic.literal()
       AssumedRoleUser.foreach(__v => __obj.updateDynamic("AssumedRoleUser")(__v.asInstanceOf[js.Any]))
       Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
+      SourceIdentity.foreach(__v => __obj.updateDynamic("SourceIdentity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleResponse]
     }
   }
@@ -184,6 +191,7 @@ package sts {
     var Issuer: js.UndefOr[Issuer]
     var NameQualifier: js.UndefOr[NameQualifier]
     var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
+    var SourceIdentity: js.UndefOr[sourceIdentityType]
     var Subject: js.UndefOr[Subject]
     var SubjectType: js.UndefOr[SubjectType]
   }
@@ -197,6 +205,7 @@ package sts {
         Issuer: js.UndefOr[Issuer] = js.undefined,
         NameQualifier: js.UndefOr[NameQualifier] = js.undefined,
         PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
+        SourceIdentity: js.UndefOr[sourceIdentityType] = js.undefined,
         Subject: js.UndefOr[Subject] = js.undefined,
         SubjectType: js.UndefOr[SubjectType] = js.undefined
     ): AssumeRoleWithSAMLResponse = {
@@ -207,6 +216,7 @@ package sts {
       Issuer.foreach(__v => __obj.updateDynamic("Issuer")(__v.asInstanceOf[js.Any]))
       NameQualifier.foreach(__v => __obj.updateDynamic("NameQualifier")(__v.asInstanceOf[js.Any]))
       PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
+      SourceIdentity.foreach(__v => __obj.updateDynamic("SourceIdentity")(__v.asInstanceOf[js.Any]))
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
       SubjectType.foreach(__v => __obj.updateDynamic("SubjectType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithSAMLResponse]
@@ -258,6 +268,7 @@ package sts {
     var Credentials: js.UndefOr[Credentials]
     var PackedPolicySize: js.UndefOr[nonNegativeIntegerType]
     var Provider: js.UndefOr[Issuer]
+    var SourceIdentity: js.UndefOr[sourceIdentityType]
     var SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType]
   }
 
@@ -269,6 +280,7 @@ package sts {
         Credentials: js.UndefOr[Credentials] = js.undefined,
         PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
         Provider: js.UndefOr[Issuer] = js.undefined,
+        SourceIdentity: js.UndefOr[sourceIdentityType] = js.undefined,
         SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType] = js.undefined
     ): AssumeRoleWithWebIdentityResponse = {
       val __obj = js.Dynamic.literal()
@@ -277,6 +289,7 @@ package sts {
       Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
       Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      SourceIdentity.foreach(__v => __obj.updateDynamic("SourceIdentity")(__v.asInstanceOf[js.Any]))
       SubjectFromWebIdentityToken.foreach(__v => __obj.updateDynamic("SubjectFromWebIdentityToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithWebIdentityResponse]
     }

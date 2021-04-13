@@ -12,11 +12,13 @@ package object ivs {
   type ChannelArnList = js.Array[ChannelArn]
   type ChannelList = js.Array[ChannelSummary]
   type ChannelName = String
+  type ChannelRecordingConfigurationArn = String
   type Channels = js.Array[Channel]
   type IngestEndpoint = String
   type IsAuthorized = Boolean
   type MaxChannelResults = Int
   type MaxPlaybackKeyPairResults = Int
+  type MaxRecordingConfigurationResults = Int
   type MaxStreamKeyResults = Int
   type MaxStreamResults = Int
   type MaxTagResults = Int
@@ -27,7 +29,11 @@ package object ivs {
   type PlaybackKeyPairName = String
   type PlaybackPublicKeyMaterial = String
   type PlaybackURL = String
+  type RecordingConfigurationArn = String
+  type RecordingConfigurationList = js.Array[RecordingConfigurationSummary]
+  type RecordingConfigurationName = String
   type ResourceArn = String
+  type S3DestinationBucketName = String
   type StreamKeyArn = String
   type StreamKeyArnList = js.Array[StreamKeyArn]
   type StreamKeyList = js.Array[StreamKeySummary]
@@ -49,17 +55,21 @@ package object ivs {
     @inline def batchGetChannelFuture(params: BatchGetChannelRequest): Future[BatchGetChannelResponse] = service.batchGetChannel(params).promise().toFuture
     @inline def batchGetStreamKeyFuture(params: BatchGetStreamKeyRequest): Future[BatchGetStreamKeyResponse] = service.batchGetStreamKey(params).promise().toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
+    @inline def createRecordingConfigurationFuture(params: CreateRecordingConfigurationRequest): Future[CreateRecordingConfigurationResponse] = service.createRecordingConfiguration(params).promise().toFuture
     @inline def createStreamKeyFuture(params: CreateStreamKeyRequest): Future[CreateStreamKeyResponse] = service.createStreamKey(params).promise().toFuture
     @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[js.Object] = service.deleteChannel(params).promise().toFuture
     @inline def deletePlaybackKeyPairFuture(params: DeletePlaybackKeyPairRequest): Future[DeletePlaybackKeyPairResponse] = service.deletePlaybackKeyPair(params).promise().toFuture
+    @inline def deleteRecordingConfigurationFuture(params: DeleteRecordingConfigurationRequest): Future[js.Object] = service.deleteRecordingConfiguration(params).promise().toFuture
     @inline def deleteStreamKeyFuture(params: DeleteStreamKeyRequest): Future[js.Object] = service.deleteStreamKey(params).promise().toFuture
     @inline def getChannelFuture(params: GetChannelRequest): Future[GetChannelResponse] = service.getChannel(params).promise().toFuture
     @inline def getPlaybackKeyPairFuture(params: GetPlaybackKeyPairRequest): Future[GetPlaybackKeyPairResponse] = service.getPlaybackKeyPair(params).promise().toFuture
+    @inline def getRecordingConfigurationFuture(params: GetRecordingConfigurationRequest): Future[GetRecordingConfigurationResponse] = service.getRecordingConfiguration(params).promise().toFuture
     @inline def getStreamFuture(params: GetStreamRequest): Future[GetStreamResponse] = service.getStream(params).promise().toFuture
     @inline def getStreamKeyFuture(params: GetStreamKeyRequest): Future[GetStreamKeyResponse] = service.getStreamKey(params).promise().toFuture
     @inline def importPlaybackKeyPairFuture(params: ImportPlaybackKeyPairRequest): Future[ImportPlaybackKeyPairResponse] = service.importPlaybackKeyPair(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
     @inline def listPlaybackKeyPairsFuture(params: ListPlaybackKeyPairsRequest): Future[ListPlaybackKeyPairsResponse] = service.listPlaybackKeyPairs(params).promise().toFuture
+    @inline def listRecordingConfigurationsFuture(params: ListRecordingConfigurationsRequest): Future[ListRecordingConfigurationsResponse] = service.listRecordingConfigurations(params).promise().toFuture
     @inline def listStreamKeysFuture(params: ListStreamKeysRequest): Future[ListStreamKeysResponse] = service.listStreamKeys(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] = service.listStreams(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
@@ -81,17 +91,21 @@ package ivs {
     def batchGetChannel(params: BatchGetChannelRequest): Request[BatchGetChannelResponse] = js.native
     def batchGetStreamKey(params: BatchGetStreamKeyRequest): Request[BatchGetStreamKeyResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
+    def createRecordingConfiguration(params: CreateRecordingConfigurationRequest): Request[CreateRecordingConfigurationResponse] = js.native
     def createStreamKey(params: CreateStreamKeyRequest): Request[CreateStreamKeyResponse] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[js.Object] = js.native
     def deletePlaybackKeyPair(params: DeletePlaybackKeyPairRequest): Request[DeletePlaybackKeyPairResponse] = js.native
+    def deleteRecordingConfiguration(params: DeleteRecordingConfigurationRequest): Request[js.Object] = js.native
     def deleteStreamKey(params: DeleteStreamKeyRequest): Request[js.Object] = js.native
     def getChannel(params: GetChannelRequest): Request[GetChannelResponse] = js.native
     def getPlaybackKeyPair(params: GetPlaybackKeyPairRequest): Request[GetPlaybackKeyPairResponse] = js.native
+    def getRecordingConfiguration(params: GetRecordingConfigurationRequest): Request[GetRecordingConfigurationResponse] = js.native
     def getStream(params: GetStreamRequest): Request[GetStreamResponse] = js.native
     def getStreamKey(params: GetStreamKeyRequest): Request[GetStreamKeyResponse] = js.native
     def importPlaybackKeyPair(params: ImportPlaybackKeyPairRequest): Request[ImportPlaybackKeyPairResponse] = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listPlaybackKeyPairs(params: ListPlaybackKeyPairsRequest): Request[ListPlaybackKeyPairsResponse] = js.native
+    def listRecordingConfigurations(params: ListRecordingConfigurationsRequest): Request[ListRecordingConfigurationsResponse] = js.native
     def listStreamKeys(params: ListStreamKeysRequest): Request[ListStreamKeysResponse] = js.native
     def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -208,6 +222,7 @@ package ivs {
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
     var playbackUrl: js.UndefOr[PlaybackURL]
+    var recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn]
     var tags: js.UndefOr[Tags]
     var `type`: js.UndefOr[ChannelType]
   }
@@ -221,6 +236,7 @@ package ivs {
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
         playbackUrl: js.UndefOr[PlaybackURL] = js.undefined,
+        recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
     ): Channel = {
@@ -231,6 +247,7 @@ package ivs {
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       playbackUrl.foreach(__v => __obj.updateDynamic("playbackUrl")(__v.asInstanceOf[js.Any]))
+      recordingConfigurationArn.foreach(__v => __obj.updateDynamic("recordingConfigurationArn")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Channel]
@@ -254,6 +271,7 @@ package ivs {
     var authorized: js.UndefOr[IsAuthorized]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
+    var recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn]
     var tags: js.UndefOr[Tags]
   }
 
@@ -264,6 +282,7 @@ package ivs {
         authorized: js.UndefOr[IsAuthorized] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
+        recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): ChannelSummary = {
       val __obj = js.Dynamic.literal()
@@ -271,6 +290,7 @@ package ivs {
       authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recordingConfigurationArn.foreach(__v => __obj.updateDynamic("recordingConfigurationArn")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSummary]
     }
@@ -290,6 +310,7 @@ package ivs {
     var authorized: js.UndefOr[Boolean]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
+    var recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn]
     var tags: js.UndefOr[Tags]
     var `type`: js.UndefOr[ChannelType]
   }
@@ -300,6 +321,7 @@ package ivs {
         authorized: js.UndefOr[Boolean] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
+        recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
     ): CreateChannelRequest = {
@@ -307,6 +329,7 @@ package ivs {
       authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recordingConfigurationArn.foreach(__v => __obj.updateDynamic("recordingConfigurationArn")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelRequest]
@@ -329,6 +352,46 @@ package ivs {
       channel.foreach(__v => __obj.updateDynamic("channel")(__v.asInstanceOf[js.Any]))
       streamKey.foreach(__v => __obj.updateDynamic("streamKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelResponse]
+    }
+  }
+
+  @js.native
+  trait CreateRecordingConfigurationRequest extends js.Object {
+    var destinationConfiguration: DestinationConfiguration
+    var name: js.UndefOr[RecordingConfigurationName]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object CreateRecordingConfigurationRequest {
+    @inline
+    def apply(
+        destinationConfiguration: DestinationConfiguration,
+        name: js.UndefOr[RecordingConfigurationName] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): CreateRecordingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "destinationConfiguration" -> destinationConfiguration.asInstanceOf[js.Any]
+      )
+
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRecordingConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRecordingConfigurationResponse extends js.Object {
+    var recordingConfiguration: js.UndefOr[RecordingConfiguration]
+  }
+
+  object CreateRecordingConfigurationResponse {
+    @inline
+    def apply(
+        recordingConfiguration: js.UndefOr[RecordingConfiguration] = js.undefined
+    ): CreateRecordingConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      recordingConfiguration.foreach(__v => __obj.updateDynamic("recordingConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRecordingConfigurationResponse]
     }
   }
 
@@ -415,6 +478,23 @@ package ivs {
   }
 
   @js.native
+  trait DeleteRecordingConfigurationRequest extends js.Object {
+    var arn: RecordingConfigurationArn
+  }
+
+  object DeleteRecordingConfigurationRequest {
+    @inline
+    def apply(
+        arn: RecordingConfigurationArn
+    ): DeleteRecordingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteRecordingConfigurationRequest]
+    }
+  }
+
+  @js.native
   trait DeleteStreamKeyRequest extends js.Object {
     var arn: StreamKeyArn
   }
@@ -428,6 +508,24 @@ package ivs {
         "arn" -> arn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteStreamKeyRequest]
+    }
+  }
+
+  /** A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.
+    */
+  @js.native
+  trait DestinationConfiguration extends js.Object {
+    var s3: js.UndefOr[S3DestinationConfiguration]
+  }
+
+  object DestinationConfiguration {
+    @inline
+    def apply(
+        s3: js.UndefOr[S3DestinationConfiguration] = js.undefined
+    ): DestinationConfiguration = {
+      val __obj = js.Dynamic.literal()
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationConfiguration]
     }
   }
 
@@ -494,6 +592,39 @@ package ivs {
       val __obj = js.Dynamic.literal()
       keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlaybackKeyPairResponse]
+    }
+  }
+
+  @js.native
+  trait GetRecordingConfigurationRequest extends js.Object {
+    var arn: RecordingConfigurationArn
+  }
+
+  object GetRecordingConfigurationRequest {
+    @inline
+    def apply(
+        arn: RecordingConfigurationArn
+    ): GetRecordingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetRecordingConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetRecordingConfigurationResponse extends js.Object {
+    var recordingConfiguration: js.UndefOr[RecordingConfiguration]
+  }
+
+  object GetRecordingConfigurationResponse {
+    @inline
+    def apply(
+        recordingConfiguration: js.UndefOr[RecordingConfiguration] = js.undefined
+    ): GetRecordingConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      recordingConfiguration.foreach(__v => __obj.updateDynamic("recordingConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRecordingConfigurationResponse]
     }
   }
 
@@ -606,6 +737,7 @@ package ivs {
   @js.native
   trait ListChannelsRequest extends js.Object {
     var filterByName: js.UndefOr[ChannelName]
+    var filterByRecordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn]
     var maxResults: js.UndefOr[MaxChannelResults]
     var nextToken: js.UndefOr[PaginationToken]
   }
@@ -614,11 +746,13 @@ package ivs {
     @inline
     def apply(
         filterByName: js.UndefOr[ChannelName] = js.undefined,
+        filterByRecordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn] = js.undefined,
         maxResults: js.UndefOr[MaxChannelResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListChannelsRequest = {
       val __obj = js.Dynamic.literal()
       filterByName.foreach(__v => __obj.updateDynamic("filterByName")(__v.asInstanceOf[js.Any]))
+      filterByRecordingConfigurationArn.foreach(__v => __obj.updateDynamic("filterByRecordingConfigurationArn")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsRequest]
@@ -683,6 +817,46 @@ package ivs {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlaybackKeyPairsResponse]
+    }
+  }
+
+  @js.native
+  trait ListRecordingConfigurationsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxRecordingConfigurationResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListRecordingConfigurationsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxRecordingConfigurationResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListRecordingConfigurationsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecordingConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListRecordingConfigurationsResponse extends js.Object {
+    var recordingConfigurations: RecordingConfigurationList
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListRecordingConfigurationsResponse {
+    @inline
+    def apply(
+        recordingConfigurations: RecordingConfigurationList,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListRecordingConfigurationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "recordingConfigurations" -> recordingConfigurations.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecordingConfigurationsResponse]
     }
   }
 
@@ -884,6 +1058,99 @@ package ivs {
         "metadata" -> metadata.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PutMetadataRequest]
+    }
+  }
+
+  /** An object representing a configuration to record a channel stream.
+    */
+  @js.native
+  trait RecordingConfiguration extends js.Object {
+    var arn: RecordingConfigurationArn
+    var destinationConfiguration: DestinationConfiguration
+    var state: RecordingConfigurationState
+    var name: js.UndefOr[RecordingConfigurationName]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object RecordingConfiguration {
+    @inline
+    def apply(
+        arn: RecordingConfigurationArn,
+        destinationConfiguration: DestinationConfiguration,
+        state: RecordingConfigurationState,
+        name: js.UndefOr[RecordingConfigurationName] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): RecordingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "destinationConfiguration" -> destinationConfiguration.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any]
+      )
+
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecordingConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait RecordingConfigurationState extends js.Any
+  object RecordingConfigurationState {
+    val CREATING = "CREATING".asInstanceOf[RecordingConfigurationState]
+    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[RecordingConfigurationState]
+    val ACTIVE = "ACTIVE".asInstanceOf[RecordingConfigurationState]
+
+    @inline def values = js.Array(CREATING, CREATE_FAILED, ACTIVE)
+  }
+
+  /** Summary information about a RecordingConfiguration.
+    */
+  @js.native
+  trait RecordingConfigurationSummary extends js.Object {
+    var arn: RecordingConfigurationArn
+    var destinationConfiguration: DestinationConfiguration
+    var state: RecordingConfigurationState
+    var name: js.UndefOr[RecordingConfigurationName]
+    var tags: js.UndefOr[Tags]
+  }
+
+  object RecordingConfigurationSummary {
+    @inline
+    def apply(
+        arn: RecordingConfigurationArn,
+        destinationConfiguration: DestinationConfiguration,
+        state: RecordingConfigurationState,
+        name: js.UndefOr[RecordingConfigurationName] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): RecordingConfigurationSummary = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "destinationConfiguration" -> destinationConfiguration.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any]
+      )
+
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecordingConfigurationSummary]
+    }
+  }
+
+  /** A complex type that describes an S3 location where recorded videos will be stored.
+    */
+  @js.native
+  trait S3DestinationConfiguration extends js.Object {
+    var bucketName: S3DestinationBucketName
+  }
+
+  object S3DestinationConfiguration {
+    @inline
+    def apply(
+        bucketName: S3DestinationBucketName
+    ): S3DestinationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3DestinationConfiguration]
     }
   }
 
@@ -1116,6 +1383,7 @@ package ivs {
     var authorized: js.UndefOr[Boolean]
     var latencyMode: js.UndefOr[ChannelLatencyMode]
     var name: js.UndefOr[ChannelName]
+    var recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn]
     var `type`: js.UndefOr[ChannelType]
   }
 
@@ -1126,6 +1394,7 @@ package ivs {
         authorized: js.UndefOr[Boolean] = js.undefined,
         latencyMode: js.UndefOr[ChannelLatencyMode] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
+        recordingConfigurationArn: js.UndefOr[ChannelRecordingConfigurationArn] = js.undefined,
         `type`: js.UndefOr[ChannelType] = js.undefined
     ): UpdateChannelRequest = {
       val __obj = js.Dynamic.literal(
@@ -1135,6 +1404,7 @@ package ivs {
       authorized.foreach(__v => __obj.updateDynamic("authorized")(__v.asInstanceOf[js.Any]))
       latencyMode.foreach(__v => __obj.updateDynamic("latencyMode")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recordingConfigurationArn.foreach(__v => __obj.updateDynamic("recordingConfigurationArn")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelRequest]
     }

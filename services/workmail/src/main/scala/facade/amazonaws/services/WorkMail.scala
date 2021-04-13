@@ -16,6 +16,14 @@ package object workmail {
   type Aliases = js.Array[EmailAddress]
   type AmazonResourceName = String
   type Description = String
+  type DeviceModel = String
+  type DeviceModelList = js.Array[DeviceModel]
+  type DeviceOperatingSystem = String
+  type DeviceOperatingSystemList = js.Array[DeviceOperatingSystem]
+  type DeviceType = String
+  type DeviceTypeList = js.Array[DeviceType]
+  type DeviceUserAgent = String
+  type DeviceUserAgentList = js.Array[DeviceUserAgent]
   type DirectoryId = String
   type DomainName = String
   type Domains = js.Array[Domain]
@@ -36,6 +44,11 @@ package object workmail {
   type MailboxSize = Double
   type MaxResults = Int
   type Members = js.Array[Member]
+  type MobileDeviceAccessMatchedRuleList = js.Array[MobileDeviceAccessMatchedRule]
+  type MobileDeviceAccessRuleDescription = String
+  type MobileDeviceAccessRuleId = String
+  type MobileDeviceAccessRuleName = String
+  type MobileDeviceAccessRulesList = js.Array[MobileDeviceAccessRule]
   type NextToken = String
   type OrganizationId = String
   type OrganizationName = String
@@ -71,6 +84,7 @@ package object workmail {
     @inline def cancelMailboxExportJobFuture(params: CancelMailboxExportJobRequest): Future[CancelMailboxExportJobResponse] = service.cancelMailboxExportJob(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] = service.createAlias(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createMobileDeviceAccessRuleFuture(params: CreateMobileDeviceAccessRuleRequest): Future[CreateMobileDeviceAccessRuleResponse] = service.createMobileDeviceAccessRule(params).promise().toFuture
     @inline def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] = service.createOrganization(params).promise().toFuture
     @inline def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] = service.createResource(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
@@ -78,6 +92,7 @@ package object workmail {
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] = service.deleteAlias(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
     @inline def deleteMailboxPermissionsFuture(params: DeleteMailboxPermissionsRequest): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
+    @inline def deleteMobileDeviceAccessRuleFuture(params: DeleteMobileDeviceAccessRuleRequest): Future[DeleteMobileDeviceAccessRuleResponse] = service.deleteMobileDeviceAccessRule(params).promise().toFuture
     @inline def deleteOrganizationFuture(params: DeleteOrganizationRequest): Future[DeleteOrganizationResponse] = service.deleteOrganization(params).promise().toFuture
     @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] = service.deleteResource(params).promise().toFuture
     @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[DeleteRetentionPolicyResponse] = service.deleteRetentionPolicy(params).promise().toFuture
@@ -93,12 +108,14 @@ package object workmail {
     @inline def getAccessControlEffectFuture(params: GetAccessControlEffectRequest): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise().toFuture
     @inline def getDefaultRetentionPolicyFuture(params: GetDefaultRetentionPolicyRequest): Future[GetDefaultRetentionPolicyResponse] = service.getDefaultRetentionPolicy(params).promise().toFuture
     @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] = service.getMailboxDetails(params).promise().toFuture
+    @inline def getMobileDeviceAccessEffectFuture(params: GetMobileDeviceAccessEffectRequest): Future[GetMobileDeviceAccessEffectResponse] = service.getMobileDeviceAccessEffect(params).promise().toFuture
     @inline def listAccessControlRulesFuture(params: ListAccessControlRulesRequest): Future[ListAccessControlRulesResponse] = service.listAccessControlRules(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
     @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] = service.listGroupMembers(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
     @inline def listMailboxExportJobsFuture(params: ListMailboxExportJobsRequest): Future[ListMailboxExportJobsResponse] = service.listMailboxExportJobs(params).promise().toFuture
     @inline def listMailboxPermissionsFuture(params: ListMailboxPermissionsRequest): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise().toFuture
+    @inline def listMobileDeviceAccessRulesFuture(params: ListMobileDeviceAccessRulesRequest): Future[ListMobileDeviceAccessRulesResponse] = service.listMobileDeviceAccessRules(params).promise().toFuture
     @inline def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] = service.listOrganizations(params).promise().toFuture
     @inline def listResourceDelegatesFuture(params: ListResourceDelegatesRequest): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise().toFuture
     @inline def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResponse] = service.listResources(params).promise().toFuture
@@ -113,6 +130,7 @@ package object workmail {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] = service.updateMailboxQuota(params).promise().toFuture
+    @inline def updateMobileDeviceAccessRuleFuture(params: UpdateMobileDeviceAccessRuleRequest): Future[UpdateMobileDeviceAccessRuleResponse] = service.updateMobileDeviceAccessRule(params).promise().toFuture
     @inline def updatePrimaryEmailAddressFuture(params: UpdatePrimaryEmailAddressRequest): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise().toFuture
     @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
 
@@ -130,6 +148,7 @@ package workmail {
     def cancelMailboxExportJob(params: CancelMailboxExportJobRequest): Request[CancelMailboxExportJobResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
+    def createMobileDeviceAccessRule(params: CreateMobileDeviceAccessRuleRequest): Request[CreateMobileDeviceAccessRuleResponse] = js.native
     def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse] = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
@@ -137,6 +156,7 @@ package workmail {
     def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] = js.native
+    def deleteMobileDeviceAccessRule(params: DeleteMobileDeviceAccessRuleRequest): Request[DeleteMobileDeviceAccessRuleResponse] = js.native
     def deleteOrganization(params: DeleteOrganizationRequest): Request[DeleteOrganizationResponse] = js.native
     def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
     def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[DeleteRetentionPolicyResponse] = js.native
@@ -152,12 +172,14 @@ package workmail {
     def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] = js.native
     def getDefaultRetentionPolicy(params: GetDefaultRetentionPolicyRequest): Request[GetDefaultRetentionPolicyResponse] = js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
+    def getMobileDeviceAccessEffect(params: GetMobileDeviceAccessEffectRequest): Request[GetMobileDeviceAccessEffectResponse] = js.native
     def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listMailboxExportJobs(params: ListMailboxExportJobsRequest): Request[ListMailboxExportJobsResponse] = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] = js.native
+    def listMobileDeviceAccessRules(params: ListMobileDeviceAccessRulesRequest): Request[ListMobileDeviceAccessRulesResponse] = js.native
     def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse] = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
     def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
@@ -172,6 +194,7 @@ package workmail {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse] = js.native
+    def updateMobileDeviceAccessRule(params: UpdateMobileDeviceAccessRuleRequest): Request[UpdateMobileDeviceAccessRuleResponse] = js.native
     def updatePrimaryEmailAddress(params: UpdatePrimaryEmailAddressRequest): Request[UpdatePrimaryEmailAddressResponse] = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
   }
@@ -426,6 +449,76 @@ package workmail {
       val __obj = js.Dynamic.literal()
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateMobileDeviceAccessRuleRequest extends js.Object {
+    var Effect: MobileDeviceAccessRuleEffect
+    var Name: MobileDeviceAccessRuleName
+    var OrganizationId: OrganizationId
+    var ClientToken: js.UndefOr[IdempotencyClientToken]
+    var Description: js.UndefOr[MobileDeviceAccessRuleDescription]
+    var DeviceModels: js.UndefOr[DeviceModelList]
+    var DeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList]
+    var DeviceTypes: js.UndefOr[DeviceTypeList]
+    var DeviceUserAgents: js.UndefOr[DeviceUserAgentList]
+    var NotDeviceModels: js.UndefOr[DeviceModelList]
+    var NotDeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList]
+    var NotDeviceTypes: js.UndefOr[DeviceTypeList]
+    var NotDeviceUserAgents: js.UndefOr[DeviceUserAgentList]
+  }
+
+  object CreateMobileDeviceAccessRuleRequest {
+    @inline
+    def apply(
+        Effect: MobileDeviceAccessRuleEffect,
+        Name: MobileDeviceAccessRuleName,
+        OrganizationId: OrganizationId,
+        ClientToken: js.UndefOr[IdempotencyClientToken] = js.undefined,
+        Description: js.UndefOr[MobileDeviceAccessRuleDescription] = js.undefined,
+        DeviceModels: js.UndefOr[DeviceModelList] = js.undefined,
+        DeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList] = js.undefined,
+        DeviceTypes: js.UndefOr[DeviceTypeList] = js.undefined,
+        DeviceUserAgents: js.UndefOr[DeviceUserAgentList] = js.undefined,
+        NotDeviceModels: js.UndefOr[DeviceModelList] = js.undefined,
+        NotDeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList] = js.undefined,
+        NotDeviceTypes: js.UndefOr[DeviceTypeList] = js.undefined,
+        NotDeviceUserAgents: js.UndefOr[DeviceUserAgentList] = js.undefined
+    ): CreateMobileDeviceAccessRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Effect" -> Effect.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceModels.foreach(__v => __obj.updateDynamic("DeviceModels")(__v.asInstanceOf[js.Any]))
+      DeviceOperatingSystems.foreach(__v => __obj.updateDynamic("DeviceOperatingSystems")(__v.asInstanceOf[js.Any]))
+      DeviceTypes.foreach(__v => __obj.updateDynamic("DeviceTypes")(__v.asInstanceOf[js.Any]))
+      DeviceUserAgents.foreach(__v => __obj.updateDynamic("DeviceUserAgents")(__v.asInstanceOf[js.Any]))
+      NotDeviceModels.foreach(__v => __obj.updateDynamic("NotDeviceModels")(__v.asInstanceOf[js.Any]))
+      NotDeviceOperatingSystems.foreach(__v => __obj.updateDynamic("NotDeviceOperatingSystems")(__v.asInstanceOf[js.Any]))
+      NotDeviceTypes.foreach(__v => __obj.updateDynamic("NotDeviceTypes")(__v.asInstanceOf[js.Any]))
+      NotDeviceUserAgents.foreach(__v => __obj.updateDynamic("NotDeviceUserAgents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMobileDeviceAccessRuleRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMobileDeviceAccessRuleResponse extends js.Object {
+    var MobileDeviceAccessRuleId: js.UndefOr[MobileDeviceAccessRuleId]
+  }
+
+  object CreateMobileDeviceAccessRuleResponse {
+    @inline
+    def apply(
+        MobileDeviceAccessRuleId: js.UndefOr[MobileDeviceAccessRuleId] = js.undefined
+    ): CreateMobileDeviceAccessRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      MobileDeviceAccessRuleId.foreach(__v => __obj.updateDynamic("MobileDeviceAccessRuleId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMobileDeviceAccessRuleResponse]
     }
   }
 
@@ -708,6 +801,37 @@ package workmail {
     def apply(): DeleteMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMailboxPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteMobileDeviceAccessRuleRequest extends js.Object {
+    var MobileDeviceAccessRuleId: MobileDeviceAccessRuleId
+    var OrganizationId: OrganizationId
+  }
+
+  object DeleteMobileDeviceAccessRuleRequest {
+    @inline
+    def apply(
+        MobileDeviceAccessRuleId: MobileDeviceAccessRuleId,
+        OrganizationId: OrganizationId
+    ): DeleteMobileDeviceAccessRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "MobileDeviceAccessRuleId" -> MobileDeviceAccessRuleId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMobileDeviceAccessRuleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMobileDeviceAccessRuleResponse extends js.Object
+
+  object DeleteMobileDeviceAccessRuleResponse {
+    @inline
+    def apply(): DeleteMobileDeviceAccessRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteMobileDeviceAccessRuleResponse]
     }
   }
 
@@ -1433,6 +1557,55 @@ package workmail {
     }
   }
 
+  @js.native
+  trait GetMobileDeviceAccessEffectRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var DeviceModel: js.UndefOr[DeviceModel]
+    var DeviceOperatingSystem: js.UndefOr[DeviceOperatingSystem]
+    var DeviceType: js.UndefOr[DeviceType]
+    var DeviceUserAgent: js.UndefOr[DeviceUserAgent]
+  }
+
+  object GetMobileDeviceAccessEffectRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        DeviceModel: js.UndefOr[DeviceModel] = js.undefined,
+        DeviceOperatingSystem: js.UndefOr[DeviceOperatingSystem] = js.undefined,
+        DeviceType: js.UndefOr[DeviceType] = js.undefined,
+        DeviceUserAgent: js.UndefOr[DeviceUserAgent] = js.undefined
+    ): GetMobileDeviceAccessEffectRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      DeviceModel.foreach(__v => __obj.updateDynamic("DeviceModel")(__v.asInstanceOf[js.Any]))
+      DeviceOperatingSystem.foreach(__v => __obj.updateDynamic("DeviceOperatingSystem")(__v.asInstanceOf[js.Any]))
+      DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
+      DeviceUserAgent.foreach(__v => __obj.updateDynamic("DeviceUserAgent")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMobileDeviceAccessEffectRequest]
+    }
+  }
+
+  @js.native
+  trait GetMobileDeviceAccessEffectResponse extends js.Object {
+    var Effect: js.UndefOr[MobileDeviceAccessRuleEffect]
+    var MatchedRules: js.UndefOr[MobileDeviceAccessMatchedRuleList]
+  }
+
+  object GetMobileDeviceAccessEffectResponse {
+    @inline
+    def apply(
+        Effect: js.UndefOr[MobileDeviceAccessRuleEffect] = js.undefined,
+        MatchedRules: js.UndefOr[MobileDeviceAccessMatchedRuleList] = js.undefined
+    ): GetMobileDeviceAccessEffectResponse = {
+      val __obj = js.Dynamic.literal()
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      MatchedRules.foreach(__v => __obj.updateDynamic("MatchedRules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMobileDeviceAccessEffectResponse]
+    }
+  }
+
   /** The representation of an Amazon WorkMail group.
     */
   @js.native
@@ -1720,6 +1893,39 @@ package workmail {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMailboxPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListMobileDeviceAccessRulesRequest extends js.Object {
+    var OrganizationId: OrganizationId
+  }
+
+  object ListMobileDeviceAccessRulesRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId
+    ): ListMobileDeviceAccessRulesRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListMobileDeviceAccessRulesRequest]
+    }
+  }
+
+  @js.native
+  trait ListMobileDeviceAccessRulesResponse extends js.Object {
+    var Rules: js.UndefOr[MobileDeviceAccessRulesList]
+  }
+
+  object ListMobileDeviceAccessRulesResponse {
+    @inline
+    def apply(
+        Rules: js.UndefOr[MobileDeviceAccessRulesList] = js.undefined
+    ): ListMobileDeviceAccessRulesResponse = {
+      val __obj = js.Dynamic.literal()
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMobileDeviceAccessRulesResponse]
     }
   }
 
@@ -2019,6 +2225,93 @@ package workmail {
     val USER = "USER".asInstanceOf[MemberType]
 
     @inline def values = js.Array(GROUP, USER)
+  }
+
+  /** The rule that a simulated user matches.
+    */
+  @js.native
+  trait MobileDeviceAccessMatchedRule extends js.Object {
+    var MobileDeviceAccessRuleId: js.UndefOr[MobileDeviceAccessRuleId]
+    var Name: js.UndefOr[MobileDeviceAccessRuleName]
+  }
+
+  object MobileDeviceAccessMatchedRule {
+    @inline
+    def apply(
+        MobileDeviceAccessRuleId: js.UndefOr[MobileDeviceAccessRuleId] = js.undefined,
+        Name: js.UndefOr[MobileDeviceAccessRuleName] = js.undefined
+    ): MobileDeviceAccessMatchedRule = {
+      val __obj = js.Dynamic.literal()
+      MobileDeviceAccessRuleId.foreach(__v => __obj.updateDynamic("MobileDeviceAccessRuleId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MobileDeviceAccessMatchedRule]
+    }
+  }
+
+  /** A rule that controls access to mobile devices for an Amazon WorkMail group.
+    */
+  @js.native
+  trait MobileDeviceAccessRule extends js.Object {
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[MobileDeviceAccessRuleDescription]
+    var DeviceModels: js.UndefOr[DeviceModelList]
+    var DeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList]
+    var DeviceTypes: js.UndefOr[DeviceTypeList]
+    var DeviceUserAgents: js.UndefOr[DeviceUserAgentList]
+    var Effect: js.UndefOr[MobileDeviceAccessRuleEffect]
+    var MobileDeviceAccessRuleId: js.UndefOr[MobileDeviceAccessRuleId]
+    var Name: js.UndefOr[MobileDeviceAccessRuleName]
+    var NotDeviceModels: js.UndefOr[DeviceModelList]
+    var NotDeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList]
+    var NotDeviceTypes: js.UndefOr[DeviceTypeList]
+    var NotDeviceUserAgents: js.UndefOr[DeviceUserAgentList]
+  }
+
+  object MobileDeviceAccessRule {
+    @inline
+    def apply(
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[MobileDeviceAccessRuleDescription] = js.undefined,
+        DeviceModels: js.UndefOr[DeviceModelList] = js.undefined,
+        DeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList] = js.undefined,
+        DeviceTypes: js.UndefOr[DeviceTypeList] = js.undefined,
+        DeviceUserAgents: js.UndefOr[DeviceUserAgentList] = js.undefined,
+        Effect: js.UndefOr[MobileDeviceAccessRuleEffect] = js.undefined,
+        MobileDeviceAccessRuleId: js.UndefOr[MobileDeviceAccessRuleId] = js.undefined,
+        Name: js.UndefOr[MobileDeviceAccessRuleName] = js.undefined,
+        NotDeviceModels: js.UndefOr[DeviceModelList] = js.undefined,
+        NotDeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList] = js.undefined,
+        NotDeviceTypes: js.UndefOr[DeviceTypeList] = js.undefined,
+        NotDeviceUserAgents: js.UndefOr[DeviceUserAgentList] = js.undefined
+    ): MobileDeviceAccessRule = {
+      val __obj = js.Dynamic.literal()
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceModels.foreach(__v => __obj.updateDynamic("DeviceModels")(__v.asInstanceOf[js.Any]))
+      DeviceOperatingSystems.foreach(__v => __obj.updateDynamic("DeviceOperatingSystems")(__v.asInstanceOf[js.Any]))
+      DeviceTypes.foreach(__v => __obj.updateDynamic("DeviceTypes")(__v.asInstanceOf[js.Any]))
+      DeviceUserAgents.foreach(__v => __obj.updateDynamic("DeviceUserAgents")(__v.asInstanceOf[js.Any]))
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      MobileDeviceAccessRuleId.foreach(__v => __obj.updateDynamic("MobileDeviceAccessRuleId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NotDeviceModels.foreach(__v => __obj.updateDynamic("NotDeviceModels")(__v.asInstanceOf[js.Any]))
+      NotDeviceOperatingSystems.foreach(__v => __obj.updateDynamic("NotDeviceOperatingSystems")(__v.asInstanceOf[js.Any]))
+      NotDeviceTypes.foreach(__v => __obj.updateDynamic("NotDeviceTypes")(__v.asInstanceOf[js.Any]))
+      NotDeviceUserAgents.foreach(__v => __obj.updateDynamic("NotDeviceUserAgents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MobileDeviceAccessRule]
+    }
+  }
+
+  @js.native
+  sealed trait MobileDeviceAccessRuleEffect extends js.Any
+  object MobileDeviceAccessRuleEffect {
+    val ALLOW = "ALLOW".asInstanceOf[MobileDeviceAccessRuleEffect]
+    val DENY = "DENY".asInstanceOf[MobileDeviceAccessRuleEffect]
+
+    @inline def values = js.Array(ALLOW, DENY)
   }
 
   /** The representation of an organization.
@@ -2513,6 +2806,71 @@ package workmail {
     def apply(): UpdateMailboxQuotaResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateMailboxQuotaResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateMobileDeviceAccessRuleRequest extends js.Object {
+    var Effect: MobileDeviceAccessRuleEffect
+    var MobileDeviceAccessRuleId: MobileDeviceAccessRuleId
+    var Name: MobileDeviceAccessRuleName
+    var OrganizationId: OrganizationId
+    var Description: js.UndefOr[MobileDeviceAccessRuleDescription]
+    var DeviceModels: js.UndefOr[DeviceModelList]
+    var DeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList]
+    var DeviceTypes: js.UndefOr[DeviceTypeList]
+    var DeviceUserAgents: js.UndefOr[DeviceUserAgentList]
+    var NotDeviceModels: js.UndefOr[DeviceModelList]
+    var NotDeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList]
+    var NotDeviceTypes: js.UndefOr[DeviceTypeList]
+    var NotDeviceUserAgents: js.UndefOr[DeviceUserAgentList]
+  }
+
+  object UpdateMobileDeviceAccessRuleRequest {
+    @inline
+    def apply(
+        Effect: MobileDeviceAccessRuleEffect,
+        MobileDeviceAccessRuleId: MobileDeviceAccessRuleId,
+        Name: MobileDeviceAccessRuleName,
+        OrganizationId: OrganizationId,
+        Description: js.UndefOr[MobileDeviceAccessRuleDescription] = js.undefined,
+        DeviceModels: js.UndefOr[DeviceModelList] = js.undefined,
+        DeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList] = js.undefined,
+        DeviceTypes: js.UndefOr[DeviceTypeList] = js.undefined,
+        DeviceUserAgents: js.UndefOr[DeviceUserAgentList] = js.undefined,
+        NotDeviceModels: js.UndefOr[DeviceModelList] = js.undefined,
+        NotDeviceOperatingSystems: js.UndefOr[DeviceOperatingSystemList] = js.undefined,
+        NotDeviceTypes: js.UndefOr[DeviceTypeList] = js.undefined,
+        NotDeviceUserAgents: js.UndefOr[DeviceUserAgentList] = js.undefined
+    ): UpdateMobileDeviceAccessRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Effect" -> Effect.asInstanceOf[js.Any],
+        "MobileDeviceAccessRuleId" -> MobileDeviceAccessRuleId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceModels.foreach(__v => __obj.updateDynamic("DeviceModels")(__v.asInstanceOf[js.Any]))
+      DeviceOperatingSystems.foreach(__v => __obj.updateDynamic("DeviceOperatingSystems")(__v.asInstanceOf[js.Any]))
+      DeviceTypes.foreach(__v => __obj.updateDynamic("DeviceTypes")(__v.asInstanceOf[js.Any]))
+      DeviceUserAgents.foreach(__v => __obj.updateDynamic("DeviceUserAgents")(__v.asInstanceOf[js.Any]))
+      NotDeviceModels.foreach(__v => __obj.updateDynamic("NotDeviceModels")(__v.asInstanceOf[js.Any]))
+      NotDeviceOperatingSystems.foreach(__v => __obj.updateDynamic("NotDeviceOperatingSystems")(__v.asInstanceOf[js.Any]))
+      NotDeviceTypes.foreach(__v => __obj.updateDynamic("NotDeviceTypes")(__v.asInstanceOf[js.Any]))
+      NotDeviceUserAgents.foreach(__v => __obj.updateDynamic("NotDeviceUserAgents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMobileDeviceAccessRuleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMobileDeviceAccessRuleResponse extends js.Object
+
+  object UpdateMobileDeviceAccessRuleResponse {
+    @inline
+    def apply(): UpdateMobileDeviceAccessRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateMobileDeviceAccessRuleResponse]
     }
   }
 

@@ -12,7 +12,9 @@ package object configservice {
   type AccountAggregationSourceList = js.Array[AccountAggregationSource]
   type AccountId = String
   type AggregateComplianceByConfigRuleList = js.Array[AggregateComplianceByConfigRule]
+  type AggregateComplianceByConformancePackList = js.Array[AggregateComplianceByConformancePack]
   type AggregateComplianceCountList = js.Array[AggregateComplianceCount]
+  type AggregateConformancePackComplianceSummaryList = js.Array[AggregateConformancePackComplianceSummary]
   type AggregateEvaluationResultList = js.Array[AggregateEvaluationResult]
   type AggregatedSourceStatusList = js.Array[AggregatedSourceStatus]
   type AggregatedSourceStatusTypeList = js.Array[AggregatedSourceStatusType]
@@ -63,6 +65,7 @@ package object configservice {
   type ConformancePackRuleEvaluationResultsList = js.Array[ConformancePackEvaluationResult]
   type ConformancePackStatusDetailsList = js.Array[ConformancePackStatusDetail]
   type ConformancePackStatusReason = String
+  type ControlsList = js.Array[StringWithCharLimit128]
   type CosmosPageLimit = Int
   type Date = js.Date
   type DeliveryChannelList = js.Array[DeliveryChannel]
@@ -193,6 +196,7 @@ package object configservice {
     @inline def deleteStoredQueryFuture(params: DeleteStoredQueryRequest): Future[DeleteStoredQueryResponse] = service.deleteStoredQuery(params).promise().toFuture
     @inline def deliverConfigSnapshotFuture(params: DeliverConfigSnapshotRequest): Future[DeliverConfigSnapshotResponse] = service.deliverConfigSnapshot(params).promise().toFuture
     @inline def describeAggregateComplianceByConfigRulesFuture(params: DescribeAggregateComplianceByConfigRulesRequest): Future[DescribeAggregateComplianceByConfigRulesResponse] = service.describeAggregateComplianceByConfigRules(params).promise().toFuture
+    @inline def describeAggregateComplianceByConformancePacksFuture(params: DescribeAggregateComplianceByConformancePacksRequest): Future[DescribeAggregateComplianceByConformancePacksResponse] = service.describeAggregateComplianceByConformancePacks(params).promise().toFuture
     @inline def describeAggregationAuthorizationsFuture(params: DescribeAggregationAuthorizationsRequest): Future[DescribeAggregationAuthorizationsResponse] = service.describeAggregationAuthorizations(params).promise().toFuture
     @inline def describeComplianceByConfigRuleFuture(params: DescribeComplianceByConfigRuleRequest): Future[DescribeComplianceByConfigRuleResponse] = service.describeComplianceByConfigRule(params).promise().toFuture
     @inline def describeComplianceByResourceFuture(params: DescribeComplianceByResourceRequest): Future[DescribeComplianceByResourceResponse] = service.describeComplianceByResource(params).promise().toFuture
@@ -218,6 +222,7 @@ package object configservice {
     @inline def describeRetentionConfigurationsFuture(params: DescribeRetentionConfigurationsRequest): Future[DescribeRetentionConfigurationsResponse] = service.describeRetentionConfigurations(params).promise().toFuture
     @inline def getAggregateComplianceDetailsByConfigRuleFuture(params: GetAggregateComplianceDetailsByConfigRuleRequest): Future[GetAggregateComplianceDetailsByConfigRuleResponse] = service.getAggregateComplianceDetailsByConfigRule(params).promise().toFuture
     @inline def getAggregateConfigRuleComplianceSummaryFuture(params: GetAggregateConfigRuleComplianceSummaryRequest): Future[GetAggregateConfigRuleComplianceSummaryResponse] = service.getAggregateConfigRuleComplianceSummary(params).promise().toFuture
+    @inline def getAggregateConformancePackComplianceSummaryFuture(params: GetAggregateConformancePackComplianceSummaryRequest): Future[GetAggregateConformancePackComplianceSummaryResponse] = service.getAggregateConformancePackComplianceSummary(params).promise().toFuture
     @inline def getAggregateDiscoveredResourceCountsFuture(params: GetAggregateDiscoveredResourceCountsRequest): Future[GetAggregateDiscoveredResourceCountsResponse] = service.getAggregateDiscoveredResourceCounts(params).promise().toFuture
     @inline def getAggregateResourceConfigFuture(params: GetAggregateResourceConfigRequest): Future[GetAggregateResourceConfigResponse] = service.getAggregateResourceConfig(params).promise().toFuture
     @inline def getComplianceDetailsByConfigRuleFuture(params: GetComplianceDetailsByConfigRuleRequest): Future[GetComplianceDetailsByConfigRuleResponse] = service.getComplianceDetailsByConfigRule(params).promise().toFuture
@@ -287,6 +292,7 @@ package configservice {
     def deleteStoredQuery(params: DeleteStoredQueryRequest): Request[DeleteStoredQueryResponse] = js.native
     def deliverConfigSnapshot(params: DeliverConfigSnapshotRequest): Request[DeliverConfigSnapshotResponse] = js.native
     def describeAggregateComplianceByConfigRules(params: DescribeAggregateComplianceByConfigRulesRequest): Request[DescribeAggregateComplianceByConfigRulesResponse] = js.native
+    def describeAggregateComplianceByConformancePacks(params: DescribeAggregateComplianceByConformancePacksRequest): Request[DescribeAggregateComplianceByConformancePacksResponse] = js.native
     def describeAggregationAuthorizations(params: DescribeAggregationAuthorizationsRequest): Request[DescribeAggregationAuthorizationsResponse] = js.native
     def describeComplianceByConfigRule(params: DescribeComplianceByConfigRuleRequest): Request[DescribeComplianceByConfigRuleResponse] = js.native
     def describeComplianceByResource(params: DescribeComplianceByResourceRequest): Request[DescribeComplianceByResourceResponse] = js.native
@@ -312,6 +318,7 @@ package configservice {
     def describeRetentionConfigurations(params: DescribeRetentionConfigurationsRequest): Request[DescribeRetentionConfigurationsResponse] = js.native
     def getAggregateComplianceDetailsByConfigRule(params: GetAggregateComplianceDetailsByConfigRuleRequest): Request[GetAggregateComplianceDetailsByConfigRuleResponse] = js.native
     def getAggregateConfigRuleComplianceSummary(params: GetAggregateConfigRuleComplianceSummaryRequest): Request[GetAggregateConfigRuleComplianceSummaryResponse] = js.native
+    def getAggregateConformancePackComplianceSummary(params: GetAggregateConformancePackComplianceSummaryRequest): Request[GetAggregateConformancePackComplianceSummaryResponse] = js.native
     def getAggregateDiscoveredResourceCounts(params: GetAggregateDiscoveredResourceCountsRequest): Request[GetAggregateDiscoveredResourceCountsResponse] = js.native
     def getAggregateResourceConfig(params: GetAggregateResourceConfigRequest): Request[GetAggregateResourceConfigResponse] = js.native
     def getComplianceDetailsByConfigRule(params: GetComplianceDetailsByConfigRuleRequest): Request[GetComplianceDetailsByConfigRuleResponse] = js.native
@@ -408,6 +415,36 @@ package configservice {
     }
   }
 
+  /** Provides aggregate compliance of the conformance pack. Indicates whether a conformance pack is compliant based on the name of the conformance pack, account ID, and region.
+    * A conformance pack is compliant if all of the rules in that conformance packs are compliant. It is noncompliant if any of the rules are not compliant.
+    *
+    * '''Note:'''If a conformance pack has rules that return INSUFFICIENT_DATA, the conformance pack returns INSUFFICIENT_DATA only if all the rules within that conformance pack return INSUFFICIENT_DATA. If some of the rules in a conformance pack are compliant and others return INSUFFICIENT_DATA, the conformance pack shows compliant.
+    */
+  @js.native
+  trait AggregateComplianceByConformancePack extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var AwsRegion: js.UndefOr[AwsRegion]
+    var Compliance: js.UndefOr[AggregateConformancePackCompliance]
+    var ConformancePackName: js.UndefOr[ConformancePackName]
+  }
+
+  object AggregateComplianceByConformancePack {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
+        Compliance: js.UndefOr[AggregateConformancePackCompliance] = js.undefined,
+        ConformancePackName: js.UndefOr[ConformancePackName] = js.undefined
+    ): AggregateComplianceByConformancePack = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      Compliance.foreach(__v => __obj.updateDynamic("Compliance")(__v.asInstanceOf[js.Any]))
+      ConformancePackName.foreach(__v => __obj.updateDynamic("ConformancePackName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateComplianceByConformancePack]
+    }
+  }
+
   /** Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
     */
   @js.native
@@ -427,6 +464,132 @@ package configservice {
       GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AggregateComplianceCount]
     }
+  }
+
+  /** Provides the number of compliant and noncompliant rules within a conformance pack. Also provides the total count of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.
+    */
+  @js.native
+  trait AggregateConformancePackCompliance extends js.Object {
+    var ComplianceType: js.UndefOr[ConformancePackComplianceType]
+    var CompliantRuleCount: js.UndefOr[Int]
+    var NonCompliantRuleCount: js.UndefOr[Int]
+    var TotalRuleCount: js.UndefOr[Int]
+  }
+
+  object AggregateConformancePackCompliance {
+    @inline
+    def apply(
+        ComplianceType: js.UndefOr[ConformancePackComplianceType] = js.undefined,
+        CompliantRuleCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantRuleCount: js.UndefOr[Int] = js.undefined,
+        TotalRuleCount: js.UndefOr[Int] = js.undefined
+    ): AggregateConformancePackCompliance = {
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      CompliantRuleCount.foreach(__v => __obj.updateDynamic("CompliantRuleCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantRuleCount.foreach(__v => __obj.updateDynamic("NonCompliantRuleCount")(__v.asInstanceOf[js.Any]))
+      TotalRuleCount.foreach(__v => __obj.updateDynamic("TotalRuleCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateConformancePackCompliance]
+    }
+  }
+
+  /** The number of conformance packs that are compliant and noncompliant.
+    */
+  @js.native
+  trait AggregateConformancePackComplianceCount extends js.Object {
+    var CompliantConformancePackCount: js.UndefOr[Int]
+    var NonCompliantConformancePackCount: js.UndefOr[Int]
+  }
+
+  object AggregateConformancePackComplianceCount {
+    @inline
+    def apply(
+        CompliantConformancePackCount: js.UndefOr[Int] = js.undefined,
+        NonCompliantConformancePackCount: js.UndefOr[Int] = js.undefined
+    ): AggregateConformancePackComplianceCount = {
+      val __obj = js.Dynamic.literal()
+      CompliantConformancePackCount.foreach(__v => __obj.updateDynamic("CompliantConformancePackCount")(__v.asInstanceOf[js.Any]))
+      NonCompliantConformancePackCount.foreach(__v => __obj.updateDynamic("NonCompliantConformancePackCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateConformancePackComplianceCount]
+    }
+  }
+
+  /** Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.
+    */
+  @js.native
+  trait AggregateConformancePackComplianceFilters extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var AwsRegion: js.UndefOr[AwsRegion]
+    var ComplianceType: js.UndefOr[ConformancePackComplianceType]
+    var ConformancePackName: js.UndefOr[ConformancePackName]
+  }
+
+  object AggregateConformancePackComplianceFilters {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
+        ComplianceType: js.UndefOr[ConformancePackComplianceType] = js.undefined,
+        ConformancePackName: js.UndefOr[ConformancePackName] = js.undefined
+    ): AggregateConformancePackComplianceFilters = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      ConformancePackName.foreach(__v => __obj.updateDynamic("ConformancePackName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateConformancePackComplianceFilters]
+    }
+  }
+
+  /** Provides a summary of compliance based on either account ID or region.
+    */
+  @js.native
+  trait AggregateConformancePackComplianceSummary extends js.Object {
+    var ComplianceSummary: js.UndefOr[AggregateConformancePackComplianceCount]
+    var GroupName: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object AggregateConformancePackComplianceSummary {
+    @inline
+    def apply(
+        ComplianceSummary: js.UndefOr[AggregateConformancePackComplianceCount] = js.undefined,
+        GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): AggregateConformancePackComplianceSummary = {
+      val __obj = js.Dynamic.literal()
+      ComplianceSummary.foreach(__v => __obj.updateDynamic("ComplianceSummary")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateConformancePackComplianceSummary]
+    }
+  }
+
+  /** Filters the results based on account ID and region.
+    */
+  @js.native
+  trait AggregateConformancePackComplianceSummaryFilters extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var AwsRegion: js.UndefOr[AwsRegion]
+  }
+
+  object AggregateConformancePackComplianceSummaryFilters {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        AwsRegion: js.UndefOr[AwsRegion] = js.undefined
+    ): AggregateConformancePackComplianceSummaryFilters = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregateConformancePackComplianceSummaryFilters]
+    }
+  }
+
+  @js.native
+  sealed trait AggregateConformancePackComplianceSummaryGroupKey extends js.Any
+  object AggregateConformancePackComplianceSummaryGroupKey {
+    val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[AggregateConformancePackComplianceSummaryGroupKey]
+    val AWS_REGION = "AWS_REGION".asInstanceOf[AggregateConformancePackComplianceSummaryGroupKey]
+
+    @inline def values = js.Array(ACCOUNT_ID, AWS_REGION)
   }
 
   /** The details of an AWS Config evaluation for an account ID and region in an aggregator. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
@@ -1482,17 +1645,20 @@ package configservice {
   trait ConformancePackRuleCompliance extends js.Object {
     var ComplianceType: js.UndefOr[ConformancePackComplianceType]
     var ConfigRuleName: js.UndefOr[ConfigRuleName]
+    var Controls: js.UndefOr[ControlsList]
   }
 
   object ConformancePackRuleCompliance {
     @inline
     def apply(
         ComplianceType: js.UndefOr[ConformancePackComplianceType] = js.undefined,
-        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined
+        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
+        Controls: js.UndefOr[ControlsList] = js.undefined
     ): ConformancePackRuleCompliance = {
       val __obj = js.Dynamic.literal()
       ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
       ConfigRuleName.foreach(__v => __obj.updateDynamic("ConfigRuleName")(__v.asInstanceOf[js.Any]))
+      Controls.foreach(__v => __obj.updateDynamic("Controls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConformancePackRuleCompliance]
     }
   }
@@ -2031,6 +2197,52 @@ package configservice {
       AggregateComplianceByConfigRules.foreach(__v => __obj.updateDynamic("AggregateComplianceByConfigRules")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAggregateComplianceByConfigRulesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAggregateComplianceByConformancePacksRequest extends js.Object {
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var Filters: js.UndefOr[AggregateConformancePackComplianceFilters]
+    var Limit: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeAggregateComplianceByConformancePacksRequest {
+    @inline
+    def apply(
+        ConfigurationAggregatorName: ConfigurationAggregatorName,
+        Filters: js.UndefOr[AggregateConformancePackComplianceFilters] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAggregateComplianceByConformancePacksRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAggregateComplianceByConformancePacksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAggregateComplianceByConformancePacksResponse extends js.Object {
+    var AggregateComplianceByConformancePacks: js.UndefOr[AggregateComplianceByConformancePackList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeAggregateComplianceByConformancePacksResponse {
+    @inline
+    def apply(
+        AggregateComplianceByConformancePacks: js.UndefOr[AggregateComplianceByConformancePackList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAggregateComplianceByConformancePacksResponse = {
+      val __obj = js.Dynamic.literal()
+      AggregateComplianceByConformancePacks.foreach(__v => __obj.updateDynamic("AggregateComplianceByConformancePacks")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAggregateComplianceByConformancePacksResponse]
     }
   }
 
@@ -3337,6 +3549,58 @@ package configservice {
       GroupByKey.foreach(__v => __obj.updateDynamic("GroupByKey")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAggregateConfigRuleComplianceSummaryResponse]
+    }
+  }
+
+  @js.native
+  trait GetAggregateConformancePackComplianceSummaryRequest extends js.Object {
+    var ConfigurationAggregatorName: ConfigurationAggregatorName
+    var Filters: js.UndefOr[AggregateConformancePackComplianceSummaryFilters]
+    var GroupByKey: js.UndefOr[AggregateConformancePackComplianceSummaryGroupKey]
+    var Limit: js.UndefOr[Limit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetAggregateConformancePackComplianceSummaryRequest {
+    @inline
+    def apply(
+        ConfigurationAggregatorName: ConfigurationAggregatorName,
+        Filters: js.UndefOr[AggregateConformancePackComplianceSummaryFilters] = js.undefined,
+        GroupByKey: js.UndefOr[AggregateConformancePackComplianceSummaryGroupKey] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetAggregateConformancePackComplianceSummaryRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationAggregatorName" -> ConfigurationAggregatorName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      GroupByKey.foreach(__v => __obj.updateDynamic("GroupByKey")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateConformancePackComplianceSummaryRequest]
+    }
+  }
+
+  @js.native
+  trait GetAggregateConformancePackComplianceSummaryResponse extends js.Object {
+    var AggregateConformancePackComplianceSummaries: js.UndefOr[AggregateConformancePackComplianceSummaryList]
+    var GroupByKey: js.UndefOr[StringWithCharLimit256]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetAggregateConformancePackComplianceSummaryResponse {
+    @inline
+    def apply(
+        AggregateConformancePackComplianceSummaries: js.UndefOr[AggregateConformancePackComplianceSummaryList] = js.undefined,
+        GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetAggregateConformancePackComplianceSummaryResponse = {
+      val __obj = js.Dynamic.literal()
+      AggregateConformancePackComplianceSummaries.foreach(__v => __obj.updateDynamic("AggregateConformancePackComplianceSummaries")(__v.asInstanceOf[js.Any]))
+      GroupByKey.foreach(__v => __obj.updateDynamic("GroupByKey")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAggregateConformancePackComplianceSummaryResponse]
     }
   }
 
@@ -5680,6 +5944,7 @@ package configservice {
     val `AWS::SSM::PatchCompliance` = "AWS::SSM::PatchCompliance".asInstanceOf[ResourceType]
     val `AWS::Shield::Protection` = "AWS::Shield::Protection".asInstanceOf[ResourceType]
     val `AWS::ShieldRegional::Protection` = "AWS::ShieldRegional::Protection".asInstanceOf[ResourceType]
+    val `AWS::Config::ConformancePackCompliance` = "AWS::Config::ConformancePackCompliance".asInstanceOf[ResourceType]
     val `AWS::Config::ResourceCompliance` = "AWS::Config::ResourceCompliance".asInstanceOf[ResourceType]
     val `AWS::ApiGateway::Stage` = "AWS::ApiGateway::Stage".asInstanceOf[ResourceType]
     val `AWS::ApiGateway::RestApi` = "AWS::ApiGateway::RestApi".asInstanceOf[ResourceType]
@@ -5778,6 +6043,7 @@ package configservice {
       `AWS::SSM::PatchCompliance`,
       `AWS::Shield::Protection`,
       `AWS::ShieldRegional::Protection`,
+      `AWS::Config::ConformancePackCompliance`,
       `AWS::Config::ResourceCompliance`,
       `AWS::ApiGateway::Stage`,
       `AWS::ApiGateway::RestApi`,
