@@ -627,9 +627,11 @@ package comprehendmedical {
   @js.native
   trait ICD10CMAttribute extends js.Object {
     var BeginOffset: js.UndefOr[Int]
+    var Category: js.UndefOr[ICD10CMEntityType]
     var EndOffset: js.UndefOr[Int]
     var Id: js.UndefOr[Int]
     var RelationshipScore: js.UndefOr[Float]
+    var RelationshipType: js.UndefOr[ICD10CMRelationshipType]
     var Score: js.UndefOr[Float]
     var Text: js.UndefOr[String]
     var Traits: js.UndefOr[ICD10CMTraitList]
@@ -640,9 +642,11 @@ package comprehendmedical {
     @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
+        Category: js.UndefOr[ICD10CMEntityType] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
         Id: js.UndefOr[Int] = js.undefined,
         RelationshipScore: js.UndefOr[Float] = js.undefined,
+        RelationshipType: js.UndefOr[ICD10CMRelationshipType] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined,
         Text: js.UndefOr[String] = js.undefined,
         Traits: js.UndefOr[ICD10CMTraitList] = js.undefined,
@@ -650,9 +654,11 @@ package comprehendmedical {
     ): ICD10CMAttribute = {
       val __obj = js.Dynamic.literal()
       BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       RelationshipScore.foreach(__v => __obj.updateDynamic("RelationshipScore")(__v.asInstanceOf[js.Any]))
+      RelationshipType.foreach(__v => __obj.updateDynamic("RelationshipType")(__v.asInstanceOf[js.Any]))
       Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
@@ -669,8 +675,10 @@ package comprehendmedical {
     val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMAttributeType]
     val QUALITY = "QUALITY".asInstanceOf[ICD10CMAttributeType]
     val QUANTITY = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
+    val TIME_TO_DX_NAME = "TIME_TO_DX_NAME".asInstanceOf[ICD10CMAttributeType]
+    val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[ICD10CMAttributeType]
 
-    @inline def values = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY)
+    @inline def values = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY, TIME_TO_DX_NAME, TIME_EXPRESSION)
   }
 
   /** The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.
@@ -754,8 +762,18 @@ package comprehendmedical {
   sealed trait ICD10CMEntityType extends js.Any
   object ICD10CMEntityType {
     val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
+    val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[ICD10CMEntityType]
 
-    @inline def values = js.Array(DX_NAME)
+    @inline def values = js.Array(DX_NAME, TIME_EXPRESSION)
+  }
+
+  @js.native
+  sealed trait ICD10CMRelationshipType extends js.Any
+  object ICD10CMRelationshipType {
+    val OVERLAP = "OVERLAP".asInstanceOf[ICD10CMRelationshipType]
+    val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMRelationshipType]
+
+    @inline def values = js.Array(OVERLAP, SYSTEM_ORGAN_SITE)
   }
 
   /** Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
@@ -872,7 +890,7 @@ package comprehendmedical {
     }
   }
 
-  /** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. See <a>batch-manifest</a> for more information.
+  /** The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.
     */
   @js.native
   trait InputDataConfig extends js.Object {

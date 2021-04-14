@@ -14,7 +14,6 @@ package object pricing {
   type PriceList = js.Array[PriceListItemJSON]
   type PriceListItemJSON = String
   type ServiceList = js.Array[Service]
-  type errorMessage = String
 
   implicit final class PricingOps(private val service: Pricing) extends AnyVal {
 
@@ -99,13 +98,6 @@ package pricing {
       Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServicesResponse]
     }
-  }
-
-  /** The pagination token expired. Try again without a pagination token.
-    */
-  @js.native
-  trait ExpiredNextTokenExceptionException extends js.Object {
-    val Message: errorMessage
   }
 
   /** The constraints that you want all returned products to match.
@@ -235,34 +227,6 @@ package pricing {
       PriceList.foreach(__v => __obj.updateDynamic("PriceList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProductsResponse]
     }
-  }
-
-  /** An error on the server occurred during the processing of your request. Try again later.
-    */
-  @js.native
-  trait InternalErrorExceptionException extends js.Object {
-    val Message: errorMessage
-  }
-
-  /** The pagination token is invalid. Try again without a pagination token.
-    */
-  @js.native
-  trait InvalidNextTokenExceptionException extends js.Object {
-    val Message: errorMessage
-  }
-
-  /** One or more parameters had an invalid value.
-    */
-  @js.native
-  trait InvalidParameterExceptionException extends js.Object {
-    val Message: errorMessage
-  }
-
-  /** The requested resource can't be found.
-    */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {
-    val Message: errorMessage
   }
 
   /** The metadata for a service, such as the service code and available attribute names.

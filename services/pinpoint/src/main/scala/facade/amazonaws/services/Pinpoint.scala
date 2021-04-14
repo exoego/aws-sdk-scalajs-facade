@@ -6700,6 +6700,7 @@ package pinpoint {
   trait JourneyLimits extends js.Object {
     var DailyCap: js.UndefOr[__integer]
     var EndpointReentryCap: js.UndefOr[__integer]
+    var EndpointReentryInterval: js.UndefOr[__string]
     var MessagesPerSecond: js.UndefOr[__integer]
   }
 
@@ -6708,11 +6709,13 @@ package pinpoint {
     def apply(
         DailyCap: js.UndefOr[__integer] = js.undefined,
         EndpointReentryCap: js.UndefOr[__integer] = js.undefined,
+        EndpointReentryInterval: js.UndefOr[__string] = js.undefined,
         MessagesPerSecond: js.UndefOr[__integer] = js.undefined
     ): JourneyLimits = {
       val __obj = js.Dynamic.literal()
       DailyCap.foreach(__v => __obj.updateDynamic("DailyCap")(__v.asInstanceOf[js.Any]))
       EndpointReentryCap.foreach(__v => __obj.updateDynamic("EndpointReentryCap")(__v.asInstanceOf[js.Any]))
+      EndpointReentryInterval.foreach(__v => __obj.updateDynamic("EndpointReentryInterval")(__v.asInstanceOf[js.Any]))
       MessagesPerSecond.foreach(__v => __obj.updateDynamic("MessagesPerSecond")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JourneyLimits]
     }
@@ -6750,10 +6753,12 @@ package pinpoint {
     var LocalTime: js.UndefOr[__boolean]
     var QuietTime: js.UndefOr[QuietTime]
     var RefreshFrequency: js.UndefOr[__string]
+    var RefreshOnSegmentUpdate: js.UndefOr[__boolean]
     var Schedule: js.UndefOr[JourneySchedule]
     var StartActivity: js.UndefOr[__string]
     var StartCondition: js.UndefOr[StartCondition]
     var State: js.UndefOr[State]
+    var WaitForQuietTime: js.UndefOr[__boolean]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -6770,10 +6775,12 @@ package pinpoint {
         LocalTime: js.UndefOr[__boolean] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined,
         RefreshFrequency: js.UndefOr[__string] = js.undefined,
+        RefreshOnSegmentUpdate: js.UndefOr[__boolean] = js.undefined,
         Schedule: js.UndefOr[JourneySchedule] = js.undefined,
         StartActivity: js.UndefOr[__string] = js.undefined,
         StartCondition: js.UndefOr[StartCondition] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
+        WaitForQuietTime: js.UndefOr[__boolean] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): JourneyResponse = {
       val __obj = js.Dynamic.literal(
@@ -6789,10 +6796,12 @@ package pinpoint {
       LocalTime.foreach(__v => __obj.updateDynamic("LocalTime")(__v.asInstanceOf[js.Any]))
       QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       RefreshFrequency.foreach(__v => __obj.updateDynamic("RefreshFrequency")(__v.asInstanceOf[js.Any]))
+      RefreshOnSegmentUpdate.foreach(__v => __obj.updateDynamic("RefreshOnSegmentUpdate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       StartActivity.foreach(__v => __obj.updateDynamic("StartActivity")(__v.asInstanceOf[js.Any]))
       StartCondition.foreach(__v => __obj.updateDynamic("StartCondition")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      WaitForQuietTime.foreach(__v => __obj.updateDynamic("WaitForQuietTime")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JourneyResponse]
     }
@@ -8874,8 +8883,9 @@ package pinpoint {
     val COMPLETED = "COMPLETED".asInstanceOf[State]
     val CANCELLED = "CANCELLED".asInstanceOf[State]
     val CLOSED = "CLOSED".asInstanceOf[State]
+    val PAUSED = "PAUSED".asInstanceOf[State]
 
-    @inline def values = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED)
+    @inline def values = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED, PAUSED)
   }
 
   @js.native
@@ -10511,10 +10521,12 @@ package pinpoint {
     var LocalTime: js.UndefOr[__boolean]
     var QuietTime: js.UndefOr[QuietTime]
     var RefreshFrequency: js.UndefOr[__string]
+    var RefreshOnSegmentUpdate: js.UndefOr[__boolean]
     var Schedule: js.UndefOr[JourneySchedule]
     var StartActivity: js.UndefOr[__string]
     var StartCondition: js.UndefOr[StartCondition]
     var State: js.UndefOr[State]
+    var WaitForQuietTime: js.UndefOr[__boolean]
   }
 
   object WriteJourneyRequest {
@@ -10528,10 +10540,12 @@ package pinpoint {
         LocalTime: js.UndefOr[__boolean] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined,
         RefreshFrequency: js.UndefOr[__string] = js.undefined,
+        RefreshOnSegmentUpdate: js.UndefOr[__boolean] = js.undefined,
         Schedule: js.UndefOr[JourneySchedule] = js.undefined,
         StartActivity: js.UndefOr[__string] = js.undefined,
         StartCondition: js.UndefOr[StartCondition] = js.undefined,
-        State: js.UndefOr[State] = js.undefined
+        State: js.UndefOr[State] = js.undefined,
+        WaitForQuietTime: js.UndefOr[__boolean] = js.undefined
     ): WriteJourneyRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -10544,10 +10558,12 @@ package pinpoint {
       LocalTime.foreach(__v => __obj.updateDynamic("LocalTime")(__v.asInstanceOf[js.Any]))
       QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       RefreshFrequency.foreach(__v => __obj.updateDynamic("RefreshFrequency")(__v.asInstanceOf[js.Any]))
+      RefreshOnSegmentUpdate.foreach(__v => __obj.updateDynamic("RefreshOnSegmentUpdate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       StartActivity.foreach(__v => __obj.updateDynamic("StartActivity")(__v.asInstanceOf[js.Any]))
       StartCondition.foreach(__v => __obj.updateDynamic("StartCondition")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      WaitForQuietTime.foreach(__v => __obj.updateDynamic("WaitForQuietTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteJourneyRequest]
     }
   }

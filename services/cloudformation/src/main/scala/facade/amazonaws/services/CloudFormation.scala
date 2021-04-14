@@ -11,6 +11,7 @@ package object cloudformation {
   type AccountGateStatusReason = String
   type AccountLimitList = js.Array[AccountLimit]
   type AccountList = js.Array[Account]
+  type AccountsUrl = String
   type AllowedValue = String
   type AllowedValues = js.Array[AllowedValue]
   type Arn = String
@@ -1044,6 +1045,7 @@ package cloudformation {
   @js.native
   trait DeploymentTargets extends js.Object {
     var Accounts: js.UndefOr[AccountList]
+    var AccountsUrl: js.UndefOr[AccountsUrl]
     var OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList]
   }
 
@@ -1051,10 +1053,12 @@ package cloudformation {
     @inline
     def apply(
         Accounts: js.UndefOr[AccountList] = js.undefined,
+        AccountsUrl: js.UndefOr[AccountsUrl] = js.undefined,
         OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList] = js.undefined
     ): DeploymentTargets = {
       val __obj = js.Dynamic.literal()
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      AccountsUrl.foreach(__v => __obj.updateDynamic("AccountsUrl")(__v.asInstanceOf[js.Any]))
       OrganizationalUnitIds.foreach(__v => __obj.updateDynamic("OrganizationalUnitIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentTargets]
     }
@@ -3035,6 +3039,15 @@ package cloudformation {
   }
 
   @js.native
+  sealed trait RegionConcurrencyType extends js.Any
+  object RegionConcurrencyType {
+    val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[RegionConcurrencyType]
+    val PARALLEL = "PARALLEL".asInstanceOf[RegionConcurrencyType]
+
+    @inline def values = js.Array(SEQUENTIAL, PARALLEL)
+  }
+
+  @js.native
   trait RegisterTypeInput extends js.Object {
     var SchemaHandlerPackage: S3Url
     var TypeName: TypeName
@@ -4271,6 +4284,7 @@ package cloudformation {
     var FailureTolerancePercentage: js.UndefOr[FailureTolerancePercentage]
     var MaxConcurrentCount: js.UndefOr[MaxConcurrentCount]
     var MaxConcurrentPercentage: js.UndefOr[MaxConcurrentPercentage]
+    var RegionConcurrencyType: js.UndefOr[RegionConcurrencyType]
     var RegionOrder: js.UndefOr[RegionList]
   }
 
@@ -4281,6 +4295,7 @@ package cloudformation {
         FailureTolerancePercentage: js.UndefOr[FailureTolerancePercentage] = js.undefined,
         MaxConcurrentCount: js.UndefOr[MaxConcurrentCount] = js.undefined,
         MaxConcurrentPercentage: js.UndefOr[MaxConcurrentPercentage] = js.undefined,
+        RegionConcurrencyType: js.UndefOr[RegionConcurrencyType] = js.undefined,
         RegionOrder: js.UndefOr[RegionList] = js.undefined
     ): StackSetOperationPreferences = {
       val __obj = js.Dynamic.literal()
@@ -4288,6 +4303,7 @@ package cloudformation {
       FailureTolerancePercentage.foreach(__v => __obj.updateDynamic("FailureTolerancePercentage")(__v.asInstanceOf[js.Any]))
       MaxConcurrentCount.foreach(__v => __obj.updateDynamic("MaxConcurrentCount")(__v.asInstanceOf[js.Any]))
       MaxConcurrentPercentage.foreach(__v => __obj.updateDynamic("MaxConcurrentPercentage")(__v.asInstanceOf[js.Any]))
+      RegionConcurrencyType.foreach(__v => __obj.updateDynamic("RegionConcurrencyType")(__v.asInstanceOf[js.Any]))
       RegionOrder.foreach(__v => __obj.updateDynamic("RegionOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetOperationPreferences]
     }

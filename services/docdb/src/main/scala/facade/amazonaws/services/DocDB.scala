@@ -25,6 +25,7 @@ package object docdb {
   type EventCategoriesList = js.Array[String]
   type EventCategoriesMapList = js.Array[EventCategoriesMap]
   type EventList = js.Array[Event]
+  type EventSubscriptionsList = js.Array[EventSubscription]
   type FilterList = js.Array[Filter]
   type FilterValueList = js.Array[String]
   type IntegerOptional = Int
@@ -34,6 +35,7 @@ package object docdb {
   type ParametersList = js.Array[Parameter]
   type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
   type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type SourceIdsList = js.Array[String]
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type TStamp = js.Date
@@ -44,6 +46,7 @@ package object docdb {
 
   implicit final class DocDBOps(private val service: DocDB) extends AnyVal {
 
+    @inline def addSourceIdentifierToSubscriptionFuture(params: AddSourceIdentifierToSubscriptionMessage): Future[AddSourceIdentifierToSubscriptionResult] = service.addSourceIdentifierToSubscription(params).promise().toFuture
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] = service.addTagsToResource(params).promise().toFuture
     @inline def applyPendingMaintenanceActionFuture(params: ApplyPendingMaintenanceActionMessage): Future[ApplyPendingMaintenanceActionResult] = service.applyPendingMaintenanceAction(params).promise().toFuture
     @inline def copyDBClusterParameterGroupFuture(params: CopyDBClusterParameterGroupMessage): Future[CopyDBClusterParameterGroupResult] = service.copyDBClusterParameterGroup(params).promise().toFuture
@@ -53,11 +56,13 @@ package object docdb {
     @inline def createDBClusterSnapshotFuture(params: CreateDBClusterSnapshotMessage): Future[CreateDBClusterSnapshotResult] = service.createDBClusterSnapshot(params).promise().toFuture
     @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] = service.createDBInstance(params).promise().toFuture
     @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] = service.createDBSubnetGroup(params).promise().toFuture
+    @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
     @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] = service.deleteDBCluster(params).promise().toFuture
     @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] = service.deleteDBClusterParameterGroup(params).promise().toFuture
     @inline def deleteDBClusterSnapshotFuture(params: DeleteDBClusterSnapshotMessage): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise().toFuture
     @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] = service.deleteDBInstance(params).promise().toFuture
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] = service.deleteDBSubnetGroup(params).promise().toFuture
+    @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
     @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] = service.describeCertificates(params).promise().toFuture
     @inline def describeDBClusterParameterGroupsFuture(params: DescribeDBClusterParameterGroupsMessage): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
     @inline def describeDBClusterParametersFuture(params: DescribeDBClusterParametersMessage): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
@@ -69,6 +74,7 @@ package object docdb {
     @inline def describeDBSubnetGroupsFuture(params: DescribeDBSubnetGroupsMessage): Future[DBSubnetGroupMessage] = service.describeDBSubnetGroups(params).promise().toFuture
     @inline def describeEngineDefaultClusterParametersFuture(params: DescribeEngineDefaultClusterParametersMessage): Future[DescribeEngineDefaultClusterParametersResult] = service.describeEngineDefaultClusterParameters(params).promise().toFuture
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] = service.describeEventCategories(params).promise().toFuture
+    @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
     @inline def describeOrderableDBInstanceOptionsFuture(params: DescribeOrderableDBInstanceOptionsMessage): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
     @inline def describePendingMaintenanceActionsFuture(params: DescribePendingMaintenanceActionsMessage): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise().toFuture
@@ -79,7 +85,9 @@ package object docdb {
     @inline def modifyDBClusterSnapshotAttributeFuture(params: ModifyDBClusterSnapshotAttributeMessage): Future[ModifyDBClusterSnapshotAttributeResult] = service.modifyDBClusterSnapshotAttribute(params).promise().toFuture
     @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] = service.modifyDBInstance(params).promise().toFuture
     @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] = service.modifyDBSubnetGroup(params).promise().toFuture
+    @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
     @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] = service.rebootDBInstance(params).promise().toFuture
+    @inline def removeSourceIdentifierFromSubscriptionFuture(params: RemoveSourceIdentifierFromSubscriptionMessage): Future[RemoveSourceIdentifierFromSubscriptionResult] = service.removeSourceIdentifierFromSubscription(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] = service.removeTagsFromResource(params).promise().toFuture
     @inline def resetDBClusterParameterGroupFuture(params: ResetDBClusterParameterGroupMessage): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise().toFuture
     @inline def restoreDBClusterFromSnapshotFuture(params: RestoreDBClusterFromSnapshotMessage): Future[RestoreDBClusterFromSnapshotResult] = service.restoreDBClusterFromSnapshot(params).promise().toFuture
@@ -96,6 +104,7 @@ package docdb {
   class DocDB() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def addSourceIdentifierToSubscription(params: AddSourceIdentifierToSubscriptionMessage): Request[AddSourceIdentifierToSubscriptionResult] = js.native
     def addTagsToResource(params: AddTagsToResourceMessage): Request[js.Object] = js.native
     def applyPendingMaintenanceAction(params: ApplyPendingMaintenanceActionMessage): Request[ApplyPendingMaintenanceActionResult] = js.native
     def copyDBClusterParameterGroup(params: CopyDBClusterParameterGroupMessage): Request[CopyDBClusterParameterGroupResult] = js.native
@@ -105,11 +114,13 @@ package docdb {
     def createDBClusterSnapshot(params: CreateDBClusterSnapshotMessage): Request[CreateDBClusterSnapshotResult] = js.native
     def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
+    def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] = js.native
     def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
+    def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
     def describeDBClusterParameterGroups(params: DescribeDBClusterParameterGroupsMessage): Request[DBClusterParameterGroupsMessage] = js.native
     def describeDBClusterParameters(params: DescribeDBClusterParametersMessage): Request[DBClusterParameterGroupDetails] = js.native
@@ -121,6 +132,7 @@ package docdb {
     def describeDBSubnetGroups(params: DescribeDBSubnetGroupsMessage): Request[DBSubnetGroupMessage] = js.native
     def describeEngineDefaultClusterParameters(params: DescribeEngineDefaultClusterParametersMessage): Request[DescribeEngineDefaultClusterParametersResult] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
+    def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
     def describeOrderableDBInstanceOptions(params: DescribeOrderableDBInstanceOptionsMessage): Request[OrderableDBInstanceOptionsMessage] = js.native
     def describePendingMaintenanceActions(params: DescribePendingMaintenanceActionsMessage): Request[PendingMaintenanceActionsMessage] = js.native
@@ -131,13 +143,53 @@ package docdb {
     def modifyDBClusterSnapshotAttribute(params: ModifyDBClusterSnapshotAttributeMessage): Request[ModifyDBClusterSnapshotAttributeResult] = js.native
     def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
+    def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
+    def removeSourceIdentifierFromSubscription(params: RemoveSourceIdentifierFromSubscriptionMessage): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
     def resetDBClusterParameterGroup(params: ResetDBClusterParameterGroupMessage): Request[DBClusterParameterGroupNameMessage] = js.native
     def restoreDBClusterFromSnapshot(params: RestoreDBClusterFromSnapshotMessage): Request[RestoreDBClusterFromSnapshotResult] = js.native
     def restoreDBClusterToPointInTime(params: RestoreDBClusterToPointInTimeMessage): Request[RestoreDBClusterToPointInTimeResult] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
+  }
+
+  /** Represents the input to <a>AddSourceIdentifierToSubscription</a>.
+    */
+  @js.native
+  trait AddSourceIdentifierToSubscriptionMessage extends js.Object {
+    var SourceIdentifier: String
+    var SubscriptionName: String
+  }
+
+  object AddSourceIdentifierToSubscriptionMessage {
+    @inline
+    def apply(
+        SourceIdentifier: String,
+        SubscriptionName: String
+    ): AddSourceIdentifierToSubscriptionMessage = {
+      val __obj = js.Dynamic.literal(
+        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AddSourceIdentifierToSubscriptionMessage]
+    }
+  }
+
+  @js.native
+  trait AddSourceIdentifierToSubscriptionResult extends js.Object {
+    var EventSubscription: js.UndefOr[EventSubscription]
+  }
+
+  object AddSourceIdentifierToSubscriptionResult {
+    @inline
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): AddSourceIdentifierToSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddSourceIdentifierToSubscriptionResult]
+    }
   }
 
   /** Represents the input to <a>AddTagsToResource</a>.
@@ -679,6 +731,60 @@ package docdb {
       val __obj = js.Dynamic.literal()
       DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBSubnetGroupResult]
+    }
+  }
+
+  /** Represents the input to <a>CreateEventSubscription</a>.
+    */
+  @js.native
+  trait CreateEventSubscriptionMessage extends js.Object {
+    var SnsTopicArn: String
+    var SubscriptionName: String
+    var Enabled: js.UndefOr[BooleanOptional]
+    var EventCategories: js.UndefOr[EventCategoriesList]
+    var SourceIds: js.UndefOr[SourceIdsList]
+    var SourceType: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateEventSubscriptionMessage {
+    @inline
+    def apply(
+        SnsTopicArn: String,
+        SubscriptionName: String,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateEventSubscriptionMessage = {
+      val __obj = js.Dynamic.literal(
+        "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
+
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
+      SourceIds.foreach(__v => __obj.updateDynamic("SourceIds")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionMessage]
+    }
+  }
+
+  @js.native
+  trait CreateEventSubscriptionResult extends js.Object {
+    var EventSubscription: js.UndefOr[EventSubscription]
+  }
+
+  object CreateEventSubscriptionResult {
+    @inline
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): CreateEventSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventSubscriptionResult]
     }
   }
 
@@ -1475,6 +1581,41 @@ package docdb {
     }
   }
 
+  /** Represents the input to <a>DeleteEventSubscription</a>.
+    */
+  @js.native
+  trait DeleteEventSubscriptionMessage extends js.Object {
+    var SubscriptionName: String
+  }
+
+  object DeleteEventSubscriptionMessage {
+    @inline
+    def apply(
+        SubscriptionName: String
+    ): DeleteEventSubscriptionMessage = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEventSubscriptionMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteEventSubscriptionResult extends js.Object {
+    var EventSubscription: js.UndefOr[EventSubscription]
+  }
+
+  object DeleteEventSubscriptionResult {
+    @inline
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): DeleteEventSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteEventSubscriptionResult]
+    }
+  }
+
   @js.native
   trait DescribeCertificatesMessage extends js.Object {
     var CertificateIdentifier: js.UndefOr[String]
@@ -1822,6 +1963,33 @@ package docdb {
     }
   }
 
+  /** Represents the input to <a>DescribeEventSubscriptions</a>.
+    */
+  @js.native
+  trait DescribeEventSubscriptionsMessage extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SubscriptionName: js.UndefOr[String]
+  }
+
+  object DescribeEventSubscriptionsMessage {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SubscriptionName: js.UndefOr[String] = js.undefined
+    ): DescribeEventSubscriptionsMessage = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      SubscriptionName.foreach(__v => __obj.updateDynamic("SubscriptionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventSubscriptionsMessage]
+    }
+  }
+
   /** Represents the input to <a>DescribeEvents</a>.
     */
   @js.native
@@ -2049,6 +2217,72 @@ package docdb {
       val __obj = js.Dynamic.literal()
       EventCategoriesMapList.foreach(__v => __obj.updateDynamic("EventCategoriesMapList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventCategoriesMessage]
+    }
+  }
+
+  /** Detailed information about an event to which you have subscribed.
+    */
+  @js.native
+  trait EventSubscription extends js.Object {
+    var CustSubscriptionId: js.UndefOr[String]
+    var CustomerAwsId: js.UndefOr[String]
+    var Enabled: js.UndefOr[Boolean]
+    var EventCategoriesList: js.UndefOr[EventCategoriesList]
+    var EventSubscriptionArn: js.UndefOr[String]
+    var SnsTopicArn: js.UndefOr[String]
+    var SourceIdsList: js.UndefOr[SourceIdsList]
+    var SourceType: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+    var SubscriptionCreationTime: js.UndefOr[String]
+  }
+
+  object EventSubscription {
+    @inline
+    def apply(
+        CustSubscriptionId: js.UndefOr[String] = js.undefined,
+        CustomerAwsId: js.UndefOr[String] = js.undefined,
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
+        EventSubscriptionArn: js.UndefOr[String] = js.undefined,
+        SnsTopicArn: js.UndefOr[String] = js.undefined,
+        SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        SubscriptionCreationTime: js.UndefOr[String] = js.undefined
+    ): EventSubscription = {
+      val __obj = js.Dynamic.literal()
+      CustSubscriptionId.foreach(__v => __obj.updateDynamic("CustSubscriptionId")(__v.asInstanceOf[js.Any]))
+      CustomerAwsId.foreach(__v => __obj.updateDynamic("CustomerAwsId")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EventCategoriesList.foreach(__v => __obj.updateDynamic("EventCategoriesList")(__v.asInstanceOf[js.Any]))
+      EventSubscriptionArn.foreach(__v => __obj.updateDynamic("EventSubscriptionArn")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
+      SourceIdsList.foreach(__v => __obj.updateDynamic("SourceIdsList")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubscriptionCreationTime.foreach(__v => __obj.updateDynamic("SubscriptionCreationTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscription]
+    }
+  }
+
+  /** Represents the output of <a>DescribeEventSubscriptions</a>.
+    */
+  @js.native
+  trait EventSubscriptionsMessage extends js.Object {
+    var EventSubscriptionsList: js.UndefOr[EventSubscriptionsList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object EventSubscriptionsMessage {
+    @inline
+    def apply(
+        EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EventSubscriptionsMessage = {
+      val __obj = js.Dynamic.literal()
+      EventSubscriptionsList.foreach(__v => __obj.updateDynamic("EventSubscriptionsList")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSubscriptionsMessage]
     }
   }
 
@@ -2394,6 +2628,54 @@ package docdb {
     }
   }
 
+  /** Represents the input to <a>ModifyEventSubscription</a>.
+    */
+  @js.native
+  trait ModifyEventSubscriptionMessage extends js.Object {
+    var SubscriptionName: String
+    var Enabled: js.UndefOr[BooleanOptional]
+    var EventCategories: js.UndefOr[EventCategoriesList]
+    var SnsTopicArn: js.UndefOr[String]
+    var SourceType: js.UndefOr[String]
+  }
+
+  object ModifyEventSubscriptionMessage {
+    @inline
+    def apply(
+        SubscriptionName: String,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        SnsTopicArn: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined
+    ): ModifyEventSubscriptionMessage = {
+      val __obj = js.Dynamic.literal(
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
+
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyEventSubscriptionResult extends js.Object {
+    var EventSubscription: js.UndefOr[EventSubscription]
+  }
+
+  object ModifyEventSubscriptionResult {
+    @inline
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): ModifyEventSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyEventSubscriptionResult]
+    }
+  }
+
   /** The options that are available for an instance.
     */
   @js.native
@@ -2661,6 +2943,44 @@ package docdb {
       val __obj = js.Dynamic.literal()
       DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootDBInstanceResult]
+    }
+  }
+
+  /** Represents the input to <a>RemoveSourceIdentifierFromSubscription</a>.
+    */
+  @js.native
+  trait RemoveSourceIdentifierFromSubscriptionMessage extends js.Object {
+    var SourceIdentifier: String
+    var SubscriptionName: String
+  }
+
+  object RemoveSourceIdentifierFromSubscriptionMessage {
+    @inline
+    def apply(
+        SourceIdentifier: String,
+        SubscriptionName: String
+    ): RemoveSourceIdentifierFromSubscriptionMessage = {
+      val __obj = js.Dynamic.literal(
+        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionMessage]
+    }
+  }
+
+  @js.native
+  trait RemoveSourceIdentifierFromSubscriptionResult extends js.Object {
+    var EventSubscription: js.UndefOr[EventSubscription]
+  }
+
+  object RemoveSourceIdentifierFromSubscriptionResult {
+    @inline
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): RemoveSourceIdentifierFromSubscriptionResult = {
+      val __obj = js.Dynamic.literal()
+      EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveSourceIdentifierFromSubscriptionResult]
     }
   }
 

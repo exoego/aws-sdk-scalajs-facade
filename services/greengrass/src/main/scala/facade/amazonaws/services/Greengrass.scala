@@ -1056,24 +1056,26 @@ package greengrass {
 
   @js.native
   trait CreateGroupRequest extends js.Object {
+    var Name: __string
     var AmznClientToken: js.UndefOr[__string]
     var InitialVersion: js.UndefOr[GroupVersion]
-    var Name: js.UndefOr[__string]
     var tags: js.UndefOr[Tags]
   }
 
   object CreateGroupRequest {
     @inline
     def apply(
+        Name: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[GroupVersion] = js.undefined,
-        Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupRequest = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
       AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
       InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupRequest]
     }

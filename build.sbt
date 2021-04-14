@@ -183,6 +183,8 @@ lazy val awsLexRuntimeV2 = defineAwsProject("LexRuntimeV2")
 lazy val awsLicenseManager = defineAwsProject("LicenseManager")
 lazy val awsLightsail = defineAwsProject("Lightsail")
 lazy val awsLocation = defineAwsProject("Location")
+lazy val awsLookoutEquipment = defineAwsProject("LookoutEquipment")
+lazy val awsLookoutMetrics = defineAwsProject("LookoutMetrics")
 lazy val awsLookoutVision = defineAwsProject("LookoutVision")
 lazy val awsMachineLearning = defineAwsProject("MachineLearning")
 lazy val awsMacie = defineAwsProject("Macie")
@@ -200,6 +202,7 @@ lazy val awsMediaPackageVod = defineAwsProject("MediaPackageVod")
 lazy val awsMediaStore = defineAwsProject("MediaStore")
 lazy val awsMediaStoreData = defineAwsProject("MediaStoreData")
 lazy val awsMediaTailor = defineAwsProject("MediaTailor")
+lazy val awsMgn = defineAwsProject("Mgn")
 lazy val awsMigrationHub = defineAwsProject("MigrationHub")
 lazy val awsMigrationHubConfig = defineAwsProject("MigrationHubConfig")
 lazy val awsMobile = defineAwsProject("Mobile")
@@ -466,6 +469,8 @@ lazy val subProjects: Seq[Project] = Seq(
   awsLicenseManager,
   awsLightsail,
   awsLocation,
+  awsLookoutEquipment,
+  awsLookoutMetrics,
   awsLookoutVision,
   awsMachineLearning,
   awsMacie,
@@ -483,6 +488,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsMediaStore,
   awsMediaStoreData,
   awsMediaTailor,
+  awsMgn,
   awsMigrationHub,
   awsMigrationHubConfig,
   awsMobile,

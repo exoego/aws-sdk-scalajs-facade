@@ -27,6 +27,7 @@ package object ec2 {
   type AssociatedRolesList = js.Array[AssociatedRole]
   type AssociatedTargetNetworkSet = js.Array[AssociatedTargetNetwork]
   type AssociationIdList = js.Array[IamInstanceProfileAssociationId]
+  type AthenaIntegrationsSet = js.Array[AthenaIntegration]
   type AuthorizationRuleSet = js.Array[AuthorizationRule]
   type AutoRecoveryFlag = Boolean
   type AvailabilityZoneList = js.Array[AvailabilityZone]
@@ -130,6 +131,7 @@ package object ec2 {
   type DescribeNetworkInterfacePermissionsMaxResults = Int
   type DescribeNetworkInterfacesMaxResults = Int
   type DescribePrincipalIdFormatMaxResults = Int
+  type DescribeReplaceRootVolumeTasksMaxResults = Int
   type DescribeRouteTablesMaxResults = Int
   type DescribeScheduledInstanceAvailabilityMaxResults = Int
   type DescribeSecurityGroupsMaxResults = Int
@@ -137,6 +139,7 @@ package object ec2 {
   type DescribeSpotFleetRequestHistoryMaxResults = Int
   type DescribeStaleSecurityGroupsMaxResults = Int
   type DescribeStaleSecurityGroupsNextToken = String
+  type DescribeStoreImageTasksRequestMaxResults = Int
   type DescribeSubnetsMaxResults = Int
   type DescribeVpcClassicLinkDnsSupportMaxResults = Int
   type DescribeVpcClassicLinkDnsSupportNextToken = String
@@ -235,6 +238,7 @@ package object ec2 {
   type IdFormatList = js.Array[IdFormat]
   type ImageDiskContainerList = js.Array[ImageDiskContainer]
   type ImageId = String
+  type ImageIdList = js.Array[ImageId]
   type ImageIdStringList = js.Array[ImageId]
   type ImageList = js.Array[Image]
   type ImportImageLicenseSpecificationListRequest = js.Array[ImportImageLicenseConfigurationRequest]
@@ -358,6 +362,7 @@ package object ec2 {
   type MaxNetworkInterfaces = Int
   type MaxResults = Int
   type MaximumBandwidthInMbps = Int
+  type MaximumEfaInterfaces = Int
   type MaximumIops = Int
   type MaximumNetworkCards = Int
   type MaximumThroughputInMBps = Double
@@ -457,11 +462,14 @@ package object ec2 {
   type RegionList = js.Array[Region]
   type RegionNameStringList = js.Array[String]
   type RemovePrefixListEntries = js.Array[RemovePrefixListEntry]
+  type ReplaceRootVolumeTaskId = String
+  type ReplaceRootVolumeTaskIds = js.Array[ReplaceRootVolumeTaskId]
+  type ReplaceRootVolumeTasks = js.Array[ReplaceRootVolumeTask]
   type RequestHostIdList = js.Array[DedicatedHostId]
   type RequestHostIdSet = js.Array[DedicatedHostId]
   type RequestInstanceTypeList = js.Array[InstanceType]
   type RequestSpotLaunchSpecificationSecurityGroupIdList = js.Array[SecurityGroupId]
-  type RequestSpotLaunchSpecificationSecurityGroupList = js.Array[SecurityGroupName]
+  type RequestSpotLaunchSpecificationSecurityGroupList = js.Array[String]
   type ReservationId = String
   type ReservationList = js.Array[Reservation]
   type ReservedInstanceIdSet = js.Array[ReservationId]
@@ -493,6 +501,7 @@ package object ec2 {
   type RouteTableId = String
   type RouteTableIdStringList = js.Array[RouteTableId]
   type RouteTableList = js.Array[RouteTable]
+  type S3ObjectTagList = js.Array[S3ObjectTag]
   type ScheduledInstanceAvailabilitySet = js.Array[ScheduledInstanceAvailability]
   type ScheduledInstanceId = String
   type ScheduledInstanceIdRequestSet = js.Array[ScheduledInstanceId]
@@ -526,6 +535,7 @@ package object ec2 {
   type SpotPriceHistoryList = js.Array[SpotPrice]
   type StaleIpPermissionSet = js.Array[StaleIpPermission]
   type StaleSecurityGroupSet = js.Array[StaleSecurityGroup]
+  type StoreImageTaskResultSet = js.Array[StoreImageTaskResult]
   type StringList = js.Array[String]
   type SubnetAssociationList = js.Array[SubnetAssociation]
   type SubnetCidrAssociationId = String
@@ -726,13 +736,16 @@ package object ec2 {
     @inline def createNetworkInterfaceFuture(params: CreateNetworkInterfaceRequest): Future[CreateNetworkInterfaceResult] = service.createNetworkInterface(params).promise().toFuture
     @inline def createNetworkInterfacePermissionFuture(params: CreateNetworkInterfacePermissionRequest): Future[CreateNetworkInterfacePermissionResult] = service.createNetworkInterfacePermission(params).promise().toFuture
     @inline def createPlacementGroupFuture(params: CreatePlacementGroupRequest): Future[CreatePlacementGroupResult] = service.createPlacementGroup(params).promise().toFuture
+    @inline def createReplaceRootVolumeTaskFuture(params: CreateReplaceRootVolumeTaskRequest): Future[CreateReplaceRootVolumeTaskResult] = service.createReplaceRootVolumeTask(params).promise().toFuture
     @inline def createReservedInstancesListingFuture(params: CreateReservedInstancesListingRequest): Future[CreateReservedInstancesListingResult] = service.createReservedInstancesListing(params).promise().toFuture
+    @inline def createRestoreImageTaskFuture(params: CreateRestoreImageTaskRequest): Future[CreateRestoreImageTaskResult] = service.createRestoreImageTask(params).promise().toFuture
     @inline def createRouteFuture(params: CreateRouteRequest): Future[CreateRouteResult] = service.createRoute(params).promise().toFuture
     @inline def createRouteTableFuture(params: CreateRouteTableRequest): Future[CreateRouteTableResult] = service.createRouteTable(params).promise().toFuture
     @inline def createSecurityGroupFuture(params: CreateSecurityGroupRequest): Future[CreateSecurityGroupResult] = service.createSecurityGroup(params).promise().toFuture
     @inline def createSnapshotFuture(params: CreateSnapshotRequest): Future[Snapshot] = service.createSnapshot(params).promise().toFuture
     @inline def createSnapshotsFuture(params: CreateSnapshotsRequest): Future[CreateSnapshotsResult] = service.createSnapshots(params).promise().toFuture
     @inline def createSpotDatafeedSubscriptionFuture(params: CreateSpotDatafeedSubscriptionRequest): Future[CreateSpotDatafeedSubscriptionResult] = service.createSpotDatafeedSubscription(params).promise().toFuture
+    @inline def createStoreImageTaskFuture(params: CreateStoreImageTaskRequest): Future[CreateStoreImageTaskResult] = service.createStoreImageTask(params).promise().toFuture
     @inline def createSubnetFuture(params: CreateSubnetRequest): Future[CreateSubnetResult] = service.createSubnet(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise().toFuture
     @inline def createTrafficMirrorFilterFuture(params: CreateTrafficMirrorFilterRequest): Future[CreateTrafficMirrorFilterResult] = service.createTrafficMirrorFilter(params).promise().toFuture
@@ -888,6 +901,7 @@ package object ec2 {
     @inline def describePrincipalIdFormatFuture(params: DescribePrincipalIdFormatRequest): Future[DescribePrincipalIdFormatResult] = service.describePrincipalIdFormat(params).promise().toFuture
     @inline def describePublicIpv4PoolsFuture(params: DescribePublicIpv4PoolsRequest): Future[DescribePublicIpv4PoolsResult] = service.describePublicIpv4Pools(params).promise().toFuture
     @inline def describeRegionsFuture(params: DescribeRegionsRequest): Future[DescribeRegionsResult] = service.describeRegions(params).promise().toFuture
+    @inline def describeReplaceRootVolumeTasksFuture(params: DescribeReplaceRootVolumeTasksRequest): Future[DescribeReplaceRootVolumeTasksResult] = service.describeReplaceRootVolumeTasks(params).promise().toFuture
     @inline def describeReservedInstancesFuture(params: DescribeReservedInstancesRequest): Future[DescribeReservedInstancesResult] = service.describeReservedInstances(params).promise().toFuture
     @inline def describeReservedInstancesListingsFuture(params: DescribeReservedInstancesListingsRequest): Future[DescribeReservedInstancesListingsResult] = service.describeReservedInstancesListings(params).promise().toFuture
     @inline def describeReservedInstancesModificationsFuture(params: DescribeReservedInstancesModificationsRequest): Future[DescribeReservedInstancesModificationsResult] = service.describeReservedInstancesModifications(params).promise().toFuture
@@ -906,6 +920,7 @@ package object ec2 {
     @inline def describeSpotInstanceRequestsFuture(params: DescribeSpotInstanceRequestsRequest): Future[DescribeSpotInstanceRequestsResult] = service.describeSpotInstanceRequests(params).promise().toFuture
     @inline def describeSpotPriceHistoryFuture(params: DescribeSpotPriceHistoryRequest): Future[DescribeSpotPriceHistoryResult] = service.describeSpotPriceHistory(params).promise().toFuture
     @inline def describeStaleSecurityGroupsFuture(params: DescribeStaleSecurityGroupsRequest): Future[DescribeStaleSecurityGroupsResult] = service.describeStaleSecurityGroups(params).promise().toFuture
+    @inline def describeStoreImageTasksFuture(params: DescribeStoreImageTasksRequest): Future[DescribeStoreImageTasksResult] = service.describeStoreImageTasks(params).promise().toFuture
     @inline def describeSubnetsFuture(params: DescribeSubnetsRequest): Future[DescribeSubnetsResult] = service.describeSubnets(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResult] = service.describeTags(params).promise().toFuture
     @inline def describeTrafficMirrorFiltersFuture(params: DescribeTrafficMirrorFiltersRequest): Future[DescribeTrafficMirrorFiltersResult] = service.describeTrafficMirrorFilters(params).promise().toFuture
@@ -943,6 +958,7 @@ package object ec2 {
     @inline def detachVpnGatewayFuture(params: DetachVpnGatewayRequest): Future[js.Object] = service.detachVpnGateway(params).promise().toFuture
     @inline def disableEbsEncryptionByDefaultFuture(params: DisableEbsEncryptionByDefaultRequest): Future[DisableEbsEncryptionByDefaultResult] = service.disableEbsEncryptionByDefault(params).promise().toFuture
     @inline def disableFastSnapshotRestoresFuture(params: DisableFastSnapshotRestoresRequest): Future[DisableFastSnapshotRestoresResult] = service.disableFastSnapshotRestores(params).promise().toFuture
+    @inline def disableSerialConsoleAccessFuture(params: DisableSerialConsoleAccessRequest): Future[DisableSerialConsoleAccessResult] = service.disableSerialConsoleAccess(params).promise().toFuture
     @inline def disableTransitGatewayRouteTablePropagationFuture(params: DisableTransitGatewayRouteTablePropagationRequest): Future[DisableTransitGatewayRouteTablePropagationResult] = service.disableTransitGatewayRouteTablePropagation(params).promise().toFuture
     @inline def disableVgwRoutePropagationFuture(params: DisableVgwRoutePropagationRequest): Future[js.Object] = service.disableVgwRoutePropagation(params).promise().toFuture
     @inline def disableVpcClassicLinkDnsSupportFuture(params: DisableVpcClassicLinkDnsSupportRequest): Future[DisableVpcClassicLinkDnsSupportResult] = service.disableVpcClassicLinkDnsSupport(params).promise().toFuture
@@ -958,6 +974,7 @@ package object ec2 {
     @inline def disassociateVpcCidrBlockFuture(params: DisassociateVpcCidrBlockRequest): Future[DisassociateVpcCidrBlockResult] = service.disassociateVpcCidrBlock(params).promise().toFuture
     @inline def enableEbsEncryptionByDefaultFuture(params: EnableEbsEncryptionByDefaultRequest): Future[EnableEbsEncryptionByDefaultResult] = service.enableEbsEncryptionByDefault(params).promise().toFuture
     @inline def enableFastSnapshotRestoresFuture(params: EnableFastSnapshotRestoresRequest): Future[EnableFastSnapshotRestoresResult] = service.enableFastSnapshotRestores(params).promise().toFuture
+    @inline def enableSerialConsoleAccessFuture(params: EnableSerialConsoleAccessRequest): Future[EnableSerialConsoleAccessResult] = service.enableSerialConsoleAccess(params).promise().toFuture
     @inline def enableTransitGatewayRouteTablePropagationFuture(params: EnableTransitGatewayRouteTablePropagationRequest): Future[EnableTransitGatewayRouteTablePropagationResult] = service.enableTransitGatewayRouteTablePropagation(params).promise().toFuture
     @inline def enableVgwRoutePropagationFuture(params: EnableVgwRoutePropagationRequest): Future[js.Object] = service.enableVgwRoutePropagation(params).promise().toFuture
     @inline def enableVolumeIOFuture(params: EnableVolumeIORequest): Future[js.Object] = service.enableVolumeIO(params).promise().toFuture
@@ -976,6 +993,7 @@ package object ec2 {
     @inline def getDefaultCreditSpecificationFuture(params: GetDefaultCreditSpecificationRequest): Future[GetDefaultCreditSpecificationResult] = service.getDefaultCreditSpecification(params).promise().toFuture
     @inline def getEbsDefaultKmsKeyIdFuture(params: GetEbsDefaultKmsKeyIdRequest): Future[GetEbsDefaultKmsKeyIdResult] = service.getEbsDefaultKmsKeyId(params).promise().toFuture
     @inline def getEbsEncryptionByDefaultFuture(params: GetEbsEncryptionByDefaultRequest): Future[GetEbsEncryptionByDefaultResult] = service.getEbsEncryptionByDefault(params).promise().toFuture
+    @inline def getFlowLogsIntegrationTemplateFuture(params: GetFlowLogsIntegrationTemplateRequest): Future[GetFlowLogsIntegrationTemplateResult] = service.getFlowLogsIntegrationTemplate(params).promise().toFuture
     @inline def getGroupsForCapacityReservationFuture(params: GetGroupsForCapacityReservationRequest): Future[GetGroupsForCapacityReservationResult] = service.getGroupsForCapacityReservation(params).promise().toFuture
     @inline def getHostReservationPurchasePreviewFuture(params: GetHostReservationPurchasePreviewRequest): Future[GetHostReservationPurchasePreviewResult] = service.getHostReservationPurchasePreview(params).promise().toFuture
     @inline def getLaunchTemplateDataFuture(params: GetLaunchTemplateDataRequest): Future[GetLaunchTemplateDataResult] = service.getLaunchTemplateData(params).promise().toFuture
@@ -983,6 +1001,7 @@ package object ec2 {
     @inline def getManagedPrefixListEntriesFuture(params: GetManagedPrefixListEntriesRequest): Future[GetManagedPrefixListEntriesResult] = service.getManagedPrefixListEntries(params).promise().toFuture
     @inline def getPasswordDataFuture(params: GetPasswordDataRequest): Future[GetPasswordDataResult] = service.getPasswordData(params).promise().toFuture
     @inline def getReservedInstancesExchangeQuoteFuture(params: GetReservedInstancesExchangeQuoteRequest): Future[GetReservedInstancesExchangeQuoteResult] = service.getReservedInstancesExchangeQuote(params).promise().toFuture
+    @inline def getSerialConsoleAccessStatusFuture(params: GetSerialConsoleAccessStatusRequest): Future[GetSerialConsoleAccessStatusResult] = service.getSerialConsoleAccessStatus(params).promise().toFuture
     @inline def getTransitGatewayAttachmentPropagationsFuture(params: GetTransitGatewayAttachmentPropagationsRequest): Future[GetTransitGatewayAttachmentPropagationsResult] = service.getTransitGatewayAttachmentPropagations(params).promise().toFuture
     @inline def getTransitGatewayMulticastDomainAssociationsFuture(params: GetTransitGatewayMulticastDomainAssociationsRequest): Future[GetTransitGatewayMulticastDomainAssociationsResult] = service.getTransitGatewayMulticastDomainAssociations(params).promise().toFuture
     @inline def getTransitGatewayPrefixListReferencesFuture(params: GetTransitGatewayPrefixListReferencesRequest): Future[GetTransitGatewayPrefixListReferencesResult] = service.getTransitGatewayPrefixListReferences(params).promise().toFuture
@@ -1176,13 +1195,16 @@ package ec2 {
     def createNetworkInterface(params: CreateNetworkInterfaceRequest): Request[CreateNetworkInterfaceResult] = js.native
     def createNetworkInterfacePermission(params: CreateNetworkInterfacePermissionRequest): Request[CreateNetworkInterfacePermissionResult] = js.native
     def createPlacementGroup(params: CreatePlacementGroupRequest): Request[CreatePlacementGroupResult] = js.native
+    def createReplaceRootVolumeTask(params: CreateReplaceRootVolumeTaskRequest): Request[CreateReplaceRootVolumeTaskResult] = js.native
     def createReservedInstancesListing(params: CreateReservedInstancesListingRequest): Request[CreateReservedInstancesListingResult] = js.native
+    def createRestoreImageTask(params: CreateRestoreImageTaskRequest): Request[CreateRestoreImageTaskResult] = js.native
     def createRoute(params: CreateRouteRequest): Request[CreateRouteResult] = js.native
     def createRouteTable(params: CreateRouteTableRequest): Request[CreateRouteTableResult] = js.native
     def createSecurityGroup(params: CreateSecurityGroupRequest): Request[CreateSecurityGroupResult] = js.native
     def createSnapshot(params: CreateSnapshotRequest): Request[Snapshot] = js.native
     def createSnapshots(params: CreateSnapshotsRequest): Request[CreateSnapshotsResult] = js.native
     def createSpotDatafeedSubscription(params: CreateSpotDatafeedSubscriptionRequest): Request[CreateSpotDatafeedSubscriptionResult] = js.native
+    def createStoreImageTask(params: CreateStoreImageTaskRequest): Request[CreateStoreImageTaskResult] = js.native
     def createSubnet(params: CreateSubnetRequest): Request[CreateSubnetResult] = js.native
     def createTags(params: CreateTagsRequest): Request[js.Object] = js.native
     def createTrafficMirrorFilter(params: CreateTrafficMirrorFilterRequest): Request[CreateTrafficMirrorFilterResult] = js.native
@@ -1338,6 +1360,7 @@ package ec2 {
     def describePrincipalIdFormat(params: DescribePrincipalIdFormatRequest): Request[DescribePrincipalIdFormatResult] = js.native
     def describePublicIpv4Pools(params: DescribePublicIpv4PoolsRequest): Request[DescribePublicIpv4PoolsResult] = js.native
     def describeRegions(params: DescribeRegionsRequest): Request[DescribeRegionsResult] = js.native
+    def describeReplaceRootVolumeTasks(params: DescribeReplaceRootVolumeTasksRequest): Request[DescribeReplaceRootVolumeTasksResult] = js.native
     def describeReservedInstances(params: DescribeReservedInstancesRequest): Request[DescribeReservedInstancesResult] = js.native
     def describeReservedInstancesListings(params: DescribeReservedInstancesListingsRequest): Request[DescribeReservedInstancesListingsResult] = js.native
     def describeReservedInstancesModifications(params: DescribeReservedInstancesModificationsRequest): Request[DescribeReservedInstancesModificationsResult] = js.native
@@ -1356,6 +1379,7 @@ package ec2 {
     def describeSpotInstanceRequests(params: DescribeSpotInstanceRequestsRequest): Request[DescribeSpotInstanceRequestsResult] = js.native
     def describeSpotPriceHistory(params: DescribeSpotPriceHistoryRequest): Request[DescribeSpotPriceHistoryResult] = js.native
     def describeStaleSecurityGroups(params: DescribeStaleSecurityGroupsRequest): Request[DescribeStaleSecurityGroupsResult] = js.native
+    def describeStoreImageTasks(params: DescribeStoreImageTasksRequest): Request[DescribeStoreImageTasksResult] = js.native
     def describeSubnets(params: DescribeSubnetsRequest): Request[DescribeSubnetsResult] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResult] = js.native
     def describeTrafficMirrorFilters(params: DescribeTrafficMirrorFiltersRequest): Request[DescribeTrafficMirrorFiltersResult] = js.native
@@ -1393,6 +1417,7 @@ package ec2 {
     def detachVpnGateway(params: DetachVpnGatewayRequest): Request[js.Object] = js.native
     def disableEbsEncryptionByDefault(params: DisableEbsEncryptionByDefaultRequest): Request[DisableEbsEncryptionByDefaultResult] = js.native
     def disableFastSnapshotRestores(params: DisableFastSnapshotRestoresRequest): Request[DisableFastSnapshotRestoresResult] = js.native
+    def disableSerialConsoleAccess(params: DisableSerialConsoleAccessRequest): Request[DisableSerialConsoleAccessResult] = js.native
     def disableTransitGatewayRouteTablePropagation(params: DisableTransitGatewayRouteTablePropagationRequest): Request[DisableTransitGatewayRouteTablePropagationResult] = js.native
     def disableVgwRoutePropagation(params: DisableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def disableVpcClassicLink(params: DisableVpcClassicLinkRequest): Request[DisableVpcClassicLinkResult] = js.native
@@ -1408,6 +1433,7 @@ package ec2 {
     def disassociateVpcCidrBlock(params: DisassociateVpcCidrBlockRequest): Request[DisassociateVpcCidrBlockResult] = js.native
     def enableEbsEncryptionByDefault(params: EnableEbsEncryptionByDefaultRequest): Request[EnableEbsEncryptionByDefaultResult] = js.native
     def enableFastSnapshotRestores(params: EnableFastSnapshotRestoresRequest): Request[EnableFastSnapshotRestoresResult] = js.native
+    def enableSerialConsoleAccess(params: EnableSerialConsoleAccessRequest): Request[EnableSerialConsoleAccessResult] = js.native
     def enableTransitGatewayRouteTablePropagation(params: EnableTransitGatewayRouteTablePropagationRequest): Request[EnableTransitGatewayRouteTablePropagationResult] = js.native
     def enableVgwRoutePropagation(params: EnableVgwRoutePropagationRequest): Request[js.Object] = js.native
     def enableVolumeIO(params: EnableVolumeIORequest): Request[js.Object] = js.native
@@ -1426,6 +1452,7 @@ package ec2 {
     def getDefaultCreditSpecification(params: GetDefaultCreditSpecificationRequest): Request[GetDefaultCreditSpecificationResult] = js.native
     def getEbsDefaultKmsKeyId(params: GetEbsDefaultKmsKeyIdRequest): Request[GetEbsDefaultKmsKeyIdResult] = js.native
     def getEbsEncryptionByDefault(params: GetEbsEncryptionByDefaultRequest): Request[GetEbsEncryptionByDefaultResult] = js.native
+    def getFlowLogsIntegrationTemplate(params: GetFlowLogsIntegrationTemplateRequest): Request[GetFlowLogsIntegrationTemplateResult] = js.native
     def getGroupsForCapacityReservation(params: GetGroupsForCapacityReservationRequest): Request[GetGroupsForCapacityReservationResult] = js.native
     def getHostReservationPurchasePreview(params: GetHostReservationPurchasePreviewRequest): Request[GetHostReservationPurchasePreviewResult] = js.native
     def getLaunchTemplateData(params: GetLaunchTemplateDataRequest): Request[GetLaunchTemplateDataResult] = js.native
@@ -1433,6 +1460,7 @@ package ec2 {
     def getManagedPrefixListEntries(params: GetManagedPrefixListEntriesRequest): Request[GetManagedPrefixListEntriesResult] = js.native
     def getPasswordData(params: GetPasswordDataRequest): Request[GetPasswordDataResult] = js.native
     def getReservedInstancesExchangeQuote(params: GetReservedInstancesExchangeQuoteRequest): Request[GetReservedInstancesExchangeQuoteResult] = js.native
+    def getSerialConsoleAccessStatus(params: GetSerialConsoleAccessStatusRequest): Request[GetSerialConsoleAccessStatusResult] = js.native
     def getTransitGatewayAttachmentPropagations(params: GetTransitGatewayAttachmentPropagationsRequest): Request[GetTransitGatewayAttachmentPropagationsResult] = js.native
     def getTransitGatewayMulticastDomainAssociations(params: GetTransitGatewayMulticastDomainAssociationsRequest): Request[GetTransitGatewayMulticastDomainAssociationsResult] = js.native
     def getTransitGatewayPrefixListReferences(params: GetTransitGatewayPrefixListReferencesRequest): Request[GetTransitGatewayPrefixListReferencesResult] = js.native
@@ -3140,6 +3168,35 @@ package ec2 {
     val disassociated = "disassociated".asInstanceOf[AssociationStatusCode]
 
     @inline def values = js.Array(associating, associated, `association-failed`, disassociating, disassociated)
+  }
+
+  /** Describes integration options for Amazon Athena.
+    */
+  @js.native
+  trait AthenaIntegration extends js.Object {
+    var IntegrationResultS3DestinationArn: String
+    var PartitionLoadFrequency: PartitionLoadFrequency
+    var PartitionEndDate: js.UndefOr[MillisecondDateTime]
+    var PartitionStartDate: js.UndefOr[MillisecondDateTime]
+  }
+
+  object AthenaIntegration {
+    @inline
+    def apply(
+        IntegrationResultS3DestinationArn: String,
+        PartitionLoadFrequency: PartitionLoadFrequency,
+        PartitionEndDate: js.UndefOr[MillisecondDateTime] = js.undefined,
+        PartitionStartDate: js.UndefOr[MillisecondDateTime] = js.undefined
+    ): AthenaIntegration = {
+      val __obj = js.Dynamic.literal(
+        "IntegrationResultS3DestinationArn" -> IntegrationResultS3DestinationArn.asInstanceOf[js.Any],
+        "PartitionLoadFrequency" -> PartitionLoadFrequency.asInstanceOf[js.Any]
+      )
+
+      PartitionEndDate.foreach(__v => __obj.updateDynamic("PartitionEndDate")(__v.asInstanceOf[js.Any]))
+      PartitionStartDate.foreach(__v => __obj.updateDynamic("PartitionStartDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AthenaIntegration]
+    }
   }
 
   @js.native
@@ -7271,6 +7328,52 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait CreateReplaceRootVolumeTaskRequest extends js.Object {
+    var InstanceId: InstanceId
+    var ClientToken: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+    var SnapshotId: js.UndefOr[SnapshotId]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+  }
+
+  object CreateReplaceRootVolumeTaskRequest {
+    @inline
+    def apply(
+        InstanceId: InstanceId,
+        ClientToken: js.UndefOr[String] = js.undefined,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
+    ): CreateReplaceRootVolumeTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReplaceRootVolumeTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CreateReplaceRootVolumeTaskResult extends js.Object {
+    var ReplaceRootVolumeTask: js.UndefOr[ReplaceRootVolumeTask]
+  }
+
+  object CreateReplaceRootVolumeTaskResult {
+    @inline
+    def apply(
+        ReplaceRootVolumeTask: js.UndefOr[ReplaceRootVolumeTask] = js.undefined
+    ): CreateReplaceRootVolumeTaskResult = {
+      val __obj = js.Dynamic.literal()
+      ReplaceRootVolumeTask.foreach(__v => __obj.updateDynamic("ReplaceRootVolumeTask")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReplaceRootVolumeTaskResult]
+    }
+  }
+
   /** Contains the parameters for CreateReservedInstancesListing.
     */
   @js.native
@@ -7314,6 +7417,52 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       ReservedInstancesListings.foreach(__v => __obj.updateDynamic("ReservedInstancesListings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReservedInstancesListingResult]
+    }
+  }
+
+  @js.native
+  trait CreateRestoreImageTaskRequest extends js.Object {
+    var Bucket: String
+    var ObjectKey: String
+    var DryRun: js.UndefOr[Boolean]
+    var Name: js.UndefOr[String]
+    var TagSpecifications: js.UndefOr[TagSpecificationList]
+  }
+
+  object CreateRestoreImageTaskRequest {
+    @inline
+    def apply(
+        Bucket: String,
+        ObjectKey: String,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        TagSpecifications: js.UndefOr[TagSpecificationList] = js.undefined
+    ): CreateRestoreImageTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "ObjectKey" -> ObjectKey.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      TagSpecifications.foreach(__v => __obj.updateDynamic("TagSpecifications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRestoreImageTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRestoreImageTaskResult extends js.Object {
+    var ImageId: js.UndefOr[String]
+  }
+
+  object CreateRestoreImageTaskResult {
+    @inline
+    def apply(
+        ImageId: js.UndefOr[String] = js.undefined
+    ): CreateRestoreImageTaskResult = {
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRestoreImageTaskResult]
     }
   }
 
@@ -7602,6 +7751,49 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       SpotDatafeedSubscription.foreach(__v => __obj.updateDynamic("SpotDatafeedSubscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSpotDatafeedSubscriptionResult]
+    }
+  }
+
+  @js.native
+  trait CreateStoreImageTaskRequest extends js.Object {
+    var Bucket: String
+    var ImageId: ImageId
+    var DryRun: js.UndefOr[Boolean]
+    var S3ObjectTags: js.UndefOr[S3ObjectTagList]
+  }
+
+  object CreateStoreImageTaskRequest {
+    @inline
+    def apply(
+        Bucket: String,
+        ImageId: ImageId,
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        S3ObjectTags: js.UndefOr[S3ObjectTagList] = js.undefined
+    ): CreateStoreImageTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "ImageId" -> ImageId.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      S3ObjectTags.foreach(__v => __obj.updateDynamic("S3ObjectTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStoreImageTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CreateStoreImageTaskResult extends js.Object {
+    var ObjectKey: js.UndefOr[String]
+  }
+
+  object CreateStoreImageTaskResult {
+    @inline
+    def apply(
+        ObjectKey: js.UndefOr[String] = js.undefined
+    ): CreateStoreImageTaskResult = {
+      val __obj = js.Dynamic.literal()
+      ObjectKey.foreach(__v => __obj.updateDynamic("ObjectKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStoreImageTaskResult]
     }
   }
 
@@ -14477,6 +14669,53 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait DescribeReplaceRootVolumeTasksRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[DescribeReplaceRootVolumeTasksMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var ReplaceRootVolumeTaskIds: js.UndefOr[ReplaceRootVolumeTaskIds]
+  }
+
+  object DescribeReplaceRootVolumeTasksRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[DescribeReplaceRootVolumeTasksMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ReplaceRootVolumeTaskIds: js.UndefOr[ReplaceRootVolumeTaskIds] = js.undefined
+    ): DescribeReplaceRootVolumeTasksRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReplaceRootVolumeTaskIds.foreach(__v => __obj.updateDynamic("ReplaceRootVolumeTaskIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReplaceRootVolumeTasksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeReplaceRootVolumeTasksResult extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var ReplaceRootVolumeTasks: js.UndefOr[ReplaceRootVolumeTasks]
+  }
+
+  object DescribeReplaceRootVolumeTasksResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReplaceRootVolumeTasks: js.UndefOr[ReplaceRootVolumeTasks] = js.undefined
+    ): DescribeReplaceRootVolumeTasksResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReplaceRootVolumeTasks.foreach(__v => __obj.updateDynamic("ReplaceRootVolumeTasks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReplaceRootVolumeTasksResult]
+    }
+  }
+
   /** Contains the parameters for DescribeReservedInstancesListings.
     */
   @js.native
@@ -15403,6 +15642,53 @@ package ec2 {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       StaleSecurityGroupSet.foreach(__v => __obj.updateDynamic("StaleSecurityGroupSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStaleSecurityGroupsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeStoreImageTasksRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var ImageIds: js.UndefOr[ImageIdList]
+    var MaxResults: js.UndefOr[DescribeStoreImageTasksRequestMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeStoreImageTasksRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        ImageIds: js.UndefOr[ImageIdList] = js.undefined,
+        MaxResults: js.UndefOr[DescribeStoreImageTasksRequestMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeStoreImageTasksRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      ImageIds.foreach(__v => __obj.updateDynamic("ImageIds")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStoreImageTasksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeStoreImageTasksResult extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var StoreImageTaskResults: js.UndefOr[StoreImageTaskResultSet]
+  }
+
+  object DescribeStoreImageTasksResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        StoreImageTaskResults: js.UndefOr[StoreImageTaskResultSet] = js.undefined
+    ): DescribeStoreImageTasksResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StoreImageTaskResults.foreach(__v => __obj.updateDynamic("StoreImageTaskResults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStoreImageTasksResult]
     }
   }
 
@@ -17222,6 +17508,38 @@ package ec2 {
   }
 
   @js.native
+  trait DisableSerialConsoleAccessRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DisableSerialConsoleAccessRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): DisableSerialConsoleAccessRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableSerialConsoleAccessRequest]
+    }
+  }
+
+  @js.native
+  trait DisableSerialConsoleAccessResult extends js.Object {
+    var SerialConsoleAccessEnabled: js.UndefOr[Boolean]
+  }
+
+  object DisableSerialConsoleAccessResult {
+    @inline
+    def apply(
+        SerialConsoleAccessEnabled: js.UndefOr[Boolean] = js.undefined
+    ): DisableSerialConsoleAccessResult = {
+      val __obj = js.Dynamic.literal()
+      SerialConsoleAccessEnabled.foreach(__v => __obj.updateDynamic("SerialConsoleAccessEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableSerialConsoleAccessResult]
+    }
+  }
+
+  @js.native
   trait DisableTransitGatewayRouteTablePropagationRequest extends js.Object {
     var TransitGatewayAttachmentId: TransitGatewayAttachmentId
     var TransitGatewayRouteTableId: TransitGatewayRouteTableId
@@ -18058,6 +18376,24 @@ package ec2 {
     @inline def values = js.Array(unsupported, supported, default)
   }
 
+  /** Describes the Elastic Fabric Adapters for the instance type.
+    */
+  @js.native
+  trait EfaInfo extends js.Object {
+    var MaximumEfaInterfaces: js.UndefOr[MaximumEfaInterfaces]
+  }
+
+  object EfaInfo {
+    @inline
+    def apply(
+        MaximumEfaInterfaces: js.UndefOr[MaximumEfaInterfaces] = js.undefined
+    ): EfaInfo = {
+      val __obj = js.Dynamic.literal()
+      MaximumEfaInterfaces.foreach(__v => __obj.updateDynamic("MaximumEfaInterfaces")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EfaInfo]
+    }
+  }
+
   /** Describes an egress-only internet gateway.
     */
   @js.native
@@ -18460,6 +18796,38 @@ package ec2 {
       Successful.foreach(__v => __obj.updateDynamic("Successful")(__v.asInstanceOf[js.Any]))
       Unsuccessful.foreach(__v => __obj.updateDynamic("Unsuccessful")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableFastSnapshotRestoresResult]
+    }
+  }
+
+  @js.native
+  trait EnableSerialConsoleAccessRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object EnableSerialConsoleAccessRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): EnableSerialConsoleAccessRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableSerialConsoleAccessRequest]
+    }
+  }
+
+  @js.native
+  trait EnableSerialConsoleAccessResult extends js.Object {
+    var SerialConsoleAccessEnabled: js.UndefOr[Boolean]
+  }
+
+  object EnableSerialConsoleAccessResult {
+    @inline
+    def apply(
+        SerialConsoleAccessEnabled: js.UndefOr[Boolean] = js.undefined
+    ): EnableSerialConsoleAccessResult = {
+      val __obj = js.Dynamic.literal()
+      SerialConsoleAccessEnabled.foreach(__v => __obj.updateDynamic("SerialConsoleAccessEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableSerialConsoleAccessResult]
     }
   }
 
@@ -20419,6 +20787,49 @@ package ec2 {
   }
 
   @js.native
+  trait GetFlowLogsIntegrationTemplateRequest extends js.Object {
+    var ConfigDeliveryS3DestinationArn: String
+    var FlowLogId: VpcFlowLogId
+    var IntegrateServices: IntegrateServices
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object GetFlowLogsIntegrationTemplateRequest {
+    @inline
+    def apply(
+        ConfigDeliveryS3DestinationArn: String,
+        FlowLogId: VpcFlowLogId,
+        IntegrateServices: IntegrateServices,
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): GetFlowLogsIntegrationTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigDeliveryS3DestinationArn" -> ConfigDeliveryS3DestinationArn.asInstanceOf[js.Any],
+        "FlowLogId" -> FlowLogId.asInstanceOf[js.Any],
+        "IntegrateServices" -> IntegrateServices.asInstanceOf[js.Any]
+      )
+
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFlowLogsIntegrationTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait GetFlowLogsIntegrationTemplateResult extends js.Object {
+    var Result: js.UndefOr[String]
+  }
+
+  object GetFlowLogsIntegrationTemplateResult {
+    @inline
+    def apply(
+        Result: js.UndefOr[String] = js.undefined
+    ): GetFlowLogsIntegrationTemplateResult = {
+      val __obj = js.Dynamic.literal()
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFlowLogsIntegrationTemplateResult]
+    }
+  }
+
+  @js.native
   trait GetGroupsForCapacityReservationRequest extends js.Object {
     var CapacityReservationId: CapacityReservationId
     var DryRun: js.UndefOr[Boolean]
@@ -20749,6 +21160,38 @@ package ec2 {
       TargetConfigurationValueSet.foreach(__v => __obj.updateDynamic("TargetConfigurationValueSet")(__v.asInstanceOf[js.Any]))
       ValidationFailureReason.foreach(__v => __obj.updateDynamic("ValidationFailureReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetReservedInstancesExchangeQuoteResult]
+    }
+  }
+
+  @js.native
+  trait GetSerialConsoleAccessStatusRequest extends js.Object {
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object GetSerialConsoleAccessStatusRequest {
+    @inline
+    def apply(
+        DryRun: js.UndefOr[Boolean] = js.undefined
+    ): GetSerialConsoleAccessStatusRequest = {
+      val __obj = js.Dynamic.literal()
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSerialConsoleAccessStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetSerialConsoleAccessStatusResult extends js.Object {
+    var SerialConsoleAccessEnabled: js.UndefOr[Boolean]
+  }
+
+  object GetSerialConsoleAccessStatusResult {
+    @inline
+    def apply(
+        SerialConsoleAccessEnabled: js.UndefOr[Boolean] = js.undefined
+    ): GetSerialConsoleAccessStatusResult = {
+      val __obj = js.Dynamic.literal()
+      SerialConsoleAccessEnabled.foreach(__v => __obj.updateDynamic("SerialConsoleAccessEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSerialConsoleAccessStatusResult]
     }
   }
 
@@ -24489,6 +24932,24 @@ package ec2 {
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       UsedInstanceCount.foreach(__v => __obj.updateDynamic("UsedInstanceCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceUsage]
+    }
+  }
+
+  /** Describes service integrations with VPC Flow logs.
+    */
+  @js.native
+  trait IntegrateServices extends js.Object {
+    var AthenaIntegrations: js.UndefOr[AthenaIntegrationsSet]
+  }
+
+  object IntegrateServices {
+    @inline
+    def apply(
+        AthenaIntegrations: js.UndefOr[AthenaIntegrationsSet] = js.undefined
+    ): IntegrateServices = {
+      val __obj = js.Dynamic.literal()
+      AthenaIntegrations.foreach(__v => __obj.updateDynamic("AthenaIntegrations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntegrateServices]
     }
   }
 
@@ -28934,6 +29395,7 @@ package ec2 {
   @js.native
   trait NetworkInfo extends js.Object {
     var DefaultNetworkCardIndex: js.UndefOr[DefaultNetworkCardIndex]
+    var EfaInfo: js.UndefOr[EfaInfo]
     var EfaSupported: js.UndefOr[EfaSupportedFlag]
     var EnaSupport: js.UndefOr[EnaSupport]
     var Ipv4AddressesPerInterface: js.UndefOr[MaxIpv4AddrPerInterface]
@@ -28949,6 +29411,7 @@ package ec2 {
     @inline
     def apply(
         DefaultNetworkCardIndex: js.UndefOr[DefaultNetworkCardIndex] = js.undefined,
+        EfaInfo: js.UndefOr[EfaInfo] = js.undefined,
         EfaSupported: js.UndefOr[EfaSupportedFlag] = js.undefined,
         EnaSupport: js.UndefOr[EnaSupport] = js.undefined,
         Ipv4AddressesPerInterface: js.UndefOr[MaxIpv4AddrPerInterface] = js.undefined,
@@ -28961,6 +29424,7 @@ package ec2 {
     ): NetworkInfo = {
       val __obj = js.Dynamic.literal()
       DefaultNetworkCardIndex.foreach(__v => __obj.updateDynamic("DefaultNetworkCardIndex")(__v.asInstanceOf[js.Any]))
+      EfaInfo.foreach(__v => __obj.updateDynamic("EfaInfo")(__v.asInstanceOf[js.Any]))
       EfaSupported.foreach(__v => __obj.updateDynamic("EfaSupported")(__v.asInstanceOf[js.Any]))
       EnaSupport.foreach(__v => __obj.updateDynamic("EnaSupport")(__v.asInstanceOf[js.Any]))
       Ipv4AddressesPerInterface.foreach(__v => __obj.updateDynamic("Ipv4AddressesPerInterface")(__v.asInstanceOf[js.Any]))
@@ -29521,6 +29985,17 @@ package ec2 {
     val remove = "remove".asInstanceOf[OperationType]
 
     @inline def values = js.Array(add, remove)
+  }
+
+  @js.native
+  sealed trait PartitionLoadFrequency extends js.Any
+  object PartitionLoadFrequency {
+    val none = "none".asInstanceOf[PartitionLoadFrequency]
+    val daily = "daily".asInstanceOf[PartitionLoadFrequency]
+    val weekly = "weekly".asInstanceOf[PartitionLoadFrequency]
+    val monthly = "monthly".asInstanceOf[PartitionLoadFrequency]
+
+    @inline def values = js.Array(none, daily, weekly, monthly)
   }
 
   /** Describes a path component.
@@ -31563,6 +32038,52 @@ package ec2 {
     }
   }
 
+  /** Information about a root volume replacement task.
+    */
+  @js.native
+  trait ReplaceRootVolumeTask extends js.Object {
+    var CompleteTime: js.UndefOr[String]
+    var InstanceId: js.UndefOr[String]
+    var ReplaceRootVolumeTaskId: js.UndefOr[ReplaceRootVolumeTaskId]
+    var StartTime: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+    var TaskState: js.UndefOr[ReplaceRootVolumeTaskState]
+  }
+
+  object ReplaceRootVolumeTask {
+    @inline
+    def apply(
+        CompleteTime: js.UndefOr[String] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        ReplaceRootVolumeTaskId: js.UndefOr[ReplaceRootVolumeTaskId] = js.undefined,
+        StartTime: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TaskState: js.UndefOr[ReplaceRootVolumeTaskState] = js.undefined
+    ): ReplaceRootVolumeTask = {
+      val __obj = js.Dynamic.literal()
+      CompleteTime.foreach(__v => __obj.updateDynamic("CompleteTime")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      ReplaceRootVolumeTaskId.foreach(__v => __obj.updateDynamic("ReplaceRootVolumeTaskId")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TaskState.foreach(__v => __obj.updateDynamic("TaskState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplaceRootVolumeTask]
+    }
+  }
+
+  @js.native
+  sealed trait ReplaceRootVolumeTaskState extends js.Any
+  object ReplaceRootVolumeTaskState {
+    val pending = "pending".asInstanceOf[ReplaceRootVolumeTaskState]
+    val `in-progress` = "in-progress".asInstanceOf[ReplaceRootVolumeTaskState]
+    val failing = "failing".asInstanceOf[ReplaceRootVolumeTaskState]
+    val succeeded = "succeeded".asInstanceOf[ReplaceRootVolumeTaskState]
+    val failed = "failed".asInstanceOf[ReplaceRootVolumeTaskState]
+    val `failed-detached` = "failed-detached".asInstanceOf[ReplaceRootVolumeTaskState]
+
+    @inline def values = js.Array(pending, `in-progress`, failing, succeeded, failed, `failed-detached`)
+  }
+
   @js.native
   trait ReplaceRouteRequest extends js.Object {
     var RouteTableId: RouteTableId
@@ -33561,6 +34082,27 @@ package ec2 {
       val __obj = js.Dynamic.literal()
       InstanceIdSet.foreach(__v => __obj.updateDynamic("InstanceIdSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunScheduledInstancesResult]
+    }
+  }
+
+  /** The tags to apply to the AMI object that will be stored in the S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html|Categorizing your storage using tags]] in the <i>Amazon Simple Storage Service User Guide</i>.
+    */
+  @js.native
+  trait S3ObjectTag extends js.Object {
+    var Key: js.UndefOr[String]
+    var Value: js.UndefOr[String]
+  }
+
+  object S3ObjectTag {
+    @inline
+    def apply(
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): S3ObjectTag = {
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ObjectTag]
     }
   }
 
@@ -35700,6 +36242,42 @@ package ec2 {
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageLocation]
+    }
+  }
+
+  /** The information about the AMI store task, including the progress of the task.
+    */
+  @js.native
+  trait StoreImageTaskResult extends js.Object {
+    var AmiId: js.UndefOr[String]
+    var Bucket: js.UndefOr[String]
+    var ProgressPercentage: js.UndefOr[Int]
+    var S3objectKey: js.UndefOr[String]
+    var StoreTaskFailureReason: js.UndefOr[String]
+    var StoreTaskState: js.UndefOr[String]
+    var TaskStartTime: js.UndefOr[MillisecondDateTime]
+  }
+
+  object StoreImageTaskResult {
+    @inline
+    def apply(
+        AmiId: js.UndefOr[String] = js.undefined,
+        Bucket: js.UndefOr[String] = js.undefined,
+        ProgressPercentage: js.UndefOr[Int] = js.undefined,
+        S3objectKey: js.UndefOr[String] = js.undefined,
+        StoreTaskFailureReason: js.UndefOr[String] = js.undefined,
+        StoreTaskState: js.UndefOr[String] = js.undefined,
+        TaskStartTime: js.UndefOr[MillisecondDateTime] = js.undefined
+    ): StoreImageTaskResult = {
+      val __obj = js.Dynamic.literal()
+      AmiId.foreach(__v => __obj.updateDynamic("AmiId")(__v.asInstanceOf[js.Any]))
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      ProgressPercentage.foreach(__v => __obj.updateDynamic("ProgressPercentage")(__v.asInstanceOf[js.Any]))
+      S3objectKey.foreach(__v => __obj.updateDynamic("S3objectKey")(__v.asInstanceOf[js.Any]))
+      StoreTaskFailureReason.foreach(__v => __obj.updateDynamic("StoreTaskFailureReason")(__v.asInstanceOf[js.Any]))
+      StoreTaskState.foreach(__v => __obj.updateDynamic("StoreTaskState")(__v.asInstanceOf[js.Any]))
+      TaskStartTime.foreach(__v => __obj.updateDynamic("TaskStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StoreImageTaskResult]
     }
   }
 

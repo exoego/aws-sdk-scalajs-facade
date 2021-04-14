@@ -27,6 +27,8 @@ package object lexruntime {
   type IntentSummaryCheckpointLabel = String
   type IntentSummaryList = js.Array[IntentSummary]
   type ParameterName = String
+  type SensitiveString = String
+  type SensitiveStringUnbounded = String
   type SentimentLabel = String
   type SentimentScore = String
   type StringMap = js.Dictionary[String]
@@ -470,6 +472,8 @@ package lexruntime {
     var botVersion: js.UndefOr[BotVersion]
     var contentType: js.UndefOr[HttpContentType]
     var dialogState: js.UndefOr[DialogState]
+    var encodedInputTranscript: js.UndefOr[SensitiveStringUnbounded]
+    var encodedMessage: js.UndefOr[SensitiveString]
     var inputTranscript: js.UndefOr[String]
     var intentName: js.UndefOr[IntentName]
     var message: js.UndefOr[Text]
@@ -491,6 +495,8 @@ package lexruntime {
         botVersion: js.UndefOr[BotVersion] = js.undefined,
         contentType: js.UndefOr[HttpContentType] = js.undefined,
         dialogState: js.UndefOr[DialogState] = js.undefined,
+        encodedInputTranscript: js.UndefOr[SensitiveStringUnbounded] = js.undefined,
+        encodedMessage: js.UndefOr[SensitiveString] = js.undefined,
         inputTranscript: js.UndefOr[String] = js.undefined,
         intentName: js.UndefOr[IntentName] = js.undefined,
         message: js.UndefOr[Text] = js.undefined,
@@ -509,6 +515,8 @@ package lexruntime {
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
       dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
+      encodedInputTranscript.foreach(__v => __obj.updateDynamic("encodedInputTranscript")(__v.asInstanceOf[js.Any]))
+      encodedMessage.foreach(__v => __obj.updateDynamic("encodedMessage")(__v.asInstanceOf[js.Any]))
       inputTranscript.foreach(__v => __obj.updateDynamic("inputTranscript")(__v.asInstanceOf[js.Any]))
       intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
@@ -683,6 +691,7 @@ package lexruntime {
     var audioStream: js.UndefOr[BlobStream]
     var contentType: js.UndefOr[HttpContentType]
     var dialogState: js.UndefOr[DialogState]
+    var encodedMessage: js.UndefOr[SensitiveString]
     var intentName: js.UndefOr[IntentName]
     var message: js.UndefOr[Text]
     var messageFormat: js.UndefOr[MessageFormatType]
@@ -699,6 +708,7 @@ package lexruntime {
         audioStream: js.UndefOr[BlobStream] = js.undefined,
         contentType: js.UndefOr[HttpContentType] = js.undefined,
         dialogState: js.UndefOr[DialogState] = js.undefined,
+        encodedMessage: js.UndefOr[SensitiveString] = js.undefined,
         intentName: js.UndefOr[IntentName] = js.undefined,
         message: js.UndefOr[Text] = js.undefined,
         messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
@@ -712,6 +722,7 @@ package lexruntime {
       audioStream.foreach(__v => __obj.updateDynamic("audioStream")(__v.asInstanceOf[js.Any]))
       contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
       dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
+      encodedMessage.foreach(__v => __obj.updateDynamic("encodedMessage")(__v.asInstanceOf[js.Any]))
       intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))

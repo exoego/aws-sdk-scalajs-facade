@@ -610,7 +610,7 @@ package s3 {
     def writeGetObjectResponse(params: WriteGetObjectResponseRequest): Request[js.Object] = js.native
   }
 
-  /** Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait AbortIncompleteMultipartUpload extends js.Object {
@@ -674,7 +674,7 @@ package s3 {
     }
   }
 
-  /** Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html|Amazon S3 Transfer Acceleration]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html|Amazon S3 Transfer Acceleration]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait AccelerateConfiguration extends js.Object {
@@ -909,7 +909,7 @@ package s3 {
     @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`)
   }
 
-  /** Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html|Object Lifecycle Management]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html|Object Lifecycle Management]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait BucketLifecycleConfiguration extends js.Object {
@@ -1023,7 +1023,7 @@ package s3 {
     @inline def values = js.Array(Enabled, Suspended)
   }
 
-  /** Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html|Enabling Cross-Origin Resource Sharing]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html|Enabling Cross-Origin Resource Sharing]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait CORSConfiguration extends js.Object {
@@ -1801,6 +1801,9 @@ package s3 {
   }
 
   /** The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.
+    *
+    * '''Note:'''* The <code>DefaultRetention</code> settings require both a mode and a period.
+    * * The <code>DefaultRetention</code> period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.
     */
   @js.native
   trait DefaultRetention extends js.Object {
@@ -5731,7 +5734,7 @@ package s3 {
     }
   }
 
-  /** Specifies object key name filtering rules. For information about key name filtering, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html|Configuring Event Notifications]] in the <i>Amazon Simple Storage Service Developer Guide</i>.
+  /** Specifies object key name filtering rules. For information about key name filtering, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html|Configuring Event Notifications]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait NotificationConfigurationFilter extends js.Object {

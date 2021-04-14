@@ -1473,6 +1473,7 @@ package lightsail {
     var resourceType: js.UndefOr[ResourceType]
     var scale: js.UndefOr[ContainerServiceScale]
     var state: js.UndefOr[ContainerServiceState]
+    var stateDetail: js.UndefOr[ContainerServiceStateDetail]
     var tags: js.UndefOr[TagList]
     var url: js.UndefOr[String]
   }
@@ -1495,6 +1496,7 @@ package lightsail {
         resourceType: js.UndefOr[ResourceType] = js.undefined,
         scale: js.UndefOr[ContainerServiceScale] = js.undefined,
         state: js.UndefOr[ContainerServiceState] = js.undefined,
+        stateDetail: js.UndefOr[ContainerServiceStateDetail] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         url: js.UndefOr[String] = js.undefined
     ): ContainerService = {
@@ -1514,6 +1516,7 @@ package lightsail {
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      stateDetail.foreach(__v => __obj.updateDynamic("stateDetail")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerService]
@@ -1765,8 +1768,56 @@ package lightsail {
     val UPDATING = "UPDATING".asInstanceOf[ContainerServiceState]
     val DELETING = "DELETING".asInstanceOf[ContainerServiceState]
     val DISABLED = "DISABLED".asInstanceOf[ContainerServiceState]
+    val DEPLOYING = "DEPLOYING".asInstanceOf[ContainerServiceState]
 
-    @inline def values = js.Array(PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED)
+    @inline def values = js.Array(PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED, DEPLOYING)
+  }
+
+  /** Describes the current state of a container service.
+    */
+  @js.native
+  trait ContainerServiceStateDetail extends js.Object {
+    var code: js.UndefOr[ContainerServiceStateDetailCode]
+    var message: js.UndefOr[String]
+  }
+
+  object ContainerServiceStateDetail {
+    @inline
+    def apply(
+        code: js.UndefOr[ContainerServiceStateDetailCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): ContainerServiceStateDetail = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceStateDetail]
+    }
+  }
+
+  @js.native
+  sealed trait ContainerServiceStateDetailCode extends js.Any
+  object ContainerServiceStateDetailCode {
+    val CREATING_SYSTEM_RESOURCES = "CREATING_SYSTEM_RESOURCES".asInstanceOf[ContainerServiceStateDetailCode]
+    val CREATING_NETWORK_INFRASTRUCTURE = "CREATING_NETWORK_INFRASTRUCTURE".asInstanceOf[ContainerServiceStateDetailCode]
+    val PROVISIONING_CERTIFICATE = "PROVISIONING_CERTIFICATE".asInstanceOf[ContainerServiceStateDetailCode]
+    val PROVISIONING_SERVICE = "PROVISIONING_SERVICE".asInstanceOf[ContainerServiceStateDetailCode]
+    val CREATING_DEPLOYMENT = "CREATING_DEPLOYMENT".asInstanceOf[ContainerServiceStateDetailCode]
+    val EVALUATING_HEALTH_CHECK = "EVALUATING_HEALTH_CHECK".asInstanceOf[ContainerServiceStateDetailCode]
+    val ACTIVATING_DEPLOYMENT = "ACTIVATING_DEPLOYMENT".asInstanceOf[ContainerServiceStateDetailCode]
+    val CERTIFICATE_LIMIT_EXCEEDED = "CERTIFICATE_LIMIT_EXCEEDED".asInstanceOf[ContainerServiceStateDetailCode]
+    val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ContainerServiceStateDetailCode]
+
+    @inline def values = js.Array(
+      CREATING_SYSTEM_RESOURCES,
+      CREATING_NETWORK_INFRASTRUCTURE,
+      PROVISIONING_CERTIFICATE,
+      PROVISIONING_SERVICE,
+      CREATING_DEPLOYMENT,
+      EVALUATING_HEALTH_CHECK,
+      ACTIVATING_DEPLOYMENT,
+      CERTIFICATE_LIMIT_EXCEEDED,
+      UNKNOWN_ERROR
+    )
   }
 
   @js.native

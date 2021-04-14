@@ -148,7 +148,7 @@ package object mediaconvert {
   type __stringMin14PatternS3BmpBMPPngPNGHttpsBmpBMPPngPNG = String
   type __stringMin14PatternS3BmpBMPPngPNGTgaTGAHttpsBmpBMPPngPNGTgaTGA = String
   type __stringMin14PatternS3Mov09PngHttpsMov09Png = String
-  type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI = String
+  type __stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIVttVTTHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIVttVTT = String
   type __stringMin16Max24PatternAZaZ0922AZaZ0916 = String
   type __stringMin1Max100000 = String
   type __stringMin1Max20 = String
@@ -403,7 +403,22 @@ package mediaconvert {
     @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE)
   }
 
-  /** If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
+  /** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    */
+  @js.native
+  sealed trait Ac3DynamicRangeCompressionLine extends js.Any
+  object Ac3DynamicRangeCompressionLine {
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionLine]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Ac3DynamicRangeCompressionLine]
+    val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionLine]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Ac3DynamicRangeCompressionLine]
+    val SPEECH = "SPEECH".asInstanceOf[Ac3DynamicRangeCompressionLine]
+    val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionLine]
+
+    @inline def values = js.Array(FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH, NONE)
+  }
+
+  /** When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
     */
   @js.native
   sealed trait Ac3DynamicRangeCompressionProfile extends js.Any
@@ -412,6 +427,21 @@ package mediaconvert {
     val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionProfile]
 
     @inline def values = js.Array(FILM_STANDARD, NONE)
+  }
+
+  /** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+    */
+  @js.native
+  sealed trait Ac3DynamicRangeCompressionRf extends js.Any
+  object Ac3DynamicRangeCompressionRf {
+    val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionRf]
+    val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Ac3DynamicRangeCompressionRf]
+    val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Ac3DynamicRangeCompressionRf]
+    val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Ac3DynamicRangeCompressionRf]
+    val SPEECH = "SPEECH".asInstanceOf[Ac3DynamicRangeCompressionRf]
+    val NONE = "NONE".asInstanceOf[Ac3DynamicRangeCompressionRf]
+
+    @inline def values = js.Array(FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH, NONE)
   }
 
   /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
@@ -444,7 +474,9 @@ package mediaconvert {
     var BitstreamMode: js.UndefOr[Ac3BitstreamMode]
     var CodingMode: js.UndefOr[Ac3CodingMode]
     var Dialnorm: js.UndefOr[__integerMin1Max31]
+    var DynamicRangeCompressionLine: js.UndefOr[Ac3DynamicRangeCompressionLine]
     var DynamicRangeCompressionProfile: js.UndefOr[Ac3DynamicRangeCompressionProfile]
+    var DynamicRangeCompressionRf: js.UndefOr[Ac3DynamicRangeCompressionRf]
     var LfeFilter: js.UndefOr[Ac3LfeFilter]
     var MetadataControl: js.UndefOr[Ac3MetadataControl]
     var SampleRate: js.UndefOr[__integerMin48000Max48000]
@@ -457,7 +489,9 @@ package mediaconvert {
         BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
         CodingMode: js.UndefOr[Ac3CodingMode] = js.undefined,
         Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+        DynamicRangeCompressionLine: js.UndefOr[Ac3DynamicRangeCompressionLine] = js.undefined,
         DynamicRangeCompressionProfile: js.UndefOr[Ac3DynamicRangeCompressionProfile] = js.undefined,
+        DynamicRangeCompressionRf: js.UndefOr[Ac3DynamicRangeCompressionRf] = js.undefined,
         LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
         MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined,
         SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined
@@ -467,7 +501,9 @@ package mediaconvert {
       BitstreamMode.foreach(__v => __obj.updateDynamic("BitstreamMode")(__v.asInstanceOf[js.Any]))
       CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
       Dialnorm.foreach(__v => __obj.updateDynamic("Dialnorm")(__v.asInstanceOf[js.Any]))
+      DynamicRangeCompressionLine.foreach(__v => __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any]))
       DynamicRangeCompressionProfile.foreach(__v => __obj.updateDynamic("DynamicRangeCompressionProfile")(__v.asInstanceOf[js.Any]))
+      DynamicRangeCompressionRf.foreach(__v => __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any]))
       LfeFilter.foreach(__v => __obj.updateDynamic("LfeFilter")(__v.asInstanceOf[js.Any]))
       MetadataControl.foreach(__v => __obj.updateDynamic("MetadataControl")(__v.asInstanceOf[js.Any]))
       SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
@@ -1598,6 +1634,7 @@ package mediaconvert {
     var SccDestinationSettings: js.UndefOr[SccDestinationSettings]
     var TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings]
     var TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings]
+    var WebvttDestinationSettings: js.UndefOr[WebvttDestinationSettings]
   }
 
   object CaptionDestinationSettings {
@@ -1610,7 +1647,8 @@ package mediaconvert {
         ImscDestinationSettings: js.UndefOr[ImscDestinationSettings] = js.undefined,
         SccDestinationSettings: js.UndefOr[SccDestinationSettings] = js.undefined,
         TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings] = js.undefined,
-        TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined
+        TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined,
+        WebvttDestinationSettings: js.UndefOr[WebvttDestinationSettings] = js.undefined
     ): CaptionDestinationSettings = {
       val __obj = js.Dynamic.literal()
       BurninDestinationSettings.foreach(__v => __obj.updateDynamic("BurninDestinationSettings")(__v.asInstanceOf[js.Any]))
@@ -1621,6 +1659,7 @@ package mediaconvert {
       SccDestinationSettings.foreach(__v => __obj.updateDynamic("SccDestinationSettings")(__v.asInstanceOf[js.Any]))
       TeletextDestinationSettings.foreach(__v => __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any]))
       TtmlDestinationSettings.foreach(__v => __obj.updateDynamic("TtmlDestinationSettings")(__v.asInstanceOf[js.Any]))
+      WebvttDestinationSettings.foreach(__v => __obj.updateDynamic("WebvttDestinationSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionDestinationSettings]
     }
   }
@@ -1745,8 +1784,9 @@ package mediaconvert {
     val TELETEXT = "TELETEXT".asInstanceOf[CaptionSourceType]
     val NULL_SOURCE = "NULL_SOURCE".asInstanceOf[CaptionSourceType]
     val IMSC = "IMSC".asInstanceOf[CaptionSourceType]
+    val WEBVTT = "WEBVTT".asInstanceOf[CaptionSourceType]
 
-    @inline def values = js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, SMPTE_TT, TELETEXT, NULL_SOURCE, IMSC)
+    @inline def values = js.Array(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, SMPTE_TT, TELETEXT, NULL_SOURCE, IMSC, WEBVTT)
   }
 
   /** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
@@ -1871,6 +1911,7 @@ package mediaconvert {
     var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
     var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
     var MpdProfile: js.UndefOr[CmafMpdProfile]
+    var PtsOffsetHandlingForBFrames: js.UndefOr[CmafPtsOffsetHandlingForBFrames]
     var SegmentControl: js.UndefOr[CmafSegmentControl]
     var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
     var StreamInfResolution: js.UndefOr[CmafStreamInfResolution]
@@ -1895,6 +1936,7 @@ package mediaconvert {
         MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
         MpdProfile: js.UndefOr[CmafMpdProfile] = js.undefined,
+        PtsOffsetHandlingForBFrames: js.UndefOr[CmafPtsOffsetHandlingForBFrames] = js.undefined,
         SegmentControl: js.UndefOr[CmafSegmentControl] = js.undefined,
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
@@ -1916,6 +1958,7 @@ package mediaconvert {
       MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
       MinFinalSegmentLength.foreach(__v => __obj.updateDynamic("MinFinalSegmentLength")(__v.asInstanceOf[js.Any]))
       MpdProfile.foreach(__v => __obj.updateDynamic("MpdProfile")(__v.asInstanceOf[js.Any]))
+      PtsOffsetHandlingForBFrames.foreach(__v => __obj.updateDynamic("PtsOffsetHandlingForBFrames")(__v.asInstanceOf[js.Any]))
       SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
       StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
@@ -1979,6 +2022,17 @@ package mediaconvert {
     val ON_DEMAND_PROFILE = "ON_DEMAND_PROFILE".asInstanceOf[CmafMpdProfile]
 
     @inline def values = js.Array(MAIN_PROFILE, ON_DEMAND_PROFILE)
+  }
+
+  /** Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
+    */
+  @js.native
+  sealed trait CmafPtsOffsetHandlingForBFrames extends js.Any
+  object CmafPtsOffsetHandlingForBFrames {
+    val ZERO_BASED = "ZERO_BASED".asInstanceOf[CmafPtsOffsetHandlingForBFrames]
+    val MATCH_INITIAL_PTS = "MATCH_INITIAL_PTS".asInstanceOf[CmafPtsOffsetHandlingForBFrames]
+
+    @inline def values = js.Array(ZERO_BASED, MATCH_INITIAL_PTS)
   }
 
   /** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
@@ -2047,6 +2101,29 @@ package mediaconvert {
     @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
   }
 
+  /** Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
+    */
+  @js.native
+  sealed trait CmfcAudioTrackType extends js.Any
+  object CmfcAudioTrackType {
+    val ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT".asInstanceOf[CmfcAudioTrackType]
+    val ALTERNATE_AUDIO_AUTO_SELECT = "ALTERNATE_AUDIO_AUTO_SELECT".asInstanceOf[CmfcAudioTrackType]
+    val ALTERNATE_AUDIO_NOT_AUTO_SELECT = "ALTERNATE_AUDIO_NOT_AUTO_SELECT".asInstanceOf[CmfcAudioTrackType]
+
+    @inline def values = js.Array(ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT, ALTERNATE_AUDIO_AUTO_SELECT, ALTERNATE_AUDIO_NOT_AUTO_SELECT)
+  }
+
+  /** Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
+    */
+  @js.native
+  sealed trait CmfcDescriptiveVideoServiceFlag extends js.Any
+  object CmfcDescriptiveVideoServiceFlag {
+    val DONT_FLAG = "DONT_FLAG".asInstanceOf[CmfcDescriptiveVideoServiceFlag]
+    val FLAG = "FLAG".asInstanceOf[CmfcDescriptiveVideoServiceFlag]
+
+    @inline def values = js.Array(DONT_FLAG, FLAG)
+  }
+
   /** Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
     */
   @js.native
@@ -2085,6 +2162,10 @@ package mediaconvert {
   @js.native
   trait CmfcSettings extends js.Object {
     var AudioDuration: js.UndefOr[CmfcAudioDuration]
+    var AudioGroupId: js.UndefOr[__string]
+    var AudioRenditionSets: js.UndefOr[__string]
+    var AudioTrackType: js.UndefOr[CmfcAudioTrackType]
+    var DescriptiveVideoServiceFlag: js.UndefOr[CmfcDescriptiveVideoServiceFlag]
     var IFrameOnlyManifest: js.UndefOr[CmfcIFrameOnlyManifest]
     var Scte35Esam: js.UndefOr[CmfcScte35Esam]
     var Scte35Source: js.UndefOr[CmfcScte35Source]
@@ -2094,12 +2175,20 @@ package mediaconvert {
     @inline
     def apply(
         AudioDuration: js.UndefOr[CmfcAudioDuration] = js.undefined,
+        AudioGroupId: js.UndefOr[__string] = js.undefined,
+        AudioRenditionSets: js.UndefOr[__string] = js.undefined,
+        AudioTrackType: js.UndefOr[CmfcAudioTrackType] = js.undefined,
+        DescriptiveVideoServiceFlag: js.UndefOr[CmfcDescriptiveVideoServiceFlag] = js.undefined,
         IFrameOnlyManifest: js.UndefOr[CmfcIFrameOnlyManifest] = js.undefined,
         Scte35Esam: js.UndefOr[CmfcScte35Esam] = js.undefined,
         Scte35Source: js.UndefOr[CmfcScte35Source] = js.undefined
     ): CmfcSettings = {
       val __obj = js.Dynamic.literal()
       AudioDuration.foreach(__v => __obj.updateDynamic("AudioDuration")(__v.asInstanceOf[js.Any]))
+      AudioGroupId.foreach(__v => __obj.updateDynamic("AudioGroupId")(__v.asInstanceOf[js.Any]))
+      AudioRenditionSets.foreach(__v => __obj.updateDynamic("AudioRenditionSets")(__v.asInstanceOf[js.Any]))
+      AudioTrackType.foreach(__v => __obj.updateDynamic("AudioTrackType")(__v.asInstanceOf[js.Any]))
+      DescriptiveVideoServiceFlag.foreach(__v => __obj.updateDynamic("DescriptiveVideoServiceFlag")(__v.asInstanceOf[js.Any]))
       IFrameOnlyManifest.foreach(__v => __obj.updateDynamic("IFrameOnlyManifest")(__v.asInstanceOf[js.Any]))
       Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
       Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
@@ -2530,11 +2619,23 @@ package mediaconvert {
     }
   }
 
+  /** Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+    */
+  @js.native
+  sealed trait DashIsoGroupAudioChannelConfigSchemeIdUri extends js.Any
+  object DashIsoGroupAudioChannelConfigSchemeIdUri {
+    val MPEG_CHANNEL_CONFIGURATION = "MPEG_CHANNEL_CONFIGURATION".asInstanceOf[DashIsoGroupAudioChannelConfigSchemeIdUri]
+    val DOLBY_CHANNEL_CONFIGURATION = "DOLBY_CHANNEL_CONFIGURATION".asInstanceOf[DashIsoGroupAudioChannelConfigSchemeIdUri]
+
+    @inline def values = js.Array(MPEG_CHANNEL_CONFIGURATION, DOLBY_CHANNEL_CONFIGURATION)
+  }
+
   /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
     */
   @js.native
   trait DashIsoGroupSettings extends js.Object {
     var AdditionalManifests: js.UndefOr[__listOfDashAdditionalManifest]
+    var AudioChannelConfigSchemeIdUri: js.UndefOr[DashIsoGroupAudioChannelConfigSchemeIdUri]
     var BaseUrl: js.UndefOr[__string]
     var Destination: js.UndefOr[__stringPatternS3]
     var DestinationSettings: js.UndefOr[DestinationSettings]
@@ -2544,6 +2645,7 @@ package mediaconvert {
     var MinBufferTime: js.UndefOr[__integerMin0Max2147483647]
     var MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647]
     var MpdProfile: js.UndefOr[DashIsoMpdProfile]
+    var PtsOffsetHandlingForBFrames: js.UndefOr[DashIsoPtsOffsetHandlingForBFrames]
     var SegmentControl: js.UndefOr[DashIsoSegmentControl]
     var SegmentLength: js.UndefOr[__integerMin1Max2147483647]
     var WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation]
@@ -2553,6 +2655,7 @@ package mediaconvert {
     @inline
     def apply(
         AdditionalManifests: js.UndefOr[__listOfDashAdditionalManifest] = js.undefined,
+        AudioChannelConfigSchemeIdUri: js.UndefOr[DashIsoGroupAudioChannelConfigSchemeIdUri] = js.undefined,
         BaseUrl: js.UndefOr[__string] = js.undefined,
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
         DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
@@ -2562,12 +2665,14 @@ package mediaconvert {
         MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
         MpdProfile: js.UndefOr[DashIsoMpdProfile] = js.undefined,
+        PtsOffsetHandlingForBFrames: js.UndefOr[DashIsoPtsOffsetHandlingForBFrames] = js.undefined,
         SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined
     ): DashIsoGroupSettings = {
       val __obj = js.Dynamic.literal()
       AdditionalManifests.foreach(__v => __obj.updateDynamic("AdditionalManifests")(__v.asInstanceOf[js.Any]))
+      AudioChannelConfigSchemeIdUri.foreach(__v => __obj.updateDynamic("AudioChannelConfigSchemeIdUri")(__v.asInstanceOf[js.Any]))
       BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
@@ -2577,6 +2682,7 @@ package mediaconvert {
       MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
       MinFinalSegmentLength.foreach(__v => __obj.updateDynamic("MinFinalSegmentLength")(__v.asInstanceOf[js.Any]))
       MpdProfile.foreach(__v => __obj.updateDynamic("MpdProfile")(__v.asInstanceOf[js.Any]))
+      PtsOffsetHandlingForBFrames.foreach(__v => __obj.updateDynamic("PtsOffsetHandlingForBFrames")(__v.asInstanceOf[js.Any]))
       SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
       WriteSegmentTimelineInRepresentation.foreach(__v => __obj.updateDynamic("WriteSegmentTimelineInRepresentation")(__v.asInstanceOf[js.Any]))
@@ -2615,6 +2721,17 @@ package mediaconvert {
     val UNENCRYPTED_SEI = "UNENCRYPTED_SEI".asInstanceOf[DashIsoPlaybackDeviceCompatibility]
 
     @inline def values = js.Array(CENC_V1, UNENCRYPTED_SEI)
+  }
+
+  /** Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
+    */
+  @js.native
+  sealed trait DashIsoPtsOffsetHandlingForBFrames extends js.Any
+  object DashIsoPtsOffsetHandlingForBFrames {
+    val ZERO_BASED = "ZERO_BASED".asInstanceOf[DashIsoPtsOffsetHandlingForBFrames]
+    val MATCH_INITIAL_PTS = "MATCH_INITIAL_PTS".asInstanceOf[DashIsoPtsOffsetHandlingForBFrames]
+
+    @inline def values = js.Array(ZERO_BASED, MATCH_INITIAL_PTS)
   }
 
   /** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
@@ -3426,7 +3543,7 @@ package mediaconvert {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /** Specify the absolute peak level for a signal with dynamic range compression.
+  /** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     */
   @js.native
   sealed trait Eac3DynamicRangeCompressionLine extends js.Any
@@ -3441,7 +3558,7 @@ package mediaconvert {
     @inline def values = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
   }
 
-  /** Specify how the service limits the audio dynamic range when compressing the audio.
+  /** Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     */
   @js.native
   sealed trait Eac3DynamicRangeCompressionRf extends js.Any
@@ -3835,13 +3952,13 @@ package mediaconvert {
     @inline def values = js.Array(UPCONVERT, DISABLED)
   }
 
-  /** If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+  /** If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
     */
   @js.native
   trait FileSourceSettings extends js.Object {
     var Convert608To708: js.UndefOr[FileSourceConvert608To708]
     var Framerate: js.UndefOr[CaptionSourceFramerate]
-    var SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI]
+    var SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIVttVTTHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIVttVTT]
     var TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647]
   }
 
@@ -3850,7 +3967,7 @@ package mediaconvert {
     def apply(
         Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
         Framerate: js.UndefOr[CaptionSourceFramerate] = js.undefined,
-        SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMI] = js.undefined,
+        SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIVttVTTHttpsSccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTXmlXMLSmiSMIVttVTT] = js.undefined,
         TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined
     ): FileSourceSettings = {
       val __obj = js.Dynamic.literal()
@@ -5148,6 +5265,17 @@ package mediaconvert {
     @inline def values = js.Array(RFC_6381, RFC_4281)
   }
 
+  /** Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
+    */
+  @js.native
+  sealed trait HlsDescriptiveVideoServiceFlag extends js.Any
+  object HlsDescriptiveVideoServiceFlag {
+    val DONT_FLAG = "DONT_FLAG".asInstanceOf[HlsDescriptiveVideoServiceFlag]
+    val FLAG = "FLAG".asInstanceOf[HlsDescriptiveVideoServiceFlag]
+
+    @inline def values = js.Array(DONT_FLAG, FLAG)
+  }
+
   /** Indicates whether segments should be placed in subdirectories.
     */
   @js.native
@@ -5406,6 +5534,7 @@ package mediaconvert {
     var AudioOnlyContainer: js.UndefOr[HlsAudioOnlyContainer]
     var AudioRenditionSets: js.UndefOr[__string]
     var AudioTrackType: js.UndefOr[HlsAudioTrackType]
+    var DescriptiveVideoServiceFlag: js.UndefOr[HlsDescriptiveVideoServiceFlag]
     var IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest]
     var SegmentModifier: js.UndefOr[__string]
   }
@@ -5417,6 +5546,7 @@ package mediaconvert {
         AudioOnlyContainer: js.UndefOr[HlsAudioOnlyContainer] = js.undefined,
         AudioRenditionSets: js.UndefOr[__string] = js.undefined,
         AudioTrackType: js.UndefOr[HlsAudioTrackType] = js.undefined,
+        DescriptiveVideoServiceFlag: js.UndefOr[HlsDescriptiveVideoServiceFlag] = js.undefined,
         IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
         SegmentModifier: js.UndefOr[__string] = js.undefined
     ): HlsSettings = {
@@ -5425,6 +5555,7 @@ package mediaconvert {
       AudioOnlyContainer.foreach(__v => __obj.updateDynamic("AudioOnlyContainer")(__v.asInstanceOf[js.Any]))
       AudioRenditionSets.foreach(__v => __obj.updateDynamic("AudioRenditionSets")(__v.asInstanceOf[js.Any]))
       AudioTrackType.foreach(__v => __obj.updateDynamic("AudioTrackType")(__v.asInstanceOf[js.Any]))
+      DescriptiveVideoServiceFlag.foreach(__v => __obj.updateDynamic("DescriptiveVideoServiceFlag")(__v.asInstanceOf[js.Any]))
       IFrameOnlyManifest.foreach(__v => __obj.updateDynamic("IFrameOnlyManifest")(__v.asInstanceOf[js.Any]))
       SegmentModifier.foreach(__v => __obj.updateDynamic("SegmentModifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsSettings]
@@ -9572,7 +9703,7 @@ package mediaconvert {
     }
   }
 
-  /** Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
+  /** Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
     */
   @js.native
   sealed trait TtmlStylePassthrough extends js.Any
@@ -10412,5 +10543,34 @@ package mediaconvert {
       SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WavSettings]
     }
+  }
+
+  /** WEBVTT Destination Settings
+    */
+  @js.native
+  trait WebvttDestinationSettings extends js.Object {
+    var StylePassthrough: js.UndefOr[WebvttStylePassthrough]
+  }
+
+  object WebvttDestinationSettings {
+    @inline
+    def apply(
+        StylePassthrough: js.UndefOr[WebvttStylePassthrough] = js.undefined
+    ): WebvttDestinationSettings = {
+      val __obj = js.Dynamic.literal()
+      StylePassthrough.foreach(__v => __obj.updateDynamic("StylePassthrough")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WebvttDestinationSettings]
+    }
+  }
+
+  /** If your input captions format is teletext or teletext inside of STL, enable this setting to pass through style, color, and position information to your WebVTT output captions.
+    */
+  @js.native
+  sealed trait WebvttStylePassthrough extends js.Any
+  object WebvttStylePassthrough {
+    val ENABLED = "ENABLED".asInstanceOf[WebvttStylePassthrough]
+    val DISABLED = "DISABLED".asInstanceOf[WebvttStylePassthrough]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
   }
 }

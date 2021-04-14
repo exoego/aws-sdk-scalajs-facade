@@ -20,6 +20,7 @@ package object accessanalyzer {
   type AnalyzerArn = String
   type AnalyzersList = js.Array[AnalyzerSummary]
   type ArchiveRulesList = js.Array[ArchiveRuleSummary]
+  type CloudTrailArn = String
   type ConditionKeyMap = js.Dictionary[String]
   type ConfigurationsMap = js.Dictionary[Configuration]
   type ConfigurationsMapKey = String
@@ -28,11 +29,13 @@ package object accessanalyzer {
   type FindingIdList = js.Array[FindingId]
   type FindingSourceList = js.Array[FindingSource]
   type FindingsList = js.Array[FindingSummary]
+  type GeneratedPolicyList = js.Array[GeneratedPolicy]
   type GranteePrincipal = String
   type IamTrustPolicy = String
   type InlineArchiveRulesList = js.Array[InlineArchiveRule]
   type IssueCode = String
   type IssuingAccount = String
+  type JobId = String
   type KmsConstraintsKey = String
   type KmsConstraintsMap = js.Dictionary[KmsConstraintsValue]
   type KmsConstraintsValue = String
@@ -41,14 +44,19 @@ package object accessanalyzer {
   type KmsKeyPoliciesMap = js.Dictionary[KmsKeyPolicy]
   type KmsKeyPolicy = String
   type LearnMoreLink = String
+  type ListPolicyGenerationsRequestMaxResultsInteger = Int
   type LocationList = js.Array[Location]
   type Name = String
   type PathElementList = js.Array[PathElement]
   type PolicyDocument = String
+  type PolicyGenerationList = js.Array[PolicyGeneration]
   type PolicyName = String
+  type PrincipalArn = String
   type PrincipalMap = js.Dictionary[String]
+  type RegionList = js.Array[String]
   type ResourceArn = String
   type RetiringPrincipal = String
+  type RoleArn = String
   type S3AccessPointConfigurationsMap = js.Dictionary[S3AccessPointConfiguration]
   type S3BucketAclGrantConfigurationsList = js.Array[S3BucketAclGrantConfiguration]
   type S3BucketPolicy = String
@@ -60,6 +68,8 @@ package object accessanalyzer {
   type TagsMap = js.Dictionary[String]
   type Timestamp = js.Date
   type Token = String
+  type TrailList = js.Array[Trail]
+  type TrailPropertiesList = js.Array[TrailProperties]
   type ValidatePolicyFindingList = js.Array[ValidatePolicyFinding]
   type ValueList = js.Array[String]
   type VpcId = String
@@ -67,6 +77,7 @@ package object accessanalyzer {
   implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
     @inline def applyArchiveRuleFuture(params: ApplyArchiveRuleRequest): Future[js.Object] = service.applyArchiveRule(params).promise().toFuture
+    @inline def cancelPolicyGenerationFuture(params: CancelPolicyGenerationRequest): Future[CancelPolicyGenerationResponse] = service.cancelPolicyGeneration(params).promise().toFuture
     @inline def createAccessPreviewFuture(params: CreateAccessPreviewRequest): Future[CreateAccessPreviewResponse] = service.createAccessPreview(params).promise().toFuture
     @inline def createAnalyzerFuture(params: CreateAnalyzerRequest): Future[CreateAnalyzerResponse] = service.createAnalyzer(params).promise().toFuture
     @inline def createArchiveRuleFuture(params: CreateArchiveRuleRequest): Future[js.Object] = service.createArchiveRule(params).promise().toFuture
@@ -77,13 +88,16 @@ package object accessanalyzer {
     @inline def getAnalyzerFuture(params: GetAnalyzerRequest): Future[GetAnalyzerResponse] = service.getAnalyzer(params).promise().toFuture
     @inline def getArchiveRuleFuture(params: GetArchiveRuleRequest): Future[GetArchiveRuleResponse] = service.getArchiveRule(params).promise().toFuture
     @inline def getFindingFuture(params: GetFindingRequest): Future[GetFindingResponse] = service.getFinding(params).promise().toFuture
+    @inline def getGeneratedPolicyFuture(params: GetGeneratedPolicyRequest): Future[GetGeneratedPolicyResponse] = service.getGeneratedPolicy(params).promise().toFuture
     @inline def listAccessPreviewFindingsFuture(params: ListAccessPreviewFindingsRequest): Future[ListAccessPreviewFindingsResponse] = service.listAccessPreviewFindings(params).promise().toFuture
     @inline def listAccessPreviewsFuture(params: ListAccessPreviewsRequest): Future[ListAccessPreviewsResponse] = service.listAccessPreviews(params).promise().toFuture
     @inline def listAnalyzedResourcesFuture(params: ListAnalyzedResourcesRequest): Future[ListAnalyzedResourcesResponse] = service.listAnalyzedResources(params).promise().toFuture
     @inline def listAnalyzersFuture(params: ListAnalyzersRequest): Future[ListAnalyzersResponse] = service.listAnalyzers(params).promise().toFuture
     @inline def listArchiveRulesFuture(params: ListArchiveRulesRequest): Future[ListArchiveRulesResponse] = service.listArchiveRules(params).promise().toFuture
     @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] = service.listFindings(params).promise().toFuture
+    @inline def listPolicyGenerationsFuture(params: ListPolicyGenerationsRequest): Future[ListPolicyGenerationsResponse] = service.listPolicyGenerations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startPolicyGenerationFuture(params: StartPolicyGenerationRequest): Future[StartPolicyGenerationResponse] = service.startPolicyGeneration(params).promise().toFuture
     @inline def startResourceScanFuture(params: StartResourceScanRequest): Future[js.Object] = service.startResourceScan(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -101,6 +115,7 @@ package accessanalyzer {
     def this(config: AWSConfig) = this()
 
     def applyArchiveRule(params: ApplyArchiveRuleRequest): Request[js.Object] = js.native
+    def cancelPolicyGeneration(params: CancelPolicyGenerationRequest): Request[CancelPolicyGenerationResponse] = js.native
     def createAccessPreview(params: CreateAccessPreviewRequest): Request[CreateAccessPreviewResponse] = js.native
     def createAnalyzer(params: CreateAnalyzerRequest): Request[CreateAnalyzerResponse] = js.native
     def createArchiveRule(params: CreateArchiveRuleRequest): Request[js.Object] = js.native
@@ -111,13 +126,16 @@ package accessanalyzer {
     def getAnalyzer(params: GetAnalyzerRequest): Request[GetAnalyzerResponse] = js.native
     def getArchiveRule(params: GetArchiveRuleRequest): Request[GetArchiveRuleResponse] = js.native
     def getFinding(params: GetFindingRequest): Request[GetFindingResponse] = js.native
+    def getGeneratedPolicy(params: GetGeneratedPolicyRequest): Request[GetGeneratedPolicyResponse] = js.native
     def listAccessPreviewFindings(params: ListAccessPreviewFindingsRequest): Request[ListAccessPreviewFindingsResponse] = js.native
     def listAccessPreviews(params: ListAccessPreviewsRequest): Request[ListAccessPreviewsResponse] = js.native
     def listAnalyzedResources(params: ListAnalyzedResourcesRequest): Request[ListAnalyzedResourcesResponse] = js.native
     def listAnalyzers(params: ListAnalyzersRequest): Request[ListAnalyzersResponse] = js.native
     def listArchiveRules(params: ListArchiveRulesRequest): Request[ListArchiveRulesResponse] = js.native
     def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
+    def listPolicyGenerations(params: ListPolicyGenerationsRequest): Request[ListPolicyGenerationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startPolicyGeneration(params: StartPolicyGenerationRequest): Request[StartPolicyGenerationResponse] = js.native
     def startResourceScan(params: StartResourceScanRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -507,6 +525,88 @@ package accessanalyzer {
         "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ArchiveRuleSummary]
+    }
+  }
+
+  @js.native
+  trait CancelPolicyGenerationRequest extends js.Object {
+    var jobId: JobId
+  }
+
+  object CancelPolicyGenerationRequest {
+    @inline
+    def apply(
+        jobId: JobId
+    ): CancelPolicyGenerationRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelPolicyGenerationRequest]
+    }
+  }
+
+  @js.native
+  trait CancelPolicyGenerationResponse extends js.Object
+
+  object CancelPolicyGenerationResponse {
+    @inline
+    def apply(): CancelPolicyGenerationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelPolicyGenerationResponse]
+    }
+  }
+
+  /** Contains information about CloudTrail access.
+    */
+  @js.native
+  trait CloudTrailDetails extends js.Object {
+    var accessRole: RoleArn
+    var startTime: Timestamp
+    var trails: TrailList
+    var endTime: js.UndefOr[Timestamp]
+  }
+
+  object CloudTrailDetails {
+    @inline
+    def apply(
+        accessRole: RoleArn,
+        startTime: Timestamp,
+        trails: TrailList,
+        endTime: js.UndefOr[Timestamp] = js.undefined
+    ): CloudTrailDetails = {
+      val __obj = js.Dynamic.literal(
+        "accessRole" -> accessRole.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "trails" -> trails.asInstanceOf[js.Any]
+      )
+
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudTrailDetails]
+    }
+  }
+
+  /** Contains information about CloudTrail access.
+    */
+  @js.native
+  trait CloudTrailProperties extends js.Object {
+    var endTime: Timestamp
+    var startTime: Timestamp
+    var trailProperties: TrailPropertiesList
+  }
+
+  object CloudTrailProperties {
+    @inline
+    def apply(
+        endTime: Timestamp,
+        startTime: Timestamp,
+        trailProperties: TrailPropertiesList
+    ): CloudTrailProperties = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "trailProperties" -> trailProperties.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CloudTrailProperties]
     }
   }
 
@@ -934,6 +1034,74 @@ package accessanalyzer {
     }
   }
 
+  /** Contains the text for the generated policy.
+    */
+  @js.native
+  trait GeneratedPolicy extends js.Object {
+    var policy: String
+  }
+
+  object GeneratedPolicy {
+    @inline
+    def apply(
+        policy: String
+    ): GeneratedPolicy = {
+      val __obj = js.Dynamic.literal(
+        "policy" -> policy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GeneratedPolicy]
+    }
+  }
+
+  /** Contains the generated policy details.
+    */
+  @js.native
+  trait GeneratedPolicyProperties extends js.Object {
+    var principalArn: PrincipalArn
+    var cloudTrailProperties: js.UndefOr[CloudTrailProperties]
+    var isComplete: js.UndefOr[Boolean]
+  }
+
+  object GeneratedPolicyProperties {
+    @inline
+    def apply(
+        principalArn: PrincipalArn,
+        cloudTrailProperties: js.UndefOr[CloudTrailProperties] = js.undefined,
+        isComplete: js.UndefOr[Boolean] = js.undefined
+    ): GeneratedPolicyProperties = {
+      val __obj = js.Dynamic.literal(
+        "principalArn" -> principalArn.asInstanceOf[js.Any]
+      )
+
+      cloudTrailProperties.foreach(__v => __obj.updateDynamic("cloudTrailProperties")(__v.asInstanceOf[js.Any]))
+      isComplete.foreach(__v => __obj.updateDynamic("isComplete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeneratedPolicyProperties]
+    }
+  }
+
+  /** Contains the text for the generated policy and its details.
+    */
+  @js.native
+  trait GeneratedPolicyResult extends js.Object {
+    var properties: GeneratedPolicyProperties
+    var generatedPolicies: js.UndefOr[GeneratedPolicyList]
+  }
+
+  object GeneratedPolicyResult {
+    @inline
+    def apply(
+        properties: GeneratedPolicyProperties,
+        generatedPolicies: js.UndefOr[GeneratedPolicyList] = js.undefined
+    ): GeneratedPolicyResult = {
+      val __obj = js.Dynamic.literal(
+        "properties" -> properties.asInstanceOf[js.Any]
+      )
+
+      generatedPolicies.foreach(__v => __obj.updateDynamic("generatedPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeneratedPolicyResult]
+    }
+  }
+
   @js.native
   trait GetAccessPreviewRequest extends js.Object {
     var accessPreviewId: AccessPreviewId
@@ -1130,6 +1298,50 @@ package accessanalyzer {
     }
   }
 
+  @js.native
+  trait GetGeneratedPolicyRequest extends js.Object {
+    var jobId: JobId
+    var includeResourcePlaceholders: js.UndefOr[Boolean]
+    var includeServiceLevelTemplate: js.UndefOr[Boolean]
+  }
+
+  object GetGeneratedPolicyRequest {
+    @inline
+    def apply(
+        jobId: JobId,
+        includeResourcePlaceholders: js.UndefOr[Boolean] = js.undefined,
+        includeServiceLevelTemplate: js.UndefOr[Boolean] = js.undefined
+    ): GetGeneratedPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+
+      includeResourcePlaceholders.foreach(__v => __obj.updateDynamic("includeResourcePlaceholders")(__v.asInstanceOf[js.Any]))
+      includeServiceLevelTemplate.foreach(__v => __obj.updateDynamic("includeServiceLevelTemplate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGeneratedPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetGeneratedPolicyResponse extends js.Object {
+    var generatedPolicyResult: GeneratedPolicyResult
+    var jobDetails: JobDetails
+  }
+
+  object GetGeneratedPolicyResponse {
+    @inline
+    def apply(
+        generatedPolicyResult: GeneratedPolicyResult,
+        jobDetails: JobDetails
+    ): GetGeneratedPolicyResponse = {
+      val __obj = js.Dynamic.literal(
+        "generatedPolicyResult" -> generatedPolicyResult.asInstanceOf[js.Any],
+        "jobDetails" -> jobDetails.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetGeneratedPolicyResponse]
+    }
+  }
+
   /** The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html|IAM and STS quotas]].
     */
   @js.native
@@ -1181,6 +1393,82 @@ package accessanalyzer {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[InternetConfiguration]
     }
+  }
+
+  /** Contains details about the policy generation request.
+    */
+  @js.native
+  trait JobDetails extends js.Object {
+    var jobId: JobId
+    var startedOn: Timestamp
+    var status: JobStatus
+    var completedOn: js.UndefOr[Timestamp]
+    var jobError: js.UndefOr[JobError]
+  }
+
+  object JobDetails {
+    @inline
+    def apply(
+        jobId: JobId,
+        startedOn: Timestamp,
+        status: JobStatus,
+        completedOn: js.UndefOr[Timestamp] = js.undefined,
+        jobError: js.UndefOr[JobError] = js.undefined
+    ): JobDetails = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "startedOn" -> startedOn.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      completedOn.foreach(__v => __obj.updateDynamic("completedOn")(__v.asInstanceOf[js.Any]))
+      jobError.foreach(__v => __obj.updateDynamic("jobError")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobDetails]
+    }
+  }
+
+  /** Contains the details about the policy generation error.
+    */
+  @js.native
+  trait JobError extends js.Object {
+    var code: JobErrorCode
+    var message: String
+  }
+
+  object JobError {
+    @inline
+    def apply(
+        code: JobErrorCode,
+        message: String
+    ): JobError = {
+      val __obj = js.Dynamic.literal(
+        "code" -> code.asInstanceOf[js.Any],
+        "message" -> message.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JobError]
+    }
+  }
+
+  @js.native
+  sealed trait JobErrorCode extends js.Any
+  object JobErrorCode {
+    val AUTHORIZATION_ERROR = "AUTHORIZATION_ERROR".asInstanceOf[JobErrorCode]
+    val RESOURCE_NOT_FOUND_ERROR = "RESOURCE_NOT_FOUND_ERROR".asInstanceOf[JobErrorCode]
+    val SERVICE_QUOTA_EXCEEDED_ERROR = "SERVICE_QUOTA_EXCEEDED_ERROR".asInstanceOf[JobErrorCode]
+    val SERVICE_ERROR = "SERVICE_ERROR".asInstanceOf[JobErrorCode]
+
+    @inline def values = js.Array(AUTHORIZATION_ERROR, RESOURCE_NOT_FOUND_ERROR, SERVICE_QUOTA_EXCEEDED_ERROR, SERVICE_ERROR)
+  }
+
+  @js.native
+  sealed trait JobStatus extends js.Any
+  object JobStatus {
+    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
+    val FAILED = "FAILED".asInstanceOf[JobStatus]
+    val CANCELED = "CANCELED".asInstanceOf[JobStatus]
+
+    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
   }
 
   /** A proposed grant configuration for a KMS key. For more information, see [[https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html|CreateGrant]].
@@ -1593,6 +1881,49 @@ package accessanalyzer {
     }
   }
 
+  @js.native
+  trait ListPolicyGenerationsRequest extends js.Object {
+    var maxResults: js.UndefOr[ListPolicyGenerationsRequestMaxResultsInteger]
+    var nextToken: js.UndefOr[Token]
+    var principalArn: js.UndefOr[PrincipalArn]
+  }
+
+  object ListPolicyGenerationsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[ListPolicyGenerationsRequestMaxResultsInteger] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined,
+        principalArn: js.UndefOr[PrincipalArn] = js.undefined
+    ): ListPolicyGenerationsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPolicyGenerationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPolicyGenerationsResponse extends js.Object {
+    var policyGenerations: PolicyGenerationList
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListPolicyGenerationsResponse {
+    @inline
+    def apply(
+        policyGenerations: PolicyGenerationList,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListPolicyGenerationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "policyGenerations" -> policyGenerations.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPolicyGenerationsResponse]
+    }
+  }
+
   /** Retrieves a list of tags applied to the specified resource.
     */
   @js.native
@@ -1723,6 +2054,57 @@ package accessanalyzer {
       substring.foreach(__v => __obj.updateDynamic("substring")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PathElement]
+    }
+  }
+
+  /** Contains details about the policy generation status and properties.
+    */
+  @js.native
+  trait PolicyGeneration extends js.Object {
+    var jobId: JobId
+    var principalArn: PrincipalArn
+    var startedOn: Timestamp
+    var status: JobStatus
+    var completedOn: js.UndefOr[Timestamp]
+  }
+
+  object PolicyGeneration {
+    @inline
+    def apply(
+        jobId: JobId,
+        principalArn: PrincipalArn,
+        startedOn: Timestamp,
+        status: JobStatus,
+        completedOn: js.UndefOr[Timestamp] = js.undefined
+    ): PolicyGeneration = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "principalArn" -> principalArn.asInstanceOf[js.Any],
+        "startedOn" -> startedOn.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      completedOn.foreach(__v => __obj.updateDynamic("completedOn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyGeneration]
+    }
+  }
+
+  /** Contains the ARN details about the IAM entity for which the policy is generated.
+    */
+  @js.native
+  trait PolicyGenerationDetails extends js.Object {
+    var principalArn: PrincipalArn
+  }
+
+  object PolicyGenerationDetails {
+    @inline
+    def apply(
+        principalArn: PrincipalArn
+    ): PolicyGenerationDetails = {
+      val __obj = js.Dynamic.literal(
+        "principalArn" -> principalArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PolicyGenerationDetails]
     }
   }
 
@@ -1972,6 +2354,47 @@ package accessanalyzer {
     }
   }
 
+  @js.native
+  trait StartPolicyGenerationRequest extends js.Object {
+    var policyGenerationDetails: PolicyGenerationDetails
+    var clientToken: js.UndefOr[String]
+    var cloudTrailDetails: js.UndefOr[CloudTrailDetails]
+  }
+
+  object StartPolicyGenerationRequest {
+    @inline
+    def apply(
+        policyGenerationDetails: PolicyGenerationDetails,
+        clientToken: js.UndefOr[String] = js.undefined,
+        cloudTrailDetails: js.UndefOr[CloudTrailDetails] = js.undefined
+    ): StartPolicyGenerationRequest = {
+      val __obj = js.Dynamic.literal(
+        "policyGenerationDetails" -> policyGenerationDetails.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      cloudTrailDetails.foreach(__v => __obj.updateDynamic("cloudTrailDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartPolicyGenerationRequest]
+    }
+  }
+
+  @js.native
+  trait StartPolicyGenerationResponse extends js.Object {
+    var jobId: JobId
+  }
+
+  object StartPolicyGenerationResponse {
+    @inline
+    def apply(
+        jobId: JobId
+    ): StartPolicyGenerationResponse = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartPolicyGenerationResponse]
+    }
+  }
+
   /** Starts a scan of the policies applied to the specified resource.
     */
   @js.native
@@ -2067,6 +2490,58 @@ package accessanalyzer {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** Contains details about the CloudTrail trail being analyzed to generate a policy.
+    */
+  @js.native
+  trait Trail extends js.Object {
+    var cloudTrailArn: CloudTrailArn
+    var allRegions: js.UndefOr[Boolean]
+    var regions: js.UndefOr[RegionList]
+  }
+
+  object Trail {
+    @inline
+    def apply(
+        cloudTrailArn: CloudTrailArn,
+        allRegions: js.UndefOr[Boolean] = js.undefined,
+        regions: js.UndefOr[RegionList] = js.undefined
+    ): Trail = {
+      val __obj = js.Dynamic.literal(
+        "cloudTrailArn" -> cloudTrailArn.asInstanceOf[js.Any]
+      )
+
+      allRegions.foreach(__v => __obj.updateDynamic("allRegions")(__v.asInstanceOf[js.Any]))
+      regions.foreach(__v => __obj.updateDynamic("regions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Trail]
+    }
+  }
+
+  /** Contains details about the CloudTrail trail being analyzed to generate a policy.
+    */
+  @js.native
+  trait TrailProperties extends js.Object {
+    var cloudTrailArn: CloudTrailArn
+    var allRegions: js.UndefOr[Boolean]
+    var regions: js.UndefOr[RegionList]
+  }
+
+  object TrailProperties {
+    @inline
+    def apply(
+        cloudTrailArn: CloudTrailArn,
+        allRegions: js.UndefOr[Boolean] = js.undefined,
+        regions: js.UndefOr[RegionList] = js.undefined
+    ): TrailProperties = {
+      val __obj = js.Dynamic.literal(
+        "cloudTrailArn" -> cloudTrailArn.asInstanceOf[js.Any]
+      )
+
+      allRegions.foreach(__v => __obj.updateDynamic("allRegions")(__v.asInstanceOf[js.Any]))
+      regions.foreach(__v => __obj.updateDynamic("regions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrailProperties]
     }
   }
 

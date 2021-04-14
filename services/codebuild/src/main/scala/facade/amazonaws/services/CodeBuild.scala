@@ -444,6 +444,26 @@ package codebuild {
     }
   }
 
+  /** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account.
+    * By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.
+    * <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default.
+    * </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects.
+    * </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria:
+    * * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.
+    * * Otherwise, the uploading account retains ownership of the objects.
+    * For more information about Amazon S3 object ownership, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>.
+    * </dd> </dl>
+    */
+  @js.native
+  sealed trait BucketOwnerAccess extends js.Any
+  object BucketOwnerAccess {
+    val NONE = "NONE".asInstanceOf[BucketOwnerAccess]
+    val READ_ONLY = "READ_ONLY".asInstanceOf[BucketOwnerAccess]
+    val FULL = "FULL".asInstanceOf[BucketOwnerAccess]
+
+    @inline def values = js.Array(NONE, READ_ONLY, FULL)
+  }
+
   /** Information about a build.
     */
   @js.native
@@ -560,6 +580,7 @@ package codebuild {
   @js.native
   trait BuildArtifacts extends js.Object {
     var artifactIdentifier: js.UndefOr[String]
+    var bucketOwnerAccess: js.UndefOr[BucketOwnerAccess]
     var encryptionDisabled: js.UndefOr[WrapperBoolean]
     var location: js.UndefOr[String]
     var md5sum: js.UndefOr[String]
@@ -571,6 +592,7 @@ package codebuild {
     @inline
     def apply(
         artifactIdentifier: js.UndefOr[String] = js.undefined,
+        bucketOwnerAccess: js.UndefOr[BucketOwnerAccess] = js.undefined,
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
         location: js.UndefOr[String] = js.undefined,
         md5sum: js.UndefOr[String] = js.undefined,
@@ -579,6 +601,7 @@ package codebuild {
     ): BuildArtifacts = {
       val __obj = js.Dynamic.literal()
       artifactIdentifier.foreach(__v => __obj.updateDynamic("artifactIdentifier")(__v.asInstanceOf[js.Any]))
+      bucketOwnerAccess.foreach(__v => __obj.updateDynamic("bucketOwnerAccess")(__v.asInstanceOf[js.Any]))
       encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       md5sum.foreach(__v => __obj.updateDynamic("md5sum")(__v.asInstanceOf[js.Any]))
@@ -1690,7 +1713,10 @@ package codebuild {
     @inline def values = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
   }
 
-  /** Information about an exported environment variable.
+  /** Contains information about an exported environment variable.
+    * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see [[https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html|Working with variables]] in the <i>AWS CodePipeline User Guide</i>.
+    *
+    * '''Note:'''During a build, the value of a variable is available starting with the <code>install</code> phase. It can be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.
     */
   @js.native
   trait ExportedEnvironmentVariable extends js.Object {
@@ -2624,6 +2650,7 @@ package codebuild {
   trait ProjectArtifacts extends js.Object {
     var `type`: ArtifactsType
     var artifactIdentifier: js.UndefOr[String]
+    var bucketOwnerAccess: js.UndefOr[BucketOwnerAccess]
     var encryptionDisabled: js.UndefOr[WrapperBoolean]
     var location: js.UndefOr[String]
     var name: js.UndefOr[String]
@@ -2638,6 +2665,7 @@ package codebuild {
     def apply(
         `type`: ArtifactsType,
         artifactIdentifier: js.UndefOr[String] = js.undefined,
+        bucketOwnerAccess: js.UndefOr[BucketOwnerAccess] = js.undefined,
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
         location: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -2651,6 +2679,7 @@ package codebuild {
       )
 
       artifactIdentifier.foreach(__v => __obj.updateDynamic("artifactIdentifier")(__v.asInstanceOf[js.Any]))
+      bucketOwnerAccess.foreach(__v => __obj.updateDynamic("bucketOwnerAccess")(__v.asInstanceOf[js.Any]))
       encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -3315,6 +3344,7 @@ package codebuild {
   @js.native
   trait S3LogsConfig extends js.Object {
     var status: LogsConfigStatusType
+    var bucketOwnerAccess: js.UndefOr[BucketOwnerAccess]
     var encryptionDisabled: js.UndefOr[WrapperBoolean]
     var location: js.UndefOr[String]
   }
@@ -3323,6 +3353,7 @@ package codebuild {
     @inline
     def apply(
         status: LogsConfigStatusType,
+        bucketOwnerAccess: js.UndefOr[BucketOwnerAccess] = js.undefined,
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
         location: js.UndefOr[String] = js.undefined
     ): S3LogsConfig = {
@@ -3330,6 +3361,7 @@ package codebuild {
         "status" -> status.asInstanceOf[js.Any]
       )
 
+      bucketOwnerAccess.foreach(__v => __obj.updateDynamic("bucketOwnerAccess")(__v.asInstanceOf[js.Any]))
       encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3LogsConfig]

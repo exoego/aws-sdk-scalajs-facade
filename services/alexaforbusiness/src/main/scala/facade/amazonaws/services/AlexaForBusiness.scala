@@ -1399,6 +1399,7 @@ package alexaforbusiness {
     var Timezone: Timezone
     var WakeWord: WakeWord
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var DataRetentionOptIn: js.UndefOr[Boolean]
     var Locale: js.UndefOr[DeviceLocale]
     var MaxVolumeLimit: js.UndefOr[MaxVolumeLimit]
     var MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration]
@@ -1417,6 +1418,7 @@ package alexaforbusiness {
         Timezone: Timezone,
         WakeWord: WakeWord,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        DataRetentionOptIn: js.UndefOr[Boolean] = js.undefined,
         Locale: js.UndefOr[DeviceLocale] = js.undefined,
         MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
         MeetingRoomConfiguration: js.UndefOr[CreateMeetingRoomConfiguration] = js.undefined,
@@ -1434,6 +1436,7 @@ package alexaforbusiness {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      DataRetentionOptIn.foreach(__v => __obj.updateDynamic("DataRetentionOptIn")(__v.asInstanceOf[js.Any]))
       Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
       MaxVolumeLimit.foreach(__v => __obj.updateDynamic("MaxVolumeLimit")(__v.asInstanceOf[js.Any]))
       MeetingRoomConfiguration.foreach(__v => __obj.updateDynamic("MeetingRoomConfiguration")(__v.asInstanceOf[js.Any]))
@@ -3823,6 +3826,7 @@ package alexaforbusiness {
   trait Profile extends js.Object {
     var Address: js.UndefOr[Address]
     var AddressBookArn: js.UndefOr[Arn]
+    var DataRetentionOptIn: js.UndefOr[Boolean]
     var DistanceUnit: js.UndefOr[DistanceUnit]
     var IsDefault: js.UndefOr[Boolean]
     var Locale: js.UndefOr[DeviceLocale]
@@ -3842,6 +3846,7 @@ package alexaforbusiness {
     def apply(
         Address: js.UndefOr[Address] = js.undefined,
         AddressBookArn: js.UndefOr[Arn] = js.undefined,
+        DataRetentionOptIn: js.UndefOr[Boolean] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
         IsDefault: js.UndefOr[Boolean] = js.undefined,
         Locale: js.UndefOr[DeviceLocale] = js.undefined,
@@ -3858,6 +3863,7 @@ package alexaforbusiness {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
       AddressBookArn.foreach(__v => __obj.updateDynamic("AddressBookArn")(__v.asInstanceOf[js.Any]))
+      DataRetentionOptIn.foreach(__v => __obj.updateDynamic("DataRetentionOptIn")(__v.asInstanceOf[js.Any]))
       DistanceUnit.foreach(__v => __obj.updateDynamic("DistanceUnit")(__v.asInstanceOf[js.Any]))
       IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
       Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
@@ -5618,6 +5624,7 @@ package alexaforbusiness {
   @js.native
   trait UpdateProfileRequest extends js.Object {
     var Address: js.UndefOr[Address]
+    var DataRetentionOptIn: js.UndefOr[Boolean]
     var DistanceUnit: js.UndefOr[DistanceUnit]
     var IsDefault: js.UndefOr[Boolean]
     var Locale: js.UndefOr[DeviceLocale]
@@ -5636,6 +5643,7 @@ package alexaforbusiness {
     @inline
     def apply(
         Address: js.UndefOr[Address] = js.undefined,
+        DataRetentionOptIn: js.UndefOr[Boolean] = js.undefined,
         DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
         IsDefault: js.UndefOr[Boolean] = js.undefined,
         Locale: js.UndefOr[DeviceLocale] = js.undefined,
@@ -5651,6 +5659,7 @@ package alexaforbusiness {
     ): UpdateProfileRequest = {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      DataRetentionOptIn.foreach(__v => __obj.updateDynamic("DataRetentionOptIn")(__v.asInstanceOf[js.Any]))
       DistanceUnit.foreach(__v => __obj.updateDynamic("DistanceUnit")(__v.asInstanceOf[js.Any]))
       IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
       Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))

@@ -17,6 +17,7 @@ package object iotwireless {
   type AppServerPrivateKey = String
   type AutoCreateTasks = Boolean
   type CertificatePEM = String
+  type CertificateValue = String
   type ChannelMask = String
   type ClassBTimeout = Int
   type ClassCTimeout = Int
@@ -29,6 +30,7 @@ package object iotwireless {
   type DevAddr = String
   type DevEui = String
   type DevStatusReqFreq = Int
+  type DeviceCertificateList = js.Array[CertificateList]
   type DeviceProfileArn = String
   type DeviceProfileId = String
   type DeviceProfileList = js.Array[DeviceProfile]
@@ -90,6 +92,8 @@ package object iotwireless {
   type ServiceProfileList = js.Array[ServiceProfile]
   type ServiceProfileName = String
   type SidewalkAccountList = js.Array[SidewalkAccountInfoWithFingerprint]
+  type SidewalkId = String
+  type SidewalkManufacturingSn = String
   type Station = String
   type Supports32BitFCnt = Boolean
   type SupportsClassB = Boolean
@@ -420,6 +424,49 @@ package iotwireless {
     }
   }
 
+  /** Sidewalk device battery level.
+    */
+  @js.native
+  sealed trait BatteryLevel extends js.Any
+  object BatteryLevel {
+    val normal = "normal".asInstanceOf[BatteryLevel]
+    val low = "low".asInstanceOf[BatteryLevel]
+    val critical = "critical".asInstanceOf[BatteryLevel]
+
+    @inline def values = js.Array(normal, low, critical)
+  }
+
+  /** List of sidewalk certificates.
+    */
+  @js.native
+  trait CertificateList extends js.Object {
+    var SigningAlg: SigningAlg
+    var Value: CertificateValue
+  }
+
+  object CertificateList {
+    @inline
+    def apply(
+        SigningAlg: SigningAlg,
+        Value: CertificateValue
+    ): CertificateList = {
+      val __obj = js.Dynamic.literal(
+        "SigningAlg" -> SigningAlg.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CertificateList]
+    }
+  }
+
+  @js.native
+  sealed trait ConnectionStatus extends js.Any
+  object ConnectionStatus {
+    val Connected = "Connected".asInstanceOf[ConnectionStatus]
+    val Disconnected = "Disconnected".asInstanceOf[ConnectionStatus]
+
+    @inline def values = js.Array(Connected, Disconnected)
+  }
+
   @js.native
   trait CreateDestinationRequest extends js.Object {
     var Expression: Expression
@@ -571,6 +618,7 @@ package iotwireless {
     var Description: js.UndefOr[Description]
     var LoRaWAN: js.UndefOr[LoRaWANDevice]
     var Name: js.UndefOr[WirelessDeviceName]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateWirelessDeviceRequest {
@@ -581,7 +629,8 @@ package iotwireless {
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         LoRaWAN: js.UndefOr[LoRaWANDevice] = js.undefined,
-        Name: js.UndefOr[WirelessDeviceName] = js.undefined
+        Name: js.UndefOr[WirelessDeviceName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWirelessDeviceRequest = {
       val __obj = js.Dynamic.literal(
         "DestinationName" -> DestinationName.asInstanceOf[js.Any],
@@ -592,6 +641,7 @@ package iotwireless {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWirelessDeviceRequest]
     }
   }
@@ -1005,6 +1055,19 @@ package iotwireless {
     }
   }
 
+  /** Device state defines the device status of sidewalk device.
+    */
+  @js.native
+  sealed trait DeviceState extends js.Any
+  object DeviceState {
+    val Provisioned = "Provisioned".asInstanceOf[DeviceState]
+    val RegisteredNotSeen = "RegisteredNotSeen".asInstanceOf[DeviceState]
+    val RegisteredReachable = "RegisteredReachable".asInstanceOf[DeviceState]
+    val RegisteredUnreachable = "RegisteredUnreachable".asInstanceOf[DeviceState]
+
+    @inline def values = js.Array(Provisioned, RegisteredNotSeen, RegisteredReachable, RegisteredUnreachable)
+  }
+
   @js.native
   trait DisassociateAwsAccountFromPartnerAccountRequest extends js.Object {
     var PartnerAccountId: PartnerAccountId
@@ -1118,6 +1181,20 @@ package iotwireless {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateWirelessGatewayFromThingResponse]
     }
+  }
+
+  /** Sidewalk device status notification.
+    */
+  @js.native
+  sealed trait Event extends js.Any
+  object Event {
+    val discovered = "discovered".asInstanceOf[Event]
+    val lost = "lost".asInstanceOf[Event]
+    val ack = "ack".asInstanceOf[Event]
+    val nack = "nack".asInstanceOf[Event]
+    val passthrough = "passthrough".asInstanceOf[Event]
+
+    @inline def values = js.Array(discovered, lost, ack, nack, passthrough)
   }
 
   @js.native
@@ -1366,6 +1443,7 @@ package iotwireless {
     var Id: js.UndefOr[WirelessDeviceId]
     var LoRaWAN: js.UndefOr[LoRaWANDevice]
     var Name: js.UndefOr[WirelessDeviceName]
+    var Sidewalk: js.UndefOr[SidewalkDevice]
     var ThingArn: js.UndefOr[ThingArn]
     var ThingName: js.UndefOr[ThingName]
     var Type: js.UndefOr[WirelessDeviceType]
@@ -1380,6 +1458,7 @@ package iotwireless {
         Id: js.UndefOr[WirelessDeviceId] = js.undefined,
         LoRaWAN: js.UndefOr[LoRaWANDevice] = js.undefined,
         Name: js.UndefOr[WirelessDeviceName] = js.undefined,
+        Sidewalk: js.UndefOr[SidewalkDevice] = js.undefined,
         ThingArn: js.UndefOr[ThingArn] = js.undefined,
         ThingName: js.UndefOr[ThingName] = js.undefined,
         Type: js.UndefOr[WirelessDeviceType] = js.undefined
@@ -1391,6 +1470,7 @@ package iotwireless {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
       ThingArn.foreach(__v => __obj.updateDynamic("ThingArn")(__v.asInstanceOf[js.Any]))
       ThingName.foreach(__v => __obj.updateDynamic("ThingName")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -1419,6 +1499,7 @@ package iotwireless {
   trait GetWirelessDeviceStatisticsResponse extends js.Object {
     var LastUplinkReceivedAt: js.UndefOr[ISODateTimeString]
     var LoRaWAN: js.UndefOr[LoRaWANDeviceMetadata]
+    var Sidewalk: js.UndefOr[SidewalkDeviceMetadata]
     var WirelessDeviceId: js.UndefOr[WirelessDeviceId]
   }
 
@@ -1427,11 +1508,13 @@ package iotwireless {
     def apply(
         LastUplinkReceivedAt: js.UndefOr[ISODateTimeString] = js.undefined,
         LoRaWAN: js.UndefOr[LoRaWANDeviceMetadata] = js.undefined,
+        Sidewalk: js.UndefOr[SidewalkDeviceMetadata] = js.undefined,
         WirelessDeviceId: js.UndefOr[WirelessDeviceId] = js.undefined
     ): GetWirelessDeviceStatisticsResponse = {
       val __obj = js.Dynamic.literal()
       LastUplinkReceivedAt.foreach(__v => __obj.updateDynamic("LastUplinkReceivedAt")(__v.asInstanceOf[js.Any]))
       LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
       WirelessDeviceId.foreach(__v => __obj.updateDynamic("WirelessDeviceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWirelessDeviceStatisticsResponse]
     }
@@ -1579,6 +1662,7 @@ package iotwireless {
 
   @js.native
   trait GetWirelessGatewayStatisticsResponse extends js.Object {
+    var ConnectionStatus: js.UndefOr[ConnectionStatus]
     var LastUplinkReceivedAt: js.UndefOr[ISODateTimeString]
     var WirelessGatewayId: js.UndefOr[WirelessGatewayId]
   }
@@ -1586,10 +1670,12 @@ package iotwireless {
   object GetWirelessGatewayStatisticsResponse {
     @inline
     def apply(
+        ConnectionStatus: js.UndefOr[ConnectionStatus] = js.undefined,
         LastUplinkReceivedAt: js.UndefOr[ISODateTimeString] = js.undefined,
         WirelessGatewayId: js.UndefOr[WirelessGatewayId] = js.undefined
     ): GetWirelessGatewayStatisticsResponse = {
       val __obj = js.Dynamic.literal()
+      ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
       LastUplinkReceivedAt.foreach(__v => __obj.updateDynamic("LastUplinkReceivedAt")(__v.asInstanceOf[js.Any]))
       WirelessGatewayId.foreach(__v => __obj.updateDynamic("WirelessGatewayId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWirelessGatewayStatisticsResponse]
@@ -2633,20 +2719,80 @@ package iotwireless {
     }
   }
 
+  /** Sidewalk device object.
+    */
+  @js.native
+  trait SidewalkDevice extends js.Object {
+    var DeviceCertificates: js.UndefOr[DeviceCertificateList]
+    var SidewalkId: js.UndefOr[SidewalkId]
+    var SidewalkManufacturingSn: js.UndefOr[SidewalkManufacturingSn]
+  }
+
+  object SidewalkDevice {
+    @inline
+    def apply(
+        DeviceCertificates: js.UndefOr[DeviceCertificateList] = js.undefined,
+        SidewalkId: js.UndefOr[SidewalkId] = js.undefined,
+        SidewalkManufacturingSn: js.UndefOr[SidewalkManufacturingSn] = js.undefined
+    ): SidewalkDevice = {
+      val __obj = js.Dynamic.literal()
+      DeviceCertificates.foreach(__v => __obj.updateDynamic("DeviceCertificates")(__v.asInstanceOf[js.Any]))
+      SidewalkId.foreach(__v => __obj.updateDynamic("SidewalkId")(__v.asInstanceOf[js.Any]))
+      SidewalkManufacturingSn.foreach(__v => __obj.updateDynamic("SidewalkManufacturingSn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SidewalkDevice]
+    }
+  }
+
+  /** MetaData for Sidewalk device.
+    */
+  @js.native
+  trait SidewalkDeviceMetadata extends js.Object {
+    var BatteryLevel: js.UndefOr[BatteryLevel]
+    var DeviceState: js.UndefOr[DeviceState]
+    var Event: js.UndefOr[Event]
+    var Rssi: js.UndefOr[Int]
+  }
+
+  object SidewalkDeviceMetadata {
+    @inline
+    def apply(
+        BatteryLevel: js.UndefOr[BatteryLevel] = js.undefined,
+        DeviceState: js.UndefOr[DeviceState] = js.undefined,
+        Event: js.UndefOr[Event] = js.undefined,
+        Rssi: js.UndefOr[Int] = js.undefined
+    ): SidewalkDeviceMetadata = {
+      val __obj = js.Dynamic.literal()
+      BatteryLevel.foreach(__v => __obj.updateDynamic("BatteryLevel")(__v.asInstanceOf[js.Any]))
+      DeviceState.foreach(__v => __obj.updateDynamic("DeviceState")(__v.asInstanceOf[js.Any]))
+      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
+      Rssi.foreach(__v => __obj.updateDynamic("Rssi")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SidewalkDeviceMetadata]
+    }
+  }
+
   /** Sidewalk object used by list functions.
     */
   @js.native
   trait SidewalkListDevice extends js.Object {
     var AmazonId: js.UndefOr[AmazonId]
+    var DeviceCertificates: js.UndefOr[DeviceCertificateList]
+    var SidewalkId: js.UndefOr[SidewalkId]
+    var SidewalkManufacturingSn: js.UndefOr[SidewalkManufacturingSn]
   }
 
   object SidewalkListDevice {
     @inline
     def apply(
-        AmazonId: js.UndefOr[AmazonId] = js.undefined
+        AmazonId: js.UndefOr[AmazonId] = js.undefined,
+        DeviceCertificates: js.UndefOr[DeviceCertificateList] = js.undefined,
+        SidewalkId: js.UndefOr[SidewalkId] = js.undefined,
+        SidewalkManufacturingSn: js.UndefOr[SidewalkManufacturingSn] = js.undefined
     ): SidewalkListDevice = {
       val __obj = js.Dynamic.literal()
       AmazonId.foreach(__v => __obj.updateDynamic("AmazonId")(__v.asInstanceOf[js.Any]))
+      DeviceCertificates.foreach(__v => __obj.updateDynamic("DeviceCertificates")(__v.asInstanceOf[js.Any]))
+      SidewalkId.foreach(__v => __obj.updateDynamic("SidewalkId")(__v.asInstanceOf[js.Any]))
+      SidewalkManufacturingSn.foreach(__v => __obj.updateDynamic("SidewalkManufacturingSn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SidewalkListDevice]
     }
   }
@@ -2685,6 +2831,17 @@ package iotwireless {
       AppServerPrivateKey.foreach(__v => __obj.updateDynamic("AppServerPrivateKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SidewalkUpdateAccount]
     }
+  }
+
+  /** The certificate chain algorithm provided by sidewalk.
+    */
+  @js.native
+  sealed trait SigningAlg extends js.Any
+  object SigningAlg {
+    val Ed25519 = "Ed25519".asInstanceOf[SigningAlg]
+    val P256r1 = "P256r1".asInstanceOf[SigningAlg]
+
+    @inline def values = js.Array(Ed25519, P256r1)
   }
 
   /** A simple label consisting of a customer-defined key-value pair

@@ -116,8 +116,12 @@ package transcribeservice {
   sealed trait CLMLanguageCode extends js.Any
   object CLMLanguageCode {
     val `en-US` = "en-US".asInstanceOf[CLMLanguageCode]
+    val `hi-IN` = "hi-IN".asInstanceOf[CLMLanguageCode]
+    val `es-US` = "es-US".asInstanceOf[CLMLanguageCode]
+    val `en-GB` = "en-GB".asInstanceOf[CLMLanguageCode]
+    val `en-AU` = "en-AU".asInstanceOf[CLMLanguageCode]
 
-    @inline def values = js.Array(`en-US`)
+    @inline def values = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`)
   }
 
   /** Settings for content redaction within a transcription job.
@@ -1892,8 +1896,9 @@ package transcribeservice {
   object VocabularyFilterMethod {
     val remove = "remove".asInstanceOf[VocabularyFilterMethod]
     val mask = "mask".asInstanceOf[VocabularyFilterMethod]
+    val tag = "tag".asInstanceOf[VocabularyFilterMethod]
 
-    @inline def values = js.Array(remove, mask)
+    @inline def values = js.Array(remove, mask, tag)
   }
 
   /** Provides information about a custom vocabulary.

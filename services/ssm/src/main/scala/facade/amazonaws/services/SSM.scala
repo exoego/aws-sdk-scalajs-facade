@@ -68,6 +68,7 @@ package object ssm {
   type BatchErrorMessage = String
   type CalendarNameOrARN = String
   type CalendarNameOrARNList = js.Array[CalendarNameOrARN]
+  type ChangeDetailsValue = String
   type ChangeRequestName = String
   type ClientToken = String
   type CloudWatchLogGroupName = String
@@ -366,6 +367,7 @@ package object ssm {
   type PatchComplianceDataList = js.Array[PatchComplianceData]
   type PatchComplianceMaxResults = Int
   type PatchContentUrl = String
+  type PatchCriticalNonCompliantCount = Int
   type PatchDescription = String
   type PatchEpoch = Int
   type PatchFailedCount = Int
@@ -393,6 +395,7 @@ package object ssm {
   type PatchOrchestratorFilterList = js.Array[PatchOrchestratorFilter]
   type PatchOrchestratorFilterValue = String
   type PatchOrchestratorFilterValues = js.Array[PatchOrchestratorFilterValue]
+  type PatchOtherNonCompliantCount = Int
   type PatchProduct = String
   type PatchProductFamily = String
   type PatchPropertiesList = js.Array[PatchPropertyEntry]
@@ -400,6 +403,7 @@ package object ssm {
   type PatchRelease = String
   type PatchRepository = String
   type PatchRuleList = js.Array[PatchRule]
+  type PatchSecurityNonCompliantCount = Int
   type PatchSeverity = String
   type PatchSourceConfiguration = String
   type PatchSourceList = js.Array[PatchSource]
@@ -426,6 +430,7 @@ package object ssm {
   type ResourceDataSyncAWSKMSKeyARN = String
   type ResourceDataSyncCreatedTime = js.Date
   type ResourceDataSyncDestinationDataSharingType = String
+  type ResourceDataSyncEnableAllOpsDataSources = Boolean
   type ResourceDataSyncIncludeFutureRegions = Boolean
   type ResourceDataSyncItemList = js.Array[ResourceDataSyncItem]
   type ResourceDataSyncLastModifiedTime = js.Date
@@ -629,6 +634,7 @@ package object ssm {
     @inline def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] = service.startSession(params).promise().toFuture
     @inline def stopAutomationExecutionFuture(params: StopAutomationExecutionRequest): Future[StopAutomationExecutionResult] = service.stopAutomationExecution(params).promise().toFuture
     @inline def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] = service.terminateSession(params).promise().toFuture
+    @inline def unlabelParameterVersionFuture(params: UnlabelParameterVersionRequest): Future[UnlabelParameterVersionResult] = service.unlabelParameterVersion(params).promise().toFuture
     @inline def updateAssociationFuture(params: UpdateAssociationRequest): Future[UpdateAssociationResult] = service.updateAssociation(params).promise().toFuture
     @inline def updateAssociationStatusFuture(params: UpdateAssociationStatusRequest): Future[UpdateAssociationStatusResult] = service.updateAssociationStatus(params).promise().toFuture
     @inline def updateDocumentDefaultVersionFuture(params: UpdateDocumentDefaultVersionRequest): Future[UpdateDocumentDefaultVersionResult] = service.updateDocumentDefaultVersion(params).promise().toFuture
@@ -770,6 +776,7 @@ package ssm {
     def startSession(params: StartSessionRequest): Request[StartSessionResponse] = js.native
     def stopAutomationExecution(params: StopAutomationExecutionRequest): Request[StopAutomationExecutionResult] = js.native
     def terminateSession(params: TerminateSessionRequest): Request[TerminateSessionResponse] = js.native
+    def unlabelParameterVersion(params: UnlabelParameterVersionRequest): Request[UnlabelParameterVersionResult] = js.native
     def updateAssociation(params: UpdateAssociationRequest): Request[UpdateAssociationResult] = js.native
     def updateAssociationStatus(params: UpdateAssociationStatusRequest): Request[UpdateAssociationStatusResult] = js.native
     def updateDocument(params: UpdateDocumentRequest): Request[UpdateDocumentResult] = js.native
@@ -4765,6 +4772,7 @@ package ssm {
   @js.native
   trait DescribePatchGroupStateResult extends js.Object {
     var Instances: js.UndefOr[Int]
+    var InstancesWithCriticalNonCompliantPatches: js.UndefOr[InstancesCount]
     var InstancesWithFailedPatches: js.UndefOr[Int]
     var InstancesWithInstalledOtherPatches: js.UndefOr[Int]
     var InstancesWithInstalledPatches: js.UndefOr[Int]
@@ -4772,6 +4780,8 @@ package ssm {
     var InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount]
     var InstancesWithMissingPatches: js.UndefOr[Int]
     var InstancesWithNotApplicablePatches: js.UndefOr[Int]
+    var InstancesWithOtherNonCompliantPatches: js.UndefOr[InstancesCount]
+    var InstancesWithSecurityNonCompliantPatches: js.UndefOr[InstancesCount]
     var InstancesWithUnreportedNotApplicablePatches: js.UndefOr[Int]
   }
 
@@ -4779,6 +4789,7 @@ package ssm {
     @inline
     def apply(
         Instances: js.UndefOr[Int] = js.undefined,
+        InstancesWithCriticalNonCompliantPatches: js.UndefOr[InstancesCount] = js.undefined,
         InstancesWithFailedPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithInstalledOtherPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithInstalledPatches: js.UndefOr[Int] = js.undefined,
@@ -4786,10 +4797,13 @@ package ssm {
         InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount] = js.undefined,
         InstancesWithMissingPatches: js.UndefOr[Int] = js.undefined,
         InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithOtherNonCompliantPatches: js.UndefOr[InstancesCount] = js.undefined,
+        InstancesWithSecurityNonCompliantPatches: js.UndefOr[InstancesCount] = js.undefined,
         InstancesWithUnreportedNotApplicablePatches: js.UndefOr[Int] = js.undefined
     ): DescribePatchGroupStateResult = {
       val __obj = js.Dynamic.literal()
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      InstancesWithCriticalNonCompliantPatches.foreach(__v => __obj.updateDynamic("InstancesWithCriticalNonCompliantPatches")(__v.asInstanceOf[js.Any]))
       InstancesWithFailedPatches.foreach(__v => __obj.updateDynamic("InstancesWithFailedPatches")(__v.asInstanceOf[js.Any]))
       InstancesWithInstalledOtherPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledOtherPatches")(__v.asInstanceOf[js.Any]))
       InstancesWithInstalledPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any]))
@@ -4797,6 +4811,8 @@ package ssm {
       InstancesWithInstalledRejectedPatches.foreach(__v => __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any]))
       InstancesWithMissingPatches.foreach(__v => __obj.updateDynamic("InstancesWithMissingPatches")(__v.asInstanceOf[js.Any]))
       InstancesWithNotApplicablePatches.foreach(__v => __obj.updateDynamic("InstancesWithNotApplicablePatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithOtherNonCompliantPatches.foreach(__v => __obj.updateDynamic("InstancesWithOtherNonCompliantPatches")(__v.asInstanceOf[js.Any]))
+      InstancesWithSecurityNonCompliantPatches.foreach(__v => __obj.updateDynamic("InstancesWithSecurityNonCompliantPatches")(__v.asInstanceOf[js.Any]))
       InstancesWithUnreportedNotApplicablePatches.foreach(__v => __obj.updateDynamic("InstancesWithUnreportedNotApplicablePatches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchGroupStateResult]
     }
@@ -7099,6 +7115,7 @@ package ssm {
     var OperationEndTime: DateTime
     var OperationStartTime: DateTime
     var PatchGroup: PatchGroup
+    var CriticalNonCompliantCount: js.UndefOr[PatchCriticalNonCompliantCount]
     var FailedCount: js.UndefOr[PatchFailedCount]
     var InstallOverrideList: js.UndefOr[InstallOverrideList]
     var InstalledCount: js.UndefOr[PatchInstalledCount]
@@ -7108,8 +7125,10 @@ package ssm {
     var LastNoRebootInstallOperationTime: js.UndefOr[DateTime]
     var MissingCount: js.UndefOr[PatchMissingCount]
     var NotApplicableCount: js.UndefOr[PatchNotApplicableCount]
+    var OtherNonCompliantCount: js.UndefOr[PatchOtherNonCompliantCount]
     var OwnerInformation: js.UndefOr[OwnerInformation]
     var RebootOption: js.UndefOr[RebootOption]
+    var SecurityNonCompliantCount: js.UndefOr[PatchSecurityNonCompliantCount]
     var SnapshotId: js.UndefOr[SnapshotId]
     var UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount]
   }
@@ -7123,6 +7142,7 @@ package ssm {
         OperationEndTime: DateTime,
         OperationStartTime: DateTime,
         PatchGroup: PatchGroup,
+        CriticalNonCompliantCount: js.UndefOr[PatchCriticalNonCompliantCount] = js.undefined,
         FailedCount: js.UndefOr[PatchFailedCount] = js.undefined,
         InstallOverrideList: js.UndefOr[InstallOverrideList] = js.undefined,
         InstalledCount: js.UndefOr[PatchInstalledCount] = js.undefined,
@@ -7132,8 +7152,10 @@ package ssm {
         LastNoRebootInstallOperationTime: js.UndefOr[DateTime] = js.undefined,
         MissingCount: js.UndefOr[PatchMissingCount] = js.undefined,
         NotApplicableCount: js.UndefOr[PatchNotApplicableCount] = js.undefined,
+        OtherNonCompliantCount: js.UndefOr[PatchOtherNonCompliantCount] = js.undefined,
         OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
         RebootOption: js.UndefOr[RebootOption] = js.undefined,
+        SecurityNonCompliantCount: js.UndefOr[PatchSecurityNonCompliantCount] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount] = js.undefined
     ): InstancePatchState = {
@@ -7146,6 +7168,7 @@ package ssm {
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
 
+      CriticalNonCompliantCount.foreach(__v => __obj.updateDynamic("CriticalNonCompliantCount")(__v.asInstanceOf[js.Any]))
       FailedCount.foreach(__v => __obj.updateDynamic("FailedCount")(__v.asInstanceOf[js.Any]))
       InstallOverrideList.foreach(__v => __obj.updateDynamic("InstallOverrideList")(__v.asInstanceOf[js.Any]))
       InstalledCount.foreach(__v => __obj.updateDynamic("InstalledCount")(__v.asInstanceOf[js.Any]))
@@ -7155,8 +7178,10 @@ package ssm {
       LastNoRebootInstallOperationTime.foreach(__v => __obj.updateDynamic("LastNoRebootInstallOperationTime")(__v.asInstanceOf[js.Any]))
       MissingCount.foreach(__v => __obj.updateDynamic("MissingCount")(__v.asInstanceOf[js.Any]))
       NotApplicableCount.foreach(__v => __obj.updateDynamic("NotApplicableCount")(__v.asInstanceOf[js.Any]))
+      OtherNonCompliantCount.foreach(__v => __obj.updateDynamic("OtherNonCompliantCount")(__v.asInstanceOf[js.Any]))
       OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
       RebootOption.foreach(__v => __obj.updateDynamic("RebootOption")(__v.asInstanceOf[js.Any]))
+      SecurityNonCompliantCount.foreach(__v => __obj.updateDynamic("SecurityNonCompliantCount")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
       UnreportedNotApplicableCount.foreach(__v => __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstancePatchState]
@@ -10997,6 +11022,7 @@ package ssm {
     var SourceRegions: ResourceDataSyncSourceRegionList
     var SourceType: ResourceDataSyncSourceType
     var AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource]
+    var EnableAllOpsDataSources: js.UndefOr[ResourceDataSyncEnableAllOpsDataSources]
     var IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions]
   }
 
@@ -11006,6 +11032,7 @@ package ssm {
         SourceRegions: ResourceDataSyncSourceRegionList,
         SourceType: ResourceDataSyncSourceType,
         AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource] = js.undefined,
+        EnableAllOpsDataSources: js.UndefOr[ResourceDataSyncEnableAllOpsDataSources] = js.undefined,
         IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions] = js.undefined
     ): ResourceDataSyncSource = {
       val __obj = js.Dynamic.literal(
@@ -11014,6 +11041,7 @@ package ssm {
       )
 
       AwsOrganizationsSource.foreach(__v => __obj.updateDynamic("AwsOrganizationsSource")(__v.asInstanceOf[js.Any]))
+      EnableAllOpsDataSources.foreach(__v => __obj.updateDynamic("EnableAllOpsDataSources")(__v.asInstanceOf[js.Any]))
       IncludeFutureRegions.foreach(__v => __obj.updateDynamic("IncludeFutureRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataSyncSource]
     }
@@ -11028,6 +11056,7 @@ package ssm {
   @js.native
   trait ResourceDataSyncSourceWithState extends js.Object {
     var AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource]
+    var EnableAllOpsDataSources: js.UndefOr[ResourceDataSyncEnableAllOpsDataSources]
     var IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions]
     var SourceRegions: js.UndefOr[ResourceDataSyncSourceRegionList]
     var SourceType: js.UndefOr[ResourceDataSyncSourceType]
@@ -11038,6 +11067,7 @@ package ssm {
     @inline
     def apply(
         AwsOrganizationsSource: js.UndefOr[ResourceDataSyncAwsOrganizationsSource] = js.undefined,
+        EnableAllOpsDataSources: js.UndefOr[ResourceDataSyncEnableAllOpsDataSources] = js.undefined,
         IncludeFutureRegions: js.UndefOr[ResourceDataSyncIncludeFutureRegions] = js.undefined,
         SourceRegions: js.UndefOr[ResourceDataSyncSourceRegionList] = js.undefined,
         SourceType: js.UndefOr[ResourceDataSyncSourceType] = js.undefined,
@@ -11045,6 +11075,7 @@ package ssm {
     ): ResourceDataSyncSourceWithState = {
       val __obj = js.Dynamic.literal()
       AwsOrganizationsSource.foreach(__v => __obj.updateDynamic("AwsOrganizationsSource")(__v.asInstanceOf[js.Any]))
+      EnableAllOpsDataSources.foreach(__v => __obj.updateDynamic("EnableAllOpsDataSources")(__v.asInstanceOf[js.Any]))
       IncludeFutureRegions.foreach(__v => __obj.updateDynamic("IncludeFutureRegions")(__v.asInstanceOf[js.Any]))
       SourceRegions.foreach(__v => __obj.updateDynamic("SourceRegions")(__v.asInstanceOf[js.Any]))
       SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
@@ -11695,10 +11726,12 @@ package ssm {
   trait StartChangeRequestExecutionRequest extends js.Object {
     var DocumentName: DocumentARN
     var Runbooks: Runbooks
+    var ChangeDetails: js.UndefOr[ChangeDetailsValue]
     var ChangeRequestName: js.UndefOr[ChangeRequestName]
     var ClientToken: js.UndefOr[IdempotencyToken]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var Parameters: js.UndefOr[AutomationParameterMap]
+    var ScheduledEndTime: js.UndefOr[DateTime]
     var ScheduledTime: js.UndefOr[DateTime]
     var Tags: js.UndefOr[TagList]
   }
@@ -11708,10 +11741,12 @@ package ssm {
     def apply(
         DocumentName: DocumentARN,
         Runbooks: Runbooks,
+        ChangeDetails: js.UndefOr[ChangeDetailsValue] = js.undefined,
         ChangeRequestName: js.UndefOr[ChangeRequestName] = js.undefined,
         ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        ScheduledEndTime: js.UndefOr[DateTime] = js.undefined,
         ScheduledTime: js.UndefOr[DateTime] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): StartChangeRequestExecutionRequest = {
@@ -11720,10 +11755,12 @@ package ssm {
         "Runbooks" -> Runbooks.asInstanceOf[js.Any]
       )
 
+      ChangeDetails.foreach(__v => __obj.updateDynamic("ChangeDetails")(__v.asInstanceOf[js.Any]))
       ChangeRequestName.foreach(__v => __obj.updateDynamic("ChangeRequestName")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduledEndTime.foreach(__v => __obj.updateDynamic("ScheduledEndTime")(__v.asInstanceOf[js.Any]))
       ScheduledTime.foreach(__v => __obj.updateDynamic("ScheduledTime")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChangeRequestExecutionRequest]
@@ -12073,6 +12110,48 @@ package ssm {
       val __obj = js.Dynamic.literal()
       SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateSessionResponse]
+    }
+  }
+
+  @js.native
+  trait UnlabelParameterVersionRequest extends js.Object {
+    var Labels: ParameterLabelList
+    var Name: PSParameterName
+    var ParameterVersion: PSParameterVersion
+  }
+
+  object UnlabelParameterVersionRequest {
+    @inline
+    def apply(
+        Labels: ParameterLabelList,
+        Name: PSParameterName,
+        ParameterVersion: PSParameterVersion
+    ): UnlabelParameterVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Labels" -> Labels.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ParameterVersion" -> ParameterVersion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UnlabelParameterVersionRequest]
+    }
+  }
+
+  @js.native
+  trait UnlabelParameterVersionResult extends js.Object {
+    var InvalidLabels: js.UndefOr[ParameterLabelList]
+    var RemovedLabels: js.UndefOr[ParameterLabelList]
+  }
+
+  object UnlabelParameterVersionResult {
+    @inline
+    def apply(
+        InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined,
+        RemovedLabels: js.UndefOr[ParameterLabelList] = js.undefined
+    ): UnlabelParameterVersionResult = {
+      val __obj = js.Dynamic.literal()
+      InvalidLabels.foreach(__v => __obj.updateDynamic("InvalidLabels")(__v.asInstanceOf[js.Any]))
+      RemovedLabels.foreach(__v => __obj.updateDynamic("RemovedLabels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnlabelParameterVersionResult]
     }
   }
 

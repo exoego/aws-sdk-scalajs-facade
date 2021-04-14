@@ -17,6 +17,7 @@ package object cloud9 {
   type EnvironmentList = js.Array[Environment]
   type EnvironmentMembersList = js.Array[EnvironmentMember]
   type EnvironmentName = String
+  type ImageId = String
   type InstanceType = String
   type MaxResults = Int
   type PermissionsList = js.Array[Permissions]
@@ -85,6 +86,7 @@ package cloud9 {
     var clientRequestToken: js.UndefOr[ClientRequestToken]
     var connectionType: js.UndefOr[ConnectionType]
     var description: js.UndefOr[EnvironmentDescription]
+    var imageId: js.UndefOr[ImageId]
     var ownerArn: js.UndefOr[UserArn]
     var subnetId: js.UndefOr[SubnetId]
     var tags: js.UndefOr[TagList]
@@ -99,6 +101,7 @@ package cloud9 {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         connectionType: js.UndefOr[ConnectionType] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
+        imageId: js.UndefOr[ImageId] = js.undefined,
         ownerArn: js.UndefOr[UserArn] = js.undefined,
         subnetId: js.UndefOr[SubnetId] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -112,6 +115,7 @@ package cloud9 {
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
       ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -160,16 +164,17 @@ package cloud9 {
 
   @js.native
   trait CreateEnvironmentMembershipResult extends js.Object {
-    var membership: js.UndefOr[EnvironmentMember]
+    var membership: EnvironmentMember
   }
 
   object CreateEnvironmentMembershipResult {
     @inline
     def apply(
-        membership: js.UndefOr[EnvironmentMember] = js.undefined
+        membership: EnvironmentMember
     ): CreateEnvironmentMembershipResult = {
-      val __obj = js.Dynamic.literal()
-      membership.foreach(__v => __obj.updateDynamic("membership")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "membership" -> membership.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[CreateEnvironmentMembershipResult]
     }
   }
@@ -299,19 +304,20 @@ package cloud9 {
 
   @js.native
   trait DescribeEnvironmentStatusResult extends js.Object {
-    var message: js.UndefOr[String]
-    var status: js.UndefOr[EnvironmentStatus]
+    var message: String
+    var status: EnvironmentStatus
   }
 
   object DescribeEnvironmentStatusResult {
     @inline
     def apply(
-        message: js.UndefOr[String] = js.undefined,
-        status: js.UndefOr[EnvironmentStatus] = js.undefined
+        message: String,
+        status: EnvironmentStatus
     ): DescribeEnvironmentStatusResult = {
-      val __obj = js.Dynamic.literal()
-      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "message" -> message.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[DescribeEnvironmentStatusResult]
     }
   }
@@ -353,37 +359,42 @@ package cloud9 {
     */
   @js.native
   trait Environment extends js.Object {
-    var arn: js.UndefOr[String]
+    var arn: String
+    var ownerArn: String
+    var `type`: EnvironmentType
     var connectionType: js.UndefOr[ConnectionType]
     var description: js.UndefOr[EnvironmentDescription]
     var id: js.UndefOr[EnvironmentId]
     var lifecycle: js.UndefOr[EnvironmentLifecycle]
+    var managedCredentialsStatus: js.UndefOr[ManagedCredentialsStatus]
     var name: js.UndefOr[EnvironmentName]
-    var ownerArn: js.UndefOr[String]
-    var `type`: js.UndefOr[EnvironmentType]
   }
 
   object Environment {
     @inline
     def apply(
-        arn: js.UndefOr[String] = js.undefined,
+        arn: String,
+        ownerArn: String,
+        `type`: EnvironmentType,
         connectionType: js.UndefOr[ConnectionType] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
         id: js.UndefOr[EnvironmentId] = js.undefined,
         lifecycle: js.UndefOr[EnvironmentLifecycle] = js.undefined,
-        name: js.UndefOr[EnvironmentName] = js.undefined,
-        ownerArn: js.UndefOr[String] = js.undefined,
-        `type`: js.UndefOr[EnvironmentType] = js.undefined
+        managedCredentialsStatus: js.UndefOr[ManagedCredentialsStatus] = js.undefined,
+        name: js.UndefOr[EnvironmentName] = js.undefined
     ): Environment = {
-      val __obj = js.Dynamic.literal()
-      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "ownerArn" -> ownerArn.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
       connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       lifecycle.foreach(__v => __obj.updateDynamic("lifecycle")(__v.asInstanceOf[js.Any]))
+      managedCredentialsStatus.foreach(__v => __obj.updateDynamic("managedCredentialsStatus")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Environment]
     }
   }
@@ -428,28 +439,30 @@ package cloud9 {
     */
   @js.native
   trait EnvironmentMember extends js.Object {
-    var environmentId: js.UndefOr[EnvironmentId]
+    var environmentId: EnvironmentId
+    var permissions: Permissions
+    var userArn: UserArn
+    var userId: String
     var lastAccess: js.UndefOr[Timestamp]
-    var permissions: js.UndefOr[Permissions]
-    var userArn: js.UndefOr[UserArn]
-    var userId: js.UndefOr[String]
   }
 
   object EnvironmentMember {
     @inline
     def apply(
-        environmentId: js.UndefOr[EnvironmentId] = js.undefined,
-        lastAccess: js.UndefOr[Timestamp] = js.undefined,
-        permissions: js.UndefOr[Permissions] = js.undefined,
-        userArn: js.UndefOr[UserArn] = js.undefined,
-        userId: js.UndefOr[String] = js.undefined
+        environmentId: EnvironmentId,
+        permissions: Permissions,
+        userArn: UserArn,
+        userId: String,
+        lastAccess: js.UndefOr[Timestamp] = js.undefined
     ): EnvironmentMember = {
-      val __obj = js.Dynamic.literal()
-      environmentId.foreach(__v => __obj.updateDynamic("environmentId")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "environmentId" -> environmentId.asInstanceOf[js.Any],
+        "permissions" -> permissions.asInstanceOf[js.Any],
+        "userArn" -> userArn.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
       lastAccess.foreach(__v => __obj.updateDynamic("lastAccess")(__v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
-      userArn.foreach(__v => __obj.updateDynamic("userArn")(__v.asInstanceOf[js.Any]))
-      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentMember]
     }
   }
@@ -546,6 +559,36 @@ package cloud9 {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
+  }
+
+  @js.native
+  sealed trait ManagedCredentialsStatus extends js.Any
+  object ManagedCredentialsStatus {
+    val ENABLED_ON_CREATE = "ENABLED_ON_CREATE".asInstanceOf[ManagedCredentialsStatus]
+    val ENABLED_BY_OWNER = "ENABLED_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
+    val DISABLED_BY_DEFAULT = "DISABLED_BY_DEFAULT".asInstanceOf[ManagedCredentialsStatus]
+    val DISABLED_BY_OWNER = "DISABLED_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
+    val DISABLED_BY_COLLABORATOR = "DISABLED_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
+    val PENDING_REMOVAL_BY_COLLABORATOR = "PENDING_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
+    val PENDING_START_REMOVAL_BY_COLLABORATOR = "PENDING_START_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
+    val PENDING_REMOVAL_BY_OWNER = "PENDING_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
+    val PENDING_START_REMOVAL_BY_OWNER = "PENDING_START_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
+    val FAILED_REMOVAL_BY_COLLABORATOR = "FAILED_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
+    val FAILED_REMOVAL_BY_OWNER = "FAILED_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
+
+    @inline def values = js.Array(
+      ENABLED_ON_CREATE,
+      ENABLED_BY_OWNER,
+      DISABLED_BY_DEFAULT,
+      DISABLED_BY_OWNER,
+      DISABLED_BY_COLLABORATOR,
+      PENDING_REMOVAL_BY_COLLABORATOR,
+      PENDING_START_REMOVAL_BY_COLLABORATOR,
+      PENDING_REMOVAL_BY_OWNER,
+      PENDING_START_REMOVAL_BY_OWNER,
+      FAILED_REMOVAL_BY_COLLABORATOR,
+      FAILED_REMOVAL_BY_OWNER
+    )
   }
 
   @js.native

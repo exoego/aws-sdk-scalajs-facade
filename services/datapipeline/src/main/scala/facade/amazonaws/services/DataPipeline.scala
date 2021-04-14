@@ -497,20 +497,6 @@ package datapipeline {
     }
   }
 
-  /** An internal service error occurred.
-    */
-  @js.native
-  trait InternalServiceErrorException extends js.Object {
-    val message: errorMessage
-  }
-
-  /** The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.
-    */
-  @js.native
-  trait InvalidRequestExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
   /** Contains the parameters for ListPipelines.
     */
   @js.native
@@ -654,13 +640,6 @@ package datapipeline {
     }
   }
 
-  /** The specified pipeline has been deleted.
-    */
-  @js.native
-  trait PipelineDeletedExceptionException extends js.Object {
-    val message: errorMessage
-  }
-
   /** Contains pipeline metadata.
     */
   @js.native
@@ -712,13 +691,6 @@ package datapipeline {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineIdName]
     }
-  }
-
-  /** The specified pipeline was not found. Verify that you used the correct user and account identifiers.
-    */
-  @js.native
-  trait PipelineNotFoundExceptionException extends js.Object {
-    val message: errorMessage
   }
 
   /** Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.
@@ -1152,13 +1124,6 @@ package datapipeline {
       )
       __obj.asInstanceOf[Tag]
     }
-  }
-
-  /** The specified task was not found.
-    */
-  @js.native
-  trait TaskNotFoundExceptionException extends js.Object {
-    val message: errorMessage
   }
 
   /** Contains information about a pipeline task that is assigned to a task runner.

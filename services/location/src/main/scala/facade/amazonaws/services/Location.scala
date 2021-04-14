@@ -430,7 +430,7 @@ package location {
     }
   }
 
-  /** Contains geofence details.
+  /** Contains geofence geometry details.
     */
   @js.native
   trait BatchPutGeofenceRequestEntry extends js.Object {
@@ -564,6 +564,7 @@ package location {
     var CollectionName: ResourceName
     var PricingPlan: PricingPlan
     var Description: js.UndefOr[ResourceDescription]
+    var PricingPlanDataSource: js.UndefOr[String]
   }
 
   object CreateGeofenceCollectionRequest {
@@ -571,7 +572,8 @@ package location {
     def apply(
         CollectionName: ResourceName,
         PricingPlan: PricingPlan,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
     ): CreateGeofenceCollectionRequest = {
       val __obj = js.Dynamic.literal(
         "CollectionName" -> CollectionName.asInstanceOf[js.Any],
@@ -579,6 +581,7 @@ package location {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGeofenceCollectionRequest]
     }
   }
@@ -714,6 +717,7 @@ package location {
     var PricingPlan: PricingPlan
     var TrackerName: ResourceName
     var Description: js.UndefOr[ResourceDescription]
+    var PricingPlanDataSource: js.UndefOr[String]
   }
 
   object CreateTrackerRequest {
@@ -721,7 +725,8 @@ package location {
     def apply(
         PricingPlan: PricingPlan,
         TrackerName: ResourceName,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
     ): CreateTrackerRequest = {
       val __obj = js.Dynamic.literal(
         "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
@@ -729,6 +734,7 @@ package location {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTrackerRequest]
     }
   }
@@ -912,7 +918,9 @@ package location {
     var CollectionName: ResourceName
     var CreateTime: Timestamp
     var Description: ResourceDescription
+    var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
+    var PricingPlanDataSource: js.UndefOr[String]
   }
 
   object DescribeGeofenceCollectionResponse {
@@ -922,15 +930,20 @@ package location {
         CollectionName: ResourceName,
         CreateTime: Timestamp,
         Description: ResourceDescription,
-        UpdateTime: Timestamp
+        PricingPlan: PricingPlan,
+        UpdateTime: Timestamp,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
     ): DescribeGeofenceCollectionResponse = {
       val __obj = js.Dynamic.literal(
         "CollectionArn" -> CollectionArn.asInstanceOf[js.Any],
         "CollectionName" -> CollectionName.asInstanceOf[js.Any],
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
+
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGeofenceCollectionResponse]
     }
   }
@@ -960,6 +973,7 @@ package location {
     var Description: ResourceDescription
     var MapArn: Arn
     var MapName: ResourceName
+    var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
   }
 
@@ -972,6 +986,7 @@ package location {
         Description: ResourceDescription,
         MapArn: Arn,
         MapName: ResourceName,
+        PricingPlan: PricingPlan,
         UpdateTime: Timestamp
     ): DescribeMapResponse = {
       val __obj = js.Dynamic.literal(
@@ -981,6 +996,7 @@ package location {
         "Description" -> Description.asInstanceOf[js.Any],
         "MapArn" -> MapArn.asInstanceOf[js.Any],
         "MapName" -> MapName.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DescribeMapResponse]
@@ -1012,6 +1028,7 @@ package location {
     var Description: ResourceDescription
     var IndexArn: Arn
     var IndexName: ResourceName
+    var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
   }
 
@@ -1024,6 +1041,7 @@ package location {
         Description: ResourceDescription,
         IndexArn: Arn,
         IndexName: ResourceName,
+        PricingPlan: PricingPlan,
         UpdateTime: Timestamp
     ): DescribePlaceIndexResponse = {
       val __obj = js.Dynamic.literal(
@@ -1033,6 +1051,7 @@ package location {
         "Description" -> Description.asInstanceOf[js.Any],
         "IndexArn" -> IndexArn.asInstanceOf[js.Any],
         "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DescribePlaceIndexResponse]
@@ -1060,9 +1079,11 @@ package location {
   trait DescribeTrackerResponse extends js.Object {
     var CreateTime: Timestamp
     var Description: ResourceDescription
+    var PricingPlan: PricingPlan
     var TrackerArn: Arn
     var TrackerName: ResourceName
     var UpdateTime: Timestamp
+    var PricingPlanDataSource: js.UndefOr[String]
   }
 
   object DescribeTrackerResponse {
@@ -1070,17 +1091,22 @@ package location {
     def apply(
         CreateTime: Timestamp,
         Description: ResourceDescription,
+        PricingPlan: PricingPlan,
         TrackerArn: Arn,
         TrackerName: ResourceName,
-        UpdateTime: Timestamp
+        UpdateTime: Timestamp,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
     ): DescribeTrackerResponse = {
       val __obj = js.Dynamic.literal(
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "TrackerArn" -> TrackerArn.asInstanceOf[js.Any],
         "TrackerName" -> TrackerName.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
+
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTrackerResponse]
     }
   }
@@ -1172,7 +1198,7 @@ package location {
 
   /** Contains the geofence geometry details.
     *
-    * '''Note:'''Limitation — Amazon Location does not currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian.
+    * '''Note:'''Amazon Location does not currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian.
     */
   @js.native
   trait GeofenceGeometry extends js.Object {
@@ -1555,7 +1581,9 @@ package location {
     var CollectionName: ResourceName
     var CreateTime: Timestamp
     var Description: ResourceDescription
+    var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
+    var PricingPlanDataSource: js.UndefOr[String]
   }
 
   object ListGeofenceCollectionsResponseEntry {
@@ -1564,14 +1592,19 @@ package location {
         CollectionName: ResourceName,
         CreateTime: Timestamp,
         Description: ResourceDescription,
-        UpdateTime: Timestamp
+        PricingPlan: PricingPlan,
+        UpdateTime: Timestamp,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
     ): ListGeofenceCollectionsResponseEntry = {
       val __obj = js.Dynamic.literal(
         "CollectionName" -> CollectionName.asInstanceOf[js.Any],
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
+
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGeofenceCollectionsResponseEntry]
     }
   }
@@ -1697,6 +1730,7 @@ package location {
     var DataSource: String
     var Description: ResourceDescription
     var MapName: ResourceName
+    var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
   }
 
@@ -1707,6 +1741,7 @@ package location {
         DataSource: String,
         Description: ResourceDescription,
         MapName: ResourceName,
+        PricingPlan: PricingPlan,
         UpdateTime: Timestamp
     ): ListMapsResponseEntry = {
       val __obj = js.Dynamic.literal(
@@ -1714,6 +1749,7 @@ package location {
         "DataSource" -> DataSource.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
         "MapName" -> MapName.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ListMapsResponseEntry]
@@ -1768,6 +1804,7 @@ package location {
     var DataSource: String
     var Description: ResourceDescription
     var IndexName: ResourceName
+    var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
   }
 
@@ -1778,6 +1815,7 @@ package location {
         DataSource: String,
         Description: ResourceDescription,
         IndexName: ResourceName,
+        PricingPlan: PricingPlan,
         UpdateTime: Timestamp
     ): ListPlaceIndexesResponseEntry = {
       val __obj = js.Dynamic.literal(
@@ -1785,6 +1823,7 @@ package location {
         "DataSource" -> DataSource.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
         "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ListPlaceIndexesResponseEntry]
@@ -1882,8 +1921,10 @@ package location {
   trait ListTrackersResponseEntry extends js.Object {
     var CreateTime: Timestamp
     var Description: ResourceDescription
+    var PricingPlan: PricingPlan
     var TrackerName: ResourceName
     var UpdateTime: Timestamp
+    var PricingPlanDataSource: js.UndefOr[String]
   }
 
   object ListTrackersResponseEntry {
@@ -1891,15 +1932,20 @@ package location {
     def apply(
         CreateTime: Timestamp,
         Description: ResourceDescription,
+        PricingPlan: PricingPlan,
         TrackerName: ResourceName,
-        UpdateTime: Timestamp
+        UpdateTime: Timestamp,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
     ): ListTrackersResponseEntry = {
       val __obj = js.Dynamic.literal(
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
         "Description" -> Description.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "TrackerName" -> TrackerName.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
+
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrackersResponseEntry]
     }
   }

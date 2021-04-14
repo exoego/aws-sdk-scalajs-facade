@@ -900,6 +900,33 @@ package mediapackage {
     }
   }
 
+  /** Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0.
+    * The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream.
+    * To configure the encryption contract, specify which audio and video encryption presets to use.
+    * Note the following considerations when using encryptionContractConfiguration:
+    * encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.
+    * You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+    */
+  @js.native
+  trait EncryptionContractConfiguration extends js.Object {
+    var PresetSpeke20Audio: PresetSpeke20Audio
+    var PresetSpeke20Video: PresetSpeke20Video
+  }
+
+  object EncryptionContractConfiguration {
+    @inline
+    def apply(
+        PresetSpeke20Audio: PresetSpeke20Audio,
+        PresetSpeke20Video: PresetSpeke20Video
+    ): EncryptionContractConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "PresetSpeke20Audio" -> PresetSpeke20Audio.asInstanceOf[js.Any],
+        "PresetSpeke20Video" -> PresetSpeke20Video.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EncryptionContractConfiguration]
+    }
+  }
+
   @js.native
   sealed trait EncryptionMethod extends js.Any
   object EncryptionMethod {
@@ -1473,6 +1500,22 @@ package mediapackage {
   }
 
   @js.native
+  sealed trait PresetSpeke20Audio extends js.Any
+  object PresetSpeke20Audio {
+    val `PRESET-AUDIO-1` = "PRESET-AUDIO-1".asInstanceOf[PresetSpeke20Audio]
+
+    @inline def values = js.Array(`PRESET-AUDIO-1`)
+  }
+
+  @js.native
+  sealed trait PresetSpeke20Video extends js.Any
+  object PresetSpeke20Video {
+    val `PRESET-VIDEO-1` = "PRESET-VIDEO-1".asInstanceOf[PresetSpeke20Video]
+
+    @inline def values = js.Array(`PRESET-VIDEO-1`)
+  }
+
+  @js.native
   sealed trait Profile extends js.Any
   object Profile {
     val NONE = "NONE".asInstanceOf[Profile]
@@ -1632,6 +1675,7 @@ package mediapackage {
     var SystemIds: __listOf__string
     var Url: __string
     var CertificateArn: js.UndefOr[__string]
+    var EncryptionContractConfiguration: js.UndefOr[EncryptionContractConfiguration]
   }
 
   object SpekeKeyProvider {
@@ -1641,7 +1685,8 @@ package mediapackage {
         RoleArn: __string,
         SystemIds: __listOf__string,
         Url: __string,
-        CertificateArn: js.UndefOr[__string] = js.undefined
+        CertificateArn: js.UndefOr[__string] = js.undefined,
+        EncryptionContractConfiguration: js.UndefOr[EncryptionContractConfiguration] = js.undefined
     ): SpekeKeyProvider = {
       val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
@@ -1651,6 +1696,7 @@ package mediapackage {
       )
 
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      EncryptionContractConfiguration.foreach(__v => __obj.updateDynamic("EncryptionContractConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }

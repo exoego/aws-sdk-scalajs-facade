@@ -49,8 +49,13 @@ package object storagegateway {
   type FileShareInfoList = js.Array[FileShareInfo]
   type FileShareName = String
   type FileShareStatus = String
-  type FileShareUser = String
-  type FileShareUserList = js.Array[FileShareUser]
+  type FileSystemAssociationARN = String
+  type FileSystemAssociationARNList = js.Array[FileSystemAssociationARN]
+  type FileSystemAssociationId = String
+  type FileSystemAssociationInfoList = js.Array[FileSystemAssociationInfo]
+  type FileSystemAssociationStatus = String
+  type FileSystemAssociationSummaryList = js.Array[FileSystemAssociationSummary]
+  type FileSystemLocationARN = String
   type Folder = String
   type FolderList = js.Array[Folder]
   type GatewayARN = String
@@ -128,6 +133,8 @@ package object storagegateway {
   type TargetName = String
   type Time = js.Date
   type TimeoutInSeconds = Int
+  type UserList = js.Array[UserListUser]
+  type UserListUser = String
   type VTLDeviceARN = String
   type VTLDeviceARNs = js.Array[VTLDeviceARN]
   type VTLDeviceProductIdentifier = String
@@ -153,6 +160,7 @@ package object storagegateway {
     @inline def addUploadBufferFuture(params: AddUploadBufferInput): Future[AddUploadBufferOutput] = service.addUploadBuffer(params).promise().toFuture
     @inline def addWorkingStorageFuture(params: AddWorkingStorageInput): Future[AddWorkingStorageOutput] = service.addWorkingStorage(params).promise().toFuture
     @inline def assignTapePoolFuture(params: AssignTapePoolInput): Future[AssignTapePoolOutput] = service.assignTapePool(params).promise().toFuture
+    @inline def associateFileSystemFuture(params: AssociateFileSystemInput): Future[AssociateFileSystemOutput] = service.associateFileSystem(params).promise().toFuture
     @inline def attachVolumeFuture(params: AttachVolumeInput): Future[AttachVolumeOutput] = service.attachVolume(params).promise().toFuture
     @inline def cancelArchivalFuture(params: CancelArchivalInput): Future[CancelArchivalOutput] = service.cancelArchival(params).promise().toFuture
     @inline def cancelRetrievalFuture(params: CancelRetrievalInput): Future[CancelRetrievalOutput] = service.cancelRetrieval(params).promise().toFuture
@@ -181,6 +189,7 @@ package object storagegateway {
     @inline def describeCacheFuture(params: DescribeCacheInput): Future[DescribeCacheOutput] = service.describeCache(params).promise().toFuture
     @inline def describeCachediSCSIVolumesFuture(params: DescribeCachediSCSIVolumesInput): Future[DescribeCachediSCSIVolumesOutput] = service.describeCachediSCSIVolumes(params).promise().toFuture
     @inline def describeChapCredentialsFuture(params: DescribeChapCredentialsInput): Future[DescribeChapCredentialsOutput] = service.describeChapCredentials(params).promise().toFuture
+    @inline def describeFileSystemAssociationsFuture(params: DescribeFileSystemAssociationsInput): Future[DescribeFileSystemAssociationsOutput] = service.describeFileSystemAssociations(params).promise().toFuture
     @inline def describeGatewayInformationFuture(params: DescribeGatewayInformationInput): Future[DescribeGatewayInformationOutput] = service.describeGatewayInformation(params).promise().toFuture
     @inline def describeMaintenanceStartTimeFuture(params: DescribeMaintenanceStartTimeInput): Future[DescribeMaintenanceStartTimeOutput] = service.describeMaintenanceStartTime(params).promise().toFuture
     @inline def describeNFSFileSharesFuture(params: DescribeNFSFileSharesInput): Future[DescribeNFSFileSharesOutput] = service.describeNFSFileShares(params).promise().toFuture
@@ -196,9 +205,11 @@ package object storagegateway {
     @inline def describeWorkingStorageFuture(params: DescribeWorkingStorageInput): Future[DescribeWorkingStorageOutput] = service.describeWorkingStorage(params).promise().toFuture
     @inline def detachVolumeFuture(params: DetachVolumeInput): Future[DetachVolumeOutput] = service.detachVolume(params).promise().toFuture
     @inline def disableGatewayFuture(params: DisableGatewayInput): Future[DisableGatewayOutput] = service.disableGateway(params).promise().toFuture
+    @inline def disassociateFileSystemFuture(params: DisassociateFileSystemInput): Future[DisassociateFileSystemOutput] = service.disassociateFileSystem(params).promise().toFuture
     @inline def joinDomainFuture(params: JoinDomainInput): Future[JoinDomainOutput] = service.joinDomain(params).promise().toFuture
     @inline def listAutomaticTapeCreationPoliciesFuture(params: ListAutomaticTapeCreationPoliciesInput): Future[ListAutomaticTapeCreationPoliciesOutput] = service.listAutomaticTapeCreationPolicies(params).promise().toFuture
     @inline def listFileSharesFuture(params: ListFileSharesInput): Future[ListFileSharesOutput] = service.listFileShares(params).promise().toFuture
+    @inline def listFileSystemAssociationsFuture(params: ListFileSystemAssociationsInput): Future[ListFileSystemAssociationsOutput] = service.listFileSystemAssociations(params).promise().toFuture
     @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] = service.listGateways(params).promise().toFuture
     @inline def listLocalDisksFuture(params: ListLocalDisksInput): Future[ListLocalDisksOutput] = service.listLocalDisks(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
@@ -222,6 +233,7 @@ package object storagegateway {
     @inline def updateBandwidthRateLimitFuture(params: UpdateBandwidthRateLimitInput): Future[UpdateBandwidthRateLimitOutput] = service.updateBandwidthRateLimit(params).promise().toFuture
     @inline def updateBandwidthRateLimitScheduleFuture(params: UpdateBandwidthRateLimitScheduleInput): Future[UpdateBandwidthRateLimitScheduleOutput] = service.updateBandwidthRateLimitSchedule(params).promise().toFuture
     @inline def updateChapCredentialsFuture(params: UpdateChapCredentialsInput): Future[UpdateChapCredentialsOutput] = service.updateChapCredentials(params).promise().toFuture
+    @inline def updateFileSystemAssociationFuture(params: UpdateFileSystemAssociationInput): Future[UpdateFileSystemAssociationOutput] = service.updateFileSystemAssociation(params).promise().toFuture
     @inline def updateGatewayInformationFuture(params: UpdateGatewayInformationInput): Future[UpdateGatewayInformationOutput] = service.updateGatewayInformation(params).promise().toFuture
     @inline def updateGatewaySoftwareNowFuture(params: UpdateGatewaySoftwareNowInput): Future[UpdateGatewaySoftwareNowOutput] = service.updateGatewaySoftwareNow(params).promise().toFuture
     @inline def updateMaintenanceStartTimeFuture(params: UpdateMaintenanceStartTimeInput): Future[UpdateMaintenanceStartTimeOutput] = service.updateMaintenanceStartTime(params).promise().toFuture
@@ -247,6 +259,7 @@ package storagegateway {
     def addUploadBuffer(params: AddUploadBufferInput): Request[AddUploadBufferOutput] = js.native
     def addWorkingStorage(params: AddWorkingStorageInput): Request[AddWorkingStorageOutput] = js.native
     def assignTapePool(params: AssignTapePoolInput): Request[AssignTapePoolOutput] = js.native
+    def associateFileSystem(params: AssociateFileSystemInput): Request[AssociateFileSystemOutput] = js.native
     def attachVolume(params: AttachVolumeInput): Request[AttachVolumeOutput] = js.native
     def cancelArchival(params: CancelArchivalInput): Request[CancelArchivalOutput] = js.native
     def cancelRetrieval(params: CancelRetrievalInput): Request[CancelRetrievalOutput] = js.native
@@ -275,6 +288,7 @@ package storagegateway {
     def describeCache(params: DescribeCacheInput): Request[DescribeCacheOutput] = js.native
     def describeCachediSCSIVolumes(params: DescribeCachediSCSIVolumesInput): Request[DescribeCachediSCSIVolumesOutput] = js.native
     def describeChapCredentials(params: DescribeChapCredentialsInput): Request[DescribeChapCredentialsOutput] = js.native
+    def describeFileSystemAssociations(params: DescribeFileSystemAssociationsInput): Request[DescribeFileSystemAssociationsOutput] = js.native
     def describeGatewayInformation(params: DescribeGatewayInformationInput): Request[DescribeGatewayInformationOutput] = js.native
     def describeMaintenanceStartTime(params: DescribeMaintenanceStartTimeInput): Request[DescribeMaintenanceStartTimeOutput] = js.native
     def describeNFSFileShares(params: DescribeNFSFileSharesInput): Request[DescribeNFSFileSharesOutput] = js.native
@@ -290,9 +304,11 @@ package storagegateway {
     def describeWorkingStorage(params: DescribeWorkingStorageInput): Request[DescribeWorkingStorageOutput] = js.native
     def detachVolume(params: DetachVolumeInput): Request[DetachVolumeOutput] = js.native
     def disableGateway(params: DisableGatewayInput): Request[DisableGatewayOutput] = js.native
+    def disassociateFileSystem(params: DisassociateFileSystemInput): Request[DisassociateFileSystemOutput] = js.native
     def joinDomain(params: JoinDomainInput): Request[JoinDomainOutput] = js.native
     def listAutomaticTapeCreationPolicies(params: ListAutomaticTapeCreationPoliciesInput): Request[ListAutomaticTapeCreationPoliciesOutput] = js.native
     def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput] = js.native
+    def listFileSystemAssociations(params: ListFileSystemAssociationsInput): Request[ListFileSystemAssociationsOutput] = js.native
     def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput] = js.native
     def listLocalDisks(params: ListLocalDisksInput): Request[ListLocalDisksOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
@@ -316,6 +332,7 @@ package storagegateway {
     def updateBandwidthRateLimit(params: UpdateBandwidthRateLimitInput): Request[UpdateBandwidthRateLimitOutput] = js.native
     def updateBandwidthRateLimitSchedule(params: UpdateBandwidthRateLimitScheduleInput): Request[UpdateBandwidthRateLimitScheduleOutput] = js.native
     def updateChapCredentials(params: UpdateChapCredentialsInput): Request[UpdateChapCredentialsOutput] = js.native
+    def updateFileSystemAssociation(params: UpdateFileSystemAssociationInput): Request[UpdateFileSystemAssociationOutput] = js.native
     def updateGatewayInformation(params: UpdateGatewayInformationInput): Request[UpdateGatewayInformationOutput] = js.native
     def updateGatewaySoftwareNow(params: UpdateGatewaySoftwareNowInput): Request[UpdateGatewaySoftwareNowOutput] = js.native
     def updateMaintenanceStartTime(params: UpdateMaintenanceStartTimeInput): Request[UpdateMaintenanceStartTimeOutput] = js.native
@@ -599,6 +616,61 @@ package storagegateway {
   }
 
   @js.native
+  trait AssociateFileSystemInput extends js.Object {
+    var ClientToken: ClientToken
+    var GatewayARN: GatewayARN
+    var LocationARN: FileSystemLocationARN
+    var Password: DomainUserPassword
+    var UserName: DomainUserName
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
+    var CacheAttributes: js.UndefOr[CacheAttributes]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object AssociateFileSystemInput {
+    @inline
+    def apply(
+        ClientToken: ClientToken,
+        GatewayARN: GatewayARN,
+        LocationARN: FileSystemLocationARN,
+        Password: DomainUserPassword,
+        UserName: DomainUserName,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): AssociateFileSystemInput = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "LocationARN" -> LocationARN.asInstanceOf[js.Any],
+        "Password" -> Password.asInstanceOf[js.Any],
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      )
+
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateFileSystemInput]
+    }
+  }
+
+  @js.native
+  trait AssociateFileSystemOutput extends js.Object {
+    var FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN]
+  }
+
+  object AssociateFileSystemOutput {
+    @inline
+    def apply(
+        FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN] = js.undefined
+    ): AssociateFileSystemOutput = {
+      val __obj = js.Dynamic.literal()
+      FileSystemAssociationARN.foreach(__v => __obj.updateDynamic("FileSystemAssociationARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateFileSystemOutput]
+    }
+  }
+
+  @js.native
   trait AttachVolumeInput extends js.Object {
     var GatewayARN: GatewayARN
     var NetworkInterfaceId: NetworkInterfaceId
@@ -748,7 +820,7 @@ package storagegateway {
     }
   }
 
-  /** Lists refresh cache information.
+  /** The refresh cache information for the file share.
     */
   @js.native
   trait CacheAttributes extends js.Object {
@@ -1084,7 +1156,7 @@ package storagegateway {
     var LocationARN: LocationARN
     var Role: Role
     var AccessBasedEnumeration: js.UndefOr[Boolean]
-    var AdminUserList: js.UndefOr[FileShareUserList]
+    var AdminUserList: js.UndefOr[UserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
     var CacheAttributes: js.UndefOr[CacheAttributes]
@@ -1092,7 +1164,7 @@ package storagegateway {
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var FileShareName: js.UndefOr[FileShareName]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
-    var InvalidUserList: js.UndefOr[FileShareUserList]
+    var InvalidUserList: js.UndefOr[UserList]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var NotificationPolicy: js.UndefOr[NotificationPolicy]
@@ -1101,7 +1173,7 @@ package storagegateway {
     var RequesterPays: js.UndefOr[Boolean]
     var SMBACLEnabled: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
-    var ValidUserList: js.UndefOr[FileShareUserList]
+    var ValidUserList: js.UndefOr[UserList]
   }
 
   object CreateSMBFileShareInput {
@@ -1112,7 +1184,7 @@ package storagegateway {
         LocationARN: LocationARN,
         Role: Role,
         AccessBasedEnumeration: js.UndefOr[Boolean] = js.undefined,
-        AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        AdminUserList: js.UndefOr[UserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
@@ -1120,7 +1192,7 @@ package storagegateway {
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         FileShareName: js.UndefOr[FileShareName] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-        InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        InvalidUserList: js.UndefOr[UserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
@@ -1129,7 +1201,7 @@ package storagegateway {
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
+        ValidUserList: js.UndefOr[UserList] = js.undefined
     ): CreateSMBFileShareInput = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
@@ -2125,6 +2197,39 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait DescribeFileSystemAssociationsInput extends js.Object {
+    var FileSystemAssociationARNList: FileSystemAssociationARNList
+  }
+
+  object DescribeFileSystemAssociationsInput {
+    @inline
+    def apply(
+        FileSystemAssociationARNList: FileSystemAssociationARNList
+    ): DescribeFileSystemAssociationsInput = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemAssociationARNList" -> FileSystemAssociationARNList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFileSystemAssociationsInput]
+    }
+  }
+
+  @js.native
+  trait DescribeFileSystemAssociationsOutput extends js.Object {
+    var FileSystemAssociationInfoList: js.UndefOr[FileSystemAssociationInfoList]
+  }
+
+  object DescribeFileSystemAssociationsOutput {
+    @inline
+    def apply(
+        FileSystemAssociationInfoList: js.UndefOr[FileSystemAssociationInfoList] = js.undefined
+    ): DescribeFileSystemAssociationsOutput = {
+      val __obj = js.Dynamic.literal()
+      FileSystemAssociationInfoList.foreach(__v => __obj.updateDynamic("FileSystemAssociationInfoList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileSystemAssociationsOutput]
+    }
+  }
+
   /** A JSON object containing the ID of the gateway.
     */
   @js.native
@@ -2840,6 +2945,43 @@ package storagegateway {
     }
   }
 
+  @js.native
+  trait DisassociateFileSystemInput extends js.Object {
+    var FileSystemAssociationARN: FileSystemAssociationARN
+    var ForceDelete: js.UndefOr[Boolean]
+  }
+
+  object DisassociateFileSystemInput {
+    @inline
+    def apply(
+        FileSystemAssociationARN: FileSystemAssociationARN,
+        ForceDelete: js.UndefOr[Boolean] = js.undefined
+    ): DisassociateFileSystemInput = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemAssociationARN" -> FileSystemAssociationARN.asInstanceOf[js.Any]
+      )
+
+      ForceDelete.foreach(__v => __obj.updateDynamic("ForceDelete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateFileSystemInput]
+    }
+  }
+
+  @js.native
+  trait DisassociateFileSystemOutput extends js.Object {
+    var FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN]
+  }
+
+  object DisassociateFileSystemOutput {
+    @inline
+    def apply(
+        FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN] = js.undefined
+    ): DisassociateFileSystemOutput = {
+      val __obj = js.Dynamic.literal()
+      FileSystemAssociationARN.foreach(__v => __obj.updateDynamic("FileSystemAssociationARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateFileSystemOutput]
+    }
+  }
+
   /** Represents a gateway's local disk.
     */
   @js.native
@@ -2918,6 +3060,69 @@ package storagegateway {
     val SMB = "SMB".asInstanceOf[FileShareType]
 
     @inline def values = js.Array(NFS, SMB)
+  }
+
+  /** Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.
+    */
+  @js.native
+  trait FileSystemAssociationInfo extends js.Object {
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
+    var CacheAttributes: js.UndefOr[CacheAttributes]
+    var FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN]
+    var FileSystemAssociationStatus: js.UndefOr[FileSystemAssociationStatus]
+    var GatewayARN: js.UndefOr[GatewayARN]
+    var LocationARN: js.UndefOr[FileSystemLocationARN]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object FileSystemAssociationInfo {
+    @inline
+    def apply(
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN] = js.undefined,
+        FileSystemAssociationStatus: js.UndefOr[FileSystemAssociationStatus] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        LocationARN: js.UndefOr[FileSystemLocationARN] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): FileSystemAssociationInfo = {
+      val __obj = js.Dynamic.literal()
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      FileSystemAssociationARN.foreach(__v => __obj.updateDynamic("FileSystemAssociationARN")(__v.asInstanceOf[js.Any]))
+      FileSystemAssociationStatus.foreach(__v => __obj.updateDynamic("FileSystemAssociationStatus")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSystemAssociationInfo]
+    }
+  }
+
+  /** Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.
+    */
+  @js.native
+  trait FileSystemAssociationSummary extends js.Object {
+    var FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN]
+    var FileSystemAssociationId: js.UndefOr[FileSystemAssociationId]
+    var FileSystemAssociationStatus: js.UndefOr[FileSystemAssociationStatus]
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object FileSystemAssociationSummary {
+    @inline
+    def apply(
+        FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN] = js.undefined,
+        FileSystemAssociationId: js.UndefOr[FileSystemAssociationId] = js.undefined,
+        FileSystemAssociationStatus: js.UndefOr[FileSystemAssociationStatus] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): FileSystemAssociationSummary = {
+      val __obj = js.Dynamic.literal()
+      FileSystemAssociationARN.foreach(__v => __obj.updateDynamic("FileSystemAssociationARN")(__v.asInstanceOf[js.Any]))
+      FileSystemAssociationId.foreach(__v => __obj.updateDynamic("FileSystemAssociationId")(__v.asInstanceOf[js.Any]))
+      FileSystemAssociationStatus.foreach(__v => __obj.updateDynamic("FileSystemAssociationStatus")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSystemAssociationSummary]
+    }
   }
 
   /** Describes a gateway object.
@@ -3100,6 +3305,50 @@ package storagegateway {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFileSharesOutput]
+    }
+  }
+
+  @js.native
+  trait ListFileSystemAssociationsInput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+    var Limit: js.UndefOr[PositiveIntObject]
+    var Marker: js.UndefOr[Marker]
+  }
+
+  object ListFileSystemAssociationsInput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListFileSystemAssociationsInput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFileSystemAssociationsInput]
+    }
+  }
+
+  @js.native
+  trait ListFileSystemAssociationsOutput extends js.Object {
+    var FileSystemAssociationSummaryList: js.UndefOr[FileSystemAssociationSummaryList]
+    var Marker: js.UndefOr[Marker]
+    var NextMarker: js.UndefOr[Marker]
+  }
+
+  object ListFileSystemAssociationsOutput {
+    @inline
+    def apply(
+        FileSystemAssociationSummaryList: js.UndefOr[FileSystemAssociationSummaryList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        NextMarker: js.UndefOr[Marker] = js.undefined
+    ): ListFileSystemAssociationsOutput = {
+      val __obj = js.Dynamic.literal()
+      FileSystemAssociationSummaryList.foreach(__v => __obj.updateDynamic("FileSystemAssociationSummaryList")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFileSystemAssociationsOutput]
     }
   }
 
@@ -3863,7 +4112,7 @@ package storagegateway {
   @js.native
   trait SMBFileShareInfo extends js.Object {
     var AccessBasedEnumeration: js.UndefOr[Boolean]
-    var AdminUserList: js.UndefOr[FileShareUserList]
+    var AdminUserList: js.UndefOr[UserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
     var CacheAttributes: js.UndefOr[CacheAttributes]
@@ -3875,7 +4124,7 @@ package storagegateway {
     var FileShareStatus: js.UndefOr[FileShareStatus]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
-    var InvalidUserList: js.UndefOr[FileShareUserList]
+    var InvalidUserList: js.UndefOr[UserList]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var LocationARN: js.UndefOr[LocationARN]
@@ -3887,14 +4136,14 @@ package storagegateway {
     var Role: js.UndefOr[Role]
     var SMBACLEnabled: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
-    var ValidUserList: js.UndefOr[FileShareUserList]
+    var ValidUserList: js.UndefOr[UserList]
   }
 
   object SMBFileShareInfo {
     @inline
     def apply(
         AccessBasedEnumeration: js.UndefOr[Boolean] = js.undefined,
-        AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        AdminUserList: js.UndefOr[UserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
@@ -3906,7 +4155,7 @@ package storagegateway {
         FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-        InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        InvalidUserList: js.UndefOr[UserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         LocationARN: js.UndefOr[LocationARN] = js.undefined,
@@ -3918,7 +4167,7 @@ package storagegateway {
         Role: js.UndefOr[Role] = js.undefined,
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
-        ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
+        ValidUserList: js.UndefOr[UserList] = js.undefined
     ): SMBFileShareInfo = {
       val __obj = js.Dynamic.literal()
       AccessBasedEnumeration.foreach(__v => __obj.updateDynamic("AccessBasedEnumeration")(__v.asInstanceOf[js.Any]))
@@ -4578,6 +4827,52 @@ package storagegateway {
   }
 
   @js.native
+  trait UpdateFileSystemAssociationInput extends js.Object {
+    var FileSystemAssociationARN: FileSystemAssociationARN
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
+    var CacheAttributes: js.UndefOr[CacheAttributes]
+    var Password: js.UndefOr[DomainUserPassword]
+    var UserName: js.UndefOr[DomainUserName]
+  }
+
+  object UpdateFileSystemAssociationInput {
+    @inline
+    def apply(
+        FileSystemAssociationARN: FileSystemAssociationARN,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
+        CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        Password: js.UndefOr[DomainUserPassword] = js.undefined,
+        UserName: js.UndefOr[DomainUserName] = js.undefined
+    ): UpdateFileSystemAssociationInput = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemAssociationARN" -> FileSystemAssociationARN.asInstanceOf[js.Any]
+      )
+
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
+      CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFileSystemAssociationInput]
+    }
+  }
+
+  @js.native
+  trait UpdateFileSystemAssociationOutput extends js.Object {
+    var FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN]
+  }
+
+  object UpdateFileSystemAssociationOutput {
+    @inline
+    def apply(
+        FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN] = js.undefined
+    ): UpdateFileSystemAssociationOutput = {
+      val __obj = js.Dynamic.literal()
+      FileSystemAssociationARN.foreach(__v => __obj.updateDynamic("FileSystemAssociationARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFileSystemAssociationOutput]
+    }
+  }
+
+  @js.native
   trait UpdateGatewayInformationInput extends js.Object {
     var GatewayARN: GatewayARN
     var CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN]
@@ -4793,14 +5088,14 @@ package storagegateway {
   trait UpdateSMBFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
     var AccessBasedEnumeration: js.UndefOr[Boolean]
-    var AdminUserList: js.UndefOr[FileShareUserList]
+    var AdminUserList: js.UndefOr[UserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var CacheAttributes: js.UndefOr[CacheAttributes]
     var CaseSensitivity: js.UndefOr[CaseSensitivity]
     var DefaultStorageClass: js.UndefOr[StorageClass]
     var FileShareName: js.UndefOr[FileShareName]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
-    var InvalidUserList: js.UndefOr[FileShareUserList]
+    var InvalidUserList: js.UndefOr[UserList]
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var NotificationPolicy: js.UndefOr[NotificationPolicy]
@@ -4808,7 +5103,7 @@ package storagegateway {
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var SMBACLEnabled: js.UndefOr[Boolean]
-    var ValidUserList: js.UndefOr[FileShareUserList]
+    var ValidUserList: js.UndefOr[UserList]
   }
 
   object UpdateSMBFileShareInput {
@@ -4816,14 +5111,14 @@ package storagegateway {
     def apply(
         FileShareARN: FileShareARN,
         AccessBasedEnumeration: js.UndefOr[Boolean] = js.undefined,
-        AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        AdminUserList: js.UndefOr[UserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         CaseSensitivity: js.UndefOr[CaseSensitivity] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
         FileShareName: js.UndefOr[FileShareName] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-        InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        InvalidUserList: js.UndefOr[UserList] = js.undefined,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
@@ -4831,7 +5126,7 @@ package storagegateway {
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
-        ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
+        ValidUserList: js.UndefOr[UserList] = js.undefined
     ): UpdateSMBFileShareInput = {
       val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]

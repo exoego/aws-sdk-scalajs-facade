@@ -2190,15 +2190,18 @@ package auditmanager {
   @js.native
   trait GetAssessmentResponse extends js.Object {
     var assessment: js.UndefOr[Assessment]
+    var userRole: js.UndefOr[Role]
   }
 
   object GetAssessmentResponse {
     @inline
     def apply(
-        assessment: js.UndefOr[Assessment] = js.undefined
+        assessment: js.UndefOr[Assessment] = js.undefined,
+        userRole: js.UndefOr[Role] = js.undefined
     ): GetAssessmentResponse = {
       val __obj = js.Dynamic.literal()
       assessment.foreach(__v => __obj.updateDynamic("assessment")(__v.asInstanceOf[js.Any]))
+      userRole.foreach(__v => __obj.updateDynamic("userRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAssessmentResponse]
     }
   }
@@ -3080,7 +3083,7 @@ package auditmanager {
     }
   }
 
-  /** The wrapper that contains AWS Audit Manager role information, such as the role type and IAM Amazon Resource Name (ARN).
+  /** The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
     */
   @js.native
   trait Role extends js.Object {
@@ -3210,7 +3213,7 @@ package auditmanager {
     @inline def values = js.Array(DAILY, WEEKLY, MONTHLY)
   }
 
-  /** The keyword to search for in AWS CloudTrail logs.
+  /** The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
     */
   @js.native
   trait SourceKeyword extends js.Object {

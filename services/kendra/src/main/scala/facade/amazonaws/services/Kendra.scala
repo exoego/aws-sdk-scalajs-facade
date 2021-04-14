@@ -103,6 +103,7 @@ package object kendra {
   type SecretArn = String
   type SecurityGroupIdList = js.Array[VpcSecurityGroupId]
   type ServiceNowHostUrl = String
+  type ServiceNowKnowledgeArticleFilterQuery = String
   type SharePointUrlList = js.Array[Url]
   type SharedDriveId = String
   type StorageCapacityUnit = Int
@@ -379,7 +380,7 @@ package kendra {
     }
   }
 
-  /** Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a> operation.
+  /** Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> operation.
     */
   @js.native
   trait BatchDeleteDocumentResponseFailedDocument extends js.Object {
@@ -489,7 +490,7 @@ package kendra {
     }
   }
 
-  /** Gathers information about when a particular result was clicked by a user. Your application uses the <a>SubmitFeedback</a> operation to provide click information.
+  /** Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> operation to provide click information.
     */
   @js.native
   trait ClickFeedback extends js.Object {
@@ -583,7 +584,7 @@ package kendra {
   }
 
   /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the operation.
+    * You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluenceAttachmentToIndexFieldMapping extends js.Object {
@@ -607,7 +608,7 @@ package kendra {
     }
   }
 
-  /** Specifies the blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the data type.
+  /** Specifies the blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> type.
     */
   @js.native
   trait ConfluenceBlogConfiguration extends js.Object {
@@ -642,7 +643,7 @@ package kendra {
   }
 
   /** Defines the mapping between a blog field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the operation.
+    * You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluenceBlogToIndexFieldMapping extends js.Object {
@@ -751,7 +752,7 @@ package kendra {
   }
 
   /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the operation.
+    * You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluencePageToIndexFieldMapping extends js.Object {
@@ -817,7 +818,7 @@ package kendra {
   }
 
   /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the operation.
+    * You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluenceSpaceToIndexFieldMapping extends js.Object {
@@ -1168,7 +1169,7 @@ package kendra {
     @inline def values = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
   }
 
-  /** Summary information for a Amazon Kendra data source. Returned in a call to .
+  /** Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> operation.
     */
   @js.native
   trait DataSourceSummary extends js.Object {
@@ -1306,7 +1307,7 @@ package kendra {
     @inline def values = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
   }
 
-  /** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <a>UpdateIndex</a> operation.
+  /** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait DataSourceToIndexFieldMapping extends js.Object {
@@ -2821,7 +2822,7 @@ package kendra {
     }
   }
 
-  /** Provides feedback on how relevant a document is to a search. Your application uses the <a>SubmitFeedback</a> operation to provide relevance information.
+  /** Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> operation to provide relevance information.
     */
   @js.native
   trait RelevanceFeedback extends js.Object {
@@ -3020,7 +3021,7 @@ package kendra {
     }
   }
 
-  /** Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both
+  /** Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both
     */
   @js.native
   trait SalesforceKnowledgeArticleConfiguration extends js.Object {
@@ -3103,7 +3104,7 @@ package kendra {
     }
   }
 
-  /** Specifies confguration information for indexing a single standard object.
+  /** Specifies configuration information for indexing a single standard object.
     */
   @js.native
   trait SalesforceStandardObjectConfiguration extends js.Object {
@@ -3233,6 +3234,15 @@ package kendra {
   }
 
   @js.native
+  sealed trait ServiceNowAuthenticationType extends js.Any
+  object ServiceNowAuthenticationType {
+    val HTTP_BASIC = "HTTP_BASIC".asInstanceOf[ServiceNowAuthenticationType]
+    val OAUTH2 = "OAUTH2".asInstanceOf[ServiceNowAuthenticationType]
+
+    @inline def values = js.Array(HTTP_BASIC, OAUTH2)
+  }
+
+  @js.native
   sealed trait ServiceNowBuildVersionType extends js.Any
   object ServiceNowBuildVersionType {
     val LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
@@ -3248,6 +3258,7 @@ package kendra {
     var HostUrl: ServiceNowHostUrl
     var SecretArn: SecretArn
     var ServiceNowBuildVersion: ServiceNowBuildVersionType
+    var AuthenticationType: js.UndefOr[ServiceNowAuthenticationType]
     var KnowledgeArticleConfiguration: js.UndefOr[ServiceNowKnowledgeArticleConfiguration]
     var ServiceCatalogConfiguration: js.UndefOr[ServiceNowServiceCatalogConfiguration]
   }
@@ -3258,6 +3269,7 @@ package kendra {
         HostUrl: ServiceNowHostUrl,
         SecretArn: SecretArn,
         ServiceNowBuildVersion: ServiceNowBuildVersionType,
+        AuthenticationType: js.UndefOr[ServiceNowAuthenticationType] = js.undefined,
         KnowledgeArticleConfiguration: js.UndefOr[ServiceNowKnowledgeArticleConfiguration] = js.undefined,
         ServiceCatalogConfiguration: js.UndefOr[ServiceNowServiceCatalogConfiguration] = js.undefined
     ): ServiceNowConfiguration = {
@@ -3267,6 +3279,7 @@ package kendra {
         "ServiceNowBuildVersion" -> ServiceNowBuildVersion.asInstanceOf[js.Any]
       )
 
+      AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
       KnowledgeArticleConfiguration.foreach(__v => __obj.updateDynamic("KnowledgeArticleConfiguration")(__v.asInstanceOf[js.Any]))
       ServiceCatalogConfiguration.foreach(__v => __obj.updateDynamic("ServiceCatalogConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceNowConfiguration]
@@ -3282,6 +3295,7 @@ package kendra {
     var DocumentTitleFieldName: js.UndefOr[DataSourceFieldName]
     var ExcludeAttachmentFilePatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
     var FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var FilterQuery: js.UndefOr[ServiceNowKnowledgeArticleFilterQuery]
     var IncludeAttachmentFilePatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
   }
 
@@ -3293,6 +3307,7 @@ package kendra {
         DocumentTitleFieldName: js.UndefOr[DataSourceFieldName] = js.undefined,
         ExcludeAttachmentFilePatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
         FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        FilterQuery: js.UndefOr[ServiceNowKnowledgeArticleFilterQuery] = js.undefined,
         IncludeAttachmentFilePatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined
     ): ServiceNowKnowledgeArticleConfiguration = {
       val __obj = js.Dynamic.literal(
@@ -3303,6 +3318,7 @@ package kendra {
       DocumentTitleFieldName.foreach(__v => __obj.updateDynamic("DocumentTitleFieldName")(__v.asInstanceOf[js.Any]))
       ExcludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("ExcludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
       FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
+      FilterQuery.foreach(__v => __obj.updateDynamic("FilterQuery")(__v.asInstanceOf[js.Any]))
       IncludeAttachmentFilePatterns.foreach(__v => __obj.updateDynamic("IncludeAttachmentFilePatterns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceNowKnowledgeArticleConfiguration]
     }

@@ -1113,7 +1113,78 @@ package batch {
     @inline def values = js.Array(READ, WRITE, MKNOD)
   }
 
-  /** Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If the <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL1</code>.
+  /** The authorization configuration details for the Amazon EFS file system.
+    */
+  @js.native
+  trait EFSAuthorizationConfig extends js.Object {
+    var accessPointId: js.UndefOr[String]
+    var iam: js.UndefOr[EFSAuthorizationConfigIAM]
+  }
+
+  object EFSAuthorizationConfig {
+    @inline
+    def apply(
+        accessPointId: js.UndefOr[String] = js.undefined,
+        iam: js.UndefOr[EFSAuthorizationConfigIAM] = js.undefined
+    ): EFSAuthorizationConfig = {
+      val __obj = js.Dynamic.literal()
+      accessPointId.foreach(__v => __obj.updateDynamic("accessPointId")(__v.asInstanceOf[js.Any]))
+      iam.foreach(__v => __obj.updateDynamic("iam")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EFSAuthorizationConfig]
+    }
+  }
+
+  @js.native
+  sealed trait EFSAuthorizationConfigIAM extends js.Any
+  object EFSAuthorizationConfigIAM {
+    val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+    val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  @js.native
+  sealed trait EFSTransitEncryption extends js.Any
+  object EFSTransitEncryption {
+    val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
+    val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  /** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html|Amazon EFS Volumes]] in the <i>AWS Batch User Guide</i>.
+    */
+  @js.native
+  trait EFSVolumeConfiguration extends js.Object {
+    var fileSystemId: String
+    var authorizationConfig: js.UndefOr[EFSAuthorizationConfig]
+    var rootDirectory: js.UndefOr[String]
+    var transitEncryption: js.UndefOr[EFSTransitEncryption]
+    var transitEncryptionPort: js.UndefOr[Int]
+  }
+
+  object EFSVolumeConfiguration {
+    @inline
+    def apply(
+        fileSystemId: String,
+        authorizationConfig: js.UndefOr[EFSAuthorizationConfig] = js.undefined,
+        rootDirectory: js.UndefOr[String] = js.undefined,
+        transitEncryption: js.UndefOr[EFSTransitEncryption] = js.undefined,
+        transitEncryptionPort: js.UndefOr[Int] = js.undefined
+    ): EFSVolumeConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "fileSystemId" -> fileSystemId.asInstanceOf[js.Any]
+      )
+
+      authorizationConfig.foreach(__v => __obj.updateDynamic("authorizationConfig")(__v.asInstanceOf[js.Any]))
+      rootDirectory.foreach(__v => __obj.updateDynamic("rootDirectory")(__v.asInstanceOf[js.Any]))
+      transitEncryption.foreach(__v => __obj.updateDynamic("transitEncryption")(__v.asInstanceOf[js.Any]))
+      transitEncryptionPort.foreach(__v => __obj.updateDynamic("transitEncryptionPort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EFSVolumeConfiguration]
+    }
+  }
+
+  /** Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is currently <code>ECS_AL1</code> ([[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami|Amazon Linux]]) for non-GPU, non-Graviton instances. Starting on March 31, 2021, this default will be changing to <code>ECS_AL2</code> ([[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami|Amazon Linux 2]]).
     *
     * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
     */
@@ -2423,6 +2494,7 @@ package batch {
     */
   @js.native
   trait Volume extends js.Object {
+    var efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration]
     var host: js.UndefOr[Host]
     var name: js.UndefOr[String]
   }
@@ -2430,10 +2502,12 @@ package batch {
   object Volume {
     @inline
     def apply(
+        efsVolumeConfiguration: js.UndefOr[EFSVolumeConfiguration] = js.undefined,
         host: js.UndefOr[Host] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
       val __obj = js.Dynamic.literal()
+      efsVolumeConfiguration.foreach(__v => __obj.updateDynamic("efsVolumeConfiguration")(__v.asInstanceOf[js.Any]))
       host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Volume]

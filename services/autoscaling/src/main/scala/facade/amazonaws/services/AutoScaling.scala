@@ -65,6 +65,7 @@ package object autoscaling {
   type LoadBalancerNames = js.Array[XmlStringMaxLen255]
   type LoadBalancerStates = js.Array[LoadBalancerState]
   type LoadBalancerTargetGroupStates = js.Array[LoadBalancerTargetGroupState]
+  type MaxGroupPreparedCapacity = Int
   type MaxInstanceLifetime = Int
   type MaxNumberOfAutoScalingGroups = Int
   type MaxNumberOfLaunchConfigurations = Int
@@ -123,6 +124,8 @@ package object autoscaling {
   type TerminationPolicies = js.Array[XmlStringMaxLen1600]
   type TimestampType = js.Date
   type Values = js.Array[XmlString]
+  type WarmPoolMinSize = Int
+  type WarmPoolSize = Int
   type XmlString = String
   type XmlStringMaxLen1023 = String
   type XmlStringMaxLen1600 = String
@@ -153,6 +156,7 @@ package object autoscaling {
     @inline def deletePolicyFuture(params: DeletePolicyType): Future[js.Object] = service.deletePolicy(params).promise().toFuture
     @inline def deleteScheduledActionFuture(params: DeleteScheduledActionType): Future[js.Object] = service.deleteScheduledAction(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsType): Future[js.Object] = service.deleteTags(params).promise().toFuture
+    @inline def deleteWarmPoolFuture(params: DeleteWarmPoolType): Future[DeleteWarmPoolAnswer] = service.deleteWarmPool(params).promise().toFuture
     @inline def describeAccountLimitsFuture(): Future[DescribeAccountLimitsAnswer] = service.describeAccountLimits().promise().toFuture
     @inline def describeAdjustmentTypesFuture(): Future[DescribeAdjustmentTypesAnswer] = service.describeAdjustmentTypes().promise().toFuture
     @inline def describeAutoScalingGroupsFuture(params: AutoScalingGroupNamesType): Future[AutoScalingGroupsType] = service.describeAutoScalingGroups(params).promise().toFuture
@@ -172,6 +176,7 @@ package object autoscaling {
     @inline def describeScheduledActionsFuture(params: DescribeScheduledActionsType): Future[ScheduledActionsType] = service.describeScheduledActions(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsType): Future[TagsType] = service.describeTags(params).promise().toFuture
     @inline def describeTerminationPolicyTypesFuture(): Future[DescribeTerminationPolicyTypesAnswer] = service.describeTerminationPolicyTypes().promise().toFuture
+    @inline def describeWarmPoolFuture(params: DescribeWarmPoolType): Future[DescribeWarmPoolAnswer] = service.describeWarmPool(params).promise().toFuture
     @inline def detachInstancesFuture(params: DetachInstancesQuery): Future[DetachInstancesAnswer] = service.detachInstances(params).promise().toFuture
     @inline def detachLoadBalancerTargetGroupsFuture(params: DetachLoadBalancerTargetGroupsType): Future[DetachLoadBalancerTargetGroupsResultType] = service.detachLoadBalancerTargetGroups(params).promise().toFuture
     @inline def detachLoadBalancersFuture(params: DetachLoadBalancersType): Future[DetachLoadBalancersResultType] = service.detachLoadBalancers(params).promise().toFuture
@@ -184,6 +189,7 @@ package object autoscaling {
     @inline def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] = service.putNotificationConfiguration(params).promise().toFuture
     @inline def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] = service.putScalingPolicy(params).promise().toFuture
     @inline def putScheduledUpdateGroupActionFuture(params: PutScheduledUpdateGroupActionType): Future[js.Object] = service.putScheduledUpdateGroupAction(params).promise().toFuture
+    @inline def putWarmPoolFuture(params: PutWarmPoolType): Future[PutWarmPoolAnswer] = service.putWarmPool(params).promise().toFuture
     @inline def recordLifecycleActionHeartbeatFuture(params: RecordLifecycleActionHeartbeatType): Future[RecordLifecycleActionHeartbeatAnswer] = service.recordLifecycleActionHeartbeat(params).promise().toFuture
     @inline def resumeProcessesFuture(params: ScalingProcessQuery): Future[js.Object] = service.resumeProcesses(params).promise().toFuture
     @inline def setDesiredCapacityFuture(params: SetDesiredCapacityType): Future[js.Object] = service.setDesiredCapacity(params).promise().toFuture
@@ -220,6 +226,7 @@ package autoscaling {
     def deletePolicy(params: DeletePolicyType): Request[js.Object] = js.native
     def deleteScheduledAction(params: DeleteScheduledActionType): Request[js.Object] = js.native
     def deleteTags(params: DeleteTagsType): Request[js.Object] = js.native
+    def deleteWarmPool(params: DeleteWarmPoolType): Request[DeleteWarmPoolAnswer] = js.native
     def describeAccountLimits(): Request[DescribeAccountLimitsAnswer] = js.native
     def describeAdjustmentTypes(): Request[DescribeAdjustmentTypesAnswer] = js.native
     def describeAutoScalingGroups(params: AutoScalingGroupNamesType): Request[AutoScalingGroupsType] = js.native
@@ -239,6 +246,7 @@ package autoscaling {
     def describeScheduledActions(params: DescribeScheduledActionsType): Request[ScheduledActionsType] = js.native
     def describeTags(params: DescribeTagsType): Request[TagsType] = js.native
     def describeTerminationPolicyTypes(): Request[DescribeTerminationPolicyTypesAnswer] = js.native
+    def describeWarmPool(params: DescribeWarmPoolType): Request[DescribeWarmPoolAnswer] = js.native
     def detachInstances(params: DetachInstancesQuery): Request[DetachInstancesAnswer] = js.native
     def detachLoadBalancerTargetGroups(params: DetachLoadBalancerTargetGroupsType): Request[DetachLoadBalancerTargetGroupsResultType] = js.native
     def detachLoadBalancers(params: DetachLoadBalancersType): Request[DetachLoadBalancersResultType] = js.native
@@ -251,6 +259,7 @@ package autoscaling {
     def putNotificationConfiguration(params: PutNotificationConfigurationType): Request[js.Object] = js.native
     def putScalingPolicy(params: PutScalingPolicyType): Request[PolicyARNType] = js.native
     def putScheduledUpdateGroupAction(params: PutScheduledUpdateGroupActionType): Request[js.Object] = js.native
+    def putWarmPool(params: PutWarmPoolType): Request[PutWarmPoolAnswer] = js.native
     def recordLifecycleActionHeartbeat(params: RecordLifecycleActionHeartbeatType): Request[RecordLifecycleActionHeartbeatAnswer] = js.native
     def resumeProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
     def setDesiredCapacity(params: SetDesiredCapacityType): Request[js.Object] = js.native
@@ -505,6 +514,8 @@ package autoscaling {
     var TargetGroupARNs: js.UndefOr[TargetGroupARNs]
     var TerminationPolicies: js.UndefOr[TerminationPolicies]
     var VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047]
+    var WarmPoolConfiguration: js.UndefOr[WarmPoolConfiguration]
+    var WarmPoolSize: js.UndefOr[WarmPoolSize]
   }
 
   object AutoScalingGroup {
@@ -536,7 +547,9 @@ package autoscaling {
         Tags: js.UndefOr[TagDescriptionList] = js.undefined,
         TargetGroupARNs: js.UndefOr[TargetGroupARNs] = js.undefined,
         TerminationPolicies: js.UndefOr[TerminationPolicies] = js.undefined,
-        VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined
+        VPCZoneIdentifier: js.UndefOr[XmlStringMaxLen2047] = js.undefined,
+        WarmPoolConfiguration: js.UndefOr[WarmPoolConfiguration] = js.undefined,
+        WarmPoolSize: js.UndefOr[WarmPoolSize] = js.undefined
     ): AutoScalingGroup = {
       val __obj = js.Dynamic.literal(
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
@@ -568,6 +581,8 @@ package autoscaling {
       TargetGroupARNs.foreach(__v => __obj.updateDynamic("TargetGroupARNs")(__v.asInstanceOf[js.Any]))
       TerminationPolicies.foreach(__v => __obj.updateDynamic("TerminationPolicies")(__v.asInstanceOf[js.Any]))
       VPCZoneIdentifier.foreach(__v => __obj.updateDynamic("VPCZoneIdentifier")(__v.asInstanceOf[js.Any]))
+      WarmPoolConfiguration.foreach(__v => __obj.updateDynamic("WarmPoolConfiguration")(__v.asInstanceOf[js.Any]))
+      WarmPoolSize.foreach(__v => __obj.updateDynamic("WarmPoolSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroup]
     }
   }
@@ -1196,6 +1211,38 @@ package autoscaling {
   }
 
   @js.native
+  trait DeleteWarmPoolAnswer extends js.Object
+
+  object DeleteWarmPoolAnswer {
+    @inline
+    def apply(): DeleteWarmPoolAnswer = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteWarmPoolAnswer]
+    }
+  }
+
+  @js.native
+  trait DeleteWarmPoolType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var ForceDelete: js.UndefOr[ForceDelete]
+  }
+
+  object DeleteWarmPoolType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255,
+        ForceDelete: js.UndefOr[ForceDelete] = js.undefined
+    ): DeleteWarmPoolType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
+      )
+
+      ForceDelete.foreach(__v => __obj.updateDynamic("ForceDelete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteWarmPoolType]
+    }
+  }
+
+  @js.native
   trait DescribeAccountLimitsAnswer extends js.Object {
     var MaxNumberOfAutoScalingGroups: js.UndefOr[MaxNumberOfAutoScalingGroups]
     var MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations]
@@ -1643,6 +1690,52 @@ package autoscaling {
       val __obj = js.Dynamic.literal()
       TerminationPolicyTypes.foreach(__v => __obj.updateDynamic("TerminationPolicyTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTerminationPolicyTypesAnswer]
+    }
+  }
+
+  @js.native
+  trait DescribeWarmPoolAnswer extends js.Object {
+    var Instances: js.UndefOr[Instances]
+    var NextToken: js.UndefOr[XmlString]
+    var WarmPoolConfiguration: js.UndefOr[WarmPoolConfiguration]
+  }
+
+  object DescribeWarmPoolAnswer {
+    @inline
+    def apply(
+        Instances: js.UndefOr[Instances] = js.undefined,
+        NextToken: js.UndefOr[XmlString] = js.undefined,
+        WarmPoolConfiguration: js.UndefOr[WarmPoolConfiguration] = js.undefined
+    ): DescribeWarmPoolAnswer = {
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WarmPoolConfiguration.foreach(__v => __obj.updateDynamic("WarmPoolConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWarmPoolAnswer]
+    }
+  }
+
+  @js.native
+  trait DescribeWarmPoolType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var MaxRecords: js.UndefOr[MaxRecords]
+    var NextToken: js.UndefOr[XmlString]
+  }
+
+  object DescribeWarmPoolType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[XmlString] = js.undefined
+    ): DescribeWarmPoolType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
+      )
+
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWarmPoolType]
     }
   }
 
@@ -2115,6 +2208,7 @@ package autoscaling {
     var InstanceRefreshId: js.UndefOr[XmlStringMaxLen255]
     var InstancesToUpdate: js.UndefOr[InstancesToUpdate]
     var PercentageComplete: js.UndefOr[IntPercent]
+    var ProgressDetails: js.UndefOr[InstanceRefreshProgressDetails]
     var StartTime: js.UndefOr[TimestampType]
     var Status: js.UndefOr[InstanceRefreshStatus]
     var StatusReason: js.UndefOr[XmlStringMaxLen1023]
@@ -2128,6 +2222,7 @@ package autoscaling {
         InstanceRefreshId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         InstancesToUpdate: js.UndefOr[InstancesToUpdate] = js.undefined,
         PercentageComplete: js.UndefOr[IntPercent] = js.undefined,
+        ProgressDetails: js.UndefOr[InstanceRefreshProgressDetails] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined,
         Status: js.UndefOr[InstanceRefreshStatus] = js.undefined,
         StatusReason: js.UndefOr[XmlStringMaxLen1023] = js.undefined
@@ -2138,10 +2233,53 @@ package autoscaling {
       InstanceRefreshId.foreach(__v => __obj.updateDynamic("InstanceRefreshId")(__v.asInstanceOf[js.Any]))
       InstancesToUpdate.foreach(__v => __obj.updateDynamic("InstancesToUpdate")(__v.asInstanceOf[js.Any]))
       PercentageComplete.foreach(__v => __obj.updateDynamic("PercentageComplete")(__v.asInstanceOf[js.Any]))
+      ProgressDetails.foreach(__v => __obj.updateDynamic("ProgressDetails")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceRefresh]
+    }
+  }
+
+  /** Reports the progress of an instance fresh on instances that are in the Auto Scaling group.
+    */
+  @js.native
+  trait InstanceRefreshLivePoolProgress extends js.Object {
+    var InstancesToUpdate: js.UndefOr[InstancesToUpdate]
+    var PercentageComplete: js.UndefOr[IntPercent]
+  }
+
+  object InstanceRefreshLivePoolProgress {
+    @inline
+    def apply(
+        InstancesToUpdate: js.UndefOr[InstancesToUpdate] = js.undefined,
+        PercentageComplete: js.UndefOr[IntPercent] = js.undefined
+    ): InstanceRefreshLivePoolProgress = {
+      val __obj = js.Dynamic.literal()
+      InstancesToUpdate.foreach(__v => __obj.updateDynamic("InstancesToUpdate")(__v.asInstanceOf[js.Any]))
+      PercentageComplete.foreach(__v => __obj.updateDynamic("PercentageComplete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceRefreshLivePoolProgress]
+    }
+  }
+
+  /** Reports the progress of an instance refresh on an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).
+    */
+  @js.native
+  trait InstanceRefreshProgressDetails extends js.Object {
+    var LivePoolProgress: js.UndefOr[InstanceRefreshLivePoolProgress]
+    var WarmPoolProgress: js.UndefOr[InstanceRefreshWarmPoolProgress]
+  }
+
+  object InstanceRefreshProgressDetails {
+    @inline
+    def apply(
+        LivePoolProgress: js.UndefOr[InstanceRefreshLivePoolProgress] = js.undefined,
+        WarmPoolProgress: js.UndefOr[InstanceRefreshWarmPoolProgress] = js.undefined
+    ): InstanceRefreshProgressDetails = {
+      val __obj = js.Dynamic.literal()
+      LivePoolProgress.foreach(__v => __obj.updateDynamic("LivePoolProgress")(__v.asInstanceOf[js.Any]))
+      WarmPoolProgress.foreach(__v => __obj.updateDynamic("WarmPoolProgress")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceRefreshProgressDetails]
     }
   }
 
@@ -2156,6 +2294,27 @@ package autoscaling {
     val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
 
     @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
+  }
+
+  /** Reports the progress of an instance fresh on instances that are in the warm pool.
+    */
+  @js.native
+  trait InstanceRefreshWarmPoolProgress extends js.Object {
+    var InstancesToUpdate: js.UndefOr[InstancesToUpdate]
+    var PercentageComplete: js.UndefOr[IntPercent]
+  }
+
+  object InstanceRefreshWarmPoolProgress {
+    @inline
+    def apply(
+        InstancesToUpdate: js.UndefOr[InstancesToUpdate] = js.undefined,
+        PercentageComplete: js.UndefOr[IntPercent] = js.undefined
+    ): InstanceRefreshWarmPoolProgress = {
+      val __obj = js.Dynamic.literal()
+      InstancesToUpdate.foreach(__v => __obj.updateDynamic("InstancesToUpdate")(__v.asInstanceOf[js.Any]))
+      PercentageComplete.foreach(__v => __obj.updateDynamic("PercentageComplete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceRefreshWarmPoolProgress]
+    }
   }
 
   /** Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>.
@@ -2506,6 +2665,15 @@ package autoscaling {
     val Detached = "Detached".asInstanceOf[LifecycleState]
     val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
     val Standby = "Standby".asInstanceOf[LifecycleState]
+    val `Warmed:Pending` = "Warmed:Pending".asInstanceOf[LifecycleState]
+    val `Warmed:Pending:Wait` = "Warmed:Pending:Wait".asInstanceOf[LifecycleState]
+    val `Warmed:Pending:Proceed` = "Warmed:Pending:Proceed".asInstanceOf[LifecycleState]
+    val `Warmed:Terminating` = "Warmed:Terminating".asInstanceOf[LifecycleState]
+    val `Warmed:Terminating:Wait` = "Warmed:Terminating:Wait".asInstanceOf[LifecycleState]
+    val `Warmed:Terminating:Proceed` = "Warmed:Terminating:Proceed".asInstanceOf[LifecycleState]
+    val `Warmed:Terminated` = "Warmed:Terminated".asInstanceOf[LifecycleState]
+    val `Warmed:Stopped` = "Warmed:Stopped".asInstanceOf[LifecycleState]
+    val `Warmed:Running` = "Warmed:Running".asInstanceOf[LifecycleState]
 
     @inline def values = js.Array(
       Pending,
@@ -2520,7 +2688,16 @@ package autoscaling {
       Detaching,
       Detached,
       EnteringStandby,
-      Standby
+      Standby,
+      `Warmed:Pending`,
+      `Warmed:Pending:Wait`,
+      `Warmed:Pending:Proceed`,
+      `Warmed:Terminating`,
+      `Warmed:Terminating:Wait`,
+      `Warmed:Terminating:Proceed`,
+      `Warmed:Terminated`,
+      `Warmed:Stopped`,
+      `Warmed:Running`
     )
   }
 
@@ -2964,6 +3141,44 @@ package autoscaling {
       Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
       TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScheduledUpdateGroupActionType]
+    }
+  }
+
+  @js.native
+  trait PutWarmPoolAnswer extends js.Object
+
+  object PutWarmPoolAnswer {
+    @inline
+    def apply(): PutWarmPoolAnswer = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutWarmPoolAnswer]
+    }
+  }
+
+  @js.native
+  trait PutWarmPoolType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var MaxGroupPreparedCapacity: js.UndefOr[MaxGroupPreparedCapacity]
+    var MinSize: js.UndefOr[WarmPoolMinSize]
+    var PoolState: js.UndefOr[WarmPoolState]
+  }
+
+  object PutWarmPoolType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255,
+        MaxGroupPreparedCapacity: js.UndefOr[MaxGroupPreparedCapacity] = js.undefined,
+        MinSize: js.UndefOr[WarmPoolMinSize] = js.undefined,
+        PoolState: js.UndefOr[WarmPoolState] = js.undefined
+    ): PutWarmPoolType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
+      )
+
+      MaxGroupPreparedCapacity.foreach(__v => __obj.updateDynamic("MaxGroupPreparedCapacity")(__v.asInstanceOf[js.Any]))
+      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
+      PoolState.foreach(__v => __obj.updateDynamic("PoolState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutWarmPoolType]
     }
   }
 
@@ -3638,5 +3853,49 @@ package autoscaling {
       VPCZoneIdentifier.foreach(__v => __obj.updateDynamic("VPCZoneIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAutoScalingGroupType]
     }
+  }
+
+  /** Describes a warm pool configuration.
+    */
+  @js.native
+  trait WarmPoolConfiguration extends js.Object {
+    var MaxGroupPreparedCapacity: js.UndefOr[MaxGroupPreparedCapacity]
+    var MinSize: js.UndefOr[WarmPoolMinSize]
+    var PoolState: js.UndefOr[WarmPoolState]
+    var Status: js.UndefOr[WarmPoolStatus]
+  }
+
+  object WarmPoolConfiguration {
+    @inline
+    def apply(
+        MaxGroupPreparedCapacity: js.UndefOr[MaxGroupPreparedCapacity] = js.undefined,
+        MinSize: js.UndefOr[WarmPoolMinSize] = js.undefined,
+        PoolState: js.UndefOr[WarmPoolState] = js.undefined,
+        Status: js.UndefOr[WarmPoolStatus] = js.undefined
+    ): WarmPoolConfiguration = {
+      val __obj = js.Dynamic.literal()
+      MaxGroupPreparedCapacity.foreach(__v => __obj.updateDynamic("MaxGroupPreparedCapacity")(__v.asInstanceOf[js.Any]))
+      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
+      PoolState.foreach(__v => __obj.updateDynamic("PoolState")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WarmPoolConfiguration]
+    }
+  }
+
+  @js.native
+  sealed trait WarmPoolState extends js.Any
+  object WarmPoolState {
+    val Stopped = "Stopped".asInstanceOf[WarmPoolState]
+    val Running = "Running".asInstanceOf[WarmPoolState]
+
+    @inline def values = js.Array(Stopped, Running)
+  }
+
+  @js.native
+  sealed trait WarmPoolStatus extends js.Any
+  object WarmPoolStatus {
+    val PendingDelete = "PendingDelete".asInstanceOf[WarmPoolStatus]
+
+    @inline def values = js.Array(PendingDelete)
   }
 }

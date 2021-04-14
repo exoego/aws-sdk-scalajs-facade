@@ -9,22 +9,36 @@ import facade.amazonaws._
 package object route53resolver {
   type AccountId = String
   type Arn = String
+  type BlockOverrideDomain = String
+  type BlockOverrideTtl = Int
   type Count = Int
   type CreatorRequestId = String
   type DestinationArn = String
+  type DomainListFileUrl = String
   type DomainName = String
   type FilterName = String
   type FilterValue = String
   type FilterValues = js.Array[FilterValue]
   type Filters = js.Array[Filter]
+  type FirewallConfigList = js.Array[FirewallConfig]
+  type FirewallDomainListMetadataList = js.Array[FirewallDomainListMetadata]
+  type FirewallDomainName = String
+  type FirewallDomains = js.Array[FirewallDomainName]
+  type FirewallRuleGroupAssociations = js.Array[FirewallRuleGroupAssociation]
+  type FirewallRuleGroupMetadataList = js.Array[FirewallRuleGroupMetadata]
+  type FirewallRuleGroupPolicy = String
+  type FirewallRules = js.Array[FirewallRule]
   type Ip = String
   type IpAddressCount = Int
   type IpAddressesRequest = js.Array[IpAddressRequest]
   type IpAddressesResponse = js.Array[IpAddressResponse]
+  type ListDomainMaxResults = Int
+  type ListFirewallConfigsMaxResult = Int
   type MaxResults = Int
   type Name = String
   type NextToken = String
   type Port = Int
+  type Priority = Int
   type ResolverDnssecConfigList = js.Array[ResolverDnssecConfig]
   type ResolverEndpoints = js.Array[ResolverEndpoint]
   type ResolverQueryLogConfigAssociationErrorMessage = String
@@ -38,6 +52,7 @@ package object route53resolver {
   type ResourceId = String
   type Rfc3339TimeString = String
   type SecurityGroupIds = js.Array[ResourceId]
+  type ServicePrinciple = String
   type SortByKey = String
   type StatusMessage = String
   type SubnetId = String
@@ -46,21 +61,35 @@ package object route53resolver {
   type TagList = js.Array[Tag]
   type TagValue = String
   type TargetList = js.Array[TargetAddress]
+  type Unsigned = Int
 
   implicit final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
 
+    @inline def associateFirewallRuleGroupFuture(params: AssociateFirewallRuleGroupRequest): Future[AssociateFirewallRuleGroupResponse] = service.associateFirewallRuleGroup(params).promise().toFuture
     @inline def associateResolverEndpointIpAddressFuture(params: AssociateResolverEndpointIpAddressRequest): Future[AssociateResolverEndpointIpAddressResponse] = service.associateResolverEndpointIpAddress(params).promise().toFuture
     @inline def associateResolverQueryLogConfigFuture(params: AssociateResolverQueryLogConfigRequest): Future[AssociateResolverQueryLogConfigResponse] = service.associateResolverQueryLogConfig(params).promise().toFuture
     @inline def associateResolverRuleFuture(params: AssociateResolverRuleRequest): Future[AssociateResolverRuleResponse] = service.associateResolverRule(params).promise().toFuture
+    @inline def createFirewallDomainListFuture(params: CreateFirewallDomainListRequest): Future[CreateFirewallDomainListResponse] = service.createFirewallDomainList(params).promise().toFuture
+    @inline def createFirewallRuleFuture(params: CreateFirewallRuleRequest): Future[CreateFirewallRuleResponse] = service.createFirewallRule(params).promise().toFuture
+    @inline def createFirewallRuleGroupFuture(params: CreateFirewallRuleGroupRequest): Future[CreateFirewallRuleGroupResponse] = service.createFirewallRuleGroup(params).promise().toFuture
     @inline def createResolverEndpointFuture(params: CreateResolverEndpointRequest): Future[CreateResolverEndpointResponse] = service.createResolverEndpoint(params).promise().toFuture
     @inline def createResolverQueryLogConfigFuture(params: CreateResolverQueryLogConfigRequest): Future[CreateResolverQueryLogConfigResponse] = service.createResolverQueryLogConfig(params).promise().toFuture
     @inline def createResolverRuleFuture(params: CreateResolverRuleRequest): Future[CreateResolverRuleResponse] = service.createResolverRule(params).promise().toFuture
+    @inline def deleteFirewallDomainListFuture(params: DeleteFirewallDomainListRequest): Future[DeleteFirewallDomainListResponse] = service.deleteFirewallDomainList(params).promise().toFuture
+    @inline def deleteFirewallRuleFuture(params: DeleteFirewallRuleRequest): Future[DeleteFirewallRuleResponse] = service.deleteFirewallRule(params).promise().toFuture
+    @inline def deleteFirewallRuleGroupFuture(params: DeleteFirewallRuleGroupRequest): Future[DeleteFirewallRuleGroupResponse] = service.deleteFirewallRuleGroup(params).promise().toFuture
     @inline def deleteResolverEndpointFuture(params: DeleteResolverEndpointRequest): Future[DeleteResolverEndpointResponse] = service.deleteResolverEndpoint(params).promise().toFuture
     @inline def deleteResolverQueryLogConfigFuture(params: DeleteResolverQueryLogConfigRequest): Future[DeleteResolverQueryLogConfigResponse] = service.deleteResolverQueryLogConfig(params).promise().toFuture
     @inline def deleteResolverRuleFuture(params: DeleteResolverRuleRequest): Future[DeleteResolverRuleResponse] = service.deleteResolverRule(params).promise().toFuture
+    @inline def disassociateFirewallRuleGroupFuture(params: DisassociateFirewallRuleGroupRequest): Future[DisassociateFirewallRuleGroupResponse] = service.disassociateFirewallRuleGroup(params).promise().toFuture
     @inline def disassociateResolverEndpointIpAddressFuture(params: DisassociateResolverEndpointIpAddressRequest): Future[DisassociateResolverEndpointIpAddressResponse] = service.disassociateResolverEndpointIpAddress(params).promise().toFuture
     @inline def disassociateResolverQueryLogConfigFuture(params: DisassociateResolverQueryLogConfigRequest): Future[DisassociateResolverQueryLogConfigResponse] = service.disassociateResolverQueryLogConfig(params).promise().toFuture
     @inline def disassociateResolverRuleFuture(params: DisassociateResolverRuleRequest): Future[DisassociateResolverRuleResponse] = service.disassociateResolverRule(params).promise().toFuture
+    @inline def getFirewallConfigFuture(params: GetFirewallConfigRequest): Future[GetFirewallConfigResponse] = service.getFirewallConfig(params).promise().toFuture
+    @inline def getFirewallDomainListFuture(params: GetFirewallDomainListRequest): Future[GetFirewallDomainListResponse] = service.getFirewallDomainList(params).promise().toFuture
+    @inline def getFirewallRuleGroupAssociationFuture(params: GetFirewallRuleGroupAssociationRequest): Future[GetFirewallRuleGroupAssociationResponse] = service.getFirewallRuleGroupAssociation(params).promise().toFuture
+    @inline def getFirewallRuleGroupFuture(params: GetFirewallRuleGroupRequest): Future[GetFirewallRuleGroupResponse] = service.getFirewallRuleGroup(params).promise().toFuture
+    @inline def getFirewallRuleGroupPolicyFuture(params: GetFirewallRuleGroupPolicyRequest): Future[GetFirewallRuleGroupPolicyResponse] = service.getFirewallRuleGroupPolicy(params).promise().toFuture
     @inline def getResolverDnssecConfigFuture(params: GetResolverDnssecConfigRequest): Future[GetResolverDnssecConfigResponse] = service.getResolverDnssecConfig(params).promise().toFuture
     @inline def getResolverEndpointFuture(params: GetResolverEndpointRequest): Future[GetResolverEndpointResponse] = service.getResolverEndpoint(params).promise().toFuture
     @inline def getResolverQueryLogConfigAssociationFuture(params: GetResolverQueryLogConfigAssociationRequest): Future[GetResolverQueryLogConfigAssociationResponse] = service.getResolverQueryLogConfigAssociation(params).promise().toFuture
@@ -69,6 +98,13 @@ package object route53resolver {
     @inline def getResolverRuleAssociationFuture(params: GetResolverRuleAssociationRequest): Future[GetResolverRuleAssociationResponse] = service.getResolverRuleAssociation(params).promise().toFuture
     @inline def getResolverRuleFuture(params: GetResolverRuleRequest): Future[GetResolverRuleResponse] = service.getResolverRule(params).promise().toFuture
     @inline def getResolverRulePolicyFuture(params: GetResolverRulePolicyRequest): Future[GetResolverRulePolicyResponse] = service.getResolverRulePolicy(params).promise().toFuture
+    @inline def importFirewallDomainsFuture(params: ImportFirewallDomainsRequest): Future[ImportFirewallDomainsResponse] = service.importFirewallDomains(params).promise().toFuture
+    @inline def listFirewallConfigsFuture(params: ListFirewallConfigsRequest): Future[ListFirewallConfigsResponse] = service.listFirewallConfigs(params).promise().toFuture
+    @inline def listFirewallDomainListsFuture(params: ListFirewallDomainListsRequest): Future[ListFirewallDomainListsResponse] = service.listFirewallDomainLists(params).promise().toFuture
+    @inline def listFirewallDomainsFuture(params: ListFirewallDomainsRequest): Future[ListFirewallDomainsResponse] = service.listFirewallDomains(params).promise().toFuture
+    @inline def listFirewallRuleGroupAssociationsFuture(params: ListFirewallRuleGroupAssociationsRequest): Future[ListFirewallRuleGroupAssociationsResponse] = service.listFirewallRuleGroupAssociations(params).promise().toFuture
+    @inline def listFirewallRuleGroupsFuture(params: ListFirewallRuleGroupsRequest): Future[ListFirewallRuleGroupsResponse] = service.listFirewallRuleGroups(params).promise().toFuture
+    @inline def listFirewallRulesFuture(params: ListFirewallRulesRequest): Future[ListFirewallRulesResponse] = service.listFirewallRules(params).promise().toFuture
     @inline def listResolverDnssecConfigsFuture(params: ListResolverDnssecConfigsRequest): Future[ListResolverDnssecConfigsResponse] = service.listResolverDnssecConfigs(params).promise().toFuture
     @inline def listResolverEndpointIpAddressesFuture(params: ListResolverEndpointIpAddressesRequest): Future[ListResolverEndpointIpAddressesResponse] = service.listResolverEndpointIpAddresses(params).promise().toFuture
     @inline def listResolverEndpointsFuture(params: ListResolverEndpointsRequest): Future[ListResolverEndpointsResponse] = service.listResolverEndpoints(params).promise().toFuture
@@ -77,10 +113,15 @@ package object route53resolver {
     @inline def listResolverRuleAssociationsFuture(params: ListResolverRuleAssociationsRequest): Future[ListResolverRuleAssociationsResponse] = service.listResolverRuleAssociations(params).promise().toFuture
     @inline def listResolverRulesFuture(params: ListResolverRulesRequest): Future[ListResolverRulesResponse] = service.listResolverRules(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putFirewallRuleGroupPolicyFuture(params: PutFirewallRuleGroupPolicyRequest): Future[PutFirewallRuleGroupPolicyResponse] = service.putFirewallRuleGroupPolicy(params).promise().toFuture
     @inline def putResolverQueryLogConfigPolicyFuture(params: PutResolverQueryLogConfigPolicyRequest): Future[PutResolverQueryLogConfigPolicyResponse] = service.putResolverQueryLogConfigPolicy(params).promise().toFuture
     @inline def putResolverRulePolicyFuture(params: PutResolverRulePolicyRequest): Future[PutResolverRulePolicyResponse] = service.putResolverRulePolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateFirewallConfigFuture(params: UpdateFirewallConfigRequest): Future[UpdateFirewallConfigResponse] = service.updateFirewallConfig(params).promise().toFuture
+    @inline def updateFirewallDomainsFuture(params: UpdateFirewallDomainsRequest): Future[UpdateFirewallDomainsResponse] = service.updateFirewallDomains(params).promise().toFuture
+    @inline def updateFirewallRuleFuture(params: UpdateFirewallRuleRequest): Future[UpdateFirewallRuleResponse] = service.updateFirewallRule(params).promise().toFuture
+    @inline def updateFirewallRuleGroupAssociationFuture(params: UpdateFirewallRuleGroupAssociationRequest): Future[UpdateFirewallRuleGroupAssociationResponse] = service.updateFirewallRuleGroupAssociation(params).promise().toFuture
     @inline def updateResolverDnssecConfigFuture(params: UpdateResolverDnssecConfigRequest): Future[UpdateResolverDnssecConfigResponse] = service.updateResolverDnssecConfig(params).promise().toFuture
     @inline def updateResolverEndpointFuture(params: UpdateResolverEndpointRequest): Future[UpdateResolverEndpointResponse] = service.updateResolverEndpoint(params).promise().toFuture
     @inline def updateResolverRuleFuture(params: UpdateResolverRuleRequest): Future[UpdateResolverRuleResponse] = service.updateResolverRule(params).promise().toFuture
@@ -94,18 +135,31 @@ package route53resolver {
   class Route53Resolver() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateFirewallRuleGroup(params: AssociateFirewallRuleGroupRequest): Request[AssociateFirewallRuleGroupResponse] = js.native
     def associateResolverEndpointIpAddress(params: AssociateResolverEndpointIpAddressRequest): Request[AssociateResolverEndpointIpAddressResponse] = js.native
     def associateResolverQueryLogConfig(params: AssociateResolverQueryLogConfigRequest): Request[AssociateResolverQueryLogConfigResponse] = js.native
     def associateResolverRule(params: AssociateResolverRuleRequest): Request[AssociateResolverRuleResponse] = js.native
+    def createFirewallDomainList(params: CreateFirewallDomainListRequest): Request[CreateFirewallDomainListResponse] = js.native
+    def createFirewallRule(params: CreateFirewallRuleRequest): Request[CreateFirewallRuleResponse] = js.native
+    def createFirewallRuleGroup(params: CreateFirewallRuleGroupRequest): Request[CreateFirewallRuleGroupResponse] = js.native
     def createResolverEndpoint(params: CreateResolverEndpointRequest): Request[CreateResolverEndpointResponse] = js.native
     def createResolverQueryLogConfig(params: CreateResolverQueryLogConfigRequest): Request[CreateResolverQueryLogConfigResponse] = js.native
     def createResolverRule(params: CreateResolverRuleRequest): Request[CreateResolverRuleResponse] = js.native
+    def deleteFirewallDomainList(params: DeleteFirewallDomainListRequest): Request[DeleteFirewallDomainListResponse] = js.native
+    def deleteFirewallRule(params: DeleteFirewallRuleRequest): Request[DeleteFirewallRuleResponse] = js.native
+    def deleteFirewallRuleGroup(params: DeleteFirewallRuleGroupRequest): Request[DeleteFirewallRuleGroupResponse] = js.native
     def deleteResolverEndpoint(params: DeleteResolverEndpointRequest): Request[DeleteResolverEndpointResponse] = js.native
     def deleteResolverQueryLogConfig(params: DeleteResolverQueryLogConfigRequest): Request[DeleteResolverQueryLogConfigResponse] = js.native
     def deleteResolverRule(params: DeleteResolverRuleRequest): Request[DeleteResolverRuleResponse] = js.native
+    def disassociateFirewallRuleGroup(params: DisassociateFirewallRuleGroupRequest): Request[DisassociateFirewallRuleGroupResponse] = js.native
     def disassociateResolverEndpointIpAddress(params: DisassociateResolverEndpointIpAddressRequest): Request[DisassociateResolverEndpointIpAddressResponse] = js.native
     def disassociateResolverQueryLogConfig(params: DisassociateResolverQueryLogConfigRequest): Request[DisassociateResolverQueryLogConfigResponse] = js.native
     def disassociateResolverRule(params: DisassociateResolverRuleRequest): Request[DisassociateResolverRuleResponse] = js.native
+    def getFirewallConfig(params: GetFirewallConfigRequest): Request[GetFirewallConfigResponse] = js.native
+    def getFirewallDomainList(params: GetFirewallDomainListRequest): Request[GetFirewallDomainListResponse] = js.native
+    def getFirewallRuleGroup(params: GetFirewallRuleGroupRequest): Request[GetFirewallRuleGroupResponse] = js.native
+    def getFirewallRuleGroupAssociation(params: GetFirewallRuleGroupAssociationRequest): Request[GetFirewallRuleGroupAssociationResponse] = js.native
+    def getFirewallRuleGroupPolicy(params: GetFirewallRuleGroupPolicyRequest): Request[GetFirewallRuleGroupPolicyResponse] = js.native
     def getResolverDnssecConfig(params: GetResolverDnssecConfigRequest): Request[GetResolverDnssecConfigResponse] = js.native
     def getResolverEndpoint(params: GetResolverEndpointRequest): Request[GetResolverEndpointResponse] = js.native
     def getResolverQueryLogConfig(params: GetResolverQueryLogConfigRequest): Request[GetResolverQueryLogConfigResponse] = js.native
@@ -114,6 +168,13 @@ package route53resolver {
     def getResolverRule(params: GetResolverRuleRequest): Request[GetResolverRuleResponse] = js.native
     def getResolverRuleAssociation(params: GetResolverRuleAssociationRequest): Request[GetResolverRuleAssociationResponse] = js.native
     def getResolverRulePolicy(params: GetResolverRulePolicyRequest): Request[GetResolverRulePolicyResponse] = js.native
+    def importFirewallDomains(params: ImportFirewallDomainsRequest): Request[ImportFirewallDomainsResponse] = js.native
+    def listFirewallConfigs(params: ListFirewallConfigsRequest): Request[ListFirewallConfigsResponse] = js.native
+    def listFirewallDomainLists(params: ListFirewallDomainListsRequest): Request[ListFirewallDomainListsResponse] = js.native
+    def listFirewallDomains(params: ListFirewallDomainsRequest): Request[ListFirewallDomainsResponse] = js.native
+    def listFirewallRuleGroupAssociations(params: ListFirewallRuleGroupAssociationsRequest): Request[ListFirewallRuleGroupAssociationsResponse] = js.native
+    def listFirewallRuleGroups(params: ListFirewallRuleGroupsRequest): Request[ListFirewallRuleGroupsResponse] = js.native
+    def listFirewallRules(params: ListFirewallRulesRequest): Request[ListFirewallRulesResponse] = js.native
     def listResolverDnssecConfigs(params: ListResolverDnssecConfigsRequest): Request[ListResolverDnssecConfigsResponse] = js.native
     def listResolverEndpointIpAddresses(params: ListResolverEndpointIpAddressesRequest): Request[ListResolverEndpointIpAddressesResponse] = js.native
     def listResolverEndpoints(params: ListResolverEndpointsRequest): Request[ListResolverEndpointsResponse] = js.native
@@ -122,13 +183,80 @@ package route53resolver {
     def listResolverRuleAssociations(params: ListResolverRuleAssociationsRequest): Request[ListResolverRuleAssociationsResponse] = js.native
     def listResolverRules(params: ListResolverRulesRequest): Request[ListResolverRulesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putFirewallRuleGroupPolicy(params: PutFirewallRuleGroupPolicyRequest): Request[PutFirewallRuleGroupPolicyResponse] = js.native
     def putResolverQueryLogConfigPolicy(params: PutResolverQueryLogConfigPolicyRequest): Request[PutResolverQueryLogConfigPolicyResponse] = js.native
     def putResolverRulePolicy(params: PutResolverRulePolicyRequest): Request[PutResolverRulePolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateFirewallConfig(params: UpdateFirewallConfigRequest): Request[UpdateFirewallConfigResponse] = js.native
+    def updateFirewallDomains(params: UpdateFirewallDomainsRequest): Request[UpdateFirewallDomainsResponse] = js.native
+    def updateFirewallRule(params: UpdateFirewallRuleRequest): Request[UpdateFirewallRuleResponse] = js.native
+    def updateFirewallRuleGroupAssociation(params: UpdateFirewallRuleGroupAssociationRequest): Request[UpdateFirewallRuleGroupAssociationResponse] = js.native
     def updateResolverDnssecConfig(params: UpdateResolverDnssecConfigRequest): Request[UpdateResolverDnssecConfigResponse] = js.native
     def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] = js.native
     def updateResolverRule(params: UpdateResolverRuleRequest): Request[UpdateResolverRuleResponse] = js.native
+  }
+
+  @js.native
+  sealed trait Action extends js.Any
+  object Action {
+    val ALLOW = "ALLOW".asInstanceOf[Action]
+    val BLOCK = "BLOCK".asInstanceOf[Action]
+    val ALERT = "ALERT".asInstanceOf[Action]
+
+    @inline def values = js.Array(ALLOW, BLOCK, ALERT)
+  }
+
+  @js.native
+  trait AssociateFirewallRuleGroupRequest extends js.Object {
+    var CreatorRequestId: CreatorRequestId
+    var FirewallRuleGroupId: ResourceId
+    var Name: Name
+    var Priority: Priority
+    var VpcId: ResourceId
+    var MutationProtection: js.UndefOr[MutationProtectionStatus]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object AssociateFirewallRuleGroupRequest {
+    @inline
+    def apply(
+        CreatorRequestId: CreatorRequestId,
+        FirewallRuleGroupId: ResourceId,
+        Name: Name,
+        Priority: Priority,
+        VpcId: ResourceId,
+        MutationProtection: js.UndefOr[MutationProtectionStatus] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): AssociateFirewallRuleGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
+      )
+
+      MutationProtection.foreach(__v => __obj.updateDynamic("MutationProtection")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateFirewallRuleGroupRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateFirewallRuleGroupResponse extends js.Object {
+    var FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation]
+  }
+
+  object AssociateFirewallRuleGroupResponse {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation] = js.undefined
+    ): AssociateFirewallRuleGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupAssociation.foreach(__v => __obj.updateDynamic("FirewallRuleGroupAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateFirewallRuleGroupResponse]
+    }
   }
 
   @js.native
@@ -240,6 +368,165 @@ package route53resolver {
       val __obj = js.Dynamic.literal()
       ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResolverRuleResponse]
+    }
+  }
+
+  @js.native
+  sealed trait BlockOverrideDnsType extends js.Any
+  object BlockOverrideDnsType {
+    val CNAME = "CNAME".asInstanceOf[BlockOverrideDnsType]
+
+    @inline def values = js.Array(CNAME)
+  }
+
+  @js.native
+  sealed trait BlockResponse extends js.Any
+  object BlockResponse {
+    val NODATA = "NODATA".asInstanceOf[BlockResponse]
+    val NXDOMAIN = "NXDOMAIN".asInstanceOf[BlockResponse]
+    val OVERRIDE = "OVERRIDE".asInstanceOf[BlockResponse]
+
+    @inline def values = js.Array(NODATA, NXDOMAIN, OVERRIDE)
+  }
+
+  @js.native
+  trait CreateFirewallDomainListRequest extends js.Object {
+    var CreatorRequestId: CreatorRequestId
+    var Name: Name
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateFirewallDomainListRequest {
+    @inline
+    def apply(
+        CreatorRequestId: CreatorRequestId,
+        Name: Name,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateFirewallDomainListRequest = {
+      val __obj = js.Dynamic.literal(
+        "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFirewallDomainListRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFirewallDomainListResponse extends js.Object {
+    var FirewallDomainList: js.UndefOr[FirewallDomainList]
+  }
+
+  object CreateFirewallDomainListResponse {
+    @inline
+    def apply(
+        FirewallDomainList: js.UndefOr[FirewallDomainList] = js.undefined
+    ): CreateFirewallDomainListResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallDomainList.foreach(__v => __obj.updateDynamic("FirewallDomainList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFirewallDomainListResponse]
+    }
+  }
+
+  @js.native
+  trait CreateFirewallRuleGroupRequest extends js.Object {
+    var CreatorRequestId: CreatorRequestId
+    var Name: Name
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateFirewallRuleGroupRequest {
+    @inline
+    def apply(
+        CreatorRequestId: CreatorRequestId,
+        Name: Name,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateFirewallRuleGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFirewallRuleGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFirewallRuleGroupResponse extends js.Object {
+    var FirewallRuleGroup: js.UndefOr[FirewallRuleGroup]
+  }
+
+  object CreateFirewallRuleGroupResponse {
+    @inline
+    def apply(
+        FirewallRuleGroup: js.UndefOr[FirewallRuleGroup] = js.undefined
+    ): CreateFirewallRuleGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroup.foreach(__v => __obj.updateDynamic("FirewallRuleGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFirewallRuleGroupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateFirewallRuleRequest extends js.Object {
+    var Action: Action
+    var CreatorRequestId: CreatorRequestId
+    var FirewallDomainListId: ResourceId
+    var FirewallRuleGroupId: ResourceId
+    var Name: Name
+    var Priority: Priority
+    var BlockOverrideDnsType: js.UndefOr[BlockOverrideDnsType]
+    var BlockOverrideDomain: js.UndefOr[BlockOverrideDomain]
+    var BlockOverrideTtl: js.UndefOr[BlockOverrideTtl]
+    var BlockResponse: js.UndefOr[BlockResponse]
+  }
+
+  object CreateFirewallRuleRequest {
+    @inline
+    def apply(
+        Action: Action,
+        CreatorRequestId: CreatorRequestId,
+        FirewallDomainListId: ResourceId,
+        FirewallRuleGroupId: ResourceId,
+        Name: Name,
+        Priority: Priority,
+        BlockOverrideDnsType: js.UndefOr[BlockOverrideDnsType] = js.undefined,
+        BlockOverrideDomain: js.UndefOr[BlockOverrideDomain] = js.undefined,
+        BlockOverrideTtl: js.UndefOr[BlockOverrideTtl] = js.undefined,
+        BlockResponse: js.UndefOr[BlockResponse] = js.undefined
+    ): CreateFirewallRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any],
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Priority" -> Priority.asInstanceOf[js.Any]
+      )
+
+      BlockOverrideDnsType.foreach(__v => __obj.updateDynamic("BlockOverrideDnsType")(__v.asInstanceOf[js.Any]))
+      BlockOverrideDomain.foreach(__v => __obj.updateDynamic("BlockOverrideDomain")(__v.asInstanceOf[js.Any]))
+      BlockOverrideTtl.foreach(__v => __obj.updateDynamic("BlockOverrideTtl")(__v.asInstanceOf[js.Any]))
+      BlockResponse.foreach(__v => __obj.updateDynamic("BlockResponse")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFirewallRuleRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFirewallRuleResponse extends js.Object {
+    var FirewallRule: js.UndefOr[FirewallRule]
+  }
+
+  object CreateFirewallRuleResponse {
+    @inline
+    def apply(
+        FirewallRule: js.UndefOr[FirewallRule] = js.undefined
+    ): CreateFirewallRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRule.foreach(__v => __obj.updateDynamic("FirewallRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFirewallRuleResponse]
     }
   }
 
@@ -388,6 +675,108 @@ package route53resolver {
   }
 
   @js.native
+  trait DeleteFirewallDomainListRequest extends js.Object {
+    var FirewallDomainListId: ResourceId
+  }
+
+  object DeleteFirewallDomainListRequest {
+    @inline
+    def apply(
+        FirewallDomainListId: ResourceId
+    ): DeleteFirewallDomainListRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFirewallDomainListRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFirewallDomainListResponse extends js.Object {
+    var FirewallDomainList: js.UndefOr[FirewallDomainList]
+  }
+
+  object DeleteFirewallDomainListResponse {
+    @inline
+    def apply(
+        FirewallDomainList: js.UndefOr[FirewallDomainList] = js.undefined
+    ): DeleteFirewallDomainListResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallDomainList.foreach(__v => __obj.updateDynamic("FirewallDomainList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFirewallDomainListResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFirewallRuleGroupRequest extends js.Object {
+    var FirewallRuleGroupId: ResourceId
+  }
+
+  object DeleteFirewallRuleGroupRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupId: ResourceId
+    ): DeleteFirewallRuleGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFirewallRuleGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFirewallRuleGroupResponse extends js.Object {
+    var FirewallRuleGroup: js.UndefOr[FirewallRuleGroup]
+  }
+
+  object DeleteFirewallRuleGroupResponse {
+    @inline
+    def apply(
+        FirewallRuleGroup: js.UndefOr[FirewallRuleGroup] = js.undefined
+    ): DeleteFirewallRuleGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroup.foreach(__v => __obj.updateDynamic("FirewallRuleGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFirewallRuleGroupResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFirewallRuleRequest extends js.Object {
+    var FirewallDomainListId: ResourceId
+    var FirewallRuleGroupId: ResourceId
+  }
+
+  object DeleteFirewallRuleRequest {
+    @inline
+    def apply(
+        FirewallDomainListId: ResourceId,
+        FirewallRuleGroupId: ResourceId
+    ): DeleteFirewallRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any],
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFirewallRuleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFirewallRuleResponse extends js.Object {
+    var FirewallRule: js.UndefOr[FirewallRule]
+  }
+
+  object DeleteFirewallRuleResponse {
+    @inline
+    def apply(
+        FirewallRule: js.UndefOr[FirewallRule] = js.undefined
+    ): DeleteFirewallRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRule.foreach(__v => __obj.updateDynamic("FirewallRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFirewallRuleResponse]
+    }
+  }
+
+  @js.native
   trait DeleteResolverEndpointRequest extends js.Object {
     var ResolverEndpointId: ResourceId
   }
@@ -483,6 +872,39 @@ package route53resolver {
       val __obj = js.Dynamic.literal()
       ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResolverRuleResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateFirewallRuleGroupRequest extends js.Object {
+    var FirewallRuleGroupAssociationId: ResourceId
+  }
+
+  object DisassociateFirewallRuleGroupRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociationId: ResourceId
+    ): DisassociateFirewallRuleGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallRuleGroupAssociationId" -> FirewallRuleGroupAssociationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateFirewallRuleGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateFirewallRuleGroupResponse extends js.Object {
+    var FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation]
+  }
+
+  object DisassociateFirewallRuleGroupResponse {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation] = js.undefined
+    ): DisassociateFirewallRuleGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupAssociation.foreach(__v => __obj.updateDynamic("FirewallRuleGroupAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateFirewallRuleGroupResponse]
     }
   }
 
@@ -613,6 +1035,521 @@ package route53resolver {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filter]
+    }
+  }
+
+  /** Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+    */
+  @js.native
+  trait FirewallConfig extends js.Object {
+    var FirewallFailOpen: js.UndefOr[FirewallFailOpenStatus]
+    var Id: js.UndefOr[ResourceId]
+    var OwnerId: js.UndefOr[AccountId]
+    var ResourceId: js.UndefOr[ResourceId]
+  }
+
+  object FirewallConfig {
+    @inline
+    def apply(
+        FirewallFailOpen: js.UndefOr[FirewallFailOpenStatus] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        OwnerId: js.UndefOr[AccountId] = js.undefined,
+        ResourceId: js.UndefOr[ResourceId] = js.undefined
+    ): FirewallConfig = {
+      val __obj = js.Dynamic.literal()
+      FirewallFailOpen.foreach(__v => __obj.updateDynamic("FirewallFailOpen")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallConfig]
+    }
+  }
+
+  @js.native
+  sealed trait FirewallDomainImportOperation extends js.Any
+  object FirewallDomainImportOperation {
+    val REPLACE = "REPLACE".asInstanceOf[FirewallDomainImportOperation]
+
+    @inline def values = js.Array(REPLACE)
+  }
+
+  /** High level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by <a>GetFirewallDomainList</a>.
+    * To retrieve the domains that are defined for this domain list, call <a>ListFirewallDomains</a>.
+    */
+  @js.native
+  trait FirewallDomainList extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreationTime: js.UndefOr[Rfc3339TimeString]
+    var CreatorRequestId: js.UndefOr[CreatorRequestId]
+    var DomainCount: js.UndefOr[Unsigned]
+    var Id: js.UndefOr[ResourceId]
+    var ManagedOwnerName: js.UndefOr[ServicePrinciple]
+    var ModificationTime: js.UndefOr[Rfc3339TimeString]
+    var Name: js.UndefOr[Name]
+    var Status: js.UndefOr[FirewallDomainListStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+  }
+
+  object FirewallDomainList {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        DomainCount: js.UndefOr[Unsigned] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        ManagedOwnerName: js.UndefOr[ServicePrinciple] = js.undefined,
+        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[FirewallDomainListStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
+    ): FirewallDomainList = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      DomainCount.foreach(__v => __obj.updateDynamic("DomainCount")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ManagedOwnerName.foreach(__v => __obj.updateDynamic("ManagedOwnerName")(__v.asInstanceOf[js.Any]))
+      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallDomainList]
+    }
+  }
+
+  /** Minimal high-level information for a firewall domain list. The action <a>ListFirewallDomainLists</a> returns an array of these objects.
+    * To retrieve full information for a firewall domain list, call <a>GetFirewallDomainList</a> and <a>ListFirewallDomains</a>.
+    */
+  @js.native
+  trait FirewallDomainListMetadata extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatorRequestId: js.UndefOr[CreatorRequestId]
+    var Id: js.UndefOr[ResourceId]
+    var ManagedOwnerName: js.UndefOr[ServicePrinciple]
+    var Name: js.UndefOr[Name]
+  }
+
+  object FirewallDomainListMetadata {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        ManagedOwnerName: js.UndefOr[ServicePrinciple] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined
+    ): FirewallDomainListMetadata = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ManagedOwnerName.foreach(__v => __obj.updateDynamic("ManagedOwnerName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallDomainListMetadata]
+    }
+  }
+
+  @js.native
+  sealed trait FirewallDomainListStatus extends js.Any
+  object FirewallDomainListStatus {
+    val COMPLETE = "COMPLETE".asInstanceOf[FirewallDomainListStatus]
+    val COMPLETE_IMPORT_FAILED = "COMPLETE_IMPORT_FAILED".asInstanceOf[FirewallDomainListStatus]
+    val IMPORTING = "IMPORTING".asInstanceOf[FirewallDomainListStatus]
+    val DELETING = "DELETING".asInstanceOf[FirewallDomainListStatus]
+    val UPDATING = "UPDATING".asInstanceOf[FirewallDomainListStatus]
+
+    @inline def values = js.Array(COMPLETE, COMPLETE_IMPORT_FAILED, IMPORTING, DELETING, UPDATING)
+  }
+
+  @js.native
+  sealed trait FirewallDomainUpdateOperation extends js.Any
+  object FirewallDomainUpdateOperation {
+    val ADD = "ADD".asInstanceOf[FirewallDomainUpdateOperation]
+    val REMOVE = "REMOVE".asInstanceOf[FirewallDomainUpdateOperation]
+    val REPLACE = "REPLACE".asInstanceOf[FirewallDomainUpdateOperation]
+
+    @inline def values = js.Array(ADD, REMOVE, REPLACE)
+  }
+
+  @js.native
+  sealed trait FirewallFailOpenStatus extends js.Any
+  object FirewallFailOpenStatus {
+    val ENABLED = "ENABLED".asInstanceOf[FirewallFailOpenStatus]
+    val DISABLED = "DISABLED".asInstanceOf[FirewallFailOpenStatus]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  /** A single firewall rule in a rule group.
+    */
+  @js.native
+  trait FirewallRule extends js.Object {
+    var Action: js.UndefOr[Action]
+    var BlockOverrideDnsType: js.UndefOr[BlockOverrideDnsType]
+    var BlockOverrideDomain: js.UndefOr[BlockOverrideDomain]
+    var BlockOverrideTtl: js.UndefOr[Unsigned]
+    var BlockResponse: js.UndefOr[BlockResponse]
+    var CreationTime: js.UndefOr[Rfc3339TimeString]
+    var CreatorRequestId: js.UndefOr[CreatorRequestId]
+    var FirewallDomainListId: js.UndefOr[ResourceId]
+    var FirewallRuleGroupId: js.UndefOr[ResourceId]
+    var ModificationTime: js.UndefOr[Rfc3339TimeString]
+    var Name: js.UndefOr[Name]
+    var Priority: js.UndefOr[Priority]
+  }
+
+  object FirewallRule {
+    @inline
+    def apply(
+        Action: js.UndefOr[Action] = js.undefined,
+        BlockOverrideDnsType: js.UndefOr[BlockOverrideDnsType] = js.undefined,
+        BlockOverrideDomain: js.UndefOr[BlockOverrideDomain] = js.undefined,
+        BlockOverrideTtl: js.UndefOr[Unsigned] = js.undefined,
+        BlockResponse: js.UndefOr[BlockResponse] = js.undefined,
+        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        FirewallDomainListId: js.UndefOr[ResourceId] = js.undefined,
+        FirewallRuleGroupId: js.UndefOr[ResourceId] = js.undefined,
+        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Priority: js.UndefOr[Priority] = js.undefined
+    ): FirewallRule = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      BlockOverrideDnsType.foreach(__v => __obj.updateDynamic("BlockOverrideDnsType")(__v.asInstanceOf[js.Any]))
+      BlockOverrideDomain.foreach(__v => __obj.updateDynamic("BlockOverrideDomain")(__v.asInstanceOf[js.Any]))
+      BlockOverrideTtl.foreach(__v => __obj.updateDynamic("BlockOverrideTtl")(__v.asInstanceOf[js.Any]))
+      BlockResponse.foreach(__v => __obj.updateDynamic("BlockResponse")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      FirewallDomainListId.foreach(__v => __obj.updateDynamic("FirewallDomainListId")(__v.asInstanceOf[js.Any]))
+      FirewallRuleGroupId.foreach(__v => __obj.updateDynamic("FirewallRuleGroupId")(__v.asInstanceOf[js.Any]))
+      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallRule]
+    }
+  }
+
+  /** High-level information for a firewall rule group. A firewall rule group is a collection of rules that DNS Firewall uses to filter DNS network traffic for a VPC. To retrieve the rules for the rule group, call <a>ListFirewallRules</a>.
+    */
+  @js.native
+  trait FirewallRuleGroup extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreationTime: js.UndefOr[Rfc3339TimeString]
+    var CreatorRequestId: js.UndefOr[CreatorRequestId]
+    var Id: js.UndefOr[ResourceId]
+    var ModificationTime: js.UndefOr[Rfc3339TimeString]
+    var Name: js.UndefOr[Name]
+    var OwnerId: js.UndefOr[AccountId]
+    var RuleCount: js.UndefOr[Unsigned]
+    var ShareStatus: js.UndefOr[ShareStatus]
+    var Status: js.UndefOr[FirewallRuleGroupStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+  }
+
+  object FirewallRuleGroup {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        OwnerId: js.UndefOr[AccountId] = js.undefined,
+        RuleCount: js.UndefOr[Unsigned] = js.undefined,
+        ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
+        Status: js.UndefOr[FirewallRuleGroupStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
+    ): FirewallRuleGroup = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      RuleCount.foreach(__v => __obj.updateDynamic("RuleCount")(__v.asInstanceOf[js.Any]))
+      ShareStatus.foreach(__v => __obj.updateDynamic("ShareStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallRuleGroup]
+    }
+  }
+
+  /** An association between a firewall rul group and a VPC, which enables DNS filtering for the VPC.
+    */
+  @js.native
+  trait FirewallRuleGroupAssociation extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreationTime: js.UndefOr[Rfc3339TimeString]
+    var CreatorRequestId: js.UndefOr[CreatorRequestId]
+    var FirewallRuleGroupId: js.UndefOr[ResourceId]
+    var Id: js.UndefOr[ResourceId]
+    var ManagedOwnerName: js.UndefOr[ServicePrinciple]
+    var ModificationTime: js.UndefOr[Rfc3339TimeString]
+    var MutationProtection: js.UndefOr[MutationProtectionStatus]
+    var Name: js.UndefOr[Name]
+    var Priority: js.UndefOr[Priority]
+    var Status: js.UndefOr[FirewallRuleGroupAssociationStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object FirewallRuleGroupAssociation {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        FirewallRuleGroupId: js.UndefOr[ResourceId] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        ManagedOwnerName: js.UndefOr[ServicePrinciple] = js.undefined,
+        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        MutationProtection: js.UndefOr[MutationProtectionStatus] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Priority: js.UndefOr[Priority] = js.undefined,
+        Status: js.UndefOr[FirewallRuleGroupAssociationStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): FirewallRuleGroupAssociation = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      FirewallRuleGroupId.foreach(__v => __obj.updateDynamic("FirewallRuleGroupId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ManagedOwnerName.foreach(__v => __obj.updateDynamic("ManagedOwnerName")(__v.asInstanceOf[js.Any]))
+      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
+      MutationProtection.foreach(__v => __obj.updateDynamic("MutationProtection")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallRuleGroupAssociation]
+    }
+  }
+
+  @js.native
+  sealed trait FirewallRuleGroupAssociationStatus extends js.Any
+  object FirewallRuleGroupAssociationStatus {
+    val COMPLETE = "COMPLETE".asInstanceOf[FirewallRuleGroupAssociationStatus]
+    val DELETING = "DELETING".asInstanceOf[FirewallRuleGroupAssociationStatus]
+    val UPDATING = "UPDATING".asInstanceOf[FirewallRuleGroupAssociationStatus]
+
+    @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
+  }
+
+  /** Minimal high-level information for a firewall rule group. The action <a>ListFirewallRuleGroups</a> returns an array of these objects.
+    * To retrieve full information for a firewall rule group, call <a>GetFirewallRuleGroup</a> and <a>ListFirewallRules</a>.
+    */
+  @js.native
+  trait FirewallRuleGroupMetadata extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatorRequestId: js.UndefOr[CreatorRequestId]
+    var Id: js.UndefOr[ResourceId]
+    var Name: js.UndefOr[Name]
+    var OwnerId: js.UndefOr[AccountId]
+    var ShareStatus: js.UndefOr[ShareStatus]
+  }
+
+  object FirewallRuleGroupMetadata {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        OwnerId: js.UndefOr[AccountId] = js.undefined,
+        ShareStatus: js.UndefOr[ShareStatus] = js.undefined
+    ): FirewallRuleGroupMetadata = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ShareStatus.foreach(__v => __obj.updateDynamic("ShareStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallRuleGroupMetadata]
+    }
+  }
+
+  @js.native
+  sealed trait FirewallRuleGroupStatus extends js.Any
+  object FirewallRuleGroupStatus {
+    val COMPLETE = "COMPLETE".asInstanceOf[FirewallRuleGroupStatus]
+    val DELETING = "DELETING".asInstanceOf[FirewallRuleGroupStatus]
+    val UPDATING = "UPDATING".asInstanceOf[FirewallRuleGroupStatus]
+
+    @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
+  }
+
+  @js.native
+  trait GetFirewallConfigRequest extends js.Object {
+    var ResourceId: ResourceId
+  }
+
+  object GetFirewallConfigRequest {
+    @inline
+    def apply(
+        ResourceId: ResourceId
+    ): GetFirewallConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFirewallConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetFirewallConfigResponse extends js.Object {
+    var FirewallConfig: js.UndefOr[FirewallConfig]
+  }
+
+  object GetFirewallConfigResponse {
+    @inline
+    def apply(
+        FirewallConfig: js.UndefOr[FirewallConfig] = js.undefined
+    ): GetFirewallConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallConfig.foreach(__v => __obj.updateDynamic("FirewallConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFirewallConfigResponse]
+    }
+  }
+
+  @js.native
+  trait GetFirewallDomainListRequest extends js.Object {
+    var FirewallDomainListId: ResourceId
+  }
+
+  object GetFirewallDomainListRequest {
+    @inline
+    def apply(
+        FirewallDomainListId: ResourceId
+    ): GetFirewallDomainListRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFirewallDomainListRequest]
+    }
+  }
+
+  @js.native
+  trait GetFirewallDomainListResponse extends js.Object {
+    var FirewallDomainList: js.UndefOr[FirewallDomainList]
+  }
+
+  object GetFirewallDomainListResponse {
+    @inline
+    def apply(
+        FirewallDomainList: js.UndefOr[FirewallDomainList] = js.undefined
+    ): GetFirewallDomainListResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallDomainList.foreach(__v => __obj.updateDynamic("FirewallDomainList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFirewallDomainListResponse]
+    }
+  }
+
+  @js.native
+  trait GetFirewallRuleGroupAssociationRequest extends js.Object {
+    var FirewallRuleGroupAssociationId: ResourceId
+  }
+
+  object GetFirewallRuleGroupAssociationRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociationId: ResourceId
+    ): GetFirewallRuleGroupAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallRuleGroupAssociationId" -> FirewallRuleGroupAssociationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFirewallRuleGroupAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait GetFirewallRuleGroupAssociationResponse extends js.Object {
+    var FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation]
+  }
+
+  object GetFirewallRuleGroupAssociationResponse {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation] = js.undefined
+    ): GetFirewallRuleGroupAssociationResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupAssociation.foreach(__v => __obj.updateDynamic("FirewallRuleGroupAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFirewallRuleGroupAssociationResponse]
+    }
+  }
+
+  @js.native
+  trait GetFirewallRuleGroupPolicyRequest extends js.Object {
+    var Arn: Arn
+  }
+
+  object GetFirewallRuleGroupPolicyRequest {
+    @inline
+    def apply(
+        Arn: Arn
+    ): GetFirewallRuleGroupPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFirewallRuleGroupPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetFirewallRuleGroupPolicyResponse extends js.Object {
+    var FirewallRuleGroupPolicy: js.UndefOr[FirewallRuleGroupPolicy]
+  }
+
+  object GetFirewallRuleGroupPolicyResponse {
+    @inline
+    def apply(
+        FirewallRuleGroupPolicy: js.UndefOr[FirewallRuleGroupPolicy] = js.undefined
+    ): GetFirewallRuleGroupPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupPolicy.foreach(__v => __obj.updateDynamic("FirewallRuleGroupPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFirewallRuleGroupPolicyResponse]
+    }
+  }
+
+  @js.native
+  trait GetFirewallRuleGroupRequest extends js.Object {
+    var FirewallRuleGroupId: ResourceId
+  }
+
+  object GetFirewallRuleGroupRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupId: ResourceId
+    ): GetFirewallRuleGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFirewallRuleGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetFirewallRuleGroupResponse extends js.Object {
+    var FirewallRuleGroup: js.UndefOr[FirewallRuleGroup]
+  }
+
+  object GetFirewallRuleGroupResponse {
+    @inline
+    def apply(
+        FirewallRuleGroup: js.UndefOr[FirewallRuleGroup] = js.undefined
+    ): GetFirewallRuleGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroup.foreach(__v => __obj.updateDynamic("FirewallRuleGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFirewallRuleGroupResponse]
     }
   }
 
@@ -880,6 +1817,54 @@ package route53resolver {
     }
   }
 
+  @js.native
+  trait ImportFirewallDomainsRequest extends js.Object {
+    var DomainFileUrl: DomainListFileUrl
+    var FirewallDomainListId: ResourceId
+    var Operation: FirewallDomainImportOperation
+  }
+
+  object ImportFirewallDomainsRequest {
+    @inline
+    def apply(
+        DomainFileUrl: DomainListFileUrl,
+        FirewallDomainListId: ResourceId,
+        Operation: FirewallDomainImportOperation
+    ): ImportFirewallDomainsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainFileUrl" -> DomainFileUrl.asInstanceOf[js.Any],
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any],
+        "Operation" -> Operation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ImportFirewallDomainsRequest]
+    }
+  }
+
+  @js.native
+  trait ImportFirewallDomainsResponse extends js.Object {
+    var Id: js.UndefOr[ResourceId]
+    var Name: js.UndefOr[Name]
+    var Status: js.UndefOr[FirewallDomainListStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+  }
+
+  object ImportFirewallDomainsResponse {
+    @inline
+    def apply(
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[FirewallDomainListStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
+    ): ImportFirewallDomainsResponse = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportFirewallDomainsResponse]
+    }
+  }
+
   /** In a [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html|CreateResolverEndpoint]] request, the IP address that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code> also includes the ID of the subnet that contains the IP address.
     */
   @js.native
@@ -977,6 +1962,262 @@ package route53resolver {
       IpId.foreach(__v => __obj.updateDynamic("IpId")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpAddressUpdate]
+    }
+  }
+
+  @js.native
+  trait ListFirewallConfigsRequest extends js.Object {
+    var MaxResults: js.UndefOr[ListFirewallConfigsMaxResult]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallConfigsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListFirewallConfigsMaxResult] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFirewallConfigsResponse extends js.Object {
+    var FirewallConfigs: js.UndefOr[FirewallConfigList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallConfigsResponse {
+    @inline
+    def apply(
+        FirewallConfigs: js.UndefOr[FirewallConfigList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallConfigs.foreach(__v => __obj.updateDynamic("FirewallConfigs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallConfigsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFirewallDomainListsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallDomainListsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallDomainListsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallDomainListsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFirewallDomainListsResponse extends js.Object {
+    var FirewallDomainLists: js.UndefOr[FirewallDomainListMetadataList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallDomainListsResponse {
+    @inline
+    def apply(
+        FirewallDomainLists: js.UndefOr[FirewallDomainListMetadataList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallDomainListsResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallDomainLists.foreach(__v => __obj.updateDynamic("FirewallDomainLists")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallDomainListsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFirewallDomainsRequest extends js.Object {
+    var FirewallDomainListId: ResourceId
+    var MaxResults: js.UndefOr[ListDomainMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallDomainsRequest {
+    @inline
+    def apply(
+        FirewallDomainListId: ResourceId,
+        MaxResults: js.UndefOr[ListDomainMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallDomainsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallDomainsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFirewallDomainsResponse extends js.Object {
+    var Domains: js.UndefOr[FirewallDomains]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallDomainsResponse {
+    @inline
+    def apply(
+        Domains: js.UndefOr[FirewallDomains] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallDomainsResponse = {
+      val __obj = js.Dynamic.literal()
+      Domains.foreach(__v => __obj.updateDynamic("Domains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallDomainsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFirewallRuleGroupAssociationsRequest extends js.Object {
+    var FirewallRuleGroupId: js.UndefOr[ResourceId]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var Priority: js.UndefOr[Priority]
+    var Status: js.UndefOr[FirewallRuleGroupAssociationStatus]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object ListFirewallRuleGroupAssociationsRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupId: js.UndefOr[ResourceId] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Priority: js.UndefOr[Priority] = js.undefined,
+        Status: js.UndefOr[FirewallRuleGroupAssociationStatus] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): ListFirewallRuleGroupAssociationsRequest = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupId.foreach(__v => __obj.updateDynamic("FirewallRuleGroupId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallRuleGroupAssociationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFirewallRuleGroupAssociationsResponse extends js.Object {
+    var FirewallRuleGroupAssociations: js.UndefOr[FirewallRuleGroupAssociations]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallRuleGroupAssociationsResponse {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociations: js.UndefOr[FirewallRuleGroupAssociations] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallRuleGroupAssociationsResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupAssociations.foreach(__v => __obj.updateDynamic("FirewallRuleGroupAssociations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallRuleGroupAssociationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFirewallRuleGroupsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallRuleGroupsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallRuleGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallRuleGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFirewallRuleGroupsResponse extends js.Object {
+    var FirewallRuleGroups: js.UndefOr[FirewallRuleGroupMetadataList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallRuleGroupsResponse {
+    @inline
+    def apply(
+        FirewallRuleGroups: js.UndefOr[FirewallRuleGroupMetadataList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallRuleGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroups.foreach(__v => __obj.updateDynamic("FirewallRuleGroups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallRuleGroupsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFirewallRulesRequest extends js.Object {
+    var FirewallRuleGroupId: ResourceId
+    var Action: js.UndefOr[Action]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var Priority: js.UndefOr[Priority]
+  }
+
+  object ListFirewallRulesRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupId: ResourceId,
+        Action: js.UndefOr[Action] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Priority: js.UndefOr[Priority] = js.undefined
+    ): ListFirewallRulesRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any]
+      )
+
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallRulesRequest]
+    }
+  }
+
+  @js.native
+  trait ListFirewallRulesResponse extends js.Object {
+    var FirewallRules: js.UndefOr[FirewallRules]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFirewallRulesResponse {
+    @inline
+    def apply(
+        FirewallRules: js.UndefOr[FirewallRules] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFirewallRulesResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRules.foreach(__v => __obj.updateDynamic("FirewallRules")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFirewallRulesResponse]
     }
   }
 
@@ -1345,6 +2586,51 @@ package route53resolver {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
+  sealed trait MutationProtectionStatus extends js.Any
+  object MutationProtectionStatus {
+    val ENABLED = "ENABLED".asInstanceOf[MutationProtectionStatus]
+    val DISABLED = "DISABLED".asInstanceOf[MutationProtectionStatus]
+
+    @inline def values = js.Array(ENABLED, DISABLED)
+  }
+
+  @js.native
+  trait PutFirewallRuleGroupPolicyRequest extends js.Object {
+    var Arn: Arn
+    var FirewallRuleGroupPolicy: FirewallRuleGroupPolicy
+  }
+
+  object PutFirewallRuleGroupPolicyRequest {
+    @inline
+    def apply(
+        Arn: Arn,
+        FirewallRuleGroupPolicy: FirewallRuleGroupPolicy
+    ): PutFirewallRuleGroupPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "FirewallRuleGroupPolicy" -> FirewallRuleGroupPolicy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutFirewallRuleGroupPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutFirewallRuleGroupPolicyResponse extends js.Object {
+    var ReturnValue: js.UndefOr[Boolean]
+  }
+
+  object PutFirewallRuleGroupPolicyResponse {
+    @inline
+    def apply(
+        ReturnValue: js.UndefOr[Boolean] = js.undefined
+    ): PutFirewallRuleGroupPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      ReturnValue.foreach(__v => __obj.updateDynamic("ReturnValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutFirewallRuleGroupPolicyResponse]
     }
   }
 
@@ -1920,6 +3206,191 @@ package route53resolver {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallConfigRequest extends js.Object {
+    var FirewallFailOpen: FirewallFailOpenStatus
+    var ResourceId: ResourceId
+  }
+
+  object UpdateFirewallConfigRequest {
+    @inline
+    def apply(
+        FirewallFailOpen: FirewallFailOpenStatus,
+        ResourceId: ResourceId
+    ): UpdateFirewallConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallFailOpen" -> FirewallFailOpen.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateFirewallConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallConfigResponse extends js.Object {
+    var FirewallConfig: js.UndefOr[FirewallConfig]
+  }
+
+  object UpdateFirewallConfigResponse {
+    @inline
+    def apply(
+        FirewallConfig: js.UndefOr[FirewallConfig] = js.undefined
+    ): UpdateFirewallConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallConfig.foreach(__v => __obj.updateDynamic("FirewallConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallConfigResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallDomainsRequest extends js.Object {
+    var Domains: FirewallDomains
+    var FirewallDomainListId: ResourceId
+    var Operation: FirewallDomainUpdateOperation
+  }
+
+  object UpdateFirewallDomainsRequest {
+    @inline
+    def apply(
+        Domains: FirewallDomains,
+        FirewallDomainListId: ResourceId,
+        Operation: FirewallDomainUpdateOperation
+    ): UpdateFirewallDomainsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Domains" -> Domains.asInstanceOf[js.Any],
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any],
+        "Operation" -> Operation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateFirewallDomainsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallDomainsResponse extends js.Object {
+    var Id: js.UndefOr[ResourceId]
+    var Name: js.UndefOr[Name]
+    var Status: js.UndefOr[FirewallDomainListStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+  }
+
+  object UpdateFirewallDomainsResponse {
+    @inline
+    def apply(
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[FirewallDomainListStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
+    ): UpdateFirewallDomainsResponse = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallDomainsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallRuleGroupAssociationRequest extends js.Object {
+    var FirewallRuleGroupAssociationId: ResourceId
+    var MutationProtection: js.UndefOr[MutationProtectionStatus]
+    var Name: js.UndefOr[Name]
+    var Priority: js.UndefOr[Priority]
+  }
+
+  object UpdateFirewallRuleGroupAssociationRequest {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociationId: ResourceId,
+        MutationProtection: js.UndefOr[MutationProtectionStatus] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Priority: js.UndefOr[Priority] = js.undefined
+    ): UpdateFirewallRuleGroupAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallRuleGroupAssociationId" -> FirewallRuleGroupAssociationId.asInstanceOf[js.Any]
+      )
+
+      MutationProtection.foreach(__v => __obj.updateDynamic("MutationProtection")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallRuleGroupAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallRuleGroupAssociationResponse extends js.Object {
+    var FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation]
+  }
+
+  object UpdateFirewallRuleGroupAssociationResponse {
+    @inline
+    def apply(
+        FirewallRuleGroupAssociation: js.UndefOr[FirewallRuleGroupAssociation] = js.undefined
+    ): UpdateFirewallRuleGroupAssociationResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRuleGroupAssociation.foreach(__v => __obj.updateDynamic("FirewallRuleGroupAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallRuleGroupAssociationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallRuleRequest extends js.Object {
+    var FirewallDomainListId: ResourceId
+    var FirewallRuleGroupId: ResourceId
+    var Action: js.UndefOr[Action]
+    var BlockOverrideDnsType: js.UndefOr[BlockOverrideDnsType]
+    var BlockOverrideDomain: js.UndefOr[BlockOverrideDomain]
+    var BlockOverrideTtl: js.UndefOr[BlockOverrideTtl]
+    var BlockResponse: js.UndefOr[BlockResponse]
+    var Name: js.UndefOr[Name]
+    var Priority: js.UndefOr[Priority]
+  }
+
+  object UpdateFirewallRuleRequest {
+    @inline
+    def apply(
+        FirewallDomainListId: ResourceId,
+        FirewallRuleGroupId: ResourceId,
+        Action: js.UndefOr[Action] = js.undefined,
+        BlockOverrideDnsType: js.UndefOr[BlockOverrideDnsType] = js.undefined,
+        BlockOverrideDomain: js.UndefOr[BlockOverrideDomain] = js.undefined,
+        BlockOverrideTtl: js.UndefOr[BlockOverrideTtl] = js.undefined,
+        BlockResponse: js.UndefOr[BlockResponse] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Priority: js.UndefOr[Priority] = js.undefined
+    ): UpdateFirewallRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirewallDomainListId" -> FirewallDomainListId.asInstanceOf[js.Any],
+        "FirewallRuleGroupId" -> FirewallRuleGroupId.asInstanceOf[js.Any]
+      )
+
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      BlockOverrideDnsType.foreach(__v => __obj.updateDynamic("BlockOverrideDnsType")(__v.asInstanceOf[js.Any]))
+      BlockOverrideDomain.foreach(__v => __obj.updateDynamic("BlockOverrideDomain")(__v.asInstanceOf[js.Any]))
+      BlockOverrideTtl.foreach(__v => __obj.updateDynamic("BlockOverrideTtl")(__v.asInstanceOf[js.Any]))
+      BlockResponse.foreach(__v => __obj.updateDynamic("BlockResponse")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallRuleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallRuleResponse extends js.Object {
+    var FirewallRule: js.UndefOr[FirewallRule]
+  }
+
+  object UpdateFirewallRuleResponse {
+    @inline
+    def apply(
+        FirewallRule: js.UndefOr[FirewallRule] = js.undefined
+    ): UpdateFirewallRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      FirewallRule.foreach(__v => __obj.updateDynamic("FirewallRule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallRuleResponse]
     }
   }
 

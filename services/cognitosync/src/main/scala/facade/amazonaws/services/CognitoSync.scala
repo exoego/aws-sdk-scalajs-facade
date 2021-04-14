@@ -17,7 +17,6 @@ package object cognitosync {
   type Date = js.Date
   type DeviceId = String
   type Events = js.Dictionary[LambdaFunctionArn]
-  type ExceptionMessage = String
   type IdentityId = String
   type IdentityPoolId = String
   type IdentityPoolUsageList = js.Array[IdentityPoolUsage]
@@ -78,13 +77,6 @@ package cognitosync {
     def subscribeToDataset(params: SubscribeToDatasetRequest): Request[SubscribeToDatasetResponse] = js.native
     def unsubscribeFromDataset(params: UnsubscribeFromDatasetRequest): Request[UnsubscribeFromDatasetResponse] = js.native
     def updateRecords(params: UpdateRecordsRequest): Request[UpdateRecordsResponse] = js.native
-  }
-
-  /** An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.
-    */
-  @js.native
-  trait AlreadyStreamedExceptionException extends js.Object {
-    val message: ExceptionMessage
   }
 
   /** The input for the BulkPublish operation.
@@ -157,13 +149,6 @@ package cognitosync {
       StreamingStatus.foreach(__v => __obj.updateDynamic("StreamingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CognitoStreams]
     }
-  }
-
-  /** Thrown if there are parallel requests to modify a resource.
-    */
-  @js.native
-  trait ConcurrentModificationExceptionException extends js.Object {
-    val message: String
   }
 
   /** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
@@ -365,13 +350,6 @@ package cognitosync {
     }
   }
 
-  /** An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.
-    */
-  @js.native
-  trait DuplicateRequestExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   /** The input for the GetBulkPublishDetails operation.
     */
   @js.native
@@ -558,46 +536,6 @@ package cognitosync {
     }
   }
 
-  /** Indicates an internal service error.
-    */
-  @js.native
-  trait InternalErrorExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  @js.native
-  trait InvalidConfigurationExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /** The AWS Lambda function returned invalid output or an exception.
-    */
-  @js.native
-  trait InvalidLambdaFunctionOutputExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /** Thrown when a request parameter does not comply with the associated constraints.
-    */
-  @js.native
-  trait InvalidParameterExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /** AWS Lambda throttled your account, please contact AWS Support
-    */
-  @js.native
-  trait LambdaThrottledExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /** Thrown when the limit on the number of objects or operations has been exceeded.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   /** Request for a list of datasets for an identity.
     */
   @js.native
@@ -779,13 +717,6 @@ package cognitosync {
     }
   }
 
-  /** Thrown when a user is not authorized to access the requested resource.
-    */
-  @js.native
-  trait NotAuthorizedExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   @js.native
   sealed trait Operation extends js.Any
   object Operation {
@@ -938,20 +869,6 @@ package cognitosync {
     }
   }
 
-  /** Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.
-    */
-  @js.native
-  trait ResourceConflictExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /** Thrown if the resource doesn't exist.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   /** A request to configure Cognito Events"
     * "
     */
@@ -1073,13 +990,6 @@ package cognitosync {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SubscribeToDatasetResponse]
     }
-  }
-
-  /** Thrown if the request is throttled.
-    */
-  @js.native
-  trait TooManyRequestsExceptionException extends js.Object {
-    val message: ExceptionMessage
   }
 
   /** A request to UnsubscribeFromDataset.
