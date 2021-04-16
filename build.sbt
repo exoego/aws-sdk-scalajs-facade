@@ -16,6 +16,15 @@ lazy val core = (project in file("core"))
   )
   .enablePlugins(ScalaJSPlugin)
 
+lazy val credentials = (project in file("credentials"))
+  .settings(SharedConfig.settings)
+  .settings(SharedConfig.publishSetting)
+  .settings(
+    name := s"${SharedConfig.libraryName}-credentials"
+  )
+  .enablePlugins(ScalaJSPlugin)
+  .dependsOn(awsSTS, awsCognitoIdentity)
+
 def defineAwsProject(service: String): Project = {
   val lowerServiceName = service.toLowerCase
   Project(id = s"aws$service", base = file("services") / lowerServiceName)
@@ -313,6 +322,7 @@ lazy val all = (project in file("all"))
 
 lazy val subProjects: Seq[Project] = Seq(
   core,
+  credentials,
   awsAccessAnalyzer,
   awsACM,
   awsACMPCA,
