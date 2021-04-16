@@ -74,6 +74,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-connectcontactlens" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-connectparticipant" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-costexplorer" % awsSdkScalajsFacadeVersion,
+    "net.exoego" %%% "aws-sdk-scalajs-facade-credentials" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-cur" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-customerprofiles" % awsSdkScalajsFacadeVersion,
     "net.exoego" %%% "aws-sdk-scalajs-facade-databrew" % awsSdkScalajsFacadeVersion,
