@@ -8,9 +8,8 @@ import scala.scalajs.js.annotation.JSImport
 
 @js.native
 @JSImport("aws-sdk/lib/node_loader", "WebIdentityCredentials", "AWS.WebIdentityCredentials")
-class WebIdentityCredentials() extends AWSCredentials {
-  def this(options: sts.AssumeRoleWithWebIdentityRequest, clientConfig: AWSConfig) = this()
-  def this(options: sts.AssumeRoleWithWebIdentityRequest) = this()
+class WebIdentityCredentials(options: sts.AssumeRoleWithWebIdentityRequest, clientConfig: AWSConfig) extends AWSCredentials {
+  def this(options: sts.AssumeRoleWithWebIdentityRequest) = this(options, null)
 
   def data: sts.AssumeRoleWithWebIdentityResponse = js.native
   def params: sts.AssumeRoleWithWebIdentityRequest = js.native
