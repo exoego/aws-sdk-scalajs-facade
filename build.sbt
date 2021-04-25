@@ -23,7 +23,6 @@ lazy val credentials = (project in file("credentials"))
     name := s"${SharedConfig.libraryName}-credentials"
   )
   .enablePlugins(ScalaJSPlugin)
-  .dependsOn(awsSTS, awsCognitoIdentity)
 
 def defineAwsProject(service: String): Project = {
   val lowerServiceName = service.toLowerCase
