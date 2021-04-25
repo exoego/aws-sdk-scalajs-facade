@@ -16,7 +16,7 @@ lazy val core = (project in file("core"))
   )
   .enablePlugins(ScalaJSPlugin)
 
-lazy val credentials = (project in file("credentials"))
+lazy val awsCredentials = (project in file("credentials"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
@@ -321,7 +321,7 @@ lazy val all = (project in file("all"))
 
 lazy val subProjects: Seq[Project] = Seq(
   core,
-  credentials,
+  awsCredentials,
   awsAccessAnalyzer,
   awsACM,
   awsACMPCA,
