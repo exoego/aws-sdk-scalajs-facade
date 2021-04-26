@@ -2,7 +2,7 @@
 
 A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).
 
-[All **238 AWS**](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/top-level-namespace.html) are available as of 2020-11-23, and keep updating.
+[All AWS](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/top-level-namespace.html) are available and keep updating.
 
 You may find the below peer facades useful when developing app with AWS.
 
@@ -13,13 +13,13 @@ You may find the below peer facades useful when developing app with AWS.
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.32.0-v2.798.0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.33.0-v2.892.0"
 scalaJSLinkerConfig ~= (_.withModuleKind(ModuleKind.CommonJSModule))
 
 // Below are optional. Required when bundling aws-sdk for testing in sbt or
 // for running the app (the generated JS) on environment without aws-sdk provided.
 enablePlugins(ScalaJSBundlerPlugin)
-npmDependencies += "aws-sdk" -> "2.731.0"
+npmDependencies += "aws-sdk" -> "2.892.0"
 ```
 
 Check [scalajs-bundler](https://scalacenter.github.io/scalajs-bundler/) regarding how to use `ScalajsBundlerPlugin`.
