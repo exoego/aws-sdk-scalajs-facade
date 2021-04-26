@@ -1590,10 +1590,10 @@ package costexplorer {
 
   @js.native
   trait GetCostAndUsageRequest extends js.Object {
+    var Granularity: Granularity
     var Metrics: MetricNames
     var TimePeriod: DateInterval
     var Filter: js.UndefOr[Expression]
-    var Granularity: js.UndefOr[Granularity]
     var GroupBy: js.UndefOr[GroupDefinitions]
     var NextPageToken: js.UndefOr[NextPageToken]
   }
@@ -1601,20 +1601,20 @@ package costexplorer {
   object GetCostAndUsageRequest {
     @inline
     def apply(
+        Granularity: Granularity,
         Metrics: MetricNames,
         TimePeriod: DateInterval,
         Filter: js.UndefOr[Expression] = js.undefined,
-        Granularity: js.UndefOr[Granularity] = js.undefined,
         GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined
     ): GetCostAndUsageRequest = {
       val __obj = js.Dynamic.literal(
+        "Granularity" -> Granularity.asInstanceOf[js.Any],
         "Metrics" -> Metrics.asInstanceOf[js.Any],
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
       Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
-      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCostAndUsageRequest]
@@ -1649,8 +1649,8 @@ package costexplorer {
   @js.native
   trait GetCostAndUsageWithResourcesRequest extends js.Object {
     var Filter: Expression
+    var Granularity: Granularity
     var TimePeriod: DateInterval
-    var Granularity: js.UndefOr[Granularity]
     var GroupBy: js.UndefOr[GroupDefinitions]
     var Metrics: js.UndefOr[MetricNames]
     var NextPageToken: js.UndefOr[NextPageToken]
@@ -1660,18 +1660,18 @@ package costexplorer {
     @inline
     def apply(
         Filter: Expression,
+        Granularity: Granularity,
         TimePeriod: DateInterval,
-        Granularity: js.UndefOr[Granularity] = js.undefined,
         GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
         Metrics: js.UndefOr[MetricNames] = js.undefined,
         NextPageToken: js.UndefOr[NextPageToken] = js.undefined
     ): GetCostAndUsageWithResourcesRequest = {
       val __obj = js.Dynamic.literal(
         "Filter" -> Filter.asInstanceOf[js.Any],
+        "Granularity" -> Granularity.asInstanceOf[js.Any],
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any]
       )
 
-      Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
       NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
@@ -3862,8 +3862,9 @@ package costexplorer {
   object SupportedSavingsPlansType {
     val COMPUTE_SP = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
     val EC2_INSTANCE_SP = "EC2_INSTANCE_SP".asInstanceOf[SupportedSavingsPlansType]
+    val SAGEMAKER_SP = "SAGEMAKER_SP".asInstanceOf[SupportedSavingsPlansType]
 
-    @inline def values = js.Array(COMPUTE_SP, EC2_INSTANCE_SP)
+    @inline def values = js.Array(COMPUTE_SP, EC2_INSTANCE_SP, SAGEMAKER_SP)
   }
 
   /** The values that are available for a tag.

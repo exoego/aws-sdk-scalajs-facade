@@ -39,6 +39,8 @@ package object elasticache {
   type GlobalReplicationGroupMemberList = js.Array[GlobalReplicationGroupMember]
   type IntegerOptional = Int
   type KeyList = js.Array[String]
+  type LogDeliveryConfigurationList = js.Array[LogDeliveryConfiguration]
+  type LogDeliveryConfigurationRequestList = js.Array[LogDeliveryConfigurationRequest]
   type NodeGroupConfigurationList = js.Array[NodeGroupConfiguration]
   type NodeGroupList = js.Array[NodeGroup]
   type NodeGroupMemberList = js.Array[NodeGroupMember]
@@ -52,6 +54,7 @@ package object elasticache {
   type ParameterNameValueList = js.Array[ParameterNameValue]
   type ParametersList = js.Array[Parameter]
   type PasswordListInput = js.Array[String]
+  type PendingLogDeliveryConfigurationList = js.Array[PendingLogDeliveryConfiguration]
   type PreferredAvailabilityZoneList = js.Array[String]
   type PreferredOutpostArnList = js.Array[String]
   type ProcessedUpdateActionList = js.Array[ProcessedUpdateAction]
@@ -473,6 +476,7 @@ package elasticache {
     var ConfigurationEndpoint: js.UndefOr[Endpoint]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList]
     var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
     var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
@@ -480,6 +484,7 @@ package elasticache {
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PreferredOutpostArn: js.UndefOr[String]
     var ReplicationGroupId: js.UndefOr[String]
+    var ReplicationGroupLogDeliveryEnabled: js.UndefOr[Boolean]
     var SecurityGroups: js.UndefOr[SecurityGroupMembershipList]
     var SnapshotRetentionLimit: js.UndefOr[IntegerOptional]
     var SnapshotWindow: js.UndefOr[String]
@@ -506,6 +511,7 @@ package elasticache {
         ConfigurationEndpoint: js.UndefOr[Endpoint] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList] = js.undefined,
         NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
         PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
@@ -513,6 +519,7 @@ package elasticache {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PreferredOutpostArn: js.UndefOr[String] = js.undefined,
         ReplicationGroupId: js.UndefOr[String] = js.undefined,
+        ReplicationGroupLogDeliveryEnabled: js.UndefOr[Boolean] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroupMembershipList] = js.undefined,
         SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotWindow: js.UndefOr[String] = js.undefined,
@@ -536,6 +543,7 @@ package elasticache {
       ConfigurationEndpoint.foreach(__v => __obj.updateDynamic("ConfigurationEndpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
@@ -543,6 +551,7 @@ package elasticache {
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PreferredOutpostArn.foreach(__v => __obj.updateDynamic("PreferredOutpostArn")(__v.asInstanceOf[js.Any]))
       ReplicationGroupId.foreach(__v => __obj.updateDynamic("ReplicationGroupId")(__v.asInstanceOf[js.Any]))
+      ReplicationGroupLogDeliveryEnabled.foreach(__v => __obj.updateDynamic("ReplicationGroupLogDeliveryEnabled")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
       SnapshotWindow.foreach(__v => __obj.updateDynamic("SnapshotWindow")(__v.asInstanceOf[js.Any]))
@@ -1054,6 +1063,24 @@ package elasticache {
     @inline def values = js.Array(immediate, `requires-reboot`)
   }
 
+  /** The configuration details of the CloudWatch Logs destination.
+    */
+  @js.native
+  trait CloudWatchLogsDestinationDetails extends js.Object {
+    var LogGroup: js.UndefOr[String]
+  }
+
+  object CloudWatchLogsDestinationDetails {
+    @inline
+    def apply(
+        LogGroup: js.UndefOr[String] = js.undefined
+    ): CloudWatchLogsDestinationDetails = {
+      val __obj = js.Dynamic.literal()
+      LogGroup.foreach(__v => __obj.updateDynamic("LogGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CloudWatchLogsDestinationDetails]
+    }
+  }
+
   @js.native
   trait CompleteMigrationMessage extends js.Object {
     var ReplicationGroupId: String
@@ -1182,6 +1209,7 @@ package elasticache {
     var CacheSubnetGroupName: js.UndefOr[String]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var NotificationTopicArn: js.UndefOr[String]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
     var OutpostMode: js.UndefOr[OutpostMode]
@@ -1213,6 +1241,7 @@ package elasticache {
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
         OutpostMode: js.UndefOr[OutpostMode] = js.undefined,
@@ -1243,6 +1272,7 @@ package elasticache {
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       OutpostMode.foreach(__v => __obj.updateDynamic("OutpostMode")(__v.asInstanceOf[js.Any]))
@@ -1469,6 +1499,7 @@ package elasticache {
     var EngineVersion: js.UndefOr[String]
     var GlobalReplicationGroupId: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var MultiAZEnabled: js.UndefOr[BooleanOptional]
     var NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList]
     var NotificationTopicArn: js.UndefOr[String]
@@ -1506,6 +1537,7 @@ package elasticache {
         EngineVersion: js.UndefOr[String] = js.undefined,
         GlobalReplicationGroupId: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         MultiAZEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
@@ -1542,6 +1574,7 @@ package elasticache {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalReplicationGroupId.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupId")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       MultiAZEnabled.foreach(__v => __obj.updateDynamic("MultiAZEnabled")(__v.asInstanceOf[js.Any]))
       NodeGroupConfiguration.foreach(__v => __obj.updateDynamic("NodeGroupConfiguration")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
@@ -2645,6 +2678,36 @@ package elasticache {
     }
   }
 
+  /** Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.
+    */
+  @js.native
+  trait DestinationDetails extends js.Object {
+    var CloudWatchLogsDetails: js.UndefOr[CloudWatchLogsDestinationDetails]
+    var KinesisFirehoseDetails: js.UndefOr[KinesisFirehoseDestinationDetails]
+  }
+
+  object DestinationDetails {
+    @inline
+    def apply(
+        CloudWatchLogsDetails: js.UndefOr[CloudWatchLogsDestinationDetails] = js.undefined,
+        KinesisFirehoseDetails: js.UndefOr[KinesisFirehoseDestinationDetails] = js.undefined
+    ): DestinationDetails = {
+      val __obj = js.Dynamic.literal()
+      CloudWatchLogsDetails.foreach(__v => __obj.updateDynamic("CloudWatchLogsDetails")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseDetails.foreach(__v => __obj.updateDynamic("KinesisFirehoseDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationDetails]
+    }
+  }
+
+  @js.native
+  sealed trait DestinationType extends js.Any
+  object DestinationType {
+    val `cloudwatch-logs` = "cloudwatch-logs".asInstanceOf[DestinationType]
+    val `kinesis-firehose` = "kinesis-firehose".asInstanceOf[DestinationType]
+
+    @inline def values = js.Array(`cloudwatch-logs`, `kinesis-firehose`)
+  }
+
   @js.native
   trait DisassociateGlobalReplicationGroupMessage extends js.Object {
     var GlobalReplicationGroupId: String
@@ -3078,6 +3141,24 @@ package elasticache {
     }
   }
 
+  /** The configuration details of the Kinesis Data Firehose destination.
+    */
+  @js.native
+  trait KinesisFirehoseDestinationDetails extends js.Object {
+    var DeliveryStream: js.UndefOr[String]
+  }
+
+  object KinesisFirehoseDestinationDetails {
+    @inline
+    def apply(
+        DeliveryStream: js.UndefOr[String] = js.undefined
+    ): KinesisFirehoseDestinationDetails = {
+      val __obj = js.Dynamic.literal()
+      DeliveryStream.foreach(__v => __obj.updateDynamic("DeliveryStream")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisFirehoseDestinationDetails]
+    }
+  }
+
   /** The input parameters for the <code>ListAllowedNodeTypeModifications</code> operation.
     */
   @js.native
@@ -3118,6 +3199,98 @@ package elasticache {
     }
   }
 
+  /** Returns the destination, format and type of the logs.
+    */
+  @js.native
+  trait LogDeliveryConfiguration extends js.Object {
+    var DestinationDetails: js.UndefOr[DestinationDetails]
+    var DestinationType: js.UndefOr[DestinationType]
+    var LogFormat: js.UndefOr[LogFormat]
+    var LogType: js.UndefOr[LogType]
+    var Message: js.UndefOr[String]
+    var Status: js.UndefOr[LogDeliveryConfigurationStatus]
+  }
+
+  object LogDeliveryConfiguration {
+    @inline
+    def apply(
+        DestinationDetails: js.UndefOr[DestinationDetails] = js.undefined,
+        DestinationType: js.UndefOr[DestinationType] = js.undefined,
+        LogFormat: js.UndefOr[LogFormat] = js.undefined,
+        LogType: js.UndefOr[LogType] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[LogDeliveryConfigurationStatus] = js.undefined
+    ): LogDeliveryConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DestinationDetails.foreach(__v => __obj.updateDynamic("DestinationDetails")(__v.asInstanceOf[js.Any]))
+      DestinationType.foreach(__v => __obj.updateDynamic("DestinationType")(__v.asInstanceOf[js.Any]))
+      LogFormat.foreach(__v => __obj.updateDynamic("LogFormat")(__v.asInstanceOf[js.Any]))
+      LogType.foreach(__v => __obj.updateDynamic("LogType")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogDeliveryConfiguration]
+    }
+  }
+
+  /** Specifies the destination, format and type of the logs.
+    */
+  @js.native
+  trait LogDeliveryConfigurationRequest extends js.Object {
+    var DestinationDetails: js.UndefOr[DestinationDetails]
+    var DestinationType: js.UndefOr[DestinationType]
+    var Enabled: js.UndefOr[BooleanOptional]
+    var LogFormat: js.UndefOr[LogFormat]
+    var LogType: js.UndefOr[LogType]
+  }
+
+  object LogDeliveryConfigurationRequest {
+    @inline
+    def apply(
+        DestinationDetails: js.UndefOr[DestinationDetails] = js.undefined,
+        DestinationType: js.UndefOr[DestinationType] = js.undefined,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        LogFormat: js.UndefOr[LogFormat] = js.undefined,
+        LogType: js.UndefOr[LogType] = js.undefined
+    ): LogDeliveryConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      DestinationDetails.foreach(__v => __obj.updateDynamic("DestinationDetails")(__v.asInstanceOf[js.Any]))
+      DestinationType.foreach(__v => __obj.updateDynamic("DestinationType")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      LogFormat.foreach(__v => __obj.updateDynamic("LogFormat")(__v.asInstanceOf[js.Any]))
+      LogType.foreach(__v => __obj.updateDynamic("LogType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogDeliveryConfigurationRequest]
+    }
+  }
+
+  @js.native
+  sealed trait LogDeliveryConfigurationStatus extends js.Any
+  object LogDeliveryConfigurationStatus {
+    val active = "active".asInstanceOf[LogDeliveryConfigurationStatus]
+    val enabling = "enabling".asInstanceOf[LogDeliveryConfigurationStatus]
+    val modifying = "modifying".asInstanceOf[LogDeliveryConfigurationStatus]
+    val disabling = "disabling".asInstanceOf[LogDeliveryConfigurationStatus]
+    val error = "error".asInstanceOf[LogDeliveryConfigurationStatus]
+
+    @inline def values = js.Array(active, enabling, modifying, disabling, error)
+  }
+
+  @js.native
+  sealed trait LogFormat extends js.Any
+  object LogFormat {
+    val text = "text".asInstanceOf[LogFormat]
+    val json = "json".asInstanceOf[LogFormat]
+
+    @inline def values = js.Array(text, json)
+  }
+
+  @js.native
+  sealed trait LogType extends js.Any
+  object LogType {
+    val `slow-log` = "slow-log".asInstanceOf[LogType]
+
+    @inline def values = js.Array(`slow-log`)
+  }
+
   /** Represents the input of a <code>ModifyCacheCluster</code> operation.
     */
   @js.native
@@ -3133,6 +3306,7 @@ package elasticache {
     var CacheParameterGroupName: js.UndefOr[String]
     var CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList]
     var EngineVersion: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var NewAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList]
     var NotificationTopicArn: js.UndefOr[String]
     var NotificationTopicStatus: js.UndefOr[String]
@@ -3157,6 +3331,7 @@ package elasticache {
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         NewAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         NotificationTopicStatus: js.UndefOr[String] = js.undefined,
@@ -3180,6 +3355,7 @@ package elasticache {
       CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       CacheSecurityGroupNames.foreach(__v => __obj.updateDynamic("CacheSecurityGroupNames")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       NewAvailabilityZones.foreach(__v => __obj.updateDynamic("NewAvailabilityZones")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
@@ -3338,6 +3514,7 @@ package elasticache {
     var CacheParameterGroupName: js.UndefOr[String]
     var CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList]
     var EngineVersion: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var MultiAZEnabled: js.UndefOr[BooleanOptional]
     var NodeGroupId: js.UndefOr[String]
     var NotificationTopicArn: js.UndefOr[String]
@@ -3367,6 +3544,7 @@ package elasticache {
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         MultiAZEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         NodeGroupId: js.UndefOr[String] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
@@ -3395,6 +3573,7 @@ package elasticache {
       CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       CacheSecurityGroupNames.foreach(__v => __obj.updateDynamic("CacheSecurityGroupNames")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       MultiAZEnabled.foreach(__v => __obj.updateDynamic("MultiAZEnabled")(__v.asInstanceOf[js.Any]))
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
@@ -3868,6 +4047,33 @@ package elasticache {
     @inline def values = js.Array(enabled, disabled)
   }
 
+  /** The log delivery configurations being modified
+    */
+  @js.native
+  trait PendingLogDeliveryConfiguration extends js.Object {
+    var DestinationDetails: js.UndefOr[DestinationDetails]
+    var DestinationType: js.UndefOr[DestinationType]
+    var LogFormat: js.UndefOr[LogFormat]
+    var LogType: js.UndefOr[LogType]
+  }
+
+  object PendingLogDeliveryConfiguration {
+    @inline
+    def apply(
+        DestinationDetails: js.UndefOr[DestinationDetails] = js.undefined,
+        DestinationType: js.UndefOr[DestinationType] = js.undefined,
+        LogFormat: js.UndefOr[LogFormat] = js.undefined,
+        LogType: js.UndefOr[LogType] = js.undefined
+    ): PendingLogDeliveryConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DestinationDetails.foreach(__v => __obj.updateDynamic("DestinationDetails")(__v.asInstanceOf[js.Any]))
+      DestinationType.foreach(__v => __obj.updateDynamic("DestinationType")(__v.asInstanceOf[js.Any]))
+      LogFormat.foreach(__v => __obj.updateDynamic("LogFormat")(__v.asInstanceOf[js.Any]))
+      LogType.foreach(__v => __obj.updateDynamic("LogType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingLogDeliveryConfiguration]
+    }
+  }
+
   /** A group of settings that are applied to the cluster in the future, or that are currently being applied.
     */
   @js.native
@@ -3876,6 +4082,7 @@ package elasticache {
     var CacheNodeIdsToRemove: js.UndefOr[CacheNodeIdsList]
     var CacheNodeType: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[PendingLogDeliveryConfigurationList]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
   }
 
@@ -3886,6 +4093,7 @@ package elasticache {
         CacheNodeIdsToRemove: js.UndefOr[CacheNodeIdsList] = js.undefined,
         CacheNodeType: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[PendingLogDeliveryConfigurationList] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined
     ): PendingModifiedValues = {
       val __obj = js.Dynamic.literal()
@@ -3893,6 +4101,7 @@ package elasticache {
       CacheNodeIdsToRemove.foreach(__v => __obj.updateDynamic("CacheNodeIdsToRemove")(__v.asInstanceOf[js.Any]))
       CacheNodeType.foreach(__v => __obj.updateDynamic("CacheNodeType")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingModifiedValues]
     }
@@ -4127,6 +4336,7 @@ package elasticache {
     var Description: js.UndefOr[String]
     var GlobalReplicationGroupInfo: js.UndefOr[GlobalReplicationGroupInfo]
     var KmsKeyId: js.UndefOr[String]
+    var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList]
     var MemberClusters: js.UndefOr[ClusterIdList]
     var MemberClustersOutpostArns: js.UndefOr[ReplicationGroupOutpostArnList]
     var MultiAZ: js.UndefOr[MultiAZStatus]
@@ -4155,6 +4365,7 @@ package elasticache {
         Description: js.UndefOr[String] = js.undefined,
         GlobalReplicationGroupInfo: js.UndefOr[GlobalReplicationGroupInfo] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList] = js.undefined,
         MemberClusters: js.UndefOr[ClusterIdList] = js.undefined,
         MemberClustersOutpostArns: js.UndefOr[ReplicationGroupOutpostArnList] = js.undefined,
         MultiAZ: js.UndefOr[MultiAZStatus] = js.undefined,
@@ -4180,6 +4391,7 @@ package elasticache {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       GlobalReplicationGroupInfo.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupInfo")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       MemberClusters.foreach(__v => __obj.updateDynamic("MemberClusters")(__v.asInstanceOf[js.Any]))
       MemberClustersOutpostArns.foreach(__v => __obj.updateDynamic("MemberClustersOutpostArns")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
@@ -4223,6 +4435,7 @@ package elasticache {
   trait ReplicationGroupPendingModifiedValues extends js.Object {
     var AuthTokenStatus: js.UndefOr[AuthTokenUpdateStatus]
     var AutomaticFailoverStatus: js.UndefOr[PendingAutomaticFailoverStatus]
+    var LogDeliveryConfigurations: js.UndefOr[PendingLogDeliveryConfigurationList]
     var PrimaryClusterId: js.UndefOr[String]
     var Resharding: js.UndefOr[ReshardingStatus]
     var UserGroups: js.UndefOr[UserGroupsUpdateStatus]
@@ -4233,6 +4446,7 @@ package elasticache {
     def apply(
         AuthTokenStatus: js.UndefOr[AuthTokenUpdateStatus] = js.undefined,
         AutomaticFailoverStatus: js.UndefOr[PendingAutomaticFailoverStatus] = js.undefined,
+        LogDeliveryConfigurations: js.UndefOr[PendingLogDeliveryConfigurationList] = js.undefined,
         PrimaryClusterId: js.UndefOr[String] = js.undefined,
         Resharding: js.UndefOr[ReshardingStatus] = js.undefined,
         UserGroups: js.UndefOr[UserGroupsUpdateStatus] = js.undefined
@@ -4240,6 +4454,7 @@ package elasticache {
       val __obj = js.Dynamic.literal()
       AuthTokenStatus.foreach(__v => __obj.updateDynamic("AuthTokenStatus")(__v.asInstanceOf[js.Any]))
       AutomaticFailoverStatus.foreach(__v => __obj.updateDynamic("AutomaticFailoverStatus")(__v.asInstanceOf[js.Any]))
+      LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       PrimaryClusterId.foreach(__v => __obj.updateDynamic("PrimaryClusterId")(__v.asInstanceOf[js.Any]))
       Resharding.foreach(__v => __obj.updateDynamic("Resharding")(__v.asInstanceOf[js.Any]))
       UserGroups.foreach(__v => __obj.updateDynamic("UserGroups")(__v.asInstanceOf[js.Any]))

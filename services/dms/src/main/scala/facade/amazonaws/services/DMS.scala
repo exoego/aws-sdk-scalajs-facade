@@ -14,6 +14,8 @@ package object dms {
   type CertificateWallet = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ConnectionList = js.Array[Connection]
   type EndpointList = js.Array[Endpoint]
+  type EndpointSettingEnumValues = js.Array[String]
+  type EndpointSettingsList = js.Array[EndpointSetting]
   type EventCategoriesList = js.Array[String]
   type EventCategoryGroupList = js.Array[EventCategoryGroup]
   type EventList = js.Array[Event]
@@ -72,6 +74,7 @@ package object dms {
     @inline def describeApplicableIndividualAssessmentsFuture(params: DescribeApplicableIndividualAssessmentsMessage): Future[DescribeApplicableIndividualAssessmentsResponse] = service.describeApplicableIndividualAssessments(params).promise().toFuture
     @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[DescribeCertificatesResponse] = service.describeCertificates(params).promise().toFuture
     @inline def describeConnectionsFuture(params: DescribeConnectionsMessage): Future[DescribeConnectionsResponse] = service.describeConnections(params).promise().toFuture
+    @inline def describeEndpointSettingsFuture(params: DescribeEndpointSettingsMessage): Future[DescribeEndpointSettingsResponse] = service.describeEndpointSettings(params).promise().toFuture
     @inline def describeEndpointTypesFuture(params: DescribeEndpointTypesMessage): Future[DescribeEndpointTypesResponse] = service.describeEndpointTypes(params).promise().toFuture
     @inline def describeEndpointsFuture(params: DescribeEndpointsMessage): Future[DescribeEndpointsResponse] = service.describeEndpoints(params).promise().toFuture
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[DescribeEventCategoriesResponse] = service.describeEventCategories(params).promise().toFuture
@@ -136,6 +139,7 @@ package dms {
     def describeApplicableIndividualAssessments(params: DescribeApplicableIndividualAssessmentsMessage): Request[DescribeApplicableIndividualAssessmentsResponse] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[DescribeCertificatesResponse] = js.native
     def describeConnections(params: DescribeConnectionsMessage): Request[DescribeConnectionsResponse] = js.native
+    def describeEndpointSettings(params: DescribeEndpointSettingsMessage): Request[DescribeEndpointSettingsResponse] = js.native
     def describeEndpointTypes(params: DescribeEndpointTypesMessage): Request[DescribeEndpointTypesResponse] = js.native
     def describeEndpoints(params: DescribeEndpointsMessage): Request[DescribeEndpointsResponse] = js.native
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[DescribeEventCategoriesResponse] = js.native
@@ -1332,6 +1336,49 @@ package dms {
     }
   }
 
+  @js.native
+  trait DescribeEndpointSettingsMessage extends js.Object {
+    var EngineName: String
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeEndpointSettingsMessage {
+    @inline
+    def apply(
+        EngineName: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeEndpointSettingsMessage = {
+      val __obj = js.Dynamic.literal(
+        "EngineName" -> EngineName.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointSettingsMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointSettingsResponse extends js.Object {
+    var EndpointSettings: js.UndefOr[EndpointSettingsList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeEndpointSettingsResponse {
+    @inline
+    def apply(
+        EndpointSettings: js.UndefOr[EndpointSettingsList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeEndpointSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      EndpointSettings.foreach(__v => __obj.updateDynamic("EndpointSettings")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointSettingsResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -2386,6 +2433,56 @@ package dms {
     }
   }
 
+  /** Endpoint settings.
+    */
+  @js.native
+  trait EndpointSetting extends js.Object {
+    var Applicability: js.UndefOr[String]
+    var EnumValues: js.UndefOr[EndpointSettingEnumValues]
+    var IntValueMax: js.UndefOr[IntegerOptional]
+    var IntValueMin: js.UndefOr[IntegerOptional]
+    var Name: js.UndefOr[String]
+    var Sensitive: js.UndefOr[BooleanOptional]
+    var Type: js.UndefOr[EndpointSettingTypeValue]
+    var Units: js.UndefOr[String]
+  }
+
+  object EndpointSetting {
+    @inline
+    def apply(
+        Applicability: js.UndefOr[String] = js.undefined,
+        EnumValues: js.UndefOr[EndpointSettingEnumValues] = js.undefined,
+        IntValueMax: js.UndefOr[IntegerOptional] = js.undefined,
+        IntValueMin: js.UndefOr[IntegerOptional] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Sensitive: js.UndefOr[BooleanOptional] = js.undefined,
+        Type: js.UndefOr[EndpointSettingTypeValue] = js.undefined,
+        Units: js.UndefOr[String] = js.undefined
+    ): EndpointSetting = {
+      val __obj = js.Dynamic.literal()
+      Applicability.foreach(__v => __obj.updateDynamic("Applicability")(__v.asInstanceOf[js.Any]))
+      EnumValues.foreach(__v => __obj.updateDynamic("EnumValues")(__v.asInstanceOf[js.Any]))
+      IntValueMax.foreach(__v => __obj.updateDynamic("IntValueMax")(__v.asInstanceOf[js.Any]))
+      IntValueMin.foreach(__v => __obj.updateDynamic("IntValueMin")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Sensitive.foreach(__v => __obj.updateDynamic("Sensitive")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Units.foreach(__v => __obj.updateDynamic("Units")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointSetting]
+    }
+  }
+
+  @js.native
+  sealed trait EndpointSettingTypeValue extends js.Any
+  object EndpointSettingTypeValue {
+    val string = "string".asInstanceOf[EndpointSettingTypeValue]
+    val boolean = "boolean".asInstanceOf[EndpointSettingTypeValue]
+    val integer = "integer".asInstanceOf[EndpointSettingTypeValue]
+    val enum = "enum".asInstanceOf[EndpointSettingTypeValue]
+
+    @inline def values = js.Array(string, boolean, integer, enum)
+  }
+
   /** Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
     */
   @js.native
@@ -2549,7 +2646,7 @@ package dms {
   @js.native
   trait ImportCertificateMessage extends js.Object {
     var CertificateIdentifier: String
-    var CertificatePem: js.UndefOr[String]
+    var CertificatePem: js.UndefOr[SecretString]
     var CertificateWallet: js.UndefOr[CertificateWallet]
     var Tags: js.UndefOr[TagList]
   }
@@ -2558,7 +2655,7 @@ package dms {
     @inline
     def apply(
         CertificateIdentifier: String,
-        CertificatePem: js.UndefOr[String] = js.undefined,
+        CertificatePem: js.UndefOr[SecretString] = js.undefined,
         CertificateWallet: js.UndefOr[CertificateWallet] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ImportCertificateMessage = {
@@ -2589,6 +2686,17 @@ package dms {
     }
   }
 
+  @js.native
+  sealed trait KafkaSecurityProtocol extends js.Any
+  object KafkaSecurityProtocol {
+    val plaintext = "plaintext".asInstanceOf[KafkaSecurityProtocol]
+    val `ssl-authentication` = "ssl-authentication".asInstanceOf[KafkaSecurityProtocol]
+    val `ssl-encryption` = "ssl-encryption".asInstanceOf[KafkaSecurityProtocol]
+    val `sasl-ssl` = "sasl-ssl".asInstanceOf[KafkaSecurityProtocol]
+
+    @inline def values = js.Array(plaintext, `ssl-authentication`, `ssl-encryption`, `sasl-ssl`)
+  }
+
   /** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
     */
   @js.native
@@ -2602,6 +2710,13 @@ package dms {
     var MessageFormat: js.UndefOr[MessageFormatValue]
     var MessageMaxBytes: js.UndefOr[IntegerOptional]
     var PartitionIncludeSchemaTable: js.UndefOr[BooleanOptional]
+    var SaslPassword: js.UndefOr[SecretString]
+    var SaslUsername: js.UndefOr[String]
+    var SecurityProtocol: js.UndefOr[KafkaSecurityProtocol]
+    var SslCaCertificateArn: js.UndefOr[String]
+    var SslClientCertificateArn: js.UndefOr[String]
+    var SslClientKeyArn: js.UndefOr[String]
+    var SslClientKeyPassword: js.UndefOr[SecretString]
     var Topic: js.UndefOr[String]
   }
 
@@ -2617,6 +2732,13 @@ package dms {
         MessageFormat: js.UndefOr[MessageFormatValue] = js.undefined,
         MessageMaxBytes: js.UndefOr[IntegerOptional] = js.undefined,
         PartitionIncludeSchemaTable: js.UndefOr[BooleanOptional] = js.undefined,
+        SaslPassword: js.UndefOr[SecretString] = js.undefined,
+        SaslUsername: js.UndefOr[String] = js.undefined,
+        SecurityProtocol: js.UndefOr[KafkaSecurityProtocol] = js.undefined,
+        SslCaCertificateArn: js.UndefOr[String] = js.undefined,
+        SslClientCertificateArn: js.UndefOr[String] = js.undefined,
+        SslClientKeyArn: js.UndefOr[String] = js.undefined,
+        SslClientKeyPassword: js.UndefOr[SecretString] = js.undefined,
         Topic: js.UndefOr[String] = js.undefined
     ): KafkaSettings = {
       val __obj = js.Dynamic.literal()
@@ -2629,6 +2751,13 @@ package dms {
       MessageFormat.foreach(__v => __obj.updateDynamic("MessageFormat")(__v.asInstanceOf[js.Any]))
       MessageMaxBytes.foreach(__v => __obj.updateDynamic("MessageMaxBytes")(__v.asInstanceOf[js.Any]))
       PartitionIncludeSchemaTable.foreach(__v => __obj.updateDynamic("PartitionIncludeSchemaTable")(__v.asInstanceOf[js.Any]))
+      SaslPassword.foreach(__v => __obj.updateDynamic("SaslPassword")(__v.asInstanceOf[js.Any]))
+      SaslUsername.foreach(__v => __obj.updateDynamic("SaslUsername")(__v.asInstanceOf[js.Any]))
+      SecurityProtocol.foreach(__v => __obj.updateDynamic("SecurityProtocol")(__v.asInstanceOf[js.Any]))
+      SslCaCertificateArn.foreach(__v => __obj.updateDynamic("SslCaCertificateArn")(__v.asInstanceOf[js.Any]))
+      SslClientCertificateArn.foreach(__v => __obj.updateDynamic("SslClientCertificateArn")(__v.asInstanceOf[js.Any]))
+      SslClientKeyArn.foreach(__v => __obj.updateDynamic("SslClientKeyArn")(__v.asInstanceOf[js.Any]))
+      SslClientKeyPassword.foreach(__v => __obj.updateDynamic("SslClientKeyPassword")(__v.asInstanceOf[js.Any]))
       Topic.foreach(__v => __obj.updateDynamic("Topic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KafkaSettings]
     }
@@ -2731,12 +2860,14 @@ package dms {
     var DatabaseName: js.UndefOr[String]
     var Password: js.UndefOr[SecretString]
     var Port: js.UndefOr[IntegerOptional]
+    var QuerySingleAlwaysOnNode: js.UndefOr[BooleanOptional]
     var ReadBackupOnly: js.UndefOr[BooleanOptional]
     var SafeguardPolicy: js.UndefOr[SafeguardPolicy]
     var SecretsManagerAccessRoleArn: js.UndefOr[String]
     var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var UseBcpFullLoad: js.UndefOr[BooleanOptional]
+    var UseThirdPartyBackupDevice: js.UndefOr[BooleanOptional]
     var Username: js.UndefOr[String]
   }
 
@@ -2748,12 +2879,14 @@ package dms {
         DatabaseName: js.UndefOr[String] = js.undefined,
         Password: js.UndefOr[SecretString] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        QuerySingleAlwaysOnNode: js.UndefOr[BooleanOptional] = js.undefined,
         ReadBackupOnly: js.UndefOr[BooleanOptional] = js.undefined,
         SafeguardPolicy: js.UndefOr[SafeguardPolicy] = js.undefined,
         SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
         SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         UseBcpFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
+        UseThirdPartyBackupDevice: js.UndefOr[BooleanOptional] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): MicrosoftSQLServerSettings = {
       val __obj = js.Dynamic.literal()
@@ -2762,12 +2895,14 @@ package dms {
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      QuerySingleAlwaysOnNode.foreach(__v => __obj.updateDynamic("QuerySingleAlwaysOnNode")(__v.asInstanceOf[js.Any]))
       ReadBackupOnly.foreach(__v => __obj.updateDynamic("ReadBackupOnly")(__v.asInstanceOf[js.Any]))
       SafeguardPolicy.foreach(__v => __obj.updateDynamic("SafeguardPolicy")(__v.asInstanceOf[js.Any]))
       SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
       SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       UseBcpFullLoad.foreach(__v => __obj.updateDynamic("UseBcpFullLoad")(__v.asInstanceOf[js.Any]))
+      UseThirdPartyBackupDevice.foreach(__v => __obj.updateDynamic("UseThirdPartyBackupDevice")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MicrosoftSQLServerSettings]
     }
@@ -3234,6 +3369,7 @@ package dms {
   @js.native
   trait MySQLSettings extends js.Object {
     var AfterConnectScript: js.UndefOr[String]
+    var CleanSourceMetadataOnMismatch: js.UndefOr[BooleanOptional]
     var DatabaseName: js.UndefOr[String]
     var EventsPollInterval: js.UndefOr[IntegerOptional]
     var MaxFileSize: js.UndefOr[IntegerOptional]
@@ -3252,6 +3388,7 @@ package dms {
     @inline
     def apply(
         AfterConnectScript: js.UndefOr[String] = js.undefined,
+        CleanSourceMetadataOnMismatch: js.UndefOr[BooleanOptional] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         EventsPollInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MaxFileSize: js.UndefOr[IntegerOptional] = js.undefined,
@@ -3267,6 +3404,7 @@ package dms {
     ): MySQLSettings = {
       val __obj = js.Dynamic.literal()
       AfterConnectScript.foreach(__v => __obj.updateDynamic("AfterConnectScript")(__v.asInstanceOf[js.Any]))
+      CleanSourceMetadataOnMismatch.foreach(__v => __obj.updateDynamic("CleanSourceMetadataOnMismatch")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       EventsPollInterval.foreach(__v => __obj.updateDynamic("EventsPollInterval")(__v.asInstanceOf[js.Any]))
       MaxFileSize.foreach(__v => __obj.updateDynamic("MaxFileSize")(__v.asInstanceOf[js.Any]))
@@ -3365,6 +3503,7 @@ package dms {
     var SecurityDbEncryption: js.UndefOr[SecretString]
     var SecurityDbEncryptionName: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
+    var SpatialDataOptionToGeoJsonFunctionName: js.UndefOr[String]
     var UseAlternateFolderForOnline: js.UndefOr[BooleanOptional]
     var UsePathPrefix: js.UndefOr[String]
     var Username: js.UndefOr[String]
@@ -3404,6 +3543,7 @@ package dms {
         SecurityDbEncryption: js.UndefOr[SecretString] = js.undefined,
         SecurityDbEncryptionName: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
+        SpatialDataOptionToGeoJsonFunctionName: js.UndefOr[String] = js.undefined,
         UseAlternateFolderForOnline: js.UndefOr[BooleanOptional] = js.undefined,
         UsePathPrefix: js.UndefOr[String] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
@@ -3440,6 +3580,7 @@ package dms {
       SecurityDbEncryption.foreach(__v => __obj.updateDynamic("SecurityDbEncryption")(__v.asInstanceOf[js.Any]))
       SecurityDbEncryptionName.foreach(__v => __obj.updateDynamic("SecurityDbEncryptionName")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
+      SpatialDataOptionToGeoJsonFunctionName.foreach(__v => __obj.updateDynamic("SpatialDataOptionToGeoJsonFunctionName")(__v.asInstanceOf[js.Any]))
       UseAlternateFolderForOnline.foreach(__v => __obj.updateDynamic("UseAlternateFolderForOnline")(__v.asInstanceOf[js.Any]))
       UsePathPrefix.foreach(__v => __obj.updateDynamic("UsePathPrefix")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))

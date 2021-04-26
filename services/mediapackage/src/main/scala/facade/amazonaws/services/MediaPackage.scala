@@ -168,6 +168,7 @@ package mediapackage {
   @js.native
   trait CmafEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
+    var ConstantInitializationVector: js.UndefOr[__string]
     var KeyRotationIntervalSeconds: js.UndefOr[__integer]
   }
 
@@ -175,12 +176,14 @@ package mediapackage {
     @inline
     def apply(
         SpekeKeyProvider: SpekeKeyProvider,
+        ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
         KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined
     ): CmafEncryption = {
       val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
+      ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       KeyRotationIntervalSeconds.foreach(__v => __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafEncryption]
     }

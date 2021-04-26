@@ -892,6 +892,7 @@ package forecast {
     var DatasetArn: js.UndefOr[Arn]
     var DatasetImportJobArn: js.UndefOr[Arn]
     var DatasetImportJobName: js.UndefOr[Name]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
     var FieldStatistics: js.UndefOr[FieldStatistics]
     var GeolocationFormat: js.UndefOr[GeolocationFormat]
     var LastModificationTime: js.UndefOr[Timestamp]
@@ -911,6 +912,7 @@ package forecast {
         DatasetArn: js.UndefOr[Arn] = js.undefined,
         DatasetImportJobArn: js.UndefOr[Arn] = js.undefined,
         DatasetImportJobName: js.UndefOr[Name] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
         FieldStatistics: js.UndefOr[FieldStatistics] = js.undefined,
         GeolocationFormat: js.UndefOr[GeolocationFormat] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -927,6 +929,7 @@ package forecast {
       DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
       DatasetImportJobArn.foreach(__v => __obj.updateDynamic("DatasetImportJobArn")(__v.asInstanceOf[js.Any]))
       DatasetImportJobName.foreach(__v => __obj.updateDynamic("DatasetImportJobName")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
       FieldStatistics.foreach(__v => __obj.updateDynamic("FieldStatistics")(__v.asInstanceOf[js.Any]))
       GeolocationFormat.foreach(__v => __obj.updateDynamic("GeolocationFormat")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
@@ -1074,6 +1077,7 @@ package forecast {
   trait DescribeForecastResponse extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
     var DatasetGroupArn: js.UndefOr[Arn]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
     var ForecastArn: js.UndefOr[Arn]
     var ForecastName: js.UndefOr[Name]
     var ForecastTypes: js.UndefOr[ForecastTypes]
@@ -1088,6 +1092,7 @@ package forecast {
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
         ForecastArn: js.UndefOr[Arn] = js.undefined,
         ForecastName: js.UndefOr[Name] = js.undefined,
         ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
@@ -1099,6 +1104,7 @@ package forecast {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
       ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
       ForecastName.foreach(__v => __obj.updateDynamic("ForecastName")(__v.asInstanceOf[js.Any]))
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
@@ -1188,6 +1194,7 @@ package forecast {
     var CreationTime: js.UndefOr[Timestamp]
     var DatasetImportJobArns: js.UndefOr[ArnList]
     var EncryptionConfig: js.UndefOr[EncryptionConfig]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
     var EvaluationParameters: js.UndefOr[EvaluationParameters]
     var FeaturizationConfig: js.UndefOr[FeaturizationConfig]
     var ForecastHorizon: js.UndefOr[Int]
@@ -1213,6 +1220,7 @@ package forecast {
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetImportJobArns: js.UndefOr[ArnList] = js.undefined,
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
         EvaluationParameters: js.UndefOr[EvaluationParameters] = js.undefined,
         FeaturizationConfig: js.UndefOr[FeaturizationConfig] = js.undefined,
         ForecastHorizon: js.UndefOr[Int] = js.undefined,
@@ -1235,6 +1243,7 @@ package forecast {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatasetImportJobArns.foreach(__v => __obj.updateDynamic("DatasetImportJobArns")(__v.asInstanceOf[js.Any]))
       EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
       EvaluationParameters.foreach(__v => __obj.updateDynamic("EvaluationParameters")(__v.asInstanceOf[js.Any]))
       FeaturizationConfig.foreach(__v => __obj.updateDynamic("FeaturizationConfig")(__v.asInstanceOf[js.Any]))
       ForecastHorizon.foreach(__v => __obj.updateDynamic("ForecastHorizon")(__v.asInstanceOf[js.Any]))

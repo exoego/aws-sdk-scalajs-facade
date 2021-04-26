@@ -7,6 +7,7 @@ import scala.concurrent.Future
 import facade.amazonaws._
 
 package object groundstation {
+  type BucketArn = String
   type ConfigArn = String
   type ConfigList = js.Array[ConfigListItem]
   type ContactList = js.Array[ContactData]
@@ -14,7 +15,7 @@ package object groundstation {
   type DataflowEdgeList = js.Array[DataflowEdge]
   type DataflowEndpointGroupArn = String
   type DataflowEndpointGroupList = js.Array[DataflowEndpointListItem]
-  type DataflowEndpointmtuInteger = Int
+  type DataflowEndpointMtuInteger = Int
   type DataflowList = js.Array[DataflowDetail]
   type DurationInSeconds = Int
   type EndpointDetailsList = js.Array[EndpointDetails]
@@ -24,6 +25,7 @@ package object groundstation {
   type MissionProfileArn = String
   type MissionProfileList = js.Array[MissionProfileListItem]
   type RoleArn = String
+  type S3KeyPrefix = String
   type SafeName = String
   type SatelliteList = js.Array[SatelliteListItem]
   type SecurityGroupIdList = js.Array[String]
@@ -235,8 +237,9 @@ package groundstation {
     val `dataflow-endpoint` = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
     val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
     val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
+    val `s3-recording` = "s3-recording".asInstanceOf[ConfigCapabilityType]
 
-    @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`)
+    @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`, `s3-recording`)
   }
 
   /** Details for certain <code>Config</code> object types in a contact.
@@ -245,17 +248,20 @@ package groundstation {
   trait ConfigDetails extends js.Object {
     var antennaDemodDecodeDetails: js.UndefOr[AntennaDemodDecodeDetails]
     var endpointDetails: js.UndefOr[EndpointDetails]
+    var s3RecordingDetails: js.UndefOr[S3RecordingDetails]
   }
 
   object ConfigDetails {
     @inline
     def apply(
         antennaDemodDecodeDetails: js.UndefOr[AntennaDemodDecodeDetails] = js.undefined,
-        endpointDetails: js.UndefOr[EndpointDetails] = js.undefined
+        endpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
+        s3RecordingDetails: js.UndefOr[S3RecordingDetails] = js.undefined
     ): ConfigDetails = {
       val __obj = js.Dynamic.literal()
       antennaDemodDecodeDetails.foreach(__v => __obj.updateDynamic("antennaDemodDecodeDetails")(__v.asInstanceOf[js.Any]))
       endpointDetails.foreach(__v => __obj.updateDynamic("endpointDetails")(__v.asInstanceOf[js.Any]))
+      s3RecordingDetails.foreach(__v => __obj.updateDynamic("s3RecordingDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigDetails]
     }
   }
@@ -320,6 +326,7 @@ package groundstation {
     var antennaDownlinkDemodDecodeConfig: js.UndefOr[AntennaDownlinkDemodDecodeConfig]
     var antennaUplinkConfig: js.UndefOr[AntennaUplinkConfig]
     var dataflowEndpointConfig: js.UndefOr[DataflowEndpointConfig]
+    var s3RecordingConfig: js.UndefOr[S3RecordingConfig]
     var trackingConfig: js.UndefOr[TrackingConfig]
     var uplinkEchoConfig: js.UndefOr[UplinkEchoConfig]
   }
@@ -331,6 +338,7 @@ package groundstation {
         antennaDownlinkDemodDecodeConfig: js.UndefOr[AntennaDownlinkDemodDecodeConfig] = js.undefined,
         antennaUplinkConfig: js.UndefOr[AntennaUplinkConfig] = js.undefined,
         dataflowEndpointConfig: js.UndefOr[DataflowEndpointConfig] = js.undefined,
+        s3RecordingConfig: js.UndefOr[S3RecordingConfig] = js.undefined,
         trackingConfig: js.UndefOr[TrackingConfig] = js.undefined,
         uplinkEchoConfig: js.UndefOr[UplinkEchoConfig] = js.undefined
     ): ConfigTypeData = {
@@ -339,6 +347,7 @@ package groundstation {
       antennaDownlinkDemodDecodeConfig.foreach(__v => __obj.updateDynamic("antennaDownlinkDemodDecodeConfig")(__v.asInstanceOf[js.Any]))
       antennaUplinkConfig.foreach(__v => __obj.updateDynamic("antennaUplinkConfig")(__v.asInstanceOf[js.Any]))
       dataflowEndpointConfig.foreach(__v => __obj.updateDynamic("dataflowEndpointConfig")(__v.asInstanceOf[js.Any]))
+      s3RecordingConfig.foreach(__v => __obj.updateDynamic("s3RecordingConfig")(__v.asInstanceOf[js.Any]))
       trackingConfig.foreach(__v => __obj.updateDynamic("trackingConfig")(__v.asInstanceOf[js.Any]))
       uplinkEchoConfig.foreach(__v => __obj.updateDynamic("uplinkEchoConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigTypeData]
@@ -563,7 +572,7 @@ package groundstation {
   @js.native
   trait DataflowEndpoint extends js.Object {
     var address: js.UndefOr[SocketAddress]
-    var mtu: js.UndefOr[DataflowEndpointmtuInteger]
+    var mtu: js.UndefOr[DataflowEndpointMtuInteger]
     var name: js.UndefOr[SafeName]
     var status: js.UndefOr[EndpointStatus]
   }
@@ -572,7 +581,7 @@ package groundstation {
     @inline
     def apply(
         address: js.UndefOr[SocketAddress] = js.undefined,
-        mtu: js.UndefOr[DataflowEndpointmtuInteger] = js.undefined,
+        mtu: js.UndefOr[DataflowEndpointMtuInteger] = js.undefined,
         name: js.UndefOr[SafeName] = js.undefined,
         status: js.UndefOr[EndpointStatus] = js.undefined
     ): DataflowEndpoint = {
@@ -1675,6 +1684,53 @@ package groundstation {
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReserveContactRequest]
+    }
+  }
+
+  /** Information about an S3 recording <code>Config</code>.
+    */
+  @js.native
+  trait S3RecordingConfig extends js.Object {
+    var bucketArn: BucketArn
+    var roleArn: RoleArn
+    var prefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object S3RecordingConfig {
+    @inline
+    def apply(
+        bucketArn: BucketArn,
+        roleArn: RoleArn,
+        prefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): S3RecordingConfig = {
+      val __obj = js.Dynamic.literal(
+        "bucketArn" -> bucketArn.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3RecordingConfig]
+    }
+  }
+
+  /** Details about an S3 recording <code>Config</code> used in a contact.
+    */
+  @js.native
+  trait S3RecordingDetails extends js.Object {
+    var bucketArn: js.UndefOr[BucketArn]
+    var keyTemplate: js.UndefOr[String]
+  }
+
+  object S3RecordingDetails {
+    @inline
+    def apply(
+        bucketArn: js.UndefOr[BucketArn] = js.undefined,
+        keyTemplate: js.UndefOr[String] = js.undefined
+    ): S3RecordingDetails = {
+      val __obj = js.Dynamic.literal()
+      bucketArn.foreach(__v => __obj.updateDynamic("bucketArn")(__v.asInstanceOf[js.Any]))
+      keyTemplate.foreach(__v => __obj.updateDynamic("keyTemplate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3RecordingDetails]
     }
   }
 
