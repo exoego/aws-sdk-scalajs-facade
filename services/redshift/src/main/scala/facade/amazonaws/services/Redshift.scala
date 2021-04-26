@@ -55,6 +55,12 @@ package object redshift {
   type OrderableClusterOptionsList = js.Array[OrderableClusterOption]
   type ParameterGroupList = js.Array[ClusterParameterGroup]
   type ParametersList = js.Array[Parameter]
+  type PartnerIntegrationAccountId = String
+  type PartnerIntegrationClusterIdentifier = String
+  type PartnerIntegrationDatabaseName = String
+  type PartnerIntegrationInfoList = js.Array[PartnerIntegrationInfo]
+  type PartnerIntegrationPartnerName = String
+  type PartnerIntegrationStatusMessage = String
   type PendingActionsList = js.Array[String]
   type RecurringChargeList = js.Array[RecurringCharge]
   type ReservedNodeList = js.Array[ReservedNode]
@@ -94,6 +100,7 @@ package object redshift {
   implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
     @inline def acceptReservedNodeExchangeFuture(params: AcceptReservedNodeExchangeInputMessage): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise().toFuture
+    @inline def addPartnerFuture(params: PartnerIntegrationInputMessage): Future[PartnerIntegrationOutputMessage] = service.addPartner(params).promise().toFuture
     @inline def authorizeClusterSecurityGroupIngressFuture(params: AuthorizeClusterSecurityGroupIngressMessage): Future[AuthorizeClusterSecurityGroupIngressResult] = service.authorizeClusterSecurityGroupIngress(params).promise().toFuture
     @inline def authorizeEndpointAccessFuture(params: AuthorizeEndpointAccessMessage): Future[EndpointAuthorization] = service.authorizeEndpointAccess(params).promise().toFuture
     @inline def authorizeSnapshotAccessFuture(params: AuthorizeSnapshotAccessMessage): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise().toFuture
@@ -124,6 +131,7 @@ package object redshift {
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[js.Object] = service.deleteEventSubscription(params).promise().toFuture
     @inline def deleteHsmClientCertificateFuture(params: DeleteHsmClientCertificateMessage): Future[js.Object] = service.deleteHsmClientCertificate(params).promise().toFuture
     @inline def deleteHsmConfigurationFuture(params: DeleteHsmConfigurationMessage): Future[js.Object] = service.deleteHsmConfiguration(params).promise().toFuture
+    @inline def deletePartnerFuture(params: PartnerIntegrationInputMessage): Future[PartnerIntegrationOutputMessage] = service.deletePartner(params).promise().toFuture
     @inline def deleteScheduledActionFuture(params: DeleteScheduledActionMessage): Future[js.Object] = service.deleteScheduledAction(params).promise().toFuture
     @inline def deleteSnapshotCopyGrantFuture(params: DeleteSnapshotCopyGrantMessage): Future[js.Object] = service.deleteSnapshotCopyGrant(params).promise().toFuture
     @inline def deleteSnapshotScheduleFuture(params: DeleteSnapshotScheduleMessage): Future[js.Object] = service.deleteSnapshotSchedule(params).promise().toFuture
@@ -150,6 +158,7 @@ package object redshift {
     @inline def describeLoggingStatusFuture(params: DescribeLoggingStatusMessage): Future[LoggingStatus] = service.describeLoggingStatus(params).promise().toFuture
     @inline def describeNodeConfigurationOptionsFuture(params: DescribeNodeConfigurationOptionsMessage): Future[NodeConfigurationOptionsMessage] = service.describeNodeConfigurationOptions(params).promise().toFuture
     @inline def describeOrderableClusterOptionsFuture(params: DescribeOrderableClusterOptionsMessage): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise().toFuture
+    @inline def describePartnersFuture(params: DescribePartnersInputMessage): Future[DescribePartnersOutputMessage] = service.describePartners(params).promise().toFuture
     @inline def describeReservedNodeOfferingsFuture(params: DescribeReservedNodeOfferingsMessage): Future[ReservedNodeOfferingsMessage] = service.describeReservedNodeOfferings(params).promise().toFuture
     @inline def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] = service.describeReservedNodes(params).promise().toFuture
     @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] = service.describeResize(params).promise().toFuture
@@ -193,6 +202,7 @@ package object redshift {
     @inline def revokeEndpointAccessFuture(params: RevokeEndpointAccessMessage): Future[EndpointAuthorization] = service.revokeEndpointAccess(params).promise().toFuture
     @inline def revokeSnapshotAccessFuture(params: RevokeSnapshotAccessMessage): Future[RevokeSnapshotAccessResult] = service.revokeSnapshotAccess(params).promise().toFuture
     @inline def rotateEncryptionKeyFuture(params: RotateEncryptionKeyMessage): Future[RotateEncryptionKeyResult] = service.rotateEncryptionKey(params).promise().toFuture
+    @inline def updatePartnerStatusFuture(params: UpdatePartnerStatusInputMessage): Future[PartnerIntegrationOutputMessage] = service.updatePartnerStatus(params).promise().toFuture
 
   }
 }
@@ -204,6 +214,7 @@ package redshift {
     def this(config: AWSConfig) = this()
 
     def acceptReservedNodeExchange(params: AcceptReservedNodeExchangeInputMessage): Request[AcceptReservedNodeExchangeOutputMessage] = js.native
+    def addPartner(params: PartnerIntegrationInputMessage): Request[PartnerIntegrationOutputMessage] = js.native
     def authorizeClusterSecurityGroupIngress(params: AuthorizeClusterSecurityGroupIngressMessage): Request[AuthorizeClusterSecurityGroupIngressResult] = js.native
     def authorizeEndpointAccess(params: AuthorizeEndpointAccessMessage): Request[EndpointAuthorization] = js.native
     def authorizeSnapshotAccess(params: AuthorizeSnapshotAccessMessage): Request[AuthorizeSnapshotAccessResult] = js.native
@@ -234,6 +245,7 @@ package redshift {
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[js.Object] = js.native
     def deleteHsmClientCertificate(params: DeleteHsmClientCertificateMessage): Request[js.Object] = js.native
     def deleteHsmConfiguration(params: DeleteHsmConfigurationMessage): Request[js.Object] = js.native
+    def deletePartner(params: PartnerIntegrationInputMessage): Request[PartnerIntegrationOutputMessage] = js.native
     def deleteScheduledAction(params: DeleteScheduledActionMessage): Request[js.Object] = js.native
     def deleteSnapshotCopyGrant(params: DeleteSnapshotCopyGrantMessage): Request[js.Object] = js.native
     def deleteSnapshotSchedule(params: DeleteSnapshotScheduleMessage): Request[js.Object] = js.native
@@ -260,6 +272,7 @@ package redshift {
     def describeLoggingStatus(params: DescribeLoggingStatusMessage): Request[LoggingStatus] = js.native
     def describeNodeConfigurationOptions(params: DescribeNodeConfigurationOptionsMessage): Request[NodeConfigurationOptionsMessage] = js.native
     def describeOrderableClusterOptions(params: DescribeOrderableClusterOptionsMessage): Request[OrderableClusterOptionsMessage] = js.native
+    def describePartners(params: DescribePartnersInputMessage): Request[DescribePartnersOutputMessage] = js.native
     def describeReservedNodeOfferings(params: DescribeReservedNodeOfferingsMessage): Request[ReservedNodeOfferingsMessage] = js.native
     def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage] = js.native
     def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage] = js.native
@@ -303,6 +316,7 @@ package redshift {
     def revokeEndpointAccess(params: RevokeEndpointAccessMessage): Request[EndpointAuthorization] = js.native
     def revokeSnapshotAccess(params: RevokeSnapshotAccessMessage): Request[RevokeSnapshotAccessResult] = js.native
     def rotateEncryptionKey(params: RotateEncryptionKeyMessage): Request[RotateEncryptionKeyResult] = js.native
+    def updatePartnerStatus(params: UpdatePartnerStatusInputMessage): Request[PartnerIntegrationOutputMessage] = js.native
   }
 
   @js.native
@@ -3085,6 +3099,49 @@ package redshift {
     }
   }
 
+  @js.native
+  trait DescribePartnersInputMessage extends js.Object {
+    var AccountId: PartnerIntegrationAccountId
+    var ClusterIdentifier: PartnerIntegrationClusterIdentifier
+    var DatabaseName: js.UndefOr[PartnerIntegrationDatabaseName]
+    var PartnerName: js.UndefOr[PartnerIntegrationPartnerName]
+  }
+
+  object DescribePartnersInputMessage {
+    @inline
+    def apply(
+        AccountId: PartnerIntegrationAccountId,
+        ClusterIdentifier: PartnerIntegrationClusterIdentifier,
+        DatabaseName: js.UndefOr[PartnerIntegrationDatabaseName] = js.undefined,
+        PartnerName: js.UndefOr[PartnerIntegrationPartnerName] = js.undefined
+    ): DescribePartnersInputMessage = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      PartnerName.foreach(__v => __obj.updateDynamic("PartnerName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePartnersInputMessage]
+    }
+  }
+
+  @js.native
+  trait DescribePartnersOutputMessage extends js.Object {
+    var PartnerIntegrationInfoList: js.UndefOr[PartnerIntegrationInfoList]
+  }
+
+  object DescribePartnersOutputMessage {
+    @inline
+    def apply(
+        PartnerIntegrationInfoList: js.UndefOr[PartnerIntegrationInfoList] = js.undefined
+    ): DescribePartnersOutputMessage = {
+      val __obj = js.Dynamic.literal()
+      PartnerIntegrationInfoList.foreach(__v => __obj.updateDynamic("PartnerIntegrationInfoList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePartnersOutputMessage]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -4991,6 +5048,95 @@ package redshift {
     @inline def values = js.Array(static, dynamic)
   }
 
+  /** Describes a partner integration.
+    */
+  @js.native
+  trait PartnerIntegrationInfo extends js.Object {
+    var CreatedAt: js.UndefOr[TStamp]
+    var DatabaseName: js.UndefOr[PartnerIntegrationDatabaseName]
+    var PartnerName: js.UndefOr[PartnerIntegrationPartnerName]
+    var Status: js.UndefOr[PartnerIntegrationStatus]
+    var StatusMessage: js.UndefOr[PartnerIntegrationStatusMessage]
+    var UpdatedAt: js.UndefOr[TStamp]
+  }
+
+  object PartnerIntegrationInfo {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[TStamp] = js.undefined,
+        DatabaseName: js.UndefOr[PartnerIntegrationDatabaseName] = js.undefined,
+        PartnerName: js.UndefOr[PartnerIntegrationPartnerName] = js.undefined,
+        Status: js.UndefOr[PartnerIntegrationStatus] = js.undefined,
+        StatusMessage: js.UndefOr[PartnerIntegrationStatusMessage] = js.undefined,
+        UpdatedAt: js.UndefOr[TStamp] = js.undefined
+    ): PartnerIntegrationInfo = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      PartnerName.foreach(__v => __obj.updateDynamic("PartnerName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PartnerIntegrationInfo]
+    }
+  }
+
+  @js.native
+  trait PartnerIntegrationInputMessage extends js.Object {
+    var AccountId: PartnerIntegrationAccountId
+    var ClusterIdentifier: PartnerIntegrationClusterIdentifier
+    var DatabaseName: PartnerIntegrationDatabaseName
+    var PartnerName: PartnerIntegrationPartnerName
+  }
+
+  object PartnerIntegrationInputMessage {
+    @inline
+    def apply(
+        AccountId: PartnerIntegrationAccountId,
+        ClusterIdentifier: PartnerIntegrationClusterIdentifier,
+        DatabaseName: PartnerIntegrationDatabaseName,
+        PartnerName: PartnerIntegrationPartnerName
+    ): PartnerIntegrationInputMessage = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartnerName" -> PartnerName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PartnerIntegrationInputMessage]
+    }
+  }
+
+  @js.native
+  trait PartnerIntegrationOutputMessage extends js.Object {
+    var DatabaseName: js.UndefOr[PartnerIntegrationDatabaseName]
+    var PartnerName: js.UndefOr[PartnerIntegrationPartnerName]
+  }
+
+  object PartnerIntegrationOutputMessage {
+    @inline
+    def apply(
+        DatabaseName: js.UndefOr[PartnerIntegrationDatabaseName] = js.undefined,
+        PartnerName: js.UndefOr[PartnerIntegrationPartnerName] = js.undefined
+    ): PartnerIntegrationOutputMessage = {
+      val __obj = js.Dynamic.literal()
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      PartnerName.foreach(__v => __obj.updateDynamic("PartnerName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PartnerIntegrationOutputMessage]
+    }
+  }
+
+  @js.native
+  sealed trait PartnerIntegrationStatus extends js.Any
+  object PartnerIntegrationStatus {
+    val Active = "Active".asInstanceOf[PartnerIntegrationStatus]
+    val Inactive = "Inactive".asInstanceOf[PartnerIntegrationStatus]
+    val RuntimeFailure = "RuntimeFailure".asInstanceOf[PartnerIntegrationStatus]
+    val ConnectionFailure = "ConnectionFailure".asInstanceOf[PartnerIntegrationStatus]
+
+    @inline def values = js.Array(Active, Inactive, RuntimeFailure, ConnectionFailure)
+  }
+
   /** Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation.
     */
   @js.native
@@ -6568,6 +6714,39 @@ package redshift {
       MaintenanceTracks.foreach(__v => __obj.updateDynamic("MaintenanceTracks")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrackListMessage]
+    }
+  }
+
+  @js.native
+  trait UpdatePartnerStatusInputMessage extends js.Object {
+    var AccountId: PartnerIntegrationAccountId
+    var ClusterIdentifier: PartnerIntegrationClusterIdentifier
+    var DatabaseName: PartnerIntegrationDatabaseName
+    var PartnerName: PartnerIntegrationPartnerName
+    var Status: PartnerIntegrationStatus
+    var StatusMessage: js.UndefOr[PartnerIntegrationStatusMessage]
+  }
+
+  object UpdatePartnerStatusInputMessage {
+    @inline
+    def apply(
+        AccountId: PartnerIntegrationAccountId,
+        ClusterIdentifier: PartnerIntegrationClusterIdentifier,
+        DatabaseName: PartnerIntegrationDatabaseName,
+        PartnerName: PartnerIntegrationPartnerName,
+        Status: PartnerIntegrationStatus,
+        StatusMessage: js.UndefOr[PartnerIntegrationStatusMessage] = js.undefined
+    ): UpdatePartnerStatusInputMessage = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartnerName" -> PartnerName.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePartnerStatusInputMessage]
     }
   }
 

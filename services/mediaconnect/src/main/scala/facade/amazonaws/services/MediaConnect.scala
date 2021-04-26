@@ -1051,6 +1051,7 @@ package mediaconnect {
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
     var EntitlementArn: js.UndefOr[__string]
+    var ListenerAddress: js.UndefOr[__string]
     var MediaLiveInputArn: js.UndefOr[__string]
     var Port: js.UndefOr[__integer]
     var Transport: js.UndefOr[Transport]
@@ -1067,6 +1068,7 @@ package mediaconnect {
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
         EntitlementArn: js.UndefOr[__string] = js.undefined,
+        ListenerAddress: js.UndefOr[__string] = js.undefined,
         MediaLiveInputArn: js.UndefOr[__string] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         Transport: js.UndefOr[Transport] = js.undefined,
@@ -1082,6 +1084,7 @@ package mediaconnect {
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       EntitlementArn.foreach(__v => __obj.updateDynamic("EntitlementArn")(__v.asInstanceOf[js.Any]))
+      ListenerAddress.foreach(__v => __obj.updateDynamic("ListenerAddress")(__v.asInstanceOf[js.Any]))
       MediaLiveInputArn.foreach(__v => __obj.updateDynamic("MediaLiveInputArn")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Transport.foreach(__v => __obj.updateDynamic("Transport")(__v.asInstanceOf[js.Any]))

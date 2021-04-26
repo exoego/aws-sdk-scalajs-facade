@@ -722,7 +722,7 @@ package cognitoidentityprovider {
     }
   }
 
-  /** Represents the request to disable any user as an administrator.
+  /** Represents the request to disable the user as an administrator.
     */
   @js.native
   trait AdminDisableUserRequest extends js.Object {

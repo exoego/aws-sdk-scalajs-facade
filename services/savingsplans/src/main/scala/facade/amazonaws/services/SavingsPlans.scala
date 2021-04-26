@@ -774,8 +774,9 @@ package savingsplans {
     val EC2 = "EC2".asInstanceOf[SavingsPlanProductType]
     val Fargate = "Fargate".asInstanceOf[SavingsPlanProductType]
     val Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
+    val SageMaker = "SageMaker".asInstanceOf[SavingsPlanProductType]
 
-    @inline def values = js.Array(EC2, Fargate, Lambda)
+    @inline def values = js.Array(EC2, Fargate, Lambda, SageMaker)
   }
 
   /** Information about a Savings Plan rate.
@@ -904,9 +905,11 @@ package savingsplans {
   object SavingsPlanRateServiceCode {
     val AmazonEC2 = "AmazonEC2".asInstanceOf[SavingsPlanRateServiceCode]
     val AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
+    val AmazonEKS = "AmazonEKS".asInstanceOf[SavingsPlanRateServiceCode]
     val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
+    val AmazonSageMaker = "AmazonSageMaker".asInstanceOf[SavingsPlanRateServiceCode]
 
-    @inline def values = js.Array(AmazonEC2, AmazonECS, AWSLambda)
+    @inline def values = js.Array(AmazonEC2, AmazonECS, AmazonEKS, AWSLambda, AmazonSageMaker)
   }
 
   @js.native
@@ -937,8 +940,9 @@ package savingsplans {
   object SavingsPlanType {
     val Compute = "Compute".asInstanceOf[SavingsPlanType]
     val EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
+    val SageMaker = "SageMaker".asInstanceOf[SavingsPlanType]
 
-    @inline def values = js.Array(Compute, EC2Instance)
+    @inline def values = js.Array(Compute, EC2Instance, SageMaker)
   }
 
   @js.native

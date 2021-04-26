@@ -50,6 +50,7 @@ package object kendra {
   type DocumentMetadataBoolean = Boolean
   type DocumentMetadataConfigurationList = js.Array[DocumentMetadataConfiguration]
   type DocumentMetadataConfigurationName = String
+  type DocumentRelevanceOverrideConfigurationList = js.Array[DocumentRelevanceConfiguration]
   type Duration = String
   type ErrorMessage = String
   type ExcludeMimeTypesList = js.Array[MimeType]
@@ -1924,6 +1925,28 @@ package kendra {
     }
   }
 
+  /** Overrides the document relevance properties of a custom index field.
+    */
+  @js.native
+  trait DocumentRelevanceConfiguration extends js.Object {
+    var Name: DocumentMetadataConfigurationName
+    var Relevance: Relevance
+  }
+
+  object DocumentRelevanceConfiguration {
+    @inline
+    def apply(
+        Name: DocumentMetadataConfigurationName,
+        Relevance: Relevance
+    ): DocumentRelevanceConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Relevance" -> Relevance.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DocumentRelevanceConfiguration]
+    }
+  }
+
   /** Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.
     */
   @js.native
@@ -2659,6 +2682,7 @@ package kendra {
     var IndexId: IndexId
     var QueryText: QueryText
     var AttributeFilter: js.UndefOr[AttributeFilter]
+    var DocumentRelevanceOverrideConfigurations: js.UndefOr[DocumentRelevanceOverrideConfigurationList]
     var Facets: js.UndefOr[FacetList]
     var PageNumber: js.UndefOr[Int]
     var PageSize: js.UndefOr[Int]
@@ -2675,6 +2699,7 @@ package kendra {
         IndexId: IndexId,
         QueryText: QueryText,
         AttributeFilter: js.UndefOr[AttributeFilter] = js.undefined,
+        DocumentRelevanceOverrideConfigurations: js.UndefOr[DocumentRelevanceOverrideConfigurationList] = js.undefined,
         Facets: js.UndefOr[FacetList] = js.undefined,
         PageNumber: js.UndefOr[Int] = js.undefined,
         PageSize: js.UndefOr[Int] = js.undefined,
@@ -2690,6 +2715,7 @@ package kendra {
       )
 
       AttributeFilter.foreach(__v => __obj.updateDynamic("AttributeFilter")(__v.asInstanceOf[js.Any]))
+      DocumentRelevanceOverrideConfigurations.foreach(__v => __obj.updateDynamic("DocumentRelevanceOverrideConfigurations")(__v.asInstanceOf[js.Any]))
       Facets.foreach(__v => __obj.updateDynamic("Facets")(__v.asInstanceOf[js.Any]))
       PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
       PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))

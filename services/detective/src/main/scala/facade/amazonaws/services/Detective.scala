@@ -10,6 +10,7 @@ package object detective {
   type AccountId = String
   type AccountIdList = js.Array[AccountId]
   type AccountList = js.Array[Account]
+  type ByteValue = Double
   type EmailAddress = String
   type EmailMessage = String
   type GraphArn = String
@@ -487,6 +488,8 @@ package detective {
     var PercentOfGraphUtilizationUpdatedTime: js.UndefOr[Timestamp]
     var Status: js.UndefOr[MemberStatus]
     var UpdatedTime: js.UndefOr[Timestamp]
+    var VolumeUsageInBytes: js.UndefOr[ByteValue]
+    var VolumeUsageUpdatedTime: js.UndefOr[Timestamp]
   }
 
   object MemberDetail {
@@ -502,7 +505,9 @@ package detective {
         PercentOfGraphUtilization: js.UndefOr[Percentage] = js.undefined,
         PercentOfGraphUtilizationUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[MemberStatus] = js.undefined,
-        UpdatedTime: js.UndefOr[Timestamp] = js.undefined
+        UpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        VolumeUsageInBytes: js.UndefOr[ByteValue] = js.undefined,
+        VolumeUsageUpdatedTime: js.UndefOr[Timestamp] = js.undefined
     ): MemberDetail = {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
@@ -516,6 +521,8 @@ package detective {
       PercentOfGraphUtilizationUpdatedTime.foreach(__v => __obj.updateDynamic("PercentOfGraphUtilizationUpdatedTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
+      VolumeUsageInBytes.foreach(__v => __obj.updateDynamic("VolumeUsageInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeUsageUpdatedTime.foreach(__v => __obj.updateDynamic("VolumeUsageUpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MemberDetail]
     }
   }

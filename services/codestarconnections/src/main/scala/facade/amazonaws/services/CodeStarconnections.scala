@@ -166,6 +166,7 @@ package codestarconnections {
     var Name: HostName
     var ProviderEndpoint: Url
     var ProviderType: ProviderType
+    var Tags: js.UndefOr[TagList]
     var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
@@ -175,6 +176,7 @@ package codestarconnections {
         Name: HostName,
         ProviderEndpoint: Url,
         ProviderType: ProviderType,
+        Tags: js.UndefOr[TagList] = js.undefined,
         VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): CreateHostInput = {
       val __obj = js.Dynamic.literal(
@@ -183,6 +185,7 @@ package codestarconnections {
         "ProviderType" -> ProviderType.asInstanceOf[js.Any]
       )
 
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHostInput]
     }
@@ -191,15 +194,18 @@ package codestarconnections {
   @js.native
   trait CreateHostOutput extends js.Object {
     var HostArn: js.UndefOr[HostArn]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateHostOutput {
     @inline
     def apply(
-        HostArn: js.UndefOr[HostArn] = js.undefined
+        HostArn: js.UndefOr[HostArn] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateHostOutput = {
       val __obj = js.Dynamic.literal()
       HostArn.foreach(__v => __obj.updateDynamic("HostArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHostOutput]
     }
   }

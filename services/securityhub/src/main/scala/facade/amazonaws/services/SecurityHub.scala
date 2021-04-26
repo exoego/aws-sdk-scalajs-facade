@@ -143,7 +143,7 @@ package object securityhub {
 
   implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
-    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
+    @inline def acceptAdministratorInvitationFuture(params: AcceptAdministratorInvitationRequest): Future[AcceptAdministratorInvitationResponse] = service.acceptAdministratorInvitation(params).promise().toFuture
     @inline def batchDisableStandardsFuture(params: BatchDisableStandardsRequest): Future[BatchDisableStandardsResponse] = service.batchDisableStandards(params).promise().toFuture
     @inline def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] = service.batchEnableStandards(params).promise().toFuture
     @inline def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] = service.batchImportFindings(params).promise().toFuture
@@ -165,17 +165,17 @@ package object securityhub {
     @inline def disableImportFindingsForProductFuture(params: DisableImportFindingsForProductRequest): Future[DisableImportFindingsForProductResponse] = service.disableImportFindingsForProduct(params).promise().toFuture
     @inline def disableOrganizationAdminAccountFuture(params: DisableOrganizationAdminAccountRequest): Future[DisableOrganizationAdminAccountResponse] = service.disableOrganizationAdminAccount(params).promise().toFuture
     @inline def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] = service.disableSecurityHub(params).promise().toFuture
-    @inline def disassociateFromMasterAccountFuture(params: DisassociateFromMasterAccountRequest): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
+    @inline def disassociateFromAdministratorAccountFuture(params: DisassociateFromAdministratorAccountRequest): Future[DisassociateFromAdministratorAccountResponse] = service.disassociateFromAdministratorAccount(params).promise().toFuture
     @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] = service.disassociateMembers(params).promise().toFuture
     @inline def enableImportFindingsForProductFuture(params: EnableImportFindingsForProductRequest): Future[EnableImportFindingsForProductResponse] = service.enableImportFindingsForProduct(params).promise().toFuture
     @inline def enableOrganizationAdminAccountFuture(params: EnableOrganizationAdminAccountRequest): Future[EnableOrganizationAdminAccountResponse] = service.enableOrganizationAdminAccount(params).promise().toFuture
     @inline def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] = service.enableSecurityHub(params).promise().toFuture
+    @inline def getAdministratorAccountFuture(params: GetAdministratorAccountRequest): Future[GetAdministratorAccountResponse] = service.getAdministratorAccount(params).promise().toFuture
     @inline def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] = service.getEnabledStandards(params).promise().toFuture
     @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] = service.getFindings(params).promise().toFuture
     @inline def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] = service.getInsightResults(params).promise().toFuture
     @inline def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] = service.getInsights(params).promise().toFuture
     @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
-    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
     @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] = service.getMembers(params).promise().toFuture
     @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] = service.inviteMembers(params).promise().toFuture
     @inline def listEnabledProductsForImportFuture(params: ListEnabledProductsForImportRequest): Future[ListEnabledProductsForImportResponse] = service.listEnabledProductsForImport(params).promise().toFuture
@@ -201,7 +201,10 @@ package securityhub {
   class SecurityHub() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
+    @deprecated("This API has been deprecated, use AcceptAdministratorInvitation API instead.", "forever") def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
+    @deprecated("This API has been deprecated, use DisassociateFromAdministratorAccount API instead.", "forever") def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
+    @deprecated("This API has been deprecated, use GetAdministratorAccount API instead.", "forever") def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
+    def acceptAdministratorInvitation(params: AcceptAdministratorInvitationRequest): Request[AcceptAdministratorInvitationResponse] = js.native
     def batchDisableStandards(params: BatchDisableStandardsRequest): Request[BatchDisableStandardsResponse] = js.native
     def batchEnableStandards(params: BatchEnableStandardsRequest): Request[BatchEnableStandardsResponse] = js.native
     def batchImportFindings(params: BatchImportFindingsRequest): Request[BatchImportFindingsResponse] = js.native
@@ -223,17 +226,17 @@ package securityhub {
     def disableImportFindingsForProduct(params: DisableImportFindingsForProductRequest): Request[DisableImportFindingsForProductResponse] = js.native
     def disableOrganizationAdminAccount(params: DisableOrganizationAdminAccountRequest): Request[DisableOrganizationAdminAccountResponse] = js.native
     def disableSecurityHub(params: DisableSecurityHubRequest): Request[DisableSecurityHubResponse] = js.native
-    def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
+    def disassociateFromAdministratorAccount(params: DisassociateFromAdministratorAccountRequest): Request[DisassociateFromAdministratorAccountResponse] = js.native
     def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
     def enableImportFindingsForProduct(params: EnableImportFindingsForProductRequest): Request[EnableImportFindingsForProductResponse] = js.native
     def enableOrganizationAdminAccount(params: EnableOrganizationAdminAccountRequest): Request[EnableOrganizationAdminAccountResponse] = js.native
     def enableSecurityHub(params: EnableSecurityHubRequest): Request[EnableSecurityHubResponse] = js.native
+    def getAdministratorAccount(params: GetAdministratorAccountRequest): Request[GetAdministratorAccountResponse] = js.native
     def getEnabledStandards(params: GetEnabledStandardsRequest): Request[GetEnabledStandardsResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
     def getInsightResults(params: GetInsightResultsRequest): Request[GetInsightResultsResponse] = js.native
     def getInsights(params: GetInsightsRequest): Request[GetInsightsResponse] = js.native
     def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse] = js.native
-    def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
     def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
     def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse] = js.native
     def listEnabledProductsForImport(params: ListEnabledProductsForImportRequest): Request[ListEnabledProductsForImportResponse] = js.native
@@ -249,6 +252,37 @@ package securityhub {
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updateSecurityHubConfiguration(params: UpdateSecurityHubConfigurationRequest): Request[UpdateSecurityHubConfigurationResponse] = js.native
     def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] = js.native
+  }
+
+  @js.native
+  trait AcceptAdministratorInvitationRequest extends js.Object {
+    var AdministratorId: NonEmptyString
+    var InvitationId: NonEmptyString
+  }
+
+  object AcceptAdministratorInvitationRequest {
+    @inline
+    def apply(
+        AdministratorId: NonEmptyString,
+        InvitationId: NonEmptyString
+    ): AcceptAdministratorInvitationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AdministratorId" -> AdministratorId.asInstanceOf[js.Any],
+        "InvitationId" -> InvitationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AcceptAdministratorInvitationRequest]
+    }
+  }
+
+  @js.native
+  trait AcceptAdministratorInvitationResponse extends js.Object
+
+  object AcceptAdministratorInvitationResponse {
+    @inline
+    def apply(): AcceptAdministratorInvitationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AcceptAdministratorInvitationResponse]
+    }
   }
 
   @js.native
@@ -7263,6 +7297,28 @@ package securityhub {
   }
 
   @js.native
+  trait DisassociateFromAdministratorAccountRequest extends js.Object
+
+  object DisassociateFromAdministratorAccountRequest {
+    @inline
+    def apply(): DisassociateFromAdministratorAccountRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateFromAdministratorAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateFromAdministratorAccountResponse extends js.Object
+
+  object DisassociateFromAdministratorAccountResponse {
+    @inline
+    def apply(): DisassociateFromAdministratorAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateFromAdministratorAccountResponse]
+    }
+  }
+
+  @js.native
   trait DisassociateFromMasterAccountRequest extends js.Object
 
   object DisassociateFromMasterAccountRequest {
@@ -7496,6 +7552,33 @@ package securityhub {
       Lat.foreach(__v => __obj.updateDynamic("Lat")(__v.asInstanceOf[js.Any]))
       Lon.foreach(__v => __obj.updateDynamic("Lon")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoLocation]
+    }
+  }
+
+  @js.native
+  trait GetAdministratorAccountRequest extends js.Object
+
+  object GetAdministratorAccountRequest {
+    @inline
+    def apply(): GetAdministratorAccountRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetAdministratorAccountRequest]
+    }
+  }
+
+  @js.native
+  trait GetAdministratorAccountResponse extends js.Object {
+    var Administrator: js.UndefOr[Invitation]
+  }
+
+  object GetAdministratorAccountResponse {
+    @inline
+    def apply(
+        Administrator: js.UndefOr[Invitation] = js.undefined
+    ): GetAdministratorAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      Administrator.foreach(__v => __obj.updateDynamic("Administrator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAdministratorAccountResponse]
     }
   }
 
@@ -7858,8 +7941,9 @@ package securityhub {
   object IntegrationType {
     val SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
     val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
+    val UPDATE_FINDINGS_IN_SECURITY_HUB = "UPDATE_FINDINGS_IN_SECURITY_HUB".asInstanceOf[IntegrationType]
 
-    @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB)
+    @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB, UPDATE_FINDINGS_IN_SECURITY_HUB)
   }
 
   /** Details about an invitation.
@@ -8333,6 +8417,7 @@ package securityhub {
   @js.native
   trait Member extends js.Object {
     var AccountId: js.UndefOr[AccountId]
+    var AdministratorId: js.UndefOr[NonEmptyString]
     var Email: js.UndefOr[NonEmptyString]
     var InvitedAt: js.UndefOr[Timestamp]
     var MasterId: js.UndefOr[NonEmptyString]
@@ -8344,6 +8429,7 @@ package securityhub {
     @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
+        AdministratorId: js.UndefOr[NonEmptyString] = js.undefined,
         Email: js.UndefOr[NonEmptyString] = js.undefined,
         InvitedAt: js.UndefOr[Timestamp] = js.undefined,
         MasterId: js.UndefOr[NonEmptyString] = js.undefined,
@@ -8352,6 +8438,7 @@ package securityhub {
     ): Member = {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AdministratorId.foreach(__v => __obj.updateDynamic("AdministratorId")(__v.asInstanceOf[js.Any]))
       Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
       InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
       MasterId.foreach(__v => __obj.updateDynamic("MasterId")(__v.asInstanceOf[js.Any]))
