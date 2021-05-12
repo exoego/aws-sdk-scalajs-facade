@@ -16,6 +16,7 @@ categories:
   - title: '🧰 Maintenance'
     labels:
       - 'chore'
+      - 'dependencies'
       - 'internal'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 sort-by: 'title'
