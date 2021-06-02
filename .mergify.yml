@@ -8,9 +8,10 @@ pull_request_rules:
         method: merge
       label:
         add: ["dependencies"]
+
   - name: Automatic merge on Dependeabot
     conditions:
-      - "author=dependabot"
+      - "author~=^dependabot"
       - "#status-success>=4"
     actions:
       merge:
