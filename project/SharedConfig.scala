@@ -10,7 +10,7 @@ object SharedConfig {
   val libraryName = "aws-sdk-scalajs-facade"
 
   val scala213Version = "2.13.6"
-  val scala212Version = "2.12.13"
+  val scala212Version = "2.12.14"
 
   val settings = Seq(
     scalacOptions ++= Seq("-deprecation"),
