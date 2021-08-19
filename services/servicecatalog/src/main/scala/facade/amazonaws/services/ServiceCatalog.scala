@@ -4501,8 +4501,7 @@ package servicecatalog {
     }
   }
 
-  /** The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
-    * For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
+  /** The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>. For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
   trait ProvisioningArtifactPreferences extends js.Object {
@@ -4645,11 +4644,7 @@ package servicecatalog {
     }
   }
 
-  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type
-    * One or more AWS accounts that will have access to the provisioned product.
-    * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
-    * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.
-    * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type One or more AWS accounts that will have access to the provisioned product. Applicable only to a <code>CFN_STACKSET</code> provisioned product type. The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation. If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
     */
   @js.native
   trait ProvisioningPreferences extends js.Object {

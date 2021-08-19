@@ -800,10 +800,7 @@ package opsworkscm {
     @inline def values = js.Array(SUCCESS, FAILED)
   }
 
-  /** The status of the association or disassociation request.
-    * <p class="title"> ```Possible values:``` </p>* <code>SUCCESS</code>: The association or disassociation succeeded.
-    * * <code>FAILED</code>: The association or disassociation failed.
-    * * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
+  /** The status of the association or disassociation request. <p class="title"> ```Possible values:``` </p>* <code>SUCCESS</code>: The association or disassociation succeeded. * <code>FAILED</code>: The association or disassociation failed. * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
     */
   @js.native
   sealed trait NodeAssociationStatus extends js.Any

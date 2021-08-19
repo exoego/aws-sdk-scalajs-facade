@@ -339,11 +339,7 @@ package securityhub {
     }
   }
 
-  /** Provides details about one of the following actions that affects or that was taken on a resource:
-    * * A remote IP address issued an AWS API call
-    * * A DNS request was received
-    * * A remote IP address attempted to connect to an EC2 instance
-    * * A remote IP address attempted a port probe on an EC2 instance
+  /** Provides details about one of the following actions that affects or that was taken on a resource: * A remote IP address issued an AWS API call * A DNS request was received * A remote IP address attempted to connect to an EC2 instance * A remote IP address attempted a port probe on an EC2 instance
     */
   @js.native
   trait Action extends js.Object {
@@ -1058,9 +1054,7 @@ package securityhub {
     }
   }
 
-  /** Contains information about one of the following:
-    * * The initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request
-    * * The validation of each domain name in the certificate, as it pertains to AWS Certificate Manager managed renewal
+  /** Contains information about one of the following: * The initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request * The validation of each domain name in the certificate, as it pertains to AWS Certificate Manager managed renewal
     */
   @js.native
   trait AwsCertificateManagerCertificateDomainValidationOption extends js.Object {
@@ -5594,8 +5588,7 @@ package securityhub {
     }
   }
 
-  /** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight.
-    * You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.
+  /** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.
     */
   @js.native
   trait AwsSecurityFindingFilters extends js.Object {
@@ -9097,10 +9090,7 @@ package securityhub {
     }
   }
 
-  /** Additional details about a resource related to a finding.
-    * To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.
-    * If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.
-    * You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.
+  /** Additional details about a resource related to a finding. To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details. If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields. You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.
     */
   @js.native
   trait ResourceDetails extends js.Object {
@@ -9310,9 +9300,7 @@ package securityhub {
     }
   }
 
-  /** The severity of the finding.
-    * The finding provider can provide the initial severity. The finding provider can only update the severity if it has not been updated using <code>BatchUpdateFindings</code>.
-    * The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.
+  /** The severity of the finding. The finding provider can provide the initial severity. The finding provider can only update the severity if it has not been updated using <code>BatchUpdateFindings</code>. The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.
     */
   @js.native
   trait Severity extends js.Object {

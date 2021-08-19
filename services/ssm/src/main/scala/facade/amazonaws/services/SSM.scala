@@ -5180,33 +5180,8 @@ package ssm {
     }
   }
 
-  /** One or more filters. Use a filter to return a more specific list of documents.
-    * For keys, you can specify one or more tags that have been applied to a document.
-    * You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated values are as follows:
-    * <dl> <dt>DocumentType</dt> <dd>* ApplicationConfiguration
-    * * ApplicationConfigurationSchema
-    * * Automation
-    * * ChangeCalendar
-    * * Command
-    * * DeploymentStrategy
-    * * Package
-    * * Policy
-    * * Session
-    * </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
-    * * Amazon
-    * * Private
-    * * Public
-    * * Self
-    * * ThirdParty
-    * </dd> <dt>PlatformTypes</dt> <dd>* Linux
-    * * Windows
-    * </dd> </dl> <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:
-    * <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
-    * You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be used with this key, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|AWS resource and property types reference]] in the <i>AWS CloudFormation User Guide</i>.
-    * If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.
-    * To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
-    * For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code> command:
-    * <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
+  /** One or more filters. Use a filter to return a more specific list of documents. For keys, you can specify one or more tags that have been applied to a document. You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated values are as follows: <dl> <dt>DocumentType</dt> <dd>* ApplicationConfiguration * ApplicationConfigurationSchema * Automation * ChangeCalendar * Command * DeploymentStrategy * Package * Policy * Session </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>. * Amazon * Private * Public * Self * ThirdParty </dd> <dt>PlatformTypes</dt> <dd>* Linux * Windows </dd> </dl> <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following
+    * command: <code>aws ssm list-documents --filters Key=Name,Values=Te</code> You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be used with this key, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|AWS resource and property types reference]] in the <i>AWS CloudFormation User Guide</i>. If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results. To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>. For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code> command: <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
     */
   @js.native
   trait DocumentKeyValuesFilter extends js.Object {
@@ -6885,8 +6860,7 @@ package ssm {
     }
   }
 
-  /** An S3 bucket where you want to store the results of this request.
-    * For the minimal permissions required to enable Amazon S3 output for an association, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html|Creating associations]] in the <i>Systems Manager User Guide</i>.
+  /** An S3 bucket where you want to store the results of this request. For the minimal permissions required to enable Amazon S3 output for an association, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html|Creating associations]] in the <i>Systems Manager User Guide</i>.
     */
   @js.native
   trait InstanceAssociationOutputLocation extends js.Object {
@@ -7045,8 +7019,7 @@ package ssm {
     }
   }
 
-  /** Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping.
-    * Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
+  /** Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping. Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
     */
   @js.native
   trait InstanceInformationFilter extends js.Object {
@@ -8567,12 +8540,9 @@ package ssm {
     }
   }
 
-  /** The parameters for a LAMBDA task type.
-    * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+  /** The parameters for a LAMBDA task type. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    * For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
     */
   @js.native
   trait MaintenanceWindowLambdaParameters extends js.Object {
@@ -8605,12 +8575,9 @@ package ssm {
     @inline def values = js.Array(INSTANCE, RESOURCE_GROUP)
   }
 
-  /** The parameters for a RUN_COMMAND task type.
-    * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+  /** The parameters for a RUN_COMMAND task type. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    * For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
     */
   @js.native
   trait MaintenanceWindowRunCommandParameters extends js.Object {
@@ -8658,12 +8625,9 @@ package ssm {
     }
   }
 
-  /** The parameters for a STEP_FUNCTIONS task.
-    * For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+  /** The parameters for a STEP_FUNCTIONS task. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-    * For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
     */
   @js.native
   trait MaintenanceWindowStepFunctionsParameters extends js.Object {
@@ -10051,9 +10015,7 @@ package ssm {
     @inline def values = js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED)
   }
 
-  /** Defines which patches should be included in a patch baseline.
-    * A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values.
-    * You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
+  /** Defines which patches should be included in a patch baseline. A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values. You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
     */
   @js.native
   trait PatchFilter extends js.Object {
@@ -11047,11 +11009,7 @@ package ssm {
     }
   }
 
-  /** The data type name for including resource data sync state. There are four sync states:
-    * <code>OrganizationNotExists</code> (Your organization doesn't exist)
-    * <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)
-    * <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)
-    * <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)
+  /** The data type name for including resource data sync state. There are four sync states: <code>OrganizationNotExists</code> (Your organization doesn't exist) <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.) <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.) <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)
     */
   @js.native
   trait ResourceDataSyncSourceWithState extends js.Object {
@@ -11427,9 +11385,8 @@ package ssm {
     }
   }
 
-  /** The service setting data structure.
-    * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.
-    * Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.
+  /** The service setting data structure. <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature. Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS
+    * service team.
     */
   @js.native
   trait ServiceSetting extends js.Object {
@@ -12010,26 +11967,9 @@ package ssm {
 
   /** An array of search criteria that targets instances using a Key,Value combination that you specify.
     *
-    * '''Note:'''One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html|Registering maintenance window tasks without targets]] in the <i>AWS Systems Manager User Guide</i>.
-    * Supported formats include the following.
-    * * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code>
-    * * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code>
-    * * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code>
-    * * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
-    * * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
-    * * ```Automation targets only```: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code>
-    * For example:
-    * * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code>
-    * * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code>
-    * * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
-    * * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
-    * This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window.
-    * * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
-    * This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
-    * * ```Automation targets only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code>
-    * * ```State Manager association targets only```: <code>Key=InstanceIds,Values=<i>*</i> </code>
-    * This example demonstrates how to target all managed instances in the AWS Region where the association was created.
-    * For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
+    * '''Note:'''One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html|Registering maintenance window tasks without targets]] in the <i>AWS Systems Manager User Guide</i>. Supported formats include the following. * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> * ```Maintenance window targets only```:
+    * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> * ```Automation targets only```: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code> For example: * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window. * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> This example demonstrates how to target only EC2 instances and VPCs in your maintenance window. * ```Automation targets
+    * only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code> * ```State Manager association targets only```: <code>Key=InstanceIds,Values=<i>*</i> </code> This example demonstrates how to target all managed instances in the AWS Region where the association was created. For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {

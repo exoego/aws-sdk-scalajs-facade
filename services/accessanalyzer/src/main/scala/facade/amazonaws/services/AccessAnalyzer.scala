@@ -1560,8 +1560,7 @@ package accessanalyzer {
     )
   }
 
-  /** Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see [[https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default|Default key policy]]. For more information about key policy limits, see [[https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html|Resource quotas]].
-    * <p/>
+  /** Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see [[https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default|Default key policy]]. For more information about key policy limits, see [[https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html|Resource quotas]]. <p/>
     */
   @js.native
   trait KmsKeyConfiguration extends js.Object {
@@ -2271,8 +2270,8 @@ package accessanalyzer {
     }
   }
 
-  /** The configuration for a Secrets Manager secret. For more information, see [[https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html|CreateSecret]].
-    * You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the default CMK of the AWS account. If you specify an empty string for the KMS key ID, the access preview uses the default CMK of the AWS account. For more information about secret policy limits, see [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html|Quotas for AWS Secrets Manager.]].
+  /** The configuration for a Secrets Manager secret. For more information, see [[https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html|CreateSecret]]. You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the default CMK of the AWS account. If you specify an empty string for the KMS key ID, the access preview uses the default CMK of the AWS account. For more information about secret policy limits,
+    * see [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html|Quotas for AWS Secrets Manager.]].
     */
   @js.native
   trait SecretsManagerSecretConfiguration extends js.Object {

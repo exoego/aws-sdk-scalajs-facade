@@ -764,8 +764,7 @@ package location {
 
   /** Specifies the data storage option chosen for requesting Places.
     *
-    * '''Note:'''By using Places, you agree that AWS may transmit your API queries to your selected third party provider for processing, which may be outside the AWS region you are currently using.
-    * Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For more information, see the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] for Amazon Location Service.
+    * '''Note:'''By using Places, you agree that AWS may transmit your API queries to your selected third party provider for processing, which may be outside the AWS region you are currently using. Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For more information, see the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] for Amazon Location Service.
     */
   @js.native
   trait DataSourceConfiguration extends js.Object {

@@ -215,8 +215,7 @@ package elbv2 {
     def setSubnets(params: SetSubnetsInput): Request[SetSubnetsOutput] = js.native
   }
 
-  /** Information about an action.
-    * Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
+  /** Information about an action. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
     */
   @js.native
   trait Action extends js.Object {
@@ -1402,8 +1401,7 @@ package elbv2 {
     }
   }
 
-  /** Information about an HTTP header condition.
-    * There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
+  /** Information about an HTTP header condition. There is a set of standard HTTP header fields. You can also define custom HTTP header fields.
     */
   @js.native
   trait HttpHeaderConditionConfig extends js.Object {
@@ -1424,8 +1422,7 @@ package elbv2 {
     }
   }
 
-  /** Information about an HTTP method condition.
-    * HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
+  /** Information about an HTTP method condition. HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the [[https://www.iana.org/assignments/http-methods/http-methods.xhtml|HTTP Method Registry]]. You can also define custom HTTP methods.
     */
   @js.native
   trait HttpRequestMethodConditionConfig extends js.Object {
@@ -1943,8 +1940,7 @@ package elbv2 {
     @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE)
   }
 
-  /** Information about a query string condition.
-    * The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
+  /** Information about a query string condition. The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.
     */
   @js.native
   trait QueryStringConditionConfig extends js.Object {
@@ -1983,15 +1979,7 @@ package elbv2 {
     }
   }
 
-  /** Information about a redirect action.
-    * A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.
-    * You can reuse URI components using the following reserved keywords:
-    * * #{protocol}
-    * * #{host}
-    * * #{port}
-    * * #{path} (the leading "/" is removed)
-    * * #{query}
-    * For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".
+  /** Information about a redirect action. A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values. You can reuse URI components using the following reserved keywords: * #{protocol} * #{host} * #{port} * #{path} (the leading "/" is removed) * #{query} For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".
     */
   @js.native
   trait RedirectActionConfig extends js.Object {
@@ -2158,8 +2146,7 @@ package elbv2 {
     }
   }
 
-  /** Information about a condition for a rule.
-    * Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
+  /** Information about a condition for a rule. Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.
     */
   @js.native
   trait RuleCondition extends js.Object {
@@ -2370,8 +2357,7 @@ package elbv2 {
     }
   }
 
-  /** Information about a source IP condition.
-    * You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
+  /** Information about a source IP condition. You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
     */
   @js.native
   trait SourceIpConditionConfig extends js.Object {

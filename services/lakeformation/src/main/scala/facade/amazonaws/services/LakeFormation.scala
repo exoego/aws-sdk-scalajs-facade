@@ -412,8 +412,7 @@ package lakeformation {
     }
   }
 
-  /** A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.
-    * If a catalog resource is shared through AWS Resource Access Manager (AWS RAM), then there will exist a corresponding RAM share resource ARN.
+  /** A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>. If a catalog resource is shared through AWS Resource Access Manager (AWS RAM), then there will exist a corresponding RAM share resource ARN.
     */
   @js.native
   trait DetailsMap extends js.Object {
@@ -968,8 +967,7 @@ package lakeformation {
     }
   }
 
-  /** A structure for a table with columns object. This object is only used when granting a SELECT permission.
-    * This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.
+  /** A structure for a table with columns object. This object is only used when granting a SELECT permission. This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.
     */
   @js.native
   trait TableWithColumnsResource extends js.Object {

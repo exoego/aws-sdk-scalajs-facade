@@ -298,10 +298,7 @@ package es {
     }
   }
 
-  /** Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:
-    * * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.
-    * * Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.
-    * For more information, see [[http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options|Configuring Advanced Options]].
+  /** Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available: * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information. * Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded. For more information, see [[http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options|Configuring Advanced Options]].
     */
   @js.native
   trait AdvancedOptionsStatus extends js.Object {
@@ -2703,9 +2700,7 @@ package es {
     }
   }
 
-  /** Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call.
-    * Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve.
-    * </p>
+  /** Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p>
     */
   @js.native
   trait ListElasticsearchVersionsRequest extends js.Object {
@@ -2831,9 +2826,7 @@ package es {
     }
   }
 
-  /** <p>Log Publishing option that is set for given domain. <br/>Attributes and their details:* CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.
-    * * Enabled: Whether the log publishing for given log type is enabled or not
-    * </p>
+  /** <p>Log Publishing option that is set for given domain. <br/>Attributes and their details:* CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published. * Enabled: Whether the log publishing for given log type is enabled or not </p>
     */
   @js.native
   trait LogPublishingOption extends js.Object {
@@ -2875,11 +2868,7 @@ package es {
     }
   }
 
-  /** <p>Type of Log File, it can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.
-    * * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.
-    * * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.
-    * * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.
-    * </p>
+  /** <p>Type of Log File, it can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute. * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute. * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting. * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain. </p>
     */
   @js.native
   sealed trait LogType extends js.Any
@@ -2956,9 +2945,7 @@ package es {
     }
   }
 
-  /** The state of a requested change. One of the following:
-    * * Processing: The request change is still in-process.
-    * * Active: The request change is processed and deployed to the Elasticsearch domain.
+  /** The state of a requested change. One of the following: * Processing: The request change is still in-process. * Active: The request change is processed and deployed to the Elasticsearch domain.
     */
   @js.native
   sealed trait OptionState extends js.Any

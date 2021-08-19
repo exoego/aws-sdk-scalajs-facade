@@ -1361,8 +1361,7 @@ package workmail {
     }
   }
 
-  /** The domain to associate with an Amazon WorkMail organization.
-    * When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see [[https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html|Adding a domain]] in the <i>Amazon WorkMail Administrator Guide</i>.
+  /** The domain to associate with an Amazon WorkMail organization. When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see [[https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html|Adding a domain]] in the <i>Amazon WorkMail Administrator Guide</i>.
     */
   @js.native
   trait Domain extends js.Object {

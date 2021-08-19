@@ -2310,8 +2310,7 @@ package xray {
     }
   }
 
-  /** A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.
-    * For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
+  /** A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it. For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
     */
   @js.native
   trait Segment extends js.Object {
@@ -2443,11 +2442,7 @@ package xray {
     }
   }
 
-  /** A map that contains tag keys and tag values to attach to an AWS X-Ray group or sampling rule. For more information about ways to use tags, see [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging AWS resources]] in the <i>AWS General Reference</i>.
-    * The following restrictions apply to tags:
-    * * Maximum number of user-applied tags per resource: 50
-    * * Tag keys and values are case sensitive.
-    * * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system tags.
+  /** A map that contains tag keys and tag values to attach to an AWS X-Ray group or sampling rule. For more information about ways to use tags, see [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging AWS resources]] in the <i>AWS General Reference</i>. The following restrictions apply to tags: * Maximum number of user-applied tags per resource: 50 * Tag keys and values are case sensitive. * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system tags.
     */
   @js.native
   trait Tag extends js.Object {

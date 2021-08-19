@@ -593,13 +593,7 @@ package glue {
     }
   }
 
-  /** A list of errors that can occur when registering partition indexes for an existing table.
-    * These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:
-    * * EncryptedPartitionError: The partitions are encrypted.
-    * * InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column.
-    * * MissingPartitionValueError: The partitions are encrypted.
-    * * UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.
-    * * InternalError: Any error which does not belong to other error codes.
+  /** A list of errors that can occur when registering partition indexes for an existing table. These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows: * EncryptedPartitionError: The partitions are encrypted. * InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column. * MissingPartitionValueError: The partitions are encrypted. * UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002. * InternalError: Any error which does not belong to other error codes.
     */
   @js.native
   trait BackfillError extends js.Object {
@@ -1449,8 +1443,7 @@ package glue {
     }
   }
 
-  /** Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.
-    * You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
+  /** Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format. You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
     */
   @js.native
   trait Classifier extends js.Object {
@@ -1638,8 +1631,7 @@ package glue {
     }
   }
 
-  /** A structure containing the column name and column importance score for a column.
-    * Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.
+  /** A structure containing the column name and column importance score for a column. Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.
     */
   @js.native
   trait ColumnImportance extends js.Object {
@@ -1821,8 +1813,7 @@ package glue {
     }
   }
 
-  /** The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.
-    * For more information, see [[https://en.wikipedia.org/wiki/Confusion_matrix|Confusion matrix]] in Wikipedia.
+  /** The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making. For more information, see [[https://en.wikipedia.org/wiki/Confusion_matrix|Confusion matrix]] in Wikipedia.
     */
   @js.native
   trait ConfusionMatrix extends js.Object {
@@ -1926,9 +1917,7 @@ package glue {
     }
   }
 
-  /** The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.
-    * When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.
-    * This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
+  /** The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption. When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled. This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
     */
   @js.native
   trait ConnectionPasswordEncryption extends js.Object {
@@ -10717,8 +10706,7 @@ package glue {
     @inline def values = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
   }
 
-  /** The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.
-    * Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.
+  /** The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS. Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.
     */
   @js.native
   trait TransformEncryption extends js.Object {

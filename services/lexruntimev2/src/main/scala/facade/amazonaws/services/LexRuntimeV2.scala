@@ -56,8 +56,7 @@ package lexruntimev2 {
     def recognizeUtterance(params: RecognizeUtteranceRequest): Request[RecognizeUtteranceResponse] = js.native
   }
 
-  /** Contains information about the contexts that a user is using in a session. You can configure Amazon Lex to set a context when an intent is fulfilled, or you can set a context using the , , or operations.
-    * Use a context to indicate to Amazon Lex intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.
+  /** Contains information about the contexts that a user is using in a session. You can configure Amazon Lex to set a context when an intent is fulfilled, or you can set a context using the , , or operations. Use a context to indicate to Amazon Lex intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.
     */
   @js.native
   trait ActiveContext extends js.Object {
@@ -292,8 +291,7 @@ package lexruntimev2 {
     }
   }
 
-  /** A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.
-    * When you use a response card, the response from the user is constrained to the text associated with a button on the card.
+  /** A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. When you use a response card, the response from the user is constrained to the text associated with a button on the card.
     */
   @js.native
   trait ImageResponseCard extends js.Object {
@@ -638,8 +636,7 @@ package lexruntimev2 {
     }
   }
 
-  /** Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot.
-    * For more information, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html| Determine Sentiment ]] in the <i>Amazon Comprehend developer guide</i>.
+  /** Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot. For more information, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html| Determine Sentiment]] in the <i>Amazon Comprehend developer guide</i>.
     */
   @js.native
   trait SentimentResponse extends js.Object {

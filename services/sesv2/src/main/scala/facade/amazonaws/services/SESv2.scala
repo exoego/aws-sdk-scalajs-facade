@@ -332,8 +332,7 @@ package sesv2 {
     }
   }
 
-  /** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
-    * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+  /** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
     */
   @js.native
   sealed trait BehaviorOnMxFailure extends js.Any
@@ -1018,8 +1017,7 @@ package sesv2 {
     }
   }
 
-  /** If the email identity is a domain, this object contains information about the DKIM verification status for the domain.
-    * If the email identity is an email address, this object is empty.
+  /** If the email identity is a domain, this object contains information about the DKIM verification status for the domain. If the email identity is an email address, this object is empty.
     */
   @js.native
   trait CreateEmailIdentityResponse extends js.Object {
@@ -1183,8 +1181,7 @@ package sesv2 {
     @inline def values = js.Array(CSV, JSON)
   }
 
-  /** Contains information about a dedicated IP address that is associated with your Amazon SES account.
-    * To learn more about requesting dedicated IP addresses, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html|Requesting and Relinquishing Dedicated IP Addresses]] in the <i>Amazon SES Developer Guide</i>.
+  /** Contains information about a dedicated IP address that is associated with your Amazon SES account. To learn more about requesting dedicated IP addresses, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html|Requesting and Relinquishing Dedicated IP Addresses]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
   trait DedicatedIp extends js.Object {
@@ -1647,8 +1644,7 @@ package sesv2 {
     @inline def values = js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG)
   }
 
-  /** An object that contains information about the DKIM authentication status for an email identity.
-    * Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html|Easy DKIM]] to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity
+  /** An object that contains information about the DKIM authentication status for an email identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html|Easy DKIM]] to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity
     */
   @js.native
   trait DkimAttributes extends js.Object {
@@ -1706,12 +1702,7 @@ package sesv2 {
     @inline def values = js.Array(AWS_SES, EXTERNAL)
   }
 
-  /** The DKIM authentication status of the identity. The status can be one of the following:
-    * * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.
-    * * <code>SUCCESS</code> – The verification process completed successfully.
-    * * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.
-    * * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.
-    * * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
+  /** The DKIM authentication status of the identity. The status can be one of the following: * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain. * <code>SUCCESS</code> – The verification process completed successfully. * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain. * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain. * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
     */
   @js.native
   sealed trait DkimStatus extends js.Any
@@ -2434,8 +2425,7 @@ package sesv2 {
     }
   }
 
-  /** Retrieve information about the status of the Deliverability dashboard for your AWS account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests.
-    * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+  /** Retrieve information about the status of the Deliverability dashboard for your AWS account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait GetDeliverabilityDashboardOptionsRequest extends js.Object
@@ -2875,9 +2865,7 @@ package sesv2 {
     }
   }
 
-  /** The email identity type. The identity type can be one of the following:
-    * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-    * * <code>DOMAIN</code> – The identity is a domain.
+  /** The email identity type. The identity type can be one of the following: * <code>EMAIL_ADDRESS</code> – The identity is an email address. * <code>DOMAIN</code> – The identity is a domain.
     */
   @js.native
   sealed trait IdentityType extends js.Any
@@ -3639,11 +3627,7 @@ package sesv2 {
     }
   }
 
-  /** The status of the MAIL FROM domain. This status can have the following values:
-    * * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.
-    * * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.
-    * * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.
-    * * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
+  /** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
     */
   @js.native
   sealed trait MailFromDomainStatus extends js.Any
@@ -4175,8 +4159,7 @@ package sesv2 {
     }
   }
 
-  /** Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests.
-    * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+  /** Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait PutDeliverabilityDashboardOptionRequest extends js.Object {
@@ -4310,8 +4293,7 @@ package sesv2 {
     }
   }
 
-  /** If the action is successful, the service sends back an HTTP 200 response.
-    * The following data is returned in JSON format by the service.
+  /** If the action is successful, the service sends back an HTTP 200 response. The following data is returned in JSON format by the service.
     */
   @js.native
   trait PutEmailIdentityDkimSigningAttributesResponse extends js.Object {
@@ -4904,9 +4886,7 @@ package sesv2 {
     }
   }
 
-  /** The type of action that you want to perform on the address. Acceptable values:
-    * * PUT: add the addresses to the suppression list.
-    * * DELETE: remove the address from the suppression list.
+  /** The type of action that you want to perform on the address. Acceptable values: * PUT: add the addresses to the suppression list. * DELETE: remove the address from the suppression list.
     */
   @js.native
   sealed trait SuppressionListImportAction extends js.Any
@@ -4917,9 +4897,7 @@ package sesv2 {
     @inline def values = js.Array(DELETE, PUT)
   }
 
-  /** The reason that the address was added to the suppression list for your account. The value can be one of the following:
-    * * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint.
-    * * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.
+  /** The reason that the address was added to the suppression list for your account. The value can be one of the following: * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint. * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.
     */
   @js.native
   sealed trait SuppressionListReason extends js.Any
@@ -4948,12 +4926,8 @@ package sesv2 {
     }
   }
 
-  /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
-    * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
-    * * Tag keys and values are case sensitive.
-    * * For each associated resource, each tag key must be unique and it can have only one value.
-    * * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.
-    * * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
+  /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags. Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags: * Tag keys and values are case sensitive. * For each associated resource, each tag key must be unique and it can have only one value. * The <code>aws:</code> prefix is
+    * reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource. * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
     */
   @js.native
   trait Tag extends js.Object {
@@ -5154,8 +5128,7 @@ package sesv2 {
     }
   }
 
-  /** An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
-    * These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
+  /** An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them. These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
     */
   @js.native
   trait TrackingOptions extends js.Object {

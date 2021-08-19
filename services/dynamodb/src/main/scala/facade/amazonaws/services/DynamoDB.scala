@@ -370,9 +370,7 @@ package dynamodb {
     }
   }
 
-  /** Represents the data for an attribute.
-    * Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
-    * For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.
+  /** Represents the data for an attribute. Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself. For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait AttributeValue extends js.Object {
@@ -449,8 +447,7 @@ package dynamodb {
 
   /** For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.
     *
-    * '''Note:'''You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the item, and then use <code>PutItem</code> to create a new item with new attributes.
-    * Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.
+    * '''Note:'''You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the item, and then use <code>PutItem</code> to create a new item with new attributes. Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.
     */
   @js.native
   trait AttributeValueUpdate extends js.Object {
@@ -1076,11 +1073,7 @@ package dynamodb {
     @inline def values = js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
   }
 
-  /** Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:
-    * * For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:
-    * <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
-    * <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.
-    * * For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.
+  /** Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation: * For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported: <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values. * For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.
     */
   @js.native
   trait Condition extends js.Object {
@@ -2270,10 +2263,8 @@ package dynamodb {
     }
   }
 
-  /** Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code>, or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways:
-    * * Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.
-    * * Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.
-    * <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.
+  /** Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code>, or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways: * Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds. * Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the
+    * conditional operation succeeds only if the comparison evaluates to false. <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.
     */
   @js.native
   trait ExpectedAttributeValue extends js.Object {
@@ -2698,10 +2689,7 @@ package dynamodb {
     }
   }
 
-  /** Represents one of the following:
-    * * A new global secondary index to be added to an existing table.
-    * * New provisioned throughput parameters for an existing global secondary index.
-    * * An existing global secondary index to be removed from an existing table.
+  /** Represents one of the following: * A new global secondary index to be added to an existing table. * New provisioned throughput parameters for an existing global secondary index. * An existing global secondary index to be removed from an existing table.
     */
   @js.native
   trait GlobalSecondaryIndexUpdate extends js.Object {
@@ -2863,9 +2851,7 @@ package dynamodb {
     }
   }
 
-  /** Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.
-    * A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.
-    * A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.
+  /** Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index. A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key. A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.
     */
   @js.native
   trait KeySchemaElement extends js.Object {
@@ -2896,8 +2882,7 @@ package dynamodb {
     @inline def values = js.Array(HASH, RANGE)
   }
 
-  /** Represents a set of primary keys and, for each key, the attributes to retrieve from the table.
-    * For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.
+  /** Represents a set of primary keys and, for each key, the attributes to retrieve from the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.
     */
   @js.native
   trait KeysAndAttributes extends js.Object {
@@ -3438,8 +3423,7 @@ package dynamodb {
     @inline def values = js.Array(ALL, KEYS_ONLY, INCLUDE)
   }
 
-  /** Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.
-    * For current minimum and maximum provisioned throughput values, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Service, Account, and Table Quotas]] in the <i>Amazon DynamoDB Developer Guide</i>.
+  /** Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation. For current minimum and maximum provisioned throughput values, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Service, Account, and Table Quotas]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait ProvisionedThroughput extends js.Object {
@@ -4082,10 +4066,7 @@ package dynamodb {
     @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
   }
 
-  /** Represents one of the following:
-    * * A new replica to be added to an existing global table.
-    * * New parameters for an existing replica.
-    * * An existing replica to be removed from an existing global table.
+  /** Represents one of the following: * A new replica to be added to an existing global table. * New parameters for an existing replica. * An existing replica to be removed from an existing global table.
     */
   @js.native
   trait ReplicaUpdate extends js.Object {
@@ -4106,10 +4087,7 @@ package dynamodb {
     }
   }
 
-  /** Represents one of the following:
-    * * A new replica to be added to an existing regional table or global table. This request invokes the <code>CreateTableReplica</code> action in the destination Region.
-    * * New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region.
-    * * An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.
+  /** Represents one of the following: * A new replica to be added to an existing regional table or global table. This request invokes the <code>CreateTableReplica</code> action in the destination Region. * New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region. * An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.
     */
   @js.native
   trait ReplicationGroupUpdate extends js.Object {
@@ -4275,11 +4253,7 @@ package dynamodb {
     }
   }
 
-  /** Determines the level of detail about provisioned throughput consumption that is returned in the response:
-    * * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.
-    * Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).
-    * * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.
-    * * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
+  /** Determines the level of detail about provisioned throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
     */
   @js.native
   sealed trait ReturnConsumedCapacity extends js.Any
@@ -4742,9 +4716,7 @@ package dynamodb {
     @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
   }
 
-  /** Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table.
-    * AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.
-    * For an overview on tagging DynamoDB resources, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html|Tagging for DynamoDB]] in the <i>Amazon DynamoDB Developer Guide</i>.
+  /** Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag. For an overview on tagging DynamoDB resources, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html|Tagging for DynamoDB]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
