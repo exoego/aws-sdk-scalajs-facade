@@ -291,12 +291,7 @@ package kendra {
     @inline def values = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
   }
 
-  /** Provides filtering the query results based on document attributes.
-    * When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use:
-    * <code>&lt;AndAllFilters&gt;</code>
-    * <ol> * <code> &lt;OrAllFilters&gt;</code>
-    * * <code> &lt;EqualTo&gt;</code>
-    * </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
+  /** Provides filtering the query results based on document attributes. When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use: <code>&lt;AndAllFilters&gt;</code> <ol> * <code> &lt;OrAllFilters&gt;</code> * <code> &lt;EqualTo&gt;</code> </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
     */
   @js.native
   trait AttributeFilter extends js.Object {
@@ -584,8 +579,7 @@ package kendra {
     @inline def values = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
   }
 
-  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluenceAttachmentToIndexFieldMapping extends js.Object {
@@ -643,8 +637,7 @@ package kendra {
     @inline def values = js.Array(AUTHOR, DISPLAY_URL, ITEM_TYPE, LABELS, PUBLISH_DATE, SPACE_KEY, SPACE_NAME, URL, VERSION)
   }
 
-  /** Defines the mapping between a blog field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** Defines the mapping between a blog field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluenceBlogToIndexFieldMapping extends js.Object {
@@ -752,8 +745,7 @@ package kendra {
     @inline def values = js.Array(AUTHOR, CONTENT_STATUS, CREATED_DATE, DISPLAY_URL, ITEM_TYPE, LABELS, MODIFIED_DATE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
   }
 
-  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluencePageToIndexFieldMapping extends js.Object {
@@ -818,8 +810,7 @@ package kendra {
     @inline def values = js.Array(DISPLAY_URL, ITEM_TYPE, SPACE_KEY, URL)
   }
 
-  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field.
-    * You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
   trait ConfluenceSpaceToIndexFieldMapping extends js.Object {
@@ -2753,8 +2744,7 @@ package kendra {
     }
   }
 
-  /** A single query result.
-    * A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.
+  /** A single query result. A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.
     */
   @js.native
   trait QueryResultItem extends js.Object {
@@ -3452,13 +3442,7 @@ package kendra {
     @inline def values = js.Array(DESC, ASC)
   }
 
-  /** Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
-    * You can sort attributes of the following types.
-    * * Date value
-    * * Long value
-    * * String value
-    * You can't sort attributes of the following type.
-    * * String list value
+  /** Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception. You can sort attributes of the following types. * Date value * Long value * String value You can't sort attributes of the following type. * String list value
     */
   @js.native
   trait SortingConfiguration extends js.Object {

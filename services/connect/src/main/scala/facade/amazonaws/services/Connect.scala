@@ -634,8 +634,7 @@ package connect {
     }
   }
 
-  /** Contains summary information about a contact flow.
-    * You can also create and update contact flows using the [[https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html|Amazon Connect Flow language]].
+  /** Contains summary information about a contact flow. You can also create and update contact flows using the [[https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html|Amazon Connect Flow language]].
     */
   @js.native
   trait ContactFlowSummary extends js.Object {

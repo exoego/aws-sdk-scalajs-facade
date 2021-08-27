@@ -152,8 +152,7 @@ package dlm {
     }
   }
 
-  /** Specifies when to create snapshots of EBS volumes.
-    * You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
+  /** Specifies when to create snapshots of EBS volumes. You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
     */
   @js.native
   trait CreateRule extends js.Object {

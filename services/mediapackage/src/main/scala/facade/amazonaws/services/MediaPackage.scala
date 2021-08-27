@@ -85,14 +85,7 @@ package mediapackage {
     @inline def values = js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH, DATERANGE)
   }
 
-  /** This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
-    * determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
-    * ads.  Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that
-    * contain delivery restrictions will be treated as ads.  Choosing "UNRESTRICTED" means SCTE-35
-    * messages of the types specified in AdTriggers that do not contain delivery restrictions will
-    * be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
-    * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
-    * and are always treated as ads if specified in AdTriggers.
+  /** This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     */
   @js.native
   sealed trait AdsOnDeliveryRestrictions extends js.Any
@@ -903,12 +896,7 @@ package mediapackage {
     }
   }
 
-  /** Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0.
-    * The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream.
-    * To configure the encryption contract, specify which audio and video encryption presets to use.
-    * Note the following considerations when using encryptionContractConfiguration:
-    * encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.
-    * You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+  /** Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     */
   @js.native
   trait EncryptionContractConfiguration extends js.Object {

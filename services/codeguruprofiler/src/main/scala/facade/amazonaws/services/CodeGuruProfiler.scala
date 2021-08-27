@@ -1509,7 +1509,7 @@ package codeguruprofiler {
     }
   }
 
-  /** <p> {{{ The structure representing the &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt; }}}
+  /** <p> {{{The structure representing the &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt;}}}
     */
   @js.native
   trait RemovePermissionRequest extends js.Object {

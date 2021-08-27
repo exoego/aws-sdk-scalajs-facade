@@ -50,8 +50,7 @@ package simpledb {
     def select(params: SelectRequest): Request[SelectResult] = js.native
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait Attribute extends js.Object {
     var Name: String
@@ -143,8 +142,7 @@ package simpledb {
     }
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait DeletableAttribute extends js.Object {
     var Name: String
@@ -367,8 +365,7 @@ package simpledb {
     val BoxUsage: Float
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait Item extends js.Object {
     var Attributes: AttributeList
@@ -514,8 +511,7 @@ package simpledb {
     }
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait ReplaceableAttribute extends js.Object {
     var Name: String
@@ -540,8 +536,7 @@ package simpledb {
     }
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait ReplaceableItem extends js.Object {
     var Attributes: ReplaceableAttributeList

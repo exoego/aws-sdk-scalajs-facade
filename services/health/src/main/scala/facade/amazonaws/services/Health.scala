@@ -665,11 +665,7 @@ package health {
     }
   }
 
-  /** Summary information about an AWS Health event.
-    * AWS Health events can be public or account-specific:
-    * * <i>Public events</i> might be service events that are not specific to an AWS account. For example, if there is an issue with an AWS Region, AWS Health provides information about the event, even if you don't use services or resources in that Region.
-    * * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event and the affected resources in the account.
-    * You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode|eventScopeCode]].
+  /** Summary information about an AWS Health event. AWS Health events can be public or account-specific: * <i>Public events</i> might be service events that are not specific to an AWS account. For example, if there is an issue with an AWS Region, AWS Health provides information about the event, even if you don't use services or resources in that Region. * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event and the affected resources in the account. You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode|eventScopeCode]].
     */
   @js.native
   trait Event extends js.Object {
@@ -881,9 +877,7 @@ package health {
     }
   }
 
-  /** Contains the metadata about a type of event that is reported by AWS Health. The <code>EventType</code> shows the category, service, and the event type code of the event. For example, an <code>issue</code> might be the category, <code>EC2</code> the service, and <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code> the event type code.
-    * You can use the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html|DescribeEventTypes]] API operation to return this information about an event.
-    * You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when AWS Health delivers a specific event to your AWS account. For more information, see [[https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html|Monitor for AWS Health events with Amazon CloudWatch Events]] in the <i>AWS Health User Guide</i>.
+  /** Contains the metadata about a type of event that is reported by AWS Health. The <code>EventType</code> shows the category, service, and the event type code of the event. For example, an <code>issue</code> might be the category, <code>EC2</code> the service, and <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code> the event type code. You can use the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html|DescribeEventTypes]] API operation to return this information about an event. You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when AWS Health delivers a specific event to your AWS account. For more information, see [[https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html|Monitor for AWS Health events with Amazon CloudWatch Events]] in the <i>AWS Health User Guide</i>.
     */
   @js.native
   trait EventType extends js.Object {

@@ -1673,8 +1673,7 @@ package comprehend {
     }
   }
 
-  /** The input properties for training a document classifier.
-    * For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
+  /** The input properties for training a document classifier. For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
     */
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
@@ -3185,8 +3184,7 @@ package comprehend {
     @inline def values = js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
   }
 
-  /** Provides configuration parameters for the output of topic detection jobs.
-    * <p/>
+  /** Provides configuration parameters for the output of topic detection jobs. <p/>
     */
   @js.native
   trait OutputDataConfig extends js.Object {

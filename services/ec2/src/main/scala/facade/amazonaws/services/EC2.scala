@@ -4518,8 +4518,7 @@ package ec2 {
 
   /** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
     *
-    * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
-    * For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon EC2 User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet example configurations]] in the <i>Amazon EC2 User Guide</i>.
+    * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>. For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon EC2 User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet example configurations]] in the <i>Amazon EC2 User Guide</i>.
     */
   @js.native
   trait CapacityReservationOptions extends js.Object {
@@ -4539,8 +4538,7 @@ package ec2 {
 
   /** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
     *
-    * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
-    * For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon EC2 User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet example configurations]] in the <i>Amazon EC2 User Guide</i>.
+    * '''Note:'''This strategy can only be used if the EC2 Fleet is of type <code>instant</code>. For more information about Capacity Reservations, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html|On-Demand Capacity Reservations]] in the <i>Amazon EC2 User Guide</i>. For examples of using Capacity Reservations in an EC2 Fleet, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html|EC2 Fleet example configurations]] in the <i>Amazon EC2 User Guide</i>.
     */
   @js.native
   trait CapacityReservationOptionsRequest extends js.Object {
@@ -4567,8 +4565,7 @@ package ec2 {
     @inline def values = js.Array(open, none)
   }
 
-  /** Describes an instance's Capacity Reservation targeting option. You can specify only one parameter at a time. If you specify <code>CapacityReservationPreference</code> and <code>CapacityReservationTarget</code>, the request fails.
-    * Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
+  /** Describes an instance's Capacity Reservation targeting option. You can specify only one parameter at a time. If you specify <code>CapacityReservationPreference</code> and <code>CapacityReservationTarget</code>, the request fails. Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation group.
     */
   @js.native
   trait CapacityReservationSpecification extends js.Object {
@@ -34409,8 +34406,7 @@ package ec2 {
     }
   }
 
-  /** Describes the launch specification for a Scheduled Instance.
-    * If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
+  /** Describes the launch specification for a Scheduled Instance. If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
     */
   @js.native
   trait ScheduledInstancesLaunchSpecification extends js.Object {
@@ -36552,8 +36548,8 @@ package ec2 {
     }
   }
 
-  /** The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
-    * You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html|OnDemandOptions]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions|SpotOptions]].
+  /** The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later. You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code>, or both to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html|OnDemandOptions]]
+    * and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions|SpotOptions]].
     */
   @js.native
   trait TargetCapacitySpecification extends js.Object {
@@ -36580,8 +36576,8 @@ package ec2 {
     }
   }
 
-  /** The number of units to request. You can choose to set the target capacity as the number of instances. Or you can set the target capacity to a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
-    * You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest|OnDemandOptionsRequest]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest|SpotOptionsRequest]].
+  /** The number of units to request. You can choose to set the target capacity as the number of instances. Or you can set the target capacity to a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later. You can use the On-Demand Instance <code>MaxTotalPrice</code> parameter, the Spot Instance <code>MaxTotalPrice</code> parameter, or both parameters to ensure that your fleet cost does not exceed your budget. If you set a maximum price per hour for the On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located in
+    * [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest|OnDemandOptionsRequest]] and [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest|SpotOptionsRequest]].
     */
   @js.native
   trait TargetCapacitySpecificationRequest extends js.Object {
@@ -39029,8 +39025,7 @@ package ec2 {
     }
   }
 
-  /** Describes the modification status of an EBS volume.
-    * If the volume has never been modified, some element values will be null.
+  /** Describes the modification status of an EBS volume. If the volume has never been modified, some element values will be null.
     */
   @js.native
   trait VolumeModification extends js.Object {

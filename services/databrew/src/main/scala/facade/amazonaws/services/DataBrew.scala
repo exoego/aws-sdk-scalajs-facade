@@ -247,9 +247,7 @@ package databrew {
     @inline def values = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
   }
 
-  /** Represents an individual condition that evaluates to true or false.
-    * Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.
-    * If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.
+  /** Represents an individual condition that evaluates to true or false. Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true. If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.
     */
   @js.native
   trait ConditionExpression extends js.Object {

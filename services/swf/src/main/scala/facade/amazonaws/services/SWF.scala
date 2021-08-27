@@ -550,12 +550,7 @@ package swf {
   }
 
   /** Provides the details of the <code>CancelTimer</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait CancelTimerDecisionAttributes extends js.Object {
@@ -609,12 +604,7 @@ package swf {
   }
 
   /** Provides the details of the <code>CancelWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait CancelWorkflowExecutionDecisionAttributes extends js.Object {
@@ -889,12 +879,7 @@ package swf {
   }
 
   /** Provides the details of the <code>CompleteWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait CompleteWorkflowExecutionDecisionAttributes extends js.Object {
@@ -944,15 +929,8 @@ package swf {
   }
 
   /** Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
-    * <li> <code>tag</code> – A tag used to identify the workflow execution
-    * * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
-    * * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.
-    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <li> <code>tag</code> – A tag used to identify the workflow execution * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>. * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>. </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see
+    * [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait ContinueAsNewWorkflowExecutionDecisionAttributes extends js.Object {
@@ -1148,55 +1126,17 @@ package swf {
     }
   }
 
-  /** Specifies a decision made by the decider. A decision can be one of these types:
-    * * <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.
-    * * <code>CancelWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.
-    * * <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .
-    * * <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.
-    * * <code>FailWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.
-    * * <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event.
-    * * <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>.
-    * * <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.
-    * * <code>ScheduleActivityTask</code> – Schedules an activity task.
-    * * <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered to the specified external workflow execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.
-    * * <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history.
-    * * <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.
-    * ```Access Control```
-    * If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
-    * ```Decision Failure```
-    * Decisions can fail for several reasons
-    * * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.
-    * * A limit on your account was reached.
-    * * The decision lacks sufficient permissions.
-    * One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
-    * * <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't properly configured.
-    * * <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId.
-    * * <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId.
-    * * <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This could happen if there is no open timer with the specified timerId.
-    * * <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code> decision failed. This could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly configured.
-    * * <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.
-    * * <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.
-    * * <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.
-    * * <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.
-    * * <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly.
-    * * <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution.
-    * The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.
+  /** Specifies a decision made by the decider. A decision can be one of these types: * <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code> event in the history. * <code>CancelWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history. * <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history . * <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts a new workflow execution of the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history. * <code>FailWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history. * <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history.
+    * Markers can be used for adding custom information in the history for instance to let deciders know that they don't need to look at the history beyond the marker event. * <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already assigned to a worker, then the worker is informed that cancellation has been requested in the response to <a>RecordActivityTaskHeartbeat</a>. * <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be made to cancel the specified external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history. * <code>ScheduleActivityTask</code> – Schedules an activity task. * <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered to the specified external workflow execution and records a
+    * <code>SignalExternalWorkflowExecutionInitiated</code> event in the history. * <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own history. * <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.
+    * ```Access Control``` If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Decision Failure``` Decisions can fail for several reasons * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails. * A limit on your account was reached. * The decision lacks sufficient permissions. One of the following events might be added to the history to indicate an error. The event attribute's <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>. * <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if the activity type specified in the decision isn't registered, is
+    * in a deprecated state, or the decision isn't properly configured. * <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could happen if there is no open activity task with the specified activityId. * <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open timer with the same timerId. * <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This could happen if there is no open timer with the specified timerId. * <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code> decision failed. This could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly configured. * <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was
+    * incorrect. * <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code> decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect. * <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution. * <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution. * <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code> decision failed. This could happen if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution decision was not configured correctly. * <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code>
+    * decision failed. This could happen if there is an unhandled decision task pending in the workflow execution. The preceding error events might occur due to an error in the decider logic, which might put the workflow execution in an unstable state The cause field in the event structure for the error event indicates the cause of the error.
     *
     * '''Note:'''A workflow execution may be closed by the decider by returning one of the following decisions when completing a decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>, <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity event had been added to the history while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this fault is always possible because of race conditions in a distributed system. The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.
-    * ```How to Code a Decision```
-    * You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below:
-    * * <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code>
-    * * <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code>
-    * * <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code>
-    * * <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code>
-    * * <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code>
-    * * <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code>
-    * * <code> <a>RecordMarkerDecisionAttributes</a> </code>
-    * * <code> <a>StartTimerDecisionAttributes</a> </code>
-    * * <code> <a>CancelTimerDecisionAttributes</a> </code>
-    * * <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code>
-    * * <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code>
-    * * <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code>
+    * ```How to Code a Decision``` You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field shown below: * <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code> * <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code> * <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code> * <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code> * <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code> * <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code> * <code> <a>RecordMarkerDecisionAttributes</a> </code> * <code> <a>StartTimerDecisionAttributes</a> </code> * <code> <a>CancelTimerDecisionAttributes</a> </code> * <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code> * <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code> * <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code>
     */
   @js.native
   trait Decision extends js.Object {
@@ -1855,12 +1795,7 @@ package swf {
   }
 
   /** Provides the details of the <code>FailWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait FailWorkflowExecutionDecisionAttributes extends js.Object {
@@ -1965,55 +1900,12 @@ package swf {
     }
   }
 
-  /** Event within a workflow execution. A history event can be one of these types:
-    * * <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the system.
-    * * <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.
-    * * <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>.
-    * * <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>.
-    * * <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.
-    * * <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker.
-    * * <code>ActivityTaskTimedOut</code> – The activity task timed out.
-    * * <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id.
-    * * <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed.
-    * * <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was canceled and closed.
-    * * <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution, completed successfully and was closed.
-    * * <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to complete successfully and was closed.
-    * * <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started.
-    * * <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was terminated.
-    * * <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed out and was closed.
-    * * <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.
-    * * <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued as a new workflow execution.
-    * * <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>.
-    * * <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution.
-    * * <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.
-    * * <code>DecisionTaskTimedOut</code> – The decision task timed out.
-    * * <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was successfully delivered to the target execution.
-    * * <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution.
-    * * <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed.
-    * * <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision.
-    * * <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed.
-    * * <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly.
-    * * <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed.
-    * * <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an external workflow execution.
-    * * <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered.
-    * * <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed.
-    * * <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made.
-    * * <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.
-    * * <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered.
-    * * <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution.
-    * * <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id.
-    * * <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled.
-    * * <code>TimerFired</code> – A timer, previously started for this workflow execution, fired.
-    * * <code>TimerStarted</code> – A timer was started for the workflow execution due to a <code>StartTimer</code> decision.
-    * * <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made.
-    * * <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed.
-    * * <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion.
-    * * <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type was created with the same workflowId.
-    * * <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.
-    * * <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution.
-    * * <code>WorkflowExecutionStarted</code> – The workflow execution was started.
-    * * <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.
-    * * <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.
+  /** Event within a workflow execution. A history event can be one of these types: * <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the system. * <code>ActivityTaskCanceled</code> – The activity task was successfully canceled. * <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling <a>RespondActivityTaskCompleted</a>. * <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling <a>RespondActivityTaskFailed</a>. * <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution. * <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker. * <code>ActivityTaskTimedOut</code> – The activity task timed out. * <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't configured properly, for example no timer exists with the specified timer Id. *
+    * <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed. * <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was canceled and closed. * <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution, completed successfully and was closed. * <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to complete successfully and was closed. * <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started. * <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was terminated. * <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed out and was closed. * <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to
+    * complete. * <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued as a new workflow execution. * <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling <a>RespondDecisionTaskCompleted</a>. * <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution. * <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider. * <code>DecisionTaskTimedOut</code> – The decision task timed out. * <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was successfully delivered to the target execution. * <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully delivered to the target external workflow execution. * <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed. *
+    * <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision. * <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed. * <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens when the decision isn't configured properly. * <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed. * <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an external workflow execution. * <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the decision isn't configured properly, for example the activity type specified isn't registered. * <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed. *
+    * <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made. * <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start. * <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens when the decision isn't configured properly, for example the workflow type specified isn't registered. * <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution. * <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't configured properly, for example a timer already exists with the specified timer Id. * <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled. * <code>TimerFired</code> – A timer, previously started for this workflow execution, fired. * <code>TimerStarted</code> – A timer was started for the workflow
+    * execution due to a <code>StartTimer</code> decision. * <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made. * <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed. * <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion. * <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type was created with the same workflowId. * <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure. * <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution. * <code>WorkflowExecutionStarted</code> – The workflow execution was started. * <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated. * <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.
     */
   @js.native
   trait HistoryEvent extends js.Object {
@@ -2682,12 +2574,7 @@ package swf {
   }
 
   /** Provides the details of the <code>RecordMarker</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait RecordMarkerDecisionAttributes extends js.Object {
@@ -2870,12 +2757,7 @@ package swf {
   }
 
   /** Provides the details of the <code>RequestCancelActivityTask</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait RequestCancelActivityTaskDecisionAttributes extends js.Object {
@@ -2929,12 +2811,7 @@ package swf {
   }
 
   /** Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait RequestCancelExternalWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3058,8 +2935,7 @@ package swf {
     }
   }
 
-  /** Tags are key-value pairs that can be associated with Amazon SWF state machines and activities.
-    * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+  /** Tags are key-value pairs that can be associated with Amazon SWF state machines and activities. Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -3193,15 +3069,8 @@ package swf {
   }
 
   /** Provides the details of the <code>ScheduleActivityTask</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
-    * <li> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.
-    * * <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.
-    * * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
-    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <li> <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>. * <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>. * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>. </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details
+    * and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait ScheduleActivityTaskDecisionAttributes extends js.Object {
@@ -3378,12 +3247,7 @@ package swf {
   }
 
   /** Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait SignalExternalWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3526,16 +3390,8 @@ package swf {
   }
 
   /** Provides the details of the <code>StartChildWorkflowExecution</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
-    * <li> <code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive.
-    * * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
-    * * <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>.
-    * * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.
-    * </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys. <li> <code>tagList.member.N</code> – The key is "swf:tagList.N" where N is the tag number from 0 to 4, inclusive. * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>. * <code>workflowType.name</code> – String constraint. The key is <code>swf:workflowType.name</code>. * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>. </li>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The
+    * associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait StartChildWorkflowExecutionDecisionAttributes extends js.Object {
@@ -3736,12 +3592,7 @@ package swf {
   }
 
   /** Provides the details of the <code>StartTimer</code> decision.
-    * ```Access Control```
-    * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
-    * * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
-    * * Use an <code>Action</code> element to allow or deny permission to call this action.
-    * * You cannot use an IAM policy to constrain this action's parameters.
-    * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
+    * ```Access Control``` You can use IAM policies to control this decision's access to Amazon SWF resources as follows: * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains. * Use an <code>Action</code> element to allow or deny permission to call this action. * You cannot use an IAM policy to constrain this action's parameters. If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see [[https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html|Using IAM to Manage Access to Amazon SWF Workflows]] in the <i>Amazon SWF Developer Guide</i>.
     */
   @js.native
   trait StartTimerDecisionAttributes extends js.Object {

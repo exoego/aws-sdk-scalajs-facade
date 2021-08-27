@@ -178,8 +178,7 @@ package pinpointemail {
     def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
   }
 
-  /** The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
-    * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+  /** The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
     */
   @js.native
   sealed trait BehaviorOnMxFailure extends js.Any
@@ -498,8 +497,7 @@ package pinpointemail {
     }
   }
 
-  /** If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To sucessfully verify your domain, you have to add these records to the DNS configuration for your domain.
-    * If the email identity is an email address, this object is empty.
+  /** If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To sucessfully verify your domain, you have to add these records to the DNS configuration for your domain. If the email identity is an email address, this object is empty.
     */
   @js.native
   trait CreateEmailIdentityResponse extends js.Object {
@@ -547,8 +545,7 @@ package pinpointemail {
     }
   }
 
-  /** Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.
-    * <p/>
+  /** Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account. <p/>
     */
   @js.native
   trait DedicatedIp extends js.Object {
@@ -845,12 +842,7 @@ package pinpointemail {
     }
   }
 
-  /** The DKIM authentication status of the identity. The status can be one of the following:
-    * * <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.
-    * * <code>SUCCESS</code> – The DKIM authentication process completed successfully.
-    * * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.
-    * * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.
-    * * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
+  /** The DKIM authentication status of the identity. The status can be one of the following: * <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain. * <code>SUCCESS</code> – The DKIM authentication process completed successfully. * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain. * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain. * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
     */
   @js.native
   sealed trait DkimStatus extends js.Any
@@ -1339,8 +1331,7 @@ package pinpointemail {
     }
   }
 
-  /** Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
-    * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+  /** Retrieve information about the status of the Deliverability dashboard for your Amazon Pinpoint account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait GetDeliverabilityDashboardOptionsRequest extends js.Object
@@ -1597,9 +1588,7 @@ package pinpointemail {
     }
   }
 
-  /** The email identity type. The identity type can be one of the following:
-    * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
-    * * <code>DOMAIN</code> – The identity is a domain.
+  /** The email identity type. The identity type can be one of the following: * <code>EMAIL_ADDRESS</code> – The identity is an email address. * <code>DOMAIN</code> – The identity is a domain.
     */
   @js.native
   sealed trait IdentityType extends js.Any
@@ -1959,11 +1948,7 @@ package pinpointemail {
     }
   }
 
-  /** The status of the MAIL FROM domain. This status can have the following values:
-    * * <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.
-    * * <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.
-    * * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.
-    * * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
+  /** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
     */
   @js.native
   sealed trait MailFromDomainStatus extends js.Any
@@ -2371,8 +2356,7 @@ package pinpointemail {
     }
   }
 
-  /** Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.
-    * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+  /** Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait PutDeliverabilityDashboardOptionRequest extends js.Object {
@@ -2676,12 +2660,8 @@ package pinpointemail {
     }
   }
 
-  /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
-    * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:
-    * * Tag keys and values are case sensitive.
-    * * For each associated resource, each tag key must be unique and it can have only one value.
-    * * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.
-    * * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
+  /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags. Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags: * Tag keys and values are case sensitive. * For each associated resource, each tag key must be unique and it can have only one value. *
+    * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource. * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2764,8 +2744,7 @@ package pinpointemail {
     @inline def values = js.Array(REQUIRE, OPTIONAL)
   }
 
-  /** An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.
-    * These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.
+  /** An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them. These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.
     */
   @js.native
   trait TrackingOptions extends js.Object {

@@ -637,8 +637,7 @@ package greengrassv2 {
     }
   }
 
-  /** Contains information about a deployment's policy that defines when components are safe to update.
-    * Each component on a device can report whether or not it's ready to update. After a component and its dependencies are ready, they can apply the update in the deployment. You can configure whether or not the deployment notifies components of an update and waits for a response. You specify the amount of time each component has to respond to the update notification.
+  /** Contains information about a deployment's policy that defines when components are safe to update. Each component on a device can report whether or not it's ready to update. After a component and its dependencies are ready, they can apply the update in the deployment. You can configure whether or not the deployment notifies components of an update and waits for a response. You specify the amount of time each component has to respond to the update notification.
     */
   @js.native
   trait DeploymentComponentUpdatePolicy extends js.Object {
@@ -1156,11 +1155,7 @@ package greengrassv2 {
     }
   }
 
-  /** Contains criteria that define when and how to cancel a job.
-    * The deployment stops if the following conditions are true:
-    * <ol> * The number of things that receive the deployment exceeds the <code>minNumberOfExecutedThings</code>.
-    * * The percentage of failures with type <code>failureType</code> exceeds the <code>thresholdPercentage</code>.
-    * </ol>
+  /** Contains criteria that define when and how to cancel a job. The deployment stops if the following conditions are true: <ol> * The number of things that receive the deployment exceeds the <code>minNumberOfExecutedThings</code>. * The percentage of failures with type <code>failureType</code> exceeds the <code>thresholdPercentage</code>. </ol>
     */
   @js.native
   trait IoTJobAbortCriteria extends js.Object {

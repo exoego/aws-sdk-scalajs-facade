@@ -136,8 +136,7 @@ package appintegrations {
     }
   }
 
-  /** The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    * The event filter.
+  /** The Amazon AppIntegrations APIs are in preview release and are subject to change. The event filter.
     */
   @js.native
   trait EventFilter extends js.Object {
@@ -156,8 +155,7 @@ package appintegrations {
     }
   }
 
-  /** The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    * The event integration.
+  /** The Amazon AppIntegrations APIs are in preview release and are subject to change. The event integration.
     */
   @js.native
   trait EventIntegration extends js.Object {
@@ -190,8 +188,7 @@ package appintegrations {
     }
   }
 
-  /** The Amazon AppIntegrations APIs are in preview release and are subject to change.
-    * The event integration association.
+  /** The Amazon AppIntegrations APIs are in preview release and are subject to change. The event integration association.
     */
   @js.native
   trait EventIntegrationAssociation extends js.Object {

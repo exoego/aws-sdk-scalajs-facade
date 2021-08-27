@@ -361,10 +361,7 @@ package route53 {
     }
   }
 
-  /** <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.
-    * When creating resource record sets for a private hosted zone, note the following:
-    * * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.
-    * * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
+  /** <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. When creating resource record sets for a private hosted zone, note the following: * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported. * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
   trait AliasTarget extends js.Object {

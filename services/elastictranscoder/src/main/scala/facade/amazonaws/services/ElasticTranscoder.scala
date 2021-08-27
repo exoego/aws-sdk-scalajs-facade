@@ -154,9 +154,7 @@ package elastictranscoder {
     def updatePipelineStatus(params: UpdatePipelineStatusRequest): Request[UpdatePipelineStatusResponse] = js.native
   }
 
-  /** The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.
-    * To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.
-    * To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.
+  /** The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array. To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.
     */
   @js.native
   trait Artwork extends js.Object {
@@ -928,8 +926,7 @@ package elastictranscoder {
     }
   }
 
-  /** <important> Outputs recommended instead.
-    * </important> If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.
+  /** <important> Outputs recommended instead. </important> If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.
     */
   @js.native
   trait JobOutput extends js.Object {
@@ -1209,9 +1206,7 @@ package elastictranscoder {
     }
   }
 
-  /** The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.
-    * <important> To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.
-    * </important>
+  /** The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status. <important> To receive notifications, you must also subscribe to the new topic in the Amazon SNS console. </important>
     */
   @js.native
   trait Notifications extends js.Object {
@@ -1334,9 +1329,7 @@ package elastictranscoder {
     }
   }
 
-  /** The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.
-    * PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
-    * If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.
+  /** The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist. PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption. If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.
     */
   @js.native
   trait PlayReadyDrm extends js.Object {
@@ -1447,9 +1440,7 @@ package elastictranscoder {
     }
   }
 
-  /** Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.
-    * Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.
-    * When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.
+  /** Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video. Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency. When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.
     */
   @js.native
   trait PresetWatermark extends js.Object {
@@ -1945,8 +1936,7 @@ package elastictranscoder {
     }
   }
 
-  /** Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.
-    * Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.
+  /** Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline. Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.
     */
   @js.native
   trait Warning extends js.Object {

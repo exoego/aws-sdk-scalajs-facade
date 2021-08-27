@@ -608,8 +608,7 @@ package rdsdataservice {
     }
   }
 
-  /** The result of a SQL statement.
-    * {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
+  /** The result of a SQL statement. {{{&lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;}}}
     */
   @js.native
   trait SqlStatementResult extends js.Object {
@@ -679,8 +678,7 @@ package rdsdataservice {
     }
   }
 
-  /** Contains the value of a column.
-    * {{{ &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; }}}
+  /** Contains the value of a column. {{{&lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;}}}
     */
   @js.native
   trait Value extends js.Object {
