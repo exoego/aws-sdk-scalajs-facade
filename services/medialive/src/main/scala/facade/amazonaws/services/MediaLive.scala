@@ -6935,9 +6935,7 @@ package medialive {
     @inline def values = js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
   }
 
-  /** Input preference when deciding which input to make active when a previously failed input has recovered.
-    * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
-    * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
+  /** Input preference when deciding which input to make active when a previously failed input has recovered. If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy. If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
     */
   @js.native
   sealed trait InputPreference extends js.Any
@@ -7134,9 +7132,7 @@ package medialive {
     }
   }
 
-  /** There are two types of input sources, static and dynamic. If an input source is dynamic you can
-    * change the source url of the input dynamically using an input switch action. However, the only input type
-    * to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
+  /** There are two types of input sources, static and dynamic. If an input source is dynamic you can change the source url of the input dynamically using an input switch action. However, the only input type to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
     */
   @js.native
   sealed trait InputSourceType extends js.Any
@@ -7240,10 +7236,7 @@ package medialive {
     @inline def values = js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE, AWS_CDI)
   }
 
-  /** Settings for a private VPC Input.
-    * When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
-    * This property requires setting the roleArn property on Input creation.
-    * Not compatible with the inputSecurityGroups property.
+  /** Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     */
   @js.native
   trait InputVpcRequest extends js.Object {
@@ -9690,11 +9683,7 @@ package medialive {
     }
   }
 
-  /** Indicates which pipeline is preferred by the multiplex for program ingest.
-    * If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,
-    * it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\",
-    * it will not switch back to the other pipeline based on it recovering to a healthy state,
-    * it will only switch if the active pipeline becomes unhealthy.
+  /** Indicates which pipeline is preferred by the multiplex for program ingest. If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline, it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\", it will not switch back to the other pipeline based on it recovering to a healthy state, it will only switch if the active pipeline becomes unhealthy.
     */
   @js.native
   sealed trait PreferredChannelPipeline extends js.Any
@@ -12246,8 +12235,7 @@ package medialive {
     }
   }
 
-  /** The properties for a private VPC Output
-    * When this property is specified, the output egress addresses will be created in a user specified VPC
+  /** The properties for a private VPC Output When this property is specified, the output egress addresses will be created in a user specified VPC
     */
   @js.native
   trait VpcOutputSettings extends js.Object {

@@ -3291,8 +3291,7 @@ package apigatewayv2 {
     }
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait ImportApiRequest extends js.Object {
     var Body: __string
@@ -3649,8 +3648,7 @@ package apigatewayv2 {
     @inline def values = js.Array(WEBSOCKET, HTTP)
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait ReimportApiRequest extends js.Object {
     var ApiId: __string

@@ -232,8 +232,7 @@ package acmpca {
     @inline def values = js.Array(IssueCertificate, GetCertificate, ListPermissions)
   }
 
-  /** Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored.
-    * If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies [[xxxxx|order of operation rules]] to determine what information is used.
+  /** Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies [[xxxxx|order of operation rules]] to determine what information is used.
     */
   @js.native
   trait ApiPassthrough extends js.Object {
@@ -273,7 +272,8 @@ package acmpca {
     @inline def values = js.Array(CREATING, SUCCESS, FAILED)
   }
 
-  /** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action to create your private CA. You must then call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html|GetCertificateAuthorityCertificate]] action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html|ImportCertificateAuthorityCertificate]] action to import the signed certificate into AWS Certificate Manager (ACM).
+  /** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action to create your private CA. You must then call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html|GetCertificateAuthorityCertificate]] action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html|ImportCertificateAuthorityCertificate]] action to import the signed certificate
+    * into AWS Certificate Manager (ACM).
     */
   @js.native
   trait CertificateAuthority extends js.Object {
@@ -494,27 +494,9 @@ package acmpca {
     }
   }
 
-  /** Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA.
-    * ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]].
-    * Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included.
-    * CRLs contain the following fields:
-    * * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1.
-    * * ```Signature Algorithm```: The name of the algorithm used to sign the CRL.
-    * * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL.
-    * * ```Last Update```: The issue date and time of this CRL.
-    * * ```Next Update```: The day and time by which the next CRL will be issued.
-    * * ```Revoked Certificates```: List of revoked certificates. Each list item contains the following information.
-    * <li> ```Serial Number```: The serial number, in hexadecimal format, of the revoked certificate.
-    * * ```Revocation Date```: Date and time the certificate was revoked.
-    * * ```CRL Entry Extensions```: Optional extensions for the CRL entry.
-    * <li> ```X509v3 CRL Reason Code```: Reason the certificate was revoked.
-    * </li></li> * ```CRL Extensions```: Optional extensions for the CRL.
-    * <li> ```X509v3 Authority Key Identifier```: Identifies the public key associated with the private key used to sign the certificate.
-    * * ```X509v3 CRL Number:```: Decimal sequence number for the CRL.
-    * </li> * ```Signature Algorithm```: Algorithm used by your private CA to sign the CRL.
-    * * ```Signature Value```: Signature computed over the CRL.
-    * Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.
-    * <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
+  /** Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]]. Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the
+    * ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. CRLs contain the following fields: * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1. * ```Signature Algorithm```: The name of the algorithm used to sign the CRL. * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL. * ```Last Update```: The issue date and time of this CRL. * ```Next Update```: The day and time by which the next CRL will be issued. * ```Revoked Certificates```: List of revoked certificates. Each list item contains the following information. <li> ```Serial Number```: The serial number, in hexadecimal format, of the revoked certificate. * ```Revocation Date```: Date and time
+    * the certificate was revoked. * ```CRL Entry Extensions```: Optional extensions for the CRL entry. <li> ```X509v3 CRL Reason Code```: Reason the certificate was revoked. </li></li> * ```CRL Extensions```: Optional extensions for the CRL. <li> ```X509v3 Authority Key Identifier```: Identifies the public key associated with the private key used to sign the certificate. * ```X509v3 CRL Number:```: Decimal sequence number for the CRL. </li> * ```Signature Algorithm```: Algorithm used by your private CA to sign the CRL. * ```Signature Value```: Signature computed over the CRL. Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL. <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
     */
   @js.native
   trait CrlConfiguration extends js.Object {
@@ -1569,8 +1551,7 @@ package acmpca {
     }
   }
 
-  /** Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280.
-    * ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.
+  /** Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see [[https://tools.ietf.org/html/rfc5280#section-4.1.2.5|Validity]] in RFC 5280. ACM Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.
     */
   @js.native
   trait Validity extends js.Object {

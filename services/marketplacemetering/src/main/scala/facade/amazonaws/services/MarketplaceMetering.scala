@@ -242,8 +242,7 @@ package marketplacemetering {
     }
   }
 
-  /** Usage allocations allow you to split usage into buckets by tags.
-    * Each UsageAllocation indicates the usage quantity for a specific set of tags.
+  /** Usage allocations allow you to split usage into buckets by tags. Each UsageAllocation indicates the usage quantity for a specific set of tags.
     */
   @js.native
   trait UsageAllocation extends js.Object {
@@ -266,8 +265,7 @@ package marketplacemetering {
     }
   }
 
-  /** A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.
-    * Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
+  /** A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time. Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
     */
   @js.native
   trait UsageRecord extends js.Object {

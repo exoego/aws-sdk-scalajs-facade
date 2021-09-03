@@ -1002,9 +1002,7 @@ package cloudhsm {
     }
   }
 
-  /** Specifies the type of subscription for the HSM.
-    * * ```PRODUCTION``` - The HSM is being used in a production environment.
-    * * ```TRIAL``` - The HSM is being used in a product trial.
+  /** Specifies the type of subscription for the HSM. * ```PRODUCTION``` - The HSM is being used in a production environment. * ```TRIAL``` - The HSM is being used in a product trial.
     */
   @js.native
   sealed trait SubscriptionType extends js.Any

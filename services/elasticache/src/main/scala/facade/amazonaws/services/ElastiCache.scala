@@ -632,41 +632,25 @@ package elasticache {
     }
   }
 
-  /** Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis.
-    * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
-    * <li> General purpose:
-    * <li> Current generation:
-    * ```M6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).
-    * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+  /** Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis. The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <li> General purpose: <li> Current generation:
+    * ```M6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward). <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
     *
     * '''Note:'''For region availability, see [[https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion|Supported Node Types]]
     * ```M5 node types:``` <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
     * ```M4 node types:``` <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
     * ```T3 node types:``` <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>
-    * ```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
-    * </li> * Previous generation: (not recommended)
+    * ```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </li> * Previous generation: (not recommended)
     * ```T1 node types:``` <code>cache.t1.micro</code>
     * ```M1 node types:``` <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
-    * ```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
-    * </li> * Compute optimized:
-    * <li> Previous generation: (not recommended)
-    * ```C1 node types:``` <code>cache.c1.xlarge</code>
-    * </li> <li> Memory optimized:
-    * <li> Current generation:
-    * ```R6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).
-    * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+    * ```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </li> * Compute optimized: <li> Previous generation: (not recommended)
+    * ```C1 node types:``` <code>cache.c1.xlarge</code> </li> <li> Memory optimized: <li> Current generation:
+    * ```R6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward). <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
     *
     * '''Note:'''For region availability, see [[https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion|Supported Node Types]]
     * ```R5 node types:``` <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
-    * ```R4 node types:``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
-    * </li> * Previous generation: (not recommended)
+    * ```R4 node types:``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </li> * Previous generation: (not recommended)
     * ```M2 node types:``` <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
-    * ```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
-    * </li>```Additional node type info```
-    * * All current generation instance types are created in Amazon VPC by default.
-    * * Redis append-only files (AOF) are not supported for T1 or T2 instances.
-    * * Redis Multi-AZ with automatic failover is not supported on T1 instances.
-    * * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.
+    * ```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </li>```Additional node type info``` * All current generation instance types are created in Amazon VPC by default. * Redis append-only files (AOF) are not supported for T1 or T2 instances. * Redis Multi-AZ with automatic failover is not supported on T1 instances. * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.
     */
   @js.native
   trait CacheNode extends js.Object {
@@ -861,9 +845,7 @@ package elasticache {
     }
   }
 
-  /** Represents the output of one of the following operations:
-    * * <code>ModifyCacheParameterGroup</code>
-    * * <code>ResetCacheParameterGroup</code>
+  /** Represents the output of one of the following operations: * <code>ModifyCacheParameterGroup</code> * <code>ResetCacheParameterGroup</code>
     */
   @js.native
   trait CacheParameterGroupNameMessage extends js.Object {
@@ -926,10 +908,7 @@ package elasticache {
     }
   }
 
-  /** Represents the output of one of the following operations:
-    * * <code>AuthorizeCacheSecurityGroupIngress</code>
-    * * <code>CreateCacheSecurityGroup</code>
-    * * <code>RevokeCacheSecurityGroupIngress</code>
+  /** Represents the output of one of the following operations: * <code>AuthorizeCacheSecurityGroupIngress</code> * <code>CreateCacheSecurityGroup</code> * <code>RevokeCacheSecurityGroupIngress</code>
     */
   @js.native
   trait CacheSecurityGroup extends js.Object {
@@ -1001,9 +980,7 @@ package elasticache {
     }
   }
 
-  /** Represents the output of one of the following operations:
-    * * <code>CreateCacheSubnetGroup</code>
-    * * <code>ModifyCacheSubnetGroup</code>
+  /** Represents the output of one of the following operations: * <code>CreateCacheSubnetGroup</code> * <code>ModifyCacheSubnetGroup</code>
     */
   @js.native
   trait CacheSubnetGroup extends js.Object {
@@ -2949,8 +2926,7 @@ package elasticache {
     }
   }
 
-  /** Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.
-    * * The ```GlobalReplicationGroupIdSuffix``` represents the name of the Global datastore, which is what you use to associate a secondary cluster.
+  /** Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster. * The ```GlobalReplicationGroupIdSuffix``` represents the name of the Global datastore, which is what you use to associate a secondary cluster.
     */
   @js.native
   trait GlobalReplicationGroup extends js.Object {

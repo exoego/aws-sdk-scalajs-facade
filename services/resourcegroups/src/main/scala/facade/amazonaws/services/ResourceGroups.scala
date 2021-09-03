@@ -343,9 +343,7 @@ package resourcegroups {
     }
   }
 
-  /** A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:
-    * * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <a>PutGroupConfiguration</a> operation.
-    * * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
+  /** A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group: * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <a>PutGroupConfiguration</a> operation. * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.
     */
   @js.native
   trait Group extends js.Object {
@@ -826,25 +824,11 @@ package resourcegroups {
     }
   }
 
-  /** The query that is used to define a resource group or a search for resources. A query specifies both a query type and a query string as a JSON object. See the examples section for example JSON strings.
-    * The examples that follow are shown as standard JSON strings. If you include such a string as a parameter to the AWS CLI or an SDK API, you might need to 'escape' the string into a single line. For example, see the [[https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html|Quoting strings]] in the <i>AWS CLI User Guide</i>.
-    * ```Example 1```
-    * The following generic example shows a resource query JSON string that includes only resources that meet the following criteria:
-    * * The resource type must be either <code>resource_type1</code> or <code>resource_type2</code>.
-    * * The resource must have a tag <code>Key1</code> with a value of either <code>ValueA</code> or <code>ValueB</code>.
-    * * The resource must have a tag <code>Key2</code> with a value of either <code>ValueC</code> or <code>ValueD</code>.
-    * <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key": "Key1", "Values": ["ValueA","ValueB"] }, { "Key":"Key2", "Values":["ValueC","ValueD"] } ] } }</code>
-    * This has the equivalent "shortcut" syntax of the following:
-    * <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key1": ["ValueA","ValueB"] }, { "Key2": ["ValueC","ValueD"] } ] } }</code>
-    * ```Example 2```
-    * The following example shows a resource query JSON string that includes only Amazon EC2 instances that are tagged <code>Stage</code> with a value of <code>Test</code>.
-    * <code>{ "Type": "TAG_FILTERS_1_0", "Query": "{ "ResourceTypeFilters": "AWS::EC2::Instance", "TagFilters": { "Stage": "Test" } } }</code>
-    * ```Example 3```
-    * The following example shows a resource query JSON string that includes resource of any supported type as long as it is tagged <code>Stage</code> with a value of <code>Prod</code>.
-    * <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": "AWS::AllSupported", "TagFilters": { "Stage": "Prod" } } }</code>
-    * ```Example 4```
-    * The following example shows a resource query JSON string that includes only Amazon EC2 instances and Amazon S3 buckets that are part of the specified AWS CloudFormation stack.
-    * <code>{ "Type": "CLOUDFORMATION_STACK_1_0", "Query": { "ResourceTypeFilters": [ "AWS::EC2::Instance", "AWS::S3::Bucket" ], "StackIdentifier": "arn:aws:cloudformation:us-west-2:123456789012:stack/AWStestuseraccount/fb0d5000-aba8-00e8-aa9e-50d5cEXAMPLE" } }</code>
+  /** The query that is used to define a resource group or a search for resources. A query specifies both a query type and a query string as a JSON object. See the examples section for example JSON strings. The examples that follow are shown as standard JSON strings. If you include such a string as a parameter to the AWS CLI or an SDK API, you might need to 'escape' the string into a single line. For example, see the [[https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html|Quoting strings]] in the <i>AWS CLI User Guide</i>.
+    * ```Example 1``` The following generic example shows a resource query JSON string that includes only resources that meet the following criteria: * The resource type must be either <code>resource_type1</code> or <code>resource_type2</code>. * The resource must have a tag <code>Key1</code> with a value of either <code>ValueA</code> or <code>ValueB</code>. * The resource must have a tag <code>Key2</code> with a value of either <code>ValueC</code> or <code>ValueD</code>. <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key": "Key1", "Values": ["ValueA","ValueB"] }, { "Key":"Key2", "Values":["ValueC","ValueD"] } ] } }</code> This has the equivalent "shortcut" syntax of the following: <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key1": ["ValueA","ValueB"] }, { "Key2": ["ValueC","ValueD"] } ] } }</code>
+    * ```Example 2``` The following example shows a resource query JSON string that includes only Amazon EC2 instances that are tagged <code>Stage</code> with a value of <code>Test</code>. <code>{ "Type": "TAG_FILTERS_1_0", "Query": "{ "ResourceTypeFilters": "AWS::EC2::Instance", "TagFilters": { "Stage": "Test" } } }</code>
+    * ```Example 3``` The following example shows a resource query JSON string that includes resource of any supported type as long as it is tagged <code>Stage</code> with a value of <code>Prod</code>. <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": "AWS::AllSupported", "TagFilters": { "Stage": "Prod" } } }</code>
+    * ```Example 4``` The following example shows a resource query JSON string that includes only Amazon EC2 instances and Amazon S3 buckets that are part of the specified AWS CloudFormation stack. <code>{ "Type": "CLOUDFORMATION_STACK_1_0", "Query": { "ResourceTypeFilters": [ "AWS::EC2::Instance", "AWS::S3::Bucket" ], "StackIdentifier": "arn:aws:cloudformation:us-west-2:123456789012:stack/AWStestuseraccount/fb0d5000-aba8-00e8-aa9e-50d5cEXAMPLE" } }</code>
     */
   @js.native
   trait ResourceQuery extends js.Object {

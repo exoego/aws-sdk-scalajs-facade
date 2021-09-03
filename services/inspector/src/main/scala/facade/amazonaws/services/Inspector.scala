@@ -303,8 +303,7 @@ package inspector {
     }
   }
 
-  /** A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .
-    * Used as the response element in the <a>DescribeAssessmentRuns</a> action.
+  /** A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run . Used as the response element in the <a>DescribeAssessmentRuns</a> action.
     */
   @js.native
   trait AssessmentRun extends js.Object {

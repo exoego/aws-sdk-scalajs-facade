@@ -869,8 +869,7 @@ package cognitosync {
     }
   }
 
-  /** A request to configure Cognito Events"
-    * "
+  /** A request to configure Cognito Events" "
     */
   @js.native
   trait SetCognitoEventsRequest extends js.Object {

@@ -202,8 +202,7 @@ package wafv2 {
     @inline def values = js.Array(ALLOW, BLOCK, COUNT)
   }
 
-  /** Inspect all of the elements that AWS WAF has parsed and extracted from the web request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** Inspect all of the elements that AWS WAF has parsed and extracted from the web request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait All extends js.Object
@@ -216,8 +215,7 @@ package wafv2 {
     }
   }
 
-  /** All query arguments of a web request.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** All query arguments of a web request. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait AllQueryArguments extends js.Object
@@ -230,8 +228,7 @@ package wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should allow the request and optionally defines additional custom handling for the request.
-    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that AWS WAF should allow the request and optionally defines additional custom handling for the request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait AllowAction extends js.Object {
@@ -299,8 +296,7 @@ package wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should block the request and optionally defines additional custom handling for the response to the web request.
-    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that AWS WAF should block the request and optionally defines additional custom handling for the response to the web request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait BlockAction extends js.Object {
@@ -318,8 +314,7 @@ package wafv2 {
     }
   }
 
-  /** The body of a web request. This immediately follows the request headers.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The body of a web request. This immediately follows the request headers. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait Body extends js.Object
@@ -440,8 +435,7 @@ package wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should count the request. Optionally defines additional custom handling for the request.
-    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that AWS WAF should count the request. Optionally defines additional custom handling for the request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait CountAction extends js.Object {
@@ -1192,8 +1186,7 @@ package wafv2 {
     }
   }
 
-  /** Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count.
-    * For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
+  /** Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count. For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     */
   @js.native
   trait CustomRequestHandling extends js.Object {
@@ -1212,8 +1205,7 @@ package wafv2 {
     }
   }
 
-  /** A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <a>BlockAction</a>.
-    * For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
+  /** A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <a>BlockAction</a>. For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
     */
   @js.native
   trait CustomResponse extends js.Object {
@@ -1765,9 +1757,7 @@ package wafv2 {
 
   /** The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.
     *
-    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
-    * This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead.
-    * AWS WAF only evaluates the first IP address found in the specified HTTP header.
+    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all. This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. AWS WAF only evaluates the first IP address found in the specified HTTP header.
     */
   @js.native
   trait ForwardedIPConfig extends js.Object {
@@ -2246,8 +2236,7 @@ package wafv2 {
     @inline def values = js.Array(IPV4, IPV6)
   }
 
-  /** Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
-    * AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
+  /** Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]]. AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
     */
   @js.native
   trait IPSet extends js.Object {
@@ -2284,8 +2273,7 @@ package wafv2 {
 
   /** The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.
     *
-    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
-    * This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead.
+    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all. This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead.
     */
   @js.native
   trait IPSetForwardedIPConfig extends js.Object {
@@ -2310,8 +2298,7 @@ package wafv2 {
     }
   }
 
-  /** A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>.
-    * Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
+  /** A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>. Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
     */
   @js.native
   trait IPSetReferenceStatement extends js.Object {
@@ -2364,8 +2351,7 @@ package wafv2 {
     }
   }
 
-  /** The body of a web request, inspected as JSON. The body immediately follows the request headers. This is used in the <a>FieldToMatch</a> specification.
-    * Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. AWS WAF inspects only the parts of the JSON that result from the matches that you indicate.
+  /** The body of a web request, inspected as JSON. The body immediately follows the request headers. This is used in the <a>FieldToMatch</a> specification. Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. AWS WAF inspects only the parts of the JSON that result from the matches that you indicate.
     */
   @js.native
   trait JsonBody extends js.Object {
@@ -2450,8 +2436,7 @@ package wafv2 {
     @inline def values = js.Array(LABEL, NAMESPACE)
   }
 
-  /** A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL.
-    * The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF performs the search for labels that were added in the same context as the label match statement.
+  /** A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF performs the search for labels that were added in the same context as the label match statement.
     */
   @js.native
   trait LabelMatchStatement extends js.Object {
@@ -2492,9 +2477,7 @@ package wafv2 {
     }
   }
 
-  /** List of labels used by one or more of the rules of a <a>RuleGroup</a>. This summary object is used for the following rule group lists:
-    * * <code>AvailableLabels</code> - Labels that rules add to matching requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.
-    * * <code>ConsumedLabels</code> - Labels that rules match against. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+  /** List of labels used by one or more of the rules of a <a>RuleGroup</a>. This summary object is used for the following rule group lists: * <code>AvailableLabels</code> - Labels that rules add to matching requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>. * <code>ConsumedLabels</code> - Labels that rules match against. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
     */
   @js.native
   trait LabelSummary extends js.Object {
@@ -2880,8 +2863,7 @@ package wafv2 {
     }
   }
 
-  /** Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <a>LoggingConfiguration</a>.
-    * You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+  /** Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <a>LoggingConfiguration</a>. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
     */
   @js.native
   trait LoggingFilter extends js.Object {
@@ -2903,8 +2885,7 @@ package wafv2 {
     }
   }
 
-  /** A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>.
-    * You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+  /** A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>. You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
   trait ManagedRuleGroupStatement extends js.Object {
@@ -2957,8 +2938,7 @@ package wafv2 {
     }
   }
 
-  /** The HTTP method of a web request. The method indicates the type of operation that the request is asking the origin to perform.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The HTTP method of a web request. The method indicates the type of operation that the request is asking the origin to perform. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait Method extends js.Object
@@ -2971,8 +2951,7 @@ package wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should do nothing. This is generally used to try out a rule without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>.
-    * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that AWS WAF should do nothing. This is generally used to try out a rule without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait NoneAction extends js.Object
@@ -3023,11 +3002,7 @@ package wafv2 {
     }
   }
 
-  /** The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
-    * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings.
-    * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both:
-    * * If the rule statement references a rule group, use this override action setting and not the action setting.
-    * * If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting.
+  /** The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both: * If the rule statement references a rule group, use this override action setting and not the action setting. * If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting.
     */
   @js.native
   trait OverrideAction extends js.Object {
@@ -3124,8 +3099,7 @@ package wafv2 {
     }
   }
 
-  /** The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait QueryString extends js.Object
@@ -3138,13 +3112,8 @@ package wafv2 {
     }
   }
 
-  /** A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests.
-    * When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit.
-    * You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements:
-    * * An IP match statement with an IP set that specified the address 192.0.2.44.
-    * * A string match statement that searches in the User-Agent header for the string BadBot.
-    * In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule.
-    * You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+  /** A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests. When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit. You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements: * An IP match statement with an IP set that specified the address 192.0.2.44. * A string match statement that searches in the User-Agent header for the string BadBot. In this
+    * rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule. You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
   trait RateBasedStatement extends js.Object {
@@ -3221,8 +3190,7 @@ package wafv2 {
     }
   }
 
-  /** Contains one or more regular expressions.
-    * AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
+  /** Contains one or more regular expressions. AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
     */
   @js.native
   trait RegexPatternSet extends js.Object {
@@ -3252,8 +3220,7 @@ package wafv2 {
     }
   }
 
-  /** A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.
-    * Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
+  /** A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>. Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
     */
   @js.native
   trait RegexPatternSetReferenceStatement extends js.Object {
@@ -3440,8 +3407,7 @@ package wafv2 {
     }
   }
 
-  /** A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.
-    * You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+  /** A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement. You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
   trait RuleGroupReferenceStatement extends js.Object {
@@ -3565,8 +3531,7 @@ package wafv2 {
     @inline def values = js.Array(CLOUDFRONT, REGIONAL)
   }
 
-  /** One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait SingleHeader extends js.Object {
@@ -3604,9 +3569,7 @@ package wafv2 {
     }
   }
 
-  /** A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes.
-    * If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes.
-    * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.
+  /** A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes. If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.
     */
   @js.native
   trait SizeConstraintStatement extends js.Object {
@@ -3713,8 +3676,7 @@ package wafv2 {
     }
   }
 
-  /** A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
-    * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
+  /** A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource. You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3736,8 +3698,7 @@ package wafv2 {
     }
   }
 
-  /** The collection of tagging definitions for an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
-    * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
+  /** The collection of tagging definitions for an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource. You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
     */
   @js.native
   trait TagInfoForResource extends js.Object {
@@ -3824,9 +3785,7 @@ package wafv2 {
     @inline def values = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
   }
 
-  /** In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.
-    * You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
-    * In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
+  /** In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
     */
   @js.native
   trait TimeWindow extends js.Object {
@@ -4090,8 +4049,7 @@ package wafv2 {
     }
   }
 
-  /** The path component of the URI of a web request. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.
-    * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The path component of the URI of a web request. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
     */
   @js.native
   trait UriPath extends js.Object

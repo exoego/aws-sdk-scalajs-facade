@@ -8,9 +8,7 @@ import scala.scalajs.js.annotation.JSImport
 
 package object managedupload {
 
-  /** The managed uploader allows for easy and efficient uploading of buffers, blobs, or streams, using a configurable
-    * amount of concurrency to perform multipart uploads where possible. This abstraction also enables uploading streams
-    * of unknown size due to the use of multipart uploads.
+  /** The managed uploader allows for easy and efficient uploading of buffers, blobs, or streams, using a configurable amount of concurrency to perform multipart uploads where possible. This abstraction also enables uploading streams of unknown size due to the use of multipart uploads.
     */
   @js.native
   @JSImport("aws-sdk/clients/s3", "ManagedUpload", "AWS.S3.ManagedUpload")

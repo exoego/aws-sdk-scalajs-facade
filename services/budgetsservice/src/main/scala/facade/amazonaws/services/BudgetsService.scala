@@ -275,9 +275,7 @@ package budgetsservice {
     @inline def values = js.Array(AUTOMATIC, MANUAL)
   }
 
-  /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object.
-    * This is the ARN pattern for a budget:
-    * <code>arn:aws:budgets::AccountId:budget/budgetName</code>
+  /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object. This is the ARN pattern for a budget: <code>arn:aws:budgets::AccountId:budget/budgetName</code>
     */
   @js.native
   trait Budget extends js.Object {
@@ -357,8 +355,7 @@ package budgetsservice {
     }
   }
 
-  /** The type of a budget. It must be one of the following types:
-    * <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
+  /** The type of a budget. It must be one of the following types: <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
     */
   @js.native
   sealed trait BudgetType extends js.Any
@@ -397,8 +394,7 @@ package budgetsservice {
     }
   }
 
-  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much you are predicted to spend based on your historical usage profile.
-    * For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
+  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much you are predicted to spend based on your historical usage profile. For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
     */
   @js.native
   trait CalculatedSpend extends js.Object {
@@ -421,8 +417,7 @@ package budgetsservice {
     }
   }
 
-  /** The comparison operator of a notification. Currently the service supports the following operators:
-    * <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
+  /** The comparison operator of a notification. Currently the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
     */
   @js.native
   sealed trait ComparisonOperator extends js.Any
@@ -434,8 +429,7 @@ package budgetsservice {
     @inline def values = js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO)
   }
 
-  /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
-    * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
+  /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions. <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
     */
   @js.native
   trait CostTypes extends js.Object {
@@ -1388,13 +1382,7 @@ package budgetsservice {
     }
   }
 
-  /** A notification that is associated with a budget. A budget can have up to ten notifications.
-    * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
-    * For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters:
-    * * A notificationType of <code>ACTUAL</code>
-    * * A <code>thresholdType</code> of <code>PERCENTAGE</code>
-    * * A <code>comparisonOperator</code> of <code>GREATER_THAN</code>
-    * * A notification <code>threshold</code> of <code>80</code>
+  /** A notification that is associated with a budget. A budget can have up to ten notifications. Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers. For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters: * A notificationType of <code>ACTUAL</code> * A <code>thresholdType</code> of <code>PERCENTAGE</code> * A <code>comparisonOperator</code> of <code>GREATER_THAN</code> * A notification <code>threshold</code> of <code>80</code>
     */
   @js.native
   trait Notification extends js.Object {
@@ -1490,10 +1478,7 @@ package budgetsservice {
     }
   }
 
-  /** The amount of cost or usage that is measured for a budget.
-    * For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters:
-    * * An <code>Amount</code> of <code>3</code>
-    * * A <code>unit</code> of <code>GB</code>
+  /** The amount of cost or usage that is measured for a budget. For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters: * An <code>Amount</code> of <code>3</code> * A <code>unit</code> of <code>GB</code>
     */
   @js.native
   trait Spend extends js.Object {
@@ -1540,10 +1525,7 @@ package budgetsservice {
     }
   }
 
-  /** The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address.
-    * For example, an email subscriber would have the following parameters:
-    * * A <code>subscriptionType</code> of <code>EMAIL</code>
-    * * An <code>address</code> of <code>example@example.com</code>
+  /** The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address. For example, an email subscriber would have the following parameters: * A <code>subscriptionType</code> of <code>EMAIL</code> * An <code>address</code> of <code>example@example.com</code>
     */
   @js.native
   trait Subscriber extends js.Object {

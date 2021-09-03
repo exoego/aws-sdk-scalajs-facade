@@ -1016,8 +1016,8 @@ package route53resolver {
     }
   }
 
-  /** For Resolver list operations ([[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html|ListResolverEndpoints]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html|ListResolverRules]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html|ListResolverRuleAssociations]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html|ListResolverQueryLogConfigs]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html|ListResolverQueryLogConfigAssociations]]), and [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html|ListResolverDnssecConfigs]]), an optional specification to return a subset of objects.
-    * To filter objects, such as Resolver endpoints or Resolver rules, you specify <code>Name</code> and <code>Values</code>. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>.
+  /** For Resolver list operations ([[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html|ListResolverEndpoints]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html|ListResolverRules]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html|ListResolverRuleAssociations]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html|ListResolverQueryLogConfigs]], [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html|ListResolverQueryLogConfigAssociations]]), and [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverDnssecConfigs.html|ListResolverDnssecConfigs]]), an optional specification to return a subset of objects. To filter objects, such as Resolver endpoints or Resolver
+    * rules, you specify <code>Name</code> and <code>Values</code>. For example, to list only inbound Resolver endpoints, specify <code>Direction</code> for <code>Name</code> and specify <code>INBOUND</code> for <code>Values</code>.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1073,8 +1073,7 @@ package route53resolver {
     @inline def values = js.Array(REPLACE)
   }
 
-  /** High level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by <a>GetFirewallDomainList</a>.
-    * To retrieve the domains that are defined for this domain list, call <a>ListFirewallDomains</a>.
+  /** High level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by <a>GetFirewallDomainList</a>. To retrieve the domains that are defined for this domain list, call <a>ListFirewallDomains</a>.
     */
   @js.native
   trait FirewallDomainList extends js.Object {
@@ -1119,8 +1118,7 @@ package route53resolver {
     }
   }
 
-  /** Minimal high-level information for a firewall domain list. The action <a>ListFirewallDomainLists</a> returns an array of these objects.
-    * To retrieve full information for a firewall domain list, call <a>GetFirewallDomainList</a> and <a>ListFirewallDomains</a>.
+  /** Minimal high-level information for a firewall domain list. The action <a>ListFirewallDomainLists</a> returns an array of these objects. To retrieve full information for a firewall domain list, call <a>GetFirewallDomainList</a> and <a>ListFirewallDomains</a>.
     */
   @js.native
   trait FirewallDomainListMetadata extends js.Object {
@@ -1344,8 +1342,7 @@ package route53resolver {
     @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
   }
 
-  /** Minimal high-level information for a firewall rule group. The action <a>ListFirewallRuleGroups</a> returns an array of these objects.
-    * To retrieve full information for a firewall rule group, call <a>GetFirewallRuleGroup</a> and <a>ListFirewallRules</a>.
+  /** Minimal high-level information for a firewall rule group. The action <a>ListFirewallRuleGroups</a> returns an array of these objects. To retrieve full information for a firewall rule group, call <a>GetFirewallRuleGroup</a> and <a>ListFirewallRules</a>.
     */
   @js.native
   trait FirewallRuleGroupMetadata extends js.Object {

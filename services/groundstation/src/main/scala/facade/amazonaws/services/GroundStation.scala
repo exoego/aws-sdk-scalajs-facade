@@ -317,8 +317,7 @@ package groundstation {
     }
   }
 
-  /** Object containing the parameters of a <code>Config</code>.
-    * See the subtype definitions for what each type of <code>Config</code> contains.
+  /** Object containing the parameters of a <code>Config</code>. See the subtype definitions for what each type of <code>Config</code> contains.
     */
   @js.native
   trait ConfigTypeData extends js.Object {
@@ -2016,8 +2015,7 @@ package groundstation {
     }
   }
 
-  /** Information about an uplink echo <code>Config</code>.
-    * Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.
+  /** Information about an uplink echo <code>Config</code>. Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.
     */
   @js.native
   trait UplinkEchoConfig extends js.Object {

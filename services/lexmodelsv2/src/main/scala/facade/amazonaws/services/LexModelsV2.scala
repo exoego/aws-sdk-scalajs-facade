@@ -2335,8 +2335,7 @@ package lexmodelsv2 {
     }
   }
 
-  /** A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.
-    * When you use a response card, the response from the user is constrained to the text associated with a button on the card.
+  /** A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. When you use a response card, the response from the user is constrained to the text associated with a button on the card.
     */
   @js.native
   trait ImageResponseCard extends js.Object {
