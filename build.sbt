@@ -1,9 +1,9 @@
 import scala.util._
 
-crossScalaVersions in ThisBuild := Seq(SharedConfig.scala213Version, SharedConfig.scala212Version)
-scalaVersion in ThisBuild := SharedConfig.scala213Version
-organization in ThisBuild := "net.exoego"
-concurrentRestrictions in ThisBuild += Tags.limit(
+ThisBuild / crossScalaVersions := Seq(SharedConfig.scala213Version, SharedConfig.scala212Version)
+ThisBuild / scalaVersion := SharedConfig.scala213Version
+ThisBuild / organization := "net.exoego"
+ThisBuild / concurrentRestrictions += Tags.limit(
   ScalaJSTags.Link,
   max = Try(System.getenv("SCALAJS_LINK_MAX").toInt).getOrElse(4)
 )
