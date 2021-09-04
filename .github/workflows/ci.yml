@@ -35,7 +35,10 @@ jobs:
           node-version: '14'
       - run: npm install
       - name: Run Tests
-        run: sbt -jvm-opts .github/.jvmopts ++${{ matrix.scala }} core/test awsDynamoDB/test awsS3/test awsCloudFrontSigner/test all/test
+        env:
+          JAVA_OPTS: -Xss4M -Xms2G -Xmx8G -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=8G -XX:+CMSClassUnloadingEnabled -XX:+UseG1GC
+          JVM_OPTS: -Xss4M -Xms2G -Xmx8G -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=8G -XX:+CMSClassUnloadingEnabled -XX:+UseG1GC
+        run: sbt ++${{ matrix.scala }} core/test awsDynamoDB/test awsS3/test awsCloudFrontSigner/test all/test
   format:
     runs-on: ubuntu-latest
     steps:
@@ -52,4 +55,7 @@ jobs:
           path: ~/.sbt
           key: sbt-${{ hashFiles('project/build.properties', 'project/plugins.sbt') }}
       - name: Check Scalafmt
-        run: sbt -jvm-opts .github/.jvmopts scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+        env:
+          JAVA_OPTS: -Xss4M -Xms2G -Xmx8G -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=8G -XX:+CMSClassUnloadingEnabled -XX:+UseG1GC
+          JVM_OPTS: -Xss4M -Xms2G -Xmx8G -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=8G -XX:+CMSClassUnloadingEnabled -XX:+UseG1GC
+        run: sbt scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
