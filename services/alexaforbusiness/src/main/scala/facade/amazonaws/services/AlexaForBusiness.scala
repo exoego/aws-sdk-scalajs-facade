@@ -610,9 +610,7 @@ package alexaforbusiness {
     }
   }
 
-  /** The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly,
-    * required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see [[https://www.ffmpeg.org/|FFmpeg]]. The following command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement:
-    * <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
+  /** The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly, required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see [[https://www.ffmpeg.org/|FFmpeg]]. The following command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement: <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
     */
   @js.native
   trait Audio extends js.Object {
@@ -3637,10 +3635,7 @@ package alexaforbusiness {
     }
   }
 
-  /** The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
-    * * If YES, Alexa will always ask for a meeting pin.
-    * * If NO, Alexa will never ask for a meeting pin.
-    * * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
+  /** The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL. * If YES, Alexa will always ask for a meeting pin. * If NO, Alexa will never ask for a meeting pin. * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
     */
   @js.native
   trait MeetingSetting extends js.Object {

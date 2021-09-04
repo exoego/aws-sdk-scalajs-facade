@@ -113,8 +113,7 @@ package schemas {
     @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait CreateDiscovererRequest extends js.Object {
     var SourceArn: __stringMin20Max1600
@@ -1346,8 +1345,7 @@ package schemas {
     }
   }
 
-  /**
-    */
+  /** */
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: __string

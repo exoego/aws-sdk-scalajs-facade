@@ -544,8 +544,7 @@ package elasticbeanstalk {
     }
   }
 
-  /** The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.
-    * When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.
+  /** The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions. When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.
     */
   @js.native
   trait ApplicationVersionLifecycleConfig extends js.Object {
@@ -2949,8 +2948,7 @@ package elasticbeanstalk {
     }
   }
 
-  /** Describes criteria to restrict the results when listing platform versions.
-    * The filter is evaluated as follows: <code>Type Operator Values[1]</code>
+  /** Describes criteria to restrict the results when listing platform versions. The filter is evaluated as follows: <code>Type Operator Values[1]</code>
     */
   @js.native
   trait PlatformFilter extends js.Object {
@@ -3300,10 +3298,7 @@ package elasticbeanstalk {
     }
   }
 
-  /** Describes criteria to restrict a list of results.
-    * For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code>
-    * Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code>
-    * The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.
+  /** Describes criteria to restrict a list of results. For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.
     */
   @js.native
   trait SearchFilter extends js.Object {

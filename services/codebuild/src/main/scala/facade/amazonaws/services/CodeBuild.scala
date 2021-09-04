@@ -444,15 +444,8 @@ package codebuild {
     }
   }
 
-  /** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account.
-    * By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.
-    * <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default.
-    * </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects.
-    * </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria:
-    * * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.
-    * * Otherwise, the uploading account retains ownership of the objects.
-    * For more information about Amazon S3 object ownership, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>.
-    * </dd> </dl>
+  /** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects. <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default. </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects. </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria: * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy. * Otherwise, the uploading account retains ownership of the objects. For more information about Amazon S3 object ownership, see
+    * [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>. </dd> </dl>
     */
   @js.native
   sealed trait BucketOwnerAccess extends js.Any
@@ -980,9 +973,7 @@ package codebuild {
     }
   }
 
-  /** Contains code coverage report information.
-    * Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
-    * Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+  /** Contains code coverage report information. Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc. Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
     */
   @js.native
   trait CodeCoverage extends js.Object {
@@ -1027,9 +1018,7 @@ package codebuild {
     }
   }
 
-  /** Contains a summary of a code coverage report.
-    * Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.
-    * Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
+  /** Contains a summary of a code coverage report. Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc. Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.
     */
   @js.native
   trait CodeCoverageReportSummary extends js.Object {
@@ -1713,8 +1702,7 @@ package codebuild {
     @inline def values = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
   }
 
-  /** Contains information about an exported environment variable.
-    * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see [[https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html|Working with variables]] in the <i>AWS CodePipeline User Guide</i>.
+  /** Contains information about an exported environment variable. Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see [[https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html|Working with variables]] in the <i>AWS CodePipeline User Guide</i>.
     *
     * '''Note:'''During a build, the value of a variable is available starting with the <code>install</code> phase. It can be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.
     */
@@ -2951,10 +2939,7 @@ package codebuild {
     }
   }
 
-  /** Information about credentials that provide access to a private Docker registry. When this is set:
-    * * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.
-    * * images cannot be curated or an Amazon ECR image.
-    * For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html|Private Registry with AWS Secrets Manager Sample for AWS CodeBuild]].
+  /** Information about credentials that provide access to a private Docker registry. When this is set: * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. * images cannot be curated or an Amazon ECR image. For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html|Private Registry with AWS Secrets Manager Sample for AWS CodeBuild]].
     */
   @js.native
   trait RegistryCredential extends js.Object {
@@ -3429,8 +3414,7 @@ package codebuild {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /** Information about the authorization settings for AWS CodeBuild to access the source code to be built.
-    * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
+  /** Information about the authorization settings for AWS CodeBuild to access the source code to be built. This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
     */
   @js.native
   trait SourceAuth extends js.Object {
@@ -3826,8 +3810,7 @@ package codebuild {
     }
   }
 
-  /** A tag, consisting of a key and a value.
-    * This tag is available for use by AWS services that support tags in AWS CodeBuild.
+  /** A tag, consisting of a key and a value. This tag is available for use by AWS services that support tags in AWS CodeBuild.
     */
   @js.native
   trait Tag extends js.Object {

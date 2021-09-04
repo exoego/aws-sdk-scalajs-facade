@@ -901,8 +901,7 @@ package sns {
     }
   }
 
-  /** The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
-    * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Amazon SNS message attributes]] and [[https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html|Publishing to a mobile phone]] in the <i>Amazon SNS Developer Guide.</i>
+  /** The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]]. Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Amazon SNS message attributes]] and [[https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html|Publishing to a mobile phone]] in the <i>Amazon SNS Developer Guide.</i>
     */
   @js.native
   trait MessageAttributeValue extends js.Object {

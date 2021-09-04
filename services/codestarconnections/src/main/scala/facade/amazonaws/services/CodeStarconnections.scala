@@ -69,8 +69,7 @@ package codestarconnections {
     def updateHost(params: UpdateHostInput): Request[UpdateHostOutput] = js.native
   }
 
-  /** A resource that is used to connect third-party source providers with services like AWS CodePipeline.
-    * Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.
+  /** A resource that is used to connect third-party source providers with services like AWS CodePipeline. Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.
     */
   @js.native
   trait Connection extends js.Object {
@@ -507,8 +506,7 @@ package codestarconnections {
     @inline def values = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
   }
 
-  /** A tag is a key-value pair that is used to manage the resource.
-    * This tag is available for use by AWS services that support tags.
+  /** A tag is a key-value pair that is used to manage the resource. This tag is available for use by AWS services that support tags.
     */
   @js.native
   trait Tag extends js.Object {

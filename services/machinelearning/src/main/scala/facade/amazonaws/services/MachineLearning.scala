@@ -180,9 +180,7 @@ package machinelearning {
     }
   }
 
-  /** The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:
-    * * <code>SGD</code> - Stochastic Gradient Descent.
-    * * <code>RandomForest</code> - Random forest of decision trees.
+  /** The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following: * <code>SGD</code> - Stochastic Gradient Descent. * <code>RandomForest</code> - Random forest of decision trees.
     */
   @js.native
   sealed trait Algorithm extends js.Any
@@ -192,8 +190,7 @@ package machinelearning {
     @inline def values = js.Array(sgd)
   }
 
-  /** Represents the output of a <code>GetBatchPrediction</code> operation.
-    * The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.
+  /** Represents the output of a <code>GetBatchPrediction</code> operation. The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.
     */
   @js.native
   trait BatchPrediction extends js.Object {
@@ -256,14 +253,7 @@ package machinelearning {
     }
   }
 
-  /** A list of the variables to use in searching or filtering <code>BatchPrediction</code>.
-    * * <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.
-    * * <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.
-    * * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code> <code>Name</code>.
-    * * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.
-    * * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.
-    * * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.
-    * * <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
+  /** A list of the variables to use in searching or filtering <code>BatchPrediction</code>. * <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date. * <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status. * <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code> <code>Name</code>. * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation. * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>. * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>. * <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
     */
   @js.native
   sealed trait BatchPredictionFilterVariable extends js.Any
@@ -310,8 +300,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.
-    * The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result.
+  /** Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request. The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result.
     */
   @js.native
   trait CreateBatchPredictionOutput extends js.Object {
@@ -359,8 +348,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.
-    * The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.
+  /** Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request. The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.
     */
   @js.native
   trait CreateDataSourceFromRDSOutput extends js.Object {
@@ -408,8 +396,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.
-    * The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
+  /** Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request. The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
   trait CreateDataSourceFromRedshiftOutput extends js.Object {
@@ -454,8 +441,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.
-    * The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
+  /** Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request. The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
   trait CreateDataSourceFromS3Output extends js.Object {
@@ -500,8 +486,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.
-    * <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter.
+  /** Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request. <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
   trait CreateEvaluationOutput extends js.Object {
@@ -555,8 +540,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.
-    * The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter.
+  /** Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request. The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter.
     */
   @js.native
   trait CreateMLModelOutput extends js.Object {
@@ -591,8 +575,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
-    * The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
+  /** Represents the output of an <code>CreateRealtimeEndpoint</code> operation. The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
     * ```Note:``` The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.
     */
   @js.native
@@ -614,8 +597,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of the <code>GetDataSource</code> operation.
-    * The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>.
+  /** Represents the output of the <code>GetDataSource</code> operation. The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -684,12 +666,7 @@ package machinelearning {
     }
   }
 
-  /** A list of the variables to use in searching or filtering <code>DataSource</code>.
-    * * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.
-    * * <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.
-    * * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
-    * * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
-    * * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.
+  /** A list of the variables to use in searching or filtering <code>DataSource</code>. * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date. * <code>Status</code> - Sets the search criteria to <code>DataSource</code> status. * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>. * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory. * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.
     * ```Note:``` The variable names should match the variable names in the <code>DataSource</code>.
     */
   @js.native
@@ -722,8 +699,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>DeleteBatchPrediction</code> operation.
-    * You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.
+  /** Represents the output of a <code>DeleteBatchPrediction</code> operation. You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.
     */
   @js.native
   trait DeleteBatchPredictionOutput extends js.Object {
@@ -793,8 +769,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.
-    * You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.
+  /** Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request. You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.
     */
   @js.native
   trait DeleteEvaluationOutput extends js.Object {
@@ -829,8 +804,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>DeleteMLModel</code> operation.
-    * You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.
+  /** Represents the output of a <code>DeleteMLModel</code> operation. You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.
     */
   @js.native
   trait DeleteMLModelOutput extends js.Object {
@@ -865,8 +839,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.
-    * The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
+  /** Represents the output of an <code>DeleteRealtimeEndpoint</code> operation. The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.
     */
   @js.native
   trait DeleteRealtimeEndpointOutput extends js.Object {
@@ -1243,9 +1216,7 @@ package machinelearning {
     }
   }
 
-  /** Contains the key values of <code>DetailsMap</code>:
-    * * <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>.
-    * * <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
+  /** Contains the key values of <code>DetailsMap</code>: * <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>. * <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
     */
   @js.native
   sealed trait DetailsAttributes extends js.Any
@@ -1256,12 +1227,7 @@ package machinelearning {
     @inline def values = js.Array(PredictiveModelType, Algorithm)
   }
 
-  /** Object status with the following possible values:
-    * * <code>PENDING</code>
-    * * <code>INPROGRESS</code>
-    * * <code>FAILED</code>
-    * * <code>COMPLETED</code>
-    * * <code>DELETED</code>
+  /** Object status with the following possible values: * <code>PENDING</code> * <code>INPROGRESS</code> * <code>FAILED</code> * <code>COMPLETED</code> * <code>DELETED</code>
     */
   @js.native
   sealed trait EntityStatus extends js.Any
@@ -1275,8 +1241,7 @@ package machinelearning {
     @inline def values = js.Array(PENDING, INPROGRESS, FAILED, COMPLETED, DELETED)
   }
 
-  /** Represents the output of <code>GetEvaluation</code> operation.
-    * The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.
+  /** Represents the output of <code>GetEvaluation</code> operation. The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.
     */
   @js.native
   trait Evaluation extends js.Object {
@@ -1333,14 +1298,7 @@ package machinelearning {
     }
   }
 
-  /** A list of the variables to use in searching or filtering <code>Evaluation</code>.
-    * * <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.
-    * * <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.
-    * * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> ``` ``` <code>Name</code>.
-    * * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.
-    * * <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.
-    * * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.
-    * * <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
+  /** A list of the variables to use in searching or filtering <code>Evaluation</code>. * <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date. * <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status. * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> ``` ``` <code>Name</code>. * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation. * <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated. * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation. * <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
     */
   @js.native
   sealed trait EvaluationFilterVariable extends js.Any
@@ -1712,8 +1670,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of a <code>GetMLModel</code> operation.
-    * The content consists of the detailed metadata and the current status of the <code>MLModel</code>.
+  /** Represents the output of a <code>GetMLModel</code> operation. The content consists of the detailed metadata and the current status of the <code>MLModel</code>.
     */
   @js.native
   trait MLModel extends js.Object {
@@ -1812,11 +1769,7 @@ package machinelearning {
     @inline def values = js.Array(REGRESSION, BINARY, MULTICLASS)
   }
 
-  /** Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>:
-    * * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance.
-    * * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.
-    * * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance.
-    * For more information about performance metrics, please see the [[https://docs.aws.amazon.com/machine-learning/latest/dg|Amazon Machine Learning Developer Guide]].
+  /** Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: * BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. * RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable. * MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. For more information about performance metrics, please see the [[https://docs.aws.amazon.com/machine-learning/latest/dg|Amazon Machine Learning Developer Guide]].
     */
   @js.native
   trait PerformanceMetrics extends js.Object {
@@ -1873,11 +1826,7 @@ package machinelearning {
     }
   }
 
-  /** The output from a <code>Predict</code> operation:
-    * * <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code>
-    * * <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.
-    * * <code>PredictedScores</code> - Contains the raw classification score corresponding to each label.
-    * * <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.
+  /** The output from a <code>Predict</code> operation: * <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> * <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. * <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. * <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.
     */
   @js.native
   trait Prediction extends js.Object {
@@ -2204,9 +2153,7 @@ package machinelearning {
     }
   }
 
-  /** The sort order specified in a listing condition. Possible values include the following:
-    * * <code>asc</code> - Present the information in ascending order (from A-Z).
-    * * <code>dsc</code> - Present the information in descending order (from Z-A).
+  /** The sort order specified in a listing condition. Possible values include the following: * <code>asc</code> - Present the information in ascending order (from A-Z). * <code>dsc</code> - Present the information in descending order (from Z-A).
     */
   @js.native
   sealed trait SortOrder extends js.Any
@@ -2269,8 +2216,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of an <code>UpdateBatchPrediction</code> operation.
-    * You can see the updated content by using the <code>GetBatchPrediction</code> operation.
+  /** Represents the output of an <code>UpdateBatchPrediction</code> operation. You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     */
   @js.native
   trait UpdateBatchPredictionOutput extends js.Object {
@@ -2308,8 +2254,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of an <code>UpdateDataSource</code> operation.
-    * You can see the updated content by using the <code>GetBatchPrediction</code> operation.
+  /** Represents the output of an <code>UpdateDataSource</code> operation. You can see the updated content by using the <code>GetBatchPrediction</code> operation.
     */
   @js.native
   trait UpdateDataSourceOutput extends js.Object {
@@ -2347,8 +2292,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of an <code>UpdateEvaluation</code> operation.
-    * You can see the updated content by using the <code>GetEvaluation</code> operation.
+  /** Represents the output of an <code>UpdateEvaluation</code> operation. You can see the updated content by using the <code>GetEvaluation</code> operation.
     */
   @js.native
   trait UpdateEvaluationOutput extends js.Object {
@@ -2390,8 +2334,7 @@ package machinelearning {
     }
   }
 
-  /** Represents the output of an <code>UpdateMLModel</code> operation.
-    * You can see the updated content by using the <code>GetMLModel</code> operation.
+  /** Represents the output of an <code>UpdateMLModel</code> operation. You can see the updated content by using the <code>GetMLModel</code> operation.
     */
   @js.native
   trait UpdateMLModelOutput extends js.Object {

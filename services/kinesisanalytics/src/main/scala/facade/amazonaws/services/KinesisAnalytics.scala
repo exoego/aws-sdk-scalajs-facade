@@ -297,8 +297,7 @@ package kinesisanalytics {
     }
   }
 
-  /** '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]].
-    * Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.
+  /** '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]]. Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configuration.
     */
   @js.native
   trait ApplicationDetail extends js.Object {
@@ -364,8 +363,7 @@ package kinesisanalytics {
     @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
   }
 
-  /** '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]].
-    * Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
+  /** '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]]. Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
     */
   @js.native
   trait ApplicationSummary extends js.Object {
@@ -420,9 +418,7 @@ package kinesisanalytics {
     }
   }
 
-  /** Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter:
-    * <code>"name1", "address1"</code>
-    * <code>"name2", "address2"</code>
+  /** Provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter: <code>"name1", "address1"</code> <code>"name2", "address2"</code>
     */
   @js.native
   trait CSVMappingParameters extends js.Object {
@@ -1643,8 +1639,7 @@ package kinesisanalytics {
     }
   }
 
-  /** Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream.
-    * <p/> For limits on how many destinations an application can write and other limitations, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html|Limits]].
+  /** Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. <p/> For limits on how many destinations an application can write and other limitations, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html|Limits]].
     */
   @js.native
   trait Output extends js.Object {
@@ -1744,8 +1739,7 @@ package kinesisanalytics {
     }
   }
 
-  /** Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
-    * Also used to describe the format of the reference data source.
+  /** Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream. Also used to describe the format of the reference data source.
     */
   @js.native
   trait RecordColumn extends js.Object {
@@ -1912,8 +1906,7 @@ package kinesisanalytics {
     }
   }
 
-  /** Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
-    * An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html|UpdateApplication]] operation to trigger reloading of data into your application.
+  /** Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the [[https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html|UpdateApplication]] operation to trigger reloading of data into your application.
     */
   @js.native
   trait S3ReferenceDataSource extends js.Object {

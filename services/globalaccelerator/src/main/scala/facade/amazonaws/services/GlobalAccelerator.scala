@@ -338,19 +338,9 @@ package globalaccelerator {
     }
   }
 
-  /** Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).
-    * The following describes each BYOIP <code>State</code> that your IP address range can be in.
-    * * ```PENDING_PROVISIONING``` — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.
-    * * ```READY``` — The address range is provisioned with AWS Global Accelerator and can be advertised.
-    * * ```PENDING_ADVERTISING``` — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.
-    * * ```ADVERTISING``` — The address range is being advertised by AWS Global Accelerator.
-    * * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.
-    * * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.
-    * * ```DEPROVISIONED``` — The address range is deprovisioned from AWS Global Accelerator.
-    * * ```FAILED_PROVISION ``` — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
-    * * ```FAILED_ADVERTISING``` — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
-    * * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
-    * * ```FAILED_DEPROVISION ``` — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+  /** Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP). The following describes each BYOIP <code>State</code> that your IP address range can be in. * ```PENDING_PROVISIONING``` — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator. * ```READY``` — The address range is provisioned with AWS Global Accelerator and can be advertised. * ```PENDING_ADVERTISING``` — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised. * ```ADVERTISING``` — The address range is being advertised by AWS Global Accelerator. * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator. * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from AWS Global
+    * Accelerator but it is still provisioned. * ```DEPROVISIONED``` — The address range is deprovisioned from AWS Global Accelerator. * ```FAILED_PROVISION ``` — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support. * ```FAILED_ADVERTISING``` — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support. * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support. * ```FAILED_DEPROVISION ``` — The request to deprovision the address range from
+    * AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
     */
   @js.native
   trait ByoipCidr extends js.Object {
@@ -425,8 +415,7 @@ package globalaccelerator {
     )
   }
 
-  /** Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP).
-    * For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
+  /** Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
     */
   @js.native
   trait CidrAuthorizationContext extends js.Object {
@@ -2059,8 +2048,7 @@ package globalaccelerator {
     }
   }
 
-  /** Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
-    * For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html| Port overrides]] in the <i>AWS Global Accelerator Developer Guide</i>.
+  /** Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints. For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html| Port overrides]] in the <i>AWS Global Accelerator Developer Guide</i>.
     */
   @js.native
   trait PortOverride extends js.Object {

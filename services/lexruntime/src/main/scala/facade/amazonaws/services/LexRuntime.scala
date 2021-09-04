@@ -758,8 +758,7 @@ package lexruntime {
     }
   }
 
-  /** The sentiment expressed in an utterance.
-    * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.
+  /** The sentiment expressed in an utterance. When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.
     */
   @js.native
   trait SentimentResponse extends js.Object {

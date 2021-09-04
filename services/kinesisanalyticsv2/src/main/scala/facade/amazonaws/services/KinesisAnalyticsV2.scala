@@ -787,9 +787,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter:
-    * <code>"name1", "address1"</code>
-    * <code>"name2", "address2"</code>
+  /** For a SQL-based Kinesis Data Analytics application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'n'</i> as the row delimiter and a comma (",") as the column delimiter: <code>"name1", "address1"</code> <code>"name2", "address2"</code>
     */
   @js.native
   trait CSVMappingParameters extends js.Object {
@@ -2633,8 +2631,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** Describes a SQL-based Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
-    * <p/>
+  /** Describes a SQL-based Kinesis Data Analytics application's output configuration, in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be a Kinesis data stream or a Kinesis Data Firehose delivery stream. <p/>
     */
   @js.native
   trait Output extends js.Object {
@@ -2842,8 +2839,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
-    * Also used to describe the format of the reference data source.
+  /** For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream. Also used to describe the format of the reference data source.
     */
   @js.native
   trait RecordColumn extends js.Object {
@@ -3160,8 +3156,7 @@ package kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.
-    * A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
+  /** For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data. A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
     */
   @js.native
   trait S3ReferenceDataSource extends js.Object {

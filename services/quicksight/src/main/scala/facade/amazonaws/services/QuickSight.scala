@@ -6847,8 +6847,7 @@ package quicksight {
     }
   }
 
-  /** Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html|Using Row-Level Security (RLS) to Restrict Access to a Dataset]] in the <i>Amazon QuickSight User Guide</i>.
-    * The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.
+  /** Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html|Using Row-Level Security (RLS) to Restrict Access to a Dataset]] in the <i>Amazon QuickSight User Guide</i>. The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.
     */
   @js.native
   trait RowLevelPermissionDataSet extends js.Object {
@@ -7306,8 +7305,7 @@ package quicksight {
     }
   }
 
-  /** A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template.
-    * You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.
+  /** A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template. You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.
     */
   @js.native
   trait Template extends js.Object {

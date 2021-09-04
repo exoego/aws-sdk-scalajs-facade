@@ -1609,8 +1609,7 @@ package batch {
     }
   }
 
-  /** An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.
-    * If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.
+  /** An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both. If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.
     *
     * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
     */
@@ -2142,10 +2141,7 @@ package batch {
     }
   }
 
-  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways:
-    * * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter.
-    * * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter.
-    * For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>AWS Batch User Guide</i>.
+  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>AWS Batch User Guide</i>.
     */
   @js.native
   trait Secret extends js.Object {

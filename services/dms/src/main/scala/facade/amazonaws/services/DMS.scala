@@ -2315,11 +2315,7 @@ package dms {
     @inline def values = js.Array(`sse-s3`, `sse-kms`)
   }
 
-  /** Describes an endpoint of a database instance in response to operations such as the following:
-    * * <code>CreateEndpoint</code>
-    * * <code>DescribeEndpoint</code>
-    * * <code>DescribeEndpointTypes</code>
-    * * <code>ModifyEndpoint</code>
+  /** Describes an endpoint of a database instance in response to operations such as the following: * <code>CreateEndpoint</code> * <code>DescribeEndpoint</code> * <code>DescribeEndpointTypes</code> * <code>ModifyEndpoint</code>
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -4325,8 +4321,7 @@ package dms {
     }
   }
 
-  /** Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation.
-    * Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.
+  /** Provides information that describes a premigration assessment run that you have started using the <code>StartReplicationTaskAssessmentRun</code> operation. Some of the information appears based on other operations that can return the <code>ReplicationTaskAssessmentRun</code> object.
     */
   @js.native
   trait ReplicationTaskAssessmentRun extends js.Object {
@@ -4994,10 +4989,7 @@ package dms {
     }
   }
 
-  /** A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following:
-    * * <code>AddTagsToResource</code>
-    * * <code>ListTagsForResource</code>
-    * * <code>RemoveTagsFromResource</code>
+  /** A user-defined key-value pair that describes metadata added to an AWS DMS resource and that is used by operations such as the following: * <code>AddTagsToResource</code> * <code>ListTagsForResource</code> * <code>RemoveTagsFromResource</code>
     */
   @js.native
   trait Tag extends js.Object {
