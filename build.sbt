@@ -7,6 +7,7 @@ ThisBuild / concurrentRestrictions += Tags.limit(
   ScalaJSTags.Link,
   max = Try(System.getenv("SCALAJS_LINK_MAX").toInt).getOrElse(4)
 )
+Global / excludeLintKeys += publishArtifact
 
 lazy val core = (project in file("core"))
   .settings(SharedConfig.settings)
