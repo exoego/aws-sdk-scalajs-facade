@@ -43,19 +43,19 @@ object SharedConfig {
   )
 
   val publishSetting = Seq(
-    publishTo in ThisBuild := sonatypePublishToBundle.value,
+    ThisBuild / publishTo := sonatypePublishToBundle.value,
     publishMavenStyle := true,
-    publishArtifact in Test := false,
-    publishArtifact in (Compile, packageDoc) := true,
-    publishArtifact in (Compile, packageSrc) := true,
+    Test / publishArtifact := false,
+    Compile / packageDoc / publishArtifact := true,
+    Compile / packageSrc / publishArtifact := true,
     pomIncludeRepository := { _ =>
       false
     },
     sonatypeTimeoutMillis := 3 * 60 * 60 * 1000,
     publishConfiguration := publishConfiguration.value.withOverwrite(true),
     publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
-    publishArtifact in packageDoc := false,
-    sources in (Compile, doc) := Seq.empty,
+    packageDoc / publishArtifact := false,
+    Compile / doc / sources := Seq.empty,
     releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
@@ -75,7 +75,7 @@ object SharedConfig {
     publish := {},
     publishLocal := {},
     publishArtifact := false,
-    publishArtifact in (Compile, packageDoc) := false,
-    publishArtifact in (Compile, packageSrc) := false
+    Compile / packageDoc / publishArtifact := false,
+    Compile / packageSrc / publishArtifact := false
   )
 }
