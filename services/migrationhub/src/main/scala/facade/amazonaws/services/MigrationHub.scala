@@ -898,15 +898,7 @@ package migrationhub {
     }
   }
 
-  /** Attribute associated with a resource.
-    * Note the corresponding format required per type listed below:
-    * <dl> <dt>IPV4</dt> <dd> <code>x.x.x.x</code>
-    * <i>where x is an integer in the range [0,255]</i>
-    * </dd> <dt>IPV6</dt> <dd> <code>y : y : y : y : y : y : y : y</code>
-    * <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i>
-    * </dd> <dt>MAC_ADDRESS</dt> <dd> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})</code>
-    * </dd> <dt>FQDN</dt> <dd> <code>^[^&lt;&gt;{}\\/?,=\p{Cntrl}]{1,256}</code>
-    * </dd> </dl>
+  /** Attribute associated with a resource. Note the corresponding format required per type listed below: <dl> <dt>IPV4</dt> <dd> <code>x.x.x.x</code> <i>where x is an integer in the range [0,255]</i> </dd> <dt>IPV6</dt> <dd> <code>y : y : y : y : y : y : y : y</code> <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> </dd> <dt>MAC_ADDRESS</dt> <dd> <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})</code> </dd> <dt>FQDN</dt> <dd> <code>^[^&lt;&gt;{}\\/?,=\p{Cntrl}]{1,256}</code> </dd> </dl>
     */
   @js.native
   trait ResourceAttribute extends js.Object {

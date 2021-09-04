@@ -3937,9 +3937,7 @@ package appmesh {
     }
   }
 
-  /** An object that represents the type of virtual gateway connection pool.
-    * Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.
-    * If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.
+  /** An object that represents the type of virtual gateway connection pool. Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping. If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.
     */
   @js.native
   trait VirtualGatewayConnectionPool extends js.Object {
@@ -4554,10 +4552,7 @@ package appmesh {
     }
   }
 
-  /** An object that represents the type of virtual node connection pool.
-    * Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.
-    * If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.
-    * <p/>
+  /** An object that represents the type of virtual node connection pool. Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping. If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>. <p/>
     */
   @js.native
   trait VirtualNodeConnectionPool extends js.Object {

@@ -269,8 +269,7 @@ package computeoptimizer {
     }
   }
 
-  /** Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations.
-    * This filter is used with the <code>GetEBSVolumeRecommendations</code> action.
+  /** Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations. This filter is used with the <code>GetEBSVolumeRecommendations</code> action.
     */
   @js.native
   trait EBSFilter extends js.Object {
@@ -319,8 +318,7 @@ package computeoptimizer {
     @inline def values = js.Array(VolumeReadOpsPerSecond, VolumeWriteOpsPerSecond, VolumeReadBytesPerSecond, VolumeWriteBytesPerSecond)
   }
 
-  /** Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.
-    * Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
+  /** Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume. Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
     */
   @js.native
   trait EBSUtilizationMetric extends js.Object {
@@ -630,8 +628,7 @@ package computeoptimizer {
     @inline def values = js.Array(Csv)
   }
 
-  /** Describes a filter that returns a more specific list of recommendations.
-    * This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
+  /** Describes a filter that returns a more specific list of recommendations. This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
     */
   @js.native
   trait Filter extends js.Object {
@@ -956,8 +953,7 @@ package computeoptimizer {
     }
   }
 
-  /** Describes an error experienced when getting recommendations.
-    * For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.
+  /** Describes an error experienced when getting recommendations. For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.
     */
   @js.native
   trait GetRecommendationError extends js.Object {
@@ -1094,8 +1090,7 @@ package computeoptimizer {
     }
   }
 
-  /** Describes a filter that returns a more specific list of recommendation export jobs.
-    * This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
+  /** Describes a filter that returns a more specific list of recommendation export jobs. This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
     */
   @js.native
   trait JobFilter extends js.Object {
@@ -1365,8 +1360,7 @@ package computeoptimizer {
     @inline def values = js.Array(Maximum, Average)
   }
 
-  /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period.
-    * Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
+  /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period. Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
     *
     * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
     */
@@ -1413,9 +1407,7 @@ package computeoptimizer {
     }
   }
 
-  /** Describes a recommendation export job.
-    * Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs.
-    * Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.
+  /** Describes a recommendation export job. Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs. Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.
     */
   @js.native
   trait RecommendationExportJob extends js.Object {
@@ -1566,8 +1558,7 @@ package computeoptimizer {
     }
   }
 
-  /** Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.
-    * You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html|Amazon S3 Bucket Policy for Compute Optimizer]] in the <i>Compute Optimizer user guide</i>.
+  /** Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job. You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html|Amazon S3 Bucket Policy for Compute Optimizer]] in the <i>Compute Optimizer user guide</i>.
     */
   @js.native
   trait S3DestinationConfig extends js.Object {
@@ -1663,8 +1654,7 @@ package computeoptimizer {
     }
   }
 
-  /** Describes a utilization metric of a resource, such as an Amazon EC2 instance.
-    * Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
+  /** Describes a utilization metric of a resource, such as an Amazon EC2 instance. Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
     */
   @js.native
   trait UtilizationMetric extends js.Object {

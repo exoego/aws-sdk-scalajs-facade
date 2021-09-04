@@ -128,12 +128,8 @@ package autoscalingplans {
     }
   }
 
-  /** Represents a CloudWatch metric of your choosing that can be used for predictive scaling.
-    * For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data.
-    * When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.
-    * If you publish your own metrics, you can aggregate the data points at a given interval and then publish the aggregated data points to CloudWatch. Before AWS Auto Scaling generates the forecast, it sums up all the metric data points that occurred within each hour to match the granularity period that is used in the forecast (60 minutes).
-    * For information about terminology, available metrics, or how to publish new metrics, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]] in the <i>Amazon CloudWatch User Guide</i>.
-    * After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource|View Scaling Information for a Resource]] in the <i>AWS Auto Scaling User Guide</i>.
+  /** Represents a CloudWatch metric of your choosing that can be used for predictive scaling. For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request
+    * count processed by each instance of the group. If you publish your own metrics, you can aggregate the data points at a given interval and then publish the aggregated data points to CloudWatch. Before AWS Auto Scaling generates the forecast, it sums up all the metric data points that occurred within each hour to match the granularity period that is used in the forecast (60 minutes). For information about terminology, available metrics, or how to publish new metrics, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]] in the <i>Amazon CloudWatch User Guide</i>. After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource|View Scaling Information for a Resource]] in the <i>AWS Auto Scaling User Guide</i>.
     */
   @js.native
   trait CustomizedLoadMetricSpecification extends js.Object {
@@ -165,11 +161,8 @@ package autoscalingplans {
     }
   }
 
-  /** Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy.
-    * To create your customized scaling metric specification:
-    * * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>.
-    * * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.
-    * For information about terminology, available metrics, or how to publish new metrics, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]] in the <i>Amazon CloudWatch User Guide</i>.
+  /** Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. To create your customized scaling metric specification: * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>. * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. For information about terminology, available metrics, or how to publish new metrics, see
+    * [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]] in the <i>Amazon CloudWatch User Guide</i>.
     */
   @js.native
   trait CustomizedScalingMetricSpecification extends js.Object {
@@ -465,8 +458,7 @@ package autoscalingplans {
     @inline def values = js.Array(TargetTrackingScaling)
   }
 
-  /** Represents a predefined metric that can be used for predictive scaling.
-    * After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource|View Scaling Information for a Resource]] in the <i>AWS Auto Scaling User Guide</i>.
+  /** Represents a predefined metric that can be used for predictive scaling. After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource|View Scaling Information for a Resource]] in the <i>AWS Auto Scaling User Guide</i>.
     */
   @js.native
   trait PredefinedLoadMetricSpecification extends js.Object {
@@ -555,11 +547,8 @@ package autoscalingplans {
     )
   }
 
-  /** Describes a scaling instruction for a scalable resource in a scaling plan. Each scaling instruction applies to one resource.
-    * AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified.
-    * AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast.
-    * <important> We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html|Best Practices for AWS Auto Scaling]] in the <i>AWS Auto Scaling User Guide</i>.
-    * </important>
+  /** Describes a scaling instruction for a scalable resource in a scaling plan. Each scaling instruction applies to one resource. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified. AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast. <important> We recommend
+    * waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html|Best Practices for AWS Auto Scaling]] in the <i>AWS Auto Scaling User Guide</i>. </important>
     */
   @js.native
   trait ScalingInstruction extends js.Object {

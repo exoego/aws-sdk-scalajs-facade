@@ -311,11 +311,16 @@ package object s3 {
 
     /** Get a pre-signed URL for a given operation name.
       *
-      * @see https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
-      * @param operation the name of the operation to call. E.g. `getObject`
-      * @param params    Parameters to pass to the operation. See the given operation for the expected operation parameters. In addition, you can also pass the "Expires" parameter to inform S3 how long the URL should work for.
-      * @param expires   The number of seconds to expire the pre-signed URL operation in. Defaults to 900 seconds (15 minutes).
-      * @return Future of the signed URL
+      * @see
+      *   https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getSignedUrl-property
+      * @param operation
+      *   the name of the operation to call. E.g. `getObject`
+      * @param params
+      *   Parameters to pass to the operation. See the given operation for the expected operation parameters. In addition, you can also pass the "Expires" parameter to inform S3 how long the URL should work for.
+      * @param expires
+      *   The number of seconds to expire the pre-signed URL operation in. Defaults to 900 seconds (15 minutes).
+      * @return
+      *   Future of the signed URL
       */
     def getSignedUrlFuture(operation: Operation, params: js.Object, expires: Int = 900): Future[String] = {
       val paramsWithExpires =
@@ -334,11 +339,16 @@ package object s3 {
 
     /** Delete objects whose key name start with the given prefix.
       *
-      * @see https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#listObjectsV2-property
-      * @see https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#deleteObjects-property
-      * @param bucket The name of the bucket
-      * @param prefix An object key name prefix. To include all objects in bucket, specify an empty string.
-      * @return Future of unit (no value)
+      * @see
+      *   https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#listObjectsV2-property
+      * @see
+      *   https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#deleteObjects-property
+      * @param bucket
+      *   The name of the bucket
+      * @param prefix
+      *   An object key name prefix. To include all objects in bucket, specify an empty string.
+      * @return
+      *   Future of unit (no value)
       */
     def deleteObjectsByPrefixFuture(bucket: String, prefix: String)(implicit executor: scala.concurrent.ExecutionContext): Future[Unit] = {
       def deleteObjects(objects: ObjectIdentifierList): Future[Unit] = {
@@ -373,32 +383,30 @@ package object s3 {
       loop()
     }
 
-    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
-      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
-      * @return The managed upload object that can call send() or track progress.
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough. Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return
+      *   The managed upload object that can call send() or track progress.
       */
     def upload(params: PutObjectRequest): managedupload.ManagedUpload = service.asInstanceOf[js.Dynamic].upload(params).asInstanceOf[managedupload.ManagedUpload]
 
-    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
-      * You can configure the concurrent queue size by setting options.
-      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
-      * @return The managed upload object that can call send() or track progress.
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough. You can configure the concurrent queue size by setting options. Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return
+      *   The managed upload object that can call send() or track progress.
       */
     def upload(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): managedupload.ManagedUpload = service.asInstanceOf[js.Dynamic].upload(params, options).asInstanceOf[managedupload.ManagedUpload]
 
-    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
-      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
-      * @return The response data from the successful upload
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough. Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return
+      *   The response data from the successful upload
       */
     def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = {
       import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
       service.upload(params).sendFuture()
     }
 
-    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough.
-      * You can configure the concurrent queue size by setting options.
-      * Note that this is the only operation for which the SDK can retry requests with stream bodies.
-      * @return The response data from the successful upload
+    /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough. You can configure the concurrent queue size by setting options. Note that this is the only operation for which the SDK can retry requests with stream bodies.
+      * @return
+      *   The response data from the successful upload
       */
     def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = {
       import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
@@ -1802,8 +1810,7 @@ package s3 {
 
   /** The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.
     *
-    * '''Note:'''* The <code>DefaultRetention</code> settings require both a mode and a period.
-    * * The <code>DefaultRetention</code> period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.
+    * '''Note:'''* The <code>DefaultRetention</code> settings require both a mode and a period. * The <code>DefaultRetention</code> period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.
     */
   @js.native
   trait DefaultRetention extends js.Object {
@@ -2161,8 +2168,7 @@ package s3 {
     }
   }
 
-  /** Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config|Basic Rule Configuration]].
-    * For more information about delete marker replication, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html|Basic Rule Configuration]].
+  /** Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config|Basic Rule Configuration]]. For more information about delete marker replication, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html|Basic Rule Configuration]].
     *
     * '''Note:'''If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations|Backward Compatibility]].
     */
@@ -4309,8 +4315,7 @@ package s3 {
     }
   }
 
-  /** Specifies the S3 Intelligent-Tiering configuration for an Amazon S3 bucket.
-    * For information about the S3 Intelligent-Tiering storage class, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access|Storage class for automatically optimizing frequently and infrequently accessed objects]].
+  /** Specifies the S3 Intelligent-Tiering configuration for an Amazon S3 bucket. For information about the S3 Intelligent-Tiering storage class, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access|Storage class for automatically optimizing frequently and infrequently accessed objects]].
     */
   @js.native
   trait IntelligentTieringConfiguration extends js.Object {
@@ -5935,9 +5940,7 @@ package s3 {
     }
   }
 
-  /** The container element for object ownership for a bucket's ownership controls.
-    * BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.
-    * ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+  /** The container element for object ownership for a bucket's ownership controls. BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL. ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
     */
   @js.native
   sealed trait ObjectOwnership extends js.Any
@@ -7518,10 +7521,7 @@ package s3 {
     }
   }
 
-  /** A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter.
-    * For example:
-    * * If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.
-    * * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.
+  /** A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example: * If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag. * If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.
     */
   @js.native
   trait ReplicationRuleAndOperator extends js.Object {

@@ -1957,9 +1957,7 @@ package stepfunctions {
     @inline def values = js.Array(SUCCEEDED, FAILED, TIMED_OUT)
   }
 
-  /** Tags are key-value pairs that can be associated with Step Functions state machines and activities.
-    * An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]].
-    * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+  /** Tags are key-value pairs that can be associated with Step Functions state machines and activities. An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]]. Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
   trait Tag extends js.Object {

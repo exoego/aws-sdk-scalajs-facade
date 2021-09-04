@@ -104,8 +104,7 @@ package managedblockchain {
     def voteOnProposal(params: VoteOnProposalInput): Request[VoteOnProposalOutput] = js.native
   }
 
-  /** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.
-    * Applies only to Hyperledger Fabric.
+  /** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait ApprovalThresholdPolicy extends js.Object {
@@ -556,8 +555,7 @@ package managedblockchain {
     }
   }
 
-  /** An invitation to an AWS account to create a member and join the network.
-    * Applies only to Hyperledger Fabric.
+  /** An invitation to an AWS account to create a member and join the network. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -602,8 +600,7 @@ package managedblockchain {
     @inline def values = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
   }
 
-  /** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
-    * Applies only to Hyperledger Fabric.
+  /** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait InviteAction extends js.Object {
@@ -966,8 +963,7 @@ package managedblockchain {
     }
   }
 
-  /** Member configuration properties.
-    * Applies only to Hyperledger Fabric.
+  /** Member configuration properties. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Member extends js.Object {
@@ -1012,8 +1008,7 @@ package managedblockchain {
     }
   }
 
-  /** Configuration properties of the member.
-    * Applies only to Hyperledger Fabric.
+  /** Configuration properties of the member. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait MemberConfiguration extends js.Object {
@@ -1173,8 +1168,7 @@ package managedblockchain {
     @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
   }
 
-  /** A summary of configuration properties for a member.
-    * Applies only to Hyperledger Fabric.
+  /** A summary of configuration properties for a member. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait MemberSummary extends js.Object {
@@ -1639,8 +1633,7 @@ package managedblockchain {
     }
   }
 
-  /** Properties of a proposal on a Managed Blockchain network.
-    * Applies only to Hyperledger Fabric.
+  /** Properties of a proposal on a Managed Blockchain network. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Proposal extends js.Object {
@@ -1697,8 +1690,7 @@ package managedblockchain {
     }
   }
 
-  /** The actions to carry out if a proposal is <code>APPROVED</code>.
-    * Applies only to Hyperledger Fabric.
+  /** The actions to carry out if a proposal is <code>APPROVED</code>. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait ProposalActions extends js.Object {
@@ -1731,8 +1723,7 @@ package managedblockchain {
     @inline def values = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
   }
 
-  /** Properties of a proposal.
-    * Applies only to Hyperledger Fabric.
+  /** Properties of a proposal. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait ProposalSummary extends js.Object {
@@ -1799,8 +1790,7 @@ package managedblockchain {
     }
   }
 
-  /** An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.
-    * Applies only to Hyperledger Fabric.
+  /** An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait RemoveAction extends js.Object {
@@ -2009,8 +1999,7 @@ package managedblockchain {
     }
   }
 
-  /** Properties of an individual vote that a member cast for a proposal.
-    * Applies only to Hyperledger Fabric.
+  /** Properties of an individual vote that a member cast for a proposal. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait VoteSummary extends js.Object {
@@ -2043,8 +2032,7 @@ package managedblockchain {
     @inline def values = js.Array(YES, NO)
   }
 
-  /** The voting rules for the network to decide if a proposal is accepted
-    * Applies only to Hyperledger Fabric.
+  /** The voting rules for the network to decide if a proposal is accepted Applies only to Hyperledger Fabric.
     */
   @js.native
   trait VotingPolicy extends js.Object {

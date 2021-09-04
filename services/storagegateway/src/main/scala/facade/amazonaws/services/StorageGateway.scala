@@ -344,14 +344,7 @@ package storagegateway {
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * ActivationKey
-    * * GatewayName
-    * * GatewayRegion
-    * * GatewayTimezone
-    * * GatewayType
-    * * MediumChangerType
-    * * TapeDriveType
+  /** A JSON object containing one or more of the following fields: * ActivationKey * GatewayName * GatewayRegion * GatewayTimezone * GatewayType * MediumChangerType * TapeDriveType
     */
   @js.native
   trait ActivateGatewayInput extends js.Object {
@@ -534,8 +527,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * DiskIds
+  /** A JSON object containing one or more of the following fields: * DiskIds
     */
   @js.native
   trait AddWorkingStorageInput extends js.Object {
@@ -1295,9 +1287,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * SnapshotDescription
-    * * VolumeARN
+  /** A JSON object containing one or more of the following fields: * SnapshotDescription * VolumeARN
     */
   @js.native
   trait CreateSnapshotInput extends js.Object {
@@ -1344,12 +1334,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * DiskId
-    * * NetworkInterfaceId
-    * * PreserveExistingData
-    * * SnapshotId
-    * * TargetName
+  /** A JSON object containing one or more of the following fields: * DiskId * NetworkInterfaceId * PreserveExistingData * SnapshotId * TargetName
     */
   @js.native
   trait CreateStorediSCSIVolumeInput extends js.Object {
@@ -1616,8 +1601,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing the following fields:
-    * * BandwidthType
+  /** A JSON object containing the following fields: * BandwidthType
     */
   @js.native
   trait DeleteBandwidthRateLimitInput extends js.Object {
@@ -1657,9 +1641,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * InitiatorName
-    * * TargetARN
+  /** A JSON object containing one or more of the following fields: * InitiatorName * TargetARN
     */
   @js.native
   trait DeleteChapCredentialsInput extends js.Object {
@@ -2337,12 +2319,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing the following fields:
-    * * DayOfMonth
-    * * DayOfWeek
-    * * HourOfDay
-    * * MinuteOfHour
-    * * Timezone
+  /** A JSON object containing the following fields: * DayOfMonth * DayOfWeek * HourOfDay * MinuteOfHour * Timezone
     */
   @js.native
   trait DescribeMaintenanceStartTimeOutput extends js.Object {
@@ -3352,9 +3329,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing zero or more of the following fields:
-    * * Limit
-    * * Marker
+  /** A JSON object containing zero or more of the following fields: * Limit * Marker
     */
   @js.native
   trait ListGatewaysInput extends js.Object {
@@ -3519,10 +3494,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object that contains one or more of the following fields:
-    * * Limit
-    * * Marker
-    * * TapeARNs
+  /** A JSON object that contains one or more of the following fields: * Limit * Marker * TapeARNs
     */
   @js.native
   trait ListTapesInput extends js.Object {
@@ -3546,9 +3518,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing the following fields:
-    * * Marker
-    * * VolumeInfos
+  /** A JSON object containing the following fields: * Marker * VolumeInfos
     */
   @js.native
   trait ListTapesOutput extends js.Object {
@@ -3638,9 +3608,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object that contains one or more of the following fields:
-    * * Limit
-    * * Marker
+  /** A JSON object that contains one or more of the following fields: * Limit * Marker
     */
   @js.native
   trait ListVolumesInput extends js.Object {
@@ -3664,9 +3632,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing the following fields:
-    * * Marker
-    * * VolumeInfos
+  /** A JSON object containing the following fields: * Marker * VolumeInfos
     */
   @js.native
   trait ListVolumesOutput extends js.Object {
@@ -4690,9 +4656,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * AverageDownloadRateLimitInBitsPerSec
-    * * AverageUploadRateLimitInBitsPerSec
+  /** A JSON object containing one or more of the following fields: * AverageDownloadRateLimitInBitsPerSec * AverageUploadRateLimitInBitsPerSec
     */
   @js.native
   trait UpdateBandwidthRateLimitInput extends js.Object {
@@ -4772,11 +4736,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * InitiatorName
-    * * SecretToAuthenticateInitiator
-    * * SecretToAuthenticateTarget
-    * * TargetARN
+  /** A JSON object containing one or more of the following fields: * InitiatorName * SecretToAuthenticateInitiator * SecretToAuthenticateTarget * TargetARN
     */
   @js.native
   trait UpdateChapCredentialsInput extends js.Object {
@@ -4957,11 +4917,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing the following fields:
-    * * DayOfMonth
-    * * DayOfWeek
-    * * HourOfDay
-    * * MinuteOfHour
+  /** A JSON object containing the following fields: * DayOfMonth * DayOfWeek * HourOfDay * MinuteOfHour
     */
   @js.native
   trait UpdateMaintenanceStartTimeInput extends js.Object {
@@ -5241,11 +5197,7 @@ package storagegateway {
     }
   }
 
-  /** A JSON object containing one or more of the following fields:
-    * * Description
-    * * RecurrenceInHours
-    * * StartAt
-    * * VolumeARN
+  /** A JSON object containing one or more of the following fields: * Description * RecurrenceInHours * StartAt * VolumeARN
     */
   @js.native
   trait UpdateSnapshotScheduleInput extends js.Object {

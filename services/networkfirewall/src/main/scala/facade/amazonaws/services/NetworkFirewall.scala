@@ -499,11 +499,7 @@ package networkfirewall {
     }
   }
 
-  /** An optional, non-standard action to use for stateless packet handling. You can define this in addition to the standard action that you must specify.
-    * You define and name the custom actions that you want to be able to use, and then you reference them by name in your actions settings.
-    * You can use custom actions in the following places:
-    * * In a rule group's <a>StatelessRulesAndCustomActions</a> specification. The custom actions are available for use by name inside the <code>StatelessRulesAndCustomActions</code> where you define them. You can use them for your stateless rule actions to specify what to do with a packet that matches the rule's match attributes.
-    * * In a <a>FirewallPolicy</a> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules.
+  /** An optional, non-standard action to use for stateless packet handling. You can define this in addition to the standard action that you must specify. You define and name the custom actions that you want to be able to use, and then you reference them by name in your actions settings. You can use custom actions in the following places: * In a rule group's <a>StatelessRulesAndCustomActions</a> specification. The custom actions are available for use by name inside the <code>StatelessRulesAndCustomActions</code> where you define them. You can use them for your stateless rule actions to specify what to do with a packet that matches the rule's match attributes. * In a <a>FirewallPolicy</a> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules.
     */
   @js.native
   trait CustomAction extends js.Object {
@@ -867,9 +863,7 @@ package networkfirewall {
     }
   }
 
-  /** The value to use in an Amazon CloudWatch custom metric dimension. This is used in the <code>PublishMetrics</code> <a>CustomAction</a>. A CloudWatch custom metric dimension is a name/value pair that's part of the identity of a metric.
-    * AWS Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value.
-    * For more information about CloudWatch custom metric dimensions, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions|Publishing Custom Metrics]] in the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html|Amazon CloudWatch User Guide]].
+  /** The value to use in an Amazon CloudWatch custom metric dimension. This is used in the <code>PublishMetrics</code> <a>CustomAction</a>. A CloudWatch custom metric dimension is a name/value pair that's part of the identity of a metric. AWS Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. For more information about CloudWatch custom metric dimensions, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions|Publishing Custom Metrics]] in the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html|Amazon CloudWatch User Guide]].
     */
   @js.native
   trait Dimension extends js.Object {
@@ -940,8 +934,7 @@ package networkfirewall {
     }
   }
 
-  /** The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource.
-    * The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both objects by calling <a>DescribeFirewall</a>.
+  /** The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both objects by calling <a>DescribeFirewall</a>.
     */
   @js.native
   trait Firewall extends js.Object {
@@ -1012,8 +1005,7 @@ package networkfirewall {
     }
   }
 
-  /** The firewall policy defines the behavior of a firewall using a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls.
-    * This, along with <a>FirewallPolicyResponse</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>.
+  /** The firewall policy defines the behavior of a firewall using a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. This, along with <a>FirewallPolicyResponse</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>.
     */
   @js.native
   trait FirewallPolicy extends js.Object {
@@ -1359,8 +1351,7 @@ package networkfirewall {
     }
   }
 
-  /** Defines where AWS Network Firewall sends logs for the firewall for one log type. This is used in <a>LoggingConfiguration</a>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.
-    * Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>.
+  /** Defines where AWS Network Firewall sends logs for the firewall for one log type. This is used in <a>LoggingConfiguration</a>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream. Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>.
     */
   @js.native
   trait LogDestinationConfig extends js.Object {
@@ -1607,9 +1598,7 @@ package networkfirewall {
     }
   }
 
-  /** The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>.
-    * AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow.
-    * To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.
+  /** The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.
     */
   @js.native
   trait RuleGroup extends js.Object {
@@ -1774,9 +1763,7 @@ package networkfirewall {
     }
   }
 
-  /** Stateful inspection criteria for a domain list rule group.
-    * For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.
-    * By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html|Stateful domain list rule groups in AWS Network Firewall]] in the <i>Network Firewall Developer Guide</i>
+  /** Stateful inspection criteria for a domain list rule group. For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake. By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html|Stateful domain list rule groups in AWS Network Firewall]] in the <i>Network Firewall Developer Guide</i>
     */
   @js.native
   trait RulesSourceList extends js.Object {
@@ -1976,11 +1963,7 @@ package networkfirewall {
     }
   }
 
-  /** The status of the firewall endpoint and firewall policy configuration for a single VPC subnet.
-    * For each VPC subnet that you associate with a firewall, AWS Network Firewall does the following:
-    * * Instantiates a firewall endpoint in the subnet, ready to take traffic.
-    * * Configures the endpoint with the current firewall policy settings, to provide the filtering behavior for the endpoint.
-    * When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete.
+  /** The status of the firewall endpoint and firewall policy configuration for a single VPC subnet. For each VPC subnet that you associate with a firewall, AWS Network Firewall does the following: * Instantiates a firewall endpoint in the subnet, ready to take traffic. * Configures the endpoint with the current firewall policy settings, to provide the filtering behavior for the endpoint. When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete.
     */
   @js.native
   trait SyncState extends js.Object {

@@ -476,8 +476,7 @@ package iam {
     @inline def values = js.Array(SERVICE_LEVEL, ACTION_LEVEL)
   }
 
-  /** An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity.
-    * This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
+  /** An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity. This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
     */
   @js.native
   trait AccessDetail extends js.Object {
@@ -512,8 +511,7 @@ package iam {
     }
   }
 
-  /** Contains information about an AWS access key.
-    * This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.
+  /** Contains information about an AWS access key. This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.
     *
     * '''Note:'''The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.
     */
@@ -547,8 +545,7 @@ package iam {
     }
   }
 
-  /** Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.
-    * This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
+  /** Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015. This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
     */
   @js.native
   trait AccessKeyLastUsed extends js.Object {
@@ -573,8 +570,7 @@ package iam {
     }
   }
 
-  /** Contains information about an AWS access key, without its secret key.
-    * This data type is used as a response element in the <a>ListAccessKeys</a> operation.
+  /** Contains information about an AWS access key, without its secret key. This data type is used as a response element in the <a>ListAccessKeys</a> operation.
     */
   @js.native
   trait AccessKeyMetadata extends js.Object {
@@ -721,9 +717,7 @@ package iam {
     }
   }
 
-  /** Contains information about an attached permissions boundary.
-    * An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.
-    * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities ]] in the <i>IAM User Guide</i>.
+  /** Contains information about an attached permissions boundary. An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary. For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait AttachedPermissionsBoundary extends js.Object {
@@ -744,9 +738,7 @@ package iam {
     }
   }
 
-  /** Contains information about an attached policy.
-    * An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about an attached policy. An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations. For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait AttachedPolicy extends js.Object {
@@ -787,8 +779,7 @@ package iam {
     }
   }
 
-  /** Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.
-    * This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.
+  /** Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies. This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.
     */
   @js.native
   trait ContextEntry extends js.Object {
@@ -1849,8 +1840,7 @@ package iam {
     }
   }
 
-  /** The reason that the service-linked role deletion failed.
-    * This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.
+  /** The reason that the service-linked role deletion failed. This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.
     */
   @js.native
   trait DeletionTaskFailureReasonType extends js.Object {
@@ -1968,8 +1958,7 @@ package iam {
     }
   }
 
-  /** An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service.
-    * This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+  /** An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service. This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
     */
   @js.native
   trait EntityDetails extends js.Object {
@@ -1992,8 +1981,7 @@ package iam {
     }
   }
 
-  /** Contains details about the specified entity (user or role).
-    * This data type is an element of the <a>EntityDetails</a> object.
+  /** Contains details about the specified entity (user or role). This data type is an element of the <a>EntityDetails</a> object.
     */
   @js.native
   trait EntityInfo extends js.Object {
@@ -2037,8 +2025,7 @@ package iam {
     @inline def values = js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
   }
 
-  /** Contains information about the reason that the operation failed.
-    * This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+  /** Contains information about the reason that the operation failed. This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
     */
   @js.native
   trait ErrorDetails extends js.Object {
@@ -2060,8 +2047,7 @@ package iam {
     }
   }
 
-  /** Contains the results of a simulation.
-    * This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
+  /** Contains the results of a simulation. This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -3215,11 +3201,7 @@ package iam {
     }
   }
 
-  /** Contains information about an IAM group entity.
-    * This data type is used as a response element in the following operations:
-    * * <a>CreateGroup</a>
-    * * <a>GetGroup</a>
-    * * <a>ListGroups</a>
+  /** Contains information about an IAM group entity. This data type is used as a response element in the following operations: * <a>CreateGroup</a> * <a>GetGroup</a> * <a>ListGroups</a>
     */
   @js.native
   trait Group extends js.Object {
@@ -3250,8 +3232,7 @@ package iam {
     }
   }
 
-  /** Contains information about an IAM group, including all of the group's policies.
-    * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
+  /** Contains information about an IAM group, including all of the group's policies. This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
     */
   @js.native
   trait GroupDetail extends js.Object {
@@ -3287,12 +3268,7 @@ package iam {
     }
   }
 
-  /** Contains information about an instance profile.
-    * This data type is used as a response element in the following operations:
-    * * <a>CreateInstanceProfile</a>
-    * * <a>GetInstanceProfile</a>
-    * * <a>ListInstanceProfiles</a>
-    * * <a>ListInstanceProfilesForRole</a>
+  /** Contains information about an instance profile. This data type is used as a response element in the following operations: * <a>CreateInstanceProfile</a> * <a>GetInstanceProfile</a> * <a>ListInstanceProfiles</a> * <a>ListInstanceProfilesForRole</a>
     */
   @js.native
   trait InstanceProfile extends js.Object {
@@ -4106,8 +4082,7 @@ package iam {
     }
   }
 
-  /** Contains details about the permissions policies that are attached to the specified identity (user, group, or role).
-    * This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.
+  /** Contains details about the permissions policies that are attached to the specified identity (user, group, or role). This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.
     */
   @js.native
   trait ListPoliciesGrantingServiceAccessEntry extends js.Object {
@@ -4969,8 +4944,7 @@ package iam {
     }
   }
 
-  /** Contains the user name and password create date for a user.
-    * This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations.
+  /** Contains the user name and password create date for a user. This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations.
     */
   @js.native
   trait LoginProfile extends js.Object {
@@ -4996,8 +4970,7 @@ package iam {
     }
   }
 
-  /** Contains information about an MFA device.
-    * This data type is used as a response element in the <a>ListMFADevices</a> operation.
+  /** Contains information about an MFA device. This data type is used as a response element in the <a>ListMFADevices</a> operation.
     */
   @js.native
   trait MFADevice extends js.Object {
@@ -5022,9 +4995,7 @@ package iam {
     }
   }
 
-  /** Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.
-    * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
-    * For more information about managed policies, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to. This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation. For more information about managed policies, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait ManagedPolicyDetail extends js.Object {
@@ -5111,8 +5082,7 @@ package iam {
     }
   }
 
-  /** Contains information about the account password policy.
-    * This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation.
+  /** Contains information about the account password policy. This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation.
     */
   @js.native
   trait PasswordPolicy extends js.Object {
@@ -5183,9 +5153,7 @@ package iam {
     }
   }
 
-  /** Contains information about a managed policy.
-    * This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about a managed policy. This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait Policy extends js.Object {
@@ -5236,8 +5204,7 @@ package iam {
     }
   }
 
-  /** Contains information about an IAM policy, including the policy document.
-    * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
+  /** Contains information about an IAM policy, including the policy document. This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
     */
   @js.native
   trait PolicyDetail extends js.Object {
@@ -5268,8 +5235,7 @@ package iam {
     @inline def values = js.Array(allowed, explicitDeny, implicitDeny)
   }
 
-  /** Contains details about the permissions policies that are attached to the specified identity (user, group, or role).
-    * This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.
+  /** Contains details about the permissions policies that are attached to the specified identity (user, group, or role). This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.
     */
   @js.native
   trait PolicyGrantingServiceAccess extends js.Object {
@@ -5301,9 +5267,7 @@ package iam {
     }
   }
 
-  /** Contains information about a group that a managed policy is attached to.
-    * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about a group that a managed policy is attached to. This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyGroup extends js.Object {
@@ -5324,9 +5288,7 @@ package iam {
     }
   }
 
-  /** Contains information about a role that a managed policy is attached to.
-    * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about a role that a managed policy is attached to. This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyRole extends js.Object {
@@ -5361,8 +5323,7 @@ package iam {
     @inline def values = js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none)
   }
 
-  /** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
-    * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities ]] in the <i>IAM User Guide</i>.
+  /** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity. For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities]] in the <i>IAM User Guide</i>.
     */
   @js.native
   sealed trait PolicyUsageType extends js.Any
@@ -5373,9 +5334,7 @@ package iam {
     @inline def values = js.Array(PermissionsPolicy, PermissionsBoundary)
   }
 
-  /** Contains information about a user that a managed policy is attached to.
-    * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about a user that a managed policy is attached to. This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyUser extends js.Object {
@@ -5396,9 +5355,7 @@ package iam {
     }
   }
 
-  /** Contains information about a version of a managed policy.
-    * This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations.
-    * For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
+  /** Contains information about a version of a managed policy. This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. For more information about managed policies, refer to [[https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed policies and inline policies]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -5425,8 +5382,7 @@ package iam {
     }
   }
 
-  /** Contains the row and column of a location of a <code>Statement</code> element in a policy document.
-    * This data type is used as a member of the <code> <a>Statement</a> </code> type.
+  /** Contains the row and column of a location of a <code>Statement</code> element in a policy document. This data type is used as a member of the <code> <a>Statement</a> </code> type.
     */
   @js.native
   trait Position extends js.Object {
@@ -5671,8 +5627,7 @@ package iam {
     }
   }
 
-  /** Contains the result of the simulation of a single API operation call on a single resource.
-    * This data type is used by a member of the <a>EvaluationResult</a> data type.
+  /** Contains the result of the simulation of a single API operation call on a single resource. This data type is used by a member of the <a>EvaluationResult</a> data type.
     */
   @js.native
   trait ResourceSpecificResult extends js.Object {
@@ -5783,8 +5738,7 @@ package iam {
     }
   }
 
-  /** Contains information about an IAM role, including all of the role's policies.
-    * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
+  /** Contains information about an IAM role, including all of the role's policies. This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
     */
   @js.native
   trait RoleDetail extends js.Object {
@@ -5835,8 +5789,7 @@ package iam {
     }
   }
 
-  /** Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period|Regions where data is tracked]] in the <i>IAM User Guide</i>.
-    * This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.
+  /** Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period|Regions where data is tracked]] in the <i>IAM User Guide</i>. This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.
     */
   @js.native
   trait RoleLastUsed extends js.Object {
@@ -5857,8 +5810,7 @@ package iam {
     }
   }
 
-  /** An object that contains details about how a service-linked role is used, if that information is returned by the service.
-    * This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.
+  /** An object that contains details about how a service-linked role is used, if that information is returned by the service. This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.
     */
   @js.native
   trait RoleUsageType extends js.Object {
@@ -5903,8 +5855,7 @@ package iam {
     }
   }
 
-  /** Contains information about an SSH public key.
-    * This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations.
+  /** Contains information about an SSH public key. This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations.
     */
   @js.native
   trait SSHPublicKey extends js.Object {
@@ -5939,8 +5890,7 @@ package iam {
     }
   }
 
-  /** Contains information about an SSH public key, without the key's body or fingerprint.
-    * This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.
+  /** Contains information about an SSH public key, without the key's body or fingerprint. This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.
     */
   @js.native
   trait SSHPublicKeyMetadata extends js.Object {
@@ -5968,8 +5918,7 @@ package iam {
     }
   }
 
-  /** Contains information about a server certificate.
-    * This data type is used as a response element in the <a>GetServerCertificate</a> operation.
+  /** Contains information about a server certificate. This data type is used as a response element in the <a>GetServerCertificate</a> operation.
     */
   @js.native
   trait ServerCertificate extends js.Object {
@@ -5998,8 +5947,7 @@ package iam {
     }
   }
 
-  /** Contains information about a server certificate without its certificate body, certificate chain, and private key.
-    * This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations.
+  /** Contains information about a server certificate without its certificate body, certificate chain, and private key. This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations.
     */
   @js.native
   trait ServerCertificateMetadata extends js.Object {
@@ -6034,8 +5982,7 @@ package iam {
     }
   }
 
-  /** Contains details about the most recent attempt to access the service.
-    * This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
+  /** Contains details about the most recent attempt to access the service. This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
     */
   @js.native
   trait ServiceLastAccessed extends js.Object {
@@ -6181,8 +6128,7 @@ package iam {
     }
   }
 
-  /** Contains information about an X.509 signing certificate.
-    * This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations.
+  /** Contains information about an X.509 signing certificate. This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations.
     */
   @js.native
   trait SigningCertificate extends js.Object {
@@ -6337,8 +6283,7 @@ package iam {
     }
   }
 
-  /** Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.
-    * This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.
+  /** Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation. This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.
     */
   @js.native
   trait Statement extends js.Object {
@@ -6547,8 +6492,7 @@ package iam {
     }
   }
 
-  /** Contains details about the most recent attempt to access an action within the service.
-    * This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
+  /** Contains details about the most recent attempt to access an action within the service. This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
     */
   @js.native
   trait TrackedActionLastAccessed extends js.Object {
@@ -7247,11 +7191,7 @@ package iam {
     }
   }
 
-  /** Contains information about an IAM user entity.
-    * This data type is used as a response element in the following operations:
-    * * <a>CreateUser</a>
-    * * <a>GetUser</a>
-    * * <a>ListUsers</a>
+  /** Contains information about an IAM user entity. This data type is used as a response element in the following operations: * <a>CreateUser</a> * <a>GetUser</a> * <a>ListUsers</a>
     */
   @js.native
   trait User extends js.Object {
@@ -7292,8 +7232,7 @@ package iam {
     }
   }
 
-  /** Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.
-    * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
+  /** Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in. This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
     */
   @js.native
   trait UserDetail extends js.Object {

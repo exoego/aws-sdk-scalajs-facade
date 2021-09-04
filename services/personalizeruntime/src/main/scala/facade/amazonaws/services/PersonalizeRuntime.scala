@@ -147,8 +147,7 @@ package personalizeruntime {
     }
   }
 
-  /** An object that identifies an item.
-    * The and APIs return a list of <code>PredictedItem</code>s.
+  /** An object that identifies an item. The and APIs return a list of <code>PredictedItem</code>s.
     */
   @js.native
   trait PredictedItem extends js.Object {

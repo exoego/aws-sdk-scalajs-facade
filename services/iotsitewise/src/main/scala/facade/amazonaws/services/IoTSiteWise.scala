@@ -2859,9 +2859,7 @@ package iotsitewise {
     @inline def values = js.Array(USER, GROUP, IAM)
   }
 
-  /** Contains an image that is one of the following:
-    * * An image file. Choose this option to upload a new image.
-    * * The ID of an existing image. Choose this option to keep an existing image.
+  /** Contains an image that is one of the following: * An image file. Choose this option to upload a new image. * The ID of an existing image. Choose this option to keep an existing image.
     */
   @js.native
   trait Image extends js.Object {
@@ -3471,9 +3469,7 @@ package iotsitewise {
     }
   }
 
-  /** Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).
-    * The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
-    * For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum). The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Metric extends js.Object {
@@ -4018,8 +4014,7 @@ package iotsitewise {
     @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
-  /** Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
-    * For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>AWS IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Transform extends js.Object {

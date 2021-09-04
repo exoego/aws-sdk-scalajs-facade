@@ -2400,12 +2400,7 @@ package organizations {
     }
   }
 
-  /** A custom key-value pair associated with a resource within your organization.
-    * You can attach tags to any of the following organization resources.
-    * * AWS account
-    * * Organizational unit (OU)
-    * * Organization root
-    * * Policy
+  /** A custom key-value pair associated with a resource within your organization. You can attach tags to any of the following organization resources. * AWS account * Organizational unit (OU) * Organization root * Policy
     */
   @js.native
   trait Tag extends js.Object {

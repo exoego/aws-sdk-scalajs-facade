@@ -242,14 +242,8 @@ package iotevents {
     @inline def values = js.Array(RUNNING, COMPLETE, FAILED)
   }
 
-  /** A structure that contains timestamp information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html|TimeInNanos]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>. The expressions accept literals, operators, functions, references, and substitution templates.
-    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>timeInSeconds</code> parameter can be <code>'1586400675'</code>.
-    * * For references, you must specify either variables or input values. For example, the value for the <code>offsetInNanos</code> parameter can be <code>variable.time</code>.
-    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>timeInSeconds</code> parameter uses a substitution template.
-    * <code>'{input.TemperatureInput.sensorData.timestamp / 1000}'</code>
-    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+  /** A structure that contains timestamp information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html|TimeInNanos]] in the <i>AWS IoT SiteWise API Reference</i>. You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>. The expressions accept literals, operators, functions, references, and substitution templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>timeInSeconds</code> parameter can be <code>'1586400675'</code>. * For references, you must specify either variables or input values. For example, the value for the <code>offsetInNanos</code> parameter can be <code>variable.time</code>. * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and
+    * substitution templates. In the following example, the value for the <code>timeInSeconds</code> parameter uses a substitution template. <code>'{input.TemperatureInput.sensorData.timestamp / 1000}'</code> For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait AssetPropertyTimestamp extends js.Object {
@@ -272,11 +266,7 @@ package iotevents {
     }
   }
 
-  /** A structure that contains value information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html|AssetPropertyValue]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * You must use expressions for all parameters in <code>AssetPropertyValue</code>. The expressions accept literals, operators, functions, references, and substitution templates.
-    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>quality</code> parameter can be <code>'GOOD'</code>.
-    * * For references, you must specify either variables or input values. For example, the value for the <code>quality</code> parameter can be <code>input.TemperatureInput.sensorData.quality</code>.
-    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+  /** A structure that contains value information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html|AssetPropertyValue]] in the <i>AWS IoT SiteWise API Reference</i>. You must use expressions for all parameters in <code>AssetPropertyValue</code>. The expressions accept literals, operators, functions, references, and substitution templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>quality</code> parameter can be <code>'GOOD'</code>. * For references, you must specify either variables or input values. For example, the value for the <code>quality</code> parameter can be <code>input.TemperatureInput.sensorData.quality</code>. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait AssetPropertyValue extends js.Object {
@@ -302,15 +292,8 @@ package iotevents {
     }
   }
 
-  /** A structure that contains an asset property value. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html|Variant]] in the <i>AWS IoT SiteWise API Reference</i>.
-    * You must use expressions for all parameters in <code>AssetPropertyVariant</code>. The expressions accept literals, operators, functions, references, and substitution templates.
-    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>integerValue</code> parameter can be <code>'100'</code>.
-    * * For references, you must specify either variables or parameters. For example, the value for the <code>booleanValue</code> parameter can be <code>variable.offline</code>.
-    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>doubleValue</code> parameter uses a substitution template.
-    * <code>'{input.TemperatureInput.sensorData.temperature * 6 / 5 + 32}'</code>
-    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
-    * You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
+  /** A structure that contains an asset property value. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html|Variant]] in the <i>AWS IoT SiteWise API Reference</i>. You must use expressions for all parameters in <code>AssetPropertyVariant</code>. The expressions accept literals, operators, functions, references, and substitution templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>integerValue</code> parameter can be <code>'100'</code>. * For references, you must specify either variables or parameters. For example, the value for the <code>booleanValue</code> parameter can be <code>variable.offline</code>. * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
+    * In the following example, the value for the <code>doubleValue</code> parameter uses a substitution template. <code>'{input.TemperatureInput.sensorData.temperature * 6 / 5 + 32}'</code> For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>. You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html|AssetProperty]] in the <i>AWS IoT SiteWise API Reference</i>.
     */
   @js.native
   trait AssetPropertyVariant extends js.Object {
@@ -844,18 +827,9 @@ package iotevents {
     }
   }
 
-  /** Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.
-    * You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.
-    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.
-    * * For references, you must specify either variables or input values. For example, the value for the <code>hashKeyField</code> parameter can be <code>input.GreenhouseInput.name</code>.
-    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template.
-    * <code>'{input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code>
-    * * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.
-    * <code>'GreenhouseTemperatureTable ' + input.GreenhouseInput.date</code>
-    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
-    * If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code>&lt;payload-field&gt;_raw</code>.
+  /** Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>. * For references, you must specify either variables or input values. For example, the value for the <code>hashKeyField</code> parameter can be <code>input.GreenhouseInput.name</code>. * For a substitution
+    * template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates. In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template. <code>'{input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code> * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates. In the following example, the value for the <code>tableName</code> parameter uses a string concatenation. <code>'GreenhouseTemperatureTable ' + input.GreenhouseInput.date</code> For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>. If the defined payload type is a string,
+    * <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code>&lt;payload-field&gt;_raw</code>.
     */
   @js.native
   trait DynamoDBAction extends js.Object {
@@ -902,18 +876,9 @@ package iotevents {
     }
   }
 
-  /** Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.
-    * You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.
-    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>tableName</code> parameter can be <code>'GreenhouseTemperatureTable'</code>.
-    * * For references, you must specify either variables or input values. For example, the value for the <code>tableName</code> parameter can be <code>variable.ddbtableName</code>.
-    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>contentExpression</code> parameter in <code>Payload</code> uses a substitution template.
-    * <code>'{"sensorID": "{input.GreenhouseInput.sensor_id}", "temperature": "{input.GreenhouseInput.temperature * 9 / 5 + 32}"}'</code>
-    * * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.
-    * <code>'GreenhouseTemperatureTable ' + input.GreenhouseInput.date</code>
-    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
-    * The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.
+  /** Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the [[https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html|payload]]. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>tableName</code> parameter can be <code>'GreenhouseTemperatureTable'</code>. * For references, you must specify either variables or input values. For example, the value for the <code>tableName</code> parameter can be <code>variable.ddbtableName</code>. * For
+    * a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates. In the following example, the value for the <code>contentExpression</code> parameter in <code>Payload</code> uses a substitution template. <code>'{"sensorID": "{input.GreenhouseInput.sensor_id}", "temperature": "{input.GreenhouseInput.temperature * 9 / 5 + 32}"}'</code> * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates. In the following example, the value for the <code>tableName</code> parameter uses a string concatenation. <code>'GreenhouseTemperatureTable ' + input.GreenhouseInput.date</code> For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]]
+    * in the <i>AWS IoT Events Developer Guide</i>. The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.
     */
   @js.native
   trait DynamoDBv2Action extends js.Object {
@@ -1182,15 +1147,8 @@ package iotevents {
     }
   }
 
-  /** Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.
-    * You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.
-    * <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
-    * * For references, you must specify either variables or input values. For example, the value for the <code>assetId</code> parameter can be <code>input.TurbineInput.assetId1</code>.
-    * * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.
-    * In the following example, the value for the <code>propertyAlias</code> parameter uses a substitution template.
-    * <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/ {input.TemperatureInput.sensorData.turbineID}/temperature'</code>
-    * You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
-    * For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
+  /** Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise. You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>. * For references, you must specify either variables or input values. For example, the value for the <code>assetId</code> parameter can be <code>input.TurbineInput.assetId1</code>. * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates. In the following example,
+    * the value for the <code>propertyAlias</code> parameter uses a substitution template. <code>'company/windfarm/{input.TemperatureInput.sensorData.windfarmID}/turbine/ {input.TemperatureInput.sensorData.turbineID}/temperature'</code> You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise. For more information, see [[https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html|Expressions]] in the <i>AWS IoT Events Developer Guide</i>.
     */
   @js.native
   trait IotSiteWiseAction extends js.Object {
@@ -1516,8 +1474,7 @@ package iotevents {
     }
   }
 
-  /** Information needed to configure the payload.
-    * By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.
+  /** Information needed to configure the payload. By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.
     */
   @js.native
   trait Payload extends js.Object {

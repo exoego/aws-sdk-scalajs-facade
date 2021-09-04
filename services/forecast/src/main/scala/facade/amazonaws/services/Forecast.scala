@@ -1374,15 +1374,7 @@ package forecast {
     @inline def values = js.Array(SUMMARY, COMPUTED)
   }
 
-  /** Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.
-    * For example:
-    * <code>{</code>
-    * <code>"AttributeName": "demand",</code>
-    * <code>FeaturizationPipeline [ {</code>
-    * <code>"FeaturizationMethodName": "filling",</code>
-    * <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
-    * <code>} ]</code>
-    * <code>}</code>
+  /** Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object. For example: <code>{</code> <code>"AttributeName": "demand",</code> <code>FeaturizationPipeline [ {</code> <code>"FeaturizationMethodName": "filling",</code> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> <code>} ]</code> <code>}</code>
     */
   @js.native
   trait Featurization extends js.Object {
@@ -1405,9 +1397,7 @@ package forecast {
     }
   }
 
-  /** In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.
-    * You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training.
-    * You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
+  /** In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>. You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training. You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
     */
   @js.native
   trait FeaturizationConfig extends js.Object {
@@ -1433,12 +1423,7 @@ package forecast {
     }
   }
 
-  /** Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object.
-    * The following is an example of how you specify a <code>FeaturizationMethod</code> object.
-    * <code>{</code>
-    * <code>"FeaturizationMethodName": "filling",</code>
-    * <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code>
-    * <code>}</code>
+  /** Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. The following is an example of how you specify a <code>FeaturizationMethod</code> object. <code>{</code> <code>"FeaturizationMethodName": "filling",</code> <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code> <code>}</code>
     */
   @js.native
   trait FeaturizationMethod extends js.Object {
@@ -1611,9 +1596,7 @@ package forecast {
     }
   }
 
-  /** Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.
-    * A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.
-    * In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.
+  /** Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request. A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters. In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.
     */
   @js.native
   trait HyperParameterTuningJobConfig extends js.Object {
@@ -2289,10 +2272,8 @@ package forecast {
   }
 
   /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in featurizations.
-    * ```Weather Index```
-    * The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
-    * ```Holidays```
-    * Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
+    * ```Weather Index``` The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
+    * ```Holidays``` Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
     */
   @js.native
   trait SupplementaryFeature extends js.Object {
@@ -2314,15 +2295,8 @@ package forecast {
     }
   }
 
-  /** The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
-    * The following basic restrictions apply to tags:
-    * * Maximum number of tags per resource - 50.
-    * * For each resource, each tag key must be unique, and each tag key can have only one value.
-    * * Maximum key length - 128 Unicode characters in UTF-8.
-    * * Maximum value length - 256 Unicode characters in UTF-8.
-    * * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
-    * * Tag keys and values are case sensitive.
-    * * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
+  /** The optional metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. The following basic restrictions apply to tags: * Maximum number of tags per resource - 50. * For each resource, each tag key must be unique, and each tag key can have only one value. * Maximum key length - 128 Unicode characters in UTF-8. * Maximum value length - 256 Unicode characters in UTF-8. * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. * Tag keys and values are case sensitive. * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
+    * Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2485,8 +2459,7 @@ package forecast {
     }
   }
 
-  /** The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object.
-    * The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.
+  /** The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object. The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.
     */
   @js.native
   trait WindowSummary extends js.Object {

@@ -1474,8 +1474,7 @@ package iotanalytics {
     }
   }
 
-  /** A structure that contains the configuration information of a delta time session window.
-    * <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see [[https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6| Creating a SQL dataset with a delta window (CLI)]] in the <i>AWS IoT Analytics User Guide</i>.
+  /** A structure that contains the configuration information of a delta time session window. <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see [[https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6| Creating a SQL dataset with a delta window (CLI)]] in the <i>AWS IoT Analytics User Guide</i>.
     */
   @js.native
   trait DeltaTimeSessionWindowConfiguration extends js.Object {
@@ -1752,9 +1751,7 @@ package iotanalytics {
     }
   }
 
-  /** Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and [[https://parquet.apache.org/|Parquet]].
-    * The default file format is JSON. You can specify only one format.
-    * You can't change the file format after you create the data store.
+  /** Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and [[https://parquet.apache.org/|Parquet]]. The default file format is JSON. You can specify only one format. You can't change the file format after you create the data store.
     */
   @js.native
   trait FileFormatConfiguration extends js.Object {

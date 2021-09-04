@@ -6980,11 +6980,7 @@ package iot {
     @inline def values = js.Array(ENABLED, DISABLED)
   }
 
-  /** The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.
-    * * Data
-    * * Jobs
-    * * CredentialProvider
-    * '''Note:'''The domain configuration feature is in public preview and is subject to change.
+  /** The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint. * Data * Jobs * CredentialProvider '''Note:'''The domain configuration feature is in public preview and is subject to change.
     */
   @js.native
   trait DomainConfigurationSummary extends js.Object {
@@ -7028,13 +7024,7 @@ package iot {
     @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
   }
 
-  /** Describes an action to write to a DynamoDB table.
-    * The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.
-    * The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: {<i>sql-expression</i>}.
-    * You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:
-    * <code>"hashKeyValue": "{topic(3)}"</code>
-    * The following field uses the timestamp:
-    * <code>"rangeKeyValue": "{timestamp()}"</code>
+  /** Describes an action to write to a DynamoDB table. The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table. The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: {<i>sql-expression</i>}. You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic: <code>"hashKeyValue": "{topic(3)}"</code> The following field uses the timestamp: <code>"rangeKeyValue": "{timestamp()}"</code>
     */
   @js.native
   trait DynamoDBAction extends js.Object {
@@ -7081,8 +7071,7 @@ package iot {
     }
   }
 
-  /** Describes an action to write to a DynamoDB table.
-    * This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
+  /** Describes an action to write to a DynamoDB table. This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
     */
   @js.native
   trait DynamoDBv2Action extends js.Object {

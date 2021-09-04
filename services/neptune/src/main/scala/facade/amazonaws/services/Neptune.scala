@@ -368,8 +368,7 @@ package neptune {
     }
   }
 
-  /** The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
-    * The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.
+  /** The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -558,12 +557,7 @@ package neptune {
     }
   }
 
-  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:
-    * * <code>CreateDBClusterEndpoint</code>
-    * * <code>DescribeDBClusterEndpoints</code>
-    * * <code>ModifyDBClusterEndpoint</code>
-    * * <code>DeleteDBClusterEndpoint</code>
-    * For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions: * <code>CreateDBClusterEndpoint</code> * <code>DescribeDBClusterEndpoints</code> * <code>ModifyDBClusterEndpoint</code> * <code>DeleteDBClusterEndpoint</code> For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
   trait CreateDBClusterEndpointOutput extends js.Object {
@@ -1092,8 +1086,7 @@ package neptune {
     }
   }
 
-  /** Contains the details of an Amazon Neptune DB cluster.
-    * This data type is used as a response element in the <a>DescribeDBClusters</a> action.
+  /** Contains the details of an Amazon Neptune DB cluster. This data type is used as a response element in the <a>DescribeDBClusters</a> action.
     */
   @js.native
   trait DBCluster extends js.Object {
@@ -1219,12 +1212,7 @@ package neptune {
     }
   }
 
-  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:
-    * * <code>CreateDBClusterEndpoint</code>
-    * * <code>DescribeDBClusterEndpoints</code>
-    * * <code>ModifyDBClusterEndpoint</code>
-    * * <code>DeleteDBClusterEndpoint</code>
-    * For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions: * <code>CreateDBClusterEndpoint</code> * <code>DescribeDBClusterEndpoints</code> * <code>ModifyDBClusterEndpoint</code> * <code>DeleteDBClusterEndpoint</code> For the data structure that represents Amazon Neptune DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
   trait DBClusterEndpoint extends js.Object {
@@ -1355,8 +1343,7 @@ package neptune {
     }
   }
 
-  /** Contains the details of an Amazon Neptune DB cluster parameter group.
-    * This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
+  /** Contains the details of an Amazon Neptune DB cluster parameter group. This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.
     */
   @js.native
   trait DBClusterParameterGroup extends js.Object {
@@ -1461,8 +1448,7 @@ package neptune {
     }
   }
 
-  /** Contains the details for an Amazon Neptune DB cluster snapshot
-    * This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
+  /** Contains the details for an Amazon Neptune DB cluster snapshot This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
     */
   @js.native
   trait DBClusterSnapshot extends js.Object {
@@ -1537,8 +1523,7 @@ package neptune {
     }
   }
 
-  /** Contains the name and values of a manual DB cluster snapshot attribute.
-    * Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+  /** Contains the name and values of a manual DB cluster snapshot attribute. Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -1559,8 +1544,7 @@ package neptune {
     }
   }
 
-  /** Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.
-    * Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+  /** Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action. Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -1670,8 +1654,7 @@ package neptune {
     }
   }
 
-  /** Contains the details of an Amazon Neptune DB instance.
-    * This data type is used as a response element in the <a>DescribeDBInstances</a> action.
+  /** Contains the details of an Amazon Neptune DB instance. This data type is used as a response element in the <a>DescribeDBInstances</a> action.
     */
   @js.native
   trait DBInstance extends js.Object {
@@ -1891,8 +1874,7 @@ package neptune {
     }
   }
 
-  /** Contains the details of an Amazon Neptune DB parameter group.
-    * This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
+  /** Contains the details of an Amazon Neptune DB parameter group. This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
     */
   @js.native
   trait DBParameterGroup extends js.Object {
@@ -1954,12 +1936,7 @@ package neptune {
     }
   }
 
-  /** The status of the DB parameter group.
-    * This data type is used as a response element in the following actions:
-    * * <a>CreateDBInstance</a>
-    * * <a>DeleteDBInstance</a>
-    * * <a>ModifyDBInstance</a>
-    * * <a>RebootDBInstance</a>
+  /** The status of the DB parameter group. This data type is used as a response element in the following actions: * <a>CreateDBInstance</a> * <a>DeleteDBInstance</a> * <a>ModifyDBInstance</a> * <a>RebootDBInstance</a>
     */
   @js.native
   trait DBParameterGroupStatus extends js.Object {
@@ -2020,8 +1997,7 @@ package neptune {
     }
   }
 
-  /** Contains the details of an Amazon Neptune DB subnet group.
-    * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+  /** Contains the details of an Amazon Neptune DB subnet group. This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
     */
   @js.native
   trait DBSubnetGroup extends js.Object {
@@ -2090,12 +2066,7 @@ package neptune {
     }
   }
 
-  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:
-    * * <code>CreateDBClusterEndpoint</code>
-    * * <code>DescribeDBClusterEndpoints</code>
-    * * <code>ModifyDBClusterEndpoint</code>
-    * * <code>DeleteDBClusterEndpoint</code>
-    * For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions: * <code>CreateDBClusterEndpoint</code> * <code>DescribeDBClusterEndpoints</code> * <code>ModifyDBClusterEndpoint</code> * <code>DeleteDBClusterEndpoint</code> For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
   trait DeleteDBClusterEndpointOutput extends js.Object {
@@ -2975,8 +2946,7 @@ package neptune {
     }
   }
 
-  /** Specifies a connection endpoint.
-    * For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.
+  /** Specifies a connection endpoint. For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -3282,12 +3252,7 @@ package neptune {
     }
   }
 
-  /** This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:
-    * * <code>CreateDBClusterEndpoint</code>
-    * * <code>DescribeDBClusterEndpoints</code>
-    * * <code>ModifyDBClusterEndpoint</code>
-    * * <code>DeleteDBClusterEndpoint</code>
-    * For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
+  /** This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions: * <code>CreateDBClusterEndpoint</code> * <code>DescribeDBClusterEndpoints</code> * <code>ModifyDBClusterEndpoint</code> * <code>DeleteDBClusterEndpoint</code> For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
   trait ModifyDBClusterEndpointOutput extends js.Object {
@@ -3740,8 +3705,7 @@ package neptune {
     }
   }
 
-  /** Contains a list of available options for a DB instance.
-    * This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
+  /** Contains a list of available options for a DB instance. This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
     */
   @js.native
   trait OrderableDBInstanceOption extends js.Object {
@@ -4487,8 +4451,7 @@ package neptune {
     }
   }
 
-  /** Specifies a subnet.
-    * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+  /** Specifies a subnet. This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
     */
   @js.native
   trait Subnet extends js.Object {
@@ -4615,8 +4578,7 @@ package neptune {
     }
   }
 
-  /** Information about valid modifications that you can make to your DB instance.
-    * Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
+  /** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.
     */
   @js.native
   trait ValidStorageOptions extends js.Object {

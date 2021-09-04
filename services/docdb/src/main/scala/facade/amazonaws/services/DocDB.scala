@@ -334,8 +334,7 @@ package docdb {
     }
   }
 
-  /** The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster.
-    * The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.
+  /** The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the engine that is being used.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -1112,8 +1111,7 @@ package docdb {
     }
   }
 
-  /** Contains the name and values of a manual cluster snapshot attribute.
-    * Manual cluster snapshot attributes are used to authorize other AWS accounts to restore a manual cluster snapshot.
+  /** Contains the name and values of a manual cluster snapshot attribute. Manual cluster snapshot attributes are used to authorize other AWS accounts to restore a manual cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -2344,8 +2342,7 @@ package docdb {
     }
   }
 
-  /** A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs.
-    * Wildcards are not supported in filters.
+  /** A named set of filter values, used to return a more specific list of results. You can use a filter to match a set of resources by specific criteria, such as IDs. Wildcards are not supported in filters.
     */
   @js.native
   trait Filter extends js.Object {
