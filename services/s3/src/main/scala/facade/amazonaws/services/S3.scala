@@ -414,7 +414,6 @@ package object s3 {
     }
 
   }
-
   @js.native
   sealed trait Operation extends js.Any
   object Operation {
@@ -429,7 +428,8 @@ package object s3 {
     @inline def deleteBucketAnalyticsConfiguration = "deleteBucketAnalyticsConfiguration".asInstanceOf[Operation]
     @inline def deleteBucketCors = "deleteBucketCors".asInstanceOf[Operation]
     @inline def deleteBucketEncryption = "deleteBucketEncryption".asInstanceOf[Operation]
-    @inline def deleteBucketIntelligentTieringConfiguration = "deleteBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
+    @inline def deleteBucketIntelligentTieringConfiguration =
+      "deleteBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
     @inline def deleteBucketInventoryConfiguration = "deleteBucketInventoryConfiguration".asInstanceOf[Operation]
     @inline def deleteBucketLifecycle = "deleteBucketLifecycle".asInstanceOf[Operation]
     @inline def deleteBucketMetricsConfiguration = "deleteBucketMetricsConfiguration".asInstanceOf[Operation]
@@ -447,7 +447,8 @@ package object s3 {
     @inline def getBucketAnalyticsConfiguration = "getBucketAnalyticsConfiguration".asInstanceOf[Operation]
     @inline def getBucketCors = "getBucketCors".asInstanceOf[Operation]
     @inline def getBucketEncryption = "getBucketEncryption".asInstanceOf[Operation]
-    @inline def getBucketIntelligentTieringConfiguration = "getBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
+    @inline def getBucketIntelligentTieringConfiguration =
+      "getBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
     @inline def getBucketInventoryConfiguration = "getBucketInventoryConfiguration".asInstanceOf[Operation]
     @inline def getBucketLifecycleConfiguration = "getBucketLifecycleConfiguration".asInstanceOf[Operation]
     @inline def getBucketLocation = "getBucketLocation".asInstanceOf[Operation]
@@ -473,7 +474,8 @@ package object s3 {
     @inline def headBucket = "headBucket".asInstanceOf[Operation]
     @inline def headObject = "headObject".asInstanceOf[Operation]
     @inline def listBucketAnalyticsConfigurations = "listBucketAnalyticsConfigurations".asInstanceOf[Operation]
-    @inline def listBucketIntelligentTieringConfigurations = "listBucketIntelligentTieringConfigurations".asInstanceOf[Operation]
+    @inline def listBucketIntelligentTieringConfigurations =
+      "listBucketIntelligentTieringConfigurations".asInstanceOf[Operation]
     @inline def listBucketInventoryConfigurations = "listBucketInventoryConfigurations".asInstanceOf[Operation]
     @inline def listBucketMetricsConfigurations = "listBucketMetricsConfigurations".asInstanceOf[Operation]
     @inline def listBuckets = "listBuckets".asInstanceOf[Operation]
@@ -487,7 +489,8 @@ package object s3 {
     @inline def putBucketAnalyticsConfiguration = "putBucketAnalyticsConfiguration".asInstanceOf[Operation]
     @inline def putBucketCors = "putBucketCors".asInstanceOf[Operation]
     @inline def putBucketEncryption = "putBucketEncryption".asInstanceOf[Operation]
-    @inline def putBucketIntelligentTieringConfiguration = "putBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
+    @inline def putBucketIntelligentTieringConfiguration =
+      "putBucketIntelligentTieringConfiguration".asInstanceOf[Operation]
     @inline def putBucketInventoryConfiguration = "putBucketInventoryConfiguration".asInstanceOf[Operation]
     @inline def putBucketLifecycleConfiguration = "putBucketLifecycleConfiguration".asInstanceOf[Operation]
     @inline def putBucketLogging = "putBucketLogging".asInstanceOf[Operation]

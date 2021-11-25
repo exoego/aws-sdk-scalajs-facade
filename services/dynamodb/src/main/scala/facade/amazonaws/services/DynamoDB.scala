@@ -216,7 +216,6 @@ package object dynamodb {
     @inline def updateTimeToLiveFuture(params: UpdateTimeToLiveInput): Future[UpdateTimeToLiveOutput] = service.updateTimeToLive(params).promise().toFuture
 
   }
-
   @js.native
   @JSImport("aws-sdk/clients/dynamodb", "Converter", "AWS.DynamoDB.Converter")
   object DynamoDBConverter extends js.Object {

@@ -2474,9 +2474,9 @@ package dms {
     val string = "string".asInstanceOf[EndpointSettingTypeValue]
     val boolean = "boolean".asInstanceOf[EndpointSettingTypeValue]
     val integer = "integer".asInstanceOf[EndpointSettingTypeValue]
-    val enum = "enum".asInstanceOf[EndpointSettingTypeValue]
+    val `enum` = "enum".asInstanceOf[EndpointSettingTypeValue]
 
-    @inline def values = js.Array(string, boolean, integer, enum)
+    @inline def values = js.Array(string, boolean, integer, `enum`)
   }
 
   /** Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
