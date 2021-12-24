@@ -419,7 +419,7 @@ package dynamodb {
     def NFromBigInt(value: BigInt): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
     def NFromBigDecimal(value: BigDecimal): AttributeValue = js.Dynamic.literal("N" -> value.toString).asInstanceOf[AttributeValue]
     def BOOL(value: BooleanAttributeValue): AttributeValue = js.Dynamic.literal("BOOL" -> value).asInstanceOf[AttributeValue]
-    def M(value: js.UndefOr[MapAttributeValue]): AttributeValue = if (value.isEmpty) AttributeValue.NULL(true) else js.Dynamic.literal("M" -> value).asInstanceOf[AttributeValue]
+    def M(value: js.UndefOr[MapAttributeValue]): AttributeValue = if (value.isEmpty) AttributeValue.NULL(true) else js.Dynamic.literal("M" -> value.asInstanceOf[js.Any]).asInstanceOf[AttributeValue]
     def M(value: Option[MapAttributeValue]): AttributeValue = if (value.isEmpty) AttributeValue.NULL(true) else js.Dynamic.literal("M" -> value.get).asInstanceOf[AttributeValue]
     def MFromMap[T](value: Map[String, T])(implicit valueType: AttributeValueMapper[T]): AttributeValue = AttributeValueMapper.AttributeValueTypeMapT[T].apply(value)
     def L(value: ListAttributeValue): AttributeValue = js.Dynamic.literal("L" -> value).asInstanceOf[AttributeValue]

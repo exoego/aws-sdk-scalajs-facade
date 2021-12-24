@@ -1,6 +1,6 @@
 import scala.util._
 
-ThisBuild / crossScalaVersions := Seq(SharedConfig.scala213Version, SharedConfig.scala212Version)
+ThisBuild / crossScalaVersions := Seq(SharedConfig.scala3Version, SharedConfig.scala213Version, SharedConfig.scala212Version)
 ThisBuild / scalaVersion := SharedConfig.scala213Version
 ThisBuild / organization := "net.exoego"
 ThisBuild / concurrentRestrictions += Tags.limit(

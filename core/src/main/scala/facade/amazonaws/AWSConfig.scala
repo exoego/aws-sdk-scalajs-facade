@@ -150,7 +150,7 @@ trait ParamValidation extends js.Object {
   var min: js.UndefOr[Boolean] = js.undefined
   var max: js.UndefOr[Boolean] = js.undefined
   var pattern: js.UndefOr[Boolean] = js.undefined
-  var enum: js.UndefOr[Boolean] = js.undefined
+  var `enum`: js.UndefOr[Boolean] = js.undefined
 }
 
 object ParamValidation {
@@ -159,13 +159,13 @@ object ParamValidation {
       min: js.UndefOr[Boolean] = js.undefined,
       max: js.UndefOr[Boolean] = js.undefined,
       pattern: js.UndefOr[Boolean] = js.undefined,
-      enum: js.UndefOr[Boolean] = js.undefined
+      `enum`: js.UndefOr[Boolean] = js.undefined
   ): ParamValidation = {
     val __obj = js.Dynamic.literal()
     min.foreach(__v => __obj.updateDynamic("min")(__v))
     max.foreach(__v => __obj.updateDynamic("max")(__v))
     max.foreach(__v => __obj.updateDynamic("max")(__v))
-    enum.foreach(__v => __obj.updateDynamic("enum")(__v))
+    `enum`.foreach(__v => __obj.updateDynamic("enum")(__v))
     __obj.asInstanceOf[ParamValidation]
   }
 }
