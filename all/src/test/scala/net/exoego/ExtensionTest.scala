@@ -1,6 +1,6 @@
 package net.exoego
 
-import facade.amazonaws.AWS
+import facade.amazonaws._
 import facade.amazonaws.services.s3
 import org.scalatest.funsuite.AnyFunSuite
 
