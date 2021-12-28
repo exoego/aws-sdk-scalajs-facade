@@ -7,9 +7,9 @@ import scala.scalajs.js
 class ExtensionTest extends AnyFunSuite {
   test("AWS object") {
     assert((AWS.config !== null) && (AWS.config !== js.undefined))
-    assert(AWS.config.s3.isEmpty)
+    assert(AWS.config.s3.isEmpty === true)
     AWS.config.s3 = S3ParamsWithEndpoint()
-    assert(AWS.config.s3.nonEmpty)
+    assert(AWS.config.s3.nonEmpty === true)
   }
 
   test("Endpoint") {

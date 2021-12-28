@@ -213,7 +213,7 @@ package object s3 {
   type WebsiteRedirectLocation = String
   type Years = Int
 
-  implicit final class S3Ops(private val service: S3) extends AnyVal {
+  final class S3Ops(private val service: S3) extends AnyVal {
 
     @inline def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] = service.abortMultipartUpload(params).promise().toFuture
     @inline def completeMultipartUploadFuture(params: CompleteMultipartUploadRequest): Future[CompleteMultipartUploadOutput] = service.completeMultipartUpload(params).promise().toFuture
@@ -400,7 +400,6 @@ package object s3 {
       *   The response data from the successful upload
       */
     def uploadFuture(params: PutObjectRequest): Future[managedupload.SendData] = {
-      import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
       service.upload(params).sendFuture()
     }
 
@@ -409,7 +408,6 @@ package object s3 {
       *   The response data from the successful upload
       */
     def uploadFuture(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): Future[managedupload.SendData] = {
-      import facade.amazonaws.services.s3.managedupload.ManagedUploadOps
       service.upload(params, options).sendFuture()
     }
 
@@ -515,9 +513,7 @@ package object s3 {
     @inline def uploadPart = "uploadPart".asInstanceOf[Operation]
     @inline def uploadPartCopy = "uploadPartCopy".asInstanceOf[Operation]
   }
-}
 
-package s3 {
   @js.native
   @JSImport("aws-sdk/clients/s3", JSImport.Namespace, "AWS.S3")
   class S3() extends js.Object {
@@ -619,6 +615,10 @@ package s3 {
     def uploadPart(params: UploadPartRequest): Request[UploadPartOutput] = js.native
     def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput] = js.native
     def writeGetObjectResponse(params: WriteGetObjectResponseRequest): Request[js.Object] = js.native
+  }
+
+  object S3 {
+    @inline implicit def toOps(service: S3): S3Ops = new S3Ops(service)
   }
 
   /** Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon S3 User Guide</i>.

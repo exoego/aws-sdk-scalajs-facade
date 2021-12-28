@@ -23,9 +23,11 @@ package object managedupload {
     var minPartSize: Double = js.native
   }
 
-  implicit final class ManagedUploadOps(private val instance: ManagedUpload) extends AnyVal {
-    def sendFuture(): Future[SendData] = instance.promise().toFuture
-    def onUploadProgress(handler: js.Function1[Progress, Unit]): Unit = instance.on("httpUploadProgress", handler)
+  object ManagedUpload {
+    implicit final class ManagedUploadOps(private val instance: ManagedUpload) extends AnyVal {
+      def sendFuture(): Future[SendData] = instance.promise().toFuture
+      def onUploadProgress(handler: js.Function1[Progress, Unit]): Unit = instance.on("httpUploadProgress", handler)
+    }
   }
 
   @js.native
