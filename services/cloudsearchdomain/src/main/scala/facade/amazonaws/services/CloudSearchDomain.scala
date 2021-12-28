@@ -36,16 +36,14 @@ package object cloudsearchdomain {
   type Suggestions = js.Array[SuggestionMatch]
   type SuggestionsSize = Double
 
-  implicit final class CloudSearchDomainOps(private val service: CloudSearchDomain) extends AnyVal {
+  final class CloudSearchDomainOps(private val service: CloudSearchDomain) extends AnyVal {
 
     @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise().toFuture
     @inline def suggestFuture(params: SuggestRequest): Future[SuggestResponse] = service.suggest(params).promise().toFuture
     @inline def uploadDocumentsFuture(params: UploadDocumentsRequest): Future[UploadDocumentsResponse] = service.uploadDocuments(params).promise().toFuture
 
   }
-}
 
-package cloudsearchdomain {
   @js.native
   @JSImport("aws-sdk/clients/cloudsearchdomain", JSImport.Namespace, "AWS.CloudSearchDomain")
   class CloudSearchDomain() extends js.Object {
@@ -54,6 +52,11 @@ package cloudsearchdomain {
     def search(params: SearchRequest): Request[SearchResponse] = js.native
     def suggest(params: SuggestRequest): Request[SuggestResponse] = js.native
     def uploadDocuments(params: UploadDocumentsRequest): Request[UploadDocumentsResponse] = js.native
+  }
+  object CloudSearchDomain {
+    @inline implicit def toOps(service: CloudSearchDomain): CloudSearchDomainOps = {
+      new CloudSearchDomainOps(service)
+    }
   }
 
   /** A container for facet information.

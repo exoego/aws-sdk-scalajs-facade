@@ -43,7 +43,7 @@ package object lookoutvision {
   type TagList = js.Array[Tag]
   type TagValue = String
 
-  implicit final class LookoutVisionOps(private val service: LookoutVision) extends AnyVal {
+  final class LookoutVisionOps(private val service: LookoutVision) extends AnyVal {
 
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResponse] = service.createModel(params).promise().toFuture
@@ -66,9 +66,7 @@ package object lookoutvision {
     @inline def updateDatasetEntriesFuture(params: UpdateDatasetEntriesRequest): Future[UpdateDatasetEntriesResponse] = service.updateDatasetEntries(params).promise().toFuture
 
   }
-}
 
-package lookoutvision {
   @js.native
   @JSImport("aws-sdk/clients/lookoutvision", JSImport.Namespace, "AWS.LookoutVision")
   class LookoutVision() extends js.Object {
@@ -93,6 +91,11 @@ package lookoutvision {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatasetEntries(params: UpdateDatasetEntriesRequest): Request[UpdateDatasetEntriesResponse] = js.native
+  }
+  object LookoutVision {
+    @inline implicit def toOps(service: LookoutVision): LookoutVisionOps = {
+      new LookoutVisionOps(service)
+    }
   }
 
   @js.native

@@ -81,7 +81,7 @@ package object imagebuilder {
   type Uri = String
   type VersionNumber = String
 
-  implicit final class ImagebuilderOps(private val service: Imagebuilder) extends AnyVal {
+  final class ImagebuilderOps(private val service: Imagebuilder) extends AnyVal {
 
     @inline def cancelImageCreationFuture(params: CancelImageCreationRequest): Future[CancelImageCreationResponse] = service.cancelImageCreation(params).promise().toFuture
     @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] = service.createComponent(params).promise().toFuture
@@ -134,9 +134,7 @@ package object imagebuilder {
     @inline def updateInfrastructureConfigurationFuture(params: UpdateInfrastructureConfigurationRequest): Future[UpdateInfrastructureConfigurationResponse] = service.updateInfrastructureConfiguration(params).promise().toFuture
 
   }
-}
 
-package imagebuilder {
   @js.native
   @JSImport("aws-sdk/clients/imagebuilder", JSImport.Namespace, "AWS.Imagebuilder")
   class Imagebuilder() extends js.Object {
@@ -191,6 +189,11 @@ package imagebuilder {
     def updateDistributionConfiguration(params: UpdateDistributionConfigurationRequest): Request[UpdateDistributionConfigurationResponse] = js.native
     def updateImagePipeline(params: UpdateImagePipelineRequest): Request[UpdateImagePipelineResponse] = js.native
     def updateInfrastructureConfiguration(params: UpdateInfrastructureConfigurationRequest): Request[UpdateInfrastructureConfigurationResponse] = js.native
+  }
+  object Imagebuilder {
+    @inline implicit def toOps(service: Imagebuilder): ImagebuilderOps = {
+      new ImagebuilderOps(service)
+    }
   }
 
   /** Details of an EC2 AMI.

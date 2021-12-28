@@ -52,7 +52,7 @@ package object codeguruprofiler {
   type Timestamp = js.Date
   type UnprocessedEndTimeMap = js.Dictionary[ListOfTimestamps]
 
-  implicit final class CodeGuruProfilerOps(private val service: CodeGuruProfiler) extends AnyVal {
+  final class CodeGuruProfilerOps(private val service: CodeGuruProfiler) extends AnyVal {
 
     @inline def addNotificationChannelsFuture(params: AddNotificationChannelsRequest): Future[AddNotificationChannelsResponse] = service.addNotificationChannels(params).promise().toFuture
     @inline def batchGetFrameMetricDataFuture(params: BatchGetFrameMetricDataRequest): Future[BatchGetFrameMetricDataResponse] = service.batchGetFrameMetricData(params).promise().toFuture
@@ -79,9 +79,7 @@ package object codeguruprofiler {
     @inline def updateProfilingGroupFuture(params: UpdateProfilingGroupRequest): Future[UpdateProfilingGroupResponse] = service.updateProfilingGroup(params).promise().toFuture
 
   }
-}
 
-package codeguruprofiler {
   @js.native
   @JSImport("aws-sdk/clients/codeguruprofiler", JSImport.Namespace, "AWS.CodeGuruProfiler")
   class CodeGuruProfiler() extends js.Object {
@@ -110,6 +108,11 @@ package codeguruprofiler {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateProfilingGroup(params: UpdateProfilingGroupRequest): Request[UpdateProfilingGroupResponse] = js.native
+  }
+  object CodeGuruProfiler {
+    @inline implicit def toOps(service: CodeGuruProfiler): CodeGuruProfilerOps = {
+      new CodeGuruProfilerOps(service)
+    }
   }
 
   @js.native

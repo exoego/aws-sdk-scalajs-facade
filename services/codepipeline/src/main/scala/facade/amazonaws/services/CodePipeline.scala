@@ -131,7 +131,7 @@ package object codepipeline {
   type WebhookName = String
   type WebhookUrl = String
 
-  implicit final class CodePipelineOps(private val service: CodePipeline) extends AnyVal {
+  final class CodePipelineOps(private val service: CodePipeline) extends AnyVal {
 
     @inline def acknowledgeJobFuture(params: AcknowledgeJobInput): Future[AcknowledgeJobOutput] = service.acknowledgeJob(params).promise().toFuture
     @inline def acknowledgeThirdPartyJobFuture(params: AcknowledgeThirdPartyJobInput): Future[AcknowledgeThirdPartyJobOutput] = service.acknowledgeThirdPartyJob(params).promise().toFuture
@@ -174,9 +174,7 @@ package object codepipeline {
     @inline def updatePipelineFuture(params: UpdatePipelineInput): Future[UpdatePipelineOutput] = service.updatePipeline(params).promise().toFuture
 
   }
-}
 
-package codepipeline {
   @js.native
   @JSImport("aws-sdk/clients/codepipeline", JSImport.Namespace, "AWS.CodePipeline")
   class CodePipeline() extends js.Object {
@@ -221,6 +219,11 @@ package codepipeline {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateActionType(params: UpdateActionTypeInput): Request[js.Object] = js.native
     def updatePipeline(params: UpdatePipelineInput): Request[UpdatePipelineOutput] = js.native
+  }
+  object CodePipeline {
+    @inline implicit def toOps(service: CodePipeline): CodePipelineOps = {
+      new CodePipelineOps(service)
+    }
   }
 
   /** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.

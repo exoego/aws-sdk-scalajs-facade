@@ -134,7 +134,7 @@ package object medialive {
   type __stringMin6Max6 = String
   type __timestamp = js.Date
 
-  implicit final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
+  final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
 
     @inline def acceptInputDeviceTransferFuture(params: AcceptInputDeviceTransferRequest): Future[AcceptInputDeviceTransferResponse] = service.acceptInputDeviceTransfer(params).promise().toFuture
     @inline def batchDeleteFuture(params: BatchDeleteRequest): Future[BatchDeleteResponse] = service.batchDelete(params).promise().toFuture
@@ -194,9 +194,7 @@ package object medialive {
     @inline def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] = service.updateReservation(params).promise().toFuture
 
   }
-}
 
-package medialive {
   @js.native
   @JSImport("aws-sdk/clients/medialive", JSImport.Namespace, "AWS.MediaLive")
   class MediaLive() extends js.Object {
@@ -258,6 +256,11 @@ package medialive {
     def updateMultiplex(params: UpdateMultiplexRequest): Request[UpdateMultiplexResponse] = js.native
     def updateMultiplexProgram(params: UpdateMultiplexProgramRequest): Request[UpdateMultiplexProgramResponse] = js.native
     def updateReservation(params: UpdateReservationRequest): Request[UpdateReservationResponse] = js.native
+  }
+  object MediaLive {
+    @inline implicit def toOps(service: MediaLive): MediaLiveOps = {
+      new MediaLiveOps(service)
+    }
   }
 
   /** Aac Coding Mode

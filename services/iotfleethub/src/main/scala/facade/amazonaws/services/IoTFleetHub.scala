@@ -24,7 +24,7 @@ package object iotfleethub {
   type Timestamp = Double
   type Url = String
 
-  implicit final class IoTFleetHubOps(private val service: IoTFleetHub) extends AnyVal {
+  final class IoTFleetHubOps(private val service: IoTFleetHub) extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] = service.deleteApplication(params).promise().toFuture
@@ -36,9 +36,7 @@ package object iotfleethub {
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
 
   }
-}
 
-package iotfleethub {
   @js.native
   @JSImport("aws-sdk/clients/iotfleethub", JSImport.Namespace, "AWS.IoTFleetHub")
   class IoTFleetHub() extends js.Object {
@@ -52,6 +50,11 @@ package iotfleethub {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+  }
+  object IoTFleetHub {
+    @inline implicit def toOps(service: IoTFleetHub): IoTFleetHubOps = {
+      new IoTFleetHubOps(service)
+    }
   }
 
   @js.native

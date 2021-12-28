@@ -36,7 +36,7 @@ package object connectparticipant {
   type UploadMetadataSignedHeadersValue = String
   type UploadMetadataUrl = String
 
-  implicit final class ConnectParticipantOps(private val service: ConnectParticipant) extends AnyVal {
+  final class ConnectParticipantOps(private val service: ConnectParticipant) extends AnyVal {
 
     @inline def completeAttachmentUploadFuture(params: CompleteAttachmentUploadRequest): Future[CompleteAttachmentUploadResponse] = service.completeAttachmentUpload(params).promise().toFuture
     @inline def createParticipantConnectionFuture(params: CreateParticipantConnectionRequest): Future[CreateParticipantConnectionResponse] = service.createParticipantConnection(params).promise().toFuture
@@ -48,9 +48,7 @@ package object connectparticipant {
     @inline def startAttachmentUploadFuture(params: StartAttachmentUploadRequest): Future[StartAttachmentUploadResponse] = service.startAttachmentUpload(params).promise().toFuture
 
   }
-}
 
-package connectparticipant {
   @js.native
   @JSImport("aws-sdk/clients/connectparticipant", JSImport.Namespace, "AWS.ConnectParticipant")
   class ConnectParticipant() extends js.Object {
@@ -64,6 +62,11 @@ package connectparticipant {
     def sendEvent(params: SendEventRequest): Request[SendEventResponse] = js.native
     def sendMessage(params: SendMessageRequest): Request[SendMessageResponse] = js.native
     def startAttachmentUpload(params: StartAttachmentUploadRequest): Request[StartAttachmentUploadResponse] = js.native
+  }
+  object ConnectParticipant {
+    @inline implicit def toOps(service: ConnectParticipant): ConnectParticipantOps = {
+      new ConnectParticipantOps(service)
+    }
   }
 
   @js.native

@@ -18,7 +18,7 @@ package object iotdata {
   type Timestamp = Double
   type Topic = String
 
-  implicit final class IotDataOps(private val service: IotData) extends AnyVal {
+  final class IotDataOps(private val service: IotData) extends AnyVal {
 
     @inline def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] = service.deleteThingShadow(params).promise().toFuture
     @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] = service.getThingShadow(params).promise().toFuture
@@ -27,9 +27,7 @@ package object iotdata {
     @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] = service.updateThingShadow(params).promise().toFuture
 
   }
-}
 
-package iotdata {
   @js.native
   @JSImport("aws-sdk/clients/iotdata", JSImport.Namespace, "AWS.IotData")
   class IotData() extends js.Object {
@@ -40,6 +38,11 @@ package iotdata {
     def listNamedShadowsForThing(params: ListNamedShadowsForThingRequest): Request[ListNamedShadowsForThingResponse] = js.native
     def publish(params: PublishRequest): Request[js.Object] = js.native
     def updateThingShadow(params: UpdateThingShadowRequest): Request[UpdateThingShadowResponse] = js.native
+  }
+  object IotData {
+    @inline implicit def toOps(service: IotData): IotDataOps = {
+      new IotDataOps(service)
+    }
   }
 
   /** The input for the DeleteThingShadow operation.

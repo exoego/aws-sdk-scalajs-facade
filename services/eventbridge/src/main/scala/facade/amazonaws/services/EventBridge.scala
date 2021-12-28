@@ -118,7 +118,7 @@ package object eventbridge {
   type TransformerInput = String
   type TransformerPaths = js.Dictionary[TargetInputPath]
 
-  implicit final class EventBridgeOps(private val service: EventBridge) extends AnyVal {
+  final class EventBridgeOps(private val service: EventBridge) extends AnyVal {
 
     @inline def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] = service.activateEventSource(params).promise().toFuture
     @inline def cancelReplayFuture(params: CancelReplayRequest): Future[CancelReplayResponse] = service.cancelReplay(params).promise().toFuture
@@ -173,9 +173,7 @@ package object eventbridge {
     @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] = service.updateConnection(params).promise().toFuture
 
   }
-}
 
-package eventbridge {
   @js.native
   @JSImport("aws-sdk/clients/eventbridge", JSImport.Namespace, "AWS.EventBridge")
   class EventBridge() extends js.Object {
@@ -232,6 +230,11 @@ package eventbridge {
     def updateApiDestination(params: UpdateApiDestinationRequest): Request[UpdateApiDestinationResponse] = js.native
     def updateArchive(params: UpdateArchiveRequest): Request[UpdateArchiveResponse] = js.native
     def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse] = js.native
+  }
+  object EventBridge {
+    @inline implicit def toOps(service: EventBridge): EventBridgeOps = {
+      new EventBridgeOps(service)
+    }
   }
 
   @js.native

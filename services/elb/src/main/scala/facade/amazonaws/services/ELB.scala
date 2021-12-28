@@ -83,7 +83,7 @@ package object elb {
   type UnhealthyThreshold = Int
   type VPCId = String
 
-  implicit final class ELBOps(private val service: ELB) extends AnyVal {
+  final class ELBOps(private val service: ELB) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def applySecurityGroupsToLoadBalancerFuture(params: ApplySecurityGroupsToLoadBalancerInput): Future[ApplySecurityGroupsToLoadBalancerOutput] = service.applySecurityGroupsToLoadBalancer(params).promise().toFuture
@@ -116,9 +116,7 @@ package object elb {
     @inline def setLoadBalancerPoliciesOfListenerFuture(params: SetLoadBalancerPoliciesOfListenerInput): Future[SetLoadBalancerPoliciesOfListenerOutput] = service.setLoadBalancerPoliciesOfListener(params).promise().toFuture
 
   }
-}
 
-package elb {
   @js.native
   @JSImport("aws-sdk/clients/elb", JSImport.Namespace, "AWS.ELB")
   class ELB() extends js.Object {
@@ -153,6 +151,11 @@ package elb {
     def setLoadBalancerListenerSSLCertificate(params: SetLoadBalancerListenerSSLCertificateInput): Request[SetLoadBalancerListenerSSLCertificateOutput] = js.native
     def setLoadBalancerPoliciesForBackendServer(params: SetLoadBalancerPoliciesForBackendServerInput): Request[SetLoadBalancerPoliciesForBackendServerOutput] = js.native
     def setLoadBalancerPoliciesOfListener(params: SetLoadBalancerPoliciesOfListenerInput): Request[SetLoadBalancerPoliciesOfListenerOutput] = js.native
+  }
+  object ELB {
+    @inline implicit def toOps(service: ELB): ELBOps = {
+      new ELBOps(service)
+    }
   }
 
   /** Information about the <code>AccessLog</code> attribute.

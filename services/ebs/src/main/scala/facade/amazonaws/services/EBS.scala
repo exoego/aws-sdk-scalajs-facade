@@ -31,7 +31,7 @@ package object ebs {
   type Timeout = Int
   type VolumeSize = Double
 
-  implicit final class EBSOps(private val service: EBS) extends AnyVal {
+  final class EBSOps(private val service: EBS) extends AnyVal {
 
     @inline def completeSnapshotFuture(params: CompleteSnapshotRequest): Future[CompleteSnapshotResponse] = service.completeSnapshot(params).promise().toFuture
     @inline def getSnapshotBlockFuture(params: GetSnapshotBlockRequest): Future[GetSnapshotBlockResponse] = service.getSnapshotBlock(params).promise().toFuture
@@ -41,9 +41,7 @@ package object ebs {
     @inline def startSnapshotFuture(params: StartSnapshotRequest): Future[StartSnapshotResponse] = service.startSnapshot(params).promise().toFuture
 
   }
-}
 
-package ebs {
   @js.native
   @JSImport("aws-sdk/clients/ebs", JSImport.Namespace, "AWS.EBS")
   class EBS() extends js.Object {
@@ -55,6 +53,11 @@ package ebs {
     def listSnapshotBlocks(params: ListSnapshotBlocksRequest): Request[ListSnapshotBlocksResponse] = js.native
     def putSnapshotBlock(params: PutSnapshotBlockRequest): Request[PutSnapshotBlockResponse] = js.native
     def startSnapshot(params: StartSnapshotRequest): Request[StartSnapshotResponse] = js.native
+  }
+  object EBS {
+    @inline implicit def toOps(service: EBS): EBSOps = {
+      new EBSOps(service)
+    }
   }
 
   /** A block of data in an Amazon Elastic Block Store snapshot.

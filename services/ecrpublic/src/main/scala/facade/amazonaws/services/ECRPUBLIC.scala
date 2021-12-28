@@ -66,7 +66,7 @@ package object ecrpublic {
   type Url = String
   type UsageText = String
 
-  implicit final class ECRPUBLICOps(private val service: ECRPUBLIC) extends AnyVal {
+  final class ECRPUBLICOps(private val service: ECRPUBLIC) extends AnyVal {
 
     @inline def batchCheckLayerAvailabilityFuture(params: BatchCheckLayerAvailabilityRequest): Future[BatchCheckLayerAvailabilityResponse] = service.batchCheckLayerAvailability(params).promise().toFuture
     @inline def batchDeleteImageFuture(params: BatchDeleteImageRequest): Future[BatchDeleteImageResponse] = service.batchDeleteImage(params).promise().toFuture
@@ -93,9 +93,7 @@ package object ecrpublic {
     @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] = service.uploadLayerPart(params).promise().toFuture
 
   }
-}
 
-package ecrpublic {
   @js.native
   @JSImport("aws-sdk/clients/ecrpublic", JSImport.Namespace, "AWS.ECRPUBLIC")
   class ECRPUBLIC() extends js.Object {
@@ -124,6 +122,11 @@ package ecrpublic {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
+  }
+  object ECRPUBLIC {
+    @inline implicit def toOps(service: ECRPUBLIC): ECRPUBLICOps = {
+      new ECRPUBLICOps(service)
+    }
   }
 
   /** An authorization token data object that corresponds to a public registry.

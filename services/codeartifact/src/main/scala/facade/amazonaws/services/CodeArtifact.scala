@@ -55,7 +55,7 @@ package object codeartifact {
   type UpstreamRepositoryInfoList = js.Array[UpstreamRepositoryInfo]
   type UpstreamRepositoryList = js.Array[UpstreamRepository]
 
-  implicit final class CodeArtifactOps(private val service: CodeArtifact) extends AnyVal {
+  final class CodeArtifactOps(private val service: CodeArtifact) extends AnyVal {
 
     @inline def associateExternalConnectionFuture(params: AssociateExternalConnectionRequest): Future[AssociateExternalConnectionResult] = service.associateExternalConnection(params).promise().toFuture
     @inline def copyPackageVersionsFuture(params: CopyPackageVersionsRequest): Future[CopyPackageVersionsResult] = service.copyPackageVersions(params).promise().toFuture
@@ -93,9 +93,7 @@ package object codeartifact {
     @inline def updateRepositoryFuture(params: UpdateRepositoryRequest): Future[UpdateRepositoryResult] = service.updateRepository(params).promise().toFuture
 
   }
-}
 
-package codeartifact {
   @js.native
   @JSImport("aws-sdk/clients/codeartifact", JSImport.Namespace, "AWS.CodeArtifact")
   class CodeArtifact() extends js.Object {
@@ -135,6 +133,11 @@ package codeartifact {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updatePackageVersionsStatus(params: UpdatePackageVersionsStatusRequest): Request[UpdatePackageVersionsStatusResult] = js.native
     def updateRepository(params: UpdateRepositoryRequest): Request[UpdateRepositoryResult] = js.native
+  }
+  object CodeArtifact {
+    @inline implicit def toOps(service: CodeArtifact): CodeArtifactOps = {
+      new CodeArtifactOps(service)
+    }
   }
 
   /** Contains details about a package version asset.

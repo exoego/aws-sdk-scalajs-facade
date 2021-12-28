@@ -21,7 +21,7 @@ package object iot1clickdevicesservice {
   type __stringMin12Max40 = String
   type __timestampIso8601 = js.Date
 
-  implicit final class IoT1ClickDevicesServiceOps(private val service: IoT1ClickDevicesService) extends AnyVal {
+  final class IoT1ClickDevicesServiceOps(private val service: IoT1ClickDevicesService) extends AnyVal {
 
     @inline def claimDevicesByClaimCodeFuture(params: ClaimDevicesByClaimCodeRequest): Future[ClaimDevicesByClaimCodeResponse] = service.claimDevicesByClaimCode(params).promise().toFuture
     @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] = service.describeDevice(params).promise().toFuture
@@ -38,9 +38,7 @@ package object iot1clickdevicesservice {
     @inline def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] = service.updateDeviceState(params).promise().toFuture
 
   }
-}
 
-package iot1clickdevicesservice {
   @js.native
   @JSImport("aws-sdk/clients/iot1clickdevicesservice", JSImport.Namespace, "AWS.IoT1ClickDevicesService")
   class IoT1ClickDevicesService() extends js.Object {
@@ -59,6 +57,11 @@ package iot1clickdevicesservice {
     def unclaimDevice(params: UnclaimDeviceRequest): Request[UnclaimDeviceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateDeviceState(params: UpdateDeviceStateRequest): Request[UpdateDeviceStateResponse] = js.native
+  }
+  object IoT1ClickDevicesService {
+    @inline implicit def toOps(service: IoT1ClickDevicesService): IoT1ClickDevicesServiceOps = {
+      new IoT1ClickDevicesServiceOps(service)
+    }
   }
 
   @js.native

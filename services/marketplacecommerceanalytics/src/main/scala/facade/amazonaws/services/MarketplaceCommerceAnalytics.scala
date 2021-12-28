@@ -18,15 +18,13 @@ package object marketplacecommerceanalytics {
   type RoleNameArn = String
   type SnsTopicArn = String
 
-  implicit final class MarketplaceCommerceAnalyticsOps(private val service: MarketplaceCommerceAnalytics) extends AnyVal {
+  final class MarketplaceCommerceAnalyticsOps(private val service: MarketplaceCommerceAnalytics) extends AnyVal {
 
     @inline def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] = service.generateDataSet(params).promise().toFuture
     @inline def startSupportDataExportFuture(params: StartSupportDataExportRequest): Future[StartSupportDataExportResult] = service.startSupportDataExport(params).promise().toFuture
 
   }
-}
 
-package marketplacecommerceanalytics {
   @js.native
   @JSImport("aws-sdk/clients/marketplacecommerceanalytics", JSImport.Namespace, "AWS.MarketplaceCommerceAnalytics")
   class MarketplaceCommerceAnalytics() extends js.Object {
@@ -34,6 +32,11 @@ package marketplacecommerceanalytics {
 
     def generateDataSet(params: GenerateDataSetRequest): Request[GenerateDataSetResult] = js.native
     def startSupportDataExport(params: StartSupportDataExportRequest): Request[StartSupportDataExportResult] = js.native
+  }
+  object MarketplaceCommerceAnalytics {
+    @inline implicit def toOps(service: MarketplaceCommerceAnalytics): MarketplaceCommerceAnalyticsOps = {
+      new MarketplaceCommerceAnalyticsOps(service)
+    }
   }
 
   @js.native

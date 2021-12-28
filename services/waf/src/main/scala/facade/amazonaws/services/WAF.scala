@@ -84,7 +84,7 @@ package object waf {
   type XssMatchSetUpdates = js.Array[XssMatchSetUpdate]
   type XssMatchTuples = js.Array[XssMatchTuple]
 
-  implicit final class WAFOps(private val service: WAF) extends AnyVal {
+  final class WAFOps(private val service: WAF) extends AnyVal {
 
     @inline def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] = service.createByteMatchSet(params).promise().toFuture
     @inline def createGeoMatchSetFuture(params: CreateGeoMatchSetRequest): Future[CreateGeoMatchSetResponse] = service.createGeoMatchSet(params).promise().toFuture
@@ -165,9 +165,7 @@ package object waf {
     @inline def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] = service.updateXssMatchSet(params).promise().toFuture
 
   }
-}
 
-package waf {
   @js.native
   @JSImport("aws-sdk/clients/waf", JSImport.Namespace, "AWS.WAF")
   class WAF() extends js.Object {
@@ -250,6 +248,11 @@ package waf {
     def updateSqlInjectionMatchSet(params: UpdateSqlInjectionMatchSetRequest): Request[UpdateSqlInjectionMatchSetResponse] = js.native
     def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
     def updateXssMatchSet(params: UpdateXssMatchSetRequest): Request[UpdateXssMatchSetResponse] = js.native
+  }
+  object WAF {
+    @inline implicit def toOps(service: WAF): WAFOps = {
+      new WAFOps(service)
+    }
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.

@@ -515,7 +515,7 @@ package object ssm {
   type ValidNextStepList = js.Array[ValidNextStep]
   type Version = String
 
-  implicit final class SSMOps(private val service: SSM) extends AnyVal {
+  final class SSMOps(private val service: SSM) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] = service.addTagsToResource(params).promise().toFuture
     @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] = service.cancelCommand(params).promise().toFuture
@@ -651,9 +651,7 @@ package object ssm {
     @inline def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] = service.updateServiceSetting(params).promise().toFuture
 
   }
-}
 
-package ssm {
   @js.native
   @JSImport("aws-sdk/clients/ssm", JSImport.Namespace, "AWS.SSM")
   class SSM() extends js.Object {
@@ -791,6 +789,11 @@ package ssm {
     def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult] = js.native
     def updateResourceDataSync(params: UpdateResourceDataSyncRequest): Request[UpdateResourceDataSyncResult] = js.native
     def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
+  }
+  object SSM {
+    @inline implicit def toOps(service: SSM): SSMOps = {
+      new SSMOps(service)
+    }
   }
 
   /** Information includes the AWS account ID where the current document is shared and the version shared with that account.

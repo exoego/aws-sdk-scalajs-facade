@@ -19,7 +19,7 @@ package object cur {
   type S3Prefix = String
   type SchemaElementList = js.Array[SchemaElement]
 
-  implicit final class CUROps(private val service: CUR) extends AnyVal {
+  final class CUROps(private val service: CUR) extends AnyVal {
 
     @inline def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] = service.deleteReportDefinition(params).promise().toFuture
     @inline def describeReportDefinitionsFuture(params: DescribeReportDefinitionsRequest): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise().toFuture
@@ -27,9 +27,7 @@ package object cur {
     @inline def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] = service.putReportDefinition(params).promise().toFuture
 
   }
-}
 
-package cur {
   @js.native
   @JSImport("aws-sdk/clients/cur", JSImport.Namespace, "AWS.CUR")
   class CUR() extends js.Object {
@@ -39,6 +37,11 @@ package cur {
     def describeReportDefinitions(params: DescribeReportDefinitionsRequest): Request[DescribeReportDefinitionsResponse] = js.native
     def modifyReportDefinition(params: ModifyReportDefinitionRequest): Request[ModifyReportDefinitionResponse] = js.native
     def putReportDefinition(params: PutReportDefinitionRequest): Request[PutReportDefinitionResponse] = js.native
+  }
+  object CUR {
+    @inline implicit def toOps(service: CUR): CUROps = {
+      new CUROps(service)
+    }
   }
 
   /** The region of the S3 bucket that AWS delivers the report into.

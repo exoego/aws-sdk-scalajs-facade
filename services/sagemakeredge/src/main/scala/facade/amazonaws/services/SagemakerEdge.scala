@@ -20,15 +20,13 @@ package object sagemakeredge {
   type Value = Double
   type Version = String
 
-  implicit final class SagemakerEdgeOps(private val service: SagemakerEdge) extends AnyVal {
+  final class SagemakerEdgeOps(private val service: SagemakerEdge) extends AnyVal {
 
     @inline def getDeviceRegistrationFuture(params: GetDeviceRegistrationRequest): Future[GetDeviceRegistrationResult] = service.getDeviceRegistration(params).promise().toFuture
     @inline def sendHeartbeatFuture(params: SendHeartbeatRequest): Future[js.Object] = service.sendHeartbeat(params).promise().toFuture
 
   }
-}
 
-package sagemakeredge {
   @js.native
   @JSImport("aws-sdk/clients/sagemakeredge", JSImport.Namespace, "AWS.SagemakerEdge")
   class SagemakerEdge() extends js.Object {
@@ -36,6 +34,11 @@ package sagemakeredge {
 
     def getDeviceRegistration(params: GetDeviceRegistrationRequest): Request[GetDeviceRegistrationResult] = js.native
     def sendHeartbeat(params: SendHeartbeatRequest): Request[js.Object] = js.native
+  }
+  object SagemakerEdge {
+    @inline implicit def toOps(service: SagemakerEdge): SagemakerEdgeOps = {
+      new SagemakerEdgeOps(service)
+    }
   }
 
   /** Information required for edge device metrics.

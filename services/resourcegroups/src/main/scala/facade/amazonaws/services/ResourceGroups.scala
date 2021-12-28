@@ -45,7 +45,7 @@ package object resourcegroups {
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
 
-  implicit final class ResourceGroupsOps(private val service: ResourceGroups) extends AnyVal {
+  final class ResourceGroupsOps(private val service: ResourceGroups) extends AnyVal {
 
     @inline def createGroupFuture(params: CreateGroupInput): Future[CreateGroupOutput] = service.createGroup(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupInput): Future[DeleteGroupOutput] = service.deleteGroup(params).promise().toFuture
@@ -65,9 +65,7 @@ package object resourcegroups {
     @inline def updateGroupQueryFuture(params: UpdateGroupQueryInput): Future[UpdateGroupQueryOutput] = service.updateGroupQuery(params).promise().toFuture
 
   }
-}
 
-package resourcegroups {
   @js.native
   @JSImport("aws-sdk/clients/resourcegroups", JSImport.Namespace, "AWS.ResourceGroups")
   class ResourceGroups() extends js.Object {
@@ -89,6 +87,11 @@ package resourcegroups {
     def untag(params: UntagInput): Request[UntagOutput] = js.native
     def updateGroup(params: UpdateGroupInput): Request[UpdateGroupOutput] = js.native
     def updateGroupQuery(params: UpdateGroupQueryInput): Request[UpdateGroupQueryOutput] = js.native
+  }
+  object ResourceGroups {
+    @inline implicit def toOps(service: ResourceGroups): ResourceGroupsOps = {
+      new ResourceGroupsOps(service)
+    }
   }
 
   @js.native

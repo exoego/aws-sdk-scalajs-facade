@@ -52,7 +52,7 @@ package object acmpca {
   type TagList = js.Array[Tag]
   type TagValue = String
 
-  implicit final class ACMPCAOps(private val service: ACMPCA) extends AnyVal {
+  final class ACMPCAOps(private val service: ACMPCA) extends AnyVal {
 
     @inline def createCertificateAuthorityAuditReportFuture(params: CreateCertificateAuthorityAuditReportRequest): Future[CreateCertificateAuthorityAuditReportResponse] = service.createCertificateAuthorityAuditReport(params).promise().toFuture
     @inline def createCertificateAuthorityFuture(params: CreateCertificateAuthorityRequest): Future[CreateCertificateAuthorityResponse] = service.createCertificateAuthority(params).promise().toFuture
@@ -79,9 +79,7 @@ package object acmpca {
     @inline def updateCertificateAuthorityFuture(params: UpdateCertificateAuthorityRequest): Future[js.Object] = service.updateCertificateAuthority(params).promise().toFuture
 
   }
-}
 
-package acmpca {
   @js.native
   @JSImport("aws-sdk/clients/acmpca", JSImport.Namespace, "AWS.ACMPCA")
   class ACMPCA() extends js.Object {
@@ -110,6 +108,11 @@ package acmpca {
     def tagCertificateAuthority(params: TagCertificateAuthorityRequest): Request[js.Object] = js.native
     def untagCertificateAuthority(params: UntagCertificateAuthorityRequest): Request[js.Object] = js.native
     def updateCertificateAuthority(params: UpdateCertificateAuthorityRequest): Request[js.Object] = js.native
+  }
+  object ACMPCA {
+    @inline implicit def toOps(service: ACMPCA): ACMPCAOps = {
+      new ACMPCAOps(service)
+    }
   }
 
   /** Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.

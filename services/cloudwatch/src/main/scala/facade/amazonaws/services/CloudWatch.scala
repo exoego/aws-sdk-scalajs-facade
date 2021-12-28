@@ -122,7 +122,7 @@ package object cloudwatch {
   type TreatMissingData = String
   type Values = js.Array[DatapointValue]
 
-  implicit final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
+  final class CloudWatchOps(private val service: CloudWatch) extends AnyVal {
 
     @inline def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] = service.deleteAlarms(params).promise().toFuture
     @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorInput): Future[DeleteAnomalyDetectorOutput] = service.deleteAnomalyDetector(params).promise().toFuture
@@ -162,9 +162,7 @@ package object cloudwatch {
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package cloudwatch {
   @js.native
   @JSImport("aws-sdk/clients/cloudwatch", JSImport.Namespace, "AWS.CloudWatch")
   class CloudWatch() extends js.Object {
@@ -206,6 +204,11 @@ package cloudwatch {
     def stopMetricStreams(params: StopMetricStreamsInput): Request[StopMetricStreamsOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+  }
+  object CloudWatch {
+    @inline implicit def toOps(service: CloudWatch): CloudWatchOps = {
+      new CloudWatchOps(service)
+    }
   }
 
   /** Represents the history of a specific alarm.

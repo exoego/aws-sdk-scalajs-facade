@@ -96,7 +96,7 @@ package object applicationinsights {
   type XRayRequestCount = Int
   type XRayThrottlePercent = Int
 
-  implicit final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
+  final class ApplicationInsightsOps(private val service: ApplicationInsights) extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
     @inline def createComponentFuture(params: CreateComponentRequest): Future[CreateComponentResponse] = service.createComponent(params).promise().toFuture
@@ -127,9 +127,7 @@ package object applicationinsights {
     @inline def updateLogPatternFuture(params: UpdateLogPatternRequest): Future[UpdateLogPatternResponse] = service.updateLogPattern(params).promise().toFuture
 
   }
-}
 
-package applicationinsights {
   @js.native
   @JSImport("aws-sdk/clients/applicationinsights", JSImport.Namespace, "AWS.ApplicationInsights")
   class ApplicationInsights() extends js.Object {
@@ -162,6 +160,11 @@ package applicationinsights {
     def updateComponent(params: UpdateComponentRequest): Request[UpdateComponentResponse] = js.native
     def updateComponentConfiguration(params: UpdateComponentConfigurationRequest): Request[UpdateComponentConfigurationResponse] = js.native
     def updateLogPattern(params: UpdateLogPatternRequest): Request[UpdateLogPatternResponse] = js.native
+  }
+  object ApplicationInsights {
+    @inline implicit def toOps(service: ApplicationInsights): ApplicationInsightsOps = {
+      new ApplicationInsightsOps(service)
+    }
   }
 
   /** Describes a standalone resource or similarly grouped resources that the application is made up of.

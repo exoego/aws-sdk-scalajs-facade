@@ -152,7 +152,7 @@ package object alexaforbusiness {
   type user_LastName = String
   type user_UserId = String
 
-  implicit final class AlexaForBusinessOps(private val service: AlexaForBusiness) extends AnyVal {
+  final class AlexaForBusinessOps(private val service: AlexaForBusiness) extends AnyVal {
 
     @inline def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] = service.approveSkill(params).promise().toFuture
     @inline def associateContactWithAddressBookFuture(params: AssociateContactWithAddressBookRequest): Future[AssociateContactWithAddressBookResponse] = service.associateContactWithAddressBook(params).promise().toFuture
@@ -249,9 +249,7 @@ package object alexaforbusiness {
     @inline def updateSkillGroupFuture(params: UpdateSkillGroupRequest): Future[UpdateSkillGroupResponse] = service.updateSkillGroup(params).promise().toFuture
 
   }
-}
 
-package alexaforbusiness {
   @js.native
   @JSImport("aws-sdk/clients/alexaforbusiness", JSImport.Namespace, "AWS.AlexaForBusiness")
   class AlexaForBusiness() extends js.Object {
@@ -350,6 +348,11 @@ package alexaforbusiness {
     def updateProfile(params: UpdateProfileRequest): Request[UpdateProfileResponse] = js.native
     def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse] = js.native
     def updateSkillGroup(params: UpdateSkillGroupRequest): Request[UpdateSkillGroupResponse] = js.native
+  }
+  object AlexaForBusiness {
+    @inline implicit def toOps(service: AlexaForBusiness): AlexaForBusinessOps = {
+      new AlexaForBusinessOps(service)
+    }
   }
 
   /** An address book with attributes.

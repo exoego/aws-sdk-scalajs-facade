@@ -85,7 +85,7 @@ package object iotsitewise {
   type Url = String
   type VariableName = String
 
-  implicit final class IoTSiteWiseOps(private val service: IoTSiteWise) extends AnyVal {
+  final class IoTSiteWiseOps(private val service: IoTSiteWise) extends AnyVal {
 
     @inline def associateAssetsFuture(params: AssociateAssetsRequest): Future[js.Object] = service.associateAssets(params).promise().toFuture
     @inline def batchAssociateProjectAssetsFuture(params: BatchAssociateProjectAssetsRequest): Future[BatchAssociateProjectAssetsResponse] = service.batchAssociateProjectAssets(params).promise().toFuture
@@ -146,9 +146,7 @@ package object iotsitewise {
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
 
   }
-}
 
-package iotsitewise {
   @js.native
   @JSImport("aws-sdk/clients/iotsitewise", JSImport.Namespace, "AWS.IoTSiteWise")
   class IoTSiteWise() extends js.Object {
@@ -211,6 +209,11 @@ package iotsitewise {
     def updateGatewayCapabilityConfiguration(params: UpdateGatewayCapabilityConfigurationRequest): Request[UpdateGatewayCapabilityConfigurationResponse] = js.native
     def updatePortal(params: UpdatePortalRequest): Request[UpdatePortalResponse] = js.native
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
+  }
+  object IoTSiteWise {
+    @inline implicit def toOps(service: IoTSiteWise): IoTSiteWiseOps = {
+      new IoTSiteWiseOps(service)
+    }
   }
 
   /** Contains an access policy that defines an identity's access to an AWS IoT SiteWise Monitor resource.

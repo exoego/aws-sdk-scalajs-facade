@@ -162,7 +162,7 @@ package object dynamodb {
   type UpdateExpression = String
   type WriteRequests = js.Array[WriteRequest]
 
-  implicit final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
+  final class DynamoDBOps(private val service: DynamoDB) extends AnyVal {
 
     @inline def batchExecuteStatementFuture(params: BatchExecuteStatementInput): Future[BatchExecuteStatementOutput] = service.batchExecuteStatement(params).promise().toFuture
     @inline def batchGetItemFuture(params: BatchGetItemInput): Future[BatchGetItemOutput] = service.batchGetItem(params).promise().toFuture
@@ -253,9 +253,7 @@ package object dynamodb {
       __obj.asInstanceOf[DynamoDBConverterOptions]
     }
   }
-}
 
-package dynamodb {
   @js.native
   @JSImport("aws-sdk/clients/dynamodb", JSImport.Namespace, "AWS.DynamoDB")
   class DynamoDB() extends js.Object {
@@ -311,6 +309,11 @@ package dynamodb {
     def updateTable(params: UpdateTableInput): Request[UpdateTableOutput] = js.native
     def updateTableReplicaAutoScaling(params: UpdateTableReplicaAutoScalingInput): Request[UpdateTableReplicaAutoScalingOutput] = js.native
     def updateTimeToLive(params: UpdateTimeToLiveInput): Request[UpdateTimeToLiveOutput] = js.native
+  }
+  object DynamoDB {
+    @inline implicit def toOps(service: DynamoDB): DynamoDBOps = {
+      new DynamoDBOps(service)
+    }
   }
 
   /** Contains details of a table archival operation.

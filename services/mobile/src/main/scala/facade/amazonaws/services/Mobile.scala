@@ -36,7 +36,7 @@ package object mobile {
   type ShareUrl = String
   type SnapshotId = String
 
-  implicit final class MobileOps(private val service: Mobile) extends AnyVal {
+  final class MobileOps(private val service: Mobile) extends AnyVal {
 
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] = service.createProject(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] = service.deleteProject(params).promise().toFuture
@@ -49,9 +49,7 @@ package object mobile {
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] = service.updateProject(params).promise().toFuture
 
   }
-}
 
-package mobile {
   @js.native
   @JSImport("aws-sdk/clients/mobile", JSImport.Namespace, "AWS.Mobile")
   class Mobile() extends js.Object {
@@ -66,6 +64,11 @@ package mobile {
     def listBundles(params: ListBundlesRequest): Request[ListBundlesResult] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResult] = js.native
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
+  }
+  object Mobile {
+    @inline implicit def toOps(service: Mobile): MobileOps = {
+      new MobileOps(service)
+    }
   }
 
   /** Account Action is required in order to continue the request.

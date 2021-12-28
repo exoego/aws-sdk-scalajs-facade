@@ -55,7 +55,7 @@ package object efs {
   type Uid = Double
   type VpcId = String
 
-  implicit final class EFSOps(private val service: EFS) extends AnyVal {
+  final class EFSOps(private val service: EFS) extends AnyVal {
 
     @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[AccessPointDescription] = service.createAccessPoint(params).promise().toFuture
     @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] = service.createFileSystem(params).promise().toFuture
@@ -81,9 +81,7 @@ package object efs {
     @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[FileSystemDescription] = service.updateFileSystem(params).promise().toFuture
 
   }
-}
 
-package efs {
   @js.native
   @JSImport("aws-sdk/clients/efs", JSImport.Namespace, "AWS.EFS")
   class EFS() extends js.Object {
@@ -114,6 +112,11 @@ package efs {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateFileSystem(params: UpdateFileSystemRequest): Request[FileSystemDescription] = js.native
+  }
+  object EFS {
+    @inline implicit def toOps(service: EFS): EFSOps = {
+      new EFSOps(service)
+    }
   }
 
   /** Provides a description of an EFS file system access point.

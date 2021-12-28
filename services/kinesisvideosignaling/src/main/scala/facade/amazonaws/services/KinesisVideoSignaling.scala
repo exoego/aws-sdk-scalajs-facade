@@ -18,15 +18,13 @@ package object kinesisvideosignaling {
   type Uris = js.Array[Uri]
   type Username = String
 
-  implicit final class KinesisVideoSignalingOps(private val service: KinesisVideoSignaling) extends AnyVal {
+  final class KinesisVideoSignalingOps(private val service: KinesisVideoSignaling) extends AnyVal {
 
     @inline def getIceServerConfigFuture(params: GetIceServerConfigRequest): Future[GetIceServerConfigResponse] = service.getIceServerConfig(params).promise().toFuture
     @inline def sendAlexaOfferToMasterFuture(params: SendAlexaOfferToMasterRequest): Future[SendAlexaOfferToMasterResponse] = service.sendAlexaOfferToMaster(params).promise().toFuture
 
   }
-}
 
-package kinesisvideosignaling {
   @js.native
   @JSImport("aws-sdk/clients/kinesisvideosignalingchannels", JSImport.Namespace, "AWS.KinesisVideoSignalingChannels")
   class KinesisVideoSignaling() extends js.Object {
@@ -34,6 +32,11 @@ package kinesisvideosignaling {
 
     def getIceServerConfig(params: GetIceServerConfigRequest): Request[GetIceServerConfigResponse] = js.native
     def sendAlexaOfferToMaster(params: SendAlexaOfferToMasterRequest): Request[SendAlexaOfferToMasterResponse] = js.native
+  }
+  object KinesisVideoSignaling {
+    @inline implicit def toOps(service: KinesisVideoSignaling): KinesisVideoSignalingOps = {
+      new KinesisVideoSignalingOps(service)
+    }
   }
 
   @js.native

@@ -34,7 +34,7 @@ package object migrationhub {
   type Token = String
   type UpdateDateTime = js.Date
 
-  implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
+  final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
 
     @inline def associateCreatedArtifactFuture(params: AssociateCreatedArtifactRequest): Future[AssociateCreatedArtifactResult] = service.associateCreatedArtifact(params).promise().toFuture
     @inline def associateDiscoveredResourceFuture(params: AssociateDiscoveredResourceRequest): Future[AssociateDiscoveredResourceResult] = service.associateDiscoveredResource(params).promise().toFuture
@@ -55,9 +55,7 @@ package object migrationhub {
     @inline def putResourceAttributesFuture(params: PutResourceAttributesRequest): Future[PutResourceAttributesResult] = service.putResourceAttributes(params).promise().toFuture
 
   }
-}
 
-package migrationhub {
   @js.native
   @JSImport("aws-sdk/clients/migrationhub", JSImport.Namespace, "AWS.MigrationHub")
   class MigrationHub() extends js.Object {
@@ -80,6 +78,11 @@ package migrationhub {
     def notifyApplicationState(params: NotifyApplicationStateRequest): Request[NotifyApplicationStateResult] = js.native
     def notifyMigrationTaskState(params: NotifyMigrationTaskStateRequest): Request[NotifyMigrationTaskStateResult] = js.native
     def putResourceAttributes(params: PutResourceAttributesRequest): Request[PutResourceAttributesResult] = js.native
+  }
+  object MigrationHub {
+    @inline implicit def toOps(service: MigrationHub): MigrationHubOps = {
+      new MigrationHubOps(service)
+    }
   }
 
   /** The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.

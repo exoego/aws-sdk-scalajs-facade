@@ -22,7 +22,7 @@ package object serverlessapplicationrepository {
   type __listOf__string = js.Array[__string]
   type __string = String
 
-  implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository) extends AnyVal {
+  final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository) extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] = service.createApplication(params).promise().toFuture
     @inline def createApplicationVersionFuture(params: CreateApplicationVersionRequest): Future[CreateApplicationVersionResponse] = service.createApplicationVersion(params).promise().toFuture
@@ -40,9 +40,7 @@ package object serverlessapplicationrepository {
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
 
   }
-}
 
-package serverlessapplicationrepository {
   @js.native
   @JSImport("aws-sdk/clients/serverlessapplicationrepository", JSImport.Namespace, "AWS.ServerlessApplicationRepository")
   class ServerlessApplicationRepository() extends js.Object {
@@ -62,6 +60,11 @@ package serverlessapplicationrepository {
     def putApplicationPolicy(params: PutApplicationPolicyRequest): Request[PutApplicationPolicyResponse] = js.native
     def unshareApplication(params: UnshareApplicationRequest): Request[js.Object] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+  }
+  object ServerlessApplicationRepository {
+    @inline implicit def toOps(service: ServerlessApplicationRepository): ServerlessApplicationRepositoryOps = {
+      new ServerlessApplicationRepositoryOps(service)
+    }
   }
 
   /** A nested application summary.

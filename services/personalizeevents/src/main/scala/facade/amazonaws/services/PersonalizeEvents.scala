@@ -22,16 +22,14 @@ package object personalizeevents {
   type UserList = js.Array[User]
   type UserProperties = String
 
-  implicit final class PersonalizeEventsOps(private val service: PersonalizeEvents) extends AnyVal {
+  final class PersonalizeEventsOps(private val service: PersonalizeEvents) extends AnyVal {
 
     @inline def putEventsFuture(params: PutEventsRequest): Future[js.Object] = service.putEvents(params).promise().toFuture
     @inline def putItemsFuture(params: PutItemsRequest): Future[js.Object] = service.putItems(params).promise().toFuture
     @inline def putUsersFuture(params: PutUsersRequest): Future[js.Object] = service.putUsers(params).promise().toFuture
 
   }
-}
 
-package personalizeevents {
   @js.native
   @JSImport("aws-sdk/clients/personalizeevents", JSImport.Namespace, "AWS.PersonalizeEvents")
   class PersonalizeEvents() extends js.Object {
@@ -40,6 +38,11 @@ package personalizeevents {
     def putEvents(params: PutEventsRequest): Request[js.Object] = js.native
     def putItems(params: PutItemsRequest): Request[js.Object] = js.native
     def putUsers(params: PutUsersRequest): Request[js.Object] = js.native
+  }
+  object PersonalizeEvents {
+    @inline implicit def toOps(service: PersonalizeEvents): PersonalizeEventsOps = {
+      new PersonalizeEventsOps(service)
+    }
   }
 
   /** Represents user interaction event information sent using the <code>PutEvents</code> API.

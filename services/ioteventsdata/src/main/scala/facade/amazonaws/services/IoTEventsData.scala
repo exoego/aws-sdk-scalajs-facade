@@ -32,7 +32,7 @@ package object ioteventsdata {
   type VariableValue = String
   type Variables = js.Array[Variable]
 
-  implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
+  final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
     @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] = service.batchPutMessage(params).promise().toFuture
     @inline def batchUpdateDetectorFuture(params: BatchUpdateDetectorRequest): Future[BatchUpdateDetectorResponse] = service.batchUpdateDetector(params).promise().toFuture
@@ -40,9 +40,7 @@ package object ioteventsdata {
     @inline def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] = service.listDetectors(params).promise().toFuture
 
   }
-}
 
-package ioteventsdata {
   @js.native
   @JSImport("aws-sdk/clients/ioteventsdata", JSImport.Namespace, "AWS.IoTEventsData")
   class IoTEventsData() extends js.Object {
@@ -52,6 +50,11 @@ package ioteventsdata {
     def batchUpdateDetector(params: BatchUpdateDetectorRequest): Request[BatchUpdateDetectorResponse] = js.native
     def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResponse] = js.native
     def listDetectors(params: ListDetectorsRequest): Request[ListDetectorsResponse] = js.native
+  }
+  object IoTEventsData {
+    @inline implicit def toOps(service: IoTEventsData): IoTEventsDataOps = {
+      new IoTEventsDataOps(service)
+    }
   }
 
   /** Contains information about the errors encountered.

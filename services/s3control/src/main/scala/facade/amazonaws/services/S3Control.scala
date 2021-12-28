@@ -101,7 +101,7 @@ package object s3control {
   type TransitionList = js.Array[Transition]
   type VpcId = String
 
-  implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
+  final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
     @inline def createAccessPointForObjectLambdaFuture(params: CreateAccessPointForObjectLambdaRequest): Future[CreateAccessPointForObjectLambdaResult] = service.createAccessPointForObjectLambda(params).promise().toFuture
     @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[CreateAccessPointResult] = service.createAccessPoint(params).promise().toFuture
@@ -154,9 +154,7 @@ package object s3control {
     @inline def updateJobStatusFuture(params: UpdateJobStatusRequest): Future[UpdateJobStatusResult] = service.updateJobStatus(params).promise().toFuture
 
   }
-}
 
-package s3control {
   @js.native
   @JSImport("aws-sdk/clients/s3control", JSImport.Namespace, "AWS.S3Control")
   class S3Control() extends js.Object {
@@ -211,6 +209,11 @@ package s3control {
     def putStorageLensConfigurationTagging(params: PutStorageLensConfigurationTaggingRequest): Request[PutStorageLensConfigurationTaggingResult] = js.native
     def updateJobPriority(params: UpdateJobPriorityRequest): Request[UpdateJobPriorityResult] = js.native
     def updateJobStatus(params: UpdateJobStatusRequest): Request[UpdateJobStatusResult] = js.native
+  }
+  object S3Control {
+    @inline implicit def toOps(service: S3Control): S3ControlOps = {
+      new S3ControlOps(service)
+    }
   }
 
   /** The container for abort incomplete multipart upload

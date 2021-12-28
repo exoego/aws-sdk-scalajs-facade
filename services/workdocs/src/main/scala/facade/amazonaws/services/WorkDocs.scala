@@ -63,7 +63,7 @@ package object workdocs {
   type UserMetadataList = js.Array[UserMetadata]
   type UsernameType = String
 
-  implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
+  final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
 
     @inline def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] = service.abortDocumentVersionUpload(params).promise().toFuture
     @inline def activateUserFuture(params: ActivateUserRequest): Future[ActivateUserResponse] = service.activateUser(params).promise().toFuture
@@ -108,9 +108,7 @@ package object workdocs {
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
 
   }
-}
 
-package workdocs {
   @js.native
   @JSImport("aws-sdk/clients/workdocs", JSImport.Namespace, "AWS.WorkDocs")
   class WorkDocs() extends js.Object {
@@ -157,6 +155,11 @@ package workdocs {
     def updateDocumentVersion(params: UpdateDocumentVersionRequest): Request[js.Object] = js.native
     def updateFolder(params: UpdateFolderRequest): Request[js.Object] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+  }
+  object WorkDocs {
+    @inline implicit def toOps(service: WorkDocs): WorkDocsOps = {
+      new WorkDocsOps(service)
+    }
   }
 
   @js.native

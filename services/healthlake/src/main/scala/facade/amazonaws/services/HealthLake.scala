@@ -22,7 +22,7 @@ package object healthlake {
   type S3Uri = String
   type Timestamp = js.Date
 
-  implicit final class HealthLakeOps(private val service: HealthLake) extends AnyVal {
+  final class HealthLakeOps(private val service: HealthLake) extends AnyVal {
 
     @inline def createFHIRDatastoreFuture(params: CreateFHIRDatastoreRequest): Future[CreateFHIRDatastoreResponse] = service.createFHIRDatastore(params).promise().toFuture
     @inline def deleteFHIRDatastoreFuture(params: DeleteFHIRDatastoreRequest): Future[DeleteFHIRDatastoreResponse] = service.deleteFHIRDatastore(params).promise().toFuture
@@ -34,9 +34,7 @@ package object healthlake {
     @inline def startFHIRImportJobFuture(params: StartFHIRImportJobRequest): Future[StartFHIRImportJobResponse] = service.startFHIRImportJob(params).promise().toFuture
 
   }
-}
 
-package healthlake {
   @js.native
   @JSImport("aws-sdk/clients/healthlake", JSImport.Namespace, "AWS.HealthLake")
   class HealthLake() extends js.Object {
@@ -50,6 +48,11 @@ package healthlake {
     def listFHIRDatastores(params: ListFHIRDatastoresRequest): Request[ListFHIRDatastoresResponse] = js.native
     def startFHIRExportJob(params: StartFHIRExportJobRequest): Request[StartFHIRExportJobResponse] = js.native
     def startFHIRImportJob(params: StartFHIRImportJobRequest): Request[StartFHIRImportJobResponse] = js.native
+  }
+  object HealthLake {
+    @inline implicit def toOps(service: HealthLake): HealthLakeOps = {
+      new HealthLakeOps(service)
+    }
   }
 
   @js.native

@@ -61,7 +61,7 @@ package object neptune {
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class NeptuneOps(private val service: Neptune) extends AnyVal {
+  final class NeptuneOps(private val service: Neptune) extends AnyVal {
 
     @inline def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] = service.addRoleToDBCluster(params).promise().toFuture
     @inline def addSourceIdentifierToSubscriptionFuture(params: AddSourceIdentifierToSubscriptionMessage): Future[AddSourceIdentifierToSubscriptionResult] = service.addSourceIdentifierToSubscription(params).promise().toFuture
@@ -128,9 +128,7 @@ package object neptune {
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
 
   }
-}
 
-package neptune {
   @js.native
   @JSImport("aws-sdk/clients/neptune", JSImport.Namespace, "AWS.Neptune")
   class Neptune() extends js.Object {
@@ -199,6 +197,11 @@ package neptune {
     def restoreDBClusterToPointInTime(params: RestoreDBClusterToPointInTimeMessage): Request[RestoreDBClusterToPointInTimeResult] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
+  }
+  object Neptune {
+    @inline implicit def toOps(service: Neptune): NeptuneOps = {
+      new NeptuneOps(service)
+    }
   }
 
   @js.native

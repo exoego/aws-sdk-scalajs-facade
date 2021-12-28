@@ -92,7 +92,7 @@ package object inspector {
   type UserAttributeList = js.Array[Attribute]
   type Version = String
 
-  implicit final class InspectorOps(private val service: Inspector) extends AnyVal {
+  final class InspectorOps(private val service: Inspector) extends AnyVal {
 
     @inline def addAttributesToFindingsFuture(params: AddAttributesToFindingsRequest): Future[AddAttributesToFindingsResponse] = service.addAttributesToFindings(params).promise().toFuture
     @inline def createAssessmentTargetFuture(params: CreateAssessmentTargetRequest): Future[CreateAssessmentTargetResponse] = service.createAssessmentTarget(params).promise().toFuture
@@ -133,9 +133,7 @@ package object inspector {
     @inline def updateAssessmentTargetFuture(params: UpdateAssessmentTargetRequest): Future[js.Object] = service.updateAssessmentTarget(params).promise().toFuture
 
   }
-}
 
-package inspector {
   @js.native
   @JSImport("aws-sdk/clients/inspector", JSImport.Namespace, "AWS.Inspector")
   class Inspector() extends js.Object {
@@ -178,6 +176,11 @@ package inspector {
     def subscribeToEvent(params: SubscribeToEventRequest): Request[js.Object] = js.native
     def unsubscribeFromEvent(params: UnsubscribeFromEventRequest): Request[js.Object] = js.native
     def updateAssessmentTarget(params: UpdateAssessmentTargetRequest): Request[js.Object] = js.native
+  }
+  object Inspector {
+    @inline implicit def toOps(service: Inspector): InspectorOps = {
+      new InspectorOps(service)
+    }
   }
 
   @js.native

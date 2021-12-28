@@ -483,7 +483,7 @@ package object iot {
   type stringValue = String
   type usePrefixAttributeValue = Boolean
 
-  implicit final class IotOps(private val service: Iot) extends AnyVal {
+  final class IotOps(private val service: Iot) extends AnyVal {
 
     @inline def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] = service.acceptCertificateTransfer(params).promise().toFuture
     @inline def addThingToBillingGroupFuture(params: AddThingToBillingGroupRequest): Future[AddThingToBillingGroupResponse] = service.addThingToBillingGroup(params).promise().toFuture
@@ -706,9 +706,7 @@ package object iot {
     @inline def validateSecurityProfileBehaviorsFuture(params: ValidateSecurityProfileBehaviorsRequest): Future[ValidateSecurityProfileBehaviorsResponse] = service.validateSecurityProfileBehaviors(params).promise().toFuture
 
   }
-}
 
-package iot {
   @js.native
   @JSImport("aws-sdk/clients/iot", JSImport.Namespace, "AWS.Iot")
   class Iot() extends js.Object {
@@ -937,6 +935,11 @@ package iot {
     def updateThingGroupsForThing(params: UpdateThingGroupsForThingRequest): Request[UpdateThingGroupsForThingResponse] = js.native
     def updateTopicRuleDestination(params: UpdateTopicRuleDestinationRequest): Request[UpdateTopicRuleDestinationResponse] = js.native
     def validateSecurityProfileBehaviors(params: ValidateSecurityProfileBehaviorsRequest): Request[ValidateSecurityProfileBehaviorsResponse] = js.native
+  }
+  object Iot {
+    @inline implicit def toOps(service: Iot): IotOps = {
+      new IotOps(service)
+    }
   }
 
   @js.native

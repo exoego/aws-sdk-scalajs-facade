@@ -120,7 +120,7 @@ package object route53 {
   type VPCId = String
   type VPCs = js.Array[VPC]
 
-  implicit final class Route53Ops(private val service: Route53) extends AnyVal {
+  final class Route53Ops(private val service: Route53) extends AnyVal {
 
     @inline def activateKeySigningKeyFuture(params: ActivateKeySigningKeyRequest): Future[ActivateKeySigningKeyResponse] = service.activateKeySigningKey(params).promise().toFuture
     @inline def associateVPCWithHostedZoneFuture(params: AssociateVPCWithHostedZoneRequest): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise().toFuture
@@ -188,9 +188,7 @@ package object route53 {
     @inline def updateTrafficPolicyInstanceFuture(params: UpdateTrafficPolicyInstanceRequest): Future[UpdateTrafficPolicyInstanceResponse] = service.updateTrafficPolicyInstance(params).promise().toFuture
 
   }
-}
 
-package route53 {
   @js.native
   @JSImport("aws-sdk/clients/route53", JSImport.Namespace, "AWS.Route53")
   class Route53() extends js.Object {
@@ -260,6 +258,11 @@ package route53 {
     def updateHostedZoneComment(params: UpdateHostedZoneCommentRequest): Request[UpdateHostedZoneCommentResponse] = js.native
     def updateTrafficPolicyComment(params: UpdateTrafficPolicyCommentRequest): Request[UpdateTrafficPolicyCommentResponse] = js.native
     def updateTrafficPolicyInstance(params: UpdateTrafficPolicyInstanceRequest): Request[UpdateTrafficPolicyInstanceResponse] = js.native
+  }
+  object Route53 {
+    @inline implicit def toOps(service: Route53): Route53Ops = {
+      new Route53Ops(service)
+    }
   }
 
   /** A complex type that contains the type of limit that you specified in the request and the current value for that limit.

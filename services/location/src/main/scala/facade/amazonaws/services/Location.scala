@@ -56,7 +56,7 @@ package object location {
   type Timestamp = js.Date
   type Token = String
 
-  implicit final class LocationOps(private val service: Location) extends AnyVal {
+  final class LocationOps(private val service: Location) extends AnyVal {
 
     @inline def associateTrackerConsumerFuture(params: AssociateTrackerConsumerRequest): Future[AssociateTrackerConsumerResponse] = service.associateTrackerConsumer(params).promise().toFuture
     @inline def batchDeleteGeofenceFuture(params: BatchDeleteGeofenceRequest): Future[BatchDeleteGeofenceResponse] = service.batchDeleteGeofence(params).promise().toFuture
@@ -95,9 +95,7 @@ package object location {
     @inline def searchPlaceIndexForTextFuture(params: SearchPlaceIndexForTextRequest): Future[SearchPlaceIndexForTextResponse] = service.searchPlaceIndexForText(params).promise().toFuture
 
   }
-}
 
-package location {
   @js.native
   @JSImport("aws-sdk/clients/location", JSImport.Namespace, "AWS.Location")
   class Location() extends js.Object {
@@ -138,6 +136,11 @@ package location {
     def putGeofence(params: PutGeofenceRequest): Request[PutGeofenceResponse] = js.native
     def searchPlaceIndexForPosition(params: SearchPlaceIndexForPositionRequest): Request[SearchPlaceIndexForPositionResponse] = js.native
     def searchPlaceIndexForText(params: SearchPlaceIndexForTextRequest): Request[SearchPlaceIndexForTextResponse] = js.native
+  }
+  object Location {
+    @inline implicit def toOps(service: Location): LocationOps = {
+      new LocationOps(service)
+    }
   }
 
   @js.native

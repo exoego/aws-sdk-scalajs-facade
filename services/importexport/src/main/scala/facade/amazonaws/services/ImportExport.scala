@@ -49,7 +49,7 @@ package object importexport {
   type street2 = String
   type street3 = String
 
-  implicit final class ImportExportOps(private val service: ImportExport) extends AnyVal {
+  final class ImportExportOps(private val service: ImportExport) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobInput): Future[CancelJobOutput] = service.cancelJob(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobInput): Future[CreateJobOutput] = service.createJob(params).promise().toFuture
@@ -59,9 +59,7 @@ package object importexport {
     @inline def updateJobFuture(params: UpdateJobInput): Future[UpdateJobOutput] = service.updateJob(params).promise().toFuture
 
   }
-}
 
-package importexport {
   @js.native
   @JSImport("aws-sdk/clients/importexport", JSImport.Namespace, "AWS.ImportExport")
   class ImportExport() extends js.Object {
@@ -73,6 +71,11 @@ package importexport {
     def getStatus(params: GetStatusInput): Request[GetStatusOutput] = js.native
     def listJobs(params: ListJobsInput): Request[ListJobsOutput] = js.native
     def updateJob(params: UpdateJobInput): Request[UpdateJobOutput] = js.native
+  }
+  object ImportExport {
+    @inline implicit def toOps(service: ImportExport): ImportExportOps = {
+      new ImportExportOps(service)
+    }
   }
 
   /** A discrete item that contains the description and URL of an artifact (such as a PDF).

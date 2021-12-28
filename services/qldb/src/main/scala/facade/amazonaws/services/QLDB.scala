@@ -27,7 +27,7 @@ package object qldb {
   type Timestamp = js.Date
   type UniqueId = String
 
-  implicit final class QLDBOps(private val service: QLDB) extends AnyVal {
+  final class QLDBOps(private val service: QLDB) extends AnyVal {
 
     @inline def cancelJournalKinesisStreamFuture(params: CancelJournalKinesisStreamRequest): Future[CancelJournalKinesisStreamResponse] = service.cancelJournalKinesisStream(params).promise().toFuture
     @inline def createLedgerFuture(params: CreateLedgerRequest): Future[CreateLedgerResponse] = service.createLedger(params).promise().toFuture
@@ -50,9 +50,7 @@ package object qldb {
     @inline def updateLedgerFuture(params: UpdateLedgerRequest): Future[UpdateLedgerResponse] = service.updateLedger(params).promise().toFuture
 
   }
-}
 
-package qldb {
   @js.native
   @JSImport("aws-sdk/clients/qldb", JSImport.Namespace, "AWS.QLDB")
   class QLDB() extends js.Object {
@@ -77,6 +75,11 @@ package qldb {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLedger(params: UpdateLedgerRequest): Request[UpdateLedgerResponse] = js.native
+  }
+  object QLDB {
+    @inline implicit def toOps(service: QLDB): QLDBOps = {
+      new QLDBOps(service)
+    }
   }
 
   @js.native

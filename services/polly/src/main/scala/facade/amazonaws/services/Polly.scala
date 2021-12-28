@@ -39,7 +39,7 @@ package object polly {
   type VoiceList = js.Array[Voice]
   type VoiceName = String
 
-  implicit final class PollyOps(private val service: Polly) extends AnyVal {
+  final class PollyOps(private val service: Polly) extends AnyVal {
 
     @inline def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] = service.deleteLexicon(params).promise().toFuture
     @inline def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] = service.describeVoices(params).promise().toFuture
@@ -52,9 +52,7 @@ package object polly {
     @inline def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] = service.synthesizeSpeech(params).promise().toFuture
 
   }
-}
 
-package polly {
   @js.native
   @JSImport("aws-sdk/clients/polly", JSImport.Namespace, "AWS.Polly")
   class Polly() extends js.Object {
@@ -69,6 +67,11 @@ package polly {
     def putLexicon(params: PutLexiconInput): Request[PutLexiconOutput] = js.native
     def startSpeechSynthesisTask(params: StartSpeechSynthesisTaskInput): Request[StartSpeechSynthesisTaskOutput] = js.native
     def synthesizeSpeech(params: SynthesizeSpeechInput): Request[SynthesizeSpeechOutput] = js.native
+  }
+  object Polly {
+    @inline implicit def toOps(service: Polly): PollyOps = {
+      new PollyOps(service)
+    }
   }
 
   @js.native

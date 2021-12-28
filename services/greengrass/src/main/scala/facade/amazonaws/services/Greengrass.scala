@@ -33,7 +33,7 @@ package object greengrass {
   type __mapOf__string = js.Dictionary[__string]
   type __string = String
 
-  implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
+  final class GreengrassOps(private val service: Greengrass) extends AnyVal {
 
     @inline def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] = service.associateRoleToGroup(params).promise().toFuture
     @inline def associateServiceRoleToAccountFuture(params: AssociateServiceRoleToAccountRequest): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise().toFuture
@@ -129,9 +129,7 @@ package object greengrass {
     @inline def updateThingRuntimeConfigurationFuture(params: UpdateThingRuntimeConfigurationRequest): Future[UpdateThingRuntimeConfigurationResponse] = service.updateThingRuntimeConfiguration(params).promise().toFuture
 
   }
-}
 
-package greengrass {
   @js.native
   @JSImport("aws-sdk/clients/greengrass", JSImport.Namespace, "AWS.Greengrass")
   class Greengrass() extends js.Object {
@@ -229,6 +227,11 @@ package greengrass {
     def updateResourceDefinition(params: UpdateResourceDefinitionRequest): Request[UpdateResourceDefinitionResponse] = js.native
     def updateSubscriptionDefinition(params: UpdateSubscriptionDefinitionRequest): Request[UpdateSubscriptionDefinitionResponse] = js.native
     def updateThingRuntimeConfiguration(params: UpdateThingRuntimeConfigurationRequest): Request[UpdateThingRuntimeConfigurationResponse] = js.native
+  }
+  object Greengrass {
+    @inline implicit def toOps(service: Greengrass): GreengrassOps = {
+      new GreengrassOps(service)
+    }
   }
 
   @js.native

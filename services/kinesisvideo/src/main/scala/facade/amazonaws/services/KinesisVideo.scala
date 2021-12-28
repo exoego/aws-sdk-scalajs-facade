@@ -33,7 +33,7 @@ package object kinesisvideo {
   type Timestamp = js.Date
   type Version = String
 
-  implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
+  final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
     @inline def createSignalingChannelFuture(params: CreateSignalingChannelInput): Future[CreateSignalingChannelOutput] = service.createSignalingChannel(params).promise().toFuture
     @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] = service.createStream(params).promise().toFuture
@@ -56,9 +56,7 @@ package object kinesisvideo {
     @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] = service.updateStream(params).promise().toFuture
 
   }
-}
 
-package kinesisvideo {
   @js.native
   @JSImport("aws-sdk/clients/kinesisvideo", JSImport.Namespace, "AWS.KinesisVideo")
   class KinesisVideo() extends js.Object {
@@ -83,6 +81,11 @@ package kinesisvideo {
     def updateDataRetention(params: UpdateDataRetentionInput): Request[UpdateDataRetentionOutput] = js.native
     def updateSignalingChannel(params: UpdateSignalingChannelInput): Request[UpdateSignalingChannelOutput] = js.native
     def updateStream(params: UpdateStreamInput): Request[UpdateStreamOutput] = js.native
+  }
+  object KinesisVideo {
+    @inline implicit def toOps(service: KinesisVideo): KinesisVideoOps = {
+      new KinesisVideoOps(service)
+    }
   }
 
   @js.native

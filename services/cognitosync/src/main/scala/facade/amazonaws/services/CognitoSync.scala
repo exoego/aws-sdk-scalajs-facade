@@ -31,7 +31,7 @@ package object cognitosync {
   type StreamName = String
   type SyncSessionToken = String
 
-  implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
+  final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
 
     @inline def bulkPublishFuture(params: BulkPublishRequest): Future[BulkPublishResponse] = service.bulkPublish(params).promise().toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] = service.deleteDataset(params).promise().toFuture
@@ -52,9 +52,7 @@ package object cognitosync {
     @inline def updateRecordsFuture(params: UpdateRecordsRequest): Future[UpdateRecordsResponse] = service.updateRecords(params).promise().toFuture
 
   }
-}
 
-package cognitosync {
   @js.native
   @JSImport("aws-sdk/clients/cognitosync", JSImport.Namespace, "AWS.CognitoSync")
   class CognitoSync() extends js.Object {
@@ -77,6 +75,11 @@ package cognitosync {
     def subscribeToDataset(params: SubscribeToDatasetRequest): Request[SubscribeToDatasetResponse] = js.native
     def unsubscribeFromDataset(params: UnsubscribeFromDatasetRequest): Request[UnsubscribeFromDatasetResponse] = js.native
     def updateRecords(params: UpdateRecordsRequest): Request[UpdateRecordsResponse] = js.native
+  }
+  object CognitoSync {
+    @inline implicit def toOps(service: CognitoSync): CognitoSyncOps = {
+      new CognitoSyncOps(service)
+    }
   }
 
   /** The input for the BulkPublish operation.

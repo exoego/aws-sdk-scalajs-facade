@@ -136,7 +136,7 @@ package object cognitoidentityprovider {
   type VerifiedAttributesListType = js.Array[VerifiedAttributeType]
   type WrappedBooleanType = Boolean
 
-  implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
+  final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
 
     @inline def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] = service.addCustomAttributes(params).promise().toFuture
     @inline def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] = service.adminAddUserToGroup(params).promise().toFuture
@@ -240,9 +240,7 @@ package object cognitoidentityprovider {
     @inline def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] = service.verifyUserAttribute(params).promise().toFuture
 
   }
-}
 
-package cognitoidentityprovider {
   @js.native
   @JSImport("aws-sdk/clients/cognitoidentityserviceprovider", JSImport.Namespace, "AWS.CognitoIdentityServiceProvider")
   class CognitoIdentityProvider() extends js.Object {
@@ -348,6 +346,11 @@ package cognitoidentityprovider {
     def updateUserPoolDomain(params: UpdateUserPoolDomainRequest): Request[UpdateUserPoolDomainResponse] = js.native
     def verifySoftwareToken(params: VerifySoftwareTokenRequest): Request[VerifySoftwareTokenResponse] = js.native
     def verifyUserAttribute(params: VerifyUserAttributeRequest): Request[VerifyUserAttributeResponse] = js.native
+  }
+  object CognitoIdentityProvider {
+    @inline implicit def toOps(service: CognitoIdentityProvider): CognitoIdentityProviderOps = {
+      new CognitoIdentityProviderOps(service)
+    }
   }
 
   /** The data type for <code>AccountRecoverySetting</code>.

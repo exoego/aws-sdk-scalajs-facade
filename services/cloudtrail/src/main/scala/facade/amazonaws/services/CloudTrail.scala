@@ -33,7 +33,7 @@ package object cloudtrail {
   type TrailNameList = js.Array[String]
   type Trails = js.Array[TrailInfo]
 
-  implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
+  final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] = service.addTags(params).promise().toFuture
     @inline def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] = service.createTrail(params).promise().toFuture
@@ -55,9 +55,7 @@ package object cloudtrail {
     @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] = service.updateTrail(params).promise().toFuture
 
   }
-}
 
-package cloudtrail {
   @js.native
   @JSImport("aws-sdk/clients/cloudtrail", JSImport.Namespace, "AWS.CloudTrail")
   class CloudTrail() extends js.Object {
@@ -81,6 +79,11 @@ package cloudtrail {
     def startLogging(params: StartLoggingRequest): Request[StartLoggingResponse] = js.native
     def stopLogging(params: StopLoggingRequest): Request[StopLoggingResponse] = js.native
     def updateTrail(params: UpdateTrailRequest): Request[UpdateTrailResponse] = js.native
+  }
+  object CloudTrail {
+    @inline implicit def toOps(service: CloudTrail): CloudTrailOps = {
+      new CloudTrailOps(service)
+    }
   }
 
   /** Specifies the tags to add to a trail.

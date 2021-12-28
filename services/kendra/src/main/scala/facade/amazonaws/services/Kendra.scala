@@ -131,7 +131,7 @@ package object kendra {
   type VisitorId = String
   type VpcSecurityGroupId = String
 
-  implicit final class KendraOps(private val service: Kendra) extends AnyVal {
+  final class KendraOps(private val service: Kendra) extends AnyVal {
 
     @inline def batchDeleteDocumentFuture(params: BatchDeleteDocumentRequest): Future[BatchDeleteDocumentResponse] = service.batchDeleteDocument(params).promise().toFuture
     @inline def batchPutDocumentFuture(params: BatchPutDocumentRequest): Future[BatchPutDocumentResponse] = service.batchPutDocument(params).promise().toFuture
@@ -164,9 +164,7 @@ package object kendra {
     @inline def updateThesaurusFuture(params: UpdateThesaurusRequest): Future[js.Object] = service.updateThesaurus(params).promise().toFuture
 
   }
-}
 
-package kendra {
   @js.native
   @JSImport("aws-sdk/clients/kendra", JSImport.Namespace, "AWS.Kendra")
   class Kendra() extends js.Object {
@@ -201,6 +199,11 @@ package kendra {
     def updateDataSource(params: UpdateDataSourceRequest): Request[js.Object] = js.native
     def updateIndex(params: UpdateIndexRequest): Request[js.Object] = js.native
     def updateThesaurus(params: UpdateThesaurusRequest): Request[js.Object] = js.native
+  }
+  object Kendra {
+    @inline implicit def toOps(service: Kendra): KendraOps = {
+      new KendraOps(service)
+    }
   }
 
   /** Access Control List files for the documents in a data source. For the format of the file, see [[https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html|Access control for S3 data sources]].

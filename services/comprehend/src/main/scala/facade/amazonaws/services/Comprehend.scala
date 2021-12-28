@@ -75,7 +75,7 @@ package object comprehend {
   type Timestamp = js.Date
   type TopicsDetectionJobPropertiesList = js.Array[TopicsDetectionJobProperties]
 
-  implicit final class ComprehendOps(private val service: Comprehend) extends AnyVal {
+  final class ComprehendOps(private val service: Comprehend) extends AnyVal {
 
     @inline def batchDetectDominantLanguageFuture(params: BatchDetectDominantLanguageRequest): Future[BatchDetectDominantLanguageResponse] = service.batchDetectDominantLanguage(params).promise().toFuture
     @inline def batchDetectEntitiesFuture(params: BatchDetectEntitiesRequest): Future[BatchDetectEntitiesResponse] = service.batchDetectEntities(params).promise().toFuture
@@ -140,9 +140,7 @@ package object comprehend {
     @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] = service.updateEndpoint(params).promise().toFuture
 
   }
-}
 
-package comprehend {
   @js.native
   @JSImport("aws-sdk/clients/comprehend", JSImport.Namespace, "AWS.Comprehend")
   class Comprehend() extends js.Object {
@@ -209,6 +207,11 @@ package comprehend {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
+  }
+  object Comprehend {
+    @inline implicit def toOps(service: Comprehend): ComprehendOps = {
+      new ComprehendOps(service)
+    }
   }
 
   /** An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.

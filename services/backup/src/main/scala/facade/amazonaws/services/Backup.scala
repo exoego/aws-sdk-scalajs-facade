@@ -58,7 +58,7 @@ package object backup {
   type WindowMinutes = Double
   type timestamp = js.Date
 
-  implicit final class BackupOps(private val service: Backup) extends AnyVal {
+  final class BackupOps(private val service: Backup) extends AnyVal {
 
     @inline def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] = service.createBackupPlan(params).promise().toFuture
     @inline def createBackupSelectionFuture(params: CreateBackupSelectionInput): Future[CreateBackupSelectionOutput] = service.createBackupSelection(params).promise().toFuture
@@ -113,9 +113,7 @@ package object backup {
     @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] = service.updateRegionSettings(params).promise().toFuture
 
   }
-}
 
-package backup {
   @js.native
   @JSImport("aws-sdk/clients/backup", JSImport.Namespace, "AWS.Backup")
   class Backup() extends js.Object {
@@ -172,6 +170,11 @@ package backup {
     def updateGlobalSettings(params: UpdateGlobalSettingsInput): Request[js.Object] = js.native
     def updateRecoveryPointLifecycle(params: UpdateRecoveryPointLifecycleInput): Request[UpdateRecoveryPointLifecycleOutput] = js.native
     def updateRegionSettings(params: UpdateRegionSettingsInput): Request[js.Object] = js.native
+  }
+  object Backup {
+    @inline implicit def toOps(service: Backup): BackupOps = {
+      new BackupOps(service)
+    }
   }
 
   /** A list of backup options for each resource type.

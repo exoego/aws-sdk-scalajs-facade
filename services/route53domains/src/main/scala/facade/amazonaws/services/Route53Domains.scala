@@ -51,7 +51,7 @@ package object route53domains {
   type Timestamp = js.Date
   type ZipCode = String
 
-  implicit final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
+  final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
 
     @inline def acceptDomainTransferFromAnotherAwsAccountFuture(params: AcceptDomainTransferFromAnotherAwsAccountRequest): Future[AcceptDomainTransferFromAnotherAwsAccountResponse] = service.acceptDomainTransferFromAnotherAwsAccount(params).promise().toFuture
     @inline def cancelDomainTransferToAnotherAwsAccountFuture(params: CancelDomainTransferToAnotherAwsAccountRequest): Future[CancelDomainTransferToAnotherAwsAccountResponse] = service.cancelDomainTransferToAnotherAwsAccount(params).promise().toFuture
@@ -83,9 +83,7 @@ package object route53domains {
     @inline def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] = service.viewBilling(params).promise().toFuture
 
   }
-}
 
-package route53domains {
   @js.native
   @JSImport("aws-sdk/clients/route53domains", JSImport.Namespace, "AWS.Route53Domains")
   class Route53Domains() extends js.Object {
@@ -119,6 +117,11 @@ package route53domains {
     def updateDomainNameservers(params: UpdateDomainNameserversRequest): Request[UpdateDomainNameserversResponse] = js.native
     def updateTagsForDomain(params: UpdateTagsForDomainRequest): Request[UpdateTagsForDomainResponse] = js.native
     def viewBilling(params: ViewBillingRequest): Request[ViewBillingResponse] = js.native
+  }
+  object Route53Domains {
+    @inline implicit def toOps(service: Route53Domains): Route53DomainsOps = {
+      new Route53DomainsOps(service)
+    }
   }
 
   /** The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements.

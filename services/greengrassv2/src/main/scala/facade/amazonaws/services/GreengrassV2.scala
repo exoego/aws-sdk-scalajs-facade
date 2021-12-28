@@ -76,7 +76,7 @@ package object greengrassv2 {
   type Timestamp = js.Date
   type TopicString = String
 
-  implicit final class GreengrassV2Ops(private val service: GreengrassV2) extends AnyVal {
+  final class GreengrassV2Ops(private val service: GreengrassV2) extends AnyVal {
 
     @inline def cancelDeploymentFuture(params: CancelDeploymentRequest): Future[CancelDeploymentResponse] = service.cancelDeployment(params).promise().toFuture
     @inline def createComponentVersionFuture(params: CreateComponentVersionRequest): Future[CreateComponentVersionResponse] = service.createComponentVersion(params).promise().toFuture
@@ -100,9 +100,7 @@ package object greengrassv2 {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package greengrassv2 {
   @js.native
   @JSImport("aws-sdk/clients/greengrassv2", JSImport.Namespace, "AWS.GreengrassV2")
   class GreengrassV2() extends js.Object {
@@ -128,6 +126,11 @@ package greengrassv2 {
     def resolveComponentCandidates(params: ResolveComponentCandidatesRequest): Request[ResolveComponentCandidatesResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object GreengrassV2 {
+    @inline implicit def toOps(service: GreengrassV2): GreengrassV2Ops = {
+      new GreengrassV2Ops(service)
+    }
   }
 
   @js.native

@@ -94,7 +94,7 @@ package object appflow {
   type Value = String
   type Warehouse = String
 
-  implicit final class AppflowOps(private val service: Appflow) extends AnyVal {
+  final class AppflowOps(private val service: Appflow) extends AnyVal {
 
     @inline def createConnectorProfileFuture(params: CreateConnectorProfileRequest): Future[CreateConnectorProfileResponse] = service.createConnectorProfile(params).promise().toFuture
     @inline def createFlowFuture(params: CreateFlowRequest): Future[CreateFlowResponse] = service.createFlow(params).promise().toFuture
@@ -116,9 +116,7 @@ package object appflow {
     @inline def updateFlowFuture(params: UpdateFlowRequest): Future[UpdateFlowResponse] = service.updateFlow(params).promise().toFuture
 
   }
-}
 
-package appflow {
   @js.native
   @JSImport("aws-sdk/clients/appflow", JSImport.Namespace, "AWS.Appflow")
   class Appflow() extends js.Object {
@@ -142,6 +140,11 @@ package appflow {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConnectorProfile(params: UpdateConnectorProfileRequest): Request[UpdateConnectorProfileResponse] = js.native
     def updateFlow(params: UpdateFlowRequest): Request[UpdateFlowResponse] = js.native
+  }
+  object Appflow {
+    @inline implicit def toOps(service: Appflow): AppflowOps = {
+      new AppflowOps(service)
+    }
   }
 
   /** The aggregation settings that you can use to customize the output format of your flow data.

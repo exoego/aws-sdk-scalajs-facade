@@ -59,7 +59,7 @@ package object iotthingsgraph {
   type Urns = js.Array[Urn]
   type Version = Double
 
-  implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
+  final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
 
     @inline def associateEntityToThingFuture(params: AssociateEntityToThingRequest): Future[AssociateEntityToThingResponse] = service.associateEntityToThing(params).promise().toFuture
     @inline def createFlowTemplateFuture(params: CreateFlowTemplateRequest): Future[CreateFlowTemplateResponse] = service.createFlowTemplate(params).promise().toFuture
@@ -98,9 +98,7 @@ package object iotthingsgraph {
     @inline def uploadEntityDefinitionsFuture(params: UploadEntityDefinitionsRequest): Future[UploadEntityDefinitionsResponse] = service.uploadEntityDefinitions(params).promise().toFuture
 
   }
-}
 
-package iotthingsgraph {
   @js.native
   @JSImport("aws-sdk/clients/iotthingsgraph", JSImport.Namespace, "AWS.IoTThingsGraph")
   class IoTThingsGraph() extends js.Object {
@@ -141,6 +139,11 @@ package iotthingsgraph {
     def updateFlowTemplate(params: UpdateFlowTemplateRequest): Request[UpdateFlowTemplateResponse] = js.native
     def updateSystemTemplate(params: UpdateSystemTemplateRequest): Request[UpdateSystemTemplateResponse] = js.native
     def uploadEntityDefinitions(params: UploadEntityDefinitionsRequest): Request[UploadEntityDefinitionsResponse] = js.native
+  }
+  object IoTThingsGraph {
+    @inline implicit def toOps(service: IoTThingsGraph): IoTThingsGraphOps = {
+      new IoTThingsGraphOps(service)
+    }
   }
 
   @js.native

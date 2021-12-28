@@ -44,7 +44,7 @@ package object signer {
   type Timestamp = js.Date
   type Version = String
 
-  implicit final class SignerOps(private val service: Signer) extends AnyVal {
+  final class SignerOps(private val service: Signer) extends AnyVal {
 
     @inline def addProfilePermissionFuture(params: AddProfilePermissionRequest): Future[AddProfilePermissionResponse] = service.addProfilePermission(params).promise().toFuture
     @inline def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] = service.cancelSigningProfile(params).promise().toFuture
@@ -65,9 +65,7 @@ package object signer {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package signer {
   @js.native
   @JSImport("aws-sdk/clients/signer", JSImport.Namespace, "AWS.Signer")
   class Signer() extends js.Object {
@@ -90,6 +88,11 @@ package signer {
     def startSigningJob(params: StartSigningJobRequest): Request[StartSigningJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object Signer {
+    @inline implicit def toOps(service: Signer): SignerOps = {
+      new SignerOps(service)
+    }
   }
 
   @js.native

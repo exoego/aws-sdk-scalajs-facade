@@ -49,7 +49,7 @@ package object mwaa {
   type WebserverUrl = String
   type WeeklyMaintenanceWindowStart = String
 
-  implicit final class MWAAOps(private val service: MWAA) extends AnyVal {
+  final class MWAAOps(private val service: MWAA) extends AnyVal {
 
     @inline def createCliTokenFuture(params: CreateCliTokenRequest): Future[CreateCliTokenResponse] = service.createCliToken(params).promise().toFuture
     @inline def createEnvironmentFuture(params: CreateEnvironmentInput): Future[CreateEnvironmentOutput] = service.createEnvironment(params).promise().toFuture
@@ -64,9 +64,7 @@ package object mwaa {
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentInput): Future[UpdateEnvironmentOutput] = service.updateEnvironment(params).promise().toFuture
 
   }
-}
 
-package mwaa {
   @js.native
   @JSImport("aws-sdk/clients/mwaa", JSImport.Namespace, "AWS.MWAA")
   class MWAA() extends js.Object {
@@ -83,6 +81,11 @@ package mwaa {
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateEnvironment(params: UpdateEnvironmentInput): Request[UpdateEnvironmentOutput] = js.native
+  }
+  object MWAA {
+    @inline implicit def toOps(service: MWAA): MWAAOps = {
+      new MWAAOps(service)
+    }
   }
 
   @js.native

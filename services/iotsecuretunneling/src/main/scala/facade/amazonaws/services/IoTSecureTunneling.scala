@@ -26,7 +26,7 @@ package object iotsecuretunneling {
   type TunnelId = String
   type TunnelSummaryList = js.Array[TunnelSummary]
 
-  implicit final class IoTSecureTunnelingOps(private val service: IoTSecureTunneling) extends AnyVal {
+  final class IoTSecureTunnelingOps(private val service: IoTSecureTunneling) extends AnyVal {
 
     @inline def closeTunnelFuture(params: CloseTunnelRequest): Future[CloseTunnelResponse] = service.closeTunnel(params).promise().toFuture
     @inline def describeTunnelFuture(params: DescribeTunnelRequest): Future[DescribeTunnelResponse] = service.describeTunnel(params).promise().toFuture
@@ -37,9 +37,7 @@ package object iotsecuretunneling {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package iotsecuretunneling {
   @js.native
   @JSImport("aws-sdk/clients/iotsecuretunneling", JSImport.Namespace, "AWS.IoTSecureTunneling")
   class IoTSecureTunneling() extends js.Object {
@@ -52,6 +50,11 @@ package iotsecuretunneling {
     def openTunnel(params: OpenTunnelRequest): Request[OpenTunnelResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object IoTSecureTunneling {
+    @inline implicit def toOps(service: IoTSecureTunneling): IoTSecureTunnelingOps = {
+      new IoTSecureTunnelingOps(service)
+    }
   }
 
   @js.native

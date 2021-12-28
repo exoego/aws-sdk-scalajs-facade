@@ -20,7 +20,7 @@ package object macie {
   type S3ResourcesClassification = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
 
-  implicit final class MacieOps(private val service: Macie) extends AnyVal {
+  final class MacieOps(private val service: Macie) extends AnyVal {
 
     @inline def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] = service.associateMemberAccount(params).promise().toFuture
     @inline def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] = service.associateS3Resources(params).promise().toFuture
@@ -31,9 +31,7 @@ package object macie {
     @inline def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] = service.updateS3Resources(params).promise().toFuture
 
   }
-}
 
-package macie {
   @js.native
   @JSImport("aws-sdk/clients/macie", JSImport.Namespace, "AWS.Macie")
   class Macie() extends js.Object {
@@ -46,6 +44,11 @@ package macie {
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResult] = js.native
     def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult] = js.native
     def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult] = js.native
+  }
+  object Macie {
+    @inline implicit def toOps(service: Macie): MacieOps = {
+      new MacieOps(service)
+    }
   }
 
   @js.native

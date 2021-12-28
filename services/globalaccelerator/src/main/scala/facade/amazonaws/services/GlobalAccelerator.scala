@@ -53,7 +53,7 @@ package object globalaccelerator {
   type Timestamp = js.Date
   type TrafficDialPercentage = Float
 
-  implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
+  final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
     @inline def addCustomRoutingEndpointsFuture(params: AddCustomRoutingEndpointsRequest): Future[AddCustomRoutingEndpointsResponse] = service.addCustomRoutingEndpoints(params).promise().toFuture
     @inline def advertiseByoipCidrFuture(params: AdvertiseByoipCidrRequest): Future[AdvertiseByoipCidrResponse] = service.advertiseByoipCidr(params).promise().toFuture
@@ -104,9 +104,7 @@ package object globalaccelerator {
     @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResponse] = service.withdrawByoipCidr(params).promise().toFuture
 
   }
-}
 
-package globalaccelerator {
   @js.native
   @JSImport("aws-sdk/clients/globalaccelerator", JSImport.Namespace, "AWS.GlobalAccelerator")
   class GlobalAccelerator() extends js.Object {
@@ -159,6 +157,11 @@ package globalaccelerator {
     def updateEndpointGroup(params: UpdateEndpointGroupRequest): Request[UpdateEndpointGroupResponse] = js.native
     def updateListener(params: UpdateListenerRequest): Request[UpdateListenerResponse] = js.native
     def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResponse] = js.native
+  }
+  object GlobalAccelerator {
+    @inline implicit def toOps(service: GlobalAccelerator): GlobalAcceleratorOps = {
+      new GlobalAcceleratorOps(service)
+    }
   }
 
   /** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers.

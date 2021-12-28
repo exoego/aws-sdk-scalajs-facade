@@ -63,7 +63,7 @@ package object guardduty {
   type UsageDataSourceResultList = js.Array[UsageDataSourceResult]
   type UsageResourceResultList = js.Array[UsageResourceResult]
 
-  implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
+  final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
     @inline def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] = service.archiveFindings(params).promise().toFuture
@@ -125,9 +125,7 @@ package object guardduty {
     @inline def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] = service.updateThreatIntelSet(params).promise().toFuture
 
   }
-}
 
-package guardduty {
   @js.native
   @JSImport("aws-sdk/clients/guardduty", JSImport.Namespace, "AWS.GuardDuty")
   class GuardDuty() extends js.Object {
@@ -191,6 +189,11 @@ package guardduty {
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updatePublishingDestination(params: UpdatePublishingDestinationRequest): Request[UpdatePublishingDestinationResponse] = js.native
     def updateThreatIntelSet(params: UpdateThreatIntelSetRequest): Request[UpdateThreatIntelSetResponse] = js.native
+  }
+  object GuardDuty {
+    @inline implicit def toOps(service: GuardDuty): GuardDutyOps = {
+      new GuardDutyOps(service)
+    }
   }
 
   @js.native

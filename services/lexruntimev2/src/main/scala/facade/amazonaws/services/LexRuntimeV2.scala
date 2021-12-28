@@ -32,7 +32,7 @@ package object lexruntimev2 {
   type StringMap = js.Dictionary[String]
   type Text = String
 
-  implicit final class LexRuntimeV2Ops(private val service: LexRuntimeV2) extends AnyVal {
+  final class LexRuntimeV2Ops(private val service: LexRuntimeV2) extends AnyVal {
 
     @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] = service.deleteSession(params).promise().toFuture
     @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] = service.getSession(params).promise().toFuture
@@ -41,9 +41,7 @@ package object lexruntimev2 {
     @inline def recognizeUtteranceFuture(params: RecognizeUtteranceRequest): Future[RecognizeUtteranceResponse] = service.recognizeUtterance(params).promise().toFuture
 
   }
-}
 
-package lexruntimev2 {
   @js.native
   @JSImport("aws-sdk/clients/lexruntimev2", JSImport.Namespace, "AWS.LexRuntimeV2")
   class LexRuntimeV2() extends js.Object {
@@ -54,6 +52,11 @@ package lexruntimev2 {
     def putSession(params: PutSessionRequest): Request[PutSessionResponse] = js.native
     def recognizeText(params: RecognizeTextRequest): Request[RecognizeTextResponse] = js.native
     def recognizeUtterance(params: RecognizeUtteranceRequest): Request[RecognizeUtteranceResponse] = js.native
+  }
+  object LexRuntimeV2 {
+    @inline implicit def toOps(service: LexRuntimeV2): LexRuntimeV2Ops = {
+      new LexRuntimeV2Ops(service)
+    }
   }
 
   /** Contains information about the contexts that a user is using in a session. You can configure Amazon Lex to set a context when an intent is fulfilled, or you can set a context using the , , or operations. Use a context to indicate to Amazon Lex intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.

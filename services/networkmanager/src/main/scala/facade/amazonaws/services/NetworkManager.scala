@@ -25,7 +25,7 @@ package object networkmanager {
   type TransitGatewayConnectPeerAssociationList = js.Array[TransitGatewayConnectPeerAssociation]
   type TransitGatewayRegistrationList = js.Array[TransitGatewayRegistration]
 
-  implicit final class NetworkManagerOps(private val service: NetworkManager) extends AnyVal {
+  final class NetworkManagerOps(private val service: NetworkManager) extends AnyVal {
 
     @inline def associateCustomerGatewayFuture(params: AssociateCustomerGatewayRequest): Future[AssociateCustomerGatewayResponse] = service.associateCustomerGateway(params).promise().toFuture
     @inline def associateLinkFuture(params: AssociateLinkRequest): Future[AssociateLinkResponse] = service.associateLink(params).promise().toFuture
@@ -64,9 +64,7 @@ package object networkmanager {
     @inline def updateSiteFuture(params: UpdateSiteRequest): Future[UpdateSiteResponse] = service.updateSite(params).promise().toFuture
 
   }
-}
 
-package networkmanager {
   @js.native
   @JSImport("aws-sdk/clients/networkmanager", JSImport.Namespace, "AWS.NetworkManager")
   class NetworkManager() extends js.Object {
@@ -107,6 +105,11 @@ package networkmanager {
     def updateGlobalNetwork(params: UpdateGlobalNetworkRequest): Request[UpdateGlobalNetworkResponse] = js.native
     def updateLink(params: UpdateLinkRequest): Request[UpdateLinkResponse] = js.native
     def updateSite(params: UpdateSiteRequest): Request[UpdateSiteResponse] = js.native
+  }
+  object NetworkManager {
+    @inline implicit def toOps(service: NetworkManager): NetworkManagerOps = {
+      new NetworkManagerOps(service)
+    }
   }
 
   /** Specifies a location in AWS.

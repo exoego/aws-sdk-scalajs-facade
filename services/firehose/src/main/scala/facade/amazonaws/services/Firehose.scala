@@ -84,7 +84,7 @@ package object firehose {
   type Timestamp = js.Date
   type Username = String
 
-  implicit final class FirehoseOps(private val service: Firehose) extends AnyVal {
+  final class FirehoseOps(private val service: Firehose) extends AnyVal {
 
     @inline def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] = service.createDeliveryStream(params).promise().toFuture
     @inline def deleteDeliveryStreamFuture(params: DeleteDeliveryStreamInput): Future[DeleteDeliveryStreamOutput] = service.deleteDeliveryStream(params).promise().toFuture
@@ -100,9 +100,7 @@ package object firehose {
     @inline def updateDestinationFuture(params: UpdateDestinationInput): Future[UpdateDestinationOutput] = service.updateDestination(params).promise().toFuture
 
   }
-}
 
-package firehose {
   @js.native
   @JSImport("aws-sdk/clients/firehose", JSImport.Namespace, "AWS.Firehose")
   class Firehose() extends js.Object {
@@ -120,6 +118,11 @@ package firehose {
     def tagDeliveryStream(params: TagDeliveryStreamInput): Request[TagDeliveryStreamOutput] = js.native
     def untagDeliveryStream(params: UntagDeliveryStreamInput): Request[UntagDeliveryStreamOutput] = js.native
     def updateDestination(params: UpdateDestinationInput): Request[UpdateDestinationOutput] = js.native
+  }
+  object Firehose {
+    @inline implicit def toOps(service: Firehose): FirehoseOps = {
+      new FirehoseOps(service)
+    }
   }
 
   /** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.

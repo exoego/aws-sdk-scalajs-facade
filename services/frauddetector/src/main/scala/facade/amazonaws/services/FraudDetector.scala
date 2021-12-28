@@ -74,7 +74,7 @@ package object frauddetector {
   type variableValue = String
   type wholeNumberVersionString = String
 
-  implicit final class FraudDetectorOps(private val service: FraudDetector) extends AnyVal {
+  final class FraudDetectorOps(private val service: FraudDetector) extends AnyVal {
 
     @inline def batchCreateVariableFuture(params: BatchCreateVariableRequest): Future[BatchCreateVariableResult] = service.batchCreateVariable(params).promise().toFuture
     @inline def batchGetVariableFuture(params: BatchGetVariableRequest): Future[BatchGetVariableResult] = service.batchGetVariable(params).promise().toFuture
@@ -135,9 +135,7 @@ package object frauddetector {
     @inline def updateVariableFuture(params: UpdateVariableRequest): Future[UpdateVariableResult] = service.updateVariable(params).promise().toFuture
 
   }
-}
 
-package frauddetector {
   @js.native
   @JSImport("aws-sdk/clients/frauddetector", JSImport.Namespace, "AWS.FraudDetector")
   class FraudDetector() extends js.Object {
@@ -200,6 +198,11 @@ package frauddetector {
     def updateRuleMetadata(params: UpdateRuleMetadataRequest): Request[UpdateRuleMetadataResult] = js.native
     def updateRuleVersion(params: UpdateRuleVersionRequest): Request[UpdateRuleVersionResult] = js.native
     def updateVariable(params: UpdateVariableRequest): Request[UpdateVariableResult] = js.native
+  }
+  object FraudDetector {
+    @inline implicit def toOps(service: FraudDetector): FraudDetectorOps = {
+      new FraudDetectorOps(service)
+    }
   }
 
   @js.native

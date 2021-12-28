@@ -23,7 +23,7 @@ package object mediapackage {
   type __mapOf__string = js.Dictionary[__string]
   type __string = String
 
-  implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
+  final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
     @inline def configureLogsFuture(params: ConfigureLogsRequest): Future[ConfigureLogsResponse] = service.configureLogs(params).promise().toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
@@ -45,9 +45,7 @@ package object mediapackage {
     @inline def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] = service.updateOriginEndpoint(params).promise().toFuture
 
   }
-}
 
-package mediapackage {
   @js.native
   @JSImport("aws-sdk/clients/mediapackage", JSImport.Namespace, "AWS.MediaPackage")
   class MediaPackage() extends js.Object {
@@ -72,6 +70,11 @@ package mediapackage {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
     def updateOriginEndpoint(params: UpdateOriginEndpointRequest): Request[UpdateOriginEndpointResponse] = js.native
+  }
+  object MediaPackage {
+    @inline implicit def toOps(service: MediaPackage): MediaPackageOps = {
+      new MediaPackageOps(service)
+    }
   }
 
   @js.native

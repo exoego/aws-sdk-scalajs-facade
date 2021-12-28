@@ -142,7 +142,7 @@ package object gamelift {
   type WholeNumber = Int
   type ZipBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
-  implicit final class GameLiftOps(private val service: GameLift) extends AnyVal {
+  final class GameLiftOps(private val service: GameLift) extends AnyVal {
 
     @inline def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] = service.acceptMatch(params).promise().toFuture
     @inline def claimGameServerFuture(params: ClaimGameServerInput): Future[ClaimGameServerOutput] = service.claimGameServer(params).promise().toFuture
@@ -241,9 +241,7 @@ package object gamelift {
     @inline def validateMatchmakingRuleSetFuture(params: ValidateMatchmakingRuleSetInput): Future[ValidateMatchmakingRuleSetOutput] = service.validateMatchmakingRuleSet(params).promise().toFuture
 
   }
-}
 
-package gamelift {
   @js.native
   @JSImport("aws-sdk/clients/gamelift", JSImport.Namespace, "AWS.GameLift")
   class GameLift() extends js.Object {
@@ -344,6 +342,11 @@ package gamelift {
     def updateRuntimeConfiguration(params: UpdateRuntimeConfigurationInput): Request[UpdateRuntimeConfigurationOutput] = js.native
     def updateScript(params: UpdateScriptInput): Request[UpdateScriptOutput] = js.native
     def validateMatchmakingRuleSet(params: ValidateMatchmakingRuleSetInput): Request[ValidateMatchmakingRuleSetOutput] = js.native
+  }
+  object GameLift {
+    @inline implicit def toOps(service: GameLift): GameLiftOps = {
+      new GameLiftOps(service)
+    }
   }
 
   /** Represents the input for a request operation.

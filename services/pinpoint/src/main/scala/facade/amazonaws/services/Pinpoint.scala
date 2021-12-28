@@ -55,7 +55,7 @@ package object pinpoint {
   type __string = String
   type __timestampIso8601 = js.Date
 
-  implicit final class PinpointOps(private val service: Pinpoint) extends AnyVal {
+  final class PinpointOps(private val service: Pinpoint) extends AnyVal {
 
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] = service.createCampaign(params).promise().toFuture
@@ -171,9 +171,7 @@ package object pinpoint {
     @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] = service.updateVoiceTemplate(params).promise().toFuture
 
   }
-}
 
-package pinpoint {
   @js.native
   @JSImport("aws-sdk/clients/pinpoint", JSImport.Namespace, "AWS.Pinpoint")
   class Pinpoint() extends js.Object {
@@ -291,6 +289,11 @@ package pinpoint {
     def updateTemplateActiveVersion(params: UpdateTemplateActiveVersionRequest): Request[UpdateTemplateActiveVersionResponse] = js.native
     def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse] = js.native
     def updateVoiceTemplate(params: UpdateVoiceTemplateRequest): Request[UpdateVoiceTemplateResponse] = js.native
+  }
+  object Pinpoint {
+    @inline implicit def toOps(service: Pinpoint): PinpointOps = {
+      new PinpointOps(service)
+    }
   }
 
   /** Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.

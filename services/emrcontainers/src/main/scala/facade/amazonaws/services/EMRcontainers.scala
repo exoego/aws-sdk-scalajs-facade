@@ -45,7 +45,7 @@ package object emrcontainers {
   type VirtualClusterStates = js.Array[VirtualClusterState]
   type VirtualClusters = js.Array[VirtualCluster]
 
-  implicit final class EMRcontainersOps(private val service: EMRcontainers) extends AnyVal {
+  final class EMRcontainersOps(private val service: EMRcontainers) extends AnyVal {
 
     @inline def cancelJobRunFuture(params: CancelJobRunRequest): Future[CancelJobRunResponse] = service.cancelJobRun(params).promise().toFuture
     @inline def createManagedEndpointFuture(params: CreateManagedEndpointRequest): Future[CreateManagedEndpointResponse] = service.createManagedEndpoint(params).promise().toFuture
@@ -64,9 +64,7 @@ package object emrcontainers {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package emrcontainers {
   @js.native
   @JSImport("aws-sdk/clients/emrcontainers", JSImport.Namespace, "AWS.EMRcontainers")
   class EMRcontainers() extends js.Object {
@@ -87,6 +85,11 @@ package emrcontainers {
     def startJobRun(params: StartJobRunRequest): Request[StartJobRunResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object EMRcontainers {
+    @inline implicit def toOps(service: EMRcontainers): EMRcontainersOps = {
+      new EMRcontainersOps(service)
+    }
   }
 
   @js.native

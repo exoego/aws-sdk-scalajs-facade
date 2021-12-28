@@ -64,7 +64,7 @@ package object applicationdiscovery {
   type TimeStamp = js.Date
   type ToDeleteIdentifierList = js.Array[ImportTaskIdentifier]
 
-  implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
+  final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
     @inline def associateConfigurationItemsToApplicationFuture(params: AssociateConfigurationItemsToApplicationRequest): Future[AssociateConfigurationItemsToApplicationResponse] = service.associateConfigurationItemsToApplication(params).promise().toFuture
     @inline def batchDeleteImportDataFuture(params: BatchDeleteImportDataRequest): Future[BatchDeleteImportDataResponse] = service.batchDeleteImportData(params).promise().toFuture
@@ -91,9 +91,7 @@ package object applicationdiscovery {
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
 
   }
-}
 
-package applicationdiscovery {
   @js.native
   @JSImport("aws-sdk/clients/discovery", JSImport.Namespace, "AWS.Discovery")
   class ApplicationDiscovery() extends js.Object {
@@ -124,6 +122,11 @@ package applicationdiscovery {
     def stopContinuousExport(params: StopContinuousExportRequest): Request[StopContinuousExportResponse] = js.native
     def stopDataCollectionByAgentIds(params: StopDataCollectionByAgentIdsRequest): Request[StopDataCollectionByAgentIdsResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+  }
+  object ApplicationDiscovery {
+    @inline implicit def toOps(service: ApplicationDiscovery): ApplicationDiscoveryOps = {
+      new ApplicationDiscoveryOps(service)
+    }
   }
 
   /** Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.

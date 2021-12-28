@@ -40,7 +40,7 @@ package object appconfig {
   type ValidatorTypeList = js.Array[ValidatorType]
   type Version = String
 
-  implicit final class AppConfigOps(private val service: AppConfig) extends AnyVal {
+  final class AppConfigOps(private val service: AppConfig) extends AnyVal {
 
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[Application] = service.createApplication(params).promise().toFuture
     @inline def createConfigurationProfileFuture(params: CreateConfigurationProfileRequest): Future[ConfigurationProfile] = service.createConfigurationProfile(params).promise().toFuture
@@ -77,9 +77,7 @@ package object appconfig {
     @inline def validateConfigurationFuture(params: ValidateConfigurationRequest): Future[js.Object] = service.validateConfiguration(params).promise().toFuture
 
   }
-}
 
-package appconfig {
   @js.native
   @JSImport("aws-sdk/clients/appconfig", JSImport.Namespace, "AWS.AppConfig")
   class AppConfig() extends js.Object {
@@ -118,6 +116,11 @@ package appconfig {
     def updateDeploymentStrategy(params: UpdateDeploymentStrategyRequest): Request[DeploymentStrategy] = js.native
     def updateEnvironment(params: UpdateEnvironmentRequest): Request[Environment] = js.native
     def validateConfiguration(params: ValidateConfigurationRequest): Request[js.Object] = js.native
+  }
+  object AppConfig {
+    @inline implicit def toOps(service: AppConfig): AppConfigOps = {
+      new AppConfigOps(service)
+    }
   }
 
   @js.native

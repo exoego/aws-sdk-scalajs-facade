@@ -24,7 +24,7 @@ package object mediastoredata {
   type TimeStamp = js.Date
   type statusCode = Int
 
-  implicit final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
+  final class MediaStoreDataOps(private val service: MediaStoreData) extends AnyVal {
 
     @inline def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] = service.deleteObject(params).promise().toFuture
     @inline def describeObjectFuture(params: DescribeObjectRequest): Future[DescribeObjectResponse] = service.describeObject(params).promise().toFuture
@@ -33,9 +33,7 @@ package object mediastoredata {
     @inline def putObjectFuture(params: PutObjectRequest): Future[PutObjectResponse] = service.putObject(params).promise().toFuture
 
   }
-}
 
-package mediastoredata {
   @js.native
   @JSImport("aws-sdk/clients/mediastoredata", JSImport.Namespace, "AWS.MediaStoreData")
   class MediaStoreData() extends js.Object {
@@ -46,6 +44,11 @@ package mediastoredata {
     def getObject(params: GetObjectRequest): Request[GetObjectResponse] = js.native
     def listItems(params: ListItemsRequest): Request[ListItemsResponse] = js.native
     def putObject(params: PutObjectRequest): Request[PutObjectResponse] = js.native
+  }
+  object MediaStoreData {
+    @inline implicit def toOps(service: MediaStoreData): MediaStoreDataOps = {
+      new MediaStoreDataOps(service)
+    }
   }
 
   @js.native

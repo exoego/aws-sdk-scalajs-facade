@@ -33,7 +33,7 @@ package object lakeformation {
   type Token = String
   type TrustedResourceOwners = js.Array[CatalogIdString]
 
-  implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
+  final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
     @inline def batchGrantPermissionsFuture(params: BatchGrantPermissionsRequest): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise().toFuture
     @inline def batchRevokePermissionsFuture(params: BatchRevokePermissionsRequest): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise().toFuture
@@ -50,9 +50,7 @@ package object lakeformation {
     @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
 
   }
-}
 
-package lakeformation {
   @js.native
   @JSImport("aws-sdk/clients/lakeformation", JSImport.Namespace, "AWS.LakeFormation")
   class LakeFormation() extends js.Object {
@@ -71,6 +69,11 @@ package lakeformation {
     def registerResource(params: RegisterResourceRequest): Request[RegisterResourceResponse] = js.native
     def revokePermissions(params: RevokePermissionsRequest): Request[RevokePermissionsResponse] = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
+  }
+  object LakeFormation {
+    @inline implicit def toOps(service: LakeFormation): LakeFormationOps = {
+      new LakeFormationOps(service)
+    }
   }
 
   @js.native

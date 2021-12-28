@@ -63,7 +63,7 @@ package object organizations {
   type TargetName = String
   type Timestamp = js.Date
 
-  implicit final class OrganizationsOps(private val service: Organizations) extends AnyVal {
+  final class OrganizationsOps(private val service: Organizations) extends AnyVal {
 
     @inline def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] = service.acceptHandshake(params).promise().toFuture
     @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] = service.attachPolicy(params).promise().toFuture
@@ -118,9 +118,7 @@ package object organizations {
     @inline def updatePolicyFuture(params: UpdatePolicyRequest): Future[UpdatePolicyResponse] = service.updatePolicy(params).promise().toFuture
 
   }
-}
 
-package organizations {
   @js.native
   @JSImport("aws-sdk/clients/organizations", JSImport.Namespace, "AWS.Organizations")
   class Organizations() extends js.Object {
@@ -177,6 +175,11 @@ package organizations {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateOrganizationalUnit(params: UpdateOrganizationalUnitRequest): Request[UpdateOrganizationalUnitResponse] = js.native
     def updatePolicy(params: UpdatePolicyRequest): Request[UpdatePolicyResponse] = js.native
+  }
+  object Organizations {
+    @inline implicit def toOps(service: Organizations): OrganizationsOps = {
+      new OrganizationsOps(service)
+    }
   }
 
   @js.native

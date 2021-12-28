@@ -63,7 +63,7 @@ package object route53resolver {
   type TargetList = js.Array[TargetAddress]
   type Unsigned = Int
 
-  implicit final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
+  final class Route53ResolverOps(private val service: Route53Resolver) extends AnyVal {
 
     @inline def associateFirewallRuleGroupFuture(params: AssociateFirewallRuleGroupRequest): Future[AssociateFirewallRuleGroupResponse] = service.associateFirewallRuleGroup(params).promise().toFuture
     @inline def associateResolverEndpointIpAddressFuture(params: AssociateResolverEndpointIpAddressRequest): Future[AssociateResolverEndpointIpAddressResponse] = service.associateResolverEndpointIpAddress(params).promise().toFuture
@@ -127,9 +127,7 @@ package object route53resolver {
     @inline def updateResolverRuleFuture(params: UpdateResolverRuleRequest): Future[UpdateResolverRuleResponse] = service.updateResolverRule(params).promise().toFuture
 
   }
-}
 
-package route53resolver {
   @js.native
   @JSImport("aws-sdk/clients/route53resolver", JSImport.Namespace, "AWS.Route53Resolver")
   class Route53Resolver() extends js.Object {
@@ -195,6 +193,11 @@ package route53resolver {
     def updateResolverDnssecConfig(params: UpdateResolverDnssecConfigRequest): Request[UpdateResolverDnssecConfigResponse] = js.native
     def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] = js.native
     def updateResolverRule(params: UpdateResolverRuleRequest): Request[UpdateResolverRuleResponse] = js.native
+  }
+  object Route53Resolver {
+    @inline implicit def toOps(service: Route53Resolver): Route53ResolverOps = {
+      new Route53ResolverOps(service)
+    }
   }
 
   @js.native

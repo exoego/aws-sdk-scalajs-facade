@@ -21,7 +21,7 @@ package object sso {
   type SecretAccessKeyType = String
   type SessionTokenType = String
 
-  implicit final class SSOOps(private val service: SSO) extends AnyVal {
+  final class SSOOps(private val service: SSO) extends AnyVal {
 
     @inline def getRoleCredentialsFuture(params: GetRoleCredentialsRequest): Future[GetRoleCredentialsResponse] = service.getRoleCredentials(params).promise().toFuture
     @inline def listAccountRolesFuture(params: ListAccountRolesRequest): Future[ListAccountRolesResponse] = service.listAccountRoles(params).promise().toFuture
@@ -29,9 +29,7 @@ package object sso {
     @inline def logoutFuture(params: LogoutRequest): Future[js.Object] = service.logout(params).promise().toFuture
 
   }
-}
 
-package sso {
   @js.native
   @JSImport("aws-sdk/clients/sso", JSImport.Namespace, "AWS.SSO")
   class SSO() extends js.Object {
@@ -41,6 +39,11 @@ package sso {
     def listAccountRoles(params: ListAccountRolesRequest): Request[ListAccountRolesResponse] = js.native
     def listAccounts(params: ListAccountsRequest): Request[ListAccountsResponse] = js.native
     def logout(params: LogoutRequest): Request[js.Object] = js.native
+  }
+  object SSO {
+    @inline implicit def toOps(service: SSO): SSOOps = {
+      new SSOOps(service)
+    }
   }
 
   /** Provides information about your AWS account.

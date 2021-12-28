@@ -36,7 +36,7 @@ package object rdsdataservice {
   type TransactionStatus = String
   type UpdateResults = js.Array[UpdateResult]
 
-  implicit final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
+  final class RDSDataServiceOps(private val service: RDSDataService) extends AnyVal {
 
     @inline def batchExecuteStatementFuture(params: BatchExecuteStatementRequest): Future[BatchExecuteStatementResponse] = service.batchExecuteStatement(params).promise().toFuture
     @inline def beginTransactionFuture(params: BeginTransactionRequest): Future[BeginTransactionResponse] = service.beginTransaction(params).promise().toFuture
@@ -45,9 +45,7 @@ package object rdsdataservice {
     @inline def rollbackTransactionFuture(params: RollbackTransactionRequest): Future[RollbackTransactionResponse] = service.rollbackTransaction(params).promise().toFuture
 
   }
-}
 
-package rdsdataservice {
   @js.native
   @JSImport("aws-sdk/clients/rdsdataservice", JSImport.Namespace, "AWS.RDSDataService")
   class RDSDataService() extends js.Object {
@@ -59,6 +57,11 @@ package rdsdataservice {
     def commitTransaction(params: CommitTransactionRequest): Request[CommitTransactionResponse] = js.native
     def executeStatement(params: ExecuteStatementRequest): Request[ExecuteStatementResponse] = js.native
     def rollbackTransaction(params: RollbackTransactionRequest): Request[RollbackTransactionResponse] = js.native
+  }
+  object RDSDataService {
+    @inline implicit def toOps(service: RDSDataService): RDSDataServiceOps = {
+      new RDSDataServiceOps(service)
+    }
   }
 
   /** Contains an array.

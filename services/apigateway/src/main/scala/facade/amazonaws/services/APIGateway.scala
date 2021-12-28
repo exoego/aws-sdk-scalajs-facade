@@ -53,7 +53,7 @@ package object apigateway {
   type StatusCode = String
   type Timestamp = js.Date
 
-  implicit final class APIGatewayOps(private val service: APIGateway) extends AnyVal {
+  final class APIGatewayOps(private val service: APIGateway) extends AnyVal {
 
     @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[ApiKey] = service.createApiKey(params).promise().toFuture
     @inline def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[Authorizer] = service.createAuthorizer(params).promise().toFuture
@@ -177,9 +177,7 @@ package object apigateway {
     @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[VpcLink] = service.updateVpcLink(params).promise().toFuture
 
   }
-}
 
-package apigateway {
   @js.native
   @JSImport("aws-sdk/clients/apigateway", JSImport.Namespace, "AWS.APIGateway")
   class APIGateway() extends js.Object {
@@ -305,6 +303,11 @@ package apigateway {
     def updateUsage(params: UpdateUsageRequest): Request[Usage] = js.native
     def updateUsagePlan(params: UpdateUsagePlanRequest): Request[UsagePlan] = js.native
     def updateVpcLink(params: UpdateVpcLinkRequest): Request[VpcLink] = js.native
+  }
+  object APIGateway {
+    @inline implicit def toOps(service: APIGateway): APIGatewayOps = {
+      new APIGatewayOps(service)
+    }
   }
 
   /** Access log settings, including the access log format and access log destination ARN.

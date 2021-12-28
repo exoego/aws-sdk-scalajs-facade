@@ -75,7 +75,7 @@ package object ecr {
   type Url = String
   type VulnerabilitySourceUpdateTimestamp = js.Date
 
-  implicit final class ECROps(private val service: ECR) extends AnyVal {
+  final class ECROps(private val service: ECR) extends AnyVal {
 
     @inline def batchCheckLayerAvailabilityFuture(params: BatchCheckLayerAvailabilityRequest): Future[BatchCheckLayerAvailabilityResponse] = service.batchCheckLayerAvailability(params).promise().toFuture
     @inline def batchDeleteImageFuture(params: BatchDeleteImageRequest): Future[BatchDeleteImageResponse] = service.batchDeleteImage(params).promise().toFuture
@@ -113,9 +113,7 @@ package object ecr {
     @inline def uploadLayerPartFuture(params: UploadLayerPartRequest): Future[UploadLayerPartResponse] = service.uploadLayerPart(params).promise().toFuture
 
   }
-}
 
-package ecr {
   @js.native
   @JSImport("aws-sdk/clients/ecr", JSImport.Namespace, "AWS.ECR")
   class ECR() extends js.Object {
@@ -155,6 +153,11 @@ package ecr {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
+  }
+  object ECR {
+    @inline implicit def toOps(service: ECR): ECROps = {
+      new ECROps(service)
+    }
   }
 
   /** This data type is used in the <a>ImageScanFinding</a> data type.

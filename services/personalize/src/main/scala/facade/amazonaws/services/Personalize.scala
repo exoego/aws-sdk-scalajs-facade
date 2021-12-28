@@ -71,7 +71,7 @@ package object personalize {
   type TransactionsPerSecond = Int
   type Tunable = Boolean
 
-  implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
+  final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
     @inline def createBatchInferenceJobFuture(params: CreateBatchInferenceJobRequest): Future[CreateBatchInferenceJobResponse] = service.createBatchInferenceJob(params).promise().toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] = service.createCampaign(params).promise().toFuture
@@ -118,9 +118,7 @@ package object personalize {
     @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] = service.updateCampaign(params).promise().toFuture
 
   }
-}
 
-package personalize {
   @js.native
   @JSImport("aws-sdk/clients/personalize", JSImport.Namespace, "AWS.Personalize")
   class Personalize() extends js.Object {
@@ -169,6 +167,11 @@ package personalize {
     def listSolutionVersions(params: ListSolutionVersionsRequest): Request[ListSolutionVersionsResponse] = js.native
     def listSolutions(params: ListSolutionsRequest): Request[ListSolutionsResponse] = js.native
     def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
+  }
+  object Personalize {
+    @inline implicit def toOps(service: Personalize): PersonalizeOps = {
+      new PersonalizeOps(service)
+    }
   }
 
   /** Describes a custom algorithm.

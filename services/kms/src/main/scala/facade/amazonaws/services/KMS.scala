@@ -49,7 +49,7 @@ package object kms {
   type TagValueType = String
   type TrustAnchorCertificateType = String
 
-  implicit final class KMSOps(private val service: KMS) extends AnyVal {
+  final class KMSOps(private val service: KMS) extends AnyVal {
 
     @inline def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] = service.cancelKeyDeletion(params).promise().toFuture
     @inline def connectCustomKeyStoreFuture(params: ConnectCustomKeyStoreRequest): Future[ConnectCustomKeyStoreResponse] = service.connectCustomKeyStore(params).promise().toFuture
@@ -99,9 +99,7 @@ package object kms {
     @inline def verifyFuture(params: VerifyRequest): Future[VerifyResponse] = service.verify(params).promise().toFuture
 
   }
-}
 
-package kms {
   @js.native
   @JSImport("aws-sdk/clients/kms", JSImport.Namespace, "AWS.KMS")
   class KMS() extends js.Object {
@@ -153,6 +151,11 @@ package kms {
     def updateCustomKeyStore(params: UpdateCustomKeyStoreRequest): Request[UpdateCustomKeyStoreResponse] = js.native
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object] = js.native
     def verify(params: VerifyRequest): Request[VerifyResponse] = js.native
+  }
+  object KMS {
+    @inline implicit def toOps(service: KMS): KMSOps = {
+      new KMSOps(service)
+    }
   }
 
   @js.native

@@ -29,7 +29,7 @@ package object mq {
   type __string = String
   type __timestampIso8601 = js.Date
 
-  implicit final class MQOps(private val service: MQ) extends AnyVal {
+  final class MQOps(private val service: MQ) extends AnyVal {
 
     @inline def createBrokerFuture(params: CreateBrokerRequest): Future[CreateBrokerResponse] = service.createBroker(params).promise().toFuture
     @inline def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] = service.createConfiguration(params).promise().toFuture
@@ -55,9 +55,7 @@ package object mq {
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
 
   }
-}
 
-package mq {
   @js.native
   @JSImport("aws-sdk/clients/mq", JSImport.Namespace, "AWS.MQ")
   class MQ() extends js.Object {
@@ -85,6 +83,11 @@ package mq {
     def updateBroker(params: UpdateBrokerRequest): Request[UpdateBrokerResponse] = js.native
     def updateConfiguration(params: UpdateConfigurationRequest): Request[UpdateConfigurationResponse] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+  }
+  object MQ {
+    @inline implicit def toOps(service: MQ): MQOps = {
+      new MQOps(service)
+    }
   }
 
   /** The authentication strategy used to secure the broker.

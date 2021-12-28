@@ -43,7 +43,7 @@ package object sts {
   type userNameType = String
   type webIdentitySubjectType = String
 
-  implicit final class STSOps(private val service: STS) extends AnyVal {
+  final class STSOps(private val service: STS) extends AnyVal {
 
     @inline def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] = service.assumeRole(params).promise().toFuture
     @inline def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] = service.assumeRoleWithSAML(params).promise().toFuture
@@ -55,9 +55,7 @@ package object sts {
     @inline def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] = service.getSessionToken(params).promise().toFuture
 
   }
-}
 
-package sts {
   @js.native
   @JSImport("aws-sdk/clients/sts", JSImport.Namespace, "AWS.STS")
   class STS() extends js.Object {
@@ -71,6 +69,11 @@ package sts {
     def getCallerIdentity(params: GetCallerIdentityRequest): Request[GetCallerIdentityResponse] = js.native
     def getFederationToken(params: GetFederationTokenRequest): Request[GetFederationTokenResponse] = js.native
     def getSessionToken(params: GetSessionTokenRequest): Request[GetSessionTokenResponse] = js.native
+  }
+  object STS {
+    @inline implicit def toOps(service: STS): STSOps = {
+      new STSOps(service)
+    }
   }
 
   @js.native

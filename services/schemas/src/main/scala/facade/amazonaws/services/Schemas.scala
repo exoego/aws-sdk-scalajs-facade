@@ -27,7 +27,7 @@ package object schemas {
   type __stringMin20Max1600 = String
   type __timestampIso8601 = js.Date
 
-  implicit final class SchemasOps(private val service: Schemas) extends AnyVal {
+  final class SchemasOps(private val service: Schemas) extends AnyVal {
 
     @inline def createDiscovererFuture(params: CreateDiscovererRequest): Future[CreateDiscovererResponse] = service.createDiscoverer(params).promise().toFuture
     @inline def createRegistryFuture(params: CreateRegistryRequest): Future[CreateRegistryResponse] = service.createRegistry(params).promise().toFuture
@@ -62,9 +62,7 @@ package object schemas {
     @inline def updateSchemaFuture(params: UpdateSchemaRequest): Future[UpdateSchemaResponse] = service.updateSchema(params).promise().toFuture
 
   }
-}
 
-package schemas {
   @js.native
   @JSImport("aws-sdk/clients/schemas", JSImport.Namespace, "AWS.Schemas")
   class Schemas() extends js.Object {
@@ -101,6 +99,11 @@ package schemas {
     def updateDiscoverer(params: UpdateDiscovererRequest): Request[UpdateDiscovererResponse] = js.native
     def updateRegistry(params: UpdateRegistryRequest): Request[UpdateRegistryResponse] = js.native
     def updateSchema(params: UpdateSchemaRequest): Request[UpdateSchemaResponse] = js.native
+  }
+  object Schemas {
+    @inline implicit def toOps(service: Schemas): SchemasOps = {
+      new SchemasOps(service)
+    }
   }
 
   @js.native

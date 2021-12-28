@@ -59,7 +59,7 @@ package object forecast {
   type Values = js.Array[Value]
   type WeightedQuantileLosses = js.Array[WeightedQuantileLoss]
 
-  implicit final class ForecastOps(private val service: Forecast) extends AnyVal {
+  final class ForecastOps(private val service: Forecast) extends AnyVal {
 
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] = service.createDatasetGroup(params).promise().toFuture
@@ -97,9 +97,7 @@ package object forecast {
     @inline def updateDatasetGroupFuture(params: UpdateDatasetGroupRequest): Future[UpdateDatasetGroupResponse] = service.updateDatasetGroup(params).promise().toFuture
 
   }
-}
 
-package forecast {
   @js.native
   @JSImport("aws-sdk/clients/forecastservice", JSImport.Namespace, "AWS.ForecastService")
   class Forecast() extends js.Object {
@@ -139,6 +137,11 @@ package forecast {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatasetGroup(params: UpdateDatasetGroupRequest): Request[UpdateDatasetGroupResponse] = js.native
+  }
+  object Forecast {
+    @inline implicit def toOps(service: Forecast): ForecastOps = {
+      new ForecastOps(service)
+    }
   }
 
   @js.native

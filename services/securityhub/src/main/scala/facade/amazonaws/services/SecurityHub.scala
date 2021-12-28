@@ -141,7 +141,7 @@ package object securityhub {
   type VulnerabilityList = js.Array[Vulnerability]
   type WafExcludedRuleList = js.Array[WafExcludedRule]
 
-  implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
+  final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
     @inline def acceptAdministratorInvitationFuture(params: AcceptAdministratorInvitationRequest): Future[AcceptAdministratorInvitationResponse] = service.acceptAdministratorInvitation(params).promise().toFuture
     @inline def batchDisableStandardsFuture(params: BatchDisableStandardsRequest): Future[BatchDisableStandardsResponse] = service.batchDisableStandards(params).promise().toFuture
@@ -193,9 +193,7 @@ package object securityhub {
     @inline def updateStandardsControlFuture(params: UpdateStandardsControlRequest): Future[UpdateStandardsControlResponse] = service.updateStandardsControl(params).promise().toFuture
 
   }
-}
 
-package securityhub {
   @js.native
   @JSImport("aws-sdk/clients/securityhub", JSImport.Namespace, "AWS.SecurityHub")
   class SecurityHub() extends js.Object {
@@ -252,6 +250,11 @@ package securityhub {
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updateSecurityHubConfiguration(params: UpdateSecurityHubConfigurationRequest): Request[UpdateSecurityHubConfigurationResponse] = js.native
     def updateStandardsControl(params: UpdateStandardsControlRequest): Request[UpdateStandardsControlResponse] = js.native
+  }
+  object SecurityHub {
+    @inline implicit def toOps(service: SecurityHub): SecurityHubOps = {
+      new SecurityHubOps(service)
+    }
   }
 
   @js.native

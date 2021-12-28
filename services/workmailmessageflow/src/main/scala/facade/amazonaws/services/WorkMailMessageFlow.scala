@@ -13,15 +13,13 @@ package object workmailmessageflow {
   type s3KeyIdType = String
   type s3VersionType = String
 
-  implicit final class WorkMailMessageFlowOps(private val service: WorkMailMessageFlow) extends AnyVal {
+  final class WorkMailMessageFlowOps(private val service: WorkMailMessageFlow) extends AnyVal {
 
     @inline def getRawMessageContentFuture(params: GetRawMessageContentRequest): Future[GetRawMessageContentResponse] = service.getRawMessageContent(params).promise().toFuture
     @inline def putRawMessageContentFuture(params: PutRawMessageContentRequest): Future[PutRawMessageContentResponse] = service.putRawMessageContent(params).promise().toFuture
 
   }
-}
 
-package workmailmessageflow {
   @js.native
   @JSImport("aws-sdk/clients/workmailmessageflow", JSImport.Namespace, "AWS.WorkMailMessageFlow")
   class WorkMailMessageFlow() extends js.Object {
@@ -29,6 +27,11 @@ package workmailmessageflow {
 
     def getRawMessageContent(params: GetRawMessageContentRequest): Request[GetRawMessageContentResponse] = js.native
     def putRawMessageContent(params: PutRawMessageContentRequest): Request[PutRawMessageContentResponse] = js.native
+  }
+  object WorkMailMessageFlow {
+    @inline implicit def toOps(service: WorkMailMessageFlow): WorkMailMessageFlowOps = {
+      new WorkMailMessageFlowOps(service)
+    }
   }
 
   @js.native

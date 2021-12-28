@@ -51,7 +51,7 @@ package object codestar {
   type UserProfileDisplayName = String
   type UserProfilesList = js.Array[UserProfileSummary]
 
-  implicit final class CodeStarOps(private val service: CodeStar) extends AnyVal {
+  final class CodeStarOps(private val service: CodeStar) extends AnyVal {
 
     @inline def associateTeamMemberFuture(params: AssociateTeamMemberRequest): Future[AssociateTeamMemberResult] = service.associateTeamMember(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] = service.createProject(params).promise().toFuture
@@ -73,9 +73,7 @@ package object codestar {
     @inline def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResult] = service.updateUserProfile(params).promise().toFuture
 
   }
-}
 
-package codestar {
   @js.native
   @JSImport("aws-sdk/clients/codestar", JSImport.Namespace, "AWS.CodeStar")
   class CodeStar() extends js.Object {
@@ -99,6 +97,11 @@ package codestar {
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResult] = js.native
     def updateTeamMember(params: UpdateTeamMemberRequest): Request[UpdateTeamMemberResult] = js.native
     def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResult] = js.native
+  }
+  object CodeStar {
+    @inline implicit def toOps(service: CodeStar): CodeStarOps = {
+      new CodeStarOps(service)
+    }
   }
 
   @js.native

@@ -11,16 +11,14 @@ package object apigatewaymanagementapi {
   type __string = String
   type __timestampIso8601 = js.Date
 
-  implicit final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
+  final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
 
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[js.Object] = service.deleteConnection(params).promise().toFuture
     @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] = service.getConnection(params).promise().toFuture
     @inline def postToConnectionFuture(params: PostToConnectionRequest): Future[js.Object] = service.postToConnection(params).promise().toFuture
 
   }
-}
 
-package apigatewaymanagementapi {
   @js.native
   @JSImport("aws-sdk/clients/apigatewaymanagementapi", JSImport.Namespace, "AWS.ApiGatewayManagementApi")
   class ApiGatewayManagementApi() extends js.Object {
@@ -29,6 +27,11 @@ package apigatewaymanagementapi {
     def deleteConnection(params: DeleteConnectionRequest): Request[js.Object] = js.native
     def getConnection(params: GetConnectionRequest): Request[GetConnectionResponse] = js.native
     def postToConnection(params: PostToConnectionRequest): Request[js.Object] = js.native
+  }
+  object ApiGatewayManagementApi {
+    @inline implicit def toOps(service: ApiGatewayManagementApi): ApiGatewayManagementApiOps = {
+      new ApiGatewayManagementApiOps(service)
+    }
   }
 
   @js.native

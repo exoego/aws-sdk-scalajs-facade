@@ -19,7 +19,7 @@ package object amplifybackend {
   type __integerMin1Max25 = Int
   type __string = String
 
-  implicit final class AmplifyBackendOps(private val service: AmplifyBackend) extends AnyVal {
+  final class AmplifyBackendOps(private val service: AmplifyBackend) extends AnyVal {
 
     @inline def cloneBackendFuture(params: CloneBackendRequest): Future[CloneBackendResponse] = service.cloneBackend(params).promise().toFuture
     @inline def createBackendAPIFuture(params: CreateBackendAPIRequest): Future[CreateBackendAPIResponse] = service.createBackendAPI(params).promise().toFuture
@@ -47,9 +47,7 @@ package object amplifybackend {
     @inline def updateBackendJobFuture(params: UpdateBackendJobRequest): Future[UpdateBackendJobResponse] = service.updateBackendJob(params).promise().toFuture
 
   }
-}
 
-package amplifybackend {
   @js.native
   @JSImport("aws-sdk/clients/amplifybackend", JSImport.Namespace, "AWS.AmplifyBackend")
   class AmplifyBackend() extends js.Object {
@@ -79,6 +77,11 @@ package amplifybackend {
     def updateBackendAuth(params: UpdateBackendAuthRequest): Request[UpdateBackendAuthResponse] = js.native
     def updateBackendConfig(params: UpdateBackendConfigRequest): Request[UpdateBackendConfigResponse] = js.native
     def updateBackendJob(params: UpdateBackendJobRequest): Request[UpdateBackendJobResponse] = js.native
+  }
+  object AmplifyBackend {
+    @inline implicit def toOps(service: AmplifyBackend): AmplifyBackendOps = {
+      new AmplifyBackendOps(service)
+    }
   }
 
   @js.native

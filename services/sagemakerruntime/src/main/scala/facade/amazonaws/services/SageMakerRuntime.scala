@@ -16,20 +16,23 @@ package object sagemakerruntime {
   type TargetModelHeader = String
   type TargetVariantHeader = String
 
-  implicit final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
+  final class SageMakerRuntimeOps(private val service: SageMakerRuntime) extends AnyVal {
 
     @inline def invokeEndpointFuture(params: InvokeEndpointInput): Future[InvokeEndpointOutput] = service.invokeEndpoint(params).promise().toFuture
 
   }
-}
 
-package sagemakerruntime {
   @js.native
   @JSImport("aws-sdk/clients/sagemakerruntime", JSImport.Namespace, "AWS.SageMakerRuntime")
   class SageMakerRuntime() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def invokeEndpoint(params: InvokeEndpointInput): Request[InvokeEndpointOutput] = js.native
+  }
+  object SageMakerRuntime {
+    @inline implicit def toOps(service: SageMakerRuntime): SageMakerRuntimeOps = {
+      new SageMakerRuntimeOps(service)
+    }
   }
 
   @js.native

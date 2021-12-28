@@ -16,20 +16,23 @@ package object marketplaceentitlementservice {
   type ProductCode = String
   type Timestamp = js.Date
 
-  implicit final class MarketplaceEntitlementServiceOps(private val service: MarketplaceEntitlementService) extends AnyVal {
+  final class MarketplaceEntitlementServiceOps(private val service: MarketplaceEntitlementService) extends AnyVal {
 
     @inline def getEntitlementsFuture(params: GetEntitlementsRequest): Future[GetEntitlementsResult] = service.getEntitlements(params).promise().toFuture
 
   }
-}
 
-package marketplaceentitlementservice {
   @js.native
   @JSImport("aws-sdk/clients/marketplaceentitlementservice", JSImport.Namespace, "AWS.MarketplaceEntitlementService")
   class MarketplaceEntitlementService() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def getEntitlements(params: GetEntitlementsRequest): Request[GetEntitlementsResult] = js.native
+  }
+  object MarketplaceEntitlementService {
+    @inline implicit def toOps(service: MarketplaceEntitlementService): MarketplaceEntitlementServiceOps = {
+      new MarketplaceEntitlementServiceOps(service)
+    }
   }
 
   /** An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.

@@ -37,7 +37,7 @@ package object acm {
   type TagValue = String
   type ValidationEmailList = js.Array[String]
 
-  implicit final class ACMOps(private val service: ACM) extends AnyVal {
+  final class ACMOps(private val service: ACM) extends AnyVal {
 
     @inline def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] = service.addTagsToCertificate(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] = service.deleteCertificate(params).promise().toFuture
@@ -56,9 +56,7 @@ package object acm {
     @inline def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] = service.updateCertificateOptions(params).promise().toFuture
 
   }
-}
 
-package acm {
   @js.native
   @JSImport("aws-sdk/clients/acm", JSImport.Namespace, "AWS.ACM")
   class ACM() extends js.Object {
@@ -79,6 +77,11 @@ package acm {
     def requestCertificate(params: RequestCertificateRequest): Request[RequestCertificateResponse] = js.native
     def resendValidationEmail(params: ResendValidationEmailRequest): Request[js.Object] = js.native
     def updateCertificateOptions(params: UpdateCertificateOptionsRequest): Request[js.Object] = js.native
+  }
+  object ACM {
+    @inline implicit def toOps(service: ACM): ACMOps = {
+      new ACMOps(service)
+    }
   }
 
   @js.native

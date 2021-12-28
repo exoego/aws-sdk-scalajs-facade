@@ -133,7 +133,7 @@ package object elbv2 {
   type VpcId = String
   type ZoneName = String
 
-  implicit final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
+  final class ELBv2Ops(private val service: ELBv2) extends AnyVal {
 
     @inline def addListenerCertificatesFuture(params: AddListenerCertificatesInput): Future[AddListenerCertificatesOutput] = service.addListenerCertificates(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
@@ -171,9 +171,7 @@ package object elbv2 {
     @inline def setSubnetsFuture(params: SetSubnetsInput): Future[SetSubnetsOutput] = service.setSubnets(params).promise().toFuture
 
   }
-}
 
-package elbv2 {
   @js.native
   @JSImport("aws-sdk/clients/elbv2", JSImport.Namespace, "AWS.ELBv2")
   class ELBv2() extends js.Object {
@@ -213,6 +211,11 @@ package elbv2 {
     def setRulePriorities(params: SetRulePrioritiesInput): Request[SetRulePrioritiesOutput] = js.native
     def setSecurityGroups(params: SetSecurityGroupsInput): Request[SetSecurityGroupsOutput] = js.native
     def setSubnets(params: SetSubnetsInput): Request[SetSubnetsOutput] = js.native
+  }
+  object ELBv2 {
+    @inline implicit def toOps(service: ELBv2): ELBv2Ops = {
+      new ELBv2Ops(service)
+    }
   }
 
   /** Information about an action. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.

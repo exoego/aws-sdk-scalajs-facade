@@ -18,7 +18,7 @@ package object augmentedairuntime {
   type NextToken = String
   type Timestamp = js.Date
 
-  implicit final class AugmentedAIRuntimeOps(private val service: AugmentedAIRuntime) extends AnyVal {
+  final class AugmentedAIRuntimeOps(private val service: AugmentedAIRuntime) extends AnyVal {
 
     @inline def deleteHumanLoopFuture(params: DeleteHumanLoopRequest): Future[DeleteHumanLoopResponse] = service.deleteHumanLoop(params).promise().toFuture
     @inline def describeHumanLoopFuture(params: DescribeHumanLoopRequest): Future[DescribeHumanLoopResponse] = service.describeHumanLoop(params).promise().toFuture
@@ -27,9 +27,7 @@ package object augmentedairuntime {
     @inline def stopHumanLoopFuture(params: StopHumanLoopRequest): Future[StopHumanLoopResponse] = service.stopHumanLoop(params).promise().toFuture
 
   }
-}
 
-package augmentedairuntime {
   @js.native
   @JSImport("aws-sdk/clients/augmentedairuntime", JSImport.Namespace, "AWS.AugmentedAIRuntime")
   class AugmentedAIRuntime() extends js.Object {
@@ -40,6 +38,11 @@ package augmentedairuntime {
     def listHumanLoops(params: ListHumanLoopsRequest): Request[ListHumanLoopsResponse] = js.native
     def startHumanLoop(params: StartHumanLoopRequest): Request[StartHumanLoopResponse] = js.native
     def stopHumanLoop(params: StopHumanLoopRequest): Request[StopHumanLoopResponse] = js.native
+  }
+  object AugmentedAIRuntime {
+    @inline implicit def toOps(service: AugmentedAIRuntime): AugmentedAIRuntimeOps = {
+      new AugmentedAIRuntimeOps(service)
+    }
   }
 
   @js.native

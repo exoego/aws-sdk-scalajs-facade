@@ -71,7 +71,7 @@ package object fms {
   type UpdateToken = String
   type ViolationTarget = String
 
-  implicit final class FMSOps(private val service: FMS) extends AnyVal {
+  final class FMSOps(private val service: FMS) extends AnyVal {
 
     @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] = service.associateAdminAccount(params).promise().toFuture
     @inline def deleteAppsListFuture(params: DeleteAppsListRequest): Future[js.Object] = service.deleteAppsList(params).promise().toFuture
@@ -101,9 +101,7 @@ package object fms {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package fms {
   @js.native
   @JSImport("aws-sdk/clients/fms", JSImport.Namespace, "AWS.FMS")
   class FMS() extends js.Object {
@@ -135,6 +133,11 @@ package fms {
     def putProtocolsList(params: PutProtocolsListRequest): Request[PutProtocolsListResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object FMS {
+    @inline implicit def toOps(service: FMS): FMSOps = {
+      new FMSOps(service)
+    }
   }
 
   @js.native

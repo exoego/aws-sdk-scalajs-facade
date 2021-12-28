@@ -26,7 +26,7 @@ package object timestreamwrite {
   type TagList = js.Array[Tag]
   type TagValue = String
 
-  implicit final class TimestreamWriteOps(private val service: TimestreamWrite) extends AnyVal {
+  final class TimestreamWriteOps(private val service: TimestreamWrite) extends AnyVal {
 
     @inline def createDatabaseFuture(params: CreateDatabaseRequest): Future[CreateDatabaseResponse] = service.createDatabase(params).promise().toFuture
     @inline def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] = service.createTable(params).promise().toFuture
@@ -45,9 +45,7 @@ package object timestreamwrite {
     @inline def writeRecordsFuture(params: WriteRecordsRequest): Future[js.Object] = service.writeRecords(params).promise().toFuture
 
   }
-}
 
-package timestreamwrite {
   @js.native
   @JSImport("aws-sdk/clients/timestreamwrite", JSImport.Namespace, "AWS.TimestreamWrite")
   class TimestreamWrite() extends js.Object {
@@ -68,6 +66,11 @@ package timestreamwrite {
     def updateDatabase(params: UpdateDatabaseRequest): Request[UpdateDatabaseResponse] = js.native
     def updateTable(params: UpdateTableRequest): Request[UpdateTableResponse] = js.native
     def writeRecords(params: WriteRecordsRequest): Request[js.Object] = js.native
+  }
+  object TimestreamWrite {
+    @inline implicit def toOps(service: TimestreamWrite): TimestreamWriteOps = {
+      new TimestreamWriteOps(service)
+    }
   }
 
   @js.native

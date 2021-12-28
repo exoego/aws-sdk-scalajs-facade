@@ -35,7 +35,7 @@ package object sqs {
   type TagValue = String
   type Token = String
 
-  implicit final class SQSOps(private val service: SQS) extends AnyVal {
+  final class SQSOps(private val service: SQS) extends AnyVal {
 
     @inline def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] = service.addPermission(params).promise().toFuture
     @inline def changeMessageVisibilityBatchFuture(params: ChangeMessageVisibilityBatchRequest): Future[ChangeMessageVisibilityBatchResult] = service.changeMessageVisibilityBatch(params).promise().toFuture
@@ -59,9 +59,7 @@ package object sqs {
     @inline def untagQueueFuture(params: UntagQueueRequest): Future[js.Object] = service.untagQueue(params).promise().toFuture
 
   }
-}
 
-package sqs {
   @js.native
   @JSImport("aws-sdk/clients/sqs", JSImport.Namespace, "AWS.SQS")
   class SQS() extends js.Object {
@@ -87,6 +85,11 @@ package sqs {
     def setQueueAttributes(params: SetQueueAttributesRequest): Request[js.Object] = js.native
     def tagQueue(params: TagQueueRequest): Request[js.Object] = js.native
     def untagQueue(params: UntagQueueRequest): Request[js.Object] = js.native
+  }
+  object SQS {
+    @inline implicit def toOps(service: SQS): SQSOps = {
+      new SQSOps(service)
+    }
   }
 
   /** <p/>

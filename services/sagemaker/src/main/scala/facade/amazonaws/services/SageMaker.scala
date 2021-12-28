@@ -498,7 +498,7 @@ package object sagemaker {
   type WorkteamName = String
   type Workteams = js.Array[Workteam]
 
-  implicit final class SageMakerOps(private val service: SageMaker) extends AnyVal {
+  final class SageMakerOps(private val service: SageMaker) extends AnyVal {
 
     @inline def addAssociationFuture(params: AddAssociationRequest): Future[AddAssociationResponse] = service.addAssociation(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
@@ -735,9 +735,7 @@ package object sagemaker {
     @inline def updateWorkteamFuture(params: UpdateWorkteamRequest): Future[UpdateWorkteamResponse] = service.updateWorkteam(params).promise().toFuture
 
   }
-}
 
-package sagemaker {
   @js.native
   @JSImport("aws-sdk/clients/sagemaker", JSImport.Namespace, "AWS.SageMaker")
   class SageMaker() extends js.Object {
@@ -976,6 +974,11 @@ package sagemaker {
     def updateUserProfile(params: UpdateUserProfileRequest): Request[UpdateUserProfileResponse] = js.native
     def updateWorkforce(params: UpdateWorkforceRequest): Request[UpdateWorkforceResponse] = js.native
     def updateWorkteam(params: UpdateWorkteamRequest): Request[UpdateWorkteamResponse] = js.native
+  }
+  object SageMaker {
+    @inline implicit def toOps(service: SageMaker): SageMakerOps = {
+      new SageMakerOps(service)
+    }
   }
 
   /** A structure describing the source of an action.

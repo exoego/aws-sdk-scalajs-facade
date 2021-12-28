@@ -81,7 +81,7 @@ package object wellarchitected {
   type WorkloadShareSummaries = js.Array[WorkloadShareSummary]
   type WorkloadSummaries = js.Array[WorkloadSummary]
 
-  implicit final class WellArchitectedOps(private val service: WellArchitected) extends AnyVal {
+  final class WellArchitectedOps(private val service: WellArchitected) extends AnyVal {
 
     @inline def associateLensesFuture(params: AssociateLensesInput): Future[js.Object] = service.associateLenses(params).promise().toFuture
     @inline def createMilestoneFuture(params: CreateMilestoneInput): Future[CreateMilestoneOutput] = service.createMilestone(params).promise().toFuture
@@ -116,9 +116,7 @@ package object wellarchitected {
     @inline def upgradeLensReviewFuture(params: UpgradeLensReviewInput): Future[js.Object] = service.upgradeLensReview(params).promise().toFuture
 
   }
-}
 
-package wellarchitected {
   @js.native
   @JSImport("aws-sdk/clients/wellarchitected", JSImport.Namespace, "AWS.WellArchitected")
   class WellArchitected() extends js.Object {
@@ -155,6 +153,11 @@ package wellarchitected {
     def updateWorkload(params: UpdateWorkloadInput): Request[UpdateWorkloadOutput] = js.native
     def updateWorkloadShare(params: UpdateWorkloadShareInput): Request[UpdateWorkloadShareOutput] = js.native
     def upgradeLensReview(params: UpgradeLensReviewInput): Request[js.Object] = js.native
+  }
+  object WellArchitected {
+    @inline implicit def toOps(service: WellArchitected): WellArchitectedOps = {
+      new WellArchitectedOps(service)
+    }
   }
 
   /** An answer of the question.

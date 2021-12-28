@@ -16,16 +16,14 @@ package object migrationhubconfig {
   type TargetId = String
   type Token = String
 
-  implicit final class MigrationHubConfigOps(private val service: MigrationHubConfig) extends AnyVal {
+  final class MigrationHubConfigOps(private val service: MigrationHubConfig) extends AnyVal {
 
     @inline def createHomeRegionControlFuture(params: CreateHomeRegionControlRequest): Future[CreateHomeRegionControlResult] = service.createHomeRegionControl(params).promise().toFuture
     @inline def describeHomeRegionControlsFuture(params: DescribeHomeRegionControlsRequest): Future[DescribeHomeRegionControlsResult] = service.describeHomeRegionControls(params).promise().toFuture
     @inline def getHomeRegionFuture(params: GetHomeRegionRequest): Future[GetHomeRegionResult] = service.getHomeRegion(params).promise().toFuture
 
   }
-}
 
-package migrationhubconfig {
   @js.native
   @JSImport("aws-sdk/clients/migrationhubconfig", JSImport.Namespace, "AWS.MigrationHubConfig")
   class MigrationHubConfig() extends js.Object {
@@ -34,6 +32,11 @@ package migrationhubconfig {
     def createHomeRegionControl(params: CreateHomeRegionControlRequest): Request[CreateHomeRegionControlResult] = js.native
     def describeHomeRegionControls(params: DescribeHomeRegionControlsRequest): Request[DescribeHomeRegionControlsResult] = js.native
     def getHomeRegion(params: GetHomeRegionRequest): Request[GetHomeRegionResult] = js.native
+  }
+  object MigrationHubConfig {
+    @inline implicit def toOps(service: MigrationHubConfig): MigrationHubConfigOps = {
+      new MigrationHubConfigOps(service)
+    }
   }
 
   @js.native

@@ -75,7 +75,7 @@ package object emr {
   type XmlStringMaxLen256 = String
   type XmlStringMaxLen256List = js.Array[XmlStringMaxLen256]
 
-  implicit final class EMROps(private val service: EMR) extends AnyVal {
+  final class EMROps(private val service: EMR) extends AnyVal {
 
     @inline def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] = service.addInstanceFleet(params).promise().toFuture
     @inline def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] = service.addInstanceGroups(params).promise().toFuture
@@ -125,9 +125,7 @@ package object emr {
     @inline def updateStudioSessionMappingFuture(params: UpdateStudioSessionMappingInput): Future[js.Object] = service.updateStudioSessionMapping(params).promise().toFuture
 
   }
-}
 
-package emr {
   @js.native
   @JSImport("aws-sdk/clients/emr", JSImport.Namespace, "AWS.EMR")
   class EMR() extends js.Object {
@@ -180,6 +178,11 @@ package emr {
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object] = js.native
     def updateStudio(params: UpdateStudioInput): Request[js.Object] = js.native
     def updateStudioSessionMapping(params: UpdateStudioSessionMappingInput): Request[js.Object] = js.native
+  }
+  object EMR {
+    @inline implicit def toOps(service: EMR): EMROps = {
+      new EMROps(service)
+    }
   }
 
   @js.native

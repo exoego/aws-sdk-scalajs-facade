@@ -616,9 +616,10 @@ package object s3 {
     def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput] = js.native
     def writeGetObjectResponse(params: WriteGetObjectResponseRequest): Request[js.Object] = js.native
   }
-
   object S3 {
-    @inline implicit def toOps(service: S3): S3Ops = new S3Ops(service)
+    @inline implicit def toOps(service: S3): S3Ops = {
+      new S3Ops(service)
+    }
   }
 
   /** Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config| Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy]] in the <i>Amazon S3 User Guide</i>.

@@ -43,7 +43,7 @@ package object stepfunctions {
   type includedDetails = Boolean
   type truncated = Boolean
 
-  implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
+  final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
     @inline def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] = service.createActivity(params).promise().toFuture
     @inline def createStateMachineFuture(params: CreateStateMachineInput): Future[CreateStateMachineOutput] = service.createStateMachine(params).promise().toFuture
@@ -70,9 +70,7 @@ package object stepfunctions {
     @inline def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] = service.updateStateMachine(params).promise().toFuture
 
   }
-}
 
-package stepfunctions {
   @js.native
   @JSImport("aws-sdk/clients/stepfunctions", JSImport.Namespace, "AWS.StepFunctions")
   class StepFunctions() extends js.Object {
@@ -101,6 +99,11 @@ package stepfunctions {
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateStateMachine(params: UpdateStateMachineInput): Request[UpdateStateMachineOutput] = js.native
+  }
+  object StepFunctions {
+    @inline implicit def toOps(service: StepFunctions): StepFunctionsOps = {
+      new StepFunctionsOps(service)
+    }
   }
 
   /** Contains details about an activity that failed during an execution.

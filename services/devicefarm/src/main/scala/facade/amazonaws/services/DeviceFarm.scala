@@ -85,7 +85,7 @@ package object devicefarm {
   type VPCEServiceName = String
   type VideoCapture = Boolean
 
-  implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
+  final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
 
     @inline def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] = service.createDevicePool(params).promise().toFuture
     @inline def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResult] = service.createInstanceProfile(params).promise().toFuture
@@ -166,9 +166,7 @@ package object devicefarm {
     @inline def updateVPCEConfigurationFuture(params: UpdateVPCEConfigurationRequest): Future[UpdateVPCEConfigurationResult] = service.updateVPCEConfiguration(params).promise().toFuture
 
   }
-}
 
-package devicefarm {
   @js.native
   @JSImport("aws-sdk/clients/devicefarm", JSImport.Namespace, "AWS.DeviceFarm")
   class DeviceFarm() extends js.Object {
@@ -251,6 +249,11 @@ package devicefarm {
     def updateTestGridProject(params: UpdateTestGridProjectRequest): Request[UpdateTestGridProjectResult] = js.native
     def updateUpload(params: UpdateUploadRequest): Request[UpdateUploadResult] = js.native
     def updateVPCEConfiguration(params: UpdateVPCEConfigurationRequest): Request[UpdateVPCEConfigurationResult] = js.native
+  }
+  object DeviceFarm {
+    @inline implicit def toOps(service: DeviceFarm): DeviceFarmOps = {
+      new DeviceFarmOps(service)
+    }
   }
 
   /** A container for account-level settings in AWS Device Farm.

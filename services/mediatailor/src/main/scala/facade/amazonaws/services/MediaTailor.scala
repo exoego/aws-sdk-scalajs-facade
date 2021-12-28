@@ -28,7 +28,7 @@ package object mediatailor {
   type __string = String
   type __timestampUnix = js.Date
 
-  implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
+  final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
     @inline def createProgramFuture(params: CreateProgramRequest): Future[CreateProgramResponse] = service.createProgram(params).promise().toFuture
@@ -63,9 +63,7 @@ package object mediatailor {
     @inline def updateVodSourceFuture(params: UpdateVodSourceRequest): Future[UpdateVodSourceResponse] = service.updateVodSource(params).promise().toFuture
 
   }
-}
 
-package mediatailor {
   @js.native
   @JSImport("aws-sdk/clients/mediatailor", JSImport.Namespace, "AWS.MediaTailor")
   class MediaTailor() extends js.Object {
@@ -102,6 +100,11 @@ package mediatailor {
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
     def updateSourceLocation(params: UpdateSourceLocationRequest): Request[UpdateSourceLocationResponse] = js.native
     def updateVodSource(params: UpdateVodSourceRequest): Request[UpdateVodSourceResponse] = js.native
+  }
+  object MediaTailor {
+    @inline implicit def toOps(service: MediaTailor): MediaTailorOps = {
+      new MediaTailorOps(service)
+    }
   }
 
   /** Access configuration parameters.

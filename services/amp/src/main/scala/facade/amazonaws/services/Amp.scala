@@ -17,7 +17,7 @@ package object amp {
   type WorkspaceId = String
   type WorkspaceSummaryList = js.Array[WorkspaceSummary]
 
-  implicit final class AmpOps(private val service: Amp) extends AnyVal {
+  final class AmpOps(private val service: Amp) extends AnyVal {
 
     @inline def createWorkspaceFuture(params: CreateWorkspaceRequest): Future[CreateWorkspaceResponse] = service.createWorkspace(params).promise().toFuture
     @inline def deleteWorkspaceFuture(params: DeleteWorkspaceRequest): Future[js.Object] = service.deleteWorkspace(params).promise().toFuture
@@ -26,9 +26,7 @@ package object amp {
     @inline def updateWorkspaceAliasFuture(params: UpdateWorkspaceAliasRequest): Future[js.Object] = service.updateWorkspaceAlias(params).promise().toFuture
 
   }
-}
 
-package amp {
   @js.native
   @JSImport("aws-sdk/clients/amp", JSImport.Namespace, "AWS.Amp")
   class Amp() extends js.Object {
@@ -39,6 +37,11 @@ package amp {
     def describeWorkspace(params: DescribeWorkspaceRequest): Request[DescribeWorkspaceResponse] = js.native
     def listWorkspaces(params: ListWorkspacesRequest): Request[ListWorkspacesResponse] = js.native
     def updateWorkspaceAlias(params: UpdateWorkspaceAliasRequest): Request[js.Object] = js.native
+  }
+  object Amp {
+    @inline implicit def toOps(service: Amp): AmpOps = {
+      new AmpOps(service)
+    }
   }
 
   /** Represents the input of a CreateWorkspace operation.

@@ -137,7 +137,7 @@ package object iam {
   type virtualMFADeviceListType = js.Array[VirtualMFADevice]
   type virtualMFADeviceName = String
 
-  implicit final class IAMOps(private val service: IAM) extends AnyVal {
+  final class IAMOps(private val service: IAM) extends AnyVal {
 
     @inline def addClientIDToOpenIDConnectProviderFuture(params: AddClientIDToOpenIDConnectProviderRequest): Future[js.Object] = service.addClientIDToOpenIDConnectProvider(params).promise().toFuture
     @inline def addRoleToInstanceProfileFuture(params: AddRoleToInstanceProfileRequest): Future[js.Object] = service.addRoleToInstanceProfile(params).promise().toFuture
@@ -299,9 +299,7 @@ package object iam {
     @inline def uploadSigningCertificateFuture(params: UploadSigningCertificateRequest): Future[UploadSigningCertificateResponse] = service.uploadSigningCertificate(params).promise().toFuture
 
   }
-}
 
-package iam {
   @js.native
   @JSImport("aws-sdk/clients/iam", JSImport.Namespace, "AWS.IAM")
   class IAM() extends js.Object {
@@ -465,6 +463,11 @@ package iam {
     def uploadSSHPublicKey(params: UploadSSHPublicKeyRequest): Request[UploadSSHPublicKeyResponse] = js.native
     def uploadServerCertificate(params: UploadServerCertificateRequest): Request[UploadServerCertificateResponse] = js.native
     def uploadSigningCertificate(params: UploadSigningCertificateRequest): Request[UploadSigningCertificateResponse] = js.native
+  }
+  object IAM {
+    @inline implicit def toOps(service: IAM): IAMOps = {
+      new IAMOps(service)
+    }
   }
 
   @js.native

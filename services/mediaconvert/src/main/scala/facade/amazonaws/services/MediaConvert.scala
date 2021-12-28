@@ -184,7 +184,7 @@ package object mediaconvert {
   type __stringPatternWS = String
   type __timestampUnix = js.Date
 
-  implicit final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
+  final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
 
     @inline def associateCertificateFuture(params: AssociateCertificateRequest): Future[AssociateCertificateResponse] = service.associateCertificate(params).promise().toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
@@ -213,9 +213,7 @@ package object mediaconvert {
     @inline def updateQueueFuture(params: UpdateQueueRequest): Future[UpdateQueueResponse] = service.updateQueue(params).promise().toFuture
 
   }
-}
 
-package mediaconvert {
   @js.native
   @JSImport("aws-sdk/clients/mediaconvert", JSImport.Namespace, "AWS.MediaConvert")
   class MediaConvert() extends js.Object {
@@ -246,6 +244,11 @@ package mediaconvert {
     def updateJobTemplate(params: UpdateJobTemplateRequest): Request[UpdateJobTemplateResponse] = js.native
     def updatePreset(params: UpdatePresetRequest): Request[UpdatePresetResponse] = js.native
     def updateQueue(params: UpdateQueueRequest): Request[UpdateQueueResponse] = js.native
+  }
+  object MediaConvert {
+    @inline implicit def toOps(service: MediaConvert): MediaConvertOps = {
+      new MediaConvertOps(service)
+    }
   }
 
   /** Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.

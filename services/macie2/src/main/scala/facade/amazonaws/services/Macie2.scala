@@ -48,7 +48,7 @@ package object macie2 {
   type __string = String
   type __timestampIso8601 = js.Date
 
-  implicit final class Macie2Ops(private val service: Macie2) extends AnyVal {
+  final class Macie2Ops(private val service: Macie2) extends AnyVal {
 
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
     @inline def batchGetCustomDataIdentifiersFuture(params: BatchGetCustomDataIdentifiersRequest): Future[BatchGetCustomDataIdentifiersResponse] = service.batchGetCustomDataIdentifiers(params).promise().toFuture
@@ -107,9 +107,7 @@ package object macie2 {
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
 
   }
-}
 
-package macie2 {
   @js.native
   @JSImport("aws-sdk/clients/macie2", JSImport.Namespace, "AWS.Macie2")
   class Macie2() extends js.Object {
@@ -170,6 +168,11 @@ package macie2 {
     def updateMacieSession(params: UpdateMacieSessionRequest): Request[UpdateMacieSessionResponse] = js.native
     def updateMemberSession(params: UpdateMemberSessionRequest): Request[UpdateMemberSessionResponse] = js.native
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
+  }
+  object Macie2 {
+    @inline implicit def toOps(service: Macie2): Macie2Ops = {
+      new Macie2Ops(service)
+    }
   }
 
   @js.native

@@ -72,7 +72,7 @@ package object networkfirewall {
   type VpcId = String
   type VpcIds = js.Array[VpcId]
 
-  implicit final class NetworkFirewallOps(private val service: NetworkFirewall) extends AnyVal {
+  final class NetworkFirewallOps(private val service: NetworkFirewall) extends AnyVal {
 
     @inline def associateFirewallPolicyFuture(params: AssociateFirewallPolicyRequest): Future[AssociateFirewallPolicyResponse] = service.associateFirewallPolicy(params).promise().toFuture
     @inline def associateSubnetsFuture(params: AssociateSubnetsRequest): Future[AssociateSubnetsResponse] = service.associateSubnets(params).promise().toFuture
@@ -105,9 +105,7 @@ package object networkfirewall {
     @inline def updateSubnetChangeProtectionFuture(params: UpdateSubnetChangeProtectionRequest): Future[UpdateSubnetChangeProtectionResponse] = service.updateSubnetChangeProtection(params).promise().toFuture
 
   }
-}
 
-package networkfirewall {
   @js.native
   @JSImport("aws-sdk/clients/networkfirewall", JSImport.Namespace, "AWS.NetworkFirewall")
   class NetworkFirewall() extends js.Object {
@@ -142,6 +140,11 @@ package networkfirewall {
     def updateLoggingConfiguration(params: UpdateLoggingConfigurationRequest): Request[UpdateLoggingConfigurationResponse] = js.native
     def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse] = js.native
     def updateSubnetChangeProtection(params: UpdateSubnetChangeProtectionRequest): Request[UpdateSubnetChangeProtectionResponse] = js.native
+  }
+  object NetworkFirewall {
+    @inline implicit def toOps(service: NetworkFirewall): NetworkFirewallOps = {
+      new NetworkFirewallOps(service)
+    }
   }
 
   /** A custom action to use in stateless rule actions settings. This is used in <a>CustomAction</a>.

@@ -120,7 +120,7 @@ package object lightsail {
   type double = Double
   type timestamp = js.Date
 
-  implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
+  final class LightsailOps(private val service: Lightsail) extends AnyVal {
 
     @inline def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] = service.allocateStaticIp(params).promise().toFuture
     @inline def attachCertificateToDistributionFuture(params: AttachCertificateToDistributionRequest): Future[AttachCertificateToDistributionResult] = service.attachCertificateToDistribution(params).promise().toFuture
@@ -266,9 +266,7 @@ package object lightsail {
     @inline def updateRelationalDatabaseParametersFuture(params: UpdateRelationalDatabaseParametersRequest): Future[UpdateRelationalDatabaseParametersResult] = service.updateRelationalDatabaseParameters(params).promise().toFuture
 
   }
-}
 
-package lightsail {
   @js.native
   @JSImport("aws-sdk/clients/lightsail", JSImport.Namespace, "AWS.Lightsail")
   class Lightsail() extends js.Object {
@@ -416,6 +414,11 @@ package lightsail {
     def updateLoadBalancerAttribute(params: UpdateLoadBalancerAttributeRequest): Request[UpdateLoadBalancerAttributeResult] = js.native
     def updateRelationalDatabase(params: UpdateRelationalDatabaseRequest): Request[UpdateRelationalDatabaseResult] = js.native
     def updateRelationalDatabaseParameters(params: UpdateRelationalDatabaseParametersRequest): Request[UpdateRelationalDatabaseParametersResult] = js.native
+  }
+  object Lightsail {
+    @inline implicit def toOps(service: Lightsail): LightsailOps = {
+      new LightsailOps(service)
+    }
   }
 
   @js.native

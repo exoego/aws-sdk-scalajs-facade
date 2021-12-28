@@ -36,7 +36,7 @@ package object datapipeline {
   type validationMessage = String
   type validationMessages = js.Array[validationMessage]
 
-  implicit final class DataPipelineOps(private val service: DataPipeline) extends AnyVal {
+  final class DataPipelineOps(private val service: DataPipeline) extends AnyVal {
 
     @inline def activatePipelineFuture(params: ActivatePipelineInput): Future[ActivatePipelineOutput] = service.activatePipeline(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
@@ -59,9 +59,7 @@ package object datapipeline {
     @inline def validatePipelineDefinitionFuture(params: ValidatePipelineDefinitionInput): Future[ValidatePipelineDefinitionOutput] = service.validatePipelineDefinition(params).promise().toFuture
 
   }
-}
 
-package datapipeline {
   @js.native
   @JSImport("aws-sdk/clients/datapipeline", JSImport.Namespace, "AWS.DataPipeline")
   class DataPipeline() extends js.Object {
@@ -86,6 +84,11 @@ package datapipeline {
     def setStatus(params: SetStatusInput): Request[js.Object] = js.native
     def setTaskStatus(params: SetTaskStatusInput): Request[SetTaskStatusOutput] = js.native
     def validatePipelineDefinition(params: ValidatePipelineDefinitionInput): Request[ValidatePipelineDefinitionOutput] = js.native
+  }
+  object DataPipeline {
+    @inline implicit def toOps(service: DataPipeline): DataPipelineOps = {
+      new DataPipelineOps(service)
+    }
   }
 
   /** Contains the parameters for ActivatePipeline.

@@ -49,7 +49,7 @@ package object servicediscovery {
   type TagValue = String
   type Timestamp = js.Date
 
-  implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
+  final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
 
     @inline def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] = service.createHttpNamespace(params).promise().toFuture
     @inline def createPrivateDnsNamespaceFuture(params: CreatePrivateDnsNamespaceRequest): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise().toFuture
@@ -76,9 +76,7 @@ package object servicediscovery {
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
 
   }
-}
 
-package servicediscovery {
   @js.native
   @JSImport("aws-sdk/clients/servicediscovery", JSImport.Namespace, "AWS.ServiceDiscovery")
   class ServiceDiscovery() extends js.Object {
@@ -107,6 +105,11 @@ package servicediscovery {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
+  }
+  object ServiceDiscovery {
+    @inline implicit def toOps(service: ServiceDiscovery): ServiceDiscoveryOps = {
+      new ServiceDiscoveryOps(service)
+    }
   }
 
   @js.native

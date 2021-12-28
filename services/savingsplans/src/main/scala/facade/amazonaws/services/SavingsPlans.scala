@@ -63,7 +63,7 @@ package object savingsplans {
   type UUID = String
   type UUIDs = js.Array[UUID]
 
-  implicit final class SavingsPlansOps(private val service: SavingsPlans) extends AnyVal {
+  final class SavingsPlansOps(private val service: SavingsPlans) extends AnyVal {
 
     @inline def createSavingsPlanFuture(params: CreateSavingsPlanRequest): Future[CreateSavingsPlanResponse] = service.createSavingsPlan(params).promise().toFuture
     @inline def deleteQueuedSavingsPlanFuture(params: DeleteQueuedSavingsPlanRequest): Future[DeleteQueuedSavingsPlanResponse] = service.deleteQueuedSavingsPlan(params).promise().toFuture
@@ -76,9 +76,7 @@ package object savingsplans {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package savingsplans {
   @js.native
   @JSImport("aws-sdk/clients/savingsplans", JSImport.Namespace, "AWS.SavingsPlans")
   class SavingsPlans() extends js.Object {
@@ -93,6 +91,11 @@ package savingsplans {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object SavingsPlans {
+    @inline implicit def toOps(service: SavingsPlans): SavingsPlansOps = {
+      new SavingsPlansOps(service)
+    }
   }
 
   @js.native

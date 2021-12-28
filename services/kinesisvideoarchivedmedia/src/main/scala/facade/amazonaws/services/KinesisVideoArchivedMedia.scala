@@ -23,7 +23,7 @@ package object kinesisvideoarchivedmedia {
   type StreamName = String
   type Timestamp = js.Date
 
-  implicit final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
+  final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 
     @inline def getClipFuture(params: GetClipInput): Future[GetClipOutput] = service.getClip(params).promise().toFuture
     @inline def getDASHStreamingSessionURLFuture(params: GetDASHStreamingSessionURLInput): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise().toFuture
@@ -32,9 +32,7 @@ package object kinesisvideoarchivedmedia {
     @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] = service.listFragments(params).promise().toFuture
 
   }
-}
 
-package kinesisvideoarchivedmedia {
   @js.native
   @JSImport("aws-sdk/clients/kinesisvideoarchivedmedia", JSImport.Namespace, "AWS.KinesisVideoArchivedMedia")
   class KinesisVideoArchivedMedia() extends js.Object {
@@ -45,6 +43,11 @@ package kinesisvideoarchivedmedia {
     def getHLSStreamingSessionURL(params: GetHLSStreamingSessionURLInput): Request[GetHLSStreamingSessionURLOutput] = js.native
     def getMediaForFragmentList(params: GetMediaForFragmentListInput): Request[GetMediaForFragmentListOutput] = js.native
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native
+  }
+  object KinesisVideoArchivedMedia {
+    @inline implicit def toOps(service: KinesisVideoArchivedMedia): KinesisVideoArchivedMediaOps = {
+      new KinesisVideoArchivedMediaOps(service)
+    }
   }
 
   /** Describes the timestamp range and timestamp origin of a range of fragments. Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.

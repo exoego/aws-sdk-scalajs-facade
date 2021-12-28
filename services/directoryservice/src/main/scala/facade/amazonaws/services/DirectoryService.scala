@@ -120,7 +120,7 @@ package object directoryservice {
   type UserPassword = String
   type VpcId = String
 
-  implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
+  final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
 
     @inline def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] = service.acceptSharedDirectory(params).promise().toFuture
     @inline def addIpRoutesFuture(params: AddIpRoutesRequest): Future[AddIpRoutesResult] = service.addIpRoutes(params).promise().toFuture
@@ -186,9 +186,7 @@ package object directoryservice {
     @inline def verifyTrustFuture(params: VerifyTrustRequest): Future[VerifyTrustResult] = service.verifyTrust(params).promise().toFuture
 
   }
-}
 
-package directoryservice {
   @js.native
   @JSImport("aws-sdk/clients/directoryservice", JSImport.Namespace, "AWS.DirectoryService")
   class DirectoryService() extends js.Object {
@@ -256,6 +254,11 @@ package directoryservice {
     def updateRadius(params: UpdateRadiusRequest): Request[UpdateRadiusResult] = js.native
     def updateTrust(params: UpdateTrustRequest): Request[UpdateTrustResult] = js.native
     def verifyTrust(params: VerifyTrustRequest): Request[VerifyTrustResult] = js.native
+  }
+  object DirectoryService {
+    @inline implicit def toOps(service: DirectoryService): DirectoryServiceOps = {
+      new DirectoryServiceOps(service)
+    }
   }
 
   @js.native

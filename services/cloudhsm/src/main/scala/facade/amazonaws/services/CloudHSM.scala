@@ -39,7 +39,7 @@ package object cloudhsm {
   type Timestamp = String
   type VpcId = String
 
-  implicit final class CloudHSMOps(private val service: CloudHSM) extends AnyVal {
+  final class CloudHSMOps(private val service: CloudHSM) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResponse] = service.addTagsToResource(params).promise().toFuture
     @inline def createHapgFuture(params: CreateHapgRequest): Future[CreateHapgResponse] = service.createHapg(params).promise().toFuture
@@ -63,9 +63,7 @@ package object cloudhsm {
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise().toFuture
 
   }
-}
 
-package cloudhsm {
   @js.native
   @JSImport("aws-sdk/clients/cloudhsm", JSImport.Namespace, "AWS.CloudHSM")
   class CloudHSM() extends js.Object {
@@ -91,6 +89,11 @@ package cloudhsm {
     def modifyHsm(params: ModifyHsmRequest): Request[ModifyHsmResponse] = js.native
     def modifyLunaClient(params: ModifyLunaClientRequest): Request[ModifyLunaClientResponse] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResponse] = js.native
+  }
+  object CloudHSM {
+    @inline implicit def toOps(service: CloudHSM): CloudHSMOps = {
+      new CloudHSMOps(service)
+    }
   }
 
   @js.native

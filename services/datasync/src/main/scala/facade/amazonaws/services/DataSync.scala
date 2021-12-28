@@ -65,7 +65,7 @@ package object datasync {
   type Time = js.Date
   type VpcEndpointId = String
 
-  implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
+  final class DataSyncOps(private val service: DataSync) extends AnyVal {
 
     @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] = service.cancelTaskExecution(params).promise().toFuture
     @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] = service.createAgent(params).promise().toFuture
@@ -104,9 +104,7 @@ package object datasync {
     @inline def updateTaskFuture(params: UpdateTaskRequest): Future[UpdateTaskResponse] = service.updateTask(params).promise().toFuture
 
   }
-}
 
-package datasync {
   @js.native
   @JSImport("aws-sdk/clients/datasync", JSImport.Namespace, "AWS.DataSync")
   class DataSync() extends js.Object {
@@ -147,6 +145,11 @@ package datasync {
     def updateLocationSmb(params: UpdateLocationSmbRequest): Request[UpdateLocationSmbResponse] = js.native
     def updateTask(params: UpdateTaskRequest): Request[UpdateTaskResponse] = js.native
     def updateTaskExecution(params: UpdateTaskExecutionRequest): Request[UpdateTaskExecutionResponse] = js.native
+  }
+  object DataSync {
+    @inline implicit def toOps(service: DataSync): DataSyncOps = {
+      new DataSyncOps(service)
+    }
   }
 
   /** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.

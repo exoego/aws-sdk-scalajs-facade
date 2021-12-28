@@ -91,7 +91,7 @@ package object sms {
   type VmPath = String
   type VmServerAddressList = js.Array[VmServerAddress]
 
-  implicit final class SMSOps(private val service: SMS) extends AnyVal {
+  final class SMSOps(private val service: SMS) extends AnyVal {
 
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
     @inline def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] = service.createReplicationJob(params).promise().toFuture
@@ -130,9 +130,7 @@ package object sms {
     @inline def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] = service.updateReplicationJob(params).promise().toFuture
 
   }
-}
 
-package sms {
   @js.native
   @JSImport("aws-sdk/clients/sms", JSImport.Namespace, "AWS.SMS")
   class SMS() extends js.Object {
@@ -173,6 +171,11 @@ package sms {
     def terminateApp(params: TerminateAppRequest): Request[TerminateAppResponse] = js.native
     def updateApp(params: UpdateAppRequest): Request[UpdateAppResponse] = js.native
     def updateReplicationJob(params: UpdateReplicationJobRequest): Request[UpdateReplicationJobResponse] = js.native
+  }
+  object SMS {
+    @inline implicit def toOps(service: SMS): SMSOps = {
+      new SMSOps(service)
+    }
   }
 
   @js.native

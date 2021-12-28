@@ -105,7 +105,7 @@ package object costexplorer {
   type YearMonthDay = String
   type ZonedDateTime = String
 
-  implicit final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
+  final class CostExplorerOps(private val service: CostExplorer) extends AnyVal {
 
     @inline def createAnomalyMonitorFuture(params: CreateAnomalyMonitorRequest): Future[CreateAnomalyMonitorResponse] = service.createAnomalyMonitor(params).promise().toFuture
     @inline def createAnomalySubscriptionFuture(params: CreateAnomalySubscriptionRequest): Future[CreateAnomalySubscriptionResponse] = service.createAnomalySubscription(params).promise().toFuture
@@ -139,9 +139,7 @@ package object costexplorer {
     @inline def updateCostCategoryDefinitionFuture(params: UpdateCostCategoryDefinitionRequest): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
 
   }
-}
 
-package costexplorer {
   @js.native
   @JSImport("aws-sdk/clients/costexplorer", JSImport.Namespace, "AWS.CostExplorer")
   class CostExplorer() extends js.Object {
@@ -177,6 +175,11 @@ package costexplorer {
     def updateAnomalyMonitor(params: UpdateAnomalyMonitorRequest): Request[UpdateAnomalyMonitorResponse] = js.native
     def updateAnomalySubscription(params: UpdateAnomalySubscriptionRequest): Request[UpdateAnomalySubscriptionResponse] = js.native
     def updateCostCategoryDefinition(params: UpdateCostCategoryDefinitionRequest): Request[UpdateCostCategoryDefinitionResponse] = js.native
+  }
+  object CostExplorer {
+    @inline implicit def toOps(service: CostExplorer): CostExplorerOps = {
+      new CostExplorerOps(service)
+    }
   }
 
   @js.native

@@ -56,7 +56,7 @@ package object swf {
   type WorkflowRunIdOptional = String
   type WorkflowTypeInfoList = js.Array[WorkflowTypeInfo]
 
-  implicit final class SWFOps(private val service: SWF) extends AnyVal {
+  final class SWFOps(private val service: SWF) extends AnyVal {
 
     @inline def countClosedWorkflowExecutionsFuture(params: CountClosedWorkflowExecutionsInput): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise().toFuture
     @inline def countOpenWorkflowExecutionsFuture(params: CountOpenWorkflowExecutionsInput): Future[WorkflowExecutionCount] = service.countOpenWorkflowExecutions(params).promise().toFuture
@@ -97,9 +97,7 @@ package object swf {
     @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package swf {
   @js.native
   @JSImport("aws-sdk/clients/swf", JSImport.Namespace, "AWS.SWF")
   class SWF() extends js.Object {
@@ -142,6 +140,11 @@ package swf {
     def undeprecateDomain(params: UndeprecateDomainInput): Request[js.Object] = js.native
     def undeprecateWorkflowType(params: UndeprecateWorkflowTypeInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
+  }
+  object SWF {
+    @inline implicit def toOps(service: SWF): SWFOps = {
+      new SWFOps(service)
+    }
   }
 
   /** Unit of work sent to an activity worker.
