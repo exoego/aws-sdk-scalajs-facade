@@ -115,14 +115,6 @@ package object codeguruprofiler {
     }
   }
 
-  @js.native
-  sealed trait ActionGroup extends js.Any
-  object ActionGroup {
-    val agentPermissions = "agentPermissions".asInstanceOf[ActionGroup]
-
-    @inline def values = js.Array(agentPermissions)
-  }
-
   /** The structure representing the AddNotificationChannelsRequest.
     */
   @js.native
@@ -208,18 +200,6 @@ package object codeguruprofiler {
     }
   }
 
-  @js.native
-  sealed trait AgentParameterField extends js.Any
-  object AgentParameterField {
-    val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
-    val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
-    val MinimumTimeForReportingInMilliseconds = "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
-    val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
-    val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
-
-    @inline def values = js.Array(SamplingIntervalInMilliseconds, ReportingIntervalInMilliseconds, MinimumTimeForReportingInMilliseconds, MemoryUsageLimitPercent, MaxStackDepth)
-  }
-
   /** Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes).
     */
   @js.native
@@ -239,16 +219,6 @@ package object codeguruprofiler {
       start.foreach(__v => __obj.updateDynamic("start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AggregatedProfileTime]
     }
-  }
-
-  @js.native
-  sealed trait AggregationPeriod extends js.Any
-  object AggregationPeriod {
-    val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
-    val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
-    val P1D = "P1D".asInstanceOf[AggregationPeriod]
-
-    @inline def values = js.Array(PT5M, PT1H, P1D)
   }
 
   /** Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time.
@@ -398,15 +368,6 @@ package object codeguruprofiler {
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Channel]
     }
-  }
-
-  @js.native
-  sealed trait ComputePlatform extends js.Any
-  object ComputePlatform {
-    val Default = "Default".asInstanceOf[ComputePlatform]
-    val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
-
-    @inline def values = js.Array(Default, AWSLambda)
   }
 
   /** The structure representing the configureAgentRequest.
@@ -573,23 +534,6 @@ package object codeguruprofiler {
       )
       __obj.asInstanceOf[DescribeProfilingGroupResponse]
     }
-  }
-
-  @js.native
-  sealed trait EventPublisher extends js.Any
-  object EventPublisher {
-    val AnomalyDetection = "AnomalyDetection".asInstanceOf[EventPublisher]
-
-    @inline def values = js.Array(AnomalyDetection)
-  }
-
-  @js.native
-  sealed trait FeedbackType extends js.Any
-  object FeedbackType {
-    val Positive = "Positive".asInstanceOf[FeedbackType]
-    val Negative = "Negative".asInstanceOf[FeedbackType]
-
-    @inline def values = js.Array(Positive, Negative)
   }
 
   /** Information about potential recommendations that might be created from the analysis of profiling data.
@@ -1142,32 +1086,6 @@ package object codeguruprofiler {
     }
   }
 
-  @js.native
-  sealed trait MetadataField extends js.Any
-  object MetadataField {
-    val ComputePlatform = "ComputePlatform".asInstanceOf[MetadataField]
-    val AgentId = "AgentId".asInstanceOf[MetadataField]
-    val AwsRequestId = "AwsRequestId".asInstanceOf[MetadataField]
-    val ExecutionEnvironment = "ExecutionEnvironment".asInstanceOf[MetadataField]
-    val LambdaFunctionArn = "LambdaFunctionArn".asInstanceOf[MetadataField]
-    val LambdaMemoryLimitInMB = "LambdaMemoryLimitInMB".asInstanceOf[MetadataField]
-    val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
-    val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
-    val LambdaPreviousExecutionTimeInMilliseconds = "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
-
-    @inline def values = js.Array(
-      ComputePlatform,
-      AgentId,
-      AwsRequestId,
-      ExecutionEnvironment,
-      LambdaFunctionArn,
-      LambdaMemoryLimitInMB,
-      LambdaRemainingTimeInMilliseconds,
-      LambdaTimeGapBetweenInvokesInMilliseconds,
-      LambdaPreviousExecutionTimeInMilliseconds
-    )
-  }
-
   /** Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame.
     */
   @js.native
@@ -1193,14 +1111,6 @@ package object codeguruprofiler {
     }
   }
 
-  @js.native
-  sealed trait MetricType extends js.Any
-  object MetricType {
-    val AggregatedRelativeTotalTime = "AggregatedRelativeTotalTime".asInstanceOf[MetricType]
-
-    @inline def values = js.Array(AggregatedRelativeTotalTime)
-  }
-
   /** The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.
     */
   @js.native
@@ -1217,15 +1127,6 @@ package object codeguruprofiler {
       channels.foreach(__v => __obj.updateDynamic("channels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait OrderBy extends js.Any
-  object OrderBy {
-    val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
-    val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
-
-    @inline def values = js.Array(TimestampDescending, TimestampAscending)
   }
 
   /** A set of rules used to make a recommendation during an analysis.

@@ -144,18 +144,6 @@ package object forecast {
     }
   }
 
-  @js.native
-  sealed trait AttributeType extends js.Any
-  object AttributeType {
-    val string = "string".asInstanceOf[AttributeType]
-    val integer = "integer".asInstanceOf[AttributeType]
-    val float = "float".asInstanceOf[AttributeType]
-    val timestamp = "timestamp".asInstanceOf[AttributeType]
-    val geolocation = "geolocation".asInstanceOf[AttributeType]
-
-    @inline def values = js.Array(string, integer, float, timestamp, geolocation)
-  }
-
   /** Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <a>ParameterRanges</a> object.
     */
   @js.native
@@ -688,16 +676,6 @@ package object forecast {
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetSummary]
     }
-  }
-
-  @js.native
-  sealed trait DatasetType extends js.Any
-  object DatasetType {
-    val TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
-    val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
-    val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
-
-    @inline def values = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
   }
 
   @js.native
@@ -1266,20 +1244,6 @@ package object forecast {
     }
   }
 
-  @js.native
-  sealed trait Domain extends js.Any
-  object Domain {
-    val RETAIL = "RETAIL".asInstanceOf[Domain]
-    val CUSTOM = "CUSTOM".asInstanceOf[Domain]
-    val INVENTORY_PLANNING = "INVENTORY_PLANNING".asInstanceOf[Domain]
-    val EC2_CAPACITY = "EC2_CAPACITY".asInstanceOf[Domain]
-    val WORK_FORCE = "WORK_FORCE".asInstanceOf[Domain]
-    val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
-    val METRICS = "METRICS".asInstanceOf[Domain]
-
-    @inline def values = js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
-  }
-
   /** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests.
     */
   @js.native
@@ -1368,15 +1332,6 @@ package object forecast {
     }
   }
 
-  @js.native
-  sealed trait EvaluationType extends js.Any
-  object EvaluationType {
-    val SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
-    val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
-
-    @inline def values = js.Array(SUMMARY, COMPUTED)
-  }
-
   /** Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object. For example: <code>{</code> <code>"AttributeName": "demand",</code> <code>FeaturizationPipeline [ {</code> <code>"FeaturizationMethodName": "filling",</code> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> <code>} ]</code> <code>}</code>
     */
   @js.native
@@ -1449,14 +1404,6 @@ package object forecast {
     }
   }
 
-  @js.native
-  sealed trait FeaturizationMethodName extends js.Any
-  object FeaturizationMethodName {
-    val filling = "filling".asInstanceOf[FeaturizationMethodName]
-
-    @inline def values = js.Array(filling)
-  }
-
   /** Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.
     */
   @js.native
@@ -1480,15 +1427,6 @@ package object forecast {
       )
       __obj.asInstanceOf[Filter]
     }
-  }
-
-  @js.native
-  sealed trait FilterConditionString extends js.Any
-  object FilterConditionString {
-    val IS = "IS".asInstanceOf[FilterConditionString]
-    val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
-
-    @inline def values = js.Array(IS, IS_NOT)
   }
 
   /** Provides a summary of the forecast export job properties used in the <a>ListForecastExportJobs</a> operation. To get the complete set of properties, call the <a>DescribeForecastExportJob</a> operation, and provide the listed <code>ForecastExportJobArn</code>.
@@ -2166,17 +2104,6 @@ package object forecast {
       KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Config]
     }
-  }
-
-  @js.native
-  sealed trait ScalingType extends js.Any
-  object ScalingType {
-    val Auto = "Auto".asInstanceOf[ScalingType]
-    val Linear = "Linear".asInstanceOf[ScalingType]
-    val Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
-    val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
-
-    @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
   }
 
   /** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.

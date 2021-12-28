@@ -74,16 +74,6 @@ package object mediapackagevod {
     }
   }
 
-  @js.native
-  sealed trait AdMarkers extends js.Any
-  object AdMarkers {
-    val NONE = "NONE".asInstanceOf[AdMarkers]
-    val SCTE35_ENHANCED = "SCTE35_ENHANCED".asInstanceOf[AdMarkers]
-    val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[AdMarkers]
-
-    @inline def values = js.Array(NONE, SCTE35_ENHANCED, PASSTHROUGH)
-  }
-
   /** A MediaPackage VOD Asset resource.
     */
   @js.native
@@ -817,15 +807,6 @@ package object mediapackagevod {
     }
   }
 
-  @js.native
-  sealed trait EncryptionMethod extends js.Any
-  object EncryptionMethod {
-    val AES_128 = "AES_128".asInstanceOf[EncryptionMethod]
-    val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[EncryptionMethod]
-
-    @inline def values = js.Array(AES_128, SAMPLE_AES)
-  }
-
   /** An HTTP Live Streaming (HLS) encryption configuration.
     */
   @js.native
@@ -1067,15 +1048,6 @@ package object mediapackagevod {
     }
   }
 
-  @js.native
-  sealed trait ManifestLayout extends js.Any
-  object ManifestLayout {
-    val FULL = "FULL".asInstanceOf[ManifestLayout]
-    val COMPACT = "COMPACT".asInstanceOf[ManifestLayout]
-
-    @inline def values = js.Array(FULL, COMPACT)
-  }
-
   /** A Microsoft Smooth Streaming (MSS) encryption configuration.
     */
   @js.native
@@ -1214,25 +1186,6 @@ package object mediapackagevod {
     }
   }
 
-  @js.native
-  sealed trait Profile extends js.Any
-  object Profile {
-    val NONE = "NONE".asInstanceOf[Profile]
-    val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
-
-    @inline def values = js.Array(NONE, HBBTV_1_5)
-  }
-
-  @js.native
-  sealed trait SegmentTemplateFormat extends js.Any
-  object SegmentTemplateFormat {
-    val NUMBER_WITH_TIMELINE = "NUMBER_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    val TIME_WITH_TIMELINE = "TIME_WITH_TIMELINE".asInstanceOf[SegmentTemplateFormat]
-    val NUMBER_WITH_DURATION = "NUMBER_WITH_DURATION".asInstanceOf[SegmentTemplateFormat]
-
-    @inline def values = js.Array(NUMBER_WITH_TIMELINE, TIME_WITH_TIMELINE, NUMBER_WITH_DURATION)
-  }
-
   /** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     */
   @js.native
@@ -1256,16 +1209,6 @@ package object mediapackagevod {
       )
       __obj.asInstanceOf[SpekeKeyProvider]
     }
-  }
-
-  @js.native
-  sealed trait StreamOrder extends js.Any
-  object StreamOrder {
-    val ORIGINAL = "ORIGINAL".asInstanceOf[StreamOrder]
-    val VIDEO_BITRATE_ASCENDING = "VIDEO_BITRATE_ASCENDING".asInstanceOf[StreamOrder]
-    val VIDEO_BITRATE_DESCENDING = "VIDEO_BITRATE_DESCENDING".asInstanceOf[StreamOrder]
-
-    @inline def values = js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
   }
 
   /** A StreamSelection configuration.
@@ -1384,13 +1327,5 @@ package object mediapackagevod {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePackagingGroupResponse]
     }
-  }
-
-  @js.native
-  sealed trait __PeriodTriggersElement extends js.Any
-  object __PeriodTriggersElement {
-    val ADS = "ADS".asInstanceOf[__PeriodTriggersElement]
-
-    @inline def values = js.Array(ADS)
   }
 }

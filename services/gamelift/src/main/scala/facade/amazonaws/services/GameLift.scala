@@ -385,15 +385,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait AcceptanceType extends js.Any
-  object AcceptanceType {
-    val ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
-    val REJECT = "REJECT".asInstanceOf[AcceptanceType]
-
-    @inline def values = js.Array(ACCEPT, REJECT)
-  }
-
   /** Properties that describe an alias resource.
     * ```Related actions``` <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
@@ -482,25 +473,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait BackfillMode extends js.Any
-  object BackfillMode {
-    val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
-    val MANUAL = "MANUAL".asInstanceOf[BackfillMode]
-
-    @inline def values = js.Array(AUTOMATIC, MANUAL)
-  }
-
-  @js.native
-  sealed trait BalancingStrategy extends js.Any
-  object BalancingStrategy {
-    val SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
-    val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
-    val ON_DEMAND_ONLY = "ON_DEMAND_ONLY".asInstanceOf[BalancingStrategy]
-
-    @inline def values = js.Array(SPOT_ONLY, SPOT_PREFERRED, ON_DEMAND_ONLY)
-  }
-
   /** Properties describing a custom game build.
     * ```Related actions``` <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> | <a>UpdateBuild</a> | <a>DeleteBuild</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
@@ -541,16 +513,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait BuildStatus extends js.Any
-  object BuildStatus {
-    val INITIALIZED = "INITIALIZED".asInstanceOf[BuildStatus]
-    val READY = "READY".asInstanceOf[BuildStatus]
-    val FAILED = "FAILED".asInstanceOf[BuildStatus]
-
-    @inline def values = js.Array(INITIALIZED, READY, FAILED)
-  }
-
   /** Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html|GameLift Server SDK]] operation <code>GetInstanceCertificate</code>. A fleet's certificate configuration is part of <a>FleetAttributes</a>.
     */
   @js.native
@@ -568,15 +530,6 @@ package object gamelift {
       )
       __obj.asInstanceOf[CertificateConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait CertificateType extends js.Any
-  object CertificateType {
-    val DISABLED = "DISABLED".asInstanceOf[CertificateType]
-    val GENERATED = "GENERATED".asInstanceOf[CertificateType]
-
-    @inline def values = js.Array(DISABLED, GENERATED)
   }
 
   @js.native
@@ -617,17 +570,6 @@ package object gamelift {
       GameServer.foreach(__v => __obj.updateDynamic("GameServer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClaimGameServerOutput]
     }
-  }
-
-  @js.native
-  sealed trait ComparisonOperatorType extends js.Any
-  object ComparisonOperatorType {
-    val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
-    val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperatorType]
-    val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
-    val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
-
-    @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
   }
 
   /** Represents the input for a request operation.
@@ -3067,178 +3009,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait EC2InstanceType extends js.Any
-  object EC2InstanceType {
-    val `t2.micro` = "t2.micro".asInstanceOf[EC2InstanceType]
-    val `t2.small` = "t2.small".asInstanceOf[EC2InstanceType]
-    val `t2.medium` = "t2.medium".asInstanceOf[EC2InstanceType]
-    val `t2.large` = "t2.large".asInstanceOf[EC2InstanceType]
-    val `c3.large` = "c3.large".asInstanceOf[EC2InstanceType]
-    val `c3.xlarge` = "c3.xlarge".asInstanceOf[EC2InstanceType]
-    val `c3.2xlarge` = "c3.2xlarge".asInstanceOf[EC2InstanceType]
-    val `c3.4xlarge` = "c3.4xlarge".asInstanceOf[EC2InstanceType]
-    val `c3.8xlarge` = "c3.8xlarge".asInstanceOf[EC2InstanceType]
-    val `c4.large` = "c4.large".asInstanceOf[EC2InstanceType]
-    val `c4.xlarge` = "c4.xlarge".asInstanceOf[EC2InstanceType]
-    val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[EC2InstanceType]
-    val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[EC2InstanceType]
-    val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.large` = "c5.large".asInstanceOf[EC2InstanceType]
-    val `c5.xlarge` = "c5.xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[EC2InstanceType]
-    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.large` = "c5a.large".asInstanceOf[EC2InstanceType]
-    val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[EC2InstanceType]
-    val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[EC2InstanceType]
-    val `r3.large` = "r3.large".asInstanceOf[EC2InstanceType]
-    val `r3.xlarge` = "r3.xlarge".asInstanceOf[EC2InstanceType]
-    val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[EC2InstanceType]
-    val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[EC2InstanceType]
-    val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[EC2InstanceType]
-    val `r4.large` = "r4.large".asInstanceOf[EC2InstanceType]
-    val `r4.xlarge` = "r4.xlarge".asInstanceOf[EC2InstanceType]
-    val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[EC2InstanceType]
-    val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[EC2InstanceType]
-    val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[EC2InstanceType]
-    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.large` = "r5.large".asInstanceOf[EC2InstanceType]
-    val `r5.xlarge` = "r5.xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[EC2InstanceType]
-    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.large` = "r5a.large".asInstanceOf[EC2InstanceType]
-    val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[EC2InstanceType]
-    val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[EC2InstanceType]
-    val `m3.medium` = "m3.medium".asInstanceOf[EC2InstanceType]
-    val `m3.large` = "m3.large".asInstanceOf[EC2InstanceType]
-    val `m3.xlarge` = "m3.xlarge".asInstanceOf[EC2InstanceType]
-    val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[EC2InstanceType]
-    val `m4.large` = "m4.large".asInstanceOf[EC2InstanceType]
-    val `m4.xlarge` = "m4.xlarge".asInstanceOf[EC2InstanceType]
-    val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[EC2InstanceType]
-    val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[EC2InstanceType]
-    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.large` = "m5.large".asInstanceOf[EC2InstanceType]
-    val `m5.xlarge` = "m5.xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
-    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.large` = "m5a.large".asInstanceOf[EC2InstanceType]
-    val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[EC2InstanceType]
-    val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[EC2InstanceType]
-
-    @inline def values = js.Array(
-      `t2.micro`,
-      `t2.small`,
-      `t2.medium`,
-      `t2.large`,
-      `c3.large`,
-      `c3.xlarge`,
-      `c3.2xlarge`,
-      `c3.4xlarge`,
-      `c3.8xlarge`,
-      `c4.large`,
-      `c4.xlarge`,
-      `c4.2xlarge`,
-      `c4.4xlarge`,
-      `c4.8xlarge`,
-      `c5.large`,
-      `c5.xlarge`,
-      `c5.2xlarge`,
-      `c5.4xlarge`,
-      `c5.9xlarge`,
-      `c5.12xlarge`,
-      `c5.18xlarge`,
-      `c5.24xlarge`,
-      `c5a.large`,
-      `c5a.xlarge`,
-      `c5a.2xlarge`,
-      `c5a.4xlarge`,
-      `c5a.8xlarge`,
-      `c5a.12xlarge`,
-      `c5a.16xlarge`,
-      `c5a.24xlarge`,
-      `r3.large`,
-      `r3.xlarge`,
-      `r3.2xlarge`,
-      `r3.4xlarge`,
-      `r3.8xlarge`,
-      `r4.large`,
-      `r4.xlarge`,
-      `r4.2xlarge`,
-      `r4.4xlarge`,
-      `r4.8xlarge`,
-      `r4.16xlarge`,
-      `r5.large`,
-      `r5.xlarge`,
-      `r5.2xlarge`,
-      `r5.4xlarge`,
-      `r5.8xlarge`,
-      `r5.12xlarge`,
-      `r5.16xlarge`,
-      `r5.24xlarge`,
-      `r5a.large`,
-      `r5a.xlarge`,
-      `r5a.2xlarge`,
-      `r5a.4xlarge`,
-      `r5a.8xlarge`,
-      `r5a.12xlarge`,
-      `r5a.16xlarge`,
-      `r5a.24xlarge`,
-      `m3.medium`,
-      `m3.large`,
-      `m3.xlarge`,
-      `m3.2xlarge`,
-      `m4.large`,
-      `m4.xlarge`,
-      `m4.2xlarge`,
-      `m4.4xlarge`,
-      `m4.10xlarge`,
-      `m5.large`,
-      `m5.xlarge`,
-      `m5.2xlarge`,
-      `m5.4xlarge`,
-      `m5.8xlarge`,
-      `m5.12xlarge`,
-      `m5.16xlarge`,
-      `m5.24xlarge`,
-      `m5a.large`,
-      `m5a.xlarge`,
-      `m5a.2xlarge`,
-      `m5a.4xlarge`,
-      `m5a.8xlarge`,
-      `m5a.12xlarge`,
-      `m5a.16xlarge`,
-      `m5a.24xlarge`
-    )
-  }
-
   /** Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
     * ```Related actions``` <a>DescribeFleetEvents</a>
     */
@@ -3273,80 +3043,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait EventCode extends js.Any
-  object EventCode {
-    val GENERIC_EVENT = "GENERIC_EVENT".asInstanceOf[EventCode]
-    val FLEET_CREATED = "FLEET_CREATED".asInstanceOf[EventCode]
-    val FLEET_DELETED = "FLEET_DELETED".asInstanceOf[EventCode]
-    val FLEET_SCALING_EVENT = "FLEET_SCALING_EVENT".asInstanceOf[EventCode]
-    val FLEET_STATE_DOWNLOADING = "FLEET_STATE_DOWNLOADING".asInstanceOf[EventCode]
-    val FLEET_STATE_VALIDATING = "FLEET_STATE_VALIDATING".asInstanceOf[EventCode]
-    val FLEET_STATE_BUILDING = "FLEET_STATE_BUILDING".asInstanceOf[EventCode]
-    val FLEET_STATE_ACTIVATING = "FLEET_STATE_ACTIVATING".asInstanceOf[EventCode]
-    val FLEET_STATE_ACTIVE = "FLEET_STATE_ACTIVE".asInstanceOf[EventCode]
-    val FLEET_STATE_ERROR = "FLEET_STATE_ERROR".asInstanceOf[EventCode]
-    val FLEET_INITIALIZATION_FAILED = "FLEET_INITIALIZATION_FAILED".asInstanceOf[EventCode]
-    val FLEET_BINARY_DOWNLOAD_FAILED = "FLEET_BINARY_DOWNLOAD_FAILED".asInstanceOf[EventCode]
-    val FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND".asInstanceOf[EventCode]
-    val FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".asInstanceOf[EventCode]
-    val FLEET_VALIDATION_TIMED_OUT = "FLEET_VALIDATION_TIMED_OUT".asInstanceOf[EventCode]
-    val FLEET_ACTIVATION_FAILED = "FLEET_ACTIVATION_FAILED".asInstanceOf[EventCode]
-    val FLEET_ACTIVATION_FAILED_NO_INSTANCES = "FLEET_ACTIVATION_FAILED_NO_INSTANCES".asInstanceOf[EventCode]
-    val FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED".asInstanceOf[EventCode]
-    val SERVER_PROCESS_INVALID_PATH = "SERVER_PROCESS_INVALID_PATH".asInstanceOf[EventCode]
-    val SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT".asInstanceOf[EventCode]
-    val SERVER_PROCESS_PROCESS_READY_TIMEOUT = "SERVER_PROCESS_PROCESS_READY_TIMEOUT".asInstanceOf[EventCode]
-    val SERVER_PROCESS_CRASHED = "SERVER_PROCESS_CRASHED".asInstanceOf[EventCode]
-    val SERVER_PROCESS_TERMINATED_UNHEALTHY = "SERVER_PROCESS_TERMINATED_UNHEALTHY".asInstanceOf[EventCode]
-    val SERVER_PROCESS_FORCE_TERMINATED = "SERVER_PROCESS_FORCE_TERMINATED".asInstanceOf[EventCode]
-    val SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT".asInstanceOf[EventCode]
-    val GAME_SESSION_ACTIVATION_TIMEOUT = "GAME_SESSION_ACTIVATION_TIMEOUT".asInstanceOf[EventCode]
-    val FLEET_CREATION_EXTRACTING_BUILD = "FLEET_CREATION_EXTRACTING_BUILD".asInstanceOf[EventCode]
-    val FLEET_CREATION_RUNNING_INSTALLER = "FLEET_CREATION_RUNNING_INSTALLER".asInstanceOf[EventCode]
-    val FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG".asInstanceOf[EventCode]
-    val FLEET_VPC_PEERING_SUCCEEDED = "FLEET_VPC_PEERING_SUCCEEDED".asInstanceOf[EventCode]
-    val FLEET_VPC_PEERING_FAILED = "FLEET_VPC_PEERING_FAILED".asInstanceOf[EventCode]
-    val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
-    val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
-
-    @inline def values = js.Array(
-      GENERIC_EVENT,
-      FLEET_CREATED,
-      FLEET_DELETED,
-      FLEET_SCALING_EVENT,
-      FLEET_STATE_DOWNLOADING,
-      FLEET_STATE_VALIDATING,
-      FLEET_STATE_BUILDING,
-      FLEET_STATE_ACTIVATING,
-      FLEET_STATE_ACTIVE,
-      FLEET_STATE_ERROR,
-      FLEET_INITIALIZATION_FAILED,
-      FLEET_BINARY_DOWNLOAD_FAILED,
-      FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
-      FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
-      FLEET_VALIDATION_TIMED_OUT,
-      FLEET_ACTIVATION_FAILED,
-      FLEET_ACTIVATION_FAILED_NO_INSTANCES,
-      FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
-      SERVER_PROCESS_INVALID_PATH,
-      SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
-      SERVER_PROCESS_PROCESS_READY_TIMEOUT,
-      SERVER_PROCESS_CRASHED,
-      SERVER_PROCESS_TERMINATED_UNHEALTHY,
-      SERVER_PROCESS_FORCE_TERMINATED,
-      SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
-      GAME_SESSION_ACTIVATION_TIMEOUT,
-      FLEET_CREATION_EXTRACTING_BUILD,
-      FLEET_CREATION_RUNNING_INSTALLER,
-      FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
-      FLEET_VPC_PEERING_SUCCEEDED,
-      FLEET_VPC_PEERING_FAILED,
-      FLEET_VPC_PEERING_DELETED,
-      INSTANCE_INTERRUPTED
-    )
-  }
-
   /** A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations. Filter configurations are part of a <a>GameSessionQueue</a>.
     */
   @js.native
@@ -3363,14 +3059,6 @@ package object gamelift {
       AllowedLocations.foreach(__v => __obj.updateDynamic("AllowedLocations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait FleetAction extends js.Any
-  object FleetAction {
-    val AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
-
-    @inline def values = js.Array(AUTO_SCALING)
   }
 
   /** Describes a GameLift fleet of game hosting resources.
@@ -3489,31 +3177,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait FleetStatus extends js.Any
-  object FleetStatus {
-    val NEW = "NEW".asInstanceOf[FleetStatus]
-    val DOWNLOADING = "DOWNLOADING".asInstanceOf[FleetStatus]
-    val VALIDATING = "VALIDATING".asInstanceOf[FleetStatus]
-    val BUILDING = "BUILDING".asInstanceOf[FleetStatus]
-    val ACTIVATING = "ACTIVATING".asInstanceOf[FleetStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
-    val DELETING = "DELETING".asInstanceOf[FleetStatus]
-    val ERROR = "ERROR".asInstanceOf[FleetStatus]
-    val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
-
-    @inline def values = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
-  }
-
-  @js.native
-  sealed trait FleetType extends js.Any
-  object FleetType {
-    val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
-    val SPOT = "SPOT".asInstanceOf[FleetType]
-
-    @inline def values = js.Array(ON_DEMAND, SPOT)
-  }
-
   /** Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.
     * ```Related actions``` <a>DescribeFleetUtilization</a> | <a>DescribeFleetLocationUtilization</a>
     */
@@ -3549,15 +3212,6 @@ package object gamelift {
       MaximumPlayerSessionCount.foreach(__v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetUtilization]
     }
-  }
-
-  @js.native
-  sealed trait FlexMatchMode extends js.Any
-  object FlexMatchMode {
-    val STANDALONE = "STANDALONE".asInstanceOf[FlexMatchMode]
-    val WITH_QUEUE = "WITH_QUEUE".asInstanceOf[FlexMatchMode]
-
-    @inline def values = js.Array(STANDALONE, WITH_QUEUE)
   }
 
   /** Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session. For example, a game property might specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session. For more information, see the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create| GameLift Developer Guide]].
@@ -3631,14 +3285,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait GameServerClaimStatus extends js.Any
-  object GameServerClaimStatus {
-    val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
-
-    @inline def values = js.Array(CLAIMED)
-  }
-
   /** ```This data type is used with the GameLift FleetIQ and game server groups.``` Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding EC2 Auto Scaling group. A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively.
     * ```Related actions``` <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | [[https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html|All APIs by task]]
     */
@@ -3691,14 +3337,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait GameServerGroupAction extends js.Any
-  object GameServerGroupAction {
-    val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
-
-    @inline def values = js.Array(REPLACE_INSTANCE_TYPES)
-  }
-
   /** ```This data type is used with the GameLift FleetIQ and game server groups.``` Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group with <a>CreateGameServerGroup</a>. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group.
     */
   @js.native
@@ -3720,174 +3358,6 @@ package object gamelift {
       EstimatedInstanceWarmup.foreach(__v => __obj.updateDynamic("EstimatedInstanceWarmup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameServerGroupAutoScalingPolicy]
     }
-  }
-
-  @js.native
-  sealed trait GameServerGroupDeleteOption extends js.Any
-  object GameServerGroupDeleteOption {
-    val SAFE_DELETE = "SAFE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
-    val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
-    val RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
-
-    @inline def values = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
-  }
-
-  @js.native
-  sealed trait GameServerGroupInstanceType extends js.Any
-  object GameServerGroupInstanceType {
-    val `c4.large` = "c4.large".asInstanceOf[GameServerGroupInstanceType]
-    val `c4.xlarge` = "c4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.large` = "c5.large".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.xlarge` = "c5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.large` = "c5a.large".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r4.large` = "r4.large".asInstanceOf[GameServerGroupInstanceType]
-    val `r4.xlarge` = "r4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.large` = "r5.large".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.xlarge` = "r5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.large` = "r5a.large".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m4.large` = "m4.large".asInstanceOf[GameServerGroupInstanceType]
-    val `m4.xlarge` = "m4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.large` = "m5.large".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.xlarge` = "m5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.large` = "m5a.large".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-    val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-
-    @inline def values = js.Array(
-      `c4.large`,
-      `c4.xlarge`,
-      `c4.2xlarge`,
-      `c4.4xlarge`,
-      `c4.8xlarge`,
-      `c5.large`,
-      `c5.xlarge`,
-      `c5.2xlarge`,
-      `c5.4xlarge`,
-      `c5.9xlarge`,
-      `c5.12xlarge`,
-      `c5.18xlarge`,
-      `c5.24xlarge`,
-      `c5a.large`,
-      `c5a.xlarge`,
-      `c5a.2xlarge`,
-      `c5a.4xlarge`,
-      `c5a.8xlarge`,
-      `c5a.12xlarge`,
-      `c5a.16xlarge`,
-      `c5a.24xlarge`,
-      `r4.large`,
-      `r4.xlarge`,
-      `r4.2xlarge`,
-      `r4.4xlarge`,
-      `r4.8xlarge`,
-      `r4.16xlarge`,
-      `r5.large`,
-      `r5.xlarge`,
-      `r5.2xlarge`,
-      `r5.4xlarge`,
-      `r5.8xlarge`,
-      `r5.12xlarge`,
-      `r5.16xlarge`,
-      `r5.24xlarge`,
-      `r5a.large`,
-      `r5a.xlarge`,
-      `r5a.2xlarge`,
-      `r5a.4xlarge`,
-      `r5a.8xlarge`,
-      `r5a.12xlarge`,
-      `r5a.16xlarge`,
-      `r5a.24xlarge`,
-      `m4.large`,
-      `m4.xlarge`,
-      `m4.2xlarge`,
-      `m4.4xlarge`,
-      `m4.10xlarge`,
-      `m5.large`,
-      `m5.xlarge`,
-      `m5.2xlarge`,
-      `m5.4xlarge`,
-      `m5.8xlarge`,
-      `m5.12xlarge`,
-      `m5.16xlarge`,
-      `m5.24xlarge`,
-      `m5a.large`,
-      `m5a.xlarge`,
-      `m5a.2xlarge`,
-      `m5a.4xlarge`,
-      `m5a.8xlarge`,
-      `m5a.12xlarge`,
-      `m5a.16xlarge`,
-      `m5a.24xlarge`
-    )
-  }
-
-  @js.native
-  sealed trait GameServerGroupStatus extends js.Any
-  object GameServerGroupStatus {
-    val NEW = "NEW".asInstanceOf[GameServerGroupStatus]
-    val ACTIVATING = "ACTIVATING".asInstanceOf[GameServerGroupStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[GameServerGroupStatus]
-    val DELETE_SCHEDULED = "DELETE_SCHEDULED".asInstanceOf[GameServerGroupStatus]
-    val DELETING = "DELETING".asInstanceOf[GameServerGroupStatus]
-    val DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
-    val ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
-
-    @inline def values = js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR)
-  }
-
-  @js.native
-  sealed trait GameServerHealthCheck extends js.Any
-  object GameServerHealthCheck {
-    val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
-
-    @inline def values = js.Array(HEALTHY)
   }
 
   /** ```This data type is used with the GameLift FleetIQ and game server groups.``` Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.
@@ -3916,34 +3386,6 @@ package object gamelift {
       InstanceStatus.foreach(__v => __obj.updateDynamic("InstanceStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameServerInstance]
     }
-  }
-
-  @js.native
-  sealed trait GameServerInstanceStatus extends js.Any
-  object GameServerInstanceStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[GameServerInstanceStatus]
-    val DRAINING = "DRAINING".asInstanceOf[GameServerInstanceStatus]
-    val SPOT_TERMINATING = "SPOT_TERMINATING".asInstanceOf[GameServerInstanceStatus]
-
-    @inline def values = js.Array(ACTIVE, DRAINING, SPOT_TERMINATING)
-  }
-
-  @js.native
-  sealed trait GameServerProtectionPolicy extends js.Any
-  object GameServerProtectionPolicy {
-    val NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
-    val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
-
-    @inline def values = js.Array(NO_PROTECTION, FULL_PROTECTION)
-  }
-
-  @js.native
-  sealed trait GameServerUtilizationStatus extends js.Any
-  object GameServerUtilizationStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
-    val UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
-
-    @inline def values = js.Array(AVAILABLE, UTILIZED)
   }
 
   /** Properties describing a game session. A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.
@@ -4139,18 +3581,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait GameSessionPlacementState extends js.Any
-  object GameSessionPlacementState {
-    val PENDING = "PENDING".asInstanceOf[GameSessionPlacementState]
-    val FULFILLED = "FULFILLED".asInstanceOf[GameSessionPlacementState]
-    val CANCELLED = "CANCELLED".asInstanceOf[GameSessionPlacementState]
-    val TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
-    val FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
-
-    @inline def values = js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED)
-  }
-
   /** Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.
     * ```Related actions``` <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
     */
@@ -4210,26 +3640,6 @@ package object gamelift {
       DestinationArn.foreach(__v => __obj.updateDynamic("DestinationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSessionQueueDestination]
     }
-  }
-
-  @js.native
-  sealed trait GameSessionStatus extends js.Any
-  object GameSessionStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[GameSessionStatus]
-    val ACTIVATING = "ACTIVATING".asInstanceOf[GameSessionStatus]
-    val TERMINATED = "TERMINATED".asInstanceOf[GameSessionStatus]
-    val TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
-    val ERROR = "ERROR".asInstanceOf[GameSessionStatus]
-
-    @inline def values = js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
-  }
-
-  @js.native
-  sealed trait GameSessionStatusReason extends js.Any
-  object GameSessionStatusReason {
-    val INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
-
-    @inline def values = js.Array(INTERRUPTED)
   }
 
   /** Represents the input for a request operation.
@@ -4429,16 +3839,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait InstanceStatus extends js.Any
-  object InstanceStatus {
-    val PENDING = "PENDING".asInstanceOf[InstanceStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
-    val TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
-
-    @inline def values = js.Array(PENDING, ACTIVE, TERMINATING)
-  }
-
   /** A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
     * ```Related actions``` <a>DescribeFleetPortSettings</a>
     */
@@ -4466,15 +3866,6 @@ package object gamelift {
       )
       __obj.asInstanceOf[IpPermission]
     }
-  }
-
-  @js.native
-  sealed trait IpProtocol extends js.Any
-  object IpProtocol {
-    val TCP = "TCP".asInstanceOf[IpProtocol]
-    val UDP = "UDP".asInstanceOf[IpProtocol]
-
-    @inline def values = js.Array(TCP, UDP)
   }
 
   /** ```This data type is used with the GameLift FleetIQ and game server groups.``` An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <a>CreateGameServerGroup</a>.
@@ -4863,14 +4254,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait LocationUpdateStatus extends js.Any
-  object LocationUpdateStatus {
-    val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[LocationUpdateStatus]
-
-    @inline def values = js.Array(PENDING_UPDATE)
-  }
-
   /** Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.
     */
   @js.native
@@ -4958,21 +4341,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait MatchmakingConfigurationStatus extends js.Any
-  object MatchmakingConfigurationStatus {
-    val CANCELLED = "CANCELLED".asInstanceOf[MatchmakingConfigurationStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[MatchmakingConfigurationStatus]
-    val FAILED = "FAILED".asInstanceOf[MatchmakingConfigurationStatus]
-    val PLACING = "PLACING".asInstanceOf[MatchmakingConfigurationStatus]
-    val QUEUED = "QUEUED".asInstanceOf[MatchmakingConfigurationStatus]
-    val REQUIRES_ACCEPTANCE = "REQUIRES_ACCEPTANCE".asInstanceOf[MatchmakingConfigurationStatus]
-    val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
-    val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
-
-    @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
-  }
-
   /** Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects. A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html|Build a FlexMatch rule set]]. * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an
     * attribute might specify a player's skill or level. * Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. * Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.
     */
@@ -5049,46 +4417,6 @@ package object gamelift {
       TicketId.foreach(__v => __obj.updateDynamic("TicketId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MatchmakingTicket]
     }
-  }
-
-  @js.native
-  sealed trait MetricName extends js.Any
-  object MetricName {
-    val ActivatingGameSessions = "ActivatingGameSessions".asInstanceOf[MetricName]
-    val ActiveGameSessions = "ActiveGameSessions".asInstanceOf[MetricName]
-    val ActiveInstances = "ActiveInstances".asInstanceOf[MetricName]
-    val AvailableGameSessions = "AvailableGameSessions".asInstanceOf[MetricName]
-    val AvailablePlayerSessions = "AvailablePlayerSessions".asInstanceOf[MetricName]
-    val CurrentPlayerSessions = "CurrentPlayerSessions".asInstanceOf[MetricName]
-    val IdleInstances = "IdleInstances".asInstanceOf[MetricName]
-    val PercentAvailableGameSessions = "PercentAvailableGameSessions".asInstanceOf[MetricName]
-    val PercentIdleInstances = "PercentIdleInstances".asInstanceOf[MetricName]
-    val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
-    val WaitTime = "WaitTime".asInstanceOf[MetricName]
-
-    @inline def values = js.Array(
-      ActivatingGameSessions,
-      ActiveGameSessions,
-      ActiveInstances,
-      AvailableGameSessions,
-      AvailablePlayerSessions,
-      CurrentPlayerSessions,
-      IdleInstances,
-      PercentAvailableGameSessions,
-      PercentIdleInstances,
-      QueueDepth,
-      WaitTime
-    )
-  }
-
-  @js.native
-  sealed trait OperatingSystem extends js.Any
-  object OperatingSystem {
-    val WINDOWS_2012 = "WINDOWS_2012".asInstanceOf[OperatingSystem]
-    val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
-    val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
-
-    @inline def values = js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2)
   }
 
   /** Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a>DescribePlayerSessions</a> with the player session ID.
@@ -5237,35 +4565,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait PlayerSessionCreationPolicy extends js.Any
-  object PlayerSessionCreationPolicy {
-    val ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
-    val DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
-
-    @inline def values = js.Array(ACCEPT_ALL, DENY_ALL)
-  }
-
-  @js.native
-  sealed trait PlayerSessionStatus extends js.Any
-  object PlayerSessionStatus {
-    val RESERVED = "RESERVED".asInstanceOf[PlayerSessionStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[PlayerSessionStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
-    val TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
-
-    @inline def values = js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
-  }
-
-  @js.native
-  sealed trait PolicyType extends js.Any
-  object PolicyType {
-    val RuleBased = "RuleBased".asInstanceOf[PolicyType]
-    val TargetBased = "TargetBased".asInstanceOf[PolicyType]
-
-    @inline def values = js.Array(RuleBased, TargetBased)
-  }
-
   /** Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows: * If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc. * If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations,
     * the game session is placed on the first location (when listed alphabetically). Changing the priority order will affect how game sessions are placed. Priority configurations are part of a <a>GameSessionQueue</a>.
     */
@@ -5286,26 +4585,6 @@ package object gamelift {
       PriorityOrder.foreach(__v => __obj.updateDynamic("PriorityOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PriorityConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait PriorityType extends js.Any
-  object PriorityType {
-    val LATENCY = "LATENCY".asInstanceOf[PriorityType]
-    val COST = "COST".asInstanceOf[PriorityType]
-    val DESTINATION = "DESTINATION".asInstanceOf[PriorityType]
-    val LOCATION = "LOCATION".asInstanceOf[PriorityType]
-
-    @inline def values = js.Array(LATENCY, COST, DESTINATION, LOCATION)
-  }
-
-  @js.native
-  sealed trait ProtectionPolicy extends js.Any
-  object ProtectionPolicy {
-    val NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
-    val FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
-
-    @inline def values = js.Array(NoProtection, FullProtection)
   }
 
   /** Represents the input for a request operation.
@@ -5581,15 +4860,6 @@ package object gamelift {
     }
   }
 
-  @js.native
-  sealed trait RoutingStrategyType extends js.Any
-  object RoutingStrategyType {
-    val SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
-    val TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
-
-    @inline def values = js.Array(SIMPLE, TERMINAL)
-  }
-
   /** A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a>. Learn more about [[https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html| Running Multiple Processes on a Fleet]].
     * ```Related actions``` <a>DescribeRuntimeConfiguration</a> | <a>UpdateRuntimeConfiguration</a>
     */
@@ -5640,16 +4910,6 @@ package object gamelift {
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
-  }
-
-  @js.native
-  sealed trait ScalingAdjustmentType extends js.Any
-  object ScalingAdjustmentType {
-    val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
-    val ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
-    val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
-
-    @inline def values = js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
   }
 
   /** Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.
@@ -5708,20 +4968,6 @@ package object gamelift {
       UpdateStatus.foreach(__v => __obj.updateDynamic("UpdateStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingPolicy]
     }
-  }
-
-  @js.native
-  sealed trait ScalingStatusType extends js.Any
-  object ScalingStatusType {
-    val ACTIVE = "ACTIVE".asInstanceOf[ScalingStatusType]
-    val UPDATE_REQUESTED = "UPDATE_REQUESTED".asInstanceOf[ScalingStatusType]
-    val UPDATING = "UPDATING".asInstanceOf[ScalingStatusType]
-    val DELETE_REQUESTED = "DELETE_REQUESTED".asInstanceOf[ScalingStatusType]
-    val DELETING = "DELETING".asInstanceOf[ScalingStatusType]
-    val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
-    val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
-
-    @inline def values = js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
   }
 
   /** Properties describing a Realtime script.
@@ -5842,15 +5088,6 @@ package object gamelift {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerProcess]
     }
-  }
-
-  @js.native
-  sealed trait SortOrder extends js.Any
-  object SortOrder {
-    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
-
-    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /** Represents the input for a request operation.

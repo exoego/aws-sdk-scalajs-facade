@@ -827,28 +827,6 @@ package object ecr {
   }
 
   @js.native
-  sealed trait EncryptionType extends js.Any
-  object EncryptionType {
-    val AES256 = "AES256".asInstanceOf[EncryptionType]
-    val KMS = "KMS".asInstanceOf[EncryptionType]
-
-    @inline def values = js.Array(AES256, KMS)
-  }
-
-  @js.native
-  sealed trait FindingSeverity extends js.Any
-  object FindingSeverity {
-    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
-    val LOW = "LOW".asInstanceOf[FindingSeverity]
-    val MEDIUM = "MEDIUM".asInstanceOf[FindingSeverity]
-    val HIGH = "HIGH".asInstanceOf[FindingSeverity]
-    val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
-    val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
-
-    @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
-  }
-
-  @js.native
   trait GetAuthorizationTokenRequest extends js.Object {
     var registryIds: js.UndefOr[GetAuthorizationTokenRegistryIdList]
   }
@@ -1139,14 +1117,6 @@ package object ecr {
     }
   }
 
-  @js.native
-  sealed trait ImageActionType extends js.Any
-  object ImageActionType {
-    val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
-
-    @inline def values = js.Array(EXPIRE)
-  }
-
   /** An object that describes an image returned by a <a>DescribeImages</a> operation.
     */
   @js.native
@@ -1214,20 +1184,6 @@ package object ecr {
       imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageFailure]
     }
-  }
-
-  @js.native
-  sealed trait ImageFailureCode extends js.Any
-  object ImageFailureCode {
-    val InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
-    val InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
-    val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
-    val ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
-    val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
-    val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
-    val KmsError = "KmsError".asInstanceOf[ImageFailureCode]
-
-    @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
   }
 
   /** An object with identifying information for an Amazon ECR image.
@@ -1372,15 +1328,6 @@ package object ecr {
   }
 
   @js.native
-  sealed trait ImageTagMutability extends js.Any
-  object ImageTagMutability {
-    val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
-    val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
-
-    @inline def values = js.Array(MUTABLE, IMMUTABLE)
-  }
-
-  @js.native
   trait InitiateLayerUploadRequest extends js.Object {
     var repositoryName: RepositoryName
     var registryId: js.UndefOr[RegistryId]
@@ -1447,15 +1394,6 @@ package object ecr {
     }
   }
 
-  @js.native
-  sealed trait LayerAvailability extends js.Any
-  object LayerAvailability {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
-    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
-
-    @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
-  }
-
   /** An object representing an Amazon ECR image layer failure.
     */
   @js.native
@@ -1478,15 +1416,6 @@ package object ecr {
       layerDigest.foreach(__v => __obj.updateDynamic("layerDigest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayerFailure]
     }
-  }
-
-  @js.native
-  sealed trait LayerFailureCode extends js.Any
-  object LayerFailureCode {
-    val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
-    val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
-
-    @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
   }
 
   /** The filter for the lifecycle policy preview.
@@ -1535,17 +1464,6 @@ package object ecr {
       imageTags.foreach(__v => __obj.updateDynamic("imageTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicyPreviewResult]
     }
-  }
-
-  @js.native
-  sealed trait LifecyclePolicyPreviewStatus extends js.Any
-  object LifecyclePolicyPreviewStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
-    val COMPLETE = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
-    val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
   }
 
   /** The summary of the lifecycle policy preview request.
@@ -2040,16 +1958,6 @@ package object ecr {
   }
 
   @js.native
-  sealed trait ScanStatus extends js.Any
-  object ScanStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
-    val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
-    val FAILED = "FAILED".asInstanceOf[ScanStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
-  }
-
-  @js.native
   trait SetRepositoryPolicyRequest extends js.Object {
     var policyText: RepositoryPolicyText
     var repositoryName: RepositoryName
@@ -2246,16 +2154,6 @@ package object ecr {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
-  }
-
-  @js.native
-  sealed trait TagStatus extends js.Any
-  object TagStatus {
-    val TAGGED = "TAGGED".asInstanceOf[TagStatus]
-    val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
-    val ANY = "ANY".asInstanceOf[TagStatus]
-
-    @inline def values = js.Array(TAGGED, UNTAGGED, ANY)
   }
 
   @js.native

@@ -296,29 +296,6 @@ package object eventbridge {
     }
   }
 
-  @js.native
-  sealed trait ApiDestinationHttpMethod extends js.Any
-  object ApiDestinationHttpMethod {
-    val POST = "POST".asInstanceOf[ApiDestinationHttpMethod]
-    val GET = "GET".asInstanceOf[ApiDestinationHttpMethod]
-    val HEAD = "HEAD".asInstanceOf[ApiDestinationHttpMethod]
-    val OPTIONS = "OPTIONS".asInstanceOf[ApiDestinationHttpMethod]
-    val PUT = "PUT".asInstanceOf[ApiDestinationHttpMethod]
-    val PATCH = "PATCH".asInstanceOf[ApiDestinationHttpMethod]
-    val DELETE = "DELETE".asInstanceOf[ApiDestinationHttpMethod]
-
-    @inline def values = js.Array(POST, GET, HEAD, OPTIONS, PUT, PATCH, DELETE)
-  }
-
-  @js.native
-  sealed trait ApiDestinationState extends js.Any
-  object ApiDestinationState {
-    val ACTIVE = "ACTIVE".asInstanceOf[ApiDestinationState]
-    val INACTIVE = "INACTIVE".asInstanceOf[ApiDestinationState]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE)
-  }
-
   /** An <code>Archive</code> object that contains details about an archive.
     */
   @js.native
@@ -356,28 +333,6 @@ package object eventbridge {
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Archive]
     }
-  }
-
-  @js.native
-  sealed trait ArchiveState extends js.Any
-  object ArchiveState {
-    val ENABLED = "ENABLED".asInstanceOf[ArchiveState]
-    val DISABLED = "DISABLED".asInstanceOf[ArchiveState]
-    val CREATING = "CREATING".asInstanceOf[ArchiveState]
-    val UPDATING = "UPDATING".asInstanceOf[ArchiveState]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ArchiveState]
-    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ArchiveState]
-
-    @inline def values = js.Array(ENABLED, DISABLED, CREATING, UPDATING, CREATE_FAILED, UPDATE_FAILED)
-  }
-
-  @js.native
-  sealed trait AssignPublicIp extends js.Any
-  object AssignPublicIp {
-    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.
@@ -619,16 +574,6 @@ package object eventbridge {
     }
   }
 
-  @js.native
-  sealed trait ConnectionAuthorizationType extends js.Any
-  object ConnectionAuthorizationType {
-    val BASIC = "BASIC".asInstanceOf[ConnectionAuthorizationType]
-    val OAUTH_CLIENT_CREDENTIALS = "OAUTH_CLIENT_CREDENTIALS".asInstanceOf[ConnectionAuthorizationType]
-    val API_KEY = "API_KEY".asInstanceOf[ConnectionAuthorizationType]
-
-    @inline def values = js.Array(BASIC, OAUTH_CLIENT_CREDENTIALS, API_KEY)
-  }
-
   /** Contains the authorization parameters for the connection if Basic is specified as the authorization type.
     */
   @js.native
@@ -737,16 +682,6 @@ package object eventbridge {
     }
   }
 
-  @js.native
-  sealed trait ConnectionOAuthHttpMethod extends js.Any
-  object ConnectionOAuthHttpMethod {
-    val GET = "GET".asInstanceOf[ConnectionOAuthHttpMethod]
-    val POST = "POST".asInstanceOf[ConnectionOAuthHttpMethod]
-    val PUT = "PUT".asInstanceOf[ConnectionOAuthHttpMethod]
-
-    @inline def values = js.Array(GET, POST, PUT)
-  }
-
   /** Contains the response parameters when OAuth is specified as the authorization type.
     */
   @js.native
@@ -796,20 +731,6 @@ package object eventbridge {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectionQueryStringParameter]
     }
-  }
-
-  @js.native
-  sealed trait ConnectionState extends js.Any
-  object ConnectionState {
-    val CREATING = "CREATING".asInstanceOf[ConnectionState]
-    val UPDATING = "UPDATING".asInstanceOf[ConnectionState]
-    val DELETING = "DELETING".asInstanceOf[ConnectionState]
-    val AUTHORIZED = "AUTHORIZED".asInstanceOf[ConnectionState]
-    val DEAUTHORIZED = "DEAUTHORIZED".asInstanceOf[ConnectionState]
-    val AUTHORIZING = "AUTHORIZING".asInstanceOf[ConnectionState]
-    val DEAUTHORIZING = "DEAUTHORIZING".asInstanceOf[ConnectionState]
-
-    @inline def values = js.Array(CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
   }
 
   @js.native
@@ -1989,16 +1910,6 @@ package object eventbridge {
     }
   }
 
-  @js.native
-  sealed trait EventSourceState extends js.Any
-  object EventSourceState {
-    val PENDING = "PENDING".asInstanceOf[EventSourceState]
-    val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
-    val DELETED = "DELETED".asInstanceOf[EventSourceState]
-
-    @inline def values = js.Array(PENDING, ACTIVE, DELETED)
-  }
-
   /** These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.
     */
   @js.native
@@ -2063,15 +1974,6 @@ package object eventbridge {
       )
       __obj.asInstanceOf[KinesisParameters]
     }
-  }
-
-  @js.native
-  sealed trait LaunchType extends js.Any
-  object LaunchType {
-    val EC2 = "EC2".asInstanceOf[LaunchType]
-    val FARGATE = "FARGATE".asInstanceOf[LaunchType]
-
-    @inline def values = js.Array(EC2, FARGATE)
   }
 
   @js.native
@@ -3190,19 +3092,6 @@ package object eventbridge {
     }
   }
 
-  @js.native
-  sealed trait ReplayState extends js.Any
-  object ReplayState {
-    val STARTING = "STARTING".asInstanceOf[ReplayState]
-    val RUNNING = "RUNNING".asInstanceOf[ReplayState]
-    val CANCELLING = "CANCELLING".asInstanceOf[ReplayState]
-    val COMPLETED = "COMPLETED".asInstanceOf[ReplayState]
-    val CANCELLED = "CANCELLED".asInstanceOf[ReplayState]
-    val FAILED = "FAILED".asInstanceOf[ReplayState]
-
-    @inline def values = js.Array(STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
-  }
-
   /** A <code>RetryPolicy</code> object that includes information about the retry policy settings.
     */
   @js.native
@@ -3264,15 +3153,6 @@ package object eventbridge {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
-  }
-
-  @js.native
-  sealed trait RuleState extends js.Any
-  object RuleState {
-    val ENABLED = "ENABLED".asInstanceOf[RuleState]
-    val DISABLED = "DISABLED".asInstanceOf[RuleState]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.

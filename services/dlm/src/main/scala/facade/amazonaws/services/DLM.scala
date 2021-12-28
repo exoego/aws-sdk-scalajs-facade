@@ -366,22 +366,6 @@ package object dlm {
     }
   }
 
-  @js.native
-  sealed trait EventSourceValues extends js.Any
-  object EventSourceValues {
-    val MANAGED_CWE = "MANAGED_CWE".asInstanceOf[EventSourceValues]
-
-    @inline def values = js.Array(MANAGED_CWE)
-  }
-
-  @js.native
-  sealed trait EventTypeValues extends js.Any
-  object EventTypeValues {
-    val shareSnapshot = "shareSnapshot".asInstanceOf[EventTypeValues]
-
-    @inline def values = js.Array(shareSnapshot)
-  }
-
   /** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
     */
   @js.native
@@ -486,24 +470,6 @@ package object dlm {
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLifecyclePolicyResponse]
     }
-  }
-
-  @js.native
-  sealed trait GettablePolicyStateValues extends js.Any
-  object GettablePolicyStateValues {
-    val ENABLED = "ENABLED".asInstanceOf[GettablePolicyStateValues]
-    val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
-    val ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
-
-    @inline def values = js.Array(ENABLED, DISABLED, ERROR)
-  }
-
-  @js.native
-  sealed trait IntervalUnitValues extends js.Any
-  object IntervalUnitValues {
-    val HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
-
-    @inline def values = js.Array(HOURS)
   }
 
   /** Detailed information about a lifecycle policy.
@@ -614,15 +580,6 @@ package object dlm {
     }
   }
 
-  @js.native
-  sealed trait LocationValues extends js.Any
-  object LocationValues {
-    val CLOUD = "CLOUD".asInstanceOf[LocationValues]
-    val OUTPOST_LOCAL = "OUTPOST_LOCAL".asInstanceOf[LocationValues]
-
-    @inline def values = js.Array(CLOUD, OUTPOST_LOCAL)
-  }
-
   /** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.
     */
   @js.native
@@ -683,34 +640,6 @@ package object dlm {
     }
   }
 
-  @js.native
-  sealed trait PolicyTypeValues extends js.Any
-  object PolicyTypeValues {
-    val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
-    val IMAGE_MANAGEMENT = "IMAGE_MANAGEMENT".asInstanceOf[PolicyTypeValues]
-    val EVENT_BASED_POLICY = "EVENT_BASED_POLICY".asInstanceOf[PolicyTypeValues]
-
-    @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT, EVENT_BASED_POLICY)
-  }
-
-  @js.native
-  sealed trait ResourceLocationValues extends js.Any
-  object ResourceLocationValues {
-    val CLOUD = "CLOUD".asInstanceOf[ResourceLocationValues]
-    val OUTPOST = "OUTPOST".asInstanceOf[ResourceLocationValues]
-
-    @inline def values = js.Array(CLOUD, OUTPOST)
-  }
-
-  @js.native
-  sealed trait ResourceTypeValues extends js.Any
-  object ResourceTypeValues {
-    val VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
-    val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
-
-    @inline def values = js.Array(VOLUME, INSTANCE)
-  }
-
   /** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
     */
   @js.native
@@ -733,17 +662,6 @@ package object dlm {
       IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetainRule]
     }
-  }
-
-  @js.native
-  sealed trait RetentionIntervalUnitValues extends js.Any
-  object RetentionIntervalUnitValues {
-    val DAYS = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
-    val WEEKS = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
-    val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
-    val YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
-
-    @inline def values = js.Array(DAYS, WEEKS, MONTHS, YEARS)
   }
 
   /** Specifies a backup schedule for a snapshot or AMI lifecycle policy.
@@ -786,15 +704,6 @@ package object dlm {
       VariableTags.foreach(__v => __obj.updateDynamic("VariableTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
-  }
-
-  @js.native
-  sealed trait SettablePolicyStateValues extends js.Any
-  object SettablePolicyStateValues {
-    val ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
-    val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /** Specifies a rule for sharing snapshots across AWS accounts.

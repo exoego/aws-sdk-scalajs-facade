@@ -309,15 +309,6 @@ package object qldb {
   }
 
   @js.native
-  sealed trait ErrorCause extends js.Any
-  object ErrorCause {
-    val KINESIS_STREAM_NOT_FOUND = "KINESIS_STREAM_NOT_FOUND".asInstanceOf[ErrorCause]
-    val IAM_PERMISSION_REVOKED = "IAM_PERMISSION_REVOKED".asInstanceOf[ErrorCause]
-
-    @inline def values = js.Array(KINESIS_STREAM_NOT_FOUND, IAM_PERMISSION_REVOKED)
-  }
-
-  @js.native
   trait ExportJournalToS3Request extends js.Object {
     var ExclusiveEndTime: Timestamp
     var InclusiveStartTime: Timestamp
@@ -361,16 +352,6 @@ package object qldb {
       )
       __obj.asInstanceOf[ExportJournalToS3Response]
     }
-  }
-
-  @js.native
-  sealed trait ExportStatus extends js.Any
-  object ExportStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[ExportStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, COMPLETED, CANCELLED)
   }
 
   @js.native
@@ -616,17 +597,6 @@ package object qldb {
     }
   }
 
-  @js.native
-  sealed trait LedgerState extends js.Any
-  object LedgerState {
-    val CREATING = "CREATING".asInstanceOf[LedgerState]
-    val ACTIVE = "ACTIVE".asInstanceOf[LedgerState]
-    val DELETING = "DELETING".asInstanceOf[LedgerState]
-    val DELETED = "DELETED".asInstanceOf[LedgerState]
-
-    @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED)
-  }
-
   /** Information about a ledger, including its name, state, and when it was created.
     */
   @js.native
@@ -846,14 +816,6 @@ package object qldb {
     }
   }
 
-  @js.native
-  sealed trait PermissionsMode extends js.Any
-  object PermissionsMode {
-    val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[PermissionsMode]
-
-    @inline def values = js.Array(ALLOW_ALL)
-  }
-
   /** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
     */
   @js.native
@@ -900,16 +862,6 @@ package object qldb {
       )
       __obj.asInstanceOf[S3ExportConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait S3ObjectEncryptionType extends js.Any
-  object S3ObjectEncryptionType {
-    val SSE_KMS = "SSE_KMS".asInstanceOf[S3ObjectEncryptionType]
-    val SSE_S3 = "SSE_S3".asInstanceOf[S3ObjectEncryptionType]
-    val NO_ENCRYPTION = "NO_ENCRYPTION".asInstanceOf[S3ObjectEncryptionType]
-
-    @inline def values = js.Array(SSE_KMS, SSE_S3, NO_ENCRYPTION)
   }
 
   @js.native
@@ -962,18 +914,6 @@ package object qldb {
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamJournalToKinesisResponse]
     }
-  }
-
-  @js.native
-  sealed trait StreamStatus extends js.Any
-  object StreamStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[StreamStatus]
-    val CANCELED = "CANCELED".asInstanceOf[StreamStatus]
-    val FAILED = "FAILED".asInstanceOf[StreamStatus]
-    val IMPAIRED = "IMPAIRED".asInstanceOf[StreamStatus]
-
-    @inline def values = js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, IMPAIRED)
   }
 
   @js.native

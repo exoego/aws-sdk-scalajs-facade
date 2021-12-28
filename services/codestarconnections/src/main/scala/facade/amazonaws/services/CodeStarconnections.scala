@@ -106,16 +106,6 @@ package object codestarconnections {
   }
 
   @js.native
-  sealed trait ConnectionStatus extends js.Any
-  object ConnectionStatus {
-    val PENDING = "PENDING".asInstanceOf[ConnectionStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
-    val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
-
-    @inline def values = js.Array(PENDING, AVAILABLE, ERROR)
-  }
-
-  @js.native
   trait CreateConnectionInput extends js.Object {
     var ConnectionName: ConnectionName
     var HostArn: js.UndefOr[HostArn]
@@ -497,16 +487,6 @@ package object codestarconnections {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
-  }
-
-  @js.native
-  sealed trait ProviderType extends js.Any
-  object ProviderType {
-    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
-    val GitHub = "GitHub".asInstanceOf[ProviderType]
-    val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
-
-    @inline def values = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
   }
 
   /** A tag is a key-value pair that is used to manage the resource. This tag is available for use by AWS services that support tags.

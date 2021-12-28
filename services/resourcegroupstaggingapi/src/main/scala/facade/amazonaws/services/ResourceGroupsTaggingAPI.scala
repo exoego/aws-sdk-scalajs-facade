@@ -135,15 +135,6 @@ package object resourcegroupstaggingapi {
     }
   }
 
-  @js.native
-  sealed trait ErrorCode extends js.Any
-  object ErrorCode {
-    val InternalServiceException = "InternalServiceException".asInstanceOf[ErrorCode]
-    val InvalidParameterException = "InvalidParameterException".asInstanceOf[ErrorCode]
-
-    @inline def values = js.Array(InternalServiceException, InvalidParameterException)
-  }
-
   /** Information about the errors that are returned for each failed resource. This information can include <code>InternalServiceException</code> and <code>InvalidParameterException</code> errors. It can also include any valid error code returned by the AWS service that hosts the resource that the ARN key represents. The following are common error codes that you might receive from other AWS services: * ```InternalServiceException``` – This can mean that the Resource Groups Tagging API didn't receive a response from another AWS service. It can also mean the the resource type in the request is not supported by the Resource Groups Tagging API. In these cases, it's safe to retry the request and then call [[http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html|GetResources]] to verify the changes. * ```AccessDeniedException``` – This can mean that you need permission to calling tagging operations in the AWS service that contains the resource. For
     * example, to use the Resource Groups Tagging API to tag a CloudWatch alarm resource, you need permission to call <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"> <code>TagResources</code> </a> <i>and</i> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> in the CloudWatch API. For more information on errors that are generated from other AWS services, see the documentation for that service.
     */
@@ -353,16 +344,6 @@ package object resourcegroupstaggingapi {
     }
   }
 
-  @js.native
-  sealed trait GroupByAttribute extends js.Any
-  object GroupByAttribute {
-    val TARGET_ID = "TARGET_ID".asInstanceOf[GroupByAttribute]
-    val REGION = "REGION".asInstanceOf[GroupByAttribute]
-    val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[GroupByAttribute]
-
-    @inline def values = js.Array(TARGET_ID, REGION, RESOURCE_TYPE)
-  }
-
   /** A list of resource ARNs and the tags (keys and values) that are associated with each.
     */
   @js.native
@@ -525,16 +506,6 @@ package object resourcegroupstaggingapi {
       FailedResourcesMap.foreach(__v => __obj.updateDynamic("FailedResourcesMap")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourcesOutput]
     }
-  }
-
-  @js.native
-  sealed trait TargetIdType extends js.Any
-  object TargetIdType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[TargetIdType]
-    val OU = "OU".asInstanceOf[TargetIdType]
-    val ROOT = "ROOT".asInstanceOf[TargetIdType]
-
-    @inline def values = js.Array(ACCOUNT, OU, ROOT)
   }
 
   @js.native

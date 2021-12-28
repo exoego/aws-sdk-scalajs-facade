@@ -442,26 +442,6 @@ package object servicecatalog {
   }
 
   @js.native
-  sealed trait AccessLevelFilterKey extends js.Any
-  object AccessLevelFilterKey {
-    val Account = "Account".asInstanceOf[AccessLevelFilterKey]
-    val Role = "Role".asInstanceOf[AccessLevelFilterKey]
-    val User = "User".asInstanceOf[AccessLevelFilterKey]
-
-    @inline def values = js.Array(Account, Role, User)
-  }
-
-  @js.native
-  sealed trait AccessStatus extends js.Any
-  object AccessStatus {
-    val ENABLED = "ENABLED".asInstanceOf[AccessStatus]
-    val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
-    val DISABLED = "DISABLED".asInstanceOf[AccessStatus]
-
-    @inline def values = js.Array(ENABLED, UNDER_CHANGE, DISABLED)
-  }
-
-  @js.native
   trait AssociateBudgetWithResourceInput extends js.Object {
     var BudgetName: BudgetName
     var ResourceId: Id
@@ -729,16 +709,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait ChangeAction extends js.Any
-  object ChangeAction {
-    val ADD = "ADD".asInstanceOf[ChangeAction]
-    val MODIFY = "MODIFY".asInstanceOf[ChangeAction]
-    val REMOVE = "REMOVE".asInstanceOf[ChangeAction]
-
-    @inline def values = js.Array(ADD, MODIFY, REMOVE)
-  }
-
   /** Information about a CloudWatch dashboard.
     */
   @js.native
@@ -812,14 +782,6 @@ package object servicecatalog {
   }
 
   @js.native
-  sealed trait CopyOption extends js.Any
-  object CopyOption {
-    val CopyTags = "CopyTags".asInstanceOf[CopyOption]
-
-    @inline def values = js.Array(CopyTags)
-  }
-
-  @js.native
   trait CopyProductInput extends js.Object {
     var IdempotencyToken: IdempotencyToken
     var SourceProductArn: ProductArn
@@ -869,16 +831,6 @@ package object servicecatalog {
       CopyProductToken.foreach(__v => __obj.updateDynamic("CopyProductToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyProductOutput]
     }
-  }
-
-  @js.native
-  sealed trait CopyProductStatus extends js.Any
-  object CopyProductStatus {
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[CopyProductStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
-    val FAILED = "FAILED".asInstanceOf[CopyProductStatus]
-
-    @inline def values = js.Array(SUCCEEDED, IN_PROGRESS, FAILED)
   }
 
   @js.native
@@ -1767,17 +1719,6 @@ package object servicecatalog {
   }
 
   @js.native
-  sealed trait DescribePortfolioShareType extends js.Any
-  object DescribePortfolioShareType {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[DescribePortfolioShareType]
-    val ORGANIZATION = "ORGANIZATION".asInstanceOf[DescribePortfolioShareType]
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[DescribePortfolioShareType]
-    val ORGANIZATION_MEMBER_ACCOUNT = "ORGANIZATION_MEMBER_ACCOUNT".asInstanceOf[DescribePortfolioShareType]
-
-    @inline def values = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATIONAL_UNIT, ORGANIZATION_MEMBER_ACCOUNT)
-  }
-
-  @js.native
   trait DescribePortfolioSharesInput extends js.Object {
     var PortfolioId: Id
     var Type: DescribePortfolioShareType
@@ -2544,15 +2485,6 @@ package object servicecatalog {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[EnableAWSOrganizationsAccessOutput]
     }
-  }
-
-  @js.native
-  sealed trait EvaluationType extends js.Any
-  object EvaluationType {
-    val STATIC = "STATIC".asInstanceOf[EvaluationType]
-    val DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
-
-    @inline def values = js.Array(STATIC, DYNAMIC)
   }
 
   @js.native
@@ -3754,16 +3686,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait OrganizationNodeType extends js.Any
-  object OrganizationNodeType {
-    val ORGANIZATION = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
-    val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
-    val ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
-
-    @inline def values = js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
-  }
-
   /** The constraints that the administrator has put on the parameter.
     */
   @js.native
@@ -3860,16 +3782,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait PortfolioShareType extends js.Any
-  object PortfolioShareType {
-    val IMPORTED = "IMPORTED".asInstanceOf[PortfolioShareType]
-    val AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
-    val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
-
-    @inline def values = js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
-  }
-
   /** Information about a principal.
     */
   @js.native
@@ -3889,31 +3801,6 @@ package object servicecatalog {
       PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Principal]
     }
-  }
-
-  @js.native
-  sealed trait PrincipalType extends js.Any
-  object PrincipalType {
-    val IAM = "IAM".asInstanceOf[PrincipalType]
-
-    @inline def values = js.Array(IAM)
-  }
-
-  @js.native
-  sealed trait ProductSource extends js.Any
-  object ProductSource {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[ProductSource]
-
-    @inline def values = js.Array(ACCOUNT)
-  }
-
-  @js.native
-  sealed trait ProductType extends js.Any
-  object ProductType {
-    val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
-    val MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
-
-    @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
   }
 
   /** A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.
@@ -3964,27 +3851,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait ProductViewFilterBy extends js.Any
-  object ProductViewFilterBy {
-    val FullTextSearch = "FullTextSearch".asInstanceOf[ProductViewFilterBy]
-    val Owner = "Owner".asInstanceOf[ProductViewFilterBy]
-    val ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
-    val SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
-
-    @inline def values = js.Array(FullTextSearch, Owner, ProductType, SourceProductId)
-  }
-
-  @js.native
-  sealed trait ProductViewSortBy extends js.Any
-  object ProductViewSortBy {
-    val Title = "Title".asInstanceOf[ProductViewSortBy]
-    val VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
-    val CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
-
-    @inline def values = js.Array(Title, VersionCount, CreationDate)
-  }
-
   /** Summary information about a product view.
     */
   @js.native
@@ -4031,15 +3897,6 @@ package object servicecatalog {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductViewSummary]
     }
-  }
-
-  @js.native
-  sealed trait PropertyKey extends js.Any
-  object PropertyKey {
-    val OWNER = "OWNER".asInstanceOf[PropertyKey]
-    val LAUNCH_ROLE = "LAUNCH_ROLE".asInstanceOf[PropertyKey]
-
-    @inline def values = js.Array(OWNER, LAUNCH_ROLE)
   }
 
   @js.native
@@ -4301,19 +4158,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait ProvisionedProductPlanStatus extends js.Any
-  object ProvisionedProductPlanStatus {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val CREATE_SUCCESS = "CREATE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
-    val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
-    val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
-
-    @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
-  }
-
   /** Summary information about a plan.
     */
   @js.native
@@ -4345,34 +4189,6 @@ package object servicecatalog {
       ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedProductPlanSummary]
     }
-  }
-
-  @js.native
-  sealed trait ProvisionedProductPlanType extends js.Any
-  object ProvisionedProductPlanType {
-    val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ProvisionedProductPlanType]
-
-    @inline def values = js.Array(CLOUDFORMATION)
-  }
-
-  @js.native
-  sealed trait ProvisionedProductStatus extends js.Any
-  object ProvisionedProductStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ProvisionedProductStatus]
-    val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[ProvisionedProductStatus]
-    val TAINTED = "TAINTED".asInstanceOf[ProvisionedProductStatus]
-    val ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
-    val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
-
-    @inline def values = js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS)
-  }
-
-  @js.native
-  sealed trait ProvisionedProductViewFilterBy extends js.Any
-  object ProvisionedProductViewFilterBy {
-    val SearchQuery = "SearchQuery".asInstanceOf[ProvisionedProductViewFilterBy]
-
-    @inline def values = js.Array(SearchQuery)
   }
 
   /** Information about a provisioning artifact. A provisioning artifact is also known as a product version.
@@ -4439,15 +4255,6 @@ package object servicecatalog {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactDetail]
     }
-  }
-
-  @js.native
-  sealed trait ProvisioningArtifactGuidance extends js.Any
-  object ProvisioningArtifactGuidance {
-    val DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
-    val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
-
-    @inline def values = js.Array(DEFAULT, DEPRECATED)
   }
 
   /** Provisioning artifact output.
@@ -4557,14 +4364,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait ProvisioningArtifactPropertyName extends js.Any
-  object ProvisioningArtifactPropertyName {
-    val Id = "Id".asInstanceOf[ProvisioningArtifactPropertyName]
-
-    @inline def values = js.Array(Id)
-  }
-
   /** Summary information about a provisioning artifact (also known as a version) for a product.
     */
   @js.native
@@ -4593,16 +4392,6 @@ package object servicecatalog {
       ProvisioningArtifactMetadata.foreach(__v => __obj.updateDynamic("ProvisioningArtifactMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactSummary]
     }
-  }
-
-  @js.native
-  sealed trait ProvisioningArtifactType extends js.Any
-  object ProvisioningArtifactType {
-    val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProvisioningArtifactType]
-    val MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
-    val MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
-
-    @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
   }
 
   /** An object that contains summary information about a product view and a provisioning artifact.
@@ -4782,18 +4571,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait RecordStatus extends js.Any
-  object RecordStatus {
-    val CREATED = "CREATED".asInstanceOf[RecordStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RecordStatus]
-    val IN_PROGRESS_IN_ERROR = "IN_PROGRESS_IN_ERROR".asInstanceOf[RecordStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
-    val FAILED = "FAILED".asInstanceOf[RecordStatus]
-
-    @inline def values = js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
-  }
-
   /** Information about a tag, which is a key-value pair.
     */
   @js.native
@@ -4848,39 +4625,6 @@ package object servicecatalog {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RejectPortfolioShareOutput]
     }
-  }
-
-  @js.native
-  sealed trait Replacement extends js.Any
-  object Replacement {
-    val TRUE = "TRUE".asInstanceOf[Replacement]
-    val FALSE = "FALSE".asInstanceOf[Replacement]
-    val CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
-
-    @inline def values = js.Array(TRUE, FALSE, CONDITIONAL)
-  }
-
-  @js.native
-  sealed trait RequiresRecreation extends js.Any
-  object RequiresRecreation {
-    val NEVER = "NEVER".asInstanceOf[RequiresRecreation]
-    val CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
-    val ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
-
-    @inline def values = js.Array(NEVER, CONDITIONALLY, ALWAYS)
-  }
-
-  @js.native
-  sealed trait ResourceAttribute extends js.Any
-  object ResourceAttribute {
-    val PROPERTIES = "PROPERTIES".asInstanceOf[ResourceAttribute]
-    val METADATA = "METADATA".asInstanceOf[ResourceAttribute]
-    val CREATIONPOLICY = "CREATIONPOLICY".asInstanceOf[ResourceAttribute]
-    val UPDATEPOLICY = "UPDATEPOLICY".asInstanceOf[ResourceAttribute]
-    val DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
-    val TAGS = "TAGS".asInstanceOf[ResourceAttribute]
-
-    @inline def values = js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
   }
 
   /** Information about a resource change that will occur when a plan is executed.
@@ -5231,37 +4975,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait ServiceActionAssociationErrorCode extends js.Any
-  object ServiceActionAssociationErrorCode {
-    val DUPLICATE_RESOURCE = "DUPLICATE_RESOURCE".asInstanceOf[ServiceActionAssociationErrorCode]
-    val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ServiceActionAssociationErrorCode]
-    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[ServiceActionAssociationErrorCode]
-    val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
-    val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
-
-    @inline def values = js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING)
-  }
-
-  @js.native
-  sealed trait ServiceActionDefinitionKey extends js.Any
-  object ServiceActionDefinitionKey {
-    val Name = "Name".asInstanceOf[ServiceActionDefinitionKey]
-    val Version = "Version".asInstanceOf[ServiceActionDefinitionKey]
-    val AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
-    val Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
-
-    @inline def values = js.Array(Name, Version, AssumeRole, Parameters)
-  }
-
-  @js.native
-  sealed trait ServiceActionDefinitionType extends js.Any
-  object ServiceActionDefinitionType {
-    val SSM_AUTOMATION = "SSM_AUTOMATION".asInstanceOf[ServiceActionDefinitionType]
-
-    @inline def values = js.Array(SSM_AUTOMATION)
-  }
-
   /** An object containing detailed information about the self-service action.
     */
   @js.native
@@ -5355,27 +5068,6 @@ package object servicecatalog {
     }
   }
 
-  @js.native
-  sealed trait ShareStatus extends js.Any
-  object ShareStatus {
-    val NOT_STARTED = "NOT_STARTED".asInstanceOf[ShareStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ShareStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[ShareStatus]
-    val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
-    val ERROR = "ERROR".asInstanceOf[ShareStatus]
-
-    @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR)
-  }
-
-  @js.native
-  sealed trait SortOrder extends js.Any
-  object SortOrder {
-    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
-
-    @inline def values = js.Array(ASCENDING, DESCENDING)
-  }
-
   /** An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
@@ -5398,36 +5090,6 @@ package object servicecatalog {
       StackInstanceStatus.foreach(__v => __obj.updateDynamic("StackInstanceStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackInstance]
     }
-  }
-
-  @js.native
-  sealed trait StackInstanceStatus extends js.Any
-  object StackInstanceStatus {
-    val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
-    val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
-    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
-
-    @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
-  }
-
-  @js.native
-  sealed trait StackSetOperationType extends js.Any
-  object StackSetOperationType {
-    val CREATE = "CREATE".asInstanceOf[StackSetOperationType]
-    val UPDATE = "UPDATE".asInstanceOf[StackSetOperationType]
-    val DELETE = "DELETE".asInstanceOf[StackSetOperationType]
-
-    @inline def values = js.Array(CREATE, UPDATE, DELETE)
-  }
-
-  @js.native
-  sealed trait Status extends js.Any
-  object Status {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[Status]
-    val CREATING = "CREATING".asInstanceOf[Status]
-    val FAILED = "FAILED".asInstanceOf[Status]
-
-    @inline def values = js.Array(AVAILABLE, CREATING, FAILED)
   }
 
   /** Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.

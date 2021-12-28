@@ -318,16 +318,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait AccountGateStatus extends js.Any
-  object AccountGateStatus {
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
-    val FAILED = "FAILED".asInstanceOf[AccountGateStatus]
-    val SKIPPED = "SKIPPED".asInstanceOf[AccountGateStatus]
-
-    @inline def values = js.Array(SUCCEEDED, FAILED, SKIPPED)
-  }
-
   /** The AccountLimit data type. CloudFormation has the following limits per account: * Number of concurrent resources * Number of stacks * Number of stack outputs For more information about these account limits, and other CloudFormation limits, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html|AWS CloudFormation Limits]] in the <i>AWS CloudFormation User Guide</i>.
     */
   @js.native
@@ -370,15 +360,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait CallAs extends js.Any
-  object CallAs {
-    val SELF = "SELF".asInstanceOf[CallAs]
-    val DELEGATED_ADMIN = "DELEGATED_ADMIN".asInstanceOf[CallAs]
-
-    @inline def values = js.Array(SELF, DELEGATED_ADMIN)
-  }
-
   /** The input for the <a>CancelUpdateStack</a> action.
     */
   @js.native
@@ -402,16 +383,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait Capability extends js.Any
-  object Capability {
-    val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
-    val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
-    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
-
-    @inline def values = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
-  }
-
   /** The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set.
     */
   @js.native
@@ -431,33 +402,6 @@ package object cloudformation {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Change]
     }
-  }
-
-  @js.native
-  sealed trait ChangeAction extends js.Any
-  object ChangeAction {
-    val Add = "Add".asInstanceOf[ChangeAction]
-    val Modify = "Modify".asInstanceOf[ChangeAction]
-    val Remove = "Remove".asInstanceOf[ChangeAction]
-    val Import = "Import".asInstanceOf[ChangeAction]
-    val Dynamic = "Dynamic".asInstanceOf[ChangeAction]
-
-    @inline def values = js.Array(Add, Modify, Remove, Import, Dynamic)
-  }
-
-  @js.native
-  sealed trait ChangeSetStatus extends js.Any
-  object ChangeSetStatus {
-    val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
-    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
-    val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ChangeSetStatus]
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
-    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ChangeSetStatus]
-    val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
-
-    @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_PENDING, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, FAILED)
   }
 
   /** The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.
@@ -509,36 +453,6 @@ package object cloudformation {
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeSetSummary]
     }
-  }
-
-  @js.native
-  sealed trait ChangeSetType extends js.Any
-  object ChangeSetType {
-    val CREATE = "CREATE".asInstanceOf[ChangeSetType]
-    val UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
-    val IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
-
-    @inline def values = js.Array(CREATE, UPDATE, IMPORT)
-  }
-
-  @js.native
-  sealed trait ChangeSource extends js.Any
-  object ChangeSource {
-    val ResourceReference = "ResourceReference".asInstanceOf[ChangeSource]
-    val ParameterReference = "ParameterReference".asInstanceOf[ChangeSource]
-    val ResourceAttribute = "ResourceAttribute".asInstanceOf[ChangeSource]
-    val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
-    val Automatic = "Automatic".asInstanceOf[ChangeSource]
-
-    @inline def values = js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
-  }
-
-  @js.native
-  sealed trait ChangeType extends js.Any
-  object ChangeType {
-    val Resource = "Resource".asInstanceOf[ChangeType]
-
-    @inline def values = js.Array(Resource)
   }
 
   /** The input for the <a>ContinueUpdateRollback</a> action.
@@ -1057,15 +971,6 @@ package object cloudformation {
       OrganizationalUnitIds.foreach(__v => __obj.updateDynamic("OrganizationalUnitIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentTargets]
     }
-  }
-
-  @js.native
-  sealed trait DeprecatedStatus extends js.Any
-  object DeprecatedStatus {
-    val LIVE = "LIVE".asInstanceOf[DeprecatedStatus]
-    val DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
-
-    @inline def values = js.Array(LIVE, DEPRECATED)
   }
 
   @js.native
@@ -1874,16 +1779,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait DifferenceType extends js.Any
-  object DifferenceType {
-    val ADD = "ADD".asInstanceOf[DifferenceType]
-    val REMOVE = "REMOVE".asInstanceOf[DifferenceType]
-    val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
-
-    @inline def values = js.Array(ADD, REMOVE, NOT_EQUAL)
-  }
-
   /** The input for an <a>EstimateTemplateCost</a> action.
     */
   @js.native
@@ -1926,15 +1821,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait EvaluationType extends js.Any
-  object EvaluationType {
-    val Static = "Static".asInstanceOf[EvaluationType]
-    val Dynamic = "Dynamic".asInstanceOf[EvaluationType]
-
-    @inline def values = js.Array(Static, Dynamic)
-  }
-
   /** The input for the <a>ExecuteChangeSet</a> action.
     */
   @js.native
@@ -1972,19 +1858,6 @@ package object cloudformation {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[ExecuteChangeSetOutput]
     }
-  }
-
-  @js.native
-  sealed trait ExecutionStatus extends js.Any
-  object ExecutionStatus {
-    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ExecutionStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ExecutionStatus]
-    val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ExecutionStatus]
-    val EXECUTE_COMPLETE = "EXECUTE_COMPLETE".asInstanceOf[ExecutionStatus]
-    val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
-    val OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
-
-    @inline def values = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
   }
 
   /** The <code>Export</code> structure describes the exported output values for a stack.
@@ -2160,42 +2033,6 @@ package object cloudformation {
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTemplateSummaryOutput]
     }
-  }
-
-  @js.native
-  sealed trait HandlerErrorCode extends js.Any
-  object HandlerErrorCode {
-    val NotUpdatable = "NotUpdatable".asInstanceOf[HandlerErrorCode]
-    val InvalidRequest = "InvalidRequest".asInstanceOf[HandlerErrorCode]
-    val AccessDenied = "AccessDenied".asInstanceOf[HandlerErrorCode]
-    val InvalidCredentials = "InvalidCredentials".asInstanceOf[HandlerErrorCode]
-    val AlreadyExists = "AlreadyExists".asInstanceOf[HandlerErrorCode]
-    val NotFound = "NotFound".asInstanceOf[HandlerErrorCode]
-    val ResourceConflict = "ResourceConflict".asInstanceOf[HandlerErrorCode]
-    val Throttling = "Throttling".asInstanceOf[HandlerErrorCode]
-    val ServiceLimitExceeded = "ServiceLimitExceeded".asInstanceOf[HandlerErrorCode]
-    val NotStabilized = "NotStabilized".asInstanceOf[HandlerErrorCode]
-    val GeneralServiceException = "GeneralServiceException".asInstanceOf[HandlerErrorCode]
-    val ServiceInternalError = "ServiceInternalError".asInstanceOf[HandlerErrorCode]
-    val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
-    val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
-
-    @inline def values = js.Array(
-      NotUpdatable,
-      InvalidRequest,
-      AccessDenied,
-      InvalidCredentials,
-      AlreadyExists,
-      NotFound,
-      ResourceConflict,
-      Throttling,
-      ServiceLimitExceeded,
-      NotStabilized,
-      GeneralServiceException,
-      ServiceInternalError,
-      NetworkFailure,
-      InternalFailure
-    )
   }
 
   /** The input for the <a>ListChangeSets</a> action.
@@ -2790,27 +2627,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait OnFailure extends js.Any
-  object OnFailure {
-    val DO_NOTHING = "DO_NOTHING".asInstanceOf[OnFailure]
-    val ROLLBACK = "ROLLBACK".asInstanceOf[OnFailure]
-    val DELETE = "DELETE".asInstanceOf[OnFailure]
-
-    @inline def values = js.Array(DO_NOTHING, ROLLBACK, DELETE)
-  }
-
-  @js.native
-  sealed trait OperationStatus extends js.Any
-  object OperationStatus {
-    val PENDING = "PENDING".asInstanceOf[OperationStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
-    val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
-    val FAILED = "FAILED".asInstanceOf[OperationStatus]
-
-    @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED)
-  }
-
   /** The Output data type.
     */
   @js.native
@@ -2916,15 +2732,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait PermissionModels extends js.Any
-  object PermissionModels {
-    val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
-    val SELF_MANAGED = "SELF_MANAGED".asInstanceOf[PermissionModels]
-
-    @inline def values = js.Array(SERVICE_MANAGED, SELF_MANAGED)
-  }
-
   /** Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
     */
   @js.native
@@ -2976,16 +2783,6 @@ package object cloudformation {
   }
 
   @js.native
-  sealed trait ProvisioningType extends js.Any
-  object ProvisioningType {
-    val NON_PROVISIONABLE = "NON_PROVISIONABLE".asInstanceOf[ProvisioningType]
-    val IMMUTABLE = "IMMUTABLE".asInstanceOf[ProvisioningType]
-    val FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
-
-    @inline def values = js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
-  }
-
-  @js.native
   trait RecordHandlerProgressInput extends js.Object {
     var BearerToken: ClientToken
     var OperationStatus: OperationStatus
@@ -3030,15 +2827,6 @@ package object cloudformation {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RecordHandlerProgressOutput]
     }
-  }
-
-  @js.native
-  sealed trait RegionConcurrencyType extends js.Any
-  object RegionConcurrencyType {
-    val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[RegionConcurrencyType]
-    val PARALLEL = "PARALLEL".asInstanceOf[RegionConcurrencyType]
-
-    @inline def values = js.Array(SEQUENTIAL, PARALLEL)
   }
 
   @js.native
@@ -3088,58 +2876,6 @@ package object cloudformation {
       RegistrationToken.foreach(__v => __obj.updateDynamic("RegistrationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTypeOutput]
     }
-  }
-
-  @js.native
-  sealed trait RegistrationStatus extends js.Any
-  object RegistrationStatus {
-    val COMPLETE = "COMPLETE".asInstanceOf[RegistrationStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
-    val FAILED = "FAILED".asInstanceOf[RegistrationStatus]
-
-    @inline def values = js.Array(COMPLETE, IN_PROGRESS, FAILED)
-  }
-
-  @js.native
-  sealed trait RegistryType extends js.Any
-  object RegistryType {
-    val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
-    val MODULE = "MODULE".asInstanceOf[RegistryType]
-
-    @inline def values = js.Array(RESOURCE, MODULE)
-  }
-
-  @js.native
-  sealed trait Replacement extends js.Any
-  object Replacement {
-    val True = "True".asInstanceOf[Replacement]
-    val False = "False".asInstanceOf[Replacement]
-    val Conditional = "Conditional".asInstanceOf[Replacement]
-
-    @inline def values = js.Array(True, False, Conditional)
-  }
-
-  @js.native
-  sealed trait RequiresRecreation extends js.Any
-  object RequiresRecreation {
-    val Never = "Never".asInstanceOf[RequiresRecreation]
-    val Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
-    val Always = "Always".asInstanceOf[RequiresRecreation]
-
-    @inline def values = js.Array(Never, Conditionally, Always)
-  }
-
-  @js.native
-  sealed trait ResourceAttribute extends js.Any
-  object ResourceAttribute {
-    val Properties = "Properties".asInstanceOf[ResourceAttribute]
-    val Metadata = "Metadata".asInstanceOf[ResourceAttribute]
-    val CreationPolicy = "CreationPolicy".asInstanceOf[ResourceAttribute]
-    val UpdatePolicy = "UpdatePolicy".asInstanceOf[ResourceAttribute]
-    val DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
-    val Tags = "Tags".asInstanceOf[ResourceAttribute]
-
-    @inline def values = js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
   }
 
   /** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set.
@@ -3233,55 +2969,6 @@ package object cloudformation {
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceIdentifierSummary]
     }
-  }
-
-  @js.native
-  sealed trait ResourceSignalStatus extends js.Any
-  object ResourceSignalStatus {
-    val SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
-    val FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
-
-    @inline def values = js.Array(SUCCESS, FAILURE)
-  }
-
-  @js.native
-  sealed trait ResourceStatus extends js.Any
-  object ResourceStatus {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ResourceStatus]
-    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ResourceStatus]
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ResourceStatus]
-    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ResourceStatus]
-    val DELETE_SKIPPED = "DELETE_SKIPPED".asInstanceOf[ResourceStatus]
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
-    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[ResourceStatus]
-    val IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ResourceStatus]
-    val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ResourceStatus]
-    val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
-    val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
-    val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
-
-    @inline def values = js.Array(
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      CREATE_COMPLETE,
-      DELETE_IN_PROGRESS,
-      DELETE_FAILED,
-      DELETE_COMPLETE,
-      DELETE_SKIPPED,
-      UPDATE_IN_PROGRESS,
-      UPDATE_FAILED,
-      UPDATE_COMPLETE,
-      IMPORT_FAILED,
-      IMPORT_COMPLETE,
-      IMPORT_IN_PROGRESS,
-      IMPORT_ROLLBACK_IN_PROGRESS,
-      IMPORT_ROLLBACK_FAILED,
-      IMPORT_ROLLBACK_COMPLETE
-    )
   }
 
   /** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.
@@ -3549,16 +3236,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait StackDriftDetectionStatus extends js.Any
-  object StackDriftDetectionStatus {
-    val DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS".asInstanceOf[StackDriftDetectionStatus]
-    val DETECTION_FAILED = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
-    val DETECTION_COMPLETE = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
-
-    @inline def values = js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
-  }
-
   /** Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.
     */
   @js.native
@@ -3603,17 +3280,6 @@ package object cloudformation {
       LastCheckTimestamp.foreach(__v => __obj.updateDynamic("LastCheckTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackDriftInformationSummary]
     }
-  }
-
-  @js.native
-  sealed trait StackDriftStatus extends js.Any
-  object StackDriftStatus {
-    val DRIFTED = "DRIFTED".asInstanceOf[StackDriftStatus]
-    val IN_SYNC = "IN_SYNC".asInstanceOf[StackDriftStatus]
-    val UNKNOWN = "UNKNOWN".asInstanceOf[StackDriftStatus]
-    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
-
-    @inline def values = js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
   }
 
   /** The StackEvent data type.
@@ -3732,19 +3398,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait StackInstanceDetailedStatus extends js.Any
-  object StackInstanceDetailedStatus {
-    val PENDING = "PENDING".asInstanceOf[StackInstanceDetailedStatus]
-    val RUNNING = "RUNNING".asInstanceOf[StackInstanceDetailedStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackInstanceDetailedStatus]
-    val FAILED = "FAILED".asInstanceOf[StackInstanceDetailedStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
-    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
-
-    @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
-  }
-
   /** The status that stack instances are filtered by.
     */
   @js.native
@@ -3764,24 +3417,6 @@ package object cloudformation {
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackInstanceFilter]
     }
-  }
-
-  @js.native
-  sealed trait StackInstanceFilterName extends js.Any
-  object StackInstanceFilterName {
-    val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
-
-    @inline def values = js.Array(DETAILED_STATUS)
-  }
-
-  @js.native
-  sealed trait StackInstanceStatus extends js.Any
-  object StackInstanceStatus {
-    val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
-    val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
-    val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
-
-    @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
   }
 
   /** The structure that contains summary information about a stack instance.
@@ -4028,17 +3663,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait StackResourceDriftStatus extends js.Any
-  object StackResourceDriftStatus {
-    val IN_SYNC = "IN_SYNC".asInstanceOf[StackResourceDriftStatus]
-    val MODIFIED = "MODIFIED".asInstanceOf[StackResourceDriftStatus]
-    val DELETED = "DELETED".asInstanceOf[StackResourceDriftStatus]
-    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
-
-    @inline def values = js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
-  }
-
   /** Contains high-level information about the specified stack resource.
     */
   @js.native
@@ -4179,28 +3803,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait StackSetDriftDetectionStatus extends js.Any
-  object StackSetDriftDetectionStatus {
-    val COMPLETED = "COMPLETED".asInstanceOf[StackSetDriftDetectionStatus]
-    val FAILED = "FAILED".asInstanceOf[StackSetDriftDetectionStatus]
-    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[StackSetDriftDetectionStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
-    val STOPPED = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
-
-    @inline def values = js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED)
-  }
-
-  @js.native
-  sealed trait StackSetDriftStatus extends js.Any
-  object StackSetDriftStatus {
-    val DRIFTED = "DRIFTED".asInstanceOf[StackSetDriftStatus]
-    val IN_SYNC = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
-    val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
-
-    @inline def values = js.Array(DRIFTED, IN_SYNC, NOT_CHECKED)
-  }
-
   /** The structure that contains information about a stack set operation.
     */
   @js.native
@@ -4252,17 +3854,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait StackSetOperationAction extends js.Any
-  object StackSetOperationAction {
-    val CREATE = "CREATE".asInstanceOf[StackSetOperationAction]
-    val UPDATE = "UPDATE".asInstanceOf[StackSetOperationAction]
-    val DELETE = "DELETE".asInstanceOf[StackSetOperationAction]
-    val DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
-
-    @inline def values = js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT)
-  }
-
   /** The user-specified preferences for how AWS CloudFormation performs a stack set operation. For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]].
     */
   @js.native
@@ -4294,18 +3885,6 @@ package object cloudformation {
       RegionOrder.foreach(__v => __obj.updateDynamic("RegionOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetOperationPreferences]
     }
-  }
-
-  @js.native
-  sealed trait StackSetOperationResultStatus extends js.Any
-  object StackSetOperationResultStatus {
-    val PENDING = "PENDING".asInstanceOf[StackSetOperationResultStatus]
-    val RUNNING = "RUNNING".asInstanceOf[StackSetOperationResultStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationResultStatus]
-    val FAILED = "FAILED".asInstanceOf[StackSetOperationResultStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
-
-    @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
   }
 
   /** The structure that contains information about a specified operation's results for a given account in a given Region.
@@ -4341,19 +3920,6 @@ package object cloudformation {
     }
   }
 
-  @js.native
-  sealed trait StackSetOperationStatus extends js.Any
-  object StackSetOperationStatus {
-    val RUNNING = "RUNNING".asInstanceOf[StackSetOperationStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationStatus]
-    val FAILED = "FAILED".asInstanceOf[StackSetOperationStatus]
-    val STOPPING = "STOPPING".asInstanceOf[StackSetOperationStatus]
-    val STOPPED = "STOPPED".asInstanceOf[StackSetOperationStatus]
-    val QUEUED = "QUEUED".asInstanceOf[StackSetOperationStatus]
-
-    @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
-  }
-
   /** The structures that contain summary information about the specified operation.
     */
   @js.native
@@ -4382,15 +3948,6 @@ package object cloudformation {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetOperationSummary]
     }
-  }
-
-  @js.native
-  sealed trait StackSetStatus extends js.Any
-  object StackSetStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[StackSetStatus]
-    val DELETED = "DELETED".asInstanceOf[StackSetStatus]
-
-    @inline def values = js.Array(ACTIVE, DELETED)
   }
 
   /** The structures that contain summary information about the specified stack set.
@@ -4430,58 +3987,6 @@ package object cloudformation {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSetSummary]
     }
-  }
-
-  @js.native
-  sealed trait StackStatus extends js.Any
-  object StackStatus {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[StackStatus]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[StackStatus]
-    val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[StackStatus]
-    val ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-    val ROLLBACK_FAILED = "ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    val ROLLBACK_COMPLETE = "ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[StackStatus]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[StackStatus]
-    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[StackStatus]
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[StackStatus]
-    val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
-    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
-    val UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-    val UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
-    val UPDATE_ROLLBACK_COMPLETE = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-    val REVIEW_IN_PROGRESS = "REVIEW_IN_PROGRESS".asInstanceOf[StackStatus]
-    val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[StackStatus]
-    val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[StackStatus]
-    val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-    val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-    val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-
-    @inline def values = js.Array(
-      CREATE_IN_PROGRESS,
-      CREATE_FAILED,
-      CREATE_COMPLETE,
-      ROLLBACK_IN_PROGRESS,
-      ROLLBACK_FAILED,
-      ROLLBACK_COMPLETE,
-      DELETE_IN_PROGRESS,
-      DELETE_FAILED,
-      DELETE_COMPLETE,
-      UPDATE_IN_PROGRESS,
-      UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-      UPDATE_COMPLETE,
-      UPDATE_ROLLBACK_IN_PROGRESS,
-      UPDATE_ROLLBACK_FAILED,
-      UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-      UPDATE_ROLLBACK_COMPLETE,
-      REVIEW_IN_PROGRESS,
-      IMPORT_IN_PROGRESS,
-      IMPORT_COMPLETE,
-      IMPORT_ROLLBACK_IN_PROGRESS,
-      IMPORT_ROLLBACK_FAILED,
-      IMPORT_ROLLBACK_COMPLETE
-    )
   }
 
   /** The StackSummary Data Type
@@ -4616,15 +4121,6 @@ package object cloudformation {
       ParameterKey.foreach(__v => __obj.updateDynamic("ParameterKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateParameter]
     }
-  }
-
-  @js.native
-  sealed trait TemplateStage extends js.Any
-  object TemplateStage {
-    val Original = "Original".asInstanceOf[TemplateStage]
-    val Processed = "Processed".asInstanceOf[TemplateStage]
-
-    @inline def values = js.Array(Original, Processed)
   }
 
   /** Contains summary information about the specified CloudFormation type.
@@ -5004,14 +4500,5 @@ package object cloudformation {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidateTemplateOutput]
     }
-  }
-
-  @js.native
-  sealed trait Visibility extends js.Any
-  object Visibility {
-    val PUBLIC = "PUBLIC".asInstanceOf[Visibility]
-    val PRIVATE = "PRIVATE".asInstanceOf[Visibility]
-
-    @inline def values = js.Array(PUBLIC, PRIVATE)
   }
 }

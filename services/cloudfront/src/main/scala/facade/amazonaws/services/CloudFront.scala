@@ -500,17 +500,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait CachePolicyCookieBehavior extends js.Any
-  object CachePolicyCookieBehavior {
-    val none = "none".asInstanceOf[CachePolicyCookieBehavior]
-    val whitelist = "whitelist".asInstanceOf[CachePolicyCookieBehavior]
-    val allExcept = "allExcept".asInstanceOf[CachePolicyCookieBehavior]
-    val all = "all".asInstanceOf[CachePolicyCookieBehavior]
-
-    @inline def values = js.Array(none, whitelist, allExcept, all)
-  }
-
   /** An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
     */
   @js.native
@@ -532,15 +521,6 @@ package object cloudfront {
       Cookies.foreach(__v => __obj.updateDynamic("Cookies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CachePolicyCookiesConfig]
     }
-  }
-
-  @js.native
-  sealed trait CachePolicyHeaderBehavior extends js.Any
-  object CachePolicyHeaderBehavior {
-    val none = "none".asInstanceOf[CachePolicyHeaderBehavior]
-    val whitelist = "whitelist".asInstanceOf[CachePolicyHeaderBehavior]
-
-    @inline def values = js.Array(none, whitelist)
   }
 
   /** An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
@@ -595,17 +575,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait CachePolicyQueryStringBehavior extends js.Any
-  object CachePolicyQueryStringBehavior {
-    val none = "none".asInstanceOf[CachePolicyQueryStringBehavior]
-    val whitelist = "whitelist".asInstanceOf[CachePolicyQueryStringBehavior]
-    val allExcept = "allExcept".asInstanceOf[CachePolicyQueryStringBehavior]
-    val all = "all".asInstanceOf[CachePolicyQueryStringBehavior]
-
-    @inline def values = js.Array(none, whitelist, allExcept, all)
-  }
-
   /** An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.
     */
   @js.native
@@ -651,15 +620,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait CachePolicyType extends js.Any
-  object CachePolicyType {
-    val managed = "managed".asInstanceOf[CachePolicyType]
-    val custom = "custom".asInstanceOf[CachePolicyType]
-
-    @inline def values = js.Array(managed, custom)
-  }
-
   /** A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices: * CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests. * CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests. If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.
     */
   @js.native
@@ -680,16 +640,6 @@ package object cloudfront {
       )
       __obj.asInstanceOf[CachedMethods]
     }
-  }
-
-  @js.native
-  sealed trait CertificateSource extends js.Any
-  object CertificateSource {
-    val cloudfront = "cloudfront".asInstanceOf[CertificateSource]
-    val iam = "iam".asInstanceOf[CertificateSource]
-    val acm = "acm".asInstanceOf[CertificateSource]
-
-    @inline def values = js.Array(cloudfront, iam, acm)
   }
 
   /** CloudFront origin access identity.
@@ -2262,17 +2212,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait EventType extends js.Any
-  object EventType {
-    val `viewer-request` = "viewer-request".asInstanceOf[EventType]
-    val `viewer-response` = "viewer-response".asInstanceOf[EventType]
-    val `origin-request` = "origin-request".asInstanceOf[EventType]
-    val `origin-response` = "origin-response".asInstanceOf[EventType]
-
-    @inline def values = js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`)
-  }
-
   /** A complex data type that includes the profile configurations and other options specified for field-level encryption.
     */
   @js.native
@@ -2526,14 +2465,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait Format extends js.Any
-  object Format {
-    val URLEncoded = "URLEncoded".asInstanceOf[Format]
-
-    @inline def values = js.Array(URLEncoded)
-  }
-
   /** This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. If you want to include values in the cache key, use a cache policy. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy|Creating cache policies]] in the <i>Amazon CloudFront Developer Guide</i>. If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy|Creating origin request policies]] in the <i>Amazon CloudFront Developer Guide</i>. A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
     */
   @js.native
@@ -2587,16 +2518,6 @@ package object cloudfront {
       Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoRestriction]
     }
-  }
-
-  @js.native
-  sealed trait GeoRestrictionType extends js.Any
-  object GeoRestrictionType {
-    val blacklist = "blacklist".asInstanceOf[GeoRestrictionType]
-    val whitelist = "whitelist".asInstanceOf[GeoRestrictionType]
-    val none = "none".asInstanceOf[GeoRestrictionType]
-
-    @inline def values = js.Array(blacklist, whitelist, none)
   }
 
   @js.native
@@ -3402,25 +3323,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait HttpVersion extends js.Any
-  object HttpVersion {
-    val `http1.1` = "http1.1".asInstanceOf[HttpVersion]
-    val http2 = "http2".asInstanceOf[HttpVersion]
-
-    @inline def values = js.Array(`http1.1`, http2)
-  }
-
-  @js.native
-  sealed trait ICPRecordalStatus extends js.Any
-  object ICPRecordalStatus {
-    val APPROVED = "APPROVED".asInstanceOf[ICPRecordalStatus]
-    val SUSPENDED = "SUSPENDED".asInstanceOf[ICPRecordalStatus]
-    val PENDING = "PENDING".asInstanceOf[ICPRecordalStatus]
-
-    @inline def values = js.Array(APPROVED, SUSPENDED, PENDING)
-  }
-
   /** An invalidation.
     */
   @js.native
@@ -3529,16 +3431,6 @@ package object cloudfront {
       )
       __obj.asInstanceOf[InvalidationSummary]
     }
-  }
-
-  @js.native
-  sealed trait ItemSelection extends js.Any
-  object ItemSelection {
-    val none = "none".asInstanceOf[ItemSelection]
-    val whitelist = "whitelist".asInstanceOf[ItemSelection]
-    val all = "all".asInstanceOf[ItemSelection]
-
-    @inline def values = js.Array(none, whitelist, all)
   }
 
   /** A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.
@@ -4438,33 +4330,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait Method extends js.Any
-  object Method {
-    val GET = "GET".asInstanceOf[Method]
-    val HEAD = "HEAD".asInstanceOf[Method]
-    val POST = "POST".asInstanceOf[Method]
-    val PUT = "PUT".asInstanceOf[Method]
-    val PATCH = "PATCH".asInstanceOf[Method]
-    val OPTIONS = "OPTIONS".asInstanceOf[Method]
-    val DELETE = "DELETE".asInstanceOf[Method]
-
-    @inline def values = js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE)
-  }
-
-  @js.native
-  sealed trait MinimumProtocolVersion extends js.Any
-  object MinimumProtocolVersion {
-    val SSLv3 = "SSLv3".asInstanceOf[MinimumProtocolVersion]
-    val TLSv1 = "TLSv1".asInstanceOf[MinimumProtocolVersion]
-    val TLSv1_2016 = "TLSv1_2016".asInstanceOf[MinimumProtocolVersion]
-    val `TLSv1.1_2016` = "TLSv1.1_2016".asInstanceOf[MinimumProtocolVersion]
-    val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
-    val `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
-
-    @inline def values = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
-  }
-
   /** A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.
     */
   @js.native
@@ -4657,16 +4522,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait OriginProtocolPolicy extends js.Any
-  object OriginProtocolPolicy {
-    val `http-only` = "http-only".asInstanceOf[OriginProtocolPolicy]
-    val `match-viewer` = "match-viewer".asInstanceOf[OriginProtocolPolicy]
-    val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicy]
-
-    @inline def values = js.Array(`http-only`, `match-viewer`, `https-only`)
-  }
-
   /** An origin request policy. When it’s attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following: * The request body and the URL path (without the domain name) from the viewer request. * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>. * All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront. CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
     */
   @js.native
@@ -4724,16 +4579,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait OriginRequestPolicyCookieBehavior extends js.Any
-  object OriginRequestPolicyCookieBehavior {
-    val none = "none".asInstanceOf[OriginRequestPolicyCookieBehavior]
-    val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyCookieBehavior]
-    val all = "all".asInstanceOf[OriginRequestPolicyCookieBehavior]
-
-    @inline def values = js.Array(none, whitelist, all)
-  }
-
   /** An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in requests that CloudFront sends to the origin.
     */
   @js.native
@@ -4755,17 +4600,6 @@ package object cloudfront {
       Cookies.foreach(__v => __obj.updateDynamic("Cookies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OriginRequestPolicyCookiesConfig]
     }
-  }
-
-  @js.native
-  sealed trait OriginRequestPolicyHeaderBehavior extends js.Any
-  object OriginRequestPolicyHeaderBehavior {
-    val none = "none".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val allViewer = "allViewer".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-    val allViewerAndWhitelistCloudFront = "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
-
-    @inline def values = js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront)
   }
 
   /** An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.
@@ -4820,16 +4654,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait OriginRequestPolicyQueryStringBehavior extends js.Any
-  object OriginRequestPolicyQueryStringBehavior {
-    val none = "none".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
-    val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
-    val all = "all".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
-
-    @inline def values = js.Array(none, whitelist, all)
-  }
-
   /** An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.
     */
   @js.native
@@ -4873,15 +4697,6 @@ package object cloudfront {
       )
       __obj.asInstanceOf[OriginRequestPolicySummary]
     }
-  }
-
-  @js.native
-  sealed trait OriginRequestPolicyType extends js.Any
-  object OriginRequestPolicyType {
-    val managed = "managed".asInstanceOf[OriginRequestPolicyType]
-    val custom = "custom".asInstanceOf[OriginRequestPolicyType]
-
-    @inline def values = js.Array(managed, custom)
   }
 
   /** CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html|Using Origin Shield]] in the <i>Amazon CloudFront Developer Guide</i>.
@@ -5004,16 +4819,6 @@ package object cloudfront {
       Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Paths]
     }
-  }
-
-  @js.native
-  sealed trait PriceClass extends js.Any
-  object PriceClass {
-    val PriceClass_100 = "PriceClass_100".asInstanceOf[PriceClass]
-    val PriceClass_200 = "PriceClass_200".asInstanceOf[PriceClass]
-    val PriceClass_All = "PriceClass_All".asInstanceOf[PriceClass]
-
-    @inline def values = js.Array(PriceClass_100, PriceClass_200, PriceClass_All)
   }
 
   /** A public key that you can use with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html|signed URLs and signed cookies]], or with [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html|field-level encryption]].
@@ -5327,15 +5132,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait RealtimeMetricsSubscriptionStatus extends js.Any
-  object RealtimeMetricsSubscriptionStatus {
-    val Enabled = "Enabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
-    val Disabled = "Disabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
-
-    @inline def values = js.Array(Enabled, Disabled)
-  }
-
   /** A complex type that identifies ways in which you want to restrict distribution of your content.
     */
   @js.native
@@ -5396,16 +5192,6 @@ package object cloudfront {
     }
   }
 
-  @js.native
-  sealed trait SSLSupportMethod extends js.Any
-  object SSLSupportMethod {
-    val `sni-only` = "sni-only".asInstanceOf[SSLSupportMethod]
-    val vip = "vip".asInstanceOf[SSLSupportMethod]
-    val `static-ip` = "static-ip".asInstanceOf[SSLSupportMethod]
-
-    @inline def values = js.Array(`sni-only`, vip, `static-ip`)
-  }
-
   /** A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
@@ -5425,17 +5211,6 @@ package object cloudfront {
       KeyPairIds.foreach(__v => __obj.updateDynamic("KeyPairIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Signer]
     }
-  }
-
-  @js.native
-  sealed trait SslProtocol extends js.Any
-  object SslProtocol {
-    val SSLv3 = "SSLv3".asInstanceOf[SslProtocol]
-    val TLSv1 = "TLSv1".asInstanceOf[SslProtocol]
-    val `TLSv1.1` = "TLSv1.1".asInstanceOf[SslProtocol]
-    val `TLSv1.2` = "TLSv1.2".asInstanceOf[SslProtocol]
-
-    @inline def values = js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
   }
 
   /** A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.
@@ -6304,15 +6079,5 @@ package object cloudfront {
       SSLSupportMethod.foreach(__v => __obj.updateDynamic("SSLSupportMethod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ViewerCertificate]
     }
-  }
-
-  @js.native
-  sealed trait ViewerProtocolPolicy extends js.Any
-  object ViewerProtocolPolicy {
-    val `allow-all` = "allow-all".asInstanceOf[ViewerProtocolPolicy]
-    val `https-only` = "https-only".asInstanceOf[ViewerProtocolPolicy]
-    val `redirect-to-https` = "redirect-to-https".asInstanceOf[ViewerProtocolPolicy]
-
-    @inline def values = js.Array(`allow-all`, `https-only`, `redirect-to-https`)
   }
 }

@@ -569,17 +569,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait AccountType extends js.Any
-  object AccountType {
-    val Team = "Team".asInstanceOf[AccountType]
-    val EnterpriseDirectory = "EnterpriseDirectory".asInstanceOf[AccountType]
-    val EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
-    val EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
-
-    @inline def values = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
-  }
-
   /** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.
     */
   @js.native
@@ -671,15 +660,6 @@ package object chime {
       Admin.foreach(__v => __obj.updateDynamic("Admin")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppInstanceAdminSummary]
     }
-  }
-
-  @js.native
-  sealed trait AppInstanceDataType extends js.Any
-  object AppInstanceDataType {
-    val Channel = "Channel".asInstanceOf[AppInstanceDataType]
-    val ChannelMessage = "ChannelMessage".asInstanceOf[AppInstanceDataType]
-
-    @inline def values = js.Array(Channel, ChannelMessage)
   }
 
   /** The details of the data-retention settings for an <code>AppInstance</code>.
@@ -1284,14 +1264,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait BotType extends js.Any
-  object BotType {
-    val ChatBot = "ChatBot".asInstanceOf[BotType]
-
-    @inline def values = js.Array(ChatBot)
-  }
-
   /** The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.
     */
   @js.native
@@ -1308,26 +1280,6 @@ package object chime {
       CdrBucket.foreach(__v => __obj.updateDynamic("CdrBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BusinessCallingSettings]
     }
-  }
-
-  @js.native
-  sealed trait CallingNameStatus extends js.Any
-  object CallingNameStatus {
-    val Unassigned = "Unassigned".asInstanceOf[CallingNameStatus]
-    val UpdateInProgress = "UpdateInProgress".asInstanceOf[CallingNameStatus]
-    val UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
-    val UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
-
-    @inline def values = js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
-  }
-
-  @js.native
-  sealed trait Capability extends js.Any
-  object Capability {
-    val Voice = "Voice".asInstanceOf[Capability]
-    val SMS = "SMS".asInstanceOf[Capability]
-
-    @inline def values = js.Array(Voice, SMS)
   }
 
   /** The details of a channel.
@@ -1489,15 +1441,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait ChannelMembershipType extends js.Any
-  object ChannelMembershipType {
-    val DEFAULT = "DEFAULT".asInstanceOf[ChannelMembershipType]
-    val HIDDEN = "HIDDEN".asInstanceOf[ChannelMembershipType]
-
-    @inline def values = js.Array(DEFAULT, HIDDEN)
-  }
-
   /** The details of a message in a channel.
     */
   @js.native
@@ -1546,15 +1489,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait ChannelMessagePersistenceType extends js.Any
-  object ChannelMessagePersistenceType {
-    val PERSISTENT = "PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
-    val NON_PERSISTENT = "NON_PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
-
-    @inline def values = js.Array(PERSISTENT, NON_PERSISTENT)
-  }
-
   /** Summary of the messages in a <code>Channel</code>.
     */
   @js.native
@@ -1595,24 +1529,6 @@ package object chime {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelMessageSummary]
     }
-  }
-
-  @js.native
-  sealed trait ChannelMessageType extends js.Any
-  object ChannelMessageType {
-    val STANDARD = "STANDARD".asInstanceOf[ChannelMessageType]
-    val CONTROL = "CONTROL".asInstanceOf[ChannelMessageType]
-
-    @inline def values = js.Array(STANDARD, CONTROL)
-  }
-
-  @js.native
-  sealed trait ChannelMode extends js.Any
-  object ChannelMode {
-    val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[ChannelMode]
-    val RESTRICTED = "RESTRICTED".asInstanceOf[ChannelMode]
-
-    @inline def values = js.Array(UNRESTRICTED, RESTRICTED)
   }
 
   /** Summary of the details of a moderated channel.
@@ -1676,15 +1592,6 @@ package object chime {
       Moderator.foreach(__v => __obj.updateDynamic("Moderator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelModeratorSummary]
     }
-  }
-
-  @js.native
-  sealed trait ChannelPrivacy extends js.Any
-  object ChannelPrivacy {
-    val PUBLIC = "PUBLIC".asInstanceOf[ChannelPrivacy]
-    val PRIVATE = "PRIVATE".asInstanceOf[ChannelPrivacy]
-
-    @inline def values = js.Array(PUBLIC, PRIVATE)
   }
 
   /** The details of the retention settings for a channel.
@@ -3847,16 +3754,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait EmailStatus extends js.Any
-  object EmailStatus {
-    val NotSent = "NotSent".asInstanceOf[EmailStatus]
-    val Sent = "Sent".asInstanceOf[EmailStatus]
-    val Failed = "Failed".asInstanceOf[EmailStatus]
-
-    @inline def values = js.Array(NotSent, Sent, Failed)
-  }
-
   /** The emergency calling configuration details associated with an Amazon Chime Voice Connector.
     */
   @js.native
@@ -3873,44 +3770,6 @@ package object chime {
       DNIS.foreach(__v => __obj.updateDynamic("DNIS")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmergencyCallingConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait ErrorCode extends js.Any
-  object ErrorCode {
-    val BadRequest = "BadRequest".asInstanceOf[ErrorCode]
-    val Conflict = "Conflict".asInstanceOf[ErrorCode]
-    val Forbidden = "Forbidden".asInstanceOf[ErrorCode]
-    val NotFound = "NotFound".asInstanceOf[ErrorCode]
-    val PreconditionFailed = "PreconditionFailed".asInstanceOf[ErrorCode]
-    val ResourceLimitExceeded = "ResourceLimitExceeded".asInstanceOf[ErrorCode]
-    val ServiceFailure = "ServiceFailure".asInstanceOf[ErrorCode]
-    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-    val ServiceUnavailable = "ServiceUnavailable".asInstanceOf[ErrorCode]
-    val Throttled = "Throttled".asInstanceOf[ErrorCode]
-    val Throttling = "Throttling".asInstanceOf[ErrorCode]
-    val Unauthorized = "Unauthorized".asInstanceOf[ErrorCode]
-    val Unprocessable = "Unprocessable".asInstanceOf[ErrorCode]
-    val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
-    val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
-
-    @inline def values = js.Array(
-      BadRequest,
-      Conflict,
-      Forbidden,
-      NotFound,
-      PreconditionFailed,
-      ResourceLimitExceeded,
-      ServiceFailure,
-      AccessDenied,
-      ServiceUnavailable,
-      Throttled,
-      Throttling,
-      Unauthorized,
-      Unprocessable,
-      VoiceConnectorGroupAssociationsExist,
-      PhoneNumberAssociationsExist
-    )
   }
 
   /** The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.
@@ -3935,15 +3794,6 @@ package object chime {
       OutboundEventsHTTPSEndpoint.foreach(__v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventsConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait GeoMatchLevel extends js.Any
-  object GeoMatchLevel {
-    val Country = "Country".asInstanceOf[GeoMatchLevel]
-    val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
-
-    @inline def values = js.Array(Country, AreaCode)
   }
 
   /** The country and area code for a proxy phone number in a proxy phone session.
@@ -5040,16 +4890,6 @@ package object chime {
   }
 
   @js.native
-  sealed trait InviteStatus extends js.Any
-  object InviteStatus {
-    val Pending = "Pending".asInstanceOf[InviteStatus]
-    val Accepted = "Accepted".asInstanceOf[InviteStatus]
-    val Failed = "Failed".asInstanceOf[InviteStatus]
-
-    @inline def values = js.Array(Pending, Accepted, Failed)
-  }
-
-  @js.native
   trait InviteUsersRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserEmailList: UserEmailList
@@ -5087,17 +4927,6 @@ package object chime {
       Invites.foreach(__v => __obj.updateDynamic("Invites")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteUsersResponse]
     }
-  }
-
-  @js.native
-  sealed trait License extends js.Any
-  object License {
-    val Basic = "Basic".asInstanceOf[License]
-    val Plus = "Plus".asInstanceOf[License]
-    val Pro = "Pro".asInstanceOf[License]
-    val ProTrial = "ProTrial".asInstanceOf[License]
-
-    @inline def values = js.Array(Basic, Plus, Pro, ProTrial)
   }
 
   @js.native
@@ -6495,16 +6324,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait MemberType extends js.Any
-  object MemberType {
-    val User = "User".asInstanceOf[MemberType]
-    val Bot = "Bot".asInstanceOf[MemberType]
-    val Webhook = "Webhook".asInstanceOf[MemberType]
-
-    @inline def values = js.Array(User, Bot, Webhook)
-  }
-
   /** Membership details, such as member ID and member role.
     */
   @js.native
@@ -6544,25 +6363,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait NotificationTarget extends js.Any
-  object NotificationTarget {
-    val EventBridge = "EventBridge".asInstanceOf[NotificationTarget]
-    val SNS = "SNS".asInstanceOf[NotificationTarget]
-    val SQS = "SQS".asInstanceOf[NotificationTarget]
-
-    @inline def values = js.Array(EventBridge, SNS, SQS)
-  }
-
-  @js.native
-  sealed trait NumberSelectionBehavior extends js.Any
-  object NumberSelectionBehavior {
-    val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
-    val AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
-
-    @inline def values = js.Array(PreferSticky, AvoidSticky)
-  }
-
   /** A phone number for which an order has been placed.
     */
   @js.native
@@ -6582,16 +6382,6 @@ package object chime {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderedPhoneNumber]
     }
-  }
-
-  @js.native
-  sealed trait OrderedPhoneNumberStatus extends js.Any
-  object OrderedPhoneNumberStatus {
-    val Processing = "Processing".asInstanceOf[OrderedPhoneNumberStatus]
-    val Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
-    val Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
-
-    @inline def values = js.Array(Processing, Acquired, Failed)
   }
 
   /** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.
@@ -6643,15 +6433,6 @@ package object chime {
       Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OriginationRoute]
     }
-  }
-
-  @js.native
-  sealed trait OriginationRouteProtocol extends js.Any
-  object OriginationRouteProtocol {
-    val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
-    val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
-
-    @inline def values = js.Array(TCP, UDP)
   }
 
   /** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session.
@@ -6750,18 +6531,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait PhoneNumberAssociationName extends js.Any
-  object PhoneNumberAssociationName {
-    val AccountId = "AccountId".asInstanceOf[PhoneNumberAssociationName]
-    val UserId = "UserId".asInstanceOf[PhoneNumberAssociationName]
-    val VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
-    val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
-    val SipRuleId = "SipRuleId".asInstanceOf[PhoneNumberAssociationName]
-
-    @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId, SipRuleId)
-  }
-
   /** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging.
     */
   @js.native
@@ -6852,50 +6621,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait PhoneNumberOrderStatus extends js.Any
-  object PhoneNumberOrderStatus {
-    val Processing = "Processing".asInstanceOf[PhoneNumberOrderStatus]
-    val Successful = "Successful".asInstanceOf[PhoneNumberOrderStatus]
-    val Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
-    val Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
-
-    @inline def values = js.Array(Processing, Successful, Failed, Partial)
-  }
-
-  @js.native
-  sealed trait PhoneNumberProductType extends js.Any
-  object PhoneNumberProductType {
-    val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
-    val VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
-
-    @inline def values = js.Array(BusinessCalling, VoiceConnector)
-  }
-
-  @js.native
-  sealed trait PhoneNumberStatus extends js.Any
-  object PhoneNumberStatus {
-    val AcquireInProgress = "AcquireInProgress".asInstanceOf[PhoneNumberStatus]
-    val AcquireFailed = "AcquireFailed".asInstanceOf[PhoneNumberStatus]
-    val Unassigned = "Unassigned".asInstanceOf[PhoneNumberStatus]
-    val Assigned = "Assigned".asInstanceOf[PhoneNumberStatus]
-    val ReleaseInProgress = "ReleaseInProgress".asInstanceOf[PhoneNumberStatus]
-    val DeleteInProgress = "DeleteInProgress".asInstanceOf[PhoneNumberStatus]
-    val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
-    val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
-
-    @inline def values = js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
-  }
-
-  @js.native
-  sealed trait PhoneNumberType extends js.Any
-  object PhoneNumberType {
-    val Local = "Local".asInstanceOf[PhoneNumberType]
-    val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
-
-    @inline def values = js.Array(Local, TollFree)
-  }
-
   /** The proxy configuration for an Amazon Chime Voice Connector.
     */
   @js.native
@@ -6975,16 +6700,6 @@ package object chime {
       VoiceConnectorId.foreach(__v => __obj.updateDynamic("VoiceConnectorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProxySession]
     }
-  }
-
-  @js.native
-  sealed trait ProxySessionStatus extends js.Any
-  object ProxySessionStatus {
-    val Open = "Open".asInstanceOf[ProxySessionStatus]
-    val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
-    val Closed = "Closed".asInstanceOf[ProxySessionStatus]
-
-    @inline def values = js.Array(Open, InProgress, Closed)
   }
 
   @js.native
@@ -7576,16 +7291,6 @@ package object chime {
   }
 
   @js.native
-  sealed trait RegistrationStatus extends js.Any
-  object RegistrationStatus {
-    val Unregistered = "Unregistered".asInstanceOf[RegistrationStatus]
-    val Registered = "Registered".asInstanceOf[RegistrationStatus]
-    val Suspended = "Suspended".asInstanceOf[RegistrationStatus]
-
-    @inline def values = js.Array(Unregistered, Registered, Suspended)
-  }
-
-  @js.native
   trait ResetPersonalPINRequest extends js.Object {
     var AccountId: NonEmptyString
     var UserId: NonEmptyString
@@ -7736,15 +7441,6 @@ package object chime {
       UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoomMembership]
     }
-  }
-
-  @js.native
-  sealed trait RoomMembershipRole extends js.Any
-  object RoomMembershipRole {
-    val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
-    val Member = "Member".asInstanceOf[RoomMembershipRole]
-
-    @inline def values = js.Array(Administrator, Member)
   }
 
   /** The retention settings that determine how long to retain chat-room messages for an Amazon Chime Enterprise account.
@@ -8036,24 +7732,6 @@ package object chime {
       SipMediaApplicationId.foreach(__v => __obj.updateDynamic("SipMediaApplicationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SipRuleTargetApplication]
     }
-  }
-
-  @js.native
-  sealed trait SipRuleTriggerType extends js.Any
-  object SipRuleTriggerType {
-    val ToPhoneNumber = "ToPhoneNumber".asInstanceOf[SipRuleTriggerType]
-    val RequestUriHostname = "RequestUriHostname".asInstanceOf[SipRuleTriggerType]
-
-    @inline def values = js.Array(ToPhoneNumber, RequestUriHostname)
-  }
-
-  @js.native
-  sealed trait SortOrder extends js.Any
-  object SortOrder {
-    val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-    val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
-
-    @inline def values = js.Array(ASCENDING, DESCENDING)
   }
 
   /** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.
@@ -9232,15 +8910,6 @@ package object chime {
     }
   }
 
-  @js.native
-  sealed trait UserType extends js.Any
-  object UserType {
-    val PrivateUser = "PrivateUser".asInstanceOf[UserType]
-    val SharedDevice = "SharedDevice".asInstanceOf[UserType]
-
-    @inline def values = js.Array(PrivateUser, SharedDevice)
-  }
-
   /** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings.
     */
   @js.native
@@ -9275,15 +8944,6 @@ package object chime {
       VoiceConnectorId.foreach(__v => __obj.updateDynamic("VoiceConnectorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceConnector]
     }
-  }
-
-  @js.native
-  sealed trait VoiceConnectorAwsRegion extends js.Any
-  object VoiceConnectorAwsRegion {
-    val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
-    val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
-
-    @inline def values = js.Array(`us-east-1`, `us-west-2`)
   }
 
   /** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.

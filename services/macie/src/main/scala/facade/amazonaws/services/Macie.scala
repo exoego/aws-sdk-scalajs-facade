@@ -323,23 +323,6 @@ package object macie {
     }
   }
 
-  @js.native
-  sealed trait S3ContinuousClassificationType extends js.Any
-  object S3ContinuousClassificationType {
-    val FULL = "FULL".asInstanceOf[S3ContinuousClassificationType]
-
-    @inline def values = js.Array(FULL)
-  }
-
-  @js.native
-  sealed trait S3OneTimeClassificationType extends js.Any
-  object S3OneTimeClassificationType {
-    val FULL = "FULL".asInstanceOf[S3OneTimeClassificationType]
-    val NONE = "NONE".asInstanceOf[S3OneTimeClassificationType]
-
-    @inline def values = js.Array(FULL, NONE)
-  }
-
   /** Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions.
     */
   @js.native

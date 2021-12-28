@@ -489,17 +489,6 @@ package object codegurureviewer {
   }
 
   @js.native
-  sealed trait JobState extends js.Any
-  object JobState {
-    val Completed = "Completed".asInstanceOf[JobState]
-    val Pending = "Pending".asInstanceOf[JobState]
-    val Failed = "Failed".asInstanceOf[JobState]
-    val Deleting = "Deleting".asInstanceOf[JobState]
-
-    @inline def values = js.Array(Completed, Pending, Failed, Deleting)
-  }
-
-  @js.native
   trait ListCodeReviewsRequest extends js.Object {
     var Type: Type
     var MaxResults: js.UndefOr[ListCodeReviewsMaxResults]
@@ -769,17 +758,6 @@ package object codegurureviewer {
   }
 
   @js.native
-  sealed trait ProviderType extends js.Any
-  object ProviderType {
-    val CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
-    val GitHub = "GitHub".asInstanceOf[ProviderType]
-    val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
-    val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
-
-    @inline def values = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
-  }
-
-  @js.native
   trait PutRecommendationFeedbackRequest extends js.Object {
     var CodeReviewArn: Arn
     var Reactions: Reactions
@@ -811,15 +789,6 @@ package object codegurureviewer {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutRecommendationFeedbackResponse]
     }
-  }
-
-  @js.native
-  sealed trait Reaction extends js.Any
-  object Reaction {
-    val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
-    val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
-
-    @inline def values = js.Array(ThumbsUp, ThumbsDown)
   }
 
   /** Information about the recommendation feedback.
@@ -997,18 +966,6 @@ package object codegurureviewer {
     }
   }
 
-  @js.native
-  sealed trait RepositoryAssociationState extends js.Any
-  object RepositoryAssociationState {
-    val Associated = "Associated".asInstanceOf[RepositoryAssociationState]
-    val Associating = "Associating".asInstanceOf[RepositoryAssociationState]
-    val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
-    val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
-    val Disassociated = "Disassociated".asInstanceOf[RepositoryAssociationState]
-
-    @inline def values = js.Array(Associated, Associating, Failed, Disassociating, Disassociated)
-  }
-
   /** Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
     */
   @js.native
@@ -1142,15 +1099,6 @@ package object codegurureviewer {
       )
       __obj.asInstanceOf[ThirdPartySourceRepository]
     }
-  }
-
-  @js.native
-  sealed trait Type extends js.Any
-  object Type {
-    val PullRequest = "PullRequest".asInstanceOf[Type]
-    val RepositoryAnalysis = "RepositoryAnalysis".asInstanceOf[Type]
-
-    @inline def values = js.Array(PullRequest, RepositoryAnalysis)
   }
 
   @js.native

@@ -439,15 +439,6 @@ package object apigateway {
     }
   }
 
-  @js.native
-  sealed trait ApiKeySourceType extends js.Any
-  object ApiKeySourceType {
-    val HEADER = "HEADER".asInstanceOf[ApiKeySourceType]
-    val AUTHORIZER = "AUTHORIZER".asInstanceOf[ApiKeySourceType]
-
-    @inline def values = js.Array(HEADER, AUTHORIZER)
-  }
-
   /** Represents a collection of API keys as represented by an <a>ApiKeys</a> resource.
     *
     * @see
@@ -473,14 +464,6 @@ package object apigateway {
       warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApiKeys]
     }
-  }
-
-  @js.native
-  sealed trait ApiKeysFormat extends js.Any
-  object ApiKeysFormat {
-    val csv = "csv".asInstanceOf[ApiKeysFormat]
-
-    @inline def values = js.Array(csv)
   }
 
   /** API stage name of the associated API stage in a usage plan.
@@ -555,18 +538,6 @@ package object apigateway {
     }
   }
 
-  /** The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
-    */
-  @js.native
-  sealed trait AuthorizerType extends js.Any
-  object AuthorizerType {
-    val TOKEN = "TOKEN".asInstanceOf[AuthorizerType]
-    val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
-    val COGNITO_USER_POOLS = "COGNITO_USER_POOLS".asInstanceOf[AuthorizerType]
-
-    @inline def values = js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS)
-  }
-
   /** Represents a collection of <a>Authorizer</a> resources.
     *
     * @see
@@ -639,37 +610,6 @@ package object apigateway {
       position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BasePathMappings]
     }
-  }
-
-  /** Returns the size of the ```CacheCluster```.
-    */
-  @js.native
-  sealed trait CacheClusterSize extends js.Any
-  object CacheClusterSize {
-    val `0.5` = "0.5".asInstanceOf[CacheClusterSize]
-    val `1.6` = "1.6".asInstanceOf[CacheClusterSize]
-    val `6.1` = "6.1".asInstanceOf[CacheClusterSize]
-    val `13.5` = "13.5".asInstanceOf[CacheClusterSize]
-    val `28.4` = "28.4".asInstanceOf[CacheClusterSize]
-    val `58.2` = "58.2".asInstanceOf[CacheClusterSize]
-    val `118` = "118".asInstanceOf[CacheClusterSize]
-    val `237` = "237".asInstanceOf[CacheClusterSize]
-
-    @inline def values = js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`)
-  }
-
-  /** Returns the status of the ```CacheCluster```.
-    */
-  @js.native
-  sealed trait CacheClusterStatus extends js.Any
-  object CacheClusterStatus {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[CacheClusterStatus]
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
-    val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[CacheClusterStatus]
-    val FLUSH_IN_PROGRESS = "FLUSH_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
-
-    @inline def values = js.Array(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS)
   }
 
   /** Configuration settings of a canary deployment.
@@ -756,24 +696,6 @@ package object apigateway {
       position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClientCertificates]
     }
-  }
-
-  @js.native
-  sealed trait ConnectionType extends js.Any
-  object ConnectionType {
-    val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
-    val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
-
-    @inline def values = js.Array(INTERNET, VPC_LINK)
-  }
-
-  @js.native
-  sealed trait ContentHandlingStrategy extends js.Any
-  object ContentHandlingStrategy {
-    val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
-    val CONVERT_TO_TEXT = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
-
-    @inline def values = js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
   }
 
   /** Request to create an <a>ApiKey</a> resource.
@@ -1936,25 +1858,6 @@ package object apigateway {
     }
   }
 
-  @js.native
-  sealed trait DocumentationPartType extends js.Any
-  object DocumentationPartType {
-    val API = "API".asInstanceOf[DocumentationPartType]
-    val AUTHORIZER = "AUTHORIZER".asInstanceOf[DocumentationPartType]
-    val MODEL = "MODEL".asInstanceOf[DocumentationPartType]
-    val RESOURCE = "RESOURCE".asInstanceOf[DocumentationPartType]
-    val METHOD = "METHOD".asInstanceOf[DocumentationPartType]
-    val PATH_PARAMETER = "PATH_PARAMETER".asInstanceOf[DocumentationPartType]
-    val QUERY_PARAMETER = "QUERY_PARAMETER".asInstanceOf[DocumentationPartType]
-    val REQUEST_HEADER = "REQUEST_HEADER".asInstanceOf[DocumentationPartType]
-    val REQUEST_BODY = "REQUEST_BODY".asInstanceOf[DocumentationPartType]
-    val RESPONSE = "RESPONSE".asInstanceOf[DocumentationPartType]
-    val RESPONSE_HEADER = "RESPONSE_HEADER".asInstanceOf[DocumentationPartType]
-    val RESPONSE_BODY = "RESPONSE_BODY".asInstanceOf[DocumentationPartType]
-
-    @inline def values = js.Array(API, AUTHORIZER, MODEL, RESOURCE, METHOD, PATH_PARAMETER, QUERY_PARAMETER, REQUEST_HEADER, REQUEST_BODY, RESPONSE, RESPONSE_HEADER, RESPONSE_BODY)
-  }
-
   /** The collection of documentation parts of an API. <div class="remarks"/>
     * @see
     *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>
@@ -2092,16 +1995,6 @@ package object apigateway {
     }
   }
 
-  @js.native
-  sealed trait DomainNameStatus extends js.Any
-  object DomainNameStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
-    val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
-    val PENDING = "PENDING".asInstanceOf[DomainNameStatus]
-
-    @inline def values = js.Array(AVAILABLE, UPDATING, PENDING)
-  }
-
   /** Represents a collection of <a>DomainName</a> resources.
     *
     * @see
@@ -2145,18 +2038,6 @@ package object apigateway {
       vpcEndpointIds.foreach(__v => __obj.updateDynamic("vpcEndpointIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointConfiguration]
     }
-  }
-
-  /** The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.
-    */
-  @js.native
-  sealed trait EndpointType extends js.Any
-  object EndpointType {
-    val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
-    val EDGE = "EDGE".asInstanceOf[EndpointType]
-    val PRIVATE = "PRIVATE".asInstanceOf[EndpointType]
-
-    @inline def values = js.Array(REGIONAL, EDGE, PRIVATE)
   }
 
   /** The binary blob response to <a>GetExport</a>, which contains the generated SDK.
@@ -2266,54 +2147,6 @@ package object apigateway {
       statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewayResponse]
     }
-  }
-
-  @js.native
-  sealed trait GatewayResponseType extends js.Any
-  object GatewayResponseType {
-    val DEFAULT_4XX = "DEFAULT_4XX".asInstanceOf[GatewayResponseType]
-    val DEFAULT_5XX = "DEFAULT_5XX".asInstanceOf[GatewayResponseType]
-    val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[GatewayResponseType]
-    val UNAUTHORIZED = "UNAUTHORIZED".asInstanceOf[GatewayResponseType]
-    val INVALID_API_KEY = "INVALID_API_KEY".asInstanceOf[GatewayResponseType]
-    val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[GatewayResponseType]
-    val AUTHORIZER_FAILURE = "AUTHORIZER_FAILURE".asInstanceOf[GatewayResponseType]
-    val AUTHORIZER_CONFIGURATION_ERROR = "AUTHORIZER_CONFIGURATION_ERROR".asInstanceOf[GatewayResponseType]
-    val INVALID_SIGNATURE = "INVALID_SIGNATURE".asInstanceOf[GatewayResponseType]
-    val EXPIRED_TOKEN = "EXPIRED_TOKEN".asInstanceOf[GatewayResponseType]
-    val MISSING_AUTHENTICATION_TOKEN = "MISSING_AUTHENTICATION_TOKEN".asInstanceOf[GatewayResponseType]
-    val INTEGRATION_FAILURE = "INTEGRATION_FAILURE".asInstanceOf[GatewayResponseType]
-    val INTEGRATION_TIMEOUT = "INTEGRATION_TIMEOUT".asInstanceOf[GatewayResponseType]
-    val API_CONFIGURATION_ERROR = "API_CONFIGURATION_ERROR".asInstanceOf[GatewayResponseType]
-    val UNSUPPORTED_MEDIA_TYPE = "UNSUPPORTED_MEDIA_TYPE".asInstanceOf[GatewayResponseType]
-    val BAD_REQUEST_PARAMETERS = "BAD_REQUEST_PARAMETERS".asInstanceOf[GatewayResponseType]
-    val BAD_REQUEST_BODY = "BAD_REQUEST_BODY".asInstanceOf[GatewayResponseType]
-    val REQUEST_TOO_LARGE = "REQUEST_TOO_LARGE".asInstanceOf[GatewayResponseType]
-    val THROTTLED = "THROTTLED".asInstanceOf[GatewayResponseType]
-    val QUOTA_EXCEEDED = "QUOTA_EXCEEDED".asInstanceOf[GatewayResponseType]
-
-    @inline def values = js.Array(
-      DEFAULT_4XX,
-      DEFAULT_5XX,
-      RESOURCE_NOT_FOUND,
-      UNAUTHORIZED,
-      INVALID_API_KEY,
-      ACCESS_DENIED,
-      AUTHORIZER_FAILURE,
-      AUTHORIZER_CONFIGURATION_ERROR,
-      INVALID_SIGNATURE,
-      EXPIRED_TOKEN,
-      MISSING_AUTHENTICATION_TOKEN,
-      INTEGRATION_FAILURE,
-      INTEGRATION_TIMEOUT,
-      API_CONFIGURATION_ERROR,
-      UNSUPPORTED_MEDIA_TYPE,
-      BAD_REQUEST_PARAMETERS,
-      BAD_REQUEST_BODY,
-      REQUEST_TOO_LARGE,
-      THROTTLED,
-      QUOTA_EXCEEDED
-    )
   }
 
   /** The collection of the <a>GatewayResponse</a> instances of a <a>RestApi</a> as a <code>responseType</code>-to-<a>GatewayResponse</a> object map of key-value pairs. As such, pagination is not supported for querying this collection. <div class="remarks"> For more information about valid gateway response types, see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html|Gateway Response Types Supported by API Gateway]] <div class="example">
@@ -3658,29 +3491,6 @@ package object apigateway {
     }
   }
 
-  /** The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration.
-    */
-  @js.native
-  sealed trait IntegrationType extends js.Any
-  object IntegrationType {
-    val HTTP = "HTTP".asInstanceOf[IntegrationType]
-    val AWS = "AWS".asInstanceOf[IntegrationType]
-    val MOCK = "MOCK".asInstanceOf[IntegrationType]
-    val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
-    val AWS_PROXY = "AWS_PROXY".asInstanceOf[IntegrationType]
-
-    @inline def values = js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY)
-  }
-
-  @js.native
-  sealed trait LocationStatusType extends js.Any
-  object LocationStatusType {
-    val DOCUMENTED = "DOCUMENTED".asInstanceOf[LocationStatusType]
-    val UNDOCUMENTED = "UNDOCUMENTED".asInstanceOf[LocationStatusType]
-
-    @inline def values = js.Array(DOCUMENTED, UNDOCUMENTED)
-  }
-
   /** Represents a client-facing interface by which the client calls the API to access back-end resources. A ```Method``` resource is integrated with an <a>Integration</a> resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a ```Method``` resource, whereas an integration request is embodied in an <a>Integration</a> resource. On the other hand, a method response is represented by a <a>MethodResponse</a> resource, whereas an integration response is represented by an <a>IntegrationResponse</a> resource. <div class="remarks"> <p/>
     * =Example: Retrive the GET method on a specified resource=
     *
@@ -3938,19 +3748,6 @@ package object apigateway {
     }
   }
 
-  @js.native
-  sealed trait Op extends js.Any
-  object Op {
-    val add = "add".asInstanceOf[Op]
-    val remove = "remove".asInstanceOf[Op]
-    val replace = "replace".asInstanceOf[Op]
-    val move = "move".asInstanceOf[Op]
-    val copy = "copy".asInstanceOf[Op]
-    val test = "test".asInstanceOf[Op]
-
-    @inline def values = js.Array(add, remove, replace, move, copy, test)
-  }
-
   /** A single patch operation to apply to the specified resource. Please refer to http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
     */
   @js.native
@@ -4204,15 +4001,6 @@ package object apigateway {
     }
   }
 
-  @js.native
-  sealed trait PutMode extends js.Any
-  object PutMode {
-    val merge = "merge".asInstanceOf[PutMode]
-    val overwrite = "overwrite".asInstanceOf[PutMode]
-
-    @inline def values = js.Array(merge, overwrite)
-  }
-
   /** A PUT request to update an existing API, with external API definitions specified as the request body.
     */
   @js.native
@@ -4243,16 +4031,6 @@ package object apigateway {
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRestApiRequest]
     }
-  }
-
-  @js.native
-  sealed trait QuotaPeriodType extends js.Any
-  object QuotaPeriodType {
-    val DAY = "DAY".asInstanceOf[QuotaPeriodType]
-    val WEEK = "WEEK".asInstanceOf[QuotaPeriodType]
-    val MONTH = "MONTH".asInstanceOf[QuotaPeriodType]
-
-    @inline def values = js.Array(DAY, WEEK, MONTH)
   }
 
   /** Quotas configured for a usage plan.
@@ -4569,15 +4347,6 @@ package object apigateway {
       position.foreach(__v => __obj.updateDynamic("position")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SdkTypes]
     }
-  }
-
-  @js.native
-  sealed trait SecurityPolicy extends js.Any
-  object SecurityPolicy {
-    val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
-    val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
-
-    @inline def values = js.Array(TLS_1_0, TLS_1_2)
   }
 
   /** Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.
@@ -4944,16 +4713,6 @@ package object apigateway {
       insecureSkipVerification.foreach(__v => __obj.updateDynamic("insecureSkipVerification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TlsConfig]
     }
-  }
-
-  @js.native
-  sealed trait UnauthorizedCacheControlHeaderStrategy extends js.Any
-  object UnauthorizedCacheControlHeaderStrategy {
-    val FAIL_WITH_403 = "FAIL_WITH_403".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
-    val SUCCEED_WITH_RESPONSE_HEADER = "SUCCEED_WITH_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
-    val SUCCEED_WITHOUT_RESPONSE_HEADER = "SUCCEED_WITHOUT_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
-
-    @inline def values = js.Array(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER)
   }
 
   /** Removes a tag from a given resource.
@@ -5726,17 +5485,6 @@ package object apigateway {
       targetArns.foreach(__v => __obj.updateDynamic("targetArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcLink]
     }
-  }
-
-  @js.native
-  sealed trait VpcLinkStatus extends js.Any
-  object VpcLinkStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[VpcLinkStatus]
-    val PENDING = "PENDING".asInstanceOf[VpcLinkStatus]
-    val DELETING = "DELETING".asInstanceOf[VpcLinkStatus]
-    val FAILED = "FAILED".asInstanceOf[VpcLinkStatus]
-
-    @inline def values = js.Array(AVAILABLE, PENDING, DELETING, FAILED)
   }
 
   /** The collection of VPC links under the caller's account in a region.

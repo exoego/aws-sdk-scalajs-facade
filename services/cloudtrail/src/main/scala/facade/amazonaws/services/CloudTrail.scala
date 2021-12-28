@@ -428,14 +428,6 @@ package object cloudtrail {
     }
   }
 
-  @js.native
-  sealed trait EventCategory extends js.Any
-  object EventCategory {
-    val insight = "insight".asInstanceOf[EventCategory]
-
-    @inline def values = js.Array(insight)
-  }
-
   /** Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event. You can configure up to five event selectors for a trail. You cannot apply both event selectors and advanced event selectors to a trail.
     */
   @js.native
@@ -674,14 +666,6 @@ package object cloudtrail {
     }
   }
 
-  @js.native
-  sealed trait InsightType extends js.Any
-  object InsightType {
-    val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
-
-    @inline def values = js.Array(ApiCallRateInsight)
-  }
-
   /** Requests the public keys for a specified time range.
     */
   @js.native
@@ -826,21 +810,6 @@ package object cloudtrail {
       )
       __obj.asInstanceOf[LookupAttribute]
     }
-  }
-
-  @js.native
-  sealed trait LookupAttributeKey extends js.Any
-  object LookupAttributeKey {
-    val EventId = "EventId".asInstanceOf[LookupAttributeKey]
-    val EventName = "EventName".asInstanceOf[LookupAttributeKey]
-    val ReadOnly = "ReadOnly".asInstanceOf[LookupAttributeKey]
-    val Username = "Username".asInstanceOf[LookupAttributeKey]
-    val ResourceType = "ResourceType".asInstanceOf[LookupAttributeKey]
-    val ResourceName = "ResourceName".asInstanceOf[LookupAttributeKey]
-    val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
-    val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
-
-    @inline def values = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
   }
 
   /** Contains a request for LookupEvents.
@@ -1007,16 +976,6 @@ package object cloudtrail {
       TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutInsightSelectorsResponse]
     }
-  }
-
-  @js.native
-  sealed trait ReadWriteType extends js.Any
-  object ReadWriteType {
-    val ReadOnly = "ReadOnly".asInstanceOf[ReadWriteType]
-    val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
-    val All = "All".asInstanceOf[ReadWriteType]
-
-    @inline def values = js.Array(ReadOnly, WriteOnly, All)
   }
 
   /** Specifies the tags to remove from a trail.

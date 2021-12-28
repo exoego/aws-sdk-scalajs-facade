@@ -234,24 +234,6 @@ package object lakeformation {
     }
   }
 
-  @js.native
-  sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator {
-    val EQ = "EQ".asInstanceOf[ComparisonOperator]
-    val NE = "NE".asInstanceOf[ComparisonOperator]
-    val LE = "LE".asInstanceOf[ComparisonOperator]
-    val LT = "LT".asInstanceOf[ComparisonOperator]
-    val GE = "GE".asInstanceOf[ComparisonOperator]
-    val GT = "GT".asInstanceOf[ComparisonOperator]
-    val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
-    val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
-    val IN = "IN".asInstanceOf[ComparisonOperator]
-    val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
-
-    @inline def values = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
-  }
-
   /** The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.
     */
   @js.native
@@ -268,17 +250,6 @@ package object lakeformation {
       DataLakePrincipalIdentifier.foreach(__v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakePrincipal]
     }
-  }
-
-  @js.native
-  sealed trait DataLakeResourceType extends js.Any
-  object DataLakeResourceType {
-    val CATALOG = "CATALOG".asInstanceOf[DataLakeResourceType]
-    val DATABASE = "DATABASE".asInstanceOf[DataLakeResourceType]
-    val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
-    val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
-
-    @inline def values = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
   }
 
   /** A structure representing a list of AWS Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
@@ -452,16 +423,6 @@ package object lakeformation {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetail]
     }
-  }
-
-  @js.native
-  sealed trait FieldNameString extends js.Any
-  object FieldNameString {
-    val RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[FieldNameString]
-    val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
-    val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
-
-    @inline def values = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
   }
 
   /** This structure describes the filtering of columns in a table based on a filter condition.
@@ -696,23 +657,6 @@ package object lakeformation {
       ResourceInfoList.foreach(__v => __obj.updateDynamic("ResourceInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesResponse]
     }
-  }
-
-  @js.native
-  sealed trait Permission extends js.Any
-  object Permission {
-    val ALL = "ALL".asInstanceOf[Permission]
-    val SELECT = "SELECT".asInstanceOf[Permission]
-    val ALTER = "ALTER".asInstanceOf[Permission]
-    val DROP = "DROP".asInstanceOf[Permission]
-    val DELETE = "DELETE".asInstanceOf[Permission]
-    val INSERT = "INSERT".asInstanceOf[Permission]
-    val DESCRIBE = "DESCRIBE".asInstanceOf[Permission]
-    val CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
-    val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
-    val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
-
-    @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
   }
 
   /** Permissions granted to a principal.

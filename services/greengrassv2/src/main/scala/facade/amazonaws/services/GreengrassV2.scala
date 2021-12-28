@@ -166,18 +166,6 @@ package object greengrassv2 {
     }
   }
 
-  @js.native
-  sealed trait CloudComponentState extends js.Any
-  object CloudComponentState {
-    val REQUESTED = "REQUESTED".asInstanceOf[CloudComponentState]
-    val INITIATED = "INITIATED".asInstanceOf[CloudComponentState]
-    val DEPLOYABLE = "DEPLOYABLE".asInstanceOf[CloudComponentState]
-    val FAILED = "FAILED".asInstanceOf[CloudComponentState]
-    val DEPRECATED = "DEPRECATED".asInstanceOf[CloudComponentState]
-
-    @inline def values = js.Array(REQUESTED, INITIATED, DEPLOYABLE, FAILED, DEPRECATED)
-  }
-
   /** Contains the status of a component in the AWS IoT Greengrass service.
     */
   @js.native
@@ -290,15 +278,6 @@ package object greengrassv2 {
       versionRequirement.foreach(__v => __obj.updateDynamic("versionRequirement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentDependencyRequirement]
     }
-  }
-
-  @js.native
-  sealed trait ComponentDependencyType extends js.Any
-  object ComponentDependencyType {
-    val HARD = "HARD".asInstanceOf[ComponentDependencyType]
-    val SOFT = "SOFT".asInstanceOf[ComponentDependencyType]
-
-    @inline def values = js.Array(HARD, SOFT)
   }
 
   /** Contains information about a component to deploy.
@@ -421,15 +400,6 @@ package object greengrassv2 {
     }
   }
 
-  @js.native
-  sealed trait ComponentVisibilityScope extends js.Any
-  object ComponentVisibilityScope {
-    val PRIVATE = "PRIVATE".asInstanceOf[ComponentVisibilityScope]
-    val PUBLIC = "PUBLIC".asInstanceOf[ComponentVisibilityScope]
-
-    @inline def values = js.Array(PRIVATE, PUBLIC)
-  }
-
   /** Contains information about a AWS IoT Greengrass core device, which is an AWS IoT thing that runs the AWS IoT Greengrass Core software.
     */
   @js.native
@@ -452,15 +422,6 @@ package object greengrassv2 {
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CoreDevice]
     }
-  }
-
-  @js.native
-  sealed trait CoreDeviceStatus extends js.Any
-  object CoreDeviceStatus {
-    val HEALTHY = "HEALTHY".asInstanceOf[CoreDeviceStatus]
-    val UNHEALTHY = "UNHEALTHY".asInstanceOf[CoreDeviceStatus]
-
-    @inline def values = js.Array(HEALTHY, UNHEALTHY)
   }
 
   @js.native
@@ -661,15 +622,6 @@ package object greengrassv2 {
     }
   }
 
-  @js.native
-  sealed trait DeploymentComponentUpdatePolicyAction extends js.Any
-  object DeploymentComponentUpdatePolicyAction {
-    val NOTIFY_COMPONENTS = "NOTIFY_COMPONENTS".asInstanceOf[DeploymentComponentUpdatePolicyAction]
-    val SKIP_NOTIFY_COMPONENTS = "SKIP_NOTIFY_COMPONENTS".asInstanceOf[DeploymentComponentUpdatePolicyAction]
-
-    @inline def values = js.Array(NOTIFY_COMPONENTS, SKIP_NOTIFY_COMPONENTS)
-  }
-
   /** Contains information about how long a component on a core device can validate its configuration updates before it times out. Components can use the [[https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates|SubscribeToValidateConfigurationUpdates]] IPC operation to receive notifications when a deployment specifies a configuration update. Then, components can respond with the [[https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport|SendConfigurationValidityReport]] IPC operation. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html|Create deployments]] in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
     */
   @js.native
@@ -686,24 +638,6 @@ package object greengrassv2 {
       timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentConfigurationValidationPolicy]
     }
-  }
-
-  @js.native
-  sealed trait DeploymentFailureHandlingPolicy extends js.Any
-  object DeploymentFailureHandlingPolicy {
-    val ROLLBACK = "ROLLBACK".asInstanceOf[DeploymentFailureHandlingPolicy]
-    val DO_NOTHING = "DO_NOTHING".asInstanceOf[DeploymentFailureHandlingPolicy]
-
-    @inline def values = js.Array(ROLLBACK, DO_NOTHING)
-  }
-
-  @js.native
-  sealed trait DeploymentHistoryFilter extends js.Any
-  object DeploymentHistoryFilter {
-    val ALL = "ALL".asInstanceOf[DeploymentHistoryFilter]
-    val LATEST_ONLY = "LATEST_ONLY".asInstanceOf[DeploymentHistoryFilter]
-
-    @inline def values = js.Array(ALL, LATEST_ONLY)
   }
 
   /** Contains information about an AWS IoT job configuration.
@@ -752,18 +686,6 @@ package object greengrassv2 {
       failureHandlingPolicy.foreach(__v => __obj.updateDynamic("failureHandlingPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentPolicies]
     }
-  }
-
-  @js.native
-  sealed trait DeploymentStatus extends js.Any
-  object DeploymentStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[DeploymentStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[DeploymentStatus]
-    val CANCELED = "CANCELED".asInstanceOf[DeploymentStatus]
-    val FAILED = "FAILED".asInstanceOf[DeploymentStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[DeploymentStatus]
-
-    @inline def values = js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, INACTIVE)
   }
 
   @js.native
@@ -868,20 +790,6 @@ package object greengrassv2 {
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EffectiveDeployment]
     }
-  }
-
-  @js.native
-  sealed trait EffectiveDeploymentExecutionStatus extends js.Any
-  object EffectiveDeploymentExecutionStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[EffectiveDeploymentExecutionStatus]
-    val QUEUED = "QUEUED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-    val FAILED = "FAILED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-    val TIMED_OUT = "TIMED_OUT".asInstanceOf[EffectiveDeploymentExecutionStatus]
-    val CANCELED = "CANCELED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-    val REJECTED = "REJECTED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, QUEUED, FAILED, COMPLETED, TIMED_OUT, CANCELED, REJECTED)
   }
 
   @js.native
@@ -1116,29 +1024,6 @@ package object greengrassv2 {
     }
   }
 
-  @js.native
-  sealed trait InstalledComponentLifecycleState extends js.Any
-  object InstalledComponentLifecycleState {
-    val NEW = "NEW".asInstanceOf[InstalledComponentLifecycleState]
-    val INSTALLED = "INSTALLED".asInstanceOf[InstalledComponentLifecycleState]
-    val STARTING = "STARTING".asInstanceOf[InstalledComponentLifecycleState]
-    val RUNNING = "RUNNING".asInstanceOf[InstalledComponentLifecycleState]
-    val STOPPING = "STOPPING".asInstanceOf[InstalledComponentLifecycleState]
-    val ERRORED = "ERRORED".asInstanceOf[InstalledComponentLifecycleState]
-    val BROKEN = "BROKEN".asInstanceOf[InstalledComponentLifecycleState]
-    val FINISHED = "FINISHED".asInstanceOf[InstalledComponentLifecycleState]
-
-    @inline def values = js.Array(NEW, INSTALLED, STARTING, RUNNING, STOPPING, ERRORED, BROKEN, FINISHED)
-  }
-
-  @js.native
-  sealed trait IoTJobAbortAction extends js.Any
-  object IoTJobAbortAction {
-    val CANCEL = "CANCEL".asInstanceOf[IoTJobAbortAction]
-
-    @inline def values = js.Array(CANCEL)
-  }
-
   /** Contains a list of criteria that define when and how to cancel a configuration deployment.
     */
   @js.native
@@ -1184,17 +1069,6 @@ package object greengrassv2 {
       )
       __obj.asInstanceOf[IoTJobAbortCriteria]
     }
-  }
-
-  @js.native
-  sealed trait IoTJobExecutionFailureType extends js.Any
-  object IoTJobExecutionFailureType {
-    val FAILED = "FAILED".asInstanceOf[IoTJobExecutionFailureType]
-    val REJECTED = "REJECTED".asInstanceOf[IoTJobExecutionFailureType]
-    val TIMED_OUT = "TIMED_OUT".asInstanceOf[IoTJobExecutionFailureType]
-    val ALL = "ALL".asInstanceOf[IoTJobExecutionFailureType]
-
-    @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
   }
 
   /** Contains information about the rollout configuration for a job. This configuration defines the rate at which the job deploys a configuration to a fleet of target devices.
@@ -1357,15 +1231,6 @@ package object greengrassv2 {
     }
   }
 
-  @js.native
-  sealed trait LambdaEventSourceType extends js.Any
-  object LambdaEventSourceType {
-    val PUB_SUB = "PUB_SUB".asInstanceOf[LambdaEventSourceType]
-    val IOT_CORE = "IOT_CORE".asInstanceOf[LambdaEventSourceType]
-
-    @inline def values = js.Array(PUB_SUB, IOT_CORE)
-  }
-
   /** Contains parameters for a Lambda function that runs on AWS IoT Greengrass.
     */
   @js.native
@@ -1414,15 +1279,6 @@ package object greengrassv2 {
     }
   }
 
-  @js.native
-  sealed trait LambdaFilesystemPermission extends js.Any
-  object LambdaFilesystemPermission {
-    val ro = "ro".asInstanceOf[LambdaFilesystemPermission]
-    val rw = "rw".asInstanceOf[LambdaFilesystemPermission]
-
-    @inline def values = js.Array(ro, rw)
-  }
-
   /** Contains information about an AWS Lambda function to import to create a component.
     */
   @js.native
@@ -1456,24 +1312,6 @@ package object greengrassv2 {
       componentVersion.foreach(__v => __obj.updateDynamic("componentVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionRecipeSource]
     }
-  }
-
-  @js.native
-  sealed trait LambdaInputPayloadEncodingType extends js.Any
-  object LambdaInputPayloadEncodingType {
-    val json = "json".asInstanceOf[LambdaInputPayloadEncodingType]
-    val binary = "binary".asInstanceOf[LambdaInputPayloadEncodingType]
-
-    @inline def values = js.Array(json, binary)
-  }
-
-  @js.native
-  sealed trait LambdaIsolationMode extends js.Any
-  object LambdaIsolationMode {
-    val GreengrassContainer = "GreengrassContainer".asInstanceOf[LambdaIsolationMode]
-    val NoContainer = "NoContainer".asInstanceOf[LambdaIsolationMode]
-
-    @inline def values = js.Array(GreengrassContainer, NoContainer)
   }
 
   /** Contains parameters for a Linux process that contains an AWS Lambda function.
@@ -1815,15 +1653,6 @@ package object greengrassv2 {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
-  }
-
-  @js.native
-  sealed trait RecipeOutputFormat extends js.Any
-  object RecipeOutputFormat {
-    val JSON = "JSON".asInstanceOf[RecipeOutputFormat]
-    val YAML = "YAML".asInstanceOf[RecipeOutputFormat]
-
-    @inline def values = js.Array(JSON, YAML)
   }
 
   @js.native

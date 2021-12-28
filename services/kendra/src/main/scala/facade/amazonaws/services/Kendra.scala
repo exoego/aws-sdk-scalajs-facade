@@ -286,14 +286,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait AdditionalResultAttributeValueType extends js.Any
-  object AdditionalResultAttributeValueType {
-    val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
-
-    @inline def values = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
-  }
-
   /** Provides filtering the query results based on document attributes. When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use: <code>&lt;AndAllFilters&gt;</code> <ol> * <code> &lt;OrAllFilters&gt;</code> * <code> &lt;EqualTo&gt;</code> </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."
     */
   @js.native
@@ -564,24 +556,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait ConfluenceAttachmentFieldName extends js.Any
-  object ConfluenceAttachmentFieldName {
-    val AUTHOR = "AUTHOR".asInstanceOf[ConfluenceAttachmentFieldName]
-    val CONTENT_TYPE = "CONTENT_TYPE".asInstanceOf[ConfluenceAttachmentFieldName]
-    val CREATED_DATE = "CREATED_DATE".asInstanceOf[ConfluenceAttachmentFieldName]
-    val DISPLAY_URL = "DISPLAY_URL".asInstanceOf[ConfluenceAttachmentFieldName]
-    val FILE_SIZE = "FILE_SIZE".asInstanceOf[ConfluenceAttachmentFieldName]
-    val ITEM_TYPE = "ITEM_TYPE".asInstanceOf[ConfluenceAttachmentFieldName]
-    val PARENT_ID = "PARENT_ID".asInstanceOf[ConfluenceAttachmentFieldName]
-    val SPACE_KEY = "SPACE_KEY".asInstanceOf[ConfluenceAttachmentFieldName]
-    val SPACE_NAME = "SPACE_NAME".asInstanceOf[ConfluenceAttachmentFieldName]
-    val URL = "URL".asInstanceOf[ConfluenceAttachmentFieldName]
-    val VERSION = "VERSION".asInstanceOf[ConfluenceAttachmentFieldName]
-
-    @inline def values = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
-  }
-
   /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
@@ -622,22 +596,6 @@ package object kendra {
       BlogFieldMappings.foreach(__v => __obj.updateDynamic("BlogFieldMappings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfluenceBlogConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait ConfluenceBlogFieldName extends js.Any
-  object ConfluenceBlogFieldName {
-    val AUTHOR = "AUTHOR".asInstanceOf[ConfluenceBlogFieldName]
-    val DISPLAY_URL = "DISPLAY_URL".asInstanceOf[ConfluenceBlogFieldName]
-    val ITEM_TYPE = "ITEM_TYPE".asInstanceOf[ConfluenceBlogFieldName]
-    val LABELS = "LABELS".asInstanceOf[ConfluenceBlogFieldName]
-    val PUBLISH_DATE = "PUBLISH_DATE".asInstanceOf[ConfluenceBlogFieldName]
-    val SPACE_KEY = "SPACE_KEY".asInstanceOf[ConfluenceBlogFieldName]
-    val SPACE_NAME = "SPACE_NAME".asInstanceOf[ConfluenceBlogFieldName]
-    val URL = "URL".asInstanceOf[ConfluenceBlogFieldName]
-    val VERSION = "VERSION".asInstanceOf[ConfluenceBlogFieldName]
-
-    @inline def values = js.Array(AUTHOR, DISPLAY_URL, ITEM_TYPE, LABELS, PUBLISH_DATE, SPACE_KEY, SPACE_NAME, URL, VERSION)
   }
 
   /** Defines the mapping between a blog field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
@@ -729,25 +687,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait ConfluencePageFieldName extends js.Any
-  object ConfluencePageFieldName {
-    val AUTHOR = "AUTHOR".asInstanceOf[ConfluencePageFieldName]
-    val CONTENT_STATUS = "CONTENT_STATUS".asInstanceOf[ConfluencePageFieldName]
-    val CREATED_DATE = "CREATED_DATE".asInstanceOf[ConfluencePageFieldName]
-    val DISPLAY_URL = "DISPLAY_URL".asInstanceOf[ConfluencePageFieldName]
-    val ITEM_TYPE = "ITEM_TYPE".asInstanceOf[ConfluencePageFieldName]
-    val LABELS = "LABELS".asInstanceOf[ConfluencePageFieldName]
-    val MODIFIED_DATE = "MODIFIED_DATE".asInstanceOf[ConfluencePageFieldName]
-    val PARENT_ID = "PARENT_ID".asInstanceOf[ConfluencePageFieldName]
-    val SPACE_KEY = "SPACE_KEY".asInstanceOf[ConfluencePageFieldName]
-    val SPACE_NAME = "SPACE_NAME".asInstanceOf[ConfluencePageFieldName]
-    val URL = "URL".asInstanceOf[ConfluencePageFieldName]
-    val VERSION = "VERSION".asInstanceOf[ConfluencePageFieldName]
-
-    @inline def values = js.Array(AUTHOR, CONTENT_STATUS, CREATED_DATE, DISPLAY_URL, ITEM_TYPE, LABELS, MODIFIED_DATE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
-  }
-
   /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
@@ -802,17 +741,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait ConfluenceSpaceFieldName extends js.Any
-  object ConfluenceSpaceFieldName {
-    val DISPLAY_URL = "DISPLAY_URL".asInstanceOf[ConfluenceSpaceFieldName]
-    val ITEM_TYPE = "ITEM_TYPE".asInstanceOf[ConfluenceSpaceFieldName]
-    val SPACE_KEY = "SPACE_KEY".asInstanceOf[ConfluenceSpaceFieldName]
-    val URL = "URL".asInstanceOf[ConfluenceSpaceFieldName]
-
-    @inline def values = js.Array(DISPLAY_URL, ITEM_TYPE, SPACE_KEY, URL)
-  }
-
   /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
     */
   @js.native
@@ -835,15 +763,6 @@ package object kendra {
       IndexFieldName.foreach(__v => __obj.updateDynamic("IndexFieldName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfluenceSpaceToIndexFieldMapping]
     }
-  }
-
-  @js.native
-  sealed trait ConfluenceVersion extends js.Any
-  object ConfluenceVersion {
-    val CLOUD = "CLOUD".asInstanceOf[ConfluenceVersion]
-    val SERVER = "SERVER".asInstanceOf[ConfluenceVersion]
-
-    @inline def values = js.Array(CLOUD, SERVER)
   }
 
   /** Provides the information necessary to connect to a database.
@@ -875,18 +794,6 @@ package object kendra {
       )
       __obj.asInstanceOf[ConnectionConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait ContentType extends js.Any
-  object ContentType {
-    val PDF = "PDF".asInstanceOf[ContentType]
-    val HTML = "HTML".asInstanceOf[ContentType]
-    val MS_WORD = "MS_WORD".asInstanceOf[ContentType]
-    val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
-    val PPT = "PPT".asInstanceOf[ContentType]
-
-    @inline def values = js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT)
   }
 
   @js.native
@@ -1152,18 +1059,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait DataSourceStatus extends js.Any
-  object DataSourceStatus {
-    val CREATING = "CREATING".asInstanceOf[DataSourceStatus]
-    val DELETING = "DELETING".asInstanceOf[DataSourceStatus]
-    val FAILED = "FAILED".asInstanceOf[DataSourceStatus]
-    val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
-
-    @inline def values = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
-  }
-
   /** Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> operation.
     */
   @js.native
@@ -1288,20 +1183,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait DataSourceSyncJobStatus extends js.Any
-  object DataSourceSyncJobStatus {
-    val FAILED = "FAILED".asInstanceOf[DataSourceSyncJobStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataSourceSyncJobStatus]
-    val SYNCING = "SYNCING".asInstanceOf[DataSourceSyncJobStatus]
-    val INCOMPLETE = "INCOMPLETE".asInstanceOf[DataSourceSyncJobStatus]
-    val STOPPING = "STOPPING".asInstanceOf[DataSourceSyncJobStatus]
-    val ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
-    val SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
-
-    @inline def values = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
-  }
-
   /** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> operation.
     */
   @js.native
@@ -1326,22 +1207,6 @@ package object kendra {
       DateFieldFormat.foreach(__v => __obj.updateDynamic("DateFieldFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceToIndexFieldMapping]
     }
-  }
-
-  @js.native
-  sealed trait DataSourceType extends js.Any
-  object DataSourceType {
-    val S3 = "S3".asInstanceOf[DataSourceType]
-    val SHAREPOINT = "SHAREPOINT".asInstanceOf[DataSourceType]
-    val DATABASE = "DATABASE".asInstanceOf[DataSourceType]
-    val SALESFORCE = "SALESFORCE".asInstanceOf[DataSourceType]
-    val ONEDRIVE = "ONEDRIVE".asInstanceOf[DataSourceType]
-    val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
-    val CUSTOM = "CUSTOM".asInstanceOf[DataSourceType]
-    val CONFLUENCE = "CONFLUENCE".asInstanceOf[DataSourceType]
-    val GOOGLEDRIVE = "GOOGLEDRIVE".asInstanceOf[DataSourceType]
-
-    @inline def values = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
   }
 
   /** Provides information for connecting to an Amazon VPC.
@@ -1399,17 +1264,6 @@ package object kendra {
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait DatabaseEngineType extends js.Any
-  object DatabaseEngineType {
-    val RDS_AURORA_MYSQL = "RDS_AURORA_MYSQL".asInstanceOf[DatabaseEngineType]
-    val RDS_AURORA_POSTGRESQL = "RDS_AURORA_POSTGRESQL".asInstanceOf[DatabaseEngineType]
-    val RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
-    val RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
-
-    @inline def values = js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL)
   }
 
   @js.native
@@ -1879,17 +1733,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait DocumentAttributeValueType extends js.Any
-  object DocumentAttributeValueType {
-    val STRING_VALUE = "STRING_VALUE".asInstanceOf[DocumentAttributeValueType]
-    val STRING_LIST_VALUE = "STRING_LIST_VALUE".asInstanceOf[DocumentAttributeValueType]
-    val LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
-    val DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
-
-    @inline def values = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
-  }
-
   /** Specifies the properties of a custom index field.
     */
   @js.native
@@ -1959,15 +1802,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait ErrorCode extends js.Any
-  object ErrorCode {
-    val InternalError = "InternalError".asInstanceOf[ErrorCode]
-    val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
-
-    @inline def values = js.Array(InternalError, InvalidRequest)
-  }
-
   /** Information about a document attribute
     */
   @js.native
@@ -2010,16 +1844,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait FaqFileFormat extends js.Any
-  object FaqFileFormat {
-    val CSV = "CSV".asInstanceOf[FaqFileFormat]
-    val CSV_WITH_HEADER = "CSV_WITH_HEADER".asInstanceOf[FaqFileFormat]
-    val JSON = "JSON".asInstanceOf[FaqFileFormat]
-
-    @inline def values = js.Array(CSV, CSV_WITH_HEADER, JSON)
-  }
-
   /** Provides statistical information about the FAQ questions and answers contained in an index.
     */
   @js.native
@@ -2037,18 +1861,6 @@ package object kendra {
       )
       __obj.asInstanceOf[FaqStatistics]
     }
-  }
-
-  @js.native
-  sealed trait FaqStatus extends js.Any
-  object FaqStatus {
-    val CREATING = "CREATING".asInstanceOf[FaqStatus]
-    val UPDATING = "UPDATING".asInstanceOf[FaqStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[FaqStatus]
-    val DELETING = "DELETING".asInstanceOf[FaqStatus]
-    val FAILED = "FAILED".asInstanceOf[FaqStatus]
-
-    @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
   }
 
   /** Provides information about a frequently asked questions and answer contained in an index.
@@ -2151,15 +1963,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait HighlightType extends js.Any
-  object HighlightType {
-    val STANDARD = "STANDARD".asInstanceOf[HighlightType]
-    val THESAURUS_SYNONYM = "THESAURUS_SYNONYM".asInstanceOf[HighlightType]
-
-    @inline def values = js.Array(STANDARD, THESAURUS_SYNONYM)
-  }
-
   /** A summary of information about an index.
     */
   @js.native
@@ -2195,15 +1998,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait IndexEdition extends js.Any
-  object IndexEdition {
-    val DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
-    val ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
-
-    @inline def values = js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION)
-  }
-
   /** Provides information about the number of documents and the number of questions and answers in an index.
     */
   @js.native
@@ -2224,19 +2018,6 @@ package object kendra {
       )
       __obj.asInstanceOf[IndexStatistics]
     }
-  }
-
-  @js.native
-  sealed trait IndexStatus extends js.Any
-  object IndexStatus {
-    val CREATING = "CREATING".asInstanceOf[IndexStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
-    val DELETING = "DELETING".asInstanceOf[IndexStatus]
-    val FAILED = "FAILED".asInstanceOf[IndexStatus]
-    val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
-    val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
-
-    @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
   }
 
   /** Configuration information for the JSON token type.
@@ -2297,15 +2078,6 @@ package object kendra {
       UserNameAttributeField.foreach(__v => __obj.updateDynamic("UserNameAttributeField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JwtTokenTypeConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait KeyLocation extends js.Any
-  object KeyLocation {
-    val URL = "URL".asInstanceOf[KeyLocation]
-    val SECRET_MANAGER = "SECRET_MANAGER".asInstanceOf[KeyLocation]
-
-    @inline def values = js.Array(URL, SECRET_MANAGER)
   }
 
   @js.native
@@ -2619,15 +2391,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait Order extends js.Any
-  object Order {
-    val ASCENDING = "ASCENDING".asInstanceOf[Order]
-    val DESCENDING = "DESCENDING".asInstanceOf[Order]
-
-    @inline def values = js.Array(ASCENDING, DESCENDING)
-  }
-
   /** Provides user and group information for document access filtering.
     */
   @js.native
@@ -2651,24 +2414,6 @@ package object kendra {
       )
       __obj.asInstanceOf[Principal]
     }
-  }
-
-  @js.native
-  sealed trait PrincipalType extends js.Any
-  object PrincipalType {
-    val USER = "USER".asInstanceOf[PrincipalType]
-    val GROUP = "GROUP".asInstanceOf[PrincipalType]
-
-    @inline def values = js.Array(USER, GROUP)
-  }
-
-  @js.native
-  sealed trait QueryIdentifiersEnclosingOption extends js.Any
-  object QueryIdentifiersEnclosingOption {
-    val DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
-    val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
-
-    @inline def values = js.Array(DOUBLE_QUOTES, NONE)
   }
 
   @js.native
@@ -2792,25 +2537,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait QueryResultType extends js.Any
-  object QueryResultType {
-    val DOCUMENT = "DOCUMENT".asInstanceOf[QueryResultType]
-    val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
-    val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
-
-    @inline def values = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
-  }
-
-  @js.native
-  sealed trait ReadAccessType extends js.Any
-  object ReadAccessType {
-    val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
-    val DENY = "DENY".asInstanceOf[ReadAccessType]
-
-    @inline def values = js.Array(ALLOW, DENY)
-  }
-
   /** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.
     */
   @js.native
@@ -2861,15 +2587,6 @@ package object kendra {
       )
       __obj.asInstanceOf[RelevanceFeedback]
     }
-  }
-
-  @js.native
-  sealed trait RelevanceType extends js.Any
-  object RelevanceType {
-    val RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
-    val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
-
-    @inline def values = js.Array(RELEVANT, NOT_RELEVANT)
   }
 
   /** Provides configuration information for a data source to index documents in an Amazon S3 bucket.
@@ -2956,15 +2673,6 @@ package object kendra {
       IncludeFilterTypes.foreach(__v => __obj.updateDynamic("IncludeFilterTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SalesforceChatterFeedConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait SalesforceChatterFeedIncludeFilterType extends js.Any
-  object SalesforceChatterFeedIncludeFilterType {
-    val ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
-    val STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
-
-    @inline def values = js.Array(ACTIVE_USER, STANDARD_USER)
   }
 
   /** Provides configuration information for connecting to a Salesforce data source.
@@ -3066,16 +2774,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait SalesforceKnowledgeArticleState extends js.Any
-  object SalesforceKnowledgeArticleState {
-    val DRAFT = "DRAFT".asInstanceOf[SalesforceKnowledgeArticleState]
-    val PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
-    val ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
-
-    @inline def values = js.Array(DRAFT, PUBLISHED, ARCHIVED)
-  }
-
   /** Provides configuration information for standard Salesforce knowledge articles.
     */
   @js.native
@@ -3152,30 +2850,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait SalesforceStandardObjectName extends js.Any
-  object SalesforceStandardObjectName {
-    val ACCOUNT = "ACCOUNT".asInstanceOf[SalesforceStandardObjectName]
-    val CAMPAIGN = "CAMPAIGN".asInstanceOf[SalesforceStandardObjectName]
-    val CASE = "CASE".asInstanceOf[SalesforceStandardObjectName]
-    val CONTACT = "CONTACT".asInstanceOf[SalesforceStandardObjectName]
-    val CONTRACT = "CONTRACT".asInstanceOf[SalesforceStandardObjectName]
-    val DOCUMENT = "DOCUMENT".asInstanceOf[SalesforceStandardObjectName]
-    val GROUP = "GROUP".asInstanceOf[SalesforceStandardObjectName]
-    val IDEA = "IDEA".asInstanceOf[SalesforceStandardObjectName]
-    val LEAD = "LEAD".asInstanceOf[SalesforceStandardObjectName]
-    val OPPORTUNITY = "OPPORTUNITY".asInstanceOf[SalesforceStandardObjectName]
-    val PARTNER = "PARTNER".asInstanceOf[SalesforceStandardObjectName]
-    val PRICEBOOK = "PRICEBOOK".asInstanceOf[SalesforceStandardObjectName]
-    val PRODUCT = "PRODUCT".asInstanceOf[SalesforceStandardObjectName]
-    val PROFILE = "PROFILE".asInstanceOf[SalesforceStandardObjectName]
-    val SOLUTION = "SOLUTION".asInstanceOf[SalesforceStandardObjectName]
-    val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
-    val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
-
-    @inline def values = js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
-  }
-
   /** Provides a relative ranking that indicates how confident Amazon Kendra is that the response matches the query.
     */
   @js.native
@@ -3192,19 +2866,6 @@ package object kendra {
       ScoreConfidence.foreach(__v => __obj.updateDynamic("ScoreConfidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScoreAttributes]
     }
-  }
-
-  /** Enumeration for query score confidence.
-    */
-  @js.native
-  sealed trait ScoreConfidence extends js.Any
-  object ScoreConfidence {
-    val VERY_HIGH = "VERY_HIGH".asInstanceOf[ScoreConfidence]
-    val HIGH = "HIGH".asInstanceOf[ScoreConfidence]
-    val MEDIUM = "MEDIUM".asInstanceOf[ScoreConfidence]
-    val LOW = "LOW".asInstanceOf[ScoreConfidence]
-
-    @inline def values = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW)
   }
 
   /** Provides information about how a custom index field is used during a search.
@@ -3250,24 +2911,6 @@ package object kendra {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerSideEncryptionConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait ServiceNowAuthenticationType extends js.Any
-  object ServiceNowAuthenticationType {
-    val HTTP_BASIC = "HTTP_BASIC".asInstanceOf[ServiceNowAuthenticationType]
-    val OAUTH2 = "OAUTH2".asInstanceOf[ServiceNowAuthenticationType]
-
-    @inline def values = js.Array(HTTP_BASIC, OAUTH2)
-  }
-
-  @js.native
-  sealed trait ServiceNowBuildVersionType extends js.Any
-  object ServiceNowBuildVersionType {
-    val LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
-    val OTHERS = "OTHERS".asInstanceOf[ServiceNowBuildVersionType]
-
-    @inline def values = js.Array(LONDON, OTHERS)
   }
 
   /** Provides configuration information required to connect to a ServiceNow data source.
@@ -3426,23 +3069,6 @@ package object kendra {
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SharePointConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait SharePointVersion extends js.Any
-  object SharePointVersion {
-    val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
-
-    @inline def values = js.Array(SHAREPOINT_ONLINE)
-  }
-
-  @js.native
-  sealed trait SortOrder extends js.Any
-  object SortOrder {
-    val DESC = "DESC".asInstanceOf[SortOrder]
-    val ASC = "ASC".asInstanceOf[SortOrder]
-
-    @inline def values = js.Array(DESC, ASC)
   }
 
   /** Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception. You can sort attributes of the following types. * Date value * Long value * String value You can't sort attributes of the following type. * String list value
@@ -3664,19 +3290,6 @@ package object kendra {
     }
   }
 
-  @js.native
-  sealed trait ThesaurusStatus extends js.Any
-  object ThesaurusStatus {
-    val CREATING = "CREATING".asInstanceOf[ThesaurusStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[ThesaurusStatus]
-    val DELETING = "DELETING".asInstanceOf[ThesaurusStatus]
-    val UPDATING = "UPDATING".asInstanceOf[ThesaurusStatus]
-    val ACTIVE_BUT_UPDATE_FAILED = "ACTIVE_BUT_UPDATE_FAILED".asInstanceOf[ThesaurusStatus]
-    val FAILED = "FAILED".asInstanceOf[ThesaurusStatus]
-
-    @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
-  }
-
   /** An array of summary information for one or more thesauruses.
     */
   @js.native
@@ -3883,15 +3496,6 @@ package object kendra {
       Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserContext]
     }
-  }
-
-  @js.native
-  sealed trait UserContextPolicy extends js.Any
-  object UserContextPolicy {
-    val ATTRIBUTE_FILTER = "ATTRIBUTE_FILTER".asInstanceOf[UserContextPolicy]
-    val USER_TOKEN = "USER_TOKEN".asInstanceOf[UserContextPolicy]
-
-    @inline def values = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
   }
 
   /** Provides configuration information for a token configuration.

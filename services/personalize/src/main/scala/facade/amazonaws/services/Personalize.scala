@@ -2792,14 +2792,6 @@ package object personalize {
     }
   }
 
-  @js.native
-  sealed trait RecipeProvider extends js.Any
-  object RecipeProvider {
-    val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
-
-    @inline def values = js.Array(SERVICE)
-  }
-
   /** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API.
     */
   @js.native
@@ -3055,15 +3047,6 @@ package object personalize {
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionVersionSummary]
     }
-  }
-
-  @js.native
-  sealed trait TrainingMode extends js.Any
-  object TrainingMode {
-    val FULL = "FULL".asInstanceOf[TrainingMode]
-    val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
-
-    @inline def values = js.Array(FULL, UPDATE)
   }
 
   /** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.

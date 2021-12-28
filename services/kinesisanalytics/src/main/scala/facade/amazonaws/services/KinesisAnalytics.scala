@@ -353,19 +353,6 @@ package object kinesisanalytics {
     }
   }
 
-  @js.native
-  sealed trait ApplicationStatus extends js.Any
-  object ApplicationStatus {
-    val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
-    val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
-    val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
-    val READY = "READY".asInstanceOf[ApplicationStatus]
-    val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
-    val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
-
-    @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
-  }
-
   /** '''Note:'''This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see [[/kinesisanalytics/latest/apiv2/Welcome.html|Amazon Kinesis Data Analytics API V2 Documentation]]. Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
     */
   @js.native
@@ -1140,16 +1127,6 @@ package object kinesisanalytics {
     }
   }
 
-  @js.native
-  sealed trait InputStartingPosition extends js.Any
-  object InputStartingPosition {
-    val NOW = "NOW".asInstanceOf[InputStartingPosition]
-    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
-    val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
-
-    @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
-  }
-
   /** Describes the point at which the application reads from the streaming source.
     */
   @js.native
@@ -1789,15 +1766,6 @@ package object kinesisanalytics {
       MappingParameters.foreach(__v => __obj.updateDynamic("MappingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordFormat]
     }
-  }
-
-  @js.native
-  sealed trait RecordFormatType extends js.Any
-  object RecordFormatType {
-    val JSON = "JSON".asInstanceOf[RecordFormatType]
-    val CSV = "CSV".asInstanceOf[RecordFormatType]
-
-    @inline def values = js.Array(JSON, CSV)
   }
 
   /** Describes the reference data source by providing the source information (S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.

@@ -185,49 +185,6 @@ package object appsync {
     }
   }
 
-  @js.native
-  sealed trait ApiCacheStatus extends js.Any
-  object ApiCacheStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ApiCacheStatus]
-    val CREATING = "CREATING".asInstanceOf[ApiCacheStatus]
-    val DELETING = "DELETING".asInstanceOf[ApiCacheStatus]
-    val MODIFYING = "MODIFYING".asInstanceOf[ApiCacheStatus]
-    val FAILED = "FAILED".asInstanceOf[ApiCacheStatus]
-
-    @inline def values = js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED)
-  }
-
-  @js.native
-  sealed trait ApiCacheType extends js.Any
-  object ApiCacheType {
-    val T2_SMALL = "T2_SMALL".asInstanceOf[ApiCacheType]
-    val T2_MEDIUM = "T2_MEDIUM".asInstanceOf[ApiCacheType]
-    val R4_LARGE = "R4_LARGE".asInstanceOf[ApiCacheType]
-    val R4_XLARGE = "R4_XLARGE".asInstanceOf[ApiCacheType]
-    val R4_2XLARGE = "R4_2XLARGE".asInstanceOf[ApiCacheType]
-    val R4_4XLARGE = "R4_4XLARGE".asInstanceOf[ApiCacheType]
-    val R4_8XLARGE = "R4_8XLARGE".asInstanceOf[ApiCacheType]
-    val SMALL = "SMALL".asInstanceOf[ApiCacheType]
-    val MEDIUM = "MEDIUM".asInstanceOf[ApiCacheType]
-    val LARGE = "LARGE".asInstanceOf[ApiCacheType]
-    val XLARGE = "XLARGE".asInstanceOf[ApiCacheType]
-    val LARGE_2X = "LARGE_2X".asInstanceOf[ApiCacheType]
-    val LARGE_4X = "LARGE_4X".asInstanceOf[ApiCacheType]
-    val LARGE_8X = "LARGE_8X".asInstanceOf[ApiCacheType]
-    val LARGE_12X = "LARGE_12X".asInstanceOf[ApiCacheType]
-
-    @inline def values = js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE, SMALL, MEDIUM, LARGE, XLARGE, LARGE_2X, LARGE_4X, LARGE_8X, LARGE_12X)
-  }
-
-  @js.native
-  sealed trait ApiCachingBehavior extends js.Any
-  object ApiCachingBehavior {
-    val FULL_REQUEST_CACHING = "FULL_REQUEST_CACHING".asInstanceOf[ApiCachingBehavior]
-    val PER_RESOLVER_CACHING = "PER_RESOLVER_CACHING".asInstanceOf[ApiCachingBehavior]
-
-    @inline def values = js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING)
-  }
-
   /** Describes an API key. Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
     * ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date. * <code>ListApiKeys</code> returns the expiration time in milliseconds. * <code>CreateApiKey</code> returns the expiration time in milliseconds. * <code>UpdateApiKey</code> is not available for this key version. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
     * ```da2```: This version was introduced in February 2018 when AppSync added support to extend key expiration. * <code>ListApiKeys</code> returns the expiration time and deletion time in seconds. * <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds. * <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. Key expiration time can be updated while the key is not deleted. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in Amazon DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. But the key can be reinstated before deletion. * Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted after deletion time.
@@ -257,17 +214,6 @@ package object appsync {
     }
   }
 
-  @js.native
-  sealed trait AuthenticationType extends js.Any
-  object AuthenticationType {
-    val API_KEY = "API_KEY".asInstanceOf[AuthenticationType]
-    val AWS_IAM = "AWS_IAM".asInstanceOf[AuthenticationType]
-    val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[AuthenticationType]
-    val OPENID_CONNECT = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
-
-    @inline def values = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
-  }
-
   /** The authorization config in case the HTTP endpoint requires authorization.
     */
   @js.native
@@ -289,14 +235,6 @@ package object appsync {
       awsIamConfig.foreach(__v => __obj.updateDynamic("awsIamConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizationConfig]
     }
-  }
-
-  @js.native
-  sealed trait AuthorizationType extends js.Any
-  object AuthorizationType {
-    val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
-
-    @inline def values = js.Array(AWS_IAM)
   }
 
   /** The AWS IAM configuration.
@@ -365,26 +303,6 @@ package object appsync {
       appIdClientRegex.foreach(__v => __obj.updateDynamic("appIdClientRegex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CognitoUserPoolConfig]
     }
-  }
-
-  @js.native
-  sealed trait ConflictDetectionType extends js.Any
-  object ConflictDetectionType {
-    val VERSION = "VERSION".asInstanceOf[ConflictDetectionType]
-    val NONE = "NONE".asInstanceOf[ConflictDetectionType]
-
-    @inline def values = js.Array(VERSION, NONE)
-  }
-
-  @js.native
-  sealed trait ConflictHandlerType extends js.Any
-  object ConflictHandlerType {
-    val OPTIMISTIC_CONCURRENCY = "OPTIMISTIC_CONCURRENCY".asInstanceOf[ConflictHandlerType]
-    val LAMBDA = "LAMBDA".asInstanceOf[ConflictHandlerType]
-    val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictHandlerType]
-    val NONE = "NONE".asInstanceOf[ConflictHandlerType]
-
-    @inline def values = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
   }
 
   /** Represents the input of a <code>CreateApiCache</code> operation.
@@ -796,28 +714,6 @@ package object appsync {
     }
   }
 
-  @js.native
-  sealed trait DataSourceType extends js.Any
-  object DataSourceType {
-    val AWS_LAMBDA = "AWS_LAMBDA".asInstanceOf[DataSourceType]
-    val AMAZON_DYNAMODB = "AMAZON_DYNAMODB".asInstanceOf[DataSourceType]
-    val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
-    val NONE = "NONE".asInstanceOf[DataSourceType]
-    val HTTP = "HTTP".asInstanceOf[DataSourceType]
-    val RELATIONAL_DATABASE = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
-
-    @inline def values = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
-  }
-
-  @js.native
-  sealed trait DefaultAction extends js.Any
-  object DefaultAction {
-    val ALLOW = "ALLOW".asInstanceOf[DefaultAction]
-    val DENY = "DENY".asInstanceOf[DefaultAction]
-
-    @inline def values = js.Array(ALLOW, DENY)
-  }
-
   /** Represents the input of a <code>DeleteApiCache</code> operation.
     */
   @js.native
@@ -1112,16 +1008,6 @@ package object appsync {
       )
       __obj.asInstanceOf[ElasticsearchDataSourceConfig]
     }
-  }
-
-  @js.native
-  sealed trait FieldLogLevel extends js.Any
-  object FieldLogLevel {
-    val NONE = "NONE".asInstanceOf[FieldLogLevel]
-    val ERROR = "ERROR".asInstanceOf[FieldLogLevel]
-    val ALL = "ALL".asInstanceOf[FieldLogLevel]
-
-    @inline def values = js.Array(NONE, ERROR, ALL)
   }
 
   /** Represents the input of a <code>FlushApiCache</code> operation.
@@ -1996,15 +1882,6 @@ package object appsync {
     }
   }
 
-  @js.native
-  sealed trait OutputType extends js.Any
-  object OutputType {
-    val SDL = "SDL".asInstanceOf[OutputType]
-    val JSON = "JSON".asInstanceOf[OutputType]
-
-    @inline def values = js.Array(SDL, JSON)
-  }
-
   /** The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
     */
   @js.native
@@ -2074,14 +1951,6 @@ package object appsync {
     }
   }
 
-  @js.native
-  sealed trait RelationalDatabaseSourceType extends js.Any
-  object RelationalDatabaseSourceType {
-    val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT".asInstanceOf[RelationalDatabaseSourceType]
-
-    @inline def values = js.Array(RDS_HTTP_ENDPOINT)
-  }
-
   /** Describes a resolver.
     */
   @js.native
@@ -2125,28 +1994,6 @@ package object appsync {
       typeName.foreach(__v => __obj.updateDynamic("typeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resolver]
     }
-  }
-
-  @js.native
-  sealed trait ResolverKind extends js.Any
-  object ResolverKind {
-    val UNIT = "UNIT".asInstanceOf[ResolverKind]
-    val PIPELINE = "PIPELINE".asInstanceOf[ResolverKind]
-
-    @inline def values = js.Array(UNIT, PIPELINE)
-  }
-
-  @js.native
-  sealed trait SchemaStatus extends js.Any
-  object SchemaStatus {
-    val PROCESSING = "PROCESSING".asInstanceOf[SchemaStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[SchemaStatus]
-    val DELETING = "DELETING".asInstanceOf[SchemaStatus]
-    val FAILED = "FAILED".asInstanceOf[SchemaStatus]
-    val SUCCESS = "SUCCESS".asInstanceOf[SchemaStatus]
-    val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[SchemaStatus]
-
-    @inline def values = js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE)
   }
 
   @js.native
@@ -2268,15 +2115,6 @@ package object appsync {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Type]
     }
-  }
-
-  @js.native
-  sealed trait TypeDefinitionFormat extends js.Any
-  object TypeDefinitionFormat {
-    val SDL = "SDL".asInstanceOf[TypeDefinitionFormat]
-    val JSON = "JSON".asInstanceOf[TypeDefinitionFormat]
-
-    @inline def values = js.Array(SDL, JSON)
   }
 
   @js.native

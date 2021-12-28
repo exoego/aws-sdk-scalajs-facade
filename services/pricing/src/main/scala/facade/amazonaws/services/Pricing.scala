@@ -129,14 +129,6 @@ package object pricing {
   }
 
   @js.native
-  sealed trait FilterType extends js.Any
-  object FilterType {
-    val TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
-
-    @inline def values = js.Array(TERM_MATCH)
-  }
-
-  @js.native
   trait GetAttributeValuesRequest extends js.Object {
     var AttributeName: String
     var ServiceCode: String

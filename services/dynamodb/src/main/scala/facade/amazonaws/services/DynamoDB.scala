@@ -340,16 +340,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait AttributeAction extends js.Any
-  object AttributeAction {
-    val ADD = "ADD".asInstanceOf[AttributeAction]
-    val PUT = "PUT".asInstanceOf[AttributeAction]
-    val DELETE = "DELETE".asInstanceOf[AttributeAction]
-
-    @inline def values = js.Array(ADD, PUT, DELETE)
-  }
-
   /** Represents an attribute for describing the key schema for the table and indexes.
     */
   @js.native
@@ -694,16 +684,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait BackupStatus extends js.Any
-  object BackupStatus {
-    val CREATING = "CREATING".asInstanceOf[BackupStatus]
-    val DELETED = "DELETED".asInstanceOf[BackupStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
-
-    @inline def values = js.Array(CREATING, DELETED, AVAILABLE)
-  }
-
   /** Contains details for the backup.
     */
   @js.native
@@ -747,27 +727,6 @@ package object dynamodb {
       TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupSummary]
     }
-  }
-
-  @js.native
-  sealed trait BackupType extends js.Any
-  object BackupType {
-    val USER = "USER".asInstanceOf[BackupType]
-    val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
-    val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
-
-    @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP)
-  }
-
-  @js.native
-  sealed trait BackupTypeFilter extends js.Any
-  object BackupTypeFilter {
-    val USER = "USER".asInstanceOf[BackupTypeFilter]
-    val SYSTEM = "SYSTEM".asInstanceOf[BackupTypeFilter]
-    val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
-    val ALL = "ALL".asInstanceOf[BackupTypeFilter]
-
-    @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP, ALL)
   }
 
   @js.native
@@ -871,36 +830,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait BatchStatementErrorCodeEnum extends js.Any
-  object BatchStatementErrorCodeEnum {
-    val ConditionalCheckFailed = "ConditionalCheckFailed".asInstanceOf[BatchStatementErrorCodeEnum]
-    val ItemCollectionSizeLimitExceeded = "ItemCollectionSizeLimitExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
-    val RequestLimitExceeded = "RequestLimitExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
-    val ValidationError = "ValidationError".asInstanceOf[BatchStatementErrorCodeEnum]
-    val ProvisionedThroughputExceeded = "ProvisionedThroughputExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
-    val TransactionConflict = "TransactionConflict".asInstanceOf[BatchStatementErrorCodeEnum]
-    val ThrottlingError = "ThrottlingError".asInstanceOf[BatchStatementErrorCodeEnum]
-    val InternalServerError = "InternalServerError".asInstanceOf[BatchStatementErrorCodeEnum]
-    val ResourceNotFound = "ResourceNotFound".asInstanceOf[BatchStatementErrorCodeEnum]
-    val AccessDenied = "AccessDenied".asInstanceOf[BatchStatementErrorCodeEnum]
-    val DuplicateItem = "DuplicateItem".asInstanceOf[BatchStatementErrorCodeEnum]
-
-    @inline def values = js.Array(
-      ConditionalCheckFailed,
-      ItemCollectionSizeLimitExceeded,
-      RequestLimitExceeded,
-      ValidationError,
-      ProvisionedThroughputExceeded,
-      TransactionConflict,
-      ThrottlingError,
-      InternalServerError,
-      ResourceNotFound,
-      AccessDenied,
-      DuplicateItem
-    )
-  }
-
   /** A PartiQL batch statement request.
     */
   @js.native
@@ -1001,15 +930,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait BillingMode extends js.Any
-  object BillingMode {
-    val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
-    val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
-
-    @inline def values = js.Array(PROVISIONED, PAY_PER_REQUEST)
-  }
-
   /** Contains the details for the read/write capacity mode.
     */
   @js.native
@@ -1053,26 +973,6 @@ package object dynamodb {
       WriteCapacityUnits.foreach(__v => __obj.updateDynamic("WriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Capacity]
     }
-  }
-
-  @js.native
-  sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator {
-    val EQ = "EQ".asInstanceOf[ComparisonOperator]
-    val NE = "NE".asInstanceOf[ComparisonOperator]
-    val IN = "IN".asInstanceOf[ComparisonOperator]
-    val LE = "LE".asInstanceOf[ComparisonOperator]
-    val LT = "LT".asInstanceOf[ComparisonOperator]
-    val GE = "GE".asInstanceOf[ComparisonOperator]
-    val GT = "GT".asInstanceOf[ComparisonOperator]
-    val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
-    val NOT_NULL = "NOT_NULL".asInstanceOf[ComparisonOperator]
-    val NULL = "NULL".asInstanceOf[ComparisonOperator]
-    val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
-    val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-    val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
-
-    @inline def values = js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
   }
 
   /** Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation: * For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported: <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values. * For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.
@@ -1133,15 +1033,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait ConditionalOperator extends js.Any
-  object ConditionalOperator {
-    val AND = "AND".asInstanceOf[ConditionalOperator]
-    val OR = "OR".asInstanceOf[ConditionalOperator]
-
-    @inline def values = js.Array(AND, OR)
-  }
-
   /** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html|Provisioned Throughput]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
@@ -1199,36 +1090,6 @@ package object dynamodb {
       PointInTimeRecoveryDescription.foreach(__v => __obj.updateDynamic("PointInTimeRecoveryDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousBackupsDescription]
     }
-  }
-
-  @js.native
-  sealed trait ContinuousBackupsStatus extends js.Any
-  object ContinuousBackupsStatus {
-    val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
-    val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
-  @js.native
-  sealed trait ContributorInsightsAction extends js.Any
-  object ContributorInsightsAction {
-    val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
-    val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
-
-    @inline def values = js.Array(ENABLE, DISABLE)
-  }
-
-  @js.native
-  sealed trait ContributorInsightsStatus extends js.Any
-  object ContributorInsightsStatus {
-    val ENABLING = "ENABLING".asInstanceOf[ContributorInsightsStatus]
-    val ENABLED = "ENABLED".asInstanceOf[ContributorInsightsStatus]
-    val DISABLING = "DISABLING".asInstanceOf[ContributorInsightsStatus]
-    val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
-    val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
-
-    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
   }
 
   /** Represents a Contributor Insights summary entry.
@@ -2148,18 +2009,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait DestinationStatus extends js.Any
-  object DestinationStatus {
-    val ENABLING = "ENABLING".asInstanceOf[DestinationStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[DestinationStatus]
-    val DISABLING = "DISABLING".asInstanceOf[DestinationStatus]
-    val DISABLED = "DISABLED".asInstanceOf[DestinationStatus]
-    val ENABLE_FAILED = "ENABLE_FAILED".asInstanceOf[DestinationStatus]
-
-    @inline def values = js.Array(ENABLING, ACTIVE, DISABLING, DISABLED, ENABLE_FAILED)
-  }
-
   /** An endpoint information details.
     */
   @js.native
@@ -2363,25 +2212,6 @@ package object dynamodb {
       TableId.foreach(__v => __obj.updateDynamic("TableId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportDescription]
     }
-  }
-
-  @js.native
-  sealed trait ExportFormat extends js.Any
-  object ExportFormat {
-    val DYNAMODB_JSON = "DYNAMODB_JSON".asInstanceOf[ExportFormat]
-    val ION = "ION".asInstanceOf[ExportFormat]
-
-    @inline def values = js.Array(DYNAMODB_JSON, ION)
-  }
-
-  @js.native
-  sealed trait ExportStatus extends js.Any
-  object ExportStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
-    val FAILED = "FAILED".asInstanceOf[ExportStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED)
   }
 
   /** Summary information about an export task.
@@ -2792,28 +2622,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait GlobalTableStatus extends js.Any
-  object GlobalTableStatus {
-    val CREATING = "CREATING".asInstanceOf[GlobalTableStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[GlobalTableStatus]
-    val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
-    val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
-
-    @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING)
-  }
-
-  @js.native
-  sealed trait IndexStatus extends js.Any
-  object IndexStatus {
-    val CREATING = "CREATING".asInstanceOf[IndexStatus]
-    val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
-    val DELETING = "DELETING".asInstanceOf[IndexStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
-
-    @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
-  }
-
   /** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.
     */
   @js.native
@@ -2873,15 +2681,6 @@ package object dynamodb {
       )
       __obj.asInstanceOf[KeySchemaElement]
     }
-  }
-
-  @js.native
-  sealed trait KeyType extends js.Any
-  object KeyType {
-    val HASH = "HASH".asInstanceOf[KeyType]
-    val RANGE = "RANGE".asInstanceOf[KeyType]
-
-    @inline def values = js.Array(HASH, RANGE)
   }
 
   /** Represents a set of primary keys and, for each key, the attributes to retrieve from the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.
@@ -3385,15 +3184,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait PointInTimeRecoveryStatus extends js.Any
-  object PointInTimeRecoveryStatus {
-    val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
-    val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
   /** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
     */
   @js.native
@@ -3413,16 +3203,6 @@ package object dynamodb {
       ProjectionType.foreach(__v => __obj.updateDynamic("ProjectionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Projection]
     }
-  }
-
-  @js.native
-  sealed trait ProjectionType extends js.Any
-  object ProjectionType {
-    val ALL = "ALL".asInstanceOf[ProjectionType]
-    val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
-    val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
-
-    @inline def values = js.Array(ALL, KEYS_ONLY, INCLUDE)
   }
 
   /** Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation. For current minimum and maximum provisioned throughput values, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html|Service, Account, and Table Quotas]] in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -4054,20 +3834,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait ReplicaStatus extends js.Any
-  object ReplicaStatus {
-    val CREATING = "CREATING".asInstanceOf[ReplicaStatus]
-    val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ReplicaStatus]
-    val UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
-    val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
-    val REGION_DISABLED = "REGION_DISABLED".asInstanceOf[ReplicaStatus]
-    val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[ReplicaStatus]
-
-    @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
-  }
-
   /** Represents one of the following: * A new replica to be added to an existing global table. * New parameters for an existing replica. * An existing replica to be removed from an existing global table.
     */
   @js.native
@@ -4255,57 +4021,6 @@ package object dynamodb {
     }
   }
 
-  /** Determines the level of detail about provisioned throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
-    */
-  @js.native
-  sealed trait ReturnConsumedCapacity extends js.Any
-  object ReturnConsumedCapacity {
-    val INDEXES = "INDEXES".asInstanceOf[ReturnConsumedCapacity]
-    val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
-    val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
-
-    @inline def values = js.Array(INDEXES, TOTAL, NONE)
-  }
-
-  @js.native
-  sealed trait ReturnItemCollectionMetrics extends js.Any
-  object ReturnItemCollectionMetrics {
-    val SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
-    val NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
-
-    @inline def values = js.Array(SIZE, NONE)
-  }
-
-  @js.native
-  sealed trait ReturnValue extends js.Any
-  object ReturnValue {
-    val NONE = "NONE".asInstanceOf[ReturnValue]
-    val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValue]
-    val UPDATED_OLD = "UPDATED_OLD".asInstanceOf[ReturnValue]
-    val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
-    val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
-
-    @inline def values = js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
-  }
-
-  @js.native
-  sealed trait ReturnValuesOnConditionCheckFailure extends js.Any
-  object ReturnValuesOnConditionCheckFailure {
-    val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
-    val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
-
-    @inline def values = js.Array(ALL_OLD, NONE)
-  }
-
-  @js.native
-  sealed trait S3SseAlgorithm extends js.Any
-  object S3SseAlgorithm {
-    val AES256 = "AES256".asInstanceOf[S3SseAlgorithm]
-    val KMS = "KMS".asInstanceOf[S3SseAlgorithm]
-
-    @inline def values = js.Array(AES256, KMS)
-  }
-
   /** The description of the server-side encryption status on the specified table.
     */
   @js.native
@@ -4355,37 +4070,6 @@ package object dynamodb {
       SSEType.foreach(__v => __obj.updateDynamic("SSEType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SSESpecification]
     }
-  }
-
-  @js.native
-  sealed trait SSEStatus extends js.Any
-  object SSEStatus {
-    val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
-    val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
-    val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-    val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
-    val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
-
-    @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
-  }
-
-  @js.native
-  sealed trait SSEType extends js.Any
-  object SSEType {
-    val AES256 = "AES256".asInstanceOf[SSEType]
-    val KMS = "KMS".asInstanceOf[SSEType]
-
-    @inline def values = js.Array(AES256, KMS)
-  }
-
-  @js.native
-  sealed trait ScalarAttributeType extends js.Any
-  object ScalarAttributeType {
-    val S = "S".asInstanceOf[ScalarAttributeType]
-    val N = "N".asInstanceOf[ScalarAttributeType]
-    val B = "B".asInstanceOf[ScalarAttributeType]
-
-    @inline def values = js.Array(S, N, B)
   }
 
   /** Represents the input of a <code>Scan</code> operation.
@@ -4483,17 +4167,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait Select extends js.Any
-  object Select {
-    val ALL_ATTRIBUTES = "ALL_ATTRIBUTES".asInstanceOf[Select]
-    val ALL_PROJECTED_ATTRIBUTES = "ALL_PROJECTED_ATTRIBUTES".asInstanceOf[Select]
-    val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
-    val COUNT = "COUNT".asInstanceOf[Select]
-
-    @inline def values = js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
-  }
-
   /** Contains the details of the table when the backup was created.
     */
   @js.native
@@ -4589,17 +4262,6 @@ package object dynamodb {
       StreamViewType.foreach(__v => __obj.updateDynamic("StreamViewType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSpecification]
     }
-  }
-
-  @js.native
-  sealed trait StreamViewType extends js.Any
-  object StreamViewType {
-    val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
-    val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
-    val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
-    val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
-
-    @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
   }
 
   /** Represents the auto scaling configuration for a global table.
@@ -4704,20 +4366,6 @@ package object dynamodb {
     }
   }
 
-  @js.native
-  sealed trait TableStatus extends js.Any
-  object TableStatus {
-    val CREATING = "CREATING".asInstanceOf[TableStatus]
-    val UPDATING = "UPDATING".asInstanceOf[TableStatus]
-    val DELETING = "DELETING".asInstanceOf[TableStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
-    val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[TableStatus]
-    val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
-    val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
-
-    @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
-  }
-
   /** Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag. For an overview on tagging DynamoDB resources, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html|Tagging for DynamoDB]] in the <i>Amazon DynamoDB Developer Guide</i>.
     */
   @js.native
@@ -4801,17 +4449,6 @@ package object dynamodb {
       )
       __obj.asInstanceOf[TimeToLiveSpecification]
     }
-  }
-
-  @js.native
-  sealed trait TimeToLiveStatus extends js.Any
-  object TimeToLiveStatus {
-    val ENABLING = "ENABLING".asInstanceOf[TimeToLiveStatus]
-    val DISABLING = "DISABLING".asInstanceOf[TimeToLiveStatus]
-    val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
-    val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
-
-    @inline def values = js.Array(ENABLING, DISABLING, ENABLED, DISABLED)
   }
 
   /** Specifies an item to be retrieved as part of the transaction.

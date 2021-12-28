@@ -677,16 +677,6 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  @js.native
-  sealed trait ApplicationRestoreType extends js.Any
-  object ApplicationRestoreType {
-    val SKIP_RESTORE_FROM_SNAPSHOT = "SKIP_RESTORE_FROM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-    val RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-    val RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-
-    @inline def values = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
-  }
-
   /** Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     */
   @js.native
@@ -742,21 +732,6 @@ package object kinesisanalyticsv2 {
       )
       __obj.asInstanceOf[ApplicationSnapshotConfigurationUpdate]
     }
-  }
-
-  @js.native
-  sealed trait ApplicationStatus extends js.Any
-  object ApplicationStatus {
-    val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
-    val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
-    val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
-    val READY = "READY".asInstanceOf[ApplicationStatus]
-    val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
-    val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
-    val AUTOSCALING = "AUTOSCALING".asInstanceOf[ApplicationStatus]
-    val FORCE_STOPPING = "FORCE_STOPPING".asInstanceOf[ApplicationStatus]
-
-    @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
   }
 
   /** Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
@@ -1014,15 +989,6 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  @js.native
-  sealed trait CodeContentType extends js.Any
-  object CodeContentType {
-    val PLAINTEXT = "PLAINTEXT".asInstanceOf[CodeContentType]
-    val ZIPFILE = "ZIPFILE".asInstanceOf[CodeContentType]
-
-    @inline def values = js.Array(PLAINTEXT, ZIPFILE)
-  }
-
   /** Describes an update to the code of a Flink-based Kinesis Data Analytics application.
     */
   @js.native
@@ -1045,15 +1011,6 @@ package object kinesisanalyticsv2 {
       ZipFileContentUpdate.foreach(__v => __obj.updateDynamic("ZipFileContentUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeContentUpdate]
     }
-  }
-
-  @js.native
-  sealed trait ConfigurationType extends js.Any
-  object ConfigurationType {
-    val DEFAULT = "DEFAULT".asInstanceOf[ConfigurationType]
-    val CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
-
-    @inline def values = js.Array(DEFAULT, CUSTOM)
   }
 
   @js.native
@@ -2011,16 +1968,6 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  @js.native
-  sealed trait InputStartingPosition extends js.Any
-  object InputStartingPosition {
-    val NOW = "NOW".asInstanceOf[InputStartingPosition]
-    val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
-    val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
-
-    @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
-  }
-
   /** Describes the point at which the application reads from the streaming source.
     */
   @js.native
@@ -2517,17 +2464,6 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  @js.native
-  sealed trait LogLevel extends js.Any
-  object LogLevel {
-    val INFO = "INFO".asInstanceOf[LogLevel]
-    val WARN = "WARN".asInstanceOf[LogLevel]
-    val ERROR = "ERROR".asInstanceOf[LogLevel]
-    val DEBUG = "DEBUG".asInstanceOf[LogLevel]
-
-    @inline def values = js.Array(INFO, WARN, ERROR, DEBUG)
-  }
-
   /** When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
     */
   @js.native
@@ -2547,17 +2483,6 @@ package object kinesisanalyticsv2 {
       JSONMappingParameters.foreach(__v => __obj.updateDynamic("JSONMappingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MappingParameters]
     }
-  }
-
-  @js.native
-  sealed trait MetricsLevel extends js.Any
-  object MetricsLevel {
-    val APPLICATION = "APPLICATION".asInstanceOf[MetricsLevel]
-    val TASK = "TASK".asInstanceOf[MetricsLevel]
-    val OPERATOR = "OPERATOR".asInstanceOf[MetricsLevel]
-    val PARALLELISM = "PARALLELISM".asInstanceOf[MetricsLevel]
-
-    @inline def values = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
   }
 
   /** Describes configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
@@ -2891,15 +2816,6 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  @js.native
-  sealed trait RecordFormatType extends js.Any
-  object RecordFormatType {
-    val JSON = "JSON".asInstanceOf[RecordFormatType]
-    val CSV = "CSV".asInstanceOf[RecordFormatType]
-
-    @inline def values = js.Array(JSON, CSV)
-  }
-
   /** For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
     */
   @js.native
@@ -3048,17 +2964,6 @@ package object kinesisanalyticsv2 {
       FlinkRunConfiguration.foreach(__v => __obj.updateDynamic("FlinkRunConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunConfigurationUpdate]
     }
-  }
-
-  @js.native
-  sealed trait RuntimeEnvironment extends js.Any
-  object RuntimeEnvironment {
-    val `SQL-1_0` = "SQL-1_0".asInstanceOf[RuntimeEnvironment]
-    val `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
-    val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
-    val `FLINK-1_11` = "FLINK-1_11".asInstanceOf[RuntimeEnvironment]
-
-    @inline def values = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
   }
 
   /** Describes the location of a Flink-based Kinesis Data Analytics application's code stored in an S3 bucket.
@@ -3254,17 +3159,6 @@ package object kinesisanalyticsv2 {
       SnapshotCreationTimestamp.foreach(__v => __obj.updateDynamic("SnapshotCreationTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SnapshotDetails]
     }
-  }
-
-  @js.native
-  sealed trait SnapshotStatus extends js.Any
-  object SnapshotStatus {
-    val CREATING = "CREATING".asInstanceOf[SnapshotStatus]
-    val READY = "READY".asInstanceOf[SnapshotStatus]
-    val DELETING = "DELETING".asInstanceOf[SnapshotStatus]
-    val FAILED = "FAILED".asInstanceOf[SnapshotStatus]
-
-    @inline def values = js.Array(CREATING, READY, DELETING, FAILED)
   }
 
   /** For a SQL-based Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
@@ -3583,14 +3477,6 @@ package object kinesisanalyticsv2 {
       )
       __obj.asInstanceOf[UpdateApplicationResponse]
     }
-  }
-
-  @js.native
-  sealed trait UrlType extends js.Any
-  object UrlType {
-    val FLINK_DASHBOARD_URL = "FLINK_DASHBOARD_URL".asInstanceOf[UrlType]
-
-    @inline def values = js.Array(FLINK_DASHBOARD_URL)
   }
 
   /** Describes the parameters of a VPC used by the application.

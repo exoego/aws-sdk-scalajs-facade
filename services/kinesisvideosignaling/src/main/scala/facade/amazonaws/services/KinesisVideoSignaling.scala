@@ -147,12 +147,4 @@ package object kinesisvideosignaling {
       __obj.asInstanceOf[SendAlexaOfferToMasterResponse]
     }
   }
-
-  @js.native
-  sealed trait Service extends js.Any
-  object Service {
-    val TURN = "TURN".asInstanceOf[Service]
-
-    @inline def values = js.Array(TURN)
-  }
 }

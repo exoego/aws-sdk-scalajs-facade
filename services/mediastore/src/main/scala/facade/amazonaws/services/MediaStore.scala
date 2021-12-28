@@ -125,25 +125,6 @@ package object mediastore {
     }
   }
 
-  @js.native
-  sealed trait ContainerLevelMetrics extends js.Any
-  object ContainerLevelMetrics {
-    val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
-    val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
-  @js.native
-  sealed trait ContainerStatus extends js.Any
-  object ContainerStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
-    val CREATING = "CREATING".asInstanceOf[ContainerStatus]
-    val DELETING = "DELETING".asInstanceOf[ContainerStatus]
-
-    @inline def values = js.Array(ACTIVE, CREATING, DELETING)
-  }
-
   /** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
     */
   @js.native
@@ -593,17 +574,6 @@ package object mediastore {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
-  }
-
-  @js.native
-  sealed trait MethodName extends js.Any
-  object MethodName {
-    val PUT = "PUT".asInstanceOf[MethodName]
-    val GET = "GET".asInstanceOf[MethodName]
-    val DELETE = "DELETE".asInstanceOf[MethodName]
-    val HEAD = "HEAD".asInstanceOf[MethodName]
-
-    @inline def values = js.Array(PUT, GET, DELETE, HEAD)
   }
 
   /** The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for. To view examples of how to construct a metric policy for your use case, see [[https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html|Example Metric Policies]].

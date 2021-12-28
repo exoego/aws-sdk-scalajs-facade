@@ -207,28 +207,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait AgentUpdateStatus extends js.Any
-  object AgentUpdateStatus {
-    val PENDING = "PENDING".asInstanceOf[AgentUpdateStatus]
-    val STAGING = "STAGING".asInstanceOf[AgentUpdateStatus]
-    val STAGED = "STAGED".asInstanceOf[AgentUpdateStatus]
-    val UPDATING = "UPDATING".asInstanceOf[AgentUpdateStatus]
-    val UPDATED = "UPDATED".asInstanceOf[AgentUpdateStatus]
-    val FAILED = "FAILED".asInstanceOf[AgentUpdateStatus]
-
-    @inline def values = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
-  }
-
-  @js.native
-  sealed trait AssignPublicIp extends js.Any
-  object AssignPublicIp {
-    val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-    val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
   /** An object representing a container instance or task attachment.
     */
   @js.native
@@ -416,23 +394,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait CapacityProviderField extends js.Any
-  object CapacityProviderField {
-    val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
-
-    @inline def values = js.Array(TAGS)
-  }
-
-  @js.native
-  sealed trait CapacityProviderStatus extends js.Any
-  object CapacityProviderStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE)
-  }
-
   /** The details of a capacity provider strategy. A capacity provider strategy can be set when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity provider strategy for a cluster with the <a>CreateCluster</a> API. Only capacity providers that are already associated with a cluster and have an <code>ACTIVE</code> or <code>UPDATING</code> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation. To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a
     * capacity provider strategy.
     */
@@ -458,19 +419,6 @@ package object ecs {
       weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CapacityProviderStrategyItem]
     }
-  }
-
-  @js.native
-  sealed trait CapacityProviderUpdateStatus extends js.Any
-  object CapacityProviderUpdateStatus {
-    val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
-    val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
-    val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
-    val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
-    val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
-
-    @inline def values = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED)
   }
 
   /** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
@@ -551,18 +499,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait ClusterField extends js.Any
-  object ClusterField {
-    val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[ClusterField]
-    val CONFIGURATIONS = "CONFIGURATIONS".asInstanceOf[ClusterField]
-    val SETTINGS = "SETTINGS".asInstanceOf[ClusterField]
-    val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
-    val TAGS = "TAGS".asInstanceOf[ClusterField]
-
-    @inline def values = js.Array(ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS)
-  }
-
   /** The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster.
     */
   @js.native
@@ -582,32 +518,6 @@ package object ecs {
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterSetting]
     }
-  }
-
-  @js.native
-  sealed trait ClusterSettingName extends js.Any
-  object ClusterSettingName {
-    val containerInsights = "containerInsights".asInstanceOf[ClusterSettingName]
-
-    @inline def values = js.Array(containerInsights)
-  }
-
-  @js.native
-  sealed trait Compatibility extends js.Any
-  object Compatibility {
-    val EC2 = "EC2".asInstanceOf[Compatibility]
-    val FARGATE = "FARGATE".asInstanceOf[Compatibility]
-
-    @inline def values = js.Array(EC2, FARGATE)
-  }
-
-  @js.native
-  sealed trait Connectivity extends js.Any
-  object Connectivity {
-    val CONNECTED = "CONNECTED".asInstanceOf[Connectivity]
-    val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
-
-    @inline def values = js.Array(CONNECTED, DISCONNECTED)
   }
 
   /** A Docker container that is part of a task.
@@ -674,17 +584,6 @@ package object ecs {
       taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Container]
     }
-  }
-
-  @js.native
-  sealed trait ContainerCondition extends js.Any
-  object ContainerCondition {
-    val START = "START".asInstanceOf[ContainerCondition]
-    val COMPLETE = "COMPLETE".asInstanceOf[ContainerCondition]
-    val SUCCESS = "SUCCESS".asInstanceOf[ContainerCondition]
-    val HEALTHY = "HEALTHY".asInstanceOf[ContainerCondition]
-
-    @inline def values = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
   }
 
   /** Container definitions are used in task definitions to describe the different containers that are launched as part of a task.
@@ -908,26 +807,6 @@ package object ecs {
       versionInfo.foreach(__v => __obj.updateDynamic("versionInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerInstance]
     }
-  }
-
-  @js.native
-  sealed trait ContainerInstanceField extends js.Any
-  object ContainerInstanceField {
-    val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
-
-    @inline def values = js.Array(TAGS)
-  }
-
-  @js.native
-  sealed trait ContainerInstanceStatus extends js.Any
-  object ContainerInstanceStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[ContainerInstanceStatus]
-    val DRAINING = "DRAINING".asInstanceOf[ContainerInstanceStatus]
-    val REGISTERING = "REGISTERING".asInstanceOf[ContainerInstanceStatus]
-    val DEREGISTERING = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
-    val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
-
-    @inline def values = js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
   }
 
   /** The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.
@@ -1608,26 +1487,6 @@ package object ecs {
   }
 
   @js.native
-  sealed trait DeploymentControllerType extends js.Any
-  object DeploymentControllerType {
-    val ECS = "ECS".asInstanceOf[DeploymentControllerType]
-    val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
-    val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
-
-    @inline def values = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
-  }
-
-  @js.native
-  sealed trait DeploymentRolloutState extends js.Any
-  object DeploymentRolloutState {
-    val COMPLETED = "COMPLETED".asInstanceOf[DeploymentRolloutState]
-    val FAILED = "FAILED".asInstanceOf[DeploymentRolloutState]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentRolloutState]
-
-    @inline def values = js.Array(COMPLETED, FAILED, IN_PROGRESS)
-  }
-
-  @js.native
   trait DeregisterContainerInstanceRequest extends js.Object {
     var containerInstance: String
     var cluster: js.UndefOr[String]
@@ -2000,16 +1859,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait DesiredStatus extends js.Any
-  object DesiredStatus {
-    val RUNNING = "RUNNING".asInstanceOf[DesiredStatus]
-    val PENDING = "PENDING".asInstanceOf[DesiredStatus]
-    val STOPPED = "STOPPED".asInstanceOf[DesiredStatus]
-
-    @inline def values = js.Array(RUNNING, PENDING, STOPPED)
-  }
-
   /** An object representing a container instance host device.
     */
   @js.native
@@ -2034,16 +1883,6 @@ package object ecs {
       permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
     }
-  }
-
-  @js.native
-  sealed trait DeviceCgroupPermission extends js.Any
-  object DeviceCgroupPermission {
-    val read = "read".asInstanceOf[DeviceCgroupPermission]
-    val write = "write".asInstanceOf[DeviceCgroupPermission]
-    val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
-
-    @inline def values = js.Array(read, write, mknod)
   }
 
   @js.native
@@ -2135,24 +1974,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait EFSAuthorizationConfigIAM extends js.Any
-  object EFSAuthorizationConfigIAM {
-    val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
-    val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
-  @js.native
-  sealed trait EFSTransitEncryption extends js.Any
-  object EFSTransitEncryption {
-    val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
-    val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
   /** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html|Amazon EFS Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
@@ -2208,14 +2029,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait EnvironmentFileType extends js.Any
-  object EnvironmentFileType {
-    val s3 = "s3".asInstanceOf[EnvironmentFileType]
-
-    @inline def values = js.Array(s3)
-  }
-
   /** The details of the execute command configuration.
     */
   @js.native
@@ -2268,16 +2081,6 @@ package object ecs {
       s3KeyPrefix.foreach(__v => __obj.updateDynamic("s3KeyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteCommandLogConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait ExecuteCommandLogging extends js.Any
-  object ExecuteCommandLogging {
-    val NONE = "NONE".asInstanceOf[ExecuteCommandLogging]
-    val DEFAULT = "DEFAULT".asInstanceOf[ExecuteCommandLogging]
-    val OVERRIDE = "OVERRIDE".asInstanceOf[ExecuteCommandLogging]
-
-    @inline def values = js.Array(NONE, DEFAULT, OVERRIDE)
   }
 
   @js.native
@@ -2435,15 +2238,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait FirelensConfigurationType extends js.Any
-  object FirelensConfigurationType {
-    val fluentd = "fluentd".asInstanceOf[FirelensConfigurationType]
-    val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
-
-    @inline def values = js.Array(fluentd, fluentbit)
-  }
-
   /** An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile). You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console. The following describes the possible <code>healthStatus</code> values for a container: * <code>HEALTHY</code>-The container health check has passed successfully. * <code>UNHEALTHY</code>-The container health check has failed. * <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined. The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task. * <code>HEALTHY</code>-All
     * essential containers within the task have passed their health checks. * <code>UNHEALTHY</code>-One or more essential containers have failed their health check. * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined. If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it. The following are notes about container health check support: * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]]. * Container health checks are supported for Fargate tasks if you are using platform version
     * 1.1.0 or greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|AWS Fargate Platform Versions]]. * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
@@ -2476,16 +2270,6 @@ package object ecs {
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheck]
     }
-  }
-
-  @js.native
-  sealed trait HealthStatus extends js.Any
-  object HealthStatus {
-    val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
-    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
-    val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
-
-    @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
   }
 
   /** Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
@@ -2571,16 +2355,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait IpcMode extends js.Any
-  object IpcMode {
-    val host = "host".asInstanceOf[IpcMode]
-    val task = "task".asInstanceOf[IpcMode]
-    val none = "none".asInstanceOf[IpcMode]
-
-    @inline def values = js.Array(host, task, none)
-  }
-
   /** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see [[https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities|Runtime privilege and Linux capabilities]] in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the [[http://man7.org/linux/man-pages/man7/capabilities.7.html|capabilities(7)]] Linux manual page.
     */
   @js.native
@@ -2621,15 +2395,6 @@ package object ecs {
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyValuePair]
     }
-  }
-
-  @js.native
-  sealed trait LaunchType extends js.Any
-  object LaunchType {
-    val EC2 = "EC2".asInstanceOf[LaunchType]
-    val FARGATE = "FARGATE".asInstanceOf[LaunchType]
-
-    @inline def values = js.Array(EC2, FARGATE)
   }
 
   /** Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>.
@@ -3140,21 +2905,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait LogDriver extends js.Any
-  object LogDriver {
-    val `json-file` = "json-file".asInstanceOf[LogDriver]
-    val syslog = "syslog".asInstanceOf[LogDriver]
-    val journald = "journald".asInstanceOf[LogDriver]
-    val gelf = "gelf".asInstanceOf[LogDriver]
-    val fluentd = "fluentd".asInstanceOf[LogDriver]
-    val awslogs = "awslogs".asInstanceOf[LogDriver]
-    val splunk = "splunk".asInstanceOf[LogDriver]
-    val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
-
-    @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
-  }
-
   /** Details about the managed agent status for the container.
     */
   @js.native
@@ -3180,14 +2930,6 @@ package object ecs {
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedAgent]
     }
-  }
-
-  @js.native
-  sealed trait ManagedAgentName extends js.Any
-  object ManagedAgentName {
-    val ExecuteCommandAgent = "ExecuteCommandAgent".asInstanceOf[ManagedAgentName]
-
-    @inline def values = js.Array(ExecuteCommandAgent)
   }
 
   /** An object representing a change in state for a managed agent.
@@ -3247,24 +2989,6 @@ package object ecs {
       targetCapacity.foreach(__v => __obj.updateDynamic("targetCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedScaling]
     }
-  }
-
-  @js.native
-  sealed trait ManagedScalingStatus extends js.Any
-  object ManagedScalingStatus {
-    val ENABLED = "ENABLED".asInstanceOf[ManagedScalingStatus]
-    val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
-  }
-
-  @js.native
-  sealed trait ManagedTerminationProtection extends js.Any
-  object ManagedTerminationProtection {
-    val ENABLED = "ENABLED".asInstanceOf[ManagedTerminationProtection]
-    val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /** Details on a volume mount point that is used in a container definition.
@@ -3360,26 +3084,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait NetworkMode extends js.Any
-  object NetworkMode {
-    val bridge = "bridge".asInstanceOf[NetworkMode]
-    val host = "host".asInstanceOf[NetworkMode]
-    val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
-    val none = "none".asInstanceOf[NetworkMode]
-
-    @inline def values = js.Array(bridge, host, awsvpc, none)
-  }
-
-  @js.native
-  sealed trait PidMode extends js.Any
-  object PidMode {
-    val host = "host".asInstanceOf[PidMode]
-    val task = "task".asInstanceOf[PidMode]
-
-    @inline def values = js.Array(host, task)
-  }
-
   /** An object representing a constraint on task placement. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
     * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
@@ -3403,15 +3107,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait PlacementConstraintType extends js.Any
-  object PlacementConstraintType {
-    val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
-    val memberOf = "memberOf".asInstanceOf[PlacementConstraintType]
-
-    @inline def values = js.Array(distinctInstance, memberOf)
-  }
-
   /** The task placement strategy for a task or service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html|Task Placement Strategies]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
@@ -3431,16 +3126,6 @@ package object ecs {
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlacementStrategy]
     }
-  }
-
-  @js.native
-  sealed trait PlacementStrategyType extends js.Any
-  object PlacementStrategyType {
-    val random = "random".asInstanceOf[PlacementStrategyType]
-    val spread = "spread".asInstanceOf[PlacementStrategyType]
-    val binpack = "binpack".asInstanceOf[PlacementStrategyType]
-
-    @inline def values = js.Array(random, spread, binpack)
   }
 
   /** The devices that are available on the container instance. The only supported device type is a GPU.
@@ -3463,14 +3148,6 @@ package object ecs {
       )
       __obj.asInstanceOf[PlatformDevice]
     }
-  }
-
-  @js.native
-  sealed trait PlatformDeviceType extends js.Any
-  object PlatformDeviceType {
-    val GPU = "GPU".asInstanceOf[PlatformDeviceType]
-
-    @inline def values = js.Array(GPU)
   }
 
   /** Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition. If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
@@ -3497,15 +3174,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait PropagateTags extends js.Any
-  object PropagateTags {
-    val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
-    val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
-
-    @inline def values = js.Array(TASK_DEFINITION, SERVICE)
-  }
-
   /** The configuration details for the App Mesh proxy. For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]]
     */
   @js.native
@@ -3530,14 +3198,6 @@ package object ecs {
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProxyConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait ProxyConfigurationType extends js.Any
-  object ProxyConfigurationType {
-    val APPMESH = "APPMESH".asInstanceOf[ProxyConfigurationType]
-
-    @inline def values = js.Array(APPMESH)
   }
 
   @js.native
@@ -3902,15 +3562,6 @@ package object ecs {
   }
 
   @js.native
-  sealed trait ResourceType extends js.Any
-  object ResourceType {
-    val GPU = "GPU".asInstanceOf[ResourceType]
-    val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
-
-    @inline def values = js.Array(GPU, InferenceAccelerator)
-  }
-
-  @js.native
   trait RunTaskRequest extends js.Object {
     var taskDefinition: String
     var capacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
@@ -4014,32 +3665,6 @@ package object ecs {
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Scale]
     }
-  }
-
-  @js.native
-  sealed trait ScaleUnit extends js.Any
-  object ScaleUnit {
-    val PERCENT = "PERCENT".asInstanceOf[ScaleUnit]
-
-    @inline def values = js.Array(PERCENT)
-  }
-
-  @js.native
-  sealed trait SchedulingStrategy extends js.Any
-  object SchedulingStrategy {
-    val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
-    val DAEMON = "DAEMON".asInstanceOf[SchedulingStrategy]
-
-    @inline def values = js.Array(REPLICA, DAEMON)
-  }
-
-  @js.native
-  sealed trait Scope extends js.Any
-  object Scope {
-    val task = "task".asInstanceOf[Scope]
-    val shared = "shared".asInstanceOf[Scope]
-
-    @inline def values = js.Array(task, shared)
   }
 
   /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -4193,14 +3818,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait ServiceField extends js.Any
-  object ServiceField {
-    val TAGS = "TAGS".asInstanceOf[ServiceField]
-
-    @inline def values = js.Array(TAGS)
-  }
-
   /** Details of the service registry.
     */
   @js.native
@@ -4274,36 +3891,6 @@ package object ecs {
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Setting]
     }
-  }
-
-  @js.native
-  sealed trait SettingName extends js.Any
-  object SettingName {
-    val serviceLongArnFormat = "serviceLongArnFormat".asInstanceOf[SettingName]
-    val taskLongArnFormat = "taskLongArnFormat".asInstanceOf[SettingName]
-    val containerInstanceLongArnFormat = "containerInstanceLongArnFormat".asInstanceOf[SettingName]
-    val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
-    val containerInsights = "containerInsights".asInstanceOf[SettingName]
-
-    @inline def values = js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights)
-  }
-
-  @js.native
-  sealed trait SortOrder extends js.Any
-  object SortOrder {
-    val ASC = "ASC".asInstanceOf[SortOrder]
-    val DESC = "DESC".asInstanceOf[SortOrder]
-
-    @inline def values = js.Array(ASC, DESC)
-  }
-
-  @js.native
-  sealed trait StabilityStatus extends js.Any
-  object StabilityStatus {
-    val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
-    val STABILIZING = "STABILIZING".asInstanceOf[StabilityStatus]
-
-    @inline def values = js.Array(STEADY_STATE, STABILIZING)
   }
 
   @js.native
@@ -4640,14 +4227,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait TargetType extends js.Any
-  object TargetType {
-    val `container-instance` = "container-instance".asInstanceOf[TargetType]
-
-    @inline def values = js.Array(`container-instance`)
-  }
-
   /** Details on a task in a cluster.
     */
   @js.native
@@ -4846,24 +4425,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait TaskDefinitionFamilyStatus extends js.Any
-  object TaskDefinitionFamilyStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
-    val ALL = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, ALL)
-  }
-
-  @js.native
-  sealed trait TaskDefinitionField extends js.Any
-  object TaskDefinitionField {
-    val TAGS = "TAGS".asInstanceOf[TaskDefinitionField]
-
-    @inline def values = js.Array(TAGS)
-  }
-
   /** An object representing a constraint on task placement in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task placement constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
     * '''Note:'''Task placement constraints are not supported for tasks run on AWS Fargate.
@@ -4885,31 +4446,6 @@ package object ecs {
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskDefinitionPlacementConstraint]
     }
-  }
-
-  @js.native
-  sealed trait TaskDefinitionPlacementConstraintType extends js.Any
-  object TaskDefinitionPlacementConstraintType {
-    val memberOf = "memberOf".asInstanceOf[TaskDefinitionPlacementConstraintType]
-
-    @inline def values = js.Array(memberOf)
-  }
-
-  @js.native
-  sealed trait TaskDefinitionStatus extends js.Any
-  object TaskDefinitionStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE)
-  }
-
-  @js.native
-  sealed trait TaskField extends js.Any
-  object TaskField {
-    val TAGS = "TAGS".asInstanceOf[TaskField]
-
-    @inline def values = js.Array(TAGS)
   }
 
   /** The overrides associated with a task.
@@ -5029,24 +4565,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait TaskSetField extends js.Any
-  object TaskSetField {
-    val TAGS = "TAGS".asInstanceOf[TaskSetField]
-
-    @inline def values = js.Array(TAGS)
-  }
-
-  @js.native
-  sealed trait TaskStopCode extends js.Any
-  object TaskStopCode {
-    val TaskFailedToStart = "TaskFailedToStart".asInstanceOf[TaskStopCode]
-    val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
-    val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
-
-    @inline def values = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
-  }
-
   /** The container path, mount options, and size of the tmpfs mount.
     */
   @js.native
@@ -5073,15 +4591,6 @@ package object ecs {
     }
   }
 
-  @js.native
-  sealed trait TransportProtocol extends js.Any
-  object TransportProtocol {
-    val tcp = "tcp".asInstanceOf[TransportProtocol]
-    val udp = "udp".asInstanceOf[TransportProtocol]
-
-    @inline def values = js.Array(tcp, udp)
-  }
-
   /** The <code>ulimit</code> settings to pass to the container.
     */
   @js.native
@@ -5105,28 +4614,6 @@ package object ecs {
       )
       __obj.asInstanceOf[Ulimit]
     }
-  }
-
-  @js.native
-  sealed trait UlimitName extends js.Any
-  object UlimitName {
-    val core = "core".asInstanceOf[UlimitName]
-    val cpu = "cpu".asInstanceOf[UlimitName]
-    val data = "data".asInstanceOf[UlimitName]
-    val fsize = "fsize".asInstanceOf[UlimitName]
-    val locks = "locks".asInstanceOf[UlimitName]
-    val memlock = "memlock".asInstanceOf[UlimitName]
-    val msgqueue = "msgqueue".asInstanceOf[UlimitName]
-    val nice = "nice".asInstanceOf[UlimitName]
-    val nofile = "nofile".asInstanceOf[UlimitName]
-    val nproc = "nproc".asInstanceOf[UlimitName]
-    val rss = "rss".asInstanceOf[UlimitName]
-    val rtprio = "rtprio".asInstanceOf[UlimitName]
-    val rttime = "rttime".asInstanceOf[UlimitName]
-    val sigpending = "sigpending".asInstanceOf[UlimitName]
-    val stack = "stack".asInstanceOf[UlimitName]
-
-    @inline def values = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
   }
 
   @js.native

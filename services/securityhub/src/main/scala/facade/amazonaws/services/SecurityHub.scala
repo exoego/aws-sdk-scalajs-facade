@@ -508,15 +508,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait AdminStatus extends js.Any
-  object AdminStatus {
-    val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
-    val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
-
-    @inline def values = js.Array(ENABLED, DISABLE_IN_PROGRESS)
-  }
-
   /** Information about an Availability Zone.
     */
   @js.native
@@ -3233,15 +3224,6 @@ package object securityhub {
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsIamAccessKeySessionContextSessionIssuer]
     }
-  }
-
-  @js.native
-  sealed trait AwsIamAccessKeyStatus extends js.Any
-  object AwsIamAccessKeyStatus {
-    val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
-    val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
-
-    @inline def values = js.Array(Active, Inactive)
   }
 
   /** A managed policy that is attached to an IAM principal.
@@ -6485,17 +6467,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait ComplianceStatus extends js.Any
-  object ComplianceStatus {
-    val PASSED = "PASSED".asInstanceOf[ComplianceStatus]
-    val WARNING = "WARNING".asInstanceOf[ComplianceStatus]
-    val FAILED = "FAILED".asInstanceOf[ComplianceStatus]
-    val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
-
-    @inline def values = js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE)
-  }
-
   /** Container details related to a finding.
     */
   @js.native
@@ -6521,15 +6492,6 @@ package object securityhub {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDetails]
     }
-  }
-
-  @js.native
-  sealed trait ControlStatus extends js.Any
-  object ControlStatus {
-    val ENABLED = "ENABLED".asInstanceOf[ControlStatus]
-    val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
-
-    @inline def values = js.Array(ENABLED, DISABLED)
   }
 
   /** Information about a country.
@@ -6802,14 +6764,6 @@ package object securityhub {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateRange]
     }
-  }
-
-  @js.native
-  sealed trait DateRangeUnit extends js.Any
-  object DateRangeUnit {
-    val DAYS = "DAYS".asInstanceOf[DateRangeUnit]
-
-    @inline def values = js.Array(DAYS)
   }
 
   @js.native
@@ -7932,16 +7886,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait IntegrationType extends js.Any
-  object IntegrationType {
-    val SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
-    val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
-    val UPDATE_FINDINGS_IN_SECURITY_HUB = "UPDATE_FINDINGS_IN_SECURITY_HUB".asInstanceOf[IntegrationType]
-
-    @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB, UPDATE_FINDINGS_IN_SECURITY_HUB)
-  }
-
   /** Details about an invitation.
     */
   @js.native
@@ -8327,54 +8271,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait MalwareState extends js.Any
-  object MalwareState {
-    val OBSERVED = "OBSERVED".asInstanceOf[MalwareState]
-    val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
-    val REMOVED = "REMOVED".asInstanceOf[MalwareState]
-
-    @inline def values = js.Array(OBSERVED, REMOVAL_FAILED, REMOVED)
-  }
-
-  @js.native
-  sealed trait MalwareType extends js.Any
-  object MalwareType {
-    val ADWARE = "ADWARE".asInstanceOf[MalwareType]
-    val BLENDED_THREAT = "BLENDED_THREAT".asInstanceOf[MalwareType]
-    val BOTNET_AGENT = "BOTNET_AGENT".asInstanceOf[MalwareType]
-    val COIN_MINER = "COIN_MINER".asInstanceOf[MalwareType]
-    val EXPLOIT_KIT = "EXPLOIT_KIT".asInstanceOf[MalwareType]
-    val KEYLOGGER = "KEYLOGGER".asInstanceOf[MalwareType]
-    val MACRO = "MACRO".asInstanceOf[MalwareType]
-    val POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED".asInstanceOf[MalwareType]
-    val SPYWARE = "SPYWARE".asInstanceOf[MalwareType]
-    val RANSOMWARE = "RANSOMWARE".asInstanceOf[MalwareType]
-    val REMOTE_ACCESS = "REMOTE_ACCESS".asInstanceOf[MalwareType]
-    val ROOTKIT = "ROOTKIT".asInstanceOf[MalwareType]
-    val TROJAN = "TROJAN".asInstanceOf[MalwareType]
-    val VIRUS = "VIRUS".asInstanceOf[MalwareType]
-    val WORM = "WORM".asInstanceOf[MalwareType]
-
-    @inline def values = js.Array(
-      ADWARE,
-      BLENDED_THREAT,
-      BOTNET_AGENT,
-      COIN_MINER,
-      EXPLOIT_KIT,
-      KEYLOGGER,
-      MACRO,
-      POTENTIALLY_UNWANTED,
-      SPYWARE,
-      RANSOMWARE,
-      REMOTE_ACCESS,
-      ROOTKIT,
-      TROJAN,
-      VIRUS,
-      WORM
-    )
-  }
-
   /** A map filter for querying findings. Each map filter provides the field to check, the value to look for, and the comparison operator.
     */
   @js.native
@@ -8397,15 +8293,6 @@ package object securityhub {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MapFilter]
     }
-  }
-
-  @js.native
-  sealed trait MapFilterComparison extends js.Any
-  object MapFilterComparison {
-    val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
-    val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[MapFilterComparison]
-
-    @inline def values = js.Array(EQUALS, NOT_EQUALS)
   }
 
   /** The details about a member account.
@@ -8526,15 +8413,6 @@ package object securityhub {
       RemotePortDetails.foreach(__v => __obj.updateDynamic("RemotePortDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkConnectionAction]
     }
-  }
-
-  @js.native
-  sealed trait NetworkDirection extends js.Any
-  object NetworkDirection {
-    val IN = "IN".asInstanceOf[NetworkDirection]
-    val OUT = "OUT".asInstanceOf[NetworkDirection]
-
-    @inline def values = js.Array(IN, OUT)
   }
 
   /** Details about a network path component that occurs before or after the current component.
@@ -8732,16 +8610,6 @@ package object securityhub {
       PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Page]
     }
-  }
-
-  @js.native
-  sealed trait Partition extends js.Any
-  object Partition {
-    val aws = "aws".asInstanceOf[Partition]
-    val `aws-cn` = "aws-cn".asInstanceOf[Partition]
-    val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
-
-    @inline def values = js.Array(aws, `aws-cn`, `aws-us-gov`)
   }
 
   /** Provides an overview of the patch compliance status for an instance against a selected compliance standard.
@@ -9001,15 +8869,6 @@ package object securityhub {
       RecordIndex.foreach(__v => __obj.updateDynamic("RecordIndex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
-  }
-
-  @js.native
-  sealed trait RecordState extends js.Any
-  object RecordState {
-    val ACTIVE = "ACTIVE".asInstanceOf[RecordState]
-    val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
-
-    @inline def values = js.Array(ACTIVE, ARCHIVED)
   }
 
   /** Details about a related finding.
@@ -9330,29 +9189,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait SeverityLabel extends js.Any
-  object SeverityLabel {
-    val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[SeverityLabel]
-    val LOW = "LOW".asInstanceOf[SeverityLabel]
-    val MEDIUM = "MEDIUM".asInstanceOf[SeverityLabel]
-    val HIGH = "HIGH".asInstanceOf[SeverityLabel]
-    val CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
-
-    @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL)
-  }
-
-  @js.native
-  sealed trait SeverityRating extends js.Any
-  object SeverityRating {
-    val LOW = "LOW".asInstanceOf[SeverityRating]
-    val MEDIUM = "MEDIUM".asInstanceOf[SeverityRating]
-    val HIGH = "HIGH".asInstanceOf[SeverityRating]
-    val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
-
-    @inline def values = js.Array(LOW, MEDIUM, HIGH, CRITICAL)
-  }
-
   /** Updates to the severity information for a finding.
     */
   @js.native
@@ -9428,15 +9264,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait SortOrder extends js.Any
-  object SortOrder {
-    val asc = "asc".asInstanceOf[SortOrder]
-    val desc = "desc".asInstanceOf[SortOrder]
-
-    @inline def values = js.Array(asc, desc)
-  }
-
   /** Provides information about a specific standard.
     */
   @js.native
@@ -9507,18 +9334,6 @@ package object securityhub {
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StandardsControl]
     }
-  }
-
-  @js.native
-  sealed trait StandardsStatus extends js.Any
-  object StandardsStatus {
-    val PENDING = "PENDING".asInstanceOf[StandardsStatus]
-    val READY = "READY".asInstanceOf[StandardsStatus]
-    val FAILED = "FAILED".asInstanceOf[StandardsStatus]
-    val DELETING = "DELETING".asInstanceOf[StandardsStatus]
-    val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
-
-    @inline def values = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
   }
 
   /** A resource that represents your subscription to a supported standard.
@@ -9617,17 +9432,6 @@ package object securityhub {
   }
 
   @js.native
-  sealed trait StringFilterComparison extends js.Any
-  object StringFilterComparison {
-    val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
-    val PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
-    val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[StringFilterComparison]
-    val PREFIX_NOT_EQUALS = "PREFIX_NOT_EQUALS".asInstanceOf[StringFilterComparison]
-
-    @inline def values = js.Array(EQUALS, PREFIX, NOT_EQUALS, PREFIX_NOT_EQUALS)
-  }
-
-  @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
     var Tags: TagMap
@@ -9689,37 +9493,6 @@ package object securityhub {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThreatIntelIndicator]
     }
-  }
-
-  @js.native
-  sealed trait ThreatIntelIndicatorCategory extends js.Any
-  object ThreatIntelIndicatorCategory {
-    val BACKDOOR = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
-    val CARD_STEALER = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
-    val COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL".asInstanceOf[ThreatIntelIndicatorCategory]
-    val DROP_SITE = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-    val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-    val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
-
-    @inline def values = js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
-  }
-
-  @js.native
-  sealed trait ThreatIntelIndicatorType extends js.Any
-  object ThreatIntelIndicatorType {
-    val DOMAIN = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
-    val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_MD5 = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA1 = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA256 = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
-    val HASH_SHA512 = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
-    val IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-    val MUTEX = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
-    val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
-    val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
-
-    @inline def values = js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL)
   }
 
   @js.native
@@ -9951,17 +9724,6 @@ package object securityhub {
     }
   }
 
-  @js.native
-  sealed trait VerificationState extends js.Any
-  object VerificationState {
-    val UNKNOWN = "UNKNOWN".asInstanceOf[VerificationState]
-    val TRUE_POSITIVE = "TRUE_POSITIVE".asInstanceOf[VerificationState]
-    val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
-    val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
-
-    @inline def values = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
-  }
-
   /** A vulnerability associated with a finding.
     */
   @js.native
@@ -10099,30 +9861,6 @@ package object securityhub {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workflow]
     }
-  }
-
-  @deprecated("This field is deprecated, use Workflow.Status instead.", "forever")
-  @js.native
-  sealed trait WorkflowState extends js.Any
-  object WorkflowState {
-    val NEW = "NEW".asInstanceOf[WorkflowState]
-    val ASSIGNED = "ASSIGNED".asInstanceOf[WorkflowState]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkflowState]
-    val DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
-    val RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
-
-    @inline def values = js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
-  }
-
-  @js.native
-  sealed trait WorkflowStatus extends js.Any
-  object WorkflowStatus {
-    val NEW = "NEW".asInstanceOf[WorkflowStatus]
-    val NOTIFIED = "NOTIFIED".asInstanceOf[WorkflowStatus]
-    val RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
-    val SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
-
-    @inline def values = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
   }
 
   /** Used to update information about the investigation into the finding.
