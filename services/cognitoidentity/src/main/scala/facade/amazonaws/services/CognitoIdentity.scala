@@ -57,7 +57,7 @@ package object cognitoidentity {
   type UnprocessedIdentityIdList = js.Array[UnprocessedIdentityId]
   type UseDefaults = Boolean
 
-  implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
+  final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
 
     @inline def createIdentityPoolFuture(params: CreateIdentityPoolInput): Future[IdentityPool] = service.createIdentityPool(params).promise().toFuture
     @inline def deleteIdentitiesFuture(params: DeleteIdentitiesInput): Future[DeleteIdentitiesResponse] = service.deleteIdentities(params).promise().toFuture
@@ -84,9 +84,7 @@ package object cognitoidentity {
     @inline def updateIdentityPoolFuture(params: IdentityPool): Future[IdentityPool] = service.updateIdentityPool(params).promise().toFuture
 
   }
-}
 
-package cognitoidentity {
   @js.native
   @JSImport("aws-sdk/clients/cognitoidentity", JSImport.Namespace, "AWS.CognitoIdentity")
   class CognitoIdentity() extends js.Object {
@@ -115,6 +113,11 @@ package cognitoidentity {
     def unlinkIdentity(params: UnlinkIdentityInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceResponse] = js.native
     def updateIdentityPool(params: IdentityPool): Request[IdentityPool] = js.native
+  }
+  object CognitoIdentity {
+    @inline implicit def toOps(service: CognitoIdentity): CognitoIdentityOps = {
+      new CognitoIdentityOps(service)
+    }
   }
 
   @js.native

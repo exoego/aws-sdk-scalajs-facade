@@ -33,7 +33,7 @@ package object mediastore {
   type TagValue = String
   type TimeStamp = js.Date
 
-  implicit final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
+  final class MediaStoreOps(private val service: MediaStore) extends AnyVal {
 
     @inline def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] = service.createContainer(params).promise().toFuture
     @inline def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] = service.deleteContainer(params).promise().toFuture
@@ -58,9 +58,7 @@ package object mediastore {
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package mediastore {
   @js.native
   @JSImport("aws-sdk/clients/mediastore", JSImport.Namespace, "AWS.MediaStore")
   class MediaStore() extends js.Object {
@@ -87,6 +85,11 @@ package mediastore {
     def stopAccessLogging(params: StopAccessLoggingInput): Request[StopAccessLoggingOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+  }
+  object MediaStore {
+    @inline implicit def toOps(service: MediaStore): MediaStoreOps = {
+      new MediaStoreOps(service)
+    }
   }
 
   /** This section describes operations that you can perform on an AWS Elemental MediaStore container.

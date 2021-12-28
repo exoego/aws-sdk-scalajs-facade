@@ -20,16 +20,14 @@ package object timestreamquery {
   type TimeSeriesDataPointList = js.Array[TimeSeriesDataPoint]
   type Timestamp = String
 
-  implicit final class TimestreamQueryOps(private val service: TimestreamQuery) extends AnyVal {
+  final class TimestreamQueryOps(private val service: TimestreamQuery) extends AnyVal {
 
     @inline def cancelQueryFuture(params: CancelQueryRequest): Future[CancelQueryResponse] = service.cancelQuery(params).promise().toFuture
     @inline def describeEndpointsFuture(params: DescribeEndpointsRequest): Future[DescribeEndpointsResponse] = service.describeEndpoints(params).promise().toFuture
     @inline def queryFuture(params: QueryRequest): Future[QueryResponse] = service.query(params).promise().toFuture
 
   }
-}
 
-package timestreamquery {
   @js.native
   @JSImport("aws-sdk/clients/timestreamquery", JSImport.Namespace, "AWS.TimestreamQuery")
   class TimestreamQuery() extends js.Object {
@@ -38,6 +36,11 @@ package timestreamquery {
     def cancelQuery(params: CancelQueryRequest): Request[CancelQueryResponse] = js.native
     def describeEndpoints(params: DescribeEndpointsRequest): Request[DescribeEndpointsResponse] = js.native
     def query(params: QueryRequest): Request[QueryResponse] = js.native
+  }
+  object TimestreamQuery {
+    @inline implicit def toOps(service: TimestreamQuery): TimestreamQueryOps = {
+      new TimestreamQueryOps(service)
+    }
   }
 
   @js.native

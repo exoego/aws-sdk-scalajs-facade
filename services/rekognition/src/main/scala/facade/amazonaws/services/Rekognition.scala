@@ -112,7 +112,7 @@ package object rekognition {
   type VersionNames = js.Array[VersionName]
   type VideoMetadataList = js.Array[VideoMetadata]
 
-  implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
+  final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
     @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] = service.compareFaces(params).promise().toFuture
     @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] = service.createCollection(params).promise().toFuture
@@ -167,9 +167,7 @@ package object rekognition {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package rekognition {
   @js.native
   @JSImport("aws-sdk/clients/rekognition", JSImport.Namespace, "AWS.Rekognition")
   class Rekognition() extends js.Object {
@@ -226,6 +224,11 @@ package rekognition {
     def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object Rekognition {
+    @inline implicit def toOps(service: Rekognition): RekognitionOps = {
+      new RekognitionOps(service)
+    }
   }
 
   /** Structure containing the estimated age range, in years, for a face. Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.

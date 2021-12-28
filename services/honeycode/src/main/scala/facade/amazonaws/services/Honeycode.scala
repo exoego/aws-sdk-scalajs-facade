@@ -53,7 +53,7 @@ package object honeycode {
   type VariableValueMap = js.Dictionary[VariableValue]
   type WorkbookCursor = Double
 
-  implicit final class HoneycodeOps(private val service: Honeycode) extends AnyVal {
+  final class HoneycodeOps(private val service: Honeycode) extends AnyVal {
 
     @inline def batchCreateTableRowsFuture(params: BatchCreateTableRowsRequest): Future[BatchCreateTableRowsResult] = service.batchCreateTableRows(params).promise().toFuture
     @inline def batchDeleteTableRowsFuture(params: BatchDeleteTableRowsRequest): Future[BatchDeleteTableRowsResult] = service.batchDeleteTableRows(params).promise().toFuture
@@ -69,9 +69,7 @@ package object honeycode {
     @inline def startTableDataImportJobFuture(params: StartTableDataImportJobRequest): Future[StartTableDataImportJobResult] = service.startTableDataImportJob(params).promise().toFuture
 
   }
-}
 
-package honeycode {
   @js.native
   @JSImport("aws-sdk/clients/honeycode", JSImport.Namespace, "AWS.Honeycode")
   class Honeycode() extends js.Object {
@@ -89,6 +87,11 @@ package honeycode {
     def listTables(params: ListTablesRequest): Request[ListTablesResult] = js.native
     def queryTableRows(params: QueryTableRowsRequest): Request[QueryTableRowsResult] = js.native
     def startTableDataImportJob(params: StartTableDataImportJobRequest): Request[StartTableDataImportJobResult] = js.native
+  }
+  object Honeycode {
+    @inline implicit def toOps(service: Honeycode): HoneycodeOps = {
+      new HoneycodeOps(service)
+    }
   }
 
   @js.native

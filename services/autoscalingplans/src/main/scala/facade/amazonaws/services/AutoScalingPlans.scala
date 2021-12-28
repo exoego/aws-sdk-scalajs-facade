@@ -41,7 +41,7 @@ package object autoscalingplans {
   type XmlStringMaxLen128 = String
   type XmlStringMaxLen256 = String
 
-  implicit final class AutoScalingPlansOps(private val service: AutoScalingPlans) extends AnyVal {
+  final class AutoScalingPlansOps(private val service: AutoScalingPlans) extends AnyVal {
 
     @inline def createScalingPlanFuture(params: CreateScalingPlanRequest): Future[CreateScalingPlanResponse] = service.createScalingPlan(params).promise().toFuture
     @inline def deleteScalingPlanFuture(params: DeleteScalingPlanRequest): Future[DeleteScalingPlanResponse] = service.deleteScalingPlan(params).promise().toFuture
@@ -51,9 +51,7 @@ package object autoscalingplans {
     @inline def updateScalingPlanFuture(params: UpdateScalingPlanRequest): Future[UpdateScalingPlanResponse] = service.updateScalingPlan(params).promise().toFuture
 
   }
-}
 
-package autoscalingplans {
   @js.native
   @JSImport("aws-sdk/clients/autoscalingplans", JSImport.Namespace, "AWS.AutoScalingPlans")
   class AutoScalingPlans() extends js.Object {
@@ -65,6 +63,11 @@ package autoscalingplans {
     def describeScalingPlans(params: DescribeScalingPlansRequest): Request[DescribeScalingPlansResponse] = js.native
     def getScalingPlanResourceForecastData(params: GetScalingPlanResourceForecastDataRequest): Request[GetScalingPlanResourceForecastDataResponse] = js.native
     def updateScalingPlan(params: UpdateScalingPlanRequest): Request[UpdateScalingPlanResponse] = js.native
+  }
+  object AutoScalingPlans {
+    @inline implicit def toOps(service: AutoScalingPlans): AutoScalingPlansOps = {
+      new AutoScalingPlansOps(service)
+    }
   }
 
   /** Represents an application source.

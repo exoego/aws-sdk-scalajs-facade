@@ -36,7 +36,7 @@ package object applicationautoscaling {
   type TimestampType = js.Date
   type XmlString = String
 
-  implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
+  final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
 
     @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] = service.deleteScalingPolicy(params).promise().toFuture
     @inline def deleteScheduledActionFuture(params: DeleteScheduledActionRequest): Future[DeleteScheduledActionResponse] = service.deleteScheduledAction(params).promise().toFuture
@@ -50,9 +50,7 @@ package object applicationautoscaling {
     @inline def registerScalableTargetFuture(params: RegisterScalableTargetRequest): Future[RegisterScalableTargetResponse] = service.registerScalableTarget(params).promise().toFuture
 
   }
-}
 
-package applicationautoscaling {
   @js.native
   @JSImport("aws-sdk/clients/applicationautoscaling", JSImport.Namespace, "AWS.ApplicationAutoScaling")
   class ApplicationAutoScaling() extends js.Object {
@@ -68,6 +66,11 @@ package applicationautoscaling {
     def putScalingPolicy(params: PutScalingPolicyRequest): Request[PutScalingPolicyResponse] = js.native
     def putScheduledAction(params: PutScheduledActionRequest): Request[PutScheduledActionResponse] = js.native
     def registerScalableTarget(params: RegisterScalableTargetRequest): Request[RegisterScalableTargetResponse] = js.native
+  }
+  object ApplicationAutoScaling {
+    @inline implicit def toOps(service: ApplicationAutoScaling): ApplicationAutoScalingOps = {
+      new ApplicationAutoScalingOps(service)
+    }
   }
 
   @js.native

@@ -53,7 +53,7 @@ package object support {
   type TrustedAdvisorCheckSummaryList = js.Array[TrustedAdvisorCheckSummary]
   type TrustedAdvisorResourceDetailList = js.Array[TrustedAdvisorResourceDetail]
 
-  implicit final class SupportOps(private val service: Support) extends AnyVal {
+  final class SupportOps(private val service: Support) extends AnyVal {
 
     @inline def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] = service.addAttachmentsToSet(params).promise().toFuture
     @inline def addCommunicationToCaseFuture(params: AddCommunicationToCaseRequest): Future[AddCommunicationToCaseResponse] = service.addCommunicationToCase(params).promise().toFuture
@@ -71,9 +71,7 @@ package object support {
     @inline def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] = service.resolveCase(params).promise().toFuture
 
   }
-}
 
-package support {
   @js.native
   @JSImport("aws-sdk/clients/support", JSImport.Namespace, "AWS.Support")
   class Support() extends js.Object {
@@ -93,6 +91,11 @@ package support {
     def describeTrustedAdvisorChecks(params: DescribeTrustedAdvisorChecksRequest): Request[DescribeTrustedAdvisorChecksResponse] = js.native
     def refreshTrustedAdvisorCheck(params: RefreshTrustedAdvisorCheckRequest): Request[RefreshTrustedAdvisorCheckResponse] = js.native
     def resolveCase(params: ResolveCaseRequest): Request[ResolveCaseResponse] = js.native
+  }
+  object Support {
+    @inline implicit def toOps(service: Support): SupportOps = {
+      new SupportOps(service)
+    }
   }
 
   @js.native

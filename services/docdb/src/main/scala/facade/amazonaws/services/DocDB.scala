@@ -44,7 +44,7 @@ package object docdb {
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class DocDBOps(private val service: DocDB) extends AnyVal {
+  final class DocDBOps(private val service: DocDB) extends AnyVal {
 
     @inline def addSourceIdentifierToSubscriptionFuture(params: AddSourceIdentifierToSubscriptionMessage): Future[AddSourceIdentifierToSubscriptionResult] = service.addSourceIdentifierToSubscription(params).promise().toFuture
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[js.Object] = service.addTagsToResource(params).promise().toFuture
@@ -96,9 +96,7 @@ package object docdb {
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
 
   }
-}
 
-package docdb {
   @js.native
   @JSImport("aws-sdk/clients/docdb", JSImport.Namespace, "AWS.DocDB")
   class DocDB() extends js.Object {
@@ -152,6 +150,11 @@ package docdb {
     def restoreDBClusterToPointInTime(params: RestoreDBClusterToPointInTimeMessage): Request[RestoreDBClusterToPointInTimeResult] = js.native
     def startDBCluster(params: StartDBClusterMessage): Request[StartDBClusterResult] = js.native
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
+  }
+  object DocDB {
+    @inline implicit def toOps(service: DocDB): DocDBOps = {
+      new DocDBOps(service)
+    }
   }
 
   /** Represents the input to <a>AddSourceIdentifierToSubscription</a>.

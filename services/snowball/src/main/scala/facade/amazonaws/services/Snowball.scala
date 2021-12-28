@@ -29,7 +29,7 @@ package object snowball {
   type SnsTopicARN = String
   type Timestamp = js.Date
 
-  implicit final class SnowballOps(private val service: Snowball) extends AnyVal {
+  final class SnowballOps(private val service: Snowball) extends AnyVal {
 
     @inline def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] = service.cancelCluster(params).promise().toFuture
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] = service.cancelJob(params).promise().toFuture
@@ -55,9 +55,7 @@ package object snowball {
     @inline def updateJobShipmentStateFuture(params: UpdateJobShipmentStateRequest): Future[UpdateJobShipmentStateResult] = service.updateJobShipmentState(params).promise().toFuture
 
   }
-}
 
-package snowball {
   @js.native
   @JSImport("aws-sdk/clients/snowball", JSImport.Namespace, "AWS.Snowball")
   class Snowball() extends js.Object {
@@ -85,6 +83,11 @@ package snowball {
     def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResult] = js.native
     def updateJob(params: UpdateJobRequest): Request[UpdateJobResult] = js.native
     def updateJobShipmentState(params: UpdateJobShipmentStateRequest): Request[UpdateJobShipmentStateResult] = js.native
+  }
+  object Snowball {
+    @inline implicit def toOps(service: Snowball): SnowballOps = {
+      new SnowballOps(service)
+    }
   }
 
   /** The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.

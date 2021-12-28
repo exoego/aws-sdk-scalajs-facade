@@ -86,7 +86,7 @@ package object ecs {
   type VolumeFromList = js.Array[VolumeFrom]
   type VolumeList = js.Array[Volume]
 
-  implicit final class ECSOps(private val service: ECS) extends AnyVal {
+  final class ECSOps(private val service: ECS) extends AnyVal {
 
     @inline def createCapacityProviderFuture(params: CreateCapacityProviderRequest): Future[CreateCapacityProviderResponse] = service.createCapacityProvider(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
@@ -142,9 +142,7 @@ package object ecs {
     @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] = service.updateTaskSet(params).promise().toFuture
 
   }
-}
 
-package ecs {
   @js.native
   @JSImport("aws-sdk/clients/ecs", JSImport.Namespace, "AWS.ECS")
   class ECS() extends js.Object {
@@ -202,6 +200,11 @@ package ecs {
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
     def updateServicePrimaryTaskSet(params: UpdateServicePrimaryTaskSetRequest): Request[UpdateServicePrimaryTaskSetResponse] = js.native
     def updateTaskSet(params: UpdateTaskSetRequest): Request[UpdateTaskSetResponse] = js.native
+  }
+  object ECS {
+    @inline implicit def toOps(service: ECS): ECSOps = {
+      new ECSOps(service)
+    }
   }
 
   @js.native

@@ -34,7 +34,7 @@ package object translate {
   type Timestamp = js.Date
   type UnboundedLengthString = String
 
-  implicit final class TranslateOps(private val service: Translate) extends AnyVal {
+  final class TranslateOps(private val service: Translate) extends AnyVal {
 
     @inline def createParallelDataFuture(params: CreateParallelDataRequest): Future[CreateParallelDataResponse] = service.createParallelData(params).promise().toFuture
     @inline def deleteParallelDataFuture(params: DeleteParallelDataRequest): Future[DeleteParallelDataResponse] = service.deleteParallelData(params).promise().toFuture
@@ -52,9 +52,7 @@ package object translate {
     @inline def updateParallelDataFuture(params: UpdateParallelDataRequest): Future[UpdateParallelDataResponse] = service.updateParallelData(params).promise().toFuture
 
   }
-}
 
-package translate {
   @js.native
   @JSImport("aws-sdk/clients/translate", JSImport.Namespace, "AWS.Translate")
   class Translate() extends js.Object {
@@ -74,6 +72,11 @@ package translate {
     def stopTextTranslationJob(params: StopTextTranslationJobRequest): Request[StopTextTranslationJobResponse] = js.native
     def translateText(params: TranslateTextRequest): Request[TranslateTextResponse] = js.native
     def updateParallelData(params: UpdateParallelDataRequest): Request[UpdateParallelDataResponse] = js.native
+  }
+  object Translate {
+    @inline implicit def toOps(service: Translate): TranslateOps = {
+      new TranslateOps(service)
+    }
   }
 
   /** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.

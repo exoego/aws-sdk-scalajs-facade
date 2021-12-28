@@ -23,7 +23,7 @@ package object mediapackagevod {
   type __mapOf__string = js.Dictionary[__string]
   type __string = String
 
-  implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
+  final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
     @inline def configureLogsFuture(params: ConfigureLogsRequest): Future[ConfigureLogsResponse] = service.configureLogs(params).promise().toFuture
     @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] = service.createAsset(params).promise().toFuture
@@ -44,9 +44,7 @@ package object mediapackagevod {
     @inline def updatePackagingGroupFuture(params: UpdatePackagingGroupRequest): Future[UpdatePackagingGroupResponse] = service.updatePackagingGroup(params).promise().toFuture
 
   }
-}
 
-package mediapackagevod {
   @js.native
   @JSImport("aws-sdk/clients/mediapackagevod", JSImport.Namespace, "AWS.MediaPackageVod")
   class MediaPackageVod() extends js.Object {
@@ -69,6 +67,11 @@ package mediapackagevod {
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updatePackagingGroup(params: UpdatePackagingGroupRequest): Request[UpdatePackagingGroupResponse] = js.native
+  }
+  object MediaPackageVod {
+    @inline implicit def toOps(service: MediaPackageVod): MediaPackageVodOps = {
+      new MediaPackageVodOps(service)
+    }
   }
 
   @js.native

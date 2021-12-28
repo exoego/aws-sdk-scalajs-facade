@@ -663,7 +663,7 @@ package object ec2 {
   type totalFpgaMemory = Int
   type totalGpuMemory = Int
 
-  implicit final class EC2Ops(private val service: EC2) extends AnyVal {
+  final class EC2Ops(private val service: EC2) extends AnyVal {
 
     @inline def acceptReservedInstancesExchangeQuoteFuture(params: AcceptReservedInstancesExchangeQuoteRequest): Future[AcceptReservedInstancesExchangeQuoteResult] = service.acceptReservedInstancesExchangeQuote(params).promise().toFuture
     @inline def acceptTransitGatewayMulticastDomainAssociationsFuture(params: AcceptTransitGatewayMulticastDomainAssociationsRequest): Future[AcceptTransitGatewayMulticastDomainAssociationsResult] = service.acceptTransitGatewayMulticastDomainAssociations(params).promise().toFuture
@@ -1116,9 +1116,7 @@ package object ec2 {
     @inline def withdrawByoipCidrFuture(params: WithdrawByoipCidrRequest): Future[WithdrawByoipCidrResult] = service.withdrawByoipCidr(params).promise().toFuture
 
   }
-}
 
-package ec2 {
   @js.native
   @JSImport("aws-sdk/clients/ec2", JSImport.Namespace, "AWS.EC2")
   class EC2() extends js.Object {
@@ -1573,6 +1571,11 @@ package ec2 {
     def updateSecurityGroupRuleDescriptionsEgress(params: UpdateSecurityGroupRuleDescriptionsEgressRequest): Request[UpdateSecurityGroupRuleDescriptionsEgressResult] = js.native
     def updateSecurityGroupRuleDescriptionsIngress(params: UpdateSecurityGroupRuleDescriptionsIngressRequest): Request[UpdateSecurityGroupRuleDescriptionsIngressResult] = js.native
     def withdrawByoipCidr(params: WithdrawByoipCidrRequest): Request[WithdrawByoipCidrResult] = js.native
+  }
+  object EC2 {
+    @inline implicit def toOps(service: EC2): EC2Ops = {
+      new EC2Ops(service)
+    }
   }
 
   /** Contains the parameters for accepting the quote.

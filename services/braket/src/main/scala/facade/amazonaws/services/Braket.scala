@@ -29,7 +29,7 @@ package object braket {
   type TagKeys = js.Array[String]
   type TagsMap = js.Dictionary[String]
 
-  implicit final class BraketOps(private val service: Braket) extends AnyVal {
+  final class BraketOps(private val service: Braket) extends AnyVal {
 
     @inline def cancelQuantumTaskFuture(params: CancelQuantumTaskRequest): Future[CancelQuantumTaskResponse] = service.cancelQuantumTask(params).promise().toFuture
     @inline def createQuantumTaskFuture(params: CreateQuantumTaskRequest): Future[CreateQuantumTaskResponse] = service.createQuantumTask(params).promise().toFuture
@@ -42,9 +42,7 @@ package object braket {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package braket {
   @js.native
   @JSImport("aws-sdk/clients/braket", JSImport.Namespace, "AWS.Braket")
   class Braket() extends js.Object {
@@ -59,6 +57,11 @@ package braket {
     def searchQuantumTasks(params: SearchQuantumTasksRequest): Request[SearchQuantumTasksResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object Braket {
+    @inline implicit def toOps(service: Braket): BraketOps = {
+      new BraketOps(service)
+    }
   }
 
   @js.native

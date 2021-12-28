@@ -42,7 +42,7 @@ package object iotdeviceadvisor {
   type UUID = String
   type Warnings = String
 
-  implicit final class IotDeviceAdvisorOps(private val service: IotDeviceAdvisor) extends AnyVal {
+  final class IotDeviceAdvisorOps(private val service: IotDeviceAdvisor) extends AnyVal {
 
     @inline def createSuiteDefinitionFuture(params: CreateSuiteDefinitionRequest): Future[CreateSuiteDefinitionResponse] = service.createSuiteDefinition(params).promise().toFuture
     @inline def deleteSuiteDefinitionFuture(params: DeleteSuiteDefinitionRequest): Future[DeleteSuiteDefinitionResponse] = service.deleteSuiteDefinition(params).promise().toFuture
@@ -59,9 +59,7 @@ package object iotdeviceadvisor {
     @inline def updateSuiteDefinitionFuture(params: UpdateSuiteDefinitionRequest): Future[UpdateSuiteDefinitionResponse] = service.updateSuiteDefinition(params).promise().toFuture
 
   }
-}
 
-package iotdeviceadvisor {
   @js.native
   @JSImport("aws-sdk/clients/iotdeviceadvisor", JSImport.Namespace, "AWS.IotDeviceAdvisor")
   class IotDeviceAdvisor() extends js.Object {
@@ -80,6 +78,11 @@ package iotdeviceadvisor {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateSuiteDefinition(params: UpdateSuiteDefinitionRequest): Request[UpdateSuiteDefinitionResponse] = js.native
+  }
+  object IotDeviceAdvisor {
+    @inline implicit def toOps(service: IotDeviceAdvisor): IotDeviceAdvisorOps = {
+      new IotDeviceAdvisorOps(service)
+    }
   }
 
   @js.native

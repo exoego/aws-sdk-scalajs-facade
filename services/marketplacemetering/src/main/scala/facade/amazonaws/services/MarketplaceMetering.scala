@@ -23,7 +23,7 @@ package object marketplacemetering {
   type UsageRecordResultList = js.Array[UsageRecordResult]
   type VersionInteger = Int
 
-  implicit final class MarketplaceMeteringOps(private val service: MarketplaceMetering) extends AnyVal {
+  final class MarketplaceMeteringOps(private val service: MarketplaceMetering) extends AnyVal {
 
     @inline def batchMeterUsageFuture(params: BatchMeterUsageRequest): Future[BatchMeterUsageResult] = service.batchMeterUsage(params).promise().toFuture
     @inline def meterUsageFuture(params: MeterUsageRequest): Future[MeterUsageResult] = service.meterUsage(params).promise().toFuture
@@ -31,9 +31,7 @@ package object marketplacemetering {
     @inline def resolveCustomerFuture(params: ResolveCustomerRequest): Future[ResolveCustomerResult] = service.resolveCustomer(params).promise().toFuture
 
   }
-}
 
-package marketplacemetering {
   @js.native
   @JSImport("aws-sdk/clients/marketplacemetering", JSImport.Namespace, "AWS.MarketplaceMetering")
   class MarketplaceMetering() extends js.Object {
@@ -43,6 +41,11 @@ package marketplacemetering {
     def meterUsage(params: MeterUsageRequest): Request[MeterUsageResult] = js.native
     def registerUsage(params: RegisterUsageRequest): Request[RegisterUsageResult] = js.native
     def resolveCustomer(params: ResolveCustomerRequest): Request[ResolveCustomerResult] = js.native
+  }
+  object MarketplaceMetering {
+    @inline implicit def toOps(service: MarketplaceMetering): MarketplaceMeteringOps = {
+      new MarketplaceMeteringOps(service)
+    }
   }
 
   /** A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.

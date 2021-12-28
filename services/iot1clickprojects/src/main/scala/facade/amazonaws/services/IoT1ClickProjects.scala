@@ -34,7 +34,7 @@ package object iot1clickprojects {
   type TagValue = String
   type Time = js.Date
 
-  implicit final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
+  final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
 
     @inline def associateDeviceWithPlacementFuture(params: AssociateDeviceWithPlacementRequest): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise().toFuture
     @inline def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] = service.createPlacement(params).promise().toFuture
@@ -54,9 +54,7 @@ package object iot1clickprojects {
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
 
   }
-}
 
-package iot1clickprojects {
   @js.native
   @JSImport("aws-sdk/clients/iot1clickprojects", JSImport.Namespace, "AWS.IoT1ClickProjects")
   class IoT1ClickProjects() extends js.Object {
@@ -78,6 +76,11 @@ package iot1clickprojects {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updatePlacement(params: UpdatePlacementRequest): Request[UpdatePlacementResponse] = js.native
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
+  }
+  object IoT1ClickProjects {
+    @inline implicit def toOps(service: IoT1ClickProjects): IoT1ClickProjectsOps = {
+      new IoT1ClickProjectsOps(service)
+    }
   }
 
   @js.native

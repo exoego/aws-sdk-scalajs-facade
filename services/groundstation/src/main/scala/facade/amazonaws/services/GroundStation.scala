@@ -38,7 +38,7 @@ package object groundstation {
   type noradSatelliteID = Int
   type satelliteArn = String
 
-  implicit final class GroundStationOps(private val service: GroundStation) extends AnyVal {
+  final class GroundStationOps(private val service: GroundStation) extends AnyVal {
 
     @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] = service.cancelContact(params).promise().toFuture
     @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] = service.createConfig(params).promise().toFuture
@@ -67,9 +67,7 @@ package object groundstation {
     @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] = service.updateMissionProfile(params).promise().toFuture
 
   }
-}
 
-package groundstation {
   @js.native
   @JSImport("aws-sdk/clients/groundstation", JSImport.Namespace, "AWS.GroundStation")
   class GroundStation() extends js.Object {
@@ -100,6 +98,11 @@ package groundstation {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConfig(params: UpdateConfigRequest): Request[ConfigIdResponse] = js.native
     def updateMissionProfile(params: UpdateMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
+  }
+  object GroundStation {
+    @inline implicit def toOps(service: GroundStation): GroundStationOps = {
+      new GroundStationOps(service)
+    }
   }
 
   @js.native

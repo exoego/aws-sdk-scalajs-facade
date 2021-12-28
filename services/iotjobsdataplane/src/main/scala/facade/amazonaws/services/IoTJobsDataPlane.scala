@@ -26,7 +26,7 @@ package object iotjobsdataplane {
   type ThingName = String
   type VersionNumber = Double
 
-  implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
+  final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
 
     @inline def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] = service.describeJobExecution(params).promise().toFuture
     @inline def getPendingJobExecutionsFuture(params: GetPendingJobExecutionsRequest): Future[GetPendingJobExecutionsResponse] = service.getPendingJobExecutions(params).promise().toFuture
@@ -34,9 +34,7 @@ package object iotjobsdataplane {
     @inline def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] = service.updateJobExecution(params).promise().toFuture
 
   }
-}
 
-package iotjobsdataplane {
   @js.native
   @JSImport("aws-sdk/clients/iotjobsdataplane", JSImport.Namespace, "AWS.IoTJobsDataPlane")
   class IoTJobsDataPlane() extends js.Object {
@@ -46,6 +44,11 @@ package iotjobsdataplane {
     def getPendingJobExecutions(params: GetPendingJobExecutionsRequest): Request[GetPendingJobExecutionsResponse] = js.native
     def startNextPendingJobExecution(params: StartNextPendingJobExecutionRequest): Request[StartNextPendingJobExecutionResponse] = js.native
     def updateJobExecution(params: UpdateJobExecutionRequest): Request[UpdateJobExecutionResponse] = js.native
+  }
+  object IoTJobsDataPlane {
+    @inline implicit def toOps(service: IoTJobsDataPlane): IoTJobsDataPlaneOps = {
+      new IoTJobsDataPlaneOps(service)
+    }
   }
 
   @js.native

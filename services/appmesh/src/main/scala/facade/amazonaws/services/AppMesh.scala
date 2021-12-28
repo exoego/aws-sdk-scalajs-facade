@@ -75,7 +75,7 @@ package object appmesh {
   type VirtualServiceList = js.Array[VirtualServiceRef]
   type WeightedTargets = js.Array[WeightedTarget]
 
-  implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
+  final class AppMeshOps(private val service: AppMesh) extends AnyVal {
 
     @inline def createGatewayRouteFuture(params: CreateGatewayRouteInput): Future[CreateGatewayRouteOutput] = service.createGatewayRoute(params).promise().toFuture
     @inline def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] = service.createMesh(params).promise().toFuture
@@ -117,9 +117,7 @@ package object appmesh {
     @inline def updateVirtualServiceFuture(params: UpdateVirtualServiceInput): Future[UpdateVirtualServiceOutput] = service.updateVirtualService(params).promise().toFuture
 
   }
-}
 
-package appmesh {
   @js.native
   @JSImport("aws-sdk/clients/appmesh", JSImport.Namespace, "AWS.AppMesh")
   class AppMesh() extends js.Object {
@@ -163,6 +161,11 @@ package appmesh {
     def updateVirtualNode(params: UpdateVirtualNodeInput): Request[UpdateVirtualNodeOutput] = js.native
     def updateVirtualRouter(params: UpdateVirtualRouterInput): Request[UpdateVirtualRouterOutput] = js.native
     def updateVirtualService(params: UpdateVirtualServiceInput): Request[UpdateVirtualServiceOutput] = js.native
+  }
+  object AppMesh {
+    @inline implicit def toOps(service: AppMesh): AppMeshOps = {
+      new AppMeshOps(service)
+    }
   }
 
   /** An object that represents the access logging information for a virtual node.

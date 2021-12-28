@@ -80,7 +80,7 @@ package object lookoutmetrics {
   type Timezone = String
   type UUID = String
 
-  implicit final class LookoutMetricsOps(private val service: LookoutMetrics) extends AnyVal {
+  final class LookoutMetricsOps(private val service: LookoutMetrics) extends AnyVal {
 
     @inline def activateAnomalyDetectorFuture(params: ActivateAnomalyDetectorRequest): Future[ActivateAnomalyDetectorResponse] = service.activateAnomalyDetector(params).promise().toFuture
     @inline def backTestAnomalyDetectorFuture(params: BackTestAnomalyDetectorRequest): Future[BackTestAnomalyDetectorResponse] = service.backTestAnomalyDetector(params).promise().toFuture
@@ -109,9 +109,7 @@ package object lookoutmetrics {
     @inline def updateMetricSetFuture(params: UpdateMetricSetRequest): Future[UpdateMetricSetResponse] = service.updateMetricSet(params).promise().toFuture
 
   }
-}
 
-package lookoutmetrics {
   @js.native
   @JSImport("aws-sdk/clients/lookoutmetrics", JSImport.Namespace, "AWS.LookoutMetrics")
   class LookoutMetrics() extends js.Object {
@@ -142,6 +140,11 @@ package lookoutmetrics {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAnomalyDetector(params: UpdateAnomalyDetectorRequest): Request[UpdateAnomalyDetectorResponse] = js.native
     def updateMetricSet(params: UpdateMetricSetRequest): Request[UpdateMetricSetResponse] = js.native
+  }
+  object LookoutMetrics {
+    @inline implicit def toOps(service: LookoutMetrics): LookoutMetricsOps = {
+      new LookoutMetricsOps(service)
+    }
   }
 
   /** A configuration that specifies the action to perform when anomalies are detected.

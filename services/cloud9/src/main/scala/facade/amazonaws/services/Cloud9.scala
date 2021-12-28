@@ -29,7 +29,7 @@ package object cloud9 {
   type Timestamp = js.Date
   type UserArn = String
 
-  implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
+  final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
 
     @inline def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] = service.createEnvironmentEC2(params).promise().toFuture
     @inline def createEnvironmentMembershipFuture(params: CreateEnvironmentMembershipRequest): Future[CreateEnvironmentMembershipResult] = service.createEnvironmentMembership(params).promise().toFuture
@@ -46,9 +46,7 @@ package object cloud9 {
     @inline def updateEnvironmentMembershipFuture(params: UpdateEnvironmentMembershipRequest): Future[UpdateEnvironmentMembershipResult] = service.updateEnvironmentMembership(params).promise().toFuture
 
   }
-}
 
-package cloud9 {
   @js.native
   @JSImport("aws-sdk/clients/cloud9", JSImport.Namespace, "AWS.Cloud9")
   class Cloud9() extends js.Object {
@@ -67,6 +65,11 @@ package cloud9 {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateEnvironment(params: UpdateEnvironmentRequest): Request[UpdateEnvironmentResult] = js.native
     def updateEnvironmentMembership(params: UpdateEnvironmentMembershipRequest): Request[UpdateEnvironmentMembershipResult] = js.native
+  }
+  object Cloud9 {
+    @inline implicit def toOps(service: Cloud9): Cloud9Ops = {
+      new Cloud9Ops(service)
+    }
   }
 
   @js.native

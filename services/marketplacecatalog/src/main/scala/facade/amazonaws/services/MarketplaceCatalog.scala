@@ -31,7 +31,7 @@ package object marketplacecatalog {
   type StringValue = String
   type ValueList = js.Array[StringValue]
 
-  implicit final class MarketplaceCatalogOps(private val service: MarketplaceCatalog) extends AnyVal {
+  final class MarketplaceCatalogOps(private val service: MarketplaceCatalog) extends AnyVal {
 
     @inline def cancelChangeSetFuture(params: CancelChangeSetRequest): Future[CancelChangeSetResponse] = service.cancelChangeSet(params).promise().toFuture
     @inline def describeChangeSetFuture(params: DescribeChangeSetRequest): Future[DescribeChangeSetResponse] = service.describeChangeSet(params).promise().toFuture
@@ -41,9 +41,7 @@ package object marketplacecatalog {
     @inline def startChangeSetFuture(params: StartChangeSetRequest): Future[StartChangeSetResponse] = service.startChangeSet(params).promise().toFuture
 
   }
-}
 
-package marketplacecatalog {
   @js.native
   @JSImport("aws-sdk/clients/marketplacecatalog", JSImport.Namespace, "AWS.MarketplaceCatalog")
   class MarketplaceCatalog() extends js.Object {
@@ -55,6 +53,11 @@ package marketplacecatalog {
     def listChangeSets(params: ListChangeSetsRequest): Request[ListChangeSetsResponse] = js.native
     def listEntities(params: ListEntitiesRequest): Request[ListEntitiesResponse] = js.native
     def startChangeSet(params: StartChangeSetRequest): Request[StartChangeSetResponse] = js.native
+  }
+  object MarketplaceCatalog {
+    @inline implicit def toOps(service: MarketplaceCatalog): MarketplaceCatalogOps = {
+      new MarketplaceCatalogOps(service)
+    }
   }
 
   @js.native

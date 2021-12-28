@@ -97,7 +97,7 @@ package object lexmodelsv2 {
   type Value = String
   type VoiceId = String
 
-  implicit final class LexModelsV2Ops(private val service: LexModelsV2) extends AnyVal {
+  final class LexModelsV2Ops(private val service: LexModelsV2) extends AnyVal {
 
     @inline def buildBotLocaleFuture(params: BuildBotLocaleRequest): Future[BuildBotLocaleResponse] = service.buildBotLocale(params).promise().toFuture
     @inline def createBotAliasFuture(params: CreateBotAliasRequest): Future[CreateBotAliasResponse] = service.createBotAlias(params).promise().toFuture
@@ -141,9 +141,7 @@ package object lexmodelsv2 {
     @inline def updateSlotTypeFuture(params: UpdateSlotTypeRequest): Future[UpdateSlotTypeResponse] = service.updateSlotType(params).promise().toFuture
 
   }
-}
 
-package lexmodelsv2 {
   @js.native
   @JSImport("aws-sdk/clients/lexmodelsv2", JSImport.Namespace, "AWS.LexModelsV2")
   class LexModelsV2() extends js.Object {
@@ -189,6 +187,11 @@ package lexmodelsv2 {
     def updateIntent(params: UpdateIntentRequest): Request[UpdateIntentResponse] = js.native
     def updateSlot(params: UpdateSlotRequest): Request[UpdateSlotResponse] = js.native
     def updateSlotType(params: UpdateSlotTypeRequest): Request[UpdateSlotTypeResponse] = js.native
+  }
+  object LexModelsV2 {
+    @inline implicit def toOps(service: LexModelsV2): LexModelsV2Ops = {
+      new LexModelsV2Ops(service)
+    }
   }
 
   /** The location of audio log files collected when conversation logging is enabled for a bot.

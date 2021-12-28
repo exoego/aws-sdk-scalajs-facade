@@ -79,7 +79,7 @@ package object wafv2 {
   type VendorName = String
   type WebACLSummaries = js.Array[WebACLSummary]
 
-  implicit final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
+  final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
 
     @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] = service.associateWebACL(params).promise().toFuture
     @inline def checkCapacityFuture(params: CheckCapacityRequest): Future[CheckCapacityResponse] = service.checkCapacity(params).promise().toFuture
@@ -123,9 +123,7 @@ package object wafv2 {
     @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] = service.updateWebACL(params).promise().toFuture
 
   }
-}
 
-package wafv2 {
   @js.native
   @JSImport("aws-sdk/clients/wafv2", JSImport.Namespace, "AWS.WAFV2")
   class WAFv2() extends js.Object {
@@ -171,6 +169,11 @@ package wafv2 {
     def updateRegexPatternSet(params: UpdateRegexPatternSetRequest): Request[UpdateRegexPatternSetResponse] = js.native
     def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse] = js.native
     def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
+  }
+  object WAFv2 {
+    @inline implicit def toOps(service: WAFv2): WAFv2Ops = {
+      new WAFv2Ops(service)
+    }
   }
 
   /** A single action condition for a <a>Condition</a> in a logging filter.

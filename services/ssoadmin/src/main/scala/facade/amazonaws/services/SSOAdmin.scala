@@ -43,7 +43,7 @@ package object ssoadmin {
   type Token = String
   type UUId = String
 
-  implicit final class SSOAdminOps(private val service: SSOAdmin) extends AnyVal {
+  final class SSOAdminOps(private val service: SSOAdmin) extends AnyVal {
 
     @inline def attachManagedPolicyToPermissionSetFuture(params: AttachManagedPolicyToPermissionSetRequest): Future[AttachManagedPolicyToPermissionSetResponse] = service.attachManagedPolicyToPermissionSet(params).promise().toFuture
     @inline def createAccountAssignmentFuture(params: CreateAccountAssignmentRequest): Future[CreateAccountAssignmentResponse] = service.createAccountAssignment(params).promise().toFuture
@@ -78,9 +78,7 @@ package object ssoadmin {
     @inline def updatePermissionSetFuture(params: UpdatePermissionSetRequest): Future[UpdatePermissionSetResponse] = service.updatePermissionSet(params).promise().toFuture
 
   }
-}
 
-package ssoadmin {
   @js.native
   @JSImport("aws-sdk/clients/ssoadmin", JSImport.Namespace, "AWS.SSOAdmin")
   class SSOAdmin() extends js.Object {
@@ -117,6 +115,11 @@ package ssoadmin {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateInstanceAccessControlAttributeConfiguration(params: UpdateInstanceAccessControlAttributeConfigurationRequest): Request[UpdateInstanceAccessControlAttributeConfigurationResponse] = js.native
     def updatePermissionSet(params: UpdatePermissionSetRequest): Request[UpdatePermissionSetResponse] = js.native
+  }
+  object SSOAdmin {
+    @inline implicit def toOps(service: SSOAdmin): SSOAdminOps = {
+      new SSOAdminOps(service)
+    }
   }
 
   /** These are AWS SSO identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permission policies that determine who can access your AWS resources based upon the configured attribute value(s). When you enable ABAC and specify AccessControlAttributes, AWS SSO passes the attribute(s) value of the authenticated user into IAM for use in policy evaluation.

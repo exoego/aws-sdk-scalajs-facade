@@ -61,7 +61,7 @@ package object apigatewayv2 {
   type __string = String
   type __timestampIso8601 = js.Date
 
-  implicit final class ApiGatewayV2Ops(private val service: ApiGatewayV2) extends AnyVal {
+  final class ApiGatewayV2Ops(private val service: ApiGatewayV2) extends AnyVal {
 
     @inline def createApiFuture(params: CreateApiRequest): Future[CreateApiResponse] = service.createApi(params).promise().toFuture
     @inline def createApiMappingFuture(params: CreateApiMappingRequest): Future[CreateApiMappingResponse] = service.createApiMapping(params).promise().toFuture
@@ -137,9 +137,7 @@ package object apigatewayv2 {
     @inline def updateVpcLinkFuture(params: UpdateVpcLinkRequest): Future[UpdateVpcLinkResponse] = service.updateVpcLink(params).promise().toFuture
 
   }
-}
 
-package apigatewayv2 {
   @js.native
   @JSImport("aws-sdk/clients/apigatewayv2", JSImport.Namespace, "AWS.ApiGatewayV2")
   class ApiGatewayV2() extends js.Object {
@@ -217,6 +215,11 @@ package apigatewayv2 {
     def updateRouteResponse(params: UpdateRouteResponseRequest): Request[UpdateRouteResponseResponse] = js.native
     def updateStage(params: UpdateStageRequest): Request[UpdateStageResponse] = js.native
     def updateVpcLink(params: UpdateVpcLinkRequest): Request[UpdateVpcLinkResponse] = js.native
+  }
+  object ApiGatewayV2 {
+    @inline implicit def toOps(service: ApiGatewayV2): ApiGatewayV2Ops = {
+      new ApiGatewayV2Ops(service)
+    }
   }
 
   /** Settings for logging access in a stage.

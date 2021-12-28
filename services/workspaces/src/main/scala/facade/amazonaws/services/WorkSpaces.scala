@@ -97,7 +97,7 @@ package object workspaces {
   type WorkspaceRequestList = js.Array[WorkspaceRequest]
   type WorkspacesIpGroupsList = js.Array[WorkspacesIpGroup]
 
-  implicit final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
+  final class WorkSpacesOps(private val service: WorkSpaces) extends AnyVal {
 
     @inline def associateConnectionAliasFuture(params: AssociateConnectionAliasRequest): Future[AssociateConnectionAliasResult] = service.associateConnectionAlias(params).promise().toFuture
     @inline def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] = service.associateIpGroups(params).promise().toFuture
@@ -154,9 +154,7 @@ package object workspaces {
     @inline def updateWorkspaceImagePermissionFuture(params: UpdateWorkspaceImagePermissionRequest): Future[UpdateWorkspaceImagePermissionResult] = service.updateWorkspaceImagePermission(params).promise().toFuture
 
   }
-}
 
-package workspaces {
   @js.native
   @JSImport("aws-sdk/clients/workspaces", JSImport.Namespace, "AWS.WorkSpaces")
   class WorkSpaces() extends js.Object {
@@ -215,6 +213,11 @@ package workspaces {
     def updateRulesOfIpGroup(params: UpdateRulesOfIpGroupRequest): Request[UpdateRulesOfIpGroupResult] = js.native
     def updateWorkspaceBundle(params: UpdateWorkspaceBundleRequest): Request[UpdateWorkspaceBundleResult] = js.native
     def updateWorkspaceImagePermission(params: UpdateWorkspaceImagePermissionRequest): Request[UpdateWorkspaceImagePermissionResult] = js.native
+  }
+  object WorkSpaces {
+    @inline implicit def toOps(service: WorkSpaces): WorkSpacesOps = {
+      new WorkSpacesOps(service)
+    }
   }
 
   @js.native

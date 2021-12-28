@@ -47,7 +47,7 @@ package object shield {
   type Token = String
   type TopContributors = js.Array[Contributor]
 
-  implicit final class ShieldOps(private val service: Shield) extends AnyVal {
+  final class ShieldOps(private val service: Shield) extends AnyVal {
 
     @inline def associateDRTLogBucketFuture(params: AssociateDRTLogBucketRequest): Future[AssociateDRTLogBucketResponse] = service.associateDRTLogBucket(params).promise().toFuture
     @inline def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] = service.associateDRTRole(params).promise().toFuture
@@ -83,9 +83,7 @@ package object shield {
     @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] = service.updateSubscription(params).promise().toFuture
 
   }
-}
 
-package shield {
   @js.native
   @JSImport("aws-sdk/clients/shield", JSImport.Namespace, "AWS.Shield")
   class Shield() extends js.Object {
@@ -124,6 +122,11 @@ package shield {
     def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
     def updateProtectionGroup(params: UpdateProtectionGroupRequest): Request[UpdateProtectionGroupResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
+  }
+  object Shield {
+    @inline implicit def toOps(service: Shield): ShieldOps = {
+      new ShieldOps(service)
+    }
   }
 
   @js.native

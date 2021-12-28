@@ -16,7 +16,7 @@ package object simpledb {
   type ReplaceableAttributeList = js.Array[ReplaceableAttribute]
   type ReplaceableItemList = js.Array[ReplaceableItem]
 
-  implicit final class SimpleDBOps(private val service: SimpleDB) extends AnyVal {
+  final class SimpleDBOps(private val service: SimpleDB) extends AnyVal {
 
     @inline def batchDeleteAttributesFuture(params: BatchDeleteAttributesRequest): Future[js.Object] = service.batchDeleteAttributes(params).promise().toFuture
     @inline def batchPutAttributesFuture(params: BatchPutAttributesRequest): Future[js.Object] = service.batchPutAttributes(params).promise().toFuture
@@ -30,9 +30,7 @@ package object simpledb {
     @inline def selectFuture(params: SelectRequest): Future[SelectResult] = service.select(params).promise().toFuture
 
   }
-}
 
-package simpledb {
   @js.native
   @JSImport("aws-sdk/clients/simpledb", JSImport.Namespace, "AWS.SimpleDB")
   class SimpleDB() extends js.Object {
@@ -48,6 +46,11 @@ package simpledb {
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResult] = js.native
     def putAttributes(params: PutAttributesRequest): Request[js.Object] = js.native
     def select(params: SelectRequest): Request[SelectResult] = js.native
+  }
+  object SimpleDB {
+    @inline implicit def toOps(service: SimpleDB): SimpleDBOps = {
+      new SimpleDBOps(service)
+    }
   }
 
   /** */

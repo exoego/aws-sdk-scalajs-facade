@@ -41,7 +41,7 @@ package object cloudhsmv2 {
   type Timestamp = js.Date
   type VpcId = String
 
-  implicit final class CloudHSMV2Ops(private val service: CloudHSMV2) extends AnyVal {
+  final class CloudHSMV2Ops(private val service: CloudHSMV2) extends AnyVal {
 
     @inline def copyBackupToRegionFuture(params: CopyBackupToRegionRequest): Future[CopyBackupToRegionResponse] = service.copyBackupToRegion(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
@@ -60,9 +60,7 @@ package object cloudhsmv2 {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package cloudhsmv2 {
   @js.native
   @JSImport("aws-sdk/clients/cloudhsmv2", JSImport.Namespace, "AWS.CloudHSMV2")
   class CloudHSMV2() extends js.Object {
@@ -83,6 +81,11 @@ package cloudhsmv2 {
     def restoreBackup(params: RestoreBackupRequest): Request[RestoreBackupResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object CloudHSMV2 {
+    @inline implicit def toOps(service: CloudHSMV2): CloudHSMV2Ops = {
+      new CloudHSMV2Ops(service)
+    }
   }
 
   /** Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.

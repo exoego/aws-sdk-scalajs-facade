@@ -29,7 +29,7 @@ package object appsync {
   type TagValue = String
   type TypeList = js.Array[Type]
 
-  implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
+  final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
     @inline def createApiCacheFuture(params: CreateApiCacheRequest): Future[CreateApiCacheResponse] = service.createApiCache(params).promise().toFuture
     @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] = service.createApiKey(params).promise().toFuture
@@ -74,9 +74,7 @@ package object appsync {
     @inline def updateTypeFuture(params: UpdateTypeRequest): Future[UpdateTypeResponse] = service.updateType(params).promise().toFuture
 
   }
-}
 
-package appsync {
   @js.native
   @JSImport("aws-sdk/clients/appsync", JSImport.Namespace, "AWS.AppSync")
   class AppSync() extends js.Object {
@@ -123,6 +121,11 @@ package appsync {
     def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse] = js.native
     def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse] = js.native
     def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse] = js.native
+  }
+  object AppSync {
+    @inline implicit def toOps(service: AppSync): AppSyncOps = {
+      new AppSyncOps(service)
+    }
   }
 
   /** Describes an additional authentication provider.

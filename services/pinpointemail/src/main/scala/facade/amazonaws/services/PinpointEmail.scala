@@ -80,7 +80,7 @@ package object pinpointemail {
   type Timestamp = js.Date
   type Volume = Double
 
-  implicit final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
+  final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
 
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
@@ -126,9 +126,7 @@ package object pinpointemail {
     @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
 
   }
-}
 
-package pinpointemail {
   @js.native
   @JSImport("aws-sdk/clients/pinpointemail", JSImport.Namespace, "AWS.PinpointEmail")
   class PinpointEmail() extends js.Object {
@@ -176,6 +174,11 @@ package pinpointemail {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
+  }
+  object PinpointEmail {
+    @inline implicit def toOps(service: PinpointEmail): PinpointEmailOps = {
+      new PinpointEmailOps(service)
+    }
   }
 
   /** The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.

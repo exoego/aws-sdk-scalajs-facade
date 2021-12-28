@@ -98,7 +98,7 @@ package object databrew {
   type ValueReference = String
   type ValuesMap = js.Dictionary[ConditionValue]
 
-  implicit final class DataBrewOps(private val service: DataBrew) extends AnyVal {
+  final class DataBrewOps(private val service: DataBrew) extends AnyVal {
 
     @inline def batchDeleteRecipeVersionFuture(params: BatchDeleteRecipeVersionRequest): Future[BatchDeleteRecipeVersionResponse] = service.batchDeleteRecipeVersion(params).promise().toFuture
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
@@ -141,9 +141,7 @@ package object databrew {
     @inline def updateScheduleFuture(params: UpdateScheduleRequest): Future[UpdateScheduleResponse] = service.updateSchedule(params).promise().toFuture
 
   }
-}
 
-package databrew {
   @js.native
   @JSImport("aws-sdk/clients/databrew", JSImport.Namespace, "AWS.DataBrew")
   class DataBrew() extends js.Object {
@@ -188,6 +186,11 @@ package databrew {
     def updateRecipe(params: UpdateRecipeRequest): Request[UpdateRecipeResponse] = js.native
     def updateRecipeJob(params: UpdateRecipeJobRequest): Request[UpdateRecipeJobResponse] = js.native
     def updateSchedule(params: UpdateScheduleRequest): Request[UpdateScheduleResponse] = js.native
+  }
+  object DataBrew {
+    @inline implicit def toOps(service: DataBrew): DataBrewOps = {
+      new DataBrewOps(service)
+    }
   }
 
   @js.native

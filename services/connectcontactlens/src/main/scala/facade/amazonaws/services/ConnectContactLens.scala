@@ -24,20 +24,23 @@ package object connectcontactlens {
   type TranscriptContent = String
   type TranscriptId = String
 
-  implicit final class ConnectContactLensOps(private val service: ConnectContactLens) extends AnyVal {
+  final class ConnectContactLensOps(private val service: ConnectContactLens) extends AnyVal {
 
     @inline def listRealtimeContactAnalysisSegmentsFuture(params: ListRealtimeContactAnalysisSegmentsRequest): Future[ListRealtimeContactAnalysisSegmentsResponse] = service.listRealtimeContactAnalysisSegments(params).promise().toFuture
 
   }
-}
 
-package connectcontactlens {
   @js.native
   @JSImport("aws-sdk/clients/connectcontactlens", JSImport.Namespace, "AWS.ConnectContactLens")
   class ConnectContactLens() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def listRealtimeContactAnalysisSegments(params: ListRealtimeContactAnalysisSegmentsRequest): Request[ListRealtimeContactAnalysisSegmentsResponse] = js.native
+  }
+  object ConnectContactLens {
+    @inline implicit def toOps(service: ConnectContactLens): ConnectContactLensOps = {
+      new ConnectContactLensOps(service)
+    }
   }
 
   /** Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.

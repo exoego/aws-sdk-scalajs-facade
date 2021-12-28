@@ -25,7 +25,7 @@ package object mediaconnect {
   type __mapOf__string = js.Dictionary[__string]
   type __string = String
 
-  implicit final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
+  final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
 
     @inline def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] = service.addFlowOutputs(params).promise().toFuture
     @inline def addFlowSourcesFuture(params: AddFlowSourcesRequest): Future[AddFlowSourcesResponse] = service.addFlowSources(params).promise().toFuture
@@ -56,9 +56,7 @@ package object mediaconnect {
     @inline def updateFlowSourceFuture(params: UpdateFlowSourceRequest): Future[UpdateFlowSourceResponse] = service.updateFlowSource(params).promise().toFuture
 
   }
-}
 
-package mediaconnect {
   @js.native
   @JSImport("aws-sdk/clients/mediaconnect", JSImport.Namespace, "AWS.MediaConnect")
   class MediaConnect() extends js.Object {
@@ -91,6 +89,11 @@ package mediaconnect {
     def updateFlowEntitlement(params: UpdateFlowEntitlementRequest): Request[UpdateFlowEntitlementResponse] = js.native
     def updateFlowOutput(params: UpdateFlowOutputRequest): Request[UpdateFlowOutputResponse] = js.native
     def updateFlowSource(params: UpdateFlowSourceRequest): Request[UpdateFlowSourceResponse] = js.native
+  }
+  object MediaConnect {
+    @inline implicit def toOps(service: MediaConnect): MediaConnectOps = {
+      new MediaConnectOps(service)
+    }
   }
 
   /** A request to add outputs to the specified flow.

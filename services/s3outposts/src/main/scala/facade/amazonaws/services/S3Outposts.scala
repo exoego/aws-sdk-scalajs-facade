@@ -20,16 +20,14 @@ package object s3outposts {
   type SecurityGroupId = String
   type SubnetId = String
 
-  implicit final class S3OutpostsOps(private val service: S3Outposts) extends AnyVal {
+  final class S3OutpostsOps(private val service: S3Outposts) extends AnyVal {
 
     @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResult] = service.createEndpoint(params).promise().toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[js.Object] = service.deleteEndpoint(params).promise().toFuture
     @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResult] = service.listEndpoints(params).promise().toFuture
 
   }
-}
 
-package s3outposts {
   @js.native
   @JSImport("aws-sdk/clients/s3outposts", JSImport.Namespace, "AWS.S3Outposts")
   class S3Outposts() extends js.Object {
@@ -38,6 +36,11 @@ package s3outposts {
     def createEndpoint(params: CreateEndpointRequest): Request[CreateEndpointResult] = js.native
     def deleteEndpoint(params: DeleteEndpointRequest): Request[js.Object] = js.native
     def listEndpoints(params: ListEndpointsRequest): Request[ListEndpointsResult] = js.native
+  }
+  object S3Outposts {
+    @inline implicit def toOps(service: S3Outposts): S3OutpostsOps = {
+      new S3OutpostsOps(service)
+    }
   }
 
   @js.native

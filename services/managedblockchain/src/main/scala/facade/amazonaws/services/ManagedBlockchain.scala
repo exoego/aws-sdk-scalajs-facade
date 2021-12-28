@@ -44,7 +44,7 @@ package object managedblockchain {
   type UsernameString = String
   type VoteCount = Int
 
-  implicit final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
+  final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
 
     @inline def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] = service.createMember(params).promise().toFuture
     @inline def createNetworkFuture(params: CreateNetworkInput): Future[CreateNetworkOutput] = service.createNetwork(params).promise().toFuture
@@ -71,9 +71,7 @@ package object managedblockchain {
     @inline def voteOnProposalFuture(params: VoteOnProposalInput): Future[VoteOnProposalOutput] = service.voteOnProposal(params).promise().toFuture
 
   }
-}
 
-package managedblockchain {
   @js.native
   @JSImport("aws-sdk/clients/managedblockchain", JSImport.Namespace, "AWS.ManagedBlockchain")
   class ManagedBlockchain() extends js.Object {
@@ -102,6 +100,11 @@ package managedblockchain {
     def updateMember(params: UpdateMemberInput): Request[UpdateMemberOutput] = js.native
     def updateNode(params: UpdateNodeInput): Request[UpdateNodeOutput] = js.native
     def voteOnProposal(params: VoteOnProposalInput): Request[VoteOnProposalOutput] = js.native
+  }
+  object ManagedBlockchain {
+    @inline implicit def toOps(service: ManagedBlockchain): ManagedBlockchainOps = {
+      new ManagedBlockchainOps(service)
+    }
   }
 
   /** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. Applies only to Hyperledger Fabric.

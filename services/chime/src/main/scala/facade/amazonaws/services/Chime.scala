@@ -128,7 +128,7 @@ package object chime {
   type VoiceConnectorList = js.Array[VoiceConnector]
   type VoiceConnectorName = String
 
-  implicit final class ChimeOps(private val service: Chime) extends AnyVal {
+  final class ChimeOps(private val service: Chime) extends AnyVal {
 
     @inline def associatePhoneNumberWithUserFuture(params: AssociatePhoneNumberWithUserRequest): Future[AssociatePhoneNumberWithUserResponse] = service.associatePhoneNumberWithUser(params).promise().toFuture
     @inline def associatePhoneNumbersWithVoiceConnectorFuture(params: AssociatePhoneNumbersWithVoiceConnectorRequest): Future[AssociatePhoneNumbersWithVoiceConnectorResponse] = service.associatePhoneNumbersWithVoiceConnector(params).promise().toFuture
@@ -313,9 +313,7 @@ package object chime {
     @inline def updateVoiceConnectorGroupFuture(params: UpdateVoiceConnectorGroupRequest): Future[UpdateVoiceConnectorGroupResponse] = service.updateVoiceConnectorGroup(params).promise().toFuture
 
   }
-}
 
-package chime {
   @js.native
   @JSImport("aws-sdk/clients/chime", JSImport.Namespace, "AWS.Chime")
   class Chime() extends js.Object {
@@ -502,6 +500,11 @@ package chime {
     def updateUserSettings(params: UpdateUserSettingsRequest): Request[js.Object] = js.native
     def updateVoiceConnector(params: UpdateVoiceConnectorRequest): Request[UpdateVoiceConnectorResponse] = js.native
     def updateVoiceConnectorGroup(params: UpdateVoiceConnectorGroupRequest): Request[UpdateVoiceConnectorGroupResponse] = js.native
+  }
+  object Chime {
+    @inline implicit def toOps(service: Chime): ChimeOps = {
+      new ChimeOps(service)
+    }
   }
 
   /** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.

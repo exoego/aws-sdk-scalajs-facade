@@ -30,7 +30,7 @@ package object dax {
   type TStamp = js.Date
   type TagList = js.Array[Tag]
 
-  implicit final class DAXOps(private val service: DAX) extends AnyVal {
+  final class DAXOps(private val service: DAX) extends AnyVal {
 
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] = service.createCluster(params).promise().toFuture
     @inline def createParameterGroupFuture(params: CreateParameterGroupRequest): Future[CreateParameterGroupResponse] = service.createParameterGroup(params).promise().toFuture
@@ -55,9 +55,7 @@ package object dax {
     @inline def updateSubnetGroupFuture(params: UpdateSubnetGroupRequest): Future[UpdateSubnetGroupResponse] = service.updateSubnetGroup(params).promise().toFuture
 
   }
-}
 
-package dax {
   @js.native
   @JSImport("aws-sdk/clients/dax", JSImport.Namespace, "AWS.DAX")
   class DAX() extends js.Object {
@@ -84,6 +82,11 @@ package dax {
     def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResponse] = js.native
     def updateParameterGroup(params: UpdateParameterGroupRequest): Request[UpdateParameterGroupResponse] = js.native
     def updateSubnetGroup(params: UpdateSubnetGroupRequest): Request[UpdateSubnetGroupResponse] = js.native
+  }
+  object DAX {
+    @inline implicit def toOps(service: DAX): DAXOps = {
+      new DAXOps(service)
+    }
   }
 
   @js.native

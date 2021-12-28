@@ -15,20 +15,23 @@ package object kinesisvideomedia {
   type StreamName = String
   type Timestamp = js.Date
 
-  implicit final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
+  final class KinesisVideoMediaOps(private val service: KinesisVideoMedia) extends AnyVal {
 
     @inline def getMediaFuture(params: GetMediaInput): Future[GetMediaOutput] = service.getMedia(params).promise().toFuture
 
   }
-}
 
-package kinesisvideomedia {
   @js.native
   @JSImport("aws-sdk/clients/kinesisvideomedia", JSImport.Namespace, "AWS.KinesisVideoMedia")
   class KinesisVideoMedia() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def getMedia(params: GetMediaInput): Request[GetMediaOutput] = js.native
+  }
+  object KinesisVideoMedia {
+    @inline implicit def toOps(service: KinesisVideoMedia): KinesisVideoMediaOps = {
+      new KinesisVideoMediaOps(service)
+    }
   }
 
   @js.native

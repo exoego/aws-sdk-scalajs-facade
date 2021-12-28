@@ -65,7 +65,7 @@ package object athena {
   type datumList = js.Array[Datum]
   type datumString = String
 
-  implicit final class AthenaOps(private val service: Athena) extends AnyVal {
+  final class AthenaOps(private val service: Athena) extends AnyVal {
 
     @inline def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] = service.batchGetNamedQuery(params).promise().toFuture
     @inline def batchGetQueryExecutionFuture(params: BatchGetQueryExecutionInput): Future[BatchGetQueryExecutionOutput] = service.batchGetQueryExecution(params).promise().toFuture
@@ -103,9 +103,7 @@ package object athena {
     @inline def updateWorkGroupFuture(params: UpdateWorkGroupInput): Future[UpdateWorkGroupOutput] = service.updateWorkGroup(params).promise().toFuture
 
   }
-}
 
-package athena {
   @js.native
   @JSImport("aws-sdk/clients/athena", JSImport.Namespace, "AWS.Athena")
   class Athena() extends js.Object {
@@ -145,6 +143,11 @@ package athena {
     def updateDataCatalog(params: UpdateDataCatalogInput): Request[UpdateDataCatalogOutput] = js.native
     def updatePreparedStatement(params: UpdatePreparedStatementInput): Request[UpdatePreparedStatementOutput] = js.native
     def updateWorkGroup(params: UpdateWorkGroupInput): Request[UpdateWorkGroupOutput] = js.native
+  }
+  object Athena {
+    @inline implicit def toOps(service: Athena): AthenaOps = {
+      new AthenaOps(service)
+    }
   }
 
   @js.native

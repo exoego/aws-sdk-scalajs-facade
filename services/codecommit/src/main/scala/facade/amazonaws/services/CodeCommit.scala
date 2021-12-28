@@ -132,7 +132,7 @@ package object codecommit {
   type Title = String
   type blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
-  implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
+  final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
 
     @inline def associateApprovalRuleTemplateWithRepositoryFuture(params: AssociateApprovalRuleTemplateWithRepositoryInput): Future[js.Object] = service.associateApprovalRuleTemplateWithRepository(params).promise().toFuture
     @inline def batchAssociateApprovalRuleTemplateWithRepositoriesFuture(params: BatchAssociateApprovalRuleTemplateWithRepositoriesInput): Future[BatchAssociateApprovalRuleTemplateWithRepositoriesOutput] = service.batchAssociateApprovalRuleTemplateWithRepositories(params).promise().toFuture
@@ -213,9 +213,7 @@ package object codecommit {
     @inline def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] = service.updateRepositoryName(params).promise().toFuture
 
   }
-}
 
-package codecommit {
   @js.native
   @JSImport("aws-sdk/clients/codecommit", JSImport.Namespace, "AWS.CodeCommit")
   class CodeCommit() extends js.Object {
@@ -298,6 +296,11 @@ package codecommit {
     def updatePullRequestTitle(params: UpdatePullRequestTitleInput): Request[UpdatePullRequestTitleOutput] = js.native
     def updateRepositoryDescription(params: UpdateRepositoryDescriptionInput): Request[js.Object] = js.native
     def updateRepositoryName(params: UpdateRepositoryNameInput): Request[js.Object] = js.native
+  }
+  object CodeCommit {
+    @inline implicit def toOps(service: CodeCommit): CodeCommitOps = {
+      new CodeCommitOps(service)
+    }
   }
 
   /** Returns information about a specific approval on a pull request.

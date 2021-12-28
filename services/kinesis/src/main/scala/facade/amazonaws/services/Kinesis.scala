@@ -50,7 +50,7 @@ package object kinesis {
   type TagValue = String
   type Timestamp = js.Date
 
-  implicit final class KinesisOps(private val service: Kinesis) extends AnyVal {
+  final class KinesisOps(private val service: Kinesis) extends AnyVal {
 
     @inline def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] = service.addTagsToStream(params).promise().toFuture
     @inline def createStreamFuture(params: CreateStreamInput): Future[js.Object] = service.createStream(params).promise().toFuture
@@ -81,9 +81,7 @@ package object kinesis {
     @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] = service.updateShardCount(params).promise().toFuture
 
   }
-}
 
-package kinesis {
   @js.native
   @JSImport("aws-sdk/clients/kinesis", JSImport.Namespace, "AWS.Kinesis")
   class Kinesis() extends js.Object {
@@ -116,6 +114,11 @@ package kinesis {
     def startStreamEncryption(params: StartStreamEncryptionInput): Request[js.Object] = js.native
     def stopStreamEncryption(params: StopStreamEncryptionInput): Request[js.Object] = js.native
     def updateShardCount(params: UpdateShardCountInput): Request[UpdateShardCountOutput] = js.native
+  }
+  object Kinesis {
+    @inline implicit def toOps(service: Kinesis): KinesisOps = {
+      new KinesisOps(service)
+    }
   }
 
   /** Represents the input for <code>AddTagsToStream</code>.

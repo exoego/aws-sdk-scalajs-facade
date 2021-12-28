@@ -146,7 +146,7 @@ package object quicksight {
   type WorkGroup = String
   type timestamp = js.Date
 
-  implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
+  final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
     @inline def cancelIngestionFuture(params: CancelIngestionRequest): Future[CancelIngestionResponse] = service.cancelIngestion(params).promise().toFuture
     @inline def createAccountCustomizationFuture(params: CreateAccountCustomizationRequest): Future[CreateAccountCustomizationResponse] = service.createAccountCustomization(params).promise().toFuture
@@ -249,9 +249,7 @@ package object quicksight {
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
 
   }
-}
 
-package quicksight {
   @js.native
   @JSImport("aws-sdk/clients/quicksight", JSImport.Namespace, "AWS.QuickSight")
   class QuickSight() extends js.Object {
@@ -356,6 +354,11 @@ package quicksight {
     def updateThemeAlias(params: UpdateThemeAliasRequest): Request[UpdateThemeAliasResponse] = js.native
     def updateThemePermissions(params: UpdateThemePermissionsRequest): Request[UpdateThemePermissionsResponse] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+  }
+  object QuickSight {
+    @inline implicit def toOps(service: QuickSight): QuickSightOps = {
+      new QuickSightOps(service)
+    }
   }
 
   /** The Amazon QuickSight customizations associated with your AWS account or a QuickSight namespace in a specific AWS Region.

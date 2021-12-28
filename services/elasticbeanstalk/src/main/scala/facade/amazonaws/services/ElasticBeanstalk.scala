@@ -158,7 +158,7 @@ package object elasticbeanstalk {
   type VersionLabelsList = js.Array[VersionLabel]
   type VirtualizationType = String
 
-  implicit final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
+  final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
 
     @inline def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] = service.abortEnvironmentUpdate(params).promise().toFuture
     @inline def applyEnvironmentManagedActionFuture(params: ApplyEnvironmentManagedActionRequest): Future[ApplyEnvironmentManagedActionResult] = service.applyEnvironmentManagedAction(params).promise().toFuture
@@ -209,9 +209,7 @@ package object elasticbeanstalk {
     @inline def validateConfigurationSettingsFuture(params: ValidateConfigurationSettingsMessage): Future[ConfigurationSettingsValidationMessages] = service.validateConfigurationSettings(params).promise().toFuture
 
   }
-}
 
-package elasticbeanstalk {
   @js.native
   @JSImport("aws-sdk/clients/elasticbeanstalk", JSImport.Namespace, "AWS.ElasticBeanstalk")
   class ElasticBeanstalk() extends js.Object {
@@ -264,6 +262,11 @@ package elasticbeanstalk {
     def updateEnvironment(params: UpdateEnvironmentMessage): Request[EnvironmentDescription] = js.native
     def updateTagsForResource(params: UpdateTagsForResourceMessage): Request[js.Object] = js.native
     def validateConfigurationSettings(params: ValidateConfigurationSettingsMessage): Request[ConfigurationSettingsValidationMessages] = js.native
+  }
+  object ElasticBeanstalk {
+    @inline implicit def toOps(service: ElasticBeanstalk): ElasticBeanstalkOps = {
+      new ElasticBeanstalkOps(service)
+    }
   }
 
   /** <p/>

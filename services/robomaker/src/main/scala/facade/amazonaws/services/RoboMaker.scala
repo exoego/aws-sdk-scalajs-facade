@@ -93,7 +93,7 @@ package object robomaker {
   type WorldGenerationJobSummaries = js.Array[WorldGenerationJobSummary]
   type WorldSummaries = js.Array[WorldSummary]
 
-  implicit final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
+  final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
 
     @inline def batchDeleteWorldsFuture(params: BatchDeleteWorldsRequest): Future[BatchDeleteWorldsResponse] = service.batchDeleteWorlds(params).promise().toFuture
     @inline def batchDescribeSimulationJobFuture(params: BatchDescribeSimulationJobRequest): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise().toFuture
@@ -154,9 +154,7 @@ package object robomaker {
     @inline def updateWorldTemplateFuture(params: UpdateWorldTemplateRequest): Future[UpdateWorldTemplateResponse] = service.updateWorldTemplate(params).promise().toFuture
 
   }
-}
 
-package robomaker {
   @js.native
   @JSImport("aws-sdk/clients/robomaker", JSImport.Namespace, "AWS.RoboMaker")
   class RoboMaker() extends js.Object {
@@ -219,6 +217,11 @@ package robomaker {
     def updateRobotApplication(params: UpdateRobotApplicationRequest): Request[UpdateRobotApplicationResponse] = js.native
     def updateSimulationApplication(params: UpdateSimulationApplicationRequest): Request[UpdateSimulationApplicationResponse] = js.native
     def updateWorldTemplate(params: UpdateWorldTemplateRequest): Request[UpdateWorldTemplateResponse] = js.native
+  }
+  object RoboMaker {
+    @inline implicit def toOps(service: RoboMaker): RoboMakerOps = {
+      new RoboMakerOps(service)
+    }
   }
 
   @js.native

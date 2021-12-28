@@ -32,7 +32,7 @@ package object dataexchange {
   type __stringMin0Max16384 = String
   type __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093 = String
 
-  implicit final class DataExchangeOps(private val service: DataExchange) extends AnyVal {
+  final class DataExchangeOps(private val service: DataExchange) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobRequest): Future[js.Object] = service.cancelJob(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] = service.createDataSet(params).promise().toFuture
@@ -58,9 +58,7 @@ package object dataexchange {
     @inline def updateRevisionFuture(params: UpdateRevisionRequest): Future[UpdateRevisionResponse] = service.updateRevision(params).promise().toFuture
 
   }
-}
 
-package dataexchange {
   @js.native
   @JSImport("aws-sdk/clients/dataexchange", JSImport.Namespace, "AWS.DataExchange")
   class DataExchange() extends js.Object {
@@ -88,6 +86,11 @@ package dataexchange {
     def updateAsset(params: UpdateAssetRequest): Request[UpdateAssetResponse] = js.native
     def updateDataSet(params: UpdateDataSetRequest): Request[UpdateDataSetResponse] = js.native
     def updateRevision(params: UpdateRevisionRequest): Request[UpdateRevisionResponse] = js.native
+  }
+  object DataExchange {
+    @inline implicit def toOps(service: DataExchange): DataExchangeOps = {
+      new DataExchangeOps(service)
+    }
   }
 
   /** The destination for the asset.

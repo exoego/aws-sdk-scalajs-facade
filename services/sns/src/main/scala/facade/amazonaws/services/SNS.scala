@@ -45,7 +45,7 @@ package object sns {
   type topicARN = String
   type topicName = String
 
-  implicit final class SNSOps(private val service: SNS) extends AnyVal {
+  final class SNSOps(private val service: SNS) extends AnyVal {
 
     @inline def addPermissionFuture(params: AddPermissionInput): Future[js.Object] = service.addPermission(params).promise().toFuture
     @inline def checkIfPhoneNumberIsOptedOutFuture(params: CheckIfPhoneNumberIsOptedOutInput): Future[CheckIfPhoneNumberIsOptedOutResponse] = service.checkIfPhoneNumberIsOptedOut(params).promise().toFuture
@@ -82,9 +82,7 @@ package object sns {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package sns {
   @js.native
   @JSImport("aws-sdk/clients/sns", JSImport.Namespace, "AWS.SNS")
   class SNS() extends js.Object {
@@ -123,6 +121,11 @@ package sns {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def unsubscribe(params: UnsubscribeInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object SNS {
+    @inline implicit def toOps(service: SNS): SNSOps = {
+      new SNSOps(service)
+    }
   }
 
   @js.native

@@ -78,7 +78,7 @@ package object fsx {
   type VpcId = String
   type WeeklyTime = String
 
-  implicit final class FSxOps(private val service: FSx) extends AnyVal {
+  final class FSxOps(private val service: FSx) extends AnyVal {
 
     @inline def associateFileSystemAliasesFuture(params: AssociateFileSystemAliasesRequest): Future[AssociateFileSystemAliasesResponse] = service.associateFileSystemAliases(params).promise().toFuture
     @inline def cancelDataRepositoryTaskFuture(params: CancelDataRepositoryTaskRequest): Future[CancelDataRepositoryTaskResponse] = service.cancelDataRepositoryTask(params).promise().toFuture
@@ -100,9 +100,7 @@ package object fsx {
     @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] = service.updateFileSystem(params).promise().toFuture
 
   }
-}
 
-package fsx {
   @js.native
   @JSImport("aws-sdk/clients/fsx", JSImport.Namespace, "AWS.FSx")
   class FSx() extends js.Object {
@@ -126,6 +124,11 @@ package fsx {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateFileSystem(params: UpdateFileSystemRequest): Request[UpdateFileSystemResponse] = js.native
+  }
+  object FSx {
+    @inline implicit def toOps(service: FSx): FSxOps = {
+      new FSxOps(service)
+    }
   }
 
   /** The Microsoft AD attributes of the Amazon FSx for Windows File Server file system.

@@ -152,7 +152,7 @@ package object storagegateway {
   type VolumeUsedInBytes = Double
   type double = Double
 
-  implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
+  final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
     @inline def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] = service.activateGateway(params).promise().toFuture
     @inline def addCacheFuture(params: AddCacheInput): Future[AddCacheOutput] = service.addCache(params).promise().toFuture
@@ -245,9 +245,7 @@ package object storagegateway {
     @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] = service.updateVTLDeviceType(params).promise().toFuture
 
   }
-}
 
-package storagegateway {
   @js.native
   @JSImport("aws-sdk/clients/storagegateway", JSImport.Namespace, "AWS.StorageGateway")
   class StorageGateway() extends js.Object {
@@ -342,6 +340,11 @@ package storagegateway {
     def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] = js.native
     def updateSnapshotSchedule(params: UpdateSnapshotScheduleInput): Request[UpdateSnapshotScheduleOutput] = js.native
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
+  }
+  object StorageGateway {
+    @inline implicit def toOps(service: StorageGateway): StorageGatewayOps = {
+      new StorageGatewayOps(service)
+    }
   }
 
   /** A JSON object containing one or more of the following fields: * ActivationKey * GatewayName * GatewayRegion * GatewayTimezone * GatewayType * MediumChangerType * TapeDriveType

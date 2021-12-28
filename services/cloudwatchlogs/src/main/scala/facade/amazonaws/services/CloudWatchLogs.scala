@@ -86,7 +86,7 @@ package object cloudwatchlogs {
   type Token = String
   type Value = String
 
-  implicit final class CloudWatchLogsOps(private val service: CloudWatchLogs) extends AnyVal {
+  final class CloudWatchLogsOps(private val service: CloudWatchLogs) extends AnyVal {
 
     @inline def associateKmsKeyFuture(params: AssociateKmsKeyRequest): Future[js.Object] = service.associateKmsKey(params).promise().toFuture
     @inline def cancelExportTaskFuture(params: CancelExportTaskRequest): Future[js.Object] = service.cancelExportTask(params).promise().toFuture
@@ -132,9 +132,7 @@ package object cloudwatchlogs {
     @inline def untagLogGroupFuture(params: UntagLogGroupRequest): Future[js.Object] = service.untagLogGroup(params).promise().toFuture
 
   }
-}
 
-package cloudwatchlogs {
   @js.native
   @JSImport("aws-sdk/clients/cloudwatchlogs", JSImport.Namespace, "AWS.CloudWatchLogs")
   class CloudWatchLogs() extends js.Object {
@@ -182,6 +180,11 @@ package cloudwatchlogs {
     def tagLogGroup(params: TagLogGroupRequest): Request[js.Object] = js.native
     def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse] = js.native
     def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object] = js.native
+  }
+  object CloudWatchLogs {
+    @inline implicit def toOps(service: CloudWatchLogs): CloudWatchLogsOps = {
+      new CloudWatchLogsOps(service)
+    }
   }
 
   @js.native

@@ -97,7 +97,7 @@ package object redshift {
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
+  final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
     @inline def acceptReservedNodeExchangeFuture(params: AcceptReservedNodeExchangeInputMessage): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise().toFuture
     @inline def addPartnerFuture(params: PartnerIntegrationInputMessage): Future[PartnerIntegrationOutputMessage] = service.addPartner(params).promise().toFuture
@@ -205,9 +205,7 @@ package object redshift {
     @inline def updatePartnerStatusFuture(params: UpdatePartnerStatusInputMessage): Future[PartnerIntegrationOutputMessage] = service.updatePartnerStatus(params).promise().toFuture
 
   }
-}
 
-package redshift {
   @js.native
   @JSImport("aws-sdk/clients/redshift", JSImport.Namespace, "AWS.Redshift")
   class Redshift() extends js.Object {
@@ -317,6 +315,11 @@ package redshift {
     def revokeSnapshotAccess(params: RevokeSnapshotAccessMessage): Request[RevokeSnapshotAccessResult] = js.native
     def rotateEncryptionKey(params: RotateEncryptionKeyMessage): Request[RotateEncryptionKeyResult] = js.native
     def updatePartnerStatus(params: UpdatePartnerStatusInputMessage): Request[PartnerIntegrationOutputMessage] = js.native
+  }
+  object Redshift {
+    @inline implicit def toOps(service: Redshift): RedshiftOps = {
+      new RedshiftOps(service)
+    }
   }
 
   @js.native

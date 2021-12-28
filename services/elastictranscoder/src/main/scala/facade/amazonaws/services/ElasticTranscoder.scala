@@ -107,7 +107,7 @@ package object elastictranscoder {
   type ZeroTo255String = String
   type ZeroTo512String = String
 
-  implicit final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
+  final class ElasticTranscoderOps(private val service: ElasticTranscoder) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
@@ -127,9 +127,7 @@ package object elastictranscoder {
     @inline def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] = service.updatePipelineStatus(params).promise().toFuture
 
   }
-}
 
-package elastictranscoder {
   @js.native
   @JSImport("aws-sdk/clients/elastictranscoder", JSImport.Namespace, "AWS.ElasticTranscoder")
   class ElasticTranscoder() extends js.Object {
@@ -152,6 +150,11 @@ package elastictranscoder {
     def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse] = js.native
     def updatePipelineNotifications(params: UpdatePipelineNotificationsRequest): Request[UpdatePipelineNotificationsResponse] = js.native
     def updatePipelineStatus(params: UpdatePipelineStatusRequest): Request[UpdatePipelineStatusResponse] = js.native
+  }
+  object ElasticTranscoder {
+    @inline implicit def toOps(service: ElasticTranscoder): ElasticTranscoderOps = {
+      new ElasticTranscoderOps(service)
+    }
   }
 
   /** The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array. To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.

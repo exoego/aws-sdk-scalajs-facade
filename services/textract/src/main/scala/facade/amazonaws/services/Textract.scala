@@ -40,7 +40,7 @@ package object textract {
   type UInteger = Int
   type Warnings = js.Array[Warning]
 
-  implicit final class TextractOps(private val service: Textract) extends AnyVal {
+  final class TextractOps(private val service: Textract) extends AnyVal {
 
     @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] = service.analyzeDocument(params).promise().toFuture
     @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] = service.detectDocumentText(params).promise().toFuture
@@ -50,9 +50,7 @@ package object textract {
     @inline def startDocumentTextDetectionFuture(params: StartDocumentTextDetectionRequest): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise().toFuture
 
   }
-}
 
-package textract {
   @js.native
   @JSImport("aws-sdk/clients/textract", JSImport.Namespace, "AWS.Textract")
   class Textract() extends js.Object {
@@ -64,6 +62,11 @@ package textract {
     def getDocumentTextDetection(params: GetDocumentTextDetectionRequest): Request[GetDocumentTextDetectionResponse] = js.native
     def startDocumentAnalysis(params: StartDocumentAnalysisRequest): Request[StartDocumentAnalysisResponse] = js.native
     def startDocumentTextDetection(params: StartDocumentTextDetectionRequest): Request[StartDocumentTextDetectionResponse] = js.native
+  }
+  object Textract {
+    @inline implicit def toOps(service: Textract): TextractOps = {
+      new TextractOps(service)
+    }
   }
 
   @js.native

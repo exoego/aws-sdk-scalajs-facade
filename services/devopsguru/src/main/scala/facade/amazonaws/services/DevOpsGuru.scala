@@ -73,7 +73,7 @@ package object devopsguru {
   type UpdateStackNames = js.Array[StackName]
   type UuidNextToken = String
 
-  implicit final class DevOpsGuruOps(private val service: DevOpsGuru) extends AnyVal {
+  final class DevOpsGuruOps(private val service: DevOpsGuru) extends AnyVal {
 
     @inline def addNotificationChannelFuture(params: AddNotificationChannelRequest): Future[AddNotificationChannelResponse] = service.addNotificationChannel(params).promise().toFuture
     @inline def describeAccountHealthFuture(params: DescribeAccountHealthRequest): Future[DescribeAccountHealthResponse] = service.describeAccountHealth(params).promise().toFuture
@@ -96,9 +96,7 @@ package object devopsguru {
     @inline def updateServiceIntegrationFuture(params: UpdateServiceIntegrationRequest): Future[UpdateServiceIntegrationResponse] = service.updateServiceIntegration(params).promise().toFuture
 
   }
-}
 
-package devopsguru {
   @js.native
   @JSImport("aws-sdk/clients/devopsguru", JSImport.Namespace, "AWS.DevOpsGuru")
   class DevOpsGuru() extends js.Object {
@@ -123,6 +121,11 @@ package devopsguru {
     def searchInsights(params: SearchInsightsRequest): Request[SearchInsightsResponse] = js.native
     def updateResourceCollection(params: UpdateResourceCollectionRequest): Request[UpdateResourceCollectionResponse] = js.native
     def updateServiceIntegration(params: UpdateServiceIntegrationRequest): Request[UpdateServiceIntegrationResponse] = js.native
+  }
+  object DevOpsGuru {
+    @inline implicit def toOps(service: DevOpsGuru): DevOpsGuruOps = {
+      new DevOpsGuruOps(service)
+    }
   }
 
   @js.native

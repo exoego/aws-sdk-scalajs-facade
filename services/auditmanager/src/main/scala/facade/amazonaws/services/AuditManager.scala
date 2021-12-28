@@ -103,7 +103,7 @@ package object auditmanager {
   type ValidationErrors = js.Array[NonEmptyString]
   type organizationId = String
 
-  implicit final class AuditManagerOps(private val service: AuditManager) extends AnyVal {
+  final class AuditManagerOps(private val service: AuditManager) extends AnyVal {
 
     @inline def associateAssessmentReportEvidenceFolderFuture(params: AssociateAssessmentReportEvidenceFolderRequest): Future[AssociateAssessmentReportEvidenceFolderResponse] = service.associateAssessmentReportEvidenceFolder(params).promise().toFuture
     @inline def batchAssociateAssessmentReportEvidenceFuture(params: BatchAssociateAssessmentReportEvidenceRequest): Future[BatchAssociateAssessmentReportEvidenceResponse] = service.batchAssociateAssessmentReportEvidence(params).promise().toFuture
@@ -158,9 +158,7 @@ package object auditmanager {
     @inline def validateAssessmentReportIntegrityFuture(params: ValidateAssessmentReportIntegrityRequest): Future[ValidateAssessmentReportIntegrityResponse] = service.validateAssessmentReportIntegrity(params).promise().toFuture
 
   }
-}
 
-package auditmanager {
   @js.native
   @JSImport("aws-sdk/clients/auditmanager", JSImport.Namespace, "AWS.AuditManager")
   class AuditManager() extends js.Object {
@@ -217,6 +215,11 @@ package auditmanager {
     def updateControl(params: UpdateControlRequest): Request[UpdateControlResponse] = js.native
     def updateSettings(params: UpdateSettingsRequest): Request[UpdateSettingsResponse] = js.native
     def validateAssessmentReportIntegrity(params: ValidateAssessmentReportIntegrityRequest): Request[ValidateAssessmentReportIntegrityResponse] = js.native
+  }
+  object AuditManager {
+    @inline implicit def toOps(service: AuditManager): AuditManagerOps = {
+      new AuditManagerOps(service)
+    }
   }
 
   /** The wrapper of AWS account details, such as account ID, email address, and so on.

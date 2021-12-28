@@ -115,7 +115,7 @@ package object codedeploy {
   type VersionId = String
   type WaitTimeInMins = Int
 
-  implicit final class CodeDeployOps(private val service: CodeDeploy) extends AnyVal {
+  final class CodeDeployOps(private val service: CodeDeploy) extends AnyVal {
 
     @inline def addTagsToOnPremisesInstancesFuture(params: AddTagsToOnPremisesInstancesInput): Future[js.Object] = service.addTagsToOnPremisesInstances(params).promise().toFuture
     @inline def batchGetApplicationRevisionsFuture(params: BatchGetApplicationRevisionsInput): Future[BatchGetApplicationRevisionsOutput] = service.batchGetApplicationRevisions(params).promise().toFuture
@@ -162,9 +162,7 @@ package object codedeploy {
     @inline def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] = service.updateDeploymentGroup(params).promise().toFuture
 
   }
-}
 
-package codedeploy {
   @js.native
   @JSImport("aws-sdk/clients/codedeploy", JSImport.Namespace, "AWS.CodeDeploy")
   class CodeDeploy() extends js.Object {
@@ -217,6 +215,11 @@ package codedeploy {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateApplication(params: UpdateApplicationInput): Request[js.Object] = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
+  }
+  object CodeDeploy {
+    @inline implicit def toOps(service: CodeDeploy): CodeDeployOps = {
+      new CodeDeployOps(service)
+    }
   }
 
   /** Represents the input of, and adds tags to, an on-premises instance operation.

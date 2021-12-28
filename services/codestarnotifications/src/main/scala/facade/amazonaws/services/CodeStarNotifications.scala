@@ -40,7 +40,7 @@ package object codestarnotifications {
   type Targets = js.Array[Target]
   type TargetsBatch = js.Array[TargetSummary]
 
-  implicit final class CodeStarNotificationsOps(private val service: CodeStarNotifications) extends AnyVal {
+  final class CodeStarNotificationsOps(private val service: CodeStarNotifications) extends AnyVal {
 
     @inline def createNotificationRuleFuture(params: CreateNotificationRuleRequest): Future[CreateNotificationRuleResult] = service.createNotificationRule(params).promise().toFuture
     @inline def deleteNotificationRuleFuture(params: DeleteNotificationRuleRequest): Future[DeleteNotificationRuleResult] = service.deleteNotificationRule(params).promise().toFuture
@@ -57,9 +57,7 @@ package object codestarnotifications {
     @inline def updateNotificationRuleFuture(params: UpdateNotificationRuleRequest): Future[UpdateNotificationRuleResult] = service.updateNotificationRule(params).promise().toFuture
 
   }
-}
 
-package codestarnotifications {
   @js.native
   @JSImport("aws-sdk/clients/codestarnotifications", JSImport.Namespace, "AWS.CodeStarNotifications")
   class CodeStarNotifications() extends js.Object {
@@ -78,6 +76,11 @@ package codestarnotifications {
     def unsubscribe(params: UnsubscribeRequest): Request[UnsubscribeResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateNotificationRule(params: UpdateNotificationRuleRequest): Request[UpdateNotificationRuleResult] = js.native
+  }
+  object CodeStarNotifications {
+    @inline implicit def toOps(service: CodeStarNotifications): CodeStarNotificationsOps = {
+      new CodeStarNotificationsOps(service)
+    }
   }
 
   @js.native

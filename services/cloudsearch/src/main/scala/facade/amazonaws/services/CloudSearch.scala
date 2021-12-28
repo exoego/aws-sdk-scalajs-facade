@@ -39,7 +39,7 @@ package object cloudsearch {
   type UpdateTimestamp = js.Date
   type Word = String
 
-  implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
+  final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
 
     @inline def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] = service.buildSuggesters(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] = service.createDomain(params).promise().toFuture
@@ -69,9 +69,7 @@ package object cloudsearch {
     @inline def updateServiceAccessPoliciesFuture(params: UpdateServiceAccessPoliciesRequest): Future[UpdateServiceAccessPoliciesResponse] = service.updateServiceAccessPolicies(params).promise().toFuture
 
   }
-}
 
-package cloudsearch {
   @js.native
   @JSImport("aws-sdk/clients/cloudsearch", JSImport.Namespace, "AWS.CloudSearch")
   class CloudSearch() extends js.Object {
@@ -103,6 +101,11 @@ package cloudsearch {
     def updateDomainEndpointOptions(params: UpdateDomainEndpointOptionsRequest): Request[UpdateDomainEndpointOptionsResponse] = js.native
     def updateScalingParameters(params: UpdateScalingParametersRequest): Request[UpdateScalingParametersResponse] = js.native
     def updateServiceAccessPolicies(params: UpdateServiceAccessPoliciesRequest): Request[UpdateServiceAccessPoliciesResponse] = js.native
+  }
+  object CloudSearch {
+    @inline implicit def toOps(service: CloudSearch): CloudSearchOps = {
+      new CloudSearchOps(service)
+    }
   }
 
   /** The configured access rules for the domain's document and search endpoints, and the current status of those rules.

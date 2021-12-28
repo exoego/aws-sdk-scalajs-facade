@@ -15,20 +15,23 @@ package object mobileanalytics {
   type String10Chars = String
   type String50Chars = String
 
-  implicit final class MobileAnalyticsOps(private val service: MobileAnalytics) extends AnyVal {
+  final class MobileAnalyticsOps(private val service: MobileAnalytics) extends AnyVal {
 
     @inline def putEventsFuture(params: PutEventsInput): Future[js.Object] = service.putEvents(params).promise().toFuture
 
   }
-}
 
-package mobileanalytics {
   @js.native
   @JSImport("aws-sdk/clients/mobileanalytics", JSImport.Namespace, "AWS.MobileAnalytics")
   class MobileAnalytics() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def putEvents(params: PutEventsInput): Request[js.Object] = js.native
+  }
+  object MobileAnalytics {
+    @inline implicit def toOps(service: MobileAnalytics): MobileAnalyticsOps = {
+      new MobileAnalyticsOps(service)
+    }
   }
 
   /** An exception object returned when a request fails.

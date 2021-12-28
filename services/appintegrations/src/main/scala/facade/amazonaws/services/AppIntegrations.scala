@@ -27,7 +27,7 @@ package object appintegrations {
   type TagValue = String
   type UUID = String
 
-  implicit final class AppIntegrationsOps(private val service: AppIntegrations) extends AnyVal {
+  final class AppIntegrationsOps(private val service: AppIntegrations) extends AnyVal {
 
     @inline def createEventIntegrationFuture(params: CreateEventIntegrationRequest): Future[CreateEventIntegrationResponse] = service.createEventIntegration(params).promise().toFuture
     @inline def deleteEventIntegrationFuture(params: DeleteEventIntegrationRequest): Future[DeleteEventIntegrationResponse] = service.deleteEventIntegration(params).promise().toFuture
@@ -40,9 +40,7 @@ package object appintegrations {
     @inline def updateEventIntegrationFuture(params: UpdateEventIntegrationRequest): Future[UpdateEventIntegrationResponse] = service.updateEventIntegration(params).promise().toFuture
 
   }
-}
 
-package appintegrations {
   @js.native
   @JSImport("aws-sdk/clients/appintegrations", JSImport.Namespace, "AWS.AppIntegrations")
   class AppIntegrations() extends js.Object {
@@ -57,6 +55,11 @@ package appintegrations {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateEventIntegration(params: UpdateEventIntegrationRequest): Request[UpdateEventIntegrationResponse] = js.native
+  }
+  object AppIntegrations {
+    @inline implicit def toOps(service: AppIntegrations): AppIntegrationsOps = {
+      new AppIntegrationsOps(service)
+    }
   }
 
   @js.native

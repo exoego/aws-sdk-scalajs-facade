@@ -194,7 +194,7 @@ package object servicecatalog {
   type UserArnSession = String
   type Verbose = Boolean
 
-  implicit final class ServiceCatalogOps(private val service: ServiceCatalog) extends AnyVal {
+  final class ServiceCatalogOps(private val service: ServiceCatalog) extends AnyVal {
 
     @inline def acceptPortfolioShareFuture(params: AcceptPortfolioShareInput): Future[AcceptPortfolioShareOutput] = service.acceptPortfolioShare(params).promise().toFuture
     @inline def associateBudgetWithResourceFuture(params: AssociateBudgetWithResourceInput): Future[AssociateBudgetWithResourceOutput] = service.associateBudgetWithResource(params).promise().toFuture
@@ -285,9 +285,7 @@ package object servicecatalog {
     @inline def updateTagOptionFuture(params: UpdateTagOptionInput): Future[UpdateTagOptionOutput] = service.updateTagOption(params).promise().toFuture
 
   }
-}
 
-package servicecatalog {
   @js.native
   @JSImport("aws-sdk/clients/servicecatalog", JSImport.Namespace, "AWS.ServiceCatalog")
   class ServiceCatalog() extends js.Object {
@@ -380,6 +378,11 @@ package servicecatalog {
     def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] = js.native
     def updateServiceAction(params: UpdateServiceActionInput): Request[UpdateServiceActionOutput] = js.native
     def updateTagOption(params: UpdateTagOptionInput): Request[UpdateTagOptionOutput] = js.native
+  }
+  object ServiceCatalog {
+    @inline implicit def toOps(service: ServiceCatalog): ServiceCatalogOps = {
+      new ServiceCatalogOps(service)
+    }
   }
 
   @js.native

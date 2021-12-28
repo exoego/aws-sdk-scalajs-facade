@@ -74,7 +74,7 @@ package object accessanalyzer {
   type ValueList = js.Array[String]
   type VpcId = String
 
-  implicit final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
+  final class AccessAnalyzerOps(private val service: AccessAnalyzer) extends AnyVal {
 
     @inline def applyArchiveRuleFuture(params: ApplyArchiveRuleRequest): Future[js.Object] = service.applyArchiveRule(params).promise().toFuture
     @inline def cancelPolicyGenerationFuture(params: CancelPolicyGenerationRequest): Future[CancelPolicyGenerationResponse] = service.cancelPolicyGeneration(params).promise().toFuture
@@ -106,9 +106,7 @@ package object accessanalyzer {
     @inline def validatePolicyFuture(params: ValidatePolicyRequest): Future[ValidatePolicyResponse] = service.validatePolicy(params).promise().toFuture
 
   }
-}
 
-package accessanalyzer {
   @js.native
   @JSImport("aws-sdk/clients/accessanalyzer", JSImport.Namespace, "AWS.AccessAnalyzer")
   class AccessAnalyzer() extends js.Object {
@@ -142,6 +140,11 @@ package accessanalyzer {
     def updateArchiveRule(params: UpdateArchiveRuleRequest): Request[js.Object] = js.native
     def updateFindings(params: UpdateFindingsRequest): Request[js.Object] = js.native
     def validatePolicy(params: ValidatePolicyRequest): Request[ValidatePolicyResponse] = js.native
+  }
+  object AccessAnalyzer {
+    @inline implicit def toOps(service: AccessAnalyzer): AccessAnalyzerOps = {
+      new AccessAnalyzerOps(service)
+    }
   }
 
   /** Contains information about an access preview.

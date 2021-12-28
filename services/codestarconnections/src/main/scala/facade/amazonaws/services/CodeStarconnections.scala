@@ -31,7 +31,7 @@ package object codestarconnections {
   type Url = String
   type VpcId = String
 
-  implicit final class CodeStarconnectionsOps(private val service: CodeStarconnections) extends AnyVal {
+  final class CodeStarconnectionsOps(private val service: CodeStarconnections) extends AnyVal {
 
     @inline def createConnectionFuture(params: CreateConnectionInput): Future[CreateConnectionOutput] = service.createConnection(params).promise().toFuture
     @inline def createHostFuture(params: CreateHostInput): Future[CreateHostOutput] = service.createHost(params).promise().toFuture
@@ -47,9 +47,7 @@ package object codestarconnections {
     @inline def updateHostFuture(params: UpdateHostInput): Future[UpdateHostOutput] = service.updateHost(params).promise().toFuture
 
   }
-}
 
-package codestarconnections {
   @js.native
   @JSImport("aws-sdk/clients/codestarconnections", JSImport.Namespace, "AWS.CodeStarconnections")
   class CodeStarconnections() extends js.Object {
@@ -67,6 +65,11 @@ package codestarconnections {
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateHost(params: UpdateHostInput): Request[UpdateHostOutput] = js.native
+  }
+  object CodeStarconnections {
+    @inline implicit def toOps(service: CodeStarconnections): CodeStarconnectionsOps = {
+      new CodeStarconnectionsOps(service)
+    }
   }
 
   /** A resource that is used to connect third-party source providers with services like AWS CodePipeline. Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.

@@ -59,7 +59,7 @@ package object cloudfront {
   type TrustedKeyGroupIdList = js.Array[String]
   type timestamp = js.Date
 
-  implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
+  final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
 
     @inline def createCachePolicyFuture(params: CreateCachePolicyRequest): Future[CreateCachePolicyResult] = service.createCachePolicy(params).promise().toFuture
     @inline def createCloudFrontOriginAccessIdentityFuture(params: CreateCloudFrontOriginAccessIdentityRequest): Future[CreateCloudFrontOriginAccessIdentityResult] = service.createCloudFrontOriginAccessIdentity(params).promise().toFuture
@@ -138,9 +138,7 @@ package object cloudfront {
     @inline def updateStreamingDistributionFuture(params: UpdateStreamingDistributionRequest): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
 
   }
-}
 
-package cloudfront {
   @js.native
   @JSImport("aws-sdk/clients/cloudfront", JSImport.Namespace, "AWS.CloudFront")
   class CloudFront() extends js.Object {
@@ -221,6 +219,11 @@ package cloudfront {
     def updatePublicKey(params: UpdatePublicKeyRequest): Request[UpdatePublicKeyResult] = js.native
     def updateRealtimeLogConfig(params: UpdateRealtimeLogConfigRequest): Request[UpdateRealtimeLogConfigResult] = js.native
     def updateStreamingDistribution(params: UpdateStreamingDistributionRequest): Request[UpdateStreamingDistributionResult] = js.native
+  }
+  object CloudFront {
+    @inline implicit def toOps(service: CloudFront): CloudFrontOps = {
+      new CloudFrontOps(service)
+    }
   }
 
   /** A list of key groups, and the public keys in each key group, that CloudFront can use to verify the signatures of signed URLs and signed cookies.

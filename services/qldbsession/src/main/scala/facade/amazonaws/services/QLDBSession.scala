@@ -21,20 +21,23 @@ package object qldbsession {
   type ValueHolders = js.Array[ValueHolder]
   type WriteIOs = Double
 
-  implicit final class QLDBSessionOps(private val service: QLDBSession) extends AnyVal {
+  final class QLDBSessionOps(private val service: QLDBSession) extends AnyVal {
 
     @inline def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] = service.sendCommand(params).promise().toFuture
 
   }
-}
 
-package qldbsession {
   @js.native
   @JSImport("aws-sdk/clients/qldbsession", JSImport.Namespace, "AWS.QLDBSession")
   class QLDBSession() extends js.Object {
     def this(config: AWSConfig) = this()
 
     def sendCommand(params: SendCommandRequest): Request[SendCommandResult] = js.native
+  }
+  object QLDBSession {
+    @inline implicit def toOps(service: QLDBSession): QLDBSessionOps = {
+      new QLDBSessionOps(service)
+    }
   }
 
   /** Contains the details of the transaction to abort.

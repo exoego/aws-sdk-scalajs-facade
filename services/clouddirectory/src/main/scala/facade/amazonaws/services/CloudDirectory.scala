@@ -72,7 +72,7 @@ package object clouddirectory {
   type TypedLinkSpecifierList = js.Array[TypedLinkSpecifier]
   type Version = String
 
-  implicit final class CloudDirectoryOps(private val service: CloudDirectory) extends AnyVal {
+  final class CloudDirectoryOps(private val service: CloudDirectory) extends AnyVal {
 
     @inline def addFacetToObjectFuture(params: AddFacetToObjectRequest): Future[AddFacetToObjectResponse] = service.addFacetToObject(params).promise().toFuture
     @inline def applySchemaFuture(params: ApplySchemaRequest): Future[ApplySchemaResponse] = service.applySchema(params).promise().toFuture
@@ -142,9 +142,7 @@ package object clouddirectory {
     @inline def upgradePublishedSchemaFuture(params: UpgradePublishedSchemaRequest): Future[UpgradePublishedSchemaResponse] = service.upgradePublishedSchema(params).promise().toFuture
 
   }
-}
 
-package clouddirectory {
   @js.native
   @JSImport("aws-sdk/clients/clouddirectory", JSImport.Namespace, "AWS.CloudDirectory")
   class CloudDirectory() extends js.Object {
@@ -216,6 +214,11 @@ package clouddirectory {
     def updateTypedLinkFacet(params: UpdateTypedLinkFacetRequest): Request[UpdateTypedLinkFacetResponse] = js.native
     def upgradeAppliedSchema(params: UpgradeAppliedSchemaRequest): Request[UpgradeAppliedSchemaResponse] = js.native
     def upgradePublishedSchema(params: UpgradePublishedSchemaRequest): Request[UpgradePublishedSchemaResponse] = js.native
+  }
+  object CloudDirectory {
+    @inline implicit def toOps(service: CloudDirectory): CloudDirectoryOps = {
+      new CloudDirectoryOps(service)
+    }
   }
 
   @js.native

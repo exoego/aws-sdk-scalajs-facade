@@ -47,7 +47,7 @@ package object eks {
   type requiredClaimsMap = js.Dictionary[requiredClaimsValue]
   type requiredClaimsValue = String
 
-  implicit final class EKSOps(private val service: EKS) extends AnyVal {
+  final class EKSOps(private val service: EKS) extends AnyVal {
 
     @inline def associateEncryptionConfigFuture(params: AssociateEncryptionConfigRequest): Future[AssociateEncryptionConfigResponse] = service.associateEncryptionConfig(params).promise().toFuture
     @inline def associateIdentityProviderConfigFuture(params: AssociateIdentityProviderConfigRequest): Future[AssociateIdentityProviderConfigResponse] = service.associateIdentityProviderConfig(params).promise().toFuture
@@ -83,9 +83,7 @@ package object eks {
     @inline def updateNodegroupVersionFuture(params: UpdateNodegroupVersionRequest): Future[UpdateNodegroupVersionResponse] = service.updateNodegroupVersion(params).promise().toFuture
 
   }
-}
 
-package eks {
   @js.native
   @JSImport("aws-sdk/clients/eks", JSImport.Namespace, "AWS.EKS")
   class EKS() extends js.Object {
@@ -123,6 +121,11 @@ package eks {
     def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse] = js.native
     def updateNodegroupConfig(params: UpdateNodegroupConfigRequest): Request[UpdateNodegroupConfigResponse] = js.native
     def updateNodegroupVersion(params: UpdateNodegroupVersionRequest): Request[UpdateNodegroupVersionResponse] = js.native
+  }
+  object EKS {
+    @inline implicit def toOps(service: EKS): EKSOps = {
+      new EKSOps(service)
+    }
   }
 
   @js.native

@@ -77,7 +77,7 @@ package object workmail {
   type Users = js.Array[User]
   type WorkMailIdentifier = String
 
-  implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
+  final class WorkMailOps(private val service: WorkMail) extends AnyVal {
 
     @inline def associateDelegateToResourceFuture(params: AssociateDelegateToResourceRequest): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise().toFuture
     @inline def associateMemberToGroupFuture(params: AssociateMemberToGroupRequest): Future[AssociateMemberToGroupResponse] = service.associateMemberToGroup(params).promise().toFuture
@@ -135,9 +135,7 @@ package object workmail {
     @inline def updateResourceFuture(params: UpdateResourceRequest): Future[UpdateResourceResponse] = service.updateResource(params).promise().toFuture
 
   }
-}
 
-package workmail {
   @js.native
   @JSImport("aws-sdk/clients/workmail", JSImport.Namespace, "AWS.WorkMail")
   class WorkMail() extends js.Object {
@@ -197,6 +195,11 @@ package workmail {
     def updateMobileDeviceAccessRule(params: UpdateMobileDeviceAccessRuleRequest): Request[UpdateMobileDeviceAccessRuleResponse] = js.native
     def updatePrimaryEmailAddress(params: UpdatePrimaryEmailAddressRequest): Request[UpdatePrimaryEmailAddressResponse] = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
+  }
+  object WorkMail {
+    @inline implicit def toOps(service: WorkMail): WorkMailOps = {
+      new WorkMailOps(service)
+    }
   }
 
   /** A rule that controls access to an Amazon WorkMail organization.

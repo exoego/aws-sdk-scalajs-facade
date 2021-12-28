@@ -15,7 +15,7 @@ package object pinpointsmsvoice {
   type WordCharactersWithDelimiters = String
   type __string = String
 
-  implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
+  final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
 
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
@@ -27,9 +27,7 @@ package object pinpointsmsvoice {
     @inline def updateConfigurationSetEventDestinationFuture(params: UpdateConfigurationSetEventDestinationRequest): Future[UpdateConfigurationSetEventDestinationResponse] = service.updateConfigurationSetEventDestination(params).promise().toFuture
 
   }
-}
 
-package pinpointsmsvoice {
   @js.native
   @JSImport("aws-sdk/clients/pinpointsmsvoice", JSImport.Namespace, "AWS.PinpointSMSVoice")
   class PinpointSMSVoice() extends js.Object {
@@ -43,6 +41,11 @@ package pinpointsmsvoice {
     def listConfigurationSets(params: ListConfigurationSetsRequest): Request[ListConfigurationSetsResponse] = js.native
     def sendVoiceMessage(params: SendVoiceMessageRequest): Request[SendVoiceMessageResponse] = js.native
     def updateConfigurationSetEventDestination(params: UpdateConfigurationSetEventDestinationRequest): Request[UpdateConfigurationSetEventDestinationResponse] = js.native
+  }
+  object PinpointSMSVoice {
+    @inline implicit def toOps(service: PinpointSMSVoice): PinpointSMSVoiceOps = {
+      new PinpointSMSVoiceOps(service)
+    }
   }
 
   /** An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.

@@ -86,7 +86,7 @@ package object kinesisanalyticsv2 {
   type VpcId = String
   type ZipFileContent = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
-  implicit final class KinesisAnalyticsV2Ops(private val service: KinesisAnalyticsV2) extends AnyVal {
+  final class KinesisAnalyticsV2Ops(private val service: KinesisAnalyticsV2) extends AnyVal {
 
     @inline def addApplicationCloudWatchLoggingOptionFuture(params: AddApplicationCloudWatchLoggingOptionRequest): Future[AddApplicationCloudWatchLoggingOptionResponse] = service.addApplicationCloudWatchLoggingOption(params).promise().toFuture
     @inline def addApplicationInputFuture(params: AddApplicationInputRequest): Future[AddApplicationInputResponse] = service.addApplicationInput(params).promise().toFuture
@@ -117,9 +117,7 @@ package object kinesisanalyticsv2 {
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
 
   }
-}
 
-package kinesisanalyticsv2 {
   @js.native
   @JSImport("aws-sdk/clients/kinesisanalyticsv2", JSImport.Namespace, "AWS.KinesisAnalyticsV2")
   class KinesisAnalyticsV2() extends js.Object {
@@ -152,6 +150,11 @@ package kinesisanalyticsv2 {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+  }
+  object KinesisAnalyticsV2 {
+    @inline implicit def toOps(service: KinesisAnalyticsV2): KinesisAnalyticsV2Ops = {
+      new KinesisAnalyticsV2Ops(service)
+    }
   }
 
   @js.native

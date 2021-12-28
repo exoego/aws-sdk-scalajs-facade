@@ -22,15 +22,13 @@ package object personalizeruntime {
   type Score = Double
   type UserID = String
 
-  implicit final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
+  final class PersonalizeRuntimeOps(private val service: PersonalizeRuntime) extends AnyVal {
 
     @inline def getPersonalizedRankingFuture(params: GetPersonalizedRankingRequest): Future[GetPersonalizedRankingResponse] = service.getPersonalizedRanking(params).promise().toFuture
     @inline def getRecommendationsFuture(params: GetRecommendationsRequest): Future[GetRecommendationsResponse] = service.getRecommendations(params).promise().toFuture
 
   }
-}
 
-package personalizeruntime {
   @js.native
   @JSImport("aws-sdk/clients/personalizeruntime", JSImport.Namespace, "AWS.PersonalizeRuntime")
   class PersonalizeRuntime() extends js.Object {
@@ -38,6 +36,11 @@ package personalizeruntime {
 
     def getPersonalizedRanking(params: GetPersonalizedRankingRequest): Request[GetPersonalizedRankingResponse] = js.native
     def getRecommendations(params: GetRecommendationsRequest): Request[GetRecommendationsResponse] = js.native
+  }
+  object PersonalizeRuntime {
+    @inline implicit def toOps(service: PersonalizeRuntime): PersonalizeRuntimeOps = {
+      new PersonalizeRuntimeOps(service)
+    }
   }
 
   @js.native

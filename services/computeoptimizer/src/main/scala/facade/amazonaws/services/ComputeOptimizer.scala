@@ -93,7 +93,7 @@ package object computeoptimizer {
   type VolumeSize = Int
   type VolumeType = String
 
-  implicit final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
+  final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
 
     @inline def describeRecommendationExportJobsFuture(params: DescribeRecommendationExportJobsRequest): Future[DescribeRecommendationExportJobsResponse] = service.describeRecommendationExportJobs(params).promise().toFuture
     @inline def exportAutoScalingGroupRecommendationsFuture(params: ExportAutoScalingGroupRecommendationsRequest): Future[ExportAutoScalingGroupRecommendationsResponse] = service.exportAutoScalingGroupRecommendations(params).promise().toFuture
@@ -108,9 +108,7 @@ package object computeoptimizer {
     @inline def updateEnrollmentStatusFuture(params: UpdateEnrollmentStatusRequest): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise().toFuture
 
   }
-}
 
-package computeoptimizer {
   @js.native
   @JSImport("aws-sdk/clients/computeoptimizer", JSImport.Namespace, "AWS.ComputeOptimizer")
   class ComputeOptimizer() extends js.Object {
@@ -127,6 +125,11 @@ package computeoptimizer {
     def getLambdaFunctionRecommendations(params: GetLambdaFunctionRecommendationsRequest): Request[GetLambdaFunctionRecommendationsResponse] = js.native
     def getRecommendationSummaries(params: GetRecommendationSummariesRequest): Request[GetRecommendationSummariesResponse] = js.native
     def updateEnrollmentStatus(params: UpdateEnrollmentStatusRequest): Request[UpdateEnrollmentStatusResponse] = js.native
+  }
+  object ComputeOptimizer {
+    @inline implicit def toOps(service: ComputeOptimizer): ComputeOptimizerOps = {
+      new ComputeOptimizerOps(service)
+    }
   }
 
   /** Describes the configuration of an Auto Scaling group.

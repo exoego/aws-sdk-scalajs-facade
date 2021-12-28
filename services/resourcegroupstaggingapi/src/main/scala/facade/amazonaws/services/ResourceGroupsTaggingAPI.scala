@@ -45,7 +45,7 @@ package object resourcegroupstaggingapi {
   type TargetId = String
   type TargetIdFilterList = js.Array[TargetId]
 
-  implicit final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
+  final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
 
     @inline def describeReportCreationFuture(params: DescribeReportCreationInput): Future[DescribeReportCreationOutput] = service.describeReportCreation(params).promise().toFuture
     @inline def getComplianceSummaryFuture(params: GetComplianceSummaryInput): Future[GetComplianceSummaryOutput] = service.getComplianceSummary(params).promise().toFuture
@@ -57,9 +57,7 @@ package object resourcegroupstaggingapi {
     @inline def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] = service.untagResources(params).promise().toFuture
 
   }
-}
 
-package resourcegroupstaggingapi {
   @js.native
   @JSImport("aws-sdk/clients/resourcegroupstaggingapi", JSImport.Namespace, "AWS.ResourceGroupsTaggingAPI")
   class ResourceGroupsTaggingAPI() extends js.Object {
@@ -73,6 +71,11 @@ package resourcegroupstaggingapi {
     def startReportCreation(params: StartReportCreationInput): Request[StartReportCreationOutput] = js.native
     def tagResources(params: TagResourcesInput): Request[TagResourcesOutput] = js.native
     def untagResources(params: UntagResourcesInput): Request[UntagResourcesOutput] = js.native
+  }
+  object ResourceGroupsTaggingAPI {
+    @inline implicit def toOps(service: ResourceGroupsTaggingAPI): ResourceGroupsTaggingAPIOps = {
+      new ResourceGroupsTaggingAPIOps(service)
+    }
   }
 
   /** Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.

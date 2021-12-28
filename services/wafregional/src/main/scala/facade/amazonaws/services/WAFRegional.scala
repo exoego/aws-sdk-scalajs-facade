@@ -85,7 +85,7 @@ package object wafregional {
   type XssMatchSetUpdates = js.Array[XssMatchSetUpdate]
   type XssMatchTuples = js.Array[XssMatchTuple]
 
-  implicit final class WAFRegionalOps(private val service: WAFRegional) extends AnyVal {
+  final class WAFRegionalOps(private val service: WAFRegional) extends AnyVal {
 
     @inline def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] = service.associateWebACL(params).promise().toFuture
     @inline def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] = service.createByteMatchSet(params).promise().toFuture
@@ -170,9 +170,7 @@ package object wafregional {
     @inline def updateXssMatchSetFuture(params: UpdateXssMatchSetRequest): Future[UpdateXssMatchSetResponse] = service.updateXssMatchSet(params).promise().toFuture
 
   }
-}
 
-package wafregional {
   @js.native
   @JSImport("aws-sdk/clients/wafregional", JSImport.Namespace, "AWS.WAFRegional")
   class WAFRegional() extends js.Object {
@@ -259,6 +257,11 @@ package wafregional {
     def updateSqlInjectionMatchSet(params: UpdateSqlInjectionMatchSetRequest): Request[UpdateSqlInjectionMatchSetResponse] = js.native
     def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
     def updateXssMatchSet(params: UpdateXssMatchSetRequest): Request[UpdateXssMatchSetResponse] = js.native
+  }
+  object WAFRegional {
+    @inline implicit def toOps(service: WAFRegional): WAFRegionalOps = {
+      new WAFRegionalOps(service)
+    }
   }
 
   /** '''Note:'''This is ```AWS WAF Classic``` documentation. For more information, see [[https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html|AWS WAF Classic]] in the developer guide.

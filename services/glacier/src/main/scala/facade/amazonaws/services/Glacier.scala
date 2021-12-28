@@ -26,7 +26,7 @@ package object glacier {
   type hashmap = js.Dictionary[String]
   type httpstatus = Int
 
-  implicit final class GlacierOps(private val service: Glacier) extends AnyVal {
+  final class GlacierOps(private val service: Glacier) extends AnyVal {
 
     @inline def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] = service.abortMultipartUpload(params).promise().toFuture
     @inline def abortVaultLockFuture(params: AbortVaultLockInput): Future[js.Object] = service.abortVaultLock(params).promise().toFuture
@@ -63,9 +63,7 @@ package object glacier {
     @inline def uploadMultipartPartFuture(params: UploadMultipartPartInput): Future[UploadMultipartPartOutput] = service.uploadMultipartPart(params).promise().toFuture
 
   }
-}
 
-package glacier {
   @js.native
   @JSImport("aws-sdk/clients/glacier", JSImport.Namespace, "AWS.Glacier")
   class Glacier() extends js.Object {
@@ -104,6 +102,11 @@ package glacier {
     def setVaultNotifications(params: SetVaultNotificationsInput): Request[js.Object] = js.native
     def uploadArchive(params: UploadArchiveInput): Request[ArchiveCreationOutput] = js.native
     def uploadMultipartPart(params: UploadMultipartPartInput): Request[UploadMultipartPartOutput] = js.native
+  }
+  object Glacier {
+    @inline implicit def toOps(service: Glacier): GlacierOps = {
+      new GlacierOps(service)
+    }
   }
 
   /** Provides options to abort a multipart upload identified by the upload ID. For information about the underlying REST API, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon S3 Glacier]].

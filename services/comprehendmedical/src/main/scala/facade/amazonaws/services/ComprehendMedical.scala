@@ -35,7 +35,7 @@ package object comprehendmedical {
   type TraitList = js.Array[Trait]
   type UnmappedAttributeList = js.Array[UnmappedAttribute]
 
-  implicit final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
+  final class ComprehendMedicalOps(private val service: ComprehendMedical) extends AnyVal {
 
     @inline def describeEntitiesDetectionV2JobFuture(params: DescribeEntitiesDetectionV2JobRequest): Future[DescribeEntitiesDetectionV2JobResponse] = service.describeEntitiesDetectionV2Job(params).promise().toFuture
     @inline def describeICD10CMInferenceJobFuture(params: DescribeICD10CMInferenceJobRequest): Future[DescribeICD10CMInferenceJobResponse] = service.describeICD10CMInferenceJob(params).promise().toFuture
@@ -59,9 +59,7 @@ package object comprehendmedical {
     @inline def stopRxNormInferenceJobFuture(params: StopRxNormInferenceJobRequest): Future[StopRxNormInferenceJobResponse] = service.stopRxNormInferenceJob(params).promise().toFuture
 
   }
-}
 
-package comprehendmedical {
   @js.native
   @JSImport("aws-sdk/clients/comprehendmedical", JSImport.Namespace, "AWS.ComprehendMedical")
   class ComprehendMedical() extends js.Object {
@@ -88,6 +86,11 @@ package comprehendmedical {
     def stopICD10CMInferenceJob(params: StopICD10CMInferenceJobRequest): Request[StopICD10CMInferenceJobResponse] = js.native
     def stopPHIDetectionJob(params: StopPHIDetectionJobRequest): Request[StopPHIDetectionJobResponse] = js.native
     def stopRxNormInferenceJob(params: StopRxNormInferenceJobRequest): Request[StopRxNormInferenceJobResponse] = js.native
+  }
+  object ComprehendMedical {
+    @inline implicit def toOps(service: ComprehendMedical): ComprehendMedicalOps = {
+      new ComprehendMedicalOps(service)
+    }
   }
 
   /** An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text.

@@ -232,7 +232,7 @@ package object glue {
   type WorkflowRuns = js.Array[WorkflowRun]
   type Workflows = js.Array[Workflow]
 
-  implicit final class GlueOps(private val service: Glue) extends AnyVal {
+  final class GlueOps(private val service: Glue) extends AnyVal {
 
     @inline def batchCreatePartitionFuture(params: BatchCreatePartitionRequest): Future[BatchCreatePartitionResponse] = service.batchCreatePartition(params).promise().toFuture
     @inline def batchDeleteConnectionFuture(params: BatchDeleteConnectionRequest): Future[BatchDeleteConnectionResponse] = service.batchDeleteConnection(params).promise().toFuture
@@ -393,9 +393,7 @@ package object glue {
     @inline def updateWorkflowFuture(params: UpdateWorkflowRequest): Future[UpdateWorkflowResponse] = service.updateWorkflow(params).promise().toFuture
 
   }
-}
 
-package glue {
   @js.native
   @JSImport("aws-sdk/clients/glue", JSImport.Namespace, "AWS.Glue")
   class Glue() extends js.Object {
@@ -558,6 +556,11 @@ package glue {
     def updateTrigger(params: UpdateTriggerRequest): Request[UpdateTriggerResponse] = js.native
     def updateUserDefinedFunction(params: UpdateUserDefinedFunctionRequest): Request[UpdateUserDefinedFunctionResponse] = js.native
     def updateWorkflow(params: UpdateWorkflowRequest): Request[UpdateWorkflowResponse] = js.native
+  }
+  object Glue {
+    @inline implicit def toOps(service: Glue): GlueOps = {
+      new GlueOps(service)
+    }
   }
 
   /** Defines an action to be initiated by a trigger.

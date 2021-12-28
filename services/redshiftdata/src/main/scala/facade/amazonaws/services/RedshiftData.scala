@@ -28,7 +28,7 @@ package object redshiftdata {
   type Timestamp = js.Date
   type UUID = String
 
-  implicit final class RedshiftDataOps(private val service: RedshiftData) extends AnyVal {
+  final class RedshiftDataOps(private val service: RedshiftData) extends AnyVal {
 
     @inline def cancelStatementFuture(params: CancelStatementRequest): Future[CancelStatementResponse] = service.cancelStatement(params).promise().toFuture
     @inline def describeStatementFuture(params: DescribeStatementRequest): Future[DescribeStatementResponse] = service.describeStatement(params).promise().toFuture
@@ -41,9 +41,7 @@ package object redshiftdata {
     @inline def listTablesFuture(params: ListTablesRequest): Future[ListTablesResponse] = service.listTables(params).promise().toFuture
 
   }
-}
 
-package redshiftdata {
   @js.native
   @JSImport("aws-sdk/clients/redshiftdata", JSImport.Namespace, "AWS.RedshiftData")
   class RedshiftData() extends js.Object {
@@ -58,6 +56,11 @@ package redshiftdata {
     def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse] = js.native
     def listStatements(params: ListStatementsRequest): Request[ListStatementsResponse] = js.native
     def listTables(params: ListTablesRequest): Request[ListTablesResponse] = js.native
+  }
+  object RedshiftData {
+    @inline implicit def toOps(service: RedshiftData): RedshiftDataOps = {
+      new RedshiftDataOps(service)
+    }
   }
 
   @js.native

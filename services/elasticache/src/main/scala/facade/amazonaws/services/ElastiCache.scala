@@ -92,7 +92,7 @@ package object elasticache {
   type UserList = js.Array[User]
   type UserName = String
 
-  implicit final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
+  final class ElastiCacheOps(private val service: ElastiCache) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[TagListMessage] = service.addTagsToResource(params).promise().toFuture
     @inline def authorizeCacheSecurityGroupIngressFuture(params: AuthorizeCacheSecurityGroupIngressMessage): Future[AuthorizeCacheSecurityGroupIngressResult] = service.authorizeCacheSecurityGroupIngress(params).promise().toFuture
@@ -161,9 +161,7 @@ package object elasticache {
     @inline def testFailoverFuture(params: TestFailoverMessage): Future[TestFailoverResult] = service.testFailover(params).promise().toFuture
 
   }
-}
 
-package elasticache {
   @js.native
   @JSImport("aws-sdk/clients/elasticache", JSImport.Namespace, "AWS.ElastiCache")
   class ElastiCache() extends js.Object {
@@ -234,6 +232,11 @@ package elasticache {
     def revokeCacheSecurityGroupIngress(params: RevokeCacheSecurityGroupIngressMessage): Request[RevokeCacheSecurityGroupIngressResult] = js.native
     def startMigration(params: StartMigrationMessage): Request[StartMigrationResponse] = js.native
     def testFailover(params: TestFailoverMessage): Request[TestFailoverResult] = js.native
+  }
+  object ElastiCache {
+    @inline implicit def toOps(service: ElastiCache): ElastiCacheOps = {
+      new ElastiCacheOps(service)
+    }
   }
 
   @js.native

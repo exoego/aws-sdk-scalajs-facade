@@ -113,7 +113,7 @@ package object rds {
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class RDSOps(private val service: RDS) extends AnyVal {
+  final class RDSOps(private val service: RDS) extends AnyVal {
 
     @inline def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] = service.addRoleToDBCluster(params).promise().toFuture
     @inline def addRoleToDBInstanceFuture(params: AddRoleToDBInstanceMessage): Future[js.Object] = service.addRoleToDBInstance(params).promise().toFuture
@@ -254,9 +254,7 @@ package object rds {
     @inline def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] = service.stopDBInstance(params).promise().toFuture
 
   }
-}
 
-package rds {
   @js.native
   @JSImport("aws-sdk/clients/rds", JSImport.Namespace, "AWS.RDS")
   class RDS() extends js.Object {
@@ -399,6 +397,11 @@ package rds {
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
     def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult] = js.native
     def stopDBInstanceAutomatedBackupsReplication(params: StopDBInstanceAutomatedBackupsReplicationMessage): Request[StopDBInstanceAutomatedBackupsReplicationResult] = js.native
+  }
+  object RDS {
+    @inline implicit def toOps(service: RDS): RDSOps = {
+      new RDSOps(service)
+    }
   }
 
   /** Data returned by the ```DescribeAccountAttributes``` action.

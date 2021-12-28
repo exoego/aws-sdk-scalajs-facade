@@ -97,7 +97,7 @@ package object directconnect {
   type VirtualInterfaceTestHistoryList = js.Array[VirtualInterfaceTestHistory]
   type VirtualInterfaceType = String
 
-  implicit final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
+  final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
 
     @inline def acceptDirectConnectGatewayAssociationProposalFuture(params: AcceptDirectConnectGatewayAssociationProposalRequest): Future[AcceptDirectConnectGatewayAssociationProposalResult] = service.acceptDirectConnectGatewayAssociationProposal(params).promise().toFuture
     @inline def allocateHostedConnectionFuture(params: AllocateHostedConnectionRequest): Future[Connection] = service.allocateHostedConnection(params).promise().toFuture
@@ -156,9 +156,7 @@ package object directconnect {
     @inline def updateVirtualInterfaceAttributesFuture(params: UpdateVirtualInterfaceAttributesRequest): Future[VirtualInterface] = service.updateVirtualInterfaceAttributes(params).promise().toFuture
 
   }
-}
 
-package directconnect {
   @js.native
   @JSImport("aws-sdk/clients/directconnect", JSImport.Namespace, "AWS.DirectConnect")
   class DirectConnect() extends js.Object {
@@ -223,6 +221,11 @@ package directconnect {
     def updateDirectConnectGatewayAssociation(params: UpdateDirectConnectGatewayAssociationRequest): Request[UpdateDirectConnectGatewayAssociationResult] = js.native
     def updateLag(params: UpdateLagRequest): Request[Lag] = js.native
     def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] = js.native
+  }
+  object DirectConnect {
+    @inline implicit def toOps(service: DirectConnect): DirectConnectOps = {
+      new DirectConnectOps(service)
+    }
   }
 
   @js.native

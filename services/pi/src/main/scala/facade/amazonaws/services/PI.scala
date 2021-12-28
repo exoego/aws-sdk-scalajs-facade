@@ -20,15 +20,13 @@ package object pi {
   type ResponsePartitionKeyList = js.Array[ResponsePartitionKey]
   type StringList = js.Array[String]
 
-  implicit final class PIOps(private val service: PI) extends AnyVal {
+  final class PIOps(private val service: PI) extends AnyVal {
 
     @inline def describeDimensionKeysFuture(params: DescribeDimensionKeysRequest): Future[DescribeDimensionKeysResponse] = service.describeDimensionKeys(params).promise().toFuture
     @inline def getResourceMetricsFuture(params: GetResourceMetricsRequest): Future[GetResourceMetricsResponse] = service.getResourceMetrics(params).promise().toFuture
 
   }
-}
 
-package pi {
   @js.native
   @JSImport("aws-sdk/clients/pi", JSImport.Namespace, "AWS.PI")
   class PI() extends js.Object {
@@ -36,6 +34,11 @@ package pi {
 
     def describeDimensionKeys(params: DescribeDimensionKeysRequest): Request[DescribeDimensionKeysResponse] = js.native
     def getResourceMetrics(params: GetResourceMetricsRequest): Request[GetResourceMetricsResponse] = js.native
+  }
+  object PI {
+    @inline implicit def toOps(service: PI): PIOps = {
+      new PIOps(service)
+    }
   }
 
   /** A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.

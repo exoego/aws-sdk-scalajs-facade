@@ -38,7 +38,7 @@ package object opsworkscm {
   type TimeWindowDefinition = String
   type Timestamp = js.Date
 
-  implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
+  final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
 
     @inline def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] = service.associateNode(params).promise().toFuture
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] = service.createBackup(params).promise().toFuture
@@ -61,9 +61,7 @@ package object opsworkscm {
     @inline def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] = service.updateServer(params).promise().toFuture
 
   }
-}
 
-package opsworkscm {
   @js.native
   @JSImport("aws-sdk/clients/opsworkscm", JSImport.Namespace, "AWS.OpsWorksCM")
   class OpsWorksCM() extends js.Object {
@@ -88,6 +86,11 @@ package opsworkscm {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
     def updateServerEngineAttributes(params: UpdateServerEngineAttributesRequest): Request[UpdateServerEngineAttributesResponse] = js.native
+  }
+  object OpsWorksCM {
+    @inline implicit def toOps(service: OpsWorksCM): OpsWorksCMOps = {
+      new OpsWorksCMOps(service)
+    }
   }
 
   /** Stores account attributes.

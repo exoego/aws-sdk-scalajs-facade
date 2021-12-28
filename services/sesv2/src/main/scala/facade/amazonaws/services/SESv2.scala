@@ -123,7 +123,7 @@ package object sesv2 {
   type Volume = Double
   type WebsiteURL = String
 
-  implicit final class SESv2Ops(private val service: SESv2) extends AnyVal {
+  final class SESv2Ops(private val service: SESv2) extends AnyVal {
 
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
@@ -208,9 +208,7 @@ package object sesv2 {
     @inline def updateEmailTemplateFuture(params: UpdateEmailTemplateRequest): Future[UpdateEmailTemplateResponse] = service.updateEmailTemplate(params).promise().toFuture
 
   }
-}
 
-package sesv2 {
   @js.native
   @JSImport("aws-sdk/clients/sesv2", JSImport.Namespace, "AWS.SESV2")
   class SESv2() extends js.Object {
@@ -297,6 +295,11 @@ package sesv2 {
     def updateCustomVerificationEmailTemplate(params: UpdateCustomVerificationEmailTemplateRequest): Request[UpdateCustomVerificationEmailTemplateResponse] = js.native
     def updateEmailIdentityPolicy(params: UpdateEmailIdentityPolicyRequest): Request[UpdateEmailIdentityPolicyResponse] = js.native
     def updateEmailTemplate(params: UpdateEmailTemplateRequest): Request[UpdateEmailTemplateResponse] = js.native
+  }
+  object SESv2 {
+    @inline implicit def toOps(service: SESv2): SESv2Ops = {
+      new SESv2Ops(service)
+    }
   }
 
   /** An object that contains information about your account details.

@@ -68,7 +68,7 @@ package object appstream {
   type UserStackAssociationList = js.Array[UserStackAssociation]
   type Username = String
 
-  implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
+  final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
     @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] = service.associateFleet(params).promise().toFuture
     @inline def batchAssociateUserStackFuture(params: BatchAssociateUserStackRequest): Future[BatchAssociateUserStackResult] = service.batchAssociateUserStack(params).promise().toFuture
@@ -120,9 +120,7 @@ package object appstream {
     @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] = service.updateStack(params).promise().toFuture
 
   }
-}
 
-package appstream {
   @js.native
   @JSImport("aws-sdk/clients/appstream", JSImport.Namespace, "AWS.AppStream")
   class AppStream() extends js.Object {
@@ -176,6 +174,11 @@ package appstream {
     def updateFleet(params: UpdateFleetRequest): Request[UpdateFleetResult] = js.native
     def updateImagePermissions(params: UpdateImagePermissionsRequest): Request[UpdateImagePermissionsResult] = js.native
     def updateStack(params: UpdateStackRequest): Request[UpdateStackResult] = js.native
+  }
+  object AppStream {
+    @inline implicit def toOps(service: AppStream): AppStreamOps = {
+      new AppStreamOps(service)
+    }
   }
 
   /** Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.

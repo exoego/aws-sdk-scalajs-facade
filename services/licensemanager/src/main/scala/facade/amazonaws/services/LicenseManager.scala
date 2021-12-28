@@ -50,7 +50,7 @@ package object licensemanager {
   type TokenList = js.Array[TokenData]
   type TokenString = String
 
-  implicit final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
+  final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
 
     @inline def acceptGrantFuture(params: AcceptGrantRequest): Future[AcceptGrantResponse] = service.acceptGrant(params).promise().toFuture
     @inline def checkInLicenseFuture(params: CheckInLicenseRequest): Future[CheckInLicenseResponse] = service.checkInLicense(params).promise().toFuture
@@ -94,9 +94,7 @@ package object licensemanager {
     @inline def updateServiceSettingsFuture(params: UpdateServiceSettingsRequest): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise().toFuture
 
   }
-}
 
-package licensemanager {
   @js.native
   @JSImport("aws-sdk/clients/licensemanager", JSImport.Namespace, "AWS.LicenseManager")
   class LicenseManager() extends js.Object {
@@ -142,6 +140,11 @@ package licensemanager {
     def updateLicenseConfiguration(params: UpdateLicenseConfigurationRequest): Request[UpdateLicenseConfigurationResponse] = js.native
     def updateLicenseSpecificationsForResource(params: UpdateLicenseSpecificationsForResourceRequest): Request[UpdateLicenseSpecificationsForResourceResponse] = js.native
     def updateServiceSettings(params: UpdateServiceSettingsRequest): Request[UpdateServiceSettingsResponse] = js.native
+  }
+  object LicenseManager {
+    @inline implicit def toOps(service: LicenseManager): LicenseManagerOps = {
+      new LicenseManagerOps(service)
+    }
   }
 
   @js.native

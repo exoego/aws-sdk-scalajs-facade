@@ -54,7 +54,7 @@ package object dlm {
   type Timestamp = js.Date
   type VariableTagsList = js.Array[Tag]
 
-  implicit final class DLMOps(private val service: DLM) extends AnyVal {
+  final class DLMOps(private val service: DLM) extends AnyVal {
 
     @inline def createLifecyclePolicyFuture(params: CreateLifecyclePolicyRequest): Future[CreateLifecyclePolicyResponse] = service.createLifecyclePolicy(params).promise().toFuture
     @inline def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] = service.deleteLifecyclePolicy(params).promise().toFuture
@@ -66,9 +66,7 @@ package object dlm {
     @inline def updateLifecyclePolicyFuture(params: UpdateLifecyclePolicyRequest): Future[UpdateLifecyclePolicyResponse] = service.updateLifecyclePolicy(params).promise().toFuture
 
   }
-}
 
-package dlm {
   @js.native
   @JSImport("aws-sdk/clients/dlm", JSImport.Namespace, "AWS.DLM")
   class DLM() extends js.Object {
@@ -82,6 +80,11 @@ package dlm {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLifecyclePolicy(params: UpdateLifecyclePolicyRequest): Request[UpdateLifecyclePolicyResponse] = js.native
+  }
+  object DLM {
+    @inline implicit def toOps(service: DLM): DLMOps = {
+      new DLMOps(service)
+    }
   }
 
   /** Specifies an action for an event-based policy.

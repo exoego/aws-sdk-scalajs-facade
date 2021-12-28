@@ -118,7 +118,7 @@ package object cloudwatchevents {
   type TransformerInput = String
   type TransformerPaths = js.Dictionary[TargetInputPath]
 
-  implicit final class CloudWatchEventsOps(private val service: CloudWatchEvents) extends AnyVal {
+  final class CloudWatchEventsOps(private val service: CloudWatchEvents) extends AnyVal {
 
     @inline def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] = service.activateEventSource(params).promise().toFuture
     @inline def cancelReplayFuture(params: CancelReplayRequest): Future[CancelReplayResponse] = service.cancelReplay(params).promise().toFuture
@@ -173,9 +173,7 @@ package object cloudwatchevents {
     @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] = service.updateConnection(params).promise().toFuture
 
   }
-}
 
-package cloudwatchevents {
   @js.native
   @JSImport("aws-sdk/clients/cloudwatchevents", JSImport.Namespace, "AWS.CloudWatchEvents")
   class CloudWatchEvents() extends js.Object {
@@ -232,6 +230,11 @@ package cloudwatchevents {
     def updateApiDestination(params: UpdateApiDestinationRequest): Request[UpdateApiDestinationResponse] = js.native
     def updateArchive(params: UpdateArchiveRequest): Request[UpdateArchiveResponse] = js.native
     def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse] = js.native
+  }
+  object CloudWatchEvents {
+    @inline implicit def toOps(service: CloudWatchEvents): CloudWatchEventsOps = {
+      new CloudWatchEventsOps(service)
+    }
   }
 
   @js.native

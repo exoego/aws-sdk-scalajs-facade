@@ -30,7 +30,7 @@ package object ram {
   type TagValue = String
   type TagValueList = js.Array[TagValue]
 
-  implicit final class RAMOps(private val service: RAM) extends AnyVal {
+  final class RAMOps(private val service: RAM) extends AnyVal {
 
     @inline def acceptResourceShareInvitationFuture(params: AcceptResourceShareInvitationRequest): Future[AcceptResourceShareInvitationResponse] = service.acceptResourceShareInvitation(params).promise().toFuture
     @inline def associateResourceShareFuture(params: AssociateResourceShareRequest): Future[AssociateResourceShareResponse] = service.associateResourceShare(params).promise().toFuture
@@ -58,9 +58,7 @@ package object ram {
     @inline def updateResourceShareFuture(params: UpdateResourceShareRequest): Future[UpdateResourceShareResponse] = service.updateResourceShare(params).promise().toFuture
 
   }
-}
 
-package ram {
   @js.native
   @JSImport("aws-sdk/clients/ram", JSImport.Namespace, "AWS.RAM")
   class RAM() extends js.Object {
@@ -90,6 +88,11 @@ package ram {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateResourceShare(params: UpdateResourceShareRequest): Request[UpdateResourceShareResponse] = js.native
+  }
+  object RAM {
+    @inline implicit def toOps(service: RAM): RAMOps = {
+      new RAMOps(service)
+    }
   }
 
   @js.native

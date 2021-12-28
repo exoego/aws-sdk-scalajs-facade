@@ -87,7 +87,7 @@ package object fis {
   type UpdateExperimentTemplateStopConditionInputList = js.Array[UpdateExperimentTemplateStopConditionInput]
   type UpdateExperimentTemplateTargetInputMap = js.Dictionary[UpdateExperimentTemplateTargetInput]
 
-  implicit final class FisOps(private val service: Fis) extends AnyVal {
+  final class FisOps(private val service: Fis) extends AnyVal {
 
     @inline def createExperimentTemplateFuture(params: CreateExperimentTemplateRequest): Future[CreateExperimentTemplateResponse] = service.createExperimentTemplate(params).promise().toFuture
     @inline def deleteExperimentTemplateFuture(params: DeleteExperimentTemplateRequest): Future[DeleteExperimentTemplateResponse] = service.deleteExperimentTemplate(params).promise().toFuture
@@ -105,9 +105,7 @@ package object fis {
     @inline def updateExperimentTemplateFuture(params: UpdateExperimentTemplateRequest): Future[UpdateExperimentTemplateResponse] = service.updateExperimentTemplate(params).promise().toFuture
 
   }
-}
 
-package fis {
   @js.native
   @JSImport("aws-sdk/clients/fis", JSImport.Namespace, "AWS.Fis")
   class Fis() extends js.Object {
@@ -127,6 +125,11 @@ package fis {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateExperimentTemplate(params: UpdateExperimentTemplateRequest): Request[UpdateExperimentTemplateResponse] = js.native
+  }
+  object Fis {
+    @inline implicit def toOps(service: Fis): FisOps = {
+      new FisOps(service)
+    }
   }
 
   /** Describes an action. For more information, see [[https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html|AWS FIS actions]] in the <i>AWS Fault Injection Simulator User Guide</i>.

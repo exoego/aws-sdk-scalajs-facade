@@ -113,7 +113,7 @@ package object lambda {
   type Weight = Double
   type WorkingDirectory = String
 
-  implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
+  final class LambdaOps(private val service: Lambda) extends AnyVal {
 
     @inline def addLayerVersionPermissionFuture(params: AddLayerVersionPermissionRequest): Future[AddLayerVersionPermissionResponse] = service.addLayerVersionPermission(params).promise().toFuture
     @inline def addPermissionFuture(params: AddPermissionRequest): Future[AddPermissionResponse] = service.addPermission(params).promise().toFuture
@@ -174,9 +174,7 @@ package object lambda {
     @inline def updateFunctionEventInvokeConfigFuture(params: UpdateFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise().toFuture
 
   }
-}
 
-package lambda {
   @js.native
   @JSImport("aws-sdk/clients/lambda", JSImport.Namespace, "AWS.Lambda")
   class Lambda() extends js.Object {
@@ -240,6 +238,11 @@ package lambda {
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionEventInvokeConfig(params: UpdateFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
+  }
+  object Lambda {
+    @inline implicit def toOps(service: Lambda): LambdaOps = {
+      new LambdaOps(service)
+    }
   }
 
   /** Limits that are related to concurrency and storage. All file and storage sizes are in bytes.

@@ -170,7 +170,7 @@ package object cloudformation {
   type Value = String
   type Version = String
 
-  implicit final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
+  final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
 
     @inline def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] = service.cancelUpdateStack(params).promise().toFuture
     @inline def continueUpdateRollbackFuture(params: ContinueUpdateRollbackInput): Future[ContinueUpdateRollbackOutput] = service.continueUpdateRollback(params).promise().toFuture
@@ -229,9 +229,7 @@ package object cloudformation {
     @inline def validateTemplateFuture(params: ValidateTemplateInput): Future[ValidateTemplateOutput] = service.validateTemplate(params).promise().toFuture
 
   }
-}
 
-package cloudformation {
   @js.native
   @JSImport("aws-sdk/clients/cloudformation", JSImport.Namespace, "AWS.CloudFormation")
   class CloudFormation() extends js.Object {
@@ -292,6 +290,11 @@ package cloudformation {
     def updateStackSet(params: UpdateStackSetInput): Request[UpdateStackSetOutput] = js.native
     def updateTerminationProtection(params: UpdateTerminationProtectionInput): Request[UpdateTerminationProtectionOutput] = js.native
     def validateTemplate(params: ValidateTemplateInput): Request[ValidateTemplateOutput] = js.native
+  }
+  object CloudFormation {
+    @inline implicit def toOps(service: CloudFormation): CloudFormationOps = {
+      new CloudFormationOps(service)
+    }
   }
 
   /** Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region. For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].

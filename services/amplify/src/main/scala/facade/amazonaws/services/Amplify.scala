@@ -114,7 +114,7 @@ package object amplify {
   type WebhookUrl = String
   type Webhooks = js.Array[Webhook]
 
-  implicit final class AmplifyOps(private val service: Amplify) extends AnyVal {
+  final class AmplifyOps(private val service: Amplify) extends AnyVal {
 
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise().toFuture
     @inline def createBackendEnvironmentFuture(params: CreateBackendEnvironmentRequest): Future[CreateBackendEnvironmentResult] = service.createBackendEnvironment(params).promise().toFuture
@@ -155,9 +155,7 @@ package object amplify {
     @inline def updateWebhookFuture(params: UpdateWebhookRequest): Future[UpdateWebhookResult] = service.updateWebhook(params).promise().toFuture
 
   }
-}
 
-package amplify {
   @js.native
   @JSImport("aws-sdk/clients/amplify", JSImport.Namespace, "AWS.Amplify")
   class Amplify() extends js.Object {
@@ -200,6 +198,11 @@ package amplify {
     def updateBranch(params: UpdateBranchRequest): Request[UpdateBranchResult] = js.native
     def updateDomainAssociation(params: UpdateDomainAssociationRequest): Request[UpdateDomainAssociationResult] = js.native
     def updateWebhook(params: UpdateWebhookRequest): Request[UpdateWebhookResult] = js.native
+  }
+  object Amplify {
+    @inline implicit def toOps(service: Amplify): AmplifyOps = {
+      new AmplifyOps(service)
+    }
   }
 
   /** Represents the different branches of a repository for building, deploying, and hosting an Amplify app.

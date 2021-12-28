@@ -52,7 +52,7 @@ package object opsworks {
   type VolumeConfigurations = js.Array[VolumeConfiguration]
   type Volumes = js.Array[Volume]
 
-  implicit final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
+  final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
 
     @inline def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] = service.assignInstance(params).promise().toFuture
     @inline def assignVolumeFuture(params: AssignVolumeRequest): Future[js.Object] = service.assignVolume(params).promise().toFuture
@@ -130,9 +130,7 @@ package object opsworks {
     @inline def updateVolumeFuture(params: UpdateVolumeRequest): Future[js.Object] = service.updateVolume(params).promise().toFuture
 
   }
-}
 
-package opsworks {
   @js.native
   @JSImport("aws-sdk/clients/opsworks", JSImport.Namespace, "AWS.OpsWorks")
   class OpsWorks() extends js.Object {
@@ -212,6 +210,11 @@ package opsworks {
     def updateStack(params: UpdateStackRequest): Request[js.Object] = js.native
     def updateUserProfile(params: UpdateUserProfileRequest): Request[js.Object] = js.native
     def updateVolume(params: UpdateVolumeRequest): Request[js.Object] = js.native
+  }
+  object OpsWorks {
+    @inline implicit def toOps(service: OpsWorks): OpsWorksOps = {
+      new OpsWorksOps(service)
+    }
   }
 
   /** Describes an agent version.

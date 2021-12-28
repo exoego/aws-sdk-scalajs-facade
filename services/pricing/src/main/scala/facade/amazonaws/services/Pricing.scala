@@ -15,16 +15,14 @@ package object pricing {
   type PriceListItemJSON = String
   type ServiceList = js.Array[Service]
 
-  implicit final class PricingOps(private val service: Pricing) extends AnyVal {
+  final class PricingOps(private val service: Pricing) extends AnyVal {
 
     @inline def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] = service.describeServices(params).promise().toFuture
     @inline def getAttributeValuesFuture(params: GetAttributeValuesRequest): Future[GetAttributeValuesResponse] = service.getAttributeValues(params).promise().toFuture
     @inline def getProductsFuture(params: GetProductsRequest): Future[GetProductsResponse] = service.getProducts(params).promise().toFuture
 
   }
-}
 
-package pricing {
   @js.native
   @JSImport("aws-sdk/clients/pricing", JSImport.Namespace, "AWS.Pricing")
   class Pricing() extends js.Object {
@@ -33,6 +31,11 @@ package pricing {
     def describeServices(params: DescribeServicesRequest): Request[DescribeServicesResponse] = js.native
     def getAttributeValues(params: GetAttributeValuesRequest): Request[GetAttributeValuesResponse] = js.native
     def getProducts(params: GetProductsRequest): Request[GetProductsResponse] = js.native
+  }
+  object Pricing {
+    @inline implicit def toOps(service: Pricing): PricingOps = {
+      new PricingOps(service)
+    }
   }
 
   /** The values of a given attribute, such as <code>Throughput Optimized HDD</code> or <code>Provisioned IOPS</code> for the <code>Amazon EC2</code> <code>volumeType</code> attribute.

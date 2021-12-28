@@ -175,7 +175,7 @@ package object configservice {
   type Value = String
   type Version = String
 
-  implicit final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
+  final class ConfigServiceOps(private val service: ConfigService) extends AnyVal {
 
     @inline def batchGetAggregateResourceConfigFuture(params: BatchGetAggregateResourceConfigRequest): Future[BatchGetAggregateResourceConfigResponse] = service.batchGetAggregateResourceConfig(params).promise().toFuture
     @inline def batchGetResourceConfigFuture(params: BatchGetResourceConfigRequest): Future[BatchGetResourceConfigResponse] = service.batchGetResourceConfig(params).promise().toFuture
@@ -265,9 +265,7 @@ package object configservice {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package configservice {
   @js.native
   @JSImport("aws-sdk/clients/configservice", JSImport.Namespace, "AWS.ConfigService")
   class ConfigService() extends js.Object {
@@ -359,6 +357,11 @@ package configservice {
     def stopConfigurationRecorder(params: StopConfigurationRecorderRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
+  }
+  object ConfigService {
+    @inline implicit def toOps(service: ConfigService): ConfigServiceOps = {
+      new ConfigServiceOps(service)
+    }
   }
 
   /** A collection of accounts and regions.

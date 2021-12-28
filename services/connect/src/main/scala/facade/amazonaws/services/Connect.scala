@@ -144,7 +144,7 @@ package object connect {
   type Value = Double
   type timestamp = js.Date
 
-  implicit final class ConnectOps(private val service: Connect) extends AnyVal {
+  final class ConnectOps(private val service: Connect) extends AnyVal {
 
     @inline def associateApprovedOriginFuture(params: AssociateApprovedOriginRequest): Future[js.Object] = service.associateApprovedOrigin(params).promise().toFuture
     @inline def associateInstanceStorageConfigFuture(params: AssociateInstanceStorageConfigRequest): Future[AssociateInstanceStorageConfigResponse] = service.associateInstanceStorageConfig(params).promise().toFuture
@@ -247,9 +247,7 @@ package object connect {
     @inline def updateUserSecurityProfilesFuture(params: UpdateUserSecurityProfilesRequest): Future[js.Object] = service.updateUserSecurityProfiles(params).promise().toFuture
 
   }
-}
 
-package connect {
   @js.native
   @JSImport("aws-sdk/clients/connect", JSImport.Namespace, "AWS.Connect")
   class Connect() extends js.Object {
@@ -354,6 +352,11 @@ package connect {
     def updateUserPhoneConfig(params: UpdateUserPhoneConfigRequest): Request[js.Object] = js.native
     def updateUserRoutingProfile(params: UpdateUserRoutingProfileRequest): Request[js.Object] = js.native
     def updateUserSecurityProfiles(params: UpdateUserSecurityProfilesRequest): Request[js.Object] = js.native
+  }
+  object Connect {
+    @inline implicit def toOps(service: Connect): ConnectOps = {
+      new ConnectOps(service)
+    }
   }
 
   @js.native

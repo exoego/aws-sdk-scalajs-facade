@@ -61,7 +61,7 @@ package object customerprofiles {
   type typeName = String
   type uuid = String
 
-  implicit final class CustomerProfilesOps(private val service: CustomerProfiles) extends AnyVal {
+  final class CustomerProfilesOps(private val service: CustomerProfiles) extends AnyVal {
 
     @inline def addProfileKeyFuture(params: AddProfileKeyRequest): Future[AddProfileKeyResponse] = service.addProfileKey(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] = service.createDomain(params).promise().toFuture
@@ -93,9 +93,7 @@ package object customerprofiles {
     @inline def updateProfileFuture(params: UpdateProfileRequest): Future[UpdateProfileResponse] = service.updateProfile(params).promise().toFuture
 
   }
-}
 
-package customerprofiles {
   @js.native
   @JSImport("aws-sdk/clients/customerprofiles", JSImport.Namespace, "AWS.CustomerProfiles")
   class CustomerProfiles() extends js.Object {
@@ -129,6 +127,11 @@ package customerprofiles {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDomain(params: UpdateDomainRequest): Request[UpdateDomainResponse] = js.native
     def updateProfile(params: UpdateProfileRequest): Request[UpdateProfileResponse] = js.native
+  }
+  object CustomerProfiles {
+    @inline implicit def toOps(service: CustomerProfiles): CustomerProfilesOps = {
+      new CustomerProfilesOps(service)
+    }
   }
 
   @js.native

@@ -125,7 +125,7 @@ package object iotwireless {
   type WirelessGatewayTaskDefinitionList = js.Array[UpdateWirelessGatewayTaskEntry]
   type WirelessGatewayTaskName = String
 
-  implicit final class IoTWirelessOps(private val service: IoTWireless) extends AnyVal {
+  final class IoTWirelessOps(private val service: IoTWireless) extends AnyVal {
 
     @inline def associateAwsAccountWithPartnerAccountFuture(params: AssociateAwsAccountWithPartnerAccountRequest): Future[AssociateAwsAccountWithPartnerAccountResponse] = service.associateAwsAccountWithPartnerAccount(params).promise().toFuture
     @inline def associateWirelessDeviceWithThingFuture(params: AssociateWirelessDeviceWithThingRequest): Future[AssociateWirelessDeviceWithThingResponse] = service.associateWirelessDeviceWithThing(params).promise().toFuture
@@ -180,9 +180,7 @@ package object iotwireless {
     @inline def updateWirelessGatewayFuture(params: UpdateWirelessGatewayRequest): Future[UpdateWirelessGatewayResponse] = service.updateWirelessGateway(params).promise().toFuture
 
   }
-}
 
-package iotwireless {
   @js.native
   @JSImport("aws-sdk/clients/iotwireless", JSImport.Namespace, "AWS.IoTWireless")
   class IoTWireless() extends js.Object {
@@ -239,6 +237,11 @@ package iotwireless {
     def updatePartnerAccount(params: UpdatePartnerAccountRequest): Request[UpdatePartnerAccountResponse] = js.native
     def updateWirelessDevice(params: UpdateWirelessDeviceRequest): Request[UpdateWirelessDeviceResponse] = js.native
     def updateWirelessGateway(params: UpdateWirelessGatewayRequest): Request[UpdateWirelessGatewayResponse] = js.native
+  }
+  object IoTWireless {
+    @inline implicit def toOps(service: IoTWireless): IoTWirelessOps = {
+      new IoTWirelessOps(service)
+    }
   }
 
   /** ABP device object for LoRaWAN specification v1.0.x

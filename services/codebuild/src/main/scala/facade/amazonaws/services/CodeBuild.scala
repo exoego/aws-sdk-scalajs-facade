@@ -67,7 +67,7 @@ package object codebuild {
   type WrapperInt = Int
   type WrapperLong = Double
 
-  implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
+  final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
     @inline def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] = service.batchDeleteBuilds(params).promise().toFuture
     @inline def batchGetBuildBatchesFuture(params: BatchGetBuildBatchesInput): Future[BatchGetBuildBatchesOutput] = service.batchGetBuildBatches(params).promise().toFuture
@@ -115,9 +115,7 @@ package object codebuild {
     @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] = service.updateWebhook(params).promise().toFuture
 
   }
-}
 
-package codebuild {
   @js.native
   @JSImport("aws-sdk/clients/codebuild", JSImport.Namespace, "AWS.CodeBuild")
   class CodeBuild() extends js.Object {
@@ -167,6 +165,11 @@ package codebuild {
     def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput] = js.native
     def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput] = js.native
     def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput] = js.native
+  }
+  object CodeBuild {
+    @inline implicit def toOps(service: CodeBuild): CodeBuildOps = {
+      new CodeBuildOps(service)
+    }
   }
 
   @js.native

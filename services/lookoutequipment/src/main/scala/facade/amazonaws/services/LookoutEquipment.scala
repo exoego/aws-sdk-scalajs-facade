@@ -44,7 +44,7 @@ package object lookoutequipment {
   type TimeZoneOffset = String
   type Timestamp = js.Date
 
-  implicit final class LookoutEquipmentOps(private val service: LookoutEquipment) extends AnyVal {
+  final class LookoutEquipmentOps(private val service: LookoutEquipment) extends AnyVal {
 
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createInferenceSchedulerFuture(params: CreateInferenceSchedulerRequest): Future[CreateInferenceSchedulerResponse] = service.createInferenceScheduler(params).promise().toFuture
@@ -70,9 +70,7 @@ package object lookoutequipment {
     @inline def updateInferenceSchedulerFuture(params: UpdateInferenceSchedulerRequest): Future[js.Object] = service.updateInferenceScheduler(params).promise().toFuture
 
   }
-}
 
-package lookoutequipment {
   @js.native
   @JSImport("aws-sdk/clients/lookoutequipment", JSImport.Namespace, "AWS.LookoutEquipment")
   class LookoutEquipment() extends js.Object {
@@ -100,6 +98,11 @@ package lookoutequipment {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateInferenceScheduler(params: UpdateInferenceSchedulerRequest): Request[js.Object] = js.native
+  }
+  object LookoutEquipment {
+    @inline implicit def toOps(service: LookoutEquipment): LookoutEquipmentOps = {
+      new LookoutEquipmentOps(service)
+    }
   }
 
   @js.native

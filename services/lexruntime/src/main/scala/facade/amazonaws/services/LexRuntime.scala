@@ -39,7 +39,7 @@ package object lexruntime {
   type genericAttachmentList = js.Array[GenericAttachment]
   type listOfButtons = js.Array[Button]
 
-  implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
+  final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
 
     @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] = service.deleteSession(params).promise().toFuture
     @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] = service.getSession(params).promise().toFuture
@@ -48,9 +48,7 @@ package object lexruntime {
     @inline def putSessionFuture(params: PutSessionRequest): Future[PutSessionResponse] = service.putSession(params).promise().toFuture
 
   }
-}
 
-package lexruntime {
   @js.native
   @JSImport("aws-sdk/clients/lexruntime", JSImport.Namespace, "AWS.LexRuntime")
   class LexRuntime() extends js.Object {
@@ -61,6 +59,11 @@ package lexruntime {
     def postContent(params: PostContentRequest): Request[PostContentResponse] = js.native
     def postText(params: PostTextRequest): Request[PostTextResponse] = js.native
     def putSession(params: PutSessionRequest): Request[PutSessionResponse] = js.native
+  }
+  object LexRuntime {
+    @inline implicit def toOps(service: LexRuntime): LexRuntimeOps = {
+      new LexRuntimeOps(service)
+    }
   }
 
   /** A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.

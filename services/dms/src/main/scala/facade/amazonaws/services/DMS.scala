@@ -52,7 +52,7 @@ package object dms {
   type VpcSecurityGroupIdList = js.Array[String]
   type VpcSecurityGroupMembershipList = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class DMSOps(private val service: DMS) extends AnyVal {
+  final class DMSOps(private val service: DMS) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[AddTagsToResourceResponse] = service.addTagsToResource(params).promise().toFuture
     @inline def applyPendingMaintenanceActionFuture(params: ApplyPendingMaintenanceActionMessage): Future[ApplyPendingMaintenanceActionResponse] = service.applyPendingMaintenanceAction(params).promise().toFuture
@@ -111,9 +111,7 @@ package object dms {
     @inline def testConnectionFuture(params: TestConnectionMessage): Future[TestConnectionResponse] = service.testConnection(params).promise().toFuture
 
   }
-}
 
-package dms {
   @js.native
   @JSImport("aws-sdk/clients/dms", JSImport.Namespace, "AWS.DMS")
   class DMS() extends js.Object {
@@ -174,6 +172,11 @@ package dms {
     def startReplicationTaskAssessmentRun(params: StartReplicationTaskAssessmentRunMessage): Request[StartReplicationTaskAssessmentRunResponse] = js.native
     def stopReplicationTask(params: StopReplicationTaskMessage): Request[StopReplicationTaskResponse] = js.native
     def testConnection(params: TestConnectionMessage): Request[TestConnectionResponse] = js.native
+  }
+  object DMS {
+    @inline implicit def toOps(service: DMS): DMSOps = {
+      new DMSOps(service)
+    }
   }
 
   /** Describes a quota for an AWS account, for example, the number of replication instances allowed.

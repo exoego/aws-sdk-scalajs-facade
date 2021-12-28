@@ -42,7 +42,7 @@ package object worklink {
   type WebsiteAuthorizationProvidersSummaryList = js.Array[WebsiteAuthorizationProviderSummary]
   type WebsiteCaSummaryList = js.Array[WebsiteCaSummary]
 
-  implicit final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
+  final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
 
     @inline def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] = service.associateDomain(params).promise().toFuture
     @inline def associateWebsiteAuthorizationProviderFuture(params: AssociateWebsiteAuthorizationProviderRequest): Future[AssociateWebsiteAuthorizationProviderResponse] = service.associateWebsiteAuthorizationProvider(params).promise().toFuture
@@ -79,9 +79,7 @@ package object worklink {
     @inline def updateIdentityProviderConfigurationFuture(params: UpdateIdentityProviderConfigurationRequest): Future[UpdateIdentityProviderConfigurationResponse] = service.updateIdentityProviderConfiguration(params).promise().toFuture
 
   }
-}
 
-package worklink {
   @js.native
   @JSImport("aws-sdk/clients/worklink", JSImport.Namespace, "AWS.WorkLink")
   class WorkLink() extends js.Object {
@@ -120,6 +118,11 @@ package worklink {
     def updateDomainMetadata(params: UpdateDomainMetadataRequest): Request[UpdateDomainMetadataResponse] = js.native
     def updateFleetMetadata(params: UpdateFleetMetadataRequest): Request[UpdateFleetMetadataResponse] = js.native
     def updateIdentityProviderConfiguration(params: UpdateIdentityProviderConfigurationRequest): Request[UpdateIdentityProviderConfigurationResponse] = js.native
+  }
+  object WorkLink {
+    @inline implicit def toOps(service: WorkLink): WorkLinkOps = {
+      new WorkLinkOps(service)
+    }
   }
 
   @js.native

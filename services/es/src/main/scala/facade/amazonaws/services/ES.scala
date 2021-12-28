@@ -102,7 +102,7 @@ package object es {
   type Username = String
   type ValueStringList = js.Array[NonEmptyString]
 
-  implicit final class ESOps(private val service: ES) extends AnyVal {
+  final class ESOps(private val service: ES) extends AnyVal {
 
     @inline def acceptInboundCrossClusterSearchConnectionFuture(params: AcceptInboundCrossClusterSearchConnectionRequest): Future[AcceptInboundCrossClusterSearchConnectionResponse] = service.acceptInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise().toFuture
@@ -146,9 +146,7 @@ package object es {
     @inline def upgradeElasticsearchDomainFuture(params: UpgradeElasticsearchDomainRequest): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
 
   }
-}
 
-package es {
   @js.native
   @JSImport("aws-sdk/clients/es", JSImport.Namespace, "AWS.ES")
   class ES() extends js.Object {
@@ -194,6 +192,11 @@ package es {
     def updateElasticsearchDomainConfig(params: UpdateElasticsearchDomainConfigRequest): Request[UpdateElasticsearchDomainConfigResponse] = js.native
     def updatePackage(params: UpdatePackageRequest): Request[UpdatePackageResponse] = js.native
     def upgradeElasticsearchDomain(params: UpgradeElasticsearchDomainRequest): Request[UpgradeElasticsearchDomainResponse] = js.native
+  }
+  object ES {
+    @inline implicit def toOps(service: ES): ESOps = {
+      new ESOps(service)
+    }
   }
 
   /** Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation.

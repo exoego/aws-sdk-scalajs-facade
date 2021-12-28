@@ -13,16 +13,14 @@ package object sagemakerfeaturestoreruntime {
   type Record = js.Array[FeatureValue]
   type ValueAsString = String
 
-  implicit final class SageMakerFeatureStoreRuntimeOps(private val service: SageMakerFeatureStoreRuntime) extends AnyVal {
+  final class SageMakerFeatureStoreRuntimeOps(private val service: SageMakerFeatureStoreRuntime) extends AnyVal {
 
     @inline def deleteRecordFuture(params: DeleteRecordRequest): Future[js.Object] = service.deleteRecord(params).promise().toFuture
     @inline def getRecordFuture(params: GetRecordRequest): Future[GetRecordResponse] = service.getRecord(params).promise().toFuture
     @inline def putRecordFuture(params: PutRecordRequest): Future[js.Object] = service.putRecord(params).promise().toFuture
 
   }
-}
 
-package sagemakerfeaturestoreruntime {
   @js.native
   @JSImport("aws-sdk/clients/sagemakerfeaturestoreruntime", JSImport.Namespace, "AWS.SageMakerFeatureStoreRuntime")
   class SageMakerFeatureStoreRuntime() extends js.Object {
@@ -31,6 +29,11 @@ package sagemakerfeaturestoreruntime {
     def deleteRecord(params: DeleteRecordRequest): Request[js.Object] = js.native
     def getRecord(params: GetRecordRequest): Request[GetRecordResponse] = js.native
     def putRecord(params: PutRecordRequest): Request[js.Object] = js.native
+  }
+  object SageMakerFeatureStoreRuntime {
+    @inline implicit def toOps(service: SageMakerFeatureStoreRuntime): SageMakerFeatureStoreRuntimeOps = {
+      new SageMakerFeatureStoreRuntimeOps(service)
+    }
   }
 
   @js.native

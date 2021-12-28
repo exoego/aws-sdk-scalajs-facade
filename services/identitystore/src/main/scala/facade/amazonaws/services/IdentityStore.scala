@@ -19,7 +19,7 @@ package object identitystore {
   type UserName = String
   type Users = js.Array[User]
 
-  implicit final class IdentityStoreOps(private val service: IdentityStore) extends AnyVal {
+  final class IdentityStoreOps(private val service: IdentityStore) extends AnyVal {
 
     @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
@@ -27,9 +27,7 @@ package object identitystore {
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
 
   }
-}
 
-package identitystore {
   @js.native
   @JSImport("aws-sdk/clients/identitystore", JSImport.Namespace, "AWS.IdentityStore")
   class IdentityStore() extends js.Object {
@@ -39,6 +37,11 @@ package identitystore {
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+  }
+  object IdentityStore {
+    @inline implicit def toOps(service: IdentityStore): IdentityStoreOps = {
+      new IdentityStoreOps(service)
+    }
   }
 
   @js.native

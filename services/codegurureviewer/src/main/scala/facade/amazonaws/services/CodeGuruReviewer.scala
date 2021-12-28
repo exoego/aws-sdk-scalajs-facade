@@ -48,7 +48,7 @@ package object codegurureviewer {
   type UserId = String
   type UserIds = js.Array[UserId]
 
-  implicit final class CodeGuruReviewerOps(private val service: CodeGuruReviewer) extends AnyVal {
+  final class CodeGuruReviewerOps(private val service: CodeGuruReviewer) extends AnyVal {
 
     @inline def associateRepositoryFuture(params: AssociateRepositoryRequest): Future[AssociateRepositoryResponse] = service.associateRepository(params).promise().toFuture
     @inline def createCodeReviewFuture(params: CreateCodeReviewRequest): Future[CreateCodeReviewResponse] = service.createCodeReview(params).promise().toFuture
@@ -66,9 +66,7 @@ package object codegurureviewer {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package codegurureviewer {
   @js.native
   @JSImport("aws-sdk/clients/codegurureviewer", JSImport.Namespace, "AWS.CodeGuruReviewer")
   class CodeGuruReviewer() extends js.Object {
@@ -88,6 +86,11 @@ package codegurureviewer {
     def putRecommendationFeedback(params: PutRecommendationFeedbackRequest): Request[PutRecommendationFeedbackResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object CodeGuruReviewer {
+    @inline implicit def toOps(service: CodeGuruReviewer): CodeGuruReviewerOps = {
+      new CodeGuruReviewerOps(service)
+    }
   }
 
   @js.native

@@ -33,7 +33,7 @@ package object servicecatalogappregistry {
   type Tags = js.Dictionary[TagValue]
   type Timestamp = js.Date
 
-  implicit final class ServiceCatalogAppRegistryOps(private val service: ServiceCatalogAppRegistry) extends AnyVal {
+  final class ServiceCatalogAppRegistryOps(private val service: ServiceCatalogAppRegistry) extends AnyVal {
 
     @inline def associateAttributeGroupFuture(params: AssociateAttributeGroupRequest): Future[AssociateAttributeGroupResponse] = service.associateAttributeGroup(params).promise().toFuture
     @inline def associateResourceFuture(params: AssociateResourceRequest): Future[AssociateResourceResponse] = service.associateResource(params).promise().toFuture
@@ -57,9 +57,7 @@ package object servicecatalogappregistry {
     @inline def updateAttributeGroupFuture(params: UpdateAttributeGroupRequest): Future[UpdateAttributeGroupResponse] = service.updateAttributeGroup(params).promise().toFuture
 
   }
-}
 
-package servicecatalogappregistry {
   @js.native
   @JSImport("aws-sdk/clients/servicecatalogappregistry", JSImport.Namespace, "AWS.ServiceCatalogAppRegistry")
   class ServiceCatalogAppRegistry() extends js.Object {
@@ -85,6 +83,11 @@ package servicecatalogappregistry {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
     def updateAttributeGroup(params: UpdateAttributeGroupRequest): Request[UpdateAttributeGroupResponse] = js.native
+  }
+  object ServiceCatalogAppRegistry {
+    @inline implicit def toOps(service: ServiceCatalogAppRegistry): ServiceCatalogAppRegistryOps = {
+      new ServiceCatalogAppRegistryOps(service)
+    }
   }
 
   /** Represents a Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.

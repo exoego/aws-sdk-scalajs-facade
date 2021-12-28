@@ -35,7 +35,7 @@ package object transcribeservice {
   type Word = String
   type Words = js.Array[Word]
 
-  implicit final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
+  final class TranscribeServiceOps(private val service: TranscribeService) extends AnyVal {
 
     @inline def createLanguageModelFuture(params: CreateLanguageModelRequest): Future[CreateLanguageModelResponse] = service.createLanguageModel(params).promise().toFuture
     @inline def createMedicalVocabularyFuture(params: CreateMedicalVocabularyRequest): Future[CreateMedicalVocabularyResponse] = service.createMedicalVocabulary(params).promise().toFuture
@@ -66,9 +66,7 @@ package object transcribeservice {
     @inline def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] = service.updateVocabulary(params).promise().toFuture
 
   }
-}
 
-package transcribeservice {
   @js.native
   @JSImport("aws-sdk/clients/transcribeservice", JSImport.Namespace, "AWS.TranscribeService")
   class TranscribeService() extends js.Object {
@@ -101,6 +99,11 @@ package transcribeservice {
     def updateMedicalVocabulary(params: UpdateMedicalVocabularyRequest): Request[UpdateMedicalVocabularyResponse] = js.native
     def updateVocabulary(params: UpdateVocabularyRequest): Request[UpdateVocabularyResponse] = js.native
     def updateVocabularyFilter(params: UpdateVocabularyFilterRequest): Request[UpdateVocabularyFilterResponse] = js.native
+  }
+  object TranscribeService {
+    @inline implicit def toOps(service: TranscribeService): TranscribeServiceOps = {
+      new TranscribeServiceOps(service)
+    }
   }
 
   @js.native

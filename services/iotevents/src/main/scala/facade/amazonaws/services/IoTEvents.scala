@@ -71,7 +71,7 @@ package object iotevents {
   type VariableName = String
   type VariableValue = String
 
-  implicit final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
+  final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
 
     @inline def createDetectorModelFuture(params: CreateDetectorModelRequest): Future[CreateDetectorModelResponse] = service.createDetectorModel(params).promise().toFuture
     @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] = service.createInput(params).promise().toFuture
@@ -94,9 +94,7 @@ package object iotevents {
     @inline def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] = service.updateInput(params).promise().toFuture
 
   }
-}
 
-package iotevents {
   @js.native
   @JSImport("aws-sdk/clients/iotevents", JSImport.Namespace, "AWS.IoTEvents")
   class IoTEvents() extends js.Object {
@@ -121,6 +119,11 @@ package iotevents {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDetectorModel(params: UpdateDetectorModelRequest): Request[UpdateDetectorModelResponse] = js.native
     def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse] = js.native
+  }
+  object IoTEvents {
+    @inline implicit def toOps(service: IoTEvents): IoTEventsOps = {
+      new IoTEventsOps(service)
+    }
   }
 
   /** An action to be performed when the <code>condition</code> is TRUE.

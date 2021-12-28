@@ -39,7 +39,7 @@ package object synthetics {
   type UUID = String
   type VpcId = String
 
-  implicit final class SyntheticsOps(private val service: Synthetics) extends AnyVal {
+  final class SyntheticsOps(private val service: Synthetics) extends AnyVal {
 
     @inline def createCanaryFuture(params: CreateCanaryRequest): Future[CreateCanaryResponse] = service.createCanary(params).promise().toFuture
     @inline def deleteCanaryFuture(params: DeleteCanaryRequest): Future[DeleteCanaryResponse] = service.deleteCanary(params).promise().toFuture
@@ -56,9 +56,7 @@ package object synthetics {
     @inline def updateCanaryFuture(params: UpdateCanaryRequest): Future[UpdateCanaryResponse] = service.updateCanary(params).promise().toFuture
 
   }
-}
 
-package synthetics {
   @js.native
   @JSImport("aws-sdk/clients/synthetics", JSImport.Namespace, "AWS.Synthetics")
   class Synthetics() extends js.Object {
@@ -77,6 +75,11 @@ package synthetics {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateCanary(params: UpdateCanaryRequest): Request[UpdateCanaryResponse] = js.native
+  }
+  object Synthetics {
+    @inline implicit def toOps(service: Synthetics): SyntheticsOps = {
+      new SyntheticsOps(service)
+    }
   }
 
   /** This structure contains all information about one canary in your account.

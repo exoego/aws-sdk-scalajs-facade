@@ -50,7 +50,7 @@ package object ivs {
   type errorCode = String
   type errorMessage = String
 
-  implicit final class IVSOps(private val service: IVS) extends AnyVal {
+  final class IVSOps(private val service: IVS) extends AnyVal {
 
     @inline def batchGetChannelFuture(params: BatchGetChannelRequest): Future[BatchGetChannelResponse] = service.batchGetChannel(params).promise().toFuture
     @inline def batchGetStreamKeyFuture(params: BatchGetStreamKeyRequest): Future[BatchGetStreamKeyResponse] = service.batchGetStreamKey(params).promise().toFuture
@@ -80,9 +80,7 @@ package object ivs {
     @inline def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] = service.updateChannel(params).promise().toFuture
 
   }
-}
 
-package ivs {
   @js.native
   @JSImport("aws-sdk/clients/ivs", JSImport.Namespace, "AWS.IVS")
   class IVS() extends js.Object {
@@ -114,6 +112,11 @@ package ivs {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse] = js.native
+  }
+  object IVS {
+    @inline implicit def toOps(service: IVS): IVSOps = {
+      new IVSOps(service)
+    }
   }
 
   /** Error related to a specific channel, specified by its ARN.

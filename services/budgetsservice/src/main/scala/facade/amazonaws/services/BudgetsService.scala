@@ -43,7 +43,7 @@ package object budgetsservice {
   type User = String
   type Users = js.Array[User]
 
-  implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
+  final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
     @inline def createBudgetActionFuture(params: CreateBudgetActionRequest): Future[CreateBudgetActionResponse] = service.createBudgetAction(params).promise().toFuture
     @inline def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] = service.createBudget(params).promise().toFuture
@@ -69,9 +69,7 @@ package object budgetsservice {
     @inline def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] = service.updateSubscriber(params).promise().toFuture
 
   }
-}
 
-package budgetsservice {
   @js.native
   @JSImport("aws-sdk/clients/budgets", JSImport.Namespace, "AWS.Budgets")
   class BudgetsService() extends js.Object {
@@ -99,6 +97,11 @@ package budgetsservice {
     def updateBudgetAction(params: UpdateBudgetActionRequest): Request[UpdateBudgetActionResponse] = js.native
     def updateNotification(params: UpdateNotificationRequest): Request[UpdateNotificationResponse] = js.native
     def updateSubscriber(params: UpdateSubscriberRequest): Request[UpdateSubscriberResponse] = js.native
+  }
+  object BudgetsService {
+    @inline implicit def toOps(service: BudgetsService): BudgetsServiceOps = {
+      new BudgetsServiceOps(service)
+    }
   }
 
   /** A budget action resource.

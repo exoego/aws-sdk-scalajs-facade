@@ -26,16 +26,14 @@ package object ssooidc {
   type URI = String
   type UserCode = String
 
-  implicit final class SSOOIDCOps(private val service: SSOOIDC) extends AnyVal {
+  final class SSOOIDCOps(private val service: SSOOIDC) extends AnyVal {
 
     @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] = service.createToken(params).promise().toFuture
     @inline def registerClientFuture(params: RegisterClientRequest): Future[RegisterClientResponse] = service.registerClient(params).promise().toFuture
     @inline def startDeviceAuthorizationFuture(params: StartDeviceAuthorizationRequest): Future[StartDeviceAuthorizationResponse] = service.startDeviceAuthorization(params).promise().toFuture
 
   }
-}
 
-package ssooidc {
   @js.native
   @JSImport("aws-sdk/clients/ssooidc", JSImport.Namespace, "AWS.SSOOIDC")
   class SSOOIDC() extends js.Object {
@@ -44,6 +42,11 @@ package ssooidc {
     def createToken(params: CreateTokenRequest): Request[CreateTokenResponse] = js.native
     def registerClient(params: RegisterClientRequest): Request[RegisterClientResponse] = js.native
     def startDeviceAuthorization(params: StartDeviceAuthorizationRequest): Request[StartDeviceAuthorizationResponse] = js.native
+  }
+  object SSOOIDC {
+    @inline implicit def toOps(service: SSOOIDC): SSOOIDCOps = {
+      new SSOOIDCOps(service)
+    }
   }
 
   @js.native

@@ -66,7 +66,7 @@ package object machinelearning {
   type VipURL = String
   type floatLabel = Float
 
-  implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
+  final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] = service.createBatchPrediction(params).promise().toFuture
@@ -98,9 +98,7 @@ package object machinelearning {
     @inline def updateMLModelFuture(params: UpdateMLModelInput): Future[UpdateMLModelOutput] = service.updateMLModel(params).promise().toFuture
 
   }
-}
 
-package machinelearning {
   @js.native
   @JSImport("aws-sdk/clients/machinelearning", JSImport.Namespace, "AWS.MachineLearning")
   class MachineLearning() extends js.Object {
@@ -134,6 +132,11 @@ package machinelearning {
     def updateDataSource(params: UpdateDataSourceInput): Request[UpdateDataSourceOutput] = js.native
     def updateEvaluation(params: UpdateEvaluationInput): Request[UpdateEvaluationOutput] = js.native
     def updateMLModel(params: UpdateMLModelInput): Request[UpdateMLModelOutput] = js.native
+  }
+  object MachineLearning {
+    @inline implicit def toOps(service: MachineLearning): MachineLearningOps = {
+      new MachineLearningOps(service)
+    }
   }
 
   @js.native

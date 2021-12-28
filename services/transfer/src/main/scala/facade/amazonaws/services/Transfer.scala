@@ -57,7 +57,7 @@ package object transfer {
   type VpcEndpointId = String
   type VpcId = String
 
-  implicit final class TransferOps(private val service: Transfer) extends AnyVal {
+  final class TransferOps(private val service: Transfer) extends AnyVal {
 
     @inline def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] = service.createServer(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
@@ -81,9 +81,7 @@ package object transfer {
     @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
 
   }
-}
 
-package transfer {
   @js.native
   @JSImport("aws-sdk/clients/transfer", JSImport.Namespace, "AWS.Transfer")
   class Transfer() extends js.Object {
@@ -109,6 +107,11 @@ package transfer {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
     def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+  }
+  object Transfer {
+    @inline implicit def toOps(service: Transfer): TransferOps = {
+      new TransferOps(service)
+    }
   }
 
   @js.native

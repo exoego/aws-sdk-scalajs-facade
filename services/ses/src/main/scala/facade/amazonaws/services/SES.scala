@@ -99,7 +99,7 @@ package object ses {
   type VerificationToken = String
   type VerificationTokenList = js.Array[VerificationToken]
 
-  implicit final class SESOps(private val service: SES) extends AnyVal {
+  final class SESOps(private val service: SES) extends AnyVal {
 
     @inline def cloneReceiptRuleSetFuture(params: CloneReceiptRuleSetRequest): Future[CloneReceiptRuleSetResponse] = service.cloneReceiptRuleSet(params).promise().toFuture
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
@@ -174,9 +174,7 @@ package object ses {
     @inline def verifyEmailIdentityFuture(params: VerifyEmailIdentityRequest): Future[VerifyEmailIdentityResponse] = service.verifyEmailIdentity(params).promise().toFuture
 
   }
-}
 
-package ses {
   @js.native
   @JSImport("aws-sdk/clients/ses", JSImport.Namespace, "AWS.SES")
   class SES() extends js.Object {
@@ -253,6 +251,11 @@ package ses {
     def verifyDomainIdentity(params: VerifyDomainIdentityRequest): Request[VerifyDomainIdentityResponse] = js.native
     def verifyEmailAddress(params: VerifyEmailAddressRequest): Request[js.Object] = js.native
     def verifyEmailIdentity(params: VerifyEmailIdentityRequest): Request[VerifyEmailIdentityResponse] = js.native
+  }
+  object SES {
+    @inline implicit def toOps(service: SES): SESOps = {
+      new SESOps(service)
+    }
   }
 
   /** When included in a receipt rule, this action adds a header to the received email. For information about adding a header using a receipt rule, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html|Amazon SES Developer Guide]].

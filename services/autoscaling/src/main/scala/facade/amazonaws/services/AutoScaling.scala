@@ -137,7 +137,7 @@ package object autoscaling {
   type XmlStringMaxLen64 = String
   type XmlStringUserData = String
 
-  implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
+  final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
 
     @inline def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] = service.attachInstances(params).promise().toFuture
     @inline def attachLoadBalancerTargetGroupsFuture(params: AttachLoadBalancerTargetGroupsType): Future[AttachLoadBalancerTargetGroupsResultType] = service.attachLoadBalancerTargetGroups(params).promise().toFuture
@@ -201,9 +201,7 @@ package object autoscaling {
     @inline def updateAutoScalingGroupFuture(params: UpdateAutoScalingGroupType): Future[js.Object] = service.updateAutoScalingGroup(params).promise().toFuture
 
   }
-}
 
-package autoscaling {
   @js.native
   @JSImport("aws-sdk/clients/autoscaling", JSImport.Namespace, "AWS.AutoScaling")
   class AutoScaling() extends js.Object {
@@ -269,6 +267,11 @@ package autoscaling {
     def suspendProcesses(params: ScalingProcessQuery): Request[js.Object] = js.native
     def terminateInstanceInAutoScalingGroup(params: TerminateInstanceInAutoScalingGroupType): Request[ActivityType] = js.native
     def updateAutoScalingGroup(params: UpdateAutoScalingGroupType): Request[js.Object] = js.native
+  }
+  object AutoScaling {
+    @inline implicit def toOps(service: AutoScaling): AutoScalingOps = {
+      new AutoScalingOps(service)
+    }
   }
 
   @js.native

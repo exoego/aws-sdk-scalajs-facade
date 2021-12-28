@@ -42,7 +42,7 @@ package object batch {
   type Ulimits = js.Array[Ulimit]
   type Volumes = js.Array[Volume]
 
-  implicit final class BatchOps(private val service: Batch) extends AnyVal {
+  final class BatchOps(private val service: Batch) extends AnyVal {
 
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
     @inline def createComputeEnvironmentFuture(params: CreateComputeEnvironmentRequest): Future[CreateComputeEnvironmentResponse] = service.createComputeEnvironment(params).promise().toFuture
@@ -65,9 +65,7 @@ package object batch {
     @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] = service.updateJobQueue(params).promise().toFuture
 
   }
-}
 
-package batch {
   @js.native
   @JSImport("aws-sdk/clients/batch", JSImport.Namespace, "AWS.Batch")
   class Batch() extends js.Object {
@@ -92,6 +90,11 @@ package batch {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateComputeEnvironment(params: UpdateComputeEnvironmentRequest): Request[UpdateComputeEnvironmentResponse] = js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
+  }
+  object Batch {
+    @inline implicit def toOps(service: Batch): BatchOps = {
+      new BatchOps(service)
+    }
   }
 
   @js.native

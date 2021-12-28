@@ -15,15 +15,13 @@ package object ec2instanceconnect {
   type SerialPort = Int
   type Success = Boolean
 
-  implicit final class EC2InstanceConnectOps(private val service: EC2InstanceConnect) extends AnyVal {
+  final class EC2InstanceConnectOps(private val service: EC2InstanceConnect) extends AnyVal {
 
     @inline def sendSSHPublicKeyFuture(params: SendSSHPublicKeyRequest): Future[SendSSHPublicKeyResponse] = service.sendSSHPublicKey(params).promise().toFuture
     @inline def sendSerialConsoleSSHPublicKeyFuture(params: SendSerialConsoleSSHPublicKeyRequest): Future[SendSerialConsoleSSHPublicKeyResponse] = service.sendSerialConsoleSSHPublicKey(params).promise().toFuture
 
   }
-}
 
-package ec2instanceconnect {
   @js.native
   @JSImport("aws-sdk/clients/ec2instanceconnect", JSImport.Namespace, "AWS.EC2InstanceConnect")
   class EC2InstanceConnect() extends js.Object {
@@ -31,6 +29,11 @@ package ec2instanceconnect {
 
     def sendSSHPublicKey(params: SendSSHPublicKeyRequest): Request[SendSSHPublicKeyResponse] = js.native
     def sendSerialConsoleSSHPublicKey(params: SendSerialConsoleSSHPublicKeyRequest): Request[SendSerialConsoleSSHPublicKeyResponse] = js.native
+  }
+  object EC2InstanceConnect {
+    @inline implicit def toOps(service: EC2InstanceConnect): EC2InstanceConnectOps = {
+      new EC2InstanceConnectOps(service)
+    }
   }
 
   @js.native

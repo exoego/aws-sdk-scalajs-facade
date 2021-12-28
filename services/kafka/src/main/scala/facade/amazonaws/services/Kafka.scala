@@ -33,7 +33,7 @@ package object kafka {
   type __stringMin5Max32 = String
   type __timestampIso8601 = js.Date
 
-  implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
+  final class KafkaOps(private val service: Kafka) extends AnyVal {
 
     @inline def batchAssociateScramSecretFuture(params: BatchAssociateScramSecretRequest): Future[BatchAssociateScramSecretResponse] = service.batchAssociateScramSecret(params).promise().toFuture
     @inline def batchDisassociateScramSecretFuture(params: BatchDisassociateScramSecretRequest): Future[BatchDisassociateScramSecretResponse] = service.batchDisassociateScramSecret(params).promise().toFuture
@@ -67,9 +67,7 @@ package object kafka {
     @inline def updateMonitoringFuture(params: UpdateMonitoringRequest): Future[UpdateMonitoringResponse] = service.updateMonitoring(params).promise().toFuture
 
   }
-}
 
-package kafka {
   @js.native
   @JSImport("aws-sdk/clients/kafka", JSImport.Namespace, "AWS.Kafka")
   class Kafka() extends js.Object {
@@ -105,6 +103,11 @@ package kafka {
     def updateClusterKafkaVersion(params: UpdateClusterKafkaVersionRequest): Request[UpdateClusterKafkaVersionResponse] = js.native
     def updateConfiguration(params: UpdateConfigurationRequest): Request[UpdateConfigurationResponse] = js.native
     def updateMonitoring(params: UpdateMonitoringRequest): Request[UpdateMonitoringResponse] = js.native
+  }
+  object Kafka {
+    @inline implicit def toOps(service: Kafka): KafkaOps = {
+      new KafkaOps(service)
+    }
   }
 
   /** Associates sasl scram secrets to cluster.

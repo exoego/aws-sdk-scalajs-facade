@@ -95,7 +95,7 @@ package object iotanalytics {
   type Variables = js.Array[Variable]
   type VolumeSizeInGB = Int
 
-  implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
+  final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
 
     @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] = service.batchPutMessage(params).promise().toFuture
     @inline def cancelPipelineReprocessingFuture(params: CancelPipelineReprocessingRequest): Future[CancelPipelineReprocessingResponse] = service.cancelPipelineReprocessing(params).promise().toFuture
@@ -133,9 +133,7 @@ package object iotanalytics {
     @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[js.Object] = service.updatePipeline(params).promise().toFuture
 
   }
-}
 
-package iotanalytics {
   @js.native
   @JSImport("aws-sdk/clients/iotanalytics", JSImport.Namespace, "AWS.IoTAnalytics")
   class IoTAnalytics() extends js.Object {
@@ -175,6 +173,11 @@ package iotanalytics {
     def updateDataset(params: UpdateDatasetRequest): Request[js.Object] = js.native
     def updateDatastore(params: UpdateDatastoreRequest): Request[js.Object] = js.native
     def updatePipeline(params: UpdatePipelineRequest): Request[js.Object] = js.native
+  }
+  object IoTAnalytics {
+    @inline implicit def toOps(service: IoTAnalytics): IoTAnalyticsOps = {
+      new IoTAnalyticsOps(service)
+    }
   }
 
   /** An activity that adds other attributes based on existing attributes in the message.

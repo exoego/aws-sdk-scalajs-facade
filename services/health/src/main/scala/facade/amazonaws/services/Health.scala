@@ -62,7 +62,7 @@ package object health {
   type tagValue = String
   type timestamp = js.Date
 
-  implicit final class HealthOps(private val service: Health) extends AnyVal {
+  final class HealthOps(private val service: Health) extends AnyVal {
 
     @inline def describeAffectedAccountsForOrganizationFuture(params: DescribeAffectedAccountsForOrganizationRequest): Future[DescribeAffectedAccountsForOrganizationResponse] = service.describeAffectedAccountsForOrganization(params).promise().toFuture
     @inline def describeAffectedEntitiesForOrganizationFuture(params: DescribeAffectedEntitiesForOrganizationRequest): Future[DescribeAffectedEntitiesForOrganizationResponse] = service.describeAffectedEntitiesForOrganization(params).promise().toFuture
@@ -79,9 +79,7 @@ package object health {
     @inline def enableHealthServiceAccessForOrganizationFuture(): Future[js.Object] = service.enableHealthServiceAccessForOrganization().promise().toFuture
 
   }
-}
 
-package health {
   @js.native
   @JSImport("aws-sdk/clients/health", JSImport.Namespace, "AWS.Health")
   class Health() extends js.Object {
@@ -100,6 +98,11 @@ package health {
     def describeHealthServiceStatusForOrganization(): Request[DescribeHealthServiceStatusForOrganizationResponse] = js.native
     def disableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
     def enableHealthServiceAccessForOrganization(): Request[js.Object] = js.native
+  }
+  object Health {
+    @inline implicit def toOps(service: Health): HealthOps = {
+      new HealthOps(service)
+    }
   }
 
   /** Information about an entity that is affected by a Health event.

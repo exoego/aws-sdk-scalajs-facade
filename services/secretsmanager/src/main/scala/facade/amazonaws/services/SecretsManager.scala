@@ -62,7 +62,7 @@ package object secretsmanager {
   type TimestampType = js.Date
   type ValidationErrorsType = js.Array[ValidationErrorsEntry]
 
-  implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
+  final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 
     @inline def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] = service.cancelRotateSecret(params).promise().toFuture
     @inline def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] = service.createSecret(params).promise().toFuture
@@ -88,9 +88,7 @@ package object secretsmanager {
     @inline def validateResourcePolicyFuture(params: ValidateResourcePolicyRequest): Future[ValidateResourcePolicyResponse] = service.validateResourcePolicy(params).promise().toFuture
 
   }
-}
 
-package secretsmanager {
   @js.native
   @JSImport("aws-sdk/clients/secretsmanager", JSImport.Namespace, "AWS.SecretsManager")
   class SecretsManager() extends js.Object {
@@ -118,6 +116,11 @@ package secretsmanager {
     def updateSecret(params: UpdateSecretRequest): Request[UpdateSecretResponse] = js.native
     def updateSecretVersionStage(params: UpdateSecretVersionStageRequest): Request[UpdateSecretVersionStageResponse] = js.native
     def validateResourcePolicy(params: ValidateResourcePolicyRequest): Request[ValidateResourcePolicyResponse] = js.native
+  }
+  object SecretsManager {
+    @inline implicit def toOps(service: SecretsManager): SecretsManagerOps = {
+      new SecretsManagerOps(service)
+    }
   }
 
   @js.native

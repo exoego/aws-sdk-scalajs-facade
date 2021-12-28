@@ -46,7 +46,7 @@ package object mgn {
   type TagsMap = js.Dictionary[TagValue]
   type TerminateTargetInstancesRequestSourceServerIDs = js.Array[SourceServerID]
 
-  implicit final class MgnOps(private val service: Mgn) extends AnyVal {
+  final class MgnOps(private val service: Mgn) extends AnyVal {
 
     @inline def changeServerLifeCycleStateFuture(params: ChangeServerLifeCycleStateRequest): Future[SourceServer] = service.changeServerLifeCycleState(params).promise().toFuture
     @inline def createReplicationConfigurationTemplateFuture(params: CreateReplicationConfigurationTemplateRequest): Future[ReplicationConfigurationTemplate] = service.createReplicationConfigurationTemplate(params).promise().toFuture
@@ -75,9 +75,7 @@ package object mgn {
     @inline def updateReplicationConfigurationTemplateFuture(params: UpdateReplicationConfigurationTemplateRequest): Future[ReplicationConfigurationTemplate] = service.updateReplicationConfigurationTemplate(params).promise().toFuture
 
   }
-}
 
-package mgn {
   @js.native
   @JSImport("aws-sdk/clients/mgn", JSImport.Namespace, "AWS.Mgn")
   class Mgn() extends js.Object {
@@ -108,6 +106,11 @@ package mgn {
     def updateLaunchConfiguration(params: UpdateLaunchConfigurationRequest): Request[LaunchConfiguration] = js.native
     def updateReplicationConfiguration(params: UpdateReplicationConfigurationRequest): Request[ReplicationConfiguration] = js.native
     def updateReplicationConfigurationTemplate(params: UpdateReplicationConfigurationTemplateRequest): Request[ReplicationConfigurationTemplate] = js.native
+  }
+  object Mgn {
+    @inline implicit def toOps(service: Mgn): MgnOps = {
+      new MgnOps(service)
+    }
   }
 
   /** Source server CPU information.

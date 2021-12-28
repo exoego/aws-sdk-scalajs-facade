@@ -100,7 +100,7 @@ package object xray {
   type ValuesWithServiceIds = js.Array[ValueWithServiceIds]
   type Version = Int
 
-  implicit final class XRayOps(private val service: XRay) extends AnyVal {
+  final class XRayOps(private val service: XRay) extends AnyVal {
 
     @inline def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] = service.batchGetTraces(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] = service.createGroup(params).promise().toFuture
@@ -131,9 +131,7 @@ package object xray {
     @inline def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] = service.updateSamplingRule(params).promise().toFuture
 
   }
-}
 
-package xray {
   @js.native
   @JSImport("aws-sdk/clients/xray", JSImport.Namespace, "AWS.XRay")
   class XRay() extends js.Object {
@@ -166,6 +164,11 @@ package xray {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResult] = js.native
     def updateSamplingRule(params: UpdateSamplingRuleRequest): Request[UpdateSamplingRuleResult] = js.native
+  }
+  object XRay {
+    @inline implicit def toOps(service: XRay): XRayOps = {
+      new XRayOps(service)
+    }
   }
 
   /** An alias for an edge.

@@ -42,7 +42,7 @@ package object servicequotas {
   type TagKey = String
   type TagValue = String
 
-  implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
+  final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
 
     @inline def associateServiceQuotaTemplateFuture(params: AssociateServiceQuotaTemplateRequest): Future[AssociateServiceQuotaTemplateResponse] = service.associateServiceQuotaTemplate(params).promise().toFuture
     @inline def deleteServiceQuotaIncreaseRequestFromTemplateFuture(params: DeleteServiceQuotaIncreaseRequestFromTemplateRequest): Future[DeleteServiceQuotaIncreaseRequestFromTemplateResponse] = service.deleteServiceQuotaIncreaseRequestFromTemplate(params).promise().toFuture
@@ -65,9 +65,7 @@ package object servicequotas {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
-}
 
-package servicequotas {
   @js.native
   @JSImport("aws-sdk/clients/servicequotas", JSImport.Namespace, "AWS.ServiceQuotas")
   class ServiceQuotas() extends js.Object {
@@ -92,6 +90,11 @@ package servicequotas {
     def requestServiceQuotaIncrease(params: RequestServiceQuotaIncreaseRequest): Request[RequestServiceQuotaIncreaseResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+  }
+  object ServiceQuotas {
+    @inline implicit def toOps(service: ServiceQuotas): ServiceQuotasOps = {
+      new ServiceQuotasOps(service)
+    }
   }
 
   @js.native

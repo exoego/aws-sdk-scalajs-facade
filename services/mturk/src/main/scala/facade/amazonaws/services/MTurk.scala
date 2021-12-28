@@ -39,7 +39,7 @@ package object mturk {
   type TurkErrorCode = String
   type WorkerBlockList = js.Array[WorkerBlock]
 
-  implicit final class MTurkOps(private val service: MTurk) extends AnyVal {
+  final class MTurkOps(private val service: MTurk) extends AnyVal {
 
     @inline def acceptQualificationRequestFuture(params: AcceptQualificationRequestRequest): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise().toFuture
     @inline def approveAssignmentFuture(params: ApproveAssignmentRequest): Future[ApproveAssignmentResponse] = service.approveAssignment(params).promise().toFuture
@@ -82,9 +82,7 @@ package object mturk {
     @inline def updateQualificationTypeFuture(params: UpdateQualificationTypeRequest): Future[UpdateQualificationTypeResponse] = service.updateQualificationType(params).promise().toFuture
 
   }
-}
 
-package mturk {
   @js.native
   @JSImport("aws-sdk/clients/mturk", JSImport.Namespace, "AWS.MTurk")
   class MTurk() extends js.Object {
@@ -129,6 +127,11 @@ package mturk {
     def updateHITTypeOfHIT(params: UpdateHITTypeOfHITRequest): Request[UpdateHITTypeOfHITResponse] = js.native
     def updateNotificationSettings(params: UpdateNotificationSettingsRequest): Request[UpdateNotificationSettingsResponse] = js.native
     def updateQualificationType(params: UpdateQualificationTypeRequest): Request[UpdateQualificationTypeResponse] = js.native
+  }
+  object MTurk {
+    @inline implicit def toOps(service: MTurk): MTurkOps = {
+      new MTurkOps(service)
+    }
   }
 
   @js.native

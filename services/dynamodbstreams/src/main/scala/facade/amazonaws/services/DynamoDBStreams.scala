@@ -33,7 +33,7 @@ package object dynamodbstreams {
   type StringSetAttributeValue = js.Array[StringAttributeValue]
   type TableName = String
 
-  implicit final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
+  final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
 
     @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] = service.describeStream(params).promise().toFuture
     @inline def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] = service.getRecords(params).promise().toFuture
@@ -41,9 +41,7 @@ package object dynamodbstreams {
     @inline def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] = service.listStreams(params).promise().toFuture
 
   }
-}
 
-package dynamodbstreams {
   @js.native
   @JSImport("aws-sdk/clients/dynamodbstreams", JSImport.Namespace, "AWS.DynamoDBStreams")
   class DynamoDBStreams() extends js.Object {
@@ -53,6 +51,11 @@ package dynamodbstreams {
     def getRecords(params: GetRecordsInput): Request[GetRecordsOutput] = js.native
     def getShardIterator(params: GetShardIteratorInput): Request[GetShardIteratorOutput] = js.native
     def listStreams(params: ListStreamsInput): Request[ListStreamsOutput] = js.native
+  }
+  object DynamoDBStreams {
+    @inline implicit def toOps(service: DynamoDBStreams): DynamoDBStreamsOps = {
+      new DynamoDBStreamsOps(service)
+    }
   }
 
   /** Represents the data for an attribute. Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself. For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.

@@ -58,7 +58,7 @@ package object kinesisanalytics {
   type Tags = js.Array[Tag]
   type Timestamp = js.Date
 
-  implicit final class KinesisAnalyticsOps(private val service: KinesisAnalytics) extends AnyVal {
+  final class KinesisAnalyticsOps(private val service: KinesisAnalytics) extends AnyVal {
 
     @inline def addApplicationCloudWatchLoggingOptionFuture(params: AddApplicationCloudWatchLoggingOptionRequest): Future[AddApplicationCloudWatchLoggingOptionResponse] = service.addApplicationCloudWatchLoggingOption(params).promise().toFuture
     @inline def addApplicationInputFuture(params: AddApplicationInputRequest): Future[AddApplicationInputResponse] = service.addApplicationInput(params).promise().toFuture
@@ -82,9 +82,7 @@ package object kinesisanalytics {
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
 
   }
-}
 
-package kinesisanalytics {
   @js.native
   @JSImport("aws-sdk/clients/kinesisanalytics", JSImport.Namespace, "AWS.KinesisAnalytics")
   class KinesisAnalytics() extends js.Object {
@@ -110,6 +108,11 @@ package kinesisanalytics {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+  }
+  object KinesisAnalytics {
+    @inline implicit def toOps(service: KinesisAnalytics): KinesisAnalyticsOps = {
+      new KinesisAnalyticsOps(service)
+    }
   }
 
   @js.native
